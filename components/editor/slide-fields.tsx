@@ -2,7 +2,7 @@
 
 import { SLIDE_TYPE_LABELS } from "@/components/editor/slide-labels";
 import { Button } from "@/components/ui/button";
-import { isEditableQuestion } from "@/lib/lesson-draft";
+import { isQuizQuestion } from "@/lib/lesson-draft";
 
 import type { DraftContent, DraftSlide } from "@/lib/lesson-draft";
 
@@ -117,7 +117,7 @@ function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "positi
             onChange={(event) => onChange({ ...slide, ref: event.target.value })}
           >
             <option value="">Chọn câu luyện</option>
-            {content.questions.filter(isEditableQuestion).map((item) => (
+            {content.questions.filter(isQuizQuestion).map((item) => (
               <option key={item.id} value={item.id}>
                 {item.prompt || "(chưa nhập đề)"}
               </option>

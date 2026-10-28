@@ -64,6 +64,14 @@ export function moveItem<T>(items: readonly T[], from: number, to: number) {
   return next;
 }
 
+// Listening audio is generated from the transcript, so an edited transcript needs new audio.
+function withListeningAudio(previous: DraftQuestion, next: DraftQuestion): DraftQuestion {
+  const isTranscriptChanged =
+    (next.type === "listen" || next.type === "dictation") &&
+    (!("transcript" in previous) || previous.transcript !== next.transcript);
+  return isTranscriptChanged ? { ...next, audio: null } : next;
+}
+
 export function editorReducer(state: EditorState, action: EditorAction): EditorState {
   const { content } = state.draft;
   switch (action.type) {
@@ -172,7 +180,7 @@ export function editorReducer(state: EditorState, action: EditorAction): EditorS
       return withContent(state, {
         ...content,
         questions: content.questions.map((item) =>
-          item.id === action.question.id ? action.question : item,
+          item.id === action.question.id ? withListeningAudio(item, action.question) : item,
         ),
       });
     case "removeQuestion":

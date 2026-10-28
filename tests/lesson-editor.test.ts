@@ -5,6 +5,8 @@ import rawDraft from "../content/lessons/lesson-01.json";
 import { parseLessonDraftState } from "../lib/lesson-draft";
 import { createEditorState, editorReducer, moveItem } from "../lib/lesson-editor";
 
+import type { DraftQuestion } from "../lib/lesson-draft";
+
 const initial = createEditorState(
   parseLessonDraftState({
     metadata: {
@@ -46,6 +48,38 @@ test("editing Japanese text clears audio that no longer matches it", () => {
     patch: { jp: "こんばんは" },
   });
   assert.equal(reading.draft.content.vocab[0].audio, null);
+});
+
+test("editing a listening transcript clears audio generated from the old text", () => {
+  const question: DraftQuestion = {
+    id: "q-dictation",
+    type: "dictation",
+    prompt: "Nghe và viết lại",
+    explain: "Câu giới thiệu.",
+    points: 1,
+    tags: [],
+    transcript: "わたしはがくせいです。",
+    audio: "c".repeat(32),
+    maxListens: null,
+    inputMode: "hiragana",
+    kanjiStrict: false,
+    answer: ["わたしはがくせいです"],
+  };
+  const audioOf = (state: typeof initial) => {
+    const item = state.draft.content.questions.find((entry) => entry.id === question.id);
+    return item && "audio" in item ? item.audio : undefined;
+  };
+  const added = editorReducer(initial, { type: "addQuestion", question });
+  const prompt = editorReducer(added, {
+    type: "updateQuestion",
+    question: { ...question, prompt: "Nghe kỹ rồi viết" },
+  });
+  assert.equal(audioOf(prompt), "c".repeat(32));
+  const transcript = editorReducer(prompt, {
+    type: "updateQuestion",
+    question: { ...question, transcript: "わたしはせんせいです。" },
+  });
+  assert.equal(audioOf(transcript), null);
 });
 
 test("slides are inserted after the selection, reordered and removed predictably", () => {

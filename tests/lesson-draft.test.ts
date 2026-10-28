@@ -3,12 +3,15 @@ import { test } from "node:test";
 
 import rawDraft from "../content/lessons/lesson-01.json";
 import {
+  AUDIO_COMMAND,
   countMissingAudio,
+  countMissingListeningAudio,
   createItemId,
   createSlide,
   EMPTY_DRAFT_CONTENT,
   findPublishProblems,
   findReferencingSlides,
+  listAudioHashes,
   parseLessonDraftState,
   toPublishableContent,
 } from "../lib/lesson-draft";
@@ -83,4 +86,75 @@ test("references, identifiers and optional fields follow the content contract", 
   assert.throws(() =>
     parseLessonDraftState({ ...sample, content: { ...sample.content, extra: true } }),
   );
+});
+
+test("listening questions publish only with a transcript, valid answers and generated audio", () => {
+  const draft = parseLessonDraftState({
+    ...sample,
+    content: {
+      ...sample.content,
+      questions: [
+        ...sample.content.questions,
+        {
+          id: "q-listen",
+          type: "listen",
+          prompt: "Người nói đi đâu?",
+          explain: "がっこう là trường học.",
+          points: 1,
+          tags: [],
+          transcript: "",
+          audio: null,
+          maxListens: 2,
+          responseType: "choice",
+          options: ["がっこう", "えき"],
+          answer: [],
+        },
+        {
+          id: "q-dictation",
+          type: "dictation",
+          prompt: "Nghe và viết lại",
+          explain: "Câu giới thiệu.",
+          points: 2,
+          tags: [],
+          transcript: "わたしはがくせいです。",
+          audio: null,
+          maxListens: null,
+          inputMode: "hiragana",
+          kanjiStrict: false,
+          answer: ["わたしはがくせいです", " "],
+        },
+      ],
+    },
+  });
+  const messages = () => findPublishProblems(draft).map((problem) => problem.message);
+  assert.ok(messages().includes("Câu luyện 2: nhập transcript tiếng Nhật để tạo audio."));
+  assert.ok(messages().includes(`Câu luyện 3: chưa có audio. Lưu nháp rồi chạy ${AUDIO_COMMAND}.`));
+  assert.equal(countMissingListeningAudio(draft.content), 2);
+
+  const [, listen, dictation] = draft.content.questions;
+  assert.ok(listen.type === "listen" && dictation.type === "dictation");
+  listen.transcript = "がっこうへいきます。";
+  assert.ok(messages().includes("Câu luyện 2: chọn đáp án đúng trong các lựa chọn."));
+  listen.answer = [0];
+  listen.audio = "a".repeat(32);
+  dictation.audio = "b".repeat(32);
+  assert.deepEqual(messages(), []);
+  assert.deepEqual(listAudioHashes(draft.content).slice(-2), ["a".repeat(32), "b".repeat(32)]);
+  const published = toPublishableContent(draft.content);
+  assert.deepEqual(published.questions[2].answer, ["わたしはがくせいです"]);
+
+  const quizSlide = { ...createSlide("quiz", "s-listen-quiz"), ref: "q-listen" };
+  draft.content.slides.push(quizSlide);
+  assert.ok(
+    messages().some((message) => message.endsWith("chọn câu luyện trắc nghiệm hoặc điền từ.")),
+  );
+  draft.content.slides.pop();
+
+  // Switching to a typed answer leaves stale options behind; they never reach the snapshot.
+  listen.responseType = "fill";
+  listen.answer = ["がっこう", ""];
+  assert.deepEqual(messages(), []);
+  const typed = toPublishableContent(draft.content).questions[1];
+  assert.equal("options" in typed && typed.options !== undefined, false);
+  assert.deepEqual(typed.answer, ["がっこう"]);
 });

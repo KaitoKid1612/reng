@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { INPUT_MODES } from "@/lib/assignment";
+import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
 import { lessonContentSchema, questionSchema } from "@/lib/lesson-schema";
 
 import type { LessonContent } from "@/lib/lesson-schema";
@@ -125,8 +125,45 @@ const draftFillSchema = z
   })
   .strict();
 
+const listeningFields = {
+  audio,
+  transcript: draftText(500),
+  maxListens: z.number().int().min(1).max(MAX_RECORDED_LISTENS).nullable().default(null),
+};
+
+const draftListenSchema = z
+  .object({
+    ...questionFields,
+    ...listeningFields,
+    type: z.literal("listen"),
+    responseType: z.enum(["choice", "fill"]),
+    options: z.array(draftText(120)).max(8).optional(),
+    answer: z.union([
+      z.array(z.number().int().nonnegative()).max(8),
+      z.array(draftText(120)).max(10),
+    ]),
+  })
+  .strict();
+
+const draftDictationSchema = z
+  .object({
+    ...questionFields,
+    ...listeningFields,
+    type: z.literal("dictation"),
+    inputMode: z.enum(INPUT_MODES).default("hiragana"),
+    kanjiStrict: z.boolean().default(false),
+    answer: z.array(draftText(120)).max(10),
+  })
+  .strict();
+
 // Other question types are kept exactly as authored; the web editor shows them read-only.
-const draftQuestionSchema = z.union([draftChoiceSchema, draftFillSchema, questionSchema]);
+const draftQuestionSchema = z.union([
+  draftChoiceSchema,
+  draftFillSchema,
+  draftListenSchema,
+  draftDictationSchema,
+  questionSchema,
+]);
 
 export const draftContentSchema = z
   .object({
@@ -242,11 +279,29 @@ export function findReferencingSlides(content: DraftContent, itemId: string) {
   );
 }
 
+export type DraftChoiceQuestion = z.infer<typeof draftChoiceSchema>;
+export type DraftFillQuestion = z.infer<typeof draftFillSchema>;
+export type DraftListeningQuestion =
+  z.infer<typeof draftListenSchema> | z.infer<typeof draftDictationSchema>;
+
 export function isEditableQuestion(
   question: DraftQuestion,
-): question is z.infer<typeof draftChoiceSchema> | z.infer<typeof draftFillSchema> {
+): question is DraftChoiceQuestion | DraftFillQuestion | DraftListeningQuestion {
+  return ["choice", "fill", "listen", "dictation"].includes(question.type);
+}
+
+// Slides show quizzes without audio, so only choice and fill questions can be referenced.
+export function isQuizQuestion(
+  question: DraftQuestion,
+): question is DraftChoiceQuestion | DraftFillQuestion {
   return question.type === "choice" || question.type === "fill";
 }
+
+export function isListeningDraft(question: DraftQuestion): question is DraftListeningQuestion {
+  return question.type === "listen" || question.type === "dictation";
+}
+
+export const AUDIO_COMMAND = "npm run audio:generate -- --lessons --db --sync-db";
 
 export interface PublishProblem {
   section: "info" | "vocab" | "grammar" | "questions" | "slides";
@@ -359,31 +414,77 @@ function describeQuestionProblems(content: DraftContent): PublishProblem[] {
     if (question.points < 1) {
       return problem("điểm là số nguyên từ 1 đến 100.");
     }
-    if (question.type === "choice") {
-      if (question.options.length < 2 || question.options.some(blank)) {
-        return problem("cần ít nhất 2 lựa chọn và không để trống lựa chọn nào.");
-      }
-      if (
-        !question.answer.length ||
-        question.answer.some((answer) => answer >= question.options.length) ||
-        new Set(question.answer).size !== question.answer.length
-      ) {
-        return problem("chọn đáp án đúng trong các lựa chọn.");
-      }
-      if (!question.multiple && question.answer.length !== 1) {
-        return problem("câu một đáp án chỉ được có một lựa chọn đúng.");
-      }
-      return [];
+    if (isListeningDraft(question) && blank(question.transcript)) {
+      return problem("nhập transcript tiếng Nhật để tạo audio.");
     }
-    const answers = question.answer.filter((answer) => !blank(answer));
-    if (!answers.length) {
-      return problem("nhập ít nhất một đáp án được chấp nhận.");
+    const answerProblem = describeAnswerProblem(question);
+    if (answerProblem) {
+      return problem(answerProblem);
     }
-    if (question.kanjiStrict && !answers.every(containsKanji)) {
-      return problem("đã bật kanji bắt buộc nên mọi đáp án phải chứa kanji.");
+    // Audio comes last: it is generated from the saved transcript once the question is ready.
+    if (isListeningDraft(question) && !question.audio) {
+      return problem(`chưa có audio. Lưu nháp rồi chạy ${AUDIO_COMMAND}.`);
     }
     return [];
   });
+}
+
+function describeChoiceProblem(options: readonly string[], answer: readonly number[]) {
+  if (options.length < 2 || options.some(blank)) {
+    return "cần ít nhất 2 lựa chọn và không để trống lựa chọn nào.";
+  }
+  if (
+    !answer.length ||
+    answer.some((index) => index >= options.length) ||
+    new Set(answer).size !== answer.length
+  ) {
+    return "chọn đáp án đúng trong các lựa chọn.";
+  }
+  return null;
+}
+
+function describeTextAnswerProblem(answer: readonly (string | number)[], kanjiStrict: boolean) {
+  const answers = answer.filter((item): item is string => typeof item === "string" && !blank(item));
+  if (!answers.length) {
+    return "nhập ít nhất một đáp án được chấp nhận.";
+  }
+  if (kanjiStrict && !answers.every(containsKanji)) {
+    return "đã bật kanji bắt buộc nên mọi đáp án phải chứa kanji.";
+  }
+  return null;
+}
+
+function describeAnswerProblem(
+  question: DraftChoiceQuestion | DraftFillQuestion | DraftListeningQuestion,
+) {
+  switch (question.type) {
+    case "choice": {
+      const choiceProblem = describeChoiceProblem(question.options, question.answer);
+      if (choiceProblem) {
+        return choiceProblem;
+      }
+      return !question.multiple && question.answer.length !== 1
+        ? "câu một đáp án chỉ được có một lựa chọn đúng."
+        : null;
+    }
+    case "listen": {
+      if (question.responseType === "fill") {
+        return describeTextAnswerProblem(question.answer, false);
+      }
+      const indexes = question.answer.filter((item): item is number => typeof item === "number");
+      if (indexes.length !== question.answer.length) {
+        return "chọn đáp án đúng trong các lựa chọn.";
+      }
+      const choiceProblem = describeChoiceProblem(question.options ?? [], indexes);
+      if (choiceProblem) {
+        return choiceProblem;
+      }
+      return indexes.length !== 1 ? "câu nghe chọn đáp án chỉ có một lựa chọn đúng." : null;
+    }
+    case "fill":
+    case "dictation":
+      return describeTextAnswerProblem(question.answer, question.kanjiStrict);
+  }
 }
 
 function describeSlideProblems(content: DraftContent): PublishProblem[] {
@@ -392,7 +493,7 @@ function describeSlideProblems(content: DraftContent): PublishProblem[] {
   }
   const vocabIds = new Set(content.vocab.map((item) => item.id));
   const grammarIds = new Set(content.grammar.map((item) => item.id));
-  const quizIds = new Set(content.questions.filter(isEditableQuestion).map((item) => item.id));
+  const quizIds = new Set(content.questions.filter(isQuizQuestion).map((item) => item.id));
   return content.slides.flatMap((slide, index): PublishProblem[] => {
     const problem = (message: string) => [
       { section: "slides" as const, itemId: slide.id, message: `Slide ${index + 1}: ${message}` },
@@ -452,12 +553,25 @@ export function toPublishableContent(content: DraftContent): LessonContent {
         "caption",
       ]),
     ),
-    questions: content.questions.map((question) =>
-      question.type === "fill"
-        ? { ...question, answer: question.answer.filter((answer) => !blank(answer)) }
-        : question,
-    ),
+    questions: content.questions.map(toPublishableQuestion),
   });
+}
+
+function toPublishableQuestion(question: DraftQuestion) {
+  const filledAnswers = (answer: readonly (string | number)[]) =>
+    answer.filter((item) => typeof item !== "string" || !blank(item));
+  switch (question.type) {
+    case "fill":
+    case "dictation":
+      return { ...question, answer: filledAnswers(question.answer) };
+    case "listen":
+      // Options left over from switching the response type are not part of a typed answer.
+      return question.responseType === "fill"
+        ? { ...question, options: undefined, answer: filledAnswers(question.answer) }
+        : question;
+    default:
+      return question;
+  }
 }
 
 export function findPublishProblems(state: LessonDraftState): PublishProblem[] {
@@ -481,11 +595,16 @@ export function findPublishProblems(state: LessonDraftState): PublishProblem[] {
   return problems;
 }
 
+// Vocabulary and examples fall back to device speech; listening questions cannot publish.
 export function countMissingAudio(content: DraftContent) {
   return (
     content.vocab.filter((item) => !item.audio).length +
     content.grammar.flatMap((item) => item.examples).filter((example) => !example.audio).length
   );
+}
+
+export function countMissingListeningAudio(content: DraftContent) {
+  return content.questions.filter(isListeningDraft).filter((question) => !question.audio).length;
 }
 
 export function listAudioHashes(content: DraftContent) {
@@ -494,6 +613,7 @@ export function listAudioHashes(content: DraftContent) {
       [
         ...content.vocab.map((item) => item.audio),
         ...content.grammar.flatMap((item) => item.examples.map((example) => example.audio)),
+        ...content.questions.filter(isListeningDraft).map((question) => question.audio),
       ].filter((hash): hash is string => Boolean(hash)),
     ),
   ];

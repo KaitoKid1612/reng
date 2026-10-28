@@ -1,10 +1,16 @@
 "use client";
 
+import { ListeningQuestionEditor } from "@/components/editor/listening-question-editor";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
 import { Button } from "@/components/ui/button";
-import { findReferencingSlides, isEditableQuestion } from "@/lib/lesson-draft";
+import { findReferencingSlides, isEditableQuestion, isListeningDraft } from "@/lib/lesson-draft";
 
-import type { DraftContent, DraftQuestion } from "@/lib/lesson-draft";
+import type {
+  DraftChoiceQuestion,
+  DraftContent,
+  DraftFillQuestion,
+  DraftQuestion,
+} from "@/lib/lesson-draft";
 import type { EditorAction } from "@/lib/lesson-editor";
 import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
@@ -14,7 +20,15 @@ interface QuestionFieldsProps {
   createId: () => string;
 }
 
-type EditableQuestion = Extract<DraftQuestion, { type: "choice" | "fill" }>;
+type EditableQuestion = DraftChoiceQuestion | DraftFillQuestion;
+type NewQuestionType = "choice" | "fill" | "listen" | "dictation";
+
+const ADD_LABELS: Record<NewQuestionType, string> = {
+  choice: "Thêm câu trắc nghiệm",
+  fill: "Thêm câu điền từ",
+  listen: "Thêm câu nghe",
+  dictation: "Thêm câu chính tả",
+};
 
 function toQuestionDraft(question: EditableQuestion, key: number): TestQuestionDraft {
   if (question.type === "choice") {
@@ -68,11 +82,33 @@ function fromQuestionDraft(draft: TestQuestionDraft, original: EditableQuestion)
   };
 }
 
-function createQuestion(id: string, type: "choice" | "fill"): DraftQuestion {
+function createQuestion(id: string, type: NewQuestionType): DraftQuestion {
   const shared = { id, prompt: "", explain: "", points: 1, tags: [] };
-  return type === "choice"
-    ? { ...shared, type, options: ["", ""], answer: [], multiple: false }
-    : { ...shared, type, answer: [""], inputMode: "hiragana", kanjiStrict: false };
+  const listening = { transcript: "", audio: null, maxListens: null };
+  switch (type) {
+    case "choice":
+      return { ...shared, type, options: ["", ""], answer: [], multiple: false };
+    case "fill":
+      return { ...shared, type, answer: [""], inputMode: "hiragana", kanjiStrict: false };
+    case "listen":
+      return {
+        ...shared,
+        ...listening,
+        type,
+        responseType: "choice",
+        options: ["", ""],
+        answer: [],
+      };
+    case "dictation":
+      return {
+        ...shared,
+        ...listening,
+        type,
+        answer: [""],
+        inputMode: "japanese",
+        kanjiStrict: false,
+      };
+  }
 }
 
 export function QuestionFields({ content, dispatch, createId }: QuestionFieldsProps) {
@@ -94,6 +130,18 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
             </p>
           );
         }
+        if (isListeningDraft(question)) {
+          return (
+            <ListeningQuestionEditor
+              key={question.id}
+              question={question}
+              position={index + 1}
+              removeBlockedReason={usage}
+              onChange={(next) => dispatch({ type: "updateQuestion", question: next })}
+              onRemove={() => dispatch({ type: "removeQuestion", id: question.id })}
+            />
+          );
+        }
         return (
           <TestQuestionEditor
             key={question.id}
@@ -109,22 +157,17 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
         );
       })}
       <div className="button-row">
-        <Button
-          variant="outline"
-          onClick={() =>
-            dispatch({ type: "addQuestion", question: createQuestion(createId(), "choice") })
-          }
-        >
-          Thêm câu trắc nghiệm
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() =>
-            dispatch({ type: "addQuestion", question: createQuestion(createId(), "fill") })
-          }
-        >
-          Thêm câu điền từ
-        </Button>
+        {(["choice", "fill", "listen", "dictation"] as const).map((type) => (
+          <Button
+            key={type}
+            variant="outline"
+            onClick={() =>
+              dispatch({ type: "addQuestion", question: createQuestion(createId(), type) })
+            }
+          >
+            {ADD_LABELS[type]}
+          </Button>
+        ))}
       </div>
     </div>
   );

@@ -16,7 +16,12 @@ import { SLIDE_TYPE_LABELS, SLIDE_TYPES } from "@/components/editor/slide-labels
 import { SlideList } from "@/components/editor/slide-list";
 import { SlidePreview } from "@/components/editor/slide-preview";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { countMissingAudio, createItemId } from "@/lib/lesson-draft";
+import {
+  AUDIO_COMMAND,
+  countMissingAudio,
+  countMissingListeningAudio,
+  createItemId,
+} from "@/lib/lesson-draft";
 import { createEditorState, editorReducer } from "@/lib/lesson-editor";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -71,6 +76,7 @@ export function LessonEditor({
   );
   const selectedSlide = draft.content.slides[selectedIndex];
   const missingAudio = countMissingAudio(draft.content);
+  const missingListeningAudio = countMissingListeningAudio(draft.content);
 
   useEffect(() => {
     if (!isDirty) {
@@ -234,6 +240,12 @@ export function LessonEditor({
           <p className="small muted">
             {missingAudio} từ/câu ví dụ chưa có audio; học viên sẽ nghe giọng thiết bị cho tới khi
             chạy script sinh audio.
+          </p>
+        )}
+        {missingListeningAudio > 0 && (
+          <p className="small muted">
+            {missingListeningAudio} câu nghe chưa có audio nên chưa xuất bản được. Lưu nháp rồi chạy{" "}
+            <code>{AUDIO_COMMAND}</code>, sau đó tải lại trang.
           </p>
         )}
         <details className="editor-section" open>
