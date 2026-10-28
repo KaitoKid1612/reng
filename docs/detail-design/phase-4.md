@@ -29,27 +29,29 @@ Theo [BD](../basic-design/phase-4.md), dữ liệu 03, thông báo 08. Dependenc
 
 ## Thông báo
 
-Migration 202610280005 tạo `notification_preferences` và `email_log` theo 03, thêm `delivery_paused_at`, `delivery_pause_reason` (bounce/complaint) và trạng thái `cancelled` cho job đã hủy. RLS: người dùng đọc tùy chọn của mình; ghi qua server. email_log chỉ server.
+Migration 202610280005 tạo `notification_preferences` và `email_log` theo 03, thêm `delivery_paused_at`, `delivery_pause_reason` (bounce/complaint), `next_attempt_at` cho backoff và trạng thái `cancelled` cho job đã hủy. RLS: người dùng đọc tùy chọn của mình; ghi qua server. email_log chỉ server. Hàm `email_recipients` (security definer, chỉ service_role) đọc email từ auth.users để gửi.
 
 | Thành phần | Hợp đồng |
 |---|---|
 | lib/notifications/schedule.ts | Ngày Việt Nam của lượt chạy, khóa idempotency `type:user:date`, backoff |
-| lib/notifications/templates.ts | Template chuỗi có escape HTML; tiêu đề có tên và con số cụ thể; chân thư có lý do nhận, link đổi tần suất, link hủy |
+| lib/notifications/templates.ts | Template chuỗi, CSS inline, escape HTML (không dùng react-email để tránh render React ở route handler); tiêu đề có tên và con số cụ thể; chân thư có lý do nhận, link đổi tần suất, link hủy |
 | lib/notifications/unsubscribe.ts | Token `base64url(user).base64url(HMAC-SHA256)` với EMAIL_LINK_SECRET, so sánh thời gian hằng |
-| lib/server/email-provider.ts | `resend` (HTTP, Idempotency-Key), `mailpit` (local `/api/v1/send`); không có cấu hình thì không gửi |
+| lib/server/email-provider.ts | `resend` (HTTP, Idempotency-Key, timeout 10 giây), `mailpit` (chỉ URL local, `/api/v1/send`); thiếu EMAIL_FROM/khóa thì không có provider |
 | lib/server/notifications.ts | Chọn người cần nhắc, tạo job, nhận job, gửi, ghi kết quả |
 | app/api/cron/[job] | `Authorization: Bearer CRON_SECRET`; student-reminders, weekly-summary, teacher-digest |
 | app/api/webhooks/email | Xác thực chữ ký Svix của Resend; opened → opened_at; bounced/complained → tạm dừng và hủy job |
-| app/api/unsubscribe/[token] | POST một chạm (RFC 8058) |
+| app/api/unsubscribe/[token] | POST một chạm (RFC 8058, trả 200) hoặc form xác nhận (303 về trang); token là quyền, không kiểm tra Origin |
+| app/unsubscribe/[token], app/settings/notifications | Trang xác nhận hủy (GET không đổi gì); trang tùy chọn có Server Action |
+| vercel.json | Lịch cron UTC theo bảng của 08 |
 
 Quy trình mỗi lượt cron:
 
 1. Tính for_date theo Asia/Ho_Chi_Minh. Với người có tùy chọn bật, chưa tạm dừng và có việc, tạo job pending `ON CONFLICT DO NOTHING` theo PK (user, type, date).
 2. RPC `claim_email_jobs` lấy tối đa N job pending, failed còn lượt và hết backoff, hoặc sending hết lease bằng `FOR UPDATE SKIP LOCKED`; chuyển sending, tăng attempts, đặt lease 5 phút.
 3. Với mỗi job: kiểm tra lại tùy chọn và việc; không còn cần thì cancelled. Gửi với idempotency key cố định (Resend chống trùng 24 giờ).
-4. Thành công: sent, provider_message_id, sent_at (chỉ khi attempts khớp lượt đã nhận). Lỗi 4xx xác định chưa gửi: failed, last_error ngắn, retry tối đa 3 lần với backoff 15/60 phút. Timeout/5xx: để sending tới hết lease; lượt sau gửi lại cùng key. Không ghi nội dung thư hoặc token vào log/last_error.
+4. Mọi cập nhật kết quả điều kiện theo `status = sending` và `attempts` của lượt đã nhận, nên worker chậm không ghi đè kết quả của worker nhận lại job. Thành công: sent, provider_message_id, sent_at. 429/5xx/timeout/mạng: failed với backoff 15 rồi 60 phút, tối đa 3 lần, gửi lại cùng idempotency key (Resend chống trùng 24 giờ; Mailpit local không chống trùng). 4xx khác: failed và đặt attempts tối đa để chờ xử lý tay. Worker dừng giữa chừng: hết lease 5 phút thì lượt sau nhận lại; hết lượt thì failed `lease_expired`. Không ghi nội dung thư hoặc token vào log/last_error.
 
-Nội dung: nhắc tối gồm chuỗi ngày, số thẻ đến hạn, bài sắp hạn (tối đa 3), một từ trong bài lớp đang học và một nút chính. Tổng kết tuần: số lượt ôn, bài đã nộp, điểm trung bình so với tuần trước. Tóm tắt giảng viên: theo lớp, số bài nộp 24 giờ qua, câu sai ≥ 50%, học viên bỏ bài. Không gửi khi không có gì để nói.
+Nội dung: nhắc tối gồm chuỗi ngày, số thẻ đến hạn, bài sắp hạn (tối đa 3), một từ trong bài lớp đang học (đổi theo ngày) và một nút chính. Tổng kết tuần: số lượt ôn, bài đã nộp, điểm trung bình so với tuần trước; điểm bài test chỉ tính khi đã tới thời điểm phản hồi. Tóm tắt giảng viên: theo lớp, số bài nộp 24 giờ qua, học viên bỏ bài/chưa đạt/yếu nghe, câu sai ≥ 50%. Không gửi khi không có gì để nói. Cron trả 503 khi thiếu CRON_SECRET, Supabase, nhà cung cấp email hoặc EMAIL_LINK_SECRET; link trong thư dùng SITE_URL, thiếu thì dùng origin của request cron.
 
 ## Kiểm chứng
 

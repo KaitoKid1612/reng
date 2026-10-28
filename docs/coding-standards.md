@@ -20,6 +20,7 @@ components/
   audio-provider.tsx     Shared audio context and tightly related hook/status
 lib/                     Pure domain logic, validators and data loading
   grading/               Shared client/server grading
+  notifications/         Pure email scheduling, templates and signatures
   server/                Server-only data access, session and API helpers (`server-only`)
 app/actions/             Server Actions for forms (each re-checks the caller)
 scripts/                 Explicit CLI entry points, never imported by UI

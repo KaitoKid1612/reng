@@ -22,7 +22,7 @@ Con số chặn bạn là 100/ngày, không phải 3.000/tháng. Tính thử:
 
 Khi tới ngưỡng đó chuyển sang **Brevo** (300/ngày miễn phí) hoặc **Mailjet** (6.000/tháng, 200/ngày). Đổi provider chỉ là thay một hàm `send()` nếu bạn bọc nó lại từ đầu.
 
-Template viết bằng `react-email`, cú pháp JSX giống component thường.
+Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inline (lib/notifications/templates.ts) thay cho react-email, vì email được dựng trong route handler cron. Local gửi vào Mailpit; production dùng Resend qua HTTP với Idempotency-Key. Chi tiết tại [DD giai đoạn 4](detail-design/phase-4.md).
 
 ## Cấu hình tên miền
 

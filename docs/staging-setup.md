@@ -20,4 +20,12 @@ Không có credentials trong workspace tại thời điểm bắt đầu giai đ
 5. Chạy luồng: tạo lớp, thêm bài, giao practice/test, học viên đăng ký/vào lớp/làm/nộp, mất mạng và hai tab, báo cáo/CSV. Ghi kết quả vào testing/phase-3.md.
 6. Có bản backup và một lần khôi phục thử trên môi trường riêng trước khi nhận lớp thật.
 
+## Giai đoạn 4: soạn bài và email
+
+1. Áp dụng migration 0005 trên staging sau backup. Thử tạo bài, lưu nháp ở hai tab, xuất bản và nhập CSV bằng tài khoản giảng viên thử.
+2. Resend: xác minh domain gửi, thêm SPF, DKIM, DMARC; đặt EMAIL_PROVIDER=resend, EMAIL_FROM, RESEND_API_KEY chỉ trên server. Gửi thử tới hộp thư thử (Gmail và một hộp khác), kiểm tra spam, header List-Unsubscribe và nút hủy một chạm.
+3. Webhook Resend trỏ tới /api/webhooks/email với các sự kiện delivered, opened, bounced, complained; đặt RESEND_WEBHOOK_SECRET (whsec_…). Thử bounce bằng địa chỉ thử của nhà cung cấp.
+4. Đặt CRON_SECRET và EMAIL_LINK_SECRET ngẫu nhiên, SITE_URL đúng domain; vercel.json đã có lịch UTC. Xác minh gói hosting cho phép cron theo lịch này. Không bật nhắc cho học viên thật trên staging.
+5. Ghi kết quả vào testing/phase-4.md (G4-15).
+
 Chưa tạo tài khoản/bucket/project hoặc apply migration vào dịch vụ thật trong đợt local này. Giai đoạn 3 mới kiểm chứng trên Supabase local (Supabase CLI).

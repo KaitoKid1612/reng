@@ -132,10 +132,10 @@ Tài khoản đăng ký luôn là học viên. Người vận hành cấp quyề
 |---|---|---|
 | Gửi email nhắc học viên | 20h hằng ngày | Vercel Cron |
 | Gửi tóm tắt lớp cho giảng viên | 6h hằng ngày | Vercel Cron |
-| Rà soát bài quá hạn và nhãn học viên | Hằng ngày; tính lại khi mở báo cáo | Cron và API báo cáo |
+| Rà soát bài quá hạn và nhãn học viên | Hằng ngày; tính lại khi mở báo cáo | Báo cáo tính khi mở; tóm tắt giảng viên dùng cùng phép tính |
 | Sinh audio cho nội dung mới | Thủ công khi thêm bài | Script |
 
-Vercel Cron chạy theo giờ UTC. Muốn 20h giờ Việt Nam thì đặt `0 13 * * *`.
+Vercel Cron chạy theo giờ UTC. Muốn 20h giờ Việt Nam thì đặt `0 13 * * *`. Lịch đã khai báo trong vercel.json, gọi /api/cron/[job] với `Authorization: Bearer CRON_SECRET`.
 
 ## Môi trường và vận hành
 

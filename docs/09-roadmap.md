@@ -191,4 +191,4 @@ Chưa nghiệm thu Supabase/Auth/Azure/R2 thật, chưa apply migrations hoặc 
 
 ## Tiến độ local giai đoạn 4
 
-Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide, kéo thả/nút sắp xếp slide, lưu nháp compare-and-swap và xuất bản qua RPC, lỗi xuất bản theo mục, nhập từ vựng CSV/TSV có lỗi từng dòng. Đã kiểm chứng trên Supabase local ([checklist phase-4](testing/phase-4.md)). Phần email nhắc bài đang triển khai theo [DD giai đoạn 4](detail-design/phase-4.md).
+Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide, kéo thả/nút sắp xếp slide, lưu nháp compare-and-swap và xuất bản qua RPC, lỗi xuất bản theo mục, nhập từ vựng CSV/TSV có lỗi từng dòng. Đã kiểm chứng trên Supabase local ([checklist phase-4](testing/phase-4.md)). Phần email đã có: tùy chọn opt-in, nhắc tối (daily/due_only), tổng kết tuần, tóm tắt giảng viên, job email_log có lease/backoff/idempotency key, Resend/Mailpit, webhook có chữ ký, hủy một chạm, lịch cron trong vercel.json. Đã kiểm chứng gửi vào Mailpit trên Supabase local. Chưa gửi thật qua Resend, chưa cấu hình DNS (SPF/DKIM/DMARC) hoặc cron trên hosting.

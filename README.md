@@ -80,6 +80,14 @@ npm run test:e2e:supabase
 
 Bộ này dùng cổng 3218, đọc khóa từ `supabase status` và từ chối URL không phải local. Không dùng project cloud cho kiểm thử tự động.
 
+Email nhắc bài local: đặt EMAIL_PROVIDER=mailpit, MAILPIT_URL, EMAIL_FROM, CRON_SECRET và EMAIL_LINK_SECRET trong .env.local, bật nhắc tại /settings/notifications rồi gọi job thủ công:
+
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" http://127.0.0.1:3000/api/cron/student-reminders
+```
+
+Thư xuất hiện trong Mailpit. Job chạy lại trong cùng ngày không gửi trùng. Lịch production nằm trong vercel.json (giờ UTC).
+
 ## Database
 
 Nguồn bài mặc định LESSON_SOURCE=local. Để đọc Supabase, cần LESSON_SOURCE=supabase, SUPABASE_URL và SUPABASE_SECRET_KEY. Teacher sign-in và API notes dùng SUPABASE_PUBLISHABLE_KEY/cookie HttpOnly, không dùng secret key để bỏ qua quyền notes. Thiếu cấu hình thì không có session giả và không trả ghi chú riêng. Xem [staging setup](docs/staging-setup.md).
