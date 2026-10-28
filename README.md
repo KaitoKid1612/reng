@@ -8,6 +8,8 @@ Website học tiếng Nhật N5. Bản local đầu tiên gồm trang chủ, b�
 
 Giai đoạn 3 (lớp học, bài giao, làm bài, sổ lỗi, ôn tập FSRS, theo dõi lớp, CSV) và editor bài học/nhập từ vựng CSV của giai đoạn 4 chạy khi có Supabase; đã kiểm chứng trên Supabase local. [BD giai đoạn 4](docs/basic-design/phase-4.md), [DD giai đoạn 4](docs/detail-design/phase-4.md). [BD giai đoạn 3](docs/basic-design/phase-3.md), [DD giai đoạn 3](docs/detail-design/phase-3.md), [checklist](docs/testing/phase-3.md).
 
+Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên web, trang `/listening/[lessonId]`, câu nghe trong bài giao practice và báo cáo nghe. [BD](docs/basic-design/phase-5.md), [DD](docs/detail-design/phase-5.md), [checklist](docs/testing/phase-5.md). Kanji và furigana chưa làm.
+
 ## Chạy local
 
 Yêu cầu Node.js 24, npm. Dependency khóa trong package-lock.json.

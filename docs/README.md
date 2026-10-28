@@ -10,6 +10,8 @@ Giai đoạn 3: [Basic Design](basic-design/phase-3.md), [Detail Design](detail-
 
 Giai đoạn 4: [Basic Design](basic-design/phase-4.md), [Detail Design](detail-design/phase-4.md), [checklist](testing/phase-4.md).
 
+Giai đoạn 5 (phần A — luyện nghe): [Basic Design](basic-design/phase-5.md), [Detail Design](detail-design/phase-5.md), [checklist](testing/phase-5.md).
+
 Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu vẫn là tiếng Việt. Rule cho agent tại AGENTS.md ở thư mục gốc.
 
 | File | Nội dung | Đọc khi nào |
@@ -34,6 +36,7 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 | `detail-design/phase-3.md` | Detail Design: RPC, API, chấm/nộp, FSRS, báo cáo | Khi triển khai giai đoạn 3 |
 | `testing/phase-3.md` | Truy vết và kết quả kiểm chứng giai đoạn 3 | Khi review/nghiệm thu |
 | `basic-design/phase-4.md`, `detail-design/phase-4.md`, `testing/phase-4.md` | Editor bài học, nhập CSV, email nhắc bài | Giai đoạn 4 |
+| `basic-design/phase-5.md`, `detail-design/phase-5.md`, `testing/phase-5.md` | Luyện nghe: câu nghe/chính tả, player, audio cho nháp database, báo cáo nghe | Giai đoạn 5 |
 
 ## Nguyên tắc xuyên suốt
 

@@ -192,3 +192,7 @@ Chưa nghiệm thu Supabase/Auth/Azure/R2 thật, chưa apply migrations hoặc 
 ## Tiến độ local giai đoạn 4
 
 Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide, kéo thả/nút sắp xếp slide, lưu nháp compare-and-swap và xuất bản qua RPC, lỗi xuất bản theo mục, nhập từ vựng CSV/TSV có lỗi từng dòng. Đã kiểm chứng trên Supabase local ([checklist phase-4](testing/phase-4.md)). Phần email đã có: tùy chọn opt-in, nhắc tối (daily/due_only), tổng kết tuần, tóm tắt giảng viên, job email_log có lease/backoff/idempotency key, Resend/Mailpit, webhook có chữ ký, hủy một chạm, lịch cron trong vercel.json. Đã kiểm chứng gửi vào Mailpit trên Supabase local. Chưa gửi thật qua Resend, chưa cấu hình DNS (SPF/DKIM/DMARC) hoặc cron trên hosting.
+
+## Tiến độ local giai đoạn 5 (phần A — luyện nghe)
+
+Đã có câu nghe chọn đáp án, nghe gõ đáp án và chính tả trong editor; script sinh audio đọc/ghi nháp database (`--db`) có kiểm tra revision; player không thanh tua (lùi 5 giây, chậm 0.75x, đếm lượt, giới hạn lượt, lỗi không tính lượt); trang S15 chấm qua API và chỉ hiện transcript sau khi trả lời; câu nghe trong bài giao practice lưu listen_count; báo cáo có điểm nghe, nghe trung bình và nhãn yếu nghe. Đã kiểm chứng trên Supabase local ([checklist phase-5](testing/phase-5.md)). Chưa có: câu nghe trong bài test (cần phân phối audio riêng), audio Azure thật đã nghe duyệt, kanji (KANJIDIC2/KanjiVG chờ quyết định giấy phép), furigana và audio hội thoại nhiều giọng.
