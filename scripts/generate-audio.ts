@@ -1,6 +1,7 @@
 import { readFile, readdir, mkdir, open, rename, stat, unlink, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
+import { parseArgs } from "node:util";
 
 import { S3Client, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { createClient } from "@supabase/supabase-js";
@@ -10,8 +11,17 @@ import { manifestSchema } from "../lib/kana";
 import { audioHash, canonicalAudio } from "../lib/audio-config";
 import { generateAudioAssets } from "../lib/audio-generation";
 import { synthesizeSpeech } from "../lib/azure-speech";
-import { applyLessonAudio, planLessonAudio } from "../lib/lesson-audio";
+import {
+  applyContentAudio,
+  applyLessonAudio,
+  planContentAudio,
+  planLessonAudio,
+} from "../lib/lesson-audio";
+import { draftContentSchema } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
+
+import type { SupabaseClient } from "@supabase/supabase-js";
+import type { DraftContent } from "../lib/lesson-draft";
 
 function required(name: string): string {
   const value = process.env[name];
@@ -31,58 +41,119 @@ function isNotFound(error: unknown): boolean {
   );
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  if (
-    args.some(
-      (argument) => !["--generate", "--local", "--r2", "--sync-db", "--lessons"].includes(argument),
-    )
-  ) {
-    throw new Error("Unknown option. Use --generate with --local or --r2; --sync-db is optional.");
+function isLocalSupabase(url: string) {
+  return ["127.0.0.1", "localhost"].includes(new URL(url).hostname);
+}
+
+interface DatabaseDraft {
+  id: string;
+  revision: number;
+  content: DraftContent;
+}
+
+// Drafts edited on the web live in Supabase; the revision guards against concurrent edits.
+async function loadDatabaseDrafts(client: SupabaseClient, lessonId: string | undefined) {
+  let query = client
+    .from("lessons")
+    .select("id, draft_content, draft_revision")
+    .is("archived_at", null);
+  if (lessonId) {
+    query = query.eq("id", lessonId);
   }
-  const isLessonAudio = args.includes("--lessons");
+  const { data, error } = await query;
+  if (error) {
+    throw new Error(
+      "Unable to read lesson drafts from Supabase. Check the URL, key and migrations.",
+    );
+  }
+  return (data ?? []).flatMap((row): DatabaseDraft[] => {
+    const parsed = draftContentSchema.safeParse(row.draft_content);
+    if (!parsed.success) {
+      console.warn(`Skipped ${String(row.id)}: draft content does not match the draft contract.`);
+      return [];
+    }
+    return [{ id: String(row.id), revision: Number(row.draft_revision), content: parsed.data }];
+  });
+}
+
+async function main() {
+  const { values } = parseArgs({
+    options: {
+      generate: { type: "boolean", default: false },
+      local: { type: "boolean", default: false },
+      r2: { type: "boolean", default: false },
+      "sync-db": { type: "boolean", default: false },
+      lessons: { type: "boolean", default: false },
+      db: { type: "boolean", default: false },
+      lesson: { type: "string" },
+    },
+  });
+  const isLessonAudio = values.lessons;
+  const isDatabaseSource = values.db;
+  if ((isDatabaseSource || values.lesson) && !isLessonAudio) {
+    throw new Error("--db and --lesson only apply to lesson audio (--lessons).");
+  }
   const audioFolder = isLessonAudio ? "audio/lessons" : "audio/kana";
-  const generate = args.includes("--generate");
-  const cloud = args.includes("--r2");
-  const sync = args.includes("--sync-db");
+  const generate = values.generate;
+  const cloud = values.r2;
+  const sync = values["sync-db"];
   const voice = process.env.AZURE_SPEECH_VOICE || "ja-JP-NanamiNeural";
-  const draftFiles = isLessonAudio
-    ? await Promise.all(
-        (await readdir("content/lessons"))
-          .filter((file) => file.endsWith(".json"))
-          .map(async (file) => {
-            const path = resolve("content/lessons", file);
-            const original = await readFile(path, "utf8");
-            return { path, original, draft: lessonDraftSchema.parse(JSON.parse(original)) };
-          }),
-      )
-    : [];
-  const plan = isLessonAudio
-    ? planLessonAudio(
-        draftFiles.map((file) => file.draft),
-        voice,
-      )
-    : kanaItems.map((item) => {
-        const config = canonicalAudio(item.kana, voice);
-        return { itemId: item.id, config, hash: audioHash(config) };
-      });
+  const sourceClient = isDatabaseSource
+    ? createClient(required("SUPABASE_URL"), required("SUPABASE_SECRET_KEY"), {
+        auth: { persistSession: false, autoRefreshToken: false },
+      })
+    : null;
+  const databaseDrafts = sourceClient ? await loadDatabaseDrafts(sourceClient, values.lesson) : [];
+  const draftFiles =
+    isLessonAudio && !isDatabaseSource
+      ? await Promise.all(
+          (await readdir("content/lessons"))
+            .filter((file) => file.endsWith(".json"))
+            .map(async (file) => {
+              const path = resolve("content/lessons", file);
+              const original = await readFile(path, "utf8");
+              return { path, original, draft: lessonDraftSchema.parse(JSON.parse(original)) };
+            }),
+        )
+      : [];
+  let plan = kanaItems.map((item) => {
+    const config = canonicalAudio(item.kana, voice);
+    return { itemId: item.id, config, hash: audioHash(config) };
+  });
+  if (isDatabaseSource) {
+    plan = databaseDrafts.flatMap((draft) => planContentAudio(draft.id, draft.content, voice));
+  } else if (isLessonAudio) {
+    plan = planLessonAudio(
+      draftFiles
+        .filter((file) => !values.lesson || file.draft.id === values.lesson)
+        .map((file) => file.draft),
+      voice,
+    );
+  }
   if (!generate) {
-    if (args.some((argument) => argument !== "--lessons")) {
+    if (values.local || cloud || sync) {
       throw new Error("Use --local, --r2 and --sync-db only with --generate.");
     }
     console.log(
       `Dry-run: ${plan.length} ${isLessonAudio ? "lesson audio entries" : "kana items"}, voice ${voice}, ${new Set(plan.map((asset) => asset.hash)).size} hashes. No network calls or file writes.`,
     );
+    const lessonFlags = `${isLessonAudio ? " --lessons" : ""}${isDatabaseSource ? " --db --sync-db" : ""}`;
     console.log(
-      `Generate locally: npm run audio:generate -- --local${isLessonAudio ? " --lessons" : ""}; upload: npm run audio:generate -- --r2${isLessonAudio ? " --lessons" : ""}`,
+      `Generate locally: npm run audio:generate -- --local${lessonFlags}; upload: npm run audio:generate -- --r2${lessonFlags}`,
     );
     return;
   }
-  if (cloud === args.includes("--local")) {
+  if (cloud === values.local) {
     throw new Error("Choose exactly one destination: --local or --r2.");
   }
-  if (sync && !cloud) {
+  // Local paths are only meaningful for a Supabase stack on this machine.
+  if (sync && !cloud && !isLocalSupabase(required("SUPABASE_URL"))) {
     throw new Error("--sync-db requires --r2 so metadata contains a public URL.");
+  }
+  if (isDatabaseSource && !sync) {
+    console.warn(
+      "Without --sync-db the new hashes are not registered and publishing will reject them.",
+    );
   }
   const key = required("AZURE_SPEECH_KEY");
   const region = required("AZURE_SPEECH_REGION");
@@ -124,6 +195,9 @@ async function main() {
   const manifestPath = resolve(
     isLessonAudio ? "content/lesson-audio-manifest.json" : "content/audio-manifest.json",
   );
+  const startManifest = isDatabaseSource
+    ? { schemaVersion: 1 as const, assets: {} }
+    : manifestSchema.parse(JSON.parse(await readFile(manifestPath, "utf8")));
   const lockPath = resolve(".audio-generation.lock");
   const lock = await open(lockPath, "wx").catch((error) => {
     if ((error as NodeJS.ErrnoException).code === "EEXIST") {
@@ -134,7 +208,7 @@ async function main() {
     throw error;
   });
   try {
-    const manifest = manifestSchema.parse(JSON.parse(await readFile(manifestPath, "utf8")));
+    const manifest = startManifest;
     await mkdir(resolve(`public/${audioFolder}`), { recursive: true });
     const result = await generateAudioAssets({
       plan,
@@ -212,13 +286,44 @@ async function main() {
         }
       },
       async saveManifest(nextManifest) {
+        // Database drafts carry their own hashes; the file manifest belongs to repository drafts.
+        if (isDatabaseSource) {
+          return;
+        }
         await writeFile(`${manifestPath}.tmp`, JSON.stringify(nextManifest, null, 2) + "\n");
         await rename(`${manifestPath}.tmp`, manifestPath);
       },
       onAsset: (asset, existed) =>
         console.log(`${asset.itemId}: ${existed ? "exists" : "generated"} ${asset.hash}`),
     });
-    if (isLessonAudio) {
+    if (sourceClient) {
+      for (const draft of databaseDrafts) {
+        const content = applyContentAudio(draft.id, draft.content, result.manifest.assets);
+        if (JSON.stringify(content) === JSON.stringify(draft.content)) {
+          continue;
+        }
+        const { data, error } = await sourceClient
+          .from("lessons")
+          .update({
+            draft_content: content,
+            draft_revision: draft.revision + 1,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", draft.id)
+          .eq("draft_revision", draft.revision)
+          .select("id");
+        if (error || !data?.length) {
+          console.warn(
+            `${draft.id}: draft changed during generation; run again before publishing.`,
+          );
+          continue;
+        }
+        console.log(
+          `${draft.id}: audio hashes written to the draft (revision ${draft.revision + 1}).`,
+        );
+      }
+      console.log("Publish from the lesson editor after reviewing the audio.");
+    } else if (isLessonAudio) {
       for (const file of draftFiles) {
         if ((await readFile(file.path, "utf8")) !== file.original) {
           throw new Error(

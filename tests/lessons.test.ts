@@ -3,7 +3,12 @@ import { test } from "node:test";
 
 import rawCatalog from "../content/lesson-catalog.json";
 import rawDraft from "../content/lessons/lesson-01.json";
-import { applyLessonAudio, planLessonAudio } from "../lib/lesson-audio";
+import {
+  applyContentAudio,
+  applyLessonAudio,
+  planContentAudio,
+  planLessonAudio,
+} from "../lib/lesson-audio";
 import { findPublicVersion, publishLocalLesson } from "../lib/lesson-catalog";
 import { lessonCatalogSchema, lessonDraftSchema, toPublicLesson } from "../lib/lesson-schema";
 import { parseSlideHash, slideMessageSchema } from "../lib/slide-navigation";
@@ -75,6 +80,51 @@ test("lesson audio updates only cloned drafts and leaves published snapshots unc
   assert.ok(next.content.vocab[0].audio);
   assert.equal(draft.content.vocab[0].audio, null);
   assert.equal(catalog.versions[0].content.vocab[0].audio, null);
+});
+
+test("listening transcripts get audio plans while unfinished text is skipped", () => {
+  const content = {
+    vocab: [{ id: "v-blank", jp: " ", romaji: "", vi: "", audio: null }],
+    grammar: [],
+    questions: [
+      {
+        id: "q-listen",
+        type: "listen" as const,
+        prompt: "Nghe",
+        explain: "Giải thích",
+        points: 1,
+        tags: [],
+        transcript: "がっこうへいきます。",
+        audio: null,
+        maxListens: null,
+        responseType: "fill" as const,
+        answer: ["がっこう"],
+      },
+      {
+        id: "q-empty",
+        type: "dictation" as const,
+        prompt: "Nghe",
+        explain: "Giải thích",
+        points: 1,
+        tags: [],
+        transcript: "",
+        audio: null,
+        maxListens: null,
+        inputMode: "hiragana" as const,
+        kanjiStrict: false,
+        answer: [],
+      },
+    ],
+  };
+  const plan = planContentAudio("lesson-09", content, "ja-JP-NanamiNeural");
+  assert.deepEqual(
+    plan.map((asset) => [asset.itemId, asset.config.text]),
+    [["lesson-09:question:q-listen", "がっこうへいきます。"]],
+  );
+  const next = applyContentAudio("lesson-09", content, { [plan[0].itemId]: plan[0].hash });
+  assert.equal(next.questions[0].audio, plan[0].hash);
+  assert.equal(next.questions[1].audio, null);
+  assert.equal(content.questions[0].audio, null, "the input draft is not mutated");
 });
 
 test("slide hash and presenter messages reject invalid indices and unexpected fields", () => {

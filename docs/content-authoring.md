@@ -28,6 +28,15 @@ Plan chỉ liệt kê công việc. Generate cần khóa Azure; output ở publi
 
 Với R2, dùng --lessons --r2 và R2_LESSON_PUBLIC_BASE_URL; đặt NEXT_PUBLIC_LESSON_AUDIO_BASE_URL cùng base cho web. Thêm --sync-db khi muốn đăng ký metadata trong Supabase. Không đặt secret vào biến NEXT_PUBLIC_ hoặc tên file audio.
 
+Bài soạn trên web nằm trong database, không có file JSON. Sinh audio cho nháp đó (từ vựng, câu ví dụ, transcript câu nghe):
+
+```bash
+npm run audio:plan -- --lessons --db --lesson lesson-id
+npm run audio:generate -- --lessons --db --sync-db --r2 --lesson lesson-id
+```
+
+Bỏ --lesson để xử lý mọi bài chưa lưu trữ. Script ghi hash vào nháp chỉ khi revision chưa đổi trong lúc chạy, rồi giảng viên tải lại editor, nghe thử và xuất bản. Câu nghe không xuất bản được khi chưa có audio. Với Supabase local có thể dùng --local thay --r2; database cloud bắt buộc --r2 để metadata có URL công khai.
+
 ## Xuất bản Supabase
 
 Chỉ thực hiện khi đã chỉ định staging, áp dụng migration và chuẩn bị owner teacher. Draft phải isSample=false, đủ audio và các hash đã được đăng ký trong audio_assets.

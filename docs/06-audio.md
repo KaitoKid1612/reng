@@ -84,7 +84,7 @@ Mở trang nhanh hơn thấy rõ.
 
 ## Script sinh audio
 
-Bản hiện có xử lý kana mặc định, hoặc draft bài học với --lessons; dry-run không gọi dịch vụ. Luồng lesson audio dùng manifest riêng, cập nhật draft và yêu cầu xuất bản version mới sau khi nghe duyệt. Chi tiết tại [hướng dẫn biên soạn](content-authoring.md). MP3 thật/Azure/R2 chưa được kiểm chứng khi chưa cấu hình credentials.
+Bản hiện có xử lý kana mặc định, hoặc draft bài học với --lessons; dry-run không gọi dịch vụ. Luồng lesson audio dùng manifest riêng, cập nhật draft và yêu cầu xuất bản version mới sau khi nghe duyệt. Thêm --db để đọc và ghi nháp soạn trên web trong Supabase (gồm transcript câu nghe), có kiểm tra revision. Chi tiết tại [hướng dẫn biên soạn](content-authoring.md). MP3 thật/Azure/R2 chưa được kiểm chứng khi chưa cấu hình credentials.
 
 ```
 scripts/generate-audio.ts
