@@ -17,11 +17,28 @@ export const INPUT_MODES = ["hiragana", "katakana", "japanese"] as const;
 export type AssignmentMode = (typeof ASSIGNMENT_MODES)[number];
 export type FeedbackPolicy = (typeof FEEDBACK_POLICIES)[number];
 export type InputMode = (typeof INPUT_MODES)[number];
-export type AssignableQuestion = Extract<LessonQuestion, { type: "choice" | "fill" }>;
+export type AssignableQuestion = Extract<
+  LessonQuestion,
+  { type: "choice" | "fill" | "listen" | "dictation" }
+>;
 
-// Phase 3 screens render choice and fill only; other types stay gradable but cannot be assigned.
+const ASSIGNABLE_TYPES: readonly LessonQuestion["type"][] = [
+  "choice",
+  "fill",
+  "listen",
+  "dictation",
+];
+export const MAX_RECORDED_LISTENS = 100;
+
+// Matching and ordering stay gradable but have no learner screen yet, so they cannot be assigned.
 export function isAssignableQuestion(question: LessonQuestion): question is AssignableQuestion {
-  return question.type === "choice" || question.type === "fill";
+  return ASSIGNABLE_TYPES.includes(question.type);
+}
+
+export function isListeningQuestion(
+  question: Pick<LessonQuestion, "type">,
+): question is Extract<LessonQuestion, { type: "listen" | "dictation" }> {
+  return question.type === "listen" || question.type === "dictation";
 }
 
 const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
@@ -30,11 +47,15 @@ export const assignableQuestionSchema = questionSchema.superRefine((question, co
   if (!isAssignableQuestion(question)) {
     context.addIssue({
       code: "custom",
-      message: "Only choice and fill questions can be assigned.",
+      message: "Only choice, fill, listen and dictation questions can be assigned.",
     });
     return;
   }
-  if (question.type === "fill" && question.kanjiStrict && !question.answer.every(containsKanji)) {
+  if (
+    (question.type === "fill" || question.type === "dictation") &&
+    question.kanjiStrict &&
+    !question.answer.every(containsKanji)
+  ) {
     context.addIssue({
       code: "custom",
       message: "Kanji-strict answers must all contain the target kanji form.",
@@ -45,7 +66,7 @@ export const assignableQuestionSchema = questionSchema.superRefine((question, co
 export function parseAssignableQuestion(value: unknown): AssignableQuestion {
   const question = assignableQuestionSchema.parse(value);
   if (!isAssignableQuestion(question)) {
-    throw new Error("Only choice and fill questions can be assigned.");
+    throw new Error("Only choice, fill, listen and dictation questions can be assigned.");
   }
   return question;
 }
@@ -113,6 +134,11 @@ export function toTestQuestions(inputs: readonly TestQuestionInput[]): Assignabl
   );
 }
 
+interface ListeningFields {
+  audio: string | null;
+  maxListens: number | null;
+}
+
 export type QuestionView =
   | {
       id: string;
@@ -122,27 +148,47 @@ export type QuestionView =
       options: string[];
       multiple: boolean;
     }
-  | { id: string; type: "fill"; prompt: string; points: number; inputMode: InputMode };
+  | { id: string; type: "fill"; prompt: string; points: number; inputMode: InputMode }
+  | ({ id: string; type: "listen"; prompt: string; points: number } & ListeningFields &
+      ({ responseType: "choice"; options: string[] } | { responseType: "fill" }))
+  | ({
+      id: string;
+      type: "dictation";
+      prompt: string;
+      points: number;
+      inputMode: InputMode;
+    } & ListeningFields);
 
-// Allowlist for anything sent to a learner before feedback is permitted.
+// Allowlist for anything sent to a learner before feedback is permitted: no answers,
+// explanations or transcripts.
 export function toQuestionView(question: AssignableQuestion): QuestionView {
-  if (question.type === "choice") {
-    return {
-      id: question.id,
-      type: "choice",
-      prompt: question.prompt,
-      points: question.points,
-      options: question.options,
-      multiple: question.multiple,
-    };
+  const base = { id: question.id, prompt: question.prompt, points: question.points };
+  switch (question.type) {
+    case "choice":
+      return { ...base, type: "choice", options: question.options, multiple: question.multiple };
+    case "fill":
+      return { ...base, type: "fill", inputMode: question.inputMode };
+    case "listen": {
+      const listening = { audio: question.audio, maxListens: question.maxListens };
+      return question.responseType === "choice"
+        ? {
+            ...base,
+            ...listening,
+            type: "listen",
+            responseType: "choice",
+            options: question.options ?? [],
+          }
+        : { ...base, ...listening, type: "listen", responseType: "fill" };
+    }
+    case "dictation":
+      return {
+        ...base,
+        type: "dictation",
+        inputMode: question.inputMode,
+        audio: question.audio,
+        maxListens: question.maxListens,
+      };
   }
-  return {
-    id: question.id,
-    type: "fill",
-    prompt: question.prompt,
-    points: question.points,
-    inputMode: question.inputMode,
-  };
 }
 
 export interface AttemptItem {
@@ -197,21 +243,28 @@ export function getDeadlineState(
 export interface AttemptDraft {
   answers: Record<string, RawAnswer>;
   checked: string[];
+  // Client-observed plays per listening question; never used to decide pass or fail.
+  listens: Record<string, number>;
 }
 
-export const EMPTY_DRAFT: AttemptDraft = { answers: {}, checked: [] };
+export const EMPTY_DRAFT: AttemptDraft = { answers: {}, checked: [], listens: {} };
 
 const draftEnvelopeSchema = z
   .object({
     answers: z.record(z.string(), z.unknown()),
     checked: z.array(z.string()).default([]),
+    listens: z.record(z.string(), z.number().int().min(0).max(MAX_RECORDED_LISTENS)).default({}),
   })
   .strict();
 
-function parseViewAnswer(view: QuestionView, value: unknown): RawAnswer {
-  return view.type === "choice"
-    ? parseChoiceSelection(view.options.length, view.multiple, value)
-    : parseTextAnswer(value);
+export function parseViewAnswer(view: QuestionView, value: unknown): RawAnswer {
+  if (view.type === "choice") {
+    return parseChoiceSelection(view.options.length, view.multiple, value);
+  }
+  if (view.type === "listen" && view.responseType === "choice") {
+    return parseChoiceSelection(view.options.length, false, value);
+  }
+  return parseTextAnswer(value);
 }
 
 // Validates draft shape against the learner-visible view, so the same check runs in the
@@ -236,7 +289,11 @@ export function parseAttemptDraft(views: readonly QuestionView[], value: unknown
   if (checked.some((questionId) => !views.some((item) => item.id === questionId))) {
     throw new Error("Draft marks an unknown question as checked.");
   }
-  return { answers, checked };
+  const listeningIds = views.filter(isListeningQuestion).map((view) => view.id);
+  if (Object.keys(envelope.listens).some((questionId) => !listeningIds.includes(questionId))) {
+    throw new Error("Draft counts plays for a question without audio.");
+  }
+  return { answers, checked, listens: envelope.listens };
 }
 
 export function countBlankAnswers(views: readonly QuestionView[], draft: AttemptDraft) {
@@ -244,9 +301,16 @@ export function countBlankAnswers(views: readonly QuestionView[], draft: Attempt
 }
 
 export function describeCorrectAnswer(question: AssignableQuestion) {
-  return question.type === "choice"
-    ? question.answer.map((index) => question.options[index]).join(" / ")
-    : question.answer.join(" / ");
+  if (
+    question.type === "choice" ||
+    (question.type === "listen" && question.responseType === "choice")
+  ) {
+    const options = question.options ?? [];
+    return question.answer
+      .map((answer) => (typeof answer === "number" ? options[answer] : answer))
+      .join(" / ");
+  }
+  return question.answer.join(" / ");
 }
 
 // Stored answers are JSON; anything outside the known raw shapes is treated as blank.
@@ -264,14 +328,18 @@ export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer |
   if (raw === null || isBlankAnswer(raw)) {
     return "";
   }
-  if (question.type === "fill") {
+  const isChoice =
+    question.type === "choice" ||
+    (question.type === "listen" && question.responseType === "choice");
+  if (!isChoice) {
     return typeof raw === "string" ? raw : "";
   }
   if (!Array.isArray(raw)) {
     return "";
   }
+  const options = question.options ?? [];
   return raw
-    .map((index) => (typeof index === "number" ? question.options[index] : undefined))
+    .map((index) => (typeof index === "number" ? options[index] : undefined))
     .filter((option): option is string => option !== undefined)
     .join(" / ");
 }

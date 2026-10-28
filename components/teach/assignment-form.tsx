@@ -15,7 +15,7 @@ import {
 } from "@/lib/test-question-draft";
 import { fromVietnamInput } from "@/lib/vietnam-time";
 
-import type { AssignmentMode, FeedbackPolicy } from "@/lib/assignment";
+import type { AssignableQuestion, AssignmentMode, FeedbackPolicy } from "@/lib/assignment";
 import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
 const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
@@ -23,11 +23,18 @@ const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
   after_submit: ", công bố kết quả ngay sau khi nộp",
 };
 
+const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = {
+  choice: "trắc nghiệm",
+  fill: "điền từ",
+  listen: "nghe",
+  dictation: "chính tả",
+};
+
 export interface AssignableLesson {
   lessonId: string;
   title: string;
   versionNo: number;
-  questions: { id: string; type: "choice" | "fill"; prompt: string; points: number }[];
+  questions: { id: string; type: AssignableQuestion["type"]; prompt: string; points: number }[];
 }
 
 interface AssignmentFormProps {
@@ -256,7 +263,9 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
         <fieldset className="form-card">
           <legend>Câu luyện từ phiên bản {lesson.versionNo}</legend>
           {lesson.questions.length === 0 && (
-            <p className="muted">Bài này chưa có câu luyện trắc nghiệm/điền từ.</p>
+            <p className="muted">
+              Bài này chưa có câu luyện giao được (trắc nghiệm, điền từ, nghe).
+            </p>
           )}
           {lesson.questions.map((question) => (
             <label key={question.id} className="choice-option">
@@ -273,7 +282,7 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
               />
               <span lang="ja">{question.prompt}</span>
               <span className="small muted">
-                {question.type === "choice" ? "trắc nghiệm" : "điền từ"}, {question.points} điểm
+                {QUESTION_TYPE_LABELS[question.type]}, {question.points} điểm
               </span>
             </label>
           ))}

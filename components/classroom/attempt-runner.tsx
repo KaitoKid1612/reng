@@ -8,7 +8,12 @@ import { AnswerFeedback } from "@/components/classroom/answer-feedback";
 import { QuestionField } from "@/components/classroom/question-field";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
 import { Button } from "@/components/ui/button";
-import { countBlankAnswers, describeCorrectAnswer } from "@/lib/assignment";
+import {
+  countBlankAnswers,
+  describeCorrectAnswer,
+  isListeningQuestion,
+  MAX_RECORDED_LISTENS,
+} from "@/lib/assignment";
 import { signInPath } from "@/lib/auth-paths";
 import { gradeQuestion } from "@/lib/grading/grade";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
@@ -73,11 +78,24 @@ export function AttemptRunner({
   const assignmentPath = `/assignments/${assignmentId}`;
 
   function handleAnswerChange(questionId: string, value: RawAnswer) {
-    sync.updateDraft({ ...sync.draft, answers: { ...sync.draft.answers, [questionId]: value } });
+    sync.updateDraft((current) => ({
+      ...current,
+      answers: { ...current.answers, [questionId]: value },
+    }));
   }
 
   function handleCheck(questionId: string) {
-    sync.updateDraft({ ...sync.draft, checked: [...sync.draft.checked, questionId] });
+    sync.updateDraft((current) => ({ ...current, checked: [...current.checked, questionId] }));
+  }
+
+  function handleListen(questionId: string) {
+    sync.updateDraft((current) => ({
+      ...current,
+      listens: {
+        ...current.listens,
+        [questionId]: Math.min(MAX_RECORDED_LISTENS, (current.listens[questionId] ?? 0) + 1),
+      },
+    }));
   }
 
   function handleMove(nextIndex: number) {
@@ -140,12 +158,15 @@ export function AttemptRunner({
                 value={raw}
                 isLocked={isReadOnly || isChecked}
                 onAnswerChange={(value) => handleAnswerChange(item.view.id, value)}
+                listenCount={sync.draft.listens[item.view.id] ?? 0}
+                onListen={() => handleListen(item.view.id)}
               />
               {mode === "practice" && answerKey && isChecked && (
                 <AnswerFeedback
                   isCorrect={gradeQuestion(answerKey, raw).isCorrect}
                   correctText={describeCorrectAnswer(answerKey)}
                   explain={answerKey.explain}
+                  transcript={isListeningQuestion(answerKey) ? answerKey.transcript : undefined}
                 />
               )}
               {mode === "practice" && answerKey && !isChecked && (

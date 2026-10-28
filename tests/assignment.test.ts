@@ -6,6 +6,7 @@ import {
   countBlankAnswers,
   describeCorrectAnswer,
   getDeadlineState,
+  isAssignableQuestion,
   isFeedbackAvailable,
   parseAssignableQuestion,
   parseAttemptDraft,
@@ -123,11 +124,75 @@ test("feedback and deadline states follow server time", () => {
 test("drafts reject unknown questions, invalid raw values and oversized payloads", () => {
   const views = questions.map(toQuestionView);
   const draft = parseAttemptDraft(views, { answers: { t1: [0], t2: "  " }, checked: ["t1"] });
-  assert.deepEqual(draft, { answers: { t1: [0] }, checked: ["t1"] });
+  assert.deepEqual(draft, { answers: { t1: [0] }, checked: ["t1"], listens: {} });
   assert.equal(countBlankAnswers(views, draft), 1);
   assert.throws(() => parseAttemptDraft(views, { answers: { other: "x" } }));
   assert.throws(() => parseAttemptDraft(views, { answers: { t1: [5] } }));
   assert.throws(() => parseAttemptDraft(views, { answers: {}, checked: ["missing"] }));
   assert.throws(() => parseAttemptDraft(views, { answers: { t2: "あ".repeat(201) } }));
   assert.throws(() => parseAttemptDraft(views, { answers: {}, extra: true }));
+});
+
+const listeningQuestions = [
+  parseAssignableQuestion({
+    id: "l1",
+    type: "listen",
+    prompt: "Người nói đi đâu?",
+    responseType: "choice",
+    audio: "a".repeat(32),
+    transcript: "がっこうへいきます。",
+    maxListens: 2,
+    options: ["がっこう", "えき"],
+    answer: [0],
+    explain: "がっこう là trường học.",
+    points: 1,
+  }),
+  parseAssignableQuestion({
+    id: "d1",
+    type: "dictation",
+    prompt: "Nghe và viết lại",
+    audio: "b".repeat(32),
+    transcript: "わたしはがくせいです。",
+    inputMode: "hiragana",
+    answer: ["わたしはがくせいです"],
+    explain: "Câu giới thiệu.",
+    points: 2,
+  }),
+];
+
+test("listening views hide transcripts and answers but keep audio and listen limits", () => {
+  const views = listeningQuestions.map(toQuestionView);
+  const serialized = JSON.stringify(views);
+  for (const field of ["transcript", "がっこうへいきます", '"answer"', '"explain"']) {
+    assert.equal(serialized.includes(field), false, `${field} leaked into a listening view`);
+  }
+  assert.deepEqual(views[0], {
+    id: "l1",
+    type: "listen",
+    prompt: "Người nói đi đâu?",
+    points: 1,
+    audio: "a".repeat(32),
+    maxListens: 2,
+    responseType: "choice",
+    options: ["がっこう", "えき"],
+  });
+  assert.equal(views[1].type === "dictation" && views[1].inputMode, "hiragana");
+  assert.equal(listeningQuestions.every(isAssignableQuestion), true);
+  assert.equal(describeCorrectAnswer(listeningQuestions[0]), "がっこう");
+});
+
+test("drafts record listens only for listening questions within the recorded range", () => {
+  const views = [...questions, ...listeningQuestions].map(toQuestionView);
+  const draft = parseAttemptDraft(views, {
+    answers: { l1: [1], d1: "わたし" },
+    checked: [],
+    listens: { l1: 2, d1: 0 },
+  });
+  assert.deepEqual(draft.listens, { l1: 2, d1: 0 });
+  assert.deepEqual(draft.answers, { l1: [1], d1: "わたし" });
+  assert.throws(() => parseAttemptDraft(views, { answers: { l1: [0, 1] } }), "single choice");
+  assert.throws(() => parseAttemptDraft(views, { answers: {}, listens: { t1: 1 } }));
+  assert.throws(() => parseAttemptDraft(views, { answers: {}, listens: { l1: 101 } }));
+  assert.throws(() => parseAttemptDraft(views, { answers: {}, listens: { l1: 1.5 } }));
+  assert.deepEqual(parseAttemptDraft(views, { answers: {} }).listens, {});
 });

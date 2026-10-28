@@ -11,6 +11,7 @@ import {
   FEEDBACK_POLICIES,
   isAssignableQuestion,
   isFeedbackAvailable,
+  isListeningQuestion,
   parseAssignableQuestion,
   parseAttemptDraft,
   toAttemptItems,
@@ -519,6 +520,7 @@ export async function submitAttempt(
         raw: item.raw,
         is_correct: item.isCorrect,
         points_earned: item.pointsEarned,
+        listen_count: draft.listens[item.questionId] ?? 0,
       })),
       p_score: grade.score,
       p_max_score: grade.maxScore,
@@ -540,6 +542,9 @@ export interface ResultItem {
   isCorrect: boolean;
   pointsEarned: number;
   explain: string;
+  // Listening questions only; null for other types.
+  transcript: string | null;
+  listenCount: number | null;
 }
 
 const answerRowSchema = z.object({
@@ -547,6 +552,7 @@ const answerRowSchema = z.object({
   raw: z.unknown(),
   is_correct: z.boolean(),
   points_earned: z.number().int(),
+  listen_count: z.number().int(),
 });
 
 // Shared by the learner results page (after the feedback gate) and the teacher view.
@@ -556,7 +562,7 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
     selectRows(
       createServiceClient()
         .from("answers")
-        .select("question_id, raw, is_correct, points_earned")
+        .select("question_id, raw, is_correct, points_earned, listen_count")
         .eq("submission_id", submissionId),
       answerRowSchema,
     ),
@@ -570,6 +576,8 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
       isCorrect: answer?.is_correct ?? false,
       pointsEarned: answer?.points_earned ?? 0,
       explain: question.explain,
+      transcript: isListeningQuestion(question) ? question.transcript : null,
+      listenCount: isListeningQuestion(question) ? (answer?.listen_count ?? 0) : null,
     };
   });
 }

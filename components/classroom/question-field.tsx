@@ -1,8 +1,11 @@
 "use client";
 
-import { JapaneseInput } from "@/components/classroom/japanese-input";
+import { useState } from "react";
 
-import type { QuestionView } from "@/lib/assignment";
+import { JapaneseInput } from "@/components/classroom/japanese-input";
+import { ListeningPlayer } from "@/components/listening/listening-player";
+
+import type { InputMode, QuestionView } from "@/lib/assignment";
 import type { RawAnswer } from "@/lib/grading/raw-answer";
 
 interface QuestionFieldProps {
@@ -12,6 +15,8 @@ interface QuestionFieldProps {
   value: RawAnswer | undefined;
   isLocked: boolean;
   onAnswerChange: (value: RawAnswer) => void;
+  listenCount?: number;
+  onListen?: () => void;
 }
 
 function toggleIndex(selection: readonly number[], index: number, isMultiple: boolean) {
@@ -23,6 +28,24 @@ function toggleIndex(selection: readonly number[], index: number, isMultiple: bo
     : [...selection, index].sort((first, second) => first - second);
 }
 
+function describeChoices(view: QuestionView) {
+  if (view.type === "choice") {
+    return { options: view.options, isMultiple: view.multiple };
+  }
+  if (view.type === "listen" && view.responseType === "choice") {
+    return { options: view.options, isMultiple: false };
+  }
+  return null;
+}
+
+function textInputMode(view: QuestionView): InputMode {
+  if (view.type === "fill" || view.type === "dictation") {
+    return view.inputMode;
+  }
+  // Listening answers may be kana or kanji, so learners can type romaji or use an IME.
+  return "japanese";
+}
+
 export function QuestionField({
   view,
   position,
@@ -30,7 +53,10 @@ export function QuestionField({
   value,
   isLocked,
   onAnswerChange,
+  listenCount,
+  onListen,
 }: QuestionFieldProps) {
+  const [localListens, setLocalListens] = useState(0);
   const fieldId = `question-${view.id}`;
   const meta = (
     <div className="question-meta">
@@ -40,18 +66,29 @@ export function QuestionField({
       <span>{view.points} điểm</span>
     </div>
   );
+  const player =
+    view.type === "listen" || view.type === "dictation" ? (
+      <ListeningPlayer
+        audio={view.audio}
+        maxListens={view.maxListens}
+        listenCount={listenCount ?? localListens}
+        onListen={onListen ?? (() => setLocalListens((count) => count + 1))}
+      />
+    ) : null;
+  const choices = describeChoices(view);
 
-  if (view.type === "fill") {
+  if (!choices) {
     return (
       <div>
         {meta}
         <label htmlFor={fieldId} className="question-prompt" lang="ja">
           {view.prompt}
         </label>
+        {player}
         <JapaneseInput
           id={fieldId}
           value={typeof value === "string" ? value : ""}
-          inputMode={view.inputMode}
+          inputMode={textInputMode(view)}
           isDisabled={isLocked}
           onValueChange={onAnswerChange}
         />
@@ -68,16 +105,17 @@ export function QuestionField({
       {meta}
       <fieldset>
         <legend lang="ja">{view.prompt}</legend>
-        {view.multiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
+        {player}
+        {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
         <div className="choice-list">
-          {view.options.map((option, index) => (
+          {choices.options.map((option, index) => (
             <label key={index} className="choice-option">
               <input
-                type={view.multiple ? "checkbox" : "radio"}
+                type={choices.isMultiple ? "checkbox" : "radio"}
                 name={fieldId}
                 checked={selection.includes(index)}
                 disabled={isLocked}
-                onChange={() => onAnswerChange(toggleIndex(selection, index, view.multiple))}
+                onChange={() => onAnswerChange(toggleIndex(selection, index, choices.isMultiple))}
               />
               <span lang="ja">{option}</span>
             </label>

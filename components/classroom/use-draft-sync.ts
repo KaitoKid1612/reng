@@ -221,8 +221,11 @@ export function useDraftSync(options: DraftSyncOptions) {
     };
   }, [initial.shouldDiscardBackup, key, schedule]);
 
+  // Accepts an updater so asynchronous events (such as a listen starting) never apply
+  // changes to a draft captured before newer typing.
   const updateDraft = useCallback(
-    (next: AttemptDraft) => {
+    (change: AttemptDraft | ((current: AttemptDraft) => AttemptDraft)) => {
+      const next = typeof change === "function" ? change(draftRef.current) : change;
       draftRef.current = next;
       changeRef.current += 1;
       setDraft(next);

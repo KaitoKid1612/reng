@@ -637,6 +637,26 @@ progress::-webkit-progress-value {
   text-align: center;
   margin-top: 20px;
 }
+.listening-player {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.listening-player .button-row {
+  margin: 0;
+}
+.listening-player p {
+  margin: 8px 0 0;
+}
+.listening-player button[aria-pressed="true"] {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.transcript {
+  color: var(--foreground);
+}
 .result-score {
   font-size: 64px;
   color: var(--primary);

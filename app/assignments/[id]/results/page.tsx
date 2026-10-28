@@ -94,6 +94,12 @@ export default async function ResultsPage({ params }: ResultsPageProps) {
                     Đáp án: <strong lang="ja">{item.correctText}</strong>
                   </p>
                 )}
+                {item.transcript !== null && (
+                  <p className="transcript">
+                    Transcript: <span lang="ja">{item.transcript}</span> (bạn đã nghe{" "}
+                    {item.listenCount} lần)
+                  </p>
+                )}
                 <p className="muted">{item.explain}</p>
               </div>
             ))}

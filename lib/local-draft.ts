@@ -5,7 +5,11 @@ const PREFIX = "masu:draft:";
 
 const backupSchema = z.object({
   baseRevision: z.number().int().nonnegative(),
-  draft: z.object({ answers: z.record(z.string(), z.unknown()), checked: z.array(z.string()) }),
+  draft: z.object({
+    answers: z.record(z.string(), z.unknown()),
+    checked: z.array(z.string()),
+    listens: z.record(z.string(), z.number()).default({}),
+  }),
   changedAt: z.string(),
 });
 
