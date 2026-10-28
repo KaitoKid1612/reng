@@ -43,6 +43,24 @@ export interface ListeningSummary {
   averageListens: number | null;
 }
 
+export interface ListeningTotals {
+  pointsEarned: number;
+  maxPoints: number;
+  listenTotal: number;
+  answerCount: number;
+}
+
+// Totals cover listen/dictation answers of each learner's latest attempts (docs/07).
+export function summarizeListening(totals: ListeningTotals | undefined): ListeningSummary {
+  if (!totals || totals.answerCount === 0) {
+    return { percent: null, averageListens: null };
+  }
+  return {
+    percent: totals.maxPoints > 0 ? toPercent(totals.pointsEarned, totals.maxPoints) : null,
+    averageListens: totals.listenTotal / totals.answerCount,
+  };
+}
+
 export interface MemberReport {
   member: ReportMember;
   assignedCount: number;

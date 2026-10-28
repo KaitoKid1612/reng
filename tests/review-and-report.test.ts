@@ -8,6 +8,7 @@ import {
   escapeCsvCell,
   selectLatestSubmissions,
   summarizeClass,
+  summarizeListening,
 } from "../lib/class-report";
 import { createJoinCode, formatJoinCode, isJoinCode, normalizeJoinCode } from "../lib/join-code";
 import {
@@ -172,6 +173,31 @@ test("labels follow abandoned, failing, weak listening, passing and no-data prec
       averagePercent: 90,
       passScore: 70,
       listening: { percent: 80, averageListens: 3.5 },
+    }),
+    "weak_listening",
+  );
+});
+
+test("listening summaries come from listening answers only and stay empty without them", () => {
+  assert.deepEqual(summarizeListening(undefined), { percent: null, averageListens: null });
+  assert.deepEqual(
+    summarizeListening({ pointsEarned: 0, maxPoints: 0, listenTotal: 0, answerCount: 0 }),
+    { percent: null, averageListens: null },
+  );
+  const summary = summarizeListening({
+    pointsEarned: 1,
+    maxPoints: 3,
+    listenTotal: 7,
+    answerCount: 2,
+  });
+  assert.equal(Math.round(summary.percent ?? 0), 33);
+  assert.equal(summary.averageListens, 3.5);
+  assert.equal(
+    computeLearnerLabel({
+      isAbandoned: false,
+      averagePercent: 90,
+      passScore: 70,
+      listening: summary,
     }),
     "weak_listening",
   );

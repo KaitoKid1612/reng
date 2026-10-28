@@ -35,7 +35,10 @@ export default async function StudentDetailPage({ params }: StudentDetailPagePro
       </div>
       <p>
         Đã nộp {detail.report.submittedCount}/{detail.report.assignedCount} bài, điểm trung bình{" "}
-        {detail.report.averagePercent === null ? "—" : formatPercent(detail.report.averagePercent)}.
+        {detail.report.averagePercent === null ? "—" : formatPercent(detail.report.averagePercent)}
+        {detail.report.averageListens !== null &&
+          `, nghe trung bình ${detail.report.averageListens.toFixed(1)} lần mỗi câu nghe`}
+        .
       </p>
       {detail.rows.map((row) => (
         <section key={row.assignment.id} className="section-block">
@@ -57,6 +60,7 @@ export default async function StudentDetailPage({ params }: StudentDetailPagePro
               <p>
                 Trả lời: <span lang="ja">{item.answerText || "(bỏ trống)"}</span>; đáp án:{" "}
                 <span lang="ja">{item.correctText}</span>
+                {item.listenCount !== null && `; nghe ${item.listenCount} lần`}
               </p>
             </div>
           ))}

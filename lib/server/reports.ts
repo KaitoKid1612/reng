@@ -7,6 +7,7 @@ import {
   buildReportCsv,
   selectLatestSubmissions,
   summarizeClass,
+  summarizeListening,
 } from "@/lib/class-report";
 import { toPercent } from "@/lib/grading/grade";
 import {
@@ -80,6 +81,31 @@ const submittedRowSchema = z.object({
   submitted_at: timestamp,
 });
 
+const listeningSchema = z.array(
+  z.object({
+    user_id: z.uuid(),
+    points_earned: z.coerce.number().int(),
+    max_points: z.coerce.number().int(),
+    listen_total: z.coerce.number().int(),
+    answer_count: z.coerce.number().int(),
+  }),
+);
+
+async function loadListening(classId: string) {
+  const rows = await callRpc("class_listening_summary", { p_class_id: classId }, listeningSchema);
+  return new Map(
+    rows.map((row) => [
+      row.user_id,
+      summarizeListening({
+        pointsEarned: row.points_earned,
+        maxPoints: row.max_points,
+        listenTotal: row.listen_total,
+        answerCount: row.answer_count,
+      }),
+    ]),
+  );
+}
+
 const statsSchema = z.array(
   z.object({
     question_id: z.string(),
@@ -91,10 +117,11 @@ const statsSchema = z.array(
 
 export async function getClassReport(teacherId: string, classId: string, now: Date) {
   const classRow = await getTeacherClass(teacherId, classId);
-  const [roster, assignments, lessons] = await Promise.all([
+  const [roster, assignments, lessons, listening] = await Promise.all([
     loadRoster(classId),
     listClassAssignments([classId]),
     listClassLessons(classId),
+    loadListening(classId),
   ]);
   const assignmentIds = assignments.map((assignment) => assignment.id);
   const service = createServiceClient();
@@ -143,7 +170,6 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
     dueAt: assignment.dueAt,
     publishedAt: assignment.publishedAt,
   }));
-  // Phase 3 assignments contain no listening items, so listening summaries stay empty.
   const reports = members.map((member) =>
     buildMemberReport({
       member,
@@ -151,6 +177,7 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
       latest,
       passScore: classRow.pass_score,
       now,
+      listening: listening.get(member.userId),
       lastStudyDay: lastStudyDays.get(member.userId) ?? null,
     }),
   );
@@ -201,7 +228,10 @@ export async function getStudentDetail(
   if (!member) {
     throw new ServiceError("not_found");
   }
-  const assignments = await listClassAssignments([classId]);
+  const [assignments, listening] = await Promise.all([
+    listClassAssignments([classId]),
+    loadListening(classId),
+  ]);
   const attempts = await listUserAttempts(
     studentId,
     assignments.map((assignment) => assignment.id),
@@ -260,6 +290,7 @@ export async function getStudentDetail(
     latest,
     passScore: classRow.pass_score,
     now,
+    listening: listening.get(member.user_id),
   });
   return { classRow, member, hasLeft: member.left_at !== null, report, rows };
 }
