@@ -6,6 +6,8 @@ Bộ tài liệu thiết kế cho website phục vụ việc giảng dạy N5: g
 
 Giai đoạn 2: [Basic Design](basic-design/phase-2.md), [Detail Design](detail-design/phase-2.md), [checklist](testing/phase-2.md), [biên soạn nội dung](content-authoring.md), [chuẩn bị staging](staging-setup.md).
 
+Giai đoạn 3: [Basic Design](basic-design/phase-3.md), [Detail Design](detail-design/phase-3.md), [checklist](testing/phase-3.md).
+
 Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu vẫn là tiếng Việt. Rule cho agent tại AGENTS.md ở thư mục gốc.
 
 | File | Nội dung | Đọc khi nào |
@@ -26,6 +28,9 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 | `basic-design/phase-1.md` | Basic Design: phạm vi, màn hình, hành vi và quyền | Trước triển khai giai đoạn 1 |
 | `detail-design/phase-1.md` | Detail Design: module, dữ liệu, luyện và audio | Khi triển khai giai đoạn 1 |
 | `testing/phase-1.md` | Truy vết yêu cầu và kết quả kiểm chứng | Khi review/nghiệm thu |
+| `basic-design/phase-3.md` | Basic Design: lớp học, bài giao, làm bài, ôn tập, theo dõi | Trước triển khai giai đoạn 3 |
+| `detail-design/phase-3.md` | Detail Design: RPC, API, chấm/nộp, FSRS, báo cáo | Khi triển khai giai đoạn 3 |
+| `testing/phase-3.md` | Truy vết và kết quả kiểm chứng giai đoạn 3 | Khi review/nghiệm thu |
 
 ## Nguyên tắc xuyên suốt
 

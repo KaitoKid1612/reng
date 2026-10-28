@@ -88,7 +88,7 @@ Mọi câu có `id`, `type`, `prompt`, `points` là số nguyên dương, `tags`
 
 ## Hợp đồng database
 
-Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Migrations đã được chuẩn bị và kiểm tra local, chưa áp dụng cloud.
+Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Migrations đã được chuẩn bị và kiểm tra local, chưa áp dụng cloud. Migration 202610280003 thêm cờ is_sample vào publish_lesson; 202610280004 tạo các bảng giai đoạn 3, trigger bất biến, RLS chỉ đọc và RPC transaction theo [DD giai đoạn 3](detail-design/phase-3.md). Bốn migration đã chạy trên Supabase local (Postgres 17) và PGlite, chưa áp dụng cloud.
 
 Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác. Thời gian lưu `timestamptz` UTC; ngày học và ngày nhắc tính theo `Asia/Ho_Chi_Minh`.
 
@@ -98,14 +98,15 @@ Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác
 | `lessons` | `id text PK`, `owner_id` FK profiles, `course_id`, `order_no`, `title`, `draft_content jsonb`, `draft_revision int`, `published_version_id`, `visibility` CHECK public/class, `archived_at`, timestamps. |
 | `lesson_versions` | `id`, `lesson_id` FK lessons, `version_no`, `title`, `content jsonb`, `published_at`; UNIQUE lesson_id/version_no. Bất biến sau xuất bản. Con trỏ published_version_id phải thuộc đúng bài. |
 | `class_lessons` | `class_id`, `lesson_id`, `lesson_version_id`, `order_no`, `available_at` (bắt buộc); PK class_id/lesson_id, UNIQUE class_id/order_no. Phiên bản phải thuộc bài đã chọn; giáo viên lớp sở hữu bài. |
-| `classes` | `id`, `teacher_id`, `name`, `join_code text UNIQUE`, `active`, `pass_score int CHECK 0..100 DEFAULT 70`, `created_at`. |
+| `classes` | `id`, `teacher_id`, `name`, `join_code text UNIQUE` (8 ký tự không nhầm lẫn), `join_enabled boolean DEFAULT true` để thu hồi mã, `active`, `pass_score int CHECK 0..100 DEFAULT 70`, `created_at`. |
 | `enrollments` | `class_id`, `user_id`, `joined_at`, `left_at`; PK class_id/user_id. Chỉ thành viên còn hoạt động được bắt đầu/nộp bài. |
 | `assignments` | `id`, `class_id`, `lesson_id`, `lesson_version_id`, `title`, `mode` CHECK practice/test, `status` CHECK draft/published/closed, `due_at`, `allow_late boolean DEFAULT false`, `pass_score int CHECK 0..100 DEFAULT 70`, `max_attempts int CHECK >0 DEFAULT 1`, `feedback_policy` CHECK after_submit/after_due, `published_at`. |
 | `assignment_items` | `assignment_id`, `question_id text`, `position int`, `question_snapshot jsonb`; PK assignment_id/question_id, UNIQUE assignment_id/position. Snapshot chứa đầy đủ đề, đáp án và trọng số, chỉ server/giáo viên đọc. |
 | `submissions` | `id`, `assignment_id`, `user_id`, `attempt_no int >0`, `status` CHECK in_progress/submitted, `draft_answers jsonb`, `draft_revision int`, `score int`, `max_score int`, `passed boolean`, `is_late boolean`, `started_at`, `last_saved_at`, `submitted_at`; UNIQUE assignment_id/user_id/attempt_no. |
 | `answers` | `submission_id`, `question_id`, `raw jsonb`, `is_correct boolean`, `points_earned int >=0`, `listen_count int >=0`, `time_ms int >=0`; PK submission_id/question_id, FK submission_id, FK tới câu trong assignment thông qua kiểm tra server/transaction. |
 | `audio_assets` | `hash text PK`, `text`, `voice`, `url`, `duration_ms`, `created_at`. Hash là 32 ký tự hex đầu của SHA-256 trên canonicalInput, bao gồm cấu hình âm thanh, xem `06-audio.md`. Không cho học viên đọc cột text qua danh mục asset. |
-| `srs_cards` | `user_id`, `item_type` CHECK vocab/kanji/mistake, `source_id text`, `item_id text`, `scheduler_version`, `scheduler_state jsonb`, `due timestamptz`, `correct_streak int DEFAULT 0`, `resolved_at`; PK user_id/item_type/source_id/item_id. |
+| `srs_cards` | `user_id`, `item_type` CHECK vocab/kanji/mistake, `source_id text`, `item_id text`, `scheduler_version`, `scheduler_state jsonb`, `due timestamptz`, `correct_streak int DEFAULT 0`, `resolved_at`, `revision int` cho compare-and-swap, `created_at`, `updated_at`; PK user_id/item_type/source_id/item_id. |
+| `join_attempts` | `id`, `user_id`, `succeeded`, `attempted_at`; chỉ server ghi/đọc để giới hạn thử mã lớp. |
 | `review_events` | `id`, `user_id`, khóa thẻ SRS, `rating int CHECK 1..4`, `is_correct boolean` nullable, `reviewed_at`, `request_id uuid UNIQUE`. Ghi cùng transaction cập nhật thẻ; review_events tham chiếu đủ khóa ghép của srs_cards. |
 | `lesson_progress` | `user_id`, `lesson_id`, `lesson_version_id`, `last_slide_id`, `read_completed_at`, `updated_at`; PK user_id/lesson_id. Hoàn thành đọc do học viên bấm xác nhận, không suy ra từ mở trang. |
 | `notification_preferences` | `user_id PK`, `reminder_frequency` CHECK daily/due_only/off DEFAULT off, `weekly_enabled boolean DEFAULT false`, `teacher_digest_enabled boolean DEFAULT false`, `push_enabled boolean DEFAULT false`, `consented_at`, `updated_at`. |
