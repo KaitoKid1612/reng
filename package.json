@@ -16,11 +16,13 @@
     "validate:data": "node --import tsx scripts/validate-data.ts",
     "audio:plan": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts",
     "audio:generate": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts --generate",
-    "format": "prettier --write app components lib scripts tests e2e content *.ts *.mjs *.json .prettierrc.json README.md",
-    "format:check": "prettier --check app components lib scripts tests e2e content *.ts *.mjs *.json .prettierrc.json README.md",
+    "format": "prettier --write app components lib scripts tests e2e e2e-supabase content *.ts *.mjs *.json .prettierrc.json README.md",
+    "format:check": "prettier --check app components lib scripts tests e2e e2e-supabase content *.ts *.mjs *.json .prettierrc.json README.md",
     "lint:fix": "eslint . --fix",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
-    "lesson:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-lesson.ts"
+    "lesson:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-lesson.ts",
+    "seed:local": "node --env-file-if-exists=.env.local --import tsx scripts/seed-local.ts",
+    "test:e2e:supabase": "playwright test -c playwright.supabase.config.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.1158.0",
