@@ -38,7 +38,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | T03 | Theo dõi lớp | `/teach/classes/[id]` | 3 |
 | T04 | Chi tiết một học viên | `/teach/classes/[id]/students/[uid]` | 3 |
 | T05 | Giao bài tập | `/teach/classes/[id]/assign` | 3 |
-| T06 | Soạn bài | `/teach/lessons/[id]/edit` | 4 |
+| T06 | Soạn bài (tạo bài: `/teach/lessons/new`) | `/teach/lessons/[id]/edit` | 4 |
 | T07 | Nhập từ vựng CSV | `/teach/import-csv` | 4 |
 | T08 | Thi đấu trực tiếp | `/teach/live-quiz/[id]` | 6 |
 

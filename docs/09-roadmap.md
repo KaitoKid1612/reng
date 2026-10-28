@@ -188,3 +188,7 @@ Chưa nghiệm thu Supabase/Auth/Azure/R2 thật, chưa apply migrations hoặc 
 Đã có BD/DD, migration 0003–0004 (bảng lớp/bài giao/lượt/ôn tập, trigger bất biến, RLS chỉ đọc, RPC transaction), chấm điểm dùng chung ở lib/grading, tài khoản học viên với xác nhận email/đặt lại mật khẩu, vào lớp bằng mã, giao practice/test, làm bài có autosave/xung đột/mất mạng, kết quả theo chính sách phản hồi, sổ lỗi, flashcard/ôn tập FSRS, tiến độ, bảng theo dõi lớp, câu sai nhiều và CSV. Trước khi viết mã đã chạy Supabase local bằng Supabase CLI để kiểm chứng Auth và migration thật thay cho phiên giả.
 
 Đã kiểm chứng trên Supabase local với một giảng viên và hai học viên ở hai lớp (xem [checklist phase-3](testing/phase-3.md)). Chưa áp dụng cloud, chưa cấu hình SMTP/template email trên dashboard, chưa backup/khôi phục thử và chưa dùng với lớp thật. Dạng bài ghép đôi/sắp xếp/nghe vẫn chờ UI ở giai đoạn sau; nhãn yếu nghe chỉ có ý nghĩa khi có câu nghe.
+
+## Tiến độ local giai đoạn 4
+
+Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide, kéo thả/nút sắp xếp slide, lưu nháp compare-and-swap và xuất bản qua RPC, lỗi xuất bản theo mục, nhập từ vựng CSV/TSV có lỗi từng dòng. Đã kiểm chứng trên Supabase local ([checklist phase-4](testing/phase-4.md)). Phần email nhắc bài đang triển khai theo [DD giai đoạn 4](detail-design/phase-4.md).

@@ -13,8 +13,8 @@ BD mô tả hành vi người dùng, màn hình, nghiệp vụ, quyền và ki�
 | BD giai đoạn 1 | [basic-design/phase-1.md](basic-design/phase-1.md) |
 | DD dùng chung | 03, 05, 06, 07, 08 |
 | DD giai đoạn 1 | [detail-design/phase-1.md](detail-design/phase-1.md) |
-| BD/DD giai đoạn 2–3 | [phase-2](basic-design/phase-2.md), [phase-3](basic-design/phase-3.md); DD tương ứng trong detail-design/ |
-| Truy vết và nghiệm thu | [testing/phase-1.md](testing/phase-1.md), [phase-2](testing/phase-2.md), [phase-3](testing/phase-3.md) |
+| BD/DD giai đoạn 2–4 | [phase-2](basic-design/phase-2.md), [phase-3](basic-design/phase-3.md), [phase-4](basic-design/phase-4.md); DD tương ứng trong detail-design/ |
+| Truy vết và nghiệm thu | [testing/phase-1.md](testing/phase-1.md), [phase-2](testing/phase-2.md), [phase-3](testing/phase-3.md), [phase-4](testing/phase-4.md) |
 
 ## Luồng làm việc
 

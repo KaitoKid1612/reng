@@ -23,9 +23,14 @@ export default async function TeachPage() {
           <h1>Giảng dạy</h1>
           <p>Xin chào {account.fullName || account.email}.</p>
         </div>
-        <Link href="/teach/classes" className={buttonVariants()}>
-          Tạo lớp
-        </Link>
+        <div className="button-row">
+          <Link href="/teach/classes" className={buttonVariants()}>
+            Tạo lớp
+          </Link>
+          <Link href="/teach/lessons/new" className={buttonVariants({ variant: "outline" })}>
+            Tạo bài mới
+          </Link>
+        </div>
       </div>
       <section className="section-block" aria-labelledby="teacher-classes">
         <h2 id="teacher-classes">Lớp của tôi</h2>
@@ -55,6 +60,9 @@ export default async function TeachPage() {
       </section>
       <section className="section-block" aria-labelledby="teacher-lessons">
         <h2 id="teacher-lessons">Bài học tôi sở hữu</h2>
+        <p className="small">
+          <Link href="/teach/import-csv">Nhập từ vựng từ CSV/Excel</Link>
+        </p>
         {lessons.length ? (
           <ul className="item-list">
             {lessons.map((lesson) => (
@@ -66,11 +74,16 @@ export default async function TeachPage() {
                     {lesson.versions[0]?.version_no ?? "—"}
                   </p>
                 </div>
-                {lesson.publishedVersionId && (
-                  <Link href={`/lessons/${lesson.id}/slide?version=${lesson.publishedVersionId}#1`}>
-                    Trình chiếu
-                  </Link>
-                )}
+                <div className="button-row">
+                  <Link href={`/teach/lessons/${lesson.id}/edit`}>Soạn bài</Link>
+                  {lesson.publishedVersionId && (
+                    <Link
+                      href={`/lessons/${lesson.id}/slide?version=${lesson.publishedVersionId}#1`}
+                    >
+                      Trình chiếu
+                    </Link>
+                  )}
+                </div>
               </li>
             ))}
           </ul>

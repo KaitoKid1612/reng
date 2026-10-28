@@ -1,0 +1,27 @@
+# Truy vết và nghiệm thu giai đoạn 4
+
+PASS local không thay thế nghiệm thu gửi email thật, DNS hoặc lịch cron trên hosting. BD/DD tại ../basic-design/phase-4.md và ../detail-design/phase-4.md.
+
+| ID | Yêu cầu | Kiểm tra | Kết quả |
+|---|---|---|---|
+| G4-01 | ADMIN-01 | Tạo bài mới, soạn từ vựng/ngữ pháp/câu luyện/slide, xuất bản không mở editor code | PASS Supabase local — bài tạo từ trang trắng hiện ở /lessons và trang đọc cho khách |
+| G4-02 | ADMIN-02 | Xem trước slide khi soạn bằng cùng component trình chiếu | PASS Chromium — xem trước đổi theo nội dung đang gõ, không lỗi console/hydrate |
+| G4-03 | Sắp xếp slide | Kéo thả (chuột, chạm, bàn phím) và nút Lên/Xuống | PASS phạm vi đã chạy — nút Lên đổi thứ tự; kéo thả dnd-kit có ID SSR ổn định, chưa có E2E thao tác kéo |
+| G4-04 | Lưu nháp/xuất bản | Nháp chưa đủ vẫn lưu; xuất bản liệt kê lỗi theo mục; thiếu audio là cảnh báo | PASS — logic và E2E (lỗi tiêu đề Nhật/slide trước khi đủ) |
+| G4-05 | Xung đột revision | Hai tab: tải bản máy chủ hoặc ghi đè có chủ đích | PASS Chromium — cả hai lựa chọn |
+| G4-06 | ADMIN-03, VOCAB-05 | CSV/TSV/`;`, tiêu đề tiếng Việt, lỗi từng dòng, trùng, file không phải UTF-8 | PASS — unit test và E2E nhập 1/3 dòng hợp lệ |
+| G4-07 | DATA | Không xóa mục đang được slide dùng; sửa chữ Nhật xóa audio cũ; ID ngẫu nhiên không tái sử dụng | PASS logic |
+| G4-08 | DATA-01 | Xuất bản bản mới không đổi phiên bản lớp/bài giao đang ghim | PASS database — RPC publish_lesson (giai đoạn 2) và FK/snapshot giai đoạn 3 |
+| G4-09 | NOTI-01/02 | Email chỉ gửi khi đã bật và có việc; due_only | Chưa chạy |
+| G4-10 | Hủy | Link/header một chạm tắt ngay, job chưa gửi bị hủy | Chưa chạy |
+| G4-11 | Job | Cron chạy lặp/timeout không gửi trùng; lease, retry giới hạn | Chưa chạy |
+| G4-12 | Webhook | Chữ ký Svix, bounce/complaint tạm dừng gửi | Chưa chạy |
+| G4-13 | NOTI-03 | Tóm tắt lớp cho giảng viên chỉ khi có việc | Chưa chạy |
+| G4-14 | Thiết bị | Editor/nhập CSV ở 360px và bàn phím | Chưa chạy |
+| G4-15 | Vận hành thật | Resend, SPF/DKIM/DMARC, cron hosting, hộp thư thử | Chờ cấu hình |
+
+## Bằng chứng
+
+- 28/10/2026: npm run check qua (57 test logic/database). npm run test:e2e:supabase 11/11 gồm 3 kịch bản soạn bài; npm run test:e2e 21/21. Production build thành công, các route soạn bài render theo request.
+- Lỗi tìm thấy khi kiểm chứng và đã sửa: dnd-kit sinh ID mô tả khác nhau giữa server/client (lệch hydrate) — truyền `id` ổn định; editor mount lại sau khi xuất bản làm mất thông báo — tải bản máy chủ bằng action thay vì đổi key; nút bị disabled trong lúc lưu làm mất focus bàn phím — dùng aria-disabled.
+- Ảnh rà giao diện: test-results/editor-desktop.png (gitignore).

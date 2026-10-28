@@ -11,6 +11,7 @@ interface TestQuestionEditorProps {
   draft: TestQuestionDraft;
   position: number;
   showProblems: boolean;
+  removeBlockedReason?: string;
   onChange: (draft: TestQuestionDraft) => void;
   onRemove: () => void;
 }
@@ -25,6 +26,7 @@ export function TestQuestionEditor({
   draft,
   position,
   showProblems,
+  removeBlockedReason,
   onChange,
   onRemove,
 }: TestQuestionEditorProps) {
@@ -183,9 +185,10 @@ export function TestQuestionEditor({
           {problem}
         </p>
       )}
-      <Button variant="ghost" onClick={onRemove}>
+      <Button variant="ghost" onClick={onRemove} disabled={Boolean(removeBlockedReason)}>
         Xóa câu này
       </Button>
+      {removeBlockedReason && <p className="small muted">{removeBlockedReason}</p>}
     </fieldset>
   );
 }

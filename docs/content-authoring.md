@@ -2,6 +2,8 @@
 
 ## Nguồn và duyệt bài
 
+Từ giai đoạn 4, giảng viên soạn và xuất bản bài trên web tại /teach/lessons/new và /teach/lessons/[id]/edit, nhập từ vựng hàng loạt tại /teach/import-csv (CSV UTF-8 hoặc dán bảng Excel). Script bên dưới vẫn dùng cho bài mẫu trong repo và kiểm tra hàng loạt.
+
 Draft nằm ở content/lessons/*.json. Năm bài hiện tại là mẫu tự biên soạn, không nhập từ giáo trình hoặc từ điển bên ngoài. Giữ isSample=true cho đến khi giảng viên duyệt câu Nhật, nghĩa Việt, cách đọc, đáp án và audio. Không đánh dấu đã duyệt chỉ vì validator chạy qua.
 
 ID bài/item dùng tiếng Anh hoặc mã ổn định, không tái dùng ID cũ cho ý nghĩa khác. Slide chỉ refs/ref tới từ vựng/ngữ pháp/câu luyện. TeacherNotes là ghi chú riêng; note.body là nội dung công khai. Không đặt đáp án kiểm tra cần bảo mật vào questions của bài công khai.

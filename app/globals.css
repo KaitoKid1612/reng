@@ -102,7 +102,7 @@ h3 {
   background: var(--surface);
   z-index: 50;
 }
-.skip-link:focus {
+.skip-link:focus-visible {
   top: 12px;
 }
 .site-header {
@@ -1592,4 +1592,215 @@ body:has(.slide-shell) .site-footer {
 .submit-confirm h2 {
   font-size: 19px;
   margin-bottom: 4px;
+}
+
+/* Lesson editor and vocabulary import. */
+.editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.editor-preview {
+  position: sticky;
+  top: 16px;
+}
+.editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgb(28 27 26 / 8%);
+}
+.editor-status {
+  margin: 0;
+  font-size: 14px;
+}
+.editor-section {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.editor-section > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 19px;
+  min-height: 32px;
+}
+.editor-section[open] > summary {
+  margin-bottom: 16px;
+}
+.editor-section input:not([type="checkbox"], [type="radio"], [type="file"]),
+.editor-section select,
+.editor-section textarea,
+.add-slide select {
+  width: 100%;
+  border: 1px solid #a8a49d;
+  border-radius: 6px;
+  padding: 8px 10px;
+  min-height: 42px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+}
+.editor-section textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+.vocab-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  grid-template-areas:
+    "jp kanji status"
+    "romaji vi remove";
+  gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.vocab-row > :nth-child(1) {
+  grid-area: jp;
+}
+.vocab-row > :nth-child(2) {
+  grid-area: kanji;
+}
+.vocab-row > :nth-child(3) {
+  grid-area: romaji;
+}
+.vocab-row > :nth-child(4) {
+  grid-area: vi;
+}
+.vocab-row > :nth-child(5) {
+  grid-area: status;
+}
+.vocab-row > :nth-child(6) {
+  grid-area: remove;
+}
+.vocab-row input[lang="ja"],
+.example-row input[lang="ja"] {
+  font-size: 19px;
+}
+.example-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.slide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: grid;
+  gap: 6px;
+}
+.slide-list-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.slide-list-item[data-selected="true"] {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.slide-list-item[data-dragging="true"] {
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 8px 24px rgb(28 27 26 / 18%);
+}
+.drag-handle {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 6px;
+  cursor: grab;
+  touch-action: none;
+}
+.slide-list-select {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  padding: 8px 4px;
+  text-align: left;
+}
+.slide-list-select > span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.add-slide {
+  align-items: center;
+  margin-bottom: 20px;
+}
+.add-slide select {
+  width: auto;
+}
+.slide-preview {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.slide-preview-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 720px;
+  padding: 40px 56px;
+  transform-origin: top left;
+  font-size: 32px;
+  overflow: hidden;
+}
+.link-button {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font: inherit;
+  text-align: left;
+}
+@media (max-width: 1000px) {
+  .editor-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .editor-preview {
+    position: static;
+    grid-row: 1;
+  }
+}
+@media (max-width: 600px) {
+  .example-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .editor-section {
+    padding: 12px;
+  }
+}
+.button[aria-disabled="true"] {
+  cursor: progress;
+  opacity: 0.6;
 }
