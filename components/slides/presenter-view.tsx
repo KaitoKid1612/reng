@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { SlideContent } from "@/components/slides/slide-content";
 import { Button } from "@/components/ui/button";
+import { signInPath } from "@/lib/auth-paths";
 import { slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { PublicLesson } from "@/lib/lesson-schema";
@@ -138,7 +139,9 @@ export function PresenterView({ lesson }: PresenterViewProps) {
       <section className="presenter-notes">
         <h2>Ghi chú giảng viên</h2>
         <p>{current && notes[current.id] ? notes[current.id] : notesMessage}</p>
-        <Link href="/teach/sign-in">Đăng nhập giảng viên</Link>
+        <Link href={signInPath(`/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`)}>
+          Đăng nhập giảng viên
+        </Link>
       </section>
     </div>
   );

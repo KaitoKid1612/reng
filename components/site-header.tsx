@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { AccountLink } from "@/components/account-link";
+
 const NAVIGATION_LINKS = [
   { href: "/lessons", label: "Bài học" },
   { href: "/grammar", label: "Ngữ pháp" },
@@ -33,6 +35,7 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <AccountLink />
         </nav>
       </div>
     </header>
