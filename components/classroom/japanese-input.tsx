@@ -63,6 +63,7 @@ export function JapaneseInput({
       <input
         ref={inputRef}
         id={id}
+        type="text"
         lang="ja"
         className="japanese-input"
         value={value}
