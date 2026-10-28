@@ -1,0 +1,32 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+
+import { convertRomajiBeforeCaret, isJapaneseComposition } from "../lib/romaji-input";
+
+test("converts the romaji being typed and keeps an unfinished n or consonant", () => {
+  assert.deepEqual(convertRomajiBeforeCaret("ko", 2, "hiragana"), { value: "こ", caret: 1 });
+  assert.equal(convertRomajiBeforeCaret("kon", 3, "hiragana").value, "こn");
+  assert.equal(convertRomajiBeforeCaret("konn", 4, "hiragana").value, "こん");
+  assert.equal(convertRomajiBeforeCaret("k", 1, "hiragana").value, "k");
+  assert.equal(convertRomajiBeforeCaret("gakkou", 6, "hiragana").value, "がっこう");
+  assert.equal(convertRomajiBeforeCaret("ikimasu", 7, "katakana").value, "イキマス");
+  assert.equal(convertRomajiBeforeCaret("ra-men", 6, "katakana").value, "ラーメn");
+});
+
+test("leaves pasted kanji and text after the caret unchanged", () => {
+  assert.deepEqual(convertRomajiBeforeCaret("行きmasu", 6, "japanese"), {
+    value: "行きます",
+    caret: 4,
+  });
+  assert.deepEqual(convertRomajiBeforeCaret("わtaし", 3, "hiragana"), {
+    value: "わたし",
+    caret: 2,
+  });
+  assert.deepEqual(convertRomajiBeforeCaret("私は", 2, "japanese"), { value: "私は", caret: 2 });
+});
+
+test("skips only Japanese IME composition", () => {
+  assert.equal(isJapaneseComposition(true, "か"), true);
+  assert.equal(isJapaneseComposition(true, "ka"), false);
+  assert.equal(isJapaneseComposition(false, "か"), false);
+});

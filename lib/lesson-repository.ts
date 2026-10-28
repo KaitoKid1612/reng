@@ -17,6 +17,10 @@ function createLessonClient() {
   return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
 }
 
+export function isDatabaseLessonSource() {
+  return !isLocalLessonSource();
+}
+
 function isLocalLessonSource() {
   const source = process.env.LESSON_SOURCE || "local";
   if (source !== "local" && source !== "supabase") {

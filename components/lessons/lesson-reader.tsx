@@ -2,15 +2,17 @@ import Link from "next/link";
 
 import { AudioStatus } from "@/components/audio-provider";
 import { buttonVariants } from "@/components/ui/button";
+import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
 
 import type { PublicLesson } from "@/lib/lesson-schema";
 
 interface LessonReaderProps {
   lesson: PublicLesson;
+  progress: { completedAt: string | null } | null;
 }
 
-export function LessonReader({ lesson }: LessonReaderProps) {
+export function LessonReader({ lesson, progress }: LessonReaderProps) {
   return (
     <article className="lesson-reader">
       <div className="page-heading">
@@ -94,12 +96,25 @@ export function LessonReader({ lesson }: LessonReaderProps) {
           </article>
         ))}
       </section>
+      {progress && (
+        <LessonProgressButton
+          lessonId={lesson.lessonId}
+          versionId={lesson.id}
+          completedAt={progress.completedAt}
+        />
+      )}
       <div className="button-row">
         <Link
           href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`}
           className={buttonVariants()}
         >
           Ôn lại bằng slide
+        </Link>
+        <Link
+          href={`/vocabulary/${lesson.lessonId}`}
+          className={buttonVariants({ variant: "outline" })}
+        >
+          Flashcard từ vựng
         </Link>
         <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
           Các bài học

@@ -37,7 +37,7 @@ test("public HTML and anonymous endpoints never expose teacher notes", async ({ 
   const notes = await request.get("/api/lessons/lesson-01/notes");
   expect(notes.status()).toBe(401);
   expect(notes.headers()["cache-control"]).toContain("no-store");
-  const crossOrigin = await request.post("/api/auth/sign-in", {
+  const crossOrigin = await request.put("/api/submissions/any/draft", {
     headers: { Origin: "https://example.invalid" },
   });
   expect(crossOrigin.status()).toBe(403);

@@ -7,13 +7,17 @@ export const MAX_TEXT_ANSWER_LENGTH = 200;
 const index = z.number().int().nonnegative();
 const textAnswer = z.string().max(MAX_TEXT_ANSWER_LENGTH);
 
+export function parseTextAnswer(value: unknown) {
+  return textAnswer.parse(value);
+}
+
 export type RawAnswer = string | number[] | string[] | [number, number][];
 
 function hasUniqueValues(values: readonly (number | string)[]) {
   return new Set(values).size === values.length;
 }
 
-function parseChoice(optionCount: number, isMultiple: boolean, value: unknown) {
+export function parseChoiceSelection(optionCount: number, isMultiple: boolean, value: unknown) {
   const selection = z
     .array(index)
     .max(optionCount)
@@ -53,7 +57,7 @@ function parseOrder(tokenIds: readonly string[], value: unknown) {
 export function parseRawAnswer(question: LessonQuestion, value: unknown): RawAnswer {
   switch (question.type) {
     case "choice":
-      return parseChoice(question.options.length, question.multiple, value);
+      return parseChoiceSelection(question.options.length, question.multiple, value);
     case "fill":
     case "dictation":
       return textAnswer.parse(value);
@@ -66,7 +70,7 @@ export function parseRawAnswer(question: LessonQuestion, value: unknown): RawAns
       );
     case "listen":
       return question.responseType === "choice"
-        ? parseChoice(question.options?.length ?? 0, false, value)
+        ? parseChoiceSelection(question.options?.length ?? 0, false, value)
         : textAnswer.parse(value);
   }
 }

@@ -10,6 +10,7 @@ import {
   parseAssignableQuestion,
   parseAttemptDraft,
   toAttemptItems,
+  toQuestionView,
   toTestQuestions,
 } from "../lib/assignment";
 
@@ -120,12 +121,13 @@ test("feedback and deadline states follow server time", () => {
 });
 
 test("drafts reject unknown questions, invalid raw values and oversized payloads", () => {
-  const draft = parseAttemptDraft(questions, { answers: { t1: [0], t2: "  " }, checked: ["t1"] });
+  const views = questions.map(toQuestionView);
+  const draft = parseAttemptDraft(views, { answers: { t1: [0], t2: "  " }, checked: ["t1"] });
   assert.deepEqual(draft, { answers: { t1: [0] }, checked: ["t1"] });
-  assert.equal(countBlankAnswers(questions, draft), 1);
-  assert.throws(() => parseAttemptDraft(questions, { answers: { other: "x" } }));
-  assert.throws(() => parseAttemptDraft(questions, { answers: { t1: [5] } }));
-  assert.throws(() => parseAttemptDraft(questions, { answers: {}, checked: ["missing"] }));
-  assert.throws(() => parseAttemptDraft(questions, { answers: { t2: "あ".repeat(201) } }));
-  assert.throws(() => parseAttemptDraft(questions, { answers: {}, extra: true }));
+  assert.equal(countBlankAnswers(views, draft), 1);
+  assert.throws(() => parseAttemptDraft(views, { answers: { other: "x" } }));
+  assert.throws(() => parseAttemptDraft(views, { answers: { t1: [5] } }));
+  assert.throws(() => parseAttemptDraft(views, { answers: {}, checked: ["missing"] }));
+  assert.throws(() => parseAttemptDraft(views, { answers: { t2: "あ".repeat(201) } }));
+  assert.throws(() => parseAttemptDraft(views, { answers: {}, extra: true }));
 });

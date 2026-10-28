@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HomeAgenda } from "@/components/classroom/home-agenda";
 import { buttonVariants } from "@/components/ui/button";
 import { kanaItems } from "@/lib/data";
 
@@ -49,6 +50,7 @@ export default function HomePage() {
           <p className="small muted">Một âm, một ô. Cứ thế bắt đầu.</p>
         </div>
       </section>
+      <HomeAgenda />
       <section className="home-learning" aria-labelledby="learning-title">
         <h2 id="learning-title">Học theo nhịp của bạn</h2>
         <div className="learning-columns">

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { isBlankAnswer, parseRawAnswer } from "@/lib/grading/raw-answer";
+import { isBlankAnswer, parseChoiceSelection, parseTextAnswer } from "@/lib/grading/raw-answer";
 import { questionSchema } from "@/lib/lesson-schema";
 
 import type { RawAnswer } from "@/lib/grading/raw-answer";
@@ -166,14 +166,15 @@ export interface FeedbackRule {
   dueAt: string | null;
 }
 
+export function hasFeedbackTimeArrived(rule: FeedbackRule, now: Date) {
+  return (
+    rule.feedbackPolicy === "after_submit" ||
+    (rule.dueAt !== null && now.getTime() >= Date.parse(rule.dueAt))
+  );
+}
+
 export function isFeedbackAvailable(rule: FeedbackRule, submittedAt: string | null, now: Date) {
-  if (!submittedAt) {
-    return false;
-  }
-  if (rule.feedbackPolicy === "after_submit") {
-    return true;
-  }
-  return rule.dueAt !== null && now.getTime() >= Date.parse(rule.dueAt);
+  return submittedAt !== null && hasFeedbackTimeArrived(rule, now);
 }
 
 export type DeadlineState = "no_deadline" | "on_time" | "late" | "past_due";
@@ -207,40 +208,56 @@ const draftEnvelopeSchema = z
   })
   .strict();
 
-export function parseAttemptDraft(
-  questions: readonly AssignableQuestion[],
-  value: unknown,
-): AttemptDraft {
+function parseViewAnswer(view: QuestionView, value: unknown): RawAnswer {
+  return view.type === "choice"
+    ? parseChoiceSelection(view.options.length, view.multiple, value)
+    : parseTextAnswer(value);
+}
+
+// Validates draft shape against the learner-visible view, so the same check runs in the
+// browser (where test answer keys are absent) and on the server.
+export function parseAttemptDraft(views: readonly QuestionView[], value: unknown): AttemptDraft {
   if (new TextEncoder().encode(JSON.stringify(value ?? null)).length > MAX_DRAFT_BYTES) {
     throw new Error("Draft is too large.");
   }
   const envelope = draftEnvelopeSchema.parse(value);
   const answers: Record<string, RawAnswer> = {};
   for (const [questionId, raw] of Object.entries(envelope.answers)) {
-    const question = questions.find((item) => item.id === questionId);
-    if (!question) {
+    const view = views.find((item) => item.id === questionId);
+    if (!view) {
       throw new Error("Draft refers to an unknown question.");
     }
-    const parsed = parseRawAnswer(question, raw);
+    const parsed = parseViewAnswer(view, raw);
     if (!isBlankAnswer(parsed)) {
       answers[questionId] = parsed;
     }
   }
   const checked = [...new Set(envelope.checked)];
-  if (checked.some((questionId) => !questions.some((item) => item.id === questionId))) {
+  if (checked.some((questionId) => !views.some((item) => item.id === questionId))) {
     throw new Error("Draft marks an unknown question as checked.");
   }
   return { answers, checked };
 }
 
-export function countBlankAnswers(questions: readonly AssignableQuestion[], draft: AttemptDraft) {
-  return questions.filter((question) => isBlankAnswer(draft.answers[question.id])).length;
+export function countBlankAnswers(views: readonly QuestionView[], draft: AttemptDraft) {
+  return views.filter((view) => isBlankAnswer(draft.answers[view.id])).length;
 }
 
 export function describeCorrectAnswer(question: AssignableQuestion) {
   return question.type === "choice"
     ? question.answer.map((index) => question.options[index]).join(" / ")
     : question.answer.join(" / ");
+}
+
+// Stored answers are JSON; anything outside the known raw shapes is treated as blank.
+export function toStoredRawAnswer(value: unknown): RawAnswer | null {
+  if (typeof value === "string") {
+    return value;
+  }
+  if (Array.isArray(value) && value.every((item) => typeof item === "number")) {
+    return value;
+  }
+  return null;
 }
 
 export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer | null) {

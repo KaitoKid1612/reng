@@ -1,20 +1,12 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, State } from "ts-fsrs";
 import { z } from "zod";
 
+import type { ReviewRating } from "@/lib/review-ratings";
 import type { Card, Grade } from "ts-fsrs";
 
 // Stored with every card; a different value must be migrated explicitly, never guessed.
 export const SCHEDULER_VERSION = "ts-fsrs-5.4.2";
 export const MISTAKE_RESOLVE_STREAK = 3;
-export const REVIEW_RATINGS = [1, 2, 3, 4] as const;
-export const REVIEW_RATING_LABELS: Record<ReviewRating, string> = {
-  1: "Quên",
-  2: "Khó",
-  3: "Được",
-  4: "Dễ",
-};
-
-export type ReviewRating = (typeof REVIEW_RATINGS)[number];
 
 const scheduler = fsrs(generatorParameters({ enable_fuzz: false }));
 const timestamp = z.iso.datetime({ offset: true });
@@ -68,10 +60,6 @@ export function parseSchedulerState(version: string, value: unknown) {
 
 export function createSchedulerState(now: Date) {
   return toSchedulerState(createEmptyCard(now));
-}
-
-export function isReviewRating(value: unknown): value is ReviewRating {
-  return REVIEW_RATINGS.some((rating) => rating === value);
 }
 
 const GRADES: Record<ReviewRating, Grade> = {
