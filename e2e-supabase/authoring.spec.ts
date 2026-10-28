@@ -155,3 +155,27 @@ test("vocabulary import reports each line and appends only valid new words", asy
   await page.goto(EDITOR_PATH);
   await expect(page.locator("summary").filter({ hasText: /^Từ vựng/ })).toHaveText("Từ vựng (2)");
 });
+
+test("authoring and notification settings pages fit a 360px screen", async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 360, height: 780 } });
+  const page = await context.newPage();
+  await signIn(page, TEACHER.email, TEACHER.password);
+  for (const path of [
+    EDITOR_PATH,
+    `/teach/import-csv?lesson=${LESSON_ID}`,
+    "/settings/notifications",
+  ]) {
+    await page.goto(path);
+    const fits = await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    );
+    expect(fits, path).toBe(true);
+  }
+  await page.goto(EDITOR_PATH);
+  await page.screenshot({
+    path: "test-results/editor-mobile.png",
+    fullPage: true,
+    caret: "initial",
+  });
+  await context.close();
+});

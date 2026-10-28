@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { randomBytes } from "node:crypto";
 
 import { defineConfig, devices } from "@playwright/test";
 
@@ -30,6 +31,11 @@ function loadLocalSupabase() {
 
 const supabase = loadLocalSupabase();
 
+// Fresh per run; workers inherit them from the main process environment.
+process.env.E2E_CRON_SECRET ??= randomBytes(16).toString("hex");
+process.env.E2E_EMAIL_LINK_SECRET ??= randomBytes(16).toString("hex");
+process.env.E2E_WEBHOOK_SECRET ??= `whsec_${randomBytes(24).toString("base64")}`;
+
 export default defineConfig({
   testDir: "./e2e-supabase",
   fullyParallel: false,
@@ -47,6 +53,12 @@ export default defineConfig({
       SUPABASE_URL: supabase.url,
       SUPABASE_PUBLISHABLE_KEY: supabase.publishableKey,
       SUPABASE_SECRET_KEY: supabase.secretKey,
+      CRON_SECRET: process.env.E2E_CRON_SECRET,
+      EMAIL_LINK_SECRET: process.env.E2E_EMAIL_LINK_SECRET,
+      RESEND_WEBHOOK_SECRET: process.env.E2E_WEBHOOK_SECRET,
+      EMAIL_PROVIDER: "mailpit",
+      MAILPIT_URL: process.env.E2E_MAILPIT_URL ?? "",
+      EMAIL_FROM: "Masu <nhacbai@masu.local>",
     },
     timeout: 120_000,
   },

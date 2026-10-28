@@ -8,7 +8,7 @@ export const TEACHER = {
 };
 export const RUN_ID = process.env.E2E_RUN_ID ?? "local";
 
-function adminClient() {
+export function adminClient() {
   return createClient(
     process.env.E2E_SUPABASE_URL ?? "",
     process.env.E2E_SUPABASE_SECRET_KEY ?? "",
@@ -41,6 +41,26 @@ export async function signIn(page: Page, email: string, password: string, nextPa
 interface MailpitMessage {
   ID: string;
   Subject: string;
+}
+
+export async function listEmails(email: string) {
+  const search = await fetch(
+    `${process.env.E2E_MAILPIT_URL}/api/v1/search?query=${encodeURIComponent(`to:"${email}"`)}`,
+  ).then((response) => response.json() as Promise<{ messages: MailpitMessage[] }>);
+  return search.messages;
+}
+
+export async function readEmail(id: string) {
+  const base = process.env.E2E_MAILPIT_URL ?? "";
+  const [detail, headers] = await Promise.all([
+    fetch(`${base}/api/v1/message/${id}`).then(
+      (response) => response.json() as Promise<{ HTML: string; Text: string }>,
+    ),
+    fetch(`${base}/api/v1/message/${id}/headers`).then(
+      (response) => response.json() as Promise<Record<string, string[]>>,
+    ),
+  ]);
+  return { ...detail, headers };
 }
 
 // Reads the newest message for an address from the local Mailpit inbox.
