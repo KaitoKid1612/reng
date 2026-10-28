@@ -1,0 +1,131 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+
+import {
+  assignmentSettingsSchema,
+  countBlankAnswers,
+  describeCorrectAnswer,
+  getDeadlineState,
+  isFeedbackAvailable,
+  parseAssignableQuestion,
+  parseAttemptDraft,
+  toAttemptItems,
+  toTestQuestions,
+} from "../lib/assignment";
+
+const questions = toTestQuestions([
+  {
+    type: "choice",
+    prompt: "わたし___ がくせいです。",
+    options: ["は", "を"],
+    answer: [0],
+    multiple: false,
+    explain: "は đánh dấu chủ đề.",
+    points: 1,
+  },
+  {
+    type: "fill",
+    prompt: "Viết “tôi” bằng kanji",
+    answer: ["私"],
+    inputMode: "japanese",
+    kanjiStrict: true,
+    explain: "私 đọc là わたし.",
+    points: 2,
+  },
+]);
+
+test("test payloads expose only the question allowlist before feedback", () => {
+  const testItems = toAttemptItems(questions, "test");
+  const serialized = JSON.stringify(testItems);
+  for (const field of ['"answer"', '"explain"', '"tags"', "kanjiStrict", "đánh dấu chủ đề"]) {
+    assert.equal(serialized.includes(field), false, `${field} leaked into a test payload`);
+  }
+  assert.deepEqual(
+    testItems.map((item) => item.view.id),
+    ["t1", "t2"],
+  );
+  const practiceItems = toAttemptItems(questions, "practice");
+  assert.equal(practiceItems[0].answerKey?.explain, "は đánh dấu chủ đề.");
+  assert.equal(describeCorrectAnswer(questions[0]), "は");
+});
+
+test("assignment questions are limited to supported types with valid kanji-strict answers", () => {
+  assert.throws(() =>
+    toTestQuestions([
+      {
+        type: "fill",
+        prompt: "Kanji",
+        answer: ["わたし"],
+        inputMode: "japanese",
+        kanjiStrict: true,
+        explain: "Phải có kanji.",
+        points: 1,
+      },
+    ]),
+  );
+  assert.throws(() =>
+    parseAssignableQuestion({
+      id: "o1",
+      type: "order",
+      prompt: "Sắp xếp",
+      tokens: [{ id: "a", text: "は" }],
+      answer: ["a"],
+      explain: "Chưa có UI.",
+      points: 1,
+    }),
+  );
+});
+
+test("settings enforce practice feedback, one test attempt and after-due deadlines", () => {
+  const base = {
+    title: "Bài 1",
+    mode: "practice",
+    dueAt: null,
+    allowLate: false,
+    passScore: 70,
+    maxAttempts: 3,
+    feedbackPolicy: "after_submit",
+  };
+  assert.equal(assignmentSettingsSchema.safeParse(base).success, true);
+  assert.equal(
+    assignmentSettingsSchema.safeParse({ ...base, feedbackPolicy: "after_due" }).success,
+    false,
+  );
+  assert.equal(assignmentSettingsSchema.safeParse({ ...base, mode: "test" }).success, false);
+  assert.equal(
+    assignmentSettingsSchema.safeParse({
+      ...base,
+      mode: "test",
+      maxAttempts: 1,
+      feedbackPolicy: "after_due",
+    }).success,
+    false,
+  );
+});
+
+test("feedback and deadline states follow server time", () => {
+  const dueAt = "2026-11-01T10:00:00.000Z";
+  const rule = { feedbackPolicy: "after_due" as const, dueAt };
+  assert.equal(isFeedbackAvailable(rule, null, new Date("2026-11-02T00:00:00Z")), false);
+  assert.equal(isFeedbackAvailable(rule, dueAt, new Date("2026-11-01T09:59:59Z")), false);
+  assert.equal(isFeedbackAvailable(rule, dueAt, new Date(dueAt)), true);
+  assert.equal(
+    isFeedbackAvailable({ feedbackPolicy: "after_submit", dueAt: null }, dueAt, new Date(0)),
+    true,
+  );
+  assert.equal(getDeadlineState(dueAt, false, new Date(dueAt)), "on_time");
+  assert.equal(getDeadlineState(dueAt, false, new Date("2026-11-01T10:00:01Z")), "past_due");
+  assert.equal(getDeadlineState(dueAt, true, new Date("2026-11-01T10:00:01Z")), "late");
+  assert.equal(getDeadlineState(null, false, new Date()), "no_deadline");
+});
+
+test("drafts reject unknown questions, invalid raw values and oversized payloads", () => {
+  const draft = parseAttemptDraft(questions, { answers: { t1: [0], t2: "  " }, checked: ["t1"] });
+  assert.deepEqual(draft, { answers: { t1: [0] }, checked: ["t1"] });
+  assert.equal(countBlankAnswers(questions, draft), 1);
+  assert.throws(() => parseAttemptDraft(questions, { answers: { other: "x" } }));
+  assert.throws(() => parseAttemptDraft(questions, { answers: { t1: [5] } }));
+  assert.throws(() => parseAttemptDraft(questions, { answers: {}, checked: ["missing"] }));
+  assert.throws(() => parseAttemptDraft(questions, { answers: { t2: "あ".repeat(201) } }));
+  assert.throws(() => parseAttemptDraft(questions, { answers: {}, extra: true }));
+});
