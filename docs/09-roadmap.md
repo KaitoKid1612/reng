@@ -182,3 +182,9 @@ Player browser đã tách khỏi React context, dừng nguồn cũ khi đổi ch
 Đã có BD/DD, 5 bài mẫu/30 từ/10 mẫu câu, reader/search, reveal.js, fragment/hash, presenter theo scope lesson-version, PDF và API đáp án luyện riêng. Notes không vào payload công khai; API cookie-auth kiểm tra user/teacher/owner trước khi đọc qua RLS. Local catalog giữ snapshot cũ; RPC publish đã kiểm chứng transaction/revision trên database nhúng. Pipeline --lessons lập kế hoạch 40 audio, chỉ cập nhật draft khi generate thật.
 
 Chưa nghiệm thu Supabase/Auth/Azure/R2 thật, chưa apply migrations hoặc deploy, chưa giảng viên duyệt 5 bài/audio hoặc dạy thử. Xem [checklist phase-2](testing/phase-2.md) và [staging setup](staging-setup.md).
+
+## Tiến độ local giai đoạn 3
+
+Đã có BD/DD, migration 0003–0004 (bảng lớp/bài giao/lượt/ôn tập, trigger bất biến, RLS chỉ đọc, RPC transaction), chấm điểm dùng chung ở lib/grading, tài khoản học viên với xác nhận email/đặt lại mật khẩu, vào lớp bằng mã, giao practice/test, làm bài có autosave/xung đột/mất mạng, kết quả theo chính sách phản hồi, sổ lỗi, flashcard/ôn tập FSRS, tiến độ, bảng theo dõi lớp, câu sai nhiều và CSV. Trước khi viết mã đã chạy Supabase local bằng Supabase CLI để kiểm chứng Auth và migration thật thay cho phiên giả.
+
+Đã kiểm chứng trên Supabase local với một giảng viên và hai học viên ở hai lớp (xem [checklist phase-3](testing/phase-3.md)). Chưa áp dụng cloud, chưa cấu hình SMTP/template email trên dashboard, chưa backup/khôi phục thử và chưa dùng với lớp thật. Dạng bài ghép đôi/sắp xếp/nghe vẫn chờ UI ở giai đoạn sau; nhãn yếu nghe chỉ có ý nghĩa khi có câu nghe.

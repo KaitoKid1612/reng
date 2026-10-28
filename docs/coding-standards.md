@@ -19,10 +19,14 @@ components/
   ui/                    Shared UI primitives
   audio-provider.tsx     Shared audio context and tightly related hook/status
 lib/                     Pure domain logic, validators and data loading
+  grading/               Shared client/server grading
+  server/                Server-only data access, session and API helpers (`server-only`)
+app/actions/             Server Actions for forms (each re-checks the caller)
 scripts/                 Explicit CLI entry points, never imported by UI
 content/                 Validated learning data and asset manifests
 tests/                   Logic/database/pipeline tests
-e2e/                     Browser tests
+e2e/                     Browser tests without external services
+e2e-supabase/            Browser tests against the local Supabase stack only
 docs/
   basic-design/
   detail-design/

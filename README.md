@@ -6,6 +6,8 @@ Website học tiếng Nhật N5. Bản local đầu tiên gồm trang chủ, b�
 
 Đã có thêm 5 bài mẫu tự biên soạn tại `/lessons`, trang đọc, `/grammar`, slide/presenter và bản in PDF. Bài mẫu chưa được giảng viên duyệt. [BD giai đoạn 2](docs/basic-design/phase-2.md), [DD giai đoạn 2](docs/detail-design/phase-2.md), [hướng dẫn nội dung](docs/content-authoring.md).
 
+Giai đoạn 3 (lớp học, bài giao, làm bài, sổ lỗi, ôn tập FSRS, theo dõi lớp, CSV) chạy khi có Supabase; đã kiểm chứng trên Supabase local. [BD giai đoạn 3](docs/basic-design/phase-3.md), [DD giai đoạn 3](docs/detail-design/phase-3.md), [checklist](docs/testing/phase-3.md).
+
 ## Chạy local
 
 Yêu cầu Node.js 24, npm. Dependency khóa trong package-lock.json.
@@ -15,7 +17,7 @@ npm ci
 npm run dev
 ```
 
-Mở http://127.0.0.1:3000. Đổi cổng: `npm run dev -- --port 3017`. Không cần tài khoản cloud hoặc file .env để học/luyện kana. Không có đăng nhập hoặc lưu tiến độ ở bản này.
+Mở http://127.0.0.1:3000. Đổi cổng: `npm run dev -- --port 3017`. Không cần tài khoản cloud hoặc file .env để học/luyện kana và đọc bài công khai. Thiếu cấu hình Supabase thì trang tài khoản/lớp báo chưa kích hoạt, không có phiên giả.
 
 ## Kiểm tra
 
@@ -26,7 +28,7 @@ npm exec playwright install chromium
 npm run test:e2e
 ```
 
-Playwright tự chạy dev server ở 127.0.0.1:3217, dừng sau test, không tái sử dụng process khác. Test migration dùng PostgreSQL nhúng trong bộ nhớ với auth stub; không kết nối Supabase thật. Test audio browser dùng MP3 silence fixture và request local giả lập; test pipeline dùng adapter fake, không tiêu tốn quota TTS hoặc ghi cloud. Tránh chạy build và dev cùng lúc vì dùng chung output .next.
+Playwright tự chạy dev server ở 127.0.0.1:3217, dừng sau test, không tái sử dụng process khác. Next không cho hai dev server dùng chung thư mục .next, nên dừng `npm run dev` đang chạy trước khi chạy E2E. Test migration dùng PostgreSQL nhúng trong bộ nhớ với auth stub; không kết nối Supabase thật. Test audio browser dùng MP3 silence fixture và request local giả lập; test pipeline dùng adapter fake, không tiêu tốn quota TTS hoặc ghi cloud. Tránh chạy build và dev cùng lúc vì dùng chung output .next.
 
 Production local: `npm run build`, sau đó `npm start`. Chưa có deploy hoặc kiểm chứng cloud. [Checklist](docs/testing/phase-1.md) ghi kết quả và giới hạn.
 
@@ -53,6 +55,30 @@ npm run audio:generate -- --r2
 ```
 
 Đặt NEXT_PUBLIC_AUDIO_BASE_URL cùng giá trị public base rồi rebuild/restart web. Đường dẫn object là audio/kana/{hash}.mp3. Bucket/domain phải được người vận hành tạo trước. Muốn đồng bộ metadata thêm --sync-db và SUPABASE_URL/SUPABASE_SECRET_KEY. Script không tạo bucket hoặc tự migrate. Chạy lại kiểm tra asset theo hash và tiếp tục mapping sau lỗi; lock local ngăn chạy trùng cùng workspace, chưa hỗ trợ chạy nhiều máy đồng thời.
+
+## Lớp học trên Supabase local
+
+Cần Docker hoặc Podman. Supabase CLI đã khóa trong devDependencies; cấu hình ở supabase/config.toml chỉ bật database, Auth, REST và Mailpit, bắt buộc xác nhận email.
+
+```bash
+npx supabase start            # Podman: export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
+npx supabase status -o env    # lấy API_URL, PUBLISHABLE_KEY, SECRET_KEY
+```
+
+Tạo .env.local với LESSON_SOURCE=supabase, SUPABASE_URL=API_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_SECRET_KEY rồi:
+
+```bash
+npm run seed:local -- --password <mật-khẩu-giảng-viên-local>
+npm run dev
+```
+
+Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên và xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt). Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
+
+```bash
+npm run test:e2e:supabase
+```
+
+Bộ này dùng cổng 3218, đọc khóa từ `supabase status` và từ chối URL không phải local. Không dùng project cloud cho kiểm thử tự động.
 
 ## Database
 

@@ -17,7 +17,7 @@ Nguồn mặc định là snapshot local đã xuất bản bằng script. Khi ch
 | S06 | /lessons/[id]/slide | Khung 1280×720, fragment, mũi tên/Space, F, Esc, B, vị trí #1-based |
 | S09 | /grammar | Tìm theo Nhật/Việt/pattern, link tới bài và đúng mục |
 | P01 | /lessons/[id]/presenter | Slide hiện tại/kế tiếp, thời gian buổi dạy; đồng bộ cùng origin |
-| T00 | /teach/sign-in | Giảng viên đăng nhập tài khoản được người vận hành cấp; không tự đăng ký role |
+| T00 | /teach/sign-in | Giảng viên đăng nhập tài khoản được người vận hành cấp; không tự đăng ký role. Từ giai đoạn 3 chuyển 308 sang /sign-in dùng chung |
 
 Trên điện thoại trang đọc dùng một cột; bảng từ không cuộn ngang. Trang slide giữ bố cục cố định và co theo viewport, có toolbar bấm được bằng bàn phím. Người dùng chọn mở presenter; popup bị chặn được báo và có link mở thủ công. Presenter riêng lấy ghi chú bằng API xác thực, không dùng DOM notes để truyền ghi chú qua cửa sổ máy chiếu.
 

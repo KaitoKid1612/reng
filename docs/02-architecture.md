@@ -20,7 +20,7 @@ Bản đầu dùng Next.js + Supabase theo bảng trên, xuyên suốt các giai
 
 Giai đoạn 1 đã có source Next.js/React/TypeScript, Tailwind và component UI trong repo. Button dùng cấu trúc cva/clsx/tailwind-merge; chưa cài toàn bộ component shadcn/Radix khi chưa cần. Font được self-host bằng @fontsource, không gọi Google Fonts lúc build. Phiên bản chính xác lấy từ package.json và package-lock.json; Node 24, npm.
 
-Kana lấy từ JSON đã validate, không cần API hoặc Supabase runtime để mở trang/luyện. Supabase hiện có migration nền và kiểm tra trên PostgreSQL nhúng, chưa áp dụng cloud. Azure/R2 có script chuẩn bị sẵn, chưa sinh MP3 thật khi chưa có credentials. Không coi các dịch vụ liệt kê trong stack là đã tích hợp hết.
+Kana lấy từ JSON đã validate, không cần API hoặc Supabase runtime để mở trang/luyện. Giai đoạn 3 dùng Supabase Auth và các RPC transaction; supabase/config.toml chạy stack local bằng Supabase CLI để kiểm chứng trước cloud. Supabase hiện có migration nền và kiểm tra trên PostgreSQL nhúng, chưa áp dụng cloud. Azure/R2 có script chuẩn bị sẵn, chưa sinh MP3 thật khi chưa có credentials. Không coi các dịch vụ liệt kê trong stack là đã tích hợp hết.
 
 Hosting chưa triển khai. [Vercel Hobby](https://vercel.com/docs/plans/hobby) giới hạn sử dụng cá nhân phi thương mại; hoạt động có thu phí cần chọn gói phù hợp, không mặc định chi phí hosting bằng 0.
 
@@ -67,9 +67,11 @@ app/
     practice/page.tsx         romaji practice
   sources/page.tsx            attribution and audio status
   lessons/[id]/               planned: lesson reader and slide/page.tsx
-  assignments/[id]/           planned: assignment and results
-  teach/                      planned: class management and authoring
-  api/                        planned: grade, cron
+  classes/, assignments/[id]/ learner classes, attempts and results
+  review/, mistakes/, progress/, vocabulary/[lessonId]/
+  teach/                      class management, assignments, reports
+  actions/                    Server Actions for account and class forms
+  api/                        attempts, drafts, submissions, reviews, CSV
 components/
   kana/                       chart, setup, question and result views
   ui/                         shared UI primitives
@@ -77,7 +79,8 @@ components/
 lib/
   kana.ts                     validation and practice domain logic
   audio-config.ts
-  grading/                    planned: shared client/server grading
+  grading/                    shared client/server grading
+  server/                     server-only Supabase access and authorization
 scripts/
   generate-audio.ts
   validate-data.ts

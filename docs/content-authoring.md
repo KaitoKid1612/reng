@@ -34,4 +34,4 @@ Chỉ thực hiện khi đã chỉ định staging, áp dụng migration và chu
 npm run lesson:import -- --file path/to/reviewed-lesson.json --publish supabase --revision 0 --owner teacher-user-uuid
 ```
 
-RPC dùng transaction cho draft/version/pointer, từ chối sai owner/revision. Script không tạo tài khoản, apply migration hoặc deploy. Đặt LESSON_SOURCE=supabase để web đọc nguồn thật; lỗi cloud hiển thị lỗi, không âm thầm thay bằng bài mẫu.
+RPC dùng transaction cho draft/version/pointer, từ chối sai owner/revision. Script không tạo tài khoản, apply migration hoặc deploy. Với Supabase local, `npm run seed:local` xuất bản 5 bài mẫu cho giảng viên mẫu và giữ is_sample=true; script từ chối URL không phải máy local. Đặt LESSON_SOURCE=supabase để web đọc nguồn thật; lỗi cloud hiển thị lỗi, không âm thầm thay bằng bài mẫu.

@@ -19,10 +19,9 @@ Migration bổ sung summary/title_ja/order_no/course_id trên version và RPC pu
 | Server reader lessons/version | Local catalog hoặc Supabase chỉ published/public/non-archived; query version phải thuộc đúng bài |
 | GET /api/lessons/[id]/questions/[questionId]?version= | Chỉ câu luyện của public version; trả answer/explain, không notes |
 | GET /api/lessons/[id]/notes?version= | Cookie session → auth.getUser → teacher → version thuộc bài mình; no-store, không cache chung |
-| POST /api/auth/sign-in | Same-origin, email/password validation, kiểm tra role teacher; cookie HttpOnly, không trả token |
-| POST /api/auth/sign-out | Same-origin; xóa session |
+| POST /api/auth/sign-in, /api/auth/sign-out | Đã thay bằng Server Action đăng nhập/đăng xuất dùng chung ở giai đoạn 3 (xem DD giai đoạn 3); cookie HttpOnly giữ nguyên, không trả token |
 
-Không dùng service_role để bỏ qua kiểm tra quyền notes. Auth chỉ được dùng trong route handler có thể set cookie; session hết hạn được refresh tại handler đó. Không triển khai session giả cho local sample. Thiếu cấu hình Auth thì UI đăng nhập thông báo chưa khả dụng và notes không được trả.
+Không dùng service_role để bỏ qua kiểm tra quyền notes. Từ giai đoạn 3, proxy.ts làm mới phiên trước khi render; Server Component chỉ đọc cookie. Không triển khai session giả cho local sample. Thiếu cấu hình Auth thì UI đăng nhập thông báo chưa khả dụng và notes không được trả.
 
 ## Slide engine
 

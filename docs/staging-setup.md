@@ -11,4 +11,13 @@ Không có credentials trong workspace tại thời điểm bắt đầu giai đ
 7. Chrome/Safari thật, điện thoại 360px, máy chiếu 1280×720, mạng 4G: đo tải trang/phát audio và kiểm tra bàn phím, popup, fullscreen, PDF.
 8. Một buổi dạy thử; ghi vấn đề vào checklist phase-1/phase-2. Chỉ nghiệm thu sau khi có bằng chứng, người phụ trách và cách khôi phục.
 
-Chưa tạo tài khoản/bucket/project hoặc apply migration vào dịch vụ thật trong đợt local này.
+## Giai đoạn 3: lớp học
+
+1. Backup database, áp dụng migration 0003 và 0004 trên staging, kiểm tra lại bằng tài khoản giảng viên và hai học viên thử ở hai lớp.
+2. Auth: bật xác nhận email, đặt Site URL và Redirect URLs (`https://<domain>/**`). Sao chép nội dung supabase/templates/confirmation.html và recovery.html vào template Confirm signup/Reset password trên dashboard; link phải dùng token hash và trỏ về /auth/confirm.
+3. Cấu hình SMTP riêng (SPF/DKIM/DMARC) trước khi mời học viên; SMTP mặc định của Supabase có hạn mức thấp. Gửi thử tới hộp thư thật, kiểm tra thư mục spam.
+4. Đặt SITE_URL bằng domain staging cho link email. Cấp role giảng viên bằng thao tác quản trị phía server (SQL/service key); không dùng scripts/seed-local.ts cho cloud.
+5. Chạy luồng: tạo lớp, thêm bài, giao practice/test, học viên đăng ký/vào lớp/làm/nộp, mất mạng và hai tab, báo cáo/CSV. Ghi kết quả vào testing/phase-3.md.
+6. Có bản backup và một lần khôi phục thử trên môi trường riêng trước khi nhận lớp thật.
+
+Chưa tạo tài khoản/bucket/project hoặc apply migration vào dịch vụ thật trong đợt local này. Giai đoạn 3 mới kiểm chứng trên Supabase local (Supabase CLI).

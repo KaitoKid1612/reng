@@ -38,7 +38,7 @@ Một nguồn nội dung, nhiều cách hiển thị. Mỗi bài học là một
 
 ## Trạng thái tài liệu
 
-Được rà soát và bổ sung ngày 28/10/2026. Đã bắt đầu triển khai giai đoạn 1: có mã nguồn local, dữ liệu kana, pipeline audio và migration nền. Kết quả/giới hạn kiểm chứng xem testing/phase-1.md; chưa nghiệm thu cloud hoặc hoàn thành toàn giai đoạn 1. Hướng dẫn khởi động tại README.md ở thư mục gốc.
+Được rà soát và bổ sung ngày 28/10/2026. Đã có bản local của giai đoạn 1–3: kana/audio, bài học/trình chiếu, lớp học/bài giao/ôn tập trên Supabase local. Kết quả/giới hạn kiểm chứng xem testing/phase-1.md, phase-2.md, phase-3.md; chưa nghiệm thu cloud hoặc lớp học thật. Hướng dẫn khởi động tại README.md ở thư mục gốc.
 
 Các quyết định trong tài liệu là đặc tả dự kiến, không phải tính năng đã hoàn thành. Phần nào đã triển khai thì cập nhật lại file tương ứng thay vì viết tài liệu mới. Mốc triển khai và tiêu chí nghiệm thu lấy theo `09-roadmap.md`; font, màu và kích thước lấy theo `12-ui-design.md`.
 

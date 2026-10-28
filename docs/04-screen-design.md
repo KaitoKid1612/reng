@@ -26,6 +26,8 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S14 | Tiến độ của tôi | `/progress` | 3 |
 | S15 | Luyện nghe | `/listening/[id]` | 5 |
 | S16 | Đề thi thử | `/mock-exams` | 6 |
+| S17 | Lớp của tôi | `/classes` | 3 |
+| S18 | Lớp học: bài đã mở và bài tập | `/classes/[id]` | 3 |
 
 ### Dành cho giảng viên
 
@@ -44,7 +46,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 
 | Màn hình | Đường dẫn | Giai đoạn |
 |---|---|---|
-| Đăng nhập, đăng ký, xác nhận email | `/sign-in`, `/sign-up`, `/verify-email` | 3 |
+| Đăng nhập, đăng ký, xác nhận email | `/sign-in`, `/sign-up`, `/verify-email`, `/auth/confirm`; `/teach/sign-in` chuyển 308 sang `/sign-in?next=/teach` | 3 |
 | Quên/đặt lại mật khẩu | `/forgot-password`, `/reset-password` | 3 |
 | Vào lớp | `/join-class` | 3 |
 | Nguồn dữ liệu | `/sources` | 1, cập nhật khi thêm nguồn |
