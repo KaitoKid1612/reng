@@ -13,6 +13,9 @@ interface LessonReaderProps {
 }
 
 export function LessonReader({ lesson, progress }: LessonReaderProps) {
+  const listeningCount = lesson.content.questions.filter(
+    (question) => question.type === "listen" || question.type === "dictation",
+  ).length;
   return (
     <article className="lesson-reader">
       <div className="page-heading">
@@ -116,6 +119,14 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
         >
           Flashcard từ vựng
         </Link>
+        {listeningCount > 0 && (
+          <Link
+            href={`/listening/${lesson.lessonId}?version=${lesson.id}`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Luyện nghe ({listeningCount} câu)
+          </Link>
+        )}
         <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
           Các bài học
         </Link>
