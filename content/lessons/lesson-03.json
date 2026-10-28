@@ -1,0 +1,157 @@
+{
+  "id": "lesson-03",
+  "title": "Địa điểm và vị trí",
+  "titleJa": "ばしょ",
+  "summary": "Hỏi địa điểm, làm quen ここ・そこ・あそこ.",
+  "order": 3,
+  "courseId": "n5",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0301",
+        "jp": "がっこう",
+        "kanji": "学校",
+        "romaji": "gakkou",
+        "vi": "trường học",
+        "audio": null
+      },
+      {
+        "id": "v0302",
+        "jp": "きょうしつ",
+        "kanji": "教室",
+        "romaji": "kyoushitsu",
+        "vi": "phòng học",
+        "audio": null
+      },
+      {
+        "id": "v0303",
+        "jp": "としょかん",
+        "kanji": "図書館",
+        "romaji": "toshokan",
+        "vi": "thư viện",
+        "audio": null
+      },
+      {
+        "id": "v0304",
+        "jp": "えき",
+        "kanji": "駅",
+        "romaji": "eki",
+        "vi": "nhà ga",
+        "audio": null
+      },
+      {
+        "id": "v0305",
+        "jp": "ここ",
+        "kanji": "ここ",
+        "romaji": "koko",
+        "vi": "chỗ này",
+        "audio": null
+      },
+      {
+        "id": "v0306",
+        "jp": "どこ",
+        "kanji": "どこ",
+        "romaji": "doko",
+        "vi": "đâu",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0301",
+        "pattern": "ここは N です",
+        "vi": "Chỗ này là…",
+        "explain": "ここ chỉ địa điểm gần người nói.",
+        "viMistake": "これ chỉ vật, ここ chỉ địa điểm.",
+        "examples": [
+          {
+            "jp": "ここは きょうしつです。",
+            "vi": "Chỗ này là phòng học.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0302",
+        "pattern": "N は どこですか",
+        "vi": "… ở đâu?",
+        "explain": "Dùng どこ để hỏi địa điểm.",
+        "viMistake": "Không dùng だれ để hỏi địa điểm.",
+        "examples": [
+          {
+            "jp": "としょかんは どこですか。",
+            "vi": "Thư viện ở đâu?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0301",
+        "type": "title",
+        "jp": "ばしょ",
+        "vi": "Địa điểm và vị trí",
+        "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+      },
+      {
+        "id": "s0302",
+        "type": "vocab",
+        "refs": ["v0301", "v0302", "v0303"]
+      },
+      {
+        "id": "s0303",
+        "type": "vocab",
+        "refs": ["v0304", "v0305", "v0306"]
+      },
+      {
+        "id": "s0304",
+        "type": "grammar",
+        "ref": "g0301"
+      },
+      {
+        "id": "s0305",
+        "type": "example",
+        "ref": "g0301",
+        "reveal": true
+      },
+      {
+        "id": "s0306",
+        "type": "grammar",
+        "ref": "g0302"
+      },
+      {
+        "id": "s0307",
+        "type": "example",
+        "ref": "g0302",
+        "reveal": true
+      },
+      {
+        "id": "s0308",
+        "type": "quiz",
+        "ref": "q0301"
+      },
+      {
+        "id": "s0309",
+        "type": "note",
+        "title": "Thử nói một câu của bạn",
+        "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0301",
+        "type": "choice",
+        "prompt": "Hỏi “Nhà ga ở đâu?”: えきは ___ですか。",
+        "options": ["どこ", "だれ", "なに", "いつ"],
+        "multiple": false,
+        "answer": [0],
+        "explain": "ここ chỉ địa điểm gần người nói.",
+        "points": 1,
+        "tags": ["introductory", "sample"]
+      }
+    ]
+  }
+}

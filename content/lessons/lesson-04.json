@@ -1,0 +1,157 @@
+{
+  "id": "lesson-04",
+  "title": "Thời gian trong ngày",
+  "titleJa": "じかん",
+  "summary": "Hỏi giờ và diễn đạt lịch sinh hoạt đơn giản.",
+  "order": 4,
+  "courseId": "n5",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0401",
+        "jp": "いま",
+        "kanji": "今",
+        "romaji": "ima",
+        "vi": "bây giờ",
+        "audio": null
+      },
+      {
+        "id": "v0402",
+        "jp": "じ",
+        "kanji": "時",
+        "romaji": "ji",
+        "vi": "giờ",
+        "audio": null
+      },
+      {
+        "id": "v0403",
+        "jp": "はん",
+        "kanji": "半",
+        "romaji": "han",
+        "vi": "rưỡi",
+        "audio": null
+      },
+      {
+        "id": "v0404",
+        "jp": "あさ",
+        "kanji": "朝",
+        "romaji": "asa",
+        "vi": "buổi sáng",
+        "audio": null
+      },
+      {
+        "id": "v0405",
+        "jp": "よる",
+        "kanji": "夜",
+        "romaji": "yoru",
+        "vi": "buổi tối",
+        "audio": null
+      },
+      {
+        "id": "v0406",
+        "jp": "まいにち",
+        "kanji": "毎日",
+        "romaji": "mainichi",
+        "vi": "hằng ngày",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0401",
+        "pattern": "いま N じです",
+        "vi": "Bây giờ là… giờ",
+        "explain": "じ đi sau số để nói giờ; cách đọc một số giờ cần học riêng.",
+        "viMistake": "Chín giờ đọc くじ, không đọc きゅうじ.",
+        "examples": [
+          {
+            "jp": "いま くじです。",
+            "vi": "Bây giờ là chín giờ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0402",
+        "pattern": "N から N まで",
+        "vi": "Từ… đến…",
+        "explain": "から đánh dấu điểm bắt đầu, まで đánh dấu điểm kết thúc.",
+        "viMistake": "Không đảo から và まで.",
+        "examples": [
+          {
+            "jp": "くじから ごじまでです。",
+            "vi": "Từ chín giờ đến năm giờ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0401",
+        "type": "title",
+        "jp": "じかん",
+        "vi": "Thời gian trong ngày",
+        "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+      },
+      {
+        "id": "s0402",
+        "type": "vocab",
+        "refs": ["v0401", "v0402", "v0403"]
+      },
+      {
+        "id": "s0403",
+        "type": "vocab",
+        "refs": ["v0404", "v0405", "v0406"]
+      },
+      {
+        "id": "s0404",
+        "type": "grammar",
+        "ref": "g0401"
+      },
+      {
+        "id": "s0405",
+        "type": "example",
+        "ref": "g0401",
+        "reveal": true
+      },
+      {
+        "id": "s0406",
+        "type": "grammar",
+        "ref": "g0402"
+      },
+      {
+        "id": "s0407",
+        "type": "example",
+        "ref": "g0402",
+        "reveal": true
+      },
+      {
+        "id": "s0408",
+        "type": "quiz",
+        "ref": "q0401"
+      },
+      {
+        "id": "s0409",
+        "type": "note",
+        "title": "Thử nói một câu của bạn",
+        "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0401",
+        "type": "choice",
+        "prompt": "“Từ 9 giờ đến 5 giờ”: くじ___ ごじまでです。",
+        "options": ["から", "を", "へ", "の"],
+        "multiple": false,
+        "answer": [0],
+        "explain": "じ đi sau số để nói giờ; cách đọc một số giờ cần học riêng.",
+        "points": 1,
+        "tags": ["introductory", "sample"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+playwright-report/
+test-results/
+public/audio/
+.audio-generation.lock
+*.tmp
+next-env.d.ts
+content/lesson-catalog.json.lock
+
+# Local credentials and agent state
+/.aws/
+/.codex/
+/.agents/
+/.claude/

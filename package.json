@@ -1,0 +1,56 @@
+{
+  "name": "masu",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "validate:data": "node --import tsx scripts/validate-data.ts",
+    "audio:plan": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts",
+    "audio:generate": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts --generate",
+    "format": "prettier --write app components lib scripts tests e2e content *.ts *.mjs *.json .prettierrc.json README.md",
+    "format:check": "prettier --check app components lib scripts tests e2e content *.ts *.mjs *.json .prettierrc.json README.md",
+    "lint:fix": "eslint . --fix",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
+    "lesson:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-lesson.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1158.0",
+    "@fontsource/be-vietnam-pro": "5.3.0",
+    "@fontsource/klee-one": "5.3.1",
+    "@fontsource/noto-sans-jp": "5.3.1",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.118.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.62.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "reveal.js": "6.0.2",
+    "tailwind-merge": "3.7.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.12",
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

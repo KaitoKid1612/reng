@@ -1,0 +1,157 @@
+{
+  "id": "lesson-02",
+  "title": "Đồ vật quanh mình",
+  "titleJa": "みのまわりのもの",
+  "summary": "Gọi tên đồ vật và phân biệt これ・それ・あれ.",
+  "order": 2,
+  "courseId": "n5",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0201",
+        "jp": "ほん",
+        "kanji": "本",
+        "romaji": "hon",
+        "vi": "sách",
+        "audio": null
+      },
+      {
+        "id": "v0202",
+        "jp": "ノート",
+        "kanji": "ノート",
+        "romaji": "nooto",
+        "vi": "vở",
+        "audio": null
+      },
+      {
+        "id": "v0203",
+        "jp": "えんぴつ",
+        "kanji": "鉛筆",
+        "romaji": "enpitsu",
+        "vi": "bút chì",
+        "audio": null
+      },
+      {
+        "id": "v0204",
+        "jp": "かばん",
+        "kanji": "鞄",
+        "romaji": "kaban",
+        "vi": "cặp, túi",
+        "audio": null
+      },
+      {
+        "id": "v0205",
+        "jp": "つくえ",
+        "kanji": "机",
+        "romaji": "tsukue",
+        "vi": "bàn",
+        "audio": null
+      },
+      {
+        "id": "v0206",
+        "jp": "いす",
+        "kanji": "椅子",
+        "romaji": "isu",
+        "vi": "ghế",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0201",
+        "pattern": "これは N です",
+        "vi": "Đây là…",
+        "explain": "これ chỉ vật gần người nói; dùng độc lập, không đặt trực tiếp trước danh từ.",
+        "viMistake": "Phân biệt これ là đại từ và この đứng trước danh từ.",
+        "examples": [
+          {
+            "jp": "これは ほんです。",
+            "vi": "Đây là sách.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0202",
+        "pattern": "N の N",
+        "vi": "Danh từ bổ nghĩa danh từ",
+        "explain": "の nối hai danh từ; có thể thể hiện sở hữu.",
+        "viMistake": "Không đảo thứ tự chủ sở hữu và đồ vật.",
+        "examples": [
+          {
+            "jp": "これは わたしの かばんです。",
+            "vi": "Đây là túi của tôi.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0201",
+        "type": "title",
+        "jp": "みのまわりのもの",
+        "vi": "Đồ vật quanh mình",
+        "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+      },
+      {
+        "id": "s0202",
+        "type": "vocab",
+        "refs": ["v0201", "v0202", "v0203"]
+      },
+      {
+        "id": "s0203",
+        "type": "vocab",
+        "refs": ["v0204", "v0205", "v0206"]
+      },
+      {
+        "id": "s0204",
+        "type": "grammar",
+        "ref": "g0201"
+      },
+      {
+        "id": "s0205",
+        "type": "example",
+        "ref": "g0201",
+        "reveal": true
+      },
+      {
+        "id": "s0206",
+        "type": "grammar",
+        "ref": "g0202"
+      },
+      {
+        "id": "s0207",
+        "type": "example",
+        "ref": "g0202",
+        "reveal": true
+      },
+      {
+        "id": "s0208",
+        "type": "quiz",
+        "ref": "q0201"
+      },
+      {
+        "id": "s0209",
+        "type": "note",
+        "title": "Thử nói một câu của bạn",
+        "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0201",
+        "type": "choice",
+        "prompt": "これは ___です。",
+        "options": ["ほん", "いきます", "たべます", "のみます"],
+        "multiple": false,
+        "answer": [0],
+        "explain": "これ chỉ vật gần người nói; dùng độc lập, không đặt trực tiếp trước danh từ.",
+        "points": 1,
+        "tags": ["introductory", "sample"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "id": "lesson-01",
+  "title": "Làm quen và chào hỏi",
+  "titleJa": "あいさつ",
+  "summary": "Chào hỏi và giới thiệu tên bằng câu đơn.",
+  "order": 1,
+  "courseId": "n5",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0101",
+        "jp": "こんにちは",
+        "kanji": "こんにちは",
+        "romaji": "konnichiwa",
+        "vi": "xin chào",
+        "audio": null
+      },
+      {
+        "id": "v0102",
+        "jp": "おはようございます",
+        "kanji": "おはようございます",
+        "romaji": "ohayou gozaimasu",
+        "vi": "chào buổi sáng",
+        "audio": null
+      },
+      {
+        "id": "v0103",
+        "jp": "わたし",
+        "kanji": "私",
+        "romaji": "watashi",
+        "vi": "tôi",
+        "audio": null
+      },
+      {
+        "id": "v0104",
+        "jp": "なまえ",
+        "kanji": "名前",
+        "romaji": "namae",
+        "vi": "tên",
+        "audio": null
+      },
+      {
+        "id": "v0105",
+        "jp": "がくせい",
+        "kanji": "学生",
+        "romaji": "gakusei",
+        "vi": "học sinh, sinh viên",
+        "audio": null
+      },
+      {
+        "id": "v0106",
+        "jp": "せんせい",
+        "kanji": "先生",
+        "romaji": "sensei",
+        "vi": "giáo viên",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0101",
+        "pattern": "N は N です",
+        "vi": "A là B",
+        "explain": "は đánh dấu chủ đề và đọc là wa trong câu. です tạo cách nói lịch sự.",
+        "viMistake": "Không đọc trợ từ は là ha.",
+        "examples": [
+          {
+            "jp": "わたしは がくせいです。",
+            "vi": "Tôi là sinh viên.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0102",
+        "pattern": "N ですか",
+        "vi": "Hỏi có phải là… không",
+        "explain": "Thêm か ở cuối câu lịch sự để hỏi.",
+        "viMistake": "Không cần thêm một từ hỏi khác khi đã dùng か.",
+        "examples": [
+          {
+            "jp": "せんせいですか。",
+            "vi": "Bạn có phải là giáo viên không?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0101",
+        "type": "title",
+        "jp": "あいさつ",
+        "vi": "Làm quen và chào hỏi",
+        "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+      },
+      {
+        "id": "s0102",
+        "type": "vocab",
+        "refs": ["v0101", "v0102", "v0103"]
+      },
+      {
+        "id": "s0103",
+        "type": "vocab",
+        "refs": ["v0104", "v0105", "v0106"]
+      },
+      {
+        "id": "s0104",
+        "type": "grammar",
+        "ref": "g0101"
+      },
+      {
+        "id": "s0105",
+        "type": "example",
+        "ref": "g0101",
+        "reveal": true
+      },
+      {
+        "id": "s0106",
+        "type": "grammar",
+        "ref": "g0102"
+      },
+      {
+        "id": "s0107",
+        "type": "example",
+        "ref": "g0102",
+        "reveal": true
+      },
+      {
+        "id": "s0108",
+        "type": "quiz",
+        "ref": "q0101"
+      },
+      {
+        "id": "s0109",
+        "type": "note",
+        "title": "Thử nói một câu của bạn",
+        "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0101",
+        "type": "choice",
+        "prompt": "わたしは がくせい___。",
+        "options": ["です", "ます", "を", "に"],
+        "multiple": false,
+        "answer": [0],
+        "explain": "は đánh dấu chủ đề và đọc là wa trong câu. です tạo cách nói lịch sự.",
+        "points": 1,
+        "tags": ["introductory", "sample"]
+      }
+    ]
+  }
+}

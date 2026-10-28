@@ -1,0 +1,157 @@
+{
+  "id": "lesson-05",
+  "title": "Đi lại mỗi ngày",
+  "titleJa": "まいにちのいどう",
+  "summary": "Nói nơi đến, phương tiện và người đi cùng.",
+  "order": 5,
+  "courseId": "n5",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0501",
+        "jp": "いきます",
+        "kanji": "行きます",
+        "romaji": "ikimasu",
+        "vi": "đi",
+        "audio": null
+      },
+      {
+        "id": "v0502",
+        "jp": "きます",
+        "kanji": "来ます",
+        "romaji": "kimasu",
+        "vi": "đến",
+        "audio": null
+      },
+      {
+        "id": "v0503",
+        "jp": "かえります",
+        "kanji": "帰ります",
+        "romaji": "kaerimasu",
+        "vi": "về",
+        "audio": null
+      },
+      {
+        "id": "v0504",
+        "jp": "でんしゃ",
+        "kanji": "電車",
+        "romaji": "densha",
+        "vi": "tàu điện",
+        "audio": null
+      },
+      {
+        "id": "v0505",
+        "jp": "バス",
+        "kanji": "バス",
+        "romaji": "basu",
+        "vi": "xe buýt",
+        "audio": null
+      },
+      {
+        "id": "v0506",
+        "jp": "ともだち",
+        "kanji": "友達",
+        "romaji": "tomodachi",
+        "vi": "bạn bè",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0501",
+        "pattern": "N へ いきます",
+        "vi": "Đi đến…",
+        "explain": "へ chỉ hướng di chuyển và đọc là e khi làm trợ từ.",
+        "viMistake": "Viết trợ từ へ, không viết え.",
+        "examples": [
+          {
+            "jp": "がっこうへ いきます。",
+            "vi": "Tôi đi đến trường.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0502",
+        "pattern": "N で いきます",
+        "vi": "Đi bằng…",
+        "explain": "で đứng sau phương tiện. Đi bộ thường dùng あるいて.",
+        "viMistake": "Không dùng に thay で để chỉ phương tiện trong mẫu này.",
+        "examples": [
+          {
+            "jp": "バスで がっこうへ いきます。",
+            "vi": "Tôi đi xe buýt đến trường.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0501",
+        "type": "title",
+        "jp": "まいにちのいどう",
+        "vi": "Đi lại mỗi ngày",
+        "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+      },
+      {
+        "id": "s0502",
+        "type": "vocab",
+        "refs": ["v0501", "v0502", "v0503"]
+      },
+      {
+        "id": "s0503",
+        "type": "vocab",
+        "refs": ["v0504", "v0505", "v0506"]
+      },
+      {
+        "id": "s0504",
+        "type": "grammar",
+        "ref": "g0501"
+      },
+      {
+        "id": "s0505",
+        "type": "example",
+        "ref": "g0501",
+        "reveal": true
+      },
+      {
+        "id": "s0506",
+        "type": "grammar",
+        "ref": "g0502"
+      },
+      {
+        "id": "s0507",
+        "type": "example",
+        "ref": "g0502",
+        "reveal": true
+      },
+      {
+        "id": "s0508",
+        "type": "quiz",
+        "ref": "q0501"
+      },
+      {
+        "id": "s0509",
+        "type": "note",
+        "title": "Thử nói một câu của bạn",
+        "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0501",
+        "type": "choice",
+        "prompt": "バス___ がっこうへ いきます。",
+        "options": ["で", "を", "が", "の"],
+        "multiple": false,
+        "answer": [0],
+        "explain": "で đứng sau phương tiện. Đi bộ thường dùng あるいて.",
+        "points": 1,
+        "tags": ["introductory", "sample"]
+      }
+    ]
+  }
+}

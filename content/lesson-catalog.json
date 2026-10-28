@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 1,
+  "lessons": [
+    {
+      "id": "lesson-01",
+      "publishedVersionId": "869cccb3-7841-5f2e-a975-fcdd6e692d9d",
+      "visibility": "public"
+    },
+    {
+      "id": "lesson-02",
+      "publishedVersionId": "fd7e080e-5889-5f04-b03f-e72b680dbf05",
+      "visibility": "public"
+    },
+    {
+      "id": "lesson-03",
+      "publishedVersionId": "f159f20d-82a0-52fd-93d5-c4b7da02cc80",
+      "visibility": "public"
+    },
+    {
+      "id": "lesson-04",
+      "publishedVersionId": "003d479b-6f56-50ed-b6be-1f3f67efbff7",
+      "visibility": "public"
+    },
+    {
+      "id": "lesson-05",
+      "publishedVersionId": "3917fa84-15d4-523b-b3ed-b4f0ca15889e",
+      "visibility": "public"
+    }
+  ],
+  "versions": [
+    {
+      "title": "Làm quen và chào hỏi",
+      "titleJa": "あいさつ",
+      "summary": "Chào hỏi và giới thiệu tên bằng câu đơn.",
+      "order": 1,
+      "courseId": "n5",
+      "isSample": true,
+      "content": {
+        "schemaVersion": 1,
+        "vocab": [
+          {
+            "id": "v0101",
+            "jp": "こんにちは",
+            "kanji": "こんにちは",
+            "romaji": "konnichiwa",
+            "vi": "xin chào",
+            "audio": null
+          },
+          {
+            "id": "v0102",
+            "jp": "おはようございます",
+            "kanji": "おはようございます",
+            "romaji": "ohayou gozaimasu",
+            "vi": "chào buổi sáng",
+            "audio": null
+          },
+          {
+            "id": "v0103",
+            "jp": "わたし",
+            "kanji": "私",
+            "romaji": "watashi",
+            "vi": "tôi",
+            "audio": null
+          },
+          {
+            "id": "v0104",
+            "jp": "なまえ",
+            "kanji": "名前",
+            "romaji": "namae",
+            "vi": "tên",
+            "audio": null
+          },
+          {
+            "id": "v0105",
+            "jp": "がくせい",
+            "kanji": "学生",
+            "romaji": "gakusei",
+            "vi": "học sinh, sinh viên",
+            "audio": null
+          },
+          {
+            "id": "v0106",
+            "jp": "せんせい",
+            "kanji": "先生",
+            "romaji": "sensei",
+            "vi": "giáo viên",
+            "audio": null
+          }
+        ],
+        "grammar": [
+          {
+            "id": "g0101",
+            "pattern": "N は N です",
+            "vi": "A là B",
+            "explain": "は đánh dấu chủ đề và đọc là wa trong câu. です tạo cách nói lịch sự.",
+            "viMistake": "Không đọc trợ từ は là ha.",
+            "examples": [
+              {
+                "jp": "わたしは がくせいです。",
+                "vi": "Tôi là sinh viên.",
+                "audio": null
+              }
+            ]
+          },
+          {
+            "id": "g0102",
+            "pattern": "N ですか",
+            "vi": "Hỏi có phải là… không",
+            "explain": "Thêm か ở cuối câu lịch sự để hỏi.",
+            "viMistake": "Không cần thêm một từ hỏi khác khi đã dùng か.",
+            "examples": [
+              {
+                "jp": "せんせいですか。",
+                "vi": "Bạn có phải là giáo viên không?",
+                "audio": null
+              }
+            ]
+          }
+        ],
+        "slides": [
+          {
+            "id": "s0101",
+            "type": "title",
+            "jp": "あいさつ",
+            "vi": "Làm quen và chào hỏi",
+            "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+          },
+          {
+            "id": "s0102",
+            "type": "vocab",
+            "refs": ["v0101", "v0102", "v0103"]
+          },
+          {
+            "id": "s0103",
+            "type": "vocab",
+            "refs": ["v0104", "v0105", "v0106"]
+          },
+          {
+            "id": "s0104",
+            "type": "grammar",
+            "ref": "g0101"
+          },
+          {
+            "id": "s0105",
+            "type": "example",
+            "ref": "g0101",
+            "reveal": true
+          },
+          {
+            "id": "s0106",
+            "type": "grammar",
+            "ref": "g0102"
+          },
+          {
+            "id": "s0107",
+            "type": "example",
+            "ref": "g0102",
+            "reveal": true
+          },
+          {
+            "id": "s0108",
+            "type": "quiz",
+            "ref": "q0101"
+          },
+          {
+            "id": "s0109",
+            "type": "note",
+            "title": "Thử nói một câu của bạn",
+            "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "q0101",
+            "type": "choice",
+            "prompt": "わたしは がくせい___。",
+            "options": ["です", "ます", "を", "に"],
+            "multiple": false,
+            "answer": [0],
+            "explain": "は đánh dấu chủ đề và đọc là wa trong câu. です tạo cách nói lịch sự.",
+            "points": 1,
+            "tags": ["introductory", "sample"]
+          }
+        ]
+      },
+      "id": "869cccb3-7841-5f2e-a975-fcdd6e692d9d",
+      "lessonId": "lesson-01",
+      "versionNo": 1,
+      "publishedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "title": "Đồ vật quanh mình",
+      "titleJa": "みのまわりのもの",
+      "summary": "Gọi tên đồ vật và phân biệt これ・それ・あれ.",
+      "order": 2,
+      "courseId": "n5",
+      "isSample": true,
+      "content": {
+        "schemaVersion": 1,
+        "vocab": [
+          {
+            "id": "v0201",
+            "jp": "ほん",
+            "kanji": "本",
+            "romaji": "hon",
+            "vi": "sách",
+            "audio": null
+          },
+          {
+            "id": "v0202",
+            "jp": "ノート",
+            "kanji": "ノート",
+            "romaji": "nooto",
+            "vi": "vở",
+            "audio": null
+          },
+          {
+            "id": "v0203",
+            "jp": "えんぴつ",
+            "kanji": "鉛筆",
+            "romaji": "enpitsu",
+            "vi": "bút chì",
+            "audio": null
+          },
+          {
+            "id": "v0204",
+            "jp": "かばん",
+            "kanji": "鞄",
+            "romaji": "kaban",
+            "vi": "cặp, túi",
+            "audio": null
+          },
+          {
+            "id": "v0205",
+            "jp": "つくえ",
+            "kanji": "机",
+            "romaji": "tsukue",
+            "vi": "bàn",
+            "audio": null
+          },
+          {
+            "id": "v0206",
+            "jp": "いす",
+            "kanji": "椅子",
+            "romaji": "isu",
+            "vi": "ghế",
+            "audio": null
+          }
+        ],
+        "grammar": [
+          {
+            "id": "g0201",
+            "pattern": "これは N です",
+            "vi": "Đây là…",
+            "explain": "これ chỉ vật gần người nói; dùng độc lập, không đặt trực tiếp trước danh từ.",
+            "viMistake": "Phân biệt これ là đại từ và この đứng trước danh từ.",
+            "examples": [
+              {
+                "jp": "これは ほんです。",
+                "vi": "Đây là sách.",
+                "audio": null
+              }
+            ]
+          },
+          {
+            "id": "g0202",
+            "pattern": "N の N",
+            "vi": "Danh từ bổ nghĩa danh từ",
+            "explain": "の nối hai danh từ; có thể thể hiện sở hữu.",
+            "viMistake": "Không đảo thứ tự chủ sở hữu và đồ vật.",
+            "examples": [
+              {
+                "jp": "これは わたしの かばんです。",
+                "vi": "Đây là túi của tôi.",
+                "audio": null
+              }
+            ]
+          }
+        ],
+        "slides": [
+          {
+            "id": "s0201",
+            "type": "title",
+            "jp": "みのまわりのもの",
+            "vi": "Đồ vật quanh mình",
+            "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+          },
+          {
+            "id": "s0202",
+            "type": "vocab",
+            "refs": ["v0201", "v0202", "v0203"]
+          },
+          {
+            "id": "s0203",
+            "type": "vocab",
+            "refs": ["v0204", "v0205", "v0206"]
+          },
+          {
+            "id": "s0204",
+            "type": "grammar",
+            "ref": "g0201"
+          },
+          {
+            "id": "s0205",
+            "type": "example",
+            "ref": "g0201",
+            "reveal": true
+          },
+          {
+            "id": "s0206",
+            "type": "grammar",
+            "ref": "g0202"
+          },
+          {
+            "id": "s0207",
+            "type": "example",
+            "ref": "g0202",
+            "reveal": true
+          },
+          {
+            "id": "s0208",
+            "type": "quiz",
+            "ref": "q0201"
+          },
+          {
+            "id": "s0209",
+            "type": "note",
+            "title": "Thử nói một câu của bạn",
+            "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "q0201",
+            "type": "choice",
+            "prompt": "これは ___です。",
+            "options": ["ほん", "いきます", "たべます", "のみます"],
+            "multiple": false,
+            "answer": [0],
+            "explain": "これ chỉ vật gần người nói; dùng độc lập, không đặt trực tiếp trước danh từ.",
+            "points": 1,
+            "tags": ["introductory", "sample"]
+          }
+        ]
+      },
+      "id": "fd7e080e-5889-5f04-b03f-e72b680dbf05",
+      "lessonId": "lesson-02",
+      "versionNo": 1,
+      "publishedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "title": "Địa điểm và vị trí",
+      "titleJa": "ばしょ",
+      "summary": "Hỏi địa điểm, làm quen ここ・そこ・あそこ.",
+      "order": 3,
+      "courseId": "n5",
+      "isSample": true,
+      "content": {
+        "schemaVersion": 1,
+        "vocab": [
+          {
+            "id": "v0301",
+            "jp": "がっこう",
+            "kanji": "学校",
+            "romaji": "gakkou",
+            "vi": "trường học",
+            "audio": null
+          },
+          {
+            "id": "v0302",
+            "jp": "きょうしつ",
+            "kanji": "教室",
+            "romaji": "kyoushitsu",
+            "vi": "phòng học",
+            "audio": null
+          },
+          {
+            "id": "v0303",
+            "jp": "としょかん",
+            "kanji": "図書館",
+            "romaji": "toshokan",
+            "vi": "thư viện",
+            "audio": null
+          },
+          {
+            "id": "v0304",
+            "jp": "えき",
+            "kanji": "駅",
+            "romaji": "eki",
+            "vi": "nhà ga",
+            "audio": null
+          },
+          {
+            "id": "v0305",
+            "jp": "ここ",
+            "kanji": "ここ",
+            "romaji": "koko",
+            "vi": "chỗ này",
+            "audio": null
+          },
+          {
+            "id": "v0306",
+            "jp": "どこ",
+            "kanji": "どこ",
+            "romaji": "doko",
+            "vi": "đâu",
+            "audio": null
+          }
+        ],
+        "grammar": [
+          {
+            "id": "g0301",
+            "pattern": "ここは N です",
+            "vi": "Chỗ này là…",
+            "explain": "ここ chỉ địa điểm gần người nói.",
+            "viMistake": "これ chỉ vật, ここ chỉ địa điểm.",
+            "examples": [
+              {
+                "jp": "ここは きょうしつです。",
+                "vi": "Chỗ này là phòng học.",
+                "audio": null
+              }
+            ]
+          },
+          {
+            "id": "g0302",
+            "pattern": "N は どこですか",
+            "vi": "… ở đâu?",
+            "explain": "Dùng どこ để hỏi địa điểm.",
+            "viMistake": "Không dùng だれ để hỏi địa điểm.",
+            "examples": [
+              {
+                "jp": "としょかんは どこですか。",
+                "vi": "Thư viện ở đâu?",
+                "audio": null
+              }
+            ]
+          }
+        ],
+        "slides": [
+          {
+            "id": "s0301",
+            "type": "title",
+            "jp": "ばしょ",
+            "vi": "Địa điểm và vị trí",
+            "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+          },
+          {
+            "id": "s0302",
+            "type": "vocab",
+            "refs": ["v0301", "v0302", "v0303"]
+          },
+          {
+            "id": "s0303",
+            "type": "vocab",
+            "refs": ["v0304", "v0305", "v0306"]
+          },
+          {
+            "id": "s0304",
+            "type": "grammar",
+            "ref": "g0301"
+          },
+          {
+            "id": "s0305",
+            "type": "example",
+            "ref": "g0301",
+            "reveal": true
+          },
+          {
+            "id": "s0306",
+            "type": "grammar",
+            "ref": "g0302"
+          },
+          {
+            "id": "s0307",
+            "type": "example",
+            "ref": "g0302",
+            "reveal": true
+          },
+          {
+            "id": "s0308",
+            "type": "quiz",
+            "ref": "q0301"
+          },
+          {
+            "id": "s0309",
+            "type": "note",
+            "title": "Thử nói một câu của bạn",
+            "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "q0301",
+            "type": "choice",
+            "prompt": "Hỏi “Nhà ga ở đâu?”: えきは ___ですか。",
+            "options": ["どこ", "だれ", "なに", "いつ"],
+            "multiple": false,
+            "answer": [0],
+            "explain": "ここ chỉ địa điểm gần người nói.",
+            "points": 1,
+            "tags": ["introductory", "sample"]
+          }
+        ]
+      },
+      "id": "f159f20d-82a0-52fd-93d5-c4b7da02cc80",
+      "lessonId": "lesson-03",
+      "versionNo": 1,
+      "publishedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "title": "Thời gian trong ngày",
+      "titleJa": "じかん",
+      "summary": "Hỏi giờ và diễn đạt lịch sinh hoạt đơn giản.",
+      "order": 4,
+      "courseId": "n5",
+      "isSample": true,
+      "content": {
+        "schemaVersion": 1,
+        "vocab": [
+          {
+            "id": "v0401",
+            "jp": "いま",
+            "kanji": "今",
+            "romaji": "ima",
+            "vi": "bây giờ",
+            "audio": null
+          },
+          {
+            "id": "v0402",
+            "jp": "じ",
+            "kanji": "時",
+            "romaji": "ji",
+            "vi": "giờ",
+            "audio": null
+          },
+          {
+            "id": "v0403",
+            "jp": "はん",
+            "kanji": "半",
+            "romaji": "han",
+            "vi": "rưỡi",
+            "audio": null
+          },
+          {
+            "id": "v0404",
+            "jp": "あさ",
+            "kanji": "朝",
+            "romaji": "asa",
+            "vi": "buổi sáng",
+            "audio": null
+          },
+          {
+            "id": "v0405",
+            "jp": "よる",
+            "kanji": "夜",
+            "romaji": "yoru",
+            "vi": "buổi tối",
+            "audio": null
+          },
+          {
+            "id": "v0406",
+            "jp": "まいにち",
+            "kanji": "毎日",
+            "romaji": "mainichi",
+            "vi": "hằng ngày",
+            "audio": null
+          }
+        ],
+        "grammar": [
+          {
+            "id": "g0401",
+            "pattern": "いま N じです",
+            "vi": "Bây giờ là… giờ",
+            "explain": "じ đi sau số để nói giờ; cách đọc một số giờ cần học riêng.",
+            "viMistake": "Chín giờ đọc くじ, không đọc きゅうじ.",
+            "examples": [
+              {
+                "jp": "いま くじです。",
+                "vi": "Bây giờ là chín giờ.",
+                "audio": null
+              }
+            ]
+          },
+          {
+            "id": "g0402",
+            "pattern": "N から N まで",
+            "vi": "Từ… đến…",
+            "explain": "から đánh dấu điểm bắt đầu, まで đánh dấu điểm kết thúc.",
+            "viMistake": "Không đảo から và まで.",
+            "examples": [
+              {
+                "jp": "くじから ごじまでです。",
+                "vi": "Từ chín giờ đến năm giờ.",
+                "audio": null
+              }
+            ]
+          }
+        ],
+        "slides": [
+          {
+            "id": "s0401",
+            "type": "title",
+            "jp": "じかん",
+            "vi": "Thời gian trong ngày",
+            "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+          },
+          {
+            "id": "s0402",
+            "type": "vocab",
+            "refs": ["v0401", "v0402", "v0403"]
+          },
+          {
+            "id": "s0403",
+            "type": "vocab",
+            "refs": ["v0404", "v0405", "v0406"]
+          },
+          {
+            "id": "s0404",
+            "type": "grammar",
+            "ref": "g0401"
+          },
+          {
+            "id": "s0405",
+            "type": "example",
+            "ref": "g0401",
+            "reveal": true
+          },
+          {
+            "id": "s0406",
+            "type": "grammar",
+            "ref": "g0402"
+          },
+          {
+            "id": "s0407",
+            "type": "example",
+            "ref": "g0402",
+            "reveal": true
+          },
+          {
+            "id": "s0408",
+            "type": "quiz",
+            "ref": "q0401"
+          },
+          {
+            "id": "s0409",
+            "type": "note",
+            "title": "Thử nói một câu của bạn",
+            "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "q0401",
+            "type": "choice",
+            "prompt": "“Từ 9 giờ đến 5 giờ”: くじ___ ごじまでです。",
+            "options": ["から", "を", "へ", "の"],
+            "multiple": false,
+            "answer": [0],
+            "explain": "じ đi sau số để nói giờ; cách đọc một số giờ cần học riêng.",
+            "points": 1,
+            "tags": ["introductory", "sample"]
+          }
+        ]
+      },
+      "id": "003d479b-6f56-50ed-b6be-1f3f67efbff7",
+      "lessonId": "lesson-04",
+      "versionNo": 1,
+      "publishedAt": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "title": "Đi lại mỗi ngày",
+      "titleJa": "まいにちのいどう",
+      "summary": "Nói nơi đến, phương tiện và người đi cùng.",
+      "order": 5,
+      "courseId": "n5",
+      "isSample": true,
+      "content": {
+        "schemaVersion": 1,
+        "vocab": [
+          {
+            "id": "v0501",
+            "jp": "いきます",
+            "kanji": "行きます",
+            "romaji": "ikimasu",
+            "vi": "đi",
+            "audio": null
+          },
+          {
+            "id": "v0502",
+            "jp": "きます",
+            "kanji": "来ます",
+            "romaji": "kimasu",
+            "vi": "đến",
+            "audio": null
+          },
+          {
+            "id": "v0503",
+            "jp": "かえります",
+            "kanji": "帰ります",
+            "romaji": "kaerimasu",
+            "vi": "về",
+            "audio": null
+          },
+          {
+            "id": "v0504",
+            "jp": "でんしゃ",
+            "kanji": "電車",
+            "romaji": "densha",
+            "vi": "tàu điện",
+            "audio": null
+          },
+          {
+            "id": "v0505",
+            "jp": "バス",
+            "kanji": "バス",
+            "romaji": "basu",
+            "vi": "xe buýt",
+            "audio": null
+          },
+          {
+            "id": "v0506",
+            "jp": "ともだち",
+            "kanji": "友達",
+            "romaji": "tomodachi",
+            "vi": "bạn bè",
+            "audio": null
+          }
+        ],
+        "grammar": [
+          {
+            "id": "g0501",
+            "pattern": "N へ いきます",
+            "vi": "Đi đến…",
+            "explain": "へ chỉ hướng di chuyển và đọc là e khi làm trợ từ.",
+            "viMistake": "Viết trợ từ へ, không viết え.",
+            "examples": [
+              {
+                "jp": "がっこうへ いきます。",
+                "vi": "Tôi đi đến trường.",
+                "audio": null
+              }
+            ]
+          },
+          {
+            "id": "g0502",
+            "pattern": "N で いきます",
+            "vi": "Đi bằng…",
+            "explain": "で đứng sau phương tiện. Đi bộ thường dùng あるいて.",
+            "viMistake": "Không dùng に thay で để chỉ phương tiện trong mẫu này.",
+            "examples": [
+              {
+                "jp": "バスで がっこうへ いきます。",
+                "vi": "Tôi đi xe buýt đến trường.",
+                "audio": null
+              }
+            ]
+          }
+        ],
+        "slides": [
+          {
+            "id": "s0501",
+            "type": "title",
+            "jp": "まいにちのいどう",
+            "vi": "Đi lại mỗi ngày",
+            "teacherNotes": "PRIVATE_TEACHER_NOTE: Ask learners for an example before showing the model."
+          },
+          {
+            "id": "s0502",
+            "type": "vocab",
+            "refs": ["v0501", "v0502", "v0503"]
+          },
+          {
+            "id": "s0503",
+            "type": "vocab",
+            "refs": ["v0504", "v0505", "v0506"]
+          },
+          {
+            "id": "s0504",
+            "type": "grammar",
+            "ref": "g0501"
+          },
+          {
+            "id": "s0505",
+            "type": "example",
+            "ref": "g0501",
+            "reveal": true
+          },
+          {
+            "id": "s0506",
+            "type": "grammar",
+            "ref": "g0502"
+          },
+          {
+            "id": "s0507",
+            "type": "example",
+            "ref": "g0502",
+            "reveal": true
+          },
+          {
+            "id": "s0508",
+            "type": "quiz",
+            "ref": "q0501"
+          },
+          {
+            "id": "s0509",
+            "type": "note",
+            "title": "Thử nói một câu của bạn",
+            "body": "Dùng từ vựng và mẫu câu vừa học để nói về bản thân. Nhờ giảng viên sửa cách dùng và phát âm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "q0501",
+            "type": "choice",
+            "prompt": "バス___ がっこうへ いきます。",
+            "options": ["で", "を", "が", "の"],
+            "multiple": false,
+            "answer": [0],
+            "explain": "で đứng sau phương tiện. Đi bộ thường dùng あるいて.",
+            "points": 1,
+            "tags": ["introductory", "sample"]
+          }
+        ]
+      },
+      "id": "3917fa84-15d4-523b-b3ed-b4f0ca15889e",
+      "lessonId": "lesson-05",
+      "versionNo": 1,
+      "publishedAt": "2026-10-28T00:00:00.000Z"
+    }
+  ]
+}
