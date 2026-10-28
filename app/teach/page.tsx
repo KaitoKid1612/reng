@@ -94,7 +94,12 @@ export default async function TeachPage() {
           </p>
         )}
       </section>
-      <SignOutButton />
+      <div className="button-row">
+        <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
+          Email tóm tắt lớp
+        </Link>
+        <SignOutButton />
+      </div>
     </>
   );
 }

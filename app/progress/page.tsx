@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { AssignmentStatusBadge } from "@/components/classroom/assignment-labels";
+import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getProgressSummary } from "@/lib/server/learner";
@@ -21,7 +22,12 @@ export default async function ProgressPage() {
           <h1>Tiến độ của tôi</h1>
           <p>Ba chỉ số tách riêng: đọc bài, điểm bài tập và thẻ ôn tập.</p>
         </div>
-        <SignOutButton />
+        <div className="button-row">
+          <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
+            Cài đặt email nhắc học
+          </Link>
+          <SignOutButton />
+        </div>
       </div>
       <div className="stat-tiles">
         <div className="stat-tile">
