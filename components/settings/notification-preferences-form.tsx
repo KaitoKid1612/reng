@@ -32,32 +32,25 @@ export function NotificationPreferencesForm({
           chỉ email rồi lưu lại cài đặt để gửi tiếp.
         </p>
       )}
-      {role === "student" ? (
-        <>
-          <fieldset>
-            <legend>Nhắc học qua email</legend>
-            {FREQUENCY_OPTIONS.map((option) => (
-              <label key={option.value} className="choice-label">
-                <input
-                  type="radio"
-                  name="reminderFrequency"
-                  value={option.value}
-                  defaultChecked={preferences.reminderFrequency === option.value}
-                />
-                {option.label}
-              </label>
-            ))}
-          </fieldset>
-          <label className="choice-label">
+      <fieldset>
+        <legend>Nhắc học qua email</legend>
+        {FREQUENCY_OPTIONS.map((option) => (
+          <label key={option.value} className="choice-label">
             <input
-              type="checkbox"
-              name="weeklyEnabled"
-              defaultChecked={preferences.weeklyEnabled}
+              type="radio"
+              name="reminderFrequency"
+              value={option.value}
+              defaultChecked={preferences.reminderFrequency === option.value}
             />
-            Tổng kết tuần vào tối Chủ nhật
+            {option.label}
           </label>
-        </>
-      ) : (
+        ))}
+      </fieldset>
+      <label className="choice-label">
+        <input type="checkbox" name="weeklyEnabled" defaultChecked={preferences.weeklyEnabled} />
+        Tổng kết tuần vào tối Chủ nhật
+      </label>
+      {role === "teacher" && (
         <label className="choice-label">
           <input
             type="checkbox"

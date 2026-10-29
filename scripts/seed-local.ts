@@ -88,6 +88,14 @@ async function main() {
     if (error) {
       throw new Error(`Unable to publish ${draft.id} locally.`);
     }
+    const { error: visibilityError } = await client.rpc("set_lesson_visibility", {
+      p_owner_id: teacherId,
+      p_lesson_id: draft.id,
+      p_visibility: "public",
+    });
+    if (visibilityError) {
+      throw new Error("Unable to expose the reviewed local sample catalog.");
+    }
   }
   console.log(`Local teacher ${values.email} (${teacherId}) is ready with the sample lessons.`);
 }

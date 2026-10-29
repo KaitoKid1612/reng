@@ -94,6 +94,12 @@ test("teacher builds a lesson from scratch and learners can read the published v
 
   const visitor = await (await browser.newContext()).newPage();
   await visitor.goto("/lessons");
+  await expect(visitor.getByRole("heading", { name: LESSON_TITLE })).toHaveCount(0);
+  await page.getByLabel("Ai có thể đọc bản đã xuất bản?").selectOption("public");
+  await page.getByLabel(/Nếu chọn công khai/).check();
+  await page.getByRole("button", { name: "Lưu quyền đọc", exact: true }).click();
+  await expect(page.getByText(/Đã cập nhật quyền đọc/)).toBeVisible();
+  await visitor.reload();
   await expect(visitor.getByRole("heading", { name: LESSON_TITLE })).toBeVisible();
   await visitor.goto(`/lessons/${LESSON_ID}`);
   await expect(visitor.getByText("bao nhiêu tiền", { exact: true })).toBeVisible();

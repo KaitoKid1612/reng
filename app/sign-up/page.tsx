@@ -24,8 +24,11 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
   return (
     <div className="narrow-page">
       <h1>Tạo tài khoản học viên</h1>
+      <p>
+        <Link href="/sign-up/teacher">Tôi muốn đăng ký giáo viên</Link>
+      </p>
       <p className="muted">
-        Chỉ cần họ tên và email. Tài khoản giảng viên do người vận hành cấp riêng.
+        Chỉ cần họ tên và email. Bạn có thể đăng ký giảng dạy bằng cùng tài khoản.
       </p>
       {isClassroomConfigured() ? (
         <>

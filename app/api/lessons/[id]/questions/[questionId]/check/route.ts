@@ -8,7 +8,7 @@ import {
   toQuestionView,
 } from "@/lib/assignment";
 import { gradeQuestion } from "@/lib/grading/grade";
-import { loadLessonVersion } from "@/lib/lesson-repository";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { errorResponse, jsonResponse, readJsonBody } from "@/lib/server/api";
 
 interface CheckRouteContext {
@@ -25,7 +25,7 @@ export async function POST(request: Request, { params }: CheckRouteContext) {
   try {
     const { id, questionId } = await params;
     const body = checkSchema.parse(await readJsonBody(request));
-    const version = await loadLessonVersion(id, body.version);
+    const version = await loadAccessibleLessonVersion(id, body.version);
     const question = version?.content.questions.find((item) => item.id === questionId);
     if (!question || !isAssignableQuestion(question)) {
       return jsonResponse({ code: "not_found" }, 404);

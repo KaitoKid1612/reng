@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { SlideDeck } from "@/components/slides/slide-deck";
-import { loadPublicLesson } from "@/lib/lesson-repository";
+import { loadAccessibleLesson } from "@/lib/server/lesson-access";
 
 interface SlidePageProps {
   params: Promise<{ id: string }>;
@@ -11,7 +11,7 @@ interface SlidePageProps {
 export default async function SlidePage({ params, searchParams }: SlidePageProps) {
   const { id } = await params;
   const query = await searchParams;
-  const lesson = await loadPublicLesson(id, query.version);
+  const lesson = await loadAccessibleLesson(id, query.version);
   if (!lesson) {
     notFound();
   }

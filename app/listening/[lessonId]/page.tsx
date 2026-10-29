@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ListeningPractice } from "@/components/listening/listening-practice";
 import { buttonVariants } from "@/components/ui/button";
 import { isListeningQuestion, toQuestionView } from "@/lib/assignment";
-import { loadLessonVersion } from "@/lib/lesson-repository";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 
 import type { Metadata } from "next";
 
@@ -18,7 +18,7 @@ interface ListeningPageProps {
 export default async function ListeningPage({ params, searchParams }: ListeningPageProps) {
   const { lessonId } = await params;
   const { version: versionId } = await searchParams;
-  const version = await loadLessonVersion(lessonId, versionId);
+  const version = await loadAccessibleLessonVersion(lessonId, versionId);
   if (!version) {
     notFound();
   }

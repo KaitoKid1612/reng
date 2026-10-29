@@ -1,6 +1,6 @@
 # Basic Design — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. Trạng thái: đặc tả mới, chưa triển khai. Phạm vi theo yêu cầu người dùng: nhiều giáo viên, hỗ trợ mở rộng nhiều môn/ngôn ngữ, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), lớp học riêng, Google Meet bên ngoài, học liệu chia sẻ và chuyển bài scan.
+Ngày: 29/10/2026. Trạng thái: đang triển khai theo lát; tiến độ ghi ở [đối chiếu source](../source-alignment.md). Phạm vi theo yêu cầu người dùng: nhiều giáo viên, hỗ trợ mở rộng nhiều môn/ngôn ngữ, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), lớp học riêng, Google Meet bên ngoài, học liệu chia sẻ và chuyển bài scan.
 
 ## Đánh giá hướng sản phẩm
 
@@ -57,13 +57,13 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | Mã | Màn hình/route dự kiến | Hành vi chính |
 |---|---|---|
 | SV01 | `/sign-up/teacher` | Đăng ký và trạng thái xác minh/khả năng dạy |
-| SV02 | `/teach/classes/[id]/settings` | Sức chứa, ngôn ngữ, link Meet, mã lớp |
+| SV02 | `/teach/classes/[id]` (form cài đặt lớp) | Sức chứa, ngôn ngữ, link Meet, mã lớp |
 | SV03 | Trang lớp học sinh hiện có | Link buổi học, slide đã mở, bài và tiến độ |
 | SV04 | `/teach/library` | Bài của tôi/được chia sẻ, ngôn ngữ và nguồn |
 | SV05 | `/teach/lessons/[id]/sharing` | Chọn version, người nhận, quyền, thu hồi |
 | SV06 | `/teach/imports`, `/teach/imports/[id]` | Upload, tiến trình, ảnh và câu draft, duyệt |
 
-Tên route là đề xuất, không khẳng định đã tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
+SV01–SV03 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`. SV04–SV06 là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
 
 ## Ngôn ngữ và chấm điểm
 

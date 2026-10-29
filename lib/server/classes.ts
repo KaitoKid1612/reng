@@ -4,6 +4,7 @@ import { randomInt } from "node:crypto";
 
 import { z } from "zod";
 
+import { subjectForLanguage } from "@/lib/class-settings";
 import { createJoinCode } from "@/lib/join-code";
 import {
   callRpc,
@@ -13,6 +14,8 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
+
+import type { ClassSettings } from "@/lib/class-settings";
 
 const timestamp = z.iso.datetime({ offset: true });
 
@@ -24,13 +27,18 @@ const classRowSchema = z.object({
   join_enabled: z.boolean(),
   active: z.boolean(),
   pass_score: z.number().int(),
+  capacity: z.number().int().nullable(),
+  meeting_url: z.string().nullable(),
+  subject: z.enum(["japanese", "chinese"]),
+  language_tag: z.enum(["ja-JP", "zh-Hans", "zh-Hant"]),
+  revision: z.number().int(),
   created_at: timestamp,
 });
 
 export type ClassRow = z.infer<typeof classRowSchema>;
 
 const CLASS_COLUMNS =
-  "id, teacher_id, name, join_code, join_enabled, active, pass_score, created_at";
+  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, created_at";
 
 export async function listTeacherClasses(teacherId: string) {
   const service = createServiceClient();
@@ -94,12 +102,21 @@ async function insertWithFreshCode<T>(write: (code: string) => Promise<T>) {
   throw new ServiceError("join_code_exhausted");
 }
 
-export async function createClass(teacherId: string, name: string, passScore: number) {
+export async function createClass(teacherId: string, settings: ClassSettings) {
   return insertWithFreshCode(async (code) => {
     const row = await selectOptional(
       createServiceClient()
         .from("classes")
-        .insert({ teacher_id: teacherId, name, pass_score: passScore, join_code: code })
+        .insert({
+          teacher_id: teacherId,
+          name: settings.name,
+          pass_score: settings.passScore,
+          join_code: code,
+          capacity: settings.capacity,
+          meeting_url: settings.meetingUrl || null,
+          language_tag: settings.languageTag,
+          subject: subjectForLanguage(settings.languageTag),
+        })
         .select("id")
         .single(),
       z.object({ id: z.uuid() }),
@@ -114,15 +131,24 @@ export async function createClass(teacherId: string, name: string, passScore: nu
 export async function updateClassSettings(
   teacherId: string,
   classId: string,
-  settings: { name: string; passScore: number; active: boolean },
+  settings: ClassSettings & { active: boolean; revision: number },
 ) {
   await getTeacherClass(teacherId, classId);
-  await runMutation(
-    createServiceClient()
-      .from("classes")
-      .update({ name: settings.name, pass_score: settings.passScore, active: settings.active })
-      .eq("id", classId)
-      .eq("teacher_id", teacherId),
+  await callRpc(
+    "update_class_settings",
+    {
+      p_teacher_id: teacherId,
+      p_class_id: classId,
+      p_expected_revision: settings.revision,
+      p_name: settings.name,
+      p_pass_score: settings.passScore,
+      p_active: settings.active,
+      p_capacity: settings.capacity,
+      p_meeting_url: settings.meetingUrl || null,
+      p_subject: subjectForLanguage(settings.languageTag),
+      p_language_tag: settings.languageTag,
+    },
+    z.number().int(),
   );
 }
 
@@ -285,7 +311,14 @@ export async function setClassLesson(
 const joinResultSchema = z
   .array(
     z.object({
-      status: z.enum(["joined", "already_member", "invalid_code", "rate_limited", "not_student"]),
+      status: z.enum([
+        "joined",
+        "already_member",
+        "invalid_code",
+        "rate_limited",
+        "not_found",
+        "class_full",
+      ]),
       class_id: z.uuid().nullable(),
     }),
   )

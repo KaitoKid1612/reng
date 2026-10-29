@@ -71,8 +71,5 @@ export async function requireTeacher(nextPath: string) {
 
 export async function requireStudent(nextPath: string) {
   const account = await requireAccount(nextPath);
-  if (account.role !== "student") {
-    redirect("/teach");
-  }
   return account;
 }

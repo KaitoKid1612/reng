@@ -4,7 +4,7 @@ import { z } from "zod";
 
 import { FEEDBACK_POLICIES, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
-import { loadLessonVersion } from "@/lib/lesson-repository";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import {
   EMAIL_BATCH_SIZE,
   EMAIL_LEASE_SECONDS,
@@ -117,18 +117,11 @@ export async function saveNotificationPreferences(
   role: "student" | "teacher",
   input: Omit<NotificationPreferences, "pauseReason">,
 ) {
-  const next =
-    role === "teacher"
-      ? {
-          reminder_frequency: "off" as const,
-          weekly_enabled: false,
-          teacher_digest_enabled: input.teacherDigestEnabled,
-        }
-      : {
-          reminder_frequency: input.reminderFrequency,
-          weekly_enabled: input.weeklyEnabled,
-          teacher_digest_enabled: false,
-        };
+  const next = {
+    reminder_frequency: input.reminderFrequency,
+    weekly_enabled: input.weeklyEnabled,
+    teacher_digest_enabled: role === "teacher" && input.teacherDigestEnabled,
+  };
   const isEnabled = enabledTypes(next).length > 0;
   const current = await loadPreferenceRow(userId);
   const now = new Date().toISOString();
@@ -273,7 +266,7 @@ async function pickWordOfDay(userId: string, now: Date) {
   if (!lesson) {
     return null;
   }
-  const version = await loadLessonVersion(lesson.lessonId);
+  const version = await loadAccessibleLessonVersion(lesson.lessonId, lesson.versionId, userId);
   const vocab = version?.content.vocab ?? [];
   return vocab.length ? vocab[day % vocab.length] : null;
 }
@@ -426,9 +419,6 @@ async function composeContent(
         })
       : null;
   }
-  if (recipient.role !== "student") {
-    return null;
-  }
   if (type === "weekly_summary") {
     const weeks = await describeWeeks(recipient.user_id, now);
     return weeks
@@ -507,8 +497,7 @@ export async function planEmails(job: NotificationJob, now: Date) {
   const rows: Record<string, unknown>[] = [];
   for (const preference of preferences) {
     const recipient = recipients.get(preference.user_id);
-    const expectedRole = type === "teacher_digest" ? "teacher" : "student";
-    if (!recipient || recipient.role !== expectedRole) {
+    if (!recipient || (type === "teacher_digest" && recipient.role !== "teacher")) {
       continue;
     }
     let hasWork = false;

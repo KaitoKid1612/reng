@@ -161,15 +161,16 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 2. Giai đoạn 3: classes, enrollments, class_lessons, assignments, assignment_items, submissions, answers, srs_cards, review_events, lesson_progress.
 3. Giai đoạn 4: notification_preferences, email_log.
 4. Giai đoạn 5: migration 0006 cho luyện nghe đã có; kanji_entries vẫn dự kiến, chưa tạo.
-5. Giai đoạn 6 dự kiến thêm push_subscriptions và API thiết bị; bảng này chưa có migration, Web Push chưa có runtime. notification_preferences đã có cờ push_enabled dự phòng, không đồng nghĩa có bảng subscription.
+5. Dịch vụ giáo viên: migration 202610290001–0002 thêm teacher_accounts, audit_events, cột capacity/meeting_url/subject/language_tag/instruction_language_tag/revision của classes và các RPC activate_teacher, update_class_settings, read_lesson_version, set_lesson_visibility; join_class khóa hàng lớp để đếm chỗ. Xuất bản giữ nguyên visibility, mặc định class.
+6. Giai đoạn 6 dự kiến thêm push_subscriptions và API thiết bị; bảng này chưa có migration, Web Push chưa có runtime. notification_preferences đã có cờ push_enabled dự phòng, không đồng nghĩa có bảng subscription.
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
 
-## Mở rộng dữ liệu dịch vụ — chưa migration
+## Mở rộng dữ liệu dịch vụ
 
-[DD dịch vụ](detail-design/teaching-service.md) đề xuất teacher_accounts, lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
+Đã migration: teacher_accounts, audit_events và metadata lớp (mục 5 ở trên). Phần còn lại vẫn là đề xuất: [DD dịch vụ](detail-design/teaching-service.md) thêm lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
 
-Cần thay role độc quyền student/teacher bằng khả năng dạy kết hợp enrollment để hỗ trợ vừa học vừa dạy; backfill và kiểm tra toàn bộ RLS/RPC trước chuyển đổi. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.
+Role độc quyền student/teacher đã được thay bằng khả năng dạy trong teacher_accounts kết hợp enrollment; teacher cũ được backfill active, student cũ không tự thành teacher. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.
 
 ## Hợp đồng nội dung Việt–Trung v2 — dự kiến
 

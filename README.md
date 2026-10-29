@@ -1,8 +1,8 @@
 # Masu
 
-Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; nội dung dịch vụ ưu tiên Việt–Trung, giữ dữ liệu Nhật hiện có. Phạm vi đợt hiện tại là tài liệu thiết kế; không triển khai tính năng mới. Chạy `npm run check` trước khi bàn giao thay đổi.
+Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; nội dung dịch vụ ưu tiên Việt–Trung, giữ dữ liệu Nhật hiện có. Dịch vụ giáo viên đang triển khai theo từng lát trong [đối chiếu source](docs/source-alignment.md). Chạy `npm run check` trước khi bàn giao thay đổi.
 
-Masu hướng tới dịch vụ cho giáo viên: quản lý lớp, slide/chia sẻ học liệu, bài tập và theo dõi tiến độ; dạy video qua Google Meet bên ngoài. [Thiết kế dịch vụ](docs/basic-design/teaching-service.md) bổ sung đăng ký giáo viên, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), chia sẻ và nhập scan có duyệt; nền tảng hướng tới nhiều môn/ngôn ngữ — các phần mở rộng này chưa triển khai. Nền hiện tại bắt đầu từ tiếng Nhật N5, với trang chủ, bảng kana, luyện romaji và trang nguồn dữ liệu. [Tài liệu](docs/README.md), [BD giai đoạn 1](docs/basic-design/phase-1.md), [DD giai đoạn 1](docs/detail-design/phase-1.md).
+Masu hướng tới dịch vụ cho giáo viên: quản lý lớp, slide/chia sẻ học liệu, bài tập và theo dõi tiến độ; dạy video qua Google Meet bên ngoài. [Thiết kế dịch vụ](docs/basic-design/teaching-service.md) bổ sung đăng ký giáo viên, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), chia sẻ và nhập scan có duyệt; nền tảng hướng tới nhiều môn/ngôn ngữ. Đã có đăng ký giáo viên tự phục vụ, một tài khoản vừa dạy vừa học, xuất bản không tự công khai, sức chứa lớp và link Meet; chia sẻ học liệu và nhập scan chưa triển khai. Nền hiện tại bắt đầu từ tiếng Nhật N5, với trang chủ, bảng kana, luyện romaji và trang nguồn dữ liệu. [Tài liệu](docs/README.md), [BD giai đoạn 1](docs/basic-design/phase-1.md), [DD giai đoạn 1](docs/detail-design/phase-1.md).
 
 Đã có thêm 5 bài mẫu tự biên soạn tại `/lessons`, trang đọc, `/grammar`, slide/presenter và bản in PDF. Bài mẫu chưa được giảng viên duyệt. [BD giai đoạn 2](docs/basic-design/phase-2.md), [DD giai đoạn 2](docs/detail-design/phase-2.md), [hướng dẫn nội dung](docs/content-authoring.md).
 
@@ -74,7 +74,7 @@ npm run seed:local -- --password <mật-khẩu-giảng-viên-local>
 npm run dev
 ```
 
-Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên và xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt). Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
+Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên, xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt) rồi đặt riêng chúng ở chế độ công khai, vì xuất bản không tự công khai. Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
 
 ```bash
 npm run test:e2e:supabase

@@ -1,11 +1,12 @@
 # Detail Design dự kiến — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. Đây là hợp đồng kỹ thuật đề xuất để chuẩn bị triển khai, **không phải schema/API đang chạy**. Chưa thêm migration, SDK OCR hay thay đổi role trong đợt tài liệu này. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
+Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. Các phần chia sẻ, media, scan/OCR dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
 
 ## Đối chiếu mã nguồn
 
-- `lib/server/account.ts`: role độc quyền student/teacher; `requireStudent` chuyển teacher về `/teach`. Cần thay bằng quyền dạy độc lập và tư cách thành viên lớp để hỗ trợ vừa dạy vừa học.
-- `lib/server/classes.ts`: owner check, tạo/đổi mã, join qua RPC; chưa có capacity/meeting URL/language. `listOwnedLessons` chỉ chọn bài của giáo viên.
+- `lib/server/account.ts`: `requireStudent` chỉ yêu cầu đăng nhập; quyền dạy lấy từ `teacher_accounts` (đồng bộ vào `profiles.role` cho RLS/RPC cũ), quyền học từ enrollment.
+- `lib/server/classes.ts`: owner check, tạo/đổi mã, join qua RPC khóa hàng lớp; settings lưu capacity, meeting URL, ngôn ngữ và revision CAS. `listOwnedLessons` chỉ chọn bài của giáo viên.
+- `lib/server/lesson-access.ts`: mọi trang/API đọc bài đi qua RPC `read_lesson_version`; bài public đọc mọi version, bài class chỉ chủ bài hoặc thành viên đang học lớp đã ghim đúng version và đã mở.
 - `supabase/migrations/202610280001_foundation.sql`: đăng ký sinh student; quyền role chưa tự phục vụ. `202610280004_classroom.sql` kiểm tra student khi join, teacher khi sở hữu lớp; phải cập nhật toàn bộ gate/RLS/RPC liên quan, không chỉ đổi form đăng ký.
 - `lib/lesson-schema.ts`: fill có inputMode hiragana/katakana/japanese; nội dung, font và audio đang thiên về Nhật. Schema đa ngôn ngữ phải tương thích snapshot cũ.
 - Editor, grading, assignment snapshots, báo cáo và `lib/notifications/` là nền tái sử dụng. Chưa có job OCR, storage scan, grant chia sẻ hay quyền sao chép.

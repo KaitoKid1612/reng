@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { PresenterView } from "@/components/slides/presenter-view";
-import { loadPublicLesson } from "@/lib/lesson-repository";
+import { loadAccessibleLesson } from "@/lib/server/lesson-access";
 
 interface PresenterPageProps {
   params: Promise<{ id: string }>;
@@ -11,7 +11,7 @@ interface PresenterPageProps {
 export default async function PresenterPage({ params, searchParams }: PresenterPageProps) {
   const { id } = await params;
   const { version } = await searchParams;
-  const lesson = await loadPublicLesson(id, version);
+  const lesson = await loadAccessibleLesson(id, version);
   if (!lesson) {
     notFound();
   }

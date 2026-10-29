@@ -12,7 +12,7 @@ import {
 } from "@/lib/assignment";
 import { gradeQuestion } from "@/lib/grading/grade";
 import { parseRawAnswer } from "@/lib/grading/raw-answer";
-import { loadLessonVersion } from "@/lib/lesson-repository";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { loadAssignment } from "@/lib/server/assignments";
 import {
   callRpc,
@@ -75,11 +75,11 @@ export interface MistakeReviewCard {
 
 export type ReviewCard = VocabReviewCard | MistakeReviewCard;
 
-async function loadVocabDecks(lessonIds: readonly string[]) {
+async function loadVocabDecks(userId: string, lessonIds: readonly string[]) {
   const decks = new Map<string, { title: string; vocab: VocabItem[] }>();
   await Promise.all(
     [...new Set(lessonIds)].map(async (lessonId) => {
-      const version = await loadLessonVersion(lessonId);
+      const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
       if (version) {
         decks.set(lessonId, { title: version.title, vocab: version.content.vocab });
       }
@@ -142,6 +142,7 @@ export async function listDueCards(userId: string, now: Date): Promise<ReviewCar
     cardRowSchema,
   );
   const decks = await loadVocabDecks(
+    userId,
     rows.filter((row) => row.item_type === "vocab").map((row) => row.source_id),
   );
   const sources = await loadMistakeSources(
@@ -274,7 +275,7 @@ export interface VocabReviewInput {
 }
 
 export async function recordVocabReview(userId: string, input: VocabReviewInput, now: Date) {
-  const version = await loadLessonVersion(input.lessonId);
+  const version = await loadAccessibleLessonVersion(input.lessonId, undefined, userId);
   if (!version?.content.vocab.some((item) => item.id === input.vocabId)) {
     throw new ServiceError("not_found");
   }
@@ -482,7 +483,7 @@ export interface VocabDeckCard {
 }
 
 export async function getVocabularyDeck(userId: string | null, lessonId: string) {
-  const version = await loadLessonVersion(lessonId);
+  const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
   if (!version) {
     return null;
   }

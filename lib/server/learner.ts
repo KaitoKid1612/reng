@@ -6,6 +6,7 @@ import { getDeadlineState, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { listDueCards } from "@/lib/server/reviews";
 import {
   createServiceClient,
@@ -247,15 +248,7 @@ export async function markLessonRead(userId: string, lessonId: string, versionId
     throw new ServiceError("not_found");
   }
   const service = createServiceClient();
-  const version = await selectOptional(
-    service
-      .from("lesson_versions")
-      .select("id")
-      .eq("id", versionId)
-      .eq("lesson_id", lessonId)
-      .maybeSingle(),
-    z.object({ id: z.uuid() }),
-  );
+  const version = await loadAccessibleLessonVersion(lessonId, versionId, userId);
   if (!version) {
     throw new ServiceError("not_found");
   }

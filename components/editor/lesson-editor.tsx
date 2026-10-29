@@ -10,6 +10,7 @@ import {
   saveLessonDraftAction,
 } from "@/app/actions/lessons";
 import { GrammarFields, VocabularyFields } from "@/components/editor/content-fields";
+import { LessonVisibilityForm } from "@/components/editor/lesson-visibility-form";
 import { QuestionFields } from "@/components/editor/question-fields";
 import { SlideFields } from "@/components/editor/slide-fields";
 import { SLIDE_TYPE_LABELS, SLIDE_TYPES } from "@/components/editor/slide-labels";
@@ -34,6 +35,7 @@ export interface LessonEditorProps {
   initialSavedAt: string;
   publishedVersionId: string | null;
   versionCount: number;
+  visibility: "public" | "class";
 }
 
 interface EditorStatus {
@@ -56,6 +58,7 @@ export function LessonEditor({
   initialSavedAt,
   publishedVersionId,
   versionCount,
+  visibility,
 }: LessonEditorProps) {
   const router = useRouter();
   const [state, dispatch] = useReducer(editorReducer, initialDraft, createEditorState);
@@ -370,6 +373,7 @@ export function LessonEditor({
         </section>
       </div>
       <aside className="editor-preview" aria-label="Xem trước">
+        <LessonVisibilityForm lessonId={lessonId} visibility={visibility} />
         <SlidePreview lessonId={lessonId} draft={draft} slideId={state.selectedSlideId} />
         <p className="small muted">
           {versionCount ? `${versionCount} phiên bản đã xuất bản.` : "Chưa xuất bản phiên bản nào."}{" "}

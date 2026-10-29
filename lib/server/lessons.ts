@@ -28,6 +28,7 @@ const lessonRowSchema = z.object({
   id: z.string(),
   title: z.string(),
   title_ja: z.string(),
+  visibility: z.enum(["public", "class"]),
   summary: z.string(),
   order_no: z.number().int(),
   course_id: z.string(),
@@ -38,7 +39,7 @@ const lessonRowSchema = z.object({
 });
 
 const LESSON_COLUMNS =
-  "id, title, title_ja, summary, order_no, course_id, draft_content, draft_revision, published_version_id, updated_at";
+  "id, title, title_ja, summary, order_no, course_id, draft_content, draft_revision, published_version_id, updated_at, visibility";
 
 export const lessonIdSchema = z
   .string()
@@ -98,6 +99,7 @@ export async function loadLessonEditor(teacherId: string, lessonId: string) {
   }
   return {
     lessonId: row.id,
+    visibility: row.visibility,
     revision: row.draft_revision,
     draft,
     savedAt: row.updated_at,
@@ -244,6 +246,19 @@ export async function publishLessonDraft(
     }
     throw error;
   }
+}
+
+// Public reading is a deliberate owner choice; saving or publishing never changes it.
+export async function setLessonVisibility(
+  teacherId: string,
+  lessonId: string,
+  visibility: "public" | "class",
+) {
+  await callRpc(
+    "set_lesson_visibility",
+    { p_owner_id: teacherId, p_lesson_id: lessonId, p_visibility: visibility },
+    z.unknown(),
+  );
 }
 
 export async function importVocabulary(

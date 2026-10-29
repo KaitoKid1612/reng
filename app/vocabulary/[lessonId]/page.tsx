@@ -17,7 +17,7 @@ interface VocabularyPageProps {
 export default async function VocabularyPage({ params }: VocabularyPageProps) {
   const { lessonId } = await params;
   const account = await getCurrentAccount();
-  const isStudent = account?.role === "student";
+  const isStudent = account !== null;
   const deck = await getVocabularyDeck(isStudent ? account.id : null, lessonId);
   if (!deck) {
     notFound();

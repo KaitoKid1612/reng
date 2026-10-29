@@ -88,15 +88,15 @@ export default async function TeachPage() {
             ))}
           </ul>
         ) : (
-          <p className="muted">
-            Chưa có bài nào thuộc tài khoản này. Người vận hành xuất bản bài bằng script với chủ sở
-            hữu là ID {account.id}.
-          </p>
+          <p className="muted">Chưa có bài nào. Chọn Tạo bài mới để soạn bài của bạn.</p>
         )}
       </section>
       <div className="button-row">
         <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
           Email tóm tắt lớp
+        </Link>
+        <Link href="/classes" className={buttonVariants({ variant: "ghost" })}>
+          Lớp tôi đang học
         </Link>
         <SignOutButton />
       </div>

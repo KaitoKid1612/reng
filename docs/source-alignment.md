@@ -1,6 +1,8 @@
 # Đối chiếu source với thiết kế dịch vụ
 
-Ngày kiểm tra: 29/10/2026. Source được kiểm tra tại commit `55129ab`; không thay đổi runtime/migration/dependency trong đợt này. Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
+Ngày kiểm tra: 29/10/2026. Source được kiểm tra tại commit `55129ab`; không thay đổi runtime/migration/dependency trong đợt đối chiếu.
+
+**Cập nhật cùng ngày sau khi triển khai lát 1 và 3** (migration 202610290001–0002): publish không còn tự công khai, loader kiểm tra owner/lớp/version, giáo viên tự kích hoạt sau xác minh email và vẫn học được lớp khác, lớp có sức chứa và link Meet. Ma trận dưới đây ghi trạng thái mới; tỷ lệ tăng từ 23% lên khoảng 34% `(3 + 9 × 0.5) / 22`. Kết quả kiểm thử ở [nghiệm thu dịch vụ](testing/teaching-service.md). Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
 
 ## Kết luận và cách hiểu tỷ lệ
 
@@ -10,9 +12,8 @@ Mẫu số là 22 ID: AUTH-01, SERVICE-01/02, CLASS-08/09, LANG-01, SHARE-01/02,
 
 Quy ước đều trọng số: khớp đầy đủ = 1; có phần nguồn tái sử dụng nhưng chưa đủ hợp đồng mới = 0.5; chưa có hoặc chưa có bằng chứng = 0. Mức 0.5 là quy ước audit, không khẳng định đã làm nửa khối lượng của yêu cầu đó.
 
-- 0/22 khớp đầy đủ hợp đồng dịch vụ mới.
-- 10/22 có một phần nền, 11/22 chưa có, 1/22 chưa kiểm chứng.
-- Điểm `(0 + 10 × 0.5) / 22 = 22.7%`, làm tròn khoảng 23%.
+- Lúc đối chiếu: 0/22 khớp đầy đủ; 10/22 có một phần nền, 11/22 chưa có, 1/22 chưa kiểm chứng; điểm `(0 + 10 × 0.5) / 22 = 22.7%`, làm tròn khoảng 23%.
+- Sau lát 1 và 3: 3/22 khớp đầy đủ, 9/22 một phần, 9/22 chưa có, 1/22 chưa kiểm chứng; điểm `(3 + 9 × 0.5) / 22 = 34.1%`.
 - Nếu chỉ tính hoàn tất trọn yêu cầu mới thì là 0/22; điều này không có nghĩa source hiện tại không có chức năng hữu ích.
 
 Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choice/fill server grading, assignment snapshots/drafts/retry, báo cáo/SRS/tiến độ và email opt-in. Các phần này đáng giữ. Chưa chấm một tỷ lệ thứ hai cho “toàn bộ 86 yêu cầu” vì gồm module Nhật và nhiều tính năng ngoài MVP; cộng chung sẽ che phần còn thiếu của hướng dịch vụ hiện tại.
@@ -21,11 +22,11 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 
 | Yêu cầu | Trạng thái | Điểm | Bằng chứng và khoảng thiếu |
 |---|---|---|---|
-| AUTH-01 | Một phần | 0.5 | Có đăng ký/xác minh email, nhưng đăng ký sinh student; chưa có tự kích hoạt teacher. [Nguồn](../app/actions/auth.ts#L59) |
-| SERVICE-01 | Một phần | 0.5 | Có Auth và trang giáo viên, nhưng role độc quyền; teacher không được vào luồng học sinh. [Nguồn](../lib/server/account.ts#L64) |
-| SERVICE-02 | Một phần | 0.5 | Có owner check/RLS nền; publish tự public và chưa có quyền private media/share của dịch vụ. [Nguồn](../supabase/migrations/202610280003_sample_lessons.sql#L37) |
-| CLASS-08 | Chưa có | 0 | Không có capacity/class_full; join khóa theo user, chưa khóa chỗ theo lớp để đếm sức chứa. [Nguồn](../supabase/migrations/202610280004_classroom.sql#L327) |
-| CLASS-09 | Chưa có | 0 | Class schema/settings không có meeting_url hoặc link Meet cho thành viên. [Nguồn](../lib/server/classes.ts#L23) |
+| AUTH-01 | Một phần | 0.5 | Đăng ký có lối vào giáo viên; server kích hoạt sau xác minh email, không nhận role từ client. Chưa có kiểm soát lạm dụng/quota đăng ký. [Nguồn](../app/actions/teacher-account.ts) |
+| SERVICE-01 | Đã có | 1 | Tự kích hoạt giáo viên sau xác minh email, trang giảng dạy riêng, vừa dạy vừa học bằng enrollment. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |
+| SERVICE-02 | Một phần | 0.5 | Owner check/RLS nền; bài riêng chỉ đọc qua RPC kiểm tra owner/lớp/version. Chưa có media riêng tư và share. [Nguồn](../lib/server/lesson-access.ts) |
+| CLASS-08 | Đã có | 1 | Capacity tùy chọn; join khóa hàng lớp rồi đếm thành viên đang học, trả `class_full`; giảm dưới số đang học bị chặn. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |
+| CLASS-09 | Đã có | 1 | Link Meet allowlist `meet.google.com`, chỉ thành viên lớp thấy; chưa thử dạy Meet thật (SV-08). [Nguồn](../lib/class-settings.ts) |
 | LANG-01 | Chưa có | 0 | Chỉ schemaVersion=1 với jp/romaji/titleJa; không context/v2/Chinese input/TTS. [Nguồn](../lib/lesson-schema.ts#L179) |
 | SHARE-01 | Chưa có | 0 | Chưa có grant view/copy/revoke; listOwnedLessons chỉ lấy owner. [Nguồn](../lib/server/classes.ts#L184) |
 | SHARE-02 | Chưa có | 0 | Chưa có copy version/provenance/media entitlement và idempotency copy. [Nguồn](../lib/server/lessons.ts#L109) |
@@ -48,7 +49,9 @@ Các dòng “chưa có” được đối chiếu route/module, schemas và c�
 
 ## Chênh lệch cần xử lý trước khi mở dịch vụ
 
-### 1. Ưu tiên cao: xuất bản đang làm bài công khai
+### 1. Ưu tiên cao: xuất bản đang làm bài công khai — đã xử lý
+
+Đã sửa bằng migration 202610290001: publish giữ nguyên visibility (mặc định class), công khai là thao tác riêng có xác nhận, mọi trang/API đọc bài qua `read_lesson_version`. Mô tả lúc đối chiếu giữ lại bên dưới.
 
 `publish_lesson` tại [migration 0003](../supabase/migrations/202610280003_sample_lessons.sql#L37) đặt `visibility='public'` mỗi lần publish. [publishLessonDraft](../lib/server/lessons.ts#L223) gọi RPC đó, trong khi docs yêu cầu xuất bản/công khai/giao lớp là các thao tác riêng. [loadLessonVersion](../lib/lesson-repository.ts#L92) lại chỉ đọc bài public. Đây là hành vi của thiết kế cũ, chưa phù hợp yêu cầu riêng tư mới; chưa ghi nhận có dữ liệu thật bị lộ.
 
@@ -60,7 +63,9 @@ Cần migration mới để publish giữ private/class mặc định, quyền c
 
 [normalizeAnswer](../lib/grading/normalize.ts#L3) luôn NFKC, xóa mọi khoảng trắng và dấu chấm cuối. Phép thử cho thấy `nǐ hǎo` và `nǐhǎo` được chuẩn hóa giống nhau, khác profile Trung NFC+trim giữ khoảng trắng pinyin đã chốt. Cần profile bất biến theo assignment snapshot và adapter v1, không thay global normalize làm đổi chấm bài Nhật cũ.
 
-### 3. Ưu tiên cao: quyền dạy và học còn loại trừ nhau
+### 3. Ưu tiên cao: quyền dạy và học còn loại trừ nhau — đã xử lý
+
+Đã thêm `teacher_accounts`, backfill teacher cũ, bỏ chặn teacher ở join/requireStudent/agenda/thông báo học viên. Mô tả lúc đối chiếu giữ lại bên dưới.
 
 [requireStudent](../lib/server/account.ts#L72) chuyển teacher về /teach; [join_class](../supabase/migrations/202610280004_classroom.sql#L335) từ chối teacher, test hiện tại còn xác nhận `not_student`. Cần capability dạy độc lập với enrollment, backfill teacher cũ và cập nhật toàn bộ API/RLS/RPC/session/UI tests; không chỉ thêm lựa chọn teacher ở form đăng ký.
 
@@ -76,7 +81,7 @@ Giữ reducer, ref validation, save CAS, preview và slide reorder. Xây wizard 
 
 ### 6. Capacity, Meet, sharing và scan phần lớn là xây mới
 
-Join hiện có advisory lock theo user, không có capacity hoặc class lock đếm chỗ. Muốn lớp 10 phải thêm transaction theo lớp và kiểm thử chỗ cuối, retry/rejoin. Meet cần settings và quyền đọc link thành viên.
+Capacity và Meet đã làm (khóa hàng lớp khi join, kiểm thử chỗ cuối/retry/rejoin, link chỉ cho thành viên).
 
 Sharing cần bảng grant/copy/provenance/quyền media. Scan cần upload private, worker/OCR/review/quota/retention. Đây là chức năng mới dựa trên nền, không phải toàn bộ đều gọi là refactor. Chưa cần đổi Next.js/React/Supabase hoặc viết lại ứng dụng.
 

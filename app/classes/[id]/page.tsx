@@ -32,6 +32,14 @@ export default async function ClassPage({ params }: ClassPageProps) {
           </p>
         </div>
       </div>
+      {view.classRow.meeting_url && (
+        <section className="section-block">
+          <h2>Buổi học online</h2>
+          <a href={view.classRow.meeting_url} target="_blank" rel="noopener noreferrer">
+            Vào Google Meet
+          </a>
+        </section>
+      )}
       <section className="section-block" aria-labelledby="class-lessons">
         <h2 id="class-lessons">Bài học đã mở</h2>
         {view.lessons.length ? (

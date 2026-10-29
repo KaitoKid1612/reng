@@ -84,6 +84,12 @@ export default async function ClassesPage() {
         <Link href="/progress" className={buttonVariants({ variant: "ghost" })}>
           Tiến độ của tôi
         </Link>
+        <Link
+          href={account.role === "teacher" ? "/teach" : "/teach/start"}
+          className={buttonVariants({ variant: "ghost" })}
+        >
+          {account.role === "teacher" ? "Giảng dạy" : "Đăng ký giảng dạy"}
+        </Link>
         <SignOutButton />
       </div>
     </>

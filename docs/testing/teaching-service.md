@@ -1,6 +1,22 @@
 # Nghiệm thu dự kiến — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. **Toàn bộ ca dưới đây là NOT RUN.** Đợt này chỉ sửa tài liệu, không triển khai hay chạy các chức năng mới. Không thay thế kết quả local ở phase-1 đến phase-5.
+Ngày: 29/10/2026. Ca không có trong bảng kết quả bên dưới vẫn là **NOT RUN**. Không thay thế kết quả local ở phase-1 đến phase-5.
+
+## Kết quả cục bộ đã chạy
+
+Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test migration trên PostgreSQL nhúng (PGlite). Không dùng cloud hoặc tài khoản thật. Ngày chạy 29/10/2026.
+
+| Ca | Kết quả | Bằng chứng |
+|---|---|---|
+| SV-01 | PASS (local) | Kích hoạt qua `/teach/start` với email đã xác minh; email chưa xác minh bị `email_unverified` ở RPC. `e2e-supabase/teaching-service.spec.ts`, `tests/teaching-service-migration.test.ts` |
+| SV-02 | Một phần | Vai `authenticated` không sửa được `profiles.role`/`teacher_accounts` và không gọi được RPC service; đình chỉ đưa role về student, kích hoạt lại bị chặn. Chưa thử giả `user_metadata` qua UI |
+| SV-03 | PASS (local) | Giáo viên đã kích hoạt vào lớp của giáo viên khác bằng mã và đọc bài được ghim |
+| SV-04 | Một phần | Khách/người ngoài không đọc bài class, ghi chú hoặc API câu hỏi của version riêng; kiểm tra hai giáo viên trên mọi màn hình chưa chạy |
+| SV-05 | PASS (local) | Lớp sức chứa 1: người thứ hai nhận `class_full`; vào lại khi đã là thành viên trả `already_member`, không chiếm thêm chỗ |
+| SV-06 | PASS (local) | Hai người bấm vào lớp cùng lúc, đúng một người vào; rời lớp giải phóng chỗ và giữ lịch sử; giảm sức chứa dưới số đang học bị `capacity_below_members` |
+| SV-07 | Một phần | Thành viên thấy link Meet; URL `javascript:`, sai host, có credentials hoặc HTTP bị từ chối ở form và ràng buộc DB. Trường hợp học sinh đã rời đọc link chưa có test riêng (trang lớp đã yêu cầu thành viên đang học) |
+
+Hồi quy đi kèm: `npm run check` (72 test), `npm run test:e2e` 21/21 và `npm run test:e2e:supabase` 20/20, gồm luồng Nhật cũ với bước công khai bài có xác nhận riêng.
 
 Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-service.md), [DD dự kiến](../detail-design/teaching-service.md).
 

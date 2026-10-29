@@ -122,7 +122,7 @@ Ba vai:
 
 Thực hiện bằng Supabase Auth cộng Row Level Security. RLS bảo vệ truy cập trực tiếp database; API vẫn phải xác thực người dùng và kiểm tra quyền theo lớp, bài học, lượt làm. API dùng service role phải tự kiểm tra đầy đủ vì khóa này có quyền vượt RLS. Không đưa khóa đó vào trình duyệt.
 
-Mã nguồn hiện tại tạo tài khoản học viên; người vận hành cấp quyền giảng viên phía server, người dùng không tự sửa `profiles.role`. Định hướng dịch vụ bổ sung đăng ký giáo viên sau xác minh email và cho phép vừa học vừa dạy; đây là thay đổi chưa triển khai, phải nâng cấp gate/RLS/RPC đồng bộ theo [DD dịch vụ](detail-design/teaching-service.md). Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
+Mọi người đăng ký như học viên. Tài khoản đã xác minh email tự kích hoạt giảng dạy tại `/teach/start` sau khi xác nhận trách nhiệm nội dung; server gọi RPC `activate_teacher`, ghi `teacher_accounts` và `audit_events`. Người dùng không tự sửa `profiles.role`; cột này là capability tương thích do trigger đồng bộ từ `teacher_accounts`. Tư cách học đến từ enrollment, nên một tài khoản vừa dạy lớp mình vừa học lớp khác ([DD dịch vụ](detail-design/teaching-service.md)). Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
 
 Đáp án của bài kiểm tra phải thuộc phiên bản riêng không xuất hiện ở bất kỳ API đọc công khai nào, kể cả bài luyện hoặc slide. Chi tiết ranh giới nội dung tại `03-data-design.md`.
 

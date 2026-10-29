@@ -3,7 +3,7 @@ import { getLearnerAgenda } from "@/lib/server/learner";
 
 export async function GET() {
   const auth = await authorizeRead();
-  if (auth.response || auth.account.role !== "student") {
+  if (auth.response) {
     return jsonResponse({ agenda: null });
   }
   try {

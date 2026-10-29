@@ -4,6 +4,7 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { classSettingsSchema } from "@/lib/class-settings";
 import { signInPath } from "@/lib/auth-paths";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
@@ -29,6 +30,8 @@ const GENERIC_ERROR = "Chưa lưu được thay đổi. Bạn thử lại nhé."
 
 const ERROR_MESSAGES: Record<string, string> = {
   not_found: "Không tìm thấy lớp hoặc bài này trong tài khoản của bạn.",
+  revision_conflict: "Cài đặt lớp đã đổi ở tab khác. Tải lại trang trước khi sửa tiếp.",
+  capacity_below_members: "Sức chứa không thể thấp hơn số học viên đang học.",
   class_not_found: "Không tìm thấy lớp đang hoạt động của bạn.",
   lesson_not_found: "Bài học không thuộc tài khoản của bạn hoặc đã lưu trữ.",
   version_not_found: "Phiên bản không thuộc bài học đã chọn.",
@@ -63,7 +66,8 @@ async function requireTeacherAction() {
 const JOIN_MESSAGES: Record<string, string> = {
   invalid_code: "Mã lớp không đúng hoặc đã ngừng nhận học viên. Kiểm tra lại với giảng viên.",
   rate_limited: "Bạn đã nhập sai nhiều lần. Đợi 15 phút rồi thử lại.",
-  not_student: "Tài khoản giảng viên không vào lớp như học viên.",
+  not_found: "Không tìm thấy tài khoản đang hoạt động.",
+  class_full: "Lớp đã đủ số học viên. Liên hệ giáo viên để được hỗ trợ.",
 };
 
 export async function joinClassAction(
@@ -92,11 +96,6 @@ export async function joinClassAction(
   redirect(classId ? `/classes/${classId}` : "/classes");
 }
 
-const classSettingsSchema = z.object({
-  name: z.string().trim().min(1).max(120),
-  passScore: z.coerce.number().int().min(0).max(100),
-});
-
 export async function createClassAction(
   _state: ActionState,
   formData: FormData,
@@ -109,9 +108,12 @@ export async function createClassAction(
   try {
     const settings = classSettingsSchema.parse({
       name: readField(formData, "name"),
+      capacity: readField(formData, "capacity"),
+      meetingUrl: readField(formData, "meetingUrl"),
+      languageTag: readField(formData, "languageTag"),
       passScore: readField(formData, "passScore") || "70",
     });
-    classId = await createClass(account.id, settings.name, settings.passScore);
+    classId = await createClass(account.id, settings);
   } catch (error) {
     return { error: describeError(error) };
   }
@@ -129,11 +131,15 @@ export async function updateClassAction(
   try {
     const settings = classSettingsSchema.parse({
       name: readField(formData, "name"),
+      capacity: readField(formData, "capacity"),
+      meetingUrl: readField(formData, "meetingUrl"),
+      languageTag: readField(formData, "languageTag"),
       passScore: readField(formData, "passScore"),
     });
     await updateClassSettings(account.id, readField(formData, "classId"), {
       ...settings,
       active: readField(formData, "active") === "on",
+      revision: z.coerce.number().int().nonnegative().parse(readField(formData, "revision")),
     });
   } catch (error) {
     return { error: describeError(error) };

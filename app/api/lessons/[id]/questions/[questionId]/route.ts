@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { loadLessonVersion } from "@/lib/lesson-repository";
+import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 
 interface QuestionRouteContext {
   params: Promise<{ id: string; questionId: string }>;
@@ -8,7 +8,7 @@ interface QuestionRouteContext {
 
 export async function GET(request: Request, { params }: QuestionRouteContext) {
   const { id, questionId } = await params;
-  const version = await loadLessonVersion(
+  const version = await loadAccessibleLessonVersion(
     id,
     new URL(request.url).searchParams.get("version") || undefined,
   );

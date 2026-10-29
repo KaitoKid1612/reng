@@ -29,6 +29,7 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
       </div>
       <LessonEditor
         lessonId={editor.lessonId}
+        visibility={editor.visibility}
         initialDraft={editor.draft}
         initialRevision={editor.revision}
         initialSavedAt={editor.savedAt}

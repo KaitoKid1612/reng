@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
@@ -11,6 +12,7 @@ import {
   loadLessonEditor,
   publishLessonDraft,
   saveLessonDraft,
+  setLessonVisibility,
 } from "@/lib/server/lessons";
 import { ServiceError } from "@/lib/server/supabase";
 import { MAX_CSV_BYTES } from "@/lib/vocab-csv";
@@ -182,4 +184,36 @@ export async function loadLessonDraftAction(lessonId: unknown): Promise<LoadDraf
   } catch (error) {
     return { status: "error", message: describeFailure(error) };
   }
+}
+
+export interface VisibilityState {
+  error?: string;
+  notice?: string;
+}
+
+export async function setLessonVisibilityAction(
+  _state: VisibilityState,
+  formData: FormData,
+): Promise<VisibilityState> {
+  const teacherId = await requireTeacherId();
+  const parsed = z
+    .object({ lessonId: lessonIdSchema, visibility: z.enum(["public", "class"]) })
+    .safeParse({
+      lessonId: formData.get("lessonId"),
+      visibility: formData.get("visibility"),
+    });
+  if (!teacherId || !parsed.success) {
+    return { error: NOT_FOUND };
+  }
+  if (parsed.data.visibility === "public" && formData.get("acknowledgePublic") !== "on") {
+    return { error: "Xác nhận phạm vi công khai trước khi lưu quyền đọc." };
+  }
+  try {
+    await setLessonVisibility(teacherId, parsed.data.lessonId, parsed.data.visibility);
+  } catch {
+    return { error: NOT_FOUND };
+  }
+  revalidatePath("/lessons");
+  revalidatePath("/grammar");
+  return { notice: "Đã cập nhật quyền đọc. Lưu nháp hoặc xuất bản sẽ không tự đổi quyền này." };
 }
