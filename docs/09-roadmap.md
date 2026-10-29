@@ -4,7 +4,7 @@
 
 ## Trạng thái và quyết định bản đầu
 
-Ngày rà soát: 28/10/2026. Đã triển khai bản local đầu tiên của giai đoạn 1, chưa giai đoạn nào được nghiệm thu hoàn chỉnh. Thời lượng bên dưới là ước lượng lập kế hoạch, không phải cam kết tiến độ.
+Ngày rà soát: 28/10/2026. Nền giai đoạn 1–4 và phần A giai đoạn 5 đã có bản local; dịch vụ Việt–Trung mới chưa triển khai, chưa giai đoạn nào được nghiệm thu cloud/lớp thật hoàn chỉnh. Thời lượng bên dưới là ước lượng lập kế hoạch, không phải cam kết tiến độ.
 
 - Chọn Next.js + Supabase từ đầu; không triển khai song song bản Astro.
 - P0/P1/P2 trong `01` là mức quan trọng trong phạm vi sản phẩm. Mốc giao tính năng theo file này; P0 không đồng nghĩa tất cả phải có trong giai đoạn 1.
@@ -139,7 +139,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 | Từ điển bật lên khi bôi đen | Cao | Trung bình, `kuromoji` phải chạy server |
 | Luyện hội thoại với AI | Cao | Trung bình, phải chốt phạm vi từ vựng |
 | Bản đồ chữ cái tô màu | Trung bình | Thấp |
-| Ghi âm buổi dạy, tự tóm tắt | Cao với học viên vắng | Thấp, Whisper rẻ |
+| Ghi âm buổi dạy, tự tóm tắt | Cân nhắc khi có nhu cầu/quyền ghi âm | Cần thiết kế/chi phí riêng, ngoài MVP |
 | So dạng sóng phát âm | Trung bình | Trung bình |
 | Chấm điểm phát âm | Cao | Trung bình |
 | Chấm thứ tự nét kanji | Trung bình | Cao, phải tự viết thuật toán |
@@ -156,7 +156,7 @@ Sau giai đoạn 2, dạy thật một buổi rồi ngồi lại. Nhiều khả 
 
 ## Các điều kiện chưa được kiểm chứng
 
-- Stack nền đã cài và khóa trong package-lock.json. Thư viện tính năng giai đoạn sau chưa được cài/tích hợp.
+- Dependency thực tế lấy package.json/lockfile: nền/classroom/editor/email/listening đã có; OCR/queue/font Trung/TTS web chưa tích hợp. Không xem mọi thư viện được nhắc trong tài liệu là đã cài.
 - Đã có 5 bài mẫu tự biên soạn, chưa giảng viên duyệt; chưa có audio sinh thật hoặc đo hiệu năng 4G/máy chiếu. Mục tiêu thời gian trong 01 là yêu cầu, chưa phải kết quả đo.
 - Chưa xác minh lại giá, free tier, điều khoản hosting/TTS và giấy phép dữ liệu từ nguồn chính thức. Chốt trước khi mở dịch vụ hoặc nhập nguồn bên ngoài.
 - PWA offline, thi thử, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6.

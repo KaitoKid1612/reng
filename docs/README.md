@@ -20,6 +20,7 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 
 | File | Nội dung | Đọc khi nào |
 |---|---|---|
+| `documentation-review.md` | Phạm vi rà soát toàn bộ docs, truy vết và quyết định còn mở | Đọc khi kiểm tra tính đầy đủ |
 | `00-overview.md` | Mục tiêu, người dùng, phạm vi | Đọc đầu tiên |
 | `01-requirements.md` | Yêu cầu chức năng và phi chức năng | Trước khi chốt phạm vi |
 | `02-architecture.md` | Stack công nghệ, kiến trúc hệ thống | Trước khi dựng dự án |
@@ -44,7 +45,7 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 
 ## Nguyên tắc xuyên suốt
 
-Một nguồn nội dung, nhiều cách hiển thị. Mỗi bài học là một khối JSON. Từ khối đó sinh ra slide trình chiếu, trang đọc, flashcard và bài tập. Sửa một từ vựng là sửa đúng một chỗ.
+Một nguồn nội dung draft dùng cho nhiều preview. Xuất bản tạo version bất biến; lớp ghim version, bài giao giữ snapshot. Sửa draft không tự đổi bài đang dạy hoặc điểm cũ. V1 Nhật tiếp tục chạy, v2 Việt–Trung chưa triển khai.
 
 ## Trạng thái tài liệu
 
@@ -53,3 +54,7 @@ Một nguồn nội dung, nhiều cách hiển thị. Mỗi bài học là một
 Các quyết định trong tài liệu là đặc tả dự kiến, không phải tính năng đã hoàn thành. Phần nào đã triển khai thì cập nhật lại file tương ứng thay vì viết tài liệu mới. Mốc triển khai và tiêu chí nghiệm thu lấy theo `09-roadmap.md`; font, màu và kích thước lấy theo `12-ui-design.md`.
 
 Đợt bổ sung này tập trung vào phiên bản nội dung, quyền truy cập, nộp bài, dữ liệu ôn tập và vận hành. Giá, quota, giấy phép và điều khoản dịch vụ trong tài liệu cũ chưa được kiểm chứng lại; phải xác minh từ nguồn chính thức trước khi chọn gói hoặc nhập dữ liệu bên ngoài.
+
+## Phạm vi rà soát và phần còn mở
+
+[Rà soát toàn bộ tài liệu](documentation-review.md) ghi phạm vi từng file, nguồn quyết định, phần đã đồng bộ và các lựa chọn provider/font/voice/gói còn phải xác minh trước tích hợp thật. Đợt này chỉ sửa Markdown, không viết code hoặc chạy dịch vụ mới. Không dùng chữ “đã có tài liệu” thay cho “đã triển khai/đã nghiệm thu”.

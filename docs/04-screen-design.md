@@ -1,5 +1,7 @@
 # Thiết kế màn hình
 
+Danh sách S/T giai đoạn 1–5 bên dưới là nền Nhật. Màn hình ưu tiên dịch vụ Việt–Trung là SV01–SV07 trong [BD dịch vụ](basic-design/teaching-service.md): đăng ký giáo viên → lớp → soạn theo mẫu → dạy/giao → theo dõi. Route mới là dự kiến; chưa có wizard hoặc màn hình scan trong code.
+
 Route mới dùng tiếng Anh. Hai URL đã phục vụ trước đây `/kana/luyen` và `/nguon-du-lieu` redirect 308 sang `/kana/practice` và `/sources`; query được giữ. Các màn hình chưa triển khai bên dưới dùng tên tiếng Anh làm baseline.
 
 Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi lại. Không vẽ chi tiết từng nút, vì code chính là detail design cho phần này.
@@ -101,7 +103,7 @@ Hết thẻ thì hiện tóm tắt phiên ôn và chuỗi ngày học liên ti�
 
 Một câu một màn hình trên điện thoại, nhiều câu một trang trên máy tính.
 
-Ô nhập tiếng Nhật luôn gắn `wanakana`, gõ `ko` ra `こ`.
+Ô nhập Nhật dùng wanakana theo inputMode và tôn trọng IME; ô Trung dự kiến dùng IME/Unicode, không chuyển romaji ra kana.
 
 Chế độ luyện: chấm ngay sau mỗi câu, hiện giải thích. Chế độ kiểm tra: không chấm cho tới khi nộp hết.
 

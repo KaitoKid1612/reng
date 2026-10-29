@@ -1,5 +1,7 @@
 # Basic Design giai đoạn 5 — Luyện nghe (phần A)
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Baseline 28/10/2026. Phần A làm luyện nghe với audio TTS sinh trước. Kanji (KANJIDIC2/KanjiVG), furigana tự động và audio hội thoại thu âm/đa giọng chờ quyết định giấy phép và nguồn audio; không nằm trong phần này. Yêu cầu nguồn: LISTEN-01/02/03/04/05/06, CLASS-03 (yếu phần nghe) trong 01; luật chấm 07; audio 06.
 
 ## Phạm vi

@@ -1,5 +1,7 @@
 # Detail Design giai đoạn 5 (phần A)
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Theo [BD](../basic-design/phase-5.md), schema câu listen/dictation trong 03 (đã có từ giai đoạn 2), luật chấm 07, audio 06.
 
 ## Audio cho câu nghe

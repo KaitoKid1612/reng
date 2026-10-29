@@ -1,8 +1,8 @@
 # Thiết kế dữ liệu
 
-Đặc tả dự kiến, chưa phải migration đã chạy. Chốt hợp đồng dữ liệu trước khi nhập hàng loạt; migration thực tế phải có constraint, index và policy tương ứng.
+Tài liệu gồm hợp đồng nền Nhật và phần mở rộng dịch vụ Việt–Trung. Migrations hiện có là nguồn cho bảng đã triển khai; JSON/schema dưới đây được đánh dấu nền v1 hoặc dự kiến v2. Không dùng ví dụ v2 để import vào validator v1. Gói triển khai mới cần constraint/index/policy tương ứng và không sửa snapshot cũ.
 
-## Schema nội dung bài học
+## Schema nội dung nền Nhật v1
 
 Mỗi bài có bản nháp chỉnh sửa được và các phiên bản xuất bản bất biến. Nội dung mỗi phiên bản là một khối JSON; slide tham chiếu tới ID, không sao chép từ vựng hay ngữ pháp.
 
@@ -81,14 +81,14 @@ Mọi câu có `id`, `type`, `prompt`, `points` là số nguyên dương, `tags`
 ## Nội dung công khai và nội dung kiểm tra
 
 - `lessons` chứa bản nháp riêng, không cho khách/học viên đọc trực tiếp.
-- `lesson_versions` chứa phiên bản xuất bản và các câu luyện công khai. Chỉ API luyện mới trả đáp án theo mục đích; API đọc thường lược bỏ `answer`, `explain`, `transcript`, `teacherNotes`.
+- `lesson_versions` chứa phiên bản xuất bản và câu luyện theo quyền bài (public/lớp). Câu luyện đã công bố cho người được phép xem không được xem là câu test bí mật. Chỉ API luyện mới trả đáp án theo mục đích; API đọc thường lược bỏ `answer`, `explain`, `transcript`, `teacherNotes`.
 - Câu hỏi luyện đã công khai không được tái sử dụng làm câu kiểm tra cần giữ kín đáp án. Ẩn trường ở một view không thu hồi được đáp án đã gửi qua slide hoặc bài luyện.
 - `assignments.mode = test` dùng câu hỏi riêng do giảng viên nhập/import, chụp vào `assignment_items`; không lấy nguyên câu luyện công khai. Form giai đoạn 3 có nhập câu riêng tối thiểu, không phải chờ editor bài học giai đoạn 4.
 - Bản đầu không có đường đọc trực tiếp view database cho học viên. API dùng danh sách trường cho phép và kiểm tra quyền; RLS khóa bảng gốc. `lessons_public` nếu bổ sung sau phải có migration và kiểm thử quyền riêng; view không tự bảo đảm an toàn.
 
 ## Hợp đồng database
 
-Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Migrations đã được chuẩn bị và kiểm tra local, chưa áp dụng cloud. Migration 202610280003 thêm cờ is_sample vào publish_lesson; 202610280004 tạo các bảng giai đoạn 3, trigger bất biến, RLS chỉ đọc và RPC transaction theo [DD giai đoạn 3](detail-design/phase-3.md). Bốn migration đã chạy trên Supabase local (Postgres 17) và PGlite, chưa áp dụng cloud.
+Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Migrations đã được chuẩn bị và kiểm tra local, chưa áp dụng cloud. Migration 202610280003 thêm cờ is_sample vào publish_lesson; 202610280004 tạo các bảng giai đoạn 3, trigger bất biến, RLS chỉ đọc và RPC transaction theo [DD giai đoạn 3](detail-design/phase-3.md). Nền 0001–0004 đã kiểm chứng local. Migration 0005 thêm email và 0006 thêm luyện nghe, có bằng chứng riêng tại testing/phase-4.md và phase-5.md; chưa áp dụng cloud.
 
 Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác. Thời gian lưu `timestamptz` UTC; ngày học và ngày nhắc tính theo `Asia/Ho_Chi_Minh`.
 
@@ -110,7 +110,7 @@ Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác
 | `review_events` | `id`, `user_id`, khóa thẻ SRS, `rating int CHECK 1..4`, `is_correct boolean` nullable, `reviewed_at`, `request_id uuid UNIQUE`. Ghi cùng transaction cập nhật thẻ; review_events tham chiếu đủ khóa ghép của srs_cards. |
 | `lesson_progress` | `user_id`, `lesson_id`, `lesson_version_id`, `last_slide_id`, `read_completed_at`, `updated_at`; PK user_id/lesson_id. Hoàn thành đọc do học viên bấm xác nhận, không suy ra từ mở trang. |
 | `notification_preferences` | `user_id PK`, `reminder_frequency` CHECK daily/due_only/off DEFAULT off, `weekly_enabled boolean DEFAULT false`, `teacher_digest_enabled boolean DEFAULT false`, `push_enabled boolean DEFAULT false`, `consented_at`, `delivery_paused_at`/`delivery_pause_reason` (bounce/complaint), `updated_at`. |
-| `push_subscriptions` | `id`, `user_id`, `endpoint text UNIQUE`, `p256dh`, `auth`, `created_at`, `disabled_at`. Mỗi người có thể có nhiều thiết bị. |
+| `push_subscriptions` (dự kiến, chưa migration) | `id`, `user_id`, `endpoint text UNIQUE`, `p256dh`, `auth`, `created_at`, `disabled_at`. Mỗi người có thể có nhiều thiết bị. |
 | `email_log` | `user_id`, `email_type`, `for_date date`, `status` CHECK pending/sending/sent/failed/cancelled, `idempotency_key text UNIQUE`, `provider_message_id`, `attempts`, `lease_until`, `next_attempt_at` (backoff), `sent_at` nullable, `opened_at`, `last_error`; PK user_id/email_type/for_date. Migration 202610280005. |
 
 Cột bắt buộc NOT NULL trừ các trường trạng thái chưa có giá trị: lessons.published_version_id/archived_at, enrollments.left_at, assignments.due_at/published_at, kết quả và submitted_at của submission đang làm, lesson_progress.last_slide_id/read_completed_at, srs_cards.resolved_at, các mốc đồng ý/gửi/mở email, lease_until/provider_message_id/last_error, push_subscriptions.disabled_at, audio_assets.duration_ms. assignments.lesson_version_id phải thuộc lesson_id và là phiên bản đã được chọn cho lớp lúc giao; snapshot không đổi nếu lớp nâng phiên bản sau đó. Với test after_due, due_at bắt buộc có giá trị. Các trường tùy chọn trong JSON tuân thủ validator theo type. Khóa quan hệ đều có FK; migration phải bổ sung index cho FK dùng để lọc, đặc biệt `classes.teacher_id`, `enrollments.user_id`, `assignments(class_id, due_at)`, `submissions(assignment_id, user_id, submitted_at)`, `srs_cards(user_id, due)`.
@@ -160,8 +160,8 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 1. Giai đoạn 1–2: profiles, lessons, lesson_versions, audio_assets; policies và index tương ứng.
 2. Giai đoạn 3: classes, enrollments, class_lessons, assignments, assignment_items, submissions, answers, srs_cards, review_events, lesson_progress.
 3. Giai đoạn 4: notification_preferences, email_log.
-4. Giai đoạn 5: kanji_entries.
-5. Giai đoạn 6: push_subscriptions; bổ sung trường push vào API tùy chọn.
+4. Giai đoạn 5: migration 0006 cho luyện nghe đã có; kanji_entries vẫn dự kiến, chưa tạo.
+5. Giai đoạn 6 dự kiến thêm push_subscriptions và API thiết bị; bảng này chưa có migration, Web Push chưa có runtime. notification_preferences đã có cờ push_enabled dự phòng, không đồng nghĩa có bảng subscription.
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
 
@@ -170,3 +170,37 @@ File migration có thứ tự rõ ràng, kiểm tra trên database trống và d
 [DD dịch vụ](detail-design/teaching-service.md) đề xuất teacher_accounts, lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
 
 Cần thay role độc quyền student/teacher bằng khả năng dạy kết hợp enrollment để hỗ trợ vừa học vừa dạy; backfill và kiểm tra toàn bộ RLS/RPC trước chuyển đổi. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.
+
+## Hợp đồng nội dung Việt–Trung v2 — dự kiến
+
+V2 tách ngôn ngữ khỏi tên trường Nhật. Envelope xuất bản dự kiến dưới đây là mẫu cấu trúc để thiết kế validator mới, không phải bài đã được giáo viên duyệt hoặc payload validator hiện tại nhận được.
+
+```json
+{
+  "schemaVersion": 2,
+  "context": {
+    "subject": "chinese",
+    "languageTag": "zh-Hans",
+    "instructionLanguageTag": "vi-VN",
+    "locale": "zh-CN"
+  },
+  "objectives": ["Chào hỏi và nói tên mình"],
+  "vocab": [
+    {"id": "v1", "text": "你好", "reading": "nǐ hǎo", "meaning": "Xin chào", "examples": [], "audio": null}
+  ],
+  "grammar": [],
+  "questions": [],
+  "slides": [
+    {"id": "s1", "type": "title", "text": "Bài đầu: Chào hỏi"},
+    {"id": "s2", "type": "vocab", "refs": ["v1"]}
+  ]
+}
+```
+
+Giáo viên chọn languageTag/locale đúng khóa; ví dụ zh-Hans/zh-CN không áp mặc định cho mọi bài Trung. `reading` chứa pinyin ở profile Trung, không tự đồng nghĩa mọi môn có cách đọc. `meaning` theo instructionLanguageTag; câu ví dụ có text/reading/meaning tương ứng. ID/ref, câu choice/fill và điểm giữ nguyên nguyên tắc v1. `audio=null` là chưa có, không báo sẵn sàng.
+
+Thông tin soạn riêng lưu trong `lessons.authoring_state` dự kiến: bước wizard, template ID/version, đối tượng, kiến thức đầu vào, provenance các slide generated và review hash của câu/audio. Không gửi authoring_state, notes hoặc đáp án test qua public DTO. Metadata context được snapshot cùng version, không đọc context draft khi xem version cũ. Metadata cột snake_case map rõ với JSON camelCase, server kiểm tra không mâu thuẫn.
+
+Độ khó/thứ tự là gợi ý, không khóa quyền học. Mỗi bản v1 giữ nguyên bytes/dữ liệu lịch sử; adapter đọc v1 tiếp tục hỗ trợ Nhật, không viết v2 vào snapshot v1. Migration chỉ backfill metadata ngoài snapshot khi có mapping an toàn và kiểm chứng hồi quy.
+
+Grant chia sẻ, copy, review và media theo DD dịch vụ; quyền đọc JSON không tự cấp quyền storage. Mỗi submission giữ profile chuẩn hóa từ assignment snapshot, không lấy profile mới nhất của bài để chấm lại bài cũ.

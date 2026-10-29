@@ -1,5 +1,7 @@
 # Detail Design giai đoạn 2
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Theo [BD](../basic-design/phase-2.md), schema chung tại 03-data-design. Phiên bản dependency theo lockfile. Next.js/reveal.js được tích hợp qua client component với init/destroy theo lifecycle.
 
 ## Nội dung và xuất bản

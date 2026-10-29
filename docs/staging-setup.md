@@ -1,9 +1,11 @@
 # Chuẩn bị staging và nghiệm thu dịch vụ
 
+Hai phạm vi được tách rõ: các bước giai đoạn 2–5 phục vụ kiểm chứng nền Nhật hiện có; phần nghiệm thu dịch vụ ở cuối dành cho chức năng Việt–Trung mới chưa triển khai. Không chạy migration/API dự kiến hoặc bật provider thật chỉ vì tài liệu đã mô tả.
+
 Không có credentials trong workspace tại thời điểm bắt đầu giai đoạn 2. Tài liệu này là hướng dẫn, chưa phải bằng chứng đã triển khai cloud.
 
 1. Tạo Supabase project staging riêng, xác nhận đúng project trước khi áp dụng migrations trong supabase/migrations theo thứ tự. Giữ backup trước nâng schema. Không dùng project production cho kiểm thử.
-2. Tạo tài khoản giảng viên bằng người vận hành, cấp profiles.role phía quản trị. Không cho đăng ký tự chọn teacher. Kiểm tra own profile, own lesson và API notes bằng hai tài khoản khác nhau.
+2. Tạo tài khoản giảng viên bằng người vận hành, cấp profiles.role phía quản trị. Đây là cơ chế nền hiện tại; không phải yêu cầu onboarding giáo viên tự phục vụ của dịch vụ mới. Kiểm tra own profile, own lesson và API notes bằng hai tài khoản khác nhau.
 3. Tạo Azure Speech resource, điền khóa/vùng trong .env.local ở máy vận hành. Chạy audio:plan trước generate; sinh kana vào local hoặc R2, nghe duyệt ký tự đứng riêng/trợ từ trước dùng với lớp.
 4. Tạo R2 bucket/domain staging và khóa chỉ có quyền bucket đó; đặt public base audio. Không public transcript/metadata test. Kiểm tra cache headers, audio 404/retry và chạy lại không sinh trùng.
 5. Đặt LESSON_SOURCE, Supabase URL/secret/publishable key và audio base trên hosting staging; xác minh gói hosting phù hợp sử dụng. Không đưa secret vào NEXT_PUBLIC_ hoặc git.
@@ -29,3 +31,15 @@ Không có credentials trong workspace tại thời điểm bắt đầu giai đ
 5. Ghi kết quả vào testing/phase-4.md (G4-15).
 
 Chưa tạo tài khoản/bucket/project hoặc apply migration vào dịch vụ thật trong đợt local này. Giai đoạn 3 mới kiểm chứng trên Supabase local (Supabase CLI).
+
+## Nghiệm thu dịch vụ Việt–Trung — chưa chạy
+
+1. Chốt migration/profile v2 và backfill trước staging; xác minh hai giáo viên không đọc lớp/nháp/media nhau, một người vừa học vừa dạy hoạt động đúng. Không dùng role client để cấp quyền.
+2. Tạo lớp 10 chỗ bằng tài khoản thử, join đồng thời chỗ cuối, rời/rejoin/thu hồi mã và link Meet theo checklist SV. Không dùng học sinh thật để seed/test tự động.
+3. Giáo viên thử tạo bài theo 5 bước, dán chữ Hán/pinyin/nghĩa Việt, dựng lại giữ sửa tay, duyệt choice/fill/audio. Đo AUTHOR-08 trước mở nhiều mẫu; khóa cũ Nhật phải chạy nguyên trạng.
+4. Preview học sinh/slide/PDF và dạy qua share tab Meet trên thiết bị thật; notes/test không lộ, font/pinyin/audio đúng locale. Lưu nháp/publish/giao là ba trạng thái riêng.
+5. Copy/view/revoke đúng quyền version; copy có media/nguồn nhưng không có thông tin lớp hoặc notes riêng. Sửa nguồn không đổi assignment đang làm.
+6. Chỉ bật scan/OCR sau cấu hình quota, storage private, worker/provider và chính sách xử lý tệp; thử dữ liệu được phép dùng, đo thời gian sửa/chi phí, xác minh crop lời giải và retention.
+7. Test submit retry, draft conflict, email opt-in/unsubscribe/membership; backup/restore trên môi trường riêng trước lớp thật. Ghi bằng chứng ở testing/teaching-service.md, không thay NOT RUN bằng PASS theo mô tả.
+
+Các quyết định provider/font/voice/gói hosting phải được ghi trong bảng mở ở [rà soát tài liệu](documentation-review.md); chưa có thao tác cloud nào trong đợt chỉ cập nhật tài liệu.

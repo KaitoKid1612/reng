@@ -17,7 +17,7 @@ Bản đầu mỗi giáo viên là một chủ sở hữu độc lập. Không t
 | Thay đổi dự kiến | Dữ liệu và bất biến |
 |---|---|
 | `teacher_accounts` | `user_id` duy nhất, trạng thái pending/active/suspended, email_verified_at, accepted_terms_at, activated_at. Server sở hữu chuyển trạng thái; không lấy user_metadata làm quyền. Xác minh email là xác minh tài khoản, không phải chứng nhận nghiệp vụ giáo viên |
-| Metadata lớp | `capacity` nullable hoặc số nguyên dương, `subject`, `language_tag`, `instruction_language_tag`, `meeting_url` nullable. Null capacity là chưa giới hạn; không tự áp quota 10 cho mọi lớp |
+| Metadata lớp | `capacity` nullable hoặc số nguyên dương, `subject`, `language_tag`, `instruction_language_tag`, `meeting_url` nullable, `revision` cho CAS settings. Null capacity là chưa giới hạn; không tự áp quota 10 cho mọi lớp |
 | Metadata nội dung | `schema_version`, `subject`, `language_tag`, `instruction_language_tag`, `locale`, `source_language`, `attribution`. Mapping schema cũ mặc định ja-JP; metadata mới được chụp vào lesson_versions |
 | `lesson_shares` | owner, recipient, source_version_id, permission view/copy, granted_at/revoked_at; một grant hoạt động cho mỗi version/người nhận. Không share bằng URL đoán được |
 | Nguồn bản sao | source owner/version, copied_at, điều kiện sử dụng và quyền chia sẻ tiếp; không có FK kéo quyền đọc dữ liệu riêng của chủ nguồn |
@@ -30,7 +30,7 @@ Tên cột/bảng cần chốt khi viết migration. Không trộn proposal vào
 
 ## Onboarding và sức chứa lớp
 
-Luồng server đăng ký giáo viên: xác thực email → kiểm tra giới hạn đăng ký/điều khoản → kích hoạt teacher account → ghi audit. Trong thử nghiệm có thể giữ pending để người vận hành duyệt; UI phải nói rõ trạng thái. Client không được gửi role để ghi thẳng vào profiles. Một người bị đình chỉ dạy không mất quyền đọc bài của mình với tư cách học sinh nếu tài khoản vẫn hợp lệ.
+Luồng server đăng ký giáo viên: xác thực email → kiểm tra giới hạn đăng ký/điều khoản → kích hoạt teacher account → ghi audit. Mặc định onboarding dịch vụ tự kích hoạt sau xác minh email, chấp nhận điều khoản và kiểm tra lạm dụng/quota; pending dùng khi xác minh chưa xong hoặc cần xử lý ngoại lệ. Đây không phải chứng nhận chuyên môn giáo viên. Client không được gửi role để ghi thẳng vào profiles. Một người bị đình chỉ dạy không mất quyền đọc bài của mình với tư cách học sinh nếu tài khoản vẫn hợp lệ.
 
 Join RPC khóa hàng classes trước khi kiểm tra active/join_enabled/capacity và ghi enrollment. Thứ tự: kiểm tra mã và rate limit → nếu đã là thành viên hiện hành thì trả idempotent → đếm chỗ còn lại → thêm hoặc kích hoạt enrollment trong cùng transaction. Retry, join đồng thời và rejoin đều đi cùng khóa. Lớp đầy không trả danh sách thành viên. Giảm capacity dưới số đang học bị từ chối; thành viên rời lớp giải phóng chỗ nhưng giữ lịch sử. Học sinh đã rời không dùng được link riêng/slides mới; xử lý lịch sử cá nhân theo chính sách truy cập hiện tại, không cascade xóa điểm.
 
@@ -104,3 +104,41 @@ Lưu nháp cho phép thiếu nội dung. Xuất bản kiểm tra mục tiêu/sli
 Giao practice từ câu luyện đã chọn theo version xuất bản; test vẫn dùng kho câu riêng. Publish trả version ID, giao lớp là bước riêng có kiểm tra owner/membership/version và idempotency; nếu giao thất bại giữ version đã xuất bản và cho thử lại, không báo hoàn tất giả hoặc xuất bản lại chỉ vì retry giao. Lưu/xuất bản không tự chọn public visibility hoặc bật gửi nhắc bài.
 
 Trước code cần chốt schema migration tương thích dữ liệu Nhật, mapping bảng/template → schema renderer, API/save review states và hợp đồng TTS web. Template không tự kèm câu/đáp án AI; tính năng gợi ý về sau vẫn đi qua giáo viên duyệt. Checklist tương ứng AUTHOR-01 đến AUTHOR-08 ở tài liệu nghiệm thu.
+
+## API dự kiến và quy ước lỗi
+
+Các đường dẫn sau là hợp đồng đề xuất cho dịch vụ, **chưa tồn tại đầy đủ trong app**. Khi thực hiện bằng Server Action vẫn phải giữ cùng kiểm tra/quy tắc; không tạo thêm endpoint trùng chức năng chỉ để khớp tên tài liệu. API hiện có ở DD phase-3/4/5 giữ nguyên cho schema v1.
+
+| Thao tác dự kiến | Đầu vào chính | Kết quả và kiểm tra |
+|---|---|---|
+| POST `/api/teacher-account` | chấp nhận phiên bản điều khoản, requestId | Trạng thái pending/active; user từ phiên đã xác minh, không nhận role/owner do client cấp |
+| PATCH `/api/teach/classes/[id]/settings` | expectedRevision, capacity, languageTag, instructionLanguageTag, subject, meetingUrl | Settings + revision mới; chủ lớp, capacity không dưới số học sinh, URL Meet allowlist |
+| POST `/api/classes/join` | joinCode, requestId | joined/already_member/class_full/invalid_code; khóa lớp/đếm chỗ trong transaction, không lộ roster |
+| POST `/api/teach/lessons` | tên, context, mục tiêu, templateId/version, requestId | lessonId + draftRevision; server tạo ID, draft riêng tư, template không kèm quyền lớp |
+| PUT `/api/teach/lessons/[id]/draft` | expectedRevision, draft, authoring changes | revision + savedAt; chủ bài, schema theo version; cho nháp chưa hoàn chỉnh, CAS |
+| POST `/api/teach/lessons/[id]/generate-slides` | expectedRevision, template version, source IDs | Preview thay đổi với baseRevision; chưa ghi. Áp dụng qua lưu draft CAS sau giáo viên chọn giữ/sinh lại |
+| POST `/api/teach/lessons/[id]/reviews` | expectedRevision, question IDs, content hashes | Review hash server tính từ nội dung hiện tại, actor/time; sửa câu thì hết hiệu lực. Không nhận confirmed cho revision khác |
+| POST `/api/teach/lessons/[id]/publish` | expectedRevision, requestId | versionId hoặc lỗi theo field; transaction snapshot/pointer và review check, không tự giao/public/email |
+| POST `/api/teach/lessons/[id]/shares` | sourceVersionId, recipientId, view/copy, requestId | Grant scoped version; owner/recipient active/quyền media, không share test/notes |
+| DELETE `/api/teach/lessons/[id]/shares/[shareId]` | requestId | revokedAt, retry cùng kết quả; chủ bài, chặn đọc/copy mới |
+| POST `/api/teach/shared-lessons/[shareId]/copy` | requestId | lessonId draft mới; grant copy hiện hành, snapshot/media/attribution, idempotent |
+| POST `/api/teach/imports` | metadata tệp, locale, requestId | jobId + upload URL ngắn hạn; quota/owner và hậu kiểm bytes/page trước OCR |
+| GET/PATCH `/api/teach/imports/[id]` | GET hoặc expectedRevision + câu sửa/duyệt | Trạng thái/draft/revision; chỉ owner; no-store; không ghi đè phần sửa tay |
+| POST `/api/teach/imports/[id]/apply` | expectedRevision, targetLessonId, targetRevision, selected IDs, requestId | Draft revision hoặc conflict; kiểm tra review và hai tài nguyên cùng owner, không publish |
+| POST `/api/teach/lessons/[id]/audio-jobs` | item IDs, expectedRevision, locale/voice, requestId | jobId/status; quota và hash nội dung server tính; nghe duyệt sau khi worker xong |
+
+Giao bài vẫn theo hợp đồng assignment hiện có, được mở rộng hỗ trợ schema/profile v2; dùng versionId từ publish, không dùng draft. Server sinh timestamp, owner và hash; client không quyết định điểm/quyền/review bằng cờ độc lập.
+
+Mọi mutation xác thực phiên, same-origin/CSRF theo cơ chế hiện có, validate unknown JSON, giới hạn kích thước và rate limit. Resource không thuộc người gọi trả 404 hoặc 403 theo chính sách nhất quán không lộ tồn tại. Lỗi chuẩn dự kiến: 400 invalid_input/schema_version, 401 unauthenticated, 403 teacher_inactive, 404 not_found, 409 revision_conflict/class_full, 413 payload_too_large, 422 review_required/invalid_refs, 429 quota_exceeded/rate_limited, 503 provider_unavailable. Trả mã/field/requestId để UI dịch, không trả token/SQL/ảnh/đáp án riêng. Thông số byte/rate limit từng API chốt trong implementation DD trước code.
+
+Read nháp/share/private media/job dùng private no-store; public lesson DTO chỉ version public và đã lọc. Token/signed URL không xuất hiện trong log hoặc response của người không có quyền. Retry requestId cùng payload trả lại kết quả, khác payload bị conflict, không tạo hai bản copy/job/assignment.
+
+## Kế hoạch dữ liệu và khôi phục dự kiến
+
+1. Bổ sung teacher_accounts, metadata/context và authoring_state nullable có default an toàn; schema v1 reader tiếp tục chạy. Thêm index owner/recipient/version/status và FK tương ứng.
+2. Backfill quyền dạy cho teacher hiện tại; sửa toàn bộ RLS/RPC/gate join/requireStudent để khả năng học độc lập. Student cũ không tự thành teacher. Test hai owner và tài khoản vừa học vừa dạy trước bật onboarding.
+3. Bổ sung storage entitlement/media review, share/provenance và transaction copy; asset copy ngoài DB có staging/cleanup để retry không để quyền sai hoặc file mồ côi.
+4. Bật validator/renderer/profile v2 và wizard; authoring_state không vào DTO. `zh-exact-v1` dùng NFC + trim đầu/cuối, giữ thanh điệu/giản-phồn/dấu câu/khoảng trắng pinyin; profile Nhật giữ behavior cũ. Profile được snapshot trước chấm.
+5. Audio job trên web và nghe duyệt phải sẵn sàng trong B1 nếu dùng audio ở bài thử; không đẩy việc chạy CLI sang giáo viên. Sau B1/B2 mới thêm import_jobs/items, quota/lease và retention cho scan/OCR ở C1/C2; provider chưa chọn không được giả lập trạng thái thành công trong production.
+
+Migration phải được thử trên DB trống và dữ liệu v1 đã có, backup trước staging; rollout theo flag để dừng luồng mới mà vẫn đọc bài cũ. Sau khi có version v2 không được rollback app về bản không đọc được v2; bản phục hồi phải hỗ trợ cả hai hoặc khóa đường v2 có thông báo. Không xóa bảng/version/điểm để quay lại. Thử khôi phục backup/media độc lập trước nhận lớp thật.

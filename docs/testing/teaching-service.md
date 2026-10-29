@@ -50,3 +50,19 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 | AU-09 | AUTHOR-02/05 | Audio chưa có/đang tạo/chưa nghe duyệt/sẵn sàng hiển thị đúng; thiếu media chặn loại câu cần audio; luồng tạo/duyệt audio trên web không đòi giáo viên chạy CLI |
 
 Đo AU-08 trước khi làm nhiều mẫu/OCR; giáo viên chuyên môn duyệt nội dung Việt–Trung minh họa, không dùng tên bài mẫu như bằng chứng chất lượng giáo trình. Những ca trên là tiêu chí sản phẩm mới, chưa được kiểm chứng bởi bộ tests code hiện tại.
+
+## Kiểm chứng hợp đồng chung — toàn bộ NOT RUN
+
+| Ca | Yêu cầu/phạm vi | Kết quả cần đạt |
+|---|---|---|
+| CT-01 | DATA-01/LANG-01 | Reader/slide/presenter/PDF/assignment cùng context version; sửa draft không đổi metadata hoặc điểm cũ; v1 tiếp tục chạy |
+| CT-02 | LANG-01/EX-02 | Profile Trung NFC+trim giữ thanh điệu/khoảng trắng pinyin/dấu câu/giản-phồn; chỉ đáp án khai báo được nhận; profile Nhật không đổi |
+| CT-03 | AUTHOR-02/03/UI | Chữ Hán/pinyin/nghĩa và nội dung dài đúng font/lang ở 360px và 1280×720; bàn phím, focus, reduced motion và tương phản kiểm tra được |
+| CT-04 | SERVICE-02/API | Payload sai/schema lạ/quá dung lượng/origin sai/quota hết bị chặn; mã lỗi/field dễ xử lý, không lộ SQL/token/dữ liệu riêng |
+| CT-05 | DATA-03/SHARE-02/SCAN-02 | requestId retry trả kết quả cũ; cùng key khác payload bị conflict; revision sai không overwrite và không nhân asset/job/bản copy |
+| CT-06 | OPS-01 | Migration nâng từ dữ liệu v1 không mất bài/điểm/quyền; flag dừng v2 không hỏng reader; khôi phục DB/media đã thử với bằng chứng |
+| CT-07 | Audio | Locale Trung không fallback Nhật; đổi text/voice làm mất duyệt; draft đổi khi worker chạy không gắn audio cũ vào câu mới; nghe duyệt thật được lưu |
+| CT-08 | OPS-02 | Quota, lease/retry và retention nguồn/OCR đúng; asset còn snapshot không bị xóa; nhà cung cấp chưa bật trả trạng thái chưa sẵn sàng |
+| CT-09 | SERVICE/OPS | Giáo viên độc lập tạo lớp, soạn một bài dễ, dạy qua Meet, giao/nộp/chấm/theo dõi/nhắc trọn luồng; ghi thời gian, chi phí và phản hồi |
+
+Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.

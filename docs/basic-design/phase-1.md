@@ -1,5 +1,7 @@
 # Basic Design giai đoạn 1 — 基本設計
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Baseline 28/10/2026 để triển khai local, chưa phải nghiệm thu. Yêu cầu: KANA-01/02/03, thiết bị/font/hiệu năng trong 01. Quy tắc UI theo 12.
 
 ## Phạm vi

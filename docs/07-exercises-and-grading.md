@@ -1,6 +1,6 @@
 # Bài tập và chấm điểm
 
-Hợp đồng này đi cùng schema trong `03-data-design.md`. Đây là thiết kế chưa triển khai; các tình huống bên dưới là tiêu chí cần kiểm chứng khi có mã nguồn.
+Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có mã nguồn và bằng chứng local ở testing/phase-3.md và phase-5.md; profile Trung/soạn theo mẫu/scan/chấm tay là thiết kế mới chưa triển khai. Không đánh dấu tiêu chí dịch vụ đạt chỉ vì unit tests nền đã qua.
 
 ## Dạng bài và cách nhập
 
@@ -15,7 +15,7 @@ Hợp đồng này đi cùng schema trong `03-data-design.md`. Đây là thiết
 
 Mỗi câu đúng nhận đủ `points`, sai hoặc bỏ trống nhận 0; bản đầu không có điểm từng phần. Tổng điểm nguyên, phần trăm tính từ tổng điểm đạt/tổng điểm tối đa, không lấy trung bình tỷ lệ từng câu. Chỉ làm tròn số hiển thị; xét đạt bằng giá trị chưa làm tròn. Tổng điểm tối đa phải lớn hơn 0.
 
-Mọi ô nhập tiếng Nhật hỗ trợ wanakana cho người chưa có IME. `inputMode` hiragana/katakana quyết định chuyển romaji; chế độ japanese phải cho nhập kanji bằng IME hoặc dán văn bản. Khi đang composition không can thiệp chuyển đổi. Bài luyện kana hỏi romaji dùng input Latin, không gắn chuyển kana. Chấp nhận các biến thể romaji được khai báo trong acceptedRomaji; chuẩn hóa chữ thường và khoảng trắng đầu/cuối.
+Riêng ô nhập tiếng Nhật hỗ trợ wanakana cho người chưa có IME. `inputMode` hiragana/katakana quyết định chuyển romaji; chế độ japanese phải cho nhập kanji bằng IME hoặc dán văn bản. Khi đang composition không can thiệp chuyển đổi. Bài luyện kana hỏi romaji dùng input Latin, không gắn chuyển kana. Chấp nhận các biến thể romaji được khai báo trong acceptedRomaji; chuẩn hóa chữ thường và khoảng trắng đầu/cuối.
 
 ## Chuẩn hóa và đáp án tương đương
 
@@ -132,3 +132,11 @@ Theo [BD dịch vụ](basic-design/teaching-service.md), ảnh/PDF chỉ là ngu
 Nhật giữ quy tắc ở trên. Tiếng Trung cần language profile và input IME/Unicode, không chuyển bằng wanakana; giữ thanh điệu và giản/phồn trừ các phương án tương đương giáo viên khai báo. Không thay normalize toàn cục làm đổi điểm snapshot Nhật cũ.
 
 Tự luận/ảnh bài làm chưa có chấm tay trong code; ngoài MVP scan. Chỉ bật sau thiết kế pending_review/graded và audit người chấm; chờ chấm không coi là sai hoặc 0, báo cáo không coi là chưa nộp.
+
+## Profile Trung và xác nhận đáp án — dự kiến
+
+Bài tập từ wizard hoặc scan đi qua cùng validator/review phía server. Mặc định so sánh Unicode NFC và khoảng trắng đầu/cuối cho profile Trung; giữ dấu thanh, khoảng trắng bên trong pinyin, dấu câu, giản/phồn và chữ hoa/thường nếu chưa có quy tắc khác được chụp vào snapshot. Không áp tự động quy tắc xóa mọi khoảng trắng/dấu chấm của normalizeAnswer Nhật cho pinyin. Giáo viên khai báo phương án tương đương; không tự dịch hoặc chuyển pinyin sang chữ Hán để chấm.
+
+MVP hỗ trợ yêu cầu điền chữ Hán hoặc pinyin bằng loại câu/input profile rõ; không suy ra từ câu học sinh nhập. Câu thiếu đáp án, choice có lựa chọn trùng hoặc câu chưa được xác nhận ở revision hiện tại bị chặn xuất bản. Sửa nội dung chấm làm mất review cũ. Điểm/đạt/trượt do server tính từ snapshot, feedback_policy không đổi.
+
+Nhãn yếu nghe chỉ có khi có câu nghe; lớp mới hoặc chưa nộp hiển thị chưa có dữ liệu. Không dùng nhãn đạt để chứng nhận trình độ HSK/JLPT; thi chuẩn hóa ngoài MVP. Chấm tay là Service D, chưa có cơ chế sửa điểm thủ công trong bản hiện tại.

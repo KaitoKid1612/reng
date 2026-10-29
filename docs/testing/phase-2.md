@@ -1,5 +1,7 @@
 # Truy vết và nghiệm thu giai đoạn 2
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Ngày kiểm chứng local: 28/10/2026. Không thay thế nghiệm thu dịch vụ/thiết bị thật.
 
 | ID | Yêu cầu | Kiểm tra | Kết quả |

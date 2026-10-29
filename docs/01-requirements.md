@@ -1,5 +1,7 @@
 # Yêu cầu
 
+Ngày rà soát: 29/10/2026. Nguồn yêu cầu hiện hành là mô hình dịch vụ ở 00 và các nhóm SERVICE/LANG/SHARE/AUTHOR/SCAN bên dưới. Các nhóm KANA/KANJI/JLPT là module Nhật đã có hoặc từng lên kế hoạch; không chặn MVP Việt–Trung. Mức ưu tiên khác mốc bàn giao; thứ tự lấy theo 09.
+
 Ký hiệu mức ưu tiên: **P0** là tính năng cốt lõi của sản phẩm, **P1** cần cho vận hành đầy đủ, **P2** mở rộng. Mốc giao cụ thể theo `09-roadmap.md`; bản chạy đầu tiên chỉ gồm nền và kana, không gom mọi P0 vào giai đoạn 1.
 
 Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhiều môn/ngôn ngữ, ưu tiên MVP dạy tiếng Trung cho người Việt (Việt–Trung); đăng ký giáo viên, lớp riêng, chia sẻ và nhập scan theo phần yêu cầu dịch vụ cuối file. Các mục kana/N5 bên dưới thuộc module tiếng Nhật; mức P0 của chúng không bắt buộc xuất hiện trong lớp tiếng Trung.
@@ -72,13 +74,13 @@ Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhi�
 | ID | Yêu cầu | Ưu tiên |
 |---|---|---|
 | EX-01 | Trắc nghiệm nhiều lựa chọn | P0 |
-| EX-02 | Điền từ, có hỗ trợ gõ romaji ra kana | P0 |
+| EX-02 | Điền từ theo ngôn ngữ: IME/Unicode cho Trung; romaji ra kana chỉ cho Nhật; chấm theo phương án giáo viên khai báo | P0 |
 | EX-03 | Chấm ngay và giải thích đáp án đúng | P0 |
 | EX-04 | Ghép đôi (từ với nghĩa) | P1 |
 | EX-05 | Sắp xếp câu (dạng 文の組み立て) | P1 |
 | EX-06 | Giao bài tập có hạn nộp | P1 |
 | EX-07 | Sổ lỗi: gom mọi câu từng sai, ôn lại theo lịch | P1 |
-| EX-08 | Đề thi thử N5 có đếm giờ, chấm theo thang JLPT | P2 |
+| EX-08 | Đề thi thử N5 thuộc module Nhật về sau; chưa có quy đổi điểm JLPT chính thức, ngoài MVP Việt–Trung | P2 |
 
 ### Quản lý lớp
 
@@ -114,9 +116,9 @@ Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhi�
 
 ### Hiệu năng
 
-- Trang bài học mở xong dưới 2 giây trên mạng 4G
+- Mục tiêu trang bài học mở xong dưới 2 giây trên mạng 4G; ghi rõ thiết bị/mạng/cache và đo trước nghiệm thu, chưa coi đã đạt
 - Chuyển slide không giật, kể cả trên laptop phòng học cấu hình thấp
-- Audio từ vựng phát trong vòng 300ms sau khi bấm
+- Mục tiêu audio từ vựng phát trong 300ms sau bấm; đo cold/warm và lỗi riêng, chưa phải kết quả
 
 ### Thiết bị và trình duyệt
 
@@ -124,7 +126,13 @@ Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhi�
 - Điện thoại từ màn hình 360px trở lên
 - Máy chiếu phòng học thường là Windows, tỉ lệ 16:9, độ phân giải 1280×720
 
-### Hiển thị tiếng Nhật
+### Hiển thị và nhập liệu Việt–Trung
+
+- Tiếng Việt đủ dấu; chữ Hán dùng font đúng locale, pinyin giữ dấu thanh và không bị cắt. Font Trung cần chốt/kiểm chứng theo 12 trước triển khai.
+- Input Trung dùng IME/Unicode, không chạy wanakana, không tự đổi giản/phồn hoặc bỏ thanh. Pinyin có thể để trống có cảnh báo nếu giáo viên chủ động bỏ; không tự suy ra đáp án từ pinyin.
+- Mỗi bài có mục tiêu nhỏ, mẫu cấu trúc và thứ tự gợi ý, không bắt đầu bằng editor trống/mã kỹ thuật. Chấm bài theo profile ngôn ngữ chụp trong snapshot.
+
+### Module tiếng Nhật hiện có
 
 - Nhúng font Noto Sans JP, không phụ thuộc font cài sẵn của máy
 - Lý do: máy Windows phòng học hay thiếu font Nhật, chữ sẽ bị thay bằng font Trung Quốc có nét khác, học viên tập viết theo là sai

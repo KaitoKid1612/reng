@@ -1,8 +1,10 @@
 # Slide engine
 
+Cơ chế renderer/version hiện có là nền tái sử dụng. Profile Việt–Trung, dựng slide từ bảng/template và chia sẻ giữa giáo viên là thiết kế mới; xem [03](03-data-design.md) và [DD dịch vụ](detail-design/teaching-service.md). Không coi BroadcastChannel là đồng bộ phòng học online.
+
 ## Quyết định nền tảng
 
-Dùng **reveal.js** cho chế độ trình chiếu. Lý do là bốn thứ mà tự code sẽ mất cả tuần:
+Nền hiện tại dùng **reveal.js** cho trình chiếu cùng presenter và bản in riêng của Masu. Các hành vi cần bảo toàn:
 
 | Tính năng | Vì sao cần |
 |---|---|
@@ -33,7 +35,7 @@ lesson_versions.content.slides[]  mảng slide đã xuất bản
      reveal.js                điều khiển, fragment, presenter
 ```
 
-Mỗi `type` của slide ứng với một component. Thêm loại slide mới chỉ cần viết component và đăng ký vào map, không đụng code cũ.
+Mỗi type có component render; thêm type cần cập nhật schema/validator/editor/renderer/DTO và testcase liên quan, không chỉ đăng ký một component.
 
 ## Co giãn màn hình
 
@@ -41,9 +43,13 @@ Mỗi `type` của slide ứng với một component. Thêm loại slide mới c
 
 reveal.js làm sẵn việc này qua cấu hình `width`, `height`, `margin`.
 
-## Font
+## Font và ngôn ngữ dịch vụ
 
-Nhúng Noto Sans JP từ Google Fonts, luôn luôn.
+MVP Việt–Trung cần chữ Hán, pinyin và nghĩa Việt ở các vùng riêng có lang/locale đúng; font CJK Trung phải chốt và kiểm chứng theo 12. Mẫu sinh slide là bộ dựng xác định từ nội dung và template, không cần AI; dài thì chia slide, không tự cắt ý. Dựng lại giữ sửa tay và không đổi version đã xuất bản. Chi tiết AUTHOR-03 ở DD dịch vụ; chưa triển khai renderer v2.
+
+### Nền Nhật hiện có
+
+Nền hiện tại self-host Noto Sans JP từ package @fontsource; không gọi Google Fonts lúc build. Đây là font module Nhật, không là mặc định cho lớp Trung.
 
 Máy phòng học thường là Windows không cài đủ font Nhật. Chữ sẽ ra ô vuông, hoặc tệ hơn là bị thay bằng font Trung Quốc. Kanji Trung và Nhật có nét khác nhau — học viên tập viết theo là viết sai. Đây không phải chuyện thẩm mỹ.
 
@@ -66,7 +72,7 @@ Trên điện thoại: vuốt trái phải.
 
 Baseline triển khai giai đoạn 2 dùng presenter riêng với BroadcastChannel scope theo lesson/version. Chỉ vị trí/fragment/command được gửi qua channel. Ghi chú riêng lấy qua API cookie-auth/RLS và không nhúng vào DOM của reveal hoặc gửi tới cửa sổ máy chiếu. Quyết định này cụ thể hóa yêu cầu giữ kín notes; không bật plugin notes nhúng DOM.
 
-Bấm `S` mở cửa sổ presenter. Dùng plugin presenter của reveal.js trước; kiểm chứng tích hợp với Next.js, đồng bộ cửa sổ và quyền truy cập trên staging. Chỉ tự bổ sung BroadcastChannel nếu cần, không mặc định plugin dùng cơ chế đó.
+Bấm `S` mở presenter riêng đã triển khai theo lesson/version; không bật plugin notes nhúng DOM. Kiểm chứng popup/quyền notes và đồng bộ trên staging/thiết bị thật vẫn là bước nghiệm thu.
 
 Cửa sổ laptop hiện:
 - Slide hiện tại thu nhỏ
@@ -94,30 +100,9 @@ reveal.js hỗ trợ `?print-pdf` rồi in bằng Chrome. Dùng để phát tài
 
 Cần một stylesheet riêng cho bản in: bỏ màu nền tối, hiện hết fragment (vì bản in không bấm được), thêm số trang.
 
-## Nhập từ Google Slides, nếu cần
+## Nhập slide cũ — ngoài MVP
 
-Chỉ dùng khi bạn đã có sẵn kho slide cũ. Không phải cách làm lâu dài.
-
-Hai cách:
-
-**Slides API.** Gọi `presentations.get` trả về cấu trúc bài trình chiếu dạng JSON, gồm từng slide, từng text box và cả speaker notes. Viết script đọc rồi đổ vào database.
-
-Mẹo để parser không rối: soạn theo template cố định. Mỗi slide một ô tiêu đề, một ô nội dung, quy ước riêng cho từ vựng, ví dụ mỗi dòng `いきます | ikimasu | đi`. Script chỉ đọc text theo vị trí, không phải hiểu layout.
-
-**Xuất .pptx rồi đọc bằng `python-pptx`.** Đơn giản hơn nhiều, nhưng phải tải file về thủ công mỗi lần.
-
-Ảnh trong slide thì script tải về rồi upload sang Storage, không hotlink từ Drive.
-
-## Chiến lược chuyển tiếp
-
-Nếu bạn đang có kho Google Slides:
-
-1. Giai đoạn đầu nhúng iframe để dạy ngay
-2. Song song viết script import
-3. Bài nào import xong thì chuyển sang native, có đủ audio và quiz
-4. Hai chế độ chạy song song, không phải làm lại từ đầu
-
-Luồng chuyển tiếp này chưa nằm trong bản đầu và chưa có trường database hỗ trợ. Không dùng content rỗng để suy đoán nguồn bài. Nếu cần import kho slide cũ, bổ sung source_type và nguồn đã kiểm tra quyền trước khi triển khai; bản đầu chỉ hỗ trợ JSON native theo `03`.
+Bản đầu soạn native theo mẫu/bảng; chưa có parser Google Slides/PPTX hoặc iframe chuyển tiếp. Nếu cần tái sử dụng kho cũ, phải có thiết kế import nguồn/quyền/media và loại notes riêng trước khi bật. Không yêu cầu giáo viên công khai file nguồn để dạy; bản nhập vẫn cần duyệt thành draft chuẩn.
 
 ## Vị trí slide và bản in
 

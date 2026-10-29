@@ -1,5 +1,7 @@
 # Detail Design giai đoạn 1 — 詳細設計
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Baseline 28/10/2026 theo [BD](../basic-design/phase-1.md). Node 24/npm; phiên bản package thực tế lấy từ package.json/package-lock.json.
 
 ## Module

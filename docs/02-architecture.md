@@ -1,18 +1,20 @@
 # Kiến trúc kỹ thuật
 
+Phần nền mô tả mã nguồn hiện có; phần dịch vụ ngày 29/10/2026 ưu tiên Việt–Trung và soạn theo mẫu. [DD dịch vụ](detail-design/teaching-service.md) phân biệt schema/API đề xuất và runtime. Lựa chọn gói/giá cần hồ sơ xác minh trước vận hành, không suy ra đã deploy từ bảng stack.
+
 ## Stack
 
 | Lớp | Chọn | Lý do |
 |---|---|---|
 | Frontend | Next.js (App Router) + TypeScript | Một codebase cho web và mobile browser, render phía server cho trang nội dung |
-| Giao diện | Tailwind CSS + shadcn/ui | shadcn copy code vào dự án nên sửa được tự do, không bị khóa vào thư viện |
+| Giao diện | Tailwind CSS + component trong repo | Button cva/clsx/tailwind-merge hiện có; không coi shadcn/Radix là đã cài |
 | API nghiệp vụ | Next.js phía server | Kiểm tra quyền, giao/nộp/chấm bài ở các giai đoạn sau |
 | Dữ liệu và xác thực | Supabase (Postgres + Auth + Realtime) | Database, đăng nhập, RLS; realtime chỉ bật khi triển khai quiz trực tiếp |
-| Lưu audio | Cloudflare R2 | Không tính phí băng thông đi ra, đây là khoản duy nhất dễ đội giá |
-| Lưu ảnh | Supabase Storage | Lượng nhỏ, để chung cho tiện |
+| Lưu media | Adapter R2 hiện có cho audio; storage private cho lớp/scan là thiết kế mới | Kiểm tra gói/quota thực tế; cache và quyền theo từng loại asset |
+| Scan/OCR | Storage private + queue/worker dự kiến | Chưa chọn provider OCR/worker hosting; không xử lý job dài trong request web |
 | Hosting | Vercel | Deploy bằng git push, cron tích hợp sẵn |
-| Email | Resend | API sạch, template viết bằng JSX qua React Email |
-| TTS | Azure Speech (ja-JP) | Sinh MP3 trước; giảng viên cần nghe duyệt, xác minh gói/quota trước khi dùng |
+| Email | Resend adapter / Mailpit local | Template chuỗi escape trong repo, chưa dùng React Email; gửi thật còn chờ nghiệm thu |
+| TTS | Azure adapter hiện có cho Nhật; Trung cần chọn locale/voice và nghe duyệt | Sinh sẵn, không gọi theo lượt học sinh; job web và review là phần mới |
 
 Bản đầu dùng Next.js + Supabase theo bảng trên, xuyên suốt các giai đoạn. Astro với JSON tĩnh chỉ là phương án từng cân nhắc, không nằm trong kế hoạch triển khai hiện tại.
 
@@ -22,7 +24,7 @@ Giai đoạn 1 đã có source Next.js/React/TypeScript, Tailwind và component 
 
 Kana lấy từ JSON đã validate, không cần API hoặc Supabase runtime để mở trang/luyện. Giai đoạn 3 dùng Supabase Auth và các RPC transaction; supabase/config.toml chạy stack local bằng Supabase CLI để kiểm chứng trước cloud. Supabase hiện có migration nền và kiểm tra trên PostgreSQL nhúng, chưa áp dụng cloud. Azure/R2 có script chuẩn bị sẵn, chưa sinh MP3 thật khi chưa có credentials. Không coi các dịch vụ liệt kê trong stack là đã tích hợp hết.
 
-Hosting chưa triển khai. [Vercel Hobby](https://vercel.com/docs/plans/hobby) giới hạn sử dụng cá nhân phi thương mại; hoạt động có thu phí cần chọn gói phù hợp, không mặc định chi phí hosting bằng 0.
+Hosting chưa triển khai. Trước chọn gói Vercel cần xác minh điều kiện thương mại, lịch cron, hạn mức và giá hiện hành từ nguồn chính thức; không mặc định gói cá nhân đáp ứng dịch vụ hoặc chi phí hosting bằng 0.
 
 ## Sơ đồ luồng nội dung
 
@@ -52,9 +54,9 @@ Nếu slide là một file riêng, bài tập là một file riêng, thì sửa 
 
 Khi nội dung là một khối JSON duy nhất:
 
-- Sửa một chỗ, mọi nơi hiển thị đều đổi theo
+- Sửa một chỗ trong draft, các preview dựa trên draft dùng cùng nội dung; bản đã xuất bản/bài giao chỉ đổi khi có thao tác phiên bản riêng
 - Thêm chế độ hiển thị mới (ví dụ xuất PDF) không phải nhập lại nội dung
-- Sinh bài tập tự động từ chính từ vựng của bài
+- Tạo khung câu luyện từ nội dung, giáo viên bổ sung và xác nhận đáp án; không tự coi gợi ý là đáp án đúng
 - Script audio quét được toàn bộ nội dung để biết câu nào còn thiếu file
 
 ## Quy ước thư mục
@@ -66,7 +68,7 @@ app/
     page.tsx                  kana chart
     practice/page.tsx         romaji practice
   sources/page.tsx            attribution and audio status
-  lessons/[id]/               planned: lesson reader and slide/page.tsx
+  lessons/[id]/               lesson reader, slide and presenter
   classes/, assignments/[id]/ learner classes, attempts and results
   review/, mistakes/, progress/, vocabulary/[lessonId]/
   teach/                      class management, assignments, reports
@@ -90,27 +92,25 @@ scripts/
 
 ## Nguyên tắc chấm điểm: chia đôi client và server
 
-**Bài luyện** gửi đáp án xuống trình duyệt, chấm tại chỗ, phản hồi tức thì. Lộ đáp án cũng không sao vì mục đích là học.
+**Bài luyện** có thể công bố đáp án theo trải nghiệm luyện; reader/slide DTO thường lược đáp án và trả qua API đúng mục đích. Điểm lưu báo cáo luôn do server chấm lại từ raw và snapshot. Không coi mọi luồng hiện tại đều chấm client.
 
-**Bài kiểm tra** chỉ gửi câu hỏi. Học viên nộp, server chấm, lưu kết quả rồi mới trả về. Bật RLS chặn bảng đáp án, nếu không mở DevTools là thấy hết.
+**Bài kiểm tra** chỉ gửi câu hỏi đã lọc. Server chấm khi nộp nhưng chỉ công bố điểm/đáp án theo feedback_policy, có thể sau hạn. RLS và API cùng bảo vệ câu test; nộp xong không mặc định được xem kết quả ngay.
 
-Logic chấm viết một lần trong `lib/grading/`, dùng chung cho cả hai phía. Không viết hai bản.
+Logic chấm thuần ở `lib/grading/`; các UI/API dùng cùng hợp đồng. Server là nguồn điểm chính; profile ngôn ngữ trong snapshot quyết định chuẩn hóa, không dùng mặc định Nhật cho Trung.
 
-## Thư viện chính
+## Thư viện và phạm vi thực tế
 
-| Thư viện | Dùng cho |
+| Thành phần | Trạng thái |
 |---|---|
-| `reveal.js` | Trình chiếu slide, có sẵn fragment và presenter view |
-| `wanakana` | Gõ romaji tự ra kana trong ô nhập |
-| `ts-fsrs` | Thuật toán lặp lại ngắt quãng cho flashcard |
-| `kuromoji` | Tách từ tiếng Nhật, dùng cho furigana tự động và từ điển bật lên |
-| `kuroshiro` | Sinh furigana từ câu kanji |
-| `dnd-kit` | Kéo thả cho bài sắp xếp câu |
-| `howler` | Phát audio sprite |
-| `qrcode` | Sinh mã QR trên slide |
-| `react-email` | Viết template email bằng JSX |
+| reveal.js | Đã dùng renderer; presenter riêng qua BroadcastChannel cùng trình duyệt |
+| wanakana | Đã dùng cho input Nhật, không dùng cho Trung |
+| ts-fsrs | Đã dùng ôn tập; state theo phiên bản scheduler |
+| @dnd-kit | Đã dùng sắp xếp slide; không suy ra UI bài order đã triển khai |
+| Zod / Supabase SSR / AWS SDK S3 | Validator/Auth/storage adapter hiện có theo package.json |
+| kuromoji/kuroshiro/howler/qrcode/react-email | Không nằm trong dependency hiện tại; chỉ cân nhắc khi có phạm vi riêng |
+| OCR/queue/TTS web/font Trung | Chưa chọn/tích hợp; thiết kế theo DD dịch vụ |
 
-Lưu ý `kuromoji`: từ điển khoảng 15MB, không nên tải xuống trình duyệt. Chạy ở phía server qua một API route.
+Phiên bản lấy package.json/lockfile, không chốt lại bằng tài liệu ước lượng.
 
 ## Xác thực và phân quyền
 

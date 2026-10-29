@@ -1,5 +1,7 @@
 # Basic Design giai đoạn 3 — Bài tập và lớp học
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 > Tài liệu này mô tả nền lớp học đã triển khai với role student/teacher hiện tại. Yêu cầu dịch vụ ngày 29/10/2026 bổ sung đăng ký giáo viên, vừa học vừa dạy và chia sẻ theo [BD dịch vụ](../basic-design/teaching-service.md); chưa triển khai. Kết quả AUTH-01 cũ chỉ chứng minh luồng cấp quyền thủ công, không phải onboarding giáo viên mới.
 
 Baseline 28/10/2026. Giai đoạn 1–2 vẫn chờ cloud/thiết bị/giảng viên duyệt; thiết kế này cho phép phát triển và kiểm chứng trên Supabase local, không đánh dấu các giai đoạn trước đã nghiệm thu. Yêu cầu nguồn: AUTH-01, CLASS-01..05/07, EX-01/02/03/06/07/09, VOCAB-01..04, DATA-01..03 trong 01; hợp đồng dữ liệu 03 và chấm/nộp 07.

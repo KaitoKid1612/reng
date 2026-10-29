@@ -1,5 +1,7 @@
 # Basic Design giai đoạn 4 — Tự chủ nội dung và nhắc bài
 
+> Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
+
 Baseline 28/10/2026. Giai đoạn 1–3 mới nghiệm thu local; thiết kế này tiếp tục trên Supabase local. Yêu cầu nguồn: ADMIN-01/02/03, VOCAB-05, NOTI-01/02/03 trong 01; dữ liệu 03, thông báo 08, slide 05.
 
 ## Phạm vi

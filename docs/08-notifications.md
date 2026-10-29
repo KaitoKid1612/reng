@@ -1,26 +1,14 @@
 # Nhắc bài
 
+Rà soát dịch vụ Việt–Trung ngày 29/10/2026. Email local có bằng chứng giai đoạn 4; quota nhiều giáo viên và gửi thật chưa nghiệm thu. Giáo viên không tự bật đồng ý nhận tin thay học sinh; giao bài không tự phát sinh email ngoài lựa chọn người nhận.
+
 ## Chọn kênh
 
-**Email cộng Web Push.** Không dùng Zalo OA, lý do ở `10-risks-costs-and-licenses.md`.
-
-Email mang nội dung đầy đủ, push mang tính tức thì. Hai cái bù cho nhau và cả hai đều miễn phí.
-
-Nói thẳng một điều: học viên Việt mở email ít hơn mở tin nhắn. Tỉ lệ mở email nhắc học thường quanh 20–40%. Nên đừng để email gánh một mình.
+MVP dùng email opt-in và mục việc cần làm trong website. Web Push là mở rộng chưa triển khai, Zalo OA ngoài phạm vi. Hiệu quả nhắc học cần đo trên lớp thử, không suy ra từ tỷ lệ mở email ước lượng. Không cam kết kênh miễn phí khi số giáo viên/lớp tăng.
 
 ## Dịch vụ gửi email
 
-**Resend** cho giai đoạn đầu. Free 3.000 email mỗi tháng, tối đa 100 mỗi ngày, 3 tên miền.
-
-Con số chặn bạn là 100/ngày, không phải 3.000/tháng. Tính thử:
-
-| Quy mô | Email/ngày | Có vừa không |
-|---|---|---|
-| 1 lớp 20 người | 20 | Thoải mái |
-| 2 lớp 25 người | 50 | Vừa |
-| 3 lớp 30 người | 90 | Sát trần, thêm báo cáo tuần là vượt |
-
-Khi tới ngưỡng đó chuyển sang **Brevo** (300/ngày miễn phí) hoặc **Mailjet** (6.000/tháng, 200/ngày). Đổi provider chỉ là thay một hàm `send()` nếu bạn bọc nó lại từ đầu.
+Code hiện có adapter Resend cho gửi thật và Mailpit local; chưa xác minh gói/quota production cho dịch vụ nhiều giáo viên. Tính ngân sách theo số người opt-in, loại email và retry; gói/provider khác cần kiểm chứng trước đổi, không đặt ngưỡng lớp cố định dựa trên free tier cũ.
 
 Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inline (lib/notifications/templates.ts) thay cho react-email, vì email được dựng trong route handler cron. Local gửi vào Mailpit; production dùng Resend qua HTTP với Idempotency-Key. Chi tiết tại [DD giai đoạn 4](detail-design/phase-4.md).
 
@@ -28,16 +16,16 @@ Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inli
 
 Làm sai thì email vào thẳng spam và bạn không bao giờ biết.
 
-1. Gửi từ tên miền riêng, ví dụ `nhacbai@n5.tenban.com`. Không gửi từ địa chỉ Gmail.
+1. Gửi từ tên miền riêng, ví dụ `nhacbai@masu.example`. Không gửi từ địa chỉ Gmail.
 2. Thêm ba bản ghi DNS: SPF, DKIM, DMARC. Resend hướng dẫn từng bước, khoảng 20 phút.
 3. Thêm header one-click unsubscribe.
 
-Bạn chưa phải bulk sender — Google chỉ xếp vào nhóm đó khi gửi từ 5.000 email mỗi ngày tới tài khoản Gmail cá nhân. Với người gửi thường thì Gmail chỉ yêu cầu có SPF hoặc DKIM. Nhưng cứ làm đủ cả ba, vì Gmail vẫn chấm điểm bạn theo đó và một lần cấu hình là xong vĩnh viễn.
+Trước gửi thật kiểm tra yêu cầu domain/xác thực của đúng provider và nơi nhận, dùng địa chỉ gửi thuộc domain đã xác minh. DNS và khả năng gửi phải thử lại khi cấu hình thay đổi, không coi một lần cấu hình là đủ vĩnh viễn.
 
-Về unsubscribe: email giao dịch do người dùng chủ động kích hoạt thì được miễn, nhưng email nhắc học hằng ngày về bản chất là đăng ký nhận tin. Thêm hai header:
+Email nhắc học phải có lựa chọn nhận tin và cách hủy. Không dùng phần này để kết luận miễn trừ pháp lý cho loại email nào; kiểm tra yêu cầu vận hành trước gửi thật. Bản hiện tại có header/link hủy theo DD phase-4; ví dụ:
 
 ```
-List-Unsubscribe: <https://n5.tenban.com/unsubscribe/abc123>
+List-Unsubscribe: <https://masu.example/unsubscribe/abc123>
 List-Unsubscribe-Post: List-Unsubscribe=One-Click
 ```
 
@@ -96,7 +84,7 @@ Link hủy dùng token ngẫu nhiên hoặc chữ ký có phạm vi, không dùn
 
 Cột `opened_at` lấy từ webhook đã xác thực. Tín hiệu mở email có thể thiếu hoặc bị proxy tải tự động; không dùng riêng tín hiệu này để kết luận học viên ngừng học.
 
-Giá trị của nó không phải để làm báo cáo đẹp, mà để phát hiện học viên nào ba tuần liền không mở email. Với những em đó, email đã vô dụng — bạn cần nhắn trực tiếp.
+Tiến độ/bài nộp trong website là căn cứ chính để giáo viên xem ai cần hỗ trợ. Không tự nhắn qua kênh khác hoặc coi không mở email là không học.
 
 ## Lịch chạy
 
@@ -110,7 +98,7 @@ Vercel Cron chạy theo UTC. Việt Nam là UTC+7, không có giờ mùa hè nê
 
 ## Web Push
 
-Miễn phí hoàn toàn, hiện ngay trên màn hình điện thoại, học viên bấm đồng ý một lần.
+Web Push ngoài MVP; quyền trình duyệt, hỗ trợ thiết bị và ngân sách gửi cần kiểm chứng nếu triển khai. Không xin quyền khi chưa có tính năng thực tế.
 
 Giai đoạn 6 mới triển khai. Lưu subscription từng thiết bị tại push_subscriptions, chỉ user sở hữu được đăng ký/hủy qua API. Endpoint và khóa không được lộ trong báo cáo. Vô hiệu hóa subscription khi dịch vụ báo hết hiệu lực; retry giới hạn với lỗi tạm thời. Chỉ gửi khi push_enabled và bài vẫn cần nhắc. Dùng Web Push API chuẩn; khóa gửi phía server.
 
