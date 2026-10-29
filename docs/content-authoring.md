@@ -8,6 +8,16 @@ Draft nằm ở content/lessons/*.json. Năm bài hiện tại là mẫu tự bi
 
 ID bài/item dùng tiếng Anh hoặc mã ổn định, không tái dùng ID cũ cho ý nghĩa khác. Slide chỉ refs/ref tới từ vựng/ngữ pháp/câu luyện. TeacherNotes là ghi chú riêng; note.body là nội dung công khai. Không đặt đáp án kiểm tra cần bảo mật vào questions của bài công khai.
 
+## Bài tiếng Nhật theo trình tự Minna no Nihongo (pilot)
+
+**Trạng thái 29/10/2026:** pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự bài của Minna no Nihongo Sơ cấp. Tại `/teach/lessons/new`, nút **Tạo bài 11 từ mẫu** tạo một bản nháp riêng của giáo viên từ `content/starters/minna-1-11.json`: 54 từ vựng, 5 mẫu câu, 38 slide (từ vựng, bảng đếm, mẫu câu, ví dụ, luyện thay thế, câu hỏi, hội thoại, tóm tắt) và 14 câu luyện choice/fill hiragana. Bấm lại trên cùng trang không tạo bản thứ hai.
+
+Nội dung do Reng tự biên soạn theo chủ điểm bài 11 (đếm 〜つ・〜人・〜台・〜枚・〜回, khoảng thời gian, tần suất, だけ); câu ví dụ, hội thoại và bài luyện là bản viết mới, không chép nguyên văn sách, tranh hay đĩa nghe. Giáo viên duyệt và sửa trước khi xuất bản; học viên dùng sách có bản quyền của mình để đối chiếu. Bài tiếp theo: dùng **Tạo bản sao** từ bài 11 rồi sửa, hoặc soạn mới trong editor. Thêm bài mẫu mới = thêm JSON vào `content/starters/` và đăng ký trong `lib/starter-lessons.ts`; test yêu cầu bài mẫu xuất bản được ngay và đáp án trắc nghiệm không nằm cùng một vị trí (lựa chọn hiển thị đúng thứ tự soạn).
+
+Slide bài Nhật có thêm hai loại: **Hội thoại** (`dialogue`: tiêu đề, tối đa 8 lượt người nói/câu Nhật/nghĩa Việt, mặc định ẩn nghĩa và hiện từng lượt) và **Bảng / luyện thay thế** (`table`: tối đa 6 cột × 12 hàng, dán từ Excel/Google Sheets hoặc gõ các ô cách nhau bằng `|`; bật luyện thay thế để ẩn cột cuối và hiện câu mẫu từng hàng). Trang đọc của học viên hiện hội thoại và bảng; câu mẫu của bảng luyện được gấp trong "Xem câu mẫu".
+
+Furigana viết `{漢字|かんじ}` trong dòng tiêu đề Nhật, mẫu câu, giải thích, ví dụ, hội thoại, bảng và ghi chú; nút Nghe/audio đọc phần furigana và bỏ ký hiệu 〜. Đề câu luyện hiển thị văn bản thường nên viết kana. Số trong câu Nhật dùng 0–9 (số toàn góc nhiều chữ số bị giãn). Ô điền hiragana hoàn tất romaji còn dở khi rời ô (`yonin` → よにん); ん giữa từ vẫn gõ `nn` (さんにん: `sannnin`).
+
 ## Kiểm tra và xuất bản local
 
 ```bash

@@ -150,6 +150,14 @@ Mọi mutation xác thực phiên, same-origin/CSRF theo cơ chế hiện có, v
 
 Read nháp/share/private media/job dùng private no-store; public lesson DTO chỉ version public và đã lọc. Token/signed URL không xuất hiện trong log hoặc response của người không có quyền. Retry requestId cùng payload trả lại kết quả, khác payload bị conflict, không tạo hai bản copy/job/assignment.
 
+## Pilot tiếng Nhật theo Minna — đã triển khai
+
+Không thêm migration. Schema bài Nhật v1 (`lib/lesson-schema.ts`, nháp ở `lib/lesson-draft.ts`) thêm slide tự chứa `dialogue` (1–8 lượt) và `table` (1–6 cột, 1–12 hàng, mọi hàng đủ ô; `revealLastColumn`). Snapshot cũ vẫn hợp lệ; RPC đọc/sao chép xử lý slide chung nên không đổi. Editor có ô nhập từng lượt thoại và ô bảng (`lib/slide-table.ts`: Tab khi dán, `|` khi gõ; bảng vượt giới hạn không vào nháp). Kiểm tra trước xuất bản báo thiếu tiêu đề, thiếu ô và hàng lệch cột bằng tiếng Việt.
+
+Furigana `{base|reading}` được parse ở `lib/japanese-text.ts` và render bằng `components/lessons/japanese-text.tsx` (ruby, đoạn chữ Nhật trong câu Việt gắn `lang="ja"`). Giọng thiết bị, flashcard và kế hoạch audio dùng `toSpeechText` (đọc phần furigana, bỏ 〜); câu không có cú pháp giữ nguyên hash audio cũ. Slide từ vựng trên 3 từ, ví dụ trên 1 câu, hội thoại trên 5 lượt và bảng trên 8 hàng dùng bố cục dày hơn; 38 slide của bài 11 đo được cao tối đa 676/720px.
+
+Bài mẫu (`lib/starter-lessons.ts`, JSON trong `content/starters/`) được tạo bằng RPC `insert_lesson_copy` sẵn có: ID `lesson-<uuid>`, idempotent theo `requestId` (fingerprint `starter:<id>`), quota 2000 bài, không ghi nguồn sao chép nên bài là của giáo viên và chia sẻ được; nhật ký ghi `lesson.copied`. Ô điền tiếng Nhật hoàn tất romaji còn dở khi blur (`finalizeRomaji`), chỉ đổi đoạn Latin nên kana/kanji đã nhập giữ nguyên. Form lớp mặc định `ja-JP`. `supabase/config.toml` thêm `http://127.0.0.1:3017/**` vào allowlist để link xác nhận/đặt lại mật khẩu của dev server cổng 3017 không rơi về `site_url`.
+
 ## SEO cho trang công khai — đã triển khai
 
 `metadataBase` lấy từ `SITE_URL` (`lib/site.ts`), metadata gốc mô tả dịch vụ, Open Graph `vi_VN` và thẻ xác minh Search Console qua `GOOGLE_SITE_VERIFICATION`. `app/sitemap.ts` liệt kê trang công khai cố định và bài có visibility public (làm mới mỗi giờ, lỗi database vẫn trả trang cố định); `app/robots.ts` chặn `/admin`, `/teach`, `/classes`, `/assignments`, trang tài khoản, API và `/lessons/*/slide|presenter`. Trang bài dùng `generateMetadata` với canonical `/lessons/[id]` (bỏ `?version=`) và JSON-LD LearningResource; trang chủ có Organization/WebSite, `/for-teachers` có WebPage/FAQPage. Bài riêng tư không đọc được khi chưa đăng nhập nên không vào sitemap hay chỉ mục.

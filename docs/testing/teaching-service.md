@@ -23,6 +23,19 @@ Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test
 | SV-14 | Một phần | Thu hồi chặn xem và sao chép mới, bản sao đã tạo vẫn mở được. Chưa có media riêng tư nên chưa kiểm tra TTL của signed URL |
 | SV-26 | PASS (local) | Lớp lưu `subject`, `language_tag`, `instruction_language_tag` riêng; bài v2 lưu context (subject, languageTag, locale, instructionLanguageTag); không tự đổi giản/phồn |
 
+Kết quả pilot tiếng Nhật theo Minna (29/10/2026):
+
+| Ca | Kết quả | Bằng chứng |
+|---|---|---|
+| MJ-01 | PASS (local) | Bài mẫu 11 hợp lệ, xuất bản được nguyên trạng, đáp án trắc nghiệm phân bố nhiều vị trí, không lộ ghi chú/đáp án ở DTO học viên. `tests/japanese-lessons.test.ts` |
+| MJ-02 | PASS (local) | Furigana, giọng đọc (đọc furigana, bỏ 〜), hash audio cũ không đổi, bảng dán Tab/gõ `|` và giới hạn, kiểm tra thiếu nội dung slide hội thoại/bảng, schema từ chối hàng lệch cột. `tests/japanese-lessons.test.ts` |
+| MJ-03 | PASS (local) | Rời ô hoàn tất romaji còn dở (`yonin` → よにん) mà không đổi katakana/kanji đã nhập. `tests/romaji-input.test.ts`, `e2e-supabase/minna-teaching.spec.ts` |
+| MJ-04 | PASS (local) | Trọn luồng trên trình duyệt: giáo viên kích hoạt, tạo bài 11 từ mẫu, xuất bản, chiếu bảng đếm/luyện thay thế/hội thoại; lớp tiếng Nhật mặc định có sức chứa và Meet; học viên tự đăng ký, xác minh email qua Mailpit, vào lớp, đọc bài (vừa 360px), làm bài 100%; giáo viên thấy kết quả. `e2e-supabase/minna-teaching.spec.ts` (3 lần liên tiếp đạt) |
+| MJ-05 | PASS (local, thủ công) | Chrome trên dev server cổng 3017: link xác nhận trỏ đúng cổng 3017 sau khi sửa allowlist; học viên thử làm 14 câu được 92,9% (13/14), câu sai hiện đáp án và giải thích; 38 slide cao tối đa 676/720px. Phát hiện và sửa: n cuối chưa thành ん, chữ số toàn góc bị giãn, câu tóm tắt dành cho giáo viên hiện cho học viên |
+| MJ-06 | NOT RUN | Giáo viên thật duyệt nội dung bài 11 và dạy thử một buổi Meet; đo thời gian chuẩn bị |
+
+Toàn bộ `e2e-supabase` (29 ca) và `e2e` (25 ca) đạt trên bản sao cô lập. `e2e/seo.spec.ts` (mô tả trang `/for-teachers`) từng lỗi một lần khi 25 ca dev chạy song song (hai thẻ meta trong lúc stream metadata), chạy lại riêng và trên HEAD đều đạt; chưa sửa vì ngoài phạm vi.
+
 Kết quả soạn bài theo mẫu (lát B1 bản đầu):
 
 | Ca | Kết quả | Bằng chứng |

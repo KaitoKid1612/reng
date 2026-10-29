@@ -4,7 +4,7 @@ These conventions apply to handwritten code and documentation in Reng. Use the i
 
 ## Language and naming
 
-- Use English for file/directory names, route segments, identifiers, comments, test descriptions and developer diagnostics. Use Vietnamese for the initial management UI and instructional language, Chinese for the service MVP learning content, and preserve existing Japanese content; translating user content is a separate task.
+- Use English for file/directory names, route segments, identifiers, comments, test descriptions and developer diagnostics. Use Vietnamese for the initial management UI and instructional language; learning content is Japanese for the current pilot (Minna no Nihongo lesson order) and Chinese for the Vietnamese–Chinese path; translating user content is a separate task.
 - Use lowercase kebab-case filenames: `kana-practice.tsx`, `generate-audio.ts`, `phase-1.md`. Keep framework/tool names such as `page.tsx`, `layout.tsx`, `AGENTS.md`, `README.md` and numbered migrations.
 - Components and interfaces use PascalCase; functions, variables and hooks use camelCase. Hooks start with `use`; boolean names explain their meaning (`isCorrect`, `hasFeedback`). Fixed configuration collections use UPPER_SNAKE_CASE; schema instances, loaded datasets and derived state use camelCase.
 - Name callbacks after their domain object (`item`, `record`, `group`, `event`), avoiding `x`, `r`, `s` or unclear abbreviations. Loop indices and standard names such as `id`, `url` and `db` are acceptable when their purpose is clear.

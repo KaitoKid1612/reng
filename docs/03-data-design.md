@@ -60,8 +60,10 @@ Mọi slide có `id`, `type`; `teacherNotes` tùy chọn chỉ có trong payload
 | `quiz` | `ref`: ID câu hỏi luyện công khai |
 | `note` | `title`, `body` |
 | `image` | `src`, `alt`; `caption` tùy chọn |
+| `dialogue` | `title`, `lines`: 1–8 lượt `{speaker, jp, vi}`; `reveal` ẩn nghĩa từng lượt |
+| `table` | `title`, `columns` 1–6, `rows` 1–12 (mỗi hàng đủ số ô); `revealLastColumn` cho luyện thay thế |
 
-Đăng ký component theo type; loại không hỗ trợ bị chặn khi xuất bản.
+Đăng ký component theo type; loại không hỗ trợ bị chặn khi xuất bản. `dialogue` và `table` tự chứa nội dung (không `ref`), có giới hạn để vừa khung 1280×720. Văn bản Nhật có thể chứa furigana `{漢字|かんじ}`: đây là cú pháp văn bản, không phải HTML; renderer chuyển thành `<ruby>`, giọng đọc/audio dùng phần đọc.
 
 ### Các loại câu hỏi
 

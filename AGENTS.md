@@ -1,6 +1,6 @@
 # Reng project instructions
 
-Read and follow [coding standards](docs/coding-standards.md) before editing source. The project uses English filenames, route segments and identifiers; user-facing content uses the relevant teaching and learning languages. The service MVP prioritizes Chinese for Vietnamese learners; preserve existing Japanese content and keep the platform extensible to other subjects.
+Read and follow [coding standards](docs/coding-standards.md) before editing source. The project uses English filenames, route segments and identifiers; user-facing content uses the relevant teaching and learning languages. The current pilot prioritizes Japanese for Vietnamese learners, with slides following the Minna no Nihongo lesson order (original content, never copied textbook text); keep the Vietnamese–Chinese path working and the platform extensible to other subjects.
 
 - Apply `/home/vietlv/.codex/RTK.md`: prefix shell commands with `rtk`.
 - Work autonomously within the user's authorized scope: inspect, edit, refactor, install required project dependencies and run relevant local checks without repeated confirmation. Ask when a technical/product decision cannot reasonably be settled from project evidence. Respect platform permission controls and never bypass a rejection.

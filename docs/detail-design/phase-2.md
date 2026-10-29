@@ -27,7 +27,7 @@ Không dùng service_role để bỏ qua kiểm tra quyền notes. Từ giai đo
 
 ## Slide engine
 
-SlideRenderer map type → component: title/vocab/grammar/example/quiz/note/image. Example reveal dùng fragment; quiz có nút reveal gọi endpoint. Notes không có trong props engine hoặc HTML máy chiếu/PDF.
+SlideRenderer map type → component: title/vocab/grammar/example/quiz/note/image; từ 29/10/2026 thêm dialogue/table cho bài Nhật theo Minna ([biên soạn](../content-authoring.md)). Example reveal dùng fragment; quiz có nút reveal gọi endpoint. Notes không có trong props engine hoặc HTML máy chiếu/PDF.
 
 Reveal cấu hình width=1280,height=720, margin nhỏ, transition none, embedded, progress và touch. Adapter giữ hash số 1-based thay vì hash mặc định engine. On slide/fragment change cập nhật URL và BroadcastChannel, payload có lesson/version/index/fragment; validate số nguyên và phạm vi. Không echo khi xử lý sự kiện từ presenter. Destroy engine/listener/channel khi đổi bài hoặc unmount; React StrictMode không được tạo hai engine.
 
