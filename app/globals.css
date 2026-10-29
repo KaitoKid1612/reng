@@ -1426,7 +1426,8 @@ rt {
 }
 .form-card input:not([type="checkbox"], [type="radio"]),
 .form-card select,
-.form-card textarea {
+.form-card textarea,
+.admin-plan-form input:not([type="hidden"]) {
   width: 100%;
   border: 1px solid #a8a49d;
   border-radius: 6px;
@@ -1950,6 +1951,8 @@ rt {
   padding: 0;
   margin: 0 0 16px;
   display: grid;
+  /* A fixed track lets long summaries end in an ellipsis instead of widening the page. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 6px;
 }
 .slide-list-item {
@@ -2175,10 +2178,6 @@ rt {
   border-color: var(--primary);
   background: var(--primary-soft);
   font-weight: 600;
-}
-/* Long prompts in the nowrap slide summaries must not widen the list beyond a phone screen. */
-.teaching-editor .slide-list {
-  grid-template-columns: minmax(0, 1fr);
 }
 .teaching-items {
   list-style: none;

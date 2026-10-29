@@ -241,14 +241,15 @@ export function LessonEditor({
         )}
         {missingAudio > 0 && (
           <p className="small muted">
-            {missingAudio} từ/câu ví dụ chưa có audio; học viên sẽ nghe giọng thiết bị cho tới khi
-            chạy script sinh audio.
+            {missingAudio} từ/câu ví dụ chưa có file đọc mẫu; nút Nghe dùng giọng tiếng Nhật của
+            thiết bị. Bài vẫn xuất bản và dạy bình thường được.
           </p>
         )}
         {missingListeningAudio > 0 && (
           <p className="small muted">
-            {missingListeningAudio} câu nghe chưa có audio nên chưa xuất bản được. Lưu nháp rồi chạy{" "}
-            <code>{AUDIO_COMMAND}</code>, sau đó tải lại trang.
+            {missingListeningAudio} câu nghe chưa có audio nên chưa xuất bản được. Lưu nháp rồi nhờ
+            người vận hành chạy <code>{AUDIO_COMMAND}</code> và tải lại trang, hoặc xóa câu nghe nếu
+            chưa cần.
           </p>
         )}
         <details className="editor-section" open>

@@ -33,11 +33,14 @@ export function summarizeSlide(slide: DraftSlide, content: DraftContent) {
         : "Chưa chọn từ";
     case "grammar":
     case "example":
-      return content.grammar.find((item) => item.id === slide.ref)?.pattern || "Chưa chọn mẫu câu";
+      return (
+        toPlainJapanese(content.grammar.find((item) => item.id === slide.ref)?.pattern ?? "") ||
+        "Chưa chọn mẫu câu"
+      );
     case "dialogue":
-      return slide.title || toPlainJapanese(slide.lines[0]?.jp ?? "") || "Chưa có lượt thoại";
+      return toPlainJapanese(slide.title || slide.lines[0]?.jp || "") || "Chưa có lượt thoại";
     case "table":
-      return slide.title || slide.columns.join(" · ") || "Chưa có bảng";
+      return toPlainJapanese(slide.title || slide.columns.join(" · ")) || "Chưa có bảng";
     case "quiz":
       return content.questions.find((item) => item.id === slide.ref)?.prompt || "Chưa chọn câu";
     case "note":

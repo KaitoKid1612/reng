@@ -64,6 +64,13 @@ test("a teacher starts Minna lesson 11 from the starter, publishes and presents 
   state.lessonId = page.url().split("/").at(-2) ?? "";
   await expect(page.getByLabel("Tiêu đề tiếng Việt", { exact: true })).toHaveValue(LESSON_TITLE);
   await expect(page.locator(".slide-list-item")).toHaveCount(38);
+  // Long slide summaries end in an ellipsis instead of widening the editor on phones.
+  await page.setViewportSize({ width: 360, height: 780 });
+  const editorFits = await page.evaluate(
+    () => document.documentElement.scrollWidth <= window.innerWidth,
+  );
+  expect(editorFits, "the lesson 11 editor fits a 360px screen").toBe(true);
+  await page.setViewportSize({ width: 1280, height: 720 });
   await page.locator(".slide-list-select").filter({ hasText: "Hội thoại 1" }).click();
   await expect(page.getByLabel("Câu tiếng Nhật lượt 1")).toHaveValue(/ご家族\|ごかぞく/);
   await expect(page.locator(".slide-preview ruby").first()).toBeVisible();

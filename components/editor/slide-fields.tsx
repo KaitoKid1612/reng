@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { FURIGANA_HINT, SLIDE_TYPE_LABELS } from "@/components/editor/slide-labels";
 import { Button } from "@/components/ui/button";
+import { toPlainJapanese } from "@/lib/japanese-text";
 import { isQuizQuestion } from "@/lib/lesson-draft";
 import { MAX_DIALOGUE_LINES, MAX_TABLE_COLUMNS, MAX_TABLE_ROWS } from "@/lib/lesson-schema";
 import { formatSlideTable, parseSlideTable } from "@/lib/slide-table";
@@ -257,7 +258,7 @@ function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "positi
               <option value="">Chọn mẫu câu</option>
               {content.grammar.map((item) => (
                 <option key={item.id} value={item.id}>
-                  {item.pattern || "(chưa nhập mẫu)"}
+                  {toPlainJapanese(item.pattern) || "(chưa nhập mẫu)"}
                 </option>
               ))}
             </select>
