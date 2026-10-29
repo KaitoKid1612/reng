@@ -53,9 +53,17 @@ function textFooter(footer: EmailFooter) {
   return `\n--\n${footer.reason}\nĐổi tần suất: ${footer.settingsUrl}\nHủy nhận email: ${footer.unsubscribeUrl}\n`;
 }
 
-function describeWord(word: { jp: string; kanji?: string; vi: string }) {
-  const written = word.kanji && word.kanji !== word.jp ? `${word.kanji} (${word.jp})` : word.jp;
-  return `${written}: ${word.vi}`;
+export interface WordOfDay {
+  front: string;
+  reading: string;
+  meaning: string;
+  lang: string;
+}
+
+// Japanese reads "kanji (kana)", Chinese "characters (pinyin)"; a word without reading is plain.
+function describeWord(word: WordOfDay) {
+  const written = word.reading ? `${word.front} (${word.reading})` : word.front;
+  return `${written}: ${word.meaning}`;
 }
 
 export interface DailyReminderInput extends EmailFooter {
@@ -63,7 +71,7 @@ export interface DailyReminderInput extends EmailFooter {
   streak: number;
   dueCards: number;
   assignments: { title: string; dueAt: string | null }[];
-  word: { jp: string; kanji?: string; vi: string } | null;
+  word: WordOfDay | null;
   reviewUrl: string;
   assignmentsUrl: string;
 }
@@ -104,7 +112,7 @@ export function renderDailyReminder(input: DailyReminderInput): EmailContent {
         : "",
       input.word
         ? paragraph(
-            `Từ của ngày: <span lang="ja" style="font-size:20px">${escapeHtml(wordText)}</span>`,
+            `Từ của ngày: <span lang="${escapeHtml(input.word.lang)}" style="font-size:20px">${escapeHtml(wordText)}</span>`,
           )
         : "",
       button(action.label, action.url),

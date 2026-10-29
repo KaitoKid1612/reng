@@ -29,7 +29,7 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 | SERVICE-02 | Một phần | 0.5 | Owner check/RLS nền; bài riêng chỉ đọc qua RPC kiểm tra owner/lớp/version. Chưa có media riêng tư và share. [Nguồn](../lib/server/lesson-access.ts) |
 | CLASS-08 | Đã có | 1 | Capacity tùy chọn; join khóa hàng lớp rồi đếm thành viên đang học, trả `class_full`; giảm dưới số đang học bị chặn. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |
 | CLASS-09 | Đã có | 1 | Link Meet allowlist `meet.google.com`, chỉ thành viên lớp thấy; chưa thử dạy Meet thật (SV-08). [Nguồn](../lib/class-settings.ts) |
-| LANG-01 | Một phần | 0.5 | Schema v2 có context subject/languageTag/locale/instructionLanguageTag, ô nhập chữ Hán/pinyin, font và giọng thiết bị theo locale; v1 Nhật giữ nguyên. Chưa có TTS web; flashcard/SRS/tra ngữ pháp chưa đọc v2. [Nguồn](../lib/teaching-content.ts) |
+| LANG-01 | Một phần | 0.5 | Schema v2 có context subject/languageTag/locale/instructionLanguageTag, ô nhập chữ Hán/pinyin, font và giọng thiết bị theo locale; v1 Nhật giữ nguyên. Flashcard/SRS/email từ của ngày đọc được v2. Chưa có TTS web; tra ngữ pháp chưa đọc v2. [Nguồn](../lib/teaching-content.ts) |
 | SHARE-01 | Đã có | 1 | Chia sẻ một phiên bản cho giáo viên cụ thể theo email, quyền view/copy, thu hồi. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
 | SHARE-02 | Đã có | 1 | Bản sao độc lập giữ nguồn/tác giả, idempotent theo requestId, sửa bài gốc không đổi bản sao/bài giao. Chưa cần entitlement vì chưa có media riêng tư. [Nguồn](../lib/server/lesson-sharing.ts) |
 | SCAN-01 | Chưa có | 0 | Slide image nhận URL; không có upload/job/storage policy scan. [Nguồn](../lib/lesson-schema.ts#L169) |
@@ -61,7 +61,7 @@ Cần migration mới để publish giữ private/class mặc định, quyền c
 
 ### 2. Ưu tiên cao: schema và chấm chưa hỗ trợ tiếng Trung — đã xử lý phần chính
 
-Đã thêm schema v2 (`lib/teaching-content.ts`) đọc qua cùng loader với v1, profile `zh-exact-v1` lưu theo câu và renderer/reader riêng cho v2. Còn lại: TTS web, flashcard/SRS và tra ngữ pháp cho v2. Mô tả lúc đối chiếu giữ lại bên dưới.
+Đã thêm schema v2 (`lib/teaching-content.ts`) đọc qua cùng loader với v1, profile `zh-exact-v1` lưu theo câu và renderer/reader riêng cho v2. Flashcard/SRS và email từ của ngày đã đọc v2. Còn lại: TTS web và tra ngữ pháp cho v2. Mô tả lúc đối chiếu giữ lại bên dưới.
 
 [lessonContentSchema](../lib/lesson-schema.ts#L179) chỉ nhận v1; [draftContentSchema](../lib/lesson-draft.ts#L170), reader, renderer và RPC cùng phụ thuộc cấu trúc Nhật. Đổi nhãn UI hoặc nhét pinyin vào romaji không đáp ứng context/schemaVersion=2 trong docs.
 

@@ -1,33 +1,34 @@
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
 
-import type { LessonContent } from "@/lib/lesson-schema";
+import type { StudyWord } from "@/lib/study-words";
 
 interface VocabCardFaceProps {
   lessonId: string;
-  vocab: LessonContent["vocab"][number];
+  vocab: StudyWord;
   isFlipped: boolean;
 }
 
 export function VocabCardFace({ lessonId, vocab, isFlipped }: VocabCardFaceProps) {
   return (
     <div className="flashcard" data-flipped={isFlipped}>
-      <span className="flashcard-front" lang="ja">
-        {vocab.kanji || vocab.jp}
+      <span className="flashcard-front" lang={vocab.lang}>
+        {vocab.front}
       </span>
       {isFlipped && (
         <div className="flashcard-back">
-          {vocab.kanji && vocab.kanji !== vocab.jp && (
-            <p lang="ja" className="reading-text">
-              {vocab.jp}
+          {vocab.reading && (
+            <p lang={vocab.readingLang} className="reading-text">
+              {vocab.reading}
             </p>
           )}
-          <p className="small muted">{vocab.romaji}</p>
-          <p>{vocab.vi}</p>
+          {vocab.romanization && <p className="small muted">{vocab.romanization}</p>}
+          <p>{vocab.meaning}</p>
           <PronunciationButton
             id={`${lessonId}:${vocab.id}`}
-            text={vocab.jp}
-            label={vocab.romaji}
+            text={vocab.spokenText}
+            label={vocab.audioLabel}
             audio={vocab.audio}
+            locale={vocab.locale}
           />
         </div>
       )}

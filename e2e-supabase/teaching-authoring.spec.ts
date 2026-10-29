@@ -150,6 +150,18 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await expect(page.getByText("Chào và cảm ơn", { exact: true })).toBeVisible();
   await expect(page.locator(".vocabulary-list [lang='zh-Hans']").first()).toHaveText("你好");
   expect(await page.content()).not.toContain(`NOTE-${RUN_ID}`);
+  await page.getByRole("link", { name: "Flashcard từ vựng", exact: true }).click();
+  const flashcards = page.getByRole("region", { name: "Flashcard từ vựng" });
+  await expect(flashcards.locator(".flashcard-front")).toHaveText("你好");
+  await expect(flashcards.locator(".flashcard-front")).toHaveAttribute("lang", "zh-Hans");
+  await page.getByRole("button", { name: "Lật thẻ", exact: true }).click();
+  await expect(flashcards.getByText("nǐ hǎo", { exact: true })).toBeVisible();
+  await expect(flashcards.getByText("xin chào", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Được", exact: true }).click();
+  await expect(flashcards.locator(".flashcard-front")).toHaveText("谢谢");
+  await page.getByRole("button", { name: "Thẻ trước", exact: true }).click();
+  await expect(flashcards.getByText("Đã có lịch ôn")).toBeVisible();
+  await page.goBack();
   await page.getByRole("link", { name: "Trình chiếu", exact: true }).click();
   await expect(page.locator(".reveal")).toBeVisible();
   await expect(page.getByTestId("slide-counter")).toHaveText("1 / 8");
@@ -184,4 +196,34 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await page.waitForURL(/\/results$/);
   await expect(page.locator(".result-score")).toContainText("100%");
   await page.context().close();
+});
+
+test("the new authoring, reading and sharing pages fit a 360px screen", async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 360, height: 780 } });
+  const page = await context.newPage();
+  await signIn(page, `authoring-teacher-${RUN_ID}@example.test`, `authoring-pass-${RUN_ID}`);
+  const fitsScreen = () =>
+    page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
+  for (const path of [
+    "/teach",
+    "/teach/lessons/new",
+    "/teach/library",
+    `/teach/lessons/${state.lessonId}/sharing`,
+    `/lessons/${state.lessonId}`,
+  ]) {
+    await page.goto(path);
+    expect(await fitsScreen(), path).toBe(true);
+  }
+  await page.goto(`/teach/lessons/${state.lessonId}/edit`);
+  for (const step of [
+    "1. Mục tiêu",
+    "2. Từ vựng",
+    "3. Mẫu câu & hội thoại",
+    "4. Câu luyện",
+    "5. Slide & xuất bản",
+  ]) {
+    await page.getByRole("button", { name: step, exact: true }).click();
+    expect(await fitsScreen(), step).toBe(true);
+  }
+  await context.close();
 });

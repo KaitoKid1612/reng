@@ -1957,6 +1957,10 @@ body:has(.slide-shell) .site-footer {
   background: var(--primary-soft);
   font-weight: 600;
 }
+/* Long prompts in the nowrap slide summaries must not widen the list beyond a phone screen. */
+.teaching-editor .slide-list {
+  grid-template-columns: minmax(0, 1fr);
+}
 .teaching-items {
   list-style: none;
   padding: 0;

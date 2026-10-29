@@ -13,7 +13,8 @@ import {
 import { gradeQuestion } from "@/lib/grading/grade";
 import { parseRawAnswer } from "@/lib/grading/raw-answer";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
-import { isTeachingVersion } from "@/lib/teaching-content";
+import { toStudyWords } from "@/lib/study-words";
+import { isTeachingVersion, LANGUAGE_LABELS } from "@/lib/teaching-content";
 import { loadAssignment } from "@/lib/server/assignments";
 import {
   callRpc,
@@ -32,8 +33,8 @@ import {
 } from "@/lib/srs";
 
 import type { QuestionView } from "@/lib/assignment";
-import type { LessonContent } from "@/lib/lesson-schema";
 import type { ReviewRating } from "@/lib/review-ratings";
+import type { StudyWord } from "@/lib/study-words";
 
 const timestamp = z.iso.datetime({ offset: true });
 const MAX_SESSION_CARDS = 50;
@@ -55,7 +56,7 @@ type CardRow = z.infer<typeof cardRowSchema>;
 const CARD_COLUMNS =
   "item_type, source_id, item_id, scheduler_version, scheduler_state, due, correct_streak, resolved_at, revision";
 
-type VocabItem = LessonContent["vocab"][number];
+type VocabItem = StudyWord;
 
 export interface VocabReviewCard {
   kind: "vocab";
@@ -81,9 +82,8 @@ async function loadVocabDecks(userId: string, lessonIds: readonly string[]) {
   await Promise.all(
     [...new Set(lessonIds)].map(async (lessonId) => {
       const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
-      // Flashcards and vocabulary SRS currently cover the Japanese v1 vocabulary contract only.
-      if (version && !isTeachingVersion(version)) {
-        decks.set(lessonId, { title: version.title, vocab: version.content.vocab });
+      if (version) {
+        decks.set(lessonId, { title: version.title, vocab: toStudyWords(version) });
       }
     }),
   );
@@ -278,11 +278,7 @@ export interface VocabReviewInput {
 
 export async function recordVocabReview(userId: string, input: VocabReviewInput, now: Date) {
   const version = await loadAccessibleLessonVersion(input.lessonId, undefined, userId);
-  if (
-    !version ||
-    isTeachingVersion(version) ||
-    !version.content.vocab.some((item) => item.id === input.vocabId)
-  ) {
+  if (!version || !toStudyWords(version).some((item) => item.id === input.vocabId)) {
     throw new ServiceError("not_found");
   }
   const card = await loadCard(userId, "vocab", input.lessonId, input.vocabId);
@@ -490,7 +486,7 @@ export interface VocabDeckCard {
 
 export async function getVocabularyDeck(userId: string | null, lessonId: string) {
   const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
-  if (!version || isTeachingVersion(version)) {
+  if (!version) {
     return null;
   }
   const cards = userId
@@ -508,9 +504,12 @@ export async function getVocabularyDeck(userId: string | null, lessonId: string)
     lessonId,
     versionId: version.id,
     title: version.title,
-    titleJa: version.titleJa,
+    titleJa: isTeachingVersion(version) ? null : version.titleJa,
+    languageLabel: isTeachingVersion(version)
+      ? LANGUAGE_LABELS[version.content.context.languageTag]
+      : null,
     isSample: version.isSample,
-    cards: version.content.vocab.map((vocab): VocabDeckCard => {
+    cards: toStudyWords(version).map((vocab): VocabDeckCard => {
       const card = cards.find((item) => item.item_id === vocab.id);
       return { vocab, revision: card?.revision ?? null, due: card?.due ?? null };
     }),

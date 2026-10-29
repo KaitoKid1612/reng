@@ -15,7 +15,7 @@ Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test
 | SV-05 | PASS (local) | Lớp sức chứa 1: người thứ hai nhận `class_full`; vào lại khi đã là thành viên trả `already_member`, không chiếm thêm chỗ |
 | SV-06 | PASS (local) | Hai người bấm vào lớp cùng lúc, đúng một người vào; rời lớp giải phóng chỗ và giữ lịch sử; giảm sức chứa dưới số đang học bị `capacity_below_members` |
 | SV-07 | Một phần | Thành viên thấy link Meet; URL `javascript:`, sai host, có credentials hoặc HTTP bị từ chối ở form và ràng buộc DB. Trường hợp học sinh đã rời đọc link chưa có test riêng (trang lớp đã yêu cầu thành viên đang học) |
-| SV-09 | Một phần | Bài v2: hướng dẫn/nghĩa tiếng Việt, chữ Hán gắn `lang=zh-Hans/zh-Hant` với font Trung của thiết bị, ô nhập chữ Hán/pinyin không chạy wanakana, nút Nghe chỉ dùng giọng Trung của thiết bị. Chưa có TTS web và kiểm tra font/audio trên thiết bị thật; bài Nhật cũ vẫn qua toàn bộ E2E |
+| SV-09 | Một phần | Bài v2: hướng dẫn/nghĩa tiếng Việt, chữ Hán gắn `lang=zh-Hans/zh-Hant` với font Trung của thiết bị, ô nhập chữ Hán/pinyin không chạy wanakana, nút Nghe chỉ dùng giọng Trung của thiết bị; flashcard bài Trung hiển thị chữ Hán `lang=zh-Hans`, pinyin, nghĩa và tạo lịch ôn SRS. Chưa có TTS web và kiểm tra font/audio trên thiết bị thật; bài Nhật cũ vẫn qua toàn bộ E2E |
 | SV-10 | PASS (local) | `zh-exact-v1`: NFC và bỏ khoảng trắng đầu/cuối, giữ thanh điệu, khoảng trắng trong pinyin, giản/phồn thể (`謝謝` sai khi đáp án là `谢谢`); profile Nhật giữ quy tắc cũ. `tests/teaching-content.test.ts`, `e2e-supabase/teaching-authoring.spec.ts` |
 | SV-11 | PASS (local) | Quyền view chỉ đọc đúng phiên bản được chia sẻ (không đọc bản mới nhất), không có nút sao chép; giáo viên khác/học viên không dùng được quyền; trang giao bài chỉ liệt kê bài mình sở hữu. `tests/lesson-sharing-migration.test.ts`, `e2e-supabase/lesson-sharing.spec.ts` |
 | SV-12 | PASS (local) | Bản sao là nháp mới của người nhận, có nguồn và tên tác giả, không có ghi chú riêng; không mang câu test, lớp hay kết quả học viên (những dữ liệu này không nằm trong phiên bản) |
@@ -36,8 +36,9 @@ Kết quả soạn bài theo mẫu (lát B1 bản đầu):
 | AU-07 | PASS (local) | Tạo bản sao bài của mình và sao chép bài được chia sẻ đúng quyền thành nháp độc lập có nguồn; quyền view không sao chép được; bản sao không chia sẻ tiếp |
 | AU-09 | NOT RUN | Chưa có TTS web/nghe duyệt audio cho bài Trung |
 | CT-02 | PASS (local) | Như SV-10 |
+| CT-03 | Một phần | Ở 360px các trang `/teach`, tạo bài, thư viện, chia sẻ, trang đọc bài Trung và cả 5 bước wizard không tràn ngang (E2E); chữ Hán/pinyin có `lang` đúng. Chưa đo trên thiết bị thật, chưa kiểm tra bàn phím/tương phản thủ công |
 
-Hồi quy đi kèm (lần chạy sau chia sẻ/sao chép): `npm run check` (81 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 23/23 (gồm luồng Nhật cũ, 2 ca soạn/học bài Trung và 1 ca chia sẻ/sao chép/thu hồi) và `npm run build`.
+Hồi quy đi kèm (lần chạy cuối ngày 29/10/2026): `npm run check` (83 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 24/24 (gồm luồng Nhật cũ, 3 ca soạn/học/360px bài Trung và 1 ca chia sẻ/sao chép/thu hồi) và `npm run build`.
 
 Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-service.md), [DD dự kiến](../detail-design/teaching-service.md).
 

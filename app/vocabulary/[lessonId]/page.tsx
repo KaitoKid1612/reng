@@ -24,9 +24,13 @@ export default async function VocabularyPage({ params }: VocabularyPageProps) {
   }
   return (
     <div className="narrow-page">
-      <p lang="ja" className="lesson-japanese-title">
-        {deck.titleJa}
-      </p>
+      {deck.titleJa ? (
+        <p lang="ja" className="lesson-japanese-title">
+          {deck.titleJa}
+        </p>
+      ) : (
+        <p className="lesson-language">{deck.languageLabel}</p>
+      )}
       <h1>Flashcard: {deck.title}</h1>
       <p className="muted">
         Nhìn chữ, đoán nghĩa rồi lật thẻ.{" "}

@@ -31,11 +31,12 @@ test("reminder subjects name the learner and a concrete number, with escaped con
     streak: 4,
     dueCards: 12,
     assignments: [{ title: '<script>alert("x")</script>', dueAt: "2026-10-29T13:00:00Z" }],
-    word: { jp: "いきます", kanji: "行きます", vi: "đi" },
+    word: { front: "行きます", reading: "いきます", meaning: "đi", lang: "ja" },
     reviewUrl: "https://masu.example/review",
     assignmentsUrl: "https://masu.example/classes",
   });
   assert.equal(email.subject, "Hà ơi, hôm nay có 12 thẻ cần ôn");
+  assert.ok(email.text.includes("行きます (いきます): đi"), "the Japanese word line is unchanged");
   assert.ok(email.html.includes("&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;"));
   assert.equal(email.html.includes("<script>"), false);
   assert.ok(email.html.includes("Ôn 12 thẻ ngay"));
