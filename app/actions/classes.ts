@@ -5,10 +5,12 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { classSettingsSchema } from "@/lib/class-settings";
+import { DAILY_PRACTICE_SIZES } from "@/lib/daily-practice";
 import { signInPath } from "@/lib/auth-paths";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
+import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
   createClass,
   joinClass,
@@ -173,6 +175,58 @@ export async function joinCodeAction(
       operation === "rotate"
         ? "Đã đổi mã lớp. Mã cũ không dùng được nữa."
         : "Đã cập nhật trạng thái nhận học viên.",
+  };
+}
+
+const dailySizeSchema = z
+  .string()
+  .transform((value) => (value ? Number(value) : null))
+  .pipe(z.union([z.null(), z.literal(DAILY_PRACTICE_SIZES)]));
+
+const TODAY_ERRORS = {
+  disabled: "Chọn số câu và bấm Lưu trước khi giao bài hôm nay.",
+  no_lesson: "Lớp chưa có bài học nào đang mở. Thêm bài vào lớp trước.",
+  no_questions: "Bài học mới nhất của lớp chưa có câu trắc nghiệm hoặc điền từ.",
+} as const;
+
+export async function dailyPracticeAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  const classId = readField(formData, "classId");
+  if (readField(formData, "operation") === "today") {
+    try {
+      const outcome = await createTodayPractice(account.id, classId, new Date());
+      if (outcome.status !== "created" && outcome.status !== "exists") {
+        return { error: TODAY_ERRORS[outcome.status] };
+      }
+      refresh();
+      return {
+        notice:
+          outcome.status === "created"
+            ? `Đã giao bài luyện hôm nay (${outcome.questionCount} câu). Học viên thấy ngay trong lớp.`
+            : `Hôm nay lớp đã có bài luyện (${outcome.questionCount} câu).`,
+      };
+    } catch (error) {
+      return { error: describeError(error) };
+    }
+  }
+  let size: number | null;
+  try {
+    size = dailySizeSchema.parse(readField(formData, "size"));
+    await setDailyPractice(account.id, classId, size);
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  return {
+    notice: size
+      ? `Đã bật: mỗi sáng 6:00 Reng tự giao ${size} câu luyện tập.`
+      : "Đã tắt bài luyện hằng ngày. Bài đã giao vẫn giữ nguyên.",
   };
 }
 

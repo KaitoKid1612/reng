@@ -3,6 +3,7 @@ import Link from "next/link";
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
 import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
+import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
 import { buttonVariants } from "@/components/ui/button";
 import { LEARNER_LABELS } from "@/lib/class-report";
@@ -160,6 +161,16 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
         ) : (
           <p className="muted">Chưa có câu nào bị sai từ 50% trở lên.</p>
         )}
+      </section>
+      <section className="section-block" aria-labelledby="daily-practice-title">
+        <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
+        <p className="small muted">
+          Mỗi sáng 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở cho
+          lớp: hạn 23:59 cùng ngày (nộp muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi
+          nộp. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện gần đây; câu sai vào sổ lỗi và lịch ôn
+          tập của học viên.
+        </p>
+        <DailyPracticeForm classId={classRow.id} size={classRow.daily_practice_size} />
       </section>
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>

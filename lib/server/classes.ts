@@ -32,13 +32,14 @@ const classRowSchema = z.object({
   subject: z.enum(["japanese", "chinese"]),
   language_tag: z.enum(["ja-JP", "zh-Hans", "zh-Hant"]),
   revision: z.number().int(),
+  daily_practice_size: z.number().int().nullable(),
   created_at: timestamp,
 });
 
 export type ClassRow = z.infer<typeof classRowSchema>;
 
 const CLASS_COLUMNS =
-  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, created_at";
+  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, daily_practice_size, created_at";
 
 export async function listTeacherClasses(teacherId: string) {
   const service = createServiceClient();

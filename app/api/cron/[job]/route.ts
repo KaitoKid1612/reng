@@ -1,8 +1,7 @@
-import { timingSafeEqual } from "node:crypto";
-
 import { NextResponse } from "next/server";
 
 import { isNotificationJob } from "@/lib/notifications/schedule";
+import { isCronAuthorized } from "@/lib/server/cron-auth";
 import { deliverPendingEmails, isEmailConfigured, planEmails } from "@/lib/server/notifications";
 import { getRequestOrigin } from "@/lib/server/request-origin";
 import { isClassroomConfigured } from "@/lib/server/supabase";
@@ -13,19 +12,13 @@ interface CronRouteContext {
 
 const NO_STORE = { "Cache-Control": "private, no-store" };
 
-function isAuthorized(header: string | null, secret: string) {
-  const expected = Buffer.from(`Bearer ${secret}`);
-  const received = Buffer.from(header ?? "");
-  return expected.length === received.length && timingSafeEqual(expected, received);
-}
-
 // Scheduled by vercel.json in UTC; also callable locally with the same bearer secret.
 export async function GET(request: Request, { params }: CronRouteContext) {
   const secret = process.env.CRON_SECRET;
   if (!secret || !isClassroomConfigured() || !isEmailConfigured()) {
     return NextResponse.json({ code: "not_configured" }, { status: 503, headers: NO_STORE });
   }
-  if (!isAuthorized(request.headers.get("authorization"), secret)) {
+  if (!isCronAuthorized(request.headers.get("authorization"), secret)) {
     return NextResponse.json({ code: "unauthorized" }, { status: 401, headers: NO_STORE });
   }
   const { job } = await params;

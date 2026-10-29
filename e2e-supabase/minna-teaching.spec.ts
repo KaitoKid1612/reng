@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { toVietnamDate } from "../lib/daily-practice";
+
 import { becomeTeacher, createConfirmedStudent, readEmailLink, RUN_ID, signIn } from "./support";
 
 import type { Browser, Page } from "@playwright/test";
@@ -23,6 +25,8 @@ const CHOICE_PROMPT = "いすが 8（　　）あります。";
 const FILL_PROMPT = "Viết cách đọc bằng hiragana: 2人";
 // The answer ends in ん, which a learner usually types as a single final n.
 const FINAL_N_PROMPT = "Viết cách đọc bằng hiragana: 4人";
+const todayInVietnam = toVietnamDate(new Date());
+const DAILY_TITLE = `Luyện tập hằng ngày ${todayInVietnam.slice(8, 10)}/${todayInVietnam.slice(5, 7)}`;
 const state = { lessonId: "", classId: "", code: "" };
 
 async function teacherPage(browser: Browser) {
@@ -31,7 +35,10 @@ async function teacherPage(browser: Browser) {
   return page;
 }
 
+// A full load each time: a hash-only jump right after a fragment step can lose the race with
+// the deck writing its own position back into the URL.
 async function openSlide(page: Page, position: number) {
+  await page.goto("about:blank");
   await page.goto(`/lessons/${state.lessonId}/slide#${position}`);
   await expect(page.getByTestId("slide-counter")).toHaveText(`${position} / 38`);
   return page.locator(".reveal section.present");
@@ -109,6 +116,24 @@ test("the teacher opens a Japanese class, pins lesson 11 and assigns practice", 
   await page.getByRole("button", { name: "Xuất bản bài giao", exact: true }).click();
   await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
   await expect(page.getByText(ASSIGNMENT_TITLE)).toBeVisible();
+
+  const today = page.getByRole("button", { name: "Giao bài hôm nay ngay", exact: true });
+  await expect(today).toBeDisabled();
+  await page.getByLabel("Mỗi ngày tự giao").selectOption("7");
+  await page.getByRole("button", { name: "Lưu", exact: true }).click();
+  await expect(page.getByText("Đã bật: mỗi sáng 6:00 Reng tự giao 7 câu")).toBeVisible();
+  await today.click();
+  await expect(page.getByText("Đã giao bài luyện hôm nay (7 câu)")).toBeVisible();
+  await expect(page.getByText(DAILY_TITLE)).toBeVisible();
+  // The morning job reuses today's assignment instead of creating a second one.
+  const cron = await page.request.get("/api/cron/daily-practice", {
+    headers: { Authorization: `Bearer ${process.env.E2E_CRON_SECRET}` },
+  });
+  expect(cron.status()).toBe(200);
+  expect(await cron.json()).toMatchObject({ failed: 0 });
+  await today.click();
+  await expect(page.getByText("Hôm nay lớp đã có bài luyện (7 câu).")).toBeVisible();
+  await expect(page.getByText(DAILY_TITLE)).toHaveCount(1);
   await page.context().close();
 });
 
@@ -130,6 +155,7 @@ test("a learner signs up, confirms the email, joins and completes the lesson 11 
   await page.waitForURL(`**/classes/${state.classId}`);
   await expect(page.getByRole("link", { name: "Vào Google Meet" })).toBeVisible();
   await expect(page.getByText(`1. ${LESSON_TITLE}`)).toBeVisible();
+  await expect(page.getByRole("link", { name: DAILY_TITLE, exact: true })).toBeVisible();
 
   await page.getByRole("link", { name: "Đọc bài", exact: true }).click();
   await expect(page.getByRole("heading", { name: LESSON_TITLE })).toBeVisible();
@@ -165,6 +191,7 @@ test("the teacher sees the learner's result in the class report", async ({ brows
   const page = await teacherPage(browser);
   await page.goto(`/teach/classes/${state.classId}`);
   const row = page.getByRole("row", { name: new RegExp(learner.name) });
+  // Today's daily practice was published before the learner joined, so it is not counted.
   await expect(row).toContainText("1/1");
   await expect(row).toContainText("100%");
   await expect(row).toContainText("Đạt");
