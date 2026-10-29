@@ -10,7 +10,7 @@ ID bài/item dùng tiếng Anh hoặc mã ổn định, không tái dùng ID cũ
 
 ## Bài tiếng Nhật theo trình tự Minna no Nihongo (pilot)
 
-**Trạng thái 29/10/2026:** pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự bài của Minna no Nihongo Sơ cấp. Tại `/teach/lessons/new`, nút **Tạo bài 11 từ mẫu** tạo một bản nháp riêng của giáo viên từ `content/starters/minna-1-11.json`: 54 từ vựng, 5 mẫu câu, 38 slide (từ vựng, bảng đếm, mẫu câu, ví dụ, luyện thay thế, câu hỏi, hội thoại, tóm tắt) và 14 câu luyện choice/fill hiragana. Bấm lại trên cùng trang không tạo bản thứ hai.
+**Trạng thái 29/10/2026:** pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự bài của Minna no Nihongo Sơ cấp. Tại `/teach/lessons/new`, nút **Tạo bài 11 từ mẫu** tạo một bản nháp riêng của giáo viên từ `content/starters/minna-1-11.json`: 54 từ vựng, 5 mẫu câu, 38 slide (từ vựng, bảng đếm, mẫu câu, ví dụ, luyện thay thế, câu hỏi, hội thoại, tóm tắt) và 50 câu luyện choice/fill hiragana (đọc lượng từ và kanji, nghĩa từ, ngữ pháp) đủ cho bài luyện hằng ngày đổi câu khoảng một tuần. Bấm lại trên cùng trang không tạo bản thứ hai.
 
 Nội dung do Reng tự biên soạn theo chủ điểm bài 11 (đếm 〜つ・〜人・〜台・〜枚・〜回, khoảng thời gian, tần suất, だけ); câu ví dụ, hội thoại và bài luyện là bản viết mới, không chép nguyên văn sách, tranh hay đĩa nghe. Giáo viên duyệt và sửa trước khi xuất bản; học viên dùng sách có bản quyền của mình để đối chiếu. Bài tiếp theo: dùng **Tạo bản sao** từ bài 11 rồi sửa, hoặc soạn mới trong editor. Thêm bài mẫu mới = thêm JSON vào `content/starters/` và đăng ký trong `lib/starter-lessons.ts`; test yêu cầu bài mẫu xuất bản được ngay và đáp án trắc nghiệm không nằm cùng một vị trí (lựa chọn hiển thị đúng thứ tự soạn).
 

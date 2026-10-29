@@ -22,7 +22,7 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 
 ## Các bước dựng POC
 
-1. Tạo Supabase project gói Pro, backup rồi áp dụng toàn bộ migration trong `supabase/migrations` theo thứ tự (đến `202610290005_platform_admin.sql`).
+1. Tạo Supabase project gói Pro, backup rồi áp dụng toàn bộ migration trong `supabase/migrations` theo thứ tự (đến `202610290006_daily_practice.sql`).
 2. Supabase Auth: bật xác nhận email, đặt Site URL/Redirect URLs theo domain, chép template trong `supabase/templates`, cấu hình **SMTP riêng qua Resend** và hạn mức gửi trong Authentication › Rate Limits.
 3. Resend: xác minh domain gửi (SPF, DKIM, DMARC), tạo API key và webhook theo [chuẩn bị staging](staging-setup.md).
 4. Vercel Pro: đặt biến môi trường theo `.env.example`, đặc biệt `SITE_URL` là domain thật (dùng cho link email, canonical, sitemap, robots), `GOOGLE_SITE_VERIFICATION`, `CRON_SECRET`, `EMAIL_LINK_SECRET`. Không đặt secret vào biến `NEXT_PUBLIC_`.
