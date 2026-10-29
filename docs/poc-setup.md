@@ -38,6 +38,16 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 7. Google Search Console: xác minh bằng thẻ meta (`GOOGLE_SITE_VERIFICATION`), nộp `https://<domain>/sitemap.xml`, kiểm tra `robots.txt` chặn `/teach`, `/admin`, `/classes`, `/assignments` và trang slide/presenter.
 8. Chạy thử một buổi qua Meet trên thiết bị thật, một lần backup/restore trên môi trường riêng, ghi kết quả vào [nghiệm thu dịch vụ](testing/teaching-service.md).
 
+## Production thử (29/10/2026)
+
+Đã dựng để giáo viên pilot dạy thật: **https://reng-cyan.vercel.app**.
+
+- Vercel project `reng` (team của tài khoản `kaitokid1612`), gói **Hobby**, nối repo GitHub nên mỗi lần push `main` tự deploy production. Hàm server chạy ở `sin1` (`vercel.json`), cạnh database. Biến môi trường production: `LESSON_SOURCE=supabase`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` (lấy bằng `npx supabase projects api-keys --reveal`; không có `--reveal` CLI trả khóa bị che và mọi truy vấn báo "Invalid API key"), `SITE_URL`, `CRON_SECRET`, `EMAIL_LINK_SECRET`. Chưa đặt `EMAIL_PROVIDER` nên email nhắc bài chưa gửi.
+- Supabase project `reng` (Singapore, gói **Free**). Tài khoản Supabase hiện có đã đủ 2 project Free nên project staging của sản phẩm khác được tạm dừng theo yêu cầu của người dùng. Đã áp dụng đủ migration; cấu hình Auth production nằm trong khối `[remotes.production]` của `supabase/config.toml`, xem trước bằng `npx supabase config diff --project-ref <ref>` rồi `npx supabase config push`.
+- **Tắt xác nhận email** cho tới khi có SMTP riêng: học viên đăng ký là vào học ngay (ứng dụng chuyển thẳng tới trang tiếp theo khi Supabase trả phiên đăng nhập). Gói Free không cho đổi mẫu email khi dùng email mặc định, nên quên mật khẩu chưa dùng được với học viên; bật lại xác nhận email sau khi cấu hình Resend và tên miền.
+- Cron trên Hobby chạy tối đa 1 lần/ngày và lệch trong vòng 1 giờ (bài luyện hằng ngày 6:00–6:59 sáng).
+- Trước khi thu tiền hoặc nhận nhiều học viên: chuyển Vercel Pro và Supabase Pro (backup), cấu hình Resend + tên miền, bật lại xác nhận email.
+
 ## Cảnh báo cần thống nhất trước khi cho thuê
 
 - **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Reng không cung cấp video và không cần tài khoản Google.

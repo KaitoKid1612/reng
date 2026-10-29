@@ -36,7 +36,7 @@ npm run test:e2e
 
 Playwright tự chạy dev server ở 127.0.0.1:3217, dừng sau test, không tái sử dụng process khác. Next không cho hai dev server dùng chung thư mục .next, nên dừng `npm run dev` đang chạy trước khi chạy E2E. Test migration dùng PostgreSQL nhúng trong bộ nhớ với auth stub; không kết nối Supabase thật. Test audio browser dùng MP3 silence fixture và request local giả lập; test pipeline dùng adapter fake, không tiêu tốn quota TTS hoặc ghi cloud. Tránh chạy build và dev cùng lúc vì dùng chung output .next.
 
-Production local: `npm run build`, sau đó `npm start`. Chưa có deploy hoặc kiểm chứng cloud. [Checklist](docs/testing/phase-1.md) ghi kết quả và giới hạn.
+Production local: `npm run build`, sau đó `npm start`. Bản chạy thật từ 29/10/2026: https://reng-cyan.vercel.app (Vercel Hobby, hàm chạy ở Singapore `sin1`, tự deploy mỗi lần push `main`; Supabase Free project `reng` ở Singapore). Trạng thái, giới hạn và cách cập nhật xem [kế hoạch POC](docs/poc-setup.md#production-thử-29102026). [Checklist](docs/testing/phase-1.md) ghi kết quả và giới hạn.
 
 ## Audio
 
@@ -98,7 +98,7 @@ Thư xuất hiện trong Mailpit. Job chạy lại trong cùng ngày không gử
 
 Nguồn bài mặc định LESSON_SOURCE=local. Để đọc Supabase, cần LESSON_SOURCE=supabase, SUPABASE_URL và SUPABASE_SECRET_KEY. Teacher sign-in và API notes dùng SUPABASE_PUBLISHABLE_KEY/cookie HttpOnly, không dùng secret key để bỏ qua quyền notes. Thiếu cấu hình thì không có session giả và không trả ghi chú riêng. Xem [staging setup](docs/staging-setup.md).
 
-Migration nền: supabase/migrations/202610280001_foundation.sql. Chỉ là artifact đã kiểm tra trên PostgreSQL nhúng. Chưa áp dụng vào cloud; chưa cần database để chạy kana. Khi có dự án Supabase local/staging được chỉ định, kiểm chứng migration và Auth thật trước khi dùng cho nội dung giai đoạn 2. Không áp dụng vào production theo hướng dẫn khởi động local này.
+Migration trong supabase/migrations được kiểm tra trên PostgreSQL nhúng và Supabase local, và đã áp dụng vào project production `reng` bằng `npx supabase db push` (sau khi `npx supabase link`). Migration mới phải chạy test và E2E local trước khi push lên production; không cần database để chạy kana.
 
 ## Font và nguồn
 
