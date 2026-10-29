@@ -2,7 +2,11 @@
 
 import { useLayoutEffect, useRef } from "react";
 
-import { convertRomajiBeforeCaret, isJapaneseComposition } from "@/lib/romaji-input";
+import {
+  convertRomajiBeforeCaret,
+  finalizeRomaji,
+  isJapaneseComposition,
+} from "@/lib/romaji-input";
 
 import type { InputMode } from "@/lib/assignment";
 import type { ChangeEvent } from "react";
@@ -27,7 +31,7 @@ const INPUT_LANGUAGES: Record<InputMode, string> = {
 const MODE_HINTS: Record<InputMode, string> = {
   chinese: "Dùng bộ gõ tiếng Trung hoặc dán chữ Hán; giữ đúng giản thể/phồn thể theo bài.",
   pinyin: "Nhập pinyin có dấu thanh theo yêu cầu, ví dụ nǐ hǎo.",
-  hiragana: "Gõ romaji để ra hiragana, ví dụ ko → こ, nn → ん.",
+  hiragana: "Gõ romaji để ra hiragana, ví dụ ko → こ; ん giữa từ gõ nn (さんにん: sannnin).",
   katakana: "Gõ romaji để ra katakana, ví dụ ko → コ.",
   japanese: "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji.",
 };
@@ -72,6 +76,14 @@ export function JapaneseInput({
     onValueChange(converted.value);
   }
 
+  // Checking or submitting first moves focus to the button, so the answer is complete by then.
+  function handleBlur() {
+    const finalized = finalizeRomaji(value, inputMode);
+    if (finalized !== value) {
+      onValueChange(finalized);
+    }
+  }
+
   return (
     <>
       <input
@@ -82,6 +94,7 @@ export function JapaneseInput({
         className="japanese-input"
         value={value}
         onChange={handleChange}
+        onBlur={handleBlur}
         disabled={isDisabled}
         autoComplete="off"
         autoCapitalize="none"

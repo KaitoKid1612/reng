@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { convertRomajiBeforeCaret, isJapaneseComposition } from "../lib/romaji-input";
+import {
+  convertRomajiBeforeCaret,
+  finalizeRomaji,
+  isJapaneseComposition,
+} from "../lib/romaji-input";
 
 test("converts the romaji being typed and keeps an unfinished n or consonant", () => {
   assert.deepEqual(convertRomajiBeforeCaret("ko", 2, "hiragana"), { value: "こ", caret: 1 });
@@ -23,6 +27,15 @@ test("leaves pasted kanji and text after the caret unchanged", () => {
     caret: 2,
   });
   assert.deepEqual(convertRomajiBeforeCaret("私は", 2, "japanese"), { value: "私は", caret: 2 });
+});
+
+test("leaving the field completes a pending final n without rewriting entered kana", () => {
+  assert.equal(finalizeRomaji("よにn", "hiragana"), "よにん");
+  assert.equal(finalizeRomaji("ラーメn", "katakana"), "ラーメン");
+  assert.equal(finalizeRomaji("行きます", "japanese"), "行きます");
+  assert.equal(finalizeRomaji("こnにちは", "hiragana"), "こんにちは");
+  assert.equal(finalizeRomaji("k", "hiragana"), "k");
+  assert.equal(finalizeRomaji("nǐ hǎo", "pinyin"), "nǐ hǎo");
 });
 
 test("skips only Japanese IME composition", () => {
