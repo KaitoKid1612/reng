@@ -1,6 +1,9 @@
+import { randomUUID } from "node:crypto";
+
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
@@ -29,6 +32,9 @@ export default async function TeachPage() {
           </Link>
           <Link href="/teach/lessons/new" className={buttonVariants({ variant: "outline" })}>
             Tạo bài mới
+          </Link>
+          <Link href="/teach/library" className={buttonVariants({ variant: "outline" })}>
+            Bài được chia sẻ
           </Link>
         </div>
       </div>
@@ -73,6 +79,7 @@ export default async function TeachPage() {
                     {lesson.versions.length} phiên bản, mới nhất số{" "}
                     {lesson.versions[0]?.version_no ?? "—"}
                   </p>
+                  {lesson.copyAttribution && <p className="item-meta">{lesson.copyAttribution}</p>}
                 </div>
                 <div className="button-row">
                   <Link href={`/teach/lessons/${lesson.id}/edit`}>Soạn bài</Link>
@@ -83,6 +90,14 @@ export default async function TeachPage() {
                       Trình chiếu
                     </Link>
                   )}
+                  {!lesson.copyAttribution && (
+                    <Link href={`/teach/lessons/${lesson.id}/sharing`}>Chia sẻ</Link>
+                  )}
+                  <LessonCopyForm
+                    source={{ kind: "own", lessonId: lesson.id }}
+                    requestId={randomUUID()}
+                    label="Tạo bản sao"
+                  />
                 </div>
               </li>
             ))}

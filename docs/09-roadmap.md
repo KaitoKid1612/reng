@@ -207,7 +207,7 @@ Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, hướng 
 |---|---|---|
 | Service A | Tự đăng ký giáo viên, quyền vừa dạy/vừa học, cách ly dữ liệu, capacity và link Meet | Hai giáo viên không vượt quyền; lớp 10 chỗ không vượt chỗ khi join đồng thời; dạy thử bằng share tab. **Bản local đã có**, chưa dạy thử Meet thật |
 | Service B1 | Soạn Việt–Trung theo mẫu: mục tiêu nhỏ, bảng nội dung, dựng slide, choice/fill, preview/xuất bản/giao lớp | Giáo viên soạn và dạy một bài nhập môn; đo mục tiêu dưới 30 phút khi đã có nội dung; giữ tương thích dữ liệu Nhật. **Bản local đã có**; còn TTS web và đo với giáo viên thật |
-| Service B2 | Thư viện chia sẻ version, view/copy/thu hồi, dùng lại bài | Copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp; không làm thay đổi bản đã giao |
+| Service B2 | Thư viện chia sẻ version, view/copy/thu hồi, dùng lại bài | Copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp; không làm thay đổi bản đã giao. **Bản local đã có** (chưa có media riêng tư) |
 | Service C1 | Upload ảnh/PDF riêng tư, hiển thị nguồn, crop/nhập câu thủ công | Có bài tương tác được duyệt từ scan và giao/làm/chấm trọn luồng |
 | Service C2 | OCR/job nền, gợi ý cấu trúc choice/fill, review bắt buộc, quota | Benchmark giúp giảm công nhập; mọi câu xuất bản đã duyệt, retry không mất sửa tay, chi phí đo được |
 | Service D | Chấm tay và thêm dạng scan theo nhu cầu thật | Có workflow chờ chấm/điểm/audit, không trộn điểm chờ với 0 |

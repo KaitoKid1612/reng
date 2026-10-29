@@ -47,7 +47,9 @@ npm run lesson:import -- --file path/to/reviewed-lesson.json --publish supabase 
 
 RPC dùng transaction cho draft/version/pointer, từ chối sai owner/revision. Script không tạo tài khoản, apply migration hoặc deploy. Với Supabase local, `npm run seed:local` xuất bản 5 bài mẫu cho giảng viên mẫu và giữ is_sample=true; script từ chối URL không phải máy local. Đặt LESSON_SOURCE=supabase để web đọc nguồn thật; lỗi cloud hiển thị lỗi, không âm thầm thay bằng bài mẫu.
 
-## Định hướng chia sẻ và nhập scan — chưa triển khai
+## Chia sẻ (đã có) và nhập scan (chưa triển khai)
+
+Chia sẻ phiên bản view/copy, thu hồi, sao chép và tạo bản sao bài của mình đã có bản local; bản sao không chia sẻ tiếp được. Chi tiết ở [DD dịch vụ](detail-design/teaching-service.md).
 
 Bài Nhật mẫu/CLI/editor hiện tại giữ nguyên. Dịch vụ mới thêm ngôn ngữ, nguồn/quyền dùng, chia sẻ version view/copy và ảnh/PDF làm nguồn nhập. Bản copy phải có chủ mới, nguồn và quyền media; không mang theo notes hoặc câu test riêng. Không cho chia sẻ lại nếu quyền nguồn không cho phép.
 

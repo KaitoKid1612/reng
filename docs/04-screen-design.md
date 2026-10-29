@@ -196,7 +196,7 @@ Mở trang chủ
 
 ## Màn hình dịch vụ nhiều giáo viên — đang triển khai
 
-[BD dịch vụ](basic-design/teaching-service.md) bổ sung SV01–SV06: đăng ký giáo viên, cấu hình lớp có sức chứa/link Meet/ngôn ngữ, thư viện cá nhân/được chia sẻ, cấp/thu hồi quyền version và upload/duyệt bài scan. Trang lớp học sinh hiển thị link Meet và học liệu đã mở theo quyền, không hiển thị notes riêng. Đã có: `/sign-up/teacher`, `/teach/start`, form cài đặt lớp (sức chứa, ngôn ngữ, Meet) và link Meet trên trang lớp học viên. Thư viện chia sẻ và upload scan vẫn là route đề xuất.
+[BD dịch vụ](basic-design/teaching-service.md) bổ sung SV01–SV06: đăng ký giáo viên, cấu hình lớp có sức chứa/link Meet/ngôn ngữ, thư viện cá nhân/được chia sẻ, cấp/thu hồi quyền version và upload/duyệt bài scan. Trang lớp học sinh hiển thị link Meet và học liệu đã mở theo quyền, không hiển thị notes riêng. Đã có: `/sign-up/teacher`, `/teach/start`, form cài đặt lớp (sức chứa, ngôn ngữ, Meet) và link Meet trên trang lớp học viên. Đã có thư viện bài được chia sẻ `/teach/library` (xem, trình chiếu, sao chép nếu có quyền) và trang chia sẻ `/teach/lessons/[id]/sharing` (chọn phiên bản, email người nhận, quyền, thu hồi); trang Giảng dạy có nút Chia sẻ và Tạo bản sao cho từng bài. Upload scan vẫn là route đề xuất.
 
 Luồng mới: giáo viên đăng ký → xác minh → tạo lớp 10 chỗ → học sinh join → giáo viên mở slide và share tab qua Meet → giao bài → theo dõi/nhắc. Giáo viên nhận slide phải có quyền copy để tạo bài riêng trước khi gắn lớp mình. Ô tiếng Trung dùng IME/Unicode, không gắn wanakana; Nhật giữ quy tắc hiện tại. Review scan có trang nguồn bên cạnh câu tương tác, duyệt đáp án trước xuất bản.
 

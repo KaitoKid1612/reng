@@ -17,6 +17,10 @@ Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test
 | SV-07 | Một phần | Thành viên thấy link Meet; URL `javascript:`, sai host, có credentials hoặc HTTP bị từ chối ở form và ràng buộc DB. Trường hợp học sinh đã rời đọc link chưa có test riêng (trang lớp đã yêu cầu thành viên đang học) |
 | SV-09 | Một phần | Bài v2: hướng dẫn/nghĩa tiếng Việt, chữ Hán gắn `lang=zh-Hans/zh-Hant` với font Trung của thiết bị, ô nhập chữ Hán/pinyin không chạy wanakana, nút Nghe chỉ dùng giọng Trung của thiết bị. Chưa có TTS web và kiểm tra font/audio trên thiết bị thật; bài Nhật cũ vẫn qua toàn bộ E2E |
 | SV-10 | PASS (local) | `zh-exact-v1`: NFC và bỏ khoảng trắng đầu/cuối, giữ thanh điệu, khoảng trắng trong pinyin, giản/phồn thể (`謝謝` sai khi đáp án là `谢谢`); profile Nhật giữ quy tắc cũ. `tests/teaching-content.test.ts`, `e2e-supabase/teaching-authoring.spec.ts` |
+| SV-11 | PASS (local) | Quyền view chỉ đọc đúng phiên bản được chia sẻ (không đọc bản mới nhất), không có nút sao chép; giáo viên khác/học viên không dùng được quyền; trang giao bài chỉ liệt kê bài mình sở hữu. `tests/lesson-sharing-migration.test.ts`, `e2e-supabase/lesson-sharing.spec.ts` |
+| SV-12 | PASS (local) | Bản sao là nháp mới của người nhận, có nguồn và tên tác giả, không có ghi chú riêng; không mang câu test, lớp hay kết quả học viên (những dữ liệu này không nằm trong phiên bản) |
+| SV-13 | Một phần | Gửi lại cùng requestId trả về đúng một bản sao, kể cả sau khi bị thu hồi. Bản sao độc lập theo cấu trúc dữ liệu; chưa có test riêng cho việc xuất bản lại bài nguồn |
+| SV-14 | Một phần | Thu hồi chặn xem và sao chép mới, bản sao đã tạo vẫn mở được. Chưa có media riêng tư nên chưa kiểm tra TTL của signed URL |
 | SV-26 | PASS (local) | Lớp lưu `subject`, `language_tag`, `instruction_language_tag` riêng; bài v2 lưu context (subject, languageTag, locale, instructionLanguageTag); không tự đổi giản/phồn |
 
 Kết quả soạn bài theo mẫu (lát B1 bản đầu):
@@ -29,10 +33,11 @@ Kết quả soạn bài theo mẫu (lát B1 bản đầu):
 | AU-04 | PASS (local) | Tạo khung câu chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng; câu thiếu đáp án không xác nhận được; sửa câu làm mất xác nhận; xuất bản bị chặn tới khi xác nhận lại |
 | AU-05 | Một phần | Lưu nháp thiếu nội dung, tải lại đúng bản server, bước wizard lưu cùng nháp; CAS chặn tab cũ ở database. Chưa có E2E hai tab cho wizard và kiểm tra đổi tab preview trên mobile |
 | AU-06 | PASS (local) | Xem trước slide/trang học viên không có ghi chú; xuất bản giữ bài riêng tư; giao lớp là bước riêng; học viên chỉ đọc version được ghim |
+| AU-07 | PASS (local) | Tạo bản sao bài của mình và sao chép bài được chia sẻ đúng quyền thành nháp độc lập có nguồn; quyền view không sao chép được; bản sao không chia sẻ tiếp |
 | AU-09 | NOT RUN | Chưa có TTS web/nghe duyệt audio cho bài Trung |
 | CT-02 | PASS (local) | Như SV-10 |
 
-Hồi quy đi kèm: `npm run check` (79 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 22/22 (gồm luồng Nhật cũ và 2 ca soạn/học bài Trung mới) và `npm run build`.
+Hồi quy đi kèm (lần chạy sau chia sẻ/sao chép): `npm run check` (81 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 23/23 (gồm luồng Nhật cũ, 2 ca soạn/học bài Trung và 1 ca chia sẻ/sao chép/thu hồi) và `npm run build`.
 
 Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-service.md), [DD dự kiến](../detail-design/teaching-service.md).
 

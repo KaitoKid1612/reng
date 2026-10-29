@@ -2,7 +2,7 @@
 
 Ngày kiểm tra: 29/10/2026. Source được kiểm tra tại commit `55129ab`; không thay đổi runtime/migration/dependency trong đợt đối chiếu.
 
-**Cập nhật cùng ngày sau khi triển khai lát 1–4** (migration 202610290001–0003): publish không còn tự công khai, loader kiểm tra owner/lớp/version, giáo viên tự kích hoạt sau xác minh email và vẫn học được lớp khác, lớp có sức chứa và link Meet; schema v2 Việt–Trung, profile chấm `zh-exact-v1` và wizard soạn theo mẫu. Ma trận dưới đây ghi trạng thái mới; tỷ lệ tăng từ 23% lên khoảng 52% `(9 + 5 × 0.5) / 22`. "Đã có" nghĩa là có bản local và test tự động, chưa thử với giáo viên/lớp thật. Kết quả kiểm thử ở [nghiệm thu dịch vụ](testing/teaching-service.md). Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
+**Cập nhật cùng ngày sau khi triển khai lát 1–4** (migration 202610290001–0003): publish không còn tự công khai, loader kiểm tra owner/lớp/version, giáo viên tự kích hoạt sau xác minh email và vẫn học được lớp khác, lớp có sức chứa và link Meet; schema v2 Việt–Trung, profile chấm `zh-exact-v1` và wizard soạn theo mẫu. Sau đó triển khai tiếp chia sẻ/sao chép (migration 202610290004). Ma trận dưới đây ghi trạng thái mới; tỷ lệ tăng từ 23% lên khoảng 68% `(12 + 6 × 0.5) / 22`. "Đã có" nghĩa là có bản local và test tự động, chưa thử với giáo viên/lớp thật. Kết quả kiểm thử ở [nghiệm thu dịch vụ](testing/teaching-service.md). Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
 
 ## Kết luận và cách hiểu tỷ lệ
 
@@ -15,6 +15,7 @@ Quy ước đều trọng số: khớp đầy đủ = 1; có phần nguồn tái
 - Lúc đối chiếu: 0/22 khớp đầy đủ; 10/22 có một phần nền, 11/22 chưa có, 1/22 chưa kiểm chứng; điểm `(0 + 10 × 0.5) / 22 = 22.7%`, làm tròn khoảng 23%.
 - Sau lát 1 và 3: 3/22 khớp đầy đủ, 9/22 một phần, 9/22 chưa có, 1/22 chưa kiểm chứng; điểm `(3 + 9 × 0.5) / 22 = 34.1%`.
 - Sau lát 2 và 4: 9/22 khớp đầy đủ, 5/22 một phần, 7/22 chưa có, 1/22 chưa kiểm chứng; điểm `(9 + 5 × 0.5) / 22 = 52.3%`.
+- Sau chia sẻ/sao chép: 12/22 khớp đầy đủ, 6/22 một phần, 3/22 chưa có, 1/22 chưa kiểm chứng; điểm `(12 + 6 × 0.5) / 22 = 68.2%`.
 - Nếu chỉ tính hoàn tất trọn yêu cầu mới thì là 0/22; điều này không có nghĩa source hiện tại không có chức năng hữu ích.
 
 Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choice/fill server grading, assignment snapshots/drafts/retry, báo cáo/SRS/tiến độ và email opt-in. Các phần này đáng giữ. Chưa chấm một tỷ lệ thứ hai cho “toàn bộ 86 yêu cầu” vì gồm module Nhật và nhiều tính năng ngoài MVP; cộng chung sẽ che phần còn thiếu của hướng dịch vụ hiện tại.
@@ -29,20 +30,20 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 | CLASS-08 | Đã có | 1 | Capacity tùy chọn; join khóa hàng lớp rồi đếm thành viên đang học, trả `class_full`; giảm dưới số đang học bị chặn. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |
 | CLASS-09 | Đã có | 1 | Link Meet allowlist `meet.google.com`, chỉ thành viên lớp thấy; chưa thử dạy Meet thật (SV-08). [Nguồn](../lib/class-settings.ts) |
 | LANG-01 | Một phần | 0.5 | Schema v2 có context subject/languageTag/locale/instructionLanguageTag, ô nhập chữ Hán/pinyin, font và giọng thiết bị theo locale; v1 Nhật giữ nguyên. Chưa có TTS web; flashcard/SRS/tra ngữ pháp chưa đọc v2. [Nguồn](../lib/teaching-content.ts) |
-| SHARE-01 | Chưa có | 0 | Chưa có grant view/copy/revoke; listOwnedLessons chỉ lấy owner. [Nguồn](../lib/server/classes.ts#L184) |
-| SHARE-02 | Chưa có | 0 | Chưa có copy version/provenance/media entitlement và idempotency copy. [Nguồn](../lib/server/lessons.ts#L109) |
+| SHARE-01 | Đã có | 1 | Chia sẻ một phiên bản cho giáo viên cụ thể theo email, quyền view/copy, thu hồi. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
+| SHARE-02 | Đã có | 1 | Bản sao độc lập giữ nguồn/tác giả, idempotent theo requestId, sửa bài gốc không đổi bản sao/bài giao. Chưa cần entitlement vì chưa có media riêng tư. [Nguồn](../lib/server/lesson-sharing.ts) |
 | SCAN-01 | Chưa có | 0 | Slide image nhận URL; không có upload/job/storage policy scan. [Nguồn](../lib/lesson-schema.ts#L169) |
 | SCAN-02 | Chưa có | 0 | Không có import_jobs/import_items hoặc review OCR. [Nguồn](detail-design/teaching-service.md) |
 | SCAN-03 | Chưa có | 0 | Không có đường ảnh/PDF → câu draft choice/fill; editor đang nhập câu thủ công. [Nguồn](../components/editor/question-fields.tsx#L1) |
 | GRADE-01 | Một phần | 0.5 | Chấm khách quan có profile Trung `zh-exact-v1` theo snapshot; chưa pending_review/graded hoặc chấm tay. [Nguồn](../lib/language-profile.ts) |
 | OPS-01 | Một phần | 0.5 | Có cấu hình/migration/test local và hướng dẫn staging; chưa bằng chứng backup/restore/cloud. [Nguồn](staging-setup.md#L1) |
-| OPS-02 | Chưa có | 0 | Không có quota theo giáo viên/audit share-scan/retention job hoặc xử lý báo cáo nội dung; rate-limit join không thay thế yêu cầu này. [Nguồn](../supabase/migrations/202610280004_classroom.sql#L338) |
+| OPS-02 | Một phần | 0.5 | Có audit kích hoạt/chia sẻ/thu hồi/sao chép, quota 2000 bài/giáo viên và giới hạn 60 lần chia sẻ/giờ; chưa có retention scan hoặc xử lý báo cáo nội dung. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
 | AUTHOR-01 | Đã có | 1 | Chọn một trong 4 mẫu, nhập mục tiêu nhỏ, không cần mã bài/scan/AI. [Nguồn](../components/teaching/create-teaching-lesson-form.tsx) |
 | AUTHOR-02 | Đã có | 1 | Bảng chữ Hán/pinyin/nghĩa Việt/ví dụ, nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng. [Nguồn](../lib/teaching-table.ts) |
 | AUTHOR-03 | Đã có | 1 | Dựng slide theo mẫu, xem thay đổi trước khi áp dụng, preview/sắp xếp; dựng lại không nhân slide, giữ sửa tay. [Nguồn](../lib/teaching-templates.ts) |
 | AUTHOR-04 | Đã có | 1 | Tạo khung choice/fill từ từ vựng; xác nhận đáp án là hash phía server, sửa câu phải xác nhận lại. [Nguồn](../supabase/migrations/202610290003_teaching_authoring.sql) |
 | AUTHOR-05 | Đã có | 1 | Lưu nháp CAS/tiếp tục đúng bước, xem trước slide và trang học viên, xuất bản riêng tư, giao lớp là bước riêng. [Nguồn](../components/teaching/teaching-editor.tsx) |
-| AUTHOR-06 | Chưa có | 0 | Chưa clone bài riêng/copy bài chia sẻ thành draft độc lập có nguồn. [Nguồn](../lib/server/lessons.ts#L109) |
+| AUTHOR-06 | Đã có | 1 | Tạo bản sao bài của mình và sao chép bài được chia sẻ thành nháp độc lập có nguồn. [Nguồn](../app/actions/lesson-sharing.ts) |
 | AUTHOR-07 | Đã có | 1 | Mục tiêu, đối tượng, kiến thức đầu vào, độ khó và thứ tự gợi ý; không khóa thứ tự học. [Nguồn](../components/teaching/goal-step.tsx) |
 | AUTHOR-08 | Chưa kiểm chứng | 0 | Chưa bằng chứng giáo viên soạn bài Trung/dạy lớp thật, thời gian dưới 30 phút chưa đo. [Nguồn](testing/teaching-service.md) |
 
@@ -99,7 +100,7 @@ Sharing cần bảng grant/copy/provenance/quyền media. Scan cần upload priv
 | 3 | Onboarding teacher, class capacity/Meet | Xây thêm trên lớp/Auth hiện tại | Đăng ký teacher tự phục vụ; hai người tranh chỗ cuối không vượt capacity; teacher có thể học lớp khác. **Đã làm 29/10/2026** |
 | 4 | Wizard 4 mẫu, bảng Việt–Trung, dựng slide, câu luyện/review | Thêm UX + refactor editor | Giáo viên soạn bài dễ không thấy mã kỹ thuật; dựng lại không mất sửa tay; save/publish/giao độc lập. **Đã làm 29/10/2026** |
 | 5 | TTS web, nghe duyệt, một bài/một lớp thử | Xây job mới, tái sử dụng pipeline | Locale Trung đúng, không CLI; trọn luồng dạy/giao/nộp/chấm; đo thời gian chuyên môn và thao tác riêng. Mới có giọng thiết bị theo locale |
-| 6 | Sharing/copy, upload thủ công rồi OCR | Xây thêm sau luồng soạn cơ bản | Grant/private media/retention/review đúng; không lộ notes/test/dữ liệu lớp |
+| 6 | Sharing/copy, upload thủ công rồi OCR | Xây thêm sau luồng soạn cơ bản | Grant/private media/retention/review đúng; không lộ notes/test/dữ liệu lớp. Sharing/copy đã làm; upload/OCR chưa |
 
 Cần kiểm thử quyền và hồi quy qua từng lát, không làm big-bang rename jp→text hoặc global replacement ja→zh. Chưa thay code theo thứ tự này trong đợt audit.
 

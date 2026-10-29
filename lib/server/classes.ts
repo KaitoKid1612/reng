@@ -188,6 +188,7 @@ export interface OwnedLesson {
   id: string;
   title: string;
   publishedVersionId: string | null;
+  copyAttribution: string | null;
   versions: z.infer<typeof versionSummarySchema>[];
 }
 
@@ -196,7 +197,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
   const lessons = await selectRows(
     service
       .from("lessons")
-      .select("id, title, order_no, published_version_id")
+      .select("id, title, order_no, published_version_id, copy_attribution")
       .eq("owner_id", teacherId)
       .is("archived_at", null)
       .order("order_no"),
@@ -205,6 +206,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
       title: z.string(),
       order_no: z.number().int(),
       published_version_id: z.uuid().nullable(),
+      copy_attribution: z.string().nullable(),
     }),
   );
   if (!lessons.length) {
@@ -225,6 +227,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     id: lesson.id,
     title: lesson.title,
     publishedVersionId: lesson.published_version_id,
+    copyAttribution: lesson.copy_attribution,
     versions: versions.filter((version) => version.lesson_id === lesson.id),
   }));
 }

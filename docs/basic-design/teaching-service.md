@@ -63,7 +63,7 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | SV05 | `/teach/lessons/[id]/sharing` | Chọn version, người nhận, quyền, thu hồi |
 | SV06 | `/teach/imports`, `/teach/imports/[id]` | Upload, tiến trình, ảnh và câu draft, duyệt |
 
-SV01–SV03 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`. SV04–SV06 là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
+SV01–SV05 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
 
 ## Ngôn ngữ và chấm điểm
 

@@ -1,6 +1,6 @@
 # Detail Design dự kiến — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. **Đã triển khai lát B1 bản đầu** (migration 202610290003): schema v2 Việt–Trung, profile chấm `zh-exact-v1`, wizard soạn theo mẫu, xác nhận đáp án phía server. Các phần chia sẻ, media, scan/OCR và TTS web dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
+Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. **Đã triển khai lát B1 bản đầu** (migration 202610290003): schema v2 Việt–Trung, profile chấm `zh-exact-v1`, wizard soạn theo mẫu, xác nhận đáp án phía server. **Đã triển khai lát B2 bản đầu** (migration 202610290004): chia sẻ phiên bản view/copy, thu hồi, sao chép và dùng lại bài. Các phần media riêng tư, scan/OCR và TTS web dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
 
 ## Đối chiếu mã nguồn
 
@@ -38,6 +38,9 @@ Join RPC khóa hàng classes trước khi kiểm tra active/join_enabled/capacit
 Bản đầu meeting_url chỉ chấp nhận HTTPS host `meet.google.com` và đường dẫn hợp lệ, không có credentials; cấm javascript/data URL. Chỉ chủ lớp cập nhật, thành viên đang học đọc; không xuất vào catalog công khai, email công khai hoặc log. Không gọi server fetch URL, không cần OAuth Google cho việc lưu link. Meeting link có thể được sao chép ra ngoài; Masu không đảm bảo kiểm soát người vào Google Meet.
 
 ## Chia sẻ, sao chép và media
+
+**Bản đã triển khai** (`app/actions/lesson-sharing.ts`, `lib/server/lesson-sharing.ts`): chủ bài chọn phiên bản đã xuất bản và nhập email giáo viên nhận; RPC security definer chỉ dùng để tra email trong `auth.users`, người nhận phải là giáo viên khác đang active. Mỗi lần thử được ghi audit trước khi tra để giới hạn 60 lần/giờ/chủ bài, hạn chế dò email; kết quả chỉ báo chung "không chia sẻ được". Nâng view lên copy dùng lại quyền đang hiệu lực. Người nhận đọc đúng phiên bản qua `read_lesson_version`, không xem được ghi chú (API notes chỉ cho chủ bài). Bản sao: bỏ `teacherNotes`, giữ ID nội bộ (ID chỉ duy nhất trong một bài nên không cần remap), ghi `copied_from_version_id` và dòng nguồn có tên tác giả; bài v2 sao chép về mẫu "starter", không mang review đáp án nên người nhận phải xác nhận lại trước khi xuất bản. Gửi lại cùng requestId trả về đúng bản sao, kể cả khi quyền đã bị thu hồi sau đó. Bản sao và bản nhân bản của bản sao không chia sẻ tiếp được. Dùng lại bài của mình (`duplicate_lesson`) sao chép nháp hiện tại kèm ghi chú và review, không mang lớp/bài giao/điểm. Chưa có media riêng tư nên chưa cần entitlement/signed URL; audio vẫn là asset công khai theo hash.
+
 
 API cấp quyền phải kiểm tra chủ bài, phiên bản xuất bản và quyền dùng media. Người nhận phải là giáo viên active; mỗi lần xem/copy kiểm tra grant hiện hành phía server, không tin recipient/owner trong request. Khách hoặc lớp khác nhận not-found/forbidden phù hợp, không lộ dữ liệu qua tìm kiếm.
 

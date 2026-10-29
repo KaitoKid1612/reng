@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import rawCatalog from "../content/lesson-catalog.json";
 import rawDraft from "../content/lessons/lesson-01.json";
 import {
   AUDIO_COMMAND,
@@ -8,6 +9,7 @@ import {
   countMissingListeningAudio,
   createItemId,
   createSlide,
+  draftContentSchema,
   EMPTY_DRAFT_CONTENT,
   findPublishProblems,
   findReferencingSlides,
@@ -15,7 +17,7 @@ import {
   parseLessonDraftState,
   toPublishableContent,
 } from "../lib/lesson-draft";
-import { lessonContentSchema } from "../lib/lesson-schema";
+import { lessonCatalogSchema, lessonContentSchema } from "../lib/lesson-schema";
 
 const sample = parseLessonDraftState({
   metadata: {
@@ -157,4 +159,17 @@ test("listening questions publish only with a transcript, valid answers and gene
   const typed = toPublishableContent(draft.content).questions[1];
   assert.equal("options" in typed && typed.options !== undefined, false);
   assert.deepEqual(typed.answer, ["がっこう"]);
+});
+
+test("a copied published v1 version without teacher notes opens as an editable draft", () => {
+  for (const version of lessonCatalogSchema.parse(rawCatalog).versions) {
+    const copied = {
+      ...version.content,
+      slides: version.content.slides.map(({ teacherNotes, ...slide }) => {
+        void teacherNotes;
+        return slide;
+      }),
+    };
+    assert.equal(draftContentSchema.safeParse(copied).success, true, version.lessonId);
+  }
 });
