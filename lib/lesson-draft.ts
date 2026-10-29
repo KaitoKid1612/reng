@@ -1,7 +1,13 @@
 import { z } from "zod";
 
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
-import { lessonContentSchema, questionSchema } from "@/lib/lesson-schema";
+import {
+  lessonContentSchema,
+  MAX_DIALOGUE_LINES,
+  MAX_TABLE_COLUMNS,
+  MAX_TABLE_ROWS,
+  questionSchema,
+} from "@/lib/lesson-schema";
 
 import type { LessonContent } from "@/lib/lesson-schema";
 
@@ -93,6 +99,31 @@ const draftSlideSchema = z.discriminatedUnion("type", [
       src: draftText(500),
       alt: draftText(300),
       caption: draftText(300).optional(),
+    })
+    .strict(),
+  z
+    .object({
+      id: identifier,
+      teacherNotes,
+      type: z.literal("dialogue"),
+      title: draftText(200),
+      lines: z
+        .array(
+          z.object({ speaker: draftText(40), jp: draftText(300), vi: draftText(300) }).strict(),
+        )
+        .max(MAX_DIALOGUE_LINES),
+      reveal: z.boolean().default(false),
+    })
+    .strict(),
+  z
+    .object({
+      id: identifier,
+      teacherNotes,
+      type: z.literal("table"),
+      title: draftText(200),
+      columns: z.array(draftText(80)).max(MAX_TABLE_COLUMNS),
+      rows: z.array(z.array(draftText(120)).max(MAX_TABLE_COLUMNS)).max(MAX_TABLE_ROWS),
+      revealLastColumn: z.boolean().default(false),
     })
     .strict(),
 ]);
@@ -270,6 +301,19 @@ export function createSlide(type: SlideType, id: string): DraftSlide {
       return { id, type, title: "", body: "" };
     case "image":
       return { id, type, src: "", alt: "" };
+    case "dialogue":
+      return {
+        id,
+        type,
+        title: "",
+        lines: [
+          { speaker: "A", jp: "", vi: "" },
+          { speaker: "B", jp: "", vi: "" },
+        ],
+        reveal: true,
+      };
+    case "table":
+      return { id, type, title: "", columns: [], rows: [], revealLastColumn: false };
   }
 }
 
@@ -525,6 +569,29 @@ function describeSlideProblems(content: DraftContent): PublishProblem[] {
           return problem("đường dẫn ảnh phải là /đường-dẫn trong site hoặc https://.");
         }
         return blank(slide.alt) ? problem("nhập mô tả ảnh cho người không nhìn thấy.") : [];
+      case "dialogue":
+        if (blank(slide.title)) {
+          return problem("nhập tiêu đề hội thoại.");
+        }
+        if (!slide.lines.length) {
+          return problem("thêm ít nhất một lượt thoại.");
+        }
+        return slide.lines.some((line) => blank(line.speaker) || blank(line.jp) || blank(line.vi))
+          ? problem("mỗi lượt thoại cần người nói, câu tiếng Nhật và nghĩa tiếng Việt.")
+          : [];
+      case "table":
+        if (blank(slide.title)) {
+          return problem("nhập tiêu đề bảng.");
+        }
+        if (!slide.columns.length || slide.columns.some(blank)) {
+          return problem("dòng đầu của bảng là tiêu đề cột và không được để trống.");
+        }
+        if (!slide.rows.length) {
+          return problem("bảng cần ít nhất một hàng dưới dòng tiêu đề.");
+        }
+        return slide.rows.every((row) => row.length === slide.columns.length)
+          ? []
+          : problem(`mỗi hàng cần đúng ${slide.columns.length} ô như dòng tiêu đề.`);
     }
   });
 }

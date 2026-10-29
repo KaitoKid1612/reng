@@ -149,6 +149,11 @@ export const questionSchema = questionUnion.superRefine((question, context) => {
   }
 });
 
+// Readability limits for one 1280×720 slide; longer content belongs on another slide.
+export const MAX_DIALOGUE_LINES = 8;
+export const MAX_TABLE_COLUMNS = 6;
+export const MAX_TABLE_ROWS = 12;
+
 const slideBase = { id: identifier, teacherNotes: z.string().optional() };
 export const slideSchema = z.discriminatedUnion("type", [
   z.object({ ...slideBase, type: z.literal("title"), jp: text, vi: text }).strict(),
@@ -173,6 +178,29 @@ export const slideSchema = z.discriminatedUnion("type", [
       src: media,
       alt: text,
       caption: z.string().optional(),
+    })
+    .strict(),
+  z
+    .object({
+      ...slideBase,
+      type: z.literal("dialogue"),
+      title: text,
+      lines: z
+        .array(z.object({ speaker: text, jp: text, vi: text }).strict())
+        .min(1)
+        .max(MAX_DIALOGUE_LINES),
+      reveal: z.boolean().default(false),
+    })
+    .strict(),
+  // A substitution drill is a table whose last column (the model answer) is revealed per row.
+  z
+    .object({
+      ...slideBase,
+      type: z.literal("table"),
+      title: text,
+      columns: z.array(text).min(1).max(MAX_TABLE_COLUMNS),
+      rows: z.array(z.array(z.string().trim())).min(1).max(MAX_TABLE_ROWS),
+      revealLastColumn: z.boolean().default(false),
     })
     .strict(),
 ]);
@@ -233,6 +261,12 @@ export const lessonContentSchema = z
       }
       if (!isValid) {
         context.addIssue({ code: "custom", message: `Invalid reference in slide ${slide.id}.` });
+      }
+      if (slide.type === "table" && slide.rows.some((row) => row.length !== slide.columns.length)) {
+        context.addIssue({
+          code: "custom",
+          message: `Every row of table slide ${slide.id} needs one cell per column.`,
+        });
       }
     }
   });

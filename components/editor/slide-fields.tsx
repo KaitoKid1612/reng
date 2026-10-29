@@ -1,8 +1,12 @@
 "use client";
 
-import { SLIDE_TYPE_LABELS } from "@/components/editor/slide-labels";
+import { useState } from "react";
+
+import { FURIGANA_HINT, SLIDE_TYPE_LABELS } from "@/components/editor/slide-labels";
 import { Button } from "@/components/ui/button";
 import { isQuizQuestion } from "@/lib/lesson-draft";
+import { MAX_DIALOGUE_LINES, MAX_TABLE_COLUMNS, MAX_TABLE_ROWS } from "@/lib/lesson-schema";
+import { formatSlideTable, parseSlideTable } from "@/lib/slide-table";
 
 import type { DraftContent, DraftSlide } from "@/lib/lesson-draft";
 
@@ -14,7 +18,166 @@ interface SlideFieldsProps {
   onRemove: () => void;
 }
 
+type DialogueSlide = Extract<DraftSlide, { type: "dialogue" }>;
+type TableSlide = Extract<DraftSlide, { type: "table" }>;
+
+interface DialogueFieldsProps {
+  slide: DialogueSlide;
+  onChange: (slide: DraftSlide) => void;
+}
+
+interface TableFieldsProps {
+  slide: TableSlide;
+  onChange: (slide: DraftSlide) => void;
+}
+
 const MAX_VOCAB_PER_SLIDE = 8;
+
+function DialogueFields({ slide, onChange }: DialogueFieldsProps) {
+  const id = `slide-${slide.id}`;
+
+  function handleLineChange(index: number, patch: Partial<DialogueSlide["lines"][number]>) {
+    onChange({
+      ...slide,
+      lines: slide.lines.map((line, position) =>
+        position === index ? { ...line, ...patch } : line,
+      ),
+    });
+  }
+
+  return (
+    <>
+      <div className="field">
+        <label htmlFor={`${id}-title`}>Tiêu đề hội thoại</label>
+        <input
+          id={`${id}-title`}
+          maxLength={200}
+          placeholder="Hội thoại: ở bưu điện"
+          value={slide.title}
+          onChange={(event) => onChange({ ...slide, title: event.target.value })}
+        />
+      </div>
+      <fieldset>
+        <legend>Lượt thoại (tối đa {MAX_DIALOGUE_LINES})</legend>
+        <p className="small muted">{FURIGANA_HINT}</p>
+        {slide.lines.map((line, index) => (
+          <div key={index} className="dialogue-line-fields">
+            <input
+              aria-label={`Người nói lượt ${index + 1}`}
+              maxLength={40}
+              value={line.speaker}
+              onChange={(event) => handleLineChange(index, { speaker: event.target.value })}
+            />
+            <input
+              aria-label={`Câu tiếng Nhật lượt ${index + 1}`}
+              lang="ja"
+              maxLength={300}
+              value={line.jp}
+              onChange={(event) => handleLineChange(index, { jp: event.target.value })}
+            />
+            <input
+              aria-label={`Nghĩa tiếng Việt lượt ${index + 1}`}
+              maxLength={300}
+              value={line.vi}
+              onChange={(event) => handleLineChange(index, { vi: event.target.value })}
+            />
+            <Button
+              variant="ghost"
+              aria-label={`Xóa lượt ${index + 1}`}
+              onClick={() =>
+                onChange({
+                  ...slide,
+                  lines: slide.lines.filter((_line, position) => position !== index),
+                })
+              }
+            >
+              Xóa
+            </Button>
+          </div>
+        ))}
+        <Button
+          variant="outline"
+          disabled={slide.lines.length >= MAX_DIALOGUE_LINES}
+          onClick={() =>
+            onChange({ ...slide, lines: [...slide.lines, { speaker: "", jp: "", vi: "" }] })
+          }
+        >
+          Thêm lượt thoại
+        </Button>
+      </fieldset>
+      <label className="choice-label">
+        <input
+          type="checkbox"
+          checked={slide.reveal}
+          onChange={(event) => onChange({ ...slide, reveal: event.target.checked })}
+        />
+        Ẩn nghĩa tiếng Việt, bấm mũi tên mới hiện từng lượt
+      </label>
+    </>
+  );
+}
+
+// The textarea keeps the teacher's own text; only a table within the limits reaches the draft.
+function TableFields({ slide, onChange }: TableFieldsProps) {
+  const id = `slide-${slide.id}`;
+  const [text, setText] = useState(() => formatSlideTable(slide));
+  const [error, setError] = useState("");
+
+  function handleTextChange(value: string) {
+    setText(value);
+    const result = parseSlideTable(value);
+    if ("error" in result) {
+      setError(result.error);
+      return;
+    }
+    setError("");
+    onChange({ ...slide, ...result.table });
+  }
+
+  return (
+    <>
+      <div className="field">
+        <label htmlFor={`${id}-title`}>Tiêu đề bảng</label>
+        <input
+          id={`${id}-title`}
+          maxLength={200}
+          placeholder="Bảng đếm: 〜つ・〜人・〜枚"
+          value={slide.title}
+          onChange={(event) => onChange({ ...slide, title: event.target.value })}
+        />
+      </div>
+      <div className="field">
+        <label htmlFor={`${id}-cells`}>Nội dung bảng</label>
+        <textarea
+          id={`${id}-cells`}
+          className="table-input"
+          rows={8}
+          value={text}
+          aria-describedby={`${id}-cells-hint`}
+          onChange={(event) => handleTextChange(event.target.value)}
+        />
+        <p id={`${id}-cells-hint`} className="small muted">
+          Dán từ Excel/Google Sheets hoặc gõ các ô cách nhau bằng dấu |. Dòng đầu là tiêu đề cột,
+          mỗi dòng sau là một hàng; tối đa {MAX_TABLE_COLUMNS} cột, {MAX_TABLE_ROWS} hàng.{" "}
+          {FURIGANA_HINT}
+        </p>
+        {error && (
+          <p role="alert" className="error-text">
+            {error}
+          </p>
+        )}
+      </div>
+      <label className="choice-label">
+        <input
+          type="checkbox"
+          checked={slide.revealLastColumn}
+          onChange={(event) => onChange({ ...slide, revealLastColumn: event.target.checked })}
+        />
+        Luyện thay thế: ẩn cột cuối, bấm mũi tên hiện câu mẫu từng hàng
+      </label>
+    </>
+  );
+}
 
 function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "position" | "onRemove">) {
   const id = `slide-${slide.id}`;
@@ -29,8 +192,12 @@ function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "positi
               lang="ja"
               maxLength={200}
               value={slide.jp}
+              aria-describedby={`${id}-jp-hint`}
               onChange={(event) => onChange({ ...slide, jp: event.target.value })}
             />
+            <p id={`${id}-jp-hint`} className="small muted">
+              {FURIGANA_HINT}
+            </p>
           </div>
           <div className="field">
             <label htmlFor={`${id}-vi`}>Dòng tiếng Việt</label>
@@ -180,6 +347,10 @@ function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "positi
           </div>
         </>
       );
+    case "dialogue":
+      return <DialogueFields slide={slide} onChange={onChange} />;
+    case "table":
+      return <TableFields key={slide.id} slide={slide} onChange={onChange} />;
   }
 }
 

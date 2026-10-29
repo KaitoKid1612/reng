@@ -1,4 +1,5 @@
 import { audioHash, canonicalAudio } from "./audio-config";
+import { toSpeechText } from "./japanese-text";
 import { lessonDraftSchema } from "./lesson-schema";
 
 import type { PlannedAudioAsset } from "./audio-generation";
@@ -18,14 +19,15 @@ export function planContentAudio(
   content: AudioContent,
   voice: string,
 ): PlannedAudioAsset[] {
+  // Furigana is read as its reading and 〜 is skipped; plain text keeps its existing hash.
   return [
     ...content.vocab
       .filter((item) => item.jp.trim())
-      .map((item) => planned(`${lessonId}:vocab:${item.id}`, item.jp, voice)),
+      .map((item) => planned(`${lessonId}:vocab:${item.id}`, toSpeechText(item.jp), voice)),
     ...content.grammar.flatMap((grammar) =>
       grammar.examples.flatMap((example, index) =>
         example.jp.trim()
-          ? [planned(`${lessonId}:grammar:${grammar.id}:${index}`, example.jp, voice)]
+          ? [planned(`${lessonId}:grammar:${grammar.id}:${index}`, toSpeechText(example.jp), voice)]
           : [],
       ),
     ),

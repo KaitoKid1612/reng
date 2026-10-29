@@ -1,3 +1,4 @@
+import { toSpeechText } from "@/lib/japanese-text";
 import { isTeachingVersion } from "@/lib/teaching-content";
 
 import type { SpeechLocale } from "@/lib/audio-player";
@@ -43,7 +44,7 @@ export function toStudyWords(version: AnyLessonVersion): StudyWord[] {
     readingLang: "ja",
     romanization: item.romaji,
     meaning: item.vi,
-    spokenText: item.jp,
+    spokenText: toSpeechText(item.jp),
     audioLabel: item.romaji,
     audio: item.audio,
     locale: "ja-JP",

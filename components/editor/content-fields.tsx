@@ -1,5 +1,6 @@
 "use client";
 
+import { FURIGANA_HINT } from "@/components/editor/slide-labels";
 import { Button } from "@/components/ui/button";
 import { findReferencingSlides } from "@/lib/lesson-draft";
 
@@ -166,6 +167,7 @@ export function GrammarFields({ content, dispatch, createId }: ContentFieldsProp
                 }
               />
             </div>
+            <p className="small muted">Câu ví dụ. {FURIGANA_HINT}</p>
             {item.examples.map((example, exampleIndex) => (
               <div key={exampleIndex} className="example-row">
                 <input
