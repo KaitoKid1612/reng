@@ -74,7 +74,7 @@ npm run seed:local -- --password <mật-khẩu-giảng-viên-local>
 npm run dev
 ```
 
-Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên, xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt) rồi đặt riêng chúng ở chế độ công khai, vì xuất bản không tự công khai. Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
+Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên, xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt) rồi đặt riêng chúng ở chế độ công khai, vì xuất bản không tự công khai. Để xem giao diện dịch vụ Việt–Trung, chạy thêm `npm run seed:demo` (cùng mật khẩu `SEED_TEACHER_PASSWORD`): tạo admin@masu.local (quản trị viên), co.lan@masu.local (giáo viên tiếng Trung đã duyệt, có bài, lớp 10 chỗ và bài luyện tập), thay.minh@masu.local (yêu cầu giảng dạy đang chờ duyệt) và hoc.vien@masu.local (học viên đã vào lớp). Nội dung bài demo chỉ để minh họa, chưa được giáo viên tiếng Trung duyệt; chạy lại không tạo trùng. Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
 
 ```bash
 npm run test:e2e:supabase
