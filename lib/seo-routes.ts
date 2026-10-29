@@ -30,5 +30,6 @@ export const PUBLIC_PAGES = [
   { path: "/kana/practice", priority: 0.6, changeFrequency: "yearly" },
   { path: "/grammar", priority: 0.6, changeFrequency: "weekly" },
   { path: "/sign-up/teacher", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/guide", priority: 0.5, changeFrequency: "monthly" },
   { path: "/sources", priority: 0.3, changeFrequency: "yearly" },
 ] as const;

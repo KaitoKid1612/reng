@@ -18,6 +18,7 @@ test("robots and sitemap expose public pages and keep private areas out", async 
   const sitemap = await (await request.get("/sitemap.xml")).text();
   expect(sitemap).toContain(`<loc>${ORIGIN}/for-teachers</loc>`);
   expect(sitemap).toContain(`<loc>${ORIGIN}/lessons/lesson-01</loc>`);
+  expect(sitemap).toContain(`<loc>${ORIGIN}/guide</loc>`);
   expect(sitemap).not.toContain("?version=");
 });
 
@@ -78,4 +79,25 @@ test("the home page names the service and the landing page fits a 360px screen",
     expect(fits, path).toBe(true);
   }
   await context.close();
+});
+
+test("the user guide is linked from every page, covers both roles and fits a 360px screen", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("contentinfo").getByRole("link", { name: "Hướng dẫn sử dụng" }).click();
+  await expect(page).toHaveURL(/\/guide$/);
+  await page.reload();
+  await expect(page.getByRole("heading", { level: 1, name: "Hướng dẫn sử dụng" })).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `${ORIGIN}/guide`);
+  await expect(page.getByRole("heading", { name: "Dành cho giáo viên" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Dành cho học viên" })).toBeVisible();
+  await page
+    .getByRole("navigation", { name: "Mục lục hướng dẫn" })
+    .getByRole("link", { name: "Bài luyện hằng ngày" })
+    .click();
+  await expect(page).toHaveURL(/#teacher-daily$/);
+  await page.setViewportSize({ width: 360, height: 780 });
+  const fits = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
+  expect(fits).toBe(true);
 });

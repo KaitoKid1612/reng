@@ -11,6 +11,7 @@ const NAVIGATION_LINKS = [
   { href: "/grammar", label: "Ngữ pháp" },
   { href: "/kana", label: "Bảng chữ cái" },
   { href: "/kana/practice", label: "Luyện tập" },
+  { href: "/guide", label: "Hướng dẫn" },
 ];
 
 export function SiteHeader() {

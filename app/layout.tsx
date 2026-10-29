@@ -50,7 +50,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <footer className="site-footer">
           <div>
             <span>Reng — Lớp học ngoại ngữ online cho thầy cô và học viên.</span>
-            <Link href="/sources">Nguồn dữ liệu</Link>
+            <nav className="footer-links" aria-label="Liên kết cuối trang">
+              <Link href="/guide">Hướng dẫn sử dụng</Link>
+              <Link href="/sources">Nguồn dữ liệu</Link>
+            </nav>
           </div>
         </footer>
       </body>

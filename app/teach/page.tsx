@@ -113,6 +113,9 @@ export default async function TeachPage() {
         <Link href="/classes" className={buttonVariants({ variant: "ghost" })}>
           Lớp tôi đang học
         </Link>
+        <Link href="/guide#teacher-title" className={buttonVariants({ variant: "ghost" })}>
+          Hướng dẫn sử dụng
+        </Link>
         <SignOutButton />
       </div>
     </>
