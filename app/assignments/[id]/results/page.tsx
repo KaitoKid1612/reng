@@ -45,7 +45,7 @@ export default async function ResultsPage({ params }: ResultsPageProps) {
         <div className="form-card" role="status">
           <h2>Đã nộp bài</h2>
           <p>
-            Masu đã nhận bài lúc {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
+            Reng đã nhận bài lúc {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
             {attempt.isLate ? " (nộp muộn)" : ""}.
           </p>
           <p>

@@ -1,6 +1,6 @@
-# Masu — Tài liệu dịch vụ hỗ trợ giảng dạy
+# Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
-Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Đã có bản local: đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
+Reng hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Đã có bản local: đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
 
 ## Cách đọc
 

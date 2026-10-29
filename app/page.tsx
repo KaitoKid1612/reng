@@ -8,7 +8,7 @@ import { absoluteUrl, serializeJsonLd, SITE_DESCRIPTION, SITE_NAME } from "@/lib
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Masu — Lớp học ngoại ngữ online cho giáo viên và học viên" },
+  title: { absolute: "Reng — Lớp học ngoại ngữ online cho giáo viên và học viên" },
   alternates: { canonical: "/" },
 };
 
@@ -83,7 +83,7 @@ export default function HomePage() {
         </p>
         <div className="button-row">
           <Link href="/for-teachers" className={buttonVariants()}>
-            Tìm hiểu cách dạy trên Masu
+            Tìm hiểu cách dạy trên Reng
           </Link>
           <Link href="/sign-up/teacher" className={buttonVariants({ variant: "outline" })}>
             Đăng ký giáo viên

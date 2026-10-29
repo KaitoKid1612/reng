@@ -52,9 +52,9 @@ const STEPS = [
 
 const QUESTIONS = [
   {
-    question: "Masu có thay thế Google Meet không?",
+    question: "Reng có thay thế Google Meet không?",
     answer:
-      "Không. Bạn dạy video bằng Google Meet như thường lệ; Masu lưu link Meet của lớp và cung cấp slide, bài tập, chấm điểm và tiến độ học viên.",
+      "Không. Bạn dạy video bằng Google Meet như thường lệ; Reng lưu link Meet của lớp và cung cấp slide, bài tập, chấm điểm và tiến độ học viên.",
   },
   {
     question: "Học viên cần cài ứng dụng không?",
@@ -67,9 +67,9 @@ const QUESTIONS = [
       "Không. Bài mới chỉ bạn và lớp được giao xem được. Công khai trên website hoặc chia sẻ cho đồng nghiệp là thao tác riêng do bạn chọn.",
   },
   {
-    question: "Tôi có thể dạy tiếng Nhật trên Masu không?",
+    question: "Tôi có thể dạy tiếng Nhật trên Reng không?",
     answer:
-      "Có. Masu vẫn có bài và trình soạn chi tiết cho tiếng Nhật; luồng soạn theo mẫu hiện ưu tiên tiếng Trung cho người Việt.",
+      "Có. Reng vẫn có bài và trình soạn chi tiết cho tiếng Nhật; luồng soạn theo mẫu hiện ưu tiên tiếng Trung cho người Việt.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function ForTeachersPage() {
         <p className="hero-intro">Dành cho giáo viên tiếng Trung</p>
         <h1>{TITLE}</h1>
         <p className="hero-description">
-          Masu gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua
+          Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua
           Google Meet. Soạn một bài nhập môn chỉ từ một mục tiêu nhỏ và bảng từ bạn đã có.
         </p>
         <div className="button-row">
@@ -118,7 +118,7 @@ export default function ForTeachersPage() {
         </div>
       </section>
       <section className="landing-section" aria-labelledby="features-title">
-        <h2 id="features-title">Bạn làm được gì trên Masu</h2>
+        <h2 id="features-title">Bạn làm được gì trên Reng</h2>
         <div className="landing-features">
           {FEATURES.map((feature) => (
             <article key={feature.title}>

@@ -414,7 +414,7 @@ async function composeContent(
     return classes
       ? renderTeacherDigest({
           ...links,
-          reason: "Bạn nhận thư này vì đã bật tóm tắt lớp buổi sáng trên Masu.",
+          reason: "Bạn nhận thư này vì đã bật tóm tắt lớp buổi sáng trên Reng.",
           name: recipient.full_name,
           classes,
         })
@@ -426,7 +426,7 @@ async function composeContent(
       ? renderWeeklySummary({
           ...links,
           ...weeks,
-          reason: "Bạn nhận thư này vì đã bật tổng kết tuần trên Masu.",
+          reason: "Bạn nhận thư này vì đã bật tổng kết tuần trên Reng.",
           name: recipient.full_name,
           progressUrl: `${origin}/progress`,
         })
@@ -443,7 +443,7 @@ async function composeContent(
   return renderDailyReminder({
     ...links,
     ...work,
-    reason: "Bạn nhận thư này vì đã bật nhắc học trên Masu.",
+    reason: "Bạn nhận thư này vì đã bật nhắc học trên Reng.",
     name: recipient.full_name,
     streak: countStudyStreak(activity, now),
     word,

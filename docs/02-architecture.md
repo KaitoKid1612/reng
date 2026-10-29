@@ -162,6 +162,6 @@ Vercel Cron chạy theo giờ UTC. Muốn 20h giờ Việt Nam thì đặt `0 13
 
 ## Kiến trúc dịch vụ nhiều giáo viên — dự kiến
 
-Tiếp tục Next.js + Supabase, tách quyền chủ sở hữu và quyền chia sẻ rõ ràng. Google Meet là dịch vụ video bên ngoài; Masu lưu link riêng cho lớp và cung cấp tab slide để giáo viên chia sẻ. Không cần OAuth/SDK video cho mốc đầu. Đồng bộ presenter bằng BroadcastChannel hiện tại không phải đồng bộ slide từ xa.
+Tiếp tục Next.js + Supabase, tách quyền chủ sở hữu và quyền chia sẻ rõ ràng. Google Meet là dịch vụ video bên ngoài; Reng lưu link riêng cho lớp và cung cấp tab slide để giáo viên chia sẻ. Không cần OAuth/SDK video cho mốc đầu. Đồng bộ presenter bằng BroadcastChannel hiện tại không phải đồng bộ slide từ xa.
 
 Nhập scan cần object storage riêng tư, worker/queue bất đồng bộ, OCR adapter và editor duyệt; chỉ chuyển dữ liệu đã duyệt sang draft bài học/bộ câu hỏi. Không đặt ảnh chứa đáp án vào bucket audio công khai hoặc chạy OCR dài trong request web. Chưa chọn nhà cung cấp/worker hosting. Xem [BD](basic-design/teaching-service.md) và [DD dự kiến](detail-design/teaching-service.md); toàn bộ phần mở rộng chưa có trong code.

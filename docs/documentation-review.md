@@ -5,7 +5,7 @@ Ngày: 29/10/2026. Phạm vi công việc: **tài liệu thiết kế**, không 
 ## Quyết định sản phẩm đã thống nhất
 
 - Nền tảng nhiều giáo viên, có thể mở rộng nhiều môn; mốc đầu dạy tiếng Trung cho người Việt. Không triển khai đồng thời mọi môn.
-- Giáo viên tự soạn/chịu trách nhiệm chuyên môn; Masu cung cấp công cụ, 4 mẫu và bộ minh họa nhỏ được giáo viên tiếng Trung duyệt.
+- Giáo viên tự soạn/chịu trách nhiệm chuyên môn; Reng cung cấp công cụ, 4 mẫu và bộ minh họa nhỏ được giáo viên tiếng Trung duyệt.
 - Luồng chọn mẫu → bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → tạo/duyệt câu luyện → xem trước/xuất bản/giao lớp. Bắt đầu bài dễ, mục tiêu nhỏ; thử một giáo viên/một bài/một lớp.
 - Dạy video qua Meet bên ngoài; không nhúng video hoặc coi presenter cùng trình duyệt là đồng bộ từ xa.
 - Lớp riêng, ví dụ capacity 10; cùng tài khoản vừa dạy vừa học, giới hạn chỗ được khóa khi join.

@@ -39,7 +39,7 @@ function paragraph(html: string) {
 function layout(heading: string, body: string, footer: EmailFooter) {
   return `<!doctype html><html lang="vi"><body style="margin:0;background:#FAF8F3;color:${COLORS.ink};font-family:'Be Vietnam Pro',Arial,sans-serif;font-size:16px">
 <div style="max-width:560px;margin:0 auto;padding:32px 20px">
-<p style="color:${COLORS.primary};font-size:22px;margin:0 0 24px" lang="ja">ます Masu</p>
+<p style="color:${COLORS.primary};font-size:22px;font-weight:700;margin:0 0 24px">Reng</p>
 <h1 style="font-size:22px;line-height:1.4;margin:0 0 16px">${escapeHtml(heading)}</h1>
 ${body}
 <hr style="border:0;border-top:1px solid ${COLORS.border};margin:32px 0 16px">

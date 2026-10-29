@@ -29,13 +29,13 @@ export default async function UnsubscribePage({ params, searchParams }: Unsubscr
       )}
       {isValid && done && (
         <p role="status" className="form-notice">
-          Đã tắt mọi email nhắc học từ Masu. Bạn có thể bật lại trong{" "}
+          Đã tắt mọi email nhắc học từ Reng. Bạn có thể bật lại trong{" "}
           <Link href="/settings/notifications">cài đặt thông báo</Link>.
         </p>
       )}
       {isValid && !done && (
         <form method="post" action={`/api/unsubscribe/${token}`} className="form-card">
-          <p>Masu sẽ ngừng gửi nhắc học, tổng kết tuần và tóm tắt lớp tới email của bạn.</p>
+          <p>Reng sẽ ngừng gửi nhắc học, tổng kết tuần và tóm tắt lớp tới email của bạn.</p>
           <Button type="submit">Hủy nhận email</Button>
         </form>
       )}

@@ -201,7 +201,7 @@ Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide,
 
 ## Điều chỉnh ưu tiên dịch vụ — 29/10/2026
 
-Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, hướng tới nhiều môn/ngôn ngữ nhưng ưu tiên dạy tiếng Trung cho người Việt, lớp riêng và dạy qua Google Meet bên ngoài. Đây là hướng tiếp theo trước tiện ích giai đoạn 6; không phủ nhận các phần local đã có và không đánh dấu nghiệm thu cloud. Tài liệu N5 giai đoạn 1–5 giữ vai trò lịch sử triển khai; ngoài các thay đổi rõ dưới đây, tính năng cũ vẫn là nền tái sử dụng.
+Yêu cầu mới mở Reng thành dịch vụ cho nhiều giáo viên, hướng tới nhiều môn/ngôn ngữ nhưng ưu tiên dạy tiếng Trung cho người Việt, lớp riêng và dạy qua Google Meet bên ngoài. Đây là hướng tiếp theo trước tiện ích giai đoạn 6; không phủ nhận các phần local đã có và không đánh dấu nghiệm thu cloud. Tài liệu N5 giai đoạn 1–5 giữ vai trò lịch sử triển khai; ngoài các thay đổi rõ dưới đây, tính năng cũ vẫn là nền tái sử dụng.
 
 | Mốc mới | Nội dung | Điều kiện hoàn tất |
 |---|---|---|
@@ -214,4 +214,4 @@ Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, hướng 
 
 Chưa ước lượng lịch trước khi chốt lát kỹ thuật. OCR provider, hosting worker và ngân sách theo trang cần thử dữ liệu thực; không trì hoãn A/B vì C2. Thu phí, marketplace, tự tạo Meet bằng OAuth và đồng bộ slide từ xa chưa thuộc mốc đầu. Xem [BD](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [checklist NOT RUN](testing/teaching-service.md).
 
-Ưu tiên trong Service B là B1 trước B2: hoàn thiện luồng giáo viên tự soạn theo [hướng dẫn sản phẩm](content-authoring.md), dùng một bài dễ và một lớp để đo tính thực tế. Masu chuẩn bị mẫu và một bộ minh họa nhỏ có giáo viên duyệt, không nhập cả giáo trình trước khi thử. Scan/OCR vẫn sau luồng nhập bảng thủ công; không phụ thuộc AI để dựng slide hoặc giao practice.
+Ưu tiên trong Service B là B1 trước B2: hoàn thiện luồng giáo viên tự soạn theo [hướng dẫn sản phẩm](content-authoring.md), dùng một bài dễ và một lớp để đo tính thực tế. Reng chuẩn bị mẫu và một bộ minh họa nhỏ có giáo viên duyệt, không nhập cả giáo trình trước khi thử. Scan/OCR vẫn sau luồng nhập bảng thủ công; không phụ thuộc AI để dựng slide hoặc giao practice.

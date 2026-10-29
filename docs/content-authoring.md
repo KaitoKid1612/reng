@@ -60,7 +60,7 @@ Scan đi qua upload riêng tư → nhận dạng/gợi ý → giáo viên sửa/
 **Trạng thái 29/10/2026:** đã có bản local tại `/teach/lessons/new` (chọn mẫu) và wizard 5 bước ở `/teach/lessons/[id]/edit`: mục tiêu/thông tin, bảng từ (nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng), mẫu câu và hội thoại, câu luyện (tạo khung chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng, giáo viên xác nhận đáp án), dựng slide có xem trước thay đổi, xem trước trang học viên và xuất bản. Chưa có: TTS trên web và nghe duyệt audio (nút Nghe dùng giọng Trung của thiết bị nếu có, không dùng giọng Nhật), phần "ôn bài cũ" tự lấy từ bài trước, luyện theo vai riêng, dùng lại/sao chép bài và đo thời gian với giáo viên thật.
 
 
-Giáo viên là người soạn và chịu trách nhiệm chuyên môn. Masu cung cấp mẫu bố cục, công cụ nhập và bộ bài minh họa nhỏ do giáo viên tiếng Trung biên soạn/duyệt; không yêu cầu đội vận hành viết toàn bộ giáo trình. Giáo viên có thể dùng mẫu trống, dùng lại bài của mình hoặc sao chép bài đồng nghiệp khi được cấp quyền.
+Giáo viên là người soạn và chịu trách nhiệm chuyên môn. Reng cung cấp mẫu bố cục, công cụ nhập và bộ bài minh họa nhỏ do giáo viên tiếng Trung biên soạn/duyệt; không yêu cầu đội vận hành viết toàn bộ giáo trình. Giáo viên có thể dùng mẫu trống, dùng lại bài của mình hoặc sao chép bài đồng nghiệp khi được cấp quyền.
 
 Luồng mặc định: **Chọn mẫu → Nhập nội dung → Dựng slide → Thêm bài tập → Xem trước và giao lớp**. Luôn có đường nhập tay; không cần có tài liệu scan, không cần AI/OCR hoặc tài khoản cloud mới soạn được nội dung cơ bản. Các thao tác lưu/xuất bản/giao lớp vẫn cần backend tài khoản như hiện tại.
 
@@ -103,6 +103,6 @@ Không bắt buộc giao bài nếu giáo viên chỉ muốn trình chiếu. S�
 
 Mỗi bài có mục tiêu làm được gì, đối tượng, kiến thức cần biết trước và thứ tự gợi ý trong khóa. Lộ trình nhập môn minh họa: làm quen âm/thanh điệu cơ bản → chào hỏi → nói tên → hỏi/đáp ngắn → ôn tập. Đây là khung để giáo viên chuyên môn điều chỉnh, không phải giáo trình tiếng Trung đã được thẩm định. Không tự khóa học sinh vì chưa học bài trước trừ khi có thiết kế điều kiện học riêng sau này.
 
-Ví dụ mục tiêu bài nhỏ: “Học sinh chào hỏi và nói tên mình”. Giáo viên chọn vài từ/cụm từ, một mẫu tự giới thiệu, hội thoại ngắn và vài câu luyện; không nhồi toàn bộ kiến thức phát âm vào một buổi. Masu gợi ý thứ tự, giáo viên quyết định độ khó và thời lượng theo lớp.
+Ví dụ mục tiêu bài nhỏ: “Học sinh chào hỏi và nói tên mình”. Giáo viên chọn vài từ/cụm từ, một mẫu tự giới thiệu, hội thoại ngắn và vài câu luyện; không nhồi toàn bộ kiến thức phát âm vào một buổi. Reng gợi ý thứ tự, giáo viên quyết định độ khó và thời lượng theo lớp.
 
 Thử với một giáo viên tiếng Trung chưa được hướng dẫn editor, một bài nhập môn và một lớp thật trước khi làm nhiều mẫu. Mục tiêu thử nghiệm: từ chọn mẫu đến bản sẵn sàng dạy dưới 30 phút với nội dung giáo viên đã chuẩn bị; đo riêng thời gian chuẩn bị chuyên môn, nhập/sửa/xem trước và các chỗ cần người hỗ trợ. Đây là mục tiêu cần đo, chưa phải kết quả. Ưu tiên mẫu + bảng + dựng slide + practice trước OCR.

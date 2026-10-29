@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { AccountLink } from "@/components/account-link";
+import { BrandMark } from "@/components/brand-mark";
 
 const NAVIGATION_LINKS = [
   { href: "/for-teachers", label: "Cho giáo viên" },
@@ -17,12 +18,10 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link href="/" className="brand" aria-label="Masu, trang chủ">
-          <span lang="ja" className="brand-jp">
-            ます
-          </span>
+        <Link href="/" className="brand" aria-label="Reng, trang chủ">
+          <BrandMark />
           <span>
-            Masu
+            Reng
             <span className="brand-caption">Học và dạy ngoại ngữ online</span>
           </span>
         </Link>

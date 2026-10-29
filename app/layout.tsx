@@ -21,13 +21,13 @@ const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
 export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
   title: {
-    default: "Masu — Lớp học ngoại ngữ online cho giáo viên và học viên",
-    template: "%s | Masu",
+    default: "Reng — Lớp học ngoại ngữ online cho giáo viên và học viên",
+    template: "%s | Reng",
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   openGraph: { siteName: SITE_NAME, locale: "vi_VN", type: "website" },
-  twitter: { card: "summary" },
+  twitter: { card: "summary_large_image" },
   ...(googleVerification ? { verification: { google: googleVerification } } : {}),
 };
 interface RootLayoutProps {
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </AudioProvider>
         <footer className="site-footer">
           <div>
-            <span>Masu — Cùng học tiếng Nhật, từng chút một.</span>
+            <span>Reng — Lớp học ngoại ngữ online cho thầy cô và học viên.</span>
             <Link href="/sources">Nguồn dữ liệu</Link>
           </div>
         </footer>

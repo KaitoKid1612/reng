@@ -110,7 +110,7 @@ test("a new learner joins through sign-up, email confirmation and the class code
   await page.getByRole("button", { name: "Tạo tài khoản", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Kiểm tra hộp thư của bạn" })).toBeVisible();
 
-  await page.goto(await readEmailLink(studentA.email, "Xác nhận email Masu"));
+  await page.goto(await readEmailLink(studentA.email, "Xác nhận email Reng"));
   await page.waitForURL(/\/join-class\?code=/);
   await expect(page.getByLabel("Mã lớp", { exact: true })).toHaveValue(state.codeA);
   await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
@@ -293,7 +293,7 @@ test("learners reset a forgotten password through the email link", async ({ page
   await page.getByLabel("Email đã đăng ký", { exact: true }).fill(studentA.email);
   await page.getByRole("button", { name: "Gửi link đặt lại", exact: true }).click();
   await expect(page.getByText("Nếu email này có tài khoản")).toBeVisible();
-  await page.goto(await readEmailLink(studentA.email, "Đặt lại mật khẩu Masu"));
+  await page.goto(await readEmailLink(studentA.email, "Đặt lại mật khẩu Reng"));
   await page.waitForURL("**/reset-password");
   const newPassword = `${studentA.password}-new`;
   await page.getByLabel("Mật khẩu mới", { exact: true }).fill(newPassword);

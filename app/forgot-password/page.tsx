@@ -10,7 +10,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className="narrow-page">
       <h1>Quên mật khẩu</h1>
-      <p className="muted">Nhập email đã đăng ký. Masu sẽ gửi liên kết để bạn đặt mật khẩu mới.</p>
+      <p className="muted">Nhập email đã đăng ký. Reng sẽ gửi liên kết để bạn đặt mật khẩu mới.</p>
       <ForgotPasswordForm />
       <p>
         Nhớ ra rồi? <Link href="/sign-in">Đăng nhập</Link>

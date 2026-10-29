@@ -11,7 +11,7 @@ export default function VerifyEmailPage() {
     <div className="narrow-page">
       <h1>Xác nhận email</h1>
       <p>
-        Mở thư “Xác nhận email Masu” và bấm liên kết trong thư. Liên kết dùng được một lần; nếu đã
+        Mở thư “Xác nhận email Reng” và bấm liên kết trong thư. Liên kết dùng được một lần; nếu đã
         hết hạn, nhập email để nhận thư mới.
       </p>
       <div className="form-card">

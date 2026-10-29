@@ -9,14 +9,14 @@ Ngày kiểm tra giá: 29/10/2026. Quy mô POC: **10 giáo viên thuê, khoảng
 | Web/hosting | Vercel | **Pro** (1 thành viên) | 20 USD | Gói Hobby chỉ cho dùng cá nhân, phi thương mại; giáo viên trả tiền thuê là dùng thương mại. Cron hiện chạy hằng ngày/hằng tuần, Pro chạy đúng giờ |
 | Database + đăng nhập | Supabase | **Pro** | 25 USD | Gói Free tạm dừng project sau 7 ngày không hoạt động và giới hạn 500 MB database; dữ liệu học viên thật cần gói có backup. Kiểm tra chính sách backup trên trang giá khi đăng ký |
 | Email (nhắc bài + email đăng nhập) | Resend | Free | 0 đ | 100 email/ngày, 3.000/tháng, 1 domain: đủ cho ~60 tài khoản. Dùng Resend làm SMTP riêng cho Supabase Auth vì SMTP mặc định của Supabase chỉ ~2 email/giờ và không dành cho production |
-| Video lớp học | Google Meet của giáo viên (ngoài Masu) | Tài khoản Google riêng của giáo viên | Không phải chi phí Masu | Masu không tích hợp Google: giáo viên tự tạo link Meet trong tài khoản Google của mình rồi dán vào cài đặt lớp, Masu chỉ lưu và hiện link cho học viên trong lớp. Lưu ý cho giáo viên: tài khoản cá nhân miễn phí giới hạn **60 phút** cho cuộc gọi từ 3 người (lớp 1 giáo viên + 5 học viên sẽ bị cắt); gói Business Starter khoảng 7–8,4 USD/người/tháng cho cuộc gọi nhóm tới 24 giờ |
+| Video lớp học | Google Meet của giáo viên (ngoài Reng) | Tài khoản Google riêng của giáo viên | Không phải chi phí Reng | Reng không tích hợp Google: giáo viên tự tạo link Meet trong tài khoản Google của mình rồi dán vào cài đặt lớp, Reng chỉ lưu và hiện link cho học viên trong lớp. Lưu ý cho giáo viên: tài khoản cá nhân miễn phí giới hạn **60 phút** cho cuộc gọi từ 3 người (lớp 1 giáo viên + 5 học viên sẽ bị cắt); gói Business Starter khoảng 7–8,4 USD/người/tháng cho cuộc gọi nhóm tới 24 giờ |
 | Đọc audio tiếng Trung (khi bật TTS web) | Azure Speech | **F0** (miễn phí) | 0 đ | 0,5 triệu ký tự/tháng; hết hạn mức thì Azure từ chối, không tính tiền. POC 10 giáo viên dùng chưa tới 5% hạn mức. Hiện nút Nghe dùng giọng có sẵn trên thiết bị |
 | Lưu audio | Cloudflare R2 | Free | 0 đ | 10 GB, 10 triệu lượt đọc/tháng, băng thông ra miễn phí |
 | SEO | Google Search Console, Bing Webmaster Tools | Miễn phí, tùy chọn | 0 đ | Chỉ để theo dõi SEO, không phải phụ thuộc của ứng dụng: xác minh domain bằng thẻ meta, nộp sitemap, theo dõi lập chỉ mục |
 | Thanh toán thuê | Chuyển khoản + trang quản trị | — | 0 đ | POC không tích hợp cổng thanh toán; quản trị viên duyệt giáo viên, ghi hạn thuê và ghi chú thanh toán |
 | Tên miền | Nhà đăng ký tùy chọn | Theo năm | Theo nhà đăng ký | Cần cho email gửi đi (SPF/DKIM/DMARC), Search Console và link tuyệt đối |
 
-**Tổng chi phí nền tảng: khoảng 45 USD/tháng (~1,2 triệu đ)** cộng tên miền. Google Workspace (nếu giáo viên cần buổi học dài hơn 60 phút) là chi phí riêng của giáo viên, không thuộc Masu. Chi phí audio và email ở quy mô POC nằm trong gói miễn phí.
+**Tổng chi phí nền tảng: khoảng 45 USD/tháng (~1,2 triệu đ)** cộng tên miền. Google Workspace (nếu giáo viên cần buổi học dài hơn 60 phút) là chi phí riêng của giáo viên, không thuộc Reng. Chi phí audio và email ở quy mô POC nằm trong gói miễn phí.
 
 Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học viên thật) bằng Vercel Hobby và Supabase Free trước khi mời giáo viên thuê; chuyển sang gói trả phí trước khi nhận học viên thật.
 
@@ -40,7 +40,7 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 
 ## Cảnh báo cần thống nhất trước khi cho thuê
 
-- **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Masu không cung cấp video và không cần tài khoản Google.
+- **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Reng không cung cấp video và không cần tài khoản Google.
 - **Gói hosting**: không dùng Vercel Hobby khi đã thu tiền; vi phạm điều khoản có thể bị dừng dịch vụ.
 - **Email đăng nhập**: chưa cấu hình SMTP riêng thì học viên không nhận được email xác nhận khi đăng ký cùng lúc.
 - **Dữ liệu học viên**: email và kết quả học là dữ liệu cá nhân; cần điều khoản sử dụng, chính sách quyền riêng tư và người phụ trách yêu cầu xóa dữ liệu theo quy định hiện hành tại Việt Nam trước khi nhận học viên thật.
@@ -50,7 +50,7 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 
 Đã có: metadata và mô tả từng trang công khai, `metadataBase` theo `SITE_URL`, canonical (trang bài bỏ tham số `?version=`), Open Graph tiếng Việt, `sitemap.xml` (trang công khai và bài đặt công khai, làm mới mỗi giờ), `robots.txt` chặn khu vực riêng tư, JSON-LD (Organization/WebSite ở trang chủ, FAQPage ở `/for-teachers`, LearningResource ở trang bài) và trang giới thiệu cho giáo viên `/for-teachers`. Bài của giáo viên mặc định riêng tư nên không vào sitemap; chỉ bài giáo viên chủ động công khai mới được lập chỉ mục.
 
-Chưa có: ảnh Open Graph riêng (cần font hỗ trợ tiếng Việt), trang hồ sơ giáo viên công khai, đo Core Web Vitals trên domain thật.
+Đã có thêm favicon/icon và ảnh chia sẻ Open Graph 1200×630 có logo. Chưa có: trang hồ sơ giáo viên công khai, đo Core Web Vitals trên domain thật.
 
 ## Nguồn giá và giới hạn
 

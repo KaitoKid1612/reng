@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Đăng ký giáo viên",
   description:
-    "Tạo tài khoản giáo viên trên Masu để mở lớp tiếng Trung online, soạn slide theo mẫu và giao bài tập tự chấm.",
+    "Tạo tài khoản giáo viên trên Reng để mở lớp tiếng Trung online, soạn slide theo mẫu và giao bài tập tự chấm.",
   alternates: { canonical: "/sign-up/teacher" },
 };
 

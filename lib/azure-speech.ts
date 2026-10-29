@@ -29,7 +29,7 @@ export async function synthesizeSpeech(
           "Ocp-Apim-Subscription-Key": key,
           "Content-Type": "application/ssml+xml",
           "X-Microsoft-OutputFormat": config.format,
-          "User-Agent": "MasuAudioPipeline",
+          "User-Agent": "RengAudioPipeline",
         },
         body: ssml(config),
       },

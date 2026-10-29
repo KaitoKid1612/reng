@@ -30,7 +30,7 @@ flowchart LR
 | S03 | `/kana/practice` | Chọn hệ/nhóm/số câu, câu hỏi, phản hồi, tổng kết và luyện lại câu sai |
 | C01 | `/sources` | Nguồn dữ liệu, font và tình trạng audio |
 
-Header chung có tên Masu, link Bảng chữ cái/Luyện tập, trạng thái trang; footer có nguồn dữ liệu. Có skip link và focus bàn phím nhìn rõ.
+Header chung có tên Reng, link Bảng chữ cái/Luyện tập, trạng thái trang; footer có nguồn dữ liệu. Có skip link và focus bàn phím nhìn rõ.
 
 ```text
 S02 desktop:

@@ -1,4 +1,4 @@
-export const SITE_NAME = "Masu";
+export const SITE_NAME = "Reng";
 
 export const SITE_DESCRIPTION =
   "Lớp học ngoại ngữ online cho giáo viên và học viên Việt Nam: tạo lớp riêng, soạn slide tiếng Trung theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ.";

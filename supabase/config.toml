@@ -246,11 +246,11 @@ otp_expiry = 3600
 
 # Token-hash links are verified by /auth/confirm (see docs/detail-design/phase-3.md).
 [auth.email.template.confirmation]
-subject = "Xác nhận email Masu"
+subject = "Xác nhận email Reng"
 content_path = "./supabase/templates/confirmation.html"
 
 [auth.email.template.recovery]
-subject = "Đặt lại mật khẩu Masu"
+subject = "Đặt lại mật khẩu Reng"
 content_path = "./supabase/templates/recovery.html"
 
 # Uncomment to customize notification email template

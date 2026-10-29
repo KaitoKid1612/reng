@@ -39,11 +39,11 @@ Không suy số lớp tối đa từ free tier chung. Chi phí và gói cho POC 
 | OCR/worker | Trang xử lý, lượt retry, thời gian chạy, concurrency và quota mỗi giáo viên |
 | TTS/bản thu | Ký tự/voice/locale hoặc dung lượng bản thu, lượt tạo lại và asset tái dùng hợp lệ |
 | Email | Số người opt-in, loại email/ngày/tuần, bounce, retry và quota gửi |
-| Video | Tài khoản và điều kiện Google Meet do giáo viên sử dụng bên ngoài; không tính là video do Masu cung cấp |
+| Video | Tài khoản và điều kiện Google Meet do giáo viên sử dụng bên ngoài; không tính là video do Reng cung cấp |
 
 Bản thử scan đề xuất 10 trang/20 MB/job, 100 trang/tháng/giáo viên và 1 job đồng thời; cần cấu hình, đo rồi điều chỉnh, chưa là gói giá. Khi quota hết báo rõ/cho nhập tay, không tự đổi sang nhà cung cấp khác hoặc tự bật tính phí. Audio/video/OCR/email đều có thể phát sinh chi phí; không coi băng thông audio là khoản duy nhất.
 
-Trước chọn gói, ghi URL chính thức, ngày kiểm tra, gói/region/đơn vị tính, điều kiện thương mại và ngân sách chặn. Quyết định thu phí Masu chưa chốt. Không mặc định hosting cá nhân đáp ứng dịch vụ thương mại hoặc lịch cron mong muốn.
+Trước chọn gói, ghi URL chính thức, ngày kiểm tra, gói/region/đơn vị tính, điều kiện thương mại và ngân sách chặn. Quyết định thu phí Reng chưa chốt. Không mặc định hosting cá nhân đáp ứng dịch vụ thương mại hoặc lịch cron mong muốn.
 
 ## Rủi ro và cách xử lý
 

@@ -50,6 +50,8 @@ export default defineConfig({
     reuseExistingServer: false,
     env: {
       LESSON_SOURCE: "supabase",
+      // Explicit, so a developer's .env.local cannot point email links at another port.
+      SITE_URL: `http://127.0.0.1:${PORT}`,
       SUPABASE_URL: supabase.url,
       SUPABASE_PUBLISHABLE_KEY: supabase.publishableKey,
       SUPABASE_SECRET_KEY: supabase.secretKey,
@@ -58,7 +60,7 @@ export default defineConfig({
       RESEND_WEBHOOK_SECRET: process.env.E2E_WEBHOOK_SECRET,
       EMAIL_PROVIDER: "mailpit",
       MAILPIT_URL: process.env.E2E_MAILPIT_URL ?? "",
-      EMAIL_FROM: "Masu <nhacbai@masu.local>",
+      EMAIL_FROM: "Reng <nhacbai@masu.local>",
     },
     timeout: 120_000,
   },

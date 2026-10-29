@@ -4,7 +4,7 @@ Cơ chế renderer/version hiện có là nền tái sử dụng. Profile Việt
 
 ## Quyết định nền tảng
 
-Nền hiện tại dùng **reveal.js** cho trình chiếu cùng presenter và bản in riêng của Masu. Các hành vi cần bảo toàn:
+Nền hiện tại dùng **reveal.js** cho trình chiếu cùng presenter và bản in riêng của Reng. Các hành vi cần bảo toàn:
 
 | Tính năng | Vì sao cần |
 |---|---|
@@ -112,6 +112,6 @@ Bản PDF cho học viên chỉ in nội dung xuất bản được phép xem; k
 
 ## Dạy qua Meet và chia sẻ học liệu — thiết kế mới
 
-Giáo viên mở slide Masu rồi chia sẻ tab qua Google Meet; presenter/notes giữ ở cửa sổ khác. Đây là quy trình dùng slide hiện tại với dịch vụ video bên ngoài, chưa có tích hợp cuộc gọi. BroadcastChannel hiện tại chỉ điều khiển cửa sổ cùng trình duyệt; không đồng bộ slide tới máy học sinh qua mạng.
+Giáo viên mở slide Reng rồi chia sẻ tab qua Google Meet; presenter/notes giữ ở cửa sổ khác. Đây là quy trình dùng slide hiện tại với dịch vụ video bên ngoài, chưa có tích hợp cuộc gọi. BroadcastChannel hiện tại chỉ điều khiển cửa sổ cùng trình duyệt; không đồng bộ slide tới máy học sinh qua mạng.
 
 Chia sẻ giữa giáo viên là quyền trên version và bản sao độc lập theo [BD dịch vụ](basic-design/teaching-service.md), không đồng nghĩa chia sẻ phòng học hay cấp quyền sửa bài gốc. Bài Trung cần locale/font phù hợp, không dùng mặc định font Nhật cho mọi chữ Hán. Trang scan dạng ảnh chỉ để hiển thị; muốn chấm tự động phải chuyển thành câu có cấu trúc/đáp án được duyệt.

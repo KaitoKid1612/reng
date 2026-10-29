@@ -211,7 +211,7 @@ test("signed bounce events pause delivery and forged events are refused", async 
   const unsubscribeUrl = /Hủy nhận email: (\S+)/.exec(email.Text)?.[1] ?? "";
   await page.goto(unsubscribeUrl);
   await page.getByRole("button", { name: "Hủy nhận email", exact: true }).click();
-  await expect(page.getByText("Đã tắt mọi email nhắc học từ Masu.")).toBeVisible();
+  await expect(page.getByText("Đã tắt mọi email nhắc học từ Reng.")).toBeVisible();
   await page.goto("/settings/notifications");
   await expect(page.getByRole("radio", { name: "Không nhắc" })).toBeChecked();
   await expect(page.getByLabel("Tổng kết tuần vào tối Chủ nhật")).not.toBeChecked();

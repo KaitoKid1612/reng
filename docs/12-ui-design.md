@@ -41,6 +41,19 @@ Gắn lang đúng cho từng vùng, hỗ trợ IME và composition. Font lớp n
 
 Thông số là mục tiêu cần kiểm chứng với nội dung dài, không phải kết quả đo. Bảng kana Nhật giữ quy tắc riêng. Không áp quy tắc “mọi chữ Nhật luôn lớn hơn 20%” cho tất cả môn; ưu tiên khả năng đọc và đúng nội dung.
 
+## Thương hiệu Reng và logo
+
+Tên **Reng** là tiếng chuông vào lớp. Logo là chiếc chuông tay trường học đang reng (thân nghiêng, lưỡi chuông văng sang bên) trên tấm bảng bo góc: bảng màu chàm `#2B4C7E` (token `--primary`), chuông đồng thau `#E3A83E` (token `--brand-bell`), cán chuông màu giấy `#FAF8F3` (token `--background`). Chữ "Reng" dùng Be Vietnam Pro đậm, giãn chữ −0.015em, đặt bên phải logo.
+
+| Tệp | Dùng cho |
+|---|---|
+| `components/brand-mark.tsx` | Logo trong giao diện, màu lấy từ token CSS |
+| `app/icon.svg` | Favicon (hex cố định vì tệp đứng riêng) |
+| `app/apple-icon.png` | Icon 180×180 khi lưu ra màn hình iPhone, nền đầy không bo góc |
+| `app/opengraph-image.png`, `app/twitter-image.png` | Ảnh chia sẻ 1200×630 có logo, tên và câu giới thiệu |
+
+Quy tắc dùng: kích thước nhỏ nhất 16px; chừa khoảng trống quanh logo ít nhất 1/4 chiều rộng; không thêm gradient, đổ bóng, phát sáng hay biến dạng; không đổi màu ngoài ba token trên. Logo không dùng chữ Nhật "ます" của tên cũ.
+
 ## Màu và khoảng cách
 
 Giữ màu nền `#FAF8F3`, chữ `#1C1B1A`, nền bề mặt `#FFFFFF`, hành động chàm `#2B4C7E`, nền phụ `#DCE6F2`, viền/chữ phụ theo token trong globals.css. Semantic: đúng `#2E7D53`, sai `#C0392B`, cần chú ý `#B87333`. Tương phản từng cặp màu cần đo, không mặc định một hex luôn đạt.

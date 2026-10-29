@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Nguồn dữ liệu",
-  description: "Nguồn và giấy phép của dữ liệu chữ, audio và học liệu dùng trên Masu.",
+  description: "Nguồn và giấy phép của dữ liệu chữ, audio và học liệu dùng trên Reng.",
   alternates: { canonical: "/sources" },
 };
 export default function SourcesPage() {

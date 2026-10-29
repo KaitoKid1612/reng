@@ -1,4 +1,4 @@
-# Masu project instructions
+# Reng project instructions (repository `masu`)
 
 Read and follow [coding standards](docs/coding-standards.md) before editing source. The project uses English filenames, route segments and identifiers; user-facing content uses the relevant teaching and learning languages. The service MVP prioritizes Chinese for Vietnamese learners; preserve existing Japanese content and keep the platform extensible to other subjects.
 

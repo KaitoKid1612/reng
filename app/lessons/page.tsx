@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bài học",
   description:
-    "Bài học công khai trên Masu: đọc bài, xem slide và luyện tập tiếng Nhật, tiếng Trung cho người Việt mới bắt đầu.",
+    "Bài học công khai trên Reng: đọc bài, xem slide và luyện tập tiếng Nhật, tiếng Trung cho người Việt mới bắt đầu.",
   alternates: { canonical: "/lessons" },
 };
 export const dynamic = "force-dynamic";

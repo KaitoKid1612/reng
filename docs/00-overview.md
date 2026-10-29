@@ -2,13 +2,13 @@
 
 ## Định hướng dịch vụ — 29/10/2026
 
-Masu là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Masu cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung): giao diện/hướng dẫn và nghĩa bằng tiếng Việt, nội dung học bằng tiếng Trung. Nền tảng hướng tới nhiều môn và ngôn ngữ; chưa mở đồng thời tất cả trong MVP.
+Reng là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Reng cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung): giao diện/hướng dẫn và nghĩa bằng tiếng Việt, nội dung học bằng tiếng Trung. Nền tảng hướng tới nhiều môn và ngôn ngữ; chưa mở đồng thời tất cả trong MVP.
 
-Ví dụ: một giáo viên tiếng Trung đăng ký tài khoản giáo viên, tạo lớp 10 học sinh, gửi lời mời vào lớp và lưu link Meet. Trong buổi học giáo viên mở slide Masu, chia sẻ tab trình chiếu qua Meet. Học sinh dùng tài khoản của mình để đọc bài được cấp quyền, làm bài trên điện thoại và xem kết quả theo chính sách bài giao. Giáo viên nhìn được ai chưa nộp, ai sai nhiều và ai cần nhắc.
+Ví dụ: một giáo viên tiếng Trung đăng ký tài khoản giáo viên, tạo lớp 10 học sinh, gửi lời mời vào lớp và lưu link Meet. Trong buổi học giáo viên mở slide Reng, chia sẻ tab trình chiếu qua Meet. Học sinh dùng tài khoản của mình để đọc bài được cấp quyền, làm bài trên điện thoại và xem kết quả theo chính sách bài giao. Giáo viên nhìn được ai chưa nộp, ai sai nhiều và ai cần nhắc.
 
 ## Vấn đề đang giải quyết
 
-Slide, tài liệu scan, bài tập, điểm và nhắc học đang nằm ở nhiều công cụ. Giáo viên phải nhập lại nội dung và khó tái sử dụng bài của đồng nghiệp; học sinh thiếu một nơi theo dõi việc cần làm. Masu gom học liệu và hoạt động lớp, giữ liên kết phiên bản giữa bài dạy và bài giao.
+Slide, tài liệu scan, bài tập, điểm và nhắc học đang nằm ở nhiều công cụ. Giáo viên phải nhập lại nội dung và khó tái sử dụng bài của đồng nghiệp; học sinh thiếu một nơi theo dõi việc cần làm. Reng gom học liệu và hoạt động lớp, giữ liên kết phiên bản giữa bài dạy và bài giao.
 
 ## Mục tiêu
 
@@ -45,4 +45,4 @@ Hai giáo viên tiếng Trung độc lập, cùng dạy học sinh Việt Nam, v
 
 ## Cách giáo viên chuẩn bị bài
 
-Giáo viên tự soạn chuyên môn, Masu cung cấp mẫu bố cục và bộ bài minh họa nhỏ được giáo viên tiếng Trung duyệt. Luồng ưu tiên là chọn mẫu → nhập bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → thêm/duyệt câu luyện → xem trước và giao lớp. Bắt đầu bằng một bài có mục tiêu nhỏ, dạy từ dễ đến khó theo lựa chọn giáo viên; thử dùng trong lớp trước khi làm nhiều mẫu hoặc OCR. [Quy trình biên soạn dự kiến](content-authoring.md) mô tả các bước và trách nhiệm; chưa triển khai luồng này trong code.
+Giáo viên tự soạn chuyên môn, Reng cung cấp mẫu bố cục và bộ bài minh họa nhỏ được giáo viên tiếng Trung duyệt. Luồng ưu tiên là chọn mẫu → nhập bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → thêm/duyệt câu luyện → xem trước và giao lớp. Bắt đầu bằng một bài có mục tiêu nhỏ, dạy từ dễ đến khó theo lựa chọn giáo viên; thử dùng trong lớp trước khi làm nhiều mẫu hoặc OCR. [Quy trình biên soạn dự kiến](content-authoring.md) mô tả các bước và trách nhiệm; chưa triển khai luồng này trong code.

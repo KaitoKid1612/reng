@@ -27,7 +27,7 @@ export function NotificationPreferencesForm({
     <form action={action} className="form-card">
       {preferences.pauseReason && (
         <p className="notice-panel" role="alert">
-          Masu đã tạm dừng gửi email vì thư{" "}
+          Reng đã tạm dừng gửi email vì thư{" "}
           {preferences.pauseReason === "bounced" ? "bị trả lại" : "bị báo là spam"}. Kiểm tra địa
           chỉ email rồi lưu lại cài đặt để gửi tiếp.
         </p>

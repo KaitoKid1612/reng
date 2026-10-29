@@ -34,7 +34,7 @@ export default async function VocabularyPage({ params }: VocabularyPageProps) {
       <h1>Flashcard: {deck.title}</h1>
       <p className="muted">
         Nhìn chữ, đoán nghĩa rồi lật thẻ.{" "}
-        {isStudent ? "Chấm mức nhớ để Masu hẹn ngày ôn lại." : "Không cần tài khoản để lật thẻ."}
+        {isStudent ? "Chấm mức nhớ để Reng hẹn ngày ôn lại." : "Không cần tài khoản để lật thẻ."}
       </p>
       {deck.isSample && (
         <p className="sample-notice">Bài mẫu đang chờ giảng viên duyệt nội dung và phát âm.</p>

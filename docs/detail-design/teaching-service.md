@@ -41,7 +41,7 @@ Luồng server đăng ký giáo viên: xác thực email → kiểm tra giới h
 
 Join RPC khóa hàng classes trước khi kiểm tra active/join_enabled/capacity và ghi enrollment. Thứ tự: kiểm tra mã và rate limit → nếu đã là thành viên hiện hành thì trả idempotent → đếm chỗ còn lại → thêm hoặc kích hoạt enrollment trong cùng transaction. Retry, join đồng thời và rejoin đều đi cùng khóa. Lớp đầy không trả danh sách thành viên. Giảm capacity dưới số đang học bị từ chối; thành viên rời lớp giải phóng chỗ nhưng giữ lịch sử. Học sinh đã rời không dùng được link riêng/slides mới; xử lý lịch sử cá nhân theo chính sách truy cập hiện tại, không cascade xóa điểm.
 
-Bản đầu meeting_url chỉ chấp nhận HTTPS host `meet.google.com` và đường dẫn hợp lệ, không có credentials; cấm javascript/data URL. Chỉ chủ lớp cập nhật, thành viên đang học đọc; không xuất vào catalog công khai, email công khai hoặc log. Không gọi server fetch URL, không cần OAuth Google cho việc lưu link. Meeting link có thể được sao chép ra ngoài; Masu không đảm bảo kiểm soát người vào Google Meet.
+Bản đầu meeting_url chỉ chấp nhận HTTPS host `meet.google.com` và đường dẫn hợp lệ, không có credentials; cấm javascript/data URL. Chỉ chủ lớp cập nhật, thành viên đang học đọc; không xuất vào catalog công khai, email công khai hoặc log. Không gọi server fetch URL, không cần OAuth Google cho việc lưu link. Meeting link có thể được sao chép ra ngoài; Reng không đảm bảo kiểm soát người vào Google Meet.
 
 ## Chia sẻ, sao chép và media
 

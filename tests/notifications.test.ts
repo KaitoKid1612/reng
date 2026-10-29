@@ -19,7 +19,7 @@ import { verifyWebhookSignature } from "../lib/notifications/webhook-signature";
 
 const USER = "00000000-0000-4000-8000-000000000001";
 const footer = {
-  reason: "Bạn nhận thư này vì đã bật nhắc học trên Masu.",
+  reason: "Bạn nhận thư này vì đã bật nhắc học trên Reng.",
   settingsUrl: "https://masu.example/settings/notifications",
   unsubscribeUrl: "https://masu.example/unsubscribe/token",
 };

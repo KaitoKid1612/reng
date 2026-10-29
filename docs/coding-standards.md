@@ -1,6 +1,6 @@
 # Coding standards
 
-These conventions apply to handwritten code and documentation in Masu. Use the installed framework documentation and existing project contracts when implementing a change. Formatting is defined by `.prettierrc.json`; correctness and style checks live in `eslint.config.mjs`.
+These conventions apply to handwritten code and documentation in Reng. Use the installed framework documentation and existing project contracts when implementing a change. Formatting is defined by `.prettierrc.json`; correctness and style checks live in `eslint.config.mjs`.
 
 ## Language and naming
 
