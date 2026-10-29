@@ -4,6 +4,8 @@ Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chi
 
 ## Cách đọc
 
+Đối chiếu source tại commit 55129ab: [mức đáp ứng và kế hoạch refactor](source-alignment.md). Điểm khoảng 23% chỉ tính 22 yêu cầu dịch vụ mới theo quy ước audit, không phải test coverage hoặc tiến độ toàn bộ mã nguồn.
+
 Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đặc tả mới chưa triển khai, ưu tiên Service B1 trước chia sẻ rộng/OCR.
 
 Định hướng dịch vụ ngày 29/10/2026: [Basic Design](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [tiêu chí nghiệm thu NOT RUN](testing/teaching-service.md). Đây là nguồn cho phạm vi mới, không phải kết quả đã triển khai.

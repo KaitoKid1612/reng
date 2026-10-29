@@ -95,3 +95,7 @@ Bộ tài liệu bao phủ phạm vi nghiệp vụ/thiết kế đã chốt ở 
 - 206 liên kết/anchor nội bộ và 2 khối JSON minh họa hợp lệ; mọi file docs được liệt kê trong bảng rà soát.
 - Kết quả PASS/Chưa chạy/Chờ cấu hình ở 15 tài liệu phase được đối chiếu Git và giữ nguyên.
 - npm run check qua: format code, ESLint, typecheck và 70 tests nền. Không chạy chức năng dịch vụ mới; SV/AU/CT giữ NOT RUN.
+
+## Bổ sung sau lượt rà tài liệu
+
+[Đối chiếu source](source-alignment.md) đánh giá implementation tại commit 55129ab, có ma trận 22 yêu cầu dịch vụ, probe cục bộ và phạm vi refactor. File này được bổ sung sau lượt rà docs nêu trên; các con số file/liên kết ở phần kết quả trước đó là của snapshot tài liệu trước khi bổ sung, không phải nghiệm thu chức năng mới.
