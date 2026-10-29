@@ -172,14 +172,14 @@ Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhi�
 | DATA-01 | Bài học xuất bản theo phiên bản bất biến, lớp chọn phiên bản; bài giao giữ snapshot | P0 |
 | DATA-02 | Lưu draft bài làm trên server; khôi phục khi tải lại, phát hiện xung đột hai tab | P1 |
 | DATA-03 | Bắt đầu/nộp/ôn tập retry không tạo trùng lượt, điểm hoặc lịch ôn | P0 |
-| AUTH-01 | Đăng ký chọn học sinh/giáo viên; server cấp khả năng dạy sau xác nhận email và kiểm soát lạm dụng, không tin role từ client. Hiện tại vẫn cấp giáo viên thủ công; luồng mới theo BD dịch vụ | P0 |
+| AUTH-01 | Đăng ký chọn học sinh/giáo viên; server cấp khả năng dạy sau xác nhận email và kiểm soát lạm dụng, không tin role từ client. Đã có: giáo viên gửi yêu cầu sau xác minh email, quản trị viên duyệt khi bật chế độ duyệt (mặc định cho POC) | P0 |
 | CLASS-07 | Chọn bài, phiên bản, thứ tự và thời điểm mở cho lớp | P1 |
 | EX-09 | Phân biệt practice/test, chính sách xem kết quả, nộp muộn và lượt làm theo 07 | P0 |
 | OPS-01 | Tách môi trường; có sao lưu và khôi phục thử trước lớp thật | P1 |
 
 Đặc tả dữ liệu và chấm điểm chi tiết lấy theo 03 và 07. Nộp bài trùng, mất mạng, quyền truy cập và nội dung đã sửa là tình huống nghiệm thu bắt buộc ở giai đoạn 3.
 
-## Yêu cầu dịch vụ nhiều giáo viên — chưa triển khai
+## Yêu cầu dịch vụ nhiều giáo viên
 
 Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế cũ N5 vẫn áp dụng cho module tiếng Nhật. Tham chiếu [BD](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [nghiệm thu](testing/teaching-service.md).
 
@@ -197,6 +197,8 @@ Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế
 | SCAN-03 | Bản đầu chuyển trắc nghiệm/điền từ chữ in; phần không nhận được phải đánh dấu và sửa tay, không tự bịa | P1 |
 | GRADE-01 | Tự chấm câu có quy tắc; câu tự luận/viết tay báo chờ chấm, giáo viên chấm tay trong luồng riêng trước khi hỗ trợ | P1 |
 | OPS-02 | Quota theo giáo viên, audit chia sẻ/nhập scan, xóa tệp theo chính sách và xử lý báo cáo nội dung | P1 |
+| ADMIN-01 | Quản trị viên nền tảng duyệt/tạm dừng giáo viên, bật/tắt duyệt đăng ký, ghi hạn thuê/ghi chú thanh toán, xem số liệu tổng hợp và nhật ký; quyền chỉ cấp phía server, không đọc bài nộp/nháp/ghi chú riêng | P0 |
+| SEO-01 | Trang công khai có tiêu đề/mô tả, canonical, sitemap, robots và dữ liệu có cấu trúc; khu vực đăng nhập, quản trị và trang trình chiếu không được lập chỉ mục; có trang giới thiệu cho giáo viên | P0 |
 
 EX-03 phải tuân theo practice/test và thời điểm phản hồi; không phải mọi bài đều lộ đáp án ngay. ADMIN-05 trở thành phần cốt lõi của SHARE-02. Không suy ra bộ đề chia sẻ là câu test bí mật.
 

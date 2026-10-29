@@ -1,14 +1,14 @@
 # Masu — Tài liệu dịch vụ hỗ trợ giảng dạy
 
-Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), với đăng ký giáo viên, chia sẻ và nhập scan chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
+Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Đã có bản local: đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
 
 ## Cách đọc
 
-Đối chiếu source tại commit 55129ab: [mức đáp ứng và kế hoạch refactor](source-alignment.md). Điểm khoảng 23% chỉ tính 22 yêu cầu dịch vụ mới theo quy ước audit, không phải test coverage hoặc tiến độ toàn bộ mã nguồn.
+Mức đáp ứng 22 yêu cầu dịch vụ và tiến độ theo lát: [đối chiếu source](source-alignment.md) (23% lúc audit, khoảng 70% sau các lát đã triển khai; không phải test coverage). Chuẩn bị POC 10 giáo viên: [công cụ, chi phí và các bước dựng](poc-setup.md).
 
-Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đặc tả mới chưa triển khai, ưu tiên Service B1 trước chia sẻ rộng/OCR.
+Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đã có bản local của wizard 5 bước.
 
-Định hướng dịch vụ ngày 29/10/2026: [Basic Design](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [tiêu chí nghiệm thu NOT RUN](testing/teaching-service.md). Đây là nguồn cho phạm vi mới, không phải kết quả đã triển khai.
+Dịch vụ ngày 29/10/2026: [Basic Design](basic-design/teaching-service.md), [Detail Design](detail-design/teaching-service.md), [nghiệm thu và kết quả local](testing/teaching-service.md).
 
 Giai đoạn 2: [Basic Design](basic-design/phase-2.md), [Detail Design](detail-design/phase-2.md), [checklist](testing/phase-2.md), [biên soạn nội dung](content-authoring.md), [chuẩn bị staging](staging-setup.md).
 
@@ -24,6 +24,7 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 |---|---|---|
 | `documentation-review.md` | Phạm vi rà soát toàn bộ docs, truy vết và quyết định còn mở | Đọc khi kiểm tra tính đầy đủ |
 | `00-overview.md` | Mục tiêu, người dùng, phạm vi | Đọc đầu tiên |
+| `poc-setup.md` | Công cụ, chi phí, cảnh báo và các bước dựng POC 10 giáo viên; checklist SEO | Trước khi đăng ký dịch vụ cloud |
 | `01-requirements.md` | Yêu cầu chức năng và phi chức năng | Trước khi chốt phạm vi |
 | `02-architecture.md` | Stack công nghệ, kiến trúc hệ thống | Trước khi dựng dự án |
 | `03-data-design.md` | Schema JSON nội dung và database | **Chốt trước khi code** |

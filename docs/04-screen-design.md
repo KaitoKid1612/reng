@@ -200,6 +200,10 @@ Mở trang chủ
 
 Luồng mới: giáo viên đăng ký → xác minh → tạo lớp 10 chỗ → học sinh join → giáo viên mở slide và share tab qua Meet → giao bài → theo dõi/nhắc. Giáo viên nhận slide phải có quyền copy để tạo bài riêng trước khi gắn lớp mình. Ô tiếng Trung dùng IME/Unicode, không gắn wanakana; Nhật giữ quy tắc hiện tại. Review scan có trang nguồn bên cạnh câu tương tác, duyệt đáp án trước xuất bản.
 
+## SV08–SV09 — Quản trị và trang giới thiệu
+
+`/admin` (tổng quan số giáo viên theo trạng thái, học viên đang trong lớp, lớp, bài, bài nộp 7 ngày; cài đặt duyệt giáo viên mới), `/admin/teachers` (duyệt, tạm dừng, mở lại, hạn thuê, ghi chú, nhãn "Quá hạn thuê") và `/admin/activity` (100 thao tác gần nhất). Header hiện link "Quản trị" cho tài khoản quản trị. `/for-teachers` là trang công khai giới thiệu dịch vụ cho giáo viên tiếng Trung, có nút đăng ký; header có link "Cho giáo viên", trang chủ có mục "Bạn là giáo viên tiếng Trung?". Các trang trên kiểm tra không tràn ngang ở 360px.
+
 ## SV07 — Soạn bài theo mẫu
 
 Đã có bản local: `/teach/lessons/new` có form chọn mẫu (bên dưới vẫn giữ form editor chi tiết cho bài tiếng Nhật), `/teach/lessons/[id]/edit` tự mở wizard với bài schema v2. Trên mobile phần xem trước nằm dưới danh sách slide. Giao lớp vẫn làm ở trang lớp. Luồng 5 bước: chọn mẫu/mục tiêu → bảng nội dung → dựng slide → câu luyện → xem trước/xuất bản/giao lớp. Giáo viên không cần nhập mã bài hoặc thao tác JSON trong luồng cơ bản. Luôn có lưu nháp, quay lại và chỉnh slide chi tiết; dữ liệu chưa đủ vẫn lưu được, lỗi xuất bản dẫn tới đúng dòng/câu.

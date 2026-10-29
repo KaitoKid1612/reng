@@ -2,7 +2,7 @@
 
 Ngày kiểm tra: 29/10/2026. Source được kiểm tra tại commit `55129ab`; không thay đổi runtime/migration/dependency trong đợt đối chiếu.
 
-**Cập nhật cùng ngày sau khi triển khai lát 1–4** (migration 202610290001–0003): publish không còn tự công khai, loader kiểm tra owner/lớp/version, giáo viên tự kích hoạt sau xác minh email và vẫn học được lớp khác, lớp có sức chứa và link Meet; schema v2 Việt–Trung, profile chấm `zh-exact-v1` và wizard soạn theo mẫu. Sau đó triển khai tiếp chia sẻ/sao chép (migration 202610290004). Ma trận dưới đây ghi trạng thái mới; tỷ lệ tăng từ 23% lên khoảng 68% `(12 + 6 × 0.5) / 22`. "Đã có" nghĩa là có bản local và test tự động, chưa thử với giáo viên/lớp thật. Kết quả kiểm thử ở [nghiệm thu dịch vụ](testing/teaching-service.md). Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
+**Cập nhật cùng ngày sau khi triển khai lát 1–4** (migration 202610290001–0003): publish không còn tự công khai, loader kiểm tra owner/lớp/version, giáo viên tự kích hoạt sau xác minh email và vẫn học được lớp khác, lớp có sức chứa và link Meet; schema v2 Việt–Trung, profile chấm `zh-exact-v1` và wizard soạn theo mẫu. Sau đó triển khai tiếp chia sẻ/sao chép (migration 202610290004). Ma trận dưới đây ghi trạng thái mới; tỷ lệ tăng từ 23% lên khoảng 70% `(13 + 5 × 0.5) / 22` sau khi thêm quản trị viên duyệt giáo viên (migration 202610290005). Hai yêu cầu mới ADMIN-01 và SEO-01 trong [yêu cầu](01-requirements.md) đã có bản local nhưng không cộng vào mẫu số 22 để giữ so sánh với lúc audit. "Đã có" nghĩa là có bản local và test tự động, chưa thử với giáo viên/lớp thật. Kết quả kiểm thử ở [nghiệm thu dịch vụ](testing/teaching-service.md). Nguồn yêu cầu: [01](01-requirements.md), [BD dịch vụ](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [biên soạn](content-authoring.md).
 
 ## Kết luận và cách hiểu tỷ lệ
 
@@ -16,6 +16,7 @@ Quy ước đều trọng số: khớp đầy đủ = 1; có phần nguồn tái
 - Sau lát 1 và 3: 3/22 khớp đầy đủ, 9/22 một phần, 9/22 chưa có, 1/22 chưa kiểm chứng; điểm `(3 + 9 × 0.5) / 22 = 34.1%`.
 - Sau lát 2 và 4: 9/22 khớp đầy đủ, 5/22 một phần, 7/22 chưa có, 1/22 chưa kiểm chứng; điểm `(9 + 5 × 0.5) / 22 = 52.3%`.
 - Sau chia sẻ/sao chép: 12/22 khớp đầy đủ, 6/22 một phần, 3/22 chưa có, 1/22 chưa kiểm chứng; điểm `(12 + 6 × 0.5) / 22 = 68.2%`.
+- Sau quản trị viên duyệt giáo viên: 13/22 khớp đầy đủ, 5/22 một phần, 3/22 chưa có, 1/22 chưa kiểm chứng; điểm `(13 + 5 × 0.5) / 22 = 70.5%`.
 - Nếu chỉ tính hoàn tất trọn yêu cầu mới thì là 0/22; điều này không có nghĩa source hiện tại không có chức năng hữu ích.
 
 Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choice/fill server grading, assignment snapshots/drafts/retry, báo cáo/SRS/tiến độ và email opt-in. Các phần này đáng giữ. Chưa chấm một tỷ lệ thứ hai cho “toàn bộ 86 yêu cầu” vì gồm module Nhật và nhiều tính năng ngoài MVP; cộng chung sẽ che phần còn thiếu của hướng dịch vụ hiện tại.
@@ -24,7 +25,7 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 
 | Yêu cầu | Trạng thái | Điểm | Bằng chứng và khoảng thiếu |
 |---|---|---|---|
-| AUTH-01 | Một phần | 0.5 | Đăng ký có lối vào giáo viên; server kích hoạt sau xác minh email, không nhận role từ client. Chưa có kiểm soát lạm dụng/quota đăng ký. [Nguồn](../app/actions/teacher-account.ts) |
+| AUTH-01 | Đã có | 1 | Đăng ký có lối vào giáo viên; server kích hoạt sau xác minh email, không nhận role từ client; quản trị viên duyệt từng giáo viên khi bật chế độ duyệt. [Nguồn](../supabase/migrations/202610290005_platform_admin.sql) |
 | SERVICE-01 | Đã có | 1 | Tự kích hoạt giáo viên sau xác minh email, trang giảng dạy riêng, vừa dạy vừa học bằng enrollment. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |
 | SERVICE-02 | Một phần | 0.5 | Owner check/RLS nền; bài riêng chỉ đọc qua RPC kiểm tra owner/lớp/version. Chưa có media riêng tư và share. [Nguồn](../lib/server/lesson-access.ts) |
 | CLASS-08 | Đã có | 1 | Capacity tùy chọn; join khóa hàng lớp rồi đếm thành viên đang học, trả `class_full`; giảm dưới số đang học bị chặn. [Nguồn](../supabase/migrations/202610290001_teaching_service.sql) |

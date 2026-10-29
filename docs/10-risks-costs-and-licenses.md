@@ -30,7 +30,7 @@ Nguồn/OCR trung gian dự kiến giữ 30 ngày hoặc xóa theo yêu cầu; a
 
 ## Ngân sách và quota
 
-Không suy số lớp tối đa từ free tier chung. Mô hình chi phí theo tháng cần có:
+Không suy số lớp tối đa từ free tier chung. Chi phí và gói cho POC 10 giáo viên đã kiểm tra ngày 29/10/2026 ở [kế hoạch POC](poc-setup.md). Mô hình chi phí theo tháng cần có:
 
 | Khoản | Đơn vị đo và kiểm soát |
 |---|---|

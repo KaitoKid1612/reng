@@ -36,9 +36,15 @@ Kết quả soạn bài theo mẫu (lát B1 bản đầu):
 | AU-07 | PASS (local) | Tạo bản sao bài của mình và sao chép bài được chia sẻ đúng quyền thành nháp độc lập có nguồn; quyền view không sao chép được; bản sao không chia sẻ tiếp |
 | AU-09 | NOT RUN | Chưa có TTS web/nghe duyệt audio cho bài Trung |
 | CT-02 | PASS (local) | Như SV-10 |
+| AD-01 | PASS (local) | ADMIN-01: khi bật duyệt, yêu cầu giảng dạy ở trạng thái chờ và chưa vào được `/teach`; quản trị viên duyệt thì dạy được, tạm dừng thì mất quyền và không tự kích hoạt lại. `tests/platform-admin-migration.test.ts`, `e2e-supabase/platform-admin.spec.ts` |
+| AD-02 | PASS (local) | Người không phải quản trị viên nhận 404 ở `/admin`, vai `authenticated` không đọc/ghi được `platform_admins` và không gọi được RPC quản trị; mỗi thao tác quản trị có dòng nhật ký |
+| AD-03 | PASS (local) | Hạn thuê đã qua hiện nhãn "Quá hạn thuê"; tắt duyệt thì giáo viên mới tự kích hoạt; trang quản trị không tràn ngang ở 360px |
+| SEO-01 | PASS (local) | `robots.txt` chặn khu vực riêng tư và trỏ sitemap; `sitemap.xml` có trang công khai và bài công khai, không có `?version=`. `tests/site-seo.test.ts`, `e2e/seo.spec.ts` |
+| SEO-02 | PASS (local) | `/for-teachers` có H1, tiêu đề, mô tả, canonical và JSON-LD FAQPage; trang bài có canonical không kèm phiên bản và JSON-LD LearningResource; slide có `noindex` |
+| SEO-03 | NOT RUN | Xác minh Search Console, nộp sitemap và đo Core Web Vitals trên domain thật |
 | CT-03 | Một phần | Ở 360px các trang `/teach`, tạo bài, thư viện, chia sẻ, trang đọc bài Trung và cả 5 bước wizard không tràn ngang (E2E); chữ Hán/pinyin có `lang` đúng. Chưa đo trên thiết bị thật, chưa kiểm tra bàn phím/tương phản thủ công |
 
-Hồi quy đi kèm (lần chạy cuối ngày 29/10/2026): `npm run check` (83 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 24/24 (gồm luồng Nhật cũ, 3 ca soạn/học/360px bài Trung và 1 ca chia sẻ/sao chép/thu hồi) và `npm run build`.
+Hồi quy đi kèm (lần chạy cuối ngày 29/10/2026): `npm run check` (87 test), `npm run test:e2e` 25/25 (gồm 4 ca SEO), `npm run test:e2e:supabase` 25/25 (gồm luồng Nhật cũ, 3 ca soạn/học/360px bài Trung, chia sẻ và quản trị) và `npm run build`.
 
 Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-service.md), [DD dự kiến](../detail-design/teaching-service.md).
 

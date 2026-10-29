@@ -119,10 +119,13 @@ Ba vai:
 - **Khách** xem được bảng chữ cái và nội dung công khai
 - **Học viên** vào lớp bằng mã, làm bài, xem kết quả của mình
 - **Giảng viên** soạn bài, tạo lớp, xem toàn bộ kết quả lớp
+- **Quản trị viên nền tảng** duyệt/tạm dừng giáo viên, ghi hạn thuê, xem số liệu tổng hợp và nhật ký; không đọc bài nộp hay bài riêng
 
 Thực hiện bằng Supabase Auth cộng Row Level Security. RLS bảo vệ truy cập trực tiếp database; API vẫn phải xác thực người dùng và kiểm tra quyền theo lớp, bài học, lượt làm. API dùng service role phải tự kiểm tra đầy đủ vì khóa này có quyền vượt RLS. Không đưa khóa đó vào trình duyệt.
 
-Mọi người đăng ký như học viên. Tài khoản đã xác minh email tự kích hoạt giảng dạy tại `/teach/start` sau khi xác nhận trách nhiệm nội dung; server gọi RPC `activate_teacher`, ghi `teacher_accounts` và `audit_events`. Người dùng không tự sửa `profiles.role`; cột này là capability tương thích do trigger đồng bộ từ `teacher_accounts`. Tư cách học đến từ enrollment, nên một tài khoản vừa dạy lớp mình vừa học lớp khác ([DD dịch vụ](detail-design/teaching-service.md)). Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
+Mọi người đăng ký như học viên. Tài khoản đã xác minh email tự kích hoạt giảng dạy tại `/teach/start` sau khi xác nhận trách nhiệm nội dung; server gọi RPC `activate_teacher`, ghi `teacher_accounts` và `audit_events`. Người dùng không tự sửa `profiles.role`; cột này là capability tương thích do trigger đồng bộ từ `teacher_accounts`. Tư cách học đến từ enrollment, nên một tài khoản vừa dạy lớp mình vừa học lớp khác ([DD dịch vụ](detail-design/teaching-service.md)). Khi bật cài đặt duyệt (mặc định), yêu cầu giảng dạy ở trạng thái chờ đến khi quản trị viên mở quyền ở `/admin/teachers`. Quyền quản trị nằm ở bảng `platform_admins`, chỉ cấp bằng SQL (hoặc `npm run admin:grant` trên máy local).
+
+SEO: metadata gốc dùng `SITE_URL` làm `metadataBase`; `app/sitemap.ts` liệt kê trang công khai và bài công khai, `app/robots.ts` chặn khu vực đăng nhập, quản trị và trang trình chiếu; trang bài có canonical không kèm `?version=` và JSON-LD LearningResource. Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
 
 Đáp án của bài kiểm tra phải thuộc phiên bản riêng không xuất hiện ở bất kỳ API đọc công khai nào, kể cả bài luyện hoặc slide. Chi tiết ranh giới nội dung tại `03-data-design.md`.
 

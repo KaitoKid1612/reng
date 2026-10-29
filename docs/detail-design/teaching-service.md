@@ -29,6 +29,12 @@ Bản đầu mỗi giáo viên là một chủ sở hữu độc lập. Không t
 
 Tên cột/bảng cần chốt khi viết migration. Không trộn proposal vào danh sách bảng đã triển khai ở 03. Nâng cấp phải giữ role cũ hoạt động trong giai đoạn chuyển tiếp và backfill quyền dạy cho teacher hiện hữu. Không vô tình cấp quyền dạy cho mọi student. Snapshot cũ không bị ghi lại để thêm locale.
 
+## Quản trị nền tảng và duyệt giáo viên — đã triển khai
+
+Migration 202610290005 thêm `platform_admins` (chỉ cấp bằng SQL hoặc `npm run admin:grant` trên máy local), `platform_settings.teacher_approval_required` (mặc định bật cho POC giáo viên thuê) và các cột `requested_at`, `access_until`, `admin_note` trong `teacher_accounts`. Khi bật duyệt, `activate_teacher` tạo yêu cầu `pending`; quản trị viên mở quyền bằng `admin_set_teacher_status` (active/suspended), ghi hạn thuê/ghi chú bằng `admin_update_teacher_plan` và bật/tắt duyệt bằng `admin_set_teacher_approval`; mỗi RPC kiểm tra `is_platform_admin` và ghi `audit_events`. Tắt duyệt thì yêu cầu đang chờ được kích hoạt ở lần gửi tiếp theo. `access_until` chỉ để theo dõi: hệ thống không tự khóa, trang quản trị báo "Quá hạn thuê".
+
+Trang `/admin` (tổng quan và cài đặt), `/admin/teachers`, `/admin/activity` gọi `requireAdmin`; người không phải quản trị viên nhận 404, mỗi server action kiểm tra lại quyền. Email giáo viên đọc qua Auth admin API một trang 1.000 tài khoản, đủ cho POC; quy mô lớn hơn cần phân trang. Quản trị viên chỉ thấy số liệu tổng hợp, không đọc bài nộp, nháp hay ghi chú riêng.
+
 ## Onboarding và sức chứa lớp
 
 Luồng server đăng ký giáo viên: xác thực email → kiểm tra giới hạn đăng ký/điều khoản → kích hoạt teacher account → ghi audit. Mặc định onboarding dịch vụ tự kích hoạt sau xác minh email, chấp nhận điều khoản và kiểm tra lạm dụng/quota; pending dùng khi xác minh chưa xong hoặc cần xử lý ngoại lệ. Đây không phải chứng nhận chuyên môn giáo viên. Client không được gửi role để ghi thẳng vào profiles. Một người bị đình chỉ dạy không mất quyền đọc bài của mình với tư cách học sinh nếu tài khoản vẫn hợp lệ.
@@ -143,6 +149,10 @@ Giao bài vẫn theo hợp đồng assignment hiện có, được mở rộng h
 Mọi mutation xác thực phiên, same-origin/CSRF theo cơ chế hiện có, validate unknown JSON, giới hạn kích thước và rate limit. Resource không thuộc người gọi trả 404 hoặc 403 theo chính sách nhất quán không lộ tồn tại. Lỗi chuẩn dự kiến: 400 invalid_input/schema_version, 401 unauthenticated, 403 teacher_inactive, 404 not_found, 409 revision_conflict/class_full, 413 payload_too_large, 422 review_required/invalid_refs, 429 quota_exceeded/rate_limited, 503 provider_unavailable. Trả mã/field/requestId để UI dịch, không trả token/SQL/ảnh/đáp án riêng. Thông số byte/rate limit từng API chốt trong implementation DD trước code.
 
 Read nháp/share/private media/job dùng private no-store; public lesson DTO chỉ version public và đã lọc. Token/signed URL không xuất hiện trong log hoặc response của người không có quyền. Retry requestId cùng payload trả lại kết quả, khác payload bị conflict, không tạo hai bản copy/job/assignment.
+
+## SEO cho trang công khai — đã triển khai
+
+`metadataBase` lấy từ `SITE_URL` (`lib/site.ts`), metadata gốc mô tả dịch vụ, Open Graph `vi_VN` và thẻ xác minh Search Console qua `GOOGLE_SITE_VERIFICATION`. `app/sitemap.ts` liệt kê trang công khai cố định và bài có visibility public (làm mới mỗi giờ, lỗi database vẫn trả trang cố định); `app/robots.ts` chặn `/admin`, `/teach`, `/classes`, `/assignments`, trang tài khoản, API và `/lessons/*/slide|presenter`. Trang bài dùng `generateMetadata` với canonical `/lessons/[id]` (bỏ `?version=`) và JSON-LD LearningResource; trang chủ có Organization/WebSite, `/for-teachers` có WebPage/FAQPage. Bài riêng tư không đọc được khi chưa đăng nhập nên không vào sitemap hay chỉ mục.
 
 ## Kế hoạch dữ liệu và khôi phục dự kiến
 

@@ -5,7 +5,7 @@ Hai phạm vi được tách rõ: các bước giai đoạn 2–5 phục vụ ki
 Không có credentials trong workspace tại thời điểm bắt đầu giai đoạn 2. Tài liệu này là hướng dẫn, chưa phải bằng chứng đã triển khai cloud.
 
 1. Tạo Supabase project staging riêng, xác nhận đúng project trước khi áp dụng migrations trong supabase/migrations theo thứ tự. Giữ backup trước nâng schema. Không dùng project production cho kiểm thử.
-2. Tạo tài khoản giảng viên bằng người vận hành, cấp profiles.role phía quản trị. Đây là cơ chế nền hiện tại; không phải yêu cầu onboarding giáo viên tự phục vụ của dịch vụ mới. Kiểm tra own profile, own lesson và API notes bằng hai tài khoản khác nhau.
+2. Cấp quản trị viên đầu tiên bằng SQL theo [kế hoạch POC](poc-setup.md); giáo viên tự đăng ký, gửi yêu cầu và được duyệt ở `/admin/teachers` (không sửa `profiles.role` bằng tay). Kiểm tra own profile, own lesson và API notes bằng hai tài khoản khác nhau.
 3. Tạo Azure Speech resource, điền khóa/vùng trong .env.local ở máy vận hành. Chạy audio:plan trước generate; sinh kana vào local hoặc R2, nghe duyệt ký tự đứng riêng/trợ từ trước dùng với lớp.
 4. Tạo R2 bucket/domain staging và khóa chỉ có quyền bucket đó; đặt public base audio. Không public transcript/metadata test. Kiểm tra cache headers, audio 404/retry và chạy lại không sinh trùng.
 5. Đặt LESSON_SOURCE, Supabase URL/secret/publishable key và audio base trên hosting staging; xác minh gói hosting phù hợp sử dụng. Không đưa secret vào NEXT_PUBLIC_ hoặc git.
@@ -18,7 +18,7 @@ Không có credentials trong workspace tại thời điểm bắt đầu giai đ
 1. Backup database, áp dụng migration 0003 và 0004 trên staging, kiểm tra lại bằng tài khoản giảng viên và hai học viên thử ở hai lớp.
 2. Auth: bật xác nhận email, đặt Site URL và Redirect URLs (`https://<domain>/**`). Sao chép nội dung supabase/templates/confirmation.html và recovery.html vào template Confirm signup/Reset password trên dashboard; link phải dùng token hash và trỏ về /auth/confirm.
 3. Cấu hình SMTP riêng (SPF/DKIM/DMARC) trước khi mời học viên; SMTP mặc định của Supabase có hạn mức thấp. Gửi thử tới hộp thư thật, kiểm tra thư mục spam.
-4. Đặt SITE_URL bằng domain staging cho link email. Cấp role giảng viên bằng thao tác quản trị phía server (SQL/service key); không dùng scripts/seed-local.ts cho cloud.
+4. Đặt SITE_URL bằng domain staging cho link email. Duyệt giáo viên ở `/admin/teachers`; không dùng scripts/seed-local.ts hoặc admin:grant cho cloud.
 5. Chạy luồng: tạo lớp, thêm bài, giao practice/test, học viên đăng ký/vào lớp/làm/nộp, mất mạng và hai tab, báo cáo/CSV. Ghi kết quả vào testing/phase-3.md.
 6. Có bản backup và một lần khôi phục thử trên môi trường riêng trước khi nhận lớp thật.
 
