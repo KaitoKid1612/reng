@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-import { createConfirmedStudent, RUN_ID, signIn } from "./support";
+import { becomeTeacher, createConfirmedStudent, RUN_ID, signIn } from "./support";
 
 import type { Browser, Page } from "@playwright/test";
 
@@ -27,9 +27,7 @@ async function newAccount(browser: Browser, role: "teacher" | "learner") {
   const page = await (await browser.newContext()).newPage();
   await signIn(page, email, password, role === "teacher" ? "/teach/start" : "/classes");
   if (role === "teacher") {
-    await page.getByLabel(/Tôi chịu trách nhiệm/).check();
-    await page.getByRole("button", { name: "Kích hoạt giảng dạy", exact: true }).click();
-    await page.waitForURL("**/teach");
+    await becomeTeacher(page, email);
   }
   return page;
 }

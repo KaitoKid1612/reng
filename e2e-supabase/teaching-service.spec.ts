@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 
 import { expect, test } from "@playwright/test";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn } from "./support";
+import { adminClient, becomeTeacher, createConfirmedStudent, RUN_ID, signIn } from "./support";
 
 import type { Browser } from "@playwright/test";
 
@@ -13,9 +13,7 @@ async function newAccount(browser: Browser, suffix: string, teacher: boolean) {
   const page = await (await browser.newContext()).newPage();
   await signIn(page, email, password, teacher ? "/teach/start" : "/classes");
   if (teacher) {
-    await page.getByLabel(/Tôi chịu trách nhiệm/).check();
-    await page.getByRole("button", { name: "Kích hoạt giảng dạy", exact: true }).click();
-    await page.waitForURL("**/teach");
+    await becomeTeacher(page, email);
   }
   const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
   const id = data.users.find((user) => user.email === email)?.id;

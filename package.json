@@ -22,6 +22,7 @@
     "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
     "lesson:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-lesson.ts",
     "seed:local": "node --env-file-if-exists=.env.local --import tsx scripts/seed-local.ts",
+    "admin:grant": "node --env-file-if-exists=.env.local --import tsx scripts/grant-admin.ts",
     "test:e2e:supabase": "playwright test -c playwright.supabase.config.ts"
   },
   "dependencies": {

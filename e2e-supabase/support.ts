@@ -85,3 +85,26 @@ export async function readEmailLink(email: string, subject: string) {
   }
   throw new Error(`No "${subject}" email for ${email}.`);
 }
+
+// Requests teaching on /teach/start and, when the pilot approval setting holds the request,
+// approves it the way an operator would. Works whether approval is on or off.
+export async function becomeTeacher(page: Page, email: string) {
+  await page.goto("/teach/start");
+  await page.getByLabel(/Tôi chịu trách nhiệm/).check();
+  await page.getByRole("button", { name: /Gửi yêu cầu giảng dạy|Kích hoạt giảng dạy/ }).click();
+  const pending = page.getByText("Đã gửi yêu cầu.", { exact: false });
+  await Promise.race([page.waitForURL("**/teach"), pending.waitFor()]);
+  if (new URL(page.url()).pathname === "/teach") {
+    return;
+  }
+  const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
+  const id = data.users.find((user) => user.email === email)?.id;
+  const { error } = await adminClient()
+    .from("teacher_accounts")
+    .update({ status: "active", activated_at: new Date().toISOString() })
+    .eq("user_id", id ?? "");
+  if (!id || error) {
+    throw new Error("Unable to approve the teacher fixture.");
+  }
+  await page.goto("/teach");
+}

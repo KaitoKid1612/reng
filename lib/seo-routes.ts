@@ -1,0 +1,34 @@
+// Account, classroom and presentation views are private or duplicate the public reader.
+export const PRIVATE_PATHS = [
+  "/admin",
+  "/teach",
+  "/classes",
+  "/assignments",
+  "/settings",
+  "/review",
+  "/mistakes",
+  "/progress",
+  "/join-class",
+  "/vocabulary/",
+  "/listening/",
+  "/api/",
+  "/auth/",
+  "/unsubscribe/",
+  "/sign-in",
+  "/forgot-password",
+  "/reset-password",
+  "/verify-email",
+  "/lessons/*/slide",
+  "/lessons/*/presenter",
+] as const;
+
+export const PUBLIC_PAGES = [
+  { path: "/", priority: 1, changeFrequency: "weekly" },
+  { path: "/for-teachers", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/lessons", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/kana", priority: 0.7, changeFrequency: "yearly" },
+  { path: "/kana/practice", priority: 0.6, changeFrequency: "yearly" },
+  { path: "/grammar", priority: 0.6, changeFrequency: "weekly" },
+  { path: "/sign-up/teacher", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/sources", priority: 0.3, changeFrequency: "yearly" },
+] as const;

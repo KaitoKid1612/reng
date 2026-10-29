@@ -11,16 +11,24 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { AudioProvider } from "@/components/audio-provider";
 import { audioManifest } from "@/lib/data";
+import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+
 export const metadata: Metadata = {
+  metadataBase: getSiteUrl(),
   title: {
-    default: "Masu — Học tiếng Nhật từ những nét đầu tiên",
+    default: "Masu — Lớp học ngoại ngữ online cho giáo viên và học viên",
     template: "%s | Masu",
   },
-  description: "Làm quen Hiragana, Katakana và luyện đọc tiếng Nhật bằng romaji.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  openGraph: { siteName: SITE_NAME, locale: "vi_VN", type: "website" },
+  twitter: { card: "summary" },
+  ...(googleVerification ? { verification: { google: googleVerification } } : {}),
 };
 interface RootLayoutProps {
   readonly children: ReactNode;

@@ -3,7 +3,12 @@ import { kanaItems } from "@/lib/data";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Luyện đọc kana" };
+export const metadata: Metadata = {
+  title: "Luyện đọc Hiragana và Katakana",
+  description:
+    "Luyện đọc kana bằng romaji theo phiên ngắn mười câu, xem kết quả ngay và luyện lại chữ còn nhầm.",
+  alternates: { canonical: "/kana/practice" },
+};
 interface PracticePageProps {
   searchParams: Promise<{ script?: string }>;
 }

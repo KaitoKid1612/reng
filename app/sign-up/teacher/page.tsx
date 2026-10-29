@@ -5,6 +5,15 @@ import { SignUpForm } from "@/components/auth/sign-up-form";
 import { getCurrentAccount } from "@/lib/server/account";
 import { isClassroomConfigured } from "@/lib/server/supabase";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Đăng ký giáo viên",
+  description:
+    "Tạo tài khoản giáo viên trên Masu để mở lớp tiếng Trung online, soạn slide theo mẫu và giao bài tập tự chấm.",
+  alternates: { canonical: "/sign-up/teacher" },
+};
+
 export default async function TeacherSignUpPage() {
   if (await getCurrentAccount()) {
     redirect("/teach/start");

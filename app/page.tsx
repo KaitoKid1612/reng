@@ -3,14 +3,38 @@ import Link from "next/link";
 import { HomeAgenda } from "@/components/classroom/home-agenda";
 import { buttonVariants } from "@/components/ui/button";
 import { kanaItems } from "@/lib/data";
+import { absoluteUrl, serializeJsonLd, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: { absolute: "Masu — Lớp học ngoại ngữ online cho giáo viên và học viên" },
+  alternates: { canonical: "/" },
+};
 
 const homeKanaSamples = kanaItems
   .filter((item) => item.script === "hiragana" && item.group === "basic")
   .slice(0, 9);
 
 export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        description: SITE_DESCRIPTION,
+      },
+      { "@type": "WebSite", name: SITE_NAME, url: absoluteUrl("/"), inLanguage: "vi-VN" },
+    ],
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+      />
       <section className="home-hero">
         <div className="hero-copy">
           <p className="hero-intro">Tiếng Nhật cho người mới bắt đầu</p>
@@ -51,6 +75,21 @@ export default function HomePage() {
         </div>
       </section>
       <HomeAgenda />
+      <section className="home-teachers" aria-labelledby="teachers-title">
+        <h2 id="teachers-title">Bạn là giáo viên tiếng Trung?</h2>
+        <p className="hero-description">
+          Tạo lớp riêng, soạn slide từ bảng chữ Hán – pinyin – nghĩa Việt, dạy qua Google Meet và
+          giao bài tập tự chấm cho học viên.
+        </p>
+        <div className="button-row">
+          <Link href="/for-teachers" className={buttonVariants()}>
+            Tìm hiểu cách dạy trên Masu
+          </Link>
+          <Link href="/sign-up/teacher" className={buttonVariants({ variant: "outline" })}>
+            Đăng ký giáo viên
+          </Link>
+        </div>
+      </section>
       <section className="home-learning" aria-labelledby="learning-title">
         <h2 id="learning-title">Học theo nhịp của bạn</h2>
         <div className="learning-columns">

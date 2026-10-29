@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 interface AccountSummary {
   name: string;
   role: "student" | "teacher";
+  isAdmin: boolean;
 }
 
 function parseAccount(data: unknown): AccountSummary | null {
@@ -24,7 +25,7 @@ function parseAccount(data: unknown): AccountSummary | null {
   ) {
     return null;
   }
-  return { name: user.name, role: user.role };
+  return { name: user.name, role: user.role, isAdmin: "isAdmin" in user && user.isAdmin === true };
 }
 
 // Loaded after hydration so static pages stay static and cacheable.
@@ -57,8 +58,15 @@ export function AccountLink() {
   }
   const href = account.role === "teacher" ? "/teach" : "/classes";
   return (
-    <Link href={href} aria-current={pathname.startsWith(href) ? "page" : undefined}>
-      {account.role === "teacher" ? "Giảng dạy" : "Lớp của tôi"}
-    </Link>
+    <>
+      {account.isAdmin && (
+        <Link href="/admin" aria-current={pathname.startsWith("/admin") ? "page" : undefined}>
+          Quản trị
+        </Link>
+      )}
+      <Link href={href} aria-current={pathname.startsWith(href) ? "page" : undefined}>
+        {account.role === "teacher" ? "Giảng dạy" : "Lớp của tôi"}
+      </Link>
+    </>
   );
 }

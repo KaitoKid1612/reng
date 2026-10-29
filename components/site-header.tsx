@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { AccountLink } from "@/components/account-link";
 
 const NAVIGATION_LINKS = [
+  { href: "/for-teachers", label: "Cho giáo viên" },
   { href: "/lessons", label: "Bài học" },
   { href: "/grammar", label: "Ngữ pháp" },
   { href: "/kana", label: "Bảng chữ cái" },
@@ -22,7 +23,7 @@ export function SiteHeader() {
           </span>
           <span>
             Masu
-            <span className="brand-caption">Tiếng Nhật từ những nét đầu tiên</span>
+            <span className="brand-caption">Học và dạy ngoại ngữ online</span>
           </span>
         </Link>
         <nav aria-label="Điều hướng chính">

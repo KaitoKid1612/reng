@@ -2,7 +2,11 @@ import { audioManifest } from "@/lib/data";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Nguồn dữ liệu" };
+export const metadata: Metadata = {
+  title: "Nguồn dữ liệu",
+  description: "Nguồn và giấy phép của dữ liệu chữ, audio và học liệu dùng trên Masu.",
+  alternates: { canonical: "/sources" },
+};
 export default function SourcesPage() {
   const count = Object.keys(audioManifest.assets).length;
   return (

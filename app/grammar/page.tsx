@@ -5,7 +5,12 @@ import { isPublicTeachingLesson } from "@/lib/teaching-content";
 import type { PublicLesson } from "@/lib/lesson-schema";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Tra cứu ngữ pháp" };
+export const metadata: Metadata = {
+  title: "Tra cứu ngữ pháp",
+  description:
+    "Tra cứu mẫu câu tiếng Nhật trong các bài học công khai, kèm nghĩa tiếng Việt, giải thích và ví dụ.",
+  alternates: { canonical: "/grammar" },
+};
 export const dynamic = "force-dynamic";
 
 export default async function GrammarPage() {

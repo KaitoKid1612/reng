@@ -11,6 +11,7 @@ export default defineConfig({
     reuseExistingServer: false,
     env: {
       LESSON_SOURCE: "local",
+      SITE_URL: "http://127.0.0.1:3217",
       SUPABASE_URL: "",
       SUPABASE_SECRET_KEY: "",
       SUPABASE_PUBLISHABLE_KEY: "",
