@@ -70,7 +70,7 @@ export async function signUp(_state: AuthFormState, formData: FormData): Promise
     return { error: firstIssue(parsed.error) };
   }
   const nextPath = safeNextPath(readField(formData, "next"), "/classes");
-  const { error } = await client.auth.signUp({
+  const { data, error } = await client.auth.signUp({
     email: parsed.data.email,
     password: parsed.data.password,
     options: {
@@ -86,6 +86,10 @@ export async function signUp(_state: AuthFormState, formData: FormData): Promise
   }
   if (error) {
     return { error: "Chưa tạo được tài khoản. Bạn thử lại sau ít phút nhé." };
+  }
+  // A project without email confirmation signs the new account in right away.
+  if (data.session) {
+    redirect(nextPath);
   }
   // Same response whether or not the address already has an account.
   return { sentTo: parsed.data.email };
