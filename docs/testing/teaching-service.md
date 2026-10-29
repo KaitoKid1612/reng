@@ -34,3 +34,19 @@ Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-serv
 | SV-26 | LANG-01 | Môn học, ngôn ngữ hướng dẫn và ngôn ngữ nội dung được lưu riêng; giao diện Việt không tự đổi bài Trung giản/phồn hoặc biến thành môn tiếng Việt |
 
 Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộc hai lớp khác nhau, một lớp capacity 10 và nội dung Việt–Trung có quyền sử dụng. Dữ liệu Nhật hiện có dùng kiểm tra hồi quy, không phải khóa học mới bắt buộc để ra mắt. Không dùng email/tệp của học sinh thật trong automated test. Dạy qua Meet và chất lượng OCR/font/audio cần kiểm chứng thủ công trên thiết bị thật; ghi bằng chứng và giới hạn trước nghiệm thu.
+
+## Nghiệm thu soạn bài theo mẫu — toàn bộ NOT RUN
+
+| Ca | Yêu cầu | Tình huống và kết quả cần đạt |
+|---|---|---|
+| AU-01 | AUTHOR-01/07 | Chọn từng mẫu, nhập mục tiêu nhỏ; bài đầu bỏ ôn cũ được, có đường soạn tay không cần scan/AI; giáo viên sửa thứ tự/độ khó được |
+| AU-02 | AUTHOR-02 | Dán bảng Trung/pinyin/nghĩa Việt/ví dụ; giữ thanh điệu/giản-phồn, lỗi/duplicate rõ từng dòng; preview không tự ghi dữ liệu lỗi |
+| AU-03 | AUTHOR-03 | Dựng slide đúng thứ tự, chữ dài đọc đủ trên 1280×720, một nội dung dùng chung refs; dựng lại không nhân slide hoặc mất sửa tay, diff cũ bị chặn khi revision đổi |
+| AU-04 | AUTHOR-04 | Tạo choice/fill từ từ/câu, thiếu đáp án/lựa chọn hoặc chưa duyệt không xuất bản; sửa câu/đáp án làm mất xác nhận, không dùng câu luyện lộ sẵn làm test bí mật |
+| AU-05 | AUTHOR-05 | Lưu draft thiếu nội dung, quay lại bước/tải lại/tiếp tục đúng bản server; hai tab báo conflict; chỉ báo đã lưu khi server xác nhận, mobile không mất dữ liệu khi đổi tab preview |
+| AU-06 | AUTHOR-05 | Xem trước vai học sinh không lộ notes/test; publish không tự public/giao/email; giao đúng version/lớp/hạn, retry không tạo trùng, lỗi giao không mất version đã xuất bản |
+| AU-07 | AUTHOR-06 | Dùng lại bài riêng hoặc copy đúng grant tạo draft độc lập có nguồn; không mang lớp/hạn/điểm/notes người khác; view không copy được, đổi mẫu không sửa snapshot cũ |
+| AU-08 | AUTHOR-07/08 | Một giáo viên soạn bài nhập môn với một mục tiêu nhỏ, dạy thử và giao/làm/chấm một practice; ghi thời gian chuyên môn và thời gian thao tác riêng, đếm chỗ cần hỗ trợ và kiểm tra mục tiêu dưới 30 phút |
+| AU-09 | AUTHOR-02/05 | Audio chưa có/đang tạo/chưa nghe duyệt/sẵn sàng hiển thị đúng; thiếu media chặn loại câu cần audio; luồng tạo/duyệt audio trên web không đòi giáo viên chạy CLI |
+
+Đo AU-08 trước khi làm nhiều mẫu/OCR; giáo viên chuyên môn duyệt nội dung Việt–Trung minh họa, không dùng tên bài mẫu như bằng chứng chất lượng giáo trình. Những ca trên là tiêu chí sản phẩm mới, chưa được kiểm chứng bởi bộ tests code hiện tại.

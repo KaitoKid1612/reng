@@ -191,3 +191,20 @@ Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế
 | OPS-02 | Quota theo giáo viên, audit chia sẻ/nhập scan, xóa tệp theo chính sách và xử lý báo cáo nội dung | P1 |
 
 EX-03 phải tuân theo practice/test và thời điểm phản hồi; không phải mọi bài đều lộ đáp án ngay. ADMIN-05 trở thành phần cốt lõi của SHARE-02. Không suy ra bộ đề chia sẻ là câu test bí mật.
+
+## Soạn bài dễ áp dụng — chưa triển khai
+
+Giáo viên tự soạn và chịu trách nhiệm chuyên môn; nền tảng cung cấp mẫu/công cụ/bài minh họa đã duyệt. Quy trình chi tiết theo [biên soạn](content-authoring.md), [BD dịch vụ](basic-design/teaching-service.md), [DD dịch vụ](detail-design/teaching-service.md).
+
+| ID | Yêu cầu | Ưu tiên |
+|---|---|---|
+| AUTHOR-01 | Chọn mẫu buổi đầu/từ mới/hội thoại/ôn tập, nhập mục tiêu nhỏ; soạn tay không cần scan/AI | P0 |
+| AUTHOR-02 | Bảng chữ Hán/pinyin/nghĩa Việt/ví dụ, nhập từng dòng hoặc dán Excel, báo lỗi từng dòng | P0 |
+| AUTHOR-03 | Dựng slide theo mẫu và tham chiếu nội dung, preview/chỉnh thứ tự; dựng lại không mất sửa tay hoặc nhân slide | P0 |
+| AUTHOR-04 | Chọn từ/câu để tạo khung choice/fill; giáo viên xác nhận đáp án trước xuất bản; sửa câu phải duyệt lại | P0 |
+| AUTHOR-05 | Lưu nháp/tiếp tục, xem trước slide và màn hình học sinh; xuất bản và giao lớp là thao tác riêng | P0 |
+| AUTHOR-06 | Dùng lại bài của mình hoặc copy bài được cấp quyền thành draft độc lập, giữ nguồn và loại dữ liệu lớp | P1 |
+| AUTHOR-07 | Mục tiêu, đối tượng, kiến thức đầu vào, thứ tự/độ khó gợi ý; bài nhập môn nhỏ từ dễ đến khó, giáo viên điều chỉnh | P0 |
+| AUTHOR-08 | Thử một giáo viên/một bài nhập môn/lớp thật; mục tiêu soạn dưới 30 phút khi nội dung đã chuẩn bị, ghi thời gian và điểm cần trợ giúp | P0 |
+
+AUTHOR-06 chi tiết hóa ADMIN-05 và SHARE-02; không mở quyền copy từ grant view. Chưa tuyên bố có bộ giáo trình Việt–Trung đã thẩm định. Tính năng scan bổ sung luồng nhập, không là điều kiện để soạn bài cơ bản.

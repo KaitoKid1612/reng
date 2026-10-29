@@ -35,4 +35,4 @@ Phiên bản dependency lấy từ package.json và lockfile. Mỗi phạm vi c�
 
 [BD dịch vụ](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md) và [checklist](testing/teaching-service.md) bổ sung mô hình nhiều giáo viên, đa ngôn ngữ, chia sẻ và scan. 00/01/09 đã điều chỉnh phạm vi tương ứng. BD/DD phase-1 đến phase-5 mô tả nền N5 đã triển khai; không coi chúng là bằng chứng cho tính năng dịch vụ mới.
 
-DD dịch vụ ghi rõ các hợp đồng dự kiến và quyết định kỹ thuật còn phải chốt trước từng lát triển khai; chưa có migration hoặc thay đổi runtime trong đợt tài liệu này. Theo thứ tự Service A → B → C1 → C2, không xây OCR hoặc video trước luồng vận hành lớp.
+DD dịch vụ ghi rõ các hợp đồng dự kiến và quyết định kỹ thuật còn phải chốt trước từng lát triển khai; chưa có migration hoặc thay đổi runtime trong đợt tài liệu này. Theo thứ tự Service A → B1 (soạn theo mẫu, dạy bài dễ) → B2 (chia sẻ/dùng lại) → C1 → C2, không xây OCR hoặc video trước luồng vận hành lớp. Hợp đồng soạn theo mẫu xem [biên soạn](content-authoring.md) và các phần bổ sung AUTHOR-01–08 trong BD/DD/checklist dịch vụ.

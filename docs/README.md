@@ -4,6 +4,8 @@ Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chi
 
 ## Cách đọc
 
+Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đặc tả mới chưa triển khai, ưu tiên Service B1 trước chia sẻ rộng/OCR.
+
 Định hướng dịch vụ ngày 29/10/2026: [Basic Design](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [tiêu chí nghiệm thu NOT RUN](testing/teaching-service.md). Đây là nguồn cho phạm vi mới, không phải kết quả đã triển khai.
 
 Giai đoạn 2: [Basic Design](basic-design/phase-2.md), [Detail Design](detail-design/phase-2.md), [checklist](testing/phase-2.md), [biên soạn nội dung](content-authoring.md), [chuẩn bị staging](staging-setup.md).

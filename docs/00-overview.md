@@ -42,3 +42,7 @@ Chưa làm: video call nội bộ, tự chấm mọi bài tự luận/viết tay
 ## Tiêu chí thành công
 
 Hai giáo viên tiếng Trung độc lập, cùng dạy học sinh Việt Nam, vận hành lớp riêng, không đọc được dữ liệu lớp nhau. Một lớp giới hạn 10 chỗ nhận đủ 10 học sinh và chặn người thứ 11 đúng cả khi vào đồng thời. Giáo viên dạy bằng slide qua Meet, chia sẻ bản sao cho đồng nghiệp, giao bài có chấm/tiến độ/nhắc học. Ảnh bài tập thử được chuyển thành câu tương tác sau duyệt; đo thời gian sửa so với nhập tay trước khi mở OCR rộng rãi.
+
+## Cách giáo viên chuẩn bị bài
+
+Giáo viên tự soạn chuyên môn, Masu cung cấp mẫu bố cục và bộ bài minh họa nhỏ được giáo viên tiếng Trung duyệt. Luồng ưu tiên là chọn mẫu → nhập bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → thêm/duyệt câu luyện → xem trước và giao lớp. Bắt đầu bằng một bài có mục tiêu nhỏ, dạy từ dễ đến khó theo lựa chọn giáo viên; thử dùng trong lớp trước khi làm nhiều mẫu hoặc OCR. [Quy trình biên soạn dự kiến](content-authoring.md) mô tả các bước và trách nhiệm; chưa triển khai luồng này trong code.

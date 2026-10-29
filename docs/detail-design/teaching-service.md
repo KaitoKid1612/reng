@@ -81,3 +81,26 @@ Next.js/Supabase hiện tại tiếp tục làm web/Auth/database; object storag
 ## Điểm phải hoàn thiện trước mỗi lát code
 
 Chốt migration/backfill và quyền role trước A; API request/response, lỗi, cache và test RLS trước A/B; storage policy, worker host/queue, provider/quota/cost trước C. Tất cả là công việc kỹ thuật còn lại, không tự xem bản DD dự kiến này là đầy đủ để chạy dịch vụ thật.
+
+## Soạn bài theo mẫu — hợp đồng bổ sung dự kiến
+
+Nguồn UX: [luồng biên soạn](../content-authoring.md). Chưa thay schema/module/API hiện tại. `create-lesson-form.tsx` hiện còn yêu cầu mã bài, `vocabulary-import.tsx` dùng cột jp/romaji/vi và editor thêm slide thủ công; không coi các module này đã hỗ trợ luồng mới.
+
+| Thành phần dự kiến | Quy tắc |
+|---|---|
+| Template | `template_id`, `template_version`, loại bài, section có thứ tự và slot; chỉ là cấu trúc, không chứa dữ liệu lớp/đáp án mặc định được coi là đã duyệt |
+| Draft metadata | mục tiêu, đối tượng, điều kiện kiến thức dạng mô tả, thứ tự/độ khó gợi ý, template nguồn; lưu cùng draft và chụp khi xuất bản. Không tự khóa truy cập theo thứ tự |
+| Bảng Việt–Trung | ID dòng ổn định, chữ Hán, pinyin, nghĩa Việt, ví dụ và phần mở rộng; preview lỗi/duplicate theo dòng, chỉ ghi dữ liệu sau xác nhận. Không nhét pinyin vào romaji hoặc nghĩa vào trường Nhật |
+| Slide sinh từ mẫu | provenance gồm template/slot/source item ID, phân biệt generated và chỉnh tay; renderer nhận slide chuẩn, không cần biết wizard |
+| Câu luyện tạo từ nội dung | tham chiếu nguồn và revision của prompt/options/answers, trạng thái needs_review/confirmed; sửa nội dung chấm làm mất xác nhận trước đó |
+| Lưu và tiếp tục | Dùng draft revision/CAS hiện tại; bước wizard lưu cùng draft nếu schema mới hỗ trợ, không tự publish. Hai tab xung đột phải được báo trước khi ghi |
+
+Dựng slide là chuyển đổi xác định từ template + nội dung đã nhập, không phụ thuộc AI. Có preview diff trước áp dụng; tạo ID mới khi thêm, giữ ID/ref không đổi cho mục còn dùng, không xóa nội dung bị slide thủ công tham chiếu. Nội dung dài được phân trang theo bố cục và kiểm tra thực tế 1280×720; không cắt chữ hoặc tự rút gọn ý. Dựng lại cùng đầu vào không nhân đôi slide. Nếu source thay đổi xung đột phần giáo viên đã sửa, yêu cầu chọn giữ/sinh lại; mặc định giữ sửa tay. Revision đổi từ tab khác thì không áp dụng diff cũ.
+
+Dùng lại bài mình tạo draft mới có ID/owner đúng, không mang assignments/lớp/hạn nộp/điểm. Copy bài đồng nghiệp theo grant hiện hành và attribution ở hợp đồng chia sẻ; sau copy mới áp dụng mẫu/chỉnh nội dung. Thay mẫu chỉ sửa draft, không sửa snapshot cũ.
+
+Lưu nháp cho phép thiếu nội dung. Xuất bản kiểm tra mục tiêu/slide/ref và câu được chọn đã xác nhận đáp án ở revision hiện tại. Trạng thái review do server đối chiếu dữ liệu lưu, không tin cờ confirmed client gửi độc lập với nội dung. Với pinyin trống có cảnh báo cho giáo viên kiểm tra, không tự thêm đọc âm rồi đánh dấu đã duyệt. Câu listening chỉ xuất bản khi media đúng điều kiện riêng; thiếu audio không được gắn nhãn sẵn sàng. Nếu giữ yêu cầu đủ audio của publisher hiện tại thì UI phải cung cấp tác vụ tạo/nhập/duyệt audio và lỗi dễ xử lý trước khi bật wizard, không buộc giáo viên chạy CLI.
+
+Giao practice từ câu luyện đã chọn theo version xuất bản; test vẫn dùng kho câu riêng. Publish trả version ID, giao lớp là bước riêng có kiểm tra owner/membership/version và idempotency; nếu giao thất bại giữ version đã xuất bản và cho thử lại, không báo hoàn tất giả hoặc xuất bản lại chỉ vì retry giao. Lưu/xuất bản không tự chọn public visibility hoặc bật gửi nhắc bài.
+
+Trước code cần chốt schema migration tương thích dữ liệu Nhật, mapping bảng/template → schema renderer, API/save review states và hợp đồng TTS web. Template không tự kèm câu/đáp án AI; tính năng gợi ý về sau vẫn đi qua giáo viên duyệt. Checklist tương ứng AUTHOR-01 đến AUTHOR-08 ở tài liệu nghiệm thu.
