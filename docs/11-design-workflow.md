@@ -30,3 +30,9 @@ BD mô tả hành vi người dùng, màn hình, nghiệp vụ, quyền và ki�
 09 quyết định mốc triển khai; 01 mức quan trọng; 04 khớp mốc màn hình. 03 dữ liệu dùng chung; 07 chấm/nộp; 12 token UI. DD giai đoạn chi tiết hóa, không đặt quy tắc mâu thuẫn.
 
 Phiên bản dependency lấy từ package.json và lockfile. Mỗi phạm vi có một bản BD/DD cập nhật tại chỗ. Thay đổi lớn sau dạy thử phải cập nhật tác động; lỗi thiết kế được sửa ngay khi phát hiện. Giai đoạn 1 hoàn thiện BD/DD trước code. Chưa coi BD chi tiết màn hình giai đoạn 2–6 là hoàn thành.
+
+## Thiết kế dịch vụ ngày 29/10/2026
+
+[BD dịch vụ](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md) và [checklist](testing/teaching-service.md) bổ sung mô hình nhiều giáo viên, đa ngôn ngữ, chia sẻ và scan. 00/01/09 đã điều chỉnh phạm vi tương ứng. BD/DD phase-1 đến phase-5 mô tả nền N5 đã triển khai; không coi chúng là bằng chứng cho tính năng dịch vụ mới.
+
+DD dịch vụ ghi rõ các hợp đồng dự kiến và quyết định kỹ thuật còn phải chốt trước từng lát triển khai; chưa có migration hoặc thay đổi runtime trong đợt tài liệu này. Theo thứ tự Service A → B → C1 → C2, không xây OCR hoặc video trước luồng vận hành lớp.

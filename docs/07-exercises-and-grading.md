@@ -124,3 +124,11 @@ Chỉ giáo viên lớp đó được xuất: họ tên, email, số bài nộp/
 - Mất mạng và xung đột draft không làm mất bản mới hơn; quá hạn xử lý theo giờ server.
 - Sửa bài học không đổi snapshot/điểm cũ; thống kê chỉ lấy lượt mới nhất.
 - Nhãn bỏ bài cập nhật dù học viên không nộp; câu sai từ test chưa được xem không lộ qua sổ lỗi.
+
+## Bài từ ảnh scan và ngôn ngữ mới — chưa triển khai
+
+Theo [BD dịch vụ](basic-design/teaching-service.md), ảnh/PDF chỉ là nguồn nhập. OCR tạo draft choice/fill; giáo viên đối chiếu câu, lựa chọn và đáp án trước khi xuất bản thành snapshot. Không tự giải bài rồi coi kết quả AI là đáp án chuẩn. Nếu ảnh có lời giải phải loại/crop khỏi media học sinh; test không lộ đáp án qua ảnh, preview, PDF hoặc tài nguyên chia sẻ.
+
+Nhật giữ quy tắc ở trên. Tiếng Trung cần language profile và input IME/Unicode, không chuyển bằng wanakana; giữ thanh điệu và giản/phồn trừ các phương án tương đương giáo viên khai báo. Không thay normalize toàn cục làm đổi điểm snapshot Nhật cũ.
+
+Tự luận/ảnh bài làm chưa có chấm tay trong code; ngoài MVP scan. Chỉ bật sau thiết kế pending_review/graded và audit người chấm; chờ chấm không coi là sai hoặc 0, báo cáo không coi là chưa nộp.

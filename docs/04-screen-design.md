@@ -191,3 +191,9 @@ Mở trang chủ
 - Furigana dùng thẻ `<ruby>` gốc của HTML
 - Màu dùng để mang thông tin, không dùng để trang trí: đỏ là sai, xanh là đúng, vàng là cần chú ý
 - Mọi thao tác quan trọng phải bấm được bằng bàn phím, vì giảng viên đứng lớp không rảnh tay rê chuột
+
+## Màn hình dịch vụ nhiều giáo viên — chưa triển khai
+
+[BD dịch vụ](basic-design/teaching-service.md) bổ sung SV01–SV06: đăng ký giáo viên, cấu hình lớp có sức chứa/link Meet/ngôn ngữ, thư viện cá nhân/được chia sẻ, cấp/thu hồi quyền version và upload/duyệt bài scan. Trang lớp học sinh hiển thị link Meet và học liệu đã mở theo quyền, không hiển thị notes riêng. Chi tiết route là đề xuất, không phải màn hình đã có.
+
+Luồng mới: giáo viên đăng ký → xác minh → tạo lớp 10 chỗ → học sinh join → giáo viên mở slide và share tab qua Meet → giao bài → theo dõi/nhắc. Giáo viên nhận slide phải có quyền copy để tạo bài riêng trước khi gắn lớp mình. Ô tiếng Trung dùng IME/Unicode, không gắn wanakana; Nhật giữ quy tắc hiện tại. Review scan có trang nguồn bên cạnh câu tương tác, duyệt đáp án trước xuất bản.

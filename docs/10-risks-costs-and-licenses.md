@@ -157,3 +157,16 @@ Bị giới hạn lượt tải, định dạng URL thay đổi không báo trư
 - [ ] Font Noto Sans JP đã nhúng, test trên máy Windows không cài font Nhật
 - [ ] Audio đã nằm trên R2, không phải Supabase Storage
 - [ ] Đã thử chiếu lên máy chiếu thật của phòng học
+
+## Rủi ro mới của dịch vụ nhiều giáo viên
+
+Phần này là yêu cầu thiết kế/vận hành dự kiến, không phải kết luận pháp lý hoặc bảng giá đã xác minh.
+
+- Nhiều giáo viên cần cách ly dữ liệu cả trong API dùng service role, database và storage; cấp quyền slide không cấp quyền xem học sinh/điểm/notes.
+- Giáo viên phải có quyền sử dụng và chia sẻ tài liệu/media. Quyền dùng trong một lớp không tự suy ra quyền cho đồng nghiệp sao chép/phát hành. Lưu nguồn/phạm vi cấp phép và có cơ chế báo cáo/gỡ nội dung.
+- Ảnh scan có thể chứa tên, số điện thoại, bài làm hoặc đáp án. Mặc định riêng tư, yêu cầu loại thông tin không cần thiết, giới hạn truy cập và thời gian lưu; xác minh điều khoản xử lý dữ liệu OCR trước gửi ra ngoài.
+- OCR có thể sai ký tự, bố cục hoặc đáp án. Bắt buộc giáo viên duyệt, hiển thị nguồn cạnh draft; tự luận/viết tay không được hứa chấm tự động.
+- Tính chi phí theo trang OCR, dung lượng/tải ảnh, lượt job và email/audio mỗi giáo viên; đặt quota thử nghiệm. Không tiếp tục giả định free tier đủ cho mọi lớp hoặc gọi OCR không giới hạn.
+- Meet phụ thuộc quyền/tài khoản/thiết bị bên ngoài; link không đảm bảo người cầm link là thành viên Masu. Bản đầu chỉ lưu link/share tab, chưa cam kết quota họp, ghi hình hoặc điểm danh từ Meet.
+
+Chốt nhà cung cấp, gói giá và chính sách dữ liệu trước mở dịch vụ; không mua gói hoặc bật tính phí chỉ vì bản thiết kế đã được ghi. Quy tắc cụ thể ở [DD dịch vụ](detail-design/teaching-service.md).

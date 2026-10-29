@@ -1,8 +1,10 @@
-# Website dạy tiếng Nhật N5
+# Masu — Tài liệu dịch vụ hỗ trợ giảng dạy
 
-Bộ tài liệu thiết kế cho website phục vụ việc giảng dạy N5: giảng viên soạn bài một lần, hệ thống sinh ra slide để chiếu trên lớp, trang tự học cho học viên, và bài tập chấm tự động.
+Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; tiếng Trung, đăng ký giáo viên, chia sẻ và nhập scan là phạm vi mới chưa triển khai. Đọc [tổng quan](00-overview.md) trước.
 
 ## Cách đọc
+
+Định hướng dịch vụ ngày 29/10/2026: [Basic Design](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [tiêu chí nghiệm thu NOT RUN](testing/teaching-service.md). Đây là nguồn cho phạm vi mới, không phải kết quả đã triển khai.
 
 Giai đoạn 2: [Basic Design](basic-design/phase-2.md), [Detail Design](detail-design/phase-2.md), [checklist](testing/phase-2.md), [biên soạn nội dung](content-authoring.md), [chuẩn bị staging](staging-setup.md).
 
@@ -44,7 +46,7 @@ Một nguồn nội dung, nhiều cách hiển thị. Mỗi bài học là một
 
 ## Trạng thái tài liệu
 
-Được rà soát và bổ sung ngày 28/10/2026. Đã có bản local của giai đoạn 1–3: kana/audio, bài học/trình chiếu, lớp học/bài giao/ôn tập trên Supabase local. Kết quả/giới hạn kiểm chứng xem testing/phase-1.md, phase-2.md, phase-3.md; chưa nghiệm thu cloud hoặc lớp học thật. Hướng dẫn khởi động tại README.md ở thư mục gốc.
+Định hướng dịch vụ được cập nhật ngày 29/10/2026; các phần mới đều chưa triển khai. Nền local giai đoạn 1–4 và phần A giai đoạn 5 đã có mã nguồn; kết quả/giới hạn kiểm chứng xem checklist từng giai đoạn, chưa nghiệm thu cloud hoặc lớp học thật. Hướng dẫn khởi động tại README.md ở thư mục gốc.
 
 Các quyết định trong tài liệu là đặc tả dự kiến, không phải tính năng đã hoàn thành. Phần nào đã triển khai thì cập nhật lại file tương ứng thay vì viết tài liệu mới. Mốc triển khai và tiêu chí nghiệm thu lấy theo `09-roadmap.md`; font, màu và kích thước lấy theo `12-ui-design.md`.
 

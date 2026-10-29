@@ -1,5 +1,7 @@
 # Detail Design giai đoạn 3
 
+> Tài liệu này mô tả nền lớp học đã triển khai với role student/teacher hiện tại. Yêu cầu dịch vụ ngày 29/10/2026 bổ sung đăng ký giáo viên, vừa học vừa dạy và chia sẻ theo [BD dịch vụ](../basic-design/teaching-service.md); chưa triển khai. Kết quả AUTH-01 cũ chỉ chứng minh luồng cấp quyền thủ công, không phải onboarding giáo viên mới.
+
 Theo [BD](../basic-design/phase-3.md), schema chung 03, chấm/nộp 07. Phiên bản dependency theo lockfile: Supabase JS/SSR, ts-fsrs 5.4.2, wanakana 5.3.1, Supabase CLI 2.122.0 (chỉ dùng cho môi trường local).
 
 ## Module

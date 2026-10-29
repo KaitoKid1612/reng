@@ -2,7 +2,7 @@
 
 Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; nội dung học giữ tiếng Việt/Nhật. Chạy `npm run check` trước khi bàn giao thay đổi.
 
-Website học tiếng Nhật N5. Bản local đầu tiên gồm trang chủ, bảng kana, luyện romaji và trang nguồn dữ liệu. [Tài liệu](docs/README.md), [BD giai đoạn 1](docs/basic-design/phase-1.md), [DD giai đoạn 1](docs/detail-design/phase-1.md).
+Masu hướng tới dịch vụ cho giáo viên: quản lý lớp, slide/chia sẻ học liệu, bài tập và theo dõi tiến độ; dạy video qua Google Meet bên ngoài. [Thiết kế dịch vụ](docs/basic-design/teaching-service.md) bổ sung đăng ký giáo viên, tiếng Trung và nhập scan có duyệt — các phần mở rộng này chưa triển khai. Nền hiện tại bắt đầu từ tiếng Nhật N5, với trang chủ, bảng kana, luyện romaji và trang nguồn dữ liệu. [Tài liệu](docs/README.md), [BD giai đoạn 1](docs/basic-design/phase-1.md), [DD giai đoạn 1](docs/detail-design/phase-1.md).
 
 Đã có thêm 5 bài mẫu tự biên soạn tại `/lessons`, trang đọc, `/grammar`, slide/presenter và bản in PDF. Bài mẫu chưa được giảng viên duyệt. [BD giai đoạn 2](docs/basic-design/phase-2.md), [DD giai đoạn 2](docs/detail-design/phase-2.md), [hướng dẫn nội dung](docs/content-authoring.md).
 

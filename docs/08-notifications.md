@@ -123,3 +123,7 @@ Push dùng cho tin ngắn và gấp: "Bài tập bài 5 hết hạn trong 2 gi�
 Đừng hỏi ngay lúc học viên mở trang lần đầu — gần như ai cũng từ chối.
 
 Hỏi sau khi học viên hoàn thành phiên ôn đầu tiên, lúc họ đang có cảm giác tích cực: "Nhắc bạn ôn mỗi tối nhé?"
+
+## Phạm vi dịch vụ nhiều giáo viên
+
+Dịch vụ mới giữ opt-in và job idempotency hiện tại. Giáo viên chỉ xem việc cần nhắc của lớp mình; không xem địa chỉ email/lịch học ngoài phạm vi. Trước khi gửi, kiểm tra lại membership, trạng thái nộp, hạn và lựa chọn nhận tin. Mã/lời mời lớp không tự đăng ký nhận email. Bổ sung quota/tốc độ gửi theo giáo viên và audit trước mở nhiều giáo viên; chưa triển khai quota này. Không đưa signed URL scan, đáp án test, notes hay link Meet riêng vào email digest không đúng đối tượng.

@@ -153,7 +153,7 @@ Giai đoạn 5 thêm `kanji_entries`: `id text PK`, `character text UNIQUE`, `on
 | Audio metadata / email log | Không đọc trực tiếp; API chỉ trả URL media được phép | Không có quyền database trực tiếp ngoài nhu cầu soạn bài |
 | Push subscription | API quản lý thiết bị của mình, không đọc khóa thiết bị khác | Không truy cập |
 
-RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầu tiên. Các bảng snapshot, điểm, log chỉ server ghi. Service role chỉ được gọi sau khi API kiểm tra user và quyền sở hữu/thành viên. Mã lớp sinh ngẫu nhiên, được đổi hoặc thu hồi; API vào lớp có giới hạn thử, thông báo mã không hợp lệ không tiết lộ thông tin lớp. Chưa có chia sẻ bài giữa giảng viên trong bản đầu.
+RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầu tiên. Các bảng snapshot, điểm, log chỉ server ghi. Service role chỉ được gọi sau khi API kiểm tra user và quyền sở hữu/thành viên. Mã lớp sinh ngẫu nhiên, được đổi hoặc thu hồi; API vào lớp có giới hạn thử, thông báo mã không hợp lệ không tiết lộ thông tin lớp. Mã nguồn hiện tại chưa có chia sẻ bài giữa giảng viên; thiết kế dịch vụ bổ sung grant theo phiên bản, không cấp quyền dữ liệu lớp. Xem [DD dịch vụ](detail-design/teaching-service.md).
 
 ## Thứ tự migration
 
@@ -164,3 +164,9 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 5. Giai đoạn 6: push_subscriptions; bổ sung trường push vào API tùy chọn.
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
+
+## Mở rộng dữ liệu dịch vụ — chưa migration
+
+[DD dịch vụ](detail-design/teaching-service.md) đề xuất teacher_accounts, lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/language_tag/meeting_url, nội dung thêm schema_version/locale. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
+
+Cần thay role độc quyền student/teacher bằng khả năng dạy kết hợp enrollment để hỗ trợ vừa học vừa dạy; backfill và kiểm tra toàn bộ RLS/RPC trước chuyển đổi. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.

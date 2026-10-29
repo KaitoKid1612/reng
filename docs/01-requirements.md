@@ -2,6 +2,8 @@
 
 Ký hiệu mức ưu tiên: **P0** là tính năng cốt lõi của sản phẩm, **P1** cần cho vận hành đầy đủ, **P2** mở rộng. Mốc giao cụ thể theo `09-roadmap.md`; bản chạy đầu tiên chỉ gồm nền và kana, không gom mọi P0 vào giai đoạn 1.
 
+Phạm vi dịch vụ cập nhật ngày 29/10/2026: đăng ký giáo viên, lớp riêng, chia sẻ và nhập scan theo phần yêu cầu dịch vụ cuối file. Các mục kana/N5 bên dưới thuộc module tiếng Nhật; mức P0 của chúng không bắt buộc xuất hiện trong lớp tiếng Trung.
+
 ## Yêu cầu chức năng
 
 ### Bảng chữ cái
@@ -147,7 +149,7 @@ Ký hiệu mức ưu tiên: **P0** là tính năng cốt lõi của sản phẩm
 
 ### Chi phí vận hành
 
-- Giai đoạn đầu phải nằm trong free tier của các dịch vụ
+- Ưu tiên chi phí thấp khi thử nghiệm; dịch vụ nhiều giáo viên cần ngân sách/quota lưu trữ, OCR, email và audio đo được, không cam kết luôn nằm trong free tier
 - Băng thông audio là khoản dễ vượt nhất, cần xử lý riêng
 
 ### Khả năng mở rộng nội dung
@@ -162,9 +164,30 @@ Ký hiệu mức ưu tiên: **P0** là tính năng cốt lõi của sản phẩm
 | DATA-01 | Bài học xuất bản theo phiên bản bất biến, lớp chọn phiên bản; bài giao giữ snapshot | P0 |
 | DATA-02 | Lưu draft bài làm trên server; khôi phục khi tải lại, phát hiện xung đột hai tab | P1 |
 | DATA-03 | Bắt đầu/nộp/ôn tập retry không tạo trùng lượt, điểm hoặc lịch ôn | P0 |
-| AUTH-01 | Đăng ký luôn là học viên; quyền giảng viên do người vận hành cấp phía server | P0 |
+| AUTH-01 | Đăng ký chọn học sinh/giáo viên; server cấp khả năng dạy sau xác nhận email và kiểm soát lạm dụng, không tin role từ client. Hiện tại vẫn cấp giáo viên thủ công; luồng mới theo BD dịch vụ | P0 |
 | CLASS-07 | Chọn bài, phiên bản, thứ tự và thời điểm mở cho lớp | P1 |
 | EX-09 | Phân biệt practice/test, chính sách xem kết quả, nộp muộn và lượt làm theo 07 | P0 |
 | OPS-01 | Tách môi trường; có sao lưu và khôi phục thử trước lớp thật | P1 |
 
 Đặc tả dữ liệu và chấm điểm chi tiết lấy theo 03 và 07. Nộp bài trùng, mất mạng, quyền truy cập và nội dung đã sửa là tình huống nghiệm thu bắt buộc ở giai đoạn 3.
+
+## Yêu cầu dịch vụ nhiều giáo viên — chưa triển khai
+
+Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế cũ N5 vẫn áp dụng cho module tiếng Nhật. Tham chiếu [BD](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md), [nghiệm thu](testing/teaching-service.md).
+
+| ID | Yêu cầu | Ưu tiên |
+|---|---|---|
+| SERVICE-01 | Tự đăng ký giáo viên, xác minh email, khởi tạo không gian cá nhân; cho phép vừa dạy vừa học, quyền cấp phía server | P0 |
+| SERVICE-02 | Cách ly dữ liệu lớp và học liệu riêng giữa giáo viên ở API, RLS và media | P0 |
+| CLASS-08 | Sức chứa lớp tùy chọn, ví dụ 10 chỗ; đếm thành viên đang học, vào đồng thời không vượt chỗ | P0 |
+| CLASS-09 | Link Google Meet cho thành viên lớp, giáo viên chia sẻ tab slide; không tự tạo cuộc gọi | P0 |
+| LANG-01 | Nội dung có ngôn ngữ/locale; Nhật và Trung dùng bộ nhập, font, TTS, chuẩn hóa/chấm phù hợp | P0 |
+| SHARE-01 | Chia sẻ một phiên bản slide cho giáo viên cụ thể, quyền xem hoặc sao chép; có thu hồi | P0 |
+| SHARE-02 | Bản sao độc lập giữ nguồn và tác giả; cập nhật bài gốc không tự đổi lớp/bài giao nhận | P0 |
+| SCAN-01 | Upload ảnh/PDF riêng tư, xem trang gốc, xử lý bất đồng bộ có quota và báo lỗi | P1 |
+| SCAN-02 | OCR/nhận dạng cấu trúc thành draft; giáo viên duyệt từng câu, đáp án, điểm, hình trước xuất bản | P1 |
+| SCAN-03 | Bản đầu chuyển trắc nghiệm/điền từ chữ in; phần không nhận được phải đánh dấu và sửa tay, không tự bịa | P1 |
+| GRADE-01 | Tự chấm câu có quy tắc; câu tự luận/viết tay báo chờ chấm, giáo viên chấm tay trong luồng riêng trước khi hỗ trợ | P1 |
+| OPS-02 | Quota theo giáo viên, audit chia sẻ/nhập scan, xóa tệp theo chính sách và xử lý báo cáo nội dung | P1 |
+
+EX-03 phải tuân theo practice/test và thời điểm phản hồi; không phải mọi bài đều lộ đáp án ngay. ADMIN-05 trở thành phần cốt lõi của SHARE-02. Không suy ra bộ đề chia sẻ là câu test bí mật.

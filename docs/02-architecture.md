@@ -122,7 +122,7 @@ Ba vai:
 
 Thực hiện bằng Supabase Auth cộng Row Level Security. RLS bảo vệ truy cập trực tiếp database; API vẫn phải xác thực người dùng và kiểm tra quyền theo lớp, bài học, lượt làm. API dùng service role phải tự kiểm tra đầy đủ vì khóa này có quyền vượt RLS. Không đưa khóa đó vào trình duyệt.
 
-Tài khoản đăng ký luôn là học viên. Người vận hành cấp quyền giảng viên qua thao tác quản trị phía server; người dùng không tự sửa `profiles.role`. Chưa có giao diện quản trị trong bản đầu. Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
+Mã nguồn hiện tại tạo tài khoản học viên; người vận hành cấp quyền giảng viên phía server, người dùng không tự sửa `profiles.role`. Định hướng dịch vụ bổ sung đăng ký giáo viên sau xác minh email và cho phép vừa học vừa dạy; đây là thay đổi chưa triển khai, phải nâng cấp gate/RLS/RPC đồng bộ theo [DD dịch vụ](detail-design/teaching-service.md). Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
 
 Đáp án của bài kiểm tra phải thuộc phiên bản riêng không xuất hiện ở bất kỳ API đọc công khai nào, kể cả bài luyện hoặc slide. Chi tiết ranh giới nội dung tại `03-data-design.md`.
 
@@ -156,3 +156,9 @@ Vercel Cron chạy theo giờ UTC. Muốn 20h giờ Việt Nam thì đặt `0 13
 **localStorage làm nơi lưu tiến độ chính.** Mất khi học viên đổi máy hoặc xóa cache. Chỉ dùng cho tiện ích nhỏ như nhớ tab đang mở.
 
 **Sinh hai file audio cho hai tốc độ.** Dùng `playbackRate` kèm `preservesPitch` là đủ, tiết kiệm nửa dung lượng.
+
+## Kiến trúc dịch vụ nhiều giáo viên — dự kiến
+
+Tiếp tục Next.js + Supabase, tách quyền chủ sở hữu và quyền chia sẻ rõ ràng. Google Meet là dịch vụ video bên ngoài; Masu lưu link riêng cho lớp và cung cấp tab slide để giáo viên chia sẻ. Không cần OAuth/SDK video cho mốc đầu. Đồng bộ presenter bằng BroadcastChannel hiện tại không phải đồng bộ slide từ xa.
+
+Nhập scan cần object storage riêng tư, worker/queue bất đồng bộ, OCR adapter và editor duyệt; chỉ chuyển dữ liệu đã duyệt sang draft bài học/bộ câu hỏi. Không đặt ảnh chứa đáp án vào bucket audio công khai hoặc chạy OCR dài trong request web. Chưa chọn nhà cung cấp/worker hosting. Xem [BD](basic-design/teaching-service.md) và [DD dự kiến](detail-design/teaching-service.md); toàn bộ phần mở rộng chưa có trong code.

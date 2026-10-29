@@ -1,5 +1,7 @@
 # Lộ trình
 
+Định hướng mới ngày 29/10/2026 được ghi ở [điều chỉnh ưu tiên dịch vụ](#điều-chỉnh-ưu-tiên-dịch-vụ--29102026): nhiều giáo viên, Nhật/Trung, lớp riêng, chia sẻ và scan. Các giai đoạn dưới đây mô tả kế hoạch nền N5; mốc Service A–D là thứ tự công việc tiếp theo.
+
 ## Trạng thái và quyết định bản đầu
 
 Ngày rà soát: 28/10/2026. Đã triển khai bản local đầu tiên của giai đoạn 1, chưa giai đoạn nào được nghiệm thu hoàn chỉnh. Thời lượng bên dưới là ước lượng lập kế hoạch, không phải cam kết tiến độ.
@@ -196,3 +198,17 @@ Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide,
 ## Tiến độ local giai đoạn 5 (phần A — luyện nghe)
 
 Đã có câu nghe chọn đáp án, nghe gõ đáp án và chính tả trong editor; script sinh audio đọc/ghi nháp database (`--db`) có kiểm tra revision; player không thanh tua (lùi 5 giây, chậm 0.75x, đếm lượt, giới hạn lượt, lỗi không tính lượt); trang S15 chấm qua API và chỉ hiện transcript sau khi trả lời; câu nghe trong bài giao practice lưu listen_count; báo cáo có điểm nghe, nghe trung bình và nhãn yếu nghe. Đã kiểm chứng trên Supabase local ([checklist phase-5](testing/phase-5.md)). Chưa có: câu nghe trong bài test (cần phân phối audio riêng), audio Azure thật đã nghe duyệt, kanji (KANJIDIC2/KanjiVG chờ quyết định giấy phép), furigana và audio hội thoại nhiều giọng.
+
+## Điều chỉnh ưu tiên dịch vụ — 29/10/2026
+
+Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, ưu tiên Nhật/Trung, lớp riêng và dạy qua Google Meet bên ngoài. Đây là hướng tiếp theo trước tiện ích giai đoạn 6; không phủ nhận các phần local đã có và không đánh dấu nghiệm thu cloud. Tài liệu N5 giai đoạn 1–5 giữ vai trò lịch sử triển khai; ngoài các thay đổi rõ dưới đây, tính năng cũ vẫn là nền tái sử dụng.
+
+| Mốc mới | Nội dung | Điều kiện hoàn tất |
+|---|---|---|
+| Service A | Tự đăng ký giáo viên, quyền vừa dạy/vừa học, cách ly dữ liệu, capacity và link Meet | Hai giáo viên không vượt quyền; lớp 10 chỗ không vượt chỗ khi join đồng thời; dạy thử bằng share tab |
+| Service B | Metadata/ngôn ngữ Nhật–Trung, thư viện chia sẻ version, view/copy/thu hồi | Một bài Trung chạy đúng font/input/chấm; copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp |
+| Service C1 | Upload ảnh/PDF riêng tư, hiển thị nguồn, crop/nhập câu thủ công | Có bài tương tác được duyệt từ scan và giao/làm/chấm trọn luồng |
+| Service C2 | OCR/job nền, gợi ý cấu trúc choice/fill, review bắt buộc, quota | Benchmark giúp giảm công nhập; mọi câu xuất bản đã duyệt, retry không mất sửa tay, chi phí đo được |
+| Service D | Chấm tay và thêm dạng scan theo nhu cầu thật | Có workflow chờ chấm/điểm/audit, không trộn điểm chờ với 0 |
+
+Chưa ước lượng lịch trước khi chốt lát kỹ thuật. OCR provider, hosting worker và ngân sách theo trang cần thử dữ liệu thực; không trì hoãn A/B vì C2. Thu phí, marketplace, tự tạo Meet bằng OAuth và đồng bộ slide từ xa chưa thuộc mốc đầu. Xem [BD](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [checklist NOT RUN](testing/teaching-service.md).

@@ -124,3 +124,9 @@ Luồng chuyển tiếp này chưa nằm trong bản đầu và chưa có trư�
 Hash `#7` là số slide hiển thị 1-based; adapter đổi sang index của engine. Hash sai hoặc vượt phạm vi đưa về slide đầu và báo nhẹ. Hash chỉ ổn định trong cùng phiên bản; lớp dùng lesson_version_id đã ghim. URL giảng viên có thể dùng `?version=<id>#7`; API vẫn kiểm tra quyền.
 
 Bản PDF cho học viên chỉ in nội dung xuất bản được phép xem; không chứa teacherNotes, dữ liệu test hoặc đáp án riêng. Kiểm tra font tải xong, câu dài có ruby, fragment hiện đủ và ngắt trang trên máy chiếu 1280×720 trước nghiệm thu.
+
+## Dạy qua Meet và chia sẻ học liệu — thiết kế mới
+
+Giáo viên mở slide Masu rồi chia sẻ tab qua Google Meet; presenter/notes giữ ở cửa sổ khác. Đây là quy trình dùng slide hiện tại với dịch vụ video bên ngoài, chưa có tích hợp cuộc gọi. BroadcastChannel hiện tại chỉ điều khiển cửa sổ cùng trình duyệt; không đồng bộ slide tới máy học sinh qua mạng.
+
+Chia sẻ giữa giáo viên là quyền trên version và bản sao độc lập theo [BD dịch vụ](basic-design/teaching-service.md), không đồng nghĩa chia sẻ phòng học hay cấp quyền sửa bài gốc. Bài Trung cần locale/font phù hợp, không dùng mặc định font Nhật cho mọi chữ Hán. Trang scan dạng ảnh chỉ để hiển thị; muốn chấm tự động phải chuyển thành câu có cấu trúc/đáp án được duyệt.

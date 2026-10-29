@@ -1,5 +1,7 @@
 # Truy vết và nghiệm thu giai đoạn 3
 
+> Tài liệu này mô tả nền lớp học đã triển khai với role student/teacher hiện tại. Yêu cầu dịch vụ ngày 29/10/2026 bổ sung đăng ký giáo viên, vừa học vừa dạy và chia sẻ theo [BD dịch vụ](../basic-design/teaching-service.md); chưa triển khai. Kết quả AUTH-01 cũ chỉ chứng minh luồng cấp quyền thủ công, không phải onboarding giáo viên mới.
+
 PASS local không thay thế nghiệm thu Supabase cloud, email thật hoặc lớp học thật. BD/DD tại ../basic-design/phase-3.md và ../detail-design/phase-3.md.
 
 | ID | Yêu cầu | Kiểm tra | Kết quả |
