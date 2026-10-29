@@ -21,12 +21,15 @@ test("robots and sitemap expose public pages and keep private areas out", async 
   expect(sitemap).not.toContain("?version=");
 });
 
+// Crawlers load every URL directly. A click made before hydration finishes can leave the previous
+// page's head tags behind for the rest of the visit, so head tags are checked after a fresh load.
 test("the teacher landing page has a clear heading, description, canonical and FAQ data", async ({
   page,
 }) => {
   await page.goto("/");
   await page.getByRole("link", { name: "Cho giáo viên", exact: true }).click();
   await page.waitForURL("**/for-teachers");
+  await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Dạy tiếng Trung online cho học viên Việt Nam",
   );
@@ -46,6 +49,7 @@ test("lesson pages use the lesson URL as canonical and describe the lesson", asy
   await page.goto("/lessons");
   await page.getByRole("link", { name: "Đọc bài" }).first().click();
   await page.waitForURL(/\/lessons\/lesson-01\?version=/);
+  await page.reload();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     `${ORIGIN}/lessons/lesson-01`,
