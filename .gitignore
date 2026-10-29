@@ -17,3 +17,4 @@ content/lesson-catalog.json.lock
 /.codex/
 /.agents/
 /.claude/
+.vercel
