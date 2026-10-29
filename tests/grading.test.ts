@@ -126,3 +126,35 @@ test("attempt scores use integer points and unrounded pass thresholds", () => {
   assert.equal(Math.round(toPercent(2, 3)), 67);
   assert.throws(() => gradeAttempt([], {}));
 });
+
+test("the Chinese grading profile keeps tones, spacing and scripts exactly", () => {
+  assert.equal(normalizeAnswer(" nǐ hǎo ", "zh-exact-v1"), "nǐ hǎo");
+  assert.notEqual(
+    normalizeAnswer("nǐhǎo", "zh-exact-v1"),
+    normalizeAnswer("nǐ hǎo", "zh-exact-v1"),
+  );
+  const decomposed = `ni${String.fromCodePoint(0x30c)}`;
+  assert.equal(normalizeAnswer(decomposed, "zh-exact-v1"), "nǐ", "NFC composes tone marks");
+  assert.equal(normalizeAnswer("いき ます。"), "いきます", "Japanese answers keep the v1 rules");
+
+  const question = questionSchema.parse({
+    id: "q1",
+    type: "fill",
+    prompt: "Viết pinyin của 你好",
+    inputMode: "pinyin",
+    gradingProfile: "zh-exact-v1",
+    answer: ["nǐ hǎo"],
+    explain: "nǐ hǎo",
+    points: 1,
+  });
+  assert.equal(gradeQuestion(question, "nǐ hǎo").isCorrect, true);
+  assert.equal(gradeQuestion(question, "ni hao").isCorrect, false, "tones are required");
+  assert.equal(gradeQuestion(question, "nǐhǎo").isCorrect, false);
+  const characters = questionSchema.parse({
+    ...question,
+    inputMode: "chinese",
+    answer: ["谢谢"],
+  });
+  assert.equal(gradeQuestion(characters, "謝謝").isCorrect, false, "no script conversion");
+  assert.equal(gradeQuestion(characters, "谢谢").isCorrect, true);
+});

@@ -24,6 +24,7 @@ const questionBase = {
   points: z.number().int().positive(),
   tags: z.array(text).default([]),
   explain: text,
+  gradingProfile: z.enum(["ja-default-v1", "zh-exact-v1"]).optional(),
 };
 const choiceFields = {
   options: z.array(text).min(2),
@@ -31,7 +32,7 @@ const choiceFields = {
   answer: z.array(z.number().int().nonnegative()).min(1),
 };
 const fillFields = {
-  inputMode: z.enum(["hiragana", "katakana", "japanese"]).default("hiragana"),
+  inputMode: z.enum(["hiragana", "katakana", "japanese", "chinese", "pinyin"]).default("hiragana"),
   kanjiStrict: z.boolean().default(false),
   answer: z.array(text).min(1),
 };

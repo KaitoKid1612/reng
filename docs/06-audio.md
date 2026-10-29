@@ -50,7 +50,7 @@ Phát/dừng, đổi câu/rời trang hủy nguồn cũ; lỗi có thử lại v
 
 Transcript/đáp án theo practice/test và feedback_policy ở [07](07-exercises-and-grading.md). Giới hạn nghe trên file đã tải không ngăn phát ngoài hệ thống; test nghe chưa được hỗ trợ trong bản hiện tại. Không tuyên bố chấm phát âm, waveform hoặc ghi âm đã có; các phần đó ngoài MVP.
 
-Fallback giọng thiết bị chỉ dùng đúng ngôn ngữ khi có voice phù hợp và có thông báo; thiếu voice báo rõ. Bài nghe cần audio chuẩn vẫn bị chặn nếu chưa đủ điều kiện. Giọng thiết bị không thay thế việc nghe duyệt asset.
+Fallback giọng thiết bị chỉ dùng đúng ngôn ngữ khi có voice phù hợp và có thông báo; thiếu voice báo rõ. Đã triển khai trong `lib/audio-player.ts`: bài v2 truyền locale `zh-CN`/`zh-TW` và chỉ nhận voice cùng locale (không lấy zh-HK hay giọng Nhật); TTS web cho tiếng Trung vẫn chưa có. Bài nghe cần audio chuẩn vẫn bị chặn nếu chưa đủ điều kiện. Giọng thiết bị không thay thế việc nghe duyệt asset.
 
 ## Công cụ hiện có và nghiệm thu
 

@@ -5,6 +5,7 @@ interface AnswerFeedbackProps {
   correctText: string;
   explain: string;
   transcript?: string | null;
+  lang?: string;
 }
 
 export function AnswerFeedback({
@@ -12,6 +13,7 @@ export function AnswerFeedback({
   correctText,
   explain,
   transcript,
+  lang = "ja",
 }: AnswerFeedbackProps) {
   return (
     <div
@@ -21,7 +23,8 @@ export function AnswerFeedback({
       {isCorrect ? <Check size={20} aria-hidden="true" /> : <X size={20} aria-hidden="true" />}
       <div>
         <p>
-          {isCorrect ? "Đúng rồi!" : "Chưa đúng."} Đáp án: <strong lang="ja">{correctText}</strong>
+          {isCorrect ? "Đúng rồi!" : "Chưa đúng."} Đáp án:{" "}
+          <strong lang={lang}>{correctText}</strong>
         </p>
         <p className="muted">{explain}</p>
         {transcript && (

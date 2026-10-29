@@ -171,6 +171,7 @@ test("listening views hide transcripts and answers but keep audio and listen lim
     type: "listen",
     prompt: "Người nói đi đâu?",
     points: 1,
+    lang: "ja",
     audio: "a".repeat(32),
     maxListens: 2,
     responseType: "choice",

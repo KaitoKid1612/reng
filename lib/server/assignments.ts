@@ -261,7 +261,7 @@ export interface PublishAssignmentInput {
 }
 
 export async function publishAssignment(teacherId: string, input: PublishAssignmentInput) {
-  await getTeacherClass(teacherId, input.classId);
+  const classRow = await getTeacherClass(teacherId, input.classId);
   const settings = assignmentSettingsSchema.parse(input.settings);
   let practiceQuestionIds: string[] = [];
   let testQuestions: AssignableQuestion[] | null = null;
@@ -275,7 +275,7 @@ export async function publishAssignment(teacherId: string, input: PublishAssignm
       throw new ServiceError("invalid_items");
     }
   } else {
-    testQuestions = toTestQuestions(input.testQuestions);
+    testQuestions = toTestQuestions(input.testQuestions, classRow.language_tag);
     if (!testQuestions.length) {
       throw new ServiceError("invalid_items");
     }

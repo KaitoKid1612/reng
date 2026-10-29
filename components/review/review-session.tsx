@@ -176,6 +176,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
                 isCorrect={outcome.isCorrect}
                 correctText={outcome.correctText}
                 explain={outcome.explain}
+                lang={card.view.lang}
               />
               <p className="small muted">
                 {outcome.isResolved

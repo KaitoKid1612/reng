@@ -1,6 +1,7 @@
 import { normalizeAnswer } from "./normalize";
 import { isBlankAnswer } from "./raw-answer";
 
+import type { GradingProfile } from "@/lib/language-profile";
 import type { RawAnswer } from "./raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
@@ -38,12 +39,18 @@ function matchesChoice(accepted: readonly number[], raw: RawAnswer) {
   );
 }
 
-function matchesText(accepted: readonly string[], raw: RawAnswer) {
+function matchesText(
+  accepted: readonly string[],
+  raw: RawAnswer,
+  profile: GradingProfile = "ja-default-v1",
+) {
   if (typeof raw !== "string") {
     return false;
   }
-  const normalized = normalizeAnswer(raw);
-  return normalized !== "" && accepted.some((answer) => normalizeAnswer(answer) === normalized);
+  const normalized = normalizeAnswer(raw, profile);
+  return (
+    normalized !== "" && accepted.some((answer) => normalizeAnswer(answer, profile) === normalized)
+  );
 }
 
 function matchesPairs(accepted: readonly [number, number][], raw: RawAnswer) {
@@ -71,7 +78,7 @@ function isCorrectAnswer(question: LessonQuestion, raw: RawAnswer) {
       return matchesChoice(question.answer, raw);
     case "fill":
     case "dictation":
-      return matchesText(question.answer, raw);
+      return matchesText(question.answer, raw, question.gradingProfile);
     case "match":
       return matchesPairs(question.answer, raw);
     case "order":
@@ -85,6 +92,7 @@ function isCorrectAnswer(question: LessonQuestion, raw: RawAnswer) {
         : matchesText(
             question.answer.filter((item): item is string => typeof item === "string"),
             raw,
+            question.gradingProfile,
           );
   }
 }

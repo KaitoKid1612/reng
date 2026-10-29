@@ -1,6 +1,6 @@
 # Bài tập và chấm điểm
 
-Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có mã nguồn và bằng chứng local ở testing/phase-3.md và phase-5.md; profile Trung/soạn theo mẫu/scan/chấm tay là thiết kế mới chưa triển khai. Không đánh dấu tiêu chí dịch vụ đạt chỉ vì unit tests nền đã qua.
+Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có mã nguồn và bằng chứng local ở testing/phase-3.md và phase-5.md; profile chấm Trung `zh-exact-v1` và soạn theo mẫu đã có bản local (xem [nghiệm thu dịch vụ](testing/teaching-service.md)); scan và chấm tay vẫn là thiết kế chưa triển khai. Không đánh dấu tiêu chí dịch vụ đạt chỉ vì unit tests nền đã qua.
 
 ## Dạng bài và cách nhập
 
@@ -133,9 +133,9 @@ Nhật giữ quy tắc ở trên. Tiếng Trung cần language profile và input
 
 Tự luận/ảnh bài làm chưa có chấm tay trong code; ngoài MVP scan. Chỉ bật sau thiết kế pending_review/graded và audit người chấm; chờ chấm không coi là sai hoặc 0, báo cáo không coi là chưa nộp.
 
-## Profile Trung và xác nhận đáp án — dự kiến
+## Profile Trung và xác nhận đáp án
 
-Bài tập từ wizard hoặc scan đi qua cùng validator/review phía server. Mặc định so sánh Unicode NFC và khoảng trắng đầu/cuối cho profile Trung; giữ dấu thanh, khoảng trắng bên trong pinyin, dấu câu, giản/phồn và chữ hoa/thường nếu chưa có quy tắc khác được chụp vào snapshot. Không áp tự động quy tắc xóa mọi khoảng trắng/dấu chấm của normalizeAnswer Nhật cho pinyin. Giáo viên khai báo phương án tương đương; không tự dịch hoặc chuyển pinyin sang chữ Hán để chấm.
+Đã triển khai: `lib/language-profile.ts` có `ja-default-v1` (quy tắc Nhật cũ, mặc định khi câu không khai báo) và `zh-exact-v1`; profile nằm trong từng câu của snapshot nên đổi sau này không chấm lại bài cũ. Câu điền chữ Hán/pinyin dùng `zh-exact-v1`; câu test trắc nghiệm trong lớp tiếng Trung cũng gắn profile này (chỉ ảnh hưởng hiển thị). Xác nhận đáp án là hash do server tính trên câu đã lưu. Bài tập từ wizard hoặc scan đi qua cùng validator/review phía server. Mặc định so sánh Unicode NFC và khoảng trắng đầu/cuối cho profile Trung; giữ dấu thanh, khoảng trắng bên trong pinyin, dấu câu, giản/phồn và chữ hoa/thường nếu chưa có quy tắc khác được chụp vào snapshot. Không áp tự động quy tắc xóa mọi khoảng trắng/dấu chấm của normalizeAnswer Nhật cho pinyin. Giáo viên khai báo phương án tương đương; không tự dịch hoặc chuyển pinyin sang chữ Hán để chấm.
 
 MVP hỗ trợ yêu cầu điền chữ Hán hoặc pinyin bằng loại câu/input profile rõ; không suy ra từ câu học sinh nhập. Câu thiếu đáp án, choice có lựa chọn trùng hoặc câu chưa được xác nhận ở revision hiện tại bị chặn xuất bản. Sửa nội dung chấm làm mất review cũ. Điểm/đạt/trượt do server tính từ snapshot, feedback_policy không đổi.
 

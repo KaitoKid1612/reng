@@ -81,7 +81,7 @@ export function QuestionField({
     return (
       <div>
         {meta}
-        <label htmlFor={fieldId} className="question-prompt" lang="ja">
+        <label htmlFor={fieldId} className="question-prompt" lang={view.lang}>
           {view.prompt}
         </label>
         {player}
@@ -104,7 +104,7 @@ export function QuestionField({
     <div>
       {meta}
       <fieldset>
-        <legend lang="ja">{view.prompt}</legend>
+        <legend lang={view.lang}>{view.prompt}</legend>
         {player}
         {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
         <div className="choice-list">
@@ -117,7 +117,7 @@ export function QuestionField({
                 disabled={isLocked}
                 onChange={() => onAnswerChange(toggleIndex(selection, index, choices.isMultiple))}
               />
-              <span lang="ja">{option}</span>
+              <span lang={view.lang}>{option}</span>
             </label>
           ))}
         </div>

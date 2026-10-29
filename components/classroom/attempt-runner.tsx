@@ -167,6 +167,7 @@ export function AttemptRunner({
                   correctText={describeCorrectAnswer(answerKey)}
                   explain={answerKey.explain}
                   transcript={isListeningQuestion(answerKey) ? answerKey.transcript : undefined}
+                  lang={item.view.lang}
                 />
               )}
               {mode === "practice" && answerKey && !isChecked && (

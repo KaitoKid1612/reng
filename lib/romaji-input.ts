@@ -8,6 +8,9 @@ const JAPANESE_TEXT = /[぀-ヿ㐀-鿿]/;
 // Converts only the Latin run the learner is typing, so kana/kanji already in the field
 // (from an IME or a paste) and text after the caret stay untouched.
 export function convertRomajiBeforeCaret(value: string, caret: number, mode: InputMode) {
+  if (mode === "chinese" || mode === "pinyin") {
+    return { value, caret };
+  }
   const head = value.slice(0, caret);
   const match = ROMAJI_BEFORE_CARET.exec(head);
   if (!match) {

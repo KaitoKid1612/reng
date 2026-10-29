@@ -12,7 +12,7 @@ export const MAX_DRAFT_BYTES = 32 * 1024;
 
 export const ASSIGNMENT_MODES = ["practice", "test"] as const;
 export const FEEDBACK_POLICIES = ["after_submit", "after_due"] as const;
-export const INPUT_MODES = ["hiragana", "katakana", "japanese"] as const;
+export const INPUT_MODES = ["hiragana", "katakana", "japanese", "chinese", "pinyin"] as const;
 
 export type AssignmentMode = (typeof ASSIGNMENT_MODES)[number];
 export type FeedbackPolicy = (typeof FEEDBACK_POLICIES)[number];
@@ -128,15 +128,37 @@ export const testQuestionInputSchema = z.discriminatedUnion("type", [
 export type TestQuestionInput = z.infer<typeof testQuestionInputSchema>;
 
 // Test questions get private IDs so they never collide with public practice questions.
-export function toTestQuestions(inputs: readonly TestQuestionInput[]): AssignableQuestion[] {
-  return inputs.map((input, index) =>
-    parseAssignableQuestion({ ...input, id: `t${index + 1}`, tags: [] }),
-  );
+// Fill questions follow their input mode (hiragana stays on the Japanese rules even in a Chinese
+// class); choice questions follow the class language, which only affects display.
+export function toTestQuestions(
+  inputs: readonly TestQuestionInput[],
+  languageTag = "ja-JP",
+): AssignableQuestion[] {
+  return inputs.map((input, index) => {
+    const isChinese =
+      input.type === "fill"
+        ? input.inputMode === "chinese" || input.inputMode === "pinyin"
+        : languageTag !== "ja-JP";
+    return parseAssignableQuestion({
+      ...input,
+      id: `t${index + 1}`,
+      tags: [],
+      ...(isChinese ? { gradingProfile: "zh-exact-v1" } : {}),
+    });
+  });
 }
 
 interface ListeningFields {
   audio: string | null;
   maxListens: number | null;
+}
+
+// Chinese questions mix Vietnamese instructions with Chinese text, so they keep the page
+// language and let the browser pick a Chinese font; Japanese questions stay lang="ja".
+export type QuestionLang = "ja" | "vi";
+
+export function questionLang(question: LessonQuestion): QuestionLang {
+  return question.gradingProfile === "zh-exact-v1" ? "vi" : "ja";
 }
 
 export type QuestionView =
@@ -145,24 +167,44 @@ export type QuestionView =
       type: "choice";
       prompt: string;
       points: number;
+      lang: QuestionLang;
       options: string[];
       multiple: boolean;
     }
-  | { id: string; type: "fill"; prompt: string; points: number; inputMode: InputMode }
-  | ({ id: string; type: "listen"; prompt: string; points: number } & ListeningFields &
+  | {
+      id: string;
+      type: "fill";
+      prompt: string;
+      points: number;
+      lang: QuestionLang;
+      inputMode: InputMode;
+    }
+  | ({
+      id: string;
+      type: "listen";
+      prompt: string;
+      points: number;
+      lang: QuestionLang;
+    } & ListeningFields &
       ({ responseType: "choice"; options: string[] } | { responseType: "fill" }))
   | ({
       id: string;
       type: "dictation";
       prompt: string;
       points: number;
+      lang: QuestionLang;
       inputMode: InputMode;
     } & ListeningFields);
 
 // Allowlist for anything sent to a learner before feedback is permitted: no answers,
 // explanations or transcripts.
 export function toQuestionView(question: AssignableQuestion): QuestionView {
-  const base = { id: question.id, prompt: question.prompt, points: question.points };
+  const base = {
+    id: question.id,
+    prompt: question.prompt,
+    points: question.points,
+    lang: questionLang(question),
+  };
   switch (question.type) {
     case "choice":
       return { ...base, type: "choice", options: question.options, multiple: question.multiple };

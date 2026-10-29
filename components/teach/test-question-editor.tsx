@@ -17,6 +17,8 @@ interface TestQuestionEditorProps {
 }
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
+  chinese: "Chữ Hán (IME tiếng Trung)",
+  pinyin: "Pinyin có dấu thanh",
   hiragana: "Hiragana",
   katakana: "Katakana",
   japanese: "Tiếng Nhật tự do (kanji, IME)",

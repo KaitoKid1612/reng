@@ -16,7 +16,17 @@ interface JapaneseInputProps {
   onValueChange: (value: string) => void;
 }
 
+const INPUT_LANGUAGES: Record<InputMode, string> = {
+  chinese: "zh",
+  pinyin: "zh-Latn-pinyin",
+  hiragana: "ja",
+  katakana: "ja",
+  japanese: "ja",
+};
+
 const MODE_HINTS: Record<InputMode, string> = {
+  chinese: "Dùng bộ gõ tiếng Trung hoặc dán chữ Hán; giữ đúng giản thể/phồn thể theo bài.",
+  pinyin: "Nhập pinyin có dấu thanh theo yêu cầu, ví dụ nǐ hǎo.",
   hiragana: "Gõ romaji để ra hiragana, ví dụ ko → こ, nn → ん.",
   katakana: "Gõ romaji để ra katakana, ví dụ ko → コ.",
   japanese: "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji.",
@@ -41,6 +51,10 @@ export function JapaneseInput({
   }, [value]);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    if (inputMode === "chinese" || inputMode === "pinyin") {
+      onValueChange(event.target.value);
+      return;
+    }
     const nativeEvent = event.nativeEvent;
     const isComposing = "isComposing" in nativeEvent && nativeEvent.isComposing === true;
     const data =
@@ -64,7 +78,7 @@ export function JapaneseInput({
         ref={inputRef}
         id={id}
         type="text"
-        lang="ja"
+        lang={INPUT_LANGUAGES[inputMode]}
         className="japanese-input"
         value={value}
         onChange={handleChange}
