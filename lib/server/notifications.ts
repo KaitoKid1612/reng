@@ -5,6 +5,7 @@ import { z } from "zod";
 import { FEEDBACK_POLICIES, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { isTeachingVersion } from "@/lib/teaching-content";
 import {
   EMAIL_BATCH_SIZE,
   EMAIL_LEASE_SECONDS,
@@ -267,7 +268,8 @@ async function pickWordOfDay(userId: string, now: Date) {
     return null;
   }
   const version = await loadAccessibleLessonVersion(lesson.lessonId, lesson.versionId, userId);
-  const vocab = version?.content.vocab ?? [];
+  // The word-of-day template formats Japanese v1 words; Chinese lessons are skipped for now.
+  const vocab = version && !isTeachingVersion(version) ? version.content.vocab : [];
   return vocab.length ? vocab[day % vocab.length] : null;
 }
 

@@ -161,7 +161,7 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 2. Giai đoạn 3: classes, enrollments, class_lessons, assignments, assignment_items, submissions, answers, srs_cards, review_events, lesson_progress.
 3. Giai đoạn 4: notification_preferences, email_log.
 4. Giai đoạn 5: migration 0006 cho luyện nghe đã có; kanji_entries vẫn dự kiến, chưa tạo.
-5. Dịch vụ giáo viên: migration 202610290001–0002 thêm teacher_accounts, audit_events, cột capacity/meeting_url/subject/language_tag/instruction_language_tag/revision của classes và các RPC activate_teacher, update_class_settings, read_lesson_version, set_lesson_visibility; join_class khóa hàng lớp để đếm chỗ. Xuất bản giữ nguyên visibility, mặc định class.
+5. Dịch vụ giáo viên: migration 202610290001–0002 thêm teacher_accounts, audit_events, cột capacity/meeting_url/subject/language_tag/instruction_language_tag/revision của classes và các RPC activate_teacher, update_class_settings, read_lesson_version, set_lesson_visibility; join_class khóa hàng lớp để đếm chỗ. Xuất bản giữ nguyên visibility, mặc định class. Migration 202610290003 thêm `lessons.authoring_state`, `creation_request_id`/`creation_fingerprint` (tạo bài idempotent theo request) và RPC create_teaching_lesson, get_teaching_editor, save_teaching_draft; publish_lesson với bài v2 chỉ nhận đúng nháp đã lưu và mọi câu đã được xác nhận.
 6. Giai đoạn 6 dự kiến thêm push_subscriptions và API thiết bị; bảng này chưa có migration, Web Push chưa có runtime. notification_preferences đã có cờ push_enabled dự phòng, không đồng nghĩa có bảng subscription.
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
@@ -172,9 +172,9 @@ File migration có thứ tự rõ ràng, kiểm tra trên database trống và d
 
 Role độc quyền student/teacher đã được thay bằng khả năng dạy trong teacher_accounts kết hợp enrollment; teacher cũ được backfill active, student cũ không tự thành teacher. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.
 
-## Hợp đồng nội dung Việt–Trung v2 — dự kiến
+## Hợp đồng nội dung Việt–Trung v2
 
-V2 tách ngôn ngữ khỏi tên trường Nhật. Envelope xuất bản dự kiến dưới đây là mẫu cấu trúc để thiết kế validator mới, không phải bài đã được giáo viên duyệt hoặc payload validator hiện tại nhận được.
+V2 tách ngôn ngữ khỏi tên trường Nhật; validator ở `lib/teaching-content.ts`, cùng bảng `lessons`/`lesson_versions` với v1. Ví dụ dưới đây là cấu trúc, không phải bài đã được giáo viên duyệt. Bản triển khai có thêm mảng `dialogue` (speaker/text/reading/meaning/audio). Slide v2 gồm title, note, vocab (1–2 từ), examples (ví dụ thứ `index` của một từ), grammar, dialogue (1–4 lượt) và quiz. Câu hỏi dùng hợp đồng câu v1 với `gradingProfile: "zh-exact-v1"` và inputMode `chinese`/`pinyin`, nên giao bài, chấm và báo cáo dùng lại pipeline hiện có.
 
 ```json
 {
@@ -200,8 +200,8 @@ V2 tách ngôn ngữ khỏi tên trường Nhật. Envelope xuất bản dự ki
 
 Giáo viên chọn languageTag/locale đúng khóa; ví dụ zh-Hans/zh-CN không áp mặc định cho mọi bài Trung. `reading` chứa pinyin ở profile Trung, không tự đồng nghĩa mọi môn có cách đọc. `meaning` theo instructionLanguageTag; câu ví dụ có text/reading/meaning tương ứng. ID/ref, câu choice/fill và điểm giữ nguyên nguyên tắc v1. `audio=null` là chưa có, không báo sẵn sàng.
 
-Thông tin soạn riêng lưu trong `lessons.authoring_state` dự kiến: bước wizard, template ID/version, đối tượng, kiến thức đầu vào, provenance các slide generated và review hash của câu/audio. Không gửi authoring_state, notes hoặc đáp án test qua public DTO. Metadata context được snapshot cùng version, không đọc context draft khi xem version cũ. Metadata cột snake_case map rõ với JSON camelCase, server kiểm tra không mâu thuẫn.
+Thông tin soạn riêng lưu trong `lessons.authoring_state`: bước wizard, template ID/version, đối tượng, kiến thức đầu vào, độ khó gợi ý, giá trị lần dựng gần nhất của từng slide generated (để nhận biết sửa tay) và `reviewedQuestions` (hash md5 của từng câu đã lưu, chỉ server ghi; client gửi lên bị bỏ). Review hash cho audio chưa có vì chưa có TTS web. Không gửi authoring_state, notes hoặc đáp án test qua public DTO. Metadata context được snapshot cùng version, không đọc context draft khi xem version cũ. Metadata cột snake_case map rõ với JSON camelCase, server kiểm tra không mâu thuẫn.
 
-Độ khó/thứ tự là gợi ý, không khóa quyền học. Mỗi bản v1 giữ nguyên bytes/dữ liệu lịch sử; adapter đọc v1 tiếp tục hỗ trợ Nhật, không viết v2 vào snapshot v1. Migration chỉ backfill metadata ngoài snapshot khi có mapping an toàn và kiểm chứng hồi quy.
+Flashcard/SRS từ vựng, tra ngữ pháp và "từ của ngày" trong email hiện chỉ đọc v1; bài v2 được bỏ qua an toàn ở các tính năng này. Độ khó/thứ tự là gợi ý, không khóa quyền học. Mỗi bản v1 giữ nguyên bytes/dữ liệu lịch sử; adapter đọc v1 tiếp tục hỗ trợ Nhật, không viết v2 vào snapshot v1. Migration chỉ backfill metadata ngoài snapshot khi có mapping an toàn và kiểm chứng hồi quy.
 
 Grant chia sẻ, copy, review và media theo DD dịch vụ; quyền đọc JSON không tự cấp quyền storage. Mỗi submission giữ profile chuẩn hóa từ assignment snapshot, không lấy profile mới nhất của bài để chấm lại bài cũ.

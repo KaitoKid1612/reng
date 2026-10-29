@@ -1,6 +1,6 @@
 # Detail Design dự kiến — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. Các phần chia sẻ, media, scan/OCR dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
+Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. **Đã triển khai lát B1 bản đầu** (migration 202610290003): schema v2 Việt–Trung, profile chấm `zh-exact-v1`, wizard soạn theo mẫu, xác nhận đáp án phía server. Các phần chia sẻ, media, scan/OCR và TTS web dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
 
 ## Đối chiếu mã nguồn
 
@@ -83,9 +83,16 @@ Next.js/Supabase hiện tại tiếp tục làm web/Auth/database; object storag
 
 Chốt migration/backfill và quyền role trước A; API request/response, lỗi, cache và test RLS trước A/B; storage policy, worker host/queue, provider/quota/cost trước C. Tất cả là công việc kỹ thuật còn lại, không tự xem bản DD dự kiến này là đầy đủ để chạy dịch vụ thật.
 
-## Soạn bài theo mẫu — hợp đồng bổ sung dự kiến
+## Soạn bài theo mẫu — hợp đồng bổ sung
 
-Nguồn UX: [luồng biên soạn](../content-authoring.md). Chưa thay schema/module/API hiện tại. `create-lesson-form.tsx` hiện còn yêu cầu mã bài, `vocabulary-import.tsx` dùng cột jp/romaji/vi và editor thêm slide thủ công; không coi các module này đã hỗ trợ luồng mới.
+Nguồn UX: [luồng biên soạn](../content-authoring.md). Đã triển khai bằng Server Actions trong `app/actions/teaching-lessons.ts` (cùng kiểm tra như các API đề xuất bên dưới, không thêm endpoint trùng chức năng):
+
+- Tạo bài: requestId do server render vào form; `create_teaching_lesson` khóa theo giáo viên + requestId, cùng payload trả lại bài cũ, khác payload báo `request_conflict`; server sinh lesson ID, bài mới riêng tư.
+- Lưu nháp: `save_teaching_draft` CAS theo revision; lỗi tab khác trả conflict, không ghi đè. Cùng lệnh lưu nhận danh sách câu cần xác nhận; server ghi md5 của câu đã lưu vào `authoring_state.reviewedQuestions`, `get_teaching_editor` chỉ trả về câu còn khớp hash.
+- Dựng slide chạy xác định ở client (`lib/teaching-templates.ts`), cho xem số slide thêm/cập nhật/bỏ/giữ trước khi áp dụng, rồi lưu bằng CAS như nháp; không có endpoint generate-slides riêng.
+- Xuất bản: server kiểm tra lại toàn bộ nháp (`reviewTeachingDraft`) và review; RPC từ chối nội dung khác nháp đã lưu (`save_before_publish`) hoặc câu chưa xác nhận (`review_required`). Không tự công khai, không tự giao lớp hay gửi email.
+
+Editor v1 (`create-lesson-form.tsx`, `vocabulary-import.tsx` cột jp/romaji/vi) giữ nguyên cho bài tiếng Nhật.
 
 | Thành phần dự kiến | Quy tắc |
 |---|---|

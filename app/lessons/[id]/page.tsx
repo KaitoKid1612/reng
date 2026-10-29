@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 
 import { LessonReader } from "@/components/lessons/lesson-reader";
+import { TeachingReader } from "@/components/teaching/teaching-reader";
 import { isDatabaseLessonSource } from "@/lib/lesson-repository";
 import { loadAccessibleLesson } from "@/lib/server/lesson-access";
 import { getCurrentAccount } from "@/lib/server/account";
 import { getLessonProgress } from "@/lib/server/learner";
+import { isPublicTeachingLesson } from "@/lib/teaching-content";
 
 interface LessonPageProps {
   params: Promise<{ id: string }>;
@@ -24,5 +26,9 @@ export default async function LessonPage({ params, searchParams }: LessonPagePro
     account !== null
       ? { completedAt: (await getLessonProgress(account.id, id))?.read_completed_at ?? null }
       : null;
-  return <LessonReader lesson={lesson} progress={progress} />;
+  return isPublicTeachingLesson(lesson) ? (
+    <TeachingReader lesson={lesson} progress={progress} />
+  ) : (
+    <LessonReader lesson={lesson} progress={progress} />
+  );
 }

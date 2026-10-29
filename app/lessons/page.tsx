@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import { listPublicLessons } from "@/lib/lesson-repository";
+import { isPublicTeachingLesson, LANGUAGE_LABELS } from "@/lib/teaching-content";
 
 import type { Metadata } from "next";
 
@@ -24,9 +25,15 @@ export default async function LessonsPage() {
       <div className="lesson-list">
         {lessons.map((lesson) => (
           <article className="lesson-card" key={lesson.id}>
-            <p lang="ja" className="lesson-japanese-title">
-              {lesson.titleJa}
-            </p>
+            {isPublicTeachingLesson(lesson) ? (
+              <p className="lesson-language">
+                {LANGUAGE_LABELS[lesson.content.context.languageTag]}
+              </p>
+            ) : (
+              <p lang="ja" className="lesson-japanese-title">
+                {lesson.titleJa}
+              </p>
+            )}
             <h2>{lesson.title}</h2>
             <p>{lesson.summary}</p>
             <p className="small muted">

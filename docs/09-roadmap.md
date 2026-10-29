@@ -4,7 +4,7 @@
 
 ## Trạng thái và quyết định bản đầu
 
-Ngày rà soát: 28/10/2026. Nền giai đoạn 1–4 và phần A giai đoạn 5 đã có bản local; dịch vụ Việt–Trung mới chưa triển khai, chưa giai đoạn nào được nghiệm thu cloud/lớp thật hoàn chỉnh. Thời lượng bên dưới là ước lượng lập kế hoạch, không phải cam kết tiến độ.
+Ngày rà soát: 28/10/2026, cập nhật 29/10/2026. Nền giai đoạn 1–4 và phần A giai đoạn 5 đã có bản local; dịch vụ Việt–Trung đã có bản local Service A và B1 (xem bảng bên dưới), chưa giai đoạn nào được nghiệm thu cloud/lớp thật hoàn chỉnh. Thời lượng bên dưới là ước lượng lập kế hoạch, không phải cam kết tiến độ.
 
 - Chọn Next.js + Supabase từ đầu; không triển khai song song bản Astro.
 - P0/P1/P2 trong `01` là mức quan trọng trong phạm vi sản phẩm. Mốc giao tính năng theo file này; P0 không đồng nghĩa tất cả phải có trong giai đoạn 1.
@@ -205,8 +205,8 @@ Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, hướng 
 
 | Mốc mới | Nội dung | Điều kiện hoàn tất |
 |---|---|---|
-| Service A | Tự đăng ký giáo viên, quyền vừa dạy/vừa học, cách ly dữ liệu, capacity và link Meet | Hai giáo viên không vượt quyền; lớp 10 chỗ không vượt chỗ khi join đồng thời; dạy thử bằng share tab |
-| Service B1 | Soạn Việt–Trung theo mẫu: mục tiêu nhỏ, bảng nội dung, dựng slide, choice/fill, preview/xuất bản/giao lớp | Giáo viên soạn và dạy một bài nhập môn; đo mục tiêu dưới 30 phút khi đã có nội dung; giữ tương thích dữ liệu Nhật |
+| Service A | Tự đăng ký giáo viên, quyền vừa dạy/vừa học, cách ly dữ liệu, capacity và link Meet | Hai giáo viên không vượt quyền; lớp 10 chỗ không vượt chỗ khi join đồng thời; dạy thử bằng share tab. **Bản local đã có**, chưa dạy thử Meet thật |
+| Service B1 | Soạn Việt–Trung theo mẫu: mục tiêu nhỏ, bảng nội dung, dựng slide, choice/fill, preview/xuất bản/giao lớp | Giáo viên soạn và dạy một bài nhập môn; đo mục tiêu dưới 30 phút khi đã có nội dung; giữ tương thích dữ liệu Nhật. **Bản local đã có**; còn TTS web và đo với giáo viên thật |
 | Service B2 | Thư viện chia sẻ version, view/copy/thu hồi, dùng lại bài | Copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp; không làm thay đổi bản đã giao |
 | Service C1 | Upload ảnh/PDF riêng tư, hiển thị nguồn, crop/nhập câu thủ công | Có bài tương tác được duyệt từ scan và giao/làm/chấm trọn luồng |
 | Service C2 | OCR/job nền, gợi ý cấu trúc choice/fill, review bắt buộc, quota | Benchmark giúp giảm công nhập; mọi câu xuất bản đã duyệt, retry không mất sửa tay, chi phí đo được |

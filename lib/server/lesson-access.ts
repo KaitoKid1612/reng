@@ -7,9 +7,9 @@ import {
   loadLessonVersion,
   parseDatabaseVersion,
 } from "@/lib/lesson-repository";
-import { toPublicLesson } from "@/lib/lesson-schema";
 import { getCurrentAccount } from "@/lib/server/account";
 import { callRpc } from "@/lib/server/supabase";
+import { toPublicAnyLesson } from "@/lib/teaching-content";
 
 // actorId is supplied only by trusted server callers (session or an already-scoped email job).
 export async function loadAccessibleLessonVersion(
@@ -34,5 +34,5 @@ export async function loadAccessibleLessonVersion(
 
 export async function loadAccessibleLesson(lessonId: string, versionId?: string) {
   const version = await loadAccessibleLessonVersion(lessonId, versionId);
-  return version ? toPublicLesson(version) : undefined;
+  return version ? toPublicAnyLesson(version) : undefined;
 }

@@ -53,7 +53,10 @@ Bài Nhật mẫu/CLI/editor hiện tại giữ nguyên. Dịch vụ mới thêm
 
 Scan đi qua upload riêng tư → nhận dạng/gợi ý → giáo viên sửa/duyệt → draft chuẩn → xuất bản → giao bài. Cho nhập tay khi nhận dạng kém. Chỉ thêm ảnh vào slide không tạo câu tự chấm. Giáo viên xác nhận quyền dùng scan và đáp án; không đưa ảnh nguyên trang có lời giải tới học sinh. Nhật/Trung phải được duyệt bởi người đủ chuyên môn. Chi tiết theo [BD dịch vụ](basic-design/teaching-service.md).
 
-## Soạn bài theo mẫu — luồng sản phẩm mới, chưa triển khai
+## Soạn bài theo mẫu
+
+**Trạng thái 29/10/2026:** đã có bản local tại `/teach/lessons/new` (chọn mẫu) và wizard 5 bước ở `/teach/lessons/[id]/edit`: mục tiêu/thông tin, bảng từ (nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng), mẫu câu và hội thoại, câu luyện (tạo khung chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng, giáo viên xác nhận đáp án), dựng slide có xem trước thay đổi, xem trước trang học viên và xuất bản. Chưa có: TTS trên web và nghe duyệt audio (nút Nghe dùng giọng Trung của thiết bị nếu có, không dùng giọng Nhật), phần "ôn bài cũ" tự lấy từ bài trước, luyện theo vai riêng, dùng lại/sao chép bài và đo thời gian với giáo viên thật.
+
 
 Giáo viên là người soạn và chịu trách nhiệm chuyên môn. Masu cung cấp mẫu bố cục, công cụ nhập và bộ bài minh họa nhỏ do giáo viên tiếng Trung biên soạn/duyệt; không yêu cầu đội vận hành viết toàn bộ giáo trình. Giáo viên có thể dùng mẫu trống, dùng lại bài của mình hoặc sao chép bài đồng nghiệp khi được cấp quyền.
 

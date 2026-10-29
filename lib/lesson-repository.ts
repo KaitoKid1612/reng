@@ -5,8 +5,9 @@ import { createClient } from "@supabase/supabase-js";
 
 import { findPublicVersion } from "./lesson-catalog";
 import { lessonCatalogSchema, lessonVersionSchema, toPublicLesson } from "./lesson-schema";
+import { parseTeachingVersion, toPublicAnyLesson } from "./teaching-content";
 
-import type { LessonVersion } from "./lesson-schema";
+import type { AnyLessonVersion } from "./teaching-content";
 
 function createLessonClient() {
   const url = process.env.SUPABASE_URL;
@@ -35,7 +36,17 @@ async function readCatalog() {
   );
 }
 
-export function parseDatabaseVersion(row: Record<string, unknown>): LessonVersion {
+// Schema v2 rows (Vietnamese–Chinese) and v1 rows (Japanese) share the lesson_versions table.
+export function parseDatabaseVersion(row: Record<string, unknown>): AnyLessonVersion {
+  const content = row.content;
+  if (
+    content &&
+    typeof content === "object" &&
+    "schemaVersion" in content &&
+    content.schemaVersion === 2
+  ) {
+    return parseTeachingVersion(row);
+  }
   return lessonVersionSchema.parse({
     id: row.id,
     lessonId: row.lesson_id,
@@ -85,7 +96,7 @@ export async function listPublicLessons() {
     throw new Error("Unable to load published versions.");
   }
   return (versions || [])
-    .map((version) => toPublicLesson(parseDatabaseVersion(version)))
+    .map((version) => toPublicAnyLesson(parseDatabaseVersion(version)))
     .sort((first, second) => first.order - second.order);
 }
 
@@ -125,5 +136,5 @@ export async function loadLessonVersion(lessonId: string, versionId?: string) {
 
 export async function loadPublicLesson(lessonId: string, versionId?: string) {
   const version = await loadLessonVersion(lessonId, versionId);
-  return version ? toPublicLesson(version) : undefined;
+  return version ? toPublicAnyLesson(version) : undefined;
 }

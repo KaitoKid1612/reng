@@ -103,7 +103,7 @@ Hết thẻ thì hiện tóm tắt phiên ôn và chuỗi ngày học liên ti�
 
 Một câu một màn hình trên điện thoại, nhiều câu một trang trên máy tính.
 
-Ô nhập Nhật dùng wanakana theo inputMode và tôn trọng IME; ô Trung dự kiến dùng IME/Unicode, không chuyển romaji ra kana.
+Ô nhập Nhật dùng wanakana theo inputMode và tôn trọng IME; ô chữ Hán/pinyin nhận nguyên văn từ IME/Unicode, không chuyển romaji ra kana.
 
 Chế độ luyện: chấm ngay sau mỗi câu, hiện giải thích. Chế độ kiểm tra: không chấm cho tới khi nộp hết.
 
@@ -194,14 +194,14 @@ Mở trang chủ
 - Màu dùng để mang thông tin, không dùng để trang trí: đỏ là sai, xanh là đúng, vàng là cần chú ý
 - Mọi thao tác quan trọng phải bấm được bằng bàn phím, vì giảng viên đứng lớp không rảnh tay rê chuột
 
-## Màn hình dịch vụ nhiều giáo viên — chưa triển khai
+## Màn hình dịch vụ nhiều giáo viên — đang triển khai
 
-[BD dịch vụ](basic-design/teaching-service.md) bổ sung SV01–SV06: đăng ký giáo viên, cấu hình lớp có sức chứa/link Meet/ngôn ngữ, thư viện cá nhân/được chia sẻ, cấp/thu hồi quyền version và upload/duyệt bài scan. Trang lớp học sinh hiển thị link Meet và học liệu đã mở theo quyền, không hiển thị notes riêng. Chi tiết route là đề xuất, không phải màn hình đã có.
+[BD dịch vụ](basic-design/teaching-service.md) bổ sung SV01–SV06: đăng ký giáo viên, cấu hình lớp có sức chứa/link Meet/ngôn ngữ, thư viện cá nhân/được chia sẻ, cấp/thu hồi quyền version và upload/duyệt bài scan. Trang lớp học sinh hiển thị link Meet và học liệu đã mở theo quyền, không hiển thị notes riêng. Đã có: `/sign-up/teacher`, `/teach/start`, form cài đặt lớp (sức chứa, ngôn ngữ, Meet) và link Meet trên trang lớp học viên. Thư viện chia sẻ và upload scan vẫn là route đề xuất.
 
 Luồng mới: giáo viên đăng ký → xác minh → tạo lớp 10 chỗ → học sinh join → giáo viên mở slide và share tab qua Meet → giao bài → theo dõi/nhắc. Giáo viên nhận slide phải có quyền copy để tạo bài riêng trước khi gắn lớp mình. Ô tiếng Trung dùng IME/Unicode, không gắn wanakana; Nhật giữ quy tắc hiện tại. Review scan có trang nguồn bên cạnh câu tương tác, duyệt đáp án trước xuất bản.
 
-## SV07 — Soạn bài theo mẫu, thiết kế mới chưa triển khai
+## SV07 — Soạn bài theo mẫu
 
-Mở rộng màn hình tạo/sửa bài hiện có thành luồng 5 bước: chọn mẫu/mục tiêu → bảng nội dung → dựng slide → câu luyện → xem trước/xuất bản/giao lớp. Giáo viên không cần nhập mã bài hoặc thao tác JSON trong luồng cơ bản. Luôn có lưu nháp, quay lại và chỉnh slide chi tiết; dữ liệu chưa đủ vẫn lưu được, lỗi xuất bản dẫn tới đúng dòng/câu.
+Đã có bản local: `/teach/lessons/new` có form chọn mẫu (bên dưới vẫn giữ form editor chi tiết cho bài tiếng Nhật), `/teach/lessons/[id]/edit` tự mở wizard với bài schema v2. Trên mobile phần xem trước nằm dưới danh sách slide. Giao lớp vẫn làm ở trang lớp. Luồng 5 bước: chọn mẫu/mục tiêu → bảng nội dung → dựng slide → câu luyện → xem trước/xuất bản/giao lớp. Giáo viên không cần nhập mã bài hoặc thao tác JSON trong luồng cơ bản. Luôn có lưu nháp, quay lại và chỉnh slide chi tiết; dữ liệu chưa đủ vẫn lưu được, lỗi xuất bản dẫn tới đúng dòng/câu.
 
 Bảng Việt–Trung gồm chữ Hán/pinyin/nghĩa Việt/ví dụ, hỗ trợ dán Excel. Desktop có preview cạnh nội dung, mobile chuyển vùng nhìn mà không mất sửa. Bài đầu bỏ phần ôn cũ được; mẫu chỉ gợi ý trình tự từ dễ đến khó, không ép giáo viên theo giáo trình cố định. Dựng lại/chuyển mẫu phải xem thay đổi trước khi xác nhận, giữ sửa tay mặc định. Chi tiết [biên soạn](content-authoring.md), [BD](basic-design/teaching-service.md), [DD](detail-design/teaching-service.md).

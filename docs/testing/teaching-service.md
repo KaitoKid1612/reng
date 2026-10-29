@@ -15,8 +15,24 @@ Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test
 | SV-05 | PASS (local) | Lớp sức chứa 1: người thứ hai nhận `class_full`; vào lại khi đã là thành viên trả `already_member`, không chiếm thêm chỗ |
 | SV-06 | PASS (local) | Hai người bấm vào lớp cùng lúc, đúng một người vào; rời lớp giải phóng chỗ và giữ lịch sử; giảm sức chứa dưới số đang học bị `capacity_below_members` |
 | SV-07 | Một phần | Thành viên thấy link Meet; URL `javascript:`, sai host, có credentials hoặc HTTP bị từ chối ở form và ràng buộc DB. Trường hợp học sinh đã rời đọc link chưa có test riêng (trang lớp đã yêu cầu thành viên đang học) |
+| SV-09 | Một phần | Bài v2: hướng dẫn/nghĩa tiếng Việt, chữ Hán gắn `lang=zh-Hans/zh-Hant` với font Trung của thiết bị, ô nhập chữ Hán/pinyin không chạy wanakana, nút Nghe chỉ dùng giọng Trung của thiết bị. Chưa có TTS web và kiểm tra font/audio trên thiết bị thật; bài Nhật cũ vẫn qua toàn bộ E2E |
+| SV-10 | PASS (local) | `zh-exact-v1`: NFC và bỏ khoảng trắng đầu/cuối, giữ thanh điệu, khoảng trắng trong pinyin, giản/phồn thể (`謝謝` sai khi đáp án là `谢谢`); profile Nhật giữ quy tắc cũ. `tests/teaching-content.test.ts`, `e2e-supabase/teaching-authoring.spec.ts` |
+| SV-26 | PASS (local) | Lớp lưu `subject`, `language_tag`, `instruction_language_tag` riêng; bài v2 lưu context (subject, languageTag, locale, instructionLanguageTag); không tự đổi giản/phồn |
 
-Hồi quy đi kèm: `npm run check` (72 test), `npm run test:e2e` 21/21 và `npm run test:e2e:supabase` 20/20, gồm luồng Nhật cũ với bước công khai bài có xác nhận riêng.
+Kết quả soạn bài theo mẫu (lát B1 bản đầu):
+
+| Ca | Kết quả | Bằng chứng |
+|---|---|---|
+| AU-01 | Một phần | Chọn một trong 4 mẫu và nhập mục tiêu nhỏ khi tạo bài; đối tượng, kiến thức đầu vào, độ khó, thứ tự sửa được; không cần scan/AI. Mẫu chưa có phần "ôn bài cũ" tự lấy từ bài trước |
+| AU-02 | PASS (local) | Dán bảng từ Sheets/Excel: dòng tiêu đề bỏ qua, lỗi từng dòng (thiếu chữ Hán, cột đảo), trùng từ, thiếu pinyin chỉ cảnh báo; chỉ thêm sau khi bấm xác nhận |
+| AU-03 | PASS (local) | Dựng slide xác định, xem số thay đổi trước khi áp dụng; dựng lại không nhân slide, giữ thứ tự, slide sửa tay, slide đã xóa và ghi chú giáo viên. Diff cũ không được kiểm theo revision; ghi đè giữa hai tab bị chặn ở bước lưu CAS |
+| AU-04 | PASS (local) | Tạo khung câu chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng; câu thiếu đáp án không xác nhận được; sửa câu làm mất xác nhận; xuất bản bị chặn tới khi xác nhận lại |
+| AU-05 | Một phần | Lưu nháp thiếu nội dung, tải lại đúng bản server, bước wizard lưu cùng nháp; CAS chặn tab cũ ở database. Chưa có E2E hai tab cho wizard và kiểm tra đổi tab preview trên mobile |
+| AU-06 | PASS (local) | Xem trước slide/trang học viên không có ghi chú; xuất bản giữ bài riêng tư; giao lớp là bước riêng; học viên chỉ đọc version được ghim |
+| AU-09 | NOT RUN | Chưa có TTS web/nghe duyệt audio cho bài Trung |
+| CT-02 | PASS (local) | Như SV-10 |
+
+Hồi quy đi kèm: `npm run check` (79 test), `npm run test:e2e` 21/21, `npm run test:e2e:supabase` 22/22 (gồm luồng Nhật cũ và 2 ca soạn/học bài Trung mới) và `npm run build`.
 
 Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-service.md), [DD dự kiến](../detail-design/teaching-service.md).
 

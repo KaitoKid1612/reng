@@ -81,7 +81,7 @@ Thử với hai giáo viên tiếng Trung dạy người Việt, một lớp 10 
 
 ## Luồng 5 — Giáo viên tự soạn bài theo mẫu
 
-Đặc tả thao tác đầy đủ tại [biên soạn nội dung](../content-authoring.md). Đây là luồng mặc định mới, chưa triển khai; editor form, preview, CSV và lưu/xuất bản hiện tại là nền tái sử dụng, chưa có wizard Việt–Trung hay tự dựng slide từ bảng.
+Đặc tả thao tác đầy đủ tại [biên soạn nội dung](../content-authoring.md). Đã có bản local (wizard 5 bước, dựng slide từ bảng, xác nhận đáp án, xuất bản riêng tư); editor chi tiết cũ vẫn dùng cho bài tiếng Nhật. Chưa có TTS web, dùng lại/sao chép bài và thử với giáo viên thật.
 
 ```mermaid
 flowchart LR

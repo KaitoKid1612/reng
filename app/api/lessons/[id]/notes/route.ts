@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { lessonContentSchema } from "@/lib/lesson-schema";
+import { teachingPublishedContentSchema } from "@/lib/teaching-content";
 import { createSessionClient } from "@/lib/supabase-session";
 
 interface NotesRouteContext {
@@ -47,7 +48,10 @@ export async function GET(request: Request, { params }: NotesRouteContext) {
   if (!row) {
     return NextResponse.json({ error: "Version not found." }, { status: 404, headers });
   }
-  const content = lessonContentSchema.parse(row.content);
+  const content =
+    row.content?.schemaVersion === 2
+      ? teachingPublishedContentSchema.parse(row.content)
+      : lessonContentSchema.parse(row.content);
   return NextResponse.json(
     {
       notes: Object.fromEntries(

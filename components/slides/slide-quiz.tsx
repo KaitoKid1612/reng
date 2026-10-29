@@ -4,15 +4,16 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-import type { PublicLesson } from "@/lib/lesson-schema";
+import type { PublicQuestion } from "@/lib/teaching-content";
 
 interface SlideQuizProps {
-  lesson: PublicLesson;
+  lesson: { id: string; lessonId: string; content: { questions: readonly PublicQuestion[] } };
   questionId: string;
   staticMode?: boolean;
+  lang?: string;
 }
 
-export function SlideQuiz({ lesson, questionId, staticMode }: SlideQuizProps) {
+export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: SlideQuizProps) {
   const question = lesson.content.questions.find((item) => item.id === questionId);
   const [result, setResult] = useState<{ answer: string; explain: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -55,13 +56,13 @@ export function SlideQuiz({ lesson, questionId, staticMode }: SlideQuizProps) {
   return (
     <div className="slide-quiz">
       <h2>Cùng thử một câu</h2>
-      <p lang="ja" className="slide-japanese">
+      <p lang={lang} className="slide-japanese">
         {question.prompt}
       </p>
       {question.options && (
         <ol className="slide-options">
           {question.options.map((option, index) => (
-            <li key={index} lang="ja">
+            <li key={index} lang={lang}>
               {option}
             </li>
           ))}
@@ -74,7 +75,7 @@ export function SlideQuiz({ lesson, questionId, staticMode }: SlideQuizProps) {
       )}
       {result && (
         <div className="quiz-feedback" role="status">
-          <p lang="ja">{result.answer}</p>
+          <p lang={lang}>{result.answer}</p>
           <p>{result.explain}</p>
         </div>
       )}

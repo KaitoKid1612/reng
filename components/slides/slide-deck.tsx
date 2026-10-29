@@ -3,15 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-import { SlideContent } from "@/components/slides/slide-content";
+import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
 import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { RevealApi } from "reveal.js";
-import type { PublicLesson } from "@/lib/lesson-schema";
+import type { PublicAnyLesson } from "@/lib/teaching-content";
 
 interface SlideDeckProps {
-  lesson: PublicLesson;
+  lesson: PublicAnyLesson;
   printMode: boolean;
 }
 
@@ -22,6 +22,7 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
   const [notice, setNotice] = useState("");
   const [isReady, setIsReady] = useState(false);
   const base = `/lessons/${lesson.lessonId}`;
+  const slideIds = listSlideIds(lesson);
 
   useEffect(() => {
     if (printMode || !rootRef.current) {
@@ -47,7 +48,7 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
     }
 
     function handleHashChange() {
-      const result = parseSlideHash(window.location.hash, lesson.content.slides.length);
+      const result = parseSlideHash(window.location.hash, listSlideIds(lesson).length);
       if (!result.isValid) {
         setNotice("Vị trí slide không hợp lệ. Đã mở slide đầu.");
       }
@@ -152,11 +153,11 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
           <Button onClick={() => window.print()}>In / Lưu PDF</Button>
           <Link href={`${base}/slide?version=${lesson.id}#1`}>Quay lại trình chiếu</Link>
         </div>
-        {lesson.content.slides.map((slide, index) => (
-          <section key={slide.id} className="print-slide">
-            <SlideContent slide={slide} lesson={lesson} staticMode />
+        {slideIds.map((id, index) => (
+          <section key={id} className="print-slide">
+            <LessonSlide lesson={lesson} index={index} staticMode />
             <span className="print-page-number">
-              {index + 1} / {lesson.content.slides.length}
+              {index + 1} / {slideIds.length}
             </span>
           </section>
         ))}
@@ -173,7 +174,7 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
             Trước
           </Button>
           <span data-testid="slide-counter">
-            {position + 1} / {lesson.content.slides.length}
+            {position + 1} / {slideIds.length}
           </span>
           <Button variant="ghost" onClick={() => deckRef.current?.next()} disabled={!isReady}>
             Tiếp
@@ -192,9 +193,9 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
       <div className="slide-stage">
         <div className="reveal" ref={rootRef} data-ready={isReady}>
           <div className="slides">
-            {lesson.content.slides.map((slide) => (
-              <section key={slide.id} className="slide-page">
-                <SlideContent slide={slide} lesson={lesson} />
+            {slideIds.map((id, index) => (
+              <section key={id} className="slide-page">
+                <LessonSlide lesson={lesson} index={index} />
               </section>
             ))}
           </div>

@@ -16,6 +16,12 @@
   --font-sans: "Be Vietnam Pro", sans-serif;
   --font-jp: "Noto Sans JP", sans-serif;
   --font-kana: "Klee One", "Noto Sans JP", sans-serif;
+  /* Device CJK fonts keep simplified and traditional glyph shapes without a large download. */
+  --font-zh-hans:
+    "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  --font-zh-hant:
+    "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 }
 @theme inline {
   --color-background: var(--background);
@@ -39,6 +45,12 @@ body {
 }
 [lang="ja"].kana-font {
   font-family: var(--font-kana);
+}
+[lang="zh-Hans"] {
+  font-family: var(--font-zh-hans);
+}
+[lang="zh-Hant"] {
+  font-family: var(--font-zh-hant);
 }
 a {
   color: var(--primary);
@@ -1823,4 +1835,226 @@ body:has(.slide-shell) .site-footer {
 .button[aria-disabled="true"] {
   cursor: progress;
   opacity: 0.6;
+}
+
+/* Vietnamese–Chinese lessons (schema v2). */
+.lesson-language {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.chinese-text {
+  font-size: 28px;
+  line-height: 1.6;
+}
+.pinyin-text {
+  font-size: 18px;
+  color: var(--muted);
+}
+.lesson-objectives {
+  padding-left: 24px;
+}
+.dialogue-list {
+  list-style: none;
+  padding: 0;
+}
+.dialogue-list > li {
+  display: grid;
+  grid-template-columns: minmax(64px, auto) minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.dialogue-speaker {
+  font-weight: 600;
+  color: var(--primary);
+}
+.dialogue-list p {
+  margin: 0;
+}
+.slide-chinese {
+  font-size: 104px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.slide-chinese-sentence {
+  font-size: 56px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+.slide-pinyin {
+  font-size: 34px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.slide-chinese-words {
+  display: grid;
+  gap: 32px;
+}
+.slide-chinese-words > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 24px;
+}
+.slide-chinese-words .slide-translation {
+  grid-column: 1;
+}
+.slide-note-body {
+  white-space: pre-line;
+}
+.slide-dialogue {
+  list-style: none;
+  padding: 0;
+}
+.slide-dialogue > li {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.slide-dialogue .slide-chinese-sentence {
+  font-size: 44px;
+  margin: 0;
+}
+.slide-dialogue .slide-pinyin {
+  font-size: 26px;
+  margin: 0;
+}
+.slide-dialogue .slide-translation {
+  font-size: 26px;
+}
+@media (max-width: 640px) {
+  .dialogue-list > li {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .dialogue-speaker {
+    grid-column: 1 / -1;
+  }
+}
+.teaching-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.teaching-step {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--foreground);
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 14px;
+}
+.teaching-step[aria-current="step"] {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  font-weight: 600;
+}
+.teaching-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.teaching-item {
+  display: grid;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.teaching-word-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 8px;
+}
+.teaching-dialogue-grid {
+  display: grid;
+  grid-template-columns: minmax(60px, 0.4fr) minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+.teaching-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+.teaching-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.teaching-inline-row > input:not([type="radio"]) {
+  flex: 1;
+  min-width: 0;
+}
+.teaching-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+  min-width: 0;
+}
+.teaching-fieldset > legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.teaching-paste,
+.teaching-preview {
+  margin-bottom: 16px;
+}
+.teaching-paste > summary,
+.teaching-preview > summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 32px;
+}
+.teaching-editor .table-scroll,
+.teaching-paste .table-scroll {
+  overflow-x: auto;
+  margin: 12px 0;
+}
+.template-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.template-option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+.template-option:has(input:checked) {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.template-option > span {
+  display: flex;
+  flex-direction: column;
+}
+.editor-status[data-tone="error"] {
+  color: var(--wrong);
+}
+@media (max-width: 600px) {
+  .teaching-word-grid,
+  .teaching-dialogue-grid,
+  .template-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .teaching-example {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .teaching-example > input {
+    grid-column: 1;
+  }
 }

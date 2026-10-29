@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 import { LessonEditor } from "@/components/editor/lesson-editor";
+import { TeachingEditor } from "@/components/teaching/teaching-editor";
 import { requireTeacher } from "@/lib/server/account";
 import { loadLessonEditor } from "@/lib/server/lessons";
 import { loadOrNotFound } from "@/lib/server/pages";
+import { loadTeachingEditor, toTeachingDraft } from "@/lib/server/teaching-lessons";
 
 import type { Metadata } from "next";
 
@@ -16,6 +18,32 @@ interface EditLessonPageProps {
 export default async function EditLessonPage({ params }: EditLessonPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/lessons/${id}/edit`);
+  // Schema v2 drafts open the guided editor; everything else keeps the v1 editor.
+  const teaching = await loadTeachingEditor(account.id, id);
+  if (teaching) {
+    return (
+      <>
+        <div className="page-heading">
+          <div>
+            <h1>Soạn bài: {teaching.title || "Bài chưa đặt tên"}</h1>
+            <p>
+              <Link href="/teach">Giảng dạy</Link>
+            </p>
+          </div>
+        </div>
+        <TeachingEditor
+          lessonId={teaching.lessonId}
+          initialDraft={toTeachingDraft(teaching)}
+          initialRevision={teaching.revision}
+          initialSavedAt={teaching.savedAt}
+          initialReviewedIds={teaching.reviewedIds}
+          initialPublishedVersionId={teaching.publishedVersionId}
+          initialVersionCount={teaching.versionCount}
+          visibility={teaching.visibility}
+        />
+      </>
+    );
+  }
   const editor = await loadOrNotFound(loadLessonEditor(account.id, id));
   return (
     <>

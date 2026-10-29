@@ -13,6 +13,7 @@ import {
 import { gradeQuestion } from "@/lib/grading/grade";
 import { parseRawAnswer } from "@/lib/grading/raw-answer";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { isTeachingVersion } from "@/lib/teaching-content";
 import { loadAssignment } from "@/lib/server/assignments";
 import {
   callRpc,
@@ -80,7 +81,8 @@ async function loadVocabDecks(userId: string, lessonIds: readonly string[]) {
   await Promise.all(
     [...new Set(lessonIds)].map(async (lessonId) => {
       const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
-      if (version) {
+      // Flashcards and vocabulary SRS currently cover the Japanese v1 vocabulary contract only.
+      if (version && !isTeachingVersion(version)) {
         decks.set(lessonId, { title: version.title, vocab: version.content.vocab });
       }
     }),
@@ -276,7 +278,11 @@ export interface VocabReviewInput {
 
 export async function recordVocabReview(userId: string, input: VocabReviewInput, now: Date) {
   const version = await loadAccessibleLessonVersion(input.lessonId, undefined, userId);
-  if (!version?.content.vocab.some((item) => item.id === input.vocabId)) {
+  if (
+    !version ||
+    isTeachingVersion(version) ||
+    !version.content.vocab.some((item) => item.id === input.vocabId)
+  ) {
     throw new ServiceError("not_found");
   }
   const card = await loadCard(userId, "vocab", input.lessonId, input.vocabId);
@@ -484,7 +490,7 @@ export interface VocabDeckCard {
 
 export async function getVocabularyDeck(userId: string | null, lessonId: string) {
   const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
-  if (!version) {
+  if (!version || isTeachingVersion(version)) {
     return null;
   }
   const cards = userId

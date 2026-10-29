@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { SlideContent } from "@/components/slides/slide-content";
+import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
 import { signInPath } from "@/lib/auth-paths";
 import { slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
-import type { PublicLesson } from "@/lib/lesson-schema";
+import type { PublicAnyLesson } from "@/lib/teaching-content";
 
 interface PresenterViewProps {
-  lesson: PublicLesson;
+  lesson: PublicAnyLesson;
 }
 
 export function PresenterView({ lesson }: PresenterViewProps) {
@@ -38,7 +38,7 @@ export function PresenterView({ lesson }: PresenterViewProps) {
       if (
         parsed.success &&
         parsed.data.type === "position" &&
-        parsed.data.index < lesson.content.slides.length
+        parsed.data.index < listSlideIds(lesson).length
       ) {
         setIndex(parsed.data.index);
         setIsConnected(true);
@@ -91,8 +91,9 @@ export function PresenterView({ lesson }: PresenterViewProps) {
     channel.close();
   }
 
-  const current = lesson.content.slides[index];
-  const next = lesson.content.slides[index + 1];
+  const slideIds = listSlideIds(lesson);
+  const currentId = slideIds[index];
+  const hasNext = index + 1 < slideIds.length;
   return (
     <div className="presenter-view">
       <div className="page-heading">
@@ -122,14 +123,14 @@ export function PresenterView({ lesson }: PresenterViewProps) {
         <section>
           <h2>Hiện tại</h2>
           <div className="presenter-preview">
-            {current && <SlideContent slide={current} lesson={lesson} staticMode />}
+            <LessonSlide lesson={lesson} index={index} staticMode />
           </div>
         </section>
         <section>
           <h2>Tiếp theo</h2>
           <div className="presenter-preview">
-            {next ? (
-              <SlideContent slide={next} lesson={lesson} staticMode />
+            {hasNext ? (
+              <LessonSlide lesson={lesson} index={index + 1} staticMode />
             ) : (
               <p>Đã đến cuối bài.</p>
             )}
@@ -138,7 +139,7 @@ export function PresenterView({ lesson }: PresenterViewProps) {
       </div>
       <section className="presenter-notes">
         <h2>Ghi chú giảng viên</h2>
-        <p>{current && notes[current.id] ? notes[current.id] : notesMessage}</p>
+        <p>{currentId && notes[currentId] ? notes[currentId] : notesMessage}</p>
         <Link href={signInPath(`/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`)}>
           Đăng nhập giảng viên
         </Link>

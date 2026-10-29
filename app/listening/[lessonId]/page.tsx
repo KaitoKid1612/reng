@@ -5,6 +5,7 @@ import { ListeningPractice } from "@/components/listening/listening-practice";
 import { buttonVariants } from "@/components/ui/button";
 import { isListeningQuestion, toQuestionView } from "@/lib/assignment";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { isTeachingVersion } from "@/lib/teaching-content";
 
 import type { Metadata } from "next";
 
@@ -28,9 +29,11 @@ export default async function ListeningPage({ params, searchParams }: ListeningP
     <>
       <div className="page-heading">
         <div>
-          <p lang="ja" className="lesson-japanese-title">
-            {version.titleJa}
-          </p>
+          {!isTeachingVersion(version) && (
+            <p lang="ja" className="lesson-japanese-title">
+              {version.titleJa}
+            </p>
+          )}
           <h1>Luyện nghe: {version.title}</h1>
           <p>
             Bấm Nghe để phát, Lùi 5 giây để nghe lại đoạn vừa qua. Transcript hiện sau khi bạn trả
