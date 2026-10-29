@@ -2,7 +2,7 @@
 
 ## Định hướng dịch vụ — 29/10/2026
 
-Masu là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Masu cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Tiếng Trung là trường hợp mở rộng ưu tiên theo nhu cầu hiện tại.
+Masu là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Masu cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung): giao diện/hướng dẫn và nghĩa bằng tiếng Việt, nội dung học bằng tiếng Trung. Nền tảng hướng tới nhiều môn và ngôn ngữ; chưa mở đồng thời tất cả trong MVP.
 
 Ví dụ: một giáo viên tiếng Trung đăng ký tài khoản giáo viên, tạo lớp 10 học sinh, gửi lời mời vào lớp và lưu link Meet. Trong buổi học giáo viên mở slide Masu, chia sẻ tab trình chiếu qua Meet. Học sinh dùng tài khoản của mình để đọc bài được cấp quyền, làm bài trên điện thoại và xem kết quả theo chính sách bài giao. Giáo viên nhìn được ai chưa nộp, ai sai nhiều và ai cần nhắc.
 
@@ -41,4 +41,4 @@ Chưa làm: video call nội bộ, tự chấm mọi bài tự luận/viết tay
 
 ## Tiêu chí thành công
 
-Hai giáo viên độc lập (Nhật và Trung) vận hành lớp riêng, không đọc được dữ liệu lớp nhau. Một lớp giới hạn 10 chỗ nhận đủ 10 học sinh và chặn người thứ 11 đúng cả khi vào đồng thời. Giáo viên dạy bằng slide qua Meet, chia sẻ bản sao cho đồng nghiệp, giao bài có chấm/tiến độ/nhắc học. Ảnh bài tập thử được chuyển thành câu tương tác sau duyệt; đo thời gian sửa so với nhập tay trước khi mở OCR rộng rãi.
+Hai giáo viên tiếng Trung độc lập, cùng dạy học sinh Việt Nam, vận hành lớp riêng, không đọc được dữ liệu lớp nhau. Một lớp giới hạn 10 chỗ nhận đủ 10 học sinh và chặn người thứ 11 đúng cả khi vào đồng thời. Giáo viên dạy bằng slide qua Meet, chia sẻ bản sao cho đồng nghiệp, giao bài có chấm/tiến độ/nhắc học. Ảnh bài tập thử được chuyển thành câu tương tác sau duyệt; đo thời gian sửa so với nhập tay trước khi mở OCR rộng rãi.

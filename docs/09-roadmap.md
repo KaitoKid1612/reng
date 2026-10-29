@@ -1,6 +1,6 @@
 # Lộ trình
 
-Định hướng mới ngày 29/10/2026 được ghi ở [điều chỉnh ưu tiên dịch vụ](#điều-chỉnh-ưu-tiên-dịch-vụ--29102026): nhiều giáo viên, Nhật/Trung, lớp riêng, chia sẻ và scan. Các giai đoạn dưới đây mô tả kế hoạch nền N5; mốc Service A–D là thứ tự công việc tiếp theo.
+Định hướng mới ngày 29/10/2026 được ghi ở [điều chỉnh ưu tiên dịch vụ](#điều-chỉnh-ưu-tiên-dịch-vụ--29102026): nhiều giáo viên, ưu tiên Việt–Trung, lớp riêng, chia sẻ và scan. Các giai đoạn dưới đây mô tả kế hoạch nền N5; mốc Service A–D là thứ tự công việc tiếp theo.
 
 ## Trạng thái và quyết định bản đầu
 
@@ -201,12 +201,12 @@ Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide,
 
 ## Điều chỉnh ưu tiên dịch vụ — 29/10/2026
 
-Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, ưu tiên Nhật/Trung, lớp riêng và dạy qua Google Meet bên ngoài. Đây là hướng tiếp theo trước tiện ích giai đoạn 6; không phủ nhận các phần local đã có và không đánh dấu nghiệm thu cloud. Tài liệu N5 giai đoạn 1–5 giữ vai trò lịch sử triển khai; ngoài các thay đổi rõ dưới đây, tính năng cũ vẫn là nền tái sử dụng.
+Yêu cầu mới mở Masu thành dịch vụ cho nhiều giáo viên, hướng tới nhiều môn/ngôn ngữ nhưng ưu tiên dạy tiếng Trung cho người Việt, lớp riêng và dạy qua Google Meet bên ngoài. Đây là hướng tiếp theo trước tiện ích giai đoạn 6; không phủ nhận các phần local đã có và không đánh dấu nghiệm thu cloud. Tài liệu N5 giai đoạn 1–5 giữ vai trò lịch sử triển khai; ngoài các thay đổi rõ dưới đây, tính năng cũ vẫn là nền tái sử dụng.
 
 | Mốc mới | Nội dung | Điều kiện hoàn tất |
 |---|---|---|
 | Service A | Tự đăng ký giáo viên, quyền vừa dạy/vừa học, cách ly dữ liệu, capacity và link Meet | Hai giáo viên không vượt quyền; lớp 10 chỗ không vượt chỗ khi join đồng thời; dạy thử bằng share tab |
-| Service B | Metadata/ngôn ngữ Nhật–Trung, thư viện chia sẻ version, view/copy/thu hồi | Một bài Trung chạy đúng font/input/chấm; copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp |
+| Service B | Tách môn/ngôn ngữ hướng dẫn; MVP Việt–Trung, thư viện chia sẻ version, view/copy/thu hồi | Một bài Trung có chữ Hán/pinyin, giải thích Việt và audio đúng locale chạy trọn luồng; dữ liệu Nhật cũ không bị ảnh hưởng; copy độc lập đủ nguồn/media, không lộ notes/test/dữ liệu lớp |
 | Service C1 | Upload ảnh/PDF riêng tư, hiển thị nguồn, crop/nhập câu thủ công | Có bài tương tác được duyệt từ scan và giao/làm/chấm trọn luồng |
 | Service C2 | OCR/job nền, gợi ý cấu trúc choice/fill, review bắt buộc, quota | Benchmark giúp giảm công nhập; mọi câu xuất bản đã duyệt, retry không mất sửa tay, chi phí đo được |
 | Service D | Chấm tay và thêm dạng scan theo nhu cầu thật | Có workflow chờ chấm/điểm/audit, không trộn điểm chờ với 0 |

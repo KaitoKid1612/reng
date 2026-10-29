@@ -17,8 +17,8 @@ Bản đầu mỗi giáo viên là một chủ sở hữu độc lập. Không t
 | Thay đổi dự kiến | Dữ liệu và bất biến |
 |---|---|
 | `teacher_accounts` | `user_id` duy nhất, trạng thái pending/active/suspended, email_verified_at, accepted_terms_at, activated_at. Server sở hữu chuyển trạng thái; không lấy user_metadata làm quyền. Xác minh email là xác minh tài khoản, không phải chứng nhận nghiệp vụ giáo viên |
-| Metadata lớp | `capacity` nullable hoặc số nguyên dương, `language_tag`, `meeting_url` nullable. Null capacity là chưa giới hạn; không tự áp quota 10 cho mọi lớp |
-| Metadata nội dung | `schema_version`, `language_tag`, `locale`, `source_language`, `attribution`. Mapping schema cũ mặc định ja-JP; metadata mới được chụp vào lesson_versions |
+| Metadata lớp | `capacity` nullable hoặc số nguyên dương, `subject`, `language_tag`, `instruction_language_tag`, `meeting_url` nullable. Null capacity là chưa giới hạn; không tự áp quota 10 cho mọi lớp |
+| Metadata nội dung | `schema_version`, `subject`, `language_tag`, `instruction_language_tag`, `locale`, `source_language`, `attribution`. Mapping schema cũ mặc định ja-JP; metadata mới được chụp vào lesson_versions |
 | `lesson_shares` | owner, recipient, source_version_id, permission view/copy, granted_at/revoked_at; một grant hoạt động cho mỗi version/người nhận. Không share bằng URL đoán được |
 | Nguồn bản sao | source owner/version, copied_at, điều kiện sử dụng và quyền chia sẻ tiếp; không có FK kéo quyền đọc dữ liệu riêng của chủ nguồn |
 | `media_assets` | owner, private storage key, mime, size/hash, trạng thái, nguồn/quyền dùng; quan hệ asset với snapshot/grant. Không đặt scan vào bucket audio công khai |
@@ -62,6 +62,10 @@ Chính sách lưu dự kiến: xóa nguồn và OCR trung gian sau 30 ngày ho�
 
 ## Đa ngôn ngữ và chấm
 
+Mốc đầu là Việt–Trung: `subject=chinese`, `instruction_language_tag=vi-VN`; nội dung tiếng Trung chọn `language_tag=zh-Hans` hoặc `zh-Hant` theo bài. Mã ngôn ngữ nội dung, locale giọng đọc và ngôn ngữ hướng dẫn là các giá trị riêng; không đặt chung một giá trị “Việt–Trung”. Không tự chọn giản thể hay phồn thể chỉ từ ngôn ngữ giao diện. Từ/câu có chữ Hán, pinyin và nghĩa/giải thích Việt.
+
+`subject` giữ khả năng thêm môn ngoài ngoại ngữ, không hard-code mọi lớp đều có pinyin/kana/TTS. MVP chỉ triển khai profile tiếng Trung cần thiết; module Nhật cũ được giữ và kiểm tra hồi quy. Môn khác cần thiết kế nội dung/chấm riêng trước khi bật.
+
 Versioned schema có language profile. `ja-JP` giữ wanakana/kana; `zh-Hans`/`zh-Hant` dùng IME/Unicode và trường pinyin riêng. Không bỏ thanh điệu, tự chuyển giản/phồn hoặc dùng romaji chuẩn hóa cho tiếng Trung. Quy tắc chuẩn hóa là metadata bất biến của snapshot; thêm đáp án thay thế do giáo viên xác nhận. Regression NFKC tiếng Nhật phải giữ nguyên.
 
 Font và giọng TTS chọn theo locale, asset hash có locale/voice/config để không dùng nhầm audio Nhật cho chữ Trung giống nhau. Search/filter theo ngôn ngữ. Chưa cần nhập bộ giáo trình Trung hàng loạt; thử một bài do giáo viên cung cấp/được phép dùng.
@@ -70,7 +74,7 @@ Chấm tay chưa triển khai. Trước khi thêm phải thiết kế pending_re
 
 ## Lựa chọn OCR và điều kiện triển khai
 
-Chưa chốt nhà cung cấp. [Document AI OCR](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr) mô tả nhận dạng văn bản/layout và kiểm tra chất lượng ảnh; điều đó không đồng nghĩa tự hiểu đáp án bài tập. Thử adapter trên bộ ảnh thực của giáo viên trước khi chọn, đo riêng Nhật/Trung, chi phí/trang, thời gian sửa và nơi xử lý dữ liệu. Không cam kết chữ viết tay/bố cục phức tạp hoặc tự chấm toàn bộ.
+Chưa chốt nhà cung cấp. [Document AI OCR](https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr) mô tả nhận dạng văn bản/layout và kiểm tra chất lượng ảnh; điều đó không đồng nghĩa tự hiểu đáp án bài tập. Thử adapter trên bộ ảnh thực của giáo viên trước khi chọn, ưu tiên đo chữ Trung, pinyin và tiếng Việt trên cùng trang; kiểm tra hồi quy Nhật khi tái sử dụng adapter; đo chi phí/trang, thời gian sửa và nơi xử lý dữ liệu. Không cam kết chữ viết tay/bố cục phức tạp hoặc tự chấm toàn bộ.
 
 Next.js/Supabase hiện tại tiếp tục làm web/Auth/database; object storage riêng tư và worker/queue là phần bổ sung. Chưa mua dịch vụ, thêm key hay bật OCR trong đợt này. Cần benchmark và quyết định ngân sách trước khi triển khai adapter thật; không cần chờ OCR để làm onboarding/chia sẻ.
 

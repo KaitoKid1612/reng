@@ -14,7 +14,7 @@ Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-serv
 | SV-06 | CLASS-08 | Hai người tranh chỗ cuối, chỉ một vào được; rời/rejoin/đổi capacity không vượt sức chứa, không xóa lịch sử |
 | SV-07 | CLASS-09 | Chủ lớp nhập link Meet hợp lệ, học sinh lớp đọc được; người ngoài/học sinh đã rời không đọc được; URL nguy hiểm bị từ chối |
 | SV-08 | CLASS-09 | Dạy thử qua Meet: chỉ share tab slide, audio nghe được; presenter, notes, đáp án test và dashboard không lộ |
-| SV-09 | LANG-01 | Một bài Nhật và một bài Trung: font/input/TTS đúng ngôn ngữ; không bật wanakana cho Trung; snapshot Nhật cũ chạy nguyên trạng |
+| SV-09 | LANG-01 | Bài Việt–Trung: hướng dẫn/nghĩa Việt, chữ Hán/pinyin/audio Trung, font/input/TTS đúng locale; không bật wanakana cho Trung; hồi quy riêng snapshot Nhật cũ |
 | SV-10 | LANG-01 | Tiếng Trung giữ thanh điệu và phân biệt giản/phồn theo đáp án; tiếng Nhật giữ âm dài, âm ngắt và đáp án thay thế |
 | SV-11 | SHARE-01 | View chỉ xem đúng version, không copy/edit/giao bài trực tiếp cho lớp; tài khoản khác không dùng được grant |
 | SV-12 | SHARE-01/02 | Copy tạo draft riêng, đủ refs/media/nguồn; không có notes, test, thông tin lớp hoặc kết quả học sinh |
@@ -31,5 +31,6 @@ Nguồn: [yêu cầu](../01-requirements.md), [BD](../basic-design/teaching-serv
 | SV-23 | SERVICE-02 | Bài nộp trùng chỉ chấm một lần; tiến độ và báo cáo đúng lớp; chưa nộp khác 0 điểm |
 | SV-24 | OPS-02 | Email chỉ đến thành viên đủ điều kiện và đã đồng ý; rời lớp/đã nộp/tắt nhắc được loại khi gửi, job retry không nhân gửi |
 | SV-25 | SCAN-03 | So sánh nhập tay và sửa OCR trên bộ scan được phép dùng: ghi thời gian, số lỗi, câu sửa, chi phí/trang và phản hồi giáo viên |
+| SV-26 | LANG-01 | Môn học, ngôn ngữ hướng dẫn và ngôn ngữ nội dung được lưu riêng; giao diện Việt không tự đổi bài Trung giản/phồn hoặc biến thành môn tiếng Việt |
 
-Bộ thử cần hai giáo viên, học sinh thuộc hai lớp khác nhau, một lớp capacity 10 và nội dung Nhật/Trung có quyền sử dụng. Không dùng email/tệp của học sinh thật trong automated test. Dạy qua Meet và chất lượng OCR/font/audio cần kiểm chứng thủ công trên thiết bị thật; ghi bằng chứng và giới hạn trước nghiệm thu.
+Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộc hai lớp khác nhau, một lớp capacity 10 và nội dung Việt–Trung có quyền sử dụng. Dữ liệu Nhật hiện có dùng kiểm tra hồi quy, không phải khóa học mới bắt buộc để ra mắt. Không dùng email/tệp của học sinh thật trong automated test. Dạy qua Meet và chất lượng OCR/font/audio cần kiểm chứng thủ công trên thiết bị thật; ghi bằng chứng và giới hạn trước nghiệm thu.

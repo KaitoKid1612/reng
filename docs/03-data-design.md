@@ -167,6 +167,6 @@ File migration có thứ tự rõ ràng, kiểm tra trên database trống và d
 
 ## Mở rộng dữ liệu dịch vụ — chưa migration
 
-[DD dịch vụ](detail-design/teaching-service.md) đề xuất teacher_accounts, lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/language_tag/meeting_url, nội dung thêm schema_version/locale. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
+[DD dịch vụ](detail-design/teaching-service.md) đề xuất teacher_accounts, lesson_shares, nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
 
 Cần thay role độc quyền student/teacher bằng khả năng dạy kết hợp enrollment để hỗ trợ vừa học vừa dạy; backfill và kiểm tra toàn bộ RLS/RPC trước chuyển đổi. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.

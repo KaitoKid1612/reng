@@ -1,6 +1,6 @@
 # Basic Design — Dịch vụ hỗ trợ giảng dạy
 
-Ngày: 29/10/2026. Trạng thái: đặc tả mới, chưa triển khai. Phạm vi theo yêu cầu người dùng: nhiều giáo viên, ưu tiên Nhật/Trung, lớp học riêng, Google Meet bên ngoài, học liệu chia sẻ và chuyển bài scan.
+Ngày: 29/10/2026. Trạng thái: đặc tả mới, chưa triển khai. Phạm vi theo yêu cầu người dùng: nhiều giáo viên, hỗ trợ mở rộng nhiều môn/ngôn ngữ, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), lớp học riêng, Google Meet bên ngoài, học liệu chia sẻ và chuyển bài scan.
 
 ## Đánh giá hướng sản phẩm
 
@@ -67,12 +67,14 @@ Tên route là đề xuất, không khẳng định đã tồn tại. UI 360px; 
 
 ## Ngôn ngữ và chấm điểm
 
+MVP tập trung Việt–Trung: học sinh Việt Nam học tiếng Trung, giao diện/hướng dẫn/nghĩa bằng tiếng Việt, nội dung học có chữ Hán, pinyin và audio tiếng Trung. Không yêu cầu giáo viên nhập một khóa tiếng Nhật để nghiệm thu dịch vụ. Tiếng Việt ở đây là ngôn ngữ hướng dẫn, không mặc định một khóa dạy tiếng Việt riêng. Các môn và ngôn ngữ khác mở sau theo nhu cầu.
+
 Tiếng Nhật giữ kana, kanji, wanakana và quy tắc hiện tại. Tiếng Trung cần metadata `zh-Hans`/`zh-Hant`, pinyin và chế độ nhập Unicode/IME; không ép wanakana, không tự đổi giản/phồn hoặc bỏ thanh điệu. Giáo viên khai báo đáp án tương đương. Bộ font/TTS đúng locale, module kana/JLPT chỉ xuất hiện cho tiếng Nhật. UI quản lý ban đầu vẫn tiếng Việt.
 
 Tự luận/ảnh bài làm cần chấm tay và trạng thái/điểm riêng trước khi bật; ngoài MVP scan choice/fill. Không tự coi nội dung chưa hỗ trợ là sai hoặc điểm 0.
 
 ## Thứ tự giao và tiêu chí thử nghiệm
 
-A: onboarding giáo viên + cách ly dữ liệu + lớp có sức chứa/link Meet. B: ngôn ngữ Nhật/Trung + chia sẻ/copy version. C: upload ảnh để xem, sau đó OCR choice/fill có duyệt. D: chấm tay và mở rộng loại scan theo dữ liệu thực tế. Chưa triển khai thu phí.
+A: onboarding giáo viên + cách ly dữ liệu + lớp có sức chứa/link Meet. B: luồng Việt–Trung + chia sẻ/copy version, giữ tương thích nội dung Nhật hiện có. C: upload ảnh để xem, sau đó OCR choice/fill có duyệt. D: chấm tay và mở rộng loại scan theo dữ liệu thực tế. Chưa triển khai thu phí.
 
-Thử với hai giáo viên, hai ngôn ngữ, một lớp 10 học sinh, một lớp khác để kiểm tra vượt quyền; dùng bộ scan được phép sử dụng. Đo thời gian nhập tay và thời gian sửa kết quả scan, tỷ lệ câu cần sửa, lỗi đáp án, chi phí/trang và số job lỗi. Chỉ mở OCR rộng khi giúp giáo viên tiết kiệm thời gian và mọi câu xuất bản được duyệt. Testcase chi tiết ở [checklist dịch vụ](../testing/teaching-service.md).
+Thử với hai giáo viên tiếng Trung dạy người Việt, một lớp 10 học sinh, một lớp khác để kiểm tra vượt quyền; kiểm tra hồi quy riêng với dữ liệu Nhật hiện có; dùng bộ scan được phép sử dụng. Đo thời gian nhập tay và thời gian sửa kết quả scan, tỷ lệ câu cần sửa, lỗi đáp án, chi phí/trang và số job lỗi. Chỉ mở OCR rộng khi giúp giáo viên tiết kiệm thời gian và mọi câu xuất bản được duyệt. Testcase chi tiết ở [checklist dịch vụ](../testing/teaching-service.md).

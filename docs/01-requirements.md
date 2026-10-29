@@ -2,7 +2,7 @@
 
 Ký hiệu mức ưu tiên: **P0** là tính năng cốt lõi của sản phẩm, **P1** cần cho vận hành đầy đủ, **P2** mở rộng. Mốc giao cụ thể theo `09-roadmap.md`; bản chạy đầu tiên chỉ gồm nền và kana, không gom mọi P0 vào giai đoạn 1.
 
-Phạm vi dịch vụ cập nhật ngày 29/10/2026: đăng ký giáo viên, lớp riêng, chia sẻ và nhập scan theo phần yêu cầu dịch vụ cuối file. Các mục kana/N5 bên dưới thuộc module tiếng Nhật; mức P0 của chúng không bắt buộc xuất hiện trong lớp tiếng Trung.
+Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhiều môn/ngôn ngữ, ưu tiên MVP dạy tiếng Trung cho người Việt (Việt–Trung); đăng ký giáo viên, lớp riêng, chia sẻ và nhập scan theo phần yêu cầu dịch vụ cuối file. Các mục kana/N5 bên dưới thuộc module tiếng Nhật; mức P0 của chúng không bắt buộc xuất hiện trong lớp tiếng Trung.
 
 ## Yêu cầu chức năng
 
@@ -181,7 +181,7 @@ Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế
 | SERVICE-02 | Cách ly dữ liệu lớp và học liệu riêng giữa giáo viên ở API, RLS và media | P0 |
 | CLASS-08 | Sức chứa lớp tùy chọn, ví dụ 10 chỗ; đếm thành viên đang học, vào đồng thời không vượt chỗ | P0 |
 | CLASS-09 | Link Google Meet cho thành viên lớp, giáo viên chia sẻ tab slide; không tự tạo cuộc gọi | P0 |
-| LANG-01 | Nội dung có ngôn ngữ/locale; Nhật và Trung dùng bộ nhập, font, TTS, chuẩn hóa/chấm phù hợp | P0 |
+| LANG-01 | Tách môn học, ngôn ngữ nội dung và ngôn ngữ hướng dẫn; MVP Việt–Trung dùng hướng dẫn/nghĩa Việt, chữ Hán/pinyin/audio Trung; giữ tương thích dữ liệu Nhật cũ, mở môn/ngôn ngữ khác sau | P0 |
 | SHARE-01 | Chia sẻ một phiên bản slide cho giáo viên cụ thể, quyền xem hoặc sao chép; có thu hồi | P0 |
 | SHARE-02 | Bản sao độc lập giữ nguồn và tác giả; cập nhật bài gốc không tự đổi lớp/bài giao nhận | P0 |
 | SCAN-01 | Upload ảnh/PDF riêng tư, xem trang gốc, xử lý bất đồng bộ có quota và báo lỗi | P1 |

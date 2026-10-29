@@ -1,6 +1,6 @@
 # Masu — Tài liệu dịch vụ hỗ trợ giảng dạy
 
-Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; tiếng Trung, đăng ký giáo viên, chia sẻ và nhập scan là phạm vi mới chưa triển khai. Đọc [tổng quan](00-overview.md) trước.
+Masu hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), với đăng ký giáo viên, chia sẻ và nhập scan chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
 
 ## Cách đọc
 
