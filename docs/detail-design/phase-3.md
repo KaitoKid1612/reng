@@ -37,7 +37,7 @@ Logic thuần không import service client. Trang server gọi lib/server trực
 - Đăng ký: Zod kiểm tra họ tên 1–80 ký tự, email ≤ 254, mật khẩu 8–72. `signUp` với `emailRedirectTo = origin + /auth/confirm?next=…`; luôn hiện cùng màn hình "kiểm tra email" để không lộ email đã đăng ký.
 - Email xác nhận/đặt lại dùng token hash: template nối `{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email|recovery`. GET /auth/confirm gọi `verifyOtp`, chỉ nhận type email/recovery và `next` là đường dẫn nội bộ (bắt đầu `/`, không `//`, không `\`). Recovery chuyển tới /reset-password; lỗi chuyển /sign-in?error=link.
 - Quên mật khẩu luôn trả cùng thông báo. Đặt lại yêu cầu phiên từ link recovery, gọi `updateUser({password})` rồi đăng xuất các phiên khác bằng scope others.
-- Đăng xuất là action; nút đăng xuất xóa bản nháp cục bộ `masu:draft:*` trước khi gửi form.
+- Đăng xuất là action; nút đăng xuất xóa bản nháp cục bộ `reng:draft:*` trước khi gửi form.
 - `next` mặc định: học viên /classes, giảng viên /teach.
 - Origin dùng cho link email, redirect sau xác nhận và kiểm tra same-origin lấy từ `x-forwarded-host`/`host` (lib/server/request-origin.ts), không lấy từ `request.url`: Next dev báo `localhost` dù trình duyệt dùng 127.0.0.1, làm mất cookie phiên gắn theo host. SITE_URL (nếu đặt) được ưu tiên cho link email.
 
@@ -59,12 +59,12 @@ RLS bật trên mọi bảng mới. `anon` không có quyền; `authenticated` c
 
 ## RPC
 
-Tất cả `set search_path = ''`, chỉ `service_role` được execute; server gọi sau khi xác thực user và truyền `p_user_id`/`p_teacher_id` từ phiên. RPC kiểm tra lại quyền trong transaction. Trạng thái nghiệp vụ trả về dạng mã (không rollback dữ liệu cần giữ như lượt thử mã); lỗi bất biến dùng exception `masu:<code>`.
+Tất cả `set search_path = ''`, chỉ `service_role` được execute; server gọi sau khi xác thực user và truyền `p_user_id`/`p_teacher_id` từ phiên. RPC kiểm tra lại quyền trong transaction. Trạng thái nghiệp vụ trả về dạng mã (không rollback dữ liệu cần giữ như lượt thử mã); lỗi bất biến dùng exception `reng:<code>`.
 
 | RPC | Hợp đồng |
 |---|---|
 | join_class(user, code) | Chỉ student. ≥ 8 lần sai trong 15 phút → rate_limited. Mã không có/đã thu hồi/lớp ngừng → invalid_code và ghi lượt sai. Đã là thành viên → already_member; đã rời → vào lại với joined_at mới. |
-| upsert_class_lesson(teacher, class, lesson, version, order, available_at) | Lớp và bài thuộc giảng viên; version thuộc bài; thứ tự trùng → masu:order_taken |
+| upsert_class_lesson(teacher, class, lesson, version, order, available_at) | Lớp và bài thuộc giảng viên; version thuộc bài; thứ tự trùng → reng:order_taken |
 | publish_assignment(teacher, class, lesson, title, mode, due, allow_late, pass, attempts, policy, practice_ids, test_questions) | Lấy version đang ghim của lớp; practice sao chép câu theo ID từ content của version đó, test nhận câu riêng; 1–50 câu, ID duy nhất; hạn phải ở tương lai; tạo draft + items rồi chuyển published trong cùng transaction |
 | close_assignment(teacher, assignment) | published → closed; lượt đang làm không nộp được nữa |
 | start_attempt(user, assignment) | Advisory lock theo assignment/user. Kiểm tra thành viên còn hoạt động, bài published thuộc lớp, available_at ≤ now, lớp active, hạn/nộp muộn. Có lượt in_progress → resumed; còn lượt → started với attempt_no kế tiếp; hết → no_attempts_left |
@@ -90,7 +90,7 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 - Runner chỉ render phía client (`next/dynamic`, `ssr: false`) để khôi phục bản cục bộ ngay trong state ban đầu, không lệch hydrate và không setState trong effect. Key của runner gồm submission và revision nên "Tải bản mới nhất" (router.refresh) mount lại với draft server.
 - Hộp xác nhận nộp nằm trong thanh công cụ dính dưới cùng, focus vào nút xác nhận; trên điện thoại mỗi lần hiện một câu và chuyển câu thì lưu ngay.
 - Autosave debounce 800 ms sau thay đổi và ngay khi chuyển câu/nộp; chỉ một request lưu tại một thời điểm, thay đổi mới xếp hàng. Trạng thái: đang lưu, đã lưu (theo phản hồi server), chưa lưu do mất mạng, xung đột.
-- Bản dự phòng localStorage `masu:draft:{userId}:{submissionId}` gồm draft và revision gốc; ghi khi thay đổi, xóa khi lưu thành công/nộp/đăng xuất. Khi có mạng: revision gốc bằng revision server thì gửi; khác thì báo xung đột và chỉ cho tải bản mới, không tự ghi đè.
+- Bản dự phòng localStorage `reng:draft:{userId}:{submissionId}` gồm draft và revision gốc; ghi khi thay đổi, xóa khi lưu thành công/nộp/đăng xuất. Khi có mạng: revision gốc bằng revision server thì gửi; khác thì báo xung đột và chỉ cho tải bản mới, không tự ghi đè.
 - Ô điền tiếng Nhật chuyển romaji bằng wanakana `toKana` IMEMode trên đoạn Latin ngay trước con trỏ (hiragana/japanese → hiragana, katakana → katakana; chữ hoa → katakana). Không chuyển khi đang composition có ký tự Nhật (IME Nhật); composition chữ Latin của bàn phím Android vẫn được chuyển. Kanji/kana dán vào được giữ nguyên.
 
 ## Ôn tập

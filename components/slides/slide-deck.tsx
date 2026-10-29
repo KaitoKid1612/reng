@@ -84,7 +84,7 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
         deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
           const popup = window.open(
             `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`,
-            "masu-presenter",
+            "reng-presenter",
             "width=1200,height=850",
           );
           if (!popup) {
@@ -204,7 +204,7 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
       {notice && (
         <p role="status" className="slide-notice">
           {notice}{" "}
-          <a href={`${base}/presenter?version=${lesson.id}`} target="masu-presenter">
+          <a href={`${base}/presenter?version=${lesson.id}`} target="reng-presenter">
             Mở presenter
           </a>
         </p>

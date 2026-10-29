@@ -114,7 +114,7 @@ export function PresenterView({ lesson }: PresenterViewProps) {
         <Button onClick={() => handleCommand("next")}>Tiếp</Button>
         <Link
           href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#${index + 1}`}
-          target="masu-slides"
+          target="reng-slides"
         >
           Mở trình chiếu
         </Link>

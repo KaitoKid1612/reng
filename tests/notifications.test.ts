@@ -20,8 +20,8 @@ import { verifyWebhookSignature } from "../lib/notifications/webhook-signature";
 const USER = "00000000-0000-4000-8000-000000000001";
 const footer = {
   reason: "Bạn nhận thư này vì đã bật nhắc học trên Reng.",
-  settingsUrl: "https://masu.example/settings/notifications",
-  unsubscribeUrl: "https://masu.example/unsubscribe/token",
+  settingsUrl: "https://reng.example/settings/notifications",
+  unsubscribeUrl: "https://reng.example/unsubscribe/token",
 };
 
 test("reminder subjects name the learner and a concrete number, with escaped content", () => {
@@ -32,15 +32,15 @@ test("reminder subjects name the learner and a concrete number, with escaped con
     dueCards: 12,
     assignments: [{ title: '<script>alert("x")</script>', dueAt: "2026-10-29T13:00:00Z" }],
     word: { front: "行きます", reading: "いきます", meaning: "đi", lang: "ja" },
-    reviewUrl: "https://masu.example/review",
-    assignmentsUrl: "https://masu.example/classes",
+    reviewUrl: "https://reng.example/review",
+    assignmentsUrl: "https://reng.example/classes",
   });
   assert.equal(email.subject, "Hà ơi, hôm nay có 12 thẻ cần ôn");
   assert.ok(email.text.includes("行きます (いきます): đi"), "the Japanese word line is unchanged");
   assert.ok(email.html.includes("&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;"));
   assert.equal(email.html.includes("<script>"), false);
   assert.ok(email.html.includes("Ôn 12 thẻ ngay"));
-  assert.ok(email.text.includes("Hủy nhận email: https://masu.example/unsubscribe/token"));
+  assert.ok(email.text.includes("Hủy nhận email: https://reng.example/unsubscribe/token"));
   assert.equal(email.html.includes(" · "), false, "footer links are not joined with middle dots");
   const dueOnly = renderDailyReminder({
     ...footer,

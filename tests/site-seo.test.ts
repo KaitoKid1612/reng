@@ -8,23 +8,23 @@ import { describeLessonForSearch, lessonJsonLd } from "../lib/lesson-seo";
 import { serializeJsonLd, toMetaDescription } from "../lib/site";
 
 test("robots keeps private and presentation routes out and points to the sitemap", () => {
-  process.env.SITE_URL = "https://masu.example";
+  process.env.SITE_URL = "https://reng.example";
   const result = robots();
   const rules = Array.isArray(result.rules) ? result.rules[0] : result.rules;
   for (const path of ["/admin", "/teach", "/classes", "/assignments", "/lessons/*/slide"]) {
     assert.ok([rules.disallow].flat().includes(path), path);
   }
   assert.equal(rules.allow, "/");
-  assert.equal(result.sitemap, "https://masu.example/sitemap.xml");
+  assert.equal(result.sitemap, "https://reng.example/sitemap.xml");
 });
 
 test("the sitemap lists public pages and public lessons without version parameters", async () => {
-  process.env.SITE_URL = "https://masu.example";
+  process.env.SITE_URL = "https://reng.example";
   process.env.LESSON_SOURCE = "local";
   const urls = (await sitemap()).map((entry) => entry.url);
-  assert.ok(urls.includes("https://masu.example/"));
-  assert.ok(urls.includes("https://masu.example/for-teachers"));
-  assert.ok(urls.includes("https://masu.example/lessons/lesson-01"));
+  assert.ok(urls.includes("https://reng.example/"));
+  assert.ok(urls.includes("https://reng.example/for-teachers"));
+  assert.ok(urls.includes("https://reng.example/lessons/lesson-01"));
   assert.ok(urls.every((url) => !url.includes("?") && !new URL(url).pathname.startsWith("/teach")));
 });
 

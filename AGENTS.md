@@ -1,4 +1,4 @@
-# Reng project instructions (repository `masu`)
+# Reng project instructions
 
 Read and follow [coding standards](docs/coding-standards.md) before editing source. The project uses English filenames, route segments and identifiers; user-facing content uses the relevant teaching and learning languages. The service MVP prioritizes Chinese for Vietnamese learners; preserve existing Japanese content and keep the platform extensible to other subjects.
 
@@ -11,7 +11,7 @@ Read and follow [coding standards](docs/coding-standards.md) before editing sour
 
 ## Git workflow
 
-- Repository: `git@github.com:KaitoKid1612/masu.git`. The personal SSH key labeled `leviet1612@gmail.com` authenticates as GitHub account `KaitoKid1612`; the key label is not a GitHub username.
+- Repository: `git@github.com:KaitoKid1612/reng.git`. The personal SSH key labeled `leviet1612@gmail.com` authenticates as GitHub account `KaitoKid1612`; the key label is not a GitHub username.
 - Use repository-local commit identity `Lê Viết Việt <43107595+KaitoKid1612@users.noreply.github.com>` and the verified personal SSH identity. Keep private keys and local SSH configuration outside the repository.
 - Work directly on `main`. Do not create a feature branch or PR unless the user changes this instruction.
 - After each completed, verified task, create one or more focused commits and push to `origin/main` without asking again. The user has explicitly authorized this workflow.

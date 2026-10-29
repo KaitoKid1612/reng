@@ -40,19 +40,19 @@ declare
   granted uuid;
 begin
   if p_permission is null or p_permission not in ('view', 'copy') then
-    raise exception 'masu:invalid_input';
+    raise exception 'reng:invalid_input';
   end if;
   if not exists (
     select 1 from public.lessons l join public.profiles p on p.id = l.owner_id
     where l.id = p_lesson_id and l.owner_id = p_owner_id and l.archived_at is null and p.role = 'teacher'
   ) then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   if exists (select 1 from public.lessons where id = p_lesson_id and copied_from_version_id is not null) then
-    raise exception 'masu:reshare_not_allowed';
+    raise exception 'reng:reshare_not_allowed';
   end if;
   if not exists (select 1 from public.lesson_versions where id = p_version_id and lesson_id = p_lesson_id) then
-    raise exception 'masu:version_not_found';
+    raise exception 'reng:version_not_found';
   end if;
   perform pg_advisory_xact_lock(hashtextextended('share:' || p_owner_id::text, 0));
   if (
@@ -97,7 +97,7 @@ begin
     where id = p_share_id and owner_id = p_owner_id
     returning revoked_at into revoked;
   if revoked is null then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   insert into public.audit_events(actor_id, action, resource_id)
     values (p_owner_id, 'lesson.share_revoked', p_share_id::text);
@@ -118,18 +118,18 @@ declare
   existing public.lessons%rowtype;
 begin
   if p_request_id is null then
-    raise exception 'masu:invalid_input';
+    raise exception 'reng:invalid_input';
   end if;
   perform pg_advisory_xact_lock(hashtextextended('create:' || p_teacher_id::text || ':' || p_request_id::text, 0));
   select * into existing from public.lessons where owner_id = p_teacher_id and creation_request_id = p_request_id;
   if found then
     if existing.creation_fingerprint is distinct from p_fingerprint then
-      raise exception 'masu:request_conflict';
+      raise exception 'reng:request_conflict';
     end if;
     return existing.id;
   end if;
   if (select count(*) from public.lessons where owner_id = p_teacher_id and archived_at is null) >= 2000 then
-    raise exception 'masu:quota_exceeded';
+    raise exception 'reng:quota_exceeded';
   end if;
   insert into public.lessons(id, owner_id, title, title_ja, summary, order_no, course_id, draft_content,
       authoring_state, creation_request_id, creation_fingerprint, copied_from_version_id, copy_attribution)
@@ -156,7 +156,7 @@ begin
     select 1 from public.teacher_accounts t join public.profiles p on p.id = t.user_id
     where t.user_id = p_teacher_id and t.status = 'active' and p.role = 'teacher'
   ) then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   -- A retried request returns its copy even if the grant was revoked in between.
   if exists (
@@ -168,7 +168,7 @@ begin
   select * into share from public.lesson_shares
     where id = p_share_id and recipient_id = p_teacher_id and revoked_at is null and permission = 'copy';
   if not found then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   select * into source from public.lesson_versions where id = share.version_id;
   select coalesce(nullif(full_name, ''), 'một giáo viên') into owner_name from public.profiles where id = share.owner_id;
@@ -207,7 +207,7 @@ begin
   select l.* into source from public.lessons l join public.profiles p on p.id = l.owner_id
     where l.id = p_lesson_id and l.owner_id = p_teacher_id and l.archived_at is null and p.role = 'teacher';
   if not found then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   return public.insert_lesson_copy(
     p_teacher_id, p_request_id, md5('duplicate:' || p_lesson_id),

@@ -23,5 +23,5 @@ export const slideMessageSchema = z.discriminatedUnion("type", [
 ]);
 
 export function slideChannelName(lessonId: string, versionId: string) {
-  return `masu-slides:${lessonId}:${versionId}`;
+  return `reng-slides:${lessonId}:${versionId}`;
 }

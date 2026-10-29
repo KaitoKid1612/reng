@@ -174,7 +174,7 @@ language plpgsql set search_path = '' as $$
 begin
   if tg_op = 'DELETE' then
     if old.status <> 'draft' then
-      raise exception 'masu:assignment_immutable';
+      raise exception 'reng:assignment_immutable';
     end if;
     return old;
   end if;
@@ -188,7 +188,7 @@ begin
       old.created_at)
     or (new.status <> old.status and not (old.status = 'published' and new.status = 'closed'))
   ) then
-    raise exception 'masu:assignment_immutable';
+    raise exception 'reng:assignment_immutable';
   end if;
   return new;
 end;
@@ -200,16 +200,16 @@ create function public.guard_assignment_items() returns trigger
 language plpgsql set search_path = '' as $$
 begin
   if tg_op = 'UPDATE' then
-    raise exception 'masu:assignment_immutable';
+    raise exception 'reng:assignment_immutable';
   end if;
   if tg_op = 'DELETE' then
     if exists (select 1 from public.assignments a where a.id = old.assignment_id and a.status <> 'draft') then
-      raise exception 'masu:assignment_immutable';
+      raise exception 'reng:assignment_immutable';
     end if;
     return old;
   end if;
   if exists (select 1 from public.assignments a where a.id = new.assignment_id and a.status <> 'draft') then
-    raise exception 'masu:assignment_immutable';
+    raise exception 'reng:assignment_immutable';
   end if;
   return new;
 end;
@@ -221,11 +221,11 @@ create function public.guard_submission_change() returns trigger
 language plpgsql set search_path = '' as $$
 begin
   if tg_op = 'DELETE' or old.status = 'submitted' then
-    raise exception 'masu:submission_immutable';
+    raise exception 'reng:submission_immutable';
   end if;
   if (new.id, new.assignment_id, new.user_id, new.attempt_no, new.started_at)
     is distinct from (old.id, old.assignment_id, old.user_id, old.attempt_no, old.started_at) then
-    raise exception 'masu:submission_immutable';
+    raise exception 'reng:submission_immutable';
   end if;
   return new;
 end;
@@ -236,7 +236,7 @@ for each row execute function public.guard_submission_change();
 create function public.reject_history_change() returns trigger
 language plpgsql set search_path = '' as $$
 begin
-  raise exception 'masu:history_immutable';
+  raise exception 'reng:history_immutable';
 end;
 $$;
 create trigger answers_immutable before update or delete on public.answers
@@ -376,24 +376,24 @@ begin
     select 1 from public.classes c join public.profiles p on p.id = c.teacher_id
     where c.id = p_class_id and c.teacher_id = p_teacher_id and p.role = 'teacher'
   ) then
-    raise exception 'masu:class_not_found';
+    raise exception 'reng:class_not_found';
   end if;
   if not exists (
     select 1 from public.lessons l
     where l.id = p_lesson_id and l.owner_id = p_teacher_id and l.archived_at is null
   ) then
-    raise exception 'masu:lesson_not_found';
+    raise exception 'reng:lesson_not_found';
   end if;
   if not exists (
     select 1 from public.lesson_versions v where v.id = p_version_id and v.lesson_id = p_lesson_id
   ) then
-    raise exception 'masu:version_not_found';
+    raise exception 'reng:version_not_found';
   end if;
   if exists (
     select 1 from public.class_lessons cl
     where cl.class_id = p_class_id and cl.order_no = p_order_no and cl.lesson_id <> p_lesson_id
   ) then
-    raise exception 'masu:order_taken';
+    raise exception 'reng:order_taken';
   end if;
   insert into public.class_lessons(class_id, lesson_id, lesson_version_id, order_no, available_at)
     values (p_class_id, p_lesson_id, p_version_id, p_order_no, p_available_at)
@@ -420,36 +420,36 @@ begin
     select 1 from public.classes c join public.profiles p on p.id = c.teacher_id
     where c.id = p_class_id and c.teacher_id = p_teacher_id and p.role = 'teacher' and c.active
   ) then
-    raise exception 'masu:class_not_found';
+    raise exception 'reng:class_not_found';
   end if;
   select cl.lesson_version_id into v_version_id from public.class_lessons cl
     where cl.class_id = p_class_id and cl.lesson_id = p_lesson_id;
   if v_version_id is null then
-    raise exception 'masu:lesson_not_in_class';
+    raise exception 'reng:lesson_not_in_class';
   end if;
   if p_due_at is not null and p_due_at <= now() then
-    raise exception 'masu:due_in_past';
+    raise exception 'reng:due_in_past';
   end if;
   if p_mode = 'practice' then
     if p_test_questions is not null or coalesce(cardinality(p_practice_question_ids), 0) not between 1 and 50
       or cardinality(p_practice_question_ids) <> (select count(distinct id) from unnest(p_practice_question_ids) id) then
-      raise exception 'masu:invalid_items';
+      raise exception 'reng:invalid_items';
     end if;
     select v.content -> 'questions' into v_questions from public.lesson_versions v where v.id = v_version_id;
     select jsonb_agg(question.value order by requested.position) into v_items
       from unnest(p_practice_question_ids) with ordinality as requested(id, position)
       join jsonb_array_elements(v_questions) question on question.value ->> 'id' = requested.id;
     if coalesce(jsonb_array_length(v_items), 0) <> cardinality(p_practice_question_ids) then
-      raise exception 'masu:invalid_items';
+      raise exception 'reng:invalid_items';
     end if;
   elsif p_mode = 'test' then
     if coalesce(cardinality(p_practice_question_ids), 0) <> 0 or jsonb_typeof(p_test_questions) is distinct from 'array'
       or jsonb_array_length(p_test_questions) not between 1 and 50 then
-      raise exception 'masu:invalid_items';
+      raise exception 'reng:invalid_items';
     end if;
     v_items := p_test_questions;
   else
-    raise exception 'masu:invalid_mode';
+    raise exception 'reng:invalid_mode';
   end if;
   insert into public.assignments(class_id, lesson_id, lesson_version_id, title, mode, due_at,
       allow_late, pass_score, max_attempts, feedback_policy)
@@ -475,7 +475,7 @@ begin
         where c.id = a.class_id and c.teacher_id = p_teacher_id
       );
   if not found then
-    raise exception 'masu:assignment_not_found';
+    raise exception 'reng:assignment_not_found';
   end if;
 end;
 $$;
@@ -696,7 +696,7 @@ begin
   select e.user_id into v_event_user from public.review_events e where e.request_id = p_request_id;
   if v_event_user is not null then
     if v_event_user <> p_user_id then
-      raise exception 'masu:request_conflict';
+      raise exception 'reng:request_conflict';
     end if;
     select c.revision into v_revision from public.srs_cards c
       where c.user_id = p_user_id and c.item_type = p_item_type

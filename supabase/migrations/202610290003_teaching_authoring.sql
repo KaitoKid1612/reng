@@ -18,22 +18,22 @@ declare
   existing public.lessons%rowtype;
 begin
   if not exists (select 1 from public.profiles where id = p_teacher_id and role = 'teacher') then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   if p_request_id is null or p_content ->> 'schemaVersion' is distinct from '2'
     or length(coalesce(p_title, '')) > 160 or p_order is null or p_order not between 1 and 999 then
-    raise exception 'masu:invalid_draft';
+    raise exception 'reng:invalid_draft';
   end if;
   perform pg_advisory_xact_lock(hashtextextended('create:' || p_teacher_id::text || ':' || p_request_id::text, 0));
   select * into existing from public.lessons where owner_id = p_teacher_id and creation_request_id = p_request_id;
   if found then
     if existing.creation_fingerprint is distinct from fingerprint then
-      raise exception 'masu:request_conflict';
+      raise exception 'reng:request_conflict';
     end if;
     return existing.id;
   end if;
   if (select count(*) from public.lessons where owner_id = p_teacher_id and archived_at is null) >= 2000 then
-    raise exception 'masu:quota_exceeded';
+    raise exception 'reng:quota_exceeded';
   end if;
   insert into public.lessons(id, owner_id, title, title_ja, summary, order_no, course_id, draft_content,
       authoring_state, creation_request_id, creation_fingerprint)
@@ -84,15 +84,15 @@ begin
     where l.id = p_lesson_id and l.owner_id = p_teacher_id and l.archived_at is null and p.role = 'teacher'
     for update of l;
   if not found then
-    raise exception 'masu:not_found';
+    raise exception 'reng:not_found';
   end if;
   if lesson.draft_content ->> 'schemaVersion' is distinct from '2' or p_content ->> 'schemaVersion' is distinct from '2'
     or jsonb_typeof(p_content -> 'questions') is distinct from 'array'
     or length(coalesce(p_title, '')) > 160 or p_order is null or p_order not between 1 and 999 then
-    raise exception 'masu:invalid_draft';
+    raise exception 'reng:invalid_draft';
   end if;
   if lesson.draft_revision is distinct from p_expected_revision then
-    raise exception 'masu:revision_conflict';
+    raise exception 'reng:revision_conflict';
   end if;
   -- Keep reviews only for questions that still exist; stale hashes simply stop matching.
   select coalesce(jsonb_object_agg(entry.key, entry.value), '{}'::jsonb) into reviews
@@ -101,7 +101,7 @@ begin
   foreach question_id in array coalesce(p_confirmed_ids, '{}') loop
     select q into question from jsonb_array_elements(p_content -> 'questions') q where q ->> 'id' = question_id;
     if not found then
-      raise exception 'masu:invalid_items';
+      raise exception 'reng:invalid_items';
     end if;
     reviews := jsonb_set(reviews, array[question_id], to_jsonb(md5(question::text)));
   end loop;
@@ -146,11 +146,11 @@ begin
   end if;
   if p_content ->> 'schemaVersion' = '2' then
     if p_content is distinct from current_lesson.draft_content then
-      raise exception 'masu:save_before_publish';
+      raise exception 'reng:save_before_publish';
     end if;
     if exists (select 1 from jsonb_array_elements(p_content -> 'questions') q
       where current_lesson.authoring_state -> 'reviewedQuestions' ->> (q ->> 'id') is distinct from md5(q::text)) then
-      raise exception 'masu:review_required';
+      raise exception 'reng:review_required';
     end if;
   end if;
   select coalesce(max(version_no), 0) + 1 into next_version from public.lesson_versions where lesson_id = p_lesson_id;

@@ -12,7 +12,7 @@ export default function globalSetup() {
       SUPABASE_SECRET_KEY: process.env.E2E_SUPABASE_SECRET_KEY,
     },
   });
-  process.env.E2E_TEACHER_EMAIL = "teacher@masu.local";
+  process.env.E2E_TEACHER_EMAIL = "teacher@reng.local";
   process.env.E2E_TEACHER_PASSWORD = password;
   process.env.E2E_RUN_ID = Date.now().toString(36);
 }

@@ -16,7 +16,7 @@ Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inli
 
 Làm sai thì email vào thẳng spam và bạn không bao giờ biết.
 
-1. Gửi từ tên miền riêng, ví dụ `nhacbai@masu.example`. Không gửi từ địa chỉ Gmail.
+1. Gửi từ tên miền riêng, ví dụ `nhacbai@reng.example`. Không gửi từ địa chỉ Gmail.
 2. Thêm ba bản ghi DNS: SPF, DKIM, DMARC. Resend hướng dẫn từng bước, khoảng 20 phút.
 3. Thêm header one-click unsubscribe.
 
@@ -25,7 +25,7 @@ Trước gửi thật kiểm tra yêu cầu domain/xác thực của đúng prov
 Email nhắc học phải có lựa chọn nhận tin và cách hủy. Không dùng phần này để kết luận miễn trừ pháp lý cho loại email nào; kiểm tra yêu cầu vận hành trước gửi thật. Bản hiện tại có header/link hủy theo DD phase-4; ví dụ:
 
 ```
-List-Unsubscribe: <https://masu.example/unsubscribe/abc123>
+List-Unsubscribe: <https://reng.example/unsubscribe/abc123>
 List-Unsubscribe-Post: List-Unsubscribe=One-Click
 ```
 

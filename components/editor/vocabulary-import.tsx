@@ -141,7 +141,7 @@ export function VocabularyImport({ lessons, initialLessonId }: VocabularyImportP
             Cột bắt buộc: jp (kana), romaji, vi; tùy chọn: kanji, note.{" "}
             <a
               href={`data:text/csv;charset=utf-8,${encodeURIComponent(CSV_TEMPLATE)}`}
-              download="masu-tu-vung.csv"
+              download="reng-tu-vung.csv"
             >
               Tải file mẫu
             </a>

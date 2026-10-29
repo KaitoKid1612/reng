@@ -13,7 +13,7 @@ const SAMPLE_LESSONS = [1, 2, 3, 4, 5].map((number) => `content/lessons/lesson-0
 async function main() {
   const { values } = parseArgs({
     options: {
-      email: { type: "string", default: "teacher@masu.local" },
+      email: { type: "string", default: "teacher@reng.local" },
       name: { type: "string", default: "Giảng viên mẫu" },
       password: { type: "string" },
     },

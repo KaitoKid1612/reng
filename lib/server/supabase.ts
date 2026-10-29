@@ -33,8 +33,8 @@ function toServiceError(error: { message: string; code?: string }) {
   if (error.code === "23505") {
     return new ServiceError("duplicate");
   }
-  // RPC business violations are raised as "masu:<code>"; anything else stays generic.
-  return new ServiceError(/masu:([a-z_]+)/.exec(error.message)?.[1] ?? "database_error");
+  // RPC business violations are raised as "reng:<code>"; anything else stays generic.
+  return new ServiceError(/reng:([a-z_]+)/.exec(error.message)?.[1] ?? "database_error");
 }
 
 export async function callRpc<Schema extends z.ZodType>(

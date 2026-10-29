@@ -1,6 +1,6 @@
 # Reng
 
-Tên sản phẩm là **Reng** (tiếng chuông vào lớp); repo, package và định danh nội bộ vẫn giữ tên `masu`.
+Tên sản phẩm là **Reng** (tiếng chuông vào lớp).
 
 Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; nội dung dịch vụ ưu tiên Việt–Trung, giữ dữ liệu Nhật hiện có. Dịch vụ giáo viên đang triển khai theo từng lát trong [đối chiếu source](docs/source-alignment.md). Chạy `npm run check` trước khi bàn giao thay đổi.
 
@@ -76,7 +76,7 @@ npm run seed:local -- --password <mật-khẩu-giảng-viên-local>
 npm run dev
 ```
 
-Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@masu.local đã xác nhận, cấp role giảng viên, xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt) rồi đặt riêng chúng ở chế độ công khai, vì xuất bản không tự công khai. Để xem giao diện dịch vụ Việt–Trung, chạy thêm `npm run seed:demo` (cùng mật khẩu `SEED_TEACHER_PASSWORD`): tạo admin@masu.local (quản trị viên), co.lan@masu.local (giáo viên tiếng Trung đã duyệt, có bài, lớp 10 chỗ và bài luyện tập), thay.minh@masu.local (yêu cầu giảng dạy đang chờ duyệt) và hoc.vien@masu.local (học viên đã vào lớp). Nội dung bài demo chỉ để minh họa, chưa được giáo viên tiếng Trung duyệt; chạy lại không tạo trùng. Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
+Script seed chỉ ghi vào Supabase chạy trên máy này: tạo teacher@reng.local đã xác nhận, cấp role giảng viên, xuất bản 5 bài mẫu (vẫn mang nhãn chờ duyệt) rồi đặt riêng chúng ở chế độ công khai, vì xuất bản không tự công khai. Để xem giao diện dịch vụ Việt–Trung, chạy thêm `npm run seed:demo` (cùng mật khẩu `SEED_TEACHER_PASSWORD`): tạo admin@reng.local (quản trị viên), co.lan@reng.local (giáo viên tiếng Trung đã duyệt, có bài, lớp 10 chỗ và bài luyện tập), thay.minh@reng.local (yêu cầu giảng dạy đang chờ duyệt) và hoc.vien@reng.local (học viên đã vào lớp). Nội dung bài demo chỉ để minh họa, chưa được giáo viên tiếng Trung duyệt; chạy lại không tạo trùng. Email xác nhận/đặt lại mật khẩu xem tại Mailpit http://127.0.0.1:54324. Kiểm thử trọn luồng lớp học:
 
 ```bash
 npm run test:e2e:supabase

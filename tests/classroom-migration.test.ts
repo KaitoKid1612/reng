@@ -165,11 +165,11 @@ test("classroom schema enforces membership, immutability, idempotent attempts an
     const classLesson = "select public.upsert_class_lesson($1, $2, 'lesson-01', $3, 1, $4)";
     await assert.rejects(
       db.query(classLesson, [OTHER_TEACHER, mainClass.id, version.id, new Date()]),
-      /masu:class_not_found/,
+      /reng:class_not_found/,
     );
     await assert.rejects(
       db.query(classLesson, [OTHER_TEACHER, otherClass.id, version.id, new Date()]),
-      /masu:lesson_not_found/,
+      /reng:lesson_not_found/,
     );
     await db.query(classLesson, [TEACHER, mainClass.id, version.id, new Date(Date.now() - 1000)]);
 
@@ -210,7 +210,7 @@ test("classroom schema enforces membership, immutability, idempotent attempts an
         [],
         JSON.stringify([testQuestion]),
       ]),
-      /masu:due_in_past/,
+      /reng:due_in_past/,
     );
     await assert.rejects(
       db.query(publish, [
@@ -224,7 +224,7 @@ test("classroom schema enforces membership, immutability, idempotent attempts an
         ["missing"],
         null,
       ]),
-      /masu:invalid_items/,
+      /reng:invalid_items/,
     );
     const items = await db.query<{ question_id: string; position: number }>(
       "select question_id, position from public.assignment_items where assignment_id = $1 order by position",

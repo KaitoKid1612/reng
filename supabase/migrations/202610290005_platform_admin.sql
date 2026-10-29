@@ -43,13 +43,13 @@ declare
   current_status text;
   needs_approval boolean;
 begin
-  if p_terms_version is distinct from '2026-10-29' then raise exception 'masu:invalid_terms'; end if;
+  if p_terms_version is distinct from '2026-10-29' then raise exception 'reng:invalid_terms'; end if;
   select email_confirmed_at into verified_at from auth.users where id = p_user_id;
-  if verified_at is null then raise exception 'masu:email_unverified'; end if;
+  if verified_at is null then raise exception 'reng:email_unverified'; end if;
   perform pg_advisory_xact_lock(hashtextextended('teacher:' || p_user_id::text, 0));
   select teacher_approval_required into needs_approval from public.platform_settings where id;
   select status into current_status from public.teacher_accounts where user_id = p_user_id for update;
-  if current_status = 'suspended' then raise exception 'masu:teacher_suspended'; end if;
+  if current_status = 'suspended' then raise exception 'reng:teacher_suspended'; end if;
   if current_status = 'active' or (current_status = 'pending' and needs_approval) then
     return current_status;
   end if;
@@ -72,12 +72,12 @@ grant execute on function public.activate_teacher(uuid, text) to service_role;
 create function public.admin_set_teacher_status(p_admin_id uuid, p_user_id uuid, p_status text)
 returns text language plpgsql security invoker set search_path = '' as $$
 begin
-  if not public.is_platform_admin(p_admin_id) then raise exception 'masu:not_found'; end if;
-  if p_status is null or p_status not in ('active', 'suspended') then raise exception 'masu:invalid_input'; end if;
+  if not public.is_platform_admin(p_admin_id) then raise exception 'reng:not_found'; end if;
+  if p_status is null or p_status not in ('active', 'suspended') then raise exception 'reng:invalid_input'; end if;
   update public.teacher_accounts
     set status = p_status, activated_at = case when p_status = 'active' then coalesce(activated_at, now()) else activated_at end
     where user_id = p_user_id;
-  if not found then raise exception 'masu:not_found'; end if;
+  if not found then raise exception 'reng:not_found'; end if;
   insert into public.audit_events(actor_id, action, resource_id)
     values (p_admin_id, 'admin.teacher.' || p_status, p_user_id::text);
   return p_status;
@@ -89,10 +89,10 @@ grant execute on function public.admin_set_teacher_status(uuid, uuid, text) to s
 create function public.admin_update_teacher_plan(p_admin_id uuid, p_user_id uuid, p_access_until date, p_note text)
 returns void language plpgsql security invoker set search_path = '' as $$
 begin
-  if not public.is_platform_admin(p_admin_id) then raise exception 'masu:not_found'; end if;
+  if not public.is_platform_admin(p_admin_id) then raise exception 'reng:not_found'; end if;
   update public.teacher_accounts set access_until = p_access_until, admin_note = coalesce(p_note, '')
     where user_id = p_user_id;
-  if not found then raise exception 'masu:not_found'; end if;
+  if not found then raise exception 'reng:not_found'; end if;
   insert into public.audit_events(actor_id, action, resource_id)
     values (p_admin_id, 'admin.teacher.plan', p_user_id::text);
 end;
@@ -103,7 +103,7 @@ grant execute on function public.admin_update_teacher_plan(uuid, uuid, date, tex
 create function public.admin_set_teacher_approval(p_admin_id uuid, p_required boolean)
 returns void language plpgsql security invoker set search_path = '' as $$
 begin
-  if not public.is_platform_admin(p_admin_id) then raise exception 'masu:not_found'; end if;
+  if not public.is_platform_admin(p_admin_id) then raise exception 'reng:not_found'; end if;
   update public.platform_settings set teacher_approval_required = coalesce(p_required, true),
     updated_at = now(), updated_by = p_admin_id where id;
   insert into public.audit_events(actor_id, action, resource_id)

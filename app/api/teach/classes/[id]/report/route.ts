@@ -16,12 +16,12 @@ export async function GET(_request: Request, { params }: ReportRouteContext) {
   try {
     const { id } = await params;
     const { className, csv } = await getClassCsv(auth.account.id, id, new Date());
-    const fileName = `masu-${className}.csv`;
+    const fileName = `reng-${className}.csv`;
     return new Response(csv, {
       headers: {
         "Cache-Control": "private, no-store",
         "Content-Type": "text/csv; charset=utf-8",
-        "Content-Disposition": `attachment; filename="masu-report.csv"; filename*=UTF-8''${encodeURIComponent(fileName)}`,
+        "Content-Disposition": `attachment; filename="reng-report.csv"; filename*=UTF-8''${encodeURIComponent(fileName)}`,
       },
     });
   } catch (error) {

@@ -15,10 +15,10 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 // Development only: demo accounts and a Vietnamese–Chinese class for reviewing the UI.
 // Illustrative content written for the demo, not reviewed by a Chinese teacher.
 const ACCOUNTS = {
-  admin: { email: "admin@masu.local", name: "Quản trị viên demo" },
-  teacher: { email: "co.lan@masu.local", name: "Cô Lan" },
-  applicant: { email: "thay.minh@masu.local", name: "Thầy Minh" },
-  learner: { email: "hoc.vien@masu.local", name: "Nguyễn Văn An" },
+  admin: { email: "admin@reng.local", name: "Quản trị viên demo" },
+  teacher: { email: "co.lan@reng.local", name: "Cô Lan" },
+  applicant: { email: "thay.minh@reng.local", name: "Thầy Minh" },
+  learner: { email: "hoc.vien@reng.local", name: "Nguyễn Văn An" },
 } as const;
 const LESSON_REQUEST = "6d5f3a9e-1c0b-4e7a-9f31-5b2d8c4e7a10";
 const LESSON_TITLE = "Chào hỏi và giới thiệu bản thân";

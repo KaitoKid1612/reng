@@ -66,12 +66,12 @@ declare
   verified_at timestamptz;
   current_status text;
 begin
-  if p_terms_version is distinct from '2026-10-29' then raise exception 'masu:invalid_terms'; end if;
+  if p_terms_version is distinct from '2026-10-29' then raise exception 'reng:invalid_terms'; end if;
   select email_confirmed_at into verified_at from auth.users where id = p_user_id;
-  if verified_at is null then raise exception 'masu:email_unverified'; end if;
+  if verified_at is null then raise exception 'reng:email_unverified'; end if;
   perform pg_advisory_xact_lock(hashtextextended('teacher:' || p_user_id::text, 0));
   select status into current_status from public.teacher_accounts where user_id = p_user_id for update;
-  if current_status = 'suspended' then raise exception 'masu:teacher_suspended'; end if;
+  if current_status = 'suspended' then raise exception 'reng:teacher_suspended'; end if;
   if current_status = 'active' then return 'active'; end if;
   insert into public.teacher_accounts(user_id, status, terms_version, accepted_terms_at, email_verified_at, activated_at)
     values(p_user_id, 'active', p_terms_version, now(), verified_at, now())
@@ -96,7 +96,7 @@ create function public.guard_class_capacity() returns trigger
 language plpgsql set search_path = '' as $$
 begin
   if new.capacity is not null and (select count(*) from public.enrollments e where e.class_id = new.id and e.left_at is null) > new.capacity then
-    raise exception 'masu:capacity_below_members';
+    raise exception 'reng:capacity_below_members';
   end if;
   return new;
 end;
@@ -114,8 +114,8 @@ declare current_class public.classes%rowtype;
 begin
   select c.* into current_class from public.classes c join public.profiles p on p.id = c.teacher_id
     where c.id = p_class_id and c.teacher_id = p_teacher_id and p.role = 'teacher' for update of c;
-  if not found then raise exception 'masu:class_not_found'; end if;
-  if current_class.revision is distinct from p_expected_revision then raise exception 'masu:revision_conflict'; end if;
+  if not found then raise exception 'reng:class_not_found'; end if;
+  if current_class.revision is distinct from p_expected_revision then raise exception 'reng:revision_conflict'; end if;
   update public.classes set name = p_name, pass_score = p_pass_score, active = p_active,
     capacity = p_capacity, meeting_url = p_meeting_url, subject = p_subject, language_tag = p_language_tag,
     revision = revision + 1 where id = p_class_id;
@@ -244,10 +244,10 @@ grant execute on function public.read_lesson_version(uuid,text,uuid) to service_
 create function public.set_lesson_visibility(p_owner_id uuid, p_lesson_id text, p_visibility text)
 returns void language plpgsql security invoker set search_path = '' as $$
 begin
-  if p_visibility not in ('public', 'class') then raise exception 'masu:invalid_visibility'; end if;
+  if p_visibility not in ('public', 'class') then raise exception 'reng:invalid_visibility'; end if;
   update public.lessons set visibility = p_visibility where id = p_lesson_id and owner_id = p_owner_id
     and exists(select 1 from public.profiles where id = p_owner_id and role = 'teacher');
-  if not found then raise exception 'masu:lesson_not_found'; end if;
+  if not found then raise exception 'reng:lesson_not_found'; end if;
   insert into public.audit_events(actor_id, action, resource_id)
     values(p_owner_id, 'lesson.visibility.' || p_visibility, p_lesson_id);
 end;

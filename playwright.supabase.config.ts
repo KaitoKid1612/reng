@@ -60,7 +60,7 @@ export default defineConfig({
       RESEND_WEBHOOK_SECRET: process.env.E2E_WEBHOOK_SECRET,
       EMAIL_PROVIDER: "mailpit",
       MAILPIT_URL: process.env.E2E_MAILPIT_URL ?? "",
-      EMAIL_FROM: "Reng <nhacbai@masu.local>",
+      EMAIL_FROM: "Reng <nhacbai@reng.local>",
     },
     timeout: 120_000,
   },

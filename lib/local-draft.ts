@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // Browser-only fallback for unsynced answers; the server draft stays the source of truth.
-const PREFIX = "masu:draft:";
+const PREFIX = "reng:draft:";
 
 const backupSchema = z.object({
   baseRevision: z.number().int().nonnegative(),
