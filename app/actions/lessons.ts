@@ -7,6 +7,7 @@ import { z } from "zod";
 import { getCurrentAccount } from "@/lib/server/account";
 import {
   createLesson,
+  createLessonFromStarter,
   importVocabulary,
   lessonIdSchema,
   loadLessonEditor,
@@ -15,6 +16,7 @@ import {
   setLessonVisibility,
 } from "@/lib/server/lessons";
 import { ServiceError } from "@/lib/server/supabase";
+import { findStarterLesson } from "@/lib/starter-lessons";
 import { MAX_CSV_BYTES } from "@/lib/vocab-csv";
 
 import type { LessonDraftState } from "@/lib/lesson-draft";
@@ -66,6 +68,36 @@ export async function createLessonAction(
     return { error: FAILURE };
   }
   redirect(`/teach/lessons/${parsed.data.id}/edit`);
+}
+
+const starterSchema = z.object({ starterId: z.string().max(64), requestId: z.uuid() });
+
+export async function createStarterLessonAction(
+  _state: CreateLessonState,
+  formData: FormData,
+): Promise<CreateLessonState> {
+  const teacherId = await requireTeacherId();
+  if (!teacherId) {
+    return { error: NOT_FOUND };
+  }
+  const parsed = starterSchema.safeParse({
+    starterId: formData.get("starterId"),
+    requestId: formData.get("requestId"),
+  });
+  const starter = parsed.success ? findStarterLesson(parsed.data.starterId) : undefined;
+  if (!parsed.success || !starter) {
+    return { error: "Không tìm thấy bài mẫu này. Tải lại trang rồi thử lại." };
+  }
+  let lessonId: string;
+  try {
+    lessonId = await createLessonFromStarter(teacherId, starter, parsed.data.requestId);
+  } catch (error) {
+    if (error instanceof ServiceError && error.code === "quota_exceeded") {
+      return { error: "Tài khoản đã đạt giới hạn số bài. Lưu trữ bớt bài cũ rồi thử lại." };
+    }
+    return { error: FAILURE };
+  }
+  redirect(`/teach/lessons/${lessonId}/edit`);
 }
 
 const draftInputSchema = z.object({

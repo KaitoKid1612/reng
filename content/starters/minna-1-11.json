@@ -1,0 +1,1099 @@
+{
+  "id": "minna-1-11",
+  "title": "Bài 11 – Đếm số lượng, thời gian và số lần",
+  "titleJa": "第11課　いくつ ありますか",
+  "summary": "Theo trình tự bài 11 Minna no Nihongo Sơ cấp I: đếm đồ vật (〜つ), người (〜人), máy (〜台), vật mỏng (〜枚), số lần (〜回); nói khoảng thời gian, tần suất và だけ.",
+  "order": 11,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1101",
+        "jp": "ひとつ",
+        "kanji": "一つ",
+        "romaji": "hitotsu",
+        "vi": "một (cái, quả…)",
+        "audio": null
+      },
+      {
+        "id": "v1102",
+        "jp": "ふたつ",
+        "kanji": "二つ",
+        "romaji": "futatsu",
+        "vi": "hai (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1103",
+        "jp": "みっつ",
+        "kanji": "三つ",
+        "romaji": "mittsu",
+        "vi": "ba (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1104",
+        "jp": "よっつ",
+        "kanji": "四つ",
+        "romaji": "yottsu",
+        "vi": "bốn (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1105",
+        "jp": "いつつ",
+        "kanji": "五つ",
+        "romaji": "itsutsu",
+        "vi": "năm (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1106",
+        "jp": "むっつ",
+        "kanji": "六つ",
+        "romaji": "muttsu",
+        "vi": "sáu (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1107",
+        "jp": "ななつ",
+        "kanji": "七つ",
+        "romaji": "nanatsu",
+        "vi": "bảy (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1108",
+        "jp": "やっつ",
+        "kanji": "八つ",
+        "romaji": "yattsu",
+        "vi": "tám (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1109",
+        "jp": "ここのつ",
+        "kanji": "九つ",
+        "romaji": "kokonotsu",
+        "vi": "chín (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1110",
+        "jp": "とお",
+        "kanji": "十",
+        "romaji": "too",
+        "vi": "mười (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1111",
+        "jp": "いくつ",
+        "romaji": "ikutsu",
+        "vi": "mấy cái, bao nhiêu (cái)",
+        "audio": null
+      },
+      {
+        "id": "v1112",
+        "jp": "ひとり",
+        "kanji": "一人",
+        "romaji": "hitori",
+        "vi": "một người",
+        "audio": null
+      },
+      {
+        "id": "v1113",
+        "jp": "ふたり",
+        "kanji": "二人",
+        "romaji": "futari",
+        "vi": "hai người",
+        "audio": null
+      },
+      {
+        "id": "v1114",
+        "jp": "〜にん",
+        "kanji": "〜人",
+        "romaji": "-nin",
+        "vi": "… người",
+        "audio": null,
+        "note": "Từ 3 người: さんにん, よにん, ごにん…"
+      },
+      {
+        "id": "v1115",
+        "jp": "〜だい",
+        "kanji": "〜台",
+        "romaji": "-dai",
+        "vi": "… chiếc (máy móc, xe cộ)",
+        "audio": null
+      },
+      {
+        "id": "v1116",
+        "jp": "〜まい",
+        "kanji": "〜枚",
+        "romaji": "-mai",
+        "vi": "… tờ, tấm, chiếc (vật mỏng: giấy, tem, áo)",
+        "audio": null
+      },
+      {
+        "id": "v1117",
+        "jp": "〜かい",
+        "kanji": "〜回",
+        "romaji": "-kai",
+        "vi": "… lần",
+        "audio": null
+      },
+      {
+        "id": "v1118",
+        "jp": "〜じかん",
+        "kanji": "〜時間",
+        "romaji": "-jikan",
+        "vi": "… tiếng (đồng hồ)",
+        "audio": null
+      },
+      {
+        "id": "v1119",
+        "jp": "〜にち",
+        "kanji": "〜日",
+        "romaji": "-nichi",
+        "vi": "… ngày",
+        "audio": null,
+        "note": "2–10 ngày đọc riêng: ふつか, みっか, よっか…"
+      },
+      {
+        "id": "v1120",
+        "jp": "〜しゅうかん",
+        "kanji": "〜週間",
+        "romaji": "-shuukan",
+        "vi": "… tuần",
+        "audio": null
+      },
+      {
+        "id": "v1121",
+        "jp": "〜かげつ",
+        "kanji": "〜か月",
+        "romaji": "-kagetsu",
+        "vi": "… tháng",
+        "audio": null
+      },
+      {
+        "id": "v1122",
+        "jp": "〜ねん",
+        "kanji": "〜年",
+        "romaji": "-nen",
+        "vi": "… năm",
+        "audio": null
+      },
+      {
+        "id": "v1123",
+        "jp": "〜ぐらい",
+        "romaji": "-gurai",
+        "vi": "khoảng …",
+        "audio": null
+      },
+      {
+        "id": "v1124",
+        "jp": "どのくらい",
+        "romaji": "dono kurai",
+        "vi": "bao lâu, bao nhiêu",
+        "audio": null
+      },
+      {
+        "id": "v1125",
+        "jp": "ぜんぶで",
+        "kanji": "全部で",
+        "romaji": "zenbu de",
+        "vi": "tổng cộng",
+        "audio": null
+      },
+      {
+        "id": "v1126",
+        "jp": "みんな",
+        "romaji": "minna",
+        "vi": "tất cả, mọi người",
+        "audio": null
+      },
+      {
+        "id": "v1127",
+        "jp": "〜だけ",
+        "romaji": "-dake",
+        "vi": "chỉ …",
+        "audio": null
+      },
+      {
+        "id": "v1128",
+        "jp": "います",
+        "romaji": "imasu",
+        "vi": "có (con, anh chị em); ở (Nhật…)",
+        "audio": null,
+        "note": "[こどもが] います: có con; [にほんに] います: ở Nhật"
+      },
+      {
+        "id": "v1129",
+        "jp": "かかります",
+        "romaji": "kakarimasu",
+        "vi": "mất, tốn (thời gian, tiền)",
+        "audio": null
+      },
+      {
+        "id": "v1130",
+        "jp": "やすみます",
+        "kanji": "休みます",
+        "romaji": "yasumimasu",
+        "vi": "nghỉ (làm, học)",
+        "audio": null,
+        "note": "[かいしゃを] やすみます: nghỉ làm"
+      },
+      {
+        "id": "v1131",
+        "jp": "りんご",
+        "romaji": "ringo",
+        "vi": "táo",
+        "audio": null
+      },
+      {
+        "id": "v1132",
+        "jp": "みかん",
+        "romaji": "mikan",
+        "vi": "quýt",
+        "audio": null
+      },
+      {
+        "id": "v1133",
+        "jp": "サンドイッチ",
+        "romaji": "sandoicchi",
+        "vi": "bánh mì kẹp",
+        "audio": null
+      },
+      {
+        "id": "v1134",
+        "jp": "アイスクリーム",
+        "romaji": "aisukuriimu",
+        "vi": "kem",
+        "audio": null
+      },
+      {
+        "id": "v1135",
+        "jp": "きって",
+        "kanji": "切手",
+        "romaji": "kitte",
+        "vi": "tem",
+        "audio": null
+      },
+      {
+        "id": "v1136",
+        "jp": "はがき",
+        "romaji": "hagaki",
+        "vi": "bưu thiếp",
+        "audio": null
+      },
+      {
+        "id": "v1137",
+        "jp": "ふうとう",
+        "kanji": "封筒",
+        "romaji": "fuutou",
+        "vi": "phong bì",
+        "audio": null
+      },
+      {
+        "id": "v1138",
+        "jp": "ふなびん",
+        "kanji": "船便",
+        "romaji": "funabin",
+        "vi": "gửi đường biển",
+        "audio": null
+      },
+      {
+        "id": "v1139",
+        "jp": "こうくうびん",
+        "kanji": "航空便",
+        "romaji": "koukuubin",
+        "vi": "gửi đường hàng không",
+        "audio": null,
+        "note": "Còn gọi là エアメール."
+      },
+      {
+        "id": "v1140",
+        "jp": "がいこく",
+        "kanji": "外国",
+        "romaji": "gaikoku",
+        "vi": "nước ngoài",
+        "audio": null
+      },
+      {
+        "id": "v1141",
+        "jp": "りゅうがくせい",
+        "kanji": "留学生",
+        "romaji": "ryuugakusei",
+        "vi": "du học sinh",
+        "audio": null
+      },
+      {
+        "id": "v1142",
+        "jp": "クラス",
+        "romaji": "kurasu",
+        "vi": "lớp học",
+        "audio": null
+      },
+      {
+        "id": "v1143",
+        "jp": "りょうしん",
+        "kanji": "両親",
+        "romaji": "ryoushin",
+        "vi": "bố mẹ (của mình)",
+        "audio": null
+      },
+      {
+        "id": "v1144",
+        "jp": "きょうだい",
+        "kanji": "兄弟",
+        "romaji": "kyoudai",
+        "vi": "anh chị em (của mình)",
+        "audio": null
+      },
+      {
+        "id": "v1145",
+        "jp": "あに",
+        "kanji": "兄",
+        "romaji": "ani",
+        "vi": "anh trai (của mình)",
+        "audio": null,
+        "note": "Anh trai người khác: おにいさん."
+      },
+      {
+        "id": "v1146",
+        "jp": "あね",
+        "kanji": "姉",
+        "romaji": "ane",
+        "vi": "chị gái (của mình)",
+        "audio": null,
+        "note": "Chị gái người khác: おねえさん."
+      },
+      {
+        "id": "v1147",
+        "jp": "おとうと",
+        "kanji": "弟",
+        "romaji": "otouto",
+        "vi": "em trai (của mình)",
+        "audio": null,
+        "note": "Em trai người khác: おとうとさん."
+      },
+      {
+        "id": "v1148",
+        "jp": "いもうと",
+        "kanji": "妹",
+        "romaji": "imouto",
+        "vi": "em gái (của mình)",
+        "audio": null,
+        "note": "Em gái người khác: いもうとさん."
+      },
+      {
+        "id": "v1149",
+        "jp": "いい てんきですね",
+        "kanji": "いい天気ですね",
+        "romaji": "ii tenki desu ne",
+        "vi": "Trời đẹp nhỉ.",
+        "audio": null
+      },
+      {
+        "id": "v1150",
+        "jp": "おでかけですか",
+        "kanji": "お出かけですか",
+        "romaji": "odekake desu ka",
+        "vi": "Anh/chị đi ra ngoài à?",
+        "audio": null
+      },
+      {
+        "id": "v1151",
+        "jp": "ちょっと 〜まで",
+        "romaji": "chotto ~ made",
+        "vi": "(Tôi đi) đến … một chút.",
+        "audio": null
+      },
+      {
+        "id": "v1152",
+        "jp": "いって いらっしゃい",
+        "romaji": "itte irasshai",
+        "vi": "Đi nhé! (người ở lại nói)",
+        "audio": null
+      },
+      {
+        "id": "v1153",
+        "jp": "いって きます",
+        "romaji": "itte kimasu",
+        "vi": "Tôi đi đây. (người đi nói)",
+        "audio": null
+      },
+      {
+        "id": "v1154",
+        "jp": "かしこまりました",
+        "romaji": "kashikomarimashita",
+        "vi": "Vâng, tôi hiểu rồi ạ. (nhân viên nói với khách)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1101",
+        "pattern": "N を［số lượng］V",
+        "vi": "Số lượng đứng ngay trước động từ",
+        "explain": "Từ chỉ số lượng ({3つ|みっつ}, {2人|ふたり}, {5枚|ごまい}…) đặt ngay trước động từ và không có trợ từ đi kèm. Với あります／います: N が［số lượng］あります・います.",
+        "viMistake": "Người Việt hay đặt số trước danh từ như tiếng Việt (みっつ みかん). Trong bài này: danh từ + trợ từ, rồi mới đến số lượng và động từ.",
+        "examples": [
+          {
+            "jp": "みかんを {3つ|みっつ} {買|か}いました。",
+            "vi": "Tôi đã mua ba quả quýt.",
+            "audio": null
+          },
+          {
+            "jp": "{教室|きょうしつ}に つくえが {6つ|むっつ} あります。",
+            "vi": "Trong phòng học có sáu cái bàn.",
+            "audio": null
+          },
+          {
+            "jp": "{封筒|ふうとう}を {3枚|さんまい} ください。",
+            "vi": "Cho tôi ba cái phong bì.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1102",
+        "pattern": "いくつ・{何|なん}＋lượng từ",
+        "vi": "Hỏi số lượng: mấy, bao nhiêu",
+        "explain": "Đồ vật đếm bằng 〜つ thì hỏi いくつ. Với lượng từ khác, ghép なん với lượng từ: {何人|なんにん}, {何台|なんだい}, {何枚|なんまい}, {何回|なんかい}.",
+        "viMistake": "Không nói なんつ; hỏi đồ vật đếm bằng 〜つ phải dùng いくつ.",
+        "examples": [
+          {
+            "jp": "みかんは いくつ ありますか。…{9つ|ここのつ} あります。",
+            "vi": "Có mấy quả quýt? … Có chín quả.",
+            "audio": null
+          },
+          {
+            "jp": "クラスに {学生|がくせい}が {何人|なんにん} いますか。…{12人|じゅうににん} います。",
+            "vi": "Lớp có bao nhiêu học viên? … Có mười hai người.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1103",
+        "pattern": "［khoảng thời gian］V",
+        "vi": "Làm gì trong bao lâu; hỏi どのくらい",
+        "explain": "Khoảng thời gian (〜{時間|じかん}, 〜{日|にち}, 〜{週間|しゅうかん}, 〜か{月|げつ}, 〜{年|ねん}) đứng trước động từ, không có trợ từ. Hỏi “bao lâu” bằng どのくらい. かかります là mất, tốn (thời gian hoặc tiền); thêm ぐらい sau số để nói “khoảng”.",
+        "viMistake": "Phân biệt thời điểm và khoảng thời gian: {2時|にじ}に (lúc 2 giờ, có に) khác {2時間|にじかん} (trong 2 tiếng, không có に); {2月|にがつ} (tháng Hai) khác {2か月|にかげつ} (2 tháng).",
+        "examples": [
+          {
+            "jp": "{毎日|まいにち} {2時間|にじかん} {日本語|にほんご}を {勉強|べんきょう}します。",
+            "vi": "Mỗi ngày tôi học tiếng Nhật hai tiếng.",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは {日本|にほん}に {2年|にねん} います。",
+            "vi": "Anh Nam ở Nhật hai năm.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイから ダナンまで どのくらい かかりますか。…{飛行機|ひこうき}で {1時間|いちじかん}ぐらいです。",
+            "vi": "Từ Hà Nội đến Đà Nẵng mất bao lâu? … Đi máy bay khoảng một tiếng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1104",
+        "pattern": "［thời gian］に〜{回|かい} V",
+        "vi": "Tần suất: trong mỗi khoảng thời gian làm mấy lần",
+        "explain": "に sau khoảng thời gian nghĩa là “trong mỗi khoảng đó”: {1週間|いっしゅうかん}に {2回|にかい} là mỗi tuần hai lần. Hỏi tần suất: {1週間|いっしゅうかん}に {何回|なんかい} 〜か.",
+        "examples": [
+          {
+            "jp": "{1週間|いっしゅうかん}に {3回|さんかい} {日本語|にほんご}の クラスが あります。",
+            "vi": "Mỗi tuần có ba buổi học tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{1か月|いっかげつ}に {1回|いっかい} {家族|かぞく}に {電話|でんわ}を かけます。",
+            "vi": "Mỗi tháng tôi gọi điện cho gia đình một lần.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1105",
+        "pattern": "N／［số lượng］＋だけ",
+        "vi": "Chỉ …",
+        "explain": "だけ đứng sau danh từ hoặc số lượng, nghĩa là “chỉ”: {休|やす}みは {日曜日|にちようび}だけです (ngày nghỉ chỉ có Chủ nhật); {1人|ひとり}だけ (chỉ một người).",
+        "examples": [
+          {
+            "jp": "わたしの クラスに {外国人|がいこくじん}は {1人|ひとり}だけ います。",
+            "vi": "Lớp tôi chỉ có một người nước ngoài.",
+            "audio": null
+          },
+          {
+            "jp": "けさ コーヒーだけ {飲|の}みました。",
+            "vi": "Sáng nay tôi chỉ uống cà phê.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1101",
+        "teacherNotes": "Khởi động 3 phút: chỉ đồ vật trong phòng và hỏi bằng tiếng Việt “có mấy cái?”. Bài này đi theo trình tự bài 11 Minna no Nihongo Sơ cấp I; nhắc học viên mở sách để đối chiếu từ vựng và phần luyện tập.",
+        "type": "title",
+        "jp": "{第|だい}11{課|か}",
+        "vi": "Đếm đồ vật, người, thời gian và số lần"
+      },
+      {
+        "id": "s1102",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Đếm đồ vật: ひとつ〜とお, hỏi いくつ\n2. Đếm người, máy, vật mỏng, số lần: 〜{人|にん}・〜{台|だい}・〜{枚|まい}・〜{回|かい}\n3. Nói bao lâu: 〜{時間|じかん}・〜{週間|しゅうかん}・〜か{月|げつ}・〜{年|ねん}, かかります\n4. Nói tần suất ({1週間|いっしゅうかん}に {2回|にかい}) và “chỉ” (〜だけ)"
+      },
+      {
+        "id": "s1103",
+        "teacherNotes": "Đếm theo nhịp vỗ tay; nhấn âm ngắt っ trong みっつ, よっつ, むっつ.",
+        "type": "vocab",
+        "refs": ["v1101", "v1102", "v1103", "v1104", "v1105", "v1106"]
+      },
+      {
+        "id": "s1104",
+        "teacherNotes": "とお không có つ. Hỏi いくつ khi đếm đồ vật.",
+        "type": "vocab",
+        "refs": ["v1107", "v1108", "v1109", "v1110", "v1111", "v1112"]
+      },
+      {
+        "id": "s1105",
+        "teacherNotes": "Lượng từ đứng sau số: 2台, 5枚, 3回. Lấy đồ vật thật làm ví dụ: máy tính (台), giấy (枚).",
+        "type": "vocab",
+        "refs": ["v1113", "v1114", "v1115", "v1116", "v1117", "v1118"]
+      },
+      {
+        "id": "s1106",
+        "type": "vocab",
+        "refs": ["v1119", "v1120", "v1121", "v1122", "v1123", "v1124"]
+      },
+      {
+        "id": "s1107",
+        "teacherNotes": "います trong bài này: có con/anh chị em, hoặc ở lại một nơi trong một thời gian.",
+        "type": "vocab",
+        "refs": ["v1125", "v1126", "v1127", "v1128", "v1129", "v1130"]
+      },
+      {
+        "id": "s1108",
+        "type": "vocab",
+        "refs": ["v1131", "v1132", "v1133", "v1134", "v1135", "v1136"]
+      },
+      {
+        "id": "s1109",
+        "type": "vocab",
+        "refs": ["v1137", "v1138", "v1139", "v1140", "v1141", "v1142"]
+      },
+      {
+        "id": "s1110",
+        "teacherNotes": "Gia đình mình: あに, あね…; gia đình người khác: おにいさん, おねえさん…",
+        "type": "vocab",
+        "refs": ["v1143", "v1144", "v1145", "v1146", "v1147", "v1148"]
+      },
+      {
+        "id": "s1111",
+        "teacherNotes": "Cho học viên đóng vai: người ra khỏi nhà nói いってきます, người ở lại nói いってらっしゃい.",
+        "type": "vocab",
+        "refs": ["v1149", "v1150", "v1151", "v1152", "v1153", "v1154"]
+      },
+      {
+        "id": "s1112",
+        "teacherNotes": "Nhấn các âm biến đổi: よにん, ろっかい, はっかい (cũng nói はちかい), じゅっかい (cũng nói じっかい); 7人 nói ななにん hoặc しちにん. Che một cột rồi hỏi nhanh.",
+        "type": "table",
+        "title": "Bảng đếm: 〜つ・〜{人|にん}・〜{台|だい}・〜{枚|まい}・〜{回|かい}",
+        "columns": ["Số", "〜つ", "〜{人|にん}", "〜{台|だい}", "〜{枚|まい}", "〜{回|かい}"],
+        "rows": [
+          ["1", "ひとつ", "ひとり", "いちだい", "いちまい", "いっかい"],
+          ["2", "ふたつ", "ふたり", "にだい", "にまい", "にかい"],
+          ["3", "みっつ", "さんにん", "さんだい", "さんまい", "さんかい"],
+          ["4", "よっつ", "よにん", "よんだい", "よんまい", "よんかい"],
+          ["5", "いつつ", "ごにん", "ごだい", "ごまい", "ごかい"],
+          ["6", "むっつ", "ろくにん", "ろくだい", "ろくまい", "ろっかい"],
+          ["7", "ななつ", "ななにん", "ななだい", "ななまい", "ななかい"],
+          ["8", "やっつ", "はちにん", "はちだい", "はちまい", "はっかい"],
+          ["9", "ここのつ", "きゅうにん", "きゅうだい", "きゅうまい", "きゅうかい"],
+          ["10", "とお", "じゅうにん", "じゅうだい", "じゅうまい", "じゅっかい"],
+          ["?", "いくつ", "なんにん", "なんだい", "なんまい", "なんかい"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s1113",
+        "teacherNotes": "So sánh trật tự với tiếng Việt: “mua ba quả quýt” → みかんを みっつ かいました.",
+        "type": "grammar",
+        "ref": "g1101"
+      },
+      {
+        "id": "s1114",
+        "type": "example",
+        "ref": "g1101",
+        "reveal": true
+      },
+      {
+        "id": "s1115",
+        "type": "grammar",
+        "ref": "g1102"
+      },
+      {
+        "id": "s1116",
+        "type": "example",
+        "ref": "g1102",
+        "reveal": true
+      },
+      {
+        "id": "s1117",
+        "teacherNotes": "Gọi từng học viên nói câu trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: nói số lượng",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["みかん・3・{買|か}いました", "みかんを {3つ|みっつ} {買|か}いました。"],
+          ["{封筒|ふうとう}・4・ください", "{封筒|ふうとう}を {4枚|よんまい} ください。"],
+          ["{学生|がくせい}・12・います", "{学生|がくせい}が {12人|じゅうににん} います。"],
+          ["{車|くるま}・2・あります", "{車|くるま}が {2台|にだい} あります。"],
+          ["シャツ・6・{買|か}いました", "シャツを {6枚|ろくまい} {買|か}いました。"],
+          ["いす・8・あります", "いすが {8つ|やっつ} あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1118",
+        "type": "quiz",
+        "ref": "q1101"
+      },
+      {
+        "id": "s1119",
+        "type": "quiz",
+        "ref": "q1103"
+      },
+      {
+        "id": "s1120",
+        "type": "quiz",
+        "ref": "q1104"
+      },
+      {
+        "id": "s1121",
+        "type": "grammar",
+        "ref": "g1103"
+      },
+      {
+        "id": "s1122",
+        "type": "example",
+        "ref": "g1103",
+        "reveal": true
+      },
+      {
+        "id": "s1123",
+        "teacherNotes": "Thời điểm đi với に (2じに おきます); khoảng thời gian không cần に.",
+        "type": "table",
+        "title": "Thời điểm và khoảng thời gian",
+        "columns": ["Khi nào?", "Nghĩa", "Bao lâu?", "Nghĩa"],
+        "rows": [
+          ["{2時|にじ}", "lúc 2 giờ", "{2時間|にじかん}", "2 tiếng"],
+          ["{月曜日|げつようび}", "thứ Hai", "{2週間|にしゅうかん}", "2 tuần"],
+          ["{2月|にがつ}", "tháng Hai", "{2か月|にかげつ}", "2 tháng"],
+          ["2026{年|ねん}", "năm 2026", "{2年|にねん}", "2 năm"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s1124",
+        "type": "grammar",
+        "ref": "g1104"
+      },
+      {
+        "id": "s1125",
+        "type": "example",
+        "ref": "g1104",
+        "reveal": true
+      },
+      {
+        "id": "s1126",
+        "type": "grammar",
+        "ref": "g1105"
+      },
+      {
+        "id": "s1127",
+        "type": "example",
+        "ref": "g1105",
+        "reveal": true
+      },
+      {
+        "id": "s1128",
+        "type": "table",
+        "title": "Luyện tập 2: bao lâu, mấy lần",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{毎日|まいにち}・{2時間|にじかん}・{勉強|べんきょう}します",
+            "{毎日|まいにち} {2時間|にじかん} {勉強|べんきょう}します。"
+          ],
+          [
+            "{日本|にほん}・{6か月|ろっかげつ}・います",
+            "{日本|にほん}に {6か月|ろっかげつ} います。"
+          ],
+          [
+            "うち〜{学校|がっこう}・{30分|さんじゅっぷん}",
+            "うちから {学校|がっこう}まで {30分|さんじゅっぷん} かかります。"
+          ],
+          [
+            "{1週間|いっしゅうかん}・{3回|さんかい}・テニス",
+            "{1週間|いっしゅうかん}に {3回|さんかい} テニスを します。"
+          ],
+          [
+            "{1か月|いっかげつ}・{2回|にかい}・{映画|えいが}",
+            "{1か月|いっかげつ}に {2回|にかい} {映画|えいが}を {見|み}ます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1129",
+        "type": "quiz",
+        "ref": "q1105"
+      },
+      {
+        "id": "s1130",
+        "type": "quiz",
+        "ref": "q1108"
+      },
+      {
+        "id": "s1131",
+        "teacherNotes": "Cho từng cặp học viên đổi vai và thay bằng gia đình thật của mình.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Gia đình bạn có mấy người?",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "アンさん、{ご家族|ごかぞく}は {何人|なんにん}ですか。",
+            "vi": "An, gia đình em có mấy người?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{5人|ごにん}です。{両親|りょうしん}と {兄|あに}と {妹|いもうと}が います。",
+            "vi": "Năm người ạ. Có bố mẹ, anh trai và em gái."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "そうですか。おにいさんも {学生|がくせい}ですか。",
+            "vi": "Thế à. Anh trai em cũng là sinh viên à?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "いいえ、{会社員|かいしゃいん}です。",
+            "vi": "Không ạ, anh ấy là nhân viên công ty."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ナムさんは きょうだいが いますか。",
+            "vi": "Còn Nam có anh chị em không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいえ、いません。",
+            "vi": "Không ạ, em không có."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1132",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Trước khi ra bưu điện",
+        "lines": [
+          {
+            "speaker": "トアン",
+            "jp": "マイさん、お{出|で}かけですか。",
+            "vi": "Mai đi ra ngoài à?"
+          },
+          {
+            "speaker": "マイ",
+            "jp": "ええ、ちょっと {郵便局|ゆうびんきょく}まで。",
+            "vi": "Ừ, mình ra bưu điện một chút."
+          },
+          {
+            "speaker": "トアン",
+            "jp": "そうですか。いってらっしゃい。",
+            "vi": "Thế à. Đi nhé!"
+          },
+          {
+            "speaker": "マイ",
+            "jp": "いってきます。",
+            "vi": "Mình đi đây."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1133",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Ở bưu điện (1)",
+        "lines": [
+          {
+            "speaker": "マイ",
+            "jp": "この {荷物|にもつ}を ベトナムまで おねがいします。",
+            "vi": "Cho tôi gửi gói hàng này đi Việt Nam."
+          },
+          {
+            "speaker": "{局員|きょくいん}",
+            "jp": "はい。{航空便|こうくうびん}ですか、{船便|ふなびん}ですか。",
+            "vi": "Vâng. Chị gửi đường hàng không hay đường biển?"
+          },
+          {
+            "speaker": "マイ",
+            "jp": "{航空便|こうくうびん}は どのくらい かかりますか。",
+            "vi": "Gửi đường hàng không mất bao lâu ạ?"
+          },
+          {
+            "speaker": "{局員|きょくいん}",
+            "jp": "{1週間|いっしゅうかん}ぐらいです。{船便|ふなびん}は {2か月|にかげつ}ぐらいです。",
+            "vi": "Khoảng một tuần. Đường biển khoảng hai tháng."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1134",
+        "teacherNotes": "Đóng vai ở bưu điện: đổi nước gửi, số bưu thiếp và cách gửi.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Ở bưu điện (2)",
+        "lines": [
+          {
+            "speaker": "マイ",
+            "jp": "じゃ、{航空便|こうくうびん}で おねがいします。",
+            "vi": "Vậy cho tôi gửi đường hàng không."
+          },
+          {
+            "speaker": "{局員|きょくいん}",
+            "jp": "かしこまりました。",
+            "vi": "Vâng ạ."
+          },
+          {
+            "speaker": "マイ",
+            "jp": "それから、はがきを {3枚|さんまい} ください。",
+            "vi": "Ngoài ra, cho tôi ba tấm bưu thiếp."
+          },
+          {
+            "speaker": "{局員|きょくいん}",
+            "jp": "はい。{全部|ぜんぶ}で 4,500{円|えん}です。",
+            "vi": "Vâng. Tổng cộng 4.500 yên."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1135",
+        "teacherNotes": "Học viên hỏi nhau theo cặp; câu trả lời dùng thông tin thật của mình.",
+        "type": "table",
+        "title": "Luyện tập 3: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          [
+            "{家族|かぞく}は {何人|なんにん}ですか。",
+            "{4人|よにん}です。{両親|りょうしん}と {妹|いもうと}が います。"
+          ],
+          [
+            "{教室|きょうしつ}に コンピューターが {何台|なんだい} ありますか。",
+            "{5台|ごだい} あります。"
+          ],
+          [
+            "ハノイから ダナンまで どのくらい かかりますか。",
+            "{飛行機|ひこうき}で {1時間|いちじかん}ぐらいです。"
+          ],
+          [
+            "{1週間|いっしゅうかん}に {何回|なんかい} {日本語|にほんご}を {勉強|べんきょう}しますか。",
+            "{3回|さんかい} {勉強|べんきょう}します。"
+          ],
+          ["きょうだいが いますか。", "はい、{兄|あに}が {1人|ひとり} います。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1136",
+        "type": "quiz",
+        "ref": "q1109"
+      },
+      {
+        "id": "s1137",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Số lượng đứng ngay trước động từ: みかんを {3つ|みっつ} {買|か}いました。\n• Hỏi: いくつ／{何人|なんにん}／{何台|なんだい}／{何枚|なんまい}／{何回|なんかい}\n• Bao lâu: どのくらい, 〜かかります, 〜ぐらい\n• Tần suất: {1週間|いっしゅうかん}に {2回|にかい}\n• Chỉ: 〜だけ"
+      },
+      {
+        "id": "s1138",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng.\n2. Đọc lại hai hội thoại và luyện nói cùng bạn.\n3. Đếm 5 đồ vật trong nhà, viết câu: 〜が［số lượng］あります。\n4. Đối chiếu phần luyện tập bài 11 trong sách Minna no Nihongo của bạn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1101",
+        "prompt": "いすが 8（　　）あります。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Đồ vật như bàn, ghế đếm bằng 〜つ: やっつ.",
+        "type": "choice",
+        "options": ["にん", "だい", "つ", "まい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1102",
+        "prompt": "きょうしつに がくせいが 20（　　）います。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Đếm người dùng 〜にん (trừ ひとり, ふたり): にじゅうにん.",
+        "type": "choice",
+        "options": ["にん", "つ", "だい", "かい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1103",
+        "prompt": "シャツを 3（　　）かいました。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Áo sơ mi, giấy, tem là vật mỏng, đếm bằng 〜まい: さんまい.",
+        "type": "choice",
+        "options": ["だい", "つ", "かい", "まい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1104",
+        "prompt": "くるまが 2（　　）あります。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Xe cộ, máy móc đếm bằng 〜だい: にだい.",
+        "type": "choice",
+        "options": ["まい", "だい", "にん", "かい"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1105",
+        "prompt": "いっしゅうかん（　　）3かい テニスを します。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Tần suất: [khoảng thời gian] に [số lần]. いっしゅうかんに 3かい là mỗi tuần ba lần.",
+        "type": "choice",
+        "options": ["を", "に", "で", "が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1106",
+        "prompt": "「どのくらい にほんごを べんきょうしましたか。」—「（　　）」",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "どのくらい hỏi khoảng thời gian: 3かげつ (ba tháng). 3がつ là tháng Ba, chỉ thời điểm.",
+        "type": "choice",
+        "options": [
+          "3かげつ べんきょうしました。",
+          "3がつに べんきょうしました。",
+          "3かい べんきょうしました。",
+          "3にん べんきょうしました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1107",
+        "prompt": "ハノイから ダナンまで ひこうきで 1じかん（　　）かかります。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Nói khoảng lượng hoặc khoảng thời gian dùng ぐらい; ごろ đi với thời điểm (3じごろ).",
+        "type": "choice",
+        "options": ["ごろ", "だけ", "ぐらい", "まで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1108",
+        "prompt": "やすみは にちようび（　　）です。（Ngày nghỉ chỉ có Chủ nhật.）",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "だけ nghĩa là “chỉ”: にちようびだけ.",
+        "type": "choice",
+        "options": ["ぐらい", "に", "まで", "だけ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1109",
+        "prompt": "Viết cách đọc bằng hiragana: 2人",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "2人 đọc là ふたり, không đọc ににん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ふたり"]
+      },
+      {
+        "id": "q1110",
+        "prompt": "Viết cách đọc bằng hiragana: 4人",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "4人 đọc là よにん, không đọc よんにん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よにん"]
+      },
+      {
+        "id": "q1111",
+        "prompt": "Viết cách đọc bằng hiragana: 6回",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "6回 đọc là ろっかい, có âm ngắt っ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ろっかい"]
+      },
+      {
+        "id": "q1112",
+        "prompt": "Viết bằng hiragana: tám cái (đếm đồ vật)",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Đếm đồ vật bằng 〜つ: やっつ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["やっつ"]
+      },
+      {
+        "id": "q1113",
+        "prompt": "Viết bằng hiragana: ba người",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "3人 đọc là さんにん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さんにん"]
+      },
+      {
+        "id": "q1114",
+        "prompt": "Điền một từ: いっしゅうかんに なん（　　） クラスが ありますか。—3かいです。",
+        "points": 1,
+        "tags": ["minna-11"],
+        "explain": "Hỏi số lần dùng なんかい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かい"]
+      }
+    ]
+  }
+}

@@ -118,6 +118,7 @@ test("a teacher builds a Vietnamese–Chinese lesson from a template, reviews an
 
   await page.goto("/teach/classes");
   await page.getByLabel("Tên lớp", { exact: true }).fill(`Lớp tiếng Trung ${RUN_ID}`);
+  await page.getByLabel("Ngôn ngữ học").selectOption("zh-Hans");
   await page.getByRole("button", { name: "Tạo lớp", exact: true }).click();
   await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
   state.classId = page.url().split("/").at(-1) ?? "";

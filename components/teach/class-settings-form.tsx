@@ -41,7 +41,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             required
             maxLength={120}
             defaultValue={classRow?.name}
-            placeholder="Tiếng Trung nhập môn tối thứ Ba"
+            placeholder="Tiếng Nhật Minna sơ cấp – tối thứ Ba"
           />
         </div>
         <div className="field">
@@ -63,11 +63,11 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
           <select
             id="class-language"
             name="languageTag"
-            defaultValue={classRow?.language_tag ?? "zh-Hans"}
+            defaultValue={classRow?.language_tag ?? "ja-JP"}
           >
+            <option value="ja-JP">Tiếng Nhật</option>
             <option value="zh-Hans">Tiếng Trung giản thể</option>
             <option value="zh-Hant">Tiếng Trung phồn thể</option>
-            <option value="ja-JP">Tiếng Nhật</option>
           </select>
         </div>
         <div className="field">

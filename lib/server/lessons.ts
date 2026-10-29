@@ -21,6 +21,7 @@ import {
 import { parseVocabularyCsv } from "@/lib/vocab-csv";
 
 import type { LessonDraftState, PublishProblem } from "@/lib/lesson-draft";
+import type { StarterLesson } from "@/lib/starter-lessons";
 
 const timestamp = z.iso.datetime({ offset: true });
 
@@ -130,6 +131,34 @@ export async function createLesson(
   if (error) {
     throw new ServiceError(error.code === "23505" ? "duplicate" : "database_error");
   }
+}
+
+// The shared insert is idempotent per request and enforces the lesson quota; a starter lesson
+// is the teacher's own draft, so it carries no copy source or attribution.
+export async function createLessonFromStarter(
+  teacherId: string,
+  starter: StarterLesson,
+  requestId: string,
+) {
+  const { draft } = starter;
+  return callRpc(
+    "insert_lesson_copy",
+    {
+      p_teacher_id: teacherId,
+      p_request_id: requestId,
+      p_fingerprint: `starter:${starter.id}`,
+      p_title: draft.title,
+      p_title_ja: draft.titleJa,
+      p_summary: draft.summary,
+      p_order: draft.order,
+      p_course_id: draft.courseId,
+      p_content: draft.content,
+      p_authoring: {},
+      p_source_version_id: null,
+      p_attribution: null,
+    },
+    z.string(),
+  );
 }
 
 export type DraftWriteResult =
