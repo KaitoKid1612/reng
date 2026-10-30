@@ -70,7 +70,8 @@ export default async function NewLessonPage() {
           của một bài đã có ở trang Giảng dạy.
         </p>
         <CreateLessonForm
-          suggestedId={`lesson-${String(nextOrder).padStart(2, "0")}`}
+          // Lesson IDs are shared by every teacher, so the suggestion carries a random suffix.
+          suggestedId={`lesson-${String(nextOrder).padStart(2, "0")}-${randomUUID().slice(0, 6)}`}
           suggestedOrder={nextOrder}
         />
       </section>
