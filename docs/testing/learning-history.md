@@ -22,4 +22,12 @@
 - Đối chiếu toàn bộ JSONB production với hai file đã kiểm tra: khớp. Transaction chỉ đọc kiểm tra RLS với subject giáo viên chỉ định thấy 2 hồ sơ, subject không liên quan thấy 0; rollback sau kiểm tra.
 - Commit tính năng `72133c8` đã push main; Vercel deployment `dpl_6Hx7R4hraLLcTbvGtxxKKf13vHMn` Ready, alias công khai https://reng-cyan.vercel.app. HTTP không đăng nhập: `/history` và chi tiết trả 307 về đăng nhập kèm next path; robots trả 200 có chặn `/history`, sitemap trả 200 không chứa lịch sử. Không có nội dung bài làm trong các phản hồi này. Các alias tự sinh khác có Vercel SSO; dùng địa chỉ công khai nêu trên.
 
+## Liên kết sau đăng ký — 30/10/2026
+
+Người dùng báo học viên đã đăng ký nhưng chưa thấy lịch sử. Đọc metadata production xác nhận tài khoản đúng email dự kiến đã có profile student và email đã xác nhận, trong khi hồ sơ N5 vẫn có learner_id null. Đã thực thi RPC liên kết hồ sơ theo yêu cầu xử lý của giáo viên; kết quả `linked`.
+
+Kiểm tra lại bằng RLS production trong transaction chỉ đọc: subject học viên thấy đúng 1 hồ sơ N5 với 22 dòng tổng hợp/1.500 câu, không thấy hồ sơ N4; subject giáo viên vẫn thấy 2 hồ sơ. Các thiết lập phiên được rollback. Không đổi chính sách phân quyền hay nội dung lịch sử, không đăng nhập thay học viên. Đây là thao tác dữ liệu, không đổi mã nguồn hoặc schema nên không chạy lại bộ test local.
+
+Địa chỉ sử dụng hiện tại: https://reng-class.vercel.app/history (xem [đổi domain](domain-change.md)). Học viên tải lại trang lịch sử sau khi liên kết.
+
 Giới hạn: không tự đăng nhập tài khoản thật hoặc đặt lại mật khẩu để kiểm thử production. Snapshot cũ không được chấm lại; không nhập buổi dạy từ ngày làm bài. Sheet được giữ nguyên và không đồng bộ tiếp.
