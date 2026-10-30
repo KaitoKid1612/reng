@@ -8,11 +8,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "Vào lớp" };
 
 interface JoinClassPageProps {
-  searchParams: Promise<{ code?: string }>;
+  searchParams: Promise<{ code?: string | string[] }>;
 }
 
 export default async function JoinClassPage({ searchParams }: JoinClassPageProps) {
   const query = await searchParams;
+  // A repeated ?code= arrives as an array; only a single value can prefill the form.
+  const code = typeof query.code === "string" ? query.code : "";
   const account = await getCurrentAccount();
   return (
     <div className="narrow-page">
@@ -20,7 +22,7 @@ export default async function JoinClassPage({ searchParams }: JoinClassPageProps
       <p className="muted">Nhập mã lớp giảng viên gửi cho bạn.</p>
       {isClassroomConfigured() ? (
         <>
-          <JoinClassForm initialCode={normalizeJoinCode(query.code ?? "").slice(0, 8)} />
+          <JoinClassForm initialCode={normalizeJoinCode(code).slice(0, 8)} />
           {!account && (
             <p className="small muted">
               Bạn sẽ đăng nhập hoặc tạo tài khoản học viên, sau đó quay lại đây với mã vừa nhập.
