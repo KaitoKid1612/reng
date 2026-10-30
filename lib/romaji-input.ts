@@ -9,7 +9,7 @@ const JAPANESE_TEXT = /[぀-ヿ㐀-鿿]/;
 // Converts only the Latin run the learner is typing, so kana/kanji already in the field
 // (from an IME or a paste) and text after the caret stay untouched.
 export function convertRomajiBeforeCaret(value: string, caret: number, mode: InputMode) {
-  if (mode === "chinese" || mode === "pinyin") {
+  if (mode === "chinese" || mode === "pinyin" || mode === "text") {
     return { value, caret };
   }
   const head = value.slice(0, caret);
@@ -27,7 +27,7 @@ export function convertRomajiBeforeCaret(value: string, caret: number, mode: Inp
 // Typing keeps a final n pending (よにn) because the next key may still make な or に; leaving
 // the field completes only the leftover Latin runs, so entered kana and kanji never change.
 export function finalizeRomaji(value: string, mode: InputMode) {
-  if (mode === "chinese" || mode === "pinyin") {
+  if (mode === "chinese" || mode === "pinyin" || mode === "text") {
     return value;
   }
   return value.replace(ROMAJI_RUN, (run) =>

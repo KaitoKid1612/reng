@@ -2,7 +2,7 @@
 const VIETNAM_OFFSET_MS = 7 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export const DAILY_PRACTICE_SIZES = [5, 7, 10, 15] as const;
+export const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 60] as const;
 // Questions seen within this window are rotated to the back of the queue.
 export const DAILY_PRACTICE_HISTORY_DAYS = 14;
 

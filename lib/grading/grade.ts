@@ -53,6 +53,23 @@ function matchesText(
   );
 }
 
+// Vietnamese free text ("text" input): letter case, spacing and punctuation do not change the
+// answer, so "Thứ Hai." matches "thứ hai". Japanese and Chinese keep their stricter profiles.
+function normalizeFreeText(value: string) {
+  return value
+    .normalize("NFC")
+    .toLocaleLowerCase("vi")
+    .replace(/[\s\p{P}]+/gu, "");
+}
+
+function matchesFreeText(accepted: readonly string[], raw: RawAnswer) {
+  if (typeof raw !== "string") {
+    return false;
+  }
+  const normalized = normalizeFreeText(raw);
+  return normalized !== "" && accepted.some((answer) => normalizeFreeText(answer) === normalized);
+}
+
 function matchesPairs(accepted: readonly [number, number][], raw: RawAnswer) {
   return (
     isPairList(raw) &&
@@ -77,6 +94,9 @@ function isCorrectAnswer(question: LessonQuestion, raw: RawAnswer) {
     case "choice":
       return matchesChoice(question.answer, raw);
     case "fill":
+      return question.inputMode === "text"
+        ? matchesFreeText(question.answer, raw)
+        : matchesText(question.answer, raw, question.gradingProfile);
     case "dictation":
       return matchesText(question.answer, raw, question.gradingProfile);
     case "match":

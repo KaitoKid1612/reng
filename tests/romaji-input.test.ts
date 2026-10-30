@@ -43,3 +43,8 @@ test("skips only Japanese IME composition", () => {
   assert.equal(isJapaneseComposition(true, "ka"), false);
   assert.equal(isJapaneseComposition(false, "か"), false);
 });
+
+test("Vietnamese text input is never converted to kana", () => {
+  assert.deepEqual(convertRomajiBeforeCaret("thu hai", 7, "text"), { value: "thu hai", caret: 7 });
+  assert.equal(finalizeRomaji("ban", "text"), "ban");
+});

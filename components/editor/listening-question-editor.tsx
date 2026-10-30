@@ -16,6 +16,7 @@ interface ListeningQuestionEditorProps {
 }
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
+  text: "Văn bản (tiếng Việt, không đổi sang kana)",
   chinese: "Chữ Hán (IME tiếng Trung)",
   pinyin: "Pinyin có dấu thanh",
   hiragana: "Hiragana",

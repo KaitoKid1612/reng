@@ -32,7 +32,9 @@ const choiceFields = {
   answer: z.array(z.number().int().nonnegative()).min(1),
 };
 const fillFields = {
-  inputMode: z.enum(["hiragana", "katakana", "japanese", "chinese", "pinyin"]).default("hiragana"),
+  inputMode: z
+    .enum(["hiragana", "katakana", "japanese", "chinese", "pinyin", "text"])
+    .default("hiragana"),
   kanjiStrict: z.boolean().default(false),
   answer: z.array(text).min(1),
 };

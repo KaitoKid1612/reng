@@ -41,7 +41,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   duplicate: "Thứ tự này đã có bài khác trong lớp. Chọn số khác.",
   lesson_not_in_class: "Thêm bài học vào lớp trước khi giao bài.",
   due_in_past: "Hạn nộp phải ở sau thời điểm hiện tại.",
-  invalid_items: "Chọn ít nhất một câu hỏi hợp lệ (tối đa 50 câu).",
+  invalid_items: "Chọn ít nhất một câu hỏi hợp lệ (tối đa 60 câu).",
   assignment_not_found: "Bài giao không còn mở để đóng.",
 };
 

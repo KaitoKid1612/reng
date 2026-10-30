@@ -6,13 +6,20 @@ import { questionSchema } from "@/lib/lesson-schema";
 import type { RawAnswer } from "@/lib/grading/raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
-export const MAX_ASSIGNMENT_QUESTIONS = 50;
+export const MAX_ASSIGNMENT_QUESTIONS = 60;
 export const MAX_ATTEMPTS = 10;
 export const MAX_DRAFT_BYTES = 32 * 1024;
 
 export const ASSIGNMENT_MODES = ["practice", "test"] as const;
 export const FEEDBACK_POLICIES = ["after_submit", "after_due"] as const;
-export const INPUT_MODES = ["hiragana", "katakana", "japanese", "chinese", "pinyin"] as const;
+export const INPUT_MODES = [
+  "hiragana",
+  "katakana",
+  "japanese",
+  "chinese",
+  "pinyin",
+  "text",
+] as const;
 
 export type AssignmentMode = (typeof ASSIGNMENT_MODES)[number];
 export type FeedbackPolicy = (typeof FEEDBACK_POLICIES)[number];

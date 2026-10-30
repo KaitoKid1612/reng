@@ -158,3 +158,22 @@ test("the Chinese grading profile keeps tones, spacing and scripts exactly", () 
   assert.equal(gradeQuestion(characters, "謝謝").isCorrect, false, "no script conversion");
   assert.equal(gradeQuestion(characters, "谢谢").isCorrect, true);
 });
+
+test("Vietnamese free-text answers ignore letter case, spacing and punctuation only", () => {
+  const meaning = questionSchema.parse({
+    id: "t1",
+    type: "fill",
+    prompt: "Nghĩa của げつようび là gì?",
+    answer: ["thứ hai"],
+    explain: "げつようび là thứ hai.",
+    points: 1,
+    inputMode: "text",
+  });
+  assert.equal(gradeQuestion(meaning, "Thứ Hai.").isCorrect, true);
+  assert.equal(gradeQuestion(meaning, " thứ  hai ").isCorrect, true);
+  // Accents carry meaning in Vietnamese, so a different tone mark stays wrong.
+  assert.equal(gradeQuestion(meaning, "thư hai").isCorrect, false);
+  assert.equal(gradeQuestion(meaning, "...").isCorrect, false);
+  // Japanese answers keep the existing exact profile.
+  assert.equal(gradeQuestion(fill, "イキマス").isCorrect, false);
+});

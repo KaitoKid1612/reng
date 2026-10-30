@@ -19,6 +19,7 @@ interface TestQuestionEditorProps {
 }
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
+  text: "Văn bản (tiếng Việt, không đổi sang kana)",
   chinese: "Chữ Hán (IME tiếng Trung)",
   pinyin: "Pinyin có dấu thanh",
   hiragana: "Hiragana",
@@ -38,7 +39,7 @@ export function TestQuestionEditor({
   const isJapanese = languageTag === "ja-JP";
   const isJapaneseInput =
     draft.type === "fill"
-      ? draft.inputMode !== "chinese" && draft.inputMode !== "pinyin"
+      ? draft.inputMode !== "chinese" && draft.inputMode !== "pinyin" && draft.inputMode !== "text"
       : isJapanese;
   const contentLang = isJapanese ? "ja" : "vi";
   let answerLang = "ja";
@@ -47,6 +48,17 @@ export function TestQuestionEditor({
     if (draft.inputMode === "pinyin") {
       answerLang = "zh-Latn";
     }
+    if (draft.inputMode === "text") {
+      answerLang = "vi";
+    }
+  }
+  let answerHint = "Khai báo đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます.";
+  if (!isJapaneseInput) {
+    answerHint =
+      "Chữ Hán phân biệt giản thể/phồn thể; pinyin cần đúng dấu thanh và khoảng trắng. Mỗi dạng được chấp nhận phải ghi thành một dòng riêng.";
+  }
+  if (draft.type === "fill" && draft.inputMode === "text") {
+    answerHint = "Khai báo mỗi cách diễn đạt được chấp nhận trên một dòng; giữ dấu tiếng Việt.";
   }
   const id = `test-question-${draft.key}`;
   const problem = showProblems ? describeQuestionProblem(draft) : null;
@@ -144,9 +156,7 @@ export function TestQuestionEditor({
               aria-describedby={`${id}-answers-hint`}
             />
             <p id={`${id}-answers-hint`} className="small muted">
-              {isJapaneseInput
-                ? "Khai báo đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます."
-                : "Chữ Hán phân biệt giản thể/phồn thể; pinyin cần đúng dấu thanh và khoảng trắng. Mỗi dạng được chấp nhận phải ghi thành một dòng riêng."}
+              {answerHint}
             </p>
           </div>
           <div className="form-grid">
@@ -162,7 +172,7 @@ export function TestQuestionEditor({
                       ...draft,
                       inputMode,
                       kanjiStrict:
-                        inputMode === "chinese" || inputMode === "pinyin"
+                        inputMode === "chinese" || inputMode === "pinyin" || inputMode === "text"
                           ? false
                           : draft.kanjiStrict,
                     });

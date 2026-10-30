@@ -25,7 +25,8 @@
     "admin:grant": "node --env-file-if-exists=.env.local --import tsx scripts/grant-admin.ts",
     "seed:demo": "node --env-file-if-exists=.env.local --import tsx scripts/seed-demo.ts",
     "test:e2e:supabase": "playwright test -c playwright.supabase.config.ts",
-    "history:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-learning-history.ts"
+    "history:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-learning-history.ts",
+    "daily:import": "node --import tsx scripts/import-daily-sheet.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.1158.0",

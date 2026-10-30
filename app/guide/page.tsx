@@ -78,7 +78,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-daily",
     title: "Bài luyện hằng ngày",
     steps: [
-      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10 hoặc 15 câu rồi bấm Lưu.",
+      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15 hoặc 60 câu rồi bấm Lưu.",
       "Khoảng 6:00 sáng mỗi ngày, Reng tự giao một bài từ bài học mới nhất của lớp, hạn 23:59 cùng ngày. Câu đổi mỗi ngày và ưu tiên câu học viên chưa gặp gần đây.",
       "Bấm Giao bài hôm nay ngay khi muốn có bài của hôm nay mà không chờ tới sáng mai.",
     ],

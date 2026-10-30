@@ -91,6 +91,12 @@ test("daily practice publishes one assignment per class and Vietnam day, only wh
       db.query("select public.set_daily_practice($1, $2, 2)", [TEACHER, classRow.id]),
       /reng:invalid_input/,
     );
+    // The pilot keeps a 60-question daily set; anything larger is refused.
+    await db.query("select public.set_daily_practice($1, $2, 60)", [TEACHER, classRow.id]);
+    await assert.rejects(
+      db.query("select public.set_daily_practice($1, $2, 61)", [TEACHER, classRow.id]),
+      /reng:invalid_input/,
+    );
     await db.query("select public.set_daily_practice($1, $2, 5)", [TEACHER, classRow.id]);
 
     const first = await publish(tomorrow, ["q2", "q1"]);
