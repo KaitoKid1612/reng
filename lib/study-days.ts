@@ -31,6 +31,23 @@ export function countStudyStreak(activity: readonly (Date | string)[], now: Date
   return streak;
 }
 
+/** Monday of the Vietnam-time week containing the instant, as "YYYY-MM-DD". */
+export function studyWeekStart(instant: Date | string) {
+  const day = Date.parse(`${toStudyDay(instant)}T00:00:00Z`);
+  const daysSinceMonday = (new Date(day).getUTCDay() + 6) % 7;
+  return new Date(day - daysSinceMonday * DAY_MS).toISOString().slice(0, 10);
+}
+
+/** Moves a "YYYY-MM-DD" calendar day by whole days. */
+export function shiftStudyDay(day: string, days: number) {
+  return new Date(Date.parse(`${day}T00:00:00Z`) + days * DAY_MS).toISOString().slice(0, 10);
+}
+
+/** The instant a Vietnam calendar day starts. */
+export function studyDayStart(day: string) {
+  return Date.parse(`${day}T00:00:00Z`) - VIETNAM_OFFSET_MS;
+}
+
 export function latestStudyDay(activity: readonly (Date | string)[]) {
   return activity.map(toStudyDay).sort().at(-1) ?? null;
 }

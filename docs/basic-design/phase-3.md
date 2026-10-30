@@ -40,10 +40,10 @@ flowchart LR
 | S11 | /assignments/[id] | Thông tin bài, bắt đầu/tiếp tục lượt; một câu một màn hình trên điện thoại, nhiều câu trên máy tính; trạng thái lưu, mất mạng, hết hạn, xung đột |
 | S12 | /assignments/[id]/results | Kết quả lượt đã nộp theo chính sách phản hồi |
 | S13 | /mistakes | Câu từng sai, đáp án/giải thích khi được phép, chuỗi đúng x/3, đã giải quyết |
-| S14 | /progress | Ba chỉ số tách riêng: tiến độ đọc, điểm bài tập, thẻ ôn; chuỗi ngày học |
+| S14 | /progress | Ba chỉ số tách riêng: tiến độ đọc, điểm bài tập, thẻ ôn; chuỗi ngày học; biểu đồ điểm bài tập 8 tuần; tóm tắt lịch sử Sheet của chính mình nếu có |
 | T01 | /teach | Lớp của tôi, bài tôi sở hữu, lối vào tạo lớp |
 | T02 | /teach/classes | Danh sách và form tạo lớp (tên, điểm đạt lớp) |
-| T03 | /teach/classes/[id] | Bốn ô thống kê, bảng học viên/nhãn, câu sai ≥ 50%, bài giao, mã lớp, CSV |
+| T03 | /teach/classes/[id] | Bốn ô thống kê (ô đầu là tỉ lệ nộp bài tuần này), bảng học viên/nhãn, câu sai ≥ 50%, bài giao kèm điểm TB và số học viên đã nộp, mã lớp, CSV |
 | T04 | /teach/classes/[id]/students/[uid] | Kết quả từng bài (lượt mới nhất) và câu đúng/sai của một học viên |
 | T05 | /teach/classes/[id]/assign | Nội dung lớp (bài, phiên bản, thứ tự, lịch mở) và form giao bài practice/test |
 

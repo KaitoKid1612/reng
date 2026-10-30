@@ -14,7 +14,7 @@ import { getClassReport } from "@/lib/server/reports";
 import { absoluteUrl } from "@/lib/site";
 import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 
-import type { LearnerLabel } from "@/lib/class-report";
+import type { AssignmentResult, LearnerLabel } from "@/lib/class-report";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Theo dõi lớp" };
@@ -31,11 +31,33 @@ const LABEL_TONES: Record<LearnerLabel, string> = {
   no_data: "status-neutral",
 };
 
+interface AssignmentResultLineProps {
+  result: AssignmentResult;
+}
+
+// Current members only, latest attempt each, so it can differ from the raw submission count.
+function AssignmentResultLine({ result }: AssignmentResultLineProps) {
+  const submitted = `${result.submittedCount}/${result.assignedCount} học viên đã nộp`;
+  if (result.averagePercent === null) {
+    return <p className="item-meta">Chưa có điểm · {submitted}</p>;
+  }
+  return (
+    <div className="score-meter-row">
+      <span className="score-meter" aria-hidden="true">
+        <span style={{ width: `${result.averagePercent}%` }} />
+      </span>
+      <span className="item-meta">
+        Điểm TB {formatPercent(result.averagePercent)} · {submitted}
+      </span>
+    </div>
+  );
+}
+
 export default async function ClassReportPage({ params }: ClassReportPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/classes/${id}`);
   const report = await loadOrNotFound(getClassReport(account.id, id, new Date()));
-  const { classRow, summary } = report;
+  const { classRow, summary, week } = report;
   const joinCodeControls = (
     <JoinCodeControls
       classId={classRow.id}
@@ -72,8 +94,14 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       {!hasLearners && joinCodeControls}
       <div className="stat-tiles">
         <div className="stat-tile">
-          <strong>{summary.submittedCount}</strong>
-          <span>bài đã nộp (lượt mới nhất)</span>
+          <strong>{week.percent === null ? "—" : formatPercent(week.percent)}</strong>
+          <span>nộp bài tuần này</span>
+          <span className="stat-tile-detail">
+            {week.expectedCount
+              ? `${week.submittedCount}/${week.expectedCount} bài đến hạn từ thứ Hai`
+              : "Chưa có bài đến hạn tuần này"}
+          </span>
+          <span className="stat-tile-detail">Tổng {summary.submittedCount} bài đã nộp</span>
         </div>
         <div className="stat-tile">
           <strong>
@@ -197,6 +225,9 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
                     {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
                     {assignment.status === "closed" ? ", đã đóng" : ""}
                   </p>
+                  {assignment.result && assignment.result.assignedCount > 0 && (
+                    <AssignmentResultLine result={assignment.result} />
+                  )}
                 </div>
                 {assignment.status === "published" && (
                   <CloseAssignmentButton

@@ -9,6 +9,7 @@ import "@fontsource/klee-one/400.css";
 import "reveal.js/reveal.css";
 import "./globals.css";
 import "./lesson-visuals.css";
+import "./charts.css";
 import "./learning-history.css";
 import { SiteHeader } from "@/components/site-header";
 import { AudioProvider } from "@/components/audio-provider";

@@ -35,7 +35,7 @@ export function HistoryDayNav({ days, selectedDate, hrefForDate }: HistoryDayNav
       <ul className="history-band-legend small muted" aria-label="Màu theo điểm quy về %">
         {BAND_LEGEND.map((item) => (
           <li key={item.band}>
-            <span className="history-band-dot" data-band={item.band} aria-hidden="true" />
+            <span className="score-band-dot" data-band={item.band} aria-hidden="true" />
             {item.label}
           </li>
         ))}
@@ -60,7 +60,7 @@ export function HistoryDayNav({ days, selectedDate, hrefForDate }: HistoryDayNav
                     scroll={false}
                   >
                     <span
-                      className="history-band-dot"
+                      className="score-band-dot"
                       data-band={scoreBand(day.percent)}
                       aria-hidden="true"
                     />
@@ -71,7 +71,7 @@ export function HistoryDayNav({ days, selectedDate, hrefForDate }: HistoryDayNav
                       {formatDayScore(day)}
                     </span>
                     {/* The full date and source score form the accessible name. */}
-                    <span className="history-hidden">
+                    <span className="visually-hidden">
                       {formatStudyDay(day.date)}, {formatDayScoreLabel(day)}
                     </span>
                   </Link>

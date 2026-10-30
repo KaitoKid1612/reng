@@ -34,7 +34,7 @@ function HistorySparkline({ values }: HistorySparklineProps) {
   const last = points.at(-1);
   return (
     <svg
-      className="history-sparkline"
+      className="score-sparkline"
       viewBox={`0 0 ${SPARK_WIDTH} ${SPARK_HEIGHT}`}
       width={SPARK_WIDTH}
       height={SPARK_HEIGHT}

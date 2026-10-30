@@ -6,8 +6,10 @@ import {
   buildMemberReport,
   buildReportCsv,
   selectLatestSubmissions,
+  summarizeAssignmentResults,
   summarizeClass,
   summarizeListening,
+  summarizeWeekSubmissions,
 } from "@/lib/class-report";
 import { toPercent } from "@/lib/grading/grade";
 import {
@@ -191,6 +193,7 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
       ),
     })),
   );
+  const results = summarizeAssignmentResults(reportAssignments, reports);
   return {
     classRow,
     lessons,
@@ -199,10 +202,12 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
       submittedCount: [...latest.values()].filter((item) => item.assignmentId === assignment.id)
         .length,
       openAttemptCount: open.filter((item) => item.assignment_id === assignment.id).length,
+      result: results.get(assignment.id) ?? null,
     })),
     reportAssignments,
     reports,
     summary: summarizeClass(reports),
+    week: summarizeWeekSubmissions(reportAssignments, reports, now),
     questionStats: questionStats.filter((entry) => entry.questions.length > 0),
     formerMemberCount: roster.length - members.length,
   };

@@ -68,9 +68,9 @@ Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Em
 
 ## Thống kê và biểu đồ
 
-Ô thống kê dùng lại `.stat-tiles` (4 cột, 2 cột từ 820px trở xuống): số lớn, nhãn, một dòng chi tiết. Biểu đồ vẽ bằng HTML/SVG ở server, không thêm thư viện. Một chuỗi số dùng một màu chàm; ngày đang xem đậm hơn, các ngày khác dùng bậc nhạt hơn vẫn đạt 3:1. Lưới là đường mảnh; mốc mục tiêu là nét đứt. Giá trị trống vẽ vòng rỗng, không vẽ như 0.
+Ô thống kê dùng lại `.stat-tiles` (4 cột, 2 cột từ 820px trở xuống): số lớn, nhãn, dòng chi tiết `.stat-tile-detail`. Biểu đồ vẽ bằng HTML/SVG ở server, không thêm thư viện. Biểu đồ cột phần trăm dùng chung `components/charts/score-column-chart.tsx` (lịch sử học tập, tiến độ); CSS dùng chung ở `app/charts.css`. Một chuỗi số dùng một màu chàm; ngày đang xem đậm hơn, các ngày khác dùng bậc nhạt hơn vẫn đạt 3:1. Lưới là đường mảnh; mốc mục tiêu là nét đứt. Giá trị trống vẽ vòng rỗng, không vẽ như 0.
 
-Màu dải điểm (`--score-good`, `--score-fair`, `--score-low`, `--score-none` trong `app/learning-history.css`) luôn đi kèm con số. Cặp xanh/đỏ chỉ cách ΔE 7,1 khi mô phỏng mù màu, nên không dùng màu làm tín hiệu duy nhất. Mỗi biểu đồ có câu tóm tắt bằng chữ, và giá trị từng ngày cũng đọc được trong danh sách ngày. Kiểm tra 360px và 1280px không tràn ngang trước khi phát hành.
+Màu dải điểm (`--score-good`, `--score-fair`, `--score-low`, `--score-none` trong `app/charts.css`) luôn đi kèm con số. Cặp xanh/đỏ chỉ cách ΔE 7,1 khi mô phỏng mù màu, nên không dùng màu làm tín hiệu duy nhất. Mỗi biểu đồ có câu tóm tắt bằng chữ, và giá trị từng ngày cũng đọc được trong danh sách ngày. Kiểm tra 360px và 1280px không tràn ngang trước khi phát hành.
 
 ## Hình ảnh và scan
 

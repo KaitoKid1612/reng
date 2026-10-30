@@ -38,11 +38,11 @@ Số liệu là hàm thuần trong `lib/learning-history-stats.ts`:
 Component server:
 
 - `history-overview.tsx`: bốn ô thống kê, biểu đồ và bảng dạng bài.
-- `history-score-chart.tsx`: cột HTML, mỗi cột là liên kết `?date=…#history-day`. Cột nằm ngoài thứ tự Tab vì danh sách ngày đã có cùng liên kết với vùng bấm lớn hơn. Dòng đọc số liệu đổi khi rê chuột hoặc focus bằng CSS, không cần JS.
+- `history-score-chart.tsx`: dùng `components/charts/score-column-chart.tsx` (biểu đồ cột dùng chung với `/progress`). Mỗi cột là liên kết `?date=…#history-day` và nằm ngoài thứ tự Tab, vì danh sách ngày đã có cùng liên kết với vùng bấm lớn hơn. Cột không có liên kết thì nhận focus. Dòng đọc số liệu đổi khi rê chuột hoặc focus bằng CSS, không cần JS.
 - `history-day-nav.tsx`: nút ngày nhóm theo tháng; tên truy cập là ngày đầy đủ và điểm gốc.
 - `history-list-stats.tsx`: dòng tóm tắt và sparkline SVG thang cố định 0–100%.
 
-Liên kết ngày và bộ lọc dùng `scroll={false}`, `prefetch={false}`. CSS và token màu điểm ở `app/learning-history.css`, nạp sau `globals.css`.
+Liên kết ngày và bộ lọc dùng `scroll={false}`, `prefetch={false}`. Phần dùng chung (token màu điểm, biểu đồ, thanh đo, chấm màu, sparkline, ô thống kê) ở `app/charts.css`; bố cục riêng của lịch sử ở `app/learning-history.css`. Cả hai nạp sau `globals.css`.
 
 Danh sách `/history` chỉ chọn thêm `sessions:payload->sessions` (đường dẫn JSON của PostgREST) để tính thống kê, không tải bảng câu. Snapshot không đọc được thì bỏ phần thống kê thay vì làm lỗi trang.
 

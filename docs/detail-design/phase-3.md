@@ -15,8 +15,9 @@ Theo [BD](../basic-design/phase-3.md), schema chung 03, chấm/nộp 07. Phiên 
 | lib/grading/grade.ts | Registry chấm theo `type`, chấm lượt, điểm nguyên, phần trăm và xét đạt không làm tròn |
 | lib/assignment.ts | Snapshot câu bài giao, payload theo mode, thời điểm phản hồi, hạn nộp, form câu test |
 | lib/srs.ts | Bọc ts-fsrs, trạng thái có phiên bản, chuỗi đúng của thẻ lỗi |
-| lib/study-days.ts | Ngày học theo Asia/Ho_Chi_Minh và chuỗi ngày liên tiếp |
-| lib/class-report.ts | Lượt mới nhất, trung bình, nhãn học viên, CSV an toàn |
+| lib/study-days.ts | Ngày học theo Asia/Ho_Chi_Minh, chuỗi ngày liên tiếp, đầu tuần thứ Hai |
+| lib/class-report.ts | Lượt mới nhất, trung bình, nhãn học viên, kết quả từng bài, tỉ lệ nộp bài đã đến hạn trong tuần, CSV an toàn |
+| lib/weekly-scores.ts | Điểm trung bình theo tuần nộp cho biểu đồ ở `/progress`; tuần không có bài có điểm giữ `null` |
 | lib/join-code.ts | Sinh/chuẩn hóa/hiển thị mã lớp |
 | lib/server/* | Chỉ chạy server (`server-only`): account (phiên), supabase (service client/RPC), classes, assignments, learner, reviews, reports, api, request-origin |
 | lib/local-draft.ts, lib/romaji-input.ts, lib/vietnam-time.ts, lib/test-question-draft.ts, lib/review-ratings.ts | Logic phía trình duyệt dùng chung: bản nháp dự phòng, chuyển romaji, giờ Việt Nam, kiểm tra câu test, nhãn đánh giá (không kéo ts-fsrs vào bundle) |

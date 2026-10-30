@@ -1,16 +1,5 @@
-/* Imported learning history: overview tiles, score chart, accuracy by kind, day list and
-   answer filters. Loaded after globals.css. Score bands always sit beside the number they
-   describe, so colour is never the only cue (green/red is a close pair for colour-blind readers). */
-
-:root {
-  --score-good: var(--correct);
-  --score-fair: #d08a1e;
-  --score-low: var(--wrong);
-  --score-none: #7d7a74;
-  /* Lighter step of --primary for the days not being viewed; still 3:1 on the surface. */
-  --chart-bar: #7590b8;
-  --chart-hover: rgb(43 76 126 / 7%);
-}
+/* Imported learning history: overview layout, accuracy by kind, day list, answer filters and
+   the history list summary. Shared chart pieces live in charts.css. Loaded after globals.css. */
 
 .history-overview > h2 {
   margin-bottom: 4px;
@@ -21,188 +10,12 @@
 .history-stats {
   margin-bottom: 24px;
 }
-.history-stat > span {
-  display: block;
-}
-.history-stat strong small {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--muted);
-}
-.history-stat .history-stat-detail {
-  margin-top: 4px;
-  line-height: 1.5;
-}
-.history-stat .history-stat-detail[data-trend="up"] {
-  color: var(--correct);
-}
-.history-stat .history-stat-detail[data-trend="down"] {
-  color: var(--wrong);
-}
 
 .history-panels {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   gap: 24px;
   align-items: start;
-}
-.history-panel {
-  min-width: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px 24px;
-}
-.history-panel > h3 {
-  margin: 0;
-  font-size: 18px;
-}
-.history-panel > p {
-  margin: 0 0 12px;
-}
-
-/* Score chart: HTML columns so every column is a link with its own hover readout. The readout
-   and the tips share one line at the top of the figure; tips resolve against the figure because
-   no element between them is positioned. */
-.history-chart {
-  position: relative;
-  margin: 0;
-}
-.history-chart-readout,
-.history-chart-tip {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.6;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.history-chart-readout {
-  margin-bottom: 12px;
-}
-.history-chart-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--surface);
-  color: var(--foreground);
-  visibility: hidden;
-  pointer-events: none;
-}
-.history-chart-column:hover .history-chart-tip,
-.history-chart-column:focus-visible .history-chart-tip {
-  visibility: visible;
-}
-.history-chart-body {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  grid-template-rows: 160px auto;
-}
-.history-chart-yaxis,
-.history-chart-grid {
-  position: relative;
-  grid-row: 1;
-}
-.history-chart-yaxis {
-  grid-column: 1;
-  font-size: 12px;
-  color: var(--muted);
-}
-.history-chart-yaxis > span {
-  position: absolute;
-  right: 8px;
-  line-height: 1;
-  transform: translateY(50%);
-  font-variant-numeric: tabular-nums;
-}
-.history-chart-yaxis > .history-chart-target-label {
-  color: var(--foreground);
-  font-weight: 600;
-}
-.history-chart-grid {
-  grid-column: 2;
-}
-.history-chart-grid > span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  border-top: 1px solid var(--border);
-}
-.history-chart-grid > span:first-child {
-  border-top-color: var(--grid);
-}
-.history-chart-grid > .history-chart-target {
-  border-top: 1px dashed var(--score-good);
-}
-.history-chart-columns {
-  grid-row: 1;
-  grid-column: 2;
-  z-index: 1;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.history-chart-columns > li {
-  display: flex;
-  flex: 1 1 0;
-  min-width: 0;
-}
-.history-chart-column {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  border-radius: 4px 4px 0 0;
-}
-.history-chart-column:hover {
-  background: var(--chart-hover);
-}
-.history-chart-bar {
-  display: block;
-  width: min(24px, 64%);
-  min-height: 2px;
-  border-radius: 4px 4px 0 0;
-  background: var(--chart-bar);
-}
-.history-chart-column[aria-current="date"] .history-chart-bar,
-.history-chart-column:hover .history-chart-bar {
-  background: var(--primary);
-}
-/* A day without a score is a hollow ring on the baseline, never a zero-height bar. */
-.history-chart-empty {
-  display: block;
-  width: 8px;
-  height: 8px;
-  margin-bottom: -4px;
-  border: 2px solid var(--score-none);
-  border-radius: 50%;
-  background: var(--surface);
-}
-.history-chart-column[aria-current="date"] .history-chart-empty {
-  border-color: var(--primary);
-}
-.history-chart-xaxis {
-  position: relative;
-  grid-row: 2;
-  grid-column: 2;
-  height: 24px;
-  font-size: 12px;
-  color: var(--muted);
-}
-.history-chart-xaxis > span {
-  position: absolute;
-  top: 8px;
-  line-height: 1;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-.history-chart figcaption {
-  margin-top: 8px;
-  line-height: 1.6;
 }
 
 .history-kinds {
@@ -237,19 +50,8 @@
 .history-kind-value strong {
   color: var(--foreground);
 }
-.history-meter {
+.history-kinds .score-meter {
   grid-area: meter;
-  display: block;
-  height: 8px;
-  border-radius: 4px;
-  background: var(--primary-soft);
-  overflow: hidden;
-}
-.history-meter > span {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: var(--primary);
 }
 
 .history-day-nav {
@@ -270,27 +72,6 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-}
-.history-band-dot {
-  display: inline-block;
-  flex: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--score-none);
-}
-.history-band-dot[data-band="good"] {
-  background: var(--score-good);
-}
-.history-band-dot[data-band="fair"] {
-  background: var(--score-fair);
-}
-.history-band-dot[data-band="low"] {
-  background: var(--score-low);
-}
-.history-band-dot[data-band="none"] {
-  border: 2px solid var(--score-none);
-  background: transparent;
 }
 .history-month + .history-month {
   margin-top: 16px;
@@ -337,7 +118,7 @@
   padding: 6px 8px;
   border-radius: 8px;
 }
-.history-day-chip > .history-band-dot {
+.history-day-chip > .score-band-dot {
   grid-area: dot;
   width: 8px;
   height: 8px;
@@ -363,14 +144,6 @@
 }
 .history-day-chip[aria-current="date"] .history-day-score {
   color: var(--foreground);
-}
-.history-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
 }
 .history-filter {
   margin-bottom: 12px;
@@ -459,22 +232,6 @@
   color: var(--foreground);
   font-variant-numeric: tabular-nums;
 }
-.history-sparkline {
-  flex: none;
-  overflow: visible;
-}
-.history-sparkline polyline {
-  fill: none;
-  stroke: var(--chart-bar);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.history-sparkline circle {
-  fill: var(--primary);
-  stroke: var(--background);
-  stroke-width: 2;
-}
 
 @media (max-width: 900px) {
   .history-panels {
@@ -482,13 +239,7 @@
   }
 }
 @media (max-width: 600px) {
-  .history-panel {
-    padding: 16px;
-  }
   .history-answer {
     padding: 12px 16px;
-  }
-  .history-chart-body {
-    grid-template-rows: 140px auto;
   }
 }

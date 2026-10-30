@@ -1,5 +1,5 @@
 import { toPercent } from "@/lib/grading/grade";
-import { formatStudyDay } from "@/lib/study-days";
+import { formatStudyDay, studyDayStart, studyWeekStart } from "@/lib/study-days";
 
 export const LEARNER_LABELS = {
   abandoned: "Bỏ bài",
@@ -201,6 +201,82 @@ export function summarizeClass(reports: readonly MemberReport[]) {
       : null,
     passingCount: reports.filter((report) => report.label === "passing").length,
     attentionCount: reports.filter((report) => ATTENTION_LABELS.includes(report.label)).length,
+  };
+}
+
+export interface AssignmentResult {
+  assignedCount: number;
+  submittedCount: number;
+  averagePercent: number | null;
+}
+
+export interface WeekSubmissions {
+  weekStart: string;
+  dueCount: number;
+  expectedCount: number;
+  submittedCount: number;
+  percent: number | null;
+}
+
+function mean(values: readonly number[]) {
+  return values.length ? values.reduce((total, value) => total + value, 0) / values.length : null;
+}
+
+/** Each assignment over current members, from their latest submitted attempt. */
+export function summarizeAssignmentResults(
+  assignments: readonly ReportAssignment[],
+  reports: readonly MemberReport[],
+) {
+  return new Map<string, AssignmentResult>(
+    assignments.map((assignment) => {
+      // A member counts only for work assigned to them (published after joining, or submitted).
+      const percents = reports.flatMap((report) =>
+        assignment.id in report.percents ? [report.percents[assignment.id] ?? null] : [],
+      );
+      const submitted = percents.filter((percent): percent is number => percent !== null);
+      return [
+        assignment.id,
+        {
+          assignedCount: percents.length,
+          submittedCount: submitted.length,
+          averagePercent: mean(submitted),
+        },
+      ];
+    }),
+  );
+}
+
+/**
+ * Work already due this study week (Monday 00:00 Vietnam time until now) and how much of it was
+ * submitted. Work due later this week is left out so the rate never counts unfinished time.
+ */
+export function summarizeWeekSubmissions(
+  assignments: readonly ReportAssignment[],
+  reports: readonly MemberReport[],
+  now: Date,
+): WeekSubmissions {
+  const weekStart = studyWeekStart(now);
+  const from = studyDayStart(weekStart);
+  const due = assignments.filter((assignment) => {
+    const dueAt = assignment.dueAt ? Date.parse(assignment.dueAt) : Number.NaN;
+    return dueAt >= from && dueAt <= now.getTime();
+  });
+  let expectedCount = 0;
+  let submittedCount = 0;
+  for (const assignment of due) {
+    for (const report of reports) {
+      if (assignment.id in report.percents) {
+        expectedCount += 1;
+        submittedCount += report.percents[assignment.id] === null ? 0 : 1;
+      }
+    }
+  }
+  return {
+    weekStart,
+    dueCount: due.length,
+    expectedCount,
+    submittedCount,
+    percent: expectedCount ? (submittedCount / expectedCount) * 100 : null,
   };
 }
 

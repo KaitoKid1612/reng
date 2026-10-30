@@ -2,19 +2,40 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { AssignmentStatusBadge } from "@/components/classroom/assignment-labels";
+import { HistoryListStats } from "@/components/history/history-list-stats";
+import { WeeklyScoreChart } from "@/components/progress/weekly-score-chart";
 import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
+import { listLearningHistory } from "@/lib/server/learning-history";
 import { getProgressSummary } from "@/lib/server/learner";
 import { formatStudyDateTime } from "@/lib/study-days";
+import { weeklyScores } from "@/lib/weekly-scores";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Tiến độ của tôi" };
 
+// Eight weeks show about two months of class work without crowding a phone screen.
+const PROGRESS_WEEKS = 8;
+
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
-  const summary = await getProgressSummary(account.id, new Date());
+  const now = new Date();
+  const [summary, histories] = await Promise.all([
+    getProgressSummary(account.id, now),
+    listLearningHistory(),
+  ]);
+  // Teachers who also study see their own imported history here, not their learners'.
+  const ownHistories = histories.filter((item) => item.learner_id === account.id);
+  const weeks = weeklyScores(
+    summary.assignments.map((item) => ({
+      percent: item.latestPercent,
+      submittedAt: item.submittedAt,
+    })),
+    now,
+    PROGRESS_WEEKS,
+  );
   return (
     <>
       <div className="page-heading">
@@ -71,6 +92,13 @@ export default async function ProgressPage() {
       </section>
       <section className="section-block" aria-labelledby="assignment-progress">
         <h2 id="assignment-progress">Bài tập</h2>
+        {summary.assignments.length > 0 && (
+          <section className="chart-panel" aria-labelledby="weekly-scores">
+            <h3 id="weekly-scores">Điểm bài tập theo tuần</h3>
+            <p className="small muted">Rê chuột hoặc dùng phím Tab trên cột để xem từng tuần.</p>
+            <WeeklyScoreChart weeks={weeks} />
+          </section>
+        )}
         {summary.assignments.length ? (
           <ul className="item-list">
             {summary.assignments.map((item) => (
@@ -91,6 +119,21 @@ export default async function ProgressPage() {
           <p className="muted">Chưa có bài tập nào được giao.</p>
         )}
       </section>
+      {ownHistories.length > 0 && (
+        <section className="section-block" aria-labelledby="sheet-history">
+          <h2 id="sheet-history">Lịch sử từ Google Sheet</h2>
+          <ul className="item-list">
+            {ownHistories.map((history) => (
+              <li key={history.id}>
+                <div>
+                  <Link href={`/history/${history.id}`}>{history.course}</Link>
+                  <HistoryListStats sessions={history.sessions} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <section className="section-block" aria-labelledby="card-progress">
         <h2 id="card-progress">Thẻ ôn tập</h2>
         <p>

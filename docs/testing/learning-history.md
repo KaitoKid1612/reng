@@ -50,3 +50,16 @@ Giới hạn: không tự đăng nhập tài khoản thật hoặc đặt lại 
 - Trên trang thật với Supabase local: bấm nút ngày giữ nguyên vị trí cuộn và đổi phần ngày bên dưới; bấm cột biểu đồ chuyển đến phần tổng hợp ngày và giữ bộ lọc kết quả.
 - Màu dải điểm đã đo bằng bộ kiểm tra bảng màu. Xanh/đỏ chỉ cách ΔE 7,1 khi mô phỏng mù màu; vàng `#d08a1e` tương phản 2,9:1 trên nền trắng. Vì vậy mọi chấm màu đều có con số đi kèm.
 - Giới hạn: không đăng nhập tài khoản thật để xem production; không dùng dữ liệu học viên thật trong kiểm thử.
+
+## Biểu đồ dùng chung, tiến độ và báo cáo lớp — 30/10/2026
+
+Biểu đồ cột phần trăm được tách thành `components/charts/score-column-chart.tsx` (CSS ở `app/charts.css`), dùng cho lịch sử và biểu đồ điểm bài tập 8 tuần ở `/progress`. Trang lớp giảng viên thêm tỉ lệ nộp bài tuần này và điểm trung bình từng bài giao.
+
+| Kiểm tra | Bằng chứng |
+|---|---|
+| Đầu tuần thứ Hai theo giờ Việt Nam, kết quả từng bài chỉ tính học viên được giao, tỉ lệ nộp chỉ tính bài đã đến hạn từ thứ Hai, điểm theo tuần giữ tuần trống là `null` | `tests/class-report-summaries.test.ts` |
+| Trang lớp và `/progress` không lỗi, vừa 360px, không có lỗi console phía học viên | `e2e-supabase/classroom.spec.ts` |
+
+- `npm run check`: PASS, 132/132 test. `npm run test:e2e`: 35/35. `npm run build`: PASS.
+- `npm run test:e2e:supabase -- e2e-supabase/classroom.spec.ts e2e-supabase/learning-history.spec.ts`: 9/9 đạt trên stack local `reng-history-tests`.
+- Kiểm tra trực quan bằng bản sao riêng của repo: biểu đồ tuần ở 360px và 1280px không tràn ngang; nhấn Tab vào cột hiện đúng dòng số liệu như khi rê chuột. Lỗi chồng nhãn trục ngày ở 8 cột (05/10 và 12/10) đã sửa bằng quy tắc nhãn cách nhau ít nhất 2 cột. Trang tiến độ thật của học viên kiểm thử hiện "Tuần này: 100% (1 bài)"; trang lớp hiện "Chưa có bài đến hạn tuần này" khi bài kiểm tra còn hạn, và thanh điểm của bài giao.

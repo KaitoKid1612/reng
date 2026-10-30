@@ -119,7 +119,11 @@ Transcript nằm trong khối thu gọn, chỉ mở được sau khi đã trả 
 
 ### T03 — Theo dõi lớp
 
-Bốn ô thống kê ở trên: số bài đã nộp, điểm trung bình, số học viên đạt, số cần chú ý.
+Bốn ô thống kê ở trên: tỉ lệ nộp bài tuần này, điểm trung bình, số học viên đạt, số cần chú ý.
+
+Tỉ lệ nộp bài tuần này chỉ tính bài đã đến hạn từ 0:00 thứ Hai (giờ Việt Nam) tới lúc xem. Mỗi cặp học viên–bài được giao là một lượt cần nộp. Bài chưa tới hạn không tính, nên tỉ lệ không bị kéo xuống giữa tuần. Ô này cũng ghi tổng số bài đã nộp (lượt mới nhất).
+
+Danh sách bài đã giao có thanh điểm trung bình của lượt nộp mới nhất, cùng số học viên hiện tại đã nộp trên số học viên được giao bài đó.
 
 Bảng học viên: tên, số bài nộp, điểm trung bình, số lần nghe lại trung bình, nhãn trạng thái.
 

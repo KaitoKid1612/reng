@@ -56,28 +56,28 @@ function kindName(kind: string) {
 function LatestScoreTile({ latest }: LatestScoreTileProps) {
   if (!latest) {
     return (
-      <div className="stat-tile history-stat">
+      <div className="stat-tile">
         <strong>—</strong>
         <span>điểm gần nhất</span>
-        <span className="history-stat-detail">Bảng tổng hợp chưa có điểm</span>
+        <span className="stat-tile-detail">Bảng tổng hợp chưa có điểm</span>
       </div>
     );
   }
   const { session, score, deltaPercent, baselineCount } = latest;
   const delta = deltaPercent === null ? null : describeScoreDelta(deltaPercent, session.scoreScale);
   return (
-    <div className="stat-tile history-stat">
+    <div className="stat-tile">
       <strong>
         {formatScoreValue(score)}
         <small> / {session.scoreScale}</small>
       </strong>
       <span>điểm gần nhất · {formatStudyDay(session.date).slice(0, 5)}</span>
       {delta ? (
-        <span className="history-stat-detail" data-trend={delta.direction}>
+        <span className="stat-tile-detail" data-trend={delta.direction}>
           {TREND_ARROWS[delta.direction]} {delta.text} so với trung bình {baselineCount} lần trước
         </span>
       ) : (
-        <span className="history-stat-detail">Lần đầu có điểm</span>
+        <span className="stat-tile-detail">Lần đầu có điểm</span>
       )}
     </div>
   );
@@ -94,7 +94,7 @@ function KindAccuracy({ ranked, sparse }: KindAccuracyProps) {
           {ranked.map((item) => (
             <li key={item.kind}>
               <span className="history-kind-name">{kindName(item.kind)}</span>
-              <span className="history-meter" aria-hidden="true">
+              <span className="score-meter" aria-hidden="true">
                 <span style={{ width: `${item.percent}%` }} />
               </span>
               <span className="history-kind-value">
@@ -149,38 +149,38 @@ export function HistoryOverview({
         {archive.sourceTabs.answers}), điểm lấy từ bảng tổng hợp ({archive.sourceTabs.summaries}).
       </p>
       <div className="stat-tiles history-stats">
-        <div className="stat-tile history-stat">
+        <div className="stat-tile">
           <strong>{overview.dayCount}</strong>
           <span>ngày học</span>
-          <span className="history-stat-detail">
+          <span className="stat-tile-detail">
             {dateRange(overview.firstDate, overview.lastDate)}
           </span>
         </div>
-        <div className="stat-tile history-stat">
+        <div className="stat-tile">
           <strong>
             {overview.accuracyPercent === null ? "—" : formatPercentValue(overview.accuracyPercent)}
           </strong>
           <span>câu trả lời đúng</span>
-          <span className="history-stat-detail">
+          <span className="stat-tile-detail">
             {overview.gradedCount
               ? `${outcomes.correct} / ${overview.gradedCount} câu đã chấm`
               : "Chưa có câu đã chấm"}
           </span>
         </div>
         <LatestScoreTile latest={overview.latest} />
-        <div className="stat-tile history-stat">
+        <div className="stat-tile">
           <strong>{pendingGrade + outcomes.unanswered}</strong>
           <span>câu chưa chấm / chưa làm</span>
-          <span className="history-stat-detail">{pendingDetail}</span>
+          <span className="stat-tile-detail">{pendingDetail}</span>
         </div>
       </div>
       <div className="history-panels">
-        <section className="history-panel" aria-labelledby="history-score-title">
+        <section className="chart-panel" aria-labelledby="history-score-title">
           <h3 id="history-score-title">Điểm theo ngày</h3>
           <p className="small muted">Điểm gốc quy về %; bấm vào cột để mở ngày đó.</p>
           <HistoryScoreChart days={days} selectedDate={selectedDate} hrefForDate={hrefForDate} />
         </section>
-        <section className="history-panel" aria-labelledby="history-kind-title">
+        <section className="chart-panel" aria-labelledby="history-kind-title">
           <h3 id="history-kind-title">Tỉ lệ đúng theo dạng bài</h3>
           <p className="small muted">Dạng thấp nhất ở trên; chỉ tính câu đã chấm Đúng/Sai.</p>
           <KindAccuracy ranked={kinds.ranked} sparse={kinds.sparse} />

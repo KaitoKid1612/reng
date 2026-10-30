@@ -68,7 +68,7 @@ function HistorySessionCard({ session, summariesTab }: HistorySessionCardProps) 
     <article className="form-card history-session">
       <h3>{session.title}</h3>
       <p className="history-session-score">
-        <span className="history-band-dot" data-band={scoreBand(percent)} aria-hidden="true" />
+        <span className="score-band-dot" data-band={scoreBand(percent)} aria-hidden="true" />
         <strong>Điểm gốc: {historyScoreLabel(session)}</strong>
         {percent !== null && session.scoreScale !== 100 && (
           <span className="muted"> ({formatPercentValue(percent)})</span>

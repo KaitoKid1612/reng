@@ -1,0 +1,279 @@
+/* Shared statistics pieces: stat tile details, the score column chart, meters, score-band dots
+   and sparklines. Used by learning history, progress and class pages; loaded after globals.css.
+   Score bands always sit beside the number they describe, so colour is never the only cue
+   (green/red is a close pair for colour-blind readers). */
+
+:root {
+  --score-good: var(--correct);
+  --score-fair: #d08a1e;
+  --score-low: var(--wrong);
+  --score-none: #7d7a74;
+  /* Lighter step of --primary for columns not being viewed; still 3:1 on the surface. */
+  --chart-bar: #7590b8;
+  --chart-hover: rgb(43 76 126 / 7%);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.stat-tile strong small {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.stat-tile .stat-tile-detail {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.stat-tile .stat-tile-detail[data-trend="up"] {
+  color: var(--correct);
+}
+.stat-tile .stat-tile-detail[data-trend="down"] {
+  color: var(--wrong);
+}
+
+/* A card holding one chart with its title and a one-line explanation. */
+.chart-panel {
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.chart-panel > h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.chart-panel > p {
+  margin: 0 0 12px;
+}
+.section-block > .chart-panel {
+  margin-bottom: 24px;
+}
+
+/* Score chart: HTML columns so each column can be a link with its own readout. The readout and
+   the tips share one line at the top of the figure; tips resolve against the figure because no
+   element between them is positioned. */
+.score-chart {
+  position: relative;
+  margin: 0;
+}
+.score-chart-readout,
+.score-chart-tip {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.score-chart-readout {
+  margin-bottom: 12px;
+}
+.score-chart-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  color: var(--foreground);
+  visibility: hidden;
+  pointer-events: none;
+}
+.score-chart-column:hover .score-chart-tip,
+.score-chart-column:focus-visible .score-chart-tip {
+  visibility: visible;
+}
+.score-chart-body {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-rows: 160px auto;
+}
+.score-chart-yaxis,
+.score-chart-grid {
+  position: relative;
+  grid-row: 1;
+}
+.score-chart-yaxis {
+  grid-column: 1;
+  font-size: 12px;
+  color: var(--muted);
+}
+.score-chart-yaxis > span {
+  position: absolute;
+  right: 8px;
+  line-height: 1;
+  transform: translateY(50%);
+  font-variant-numeric: tabular-nums;
+}
+.score-chart-yaxis > .score-chart-target-label {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.score-chart-grid {
+  grid-column: 2;
+}
+.score-chart-grid > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--border);
+}
+.score-chart-grid > span:first-child {
+  border-top-color: var(--grid);
+}
+.score-chart-grid > .score-chart-target {
+  border-top: 1px dashed var(--score-good);
+}
+.score-chart-columns {
+  grid-row: 1;
+  grid-column: 2;
+  z-index: 1;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.score-chart-columns > li {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.score-chart-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+}
+.score-chart-column:hover {
+  background: var(--chart-hover);
+}
+.score-chart-bar {
+  display: block;
+  width: min(24px, 64%);
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: var(--chart-bar);
+}
+.score-chart-column[aria-current] .score-chart-bar,
+.score-chart-column:hover .score-chart-bar,
+.score-chart-column:focus-visible .score-chart-bar {
+  background: var(--primary);
+}
+/* A column without a score is a hollow ring on the baseline, never a zero-height bar. */
+.score-chart-empty {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-bottom: -4px;
+  border: 2px solid var(--score-none);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.score-chart-column[aria-current] .score-chart-empty {
+  border-color: var(--primary);
+}
+.score-chart-xaxis {
+  position: relative;
+  grid-row: 2;
+  grid-column: 2;
+  height: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.score-chart-xaxis > span {
+  position: absolute;
+  top: 8px;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.score-chart figcaption {
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* Thin meter: same-hue track so the share reads across the whole bar. */
+.score-meter {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--primary-soft);
+  overflow: hidden;
+}
+.score-meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+/* A meter beside its figure, e.g. an assignment's average in a list row. */
+.score-meter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 6px;
+}
+.score-meter-row > .score-meter {
+  flex: 0 0 min(160px, 100%);
+}
+
+.score-band-dot {
+  display: inline-block;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--score-none);
+}
+.score-band-dot[data-band="good"] {
+  background: var(--score-good);
+}
+.score-band-dot[data-band="fair"] {
+  background: var(--score-fair);
+}
+.score-band-dot[data-band="low"] {
+  background: var(--score-low);
+}
+.score-band-dot[data-band="none"] {
+  border: 2px solid var(--score-none);
+  background: transparent;
+}
+
+.score-sparkline {
+  flex: none;
+  overflow: visible;
+}
+.score-sparkline polyline {
+  fill: none;
+  stroke: var(--chart-bar);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.score-sparkline circle {
+  fill: var(--primary);
+  stroke: var(--background);
+  stroke-width: 2;
+}
+
+@media (max-width: 600px) {
+  .chart-panel {
+    padding: 16px;
+  }
+  .score-chart-body {
+    grid-template-rows: 140px auto;
+  }
+}
