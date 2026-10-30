@@ -11,7 +11,16 @@ import {
 } from "@/lib/daily-practice";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass } from "@/lib/server/classes";
-import { callRpc, createServiceClient, selectOptional, selectRows } from "@/lib/server/supabase";
+import {
+  callRpc,
+  createServiceClient,
+  selectOptional,
+  selectRows,
+  ServiceError,
+} from "@/lib/server/supabase";
+
+// How far back the morning job looks for an open lesson that has choice or fill questions.
+const MAX_SOURCE_LESSONS = 20;
 
 export type DailyPracticeOutcome =
   | { status: "created" | "exists"; assignmentId: string; questionCount: number }
@@ -49,7 +58,7 @@ export async function createDailyPractice(
   if (!classRow?.active || !classRow.daily_practice_size) {
     return { status: "disabled" };
   }
-  const lesson = await selectOptional(
+  const lessons = await selectRows(
     service
       .from("class_lessons")
       .select("lesson_id")
@@ -57,17 +66,26 @@ export async function createDailyPractice(
       .lte("available_at", now.toISOString())
       .order("available_at", { ascending: false })
       .order("order_no", { ascending: false })
-      .limit(1)
-      .maybeSingle(),
+      .limit(MAX_SOURCE_LESSONS),
     z.object({ lesson_id: z.string() }),
   );
-  if (!lesson) {
+  if (!lessons.length) {
     return { status: "no_lesson" };
   }
-  // Listening items need recorded audio and a quiet room; daily sets stay choice and fill.
-  const questions = (await listAssignablePracticeQuestions(classId, lesson.lesson_id)).filter(
-    (question) => question.type === "choice" || question.type === "fill",
-  );
+  // The newest open lesson may still be slides only; the most recent lesson with choice or
+  // fill questions keeps the daily habit going. Listening items need recorded audio and a
+  // quiet room, so daily sets stay choice and fill.
+  let lessonId = "";
+  let questions: Awaited<ReturnType<typeof listAssignablePracticeQuestions>> = [];
+  for (const lesson of lessons) {
+    questions = (await listAssignablePracticeQuestions(classId, lesson.lesson_id)).filter(
+      (question) => question.type === "choice" || question.type === "fill",
+    );
+    if (questions.length) {
+      lessonId = lesson.lesson_id;
+      break;
+    }
+  }
   if (!questions.length) {
     return { status: "no_questions" };
   }
@@ -114,7 +132,7 @@ export async function createDailyPractice(
     {
       p_class_id: classId,
       p_practice_date: practiceDate,
-      p_lesson_id: lesson.lesson_id,
+      p_lesson_id: lessonId,
       p_question_ids: questionIds,
       p_due_at: endOfVietnamDay(practiceDate),
     },
@@ -126,6 +144,14 @@ export async function createDailyPractice(
 export async function createTodayPractice(teacherId: string, classId: string, now: Date) {
   await getTeacherClass(teacherId, classId);
   return createDailyPractice(classId, now);
+}
+
+// The service error code (for example class_not_found for a suspended teacher) says what to fix.
+function describeFailure(error: unknown) {
+  if (error instanceof ServiceError) {
+    return error.code;
+  }
+  return error instanceof Error ? error.name : "unknown";
 }
 
 // One failing class must not stop the others; the summary only counts outcomes.
@@ -149,7 +175,7 @@ export async function runDailyPractice(now: Date) {
       }
     } catch (error) {
       summary.failed += 1;
-      console.error("Daily practice failed", error instanceof Error ? error.name : "unknown");
+      console.error("Daily practice failed", item.id, describeFailure(error));
     }
   }
   return summary;

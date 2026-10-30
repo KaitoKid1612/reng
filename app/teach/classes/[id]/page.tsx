@@ -177,10 +177,10 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       <section className="section-block" aria-labelledby="daily-practice-title">
         <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
         <p className="small muted">
-          Mỗi sáng 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở cho
-          lớp: hạn 23:59 cùng ngày (nộp muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi
-          nộp. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện gần đây; câu sai vào sổ lỗi và lịch ôn
-          tập của học viên.
+          Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở
+          có câu chọn/điền (bài mới chỉ có slide thì lấy bài trước đó): hạn 23:59 cùng ngày (nộp
+          muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên
+          câu chưa xuất hiện gần đây; câu sai vào sổ lỗi và lịch ôn tập của học viên.
         </p>
         <DailyPracticeForm classId={classRow.id} size={classRow.daily_practice_size} />
       </section>
