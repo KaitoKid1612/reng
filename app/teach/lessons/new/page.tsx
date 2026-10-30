@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CreateLessonForm } from "@/components/editor/create-lesson-form";
 import { StarterLessonForm } from "@/components/editor/starter-lesson-form";
 import { CreateTeachingLessonForm } from "@/components/teaching/create-teaching-lesson-form";
+import { buttonVariants } from "@/components/ui/button";
 import { requireTeacher } from "@/lib/server/account";
 import { listOwnedLessons } from "@/lib/server/classes";
 import { STARTER_LESSONS } from "@/lib/starter-lessons";
@@ -24,6 +25,14 @@ export default async function NewLessonPage() {
         <Link href="/teach">Giảng dạy</Link>. Bài mới là bản nháp riêng; học viên chỉ thấy sau khi
         bạn xuất bản và giao cho lớp.
       </p>
+      <nav className="button-row" aria-label="Chọn ngôn ngữ soạn bài">
+        <Link href="#starter-lesson-title" className={buttonVariants({ variant: "outline" })}>
+          Soạn bài tiếng Nhật
+        </Link>
+        <Link href="#template-lesson-title" className={buttonVariants({ variant: "outline" })}>
+          Soạn bài tiếng Trung
+        </Link>
+      </nav>
       <section className="section-block" aria-labelledby="starter-lesson-title">
         <h2 id="starter-lesson-title">Bắt đầu từ bài mẫu Minna no Nihongo</h2>
         <p className="small muted">

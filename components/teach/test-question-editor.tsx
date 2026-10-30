@@ -5,10 +5,12 @@ import { INPUT_MODES } from "@/lib/assignment";
 import { describeQuestionProblem } from "@/lib/test-question-draft";
 
 import type { InputMode } from "@/lib/assignment";
+import type { TeachingLanguageTag } from "@/lib/teaching-language";
 import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
 interface TestQuestionEditorProps {
   draft: TestQuestionDraft;
+  languageTag?: TeachingLanguageTag;
   position: number;
   showProblems: boolean;
   removeBlockedReason?: string;
@@ -26,12 +28,26 @@ const INPUT_MODE_LABELS: Record<InputMode, string> = {
 
 export function TestQuestionEditor({
   draft,
+  languageTag = "ja-JP",
   position,
   showProblems,
   removeBlockedReason,
   onChange,
   onRemove,
 }: TestQuestionEditorProps) {
+  const isJapanese = languageTag === "ja-JP";
+  const isJapaneseInput =
+    draft.type === "fill"
+      ? draft.inputMode !== "chinese" && draft.inputMode !== "pinyin"
+      : isJapanese;
+  const contentLang = isJapanese ? "ja" : "vi";
+  let answerLang = "ja";
+  if (draft.type === "fill" && !isJapaneseInput) {
+    answerLang = languageTag === "zh-Hant" ? "zh-Hant" : "zh-Hans";
+    if (draft.inputMode === "pinyin") {
+      answerLang = "zh-Latn";
+    }
+  }
   const id = `test-question-${draft.key}`;
   const problem = showProblems ? describeQuestionProblem(draft) : null;
   return (
@@ -43,7 +59,7 @@ export function TestQuestionEditor({
         <label htmlFor={`${id}-prompt`}>Đề bài</label>
         <textarea
           id={`${id}-prompt`}
-          lang="ja"
+          lang={contentLang}
           maxLength={500}
           value={draft.prompt}
           onChange={(event) => onChange({ ...draft, prompt: event.target.value })}
@@ -69,7 +85,7 @@ export function TestQuestionEditor({
               />
               <input
                 aria-label={`Nội dung lựa chọn ${index + 1}`}
-                lang="ja"
+                lang={contentLang}
                 maxLength={120}
                 value={option}
                 onChange={(event) =>
@@ -120,13 +136,17 @@ export function TestQuestionEditor({
             <label htmlFor={`${id}-answers`}>Các đáp án được chấp nhận (mỗi dòng một đáp án)</label>
             <textarea
               id={`${id}-answers`}
-              lang="ja"
+              lang={answerLang}
+              autoCapitalize="none"
+              spellCheck={false}
               value={draft.acceptedText}
               onChange={(event) => onChange({ ...draft, acceptedText: event.target.value })}
               aria-describedby={`${id}-answers-hint`}
             />
             <p id={`${id}-answers-hint`} className="small muted">
-              Khai báo đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます.
+              {isJapaneseInput
+                ? "Khai báo đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます."
+                : "Chữ Hán phân biệt giản thể/phồn thể; pinyin cần đúng dấu thanh và khoảng trắng. Mỗi dạng được chấp nhận phải ghi thành một dòng riêng."}
             </p>
           </div>
           <div className="form-grid">
@@ -138,7 +158,14 @@ export function TestQuestionEditor({
                 onChange={(event) => {
                   const inputMode = INPUT_MODES.find((mode) => mode === event.target.value);
                   if (inputMode) {
-                    onChange({ ...draft, inputMode });
+                    onChange({
+                      ...draft,
+                      inputMode,
+                      kanjiStrict:
+                        inputMode === "chinese" || inputMode === "pinyin"
+                          ? false
+                          : draft.kanjiStrict,
+                    });
                   }
                 }}
               >
@@ -149,14 +176,16 @@ export function TestQuestionEditor({
                 ))}
               </select>
             </div>
-            <label className="choice-label">
-              <input
-                type="checkbox"
-                checked={draft.kanjiStrict}
-                onChange={(event) => onChange({ ...draft, kanjiStrict: event.target.checked })}
-              />
-              Bắt buộc viết kanji
-            </label>
+            {(isJapaneseInput || draft.kanjiStrict) && (
+              <label className="choice-label">
+                <input
+                  type="checkbox"
+                  checked={draft.kanjiStrict}
+                  onChange={(event) => onChange({ ...draft, kanjiStrict: event.target.checked })}
+                />
+                Bắt buộc viết kanji
+              </label>
+            )}
           </div>
         </>
       )}

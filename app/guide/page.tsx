@@ -39,6 +39,15 @@ const TEACHER_SECTIONS: GuideSection[] = [
     ],
   },
   {
+    id: "teacher-chinese",
+    title: "Soạn bài tiếng Trung",
+    steps: [
+      "Ở Tạo bài mới, chọn Soạn bài tiếng Trung. Chọn giản thể hoặc phồn thể, mẫu bài và mục tiêu nhỏ đầu tiên.",
+      "Đi qua năm bước: mục tiêu, từ vựng, mẫu câu và hội thoại, câu luyện, slide và xuất bản. Bước Từ vựng cho dán bảng chữ Hán – pinyin – nghĩa Việt từ Excel; CSV tiếng Nhật là công cụ riêng.",
+      "Duyệt từng đáp án trước khi xuất bản. Pinyin cần đúng dấu thanh và khoảng trắng; giản thể và phồn thể không tự đổi cho nhau.",
+    ],
+  },
+  {
     id: "teacher-editor",
     title: "Soạn và sửa slide",
     steps: [
@@ -52,7 +61,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-class",
     title: "Mở lớp và mời học viên",
     steps: [
-      "Vào Giảng dạy → Tạo lớp: nhập tên lớp, chọn Tiếng Nhật, số học viên tối đa (để trống nếu không giới hạn) và link Google Meet dạng https://meet.google.com/abc-defg-hij.",
+      "Vào Giảng dạy → Tạo lớp: nhập tên lớp, chọn Tiếng Nhật, Tiếng Trung giản thể hoặc Tiếng Trung phồn thể theo lớp, số học viên tối đa (để trống nếu không giới hạn) và link Google Meet dạng https://meet.google.com/abc-defg-hij.",
       "Gửi cho học viên link vào lớp kèm mã lớp hiển thị trong trang lớp. Đổi mã mới hoặc Ngừng nhận học viên khi cần.",
     ],
   },
@@ -60,7 +69,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-assign",
     title: "Đưa bài vào lớp và giao bài tập",
     steps: [
-      "Trong trang lớp bấm Giao bài, chọn bài và phiên bản, bấm Lưu vào lớp để học viên đọc được bài.",
+      "Ở Giảng dạy, tìm bài theo tên, ngôn ngữ và trạng thái. Bộ lọc ngôn ngữ dùng bản soạn hiện tại; bài đã có bản xuất bản vẫn có thể đang được sửa nháp.",
+      "Trong trang lớp bấm Giao bài, kiểm tra nhãn ngôn ngữ của bài và phiên bản, bấm Lưu vào lớp để học viên đọc được bài. Xuất bản lại không tự đổi phiên bản lớp đang dùng.",
       "Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại và xuất bản.",
     ],
   },
@@ -117,7 +127,8 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Làm bài tập",
     steps: [
       "Trong trang lớp, chọn bài ở mục Bài tập rồi bấm Bắt đầu làm bài. Bài tự lưu trong lúc làm.",
-      "Câu điền: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô.",
+      "Câu điền tiếng Nhật: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô.",
+      "Bài tiếng Trung: nhập chữ Hán bằng bàn phím tiếng Trung hoặc pinyin có dấu theo yêu cầu câu hỏi; hệ thống không đổi romaji thành kana trong ô chữ Hán/pinyin.",
       "Bài luyện tập có nút Kiểm tra câu này. Bấm Nộp bài để xem điểm và giải thích; còn lượt thì bấm Làm lượt mới.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",
     ],

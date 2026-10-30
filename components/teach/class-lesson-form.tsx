@@ -7,12 +7,15 @@ import { setClassLessonAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { DateTimeField } from "@/components/teach/date-time-field";
 import { Button } from "@/components/ui/button";
+import { lessonLanguage, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatStudyDateTime } from "@/lib/study-days";
 
+import type { TeachingLanguageTag } from "@/lib/teaching-language";
 import type { OwnedLesson } from "@/lib/server/classes";
 
 interface ClassLessonFormProps {
   classId: string;
+  classLanguageTag: TeachingLanguageTag;
   lessons: OwnedLesson[];
   nextOrderNo: number;
   defaultAvailableAt: string;
@@ -20,6 +23,7 @@ interface ClassLessonFormProps {
 
 export function ClassLessonForm({
   classId,
+  classLanguageTag,
   lessons,
   nextOrderNo,
   defaultAvailableAt,
@@ -47,6 +51,10 @@ export function ClassLessonForm({
   return (
     <form action={action} className="form-card">
       <input type="hidden" name="classId" value={classId} />
+      <p className="small muted">
+        Ngôn ngữ lớp: {teachingLanguageLabel(classLanguageTag)}. Kiểm tra ngôn ngữ của phiên bản
+        trước khi lưu; hệ thống không tự dịch hoặc đổi giản thể/phồn thể.
+      </p>
       <div className="form-grid">
         <div className="field">
           <label htmlFor="class-lesson">Bài học</label>
@@ -58,7 +66,7 @@ export function ClassLessonForm({
           >
             {publishedLessons.map((item) => (
               <option key={item.id} value={item.id}>
-                {item.title}
+                {item.title} — {teachingLanguageLabel(item.languageTag)}
               </option>
             ))}
           </select>
@@ -73,7 +81,11 @@ export function ClassLessonForm({
           >
             {lesson?.versions.map((version) => (
               <option key={version.id} value={version.id}>
-                Phiên bản {version.version_no}, xuất bản {formatStudyDateTime(version.published_at)}
+                Phiên bản {version.version_no} —{" "}
+                {teachingLanguageLabel(
+                  lessonLanguage(version.schema_version, version.language_tag),
+                )}
+                , xuất bản {formatStudyDateTime(version.published_at)}
               </option>
             ))}
           </select>

@@ -137,3 +137,13 @@ Trang chủ ưu tiên học viên vào lớp: hai thao tác đầu là Vào lớ
 Luồng học viên mới: nhập mã → đăng nhập hoặc đăng ký → xác nhận email → trở lại trang có mã → xác nhận vào lớp → đọc bài/làm bài/ôn lỗi. Hướng dẫn phải nhắc xác nhận email và cách tìm thư trong Spam. Luồng giáo viên mới: đăng ký/xác nhận email → gửi yêu cầu giảng dạy → được mở quyền theo cấu hình duyệt → tạo bài và lớp → xuất bản bài → lưu phiên bản vào lớp → giao bài tập. Khi chưa có bài, trang giao bài dẫn đến tạo bài; khi chỉ có nháp, dẫn về soạn/xuất bản, không hướng dẫn chạy script.
 
 Đánh giá: các luồng cốt lõi đã có trong source, phù hợp để tiếp tục nghiệm thu bằng lớp pilot. Kiểm thử điều hướng local không thay cho nghiệm thu lớp thật, giao nhận email và audio trên thiết bị học viên. Xem [kết quả rà soát](../testing/user-flow-review.md).
+
+## Quản lý đồng thời lớp Nhật và Trung — 30/10/2026
+
+Trang Giảng dạy có tìm theo tên, lọc ngôn ngữ bản soạn (Nhật, Trung giản thể, Trung phồn thể) và lọc chỉ có nháp/đã có bản xuất bản. Hiện số bài khớp trên tổng số bài sở hữu. “Đã có bản xuất bản” không có nghĩa bản nháp không còn thay đổi; phiên bản lớp dùng vẫn được chọn riêng. Lớp có nhãn ngôn ngữ để giáo viên dạy cả hai môn phân biệt nhanh.
+
+Tạo bài mới có lối chọn Nhật/Trung ở đầu trang. Bài Nhật dùng editor chi tiết và mẫu Minna tự biên soạn; bài Trung dùng wizard, bảng chữ Hán/pinyin/nghĩa và xác nhận đáp án. Công cụ CSV Nhật chỉ đưa vào bài Nhật; bảng Trung nhập trong wizard. Không đổi nội dung hay ngôn ngữ bài cũ tự động.
+
+Khi lưu bài vào lớp, hiển thị ngôn ngữ của bản soạn và từng phiên bản xuất bản; nhắc giáo viên đối chiếu ngôn ngữ lớp. Cho phép chủ động dạy đối chiếu ngôn ngữ, không tự chặn mọi bài khác ngôn ngữ. Câu kiểm tra mới lấy mặc định từ lớp: Hiragana cho Nhật, chữ Hán cho Trung; giáo viên vẫn có thể chọn kiểu nhập khác. Hướng dẫn đáp án theo kiểu nhập: kana/kanji hoặc chữ Hán/pinyin, giữ dấu thanh và giản/phồn thể. Bài giao cũ giữ snapshot và quy tắc chấm cũ.
+
+Phạm vi vận hành và phần còn mở xem [nghiệm thu quản lý Nhật–Trung](../testing/teaching-management.md).

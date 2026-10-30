@@ -226,3 +226,42 @@ test("the new authoring, reading and sharing pages fit a 360px screen", async ({
   }
   await context.close();
 });
+
+test("teachers filter lesson languages and draft Chinese private questions without kana defaults", async ({
+  page,
+}) => {
+  await signIn(page, `authoring-teacher-${RUN_ID}@example.test`, `authoring-pass-${RUN_ID}`);
+  await page.goto(`/teach?q=${encodeURIComponent(LESSON_TITLE)}&language=zh-Hans&status=published`);
+  await expect(page.getByRole("heading", { name: LESSON_TITLE, exact: true })).toBeVisible();
+  await page.getByLabel("Ngôn ngữ bài học", { exact: true }).selectOption("zh-Hant");
+  await page.getByRole("button", { name: "Lọc bài học", exact: true }).click();
+  await expect(page.getByText("Không có bài phù hợp bộ lọc.", { exact: false })).toBeVisible();
+  await page.getByRole("link", { name: "Xóa bộ lọc", exact: true }).click();
+  await expect(page.getByLabel("Ngôn ngữ bài học", { exact: true })).toHaveValue("all");
+  await expect(page.getByLabel("Tìm bài học theo tên", { exact: true })).toHaveValue("");
+
+  await page.goto(`/teach/classes/${state.classId}/assign`);
+  await expect(page.locator("#class-lesson-version")).toContainText("Tiếng Trung giản thể");
+  await page.getByRole("radio", { name: "Kiểm tra", exact: true }).check();
+  await page.getByRole("button", { name: "Thêm câu điền từ", exact: true }).click();
+  const mode = page.getByLabel("Ô nhập", { exact: true });
+  await expect(mode).toHaveValue("chinese");
+  await expect(page.getByText("Bắt buộc viết kanji", { exact: true })).toHaveCount(0);
+  await mode.selectOption("pinyin");
+  const answers = page.getByLabel("Các đáp án được chấp nhận (mỗi dòng một đáp án)", {
+    exact: true,
+  });
+  await answers.fill("nǐ hǎo");
+  await expect(answers).toHaveValue("nǐ hǎo");
+  await expect(page.getByText("pinyin cần đúng dấu thanh", { exact: false })).toBeVisible();
+  await mode.selectOption("hiragana");
+  await expect(page.getByLabel("Bắt buộc viết kanji", { exact: true })).toBeVisible();
+  await page.getByLabel("Bắt buộc viết kanji", { exact: true }).check();
+  await mode.selectOption("pinyin");
+  await mode.selectOption("hiragana");
+  await expect(page.getByLabel("Bắt buộc viết kanji", { exact: true })).not.toBeChecked();
+  await page.setViewportSize({ width: 360, height: 780 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
+});

@@ -18,7 +18,9 @@ export default async function ImportCsvPage({ searchParams }: ImportCsvPageProps
   const { lesson } = await searchParams;
   const owned = await listOwnedLessons(account.id);
   const editors = await Promise.all(
-    owned.map((item) => loadLessonEditor(account.id, item.id).catch(() => null)),
+    owned
+      .filter((item) => item.languageTag === "ja-JP")
+      .map((item) => loadLessonEditor(account.id, item.id).catch(() => null)),
   );
   const lessons = editors.flatMap((editor) =>
     editor
@@ -43,6 +45,11 @@ export default async function ImportCsvPage({ searchParams }: ImportCsvPageProps
           </p>
         </div>
       </div>
+      <p className="notice-panel">
+        Trang này nhập từ vựng tiếng Nhật. Với tiếng Trung, dùng bảng chữ Hán – pinyin – nghĩa Việt
+        trong bước Từ vựng của bài soạn theo mẫu.{" "}
+        <Link href="/teach/lessons/new#template-lesson-title">Tạo bài tiếng Trung</Link>.
+      </p>
       <VocabularyImport lessons={lessons} initialLessonId={lesson ?? ""} />
     </>
   );

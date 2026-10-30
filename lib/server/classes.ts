@@ -14,6 +14,7 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
+import { lessonLanguage } from "@/lib/teaching-language";
 
 import type { ClassSettings } from "@/lib/class-settings";
 
@@ -183,6 +184,8 @@ const versionSummarySchema = z.object({
   version_no: z.number().int(),
   title: z.string(),
   published_at: timestamp,
+  schema_version: z.string().nullable(),
+  language_tag: z.string().nullable(),
 });
 
 export interface OwnedLesson {
@@ -190,6 +193,7 @@ export interface OwnedLesson {
   title: string;
   publishedVersionId: string | null;
   copyAttribution: string | null;
+  languageTag: ReturnType<typeof lessonLanguage>;
   versions: z.infer<typeof versionSummarySchema>[];
 }
 
@@ -198,7 +202,9 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
   const lessons = await selectRows(
     service
       .from("lessons")
-      .select("id, title, order_no, published_version_id, copy_attribution")
+      .select(
+        "id, title, order_no, published_version_id, copy_attribution, schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
+      )
       .eq("owner_id", teacherId)
       .is("archived_at", null)
       .order("order_no"),
@@ -208,6 +214,8 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
       order_no: z.number().int(),
       published_version_id: z.uuid().nullable(),
       copy_attribution: z.string().nullable(),
+      schema_version: z.string().nullable(),
+      language_tag: z.string().nullable(),
     }),
   );
   if (!lessons.length) {
@@ -216,7 +224,9 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
   const versions = await selectRows(
     service
       .from("lesson_versions")
-      .select("id, lesson_id, version_no, title, published_at")
+      .select(
+        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag",
+      )
       .in(
         "lesson_id",
         lessons.map((lesson) => lesson.id),
@@ -229,6 +239,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     title: lesson.title,
     publishedVersionId: lesson.published_version_id,
     copyAttribution: lesson.copy_attribution,
+    languageTag: lessonLanguage(lesson.schema_version, lesson.language_tag),
     versions: versions.filter((version) => version.lesson_id === lesson.id),
   }));
 }
@@ -265,7 +276,9 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
   const versions = await selectRows(
     service
       .from("lesson_versions")
-      .select("id, lesson_id, version_no, title, published_at")
+      .select(
+        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag",
+      )
       .in(
         "id",
         rows.map((row) => row.lesson_version_id),

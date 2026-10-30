@@ -67,7 +67,7 @@ Scan đi qua upload riêng tư → nhận dạng/gợi ý → giáo viên sửa/
 
 ## Soạn bài theo mẫu
 
-**Trạng thái 29/10/2026:** đã có bản local tại `/teach/lessons/new` (chọn mẫu) và wizard 5 bước ở `/teach/lessons/[id]/edit`: mục tiêu/thông tin, bảng từ (nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng), mẫu câu và hội thoại, câu luyện (tạo khung chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng, giáo viên xác nhận đáp án), dựng slide có xem trước thay đổi, xem trước trang học viên và xuất bản. Chưa có: TTS trên web và nghe duyệt audio (nút Nghe dùng giọng Trung của thiết bị nếu có, không dùng giọng Nhật), phần "ôn bài cũ" tự lấy từ bài trước, luyện theo vai riêng, dùng lại/sao chép bài và đo thời gian với giáo viên thật.
+**Trạng thái 29/10/2026:** đã có bản local tại `/teach/lessons/new` (chọn mẫu) và wizard 5 bước ở `/teach/lessons/[id]/edit`: mục tiêu/thông tin, bảng từ (nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng), mẫu câu và hội thoại, câu luyện (tạo khung chọn nghĩa/viết chữ Hán/viết pinyin từ từ vựng, giáo viên xác nhận đáp án), dựng slide có xem trước thay đổi, xem trước trang học viên và xuất bản. Chưa có: TTS trên web và nghe duyệt audio (nút Nghe dùng giọng Trung của thiết bị nếu có, không dùng giọng Nhật), phần "ôn bài cũ" tự lấy từ bài trước, luyện theo vai riêng và đo thời gian với giáo viên thật. Dùng lại/sao chép bài đã có theo quyền chia sẻ, xem mục Chia sẻ bên trên.
 
 
 Giáo viên là người soạn và chịu trách nhiệm chuyên môn. Reng cung cấp mẫu bố cục, công cụ nhập và bộ bài minh họa nhỏ do giáo viên tiếng Trung biên soạn/duyệt; không yêu cầu đội vận hành viết toàn bộ giáo trình. Giáo viên có thể dùng mẫu trống, dùng lại bài của mình hoặc sao chép bài đồng nghiệp khi được cấp quyền.
@@ -116,3 +116,20 @@ Mỗi bài có mục tiêu làm được gì, đối tượng, kiến thức c�
 Ví dụ mục tiêu bài nhỏ: “Học sinh chào hỏi và nói tên mình”. Giáo viên chọn vài từ/cụm từ, một mẫu tự giới thiệu, hội thoại ngắn và vài câu luyện; không nhồi toàn bộ kiến thức phát âm vào một buổi. Reng gợi ý thứ tự, giáo viên quyết định độ khó và thời lượng theo lớp.
 
 Thử với một giáo viên tiếng Trung chưa được hướng dẫn editor, một bài nhập môn và một lớp thật trước khi làm nhiều mẫu. Mục tiêu thử nghiệm: từ chọn mẫu đến bản sẵn sàng dạy dưới 30 phút với nội dung giáo viên đã chuẩn bị; đo riêng thời gian chuẩn bị chuyên môn, nhập/sửa/xem trước và các chỗ cần người hỗ trợ. Đây là mục tiêu cần đo, chưa phải kết quả. Ưu tiên mẫu + bảng + dựng slide + practice trước OCR.
+
+## Quản lý và nâng cấp bài cho lớp Nhật–Trung
+
+Ở `/teach`, lọc theo tên, ngôn ngữ bản soạn và trạng thái xuất bản. Dùng nhãn ngôn ngữ ở lớp và từng phiên bản khi Giao bài để tránh chọn nhầm bài Nhật/Trung hoặc giản/phồn. Bộ lọc không tự dịch bài, không gộp hai cách viết, không thay đổi nội dung lớp đang học.
+
+| Nội dung cần duyệt | Bài tiếng Nhật | Bài tiếng Trung |
+|---|---|---|
+| Mục tiêu bài | Một mẫu câu/chủ điểm vừa sức, theo trình tự Minna ở pilot; ví dụ tự biên soạn | Một tình huống/mục tiêu giao tiếp, chọn giản thể hoặc phồn thể trước khi nhập |
+| Từ vựng và cách đọc | Kana, kanji/furigana và nghĩa Việt nhất quán | Chữ Hán, pinyin có dấu thanh và nghĩa Việt; kiểm tra dấu cách pinyin |
+| Slide | Ví dụ, hội thoại, bảng/luyện thay thế; kiểm tra nội dung dài | Dựng từ bảng từ/mẫu câu/hội thoại, xem lại bố cục trước xuất bản |
+| Câu luyện | Công khai, đáp án kana/kanji phải khai báo đủ dạng được chấp nhận | Công khai, duyệt đáp án từng câu; giản/phồn và pinyin theo `zh-exact-v1` |
+| Câu kiểm tra | Soạn riêng khi giao bài, mặc định Hiragana, chọn kanji/kana phù hợp mục tiêu | Soạn riêng khi giao bài, mặc định chữ Hán, chọn pinyin nếu kiểm tra cách đọc |
+| Âm thanh | Nghe duyệt phát âm và furigana trên thiết bị dạy/học | Đúng giọng Trung, không fallback Nhật; nút giọng thiết bị không phải file đã duyệt |
+
+Nâng cấp một bài đã dùng: sửa bản nháp → duyệt nội dung/đáp án → xuất bản phiên bản mới → xem lại phiên bản đó → chọn lại phiên bản trong lớp nếu muốn áp dụng → giao bài mới khi cần. Bài giao và điểm cũ giữ snapshot lúc giao. Không tái dùng ID từ/câu cũ cho ý nghĩa khác, không sửa bản đã giao để đổi điểm lịch sử. “Đã có bản xuất bản” chỉ báo bài từng xuất bản, không khẳng định nháp mới đã được duyệt.
+
+CSV/Excel tại `/teach/import-csv` là công cụ Nhật; bài Trung dán bảng trong bước Từ vựng của wizard. Không nhập pinyin vào cột romaji của bài Nhật. Trước khi dạy thật, giáo viên chuyên môn cần duyệt bài Nhật/Trung, cách đọc, độ khó, đáp án và nguồn sử dụng; test kỹ thuật không chứng nhận chất lượng giáo trình.

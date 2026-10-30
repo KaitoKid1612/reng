@@ -66,6 +66,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
         <ClassLessonForm
           classId={classRow.id}
           lessons={ownedLessons}
+          classLanguageTag={classRow.language_tag}
           nextOrderNo={Math.max(0, ...classLessons.map((lesson) => lesson.orderNo)) + 1}
           defaultAvailableAt={new Date().toISOString()}
         />
@@ -75,6 +76,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
         <AssignmentForm
           classId={classRow.id}
           classPassScore={classRow.pass_score}
+          languageTag={classRow.language_tag}
           lessons={assignableLessons}
         />
       </section>

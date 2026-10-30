@@ -1,6 +1,7 @@
 import { testQuestionInputSchema, toTestQuestions } from "@/lib/assignment";
 
 import type { InputMode, TestQuestionInput } from "@/lib/assignment";
+import type { TeachingLanguageTag } from "@/lib/teaching-language";
 
 export type TestQuestionDraft =
   | {
@@ -24,7 +25,11 @@ export type TestQuestionDraft =
       points: number;
     };
 
-export function createQuestionDraft(key: number, type: "choice" | "fill"): TestQuestionDraft {
+export function createQuestionDraft(
+  key: number,
+  type: "choice" | "fill",
+  languageTag: TeachingLanguageTag = "ja-JP",
+): TestQuestionDraft {
   if (type === "choice") {
     return {
       key,
@@ -42,7 +47,7 @@ export function createQuestionDraft(key: number, type: "choice" | "fill"): TestQ
     type,
     prompt: "",
     acceptedText: "",
-    inputMode: "hiragana",
+    inputMode: languageTag === "ja-JP" ? "hiragana" : "chinese",
     kanjiStrict: false,
     explain: "",
     points: 1,

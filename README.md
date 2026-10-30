@@ -16,6 +16,8 @@ Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên w
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
 
+Quản lý Nhật–Trung: đã bổ sung tìm/lọc bài theo ngôn ngữ và trạng thái, nhãn ngôn ngữ từng phiên bản, lối chọn công cụ soạn/nhập và mặc định câu kiểm tra theo lớp. Xem [kết quả và phần cần nghiệm thu](docs/testing/teaching-management.md), [quy trình nâng cấp bài](docs/content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung).
+
 ## Chạy local
 
 Yêu cầu Node.js 24, npm. Dependency khóa trong package-lock.json.

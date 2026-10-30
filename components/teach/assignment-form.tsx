@@ -16,6 +16,7 @@ import {
 import { fromVietnamInput } from "@/lib/vietnam-time";
 
 import type { AssignableQuestion, AssignmentMode, FeedbackPolicy } from "@/lib/assignment";
+import type { TeachingLanguageTag } from "@/lib/teaching-language";
 import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
 const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
@@ -40,10 +41,16 @@ export interface AssignableLesson {
 interface AssignmentFormProps {
   classId: string;
   classPassScore: number;
+  languageTag: TeachingLanguageTag;
   lessons: AssignableLesson[];
 }
 
-export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentFormProps) {
+export function AssignmentForm({
+  classId,
+  classPassScore,
+  languageTag,
+  lessons,
+}: AssignmentFormProps) {
   const [lessonId, setLessonId] = useState(lessons[0]?.lessonId ?? "");
   const [title, setTitle] = useState("");
   const [mode, setMode] = useState<AssignmentMode>("practice");
@@ -83,12 +90,14 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
   function handleLessonChange(nextLessonId: string) {
     setLessonId(nextLessonId);
     setPracticeIds([]);
+    setIsReviewing(false);
+    setError("");
   }
 
   function handleAddQuestion(type: "choice" | "fill") {
     const key = nextKeyRef.current;
     nextKeyRef.current += 1;
-    setTestQuestions((current) => [...current, createQuestionDraft(key, type)]);
+    setTestQuestions((current) => [...current, createQuestionDraft(key, type, languageTag)]);
   }
 
   // The server also rejects deadlines in the past, using its own clock.
@@ -174,7 +183,9 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
               maxLength={160}
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              placeholder="Luyện trợ từ bài 1"
+              placeholder={
+                languageTag === "ja-JP" ? "Luyện trợ từ bài 1" : "Luyện chữ Hán và pinyin bài 1"
+              }
             />
           </div>
         </div>
@@ -280,7 +291,7 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
                   )
                 }
               />
-              <span lang="ja">{question.prompt}</span>
+              <span lang={languageTag === "ja-JP" ? "ja" : "vi"}>{question.prompt}</span>
               <span className="small muted">
                 {QUESTION_TYPE_LABELS[question.type]}, {question.points} điểm
               </span>
@@ -295,6 +306,7 @@ export function AssignmentForm({ classId, classPassScore, lessons }: AssignmentF
             <TestQuestionEditor
               key={draft.key}
               draft={draft}
+              languageTag={languageTag}
               position={index + 1}
               showProblems={showProblems}
               onChange={(next) =>

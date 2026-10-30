@@ -4,6 +4,8 @@ Reng hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chi
 
 Báo cáo ngày 30/10/2026: [bug UI, cải tiến đã giao, vấn đề còn mở và kết quả kiểm chứng](testing/user-flow-review.md). Các mục đề xuất và chưa kiểm thử được ghi trạng thái riêng.
 
+Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết quả và checklist](testing/teaching-management.md); [quy trình biên soạn/nâng cấp bài](content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung).
+
 ## Cách đọc
 
 Mức đáp ứng 22 yêu cầu dịch vụ và tiến độ theo lát: [đối chiếu source](source-alignment.md) (23% lúc audit, khoảng 70% sau các lát đã triển khai; không phải test coverage). Chuẩn bị POC 10 giáo viên: [công cụ, chi phí và các bước dựng](poc-setup.md).
