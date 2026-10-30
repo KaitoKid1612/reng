@@ -65,6 +65,15 @@ Thêm `content/starters/minna-1-12.json` và nút "Tạo bài 12 từ mẫu" ([b
 
 Theo [hình minh họa](../illustrations.md): icon Fluent Emoji (MIT) cho từ vựng, ô chọn hình trong trình soạn, hội thoại bong bóng có avatar, hình mở đầu cho slide tiêu đề; bài mẫu 11 gắn 22 icon, bài 12 gắn 40 icon. Kiểm chứng: `tests/lesson-visuals.test.ts` (đủ file icon, không có script, bài mẫu chỉ trỏ tới file có thật, xếp bên người nói); chụp 9 slide bài 11–12 ở 1280×720 bằng Playwright, nội dung đều nằm trong khung (sát nhất còn 24px ở hội thoại 5 lượt); trang đọc khổ 390px không cuộn ngang, hội thoại đưa nút Nghe xuống dưới bong bóng; mặt sau flashcard có hình. Ảnh AI cho nhân vật và tranh mở đầu chưa tạo.
 
+## Bài 12: slide hình và icon bổ sung (cùng ngày)
+
+Theo [hình minh họa](../illustrations.md): bài mẫu 12 gắn thêm 4 icon (いい, かんたん, たいへん, はじめて; 44/51 từ có hình), hình mở đầu bốn mùa và hai slide hình ghép từ icon (より／どちら trước bảng luyện tập 2, いちばん trước bảng luyện tập 3), tổng 41 slide. Slide ảnh của mọi bài được căn giữa.
+
+- `tests/lesson-visuals.test.ts` PASS: bài mẫu chỉ trỏ tới hình có thật (gồm hình mở đầu và slide ảnh); hình ghép không có script, không tham chiếu ra ngoài file, có LICENSE.
+- Xem trên bản local (bản sao riêng của repo): đi qua 41 slide ở 1280×720, không slide nào tràn khung, không ảnh hỏng, không lỗi console. Lần đầu slide ảnh lệch trái và chú thích dài xuống hai dòng; đã căn giữa, rút chú thích còn một dòng có số ①②③ khớp số trên hình.
+- `npm run check` 133/133, `npm run test:e2e` 35/35, `npm run build` PASS. Production (commit `050fa69`): Vercel thành công, ba hình ghép và icon mới trả 200 `image/svg+xml`.
+- Bài giáo viên đã tạo từ mẫu trước đây không tự cập nhật; cần tạo lại từ mẫu hoặc chọn hình trong trình soạn.
+
 ## Luyện kanji K1 (cùng đợt)
 
 Theo [thiết kế luyện kanji](../basic-design/kanji-practice.md): trang `/kanji/[lessonId]`, link ở trang đọc bài và trang lớp tiếng Nhật, nút tạo câu kanji trong trình soạn.
