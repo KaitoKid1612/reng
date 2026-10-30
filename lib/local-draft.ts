@@ -3,13 +3,17 @@ import { z } from "zod";
 // Browser-only fallback for unsynced answers; the server draft stays the source of truth.
 const PREFIX = "reng:draft:";
 
+const attemptDraftSchema = z.object({
+  answers: z.record(z.string(), z.unknown()),
+  checked: z.array(z.string()),
+  listens: z.record(z.string(), z.number()).default({}),
+});
+
 const backupSchema = z.object({
   baseRevision: z.number().int().nonnegative(),
-  draft: z.object({
-    answers: z.record(z.string(), z.unknown()),
-    checked: z.array(z.string()),
-    listens: z.record(z.string(), z.number()).default({}),
-  }),
+  draft: attemptDraftSchema,
+  // Drafts sent on top of baseRevision whose reply never arrived; the server may hold one.
+  unconfirmed: z.array(attemptDraftSchema).default([]),
   changedAt: z.string(),
 });
 

@@ -338,6 +338,34 @@ export function parseAttemptDraft(views: readonly QuestionView[], value: unknown
   return { answers, checked, listens: envelope.listens };
 }
 
+function canonicalJson(value: unknown): string {
+  if (Array.isArray(value)) {
+    return `[${value.map(canonicalJson).join(",")}]`;
+  }
+  if (value && typeof value === "object") {
+    const entries = Object.entries(value).sort(([first], [second]) => first.localeCompare(second));
+    return `{${entries.map(([key, item]) => `${JSON.stringify(key)}:${canonicalJson(item)}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+// Compares drafts after the normalization the server applies; key order is ignored because
+// the database does not keep it.
+export function isSameAttemptDraft(
+  views: readonly QuestionView[],
+  first: unknown,
+  second: unknown,
+) {
+  try {
+    return (
+      canonicalJson(parseAttemptDraft(views, first)) ===
+      canonicalJson(parseAttemptDraft(views, second))
+    );
+  } catch {
+    return false;
+  }
+}
+
 export function countBlankAnswers(views: readonly QuestionView[], draft: AttemptDraft) {
   return views.filter((view) => isBlankAnswer(draft.answers[view.id])).length;
 }

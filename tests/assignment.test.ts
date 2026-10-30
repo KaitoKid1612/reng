@@ -8,6 +8,7 @@ import {
   getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
+  isSameAttemptDraft,
   parseAssignableQuestion,
   parseAttemptDraft,
   toAttemptItems,
@@ -131,6 +132,31 @@ test("drafts reject unknown questions, invalid raw values and oversized payloads
   assert.throws(() => parseAttemptDraft(views, { answers: {}, checked: ["missing"] }));
   assert.throws(() => parseAttemptDraft(views, { answers: { t2: "あ".repeat(201) } }));
   assert.throws(() => parseAttemptDraft(views, { answers: {}, extra: true }));
+});
+
+test("a draft read back from the database matches the draft that was sent", () => {
+  const views = questions.map(toQuestionView);
+  const sent = { answers: { t1: [0], t2: "がくせい" }, checked: ["t1"] };
+  // The database does not keep key order and the server drops blank answers.
+  const stored = { listens: {}, checked: ["t1"], answers: { t2: "がくせい", t1: [0] } };
+  assert.equal(isSameAttemptDraft(views, sent, stored), true);
+  assert.equal(
+    isSameAttemptDraft(views, { ...sent, answers: { ...sent.answers, t3: "" } }, stored),
+    false,
+  );
+  assert.equal(
+    isSameAttemptDraft(
+      views,
+      { answers: { t1: [0], t2: "  " }, checked: [] },
+      {
+        answers: { t1: [0] },
+        checked: [],
+      },
+    ),
+    true,
+  );
+  assert.equal(isSameAttemptDraft(views, sent, { answers: { t1: [1] }, checked: ["t1"] }), false);
+  assert.equal(isSameAttemptDraft(views, sent, undefined), false);
 });
 
 const listeningQuestions = [

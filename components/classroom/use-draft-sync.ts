@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { parseAttemptDraft } from "@/lib/assignment";
+import { isSameAttemptDraft, parseAttemptDraft } from "@/lib/assignment";
 import {
   localDraftKey,
   readLocalDraft,
@@ -13,6 +13,8 @@ import {
 import type { AttemptDraft, QuestionView } from "@/lib/assignment";
 
 const SAVE_DELAY_MS = 800;
+// Sent drafts whose reply never arrived, kept to recognise this browser's own save.
+const MAX_UNCONFIRMED = 5;
 
 export type SyncStatus =
   | "saved"
@@ -46,15 +48,19 @@ interface InitialSync {
 }
 
 // Unsynced local answers based on the current server revision win; a backup based on an
-// older revision is discarded because the server copy is newer. Pure, so it can run in
-// a state initializer (the client-only runner has no server markup to hydrate).
+// older revision is discarded because the server copy is newer, unless that newer copy is
+// a save from this browser whose reply never arrived. Pure, so it can run in a state
+// initializer (the client-only runner has no server markup to hydrate).
 function restoreDraft(options: DraftSyncOptions): InitialSync {
   const backup = readLocalDraft(localDraftKey(options.userId, options.submissionId));
   const serverCopy = { draft: options.initialDraft, status: "saved" as const, notice: "" };
   if (!backup) {
     return { ...serverCopy, shouldDiscardBackup: false };
   }
-  if (backup.baseRevision !== options.initialRevision) {
+  const isOwnLostSave = backup.unconfirmed.some((sent) =>
+    isSameAttemptDraft(options.views, sent, options.initialDraft),
+  );
+  if (backup.baseRevision !== options.initialRevision && !isOwnLostSave) {
     return {
       ...serverCopy,
       notice: "Bài làm đã được lưu mới hơn từ tab hoặc thiết bị khác. Đang dùng bản mới nhất.",
@@ -110,6 +116,8 @@ export function useDraftSync(options: DraftSyncOptions) {
   const savedChangeRef = useRef(0);
   const savingRef = useRef<Promise<void> | null>(null);
   const timerRef = useRef<number | null>(null);
+  const viewsRef = useRef(options.views);
+  const unconfirmedRef = useRef<{ draft: AttemptDraft; change: number }[]>([]);
 
   const updateStatus = useCallback((next: SyncStatus) => {
     statusRef.current = next;
@@ -121,6 +129,7 @@ export function useDraftSync(options: DraftSyncOptions) {
       writeLocalDraft(key, {
         baseRevision: revisionRef.current,
         draft: next,
+        unconfirmed: unconfirmedRef.current.map((sent) => sent.draft),
         changedAt: new Date().toISOString(),
       });
     },
@@ -130,7 +139,8 @@ export function useDraftSync(options: DraftSyncOptions) {
   // Sends the latest draft once; returns false when autosave has to stop.
   const sendDraft = useCallback(async () => {
     const change = changeRef.current;
-    const body = JSON.stringify({ revision: revisionRef.current, draft: draftRef.current });
+    const sent = draftRef.current;
+    const body = JSON.stringify({ revision: revisionRef.current, draft: sent });
     updateStatus("saving");
     try {
       const response = await fetch(`/api/submissions/${options.submissionId}/draft`, {
@@ -139,11 +149,21 @@ export function useDraftSync(options: DraftSyncOptions) {
         body,
       });
       const data = await readJson(response);
-      if (response.ok && typeof data.revision === "number") {
+      // A conflict whose server copy is a draft this browser sent earlier means that save
+      // went through and only its reply was lost; carry on from the server's revision.
+      const lostSave =
+        response.status === 409 && data.code === "conflict"
+          ? unconfirmedRef.current.find((item) =>
+              isSameAttemptDraft(viewsRef.current, item.draft, data.draft),
+            )
+          : undefined;
+      const savedChange = lostSave ? lostSave.change : change;
+      if ((response.ok || lostSave) && typeof data.revision === "number") {
         revisionRef.current = data.revision;
-        savedChangeRef.current = change;
+        savedChangeRef.current = savedChange;
+        unconfirmedRef.current = [];
         setSavedAt(typeof data.savedAt === "string" ? data.savedAt : new Date().toISOString());
-        if (changeRef.current === change) {
+        if (changeRef.current === savedChange) {
           removeLocalDraft(key);
           updateStatus("saved");
         } else {
@@ -160,6 +180,11 @@ export function useDraftSync(options: DraftSyncOptions) {
       updateStatus(BLOCKING_STATUSES.find((item) => item === code) ?? "error");
       return false;
     } catch {
+      // The request may still have reached the server, so remember what was sent.
+      unconfirmedRef.current = [...unconfirmedRef.current, { draft: sent, change }].slice(
+        -MAX_UNCONFIRMED,
+      );
+      backupLocally(draftRef.current);
       updateStatus("offline");
       return false;
     }
@@ -263,6 +288,10 @@ export function useDraftSync(options: DraftSyncOptions) {
   }, [key]);
 
   const submit = useCallback(async (): Promise<SubmitOutcome> => {
+    // A save that failed earlier is retried first, so submit uses the server's revision.
+    if (statusRef.current === "offline" || statusRef.current === "error") {
+      statusRef.current = "pending";
+    }
     await flush();
     if (BLOCKING_STATUSES.includes(statusRef.current) && statusRef.current !== "submitted") {
       return { isSubmitted: false, message: SUBMIT_MESSAGES[statusRef.current] };
