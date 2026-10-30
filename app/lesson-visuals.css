@@ -1,0 +1,238 @@
+/* Pictures, avatars and conversation bubbles for Japanese lessons (slides, reader, flashcards).
+   Loaded after globals.css; each selector adds an attribute or class so it outranks the base
+   rule it adjusts. Sizes keep a slide within the 1280×720 stage. */
+
+.vocab-picture {
+  display: block;
+  object-fit: contain;
+}
+.vocab-picture-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vocabulary slides: one picture column so words stay aligned when some have no picture. */
+.slide-vocabulary[data-pictures="true"] > div {
+  grid-template-columns: 96px 1.6fr 1fr auto;
+}
+.slide-vocabulary[data-pictures="true"] .vocab-picture {
+  width: 80px;
+  height: 80px;
+}
+.slide-vocabulary[data-pictures="true"][data-size="compact"] > div {
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  grid-template-areas:
+    "picture word listen"
+    "picture meaning meaning";
+}
+.slide-vocabulary[data-pictures="true"][data-size="compact"] .vocab-picture-cell {
+  grid-area: picture;
+}
+.slide-vocabulary[data-pictures="true"][data-size="compact"] .vocab-picture {
+  width: 56px;
+  height: 56px;
+}
+.presenter-preview .slide-vocabulary[data-pictures="true"] > div {
+  grid-template-columns: 28px 1.6fr 1fr auto;
+}
+.presenter-preview .slide-vocabulary[data-pictures="true"][data-size="compact"] > div {
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+}
+.presenter-preview .slide-vocabulary[data-pictures="true"] .vocab-picture {
+  width: 24px;
+  height: 24px;
+}
+
+.slide-title-picture {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 8px;
+}
+
+/* A brass accent beside slide headings; it adds no height to the slide. */
+.slide-page h2 {
+  border-left: 6px solid var(--brand-bell);
+  padding-left: 16px;
+}
+.reveal .progress {
+  color: var(--brand-bell);
+}
+
+/* Reader word list. */
+.vocabulary-list[data-pictures="true"] > li {
+  grid-template-columns: 48px minmax(0, 1.1fr) minmax(0, 1fr) auto;
+}
+.vocabulary-list .vocab-picture {
+  width: 44px;
+  height: 44px;
+}
+@media (max-width: 600px) {
+  .vocabulary-list[data-pictures="true"] > li {
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+  }
+  .vocabulary-list[data-pictures="true"] > li > .vocab-picture-cell {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .vocabulary-list[data-pictures="true"] > li > div,
+  .vocabulary-list[data-pictures="true"] > li > span:not(.vocab-picture-cell) {
+    grid-column: 2;
+  }
+  .vocabulary-list[data-pictures="true"] .pronunciation-button {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+  .vocabulary-list .vocab-picture {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.flashcard-picture {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 8px;
+}
+
+/* Speaker avatars: a portrait when one exists, otherwise the first letter in the colour of
+   the speaker's side, matching the bubble. */
+.speaker-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--foreground);
+  background: var(--primary-soft);
+}
+li[data-side="end"] .speaker-avatar {
+  background: color-mix(in srgb, var(--brand-bell) 32%, var(--surface));
+}
+.dialogue-person {
+  grid-area: person;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.dialogue-bubble {
+  grid-area: bubble;
+  justify-self: start;
+  max-width: 100%;
+  border-radius: 18px;
+  padding: 8px 18px;
+  background: var(--primary-soft);
+}
+li[data-side="end"] > .dialogue-bubble {
+  justify-self: end;
+  background: color-mix(in srgb, var(--brand-bell) 20%, var(--surface));
+}
+
+/* Conversation slides: first speaker on the left, second on the right. */
+.slide-dialogue.slide-dialogue-ja > li {
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  grid-template-areas: "person bubble listen";
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.slide-dialogue.slide-dialogue-ja > li[data-side="end"] {
+  grid-template-columns: auto minmax(0, 1fr) 112px;
+  grid-template-areas: "listen bubble person";
+}
+.slide-dialogue-ja .dialogue-speaker {
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+}
+.slide-dialogue-ja .dialogue-bubble {
+  padding: 4px 20px;
+}
+.slide-dialogue-ja .pronunciation-button {
+  grid-area: listen;
+}
+.slide-dialogue.slide-dialogue-ja.is-compact > li {
+  margin-bottom: 4px;
+}
+.slide-dialogue-ja.is-compact .dialogue-bubble {
+  padding: 2px 18px;
+}
+.slide-dialogue-ja.is-compact .speaker-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+}
+.presenter-preview .slide-dialogue.slide-dialogue-ja > li,
+.presenter-preview .slide-dialogue.slide-dialogue-ja > li[data-side="end"] {
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-areas: "person bubble listen";
+  gap: 8px;
+}
+.presenter-preview .slide-dialogue-ja .speaker-avatar {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+}
+.presenter-preview .slide-dialogue-ja .dialogue-speaker {
+  font-size: 11px;
+}
+
+/* Reader conversations. */
+.dialogue-bubbles > li {
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  grid-template-areas: "person bubble listen";
+  align-items: start;
+  padding: 8px 0;
+  border-bottom: none;
+}
+.dialogue-bubbles > li[data-side="end"] {
+  grid-template-columns: auto minmax(0, 1fr) 64px;
+  grid-template-areas: "listen bubble person";
+}
+.dialogue-bubbles .speaker-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+}
+.dialogue-bubbles .dialogue-speaker {
+  font-size: 13px;
+  text-align: center;
+}
+.dialogue-bubbles .pronunciation-button {
+  grid-area: listen;
+  align-self: center;
+}
+/* Phones: the listen button moves under the bubble so the sentence keeps the width. */
+@media (max-width: 640px) {
+  .dialogue-bubbles > li {
+    grid-template-columns: 52px minmax(0, 1fr);
+    grid-template-areas:
+      "person bubble"
+      "person listen";
+    row-gap: 4px;
+  }
+  .dialogue-bubbles > li[data-side="end"] {
+    grid-template-columns: minmax(0, 1fr) 52px;
+    grid-template-areas:
+      "bubble person"
+      "listen person";
+  }
+  .dialogue-bubbles > li[data-side="end"] .pronunciation-button {
+    justify-self: end;
+  }
+}
+
+/* Editor: the picture picker takes a full row under each word. */
+.vocab-row .vocab-picture-field {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

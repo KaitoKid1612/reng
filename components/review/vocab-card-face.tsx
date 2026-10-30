@@ -1,4 +1,5 @@
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
+import { VocabPicture } from "@/components/lessons/vocab-picture";
 
 import type { StudyWord } from "@/lib/study-words";
 
@@ -16,6 +17,7 @@ export function VocabCardFace({ lessonId, vocab, isFlipped }: VocabCardFaceProps
       </span>
       {isFlipped && (
         <div className="flashcard-back">
+          <VocabPicture src={vocab.image} size={96} className="flashcard-picture" />
           {vocab.reading && (
             <p lang={vocab.readingLang} className="reading-text">
               {vocab.reading}

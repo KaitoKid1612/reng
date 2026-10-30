@@ -18,6 +18,8 @@ export interface StudyWord {
   audioLabel: string;
   audio: string | null;
   locale: SpeechLocale;
+  // Japanese lessons may carry a picture of the word; shown once the card is turned.
+  image?: string;
 }
 
 export function toStudyWords(version: AnyLessonVersion): StudyWord[] {
@@ -48,5 +50,6 @@ export function toStudyWords(version: AnyLessonVersion): StudyWord[] {
     audioLabel: item.romaji,
     audio: item.audio,
     locale: "ja-JP",
+    ...(item.image ? { image: item.image } : {}),
   }));
 }

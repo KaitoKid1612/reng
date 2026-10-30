@@ -1,8 +1,10 @@
 "use client";
 
 import { FURIGANA_HINT } from "@/components/editor/slide-labels";
+import { VocabPicture } from "@/components/lessons/vocab-picture";
 import { Button } from "@/components/ui/button";
 import { findReferencingSlides } from "@/lib/lesson-draft";
+import { VOCAB_ICON_GROUPS, VOCAB_ICONS, vocabIconPath } from "@/lib/vocab-icons";
 
 import type { DraftContent } from "@/lib/lesson-draft";
 import type { EditorAction } from "@/lib/lesson-editor";
@@ -73,6 +75,38 @@ export function VocabularyFields({ content, dispatch, createId }: ContentFieldsP
               }
             />
             <span className="small muted">{item.audio ? "Có audio" : "Chưa có audio"}</span>
+            <div className="vocab-picture-field">
+              <label htmlFor={`${item.id}-image`} className="small">
+                Hình
+              </label>
+              <select
+                id={`${item.id}-image`}
+                value={item.image ?? ""}
+                onChange={(event) =>
+                  dispatch({
+                    type: "updateVocab",
+                    id: item.id,
+                    patch: { image: event.target.value },
+                  })
+                }
+              >
+                <option value="">Không có hình</option>
+                {item.image &&
+                  !VOCAB_ICONS.some((icon) => vocabIconPath(icon.name) === item.image) && (
+                    <option value={item.image}>Hình khác: {item.image}</option>
+                  )}
+                {VOCAB_ICON_GROUPS.map((group) => (
+                  <optgroup key={group.title} label={group.title}>
+                    {group.icons.map((icon) => (
+                      <option key={icon.name} value={vocabIconPath(icon.name)}>
+                        {icon.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+              <VocabPicture src={item.image} size={32} />
+            </div>
             <Button
               variant="ghost"
               aria-label={`Xóa ${label}`}

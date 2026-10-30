@@ -28,6 +28,12 @@ export default function SourcesPage() {
         <a href="/fonts/noto-sans-jp-LICENSE.txt">Noto Sans JP</a>,{" "}
         <a href="/fonts/klee-one-LICENSE.txt">Klee One</a>.
       </p>
+      <h2>Hình minh họa từ vựng</h2>
+      <p>
+        Icon cạnh từ vựng là Fluent Emoji (kiểu Flat) của Microsoft, dùng theo{" "}
+        <a href="/icons/vocab/LICENSE.txt">giấy phép MIT</a>. Hình không chứa chữ; nghĩa tiếng Việt
+        luôn hiển thị bên cạnh để không phụ thuộc vào hình.
+      </p>
       <h2>Audio</h2>
       <p>
         {count

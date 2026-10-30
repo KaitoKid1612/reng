@@ -37,6 +37,7 @@ const draftVocabSchema = z
     vi: draftText(200),
     audio,
     note: draftText(500).optional(),
+    image: draftText(500).optional(),
   })
   .strict();
 
@@ -61,6 +62,7 @@ const draftSlideSchema = z.discriminatedUnion("type", [
       type: z.literal("title"),
       jp: draftText(200),
       vi: draftText(200),
+      image: draftText(500).optional(),
     })
     .strict(),
   z
@@ -392,6 +394,15 @@ function describeVocabProblems(content: DraftContent): PublishProblem[] {
       blank(item.romaji) && "romaji",
       blank(item.vi) && "nghĩa tiếng Việt",
     ].filter(Boolean);
+    if (!missing.length && item.image?.trim() && !isAllowedMedia(item.image.trim())) {
+      return [
+        {
+          section: "vocab" as const,
+          itemId: item.id,
+          message: `${label}: đường dẫn hình phải là /đường-dẫn trong site hoặc https://.`,
+        },
+      ];
+    }
     return missing.length
       ? [
           {
@@ -544,6 +555,9 @@ function describeSlideProblems(content: DraftContent): PublishProblem[] {
     ];
     switch (slide.type) {
       case "title":
+        if (slide.image?.trim() && !isAllowedMedia(slide.image.trim())) {
+          return problem("đường dẫn hình phải là /đường-dẫn trong site hoặc https://.");
+        }
         return blank(slide.jp) || blank(slide.vi)
           ? problem("nhập dòng tiếng Nhật và tiếng Việt.")
           : [];
@@ -608,17 +622,28 @@ function withoutBlankOptionals(item: object, keys: readonly string[]) {
   return copy;
 }
 
+function trimSlideMedia(slide: DraftSlide) {
+  if (slide.type === "image") {
+    return { ...slide, src: slide.src.trim() };
+  }
+  return slide.type === "title" && slide.image !== undefined
+    ? { ...slide, image: slide.image.trim() }
+    : slide;
+}
+
 // Final strict contract shared with the import script and published snapshots.
 export function toPublishableContent(content: DraftContent): LessonContent {
   return lessonContentSchema.parse({
     ...content,
-    vocab: content.vocab.map((item) => withoutBlankOptionals(item, ["kanji", "note"])),
+    vocab: content.vocab.map((item) =>
+      withoutBlankOptionals(
+        item.image === undefined ? item : { ...item, image: item.image.trim() },
+        ["kanji", "note", "image"],
+      ),
+    ),
     grammar: content.grammar.map((item) => withoutBlankOptionals(item, ["viMistake"])),
     slides: content.slides.map((slide) =>
-      withoutBlankOptionals(slide.type === "image" ? { ...slide, src: slide.src.trim() } : slide, [
-        "teacherNotes",
-        "caption",
-      ]),
+      withoutBlankOptionals(trimSlideMedia(slide), ["teacherNotes", "caption", "image"]),
     ),
     questions: content.questions.map(toPublishableQuestion),
   });

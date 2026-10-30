@@ -156,7 +156,9 @@ export const MAX_TABLE_ROWS = 12;
 
 const slideBase = { id: identifier, teacherNotes: z.string().optional() };
 export const slideSchema = z.discriminatedUnion("type", [
-  z.object({ ...slideBase, type: z.literal("title"), jp: text, vi: text }).strict(),
+  z
+    .object({ ...slideBase, type: z.literal("title"), jp: text, vi: text, image: media.optional() })
+    .strict(),
   z
     .object({ ...slideBase, type: z.literal("vocab"), refs: z.array(identifier).min(1).max(8) })
     .strict(),
@@ -218,6 +220,8 @@ export const lessonContentSchema = z
           vi: text,
           audio,
           note: z.string().optional(),
+          // A picture beside the word (vocabulary icon or illustration); never the only meaning.
+          image: media.optional(),
         })
         .strict(),
     ),

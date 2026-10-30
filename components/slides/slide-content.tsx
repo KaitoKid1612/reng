@@ -2,7 +2,10 @@ import Image from "next/image";
 
 import { JapaneseText } from "@/components/lessons/japanese-text";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
+import { SpeakerAvatar } from "@/components/lessons/speaker-avatar";
+import { VocabPicture } from "@/components/lessons/vocab-picture";
 import { SlideQuiz } from "@/components/slides/slide-quiz";
+import { dialogueSides } from "@/lib/characters";
 import { toPlainJapanese, toSpeechText } from "@/lib/japanese-text";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +29,7 @@ function TitleSlide({ slide }: SlideContentProps) {
   }
   return (
     <div className="slide-title">
+      <VocabPicture src={slide.image} size={160} className="slide-title-picture" />
       <p lang="ja" className="slide-japanese">
         <JapaneseText text={slide.jp} />
       </p>
@@ -39,20 +43,29 @@ function VocabularySlide({ slide, lesson }: SlideContentProps) {
   if (slide.type !== "vocab") {
     return null;
   }
+  const items = slide.refs.map((id) => lesson.content.vocab.find((entry) => entry.id === id));
+  // One picture column for the whole slide keeps words aligned when some have no picture.
+  const hasPictures = items.some((item) => item?.image);
   return (
     <div>
       <h2>Từ vựng</h2>
       <div
         className="slide-vocabulary"
         data-size={slide.refs.length > COMPACT_VOCAB_ITEMS ? "compact" : undefined}
+        data-pictures={hasPictures ? "true" : undefined}
       >
-        {slide.refs.map((id) => {
-          const item = lesson.content.vocab.find((entry) => entry.id === id);
+        {items.map((item) => {
           if (!item) {
             return null;
           }
+          const { id } = item;
           return (
             <div key={id}>
+              {hasPictures && (
+                <span className="vocab-picture-cell">
+                  <VocabPicture src={item.image} size={80} />
+                </span>
+              )}
               <div className="slide-word">
                 <span lang="ja" className="slide-japanese">
                   {item.kanji || item.jp}
@@ -147,6 +160,7 @@ function DialogueSlide({ slide, lesson, staticMode }: SlideContentProps) {
     return null;
   }
   const isCompact = slide.lines.length > COMPACT_DIALOGUE_LINES;
+  const sides = dialogueSides(slide.lines.map((line) => line.speaker));
   return (
     <div>
       <h2>
@@ -154,11 +168,14 @@ function DialogueSlide({ slide, lesson, staticMode }: SlideContentProps) {
       </h2>
       <ol className={cn("slide-dialogue slide-dialogue-ja", isCompact && "is-compact")}>
         {slide.lines.map((line, index) => (
-          <li key={index}>
-            <span className="dialogue-speaker">
-              <JapaneseText text={line.speaker} />
+          <li key={index} data-side={sides[index]}>
+            <span className="dialogue-person">
+              <SpeakerAvatar speaker={line.speaker} />
+              <span className="dialogue-speaker">
+                <JapaneseText text={line.speaker} />
+              </span>
             </span>
-            <div>
+            <div className="dialogue-bubble">
               <p lang="ja" className="slide-dialogue-line">
                 <JapaneseText text={line.jp} />
               </p>

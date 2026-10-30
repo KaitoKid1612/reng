@@ -209,6 +209,15 @@ function TypeFields({ slide, content, onChange }: Omit<SlideFieldsProps, "positi
               onChange={(event) => onChange({ ...slide, vi: event.target.value })}
             />
           </div>
+          <div className="field">
+            <label htmlFor={`${id}-image`}>Hình mở đầu (/… hoặc https://…, tùy chọn)</label>
+            <input
+              id={`${id}-image`}
+              maxLength={500}
+              value={slide.image ?? ""}
+              onChange={(event) => onChange({ ...slide, image: event.target.value })}
+            />
+          </div>
         </>
       );
     case "vocab":

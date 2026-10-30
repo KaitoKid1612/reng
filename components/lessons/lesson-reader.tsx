@@ -5,6 +5,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { JapaneseText } from "@/components/lessons/japanese-text";
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
+import { SpeakerAvatar } from "@/components/lessons/speaker-avatar";
+import { VocabPicture } from "@/components/lessons/vocab-picture";
+import { dialogueSides } from "@/lib/characters";
 import { toPlainJapanese, toSpeechText } from "@/lib/japanese-text";
 import { extractKanjiWords } from "@/lib/kanji-practice";
 
@@ -62,11 +65,48 @@ function ReaderTable({ slide }: ReaderTableProps) {
   );
 }
 
+interface ReaderDialogueProps {
+  slide: Extract<PublicSlide, { type: "dialogue" }>;
+  lessonId: string;
+}
+
+// Chat bubbles with the first speaker on the left, the second on the right.
+function ReaderDialogue({ slide, lessonId }: ReaderDialogueProps) {
+  const sides = dialogueSides(slide.lines.map((line) => line.speaker));
+  return (
+    <ol className="dialogue-list dialogue-bubbles">
+      {slide.lines.map((line, index) => (
+        <li key={index} data-side={sides[index]}>
+          <span className="dialogue-person">
+            <SpeakerAvatar speaker={line.speaker} />
+            <span className="dialogue-speaker">
+              <JapaneseText text={line.speaker} />
+            </span>
+          </span>
+          <div className="dialogue-bubble">
+            <p lang="ja" className="japanese-text">
+              <JapaneseText text={line.jp} />
+            </p>
+            <p>{line.vi}</p>
+          </div>
+          <PronunciationButton
+            id={`${lessonId}:${slide.id}:${index}`}
+            text={toSpeechText(line.jp)}
+            label={toPlainJapanese(line.jp)}
+            audio={null}
+          />
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function LessonReader({ lesson, progress }: LessonReaderProps) {
   const listeningCount = lesson.content.questions.filter(
     (question) => question.type === "listen" || question.type === "dictation",
   ).length;
   const kanjiCount = extractKanjiWords(lesson.content.vocab).length;
+  const hasPictures = lesson.content.vocab.some((item) => item.image);
   const dialogues = lesson.content.slides.filter((slide) => slide.type === "dialogue");
   const tables = lesson.content.slides.filter((slide) => slide.type === "table");
   return (
@@ -94,9 +134,14 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
       <AudioStatus />
       <section aria-labelledby="vocabulary-title">
         <h2 id="vocabulary-title">Từ vựng</h2>
-        <ul className="vocabulary-list">
+        <ul className="vocabulary-list" data-pictures={hasPictures ? "true" : undefined}>
           {lesson.content.vocab.map((item) => (
             <li key={item.id}>
+              {hasPictures && (
+                <span className="vocab-picture-cell">
+                  <VocabPicture src={item.image} size={44} />
+                </span>
+              )}
               <div>
                 <span className="japanese-text" lang="ja">
                   {item.kanji || item.jp}
@@ -169,27 +214,7 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
               <h3>
                 <JapaneseText text={slide.title} />
               </h3>
-              <ol className="dialogue-list">
-                {slide.lines.map((line, index) => (
-                  <li key={index}>
-                    <span className="dialogue-speaker">
-                      <JapaneseText text={line.speaker} />
-                    </span>
-                    <div>
-                      <p lang="ja" className="japanese-text">
-                        <JapaneseText text={line.jp} />
-                      </p>
-                      <p>{line.vi}</p>
-                    </div>
-                    <PronunciationButton
-                      id={`${lesson.lessonId}:${slide.id}:${index}`}
-                      text={toSpeechText(line.jp)}
-                      label={toPlainJapanese(line.jp)}
-                      audio={null}
-                    />
-                  </li>
-                ))}
-              </ol>
+              <ReaderDialogue slide={slide} lessonId={lesson.lessonId} />
             </article>
           ))}
         </section>
