@@ -48,6 +48,13 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 - Cron trên Hobby chạy tối đa 1 lần/ngày và lệch trong vòng 1 giờ (bài luyện hằng ngày 6:00–6:59 sáng).
 - Trước khi thu tiền hoặc nhận nhiều học viên: chuyển Vercel Pro và Supabase Pro (backup), cấu hình Resend + tên miền, bật lại xác nhận email.
 
+### Vận hành khi chưa có email riêng (rà soát 30/10/2026)
+
+- **Hệ quả đang có:** (1) quên mật khẩu không dùng được: thư không tới học viên, và mẫu email mặc định gửi link có `code` trong khi `/auth/confirm` chỉ nhận `token_hash` (mẫu trong `supabase/templates` dùng `token_hash`); (2) không xác nhận email nên có thể đăng ký bằng email của người khác — trước khi gắn dữ liệu riêng (lịch sử học tập, quyền quản trị, chia sẻ bài) theo email, xác nhận đúng chủ tài khoản đăng nhập được; (3) ba cron email trả 503 mỗi ngày, trang cài đặt thông báo đã báo "chưa bật email".
+- **Học viên quên mật khẩu lúc này:** người vận hành đặt mật khẩu tạm trong Supabase Dashboard › Authentication › Users cho đúng tài khoản, gửi riêng cho học viên và nhắc đổi lại.
+- **Bật email:** mua tên miền → xác minh trong Resend (SPF, DKIM, DMARC) → Supabase Authentication › SMTP Settings dùng SMTP Resend → trong `[remotes.production.auth.email]` bật `enable_confirmations` và trỏ `content_path` của hai mẫu tới `supabase/templates/*.html`, xem `npx supabase config diff --project-ref <ref>` rồi `config push` → đặt `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM` trên Vercel và deploy lại. Xử lý các mục email còn mở ở [rà soát 30/10](testing/code-review-2026-10-30.md) trước khi bật nhắc bài cho lớp thật.
+- **Migration và dữ liệu thật:** gói Free không có bản sao lưu để tự khôi phục như Pro. Trước `npx supabase db push` hoặc nhập dữ liệu, chạy `npx supabase db dump --linked -f <file>` (và `--data-only` cho dữ liệu) rồi lưu file ngoài repository. `db push` áp mọi migration chưa có trên production trong `supabase/migrations`, nên chỉ chạy khi các migration đó đã hoàn chỉnh và được test local.
+
 ## Cảnh báo cần thống nhất trước khi cho thuê
 
 - **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Reng không cung cấp video và không cần tài khoản Google.

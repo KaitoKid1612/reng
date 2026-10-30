@@ -1,8 +1,8 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
-Reng hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Từ 29/10/2026 pilot ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo (bài mẫu 11, slide hội thoại/bảng, furigana — xem [biên soạn](content-authoring.md)); luồng Việt–Trung vẫn giữ. Đã có bản local: đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
+Reng hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Từ 29/10/2026 pilot ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo (bài mẫu 11, slide hội thoại/bảng, furigana — xem [biên soạn](content-authoring.md)); luồng Việt–Trung vẫn giữ. Đã có và chạy trên production thử (https://reng-cyan.vercel.app, từ 29/10/2026): đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
 
-Báo cáo ngày 30/10/2026: [bug UI, cải tiến đã giao, vấn đề còn mở và kết quả kiểm chứng](testing/user-flow-review.md). Các mục đề xuất và chưa kiểm thử được ghi trạng thái riêng.
+Báo cáo ngày 30/10/2026: [bug UI, cải tiến đã giao, vấn đề còn mở và kết quả kiểm chứng](testing/user-flow-review.md). Các mục đề xuất và chưa kiểm thử được ghi trạng thái riêng. [Rà soát mã nguồn cùng ngày](testing/code-review-2026-10-30.md): lỗi đã sửa, lỗi còn mở và việc vận hành production khi chưa có email riêng. Thiết kế luyện kanji: [Basic Design](basic-design/kanji-practice.md).
 
 Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết quả và checklist](testing/teaching-management.md); [quy trình biên soạn/nâng cấp bài](content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung).
 
@@ -52,11 +52,11 @@ Quy ước mã nguồn: [coding standards](coding-standards.md). Tên file và t
 
 ## Nguyên tắc xuyên suốt
 
-Một nguồn nội dung draft dùng cho nhiều preview. Xuất bản tạo version bất biến; lớp ghim version, bài giao giữ snapshot. Sửa draft không tự đổi bài đang dạy hoặc điểm cũ. V1 Nhật tiếp tục chạy, v2 Việt–Trung chưa triển khai.
+Một nguồn nội dung draft dùng cho nhiều preview. Xuất bản tạo version bất biến; lớp ghim version, bài giao giữ snapshot. Sửa draft không tự đổi bài đang dạy hoặc điểm cũ. V1 Nhật và v2 Việt–Trung cùng chạy.
 
 ## Trạng thái tài liệu
 
-Định hướng dịch vụ được cập nhật ngày 29/10/2026; các phần mới đều chưa triển khai. Nền local giai đoạn 1–4 và phần A giai đoạn 5 đã có mã nguồn; kết quả/giới hạn kiểm chứng xem checklist từng giai đoạn, chưa nghiệm thu cloud hoặc lớp học thật. Hướng dẫn khởi động tại README.md ở thư mục gốc.
+Định hướng dịch vụ được cập nhật ngày 29/10/2026. Giai đoạn 1–4, phần A giai đoạn 5 và các lát dịch vụ đã ghi ở [đối chiếu source](source-alignment.md) đã có mã nguồn và chạy trên production thử từ 29/10/2026 cho lớp pilot; kết quả/giới hạn kiểm chứng xem checklist từng giai đoạn, chưa nghiệm thu đầy đủ với lớp học thật. Hướng dẫn khởi động tại README.md ở thư mục gốc.
 
 Các quyết định trong tài liệu là đặc tả dự kiến, không phải tính năng đã hoàn thành. Phần nào đã triển khai thì cập nhật lại file tương ứng thay vì viết tài liệu mới. Mốc triển khai và tiêu chí nghiệm thu lấy theo `09-roadmap.md`; font, màu và kích thước lấy theo `12-ui-design.md`.
 

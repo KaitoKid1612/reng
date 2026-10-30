@@ -18,6 +18,8 @@ Slide bài Nhật có thêm hai loại: **Hội thoại** (`dialogue`: tiêu đ�
 
 Furigana viết `{漢字|かんじ}` trong dòng tiêu đề Nhật, mẫu câu, giải thích, ví dụ, hội thoại, bảng và ghi chú; nút Nghe/audio đọc phần furigana và bỏ ký hiệu 〜. Đề câu luyện hiển thị văn bản thường nên viết kana. Số trong câu Nhật dùng 0–9 (số toàn góc nhiều chữ số bị giãn). Ô điền hiragana hoàn tất romaji còn dở khi rời ô (`yonin` → よにん); ん giữa từ vẫn gõ `nn` (さんにん: `sannnin`).
 
+**Luyện kanji (30/10/2026):** cột kanji của từ vựng là nguồn luyện chữ Hán. Học viên mở "Luyện kanji" ở trang đọc bài hoặc trang lớp để luyện đọc chữ, nhận mặt chữ và hiểu nghĩa; cách đọc đúng là cột kana giáo viên ghi. Trong trình soạn, mục Câu luyện có nút **Tạo câu kanji cho N từ**: mỗi từ có chữ Hán được thêm một câu điền cách đọc (Hiragana) và một câu chọn mặt chữ, gắn thẻ `kanji`; xem lại, sửa hoặc xóa rồi lưu nháp và xuất bản. Câu này dùng như câu luyện thường khi giao bài và trong bài luyện hằng ngày. Giữ cột kana đúng cách đọc trong bài (ví dụ `〜人` ghi `〜にん`) vì đó là đáp án duy nhất được chấp nhận. Thiết kế: [luyện kanji](basic-design/kanji-practice.md).
+
 ## Kiểm tra và xuất bản local
 
 ```bash

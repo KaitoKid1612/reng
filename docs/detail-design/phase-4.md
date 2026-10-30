@@ -15,10 +15,11 @@ Theo [BD](../basic-design/phase-4.md), dữ liệu 03, thông báo 08. Dependenc
 | components/editor/* | Reducer editor, form từng phần, danh sách slide kéo thả, xem trước |
 
 - Bản nháp gồm metadata (cột lessons: title, title_ja, summary, order_no, course_id) và content trong draft_content. Schema nháp giữ cấu trúc union của 03 nhưng cho phép chuỗi rỗng, refs chưa đủ và mảng rỗng; giới hạn 300 từ, 100 mẫu ngữ pháp, 200 slide, 200 câu, JSON ≤ 512 KB. Câu luyện khác choice/fill được giữ nguyên theo schema đầy đủ và chỉ hiển thị đọc.
-- ID mới: tiền tố theo loại (v, g, s, q) + số tăng dần, duy nhất trong bài, không tái sử dụng khi xóa trong cùng phiên soạn; ID cũ giữ nguyên qua phiên bản.
+- ID mới: tiền tố theo loại (v, g, s, q) + hậu tố ngẫu nhiên 6 ký tự (`createItemId`), duy nhất trong bài, không tái sử dụng sau khi xóa; ID cũ giữ nguyên qua phiên bản.
 - Lưu nháp: `UPDATE lessons ... SET draft_revision = draft_revision + 1 WHERE id, owner_id, draft_revision = expected` (một câu lệnh, compare-and-swap). Không có dòng nào: bài không thuộc giảng viên → 404, ngược lại conflict kèm revision hiện tại. "Ghi đè" gửi lại với revision mới nhất sau khi giảng viên xác nhận.
 - Xuất bản: kiểm tra đầy đủ (metadata; từ vựng jp/romaji/vi; ngữ pháp có ví dụ; slide theo loại, refs tồn tại, vocab 1–8 mục không trùng, quiz trỏ câu choice/fill; câu có lựa chọn/đáp án hợp lệ; ảnh local/HTTPS) rồi `lessonContentSchema` làm chốt cuối. Hash audio có mặt phải tồn tại trong audio_assets; thiếu audio là cảnh báo. Gọi `publish_lesson` với revision đang mở; RPC cập nhật nháp, tạo version và đổi con trỏ trong một transaction, `is_sample = false` vì giảng viên sở hữu đã duyệt khi xuất bản.
 - Xóa mục đang được slide tham chiếu bị chặn ở UI và lỗi xuất bản vẫn kiểm tra lại.
+- Giữ thay đổi chưa lưu (30/10/2026): khi trình soạn có thay đổi, localStorage `reng:draft:lesson:{lessonId}` giữ bản nháp kèm revision gốc (debounce 800 ms); lưu, xuất bản hoặc tải bản server thành công thì xóa; đăng xuất xóa cùng các bản `reng:draft:*`. Trang soạn tải trình soạn chỉ phía client (`components/editor/editor-loaders.tsx`, `ssr: false`) để khôi phục bản trên máy ngay trong state ban đầu khi revision gốc bằng revision server (báo "Đã khôi phục…", vẫn tính là chưa lưu); revision khác thì bỏ bản trên máy vì server mới hơn. Lỗi khi gửi request (mất mạng, deploy mới làm action cũ không còn, lỗi máy chủ) được bắt trong trình soạn, form nhập CSV và form giao bài: giữ nguyên nội dung trên trang và báo thử lại hoặc tải lại để khôi phục; lỗi điều hướng của Next (ví dụ chuyển tới đăng nhập) được ném lại bằng `unstable_rethrow`. `app/error.tsx` là trang lỗi chung có nút Thử lại thay cho màn "Application error".
 - Xem trước dùng SlideContent ở chế độ tĩnh (không gọi API đáp án) trong khung 1280×720 co theo chiều rộng cột; slide ảnh thiếu/sai đường dẫn hiện ô báo thay vì gọi next/image. Ghi chú giảng viên chỉ hiện trong form, không vào khung xem trước.
 - Danh sách slide: dnd-kit sortable (chuột, chạm, bàn phím Space/mũi tên) kèm nút Lên/Xuống.
 
@@ -43,7 +44,7 @@ Migration 202610280005 tạo `notification_preferences` và `email_log` theo 03,
 | app/api/cron/[job] | `Authorization: Bearer CRON_SECRET`; student-reminders, weekly-summary, teacher-digest |
 | app/api/webhooks/email | Xác thực chữ ký Svix của Resend; opened → opened_at; bounced/complained → tạm dừng và hủy job |
 | app/api/unsubscribe/[token] | POST một chạm (RFC 8058, trả 200) hoặc form xác nhận (303 về trang); token là quyền, không kiểm tra Origin |
-| app/unsubscribe/[token], app/settings/notifications | Trang xác nhận hủy (GET không đổi gì); trang tùy chọn có Server Action |
+| app/unsubscribe/[token], app/settings/notifications | Trang xác nhận hủy (GET không đổi gì); trang tùy chọn có Server Action, gọi `refresh()` sau khi lưu để form (React tự reset sau action) hiện giá trị đã lưu; báo rõ khi hệ thống chưa cấu hình email (`getEmailProvider()` trả null) |
 | vercel.json | Lịch cron UTC theo bảng của 08 |
 
 Quy trình mỗi lượt cron:

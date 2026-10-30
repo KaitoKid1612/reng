@@ -1,0 +1,64 @@
+# Rà soát mã nguồn và lỗi hệ thống — 30/10/2026
+
+## Phạm vi và cách làm
+
+Rà soát tĩnh mã nguồn ở mốc `0ca9940` theo bốn vùng: xác thực và phân quyền (kể cả RLS, RPC trong migration); lớp học, bài giao, chấm điểm, sổ lỗi và ôn tập; soạn bài, phiên bản, chia sẻ; cron, email, luyện hằng ngày và múi giờ. Mỗi lỗi dưới đây đã được đọc lại đến nơi gây lỗi (caller, RPC, giao diện). Phần lịch sử học tập đang làm dở (`app/history`, migration `202610300001`) không thuộc đợt này.
+
+Chưa tái hiện được bằng trình duyệt có đăng nhập: Supabase local không khởi động được (xem [mục môi trường](#môi-trường-và-giới-hạn-kiểm-chứng)). Các lỗi được xác nhận bằng đọc mã, test đơn vị và E2E công khai; trạng thái "Đã sửa" nghĩa là mã đã đổi và qua các kiểm tra ghi ở cuối, chưa phải nghiệm thu với lớp thật.
+
+Quy ước mức: **Cao** = mất dữ liệu người dùng hoặc lỗ hổng bảo mật; **Vừa** = sai dữ liệu hiển thị/ghi, sai báo cáo; **Thấp** = trường hợp hiếm hoặc chỉ ảnh hưởng trình bày.
+
+## Đã sửa
+
+| Mã | Mức | Vấn đề trước sửa | Sửa | Commit |
+| --- | --- | --- | --- | --- |
+| CR-01 | Cao | Lượt lưu nháp tới server nhưng mất phản hồi (đổi mạng, máy ngủ) làm lần lưu sau bị coi là "tab khác", trang khóa; tải lại trang xóa các câu làm sau đó | Client nhớ các bản đã gửi chưa có phản hồi; conflict mà draft server trùng bản đã gửi thì nhận revision và lưu tiếp; khôi phục cả khi mở lại trang | `fd035aa` |
+| CR-02 | Cao | Trình soạn bài: Lưu/Xuất bản gặp lỗi mạng hoặc deploy mới thì lỗi không được bắt, cả trang thành "Application error", mất phần chưa lưu | Giữ thay đổi chưa lưu trong localStorage, khôi phục khi mở lại; bắt lỗi request ở trình soạn v1/v2, nhập CSV, giao bài; thêm `app/error.tsx` | `ca9da07` |
+| CR-03 | Cao | `next=/%09/evil.example` lọt kiểm tra: trình duyệt bỏ tab nên chuyển hướng ra trang ngoài sau đăng nhập | `safeNextPath` chặn ký tự điều khiển, `\` và mọi giá trị phân giải ra origin khác; thêm `tests/auth-paths.test.ts` | `efede90` |
+| CR-04 | Vừa | Bài luyện hằng ngày cho nộp muộn nên không bao giờ "quá hạn"; trang chủ chỉ hiện 3 bài, cũ nhất trước, nên học viên bỏ vài ngày không thấy bài hôm nay. Lượt đang làm của bài đã đóng/quá hạn vẫn hiện là "đang làm" | Xếp bài còn hạn trước, bài lỡ sau (mới nhất trước); lượt đang làm của bài đóng/quá hạn tính là đóng/quá hạn | `80df758` |
+| CR-05 | Vừa | Chọn lại bài đã có trong lớp để đổi phiên bản thì form tự điền thứ tự = cuối, giờ mở = bây giờ, phiên bản = mới nhất: bài nhảy xuống cuối, bài hẹn mở sớm, luyện hằng ngày đổi sang bài đó | Điền sẵn giá trị hiện tại của lớp, kèm ghi chú; mặc định chọn bài chưa có trong lớp | `dfb5e57` |
+| CR-06 | Vừa | Form cài đặt thông báo hiện lại giá trị cũ sau khi báo "Đã lưu"; lưu lần nữa ghi đè giá trị cũ. Trang vẫn cho bật nhắc email khi production chưa gửi email | Làm mới trang sau khi lưu; báo rõ khi hệ thống chưa bật email | `b57a942` |
+| CR-07 | Vừa | Bài sao chép từ chia sẻ của giáo viên khác vẫn đặt Công khai được (đăng lại nội dung và đáp án) | Server chặn với `reshare_not_allowed` | `70fc48a` |
+| CR-08 | Thấp | `/join-class?code=A&code=B` lỗi 500 | Chỉ nhận một giá trị `code` | `9f83e71` |
+
+Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao chép, đặt ở đầu trang lớp khi lớp chưa có học viên (`3e8ee50`); trang chủ và hướng dẫn không còn bắt buộc bước xác nhận email vì production đang tắt bước này (`01d357c`).
+
+## Còn mở
+
+| Mã | Mức | Vấn đề | Lý do chưa sửa / điều kiện đóng |
+| --- | --- | --- | --- |
+| CR-20 | Vừa | Giáo viên nhập mã lớp của chính mình thì thành học viên của lớp: chiếm chỗ, hiện trong báo cáo/CSV, kéo lệch điểm trung bình và thống kê câu sai | Cần chủ sản phẩm chọn: chặn hẳn, hay cho tự luyện nhưng loại khỏi báo cáo (thống kê câu sai tính bằng RPC nên cần migration) |
+| CR-21 | Vừa | Bài tiếng Trung (v2) cấp lại ID nhỏ nhất còn trống sau khi xóa: thẻ ôn của từ cũ gắn sang từ mới, slide sinh tự động trỏ nhầm | Đổi sang ID ngẫu nhiên như v1; cần sửa test và `scripts/seed-demo.ts` đang dựa vào `vocab-1` |
+| CR-22 | Vừa | Hàng ôn lấy 200 thẻ đến hạn rồi mới bỏ thẻ không mở được (lớp/bài đã lưu trữ): khi có từ 200 thẻ như vậy, trang ôn báo hết thẻ sai | Lọc trong truy vấn hoặc phân trang; chưa xảy ra với dữ liệu hiện tại |
+| CR-23 | Vừa | Flashcard từ trang lớp không mang phiên bản lớp ghim (đã ghi trong [quản lý Nhật–Trung](teaching-management.md)) | Thiết kế thống nhất đọc thẻ và lịch ôn theo phiên bản |
+| CR-24 | Thấp | Rời trình soạn bằng link trong trang không cảnh báo; nay thay đổi vẫn được giữ trên máy và khôi phục khi mở lại | Thêm cảnh báo khi điều hướng nội bộ nếu cần |
+| CR-25 | Thấp | "Áp dụng thay đổi slide" (v2) ghi đè chỉnh sửa slide làm sau khi dựng kế hoạch | Tính lại kế hoạch khi nháp đổi |
+| CR-26 | Thấp | Dán hơn 100 từ tiếng Trung vượt giới hạn nháp, sau đó không lưu được | Chặn ở bước xem trước bảng |
+| CR-27 | Thấp | Mã bài gợi ý `lesson-NN` tính theo số bài của giáo viên nên trùng giữa giáo viên | Gợi ý mã có hậu tố ngẫu nhiên |
+| CR-28 | Thấp | Câu điền tiếng Trung trong bài tiếng Nhật chấm theo luật Nhật | Gán `gradingProfile` theo kiểu nhập |
+| CR-29 | Thấp | `/reset-password` đổi được mật khẩu với bất kỳ phiên nào, không cần link khôi phục | Kiểm tra phiên đến từ link recovery |
+| CR-30 | Thấp | Yêu cầu giảng dạy đang chờ duyệt không có nút từ chối; tắt duyệt thì yêu cầu cũ kẹt | Thêm thao tác từ chối/kích hoạt |
+| CR-31 | Thấp | Ôn tập: thử lại sau khi mất phản hồi có thể báo đúng cho câu trả lời không được ghi | Khóa câu trả lời khi thử lại cùng request |
+| CR-32 | Thấp | Chuỗi ngày học chỉ đọc 400 sự kiện gần nhất nên tính thiếu khi ôn nhiều | Tính bằng truy vấn ngày riêng |
+| CR-33 | Thấp | Luyện hằng ngày bỏ qua trong im lặng khi bài mở gần nhất không có câu chọn/điền hoặc RPC lỗi | Báo cho giáo viên, thử bài trước đó |
+| CR-34 | Thấp | Email (khi bật): cron Hobby chạy lệch tới 59 phút nên nhắc hạn 24 giờ có thể bỏ sót; tối đa 50 email mỗi lần; retry có thể bị Resend trả 409 do nội dung đổi; header List-Unsubscribe chỉ nhận POST; tiêu đề "sắp đến hạn" có thể dùng cho bài đã quá hạn | Xử lý trước khi bật email cho lớp thật |
+
+## Luyện kanji K1 (cùng đợt)
+
+Theo [thiết kế luyện kanji](../basic-design/kanji-practice.md): trang `/kanji/[lessonId]`, link ở trang đọc bài và trang lớp tiếng Nhật, nút tạo câu kanji trong trình soạn.
+
+- `tests/kanji-practice.test.ts` PASS: chỉ lấy từ có chữ Hán (bài 11 có 37 từ), chấm cách đọc bỏ khoảng trắng/〜/。 và nhận katakana, phiên luyện mỗi từ một lần với lựa chọn đúng, reducer và danh sách câu sai, câu sinh cho ngân hàng câu hợp lệ với schema nháp và không sinh lại.
+- `e2e/kanji.spec.ts` PASS: học viên luyện đọc 4 từ của bài mẫu 01 ở khổ 360px (gõ sai một câu, xem câu sai, luyện lại), câu chọn mặt chữ lấy lựa chọn trong cùng bài và nhắc khi chưa chọn. Đã xem giao diện câu đọc và câu chọn ở khổ 390px.
+- Chưa kiểm chứng trên trình duyệt có đăng nhập: link "Luyện kanji" ở trang lớp và nút tạo câu kanji trong trình soạn (cần Supabase local).
+
+## Production và vận hành
+
+- Production chưa có SMTP riêng và chưa đặt `EMAIL_PROVIDER`, nên: quên mật khẩu không dùng được (thư không tới học viên; link của mẫu email mặc định trả `code` trong khi `/auth/confirm` chỉ nhận `token_hash`); đăng ký không xác nhận email nên có thể đăng ký bằng email của người khác; ba cron email trả 503 mỗi ngày. Cách xử lý ở [kế hoạch POC](../poc-setup.md#production-thử-29102026).
+- Supabase Free không có bản sao lưu tự khôi phục như gói Pro: chạy `npx supabase db dump` trước khi áp migration hoặc nhập dữ liệu thật.
+
+## Môi trường và giới hạn kiểm chứng
+
+- `npx supabase start` (CLI 2.122.0, Podman 5.7.0) dừng với `ContainerCreateError: failed to copy secret file into container ... broken pipe` sau khi máy khởi động lại sáng 30/10; `podman cp`/`docker cp` thông thường vẫn chạy và volume `supabase_db_reng` còn nguyên. Vì vậy `npm run test:e2e:supabase` (30 test có đăng nhập) chưa chạy lại từ 29/10.
+- Kiểm chứng trên bản sao mã tại mốc các commit trên (không gồm phần lịch sử học tập đang làm dở): `npm run check` PASS (106 test, thêm test cho `safeNextPath`, so sánh draft và thứ tự bài cần làm); `npm run build` PASS; `npm run test:e2e` PASS 30/30.
+- Sau khi push, production trả 200 cho `/join-class?code=A&code=B` và hiện câu hướng dẫn mới ở trang chủ, `/guide`.
+- Cần chạy lại khi Supabase local hoạt động: luồng làm bài mất mạng giữa chừng, trình soạn khôi phục bản trên máy, form lưu bài vào lớp với bài đã có, link mời trên điện thoại.

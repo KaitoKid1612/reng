@@ -2,7 +2,7 @@
 
 Tên sản phẩm là **Reng** (tiếng chuông vào lớp).
 
-Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; nội dung dịch vụ ưu tiên Việt–Trung, giữ dữ liệu Nhật hiện có. Dịch vụ giáo viên đang triển khai theo từng lát trong [đối chiếu source](docs/source-alignment.md). Chạy `npm run check` trước khi bàn giao thay đổi.
+Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; pilot hiện ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo, giữ luồng Việt–Trung. Dịch vụ giáo viên đang triển khai theo từng lát trong [đối chiếu source](docs/source-alignment.md). Chạy `npm run check` trước khi bàn giao thay đổi.
 
 Reng hướng tới dịch vụ cho giáo viên: quản lý lớp, slide/chia sẻ học liệu, bài tập và theo dõi tiến độ; dạy video qua Google Meet bên ngoài. [Thiết kế dịch vụ](docs/basic-design/teaching-service.md) bổ sung đăng ký giáo viên, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), chia sẻ và nhập scan có duyệt; nền tảng hướng tới nhiều môn/ngôn ngữ. Đã có đăng ký giáo viên tự phục vụ, một tài khoản vừa dạy vừa học, xuất bản không tự công khai, sức chứa lớp, link Meet, soạn bài Việt–Trung theo mẫu (bảng chữ Hán/pinyin/nghĩa, dựng slide, xác nhận đáp án, chấm chính xác thanh điệu và giản/phồn thể), chia sẻ phiên bản view/copy giữa giáo viên, sao chép và tạo bản sao bài của mình, trang quản trị (duyệt giáo viên thuê, hạn thuê, nhật ký) và SEO cho trang công khai; TTS web và nhập scan chưa triển khai. Công cụ và chi phí cho POC: [kế hoạch POC](docs/poc-setup.md). Nền hiện tại bắt đầu từ tiếng Nhật N5, với trang chủ, bảng kana, luyện romaji và trang nguồn dữ liệu. [Tài liệu](docs/README.md), [BD giai đoạn 1](docs/basic-design/phase-1.md), [DD giai đoạn 1](docs/detail-design/phase-1.md).
 
@@ -15,6 +15,8 @@ Giai đoạn 3 (lớp học, bài giao, làm bài, sổ lỗi, ôn tập FSRS, t
 Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên web, trang `/listening/[lessonId]`, câu nghe trong bài giao practice và báo cáo nghe. [BD](docs/basic-design/phase-5.md), [DD](docs/detail-design/phase-5.md), [checklist](docs/testing/phase-5.md). Kanji và furigana chưa làm.
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
+
+Rà soát mã nguồn 30/10/2026: đã sửa lỗi mất câu trả lời khi mạng chập chờn, mất bài đang soạn khi lưu lỗi, chuyển hướng ra trang ngoài qua `next`, trang chủ học viên che bài hôm nay, form lưu bài vào lớp đổi thứ tự/giờ mở; thêm link mời vào lớp. Xem [lỗi đã sửa, còn mở và giới hạn kiểm chứng](docs/testing/code-review-2026-10-30.md).
 
 Quản lý Nhật–Trung: đã bổ sung tìm/lọc bài theo ngôn ngữ và trạng thái, nhãn ngôn ngữ từng phiên bản, lối chọn công cụ soạn/nhập và mặc định câu kiểm tra theo lớp. Xem [kết quả và phần cần nghiệm thu](docs/testing/teaching-management.md), [quy trình nâng cấp bài](docs/content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung).
 

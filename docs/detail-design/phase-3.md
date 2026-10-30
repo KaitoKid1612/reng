@@ -35,7 +35,7 @@ Logic thuần không import service client. Trang server gọi lib/server trực
 - Danh tính lấy bằng `auth.getUser()` trong lib/server/account.ts; role đọc từ profiles bằng service client sau khi có user. Không tin role trong metadata. Hàm gọi `connection()` trước tiên để mọi trang đọc danh tính luôn render theo request, kể cả khi build không có cấu hình Supabase (tránh prerender trang redirect).
 - Form tài khoản là Server Action (POST, kiểm tra Origin của Next.js) với `useActionState`; route handler cũ /api/auth/sign-in, /api/auth/sign-out được thay bằng action, /teach/sign-in chuyển hướng 308 sang /sign-in?next=/teach.
 - Đăng ký: Zod kiểm tra họ tên 1–80 ký tự, email ≤ 254, mật khẩu 8–72. `signUp` với `emailRedirectTo = origin + /auth/confirm?next=…`; luôn hiện cùng màn hình "kiểm tra email" để không lộ email đã đăng ký.
-- Email xác nhận/đặt lại dùng token hash: template nối `{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email|recovery`. GET /auth/confirm gọi `verifyOtp`, chỉ nhận type email/recovery và `next` là đường dẫn nội bộ (bắt đầu `/`, không `//`, không `\`). Recovery chuyển tới /reset-password; lỗi chuyển /sign-in?error=link.
+- Email xác nhận/đặt lại dùng token hash: template nối `{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email|recovery`. GET /auth/confirm gọi `verifyOtp`, chỉ nhận type email/recovery và `next` là đường dẫn nội bộ: `safeNextPath` yêu cầu bắt đầu `/`, không có `\` hay ký tự điều khiển (tab/xuống dòng — trình duyệt bỏ chúng trước khi phân giải, `/\t/evil.example` thành `//evil.example`), và phân giải trên một origin giả vẫn giữ nguyên origin. Cùng quy tắc áp dụng cho `next` của đăng nhập/đăng ký. Recovery chuyển tới /reset-password; lỗi chuyển /sign-in?error=link.
 - Quên mật khẩu luôn trả cùng thông báo. Đặt lại yêu cầu phiên từ link recovery, gọi `updateUser({password})` rồi đăng xuất các phiên khác bằng scope others.
 - Đăng xuất là action; nút đăng xuất xóa bản nháp cục bộ `reng:draft:*` trước khi gửi form.
 - `next` mặc định: học viên /classes, giảng viên /teach.
@@ -91,6 +91,7 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 - Hộp xác nhận nộp nằm trong thanh công cụ dính dưới cùng, focus vào nút xác nhận; trên điện thoại mỗi lần hiện một câu và chuyển câu thì lưu ngay.
 - Autosave debounce 800 ms sau thay đổi và ngay khi chuyển câu/nộp; chỉ một request lưu tại một thời điểm, thay đổi mới xếp hàng. Trạng thái: đang lưu, đã lưu (theo phản hồi server), chưa lưu do mất mạng, xung đột.
 - Bản dự phòng localStorage `reng:draft:{userId}:{submissionId}` gồm draft và revision gốc; ghi khi thay đổi, xóa khi lưu thành công/nộp/đăng xuất. Khi có mạng: revision gốc bằng revision server thì gửi; khác thì báo xung đột và chỉ cho tải bản mới, không tự ghi đè.
+- Lượt lưu đã tới server nhưng mất phản hồi (30/10/2026): client nhớ tối đa 5 bản đã gửi mà chưa nhận phản hồi, ghi cả vào bản dự phòng (trường `unconfirmed`). Server trả 409 conflict kèm draft hiện tại; nếu draft đó trùng một bản đã gửi (`isSameAttemptDraft`: chuẩn hóa bằng `parseAttemptDraft`, bỏ qua thứ tự khóa vì jsonb không giữ) thì đó là lượt lưu của chính trình duyệt này: nhận revision server rồi gửi tiếp thay đổi mới hơn. Mở lại trang cũng khôi phục bản dự phòng có revision gốc cũ khi draft server trùng một bản đã gửi. Draft server khác mọi bản đã gửi vẫn là xung đột thật như trên. Nộp bài khi đang ở trạng thái mất mạng/lỗi sẽ thử lưu lại trước.
 - Ô điền tiếng Nhật chuyển romaji bằng wanakana `toKana` IMEMode trên đoạn Latin ngay trước con trỏ (hiragana/japanese → hiragana, katakana → katakana; chữ hoa → katakana). Không chuyển khi đang composition có ký tự Nhật (IME Nhật); composition chữ Latin của bàn phím Android vẫn được chuyển. Kanji/kana dán vào được giữ nguyên.
 
 ## Ôn tập
@@ -112,7 +113,7 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 | POST /api/submissions/[id]/submit | Body `{revision, draft}`; 200 `{status}`; cùng mã 409 như trên; nộp lại trả 200 already_submitted |
 | POST /api/reviews | Body `{requestId, itemType, sourceId, itemId, rating?, answer?, revision}`; 200 thẻ mới; 409 conflict/not_due; 404 |
 | POST /api/lessons/[id]/progress | Body `{versionId}`; đánh dấu đọc xong bài có trong database |
-| GET /api/me/agenda | Học viên: số thẻ đến hạn và tối đa 3 bài đang chờ cho trang chủ; người khác `{agenda: null}` |
+| GET /api/me/agenda | Học viên: số thẻ đến hạn và tối đa 3 bài đang chờ cho trang chủ; người khác `{agenda: null}`. Thứ tự (`compareDueUrgency`): bài còn hạn (hạn gần nhất trước), bài không hạn, rồi bài quá hạn còn cho nộp muộn (mới nhất trước) để bài luyện bị lỡ không che bài hôm nay. Lượt đang làm của bài đã đóng hoặc quá hạn không cho muộn tính là đóng/quá hạn, không phải việc đang chờ |
 | GET /api/teach/classes/[id]/report | CSV cho giảng viên chủ lớp; UTF-8 BOM, CRLF, `Content-Disposition: attachment`, `Cache-Control: private, no-store` |
 
 Mọi API trả `Cache-Control: private, no-store`, body ≤ 64 KB, kiểm tra JSON bằng Zod, không ghi đáp án/nội dung bài nộp vào log. POST/PUT kiểm tra Origin cùng origin.

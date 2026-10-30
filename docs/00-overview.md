@@ -35,7 +35,7 @@ Google Meet đảm nhiệm âm thanh/video. Bản đầu chỉ lưu link cuộc 
 
 Đã có mã nguồn cho nền tiếng Nhật, lớp học/bài giao, editor, chấm khách quan, tiến độ và email; bằng chứng local xem checklist từng giai đoạn. Chưa suy ra đã triển khai cloud hoặc sẵn sàng phục vụ khách hàng.
 
-Đăng ký giáo viên tự phục vụ, tiếng Trung, sức chứa lớp, link Meet, chia sẻ giữa giáo viên và nhập scan là **yêu cầu mới, chưa triển khai**. [Basic Design dịch vụ](basic-design/teaching-service.md), [thiết kế kỹ thuật dự kiến](detail-design/teaching-service.md) và [tiêu chí nghiệm thu](testing/teaching-service.md) phân biệt phần có thể tái sử dụng và phần phải làm thêm.
+Đăng ký giáo viên (có quản trị viên duyệt), tiếng Trung, sức chứa lớp, link Meet và chia sẻ giữa giáo viên **đã triển khai** và chạy trên production thử từ 29/10/2026; nhập scan và TTS web **chưa triển khai**. [Basic Design dịch vụ](basic-design/teaching-service.md), [thiết kế kỹ thuật dự kiến](detail-design/teaching-service.md) và [tiêu chí nghiệm thu](testing/teaching-service.md) phân biệt phần có thể tái sử dụng và phần phải làm thêm.
 
 Chưa làm: video call nội bộ, tự chấm mọi bài tự luận/viết tay, marketplace bán học liệu, thanh toán và ứng dụng di động riêng. Không dùng iframe Google Slides hay PPTX làm nguồn dữ liệu chính.
 

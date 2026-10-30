@@ -1,6 +1,6 @@
 # Lộ trình
 
-Định hướng mới ngày 29/10/2026 được ghi ở [điều chỉnh ưu tiên dịch vụ](#điều-chỉnh-ưu-tiên-dịch-vụ--29102026): nhiều giáo viên, ưu tiên Việt–Trung, lớp riêng, chia sẻ và scan. Các giai đoạn dưới đây mô tả kế hoạch nền N5; mốc Service A–D là thứ tự công việc tiếp theo.
+Định hướng mới ngày 29/10/2026 được ghi ở [điều chỉnh ưu tiên dịch vụ](#điều-chỉnh-ưu-tiên-dịch-vụ--29102026): nhiều giáo viên, lớp riêng, chia sẻ và scan; cùng ngày pilot chuyển sang ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo, luồng Việt–Trung vẫn giữ. Luyện kanji theo bài đã có thiết kế ở [Basic Design luyện kanji](basic-design/kanji-practice.md). Các giai đoạn dưới đây mô tả kế hoạch nền N5; mốc Service A–D là thứ tự công việc tiếp theo.
 
 ## Trạng thái và quyết định bản đầu
 
