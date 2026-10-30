@@ -147,3 +147,7 @@ Tạo bài mới có lối chọn Nhật/Trung ở đầu trang. Bài Nhật dù
 Khi lưu bài vào lớp, hiển thị ngôn ngữ của bản soạn và từng phiên bản xuất bản; nhắc giáo viên đối chiếu ngôn ngữ lớp. Cho phép chủ động dạy đối chiếu ngôn ngữ, không tự chặn mọi bài khác ngôn ngữ. Câu kiểm tra mới lấy mặc định từ lớp: Hiragana cho Nhật, chữ Hán cho Trung; giáo viên vẫn có thể chọn kiểu nhập khác. Hướng dẫn đáp án theo kiểu nhập: kana/kanji hoặc chữ Hán/pinyin, giữ dấu thanh và giản/phồn thể. Bài giao cũ giữ snapshot và quy tắc chấm cũ.
 
 Phạm vi vận hành và phần còn mở xem [nghiệm thu quản lý Nhật–Trung](../testing/teaching-management.md).
+
+## Địa chỉ truy cập — 30/10/2026
+
+Địa chỉ chính của pilot là https://reng-class.vercel.app. Link lớp và link mới do hệ thống tạo dùng địa chỉ này. Địa chỉ cũ `reng-cyan.vercel.app` tiếp tục hoạt động để giữ link đã gửi; người dùng có thể cần đăng nhập lại khi đổi domain vì cookie thuộc từng domain. Đổi địa chỉ không chuyển hoặc nhân bản tài khoản, lớp và lịch sử.

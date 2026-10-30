@@ -419,15 +419,15 @@ enabled = true
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
 
-# Hosted production project (reng-cyan.vercel.app). `supabase config push` applies these
+# Hosted production project (reng-class.vercel.app). `supabase config push` applies these
 # overrides when the linked project is this ref; the local stack keeps the values above.
 # Email confirmation stays off until a custom SMTP sender (Resend) is configured.
 [remotes.production]
 project_id = "gqawttlaxibdxliaofun"
 
 [remotes.production.auth]
-site_url = "https://reng-cyan.vercel.app"
-additional_redirect_urls = ["https://reng-cyan.vercel.app/**"]
+site_url = "https://reng-class.vercel.app"
+additional_redirect_urls = ["https://reng-class.vercel.app/**", "https://reng-cyan.vercel.app/**"]
 
 [remotes.production.auth.email]
 enable_confirmations = false

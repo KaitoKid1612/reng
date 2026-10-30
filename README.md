@@ -44,7 +44,7 @@ npm run test:e2e
 
 Playwright tự chạy dev server ở 127.0.0.1:3217, dừng sau test, không tái sử dụng process khác. Next không cho hai dev server dùng chung thư mục .next, nên dừng `npm run dev` đang chạy trước khi chạy E2E. Test migration dùng PostgreSQL nhúng trong bộ nhớ với auth stub; không kết nối Supabase thật. Test audio browser dùng MP3 silence fixture và request local giả lập; test pipeline dùng adapter fake, không tiêu tốn quota TTS hoặc ghi cloud. Tránh chạy build và dev cùng lúc vì dùng chung output .next.
 
-Production local: `npm run build`, sau đó `npm start`. Bản chạy thật từ 29/10/2026: https://reng-cyan.vercel.app (Vercel Hobby, hàm chạy ở Singapore `sin1`, tự deploy mỗi lần push `main`; Supabase Free project `reng` ở Singapore). Trạng thái, giới hạn và cách cập nhật xem [kế hoạch POC](docs/poc-setup.md#production-thử-29102026). [Checklist](docs/testing/phase-1.md) ghi kết quả và giới hạn.
+Production local: `npm run build`, sau đó `npm start`. Bản chạy thật từ 29/10/2026: https://reng-class.vercel.app (Vercel Hobby, hàm chạy ở Singapore `sin1`, tự deploy mỗi lần push `main`; Supabase Free project `reng` ở Singapore). Trạng thái, giới hạn và cách cập nhật xem [kế hoạch POC](docs/poc-setup.md#production-thử-29102026). [Checklist](docs/testing/phase-1.md) ghi kết quả và giới hạn.
 
 ## Audio
 

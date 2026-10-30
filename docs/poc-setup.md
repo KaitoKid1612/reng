@@ -40,7 +40,9 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 
 ## Production thử (29/10/2026)
 
-Đã dựng để giáo viên pilot dạy thật: **https://reng-cyan.vercel.app**.
+Đã dựng để giáo viên pilot dạy thật: **https://reng-class.vercel.app**.
+
+Đổi địa chỉ chính ngày 30/10/2026 từ `reng-cyan.vercel.app` sang `reng-class.vercel.app`. Domain cũ vẫn hoạt động; production `SITE_URL` và Supabase Auth Site URL dùng domain mới, Redirect URLs giữ cả hai. Không đổi SMTP hoặc trạng thái xác nhận email khi đổi domain. Xem [kiểm chứng](testing/domain-change.md).
 
 - Vercel project `reng` (team của tài khoản `kaitokid1612`), gói **Hobby**, nối repo GitHub nên mỗi lần push `main` tự deploy production. Hàm server chạy ở `sin1` (`vercel.json`), cạnh database. Biến môi trường production: `LESSON_SOURCE=supabase`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` (lấy bằng `npx supabase projects api-keys --reveal`; không có `--reveal` CLI trả khóa bị che và mọi truy vấn báo "Invalid API key"), `SITE_URL`, `CRON_SECRET`, `EMAIL_LINK_SECRET`. Chưa đặt `EMAIL_PROVIDER` nên email nhắc bài chưa gửi.
 - Supabase project `reng` (Singapore, gói **Free**). Tài khoản Supabase hiện có đã đủ 2 project Free nên project staging của sản phẩm khác được tạm dừng theo yêu cầu của người dùng. Đã áp dụng đủ migration; cấu hình Auth production nằm trong khối `[remotes.production]` của `supabase/config.toml`, xem trước bằng `npx supabase config diff --project-ref <ref>` rồi `npx supabase config push`.

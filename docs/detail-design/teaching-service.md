@@ -199,3 +199,9 @@ Migration phải được thử trên DB trống và dữ liệu v1 đã có, ba
 - Trang CSV lọc summary Nhật trước khi tải editor v1; bài v2 dùng import bảng trong wizard. Admin approval, phạm vi chủ lớp, quyền chia sẻ và rate limit tiếp tục được kiểm tra server như trước; không thêm quyền admin để giáo viên xem dữ liệu người khác.
 
 Trường hợp dữ liệu nhiều: bộ lọc hiện xử lý danh sách đã tải, chưa phân trang phía database. Nếu thư viện tăng lớn, đo truy vấn/render rồi bổ sung phân trang/search server với cùng phạm vi quyền.
+
+## Domain production — 30/10/2026
+
+`reng-class.vercel.app` gắn trực tiếp vào project Vercel `reng`, không chỉ alias một deployment cố định. `SITE_URL` production là `https://reng-class.vercel.app`; cần deployment mới để canonical, sitemap và link email nhận giá trị mới. Supabase Auth `site_url` dùng domain mới; allowlist giữ cả `https://reng-class.vercel.app/**` và `https://reng-cyan.vercel.app/**`. Khối `[remotes.production.auth]` trong `supabase/config.toml` lưu cùng cấu hình. Local vẫn dùng loopback. Không đặt redirect bắt buộc từ domain cũ trong đợt đổi này.
+
+Đã áp dụng Auth bằng cấu hình tối thiểu chỉ khai báo hai thuộc tính URL, xem trước bằng `config diff` rồi `config push`; không đẩy mặc định local lên các thiết lập Auth/DB khác. Kết quả xem [kiểm chứng domain](../testing/domain-change.md).
