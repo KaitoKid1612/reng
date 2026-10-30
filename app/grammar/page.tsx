@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { GrammarSearch } from "@/components/lessons/grammar-search";
 import { listPublicLessons } from "@/lib/lesson-repository";
 import { isPublicTeachingLesson } from "@/lib/teaching-content";
@@ -18,5 +20,18 @@ export default async function GrammarPage() {
   const lessons = (await listPublicLessons()).filter(
     (lesson): lesson is PublicLesson => !isPublicTeachingLesson(lesson),
   );
+  if (!lessons.length) {
+    return (
+      <div className="page-heading">
+        <div>
+          <h1>Tra cứu ngữ pháp</h1>
+          <p>
+            Chưa có bài học công khai để tra cứu. Mẫu câu của lớp nằm trong từng bài ở{" "}
+            <Link href="/classes">Lớp của tôi</Link>.
+          </p>
+        </div>
+      </div>
+    );
+  }
   return <GrammarSearch lessons={lessons} />;
 }

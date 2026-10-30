@@ -64,7 +64,9 @@ export default async function LessonsPage() {
       </div>
       {lessons.length === 0 && (
         <p>
-          Chưa có bài học xuất bản. Bạn có thể bắt đầu với <Link href="/kana">bảng chữ cái</Link>.
+          Chưa có bài học công khai. Bài của lớp nằm ở <Link href="/classes">Lớp của tôi</Link>{" "}
+          (hoặc <Link href="/join-class">vào lớp bằng mã</Link> giáo viên gửi). Mới bắt đầu tiếng
+          Nhật? Học <Link href="/kana">bảng chữ cái</Link> trước.
         </p>
       )}
     </>
