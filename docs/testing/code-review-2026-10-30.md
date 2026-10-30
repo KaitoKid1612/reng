@@ -34,14 +34,24 @@ Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao ch
 | CR-24 | Thấp | Rời trình soạn bằng link trong trang không cảnh báo; nay thay đổi vẫn được giữ trên máy và khôi phục khi mở lại | Thêm cảnh báo khi điều hướng nội bộ nếu cần |
 | CR-25 | Thấp | "Áp dụng thay đổi slide" (v2) ghi đè chỉnh sửa slide làm sau khi dựng kế hoạch | Tính lại kế hoạch khi nháp đổi |
 | CR-26 | Thấp | Dán hơn 100 từ tiếng Trung vượt giới hạn nháp, sau đó không lưu được | Chặn ở bước xem trước bảng |
-| CR-27 | Thấp | Mã bài gợi ý `lesson-NN` tính theo số bài của giáo viên nên trùng giữa giáo viên | Gợi ý mã có hậu tố ngẫu nhiên |
 | CR-28 | Thấp | Câu điền tiếng Trung trong bài tiếng Nhật chấm theo luật Nhật | Gán `gradingProfile` theo kiểu nhập |
 | CR-29 | Thấp | `/reset-password` đổi được mật khẩu với bất kỳ phiên nào, không cần link khôi phục | Kiểm tra phiên đến từ link recovery |
 | CR-30 | Thấp | Yêu cầu giảng dạy đang chờ duyệt không có nút từ chối; tắt duyệt thì yêu cầu cũ kẹt | Thêm thao tác từ chối/kích hoạt |
 | CR-31 | Thấp | Ôn tập: thử lại sau khi mất phản hồi có thể báo đúng cho câu trả lời không được ghi | Khóa câu trả lời khi thử lại cùng request |
 | CR-32 | Thấp | Chuỗi ngày học chỉ đọc 400 sự kiện gần nhất nên tính thiếu khi ôn nhiều | Tính bằng truy vấn ngày riêng |
-| CR-33 | Thấp | Luyện hằng ngày bỏ qua trong im lặng khi bài mở gần nhất không có câu chọn/điền hoặc RPC lỗi | Báo cho giáo viên, thử bài trước đó |
 | CR-34 | Thấp | Email (khi bật): cron Hobby chạy lệch tới 59 phút nên nhắc hạn 24 giờ có thể bỏ sót; tối đa 50 email mỗi lần; retry có thể bị Resend trả 409 do nội dung đổi; header List-Unsubscribe chỉ nhận POST; tiêu đề "sắp đến hạn" có thể dùng cho bài đã quá hạn | Xử lý trước khi bật email cho lớp thật |
+
+## Cải tiến đợt 2 (chiều 30/10/2026)
+
+| Mã | Cải tiến | Kiểm chứng |
+| --- | --- | --- |
+| CR-33 | Luyện hằng ngày lấy bài mở gần nhất có câu chọn/điền (tối đa 20 bài) thay vì bỏ qua khi bài mới chỉ có slide; log lỗi kèm mã lớp và mã lỗi dịch vụ; câu chữ trên trang lớp và BD/DD cập nhật | Typecheck, lint; chưa chạy với Supabase local |
+| CR-27 | Mã bài gợi ý `lesson-NN-xxxxxx` không còn trùng giữa các giáo viên | Typecheck, build |
+| CR-35 | Production chưa gửi header bảo mật: thêm chống nhúng iframe, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, HSTS | Build; E2E công khai; kiểm tra header sau deploy |
+| CR-36 | `/lessons`, `/grammar` trên production trống: hướng học viên sang Lớp của tôi/Vào lớp thay vì trang trống hoặc "chưa tìm thấy mẫu" | E2E công khai |
+| CR-37 | Ô gõ cách đọc ở luyện kanji tự focus khi sang câu mới | E2E kanji |
+
+Lighthouse (mobile) trang chủ production trước đợt này: Accessibility, Best Practices, SEO đều 100.
 
 ## Luyện kanji K1 (cùng đợt)
 
