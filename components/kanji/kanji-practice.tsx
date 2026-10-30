@@ -224,6 +224,7 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
               value={answer}
               inputMode="hiragana"
               isDisabled={Boolean(feedback)}
+              autoFocus
               describedBy={inputError ? "kanji-input-error" : undefined}
               onValueChange={setAnswer}
             />

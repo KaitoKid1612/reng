@@ -17,6 +17,7 @@ interface JapaneseInputProps {
   inputMode: InputMode;
   isDisabled: boolean;
   describedBy?: string;
+  autoFocus?: boolean;
   onValueChange: (value: string) => void;
 }
 
@@ -42,6 +43,7 @@ export function JapaneseInput({
   inputMode,
   isDisabled,
   describedBy,
+  autoFocus,
   onValueChange,
 }: JapaneseInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -96,6 +98,7 @@ export function JapaneseInput({
         onChange={handleChange}
         onBlur={handleBlur}
         disabled={isDisabled}
+        autoFocus={autoFocus}
         autoComplete="off"
         autoCapitalize="none"
         autoCorrect="off"
