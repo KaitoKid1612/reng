@@ -53,6 +53,10 @@ Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao ch
 
 Lighthouse (mobile) trang chủ production trước đợt này: Accessibility, Best Practices, SEO đều 100.
 
+## Bài mẫu Minna 12 (cùng ngày)
+
+Thêm `content/starters/minna-1-12.json` và nút "Tạo bài 12 từ mẫu" ([biên soạn](../content-authoring.md)). Kiểm chứng: `tests/japanese-lessons.test.ts` chạy cùng bộ kiểm tra cho mọi bài mẫu (đủ loại slide, không có lỗi xuất bản, đáp án không dồn một vị trí, câu điền chỉ hiragana, payload công khai không lộ ghi chú/đáp án); xem trên bản local: trang đọc khổ 390px không tràn ngang, furigana dựng đúng, không còn cú pháp `{漢字|かな}` thô; chạy qua 39 slide ở 1280×720, đã tách hội thoại 8 lượt thành hai slide và bỏ cột hẹp ở bảng luyện tập 3 cho vừa khung. Nội dung là bản tự viết, cần giáo viên duyệt trước khi dạy.
+
 ## Luyện kanji K1 (cùng đợt)
 
 Theo [thiết kế luyện kanji](../basic-design/kanji-practice.md): trang `/kanji/[lessonId]`, link ở trang đọc bài và trang lớp tiếng Nhật, nút tạo câu kanji trong trình soạn.
