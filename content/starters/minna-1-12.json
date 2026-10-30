@@ -1,0 +1,1573 @@
+{
+  "id": "minna-1-12",
+  "title": "Bài 12 – Nói về chuyện đã qua và so sánh",
+  "titleJa": "第12課　どちらが すきですか",
+  "summary": "Theo trình tự bài 12 Minna no Nihongo Sơ cấp I: quá khứ của danh từ và tính từ (でした・かったです), hỏi cảm nhận (どうでしたか), so sánh hơn (より), chọn giữa hai thứ (どちら・〜の ほうが) và so sánh nhất (〜の なかで いちばん).",
+  "order": 12,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1201",
+        "jp": "ちかい",
+        "kanji": "近い",
+        "romaji": "chikai",
+        "vi": "gần",
+        "audio": null
+      },
+      {
+        "id": "v1202",
+        "jp": "とおい",
+        "kanji": "遠い",
+        "romaji": "tooi",
+        "vi": "xa",
+        "audio": null
+      },
+      {
+        "id": "v1203",
+        "jp": "はやい",
+        "kanji": "速い",
+        "romaji": "hayai",
+        "vi": "nhanh (tốc độ)",
+        "audio": null
+      },
+      {
+        "id": "v1204",
+        "jp": "おそい",
+        "kanji": "遅い",
+        "romaji": "osoi",
+        "vi": "chậm; muộn",
+        "audio": null
+      },
+      {
+        "id": "v1205",
+        "jp": "おおい",
+        "kanji": "多い",
+        "romaji": "ooi",
+        "vi": "nhiều",
+        "audio": null
+      },
+      {
+        "id": "v1206",
+        "jp": "すくない",
+        "kanji": "少ない",
+        "romaji": "sukunai",
+        "vi": "ít",
+        "audio": null
+      },
+      {
+        "id": "v1207",
+        "jp": "いい",
+        "romaji": "ii",
+        "vi": "tốt, đẹp (quá khứ: よかったです)",
+        "audio": null
+      },
+      {
+        "id": "v1208",
+        "jp": "あたたかい",
+        "kanji": "暖かい",
+        "romaji": "atatakai",
+        "vi": "ấm áp",
+        "audio": null
+      },
+      {
+        "id": "v1209",
+        "jp": "すずしい",
+        "kanji": "涼しい",
+        "romaji": "suzushii",
+        "vi": "mát mẻ",
+        "audio": null
+      },
+      {
+        "id": "v1210",
+        "jp": "あまい",
+        "kanji": "甘い",
+        "romaji": "amai",
+        "vi": "ngọt",
+        "audio": null
+      },
+      {
+        "id": "v1211",
+        "jp": "からい",
+        "kanji": "辛い",
+        "romaji": "karai",
+        "vi": "cay",
+        "audio": null
+      },
+      {
+        "id": "v1212",
+        "jp": "おもい",
+        "kanji": "重い",
+        "romaji": "omoi",
+        "vi": "nặng",
+        "audio": null
+      },
+      {
+        "id": "v1213",
+        "jp": "かるい",
+        "kanji": "軽い",
+        "romaji": "karui",
+        "vi": "nhẹ",
+        "audio": null
+      },
+      {
+        "id": "v1214",
+        "jp": "かんたん",
+        "kanji": "簡単",
+        "romaji": "kantan",
+        "vi": "đơn giản, dễ (tính từ đuôi な)",
+        "audio": null
+      },
+      {
+        "id": "v1215",
+        "jp": "たいへん",
+        "kanji": "大変",
+        "romaji": "taihen",
+        "vi": "vất vả, khó khăn (tính từ đuôi な)",
+        "audio": null
+      },
+      {
+        "id": "v1216",
+        "jp": "はる",
+        "kanji": "春",
+        "romaji": "haru",
+        "vi": "mùa xuân",
+        "audio": null
+      },
+      {
+        "id": "v1217",
+        "jp": "なつ",
+        "kanji": "夏",
+        "romaji": "natsu",
+        "vi": "mùa hè",
+        "audio": null
+      },
+      {
+        "id": "v1218",
+        "jp": "あき",
+        "kanji": "秋",
+        "romaji": "aki",
+        "vi": "mùa thu",
+        "audio": null
+      },
+      {
+        "id": "v1219",
+        "jp": "ふゆ",
+        "kanji": "冬",
+        "romaji": "fuyu",
+        "vi": "mùa đông",
+        "audio": null
+      },
+      {
+        "id": "v1220",
+        "jp": "てんき",
+        "kanji": "天気",
+        "romaji": "tenki",
+        "vi": "thời tiết",
+        "audio": null
+      },
+      {
+        "id": "v1221",
+        "jp": "あめ",
+        "kanji": "雨",
+        "romaji": "ame",
+        "vi": "mưa",
+        "audio": null
+      },
+      {
+        "id": "v1222",
+        "jp": "ゆき",
+        "kanji": "雪",
+        "romaji": "yuki",
+        "vi": "tuyết",
+        "audio": null
+      },
+      {
+        "id": "v1223",
+        "jp": "くもり",
+        "kanji": "曇り",
+        "romaji": "kumori",
+        "vi": "trời nhiều mây",
+        "audio": null
+      },
+      {
+        "id": "v1224",
+        "jp": "きせつ",
+        "kanji": "季節",
+        "romaji": "kisetsu",
+        "vi": "mùa (trong năm)",
+        "audio": null
+      },
+      {
+        "id": "v1225",
+        "jp": "ホテル",
+        "romaji": "hoteru",
+        "vi": "khách sạn",
+        "audio": null
+      },
+      {
+        "id": "v1226",
+        "jp": "くうこう",
+        "kanji": "空港",
+        "romaji": "kuukou",
+        "vi": "sân bay",
+        "audio": null
+      },
+      {
+        "id": "v1227",
+        "jp": "うみ",
+        "kanji": "海",
+        "romaji": "umi",
+        "vi": "biển",
+        "audio": null
+      },
+      {
+        "id": "v1228",
+        "jp": "せかい",
+        "kanji": "世界",
+        "romaji": "sekai",
+        "vi": "thế giới",
+        "audio": null
+      },
+      {
+        "id": "v1229",
+        "jp": "パーティー",
+        "romaji": "paatii",
+        "vi": "bữa tiệc",
+        "audio": null
+      },
+      {
+        "id": "v1230",
+        "jp": "おまつり",
+        "kanji": "お祭り",
+        "romaji": "omatsuri",
+        "vi": "lễ hội",
+        "audio": null
+      },
+      {
+        "id": "v1231",
+        "jp": "りょこう",
+        "kanji": "旅行",
+        "romaji": "ryokou",
+        "vi": "chuyến du lịch",
+        "audio": null
+      },
+      {
+        "id": "v1232",
+        "jp": "しけん",
+        "kanji": "試験",
+        "romaji": "shiken",
+        "vi": "kỳ thi, bài thi",
+        "audio": null
+      },
+      {
+        "id": "v1233",
+        "jp": "しあい",
+        "kanji": "試合",
+        "romaji": "shiai",
+        "vi": "trận đấu",
+        "audio": null
+      },
+      {
+        "id": "v1234",
+        "jp": "スポーツ",
+        "romaji": "supootsu",
+        "vi": "thể thao",
+        "audio": null
+      },
+      {
+        "id": "v1235",
+        "jp": "くだもの",
+        "kanji": "果物",
+        "romaji": "kudamono",
+        "vi": "hoa quả, trái cây",
+        "audio": null
+      },
+      {
+        "id": "v1236",
+        "jp": "すきやき",
+        "kanji": "すき焼き",
+        "romaji": "sukiyaki",
+        "vi": "lẩu sukiyaki",
+        "audio": null
+      },
+      {
+        "id": "v1237",
+        "jp": "さしみ",
+        "kanji": "刺身",
+        "romaji": "sashimi",
+        "vi": "sashimi (cá sống thái lát)",
+        "audio": null
+      },
+      {
+        "id": "v1238",
+        "jp": "すし",
+        "kanji": "寿司",
+        "romaji": "sushi",
+        "vi": "sushi",
+        "audio": null
+      },
+      {
+        "id": "v1239",
+        "jp": "てんぷら",
+        "kanji": "天ぷら",
+        "romaji": "tenpura",
+        "vi": "tempura (món chiên tẩm bột)",
+        "audio": null
+      },
+      {
+        "id": "v1240",
+        "jp": "ぎゅうにく",
+        "kanji": "牛肉",
+        "romaji": "gyuuniku",
+        "vi": "thịt bò",
+        "audio": null
+      },
+      {
+        "id": "v1241",
+        "jp": "ぶたにく",
+        "kanji": "豚肉",
+        "romaji": "butaniku",
+        "vi": "thịt lợn",
+        "audio": null
+      },
+      {
+        "id": "v1242",
+        "jp": "とりにく",
+        "kanji": "鶏肉",
+        "romaji": "toriniku",
+        "vi": "thịt gà",
+        "audio": null
+      },
+      {
+        "id": "v1243",
+        "jp": "どちら",
+        "romaji": "dochira",
+        "vi": "cái nào (trong hai thứ)",
+        "audio": null
+      },
+      {
+        "id": "v1244",
+        "jp": "どちらも",
+        "romaji": "dochira mo",
+        "vi": "cả hai",
+        "audio": null
+      },
+      {
+        "id": "v1245",
+        "jp": "いちばん",
+        "kanji": "一番",
+        "romaji": "ichiban",
+        "vi": "nhất",
+        "audio": null
+      },
+      {
+        "id": "v1246",
+        "jp": "ずっと",
+        "romaji": "zutto",
+        "vi": "(… hơn) hẳn, nhiều",
+        "audio": null
+      },
+      {
+        "id": "v1247",
+        "jp": "はじめて",
+        "kanji": "初めて",
+        "romaji": "hajimete",
+        "vi": "lần đầu tiên",
+        "audio": null
+      },
+      {
+        "id": "v1248",
+        "jp": "ただいま",
+        "romaji": "tadaima",
+        "vi": "Tôi về rồi đây (khi về đến nhà)",
+        "audio": null
+      },
+      {
+        "id": "v1249",
+        "jp": "おかえりなさい",
+        "romaji": "okaerinasai",
+        "vi": "Về rồi đấy à (đáp lại ただいま)",
+        "audio": null
+      },
+      {
+        "id": "v1250",
+        "jp": "つかれました",
+        "kanji": "疲れました",
+        "romaji": "tsukaremashita",
+        "vi": "(Tôi) mệt rồi",
+        "audio": null
+      },
+      {
+        "id": "v1251",
+        "jp": "でも",
+        "romaji": "demo",
+        "vi": "nhưng (đứng đầu câu)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1201",
+        "pattern": "N／Aな ＋ でした・じゃ ありませんでした",
+        "vi": "Quá khứ của danh từ và tính từ đuôi な",
+        "explain": "Nói về việc đã qua: です → でした, じゃ ありません → じゃ ありませんでした. Hỏi cảm nhận về việc đã qua: 〜は どうでしたか。",
+        "viMistake": "Tiếng Việt không chia thì nên người học hay giữ です khi kể chuyện hôm qua. Có きのう, {先週|せんしゅう}… thì đổi sang でした.",
+        "examples": [
+          {
+            "jp": "きのうは {雨|あめ}でした。",
+            "vi": "Hôm qua trời mưa.",
+            "audio": null
+          },
+          {
+            "jp": "{試験|しけん}は {簡単|かんたん}じゃ ありませんでした。",
+            "vi": "Bài thi đã không dễ.",
+            "audio": null
+          },
+          {
+            "jp": "{先週|せんしゅう}の パーティーは にぎやかでした。",
+            "vi": "Bữa tiệc tuần trước rất náo nhiệt.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1202",
+        "pattern": "Aい ＋ かったです・くなかったです",
+        "vi": "Quá khứ của tính từ đuôi い",
+        "explain": "Bỏ い rồi thêm かったです: {暑|あつ}い → {暑|あつ}かったです. Phủ định: bỏ い, thêm くなかったです: {寒|さむ}くなかったです. Ngoại lệ: いい → よかったです・よくなかったです.",
+        "viMistake": "Không nói {暑|あつ}いでした: tính từ đuôi い không đi với でした.",
+        "examples": [
+          {
+            "jp": "きのうは とても {暑|あつ}かったです。",
+            "vi": "Hôm qua rất nóng.",
+            "audio": null
+          },
+          {
+            "jp": "{旅行|りょこう}は {楽|たの}しかったです。",
+            "vi": "Chuyến du lịch đã rất vui.",
+            "audio": null
+          },
+          {
+            "jp": "{試合|しあい}は あまり よくなかったです。",
+            "vi": "Trận đấu không hay lắm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1203",
+        "pattern": "N1は N2より Adj です",
+        "vi": "So sánh hơn: N1 … hơn N2",
+        "explain": "より đi sau vật đem ra so sánh. Muốn nói “hơn hẳn” thì thêm ずっと trước tính từ: ずっと {速|はや}いです.",
+        "viMistake": "Trật tự khác tiếng Việt: “Hà Nội lạnh hơn Đà Nẵng” là ハノイは ダナンより {寒|さむ}いです; không thêm từ nào sau tính từ.",
+        "examples": [
+          {
+            "jp": "{飛行機|ひこうき}は {電車|でんしゃ}より {速|はや}いです。",
+            "vi": "Máy bay nhanh hơn tàu điện.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイは ホーチミンより {寒|さむ}いです。",
+            "vi": "Hà Nội lạnh hơn Thành phố Hồ Chí Minh.",
+            "audio": null
+          },
+          {
+            "jp": "この かばんは あの かばんより ずっと {軽|かる}いです。",
+            "vi": "Cái cặp này nhẹ hơn hẳn cái cặp kia.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1204",
+        "pattern": "N1と N2と どちらが Adj ですか",
+        "vi": "Hỏi chọn giữa hai thứ",
+        "explain": "Trả lời: N の ほうが Adj です (N … hơn). Nếu hai thứ như nhau: どちらも Adj です. Chọn giữa hai thứ thì hỏi bằng どちら.",
+        "viMistake": "Trả lời bằng 〜の ほうが: {紅茶|こうちゃ}の ほうが {好|す}きです. Không nói {紅茶|こうちゃ}が より {好|す}きです.",
+        "examples": [
+          {
+            "jp": "コーヒーと {紅茶|こうちゃ}と どちらが {好|す}きですか。",
+            "vi": "Cà phê và hồng trà, bạn thích cái nào hơn?",
+            "audio": null
+          },
+          {
+            "jp": "{紅茶|こうちゃ}の ほうが {好|す}きです。",
+            "vi": "Tôi thích hồng trà hơn.",
+            "audio": null
+          },
+          {
+            "jp": "どちらも {好|す}きです。",
+            "vi": "Tôi thích cả hai.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1205",
+        "pattern": "N［の なか］で 何／どこ／だれ／いつ が いちばん Adj ですか",
+        "vi": "So sánh nhất trong một nhóm",
+        "explain": "〜の なかで (trong số …) hoặc 〜で đặt phạm vi so sánh; いちばん là “nhất”. Từ để hỏi theo nhóm: {何|なに} (đồ vật, món ăn), どこ (nơi chốn), だれ (người), いつ (thời gian). Trả lời: N が いちばん Adj です。",
+        "viMistake": "Câu trả lời dùng が: すしが いちばん {好|す}きです, vì đó là thông tin mới đang được hỏi.",
+        "examples": [
+          {
+            "jp": "{日本料理|にほんりょうり}の {中|なか}で {何|なに}が いちばん {好|す}きですか。",
+            "vi": "Trong các món Nhật, bạn thích món nào nhất?",
+            "audio": null
+          },
+          {
+            "jp": "ベトナムで どこが いちばん {有名|ゆうめい}ですか。",
+            "vi": "Ở Việt Nam, nơi nào nổi tiếng nhất?",
+            "audio": null
+          },
+          {
+            "jp": "{家族|かぞく}で だれが いちばん {料理|りょうり}が {上手|じょうず}ですか。",
+            "vi": "Trong gia đình, ai nấu ăn giỏi nhất?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1201",
+        "teacherNotes": "Khởi động 3 phút: hỏi bằng tiếng Việt “cuối tuần của em thế nào?”, “cà phê hay trà, em thích cái nào hơn?”. Bài đi theo trình tự bài 12 Minna no Nihongo Sơ cấp I; nhắc học viên mở sách để đối chiếu từ vựng và phần luyện tập.",
+        "type": "title",
+        "jp": "{第|だい}12{課|か}",
+        "vi": "Nói về chuyện đã qua và so sánh"
+      },
+      {
+        "id": "s1202",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Kể chuyện đã qua: {雨|あめ}でした・{暑|あつ}かったです\n2. Hỏi cảm nhận: 〜は どうでしたか\n3. So sánh hai thứ: より, どちら, 〜の ほうが\n4. So sánh nhất: 〜の なかで いちばん"
+      },
+      {
+        "id": "s1203",
+        "teacherNotes": "Dạy theo cặp trái nghĩa: ちかい⇔とおい, はやい⇔おそい, おおい⇔すくない. いい có quá khứ đặc biệt: よかったです.",
+        "type": "vocab",
+        "refs": ["v1201", "v1202", "v1203", "v1204", "v1205", "v1206", "v1207"]
+      },
+      {
+        "id": "s1204",
+        "teacherNotes": "あたたかい⇔すずしい (thời tiết), あまい⇔からい (vị), おもい⇔かるい. かんたん, たいへん là tính từ đuôi な nên quá khứ dùng でした.",
+        "type": "vocab",
+        "refs": ["v1208", "v1209", "v1210", "v1211", "v1212", "v1213", "v1214", "v1215"]
+      },
+      {
+        "id": "s1205",
+        "teacherNotes": "Hỏi nhanh: ハノイの ふゆは さむいですか。Thời tiết hôm nay: あめ／くもり／いい てんき.",
+        "type": "vocab",
+        "refs": ["v1216", "v1217", "v1218", "v1219", "v1220", "v1221", "v1222", "v1223"]
+      },
+      {
+        "id": "s1206",
+        "teacherNotes": "りょこう, パーティー, おまつり sẽ dùng để hỏi 〜は どうでしたか ở phần sau.",
+        "type": "vocab",
+        "refs": ["v1224", "v1225", "v1226", "v1227", "v1228", "v1229", "v1230", "v1231"]
+      },
+      {
+        "id": "s1207",
+        "teacherNotes": "Hỏi học viên đã ăn món Nhật nào; món ăn lần đầu thì nói はじめてです.",
+        "type": "vocab",
+        "refs": ["v1232", "v1233", "v1234", "v1235", "v1236", "v1237", "v1238", "v1239"]
+      },
+      {
+        "id": "s1208",
+        "teacherNotes": "どちら dùng khi chọn giữa hai thứ; いちばん dùng khi so sánh trong một nhóm từ ba thứ trở lên.",
+        "type": "vocab",
+        "refs": ["v1240", "v1241", "v1242", "v1243", "v1244", "v1245", "v1246", "v1247"]
+      },
+      {
+        "id": "s1209",
+        "teacherNotes": "Đóng vai: một người đi học về nói ただいま, người ở nhà đáp おかえりなさい.",
+        "type": "vocab",
+        "refs": ["v1248", "v1249", "v1250", "v1251"]
+      },
+      {
+        "id": "s1210",
+        "teacherNotes": "Che hai cột quá khứ rồi cho học viên chia. Nhấn mạnh hàng いい → よかったです.",
+        "type": "table",
+        "title": "Bảng chia quá khứ",
+        "columns": ["Loại", "Hiện tại", "Quá khứ", "Quá khứ phủ định"],
+        "rows": [
+          ["Danh từ", "{雨|あめ}です", "{雨|あめ}でした", "{雨|あめ}じゃ ありませんでした"],
+          [
+            "Tính từ đuôi な",
+            "{簡単|かんたん}です",
+            "{簡単|かんたん}でした",
+            "{簡単|かんたん}じゃ ありませんでした"
+          ],
+          ["Tính từ đuôi い", "{暑|あつ}いです", "{暑|あつ}かったです", "{暑|あつ}くなかったです"],
+          ["いい (ngoại lệ)", "いいです", "よかったです", "よくなかったです"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s1211",
+        "teacherNotes": "Chỉ lên lịch: hôm nay です, hôm qua でした.",
+        "type": "grammar",
+        "ref": "g1201"
+      },
+      {
+        "id": "s1212",
+        "type": "example",
+        "ref": "g1201",
+        "reveal": true
+      },
+      {
+        "id": "s1213",
+        "teacherNotes": "Viết lên bảng: {暑|あつ}い → bỏ い → {暑|あつ}かったです. Hỏi lại: {寒|さむ}い? {楽|たの}しい?",
+        "type": "grammar",
+        "ref": "g1202"
+      },
+      {
+        "id": "s1214",
+        "type": "example",
+        "ref": "g1202",
+        "reveal": true
+      },
+      {
+        "id": "s1215",
+        "teacherNotes": "（−）là câu phủ định. Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: hôm qua thế nào?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["きのう・{雨|あめ}", "きのうは {雨|あめ}でした。"],
+          [
+            "{試験|しけん}・{簡単|かんたん}（−）",
+            "{試験|しけん}は {簡単|かんたん}じゃ ありませんでした。"
+          ],
+          ["{旅行|りょこう}・{楽|たの}しい", "{旅行|りょこう}は {楽|たの}しかったです。"],
+          ["{先週|せんしゅう}・{涼|すず}しい", "{先週|せんしゅう}は {涼|すず}しかったです。"],
+          ["{試合|しあい}・いい（−）", "{試合|しあい}は よくなかったです。"],
+          ["パーティー・にぎやか", "パーティーは にぎやかでした。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1216",
+        "type": "quiz",
+        "ref": "q1201"
+      },
+      {
+        "id": "s1217",
+        "type": "quiz",
+        "ref": "q1205"
+      },
+      {
+        "id": "s1218",
+        "type": "quiz",
+        "ref": "q1211"
+      },
+      {
+        "id": "s1219",
+        "teacherNotes": "Đặt hai đồ vật thật lên bàn (hai cái cặp, hai quyển sách) để so sánh nặng/nhẹ.",
+        "type": "grammar",
+        "ref": "g1203"
+      },
+      {
+        "id": "s1220",
+        "type": "example",
+        "ref": "g1203",
+        "reveal": true
+      },
+      {
+        "id": "s1221",
+        "teacherNotes": "Hỏi lần lượt từng học viên một cặp lựa chọn; ai thích cả hai thì trả lời どちらも.",
+        "type": "grammar",
+        "ref": "g1204"
+      },
+      {
+        "id": "s1222",
+        "type": "example",
+        "ref": "g1204",
+        "reveal": true
+      },
+      {
+        "id": "s1223",
+        "teacherNotes": "Dòng có → là câu trả lời cho câu hỏi ngay phía trên.",
+        "type": "table",
+        "title": "Luyện tập 2: so sánh hai thứ",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{飛行機|ひこうき}・{電車|でんしゃ}・{速|はや}い",
+            "{飛行機|ひこうき}は {電車|でんしゃ}より {速|はや}いです。"
+          ],
+          ["ハノイ・ダナン・{寒|さむ}い", "ハノイは ダナンより {寒|さむ}いです。"],
+          [
+            "この かばん・あの かばん・{軽|かる}い",
+            "この かばんは あの かばんより {軽|かる}いです。"
+          ],
+          [
+            "{春|はる}・{秋|あき}・{好|す}き（hỏi）",
+            "{春|はる}と {秋|あき}と どちらが {好|す}きですか。"
+          ],
+          ["→ {秋|あき}", "{秋|あき}の ほうが {好|す}きです。"],
+          [
+            "{牛肉|ぎゅうにく}・{豚肉|ぶたにく}・{高|たか}い（hỏi）",
+            "{牛肉|ぎゅうにく}と {豚肉|ぶたにく}と どちらが {高|たか}いですか。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1224",
+        "type": "quiz",
+        "ref": "q1215"
+      },
+      {
+        "id": "s1225",
+        "type": "quiz",
+        "ref": "q1218"
+      },
+      {
+        "id": "s1226",
+        "teacherNotes": "Phân biệt: hai thứ → どちら; từ ba thứ trở lên hoặc cả nhóm → いちばん.",
+        "type": "grammar",
+        "ref": "g1205"
+      },
+      {
+        "id": "s1227",
+        "type": "example",
+        "ref": "g1205",
+        "reveal": true
+      },
+      {
+        "id": "s1228",
+        "teacherNotes": "Học viên trả lời bằng thông tin thật của mình; câu mẫu chỉ để tham khảo.",
+        "type": "table",
+        "title": "Luyện tập 3: … nhất",
+        "columns": ["Câu hỏi", "Trả lời mẫu"],
+        "rows": [
+          [
+            "{果物|くだもの}の {中|なか}で {何|なに}が いちばん {好|す}きですか。",
+            "マンゴーが いちばん {好|す}きです。"
+          ],
+          [
+            "{一年|いちねん}で いつが いちばん {好|す}きですか。",
+            "{秋|あき}が いちばん {好|す}きです。"
+          ],
+          [
+            "ベトナムで どこが いちばん {有名|ゆうめい}ですか。",
+            "ハロン{湾|わん}が いちばん {有名|ゆうめい}です。"
+          ],
+          [
+            "{家族|かぞく}で だれが いちばん {料理|りょうり}が {上手|じょうず}ですか。",
+            "{母|はは}が いちばん {上手|じょうず}です。"
+          ],
+          [
+            "スポーツで {何|なに}が いちばん おもしろいですか。",
+            "サッカーが いちばん おもしろいです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1229",
+        "type": "quiz",
+        "ref": "q1224"
+      },
+      {
+        "id": "s1230",
+        "type": "quiz",
+        "ref": "q1228"
+      },
+      {
+        "id": "s1231",
+        "teacherNotes": "Cho từng cặp đổi vai, thay ダラット bằng nơi mình đã đi.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Chuyến du lịch thế nào? (1/2)",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ナムさん、{先週|せんしゅう}の {旅行|りょこう}は どうでしたか。",
+            "vi": "Nam, chuyến du lịch tuần trước thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "とても {楽|たの}しかったです。",
+            "vi": "Rất vui ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ダラットは {寒|さむ}かったですか。",
+            "vi": "Đà Lạt có lạnh không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいえ、あまり {寒|さむ}くなかったです。{涼|すず}しかったです。",
+            "vi": "Không lạnh lắm ạ. Trời mát mẻ."
+          }
+        ]
+      },
+      {
+        "id": "s1232",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Chuyến du lịch thế nào? (2/2)",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "{天気|てんき}は よかったですか。",
+            "vi": "Thời tiết có đẹp không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{土曜日|どようび}は {雨|あめ}でした。でも、{日曜日|にちようび}は いい {天気|てんき}でした。",
+            "vi": "Thứ Bảy trời mưa. Nhưng Chủ nhật trời đẹp ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ホテルは どうでしたか。",
+            "vi": "Khách sạn thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{小|ちい}さかったですが、きれいでした。",
+            "vi": "Nhỏ nhưng sạch sẽ ạ."
+          }
+        ]
+      },
+      {
+        "id": "s1233",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Bạn thích mùa nào nhất?",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "リンさん、{夏|なつ}と {冬|ふゆ}と どちらが {好|す}きですか。",
+            "vi": "Linh, mùa hè và mùa đông, bạn thích mùa nào hơn?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{冬|ふゆ}の ほうが {好|す}きです。{夏|なつ}は {暑|あつ}いですから。",
+            "vi": "Mình thích mùa đông hơn. Vì mùa hè nóng."
+          },
+          {
+            "speaker": "アン",
+            "jp": "じゃ、{一年|いちねん}で いつが いちばん {好|す}きですか。",
+            "vi": "Vậy trong một năm, bạn thích lúc nào nhất?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{秋|あき}が いちばん {好|す}きです。{涼|すず}しいですから。アンさんは？",
+            "vi": "Mình thích mùa thu nhất. Vì trời mát. Còn An?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "わたしは {春|はる}が いちばん {好|す}きです。",
+            "vi": "Mình thích mùa xuân nhất."
+          },
+          {
+            "speaker": "リン",
+            "jp": "そうですか。{日本|にほん}の {春|はる}も きれいですね。",
+            "vi": "Vậy à. Mùa xuân ở Nhật cũng đẹp nhỉ."
+          }
+        ]
+      },
+      {
+        "id": "s1234",
+        "teacherNotes": "Đóng vai ở nhà hàng; thay món ăn bằng món Việt (フォー, バインミー).",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Món nào ngon hơn?",
+        "lines": [
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "いらっしゃいませ。",
+            "vi": "Xin mời quý khách."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "すき{焼|や}きと てんぷらと どちらが おいしいですか。",
+            "vi": "Sukiyaki và tempura, món nào ngon hơn ạ?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "どちらも おいしいですよ。",
+            "vi": "Cả hai đều ngon ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "この {店|みせ}で {何|なに}が いちばん {有名|ゆうめい}ですか。",
+            "vi": "Ở quán này, món nào nổi tiếng nhất ạ?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "てんぷらが いちばん {有名|ゆうめい}です。",
+            "vi": "Tempura nổi tiếng nhất ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、てんぷらを ください。",
+            "vi": "Vậy cho tôi tempura."
+          }
+        ]
+      },
+      {
+        "id": "s1235",
+        "teacherNotes": "Luyện chào khi về nhà; hỏi học viên món nào mình ăn lần đầu (はじめて).",
+        "type": "dialogue",
+        "title": "Hội thoại 4: Về đến nhà",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ただいま。",
+            "vi": "Con về rồi đây."
+          },
+          {
+            "speaker": "{お母|おかあ}さん",
+            "jp": "おかえりなさい。{試験|しけん}は どうでしたか。",
+            "vi": "Con về rồi à. Bài thi thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "あまり {簡単|かんたん}じゃ ありませんでした。{疲|つか}れました。",
+            "vi": "Không dễ lắm ạ. Con mệt quá."
+          },
+          {
+            "speaker": "{お母|おかあ}さん",
+            "jp": "そうですか。{晩|ばん}ごはんは すき{焼|や}きですよ。",
+            "vi": "Vậy à. Tối nay ăn sukiyaki đấy."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わあ、すき{焼|や}きは はじめてです。",
+            "vi": "Ôi, lần đầu tiên con được ăn sukiyaki."
+          }
+        ]
+      },
+      {
+        "id": "s1236",
+        "teacherNotes": "Học viên hỏi nhau theo cặp; câu trả lời dùng thông tin thật của mình.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["きのうは {暑|あつ}かったですか。", "いいえ、あまり {暑|あつ}くなかったです。"],
+          ["{週末|しゅうまつ}は どうでしたか。", "とても {楽|たの}しかったです。"],
+          [
+            "バスと {電車|でんしゃ}と どちらが {速|はや}いですか。",
+            "{電車|でんしゃ}の ほうが {速|はや}いです。"
+          ],
+          [
+            "{日本料理|にほんりょうり}で {何|なに}が いちばん {好|す}きですか。",
+            "すしが いちばん {好|す}きです。"
+          ],
+          [
+            "クラスで だれが いちばん {日本語|にほんご}が {上手|じょうず}ですか。",
+            "ランさんが いちばん {上手|じょうず}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1237",
+        "type": "quiz",
+        "ref": "q1250"
+      },
+      {
+        "id": "s1238",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Danh từ, tính từ đuôi な: でした／じゃ ありませんでした\n• Tính từ đuôi い: 〜かったです／〜くなかったです; いい → よかったです\n• So sánh hơn: N1は N2より Adj です; hơn hẳn: ずっと\n• Hai thứ: N1と N2と どちらが Adj ですか → N の ほうが Adj です／どちらも\n• Nhất: N の なかで 何／どこ／だれ／いつ が いちばん Adj ですか"
+      },
+      {
+        "id": "s1239",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và luyện kanji của bài.\n2. Viết 3 câu kể về cuối tuần vừa rồi bằng 〜でした／〜かったです.\n3. So sánh hai thành phố hoặc hai món ăn bằng より và どちら.\n4. Đối chiếu phần luyện tập bài 12 trong sách Minna no Nihongo của bạn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1201",
+        "prompt": "きのうは あめ（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Chuyện hôm qua dùng quá khứ: danh từ + でした.",
+        "type": "choice",
+        "options": ["です", "でした", "かったです", "じゃ ありません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1202",
+        "prompt": "しけんは かんたん（　　）。(đã không dễ)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "かんたん là tính từ đuôi な: quá khứ phủ định là じゃ ありませんでした.",
+        "type": "choice",
+        "options": ["じゃ ありませんでした", "くなかったです", "でした", "じゃ ありません"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1203",
+        "prompt": "Điền dạng quá khứ: パーティーは にぎやか（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "にぎやか là tính từ đuôi な: にぎやかでした.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["でした"]
+      },
+      {
+        "id": "q1204",
+        "prompt": "Điền dạng quá khứ phủ định: きのうは やすみ（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Danh từ: じゃ ありませんでした (trang trọng hơn: では ありませんでした).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じゃありませんでした", "ではありませんでした"]
+      },
+      {
+        "id": "q1205",
+        "prompt": "きのうは とても さむ（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Tính từ đuôi い: bỏ い + かったです → さむかったです. Không nói さむいでした.",
+        "type": "choice",
+        "options": ["いでした", "かったです", "でした", "くないです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1206",
+        "prompt": "Chia quá khứ: あつい → （　　）です",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "あつい → bỏ い + かったです: あつかったです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あつかった", "あつかったです"]
+      },
+      {
+        "id": "q1207",
+        "prompt": "Chia quá khứ: たのしい → （　　）です",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "たのしい → たのしかったです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たのしかった", "たのしかったです"]
+      },
+      {
+        "id": "q1208",
+        "prompt": "Chia quá khứ phủ định: さむい → （　　）です",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Bỏ い + くなかったです: さむくなかったです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さむくなかった", "さむくなかったです"]
+      },
+      {
+        "id": "q1209",
+        "prompt": "Chia quá khứ: いい → （　　）です",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "いい là ngoại lệ: よかったです, không nói いかったです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よかった", "よかったです"]
+      },
+      {
+        "id": "q1210",
+        "prompt": "りょこうは どうでしたか。…とても（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Hỏi chuyện đã qua thì trả lời bằng quá khứ: たのしかったです.",
+        "type": "choice",
+        "options": ["たのしいでした", "たのしくないです", "たのしかったです", "たのしいです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1211",
+        "prompt": "しあいは あまり（　　）。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "あまり đi với phủ định; いい → よくなかったです.",
+        "type": "choice",
+        "options": ["よかったです", "いくなかったです", "いいでした", "よくなかったです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1212",
+        "prompt": "Chia quá khứ phủ định: いい → （　　）です",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "いい → よくなかったです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よくなかった", "よくなかったです"]
+      },
+      {
+        "id": "q1213",
+        "prompt": "Câu nào đúng? (Hôm qua trời mát.)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "すずしい là tính từ đuôi い: すずしかったです.",
+        "type": "choice",
+        "options": [
+          "きのうは すずしいでした。",
+          "きのうは すずしかったです。",
+          "きのうは すずしでした。",
+          "きのうは すずしいかったです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1214",
+        "prompt": "せんしゅうの しけんは（　　）。(đã vất vả)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "たいへん là tính từ đuôi な: たいへんでした.",
+        "type": "choice",
+        "options": [
+          "たいへんかったです",
+          "たいへんいでした",
+          "たいへんでした",
+          "たいへんくなかったです"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1215",
+        "prompt": "ひこうきは でんしゃ（　　）はやいです。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "N1は N2より Adj: より đi sau vật đem ra so sánh.",
+        "type": "choice",
+        "options": ["より", "ほう", "が", "で"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1216",
+        "prompt": "Câu nào nghĩa là “Hà Nội lạnh hơn Đà Nẵng”?",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Chủ thể (ハノイ) đứng với は, vật đem ra so sánh (ダナン) đứng với より.",
+        "type": "choice",
+        "options": [
+          "ダナンは ハノイより さむいです。",
+          "ハノイより ダナンは さむいです。",
+          "ハノイは ダナンの ほうが さむいです。",
+          "ハノイは ダナンより さむいです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1217",
+        "prompt": "コーヒーと こうちゃと（　　）が すきですか。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Chọn giữa hai thứ thì hỏi bằng どちら.",
+        "type": "choice",
+        "options": ["なに", "どれ", "どちら", "どこ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1218",
+        "prompt": "…こうちゃ（　　）ほうが すきです。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Trả lời: N の ほうが Adj です.",
+        "type": "choice",
+        "options": ["が", "の", "は", "より"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1219",
+        "prompt": "なつと ふゆと どちらが すきですか。(thích cả hai)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Thích cả hai: どちらも すきです.",
+        "type": "choice",
+        "options": [
+          "どちらが すきです。",
+          "どちらも すきです。",
+          "どちらでも すきです。",
+          "どちらの すきです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1220",
+        "prompt": "Điền một từ: この かばんは あの かばんより（　　）かるいです。(nhẹ hơn hẳn)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "ずっと + Adj: hơn hẳn.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ずっと"]
+      },
+      {
+        "id": "q1221",
+        "prompt": "「ずっと はやいです」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Trong câu so sánh, ずっと nghĩa là “hơn hẳn”.",
+        "type": "choice",
+        "options": ["luôn luôn nhanh", "nhanh hơn hẳn", "nhanh nhất", "hơi nhanh"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1222",
+        "prompt": "ぎゅうにくと ぶたにくと どちらが たかいですか。…（　　）の ほうが たかいです。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Trả lời bằng chính thứ được chọn: ぎゅうにくの ほうが たかいです.",
+        "type": "choice",
+        "options": ["どちら", "より", "ぎゅうにく", "いちばん"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1223",
+        "prompt": "くだもの（　　）なかで なにが いちばん すきですか。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "N の なかで: trong số N.",
+        "type": "choice",
+        "options": ["が", "の", "に", "を"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1224",
+        "prompt": "1ねん（　　）いつが いちばん さむいですか。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Phạm vi so sánh đi với で: 1ねんで.",
+        "type": "choice",
+        "options": ["で", "に", "が", "は"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1225",
+        "prompt": "ベトナムで（　　）が いちばん ゆうめいですか。(nơi nào)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Hỏi nơi chốn: どこ.",
+        "type": "choice",
+        "options": ["なに", "だれ", "どこ", "いつ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1226",
+        "prompt": "かぞくで（　　）が いちばん りょうりが じょうずですか。",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Hỏi người: だれ.",
+        "type": "choice",
+        "options": ["だれ", "どこ", "なに", "いつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1227",
+        "prompt": "…すしが（　　）すきです。(thích nhất)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Nhất: いちばん.",
+        "type": "choice",
+        "options": ["ずっと", "どちらも", "より", "いちばん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1228",
+        "prompt": "Trả lời câu 「にほんりょうりの なかで なにが いちばん すきですか。」",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Thông tin mới đang được hỏi đi với が: すしが いちばん すきです.",
+        "type": "choice",
+        "options": [
+          "すしは いちばん すきです。",
+          "すしが いちばん すきです。",
+          "すしの ほうが すきです。",
+          "すしより すきです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1229",
+        "prompt": "Viết cách đọc bằng hiragana: 近い",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1201"],
+        "explain": "近い đọc là ちかい: gần.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ちかい"]
+      },
+      {
+        "id": "q1230",
+        "prompt": "Viết cách đọc bằng hiragana: 遠い",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1202"],
+        "explain": "遠い đọc là とおい (âm dài viết お): xa.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["とおい"]
+      },
+      {
+        "id": "q1231",
+        "prompt": "Viết cách đọc bằng hiragana: 多い",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1205"],
+        "explain": "多い đọc là おおい (âm dài viết お): nhiều.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おおい"]
+      },
+      {
+        "id": "q1232",
+        "prompt": "Viết cách đọc bằng hiragana: 少ない",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1206"],
+        "explain": "少ない đọc là すくない: ít.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["すくない"]
+      },
+      {
+        "id": "q1233",
+        "prompt": "Viết cách đọc bằng hiragana: 暖かい",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1208"],
+        "explain": "暖かい đọc là あたたかい: ấm áp.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あたたかい"]
+      },
+      {
+        "id": "q1234",
+        "prompt": "Viết cách đọc bằng hiragana: 涼しい",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1209"],
+        "explain": "涼しい đọc là すずしい: mát mẻ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["すずしい"]
+      },
+      {
+        "id": "q1235",
+        "prompt": "Viết cách đọc bằng hiragana: 天気",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1220"],
+        "explain": "天気 đọc là てんき: thời tiết.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["てんき"]
+      },
+      {
+        "id": "q1236",
+        "prompt": "Viết cách đọc bằng hiragana: 季節",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1224"],
+        "explain": "季節 đọc là きせつ: mùa (trong năm).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きせつ"]
+      },
+      {
+        "id": "q1237",
+        "prompt": "Viết cách đọc bằng hiragana: 空港",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1226"],
+        "explain": "空港 đọc là くうこう: sân bay.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くうこう"]
+      },
+      {
+        "id": "q1238",
+        "prompt": "Viết cách đọc bằng hiragana: 一番",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1245"],
+        "explain": "一番 đọc là いちばん: nhất.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いちばん"]
+      },
+      {
+        "id": "q1239",
+        "prompt": "「からい」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "からい: cay. あまい: ngọt.",
+        "type": "choice",
+        "options": ["ngọt", "cay", "nặng", "mát"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1240",
+        "prompt": "「おもい」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "おもい: nặng. かるい: nhẹ.",
+        "type": "choice",
+        "options": ["nhẹ", "xa", "nặng", "nhiều"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1241",
+        "prompt": "Trái nghĩa với 「ちかい」 là:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "ちかい (gần) ⇔ とおい (xa).",
+        "type": "choice",
+        "options": ["とおい", "おそい", "すくない", "かるい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1242",
+        "prompt": "Trái nghĩa với 「おおい」 là:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "おおい (nhiều) ⇔ すくない (ít).",
+        "type": "choice",
+        "options": ["おもい", "すくない", "とおい", "からい"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1243",
+        "prompt": "Mùa thu là:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "はる xuân, なつ hè, あき thu, ふゆ đông.",
+        "type": "choice",
+        "options": ["はる", "なつ", "あき", "ふゆ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1244",
+        "prompt": "Về đến nhà, bạn nói:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Người về nhà nói ただいま; người ở nhà đáp おかえりなさい.",
+        "type": "choice",
+        "options": ["おかえりなさい", "ただいま", "いってきます", "いらっしゃいませ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1245",
+        "prompt": "Người ở nhà đáp lại 「ただいま」 bằng:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "ただいま → おかえりなさい.",
+        "type": "choice",
+        "options": ["おやすみなさい", "ただいま", "おかえりなさい", "いただきます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1246",
+        "prompt": "Viết cách đọc bằng hiragana: 初めて",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1247"],
+        "explain": "初めて đọc là はじめて: lần đầu tiên.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はじめて"]
+      },
+      {
+        "id": "q1247",
+        "prompt": "Viết cách đọc bằng hiragana: 雪",
+        "points": 1,
+        "tags": ["minna-12", "kanji", "kanji:v1222"],
+        "explain": "雪 đọc là ゆき: tuyết.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ゆき"]
+      },
+      {
+        "id": "q1248",
+        "prompt": "「どちらも」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "どちらも: cả hai.",
+        "type": "choice",
+        "options": ["cái nào", "nhất", "hơn hẳn", "cả hai"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1249",
+        "prompt": "Câu nào đúng? (Tempura không cay.)",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Ôn bài 8: phủ định tính từ đuôi い là bỏ い + くないです.",
+        "type": "choice",
+        "options": [
+          "てんぷらは からくないです。",
+          "てんぷらは からいじゃ ありません。",
+          "てんぷらは からくじゃ ありません。",
+          "てんぷらは からないです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1250",
+        "prompt": "「てんきは どうでしたか。」 — câu trả lời phù hợp:",
+        "points": 1,
+        "tags": ["minna-12"],
+        "explain": "Hỏi bằng quá khứ thì trả lời bằng quá khứ: いい てんきでした.",
+        "type": "choice",
+        "options": [
+          "いい てんきです。",
+          "いい てんきかったです。",
+          "いい てんきでした。",
+          "いいでした。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

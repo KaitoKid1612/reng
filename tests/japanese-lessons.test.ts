@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import rawStarter from "../content/starters/minna-1-11.json";
+import rawStarter12 from "../content/starters/minna-1-12.json";
 import rawDraft from "../content/lessons/lesson-01.json";
 import { audioHash, canonicalAudio } from "../lib/audio-config";
 import {
@@ -141,43 +142,51 @@ test("dialogue and table slides explain what is missing before publishing", () =
   assert.equal(lessonContentSchema.safeParse(ragged).success, false);
 });
 
-test("the Minna lesson 11 starter is a complete original lesson a teacher can publish as is", () => {
-  const starter = findStarterLesson("minna-1-11");
-  assert.ok(starter);
-  assert.equal(STARTER_LESSONS.length, 1);
-  assert.deepEqual(starter.draft, lessonDraftSchema.parse(rawStarter));
-  const { content } = starter.draft;
-  assert.equal(starter.draft.courseId, "minna-1");
-  assert.equal(starter.draft.order, 11);
-  const draft = toDraftState(starter.draft);
-  assert.deepEqual(findPublishProblems(draft), []);
-  assert.deepEqual(toPublishableContent(draft.content), content);
-  for (const type of ["vocab", "table", "grammar", "example", "dialogue", "quiz", "note"]) {
-    assert.ok(
-      content.slides.some((slide) => slide.type === type),
-      `missing a ${type} slide`,
-    );
-  }
-  // Options keep their authored order on screen, so answers must not sit in one position.
-  const positions = content.questions.flatMap((question) =>
-    question.type === "choice" ? question.answer : [],
+test("the Minna lesson 11 and 12 starters are registered in lesson order", () => {
+  assert.deepEqual(
+    STARTER_LESSONS.map((starter) => [starter.id, starter.draft.courseId, starter.draft.order]),
+    [
+      ["minna-1-11", "minna-1", 11],
+      ["minna-1-12", "minna-1", 12],
+    ],
   );
-  assert.ok(new Set(positions).size > 2);
-  for (const question of content.questions) {
-    if (question.type === "fill") {
-      assert.equal(question.inputMode, "hiragana");
-      assert.ok(question.answer.every((answer) => /^[\p{Script=Hiragana}ー]+$/u.test(answer)));
-    }
-  }
-  const serialized = JSON.stringify(
-    toPublicLesson({
-      ...starter.draft,
-      id: "6f4c2f9a-3f61-4c56-9d0f-2b8f3a6a9e11",
-      lessonId: "minna-1-11",
-      versionNo: 1,
-      publishedAt: "2026-10-29T00:00:00.000Z",
-    }),
-  );
-  assert.equal(serialized.includes("teacherNotes"), false);
-  assert.equal(serialized.includes('"answer"'), false);
+  assert.deepEqual(findStarterLesson("minna-1-11")?.draft, lessonDraftSchema.parse(rawStarter));
+  assert.deepEqual(findStarterLesson("minna-1-12")?.draft, lessonDraftSchema.parse(rawStarter12));
 });
+
+for (const starter of STARTER_LESSONS) {
+  test(`the ${starter.id} starter is a complete original lesson a teacher can publish as is`, () => {
+    const { content } = starter.draft;
+    const draft = toDraftState(starter.draft);
+    assert.deepEqual(findPublishProblems(draft), []);
+    assert.deepEqual(toPublishableContent(draft.content), content);
+    for (const type of ["vocab", "table", "grammar", "example", "dialogue", "quiz", "note"]) {
+      assert.ok(
+        content.slides.some((slide) => slide.type === type),
+        `missing a ${type} slide`,
+      );
+    }
+    // Options keep their authored order on screen, so answers must not sit in one position.
+    const positions = content.questions.flatMap((question) =>
+      question.type === "choice" ? question.answer : [],
+    );
+    assert.ok(new Set(positions).size > 2);
+    for (const question of content.questions) {
+      if (question.type === "fill") {
+        assert.equal(question.inputMode, "hiragana");
+        assert.ok(question.answer.every((answer) => /^[\p{Script=Hiragana}ー]+$/u.test(answer)));
+      }
+    }
+    const serialized = JSON.stringify(
+      toPublicLesson({
+        ...starter.draft,
+        id: "6f4c2f9a-3f61-4c56-9d0f-2b8f3a6a9e11",
+        lessonId: starter.id,
+        versionNo: 1,
+        publishedAt: "2026-10-29T00:00:00.000Z",
+      }),
+    );
+    assert.equal(serialized.includes("teacherNotes"), false);
+    assert.equal(serialized.includes('"answer"'), false);
+  });
+}

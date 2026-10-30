@@ -33,7 +33,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-lesson",
     title: "Tạo bài học",
     steps: [
-      "Vào Giảng dạy → Tạo bài mới. Bấm Tạo bài 11 từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, bảng đếm, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
+      "Vào Giảng dạy → Tạo bài mới. Bấm Tạo bài 11 từ mẫu hoặc Tạo bài 12 từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
       "Bài mẫu là bản nháp riêng của bạn. Đọc lại, sửa theo lớp mình rồi bấm Xuất bản; học viên dùng sách của mình để đối chiếu.",
       "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc soạn mới ở mục Soạn bài tiếng Nhật.",
     ],
