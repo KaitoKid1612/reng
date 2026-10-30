@@ -78,6 +78,9 @@ export default async function ClassesPage() {
         )}
       </section>
       <div className="button-row">
+        <Link href="/history" className={buttonVariants({ variant: "ghost" })}>
+          Lịch sử từ Google Sheet
+        </Link>
         <Link href="/mistakes" className={buttonVariants({ variant: "ghost" })}>
           Sổ lỗi
         </Link>

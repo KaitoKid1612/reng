@@ -8,6 +8,8 @@ Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết q
 
 ## Cách đọc
 
+Lịch sử bài tập từ Sheets: [Basic Design](basic-design/learning-history.md), [Detail Design và lệnh nhập](detail-design/learning-history.md), [kiểm chứng và trạng thái triển khai](testing/learning-history.md). Một tài khoản vừa dạy vừa học; hồ sơ học viên chờ đăng ký cần giáo viên xác nhận liên kết.
+
 Mức đáp ứng 22 yêu cầu dịch vụ và tiến độ theo lát: [đối chiếu source](source-alignment.md) (23% lúc audit, khoảng 70% sau các lát đã triển khai; không phải test coverage). Chuẩn bị POC 10 giáo viên: [công cụ, chi phí và các bước dựng](poc-setup.md).
 
 Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đã có bản local của wizard 5 bước.

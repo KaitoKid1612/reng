@@ -172,6 +172,9 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
         )}
       </section>
       <div className="button-row">
+        <Link href="/history" className={buttonVariants({ variant: "ghost" })}>
+          Lịch sử học tập của tôi và học viên
+        </Link>
         <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
           Email tóm tắt lớp
         </Link>

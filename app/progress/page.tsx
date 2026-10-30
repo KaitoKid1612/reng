@@ -23,6 +23,9 @@ export default async function ProgressPage() {
           <p>Ba chỉ số tách riêng: đọc bài, điểm bài tập và thẻ ôn tập.</p>
         </div>
         <div className="button-row">
+          <Link href="/history" className={buttonVariants({ variant: "outline" })}>
+            Lịch sử từ Google Sheet
+          </Link>
           <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
             Cài đặt email nhắc học
           </Link>

@@ -2,6 +2,8 @@
 
 Bổ sung cùng ngày: [nâng cấp quản lý bài học và bài tập Nhật–Trung](teaching-management.md). Báo cáo này giữ mốc `ecface1`; kết quả của lát nâng cấp mới được ghi ở tài liệu riêng.
 
+Lát chuyển lịch sử Sheets sang Reng: [quyền xem, kết quả kiểm thử local và triển khai](learning-history.md). Đây là kết quả riêng, không thay đổi mốc kiểm chứng của báo cáo bên dưới.
+
 ## Kết luận và phạm vi
 
 Dự án có các luồng chính để chạy một lớp pilot: giáo viên soạn/xuất bản → đưa bài vào lớp → giao bài → học viên làm/nộp → xem kết quả/ôn lỗi → giáo viên theo dõi. Điểm bất tiện rõ nhất trong đợt rà soát là tìm lối vào đúng và hướng dẫn giáo viên mới khi chưa có bài xuất bản. Đã cập nhật các điểm này trong source.

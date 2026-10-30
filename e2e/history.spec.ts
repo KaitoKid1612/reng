@@ -1,0 +1,99 @@
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { expect, test } from "@playwright/test";
+
+import { HistoryArchiveView } from "../components/history/history-archive-view";
+import { importHistorySheets } from "../lib/history-sheet-import";
+
+const ID = "00000000-0000-4000-8000-000000000001";
+const archive = importHistorySheets(
+  "viet",
+  {
+    rows: [
+      ["Ngày", "Nội dung", "Tổng câu", "Đúng", "Sai", "Chưa làm", "Điểm %"],
+      ["2026-10-20", "Bài kiểm thử tự soạn", 2, 1, 1, 0, "50"],
+      ["2026-10-21", "Ngày chưa chấm", 2],
+    ],
+  },
+  {
+    rows: [
+      [
+        "Ngày",
+        "Bài",
+        "Câu",
+        "Dạng bài",
+        "Câu hỏi",
+        "Câu trả lời của học sinh",
+        "Kết quả",
+        "Chấm lúc",
+      ],
+      [
+        "2026-10-20",
+        "Bài thử",
+        "1",
+        "Điền",
+        "Đề tự soạn",
+        "<script>window.historyInjected=true</script>",
+        "SAI — cần xem lại",
+        "",
+      ],
+      ["2026-10-20", "Bài thử", "2", "Điền", "Câu đúng", "正しい", "OK", ""],
+    ],
+  },
+);
+
+// Tests the real, server-rendered history view with fictional data. Authentication and RLS
+// are tested separately; no test-only route or personal archive is exposed by the application.
+for (const width of [1280, 360]) {
+  test(`history details show source grades and fit ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/sources");
+    const html = renderToStaticMarkup(
+      createElement(HistoryArchiveView, {
+        id: ID,
+        archive,
+        importedAt: "2026-10-30T03:00:00Z",
+        query: { date: "2026-10-20", outcome: "incorrect" },
+      }),
+    );
+    await page.locator("main").evaluate((main, markup) => {
+      main.innerHTML = markup;
+    }, html);
+    await expect(page.getByText("Điểm gốc: 50 / 100", { exact: true })).toBeVisible();
+    await expect(page.getByRole("status")).toHaveText("Hiển thị 1 / 2 câu của ngày đã chọn.");
+    await page.locator("summary").click();
+    await expect(
+      page
+        .locator(".history-text")
+        .filter({ hasText: "<script>window.historyInjected=true</script>" }),
+    ).toBeVisible();
+    expect(await page.evaluate(() => "historyInjected" in window)).toBe(false);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+    ).toBe(true);
+    await page.screenshot({ path: `test-results/history-${width}.png`, fullPage: true });
+    const ungraded = renderToStaticMarkup(
+      createElement(HistoryArchiveView, {
+        id: ID,
+        archive,
+        importedAt: "2026-10-30T03:00:00Z",
+        query: { date: "2026-10-21" },
+      }),
+    );
+    await page.locator("main").evaluate((main, markup) => {
+      main.innerHTML = markup;
+    }, ungraded);
+    await expect(page.getByText("Điểm gốc: Chưa có điểm", { exact: true })).toBeVisible();
+  });
+}
+
+test("history routes require authentication and stay outside the sitemap", async ({ request }) => {
+  for (const path of ["/history", `/history/${ID}`]) {
+    const response = await request.get(path, { maxRedirects: 0 });
+    expect(response.status()).toBe(307);
+    expect(response.headers().location).toContain("/sign-in?next=");
+    expect(await response.text()).not.toContain("Bài kiểm thử tự soạn");
+  }
+  expect(await (await request.get("/robots.txt")).text()).toContain("Disallow: /history");
+  expect(await (await request.get("/sitemap.xml")).text()).not.toContain("/history");
+});

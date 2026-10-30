@@ -68,6 +68,9 @@ export function AccountLink() {
           Giảng dạy
         </Link>
       )}
+      <Link href="/history" aria-current={pathname.startsWith("/history") ? "page" : undefined}>
+        Lịch sử học tập
+      </Link>
       <Link href="/classes" aria-current={pathname.startsWith("/classes") ? "page" : undefined}>
         Lớp của tôi
       </Link>
