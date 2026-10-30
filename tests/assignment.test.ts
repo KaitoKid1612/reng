@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import {
   assignmentSettingsSchema,
+  compareDueUrgency,
   countBlankAnswers,
   describeCorrectAnswer,
   getDeadlineState,
@@ -157,6 +158,27 @@ test("a draft read back from the database matches the draft that was sent", () =
   );
   assert.equal(isSameAttemptDraft(views, sent, { answers: { t1: [1] }, checked: ["t1"] }), false);
   assert.equal(isSameAttemptDraft(views, sent, undefined), false);
+});
+
+test("open work lists today's deadlines before missed ones, newest missed first", () => {
+  const now = new Date("2026-10-30T03:00:00Z");
+  const dueDates = [
+    "2026-10-16T16:59:59Z",
+    null,
+    "2026-10-30T16:59:59Z",
+    "2026-10-29T16:59:59Z",
+    "2026-11-02T10:00:00Z",
+  ];
+  assert.deepEqual(
+    [...dueDates].sort((first, second) => compareDueUrgency(first, second, now)),
+    [
+      "2026-10-30T16:59:59Z",
+      "2026-11-02T10:00:00Z",
+      null,
+      "2026-10-29T16:59:59Z",
+      "2026-10-16T16:59:59Z",
+    ],
+  );
 });
 
 const listeningQuestions = [

@@ -268,6 +268,26 @@ export function isFeedbackAvailable(rule: FeedbackRule, submittedAt: string | nu
 export type DeadlineState = "no_deadline" | "on_time" | "late" | "past_due";
 
 // Submitting exactly at the deadline is on time; later submissions are late when allowed.
+// Work still on time comes first, soonest deadline first, then work without a deadline;
+// overdue work that still accepts late submissions follows, most recent first, so missed
+// daily practice never hides today's.
+export function compareDueUrgency(first: string | null, second: string | null, now: Date) {
+  const firstDue = first ? Date.parse(first) : Infinity;
+  const secondDue = second ? Date.parse(second) : Infinity;
+  const isFirstOverdue = firstDue < now.getTime();
+  const isSecondOverdue = secondDue < now.getTime();
+  if (isFirstOverdue !== isSecondOverdue) {
+    return isFirstOverdue ? 1 : -1;
+  }
+  if (firstDue === secondDue) {
+    return 0;
+  }
+  if (isFirstOverdue) {
+    return secondDue - firstDue;
+  }
+  return firstDue < secondDue ? -1 : 1;
+}
+
 export function getDeadlineState(
   dueAt: string | null,
   allowLate: boolean,

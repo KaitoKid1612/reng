@@ -2,7 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
-import { getDeadlineState, isFeedbackAvailable } from "@/lib/assignment";
+import { compareDueUrgency, getDeadlineState, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
@@ -46,17 +46,21 @@ function describeLearnerAssignment(
     .sort((first, second) => second.attemptNo - first.attemptNo);
   const latest = submitted[0];
   const canShow = latest ? isFeedbackAvailable(assignment, latest.submittedAt, now) : false;
+  const isPastDue = getDeadlineState(assignment.dueAt, assignment.allowLate, now) === "past_due";
   let status: AssignmentStatus = "not_started";
-  if (attempts.some((attempt) => attempt.status === "in_progress")) {
+  // A closed or past-due assignment can no longer be saved or submitted, even mid-attempt.
+  if (assignment.status === "closed" || isPastDue) {
+    if (latest) {
+      status = "submitted";
+    } else {
+      status = assignment.status === "closed" ? "closed" : "past_due";
+    }
+  } else if (attempts.some((attempt) => attempt.status === "in_progress")) {
     status = "in_progress";
   } else if (latest) {
     status = "submitted";
-  } else if (assignment.status === "closed") {
-    status = "closed";
   } else if (!lesson || Date.parse(lesson.availableAt) > now.getTime()) {
     status = "not_available";
-  } else if (getDeadlineState(assignment.dueAt, assignment.allowLate, now) === "past_due") {
-    status = "past_due";
   }
   return {
     assignment,
@@ -125,12 +129,6 @@ function isOpenWork(item: LearnerAssignment) {
   return item.status === "not_started" || item.status === "in_progress";
 }
 
-function byDueDate(first: LearnerAssignment, second: LearnerAssignment) {
-  const firstDue = first.assignment.dueAt ? Date.parse(first.assignment.dueAt) : Infinity;
-  const secondDue = second.assignment.dueAt ? Date.parse(second.assignment.dueAt) : Infinity;
-  return firstDue - secondDue;
-}
-
 export async function getLearnerAgenda(userId: string, now: Date) {
   const [{ classes, assignments }, dueCards] = await Promise.all([
     listLearnerAssignments(userId, now),
@@ -139,7 +137,11 @@ export async function getLearnerAgenda(userId: string, now: Date) {
   return {
     classes,
     dueCardCount: dueCards.length,
-    openAssignments: assignments.filter(isOpenWork).sort(byDueDate),
+    openAssignments: assignments
+      .filter(isOpenWork)
+      .sort((first, second) =>
+        compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
+      ),
   };
 }
 
