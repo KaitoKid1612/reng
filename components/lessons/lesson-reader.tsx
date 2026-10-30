@@ -6,6 +6,7 @@ import { JapaneseText } from "@/components/lessons/japanese-text";
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
 import { toPlainJapanese, toSpeechText } from "@/lib/japanese-text";
+import { extractKanjiWords } from "@/lib/kanji-practice";
 
 import type { PublicLesson, PublicSlide } from "@/lib/lesson-schema";
 
@@ -65,6 +66,7 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
   const listeningCount = lesson.content.questions.filter(
     (question) => question.type === "listen" || question.type === "dictation",
   ).length;
+  const kanjiCount = extractKanjiWords(lesson.content.vocab).length;
   const dialogues = lesson.content.slides.filter((slide) => slide.type === "dialogue");
   const tables = lesson.content.slides.filter((slide) => slide.type === "table");
   return (
@@ -231,6 +233,14 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
             className={buttonVariants({ variant: "outline" })}
           >
             Luyện nghe ({listeningCount} câu)
+          </Link>
+        )}
+        {kanjiCount > 0 && (
+          <Link
+            href={`/kanji/${lesson.lessonId}?version=${lesson.id}`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Luyện kanji ({kanjiCount} từ)
           </Link>
         )}
         <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>

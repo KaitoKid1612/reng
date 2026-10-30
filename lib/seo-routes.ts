@@ -11,6 +11,7 @@ export const PRIVATE_PATHS = [
   "/join-class",
   "/vocabulary/",
   "/listening/",
+  "/kanji/",
   "/api/",
   "/auth/",
   "/unsubscribe/",
