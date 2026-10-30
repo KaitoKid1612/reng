@@ -13,7 +13,12 @@ Theo lựa chọn của người dùng, địa chỉ chính chuyển từ `reng-
 
 `npm run check`: PASS, format/ESLint/TypeScript và 123/123 test đạt. Đọc lại Supabase config diff: 0 thuộc tính được khai báo còn khác remote; các thuộc tính remote_only giữ nguyên.
 
-Đang triển khai bản nhận `SITE_URL` mới. Cần đối chiếu canonical/Open Graph, robots/sitemap, trang đăng nhập, route riêng tư và khả năng truy cập qua domain cũ sau khi deployment Ready.
+- Commit `c6c90e5` đã push main; deployment `dpl_5qQSLfiKjpxauWjJP9Wt2cKjVQGw` Ready, nhận `SITE_URL` mới và có cả hai alias cũ/mới.
+- HTTPS `/`, `/sign-in`, `/lessons`, `/guide`, `/for-teachers` trên domain mới trả 200. Metadata/URL tuyệt đối ở trang chủ và canonical `/for-teachers` dùng domain mới.
+- `robots.txt` trỏ sitemap domain mới và chặn `/history`; `sitemap.xml` dùng domain mới, không chứa domain cũ hoặc lịch sử riêng tư.
+- `/history`, `/classes` không đăng nhập trả 307 về `/sign-in` và giữ next path.
+- Trang chủ domain cũ vẫn trả 200, metadata dùng URL chính mới. Không có redirect bắt buộc làm hỏng link cũ.
+- Không dùng ID bài mẫu local để xác nhận canonical production: `/lessons/lesson-01` không có trên nguồn production (404); kiểm tra bằng trang công khai `/for-teachers` thay thế. Không đăng nhập tài khoản thật hoặc gửi thư để kiểm thử.
 
 Đổi domain không ảnh hưởng dữ liệu Supabase. Cookie đăng nhập tách theo domain nên người dùng đăng nhập lại trên domain mới. Email xác nhận/khôi phục vẫn chịu giới hạn SMTP hiện có; thay domain không bật hoặc sửa cơ chế gửi thư.
 
