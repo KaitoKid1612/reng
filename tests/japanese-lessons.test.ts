@@ -142,10 +142,12 @@ test("dialogue and table slides explain what is missing before publishing", () =
   assert.equal(lessonContentSchema.safeParse(ragged).success, false);
 });
 
-test("the Minna lesson 11 and 12 starters are registered in lesson order", () => {
+test("the Minna starters are registered in lesson order", () => {
   assert.deepEqual(
     STARTER_LESSONS.map((starter) => [starter.id, starter.draft.courseId, starter.draft.order]),
     [
+      ["minna-1-01", "minna-1", 1],
+      ["minna-1-02", "minna-1", 2],
       ["minna-1-11", "minna-1", 11],
       ["minna-1-12", "minna-1", 12],
     ],

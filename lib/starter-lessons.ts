@@ -1,3 +1,5 @@
+import minnaLesson01 from "@/content/starters/minna-1-01.json";
+import minnaLesson02 from "@/content/starters/minna-1-02.json";
 import minnaLesson11 from "@/content/starters/minna-1-11.json";
 import minnaLesson12 from "@/content/starters/minna-1-12.json";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
@@ -14,6 +16,18 @@ export interface StarterLesson {
 // Lessons written for Reng that follow a textbook's lesson order without copying its text.
 // A teacher always gets an own draft to review, edit and publish.
 export const STARTER_LESSONS: readonly StarterLesson[] = [
+  {
+    id: "minna-1-01",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 1 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson01),
+  },
+  {
+    id: "minna-1-02",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 2 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson02),
+  },
   {
     id: "minna-1-11",
     course: "Minna no Nihongo Sơ cấp I",

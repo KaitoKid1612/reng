@@ -87,6 +87,7 @@ export const VOCAB_ICON_GROUPS: readonly { title: string; icons: readonly VocabI
       { name: "water-wave", label: "biển" },
       { name: "map-of-japan", label: "Nhật Bản" },
       { name: "globe-showing-asia-australia", label: "thế giới, nước ngoài" },
+      { name: "world-map", label: "đất nước, quốc gia" },
     ],
   },
   {
@@ -110,6 +111,14 @@ export const VOCAB_ICON_GROUPS: readonly { title: string; icons: readonly VocabI
     title: "Đồ vật",
     icons: [
       { name: "books", label: "sách" },
+      { name: "green-book", label: "từ điển, quyển sách" },
+      { name: "rolled-up-newspaper", label: "tạp chí" },
+      { name: "spiral-notepad", label: "sổ tay" },
+      { name: "pen", label: "bút bi" },
+      { name: "optical-disk", label: "đĩa CD" },
+      { name: "radio", label: "radio" },
+      { name: "desktop-computer", label: "máy tính để bàn" },
+      { name: "credit-card", label: "thẻ" },
       { name: "notebook", label: "vở" },
       { name: "pencil", label: "bút chì" },
       { name: "fountain-pen", label: "bút" },
@@ -138,6 +147,19 @@ export const VOCAB_ICON_GROUPS: readonly { title: string; icons: readonly VocabI
       { name: "bed", label: "giường" },
       { name: "door", label: "cửa" },
       { name: "memo", label: "bài thi, ghi chép" },
+    ],
+  },
+  {
+    title: "Công việc, giao tiếp",
+    icons: [
+      { name: "briefcase", label: "công việc" },
+      { name: "stethoscope", label: "bác sĩ" },
+      { name: "gear", label: "kỹ sư, máy móc" },
+      { name: "microscope", label: "nghiên cứu" },
+      { name: "speaking-head", label: "ngôn ngữ, nói" },
+      { name: "airplane-arrival", label: "đến (từ nơi khác)" },
+      { name: "check-mark-button", label: "đúng, vâng" },
+      { name: "cross-mark", label: "sai, không" },
     ],
   },
   {

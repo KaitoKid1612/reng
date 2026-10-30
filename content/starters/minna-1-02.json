@@ -1,0 +1,1422 @@
+{
+  "id": "minna-1-02",
+  "title": "Bài 2 – Đồ vật quanh mình",
+  "titleJa": "第2課　これは なんですか",
+  "summary": "Theo trình tự bài 2 Minna no Nihongo Sơ cấp I: これ・それ・あれ (cái này, đó, kia), この・その・あの + danh từ, そうです／そうじゃ ありません, hỏi lựa chọn 〜ですか、〜ですか, なんの N (N về cái gì) và だれの N (N của ai).",
+  "order": 2,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0201",
+        "jp": "これ",
+        "romaji": "kore",
+        "vi": "cái này (gần người nói)",
+        "audio": null
+      },
+      {
+        "id": "v0202",
+        "jp": "それ",
+        "romaji": "sore",
+        "vi": "cái đó (gần người nghe)",
+        "audio": null
+      },
+      {
+        "id": "v0203",
+        "jp": "あれ",
+        "romaji": "are",
+        "vi": "cái kia (xa cả hai người)",
+        "audio": null
+      },
+      {
+        "id": "v0204",
+        "jp": "この 〜",
+        "romaji": "kono ~",
+        "vi": "… này",
+        "audio": null
+      },
+      {
+        "id": "v0205",
+        "jp": "その 〜",
+        "romaji": "sono ~",
+        "vi": "… đó",
+        "audio": null
+      },
+      {
+        "id": "v0206",
+        "jp": "あの 〜",
+        "romaji": "ano ~",
+        "vi": "… kia",
+        "audio": null
+      },
+      {
+        "id": "v0207",
+        "jp": "なん",
+        "kanji": "何",
+        "romaji": "nan",
+        "vi": "cái gì",
+        "audio": null
+      },
+      {
+        "id": "v0208",
+        "jp": "そう",
+        "romaji": "sou",
+        "vi": "đúng thế, như vậy",
+        "audio": null
+      },
+      {
+        "id": "v0209",
+        "jp": "ほん",
+        "kanji": "本",
+        "romaji": "hon",
+        "vi": "sách",
+        "audio": null,
+        "image": "/icons/vocab/books.svg"
+      },
+      {
+        "id": "v0210",
+        "jp": "じしょ",
+        "kanji": "辞書",
+        "romaji": "jisho",
+        "vi": "từ điển",
+        "audio": null,
+        "image": "/icons/vocab/green-book.svg"
+      },
+      {
+        "id": "v0211",
+        "jp": "ざっし",
+        "kanji": "雑誌",
+        "romaji": "zasshi",
+        "vi": "tạp chí",
+        "audio": null,
+        "image": "/icons/vocab/rolled-up-newspaper.svg"
+      },
+      {
+        "id": "v0212",
+        "jp": "しんぶん",
+        "kanji": "新聞",
+        "romaji": "shinbun",
+        "vi": "báo",
+        "audio": null,
+        "image": "/icons/vocab/newspaper.svg"
+      },
+      {
+        "id": "v0213",
+        "jp": "ノート",
+        "romaji": "nooto",
+        "vi": "vở",
+        "audio": null,
+        "image": "/icons/vocab/notebook.svg"
+      },
+      {
+        "id": "v0214",
+        "jp": "てちょう",
+        "kanji": "手帳",
+        "romaji": "techou",
+        "vi": "sổ tay",
+        "audio": null,
+        "image": "/icons/vocab/spiral-notepad.svg"
+      },
+      {
+        "id": "v0215",
+        "jp": "めいし",
+        "kanji": "名刺",
+        "romaji": "meishi",
+        "vi": "danh thiếp",
+        "audio": null,
+        "image": "/icons/vocab/identification-card.svg"
+      },
+      {
+        "id": "v0216",
+        "jp": "カード",
+        "romaji": "kaado",
+        "vi": "thẻ",
+        "audio": null,
+        "image": "/icons/vocab/credit-card.svg"
+      },
+      {
+        "id": "v0217",
+        "jp": "えんぴつ",
+        "kanji": "鉛筆",
+        "romaji": "enpitsu",
+        "vi": "bút chì",
+        "audio": null,
+        "image": "/icons/vocab/pencil.svg"
+      },
+      {
+        "id": "v0218",
+        "jp": "ボールペン",
+        "romaji": "boorupen",
+        "vi": "bút bi",
+        "audio": null,
+        "image": "/icons/vocab/pen.svg"
+      },
+      {
+        "id": "v0219",
+        "jp": "シャープペンシル",
+        "romaji": "shaapu penshiru",
+        "vi": "bút chì kim",
+        "audio": null
+      },
+      {
+        "id": "v0220",
+        "jp": "かぎ",
+        "romaji": "kagi",
+        "vi": "chìa khóa",
+        "audio": null,
+        "image": "/icons/vocab/key.svg"
+      },
+      {
+        "id": "v0221",
+        "jp": "とけい",
+        "kanji": "時計",
+        "romaji": "tokei",
+        "vi": "đồng hồ",
+        "audio": null,
+        "image": "/icons/vocab/watch.svg"
+      },
+      {
+        "id": "v0222",
+        "jp": "かさ",
+        "kanji": "傘",
+        "romaji": "kasa",
+        "vi": "ô, dù",
+        "audio": null,
+        "image": "/icons/vocab/umbrella.svg"
+      },
+      {
+        "id": "v0223",
+        "jp": "かばん",
+        "romaji": "kaban",
+        "vi": "cặp, túi xách",
+        "audio": null,
+        "image": "/icons/vocab/backpack.svg"
+      },
+      {
+        "id": "v0224",
+        "jp": "シーディー",
+        "kanji": "CD",
+        "romaji": "shiidii",
+        "vi": "đĩa CD",
+        "audio": null,
+        "image": "/icons/vocab/optical-disk.svg"
+      },
+      {
+        "id": "v0225",
+        "jp": "テレビ",
+        "romaji": "terebi",
+        "vi": "ti vi",
+        "audio": null,
+        "image": "/icons/vocab/television.svg"
+      },
+      {
+        "id": "v0226",
+        "jp": "ラジオ",
+        "romaji": "rajio",
+        "vi": "radio",
+        "audio": null,
+        "image": "/icons/vocab/radio.svg"
+      },
+      {
+        "id": "v0227",
+        "jp": "カメラ",
+        "romaji": "kamera",
+        "vi": "máy ảnh",
+        "audio": null,
+        "image": "/icons/vocab/camera.svg"
+      },
+      {
+        "id": "v0228",
+        "jp": "コンピューター",
+        "romaji": "konpyuutaa",
+        "vi": "máy tính",
+        "audio": null,
+        "image": "/icons/vocab/laptop.svg"
+      },
+      {
+        "id": "v0229",
+        "jp": "くるま",
+        "kanji": "車",
+        "romaji": "kuruma",
+        "vi": "ô tô, xe hơi",
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v0230",
+        "jp": "つくえ",
+        "kanji": "机",
+        "romaji": "tsukue",
+        "vi": "cái bàn",
+        "audio": null
+      },
+      {
+        "id": "v0231",
+        "jp": "いす",
+        "romaji": "isu",
+        "vi": "cái ghế",
+        "audio": null,
+        "image": "/icons/vocab/chair.svg"
+      },
+      {
+        "id": "v0232",
+        "jp": "チョコレート",
+        "romaji": "chokoreeto",
+        "vi": "sô-cô-la",
+        "audio": null,
+        "image": "/icons/vocab/chocolate-bar.svg"
+      },
+      {
+        "id": "v0233",
+        "jp": "コーヒー",
+        "romaji": "koohii",
+        "vi": "cà phê",
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v0234",
+        "jp": "おちゃ",
+        "kanji": "お茶",
+        "romaji": "ocha",
+        "vi": "trà",
+        "audio": null,
+        "image": "/icons/vocab/teacup-without-handle.svg"
+      },
+      {
+        "id": "v0235",
+        "jp": "おみやげ",
+        "kanji": "お土産",
+        "romaji": "omiyage",
+        "vi": "quà (mua khi đi xa về), đặc sản",
+        "audio": null,
+        "image": "/icons/vocab/wrapped-gift.svg"
+      },
+      {
+        "id": "v0236",
+        "jp": "えいご",
+        "kanji": "英語",
+        "romaji": "eigo",
+        "vi": "tiếng Anh",
+        "audio": null
+      },
+      {
+        "id": "v0237",
+        "jp": "にほんご",
+        "kanji": "日本語",
+        "romaji": "nihongo",
+        "vi": "tiếng Nhật",
+        "audio": null
+      },
+      {
+        "id": "v0238",
+        "jp": "〜ご",
+        "kanji": "〜語",
+        "romaji": "-go",
+        "vi": "tiếng …",
+        "audio": null
+      },
+      {
+        "id": "v0239",
+        "jp": "あのう",
+        "romaji": "anou",
+        "vi": "à, ừm (ngập ngừng trước khi nói)",
+        "audio": null
+      },
+      {
+        "id": "v0240",
+        "jp": "えっ",
+        "romaji": "e'",
+        "vi": "hả, ồ (ngạc nhiên)",
+        "audio": null
+      },
+      {
+        "id": "v0241",
+        "jp": "へえ",
+        "romaji": "hee",
+        "vi": "ồ, thế à (ngạc nhiên, thích thú)",
+        "audio": null
+      },
+      {
+        "id": "v0242",
+        "jp": "どうぞ",
+        "romaji": "douzo",
+        "vi": "xin mời",
+        "audio": null
+      },
+      {
+        "id": "v0243",
+        "jp": "どうも ありがとう ございます",
+        "romaji": "doumo arigatou gozaimasu",
+        "vi": "cảm ơn rất nhiều",
+        "audio": null
+      },
+      {
+        "id": "v0244",
+        "jp": "ほんとうですか",
+        "kanji": "本当ですか",
+        "romaji": "hontou desu ka",
+        "vi": "thật không?",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0201",
+        "pattern": "これ／それ／あれ は N です",
+        "vi": "Cái này / đó / kia là N",
+        "explain": "これ: vật gần người nói; それ: vật gần người nghe; あれ: vật xa cả hai. Hỏi: これは なんですか (Cái này là gì?).",
+        "viMistake": "これ・それ・あれ đứng một mình, không đi kèm danh từ: không nói これ {本|ほん}.",
+        "examples": [
+          {
+            "jp": "これは {本|ほん}です。",
+            "vi": "Đây là quyển sách.",
+            "audio": null
+          },
+          {
+            "jp": "それは {辞書|じしょ}ですか。",
+            "vi": "Đó có phải là từ điển không?",
+            "audio": null
+          },
+          {
+            "jp": "あれは なんですか。",
+            "vi": "Kia là cái gì?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0202",
+        "pattern": "この／その／あの N",
+        "vi": "N này / đó / kia",
+        "explain": "この・その・あの luôn đứng trước danh từ: この {傘|かさ}, その かばん, あの {人|ひと}.",
+        "viMistake": "この không đứng một mình: không nói このは; muốn nói “cái này” thì dùng これ.",
+        "examples": [
+          {
+            "jp": "この {傘|かさ}は わたしのです。",
+            "vi": "Cái ô này là của tôi.",
+            "audio": null
+          },
+          {
+            "jp": "その かばんは アンさんのです。",
+            "vi": "Cái cặp đó là của An.",
+            "audio": null
+          },
+          {
+            "jp": "あの {人|ひと}は だれですか。",
+            "vi": "Người kia là ai?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0203",
+        "pattern": "そうです／そうじゃ ありません",
+        "vi": "Đúng vậy / Không phải vậy",
+        "explain": "Trả lời câu hỏi danh từ 〜ですか: はい、そうです／いいえ、そうじゃ ありません. Có thể nói rõ hơn: いいえ、ちがいます。〜です.",
+        "viMistake": "そうです chỉ dùng để xác nhận câu hỏi danh từ; câu hỏi lựa chọn (A ですか、B ですか) không trả lời bằng はい／いいえ.",
+        "examples": [
+          {
+            "jp": "それは {辞書|じしょ}ですか。…はい、そうです。",
+            "vi": "Đó là từ điển à? … Vâng, đúng vậy.",
+            "audio": null
+          },
+          {
+            "jp": "これは ボールペンですか。…いいえ、そうじゃ ありません。",
+            "vi": "Đây là bút bi à? … Không, không phải.",
+            "audio": null
+          },
+          {
+            "jp": "シャープペンシルです。",
+            "vi": "Đó là bút chì kim.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0204",
+        "pattern": "N1ですか、N2ですか",
+        "vi": "Hỏi lựa chọn: N1 hay N2?",
+        "explain": "Đặt hai câu hỏi liền nhau để hỏi chọn một trong hai. Trả lời bằng chính thứ được chọn.",
+        "viMistake": "Không trả lời はい／いいえ cho câu hỏi lựa chọn; nói thẳng thứ được chọn: おちゃです.",
+        "examples": [
+          {
+            "jp": "それは コーヒーですか、おちゃですか。",
+            "vi": "Đó là cà phê hay trà?",
+            "audio": null
+          },
+          {
+            "jp": "おちゃです。",
+            "vi": "Là trà.",
+            "audio": null
+          },
+          {
+            "jp": "これは「あ」ですか、「お」ですか。",
+            "vi": "Đây là chữ “a” hay chữ “o”?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0205",
+        "pattern": "N1の N2 (なんの N／だれの N)",
+        "vi": "N2 về N1, N2 của N1",
+        "explain": "の còn chỉ nội dung (くるまの {雑誌|ざっし}: tạp chí về ô tô) và người sở hữu (わたしの {本|ほん}: sách của tôi). Hỏi: なんの 〜 (… về cái gì), だれの 〜 (… của ai). Khi đã rõ vật, có thể bỏ danh từ sau の: これは わたしのです.",
+        "viMistake": "“Sách của tôi” là わたしの {本|ほん}: người sở hữu đứng trước, ngược với tiếng Việt.",
+        "examples": [
+          {
+            "jp": "これは {日本語|にほんご}の {本|ほん}です。",
+            "vi": "Đây là sách tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "それは なんの {雑誌|ざっし}ですか。…{車|くるま}の {雑誌|ざっし}です。",
+            "vi": "Đó là tạp chí về gì? … Tạp chí về ô tô.",
+            "audio": null
+          },
+          {
+            "jp": "この {時計|とけい}は だれのですか。…ナムさんのです。",
+            "vi": "Cái đồng hồ này của ai? … Của Nam.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0201",
+        "teacherNotes": "Khởi động: đặt vài đồ vật thật lên bàn (sách, bút, ô, điện thoại) và hỏi bằng tiếng Việt “cái này là gì?”. Bài đi theo trình tự bài 2 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}2{課|か}",
+        "vi": "Đồ vật quanh mình: これ・それ・あれ"
+      },
+      {
+        "id": "s0202",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Chỉ vật: これ・それ・あれ, この・その・あの + danh từ\n2. Hỏi “cái gì”, “của ai”, “về cái gì”: なん, だれの, なんの\n3. Xác nhận: そうです／そうじゃ ありません\n4. Hỏi lựa chọn: A ですか、B ですか"
+      },
+      {
+        "id": "s0203",
+        "teacherNotes": "Dùng đồ vật thật: これ (trong tay mình), それ (trong tay người nghe), あれ (ở xa).",
+        "type": "vocab",
+        "refs": ["v0201", "v0202", "v0203", "v0204", "v0205", "v0206", "v0207", "v0208"]
+      },
+      {
+        "id": "s0204",
+        "teacherNotes": "Cầm từng vật lên và hỏi: これは なんですか.",
+        "type": "vocab",
+        "refs": ["v0209", "v0210", "v0211", "v0212", "v0213", "v0214", "v0215", "v0216"]
+      },
+      {
+        "id": "s0205",
+        "teacherNotes": "CD đọc là シーディー. かぎ, かさ, かばん dễ nhầm: cho học viên nói nhanh khi giáo viên chỉ vật.",
+        "type": "vocab",
+        "refs": ["v0217", "v0218", "v0219", "v0220", "v0221", "v0222", "v0223", "v0224"]
+      },
+      {
+        "id": "s0206",
+        "teacherNotes": "Từ ngoại lai (カタカナ) đọc gần tiếng Anh nhưng theo âm Nhật: テレビ, コンピューター.",
+        "type": "vocab",
+        "refs": ["v0225", "v0226", "v0227", "v0228", "v0229", "v0230", "v0231", "v0232"]
+      },
+      {
+        "id": "s0207",
+        "teacherNotes": "Tên nước + ご = tiếng nước đó; tiếng Anh là えいご.",
+        "type": "vocab",
+        "refs": ["v0233", "v0234", "v0235", "v0236", "v0237", "v0238"]
+      },
+      {
+        "id": "s0208",
+        "teacherNotes": "Luyện ngữ điệu: えっ ngắn và lên giọng, へえ kéo dài.",
+        "type": "vocab",
+        "refs": ["v0239", "v0240", "v0241", "v0242", "v0243", "v0244"]
+      },
+      {
+        "id": "s0209",
+        "teacherNotes": "Giáo viên cầm sách (これ), chỉ sách học viên đang cầm (それ), chỉ tấm bảng ở xa (あれ).",
+        "type": "table",
+        "title": "これ・それ・あれ và この・その・あの",
+        "columns": ["Vị trí", "Đứng một mình", "Đi với danh từ"],
+        "rows": [
+          ["Gần người nói", "これ", "この {本|ほん}"],
+          ["Gần người nghe", "それ", "その {本|ほん}"],
+          ["Xa cả hai", "あれ", "あの {本|ほん}"],
+          ["Hỏi “cái gì”", "なん", "なんの {本|ほん}"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s0210",
+        "teacherNotes": "Đi quanh lớp, chỉ đồ vật ở các khoảng cách khác nhau và cho học viên nói.",
+        "type": "grammar",
+        "ref": "g0201"
+      },
+      {
+        "id": "s0211",
+        "type": "example",
+        "ref": "g0201",
+        "reveal": true
+      },
+      {
+        "id": "s0212",
+        "teacherNotes": "Đổi これ thành この + danh từ: これは {本|ほん}です → この {本|ほん}は わたしのです.",
+        "type": "grammar",
+        "ref": "g0202"
+      },
+      {
+        "id": "s0213",
+        "type": "example",
+        "ref": "g0202",
+        "reveal": true
+      },
+      {
+        "id": "s0214",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: đây là cái gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["これ・{本|ほん}", "これは {本|ほん}です。"],
+          ["それ・{傘|かさ}（hỏi）", "それは {傘|かさ}ですか。"],
+          ["あれ・{車|くるま}", "あれは {車|くるま}です。"],
+          ["この かばん・わたし", "この かばんは わたしのです。"],
+          ["その かぎ・だれ（hỏi）", "その かぎは だれのですか。"],
+          ["あの {人|ひと}・{先生|せんせい}", "あの {人|ひと}は {先生|せんせい}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0215",
+        "type": "quiz",
+        "ref": "q0201"
+      },
+      {
+        "id": "s0216",
+        "type": "quiz",
+        "ref": "q0203"
+      },
+      {
+        "id": "s0217",
+        "type": "quiz",
+        "ref": "q0206"
+      },
+      {
+        "id": "s0218",
+        "teacherNotes": "Cầm sai đồ vật và hỏi: これは {辞書|じしょ}ですか → いいえ、そうじゃ ありません.",
+        "type": "grammar",
+        "ref": "g0203"
+      },
+      {
+        "id": "s0219",
+        "type": "example",
+        "ref": "g0203",
+        "reveal": true
+      },
+      {
+        "id": "s0220",
+        "teacherNotes": "Cầm hai vật, mỗi tay một vật, hỏi lựa chọn; học viên trả lời bằng tên vật.",
+        "type": "grammar",
+        "ref": "g0204"
+      },
+      {
+        "id": "s0221",
+        "type": "example",
+        "ref": "g0204",
+        "reveal": true
+      },
+      {
+        "id": "s0222",
+        "teacherNotes": "Học viên hỏi nhau theo cặp bằng đồ vật thật trên bàn.",
+        "type": "table",
+        "title": "Luyện tập 2: cái này hay cái kia?",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["これは ボールペンですか、{鉛筆|えんぴつ}ですか。", "ボールペンです。"],
+          ["それは コーヒーですか、おちゃですか。", "おちゃです。"],
+          [
+            "あれは {銀行|ぎんこう}ですか。",
+            "いいえ、そうじゃ ありません。{病院|びょういん}です。"
+          ],
+          ["これは {辞書|じしょ}ですか。", "はい、そうです。"],
+          ["それは テレビですか、コンピューターですか。", "コンピューターです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0223",
+        "type": "quiz",
+        "ref": "q0207"
+      },
+      {
+        "id": "s0224",
+        "type": "quiz",
+        "ref": "q0209"
+      },
+      {
+        "id": "s0225",
+        "teacherNotes": "Đổi chủ đồ vật: đưa đồ của học viên lên và hỏi だれの 〜ですか.",
+        "type": "grammar",
+        "ref": "g0205"
+      },
+      {
+        "id": "s0226",
+        "type": "example",
+        "ref": "g0205",
+        "reveal": true
+      },
+      {
+        "id": "s0227",
+        "teacherNotes": "Học viên trả lời bằng đồ vật thật của mình.",
+        "type": "table",
+        "title": "Luyện tập 3: về cái gì, của ai?",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["これは なんの {本|ほん}ですか。", "{日本語|にほんご}の {本|ほん}です。"],
+          ["それは なんの {雑誌|ざっし}ですか。", "{車|くるま}の {雑誌|ざっし}です。"],
+          ["これは だれの {時計|とけい}ですか。", "ナムさんの {時計|とけい}です。"],
+          ["この {傘|かさ}は だれのですか。", "わたしのです。"],
+          ["その CDは なんの CDですか。", "{英語|えいご}の CDです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0228",
+        "type": "quiz",
+        "ref": "q0211"
+      },
+      {
+        "id": "s0229",
+        "type": "quiz",
+        "ref": "q0212"
+      },
+      {
+        "id": "s0230",
+        "teacherNotes": "Thay bằng đồ vật thật trong lớp rồi cho từng cặp đổi vai.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Đây là cái gì?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ハナさん、これは なんですか。",
+            "vi": "Hana, đây là cái gì?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "それは {手帳|てちょう}です。",
+            "vi": "Đó là sổ tay."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "あれも {手帳|てちょう}ですか。",
+            "vi": "Cái kia cũng là sổ tay à?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "いいえ、あれは {辞書|じしょ}です。{日本語|にほんご}の {辞書|じしょ}です。",
+            "vi": "Không, kia là từ điển. Từ điển tiếng Nhật."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。どうも ありがとう ございます。",
+            "vi": "Vậy à. Cảm ơn bạn nhiều."
+          }
+        ]
+      },
+      {
+        "id": "s0231",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Cái ô của ai?",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "この {傘|かさ}は だれのですか。",
+            "vi": "Cái ô này của ai?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "あ、わたしのです。",
+            "vi": "A, của em ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "その かばんも アンさんのですか。",
+            "vi": "Cái cặp đó cũng của An à?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "いいえ、ちがいます。リンさんのです。",
+            "vi": "Không ạ, của Linh ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0232",
+        "teacherNotes": "Học viên mang một món đồ hoặc đặc sản quê mình để giới thiệu theo mẫu này.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Cà phê hay trà?",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "リンさん、それは コーヒーですか、おちゃですか。",
+            "vi": "Linh, đó là cà phê hay trà?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "おちゃです。ベトナムの おちゃです。",
+            "vi": "Trà. Trà Việt Nam."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "へえ、ベトナムの おちゃですか。",
+            "vi": "Ồ, trà Việt Nam à?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "はい。おみやげです。どうぞ。",
+            "vi": "Vâng. Quà đấy, mời bạn."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "えっ、ほんとうですか。どうも ありがとう ございます。",
+            "vi": "Ồ, thật à? Cảm ơn bạn nhiều."
+          }
+        ]
+      },
+      {
+        "id": "s0233",
+        "teacherNotes": "Học viên hỏi nhau theo cặp bằng đồ vật thật.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["これは なんですか。", "それは {手帳|てちょう}です。"],
+          ["それは だれの かばんですか。", "リンさんの かばんです。"],
+          ["あれは {日本|にほん}の {車|くるま}ですか。", "はい、そうです。"],
+          ["これは コーヒーですか、おちゃですか。", "コーヒーです。"],
+          [
+            "この {名刺|めいし}は ハナさんのですか。",
+            "いいえ、そうじゃ ありません。アンさんのです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0234",
+        "type": "quiz",
+        "ref": "q0250"
+      },
+      {
+        "id": "s0235",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• これ・それ・あれ (đứng một mình) — この・その・あの + danh từ\n• Hỏi: なんですか／なんの 〜ですか／だれの 〜ですか\n• Xác nhận: はい、そうです／いいえ、そうじゃ ありません\n• Lựa chọn: A ですか、B ですか → trả lời bằng A hoặc B\n• Của ai: わたしの {本|ほん}; đã rõ vật thì nói わたしのです"
+      },
+      {
+        "id": "s0236",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và luyện kanji của bài.\n2. Chụp 5 đồ vật trong nhà, viết câu これは 〜です và この 〜は わたしのです.\n3. Hỏi một người trong nhà bằng câu hỏi lựa chọn A ですか、B ですか.\n4. Đối chiếu phần luyện tập bài 2 trong sách Minna no Nihongo của bạn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0201",
+        "prompt": "（　　）は ほんです。(vật trong tay người nói)",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Vật gần người nói: これ.",
+        "type": "choice",
+        "options": ["それ", "あれ", "これ", "この"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0202",
+        "prompt": "Vật ở gần người nghe:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Gần người nghe: それ.",
+        "type": "choice",
+        "options": ["これ", "それ", "あれ", "どれ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0203",
+        "prompt": "（　　）かさは わたしのです。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Trước danh từ dùng この: この かさ.",
+        "type": "choice",
+        "options": ["これ", "この", "それは", "あれ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0204",
+        "prompt": "Câu nào đúng?",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "この + danh từ: この ほんは わたしのです.",
+        "type": "choice",
+        "options": [
+          "この は ほんです。",
+          "これ ほんは わたしのです。",
+          "この ほんは わたしのです。",
+          "これの ほんです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0205",
+        "prompt": "あれは（　　）ですか。…びょういんです。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Hỏi vật, nơi: なんですか.",
+        "type": "choice",
+        "options": ["なん", "だれ", "なんの", "だれの"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0206",
+        "prompt": "「それは なんですか」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "それ: cái đó (gần người nghe).",
+        "type": "choice",
+        "options": ["Cái này là gì?", "Đó là cái gì?", "Kia là ai?", "Cái đó của ai?"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0207",
+        "prompt": "「じしょですか」 — trả lời “Vâng, đúng vậy”:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Đồng ý: はい、そうです.",
+        "type": "choice",
+        "options": [
+          "はい、そうです。",
+          "はい、そうじゃ ありません。",
+          "いいえ、そうです。",
+          "はい、じしょじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0208",
+        "prompt": "Điền: これは ボールペンですか。…いいえ、そう（　　）。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Không phải vậy: そうじゃ ありません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じゃありません", "ではありません"]
+      },
+      {
+        "id": "q0209",
+        "prompt": "「それは コーヒーですか、おちゃですか」 — trả lời đúng:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Câu hỏi lựa chọn: trả lời thẳng bằng thứ được chọn.",
+        "type": "choice",
+        "options": [
+          "はい、おちゃです。",
+          "おちゃです。",
+          "いいえ、コーヒーです。",
+          "はい、そうです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0210",
+        "prompt": "Câu hỏi lựa chọn đúng là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "A ですか、B ですか.",
+        "type": "choice",
+        "options": [
+          "これは ボールペンですか、えんぴつですか。",
+          "これは ボールペン、えんぴつですか。",
+          "これは ボールペンですか、えんぴつです。",
+          "これは ボールペンと えんぴつですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0211",
+        "prompt": "これは（　　）ほんですか。…にほんごの ほんです。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Hỏi nội dung: なんの ほん.",
+        "type": "choice",
+        "options": ["なん", "なんの", "だれ", "だれの"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0212",
+        "prompt": "この とけいは（　　）ですか。…ナムさんのです。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Hỏi chủ sở hữu: だれのですか.",
+        "type": "choice",
+        "options": ["なん", "なんの", "だれの", "だれ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0213",
+        "prompt": "“Sách của tôi” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Người sở hữu đứng trước: わたしの ほん.",
+        "type": "choice",
+        "options": ["ほんの わたし", "わたしの ほん", "わたしは ほん", "わたし ほん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0214",
+        "prompt": "Điền một chữ: これは わたし（　　）です。(của tôi)",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Bỏ danh từ sau の khi đã rõ vật: わたしのです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["の"]
+      },
+      {
+        "id": "q0215",
+        "prompt": "「くるまの ざっし」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "の chỉ nội dung: くるまの ざっし là tạp chí về ô tô.",
+        "type": "choice",
+        "options": ["tạp chí của chiếc xe", "tạp chí về ô tô", "xe của tạp chí", "báo bán xe"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0216",
+        "prompt": "「じしょ」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "じしょ: từ điển.",
+        "type": "choice",
+        "options": ["sổ tay", "tạp chí", "từ điển", "báo"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0217",
+        "prompt": "「かさ」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "かさ: ô, dù.",
+        "type": "choice",
+        "options": ["cặp", "ô, dù", "chìa khóa", "đồng hồ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0218",
+        "prompt": "“Chìa khóa” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "かぎ: chìa khóa.",
+        "type": "choice",
+        "options": ["かぎ", "かさ", "かばん", "カード"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0219",
+        "prompt": "“Đồng hồ” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "とけい: đồng hồ.",
+        "type": "choice",
+        "options": ["てちょう", "テレビ", "つくえ", "とけい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0220",
+        "prompt": "「めいし」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "めいし: danh thiếp.",
+        "type": "choice",
+        "options": ["thẻ", "tên", "sổ tay", "danh thiếp"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0221",
+        "prompt": "“Bút bi” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "ボールペン: bút bi.",
+        "type": "choice",
+        "options": ["えんぴつ", "シャープペンシル", "ボールペン", "ノート"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0222",
+        "prompt": "「おみやげ」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "おみやげ: quà mang về, đặc sản.",
+        "type": "choice",
+        "options": ["trà", "sô-cô-la", "cà phê", "quà (mua khi đi xa về)"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0223",
+        "prompt": "Ngạc nhiên “Thật không?” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "ほんとうですか: thật không?",
+        "type": "choice",
+        "options": ["どうぞ", "ほんとうですか", "あのう", "そうです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0224",
+        "prompt": "Mời ai đó nhận hoặc dùng gì:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "どうぞ: xin mời.",
+        "type": "choice",
+        "options": ["どうぞ", "あのう", "えっ", "へえ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0225",
+        "prompt": "Trước khi hỏi, ngập ngừng nói:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "あのう: à, ừm.",
+        "type": "choice",
+        "options": ["どうぞ", "あのう", "ほんとうですか", "そうです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0226",
+        "prompt": "「にほんごの ほん」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "の chỉ nội dung: sách (bằng/về) tiếng Nhật.",
+        "type": "choice",
+        "options": ["sách ở Nhật", "sách tiếng Nhật", "người Nhật", "tiếng Nhật"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0227",
+        "prompt": "Điền: “tiếng Anh” = えい（　　）",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Tiếng …: 〜ご; tiếng Anh: えいご.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ご"]
+      },
+      {
+        "id": "q0228",
+        "prompt": "Viết cách đọc bằng hiragana: 本",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0209"],
+        "explain": "本 đọc là ほん: sách.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ほん"]
+      },
+      {
+        "id": "q0229",
+        "prompt": "Viết cách đọc bằng hiragana: 辞書",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0210"],
+        "explain": "辞書 đọc là じしょ: từ điển.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じしょ"]
+      },
+      {
+        "id": "q0230",
+        "prompt": "Viết cách đọc bằng hiragana: 雑誌",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0211"],
+        "explain": "雑誌 đọc là ざっし: tạp chí.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ざっし"]
+      },
+      {
+        "id": "q0231",
+        "prompt": "Viết cách đọc bằng hiragana: 新聞",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0212"],
+        "explain": "新聞 đọc là しんぶん: báo.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しんぶん"]
+      },
+      {
+        "id": "q0232",
+        "prompt": "Viết cách đọc bằng hiragana: 名刺",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0215"],
+        "explain": "名刺 đọc là めいし: danh thiếp.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["めいし"]
+      },
+      {
+        "id": "q0233",
+        "prompt": "Viết cách đọc bằng hiragana: 鉛筆",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0217"],
+        "explain": "鉛筆 đọc là えんぴつ: bút chì.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["えんぴつ"]
+      },
+      {
+        "id": "q0234",
+        "prompt": "Viết cách đọc bằng hiragana: 時計",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0221"],
+        "explain": "時計 đọc là とけい: đồng hồ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["とけい"]
+      },
+      {
+        "id": "q0235",
+        "prompt": "Viết cách đọc bằng hiragana: 傘",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0222"],
+        "explain": "傘 đọc là かさ: ô, dù.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かさ"]
+      },
+      {
+        "id": "q0236",
+        "prompt": "Viết cách đọc bằng hiragana: 車",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0229"],
+        "explain": "車 đọc là くるま: ô tô, xe hơi.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くるま"]
+      },
+      {
+        "id": "q0237",
+        "prompt": "Viết cách đọc bằng hiragana: 日本語",
+        "points": 1,
+        "tags": ["minna-2", "kanji", "kanji:v0237"],
+        "explain": "日本語 đọc là にほんご: tiếng Nhật.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["にほんご"]
+      },
+      {
+        "id": "q0238",
+        "prompt": "Chỉ vật ở xa cả hai người:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Xa cả hai: あれ.",
+        "type": "choice",
+        "options": ["これ", "それ", "あれ", "この"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0239",
+        "prompt": "あの ひとは（　　）ですか。…せんせいです。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Hỏi người: だれ.",
+        "type": "choice",
+        "options": ["なん", "だれ", "なんの", "だれの"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0240",
+        "prompt": "Câu nào sai?",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "この phải đi với danh từ; muốn nói “cái này” dùng これ.",
+        "type": "choice",
+        "options": [
+          "これは わたしの かばんです。",
+          "その かぎは だれのですか。",
+          "あれは なんですか。",
+          "この は なんですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0241",
+        "prompt": "「そうじゃ ありません」 nghĩa là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "そうじゃ ありません: không phải vậy.",
+        "type": "choice",
+        "options": ["đúng vậy", "không phải vậy", "vậy à", "thật không"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0242",
+        "prompt": "「えっ、ほんとうですか」 thể hiện:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "えっ, ほんとうですか: ngạc nhiên.",
+        "type": "choice",
+        "options": ["ngạc nhiên", "lời mời", "lời cảm ơn", "lời xin lỗi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0243",
+        "prompt": "Hoàn thành lời cảm ơn: どうも ありがとう（　　）。",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "どうも ありがとう ございます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ございます"]
+      },
+      {
+        "id": "q0244",
+        "prompt": "「これは ナムさんの とけいです」 = 「この とけいは（　　）です」",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Bỏ danh từ sau の: ナムさんのです.",
+        "type": "choice",
+        "options": ["ナムさん", "ナムさんの", "ナムさんは", "ナムさんも"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0245",
+        "prompt": "Đáp lại 「これ、どうぞ」:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "Nhận quà, đồ mời: どうも ありがとう ございます.",
+        "type": "choice",
+        "options": [
+          "どうも ありがとう ございます。",
+          "はい、そうです。",
+          "いいえ、ちがいます。",
+          "あのう。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0246",
+        "prompt": "「テレビ」 là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "テレビ: ti vi.",
+        "type": "choice",
+        "options": ["radio", "ti vi", "máy ảnh", "máy tính"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0247",
+        "prompt": "“Cái ghế” là:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "いす: cái ghế; つくえ: cái bàn.",
+        "type": "choice",
+        "options": ["つくえ", "くるま", "かばん", "いす"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0248",
+        "prompt": "「これは なんの CDですか」 — trả lời:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "なんの 〜: trả lời nội dung (えいごの CD).",
+        "type": "choice",
+        "options": [
+          "わたしの CDです。",
+          "えいごの CDです。",
+          "はい、そうです。",
+          "CDじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0249",
+        "prompt": "「それは だれの めいしですか」 — trả lời:",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "だれの 〜: trả lời người sở hữu.",
+        "type": "choice",
+        "options": [
+          "たなかさんの めいしです。",
+          "めいしの たなかさんです。",
+          "にほんの めいしです。",
+          "はい、めいしです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0250",
+        "prompt": "Câu nào nghĩa là “Cái kia là gì?”",
+        "points": 1,
+        "tags": ["minna-2"],
+        "explain": "あれ: cái kia; なん: cái gì.",
+        "type": "choice",
+        "options": [
+          "これは なんですか。",
+          "それは なんですか。",
+          "あれは なんですか。",
+          "あれは だれですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

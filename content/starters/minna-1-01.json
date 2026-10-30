@@ -1,0 +1,1465 @@
+{
+  "id": "minna-1-01",
+  "title": "Bài 1 – Giới thiệu bản thân",
+  "titleJa": "第1課　じこしょうかい",
+  "summary": "Theo trình tự bài 1 Minna no Nihongo Sơ cấp I: câu danh từ N1は N2です, phủ định じゃ ありません, câu hỏi 〜ですか, も (cũng), の (của, thuộc); giới thiệu tên, quốc tịch, nghề nghiệp, tuổi và chào khi gặp lần đầu.",
+  "order": 1,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0101",
+        "jp": "わたし",
+        "kanji": "私",
+        "romaji": "watashi",
+        "vi": "tôi",
+        "audio": null
+      },
+      {
+        "id": "v0102",
+        "jp": "あなた",
+        "romaji": "anata",
+        "vi": "bạn, anh, chị (người đang nói chuyện với mình)",
+        "audio": null
+      },
+      {
+        "id": "v0103",
+        "jp": "あのひと",
+        "kanji": "あの人",
+        "romaji": "ano hito",
+        "vi": "người kia",
+        "audio": null,
+        "image": "/icons/vocab/bust-in-silhouette.svg"
+      },
+      {
+        "id": "v0104",
+        "jp": "あのかた",
+        "kanji": "あの方",
+        "romaji": "ano kata",
+        "vi": "vị kia (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0105",
+        "jp": "みなさん",
+        "kanji": "皆さん",
+        "romaji": "minasan",
+        "vi": "mọi người, các bạn",
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
+      },
+      {
+        "id": "v0106",
+        "jp": "〜さん",
+        "romaji": "-san",
+        "vi": "anh, chị, ông, bà … (gọi người khác, không dùng cho mình)",
+        "audio": null
+      },
+      {
+        "id": "v0107",
+        "jp": "〜ちゃん",
+        "romaji": "-chan",
+        "vi": "bé … (gọi trẻ nhỏ, bạn thân)",
+        "audio": null
+      },
+      {
+        "id": "v0108",
+        "jp": "〜じん",
+        "kanji": "〜人",
+        "romaji": "-jin",
+        "vi": "người (nước) …",
+        "audio": null
+      },
+      {
+        "id": "v0109",
+        "jp": "せんせい",
+        "kanji": "先生",
+        "romaji": "sensei",
+        "vi": "thầy, cô (gọi giáo viên, bác sĩ)",
+        "audio": null,
+        "image": "/icons/vocab/teacher.svg"
+      },
+      {
+        "id": "v0110",
+        "jp": "きょうし",
+        "kanji": "教師",
+        "romaji": "kyoushi",
+        "vi": "giáo viên (nói về nghề của mình)",
+        "audio": null
+      },
+      {
+        "id": "v0111",
+        "jp": "がくせい",
+        "kanji": "学生",
+        "romaji": "gakusei",
+        "vi": "học sinh, sinh viên",
+        "audio": null,
+        "image": "/icons/vocab/student.svg"
+      },
+      {
+        "id": "v0112",
+        "jp": "かいしゃいん",
+        "kanji": "会社員",
+        "romaji": "kaishain",
+        "vi": "nhân viên công ty",
+        "audio": null,
+        "image": "/icons/vocab/man-office-worker.svg"
+      },
+      {
+        "id": "v0113",
+        "jp": "ぎんこういん",
+        "kanji": "銀行員",
+        "romaji": "ginkouin",
+        "vi": "nhân viên ngân hàng",
+        "audio": null,
+        "image": "/icons/vocab/bank.svg"
+      },
+      {
+        "id": "v0114",
+        "jp": "いしゃ",
+        "kanji": "医者",
+        "romaji": "isha",
+        "vi": "bác sĩ",
+        "audio": null,
+        "image": "/icons/vocab/stethoscope.svg"
+      },
+      {
+        "id": "v0115",
+        "jp": "エンジニア",
+        "romaji": "enjinia",
+        "vi": "kỹ sư",
+        "audio": null,
+        "image": "/icons/vocab/gear.svg"
+      },
+      {
+        "id": "v0116",
+        "jp": "けんきゅうしゃ",
+        "kanji": "研究者",
+        "romaji": "kenkyuusha",
+        "vi": "nhà nghiên cứu",
+        "audio": null,
+        "image": "/icons/vocab/microscope.svg"
+      },
+      {
+        "id": "v0117",
+        "jp": "だいがく",
+        "kanji": "大学",
+        "romaji": "daigaku",
+        "vi": "trường đại học",
+        "audio": null,
+        "image": "/icons/vocab/school.svg"
+      },
+      {
+        "id": "v0118",
+        "jp": "びょういん",
+        "kanji": "病院",
+        "romaji": "byouin",
+        "vi": "bệnh viện",
+        "audio": null,
+        "image": "/icons/vocab/hospital.svg"
+      },
+      {
+        "id": "v0119",
+        "jp": "かいしゃ",
+        "kanji": "会社",
+        "romaji": "kaisha",
+        "vi": "công ty",
+        "audio": null,
+        "image": "/icons/vocab/office-building.svg"
+      },
+      {
+        "id": "v0120",
+        "jp": "ぎんこう",
+        "kanji": "銀行",
+        "romaji": "ginkou",
+        "vi": "ngân hàng",
+        "audio": null,
+        "image": "/icons/vocab/bank.svg"
+      },
+      {
+        "id": "v0121",
+        "jp": "ベトナム",
+        "romaji": "betonamu",
+        "vi": "Việt Nam",
+        "audio": null
+      },
+      {
+        "id": "v0122",
+        "jp": "にほん",
+        "kanji": "日本",
+        "romaji": "nihon",
+        "vi": "Nhật Bản",
+        "audio": null,
+        "image": "/icons/vocab/map-of-japan.svg"
+      },
+      {
+        "id": "v0123",
+        "jp": "ちゅうごく",
+        "kanji": "中国",
+        "romaji": "chuugoku",
+        "vi": "Trung Quốc",
+        "audio": null
+      },
+      {
+        "id": "v0124",
+        "jp": "かんこく",
+        "kanji": "韓国",
+        "romaji": "kankoku",
+        "vi": "Hàn Quốc",
+        "audio": null
+      },
+      {
+        "id": "v0125",
+        "jp": "アメリカ",
+        "romaji": "amerika",
+        "vi": "Mỹ",
+        "audio": null
+      },
+      {
+        "id": "v0126",
+        "jp": "タイ",
+        "romaji": "tai",
+        "vi": "Thái Lan",
+        "audio": null
+      },
+      {
+        "id": "v0127",
+        "jp": "フランス",
+        "romaji": "furansu",
+        "vi": "Pháp",
+        "audio": null
+      },
+      {
+        "id": "v0128",
+        "jp": "なまえ",
+        "kanji": "名前",
+        "romaji": "namae",
+        "vi": "tên",
+        "audio": null,
+        "image": "/icons/vocab/identification-card.svg"
+      },
+      {
+        "id": "v0129",
+        "jp": "しごと",
+        "kanji": "仕事",
+        "romaji": "shigoto",
+        "vi": "công việc",
+        "audio": null,
+        "image": "/icons/vocab/briefcase.svg"
+      },
+      {
+        "id": "v0130",
+        "jp": "〜さい",
+        "kanji": "〜歳",
+        "romaji": "-sai",
+        "vi": "… tuổi",
+        "audio": null,
+        "image": "/icons/vocab/birthday-cake.svg"
+      },
+      {
+        "id": "v0131",
+        "jp": "なんさい",
+        "kanji": "何歳",
+        "romaji": "nansai",
+        "vi": "mấy tuổi",
+        "audio": null
+      },
+      {
+        "id": "v0132",
+        "jp": "おいくつ",
+        "romaji": "oikutsu",
+        "vi": "bao nhiêu tuổi (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0133",
+        "jp": "だれ",
+        "romaji": "dare",
+        "vi": "ai",
+        "audio": null
+      },
+      {
+        "id": "v0134",
+        "jp": "どなた",
+        "romaji": "donata",
+        "vi": "vị nào (lịch sự của だれ)",
+        "audio": null
+      },
+      {
+        "id": "v0135",
+        "jp": "はい",
+        "romaji": "hai",
+        "vi": "vâng, dạ, có",
+        "audio": null,
+        "image": "/icons/vocab/check-mark-button.svg"
+      },
+      {
+        "id": "v0136",
+        "jp": "いいえ",
+        "romaji": "iie",
+        "vi": "không",
+        "audio": null,
+        "image": "/icons/vocab/cross-mark.svg"
+      },
+      {
+        "id": "v0137",
+        "jp": "そうです",
+        "romaji": "sou desu",
+        "vi": "đúng vậy",
+        "audio": null
+      },
+      {
+        "id": "v0138",
+        "jp": "そうですか",
+        "romaji": "sou desu ka",
+        "vi": "vậy à, thế à",
+        "audio": null
+      },
+      {
+        "id": "v0139",
+        "jp": "ちがいます",
+        "kanji": "違います",
+        "romaji": "chigaimasu",
+        "vi": "không phải, sai rồi",
+        "audio": null
+      },
+      {
+        "id": "v0140",
+        "jp": "はじめまして",
+        "romaji": "hajimemashite",
+        "vi": "Rất vui được gặp (khi gặp lần đầu)",
+        "audio": null,
+        "image": "/icons/vocab/handshake.svg"
+      },
+      {
+        "id": "v0141",
+        "jp": "どうぞ よろしく おねがいします",
+        "romaji": "douzo yoroshiku onegaishimasu",
+        "vi": "Rất mong được giúp đỡ",
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
+      },
+      {
+        "id": "v0142",
+        "jp": "しつれいですが",
+        "kanji": "失礼ですが",
+        "romaji": "shitsurei desu ga",
+        "vi": "Xin lỗi, (cho hỏi) …",
+        "audio": null
+      },
+      {
+        "id": "v0143",
+        "jp": "おなまえは",
+        "kanji": "お名前は",
+        "romaji": "onamae wa",
+        "vi": "Tên anh/chị là gì? (hỏi tên)",
+        "audio": null
+      },
+      {
+        "id": "v0144",
+        "jp": "こちらは 〜さんです",
+        "romaji": "kochira wa ~san desu",
+        "vi": "Đây là anh/chị … (giới thiệu người khác)",
+        "audio": null
+      },
+      {
+        "id": "v0145",
+        "jp": "〜から きました",
+        "kanji": "〜から 来ました",
+        "romaji": "~kara kimashita",
+        "vi": "(Tôi) đến từ …",
+        "audio": null,
+        "image": "/icons/vocab/airplane-arrival.svg"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0101",
+        "pattern": "N1は N2です",
+        "vi": "N1 là N2",
+        "explain": "は là trợ từ chủ đề, đọc là wa. です đặt cuối câu để nói lịch sự; câu không cần thêm từ “là” riêng.",
+        "viMistake": "Khi là trợ từ, は đọc là wa (không đọc ha), nhưng vẫn viết là は.",
+        "examples": [
+          {
+            "jp": "わたしは ナムです。",
+            "vi": "Tôi là Nam.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは {学生|がくせい}です。",
+            "vi": "Tôi là sinh viên.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんは ベトナム{人|じん}です。",
+            "vi": "Linh là người Việt Nam.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0102",
+        "pattern": "N1は N2じゃ ありません",
+        "vi": "N1 không phải là N2",
+        "explain": "Phủ định của です là じゃ ありません; văn viết hoặc trang trọng hơn: では ありません.",
+        "viMistake": "Không thêm ない vào sau danh từ: nói {学生|がくせい}じゃ ありません, không nói {学生|がくせい}ないです.",
+        "examples": [
+          {
+            "jp": "わたしは {先生|せんせい}じゃ ありません。",
+            "vi": "Tôi không phải là giáo viên.",
+            "audio": null
+          },
+          {
+            "jp": "アンさんは {会社員|かいしゃいん}じゃ ありません。",
+            "vi": "An không phải là nhân viên công ty.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {医者|いしゃ}では ありません。",
+            "vi": "Anh Tanaka không phải là bác sĩ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0103",
+        "pattern": "N1は N2ですか",
+        "vi": "Câu hỏi: N1 có phải là N2 không?",
+        "explain": "Thêm か vào cuối câu để hỏi, lên giọng nhẹ ở cuối. Trả lời: はい、そうです／いいえ、ちがいます (hoặc いいえ、〜じゃ ありません).",
+        "viMistake": "か đã làm nhiệm vụ dấu hỏi; trong văn viết tiếng Nhật thường kết thúc bằng 。, không cần ？.",
+        "examples": [
+          {
+            "jp": "ナムさんは {学生|がくせい}ですか。",
+            "vi": "Nam có phải là sinh viên không?",
+            "audio": null
+          },
+          {
+            "jp": "はい、そうです。",
+            "vi": "Vâng, đúng vậy.",
+            "audio": null
+          },
+          {
+            "jp": "いいえ、ちがいます。{会社員|かいしゃいん}です。",
+            "vi": "Không, không phải. Tôi là nhân viên công ty.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0104",
+        "pattern": "N も N です",
+        "vi": "… cũng là …",
+        "explain": "も thay cho は khi điều muốn nói giống với điều vừa nói: アンさんも {学生|がくせい}です.",
+        "viMistake": "Không dùng は và も cùng lúc: không nói アンさんはも.",
+        "examples": [
+          {
+            "jp": "わたしは ベトナム{人|じん}です。",
+            "vi": "Tôi là người Việt Nam.",
+            "audio": null
+          },
+          {
+            "jp": "アンさんも ベトナム{人|じん}です。",
+            "vi": "An cũng là người Việt Nam.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんも {学生|がくせい}ですか。",
+            "vi": "Linh cũng là sinh viên à?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0105",
+        "pattern": "N1の N2",
+        "vi": "N2 của / thuộc N1",
+        "explain": "の nối hai danh từ, danh từ chính đứng sau: みどり{大学|だいがく}の {学生|がくせい} là sinh viên của Đại học Midori.",
+        "viMistake": "Trật tự ngược với tiếng Việt: “sinh viên Đại học Hà Nội” là ハノイ{大学|だいがく}の {学生|がくせい}.",
+        "examples": [
+          {
+            "jp": "わたしは ハノイ{大学|だいがく}の {学生|がくせい}です。",
+            "vi": "Tôi là sinh viên Đại học Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "ミンさんは あおば{銀行|ぎんこう}の {銀行員|ぎんこういん}です。",
+            "vi": "Anh Minh là nhân viên ngân hàng Aoba.",
+            "audio": null
+          },
+          {
+            "jp": "ハナさんは みどり{大学|だいがく}の {学生|がくせい}です。",
+            "vi": "Hana là sinh viên Đại học Midori.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0101",
+        "teacherNotes": "Khởi động 3 phút: giáo viên tự giới thiệu bằng tiếng Việt rồi bằng tiếng Nhật; học viên đoán nghĩa. Bài đi theo trình tự bài 1 Minna no Nihongo Sơ cấp I; nhắc học viên mở sách để đối chiếu.",
+        "type": "title",
+        "jp": "{第|だい}1{課|か}",
+        "vi": "Giới thiệu bản thân"
+      },
+      {
+        "id": "s0102",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Giới thiệu tên, quốc tịch, nghề nghiệp: わたしは 〜です\n2. Phủ định và câu hỏi: 〜じゃ ありません, 〜ですか\n3. “cũng” も và “của, thuộc” の\n4. Chào khi gặp lần đầu: はじめまして, どうぞ よろしく おねがいします"
+      },
+      {
+        "id": "s0103",
+        "teacherNotes": "〜さん không dùng cho chính mình. あのかた lịch sự hơn あのひと.",
+        "type": "vocab",
+        "refs": ["v0101", "v0102", "v0103", "v0104", "v0105", "v0106", "v0107", "v0108"]
+      },
+      {
+        "id": "s0104",
+        "teacherNotes": "せんせい dùng để gọi thầy cô (và bác sĩ); tự nói nghề của mình thì dùng きょうし.",
+        "type": "vocab",
+        "refs": ["v0109", "v0110", "v0111", "v0112", "v0113", "v0114", "v0115", "v0116"]
+      },
+      {
+        "id": "s0105",
+        "teacherNotes": "Tên nước + じん = người nước đó: ベトナムじん, にほんじん.",
+        "type": "vocab",
+        "refs": ["v0117", "v0118", "v0119", "v0120", "v0121", "v0122", "v0123", "v0124"]
+      },
+      {
+        "id": "s0106",
+        "teacherNotes": "Hỏi tuổi lịch sự: おいくつですか. Chú ý 1さい いっさい, 8さい はっさい, 20さい はたち.",
+        "type": "vocab",
+        "refs": ["v0125", "v0126", "v0127", "v0128", "v0129", "v0130", "v0131", "v0132"]
+      },
+      {
+        "id": "s0107",
+        "teacherNotes": "はい／いいえ dùng để trả lời câu hỏi có/không; そうですか là “vậy à”, không phải câu hỏi.",
+        "type": "vocab",
+        "refs": ["v0133", "v0134", "v0135", "v0136", "v0137", "v0138", "v0139"]
+      },
+      {
+        "id": "s0108",
+        "teacherNotes": "Luyện cả câu chào và cúi chào nhẹ khi nói どうぞ よろしく おねがいします.",
+        "type": "vocab",
+        "refs": ["v0140", "v0141", "v0142", "v0143", "v0144", "v0145"]
+      },
+      {
+        "id": "s0109",
+        "teacherNotes": "〜{語|ご} (tiếng …) học kỹ ở bài 2; tiếng Anh là ngoại lệ: {英語|えいご}.",
+        "type": "table",
+        "title": "Nước, người và tiếng",
+        "columns": ["Nước", "Người", "Tiếng"],
+        "rows": [
+          ["ベトナム", "ベトナム{人|じん}", "ベトナム{語|ご}"],
+          ["{日本|にほん}", "{日本人|にほんじん}", "{日本語|にほんご}"],
+          ["{中国|ちゅうごく}", "{中国人|ちゅうごくじん}", "{中国語|ちゅうごくご}"],
+          ["{韓国|かんこく}", "{韓国人|かんこくじん}", "{韓国語|かんこくご}"],
+          ["アメリカ", "アメリカ{人|じん}", "{英語|えいご}"],
+          ["タイ", "タイ{人|じん}", "タイ{語|ご}"],
+          ["フランス", "フランス{人|じん}", "フランス{語|ご}"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s0110",
+        "teacherNotes": "Chỉ vào mình và nói: わたしは ＿です. Gọi vài học viên làm theo.",
+        "type": "grammar",
+        "ref": "g0101"
+      },
+      {
+        "id": "s0111",
+        "type": "example",
+        "ref": "g0101",
+        "reveal": true
+      },
+      {
+        "id": "s0112",
+        "teacherNotes": "Giáo viên nói câu sai về một học viên để cả lớp sửa bằng 〜じゃ ありません.",
+        "type": "grammar",
+        "ref": "g0102"
+      },
+      {
+        "id": "s0113",
+        "type": "example",
+        "ref": "g0102",
+        "reveal": true
+      },
+      {
+        "id": "s0114",
+        "teacherNotes": "（−）là câu phủ định. Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: tôi là …",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["わたし・ナム", "わたしは ナムです。"],
+          ["アンさん・{学生|がくせい}", "アンさんは {学生|がくせい}です。"],
+          ["リンさん・ベトナム{人|じん}", "リンさんは ベトナム{人|じん}です。"],
+          [
+            "{田中|たなか}さん・{会社員|かいしゃいん}",
+            "{田中|たなか}さんは {会社員|かいしゃいん}です。"
+          ],
+          ["わたし・{先生|せんせい}（−）", "わたしは {先生|せんせい}じゃ ありません。"],
+          ["ハナさん・{医者|いしゃ}（−）", "ハナさんは {医者|いしゃ}じゃ ありません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0115",
+        "type": "quiz",
+        "ref": "q0101"
+      },
+      {
+        "id": "s0116",
+        "type": "quiz",
+        "ref": "q0103"
+      },
+      {
+        "id": "s0117",
+        "type": "quiz",
+        "ref": "q0102"
+      },
+      {
+        "id": "s0118",
+        "teacherNotes": "Luyện lên giọng ở か; hỏi lần lượt từng học viên về nghề của họ.",
+        "type": "grammar",
+        "ref": "g0103"
+      },
+      {
+        "id": "s0119",
+        "type": "example",
+        "ref": "g0103",
+        "reveal": true
+      },
+      {
+        "id": "s0120",
+        "teacherNotes": "Hai học viên cùng nghề hoặc cùng quốc tịch: dùng も để nói người thứ hai.",
+        "type": "grammar",
+        "ref": "g0104"
+      },
+      {
+        "id": "s0121",
+        "type": "example",
+        "ref": "g0104",
+        "reveal": true
+      },
+      {
+        "id": "s0122",
+        "teacherNotes": "Học viên hỏi nhau theo cặp, đổi tên bằng bạn cùng lớp.",
+        "type": "table",
+        "title": "Luyện tập 2: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["ナムさんは {学生|がくせい}ですか。", "はい、そうです。"],
+          ["アンさんは {先生|せんせい}ですか。", "いいえ、ちがいます。{学生|がくせい}です。"],
+          ["{田中|たなか}さんは {日本人|にほんじん}ですか。", "はい、{日本人|にほんじん}です。"],
+          ["リンさんも ベトナム{人|じん}ですか。", "はい、リンさんも ベトナム{人|じん}です。"],
+          ["あの {人|ひと}は だれですか。", "ハナさんです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0123",
+        "type": "quiz",
+        "ref": "q0106"
+      },
+      {
+        "id": "s0124",
+        "type": "quiz",
+        "ref": "q0108"
+      },
+      {
+        "id": "s0125",
+        "teacherNotes": "Viết lên bảng: [nơi] の [người]. Hỏi học viên học ở trường nào, làm ở đâu.",
+        "type": "grammar",
+        "ref": "g0105"
+      },
+      {
+        "id": "s0126",
+        "type": "example",
+        "ref": "g0105",
+        "reveal": true
+      },
+      {
+        "id": "s0127",
+        "teacherNotes": "Tên trường, ngân hàng, bệnh viện trong bài là tên tự đặt; học viên thay bằng nơi thật của mình.",
+        "type": "table",
+        "title": "Luyện tập 3: của, thuộc",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "わたし・ハノイ{大学|だいがく}・{学生|がくせい}",
+            "わたしは ハノイ{大学|だいがく}の {学生|がくせい}です。"
+          ],
+          [
+            "ミンさん・あおば{銀行|ぎんこう}・{銀行員|ぎんこういん}",
+            "ミンさんは あおば{銀行|ぎんこう}の {銀行員|ぎんこういん}です。"
+          ],
+          [
+            "ハナさん・みどり{大学|だいがく}・{学生|がくせい}",
+            "ハナさんは みどり{大学|だいがく}の {学生|がくせい}です。"
+          ],
+          [
+            "ユンさん・ひかり{病院|びょういん}・{医者|いしゃ}",
+            "ユンさんは ひかり{病院|びょういん}の {医者|いしゃ}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0128",
+        "type": "quiz",
+        "ref": "q0110"
+      },
+      {
+        "id": "s0129",
+        "type": "quiz",
+        "ref": "q0111"
+      },
+      {
+        "id": "s0130",
+        "teacherNotes": "Cho từng cặp đổi vai và thay bằng tên, nước, trường của mình.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Lần đầu gặp mặt",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "はじめまして。{田中|たなか}です。",
+            "vi": "Rất vui được gặp bạn. Tôi là Tanaka."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はじめまして。ナムです。ベトナムから {来|き}ました。",
+            "vi": "Rất vui được gặp anh. Tôi là Nam. Tôi đến từ Việt Nam."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ナムさんは {学生|がくせい}ですか。",
+            "vi": "Nam là sinh viên à?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい、みどり{大学|だいがく}の {学生|がくせい}です。",
+            "vi": "Vâng, tôi là sinh viên Đại học Midori."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "そうですか。わたしは {会社員|かいしゃいん}です。",
+            "vi": "Vậy à. Tôi là nhân viên công ty."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "どうぞ よろしく おねがいします。",
+            "vi": "Rất mong anh giúp đỡ."
+          }
+        ]
+      },
+      {
+        "id": "s0131",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Giới thiệu bạn",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "ハナさん、こちらは リンさんです。",
+            "vi": "Hana, đây là Linh."
+          },
+          {
+            "speaker": "リン",
+            "jp": "はじめまして。リンです。",
+            "vi": "Chào bạn, mình là Linh."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "はじめまして。ハナです。リンさんも ベトナム{人|じん}ですか。",
+            "vi": "Chào bạn, mình là Hana. Linh cũng là người Việt Nam à?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "はい、そうです。どうぞ よろしく。",
+            "vi": "Đúng vậy. Rất vui được làm quen."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "よろしく おねがいします。",
+            "vi": "Rất mong được giúp đỡ."
+          }
+        ]
+      },
+      {
+        "id": "s0132",
+        "teacherNotes": "21さい đọc là にじゅういっさい. Nhắc: hỏi tuổi người lớn tuổi hơn cần cẩn thận.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Cho hỏi tên và tuổi",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "しつれいですが、おなまえは？",
+            "vi": "Xin lỗi, tên anh là gì ạ?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ナムです。",
+            "vi": "Tôi là Nam."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "ナムさん、おいくつですか。",
+            "vi": "Anh Nam bao nhiêu tuổi ạ?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "21{歳|さい}です。",
+            "vi": "Tôi 21 tuổi."
+          }
+        ]
+      },
+      {
+        "id": "s0133",
+        "teacherNotes": "Học viên hỏi nhau theo cặp; câu trả lời dùng thông tin thật của mình.",
+        "type": "table",
+        "title": "Luyện tập 4: tự giới thiệu",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["おなまえは？", "ナムです。"],
+          ["おいくつですか。", "21{歳|さい}です。"],
+          ["{学生|がくせい}ですか。", "いいえ、{会社員|かいしゃいん}です。"],
+          ["ベトナム{人|じん}ですか。", "はい、ベトナム{人|じん}です。"],
+          ["{先生|せんせい}は {日本人|にほんじん}ですか。", "はい、{日本人|にほんじん}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0134",
+        "type": "quiz",
+        "ref": "q0150"
+      },
+      {
+        "id": "s0135",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• N1は N2です／N1は N2じゃ ありません\n• Hỏi: 〜ですか → はい、そうです／いいえ、ちがいます\n• Cũng: N も\n• Của, thuộc: N1の N2 (danh từ chính đứng sau)\n• Gặp lần đầu: はじめまして → (tên)です → どうぞ よろしく おねがいします"
+      },
+      {
+        "id": "s0136",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và luyện kanji của bài.\n2. Viết 4 câu giới thiệu bản thân: tên, nước, nghề, nơi học hoặc làm việc.\n3. Giới thiệu một người bạn bằng こちらは 〜さんです.\n4. Đối chiếu phần luyện tập bài 1 trong sách Minna no Nihongo của bạn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0101",
+        "prompt": "わたし（　　）ナムです。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Chủ đề câu đi với は (đọc là wa): わたしは ナムです.",
+        "type": "choice",
+        "options": ["を", "は", "が", "も"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0102",
+        "prompt": "「わたしは がくせいです」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "がくせい: học sinh, sinh viên.",
+        "type": "choice",
+        "options": [
+          "Tôi là giáo viên.",
+          "Tôi không phải sinh viên.",
+          "Bạn là sinh viên à?",
+          "Tôi là sinh viên."
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0103",
+        "prompt": "わたしは せんせい（　　）。(không phải giáo viên)",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Phủ định của です là じゃ ありません.",
+        "type": "choice",
+        "options": ["です", "じゃ ありません", "ですか", "も"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0104",
+        "prompt": "Điền phủ định: アンさんは いしゃ（　　）。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Danh từ + じゃ ありません (trang trọng hơn: では ありません).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じゃありません", "ではありません"]
+      },
+      {
+        "id": "q0105",
+        "prompt": "ナムさんは がくせい（　　）。(hỏi)",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Thêm か vào cuối câu để hỏi: がくせいですか.",
+        "type": "choice",
+        "options": ["ですか", "です", "じゃ", "の"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0106",
+        "prompt": "「がくせいですか」 — trả lời “Vâng, đúng vậy”:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Đồng ý: はい、そうです.",
+        "type": "choice",
+        "options": [
+          "いいえ、そうです。",
+          "はい、そうです。",
+          "はい、ちがいます。",
+          "はい、がくせいじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0107",
+        "prompt": "「いしゃですか」 — trả lời “Không phải”:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Không đồng ý: いいえ、ちがいます (hoặc いいえ、いしゃじゃ ありません).",
+        "type": "choice",
+        "options": [
+          "はい、ちがいます。",
+          "いいえ、そうです。",
+          "いいえ、ちがいます。",
+          "いいえ、いしゃです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0108",
+        "prompt": "わたしは ベトナムじんです。アンさん（　　）ベトナムじんです。(cũng)",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "も thay cho は khi điều nói giống câu trước.",
+        "type": "choice",
+        "options": ["は", "の", "も", "か"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0109",
+        "prompt": "Câu nào đúng? (Linh cũng là sinh viên.)",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Chủ thể + も: リンさんも がくせいです.",
+        "type": "choice",
+        "options": [
+          "リンさんは がくせいも です。",
+          "リンさんも がくせいです。",
+          "リンさんはも がくせいです。",
+          "リンさんの がくせいです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0110",
+        "prompt": "ハノイだいがく（　　）がくせい",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Nối hai danh từ bằng の: ハノイだいがくの がくせい.",
+        "type": "choice",
+        "options": ["の", "は", "も", "か"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0111",
+        "prompt": "“Nhân viên ngân hàng Aoba” là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Danh từ chính (ぎんこういん) đứng sau の.",
+        "type": "choice",
+        "options": [
+          "ぎんこういんの あおば",
+          "あおばぎんこうの ぎんこういん",
+          "あおばは ぎんこういん",
+          "あおばも ぎんこういん"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0112",
+        "prompt": "Điền một chữ: わたしは みどりだいがく（　　）がくせいです。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "N1の N2: みどりだいがくの がくせい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["の"]
+      },
+      {
+        "id": "q0113",
+        "prompt": "Điền một chữ (chủ đề câu): たなかさん（　　）にほんじんです。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Chủ đề câu đi với は.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["は"]
+      },
+      {
+        "id": "q0114",
+        "prompt": "あの ひとは（　　）ですか。…リンさんです。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Hỏi người: だれ (lịch sự: どなた).",
+        "type": "choice",
+        "options": ["なん", "だれ", "どこ", "いつ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0115",
+        "prompt": "「どなた」 là cách nói lịch sự của:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "どなた = だれ nhưng lịch sự hơn.",
+        "type": "choice",
+        "options": ["なん", "だれ", "どこ", "いくつ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0116",
+        "prompt": "ナムさんは（　　）ですか。…21さいです。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Hỏi tuổi: なんさいですか (lịch sự: おいくつですか).",
+        "type": "choice",
+        "options": ["だれ", "なん", "どなた", "なんさい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0117",
+        "prompt": "Hỏi tuổi một cách lịch sự:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "おいくつですか lịch sự hơn なんさいですか.",
+        "type": "choice",
+        "options": ["なんさいですか。", "おいくつですか。", "だれですか。", "おなまえは。"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0118",
+        "prompt": "Viết cách đọc bằng hiragana: 21歳",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "1 + さい đọc là いっさい: 21歳 = にじゅういっさい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["にじゅういっさい"]
+      },
+      {
+        "id": "q0119",
+        "prompt": "Khi gặp ai đó lần đầu, bạn nói:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "はじめまして dùng khi gặp lần đầu.",
+        "type": "choice",
+        "options": ["はじめまして", "しつれいですが", "ちがいます", "そうですか"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0120",
+        "prompt": "Câu kết khi tự giới thiệu:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Kết thúc lời giới thiệu: どうぞ よろしく おねがいします.",
+        "type": "choice",
+        "options": [
+          "こちらは リンさんです。",
+          "どうぞ よろしく おねがいします。",
+          "ちがいます。",
+          "おいくつですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0121",
+        "prompt": "Giới thiệu người khác: “Đây là Linh.”",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Giới thiệu người khác: こちらは 〜さんです.",
+        "type": "choice",
+        "options": [
+          "わたしは リンです。",
+          "リンさんは だれですか。",
+          "こちらは リンさんです。",
+          "あのひとは リンさんですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0122",
+        "prompt": "「ベトナムから きました」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "〜から きました: (tôi) đến từ ….",
+        "type": "choice",
+        "options": [
+          "Tôi đi Việt Nam.",
+          "Tôi đến từ Việt Nam.",
+          "Tôi là tiếng Việt.",
+          "Tôi không phải người Việt."
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0123",
+        "prompt": "Không dùng 〜さん khi nói về:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "〜さん để gọi người khác lịch sự; không gọi chính mình là 〜さん.",
+        "type": "choice",
+        "options": ["người đang nghe", "bản thân mình", "thầy cô", "người kia"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0124",
+        "prompt": "“Giáo viên” khi nói về nghề của chính mình là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Gọi thầy cô: せんせい; tự giới thiệu nghề: わたしは きょうしです.",
+        "type": "choice",
+        "options": ["せんせい", "きょうし", "がくせい", "いしゃ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0125",
+        "prompt": "「かいしゃいん」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "かいしゃいん: nhân viên công ty.",
+        "type": "choice",
+        "options": ["nhân viên ngân hàng", "bác sĩ", "kỹ sư", "nhân viên công ty"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0126",
+        "prompt": "「いしゃ」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "いしゃ: bác sĩ; びょういん: bệnh viện.",
+        "type": "choice",
+        "options": ["bệnh viện", "nhà nghiên cứu", "bác sĩ", "sinh viên"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0127",
+        "prompt": "“Bệnh viện” là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "びょういん: bệnh viện.",
+        "type": "choice",
+        "options": ["だいがく", "かいしゃ", "ぎんこう", "びょういん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0128",
+        "prompt": "“Người Nhật” là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Tên nước + じん: にほんじん.",
+        "type": "choice",
+        "options": ["にほんご", "にほん", "にほんじん", "にほんの"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0129",
+        "prompt": "“Tiếng Anh” là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Tiếng Anh là ngoại lệ: えいご.",
+        "type": "choice",
+        "options": ["アメリカご", "えいご", "アメリカじん", "イギリスご"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0130",
+        "prompt": "Điền phần còn thiếu: “người Việt Nam” = ベトナム（　　）",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Tên nước + じん: ベトナムじん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じん"]
+      },
+      {
+        "id": "q0131",
+        "prompt": "Viết cách đọc bằng hiragana: 私",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0101"],
+        "explain": "私 đọc là わたし: tôi.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わたし"]
+      },
+      {
+        "id": "q0132",
+        "prompt": "Viết cách đọc bằng hiragana: 学生",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0111"],
+        "explain": "学生 đọc là がくせい: học sinh, sinh viên.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["がくせい"]
+      },
+      {
+        "id": "q0133",
+        "prompt": "Viết cách đọc bằng hiragana: 先生",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0109"],
+        "explain": "先生 đọc là せんせい: thầy, cô (gọi giáo viên, bác sĩ).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["せんせい"]
+      },
+      {
+        "id": "q0134",
+        "prompt": "Viết cách đọc bằng hiragana: 会社員",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0112"],
+        "explain": "会社員 đọc là かいしゃいん: nhân viên công ty.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かいしゃいん"]
+      },
+      {
+        "id": "q0135",
+        "prompt": "Viết cách đọc bằng hiragana: 医者",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0114"],
+        "explain": "医者 đọc là いしゃ: bác sĩ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いしゃ"]
+      },
+      {
+        "id": "q0136",
+        "prompt": "Viết cách đọc bằng hiragana: 大学",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0117"],
+        "explain": "大学 đọc là だいがく: trường đại học.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["だいがく"]
+      },
+      {
+        "id": "q0137",
+        "prompt": "Viết cách đọc bằng hiragana: 病院",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0118"],
+        "explain": "病院 đọc là びょういん: bệnh viện.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["びょういん"]
+      },
+      {
+        "id": "q0138",
+        "prompt": "Viết cách đọc bằng hiragana: 日本",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0122"],
+        "explain": "日本 đọc là にほん: Nhật Bản.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["にほん"]
+      },
+      {
+        "id": "q0139",
+        "prompt": "Viết cách đọc bằng hiragana: 名前",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0128"],
+        "explain": "名前 đọc là なまえ: tên.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なまえ"]
+      },
+      {
+        "id": "q0140",
+        "prompt": "Viết cách đọc bằng hiragana: 仕事",
+        "points": 1,
+        "tags": ["minna-1", "kanji", "kanji:v0129"],
+        "explain": "仕事 đọc là しごと: công việc.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しごと"]
+      },
+      {
+        "id": "q0141",
+        "prompt": "Câu nào sai?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Không thêm さん vào tên của chính mình.",
+        "type": "choice",
+        "options": [
+          "わたしは ナムです。",
+          "ナムさんは がくせいですか。",
+          "わたしは ナムさんです。",
+          "アンさんも がくせいです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0142",
+        "prompt": "「しつれいですが」 dùng khi:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "しつれいですが: xin lỗi, (cho hỏi) … trước khi hỏi điều riêng.",
+        "type": "choice",
+        "options": [
+          "cảm ơn",
+          "xin phép hỏi điều riêng (tên, tuổi)",
+          "chào tạm biệt",
+          "xin lỗi vì đến muộn"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0143",
+        "prompt": "「おなまえは」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "おなまえは: tên anh/chị là gì?",
+        "type": "choice",
+        "options": ["Bạn bao nhiêu tuổi?", "Bạn đến từ đâu?", "Tên bạn là gì?", "Bạn làm nghề gì?"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0144",
+        "prompt": "Hoàn thành câu chào: どうぞ よろしく（　　）。",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "どうぞ よろしく おねがいします.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おねがいします"]
+      },
+      {
+        "id": "q0145",
+        "prompt": "「はい、そうです」 trả lời cho câu nào?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "はい／いいえ trả lời câu hỏi có/không.",
+        "type": "choice",
+        "options": [
+          "ナムさんは がくせいですか。",
+          "ナムさんは なんさいですか。",
+          "あの ひとは だれですか。",
+          "おなまえは。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0146",
+        "prompt": "「みなさん」 nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "みなさん: mọi người, các bạn.",
+        "type": "choice",
+        "options": ["mọi người, các bạn", "người kia", "vị kia", "tôi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0147",
+        "prompt": "Gọi thân mật một bé gái tên Mai:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "〜ちゃん: gọi trẻ nhỏ hoặc bạn thân.",
+        "type": "choice",
+        "options": ["マイさん", "マイじん", "マイさい", "マイちゃん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0148",
+        "prompt": "「ちゅうごく」 là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "ちゅうごく: Trung Quốc; かんこく: Hàn Quốc.",
+        "type": "choice",
+        "options": ["Hàn Quốc", "Nhật Bản", "Trung Quốc", "Thái Lan"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0149",
+        "prompt": "“Kỹ sư” là:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "エンジニア: kỹ sư.",
+        "type": "choice",
+        "options": ["エンジニア", "けんきゅうしゃ", "ぎんこういん", "きょうし"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0150",
+        "prompt": "「アンさんは いしゃですか。」 — trả lời phù hợp:",
+        "points": 1,
+        "tags": ["minna-1"],
+        "explain": "Phủ định: いいえ、いしゃじゃ ありません.",
+        "type": "choice",
+        "options": [
+          "はい、いしゃじゃ ありません。",
+          "いいえ、いしゃじゃ ありません。がくせいです。",
+          "いいえ、そうです。",
+          "はい、ちがいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      }
+    ]
+  }
+}
