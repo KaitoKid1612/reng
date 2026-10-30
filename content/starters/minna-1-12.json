@@ -31,7 +31,8 @@
         "kanji": "速い",
         "romaji": "hayai",
         "vi": "nhanh (tốc độ)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/high-speed-train.svg"
       },
       {
         "id": "v1204",
@@ -39,7 +40,8 @@
         "kanji": "遅い",
         "romaji": "osoi",
         "vi": "chậm; muộn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/turtle.svg"
       },
       {
         "id": "v1205",
@@ -47,7 +49,8 @@
         "kanji": "多い",
         "romaji": "ooi",
         "vi": "nhiều",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       },
       {
         "id": "v1206",
@@ -55,7 +58,8 @@
         "kanji": "少ない",
         "romaji": "sukunai",
         "vi": "ít",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bust-in-silhouette.svg"
       },
       {
         "id": "v1207",
@@ -70,7 +74,8 @@
         "kanji": "暖かい",
         "romaji": "atatakai",
         "vi": "ấm áp",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sun-behind-small-cloud.svg"
       },
       {
         "id": "v1209",
@@ -78,7 +83,8 @@
         "kanji": "涼しい",
         "romaji": "suzushii",
         "vi": "mát mẻ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/leaf-fluttering-in-wind.svg"
       },
       {
         "id": "v1210",
@@ -86,7 +92,8 @@
         "kanji": "甘い",
         "romaji": "amai",
         "vi": "ngọt",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/candy.svg"
       },
       {
         "id": "v1211",
@@ -94,7 +101,8 @@
         "kanji": "辛い",
         "romaji": "karai",
         "vi": "cay",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/hot-pepper.svg"
       },
       {
         "id": "v1212",
@@ -102,7 +110,8 @@
         "kanji": "重い",
         "romaji": "omoi",
         "vi": "nặng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-lifting-weights.svg"
       },
       {
         "id": "v1213",
@@ -110,7 +119,8 @@
         "kanji": "軽い",
         "romaji": "karui",
         "vi": "nhẹ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/feather.svg"
       },
       {
         "id": "v1214",
@@ -134,7 +144,8 @@
         "kanji": "春",
         "romaji": "haru",
         "vi": "mùa xuân",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cherry-blossom.svg"
       },
       {
         "id": "v1217",
@@ -142,7 +153,8 @@
         "kanji": "夏",
         "romaji": "natsu",
         "vi": "mùa hè",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sun.svg"
       },
       {
         "id": "v1218",
@@ -150,7 +162,8 @@
         "kanji": "秋",
         "romaji": "aki",
         "vi": "mùa thu",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/maple-leaf.svg"
       },
       {
         "id": "v1219",
@@ -158,7 +171,8 @@
         "kanji": "冬",
         "romaji": "fuyu",
         "vi": "mùa đông",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/snowman.svg"
       },
       {
         "id": "v1220",
@@ -166,7 +180,8 @@
         "kanji": "天気",
         "romaji": "tenki",
         "vi": "thời tiết",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sun-behind-rain-cloud.svg"
       },
       {
         "id": "v1221",
@@ -174,7 +189,8 @@
         "kanji": "雨",
         "romaji": "ame",
         "vi": "mưa",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cloud-with-rain.svg"
       },
       {
         "id": "v1222",
@@ -182,7 +198,8 @@
         "kanji": "雪",
         "romaji": "yuki",
         "vi": "tuyết",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/snowflake.svg"
       },
       {
         "id": "v1223",
@@ -190,7 +207,8 @@
         "kanji": "曇り",
         "romaji": "kumori",
         "vi": "trời nhiều mây",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cloud.svg"
       },
       {
         "id": "v1224",
@@ -205,7 +223,8 @@
         "jp": "ホテル",
         "romaji": "hoteru",
         "vi": "khách sạn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/hotel.svg"
       },
       {
         "id": "v1226",
@@ -213,7 +232,8 @@
         "kanji": "空港",
         "romaji": "kuukou",
         "vi": "sân bay",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/airplane-departure.svg"
       },
       {
         "id": "v1227",
@@ -221,7 +241,8 @@
         "kanji": "海",
         "romaji": "umi",
         "vi": "biển",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/water-wave.svg"
       },
       {
         "id": "v1228",
@@ -229,14 +250,16 @@
         "kanji": "世界",
         "romaji": "sekai",
         "vi": "thế giới",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
       },
       {
         "id": "v1229",
         "jp": "パーティー",
         "romaji": "paatii",
         "vi": "bữa tiệc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/party-popper.svg"
       },
       {
         "id": "v1230",
@@ -244,7 +267,8 @@
         "kanji": "お祭り",
         "romaji": "omatsuri",
         "vi": "lễ hội",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/red-paper-lantern.svg"
       },
       {
         "id": "v1231",
@@ -252,7 +276,8 @@
         "kanji": "旅行",
         "romaji": "ryokou",
         "vi": "chuyến du lịch",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/luggage.svg"
       },
       {
         "id": "v1232",
@@ -260,7 +285,8 @@
         "kanji": "試験",
         "romaji": "shiken",
         "vi": "kỳ thi, bài thi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/memo.svg"
       },
       {
         "id": "v1233",
@@ -268,14 +294,16 @@
         "kanji": "試合",
         "romaji": "shiai",
         "vi": "trận đấu",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/soccer-ball.svg"
       },
       {
         "id": "v1234",
         "jp": "スポーツ",
         "romaji": "supootsu",
         "vi": "thể thao",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sports-medal.svg"
       },
       {
         "id": "v1235",
@@ -283,7 +311,8 @@
         "kanji": "果物",
         "romaji": "kudamono",
         "vi": "hoa quả, trái cây",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/grapes.svg"
       },
       {
         "id": "v1236",
@@ -291,7 +320,8 @@
         "kanji": "すき焼き",
         "romaji": "sukiyaki",
         "vi": "lẩu sukiyaki",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/pot-of-food.svg"
       },
       {
         "id": "v1237",
@@ -299,7 +329,8 @@
         "kanji": "刺身",
         "romaji": "sashimi",
         "vi": "sashimi (cá sống thái lát)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/fish.svg"
       },
       {
         "id": "v1238",
@@ -307,7 +338,8 @@
         "kanji": "寿司",
         "romaji": "sushi",
         "vi": "sushi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sushi.svg"
       },
       {
         "id": "v1239",
@@ -315,7 +347,8 @@
         "kanji": "天ぷら",
         "romaji": "tenpura",
         "vi": "tempura (món chiên tẩm bột)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/fried-shrimp.svg"
       },
       {
         "id": "v1240",
@@ -323,7 +356,8 @@
         "kanji": "牛肉",
         "romaji": "gyuuniku",
         "vi": "thịt bò",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cut-of-meat.svg"
       },
       {
         "id": "v1241",
@@ -331,7 +365,8 @@
         "kanji": "豚肉",
         "romaji": "butaniku",
         "vi": "thịt lợn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/pig-face.svg"
       },
       {
         "id": "v1242",
@@ -339,7 +374,8 @@
         "kanji": "鶏肉",
         "romaji": "toriniku",
         "vi": "thịt gà",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/poultry-leg.svg"
       },
       {
         "id": "v1243",
@@ -361,7 +397,8 @@
         "kanji": "一番",
         "romaji": "ichiban",
         "vi": "nhất",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/1st-place-medal.svg"
       },
       {
         "id": "v1246",
@@ -383,14 +420,16 @@
         "jp": "ただいま",
         "romaji": "tadaima",
         "vi": "Tôi về rồi đây (khi về đến nhà)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/house-with-garden.svg"
       },
       {
         "id": "v1249",
         "jp": "おかえりなさい",
         "romaji": "okaerinasai",
         "vi": "Về rồi đấy à (đáp lại ただいま)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v1250",
@@ -398,7 +437,8 @@
         "kanji": "疲れました",
         "romaji": "tsukaremashita",
         "vi": "(Tôi) mệt rồi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/tired-face.svg"
       },
       {
         "id": "v1251",

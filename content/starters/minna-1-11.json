@@ -102,7 +102,8 @@
         "kanji": "一人",
         "romaji": "hitori",
         "vi": "một người",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bust-in-silhouette.svg"
       },
       {
         "id": "v1113",
@@ -110,7 +111,8 @@
         "kanji": "二人",
         "romaji": "futari",
         "vi": "hai người",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       },
       {
         "id": "v1114",
@@ -127,7 +129,8 @@
         "kanji": "〜台",
         "romaji": "-dai",
         "vi": "… chiếc (máy móc, xe cộ)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
       },
       {
         "id": "v1116",
@@ -151,7 +154,8 @@
         "kanji": "〜時間",
         "romaji": "-jikan",
         "vi": "… tiếng (đồng hồ)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/alarm-clock.svg"
       },
       {
         "id": "v1119",
@@ -160,7 +164,8 @@
         "romaji": "-nichi",
         "vi": "… ngày",
         "audio": null,
-        "note": "2–10 ngày đọc riêng: ふつか, みっか, よっか…"
+        "note": "2–10 ngày đọc riêng: ふつか, みっか, よっか…",
+        "image": "/icons/vocab/calendar.svg"
       },
       {
         "id": "v1120",
@@ -251,28 +256,32 @@
         "jp": "りんご",
         "romaji": "ringo",
         "vi": "táo",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/red-apple.svg"
       },
       {
         "id": "v1132",
         "jp": "みかん",
         "romaji": "mikan",
         "vi": "quýt",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/tangerine.svg"
       },
       {
         "id": "v1133",
         "jp": "サンドイッチ",
         "romaji": "sandoicchi",
         "vi": "bánh mì kẹp",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sandwich.svg"
       },
       {
         "id": "v1134",
         "jp": "アイスクリーム",
         "romaji": "aisukuriimu",
         "vi": "kem",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/soft-ice-cream.svg"
       },
       {
         "id": "v1135",
@@ -295,7 +304,8 @@
         "kanji": "封筒",
         "romaji": "fuutou",
         "vi": "phong bì",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/envelope.svg"
       },
       {
         "id": "v1138",
@@ -303,7 +313,8 @@
         "kanji": "船便",
         "romaji": "funabin",
         "vi": "gửi đường biển",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/ship.svg"
       },
       {
         "id": "v1139",
@@ -312,7 +323,8 @@
         "romaji": "koukuubin",
         "vi": "gửi đường hàng không",
         "audio": null,
-        "note": "Còn gọi là エアメール."
+        "note": "Còn gọi là エアメール.",
+        "image": "/icons/vocab/airplane.svg"
       },
       {
         "id": "v1140",
@@ -320,7 +332,8 @@
         "kanji": "外国",
         "romaji": "gaikoku",
         "vi": "nước ngoài",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
       },
       {
         "id": "v1141",
@@ -328,14 +341,16 @@
         "kanji": "留学生",
         "romaji": "ryuugakusei",
         "vi": "du học sinh",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/student.svg"
       },
       {
         "id": "v1142",
         "jp": "クラス",
         "romaji": "kurasu",
         "vi": "lớp học",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/school.svg"
       },
       {
         "id": "v1143",
@@ -360,7 +375,8 @@
         "romaji": "ani",
         "vi": "anh trai (của mình)",
         "audio": null,
-        "note": "Anh trai người khác: おにいさん."
+        "note": "Anh trai người khác: おにいさん.",
+        "image": "/icons/vocab/man.svg"
       },
       {
         "id": "v1146",
@@ -369,7 +385,8 @@
         "romaji": "ane",
         "vi": "chị gái (của mình)",
         "audio": null,
-        "note": "Chị gái người khác: おねえさん."
+        "note": "Chị gái người khác: おねえさん.",
+        "image": "/icons/vocab/woman.svg"
       },
       {
         "id": "v1147",
@@ -378,7 +395,8 @@
         "romaji": "otouto",
         "vi": "em trai (của mình)",
         "audio": null,
-        "note": "Em trai người khác: おとうとさん."
+        "note": "Em trai người khác: おとうとさん.",
+        "image": "/icons/vocab/boy.svg"
       },
       {
         "id": "v1148",
@@ -387,7 +405,8 @@
         "romaji": "imouto",
         "vi": "em gái (của mình)",
         "audio": null,
-        "note": "Em gái người khác: いもうとさん."
+        "note": "Em gái người khác: いもうとさん.",
+        "image": "/icons/vocab/girl.svg"
       },
       {
         "id": "v1149",
@@ -395,7 +414,8 @@
         "kanji": "いい天気ですね",
         "romaji": "ii tenki desu ne",
         "vi": "Trời đẹp nhỉ.",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sun.svg"
       },
       {
         "id": "v1150",
@@ -417,14 +437,16 @@
         "jp": "いって いらっしゃい",
         "romaji": "itte irasshai",
         "vi": "Đi nhé! (người ở lại nói)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v1153",
         "jp": "いって きます",
         "romaji": "itte kimasu",
         "vi": "Tôi đi đây. (người đi nói)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-walking.svg"
       },
       {
         "id": "v1154",
