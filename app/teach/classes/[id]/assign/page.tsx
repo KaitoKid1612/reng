@@ -66,6 +66,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
         <ClassLessonForm
           classId={classRow.id}
           lessons={ownedLessons}
+          classLessons={classLessons}
           classLanguageTag={classRow.language_tag}
           nextOrderNo={Math.max(0, ...classLessons.map((lesson) => lesson.orderNo)) + 1}
           defaultAvailableAt={new Date().toISOString()}

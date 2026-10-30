@@ -11,12 +11,13 @@ import { lessonLanguage, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatStudyDateTime } from "@/lib/study-days";
 
 import type { TeachingLanguageTag } from "@/lib/teaching-language";
-import type { OwnedLesson } from "@/lib/server/classes";
+import type { ClassLesson, OwnedLesson } from "@/lib/server/classes";
 
 interface ClassLessonFormProps {
   classId: string;
   classLanguageTag: TeachingLanguageTag;
   lessons: OwnedLesson[];
+  classLessons: ClassLesson[];
   nextOrderNo: number;
   defaultAvailableAt: string;
 }
@@ -25,13 +26,26 @@ export function ClassLessonForm({
   classId,
   classLanguageTag,
   lessons,
+  classLessons,
   nextOrderNo,
   defaultAvailableAt,
 }: ClassLessonFormProps) {
   const [state, action, isPending] = useActionState(setClassLessonAction, {});
   const publishedLessons = lessons.filter((item) => item.versions.length > 0);
-  const [lessonId, setLessonId] = useState(publishedLessons[0]?.id ?? "");
+  // Start with the first published lesson the class does not have yet.
+  const [lessonId, setLessonId] = useState(
+    () =>
+      (
+        publishedLessons.find((item) => !classLessons.some((row) => row.lessonId === item.id)) ??
+        publishedLessons[0]
+      )?.id ?? "",
+  );
   const lesson = publishedLessons.find((item) => item.id === lessonId) ?? publishedLessons[0];
+  // Saving a lesson already in the class rewrites its version, order and opening time, so
+  // the fields start from the class's current values instead of "next position, now".
+  const current = classLessons.find((row) => row.lessonId === lesson?.id);
+  // Remounts the fields when another lesson is chosen or a save changes the class's values.
+  const fieldsKey = `${lesson?.id}:${current?.versionId}:${current?.orderNo}:${current?.availableAt}`;
   if (!lessons.length) {
     return (
       <p className="notice-panel">
@@ -74,10 +88,10 @@ export function ClassLessonForm({
         <div className="field">
           <label htmlFor="class-lesson-version">Phiên bản dùng cho lớp</label>
           <select
-            key={lesson?.id}
+            key={fieldsKey}
             id="class-lesson-version"
             name="versionId"
-            defaultValue={lesson?.publishedVersionId ?? undefined}
+            defaultValue={current?.versionId ?? lesson?.publishedVersionId ?? undefined}
           >
             {lesson?.versions.map((version) => (
               <option key={version.id} value={version.id}>
@@ -93,27 +107,37 @@ export function ClassLessonForm({
         <div className="field">
           <label htmlFor="class-lesson-order">Thứ tự trong lớp</label>
           <input
+            key={fieldsKey}
             id="class-lesson-order"
             name="orderNo"
             type="number"
             min={1}
             max={500}
             required
-            defaultValue={nextOrderNo}
+            defaultValue={current?.orderNo ?? nextOrderNo}
           />
         </div>
         <DateTimeField
+          key={fieldsKey}
           id="class-lesson-available"
           name="availableAt"
           label="Mở cho học viên từ"
-          initialValue={defaultAvailableAt}
+          initialValue={current?.availableAt ?? defaultAvailableAt}
           isRequired
         />
       </div>
-      <p className="small muted">
-        Chọn lại một bài đã có để đổi phiên bản, thứ tự hoặc lịch mở. Bài đã giao giữ phiên bản lúc
-        giao.
-      </p>
+      {current ? (
+        <p className="notice-panel" role="status">
+          Bài này đã có trong lớp: phiên bản {current.versionNo}, thứ tự {current.orderNo}, mở từ{" "}
+          {formatStudyDateTime(current.availableAt)}. Các ô trên đang giữ đúng giá trị đó; chỉ đổi ô
+          bạn muốn cập nhật. Bài đã giao giữ phiên bản lúc giao.
+        </p>
+      ) : (
+        <p className="small muted">
+          Chọn lại một bài đã có để đổi phiên bản, thứ tự hoặc lịch mở. Bài đã giao giữ phiên bản
+          lúc giao.
+        </p>
+      )}
       <ActionFeedback state={state} />
       <Button type="submit" disabled={isPending}>
         Lưu vào lớp
