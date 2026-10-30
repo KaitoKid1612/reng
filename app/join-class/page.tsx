@@ -19,7 +19,11 @@ export default async function JoinClassPage({ searchParams }: JoinClassPageProps
   return (
     <div className="narrow-page">
       <h1>Vào lớp</h1>
-      <p className="muted">Nhập mã lớp giảng viên gửi cho bạn.</p>
+      <p className="muted">
+        {account && code
+          ? "Mã lớp đã được điền sẵn từ link mời. Bấm Vào lớp để hoàn tất."
+          : "Nhập mã lớp giảng viên gửi cho bạn."}
+      </p>
       {isClassroomConfigured() ? (
         <>
           <JoinClassForm initialCode={normalizeJoinCode(code).slice(0, 8)} />

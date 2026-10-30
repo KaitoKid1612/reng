@@ -11,6 +11,7 @@ import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getClassReport } from "@/lib/server/reports";
+import { absoluteUrl } from "@/lib/site";
 import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 
 import type { LearnerLabel } from "@/lib/class-report";
@@ -35,6 +36,16 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
   const account = await requireTeacher(`/teach/classes/${id}`);
   const report = await loadOrNotFound(getClassReport(account.id, id, new Date()));
   const { classRow, summary } = report;
+  const joinCodeControls = (
+    <JoinCodeControls
+      classId={classRow.id}
+      joinCode={classRow.join_code}
+      isEnabled={classRow.join_enabled}
+      inviteUrl={absoluteUrl(`/join-class?code=${classRow.join_code}`)}
+    />
+  );
+  // A class without learners needs its code first; afterwards the report comes first.
+  const hasLearners = report.reports.length > 0;
   return (
     <>
       <div className="page-heading">
@@ -58,6 +69,7 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
           </a>
         </div>
       </div>
+      {!hasLearners && joinCodeControls}
       <div className="stat-tiles">
         <div className="stat-tile">
           <strong>{summary.submittedCount}</strong>
@@ -128,7 +140,7 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
             </tbody>
           </table>
         ) : (
-          <p>Chưa có học viên. Gửi mã lớp bên dưới để học viên tự vào lớp.</p>
+          <p>Chưa có học viên. Gửi link mời hoặc mã lớp ở đầu trang để học viên tự vào lớp.</p>
         )}
         {report.formerMemberCount > 0 && (
           <p className="small muted">
@@ -204,6 +216,11 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       </section>
       <section className="section-block" aria-labelledby="class-content">
         <h2 id="class-content">Nội dung lớp</h2>
+        <p className="small">
+          <Link href={`/teach/classes/${classRow.id}/assign#class-content-title`}>
+            Thêm bài hoặc đổi phiên bản, lịch mở
+          </Link>
+        </p>
         {report.lessons.length ? (
           <ul className="item-list">
             {report.lessons.map((lesson) => (
@@ -216,14 +233,12 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
             ))}
           </ul>
         ) : (
-          <p className="muted">Chưa có bài học nào trong lớp.</p>
+          <p className="muted">
+            Chưa có bài học nào trong lớp; học viên chỉ thấy bài sau khi bạn thêm bài vào lớp.
+          </p>
         )}
       </section>
-      <JoinCodeControls
-        classId={classRow.id}
-        joinCode={classRow.join_code}
-        isEnabled={classRow.join_enabled}
-      />
+      {hasLearners && joinCodeControls}
       <section className="section-block" aria-labelledby="class-settings">
         <h2 id="class-settings">Cài đặt lớp</h2>
         <ClassSettingsForm classRow={classRow} />
