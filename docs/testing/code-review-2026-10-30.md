@@ -57,6 +57,10 @@ Lighthouse (mobile) trang chủ production trước đợt này: Accessibility, 
 
 Thêm `content/starters/minna-1-12.json` và nút "Tạo bài 12 từ mẫu" ([biên soạn](../content-authoring.md)). Kiểm chứng: `tests/japanese-lessons.test.ts` chạy cùng bộ kiểm tra cho mọi bài mẫu (đủ loại slide, không có lỗi xuất bản, đáp án không dồn một vị trí, câu điền chỉ hiragana, payload công khai không lộ ghi chú/đáp án); xem trên bản local: trang đọc khổ 390px không tràn ngang, furigana dựng đúng, không còn cú pháp `{漢字|かな}` thô; chạy qua 39 slide ở 1280×720, đã tách hội thoại 8 lượt thành hai slide và bỏ cột hẹp ở bảng luyện tập 3 cho vừa khung. Nội dung là bản tự viết, cần giáo viên duyệt trước khi dạy.
 
+## Bài mẫu Minna 1–2 (lô đầu bài 1–10)
+
+`content/starters/minna-1-01.json`, `minna-1-02.json` đăng ký trong `lib/starter-lessons.ts`; `tests/japanese-lessons.test.ts` chạy cùng bộ kiểm tra bài mẫu (xuất bản được, đủ loại slide, đáp án không dồn một vị trí, câu điền chỉ hiragana, payload công khai không lộ ghi chú/đáp án) và `tests/lesson-visuals.test.ts` kiểm tra file icon. Đi qua toàn bộ slide bài 1, 2, 11, 12 và bài mẫu cũ 01, 03 ở 1280×720: phát hiện hai hội thoại 5 lượt có câu dài bị tràn, đã đổi quy tắc bố cục gọn của hội thoại sang tính theo dòng sau khi xuống dòng; chạy lại không còn slide tràn. Nội dung là bản tự viết, cần giáo viên duyệt.
+
 ## Hình minh họa bài Nhật (cùng ngày)
 
 Theo [hình minh họa](../illustrations.md): icon Fluent Emoji (MIT) cho từ vựng, ô chọn hình trong trình soạn, hội thoại bong bóng có avatar, hình mở đầu cho slide tiêu đề; bài mẫu 11 gắn 22 icon, bài 12 gắn 40 icon. Kiểm chứng: `tests/lesson-visuals.test.ts` (đủ file icon, không có script, bài mẫu chỉ trỏ tới file có thật, xếp bên người nói); chụp 9 slide bài 11–12 ở 1280×720 bằng Playwright, nội dung đều nằm trong khung (sát nhất còn 24px ở hội thoại 5 lượt); trang đọc khổ 390px không cuộn ngang, hội thoại đưa nút Nghe xuống dưới bong bóng; mặt sau flashcard có hình. Ảnh AI cho nhân vật và tranh mở đầu chưa tạo.
