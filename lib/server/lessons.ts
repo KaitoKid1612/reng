@@ -283,6 +283,22 @@ export async function setLessonVisibility(
   lessonId: string,
   visibility: "public" | "class",
 ) {
+  if (visibility === "public") {
+    const lesson = await selectOptional(
+      createServiceClient()
+        .from("lessons")
+        .select("copied_from_version_id")
+        .eq("id", lessonId)
+        .eq("owner_id", teacherId)
+        .maybeSingle(),
+      z.object({ copied_from_version_id: z.uuid().nullable() }),
+    );
+    // A copy of another teacher's shared lesson is for the copier's classes; like re-sharing,
+    // publishing it to everyone is not part of what the share allowed.
+    if (lesson?.copied_from_version_id) {
+      throw new ServiceError("reshare_not_allowed");
+    }
+  }
   await callRpc(
     "set_lesson_visibility",
     { p_owner_id: teacherId, p_lesson_id: lessonId, p_visibility: visibility },

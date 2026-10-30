@@ -242,7 +242,12 @@ export async function setLessonVisibilityAction(
   }
   try {
     await setLessonVisibility(teacherId, parsed.data.lessonId, parsed.data.visibility);
-  } catch {
+  } catch (error) {
+    if (error instanceof ServiceError && error.code === "reshare_not_allowed") {
+      return {
+        error: "Bài sao chép từ giáo viên khác chỉ dùng cho lớp của bạn, không đặt công khai được.",
+      };
+    }
     return { error: NOT_FOUND };
   }
   revalidatePath("/lessons");
