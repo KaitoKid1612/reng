@@ -2,7 +2,7 @@
 
 Reng hướng tới dịch vụ cho nhiều giáo viên: tạo lớp, trình chiếu và chia sẻ học liệu, bài tập, tiến độ và nhắc học; dạy video qua Google Meet bên ngoài. Tiếng Nhật N5 là nền đã có; mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung). Từ 29/10/2026 pilot ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo (bài mẫu 11, slide hội thoại/bảng, furigana — xem [biên soạn](content-authoring.md)); luồng Việt–Trung vẫn giữ. Đã có bản local: đăng ký giáo viên có quản trị viên duyệt, soạn bài Việt–Trung theo mẫu, chia sẻ/sao chép bài và SEO cho trang công khai; nhập scan và TTS web chưa triển khai. Kiến trúc hướng tới nhiều môn/ngôn ngữ, không triển khai đồng loạt trong MVP. Đọc [tổng quan](00-overview.md) trước.
 
-Đợt rà soát trải nghiệm 30/10/2026: [luồng sử dụng, thay đổi và kết quả kiểm chứng](testing/user-flow-review.md).
+Báo cáo ngày 30/10/2026: [bug UI, cải tiến đã giao, vấn đề còn mở và kết quả kiểm chứng](testing/user-flow-review.md). Các mục đề xuất và chưa kiểm thử được ghi trạng thái riêng.
 
 ## Cách đọc
 

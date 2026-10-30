@@ -2,6 +2,8 @@
 
 Ngày: 29/10/2026. Ca không có trong bảng kết quả bên dưới vẫn là **NOT RUN**. Không thay thế kết quả local ở phase-1 đến phase-5.
 
+Bổ sung ngày 30/10/2026: [báo cáo bug UI và cải tiến luồng sử dụng](user-flow-review.md) theo dõi UI-01–UI-10, kết quả mới tại `ecface1` và phần còn mở. Kết quả ngày 29/10 bên dưới là lịch sử, không phải lượt nghiệm thu lại.
+
 ## Kết quả cục bộ đã chạy
 
 Môi trường: máy dev, Supabase local (Podman), Chromium qua Playwright; test migration trên PostgreSQL nhúng (PGlite). Không dùng cloud hoặc tài khoản thật. Ngày chạy 29/10/2026.
