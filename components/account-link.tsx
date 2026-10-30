@@ -56,7 +56,6 @@ export function AccountLink() {
       </Link>
     );
   }
-  const href = account.role === "teacher" ? "/teach" : "/classes";
   return (
     <>
       {account.isAdmin && (
@@ -64,8 +63,13 @@ export function AccountLink() {
           Quản trị
         </Link>
       )}
-      <Link href={href} aria-current={pathname.startsWith(href) ? "page" : undefined}>
-        {account.role === "teacher" ? "Giảng dạy" : "Lớp của tôi"}
+      {account.role === "teacher" && (
+        <Link href="/teach" aria-current={pathname.startsWith("/teach") ? "page" : undefined}>
+          Giảng dạy
+        </Link>
+      )}
+      <Link href="/classes" aria-current={pathname.startsWith("/classes") ? "page" : undefined}>
+        Lớp của tôi
       </Link>
     </>
   );

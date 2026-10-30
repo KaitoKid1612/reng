@@ -24,9 +24,9 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-sign-up",
     title: "Đăng ký giảng dạy",
     steps: [
-      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự).",
+      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Mở thư xác nhận, bấm liên kết để kích hoạt tài khoản và quay lại trang đăng ký giảng dạy.",
       "Ở trang Đăng ký giảng dạy, đánh dấu ô cam kết rồi bấm Gửi yêu cầu giảng dạy.",
-      "Khi quản trị viên duyệt, mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
+      "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
     ],
   },
   {
@@ -101,7 +101,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Tạo tài khoản và vào lớp",
     steps: [
       "Mở trang Vào lớp, nhập mã lớp giáo viên gửi, bấm Vào lớp.",
-      "Lần đầu, bấm Tạo tài khoản học viên và nhập họ tên, email, mật khẩu. Sau khi tạo xong bạn quay lại đúng trang vào lớp, bấm Vào lớp một lần nữa.",
+      "Lần đầu, bấm Tạo tài khoản học viên và nhập họ tên, email, mật khẩu. Mở thư xác nhận và bấm liên kết để kích hoạt tài khoản; bạn quay lại trang vào lớp với mã đã nhập, bấm Vào lớp một lần nữa. Không thấy thư thì kiểm tra Spam hoặc gửi lại thư xác nhận.",
     ],
   },
   {

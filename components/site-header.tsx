@@ -6,6 +6,7 @@ import { AccountLink } from "@/components/account-link";
 import { BrandMark } from "@/components/brand-mark";
 
 const NAVIGATION_LINKS = [
+  { href: "/join-class", label: "Vào lớp" },
   { href: "/for-teachers", label: "Cho giáo viên" },
   { href: "/lessons", label: "Bài học" },
   { href: "/grammar", label: "Ngữ pháp" },

@@ -1,7 +1,7 @@
 export const SITE_NAME = "Reng";
 
 export const SITE_DESCRIPTION =
-  "Lớp học ngoại ngữ online cho giáo viên và học viên Việt Nam: tạo lớp riêng, soạn slide tiếng Trung theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ.";
+  "Lớp học ngoại ngữ online cho giáo viên và học viên Việt Nam: tạo lớp riêng, soạn slide tiếng Nhật và tiếng Trung theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ.";
 
 const LOCAL_ORIGIN = "http://127.0.0.1:3000";
 

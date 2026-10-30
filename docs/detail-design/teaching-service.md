@@ -175,3 +175,10 @@ Migration `202610290006_daily_practice.sql`: cột `classes.daily_practice_size`
 5. Audio job trên web và nghe duyệt phải sẵn sàng trong B1 nếu dùng audio ở bài thử; không đẩy việc chạy CLI sang giáo viên. Sau B1/B2 mới thêm import_jobs/items, quota/lease và retention cho scan/OCR ở C1/C2; provider chưa chọn không được giả lập trạng thái thành công trong production.
 
 Migration phải được thử trên DB trống và dữ liệu v1 đã có, backup trước staging; rollout theo flag để dừng luồng mới mà vẫn đọc bài cũ. Sau khi có version v2 không được rollback app về bản không đọc được v2; bản phục hồi phải hỗ trợ cả hai hoặc khóa đường v2 có thông báo. Không xóa bảng/version/điểm để quay lại. Thử khôi phục backup/media độc lập trước nhận lớp thật.
+
+## Điều hướng và trạng thái giao bài — 30/10/2026
+
+- `app/page.tsx` giữ Server Component và metadata hiện có; lối vào lớp/tự học/giảng dạy dùng `next/link`. `HomeAgenda` tiếp tục tải riêng sau hydration, không đưa phiên người dùng vào trang chủ tĩnh.
+- `components/site-header.tsx` thêm `/join-class`; `components/account-link.tsx` vẫn lấy `/api/me` no-store và kiểm tra dữ liệu, hiển thị `/classes` cho cả hai role cùng `/teach` riêng cho giáo viên. Đây là điều hướng; quyền truy cập vẫn do server quyết định.
+- `components/teach/class-lesson-form.tsx` chỉ cho chọn các bài có `versions.length > 0`. Không có bài: link `/teach/lessons/new`. Chỉ có nháp: link `/teach` để xuất bản. Selection fallback về bài có phiên bản đầu tiên khi dữ liệu props thay đổi, và select phiên bản remount theo ID bài thực tế. Không thay RPC, quyền, snapshot hay migration.
+- `app/for-teachers/page.tsx`, `lib/site.ts` và hướng dẫn đồng bộ mô tả tiếng Nhật/tiếng Trung, xác nhận email và khả năng duyệt theo cấu hình. `e2e/navigation.spec.ts` kiểm tra lối vào ở 1280px/360px và mô phỏng duy nhất API summary để kiểm tra menu hai role; không giả lập đăng nhập hoặc ghi dữ liệu lớp.

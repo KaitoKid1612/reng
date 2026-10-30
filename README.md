@@ -14,6 +14,8 @@ Giai đoạn 3 (lớp học, bài giao, làm bài, sổ lỗi, ôn tập FSRS, t
 
 Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên web, trang `/listening/[lessonId]`, câu nghe trong bài giao practice và báo cáo nghe. [BD](docs/basic-design/phase-5.md), [DD](docs/detail-design/phase-5.md), [checklist](docs/testing/phase-5.md). Kanji và furigana chưa làm.
 
+Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [đánh giá luồng và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
+
 ## Chạy local
 
 Yêu cầu Node.js 24, npm. Dependency khóa trong package-lock.json.

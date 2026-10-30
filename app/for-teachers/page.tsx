@@ -5,9 +5,9 @@ import { absoluteUrl, serializeJsonLd, SITE_NAME } from "@/lib/site";
 
 import type { Metadata } from "next";
 
-const TITLE = "Dạy tiếng Trung online cho học viên Việt Nam";
+const TITLE = "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam";
 const DESCRIPTION =
-  "Tạo lớp riêng, soạn slide tiếng Trung từ bảng chữ Hán – pinyin – nghĩa Việt, dạy qua Google Meet, giao bài tập tự chấm đúng thanh điệu và theo dõi tiến độ từng học viên.";
+  "Tạo lớp tiếng Nhật hoặc tiếng Trung, soạn slide theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ từng học viên.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -23,7 +23,7 @@ const FEATURES = [
   },
   {
     title: "Soạn bài theo mẫu",
-    body: "Chọn buổi đầu làm quen, từ mới, hội thoại hoặc ôn tập; dán bảng chữ Hán, pinyin, nghĩa Việt từ Excel và để hệ thống dựng slide.",
+    body: "Tiếng Nhật có bài mẫu theo trình tự Minna no Nihongo để sửa theo lớp; tiếng Trung có mẫu chữ Hán, pinyin, nghĩa Việt và dựng slide từ bảng từ.",
   },
   {
     title: "Trình chiếu khi dạy",
@@ -31,7 +31,7 @@ const FEATURES = [
   },
   {
     title: "Bài tập tự chấm",
-    body: "Trắc nghiệm, điền chữ Hán hoặc pinyin; chấm đúng thanh điệu, phân biệt giản thể và phồn thể. Giáo viên xác nhận đáp án trước khi giao.",
+    body: "Trắc nghiệm và điền từ tiếng Nhật hoặc tiếng Trung; hỗ trợ gõ romaji sang kana, chấm pinyin đúng thanh điệu và phân biệt giản thể, phồn thể. Giáo viên duyệt đáp án trước khi giao.",
   },
   {
     title: "Theo dõi và nhắc học",
@@ -69,7 +69,7 @@ const QUESTIONS = [
   {
     question: "Tôi có thể dạy tiếng Nhật trên Reng không?",
     answer:
-      "Có. Reng vẫn có bài và trình soạn chi tiết cho tiếng Nhật; luồng soạn theo mẫu hiện ưu tiên tiếng Trung cho người Việt.",
+      "Có. Pilot hiện tại ưu tiên tiếng Nhật cho người Việt theo trình tự Minna no Nihongo. Bạn có thể tạo bài 11 từ mẫu tự biên soạn, sửa rồi xuất bản riêng cho lớp; luồng tiếng Trung vẫn được hỗ trợ.",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function ForTeachersPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <section className="landing-hero">
-        <p className="hero-intro">Dành cho giáo viên tiếng Trung</p>
+        <p className="hero-intro">Dành cho giáo viên tiếng Nhật và tiếng Trung</p>
         <h1>{TITLE}</h1>
         <p className="hero-description">
           Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua

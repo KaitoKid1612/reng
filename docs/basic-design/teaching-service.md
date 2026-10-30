@@ -129,3 +129,11 @@ Nội dung mẫu không sao chép văn bản, tranh hay audio của sách; chỉ
 Nháp → xuất bản → gắn lớp/giao bài là các thao tác riêng. Lưu trữ bài không xóa snapshot/bài nộp cũ; đóng bài giao phải cảnh báo lượt đang làm sẽ không nộp được theo hợp đồng hiện tại. Bản sao và bài giao đã tạo không tự đổi theo bài nguồn. Trường hợp rời lớp/đổi mã/ngừng dạy/thu hồi share được xử lý ở phạm vi tương ứng, không cascade xóa lịch sử.
 
 Đăng ký giáo viên tự phục vụ mặc định kích hoạt sau xác minh email, điều khoản và kiểm tra lạm dụng; vận hành xử lý pending/suspended ngoại lệ. Khả năng học và dạy độc lập; không bắt tạo hai tài khoản. Không coi xác minh email là xác nhận năng lực chuyên môn.
+
+## Rà soát luồng sử dụng — 30/10/2026
+
+Trang chủ ưu tiên học viên vào lớp: hai thao tác đầu là Vào lớp bằng mã và Mở lớp của tôi. Bên dưới có ba lối rõ ràng: vào lớp có mã, tự học tiếng Nhật không cần tài khoản, và giảng dạy tiếng Nhật/tiếng Trung. Thanh điều hướng luôn có Vào lớp; giáo viên đã đăng nhập thấy cả Giảng dạy lẫn Lớp của tôi vì một tài khoản có thể vừa dạy vừa học. Trang giới thiệu giáo viên phản ánh pilot tiếng Nhật và giữ khả năng soạn tiếng Trung.
+
+Luồng học viên mới: nhập mã → đăng nhập hoặc đăng ký → xác nhận email → trở lại trang có mã → xác nhận vào lớp → đọc bài/làm bài/ôn lỗi. Hướng dẫn phải nhắc xác nhận email và cách tìm thư trong Spam. Luồng giáo viên mới: đăng ký/xác nhận email → gửi yêu cầu giảng dạy → được mở quyền theo cấu hình duyệt → tạo bài và lớp → xuất bản bài → lưu phiên bản vào lớp → giao bài tập. Khi chưa có bài, trang giao bài dẫn đến tạo bài; khi chỉ có nháp, dẫn về soạn/xuất bản, không hướng dẫn chạy script.
+
+Đánh giá: các luồng cốt lõi đã có trong source, phù hợp để tiếp tục nghiệm thu bằng lớp pilot. Kiểm thử điều hướng local không thay cho nghiệm thu lớp thật, giao nhận email và audio trên thiết bị học viên. Xem [kết quả rà soát](../testing/user-flow-review.md).

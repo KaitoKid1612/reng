@@ -32,9 +32,11 @@ test("the teacher landing page has a clear heading, description, canonical and F
   await page.waitForURL("**/for-teachers");
   await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Dạy tiếng Trung online cho học viên Việt Nam",
+    "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam",
   );
-  await expect(page).toHaveTitle("Dạy tiếng Trung online cho học viên Việt Nam | Reng");
+  await expect(page).toHaveTitle(
+    "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam | Reng",
+  );
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /Google Meet/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
@@ -70,7 +72,7 @@ test("the home page names the service and the landing page fits a 360px screen",
   await page.goto("/");
   // Next serializes the root canonical without a trailing slash; both forms are the same URL.
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", ORIGIN);
-  await expect(page.getByRole("heading", { name: "Bạn là giáo viên tiếng Trung?" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Tôi muốn giảng dạy" })).toBeVisible();
   for (const path of ["/", "/for-teachers"]) {
     await page.goto(path);
     const fits = await page.evaluate(
