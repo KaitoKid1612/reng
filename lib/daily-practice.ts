@@ -35,6 +35,71 @@ function hashToNumber(value: string) {
   return hash;
 }
 
+export interface DailyCandidate {
+  id: string;
+  type: string;
+  tags: readonly string[];
+}
+
+// A kind is the question type plus the tags that tell questions apart, such as the teacher's
+// "Dạng bài" from a sheet or "kanji" in a Minna lesson. A tag every candidate shares (the lesson
+// tag) or a per-item tag such as kanji:v1201 says nothing about the kind.
+export function dailyQuestionKind(candidate: DailyCandidate, sharedTags: ReadonlySet<string>) {
+  const tags = candidate.tags.filter((tag) => !sharedTags.has(tag) && !tag.includes(":"));
+  return [candidate.type, ...[...new Set(tags)].sort()].join("|");
+}
+
+// Largest remainder: every kind gets a share of the set in proportion to its size in the lesson.
+function allocateQuotas(kinds: readonly { key: string; count: number }[], size: number) {
+  const total = kinds.reduce((sum, kind) => sum + kind.count, 0);
+  const target = Math.min(size, total);
+  const quotas = kinds.map((kind) => {
+    const exact = total ? (kind.count / total) * target : 0;
+    return { key: kind.key, count: kind.count, quota: Math.floor(exact), rest: exact % 1 };
+  });
+  let left = target - quotas.reduce((sum, item) => sum + item.quota, 0);
+  // A stable sort keeps lesson order between equal remainders.
+  for (const item of [...quotas].sort((first, second) => second.rest - first.rest)) {
+    if (left > 0 && item.quota < item.count) {
+      item.quota += 1;
+      left -= 1;
+    }
+  }
+  return new Map(quotas.map((item) => [item.key, item.quota]));
+}
+
+// Each kind keeps its share of the daily set, in lesson order of first appearance; inside a kind
+// the usual rotation applies. A lesson with one kind gets exactly selectDailyQuestions' set.
+export function selectBalancedDailyQuestions(
+  candidates: readonly DailyCandidate[],
+  recentUses: readonly DailyQuestionUse[],
+  size: number,
+  seed: string,
+) {
+  const unique = [...new Map(candidates.map((candidate) => [candidate.id, candidate])).values()];
+  const tagCounts = new Map<string, number>();
+  for (const candidate of unique) {
+    for (const tag of new Set(candidate.tags)) {
+      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+    }
+  }
+  const sharedTags = new Set(
+    [...tagCounts].filter(([, count]) => count === unique.length).map(([tag]) => tag),
+  );
+  const kinds = new Map<string, string[]>();
+  for (const candidate of unique) {
+    const key = dailyQuestionKind(candidate, sharedTags);
+    kinds.set(key, [...(kinds.get(key) ?? []), candidate.id]);
+  }
+  const quotas = allocateQuotas(
+    [...kinds].map(([key, ids]) => ({ key, count: ids.length })),
+    size,
+  );
+  return [...kinds].flatMap(([key, ids]) =>
+    selectDailyQuestions(ids, recentUses, quotas.get(key) ?? 0, seed),
+  );
+}
+
 // Least recently used first, never-used questions before anything else; ties break by a hash
 // of the day so the set changes daily but stays the same on every retry of that day.
 export function selectDailyQuestions(

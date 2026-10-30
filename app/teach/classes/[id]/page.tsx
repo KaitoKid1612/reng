@@ -208,7 +208,9 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
           Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở
           có câu chọn/điền (bài mới chỉ có slide thì lấy bài trước đó): hạn 23:59 cùng ngày (nộp
           muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên
-          câu chưa xuất hiện gần đây; câu sai vào sổ lỗi và lịch ôn tập của học viên.
+          câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay). Mỗi dạng câu giữ tỉ lệ như trong
+          bài: dạng theo tag của câu (ví dụ ngữ pháp, từ vựng, kanji) và loại câu chọn/điền. Câu sai
+          vào sổ lỗi và lịch ôn tập của học viên.
         </p>
         <DailyPracticeForm classId={classRow.id} size={classRow.daily_practice_size} />
       </section>

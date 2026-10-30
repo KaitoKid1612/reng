@@ -6,7 +6,7 @@ import {
   DAILY_PRACTICE_HISTORY_DAYS,
   daysBefore,
   endOfVietnamDay,
-  selectDailyQuestions,
+  selectBalancedDailyQuestions,
   toVietnamDate,
 } from "@/lib/daily-practice";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
@@ -89,40 +89,63 @@ export async function createDailyPractice(
   if (!questions.length) {
     return { status: "no_questions" };
   }
-  const runs = await selectRows(
+  const existing = await selectOptional(
     service
       .from("daily_practice_runs")
-      .select("assignment_id, practice_date")
+      .select("assignment_id")
       .eq("class_id", classId)
-      .gte("practice_date", daysBefore(practiceDate, DAILY_PRACTICE_HISTORY_DAYS)),
-    z.object({ assignment_id: z.uuid(), practice_date: z.string() }),
+      .eq("practice_date", practiceDate)
+      .maybeSingle(),
+    z.object({ assignment_id: z.uuid() }),
   );
-  const existing = runs.find((run) => run.practice_date === practiceDate);
-  const items = runs.length
+  if (existing) {
+    const existingItems = await selectRows(
+      service
+        .from("assignment_items")
+        .select("question_id")
+        .eq("assignment_id", existing.assignment_id),
+      z.object({ question_id: z.string() }),
+    );
+    return {
+      status: "exists",
+      assignmentId: existing.assignment_id,
+      questionCount: existingItems.length,
+    };
+  }
+  // Every recent assignment of this lesson counts as use, so a set the teacher assigned by hand
+  // (such as a day imported from a sheet) is not repeated the next morning.
+  const since = `${daysBefore(practiceDate, DAILY_PRACTICE_HISTORY_DAYS)}T00:00:00+07:00`;
+  const recent = await selectRows(
+    service
+      .from("assignments")
+      .select("id, published_at")
+      .eq("class_id", classId)
+      .eq("lesson_id", lessonId)
+      .gte("published_at", new Date(since).toISOString()),
+    z.object({ id: z.uuid(), published_at: z.iso.datetime({ offset: true }) }),
+  );
+  const items = recent.length
     ? await selectRows(
         service
           .from("assignment_items")
           .select("assignment_id, question_id")
           .in(
             "assignment_id",
-            runs.map((run) => run.assignment_id),
+            recent.map((row) => row.id),
           ),
         z.object({ assignment_id: z.uuid(), question_id: z.string() }),
       )
     : [];
-  if (existing) {
-    return {
-      status: "exists",
-      assignmentId: existing.assignment_id,
-      questionCount: items.filter((item) => item.assignment_id === existing.assignment_id).length,
-    };
-  }
+  const publishedDays = new Map(
+    recent.map((row) => [row.id, toVietnamDate(new Date(row.published_at))]),
+  );
   const uses = items.map((item) => ({
     questionId: item.question_id,
-    practiceDate: runs.find((run) => run.assignment_id === item.assignment_id)?.practice_date ?? "",
+    practiceDate: publishedDays.get(item.assignment_id) ?? "",
   }));
-  const questionIds = selectDailyQuestions(
-    questions.map((question) => question.id),
+  // Kinds (the sheet's "Dạng bài", kanji, choice or fill) keep their share of each day's set.
+  const questionIds = selectBalancedDailyQuestions(
+    questions.map((question) => ({ id: question.id, type: question.type, tags: question.tags })),
     uses,
     classRow.daily_practice_size,
     `${classId}:${practiceDate}`,
