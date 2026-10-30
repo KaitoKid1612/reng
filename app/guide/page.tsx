@@ -24,7 +24,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-sign-up",
     title: "Đăng ký giảng dạy",
     steps: [
-      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Mở thư xác nhận, bấm liên kết để kích hoạt tài khoản và quay lại trang đăng ký giảng dạy.",
+      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Bạn được đăng nhập ngay và chuyển tới trang đăng ký giảng dạy. Nếu Reng báo đã gửi thư xác nhận, mở thư, bấm liên kết rồi quay lại trang đó.",
       "Ở trang Đăng ký giảng dạy, đánh dấu ô cam kết rồi bấm Gửi yêu cầu giảng dạy.",
       "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
     ],
@@ -62,7 +62,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     title: "Mở lớp và mời học viên",
     steps: [
       "Vào Giảng dạy → Tạo lớp: nhập tên lớp, chọn Tiếng Nhật, Tiếng Trung giản thể hoặc Tiếng Trung phồn thể theo lớp, số học viên tối đa (để trống nếu không giới hạn) và link Google Meet dạng https://meet.google.com/abc-defg-hij.",
-      "Gửi cho học viên link vào lớp kèm mã lớp hiển thị trong trang lớp. Đổi mã mới hoặc Ngừng nhận học viên khi cần.",
+      "Ở trang lớp, bấm Sao chép link mời rồi gửi cho học viên qua Zalo/Messenger; học viên mở link là mã lớp được điền sẵn. Vẫn có thể gửi riêng mã lớp. Đổi mã mới hoặc Ngừng nhận học viên khi cần.",
     ],
   },
   {
@@ -110,8 +110,8 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-join",
     title: "Tạo tài khoản và vào lớp",
     steps: [
-      "Mở trang Vào lớp, nhập mã lớp giáo viên gửi, bấm Vào lớp.",
-      "Lần đầu, bấm Tạo tài khoản học viên và nhập họ tên, email, mật khẩu. Mở thư xác nhận và bấm liên kết để kích hoạt tài khoản; bạn quay lại trang vào lớp với mã đã nhập, bấm Vào lớp một lần nữa. Không thấy thư thì kiểm tra Spam hoặc gửi lại thư xác nhận.",
+      "Mở link mời giáo viên gửi (mã lớp được điền sẵn), hoặc mở trang Vào lớp và nhập mã lớp, rồi bấm Vào lớp.",
+      "Lần đầu, bấm Tạo tài khoản học viên và nhập họ tên, email, mật khẩu. Bạn được đăng nhập ngay và quay lại trang vào lớp với mã đã nhập; bấm Vào lớp một lần nữa. Nếu Reng báo đã gửi thư xác nhận, mở thư và bấm liên kết trước (không thấy thư thì xem mục Spam hoặc gửi lại thư).",
     ],
   },
   {

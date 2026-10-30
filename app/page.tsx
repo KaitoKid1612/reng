@@ -59,7 +59,7 @@ export default function HomePage() {
             <Link href="/kana">Tự học tiếng Nhật, chưa cần tài khoản</Link>
           </p>
           <p className="hero-note">
-            Lần đầu vào lớp? Tạo tài khoản, xác nhận email rồi quay lại với mã lớp.
+            Lần đầu vào lớp? Mở link mời hoặc nhập mã, tạo tài khoản học viên rồi bấm Vào lớp.
           </p>
         </div>
         <div className="hero-paper" aria-label="Mẫu chữ Hiragana: a, i, u, e, o, ka, ki, ku, ke">
