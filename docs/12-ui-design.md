@@ -62,6 +62,10 @@ Không dùng màu làm tín hiệu duy nhất: đúng/sai/cần duyệt có ch�
 
 Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn trạng thái 4 px; dùng token thay hex/radius rải trong component. Bóng dành cho menu/hộp thoại/thanh nổi, nội dung trong luồng dùng viền. Không đổi theme chỉ để khác với mẫu công cụ sinh UI.
 
+## Hình minh họa trong bài Nhật
+
+Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Emoji (MIT) cạnh từ vựng cụ thể trên slide, trang đọc và mặt sau flashcard; hội thoại dạng bong bóng, người nói đầu bên trái màu `--primary-soft`, người thứ hai bên phải pha `--brand-bell`, avatar cùng màu bên; tiêu đề slide có vạch nhấn `--brand-bell` bên trái và thanh tiến độ cùng màu. Ảnh AI cho nhân vật và tranh mở đầu dùng chung một phong cách, không chứa chữ. Các yếu tố này nằm trong bài tiếng Nhật, không thành mặc định của giao diện chung. CSS ở `app/lesson-visuals.css`; slide vẫn phải vừa khung 1280×720 và trang đọc không cuộn ngang ở 360px.
+
 ## Hình ảnh và scan
 
 Review ảnh và câu tương tác có đánh dấu vùng nguồn, số trang và phần chưa nhận được. Ảnh không đọc được có hướng sửa/tải lại; không dùng độ tin cậy để báo câu đã đúng. Crop/che lời giải phải thể hiện ở preview học sinh, không chỉ ở preview giáo viên. Scan là lối nhập bổ sung, không lấn át nút tạo bài theo mẫu.

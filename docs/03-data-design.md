@@ -47,13 +47,15 @@ Mỗi bài có bản nháp chỉnh sửa được và các phiên bản xuất b
 - Nội dung dạng text thuần; không nhận HTML tùy ý. URL media phải thuộc nguồn cho phép. Tệp SVG từ nguồn ngoài cần xử lý an toàn trước khi phục vụ.
 - Sửa không ghi đè phiên bản đã xuất bản. Xóa mục đang được slide bản nháp tham chiếu phải báo lỗi và yêu cầu sửa tham chiếu trước.
 
+Từ vựng bài Nhật có thêm `image` tùy chọn (từ 30/10/2026): đường dẫn `/…` hoặc `https://…` tới icon/hình của từ, ví dụ `/icons/vocab/red-apple.svg`. Hình chỉ hỗ trợ nghĩa đã viết; nội dung cũ không có trường này vẫn hợp lệ. Xem [hình minh họa](illustrations.md).
+
 ### Các loại slide
 
 Mọi slide có `id`, `type`; `teacherNotes` tùy chọn chỉ có trong payload giảng viên, không đưa vào HTML/JSON cho học viên hoặc cửa sổ máy chiếu.
 
 | Type | Trường riêng bắt buộc |
 |---|---|
-| `title` | `jp`, `vi` |
+| `title` | `jp`, `vi`; `image` tùy chọn (tranh mở đầu, `/…` hoặc `https://…`) |
 | `vocab` | `refs`: ID từ vựng |
 | `grammar` | `ref`: ID ngữ pháp |
 | `example` | `ref`: ID ngữ pháp; `reveal` mặc định false, hiển thị các ví dụ của mẫu |
