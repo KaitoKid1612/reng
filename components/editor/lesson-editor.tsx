@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { unstable_rethrow, useRouter } from "next/navigation";
 import { useEffect, useReducer, useState, useTransition } from "react";
 
 import {
@@ -16,14 +16,22 @@ import { SlideFields } from "@/components/editor/slide-fields";
 import { SLIDE_TYPE_LABELS, SLIDE_TYPES } from "@/components/editor/slide-labels";
 import { SlideList } from "@/components/editor/slide-list";
 import { SlidePreview } from "@/components/editor/slide-preview";
+import { useEditorBackup } from "@/components/editor/use-editor-backup";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   AUDIO_COMMAND,
   countMissingAudio,
   countMissingListeningAudio,
   createItemId,
+  parseLessonDraftState,
 } from "@/lib/lesson-draft";
 import { createEditorState, editorReducer } from "@/lib/lesson-editor";
+import {
+  editorDraftKey,
+  keepEditorDraft,
+  removeLocalDraft,
+  restoreEditorDraft,
+} from "@/lib/local-draft";
 import { formatStudyDateTime } from "@/lib/study-days";
 
 import type { ItemKind, LessonDraftState, PublishProblem, SlideType } from "@/lib/lesson-draft";
@@ -43,6 +51,10 @@ interface EditorStatus {
   text: string;
 }
 
+// The request itself failed (network, a new deploy or a server error), not the save rules.
+const REQUEST_FAILED =
+  "Chưa gửi được tới máy chủ (mất mạng hoặc trang vừa được cập nhật). Thay đổi vẫn còn trên trang và đã được giữ trên máy này: thử lại, hoặc tải lại trang để khôi phục rồi lưu.";
+
 const SECTION_LABELS: Record<PublishProblem["section"], string> = {
   info: "Thông tin bài",
   vocab: "Từ vựng",
@@ -61,16 +73,31 @@ export function LessonEditor({
   visibility,
 }: LessonEditorProps) {
   const router = useRouter();
-  const [state, dispatch] = useReducer(editorReducer, initialDraft, createEditorState);
+  const [restored] = useState(() =>
+    restoreEditorDraft(lessonId, initialRevision, parseLessonDraftState),
+  );
+  const [state, dispatch] = useReducer(
+    editorReducer,
+    restored?.draft ?? initialDraft,
+    createEditorState,
+  );
   const [revision, setRevision] = useState(initialRevision);
-  const [savedChange, setSavedChange] = useState(0);
+  // A restored copy differs from the server draft, so it starts as unsaved work.
+  const [savedChange, setSavedChange] = useState(restored ? -1 : 0);
   const [conflictRevision, setConflictRevision] = useState<number | null>(null);
   const [problems, setProblems] = useState<PublishProblem[]>([]);
   const [newSlideType, setNewSlideType] = useState<SlideType>("vocab");
-  const [status, setStatus] = useState<EditorStatus>({
-    tone: "status-neutral",
-    text: `Bản nháp lưu lúc ${formatStudyDateTime(initialSavedAt)}.`,
-  });
+  const [status, setStatus] = useState<EditorStatus>(() =>
+    restored
+      ? {
+          tone: "status-attention",
+          text: `Đã khôi phục thay đổi chưa lưu trên máy này (lúc ${formatStudyDateTime(restored.changedAt)}). Bấm Lưu nháp để lưu lên máy chủ.`,
+        }
+      : {
+          tone: "status-neutral",
+          text: `Bản nháp lưu lúc ${formatStudyDateTime(initialSavedAt)}.`,
+        },
+  );
   const [isPending, startTransition] = useTransition();
   const { draft } = state;
   const isDirty = state.changeCount !== savedChange;
@@ -80,6 +107,7 @@ export function LessonEditor({
   const selectedSlide = draft.content.slides[selectedIndex];
   const missingAudio = countMissingAudio(draft.content);
   const missingListeningAudio = countMissingListeningAudio(draft.content);
+  useEditorBackup(lessonId, revision, draft, isDirty);
 
   useEffect(() => {
     if (!isDirty) {
@@ -99,10 +127,18 @@ export function LessonEditor({
   function handleSave(expectedRevision: number) {
     const change = state.changeCount;
     startTransition(async () => {
-      const outcome = await saveLessonDraftAction({ lessonId, revision: expectedRevision, draft });
+      let outcome;
+      try {
+        outcome = await saveLessonDraftAction({ lessonId, revision: expectedRevision, draft });
+      } catch (error) {
+        unstable_rethrow(error);
+        handleRequestFailure();
+        return;
+      }
       if (outcome.status === "saved") {
         setRevision(outcome.revision);
         setSavedChange(change);
+        removeLocalDraft(editorDraftKey(lessonId));
         setConflictRevision(null);
         setStatus({
           tone: "status-correct",
@@ -122,10 +158,18 @@ export function LessonEditor({
   function handlePublish() {
     const change = state.changeCount;
     startTransition(async () => {
-      const outcome = await publishLessonAction({ lessonId, revision, draft });
+      let outcome;
+      try {
+        outcome = await publishLessonAction({ lessonId, revision, draft });
+      } catch (error) {
+        unstable_rethrow(error);
+        handleRequestFailure();
+        return;
+      }
       if (outcome.status === "published") {
         setRevision(outcome.revision);
         setSavedChange(change);
+        removeLocalDraft(editorDraftKey(lessonId));
         setProblems([]);
         setConflictRevision(null);
         setStatus({
@@ -154,13 +198,21 @@ export function LessonEditor({
 
   function handleReload() {
     startTransition(async () => {
-      const outcome = await loadLessonDraftAction(lessonId);
+      let outcome;
+      try {
+        outcome = await loadLessonDraftAction(lessonId);
+      } catch (error) {
+        unstable_rethrow(error);
+        setStatus({ tone: "status-wrong", text: REQUEST_FAILED });
+        return;
+      }
       if (outcome.status === "error") {
         setStatus({ tone: "status-wrong", text: outcome.message });
         return;
       }
       dispatch({ type: "replace", draft: outcome.draft });
       setSavedChange(state.changeCount + 1);
+      removeLocalDraft(editorDraftKey(lessonId));
       setRevision(outcome.revision);
       setConflictRevision(null);
       setProblems([]);
@@ -169,6 +221,11 @@ export function LessonEditor({
         text: `Đã tải bản lưu lúc ${formatStudyDateTime(outcome.savedAt)}.`,
       });
     });
+  }
+
+  function handleRequestFailure() {
+    keepEditorDraft(lessonId, revision, draft);
+    setStatus({ tone: "status-wrong", text: REQUEST_FAILED });
   }
 
   function handleProblemClick(problem: PublishProblem) {

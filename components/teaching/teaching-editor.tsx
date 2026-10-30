@@ -2,12 +2,14 @@
 
 import { useEffect, useReducer, useRef, useState, useTransition } from "react";
 import Link from "next/link";
+import { unstable_rethrow } from "next/navigation";
 
 import {
   publishTeachingLessonAction,
   saveTeachingDraftAction,
 } from "@/app/actions/teaching-lessons";
 import { LessonVisibilityForm } from "@/components/editor/lesson-visibility-form";
+import { useEditorBackup } from "@/components/editor/use-editor-backup";
 import { GoalStep } from "@/components/teaching/goal-step";
 import { QuestionStep } from "@/components/teaching/question-step";
 import { SlidesStep } from "@/components/teaching/slides-step";
@@ -15,7 +17,13 @@ import { StructureStep } from "@/components/teaching/structure-step";
 import { TeachingReader } from "@/components/teaching/teaching-reader";
 import { VocabularyStep } from "@/components/teaching/vocabulary-step";
 import { Button } from "@/components/ui/button";
-import { reviewTeachingDraft } from "@/lib/teaching-content";
+import {
+  editorDraftKey,
+  keepEditorDraft,
+  removeLocalDraft,
+  restoreEditorDraft,
+} from "@/lib/local-draft";
+import { reviewTeachingDraft, teachingDraftSchema } from "@/lib/teaching-content";
 import {
   createReviewedQuestions,
   isQuestionReviewed,
@@ -40,6 +48,14 @@ interface SavedState {
 interface EditorStatus {
   tone: "idle" | "busy" | "success" | "error";
   message: string;
+}
+
+// The request itself failed (network, a new deploy or a server error), not the save rules.
+const REQUEST_FAILED =
+  "Chưa gửi được tới máy chủ (mất mạng hoặc trang vừa được cập nhật). Thay đổi vẫn còn trên trang và đã được giữ trên máy này: thử lại, hoặc tải lại trang để khôi phục rồi lưu.";
+
+function parseTeachingDraft(value: unknown) {
+  return teachingDraftSchema.parse(value);
 }
 
 // Moving between steps is saved with the draft but never counts as unsaved work.
@@ -72,14 +88,25 @@ export function TeachingEditor({
   initialVersionCount,
   visibility,
 }: TeachingEditorProps) {
-  const [draft, dispatch] = useReducer(teachingReducer, initialDraft);
+  const [restored] = useState(() =>
+    restoreEditorDraft(lessonId, initialRevision, parseTeachingDraft),
+  );
+  // A restored copy differs from the saved snapshot below, so it starts as unsaved work.
+  const [draft, dispatch] = useReducer(teachingReducer, restored?.draft ?? initialDraft);
   const [saved, setSaved] = useState<SavedState>(() => ({
     revision: initialRevision,
     savedAt: initialSavedAt,
     snapshot: toSnapshot(initialDraft),
     reviewed: createReviewedQuestions(initialDraft, initialReviewedIds),
   }));
-  const [status, setStatus] = useState<EditorStatus>({ tone: "idle", message: "" });
+  const [status, setStatus] = useState<EditorStatus>(() =>
+    restored
+      ? {
+          tone: "idle",
+          message: `Đã khôi phục thay đổi chưa lưu trên máy này (lúc ${formatTime(restored.changedAt)}). Bấm Lưu nháp để lưu lên máy chủ.`,
+        }
+      : { tone: "idle", message: "" },
+  );
   const [serverProblems, setServerProblems] = useState<string[]>([]);
   const [published, setPublished] = useState({
     versionId: initialPublishedVersionId,
@@ -93,6 +120,7 @@ export function TeachingEditor({
   const unreviewedCount = draft.content.questions.filter(
     (question) => !isQuestionReviewed(question, saved.reviewed),
   ).length;
+  useEditorBackup(lessonId, saved.revision, draft, isDirty);
 
   useEffect(() => {
     draftRef.current = draft;
@@ -135,14 +163,23 @@ export function TeachingEditor({
       tone: "busy",
       message: confirmedIds.length ? "Đang lưu và xác nhận đáp án…" : "Đang lưu…",
     });
-    const result = await saveTeachingDraftAction({
-      lessonId,
-      revision: saved.revision,
-      draft,
-      confirmedIds,
-    });
+    let result;
+    try {
+      result = await saveTeachingDraftAction({
+        lessonId,
+        revision: saved.revision,
+        draft,
+        confirmedIds,
+      });
+    } catch (error) {
+      unstable_rethrow(error);
+      keepEditorDraft(lessonId, saved.revision, draft);
+      setStatus({ tone: "error", message: REQUEST_FAILED });
+      return null;
+    }
     if (result.status === "saved") {
       applySaved(result.editor, sentSnapshot);
+      removeLocalDraft(editorDraftKey(lessonId));
       setStatus({
         tone: "success",
         message: confirmedIds.length
@@ -185,7 +222,18 @@ export function TeachingEditor({
         revision = next;
       }
       setStatus({ tone: "busy", message: "Đang xuất bản…" });
-      const result = await publishTeachingLessonAction({ lessonId, revision });
+      let result;
+      try {
+        result = await publishTeachingLessonAction({ lessonId, revision });
+      } catch (error) {
+        unstable_rethrow(error);
+        setStatus({
+          tone: "error",
+          message:
+            "Chưa gửi được yêu cầu xuất bản (mất mạng hoặc trang vừa được cập nhật). Bản nháp đã lưu vẫn còn; tải lại trang rồi xuất bản lại.",
+        });
+        return;
+      }
       if (result.status === "published") {
         setServerProblems([]);
         setPublished((current) => ({ versionId: result.versionId, count: current.count + 1 }));

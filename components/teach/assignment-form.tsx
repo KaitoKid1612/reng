@@ -1,5 +1,6 @@
 "use client";
 
+import { unstable_rethrow } from "next/navigation";
 import { useRef, useState, useTransition } from "react";
 
 import { publishAssignmentAction } from "@/app/actions/classes";
@@ -136,13 +137,24 @@ export function AssignmentForm({
   function handlePublish() {
     setError("");
     startTransition(async () => {
-      const result = await publishAssignmentAction({
-        classId,
-        lessonId: lesson?.lessonId ?? "",
-        settings,
-        practiceQuestionIds: mode === "practice" ? practiceIds : [],
-        testQuestions: mode === "test" ? testQuestions.map(toTestQuestionInput) : [],
-      });
+      let result;
+      try {
+        result = await publishAssignmentAction({
+          classId,
+          lessonId: lesson?.lessonId ?? "",
+          settings,
+          practiceQuestionIds: mode === "practice" ? practiceIds : [],
+          testQuestions: mode === "test" ? testQuestions.map(toTestQuestionInput) : [],
+        });
+      } catch (error) {
+        // A successful publish redirects; anything else keeps the form so nothing is retyped.
+        unstable_rethrow(error);
+        setError(
+          "Chưa gửi được tới máy chủ (mất mạng hoặc trang vừa được cập nhật). Câu hỏi vẫn còn trên trang, bạn thử giao lại.",
+        );
+        setIsReviewing(false);
+        return;
+      }
       if (result.error) {
         setError(result.error);
         setIsReviewing(false);

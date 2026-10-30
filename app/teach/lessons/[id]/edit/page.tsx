@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-import { LessonEditor } from "@/components/editor/lesson-editor";
-import { TeachingEditor } from "@/components/teaching/teaching-editor";
+import { LessonEditorLoader, TeachingEditorLoader } from "@/components/editor/editor-loaders";
 import { requireTeacher } from "@/lib/server/account";
 import { loadLessonEditor } from "@/lib/server/lessons";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -31,7 +30,7 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
             </p>
           </div>
         </div>
-        <TeachingEditor
+        <TeachingEditorLoader
           lessonId={teaching.lessonId}
           initialDraft={toTeachingDraft(teaching)}
           initialRevision={teaching.revision}
@@ -55,7 +54,7 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
           </p>
         </div>
       </div>
-      <LessonEditor
+      <LessonEditorLoader
         lessonId={editor.lessonId}
         visibility={editor.visibility}
         initialDraft={editor.draft}

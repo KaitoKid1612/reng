@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { unstable_rethrow, useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 
 import { importVocabularyAction } from "@/app/actions/lessons";
@@ -64,11 +64,21 @@ export function VocabularyImport({ lessons, initialLessonId }: VocabularyImportP
       return;
     }
     startTransition(async () => {
-      const outcome = await importVocabularyAction({
-        lessonId: lesson.id,
-        revision: lesson.revision,
-        text,
-      });
+      let outcome;
+      try {
+        outcome = await importVocabularyAction({
+          lessonId: lesson.id,
+          revision: lesson.revision,
+          text,
+        });
+      } catch (error) {
+        unstable_rethrow(error);
+        setMessage({
+          tone: "error-text",
+          text: "Chưa gửi được tới máy chủ (mất mạng hoặc trang vừa được cập nhật). Bảng từ vẫn còn, bạn thử lại.",
+        });
+        return;
+      }
       if (outcome.status === "saved") {
         setMessage({ tone: "form-notice", text: `Đã thêm ${outcome.added} từ vào bản nháp.` });
         setText("");
