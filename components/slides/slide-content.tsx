@@ -21,6 +21,8 @@ interface SlideContentProps {
 const COMPACT_VOCAB_ITEMS = 3;
 const COMPACT_EXAMPLES = 1;
 const COMPACT_DIALOGUE_LINES = 5;
+// About this many Japanese characters fit one row of a dialogue bubble at full size.
+const DIALOGUE_ROW_CHARACTERS = 20;
 const COMPACT_TABLE_ROWS = 8;
 
 function TitleSlide({ slide }: SlideContentProps) {
@@ -159,7 +161,14 @@ function DialogueSlide({ slide, lesson, staticMode }: SlideContentProps) {
   if (slide.type !== "dialogue") {
     return null;
   }
-  const isCompact = slide.lines.length > COMPACT_DIALOGUE_LINES;
+  // Long sentences wrap, so the dense layout follows wrapped rows, not only the line count.
+  const rows = slide.lines.reduce(
+    (total, line) =>
+      total +
+      Math.max(1, Math.ceil([...toPlainJapanese(line.jp)].length / DIALOGUE_ROW_CHARACTERS)),
+    0,
+  );
+  const isCompact = rows > COMPACT_DIALOGUE_LINES;
   const sides = dialogueSides(slide.lines.map((line) => line.speaker));
   return (
     <div>

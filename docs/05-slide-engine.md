@@ -43,6 +43,10 @@ Mỗi type có component render; thêm type cần cập nhật schema/validator/
 
 reveal.js làm sẵn việc này qua cấu hình `width`, `height`, `margin`.
 
+### Bố cục dày cho nội dung dài (bài Nhật)
+
+Slide từ vựng có trên 3 từ, ví dụ có trên 1 câu và bảng có trên 8 hàng chuyển sang bố cục dày để vừa khung 1280×720. Hội thoại tính theo số dòng sau khi xuống dòng: mỗi lượt chiếm `ceil(số ký tự / 20)` dòng (ít nhất 1); tổng trên 5 dòng thì dùng cỡ chữ gọn. Mỗi slide hội thoại tối đa 6 lượt; hội thoại dài hơn tách thành nhiều slide.
+
 ## Font và ngôn ngữ dịch vụ
 
 MVP Việt–Trung cần chữ Hán, pinyin và nghĩa Việt ở các vùng riêng có lang/locale đúng; font CJK Trung phải chốt và kiểm chứng theo 12. Mẫu sinh slide là bộ dựng xác định từ nội dung và template, không cần AI; dài thì chia slide, không tự cắt ý. Dựng lại giữ sửa tay và không đổi version đã xuất bản. Chi tiết AUTHOR-03 ở DD dịch vụ; chưa triển khai renderer v2.
