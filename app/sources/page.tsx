@@ -30,9 +30,10 @@ export default function SourcesPage() {
       </p>
       <h2>Hình minh họa từ vựng</h2>
       <p>
-        Icon cạnh từ vựng là Fluent Emoji (kiểu Flat) của Microsoft, dùng theo{" "}
-        <a href="/icons/vocab/LICENSE.txt">giấy phép MIT</a>. Hình không chứa chữ; nghĩa tiếng Việt
-        luôn hiển thị bên cạnh để không phụ thuộc vào hình.
+        Icon cạnh từ vựng và hình ghép trong slide luyện tập là Fluent Emoji (kiểu Flat) của
+        Microsoft, dùng theo <a href="/icons/vocab/LICENSE.txt">giấy phép MIT</a>. Hình không chứa
+        chữ (hình ghép chỉ có số thứ tự); nghĩa tiếng Việt luôn hiển thị bên cạnh để không phụ thuộc
+        vào hình.
       </p>
       <h2>Audio</h2>
       <p>

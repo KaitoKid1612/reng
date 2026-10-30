@@ -66,7 +66,8 @@
         "jp": "いい",
         "romaji": "ii",
         "vi": "tốt, đẹp (quá khứ: よかったです)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/thumbs-up.svg"
       },
       {
         "id": "v1208",
@@ -128,7 +129,8 @@
         "kanji": "簡単",
         "romaji": "kantan",
         "vi": "đơn giản, dễ (tính từ đuôi な)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/ok-hand.svg"
       },
       {
         "id": "v1215",
@@ -136,7 +138,8 @@
         "kanji": "大変",
         "romaji": "taihen",
         "vi": "vất vả, khó khăn (tính từ đuôi な)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/downcast-face-with-sweat.svg"
       },
       {
         "id": "v1216",
@@ -413,7 +416,8 @@
         "kanji": "初めて",
         "romaji": "hajimete",
         "vi": "lần đầu tiên",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/japanese-symbol-for-beginner.svg"
       },
       {
         "id": "v1248",
@@ -576,7 +580,8 @@
         "teacherNotes": "Khởi động 3 phút: hỏi bằng tiếng Việt “cuối tuần của em thế nào?”, “cà phê hay trà, em thích cái nào hơn?”. Bài đi theo trình tự bài 12 Minna no Nihongo Sơ cấp I; nhắc học viên mở sách để đối chiếu từ vựng và phần luyện tập.",
         "type": "title",
         "jp": "{第|だい}12{課|か}",
-        "vi": "Nói về chuyện đã qua và so sánh"
+        "vi": "Nói về chuyện đã qua và so sánh",
+        "image": "/icons/lessons/minna-1-12-seasons.svg"
       },
       {
         "id": "s1202",
@@ -728,6 +733,14 @@
         "reveal": true
       },
       {
+        "id": "s1240",
+        "teacherNotes": "Chỉ từng cặp hình và hỏi: どちらが はやいですか／かるいですか／すきですか／たかいですか. Học viên trả lời bằng 〜の ほうが…, rồi nói cả câu với より (ví dụ ひこうきは でんしゃより はやいです). Cặp 2 là この かばん và あの かばん. Sang slide sau để đối chiếu câu mẫu.",
+        "type": "image",
+        "src": "/icons/lessons/minna-1-12-compare.svg",
+        "alt": "Bốn cặp hình được đánh số: 1 máy bay và tàu điện, 2 ba lô và túi xách, 3 hoa anh đào và lá phong đỏ, 4 miếng thịt bò và con lợn.",
+        "caption": "Hỏi bằng どちら: ① はやい　② かるい　③ すき　④ たかい"
+      },
+      {
         "id": "s1223",
         "teacherNotes": "Dòng có → là câu trả lời cho câu hỏi ngay phía trên.",
         "type": "table",
@@ -776,6 +789,14 @@
         "type": "example",
         "ref": "g1205",
         "reveal": true
+      },
+      {
+        "id": "s1241",
+        "teacherNotes": "Hỏi theo từng hàng: くだものの なかで なにが いちばん すきですか／いちねんで いつが いちばん すきですか／スポーツで なにが いちばん おもしろいですか. Học viên chọn hình mình thích và trả lời 〜が いちばん 〜です; không có đáp án đúng duy nhất.",
+        "type": "image",
+        "src": "/icons/lessons/minna-1-12-best.svg",
+        "alt": "Ba hàng hình được đánh số: 1 táo, chuối, xoài, nho; 2 hoa anh đào, mặt trời, lá phong đỏ, người tuyết cho bốn mùa; 3 bóng đá, quần vợt, bơi lội.",
+        "caption": "Hỏi bằng いちばん: ① くだもの・すき　② いつ・すき　③ スポーツ・おもしろい"
       },
       {
         "id": "s1228",

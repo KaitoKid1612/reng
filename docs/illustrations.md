@@ -8,6 +8,14 @@ Ngày 30/10/2026. Chủ dự án chọn **phương án B**: icon mở cho từ v
 - Danh mục có nhãn tiếng Việt ở `lib/vocab-icons.ts`; file SVG ở `public/icons/vocab/`. Thêm icon: bổ sung tên vào danh mục rồi chạy `node --import tsx scripts/extract-vocab-icons.ts --source <icons.json>` với `icons.json` của gói `@iconify-json/fluent-emoji-flat` (script từ chối SVG có script/tham chiếu ngoài).
 - Từ vựng bài Nhật có trường tùy chọn `image` (đường dẫn `/…` hoặc `https://…`). Giáo viên chọn ở ô **Hình** của từng từ trong trình soạn. Chỉ gắn cho từ cụ thể (đồ vật, đồ ăn, nơi chốn, xe cộ, thời tiết, người); từ ngữ pháp, chào hỏi, phó từ để trống.
 - Hiển thị: slide từ vựng (một cột hình cho cả slide), danh sách từ ở trang đọc, mặt sau flashcard (mặt trước không có hình để học viên vẫn đoán nghĩa từ chữ).
+- Từ chỉ tính chất/cảm nhận chỉ gắn icon khi hình gợi đúng nghĩa: bài 12 dùng 👍 cho いい, 👌 cho かんたん, 😓 cho たいへん, 🔰 (biển "người mới" của Nhật) cho はじめて; ちかい, とおい, どちら, ずっと, でも để trống.
+
+## Đã có: hình ghép cho slide luyện tập
+
+- `scripts/compose-lesson-pictures.ts` ghép các icon đã có trong `public/icons/vocab/` thành SVG ở `public/icons/lessons/` (cùng giấy phép MIT, [LICENSE](../public/icons/lessons/LICENSE.txt)). Danh sách hình nằm trong script; sửa xong chạy lại `node --import tsx scripts/compose-lesson-pictures.ts`.
+- Hình luyện tập là các thẻ trắng có số ①②③…, mỗi thẻ một cặp hoặc một hàng icon, không có chữ. Slide ảnh mang phần ngôn ngữ: chú thích một dòng (ví dụ `Hỏi bằng どちら: ① はやい ② かるい …`) và mô tả ảnh (alt) liệt kê từng hình cho trình đọc màn hình. Ghi chú giáo viên có câu hỏi mẫu.
+- Bài 12: `minna-1-12-compare.svg` (bốn cặp cho より／どちら, đặt trước bảng luyện tập 2), `minna-1-12-best.svg` (ba hàng cho いちばん, trước bảng luyện tập 3) và `minna-1-12-seasons.svg` (bốn mùa) làm hình mở đầu tạm cho tới khi có tranh AI. Các cặp khớp với dòng của bảng ngay sau để học viên nói trước, rồi bấm hiện câu mẫu.
+- Slide ảnh (mọi bài) được căn giữa, chú thích 28px; kiểm tra ở khổ 1280×720 như các slide khác.
 
 ## Đã có: hội thoại dạng bong bóng
 

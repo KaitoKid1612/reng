@@ -236,3 +236,19 @@ li[data-side="end"] > .dialogue-bubble {
   align-items: center;
   gap: 8px;
 }
+
+/* Image slides (any lesson): the picture and its one-line prompt centred in the frame. */
+.slide-page > figure {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.slide-page > figure img {
+  max-width: 100%;
+  height: auto;
+}
+.slide-page > figure figcaption {
+  font-size: 28px;
+  line-height: 1.5;
+}

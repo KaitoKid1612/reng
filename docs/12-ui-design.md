@@ -64,7 +64,7 @@ Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn 
 
 ## Hình minh họa trong bài Nhật
 
-Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Emoji (MIT) cạnh từ vựng cụ thể trên slide, trang đọc và mặt sau flashcard; hội thoại dạng bong bóng, người nói đầu bên trái màu `--primary-soft`, người thứ hai bên phải pha `--brand-bell`, avatar cùng màu bên; tiêu đề slide có vạch nhấn `--brand-bell` bên trái và thanh tiến độ cùng màu. Ảnh AI cho nhân vật và tranh mở đầu dùng chung một phong cách, không chứa chữ. Các yếu tố này nằm trong bài tiếng Nhật, không thành mặc định của giao diện chung. CSS ở `app/lesson-visuals.css`; slide vẫn phải vừa khung 1280×720 và trang đọc không cuộn ngang ở 360px.
+Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Emoji (MIT) cạnh từ vựng cụ thể trên slide, trang đọc và mặt sau flashcard; hội thoại dạng bong bóng, người nói đầu bên trái màu `--primary-soft`, người thứ hai bên phải pha `--brand-bell`, avatar cùng màu bên; tiêu đề slide có vạch nhấn `--brand-bell` bên trái và thanh tiến độ cùng màu. Ảnh AI cho nhân vật và tranh mở đầu dùng chung một phong cách, không chứa chữ. Các yếu tố này nằm trong bài tiếng Nhật, không thành mặc định của giao diện chung. Slide luyện tập có thể dùng hình ghép từ icon (thẻ trắng đánh số, không chữ; chú thích và alt mang phần ngôn ngữ). CSS ở `app/lesson-visuals.css` (kể cả căn giữa slide ảnh); slide vẫn phải vừa khung 1280×720 và trang đọc không cuộn ngang ở 360px.
 
 ## Thống kê và biểu đồ
 
