@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { z } from "zod";
 
 import { getCurrentAccount } from "@/lib/server/account";
@@ -37,5 +38,7 @@ export async function saveNotificationPreferencesAction(
   } catch {
     return { error: "Chưa lưu được. Bạn thử lại nhé." };
   }
+  // React resets the form after the action; refreshing makes its defaults the saved values.
+  refresh();
   return { notice: "Đã lưu cài đặt thông báo." };
 }
