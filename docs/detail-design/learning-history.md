@@ -26,6 +26,24 @@ Snapshot đã nhập không tự cập nhật theo Sheet. Muốn sửa dữ li�
 
 ## Hiển thị
 
-Page tải dữ liệu ở server; `history-archive-view.tsx` lọc theo query GET, ngày giảm dần lấy từ cả tổng hợp và chi tiết. Dùng native details/summary, React escape nội dung nguồn, wrap chuỗi dài. Không đưa toàn bộ snapshot vào component client; component client chỉ giữ trạng thái form liên kết.
+Page tải dữ liệu ở server; `history-archive-view.tsx` lọc theo query GET (`date`, `outcome`), ngày giảm dần lấy từ cả tổng hợp và chi tiết. Dùng native details/summary, React escape nội dung nguồn, wrap chuỗi dài. Không đưa toàn bộ snapshot vào component client; component client chỉ giữ trạng thái form liên kết.
+
+Số liệu là hàm thuần trong `lib/learning-history-stats.ts`:
+
+- Điểm quy về % bằng `điểm × 100 / thang`. Điểm của một ngày là trung bình các dòng tổng hợp có điểm trong ngày, giữ thang gốc khi các dòng cùng thang. Ngày không có điểm là `null`, không thành 0; trung bình đếm mỗi ngày một lần.
+- Điểm gần nhất xét theo ngày rồi theo dòng nguồn, so với trung bình tối đa 5 dòng có điểm trước đó; mức chênh hiển thị theo thang của dòng gần nhất.
+- Tỉ lệ đúng chỉ đếm `correct`/`incorrect`. Dạng bài được chuẩn hóa khoảng trắng; chỉ xếp hạng khi có từ 5 câu đã chấm.
+- Dải điểm: từ 80% tốt, 60–79% trung bình, dưới 60% thấp.
+
+Component server:
+
+- `history-overview.tsx`: bốn ô thống kê, biểu đồ và bảng dạng bài.
+- `history-score-chart.tsx`: cột HTML, mỗi cột là liên kết `?date=…#history-day`. Cột nằm ngoài thứ tự Tab vì danh sách ngày đã có cùng liên kết với vùng bấm lớn hơn. Dòng đọc số liệu đổi khi rê chuột hoặc focus bằng CSS, không cần JS.
+- `history-day-nav.tsx`: nút ngày nhóm theo tháng; tên truy cập là ngày đầy đủ và điểm gốc.
+- `history-list-stats.tsx`: dòng tóm tắt và sparkline SVG thang cố định 0–100%.
+
+Liên kết ngày và bộ lọc dùng `scroll={false}`, `prefetch={false}`. CSS và token màu điểm ở `app/learning-history.css`, nạp sau `globals.css`.
+
+Danh sách `/history` chỉ chọn thêm `sessions:payload->sessions` (đường dẫn JSON của PostgREST) để tính thống kê, không tải bảng câu. Snapshot không đọc được thì bỏ phần thống kê thay vì làm lỗi trang.
 
 Xem [phạm vi sản phẩm](../basic-design/learning-history.md) và [kiểm chứng](../testing/learning-history.md).

@@ -2,7 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
-import { historyArchiveSchema } from "@/lib/learning-history";
+import { historyArchiveSchema, historySessionSchema } from "@/lib/learning-history";
 import { createSessionClient } from "@/lib/supabase-session";
 import { selectOptional, selectRows } from "@/lib/server/supabase";
 
@@ -14,6 +14,8 @@ const summarySchema = z.object({
   session_count: z.number().int(),
   answer_count: z.number().int(),
   imported_at: z.iso.datetime({ offset: true }),
+  // List statistics read only the small summary tab; an unreadable snapshot just shows none.
+  sessions: z.array(historySessionSchema).nullable().catch(null),
 });
 
 // Reads use the caller's session and database RLS, including guessed archive IDs.
@@ -25,7 +27,9 @@ export async function listLearningHistory() {
   return selectRows(
     client
       .from("learning_history_archives")
-      .select("id, learner_id, learner_name, course, session_count, answer_count, imported_at")
+      .select(
+        "id, learner_id, learner_name, course, session_count, answer_count, imported_at, sessions:payload->sessions",
+      )
       .order("learner_name"),
     summarySchema,
   );

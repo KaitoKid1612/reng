@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HistoryListStats } from "@/components/history/history-list-stats";
 import { buttonVariants } from "@/components/ui/button";
 import { requireAccount } from "@/lib/server/account";
 import { listLearningHistory } from "@/lib/server/learning-history";
@@ -50,6 +51,7 @@ export default async function HistoryPage() {
                 {!archive.learner_id && (
                   <p className="small muted">Chờ giáo viên liên kết sau khi học viên đăng ký.</p>
                 )}
+                <HistoryListStats sessions={archive.sessions} />
                 <p className="item-meta">
                   {archive.session_count} dòng tổng hợp · {archive.answer_count} câu trong lịch sử
                 </p>

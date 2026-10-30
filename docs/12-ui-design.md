@@ -66,6 +66,12 @@ Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn 
 
 Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Emoji (MIT) cạnh từ vựng cụ thể trên slide, trang đọc và mặt sau flashcard; hội thoại dạng bong bóng, người nói đầu bên trái màu `--primary-soft`, người thứ hai bên phải pha `--brand-bell`, avatar cùng màu bên; tiêu đề slide có vạch nhấn `--brand-bell` bên trái và thanh tiến độ cùng màu. Ảnh AI cho nhân vật và tranh mở đầu dùng chung một phong cách, không chứa chữ. Các yếu tố này nằm trong bài tiếng Nhật, không thành mặc định của giao diện chung. CSS ở `app/lesson-visuals.css`; slide vẫn phải vừa khung 1280×720 và trang đọc không cuộn ngang ở 360px.
 
+## Thống kê và biểu đồ
+
+Ô thống kê dùng lại `.stat-tiles` (4 cột, 2 cột từ 820px trở xuống): số lớn, nhãn, một dòng chi tiết. Biểu đồ vẽ bằng HTML/SVG ở server, không thêm thư viện. Một chuỗi số dùng một màu chàm; ngày đang xem đậm hơn, các ngày khác dùng bậc nhạt hơn vẫn đạt 3:1. Lưới là đường mảnh; mốc mục tiêu là nét đứt. Giá trị trống vẽ vòng rỗng, không vẽ như 0.
+
+Màu dải điểm (`--score-good`, `--score-fair`, `--score-low`, `--score-none` trong `app/learning-history.css`) luôn đi kèm con số. Cặp xanh/đỏ chỉ cách ΔE 7,1 khi mô phỏng mù màu, nên không dùng màu làm tín hiệu duy nhất. Mỗi biểu đồ có câu tóm tắt bằng chữ, và giá trị từng ngày cũng đọc được trong danh sách ngày. Kiểm tra 360px và 1280px không tràn ngang trước khi phát hành.
+
 ## Hình ảnh và scan
 
 Review ảnh và câu tương tác có đánh dấu vùng nguồn, số trang và phần chưa nhận được. Ảnh không đọc được có hướng sửa/tải lại; không dùng độ tin cậy để báo câu đã đúng. Crop/che lời giải phải thể hiện ở preview học sinh, không chỉ ở preview giáo viên. Scan là lối nhập bổ sung, không lấn át nút tạo bài theo mẫu.

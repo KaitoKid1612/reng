@@ -20,7 +20,7 @@ Rà soát mã nguồn 30/10/2026: đã sửa lỗi mất câu trả lời khi m�
 
 Quản lý Nhật–Trung: đã bổ sung tìm/lọc bài theo ngôn ngữ và trạng thái, nhãn ngôn ngữ từng phiên bản, lối chọn công cụ soạn/nhập và mặc định câu kiểm tra theo lớp. Xem [kết quả và phần cần nghiệm thu](docs/testing/teaching-management.md), [quy trình nâng cấp bài](docs/content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung).
 
-Lịch sử bài tập cũ từ Google Sheets được xem riêng tư tại `/history`, có lọc ngày/kết quả và giữ điểm gốc; giáo viên xem bản thân và học viên được chỉ định. Học viên chưa đăng ký cần xác nhận email rồi giáo viên bấm liên kết. Sheet giữ làm bản lưu; bài mới quản lý trong lớp Reng. Xem [thiết kế và cách nhập](docs/detail-design/learning-history.md), [kết quả kiểm chứng](docs/testing/learning-history.md).
+Lịch sử bài tập cũ từ Google Sheets được xem riêng tư tại `/history`, có thống kê tổng quan (ngày học, tỉ lệ đúng, điểm gần nhất, biểu đồ điểm theo ngày, tỉ lệ đúng theo dạng bài), lọc ngày/kết quả và giữ điểm gốc; giáo viên xem bản thân và học viên được chỉ định. Học viên chưa đăng ký cần xác nhận email rồi giáo viên bấm liên kết. Sheet giữ làm bản lưu; bài mới quản lý trong lớp Reng. Xem [thiết kế và cách nhập](docs/detail-design/learning-history.md), [kết quả kiểm chứng](docs/testing/learning-history.md).
 
 ## Chạy local
 

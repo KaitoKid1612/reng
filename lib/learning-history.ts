@@ -124,7 +124,7 @@ export function classifyHistoryOutcome(result: string, response: string): Histor
   return "unknown";
 }
 
-export function historyDates(archive: HistoryArchive) {
+export function historyDates(archive: Pick<HistoryArchive, "sessions" | "answers">) {
   return [...new Set([...archive.sessions, ...archive.answers].map((item) => item.date))].sort(
     (first, second) => second.localeCompare(first),
   );

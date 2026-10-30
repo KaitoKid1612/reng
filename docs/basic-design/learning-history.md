@@ -10,7 +10,15 @@ Học viên chưa đăng ký được nhập ở trạng thái chờ. Chỉ giá
 
 ## Màn hình và cách dùng
 
-Menu tài khoản, trang lớp, tiến độ và trang giáo viên dẫn đến `/history`. Danh sách chỉ chứa hồ sơ được phép xem. Mỗi hồ sơ `/history/[id]` có ngày học, bộ lọc kết quả, tổng hợp điểm gốc và các câu có thể mở để đọc đề, câu trả lời, nhận xét. Mặc định chọn ngày gần nhất; màn hình 360px không tràn ngang.
+Menu tài khoản, trang lớp, tiến độ và trang giáo viên dẫn đến `/history`. Danh sách chỉ chứa hồ sơ được phép xem. Mỗi hồ sơ có dòng tóm tắt (số ngày có điểm, điểm trung bình quy về %, điểm gần nhất theo thang gốc) và đường điểm 10 ngày có điểm gần nhất, để giáo viên so sánh nhanh các học viên.
+
+Mỗi hồ sơ `/history/[id]` mở đầu bằng phần Tổng quan cho toàn bộ lịch sử:
+
+- Bốn ô: số ngày học và khoảng ngày; tỉ lệ câu đúng, chỉ tính câu đã chấm Đúng/Sai; điểm gần nhất theo thang gốc, có mũi tên tăng/giảm so với trung bình tối đa 5 lần có điểm trước đó; số câu chưa chấm/chưa làm (câu "Cần đối chiếu" tính là chưa chấm).
+- Biểu đồ điểm theo ngày: 30 ngày gần nhất, quy về %, có mốc 80%. Bấm một cột để mở ngày đó. Ngày không có điểm là vòng tròn rỗng, không tính là 0.
+- Tỉ lệ đúng theo dạng bài, dạng thấp nhất ở trên. Dạng có dưới 5 câu đã chấm ghi riêng, không xếp hạng.
+
+Tiếp theo là danh sách ngày theo tháng. Mỗi ngày là một nút có số ngày, điểm và chấm màu: xanh từ 80%, vàng 60–79%, đỏ dưới 60%, vòng rỗng nếu chưa có điểm; màu luôn đi kèm con số. Chọn ngày giữ nguyên vị trí cuộn, phần tổng hợp ngày và câu trả lời bên dưới đổi theo. Nút lọc theo kết quả có số câu của ngày; mỗi câu có nhãn kết quả và mở ra để đọc đề, câu trả lời, nhận xét. Mặc định chọn ngày gần nhất; màn hình 360px không tràn ngang.
 
 Điểm trống khác điểm 0. Thang 10 và 100 giữ đúng nguồn. Dòng tổng hợp và chi tiết có thể lệch nhau; hiển thị nguyên bản để đối chiếu, không tự tính lại. Câu trùng mã vẫn giữ theo dòng nguồn. Không tạo submission, điểm mới hoặc lịch ôn FSRS từ dữ liệu cũ.
 

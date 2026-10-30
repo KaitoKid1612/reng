@@ -31,3 +31,22 @@ Kiểm tra lại bằng RLS production trong transaction chỉ đọc: subject h
 Địa chỉ sử dụng hiện tại: https://reng-class.vercel.app/history (xem [đổi domain](domain-change.md)). Học viên tải lại trang lịch sử sau khi liên kết.
 
 Giới hạn: không tự đăng nhập tài khoản thật hoặc đặt lại mật khẩu để kiểm thử production. Snapshot cũ không được chấm lại; không nhập buổi dạy từ ngày làm bài. Sheet được giữ nguyên và không đồng bộ tiếp.
+
+## Thống kê và giao diện lịch sử — 30/10/2026
+
+Đối chiếu phần Tổng quan, biểu đồ điểm, danh sách ngày, bộ lọc và tóm tắt danh sách trong [BD](../basic-design/learning-history.md), [DD](../detail-design/learning-history.md). Dữ liệu kiểm thử là dữ liệu tự soạn.
+
+| Kiểm tra | Bằng chứng |
+|---|---|
+| Quy đổi thang 10/100, ngày trống không thành 0, ngày chỉ có câu, trung bình theo ngày, điểm gần nhất so với 5 lần có điểm trước, tỉ lệ đúng chỉ tính câu đã chấm, xếp hạng dạng bài và nhóm ít câu | `tests/learning-history-stats.test.ts` |
+| Ô thống kê, cột không điểm, dòng đọc biểu đồ, nút ngày (tên truy cập, `aria-current`), nút lọc có số câu, 1280px/360px không tràn ngang | `e2e/history.spec.ts` |
+| Danh sách đọc `payload->sessions` qua RLS, chi tiết và liên kết học viên trên Supabase local | `e2e-supabase/learning-history.spec.ts` |
+
+- `npm run check`: PASS, 128/128 test; format, ESLint và TypeScript đạt.
+- `npm run test:e2e`: 35/35 đạt.
+- `npm run build`: PASS.
+- `npm run test:e2e:supabase -- e2e-supabase/learning-history.spec.ts`: PASS trên stack local `reng-history-tests` (CLI 2.95.3, như mục bàn giao ở trên).
+- Kiểm tra trực quan dùng bản sao riêng của repo, không chạy trong thư mục đang phát triển. Dữ liệu tự soạn gồm 34 ngày thang 10, 3 ngày và 1 ngày thang 100, và hồ sơ rỗng. Ở 360/768/1280px không tràn ngang; nút ngày và nút lọc cao ít nhất 40px; dòng đọc khi rê chuột trùng đúng vị trí dòng mặc định.
+- Trên trang thật với Supabase local: bấm nút ngày giữ nguyên vị trí cuộn và đổi phần ngày bên dưới; bấm cột biểu đồ chuyển đến phần tổng hợp ngày và giữ bộ lọc kết quả.
+- Màu dải điểm đã đo bằng bộ kiểm tra bảng màu. Xanh/đỏ chỉ cách ΔE 7,1 khi mô phỏng mù màu; vàng `#d08a1e` tương phản 2,9:1 trên nền trắng. Vì vậy mọi chấm màu đều có con số đi kèm.
+- Giới hạn: không đăng nhập tài khoản thật để xem production; không dùng dữ liệu học viên thật trong kiểm thử.

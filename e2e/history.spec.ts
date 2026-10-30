@@ -60,6 +60,30 @@ for (const width of [1280, 360]) {
       main.innerHTML = markup;
     }, html);
     await expect(page.getByText("Điểm gốc: 50 / 100", { exact: true })).toBeVisible();
+    const tiles = page.locator(".history-stat");
+    await expect(tiles.nth(0).locator("strong")).toHaveText("2");
+    await expect(tiles.nth(1).locator("strong")).toHaveText("50%");
+    await expect(tiles.nth(1)).toContainText("1 / 2 câu đã chấm");
+    await expect(tiles.nth(2).locator("strong")).toHaveText("50 / 100");
+    await expect(tiles.nth(2)).toContainText("Lần đầu có điểm");
+    // A blank source score stays "no score" on the chart and the day list, never a zero.
+    await expect(page.locator(".history-chart-column")).toHaveCount(2);
+    await expect(page.locator(".history-chart-empty")).toHaveCount(1);
+    await expect(page.locator(".history-chart-readout")).toHaveText(
+      "Đang xem 20/10/2026: 50 / 100",
+    );
+    await expect(
+      page.getByRole("link", { name: "20/10/2026, 50 / 100", exact: true }),
+    ).toHaveAttribute("aria-current", "date");
+    await expect(
+      page.getByRole("link", { name: "21/10/2026, chưa có điểm", exact: true }),
+    ).toBeVisible();
+    const filters = page.getByRole("navigation", { name: "Lọc câu theo kết quả" });
+    await expect(filters.getByRole("link")).toHaveText(["Tất cả 2", "Đúng 1", "Sai 1"]);
+    await expect(filters.getByRole("link", { name: "Sai 1" })).toHaveAttribute(
+      "aria-current",
+      "true",
+    );
     await expect(page.getByRole("status")).toHaveText("Hiển thị 1 / 2 câu của ngày đã chọn.");
     await page.locator("summary").click();
     await expect(
