@@ -175,11 +175,14 @@ test("overview accuracy counts only answers graded correct or incorrect", () => 
   assert.equal(empty.latest, null);
 });
 
-test("kind accuracy ranks the weakest kinds and keeps small samples apart", () => {
+test("kind accuracy ranks the weakest kinds and sums the small ones into one row", () => {
   const answers = [
     ...Array.from({ length: 5 }, (_, index) =>
       answer("2026-10-01", index < 4 ? "correct" : "incorrect", "Từ vựng"),
     ),
+    // Same kind typed with other case, spacing and decomposed accents.
+    answer("2026-10-01", "correct", "từ  vựng"),
+    answer("2026-10-01", "incorrect", "Từ vựng".normalize("NFD")),
     ...Array.from({ length: 6 }, (_, index) =>
       answer("2026-10-01", index < 3 ? "correct" : "incorrect", " Ngữ  pháp "),
     ),
@@ -187,12 +190,12 @@ test("kind accuracy ranks the weakest kinds and keeps small samples apart", () =
     answer("2026-10-01", "ungraded", "Kanji"),
     answer("2026-10-01", "correct", ""),
   ];
-  const { ranked, sparse } = historyKindAccuracy(answers);
+  const { ranked, sparse, other } = historyKindAccuracy(answers);
   assert.deepEqual(
-    ranked.map((item) => [item.kind, item.correct, item.graded, item.percent]),
+    ranked.map((item) => [item.kind, item.correct, item.graded]),
     [
-      ["Ngữ pháp", 3, 6, 50],
-      ["Từ vựng", 4, 5, 80],
+      ["Ngữ pháp", 3, 6],
+      ["Từ vựng", 5, 7],
     ],
   );
   assert.deepEqual(
@@ -202,4 +205,6 @@ test("kind accuracy ranks the weakest kinds and keeps small samples apart", () =
       ["Kanji", 0, 1],
     ],
   );
+  assert.deepEqual(other, { kindCount: 2, correct: 1, graded: 2, percent: 50 });
+  assert.equal(historyKindAccuracy(answers.slice(0, 5)).other, null);
 });

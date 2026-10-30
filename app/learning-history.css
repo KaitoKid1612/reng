@@ -25,7 +25,7 @@
   padding: 0;
   list-style: none;
 }
-.history-kinds > li {
+.history-kind-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
@@ -50,8 +50,51 @@
 .history-kind-value strong {
   color: var(--foreground);
 }
-.history-kinds .score-meter {
+.history-kind-row .score-meter {
   grid-area: meter;
+}
+/* Kinds with too few graded answers: one summed row, the list behind a toggle. */
+.history-kinds-other {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.history-kinds-other .history-kind-name {
+  color: var(--muted);
+}
+.history-kinds-more {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.history-kinds-more > summary {
+  width: fit-content;
+  color: var(--primary);
+  cursor: pointer;
+}
+.history-kinds-more > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.history-kinds-sparse {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  columns: 200px 2;
+  column-gap: 24px;
+}
+.history-kinds-sparse > li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  break-inside: avoid;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.history-kinds-sparse > li > span:last-child {
+  flex: none;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 
 .history-day-nav {

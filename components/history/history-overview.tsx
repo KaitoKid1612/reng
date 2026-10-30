@@ -13,6 +13,7 @@ import type { HistoryArchive } from "@/lib/learning-history";
 import type {
   HistoryDayScore,
   HistoryKindAccuracy,
+  HistoryKindTotal,
   HistoryLatestScore,
 } from "@/lib/learning-history-stats";
 
@@ -30,6 +31,15 @@ interface LatestScoreTileProps {
 interface KindAccuracyProps {
   ranked: HistoryKindAccuracy[];
   sparse: HistoryKindAccuracy[];
+  other: HistoryKindTotal | null;
+}
+
+interface KindRowProps {
+  name: string;
+  correct: number;
+  graded: number;
+  percent: number;
+  isMuted?: boolean;
 }
 
 const TREND_ARROWS = { up: "▲", down: "▼", same: "=" };
@@ -83,8 +93,22 @@ function LatestScoreTile({ latest }: LatestScoreTileProps) {
   );
 }
 
-function KindAccuracy({ ranked, sparse }: KindAccuracyProps) {
-  if (!ranked.length && !sparse.length) {
+function KindRow({ name, correct, graded, percent, isMuted }: KindRowProps) {
+  return (
+    <>
+      <span className="history-kind-name">{name}</span>
+      <span className="score-meter" data-tone={isMuted ? "muted" : undefined} aria-hidden="true">
+        <span style={{ width: `${percent}%` }} />
+      </span>
+      <span className="history-kind-value">
+        <strong>{formatPercentValue(percent)}</strong> · {correct}/{graded} câu
+      </span>
+    </>
+  );
+}
+
+function KindAccuracy({ ranked, sparse, other }: KindAccuracyProps) {
+  if (!ranked.length && !other) {
     return <p className="muted">Chưa có câu đã chấm Đúng/Sai để so sánh dạng bài.</p>;
   }
   return (
@@ -92,27 +116,45 @@ function KindAccuracy({ ranked, sparse }: KindAccuracyProps) {
       {ranked.length > 0 && (
         <ol className="history-kinds">
           {ranked.map((item) => (
-            <li key={item.kind}>
-              <span className="history-kind-name">{kindName(item.kind)}</span>
-              <span className="score-meter" aria-hidden="true">
-                <span style={{ width: `${item.percent}%` }} />
-              </span>
-              <span className="history-kind-value">
-                <strong>{formatPercentValue(item.percent)}</strong> · {item.correct}/{item.graded}{" "}
-                câu
-              </span>
+            <li key={item.kind} className="history-kind-row">
+              <KindRow
+                name={kindName(item.kind)}
+                correct={item.correct}
+                graded={item.graded}
+                percent={item.percent}
+              />
             </li>
           ))}
         </ol>
       )}
-      {sparse.length > 0 && (
-        <p className="small muted">
-          Chưa xếp hạng vì dưới {MIN_RANKED_ANSWERS} câu đã chấm:{" "}
-          {sparse
-            .map((item) => `${kindName(item.kind)} (${item.correct}/${item.graded})`)
-            .join(", ")}
-          .
-        </p>
+      {/* The long tail is one muted row; each kind stays one click away. */}
+      {other && (
+        <div className="history-kinds-other">
+          <div className="history-kind-row">
+            <KindRow
+              name={`Các dạng ít câu (${other.kindCount} dạng)`}
+              correct={other.correct}
+              graded={other.graded}
+              percent={other.percent}
+              isMuted
+            />
+          </div>
+          <details className="history-kinds-more">
+            <summary>
+              Xem {other.kindCount} dạng có dưới {MIN_RANKED_ANSWERS} câu đã chấm
+            </summary>
+            <ul className="history-kinds-sparse">
+              {sparse.map((item) => (
+                <li key={item.kind}>
+                  <span>{kindName(item.kind)}</span>
+                  <span>
+                    {item.correct}/{item.graded} câu
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </div>
       )}
     </>
   );
@@ -182,8 +224,11 @@ export function HistoryOverview({
         </section>
         <section className="chart-panel" aria-labelledby="history-kind-title">
           <h3 id="history-kind-title">Tỉ lệ đúng theo dạng bài</h3>
-          <p className="small muted">Dạng thấp nhất ở trên; chỉ tính câu đã chấm Đúng/Sai.</p>
-          <KindAccuracy ranked={kinds.ranked} sparse={kinds.sparse} />
+          <p className="small muted">
+            Dạng thấp nhất ở trên; chỉ tính câu đã chấm Đúng/Sai. Dạng có dưới {MIN_RANKED_ANSWERS}{" "}
+            câu gộp ở dòng cuối.
+          </p>
+          <KindAccuracy ranked={kinds.ranked} sparse={kinds.sparse} other={kinds.other} />
         </section>
       </div>
     </section>

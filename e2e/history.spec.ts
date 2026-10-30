@@ -82,8 +82,15 @@ for (const width of [1280, 360]) {
       "aria-current",
       "true",
     );
+    // Kinds with fewer than five graded answers become one summed row with a list behind it.
+    const otherKinds = page.locator(".history-kinds-other");
+    await expect(otherKinds).toContainText("Các dạng ít câu (1 dạng)");
+    await expect(otherKinds).toContainText("50% · 1/2 câu");
+    await expect(otherKinds.getByRole("listitem")).toBeHidden();
+    await otherKinds.getByText("Xem 1 dạng có dưới 5 câu đã chấm", { exact: true }).click();
+    await expect(otherKinds.getByRole("listitem")).toContainText(["Điền"]);
     await expect(page.getByRole("status")).toHaveText("Hiển thị 1 / 2 câu của ngày đã chọn.");
-    await page.locator("summary").click();
+    await page.locator(".history-answer summary").click();
     await expect(
       page
         .locator(".history-text")

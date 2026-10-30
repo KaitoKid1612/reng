@@ -217,6 +217,10 @@
   border-radius: 4px;
   background: var(--primary);
 }
+/* A summed or less certain figure, such as an "other" row. */
+.score-meter[data-tone="muted"] > span {
+  background: var(--chart-bar);
+}
 
 /* A meter beside its figure, e.g. an assignment's average in a list row. */
 .score-meter-row {

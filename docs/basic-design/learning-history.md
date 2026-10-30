@@ -16,7 +16,7 @@ Mỗi hồ sơ `/history/[id]` mở đầu bằng phần Tổng quan cho toàn b
 
 - Bốn ô: số ngày học và khoảng ngày; tỉ lệ câu đúng, chỉ tính câu đã chấm Đúng/Sai; điểm gần nhất theo thang gốc, có mũi tên tăng/giảm so với trung bình tối đa 5 lần có điểm trước đó; số câu chưa chấm/chưa làm (câu "Cần đối chiếu" tính là chưa chấm).
 - Biểu đồ điểm theo ngày: 30 ngày gần nhất, quy về %, có mốc 80%. Bấm một cột để mở ngày đó. Ngày không có điểm là vòng tròn rỗng, không tính là 0.
-- Tỉ lệ đúng theo dạng bài, dạng thấp nhất ở trên. Dạng có dưới 5 câu đã chấm ghi riêng, không xếp hạng.
+- Tỉ lệ đúng theo dạng bài, dạng thấp nhất ở trên. Dạng có dưới 5 câu đã chấm không xếp hạng: chúng được gộp thành một dòng cuối "Các dạng ít câu (N dạng)" có thanh tỉ lệ chung, và danh sách từng dạng chỉ hiện khi bấm "Xem N dạng…". Tên dạng chỉ khác chữ hoa/thường, khoảng trắng hoặc cách mã hóa dấu được tính là một dạng.
 
 Tiếp theo là danh sách ngày theo tháng. Mỗi ngày là một nút có số ngày, điểm và chấm màu: xanh từ 80%, vàng 60–79%, đỏ dưới 60%, vòng rỗng nếu chưa có điểm; màu luôn đi kèm con số. Chọn ngày giữ nguyên vị trí cuộn, phần tổng hợp ngày và câu trả lời bên dưới đổi theo. Nút lọc theo kết quả có số câu của ngày; mỗi câu có nhãn kết quả và mở ra để đọc đề, câu trả lời, nhận xét. Mặc định chọn ngày gần nhất; màn hình 360px không tràn ngang.
 

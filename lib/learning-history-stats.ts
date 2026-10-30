@@ -45,6 +45,14 @@ export interface HistoryKindAccuracy {
   percent: number;
 }
 
+/** Kinds below the ranking threshold, summed. */
+export interface HistoryKindTotal {
+  kindCount: number;
+  correct: number;
+  graded: number;
+  percent: number;
+}
+
 // 80% is the class target; below 60% a day needs review.
 export const SCORE_TARGET_PERCENT = 80;
 const SCORE_FAIR_PERCENT = 60;
@@ -209,27 +217,57 @@ function compareKindName(first: HistoryKindAccuracy, second: HistoryKindAccuracy
   return first.kind.localeCompare(second.kind, "vi");
 }
 
+interface KindTotal {
+  correct: number;
+  graded: number;
+  spellings: Map<string, number>;
+}
+
 /**
  * Accuracy per source "Dạng bài", counting only answers graded correct or incorrect.
- * Ranked kinds put the weakest first; kinds with too few graded answers are kept apart.
+ * Ranked kinds put the weakest first. Kinds with too few graded answers are kept apart and
+ * summed into one "other" total, so a long tail never crowds out the ranked list.
  */
 export function historyKindAccuracy(answers: readonly HistoryAnswer[]) {
-  const totals = new Map<string, { correct: number; graded: number }>();
+  const totals = new Map<string, KindTotal>();
   for (const answer of answers) {
     if (answer.outcome !== "correct" && answer.outcome !== "incorrect") {
       continue;
     }
-    const kind = answer.kind.trim().replace(/\s+/g, " ");
-    const total = totals.get(kind) ?? { correct: 0, graded: 0 };
+    // Sheets mix letter case, spacing and composed/decomposed accents for the same kind.
+    const spelling = answer.kind.normalize("NFC").trim().replace(/\s+/g, " ");
+    const key = spelling.toLocaleLowerCase("vi");
+    const total = totals.get(key) ?? { correct: 0, graded: 0, spellings: new Map() };
     total.graded += 1;
     total.correct += answer.outcome === "correct" ? 1 : 0;
-    totals.set(kind, total);
+    total.spellings.set(spelling, (total.spellings.get(spelling) ?? 0) + 1);
+    totals.set(key, total);
   }
-  const kinds = [...totals].map(([kind, total]) => ({
-    kind,
-    ...total,
-    percent: (total.correct / total.graded) * 100,
-  }));
+  const kinds = [...totals.values()].map((total) => {
+    // The most frequent spelling names the merged kind.
+    const [mostUsed] = [...total.spellings].sort(
+      (first, second) => second[1] - first[1] || first[0].localeCompare(second[0], "vi"),
+    );
+    return {
+      kind: mostUsed?.[0] ?? "",
+      correct: total.correct,
+      graded: total.graded,
+      percent: (total.correct / total.graded) * 100,
+    };
+  });
+  const sparse = kinds
+    .filter((item) => item.graded < MIN_RANKED_ANSWERS)
+    .sort((first, second) => second.graded - first.graded || compareKindName(first, second));
+  const otherCorrect = sparse.reduce((sum, item) => sum + item.correct, 0);
+  const otherGraded = sparse.reduce((sum, item) => sum + item.graded, 0);
+  const other: HistoryKindTotal | null = sparse.length
+    ? {
+        kindCount: sparse.length,
+        correct: otherCorrect,
+        graded: otherGraded,
+        percent: (otherCorrect / otherGraded) * 100,
+      }
+    : null;
   return {
     ranked: kinds
       .filter((item) => item.graded >= MIN_RANKED_ANSWERS)
@@ -239,8 +277,7 @@ export function historyKindAccuracy(answers: readonly HistoryAnswer[]) {
           second.graded - first.graded ||
           compareKindName(first, second),
       ),
-    sparse: kinds
-      .filter((item) => item.graded < MIN_RANKED_ANSWERS)
-      .sort((first, second) => second.graded - first.graded || compareKindName(first, second)),
+    sparse,
+    other,
   };
 }

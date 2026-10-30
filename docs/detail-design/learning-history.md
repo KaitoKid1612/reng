@@ -32,7 +32,7 @@ Số liệu là hàm thuần trong `lib/learning-history-stats.ts`:
 
 - Điểm quy về % bằng `điểm × 100 / thang`. Điểm của một ngày là trung bình các dòng tổng hợp có điểm trong ngày, giữ thang gốc khi các dòng cùng thang. Ngày không có điểm là `null`, không thành 0; trung bình đếm mỗi ngày một lần.
 - Điểm gần nhất xét theo ngày rồi theo dòng nguồn, so với trung bình tối đa 5 dòng có điểm trước đó; mức chênh hiển thị theo thang của dòng gần nhất.
-- Tỉ lệ đúng chỉ đếm `correct`/`incorrect`. Dạng bài được chuẩn hóa khoảng trắng; chỉ xếp hạng khi có từ 5 câu đã chấm.
+- Tỉ lệ đúng chỉ đếm `correct`/`incorrect`. Dạng bài được gộp theo khóa NFC, bỏ khoảng trắng thừa, không phân biệt hoa/thường; tên hiển thị là cách viết dùng nhiều nhất. Chỉ xếp hạng khi có từ 5 câu đã chấm; các dạng còn lại cộng thành `other` (số dạng, đúng/đã chấm) để hiện một dòng, danh sách chi tiết nằm trong `<details>`.
 - Dải điểm: từ 80% tốt, 60–79% trung bình, dưới 60% thấp.
 
 Component server:

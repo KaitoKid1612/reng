@@ -87,7 +87,7 @@ test("teachers see own and pending learner history; learners gain only their own
   await expect(
     learnerPage.getByRole("button", { name: "Xác nhận và liên kết học viên", exact: true }),
   ).toHaveCount(0);
-  await learnerPage.locator("summary").click();
+  await learnerPage.locator(".history-answer summary").click();
   await expect(
     learnerPage.getByText("Đề bài: Đề tự soạn không dùng dữ liệu thật", { exact: true }),
   ).toBeVisible();
