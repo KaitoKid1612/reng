@@ -86,6 +86,7 @@ Theo [thiết kế luyện kanji](../basic-design/kanji-practice.md): trang `/ka
 
 - Production chưa có SMTP riêng và chưa đặt `EMAIL_PROVIDER`, nên: quên mật khẩu không dùng được (thư không tới học viên; link của mẫu email mặc định trả `code` trong khi `/auth/confirm` chỉ nhận `token_hash`); đăng ký không xác nhận email nên có thể đăng ký bằng email của người khác; ba cron email trả 503 mỗi ngày. Cách xử lý ở [kế hoạch POC](../poc-setup.md#production-thử-29102026).
 - Supabase Free không có bản sao lưu tự khôi phục như gói Pro: chạy `npx supabase db dump` trước khi áp migration hoặc nhập dữ liệu thật.
+- 30/10/2026 17:45: theo yêu cầu của chủ dự án, thêm học viên Nguyên vào lớp "Tiếng Nhật Minna – Lớp 1" của Việt bằng hàm `join_class` (cùng kiểm tra như khi học viên nhập mã lớp; mã lớp không in ra). Kết quả `joined`; lớp có 1 học viên; Nguyên thấy "Luyện tập hằng ngày 30/10" (7 câu, hạn 23:59) và bài 29/10 (nộp muộn được). Nhắc học qua email mặc định tắt. Lớp vẫn tự giao 7 câu/ngày từ bài 11; 60 câu/ngày cần migration `202610300002` (chưa áp dụng, giới hạn hiện 3–20) và thêm câu hỏi vào lớp.
 
 ## Môi trường và giới hạn kiểm chứng
 
