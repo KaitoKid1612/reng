@@ -1,0 +1,1461 @@
+{
+  "id": "minna-1-13",
+  "title": "Bài 13 – Mong muốn và mục đích đi lại",
+  "titleJa": "第13課　週末に 何を したいですか",
+  "summary": "Theo trình tự bài 13 Minna no Nihongo Sơ cấp I: muốn có (Nが ほしいです), muốn làm (〜たいです), phủ định và quá khứ của たい, đi/đến/về để làm gì (〜へ〜に 行きます・来ます・帰ります), 何か・どこか và gọi món, tính tiền riêng.",
+  "order": 13,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1301",
+        "jp": "あそびます",
+        "romaji": "asobimasu",
+        "vi": "chơi",
+        "audio": null,
+        "kanji": "遊びます"
+      },
+      {
+        "id": "v1302",
+        "jp": "およぎます",
+        "romaji": "oyogimasu",
+        "vi": "bơi",
+        "audio": null,
+        "kanji": "泳ぎます"
+      },
+      {
+        "id": "v1303",
+        "jp": "むかえます",
+        "romaji": "mukaemasu",
+        "vi": "đón",
+        "audio": null,
+        "kanji": "迎えます"
+      },
+      {
+        "id": "v1304",
+        "jp": "つかれます",
+        "romaji": "tsukaremasu",
+        "vi": "mệt",
+        "audio": null,
+        "kanji": "疲れます"
+      },
+      {
+        "id": "v1305",
+        "jp": "だします",
+        "romaji": "dashimasu",
+        "vi": "gửi, nộp (thư, báo cáo)",
+        "audio": null,
+        "kanji": "出します"
+      },
+      {
+        "id": "v1306",
+        "jp": "はいります",
+        "romaji": "hairimasu",
+        "vi": "vào (địa điểm に)",
+        "audio": null,
+        "kanji": "入ります"
+      },
+      {
+        "id": "v1307",
+        "jp": "でます",
+        "romaji": "demasu",
+        "vi": "ra khỏi (địa điểm を)",
+        "audio": null,
+        "kanji": "出ます"
+      },
+      {
+        "id": "v1308",
+        "jp": "けっこんします",
+        "romaji": "kekkon shimasu",
+        "vi": "kết hôn",
+        "audio": null,
+        "kanji": "結婚します"
+      },
+      {
+        "id": "v1309",
+        "jp": "かいものします",
+        "romaji": "kaimono shimasu",
+        "vi": "mua sắm",
+        "audio": null,
+        "kanji": "買い物します"
+      },
+      {
+        "id": "v1310",
+        "jp": "しょくじします",
+        "romaji": "shokuji shimasu",
+        "vi": "dùng bữa",
+        "audio": null,
+        "kanji": "食事します"
+      },
+      {
+        "id": "v1311",
+        "jp": "さんぽします",
+        "romaji": "sanpo shimasu",
+        "vi": "đi dạo (địa điểm を)",
+        "audio": null,
+        "kanji": "散歩します"
+      },
+      {
+        "id": "v1312",
+        "jp": "ほしい",
+        "romaji": "hoshii",
+        "vi": "muốn có (đồ vật)",
+        "audio": null,
+        "kanji": "欲しい"
+      },
+      {
+        "id": "v1313",
+        "jp": "ひろい",
+        "romaji": "hiroi",
+        "vi": "rộng",
+        "audio": null,
+        "kanji": "広い"
+      },
+      {
+        "id": "v1314",
+        "jp": "せまい",
+        "romaji": "semai",
+        "vi": "hẹp",
+        "audio": null,
+        "kanji": "狭い"
+      },
+      {
+        "id": "v1315",
+        "jp": "プール",
+        "romaji": "puuru",
+        "vi": "bể bơi",
+        "audio": null,
+        "image": "/icons/vocab/person-swimming.svg"
+      },
+      {
+        "id": "v1316",
+        "jp": "かわ",
+        "romaji": "kawa",
+        "vi": "sông",
+        "audio": null,
+        "kanji": "川"
+      },
+      {
+        "id": "v1317",
+        "jp": "びじゅつかん",
+        "romaji": "bijutsukan",
+        "vi": "bảo tàng mỹ thuật",
+        "audio": null,
+        "kanji": "美術館"
+      },
+      {
+        "id": "v1318",
+        "jp": "こうえん",
+        "romaji": "kouen",
+        "vi": "công viên",
+        "audio": null,
+        "kanji": "公園"
+      },
+      {
+        "id": "v1319",
+        "jp": "しやくしょ",
+        "romaji": "shiyakusho",
+        "vi": "tòa thị chính",
+        "audio": null,
+        "kanji": "市役所"
+      },
+      {
+        "id": "v1320",
+        "jp": "ゆうびんきょく",
+        "romaji": "yuubinkyoku",
+        "vi": "bưu điện",
+        "audio": null,
+        "kanji": "郵便局"
+      },
+      {
+        "id": "v1321",
+        "jp": "しゅうまつ",
+        "romaji": "shuumatsu",
+        "vi": "cuối tuần",
+        "audio": null,
+        "kanji": "週末"
+      },
+      {
+        "id": "v1322",
+        "jp": "なつやすみ",
+        "romaji": "natsuyasumi",
+        "vi": "kỳ nghỉ hè",
+        "audio": null,
+        "kanji": "夏休み"
+      },
+      {
+        "id": "v1323",
+        "jp": "スキー",
+        "romaji": "sukii",
+        "vi": "trượt tuyết",
+        "audio": null
+      },
+      {
+        "id": "v1324",
+        "jp": "つり",
+        "romaji": "tsuri",
+        "vi": "câu cá",
+        "audio": null,
+        "kanji": "釣り"
+      },
+      {
+        "id": "v1325",
+        "jp": "かいもの",
+        "romaji": "kaimono",
+        "vi": "việc mua sắm",
+        "audio": null,
+        "kanji": "買い物"
+      },
+      {
+        "id": "v1326",
+        "jp": "しょくじ",
+        "romaji": "shokuji",
+        "vi": "bữa ăn, việc dùng bữa",
+        "audio": null,
+        "kanji": "食事"
+      },
+      {
+        "id": "v1327",
+        "jp": "さんぽ",
+        "romaji": "sanpo",
+        "vi": "việc đi dạo",
+        "audio": null,
+        "kanji": "散歩"
+      },
+      {
+        "id": "v1328",
+        "jp": "けっこん",
+        "romaji": "kekkon",
+        "vi": "việc kết hôn",
+        "audio": null,
+        "kanji": "結婚"
+      },
+      {
+        "id": "v1329",
+        "jp": "おかね",
+        "romaji": "okane",
+        "vi": "tiền",
+        "audio": null,
+        "kanji": "お金"
+      },
+      {
+        "id": "v1330",
+        "jp": "きって",
+        "romaji": "kitte",
+        "vi": "tem thư",
+        "audio": null,
+        "kanji": "切手",
+        "image": "/icons/vocab/envelope.svg"
+      },
+      {
+        "id": "v1331",
+        "jp": "にもつ",
+        "romaji": "nimotsu",
+        "vi": "hành lý, đồ đạc",
+        "audio": null,
+        "kanji": "荷物",
+        "image": "/icons/vocab/luggage.svg"
+      },
+      {
+        "id": "v1332",
+        "jp": "ぎゅうどん",
+        "romaji": "gyuudon",
+        "vi": "cơm thịt bò",
+        "audio": null,
+        "kanji": "牛丼"
+      },
+      {
+        "id": "v1333",
+        "jp": "ていしょく",
+        "romaji": "teishoku",
+        "vi": "suất ăn theo bộ",
+        "audio": null,
+        "kanji": "定食"
+      },
+      {
+        "id": "v1334",
+        "jp": "のみもの",
+        "romaji": "nomimono",
+        "vi": "đồ uống",
+        "audio": null,
+        "kanji": "飲み物"
+      },
+      {
+        "id": "v1335",
+        "jp": "なにか",
+        "romaji": "nanika",
+        "vi": "thứ gì đó",
+        "audio": null,
+        "kanji": "何か"
+      },
+      {
+        "id": "v1336",
+        "jp": "どこか",
+        "romaji": "dokoka",
+        "vi": "nơi nào đó",
+        "audio": null
+      },
+      {
+        "id": "v1337",
+        "jp": "おなかがすきました",
+        "romaji": "onaka ga sukimashita",
+        "vi": "đã đói bụng",
+        "audio": null
+      },
+      {
+        "id": "v1338",
+        "jp": "のどがかわきました",
+        "romaji": "nodo ga kawakimashita",
+        "vi": "đã khát nước",
+        "audio": null
+      },
+      {
+        "id": "v1339",
+        "jp": "そうしましょう",
+        "romaji": "sou shimashou",
+        "vi": "cùng làm như vậy nhé",
+        "audio": null
+      },
+      {
+        "id": "v1340",
+        "jp": "ごちゅうもんは",
+        "romaji": "gochuumon wa",
+        "vi": "quý khách gọi món gì ạ?",
+        "audio": null,
+        "kanji": "ご注文は"
+      },
+      {
+        "id": "v1341",
+        "jp": "べつべつに",
+        "romaji": "betsubetsu ni",
+        "vi": "riêng từng người, riêng từng phần",
+        "audio": null,
+        "kanji": "別々に"
+      },
+      {
+        "id": "v1342",
+        "jp": "おねがいします",
+        "romaji": "onegai shimasu",
+        "vi": "làm ơn, nhờ anh/chị",
+        "audio": null,
+        "kanji": "お願いします"
+      },
+      {
+        "id": "v1343",
+        "jp": "カメラ",
+        "romaji": "kamera",
+        "vi": "máy ảnh",
+        "audio": null,
+        "image": "/icons/vocab/camera.svg"
+      },
+      {
+        "id": "v1344",
+        "jp": "じてんしゃ",
+        "romaji": "jitensha",
+        "vi": "xe đạp",
+        "audio": null,
+        "kanji": "自転車",
+        "image": "/icons/vocab/bicycle.svg"
+      },
+      {
+        "id": "v1345",
+        "jp": "やすみます",
+        "romaji": "yasumimasu",
+        "vi": "nghỉ ngơi",
+        "audio": null,
+        "kanji": "休みます"
+      },
+      {
+        "id": "v1346",
+        "jp": "あいます",
+        "romaji": "aimasu",
+        "vi": "gặp (người に)",
+        "audio": null,
+        "kanji": "会います"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1301",
+        "pattern": "Nが ほしいです",
+        "vi": "Muốn có một thứ gì đó",
+        "explain": "Dùng が trước đồ vật muốn có. ほしい là tính từ đuôi い: phủ định ほしくないです; quá khứ ほしかったです. Hỏi người đối diện: {何|なに}が ほしいですか。",
+        "viMistake": "Không dùng ほしい trực tiếp sau động từ. Trong bài này dùng để nói mong muốn của mình hoặc hỏi người đối diện; không tự khẳng định mong muốn của người thứ ba.",
+        "examples": [
+          {
+            "jp": "わたしは {新|あたら}しい カメラが ほしいです。",
+            "vi": "Tôi muốn có một chiếc máy ảnh mới.",
+            "audio": null
+          },
+          {
+            "jp": "{今|いま}は {車|くるま}が ほしくないです。",
+            "vi": "Bây giờ tôi không muốn có ô tô.",
+            "audio": null
+          },
+          {
+            "jp": "{誕生日|たんじょうび}に {何|なに}が ほしいですか。",
+            "vi": "Sinh nhật bạn muốn có gì?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1302",
+        "pattern": "V［ますを とる］＋ たいです",
+        "vi": "Muốn làm một việc gì đó",
+        "explain": "Bỏ ます rồi thêm たいです: {泳|およ}ぎます → {泳|およ}ぎたいです; します → したいです; {来|き}ます → {来|き}たいです. Với tân ngữ vốn dùng を, có thể dùng を hoặc が trước động từ たい. Các trợ từ khác như に, で giữ nguyên.",
+        "viMistake": "Không nói たべますたいです. ほしい là muốn có đồ vật, còn たい gắn với động từ. Không dùng 〜たいですか để mời khách ăn/uống; dùng 〜ませんか hoặc どうぞ.",
+        "examples": [
+          {
+            "jp": "{夏休|なつやす}みに {海|うみ}で {泳|およ}ぎたいです。",
+            "vi": "Tôi muốn bơi ở biển vào kỳ nghỉ hè.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは フォーを {食|た}べたいです。",
+            "vi": "Tôi muốn ăn phở.",
+            "audio": null
+          },
+          {
+            "jp": "{週末|しゅうまつ}、{友達|ともだち}に {会|あ}いたいです。",
+            "vi": "Cuối tuần tôi muốn gặp bạn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1303",
+        "pattern": "〜たくないです／〜たかったです",
+        "vi": "Chia phủ định và quá khứ của たい",
+        "explain": "たい chia như tính từ đuôi い: たいです → たくないです (không muốn), たかったです (đã muốn), たくなかったです (đã không muốn). Có thể nói あまり〜たくないです: không muốn… lắm.",
+        "viMistake": "Không dùng たいじゃ ありません hoặc たいでした. Phân biệt {買|か}いたいです (muốn mua) với {買|か}いました (đã mua).",
+        "examples": [
+          {
+            "jp": "きょうは あまり {出|で}かけたくないです。",
+            "vi": "Hôm nay tôi không muốn ra ngoài lắm.",
+            "audio": null
+          },
+          {
+            "jp": "きのうは {早|はや}く {休|やす}みたかったです。",
+            "vi": "Hôm qua tôi đã muốn nghỉ sớm.",
+            "audio": null
+          },
+          {
+            "jp": "{先週|せんしゅう}は {買|か}い{物|もの}したくなかったです。",
+            "vi": "Tuần trước tôi đã không muốn đi mua sắm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1304",
+        "pattern": "場所へ V［ますを とる］／N に 行きます・来ます・帰ります",
+        "vi": "Đi, đến, về để làm gì",
+        "explain": "へ chỉ nơi đến, に chỉ mục đích. Động từ bỏ ます: {本|ほん}を {買|か}います → {本|ほん}を {買|か}いに {行|い}きます. Dùng danh từ chỉ hoạt động như {買|か}い{物|もの}, {食事|しょくじ}, {散歩|さんぽ} trước に.",
+        "viMistake": "Không dùng thể nguyên dạng hay ます trước に: {泳|およ}ぎに đúng, およぐに／およぎますに sai. Phân biệt mục đích に với nơi thực hiện hành động で.",
+        "examples": [
+          {
+            "jp": "{公園|こうえん}へ {写真|しゃしん}を {撮|と}りに {行|い}きます。",
+            "vi": "Tôi đi công viên để chụp ảnh.",
+            "audio": null
+          },
+          {
+            "jp": "スーパーへ {買|か}い{物|もの}に {行|い}きます。",
+            "vi": "Tôi đi siêu thị mua sắm.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんは うちへ {遊|あそ}びに {来|き}ます。",
+            "vi": "Linh đến nhà tôi chơi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1305",
+        "pattern": "何か／どこか ＋ V",
+        "vi": "Thứ gì đó, nơi nào đó",
+        "explain": "{何|なに}か là thứ gì đó; どこか là nơi nào đó, chưa xác định. Trong {何|なに}か {食|た}べたいです, có thể lược を. Với どこかへ {行|い}きたいです có thể lược へ. Đây không phải {何|なに}も／どこへも đi với phủ định.",
+        "viMistake": "{何|なに}が (muốn cái gì?) là câu hỏi cụ thể; {何|なに}か (thứ gì đó) là một cụm không xác định. Không nhầm か ở trong cụm với か cuối câu hỏi.",
+        "examples": [
+          {
+            "jp": "のどが かわきました。{何|なに}か {飲|の}みたいです。",
+            "vi": "Tôi khát rồi. Tôi muốn uống thứ gì đó.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}は どこかへ {行|い}きたいです。",
+            "vi": "Chủ nhật tôi muốn đi đâu đó.",
+            "audio": null
+          },
+          {
+            "jp": "おなかが すきました。{何|なに}か {食|た}べましょう。",
+            "vi": "Tôi đói rồi. Chúng ta ăn gì đó nhé.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1301",
+        "type": "title",
+        "jp": "{第|だい}13{課|か}",
+        "vi": "Mong muốn và mục đích đi lại",
+        "teacherNotes": "Khởi động: hỏi học viên muốn có gì vào sinh nhật và muốn làm gì cuối tuần. Nội dung tự biên soạn theo chủ điểm bài 13; giáo viên duyệt trước khi xuất bản."
+      },
+      {
+        "id": "s1302",
+        "type": "note",
+        "title": "Mục tiêu và kiến thức cần nhớ",
+        "body": "1. Nói muốn có gì: Nが ほしいです\n2. Nói muốn làm gì: V bỏ ます + たいです\n3. Nói đi đâu để làm gì: 場所へ V bỏ ます + に 行きます\n4. Nói “thứ gì đó, nơi nào đó”: {何|なに}か・どこか\nÔn bài 12: cách chia tính từ đuôi い; ôn trợ từ を・に・で・へ."
+      },
+      {
+        "id": "s1303",
+        "type": "vocab",
+        "refs": ["v1301", "v1302", "v1303", "v1304", "v1305", "v1306"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1304",
+        "type": "vocab",
+        "refs": ["v1307", "v1308", "v1309", "v1310", "v1311", "v1312"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1305",
+        "type": "vocab",
+        "refs": ["v1313", "v1314", "v1315", "v1316", "v1317", "v1318"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1306",
+        "type": "vocab",
+        "refs": ["v1319", "v1320", "v1321", "v1322", "v1323", "v1324"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1307",
+        "type": "vocab",
+        "refs": ["v1325", "v1326", "v1327", "v1328", "v1329", "v1330"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1308",
+        "type": "vocab",
+        "refs": ["v1331", "v1332", "v1333", "v1334", "v1335", "v1336"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1309",
+        "type": "vocab",
+        "refs": ["v1337", "v1338", "v1339", "v1340", "v1341", "v1342"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1310",
+        "type": "vocab",
+        "refs": ["v1343", "v1344", "v1345", "v1346"],
+        "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
+      },
+      {
+        "id": "s1311",
+        "type": "grammar",
+        "ref": "g1301"
+      },
+      {
+        "id": "s1312",
+        "type": "example",
+        "ref": "g1301",
+        "reveal": true
+      },
+      {
+        "id": "s1313",
+        "type": "table",
+        "title": "Luyện 1: Bạn muốn có gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["カメラ", "カメラが ほしいです。"],
+          ["{自転車|じてんしゃ}", "{自転車|じてんしゃ}が ほしいです。"],
+          ["{車|くるま}（phủ định）", "{車|くるま}が ほしくないです。"],
+          ["{何|なに}（hỏi）", "{何|なに}が ほしいですか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1314",
+        "type": "quiz",
+        "ref": "q1301"
+      },
+      {
+        "id": "s1315",
+        "type": "quiz",
+        "ref": "q1302"
+      },
+      {
+        "id": "s1316",
+        "type": "table",
+        "title": "Tạo dạng たい: bỏ ます rồi thêm たい",
+        "columns": ["Động từ", "Bỏ ます", "Muốn làm"],
+        "rows": [
+          ["のみます", "のみ", "のみたいです"],
+          ["およぎます", "およぎ", "およぎたいです"],
+          ["たべます", "たべ", "たべたいです"],
+          ["します", "し", "したいです"],
+          ["きます", "き", "きたいです"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1317",
+        "type": "grammar",
+        "ref": "g1302"
+      },
+      {
+        "id": "s1318",
+        "type": "example",
+        "ref": "g1302",
+        "reveal": true
+      },
+      {
+        "id": "s1319",
+        "type": "table",
+        "title": "Luyện 2: Cuối tuần muốn làm gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{海|うみ}で・およぎます", "{海|うみ}で {泳|およ}ぎたいです。"],
+          ["{友達|ともだち}に・あいます", "{友達|ともだち}に {会|あ}いたいです。"],
+          ["フォーを・たべます", "フォーを {食|た}べたいです。"],
+          ["{公園|こうえん}を・さんぽします", "{公園|こうえん}を {散歩|さんぽ}したいです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1320",
+        "type": "quiz",
+        "ref": "q1305"
+      },
+      {
+        "id": "s1321",
+        "type": "quiz",
+        "ref": "q1308"
+      },
+      {
+        "id": "s1322",
+        "type": "grammar",
+        "ref": "g1303"
+      },
+      {
+        "id": "s1323",
+        "type": "example",
+        "ref": "g1303",
+        "reveal": true
+      },
+      {
+        "id": "s1324",
+        "type": "table",
+        "title": "Luyện 3: Chia たい như tính từ đuôi い",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{行|い}きたいです → không muốn", "{行|い}きたくないです。"],
+          ["{休|やす}みたいです → đã muốn", "{休|やす}みたかったです。"],
+          ["{買|か}いたいです → đã không muốn", "{買|か}いたくなかったです。"],
+          ["ほしいです → đã muốn có", "ほしかったです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1325",
+        "type": "quiz",
+        "ref": "q1312"
+      },
+      {
+        "id": "s1326",
+        "type": "grammar",
+        "ref": "g1304"
+      },
+      {
+        "id": "s1327",
+        "type": "example",
+        "ref": "g1304",
+        "reveal": true
+      },
+      {
+        "id": "s1328",
+        "type": "table",
+        "title": "Luyện 4: Đi đâu để làm gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["プール・{泳|およ}ぎます", "プールへ {泳|およ}ぎに {行|い}きます。"],
+          [
+            "{駅|えき}・{友達|ともだち}を {迎|むか}えます",
+            "{駅|えき}へ {友達|ともだち}を {迎|むか}えに {行|い}きます。"
+          ],
+          ["スーパー・{買|か}い{物|もの}", "スーパーへ {買|か}い{物|もの}に {行|い}きます。"],
+          ["うち・{遊|あそ}びます・{来|き}ます", "うちへ {遊|あそ}びに {来|き}ます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1329",
+        "type": "quiz",
+        "ref": "q1315"
+      },
+      {
+        "id": "s1330",
+        "type": "quiz",
+        "ref": "q1319"
+      },
+      {
+        "id": "s1331",
+        "type": "grammar",
+        "ref": "g1305"
+      },
+      {
+        "id": "s1332",
+        "type": "example",
+        "ref": "g1305",
+        "reveal": true
+      },
+      {
+        "id": "s1333",
+        "type": "quiz",
+        "ref": "q1322"
+      },
+      {
+        "id": "s1334",
+        "type": "quiz",
+        "ref": "q1323"
+      },
+      {
+        "id": "s1335",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Món quà sinh nhật",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "ナムさん、{誕生日|たんじょうび}に {何|なに}が ほしいですか。",
+            "vi": "Nam, sinh nhật bạn muốn có gì?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{新|あたら}しい カメラが ほしいです。",
+            "vi": "Mình muốn có máy ảnh mới."
+          },
+          {
+            "speaker": "アン",
+            "jp": "カメラで {何|なに}を {撮|と}りたいですか。",
+            "vi": "Bạn muốn chụp gì bằng máy ảnh?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ダラットの {花|はな}を {撮|と}りたいです。",
+            "vi": "Mình muốn chụp hoa ở Đà Lạt."
+          }
+        ],
+        "reveal": false,
+        "teacherNotes": "Cho học viên nghe mẫu, đọc theo rồi đổi vai. Thay thông tin bằng mong muốn thật; mỗi lượt chỉ hiện khi học viên đã thử nói."
+      },
+      {
+        "id": "s1336",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Hẹn cuối tuần",
+        "lines": [
+          {
+            "speaker": "リン",
+            "jp": "{日曜日|にちようび}、どこかへ {行|い}きたいですね。",
+            "vi": "Chủ nhật mình muốn đi đâu đó nhỉ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{公園|こうえん}へ {写真|しゃしん}を {撮|と}りに {行|い}きませんか。",
+            "vi": "Cùng đi công viên chụp ảnh nhé?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "いいですね。そうしましょう。",
+            "vi": "Hay đấy. Cùng làm vậy nhé."
+          },
+          {
+            "speaker": "アン",
+            "jp": "じゃ、9{時|じ}に {駅|えき}で {会|あ}いましょう。",
+            "vi": "Vậy gặp nhau ở ga lúc 9 giờ nhé."
+          }
+        ],
+        "reveal": false,
+        "teacherNotes": "Cho học viên nghe mẫu, đọc theo rồi đổi vai. Thay thông tin bằng mong muốn thật; mỗi lượt chỉ hiện khi học viên đã thử nói."
+      },
+      {
+        "id": "s1337",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Đói và khát",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "おなかが すきました。{何|なに}か {食|た}べたいです。",
+            "vi": "Mình đói rồi. Muốn ăn thứ gì đó."
+          },
+          {
+            "speaker": "リン",
+            "jp": "わたしも。フォーを {食|た}べに {行|い}きませんか。",
+            "vi": "Mình cũng vậy. Cùng đi ăn phở nhé?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいですね。のども かわきました。",
+            "vi": "Được đấy. Mình cũng khát rồi."
+          },
+          {
+            "speaker": "リン",
+            "jp": "じゃ、あの {店|みせ}で {何|なに}か {飲|の}みましょう。",
+            "vi": "Vậy cùng uống gì đó ở quán kia nhé."
+          }
+        ],
+        "reveal": false,
+        "teacherNotes": "Cho học viên nghe mẫu, đọc theo rồi đổi vai. Thay thông tin bằng mong muốn thật; mỗi lượt chỉ hiện khi học viên đã thử nói."
+      },
+      {
+        "id": "s1338",
+        "type": "dialogue",
+        "title": "Hội thoại 4: Gọi món và tính tiền",
+        "lines": [
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "ご{注文|ちゅうもん}は？",
+            "vi": "Quý khách gọi món gì ạ?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "フォーを 2つ お{願|ねが}いします。",
+            "vi": "Cho chúng tôi hai bát phở."
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "お{飲|の}み{物|もの}は？",
+            "vi": "Quý khách dùng đồ uống gì ạ?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "お{茶|ちゃ}を 2つ お{願|ねが}いします。",
+            "vi": "Cho chúng tôi hai cốc trà."
+          },
+          {
+            "speaker": "アン",
+            "jp": "お{会計|かいけい}は {別々|べつべつ}に お{願|ねが}いします。",
+            "vi": "Làm ơn tính tiền riêng từng người."
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "はい。",
+            "vi": "Vâng ạ."
+          }
+        ],
+        "reveal": false,
+        "teacherNotes": "Cho học viên nghe mẫu, đọc theo rồi đổi vai. Thay thông tin bằng mong muốn thật; mỗi lượt chỉ hiện khi học viên đã thử nói."
+      },
+      {
+        "id": "s1339",
+        "type": "note",
+        "title": "Thực hành theo cặp",
+        "body": "A hỏi: {今|いま}、{何|なに}が ほしいですか。\nB trả lời, rồi hỏi: {週末|しゅうまつ}、{何|なに}を したいですか。\nCùng chọn một nơi và hoạt động, rủ nhau bằng 〜ませんか。\nKết thúc: そうしましょう。\nĐổi vai. Mỗi người nói ít nhất một câu với ほしい, たい và mục đích に.",
+        "teacherNotes": "Cho 3 phút chuẩn bị, 2 phút nói; không ép đáp án cá nhân theo câu mẫu. Sửa trợ từ và dạng bỏ ます sau khi học viên nói xong."
+      },
+      {
+        "id": "s1340",
+        "type": "note",
+        "title": "Nhớ ba điểm dễ nhầm",
+        "body": "Muốn có: カメラが ほしいです。\nMuốn mua: カメラを {買|か}いたいです。\nĐi mua: カメラを {買|か}いに {行|い}きます。\nたい chia như tính từ い: たくない・たかった・たくなかった。\nTân ngữ của たい có thể dùng を／が; trợ từ に・で vẫn giữ nguyên."
+      },
+      {
+        "id": "s1341",
+        "type": "note",
+        "title": "Bài tập về nhà",
+        "body": "1. Hoàn thành câu luyện giáo viên giao và luyện đọc kanji của bài.\n2. Viết 3 thứ muốn có và 3 việc muốn làm.\n3. Viết 2 câu đi đâu để làm gì bằng 〜へ〜に {行|い}きます。\n4. Chuẩn bị đoạn nói 30 giây về kế hoạch cuối tuần; đọc lại hội thoại với một bạn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1301",
+        "type": "choice",
+        "prompt": "Muốn có máy ảnh: あたらしい カメラ（　）ほしいです。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Đồ vật muốn có dùng Nが ほしいです.",
+        "options": ["が", "を", "で", "へ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1302",
+        "type": "choice",
+        "prompt": "Tôi không muốn có ô tô: くるまが（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "ほしい chia như tính từ い: ほしくないです.",
+        "options": ["ほしいでした", "ほしくないです", "ほしいません", "ほしいじゃ ありません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1303",
+        "type": "choice",
+        "prompt": "Sinh nhật muốn có gì? たんじょうびに（　）が ほしいですか。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Hỏi đồ vật muốn có bằng なにが.",
+        "options": ["どこ", "いつ", "なに", "だれに"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1304",
+        "type": "choice",
+        "prompt": "Chọn câu diễn đạt “muốn ăn”.",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Bỏ ます ở たべます rồi thêm たいです.",
+        "options": ["たべますたいです", "たべるほしいです", "たべたいでした", "たべたいです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1305",
+        "type": "choice",
+        "prompt": "およぎます → muốn bơi:（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "およぎます bỏ ます thành およぎ, thêm たいです.",
+        "options": ["およぎたいです", "およぐたいです", "およぎますたいです", "およいたいです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1306",
+        "type": "choice",
+        "prompt": "します → muốn làm:（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "します → し → したいです.",
+        "options": ["しますたいです", "したいです", "するたいです", "しほしいです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1307",
+        "type": "choice",
+        "prompt": "きます → muốn đến:（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "きます bỏ ます, thêm たいです.",
+        "options": ["くるたいです", "きますたいです", "きたいです", "こたいです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1308",
+        "type": "choice",
+        "prompt": "Muốn gặp bạn: ともだち（　）あいたいです。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "あいます dùng người に; たい không đổi trợ từ này.",
+        "options": ["を", "で", "へ", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1309",
+        "type": "choice",
+        "prompt": "Muốn bơi ở biển: うみ（　）およぎたいです。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Nơi thực hiện hoạt động dùng で.",
+        "options": ["で", "へ", "を", "が"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1310",
+        "type": "choice",
+        "prompt": "Chọn câu “Tôi muốn uống trà”.",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "のみます → のみたいです. おちゃが のみたいです cũng đúng.",
+        "options": [
+          "おちゃを のみほしいです",
+          "おちゃを のみたいです",
+          "おちゃを のみますたいです",
+          "おちゃを のむたいです"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1311",
+        "type": "choice",
+        "prompt": "Không muốn nghỉ:（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Phủ định hiện tại của たい: たくないです. Lựa chọn cuối là quá khứ.",
+        "options": [
+          "やすみたいじゃ ありません",
+          "やすみたいません",
+          "やすみたくないです",
+          "やすみたくありませんでした"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1312",
+        "type": "choice",
+        "prompt": "Hôm qua đã muốn về sớm: はやく かえり（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "たい chia quá khứ thành たかったです; かえりました chỉ việc đã về.",
+        "options": ["たいでした", "たくないです", "ました", "たかったです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1313",
+        "type": "choice",
+        "prompt": "Tuần trước đã không muốn đi: いき（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Quá khứ phủ định của たい: たくなかったです.",
+        "options": ["たくなかったです", "たいじゃ ありませんでした", "たいでした", "たくないです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1314",
+        "type": "choice",
+        "prompt": "Muốn có trong quá khứ: こどもの とき、じてんしゃが（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "ほしい → ほしかったです.",
+        "options": ["ほしいでした", "ほしかったです", "ほしくないです", "ほしいませんでした"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1315",
+        "type": "choice",
+        "prompt": "Đi công viên để chơi: こうえんへ（　）に いきます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Mục đích に dùng động từ bỏ ます: あそび.",
+        "options": ["あそびます", "あそぶ", "あそび", "あそんで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1316",
+        "type": "choice",
+        "prompt": "Đi bể bơi để bơi: プールへ（　）に いきます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "およぎます bỏ ます → およぎに いきます.",
+        "options": ["およぐ", "およぎます", "およいで", "およぎ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1317",
+        "type": "choice",
+        "prompt": "Đi mua sách: ほんを かい（　）いきます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "に đứng sau thân ます để chỉ mục đích.",
+        "options": ["に", "で", "を", "が"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1318",
+        "type": "choice",
+        "prompt": "Đi đến thư viện: としょかん（　）ほんを よみに いきます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "へ đánh dấu nơi đến; よみに chỉ mục đích.",
+        "options": ["で", "へ", "を", "が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1319",
+        "type": "choice",
+        "prompt": "Đi siêu thị mua sắm: スーパーへ かいもの（　）いきます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Danh từ hoạt động かいもの + に いきます.",
+        "options": ["を", "で", "に", "が"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1320",
+        "type": "choice",
+        "prompt": "Bạn đến nhà chơi: ともだちは うちへ（　）きます。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Mẫu mục đích cũng dùng với きます.",
+        "options": ["あそびを", "あそぶに", "あそびますに", "あそびに"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1321",
+        "type": "choice",
+        "prompt": "Về nhà để ăn trưa: うちへ ひるごはんを（　）かえります。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "たべます → たべに; mục đích dùng được với かえります.",
+        "options": ["たべに", "たべますに", "たべるに", "たべを"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1322",
+        "type": "choice",
+        "prompt": "Tôi khát, muốn uống thứ gì đó:（　）のみたいです。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "なにか diễn đạt thứ gì đó chưa xác định.",
+        "options": ["どこか", "なにか", "いつか", "だれか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1323",
+        "type": "choice",
+        "prompt": "Cuối tuần muốn đi đâu đó:（　）へ いきたいです。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "どこか chỉ nơi nào đó.",
+        "options": ["なにか", "だれか", "どこか", "いくか"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1324",
+        "type": "choice",
+        "prompt": "Hỏi mong muốn cụ thể: “Bạn muốn ăn gì?”",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "なにを hỏi món muốn ăn; なにが たべたいですか cũng đúng.",
+        "options": [
+          "どこを たべたいですか。",
+          "いつが たべたいですか。",
+          "だれへ たべたいですか。",
+          "なにを たべたいですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1325",
+        "type": "choice",
+        "prompt": "Khách nhờ tính tiền riêng:（　）おねがいします。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "べつべつに おねがいします: làm ơn tính riêng từng người.",
+        "options": ["べつべつに", "べつべつを", "べつべつが", "べつべつへ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1326",
+        "type": "choice",
+        "prompt": "Mời khách uống trà: chọn câu thích hợp.",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "おちゃは いかがですか là lời mời lịch sự; たい diễn đạt mong muốn của người nói.",
+        "options": [
+          "おちゃが ほしいです。",
+          "おちゃは いかがですか。",
+          "おちゃを のみたいです。",
+          "おちゃを のみました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1327",
+        "type": "choice",
+        "prompt": "Phân biệt muốn có và muốn làm: “Tôi muốn mua máy ảnh”.",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Mong muốn mua là động từ かいます → かいたいです.",
+        "options": [
+          "カメラを かいほしいです。",
+          "カメラが かいますたいです。",
+          "カメラを かいたいです。",
+          "カメラを かいたいでした。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1328",
+        "type": "choice",
+        "prompt": "Muốn đi bảo tàng: びじゅつかんへ（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "いきます → いきたいです.",
+        "options": ["いきほしいです", "いくたいです", "いきますたいです", "いきたいです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1329",
+        "type": "choice",
+        "prompt": "Nghĩa của おなかが すきました là gì?",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "おなかが すきました dùng để nói đã đói bụng.",
+        "options": ["Tôi đói rồi.", "Tôi khát rồi.", "Tôi muốn ngủ.", "Tôi đã mua đồ."],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1330",
+        "type": "choice",
+        "prompt": "Nghĩa của そうしましょう là gì?",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "そうしましょう thể hiện đồng ý với đề xuất.",
+        "options": [
+          "Tôi không muốn làm.",
+          "Cùng làm như vậy nhé.",
+          "Xin tính tiền riêng.",
+          "Quý khách gọi gì?"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1331",
+        "type": "fill",
+        "prompt": "Điền dạng muốn làm: あそびます →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Bỏ ます, thêm たいです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あそびたいです"]
+      },
+      {
+        "id": "q1332",
+        "type": "fill",
+        "prompt": "Điền dạng muốn làm: およぎます →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Giữ およぎ rồi thêm たいです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["およぎたいです"]
+      },
+      {
+        "id": "q1333",
+        "type": "fill",
+        "prompt": "Điền dạng muốn làm: むかえます →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "むかえます → むかえたいです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["むかえたいです"]
+      },
+      {
+        "id": "q1334",
+        "type": "fill",
+        "prompt": "Điền dạng muốn làm: しょくじします →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "します → したいです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しょくじしたいです"]
+      },
+      {
+        "id": "q1335",
+        "type": "fill",
+        "prompt": "Điền dạng muốn làm: さんぽします →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "さんぽします → さんぽしたいです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さんぽしたいです"]
+      },
+      {
+        "id": "q1336",
+        "type": "fill",
+        "prompt": "Chia phủ định với たくないです: いきたいです →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Đổi たい thành たくないです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いきたくないです"]
+      },
+      {
+        "id": "q1337",
+        "type": "fill",
+        "prompt": "Chia quá khứ: のみたいです →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Đổi たい thành たかったです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のみたかったです"]
+      },
+      {
+        "id": "q1338",
+        "type": "fill",
+        "prompt": "Chia quá khứ phủ định với たくなかったです: かいたいです →（　）。",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Đổi たい thành たくなかったです.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かいたくなかったです"]
+      },
+      {
+        "id": "q1339",
+        "type": "fill",
+        "prompt": "Điền phần trước に: えきへ ともだちを（　）に いきます。（むかえます）",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Đón bạn: むかえます → むかえに.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["むかえ"]
+      },
+      {
+        "id": "q1340",
+        "type": "fill",
+        "prompt": "Điền phần trước に: ゆうびんきょくへ てがみを（　）に いきます。（だします）",
+        "points": 1,
+        "tags": ["minna-13"],
+        "explain": "Gửi thư: だします → だしに.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["だし"]
+      },
+      {
+        "id": "q1341",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 遊びます.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1301"],
+        "explain": "遊びます đọc là あそびます: chơi.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あそびます"]
+      },
+      {
+        "id": "q1342",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 泳ぎます.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1302"],
+        "explain": "泳ぎます đọc là およぎます: bơi.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["およぎます"]
+      },
+      {
+        "id": "q1343",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 迎えます.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1303"],
+        "explain": "迎えます đọc là むかえます: đón.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["むかえます"]
+      },
+      {
+        "id": "q1344",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 入ります.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1306"],
+        "explain": "入ります đọc là はいります: vào (địa điểm に).",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はいります"]
+      },
+      {
+        "id": "q1345",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 出ます.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1307"],
+        "explain": "出ます đọc là でます: ra khỏi (địa điểm を).",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["でます"]
+      },
+      {
+        "id": "q1346",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 広い.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1313"],
+        "explain": "広い đọc là ひろい: rộng.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ひろい"]
+      },
+      {
+        "id": "q1347",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 狭い.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1314"],
+        "explain": "狭い đọc là せまい: hẹp.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["せまい"]
+      },
+      {
+        "id": "q1348",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 川.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1316"],
+        "explain": "川 đọc là かわ: sông.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かわ"]
+      },
+      {
+        "id": "q1349",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 週末.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1321"],
+        "explain": "週末 đọc là しゅうまつ: cuối tuần.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しゅうまつ"]
+      },
+      {
+        "id": "q1350",
+        "type": "fill",
+        "prompt": "Viết cách đọc hiragana của 切手.",
+        "points": 1,
+        "tags": ["minna-13", "kanji", "kanji:v1330"],
+        "explain": "切手 đọc là きって: tem thư.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きって"]
+      }
+    ]
+  }
+}

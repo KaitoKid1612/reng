@@ -150,6 +150,7 @@ test("the Minna starters are registered in lesson order", () => {
       ["minna-1-02", "minna-1", 2],
       ["minna-1-11", "minna-1", 11],
       ["minna-1-12", "minna-1", 12],
+      ["minna-1-13", "minna-1", 13],
     ],
   );
   assert.deepEqual(findStarterLesson("minna-1-11")?.draft, lessonDraftSchema.parse(rawStarter));

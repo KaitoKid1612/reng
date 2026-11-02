@@ -128,3 +128,11 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 | CT-09 | SERVICE/OPS | Giáo viên độc lập tạo lớp, soạn một bài dễ, dạy qua Meet, giao/nộp/chấm/theo dõi/nhắc trọn luồng; ghi thời gian, chi phí và phản hồi |
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
+
+## Bài mẫu Minna 13 — 02/11/2026
+
+Thêm `content/starters/minna-1-13.json` và đăng ký trong `STARTER_LESSONS`: 46 từ, 5 mục ngữ pháp, 41 slide (5 bảng, 4 hội thoại), 50 câu luyện (30 choice, 20 fill hiragana, gồm 10 câu đọc kanji). Kiểm tra tham chiếu xác nhận mọi từ vựng và mục ngữ pháp đều có trên slide.
+
+- PASS local: `npm run check` (Prettier, ESLint, TypeScript, 151 test). Test chung của bài mẫu bao gồm schema, chuyển nháp sang nội dung xuất bản, đáp án trắc nghiệm phân bố nhiều vị trí, đáp án điền hiragana và ẩn ghi chú/đáp án khỏi dữ liệu học viên.
+- PASS local: `npm run test:e2e` (35 ca hồi quy, gồm reader/slide/presenter/PDF và hướng dẫn ở 360px). Bộ này dùng catalog công khai local; chưa xác minh thao tác tạo/xuất bản/giao bài 13 với tài khoản trên cloud.
+- Chưa triển khai hoặc thay dữ liệu bài/lớp trên cloud. Giáo viên duyệt chuyên môn và xuất bản bản nháp trước khi giao lớp.
