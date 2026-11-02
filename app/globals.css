@@ -164,15 +164,21 @@ h3 {
   font-weight: 400;
   letter-spacing: 0;
 }
+/* With ten or more links the menu wraps whole links onto a second row instead of breaking
+   each label over two tight lines. */
 .site-header nav {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 22px;
+  min-width: 0;
 }
 .site-header nav a {
   text-decoration: none;
   color: var(--muted);
   padding: 8px 0;
   font-size: 15px;
+  white-space: nowrap;
 }
 .site-header nav a[aria-current="page"] {
   color: var(--primary);
@@ -244,6 +250,15 @@ h3 {
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 32px;
+}
+.page-heading > div {
+  min-width: 0;
+}
+/* Titles and subtitles can carry long codes such as a lesson ID; they break rather than widen
+   a 360px page. */
+.page-heading h1,
+.page-heading p {
+  overflow-wrap: anywhere;
 }
 .page-heading p {
   color: var(--muted);
@@ -783,10 +798,11 @@ progress::-webkit-progress-value {
     height: 32px;
   }
   .site-header nav {
-    gap: 14px;
+    gap: 0 18px;
   }
   .site-header nav a {
-    font-size: 13px;
+    padding: 6px 0;
+    font-size: 14px;
   }
   .page-container {
     padding: 28px 16px 48px;
@@ -1153,8 +1169,7 @@ body:has(.slide-shell) .site-footer {
   }
   .site-header nav {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    justify-content: flex-start;
   }
   .lesson-list {
     grid-template-columns: minmax(0, 1fr);
@@ -1677,8 +1692,8 @@ rt {
 }
 .result-row {
   border-left: 3px solid var(--border);
-  padding: 12px 16px;
-  margin-bottom: 16px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
   background: var(--surface);
 }
 .result-row[data-correct="true"] {
@@ -1688,13 +1703,64 @@ rt {
   border-left-color: var(--wrong);
 }
 .result-row p {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.result-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.result-row-prompt {
+  font-size: 17px;
+}
+/* Pills that filter a list, such as answers by outcome; the current one is filled. */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.filter-pills a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.filter-pills a:hover {
+  border-color: var(--primary);
+}
+.filter-pill-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+.filter-pills a[aria-current="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
+}
+.filter-pills a[aria-current="true"] .filter-pill-count {
+  color: inherit;
 }
 /* Class report: frequently missed questions, one collapsible group per assignment. */
 .hard-question-group {
   padding: 0;
 }
-.hard-question-group > summary {
+/* A details card whose summary is a title line with a count on the right. */
+.collapse-card > summary {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1704,22 +1770,37 @@ rt {
   cursor: pointer;
   list-style: none;
 }
-.hard-question-group > summary::-webkit-details-marker {
+.collapse-card > summary::-webkit-details-marker {
   display: none;
 }
 /* A flex summary loses the built-in disclosure triangle, so the title carries its own. */
-.hard-question-group > summary > span:first-child::before {
+.collapse-card > summary > span:first-child::before {
   content: "▸ ";
   color: var(--muted);
 }
-.hard-question-group[open] > summary > span:first-child::before {
+.collapse-card[open] > summary > span:first-child::before {
   content: "▾ ";
 }
-.hard-question-group > summary > .item-meta {
+.collapse-card > summary > .item-meta {
   flex: none;
   white-space: nowrap;
 }
-.hard-question-group > summary:focus-visible,
+.student-assignment {
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.student-assignment-body {
+  padding: 0 16px 8px;
+}
+.student-assignment-body > .item-meta {
+  margin-bottom: 12px;
+}
+.student-assignment .result-row {
+  background: var(--background);
+}
+.collapse-card > summary:focus-visible,
 .older-assignments > summary:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
