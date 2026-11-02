@@ -34,15 +34,13 @@ const classRowSchema = z.object({
   language_tag: z.enum(["ja-JP", "zh-Hans", "zh-Hant"]),
   revision: z.number().int(),
   daily_practice_size: z.number().int().nullable(),
-  daily_practice_lesson_id: z.string().nullable(),
-  self_study: z.boolean(),
   created_at: timestamp,
 });
 
 export type ClassRow = z.infer<typeof classRowSchema>;
 
 const CLASS_COLUMNS =
-  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, daily_practice_size, daily_practice_lesson_id, self_study, created_at";
+  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, daily_practice_size, created_at";
 
 export async function listTeacherClasses(teacherId: string) {
   const service = createServiceClient();
@@ -60,29 +58,18 @@ export async function listTeacherClasses(teacherId: string) {
   const members = await selectRows(
     service
       .from("enrollments")
-      .select("class_id, user_id")
+      .select("class_id")
       .in(
         "class_id",
         classes.map((item) => item.id),
       )
       .is("left_at", null),
-    z.object({ class_id: z.uuid(), user_id: z.uuid() }),
+    z.object({ class_id: z.uuid() }),
   );
   return classes.map((item) => ({
     ...item,
-    memberCount: members.filter(
-      (member) => member.class_id === item.id && countsAsLearner(item, member.user_id),
-    ).length,
+    memberCount: members.filter((member) => member.class_id === item.id).length,
   }));
-}
-
-// The owner of a teaching class is never one of its learners, even if they joined it before
-// joining was refused; in a self-study class the owner is the only learner.
-export function countsAsLearner(
-  classRow: Pick<ClassRow, "teacher_id" | "self_study">,
-  userId: string,
-) {
-  return classRow.self_study || userId !== classRow.teacher_id;
 }
 
 export async function getTeacherClass(teacherId: string, classId: string) {
@@ -117,12 +104,7 @@ async function insertWithFreshCode<T>(write: (code: string) => Promise<T>) {
   throw new ServiceError("join_code_exhausted");
 }
 
-// A self-study class holds one seat and takes no codes; the database enrols the owner in it.
-export async function createClass(
-  teacherId: string,
-  settings: ClassSettings,
-  isSelfStudy: boolean,
-) {
+export async function createClass(teacherId: string, settings: ClassSettings) {
   return insertWithFreshCode(async (code) => {
     const row = await selectOptional(
       createServiceClient()
@@ -132,9 +114,7 @@ export async function createClass(
           name: settings.name,
           pass_score: settings.passScore,
           join_code: code,
-          join_enabled: !isSelfStudy,
-          self_study: isSelfStudy,
-          capacity: isSelfStudy ? 1 : settings.capacity,
+          capacity: settings.capacity,
           meeting_url: settings.meetingUrl || null,
           language_tag: settings.languageTag,
           subject: subjectForLanguage(settings.languageTag),
@@ -358,7 +338,6 @@ const joinResultSchema = z
         "rate_limited",
         "not_found",
         "class_full",
-        "own_class",
       ]),
       class_id: z.uuid().nullable(),
     }),
@@ -374,7 +353,6 @@ export interface StudentClassSummary {
   id: string;
   name: string;
   teacherName: string;
-  isSelfStudy: boolean;
   joinedAt: string;
 }
 
@@ -420,7 +398,6 @@ export async function listStudentClasses(userId: string): Promise<StudentClassSu
         id: row.id,
         name: row.name,
         teacherName: teachers.find((teacher) => teacher.id === row.teacher_id)?.full_name ?? "",
-        isSelfStudy: row.self_study,
         joinedAt: enrollment.joined_at,
       },
     ];

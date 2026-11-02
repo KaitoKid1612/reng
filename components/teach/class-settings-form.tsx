@@ -16,7 +16,6 @@ interface ClassSettingsFormProps {
     meeting_url: string | null;
     language_tag: string;
     revision: number;
-    self_study: boolean;
   };
 }
 
@@ -71,25 +70,18 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             <option value="zh-Hant">Tiếng Trung phồn thể</option>
           </select>
         </div>
-        {classRow?.self_study ? (
-          <input type="hidden" name="capacity" value="1" />
-        ) : (
-          <div className="field">
-            <label htmlFor="class-capacity">Số học viên tối đa</label>
-            <input
-              id="class-capacity"
-              name="capacity"
-              type="number"
-              min={1}
-              max={1000}
-              defaultValue={classRow?.capacity ?? ""}
-            />
-            <p className="small muted">
-              Để trống nếu chưa giới hạn số chỗ.
-              {classRow ? "" : " Lớp tự học luôn có một chỗ cho chính bạn."}
-            </p>
-          </div>
-        )}
+        <div className="field">
+          <label htmlFor="class-capacity">Số học viên tối đa</label>
+          <input
+            id="class-capacity"
+            name="capacity"
+            type="number"
+            min={1}
+            max={1000}
+            defaultValue={classRow?.capacity ?? ""}
+          />
+          <p className="small muted">Để trống nếu chưa giới hạn số chỗ.</p>
+        </div>
       </div>
       <div className="field">
         <label htmlFor="class-meeting">Link Google Meet</label>
@@ -104,19 +96,6 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
           Chỉ học viên trong lớp thấy link. Giữ riêng cửa sổ ghi chú khi chia sẻ tab slide.
         </p>
       </div>
-      {!classRow && (
-        <div className="field">
-          <label className="choice-label">
-            <input type="checkbox" name="selfStudy" />
-            Lớp tự học của tôi: chỉ mình tôi là học viên
-          </label>
-          <p className="small muted">
-            Dùng khi bạn vừa dạy vừa tự ôn: lớp không có mã mời, bài giao và bài luyện hằng ngày đến
-            chính bạn ở mục Lớp của tôi, báo cáo là kết quả của bạn. Đừng tự vào lớp bạn đang dạy,
-            vì Reng không tính chủ lớp là học viên.
-          </p>
-        </div>
-      )}
       {classRow && (
         <label className="choice-label">
           <input type="checkbox" name="active" defaultChecked={classRow.active} />

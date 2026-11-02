@@ -6,7 +6,6 @@ import {
   DAILY_PRACTICE_HISTORY_DAYS,
   daysBefore,
   endOfVietnamDay,
-  orderDailySourceLessons,
   selectBalancedDailyQuestions,
   toVietnamDate,
 } from "@/lib/daily-practice";
@@ -20,8 +19,6 @@ import {
   ServiceError,
 } from "@/lib/server/supabase";
 
-import type { AssignableQuestion } from "@/lib/assignment";
-
 // How far back the morning job looks for an open lesson that has choice or fill questions.
 const MAX_SOURCE_LESSONS = 20;
 
@@ -29,79 +26,18 @@ export type DailyPracticeOutcome =
   | { status: "created" | "exists"; assignmentId: string; questionCount: number }
   | { status: "disabled" | "no_lesson" | "no_questions" };
 
-export type DailyPracticeSource =
-  | { status: "found"; lessonId: string; questions: AssignableQuestion[] }
-  | { status: "no_lesson" | "no_questions" };
-
 const classSchema = z.object({
   id: z.uuid(),
   active: z.boolean(),
   daily_practice_size: z.number().int().nullable(),
-  daily_practice_lesson_id: z.string().nullable(),
 });
 
-const lessonIdRowSchema = z.object({ lesson_id: z.string() });
-
-export async function setDailyPractice(
-  teacherId: string,
-  classId: string,
-  size: number | null,
-  lessonId: string | null,
-) {
+export async function setDailyPractice(teacherId: string, classId: string, size: number | null) {
   await callRpc(
     "set_daily_practice",
-    { p_teacher_id: teacherId, p_class_id: classId, p_size: size, p_lesson_id: lessonId },
+    { p_teacher_id: teacherId, p_class_id: classId, p_size: size },
     z.unknown(),
   );
-}
-
-// The pinned lesson is used while it is open and has choice or fill questions; otherwise the
-// newest open lesson with such questions keeps the daily habit going, because the newest lesson
-// may still be slides only. Listening items need recorded audio and a quiet room, so daily sets
-// stay choice and fill.
-export async function findDailyPracticeSource(
-  classId: string,
-  pinnedLessonId: string | null,
-  now: Date,
-): Promise<DailyPracticeSource> {
-  const service = createServiceClient();
-  const openLessons = () =>
-    service
-      .from("class_lessons")
-      .select("lesson_id")
-      .eq("class_id", classId)
-      .lte("available_at", now.toISOString());
-  const [newest, pinned] = await Promise.all([
-    selectRows(
-      openLessons()
-        .order("available_at", { ascending: false })
-        .order("order_no", { ascending: false })
-        .limit(MAX_SOURCE_LESSONS),
-      lessonIdRowSchema,
-    ),
-    pinnedLessonId
-      ? selectOptional(
-          openLessons().eq("lesson_id", pinnedLessonId).maybeSingle(),
-          lessonIdRowSchema,
-        )
-      : null,
-  ]);
-  const candidates = orderDailySourceLessons(
-    newest.map((row) => row.lesson_id),
-    pinned?.lesson_id ?? null,
-  );
-  if (!candidates.length) {
-    return { status: "no_lesson" };
-  }
-  for (const lessonId of candidates) {
-    const questions = (await listAssignablePracticeQuestions(classId, lessonId)).filter(
-      (question) => question.type === "choice" || question.type === "fill",
-    );
-    if (questions.length) {
-      return { status: "found", lessonId, questions };
-    }
-  }
-  return { status: "no_questions" };
 }
 
 // Shared by the morning job and the teacher's "today" button; the RPC makes both idempotent.
@@ -114,7 +50,7 @@ export async function createDailyPractice(
   const classRow = await selectOptional(
     service
       .from("classes")
-      .select("id, active, daily_practice_size, daily_practice_lesson_id")
+      .select("id, active, daily_practice_size")
       .eq("id", classId)
       .maybeSingle(),
     classSchema,
@@ -122,11 +58,37 @@ export async function createDailyPractice(
   if (!classRow?.active || !classRow.daily_practice_size) {
     return { status: "disabled" };
   }
-  const source = await findDailyPracticeSource(classId, classRow.daily_practice_lesson_id, now);
-  if (source.status !== "found") {
-    return { status: source.status };
+  const lessons = await selectRows(
+    service
+      .from("class_lessons")
+      .select("lesson_id")
+      .eq("class_id", classId)
+      .lte("available_at", now.toISOString())
+      .order("available_at", { ascending: false })
+      .order("order_no", { ascending: false })
+      .limit(MAX_SOURCE_LESSONS),
+    z.object({ lesson_id: z.string() }),
+  );
+  if (!lessons.length) {
+    return { status: "no_lesson" };
   }
-  const { lessonId, questions } = source;
+  // The newest open lesson may still be slides only; the most recent lesson with choice or
+  // fill questions keeps the daily habit going. Listening items need recorded audio and a
+  // quiet room, so daily sets stay choice and fill.
+  let lessonId = "";
+  let questions: Awaited<ReturnType<typeof listAssignablePracticeQuestions>> = [];
+  for (const lesson of lessons) {
+    questions = (await listAssignablePracticeQuestions(classId, lesson.lesson_id)).filter(
+      (question) => question.type === "choice" || question.type === "fill",
+    );
+    if (questions.length) {
+      lessonId = lesson.lesson_id;
+      break;
+    }
+  }
+  if (!questions.length) {
+    return { status: "no_questions" };
+  }
   const existing = await selectOptional(
     service
       .from("daily_practice_runs")

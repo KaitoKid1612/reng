@@ -46,47 +46,7 @@ function acceptedAnswers(standard: string, extra: string) {
   ];
 }
 
-// Each JLPT level gets its own bank lesson; a teacher's sheet for one level keeps the same id
-// so a second import is refused instead of creating a duplicate bank.
-export const SHEET_BANKS = {
-  N5: {
-    id: "n5-sheet-review-bank",
-    title: "Ngân hàng ôn JLPT N5 — Minna Bài 1–10",
-    titleJa: "日本語 N5 復習",
-    courseId: "n5",
-    slideTitle: "Ôn tập Bài 1–10",
-  },
-  N4: {
-    id: "n4-sheet-review-bank",
-    title: "Ngân hàng ôn JLPT N4",
-    titleJa: "日本語 N4 復習",
-    courseId: "n4",
-    slideTitle: "Ôn tập JLPT N4",
-  },
-} as const;
-
-export type SheetLevel = keyof typeof SHEET_BANKS;
-
-export interface DailySheetOptions {
-  level: SheetLevel;
-  // Builds only the bank, for a sheet whose day is already done or partly answered.
-  bankOnly?: boolean;
-}
-
-function readToday(source: DailySheetSource) {
-  const date = z.iso.date().parse(cell(source.today[1] ?? [], 1));
-  const dueTime = z
-    .string()
-    .regex(/^\d{2}:\d{2}$/)
-    .parse(cell(source.today[3] ?? [], 1));
-  const dueAt = z.iso.datetime({ offset: true }).parse(`${date}T${dueTime}:00+07:00`);
-  return { date, dueAt };
-}
-
-export function importDailySheet(
-  source: DailySheetSource,
-  { level, bankOnly = false }: DailySheetOptions = { level: "N5" },
-) {
+export function importDailySheet(source: DailySheetSource) {
   checkHeader(source.today, 5, [
     "STT",
     "Dạng bài",
@@ -108,6 +68,12 @@ export function importDailySheet(
     "Ghi chú",
   ]);
   checkHeader(source.keys, 2, ["ID", "Bài", "Đáp án chuẩn", "Chấp nhận thêm"]);
+  const date = z.iso.date().parse(cell(source.today[1] ?? [], 1));
+  const dueTime = z
+    .string()
+    .regex(/^\d{2}:\d{2}$/)
+    .parse(cell(source.today[3] ?? [], 1));
+  const dueAt = z.iso.datetime({ offset: true }).parse(`${date}T${dueTime}:00+07:00`);
   const keys = new Map<string, { standard: string; extra: string }>();
   for (const row of source.keys.slice(3)) {
     const id = cell(row, 0);
@@ -128,28 +94,18 @@ export function importDailySheet(
     if (!id) {
       continue;
     }
-    if (candidates.has(id)) {
-      throw new Error("Today's source IDs must be unique.");
-    }
-    if (bankOnly) {
-      // Without today's assignment, a row only joins the bank when it has an answer key.
-      if (keys.get(id)?.standard) {
-        candidates.set(id, { id, kind: cell(row, 1), prompt: cell(row, 2) });
-      }
-      continue;
-    }
     if (cell(row, 3) || cell(row, 4) || cell(row, 5)) {
       throw new Error(
         "Today's sheet already has work; reconcile it before creating a new attempt.",
       );
     }
+    if (candidates.has(id)) {
+      throw new Error("Today's source IDs must be unique.");
+    }
     candidates.set(id, { id, kind: cell(row, 1), prompt: cell(row, 2) });
     todayIds.push(id.toLowerCase());
   }
-  if (
-    !bankOnly &&
-    (todayIds.length !== Number(cell(source.today[1] ?? [], 8)) || todayIds.length !== 60)
-  ) {
+  if (todayIds.length !== Number(cell(source.today[1] ?? [], 8)) || todayIds.length !== 60) {
     throw new Error("Expected the complete daily set of 60 questions.");
   }
   // Keep the lesson editable within the existing editor's 200-question limit. Prioritize
@@ -163,9 +119,6 @@ export function importDailySheet(
       continue;
     }
     candidates.set(id, { id, kind: cell(row, 4), prompt: cell(row, 5) });
-  }
-  if (!candidates.size) {
-    throw new Error("The sheet has no question with an approved answer key.");
   }
   const questions = [...candidates.values()].map((item) => {
     const key = keys.get(item.id);
@@ -189,15 +142,14 @@ export function importDailySheet(
       answer: answers,
     });
   });
-  const bank = SHEET_BANKS[level];
   const draft = lessonDraftSchema.parse({
-    id: bank.id,
-    title: bank.title,
-    titleJa: bank.titleJa,
+    id: "n5-sheet-review-bank",
+    title: "Ngân hàng ôn JLPT N5 — Minna Bài 1–10",
+    titleJa: "日本語 N5 復習",
     summary:
       "Ngân hàng có đáp án từ Sheet của giáo viên; gồm bài ngày chuyển đổi và các câu ôn gần nhất. Không có audio.",
     order: 1,
-    courseId: bank.courseId,
+    courseId: "n5",
     isSample: false,
     content: {
       schemaVersion: 1,
@@ -207,13 +159,12 @@ export function importDailySheet(
         {
           id: "review-intro",
           type: "note",
-          title: bank.slideTitle,
+          title: "Ôn tập Bài 1–10",
           body: "Làm bài trong mục Bài tập của lớp. Chấm theo các đáp án đã khai báo; đáp án mở có thể cần giáo viên kiểm tra thêm.",
         },
       ],
       questions,
     },
   });
-  const today = bankOnly ? null : { ...readToday(source), ids: todayIds };
-  return { today, draft };
+  return { date, dueAt, todayIds, draft };
 }

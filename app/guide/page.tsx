@@ -30,15 +30,6 @@ const TEACHER_SECTIONS: GuideSection[] = [
     ],
   },
   {
-    id: "teacher-self-study",
-    title: "Vừa dạy vừa tự học",
-    steps: [
-      "Dùng một tài khoản cho cả hai việc. Muốn tự ôn, vào Giảng dạy → Tạo lớp, đánh dấu Lớp tự học của tôi rồi bấm Tạo lớp: lớp chỉ có bạn là học viên và không có mã mời.",
-      "Đưa bài hoặc ngân hàng ôn vào lớp tự học và bật Bài luyện hằng ngày như lớp thường. Bài đến bạn ở mục Lớp của tôi; câu sai vào sổ lỗi và lịch ôn tập của bạn.",
-      "Đừng nhập mã lớp bạn đang dạy: Reng không cho chủ lớp làm học viên của lớp đó, để điểm và câu sai của lớp chỉ phản ánh học viên.",
-    ],
-  },
-  {
     id: "teacher-lesson",
     title: "Tạo bài học",
     steps: [
@@ -88,8 +79,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-daily",
     title: "Bài luyện hằng ngày",
     steps: [
-      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15 hoặc 60 câu và bài ở ô Lấy câu từ (ví dụ ngân hàng ôn), rồi bấm Lưu. Để Tự động thì Reng lấy bài mới nhất đã mở có câu hỏi, nên thêm bài mới vào lớp sẽ đổi nguồn.",
-      "Khoảng 6:00 sáng mỗi ngày, Reng tự giao một bài từ bài đã chọn, hạn 23:59 cùng ngày. Câu đổi mỗi ngày và ưu tiên câu học viên chưa gặp gần đây. Nếu bài nguồn có ít câu hơn số câu mỗi ngày, trang lớp sẽ cảnh báo vì học viên gặp lại toàn bộ câu mỗi ngày.",
+      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15 hoặc 60 câu rồi bấm Lưu.",
+      "Khoảng 6:00 sáng mỗi ngày, Reng tự giao một bài từ bài học mới nhất của lớp, hạn 23:59 cùng ngày. Câu đổi mỗi ngày và ưu tiên câu học viên chưa gặp gần đây.",
       "Bấm Giao bài hôm nay ngay khi muốn có bài của hôm nay mà không chờ tới sáng mai.",
     ],
   },
@@ -101,7 +92,6 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Trong Google Meet chọn Trình bày → Một thẻ và chọn thẻ đang chiếu slide.",
       "Chuyển slide bằng phím mũi tên, phím cách hoặc nút Tiếp/Trước. Nghĩa tiếng Việt và câu mẫu hiện dần sau mỗi lần bấm Tiếp để hỏi lớp trước.",
       "Bấm Presenter (hoặc phím S) để mở cửa sổ riêng có ghi chú, slide kế tiếp và đồng hồ; không chia sẻ cửa sổ này. Nút PDF dùng để in bài.",
-      "Sau buổi dạy, ghi vào Nhật ký buổi dạy ở trang lớp: bài, slide dạy tới và ghi chú riêng. Buổi sau bấm Mở slide ở đầu trang lớp để chiếu tiếp đúng chỗ.",
     ],
     note: "Tài khoản Google miễn phí giới hạn 60 phút cho cuộc gọi từ 3 người; buổi dài hơn cần chia buổi hoặc dùng Google Workspace.",
   },

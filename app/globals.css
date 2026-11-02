@@ -1549,11 +1549,6 @@ rt {
   color: var(--muted);
   margin: 0;
 }
-.session-notes {
-  margin: 4px 0 0;
-  white-space: pre-line;
-  overflow-wrap: anywhere;
-}
 .data-table {
   width: 100%;
   border-collapse: collapse;

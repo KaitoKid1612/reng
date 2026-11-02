@@ -21,7 +21,7 @@ Slide, tài liệu scan, bài tập, điểm và nhắc học đang nằm ở nh
 
 ## Người dùng và phạm vi
 
-Giáo viên độc lập là chủ sở hữu lớp và học liệu của mình. Học sinh có thể tham gia nhiều lớp bằng lời mời/mã lớp và chủ yếu dùng điện thoại. Người vận hành xử lý hỗ trợ, lạm dụng và sự cố. Một tài khoản vừa dạy lớp của mình vừa học: trong lớp của giáo viên khác, hoặc trong lớp tự học của chính mình (chỉ chủ lớp là học viên). Giáo viên không vào lớp mình dạy với vai học viên, để báo cáo lớp chỉ phản ánh học viên ([Luồng 7](basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026)).
+Giáo viên độc lập là chủ sở hữu lớp và học liệu của mình. Học sinh có thể tham gia nhiều lớp bằng lời mời/mã lớp và chủ yếu dùng điện thoại. Người vận hành xử lý hỗ trợ, lạm dụng và sự cố. Một tài khoản có thể vừa dạy lớp của mình vừa học lớp khác trong thiết kế dịch vụ; mô hình role độc quyền hiện tại cần được nâng cấp trước khi hỗ trợ điều này.
 
 Dịch vụ bản đầu tập trung vào giáo viên cá nhân, không xây tổ chức/trung tâm nhiều cấp quản trị. Thu phí, gói dịch vụ và thanh toán chưa chốt, không mặc định 10 học sinh là một gói thương mại hoặc giới hạn chung.
 

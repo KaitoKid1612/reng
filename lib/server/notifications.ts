@@ -346,10 +346,7 @@ async function describeWeeks(userId: string, now: Date) {
 const ATTENTION = new Set(["abandoned", "failing", "weak_listening"]);
 
 async function describeDigest(teacherId: string, now: Date, origin: string) {
-  // A self-study class reports on the teacher's own practice, not on learners to follow up.
-  const classes = (await listTeacherClasses(teacherId)).filter(
-    (item) => item.active && !item.self_study,
-  );
+  const classes = (await listTeacherClasses(teacherId)).filter((item) => item.active);
   const since = new Date(now.getTime() - DAY_MS).toISOString();
   const entries = await Promise.all(
     classes.map(async (item): Promise<DigestClass | null> => {
