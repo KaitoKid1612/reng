@@ -566,6 +566,11 @@ input[type="radio"] {
   font-size: 15px;
   margin-bottom: 8px;
 }
+/* A select is as wide as its longest option unless limited, so long labels such as the question
+   input modes would widen the page on a 360px phone. */
+select {
+  max-width: 100%;
+}
 select,
 input[type="text"],
 input[name="romaji"] {

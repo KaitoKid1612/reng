@@ -29,13 +29,15 @@ Nền hiện có hỗ trợ schema v1 tiếng Nhật, v2 tiếng Trung, lớp c�
 
 | Mã | Ca cần chạy | Kết quả mong đợi | Trạng thái |
 |---|---|---|---|
-| TM-01 | Giáo viên có bài Nhật, Trung giản, Trung phồn, nháp và xuất bản | Lọc kết hợp không trộn ngôn ngữ; reset khôi phục form và URL; không thấy bài người khác | Logic PASS; browser NOT RUN |
+| TM-01 | Giáo viên có bài Nhật, Trung giản, Trung phồn, nháp và xuất bản | Lọc kết hợp không trộn ngôn ngữ; reset khôi phục form và URL; không thấy bài người khác | Logic PASS; browser lọc/reset PASS trên Supabase local 02/11/2026 |
 | TM-02 | Nháp đổi giản/phồn sau khi đã có version | Nhãn bản soạn và version có thể khác nhau, chọn đúng version để lưu; không đổi assignment cũ | NOT RUN |
 | TM-03 | Lớp Nhật tạo câu fill | Hiragana mặc định; kana/kanji và IME Nhật hoạt động như cũ | Render/default PASS; browser có phiên NOT RUN |
-| TM-04 | Hai lớp Trung giản/phồn tạo fill chữ Hán và pinyin | Default chữ Hán, pinyin giữ dấu thanh; sai script/dấu thanh không được coi đúng | Render/grading PASS; browser có phiên NOT RUN |
+| TM-04 | Hai lớp Trung giản/phồn tạo fill chữ Hán và pinyin | Default chữ Hán, pinyin giữ dấu thanh; sai script/dấu thanh không được coi đúng | Render/grading PASS; browser lớp giản thể PASS trên Supabase local 02/11/2026 (mặc định chữ Hán, gợi ý dấu thanh, bỏ kanjiStrict khi đổi kiểu nhập); lớp phồn thể chưa chạy browser |
 | TM-05 | Giáo viên nhập bảng Trung và CSV Nhật | Đúng công cụ/đúng schema; bản nháp thiếu nội dung vẫn lưu, chỉ xuất bản khi đủ điều kiện | Logic cũ còn chạy; browser mới NOT RUN |
 | TM-06 | Sửa bài đã dạy rồi xuất bản/giao lại | Lớp/bài giao/điểm cũ giữ nguyên snapshot, phiên bản mới chỉ áp khi chọn và giao mới | Migration tests hiện có; browser mới NOT RUN |
 | TM-07 | Admin đình chỉ giáo viên hoặc giáo viên truy cập bài người khác | Server vẫn chặn đúng quyền; UI không cấp quyền qua filter/ngôn ngữ | Migration tests hiện có; browser mới NOT RUN |
+
+Ngày 02/11/2026 `e2e-supabase/teaching-authoring.spec.ts` chạy được lần đầu trên Supabase local và phát hiện trang Giao bài tràn ngang ở 360px khi soạn câu kiểm tra: ô chọn "Ô nhập" rộng theo nhãn dài nhất (391px trong khung 294px). Lỗi có từ trước, tái hiện trên bản `HEAD` chưa sửa. Đã sửa bằng `select { max-width: 100% }` trong `app/globals.css`; chạy lại 4/4 test của file đạt.
 
 ## Phần còn mở và hướng nâng cấp tiếp
 
