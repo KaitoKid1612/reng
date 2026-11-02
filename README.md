@@ -1,5 +1,7 @@
 # Reng
 
+Ôn N4 (02/11/2026): ngân hàng lớp tự học của Việt có **200 câu và 40 từ vựng**, giao 40 câu/ngày trong phạm vi Minna 1–28, trọng tâm 27–28. Bài được chọn tự động từ ngân hàng, chưa tự sinh câu mới bằng AI; chưa bao phủ toàn bộ N4. Xem [nội dung bổ sung và kiểm chứng](docs/testing/n4-review-bank.md).
+
 Tên sản phẩm là **Reng** (tiếng chuông vào lớp).
 
 Quy ước phát triển: [coding standards](docs/coding-standards.md), [hướng dẫn agent](AGENTS.md). File/thư mục/route và identifier dùng tiếng Anh; pilot hiện ưu tiên dạy tiếng Nhật theo trình tự Minna no Nihongo, giữ luồng Việt–Trung. Dịch vụ giáo viên đang triển khai theo từng lát trong [đối chiếu source](docs/source-alignment.md). Chạy `npm run check` trước khi bàn giao thay đổi.

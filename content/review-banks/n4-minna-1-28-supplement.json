@@ -1,0 +1,2131 @@
+{
+  "vocab": [
+    {
+      "id": "n4-review-word-01",
+      "jp": "けしき",
+      "kanji": "景色",
+      "romaji": "keshiki",
+      "vi": "phong cảnh",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-02",
+      "jp": "こえ",
+      "kanji": "声",
+      "romaji": "koe",
+      "vi": "giọng, tiếng của người hoặc động vật",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-03",
+      "jp": "はなび",
+      "kanji": "花火",
+      "romaji": "hanabi",
+      "vi": "pháo hoa",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-04",
+      "jp": "どうぐ",
+      "kanji": "道具",
+      "romaji": "dougu",
+      "vi": "dụng cụ",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-05",
+      "jp": "ほんだな",
+      "kanji": "本棚",
+      "romaji": "hondana",
+      "vi": "giá sách",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-06",
+      "jp": "しょうらい",
+      "kanji": "将来",
+      "romaji": "shourai",
+      "vi": "tương lai",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-07",
+      "jp": "しゅうかん",
+      "kanji": "習慣",
+      "romaji": "shuukan",
+      "vi": "thói quen",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-08",
+      "jp": "けいけん",
+      "kanji": "経験",
+      "romaji": "keiken",
+      "vi": "kinh nghiệm",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-09",
+      "jp": "きゅうりょう",
+      "kanji": "給料",
+      "romaji": "kyuuryou",
+      "vi": "tiền lương",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-10",
+      "jp": "ばんぐみ",
+      "kanji": "番組",
+      "romaji": "bangumi",
+      "vi": "chương trình truyền hình, phát thanh",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-11",
+      "jp": "しょうせつ",
+      "kanji": "小説",
+      "romaji": "shousetsu",
+      "vi": "tiểu thuyết",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-12",
+      "jp": "しょうせつか",
+      "kanji": "小説家",
+      "romaji": "shousetsuka",
+      "vi": "nhà văn viết tiểu thuyết",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-13",
+      "jp": "かしゅ",
+      "kanji": "歌手",
+      "romaji": "kashu",
+      "vi": "ca sĩ",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-14",
+      "jp": "かんりにん",
+      "kanji": "管理人",
+      "romaji": "kanrinin",
+      "vi": "người quản lý",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-15",
+      "jp": "むすこ",
+      "kanji": "息子",
+      "romaji": "musuko",
+      "vi": "con trai của mình",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-16",
+      "jp": "むすめ",
+      "kanji": "娘",
+      "romaji": "musume",
+      "vi": "con gái của mình",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-17",
+      "jp": "じぶん",
+      "kanji": "自分",
+      "romaji": "jibun",
+      "vi": "bản thân",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-18",
+      "jp": "かいわ",
+      "kanji": "会話",
+      "romaji": "kaiwa",
+      "vi": "hội thoại",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-19",
+      "jp": "かんけい",
+      "kanji": "関係",
+      "romaji": "kankei",
+      "vi": "quan hệ",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-20",
+      "jp": "よやく",
+      "kanji": "予約",
+      "romaji": "yoyaku",
+      "vi": "đặt trước",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-21",
+      "jp": "れんらく",
+      "kanji": "連絡",
+      "romaji": "renraku",
+      "vi": "liên lạc",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-22",
+      "jp": "つごう",
+      "kanji": "都合",
+      "romaji": "tsugou",
+      "vi": "tình hình thuận tiện, thời gian phù hợp",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-23",
+      "jp": "ばしょ",
+      "kanji": "場所",
+      "romaji": "basho",
+      "vi": "địa điểm",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-24",
+      "jp": "さいふ",
+      "kanji": "財布",
+      "romaji": "saifu",
+      "vi": "ví tiền",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-25",
+      "jp": "せつめい",
+      "kanji": "説明",
+      "romaji": "setsumei",
+      "vi": "giải thích",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-26",
+      "jp": "いけん",
+      "kanji": "意見",
+      "romaji": "iken",
+      "vi": "ý kiến",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-27",
+      "jp": "やくそく",
+      "kanji": "約束",
+      "romaji": "yakusoku",
+      "vi": "lời hẹn, lời hứa",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-28",
+      "jp": "しゅみ",
+      "kanji": "趣味",
+      "romaji": "shumi",
+      "vi": "sở thích",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-29",
+      "jp": "うんてん",
+      "kanji": "運転",
+      "romaji": "unten",
+      "vi": "lái xe",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-30",
+      "jp": "しゅっちょう",
+      "kanji": "出張",
+      "romaji": "shutchou",
+      "vi": "chuyến công tác",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-31",
+      "jp": "じゅんび",
+      "kanji": "準備",
+      "romaji": "junbi",
+      "vi": "chuẩn bị",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-32",
+      "jp": "しょくじ",
+      "kanji": "食事",
+      "romaji": "shokuji",
+      "vi": "bữa ăn, việc dùng bữa",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-33",
+      "jp": "やさい",
+      "kanji": "野菜",
+      "romaji": "yasai",
+      "vi": "rau",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-34",
+      "jp": "りょうしん",
+      "kanji": "両親",
+      "romaji": "ryoushin",
+      "vi": "bố mẹ",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-35",
+      "jp": "きょうだい",
+      "kanji": "兄弟",
+      "romaji": "kyoudai",
+      "vi": "anh chị em",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-36",
+      "jp": "しんせつ",
+      "kanji": "親切",
+      "romaji": "shinsetsu",
+      "vi": "tốt bụng",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-37",
+      "jp": "ねっしん",
+      "kanji": "熱心",
+      "romaji": "nesshin",
+      "vi": "nhiệt tình, chăm chú",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-38",
+      "jp": "まじめ",
+      "kanji": "真面目",
+      "romaji": "majime",
+      "vi": "nghiêm túc",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-39",
+      "jp": "しなもの",
+      "kanji": "品物",
+      "romaji": "shinamono",
+      "vi": "hàng hóa",
+      "audio": null
+    },
+    {
+      "id": "n4-review-word-40",
+      "jp": "ねだん",
+      "kanji": "値段",
+      "romaji": "nedan",
+      "vi": "giá tiền",
+      "audio": null
+    }
+  ],
+  "questions": [
+    {
+      "id": "n4-review-kanji-01",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「景色」 (nghĩa: phong cảnh).",
+      "answer": ["けしき"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "景色（けしき）: phong cảnh. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-02",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「声」 (nghĩa: giọng, tiếng của người hoặc động vật).",
+      "answer": ["こえ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "声（こえ）: giọng, tiếng của người hoặc động vật. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-03",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「花火」 (nghĩa: pháo hoa).",
+      "answer": ["はなび"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "花火（はなび）: pháo hoa. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-04",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「道具」 (nghĩa: dụng cụ).",
+      "answer": ["どうぐ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "道具（どうぐ）: dụng cụ. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-05",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「本棚」 (nghĩa: giá sách).",
+      "answer": ["ほんだな"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "本棚（ほんだな）: giá sách. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-06",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「将来」 (nghĩa: tương lai).",
+      "answer": ["しょうらい"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "将来（しょうらい）: tương lai. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-07",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「習慣」 (nghĩa: thói quen).",
+      "answer": ["しゅうかん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "習慣（しゅうかん）: thói quen. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-08",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「経験」 (nghĩa: kinh nghiệm).",
+      "answer": ["けいけん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "経験（けいけん）: kinh nghiệm. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-09",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「給料」 (nghĩa: tiền lương).",
+      "answer": ["きゅうりょう"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "給料（きゅうりょう）: tiền lương. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-10",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「番組」 (nghĩa: chương trình truyền hình, phát thanh).",
+      "answer": ["ばんぐみ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "番組（ばんぐみ）: chương trình truyền hình, phát thanh. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-11",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「小説」 (nghĩa: tiểu thuyết).",
+      "answer": ["しょうせつ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "小説（しょうせつ）: tiểu thuyết. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-12",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「小説家」 (nghĩa: nhà văn viết tiểu thuyết).",
+      "answer": ["しょうせつか"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "小説家（しょうせつか）: nhà văn viết tiểu thuyết. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-13",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「歌手」 (nghĩa: ca sĩ).",
+      "answer": ["かしゅ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "歌手（かしゅ）: ca sĩ. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-14",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「管理人」 (nghĩa: người quản lý).",
+      "answer": ["かんりにん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "管理人（かんりにん）: người quản lý. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-15",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「息子」 (nghĩa: con trai của mình).",
+      "answer": ["むすこ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "息子（むすこ）: con trai của mình. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-16",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「娘」 (nghĩa: con gái của mình).",
+      "answer": ["むすめ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "娘（むすめ）: con gái của mình. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-17",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「自分」 (nghĩa: bản thân).",
+      "answer": ["じぶん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "自分（じぶん）: bản thân. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-18",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「会話」 (nghĩa: hội thoại).",
+      "answer": ["かいわ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "会話（かいわ）: hội thoại. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-19",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「関係」 (nghĩa: quan hệ).",
+      "answer": ["かんけい"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "関係（かんけい）: quan hệ. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-20",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「予約」 (nghĩa: đặt trước).",
+      "answer": ["よやく"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "予約（よやく）: đặt trước. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-21",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「連絡」 (nghĩa: liên lạc).",
+      "answer": ["れんらく"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "連絡（れんらく）: liên lạc. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-22",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「都合」 (nghĩa: tình hình thuận tiện, thời gian phù hợp).",
+      "answer": ["つごう"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "都合（つごう）: tình hình thuận tiện, thời gian phù hợp. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-23",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「場所」 (nghĩa: địa điểm).",
+      "answer": ["ばしょ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "場所（ばしょ）: địa điểm. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-24",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「財布」 (nghĩa: ví tiền).",
+      "answer": ["さいふ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "財布（さいふ）: ví tiền. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-25",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「説明」 (nghĩa: giải thích).",
+      "answer": ["せつめい"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "説明（せつめい）: giải thích. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-26",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「意見」 (nghĩa: ý kiến).",
+      "answer": ["いけん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "意見（いけん）: ý kiến. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-27",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「約束」 (nghĩa: lời hẹn, lời hứa).",
+      "answer": ["やくそく"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "約束（やくそく）: lời hẹn, lời hứa. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-28",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「趣味」 (nghĩa: sở thích).",
+      "answer": ["しゅみ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "趣味（しゅみ）: sở thích. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-29",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「運転」 (nghĩa: lái xe).",
+      "answer": ["うんてん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "運転（うんてん）: lái xe. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-30",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「出張」 (nghĩa: chuyến công tác).",
+      "answer": ["しゅっちょう"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "出張（しゅっちょう）: chuyến công tác. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-31",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「準備」 (nghĩa: chuẩn bị).",
+      "answer": ["じゅんび"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "準備（じゅんび）: chuẩn bị. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-32",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「食事」 (nghĩa: bữa ăn, việc dùng bữa).",
+      "answer": ["しょくじ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "食事（しょくじ）: bữa ăn, việc dùng bữa. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-33",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「野菜」 (nghĩa: rau).",
+      "answer": ["やさい"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "野菜（やさい）: rau. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-34",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「両親」 (nghĩa: bố mẹ).",
+      "answer": ["りょうしん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "両親（りょうしん）: bố mẹ. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-35",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「兄弟」 (nghĩa: anh chị em).",
+      "answer": ["きょうだい"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "兄弟（きょうだい）: anh chị em. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-36",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「親切」 (nghĩa: tốt bụng).",
+      "answer": ["しんせつ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "親切（しんせつ）: tốt bụng. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-37",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「熱心」 (nghĩa: nhiệt tình, chăm chú).",
+      "answer": ["ねっしん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "熱心（ねっしん）: nhiệt tình, chăm chú. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-38",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「真面目」 (nghĩa: nghiêm túc).",
+      "answer": ["まじめ"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "真面目（まじめ）: nghiêm túc. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-39",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「品物」 (nghĩa: hàng hóa).",
+      "answer": ["しなもの"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "品物（しなもの）: hàng hóa. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-kanji-40",
+      "type": "fill",
+      "prompt": "Viết cách đọc bằng hiragana của 「値段」 (nghĩa: giá tiền).",
+      "answer": ["ねだん"],
+      "points": 1,
+      "tags": ["n4", "kanji"],
+      "explain": "値段（ねだん）: giá tiền. Chỉ nhập cách đọc, không cần nghĩa tiếng Việt.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-01",
+      "type": "fill",
+      "prompt": "Chuyển 「かきます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["かけます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: かけます. Viết → có thể viết.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-02",
+      "type": "fill",
+      "prompt": "Chuyển 「よみます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["よめます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: よめます. Đọc → có thể đọc.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-03",
+      "type": "fill",
+      "prompt": "Chuyển 「はなします」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["はなせます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: はなせます. Nói → có thể nói.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-04",
+      "type": "fill",
+      "prompt": "Chuyển 「ききます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["きけます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: きけます. Nghe → có thể nghe theo ý muốn.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-05",
+      "type": "fill",
+      "prompt": "Chuyển 「およぎます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["およげます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: およげます. Bơi → có thể bơi.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-06",
+      "type": "fill",
+      "prompt": "Chuyển 「いきます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["いけます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: いけます. Đi → có thể đi.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-07",
+      "type": "fill",
+      "prompt": "Chuyển 「かえります」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["かえれます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: かえれます. Về → có thể về.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-08",
+      "type": "fill",
+      "prompt": "Chuyển 「まちます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["まてます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: まてます. Chờ → có thể chờ.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-09",
+      "type": "fill",
+      "prompt": "Chuyển 「もちます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["もてます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: もてます. Cầm → có thể cầm.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-10",
+      "type": "fill",
+      "prompt": "Chuyển 「つかいます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["つかえます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: つかえます. Dùng → có thể dùng.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-11",
+      "type": "fill",
+      "prompt": "Chuyển 「つくります」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["つくれます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: つくれます. Làm, tạo → có thể làm.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-12",
+      "type": "fill",
+      "prompt": "Chuyển 「あいます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["あえます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: あえます. Gặp → có thể gặp.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-13",
+      "type": "fill",
+      "prompt": "Chuyển 「のみます」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["のめます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: のめます. Uống → có thể uống.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-14",
+      "type": "fill",
+      "prompt": "Chuyển 「はいります」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["はいれます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: はいれます. Vào → có thể vào.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-15",
+      "type": "fill",
+      "prompt": "Chuyển 「たべます」 sang khả năng lịch sự chuẩn, không bỏ ら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["たべられます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: たべられます. Ăn → có thể ăn.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-16",
+      "type": "fill",
+      "prompt": "Chuyển 「みます」 sang khả năng lịch sự chuẩn, không bỏ ら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["みられます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: みられます. Xem → có thể xem.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-17",
+      "type": "fill",
+      "prompt": "Chuyển 「おきます（起きます）」 sang khả năng lịch sự chuẩn, không bỏ ら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["おきられます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: おきられます. Thức dậy → có thể thức dậy.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-18",
+      "type": "fill",
+      "prompt": "Chuyển 「ねます」 sang khả năng lịch sự chuẩn, không bỏ ら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["ねられます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: ねられます. Ngủ → có thể ngủ.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-19",
+      "type": "fill",
+      "prompt": "Chuyển 「きます（来ます）」 sang khả năng lịch sự chuẩn, không bỏ ら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["こられます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: こられます. Đến → có thể đến.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-20",
+      "type": "fill",
+      "prompt": "Chuyển 「します」 sang khả năng lịch sự. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["できます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: できます. Làm → có thể làm.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-21",
+      "type": "fill",
+      "prompt": "Chuyển 「のみます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["のみながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: のみながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-22",
+      "type": "fill",
+      "prompt": "Chuyển 「ききます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["ききながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: ききながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-23",
+      "type": "fill",
+      "prompt": "Chuyển 「みます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["みながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: みながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-24",
+      "type": "fill",
+      "prompt": "Chuyển 「あるきます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["あるきながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: あるきながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-25",
+      "type": "fill",
+      "prompt": "Chuyển 「はなします」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["はなしながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: はなしながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-26",
+      "type": "fill",
+      "prompt": "Chuyển 「うたいます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["うたいながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: うたいながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-27",
+      "type": "fill",
+      "prompt": "Chuyển 「たべます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["たべながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: たべながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-28",
+      "type": "fill",
+      "prompt": "Chuyển 「はたらきます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["はたらきながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: はたらきながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-29",
+      "type": "fill",
+      "prompt": "Chuyển 「かんがえます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["かんがえながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: かんがえながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-30",
+      "type": "fill",
+      "prompt": "Chuyển 「まちます」 sang ～ながら. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["まちながら"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: まちながら. Bỏ ます rồi thêm ながら.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-31",
+      "type": "fill",
+      "prompt": "Chuyển 「かよいます」 sang ～ています chỉ thói quen. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["かよっています"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: かよっています. 通います → 通っています.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-32",
+      "type": "fill",
+      "prompt": "Chuyển 「はたらきます」 sang ～ています. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["はたらいています"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: はたらいています. 働きます → 働いています.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-33",
+      "type": "fill",
+      "prompt": "Chuyển 「べんきょうします」 sang ～ています. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["べんきょうしています"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: べんきょうしています. 勉強します → 勉強しています.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-34",
+      "type": "fill",
+      "prompt": "Chuyển 「よみます」 sang ～ています. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["よんでいます"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: よんでいます. 読みます → 読んでいます.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-35",
+      "type": "fill",
+      "prompt": "Chuyển 「つくります」 sang ～ています. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["つくっています"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: つくっています. 作ります → 作っています.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-36",
+      "type": "fill",
+      "prompt": "Chuyển 「やすいです」 sang thể thường + し. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["やすいし"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: やすいし. Tính từ い giữ nguyên い trước し.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-37",
+      "type": "fill",
+      "prompt": "Chuyển 「おおいです」 sang thể thường + し. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["おおいし"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: おおいし. 多い → 多いし.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-38",
+      "type": "fill",
+      "prompt": "Chuyển 「しずかです」 sang thể thường + し. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["しずかだし"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: しずかだし. Tính từ な ở hiện tại khẳng định cần だ trước し.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-39",
+      "type": "fill",
+      "prompt": "Chuyển 「しんせつです」 sang thể thường + し. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["しんせつだし"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: しんせつだし. 親切だ → 親切だし.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-forms-40",
+      "type": "fill",
+      "prompt": "Chuyển 「せんせいです」 sang thể thường + し. Chỉ nhập phần đã chuyển bằng hiragana.",
+      "answer": ["せんせいだし"],
+      "points": 1,
+      "tags": ["n4", "forms"],
+      "explain": "Đáp án: せんせいだし. Danh từ ở hiện tại khẳng định cần だ trước し.",
+      "inputMode": "hiragana",
+      "kanjiStrict": false
+    },
+    {
+      "id": "n4-review-grammar-01",
+      "type": "choice",
+      "prompt": "窓から山（　）見えます。",
+      "options": ["が", "を", "で", "に"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Vật nhìn thấy với 見えます dùng が."
+    },
+    {
+      "id": "n4-review-grammar-02",
+      "type": "choice",
+      "prompt": "隣の部屋から声（　）聞こえます。",
+      "options": ["を", "に", "で", "が"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Âm thanh tự nghe thấy với 聞こえます dùng が."
+    },
+    {
+      "id": "n4-review-grammar-03",
+      "type": "choice",
+      "prompt": "駅の前（　）新しい店ができました。",
+      "options": ["が", "から", "に", "を"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Nơi xuất hiện công trình mới dùng に."
+    },
+    {
+      "id": "n4-review-grammar-04",
+      "type": "choice",
+      "prompt": "百円（　）ありません。",
+      "options": ["ごろ", "しか", "だけ", "まで"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "しか đi với phủ định, nghĩa là chỉ có."
+    },
+    {
+      "id": "n4-review-grammar-05",
+      "type": "choice",
+      "prompt": "この部屋には机が一つしか（　）。",
+      "options": ["ありません", "あります", "いました", "います"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "しか cần phủ định; bàn là đồ vật nên dùng ありません."
+    },
+    {
+      "id": "n4-review-grammar-06",
+      "type": "choice",
+      "prompt": "音楽を（　）ながら、掃除します。",
+      "options": ["聞く", "聞いて", "聞いた", "聞き"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "ながら nối vào gốc ます: 聞きます → 聞きながら."
+    },
+    {
+      "id": "n4-review-grammar-07",
+      "type": "choice",
+      "prompt": "テレビを（　）ながら、ご飯を食べます。",
+      "options": ["見て", "見た", "見", "見る"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "見ます bỏ ます rồi thêm ながら."
+    },
+    {
+      "id": "n4-review-grammar-08",
+      "type": "choice",
+      "prompt": "コーヒーを（　）ながら、友達と話します。",
+      "options": ["飲んだ", "飲み", "飲む", "飲んで"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "飲みます → 飲みながら."
+    },
+    {
+      "id": "n4-review-grammar-09",
+      "type": "choice",
+      "prompt": "この町は静か（　）し、便利です。",
+      "options": ["だ", "な", "に", "で"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Tính từ な dùng thể thường 静かだ trước し."
+    },
+    {
+      "id": "n4-review-grammar-10",
+      "type": "choice",
+      "prompt": "この店は安い（　）、料理もおいしいです。",
+      "options": ["だし", "なし", "にし", "し"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Tính từ い nối trực tiếp với し."
+    },
+    {
+      "id": "n4-review-grammar-11",
+      "type": "choice",
+      "prompt": "田中さんは先生（　）し、日本語も上手です。",
+      "options": ["に", "を", "だ", "な"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Danh từ 先生 cần だ trước し."
+    },
+    {
+      "id": "n4-review-grammar-12",
+      "type": "choice",
+      "prompt": "毎週この学校に（　）。今も続けています。",
+      "options": ["通ったことがありません", "通っています", "通っていました", "通いませんでした"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "通っています diễn tả việc đi học đều đặn vẫn tiếp tục."
+    },
+    {
+      "id": "n4-review-grammar-13",
+      "type": "choice",
+      "prompt": "Nghĩa của 「鳥の声が聞こえます」 là gì?",
+      "options": [
+        "Tự nghe thấy tiếng chim",
+        "Có thể nuôi chim",
+        "Đang gọi chim",
+        "Không nghe thấy gì"
+      ],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "聞こえます chỉ âm thanh lọt đến tai tự nhiên."
+    },
+    {
+      "id": "n4-review-grammar-14",
+      "type": "choice",
+      "prompt": "Nghĩa của 「日本語が話せます」 là gì?",
+      "options": [
+        "Đang học chữ Hán",
+        "Phải nói tiếng Nhật",
+        "Không nói được tiếng Nhật",
+        "Có thể nói tiếng Nhật"
+      ],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "話せます là thể khả năng của 話します."
+    },
+    {
+      "id": "n4-review-grammar-15",
+      "type": "choice",
+      "prompt": "Nghĩa của 「二つしか買いませんでした」 là gì?",
+      "options": [
+        "Sẽ mua hai cái",
+        "Đã không mua cái nào",
+        "Đã chỉ mua hai cái",
+        "Đã mua hơn hai cái"
+      ],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "しか + phủ định diễn tả số lượng ít, chỉ hai cái."
+    },
+    {
+      "id": "n4-review-grammar-16",
+      "type": "choice",
+      "prompt": "Nghĩa của 「働きながら勉強しています」 là gì?",
+      "options": [
+        "Đã bỏ học để đi làm",
+        "Vừa đi làm vừa học",
+        "Học xong mới đi làm",
+        "Chỉ làm việc"
+      ],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "ながら diễn tả hai hoạt động cùng diễn ra do cùng chủ thể thực hiện."
+    },
+    {
+      "id": "n4-review-grammar-17",
+      "type": "choice",
+      "prompt": "この辞書は便利です（　）、少し高いです。",
+      "options": ["が", "を", "に", "しか"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "が nối hai ý tương phản: tiện nhưng hơi đắt."
+    },
+    {
+      "id": "n4-review-grammar-18",
+      "type": "choice",
+      "prompt": "明日は試験があります（　）、今晩勉強します。",
+      "options": ["まで", "だけ", "しか", "から"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "から chỉ lý do: vì mai có thi nên tối nay học."
+    },
+    {
+      "id": "n4-review-grammar-19",
+      "type": "choice",
+      "prompt": "日本へ行ったことが（　）。一度も行っていません。",
+      "options": ["いました", "います", "ありません", "あります"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "一度も…ない cho biết chưa từng đi, nên chọn ありません."
+    },
+    {
+      "id": "n4-review-grammar-20",
+      "type": "choice",
+      "prompt": "寝る前に、歯を（　）。",
+      "options": ["磨くと", "磨きます", "磨いた", "磨いて"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Câu hoàn chỉnh cần vị ngữ lịch sự 磨きます."
+    },
+    {
+      "id": "n4-review-grammar-21",
+      "type": "choice",
+      "prompt": "図書館では、大きい声で（　）ください。",
+      "options": ["話さないで", "話して", "話す", "話した"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Ở thư viện, yêu cầu đừng nói to dùng ないでください."
+    },
+    {
+      "id": "n4-review-grammar-22",
+      "type": "choice",
+      "prompt": "名前をここに（　）ください。",
+      "options": ["書く", "書いた", "書かない", "書いて"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Yêu cầu viết tên dùng thể て + ください."
+    },
+    {
+      "id": "n4-review-grammar-23",
+      "type": "choice",
+      "prompt": "この部屋で写真を撮っても（　）ですか。",
+      "options": ["ありません", "できません", "いい", "だめ"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Hỏi xin phép dùng てもいいですか."
+    },
+    {
+      "id": "n4-review-grammar-24",
+      "type": "choice",
+      "prompt": "明日は休みですから、早く（　）もいいです。",
+      "options": ["起きた", "起きなくて", "起きては", "起きないで"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Không cần dậy sớm: 起きなくてもいいです."
+    },
+    {
+      "id": "n4-review-grammar-25",
+      "type": "choice",
+      "prompt": "日本語で名前を（　）ことができます。",
+      "options": ["書く", "書き", "書いて", "書いた"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "V thể từ điển + ことができます chỉ khả năng."
+    },
+    {
+      "id": "n4-review-grammar-26",
+      "type": "choice",
+      "prompt": "宿題を（　）から、テレビを見ます。",
+      "options": ["する", "した", "しない", "して"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Vてから chỉ làm xong việc trước rồi làm việc sau."
+    },
+    {
+      "id": "n4-review-grammar-27",
+      "type": "choice",
+      "prompt": "雨が（　）ら、出かけません。",
+      "options": ["降って", "降り", "降った", "降る"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Điều kiện たら: 降ったら."
+    },
+    {
+      "id": "n4-review-grammar-28",
+      "type": "choice",
+      "prompt": "安く（　）も、買いません。",
+      "options": ["な", "て", "た", "だ"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Tính từ い: 安い → 安くても, dù rẻ cũng không mua."
+    },
+    {
+      "id": "n4-review-grammar-29",
+      "type": "choice",
+      "prompt": "これは母が（　）くれたかばんです。",
+      "options": ["買って", "買う", "買った", "買い"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Vてくれる chỉ người khác làm điều có lợi cho mình."
+    },
+    {
+      "id": "n4-review-grammar-30",
+      "type": "choice",
+      "prompt": "私は友達に日本語を教えて（　）。友達は喜びました。",
+      "options": ["もらいました", "くれました", "くださいました", "あげました"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Chủ thể 私 làm cho bạn: 教えてあげました."
+    },
+    {
+      "id": "n4-review-grammar-31",
+      "type": "choice",
+      "prompt": "先生に作文を直して（　）。私は助かりました。",
+      "options": ["くれました", "くださいました", "もらいました", "あげました"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "私 nhận sự giúp đỡ từ 先生に: 直してもらいました."
+    },
+    {
+      "id": "n4-review-grammar-32",
+      "type": "choice",
+      "prompt": "これは昨日（　）本です。",
+      "options": ["買い", "買った", "買います", "買って"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Bổ nghĩa danh từ dùng thể thường; việc mua hôm qua dùng 買った."
+    },
+    {
+      "id": "n4-review-grammar-33",
+      "type": "choice",
+      "prompt": "この町は交通（　）便利です。",
+      "options": ["が", "を", "に", "で"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "交通が便利: giao thông thuận tiện."
+    },
+    {
+      "id": "n4-review-grammar-34",
+      "type": "choice",
+      "prompt": "毎朝、パン（　）コーヒーを飲みます。パンも食べます。",
+      "options": ["が食べてから", "に食べてから", "で食べてから", "を食べてから"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Ăn bánh mì dùng パンを食べてから, rồi uống cà phê."
+    },
+    {
+      "id": "n4-review-grammar-35",
+      "type": "choice",
+      "prompt": "漢字は読めますが、まだ（　）。",
+      "options": ["書きました", "書いています", "書けません", "書けます"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "が và まだ dẫn vào ý tương phản: đọc được nhưng chưa viết được."
+    },
+    {
+      "id": "n4-review-grammar-36",
+      "type": "choice",
+      "prompt": "「ここから海が見えます」の 「見えます」は何を表しますか。",
+      "options": ["Kinh nghiệm đi biển", "Tầm nhìn tự nhiên", "Ý định đi biển", "Mệnh lệnh nhìn"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "見えます chỉ thứ ở trong tầm mắt, khác 見られます chỉ khả năng xem."
+    },
+    {
+      "id": "n4-review-grammar-37",
+      "type": "choice",
+      "prompt": "「ラジオを聞きながら料理します」の主な動作はどれですか。",
+      "options": ["料理します", "聞きます", "寝ます", "走ります"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "Hoạt động chính nằm sau ながら: nấu ăn."
+    },
+    {
+      "id": "n4-review-grammar-38",
+      "type": "choice",
+      "prompt": "「この店は安いし、おいしいし、よく来ます」。よく来る理由は何ですか。",
+      "options": ["Xa và đắt", "Yên tĩnh và tối", "Rộng và mới", "Rẻ và ngon"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "し liệt kê các lý do: 安い và おいしい."
+    },
+    {
+      "id": "n4-review-grammar-39",
+      "type": "choice",
+      "prompt": "「毎晩、日本語を勉強しています」はどんな意味ですか。",
+      "options": [
+        "Không bao giờ học",
+        "Ngày mai mới bắt đầu học",
+        "Thói quen học mỗi tối",
+        "Chỉ học một lần hôm qua"
+      ],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "毎晩 kết hợp ています thể hiện hoạt động lặp lại."
+    },
+    {
+      "id": "n4-review-grammar-40",
+      "type": "choice",
+      "prompt": "「この町に新しい病院ができました」の意味は何ですか。",
+      "options": [
+        "Tôi đang làm ở bệnh viện",
+        "Thị trấn đã có bệnh viện mới được xây xong",
+        "Tôi có thể khám bệnh",
+        "Bệnh viện đã đóng cửa"
+      ],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "grammar"],
+      "explain": "できます còn chỉ một công trình hình thành hoặc hoàn thành."
+    },
+    {
+      "id": "n4-review-reading-01",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「山田さんは毎週土曜日に料理の学校に通っています。家ではラジオを聞きながら晩ご飯を作ります。学校は駅から近いし、先生も親切です。山田さんは魚の料理は作れますが、パンはまだ作れません。」\nいつ料理の学校に通っていますか。",
+      "options": ["毎週土曜日", "毎週日曜日", "毎朝", "毎晩"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 毎週土曜日に通っています。"
+    },
+    {
+      "id": "n4-review-reading-02",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「山田さんは毎週土曜日に料理の学校に通っています。家ではラジオを聞きながら晩ご飯を作ります。学校は駅から近いし、先生も親切です。山田さんは魚の料理は作れますが、パンはまだ作れません。」\n家で何を聞きながら料理しますか。",
+      "options": ["テレビ", "鳥の声", "先生の話", "ラジオ"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: ラジオを聞きながら晩ご飯を作ります。"
+    },
+    {
+      "id": "n4-review-reading-03",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「山田さんは毎週土曜日に料理の学校に通っています。家ではラジオを聞きながら晩ご飯を作ります。学校は駅から近いし、先生も親切です。山田さんは魚の料理は作れますが、パンはまだ作れません。」\n学校はどこから近いですか。",
+      "options": ["病院", "山", "駅", "海"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 学校は駅から近いです。"
+    },
+    {
+      "id": "n4-review-reading-04",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「山田さんは毎週土曜日に料理の学校に通っています。家ではラジオを聞きながら晩ご飯を作ります。学校は駅から近いし、先生も親切です。山田さんは魚の料理は作れますが、パンはまだ作れません。」\n先生はどんな人ですか。",
+      "options": ["静かな人", "親切な人", "忙しい人", "厳しい人"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 先生も親切です。"
+    },
+    {
+      "id": "n4-review-reading-05",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「山田さんは毎週土曜日に料理の学校に通っています。家ではラジオを聞きながら晩ご飯を作ります。学校は駅から近いし、先生も親切です。山田さんは魚の料理は作れますが、パンはまだ作れません。」\nまだ作れないものは何ですか。",
+      "options": ["パン", "魚の料理", "晩ご飯", "全部の料理"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 魚の料理は作れますが、パンはまだ作れません。"
+    },
+    {
+      "id": "n4-review-reading-06",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「リンさんの部屋は五階にあります。窓から川が見えますが、海は見えません。朝は鳥の声が聞こえます。部屋には小さい机が一つしかありません。先月、建物の隣にスーパーができました。」\n部屋は何階ですか。",
+      "options": ["一階", "三階", "十階", "五階"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 部屋は五階にあります。"
+    },
+    {
+      "id": "n4-review-reading-07",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「リンさんの部屋は五階にあります。窓から川が見えますが、海は見えません。朝は鳥の声が聞こえます。部屋には小さい机が一つしかありません。先月、建物の隣にスーパーができました。」\n窓から何が見えますか。",
+      "options": ["駅", "学校", "川", "海"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 窓から川が見えます。"
+    },
+    {
+      "id": "n4-review-reading-08",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「リンさんの部屋は五階にあります。窓から川が見えますが、海は見えません。朝は鳥の声が聞こえます。部屋には小さい机が一つしかありません。先月、建物の隣にスーパーができました。」\n朝、何が聞こえますか。",
+      "options": ["ピアノ", "鳥の声", "電車の音", "ラジオ"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 朝は鳥の声が聞こえます。"
+    },
+    {
+      "id": "n4-review-reading-09",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「リンさんの部屋は五階にあります。窓から川が見えますが、海は見えません。朝は鳥の声が聞こえます。部屋には小さい机が一つしかありません。先月、建物の隣にスーパーができました。」\n机はいくつありますか。",
+      "options": ["一つ", "二つ", "三つ", "ありません"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 机が一つしかありません。"
+    },
+    {
+      "id": "n4-review-reading-10",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「リンさんの部屋は五階にあります。窓から川が見えますが、海は見えません。朝は鳥の声が聞こえます。部屋には小さい机が一つしかありません。先月、建物の隣にスーパーができました。」\n先月、何ができましたか。",
+      "options": ["学校", "病院", "映画館", "スーパー"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 隣にスーパーができました。"
+    },
+    {
+      "id": "n4-review-reading-11",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「佐藤さんは昼は会社で働いています。火曜日と木曜日の夜、日本語を勉強しています。電車では本を読みます。漢字は少ししか読めませんが、簡単な会話はできます。来年、日本へ旅行に行きたいです。」\n昼はどこで働いていますか。",
+      "options": ["病院", "店", "会社", "学校"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 昼は会社で働いています。"
+    },
+    {
+      "id": "n4-review-reading-12",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「佐藤さんは昼は会社で働いています。火曜日と木曜日の夜、日本語を勉強しています。電車では本を読みます。漢字は少ししか読めませんが、簡単な会話はできます。来年、日本へ旅行に行きたいです。」\n日本語を勉強するのは何曜日ですか。",
+      "options": ["毎日", "火曜日と木曜日", "月曜日と水曜日", "土曜日と日曜日"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 火曜日と木曜日の夜に勉強しています。"
+    },
+    {
+      "id": "n4-review-reading-13",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「佐藤さんは昼は会社で働いています。火曜日と木曜日の夜、日本語を勉強しています。電車では本を読みます。漢字は少ししか読めませんが、簡単な会話はできます。来年、日本へ旅行に行きたいです。」\n電車で何をしますか。",
+      "options": ["本を読みます", "料理します", "歌います", "泳ぎます"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 電車では本を読みます。"
+    },
+    {
+      "id": "n4-review-reading-14",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「佐藤さんは昼は会社で働いています。火曜日と木曜日の夜、日本語を勉強しています。電車では本を読みます。漢字は少ししか読めませんが、簡単な会話はできます。来年、日本へ旅行に行きたいです。」\n日本語で何ができますか。",
+      "options": [
+        "難しい小説を書くこと",
+        "全部の漢字を読むこと",
+        "新聞を全部読むこと",
+        "簡単な会話"
+      ],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 簡単な会話はできます。"
+    },
+    {
+      "id": "n4-review-reading-15",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「佐藤さんは昼は会社で働いています。火曜日と木曜日の夜、日本語を勉強しています。電車では本を読みます。漢字は少ししか読めませんが、簡単な会話はできます。来年、日本へ旅行に行きたいです。」\n来年、何をしたいですか。",
+      "options": ["車を買いたい", "日本で店を開きたい", "日本へ旅行に行きたい", "会社を辞めたい"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 来年、日本へ旅行に行きたいです。"
+    },
+    {
+      "id": "n4-review-reading-16",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「駅の近くに新しい喫茶店ができました。この店はコーヒーもおいしいし、値段も安いです。店の中で静かな音楽が聞こえます。窓から公園が見えます。私は毎週日曜日に友達と行っています。」\n新しい喫茶店はどこにありますか。",
+      "options": ["海の前", "駅の近く", "山の上", "学校の中"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 駅の近くにできました。"
+    },
+    {
+      "id": "n4-review-reading-17",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「駅の近くに新しい喫茶店ができました。この店はコーヒーもおいしいし、値段も安いです。店の中で静かな音楽が聞こえます。窓から公園が見えます。私は毎週日曜日に友達と行っています。」\nコーヒーはどうですか。",
+      "options": ["おいしい", "高いだけ", "冷たいだけ", "ありません"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: コーヒーもおいしいです。"
+    },
+    {
+      "id": "n4-review-reading-18",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「駅の近くに新しい喫茶店ができました。この店はコーヒーもおいしいし、値段も安いです。店の中で静かな音楽が聞こえます。窓から公園が見えます。私は毎週日曜日に友達と行っています。」\n店の中で何が聞こえますか。",
+      "options": ["大きい工事の音", "海の音", "何も聞こえません", "静かな音楽"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 静かな音楽が聞こえます。"
+    },
+    {
+      "id": "n4-review-reading-19",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「駅の近くに新しい喫茶店ができました。この店はコーヒーもおいしいし、値段も安いです。店の中で静かな音楽が聞こえます。窓から公園が見えます。私は毎週日曜日に友達と行っています。」\n窓から何が見えますか。",
+      "options": ["海", "大学", "公園", "空港"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 窓から公園が見えます。"
+    },
+    {
+      "id": "n4-review-reading-20",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「駅の近くに新しい喫茶店ができました。この店はコーヒーもおいしいし、値段も安いです。店の中で静かな音楽が聞こえます。窓から公園が見えます。私は毎週日曜日に友達と行っています。」\n誰と行っていますか。",
+      "options": ["一人で", "友達", "先生", "母"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 毎週日曜日に友達と行っています。"
+    },
+    {
+      "id": "n4-review-reading-21",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「ミンさんは音楽が好きです。ギターは弾けますが、ピアノは弾けません。毎晩、晩ご飯を食べてから、三十分ギターを練習しています。日曜日には友達と歌いながらギターを弾きます。」\n何が好きですか。",
+      "options": ["音楽", "スポーツ", "写真", "旅行"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 音楽が好きです。"
+    },
+    {
+      "id": "n4-review-reading-22",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「ミンさんは音楽が好きです。ギターは弾けますが、ピアノは弾けません。毎晩、晩ご飯を食べてから、三十分ギターを練習しています。日曜日には友達と歌いながらギターを弾きます。」\n何が弾けますか。",
+      "options": ["ピアノ", "ギターとピアノ", "どちらも弾けません", "ギター"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: ギターは弾けます。"
+    },
+    {
+      "id": "n4-review-reading-23",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「ミンさんは音楽が好きです。ギターは弾けますが、ピアノは弾けません。毎晩、晩ご飯を食べてから、三十分ギターを練習しています。日曜日には友達と歌いながらギターを弾きます。」\nいつギターを練習しますか。",
+      "options": ["会社で働きながら", "寝てから", "晩ご飯を食べてから", "朝ご飯の前"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 晩ご飯を食べてから練習しています。"
+    },
+    {
+      "id": "n4-review-reading-24",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「ミンさんは音楽が好きです。ギターは弾けますが、ピアノは弾けません。毎晩、晩ご飯を食べてから、三十分ギターを練習しています。日曜日には友達と歌いながらギターを弾きます。」\n毎晩、どのくらい練習しますか。",
+      "options": ["一時間", "三十分", "三時間", "十分"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 三十分練習しています。"
+    },
+    {
+      "id": "n4-review-reading-25",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「ミンさんは音楽が好きです。ギターは弾けますが、ピアノは弾けません。毎晩、晩ご飯を食べてから、三十分ギターを練習しています。日曜日には友達と歌いながらギターを弾きます。」\n日曜日、何をしながらギターを弾きますか。",
+      "options": ["歌いながら", "料理しながら", "歩きながら", "泳ぎながら"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 友達と歌いながらギターを弾きます。"
+    },
+    {
+      "id": "n4-review-reading-26",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「高橋さんは新しいかばんを買いました。軽いし、色もきれいだし、気に入っています。でも、小さいですから、大きい本は入りません。かばんの中には財布と携帯電話だけ入っています。値段は三千円でした。」\n何を買いましたか。",
+      "options": ["靴", "本", "電話", "かばん"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 新しいかばんを買いました。"
+    },
+    {
+      "id": "n4-review-reading-27",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「高橋さんは新しいかばんを買いました。軽いし、色もきれいだし、気に入っています。でも、小さいですから、大きい本は入りません。かばんの中には財布と携帯電話だけ入っています。値段は三千円でした。」\nどうして気に入っていますか。",
+      "options": [
+        "古くて安いから",
+        "本がたくさん入るから",
+        "軽いし、色もきれいだから",
+        "大きくて重いから"
+      ],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 軽いし、色もきれいだからです。"
+    },
+    {
+      "id": "n4-review-reading-28",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「高橋さんは新しいかばんを買いました。軽いし、色もきれいだし、気に入っています。でも、小さいですから、大きい本は入りません。かばんの中には財布と携帯電話だけ入っています。値段は三千円でした。」\n大きい本が入らないのはなぜですか。",
+      "options": ["本が安いから", "かばんが小さいから", "本がないから", "かばんが重いから"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 小さいですから、大きい本は入りません。"
+    },
+    {
+      "id": "n4-review-reading-29",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「高橋さんは新しいかばんを買いました。軽いし、色もきれいだし、気に入っています。でも、小さいですから、大きい本は入りません。かばんの中には財布と携帯電話だけ入っています。値段は三千円でした。」\nかばんに何が入っていますか。",
+      "options": ["財布と携帯電話", "本と辞書", "野菜と果物", "靴と服"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 財布と携帯電話だけ入っています。"
+    },
+    {
+      "id": "n4-review-reading-30",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「高橋さんは新しいかばんを買いました。軽いし、色もきれいだし、気に入っています。でも、小さいですから、大きい本は入りません。かばんの中には財布と携帯電話だけ入っています。値段は三千円でした。」\nいくらでしたか。",
+      "options": ["三百円", "一万円", "五千円", "三千円"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 値段は三千円でした。"
+    },
+    {
+      "id": "n4-review-reading-31",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「日曜日、私は妹と公園へ行きました。妹は自転車に乗れますが、私は乗れません。私は公園を歩きながら写真を撮りました。池の近くで鳥の声が聞こえました。昼ご飯は家から持って来たお弁当を食べました。」\n誰と公園へ行きましたか。",
+      "options": ["先生", "同僚", "妹", "兄"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 妹と公園へ行きました。"
+    },
+    {
+      "id": "n4-review-reading-32",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「日曜日、私は妹と公園へ行きました。妹は自転車に乗れますが、私は乗れません。私は公園を歩きながら写真を撮りました。池の近くで鳥の声が聞こえました。昼ご飯は家から持って来たお弁当を食べました。」\n自転車に乗れるのは誰ですか。",
+      "options": ["二人とも乗れません", "妹だけ", "私だけ", "二人とも"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 妹は乗れますが、私は乗れません。"
+    },
+    {
+      "id": "n4-review-reading-33",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「日曜日、私は妹と公園へ行きました。妹は自転車に乗れますが、私は乗れません。私は公園を歩きながら写真を撮りました。池の近くで鳥の声が聞こえました。昼ご飯は家から持って来たお弁当を食べました。」\n私は歩きながら何をしましたか。",
+      "options": ["写真を撮りました", "歌いました", "寝ました", "料理しました"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 歩きながら写真を撮りました。"
+    },
+    {
+      "id": "n4-review-reading-34",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「日曜日、私は妹と公園へ行きました。妹は自転車に乗れますが、私は乗れません。私は公園を歩きながら写真を撮りました。池の近くで鳥の声が聞こえました。昼ご飯は家から持って来たお弁当を食べました。」\n鳥の声はどこで聞こえましたか。",
+      "options": ["駅の中", "家の中", "学校の前", "池の近く"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 池の近くで聞こえました。"
+    },
+    {
+      "id": "n4-review-reading-35",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「日曜日、私は妹と公園へ行きました。妹は自転車に乗れますが、私は乗れません。私は公園を歩きながら写真を撮りました。池の近くで鳥の声が聞こえました。昼ご飯は家から持って来たお弁当を食べました。」\nお弁当はどこから持って来ましたか。",
+      "options": ["会社", "学校", "家", "店"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 家から持って来たお弁当を食べました。"
+    },
+    {
+      "id": "n4-review-reading-36",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「木村さんは毎朝六時に起きています。七時に家を出て、バスで会社へ行きます。バスは一時間に二本しかありません。会社は遠いですが、仕事はおもしろいし、同僚も親切です。休みの日は家で小説を読んでいます。」\n毎朝何時に起きますか。",
+      "options": ["五時", "六時", "七時", "八時"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 毎朝六時に起きています。"
+    },
+    {
+      "id": "n4-review-reading-37",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「木村さんは毎朝六時に起きています。七時に家を出て、バスで会社へ行きます。バスは一時間に二本しかありません。会社は遠いですが、仕事はおもしろいし、同僚も親切です。休みの日は家で小説を読んでいます。」\n何で会社へ行きますか。",
+      "options": ["バス", "電車", "自転車", "タクシー"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: バスで会社へ行きます。"
+    },
+    {
+      "id": "n4-review-reading-38",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「木村さんは毎朝六時に起きています。七時に家を出て、バスで会社へ行きます。バスは一時間に二本しかありません。会社は遠いですが、仕事はおもしろいし、同僚も親切です。休みの日は家で小説を読んでいます。」\nバスは一時間に何本ありますか。",
+      "options": ["一本", "三本", "四本", "二本"],
+      "answer": [3],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 一時間に二本しかありません。"
+    },
+    {
+      "id": "n4-review-reading-39",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「木村さんは毎朝六時に起きています。七時に家を出て、バスで会社へ行きます。バスは一時間に二本しかありません。会社は遠いですが、仕事はおもしろいし、同僚も親切です。休みの日は家で小説を読んでいます。」\n同僚はどんな人ですか。",
+      "options": ["静かな人", "忙しい人", "親切な人", "怖い人"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 同僚も親切です。"
+    },
+    {
+      "id": "n4-review-reading-40",
+      "type": "choice",
+      "prompt": "Đọc đoạn văn:「木村さんは毎朝六時に起きています。七時に家を出て、バスで会社へ行きます。バスは一時間に二本しかありません。会社は遠いですが、仕事はおもしろいし、同僚も親切です。休みの日は家で小説を読んでいます。」\n休みの日に何をしていますか。",
+      "options": [
+        "海で泳いでいます",
+        "家で小説を読んでいます",
+        "会社で働いています",
+        "学校で教えています"
+      ],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["n4", "reading"],
+      "explain": "Chi tiết trong bài: 休みの日は家で小説を読んでいます。"
+    }
+  ]
+}

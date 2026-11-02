@@ -1,5 +1,7 @@
 # Detail Design dự kiến — Dịch vụ hỗ trợ giảng dạy
 
+Ngân hàng N4 (02/11/2026): [JSON bổ sung](../../content/review-banks/n4-minna-1-28-supplement.json) lưu 160 câu tự biên soạn và 40 mục từ theo schema v1; không chứa lịch sử học viên hoặc định danh cloud. Đã nối câu vào ngân hàng hiện có bằng `publish_lesson`, giữ nguyên 40 câu gốc, rồi cập nhật `class_lessons` bằng `upsert_class_lesson`. Bài đã giao giữ snapshot phiên bản cũ; cron dùng phiên bản mới trong lớp với nguồn ghim và 40 câu/ngày. Bài bổ sung hôm 02/11 được giao riêng bằng `publish_assignment`. Vocab dùng lại thẻ và luyện kanji, không tự khởi tạo SRS khi xuất bản. Không thêm schema, endpoint hoặc AI runtime. Xem [kiểm chứng](../testing/n4-review-bank.md).
+
 Ngày: 29/10/2026. **Đã triển khai lát A** (migration 202610290001–0002): `teacher_accounts`, kích hoạt giảng dạy sau xác minh email, xuất bản không tự công khai, loader theo owner/lớp/version, sức chứa lớp và link Meet. **Đã triển khai lát B1 bản đầu** (migration 202610290003): schema v2 Việt–Trung, profile chấm `zh-exact-v1`, wizard soạn theo mẫu, xác nhận đáp án phía server. **Đã triển khai lát B2 bản đầu** (migration 202610290004): chia sẻ phiên bản view/copy, thu hồi, sao chép và dùng lại bài. Các phần media riêng tư, scan/OCR và TTS web dưới đây vẫn là hợp đồng dự kiến, **chưa phải schema/API đang chạy**. Hành vi gốc theo [BD](../basic-design/teaching-service.md); cần chi tiết hóa migration/API theo từng lát triển khai trước code.
 
 ## Đối chiếu mã nguồn
