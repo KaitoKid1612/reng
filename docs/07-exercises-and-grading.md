@@ -140,3 +140,5 @@ Tự luận/ảnh bài làm chưa có chấm tay trong code; ngoài MVP scan. Ch
 MVP hỗ trợ yêu cầu điền chữ Hán hoặc pinyin bằng loại câu/input profile rõ; không suy ra từ câu học sinh nhập. Câu thiếu đáp án, choice có lựa chọn trùng hoặc câu chưa được xác nhận ở revision hiện tại bị chặn xuất bản. Sửa nội dung chấm làm mất review cũ. Điểm/đạt/trượt do server tính từ snapshot, feedback_policy không đổi.
 
 Nhãn yếu nghe chỉ có khi có câu nghe; lớp mới hoặc chưa nộp hiển thị chưa có dữ liệu. Không dùng nhãn đạt để chứng nhận trình độ HSK/JLPT; thi chuẩn hóa ngoài MVP. Chấm tay là Service D, chưa có cơ chế sửa điểm thủ công trong bản hiện tại.
+
+Ngoại lệ bảo trì có người dùng duyệt ngày 02/11/2026: sửa 14 kết quả do thiếu phương án tương đương trong bài N5 ngày 01/11, điểm 23/60 → 37/60; ghi audit, giữ câu trả lời gốc và xuất bản ngân hàng mới cho bài tạo sau. Đây không phải chức năng chấm tay trên giao diện. Xem [biên bản sửa điểm](testing/grading-correction-2026-11-02.md).
