@@ -130,7 +130,7 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 1. **Lớp tự học.** Ở `/teach/classes`, chọn "Lớp tự học của tôi" khi tạo lớp. Lớp có một chỗ, không có mã mời hay link mời; ai khác nhập mã cũ cũng chỉ thấy "mã không đúng". Bài giao và bài luyện hằng ngày của lớp đến chính giáo viên ở Lớp của tôi; câu sai vào sổ lỗi và lịch ôn của giáo viên như học viên thường. Trang Giảng dạy ghi "lớp tự học của bạn"; email tóm tắt lớp bỏ qua lớp tự học.
 2. **Không tự vào lớp mình dạy (CR-20).** Nhập mã lớp mình đang dạy trả thông báo hướng dẫn tạo lớp tự học. Lớp mà chủ lớp đã tự vào trước khi có kiểm tra này và không có học viên nào khác được chuyển thành lớp tự học khi nâng cấp. Lớp có học viên khác thì chủ lớp vẫn giữ lượt làm cũ, nhưng không được tính trong danh sách học viên, sức chứa, điểm, CSV hay câu sai nhiều.
 3. **Nguồn bài luyện hằng ngày** cố định theo lựa chọn của giáo viên (xem Luồng 6 bước 5), để dạy bài mới không làm mất bộ ôn tập.
-4. **Nhật ký buổi dạy** ở trang theo dõi lớp dạy: ngày dạy (không sau hôm nay), bài trong lớp, dạy đến slide số, ghi chú riêng tối đa 2.000 ký tự. Nhật ký giữ đúng phiên bản bài lớp đang dùng lúc ghi, nên "Mở slide N" mở lại đúng slide kể cả khi lớp đã chuyển phiên bản. Đầu trang lớp hiện buổi gần nhất kèm link mở lại slide. Học viên không thấy nhật ký; lớp tự học không có mục này. Hiện 12 buổi gần nhất, xóa được từng buổi ghi nhầm.
+4. **Nhật ký buổi dạy** ở trang theo dõi lớp dạy: ngày dạy (không sau hôm nay), bài trong lớp, dạy đến slide số, ghi chú riêng tối đa 2.000 ký tự. Nhật ký giữ đúng phiên bản bài lớp đang dùng lúc ghi, nên "Mở slide N" mở lại đúng slide kể cả khi lớp đã chuyển phiên bản. Từ 02/11/2026 khối "Buổi dạy online" ở đầu trang lớp hiện buổi gần nhất, nút Mở Google Meet và "Trình chiếu tiếp từ slide N"; slide mở từ trang lớp có "Ghi buổi dạy (slide N)" để quay về nhật ký với bài và slide điền sẵn (xem [rà soát 02/11](../testing/user-flow-review-2026-11-02.md)). Học viên không thấy nhật ký; lớp tự học không có mục này. Hiện 12 buổi gần nhất, xóa được từng buổi ghi nhầm.
 5. **Cập nhật bài từ mẫu.** Bài tạo từ mẫu Minna có link "Cập nhật từ mẫu" ở trang Giảng dạy và editor. Trang này so sánh số slide, câu hỏi và hình của bản nháp với mẫu mới nhất. Sau khi giáo viên xác nhận, nội dung nháp được thay bằng mẫu; tên, thứ tự và khóa học giữ nguyên. Chỉnh sửa riêng trong nháp sẽ mất; phiên bản đã xuất bản, lớp đang dùng và bài đã giao không đổi. Muốn học viên thấy bản mới, giáo viên xuất bản rồi chọn phiên bản mới cho lớp.
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
@@ -142,6 +142,16 @@ Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
 - Trang kết quả của học viên và trang chi tiết học viên của giáo viên có bộ lọc **Tất cả / Sai / Đúng** kèm số câu; số thứ tự câu giữ theo bài. Bộ lọc là đường dẫn (`?outcome=wrong|correct`), tải lại hay gửi link vẫn giữ.
 - Trang chi tiết học viên gom mỗi bài giao thành một nhóm thu gọn (tiêu đề có "N sai / M câu" hoặc "chưa nộp"); không lọc thì chỉ mở bài mới nhất đã nộp, khi lọc thì mở mọi bài có câu khớp. Mỗi câu hiện nhãn Đúng/Sai, đề, câu trả lời và đáp án trên các dòng riêng.
 - Thanh điều hướng không bẻ đôi tên mục; khi không đủ chỗ, cả mục xuống hàng.
+
+## Dễ dùng và dạy online Nhật–Trung — 02/11/2026
+
+Đi thử bốn vai (học viên và giáo viên lớp Nhật, lớp Trung) ở 1280px và 390px; chi tiết, số đo và đề xuất tiếp theo ở [báo cáo](../testing/user-flow-review-2026-11-02.md).
+
+1. **Header theo vai.** Khách thấy Vào lớp, Cho giáo viên, nhóm tự học tiếng Nhật, Hướng dẫn, Đăng nhập. Người đã đăng nhập thấy Quản trị (nếu có), Giảng dạy (giáo viên), Lớp của tôi trước; "Lịch sử Sheet" chỉ hiện khi đọc được ít nhất một bản lưu nhập từ Google Sheet. Link luyện kana tên "Luyện kana" để không trùng "Luyện tập" của bài giao. Trên điện thoại menu gập sau nút Menu; trang chính của người dùng luôn ở cạnh nút.
+2. **Học viên thấy việc hôm nay trước.** Trang chủ (đã đăng nhập) và Lớp của tôi đặt bài cần làm lên đầu với nút Làm bài/Làm tiếp; Ôn tập, Sổ lỗi, Tiến độ nằm ở mục "Ôn lại và tiến độ". Trang lớp tách bài cần làm và bài đã làm, bài cũ gập sau 5 bài.
+3. **Làm bài dài.** Từ 6 câu có danh sách câu để nhảy; Enter kiểm tra câu luyện tập rồi sang câu sau; hộp nộp bài có "Đến câu chưa làm". Nộp bài luyện tập có câu sai mở thẳng các câu sai; bài kiểm tra giữ nguyên để không lộ kết quả trước giờ công bố.
+4. **Tiếng Trung.** Đề, đáp án và câu trả lời mang thẻ ngôn ngữ đúng (không còn `ja`); ô pinyin nhận số thanh (`ni3 hao3` → `nǐ hǎo`, `v` → `ü`). Chấm điểm không đổi.
+5. **Buổi dạy online.** Đầu trang lớp có khối Buổi dạy online; Nội dung lớp có Trình chiếu/Đọc bài theo phiên bản lớp; slide mở từ lớp ghi được buổi dạy ngay trên thanh trình chiếu.
 
 ## Ma trận quyền sản phẩm và vòng đời
 

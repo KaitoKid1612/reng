@@ -97,11 +97,11 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-meet",
     title: "Dạy qua Google Meet",
     steps: [
-      "Ở trang Giảng dạy, bấm Trình chiếu cạnh bài cần dạy rồi bấm Toàn màn hình.",
+      "Mở trang lớp. Khối Buổi dạy online ở đầu trang có Mở Google Meet và Trình chiếu tiếp từ slide đã dạy tới, đúng phiên bản bài của lớp. Buổi đầu, bấm Trình chiếu ở bài cần dạy trong mục Nội dung lớp. Bấm Toàn màn hình.",
       "Trong Google Meet chọn Trình bày → Một thẻ và chọn thẻ đang chiếu slide.",
       "Chuyển slide bằng phím mũi tên, phím cách hoặc nút Tiếp/Trước. Nghĩa tiếng Việt và câu mẫu hiện dần sau mỗi lần bấm Tiếp để hỏi lớp trước.",
       "Bấm Presenter (hoặc phím S) để mở cửa sổ riêng có ghi chú, slide kế tiếp và đồng hồ; không chia sẻ cửa sổ này. Nút PDF dùng để in bài.",
-      "Sau buổi dạy, ghi vào Nhật ký buổi dạy ở trang lớp: bài, slide dạy tới và ghi chú riêng. Buổi sau bấm Mở slide ở đầu trang lớp để chiếu tiếp đúng chỗ.",
+      "Hết buổi, bấm Ghi buổi dạy (slide …) trên thanh trình chiếu: Nhật ký buổi dạy ở trang lớp mở ra với bài và slide điền sẵn; thêm ghi chú riêng rồi bấm Ghi buổi dạy. Buổi sau bấm Trình chiếu tiếp ở khối Buổi dạy online để chiếu đúng chỗ.",
     ],
     note: "Tài khoản Google miễn phí giới hạn 60 phút cho cuộc gọi từ 3 người; buổi dài hơn cần chia buổi hoặc dùng Google Workspace.",
   },
@@ -137,10 +137,11 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-practice",
     title: "Làm bài tập",
     steps: [
-      "Trong trang lớp, chọn bài ở mục Bài tập rồi bấm Bắt đầu làm bài. Bài tự lưu trong lúc làm.",
+      "Ở Lớp của tôi (hoặc trang lớp), bấm Làm bài cạnh bài ở mục Bài tập cần làm rồi bấm Bắt đầu làm bài. Bài tự lưu trong lúc làm; bài đang làm dở hiện nút Làm tiếp.",
       "Câu điền tiếng Nhật: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô.",
       "Bài tiếng Trung: nhập chữ Hán bằng bàn phím tiếng Trung hoặc pinyin có dấu theo yêu cầu câu hỏi; hệ thống không đổi romaji thành kana trong ô chữ Hán/pinyin.",
-      "Bài luyện tập có nút Kiểm tra câu này. Bấm Nộp bài để xem điểm và giải thích; còn lượt thì bấm Làm lượt mới. Ở trang kết quả, bấm Sai hoặc Đúng để chỉ xem những câu đó.",
+      "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Bài dài có Danh sách câu để nhảy tới câu bất kỳ; khi nộp mà còn câu trống, bấm Đến câu chưa làm.",
+      "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lượt mới.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",
     ],
   },
@@ -148,7 +149,8 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-review",
     title: "Ôn tập và tiến độ",
     steps: [
-      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn; Sổ lỗi gom các câu bạn làm sai; Tiến độ của tôi cho thấy bài đã đọc, kết quả bài tập và thẻ ôn tập.",
+      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn; Sổ lỗi gom các câu bạn làm sai; Tiến độ của tôi cho thấy bài đã đọc, kết quả bài tập và thẻ ôn tập. Ba nút này nằm ở mục Ôn lại và tiến độ trong Lớp của tôi.",
+      "Lịch sử Sheet chỉ hiện khi bạn có kết quả cũ được nhập từ Google Sheet. Đó là bản lưu, không nhận bài mới: bài hằng ngày và điểm mới nằm ở Lớp của tôi và Tiến độ của tôi.",
     ],
   },
 ];
@@ -200,7 +202,9 @@ export default function GuidePage() {
       <h1>Hướng dẫn sử dụng</h1>
       <p>
         Reng là nơi giáo viên soạn slide, mở lớp, giao bài và theo dõi học viên; buổi học video vẫn
-        diễn ra trên Google Meet. Học viên chỉ cần trình duyệt trên điện thoại hoặc máy tính.
+        diễn ra trên Google Meet. Học viên chỉ cần trình duyệt trên điện thoại hoặc máy tính. Trên
+        điện thoại, các mục nằm trong nút Menu ở góc trên; Lớp của tôi (giáo viên: Giảng dạy) luôn ở
+        ngay cạnh nút đó.
       </p>
       <nav className="guide-toc" aria-label="Mục lục hướng dẫn">
         <div>

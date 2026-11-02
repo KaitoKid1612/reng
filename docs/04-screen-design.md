@@ -206,7 +206,7 @@ Luồng mới: giáo viên đăng ký → xác minh → tạo lớp 10 chỗ →
 
 ## SV08–SV09 — Quản trị và trang giới thiệu
 
-`/admin` (tổng quan số giáo viên theo trạng thái, học viên đang trong lớp, lớp, bài, bài nộp 7 ngày; cài đặt duyệt giáo viên mới), `/admin/teachers` (duyệt, tạm dừng, mở lại, hạn thuê, ghi chú, nhãn "Quá hạn thuê") và `/admin/activity` (100 thao tác gần nhất). Header hiện link "Quản trị" cho tài khoản quản trị. `/for-teachers` là trang công khai giới thiệu dịch vụ cho giáo viên tiếng Trung, có nút đăng ký; header có link "Cho giáo viên", trang chủ có mục "Bạn là giáo viên tiếng Trung?". Các trang trên kiểm tra không tràn ngang ở 360px.
+`/admin` (tổng quan số giáo viên theo trạng thái, học viên đang trong lớp, lớp, bài, bài nộp 7 ngày; cài đặt duyệt giáo viên mới), `/admin/teachers` (duyệt, tạm dừng, mở lại, hạn thuê, ghi chú, nhãn "Quá hạn thuê") và `/admin/activity` (100 thao tác gần nhất). Header hiện link "Quản trị" cho tài khoản quản trị. `/for-teachers` là trang công khai giới thiệu dịch vụ cho giáo viên tiếng Trung, có nút đăng ký; header có link "Cho giáo viên" cho khách chưa đăng nhập (từ 02/11/2026 tài khoản đã đăng nhập thấy Giảng dạy/Lớp của tôi thay vào đó), trang chủ có mục "Bạn là giáo viên tiếng Trung?". Các trang trên kiểm tra không tràn ngang ở 360px.
 
 ## SV07 — Soạn bài theo mẫu
 
