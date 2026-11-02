@@ -332,7 +332,7 @@ test("practice assignments keep listen counts and the report flags weak listenin
   await expect(row).toContainText("Yếu phần nghe");
   await row.getByRole("link", { name: learner.name }).click();
   await expect(teacher.getByText("nghe trung bình 3.5 lần mỗi câu nghe")).toBeVisible();
-  await expect(teacher.getByText("; nghe 6 lần")).toBeVisible();
+  await expect(teacher.locator(".result-row-meta").filter({ hasText: "nghe 6 lần" })).toBeVisible();
   await teacher.context().close();
   await student.context().close();
 });

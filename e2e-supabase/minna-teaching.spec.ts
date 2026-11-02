@@ -194,6 +194,14 @@ test("a learner signs up, confirms the email, joins and completes the lesson 11 
   await page.waitForURL(/\/assignments\/[0-9a-f-]{36}\/results$/);
   await expect(page.locator(".result-score")).toContainText("100%");
   await expect(page.getByText("Đạt", { exact: true })).toBeVisible();
+  // The outcome filter narrows the review to wrong or right answers.
+  const filter = page.getByRole("navigation", { name: "Lọc câu theo kết quả" });
+  await expect(filter.getByRole("link", { name: "Sai 0" })).toBeVisible();
+  await filter.getByRole("link", { name: "Đúng 3" }).click();
+  await expect(page.getByText("Hiển thị 3 / 3 câu.")).toBeVisible();
+  await filter.getByRole("link", { name: "Sai 0" }).click();
+  await expect(page).toHaveURL(/outcome=wrong/);
+  await expect(page.getByText("Hiển thị 0 / 3 câu.")).toBeVisible();
 });
 
 test("the teacher sees the learner's result in the class report", async ({ browser }) => {
@@ -204,5 +212,18 @@ test("the teacher sees the learner's result in the class report", async ({ brows
   await expect(row).toContainText("1/1");
   await expect(row).toContainText("100%");
   await expect(row).toContainText("Đạt");
+  // The learner's page groups answers by assignment and filters them like the results page.
+  await row.getByRole("link", { name: learner.name }).click();
+  const assignment = page
+    .locator("details.student-assignment")
+    .filter({ hasText: ASSIGNMENT_TITLE });
+  await expect(assignment).toHaveAttribute("open", "");
+  await expect(assignment.locator("summary")).toContainText("0 sai / 3 câu");
+  await page
+    .getByRole("navigation", { name: "Lọc câu theo kết quả" })
+    .getByRole("link", { name: "Sai 0" })
+    .click();
+  await expect(page).toHaveURL(/outcome=wrong/);
+  await expect(page.locator(".student-assignment .result-row")).toHaveCount(0);
   await page.context().close();
 });

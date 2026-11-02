@@ -124,8 +124,7 @@
   font-size: 15px;
   color: var(--muted);
 }
-.history-day-chips,
-.history-filter {
+.history-day-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -133,8 +132,7 @@
   padding: 0;
   list-style: none;
 }
-.history-day-chip,
-.history-filter a {
+.history-day-chip {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--foreground);
@@ -142,8 +140,7 @@
   text-decoration: none;
   font-variant-numeric: tabular-nums;
 }
-.history-day-chip:hover,
-.history-filter a:hover {
+.history-day-chip:hover {
   border-color: var(--primary);
 }
 /* Two-line day tiles: five fit across a 360px screen. */
@@ -181,35 +178,11 @@
   font-size: 13px;
   text-align: center;
 }
-.history-day-score,
-.history-filter-count {
+.history-day-score {
   color: var(--muted);
 }
 .history-day-chip[aria-current="date"] .history-day-score {
   color: var(--foreground);
-}
-.history-filter {
-  margin-bottom: 12px;
-}
-.history-filter a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 40px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 15px;
-}
-.history-filter-count {
-  font-size: 13px;
-}
-.history-filter a[aria-current="true"] {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: var(--surface);
-}
-.history-filter a[aria-current="true"] .history-filter-count {
-  color: inherit;
 }
 
 .history-session > h3 {

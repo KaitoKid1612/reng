@@ -2,6 +2,13 @@ import Link from "next/link";
 
 import { MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
+import { OutcomeFilter } from "@/components/ui/outcome-filter";
+import {
+  countOutcomes,
+  matchesOutcome,
+  numberAnswers,
+  parseAnswerOutcome,
+} from "@/lib/answer-outcome";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
@@ -14,13 +21,18 @@ export const metadata: Metadata = { title: "Kết quả bài tập" };
 
 interface ResultsPageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ outcome?: string }>;
 }
 
-export default async function ResultsPage({ params }: ResultsPageProps) {
+export default async function ResultsPage({ params, searchParams }: ResultsPageProps) {
   const { id } = await params;
+  const outcome = parseAnswerOutcome((await searchParams).outcome);
   const account = await requireStudent(`/assignments/${id}/results`);
   const view = await loadOrNotFound(getStudentResults(account.id, id, new Date()));
   const { assignment, attempt } = view;
+  const visibleItems = numberAnswers(view.items).filter(({ item }) =>
+    matchesOutcome(item.isCorrect, outcome),
+  );
   const canRetry =
     assignment.status === "published" &&
     !view.hasOpenAttempt &&
@@ -77,11 +89,23 @@ export default async function ResultsPage({ params }: ResultsPageProps) {
           </div>
           <section className="section-block" aria-labelledby="answer-review">
             <h2 id="answer-review">Xem lại từng câu</h2>
-            {view.items.map((item, index) => (
+            <OutcomeFilter
+              path={`/assignments/${assignment.id}/results`}
+              outcome={outcome}
+              counts={countOutcomes(view.items)}
+            />
+            <p role="status" className="small muted">
+              Hiển thị {visibleItems.length} / {view.items.length} câu.
+            </p>
+            {visibleItems.map(({ item, number }) => (
               <div key={item.view.id} className="result-row" data-correct={item.isCorrect}>
-                <p className="small muted">
-                  Câu {index + 1}: {item.isCorrect ? "đúng" : "sai"}, {item.pointsEarned}/
-                  {item.view.points} điểm
+                <p className="result-row-meta">
+                  <span
+                    className={`status-badge ${item.isCorrect ? "status-correct" : "status-wrong"}`}
+                  >
+                    {item.isCorrect ? "Đúng" : "Sai"}
+                  </span>{" "}
+                  Câu {number} · {item.pointsEarned}/{item.view.points} điểm
                 </p>
                 <p lang="ja" className="question-prompt">
                   {item.view.prompt}

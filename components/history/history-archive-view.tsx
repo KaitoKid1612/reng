@@ -163,14 +163,14 @@ export function HistoryArchiveView({
       <section className="section-block" aria-labelledby="history-answers">
         <h2 id="history-answers">Câu đã giao và câu trả lời</h2>
         {/* Filters keep the scroll position: they sit directly above the answers they change. */}
-        <nav className="history-filter" aria-label="Lọc câu theo kết quả">
+        <nav className="filter-pills" aria-label="Lọc câu theo kết quả">
           <Link
             href={historyHref(id, selectedDate)}
             aria-current={outcome ? undefined : "true"}
             prefetch={false}
             scroll={false}
           >
-            Tất cả <span className="history-filter-count">{answers.length}</span>
+            Tất cả <span className="filter-pill-count">{answers.length}</span>
           </Link>
           {filterOutcomes.map((item) => (
             <Link
@@ -181,7 +181,7 @@ export function HistoryArchiveView({
               scroll={false}
             >
               {HISTORY_OUTCOME_LABELS[item]}{" "}
-              <span className="history-filter-count">{outcomeCounts[item]}</span>
+              <span className="filter-pill-count">{outcomeCounts[item]}</span>
             </Link>
           ))}
         </nav>

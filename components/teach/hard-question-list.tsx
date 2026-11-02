@@ -15,7 +15,7 @@ export function HardQuestionList({ groups }: HardQuestionListProps) {
       {groups.map((group, index) => (
         <details
           key={group.assignment.id}
-          className="result-row hard-question-group"
+          className="result-row collapse-card hard-question-group"
           data-correct="false"
           open={index === 0}
         >
