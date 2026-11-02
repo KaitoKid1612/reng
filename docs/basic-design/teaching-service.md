@@ -1,6 +1,6 @@
 # Basic Design — Dịch vụ hỗ trợ giảng dạy
 
-Bổ sung ôn N4 (02/11/2026): lớp tự học của Việt dùng ngân hàng 200 câu/40 từ, tiếp tục giao 40 câu/ngày. Phạm vi Minna 1–28, trọng tâm 27–28; chưa phải tổng ôn toàn bộ N4. Bộ 160 câu mới gồm kanji, biến đổi từ, ngữ pháp và đọc hiểu. Cron chọn câu đã có, không tự sinh nội dung AI. Thẻ từ vựng bắt đầu lịch ôn sau lần học/đánh giá đầu; câu sai vào lịch ôn sau nộp bài. Xem [kiểm chứng và phần bổ sung](../testing/n4-review-bank.md).
+Bổ sung ôn N4 (02/11/2026): theo lựa chọn mở rộng toàn bộ N4 của người học, lớp tự học của Việt ghim bộ **Tổng ôn N4 — Minna 1–50**, 200 câu/80 từ; mỗi ngày 40 câu, mỗi nhóm kanji/biến đổi từ/ngữ pháp/đọc hiểu 10 câu. Bộ Minna 1–28 (200 câu/40 từ) vẫn được giữ riêng, các bài đã giao giữ phiên bản nguồn cũ. Cron chọn câu đã có, không tự sinh nội dung AI. Thẻ từ vựng bắt đầu lịch ôn sau lần học/đánh giá đầu; câu sai vào lịch ôn sau nộp bài. Chưa có phần nghe. Xem [kiểm chứng và phần bổ sung](../testing/n4-review-bank.md).
 
 Ngày: 29/10/2026. Trạng thái: đang triển khai theo lát; tiến độ ghi ở [đối chiếu source](../source-alignment.md). Phạm vi theo yêu cầu người dùng: nhiều giáo viên, hỗ trợ mở rộng nhiều môn/ngôn ngữ, ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung), lớp học riêng, Google Meet bên ngoài, học liệu chia sẻ và chuyển bài scan.
 

@@ -1,6 +1,6 @@
 # Reng
 
-Ôn N4 (02/11/2026): ngân hàng lớp tự học của Việt có **200 câu và 40 từ vựng**, giao 40 câu/ngày trong phạm vi Minna 1–28, trọng tâm 27–28. Bài được chọn tự động từ ngân hàng, chưa tự sinh câu mới bằng AI; chưa bao phủ toàn bộ N4. Xem [nội dung bổ sung và kiểm chứng](docs/testing/n4-review-bank.md).
+Ôn N4 (02/11/2026): lớp tự học của Việt có bộ **Tổng ôn N4 — Minna 1–50** với **200 câu và 80 từ vựng**; bài hằng ngày từ 03/11 lấy 40 câu từ bộ này, mỗi nhóm kanji/biến đổi từ/ngữ pháp/đọc hiểu 10 câu. Bộ Minna 1–28 vẫn giữ riêng. Bài được chọn tự động từ ngân hàng, chưa tự sinh câu mới bằng AI; chưa có phần nghe. Xem [nội dung bổ sung và kiểm chứng](docs/testing/n4-review-bank.md).
 
 Tên sản phẩm là **Reng** (tiếng chuông vào lớp).
 
