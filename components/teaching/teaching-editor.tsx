@@ -89,7 +89,13 @@ export function TeachingEditor({
   visibility,
 }: TeachingEditorProps) {
   const [restored] = useState(() =>
-    restoreEditorDraft(lessonId, initialRevision, parseTeachingDraft),
+    restoreEditorDraft(
+      lessonId,
+      initialRevision,
+      parseTeachingDraft,
+      initialDraft,
+      (first, second) => toSnapshot(first) === toSnapshot(second),
+    ),
   );
   // A restored copy differs from the saved snapshot below, so it starts as unsaved work.
   const [draft, dispatch] = useReducer(teachingReducer, restored?.draft ?? initialDraft);
@@ -173,7 +179,8 @@ export function TeachingEditor({
       });
     } catch (error) {
       unstable_rethrow(error);
-      keepEditorDraft(lessonId, saved.revision, draft);
+      // The request may still have reached the server, so the backup remembers what was sent.
+      keepEditorDraft(lessonId, saved.revision, draft, draft);
       setStatus({ tone: "error", message: REQUEST_FAILED });
       return null;
     }

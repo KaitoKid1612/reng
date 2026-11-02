@@ -75,7 +75,7 @@ export function LessonEditor({
 }: LessonEditorProps) {
   const router = useRouter();
   const [restored] = useState(() =>
-    restoreEditorDraft(lessonId, initialRevision, parseLessonDraftState),
+    restoreEditorDraft(lessonId, initialRevision, parseLessonDraftState, initialDraft),
   );
   const [state, dispatch] = useReducer(
     editorReducer,
@@ -133,7 +133,7 @@ export function LessonEditor({
         outcome = await saveLessonDraftAction({ lessonId, revision: expectedRevision, draft });
       } catch (error) {
         unstable_rethrow(error);
-        handleRequestFailure();
+        handleRequestFailure(draft);
         return;
       }
       if (outcome.status === "saved") {
@@ -164,7 +164,7 @@ export function LessonEditor({
         outcome = await publishLessonAction({ lessonId, revision, draft });
       } catch (error) {
         unstable_rethrow(error);
-        handleRequestFailure();
+        handleRequestFailure(draft);
         return;
       }
       if (outcome.status === "published") {
@@ -224,8 +224,9 @@ export function LessonEditor({
     });
   }
 
-  function handleRequestFailure() {
-    keepEditorDraft(lessonId, revision, draft);
+  // The request may still have reached the server, so the backup remembers what was sent.
+  function handleRequestFailure(sent: LessonDraftState) {
+    keepEditorDraft(lessonId, revision, draft, sent);
     setStatus({ tone: "status-wrong", text: REQUEST_FAILED });
   }
 
