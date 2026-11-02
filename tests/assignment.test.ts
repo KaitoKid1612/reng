@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import {
+  answerLang,
   assignmentSettingsSchema,
+  classQuestionLang,
   compareDueUrgency,
   countBlankAnswers,
   describeCorrectAnswer,
@@ -244,4 +246,62 @@ test("drafts record listens only for listening questions within the recorded ran
   assert.throws(() => parseAttemptDraft(views, { answers: {}, listens: { l1: 101 } }));
   assert.throws(() => parseAttemptDraft(views, { answers: {}, listens: { l1: 1.5 } }));
   assert.deepEqual(parseAttemptDraft(views, { answers: {} }).listens, {});
+});
+
+test("shown answers keep the language they were typed in, not always Japanese", () => {
+  const chinese = toTestQuestions(
+    [
+      {
+        type: "fill",
+        prompt: "Viết chữ Hán của “cảm ơn”",
+        answer: ["谢谢"],
+        inputMode: "chinese",
+        kanjiStrict: false,
+        explain: "谢谢 xièxie.",
+        points: 1,
+      },
+      {
+        type: "fill",
+        prompt: "Viết pinyin của 老师",
+        answer: ["lǎoshī"],
+        inputMode: "pinyin",
+        kanjiStrict: false,
+        explain: "Thanh 3 rồi thanh 1.",
+        points: 1,
+      },
+      {
+        type: "choice",
+        prompt: "你好 nghĩa là gì?",
+        options: ["xin chào", "tạm biệt"],
+        answer: [0],
+        multiple: false,
+        explain: "你好 là lời chào.",
+        points: 1,
+      },
+    ],
+    "zh-Hans",
+  ).map(toQuestionView);
+  assert.deepEqual(
+    chinese.map((view) => [view.lang, answerLang(view)]),
+    [
+      ["vi", "zh"],
+      ["vi", "zh-Latn-pinyin"],
+      ["vi", "vi"],
+    ],
+  );
+  const japanese = [...questions, ...listeningQuestions].map(toQuestionView);
+  assert.deepEqual(japanese.map(answerLang), ["ja", "ja", "ja", "ja"]);
+  const meaning = parseAssignableQuestion({
+    id: "v1",
+    type: "fill",
+    prompt: "Nghĩa của でんわ",
+    answer: ["điện thoại"],
+    inputMode: "text",
+    kanjiStrict: false,
+    explain: "でんわ là điện thoại.",
+    points: 1,
+  });
+  assert.equal(answerLang(toQuestionView(meaning)), "vi");
+  assert.equal(classQuestionLang("ja-JP"), "ja");
+  assert.equal(classQuestionLang("zh-Hant"), "vi");
 });

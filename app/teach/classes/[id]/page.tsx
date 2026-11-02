@@ -10,6 +10,7 @@ import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
 import { buttonVariants } from "@/components/ui/button";
+import { classQuestionLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
@@ -268,7 +269,10 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
           xem lại cách giảng, không phải kết luận nguyên nhân.
         </p>
         {report.questionStats.length ? (
-          <HardQuestionList groups={report.questionStats} />
+          <HardQuestionList
+            groups={report.questionStats}
+            lang={classQuestionLang(classRow.language_tag)}
+          />
         ) : (
           <p className="muted">Chưa có câu nào bị sai từ 50% trở lên.</p>
         )}

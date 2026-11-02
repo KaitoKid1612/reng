@@ -9,6 +9,7 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
+import { answerLang } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
@@ -107,20 +108,21 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
                   </span>{" "}
                   Câu {number} · {item.pointsEarned}/{item.view.points} điểm
                 </p>
-                <p lang="ja" className="question-prompt">
+                <p lang={item.view.lang} className="question-prompt">
                   {item.view.prompt}
                 </p>
                 <p>
-                  Bạn trả lời: <strong lang="ja">{item.answerText || "(bỏ trống)"}</strong>
+                  Bạn trả lời:{" "}
+                  <strong lang={answerLang(item.view)}>{item.answerText || "(bỏ trống)"}</strong>
                 </p>
                 {!item.isCorrect && (
                   <p>
-                    Đáp án: <strong lang="ja">{item.correctText}</strong>
+                    Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
                   </p>
                 )}
                 {item.transcript !== null && (
                   <p className="transcript">
-                    Transcript: <span lang="ja">{item.transcript}</span> (bạn đã nghe{" "}
+                    Transcript: <span lang={item.view.lang}>{item.transcript}</span> (bạn đã nghe{" "}
                     {item.listenCount} lần)
                   </p>
                 )}

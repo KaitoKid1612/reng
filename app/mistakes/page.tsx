@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
+import { answerLang } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
 import { listMistakes } from "@/lib/server/reviews";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -49,16 +50,16 @@ export default async function MistakesPage() {
                 ? `, ôn lại lúc ${formatStudyDateTime(entry.due)}`
                 : ", đến hạn ôn"}
             </p>
-            <p lang="ja" className="question-prompt">
+            <p lang={entry.view.lang} className="question-prompt">
               {entry.view.prompt}
             </p>
             {entry.lastAnswerText && (
               <p>
-                Lần sai gần nhất: <span lang="ja">{entry.lastAnswerText}</span>
+                Lần sai gần nhất: <span lang={answerLang(entry.view)}>{entry.lastAnswerText}</span>
               </p>
             )}
             <p>
-              Đáp án: <strong lang="ja">{entry.correctText}</strong>
+              Đáp án: <strong lang={answerLang(entry.view)}>{entry.correctText}</strong>
             </p>
             <p className="muted">{entry.explain}</p>
           </article>
@@ -71,7 +72,7 @@ export default async function MistakesPage() {
             {resolved.map((entry) => (
               <li key={`${entry.assignmentId}:${entry.view.id}`}>
                 <div>
-                  <p lang="ja">{entry.view.prompt}</p>
+                  <p lang={entry.view.lang}>{entry.view.prompt}</p>
                   <p className="item-meta">{entry.assignmentTitle}</p>
                 </div>
                 <span className="status-badge status-correct">Đã giải quyết</span>

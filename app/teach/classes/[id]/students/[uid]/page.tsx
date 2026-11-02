@@ -9,6 +9,7 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
+import { answerLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
@@ -106,15 +107,18 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                       Câu {number}
                       {item.listenCount !== null && ` · nghe ${item.listenCount} lần`}
                     </p>
-                    <p lang="ja" className="result-row-prompt">
+                    <p lang={item.view.lang} className="result-row-prompt">
                       {item.view.prompt}
                     </p>
                     <p>
-                      Trả lời: <strong lang="ja">{item.answerText || "(bỏ trống)"}</strong>
+                      Trả lời:{" "}
+                      <strong lang={answerLang(item.view)}>
+                        {item.answerText || "(bỏ trống)"}
+                      </strong>
                     </p>
                     {!item.isCorrect && (
                       <p>
-                        Đáp án: <strong lang="ja">{item.correctText}</strong>
+                        Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
                       </p>
                     )}
                   </div>

@@ -1,3 +1,5 @@
+import type { QuestionLang } from "@/lib/assignment";
+
 interface HardQuestionGroup {
   assignment: { id: string; title: string };
   questions: { question_id: string; prompt: string; wrong_count: number; total_count: number }[];
@@ -5,11 +7,12 @@ interface HardQuestionGroup {
 
 interface HardQuestionListProps {
   groups: HardQuestionGroup[];
+  lang: QuestionLang;
 }
 
 // One collapsible group per assignment, newest first and open. With only a few learners nearly
 // every mistake passes the 50% mark, so listing every assignment at once buries the page.
-export function HardQuestionList({ groups }: HardQuestionListProps) {
+export function HardQuestionList({ groups, lang }: HardQuestionListProps) {
   return (
     <div className="hard-question-groups">
       {groups.map((group, index) => (
@@ -26,7 +29,7 @@ export function HardQuestionList({ groups }: HardQuestionListProps) {
           <ol className="hard-question-list">
             {group.questions.map((question) => (
               <li key={question.question_id}>
-                <span lang="ja">{question.prompt}</span>
+                <span lang={lang}>{question.prompt}</span>
                 <span className="hard-question-count">
                   {question.wrong_count}/{question.total_count}
                   <span className="visually-hidden"> học viên sai</span>

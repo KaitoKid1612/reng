@@ -2,6 +2,8 @@
 
 import { useLayoutEffect, useRef } from "react";
 
+import { INPUT_LANGS } from "@/lib/assignment";
+import { convertPinyinBeforeCaret } from "@/lib/pinyin-input";
 import {
   convertRomajiBeforeCaret,
   finalizeRomaji,
@@ -21,19 +23,11 @@ interface JapaneseInputProps {
   onValueChange: (value: string) => void;
 }
 
-const INPUT_LANGUAGES: Record<InputMode, string> = {
-  text: "vi",
-  chinese: "zh",
-  pinyin: "zh-Latn-pinyin",
-  hiragana: "ja",
-  katakana: "ja",
-  japanese: "ja",
-};
-
 const MODE_HINTS: Record<InputMode, string> = {
   text: "Nhập văn bản theo yêu cầu của đề; giữ dấu tiếng Việt. Không tự chuyển sang kana.",
   chinese: "Dùng bộ gõ tiếng Trung hoặc dán chữ Hán; giữ đúng giản thể/phồn thể theo bài.",
-  pinyin: "Nhập pinyin có dấu thanh theo yêu cầu, ví dụ nǐ hǎo.",
+  pinyin:
+    "Nhập pinyin có dấu thanh, ví dụ nǐ hǎo. Không có dấu trên bàn phím thì gõ số thanh sau mỗi âm: ni3 hao3 → nǐ hǎo, v thay cho ü (lv4 → lǜ).",
   hiragana: "Gõ romaji để ra hiragana, ví dụ ko → こ; ん giữa từ gõ nn (さんにん: sannnin).",
   katakana: "Gõ romaji để ra katakana, ví dụ ko → コ.",
   japanese: "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji.",
@@ -59,7 +53,16 @@ export function JapaneseInput({
   }, [value]);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    if (inputMode === "chinese" || inputMode === "pinyin" || inputMode === "text") {
+    if (inputMode === "pinyin") {
+      const converted = convertPinyinBeforeCaret(
+        event.target.value,
+        event.target.selectionEnd ?? event.target.value.length,
+      );
+      caretRef.current = converted.caret;
+      onValueChange(converted.value);
+      return;
+    }
+    if (inputMode === "chinese" || inputMode === "text") {
       onValueChange(event.target.value);
       return;
     }
@@ -94,7 +97,7 @@ export function JapaneseInput({
         ref={inputRef}
         id={id}
         type="text"
-        lang={INPUT_LANGUAGES[inputMode]}
+        lang={INPUT_LANGS[inputMode]}
         className="japanese-input"
         value={value}
         onChange={handleChange}

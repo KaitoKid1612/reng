@@ -168,6 +168,26 @@ export function questionLang(question: LessonQuestion): QuestionLang {
   return question.gradingProfile === "zh-exact-v1" ? "vi" : "ja";
 }
 
+// Lists that only know the class, such as the class report, follow the class language.
+export function classQuestionLang(languageTag: string): QuestionLang {
+  return languageTag === "ja-JP" ? "ja" : "vi";
+}
+
+// The language each input mode types, so typed answers shown later keep a matching font:
+// Vietnamese, pinyin and Chinese answers are not drawn with the Japanese font.
+export const INPUT_LANGS: Record<InputMode, string> = {
+  text: "vi",
+  chinese: "zh",
+  pinyin: "zh-Latn-pinyin",
+  hiragana: "ja",
+  katakana: "ja",
+  japanese: "ja",
+};
+
+export function answerLang(view: QuestionView) {
+  return "inputMode" in view ? INPUT_LANGS[view.inputMode] : view.lang;
+}
+
 export type QuestionView =
   | {
       id: string;
