@@ -193,6 +193,7 @@ export interface OwnedLesson {
   title: string;
   publishedVersionId: string | null;
   copyAttribution: string | null;
+  creationFingerprint: string | null;
   languageTag: ReturnType<typeof lessonLanguage>;
   versions: z.infer<typeof versionSummarySchema>[];
 }
@@ -203,7 +204,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     service
       .from("lessons")
       .select(
-        "id, title, order_no, published_version_id, copy_attribution, schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
+        "id, title, order_no, published_version_id, copy_attribution, creation_fingerprint, schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
       )
       .eq("owner_id", teacherId)
       .is("archived_at", null)
@@ -214,6 +215,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
       order_no: z.number().int(),
       published_version_id: z.uuid().nullable(),
       copy_attribution: z.string().nullable(),
+      creation_fingerprint: z.string().nullable(),
       schema_version: z.string().nullable(),
       language_tag: z.string().nullable(),
     }),
@@ -239,6 +241,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     title: lesson.title,
     publishedVersionId: lesson.published_version_id,
     copyAttribution: lesson.copy_attribution,
+    creationFingerprint: lesson.creation_fingerprint,
     languageTag: lessonLanguage(lesson.schema_version, lesson.language_tag),
     versions: versions.filter((version) => version.lesson_id === lesson.id),
   }));

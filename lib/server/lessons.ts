@@ -18,6 +18,7 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
+import { findStarterForLesson, summarizeLessonContent } from "@/lib/starter-lessons";
 import { parseVocabularyCsv } from "@/lib/vocab-csv";
 
 import type { LessonDraftState, PublishProblem } from "@/lib/lesson-draft";
@@ -37,10 +38,11 @@ const lessonRowSchema = z.object({
   draft_revision: z.number().int(),
   published_version_id: z.uuid().nullable(),
   updated_at: timestamp,
+  creation_fingerprint: z.string().nullable(),
 });
 
 const LESSON_COLUMNS =
-  "id, title, title_ja, summary, order_no, course_id, draft_content, draft_revision, published_version_id, updated_at, visibility";
+  "id, title, title_ja, summary, order_no, course_id, draft_content, draft_revision, published_version_id, updated_at, visibility, creation_fingerprint";
 
 export const lessonIdSchema = z
   .string()
@@ -70,16 +72,7 @@ async function loadOwnedRow(teacherId: string, lessonId: string) {
 }
 
 function toDraftState(row: z.infer<typeof lessonRowSchema>): LessonDraftState {
-  return parseLessonDraftState({
-    metadata: {
-      title: row.title,
-      titleJa: row.title_ja,
-      summary: row.summary,
-      order: row.order_no,
-      courseId: row.course_id,
-    },
-    content: row.draft_content,
-  });
+  return parseLessonDraftState({ metadata: metadataOf(row), content: row.draft_content });
 }
 
 export async function loadLessonEditor(teacherId: string, lessonId: string) {
@@ -106,7 +99,58 @@ export async function loadLessonEditor(teacherId: string, lessonId: string) {
     savedAt: row.updated_at,
     publishedVersionId: row.published_version_id,
     versions,
+    hasStarter: findStarterForLesson(row.creation_fingerprint) !== undefined,
   };
+}
+
+function metadataOf(row: z.infer<typeof lessonRowSchema>): LessonDraftState["metadata"] {
+  return {
+    title: row.title,
+    titleJa: row.title_ja,
+    summary: row.summary,
+    order: row.order_no,
+    courseId: row.course_id,
+  };
+}
+
+function requireStarter(row: z.infer<typeof lessonRowSchema>) {
+  const starter = findStarterForLesson(row.creation_fingerprint);
+  if (!starter) {
+    throw new ServiceError("not_found");
+  }
+  return starter;
+}
+
+export async function loadStarterRefresh(teacherId: string, lessonId: string) {
+  const row = await loadOwnedRow(teacherId, lessonId);
+  const starter = requireStarter(row);
+  let current: ReturnType<typeof summarizeLessonContent> | null = null;
+  try {
+    current = summarizeLessonContent(toDraftState(row).content);
+  } catch {
+    // An unreadable draft is exactly what a refresh replaces; there is just nothing to count.
+  }
+  return {
+    lessonId: row.id,
+    title: row.title,
+    revision: row.draft_revision,
+    starter,
+    current,
+    latest: summarizeLessonContent(starter.draft.content),
+  };
+}
+
+// The teacher's title, order and course stay; the content becomes the latest starter's. Published
+// versions, class pins and assignments keep their own snapshots.
+export async function replaceDraftWithStarter(
+  teacherId: string,
+  lessonId: string,
+  expectedRevision: number,
+) {
+  const row = await loadOwnedRow(teacherId, lessonId);
+  const starter = requireStarter(row);
+  const draft = parseIncomingDraft({ metadata: metadataOf(row), content: starter.draft.content });
+  return writeDraft(teacherId, lessonId, expectedRevision, draft);
 }
 
 export async function createLesson(

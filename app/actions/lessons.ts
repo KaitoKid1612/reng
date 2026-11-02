@@ -12,6 +12,7 @@ import {
   lessonIdSchema,
   loadLessonEditor,
   publishLessonDraft,
+  replaceDraftWithStarter,
   saveLessonDraft,
   setLessonVisibility,
 } from "@/lib/server/lessons";
@@ -98,6 +99,41 @@ export async function createStarterLessonAction(
     return { error: FAILURE };
   }
   redirect(`/teach/lessons/${lessonId}/edit`);
+}
+
+const refreshSchema = z.object({
+  lessonId: z.string().max(64),
+  revision: z.coerce.number().int().nonnegative(),
+});
+
+export async function refreshFromStarterAction(
+  _state: CreateLessonState,
+  formData: FormData,
+): Promise<CreateLessonState> {
+  const teacherId = await requireTeacherId();
+  const parsed = refreshSchema.safeParse({
+    lessonId: formData.get("lessonId"),
+    revision: formData.get("revision"),
+  });
+  if (!teacherId || !parsed.success) {
+    return { error: NOT_FOUND };
+  }
+  try {
+    const result = await replaceDraftWithStarter(
+      teacherId,
+      parsed.data.lessonId,
+      parsed.data.revision,
+    );
+    if (result.status === "conflict") {
+      return {
+        error:
+          "Bản nháp vừa được lưu ở nơi khác. Tải lại trang này để xem số liệu mới rồi thử lại.",
+      };
+    }
+  } catch (error) {
+    return { error: describeFailure(error) };
+  }
+  redirect(`/teach/lessons/${parsed.data.lessonId}/edit`);
 }
 
 const draftInputSchema = z.object({

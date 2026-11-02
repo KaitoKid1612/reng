@@ -45,3 +45,40 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
 export function findStarterLesson(id: string) {
   return STARTER_LESSONS.find((starter) => starter.id === id);
 }
+
+const STARTER_FINGERPRINT = "starter:";
+
+// A lesson made from a starter keeps the fingerprint of that copy request.
+export function findStarterForLesson(creationFingerprint: string | null) {
+  if (!creationFingerprint?.startsWith(STARTER_FINGERPRINT)) {
+    return undefined;
+  }
+  return findStarterLesson(creationFingerprint.slice(STARTER_FINGERPRINT.length));
+}
+
+interface LessonContentShape {
+  vocab: readonly { image?: string }[];
+  slides: readonly { type: string }[];
+  questions: readonly unknown[];
+}
+
+export interface LessonContentSummary {
+  slides: number;
+  questions: number;
+  pictures: number;
+}
+
+// Counts what a teacher compares before replacing a draft with the latest starter: pictures are
+// vocabulary pictures, title pictures and picture slides.
+export function summarizeLessonContent(content: LessonContentShape): LessonContentSummary {
+  const pictureSlides = content.slides.filter(
+    (slide) =>
+      slide.type === "image" ||
+      (slide.type === "title" && "image" in slide && Boolean(slide.image)),
+  ).length;
+  return {
+    slides: content.slides.length,
+    questions: content.questions.length,
+    pictures: content.vocab.filter((item) => Boolean(item.image)).length + pictureSlides,
+  };
+}

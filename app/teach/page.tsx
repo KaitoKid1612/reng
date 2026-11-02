@@ -10,6 +10,7 @@ import { TEACHING_LANGUAGE_LABELS, teachingLanguageLabel } from "@/lib/teaching-
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
+import { findStarterForLesson } from "@/lib/starter-lessons";
 
 import type { Metadata } from "next";
 
@@ -153,6 +154,9 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                   )}
                   {!lesson.copyAttribution && (
                     <Link href={`/teach/lessons/${lesson.id}/sharing`}>Chia sẻ</Link>
+                  )}
+                  {findStarterForLesson(lesson.creationFingerprint) && (
+                    <Link href={`/teach/lessons/${lesson.id}/starter`}>Cập nhật từ mẫu</Link>
                   )}
                   <LessonCopyForm
                     source={{ kind: "own", lessonId: lesson.id }}
