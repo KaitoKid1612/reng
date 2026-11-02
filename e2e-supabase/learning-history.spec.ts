@@ -61,10 +61,14 @@ test("teachers see own and pending learner history; learners gain only their own
     teacherPage.getByRole("heading", { name: "Lịch sử học tập", exact: true }),
   ).toBeVisible();
   await teacherPage.goto(`/history/${pending.data}`);
-  await teacherPage
-    .getByRole("button", { name: "Xác nhận và liên kết học viên", exact: true })
-    .click();
-  await expect(teacherPage.getByRole("status").filter({ hasText: "cần đăng ký" })).toBeVisible();
+  const checkAccount = teacherPage.getByRole("button", {
+    name: "Kiểm tra tài khoản học viên",
+    exact: true,
+  });
+  await checkAccount.click();
+  await expect(
+    teacherPage.getByRole("status").filter({ hasText: "Chưa có tài khoản nào đăng ký" }),
+  ).toBeVisible();
   await createConfirmedStudent(pendingEmail, password, "Học viên lịch sử");
   const learnerContext = await browser.newContext({ viewport: { width: 360, height: 780 } });
   const learnerPage = await learnerContext.newPage();
@@ -74,9 +78,17 @@ test("teachers see own and pending learner history; learners gain only their own
   ).toBeVisible();
   expect((await learnerPage.goto(`/history/${self.data}`))?.status()).toBe(404);
   expect((await learnerPage.goto(`/history/${pending.data}`))?.status()).toBe(404);
-  await teacherPage
-    .getByRole("button", { name: "Xác nhận và liên kết học viên", exact: true })
-    .click();
+  // The teacher sees which account registered the email before linking it.
+  await checkAccount.click();
+  await expect(teacherPage.getByText("Tên hiển thị: Học viên lịch sử")).toBeVisible();
+  const linkButton = teacherPage.getByRole("button", {
+    name: "Liên kết với tài khoản này",
+    exact: true,
+  });
+  await linkButton.click();
+  await expect(teacherPage.locator('input[name="archiveId"]')).toHaveCount(1);
+  await teacherPage.getByLabel("Tôi đã hỏi học viên và đây đúng là tài khoản của họ").check();
+  await linkButton.click();
   await expect(teacherPage.locator('input[name="archiveId"]')).toHaveCount(0);
   await learnerPage.goto("/history");
   await expect(
@@ -85,7 +97,7 @@ test("teachers see own and pending learner history; learners gain only their own
   await learnerPage.getByRole("link", { name: "Xem lịch sử", exact: true }).click();
   await expect(learnerPage.getByText("Điểm gốc: 0 / 100", { exact: true })).toBeVisible();
   await expect(
-    learnerPage.getByRole("button", { name: "Xác nhận và liên kết học viên", exact: true }),
+    learnerPage.getByRole("button", { name: "Kiểm tra tài khoản học viên", exact: true }),
   ).toHaveCount(0);
   await learnerPage.locator(".history-answer summary").click();
   await expect(

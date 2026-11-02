@@ -4,7 +4,12 @@ import { z } from "zod";
 
 import { historyArchiveSchema, historySessionSchema } from "@/lib/learning-history";
 import { createSessionClient } from "@/lib/supabase-session";
-import { selectOptional, selectRows } from "@/lib/server/supabase";
+import {
+  createServiceClient,
+  selectOptional,
+  selectRows,
+  ServiceError,
+} from "@/lib/server/supabase";
 
 const summarySchema = z.object({
   id: z.uuid(),
@@ -58,4 +63,63 @@ export async function loadLearningHistory(id: string) {
     }),
   );
   return archive;
+}
+
+export interface HistoryLinkCandidate {
+  id: string;
+  fullName: string;
+  createdAt: string;
+  lastSignInAt: string | null;
+}
+
+// Auth accounts are listed page by page; the pilot has far fewer than this many.
+const ACCOUNT_PAGE_SIZE = 1000;
+const MAX_ACCOUNT_PAGES = 10;
+
+// The account a link would attach: the one registered with the archive's expected email. Sign-up
+// does not confirm email ownership on production, so anyone who knew the address could have
+// registered it first; the teacher checks this account with the learner before linking.
+export async function findHistoryLinkCandidate(
+  teacherId: string,
+  archiveId: string,
+): Promise<HistoryLinkCandidate | null> {
+  const service = createServiceClient();
+  const archive = await selectOptional(
+    service
+      .from("learning_history_archives")
+      .select("learner_email, learner_id")
+      .eq("id", archiveId)
+      .eq("teacher_id", teacherId)
+      .maybeSingle(),
+    z.object({ learner_email: z.string(), learner_id: z.uuid().nullable() }),
+  );
+  if (!archive || archive.learner_id) {
+    throw new ServiceError("not_found");
+  }
+  for (let page = 1; page <= MAX_ACCOUNT_PAGES; page++) {
+    const { data, error } = await service.auth.admin.listUsers({
+      page,
+      perPage: ACCOUNT_PAGE_SIZE,
+    });
+    if (error) {
+      throw new ServiceError("database_error");
+    }
+    const user = data.users.find((item) => item.email?.toLowerCase() === archive.learner_email);
+    if (user) {
+      const profile = await selectOptional(
+        service.from("profiles").select("full_name").eq("id", user.id).maybeSingle(),
+        z.object({ full_name: z.string() }),
+      );
+      return {
+        id: user.id,
+        fullName: profile?.full_name ?? "",
+        createdAt: user.created_at,
+        lastSignInAt: user.last_sign_in_at ?? null,
+      };
+    }
+    if (data.users.length < ACCOUNT_PAGE_SIZE) {
+      return null;
+    }
+  }
+  return null;
 }

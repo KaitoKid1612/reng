@@ -8,7 +8,7 @@ Migration `202610300001_learning_history.sql` thêm `learning_history_archives`,
 
 Các trang đọc qua session client và RLS. Chỉ learner_id của người gọi hoặc teacher_id của người gọi có role teacher được SELECT; không cấp quyền ghi trực tiếp cho authenticated/anon. ID không hợp lệ hoặc ngoài quyền cùng trả 404. `/history` là đường dẫn riêng tư, không vào sitemap và bị chặn trong robots.
 
-RPC import/link chỉ service_role được EXECUTE, SECURITY DEFINER với search_path rỗng để kiểm tra tài khoản Auth mà không cấp quyền đọc auth.users rộng hơn. Server Action liên kết xác thực người gọi, kiểm tra role và truyền ID phiên hiện tại; RPC kiểm tra lại giáo viên sở hữu hồ sơ, email khớp và email đã xác nhận. Không gửi thư hoặc tạo tài khoản.
+RPC import/link chỉ service_role được EXECUTE, SECURITY DEFINER với search_path rỗng để kiểm tra tài khoản Auth mà không cấp quyền đọc auth.users rộng hơn. Server Action liên kết xác thực người gọi, kiểm tra role và truyền ID phiên hiện tại; RPC kiểm tra lại giáo viên sở hữu hồ sơ, email khớp và email đã xác nhận. Không gửi thư hoặc tạo tài khoản. Từ 02/11/2026 liên kết có hai bước: `findHistoryLinkCandidate` (`lib/server/learning-history.ts`, service role, chỉ hồ sơ của giáo viên gọi và chưa liên kết) tìm tài khoản Auth trùng email dự kiến và trả tên hiển thị, giờ đăng ký, lần đăng nhập gần nhất. Email không được trả ra giao diện. Lần bấm liên kết gửi kèm ID tài khoản đã xem và ô xác nhận; server tìm lại, khác ID thì không gọi RPC. Lý do: production tắt xác nhận email nên `email_confirmed_at` có ngay khi đăng ký, không chứng minh người đăng ký là học viên.
 
 ## Nhập và chạy lại
 

@@ -6,7 +6,7 @@ Ngày thiết kế: 30/10/2026. Phạm vi là chuyển một lần lịch sử b
 
 Một tài khoản có thể vừa dạy vừa ôn tập. Giáo viên xem lịch sử của mình và học viên được chỉ định; học viên chỉ xem lịch sử của mình. Giáo viên khác, quản trị viên không được chỉ định và khách không có quyền đọc. Khi mất quyền giáo viên, tài khoản vẫn xem lịch sử bản thân nhưng mất quyền xem học viên.
 
-Học viên chưa đăng ký được nhập ở trạng thái chờ. Chỉ giáo viên được chỉ định xem bản chờ. Học viên đăng ký và xác nhận email trước; giáo viên xác nhận đúng người rồi bấm **Xác nhận và liên kết học viên**. Đăng ký trùng email không tự cấp quyền xem lịch sử.
+Học viên chưa đăng ký được nhập ở trạng thái chờ. Chỉ giáo viên được chỉ định xem bản chờ. Học viên đăng ký đúng email đã chỉ định trước. Giáo viên bấm **Kiểm tra tài khoản học viên** để xem tài khoản sẽ được liên kết (tên hiển thị, giờ đăng ký, lần đăng nhập gần nhất), hỏi lại học viên, đánh dấu ô xác nhận rồi bấm **Liên kết với tài khoản này**. Bước này cần thiết vì production chưa bắt xác nhận email khi đăng ký: người biết email có thể đăng ký trước học viên. Đăng ký trùng email không tự cấp quyền xem lịch sử.
 
 ## Màn hình và cách dùng
 
