@@ -169,6 +169,12 @@ Ngân hàng ôn từ Google Sheet (30/10/2026): `lib/daily-sheet-import.ts` ki�
 
 Bài học mẫu 11 có 50 câu (14 câu gốc giữ mã q1101–q1114, thêm q1115–q1150) để đổi câu khoảng một tuần không trùng.
 
+### Trang theo dõi lớp với dữ liệu lớn — 02/11/2026
+
+Lớp ôn 60 câu/ngày có một học viên làm mục "Câu cả lớp sai nhiều" liệt kê mọi câu sai của mọi bài (mỗi câu sai của người duy nhất là 100%), dài hàng nghìn pixel. `components/teach/hard-question-list.tsx` hiện mỗi bài giao là một `<details>`, bài mới nhất mở sẵn, tiêu đề có số câu và dấu ▸/▾; mỗi câu một dòng lưới đề bài + "sai/đã nộp", phần "học viên sai" chỉ dành cho trình đọc màn hình. "Bài đã giao" hiện 5 bài mới nhất, bài cũ hơn trong `<details>` "Bài cũ hơn (N)". Không đổi RPC thống kê hay quy tắc 50%.
+
+Ô số câu luyện hằng ngày: `DAILY_PRACTICE_SIZES` thêm 20/30/40; `dailyPracticeSizeOptions` luôn thêm số câu đang dùng nếu ngoài danh sách (lớp ôn N4 đặt 40 câu lúc nhập), và action nhận mọi số nguyên 3–60 như ràng buộc database. React đặt lại form sau khi action xong, mà `<select>` chỉ nhận giá trị mặc định mới khi được tạo lại, nên ô số câu và ô ngôn ngữ ở cài đặt lớp có `key` theo giá trị đã lưu; trước đây sau khi Lưu ô quay về giá trị cũ, lần Lưu sau có thể tắt bài luyện.
+
 ## SEO cho trang công khai — đã triển khai
 
 `metadataBase` lấy từ `SITE_URL` (`lib/site.ts`), metadata gốc mô tả dịch vụ, Open Graph `vi_VN` và thẻ xác minh Search Console qua `GOOGLE_SITE_VERIFICATION`. `app/sitemap.ts` liệt kê trang công khai cố định và bài có visibility public (làm mới mỗi giờ, lỗi database vẫn trả trang cố định); `app/robots.ts` chặn `/admin`, `/teach`, `/classes`, `/assignments`, trang tài khoản, API và `/lessons/*/slide|presenter`. Trang bài dùng `generateMetadata` với canonical `/lessons/[id]` (bỏ `?version=`) và JSON-LD LearningResource; trang chủ có Organization/WebSite, `/for-teachers` có WebPage/FAQPage. Bài riêng tư không đọc được khi chưa đăng nhập nên không vào sitemap hay chỉ mục. Trang luyện kanji `/kanji/` cũng bị chặn chỉ mục như flashcard/luyện nghe.

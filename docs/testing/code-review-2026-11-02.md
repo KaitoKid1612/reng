@@ -25,6 +25,16 @@ Commit `5eef6ef` được giữ lại ở máy vì cần migration `202611020001
 | CR-46 | Thấp | Nhập Sheet: mã câu hôm nay được viết thường nhưng dòng lịch sử so trùng theo chữ gốc, nên `T-12` và `t-12` thành hai câu cùng mã | Chờ: sửa khi áp lại (cùng file) |
 | CR-47 | Thấp | (`5eef6ef`) Ngân hàng N4/N5 dùng mã bài cố định toàn hệ thống, giáo viên thứ hai hoặc lớp thứ hai không nhập được | Chờ: mã bài theo lớp khi áp lại |
 
+## Trang theo dõi lớp (người dùng báo cùng ngày)
+
+| Mã | Mức | Vấn đề | Trạng thái |
+|---|---|---|---|
+| CR-48 | Vừa | Form bài luyện hằng ngày: sau khi bấm Lưu, ô số câu quay về giá trị cũ (React đặt lại form, `<select>` không nhận mặc định mới); Lưu lần nữa có thể tắt bài luyện ngoài ý muốn. Ô ngôn ngữ ở cài đặt lớp cùng lỗi | **Đã sửa**: `key` theo giá trị đã lưu; E2E kiểm tra ô giữ 7 câu sau khi lưu |
+| CR-49 | Vừa | Số câu không nằm trong danh sách (lớp ôn N4 đặt 40 câu khi nhập) hiện thành "Tắt"; Lưu sẽ tắt bài luyện, còn action từ chối 40 | **Đã sửa**: thêm 20/30/40, luôn hiện số đang dùng, action nhận 3–60 |
+| CR-50 | Thấp | "Câu cả lớp sai nhiều" liệt kê mọi câu sai của mọi bài (lớp một học viên: 64 dòng, khoảng 4.400px, mỗi dòng lặp "1/1 học viên sai") | **Đã sửa**: mỗi bài một nhóm thu gọn, bài mới nhất mở; "Bài đã giao" gom bài cũ hơn |
+
+Dữ liệu dựng lại trên Supabase local (ngân hàng 200 câu, bài 11, 6 bài giao, một học viên sai khoảng 1/4): trang từ 7.620px còn 3.782px ở 1280px, mục câu sai từ 4.366px còn 606px; 360px không tràn ngang.
+
 ## Kiểm chứng phần đã sửa
 
 - `npm run check`: PASS, 145/145 test, gồm `tests/local-draft.test.ts` (khôi phục sau lần lưu mất phản hồi, bỏ bản cũ khi nơi khác đã lưu, đổi revision gốc thì quên bản đã gửi).

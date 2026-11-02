@@ -79,7 +79,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-daily",
     title: "Bài luyện hằng ngày",
     steps: [
-      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15 hoặc 60 câu rồi bấm Lưu.",
+      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15, 20, 30, 40 hoặc 60 câu rồi bấm Lưu.",
       "Khoảng 6:00 sáng mỗi ngày, Reng tự giao một bài từ bài học mới nhất của lớp, hạn 23:59 cùng ngày. Câu đổi mỗi ngày và ưu tiên câu học viên chưa gặp gần đây.",
       "Bấm Giao bài hôm nay ngay khi muốn có bài của hôm nay mà không chờ tới sáng mai.",
     ],
@@ -100,7 +100,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     title: "Theo dõi lớp",
     steps: [
       "Trang lớp cho thấy từng học viên đã nộp bao nhiêu bài, điểm trung bình, lần học gần nhất và nhãn cần chú ý.",
-      "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại; bấm tên học viên để xem chi tiết, bấm Xuất CSV để lưu điểm.",
+      "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại: mỗi bài giao là một nhóm, bài mới nhất mở sẵn, bấm tên bài để xem các bài trước; số bên phải là số học viên sai trên số học viên đã nộp. Mục Bài đã giao hiện 5 bài mới nhất, bài cũ hơn nằm trong Bài cũ hơn. Bấm tên học viên để xem chi tiết, bấm Xuất CSV để lưu điểm.",
       "Bấm Chia sẻ ở một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép; ghi chú riêng và dữ liệu lớp không đi kèm.",
     ],
   },
