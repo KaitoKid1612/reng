@@ -1,14 +1,21 @@
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { ClassSessionForm } from "@/components/teach/class-session-form";
+import { ClassSessionList } from "@/components/teach/class-session-list";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
 import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
 import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
+import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
 import { buttonVariants } from "@/components/ui/button";
 import { LEARNER_LABELS } from "@/lib/class-report";
+import { slidePresenterPath } from "@/lib/class-sessions";
+import { toVietnamDate } from "@/lib/daily-practice";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
+import { listClassSessions } from "@/lib/server/class-sessions";
+import { findDailyPracticeSource } from "@/lib/server/daily-practice";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getClassReport } from "@/lib/server/reports";
 import { absoluteUrl } from "@/lib/site";
@@ -56,9 +63,21 @@ function AssignmentResultLine({ result }: AssignmentResultLineProps) {
 export default async function ClassReportPage({ params }: ClassReportPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/classes/${id}`);
-  const report = await loadOrNotFound(getClassReport(account.id, id, new Date()));
+  const now = new Date();
+  const report = await loadOrNotFound(getClassReport(account.id, id, now));
   const { classRow, summary, week } = report;
-  const joinCodeControls = (
+  const [sessions, dailySource] = await Promise.all([
+    classRow.self_study ? [] : listClassSessions(classRow.id),
+    findDailyPracticeSource(classRow.id, classRow.daily_practice_lesson_id, now),
+  ]);
+  const lessonTitle = (lessonId: string) =>
+    report.lessons.find((lesson) => lesson.lessonId === lessonId)?.title ?? null;
+  const openLessons = report.lessons
+    .filter((lesson) => new Date(lesson.availableAt) <= now)
+    .sort((first, second) => second.availableAt.localeCompare(first.availableAt));
+  const latestSession = sessions[0];
+  // A self-study class takes no codes, so it has no join controls.
+  const joinCodeControls = classRow.self_study ? null : (
     <JoinCodeControls
       classId={classRow.id}
       joinCode={classRow.join_code}
@@ -77,6 +96,34 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
             <Link href="/teach">Giảng dạy</Link>, điểm đạt của lớp {classRow.pass_score}%
             {classRow.active ? "" : ", lớp đã lưu trữ"}
           </p>
+          {classRow.self_study && (
+            <p>
+              Lớp tự học: bạn là học viên duy nhất. Làm bài ở{" "}
+              <Link href={`/classes/${classRow.id}`}>trang lớp dành cho học viên</Link>.
+            </p>
+          )}
+          {latestSession && (
+            <p className="small">
+              Buổi gần nhất {formatStudyDay(latestSession.taughtOn)}
+              {latestSession.lesson ? `: ${latestSession.lesson.title}` : ""}
+              {latestSession.slideReached ? `, đến slide ${latestSession.slideReached}` : ""}
+              {latestSession.lesson && latestSession.slideReached && (
+                <>
+                  {" "}
+                  ·{" "}
+                  <Link
+                    href={slidePresenterPath(
+                      latestSession.lesson.id,
+                      latestSession.lesson.versionId,
+                      latestSession.slideReached,
+                    )}
+                  >
+                    Mở slide {latestSession.slideReached}
+                  </Link>
+                </>
+              )}
+            </p>
+          )}
         </div>
         <div className="button-row">
           <Link href={`/teach/classes/${classRow.id}/assign`} className={buttonVariants()}>
@@ -205,14 +252,41 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       <section className="section-block" aria-labelledby="daily-practice-title">
         <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
         <p className="small muted">
-          Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở
-          có câu chọn/điền (bài mới chỉ có slide thì lấy bài trước đó): hạn 23:59 cùng ngày (nộp
-          muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên
-          câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay). Mỗi dạng câu giữ tỉ lệ như trong
-          bài: dạng theo tag của câu (ví dụ ngữ pháp, từ vựng, kanji) và loại câu chọn/điền. Câu sai
-          vào sổ lỗi và lịch ôn tập của học viên.
+          Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập lấy câu từ bài bạn chọn, ví
+          dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới nhất đã mở có câu chọn/điền. Hạn
+          23:59 cùng ngày (nộp muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi nộp. Câu
+          đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay). Mỗi dạng
+          câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ pháp, từ vựng, kanji) và
+          loại câu chọn/điền. Câu sai vào sổ lỗi và lịch ôn tập của học viên.
         </p>
-        <DailyPracticeForm classId={classRow.id} size={classRow.daily_practice_size} />
+        <DailyPracticeStatus
+          size={classRow.daily_practice_size}
+          pinnedLessonId={classRow.daily_practice_lesson_id}
+          pinnedTitle={
+            classRow.daily_practice_lesson_id
+              ? lessonTitle(classRow.daily_practice_lesson_id)
+              : null
+          }
+          source={
+            dailySource.status === "found"
+              ? {
+                  lessonId: dailySource.lessonId,
+                  title: lessonTitle(dailySource.lessonId) ?? dailySource.lessonId,
+                  questionCount: dailySource.questions.length,
+                }
+              : null
+          }
+        />
+        <DailyPracticeForm
+          classId={classRow.id}
+          size={classRow.daily_practice_size}
+          lessonId={classRow.daily_practice_lesson_id}
+          lessons={report.lessons.map((lesson) => ({
+            lessonId: lesson.lessonId,
+            title: lesson.title,
+            isOpen: new Date(lesson.availableAt) <= now,
+          }))}
+        />
       </section>
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>
@@ -247,6 +321,21 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
           </p>
         )}
       </section>
+      {!classRow.self_study && (
+        <section className="section-block" aria-labelledby="class-sessions">
+          <h2 id="class-sessions">Nhật ký buổi dạy</h2>
+          <ClassSessionForm
+            classId={classRow.id}
+            today={toVietnamDate(now)}
+            lessons={report.lessons.map((lesson) => ({
+              lessonId: lesson.lessonId,
+              title: lesson.title,
+            }))}
+            defaultLessonId={latestSession?.lesson?.id ?? openLessons[0]?.lessonId ?? ""}
+          />
+          <ClassSessionList classId={classRow.id} sessions={sessions} />
+        </section>
+      )}
       <section className="section-block" aria-labelledby="class-content">
         <h2 id="class-content">Nội dung lớp</h2>
         <p className="small">

@@ -58,8 +58,12 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                     <Link href={`/teach/classes/${item.id}`}>{item.name}</Link>
                   </h3>
                   <p className="item-meta">
-                    {teachingLanguageLabel(item.language_tag)}, {item.memberCount} học viên
-                    {item.join_enabled ? `, mã ${formatJoinCode(item.join_code)}` : ", ngừng nhận"}
+                    {teachingLanguageLabel(item.language_tag)},{" "}
+                    {item.self_study ? "lớp tự học của bạn" : `${item.memberCount} học viên`}
+                    {!item.self_study &&
+                      (item.join_enabled
+                        ? `, mã ${formatJoinCode(item.join_code)}`
+                        : ", ngừng nhận")}
                     {item.active ? "" : ", đã lưu trữ"}
                   </p>
                 </div>

@@ -65,8 +65,9 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | SV08 | `/admin`, `/admin/teachers`, `/admin/activity` | Quản trị: tổng quan, duyệt/tạm dừng giáo viên, hạn thuê, cài đặt duyệt, nhật ký |
 | SV09 | `/for-teachers` | Trang giới thiệu công khai cho giáo viên, tối ưu SEO |
 | SV10 | `/guide` | Hướng dẫn sử dụng công khai cho giáo viên, học viên và quản trị viên; link ở thanh đầu trang, chân trang, trang Giảng dạy và Lớp của tôi |
+| SV11 | `/teach/lessons/[id]/starter` | So sánh bản nháp với bài mẫu mới nhất và thay nội dung nháp bằng mẫu |
 
-SV01–SV05, SV08, SV09 và SV10 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
+SV01–SV05, SV08–SV11 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
 
 ## Ngôn ngữ và chấm điểm
 
@@ -111,9 +112,26 @@ Cập nhật 29/10/2026 theo yêu cầu người dùng: pilot ưu tiên dạy ti
 2. Ở `/teach/lessons/new`, giáo viên tạo bài 11 từ bài mẫu tự biên soạn, kiểm tra/sửa trong editor rồi xuất bản; bài vẫn riêng tư cho lớp. Bài sau dùng bản sao hoặc soạn mới.
 3. Tạo lớp (mặc định tiếng Nhật), gắn phiên bản bài, giao luyện tập. Trong buổi Meet, giáo viên chiếu slide theo nhịp Minna: từ vựng → bảng đếm → mẫu câu → ví dụ → luyện thay thế (ẩn câu mẫu, bấm hiện từng hàng) → câu hỏi → hội thoại (ẩn nghĩa từng lượt); presenter giữ ghi chú riêng.
 4. Học viên tự đăng ký, xác minh email, vào lớp bằng mã; đọc bài có furigana, hội thoại, bảng; ôn bằng slide/flashcard; làm bài, xem điểm và giải thích; giáo viên xem báo cáo lớp.
-5. Bài luyện hằng ngày (tùy chọn theo lớp): giáo viên chọn 5/7/10/15/60 câu (60 câu cho lớp ôn theo ngân hàng nhập từ Google Sheet); mỗi sáng từ 6:00 giờ Việt Nam (cron Hobby có thể lệch trong vòng 1 giờ) Reng tự giao một bài luyện tập từ bài học mới nhất đã mở có câu chọn/điền (bài mới chỉ có slide thì lấy bài trước đó), hạn 23:59 cùng ngày, nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện trong 14 ngày gần nhất; câu sai vào sổ lỗi và lịch ôn tập như bài thường. Nút "Giao bài hôm nay ngay" tạo bài của ngày khi cần; mỗi lớp chỉ có một bài cho mỗi ngày. Báo cáo chỉ tính bài được giao sau khi học viên vào lớp.
+5. Bài luyện hằng ngày (tùy chọn theo lớp): giáo viên chọn 5/7/10/15/60 câu (60 câu cho lớp ôn theo ngân hàng nhập từ Google Sheet) và bài nguồn ở ô "Lấy câu từ". Mỗi sáng từ 6:00 giờ Việt Nam (cron Hobby có thể lệch trong vòng 1 giờ) Reng tự giao một bài luyện tập lấy câu từ bài nguồn đã chọn, ví dụ ngân hàng ôn; thêm bài mới vào lớp không đổi nguồn này. Để "Tự động" thì lấy bài mới nhất đã mở có câu chọn/điền (bài mới chỉ có slide thì lấy bài trước đó); bài đã chọn chưa mở hoặc không có câu chọn/điền thì tạm dùng quy tắc tự động và trang lớp báo rõ. Trang lớp hiện bài đang dùng và số câu, cảnh báo khi bài nguồn có ít câu hơn số câu mỗi ngày (khi đó ngày nào học viên cũng gặp lại toàn bộ câu). Hạn 23:59 cùng ngày, nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện trong 14 ngày gần nhất; câu sai vào sổ lỗi và lịch ôn tập như bài thường. Nút "Giao bài hôm nay ngay" tạo bài của ngày khi cần; mỗi lớp chỉ có một bài cho mỗi ngày. Báo cáo chỉ tính bài được giao sau khi học viên vào lớp.
 
 Nội dung mẫu không sao chép văn bản, tranh hay audio của sách; chỉ đi theo chủ điểm và trình tự bài. Chi tiết thao tác ở [biên soạn](../content-authoring.md), kết quả kiểm thử ở [nghiệm thu](../testing/teaching-service.md).
+
+## Luồng 7 — Vừa dạy vừa học: lớp tự học, nhật ký buổi dạy và cập nhật bài mẫu (02/11/2026)
+
+Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, vừa tự ôn JLPT N4. Nguyên tắc: **một tài khoản, tách vai bằng lớp**. Tư cách học đến từ việc là thành viên lớp; quyền dạy đến từ việc sở hữu lớp. Không cần tài khoản thứ hai, lịch sử học tập không bị chia đôi.
+
+| Lớp | Vai của giáo viên | Thành viên | Báo cáo |
+|---|---|---|---|
+| Lớp dạy (mặc định) | Chủ lớp, không bao giờ là học viên | Học viên vào bằng mã/link | Chỉ tính học viên; chủ lớp không chiếm chỗ, không vào điểm trung bình, CSV hay thống kê câu sai |
+| Lớp tự học | Chủ lớp kiêm học viên duy nhất | Chỉ chủ lớp, tự thêm khi tạo lớp | Là kết quả của chính giáo viên |
+
+1. **Lớp tự học.** Ở `/teach/classes`, chọn "Lớp tự học của tôi" khi tạo lớp. Lớp có một chỗ, không có mã mời hay link mời; ai khác nhập mã cũ cũng chỉ thấy "mã không đúng". Bài giao và bài luyện hằng ngày của lớp đến chính giáo viên ở Lớp của tôi; câu sai vào sổ lỗi và lịch ôn của giáo viên như học viên thường. Trang Giảng dạy ghi "lớp tự học của bạn"; email tóm tắt lớp bỏ qua lớp tự học.
+2. **Không tự vào lớp mình dạy (CR-20).** Nhập mã lớp mình đang dạy trả thông báo hướng dẫn tạo lớp tự học. Tài khoản đã lỡ vào lớp mình trước khi có kiểm tra này vẫn giữ lượt làm cũ, nhưng không được tính trong danh sách học viên, sức chứa, điểm, CSV hay câu sai nhiều.
+3. **Nguồn bài luyện hằng ngày** cố định theo lựa chọn của giáo viên (xem Luồng 6 bước 5), để dạy bài mới không làm mất bộ ôn tập.
+4. **Nhật ký buổi dạy** ở trang theo dõi lớp dạy: ngày dạy (không sau hôm nay), bài trong lớp, dạy đến slide số, ghi chú riêng tối đa 2.000 ký tự. Nhật ký giữ đúng phiên bản bài lớp đang dùng lúc ghi, nên "Mở slide N" mở lại đúng slide kể cả khi lớp đã chuyển phiên bản. Đầu trang lớp hiện buổi gần nhất kèm link mở lại slide. Học viên không thấy nhật ký; lớp tự học không có mục này. Hiện 12 buổi gần nhất, xóa được từng buổi ghi nhầm.
+5. **Cập nhật bài từ mẫu.** Bài tạo từ mẫu Minna có link "Cập nhật từ mẫu" ở trang Giảng dạy và editor. Trang này so sánh số slide, câu hỏi và hình của bản nháp với mẫu mới nhất. Sau khi giáo viên xác nhận, nội dung nháp được thay bằng mẫu; tên, thứ tự và khóa học giữ nguyên. Chỉnh sửa riêng trong nháp sẽ mất; phiên bản đã xuất bản, lớp đang dùng và bài đã giao không đổi. Muốn học viên thấy bản mới, giáo viên xuất bản rồi chọn phiên bản mới cho lớp.
+
+Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
 ## Ma trận quyền sản phẩm và vòng đời
 
@@ -121,7 +139,7 @@ Nội dung mẫu không sao chép văn bản, tranh hay audio của sách; chỉ
 |---|---|---|
 | Khách | Chỉ bản public đã xuất bản, không có nháp/notes/test | Không vào danh sách lớp riêng hoặc đọc thông tin học sinh |
 | Học sinh đang học | Phiên bản lớp được cấp quyền và đã mở, câu luyện đúng policy | Làm/nộp/xem kết quả của mình; không đọc email/bài nộp người khác |
-| Chủ lớp/chủ bài | Soạn và xuất bản bài mình; chia sẻ version có quyền dùng | Quản lý lớp mình, gắn bài mình sở hữu, theo dõi/chấm theo chức năng đã hỗ trợ |
+| Chủ lớp/chủ bài | Soạn và xuất bản bài mình; chia sẻ version có quyền dùng | Quản lý lớp mình, gắn bài mình sở hữu, theo dõi/chấm theo chức năng đã hỗ trợ, ghi nhật ký buổi dạy riêng; không là học viên của lớp mình dạy, chỉ học trong lớp tự học của mình hoặc lớp của giáo viên khác |
 | Giáo viên được share view | Đọc đúng version đã lọc, không notes/test/draft; chưa gắn vào lớp mình | Không có quyền nào trên học sinh/lớp nguồn |
 | Giáo viên được share copy | Tạo draft thuộc mình, giữ nguồn/quyền media, duyệt rồi xuất bản riêng | Giao bản đã copy cho lớp mình, không truy cập lớp gốc |
 | Quản trị viên nền tảng | Không đọc nháp, ghi chú riêng hay bài riêng của giáo viên; xem nhật ký thao tác | Duyệt/tạm dừng giáo viên, ghi hạn thuê, xem số liệu tổng hợp (số lớp, học viên, bài nộp); không đọc bài nộp hay email học viên. Quyền cấp bằng SQL, tài khoản giáo viên không tự có |

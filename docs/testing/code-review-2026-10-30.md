@@ -21,13 +21,14 @@ Quy ước mức: **Cao** = mất dữ liệu người dùng hoặc lỗ hổng 
 | CR-07 | Vừa | Bài sao chép từ chia sẻ của giáo viên khác vẫn đặt Công khai được (đăng lại nội dung và đáp án) | Server chặn với `reshare_not_allowed` | `70fc48a` |
 | CR-08 | Thấp | `/join-class?code=A&code=B` lỗi 500 | Chỉ nhận một giá trị `code` | `9f83e71` |
 
+| CR-20 | Vừa | Giáo viên nhập mã lớp của chính mình thì thành học viên của lớp: chiếm chỗ, hiện trong báo cáo/CSV, kéo lệch điểm trung bình và thống kê câu sai | Chốt 02/11/2026: chặn chủ lớp vào lớp mình dạy (`own_class`), thêm lớp tự học cho giáo viên tự luyện; chủ lớp đã lỡ vào trước đó không tính vào chỗ, báo cáo, CSV, câu sai nhiều. Migration `202611020002`, xem [kiểm chứng](teach-and-learn.md) | 02/11/2026 |
+
 Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao chép, đặt ở đầu trang lớp khi lớp chưa có học viên (`3e8ee50`); trang chủ và hướng dẫn không còn bắt buộc bước xác nhận email vì production đang tắt bước này (`01d357c`).
 
 ## Còn mở
 
 | Mã | Mức | Vấn đề | Lý do chưa sửa / điều kiện đóng |
 | --- | --- | --- | --- |
-| CR-20 | Vừa | Giáo viên nhập mã lớp của chính mình thì thành học viên của lớp: chiếm chỗ, hiện trong báo cáo/CSV, kéo lệch điểm trung bình và thống kê câu sai | Cần chủ sản phẩm chọn: chặn hẳn, hay cho tự luyện nhưng loại khỏi báo cáo (thống kê câu sai tính bằng RPC nên cần migration) |
 | CR-21 | Vừa | Bài tiếng Trung (v2) cấp lại ID nhỏ nhất còn trống sau khi xóa: thẻ ôn của từ cũ gắn sang từ mới, slide sinh tự động trỏ nhầm | Đổi sang ID ngẫu nhiên như v1; cần sửa test và `scripts/seed-demo.ts` đang dựa vào `vocab-1` |
 | CR-22 | Vừa | Hàng ôn lấy 200 thẻ đến hạn rồi mới bỏ thẻ không mở được (lớp/bài đã lưu trữ): khi có từ 200 thẻ như vậy, trang ôn báo hết thẻ sai | Lọc trong truy vấn hoặc phân trang; chưa xảy ra với dữ liệu hiện tại |
 | CR-23 | Vừa | Flashcard từ trang lớp không mang phiên bản lớp ghim (đã ghi trong [quản lý Nhật–Trung](teaching-management.md)) | Thiết kế thống nhất đọc thẻ và lịch ôn theo phiên bản |

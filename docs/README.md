@@ -10,6 +10,8 @@ Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết q
 
 Lịch sử bài tập từ Sheets: [Basic Design](basic-design/learning-history.md), [Detail Design và lệnh nhập](detail-design/learning-history.md), [kiểm chứng và trạng thái triển khai](testing/learning-history.md). Một tài khoản vừa dạy vừa học; hồ sơ học viên chờ đăng ký cần giáo viên xác nhận liên kết.
 
+Vừa dạy vừa học (02/11/2026): lớp tự học, chặn chủ lớp tự vào lớp dạy (CR-20), chọn nguồn bài luyện hằng ngày, nhật ký buổi dạy và cập nhật bài từ mẫu — [BD Luồng 7](basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026), [DD](detail-design/teaching-service.md#vừa-dạy-vừa-học--đã-triển-khai-02112026), [kiểm chứng](testing/teach-and-learn.md).
+
 Mức đáp ứng 22 yêu cầu dịch vụ và tiến độ theo lát: [đối chiếu source](source-alignment.md) (23% lúc audit, khoảng 70% sau các lát đã triển khai; không phải test coverage). Chuẩn bị POC 10 giáo viên: [công cụ, chi phí và các bước dựng](poc-setup.md).
 
 Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt đầu bài dễ, nhập bảng → dựng slide → tạo câu luyện → giao lớp. Xem [biên soạn nội dung](content-authoring.md); đã có bản local của wizard 5 bước.

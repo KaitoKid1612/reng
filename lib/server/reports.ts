@@ -17,7 +17,7 @@ import {
   listUserAttempts,
   loadAttemptResultItems,
 } from "@/lib/server/assignments";
-import { getTeacherClass, listClassLessons } from "@/lib/server/classes";
+import { countsAsLearner, getTeacherClass, listClassLessons } from "@/lib/server/classes";
 import { callRpc, createServiceClient, selectRows, ServiceError } from "@/lib/server/supabase";
 import { latestStudyDay } from "@/lib/study-days";
 
@@ -127,7 +127,7 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
   ]);
   const assignmentIds = assignments.map((assignment) => assignment.id);
   const service = createServiceClient();
-  const [submitted, open] = assignmentIds.length
+  const [submitted, inProgress] = assignmentIds.length
     ? await Promise.all([
         selectRows(
           service
@@ -140,25 +140,29 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
         selectRows(
           service
             .from("submissions")
-            .select("assignment_id")
+            .select("assignment_id, user_id")
             .in("assignment_id", assignmentIds)
             .eq("status", "in_progress"),
-          z.object({ assignment_id: z.uuid() }),
+          z.object({ assignment_id: z.uuid(), user_id: z.uuid() }),
         ),
       ])
     : [[], []];
+  const isLearner = (userId: string) => countsAsLearner(classRow, userId);
+  const open = inProgress.filter((row) => isLearner(row.user_id));
   const latest = selectLatestSubmissions(
-    submitted.map((row) => ({
-      assignmentId: row.assignment_id,
-      userId: row.user_id,
-      attemptNo: row.attempt_no,
-      score: row.score,
-      maxScore: row.max_score,
-      submittedAt: row.submitted_at,
-    })),
+    submitted
+      .filter((row) => isLearner(row.user_id))
+      .map((row) => ({
+        assignmentId: row.assignment_id,
+        userId: row.user_id,
+        attemptNo: row.attempt_no,
+        score: row.score,
+        maxScore: row.max_score,
+        submittedAt: row.submitted_at,
+      })),
   );
   const members: ReportMember[] = roster
-    .filter((row) => row.left_at === null)
+    .filter((row) => row.left_at === null && isLearner(row.user_id))
     .map((row) => ({
       userId: row.user_id,
       fullName: row.full_name,
@@ -209,7 +213,8 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
     summary: summarizeClass(reports),
     week: summarizeWeekSubmissions(reportAssignments, reports, now),
     questionStats: questionStats.filter((entry) => entry.questions.length > 0),
-    formerMemberCount: roster.length - members.length,
+    formerMemberCount: roster.filter((row) => row.left_at !== null && isLearner(row.user_id))
+      .length,
   };
 }
 
