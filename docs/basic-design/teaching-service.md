@@ -133,6 +133,14 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Danh sách câu trả lời và thanh điều hướng — 02/11/2026
+
+Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
+
+- Trang kết quả của học viên và trang chi tiết học viên của giáo viên có bộ lọc **Tất cả / Sai / Đúng** kèm số câu; số thứ tự câu giữ theo bài. Bộ lọc là đường dẫn (`?outcome=wrong|correct`), tải lại hay gửi link vẫn giữ.
+- Trang chi tiết học viên gom mỗi bài giao thành một nhóm thu gọn (tiêu đề có "N sai / M câu" hoặc "chưa nộp"); không lọc thì chỉ mở bài mới nhất đã nộp, khi lọc thì mở mọi bài có câu khớp. Mỗi câu hiện nhãn Đúng/Sai, đề, câu trả lời và đáp án trên các dòng riêng.
+- Thanh điều hướng không bẻ đôi tên mục; khi không đủ chỗ, cả mục xuống hàng.
+
 ## Ma trận quyền sản phẩm và vòng đời
 
 | Người dùng | Học liệu | Lớp và kết quả |

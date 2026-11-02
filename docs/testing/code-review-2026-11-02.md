@@ -35,9 +35,19 @@ Commit `5eef6ef` được giữ lại ở máy vì cần migration `202611020001
 
 Dữ liệu dựng lại trên Supabase local (ngân hàng 200 câu, bài 11, 6 bài giao, một học viên sai khoảng 1/4): trang từ 7.620px còn 3.782px ở 1280px, mục câu sai từ 4.366px còn 606px; 360px không tràn ngang.
 
+Sau phản hồi tiếp theo (chữ sát nhau, cần lọc đúng/sai):
+
+| Mã | Mức | Vấn đề | Trạng thái |
+|---|---|---|---|
+| CR-51 | Thấp | Thanh điều hướng có 10–11 mục: ở 1280px mỗi mục bị bẻ thành hai dòng sát nhau, ở điện thoại các mục dồn sát nhau với khoảng cách không đều | **Đã sửa**: không bẻ tên mục, cả mục xuống hàng, khoảng cách đều |
+| CR-52 | Vừa | Trang chi tiết học viên in mọi câu của mọi bài (khoảng 37.000px với 6 bài), câu trả lời và đáp án dính một dòng | **Đã sửa**: nhóm theo bài thu gọn, bộ lọc Sai/Đúng cho mọi bài, câu trả lời và đáp án tách dòng |
+| CR-53 | Thấp | Trang kết quả 60 câu không có cách xem riêng câu sai; dòng trong thẻ câu cách nhau 6px | **Đã sửa**: bộ lọc Tất cả/Sai/Đúng có số câu, thẻ giãn dòng, nhãn Đúng/Sai |
+| CR-54 | Thấp | Đầu trình soạn bài có mã bài `lesson-` + 32 ký tự liền; ở 360px dòng này rộng hơn khung tùy ký tự của mã ngẫu nhiên, nên E2E "editor fits 360px" lúc đạt lúc hỏng | **Đã sửa**: tiêu đề và dòng phụ của đầu trang được ngắt ở bất kỳ đâu (`overflow-wrap: anywhere`); chạy riêng 3 lần với 3 mã khác nhau đều đạt |
+
 ## Kiểm chứng phần đã sửa
 
 - `npm run check`: PASS, 145/145 test, gồm `tests/local-draft.test.ts` (khôi phục sau lần lưu mất phản hồi, bỏ bản cũ khi nơi khác đã lưu, đổi revision gốc thì quên bản đã gửi).
 - `npm run test:e2e`: PASS, 35/35.
 - `npm run test:e2e:supabase` trên Supabase local: PASS, 31/31; `e2e-supabase/learning-history.spec.ts` đi qua luồng kiểm tra tài khoản → chưa đánh dấu xác nhận thì không gửi → đánh dấu → liên kết, học viên chỉ xem hồ sơ của mình.
+- Sau các sửa giao diện CR-48 đến CR-54 (cùng ngày, sau khi áp migration): `npm run check` 158/158; `npm run test:e2e:supabase` 35/35 (gồm lọc Sai/Đúng ở trang kết quả và trang học viên, ô số câu giữ giá trị đã lưu); `npm run test:e2e` 35/35 khi chạy riêng (lượt chạy ngay sau suite Supabase có `e2e/audio.spec.ts` › chờ giọng Nhật quá thời gian, không liên quan thay đổi); build PASS.
 - Giới hạn: không đăng nhập tài khoản thật trên production; chưa giả lập mất phản hồi trên trình duyệt thật cho CR-39 (kiểm tra bằng test logic).

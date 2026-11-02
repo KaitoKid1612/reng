@@ -110,7 +110,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     title: "Theo dõi lớp",
     steps: [
       "Trang lớp cho thấy từng học viên đã nộp bao nhiêu bài, điểm trung bình, lần học gần nhất và nhãn cần chú ý.",
-      "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại: mỗi bài giao là một nhóm, bài mới nhất mở sẵn, bấm tên bài để xem các bài trước; số bên phải là số học viên sai trên số học viên đã nộp. Mục Bài đã giao hiện 5 bài mới nhất, bài cũ hơn nằm trong Bài cũ hơn. Bấm tên học viên để xem chi tiết, bấm Xuất CSV để lưu điểm.",
+      "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại: mỗi bài giao là một nhóm, bài mới nhất mở sẵn, bấm tên bài để xem các bài trước; số bên phải là số học viên sai trên số học viên đã nộp. Mục Bài đã giao hiện 5 bài mới nhất, bài cũ hơn nằm trong Bài cũ hơn. Bấm tên học viên để xem từng bài đã giao (mỗi bài một nhóm, lọc Sai/Đúng cho mọi bài), bấm Xuất CSV để lưu điểm.",
       "Bấm Chia sẻ ở một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép; ghi chú riêng và dữ liệu lớp không đi kèm.",
     ],
   },
@@ -140,7 +140,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Trong trang lớp, chọn bài ở mục Bài tập rồi bấm Bắt đầu làm bài. Bài tự lưu trong lúc làm.",
       "Câu điền tiếng Nhật: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô.",
       "Bài tiếng Trung: nhập chữ Hán bằng bàn phím tiếng Trung hoặc pinyin có dấu theo yêu cầu câu hỏi; hệ thống không đổi romaji thành kana trong ô chữ Hán/pinyin.",
-      "Bài luyện tập có nút Kiểm tra câu này. Bấm Nộp bài để xem điểm và giải thích; còn lượt thì bấm Làm lượt mới.",
+      "Bài luyện tập có nút Kiểm tra câu này. Bấm Nộp bài để xem điểm và giải thích; còn lượt thì bấm Làm lượt mới. Ở trang kết quả, bấm Sai hoặc Đúng để chỉ xem những câu đó.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",
     ],
   },
