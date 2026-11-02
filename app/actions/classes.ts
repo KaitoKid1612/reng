@@ -4,12 +4,18 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { classSessionInputSchema, isFutureSession } from "@/lib/class-sessions";
 import { classSettingsSchema } from "@/lib/class-settings";
-import { MAX_DAILY_PRACTICE_SIZE, MIN_DAILY_PRACTICE_SIZE } from "@/lib/daily-practice";
+import {
+  MAX_DAILY_PRACTICE_SIZE,
+  MIN_DAILY_PRACTICE_SIZE,
+  toVietnamDate,
+} from "@/lib/daily-practice";
 import { signInPath } from "@/lib/auth-paths";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
+import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
   createClass,
@@ -70,6 +76,8 @@ const JOIN_MESSAGES: Record<string, string> = {
   rate_limited: "Bạn đã nhập sai nhiều lần. Đợi 15 phút rồi thử lại.",
   not_found: "Không tìm thấy tài khoản đang hoạt động.",
   class_full: "Lớp đã đủ số học viên. Liên hệ giáo viên để được hỗ trợ.",
+  own_class:
+    "Đây là lớp bạn đang dạy nên không vào được với vai học viên. Muốn tự luyện, hãy tạo một lớp tự học ở trang Lớp học.",
 };
 
 export async function joinClassAction(
@@ -115,7 +123,7 @@ export async function createClassAction(
       languageTag: readField(formData, "languageTag"),
       passScore: readField(formData, "passScore") || "70",
     });
-    classId = await createClass(account.id, settings);
+    classId = await createClass(account.id, settings, readField(formData, "selfStudy") === "on");
   } catch (error) {
     return { error: describeError(error) };
   }
@@ -185,10 +193,15 @@ const dailySizeSchema = z
     z.union([z.null(), z.number().int().min(MIN_DAILY_PRACTICE_SIZE).max(MAX_DAILY_PRACTICE_SIZE)]),
   );
 
+const dailyLessonSchema = z
+  .string()
+  .max(100)
+  .transform((value) => value || null);
+
 const TODAY_ERRORS = {
   disabled: "Chọn số câu và bấm Lưu trước khi giao bài hôm nay.",
   no_lesson: "Lớp chưa có bài học nào đang mở. Thêm bài vào lớp trước.",
-  no_questions: "Bài học mới nhất của lớp chưa có câu trắc nghiệm hoặc điền từ.",
+  no_questions: "Các bài đang mở của lớp chưa có câu trắc nghiệm hoặc điền từ.",
 } as const;
 
 export async function dailyPracticeAction(
@@ -220,7 +233,8 @@ export async function dailyPracticeAction(
   let size: number | null;
   try {
     size = dailySizeSchema.parse(readField(formData, "size"));
-    await setDailyPractice(account.id, classId, size);
+    const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
+    await setDailyPractice(account.id, classId, size, lessonId);
   } catch (error) {
     return { error: describeError(error) };
   }
@@ -294,4 +308,44 @@ export async function closeAssignmentAction(
   }
   refresh();
   return { notice: "Đã đóng bài. Học viên không bắt đầu hoặc nộp thêm được." };
+}
+
+export async function classSessionAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  if (readField(formData, "operation") === "delete") {
+    try {
+      await deleteClassSession(
+        account.id,
+        readField(formData, "classId"),
+        readField(formData, "sessionId"),
+      );
+    } catch (error) {
+      return { error: describeError(error) };
+    }
+    refresh();
+    return { notice: "Đã xóa buổi dạy khỏi nhật ký." };
+  }
+  try {
+    const input = classSessionInputSchema.parse({
+      classId: readField(formData, "classId"),
+      taughtOn: readField(formData, "taughtOn"),
+      lessonId: readField(formData, "lessonId"),
+      slideReached: readField(formData, "slideReached"),
+      notes: readField(formData, "notes"),
+    });
+    if (isFutureSession(input.taughtOn, toVietnamDate(new Date()))) {
+      return { error: "Ngày dạy không được ở sau hôm nay." };
+    }
+    await recordClassSession(account.id, input);
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  return { notice: "Đã ghi buổi dạy vào nhật ký." };
 }

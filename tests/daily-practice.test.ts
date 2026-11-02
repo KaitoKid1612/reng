@@ -2,8 +2,11 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import {
+  dailySourceState,
   daysBefore,
   endOfVietnamDay,
+  orderDailySourceLessons,
+  repeatsEveryDay,
   selectBalancedDailyQuestions,
   selectDailyQuestions,
   toVietnamDate,
@@ -113,4 +116,23 @@ test("a Minna lesson mixes choice, fill and kanji reading; one kind keeps the ol
     selectBalancedDailyQuestions(single, [], 4, "class:2026-10-29"),
     selectDailyQuestions(ids, [], 4, "class:2026-10-29"),
   );
+});
+
+test("a pinned review bank stays the daily source when the next lesson opens", () => {
+  // Newest first, as the class shows them: lesson 12 just opened after the N5 bank.
+  const newest = ["minna-12", "n5-bank", "minna-11"];
+  assert.deepEqual(orderDailySourceLessons(newest, "n5-bank"), ["n5-bank", "minna-12", "minna-11"]);
+  assert.deepEqual(orderDailySourceLessons(newest, null), newest);
+  // A pinned lesson that is not open yet is not passed in, so the newest lessons are used.
+  assert.deepEqual(orderDailySourceLessons(["minna-11"], "minna-11"), ["minna-11"]);
+  assert.equal(dailySourceState(null, "minna-12"), "automatic");
+  assert.equal(dailySourceState("n5-bank", "n5-bank"), "pinned");
+  assert.equal(dailySourceState("n5-bank", "minna-12"), "fallback");
+});
+
+test("a source with fewer questions than the daily size repeats every question each day", () => {
+  assert.equal(repeatsEveryDay(50, 60), true);
+  assert.equal(repeatsEveryDay(200, 60), false);
+  assert.equal(repeatsEveryDay(60, 60), false);
+  assert.equal(repeatsEveryDay(5, null), false);
 });

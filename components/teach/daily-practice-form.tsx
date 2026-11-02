@@ -7,28 +7,60 @@ import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 import { dailyPracticeSizeOptions } from "@/lib/daily-practice";
 
+interface DailyPracticeLessonOption {
+  lessonId: string;
+  title: string;
+  isOpen: boolean;
+}
+
 interface DailyPracticeFormProps {
   classId: string;
   size: number | null;
+  lessonId: string | null;
+  lessons: DailyPracticeLessonOption[];
 }
 
-export function DailyPracticeForm({ classId, size }: DailyPracticeFormProps) {
+export function DailyPracticeForm({ classId, size, lessonId, lessons }: DailyPracticeFormProps) {
   const [state, action, isPending] = useActionState(dailyPracticeAction, {});
   return (
     <form action={action} className="form-card">
       <input type="hidden" name="classId" value={classId} />
-      <div className="field">
-        <label htmlFor="daily-practice-size">Mỗi ngày tự giao</label>
-        {/* React resets the form after saving; a select only takes a new default when it is
-            remounted, so the key follows the saved size. */}
-        <select key={size ?? "off"} id="daily-practice-size" name="size" defaultValue={size ?? ""}>
-          <option value="">Tắt</option>
-          {dailyPracticeSizeOptions(size).map((count) => (
-            <option key={count} value={count}>
-              {count} câu
-            </option>
-          ))}
-        </select>
+      {/* React resets the form after saving; a select only takes a new default when it is
+          remounted, so each key follows the saved value. */}
+      <div className="form-grid">
+        <div className="field">
+          <label htmlFor="daily-practice-size">Mỗi ngày tự giao</label>
+          <select
+            key={size ?? "off"}
+            id="daily-practice-size"
+            name="size"
+            defaultValue={size ?? ""}
+          >
+            <option value="">Tắt</option>
+            {dailyPracticeSizeOptions(size).map((count) => (
+              <option key={count} value={count}>
+                {count} câu
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="field">
+          <label htmlFor="daily-practice-lesson">Lấy câu từ</label>
+          <select
+            key={lessonId ?? "auto"}
+            id="daily-practice-lesson"
+            name="lessonId"
+            defaultValue={lessonId ?? ""}
+          >
+            <option value="">Tự động: bài mới nhất đã mở có câu hỏi</option>
+            {lessons.map((lesson) => (
+              <option key={lesson.lessonId} value={lesson.lessonId}>
+                {lesson.title}
+                {lesson.isOpen ? "" : " (chưa mở)"}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="button-row">
         <Button type="submit" name="operation" value="save" disabled={isPending}>

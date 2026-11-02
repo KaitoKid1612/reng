@@ -32,7 +32,9 @@ export default async function TeacherClassesPage() {
             {classes.map((item) => (
               <li key={item.id}>
                 <Link href={`/teach/classes/${item.id}`}>{item.name}</Link>
-                <span className="item-meta">{item.memberCount} học viên</span>
+                <span className="item-meta">
+                  {item.self_study ? "Lớp tự học" : `${item.memberCount} học viên`}
+                </span>
               </li>
             ))}
           </ul>

@@ -46,7 +46,54 @@ function acceptedAnswers(standard: string, extra: string) {
   ];
 }
 
-export function importDailySheet(source: DailySheetSource) {
+// Each JLPT level gets its own bank lesson; a teacher's sheet for one level keeps the same id
+// so a second import is refused instead of creating a duplicate bank.
+export const SHEET_BANKS = {
+  N5: {
+    id: "n5-sheet-review-bank",
+    title: "Ngân hàng ôn JLPT N5 — Minna Bài 1–10",
+    titleJa: "日本語 N5 復習",
+    courseId: "n5",
+    slideTitle: "Ôn tập Bài 1–10",
+  },
+  N4: {
+    id: "n4-sheet-review-bank",
+    title: "Ngân hàng ôn JLPT N4",
+    titleJa: "日本語 N4 復習",
+    courseId: "n4",
+    slideTitle: "Ôn tập JLPT N4",
+  },
+} as const;
+
+export type SheetLevel = keyof typeof SHEET_BANKS;
+
+export interface DailySheetOptions {
+  level: SheetLevel;
+  // Builds only the bank, for a sheet whose day is already done or partly answered.
+  bankOnly?: boolean;
+  // Lesson IDs are global, so each class gets its own bank lesson; defaults to the level's ID.
+  bankId?: string;
+}
+
+// Sheets are typed by hand; "T-12" and "t-12" are the same question.
+function sourceId(row: unknown[], index: number) {
+  return cell(row, index).toLowerCase();
+}
+
+function readToday(source: DailySheetSource) {
+  const date = z.iso.date().parse(cell(source.today[1] ?? [], 1));
+  const dueTime = z
+    .string()
+    .regex(/^\d{2}:\d{2}$/)
+    .parse(cell(source.today[3] ?? [], 1));
+  const dueAt = z.iso.datetime({ offset: true }).parse(`${date}T${dueTime}:00+07:00`);
+  return { date, dueAt };
+}
+
+export function importDailySheet(
+  source: DailySheetSource,
+  { level, bankOnly = false, bankId }: DailySheetOptions = { level: "N5" },
+) {
   checkHeader(source.today, 5, [
     "STT",
     "Dạng bài",
@@ -68,15 +115,9 @@ export function importDailySheet(source: DailySheetSource) {
     "Ghi chú",
   ]);
   checkHeader(source.keys, 2, ["ID", "Bài", "Đáp án chuẩn", "Chấp nhận thêm"]);
-  const date = z.iso.date().parse(cell(source.today[1] ?? [], 1));
-  const dueTime = z
-    .string()
-    .regex(/^\d{2}:\d{2}$/)
-    .parse(cell(source.today[3] ?? [], 1));
-  const dueAt = z.iso.datetime({ offset: true }).parse(`${date}T${dueTime}:00+07:00`);
   const keys = new Map<string, { standard: string; extra: string }>();
   for (const row of source.keys.slice(3)) {
-    const id = cell(row, 0);
+    const id = sourceId(row, 0);
     if (!id) {
       continue;
     }
@@ -90,8 +131,18 @@ export function importDailySheet(source: DailySheetSource) {
   const candidates = new Map<string, { id: string; kind: string; prompt: string }>();
   const todayIds: string[] = [];
   for (const row of source.today.slice(6)) {
-    const id = cell(row, 6);
+    const id = sourceId(row, 6);
     if (!id) {
+      continue;
+    }
+    if (candidates.has(id)) {
+      throw new Error("Today's source IDs must be unique.");
+    }
+    if (bankOnly) {
+      // Without today's assignment, a row only joins the bank when it has an answer key.
+      if (keys.get(id)?.standard) {
+        candidates.set(id, { id, kind: cell(row, 1), prompt: cell(row, 2) });
+      }
       continue;
     }
     if (cell(row, 3) || cell(row, 4) || cell(row, 5)) {
@@ -99,19 +150,19 @@ export function importDailySheet(source: DailySheetSource) {
         "Today's sheet already has work; reconcile it before creating a new attempt.",
       );
     }
-    if (candidates.has(id)) {
-      throw new Error("Today's source IDs must be unique.");
-    }
     candidates.set(id, { id, kind: cell(row, 1), prompt: cell(row, 2) });
-    todayIds.push(id.toLowerCase());
+    todayIds.push(id);
   }
-  if (todayIds.length !== Number(cell(source.today[1] ?? [], 8)) || todayIds.length !== 60) {
+  if (
+    !bankOnly &&
+    (todayIds.length !== Number(cell(source.today[1] ?? [], 8)) || todayIds.length !== 60)
+  ) {
     throw new Error("Expected the complete daily set of 60 questions.");
   }
   // Keep the lesson editable within the existing editor's 200-question limit. Prioritize
   // today's complete set, then the most recent history rows that have a source answer key.
   for (const row of [...source.history.slice(3)].reverse()) {
-    const id = cell(row, 3);
+    const id = sourceId(row, 3);
     if (candidates.size >= 200) {
       break;
     }
@@ -119,6 +170,9 @@ export function importDailySheet(source: DailySheetSource) {
       continue;
     }
     candidates.set(id, { id, kind: cell(row, 4), prompt: cell(row, 5) });
+  }
+  if (!candidates.size) {
+    throw new Error("The sheet has no question with an approved answer key.");
   }
   const questions = [...candidates.values()].map((item) => {
     const key = keys.get(item.id);
@@ -130,7 +184,7 @@ export function importDailySheet(source: DailySheetSource) {
       /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(answer),
     );
     return parseAssignableQuestion({
-      id: item.id.toLowerCase(),
+      id: item.id,
       type: "fill",
       prompt: item.prompt,
       points: 1,
@@ -142,14 +196,15 @@ export function importDailySheet(source: DailySheetSource) {
       answer: answers,
     });
   });
+  const bank = SHEET_BANKS[level];
   const draft = lessonDraftSchema.parse({
-    id: "n5-sheet-review-bank",
-    title: "Ngân hàng ôn JLPT N5 — Minna Bài 1–10",
-    titleJa: "日本語 N5 復習",
+    id: bankId ?? bank.id,
+    title: bank.title,
+    titleJa: bank.titleJa,
     summary:
       "Ngân hàng có đáp án từ Sheet của giáo viên; gồm bài ngày chuyển đổi và các câu ôn gần nhất. Không có audio.",
     order: 1,
-    courseId: "n5",
+    courseId: bank.courseId,
     isSample: false,
     content: {
       schemaVersion: 1,
@@ -159,12 +214,13 @@ export function importDailySheet(source: DailySheetSource) {
         {
           id: "review-intro",
           type: "note",
-          title: "Ôn tập Bài 1–10",
+          title: bank.slideTitle,
           body: "Làm bài trong mục Bài tập của lớp. Chấm theo các đáp án đã khai báo; đáp án mở có thể cần giáo viên kiểm tra thêm.",
         },
       ],
       questions,
     },
   });
-  return { date, dueAt, todayIds, draft };
+  const today = bankOnly ? null : { ...readToday(source), ids: todayIds };
+  return { today, draft };
 }

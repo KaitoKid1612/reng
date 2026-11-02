@@ -48,6 +48,32 @@ function hashToNumber(value: string) {
   return hash;
 }
 
+// The pinned lesson (a review bank, say) is tried first while it is open; the newest open lessons
+// follow so a pinned lesson without questions does not stop the daily habit.
+export function orderDailySourceLessons(
+  newestFirst: readonly string[],
+  openPinnedLessonId: string | null,
+) {
+  if (!openPinnedLessonId) {
+    return [...newestFirst];
+  }
+  return [openPinnedLessonId, ...newestFirst.filter((id) => id !== openPinnedLessonId)];
+}
+
+export type DailySourceState = "automatic" | "pinned" | "fallback";
+
+export function dailySourceState(pinnedLessonId: string | null, sourceLessonId: string | null) {
+  if (!pinnedLessonId) {
+    return "automatic";
+  }
+  return pinnedLessonId === sourceLessonId ? "pinned" : "fallback";
+}
+
+// With fewer questions than the daily size, every question comes back every day.
+export function repeatsEveryDay(questionCount: number, size: number | null) {
+  return size !== null && questionCount < size;
+}
+
 export interface DailyCandidate {
   id: string;
   type: string;

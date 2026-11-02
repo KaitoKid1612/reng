@@ -65,7 +65,11 @@ export default async function ClassesPage() {
                   <h3>
                     <Link href={`/classes/${item.id}`}>{item.name}</Link>
                   </h3>
-                  <p className="item-meta">Giảng viên: {item.teacherName || "chưa cập nhật"}</p>
+                  <p className="item-meta">
+                    {item.isSelfStudy
+                      ? "Lớp tự học của bạn"
+                      : `Giảng viên: ${item.teacherName || "chưa cập nhật"}`}
+                  </p>
                 </div>
               </li>
             ))}
