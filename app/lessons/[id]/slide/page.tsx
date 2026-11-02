@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { z } from "zod";
 
 import { SlideDeck } from "@/components/slides/slide-deck";
 import { loadAccessibleLesson } from "@/lib/server/lesson-access";
@@ -10,7 +11,7 @@ export const metadata: Metadata = { title: "Trình chiếu", robots: { index: fa
 
 interface SlidePageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ version?: string; "print-pdf"?: string }>;
+  searchParams: Promise<{ version?: string; class?: string; "print-pdf"?: string }>;
 }
 
 export default async function SlidePage({ params, searchParams }: SlidePageProps) {
@@ -20,5 +21,9 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
   if (!lesson) {
     notFound();
   }
-  return <SlideDeck lesson={lesson} printMode={query["print-pdf"] !== undefined} />;
+  // The class only shapes a link back to its own page, where access is checked again.
+  const classId = z.uuid().safeParse(query.class).data;
+  return (
+    <SlideDeck lesson={lesson} printMode={query["print-pdf"] !== undefined} classId={classId} />
+  );
 }

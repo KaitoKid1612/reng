@@ -103,8 +103,14 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   expect(fits, "the class page with the teaching log fits a 360px screen").toBe(true);
   await page.setViewportSize({ width: 1280, height: 720 });
 
+  // The panel resumes the logged slide; the slides then fill the next log entry in.
+  await expect(page.getByRole("link", { name: "Trình chiếu tiếp từ slide 12" })).toBeVisible();
   await page.getByRole("link", { name: "Mở slide 12" }).first().click();
   await expect(page.getByTestId("slide-counter")).toHaveText("12 / 38");
+  await page.getByRole("button", { name: "Tiếp", exact: true }).click();
+  await page.getByRole("link", { name: "Ghi buổi dạy (slide 13)" }).click();
+  await expect(page.getByLabel("Bài đã dạy")).toHaveValue(state.lesson11);
+  await expect(page.getByLabel("Dạy đến slide số")).toHaveValue("13");
   await page.goto(`/teach/classes/${state.classId}`);
   // The deleted row, with its button, leaves the list; the empty log is the confirmation.
   await page.getByRole("button", { name: "Xóa", exact: true }).click();

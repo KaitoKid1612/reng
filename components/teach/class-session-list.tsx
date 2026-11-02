@@ -44,6 +44,7 @@ export function ClassSessionList({ classId, sessions }: ClassSessionListProps) {
                   session.lesson.id,
                   session.lesson.versionId,
                   session.slideReached,
+                  classId,
                 )}
               >
                 Mở slide {session.slideReached}

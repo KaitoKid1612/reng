@@ -9,10 +9,11 @@ import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
+import { TeachingPanel } from "@/components/teach/teaching-panel";
 import { buttonVariants } from "@/components/ui/button";
 import { classQuestionLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
-import { slidePresenterPath } from "@/lib/class-sessions";
+import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
@@ -30,6 +31,8 @@ export const metadata: Metadata = { title: "Theo dõi lớp" };
 
 interface ClassReportPageProps {
   params: Promise<{ id: string }>;
+  // Set by the "Ghi buổi dạy" link on the slides.
+  searchParams: Promise<{ lesson?: string; slide?: string }>;
 }
 
 const LABEL_TONES: Record<LearnerLabel, string> = {
@@ -95,12 +98,16 @@ function AssignmentItem({ assignment }: AssignmentItemProps) {
   );
 }
 
-export default async function ClassReportPage({ params }: ClassReportPageProps) {
+export default async function ClassReportPage({ params, searchParams }: ClassReportPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/classes/${id}`);
   const now = new Date();
   const report = await loadOrNotFound(getClassReport(account.id, id, now));
   const { classRow, summary, week } = report;
+  const prefill = parseSessionPrefill(
+    await searchParams,
+    report.lessons.map((lesson) => lesson.lessonId),
+  );
   // The source lookup reads question lists, so it only runs while daily practice is on.
   const [sessions, dailySource] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
@@ -140,28 +147,6 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
               <Link href={`/classes/${classRow.id}`}>trang lớp dành cho học viên</Link>.
             </p>
           )}
-          {latestSession && (
-            <p className="small">
-              Buổi gần nhất {formatStudyDay(latestSession.taughtOn)}
-              {latestSession.lesson ? `: ${latestSession.lesson.title}` : ""}
-              {latestSession.slideReached ? `, đến slide ${latestSession.slideReached}` : ""}
-              {latestSession.lesson && latestSession.slideReached && (
-                <>
-                  {" "}
-                  ·{" "}
-                  <Link
-                    href={slidePresenterPath(
-                      latestSession.lesson.id,
-                      latestSession.lesson.versionId,
-                      latestSession.slideReached,
-                    )}
-                  >
-                    Mở slide {latestSession.slideReached}
-                  </Link>
-                </>
-              )}
-            </p>
-          )}
         </div>
         <div className="button-row">
           <Link href={`/teach/classes/${classRow.id}/assign`} className={buttonVariants()}>
@@ -177,6 +162,13 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
         </div>
       </div>
       {!hasLearners && joinCodeControls}
+      {!classRow.self_study && (
+        <TeachingPanel
+          classId={classRow.id}
+          meetingUrl={classRow.meeting_url}
+          latestSession={latestSession}
+        />
+      )}
       <div className="stat-tiles">
         <div className="stat-tile">
           <strong>{week.percent === null ? "—" : formatPercent(week.percent)}</strong>
@@ -280,13 +272,18 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       <section className="section-block" aria-labelledby="daily-practice-title">
         <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
         <p className="small muted">
-          Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập lấy câu từ bài bạn chọn, ví
-          dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới nhất đã mở có câu chọn/điền. Hạn
-          23:59 cùng ngày (nộp muộn vẫn được), tối đa 3 lượt, xem giải thích ngay sau khi nộp. Câu
-          đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay). Mỗi dạng
-          câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ pháp, từ vựng, kanji) và
-          loại câu chọn/điền. Câu sai vào sổ lỗi và lịch ôn tập của học viên.
+          Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập, hạn 23:59 cùng ngày.
         </p>
+        <details className="older-assignments">
+          <summary>Cách Reng chọn câu mỗi ngày</summary>
+          <p className="small muted">
+            Câu lấy từ bài bạn chọn, ví dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới
+            nhất đã mở có câu chọn/điền. Nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay sau
+            khi nộp. Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao
+            tay). Mỗi dạng câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ pháp, từ
+            vựng, kanji) và loại câu chọn/điền. Câu sai vào sổ lỗi và lịch ôn tập của học viên.
+          </p>
+        </details>
         {dailySource && (
           <DailyPracticeStatus
             size={classRow.daily_practice_size}
@@ -349,13 +346,18 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
         <section className="section-block" aria-labelledby="class-sessions">
           <h2 id="class-sessions">Nhật ký buổi dạy</h2>
           <ClassSessionForm
+            // A new prefill from the slides must replace the defaults of a form already shown.
+            key={`${prefill?.lessonId ?? ""}:${prefill?.slide ?? ""}`}
             classId={classRow.id}
             today={toVietnamDate(now)}
             lessons={report.lessons.map((lesson) => ({
               lessonId: lesson.lessonId,
               title: lesson.title,
             }))}
-            defaultLessonId={latestSession?.lesson?.id ?? openLessons[0]?.lessonId ?? ""}
+            defaultLessonId={
+              prefill?.lessonId ?? latestSession?.lesson?.id ?? openLessons[0]?.lessonId ?? ""
+            }
+            defaultSlide={prefill?.slide}
           />
           <ClassSessionList classId={classRow.id} sessions={sessions} />
         </section>
@@ -371,10 +373,23 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
           <ul className="item-list">
             {report.lessons.map((lesson) => (
               <li key={lesson.lessonId}>
-                <span>
-                  {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
-                </span>
-                <span className="item-meta">Mở từ {formatStudyDateTime(lesson.availableAt)}</span>
+                <div>
+                  <span>
+                    {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
+                  </span>
+                  <p className="item-meta">Mở từ {formatStudyDateTime(lesson.availableAt)}</p>
+                </div>
+                {/* The class's own version, which can differ from the newest published one. */}
+                <div className="button-row">
+                  <Link
+                    href={slidePresenterPath(lesson.lessonId, lesson.versionId, 1, classRow.id)}
+                  >
+                    Trình chiếu
+                  </Link>
+                  <Link href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}`}>
+                    Đọc bài
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>

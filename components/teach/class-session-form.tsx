@@ -12,6 +12,8 @@ interface ClassSessionFormProps {
   today: string;
   lessons: { lessonId: string; title: string }[];
   defaultLessonId: string;
+  // Filled in when the teacher comes back from the slides.
+  defaultSlide?: number | null;
 }
 
 export function ClassSessionForm({
@@ -19,6 +21,7 @@ export function ClassSessionForm({
   today,
   lessons,
   defaultLessonId,
+  defaultSlide,
 }: ClassSessionFormProps) {
   const [state, action, isPending] = useActionState(classSessionAction, {});
   return (
@@ -57,6 +60,7 @@ export function ClassSessionForm({
           min={1}
           max={MAX_SLIDE_NUMBER}
           inputMode="numeric"
+          defaultValue={defaultSlide ?? ""}
         />
         <p className="small muted">
           Số trên thanh trình chiếu. Buổi sau mở lại đúng slide này. Để trống nếu không dùng slide.

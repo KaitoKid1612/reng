@@ -2074,6 +2074,28 @@ rt {
   border: 1px solid var(--border);
   border-radius: 10px;
 }
+.teaching-panel {
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.teaching-panel > h2 {
+  margin-bottom: 4px;
+}
+.teaching-panel > p {
+  margin: 0;
+}
+.teaching-panel > .button-row {
+  align-items: center;
+  margin: 16px 0 12px;
+}
+@media (max-width: 600px) {
+  .teaching-panel {
+    padding: 20px 16px;
+  }
+}
 .lesson-progress {
   margin: 32px 0 20px;
 }

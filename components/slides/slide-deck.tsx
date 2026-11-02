@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
+import { sessionLogPath } from "@/lib/class-sessions";
 import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { RevealApi } from "reveal.js";
@@ -13,9 +14,11 @@ import type { PublicAnyLesson } from "@/lib/teaching-content";
 interface SlideDeckProps {
   lesson: PublicAnyLesson;
   printMode: boolean;
+  // Set when the teacher opened the slides from a class page.
+  classId?: string;
 }
 
-export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
+export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const deckRef = useRef<RevealApi | null>(null);
   const [position, setPosition] = useState(0);
@@ -188,6 +191,11 @@ export function SlideDeck({ lesson, printMode }: SlideDeckProps) {
             Presenter
           </Button>
           <Link href={`${base}/slide?version=${lesson.id}&print-pdf`}>PDF</Link>
+          {classId && (
+            <Link href={sessionLogPath(classId, lesson.lessonId, position + 1)}>
+              Ghi buổi dạy (slide {position + 1})
+            </Link>
+          )}
         </div>
       </div>
       <div className="slide-stage">

@@ -5,6 +5,8 @@ import {
   classSessionInputSchema,
   isFutureSession,
   MAX_SESSION_NOTES,
+  parseSessionPrefill,
+  sessionLogPath,
   slidePresenterPath,
 } from "../lib/class-sessions";
 
@@ -52,4 +54,28 @@ test("the presenter link reopens the logged slide of the logged version", () => 
     slidePresenterPath("minna-12", "00000000-0000-4000-8000-0000000000d1", 24),
     "/lessons/minna-12/slide?version=00000000-0000-4000-8000-0000000000d1#24",
   );
+});
+
+test("slides opened from a class link back to its log with the lesson and slide filled in", () => {
+  const version = "00000000-0000-4000-8000-0000000000d1";
+  assert.equal(
+    slidePresenterPath("minna-12", version, 24, CLASS_ID),
+    `/lessons/minna-12/slide?version=${version}&class=${CLASS_ID}#24`,
+  );
+  assert.equal(
+    sessionLogPath(CLASS_ID, "minna-12", 31),
+    `/teach/classes/${CLASS_ID}?lesson=minna-12&slide=31#class-sessions`,
+  );
+  const lessons = ["minna-11", "minna-12"];
+  assert.deepEqual(parseSessionPrefill({ lesson: "minna-12", slide: "31" }, lessons), {
+    lessonId: "minna-12",
+    slide: 31,
+  });
+  assert.deepEqual(parseSessionPrefill({ lesson: "minna-12", slide: "0" }, lessons), {
+    lessonId: "minna-12",
+    slide: null,
+  });
+  assert.equal(parseSessionPrefill({ lesson: "other-lesson", slide: "3" }, lessons), null);
+  assert.equal(parseSessionPrefill({ slide: "3" }, lessons), null);
+  assert.equal(parseSessionPrefill({ lesson: ["minna-12", "minna-11"] }, lessons), null);
 });
