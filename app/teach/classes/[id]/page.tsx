@@ -4,6 +4,7 @@ import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labe
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
 import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
 import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
+import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
 import { buttonVariants } from "@/components/ui/button";
 import { LEARNER_LABELS } from "@/lib/class-report";
@@ -50,6 +51,39 @@ function AssignmentResultLine({ result }: AssignmentResultLineProps) {
         Điểm TB {formatPercent(result.averagePercent)} · {submitted}
       </span>
     </div>
+  );
+}
+
+type ReportAssignment = Awaited<ReturnType<typeof getClassReport>>["assignments"][number];
+
+// A daily set arrives every morning; the newest stay in view and older ones fold away.
+const RECENT_ASSIGNMENTS = 5;
+
+interface AssignmentItemProps {
+  assignment: ReportAssignment;
+}
+
+function AssignmentItem({ assignment }: AssignmentItemProps) {
+  return (
+    <li>
+      <div>
+        <h3>{assignment.title}</h3>
+        <p className="item-meta">
+          {MODE_LABELS[assignment.mode]}, {describeDue(assignment.dueAt)},{" "}
+          {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
+          {assignment.status === "closed" ? ", đã đóng" : ""}
+        </p>
+        {assignment.result && assignment.result.assignedCount > 0 && (
+          <AssignmentResultLine result={assignment.result} />
+        )}
+      </div>
+      {assignment.status === "published" && (
+        <CloseAssignmentButton
+          assignmentId={assignment.id}
+          openAttemptCount={assignment.openAttemptCount}
+        />
+      )}
+    </li>
   );
 }
 
@@ -179,25 +213,12 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       <section className="section-block" aria-labelledby="hard-questions">
         <h2 id="hard-questions">Câu cả lớp sai nhiều</h2>
         <p className="small muted">
-          Từ 50% học viên trở lên sai, chỉ tính lượt nộp mới nhất của mỗi người. Đây là tín hiệu để
+          Từ 50% học viên trở lên sai, chỉ tính lượt nộp mới nhất của mỗi người; số bên phải là số
+          học viên sai trên số học viên đã nộp. Bấm tên bài để mở hoặc thu gọn. Đây là tín hiệu để
           xem lại cách giảng, không phải kết luận nguyên nhân.
         </p>
         {report.questionStats.length ? (
-          report.questionStats.map((entry) => (
-            <div key={entry.assignment.id} className="result-row" data-correct="false">
-              <h3>{entry.assignment.title}</h3>
-              <ul className="item-list">
-                {entry.questions.map((question) => (
-                  <li key={question.question_id}>
-                    <span lang="ja">{question.prompt}</span>
-                    <span className="item-meta">
-                      {question.wrong_count}/{question.total_count} học viên sai
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
+          <HardQuestionList groups={report.questionStats} />
         ) : (
           <p className="muted">Chưa có câu nào bị sai từ 50% trở lên.</p>
         )}
@@ -217,29 +238,23 @@ export default async function ClassReportPage({ params }: ClassReportPageProps) 
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>
         {report.assignments.length ? (
-          <ul className="item-list">
-            {report.assignments.map((assignment) => (
-              <li key={assignment.id}>
-                <div>
-                  <h3>{assignment.title}</h3>
-                  <p className="item-meta">
-                    {MODE_LABELS[assignment.mode]}, {describeDue(assignment.dueAt)},{" "}
-                    {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
-                    {assignment.status === "closed" ? ", đã đóng" : ""}
-                  </p>
-                  {assignment.result && assignment.result.assignedCount > 0 && (
-                    <AssignmentResultLine result={assignment.result} />
-                  )}
-                </div>
-                {assignment.status === "published" && (
-                  <CloseAssignmentButton
-                    assignmentId={assignment.id}
-                    openAttemptCount={assignment.openAttemptCount}
-                  />
-                )}
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="item-list">
+              {report.assignments.slice(0, RECENT_ASSIGNMENTS).map((assignment) => (
+                <AssignmentItem key={assignment.id} assignment={assignment} />
+              ))}
+            </ul>
+            {report.assignments.length > RECENT_ASSIGNMENTS && (
+              <details className="older-assignments">
+                <summary>Bài cũ hơn ({report.assignments.length - RECENT_ASSIGNMENTS})</summary>
+                <ul className="item-list">
+                  {report.assignments.slice(RECENT_ASSIGNMENTS).map((assignment) => (
+                    <AssignmentItem key={assignment.id} assignment={assignment} />
+                  ))}
+                </ul>
+              </details>
+            )}
+          </>
         ) : (
           <p>
             Chưa có bài tập nào.{" "}

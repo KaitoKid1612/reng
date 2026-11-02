@@ -1685,6 +1685,66 @@ rt {
 .result-row p {
   margin-bottom: 6px;
 }
+/* Class report: frequently missed questions, one collapsible group per assignment. */
+.hard-question-group {
+  padding: 0;
+}
+.hard-question-group > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.hard-question-group > summary::-webkit-details-marker {
+  display: none;
+}
+/* A flex summary loses the built-in disclosure triangle, so the title carries its own. */
+.hard-question-group > summary > span:first-child::before {
+  content: "▸ ";
+  color: var(--muted);
+}
+.hard-question-group[open] > summary > span:first-child::before {
+  content: "▾ ";
+}
+.hard-question-group > summary > .item-meta {
+  flex: none;
+  white-space: nowrap;
+}
+.hard-question-group > summary:focus-visible,
+.older-assignments > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.hard-question-list {
+  margin: 0;
+  padding: 0 16px 8px;
+  list-style: none;
+}
+.hard-question-list > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.hard-question-count {
+  color: var(--wrong);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.older-assignments > summary {
+  width: fit-content;
+  padding: 12px 0;
+  color: var(--primary);
+  cursor: pointer;
+}
 .flashcard {
   min-height: 260px;
   width: 100%;
