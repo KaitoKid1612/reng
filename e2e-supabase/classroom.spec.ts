@@ -140,9 +140,13 @@ test("practice feedback, mistake book, two-tab conflict and offline saving", asy
   await expect(page.getByRole("radio", { name: "ます", exact: true })).toBeDisabled();
   await page.getByRole("button", { name: "Nộp bài", exact: true }).click();
   await page.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();
-  await page.waitForURL(`**/assignments/${state.practiceId}/results`);
+  // With a wrong practice answer the review opens on the mistakes.
+  await page.waitForURL(`**/assignments/${state.practiceId}/results?outcome=wrong`);
   await expect(page.locator(".result-score")).toContainText("0%");
   await expect(page.getByText("Chưa đạt", { exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Lọc câu theo kết quả" }).locator('[aria-current="true"]'),
+  ).toContainText("Sai");
 
   await page.goto("/mistakes");
   await expect(page.getByText(PRACTICE_PROMPT)).toBeVisible();

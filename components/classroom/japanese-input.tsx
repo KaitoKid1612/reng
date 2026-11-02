@@ -11,7 +11,7 @@ import {
 } from "@/lib/romaji-input";
 
 import type { InputMode } from "@/lib/assignment";
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, KeyboardEvent } from "react";
 
 interface JapaneseInputProps {
   id: string;
@@ -20,7 +20,9 @@ interface JapaneseInputProps {
   isDisabled: boolean;
   describedBy?: string;
   autoFocus?: boolean;
+  enterKeyHint?: "next" | "done";
   onValueChange: (value: string) => void;
+  onEnter?: () => void;
 }
 
 const MODE_HINTS: Record<InputMode, string> = {
@@ -40,7 +42,9 @@ export function JapaneseInput({
   isDisabled,
   describedBy,
   autoFocus,
+  enterKeyHint,
   onValueChange,
+  onEnter,
 }: JapaneseInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const caretRef = useRef<number | null>(null);
@@ -91,6 +95,17 @@ export function JapaneseInput({
     }
   }
 
+  // Enter also confirms an IME conversion, so only a plain Enter moves on. It finishes a trailing
+  // romaji "n" first, the same as leaving the field does.
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (!onEnter || event.key !== "Enter" || event.nativeEvent.isComposing) {
+      return;
+    }
+    event.preventDefault();
+    handleBlur();
+    onEnter();
+  }
+
   return (
     <>
       <input
@@ -102,8 +117,10 @@ export function JapaneseInput({
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
         disabled={isDisabled}
         autoFocus={autoFocus}
+        enterKeyHint={enterKeyHint}
         autoComplete="off"
         autoCapitalize="none"
         autoCorrect="off"

@@ -182,8 +182,13 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await expect(meaning.getByText("Đúng rồi!")).toBeVisible();
   await page.getByRole("button", { name: "Nộp bài", exact: true }).click();
   await page.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();
-  await page.waitForURL(/\/results$/);
+  // A wrong practice answer opens the review on the mistakes.
+  await page.waitForURL(/\/results\?outcome=wrong$/);
   await expect(page.locator(".result-score")).toContainText("50%");
+  // Chinese answers keep a Chinese language tag, not the Japanese font's.
+  const wrongRow = page.locator(".result-row").filter({ hasText: HANZI_PROMPT });
+  await expect(wrongRow.locator(".question-prompt")).toHaveAttribute("lang", "vi");
+  await expect(wrongRow.locator("strong", { hasText: "謝謝" })).toHaveAttribute("lang", "zh");
 
   await page.goto(assignmentUrl);
   await page.getByRole("button", { name: "Làm lại lượt mới", exact: true }).click();

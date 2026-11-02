@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 
 import { describeDue } from "@/components/classroom/assignment-labels";
+import { buttonVariants } from "@/components/ui/button";
 
 const agendaSchema = z.object({
   agenda: z
@@ -19,7 +20,8 @@ const agendaSchema = z.object({
 
 type Agenda = NonNullable<z.infer<typeof agendaSchema>["agenda"]>;
 
-// Signed-in learners see today's work; the home page itself stays static for guests.
+// Signed-in learners see today's work above the welcome text; the home page itself stays static
+// for guests, and people with nothing to do see the page as before.
 export function HomeAgenda() {
   const [agenda, setAgenda] = useState<Agenda | null>(null);
 
@@ -32,25 +34,40 @@ export function HomeAgenda() {
     return () => controller.abort();
   }, []);
 
-  if (!agenda) {
+  if (!agenda || (!agenda.assignments.length && !agenda.dueCardCount)) {
     return null;
   }
   return (
     <section className="home-agenda" aria-labelledby="agenda-title">
       <h2 id="agenda-title">Hôm nay của bạn</h2>
-      <p>
-        <Link href="/review">{agenda.dueCardCount} thẻ cần ôn hôm nay</Link>
-      </p>
-      {agenda.assignments.length > 0 && (
+      {agenda.assignments.length > 0 ? (
         <ul className="item-list">
-          {agenda.assignments.map((assignment) => (
+          {agenda.assignments.map((assignment, index) => (
             <li key={assignment.id}>
-              <Link href={`/assignments/${assignment.id}`}>{assignment.title}</Link>
-              <span className="item-meta">{describeDue(assignment.dueAt)}</span>
+              <div>
+                <Link href={`/assignments/${assignment.id}`}>{assignment.title}</Link>
+                <p className="item-meta">{describeDue(assignment.dueAt)}</p>
+              </div>
+              <Link
+                href={`/assignments/${assignment.id}`}
+                className={buttonVariants({ variant: index === 0 ? "default" : "outline" })}
+              >
+                Làm bài
+              </Link>
             </li>
           ))}
         </ul>
+      ) : (
+        <p>Không có bài nào đang chờ.</p>
       )}
+      <div className="button-row">
+        {agenda.dueCardCount > 0 && (
+          <Link href="/review" className={buttonVariants({ variant: "outline" })}>
+            Ôn {agenda.dueCardCount} thẻ
+          </Link>
+        )}
+        <Link href="/classes">Mở lớp của tôi</Link>
+      </div>
     </section>
   );
 }

@@ -17,6 +17,8 @@ interface QuestionFieldProps {
   onAnswerChange: (value: RawAnswer) => void;
   listenCount?: number;
   onListen?: () => void;
+  // Typed answers move on with Enter; choices keep the browser's arrow-key behaviour.
+  onEnter?: () => void;
 }
 
 function toggleIndex(selection: readonly number[], index: number, isMultiple: boolean) {
@@ -55,6 +57,7 @@ export function QuestionField({
   onAnswerChange,
   listenCount,
   onListen,
+  onEnter,
 }: QuestionFieldProps) {
   const [localListens, setLocalListens] = useState(0);
   const fieldId = `question-${view.id}`;
@@ -90,7 +93,9 @@ export function QuestionField({
           value={typeof value === "string" ? value : ""}
           inputMode={textInputMode(view)}
           isDisabled={isLocked}
+          enterKeyHint={onEnter && position < total ? "next" : "done"}
           onValueChange={onAnswerChange}
+          onEnter={onEnter}
         />
       </div>
     );

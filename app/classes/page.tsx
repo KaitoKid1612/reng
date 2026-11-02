@@ -9,6 +9,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { requireStudent } from "@/lib/server/account";
 import { getLearnerAgenda } from "@/lib/server/learner";
+import { hasLearningHistory } from "@/lib/server/learning-history";
 
 import type { Metadata } from "next";
 
@@ -16,7 +17,14 @@ export const metadata: Metadata = { title: "Lớp của tôi" };
 
 export default async function ClassesPage() {
   const account = await requireStudent("/classes");
-  const agenda = await getLearnerAgenda(account.id, new Date());
+  const [agenda, hasHistory] = await Promise.all([
+    getLearnerAgenda(account.id, new Date()),
+    hasLearningHistory().catch(() => false),
+  ]);
+  // With work from several classes, each item says which class it belongs to.
+  const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
+  const hasSeveralClasses = agenda.classes.length > 1;
+  const hasOpenWork = agenda.openAssignments.length > 0;
   return (
     <>
       <div className="page-heading">
@@ -24,36 +32,59 @@ export default async function ClassesPage() {
           <h1>Lớp của tôi</h1>
           <p>Xin chào {account.fullName || account.email}.</p>
         </div>
-        <div className="button-row">
-          <Link href="/review" className={buttonVariants()}>
-            Ôn tập ({agenda.dueCardCount} thẻ)
-          </Link>
-          <Link href="/join-class" className={buttonVariants({ variant: "outline" })}>
-            Vào lớp mới
-          </Link>
-        </div>
+        <Link href="/join-class" className={buttonVariants({ variant: "outline" })}>
+          Vào lớp mới
+        </Link>
       </div>
       <section className="section-block" aria-labelledby="open-work">
         <h2 id="open-work">Bài tập cần làm</h2>
-        {agenda.openAssignments.length ? (
+        {hasOpenWork ? (
           <ul className="item-list">
-            {agenda.openAssignments.map((item) => (
+            {agenda.openAssignments.map((item, index) => (
               <li key={item.assignment.id}>
                 <div>
                   <h3>
                     <Link href={`/assignments/${item.assignment.id}`}>{item.assignment.title}</Link>
                   </h3>
                   <p className="item-meta">
+                    {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
                     {MODE_LABELS[item.assignment.mode]}, {describeDue(item.assignment.dueAt)}
                   </p>
                 </div>
-                <AssignmentStatusBadge status={item.status} />
+                <div className="button-row item-actions">
+                  <AssignmentStatusBadge status={item.status} />
+                  <Link
+                    href={`/assignments/${item.assignment.id}`}
+                    className={buttonVariants({ variant: index === 0 ? "default" : "outline" })}
+                  >
+                    {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>
         ) : (
           <p className="muted">Không có bài nào đang chờ. Ôn lại thẻ từ vựng nhé.</p>
         )}
+      </section>
+      <section className="section-block" aria-labelledby="review-title">
+        <h2 id="review-title">Ôn lại và tiến độ</h2>
+        <div className="button-row">
+          <Link
+            href="/review"
+            className={buttonVariants({
+              variant: !hasOpenWork && agenda.dueCardCount > 0 ? "default" : "outline",
+            })}
+          >
+            Ôn tập ({agenda.dueCardCount} thẻ)
+          </Link>
+          <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
+            Sổ lỗi
+          </Link>
+          <Link href="/progress" className={buttonVariants({ variant: "outline" })}>
+            Tiến độ của tôi
+          </Link>
+        </div>
       </section>
       <section className="section-block" aria-labelledby="my-classes">
         <h2 id="my-classes">Lớp đang học</h2>
@@ -82,15 +113,11 @@ export default async function ClassesPage() {
         )}
       </section>
       <div className="button-row">
-        <Link href="/history" className={buttonVariants({ variant: "ghost" })}>
-          Lịch sử từ Google Sheet
-        </Link>
-        <Link href="/mistakes" className={buttonVariants({ variant: "ghost" })}>
-          Sổ lỗi
-        </Link>
-        <Link href="/progress" className={buttonVariants({ variant: "ghost" })}>
-          Tiến độ của tôi
-        </Link>
+        {hasHistory && (
+          <Link href="/history" className={buttonVariants({ variant: "ghost" })}>
+            Lịch sử từ Google Sheet
+          </Link>
+        )}
         <Link href="/guide#learner-title" className={buttonVariants({ variant: "ghost" })}>
           Hướng dẫn
         </Link>

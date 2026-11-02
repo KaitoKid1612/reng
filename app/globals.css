@@ -292,6 +292,10 @@ h3 {
   gap: 12px;
   flex-wrap: wrap;
 }
+/* A status badge beside a button keeps its own height. */
+.item-actions {
+  align-items: center;
+}
 .page-heading {
   display: flex;
   align-items: flex-start;
@@ -1979,6 +1983,57 @@ rt {
   list-style: none;
   padding: 0;
   margin: 0 0 20px;
+}
+.question-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.question-map {
+  margin: 0 0 16px;
+}
+.question-map > summary {
+  width: fit-content;
+  padding: 8px 0;
+  color: var(--primary);
+  cursor: pointer;
+}
+.question-map > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.question-map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+  padding: 4px 0 12px;
+}
+.question-map-grid button {
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.question-map-grid button[data-state="answered"] {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.question-map-grid button[data-state="correct"] {
+  border-color: var(--correct);
+  color: var(--correct);
+}
+.question-map-grid button[data-state="wrong"] {
+  border-color: var(--wrong);
+  color: var(--wrong);
+}
+.question-map-grid button[aria-current="step"] {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  font-weight: 700;
 }
 .question-nav {
   display: none;

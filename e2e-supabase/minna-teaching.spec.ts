@@ -188,6 +188,11 @@ test("a learner signs up, confirms the email, joins and completes the lesson 11 
   await expect(finalN).toHaveValue("よにn");
   await reading.focus();
   await expect(finalN).toHaveValue("よにん");
+  // Enter checks a typed practice answer, finishing romaji first.
+  await reading.press("Enter");
+  await expect(
+    page.locator(".question-card").filter({ has: reading }).getByText("Đúng rồi!"),
+  ).toBeVisible();
   await expect(page.locator(".save-status")).toContainText("Đã lưu", { timeout: 10_000 });
   await page.getByRole("button", { name: "Nộp bài", exact: true }).click();
   await page.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();

@@ -35,6 +35,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
+      <HomeAgenda />
       <section className="home-hero">
         <div className="hero-copy">
           <p className="hero-intro">Học và dạy ngoại ngữ trên Reng</p>
@@ -79,7 +80,6 @@ export default function HomePage() {
           <p className="small muted">Một âm, một ô. Cứ thế bắt đầu.</p>
         </div>
       </section>
-      <HomeAgenda />
       <section className="home-start" aria-labelledby="start-title">
         <h2 id="start-title">Bạn muốn bắt đầu từ đâu?</h2>
         <div className="learning-columns">

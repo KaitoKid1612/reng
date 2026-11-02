@@ -18,6 +18,30 @@ export const metadata: Metadata = { title: "Tiến độ của tôi" };
 
 // Eight weeks show about two months of class work without crowding a phone screen.
 const PROGRESS_WEEKS = 8;
+// Daily sets add one assignment a day; older ones fold away like on the class pages.
+const RECENT_ASSIGNMENTS = 5;
+
+type ProgressAssignment = Awaited<ReturnType<typeof getProgressSummary>>["assignments"][number];
+
+interface ProgressAssignmentItemProps {
+  item: ProgressAssignment;
+}
+
+function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
+  return (
+    <li>
+      <div>
+        <Link href={`/assignments/${item.assignment.id}`}>{item.assignment.title}</Link>
+        <p className="item-meta">
+          {item.latestPercent === null
+            ? "Chưa có điểm hiển thị"
+            : `Lượt mới nhất ${formatPercent(item.latestPercent)}`}
+        </p>
+      </div>
+      <AssignmentStatusBadge status={item.status} />
+    </li>
+  );
+}
 
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
@@ -44,9 +68,6 @@ export default async function ProgressPage() {
           <p>Ba chỉ số tách riêng: đọc bài, điểm bài tập và thẻ ôn tập.</p>
         </div>
         <div className="button-row">
-          <Link href="/history" className={buttonVariants({ variant: "outline" })}>
-            Lịch sử từ Google Sheet
-          </Link>
           <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
             Cài đặt email nhắc học
           </Link>
@@ -100,21 +121,23 @@ export default async function ProgressPage() {
           </section>
         )}
         {summary.assignments.length ? (
-          <ul className="item-list">
-            {summary.assignments.map((item) => (
-              <li key={item.assignment.id}>
-                <div>
-                  <Link href={`/assignments/${item.assignment.id}`}>{item.assignment.title}</Link>
-                  <p className="item-meta">
-                    {item.latestPercent === null
-                      ? "Chưa có điểm hiển thị"
-                      : `Lượt mới nhất ${formatPercent(item.latestPercent)}`}
-                  </p>
-                </div>
-                <AssignmentStatusBadge status={item.status} />
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="item-list">
+              {summary.assignments.slice(0, RECENT_ASSIGNMENTS).map((item) => (
+                <ProgressAssignmentItem key={item.assignment.id} item={item} />
+              ))}
+            </ul>
+            {summary.assignments.length > RECENT_ASSIGNMENTS && (
+              <details className="older-assignments">
+                <summary>Bài cũ hơn ({summary.assignments.length - RECENT_ASSIGNMENTS})</summary>
+                <ul className="item-list">
+                  {summary.assignments.slice(RECENT_ASSIGNMENTS).map((item) => (
+                    <ProgressAssignmentItem key={item.assignment.id} item={item} />
+                  ))}
+                </ul>
+              </details>
+            )}
+          </>
         ) : (
           <p className="muted">Chưa có bài tập nào được giao.</p>
         )}
