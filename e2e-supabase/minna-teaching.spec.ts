@@ -129,6 +129,8 @@ test("the teacher opens a Japanese class, pins lesson 11 and assigns practice", 
   await page.getByLabel("Mỗi ngày tự giao").selectOption("7");
   await page.getByRole("button", { name: "Lưu", exact: true }).click();
   await expect(page.getByText("Đã bật: mỗi sáng 6:00 Reng tự giao 7 câu")).toBeVisible();
+  // The form resets after saving; the menu must show the saved size, not the old one.
+  await expect(page.getByLabel("Mỗi ngày tự giao")).toHaveValue("7");
   await today.click();
   await expect(page.getByText("Đã giao bài luyện hôm nay (7 câu)")).toBeVisible();
   await expect(page.getByText(DAILY_TITLE)).toBeVisible();

@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { classSettingsSchema } from "@/lib/class-settings";
-import { DAILY_PRACTICE_SIZES } from "@/lib/daily-practice";
+import { MAX_DAILY_PRACTICE_SIZE, MIN_DAILY_PRACTICE_SIZE } from "@/lib/daily-practice";
 import { signInPath } from "@/lib/auth-paths";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
@@ -181,7 +181,9 @@ export async function joinCodeAction(
 const dailySizeSchema = z
   .string()
   .transform((value) => (value ? Number(value) : null))
-  .pipe(z.union([z.null(), z.literal(DAILY_PRACTICE_SIZES)]));
+  .pipe(
+    z.union([z.null(), z.number().int().min(MIN_DAILY_PRACTICE_SIZE).max(MAX_DAILY_PRACTICE_SIZE)]),
+  );
 
 const TODAY_ERRORS = {
   disabled: "Chọn số câu và bấm Lưu trước khi giao bài hôm nay.",

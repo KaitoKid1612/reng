@@ -61,6 +61,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
         <div className="field">
           <label htmlFor="class-language">Ngôn ngữ học</label>
           <select
+            key={classRow?.language_tag ?? "new"}
             id="class-language"
             name="languageTag"
             defaultValue={classRow?.language_tag ?? "ja-JP"}

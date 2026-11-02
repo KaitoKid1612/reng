@@ -2,7 +2,20 @@
 const VIETNAM_OFFSET_MS = 7 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 60] as const;
+export const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 20, 30, 40, 60] as const;
+// The database accepts any size in this range, for example a size set while importing a bank.
+export const MIN_DAILY_PRACTICE_SIZE = 3;
+export const MAX_DAILY_PRACTICE_SIZE = 60;
+
+// The usual sizes plus the class's current one, so the menu never shows a different value
+// from the one in use, and saving it unchanged keeps it.
+export function dailyPracticeSizeOptions(current: number | null) {
+  const sizes = new Set<number>(DAILY_PRACTICE_SIZES);
+  if (current !== null) {
+    sizes.add(current);
+  }
+  return [...sizes].sort((first, second) => first - second);
+}
 // Questions seen within this window are rotated to the back of the queue.
 export const DAILY_PRACTICE_HISTORY_DAYS = 14;
 
