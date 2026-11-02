@@ -184,6 +184,54 @@ h3 {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
 }
+/* On phones the menu folds behind a toggle and the person's main page stays in the bar, so the
+   header no longer takes a quarter of the first screen. */
+.header-shortcut,
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 600px) {
+  .header-shortcut {
+    display: block;
+    margin-left: auto;
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--foreground);
+    font: inherit;
+    font-size: 14px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  .header-shortcut + .menu-toggle {
+    margin-left: 0;
+  }
+  .site-header nav[data-open="false"] {
+    display: none;
+  }
+  .site-header nav[data-open="true"] {
+    flex-direction: column;
+    gap: 0;
+  }
+  .site-header nav[data-open="true"] a {
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    font-size: 16px;
+  }
+  .site-header nav[data-open="true"] a[aria-current="page"] {
+    border-bottom: 0;
+    font-weight: 600;
+  }
+}
 .page-container {
   max-width: 1200px;
   margin: auto;

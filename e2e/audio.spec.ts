@@ -170,7 +170,7 @@ test("returning to the chart resets feedback from the previous route", async ({ 
   await page.goto("/kana");
   await page.getByRole("button", { name: "あ, a", exact: true }).click();
   await expect(page.getByRole("status")).toContainText("chưa có giọng Nhật");
-  await page.getByRole("link", { name: "Luyện tập", exact: true }).click();
+  await page.getByRole("link", { name: "Luyện kana", exact: true }).click();
   await expect(page).toHaveURL(/\/kana\/practice$/);
   await page.getByRole("link", { name: "Bảng chữ cái", exact: true }).click();
   await expect(page).toHaveURL(/\/kana$/);

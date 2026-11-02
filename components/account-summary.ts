@@ -1,13 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-interface AccountSummary {
+export interface AccountSummary {
   name: string;
   role: "student" | "teacher";
   isAdmin: boolean;
+  // Only people who can read an imported Google Sheet archive get a header link to it.
+  hasLearningHistory: boolean;
 }
 
 function parseAccount(data: unknown): AccountSummary | null {
@@ -25,11 +26,17 @@ function parseAccount(data: unknown): AccountSummary | null {
   ) {
     return null;
   }
-  return { name: user.name, role: user.role, isAdmin: "isAdmin" in user && user.isAdmin === true };
+  return {
+    name: user.name,
+    role: user.role,
+    isAdmin: "isAdmin" in user && user.isAdmin === true,
+    hasLearningHistory: "hasLearningHistory" in user && user.hasLearningHistory === true,
+  };
 }
 
-// Loaded after hydration so static pages stay static and cacheable.
-export function AccountLink() {
+// Loaded after hydration so static pages stay static and cacheable. Undefined while loading,
+// null for guests.
+export function useAccountSummary() {
   const pathname = usePathname();
   const [account, setAccount] = useState<AccountSummary | null | undefined>(undefined);
 
@@ -46,34 +53,5 @@ export function AccountLink() {
     return () => controller.abort();
   }, [pathname]);
 
-  if (account === undefined) {
-    return null;
-  }
-  if (!account) {
-    return (
-      <Link href="/sign-in" aria-current={pathname === "/sign-in" ? "page" : undefined}>
-        Đăng nhập
-      </Link>
-    );
-  }
-  return (
-    <>
-      {account.isAdmin && (
-        <Link href="/admin" aria-current={pathname.startsWith("/admin") ? "page" : undefined}>
-          Quản trị
-        </Link>
-      )}
-      {account.role === "teacher" && (
-        <Link href="/teach" aria-current={pathname.startsWith("/teach") ? "page" : undefined}>
-          Giảng dạy
-        </Link>
-      )}
-      <Link href="/history" aria-current={pathname.startsWith("/history") ? "page" : undefined}>
-        Lịch sử học tập
-      </Link>
-      <Link href="/classes" aria-current={pathname.startsWith("/classes") ? "page" : undefined}>
-        Lớp của tôi
-      </Link>
-    </>
-  );
+  return account;
 }

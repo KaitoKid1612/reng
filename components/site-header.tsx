@@ -1,24 +1,99 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRef, useState } from "react";
 
-import { AccountLink } from "@/components/account-link";
+import { useAccountSummary } from "@/components/account-summary";
 import { BrandMark } from "@/components/brand-mark";
 
-const NAVIGATION_LINKS = [
+import type { AccountSummary } from "@/components/account-summary";
+import type { KeyboardEvent } from "react";
+
+interface NavigationLink {
+  href: string;
+  label: string;
+  // Account areas stay marked on their inner pages, e.g. a class under /teach.
+  isSection?: boolean;
+}
+
+// Ways in for visitors; signed-in people reach the same pages from their own areas.
+const GUEST_LINKS: NavigationLink[] = [
   { href: "/join-class", label: "Vào lớp" },
   { href: "/for-teachers", label: "Cho giáo viên" },
+];
+
+// Japanese self-study pages that work without an account. "Luyện tập" is the label of class
+// practice sets, so the kana drill names its script instead.
+const SELF_STUDY_LINKS: NavigationLink[] = [
   { href: "/lessons", label: "Bài học" },
   { href: "/grammar", label: "Ngữ pháp" },
   { href: "/kana", label: "Bảng chữ cái" },
-  { href: "/kana/practice", label: "Luyện tập" },
-  { href: "/guide", label: "Hướng dẫn" },
+  { href: "/kana/practice", label: "Luyện kana" },
 ];
+
+const GUIDE_LINK: NavigationLink = { href: "/guide", label: "Hướng dẫn" };
+const SIGN_IN_LINK: NavigationLink = { href: "/sign-in", label: "Đăng nhập" };
+
+function listAccountLinks(account: AccountSummary): NavigationLink[] {
+  const links: NavigationLink[] = [];
+  if (account.isAdmin) {
+    links.push({ href: "/admin", label: "Quản trị", isSection: true });
+  }
+  if (account.role === "teacher") {
+    links.push({ href: "/teach", label: "Giảng dạy", isSection: true });
+  }
+  links.push({ href: "/classes", label: "Lớp của tôi", isSection: true });
+  if (account.hasLearningHistory) {
+    links.push({ href: "/history", label: "Lịch sử Sheet", isSection: true });
+  }
+  return links;
+}
+
+// While the account loads the menu matches the server-rendered guest menu, minus sign-in.
+function listLinks(account: AccountSummary | null | undefined) {
+  if (account) {
+    return [...listAccountLinks(account), ...SELF_STUDY_LINKS, GUIDE_LINK];
+  }
+  const links = [...GUEST_LINKS, ...SELF_STUDY_LINKS, GUIDE_LINK];
+  return account === null ? [...links, SIGN_IN_LINK] : links;
+}
+
+// On a phone the menu folds away; the person's main page stays one tap from every screen.
+function findShortcut(account: AccountSummary | null | undefined) {
+  if (account === undefined) {
+    return null;
+  }
+  if (!account) {
+    return SIGN_IN_LINK;
+  }
+  return account.role === "teacher"
+    ? { href: "/teach", label: "Giảng dạy", isSection: true }
+    : { href: "/classes", label: "Lớp của tôi", isSection: true };
+}
+
+function isCurrent(link: NavigationLink, pathname: string) {
+  return link.isSection ? pathname.startsWith(link.href) : pathname === link.href;
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const account = useAccountSummary();
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  // The menu belongs to the page it was opened on, so navigating closes it.
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const isMenuOpen = openPath === pathname;
+  const shortcut = findShortcut(account);
+
+  function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
+    if (event.key === "Escape" && isMenuOpen) {
+      setOpenPath(null);
+      toggleRef.current?.focus();
+    }
+  }
+
   return (
-    <header className="site-header">
+    <header className="site-header" onKeyDown={handleKeyDown}>
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="Reng, trang chủ">
           <BrandMark />
@@ -27,17 +102,36 @@ export function SiteHeader() {
             <span className="brand-caption">Học và dạy ngoại ngữ online</span>
           </span>
         </Link>
-        <nav aria-label="Điều hướng chính">
-          {NAVIGATION_LINKS.map((link) => (
+        {shortcut && (
+          <Link
+            href={shortcut.href}
+            className="header-shortcut"
+            aria-current={isCurrent(shortcut, pathname) ? "page" : undefined}
+          >
+            {shortcut.label}
+          </Link>
+        )}
+        <button
+          ref={toggleRef}
+          type="button"
+          className="menu-toggle"
+          aria-expanded={isMenuOpen}
+          aria-controls="site-navigation"
+          onClick={() => setOpenPath(isMenuOpen ? null : pathname)}
+        >
+          {isMenuOpen ? "Đóng" : "Menu"}
+        </button>
+        <nav id="site-navigation" aria-label="Điều hướng chính" data-open={isMenuOpen}>
+          {listLinks(account).map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              aria-current={pathname === link.href ? "page" : undefined}
+              aria-current={isCurrent(link, pathname) ? "page" : undefined}
+              onClick={() => setOpenPath(null)}
             >
               {link.label}
             </Link>
           ))}
-          <AccountLink />
         </nav>
       </div>
     </header>

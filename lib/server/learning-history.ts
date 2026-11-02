@@ -40,6 +40,19 @@ export async function listLearningHistory() {
   );
 }
 
+// The header links the archive page only for people who can read at least one archive.
+export async function hasLearningHistory() {
+  const client = await createSessionClient();
+  if (!client) {
+    return false;
+  }
+  const rows = await selectRows(
+    client.from("learning_history_archives").select("id").limit(1),
+    z.object({ id: z.uuid() }),
+  );
+  return rows.length > 0;
+}
+
 export async function loadLearningHistory(id: string) {
   if (!z.uuid().safeParse(id).success) {
     return null;
