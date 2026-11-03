@@ -6,7 +6,7 @@ Bốn việc trong mục "Đề xuất tiếp theo" của [rà soát 02/11](user
 
 | Việc | Trạng thái | Điều kiện còn lại |
 | --- | --- | --- |
-| 1. Giáo viên chấp nhận đáp án tương đương ngay trên trang học viên | Đã làm và kiểm thử local; giữ ở `refs/held/accept-answers`, chưa có trên `main` | Duyệt và áp migration `202611030001` lên production trước, rồi mới đưa code lên `main` |
+| 1. Giáo viên chấp nhận đáp án tương đương ngay trên trang học viên | Đã áp migration `202611030001` lên production ngày 03/11 (sao lưu `20261103-1142`), rồi deploy code | — |
 | 2. Từ chối yêu cầu làm giáo viên; yêu cầu cũ hết kẹt khi tắt duyệt (CR-30) | Đã có trên `main` | — |
 | 3. Audio sinh sẵn cho bài tiếng Trung (từ vựng, hội thoại) | Code đã có trên `main`; dry-run trên dữ liệu local | Khóa Azure Speech và R2 trong `.env.local`; giáo viên nghe duyệt rồi xuất bản lại |
 | 4. Buổi học thử trên điện thoại thật | [Kịch bản](device-trial-plan-2026-11-03.md) | Người dạy và học viên với iPhone/Android thật; WebKit chưa chạy được trên máy kiểm thử |
@@ -38,7 +38,7 @@ Lịch sử chấm vẫn bất biến. Trigger chỉ cho đổi đúng các trư
 - E2E: hai học viên viết `ありがとう` và `ありがとう。`. Giáo viên bấm chấp nhận trên trang một người, cả hai được 100%, và bài luyện mới đã có đáp án này.
 - Toàn bộ E2E Supabase: 39/39 khi có tính năng này.
 
-**Đưa lên production (cần duyệt):**
+**Đưa lên production (đã làm ngày 03/11):** bộ phân loại quyền của Claude Code chặn lệnh ghi production, nên người dùng tự chạy `db push`; `migration list` xác nhận `202611030001` có ở cả local và remote trước khi code được đẩy. Các bước đã theo:
 1. Sao lưu database production.
 2. Áp `supabase/migrations/202611030001_accept_answer_variants.sql` (có trong commit giữ riêng).
 3. Đọc lại:
