@@ -69,9 +69,10 @@ export function dailySourceState(pinnedLessonId: string | null, sourceLessonId: 
   return pinnedLessonId === sourceLessonId ? "pinned" : "fallback";
 }
 
-// With fewer questions than the daily size, every question comes back every day.
+// With no more questions than the daily size, every question comes back every day; a source of
+// exactly the daily size repeats in full too.
 export function repeatsEveryDay(questionCount: number, size: number | null) {
-  return size !== null && questionCount < size;
+  return size !== null && questionCount <= size;
 }
 
 // Listening needs audio that a bank may not have, so daily sets use the other kinds.

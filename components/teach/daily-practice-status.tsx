@@ -44,9 +44,10 @@ export function DailyPracticeStatus({
       )}
       {repeatsEveryDay(source.questionCount, size) && (
         <p className="notice-panel" role="status">
-          Bài nguồn chỉ có {source.questionCount} câu, ít hơn {size} câu mỗi ngày: ngày nào học viên
-          cũng gặp lại cả {source.questionCount} câu. Chọn bài có nhiều câu hơn hoặc giảm số câu mỗi
-          ngày.
+          Bài nguồn chỉ có {source.questionCount} câu,{" "}
+          {source.questionCount < (size ?? 0) ? `ít hơn ${size} câu` : "bằng số câu"} mỗi ngày: ngày
+          nào học viên cũng gặp lại cả {source.questionCount} câu. Chọn bài có nhiều câu hơn hoặc
+          giảm số câu mỗi ngày.
         </p>
       )}
     </>

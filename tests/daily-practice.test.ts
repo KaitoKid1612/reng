@@ -131,10 +131,12 @@ test("a pinned review bank stays the daily source when the next lesson opens", (
   assert.equal(dailySourceState("n5-bank", "minna-12"), "fallback");
 });
 
-test("a source with fewer questions than the daily size repeats every question each day", () => {
+test("a source no larger than the daily size repeats every question each day", () => {
   assert.equal(repeatsEveryDay(50, 60), true);
   assert.equal(repeatsEveryDay(200, 60), false);
-  assert.equal(repeatsEveryDay(60, 60), false);
+  // A source of exactly the daily size repeats every question every day too.
+  assert.equal(repeatsEveryDay(60, 60), true);
+  assert.equal(repeatsEveryDay(61, 60), false);
   assert.equal(repeatsEveryDay(5, null), false);
 });
 
