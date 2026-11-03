@@ -2947,3 +2947,34 @@ rt {
   flex: 1;
   border-top: 1px solid var(--border);
 }
+
+/* Weekly timetable rows in the class schedule form. */
+.schedule-slots {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.schedule-slots li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+.schedule-slots .field {
+  margin-bottom: 12px;
+}
+.schedule-slots .button {
+  margin-bottom: 12px;
+}
+.schedule-add {
+  margin: 4px 0 20px;
+}
+@media (max-width: 600px) {
+  .schedule-slots li {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+}

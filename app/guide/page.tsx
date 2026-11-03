@@ -79,6 +79,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Vào Giảng dạy → Tạo lớp: nhập tên lớp, chọn Tiếng Nhật, Tiếng Trung giản thể hoặc Tiếng Trung phồn thể theo lớp, số học viên tối đa (để trống nếu không giới hạn) và link Google Meet dạng https://meet.google.com/abc-defg-hij.",
       "Ở trang lớp, bấm Sao chép link mời rồi gửi cho học viên qua Zalo/Messenger; học viên mở link là mã lớp được điền sẵn. Vẫn có thể gửi riêng mã lớp. Đổi mã mới hoặc Ngừng nhận học viên khi cần.",
       "Xóa học viên khỏi lớp: bấm tên học viên ở trang lớp, rồi Xóa khỏi lớp và Xác nhận xóa. Điểm và bài đã nộp vẫn giữ trong báo cáo. Học viên còn mã lớp thì vào lại được; muốn chặn thì đổi mã lớp.",
+      "Đặt lịch học: ở mục Lịch học của trang lớp, bấm Thêm buổi trong tuần, chọn thứ, giờ bắt đầu và thời lượng (giờ Việt Nam), thêm ghi chú nếu nghỉ hoặc học bù, rồi bấm Lưu lịch học. Học viên thấy buổi tới ở trang lớp và ở Lớp của tôi.",
     ],
   },
   {
@@ -136,6 +137,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-study",
     title: "Học bài",
     steps: [
+      "Lớp của tôi và trang lớp hiện buổi học tới theo lịch giáo viên đặt; tới giờ thì bấm Vào Google Meet ở trang lớp.",
       "Vào Lớp của tôi → chọn lớp → Đọc bài: từ vựng có nút Nghe, mẫu câu có furigana, hội thoại và bảng luyện tập (bấm Xem câu mẫu để kiểm tra mình).",
       "Ôn lại bằng slide hoặc Flashcard từ vựng ở cuối trang bài học.",
     ],

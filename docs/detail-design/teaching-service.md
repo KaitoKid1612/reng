@@ -257,6 +257,13 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Lịch học hằng tuần — 03/11/2026
+
+- `202611030002_class_schedules.sql`: bảng `class_schedules` (`class_id` khóa chính và khóa ngoại tới `classes`, `slots` jsonb là mảng tối đa 14 phần tử, `note` ≤ 300 ký tự, `updated_at`). RLS bật, không cấp quyền cho anon/authenticated; service role đọc/thêm/sửa. Kiểm tra ở `tests/class-schedule-migration.test.ts`.
+- `lib/class-schedule.ts`: `scheduleSlotSchema` (`weekday` 1–7 theo ISO, `start` HH:MM, `minutes` 15–300), `classScheduleSchema`, `normalizeSlots` (Thứ Hai trước, theo giờ, bỏ trùng), `describeSlot`, `findNextSession` (giờ Việt Nam cố định UTC+7; buổi sớm nhất chưa kết thúc, `isLive` khi đang trong giờ), `describeNextSession` (Hôm nay / Ngày mai / thứ ngày), `describeUpcomingSession`. Kiểm tra ở `tests/class-schedule.test.ts`.
+- `lib/server/class-schedule.ts`: `getClassSchedule`, `listClassSchedules` (đọc theo lô), `saveClassSchedule` (kiểm tra chủ lớp bằng `getTeacherClass`, rồi upsert). Dòng đọc không hợp lệ với phiên bản app hiện tại thì coi như chưa có lịch; lỗi database khi đọc (ví dụ bảng chưa có vì migration chưa tới) chỉ ghi log và trả lịch rỗng, để trang lớp vẫn mở. Người gọi tự kiểm tra quyền: trang lớp học viên đọc sau `getStudentClassView` (đã kiểm tra thành viên), trang Lớp của tôi chỉ đọc lớp của chính học viên.
+- `classScheduleAction` (`app/actions/classes.ts`) nhận các buổi dưới dạng JSON trong trường ẩn, kiểm tra lại bằng `classScheduleSchema` rồi lưu. `components/teach/class-schedule-form.tsx` (thêm hoặc xóa buổi, chọn thứ, giờ, thời lượng; ô ghi chú). `TeachingPanel` nhận `nextSession`; `components/classroom/upcoming-session.tsx` hiện một dòng "Buổi tới" trong danh sách lớp của học viên và giáo viên.
+
 ## Tài khoản, quên mật khẩu và trình soạn — 03/11/2026
 
 Kiểm tra ở [báo cáo](../testing/flow-fixes-2026-11-03.md).

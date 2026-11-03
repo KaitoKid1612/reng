@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import {
   AssignmentStatusBadge,
   describeDue,
@@ -8,6 +9,7 @@ import {
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
 import { requireStudent } from "@/lib/server/account";
+import { listClassSchedules } from "@/lib/server/class-schedule";
 import { getLearnerAgenda } from "@/lib/server/learner";
 import { hasLearningHistory } from "@/lib/server/learning-history";
 
@@ -17,10 +19,12 @@ export const metadata: Metadata = { title: "Lớp của tôi" };
 
 export default async function ClassesPage() {
   const account = await requireStudent("/classes");
+  const now = new Date();
   const [agenda, hasHistory] = await Promise.all([
-    getLearnerAgenda(account.id, new Date()),
+    getLearnerAgenda(account.id, now),
     hasLearningHistory().catch(() => false),
   ]);
+  const schedules = await listClassSchedules(agenda.classes.map((item) => item.id));
   // With work from several classes, each item says which class it belongs to.
   const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
   const hasSeveralClasses = agenda.classes.length > 1;
@@ -102,6 +106,7 @@ export default async function ClassesPage() {
                       ? "Lớp tự học của bạn"
                       : `Giảng viên: ${item.teacherName || "chưa cập nhật"}`}
                   </p>
+                  <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
                 </div>
               </li>
             ))}

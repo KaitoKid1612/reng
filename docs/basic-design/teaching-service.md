@@ -136,6 +136,15 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Lịch học hằng tuần — 03/11/2026
+
+Giáo viên đặt lịch lặp lại hằng tuần cho lớp, theo giờ Việt Nam: mỗi buổi gồm thứ, giờ bắt đầu và thời lượng (tối đa 14 buổi một tuần), kèm một dòng ghi chú cho học viên (ví dụ "Nghỉ ngày 20/11, học bù tối thứ Bảy").
+
+- Học viên thấy **Buổi tới** ở trang lớp (cùng lịch hằng tuần, ghi chú và nút Vào Google Meet) và ở Lớp của tôi. Giáo viên thấy buổi tới ở khối Buổi dạy online của trang lớp và ở trang Giảng dạy.
+- Buổi tới là buổi sớm nhất chưa kết thúc, nên trong giờ học hiện "(đang diễn ra)". Trong ngày ghi "Hôm nay", hôm sau ghi "Ngày mai".
+- Chưa có: lịch từng buổi riêng (đổi giờ hoặc hủy một buổi cụ thể), nhắc trước giờ học, lịch xuất ra Google Calendar. Hiện dùng ô ghi chú cho các thay đổi này.
+- Migration `202611030002_class_schedules.sql` đã chạy trên production ngày 03/11/2026, trước khi đưa code lên. Không đọc được lịch thì trang lớp vẫn mở, chỉ không có buổi tới.
+
 ## Tài khoản, quên mật khẩu và trình soạn — 03/11/2026
 
 Sửa những chức năng đã có nhưng không chạy đúng trên production; danh sách và phần còn lại ở [báo cáo](../testing/flow-fixes-2026-11-03.md).

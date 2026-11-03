@@ -10,17 +10,36 @@ interface TeachingPanelProps {
   classId: string;
   meetingUrl: string | null;
   latestSession: ClassSession | undefined;
+  // Already worded for display, e.g. "Hôm nay, 19:30–21:00"; null without a timetable.
+  nextSession: string | null;
 }
 
 // What a teacher needs when an online lesson starts sits above the reports: the Meet link and
 // the slides of the class's own version, reopened where the last session stopped. Before any
 // session is logged the teacher picks the lesson, since a class also holds question banks.
-export function TeachingPanel({ classId, meetingUrl, latestSession }: TeachingPanelProps) {
+export function TeachingPanel({
+  classId,
+  meetingUrl,
+  latestSession,
+  nextSession,
+}: TeachingPanelProps) {
   const sessionLesson = latestSession?.lesson;
   const resumeSlide = latestSession?.slideReached ?? 1;
   return (
     <section className="teaching-panel" aria-labelledby="teaching-panel-title">
       <h2 id="teaching-panel-title">Buổi dạy online</h2>
+      <p className="small">
+        {nextSession ? (
+          <>
+            Buổi tới: <strong>{nextSession}</strong>. <Link href="#class-schedule">Sửa lịch</Link>
+          </>
+        ) : (
+          <>
+            Chưa có lịch học. <Link href="#class-schedule">Đặt lịch hằng tuần</Link> để học viên
+            thấy buổi tới.
+          </>
+        )}
+      </p>
       {latestSession ? (
         <p className="small">
           Buổi gần nhất {formatStudyDay(latestSession.taughtOn)}

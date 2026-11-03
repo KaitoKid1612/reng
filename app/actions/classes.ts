@@ -4,6 +4,7 @@ import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { classScheduleSchema } from "@/lib/class-schedule";
 import { classSessionInputSchema, isFutureSession } from "@/lib/class-sessions";
 import { classSettingsSchema } from "@/lib/class-settings";
 import {
@@ -16,6 +17,7 @@ import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
+import { saveClassSchedule } from "@/lib/server/class-schedule";
 import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
@@ -192,6 +194,36 @@ export async function joinCodeAction(
         ? "Đã đổi mã lớp. Mã cũ không dùng được nữa."
         : "Đã cập nhật trạng thái nhận học viên.",
   };
+}
+
+const INVALID_SCHEDULE = "Lịch học chưa hợp lệ. Kiểm tra thứ, giờ bắt đầu và thời lượng từng buổi.";
+
+// The form sends its slot rows as JSON; the server parses them again before saving.
+export async function classScheduleAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  let slots: unknown;
+  try {
+    slots = JSON.parse(readField(formData, "slots") || "[]");
+  } catch {
+    return { error: INVALID_SCHEDULE };
+  }
+  const parsed = classScheduleSchema.safeParse({ slots, note: readField(formData, "note") });
+  if (!parsed.success) {
+    return { error: INVALID_SCHEDULE };
+  }
+  try {
+    await saveClassSchedule(account.id, readField(formData, "classId"), parsed.data);
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  return { notice: "Đã lưu lịch học." };
 }
 
 export async function removeStudentAction(

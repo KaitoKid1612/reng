@@ -3,12 +3,14 @@ import { randomUUID } from "node:crypto";
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { filterManagedLessons, parseLessonFilters } from "@/lib/lesson-management";
 import { TEACHING_LANGUAGE_LABELS, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
+import { listClassSchedules } from "@/lib/server/class-schedule";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
 import { findStarterForLesson } from "@/lib/starter-lessons";
 
@@ -23,10 +25,12 @@ interface TeachPageProps {
 export default async function TeachPage({ searchParams }: TeachPageProps) {
   const filters = parseLessonFilters(await searchParams);
   const account = await requireTeacher("/teach");
+  const now = new Date();
   const [classes, lessons] = await Promise.all([
     listTeacherClasses(account.id),
     listOwnedLessons(account.id),
   ]);
+  const schedules = await listClassSchedules(classes.map((item) => item.id));
   const visibleLessons = filterManagedLessons(lessons, filters);
   return (
     <>
@@ -66,6 +70,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                         : ", ngừng nhận")}
                     {item.active ? "" : ", đã lưu trữ"}
                   </p>
+                  <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
                 </div>
               </li>
             ))}

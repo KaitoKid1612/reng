@@ -54,8 +54,21 @@ Làm sau khi người dùng đồng ý, cùng ngày. **Không cần migration:**
 
 Kiểm tra trên dev server local với Supabase local, tài khoản thử (`co.lan@reng.local`, `hoc.vien@reng.local`). Sau đó đã cho học viên vào lại lớp để giữ dữ liệu mẫu. Chưa thử với lớp tự học trên trình duyệt; ở đó nút bị ẩn và server cũng từ chối.
 
+## Lịch học hằng tuần
+
+Làm sau khi người dùng đồng ý, cùng ngày. Cần migration `202611030002_class_schedules.sql` (bảng mới, không sửa dữ liệu cũ).
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/class-schedule.test.ts`: buổi tới theo giờ Việt Nam (đang học, đã xong, sang tuần sau, máy chủ khác múi giờ), Hôm nay/Ngày mai, sắp xếp và bỏ trùng, chặn giờ hoặc thời lượng sai | Đạt |
+| `tests/class-schedule-migration.test.ts`: mỗi lớp một dòng, giới hạn số buổi và độ dài ghi chú, anon/authenticated không đọc ghi được | Đạt |
+| Giáo viên thêm 2 buổi và ghi chú, lưu: khối Buổi dạy online hiện "Buổi tới"; tải lại vẫn đúng thứ tự | Đạt |
+| Trang Giảng dạy và Lớp của tôi hiện "Buổi tới"; trang lớp học viên hiện buổi tới, lịch hằng tuần, ghi chú và nút Meet | Đạt |
+| `npm run audit:layout` trang lớp (giáo viên, học viên), Giảng dạy, Lớp của tôi | Không có lỗi hay cảnh báo, sau khi tách nút "Thêm buổi trong tuần" khỏi ô ghi chú |
+
+Kiểm tra trên Supabase local đã áp migration. Người dùng chạy migration trên production ngày 03/11/2026 (sao lưu, `migration list`, `db push`), sau đó code mới được push. Phiên làm việc không tự đọc được danh sách migration production, vì chế độ tự động chặn. Vì vậy code đọc lịch có thêm lớp bảo vệ: thử trên máy local, khi đổi tên bảng để giả lập migration chưa chạy, cả bốn trang (Giảng dạy, trang lớp giáo viên, Lớp của tôi, trang lớp học viên) vẫn trả 200, chỉ không hiện "Buổi tới", và server ghi log lỗi đọc.
+
 ## Còn lại, cần người dùng quyết định
-- **Lịch học (buổi tới):** chưa có dữ liệu lịch; cần bảng mới (migration production).
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).
 - **Tài khoản quản trị trên production:** xác nhận đã có, nếu chưa thì cấp bằng SQL ([poc-setup.md](../poc-setup.md) bước 5).

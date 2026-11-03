@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { ClassScheduleForm } from "@/components/teach/class-schedule-form";
 import { ClassSessionForm } from "@/components/teach/class-session-form";
 import { ClassSessionList } from "@/components/teach/class-session-list";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
@@ -17,6 +18,8 @@ import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
+import { describeUpcomingSession } from "@/lib/class-schedule";
+import { getClassSchedule } from "@/lib/server/class-schedule";
 import { listClassSessions } from "@/lib/server/class-sessions";
 import { findDailyPracticeSource } from "@/lib/server/daily-practice";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -109,12 +112,14 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
     report.lessons.map((lesson) => lesson.lessonId),
   );
   // The source lookup reads question lists, so it only runs while daily practice is on.
-  const [sessions, dailySource] = await Promise.all([
+  const [sessions, dailySource, schedule] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
     classRow.daily_practice_size
       ? findDailyPracticeSource(classRow.id, classRow.daily_practice_lesson_id, now)
       : null,
+    getClassSchedule(classRow.id),
   ]);
+  const nextSessionText = describeUpcomingSession(schedule.slots, now);
   const lessonTitle = (lessonId: string) =>
     report.lessons.find((lesson) => lesson.lessonId === lessonId)?.title ?? null;
   const openLessons = report.lessons
@@ -167,6 +172,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           classId={classRow.id}
           meetingUrl={classRow.meeting_url}
           latestSession={latestSession}
+          nextSession={nextSessionText}
         />
       )}
       <div className="stat-tiles">
@@ -342,6 +348,13 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             <Link href={`/teach/classes/${classRow.id}/assign`}>Giao bài đầu tiên</Link>.
           </p>
         )}
+      </section>
+      <section className="section-block" aria-labelledby="class-schedule">
+        <h2 id="class-schedule">Lịch học</h2>
+        <p className="small muted">
+          Giờ Việt Nam, lặp lại hằng tuần. Học viên thấy buổi tới ở trang lớp và ở Lớp của tôi.
+        </p>
+        <ClassScheduleForm classId={classRow.id} schedule={schedule} />
       </section>
       {!classRow.self_study && (
         <section className="section-block" aria-labelledby="class-sessions">

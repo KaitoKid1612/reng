@@ -7,8 +7,10 @@ import {
 } from "@/components/classroom/assignment-labels";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { buttonVariants } from "@/components/ui/button";
+import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
+import { getClassSchedule } from "@/lib/server/class-schedule";
 import { getStudentClassView } from "@/lib/server/learner";
 import { loadOrNotFound } from "@/lib/server/pages";
 
@@ -64,7 +66,12 @@ function LearnerAssignmentItem({ item, isFirst = false }: LearnerAssignmentItemP
 export default async function ClassPage({ params }: ClassPageProps) {
   const { id } = await params;
   const account = await requireStudent(`/classes/${id}`);
-  const view = await loadOrNotFound(getStudentClassView(account.id, id, new Date()));
+  const now = new Date();
+  const view = await loadOrNotFound(getStudentClassView(account.id, id, now));
+  // Membership was checked above, so the timetable is read only for a member.
+  const schedule = await getClassSchedule(view.classRow.id);
+  const nextSession = describeUpcomingSession(schedule.slots, now);
+  const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
   const openWork = view.assignments.filter(isOpenWork);
   const otherWork = view.assignments.filter((item) => !isOpenWork(item));
   return (
@@ -77,17 +84,30 @@ export default async function ClassPage({ params }: ClassPageProps) {
           </p>
         </div>
       </div>
-      {view.classRow.meeting_url && (
-        <section className="section-block">
-          <h2>Buổi học online</h2>
-          <a
-            href={view.classRow.meeting_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={buttonVariants()}
-          >
-            Vào Google Meet
-          </a>
+      {hasSessionInfo && (
+        <section className="section-block" aria-labelledby="class-session-title">
+          <h2 id="class-session-title">Buổi học online</h2>
+          {nextSession && (
+            <p>
+              Buổi tới: <strong>{nextSession}</strong>
+            </p>
+          )}
+          {schedule.slots.length > 0 && (
+            <p className="small muted">
+              Lịch hằng tuần: {schedule.slots.map(describeSlot).join(", ")}.
+            </p>
+          )}
+          {schedule.note && <p className="small">{schedule.note}</p>}
+          {view.classRow.meeting_url && (
+            <a
+              href={view.classRow.meeting_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonVariants()}
+            >
+              Vào Google Meet
+            </a>
+          )}
         </section>
       )}
       <section className="section-block" aria-labelledby="class-assignments">
