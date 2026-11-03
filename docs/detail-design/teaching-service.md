@@ -283,6 +283,7 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - `lib/server/lesson-usage.ts`: `getLessonUsage` (bài thuộc giáo viên, phiên bản đang xuất bản, lớp đang hoạt động kèm phiên bản lớp dùng, đọc theo lô). `pinLatestVersion` (kiểm tra chủ lớp, rồi `upsert_class_lesson` với phiên bản đang xuất bản; bài đã có trong lớp giữ `order_no`/`available_at`, bài mới lấy thứ tự lớn nhất + 1 và mở ngay). `getClassProgressFlags(classIds)` lọc theo danh sách lớp, không nhúng `classes`, vì `classes` và `class_lessons` có hai khóa ngoại (bài của lớp và nguồn luyện hằng ngày) nên nhúng sẽ lỗi.
 - `pinLatestVersionAction` (`app/actions/classes.ts`). `components/teach/lesson-class-usage.tsx` (Server Component, đặt trên trình soạn ở `app/teach/lessons/[id]/edit/page.tsx`), `pin-version-button.tsx` và `usage-notice.tsx`. Lớp vừa cập nhật mất nút và đổi chỗ trong danh sách, nên thông báo đi qua context lên cấp cả mục. Sau khi xuất bản, `TeachingEditor` gọi `router.refresh()` như `LessonEditor` để mục này thấy phiên bản mới.
 - `components/teach/start-checklist.tsx` và `app/teach/page.tsx` (tiến độ tính từ lớp, bài, lịch học và `getClassProgressFlags`).
+- Bộ lọc bài trên trang Giảng dạy nằm trong `<details className="help-disclosure lesson-filter">`. Mục này mở sẵn khi đang có bộ lọc hoặc khi có hơn 6 bài (`OPEN_FILTER_LESSONS`). Dòng "Hiển thị x / y bài học" chỉ hiện khi mục đang mở; không có bài thì không có bộ lọc.
 
 ## Lịch học hằng tuần — 03/11/2026
 

@@ -21,6 +21,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Giảng dạy" };
 
+// With a handful of lessons the filter form would fill the first screen, so it starts folded.
+const OPEN_FILTER_LESSONS = 6;
+
 interface TeachPageProps {
   searchParams: Promise<{ q?: string; language?: string; status?: string }>;
 }
@@ -64,6 +67,9 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
     assign: firstClass ? `${classPath}/assign` : classPath,
   });
   const visibleLessons = filterManagedLessons(lessons, filters);
+  const hasActiveFilter =
+    filters.query !== "" || filters.language !== "all" || filters.status !== "all";
+  const isFilterOpen = hasActiveFilter || lessons.length > OPEN_FILTER_LESSONS;
   return (
     <>
       <div className="page-heading">
@@ -120,57 +126,68 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
         <p className="small">
           <Link href="/teach/import-csv">Nhập từ vựng tiếng Nhật từ CSV/Excel</Link>
         </p>
-        <form
-          key={`${filters.query}:${filters.language}:${filters.status}`}
-          action="/teach"
-          method="get"
-          className="form-card"
-        >
-          <div className="form-grid">
-            <div className="field">
-              <label htmlFor="lesson-search">Tìm bài học theo tên</label>
-              <input
-                id="lesson-search"
-                name="q"
-                type="search"
-                maxLength={160}
-                defaultValue={filters.query}
-              />
-            </div>
-            <div className="field">
-              <label htmlFor="lesson-language-filter">Ngôn ngữ bài học</label>
-              <select id="lesson-language-filter" name="language" defaultValue={filters.language}>
-                <option value="all">Tất cả ngôn ngữ</option>
-                {Object.entries(TEACHING_LANGUAGE_LABELS).map(([value, label]) => (
-                  <option key={value} value={value}>
-                    {label}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="field">
-              <label htmlFor="lesson-status-filter">Trạng thái bài học</label>
-              <select id="lesson-status-filter" name="status" defaultValue={filters.status}>
-                <option value="all">Tất cả trạng thái</option>
-                <option value="draft">Chỉ có bản nháp</option>
-                <option value="published">Đã có bản xuất bản</option>
-              </select>
-            </div>
-          </div>
-          <div className="button-row">
-            <button type="submit" className={buttonVariants({ variant: "outline" })}>
-              Lọc bài học
-            </button>
-            <Link href="/teach">Xóa bộ lọc</Link>
-          </div>
-        </form>
-        <p className="small muted">
-          Lọc ngôn ngữ theo bản soạn hiện tại. Bản xuất bản và bài đã giao giữ nguyên nội dung của
-          phiên bản đã chọn; xuất bản lại không tự cập nhật lớp.
-        </p>
-        <p role="status" className="small muted">
-          Hiển thị {visibleLessons.length} / {lessons.length} bài học.
-        </p>
+        {lessons.length > 0 && (
+          <details className="help-disclosure lesson-filter" open={isFilterOpen}>
+            <summary>Lọc bài học</summary>
+            <form
+              key={`${filters.query}:${filters.language}:${filters.status}`}
+              action="/teach"
+              method="get"
+              className="form-card"
+            >
+              <div className="form-grid">
+                <div className="field">
+                  <label htmlFor="lesson-search">Tìm bài học theo tên</label>
+                  <input
+                    id="lesson-search"
+                    name="q"
+                    type="search"
+                    maxLength={160}
+                    defaultValue={filters.query}
+                  />
+                </div>
+                <div className="field">
+                  <label htmlFor="lesson-language-filter">Ngôn ngữ bài học</label>
+                  <select
+                    id="lesson-language-filter"
+                    name="language"
+                    defaultValue={filters.language}
+                  >
+                    <option value="all">Tất cả ngôn ngữ</option>
+                    {Object.entries(TEACHING_LANGUAGE_LABELS).map(([value, label]) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="field">
+                  <label htmlFor="lesson-status-filter">Trạng thái bài học</label>
+                  <select id="lesson-status-filter" name="status" defaultValue={filters.status}>
+                    <option value="all">Tất cả trạng thái</option>
+                    <option value="draft">Chỉ có bản nháp</option>
+                    <option value="published">Đã có bản xuất bản</option>
+                  </select>
+                </div>
+              </div>
+              <div className="button-row">
+                <button type="submit" className={buttonVariants({ variant: "outline" })}>
+                  Lọc bài học
+                </button>
+                <Link href="/teach">Xóa bộ lọc</Link>
+              </div>
+            </form>
+            <p className="small muted">
+              Lọc ngôn ngữ theo bản soạn hiện tại. Bản xuất bản và bài đã giao giữ nguyên nội dung
+              của phiên bản đã chọn; xuất bản lại không tự cập nhật lớp.
+            </p>
+          </details>
+        )}
+        {isFilterOpen && (
+          <p role="status" className="small muted">
+            Hiển thị {visibleLessons.length} / {lessons.length} bài học.
+          </p>
+        )}
         {visibleLessons.length ? (
           <ul className="item-list">
             {visibleLessons.map((lesson) => (

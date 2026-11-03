@@ -136,6 +136,17 @@ Migration chưa chạy trên production. Code không phụ thuộc migration nà
 | Đăng xuất xóa gợi ý; tải lại trước hydration lại thấy menu khách | Đạt |
 | Console ở `/`, `/guide`, `/self-study` và khi chuyển trang trong ứng dụng | Không có lỗi hay cảnh báo |
 
+## Bộ lọc bài gọn hơn trên trang Giảng dạy
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Giáo viên có 1 bài: mục "Lọc bài học" gập, không có dòng "Hiển thị x / y"; bấm thì mở form | Đạt |
+| Đang lọc (`?status=draft`): mục mở sẵn; bấm "Xóa bộ lọc" thì các ô trở về mặc định | Đạt |
+| Giáo viên có nhiều bài: mục mở sẵn như trước | Đạt |
+| `npm run audit:layout` trang Giảng dạy cho cả hai giáo viên | Không có lỗi hay cảnh báo |
+
+E2E chưa chạy. Bước trong `e2e-supabase/teaching-authoring.spec.ts` vẫn đúng: spec mở trang có bộ lọc, còn ô lọc nằm trong mục gập vẫn đọc được giá trị.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).
