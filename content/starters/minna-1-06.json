@@ -1,0 +1,1539 @@
+{
+  "id": "minna-1-06",
+  "title": "Bài 6 – Ăn uống, hoạt động và lời mời",
+  "titleJa": "第6課　いっしょに いきませんか",
+  "summary": "Theo trình tự bài 6 Minna no Nihongo Sơ cấp I: động từ đi với đối tượng N を V ます (ăn, uống, xem, nghe, đọc, viết, mua, chụp), không làm gì cả なにも V ません, nơi làm hành động N で V ます, lời mời いっしょに V ませんか, đề nghị V ましょう, cách đồng ý và từ chối nhẹ ちょっと….",
+  "order": 6,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0601",
+        "jp": "たべます",
+        "kanji": "食べます",
+        "romaji": "tabemasu",
+        "vi": "ăn",
+        "audio": null,
+        "image": "/icons/vocab/rice-ball.svg"
+      },
+      {
+        "id": "v0602",
+        "jp": "のみます",
+        "kanji": "飲みます",
+        "romaji": "nomimasu",
+        "vi": "uống",
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v0603",
+        "jp": "すいます",
+        "kanji": "吸います",
+        "romaji": "suimasu",
+        "vi": "hút (thuốc)",
+        "audio": null
+      },
+      {
+        "id": "v0604",
+        "jp": "みます",
+        "kanji": "見ます",
+        "romaji": "mimasu",
+        "vi": "xem, nhìn",
+        "audio": null,
+        "image": "/icons/vocab/television.svg"
+      },
+      {
+        "id": "v0605",
+        "jp": "ききます",
+        "kanji": "聞きます",
+        "romaji": "kikimasu",
+        "vi": "nghe",
+        "audio": null,
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v0606",
+        "jp": "よみます",
+        "kanji": "読みます",
+        "romaji": "yomimasu",
+        "vi": "đọc",
+        "audio": null,
+        "image": "/icons/vocab/open-book.svg"
+      },
+      {
+        "id": "v0607",
+        "jp": "かきます",
+        "kanji": "書きます",
+        "romaji": "kakimasu",
+        "vi": "viết",
+        "audio": null,
+        "image": "/icons/vocab/pencil.svg"
+      },
+      {
+        "id": "v0608",
+        "jp": "かいます",
+        "kanji": "買います",
+        "romaji": "kaimasu",
+        "vi": "mua",
+        "audio": null,
+        "image": "/icons/vocab/handbag.svg"
+      },
+      {
+        "id": "v0609",
+        "jp": "とります",
+        "kanji": "撮ります",
+        "romaji": "torimasu",
+        "vi": "chụp (ảnh)",
+        "audio": null,
+        "image": "/icons/vocab/camera.svg"
+      },
+      {
+        "id": "v0610",
+        "jp": "します",
+        "romaji": "shimasu",
+        "vi": "làm, chơi (thể thao)",
+        "audio": null
+      },
+      {
+        "id": "v0611",
+        "jp": "あいます",
+        "kanji": "会います",
+        "romaji": "aimasu",
+        "vi": "gặp (ai đó: N に あいます)",
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
+      },
+      {
+        "id": "v0612",
+        "jp": "ごはん",
+        "kanji": "ご飯",
+        "romaji": "gohan",
+        "vi": "cơm, bữa ăn",
+        "audio": null,
+        "image": "/icons/vocab/cooked-rice.svg"
+      },
+      {
+        "id": "v0613",
+        "jp": "あさごはん",
+        "kanji": "朝ご飯",
+        "romaji": "asagohan",
+        "vi": "bữa sáng",
+        "audio": null
+      },
+      {
+        "id": "v0614",
+        "jp": "ひるごはん",
+        "kanji": "昼ご飯",
+        "romaji": "hirugohan",
+        "vi": "bữa trưa",
+        "audio": null
+      },
+      {
+        "id": "v0615",
+        "jp": "ばんごはん",
+        "kanji": "晩ご飯",
+        "romaji": "bangohan",
+        "vi": "bữa tối",
+        "audio": null
+      },
+      {
+        "id": "v0616",
+        "jp": "パン",
+        "romaji": "pan",
+        "vi": "bánh mì",
+        "audio": null,
+        "image": "/icons/vocab/bread.svg"
+      },
+      {
+        "id": "v0617",
+        "jp": "たまご",
+        "kanji": "卵",
+        "romaji": "tamago",
+        "vi": "trứng",
+        "audio": null,
+        "image": "/icons/vocab/egg.svg"
+      },
+      {
+        "id": "v0618",
+        "jp": "にく",
+        "kanji": "肉",
+        "romaji": "niku",
+        "vi": "thịt",
+        "audio": null,
+        "image": "/icons/vocab/cut-of-meat.svg"
+      },
+      {
+        "id": "v0619",
+        "jp": "さかな",
+        "kanji": "魚",
+        "romaji": "sakana",
+        "vi": "cá",
+        "audio": null,
+        "image": "/icons/vocab/fish.svg"
+      },
+      {
+        "id": "v0620",
+        "jp": "くだもの",
+        "kanji": "果物",
+        "romaji": "kudamono",
+        "vi": "trái cây",
+        "audio": null,
+        "image": "/icons/vocab/red-apple.svg"
+      },
+      {
+        "id": "v0621",
+        "jp": "おちゃ",
+        "kanji": "お茶",
+        "romaji": "ocha",
+        "vi": "trà",
+        "audio": null,
+        "image": "/icons/vocab/teacup-without-handle.svg"
+      },
+      {
+        "id": "v0622",
+        "jp": "ぎゅうにゅう",
+        "kanji": "牛乳",
+        "romaji": "gyuunyuu",
+        "vi": "sữa bò",
+        "audio": null,
+        "image": "/icons/vocab/glass-of-milk.svg"
+      },
+      {
+        "id": "v0623",
+        "jp": "ジュース",
+        "romaji": "juusu",
+        "vi": "nước ép, nước ngọt",
+        "audio": null
+      },
+      {
+        "id": "v0624",
+        "jp": "ビール",
+        "romaji": "biiru",
+        "vi": "bia",
+        "audio": null,
+        "image": "/icons/vocab/beer-mug.svg"
+      },
+      {
+        "id": "v0625",
+        "jp": "おさけ",
+        "kanji": "お酒",
+        "romaji": "osake",
+        "vi": "rượu",
+        "audio": null
+      },
+      {
+        "id": "v0626",
+        "jp": "フォー",
+        "romaji": "foo",
+        "vi": "phở",
+        "audio": null,
+        "image": "/icons/vocab/steaming-bowl.svg"
+      },
+      {
+        "id": "v0627",
+        "jp": "てがみ",
+        "kanji": "手紙",
+        "romaji": "tegami",
+        "vi": "thư",
+        "audio": null,
+        "image": "/icons/vocab/envelope.svg"
+      },
+      {
+        "id": "v0628",
+        "jp": "レポート",
+        "romaji": "repooto",
+        "vi": "báo cáo, bài báo cáo",
+        "audio": null,
+        "image": "/icons/vocab/memo.svg"
+      },
+      {
+        "id": "v0629",
+        "jp": "しゃしん",
+        "kanji": "写真",
+        "romaji": "shashin",
+        "vi": "ảnh",
+        "audio": null
+      },
+      {
+        "id": "v0630",
+        "jp": "しゅくだい",
+        "kanji": "宿題",
+        "romaji": "shukudai",
+        "vi": "bài tập về nhà",
+        "audio": null,
+        "image": "/icons/vocab/spiral-notepad.svg"
+      },
+      {
+        "id": "v0631",
+        "jp": "テニス",
+        "romaji": "tenisu",
+        "vi": "quần vợt (tennis)",
+        "audio": null,
+        "image": "/icons/vocab/tennis.svg"
+      },
+      {
+        "id": "v0632",
+        "jp": "サッカー",
+        "romaji": "sakkaa",
+        "vi": "bóng đá",
+        "audio": null,
+        "image": "/icons/vocab/soccer-ball.svg"
+      },
+      {
+        "id": "v0633",
+        "jp": "おはなみ",
+        "kanji": "お花見",
+        "romaji": "ohanami",
+        "vi": "ngắm hoa anh đào",
+        "audio": null,
+        "image": "/icons/vocab/cherry-blossom.svg"
+      },
+      {
+        "id": "v0634",
+        "jp": "みせ",
+        "kanji": "店",
+        "romaji": "mise",
+        "vi": "cửa hàng, quán",
+        "audio": null
+      },
+      {
+        "id": "v0635",
+        "jp": "こうえん",
+        "kanji": "公園",
+        "romaji": "kouen",
+        "vi": "công viên",
+        "audio": null
+      },
+      {
+        "id": "v0636",
+        "jp": "なに",
+        "kanji": "何",
+        "romaji": "nani",
+        "vi": "cái gì",
+        "audio": null
+      },
+      {
+        "id": "v0637",
+        "jp": "なにも",
+        "kanji": "何も",
+        "romaji": "nani mo",
+        "vi": "(không …) gì cả (đi với phủ định)",
+        "audio": null
+      },
+      {
+        "id": "v0638",
+        "jp": "いっしょに",
+        "kanji": "一緒に",
+        "romaji": "issho ni",
+        "vi": "cùng nhau",
+        "audio": null
+      },
+      {
+        "id": "v0639",
+        "jp": "ちょっと",
+        "romaji": "chotto",
+        "vi": "một chút; (từ chối nhẹ) thì hơi …",
+        "audio": null
+      },
+      {
+        "id": "v0640",
+        "jp": "いつも",
+        "romaji": "itsumo",
+        "vi": "luôn luôn, lúc nào cũng",
+        "audio": null
+      },
+      {
+        "id": "v0641",
+        "jp": "ときどき",
+        "kanji": "時々",
+        "romaji": "tokidoki",
+        "vi": "thỉnh thoảng",
+        "audio": null
+      },
+      {
+        "id": "v0642",
+        "jp": "それから",
+        "romaji": "sorekara",
+        "vi": "sau đó, tiếp theo",
+        "audio": null
+      },
+      {
+        "id": "v0643",
+        "jp": "ええ",
+        "romaji": "ee",
+        "vi": "ừ, vâng",
+        "audio": null
+      },
+      {
+        "id": "v0644",
+        "jp": "いいですね",
+        "romaji": "ii desu ne",
+        "vi": "hay đấy, được đấy",
+        "audio": null,
+        "image": "/icons/vocab/thumbs-up.svg"
+      },
+      {
+        "id": "v0645",
+        "jp": "わかりました",
+        "romaji": "wakarimashita",
+        "vi": "tôi hiểu rồi, được",
+        "audio": null
+      },
+      {
+        "id": "v0646",
+        "jp": "〜を",
+        "romaji": "~o",
+        "vi": "trợ từ chỉ đối tượng; đọc là お",
+        "audio": null
+      },
+      {
+        "id": "v0647",
+        "jp": "〜ませんか",
+        "romaji": "~masen ka",
+        "vi": "… không? (lời mời)",
+        "audio": null
+      },
+      {
+        "id": "v0648",
+        "jp": "〜ましょう",
+        "romaji": "~mashou",
+        "vi": "cùng … nhé (đề nghị)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0601",
+        "pattern": "N を V ます",
+        "vi": "Làm V (với đối tượng N)",
+        "explain": "を đánh dấu đối tượng của động từ: ăn cái gì, uống cái gì, đọc cái gì. Hỏi: {何|なに}を しますか／{何|なに}を {食|た}べますか.",
+        "viMistake": "を viết bằng chữ を nhưng đọc là お.",
+        "examples": [
+          {
+            "jp": "{毎朝|まいあさ} パンを {食|た}べます。",
+            "vi": "Sáng nào tôi cũng ăn bánh mì.",
+            "audio": null
+          },
+          {
+            "jp": "{何|なに}を {飲|の}みますか。…お{茶|ちゃ}を {飲|の}みます。",
+            "vi": "Bạn uống gì? … Tôi uống trà.",
+            "audio": null
+          },
+          {
+            "jp": "きのう {手紙|てがみ}を {書|か}きました。",
+            "vi": "Hôm qua tôi đã viết thư.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0602",
+        "pattern": "なにも V ません",
+        "vi": "Không V gì cả",
+        "explain": "{何|なに}も + động từ phủ định: hoàn toàn không (giống どこも ở bài 5). Hỏi {何|なに}を しましたか, trả lời {何|なに}も しませんでした.",
+        "viMistake": "{何|なに}も luôn đi với phủ định; không nói {何|なに}も {食|た}べます.",
+        "examples": [
+          {
+            "jp": "けさ {何|なに}も {食|た}べませんでした。",
+            "vi": "Sáng nay tôi không ăn gì cả.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび} {何|なに}を しましたか。…{何|なに}も しませんでした。",
+            "vi": "Chủ nhật bạn đã làm gì? … Tôi không làm gì cả.",
+            "audio": null
+          },
+          {
+            "jp": "{店|みせ}で {何|なに}も {買|か}いませんでした。",
+            "vi": "Tôi không mua gì ở cửa hàng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0603",
+        "pattern": "N (nơi chốn) で V ます",
+        "vi": "Làm V ở N",
+        "explain": "で đứng sau nơi diễn ra hành động. Khác へ: へ là nơi đến (デパートへ {行|い}きます), で là nơi làm việc gì đó (デパートで {買|か}います). Hỏi: どこで V ますか.",
+        "viMistake": "Đừng dùng へ cho nơi làm hành động: {図書館|としょかん}で {勉強|べんきょう}します, không nói {図書館|としょかん}へ {勉強|べんきょう}します.",
+        "examples": [
+          {
+            "jp": "デパートで {靴|くつ}を {買|か}いました。",
+            "vi": "Tôi đã mua giày ở cửa hàng bách hóa.",
+            "audio": null
+          },
+          {
+            "jp": "{図書館|としょかん}で {勉強|べんきょう}します。",
+            "vi": "Tôi học ở thư viện.",
+            "audio": null
+          },
+          {
+            "jp": "どこで その {写真|しゃしん}を {撮|と}りましたか。…ダナンで {撮|と}りました。",
+            "vi": "Bạn chụp bức ảnh đó ở đâu? … Ở Đà Nẵng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0604",
+        "pattern": "V ませんか",
+        "vi": "Cùng … không? (lời mời)",
+        "explain": "Mời người khác cùng làm: いっしょに + V ませんか. Đồng ý: ええ、いいですね. Từ chối nhẹ: すみません、ちょっと….",
+        "viMistake": "V ませんか là lời mời lịch sự, không phải câu hỏi \"bạn không làm à?\".",
+        "examples": [
+          {
+            "jp": "いっしょに {昼|ひる}ご{飯|はん}を {食|た}べませんか。…ええ、いいですね。",
+            "vi": "Cùng ăn trưa không? … Ừ, hay đấy.",
+            "audio": null
+          },
+          {
+            "jp": "{土曜日|どようび} テニスを しませんか。…{土曜日|どようび}は ちょっと…。",
+            "vi": "Thứ Bảy chơi tennis không? … Thứ Bảy thì hơi…",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび} いっしょに {美術館|びじゅつかん}へ {行|い}きませんか。",
+            "vi": "Chủ nhật cùng đi bảo tàng mỹ thuật không?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0605",
+        "pattern": "V ましょう",
+        "vi": "Cùng … nhé (đề nghị)",
+        "explain": "Đề nghị cùng làm, hoặc đáp lại lời mời: V ましょう. Hỏi ý kiến về chỗ, giờ: どこで {会|あ}いましょうか, {何時|なんじ}に {会|あ}いましょうか.",
+        "viMistake": "Khi được mời ませんか và muốn đồng ý, đáp ええ、V ましょう.",
+        "examples": [
+          {
+            "jp": "ちょっと {休|やす}みましょう。",
+            "vi": "Nghỉ một chút nhé.",
+            "audio": null
+          },
+          {
+            "jp": "どこで {会|あ}いましょうか。…{駅|えき}で {会|あ}いましょう。",
+            "vi": "Mình gặp nhau ở đâu nhỉ? … Gặp ở ga nhé.",
+            "audio": null
+          },
+          {
+            "jp": "{何時|なんじ}に {会|あ}いましょうか。…10{時|じ}に {会|あ}いましょう。",
+            "vi": "Mấy giờ gặp nhau nhỉ? … 10 giờ nhé.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0601",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"sáng nay bạn ăn gì, uống gì?\". Bài đi theo trình tự bài 6 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}6{課|か}",
+        "vi": "Ăn uống, hoạt động và lời mời: いっしょに いきませんか"
+      },
+      {
+        "id": "s0602",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Nói việc làm với đối tượng: N を V ます\n2. Không làm gì cả: なにも V ません\n3. Nơi làm hành động: N で V ます\n4. Mời: V ませんか; đề nghị: V ましょう; đồng ý và từ chối nhẹ"
+      },
+      {
+        "id": "s0603",
+        "teacherNotes": "Diễn tả bằng động tác: ăn, uống, xem, nghe, đọc, viết; học viên đoán động từ.",
+        "type": "vocab",
+        "refs": ["v0601", "v0602", "v0603", "v0604", "v0605", "v0606", "v0607", "v0608"]
+      },
+      {
+        "id": "s0604",
+        "teacherNotes": "Hỏi học viên bữa sáng thường ăn gì: パン, フォー, ごはん…",
+        "type": "vocab",
+        "refs": ["v0609", "v0610", "v0611", "v0612", "v0613", "v0614", "v0615", "v0616"]
+      },
+      {
+        "id": "s0605",
+        "teacherNotes": "Bày hình đồ uống; học viên nói 〜を のみます.",
+        "type": "vocab",
+        "refs": ["v0617", "v0618", "v0619", "v0620", "v0621", "v0622", "v0623", "v0624"]
+      },
+      {
+        "id": "s0606",
+        "teacherNotes": "Hỏi học viên cuối tuần thường làm gì: テニス, サッカー, おはなみ…",
+        "type": "vocab",
+        "refs": ["v0625", "v0626", "v0627", "v0628", "v0629", "v0630", "v0631", "v0632"]
+      },
+      {
+        "id": "s0607",
+        "teacherNotes": "いつも (luôn luôn) và ときどき (thỉnh thoảng) đứng trước cụm động từ.",
+        "type": "vocab",
+        "refs": ["v0633", "v0634", "v0635", "v0636", "v0637", "v0638", "v0639", "v0640"]
+      },
+      {
+        "id": "s0608",
+        "teacherNotes": "ええ thân mật hơn はい; dùng với bạn bè, đồng nghiệp.",
+        "type": "vocab",
+        "refs": ["v0641", "v0642", "v0643", "v0644", "v0645", "v0646", "v0647", "v0648"]
+      },
+      {
+        "id": "s0609",
+        "teacherNotes": "Đọc theo hàng: đối tượng + を + động từ.",
+        "type": "table",
+        "title": "Động từ đi với を",
+        "columns": ["Đối tượng", "Động từ", "Nghĩa"],
+        "rows": [
+          ["ご{飯|はん}を", "{食|た}べます", "ăn cơm"],
+          ["お{茶|ちゃ}を", "{飲|の}みます", "uống trà"],
+          ["テレビを", "{見|み}ます", "xem tivi"],
+          ["ラジオを", "{聞|き}きます", "nghe radio"],
+          ["{本|ほん}を", "{読|よ}みます", "đọc sách"],
+          ["{手紙|てがみ}を", "{書|か}きます", "viết thư"],
+          ["テニスを", "します", "chơi tennis"]
+        ]
+      },
+      {
+        "id": "s0610",
+        "teacherNotes": "Cầm đồ vật thật (cốc, sách, bút) và làm động tác; học viên nói 〜を 〜ます.",
+        "type": "grammar",
+        "ref": "g0601"
+      },
+      {
+        "id": "s0611",
+        "type": "example",
+        "ref": "g0601",
+        "reveal": true
+      },
+      {
+        "id": "s0612",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: làm gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{毎朝|まいあさ}・パン・{食|た}べます", "{毎朝|まいあさ} パンを {食|た}べます。"],
+          ["いつも・お{茶|ちゃ}・{飲|の}みます", "いつも お{茶|ちゃ}を {飲|の}みます。"],
+          ["きのう・{手紙|てがみ}・{書|か}きました", "きのう {手紙|てがみ}を {書|か}きました。"],
+          ["ときどき・{映画|えいが}・{見|み}ます", "ときどき {映画|えいが}を {見|み}ます。"],
+          [
+            "{毎晩|まいばん}・{宿題|しゅくだい}・します",
+            "{毎晩|まいばん} {宿題|しゅくだい}を します。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0613",
+        "type": "quiz",
+        "ref": "q0601"
+      },
+      {
+        "id": "s0614",
+        "type": "quiz",
+        "ref": "q0603"
+      },
+      {
+        "id": "s0615",
+        "teacherNotes": "Hỏi: けさ なにを たべましたか. Ai không ăn sáng thì trả lời なにも たべませんでした.",
+        "type": "grammar",
+        "ref": "g0602"
+      },
+      {
+        "id": "s0616",
+        "type": "example",
+        "ref": "g0602",
+        "reveal": true
+      },
+      {
+        "id": "s0617",
+        "type": "quiz",
+        "ref": "q0604"
+      },
+      {
+        "id": "s0618",
+        "teacherNotes": "Vẽ hai mũi tên lên bảng: へ (đi đến) và で (làm ở đó).",
+        "type": "grammar",
+        "ref": "g0603"
+      },
+      {
+        "id": "s0619",
+        "type": "example",
+        "ref": "g0603",
+        "reveal": true
+      },
+      {
+        "id": "s0620",
+        "teacherNotes": "Học viên ghép nơi chốn, đối tượng và động từ thành câu.",
+        "type": "table",
+        "title": "Luyện tập 2: làm ở đâu?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["デパート・{靴|くつ}・{買|か}いました", "デパートで {靴|くつ}を {買|か}いました。"],
+          [
+            "{図書館|としょかん}・{本|ほん}・{読|よ}みます",
+            "{図書館|としょかん}で {本|ほん}を {読|よ}みます。"
+          ],
+          [
+            "こうえん・{写真|しゃしん}・{撮|と}りました",
+            "こうえんで {写真|しゃしん}を {撮|と}りました。"
+          ],
+          ["うち・レポート・{書|か}きます", "うちで レポートを {書|か}きます。"],
+          [
+            "{食堂|しょくどう}・フォー・{食|た}べます",
+            "{食堂|しょくどう}で フォーを {食|た}べます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0621",
+        "type": "quiz",
+        "ref": "q0605"
+      },
+      {
+        "id": "s0622",
+        "type": "quiz",
+        "ref": "q0607"
+      },
+      {
+        "id": "s0623",
+        "teacherNotes": "Giáo viên mời từng học viên; học viên tập đồng ý hoặc từ chối nhẹ.",
+        "type": "grammar",
+        "ref": "g0604"
+      },
+      {
+        "id": "s0624",
+        "type": "example",
+        "ref": "g0604",
+        "reveal": true
+      },
+      {
+        "id": "s0625",
+        "teacherNotes": "Sau lời mời, hỏi tiếp chỗ và giờ gặp: どこで／なんじに あいましょうか.",
+        "type": "grammar",
+        "ref": "g0605"
+      },
+      {
+        "id": "s0626",
+        "type": "example",
+        "ref": "g0605",
+        "reveal": true
+      },
+      {
+        "id": "s0627",
+        "teacherNotes": "Từ chối thẳng いいえ、〜ません nghe khá cứng; người Nhật thường dùng ちょっと….",
+        "type": "table",
+        "title": "Đồng ý và từ chối",
+        "columns": ["Lời mời", "Đồng ý", "Từ chối nhẹ"],
+        "rows": [
+          [
+            "いっしょに {行|い}きませんか。",
+            "ええ、{行|い}きましょう。",
+            "すみません、ちょっと…。"
+          ],
+          ["お{茶|ちゃ}を {飲|の}みませんか。", "ええ、いいですね。", "{今|いま}は ちょっと…。"],
+          ["テニスを しませんか。", "ええ、しましょう。", "{土曜日|どようび}は ちょっと…。"]
+        ]
+      },
+      {
+        "id": "s0628",
+        "teacherNotes": "Học viên mời bạn bên cạnh theo gợi ý; bạn đáp lại bằng ええ、〜ましょう.",
+        "type": "table",
+        "title": "Luyện tập 3: rủ bạn",
+        "columns": ["Gợi ý", "Lời mời"],
+        "rows": [
+          [
+            "{昼|ひる}ご{飯|はん}・{食|た}べます",
+            "いっしょに {昼|ひる}ご{飯|はん}を {食|た}べませんか。"
+          ],
+          [
+            "{土曜日|どようび}・サッカー・します",
+            "{土曜日|どようび} いっしょに サッカーを しませんか。"
+          ],
+          ["{映画|えいが}・{見|み}ます", "いっしょに {映画|えいが}を {見|み}ませんか。"],
+          ["コーヒー・{飲|の}みます", "いっしょに コーヒーを {飲|の}みませんか。"],
+          [
+            "{日曜日|にちようび}・お{花見|はなみ}・します",
+            "{日曜日|にちようび} いっしょに お{花見|はなみ}を しませんか。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0629",
+        "type": "quiz",
+        "ref": "q0608"
+      },
+      {
+        "id": "s0630",
+        "type": "quiz",
+        "ref": "q0611"
+      },
+      {
+        "id": "s0631",
+        "teacherNotes": "Đổi món ăn và nơi ăn: バインミー, ごはん; うちの ちかくの みせ.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Cùng ăn trưa không?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "アンさん、いっしょに {昼|ひる}ご{飯|はん}を {食|た}べませんか。",
+            "vi": "An ơi, cùng ăn trưa không?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ええ、いいですね。どこで {食|た}べましょうか。",
+            "vi": "Ừ, hay đấy. Mình ăn ở đâu nhỉ?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{食堂|しょくどう}で {食|た}べましょう。",
+            "vi": "Ăn ở nhà ăn đi."
+          },
+          {
+            "speaker": "アン",
+            "jp": "わかりました。ナムさんは {何|なに}を {食|た}べますか。",
+            "vi": "Được. Nam ăn gì?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わたしは いつも フォーを {食|た}べます。",
+            "vi": "Mình lúc nào cũng ăn phở."
+          }
+        ]
+      },
+      {
+        "id": "s0632",
+        "teacherNotes": "Học viên kể chủ nhật của mình bằng それから để nối hai việc.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Chủ nhật bạn đã làm gì?",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "リンさん、{日曜日|にちようび} {何|なに}を しましたか。",
+            "vi": "Linh, Chủ nhật bạn đã làm gì?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "こうえんで テニスを しました。それから、{靴|くつ}を {買|か}いました。",
+            "vi": "Mình chơi tennis ở công viên. Sau đó mình mua giày."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "そうですか。わたしは うちで {本|ほん}を {読|よ}みました。",
+            "vi": "Vậy à. Mình đọc sách ở nhà."
+          },
+          {
+            "speaker": "リン",
+            "jp": "ハナさんは ときどき テニスを しますか。",
+            "vi": "Hana thỉnh thoảng có chơi tennis không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "いいえ、しません。",
+            "vi": "Không, mình không chơi."
+          },
+          {
+            "speaker": "リン",
+            "jp": "じゃ、{来週|らいしゅう} いっしょに しませんか。",
+            "vi": "Vậy tuần sau chơi cùng mình không?"
+          }
+        ]
+      },
+      {
+        "id": "s0633",
+        "teacherNotes": "Học viên rủ nhau đi chơi và hẹn chỗ, giờ gặp bằng 〜ましょう.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Đi ngắm hoa không?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ナムさん、あした お{花見|はなみ}を しませんか。",
+            "vi": "Nam, ngày mai đi ngắm hoa anh đào không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "お{花見|はなみ}ですか。いいですね。",
+            "vi": "Ngắm hoa à? Hay quá."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "じゃ、10{時|じ}に {駅|えき}で {会|あ}いましょう。",
+            "vi": "Vậy 10 giờ gặp nhau ở ga nhé."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わかりました。{写真|しゃしん}を {撮|と}りましょう。",
+            "vi": "Được ạ. Mình chụp ảnh nhé."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ええ、そうしましょう。",
+            "vi": "Ừ, làm vậy đi."
+          }
+        ]
+      },
+      {
+        "id": "s0634",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật về mình.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["けさ {何|なに}を {食|た}べましたか。", "パンと {卵|たまご}を {食|た}べました。"],
+          [
+            "どこで {日本語|にほんご}を {勉強|べんきょう}しますか。",
+            "うちで {勉強|べんきょう}します。"
+          ],
+          ["きのう {何|なに}を しましたか。", "{何|なに}も しませんでした。"],
+          ["いっしょに コーヒーを {飲|の}みませんか。", "ええ、{飲|の}みましょう。"],
+          ["どこで {会|あ}いましょうか。", "{駅|えき}で {会|あ}いましょう。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0635",
+        "type": "quiz",
+        "ref": "q0624"
+      },
+      {
+        "id": "s0636",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• N を V ます (を đọc お); hỏi: なにを V ますか\n• なにも V ません: không V gì cả\n• Nơi làm hành động + で (khác へ: nơi đến)\n• Mời: いっしょに V ませんか → ええ、いいですね／すみません、ちょっと…\n• Đề nghị: V ましょう; どこで／なんじに あいましょうか"
+      },
+      {
+        "id": "s0637",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết nhật ký một ngày bằng 5 câu có を và で: どこで なにを しましたか.\n3. Nhắn tin rủ một bạn cùng lớp làm việc gì đó bằng 〜ませんか, bạn trả lời bằng 〜ましょう."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0601",
+        "prompt": "まいあさ パン（　　） たべます。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đối tượng của động từ + を.",
+        "type": "choice",
+        "options": ["で", "を", "へ", "に"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0602",
+        "prompt": "Trợ từ を đọc là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "を đọc là お.",
+        "type": "choice",
+        "options": ["お", "わ", "え", "は"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0603",
+        "prompt": "なにを のみますか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Trả lời bằng N を V.",
+        "type": "choice",
+        "options": [
+          "おちゃで のみます",
+          "おちゃへ のみます",
+          "はい、のみます",
+          "おちゃを のみます"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0604",
+        "prompt": "けさ なにを たべましたか。…（　　）。(không ăn gì cả)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "なにも + phủ định quá khứ.",
+        "type": "choice",
+        "options": [
+          "なにも たべました",
+          "なにを たべませんでした",
+          "なにも たべませんでした",
+          "なにも たべません"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0605",
+        "prompt": "デパート（　　） くつを かいました。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi làm hành động + で.",
+        "type": "choice",
+        "options": ["へ", "で", "を", "と"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0606",
+        "prompt": "Chọn câu đúng: Tôi học ở thư viện.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi làm hành động + で.",
+        "type": "choice",
+        "options": [
+          "としょかんで べんきょうします。",
+          "としょかんへ べんきょうします。",
+          "としょかんを べんきょうします。",
+          "としょかんに べんきょうします。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0607",
+        "prompt": "Chọn câu đúng: Tôi đi đến thư viện.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi đến + へ.",
+        "type": "choice",
+        "options": [
+          "としょかんで いきます。",
+          "としょかんを いきます。",
+          "としょかんと いきます。",
+          "としょかんへ いきます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0608",
+        "prompt": "Rủ bạn: Cùng uống trà không?",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Lời mời: V ませんか.",
+        "type": "choice",
+        "options": [
+          "いっしょに おちゃを のみません。",
+          "いっしょに おちゃを のみましたか。",
+          "いっしょに おちゃを のみませんか。",
+          "いっしょに おちゃを のみますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0609",
+        "prompt": "いっしょに テニスを しませんか。…（　　）。(đồng ý)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đồng ý: ええ、いいですね.",
+        "type": "choice",
+        "options": ["いいえ、しません", "ええ、いいですね", "はい、しませんでした", "ちょっと…"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0610",
+        "prompt": "Từ chối lời mời một cách nhẹ nhàng:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Từ chối nhẹ: ちょっと….",
+        "type": "choice",
+        "options": [
+          "すみません、ちょっと…。",
+          "ええ、いいですね。",
+          "はい、しましょう。",
+          "わかりました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0611",
+        "prompt": "どこで あいましょうか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi gặp + で.",
+        "type": "choice",
+        "options": [
+          "えきへ あいましょう",
+          "えきを あいましょう",
+          "えきと あいましょう",
+          "えきで あいましょう"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0612",
+        "prompt": "Đề nghị: Nghỉ một chút nhé.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đề nghị: V ましょう.",
+        "type": "choice",
+        "options": [
+          "ちょっと やすみません。",
+          "ちょっと やすみましたか。",
+          "ちょっと やすみましょう。",
+          "ちょっと やすみますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0613",
+        "prompt": "たべます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "たべます: ăn.",
+        "type": "choice",
+        "options": ["uống", "ăn", "xem", "đọc"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0614",
+        "prompt": "ききます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "ききます: nghe.",
+        "type": "choice",
+        "options": ["nghe", "nói", "viết", "mua"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0615",
+        "prompt": "かきます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "かきます: viết.",
+        "type": "choice",
+        "options": ["đọc", "mua", "gặp", "viết"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0616",
+        "prompt": "しゃしんを とります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "とります: chụp (ảnh).",
+        "type": "choice",
+        "options": ["xem ảnh", "mua ảnh", "chụp ảnh", "viết thư"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0617",
+        "prompt": "ともだちに あいます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "あいます: gặp; người gặp + に.",
+        "type": "choice",
+        "options": ["nghe bạn", "gặp bạn", "đi với bạn", "về với bạn"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0618",
+        "prompt": "ぎゅうにゅう là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "ぎゅうにゅう (牛乳): sữa bò.",
+        "type": "choice",
+        "options": ["sữa bò", "nước", "trà", "bia"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0619",
+        "prompt": "くだもの là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "くだもの (果物): trái cây.",
+        "type": "choice",
+        "options": ["rau", "thịt", "cá", "trái cây"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0620",
+        "prompt": "てがみ là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "てがみ (手紙): thư.",
+        "type": "choice",
+        "options": ["ảnh", "báo cáo", "thư", "bài tập"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0621",
+        "prompt": "いつも nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "いつも: luôn luôn.",
+        "type": "choice",
+        "options": ["thỉnh thoảng", "luôn luôn", "không bao giờ", "một chút"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0622",
+        "prompt": "ときどき nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "ときどき: thỉnh thoảng.",
+        "type": "choice",
+        "options": ["thỉnh thoảng", "luôn luôn", "cùng nhau", "sau đó"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0623",
+        "prompt": "それから nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "それから: sau đó.",
+        "type": "choice",
+        "options": ["nhưng", "vì vậy", "cùng nhau", "sau đó"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0624",
+        "prompt": "Chọn câu đúng: Hôm qua tôi đã chụp ảnh ở Đà Nẵng.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi + で, đối tượng + を.",
+        "type": "choice",
+        "options": [
+          "きのう ダナンへ しゃしんを とりました。",
+          "きのう ダナンで しゃしんで とりました。",
+          "きのう ダナンで しゃしんを とりました。",
+          "きのう ダナンを しゃしんを とりました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0625",
+        "prompt": "Hỏi: Chủ nhật bạn đã làm gì?",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Hỏi việc đã làm: なにを しましたか.",
+        "type": "choice",
+        "options": [
+          "にちようび なにを しますか。",
+          "にちようび なにを しましたか。",
+          "にちようび どこを しましたか。",
+          "にちようび なにで しましたか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0626",
+        "prompt": "Chọn câu đúng: Sau đó tôi đã đọc sách.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "それから + câu tiếp theo; ほんを よみました.",
+        "type": "choice",
+        "options": [
+          "それから ほんを よみました。",
+          "それから ほんで よみました。",
+          "それから ほんを よみません。",
+          "それから ほんへ よみました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0627",
+        "prompt": "Đề nghị gặp lúc 10 giờ:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Giờ + に; đề nghị: ましょう.",
+        "type": "choice",
+        "options": [
+          "10じに あいませんでした。",
+          "10じで あいましょう。",
+          "10じを あいましょう。",
+          "10じに あいましょう。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0628",
+        "prompt": "いっしょに nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "いっしょに: cùng nhau.",
+        "type": "choice",
+        "options": ["một mình", "luôn luôn", "cùng nhau", "một chút"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0629",
+        "prompt": "Chọn câu đúng: Tôi đã không mua gì ở cửa hàng.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi + で; なにも + phủ định.",
+        "type": "choice",
+        "options": [
+          "みせで なにも かいました。",
+          "みせで なにも かいませんでした。",
+          "みせへ なにも かいませんでした。",
+          "みせで なにを かいませんでした。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0630",
+        "prompt": "Chọn câu đúng: Thỉnh thoảng tôi xem phim.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Xem phim: えいがを みます.",
+        "type": "choice",
+        "options": [
+          "ときどき えいがを みます。",
+          "ときどき えいがで みます。",
+          "ときどき えいがを ききます。",
+          "ときどき えいがに みます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0631",
+        "prompt": "Chọn câu đúng: Tối nào tôi cũng nghe radio.",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nghe: ききます; đối tượng + を.",
+        "type": "choice",
+        "options": [
+          "まいばん ラジオを みます。",
+          "まいばん ラジオで ききます。",
+          "まいばん ラジオへ ききます。",
+          "まいばん ラジオを ききます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0632",
+        "prompt": "Mời ăn phở: いっしょに フォーを （　　）。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Lời mời: たべませんか.",
+        "type": "choice",
+        "options": ["たべません", "たべましたか", "たべませんか", "たべますか"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0633",
+        "prompt": "わかりました dùng khi:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "わかりました: tôi hiểu rồi, được.",
+        "type": "choice",
+        "options": ["mời người khác", "đã hiểu, đồng ý làm theo", "xin lỗi", "chào tạm biệt"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0634",
+        "prompt": "おはなみ là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "おはなみ (お花見): ngắm hoa anh đào.",
+        "type": "choice",
+        "options": ["ngắm hoa anh đào", "đi biển", "xem phim", "đọc sách"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0635",
+        "prompt": "レポートを かきます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "かきます: viết.",
+        "type": "choice",
+        "options": ["đọc báo cáo", "mua báo cáo", "xem báo cáo", "viết báo cáo"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0636",
+        "prompt": "あさごはん là:",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "あさごはん (朝ご飯): bữa sáng.",
+        "type": "choice",
+        "options": ["bữa trưa", "bữa tối", "bữa sáng", "đồ uống"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0637",
+        "prompt": "Điền trợ từ: ごはん（　　） たべます。",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đối tượng + を.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["を"]
+      },
+      {
+        "id": "q0638",
+        "prompt": "Điền trợ từ: デパート（　　） くつを かいます。(mua ở cửa hàng bách hóa)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Nơi làm hành động + で.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["で"]
+      },
+      {
+        "id": "q0639",
+        "prompt": "Điền: けさ （　　）も たべませんでした。(không ăn gì cả)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "なにも + phủ định.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なに"]
+      },
+      {
+        "id": "q0640",
+        "prompt": "Điền: いっしょに おちゃを のみ（　　）。(rủ: … không?)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Lời mời: のみませんか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ませんか"]
+      },
+      {
+        "id": "q0641",
+        "prompt": "Điền: ちょっと やすみ（　　）。(nghỉ một chút nhé)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đề nghị: やすみましょう.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ましょう"]
+      },
+      {
+        "id": "q0642",
+        "prompt": "Điền: まいばん ほんを （　　）。(đọc)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đọc: よみます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よみます"]
+      },
+      {
+        "id": "q0643",
+        "prompt": "Điền: きのう てがみを （　　）。(đã viết)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Đã viết: かきました.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かきました"]
+      },
+      {
+        "id": "q0644",
+        "prompt": "Điền: えきで ともだちに （　　）。(gặp)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Gặp: あいます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あいます"]
+      },
+      {
+        "id": "q0645",
+        "prompt": "Điền: （　　）を のみますか。…ジュースを のみます。(hỏi uống gì)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Hỏi cái gì: なに.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なに"]
+      },
+      {
+        "id": "q0646",
+        "prompt": "Điền: ええ、（　　）ですね。(đồng ý: hay đấy)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Hay đấy: いいですね.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いい"]
+      },
+      {
+        "id": "q0647",
+        "prompt": "Điền: どこで あい（　　）か。(mình gặp nhau ở đâu nhỉ?)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Hỏi ý kiến: あいましょうか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ましょう"]
+      },
+      {
+        "id": "q0648",
+        "prompt": "Điền: わたしは （　　） フォーを たべます。(luôn luôn)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Luôn luôn: いつも.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いつも"]
+      },
+      {
+        "id": "q0649",
+        "prompt": "Điền: テニスを しました。（　　）、えいがを みました。(sau đó)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Sau đó: それから.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["それから"]
+      },
+      {
+        "id": "q0650",
+        "prompt": "Điền: こうえんで しゃしんを （　　）。(chụp)",
+        "points": 1,
+        "tags": ["minna-6"],
+        "explain": "Chụp ảnh: とります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["とります"]
+      }
+    ]
+  }
+}
