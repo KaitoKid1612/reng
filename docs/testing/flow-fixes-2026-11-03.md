@@ -80,6 +80,19 @@ Người dùng báo ba chỗ xấu trên production sau khi có lịch học. Đ
 
 Kiểm tra: ảnh chụp trước và sau ở 360px và 1280px; "Xem thêm" mở đủ 59 câu; sao chép link không đổi mã lớp; `npm run audit:layout` trang lớp không có lỗi hay cảnh báo; `npm run check` đạt.
 
+## Luồng giáo viên rõ hơn
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/teaching-start.test.ts`: trạng thái lớp so với phiên bản, thứ tự và trạng thái 7 bước, ẩn danh sách khi đang dạy | Đạt |
+| Giáo viên mới (`gv.moi@reng.local`): trang Giảng dạy hiện "Các bước bắt đầu dạy", 0/7, bước "Tạo lớp học" in đậm | Đạt |
+| Giáo viên đã có học viên và bài tập: không thấy danh sách, kể cả khi chưa đặt lịch | Đạt |
+| Trình soạn `lesson-01` của giáo viên có 81 lớp: mục Dùng bài trong lớp hiện 8 lớp và "Xem thêm"; Xuất bản xong hiện "Cập nhật lên phiên bản 4"; bấm thì báo "Lớp A …: đã cập nhật lên phiên bản 4." | Đạt |
+| Lớp mới chưa có bài: "Đưa vào lớp" báo "… đã có bài (phiên bản 4), mở ngay cho học viên." | Đạt |
+| `npm run audit:layout` trang Giảng dạy (giáo viên mới, giáo viên lớp Trung) và trình soạn tiếng Trung | Không có lỗi hay cảnh báo |
+
+Lần thử đầu bắt được trang Giảng dạy lỗi 500: truy vấn nhúng `classes` vào `class_lessons` gặp hai khóa ngoại nên mơ hồ. Đã đổi sang lọc theo danh sách lớp trước khi commit.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

@@ -1,7 +1,9 @@
 import Link from "next/link";
 
 import { LessonEditorLoader, TeachingEditorLoader } from "@/components/editor/editor-loaders";
+import { LessonClassUsage } from "@/components/teach/lesson-class-usage";
 import { requireTeacher } from "@/lib/server/account";
+import { getLessonUsage } from "@/lib/server/lesson-usage";
 import { loadLessonEditor } from "@/lib/server/lessons";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { loadTeachingEditor, toTeachingDraft } from "@/lib/server/teaching-lessons";
@@ -30,6 +32,10 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
             </p>
           </div>
         </div>
+        <LessonClassUsage
+          lessonId={teaching.lessonId}
+          usage={await getLessonUsage(account.id, teaching.lessonId)}
+        />
         <TeachingEditorLoader
           lessonId={teaching.lessonId}
           initialDraft={toTeachingDraft(teaching)}
@@ -60,6 +66,10 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
           </p>
         </div>
       </div>
+      <LessonClassUsage
+        lessonId={editor.lessonId}
+        usage={await getLessonUsage(account.id, editor.lessonId)}
+      />
       <LessonEditorLoader
         lessonId={editor.lessonId}
         visibility={editor.visibility}

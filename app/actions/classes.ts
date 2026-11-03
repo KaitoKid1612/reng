@@ -18,6 +18,7 @@ import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
 import { saveClassSchedule } from "@/lib/server/class-schedule";
+import { pinLatestVersion } from "@/lib/server/lesson-usage";
 import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
@@ -193,6 +194,33 @@ export async function joinCodeAction(
       operation === "rotate"
         ? "Đã đổi mã lớp. Mã cũ không dùng được nữa."
         : "Đã cập nhật trạng thái nhận học viên.",
+  };
+}
+
+// From the editor: put the lesson's newest published version into one class in a single step.
+export async function pinLatestVersionAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  let result;
+  try {
+    result = await pinLatestVersion(
+      account.id,
+      readField(formData, "classId"),
+      readField(formData, "lessonId"),
+    );
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  return {
+    notice: result.wasInClass
+      ? `đã cập nhật lên phiên bản ${result.versionNo}.`
+      : `đã có bài (phiên bản ${result.versionNo}), mở ngay cho học viên.`,
   };
 }
 

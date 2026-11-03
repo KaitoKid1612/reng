@@ -166,7 +166,7 @@ export function LessonEditor({
         setConflictRevision(null);
         setStatus({
           tone: "status-correct",
-          text: "Đã xuất bản phiên bản mới. Lớp đang ghim phiên bản cũ giữ nguyên tới khi bạn nâng phiên bản.",
+          text: "Đã xuất bản phiên bản mới. Đưa bản này vào lớp ở mục Dùng bài trong lớp phía trên; lớp chưa cập nhật vẫn dùng bản cũ.",
         });
         router.refresh();
         return;

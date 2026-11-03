@@ -2,7 +2,7 @@
 
 import { useEffect, useReducer, useRef, useState, useTransition } from "react";
 import Link from "next/link";
-import { unstable_rethrow } from "next/navigation";
+import { unstable_rethrow, useRouter } from "next/navigation";
 
 import {
   publishTeachingLessonAction,
@@ -89,6 +89,7 @@ export function TeachingEditor({
   initialVersionCount,
   visibility,
 }: TeachingEditorProps) {
+  const router = useRouter();
   const [restored] = useState(() =>
     restoreEditorDraft(
       lessonId,
@@ -240,8 +241,10 @@ export function TeachingEditor({
         setStatus({
           tone: "success",
           message:
-            "Đã xuất bản phiên bản mới. Bài vẫn riêng tư; giao cho lớp ở trang lớp khi bạn sẵn sàng.",
+            "Đã xuất bản phiên bản mới. Đưa bản này vào lớp ở mục Dùng bài trong lớp phía trên; bài vẫn riêng tư với người ngoài lớp.",
         });
+        // The usage section above the editor is server-rendered; it shows the new version now.
+        router.refresh();
         return;
       }
       if (result.status === "invalid") {

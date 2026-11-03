@@ -136,6 +136,13 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Luồng giáo viên rõ hơn — 03/11/2026
+
+Trước đây xuất bản bài và đưa bài vào lớp nằm ở hai trang khác nhau. Giáo viên mới không biết thứ tự các bước, và xuất bản lại không tự cập nhật lớp.
+
+- **Dùng bài trong lớp** (đầu trang trình soạn, cả bài tiếng Nhật và tiếng Trung): liệt kê các lớp đang hoạt động của giáo viên với bước còn thiếu. Lớp đang dùng bản cũ có nút "Cập nhật lên phiên bản N", giữ nguyên thứ tự và giờ mở. Lớp chưa có bài có nút "Đưa vào lớp": bài mở ngay và xếp cuối. Lớp cần làm gì xếp trước; hiện 8 lớp, phần còn lại trong "Xem thêm". Kết quả báo kèm tên lớp. Muốn chọn thứ tự hoặc hẹn giờ mở vẫn dùng trang Giao bài.
+- **Các bước bắt đầu dạy** (trang Giảng dạy): 7 bước theo thứ tự (tạo lớp, tạo bài, xuất bản, đưa bài vào lớp, mời học viên, đặt lịch học, giao bài tập), mỗi bước có link tới đúng chỗ làm và dấu đã xong. Danh sách ẩn khi đã xong hết, hoặc khi lớp dạy đã có học viên và bài tập. Lớp tự học không tính.
+
 ## Lịch học hằng tuần — 03/11/2026
 
 Giáo viên đặt lịch lặp lại hằng tuần cho lớp, theo giờ Việt Nam: mỗi buổi gồm thứ, giờ bắt đầu và thời lượng (tối đa 14 buổi một tuần), kèm một dòng ghi chú cho học viên (ví dụ "Nghỉ ngày 20/11, học bù tối thứ Bảy").

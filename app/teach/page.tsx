@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
+import { StartChecklist } from "@/components/teach/start-checklist";
 import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { filterManagedLessons, parseLessonFilters } from "@/lib/lesson-management";
@@ -11,6 +12,8 @@ import { TEACHING_LANGUAGE_LABELS, teachingLanguageLabel } from "@/lib/teaching-
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
 import { listClassSchedules } from "@/lib/server/class-schedule";
+import { getClassProgressFlags } from "@/lib/server/lesson-usage";
+import { buildStartSteps, showsStartSteps } from "@/lib/teaching-start";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
 import { findStarterForLesson } from "@/lib/starter-lessons";
 
@@ -30,7 +33,36 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
     listTeacherClasses(account.id),
     listOwnedLessons(account.id),
   ]);
-  const schedules = await listClassSchedules(classes.map((item) => item.id));
+  // A self-study class never takes learners, so the start steps look at teaching classes only.
+  const teachingClasses = classes.filter((item) => !item.self_study && item.active);
+  const [schedules, flags] = await Promise.all([
+    listClassSchedules(classes.map((item) => item.id)),
+    getClassProgressFlags(teachingClasses.map((item) => item.id)),
+  ]);
+  const firstClass = teachingClasses[0];
+  const firstLesson = lessons[0];
+  const firstPublished = lessons.find((lesson) => lesson.publishedVersionId) ?? firstLesson;
+  const classPath = firstClass ? `/teach/classes/${firstClass.id}` : "/teach/classes";
+  const progress = {
+    classCount: teachingClasses.length,
+    lessonCount: lessons.length,
+    publishedLessonCount: lessons.filter((lesson) => lesson.publishedVersionId).length,
+    hasClassLesson: flags.hasClassLesson,
+    hasLearner: teachingClasses.some((item) => item.memberCount > 0),
+    hasSchedule: teachingClasses.some((item) => (schedules.get(item.id)?.slots.length ?? 0) > 0),
+    hasAssignment: flags.hasAssignment,
+  };
+  const startSteps = buildStartSteps(progress, {
+    newClass: "/teach/classes",
+    newLesson: "/teach/lessons/new",
+    lesson: firstLesson ? `/teach/lessons/${firstLesson.id}/edit` : "/teach/lessons/new",
+    classContent: firstPublished
+      ? `/teach/lessons/${firstPublished.id}/edit`
+      : "/teach/lessons/new",
+    invite: firstClass ? `${classPath}#join-code` : classPath,
+    schedule: firstClass ? `${classPath}#class-schedule` : classPath,
+    assign: firstClass ? `${classPath}/assign` : classPath,
+  });
   const visibleLessons = filterManagedLessons(lessons, filters);
   return (
     <>
@@ -51,6 +83,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
           </Link>
         </div>
       </div>
+      {showsStartSteps(progress, startSteps) && <StartChecklist steps={startSteps} />}
       <section className="section-block" aria-labelledby="teacher-classes">
         <h2 id="teacher-classes">Lớp của tôi</h2>
         {classes.length ? (

@@ -3029,3 +3029,97 @@ rt {
     border-bottom: 1px solid var(--border);
   }
 }
+
+/* Editor: the teacher's classes and the one step each still needs for this lesson. */
+.lesson-usage {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.lesson-usage > h2 {
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+.lesson-usage-list {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.lesson-usage-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.lesson-usage-list .item-meta {
+  margin: 0;
+}
+.pin-version-form {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+@media (max-width: 600px) {
+  .pin-version-form {
+    justify-items: start;
+  }
+}
+
+/* Giảng dạy: the start steps for a new teacher. */
+.start-checklist {
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.start-checklist > h2 {
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+.start-checklist > ol {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.start-checklist li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+.start-checklist .item-meta {
+  margin: 0;
+}
+.start-step-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.start-checklist li[data-done="true"] .start-step-mark {
+  border-color: var(--correct);
+  color: var(--correct);
+}
+.start-checklist li[data-done="true"] > div > span {
+  color: var(--muted);
+}
+.start-step-next {
+  font-weight: 600;
+}
+.lesson-usage-more > summary {
+  padding: 4px 0 12px;
+}

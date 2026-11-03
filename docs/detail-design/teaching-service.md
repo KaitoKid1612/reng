@@ -257,6 +257,13 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Luồng giáo viên rõ hơn — 03/11/2026
+
+- `lib/teaching-start.ts` (thuần, `tests/teaching-start.test.ts`): `classLessonState` (latest/older/missing so với phiên bản đang xuất bản), `buildStartSteps` (7 bước với link), `showsStartSteps` (ẩn khi xong hết, hoặc lớp dạy đã có học viên và bài tập).
+- `lib/server/lesson-usage.ts`: `getLessonUsage` (bài thuộc giáo viên, phiên bản đang xuất bản, lớp đang hoạt động kèm phiên bản lớp dùng, đọc theo lô). `pinLatestVersion` (kiểm tra chủ lớp, rồi `upsert_class_lesson` với phiên bản đang xuất bản; bài đã có trong lớp giữ `order_no`/`available_at`, bài mới lấy thứ tự lớn nhất + 1 và mở ngay). `getClassProgressFlags(classIds)` lọc theo danh sách lớp, không nhúng `classes`, vì `classes` và `class_lessons` có hai khóa ngoại (bài của lớp và nguồn luyện hằng ngày) nên nhúng sẽ lỗi.
+- `pinLatestVersionAction` (`app/actions/classes.ts`). `components/teach/lesson-class-usage.tsx` (Server Component, đặt trên trình soạn ở `app/teach/lessons/[id]/edit/page.tsx`), `pin-version-button.tsx` và `usage-notice.tsx`. Lớp vừa cập nhật mất nút và đổi chỗ trong danh sách, nên thông báo đi qua context lên cấp cả mục. Sau khi xuất bản, `TeachingEditor` gọi `router.refresh()` như `LessonEditor` để mục này thấy phiên bản mới.
+- `components/teach/start-checklist.tsx` và `app/teach/page.tsx` (tiến độ tính từ lớp, bài, lịch học và `getClassProgressFlags`).
+
 ## Lịch học hằng tuần — 03/11/2026
 
 - `202611030002_class_schedules.sql`: bảng `class_schedules` (`class_id` khóa chính và khóa ngoại tới `classes`, `slots` jsonb là mảng tối đa 14 phần tử, `note` ≤ 300 ký tự, `updated_at`). RLS bật, không cấp quyền cho anon/authenticated; service role đọc/thêm/sửa. Kiểm tra ở `tests/class-schedule-migration.test.ts`.
