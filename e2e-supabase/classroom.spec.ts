@@ -331,6 +331,10 @@ test("learners reset a forgotten password through the email link", async ({ page
   await signIn(page, studentA.email, newPassword);
   await expect(page).toHaveURL(/\/classes$/);
   studentA.password = newPassword;
+  // Signed in with the password, the page offers a new email link instead of the form.
+  await page.goto("/reset-password");
+  await expect(page.getByText(/chỉ dùng được trong 1 giờ sau khi mở link/)).toBeVisible();
+  await expect(page.getByLabel("Mật khẩu mới", { exact: true })).toHaveCount(0);
 });
 
 test("learner and teacher classroom pages fit a 360px screen", async ({ browser }) => {

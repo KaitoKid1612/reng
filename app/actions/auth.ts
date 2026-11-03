@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
+import { canSetNewPassword } from "@/lib/server/password-reset";
 import { getRequestOrigin } from "@/lib/server/request-origin";
 import { createServiceClient, selectOptional } from "@/lib/server/supabase";
 import { createSessionClient } from "@/lib/supabase-session";
@@ -194,7 +195,7 @@ export async function resetPassword(
   const {
     data: { user },
   } = await client.auth.getUser();
-  if (!user) {
+  if (!user || !(await canSetNewPassword(client))) {
     return { error: "Link đặt lại đã hết hạn. Hãy gửi yêu cầu mới." };
   }
   const parsed = resetSchema.safeParse({

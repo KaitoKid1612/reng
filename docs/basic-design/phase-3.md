@@ -31,7 +31,7 @@ flowchart LR
 | A01 | /sign-up | Họ tên, email, mật khẩu ≥ 8; luôn tạo học viên; gửi email xác nhận |
 | A02 | /verify-email | Hướng dẫn mở email, gửi lại thư xác nhận; không tiết lộ email đã tồn tại |
 | A03 | /sign-in | Đăng nhập chung học viên/giảng viên; giữ đích `next` nội bộ |
-| A04 | /forgot-password, /reset-password | Gửi link đặt lại (thông báo giống nhau dù email có hay không), đặt mật khẩu mới sau khi mở link |
+| A04 | /forgot-password, /reset-password | Gửi link đặt lại (thông báo giống nhau dù email có hay không), đặt mật khẩu mới trong 1 giờ sau khi mở link; đăng nhập bằng mật khẩu không mở được form này |
 | A05 | /join-class | Nhập mã; chưa đăng nhập thì chuyển đăng nhập/đăng ký rồi quay lại với mã đã nhập; một lần bấm xác nhận để vào |
 | S17 | /classes | Danh sách lớp đang tham gia, bài tập sắp hạn |
 | S18 | /classes/[id] | Bài đã mở theo thứ tự (đọc, trình chiếu, flashcard) và bài tập kèm trạng thái |
