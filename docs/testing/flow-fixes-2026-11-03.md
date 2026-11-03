@@ -68,6 +68,18 @@ Làm sau khi người dùng đồng ý, cùng ngày. Cần migration `2026110300
 
 Kiểm tra trên Supabase local đã áp migration. Người dùng chạy migration trên production ngày 03/11/2026 (sao lưu, `migration list`, `db push`), sau đó code mới được push. Phiên làm việc không tự đọc được danh sách migration production, vì chế độ tự động chặn. Vì vậy code đọc lịch có thêm lớp bảo vệ: thử trên máy local, khi đổi tên bảng để giả lập migration chưa chạy, cả bốn trang (Giảng dạy, trang lớp giáo viên, Lớp của tôi, trang lớp học viên) vẫn trả 200, chỉ không hiện "Buổi tới", và server ghi log lỗi đọc.
 
+## Giao diện trang lớp của giáo viên
+
+Người dùng báo ba chỗ xấu trên production sau khi có lịch học. Đã tái hiện trên dữ liệu local giống production (lớp "Tiếng Nhật Minna – Lớp 1" của `ui-teacher@reng.local`: 6 bài luyện hằng ngày, 1 học viên).
+
+| Chỗ | Lỗi | Sửa |
+|---|---|---|
+| Câu cả lớp sai nhiều | Lớp ít học viên thì câu sai nào cũng vượt 50%, nên một bài luyện hằng ngày liệt kê cả 59 câu; viền đỏ (kiểu câu trả lời sai) chạy dọc cả nhóm | Mỗi bài là một thẻ viền xám; hiện 10 câu sai nhiều nhất, phần còn lại trong "Xem thêm N câu" |
+| Cách Reng chọn câu mỗi ngày | Mở ra là một đoạn chữ dài; dòng "Đang lấy câu từ…" dính liền ngay sau, như cùng một đoạn | Trạng thái nguồn câu tách riêng ngay dưới phần giới thiệu, tiếp theo là form; phần giải thích chuyển xuống cuối, thành danh sách năm ý trong khung |
+| Mã lớp | Nút "Sao chép link mời" và hàng "Đổi mã mới", "Ngừng nhận học viên" dính sát nhau | Ba nút chung một hàng (điện thoại thì xuống dòng có khoảng cách); nút sao chép không gửi form |
+
+Kiểm tra: ảnh chụp trước và sau ở 360px và 1280px; "Xem thêm" mở đủ 59 câu; sao chép link không đổi mã lớp; `npm run audit:layout` trang lớp không có lỗi hay cảnh báo; `npm run check` đạt.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

@@ -1964,7 +1964,10 @@ rt {
 }
 /* Class report: frequently missed questions, one collapsible group per assignment. */
 .hard-question-group {
-  padding: 0;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
 }
 /* A details card whose summary is a title line with a count on the right. */
 .collapse-card > summary {
@@ -2031,6 +2034,54 @@ rt {
   color: var(--wrong);
   font-size: 14px;
   font-variant-numeric: tabular-nums;
+}
+.hard-question-list > li > span:first-child {
+  font-size: 15px;
+}
+.hard-question-more > summary,
+.help-disclosure > summary {
+  width: fit-content;
+  color: var(--primary);
+  cursor: pointer;
+}
+.hard-question-more > summary {
+  padding: 4px 16px 12px;
+  font-size: 15px;
+}
+/* The daily practice source line and warnings sit apart from the intro above and the form below. */
+.daily-practice-status {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+.daily-practice-status > p {
+  margin: 0;
+}
+.help-disclosure {
+  margin-top: 16px;
+}
+.help-disclosure > summary {
+  padding: 8px 0;
+}
+.help-disclosure > ul {
+  display: grid;
+  gap: 6px;
+  list-style: disc;
+  margin: 4px 0 0;
+  padding: 12px 16px 12px 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+}
+.hard-question-more > summary:focus-visible,
+.help-disclosure > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.join-invite-link {
+  overflow-wrap: anywhere;
 }
 .older-assignments > summary {
   width: fit-content;

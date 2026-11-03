@@ -45,25 +45,20 @@ export function JoinCodeControls({
             Gửi link mời bên dưới: học viên mở link, tạo tài khoản hoặc đăng nhập rồi bấm Vào lớp,
             không phải gõ mã. Học viên cũng có thể mở trang Vào lớp và nhập mã này.
           </p>
-          <p className="small">
+          <p className="small join-invite-link">
             <a href={inviteUrl}>{inviteUrl}</a>
           </p>
-          <div className="button-row">
-            <Button type="button" onClick={handleCopy}>
-              Sao chép link mời
-            </Button>
-          </div>
-          {copyNotice && (
-            <p className="small muted" role="status">
-              {copyNotice}
-            </p>
-          )}
         </>
       ) : (
         <p className="small muted">Đang ngừng nhận học viên mới; mã hiện tại không dùng được.</p>
       )}
       <form action={action} className="button-row">
         <input type="hidden" name="classId" value={classId} />
+        {isEnabled && (
+          <Button type="button" onClick={handleCopy}>
+            Sao chép link mời
+          </Button>
+        )}
         <Button
           type="submit"
           name="operation"
@@ -83,6 +78,11 @@ export function JoinCodeControls({
           {isEnabled ? "Ngừng nhận học viên" : "Mở lại nhận học viên"}
         </Button>
       </form>
+      {copyNotice && (
+        <p className="small muted" role="status">
+          {copyNotice}
+        </p>
+      )}
       <ActionFeedback state={state} />
     </div>
   );

@@ -280,36 +280,27 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         <p className="small muted">
           Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập, hạn 23:59 cùng ngày.
         </p>
-        <details className="older-assignments">
-          <summary>Cách Reng chọn câu mỗi ngày</summary>
-          <p className="small muted">
-            Câu lấy từ bài bạn chọn, ví dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới
-            nhất đã mở có câu chọn/điền/sắp xếp. Nộp muộn vẫn được, tối đa 3 lượt, xem giải thích
-            ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả
-            bài giao tay). Mỗi dạng câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ
-            pháp, từ vựng, chữ Hán) và loại câu (chọn, điền, sắp xếp). Câu sai vào sổ lỗi và lịch ôn
-            tập của học viên.
-          </p>
-        </details>
         {dailySource && (
-          <DailyPracticeStatus
-            size={classRow.daily_practice_size}
-            pinnedLessonId={classRow.daily_practice_lesson_id}
-            pinnedTitle={
-              classRow.daily_practice_lesson_id
-                ? lessonTitle(classRow.daily_practice_lesson_id)
-                : null
-            }
-            source={
-              dailySource.status === "found"
-                ? {
-                    lessonId: dailySource.lessonId,
-                    title: lessonTitle(dailySource.lessonId) ?? dailySource.lessonId,
-                    questionCount: dailySource.questions.length,
-                  }
-                : null
-            }
-          />
+          <div className="daily-practice-status">
+            <DailyPracticeStatus
+              size={classRow.daily_practice_size}
+              pinnedLessonId={classRow.daily_practice_lesson_id}
+              pinnedTitle={
+                classRow.daily_practice_lesson_id
+                  ? lessonTitle(classRow.daily_practice_lesson_id)
+                  : null
+              }
+              source={
+                dailySource.status === "found"
+                  ? {
+                      lessonId: dailySource.lessonId,
+                      title: lessonTitle(dailySource.lessonId) ?? dailySource.lessonId,
+                      questionCount: dailySource.questions.length,
+                    }
+                  : null
+              }
+            />
+          </div>
         )}
         <DailyPracticeForm
           classId={classRow.id}
@@ -321,6 +312,24 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             isOpen: new Date(lesson.availableAt) <= now,
           }))}
         />
+        <details className="help-disclosure">
+          <summary>Cách Reng chọn câu mỗi ngày</summary>
+          <ul>
+            <li>
+              Câu lấy từ bài bạn chọn, ví dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới
+              nhất đã mở có câu chọn, điền hoặc sắp xếp.
+            </li>
+            <li>
+              Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay).
+            </li>
+            <li>
+              Mỗi dạng câu giữ tỉ lệ như trong bài: theo tag của câu (ví dụ ngữ pháp, từ vựng, chữ
+              Hán) và loại câu (chọn, điền, sắp xếp).
+            </li>
+            <li>Nộp muộn vẫn được, tối đa 3 lượt; học viên xem giải thích ngay sau khi nộp.</li>
+            <li>Câu sai vào sổ lỗi và lịch ôn tập của học viên.</li>
+          </ul>
+        </details>
       </section>
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>
