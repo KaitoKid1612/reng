@@ -4,15 +4,19 @@ import { z } from "zod";
 
 import { FEEDBACK_POLICIES, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
+import { isStaleDailySet } from "@/lib/learner-today";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { toStudyWords } from "@/lib/study-words";
 import {
   EMAIL_BATCH_SIZE,
   EMAIL_LEASE_SECONDS,
+  EMAIL_RUN_BUDGET_MS,
+  EMAIL_SEND_INTERVAL_MS,
   EMAIL_TYPES,
   emailDateOf,
   emailIdempotencyKey,
   isDueSoon,
+  isEmailJobExpired,
   MAX_EMAIL_ATTEMPTS,
   nextRetryAt,
   NOTIFICATION_JOBS,
@@ -38,7 +42,12 @@ import {
 import { countStudyStreak } from "@/lib/study-days";
 
 import type { EmailType, NotificationJob } from "@/lib/notifications/schedule";
-import type { DigestClass, EmailContent, WeekStats } from "@/lib/notifications/templates";
+import type {
+  DigestClass,
+  EmailContent,
+  ReminderAssignment,
+  WeekStats,
+} from "@/lib/notifications/templates";
 import type { OutgoingEmail, SendOutcome } from "@/lib/server/email-provider";
 
 const timestamp = z.iso.datetime({ offset: true });
@@ -231,7 +240,8 @@ async function loadRecipients(userIds: readonly string[]) {
 
 interface ReminderWork {
   dueCards: number;
-  assignments: { title: string; dueAt: string | null }[];
+  openCount: number;
+  assignments: ReminderAssignment[];
 }
 
 // "Nothing to say, send nothing": the same check runs when planning and right before sending.
@@ -244,16 +254,33 @@ async function describeReminderWork(
     return null;
   }
   const agenda = await getLearnerAgenda(userId, now);
-  const open = agenda.openAssignments.map((item) => ({
-    title: item.assignment.title,
-    dueAt: item.assignment.dueAt,
-  }));
+  const open = agenda.openAssignments
+    .filter(
+      (item) =>
+        !isStaleDailySet(
+          {
+            isDaily: agenda.dailyAssignmentIds.has(item.assignment.id),
+            inProgress: item.status === "in_progress",
+            dueAt: item.assignment.dueAt,
+          },
+          now,
+        ),
+    )
+    .map((item): ReminderAssignment => ({
+      title: item.assignment.title,
+      dueAt: item.assignment.dueAt,
+      isOverdue:
+        item.assignment.dueAt !== null && Date.parse(item.assignment.dueAt) <= now.getTime(),
+      isDueSoon: isDueSoon(item.assignment.dueAt, now),
+    }));
   if (frequency === "due_only") {
-    const dueSoon = open.filter((item) => isDueSoon(item.dueAt, now));
-    return dueSoon.length ? { dueCards: 0, assignments: dueSoon.slice(0, 3) } : null;
+    const dueSoon = open.filter((item) => item.isDueSoon);
+    return dueSoon.length
+      ? { dueCards: 0, openCount: dueSoon.length, assignments: dueSoon.slice(0, 3) }
+      : null;
   }
   return agenda.dueCardCount > 0 || open.length
-    ? { dueCards: agenda.dueCardCount, assignments: open.slice(0, 3) }
+    ? { dueCards: agenda.dueCardCount, openCount: open.length, assignments: open.slice(0, 3) }
     : null;
 }
 
@@ -570,6 +597,15 @@ async function recordOutcome(job: ClaimedJob, outcome: SendOutcome, now: Date) {
     });
     return;
   }
+  if (outcome.status === "duplicate") {
+    // An earlier attempt went through; its message ID never reached us.
+    await updateClaimedJob(job, {
+      status: "sent",
+      sent_at: now.toISOString(),
+      last_error: "already_sent",
+    });
+    return;
+  }
   await updateClaimedJob(job, {
     status: "failed",
     last_error: outcome.error.slice(0, 300),
@@ -579,40 +615,79 @@ async function recordOutcome(job: ClaimedJob, outcome: SendOutcome, now: Date) {
   });
 }
 
-export async function deliverPendingEmails(now: Date, origin: string) {
+// A job claimed but not tried before the run ran out of time goes straight back to the queue,
+// with its attempt returned, instead of waiting out the lease.
+function releaseClaimedJob(job: ClaimedJob, now: Date) {
+  return updateClaimedJob(job, {
+    status: job.attempts > 1 ? "failed" : "pending",
+    attempts: job.attempts - 1,
+    next_attempt_at: now.toISOString(),
+  });
+}
+
+const sleep = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+// Claims and sends batches until the queue is empty or the time budget is spent, one email at a
+// time and no faster than the provider's rate limit.
+export async function deliverPendingEmails(
+  now: Date,
+  origin: string,
+  deadline = Date.now() + EMAIL_RUN_BUDGET_MS,
+) {
   const provider = getEmailProvider();
   const secret = process.env.EMAIL_LINK_SECRET;
   if (!provider || !secret) {
     throw new ServiceError("email_not_configured");
   }
-  const jobs = await callRpc(
-    "claim_email_jobs",
-    {
-      p_limit: EMAIL_BATCH_SIZE,
-      p_lease_seconds: EMAIL_LEASE_SECONDS,
-      p_max_attempts: MAX_EMAIL_ATTEMPTS,
-    },
-    z.array(claimedJobSchema),
-  );
-  const recipients = await loadRecipients(jobs.map((job) => job.user_id));
-  const counts = { sent: 0, cancelled: 0, failed: 0 };
-  for (const job of jobs) {
-    let email: OutgoingEmail | null;
-    try {
-      email = await composeEmail(job, recipients.get(job.user_id), { now, origin, secret });
-    } catch {
-      await recordOutcome(job, { status: "retry", error: "compose_failed" }, now);
-      counts.failed += 1;
-      continue;
+  const counts = { sent: 0, cancelled: 0, failed: 0, released: 0 };
+  let lastSendAt = 0;
+  while (Date.now() < deadline) {
+    const jobs = await callRpc(
+      "claim_email_jobs",
+      {
+        p_limit: EMAIL_BATCH_SIZE,
+        p_lease_seconds: EMAIL_LEASE_SECONDS,
+        p_max_attempts: MAX_EMAIL_ATTEMPTS,
+      },
+      z.array(claimedJobSchema),
+    );
+    const recipients = await loadRecipients(jobs.map((job) => job.user_id));
+    for (const job of jobs) {
+      if (Date.now() >= deadline) {
+        await releaseClaimedJob(job, now);
+        counts.released += 1;
+        continue;
+      }
+      if (isEmailJobExpired(job.email_type, job.for_date, now)) {
+        await updateClaimedJob(job, { status: "cancelled", last_error: "expired" });
+        counts.cancelled += 1;
+        continue;
+      }
+      let email: OutgoingEmail | null;
+      try {
+        email = await composeEmail(job, recipients.get(job.user_id), { now, origin, secret });
+      } catch {
+        await recordOutcome(job, { status: "retry", error: "compose_failed" }, now);
+        counts.failed += 1;
+        continue;
+      }
+      if (!email) {
+        await updateClaimedJob(job, { status: "cancelled" });
+        counts.cancelled += 1;
+        continue;
+      }
+      const wait = lastSendAt + EMAIL_SEND_INTERVAL_MS - Date.now();
+      if (wait > 0) {
+        await sleep(wait);
+      }
+      lastSendAt = Date.now();
+      const outcome = await provider.send(email);
+      await recordOutcome(job, outcome, now);
+      counts[outcome.status === "sent" || outcome.status === "duplicate" ? "sent" : "failed"] += 1;
     }
-    if (!email) {
-      await updateClaimedJob(job, { status: "cancelled" });
-      counts.cancelled += 1;
-      continue;
+    if (jobs.length < EMAIL_BATCH_SIZE) {
+      break;
     }
-    const outcome = await provider.send(email);
-    await recordOutcome(job, outcome, now);
-    counts[outcome.status === "sent" ? "sent" : "failed"] += 1;
   }
   return counts;
 }

@@ -8,6 +8,14 @@ interface UnsubscribeRouteContext {
   params: Promise<{ token: string }>;
 }
 
+// A mail app or person opening the header link with GET sees the confirmation page. Only POST
+// unsubscribes, so a link scanner that follows links cannot turn anyone's email off.
+export async function GET(request: Request, { params }: UnsubscribeRouteContext) {
+  const { token } = await params;
+  const origin = getRequestOrigin(request.headers, request.url);
+  return NextResponse.redirect(new URL(`/unsubscribe/${encodeURIComponent(token)}`, origin), 303);
+}
+
 // RFC 8058 one-click POST from mail providers, or the confirmation form on /unsubscribe.
 // The signed token is the authorization, so no session or same-origin check applies.
 export async function POST(request: Request, { params }: UnsubscribeRouteContext) {

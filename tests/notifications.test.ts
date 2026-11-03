@@ -6,8 +6,10 @@ import {
   emailDateOf,
   emailIdempotencyKey,
   isDueSoon,
+  isEmailJobExpired,
   nextRetryAt,
 } from "../lib/notifications/schedule";
+import { classifySendFailure } from "../lib/notifications/send-outcome";
 import {
   escapeHtml,
   renderDailyReminder,
@@ -30,7 +32,15 @@ test("reminder subjects name the learner and a concrete number, with escaped con
     name: "Nguyễn Thu Hà",
     streak: 4,
     dueCards: 12,
-    assignments: [{ title: '<script>alert("x")</script>', dueAt: "2026-10-29T13:00:00Z" }],
+    openCount: 1,
+    assignments: [
+      {
+        title: '<script>alert("x")</script>',
+        dueAt: "2026-10-29T13:00:00Z",
+        isOverdue: false,
+        isDueSoon: true,
+      },
+    ],
     word: { front: "行きます", reading: "いきます", meaning: "đi", lang: "ja" },
     reviewUrl: "https://reng.example/review",
     assignmentsUrl: "https://reng.example/classes",
@@ -47,12 +57,46 @@ test("reminder subjects name the learner and a concrete number, with escaped con
     name: "",
     streak: 0,
     dueCards: 0,
-    assignments: [{ title: "Bài 1", dueAt: "2026-10-29T13:00:00Z" }],
+    openCount: 1,
+    assignments: [
+      { title: "Bài 1", dueAt: "2026-10-29T13:00:00Z", isOverdue: false, isDueSoon: true },
+    ],
     word: null,
     reviewUrl: "r",
     assignmentsUrl: "a",
   });
   assert.equal(dueOnly.subject, "Bạn ơi, “Bài 1” sắp đến hạn");
+  // Late work the teacher still accepts is never called "sắp đến hạn".
+  const late = renderDailyReminder({
+    ...footer,
+    name: "",
+    streak: 0,
+    dueCards: 0,
+    openCount: 5,
+    assignments: [
+      { title: "Bài 2", dueAt: "2026-10-27T13:00:00Z", isOverdue: true, isDueSoon: false },
+    ],
+    word: null,
+    reviewUrl: "r",
+    assignmentsUrl: "a",
+  });
+  assert.equal(late.subject, "Bạn ơi, “Bài 2” đã quá hạn nhưng vẫn nộp được");
+  assert.match(late.text, /- Bài 2 \(quá hạn từ .+, vẫn nộp được\)/);
+  // Work due next week is waiting, not due soon; the count covers every open assignment.
+  const later = renderDailyReminder({
+    ...footer,
+    name: "",
+    streak: 0,
+    dueCards: 0,
+    openCount: 5,
+    assignments: [
+      { title: "Bài 3", dueAt: "2026-11-05T13:00:00Z", isOverdue: false, isDueSoon: false },
+    ],
+    word: null,
+    reviewUrl: "r",
+    assignmentsUrl: "a",
+  });
+  assert.equal(later.subject, "Bạn ơi, còn 5 bài tập đang chờ");
   assert.equal(escapeHtml(`&'"`), "&amp;&#39;&quot;");
 });
 
@@ -113,7 +157,8 @@ test("webhook signatures follow the Svix scheme with a five-minute window", () =
   assert.equal(verifyWebhookSignature(body, { ...headers, signature: null }, secret, now), false);
 });
 
-test("jobs use Vietnam dates, stable keys, bounded retries and a 24-hour due window", () => {
+test("jobs use Vietnam dates, stable keys, bounded retries and a calendar due window", () => {
+  // 00:30 on 29 October in Vietnam.
   const now = new Date("2026-10-28T17:30:00Z");
   assert.equal(emailDateOf(now), "2026-10-29");
   assert.equal(
@@ -122,8 +167,40 @@ test("jobs use Vietnam dates, stable keys, bounded retries and a 24-hour due win
   );
   assert.equal(nextRetryAt(1, now).getTime() - now.getTime(), 15 * 60_000);
   assert.equal(nextRetryAt(5, now).getTime() - now.getTime(), 60 * 60_000);
-  assert.equal(isDueSoon("2026-10-29T17:30:00Z", now), true);
-  assert.equal(isDueSoon("2026-10-29T17:30:01Z", now), false);
+  // Due before 30 October ends in Vietnam (17:00 UTC), whatever minute the cron started.
+  assert.equal(isDueSoon("2026-10-29T17:30:01Z", now), true);
+  assert.equal(isDueSoon("2026-10-30T16:59:59Z", now), true);
+  assert.equal(isDueSoon("2026-10-30T17:00:00Z", now), false);
   assert.equal(isDueSoon("2026-10-28T17:00:00Z", now), false);
   assert.equal(isDueSoon(null, now), false);
+});
+
+test("a cron run that starts an hour late on the second day still reminds every deadline", () => {
+  // 20:00 on 1 November, then 20:59 on 2 November, Vietnam time.
+  const first = new Date("2026-11-01T13:00:00Z");
+  const second = new Date("2026-11-02T13:59:00Z");
+  for (const dueAt of ["2026-11-02T13:30:00Z", "2026-11-02T16:59:59Z", "2026-11-03T10:00:00Z"]) {
+    assert.equal(isDueSoon(dueAt, first) || isDueSoon(dueAt, second), true, dueAt);
+  }
+});
+
+test("jobs from an earlier day expire; the weekly summary keeps one more day", () => {
+  const monday = new Date("2026-11-01T23:00:00Z"); // 06:00 Monday 2 November in Vietnam.
+  assert.equal(isEmailJobExpired("daily_reminder", "2026-11-01", monday), true);
+  assert.equal(isEmailJobExpired("daily_reminder", "2026-11-02", monday), false);
+  assert.equal(isEmailJobExpired("teacher_digest", "2026-11-01", monday), true);
+  assert.equal(isEmailJobExpired("weekly_summary", "2026-11-01", monday), false);
+  assert.equal(isEmailJobExpired("weekly_summary", "2026-10-31", monday), true);
+});
+
+test("Resend's 409s tell an email already sent apart from one still being sent", () => {
+  assert.deepEqual(classifySendFailure(409, "invalid_idempotent_request"), { status: "duplicate" });
+  assert.deepEqual(classifySendFailure(409, "concurrent_idempotent_requests"), {
+    status: "retry",
+    error: "http_409_concurrent",
+  });
+  assert.deepEqual(classifySendFailure(409, null), { status: "rejected", error: "http_409" });
+  assert.deepEqual(classifySendFailure(429, null), { status: "retry", error: "http_429" });
+  assert.deepEqual(classifySendFailure(503, null), { status: "retry", error: "http_503" });
+  assert.deepEqual(classifySendFailure(422, null), { status: "rejected", error: "http_422" });
 });

@@ -1,5 +1,11 @@
 import "server-only";
 
+import { classifySendFailure } from "@/lib/notifications/send-outcome";
+
+import type { SendOutcome } from "@/lib/notifications/send-outcome";
+
+export type { SendOutcome } from "@/lib/notifications/send-outcome";
+
 export interface OutgoingEmail {
   to: string;
   subject: string;
@@ -8,12 +14,6 @@ export interface OutgoingEmail {
   idempotencyKey: string;
   oneClickUnsubscribeUrl: string;
 }
-
-// "retry": definitely or possibly not delivered; the same idempotency key is reused.
-export type SendOutcome =
-  | { status: "sent"; providerMessageId: string }
-  | { status: "retry"; error: string }
-  | { status: "rejected"; error: string };
 
 export interface EmailProvider {
   name: "resend" | "mailpit";
@@ -43,11 +43,15 @@ async function readMessageId(response: Response, field: "id" | "ID") {
   return null;
 }
 
-function classifyFailure(status: number): SendOutcome {
-  // 429 and 5xx may succeed later; other 4xx responses mean the request itself is wrong.
-  return status === 429 || status >= 500
-    ? { status: "retry", error: `http_${status}` }
-    : { status: "rejected", error: `http_${status}` };
+async function readErrorName(response: Response) {
+  const data: unknown = await response.json().catch(() => null);
+  const name: unknown = data && typeof data === "object" ? Reflect.get(data, "name") : null;
+  return typeof name === "string" ? name : null;
+}
+
+async function classifyFailure(response: Response): Promise<SendOutcome> {
+  const errorName = response.status === 409 ? await readErrorName(response) : null;
+  return classifySendFailure(response.status, errorName);
 }
 
 function createResendProvider(apiKey: string, from: string): EmailProvider {
@@ -73,7 +77,7 @@ function createResendProvider(apiKey: string, from: string): EmailProvider {
           signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         });
         if (!response.ok) {
-          return classifyFailure(response.status);
+          return classifyFailure(response);
         }
         const id = await readMessageId(response, "id");
         return id
@@ -113,7 +117,7 @@ function createMailpitProvider(baseUrl: string, from: string): EmailProvider | n
           signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
         });
         if (!response.ok) {
-          return classifyFailure(response.status);
+          return classifyFailure(response);
         }
         const id = await readMessageId(response, "ID");
         return id

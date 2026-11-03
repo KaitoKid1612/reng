@@ -66,11 +66,22 @@ function describeWord(word: WordOfDay) {
   return `${written}: ${word.meaning}`;
 }
 
+export interface ReminderAssignment {
+  title: string;
+  dueAt: string | null;
+  // Past due, but the teacher still accepts late work.
+  isOverdue: boolean;
+  // Due before tomorrow ends.
+  isDueSoon: boolean;
+}
+
 export interface DailyReminderInput extends EmailFooter {
   name: string;
   streak: number;
   dueCards: number;
-  assignments: { title: string; dueAt: string | null }[];
+  // Every open assignment counted, of which `assignments` lists the first few.
+  openCount: number;
+  assignments: ReminderAssignment[];
   word: WordOfDay | null;
   reviewUrl: string;
   assignmentsUrl: string;
@@ -79,10 +90,12 @@ export interface DailyReminderInput extends EmailFooter {
 export function renderDailyReminder(input: DailyReminderInput): EmailContent {
   const name = greetingName(input.name);
   const first = input.assignments[0];
-  let subject = `${name} ơi, còn ${input.assignments.length} bài tập đang chờ`;
+  let subject = `${name} ơi, còn ${input.openCount} bài tập đang chờ`;
   if (input.dueCards > 0) {
     subject = `${name} ơi, hôm nay có ${input.dueCards} thẻ cần ôn`;
-  } else if (first?.dueAt) {
+  } else if (first?.isOverdue) {
+    subject = `${name} ơi, “${first.title}” đã quá hạn nhưng vẫn nộp được`;
+  } else if (first?.isDueSoon) {
     subject = `${name} ơi, “${first.title}” sắp đến hạn`;
   }
   const lines: string[] = [];
@@ -94,10 +107,15 @@ export function renderDailyReminder(input: DailyReminderInput): EmailContent {
   if (input.dueCards > 0) {
     lines.push(`${input.dueCards} thẻ đang chờ ôn.`);
   }
-  const assignmentItems = input.assignments.map(
-    (assignment) =>
-      `${assignment.title}${assignment.dueAt ? ` (hạn ${formatStudyDateTime(assignment.dueAt)})` : ""}`,
-  );
+  const assignmentItems = input.assignments.map((assignment) => {
+    if (!assignment.dueAt) {
+      return assignment.title;
+    }
+    const due = formatStudyDateTime(assignment.dueAt);
+    return assignment.isOverdue
+      ? `${assignment.title} (quá hạn từ ${due}, vẫn nộp được)`
+      : `${assignment.title} (hạn ${due})`;
+  });
   const wordText = input.word ? describeWord(input.word) : "";
   const action =
     input.dueCards > 0

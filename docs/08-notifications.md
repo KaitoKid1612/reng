@@ -67,7 +67,7 @@ Gửi 6h sáng. Tóm tắt lớp: ai nộp bài, câu nào cả lớp sai nhiề
 
 ## Tùy chọn và chống gửi trùng
 
-Lưu lựa chọn tại notification_preferences theo `03`. Mặc định tắt; học viên chủ động đăng ký daily hoặc due_only, tổng kết tuần có lựa chọn riêng; giảng viên bật teacher_digest riêng. due_only nghĩa là bài chưa nộp sẽ hết hạn trong 24 giờ tới. Mỗi lần gửi phải kiểm tra lại tùy chọn và việc còn cần làm. Ngày thống kê theo Asia/Ho_Chi_Minh.
+Lưu lựa chọn tại notification_preferences theo `03`. Mặc định tắt; học viên chủ động đăng ký daily hoặc due_only, tổng kết tuần có lựa chọn riêng; giảng viên bật teacher_digest riêng. due_only nghĩa là bài chưa nộp có hạn trước khi hết ngày mai (giờ Việt Nam). Dùng ngày lịch thay vì "24 giờ tới" để cron Hobby có chạy lệch tới 59 phút cũng không sót bài. Mỗi lần gửi phải kiểm tra lại tùy chọn và việc còn cần làm. Ngày thống kê theo Asia/Ho_Chi_Minh.
 
 Khóa `(user_id, email_type, for_date)` của email_log chống tạo trùng công việc, nhưng không tự bảo đảm API gửi chỉ thực hiện một lần.
 

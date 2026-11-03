@@ -12,6 +12,9 @@ interface CronRouteContext {
 
 const NO_STORE = { "Cache-Control": "private, no-store" };
 
+// Delivery stops sending after EMAIL_RUN_BUDGET_MS, which leaves room for planning and replies.
+export const maxDuration = 60;
+
 // Scheduled by vercel.json in UTC; also callable locally with the same bearer secret.
 export async function GET(request: Request, { params }: CronRouteContext) {
   const secret = process.env.CRON_SECRET;

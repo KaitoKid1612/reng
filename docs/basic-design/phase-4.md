@@ -28,8 +28,8 @@ T01 có lối vào soạn bài, tạo bài và nhập CSV. Trang tiến độ h�
 2. **Xuất bản:** kiểm tra đủ trường, tham chiếu, đáp án, đường dẫn ảnh; lỗi hiện theo từng mục và không xuất bản. Mục thiếu audio là cảnh báo, giọng thiết bị được dùng tạm như giai đoạn 2. Xuất bản tạo phiên bản mới; lớp và bài giao cũ giữ phiên bản đã ghim.
 3. **Hai tab/hai người cùng sửa:** lưu bằng revision cũ báo xung đột; giảng viên chọn tải bản trên máy chủ hoặc ghi đè có chủ đích. Không tự ghi đè.
 4. **CSV:** dòng đầu là tiêu đề cột (jp, kanji, romaji, vi, note hoặc tên tiếng Việt tương ứng); dòng thiếu jp/romaji/vi, jp không phải kana hoặc quá dài bị đánh dấu lỗi kèm số dòng; dòng trùng từ đã có bị bỏ qua. Chỉ thêm khi giảng viên xác nhận.
-5. **Nhắc bài:** 20:00 giờ Việt Nam học viên bật nhắc nhận email nếu có thẻ đến hạn hoặc bài chưa nộp (due_only: bài hết hạn trong 24 giờ). Chủ nhật 19:00 tổng kết tuần nếu hai tuần gần nhất có hoạt động. 06:00 giảng viên nhận tóm tắt lớp nếu có bài nộp mới, câu sai nhiều hoặc học viên bỏ bài.
-6. **Hủy:** link cuối email và header List-Unsubscribe một chạm tắt mọi email nhắc ngay, hủy job chưa gửi. Bounce/complaint từ nhà cung cấp tạm dừng gửi tới địa chỉ đó.
+5. **Nhắc bài:** 20:00 giờ Việt Nam học viên bật nhắc nhận email nếu có thẻ đến hạn hoặc bài chưa nộp (due_only: bài có hạn trước khi hết ngày mai). Bài quá hạn mà giáo viên còn nhận được ghi "quá hạn, vẫn nộp được", không gọi là "sắp đến hạn". Bài luyện hằng ngày của ngày trước mà học viên chưa làm không được nhắc, giống mục Hôm nay học gì. Chủ nhật 19:00 tổng kết tuần nếu hai tuần gần nhất có hoạt động. 06:00 giảng viên nhận tóm tắt lớp nếu có bài nộp mới, câu sai nhiều hoặc học viên bỏ bài.
+6. **Hủy:** link cuối email và header List-Unsubscribe một chạm tắt mọi email nhắc ngay, hủy job chưa gửi. Mở link trong header bằng GET (ứng dụng thư hoặc người dùng tự mở) chỉ dẫn tới trang xác nhận, nên trình quét link không tắt email của ai. Bounce/complaint từ nhà cung cấp tạm dừng gửi tới địa chỉ đó.
 
 ## Ngoại lệ
 

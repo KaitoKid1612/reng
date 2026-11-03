@@ -107,6 +107,17 @@ Lần thử đầu bắt được trang Giảng dạy lỗi 500: truy vấn nhú
 
 E2E chưa chạy (đợt này tạm hoãn E2E). Đã sửa `e2e-supabase/teach-and-learn.spec.ts`: bài hằng ngày giờ có ở cả hai mục, nên phép kiểm tra tìm link trong từng mục.
 
+## Email trước khi bật cho lớp thật (CR-34)
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/notifications.test.ts`: cửa sổ due_only theo ngày lịch; cron chạy 20:00 hôm trước, 20:59 hôm sau vẫn nhắc mọi hạn; job ngày trước hết hạn (tổng kết tuần thêm một ngày); hai loại 409 của Resend; tiêu đề cho bài quá hạn và bài hạn xa | Đạt |
+| Supabase local + Mailpit, chạy `/api/cron/student-reminders` với job nhắc của hôm qua còn pending: kết quả `planned 1, sent 1, cancelled 1`; job cũ thành cancelled `expired` | Đạt |
+| Thư gửi học viên demo: liệt kê bài hằng ngày hôm nay, bài đang làm và bài quá hạn ghi "quá hạn từ …, vẫn nộp được"; bài hằng ngày của hôm qua không có trong thư | Đạt |
+| GET link List-Unsubscribe: 303 tới trang xác nhận, tùy chọn vẫn bật; POST một chạm: 200 và tắt email | Đạt |
+
+Chưa thử với Resend thật (chưa có domain và API key). Vòng lặp nhiều lô và 409 kiểm bằng test đơn vị và đọc mã.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

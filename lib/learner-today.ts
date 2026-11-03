@@ -97,6 +97,20 @@ function todaySessions(classes: readonly TodayClass[], now: Date) {
 // Work already started, then work due before today ends, then late work the teacher still
 // accepts. A daily set from an earlier day is skipped unless started: a learner who joins late
 // would otherwise open the day with a week of old sets. Everything stays in the full list below.
+// A daily set from an earlier day the learner never started: the teacher still accepts it late,
+// but it is not today's news. The evening reminder email skips it for the same reason.
+export function isStaleDailySet(
+  item: Pick<TodayAssignment, "isDaily" | "inProgress" | "dueAt">,
+  now: Date,
+) {
+  return (
+    item.isDaily &&
+    !item.inProgress &&
+    item.dueAt !== null &&
+    Date.parse(item.dueAt) <= now.getTime()
+  );
+}
+
 function todayAssignments(input: TodayInput, names: Map<string, string>, now: Date) {
   const endOfToday = studyDayStart(shiftStudyDay(toStudyDay(now), 1));
   const rank = (item: TodayAssignment) => {
@@ -113,7 +127,7 @@ function todayAssignments(input: TodayInput, names: Map<string, string>, now: Da
       if (item.dueAt === null || Date.parse(item.dueAt) >= endOfToday) {
         return false;
       }
-      return !(item.isDaily && Date.parse(item.dueAt) <= now.getTime());
+      return !isStaleDailySet(item, now);
     })
     .toSorted((first, second) => rank(first) - rank(second));
   const items = due.slice(0, MAX_TODAY_ASSIGNMENTS).map((item): TodayItem => ({
