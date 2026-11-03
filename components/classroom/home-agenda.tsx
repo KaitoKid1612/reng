@@ -4,25 +4,36 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { z } from "zod";
 
-import { describeDue } from "@/components/classroom/assignment-labels";
-import { buttonVariants } from "@/components/ui/button";
+import { TodayRows } from "@/components/classroom/today-rows";
+
+import type { TodayRow } from "@/lib/learner-today";
+
+// The home page shows the start of the day; Lớp của tôi has the rest.
+const HOME_ROWS = 4;
 
 const agendaSchema = z.object({
   agenda: z
     .object({
-      dueCardCount: z.number().int(),
-      hasMoreDueCards: z.boolean().default(false),
-      assignments: z.array(
-        z.object({ id: z.string(), title: z.string(), dueAt: z.string().nullable() }),
+      rows: z.array(
+        z.object({
+          key: z.string(),
+          kind: z.string(),
+          title: z.string(),
+          href: z.string(),
+          meta: z.string(),
+          action: z.string(),
+          isAction: z.boolean(),
+        }),
       ),
+      moreAssignmentCount: z.number().int().nonnegative(),
     })
     .nullable(),
 });
 
 type Agenda = NonNullable<z.infer<typeof agendaSchema>["agenda"]>;
 
-// Signed-in learners see today's work above the welcome text; the home page itself stays static
-// for guests, and people with nothing to do see the page as before.
+// Signed-in learners see today's plan above the welcome text; the home page itself stays static
+// for guests, and people with nothing to do today see the page as before.
 export function HomeAgenda() {
   const [agenda, setAgenda] = useState<Agenda | null>(null);
 
@@ -35,41 +46,20 @@ export function HomeAgenda() {
     return () => controller.abort();
   }, []);
 
-  if (!agenda || (!agenda.assignments.length && !agenda.dueCardCount)) {
+  if (!agenda?.rows.length) {
     return null;
   }
+  const rows: TodayRow[] = agenda.rows.slice(0, HOME_ROWS);
+  const hidden = agenda.rows.length - rows.length + agenda.moreAssignmentCount;
   return (
-    <section className="home-agenda" aria-labelledby="agenda-title">
-      <h2 id="agenda-title">Hôm nay của bạn</h2>
-      {agenda.assignments.length > 0 ? (
-        <ul className="item-list">
-          {agenda.assignments.map((assignment, index) => (
-            <li key={assignment.id}>
-              <div>
-                <Link href={`/assignments/${assignment.id}`}>{assignment.title}</Link>
-                <p className="item-meta">{describeDue(assignment.dueAt)}</p>
-              </div>
-              <Link
-                href={`/assignments/${assignment.id}`}
-                className={buttonVariants({ variant: index === 0 ? "default" : "outline" })}
-              >
-                Làm bài
-              </Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Không có bài nào đang chờ.</p>
-      )}
-      <div className="button-row">
-        {agenda.dueCardCount > 0 && (
-          <Link href="/review" className={buttonVariants({ variant: "outline" })}>
-            Ôn {agenda.dueCardCount}
-            {agenda.hasMoreDueCards ? "+" : ""} thẻ
-          </Link>
-        )}
-        <Link href="/classes">Mở lớp của tôi</Link>
-      </div>
+    <section className="today-plan" aria-labelledby="agenda-title">
+      <h2 id="agenda-title">Hôm nay học gì</h2>
+      <TodayRows rows={rows} />
+      <p className="small today-more">
+        <Link href="/classes">
+          {hidden > 0 ? `Xem thêm ${hidden} việc ở Lớp của tôi` : "Mở lớp của tôi"}
+        </Link>
+      </p>
     </section>
   );
 }

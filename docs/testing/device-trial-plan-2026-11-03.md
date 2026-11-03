@@ -25,7 +25,7 @@ Kiểm thử tự động hiện chạy trên Chromium, khổ 360–390px: làm 
 | Bước | Ai | Làm | Quan sát |
 | --- | --- | --- | --- |
 | 1 | Giáo viên | Mở trang lớp, khối Buổi dạy online, bấm Mở Google Meet và chia sẻ tab slide | Chữ trên slide đọc được trên điện thoại học viên trong Meet không? Furigana, chữ Hán có rõ không? |
-| 2 | Học viên | Mở link mời, vào lớp, xem "Hôm nay của bạn" | Mất bao lâu để thấy bài cần làm; có nút nào khó bấm không |
+| 2 | Học viên | Mở link mời, vào lớp, xem "Hôm nay học gì" | Mất bao lâu để thấy bài cần làm; có nút nào khó bấm không |
 | 3 | Học viên | Làm bài hằng ngày: câu điền hiragana bằng romaji (`arigatou`), rồi thử bằng IME tiếng Nhật của máy | Romaji đổi thành kana đúng không; IME có bị đổi chữ hai lần không; bàn phím ảo có che ô nhập không |
 | 4 | Học viên | Bấm Enter trên bàn phím ảo để kiểm tra, rồi Enter lần nữa để sang câu sau | Enter có kiểm tra/sang câu không; khi đang gõ IME, Enter có chỉ xác nhận chữ không |
 | 5 | Học viên | Câu sắp xếp: bấm các mảnh theo thứ tự, bấm một mảnh đã xếp để bỏ, rồi Xếp lại từ đầu | Mảnh đủ to để bấm không; có bấm nhầm không |

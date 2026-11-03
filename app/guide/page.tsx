@@ -139,6 +139,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-study",
     title: "Học bài",
     steps: [
+      "Mở Lớp của tôi (hoặc trang chủ khi đã đăng nhập) để xem Hôm nay học gì: buổi học hôm nay, bài đang làm dở, bài đến hạn hôm nay, bài mới mở trong tuần và thẻ đến hạn ôn. Bấm nút ở từng dòng để làm ngay; xong việc nào thì việc đó tự rời danh sách.",
       "Lớp của tôi và trang lớp hiện buổi học tới theo lịch giáo viên đặt; tới giờ thì bấm Vào Google Meet ở trang lớp.",
       "Vào Lớp của tôi → chọn lớp → Đọc bài: từ vựng có nút Nghe, mẫu câu có furigana, hội thoại và bảng luyện tập (bấm Xem câu mẫu để kiểm tra mình).",
       "Ôn lại bằng slide hoặc Flashcard từ vựng ở cuối trang bài học.",

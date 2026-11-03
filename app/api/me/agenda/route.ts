@@ -1,5 +1,7 @@
+import { toTodayRows } from "@/lib/learner-today";
 import { authorizeRead, errorResponse, jsonResponse } from "@/lib/server/api";
 import { getLearnerAgenda } from "@/lib/server/learner";
+import { planLearnerToday } from "@/lib/server/learner-today";
 
 export async function GET() {
   const auth = await authorizeRead();
@@ -7,16 +9,13 @@ export async function GET() {
     return jsonResponse({ agenda: null });
   }
   try {
-    const agenda = await getLearnerAgenda(auth.account.id, new Date());
+    const now = new Date();
+    const agenda = await getLearnerAgenda(auth.account.id, now);
+    const { plan } = await planLearnerToday(agenda, now);
     return jsonResponse({
       agenda: {
-        dueCardCount: agenda.dueCardCount,
-        hasMoreDueCards: agenda.hasMoreDueCards,
-        assignments: agenda.openAssignments.slice(0, 3).map((item) => ({
-          id: item.assignment.id,
-          title: item.assignment.title,
-          dueAt: item.assignment.dueAt,
-        })),
+        rows: toTodayRows(plan.items, now, agenda.classes.length > 1),
+        moreAssignmentCount: plan.moreAssignmentCount,
       },
     });
   } catch (error) {

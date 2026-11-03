@@ -93,6 +93,20 @@ Kiểm tra: ảnh chụp trước và sau ở 360px và 1280px; "Xem thêm" mở
 
 Lần thử đầu bắt được trang Giảng dạy lỗi 500: truy vấn nhúng `classes` vào `class_lessons` gặp hai khóa ngoại nên mơ hồ. Đã đổi sang lọc theo danh sách lớp trước khi commit.
 
+## Hôm nay học gì
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/learner-today.test.ts` (8 test): buổi học hôm nay và buổi đang diễn ra; thứ tự và giới hạn bài tập; bỏ bài hằng ngày cũ; bài mới trong 7 ngày; bài tiếp theo của lớp tự học; dòng hạn và ngày mở theo giờ Việt Nam | Đạt |
+| Học viên demo (một lớp, 18:30 thứ Ba): mục hiện buổi 19:30–21:00, bài đang làm dở, bài mới mở và 2 thẻ ôn; nút chính là Làm tiếp, các nút ở Bài tập cần làm chuyển sang dạng phụ | Đạt |
+| Bấm Đọc bài rồi "Đánh dấu đã đọc xong": bài rời mục Hôm nay học gì | Đạt |
+| Vào thêm một lớp có 7 bài quá hạn và bài hằng ngày hôm nay: mỗi dòng ghi tên lớp, chỉ 3 bài tập (đang làm, hạn hôm nay, quá hạn mới nhất) và dòng "Còn 5 bài tập khác" | Đạt |
+| Trang chủ khi đã đăng nhập: 4 dòng đầu và "Xem thêm 9 việc ở Lớp của tôi"; khách không thấy mục này | Đạt |
+| Học viên mở `/teach`, `/teach/classes/<id>`, `/teach/lessons/new`: tới Bắt đầu giảng dạy; khách vẫn phải đăng nhập trước | Đạt |
+| `npm run audit:layout` cho `/`, `/classes`, `/teach/start` (học viên) ở 360/768/1280px | Không có lỗi hay cảnh báo |
+
+E2E chưa chạy (đợt này tạm hoãn E2E). Đã sửa `e2e-supabase/teach-and-learn.spec.ts`: bài hằng ngày giờ có ở cả hai mục, nên phép kiểm tra tìm link trong từng mục.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

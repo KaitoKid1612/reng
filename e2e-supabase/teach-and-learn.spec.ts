@@ -151,7 +151,15 @@ test("a teacher studies in a self-study class, never as a learner of their own c
   const selfStudyItem = page.locator(".item-list li").filter({ hasText: SELF_STUDY_NAME });
   await expect(selfStudyItem).toContainText("Lớp tự học của bạn");
   await expect(page.locator(".item-list li").filter({ hasText: CLASS_NAME })).toHaveCount(0);
-  await expect(page.getByRole("link", { name: /Luyện tập hằng ngày/ })).toBeVisible();
+  // Today's daily set leads "Hôm nay học gì" and stays in the full list below.
+  await expect(
+    page.locator("section.today-plan").getByRole("link", { name: /Luyện tập hằng ngày/ }),
+  ).toBeVisible();
+  await expect(
+    page.locator("section[aria-labelledby=open-work]").getByRole("link", {
+      name: /Luyện tập hằng ngày/,
+    }),
+  ).toBeVisible();
   await page.goto("/teach");
   await expect(page.locator(".item-list li").filter({ hasText: SELF_STUDY_NAME })).toContainText(
     "lớp tự học của bạn",

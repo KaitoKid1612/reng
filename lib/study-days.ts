@@ -86,6 +86,18 @@ export function formatStudyDateTime(instant: string | Date) {
   return dateTimeFormatter.format(typeof instant === "string" ? new Date(instant) : instant);
 }
 
+const timeFormatter = new Intl.DateTimeFormat("vi-VN", {
+  timeZone: STUDY_TIME_ZONE,
+  hour: "2-digit",
+  minute: "2-digit",
+  hourCycle: "h23",
+});
+
+/** "23:59" in Vietnam time. */
+export function formatStudyTime(instant: string | Date) {
+  return timeFormatter.format(typeof instant === "string" ? new Date(instant) : instant);
+}
+
 export function formatStudyDay(day: string) {
   const [year, month, date] = day.split("-");
   return `${date}/${month}/${year}`;

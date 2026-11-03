@@ -136,6 +136,17 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Hôm nay học gì — 03/11/2026
+
+Trước đây học viên phải tự ghép buổi học, bài tập, bài mới và thẻ ôn từ nhiều mục. Giờ **Lớp của tôi** mở đầu bằng mục **Hôm nay học gì**. **Trang chủ** (đã đăng nhập) hiện 4 dòng đầu của mục này, kèm link "Xem thêm N việc ở Lớp của tôi".
+
+- Thứ tự: buổi học hôm nay theo lịch lớp (đang diễn ra thì nút Vào lớp) → bài tập → bài mới mở → thẻ ôn đến hạn.
+- Bài tập: bài đang làm dở trước, rồi bài hạn trước hết ngày hôm nay, rồi bài quá hạn giáo viên còn nhận. Hiện tối đa 3 bài; phần còn lại báo "Còn N bài tập khác" và trỏ xuống mục Bài tập cần làm (mục này vẫn đủ mọi bài).
+- Bài luyện hằng ngày của ngày trước không vào danh sách, trừ khi đang làm dở. Nhờ vậy học viên vào lớp muộn không mở đầu ngày bằng cả tuần bài cũ.
+- Bài mới mở: bài giáo viên mở trong 7 ngày mà học viên chưa bấm "Đánh dấu đã đọc xong" (đọc ở phiên bản nào cũng tính), tối đa 3 bài. Lớp tự học chỉ gợi ý bài tiếp theo chưa đọc.
+- Nút chính của trang thuộc việc đầu tiên trong danh sách. Không có việc gì thì mục hiện một câu nhắc ngắn; trang chủ thì ẩn mục.
+- Học viên, hoặc giáo viên đang bị tạm dừng, mở trang giảng dạy (`/teach/...`) sẽ được chuyển tới **Bắt đầu giảng dạy** thay vì gặp 404. Trang này giải thích cách đăng ký dạy hoặc vì sao quyền dạy đang dừng.
+
 ## Luồng giáo viên rõ hơn — 03/11/2026
 
 Trước đây xuất bản bài và đưa bài vào lớp nằm ở hai trang khác nhau. Giáo viên mới không biết thứ tự các bước, và xuất bản lại không tự cập nhật lớp.

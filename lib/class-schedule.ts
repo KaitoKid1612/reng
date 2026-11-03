@@ -104,13 +104,19 @@ function vietnamDay(instant: number) {
   return vietnamClock(instant).toISOString().slice(0, 10);
 }
 
+// "19:30–21:00" in Vietnam time.
+export function describeSessionTime(session: NextSession) {
+  const start = vietnamClock(session.startsAt.getTime());
+  const end = vietnamClock(session.endsAt.getTime());
+  return `${formatClock(start.getUTCHours() * 60 + start.getUTCMinutes())}–${formatClock(end.getUTCHours() * 60 + end.getUTCMinutes())}`;
+}
+
 // "Hôm nay, 19:30–21:00", "Ngày mai (Thứ Năm 05/11), 19:30–21:00" or "Thứ Năm 05/11, 19:30–21:00".
 export function describeNextSession(session: NextSession, now: Date) {
   const start = vietnamClock(session.startsAt.getTime());
-  const end = vietnamClock(session.endsAt.getTime());
   const weekday = WEEKDAY_LABELS[start.getUTCDay() === 0 ? 7 : start.getUTCDay()];
   const date = `${String(start.getUTCDate()).padStart(2, "0")}/${String(start.getUTCMonth() + 1).padStart(2, "0")}`;
-  const time = `${formatClock(start.getUTCHours() * 60 + start.getUTCMinutes())}–${formatClock(end.getUTCHours() * 60 + end.getUTCMinutes())}`;
+  const time = describeSessionTime(session);
   const day = vietnamDay(session.startsAt.getTime());
   if (day === vietnamDay(now.getTime())) {
     return `Hôm nay, ${time}`;

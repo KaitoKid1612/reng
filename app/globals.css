@@ -2273,13 +2273,6 @@ rt {
   display: grid;
   gap: 4px;
 }
-.home-agenda {
-  padding: 28px;
-  margin-bottom: 40px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
 .teaching-panel {
   padding: 24px 28px;
   margin-bottom: 32px;
@@ -3122,4 +3115,34 @@ rt {
 }
 .lesson-usage-more > summary {
   padding: 4px 0 12px;
+}
+
+/* Learner home: what to do today, above the full lists. */
+.today-plan {
+  margin-bottom: 32px;
+  padding: 16px 20px 4px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.today-plan > h2 {
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+.today-plan > p {
+  margin-bottom: 12px;
+}
+.today-plan > .item-list > li:last-child {
+  border-bottom: 0;
+}
+.today-more {
+  margin: 0 0 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.today-kind {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
 }

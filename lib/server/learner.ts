@@ -13,6 +13,7 @@ import {
   runMutation,
   selectOptional,
   selectRows,
+  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 import { countStudyStreak, isStreakSettled } from "@/lib/study-days";
@@ -114,6 +115,7 @@ async function listLearnerAssignments(userId: string, now: Date) {
   const lessons = new Map(lessonsByClass);
   return {
     classes,
+    lessons,
     assignments: assignments.map((assignment) =>
       describeLearnerAssignment(
         assignment,
@@ -125,25 +127,72 @@ async function listLearnerAssignments(userId: string, now: Date) {
   };
 }
 
+// Lessons the learner marked as read, in any version: a teacher updating a lesson does not make
+// it new again.
+async function listReadLessonIds(userId: string, lessonIds: readonly string[]) {
+  const rows = await selectRowsIn(
+    lessonIds,
+    (chunk) =>
+      createServiceClient()
+        .from("lesson_progress")
+        .select("lesson_id")
+        .eq("user_id", userId)
+        .not("read_completed_at", "is", null)
+        .in("lesson_id", chunk),
+    z.object({ lesson_id: z.string() }),
+  );
+  return new Set(rows.map((row) => row.lesson_id));
+}
+
+// Assignments the class's daily practice created, one per Vietnam day.
+async function listDailyAssignmentIds(assignmentIds: readonly string[]) {
+  const rows = await selectRowsIn(
+    assignmentIds,
+    (chunk) =>
+      createServiceClient()
+        .from("daily_practice_runs")
+        .select("assignment_id")
+        .in("assignment_id", chunk),
+    z.object({ assignment_id: z.uuid() }),
+  );
+  return new Set(rows.map((row) => row.assignment_id));
+}
+
 function isOpenWork(item: LearnerAssignment) {
   return item.status === "not_started" || item.status === "in_progress";
 }
 
 export async function getLearnerAgenda(userId: string, now: Date) {
-  const [{ classes, assignments }, dueCards] = await Promise.all([
+  const [{ classes, assignments, lessons }, dueCards] = await Promise.all([
     listLearnerAssignments(userId, now),
     // One card past a session tells "50" apart from a longer backlog.
     listDueCards(userId, now, MAX_SESSION_CARDS + 1),
   ]);
+  const openLessons = classes.flatMap((item) =>
+    (lessons.get(item.id) ?? [])
+      .filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime())
+      .map((lesson) => ({ ...lesson, classId: item.id })),
+  );
+  const openAssignments = assignments
+    .filter(isOpenWork)
+    .sort((first, second) =>
+      compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
+    );
+  const [readLessonIds, dailyAssignmentIds] = await Promise.all([
+    listReadLessonIds(
+      userId,
+      openLessons.map((lesson) => lesson.lessonId),
+    ),
+    listDailyAssignmentIds(openAssignments.map((item) => item.assignment.id)),
+  ]);
   return {
     classes,
+    openLessons,
+    readLessonIds,
+    dailyAssignmentIds,
     dueCardCount: Math.min(dueCards.length, MAX_SESSION_CARDS),
     hasMoreDueCards: dueCards.length > MAX_SESSION_CARDS,
-    openAssignments: assignments
-      .filter(isOpenWork)
-      .sort((first, second) =>
-        compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
-      ),
+    openAssignments,
   };
 }
 

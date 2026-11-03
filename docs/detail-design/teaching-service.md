@@ -257,6 +257,24 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Hôm nay học gì — 03/11/2026
+
+- `lib/learner-today.ts` (thuần, `tests/learner-today.test.ts`):
+  - `buildTodayPlan(input, now)` trả `{ items, moreAssignmentCount }`.
+  - Buổi học: `findNextSession` của lớp không tự học, giữ buổi cùng ngày Việt Nam.
+  - Bài tập: đang làm, hạn trước 00:00 ngày mai, quá hạn còn nhận. Bỏ bài hằng ngày đã quá hạn nếu chưa làm. Tối đa `MAX_TODAY_ASSIGNMENTS = 3`.
+  - Bài mới: chưa đọc, mở trong `NEW_LESSON_DAYS = 7`; lớp tự học chỉ lấy bài chưa đọc có `order_no` nhỏ nhất. Tối đa `MAX_TODAY_LESSONS = 3`.
+  - Thẻ ôn đến hạn ở cuối.
+  - `toTodayRows` dựng dòng hiển thị (nhãn, link, dòng phụ, nút). `describeTodayAssignment` và `describeLessonOpened` viết hạn và ngày mở theo giờ Việt Nam.
+- `getLearnerAgenda` (`lib/server/learner.ts`) trả thêm:
+  - `openLessons`: bài đã mở của mỗi lớp.
+  - `readLessonIds`: `lesson_progress.read_completed_at` khác null, ở bất kỳ phiên bản nào.
+  - `dailyAssignmentIds`: bài có trong `daily_practice_runs`.
+  - Hai truy vấn này đọc theo lô bằng `selectRowsIn`; danh sách rỗng thì không gọi.
+- `planLearnerToday(agenda, now)` (`lib/server/learner-today.ts`) đọc lịch lớp và dựng kế hoạch. `app/classes/page.tsx` (`TodayPlan`) và `GET /api/me/agenda` cùng dùng hàm này, nên hai nơi không lệch nhau. API trả `{ agenda: { rows, moreAssignmentCount } }`; `components/classroom/home-agenda.tsx` hiện 4 dòng đầu. `components/classroom/today-rows.tsx` là phần hiển thị chung.
+- Hàm phụ: `describeSessionTime` (`lib/class-schedule.ts`) và `formatStudyTime` (`lib/study-days.ts`).
+- `requireTeacher` (`lib/server/account.ts`) chuyển người không phải giáo viên tới `/teach/start`. Phép kiểm tra vai trò chạy trước mọi truy vấn, nên không lộ ID lớp hay bài.
+
 ## Luồng giáo viên rõ hơn — 03/11/2026
 
 - `lib/teaching-start.ts` (thuần, `tests/teaching-start.test.ts`): `classLessonState` (latest/older/missing so với phiên bản đang xuất bản), `buildStartSteps` (7 bước với link), `showsStartSteps` (ẩn khi xong hết, hoặc lớp dạy đã có học viên và bài tập).

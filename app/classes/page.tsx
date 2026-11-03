@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import {
   AssignmentStatusBadge,
@@ -9,8 +10,8 @@ import {
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
 import { requireStudent } from "@/lib/server/account";
-import { listClassSchedules } from "@/lib/server/class-schedule";
 import { getLearnerAgenda } from "@/lib/server/learner";
+import { planLearnerToday } from "@/lib/server/learner-today";
 import { hasLearningHistory } from "@/lib/server/learning-history";
 
 import type { Metadata } from "next";
@@ -24,11 +25,13 @@ export default async function ClassesPage() {
     getLearnerAgenda(account.id, now),
     hasLearningHistory().catch(() => false),
   ]);
-  const schedules = await listClassSchedules(agenda.classes.map((item) => item.id));
+  const { schedules, plan: today } = await planLearnerToday(agenda, now);
   // With work from several classes, each item says which class it belongs to.
   const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
   const hasSeveralClasses = agenda.classes.length > 1;
   const hasOpenWork = agenda.openAssignments.length > 0;
+  // "Hôm nay học gì" holds the page's main button whenever it lists something to do.
+  const todayHasAction = today.items.some((item) => item.kind !== "session" || item.isLive);
   return (
     <>
       <div className="page-heading">
@@ -40,6 +43,9 @@ export default async function ClassesPage() {
           Vào lớp mới
         </Link>
       </div>
+      {agenda.classes.length > 0 && (
+        <TodayPlan plan={today} now={now} showClass={hasSeveralClasses} />
+      )}
       <section className="section-block" aria-labelledby="open-work">
         <h2 id="open-work">Bài tập cần làm</h2>
         {hasOpenWork ? (
@@ -59,7 +65,9 @@ export default async function ClassesPage() {
                   <AssignmentStatusBadge status={item.status} />
                   <Link
                     href={`/assignments/${item.assignment.id}`}
-                    className={buttonVariants({ variant: index === 0 ? "default" : "outline" })}
+                    className={buttonVariants({
+                      variant: index === 0 && !todayHasAction ? "default" : "outline",
+                    })}
                   >
                     {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
                   </Link>
@@ -77,7 +85,8 @@ export default async function ClassesPage() {
           <Link
             href="/review"
             className={buttonVariants({
-              variant: !hasOpenWork && agenda.dueCardCount > 0 ? "default" : "outline",
+              variant:
+                !todayHasAction && !hasOpenWork && agenda.dueCardCount > 0 ? "default" : "outline",
             })}
           >
             Ôn tập ({agenda.dueCardCount}
