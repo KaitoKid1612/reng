@@ -229,6 +229,13 @@ Rà soát luồng làm bài của học viên tìm các chỗ gắn cứng tiế
 - `ClassSessionForm.languageTag` chọn ví dụ ghi chú theo ngôn ngữ lớp.
 - `lib/review-bank.ts`: `findBankLanguageProblems(content, language)`. Bank tiếng Trung: mọi câu phải có `zh-exact-v1` và `vocab` trống. Bank tiếng Nhật: không có profile hoặc ô nhập tiếng Trung. `npm run bank:sql` nhận `--language` (mặc định `ja-JP`) và dừng khi bank không khớp.
 
+### Độ đúng dữ liệu học tập — 03/11/2026
+
+Sửa các lỗi còn mở trong rà soát hiện trạng 02/11: [báo cáo](../testing/data-correctness-2026-11-03.md). Phần ôn tập và flashcard ghi ở [DD giai đoạn 3](phase-3.md#ôn-tập).
+
+- **ID mục.** `createUniqueId(prefix, usedIds)` trong `lib/item-ids.ts` dùng chung cho `createItemId` (trình soạn v1) và `createTeachingId` (trình soạn tiếng Trung v2): tiền tố + 6 ký tự ngẫu nhiên, không trùng ID đang có trong bài. ID của mục đã xóa không bị cấp lại, nên thẻ ôn gắn theo bài + ID không chuyển sang từ khác. Script dùng ID của nháp phải đọc ID trong nội dung, không đoán `vocab-1`.
+- **Cảnh báo lặp bài hằng ngày.** `repeatsEveryDay(số câu, số câu/ngày)` đúng khi số câu ≤ số câu mỗi ngày. Trường hợp bằng nhau cũng lặp toàn bộ mỗi ngày.
+
 ## SEO cho trang công khai — đã triển khai
 
 `metadataBase` lấy từ `SITE_URL` (`lib/site.ts`), metadata gốc mô tả dịch vụ, Open Graph `vi_VN` và thẻ xác minh Search Console qua `GOOGLE_SITE_VERIFICATION`. `app/sitemap.ts` liệt kê trang công khai cố định và bài có visibility public (làm mới mỗi giờ, lỗi database vẫn trả trang cố định); `app/robots.ts` chặn `/admin`, `/teach`, `/classes`, `/assignments`, trang tài khoản, API và `/lessons/*/slide|presenter`. Trang bài dùng `generateMetadata` với canonical `/lessons/[id]` (bỏ `?version=`) và JSON-LD LearningResource; trang chủ có Organization/WebSite, `/for-teachers` có WebPage/FAQPage. Bài riêng tư không đọc được khi chưa đăng nhập nên không vào sitemap hay chỉ mục. Trang luyện kanji `/kanji/` cũng bị chặn chỉ mục như flashcard/luyện nghe.

@@ -98,11 +98,12 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 ## Ôn tập
 
 - ts-fsrs 5.4.2 tham số mặc định, `enable_fuzz=false`; `scheduler_version = "ts-fsrs-5.4.2"`. scheduler_state lưu đủ trường Card (ngày ISO) và được Zod kiểm tra theo phiên bản; phiên bản khác bị từ chối, không đoán.
-- Thẻ vocab: source_id = lesson_id, item_id = vocab id; nội dung đọc từ phiên bản công khai hiện hành, mục đã bị gỡ thì bỏ qua và báo. Học viên tự chấm 1–4.
+- Thẻ vocab: source_id = lesson_id, item_id = vocab id. Nội dung đọc từ phiên bản lớp ghim cho học viên (`findClassLessonVersions` trong `lib/server/lesson-access.ts`: lớp đang hoạt động, bài đã mở, lớp mở bài gần nhất trước, cùng thứ tự với `read_lesson_version`). Không ở lớp nào có bài thì đọc bản hiện hành (bài công khai, chủ bài). Mục không còn trong bản đó thì bỏ qua. Học viên tự chấm 1–4.
+- Hàng ôn (`listDueCards`): đọc từng trang 200 thẻ đến hạn, tối đa 5 trang, thứ tự cố định `due, item_type, source_id, item_id`. Thẻ không mở được (rời lớp, bài bị gỡ, test chưa tới giờ xem đáp án) bị bỏ qua mà không che thẻ phía sau. Phiên lấy tối đa 50 thẻ; trang ôn, Lớp của tôi và trang chủ đọc thêm một thẻ để biết còn thẻ (`hasMoreDueCards`, hiện "50+").
 - Thẻ lỗi: source_id = assignment_id, item_id = question_id; nội dung từ snapshot, chỉ hiện khi bài cho phép xem đáp án. Ôn phải trả lời, server chấm bằng lib/grading; đúng → Good, sai → Again. Chỉ ôn khi due ≤ now; đúng tăng chuỗi, sai về 0, đủ 3 thì resolved_at = now, sai lại mở lại.
-- POST /api/reviews nhận requestId UUID do client tạo; request đã ghi được nhận diện trước mọi kiểm tra hạn/revision nên retry sau khi mất phản hồi trả lại kết quả, không ghi trùng. Xung đột revision trả 409 để client bỏ qua thẻ.
-- Flashcard S07 dùng phiên bản công khai hiện hành của bài (ID mục ổn định qua phiên bản), không theo phiên bản lớp ghim; khách lật thẻ không cần tài khoản, học viên đăng nhập mới lưu lịch ôn.
-- Chuỗi ngày học: ngày Việt Nam có review_event hoặc submitted_at; tính liên tiếp tới hôm nay, hoặc tới hôm qua nếu hôm nay chưa học.
+- POST /api/reviews nhận requestId UUID do client tạo; request đã ghi được nhận diện trước mọi kiểm tra hạn/revision và trước khi chấm, nên retry sau khi mất phản hồi trả lại kết quả đã lưu (`review_events.is_correct`), không chấm lại câu trả lời gửi kèm và không ghi trùng. Client khóa câu trả lời đã gửi; nút đổi thành "Gửi lại câu trả lời" và gửi đúng câu đó. Xung đột revision trả 409 để client bỏ qua thẻ.
+- Flashcard S07 đọc phiên bản trong `?version=` khi người xem mở được bản đó (link từ trang lớp mang bản lớp ghim, link từ trang bài mang bản đang đọc). Không có hoặc không mở được thì dùng bản lớp ghim, rồi bản hiện hành như thẻ vocab. Chấm thẻ gửi kèm `versionId` của bộ thẻ để server kiểm tra từ trong đúng bản đang hiển thị. Khách lật thẻ không cần tài khoản, học viên đăng nhập mới lưu lịch ôn.
+- Chuỗi ngày học: ngày Việt Nam có review_event hoặc submitted_at; tính liên tiếp tới hôm nay, hoặc tới hôm qua nếu hôm nay chưa học. `getStudyActivity` đọc 400 bài nộp mới nhất và từng trang 1.000 lượt ôn (tối đa 10 trang) tới khi ngày trống đầu tiên của chuỗi nằm trong khoảng đã đọc (`isStreakSettled` trong `lib/study-days.ts`).
 
 ## API
 
@@ -112,9 +113,9 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 | POST /api/assignments/[id]/attempts | 200 `{submissionId, status}`; 401; 404; 409 `{code}` not_available/closed/past_due/no_attempts_left |
 | PUT /api/submissions/[id]/draft | Body `{revision, draft}`; 200 `{revision, savedAt}`; 409 `{code: "conflict", revision, draft}` hoặc submitted/closed/past_due |
 | POST /api/submissions/[id]/submit | Body `{revision, draft}`; 200 `{status}`; cùng mã 409 như trên; nộp lại trả 200 already_submitted |
-| POST /api/reviews | Body `{requestId, itemType, sourceId, itemId, rating?, answer?, revision}`; 200 thẻ mới; 409 conflict/not_due; 404 |
+| POST /api/reviews | Body `{kind: "vocab", requestId, lessonId, vocabId, rating, revision, versionId?}` hoặc `{kind: "mistake", requestId, assignmentId, questionId, answer, revision}`; 200 thẻ mới; 409 conflict/not_due; 404 |
 | POST /api/lessons/[id]/progress | Body `{versionId}`; đánh dấu đọc xong bài có trong database |
-| GET /api/me/agenda | Học viên: số thẻ đến hạn và tối đa 3 bài đang chờ cho trang chủ; người khác `{agenda: null}`. Thứ tự (`compareDueUrgency`): bài còn hạn (hạn gần nhất trước), bài không hạn, rồi bài quá hạn còn cho nộp muộn (mới nhất trước) để bài luyện bị lỡ không che bài hôm nay. Lượt đang làm của bài đã đóng hoặc quá hạn không cho muộn tính là đóng/quá hạn, không phải việc đang chờ |
+| GET /api/me/agenda | Học viên: số thẻ đến hạn (tối đa 50, `hasMoreDueCards` khi còn nhiều hơn) và tối đa 3 bài đang chờ cho trang chủ; người khác `{agenda: null}`. Thứ tự (`compareDueUrgency`): bài còn hạn (hạn gần nhất trước), bài không hạn, rồi bài quá hạn còn cho nộp muộn (mới nhất trước) để bài luyện bị lỡ không che bài hôm nay. Lượt đang làm của bài đã đóng hoặc quá hạn không cho muộn tính là đóng/quá hạn, không phải việc đang chờ |
 | GET /api/teach/classes/[id]/report | CSV cho giảng viên chủ lớp; UTF-8 BOM, CRLF, `Content-Disposition: attachment`, `Cache-Control: private, no-store` |
 
 Mọi API trả `Cache-Control: private, no-store`, body ≤ 64 KB, kiểm tra JSON bằng Zod, không ghi đáp án/nội dung bài nộp vào log. POST/PUT kiểm tra Origin cùng origin.

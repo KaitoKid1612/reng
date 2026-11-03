@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Sửa độ đúng dữ liệu học tập 03/11/2026: [ID mục không bị cấp lại, hàng ôn, flashcard theo bản lớp ghim, thử lại khi mất phản hồi, chuỗi ngày học](testing/data-correctness-2026-11-03.md).
+
 Bài tập học viên cho cả tiếng Nhật và tiếng Trung 03/11/2026: [chỗ gắn cứng tiếng Nhật đã sửa, luyện chữ Hán, kiểm tra ngôn ngữ ngân hàng ôn và phần còn lại](testing/exercise-languages-2026-11-03.md).
 
 Rà soát độ dễ dùng và dạy online Nhật–Trung 02/11/2026: [vấn đề đã sửa, số đo trước/sau, quy trình dạy một buổi và đề xuất tiếp theo](testing/user-flow-review-2026-11-02.md).

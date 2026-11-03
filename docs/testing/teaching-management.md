@@ -41,7 +41,7 @@ Ngày 02/11/2026 `e2e-supabase/teaching-authoring.spec.ts` chạy được lần
 
 ## Phần còn mở và hướng nâng cấp tiếp
 
-1. Flashcard: link từ reader/lớp chưa mang `version` và `getVocabularyDeck` đang đọc phiên bản mặc định; SRS hiện gắn lesson/item, chưa ghim snapshot riêng. Đây là quan sát từ source, chưa tái hiện với hai phiên bản khác nhau trong đợt này. Cần thiết kế thống nhất đọc thẻ và lưu lịch ôn trước khi cam kết flashcard luôn theo đúng phiên bản trang đang đọc.
+1. Flashcard: đã sửa ngày 03/11/2026 (CR-23). Link từ trang lớp và trang bài mang `version`; flashcard và thẻ ôn từ vựng đọc bản lớp ghim; E2E thử với hai phiên bản. Thẻ ôn vẫn gắn theo bài và ID từ, xem giới hạn trong [sửa độ đúng dữ liệu](data-correctness-2026-11-03.md#giới-hạn-còn-lại).
 2. Lớp và bài giao: chưa thêm ràng buộc bắt buộc cùng ngôn ngữ. Hiện dùng nhãn để giáo viên chọn chủ động. Nếu muốn chặn sai ngôn ngữ phải chốt cả ngoại lệ dạy đối chiếu và dữ liệu lớp cũ, không chỉ lọc UI.
 3. Khi thư viện lớn: đo số bài/phiên bản và thời gian tải, rồi phân trang/search phía database; bộ lọc hiện ở server trên danh sách đã tải.
 4. Nội dung: bổ sung dần bài mẫu Nhật/Trung do giáo viên duyệt, có mục tiêu và đáp án rõ; chưa công bố toàn bộ bộ bài đã đạt chuẩn giảng dạy chỉ vì test qua.

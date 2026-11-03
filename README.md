@@ -18,6 +18,8 @@ Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên w
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
 
+Độ đúng dữ liệu học tập (03/11/2026): flashcard và thẻ ôn theo bản lớp ghim, ID mục đã xóa không bị cấp lại, hàng ôn không bị thẻ hỏng che, thử lại khi mất mạng giữ kết quả đã lưu, chuỗi ngày học đủ khi ôn nhiều. Xem [báo cáo](docs/testing/data-correctness-2026-11-03.md).
+
 Bài tập dùng chung cho tiếng Nhật và tiếng Trung (03/11/2026): ô trả lời, phản hồi, nhãn phần và ngân hàng ôn theo ngôn ngữ của câu; lớp tiếng Trung có "Luyện chữ Hán" (pinyin nhận số thanh). Xem [rà soát](docs/testing/exercise-languages-2026-11-03.md).
 
 Rà soát độ dễ dùng 02/11/2026 (đi thử học viên/giáo viên lớp Nhật và Trung ở 1280px và 390px): header gọn theo vai, menu gập trên điện thoại, bài hôm nay lên đầu, làm bài dài có danh sách câu và phím Enter, kết quả mở câu sai, pinyin gõ số thanh (`ni3 hao3` → `nǐ hǎo`), sửa thẻ ngôn ngữ tiếng Trung, khối Buổi dạy online (Meet, trình chiếu tiếp đúng phiên bản lớp, ghi buổi dạy từ slide). Xem [báo cáo và đề xuất tiếp theo](docs/testing/user-flow-review-2026-11-02.md).

@@ -35,8 +35,8 @@ flowchart LR
 | A05 | /join-class | Nhập mã; chưa đăng nhập thì chuyển đăng nhập/đăng ký rồi quay lại với mã đã nhập; một lần bấm xác nhận để vào |
 | S17 | /classes | Danh sách lớp đang tham gia, bài tập sắp hạn |
 | S18 | /classes/[id] | Bài đã mở theo thứ tự (đọc, trình chiếu, flashcard) và bài tập kèm trạng thái |
-| S07 | /vocabulary/[lessonId] | Flashcard lật thẻ, nghe; đã đăng nhập thì chấm 4 mức để đưa vào lịch ôn |
-| S08 | /review | Số thẻ đến hạn hôm nay; thẻ từ vựng tự đánh giá, thẻ lỗi phải trả lời lại; tổng kết và chuỗi ngày học |
+| S07 | /vocabulary/[lessonId] | Flashcard lật thẻ, nghe; đã đăng nhập thì chấm 4 mức để đưa vào lịch ôn. Thẻ theo phiên bản lớp đang học (link mang `?version=`), không đổi theo bản giáo viên mới xuất bản |
+| S08 | /review | Số thẻ đến hạn hôm nay (tối đa 50 thẻ/phiên, báo khi còn thẻ cho phiên sau); thẻ từ vựng tự đánh giá, thẻ lỗi phải trả lời lại; tổng kết và chuỗi ngày học |
 | S11 | /assignments/[id] | Thông tin bài, bắt đầu/tiếp tục lượt; một câu một màn hình trên điện thoại, nhiều câu trên máy tính; trạng thái lưu, mất mạng, hết hạn, xung đột |
 | S12 | /assignments/[id]/results | Kết quả lượt đã nộp theo chính sách phản hồi |
 | S13 | /mistakes | Câu từng sai, đáp án/giải thích khi được phép, chuỗi đúng x/3, đã giải quyết |

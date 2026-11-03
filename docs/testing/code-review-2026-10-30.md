@@ -20,26 +20,27 @@ Quy ước mức: **Cao** = mất dữ liệu người dùng hoặc lỗ hổng 
 | CR-06 | Vừa | Form cài đặt thông báo hiện lại giá trị cũ sau khi báo "Đã lưu"; lưu lần nữa ghi đè giá trị cũ. Trang vẫn cho bật nhắc email khi production chưa gửi email | Làm mới trang sau khi lưu; báo rõ khi hệ thống chưa bật email | `b57a942` |
 | CR-07 | Vừa | Bài sao chép từ chia sẻ của giáo viên khác vẫn đặt Công khai được (đăng lại nội dung và đáp án) | Server chặn với `reshare_not_allowed` | `70fc48a` |
 | CR-08 | Thấp | `/join-class?code=A&code=B` lỗi 500 | Chỉ nhận một giá trị `code` | `9f83e71` |
-
 | CR-20 | Vừa | Giáo viên nhập mã lớp của chính mình thì thành học viên của lớp: chiếm chỗ, hiện trong báo cáo/CSV, kéo lệch điểm trung bình và thống kê câu sai | Chốt 02/11/2026: chặn chủ lớp vào lớp mình dạy (`own_class`), thêm lớp tự học cho giáo viên tự luyện; chủ lớp đã lỡ vào trước đó không tính vào chỗ, báo cáo, CSV, câu sai nhiều. Migration `202611020002`, xem [kiểm chứng](teach-and-learn.md) | 02/11/2026 |
+| CR-21 | Vừa | Bài tiếng Trung (v2) cấp lại ID nhỏ nhất còn trống sau khi xóa: thẻ ôn của từ cũ gắn sang từ mới, slide sinh tự động trỏ nhầm | ID ngẫu nhiên dùng chung với trình soạn v1 (`lib/item-ids.ts`); `scripts/seed-demo.ts` đọc ID từ nháp. Sửa ngày 03/11/2026 | `40fcd5d` |
+| CR-22 | Vừa | Hàng ôn lấy 200 thẻ đến hạn rồi mới bỏ thẻ không mở được (lớp/bài đã lưu trữ): khi có từ 200 thẻ như vậy, trang ôn báo hết thẻ sai | Đọc từng trang 200 thẻ (tối đa 5 trang) theo thứ tự cố định tới khi đủ thẻ cho phiên. Sửa ngày 03/11/2026 | `dbaec86` |
+| CR-23 | Vừa | Flashcard từ trang lớp không mang phiên bản lớp ghim; thẻ ôn từ vựng của bài công khai đọc bản mới nhất | Flashcard và thẻ ôn đọc bản lớp ghim; link mang `?version=`; chấm thẻ kiểm tra đúng bản đang hiển thị. Sửa ngày 03/11/2026 | `2e0a348` |
+| CR-31 | Thấp | Ôn tập: thử lại sau khi mất phản hồi có thể báo đúng cho câu trả lời không được ghi | Server trả kết quả đã lưu của request; ô trả lời khóa, nút "Gửi lại câu trả lời". Sửa ngày 03/11/2026 | `d44af98` |
+| CR-32 | Thấp | Chuỗi ngày học chỉ đọc 400 sự kiện gần nhất nên tính thiếu khi ôn nhiều | Đọc thêm từng trang lượt ôn tới khi xác định được chuỗi; số thẻ cần ôn hiện "50+" khi còn nhiều hơn một phiên. Sửa ngày 03/11/2026 | `dbaec86` |
 
 Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao chép, đặt ở đầu trang lớp khi lớp chưa có học viên (`3e8ee50`); trang chủ và hướng dẫn không còn bắt buộc bước xác nhận email vì production đang tắt bước này (`01d357c`).
+
+Chi tiết và kiểm chứng của CR-21, CR-22, CR-23, CR-31, CR-32: [sửa độ đúng dữ liệu 03/11/2026](data-correctness-2026-11-03.md).
 
 ## Còn mở
 
 | Mã | Mức | Vấn đề | Lý do chưa sửa / điều kiện đóng |
 | --- | --- | --- | --- |
-| CR-21 | Vừa | Bài tiếng Trung (v2) cấp lại ID nhỏ nhất còn trống sau khi xóa: thẻ ôn của từ cũ gắn sang từ mới, slide sinh tự động trỏ nhầm | Đổi sang ID ngẫu nhiên như v1; cần sửa test và `scripts/seed-demo.ts` đang dựa vào `vocab-1` |
-| CR-22 | Vừa | Hàng ôn lấy 200 thẻ đến hạn rồi mới bỏ thẻ không mở được (lớp/bài đã lưu trữ): khi có từ 200 thẻ như vậy, trang ôn báo hết thẻ sai | Lọc trong truy vấn hoặc phân trang; chưa xảy ra với dữ liệu hiện tại |
-| CR-23 | Vừa | Flashcard từ trang lớp không mang phiên bản lớp ghim (đã ghi trong [quản lý Nhật–Trung](teaching-management.md)) | Thiết kế thống nhất đọc thẻ và lịch ôn theo phiên bản |
 | CR-24 | Thấp | Rời trình soạn bằng link trong trang không cảnh báo; nay thay đổi vẫn được giữ trên máy và khôi phục khi mở lại | Thêm cảnh báo khi điều hướng nội bộ nếu cần |
 | CR-25 | Thấp | "Áp dụng thay đổi slide" (v2) ghi đè chỉnh sửa slide làm sau khi dựng kế hoạch | Tính lại kế hoạch khi nháp đổi |
 | CR-26 | Thấp | Dán hơn 100 từ tiếng Trung vượt giới hạn nháp, sau đó không lưu được | Chặn ở bước xem trước bảng |
 | CR-28 | Thấp | Câu điền tiếng Trung trong bài tiếng Nhật chấm theo luật Nhật | Gán `gradingProfile` theo kiểu nhập |
 | CR-29 | Thấp | `/reset-password` đổi được mật khẩu với bất kỳ phiên nào, không cần link khôi phục | Kiểm tra phiên đến từ link recovery |
 | CR-30 | Thấp | Yêu cầu giảng dạy đang chờ duyệt không có nút từ chối; tắt duyệt thì yêu cầu cũ kẹt | Thêm thao tác từ chối/kích hoạt |
-| CR-31 | Thấp | Ôn tập: thử lại sau khi mất phản hồi có thể báo đúng cho câu trả lời không được ghi | Khóa câu trả lời khi thử lại cùng request |
-| CR-32 | Thấp | Chuỗi ngày học chỉ đọc 400 sự kiện gần nhất nên tính thiếu khi ôn nhiều | Tính bằng truy vấn ngày riêng |
 | CR-34 | Thấp | Email (khi bật): cron Hobby chạy lệch tới 59 phút nên nhắc hạn 24 giờ có thể bỏ sót; tối đa 50 email mỗi lần; retry có thể bị Resend trả 409 do nội dung đổi; header List-Unsubscribe chỉ nhận POST; tiêu đề "sắp đến hạn" có thể dùng cho bài đã quá hạn | Xử lý trước khi bật email cho lớp thật |
 
 ## Cải tiến đợt 2 (chiều 30/10/2026)

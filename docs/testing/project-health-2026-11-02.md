@@ -10,14 +10,16 @@ Các điểm đã ghi ở báo cáo cũ được đối chiếu lại với sour
 
 ## Lỗi còn xác nhận được
 
+Cập nhật 03/11/2026: cả sáu mục dưới đây đã sửa và có test hồi quy, xem [sửa độ đúng dữ liệu](data-correctness-2026-11-03.md). Bảng giữ nguyên nội dung rà soát ngày 02/11.
+
 | Ưu tiên | Điểm cần sửa | Bằng chứng hiện tại và ảnh hưởng |
 | --- | --- | --- |
-| P1 | Flashcard phải dùng đúng phiên bản của lớp | `app/classes/[id]/page.tsx` truyền `?version=` cho Đọc bài và Kanji, nhưng không truyền cho Flashcard; `getVocabularyDeck` trong `lib/server/reviews.ts` tải version mặc định. Khi giáo viên đã xuất bản bản mới mà lớp vẫn ghim bản cũ, flashcard có thể không cùng nội dung đang học. Cần chốt cả phiên bản cho SRS, không chỉ sửa link. CR-23 vẫn mở. |
-| P1 | Không tái sử dụng ID nội dung đã xóa | `createTeachingId` trong `lib/teaching-draft.ts` chọn số nhỏ nhất chưa dùng. Probe bằng hàm thật: còn `vocab-1` thì sinh `vocab-2`; xóa từ đó thì sinh lại `vocab-1`. Thẻ SRS nhận diện từ bằng lesson/item ID nên có thể nối lịch ôn cũ sang từ mới sau xuất bản. Áp dụng cho editor v2 Việt–Trung; CR-21 vẫn mở. |
-| P1 | Hàng ôn phải đi tiếp sau các thẻ không còn đọc được | `listDueCards` trong `lib/server/reviews.ts` lấy tối đa 200 hàng rồi mới bỏ các nguồn/từ không truy cập được, sau đó trả tối đa 50 thẻ. Nếu 200 hàng đầu không hợp lệ, thẻ hợp lệ ở sau không được đọc. Chưa ghi nhận trường hợp này trên tài khoản pilot; đây là biên được xác nhận từ thuật toán. CR-22 vẫn mở. |
-| P2 | Khóa nội dung request khi thử lại lần ôn bị mất phản hồi | `components/review/review-session.tsx` giữ requestId khi lỗi mạng nhưng mở lại ô trả lời. `recordMistakeReview` trong `lib/server/reviews.ts` chấm câu trả lời hiện tại trước khi kiểm tra request đã ghi, nên phản hồi retry có thể khác kết quả lần đầu đã lưu. Chưa tái hiện bằng mạng thật trong đợt này. CR-31 vẫn mở. |
-| P2 | Số thẻ cần ôn và chuỗi ngày học | `getLearnerAgenda` trong `lib/server/learner.ts` đếm số thẻ từ `listDueCards`, vốn chỉ trả 50 thẻ/phiên: số hiện ở Lớp của tôi không phản ánh toàn bộ backlog khi lớn hơn 50. `getStudyActivity` chỉ đọc 400 sự kiện mỗi loại nên có thể tính thiếu chuỗi ngày khi ôn nhiều; CR-32 vẫn mở. |
-| P2 | Cảnh báo thiếu độ đa dạng bài hằng ngày | `repeatsEveryDay` trong `lib/daily-practice.ts` dùng `<`, nên nguồn 40 câu/giao 40 câu trả `false`, dù toàn bộ câu lặp mỗi ngày. Đã probe hàm thật. `tests/daily-practice.test.ts` hiện còn khẳng định trường hợp bằng nhau là false. Cần đổi cả mô tả và test hành vi. |
+| P1 | Flashcard phải dùng đúng phiên bản của lớp | `app/classes/[id]/page.tsx` truyền `?version=` cho Đọc bài và Kanji, nhưng không truyền cho Flashcard; `getVocabularyDeck` trong `lib/server/reviews.ts` tải version mặc định. Khi giáo viên đã xuất bản bản mới mà lớp vẫn ghim bản cũ, flashcard có thể không cùng nội dung đang học. Cần chốt cả phiên bản cho SRS, không chỉ sửa link. CR-23 đã sửa ngày 03/11. |
+| P1 | Không tái sử dụng ID nội dung đã xóa | `createTeachingId` trong `lib/teaching-draft.ts` chọn số nhỏ nhất chưa dùng. Probe bằng hàm thật: còn `vocab-1` thì sinh `vocab-2`; xóa từ đó thì sinh lại `vocab-1`. Thẻ SRS nhận diện từ bằng lesson/item ID nên có thể nối lịch ôn cũ sang từ mới sau xuất bản. Áp dụng cho editor v2 Việt–Trung; CR-21 đã sửa ngày 03/11. |
+| P1 | Hàng ôn phải đi tiếp sau các thẻ không còn đọc được | `listDueCards` trong `lib/server/reviews.ts` lấy tối đa 200 hàng rồi mới bỏ các nguồn/từ không truy cập được, sau đó trả tối đa 50 thẻ. Nếu 200 hàng đầu không hợp lệ, thẻ hợp lệ ở sau không được đọc. Chưa ghi nhận trường hợp này trên tài khoản pilot; đây là biên được xác nhận từ thuật toán. CR-22 đã sửa ngày 03/11. |
+| P2 | Khóa nội dung request khi thử lại lần ôn bị mất phản hồi | `components/review/review-session.tsx` giữ requestId khi lỗi mạng nhưng mở lại ô trả lời. `recordMistakeReview` trong `lib/server/reviews.ts` chấm câu trả lời hiện tại trước khi kiểm tra request đã ghi, nên phản hồi retry có thể khác kết quả lần đầu đã lưu. Chưa tái hiện bằng mạng thật trong đợt này. CR-31 đã sửa ngày 03/11. |
+| P2 | Số thẻ cần ôn và chuỗi ngày học | `getLearnerAgenda` trong `lib/server/learner.ts` đếm số thẻ từ `listDueCards`, vốn chỉ trả 50 thẻ/phiên: số hiện ở Lớp của tôi không phản ánh toàn bộ backlog khi lớn hơn 50. `getStudyActivity` chỉ đọc 400 sự kiện mỗi loại nên có thể tính thiếu chuỗi ngày khi ôn nhiều; CR-32 đã sửa ngày 03/11. |
+| P2 | Cảnh báo thiếu độ đa dạng bài hằng ngày | `repeatsEveryDay` trong `lib/daily-practice.ts` dùng `<`, nên nguồn 40 câu/giao 40 câu trả `false`, dù toàn bộ câu lặp mỗi ngày. Đã probe hàm thật. `tests/daily-practice.test.ts` hiện còn khẳng định trường hợp bằng nhau là false. Cần đổi cả mô tả và test hành vi. Đã sửa ngày 03/11. |
 
 P1 trong báo cáo này là việc nên làm ở đợt ổn định kế tiếp, không có nghĩa đã chứng minh sự cố mất dữ liệu hoặc lộ dữ liệu đang xảy ra trên production.
 
@@ -43,7 +45,7 @@ P1 trong báo cáo này là việc nên làm ở đợt ổn định kế tiếp
 
 ## Thứ tự đề xuất
 
-1. Sửa các P1 về phiên bản/ID/hàng ôn và P2 cảnh báo lặp; thêm ca hồi quy tương ứng.
+1. Sửa các P1 về phiên bản/ID/hàng ôn và P2 cảnh báo lặp; thêm ca hồi quy tương ứng. Đã xong ngày 03/11/2026.
 2. Nghiệm thu luồng làm bài → nộp → xem điểm → câu sai → ôn → tiến độ, gồm retry mất mạng và hai tab, trên môi trường test và điện thoại thật.
 3. Hoàn thiện Auth/email, cảnh báo cron, backup/restore và check trước triển khai.
 4. Làm rõ đường đi Lịch sử/Bài mới/Tiến độ; bổ sung thống kê theo ngày và dạng bài khi cần.
