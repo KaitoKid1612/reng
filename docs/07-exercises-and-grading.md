@@ -8,8 +8,8 @@ Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có m
 |---|---|---|
 | choice | Chọn một hoặc nhiều lựa chọn | Tập chỉ số trùng hoàn toàn với đáp án; không tính thứ tự chọn |
 | fill | Gõ tiếng Nhật | Chuỗi chuẩn hóa trùng một đáp án được khai báo |
-| match | Bấm chọn hai bên, có bàn phím | Tất cả cặp đúng, không tính thứ tự ghép |
-| order | Bấm chọn hoặc kéo thả bằng dnd-kit | Đúng toàn bộ thứ tự ID token |
+| match | Bấm chọn hai bên, có bàn phím (chưa có màn hình làm bài nên chưa giao được) | Tất cả cặp đúng, không tính thứ tự ghép |
+| order | Bấm từng mảnh theo thứ tự, bấm mảnh đã xếp để bỏ (từ 03/11/2026, không kéo thả) | Đúng toàn bộ thứ tự ID token; mảnh hiện theo thứ tự xáo cố định, không bao giờ trùng đáp án |
 | listen | Player và choice/fill | Theo responseType; áp dụng giới hạn nghe nếu có |
 | dictation | Player và gõ tiếng Nhật | Như fill |
 

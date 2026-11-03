@@ -74,10 +74,19 @@ export function repeatsEveryDay(questionCount: number, size: number | null) {
   return size !== null && questionCount < size;
 }
 
+// Listening needs audio that a bank may not have, so daily sets use the other kinds.
+export const DAILY_QUESTION_TYPES: readonly string[] = ["choice", "fill", "order"];
+
+export function isDailyQuestionType(type: string) {
+  return DAILY_QUESTION_TYPES.includes(type);
+}
+
 export interface DailyCandidate {
   id: string;
   type: string;
   tags: readonly string[];
+  // Questions about one reading passage share a group: they are taken and shown together.
+  group?: string;
 }
 
 // A kind is the question type plus the tags that tell questions apart, such as the teacher's
@@ -126,26 +135,33 @@ export function selectBalancedDailyQuestions(
     [...tagCounts].filter(([, count]) => count === unique.length).map(([tag]) => tag),
   );
   const kinds = new Map<string, string[]>();
+  const groups = new Map<string, string>();
   for (const candidate of unique) {
     const key = dailyQuestionKind(candidate, sharedTags);
     kinds.set(key, [...(kinds.get(key) ?? []), candidate.id]);
+    if (candidate.group) {
+      groups.set(candidate.id, candidate.group);
+    }
   }
   const quotas = allocateQuotas(
     [...kinds].map(([key, ids]) => ({ key, count: ids.length })),
     size,
   );
   return [...kinds].flatMap(([key, ids]) =>
-    selectDailyQuestions(ids, recentUses, quotas.get(key) ?? 0, seed),
+    selectDailyQuestions(ids, recentUses, quotas.get(key) ?? 0, seed, groups),
   );
 }
 
 // Least recently used first, never-used questions before anything else; ties break by a hash
-// of the day so the set changes daily but stays the same on every retry of that day.
+// of the day so the set changes daily but stays the same on every retry of that day. Grouped
+// questions share their group's hash, so a passage's questions are picked one after another,
+// and the chosen ones of a group are shown together in lesson order.
 export function selectDailyQuestions(
   candidateIds: readonly string[],
   recentUses: readonly DailyQuestionUse[],
   size: number,
   seed: string,
+  groups: ReadonlyMap<string, string> = new Map(),
 ) {
   const lastUsed = new Map<string, string>();
   for (const use of recentUses) {
@@ -153,12 +169,35 @@ export function selectDailyQuestions(
       lastUsed.set(use.questionId, use.practiceDate);
     }
   }
-  return [...new Set(candidateIds)]
-    .map((id) => ({ id, lastUsed: lastUsed.get(id) ?? "", order: hashToNumber(`${seed}:${id}`) }))
+  const chosen = [...new Set(candidateIds)]
+    .map((id, index) => {
+      const group = groups.get(id) ?? id;
+      return {
+        id,
+        group,
+        index,
+        lastUsed: lastUsed.get(id) ?? "",
+        order: hashToNumber(`${seed}:${group}`),
+      };
+    })
     .sort(
       (first, second) =>
-        first.lastUsed.localeCompare(second.lastUsed) || first.order - second.order,
+        first.lastUsed.localeCompare(second.lastUsed) ||
+        first.order - second.order ||
+        first.index - second.index,
     )
-    .slice(0, size)
+    .slice(0, size);
+  const groupStart = new Map<string, number>();
+  chosen.forEach((item, position) => {
+    if (!groupStart.has(item.group)) {
+      groupStart.set(item.group, position);
+    }
+  });
+  return [...chosen]
+    .sort(
+      (first, second) =>
+        (groupStart.get(first.group) ?? 0) - (groupStart.get(second.group) ?? 0) ||
+        first.index - second.index,
+    )
     .map((item) => item.id);
 }

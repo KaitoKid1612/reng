@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { JapaneseInput } from "@/components/classroom/japanese-input";
+import { OrderField } from "@/components/classroom/order-field";
 import { ListeningPlayer } from "@/components/listening/listening-player";
 
 import type { InputMode, QuestionView } from "@/lib/assignment";
@@ -65,10 +66,17 @@ export function QuestionField({
     <div className="question-meta">
       <span>
         Câu {position} / {total}
+        {view.section && ` · ${view.section}`}
       </span>
       <span>{view.points} điểm</span>
     </div>
   );
+  // Outside the fieldset too: a passage there would push the legend off the top border.
+  const passage = view.passage ? (
+    <blockquote className="question-passage" lang={view.lang}>
+      {view.passage}
+    </blockquote>
+  ) : null;
   const player =
     view.type === "listen" || view.type === "dictation" ? (
       <ListeningPlayer
@@ -80,10 +88,34 @@ export function QuestionField({
     ) : null;
   const choices = describeChoices(view);
 
+  if (view.type === "order") {
+    return (
+      <div>
+        {meta}
+        {passage}
+        <fieldset>
+          <legend lang={view.lang}>{view.prompt}</legend>
+          <OrderField
+            tokens={view.tokens}
+            value={
+              Array.isArray(value)
+                ? value.filter((item): item is string => typeof item === "string")
+                : []
+            }
+            lang={view.lang}
+            isDisabled={isLocked}
+            onValueChange={onAnswerChange}
+          />
+        </fieldset>
+      </div>
+    );
+  }
+
   if (!choices) {
     return (
       <div>
         {meta}
+        {passage}
         <label htmlFor={fieldId} className="question-prompt" lang={view.lang}>
           {view.prompt}
         </label>
@@ -108,6 +140,7 @@ export function QuestionField({
   return (
     <div>
       {meta}
+      {passage}
       <fieldset>
         <legend lang={view.lang}>{view.prompt}</legend>
         {player}

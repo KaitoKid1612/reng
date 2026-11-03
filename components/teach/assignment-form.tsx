@@ -30,6 +30,7 @@ const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = {
   fill: "điền từ",
   listen: "nghe",
   dictation: "chính tả",
+  order: "sắp xếp câu",
 };
 
 export interface AssignableLesson {

@@ -68,7 +68,7 @@ test("a pinned daily source stays when the next lesson opens in the class", asyn
   await page.getByRole("button", { name: "Lưu", exact: true }).click();
   await expect(page.getByText("Đã bật: mỗi sáng 6:00 Reng tự giao 60 câu")).toBeVisible();
   await expect(
-    page.getByText(`Đang lấy câu từ «${LESSON_11}» (50 câu chọn/điền), giữ nguyên`),
+    page.getByText(`Đang lấy câu từ «${LESSON_11}» (50 câu chọn/điền/sắp xếp), giữ nguyên`),
   ).toBeVisible();
   // Fifty questions for a sixty-question day: every question comes back daily.
   await expect(page.getByText("ít hơn 60 câu mỗi ngày")).toBeVisible();

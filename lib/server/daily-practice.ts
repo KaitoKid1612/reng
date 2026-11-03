@@ -6,6 +6,7 @@ import {
   DAILY_PRACTICE_HISTORY_DAYS,
   daysBefore,
   endOfVietnamDay,
+  isDailyQuestionType,
   orderDailySourceLessons,
   selectBalancedDailyQuestions,
   toVietnamDate,
@@ -95,7 +96,7 @@ export async function findDailyPracticeSource(
   }
   for (const lessonId of candidates) {
     const questions = (await listAssignablePracticeQuestions(classId, lessonId)).filter(
-      (question) => question.type === "choice" || question.type === "fill",
+      (question) => isDailyQuestionType(question.type),
     );
     if (questions.length) {
       return { status: "found", lessonId, questions };
@@ -185,7 +186,12 @@ export async function createDailyPractice(
   }));
   // Kinds (the sheet's "Dạng bài", kanji, choice or fill) keep their share of each day's set.
   const questionIds = selectBalancedDailyQuestions(
-    questions.map((question) => ({ id: question.id, type: question.type, tags: question.tags })),
+    questions.map((question) => ({
+      id: question.id,
+      type: question.type,
+      tags: question.tags,
+      group: question.passage,
+    })),
     uses,
     classRow.daily_practice_size,
     `${classId}:${practiceDate}`,

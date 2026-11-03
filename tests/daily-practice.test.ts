@@ -5,6 +5,7 @@ import {
   dailySourceState,
   daysBefore,
   endOfVietnamDay,
+  isDailyQuestionType,
   orderDailySourceLessons,
   repeatsEveryDay,
   selectBalancedDailyQuestions,
@@ -135,4 +136,45 @@ test("a source with fewer questions than the daily size repeats every question e
   assert.equal(repeatsEveryDay(200, 60), false);
   assert.equal(repeatsEveryDay(60, 60), false);
   assert.equal(repeatsEveryDay(5, null), false);
+});
+
+test("a reading passage's questions are taken together and shown in lesson order", () => {
+  const candidates = [
+    ...["r1", "r2", "r3"].map((id) => ({ id, type: "choice", tags: ["reading"], group: "A" })),
+    ...["r4", "r5", "r6"].map((id) => ({ id, type: "choice", tags: ["reading"], group: "B" })),
+    ...["k1", "k2", "k3"].map((id) => ({ id, type: "fill", tags: ["kanji"] })),
+  ];
+  for (const seed of ["class:2026-11-03", "class:2026-11-04", "class:2026-11-05"]) {
+    const set = selectBalancedDailyQuestions(candidates, [], 6, seed);
+    const reading = set.filter((id) => id.startsWith("r"));
+    // Four reading questions a day (their share of six): one whole passage in the order the
+    // lesson wrote it, then the first question of the other passage.
+    assert.ok(
+      ["r1,r2,r3,r4", "r4,r5,r6,r1"].includes(reading.join(",")),
+      `${seed}: ${reading.join(",")}`,
+    );
+  }
+  // A passage cut by the quota keeps its chosen questions next to each other.
+  const uses = [{ questionId: "r1", practiceDate: "2026-11-02" }];
+  const partial = selectDailyQuestions(
+    ["r1", "r2", "r3", "r4"],
+    uses,
+    3,
+    "class:2026-11-03",
+    new Map([
+      ["r1", "A"],
+      ["r2", "A"],
+      ["r3", "A"],
+      ["r4", "B"],
+    ]),
+  );
+  assert.equal(partial.length, 3);
+  const positions = partial.filter((id) => id !== "r4").map((id) => partial.indexOf(id));
+  assert.equal((positions.at(-1) ?? 0) - positions[0] + 1, positions.length, partial.join(","));
+});
+
+test("order questions join the daily set as their own kind; listening stays out", () => {
+  assert.equal(isDailyQuestionType("order"), true);
+  assert.equal(isDailyQuestionType("listen"), false);
+  assert.equal(isDailyQuestionType("dictation"), false);
 });

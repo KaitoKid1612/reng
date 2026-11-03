@@ -1,6 +1,6 @@
 import { toHiragana } from "wanakana";
 
-import { createItemId } from "@/lib/lesson-draft";
+import { createItemId, MAX_QUESTIONS } from "@/lib/lesson-draft";
 
 import type { DraftContent, DraftQuestion } from "@/lib/lesson-draft";
 
@@ -27,7 +27,6 @@ export const KANJI_TAG = "kanji";
 // Marks the vocabulary item a generated question came from, so it is not generated twice.
 const SOURCE_TAG_PREFIX = "kanji:";
 const MAX_OPTIONS = 4;
-const MAX_LESSON_QUESTIONS = 200;
 const HAN = /\p{Script=Han}/u;
 const AFFIX_MARKS = /[〜～~]/gu;
 
@@ -238,7 +237,7 @@ export function buildKanjiQuestions(
   const nextId = () =>
     createItemId("question", { ...content, questions: [...content.questions, ...created] }, random);
   for (const word of findWordsWithoutKanjiQuestions(content)) {
-    if (content.questions.length + created.length + 2 > MAX_LESSON_QUESTIONS) {
+    if (content.questions.length + created.length + 2 > MAX_QUESTIONS) {
       break;
     }
     const tags = [KANJI_TAG, sourceTag(word.id)];

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { PassageDetails } from "@/components/classroom/passage-details";
 import { buttonVariants } from "@/components/ui/button";
 import { answerLang } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
@@ -50,6 +51,7 @@ export default async function MistakesPage() {
                 ? `, ôn lại lúc ${formatStudyDateTime(entry.due)}`
                 : ", đến hạn ôn"}
             </p>
+            <PassageDetails passage={entry.view.passage} lang={entry.view.lang} />
             <p lang={entry.view.lang} className="question-prompt">
               {entry.view.prompt}
             </p>

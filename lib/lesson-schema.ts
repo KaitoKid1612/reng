@@ -20,6 +20,9 @@ const media = z.string().refine((value) => {
 
 const questionBase = {
   id: identifier,
+  // Questions about one reading passage share it here instead of repeating it in each prompt;
+  // it is shown above the question and keeps those questions together in a daily set.
+  passage: text.optional(),
   prompt: text,
   points: z.number().int().positive(),
   tags: z.array(text).default([]),

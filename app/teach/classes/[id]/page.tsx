@@ -278,10 +278,11 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           <summary>Cách Reng chọn câu mỗi ngày</summary>
           <p className="small muted">
             Câu lấy từ bài bạn chọn, ví dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới
-            nhất đã mở có câu chọn/điền. Nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay sau
-            khi nộp. Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao
-            tay). Mỗi dạng câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ pháp, từ
-            vựng, kanji) và loại câu chọn/điền. Câu sai vào sổ lỗi và lịch ôn tập của học viên.
+            nhất đã mở có câu chọn/điền/sắp xếp. Nộp muộn vẫn được, tối đa 3 lượt, xem giải thích
+            ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả
+            bài giao tay). Mỗi dạng câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ
+            pháp, từ vựng, kanji) và loại câu (chọn, điền, sắp xếp). Câu sai vào sổ lỗi và lịch ôn
+            tập của học viên.
           </p>
         </details>
         {dailySource && (

@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { buildKanjiQuestions, findWordsWithoutKanjiQuestions } from "@/lib/kanji-practice";
+import { MAX_QUESTIONS } from "@/lib/lesson-draft";
 
 import type { DraftContent } from "@/lib/lesson-draft";
 import type { EditorAction } from "@/lib/lesson-editor";
@@ -23,7 +24,7 @@ export function KanjiQuestionGenerator({ content, dispatch }: KanjiQuestionGener
     setNotice(
       questions.length
         ? `Đã thêm ${questions.length} câu kanji vào cuối danh sách câu luyện. Xem lại rồi lưu nháp.`
-        : "Chưa thêm được câu nào: bài đã có tối đa 200 câu luyện.",
+        : `Chưa thêm được câu nào: bài đã có tối đa ${MAX_QUESTIONS} câu luyện.`,
     );
   }
 

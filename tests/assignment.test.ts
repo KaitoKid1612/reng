@@ -11,13 +11,17 @@ import {
   getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
+  describeRawAnswer,
   isSameAttemptDraft,
+  joinOrderTokens,
   parseAssignableQuestion,
   parseAttemptDraft,
   toAttemptItems,
   toQuestionView,
+  toStoredRawAnswer,
   toTestQuestions,
 } from "../lib/assignment";
+import { gradeQuestion } from "../lib/grading/grade";
 
 const questions = toTestQuestions([
   {
@@ -69,13 +73,15 @@ test("assignment questions are limited to supported types with valid kanji-stric
       },
     ]),
   );
+  // Matching is gradable but has no learner screen yet.
   assert.throws(() =>
     parseAssignableQuestion({
-      id: "o1",
-      type: "order",
-      prompt: "Sắp xếp",
-      tokens: [{ id: "a", text: "は" }],
-      answer: ["a"],
+      id: "m1",
+      type: "match",
+      prompt: "Nối",
+      left: ["いぬ"],
+      right: ["chó"],
+      answer: [[0, 0]],
       explain: "Chưa có UI.",
       points: 1,
     }),
@@ -304,4 +310,78 @@ test("shown answers keep the language they were typed in, not always Japanese", 
   assert.equal(answerLang(toQuestionView(meaning)), "vi");
   assert.equal(classQuestionLang("ja-JP"), "ja");
   assert.equal(classQuestionLang("zh-Hant"), "vi");
+});
+
+const orderQuestion = parseAssignableQuestion({
+  id: "o1",
+  type: "order",
+  prompt: "Sắp xếp thành câu: Tôi đã từng đi Nhật.",
+  tokens: [
+    { id: "a", text: "日本へ" },
+    { id: "b", text: "行った" },
+    { id: "c", text: "ことが" },
+    { id: "d", text: "あります" },
+  ],
+  answer: ["a", "b", "c", "d"],
+  tags: ["n4", "sentence-order"],
+  explain: "〜たことがあります: đã từng.",
+  points: 1,
+});
+
+test("sentence-order questions are assignable, shuffled for learners and graded by order", () => {
+  const [view] = toAttemptItems([orderQuestion], "test").map((item) => item.view);
+  assert.equal(view.type, "order");
+  assert.equal(view.section, "Sắp xếp câu");
+  if (view.type !== "order") {
+    return;
+  }
+  // The pieces never arrive in the answer order, and nothing else about the answer leaks.
+  assert.notDeepEqual(
+    view.tokens.map((token) => token.id),
+    ["a", "b", "c", "d"],
+  );
+  assert.deepEqual(view.tokens.map((token) => token.id).sort(), ["a", "b", "c", "d"]);
+  assert.equal(JSON.stringify(view).includes("answer"), false);
+  const draft = parseAttemptDraft([view], { answers: { o1: ["a", "b", "c", "d"] } });
+  assert.deepEqual(draft.answers.o1, ["a", "b", "c", "d"]);
+  assert.equal(gradeQuestion(orderQuestion, ["a", "b", "c", "d"]).isCorrect, true);
+  assert.equal(gradeQuestion(orderQuestion, ["b", "a", "c", "d"]).isCorrect, false);
+  assert.equal(gradeQuestion(orderQuestion, ["a", "b", "c"]).isCorrect, false);
+  assert.throws(() => parseAttemptDraft([view], { answers: { o1: ["a", "a"] } }));
+  assert.throws(() => parseAttemptDraft([view], { answers: { o1: ["z"] } }));
+  assert.equal(describeCorrectAnswer(orderQuestion), "日本へ行ったことがあります");
+  assert.equal(describeRawAnswer(orderQuestion, toStoredRawAnswer(["b", "a"])), "行った日本へ");
+  assert.equal(countBlankAnswers([view], { answers: {}, checked: [], listens: {} }), 1);
+});
+
+test("an order question must use every piece once, and passages reach the learner view", () => {
+  assert.throws(() =>
+    parseAssignableQuestion({
+      id: "o2",
+      type: "order",
+      prompt: "Sắp xếp",
+      tokens: [
+        { id: "a", text: "日本へ" },
+        { id: "b", text: "行きます" },
+      ],
+      answer: ["a"],
+      explain: "Thiếu mảnh.",
+      points: 1,
+    }),
+  );
+  const reading = parseAssignableQuestion({
+    id: "r1",
+    type: "choice",
+    passage: "山田さんは毎週土曜日に料理の学校に通っています。",
+    prompt: "いつ料理の学校に通っていますか。",
+    options: ["毎週土曜日", "毎週日曜日"],
+    answer: [0],
+    tags: ["n4", "reading"],
+    explain: "毎週土曜日に通っています。",
+    points: 1,
+  });
+  const view = toQuestionView(reading);
+  assert.equal(view.passage, "山田さんは毎週土曜日に料理の学校に通っています。");
+  assert.equal(view.section, "Đọc hiểu");
+  assert.equal(joinOrderTokens(["Tôi", "đi", "học"]), "Tôi đi học");
 });

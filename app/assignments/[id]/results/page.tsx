@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { PassageDetails } from "@/components/classroom/passage-details";
 import { buttonVariants } from "@/components/ui/button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
 import {
@@ -108,6 +109,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
                   </span>{" "}
                   Câu {number} · {item.pointsEarned}/{item.view.points} điểm
                 </p>
+                <PassageDetails passage={item.view.passage} lang={item.view.lang} />
                 <p lang={item.view.lang} className="question-prompt">
                   {item.view.prompt}
                 </p>

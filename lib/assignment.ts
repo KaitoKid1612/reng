@@ -1,6 +1,11 @@
 import { z } from "zod";
 
-import { isBlankAnswer, parseChoiceSelection, parseTextAnswer } from "@/lib/grading/raw-answer";
+import {
+  isBlankAnswer,
+  parseChoiceSelection,
+  parseTextAnswer,
+  parseTokenOrder,
+} from "@/lib/grading/raw-answer";
 import { questionSchema } from "@/lib/lesson-schema";
 
 import type { RawAnswer } from "@/lib/grading/raw-answer";
@@ -26,7 +31,7 @@ export type FeedbackPolicy = (typeof FEEDBACK_POLICIES)[number];
 export type InputMode = (typeof INPUT_MODES)[number];
 export type AssignableQuestion = Extract<
   LessonQuestion,
-  { type: "choice" | "fill" | "listen" | "dictation" }
+  { type: "choice" | "fill" | "listen" | "dictation" | "order" }
 >;
 
 const ASSIGNABLE_TYPES: readonly LessonQuestion["type"][] = [
@@ -34,10 +39,11 @@ const ASSIGNABLE_TYPES: readonly LessonQuestion["type"][] = [
   "fill",
   "listen",
   "dictation",
+  "order",
 ];
 export const MAX_RECORDED_LISTENS = 100;
 
-// Matching and ordering stay gradable but have no learner screen yet, so they cannot be assigned.
+// Matching stays gradable but has no learner screen yet, so it cannot be assigned.
 export function isAssignableQuestion(question: LessonQuestion): question is AssignableQuestion {
   return ASSIGNABLE_TYPES.includes(question.type);
 }
@@ -50,13 +56,30 @@ export function isListeningQuestion(
 
 const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
 
+// Every token belongs in the sentence, so one arrangement is the whole answer.
+function isTokenPermutation(tokens: readonly { id: string }[], answer: readonly string[]) {
+  const ids = tokens.map((token) => token.id);
+  return (
+    new Set(ids).size === ids.length &&
+    answer.length === ids.length &&
+    new Set(answer).size === answer.length &&
+    answer.every((id) => ids.includes(id))
+  );
+}
+
 export const assignableQuestionSchema = questionSchema.superRefine((question, context) => {
   if (!isAssignableQuestion(question)) {
     context.addIssue({
       code: "custom",
-      message: "Only choice, fill, listen and dictation questions can be assigned.",
+      message: "Only choice, fill, listen, dictation and order questions can be assigned.",
     });
     return;
+  }
+  if (question.type === "order" && !isTokenPermutation(question.tokens, question.answer)) {
+    context.addIssue({
+      code: "custom",
+      message: "An order answer must use every token exactly once.",
+    });
   }
   if (
     (question.type === "fill" || question.type === "dictation") &&
@@ -73,7 +96,7 @@ export const assignableQuestionSchema = questionSchema.superRefine((question, co
 export function parseAssignableQuestion(value: unknown): AssignableQuestion {
   const question = assignableQuestionSchema.parse(value);
   if (!isAssignableQuestion(question)) {
-    throw new Error("Only choice, fill, listen and dictation questions can be assigned.");
+    throw new Error("Only choice, fill, listen, dictation and order questions can be assigned.");
   }
   return question;
 }
@@ -188,49 +211,95 @@ export function answerLang(view: QuestionView) {
   return "inputMode" in view ? INPUT_LANGS[view.inputMode] : view.lang;
 }
 
-export type QuestionView =
-  | {
-      id: string;
-      type: "choice";
-      prompt: string;
-      points: number;
-      lang: QuestionLang;
-      options: string[];
-      multiple: boolean;
-    }
-  | {
-      id: string;
-      type: "fill";
-      prompt: string;
-      points: number;
-      lang: QuestionLang;
-      inputMode: InputMode;
-    }
-  | ({
-      id: string;
-      type: "listen";
-      prompt: string;
-      points: number;
-      lang: QuestionLang;
-    } & ListeningFields &
-      ({ responseType: "choice"; options: string[] } | { responseType: "fill" }))
-  | ({
-      id: string;
-      type: "dictation";
-      prompt: string;
-      points: number;
-      lang: QuestionLang;
-      inputMode: InputMode;
-    } & ListeningFields);
+interface QuestionViewBase {
+  id: string;
+  prompt: string;
+  points: number;
+  lang: QuestionLang;
+  // A reading passage shared by several questions, shown above the prompt.
+  passage?: string;
+  // The kind of exercise from the question's tags, such as "Đọc hiểu".
+  section?: string;
+}
+
+export interface OrderToken {
+  id: string;
+  text: string;
+}
+
+export type QuestionView = QuestionViewBase &
+  (
+    | { type: "choice"; options: string[]; multiple: boolean }
+    | { type: "fill"; inputMode: InputMode }
+    | ({ type: "listen" } & ListeningFields &
+        ({ responseType: "choice"; options: string[] } | { responseType: "fill" }))
+    | ({ type: "dictation"; inputMode: InputMode } & ListeningFields)
+    | { type: "order"; tokens: OrderToken[] }
+  );
+
+// Bank tags that name a kind of exercise. Lessons without these tags show no section.
+const SECTION_LABELS: Record<string, string> = {
+  kanji: "Kanji",
+  writing: "Chữ Hán",
+  vocabulary: "Từ vựng",
+  forms: "Biến đổi từ",
+  particles: "Trợ từ",
+  grammar: "Ngữ pháp",
+  paraphrase: "Câu cùng nghĩa",
+  "sentence-order": "Sắp xếp câu",
+  reading: "Đọc hiểu",
+};
+
+export function questionSection(tags: readonly string[]) {
+  const tag = tags.find((item) => item in SECTION_LABELS);
+  return tag ? SECTION_LABELS[tag] : undefined;
+}
+
+function hashText(value: string) {
+  let hash = 2166136261;
+  for (const char of value) {
+    hash = Math.imul(hash ^ (char.codePointAt(0) ?? 0), 16777619) >>> 0;
+  }
+  return hash;
+}
+
+// Authors often list tokens in sentence order, so learners get them in a fixed shuffle that is
+// never the answer itself.
+export function shuffleOrderTokens(
+  questionId: string,
+  tokens: readonly OrderToken[],
+  answer: readonly string[],
+) {
+  const shuffled = [...tokens].sort(
+    (first, second) =>
+      hashText(`${questionId}:${first.id}`) - hashText(`${questionId}:${second.id}`),
+  );
+  const isAnswerOrder = shuffled.every((token, index) => token.id === answer[index]);
+  return isAnswerOrder && shuffled.length > 1 ? [...shuffled.slice(1), shuffled[0]] : shuffled;
+}
+
+// Japanese and Chinese sentences join without spaces; Latin-script tokens keep them.
+export function joinOrderTokens(texts: readonly string[]) {
+  return texts.some((text) => /[A-Za-zÀ-ỹ]/.test(text)) ? texts.join(" ") : texts.join("");
+}
+
+function orderTokenTexts(tokens: readonly OrderToken[], ids: readonly string[]) {
+  return ids
+    .map((id) => tokens.find((token) => token.id === id)?.text)
+    .filter((text): text is string => text !== undefined);
+}
 
 // Allowlist for anything sent to a learner before feedback is permitted: no answers,
 // explanations or transcripts.
 export function toQuestionView(question: AssignableQuestion): QuestionView {
+  const section = questionSection(question.tags);
   const base = {
     id: question.id,
     prompt: question.prompt,
     points: question.points,
     lang: questionLang(question),
+    ...(question.passage ? { passage: question.passage } : {}),
+    ...(section ? { section } : {}),
   };
   switch (question.type) {
     case "choice":
@@ -256,6 +325,12 @@ export function toQuestionView(question: AssignableQuestion): QuestionView {
         inputMode: question.inputMode,
         audio: question.audio,
         maxListens: question.maxListens,
+      };
+    case "order":
+      return {
+        ...base,
+        type: "order",
+        tokens: shuffleOrderTokens(question.id, question.tokens, question.answer),
       };
   }
 }
@@ -353,6 +428,12 @@ export function parseViewAnswer(view: QuestionView, value: unknown): RawAnswer {
   if (view.type === "listen" && view.responseType === "choice") {
     return parseChoiceSelection(view.options.length, false, value);
   }
+  if (view.type === "order") {
+    return parseTokenOrder(
+      view.tokens.map((token) => token.id),
+      value,
+    );
+  }
   return parseTextAnswer(value);
 }
 
@@ -427,6 +508,9 @@ export function describeCorrectAnswer(question: AssignableQuestion) {
       .map((answer) => (typeof answer === "number" ? options[answer] : answer))
       .join(" / ");
   }
+  if (question.type === "order") {
+    return joinOrderTokens(orderTokenTexts(question.tokens, question.answer));
+  }
   return question.answer.join(" / ");
 }
 
@@ -438,12 +522,20 @@ export function toStoredRawAnswer(value: unknown): RawAnswer | null {
   if (Array.isArray(value) && value.every((item) => typeof item === "number")) {
     return value;
   }
+  // An order answer is the list of token IDs in the learner's order.
+  if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
+    return value;
+  }
   return null;
 }
 
 export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer | null) {
   if (raw === null || isBlankAnswer(raw)) {
     return "";
+  }
+  if (question.type === "order") {
+    const ids = Array.isArray(raw) ? raw.filter((id): id is string => typeof id === "string") : [];
+    return joinOrderTokens(orderTokenTexts(question.tokens, ids));
   }
   const isChoice =
     question.type === "choice" ||

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { PassageDetails } from "@/components/classroom/passage-details";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
 import {
   ANSWER_OUTCOME_LABELS,
@@ -107,6 +108,7 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                       Câu {number}
                       {item.listenCount !== null && ` · nghe ${item.listenCount} lần`}
                     </p>
+                    <PassageDetails passage={item.view.passage} lang={item.view.lang} />
                     <p lang={item.view.lang} className="result-row-prompt">
                       {item.view.prompt}
                     </p>

@@ -45,7 +45,7 @@ function parseMatch(leftCount: number, rightCount: number, value: unknown) {
   return pairs;
 }
 
-function parseOrder(tokenIds: readonly string[], value: unknown) {
+export function parseTokenOrder(tokenIds: readonly string[], value: unknown) {
   const order = z.array(z.string()).max(tokenIds.length).parse(value);
   if (!hasUniqueValues(order) || order.some((id) => !tokenIds.includes(id))) {
     throw new Error("Order answers must use each known token at most once.");
@@ -64,7 +64,7 @@ export function parseRawAnswer(question: LessonQuestion, value: unknown): RawAns
     case "match":
       return parseMatch(question.left.length, question.right.length, value);
     case "order":
-      return parseOrder(
+      return parseTokenOrder(
         question.tokens.map((token) => token.id),
         value,
       );

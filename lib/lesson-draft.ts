@@ -13,6 +13,8 @@ import type { LessonContent } from "@/lib/lesson-schema";
 
 export const MAX_DRAFT_BYTES = 512 * 1024;
 export const MAX_VOCAB_ITEMS = 300;
+// Review banks hold several hundred questions; MAX_DRAFT_BYTES still bounds their size.
+export const MAX_QUESTIONS = 400;
 
 const identifier = z
   .string()
@@ -204,7 +206,7 @@ export const draftContentSchema = z
     vocab: z.array(draftVocabSchema).max(MAX_VOCAB_ITEMS),
     grammar: z.array(draftGrammarSchema).max(100),
     slides: z.array(draftSlideSchema).max(200),
-    questions: z.array(draftQuestionSchema).max(200),
+    questions: z.array(draftQuestionSchema).max(MAX_QUESTIONS),
   })
   .strict()
   .superRefine((content, context) => {
