@@ -1,6 +1,6 @@
 import "server-only";
 
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { connection } from "next/server";
 import { cache } from "react";
 import { z } from "zod";
@@ -64,7 +64,9 @@ export async function requireAccount(nextPath: string) {
 export async function requireTeacher(nextPath: string) {
   const account = await requireAccount(nextPath);
   if (account.role !== "teacher") {
-    notFound();
+    // A learner or a paused teacher lands on the start page, which explains how to begin teaching
+    // or why teaching is paused. The role check runs before any lookup, so no ID is revealed.
+    redirect("/teach/start");
   }
   return account;
 }
