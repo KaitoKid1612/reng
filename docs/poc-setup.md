@@ -57,6 +57,19 @@ Có thể chạy thử nội bộ (không thu tiền, không dữ liệu học v
 - **Bật email:** mua tên miền → xác minh trong Resend (SPF, DKIM, DMARC) → Supabase Authentication › SMTP Settings dùng SMTP Resend → trong `[remotes.production.auth.email]` bật `enable_confirmations` và trỏ `content_path` của hai mẫu tới `supabase/templates/*.html`, xem `npx supabase config diff --project-ref <ref>` rồi `config push` → đặt `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM` trên Vercel và deploy lại. Xử lý các mục email còn mở ở [rà soát 30/10](testing/code-review-2026-10-30.md) trước khi bật nhắc bài cho lớp thật.
 - **Migration và dữ liệu thật:** gói Free không có bản sao lưu để tự khôi phục như Pro. Trước `npx supabase db push` hoặc nhập dữ liệu, chạy `npx supabase db dump --linked -f <file>` (và `--data-only` cho dữ liệu) rồi lưu file ngoài repository. `db push` áp mọi migration chưa có trên production trong `supabase/migrations`, nên chỉ chạy khi các migration đó đã hoàn chỉnh và được test local.
 
+### Bật đăng nhập bằng Google (03/11/2026)
+
+Code đã có; nút "Đăng nhập bằng Google" chỉ hiện khi bật cả hai phía dưới. Chưa làm bước nào trên Google Cloud, Supabase hay Vercel.
+
+1. **Google Cloud Console** (tài khoản Google của người vận hành): tạo project, mở Google Auth Platform. Ở Branding đặt tên ứng dụng "Reng", email hỗ trợ, trang chủ `https://reng-class.vercel.app`, và thêm `gqawttlaxibdxliaofun.supabase.co` vào Authorized domains. Ở Audience chọn External. Phạm vi chỉ cần `openid`, `email`, `profile`, không cần duyệt app. Ở Clients tạo OAuth client loại **Web application**, Authorized redirect URI là `https://gqawttlaxibdxliaofun.supabase.co/auth/v1/callback`. Chép Client ID và Client secret.
+2. **Supabase Auth**: thêm `SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID` và `SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET` vào `~/.config/reng/supabase-prod.env` (không đưa vào git). Đổi `enabled = true` trong khối `[remotes.production.auth.external.google]` của `supabase/config.toml`. Chạy `set -a; . ~/.config/reng/supabase-prod.env; set +a`, xem `npx supabase config diff --project-ref gqawttlaxibdxliaofun`, rồi `npx supabase config push --project-ref gqawttlaxibdxliaofun`. Nếu bật trong Dashboard (Authentication › Sign In / Providers › Google) thì vẫn sửa `config.toml` như trên, để lần `config push` sau không tắt Google. Redirect URLs production đã có `https://reng-class.vercel.app/**` và domain cũ nên không cần thêm.
+3. **Vercel**: thêm biến `AUTH_GOOGLE_ENABLED=true` cho Production rồi deploy lại (hoặc đợi lần push tiếp theo).
+4. Thử bằng một tài khoản Google: đăng nhập, vào lớp bằng link mời, đăng ký giáo viên từ `/sign-up/teacher`.
+
+Supabase gộp lần đăng nhập Google vào tài khoản đã có cùng email. Khi chưa bật xác nhận email, ai cũng có thể tạo tài khoản bằng email của người khác (mục "Vận hành khi chưa có email riêng"). Vì vậy, nếu một học viên báo đăng nhập Google vào một tài khoản lạ, xử lý như tài khoản bị chiếm.
+
+Thử local cần một OAuth client riêng có redirect URI `http://127.0.0.1:54321/auth/v1/callback`, hai biến môi trường trên, `enabled = true` trong `[auth.external.google]`, khởi động lại Supabase local và `AUTH_GOOGLE_ENABLED=true` trong `.env.local`.
+
 ## Cảnh báo cần thống nhất trước khi cho thuê
 
 - **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Reng không cung cấp video và không cần tài khoản Google.

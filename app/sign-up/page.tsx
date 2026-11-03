@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+import { GoogleSignIn } from "@/components/auth/google-sign-in";
 import { SignUpForm } from "@/components/auth/sign-up-form";
 import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
 import { getCurrentAccount } from "@/lib/server/account";
-import { isClassroomConfigured } from "@/lib/server/supabase";
+import { isClassroomConfigured, isGoogleAuthEnabled } from "@/lib/server/supabase";
 
 import type { Metadata } from "next";
 
@@ -32,6 +33,9 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
       </p>
       {isClassroomConfigured() ? (
         <>
+          {isGoogleAuthEnabled() && (
+            <GoogleSignIn nextPath={nextPath} label="Đăng ký bằng Google" />
+          )}
           <SignUpForm nextPath={nextPath} />
           <p>
             Đã có tài khoản?{" "}

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { safeNextPath } from "@/lib/auth-paths";
+import { safeNextPath, signInErrorPath } from "@/lib/auth-paths";
 import { getRequestOrigin } from "@/lib/server/request-origin";
 import { createSessionClient } from "@/lib/supabase-session";
 
@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   const origin = getRequestOrigin(request.headers, request.url);
   const tokenHash = url.searchParams.get("token_hash");
   const type = url.searchParams.get("type");
-  const failure = NextResponse.redirect(new URL("/sign-in?error=link", origin), 303);
+  const failure = NextResponse.redirect(new URL(signInErrorPath("link", ""), origin), 303);
   if (!tokenHash || (type !== "email" && type !== "recovery")) {
     return failure;
   }

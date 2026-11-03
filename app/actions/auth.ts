@@ -4,10 +4,15 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
-import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
+import {
+  defaultHomePath,
+  googleCallbackPath,
+  safeNextPath,
+  signInErrorPath,
+} from "@/lib/auth-paths";
 import { canSetNewPassword } from "@/lib/server/password-reset";
 import { getRequestOrigin } from "@/lib/server/request-origin";
-import { createServiceClient, selectOptional } from "@/lib/server/supabase";
+import { createServiceClient, isGoogleAuthEnabled, selectOptional } from "@/lib/server/supabase";
 import { createSessionClient } from "@/lib/supabase-session";
 
 export interface AuthFormState {
@@ -128,6 +133,29 @@ export async function signIn(_state: AuthFormState, formData: FormData): Promise
     z.object({ role: z.enum(["student", "teacher"]) }),
   );
   redirect(safeNextPath(readField(formData, "next"), defaultHomePath(profile?.role ?? "student")));
+}
+
+// Google returns to the origin that started sign-in, because the PKCE verifier cookie is set on
+// it; Supabase still checks the callback URL against its redirect allowlist.
+export async function signInWithGoogle(formData: FormData) {
+  const nextPath = safeNextPath(readField(formData, "next"), "");
+  const client = isGoogleAuthEnabled() ? await createSessionClient() : null;
+  if (!client) {
+    redirect(signInErrorPath("google", nextPath));
+  }
+  const origin = getRequestOrigin(await headers());
+  const { data, error } = await client.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${origin}${googleCallbackPath(nextPath)}`,
+      // Shared family phones and laptops often hold several Google accounts.
+      queryParams: { prompt: "select_account" },
+    },
+  });
+  if (error || !data.url) {
+    redirect(signInErrorPath("google", nextPath));
+  }
+  redirect(data.url);
 }
 
 export async function resendConfirmation(

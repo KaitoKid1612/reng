@@ -2904,3 +2904,27 @@ rt {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
+
+/* Google sign-in above the email form. */
+.oauth-options {
+  margin: 24px 0 4px;
+}
+.google-button {
+  width: 100%;
+  color: var(--foreground);
+  border-color: var(--muted);
+}
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--border);
+}

@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Đăng nhập bằng Google 03/11/2026: [kiểm tra local và phần chưa thử](testing/google-sign-in-2026-11-03.md); [các bước bật trên Google Cloud, Supabase và Vercel](poc-setup.md#bật-đăng-nhập-bằng-google-03112026).
+
 Trang chung không gắn môn 03/11/2026: [trang chủ, header, metadata và ảnh chia sẻ giới thiệu nơi dạy online chung, trang Tự học theo môn và phần còn gắn với ngôn ngữ](testing/platform-neutral-ui-2026-11-03.md).
 
 Công cụ giáo viên 03/11/2026: [chấp nhận đáp án tương đương (chờ migration), từ chối yêu cầu giáo viên, audio tiếng Trung, danh sách ID dài](testing/teacher-tools-2026-11-03.md); [kịch bản học thử trên điện thoại](testing/device-trial-plan-2026-11-03.md).

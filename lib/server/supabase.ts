@@ -12,6 +12,12 @@ export function isClassroomConfigured() {
   );
 }
 
+// Google sign-in also needs the Google provider enabled in Supabase Auth (docs/poc-setup.md), so
+// the button stays hidden until the deployment opts in.
+export function isGoogleAuthEnabled() {
+  return isClassroomConfigured() && process.env.AUTH_GOOGLE_ENABLED === "true";
+}
+
 // Bypasses RLS: callers must authenticate the user and check ownership/membership first.
 export function createServiceClient() {
   const url = process.env.SUPABASE_URL;

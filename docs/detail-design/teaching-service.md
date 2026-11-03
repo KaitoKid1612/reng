@@ -257,6 +257,17 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Đăng nhập bằng Google — 03/11/2026
+
+Luồng PKCE của Supabase Auth với `@supabase/ssr` (cookie phiên httpOnly như đăng nhập email). Kiểm tra ở [báo cáo](../testing/google-sign-in-2026-11-03.md).
+
+- `isGoogleAuthEnabled()` (`lib/server/supabase.ts`): cần cấu hình lớp học và `AUTH_GOOGLE_ENABLED=true`. Trang đăng nhập, hai trang đăng ký và hướng dẫn chỉ hiện Google khi hàm này đúng, nên deploy code trước khi bật nhà cung cấp không lộ nút hỏng.
+- `signInWithGoogle` (`app/actions/auth.ts`): `signInWithOAuth({ provider: "google" })` với `redirectTo` là `{origin}/auth/callback?next=…` (`googleCallbackPath`). Origin lấy từ request, không lấy `SITE_URL`, vì cookie PKCE verifier nằm trên origin bắt đầu đăng nhập (domain cũ `reng-cyan` vẫn chạy được); Supabase vẫn kiểm tra URL theo Redirect URLs. `prompt=select_account` để chọn tài khoản trên máy dùng chung. Server Action `redirect()` sang URL Google.
+- `app/auth/callback/route.ts`: không có `code` thì về `/sign-in?error=google`, hoặc `google-cancelled` khi Supabase chuyển `error=access_denied`. Có `code` thì `exchangeCodeForSession`, đọc `profiles.role` bằng service client, rồi chuyển tới `next` (qua `safeNextPath`) hoặc trang chủ theo vai. Lỗi đổi mã (thiếu verifier, mã hết hạn) về trang lỗi, không lộ chi tiết.
+- `signInErrorPath` (`lib/auth-paths.ts`) tạo `/sign-in?error=…&next=…`; trang đăng nhập dùng bảng `SIGN_IN_ERRORS` (`link`, `google`, `google-cancelled`). `/auth/confirm` dùng chung hàm này.
+- `components/auth/google-sign-in.tsx`: form gọi Server Action, nút dùng `useFormStatus` để hiện "Đang chuyển tới Google…", chữ "G" giữ màu thương hiệu Google; dòng "hoặc dùng email" phân cách với form email.
+- `supabase/config.toml`: `[auth.external.google]` (local) và `[remotes.production.auth.external.google]` cùng tắt, client ID/secret lấy từ biến môi trường. Hồ sơ người dùng mới vẫn do trigger `handle_new_user` tạo, lấy `full_name` từ metadata Google. Không có migration.
+
 ## Trang chung không gắn môn — 03/11/2026
 
 Luồng ở [BD](../basic-design/teaching-service.md#nền-tảng-dạy-học-online-không-gắn-môn--03112026), kiểm tra ở [rà soát](../testing/platform-neutral-ui-2026-11-03.md).

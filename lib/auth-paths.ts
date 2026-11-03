@@ -31,6 +31,23 @@ export function signInPath(nextPath: string) {
   return `/sign-in?next=${encodeURIComponent(nextPath)}`;
 }
 
+// Reasons the sign-in page explains: an expired email link, or a Google sign-in that failed or
+// that the person cancelled.
+export type SignInError = "link" | "google" | "google-cancelled";
+
+export function signInErrorPath(error: SignInError, nextPath: string) {
+  const query = new URLSearchParams({ error });
+  if (nextPath) {
+    query.set("next", nextPath);
+  }
+  return `/sign-in?${query.toString()}`;
+}
+
+// Where Google sign-in returns, carrying the page to open afterwards.
+export function googleCallbackPath(nextPath: string) {
+  return nextPath ? `/auth/callback?next=${encodeURIComponent(nextPath)}` : "/auth/callback";
+}
+
 export function defaultHomePath(role: "student" | "teacher") {
   return role === "teacher" ? "/teach" : "/classes";
 }

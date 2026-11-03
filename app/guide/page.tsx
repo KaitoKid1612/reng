@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { isGoogleAuthEnabled } from "@/lib/server/supabase";
+
 import type { Metadata } from "next";
 
 const DESCRIPTION =
@@ -181,6 +183,20 @@ const QUESTIONS = [
   },
 ];
 
+// Google sign-in shows only where the deployment enabled it, so the guide mentions it the same way.
+const GOOGLE_SIGN_IN_NOTE =
+  "Có tài khoản Google? Bấm Đăng ký bằng Google hoặc Đăng nhập bằng Google thay cho họ tên, email và mật khẩu.";
+const GOOGLE_SIGN_IN_SECTIONS = new Set(["teacher-sign-up", "learner-join"]);
+
+function withGoogleNote(sections: GuideSection[]) {
+  if (!isGoogleAuthEnabled()) {
+    return sections;
+  }
+  return sections.map((section) =>
+    GOOGLE_SIGN_IN_SECTIONS.has(section.id) ? { ...section, note: GOOGLE_SIGN_IN_NOTE } : section,
+  );
+}
+
 interface SectionListProps {
   sections: GuideSection[];
 }
@@ -240,14 +256,14 @@ export default function GuidePage() {
           Bắt đầu ở <Link href="/sign-up/teacher">Đăng ký giáo viên</Link>; nếu đã có tài khoản, vào{" "}
           <Link href="/teach">Giảng dạy</Link>.
         </p>
-        <SectionList sections={TEACHER_SECTIONS} />
+        <SectionList sections={withGoogleNote(TEACHER_SECTIONS)} />
       </section>
       <section aria-labelledby="learner-title">
         <h2 id="learner-title">Dành cho học viên</h2>
         <p>
           Bắt đầu ở <Link href="/join-class">Vào lớp</Link> với mã giáo viên gửi.
         </p>
-        <SectionList sections={LEARNER_SECTIONS} />
+        <SectionList sections={withGoogleNote(LEARNER_SECTIONS)} />
       </section>
       <section aria-labelledby="admin-title" className="guide-section">
         <h2 id="admin-title">Dành cho quản trị viên</h2>

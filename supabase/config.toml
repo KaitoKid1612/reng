@@ -340,6 +340,17 @@ skip_nonce_check = false
 # If enabled, it will allow the user to successfully authenticate when the provider does not return an email address.
 email_optional = false
 
+# Google sign-in (docs/poc-setup.md). Off until a Google OAuth client exists; locally its
+# redirect URI is http://127.0.0.1:54321/auth/v1/callback. Never commit the secret.
+[auth.external.google]
+enabled = false
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)"
+redirect_uri = ""
+url = ""
+skip_nonce_check = false
+email_optional = false
+
 # Allow Solana wallet holders to sign in to your project via the Sign in with Solana (SIWS, EIP-4361) standard.
 # You can configure "web3" rate limit in the [auth.rate_limit] section and set up [auth.captcha] if self-hosting.
 [auth.web3.solana]
@@ -443,6 +454,13 @@ content_path = ""
 [remotes.production.auth.email.template.recovery]
 subject = "Reset your password"
 content_path = ""
+
+# Production Google sign-in: set enabled = true once the two variables are in
+# ~/.config/reng/supabase-prod.env, and load that file before `config diff` / `config push`.
+[remotes.production.auth.external.google]
+enabled = false
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)"
 
 [remotes.production.auth.mfa.totp]
 enroll_enabled = true

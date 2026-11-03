@@ -136,6 +136,15 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Đăng nhập bằng Google — 03/11/2026
+
+Học viên và giáo viên có thể bấm "Đăng nhập bằng Google" ở trang đăng nhập, hoặc "Đăng ký bằng Google" ở trang tạo tài khoản học viên và đăng ký giáo viên, thay cho email và mật khẩu. Email và mật khẩu vẫn dùng như cũ.
+
+- Lần đầu đăng nhập Google tạo tài khoản học viên, họ tên lấy từ Google. Đăng ký giáo viên bằng Google vẫn đi tiếp tới trang đăng ký giảng dạy như đăng ký bằng email. Nếu đã có tài khoản cùng email, Supabase gộp vào tài khoản đó.
+- Sau khi đăng nhập, người dùng quay lại trang đang mở, ví dụ trang vào lớp với mã đã điền. Không có trang đích thì giáo viên về Giảng dạy, học viên về Lớp của tôi.
+- Hủy ở màn hình Google thì trang đăng nhập báo "Bạn đã dừng đăng nhập bằng Google"; lỗi khác báo chưa đăng nhập được và gợi ý dùng email.
+- Nút chỉ hiện khi môi trường bật Google (biến `AUTH_GOOGLE_ENABLED` và nhà cung cấp Google trong Supabase Auth). Các bước bật ở [kế hoạch POC](../poc-setup.md#bật-đăng-nhập-bằng-google-03112026).
+
 ## Nền tảng dạy học online, không gắn môn — 03/11/2026
 
 Theo yêu cầu người dùng: Reng là nơi dạy và học online, không phải trang riêng của tiếng Nhật hay tiếng Trung; sau này có thể dạy toán hoặc lớp khác. Phần chung của trang không nêu môn. Môn chỉ xuất hiện ở trang của môn đó, hoặc ở chỗ cần nói rõ môn nào đang có công cụ.
