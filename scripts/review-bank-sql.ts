@@ -26,6 +26,9 @@ async function main() {
       out: { type: "string" },
       commit: { type: "boolean", default: false },
       language: { type: "string", default: "ja-JP" },
+      // The lesson on the server may have another ID than the bank file, such as one created
+      // by hand before the file existed.
+      lesson: { type: "string" },
     },
   });
   if (!values.file || !values.out) {
@@ -42,8 +45,12 @@ async function main() {
   }
   // A question the classroom cannot assign would stay out of every daily set.
   bank.content.questions.forEach((question) => parseAssignableQuestion(question));
+  const lessonId = values.lesson ?? bank.id;
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(lessonId)) {
+    throw new Error("--lesson must be a lesson ID such as n4-comprehensive-review-bank.");
+  }
   const content = JSON.stringify(bank.content);
-  const sql = `-- ${bank.id}: publish ${bank.content.questions.length} questions and move the owner's classes.
+  const sql = `-- ${lessonId}: publish ${bank.content.questions.length} questions and move the owner's classes.
 begin;
 do $publish$
 declare
@@ -53,9 +60,9 @@ declare
   item record;
   moved integer := 0;
 begin
-  select * into bank from public.lessons where id = ${quote(bank.id)} for update;
+  select * into bank from public.lessons where id = ${quote(lessonId)} for update;
   if not found then
-    raise exception 'Lesson % does not exist; publish it once from the app first.', ${quote(bank.id)};
+    raise exception 'Lesson % does not exist; publish it once from the app first.', ${quote(lessonId)};
   end if;
   if exists (select 1 from public.lesson_versions v
       where v.id = bank.published_version_id and v.content = new_content) then
@@ -82,18 +89,18 @@ end
 $publish$;
 select v.version_no, jsonb_array_length(v.content -> 'questions') as questions
   from public.lessons l join public.lesson_versions v on v.id = l.published_version_id
-  where l.id = ${quote(bank.id)};
+  where l.id = ${quote(lessonId)};
 select c.name, cl.lesson_version_id = l.published_version_id as uses_newest,
     c.daily_practice_size, c.daily_practice_lesson_id = l.id as is_daily_source
   from public.class_lessons cl
   join public.classes c on c.id = cl.class_id
   join public.lessons l on l.id = cl.lesson_id
-  where cl.lesson_id = ${quote(bank.id)};
+  where cl.lesson_id = ${quote(lessonId)};
 ${values.commit ? "commit;" : "rollback;"}
 `;
   await writeFile(resolve(values.out), sql);
   console.log(
-    `Wrote ${values.out} (${values.commit ? "COMMIT" : "dry run, ends in ROLLBACK"}) for ${bank.id}: ${bank.content.questions.length} questions.`,
+    `Wrote ${values.out} (${values.commit ? "COMMIT" : "dry run, ends in ROLLBACK"}) for ${lessonId}: ${bank.content.questions.length} questions.`,
   );
 }
 

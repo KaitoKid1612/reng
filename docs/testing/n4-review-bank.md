@@ -75,8 +75,12 @@ Kiểm chứng:
 **Trạng thái production:** code đã deploy khi push. Sau deploy, câu đọc hiểu cũ cũng tách đoạn văn khỏi câu hỏi, vì đề giữ xuống dòng. **Bộ 304 câu chưa áp dụng**, vì phiên này không có quyền ghi production. Để áp dụng (chỉ chạy sau khi deploy đã xong):
 
 ```bash
-npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --out /tmp/n4-v2.sql          # chạy thử
-npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --out /tmp/n4-v2-commit.sql --commit
+# Bộ "Tổng ôn N4 — Minna 1–50" trên production được tạo tay ngày 02/11 nên có mã khác `n4-comprehensive-review-bank`
+# trong file JSON; truyền mã thật bằng --lesson. Tra mã bằng tiêu đề:
+set -a; . ~/.config/reng/supabase-prod.env; set +a
+npx supabase db query --linked "select l.id, v.version_no, jsonb_array_length(v.content->'questions') as questions from public.lessons l join public.lesson_versions v on v.id = l.published_version_id where l.title = 'Tổng ôn N4 — Minna 1–50';"
+npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --language ja-JP --lesson <mã bài> --out /tmp/n4-v2.sql          # chạy thử
+npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --language ja-JP --lesson <mã bài> --out /tmp/n4-v2-commit.sql --commit
 set -a; . ~/.config/reng/supabase-prod.env; set +a
 npx supabase db query --linked --file /tmp/n4-v2.sql         # xem phiên bản và lớp, rồi rollback
 npx supabase db query --linked --file /tmp/n4-v2-commit.sql  # áp dụng; chạy lại không tạo phiên bản thừa

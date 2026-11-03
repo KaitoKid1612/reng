@@ -162,7 +162,7 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 - **Sắp xếp câu:** `tokens` theo thứ tự đúng và `answer` là danh sách mã mảnh; mỗi mảnh dùng đúng một lần, chỉ có một thứ tự đúng với nghĩa ghi trong đề (tránh hai cụm có thể đổi chỗ mà vẫn đúng). Đặt mã mảnh ngẫu nhiên (`p27`, `p05`…), không theo thứ tự câu.
 - **Tiếng Trung:** mỗi câu khai báo `"gradingProfile": "zh-exact-v1"`; ô điền dùng `inputMode` `chinese` hoặc `pinyin` (hoặc `text` khi trả lời bằng tiếng Việt); `vocab` để trống vì từ vựng có chữ Hán/pinyin nằm trong bài soạn bằng trình soạn tiếng Trung (flashcard, luyện chữ Hán lấy từ đó). Bài kiểm thử `tests/review-bank.test.ts` có một ngân hàng Trung mẫu.
 - **Tiếng Nhật:** không dùng profile hoặc ô nhập tiếng Trung; đáp án kana/kanji tương đương phải khai báo đủ.
-- **Đưa lên phiên bản mới:** `npm run bank:sql -- --file <bank.json> --language ja-JP|zh-Hans|zh-Hant --out <file.sql> [--commit]` kiểm tra ngôn ngữ và dạng bài rồi viết transaction (chi tiết ở [DD](detail-design/teaching-service.md#đa-dạng-dạng-bài-và-đoạn-văn-đọc-hiểu--03112026)).
+- **Đưa lên phiên bản mới:** `npm run bank:sql -- --file <bank.json> --language ja-JP|zh-Hans|zh-Hant [--lesson <mã bài>] --out <file.sql> [--commit]` kiểm tra ngôn ngữ và dạng bài rồi viết transaction. `--lesson` dùng khi bài trên server có mã khác `id` trong file (chi tiết ở [DD](detail-design/teaching-service.md#đa-dạng-dạng-bài-và-đoạn-văn-đọc-hiểu--03112026)).
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
