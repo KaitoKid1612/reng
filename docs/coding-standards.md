@@ -66,4 +66,4 @@ docs/
 
 ## Git delivery policy
 
-The user authorizes direct delivery to main, without feature branches or pull requests, for this repository. Make one or more focused English commits per completed, verified task and push to origin/main. Do not add AI generation/authorship/co-author trailers. Verify the requested GitHub identity and remote before authenticated writes; never substitute another account silently or force-push remote history.
+The user authorizes direct delivery to main, without feature branches or pull requests, for this repository. Make one or more focused English commits per completed, verified task. Each push to origin/main deploys production, so keep the commits local and push once the user's whole batch of work is finished and the user says to push. Do not add AI generation/authorship/co-author trailers. Verify the requested GitHub identity and remote before authenticated writes; never substitute another account silently or force-push remote history.

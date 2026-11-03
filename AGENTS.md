@@ -14,7 +14,7 @@ Read and follow [coding standards](docs/coding-standards.md) before editing sour
 - Repository: `git@github.com:KaitoKid1612/reng.git`. The personal SSH key labeled `leviet1612@gmail.com` authenticates as GitHub account `KaitoKid1612`; the key label is not a GitHub username.
 - Use repository-local commit identity `Lê Viết Việt <43107595+KaitoKid1612@users.noreply.github.com>` and the verified personal SSH identity. Keep private keys and local SSH configuration outside the repository.
 - Work directly on `main`. Do not create a feature branch or PR unless the user changes this instruction.
-- After each completed, verified task, create one or more focused commits and push to `origin/main` without asking again. The user has explicitly authorized this workflow.
+- After each completed, verified task, create one or more focused commits. Every push to `origin/main` deploys production, so do not push after each task: keep the commits local and push once, when the whole batch of work the user asked for is finished and the user says to push. The user has explicitly authorized that push without asking again.
 - Commit messages must be concise English summaries. Do not append AI authorship, generation notices, co-author trailers or similar attribution.
 - Review staged paths and diff, exclude secrets/build artifacts and verify the remote before pushing. Never force-push or overwrite remote history; reconcile new remote work safely first. Do not push using a different GitHub account when the requested account is unavailable.
 
