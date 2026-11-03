@@ -1,0 +1,1474 @@
+{
+  "id": "minna-1-09",
+  "title": "Bài 9 – Sở thích, khả năng và lý do",
+  "titleJa": "第9課　どんな スポーツが すきですか",
+  "summary": "Theo trình tự bài 9 Minna no Nihongo Sơ cấp I: N が あります／わかります, N が すき・きらい・じょうず・へたです, hỏi loại cụ thể どんな N が すきですか, mức độ よく・だいたい・すこし・あまり〜ない・ぜんぜん〜ない, số lượng たくさん, nêu lý do 〜から và hỏi どうして, cách gọi vợ chồng mình và của người khác, từ chối khéo khi được mời.",
+  "order": 9,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0901",
+        "jp": "わかります",
+        "romaji": "wakarimasu",
+        "vi": "hiểu, biết",
+        "audio": null
+      },
+      {
+        "id": "v0902",
+        "jp": "あります",
+        "romaji": "arimasu",
+        "vi": "có (đồ vật, thời gian, hẹn …)",
+        "audio": null
+      },
+      {
+        "id": "v0903",
+        "jp": "すき［な］",
+        "kanji": "好き［な］",
+        "romaji": "suki [na]",
+        "vi": "thích",
+        "audio": null
+      },
+      {
+        "id": "v0904",
+        "jp": "きらい［な］",
+        "kanji": "嫌い［な］",
+        "romaji": "kirai [na]",
+        "vi": "ghét, không thích",
+        "audio": null
+      },
+      {
+        "id": "v0905",
+        "jp": "じょうず［な］",
+        "kanji": "上手［な］",
+        "romaji": "jouzu [na]",
+        "vi": "giỏi",
+        "audio": null,
+        "image": "/icons/vocab/thumbs-up.svg"
+      },
+      {
+        "id": "v0906",
+        "jp": "へた［な］",
+        "kanji": "下手［な］",
+        "romaji": "heta [na]",
+        "vi": "kém, dở",
+        "audio": null
+      },
+      {
+        "id": "v0907",
+        "jp": "りょうり",
+        "kanji": "料理",
+        "romaji": "ryouri",
+        "vi": "món ăn, nấu ăn",
+        "audio": null,
+        "image": "/icons/vocab/bento-box.svg"
+      },
+      {
+        "id": "v0908",
+        "jp": "のみもの",
+        "kanji": "飲み物",
+        "romaji": "nomimono",
+        "vi": "đồ uống",
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v0909",
+        "jp": "スポーツ",
+        "romaji": "supootsu",
+        "vi": "thể thao",
+        "audio": null,
+        "image": "/icons/vocab/sports-medal.svg"
+      },
+      {
+        "id": "v0910",
+        "jp": "やきゅう",
+        "kanji": "野球",
+        "romaji": "yakyuu",
+        "vi": "bóng chày",
+        "audio": null
+      },
+      {
+        "id": "v0911",
+        "jp": "ダンス",
+        "romaji": "dansu",
+        "vi": "nhảy, khiêu vũ",
+        "audio": null
+      },
+      {
+        "id": "v0912",
+        "jp": "りょこう",
+        "kanji": "旅行",
+        "romaji": "ryokou",
+        "vi": "du lịch",
+        "audio": null,
+        "image": "/icons/vocab/airplane-departure.svg"
+      },
+      {
+        "id": "v0913",
+        "jp": "おんがく",
+        "kanji": "音楽",
+        "romaji": "ongaku",
+        "vi": "âm nhạc",
+        "audio": null,
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v0914",
+        "jp": "うた",
+        "kanji": "歌",
+        "romaji": "uta",
+        "vi": "bài hát",
+        "audio": null
+      },
+      {
+        "id": "v0915",
+        "jp": "カラオケ",
+        "romaji": "karaoke",
+        "vi": "karaoke",
+        "audio": null
+      },
+      {
+        "id": "v0916",
+        "jp": "コンサート",
+        "romaji": "konsaato",
+        "vi": "buổi hòa nhạc",
+        "audio": null
+      },
+      {
+        "id": "v0917",
+        "jp": "ギター",
+        "romaji": "gitaa",
+        "vi": "đàn ghi-ta",
+        "audio": null
+      },
+      {
+        "id": "v0918",
+        "jp": "ゲーム",
+        "romaji": "geemu",
+        "vi": "trò chơi điện tử",
+        "audio": null
+      },
+      {
+        "id": "v0919",
+        "jp": "かいもの",
+        "kanji": "買い物",
+        "romaji": "kaimono",
+        "vi": "mua sắm",
+        "audio": null,
+        "image": "/icons/vocab/handbag.svg"
+      },
+      {
+        "id": "v0920",
+        "jp": "え",
+        "kanji": "絵",
+        "romaji": "e",
+        "vi": "tranh, bức vẽ",
+        "audio": null
+      },
+      {
+        "id": "v0921",
+        "jp": "じ",
+        "kanji": "字",
+        "romaji": "ji",
+        "vi": "chữ",
+        "audio": null,
+        "image": "/icons/vocab/writing-hand.svg"
+      },
+      {
+        "id": "v0922",
+        "jp": "かんじ",
+        "kanji": "漢字",
+        "romaji": "kanji",
+        "vi": "chữ Hán",
+        "audio": null
+      },
+      {
+        "id": "v0923",
+        "jp": "ひらがな",
+        "romaji": "hiragana",
+        "vi": "chữ hiragana",
+        "audio": null
+      },
+      {
+        "id": "v0924",
+        "jp": "かたかな",
+        "romaji": "katakana",
+        "vi": "chữ katakana",
+        "audio": null
+      },
+      {
+        "id": "v0925",
+        "jp": "ローマじ",
+        "kanji": "ローマ字",
+        "romaji": "roomaji",
+        "vi": "chữ Latinh (romaji)",
+        "audio": null
+      },
+      {
+        "id": "v0926",
+        "jp": "いぬ",
+        "kanji": "犬",
+        "romaji": "inu",
+        "vi": "con chó",
+        "audio": null,
+        "image": "/icons/vocab/dog.svg"
+      },
+      {
+        "id": "v0927",
+        "jp": "ねこ",
+        "kanji": "猫",
+        "romaji": "neko",
+        "vi": "con mèo",
+        "audio": null,
+        "image": "/icons/vocab/cat.svg"
+      },
+      {
+        "id": "v0928",
+        "jp": "こまかい おかね",
+        "kanji": "細かい お金",
+        "romaji": "komakai okane",
+        "vi": "tiền lẻ",
+        "audio": null
+      },
+      {
+        "id": "v0929",
+        "jp": "チケット",
+        "romaji": "chiketto",
+        "vi": "vé (xem phim, hòa nhạc)",
+        "audio": null,
+        "image": "/icons/vocab/ticket.svg"
+      },
+      {
+        "id": "v0930",
+        "jp": "じかん",
+        "kanji": "時間",
+        "romaji": "jikan",
+        "vi": "thời gian",
+        "audio": null
+      },
+      {
+        "id": "v0931",
+        "jp": "ようじ",
+        "kanji": "用事",
+        "romaji": "youji",
+        "vi": "việc bận, việc riêng",
+        "audio": null
+      },
+      {
+        "id": "v0932",
+        "jp": "やくそく",
+        "kanji": "約束",
+        "romaji": "yakusoku",
+        "vi": "cuộc hẹn, lời hứa",
+        "audio": null,
+        "image": "/icons/vocab/handshake.svg"
+      },
+      {
+        "id": "v0933",
+        "jp": "アルバイト",
+        "romaji": "arubaito",
+        "vi": "việc làm thêm",
+        "audio": null
+      },
+      {
+        "id": "v0934",
+        "jp": "ごしゅじん",
+        "kanji": "ご主人",
+        "romaji": "goshujin",
+        "vi": "chồng (của người khác)",
+        "audio": null
+      },
+      {
+        "id": "v0935",
+        "jp": "おっと",
+        "kanji": "夫",
+        "romaji": "otto",
+        "vi": "chồng tôi",
+        "audio": null
+      },
+      {
+        "id": "v0936",
+        "jp": "おくさん",
+        "kanji": "奥さん",
+        "romaji": "okusan",
+        "vi": "vợ (của người khác)",
+        "audio": null
+      },
+      {
+        "id": "v0937",
+        "jp": "つま",
+        "kanji": "妻",
+        "romaji": "tsuma",
+        "vi": "vợ tôi",
+        "audio": null
+      },
+      {
+        "id": "v0938",
+        "jp": "こども",
+        "kanji": "子ども",
+        "romaji": "kodomo",
+        "vi": "con, trẻ em",
+        "audio": null,
+        "image": "/icons/vocab/baby.svg"
+      },
+      {
+        "id": "v0939",
+        "jp": "よく",
+        "romaji": "yoku",
+        "vi": "rõ, giỏi; thường xuyên",
+        "audio": null
+      },
+      {
+        "id": "v0940",
+        "jp": "だいたい",
+        "romaji": "daitai",
+        "vi": "đại khái, hầu hết",
+        "audio": null
+      },
+      {
+        "id": "v0941",
+        "jp": "たくさん",
+        "romaji": "takusan",
+        "vi": "nhiều",
+        "audio": null
+      },
+      {
+        "id": "v0942",
+        "jp": "すこし",
+        "kanji": "少し",
+        "romaji": "sukoshi",
+        "vi": "một chút, một ít",
+        "audio": null
+      },
+      {
+        "id": "v0943",
+        "jp": "ぜんぜん",
+        "kanji": "全然",
+        "romaji": "zenzen",
+        "vi": "hoàn toàn không (đi với phủ định)",
+        "audio": null
+      },
+      {
+        "id": "v0944",
+        "jp": "どうして",
+        "romaji": "doushite",
+        "vi": "tại sao",
+        "audio": null
+      },
+      {
+        "id": "v0945",
+        "jp": "〜から",
+        "romaji": "~kara",
+        "vi": "vì … (nêu lý do)",
+        "audio": null
+      },
+      {
+        "id": "v0946",
+        "jp": "ざんねんですね",
+        "kanji": "残念ですね",
+        "romaji": "zannen desu ne",
+        "vi": "tiếc quá nhỉ",
+        "audio": null
+      },
+      {
+        "id": "v0947",
+        "jp": "だめですか",
+        "romaji": "dame desu ka",
+        "vi": "không được à?",
+        "audio": null
+      },
+      {
+        "id": "v0948",
+        "jp": "また こんど おねがいします",
+        "kanji": "また 今度 お願いします",
+        "romaji": "mata kondo onegai shimasu",
+        "vi": "hẹn lần sau nhé (khi từ chối lời mời)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0901",
+        "pattern": "N が あります／わかります",
+        "vi": "Có N / hiểu N",
+        "explain": "Đồ vật mình có, thời gian, cuộc hẹn, việc bận: N が あります. Hiểu, biết: N が わかります. Đối tượng của hai động từ này dùng が, không dùng を.",
+        "viMistake": "Không nói {日本語|にほんご}を わかります; nói {日本語|にほんご}が わかります.",
+        "examples": [
+          {
+            "jp": "こまかい お{金|かね}が ありますか。…いいえ、ありません。",
+            "vi": "Bạn có tiền lẻ không? … Không, tôi không có.",
+            "audio": null
+          },
+          {
+            "jp": "きょうは {時間|じかん}が ありません。",
+            "vi": "Hôm nay tôi không có thời gian.",
+            "audio": null
+          },
+          {
+            "jp": "{英語|えいご}が わかりますか。…はい、すこし わかります。",
+            "vi": "Bạn có hiểu tiếng Anh không? … Có, tôi hiểu một chút.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0902",
+        "pattern": "N が すきです／きらいです／じょうずです／へたです",
+        "vi": "Thích / ghét / giỏi / kém N",
+        "explain": "Bốn tính từ đuôi な này đi với が: {料理|りょうり}が {好|す}きです, ダンスが {上手|じょうず}です. Phủ định như tính từ đuôi な: {好|す}きじゃ ありません.",
+        "viMistake": "Khen người khác thì dùng {上手|じょうず}ですね; nói về mình nên khiêm tốn: まだ {下手|へた}です.",
+        "examples": [
+          {
+            "jp": "わたしは {音楽|おんがく}が {好|す}きです。",
+            "vi": "Tôi thích âm nhạc.",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは {料理|りょうり}が {上手|じょうず}です。",
+            "vi": "Nam nấu ăn giỏi.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは いぬが あまり {好|す}きじゃ ありません。",
+            "vi": "Tôi không thích chó lắm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0903",
+        "pattern": "どんな N が すきですか",
+        "vi": "Bạn thích loại N nào?",
+        "explain": "どんな + danh từ hỏi loại cụ thể. Trả lời bằng tên cụ thể: どんな スポーツが {好|す}きですか → サッカーが {好|す}きです.",
+        "examples": [
+          {
+            "jp": "どんな スポーツが {好|す}きですか。…サッカーが {好|す}きです。",
+            "vi": "Bạn thích môn thể thao nào? … Tôi thích bóng đá.",
+            "audio": null
+          },
+          {
+            "jp": "どんな {飲|の}み{物|もの}が {好|す}きですか。…お{茶|ちゃ}が {好|す}きです。",
+            "vi": "Bạn thích đồ uống gì? … Tôi thích trà.",
+            "audio": null
+          },
+          {
+            "jp": "どんな {音楽|おんがく}が {好|す}きですか。…ベトナムの {歌|うた}が {好|す}きです。",
+            "vi": "Bạn thích loại nhạc nào? … Tôi thích nhạc Việt.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0904",
+        "pattern": "よく・だいたい・すこし・あまり・ぜんぜん",
+        "vi": "Mức độ hiểu và số lượng",
+        "explain": "Đứng trước わかります／あります: よく (rõ), だいたい (đại khái), すこし (một chút). Với phủ định: あまり (không … lắm), ぜんぜん (hoàn toàn không). Số lượng nhiều: たくさん.",
+        "viMistake": "あまり và ぜんぜん luôn đi với phủ định.",
+        "examples": [
+          {
+            "jp": "{漢字|かんじ}が よく わかります。",
+            "vi": "Tôi hiểu rõ chữ Hán.",
+            "audio": null
+          },
+          {
+            "jp": "{英語|えいご}が ぜんぜん わかりません。",
+            "vi": "Tôi hoàn toàn không hiểu tiếng Anh.",
+            "audio": null
+          },
+          {
+            "jp": "お{金|かね}が たくさん あります。",
+            "vi": "Tôi có nhiều tiền.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0905",
+        "pattern": "〜から、〜・どうして",
+        "vi": "Vì … nên …; tại sao",
+        "explain": "〜から đứng sau câu nêu lý do, câu kết quả đứng sau: {時間|じかん}が ありませんから、{行|い}きません. Hỏi lý do: どうして ですか／どうして V ますか; trả lời 〜から です.",
+        "viMistake": "Thứ tự ngược tiếng Việt khi nói \"không đi vì không có thời gian\": lý do + から đứng trước.",
+        "examples": [
+          {
+            "jp": "{用事|ようじ}が ありますから、{早|はや}く {帰|かえ}ります。",
+            "vi": "Vì có việc bận nên tôi về sớm.",
+            "audio": null
+          },
+          {
+            "jp": "どうして {日本語|にほんご}を {勉強|べんきょう}しますか。…{日本|にほん}の {会社|かいしゃ}で {働|はたら}きますから。",
+            "vi": "Tại sao bạn học tiếng Nhật? … Vì tôi sẽ làm việc ở công ty Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "きのう {約束|やくそく}が ありましたから、{行|い}きませんでした。",
+            "vi": "Hôm qua vì có hẹn nên tôi đã không đi.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0901",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"bạn thích gì, giỏi gì, có hiểu tiếng Anh không?\". Bài đi theo trình tự bài 9 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}9{課|か}",
+        "vi": "Sở thích và khả năng: どんな スポーツが すきですか"
+      },
+      {
+        "id": "s0902",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Có, hiểu: N が あります／わかります\n2. Thích, ghét, giỏi, kém: N が すき／きらい／じょうず／へたです\n3. Hỏi loại cụ thể: どんな N が すきですか\n4. Mức độ: よく, だいたい, すこし, あまり／ぜんぜん 〜ない; lý do 〜から, どうして"
+      },
+      {
+        "id": "s0903",
+        "teacherNotes": "Bốn tính từ すき, きらい, じょうず, へた đều đi với が.",
+        "type": "vocab",
+        "refs": ["v0901", "v0902", "v0903", "v0904", "v0905", "v0906", "v0907", "v0908"]
+      },
+      {
+        "id": "s0904",
+        "teacherNotes": "Hỏi học viên thích loại nhạc, môn thể thao nào.",
+        "type": "vocab",
+        "refs": ["v0909", "v0910", "v0911", "v0912", "v0913", "v0914", "v0915", "v0916"]
+      },
+      {
+        "id": "s0905",
+        "teacherNotes": "Học viên tự đánh giá: ひらがなが よく わかります, かんじが すこし わかります…",
+        "type": "vocab",
+        "refs": ["v0917", "v0918", "v0919", "v0920", "v0921", "v0922", "v0923", "v0924"]
+      },
+      {
+        "id": "s0906",
+        "teacherNotes": "あります ở bài này là \"có\" (đồ vật, thời gian, hẹn); bài 10 học thêm có ở đâu.",
+        "type": "vocab",
+        "refs": ["v0925", "v0926", "v0927", "v0928", "v0929", "v0930", "v0931", "v0932"]
+      },
+      {
+        "id": "s0907",
+        "teacherNotes": "Nói về gia đình mình: おっと, つま; gia đình người khác: ごしゅじん, おくさん.",
+        "type": "vocab",
+        "refs": ["v0933", "v0934", "v0935", "v0936", "v0937", "v0938", "v0939", "v0940"]
+      },
+      {
+        "id": "s0908",
+        "teacherNotes": "Luyện từ chối khéo: ちょっと…, ざんねんですね, また こんど おねがいします.",
+        "type": "vocab",
+        "refs": ["v0941", "v0942", "v0943", "v0944", "v0945", "v0946", "v0947", "v0948"]
+      },
+      {
+        "id": "s0909",
+        "teacherNotes": "Hỏi từng học viên: こまかい おかねが ありますか, えいごが わかりますか.",
+        "type": "grammar",
+        "ref": "g0901"
+      },
+      {
+        "id": "s0910",
+        "type": "example",
+        "ref": "g0901",
+        "reveal": true
+      },
+      {
+        "id": "s0911",
+        "teacherNotes": "Học viên nói một thứ mình thích, một thứ không thích, một việc mình giỏi.",
+        "type": "grammar",
+        "ref": "g0902"
+      },
+      {
+        "id": "s0912",
+        "type": "example",
+        "ref": "g0902",
+        "reveal": true
+      },
+      {
+        "id": "s0913",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: thích và giỏi",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["わたし・{音楽|おんがく}・{好|す}き", "わたしは {音楽|おんがく}が {好|す}きです。"],
+          [
+            "ナムさん・{料理|りょうり}・{上手|じょうず}",
+            "ナムさんは {料理|りょうり}が {上手|じょうず}です。"
+          ],
+          ["リンさん・{絵|え}・{上手|じょうず}", "リンさんは {絵|え}が {上手|じょうず}です。"],
+          ["わたし・ダンス・{下手|へた}", "わたしは ダンスが {下手|へた}です。"],
+          [
+            "アンさん・ねこ・{好|す}きじゃ ありません",
+            "アンさんは ねこが {好|す}きじゃ ありません。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0914",
+        "type": "quiz",
+        "ref": "q0901"
+      },
+      {
+        "id": "s0915",
+        "type": "quiz",
+        "ref": "q0905"
+      },
+      {
+        "id": "s0916",
+        "teacherNotes": "Học viên hỏi nhau どんな 〜が すきですか với スポーツ, のみもの, おんがく.",
+        "type": "grammar",
+        "ref": "g0903"
+      },
+      {
+        "id": "s0917",
+        "type": "example",
+        "ref": "g0903",
+        "reveal": true
+      },
+      {
+        "id": "s0918",
+        "type": "quiz",
+        "ref": "q0906"
+      },
+      {
+        "id": "s0919",
+        "teacherNotes": "Đọc từ trên xuống: mức độ hiểu giảm dần. Hai dòng cuối đi với phủ định.",
+        "type": "table",
+        "title": "Mức độ hiểu",
+        "columns": ["Mức độ", "Câu"],
+        "rows": [
+          ["Hiểu rõ", "よく わかります"],
+          ["Hiểu đại khái", "だいたい わかります"],
+          ["Hiểu một chút", "すこし わかります"],
+          ["Không hiểu lắm", "あまり わかりません"],
+          ["Hoàn toàn không hiểu", "ぜんぜん わかりません"]
+        ]
+      },
+      {
+        "id": "s0920",
+        "teacherNotes": "Học viên tự đánh giá mức hiểu ひらがな, かたかな, かんじ, えいご.",
+        "type": "grammar",
+        "ref": "g0904"
+      },
+      {
+        "id": "s0921",
+        "type": "example",
+        "ref": "g0904",
+        "reveal": true
+      },
+      {
+        "id": "s0922",
+        "teacherNotes": "Học viên nói về mình trước, rồi bấm mũi tên để xem câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 2: bạn hiểu đến đâu?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ひらがな・よく", "ひらがなが よく わかります。"],
+          ["かたかな・だいたい", "かたかなが だいたい わかります。"],
+          ["{漢字|かんじ}・すこし", "{漢字|かんじ}が すこし わかります。"],
+          ["{英語|えいご}・あまり", "{英語|えいご}が あまり わかりません。"],
+          ["フランス{語|ご}・ぜんぜん", "フランス{語|ご}が ぜんぜん わかりません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0923",
+        "type": "quiz",
+        "ref": "q0907"
+      },
+      {
+        "id": "s0924",
+        "type": "quiz",
+        "ref": "q0910"
+      },
+      {
+        "id": "s0925",
+        "teacherNotes": "Hỏi: どうして にほんごを べんきょうしますか. Học viên trả lời lý do thật của mình.",
+        "type": "grammar",
+        "ref": "g0905"
+      },
+      {
+        "id": "s0926",
+        "type": "example",
+        "ref": "g0905",
+        "reveal": true
+      },
+      {
+        "id": "s0927",
+        "teacherNotes": "Học viên nối lý do với kết quả bằng から.",
+        "type": "table",
+        "title": "Luyện tập 3: vì … nên …",
+        "columns": ["Lý do・kết quả", "Câu mẫu"],
+        "rows": [
+          [
+            "{用事|ようじ}が あります・{早|はや}く {帰|かえ}ります",
+            "{用事|ようじ}が ありますから、{早|はや}く {帰|かえ}ります。"
+          ],
+          [
+            "{時間|じかん}が ありません・{行|い}きません",
+            "{時間|じかん}が ありませんから、{行|い}きません。"
+          ],
+          [
+            "{約束|やくそく}が ありました・{来|き}ませんでした",
+            "{約束|やくそく}が ありましたから、{来|き}ませんでした。"
+          ],
+          ["サッカーが {好|す}きです・よく します", "サッカーが {好|す}きですから、よく します。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0928",
+        "type": "quiz",
+        "ref": "q0912"
+      },
+      {
+        "id": "s0929",
+        "teacherNotes": "Học viên hỏi nhau món ăn yêu thích, thay フォー bằng món khác.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Bạn thích món gì?",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "ナムさんは どんな {料理|りょうり}が {好|す}きですか。",
+            "vi": "Nam thích món ăn gì?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{日本|にほん}の {料理|りょうり}が {好|す}きです。ハナさんは？",
+            "vi": "Mình thích món Nhật. Còn Hana?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "わたしは ベトナムの {料理|りょうり}が とても {好|す}きです。",
+            "vi": "Mình rất thích món Việt."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "フォーは {好|す}きですか。",
+            "vi": "Bạn có thích phở không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "はい、よく {食|た}べます。",
+            "vi": "Có, mình hay ăn."
+          }
+        ]
+      },
+      {
+        "id": "s0930",
+        "teacherNotes": "Tập đáp khiêm tốn khi được khen: いいえ、まだ へたです.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Em giỏi tiếng Nhật nhỉ",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "リンさんは {日本語|にほんご}が {上手|じょうず}ですね。",
+            "vi": "Linh giỏi tiếng Nhật nhỉ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "いいえ、まだ {下手|へた}です。",
+            "vi": "Dạ không, em còn kém ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{漢字|かんじ}が わかりますか。",
+            "vi": "Em có hiểu chữ Hán không?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "すこし わかります。かたかなは よく わかります。",
+            "vi": "Em hiểu một chút. Chữ katakana thì em hiểu rõ ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0931",
+        "teacherNotes": "Đóng vai rủ và từ chối khéo, nêu lý do bằng から.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Tối nay đi karaoke không?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "アンさん、{今晩|こんばん} いっしょに カラオケへ {行|い}きませんか。",
+            "vi": "An ơi, tối nay đi karaoke cùng mình không?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{今晩|こんばん}ですか。すみません、ちょっと…。",
+            "vi": "Tối nay à? Xin lỗi, mình hơi…"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "だめですか。",
+            "vi": "Không được à?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ええ、{約束|やくそく}が ありますから。",
+            "vi": "Ừ, vì mình có hẹn rồi."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。{残念|ざんねん}ですね。",
+            "vi": "Vậy à. Tiếc quá nhỉ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "また こんど おねがいします。",
+            "vi": "Lần sau rủ mình nhé."
+          }
+        ]
+      },
+      {
+        "id": "s0932",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật về mình.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["どんな スポーツが {好|す}きですか。", "サッカーが {好|す}きです。"],
+          ["{英語|えいご}が わかりますか。", "はい、すこし わかります。"],
+          ["こまかい お{金|かね}が ありますか。", "いいえ、ありません。"],
+          [
+            "どうして {日本語|にほんご}を {勉強|べんきょう}しますか。",
+            "{日本|にほん}へ {行|い}きますから。"
+          ],
+          ["{今晩|こんばん} {時間|じかん}が ありますか。", "すみません、{用事|ようじ}が あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0933",
+        "type": "quiz",
+        "ref": "q0935"
+      },
+      {
+        "id": "s0934",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• N が あります／わかります\n• N が すきです／きらいです／じょうずです／へたです (phủ định: 〜じゃ ありません)\n• どんな N が すきですか → (tên cụ thể) が すきです\n• よく／だいたい／すこし わかります; あまり／ぜんぜん わかりません\n• Lý do + から、kết quả; どうして → 〜から\n• Từ chối khéo: ちょっと…; ざんねんですね; また こんど おねがいします"
+      },
+      {
+        "id": "s0935",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết 5 câu giới thiệu sở thích và khả năng của bạn: 〜が すきです, 〜が じょうずです.\n3. Viết 2 câu nêu lý do bạn học tiếng Nhật bằng 〜から."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0901",
+        "prompt": "にほんご（　　） わかります。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "わかります đi với が.",
+        "type": "choice",
+        "options": ["を", "が", "に", "で"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0902",
+        "prompt": "こまかい おかね（　　） ありますか。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "あります đi với が.",
+        "type": "choice",
+        "options": ["が", "を", "で", "へ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0903",
+        "prompt": "わたしは おんがく（　　） すきです。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "すきです đi với が.",
+        "type": "choice",
+        "options": ["を", "に", "で", "が"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0904",
+        "prompt": "Chọn câu đúng: Nam nấu ăn giỏi.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "じょうずです đi với が.",
+        "type": "choice",
+        "options": [
+          "ナムさんは りょうりを じょうずです。",
+          "ナムさんは りょうりが へたです。",
+          "ナムさんは りょうりが じょうずです。",
+          "ナムさんは りょうりに じょうずです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0905",
+        "prompt": "Phủ định của すきです:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "すき là tính từ đuôi な: すきじゃ ありません.",
+        "type": "choice",
+        "options": ["すきくないです", "すきじゃ ありません", "すくないです", "すきません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0906",
+        "prompt": "（　　） スポーツが すきですか。…サッカーが すきです。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "どんな + danh từ.",
+        "type": "choice",
+        "options": ["どんな", "どう", "どこ", "なに"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0907",
+        "prompt": "えいごが （　　） わかりません。(hoàn toàn không)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "ぜんぜん + phủ định.",
+        "type": "choice",
+        "options": ["よく", "だいたい", "たくさん", "ぜんぜん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0908",
+        "prompt": "かんじが （　　） わかります。(hiểu rõ)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "よく わかります: hiểu rõ.",
+        "type": "choice",
+        "options": ["ぜんぜん", "あまり", "よく", "どうして"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0909",
+        "prompt": "おかねが （　　） あります。(nhiều)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Nhiều: たくさん.",
+        "type": "choice",
+        "options": ["ぜんぜん", "たくさん", "あまり", "どんな"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0910",
+        "prompt": "にほんごが （　　） わかりません。(không hiểu lắm)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "あまり + phủ định: không … lắm.",
+        "type": "choice",
+        "options": ["あまり", "よく", "たくさん", "だいたい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0911",
+        "prompt": "（　　） にほんごを べんきょうしますか。…にほんの かいしゃで はたらきますから。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Hỏi lý do: どうして.",
+        "type": "choice",
+        "options": ["どんな", "どう", "いつ", "どうして"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0912",
+        "prompt": "じかんが ありません（　　）、いきません。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Lý do + から.",
+        "type": "choice",
+        "options": ["が", "まで", "から", "と"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0913",
+        "prompt": "Chọn câu đúng: Vì có việc bận nên tôi về sớm.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Lý do + から đứng trước kết quả.",
+        "type": "choice",
+        "options": [
+          "はやく かえりますから、ようじが あります。",
+          "ようじが ありますから、はやく かえります。",
+          "ようじが ありますが、はやく かえります。",
+          "ようじを ありますから、はやく かえります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0914",
+        "prompt": "じょうず ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "じょうず (giỏi) ↔ へた (kém).",
+        "type": "choice",
+        "options": ["へた", "きらい", "すき", "ひま"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0915",
+        "prompt": "すき ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "すき (thích) ↔ きらい (ghét).",
+        "type": "choice",
+        "options": ["へた", "じょうず", "いや", "きらい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0916",
+        "prompt": "Khi được khen \"giỏi tiếng Nhật quá\", bạn khiêm tốn đáp:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Khiêm tốn: いいえ、まだ へたです.",
+        "type": "choice",
+        "options": [
+          "はい、じょうずです。",
+          "ええ、すきです。",
+          "いいえ、まだ へたです。",
+          "いいえ、きらいです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0917",
+        "prompt": "りょこう nghĩa là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "りょこう (旅行): du lịch.",
+        "type": "choice",
+        "options": ["âm nhạc", "du lịch", "mua sắm", "thể thao"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0918",
+        "prompt": "かいもの nghĩa là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "かいもの (買い物): mua sắm.",
+        "type": "choice",
+        "options": ["mua sắm", "nấu ăn", "đồ uống", "bài hát"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0919",
+        "prompt": "やくそく nghĩa là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "やくそく (約束): cuộc hẹn.",
+        "type": "choice",
+        "options": ["việc làm thêm", "thời gian", "việc bận", "cuộc hẹn, lời hứa"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0920",
+        "prompt": "アルバイト nghĩa là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "アルバイト: việc làm thêm.",
+        "type": "choice",
+        "options": ["cuộc hẹn", "kỳ nghỉ", "việc làm thêm", "du lịch"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0921",
+        "prompt": "こまかい おかね là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "こまかい おかね: tiền lẻ.",
+        "type": "choice",
+        "options": ["tiền nhiều", "tiền lẻ", "tiền Nhật", "thẻ ngân hàng"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0922",
+        "prompt": "Nói về vợ mình với người ngoài:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Vợ mình: つま; vợ người khác: おくさん.",
+        "type": "choice",
+        "options": ["つま", "おくさん", "ごしゅじん", "おっと"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0923",
+        "prompt": "Hỏi về chồng của người khác:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Chồng người khác: ごしゅじん; chồng mình: おっと.",
+        "type": "choice",
+        "options": ["おっと", "つま", "こども", "ごしゅじん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0924",
+        "prompt": "Bạn mời, người kia từ chối. Bạn nói \"Tiếc quá nhỉ\":",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Tiếc quá: ざんねんですね.",
+        "type": "choice",
+        "options": ["だめですか。", "いいですね。", "ざんねんですね。", "すてきですね。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0925",
+        "prompt": "Từ chối lời mời và hẹn lần sau:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Hẹn lần sau: また こんど おねがいします.",
+        "type": "choice",
+        "options": [
+          "いいえ、けっこうです。",
+          "また こんど おねがいします。",
+          "そろそろ しつれいします。",
+          "どういたしまして。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0926",
+        "prompt": "Chọn câu đúng: Tôi không thích chó lắm.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "あまり + phủ định; すき đi với が.",
+        "type": "choice",
+        "options": [
+          "いぬが あまり すきじゃ ありません。",
+          "いぬが あまり すきです。",
+          "いぬを あまり すきじゃ ありません。",
+          "いぬが ぜんぜん すきです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0927",
+        "prompt": "Chọn câu đúng: Hôm nay tôi không có thời gian.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "あります → ありません; đi với が.",
+        "type": "choice",
+        "options": [
+          "きょうは じかんを ありません。",
+          "きょうは じかんが ありませんでした。",
+          "きょうは じかんが いません。",
+          "きょうは じかんが ありません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0928",
+        "prompt": "Hỏi lý do: Tại sao hôm qua bạn không đến?",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Hỏi lý do việc đã qua: どうして … ませんでしたか.",
+        "type": "choice",
+        "options": [
+          "どうして きのう きますか。",
+          "どんな きのう きませんでしたか。",
+          "どうして きのう きませんでしたか。",
+          "どう きのう きませんでしたか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0929",
+        "prompt": "どうして ですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Trả lời lý do: 〜から.",
+        "type": "choice",
+        "options": [
+          "ようじが ありますが",
+          "ようじが ありますから",
+          "ようじを ありますから",
+          "ようじから あります"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0930",
+        "prompt": "かたかな là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "かたかな: chữ katakana.",
+        "type": "choice",
+        "options": ["chữ katakana", "chữ hiragana", "chữ Hán", "chữ Latinh"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0931",
+        "prompt": "Chọn câu đúng: Tôi hiểu đại khái chữ hiragana.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "だいたい わかります: hiểu đại khái.",
+        "type": "choice",
+        "options": [
+          "ひらがなを だいたい わかります。",
+          "ひらがなが だいたい わかりません。",
+          "ひらがなが ぜんぜん わかります。",
+          "ひらがなが だいたい わかります。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0932",
+        "prompt": "Chọn câu đúng: Linh vẽ tranh giỏi.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "N が じょうずです.",
+        "type": "choice",
+        "options": [
+          "リンさんは えを じょうずです。",
+          "リンさんは えが へたです。",
+          "リンさんは えが じょうずです。",
+          "リンさんの えは じょうずじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0933",
+        "prompt": "どんな のみものが すきですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Trả lời bằng tên cụ thể: おちゃが すきです.",
+        "type": "choice",
+        "options": ["はい、すきです", "おちゃが すきです", "どうですか", "のみものです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0934",
+        "prompt": "こども là:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "こども (子ども): con, trẻ em.",
+        "type": "choice",
+        "options": ["con, trẻ em", "vợ", "chồng", "bạn bè"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0935",
+        "prompt": "Chọn câu đúng: Vì hôm qua có hẹn nên tôi đã không đi.",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Lý do (quá khứ) + から + kết quả.",
+        "type": "choice",
+        "options": [
+          "きのう やくそくが ありますから、いきませんでした。",
+          "きのう いきませんでしたから、やくそくが ありました。",
+          "きのう やくそくを ありましたから、いきませんでした。",
+          "きのう やくそくが ありましたから、いきませんでした。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0936",
+        "prompt": "Bạn bè mời đi karaoke tối nay nhưng bạn bận. Câu trả lời tự nhiên:",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Từ chối nhẹ: ちょっと….",
+        "type": "choice",
+        "options": [
+          "ええ、いいですね。",
+          "はい、だめです。",
+          "すみません、きょうは ちょっと…。",
+          "いいえ、すきです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0937",
+        "prompt": "Điền trợ từ: にほんご（　　） わかります。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "わかります đi với が.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["が"]
+      },
+      {
+        "id": "q0938",
+        "prompt": "Điền trợ từ: いぬ（　　） すきです。",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "すきです đi với が.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["が"]
+      },
+      {
+        "id": "q0939",
+        "prompt": "Điền: （　　） スポーツが すきですか。(loại nào)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "どんな + danh từ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どんな"]
+      },
+      {
+        "id": "q0940",
+        "prompt": "Điền: えいごが （　　） わかりません。(hoàn toàn không)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "ぜんぜん + phủ định.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ぜんぜん"]
+      },
+      {
+        "id": "q0941",
+        "prompt": "Điền: かんじが （　　） わかります。(một chút)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Một chút: すこし.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["すこし"]
+      },
+      {
+        "id": "q0942",
+        "prompt": "Điền: （　　） いきませんか。…ようじが ありますから。(tại sao)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Tại sao: どうして.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どうして"]
+      },
+      {
+        "id": "q0943",
+        "prompt": "Điền: じかんが ありません（　　）、いきません。(vì)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Lý do + から.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["から"]
+      },
+      {
+        "id": "q0944",
+        "prompt": "Điền phủ định: すきです → すき（　　）",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "すき là tính từ đuôi な: じゃ ありません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じゃありません", "ではありません"]
+      },
+      {
+        "id": "q0945",
+        "prompt": "Điền: ナムさんは りょうりが （　　）です。(giỏi)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Giỏi: じょうず.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じょうず"]
+      },
+      {
+        "id": "q0946",
+        "prompt": "Điền: わたしは まだ （　　）です。(kém)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Kém: へた.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["へた"]
+      },
+      {
+        "id": "q0947",
+        "prompt": "Điền: きょうは じかんが （　　）。(không có)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Không có: ありません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ありません"]
+      },
+      {
+        "id": "q0948",
+        "prompt": "Điền: （　　）ですね。(tiếc quá nhỉ)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Tiếc quá: ざんねんですね.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ざんねん"]
+      },
+      {
+        "id": "q0949",
+        "prompt": "Điền: おかねが （　　） あります。(nhiều)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Nhiều: たくさん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たくさん"]
+      },
+      {
+        "id": "q0950",
+        "prompt": "Điền: また （　　） おねがいします。(lần sau)",
+        "points": 1,
+        "tags": ["minna-9"],
+        "explain": "Lần sau: こんど.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["こんど"]
+      }
+    ]
+  }
+}
