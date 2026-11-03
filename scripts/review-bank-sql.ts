@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 
 import { parseAssignableQuestion } from "../lib/assignment";
 import { lessonDraftSchema } from "../lib/lesson-schema";
+import { BANK_LANGUAGES, findBankLanguageProblems } from "../lib/review-bank";
 
 // Writes one SQL transaction that publishes a review bank as the next version of its existing
 // lesson and moves the owner's classes that use the bank to that version. Nothing is sent to a
@@ -24,12 +25,21 @@ async function main() {
       file: { type: "string" },
       out: { type: "string" },
       commit: { type: "boolean", default: false },
+      language: { type: "string", default: "ja-JP" },
     },
   });
   if (!values.file || !values.out) {
     throw new Error("Provide --file path/to/bank.json and --out path/to/file.sql.");
   }
+  const language = BANK_LANGUAGES.find((item) => item === values.language);
+  if (!language) {
+    throw new Error(`--language must be one of ${BANK_LANGUAGES.join(", ")}.`);
+  }
   const bank = lessonDraftSchema.parse(JSON.parse(await readFile(resolve(values.file), "utf8")));
+  const problems = findBankLanguageProblems(bank.content, language);
+  if (problems.length) {
+    throw new Error(`The bank does not fit ${language}:\n${problems.slice(0, 10).join("\n")}`);
+  }
   // A question the classroom cannot assign would stay out of every daily set.
   bank.content.questions.forEach((question) => parseAssignableQuestion(question));
   const content = JSON.stringify(bank.content);
