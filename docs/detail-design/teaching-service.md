@@ -163,7 +163,7 @@ Bài mẫu (`lib/starter-lessons.ts`, JSON trong `content/starters/`) được t
 
 Bổ sung 02/11/2026: `minna-1-13` đăng ký sau bài 12 trong `STARTER_LESSONS`, dùng nguyên luồng sao chép nháp và cập nhật từ mẫu. JSON schema v1 gồm 46 từ, 5 ngữ pháp, 41 slide, 50 câu choice/fill; không đổi RPC, schema hoặc bản bài đã tạo.
 
-Bổ sung 03/11/2026: `minna-1-03` đăng ký sau bài 2 (52 từ, 5 ngữ pháp, 39 slide, 50 câu). Đo slide trong deck 1280×720 thì thấy năm dòng hội thoại ở cỡ chữ đầy đủ đã tràn mép dưới, và bảy, tám dòng ở bố cục gọn cũng tràn (schema cho tối đa 8 lượt). `DialogueSlide` (`components/slides/slide-content.tsx`) nay chuyển sang bố cục gọn khi ước tính hơn 4 dòng (`COMPACT_DIALOGUE_ROWS`) và bố cục dày (`is-dense`, `app/lesson-visuals.css`) khi hơn 6 dòng (`DENSE_DIALOGUE_ROWS`). Áp dụng cho cả bài giáo viên tự soạn.
+Bổ sung 03/11/2026: `minna-1-03` đăng ký sau bài 2 (52 từ, 5 ngữ pháp, 39 slide, 50 câu). Đo slide trong deck 1280×720 thì thấy năm dòng hội thoại ở cỡ chữ đầy đủ đã tràn mép dưới, và bảy, tám dòng ở bố cục gọn cũng tràn (schema cho tối đa 8 lượt). `DialogueSlide` (`components/slides/slide-content.tsx`) nay chuyển sang bố cục gọn khi ước tính hơn 4 dòng (`COMPACT_DIALOGUE_ROWS`) và bố cục dày (`is-dense`, `app/lesson-visuals.css`) khi hơn 6 dòng (`DENSE_DIALOGUE_ROWS`). Áp dụng cho cả bài giáo viên tự soạn. `minna-1-04` (48 từ, 5 ngữ pháp, 38 slide, 50 câu) đăng ký sau bài 3. Bảng 8 hàng ở cỡ đầy đủ cũng tràn (733 px), nên `COMPACT_TABLE_ROWS` đổi từ 8 xuống 7. Đo trong deck, hàng đầy đủ cao khoảng 62 px, hàng gọn khoảng 44 px, nên bảng 12 hàng (tối đa) vẫn vừa.
 
 ### Bài luyện hằng ngày — đã triển khai
 

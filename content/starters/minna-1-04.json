@@ -1,0 +1,1556 @@
+{
+  "id": "minna-1-04",
+  "title": "Bài 4 – Giờ giấc và sinh hoạt hằng ngày",
+  "titleJa": "第4課　いま なんじですか",
+  "summary": "Theo trình tự bài 4 Minna no Nihongo Sơ cấp I: hỏi và nói giờ 〜じ〜ふん, động từ thể ます ở hiện tại, phủ định, quá khứ và phủ định quá khứ (〜ます・〜ません・〜ました・〜ませんでした), thời điểm 〜に, khoảng thời gian 〜から〜まで, nối danh từ bằng と, thứ trong tuần và giờ mở cửa.",
+  "order": 4,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0401",
+        "jp": "おきます",
+        "kanji": "起きます",
+        "romaji": "okimasu",
+        "vi": "thức dậy",
+        "audio": null,
+        "image": "/icons/vocab/alarm-clock.svg"
+      },
+      {
+        "id": "v0402",
+        "jp": "ねます",
+        "kanji": "寝ます",
+        "romaji": "nemasu",
+        "vi": "đi ngủ",
+        "audio": null,
+        "image": "/icons/vocab/sleeping-face.svg"
+      },
+      {
+        "id": "v0403",
+        "jp": "はたらきます",
+        "kanji": "働きます",
+        "romaji": "hatarakimasu",
+        "vi": "làm việc",
+        "audio": null,
+        "image": "/icons/vocab/man-office-worker.svg"
+      },
+      {
+        "id": "v0404",
+        "jp": "やすみます",
+        "kanji": "休みます",
+        "romaji": "yasumimasu",
+        "vi": "nghỉ, nghỉ ngơi",
+        "audio": null
+      },
+      {
+        "id": "v0405",
+        "jp": "べんきょうします",
+        "kanji": "勉強します",
+        "romaji": "benkyou shimasu",
+        "vi": "học",
+        "audio": null,
+        "image": "/icons/vocab/writing-hand.svg"
+      },
+      {
+        "id": "v0406",
+        "jp": "はじまります",
+        "kanji": "始まります",
+        "romaji": "hajimarimasu",
+        "vi": "bắt đầu",
+        "audio": null
+      },
+      {
+        "id": "v0407",
+        "jp": "おわります",
+        "kanji": "終わります",
+        "romaji": "owarimasu",
+        "vi": "kết thúc, xong",
+        "audio": null
+      },
+      {
+        "id": "v0408",
+        "jp": "たいへんですね",
+        "kanji": "大変ですね",
+        "romaji": "taihen desu ne",
+        "vi": "vất vả quá nhỉ",
+        "audio": null
+      },
+      {
+        "id": "v0409",
+        "jp": "いま",
+        "kanji": "今",
+        "romaji": "ima",
+        "vi": "bây giờ",
+        "audio": null
+      },
+      {
+        "id": "v0410",
+        "jp": "〜じ",
+        "kanji": "〜時",
+        "romaji": "~ji",
+        "vi": "… giờ",
+        "audio": null
+      },
+      {
+        "id": "v0411",
+        "jp": "〜ふん／〜ぷん",
+        "kanji": "〜分",
+        "romaji": "~fun / ~pun",
+        "vi": "… phút",
+        "audio": null
+      },
+      {
+        "id": "v0412",
+        "jp": "はん",
+        "kanji": "半",
+        "romaji": "han",
+        "vi": "rưỡi (30 phút)",
+        "audio": null
+      },
+      {
+        "id": "v0413",
+        "jp": "なんじ",
+        "kanji": "何時",
+        "romaji": "nanji",
+        "vi": "mấy giờ",
+        "audio": null
+      },
+      {
+        "id": "v0414",
+        "jp": "なんぷん",
+        "kanji": "何分",
+        "romaji": "nanpun",
+        "vi": "mấy phút",
+        "audio": null
+      },
+      {
+        "id": "v0415",
+        "jp": "ごぜん",
+        "kanji": "午前",
+        "romaji": "gozen",
+        "vi": "buổi sáng (trước 12 giờ trưa)",
+        "audio": null
+      },
+      {
+        "id": "v0416",
+        "jp": "ごご",
+        "kanji": "午後",
+        "romaji": "gogo",
+        "vi": "buổi chiều (sau 12 giờ trưa)",
+        "audio": null
+      },
+      {
+        "id": "v0417",
+        "jp": "あさ",
+        "kanji": "朝",
+        "romaji": "asa",
+        "vi": "buổi sáng",
+        "audio": null,
+        "image": "/icons/vocab/sun.svg"
+      },
+      {
+        "id": "v0418",
+        "jp": "ひる",
+        "kanji": "昼",
+        "romaji": "hiru",
+        "vi": "buổi trưa",
+        "audio": null
+      },
+      {
+        "id": "v0419",
+        "jp": "ばん",
+        "kanji": "晩",
+        "romaji": "ban",
+        "vi": "buổi tối",
+        "audio": null
+      },
+      {
+        "id": "v0420",
+        "jp": "きのう",
+        "kanji": "昨日",
+        "romaji": "kinou",
+        "vi": "hôm qua",
+        "audio": null
+      },
+      {
+        "id": "v0421",
+        "jp": "きょう",
+        "kanji": "今日",
+        "romaji": "kyou",
+        "vi": "hôm nay",
+        "audio": null
+      },
+      {
+        "id": "v0422",
+        "jp": "あした",
+        "kanji": "明日",
+        "romaji": "ashita",
+        "vi": "ngày mai",
+        "audio": null
+      },
+      {
+        "id": "v0423",
+        "jp": "けさ",
+        "kanji": "今朝",
+        "romaji": "kesa",
+        "vi": "sáng nay",
+        "audio": null
+      },
+      {
+        "id": "v0424",
+        "jp": "こんばん",
+        "kanji": "今晩",
+        "romaji": "konban",
+        "vi": "tối nay",
+        "audio": null
+      },
+      {
+        "id": "v0425",
+        "jp": "まいあさ",
+        "kanji": "毎朝",
+        "romaji": "maiasa",
+        "vi": "mỗi sáng",
+        "audio": null
+      },
+      {
+        "id": "v0426",
+        "jp": "まいばん",
+        "kanji": "毎晩",
+        "romaji": "maiban",
+        "vi": "mỗi tối",
+        "audio": null
+      },
+      {
+        "id": "v0427",
+        "jp": "まいにち",
+        "kanji": "毎日",
+        "romaji": "mainichi",
+        "vi": "mỗi ngày",
+        "audio": null,
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v0428",
+        "jp": "やすみ",
+        "kanji": "休み",
+        "romaji": "yasumi",
+        "vi": "ngày nghỉ, giờ nghỉ",
+        "audio": null
+      },
+      {
+        "id": "v0429",
+        "jp": "ひるやすみ",
+        "kanji": "昼休み",
+        "romaji": "hiruyasumi",
+        "vi": "nghỉ trưa",
+        "audio": null
+      },
+      {
+        "id": "v0430",
+        "jp": "しけん",
+        "kanji": "試験",
+        "romaji": "shiken",
+        "vi": "kỳ thi, bài thi",
+        "audio": null,
+        "image": "/icons/vocab/memo.svg"
+      },
+      {
+        "id": "v0431",
+        "jp": "かいぎ",
+        "kanji": "会議",
+        "romaji": "kaigi",
+        "vi": "cuộc họp",
+        "audio": null,
+        "image": "/icons/vocab/speech-balloon.svg"
+      },
+      {
+        "id": "v0432",
+        "jp": "えいが",
+        "kanji": "映画",
+        "romaji": "eiga",
+        "vi": "phim",
+        "audio": null,
+        "image": "/icons/vocab/clapper-board.svg"
+      },
+      {
+        "id": "v0433",
+        "jp": "げつようび",
+        "kanji": "月曜日",
+        "romaji": "getsuyoubi",
+        "vi": "thứ Hai",
+        "audio": null
+      },
+      {
+        "id": "v0434",
+        "jp": "かようび",
+        "kanji": "火曜日",
+        "romaji": "kayoubi",
+        "vi": "thứ Ba",
+        "audio": null
+      },
+      {
+        "id": "v0435",
+        "jp": "すいようび",
+        "kanji": "水曜日",
+        "romaji": "suiyoubi",
+        "vi": "thứ Tư",
+        "audio": null
+      },
+      {
+        "id": "v0436",
+        "jp": "もくようび",
+        "kanji": "木曜日",
+        "romaji": "mokuyoubi",
+        "vi": "thứ Năm",
+        "audio": null
+      },
+      {
+        "id": "v0437",
+        "jp": "きんようび",
+        "kanji": "金曜日",
+        "romaji": "kin'youbi",
+        "vi": "thứ Sáu",
+        "audio": null
+      },
+      {
+        "id": "v0438",
+        "jp": "どようび",
+        "kanji": "土曜日",
+        "romaji": "doyoubi",
+        "vi": "thứ Bảy",
+        "audio": null
+      },
+      {
+        "id": "v0439",
+        "jp": "にちようび",
+        "kanji": "日曜日",
+        "romaji": "nichiyoubi",
+        "vi": "Chủ nhật",
+        "audio": null
+      },
+      {
+        "id": "v0440",
+        "jp": "なんようび",
+        "kanji": "何曜日",
+        "romaji": "nan'youbi",
+        "vi": "thứ mấy",
+        "audio": null
+      },
+      {
+        "id": "v0441",
+        "jp": "ゆうびんきょく",
+        "kanji": "郵便局",
+        "romaji": "yuubinkyoku",
+        "vi": "bưu điện",
+        "audio": null,
+        "image": "/icons/vocab/post-office.svg"
+      },
+      {
+        "id": "v0442",
+        "jp": "としょかん",
+        "kanji": "図書館",
+        "romaji": "toshokan",
+        "vi": "thư viện",
+        "audio": null,
+        "image": "/icons/vocab/books.svg"
+      },
+      {
+        "id": "v0443",
+        "jp": "びじゅつかん",
+        "kanji": "美術館",
+        "romaji": "bijutsukan",
+        "vi": "bảo tàng mỹ thuật",
+        "audio": null,
+        "image": "/icons/vocab/classical-building.svg"
+      },
+      {
+        "id": "v0444",
+        "jp": "ばんごう",
+        "kanji": "番号",
+        "romaji": "bangou",
+        "vi": "số (điện thoại, phòng)",
+        "audio": null,
+        "image": "/icons/vocab/mobile-phone.svg"
+      },
+      {
+        "id": "v0445",
+        "jp": "なんばん",
+        "kanji": "何番",
+        "romaji": "nanban",
+        "vi": "số mấy",
+        "audio": null
+      },
+      {
+        "id": "v0446",
+        "jp": "〜から",
+        "romaji": "~kara",
+        "vi": "từ …",
+        "audio": null
+      },
+      {
+        "id": "v0447",
+        "jp": "〜まで",
+        "romaji": "~made",
+        "vi": "đến …",
+        "audio": null
+      },
+      {
+        "id": "v0448",
+        "jp": "〜と 〜",
+        "romaji": "~to ~",
+        "vi": "… và … (nối hai danh từ)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0401",
+        "pattern": "いま 〜じ 〜ふん です",
+        "vi": "Bây giờ là … giờ … phút",
+        "explain": "Giờ: số + {時|じ}; phút: số + {分|ふん} hoặc {分|ぷん} tùy số. 30 phút nói {半|はん}. Hỏi: いま {何時|なんじ}ですか. Có thể thêm {午前|ごぜん} (sáng) hoặc {午後|ごご} (chiều) trước giờ.",
+        "viMistake": "4 giờ là よじ (không nói よんじ), 9 giờ là くじ, 7 giờ là しちじ. Phút: 1 いっぷん, 3 さんぷん, 6 ろっぷん, 8 はっぷん, 10 じゅっぷん.",
+        "examples": [
+          {
+            "jp": "いま {何時|なんじ}ですか。…9{時|じ}{半|はん}です。",
+            "vi": "Bây giờ là mấy giờ? … 9 giờ rưỡi.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイは いま {午後|ごご}3{時|じ}です。",
+            "vi": "Ở Hà Nội bây giờ là 3 giờ chiều.",
+            "audio": null
+          },
+          {
+            "jp": "{東京|とうきょう}は いま {午後|ごご}5{時|じ}10{分|ぷん}です。",
+            "vi": "Ở Tokyo bây giờ là 5 giờ 10 phút chiều.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0402",
+        "pattern": "V ます／V ません",
+        "vi": "Làm / không làm (thói quen, việc sẽ làm)",
+        "explain": "Động từ thể ます nói thói quen hoặc việc sẽ làm. Phủ định: ます → ません. Hỏi: V ますか → はい、V ます／いいえ、V ません.",
+        "viMistake": "Câu hỏi có động từ thì trả lời bằng động từ: はい、{働|はたら}きます, không trả lời はい、そうです.",
+        "examples": [
+          {
+            "jp": "{毎日|まいにち} {勉強|べんきょう}します。",
+            "vi": "Ngày nào tôi cũng học.",
+            "audio": null
+          },
+          {
+            "jp": "あした {働|はたら}きますか。…いいえ、{働|はたら}きません。",
+            "vi": "Ngày mai bạn có làm việc không? … Không, tôi không làm.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび} {休|やす}みます。",
+            "vi": "Chủ nhật tôi nghỉ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0403",
+        "pattern": "V ました／V ませんでした",
+        "vi": "Đã làm / đã không làm (quá khứ)",
+        "explain": "Quá khứ: ます → ました. Phủ định quá khứ: ません → ませんでした. Dùng với từ chỉ quá khứ như きのう, けさ.",
+        "viMistake": "Có きのう, けさ thì động từ phải ở dạng ました／ませんでした, không dùng ます.",
+        "examples": [
+          {
+            "jp": "きのう {勉強|べんきょう}しました。",
+            "vi": "Hôm qua tôi đã học.",
+            "audio": null
+          },
+          {
+            "jp": "きのう {働|はたら}きましたか。…いいえ、{働|はたら}きませんでした。",
+            "vi": "Hôm qua bạn có làm việc không? … Không, tôi đã không làm.",
+            "audio": null
+          },
+          {
+            "jp": "{試験|しけん}は きのう {終|お}わりました。",
+            "vi": "Kỳ thi đã kết thúc hôm qua.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0404",
+        "pattern": "〜じ に V ます",
+        "vi": "Làm V lúc … giờ",
+        "explain": "Thời điểm có số (giờ, thứ, ngày) + に + động từ. Từ chỉ thời gian tương đối như きょう, あした, まいあさ, いま không đi với に.",
+        "viMistake": "Không nói あしたに, まいにちに, いまに. Chỉ thời điểm có số như 6{時|じ}に mới thêm に.",
+        "examples": [
+          {
+            "jp": "{毎朝|まいあさ} 6{時|じ}に {起|お}きます。",
+            "vi": "Mỗi sáng tôi dậy lúc 6 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{毎晩|まいばん} 11{時|じ}に {寝|ね}ます。",
+            "vi": "Mỗi tối tôi đi ngủ lúc 11 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}は 2{時|じ}に {始|はじ}まります。",
+            "vi": "Cuộc họp bắt đầu lúc 2 giờ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0405",
+        "pattern": "N1 から N2 まで",
+        "vi": "Từ N1 đến N2",
+        "explain": "から (từ) và まで (đến) đứng sau mốc thời gian. Giờ mở cửa: N は 〜から 〜までです. Hai danh từ nối bằng と: {土曜日|どようび}と {日曜日|にちようび}.",
+        "viMistake": "Thứ tự ngược tiếng Việt: \"từ 9 giờ\" là 9{時|じ}から, \"đến 5 giờ\" là 5{時|じ}まで.",
+        "examples": [
+          {
+            "jp": "9{時|じ}から 5{時|じ}まで {働|はたら}きます。",
+            "vi": "Tôi làm việc từ 9 giờ đến 5 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{郵便局|ゆうびんきょく}は {何時|なんじ}から {何時|なんじ}までですか。…8{時|じ}から 7{時|じ}までです。",
+            "vi": "Bưu điện mở cửa từ mấy giờ đến mấy giờ? … Từ 8 giờ đến 7 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{休|やす}みは {土曜日|どようび}と {日曜日|にちようび}です。",
+            "vi": "Ngày nghỉ là thứ Bảy và Chủ nhật.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0401",
+        "teacherNotes": "Khởi động: chỉ đồng hồ trong lớp và hỏi bằng tiếng Việt \"bây giờ mấy giờ?\", \"mỗi sáng mấy giờ bạn dậy?\". Bài đi theo trình tự bài 4 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}4{課|か}",
+        "vi": "Giờ giấc và sinh hoạt: いま なんじですか"
+      },
+      {
+        "id": "s0402",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Hỏi và nói giờ: いま なんじですか\n2. Nói thói quen và việc sẽ làm: V ます／V ません\n3. Kể việc đã làm: V ました／V ませんでした\n4. Thời điểm 〜じに, khoảng thời gian 〜から 〜まで, thứ trong tuần"
+      },
+      {
+        "id": "s0403",
+        "teacherNotes": "Diễn tả bằng động tác: vươn vai (おきます), ngả đầu (ねます), gõ bàn phím (はたらきます).",
+        "type": "vocab",
+        "refs": ["v0401", "v0402", "v0403", "v0404", "v0405", "v0406", "v0407", "v0408"]
+      },
+      {
+        "id": "s0404",
+        "teacherNotes": "Quay kim đồng hồ giấy và cho học viên đọc giờ.",
+        "type": "vocab",
+        "refs": ["v0409", "v0410", "v0411", "v0412", "v0413", "v0414", "v0415", "v0416"]
+      },
+      {
+        "id": "s0405",
+        "teacherNotes": "ごぜん／ごご đứng trước giờ: ごぜん 9じ, ごご 3じ.",
+        "type": "vocab",
+        "refs": ["v0417", "v0418", "v0419", "v0420", "v0421", "v0422", "v0423", "v0424"]
+      },
+      {
+        "id": "s0406",
+        "teacherNotes": "毎 + thời điểm = mỗi …: まいあさ, まいばん, まいにち.",
+        "type": "vocab",
+        "refs": ["v0425", "v0426", "v0427", "v0428", "v0429", "v0430", "v0431", "v0432"]
+      },
+      {
+        "id": "s0407",
+        "teacherNotes": "Thứ trong tuần: học theo nhóm ngày (月 trăng, 火 lửa, 水 nước, 木 cây, 金 vàng, 土 đất, 日 mặt trời).",
+        "type": "vocab",
+        "refs": ["v0433", "v0434", "v0435", "v0436", "v0437", "v0438", "v0439", "v0440"]
+      },
+      {
+        "id": "s0408",
+        "teacherNotes": "Số điện thoại đọc từng chữ số; số 0 đọc ゼロ hoặc れい.",
+        "type": "vocab",
+        "refs": ["v0441", "v0442", "v0443", "v0444", "v0445", "v0446", "v0447", "v0448"]
+      },
+      {
+        "id": "s0409",
+        "teacherNotes": "Học viên đọc giờ trước rồi bấm mũi tên để kiểm tra. Nhấn mạnh 4時, 7時, 9時.",
+        "type": "table",
+        "title": "Đọc giờ",
+        "columns": ["Giờ", "Cách đọc"],
+        "rows": [
+          ["1時", "いちじ"],
+          ["4時", "よじ"],
+          ["7時", "しちじ"],
+          ["9時", "くじ"],
+          ["10時", "じゅうじ"],
+          ["12時", "じゅうにじ"],
+          ["6時半", "ろくじ はん"],
+          ["何時", "なんじ"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0410",
+        "teacherNotes": "ふん hay ぷん tùy số: 1, 3, 4, 6, 8, 10 dùng ぷん.",
+        "type": "table",
+        "title": "Đọc phút",
+        "columns": ["Phút", "Cách đọc"],
+        "rows": [
+          ["1分", "いっぷん"],
+          ["2分", "にふん"],
+          ["3分", "さんぷん"],
+          ["4分", "よんぷん"],
+          ["5分", "ごふん"],
+          ["6分", "ろっぷん"],
+          ["8分", "はっぷん"],
+          ["10分", "じゅっぷん"],
+          ["15分", "じゅうごふん"],
+          ["何分", "なんぷん"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0411",
+        "teacherNotes": "Vẽ đồng hồ lên bảng, chỉnh kim và hỏi いま なんじですか.",
+        "type": "grammar",
+        "ref": "g0401"
+      },
+      {
+        "id": "s0412",
+        "type": "example",
+        "ref": "g0401",
+        "reveal": true
+      },
+      {
+        "id": "s0413",
+        "teacherNotes": "Gọi từng học viên nói giờ trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: mấy giờ?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["いま・8:15", "いま 8{時|じ}15{分|ふん}です。"],
+          ["いま・4:30", "いま 4{時|じ}{半|はん}です。"],
+          ["ハノイ・ごご 2:00", "ハノイは いま {午後|ごご}2{時|じ}です。"],
+          ["{東京|とうきょう}・ごご 4:00", "{東京|とうきょう}は いま {午後|ごご}4{時|じ}です。"],
+          ["いま・9:10", "いま 9{時|じ}10{分|ぷん}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0414",
+        "type": "quiz",
+        "ref": "q0401"
+      },
+      {
+        "id": "s0415",
+        "type": "quiz",
+        "ref": "q0402"
+      },
+      {
+        "id": "s0416",
+        "teacherNotes": "Đọc theo hàng ngang: hiện tại → phủ định → quá khứ → phủ định quá khứ.",
+        "type": "table",
+        "title": "Bốn dạng của động từ ます",
+        "columns": ["Làm", "Không làm", "Đã làm", "Đã không làm"],
+        "rows": [
+          ["{起|お}きます", "{起|お}きません", "{起|お}きました", "{起|お}きませんでした"],
+          [
+            "{働|はたら}きます",
+            "{働|はたら}きません",
+            "{働|はたら}きました",
+            "{働|はたら}きませんでした"
+          ],
+          ["{休|やす}みます", "{休|やす}みません", "{休|やす}みました", "{休|やす}みませんでした"],
+          [
+            "{勉強|べんきょう}します",
+            "{勉強|べんきょう}しません",
+            "{勉強|べんきょう}しました",
+            "{勉強|べんきょう}しませんでした"
+          ]
+        ]
+      },
+      {
+        "id": "s0417",
+        "teacherNotes": "Hỏi từng học viên: あした はたらきますか／べんきょうしますか.",
+        "type": "grammar",
+        "ref": "g0402"
+      },
+      {
+        "id": "s0418",
+        "type": "example",
+        "ref": "g0402",
+        "reveal": true
+      },
+      {
+        "id": "s0419",
+        "teacherNotes": "Hỏi về hôm qua: きのう はたらきましたか. Học viên trả lời thật.",
+        "type": "grammar",
+        "ref": "g0403"
+      },
+      {
+        "id": "s0420",
+        "type": "example",
+        "ref": "g0403",
+        "reveal": true
+      },
+      {
+        "id": "s0421",
+        "type": "quiz",
+        "ref": "q0409"
+      },
+      {
+        "id": "s0422",
+        "type": "quiz",
+        "ref": "q0410"
+      },
+      {
+        "id": "s0423",
+        "teacherNotes": "Viết lên bảng: 6じに ○, あしたに ×. Cho học viên tự đặt câu về giờ dậy, giờ ngủ.",
+        "type": "grammar",
+        "ref": "g0404"
+      },
+      {
+        "id": "s0424",
+        "type": "example",
+        "ref": "g0404",
+        "reveal": true
+      },
+      {
+        "id": "s0425",
+        "teacherNotes": "Học viên nói về mình trước, rồi bấm mũi tên để xem câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 2: thói quen hằng ngày",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{毎朝|まいあさ}・6:00・{起|お}きます", "{毎朝|まいあさ} 6{時|じ}に {起|お}きます。"],
+          ["{毎晩|まいばん}・11:00・{寝|ね}ます", "{毎晩|まいばん} 11{時|じ}に {寝|ね}ます。"],
+          [
+            "{会議|かいぎ}・2:00・{始|はじ}まります",
+            "{会議|かいぎ}は 2{時|じ}に {始|はじ}まります。"
+          ],
+          [
+            "{試験|しけん}・12:00・{終|お}わります",
+            "{試験|しけん}は 12{時|じ}に {終|お}わります。"
+          ],
+          ["きのう・10:30・{寝|ね}ました", "きのう 10{時|じ}{半|はん}に {寝|ね}ました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0426",
+        "type": "quiz",
+        "ref": "q0411"
+      },
+      {
+        "id": "s0427",
+        "type": "quiz",
+        "ref": "q0412"
+      },
+      {
+        "id": "s0428",
+        "teacherNotes": "Dán giờ mở cửa của vài nơi quen thuộc (ngân hàng, bưu điện, thư viện) lên bảng.",
+        "type": "grammar",
+        "ref": "g0405"
+      },
+      {
+        "id": "s0429",
+        "type": "example",
+        "ref": "g0405",
+        "reveal": true
+      },
+      {
+        "id": "s0430",
+        "teacherNotes": "Học viên đọc giờ mở cửa thành câu, rồi bấm mũi tên để kiểm tra.",
+        "type": "table",
+        "title": "Luyện tập 3: từ … đến …",
+        "columns": ["Nơi・giờ", "Câu mẫu"],
+        "rows": [
+          ["{銀行|ぎんこう}・9:00〜3:00", "{銀行|ぎんこう}は 9{時|じ}から 3{時|じ}までです。"],
+          [
+            "{図書館|としょかん}・9:00〜8:00",
+            "{図書館|としょかん}は 9{時|じ}から 8{時|じ}までです。"
+          ],
+          [
+            "{美術館|びじゅつかん}・10:00〜6:00",
+            "{美術館|びじゅつかん}は 10{時|じ}から 6{時|じ}までです。"
+          ],
+          [
+            "{昼休|ひるやす}み・12:00〜1:00",
+            "{昼休|ひるやす}みは 12{時|じ}から 1{時|じ}までです。"
+          ],
+          [
+            "{休|やす}み・{土曜日|どようび}・{日曜日|にちようび}",
+            "{休|やす}みは {土曜日|どようび}と {日曜日|にちようび}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0431",
+        "type": "quiz",
+        "ref": "q0413"
+      },
+      {
+        "id": "s0432",
+        "teacherNotes": "Học viên đóng vai gọi điện hỏi giờ mở cửa của nơi khác: ngân hàng, bảo tàng.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Thư viện mở cửa mấy giờ?",
+        "lines": [
+          {
+            "speaker": "{図書館|としょかん}",
+            "jp": "はい、みどり{図書館|としょかん}です。",
+            "vi": "Vâng, thư viện Midori xin nghe."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "すみません、そちらは {何時|なんじ}から {何時|なんじ}までですか。",
+            "vi": "Xin lỗi, thư viện mở cửa từ mấy giờ đến mấy giờ ạ?"
+          },
+          {
+            "speaker": "{図書館|としょかん}",
+            "jp": "9{時|じ}から 8{時|じ}までです。",
+            "vi": "Từ 9 giờ đến 8 giờ ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{休|やす}みは {何曜日|なんようび}ですか。",
+            "vi": "Ngày nghỉ là thứ mấy ạ?"
+          },
+          {
+            "speaker": "{図書館|としょかん}",
+            "jp": "{月曜日|げつようび}です。",
+            "vi": "Thứ Hai ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "どうも ありがとう ございました。",
+            "vi": "Cảm ơn anh nhiều."
+          }
+        ]
+      },
+      {
+        "id": "s0433",
+        "teacherNotes": "Học viên hỏi nhau giờ dậy, giờ ngủ thật của mình và phản ứng bằng たいへんですね.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Mỗi sáng mấy giờ bạn dậy?",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "リンさんは {毎朝|まいあさ} {何時|なんじ}に {起|お}きますか。",
+            "vi": "Linh mỗi sáng dậy lúc mấy giờ?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "6{時|じ}に {起|お}きます。アンさんは？",
+            "vi": "Mình dậy lúc 6 giờ. Còn An?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "5{時|じ}{半|はん}です。7{時|じ}から {働|はたら}きます。",
+            "vi": "Mình dậy lúc 5 giờ rưỡi. Mình làm việc từ 7 giờ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "{大変|たいへん}ですね。{毎晩|まいばん} {何時|なんじ}に {寝|ね}ますか。",
+            "vi": "Vất vả quá nhỉ. Mỗi tối bạn ngủ lúc mấy giờ?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "10{時|じ}に {寝|ね}ます。",
+            "vi": "Mình ngủ lúc 10 giờ."
+          }
+        ]
+      },
+      {
+        "id": "s0434",
+        "teacherNotes": "Đổi vai: học viên làm giáo viên hỏi bạn về việc học hôm qua.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Hôm qua em có học không?",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ナムさん、きのう {勉強|べんきょう}しましたか。",
+            "vi": "Nam, hôm qua em có học bài không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい、{勉強|べんきょう}しました。",
+            "vi": "Dạ, em có học ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "{何時|なんじ}から {何時|なんじ}まで {勉強|べんきょう}しましたか。",
+            "vi": "Em học từ mấy giờ đến mấy giờ?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "8{時|じ}から 10{時|じ}まで {勉強|べんきょう}しました。",
+            "vi": "Em học từ 8 giờ đến 10 giờ ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "そうですか。{試験|しけん}は {金曜日|きんようび}ですね。",
+            "vi": "Vậy à. Kỳ thi là thứ Sáu nhỉ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい、{金曜日|きんようび}です。",
+            "vi": "Vâng, thứ Sáu ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0435",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật về mình.",
+        "type": "table",
+        "title": "Luyện tập 4: hôm qua và ngày mai",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["きのう {働|はたら}きましたか。", "はい、{働|はたら}きました。"],
+          ["けさ {何時|なんじ}に {起|お}きましたか。", "7{時|じ}に {起|お}きました。"],
+          ["あした {勉強|べんきょう}しますか。", "はい、{勉強|べんきょう}します。"],
+          ["きのう {勉強|べんきょう}しましたか。", "いいえ、{勉強|べんきょう}しませんでした。"],
+          [
+            "{会社|かいしゃ}は {何時|なんじ}から {何時|なんじ}までですか。",
+            "9{時|じ}から 6{時|じ}までです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0436",
+        "type": "quiz",
+        "ref": "q0436"
+      },
+      {
+        "id": "s0437",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• いま なんじですか → 〜じ 〜ふん／〜ぷんです; 30 phút: はん\n• V ます／V ません (thói quen, việc sẽ làm)\n• V ました／V ませんでした (đã làm, đã không làm)\n• 〜じに V ます; あした, まいにち không có に\n• 〜から 〜まで; N1 と N2\n• Chú ý: よじ, しちじ, くじ; いっぷん, さんぷん, ろっぷん, はっぷん, じゅっぷん"
+      },
+      {
+        "id": "s0438",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết thời gian biểu một ngày của bạn bằng 5 câu: 〜じに おきます／ねます／はたらきます.\n3. Tìm giờ mở cửa của 3 nơi gần nhà và nói thành câu 〜から 〜までです."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0401",
+        "prompt": "いま （　　）ですか。…3じです。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Hỏi giờ: なんじ.",
+        "type": "choice",
+        "options": ["なんぷん", "なんじ", "なんようび", "いくら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0402",
+        "prompt": "4時 đọc là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "4時: よじ.",
+        "type": "choice",
+        "options": ["よじ", "よんじ", "しじ", "よっじ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0403",
+        "prompt": "9時 đọc là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "9時: くじ.",
+        "type": "choice",
+        "options": ["きゅうじ", "きゅじ", "くうじ", "くじ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0404",
+        "prompt": "Giờ nào đọc là しちじ?",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "しちじ là 7時.",
+        "type": "choice",
+        "options": ["4時", "1時", "7時", "8時"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0405",
+        "prompt": "6時半 nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "半: rưỡi (30 phút).",
+        "type": "choice",
+        "options": ["6 giờ 15 phút", "6 giờ 30 phút", "6 giờ kém 30", "6 giờ đúng"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0406",
+        "prompt": "10分 đọc là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "10分: じゅっぷん.",
+        "type": "choice",
+        "options": ["じゅっぷん", "じゅうふん", "じゅうぷん", "とおふん"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0407",
+        "prompt": "3分 đọc là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "3分: さんぷん.",
+        "type": "choice",
+        "options": ["さんふん", "さっぷん", "みふん", "さんぷん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0408",
+        "prompt": "Chọn câu đúng: Hôm qua tôi đã học.",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Quá khứ: べんきょうしました.",
+        "type": "choice",
+        "options": [
+          "きのう べんきょうします。",
+          "きのう べんきょうしません。",
+          "きのう べんきょうしました。",
+          "あした べんきょうしました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0409",
+        "prompt": "あした はたらきますか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Phủ định: はたらきません.",
+        "type": "choice",
+        "options": ["はたらきます", "はたらきません", "はたらきました", "そうじゃ ありません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0410",
+        "prompt": "きのう やすみましたか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Phủ định quá khứ: やすみませんでした.",
+        "type": "choice",
+        "options": ["やすみませんでした", "やすみません", "やすみました", "やすみます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0411",
+        "prompt": "まいあさ 6じ（　　） おきます。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Thời điểm có số + に.",
+        "type": "choice",
+        "options": ["から", "まで", "と", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0412",
+        "prompt": "Chọn câu đúng:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "あした, まいにち, いま không đi với に.",
+        "type": "choice",
+        "options": [
+          "あしたに べんきょうします。",
+          "まいにちに べんきょうします。",
+          "あした べんきょうします。",
+          "いまに べんきょうします。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0413",
+        "prompt": "9じ（　　） 5じまで はたらきます。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Từ 9 giờ: 9じから.",
+        "type": "choice",
+        "options": ["に", "から", "まで", "と"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0414",
+        "prompt": "ぎんこうは 9じから 3じ（　　）です。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Đến 3 giờ: 3じまで.",
+        "type": "choice",
+        "options": ["まで", "から", "に", "と"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0415",
+        "prompt": "げつようび（　　） きんようびまで はたらきます。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Từ thứ Hai: げつようびから.",
+        "type": "choice",
+        "options": ["まで", "に", "の", "から"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0416",
+        "prompt": "Thứ Tư là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Thứ Tư: すいようび (水曜日).",
+        "type": "choice",
+        "options": ["かようび", "もくようび", "すいようび", "きんようび"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0417",
+        "prompt": "どようび là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "どようび (土曜日): thứ Bảy.",
+        "type": "choice",
+        "options": ["thứ Năm", "thứ Bảy", "thứ Sáu", "Chủ nhật"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0418",
+        "prompt": "Hỏi: Hôm nay là thứ mấy?",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Hỏi thứ: なんようび.",
+        "type": "choice",
+        "options": [
+          "きょうは なんようびですか。",
+          "きょうは なんじですか。",
+          "きょうは なんですか。",
+          "きょうは どこですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0419",
+        "prompt": "おきます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "おきます: thức dậy.",
+        "type": "choice",
+        "options": ["đi ngủ", "làm việc", "nghỉ", "thức dậy"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0420",
+        "prompt": "ねます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "ねます: đi ngủ.",
+        "type": "choice",
+        "options": ["thức dậy", "học", "đi ngủ", "kết thúc"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0421",
+        "prompt": "べんきょうします nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "べんきょうします: học.",
+        "type": "choice",
+        "options": ["làm việc", "học", "nghỉ ngơi", "bắt đầu"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0422",
+        "prompt": "Chọn câu đúng: Cuộc họp kết thúc lúc 4 giờ.",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Kết thúc: おわります; lúc 4 giờ: 4じに.",
+        "type": "choice",
+        "options": [
+          "かいぎは 4じに おわります。",
+          "かいぎは 4じに はじまります。",
+          "かいぎは 4じから おわります。",
+          "かいぎは 4じまで はじまります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0423",
+        "prompt": "ごご 3じ là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "ごご: buổi chiều.",
+        "type": "choice",
+        "options": ["3 giờ sáng", "3 giờ 30", "3 giờ đêm", "3 giờ chiều"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0424",
+        "prompt": "ごぜん là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "ごぜん (午前): buổi sáng.",
+        "type": "choice",
+        "options": ["buổi chiều", "buổi tối", "buổi sáng (trước 12 giờ trưa)", "nửa đêm"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0425",
+        "prompt": "Bạn kể mình làm việc đến 11 giờ đêm, người nghe nói たいへんですね. Nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "たいへんですね: vất vả quá nhỉ.",
+        "type": "choice",
+        "options": ["Vậy à.", "Vất vả quá nhỉ.", "Cảm ơn nhé.", "Không phải đâu."],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0426",
+        "prompt": "Chọn câu đúng: Sáng nay tôi đã không dậy lúc 6 giờ.",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Phủ định quá khứ: おきませんでした.",
+        "type": "choice",
+        "options": [
+          "けさ 6じに おきませんでした。",
+          "けさ 6じに おきません。",
+          "けさ 6じに おきました。",
+          "けさ 6じから おきませんでした。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0427",
+        "prompt": "でんわばんごうは （　　）ですか。…090-1234-5678です。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Hỏi số: なんばん.",
+        "type": "choice",
+        "options": ["なんじ", "なんようび", "いくら", "なんばん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0428",
+        "prompt": "Hỏi: Bưu điện mở cửa từ mấy giờ đến mấy giờ?",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Giờ mở cửa: なんじから なんじまでですか.",
+        "type": "choice",
+        "options": [
+          "ゆうびんきょくは なんじですか。",
+          "ゆうびんきょくは どこから どこまでですか。",
+          "ゆうびんきょくは なんじから なんじまでですか。",
+          "ゆうびんきょくは なんじに ですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0429",
+        "prompt": "Chủ nhật tôi nghỉ:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Nghỉ: やすみます.",
+        "type": "choice",
+        "options": [
+          "にちようび はたらきます。",
+          "にちようび やすみます。",
+          "にちようび おわります。",
+          "にちようび ねません。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0430",
+        "prompt": "Chọn câu đúng: Tối nào tôi cũng học.",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "まいばん không đi với に; thói quen dùng ます.",
+        "type": "choice",
+        "options": [
+          "まいばん べんきょうします。",
+          "まいばんに べんきょうします。",
+          "まいばん べんきょうしました。",
+          "まいあさ べんきょうします。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0431",
+        "prompt": "Chọn câu đúng: Kỳ thi bắt đầu lúc 9 giờ.",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Bắt đầu: はじまります.",
+        "type": "choice",
+        "options": [
+          "しけんは 9じに おわります。",
+          "しけんは 9じまで はじまります。",
+          "しけんは 9じに やすみます。",
+          "しけんは 9じに はじまります。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0432",
+        "prompt": "Hỏi: Hôm qua đã kết thúc lúc mấy giờ?",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Quá khứ: おわりましたか.",
+        "type": "choice",
+        "options": [
+          "きのう なんじに おわりますか。",
+          "きのう なんじに おわりませんか。",
+          "きのう なんじに おわりましたか。",
+          "あした なんじに おわりましたか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0433",
+        "prompt": "Hỏi: Thư viện nghỉ vào thứ mấy?",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Ngày nghỉ: やすみは なんようびですか.",
+        "type": "choice",
+        "options": [
+          "としょかんの やすみは なんじですか。",
+          "としょかんの やすみは なんようびですか。",
+          "としょかんは なんようびからですか。",
+          "としょかんの なんようびは やすみですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0434",
+        "prompt": "N1 と N2 nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "と nối hai danh từ: và.",
+        "type": "choice",
+        "options": ["N1 và N2", "N1 của N2", "từ N1", "đến N2"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0435",
+        "prompt": "やすみは どようびと にちようびです。nghĩa là:",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "と: và.",
+        "type": "choice",
+        "options": [
+          "Ngày nghỉ từ thứ Bảy đến Chủ nhật.",
+          "Thứ Bảy là ngày nghỉ của Chủ nhật.",
+          "Thứ Bảy làm việc, Chủ nhật nghỉ.",
+          "Ngày nghỉ là thứ Bảy và Chủ nhật."
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0436",
+        "prompt": "ハノイは いま ごご 2じです。とうきょうは （　　）。(Tokyo sớm hơn Hà Nội 2 giờ)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "2 giờ chiều + 2 giờ = 4 giờ chiều: ごご 4じ.",
+        "type": "choice",
+        "options": ["ごご 12じです", "ごぜん 4じです", "ごご 4じです", "ごご 2じです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0437",
+        "prompt": "Điền: いま （　　）ですか。…10じです。(hỏi giờ)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Hỏi giờ: なんじ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なんじ"]
+      },
+      {
+        "id": "q0438",
+        "prompt": "Điền cách đọc: 4時 = （　　）",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "4時: よじ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よじ"]
+      },
+      {
+        "id": "q0439",
+        "prompt": "Điền cách đọc: 9時 = （　　）",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "9時: くじ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くじ"]
+      },
+      {
+        "id": "q0440",
+        "prompt": "Điền: 6時半 = ろくじ（　　）",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "半: はん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はん"]
+      },
+      {
+        "id": "q0441",
+        "prompt": "Điền: まいあさ 6じに （　　）。(thức dậy)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Thức dậy: おきます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おきます"]
+      },
+      {
+        "id": "q0442",
+        "prompt": "Điền: まいばん 11じに （　　）。(đi ngủ)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Đi ngủ: ねます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ねます"]
+      },
+      {
+        "id": "q0443",
+        "prompt": "Điền: きのう べんきょう（　　）。(đã học)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Quá khứ: べんきょうしました.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しました"]
+      },
+      {
+        "id": "q0444",
+        "prompt": "Điền: きのう はたらき（　　）。(đã không làm việc)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Phủ định quá khứ: はたらきませんでした.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ませんでした"]
+      },
+      {
+        "id": "q0445",
+        "prompt": "Điền: 9じ（　　） 5じまで はたらきます。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Từ: から.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["から"]
+      },
+      {
+        "id": "q0446",
+        "prompt": "Điền: ひるやすみは 12じから 1じ（　　）です。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Đến: まで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まで"]
+      },
+      {
+        "id": "q0447",
+        "prompt": "Điền trợ từ: 7じ（　　） おきます。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Thời điểm có số + に.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["に"]
+      },
+      {
+        "id": "q0448",
+        "prompt": "Điền: きょうは （　　）ですか。…かようびです。(hỏi thứ)",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Hỏi thứ: なんようび.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なんようび"]
+      },
+      {
+        "id": "q0449",
+        "prompt": "Điền cách đọc: 1分 = （　　）",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "1分: いっぷん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いっぷん"]
+      },
+      {
+        "id": "q0450",
+        "prompt": "Điền: あした はたらきますか。…いいえ、はたらき（　　）。",
+        "points": 1,
+        "tags": ["minna-4"],
+        "explain": "Phủ định: はたらきません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ません"]
+      }
+    ]
+  }
+}

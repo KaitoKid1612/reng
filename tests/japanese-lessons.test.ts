@@ -149,6 +149,7 @@ test("the Minna starters are registered in lesson order", () => {
       ["minna-1-01", "minna-1", 1],
       ["minna-1-02", "minna-1", 2],
       ["minna-1-03", "minna-1", 3],
+      ["minna-1-04", "minna-1", 4],
       ["minna-1-11", "minna-1", 11],
       ["minna-1-12", "minna-1", 12],
       ["minna-1-13", "minna-1", 13],
