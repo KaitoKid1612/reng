@@ -152,7 +152,29 @@ test("practice feedback, mistake book, two-tab conflict and offline saving", asy
   await expect(page.getByText(PRACTICE_PROMPT)).toBeVisible();
   await page.goto("/review");
   await page.getByRole("radio", { name: "です", exact: true }).check();
+  // The answer reaches the server but its response is lost. The answer stays locked for the retry,
+  // and a replay of that request with another answer still gets the stored result.
+  let sent: { answer?: unknown } = {};
+  await page.route(
+    "**/api/reviews",
+    async (route) => {
+      sent = route.request().postDataJSON();
+      await route.fetch();
+      await route.abort("failed");
+    },
+    { times: 1 },
+  );
   await page.getByRole("button", { name: "Trả lời", exact: true }).click();
+  await expect(page.getByText("Mất kết nối nên chưa lưu. Bấm lại để thử tiếp.")).toBeVisible();
+  await expect(page.getByRole("radio", { name: "ます", exact: true })).toBeDisabled();
+  const sentChoice = Array.isArray(sent.answer) ? sent.answer[0] : 0;
+  const replay = await page.request.post("/api/reviews", {
+    headers: { Origin: new URL(page.url()).origin },
+    data: { ...sent, answer: [sentChoice === 0 ? 1 : 0] },
+  });
+  expect(replay.status()).toBe(200);
+  expect(await replay.json()).toMatchObject({ isCorrect: true, correctStreak: 1 });
+  await page.getByRole("button", { name: "Gửi lại câu trả lời", exact: true }).click();
   await expect(page.getByText("Đúng rồi!")).toBeVisible();
   await expect(page.getByText("Chuỗi đúng: 1/3.")).toBeVisible();
 

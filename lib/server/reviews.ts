@@ -273,17 +273,16 @@ async function writeReview(write: ReviewWrite) {
 
 // Retries reuse their request ID; recognizing them first keeps a lost response from
 // turning into a conflict or a second scheduling step.
-async function isRecordedRequest(userId: string, requestId: string) {
-  const row = await selectOptional(
+async function findRecordedReview(userId: string, requestId: string) {
+  return selectOptional(
     createServiceClient()
       .from("review_events")
-      .select("id")
+      .select("is_correct")
       .eq("user_id", userId)
       .eq("request_id", requestId)
       .maybeSingle(),
-    z.object({ id: z.uuid() }),
+    z.object({ is_correct: z.boolean().nullable() }),
   );
-  return row !== null;
 }
 
 function currentState(card: CardRow | null, now: Date) {
@@ -306,7 +305,7 @@ export async function recordVocabReview(userId: string, input: VocabReviewInput,
     throw new ServiceError("not_found");
   }
   const card = await loadCard(userId, "vocab", input.lessonId, input.vocabId);
-  if (card && (await isRecordedRequest(userId, input.requestId))) {
+  if (card && (await findRecordedReview(userId, input.requestId))) {
     return { revision: card.revision, due: card.due };
   }
   if ((card?.revision ?? null) !== input.revision) {
@@ -349,6 +348,18 @@ export async function recordMistakeReview(userId: string, input: MistakeReviewIn
   if (!question) {
     throw new ServiceError("not_found");
   }
+  const feedback = { correctText: describeCorrectAnswer(question), explain: question.explain };
+  // The learner may change the answer after a lost response; the stored result is the one that
+  // counted, so a retry reports it instead of grading the new answer.
+  const recorded = await findRecordedReview(userId, input.requestId);
+  if (recorded) {
+    return {
+      ...feedback,
+      isCorrect: recorded.is_correct === true,
+      correctStreak: card.correct_streak,
+      isResolved: card.resolved_at !== null,
+    };
+  }
   let raw;
   try {
     raw = parseRawAnswer(question, input.answer);
@@ -356,18 +367,7 @@ export async function recordMistakeReview(userId: string, input: MistakeReviewIn
     throw new ServiceError("invalid_answer");
   }
   const { isCorrect } = gradeQuestion(question, raw);
-  const outcome = {
-    isCorrect,
-    correctText: describeCorrectAnswer(question),
-    explain: question.explain,
-  };
-  if (await isRecordedRequest(userId, input.requestId)) {
-    return {
-      ...outcome,
-      correctStreak: card.correct_streak,
-      isResolved: card.resolved_at !== null,
-    };
-  }
+  const outcome = { ...feedback, isCorrect };
   if (card.revision !== input.revision) {
     throw new ServiceError("conflict");
   }

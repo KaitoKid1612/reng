@@ -50,6 +50,9 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   const [isFlipped, setIsFlipped] = useState(false);
   const [answer, setAnswer] = useState<RawAnswer | undefined>(undefined);
   const [outcome, setOutcome] = useState<MistakeOutcome | null>(null);
+  // Once an answer is sent it may have been recorded even if the response was lost, so a retry
+  // resends the same answer: the server reports the result it stored for that request.
+  const [isAnswerSent, setIsAnswerSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
   const [reviewedCount, setReviewedCount] = useState(0);
@@ -63,6 +66,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
     setIsFlipped(false);
     setAnswer(undefined);
     setOutcome(null);
+    setIsAnswerSent(false);
     setMessage("");
   }
 
@@ -104,6 +108,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
     if (card?.kind !== "mistake") {
       return;
     }
+    setIsAnswerSent(true);
     const data = await send({
       kind: "mistake",
       assignmentId: card.assignmentId,
@@ -118,6 +123,11 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
         setCorrectCount((value) => value + 1);
       }
     }
+  }
+
+  let answerButtonLabel = isAnswerSent ? "Gửi lại câu trả lời" : "Trả lời";
+  if (isSending) {
+    answerButtonLabel = "Đang chấm…";
   }
 
   if (!card) {
@@ -168,7 +178,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
             position={index + 1}
             total={cards.length}
             value={answer}
-            isLocked={outcome !== null || isSending}
+            isLocked={outcome !== null || isSending || isAnswerSent}
             onAnswerChange={setAnswer}
           />
           {outcome ? (
@@ -188,7 +198,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
             </>
           ) : (
             <Button disabled={isSending || isBlankAnswer(answer)} onClick={handleAnswer}>
-              {isSending ? "Đang chấm…" : "Trả lời"}
+              {answerButtonLabel}
             </Button>
           )}
         </div>
