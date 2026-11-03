@@ -20,7 +20,10 @@ interface SlideContentProps {
 // Beyond these counts a slide switches to a denser layout so it stays within 1280×720.
 const COMPACT_VOCAB_ITEMS = 3;
 const COMPACT_EXAMPLES = 1;
-const COMPACT_DIALOGUE_LINES = 5;
+// Measured in the 1280×720 deck: five full-size rows already run past the bottom edge, and
+// seven or eight compact rows do too, so those get the dense layout.
+const COMPACT_DIALOGUE_ROWS = 4;
+const DENSE_DIALOGUE_ROWS = 6;
 // About this many Japanese characters fit one row of a dialogue bubble at full size.
 const DIALOGUE_ROW_CHARACTERS = 20;
 const COMPACT_TABLE_ROWS = 8;
@@ -168,14 +171,21 @@ function DialogueSlide({ slide, lesson, staticMode }: SlideContentProps) {
       Math.max(1, Math.ceil([...toPlainJapanese(line.jp)].length / DIALOGUE_ROW_CHARACTERS)),
     0,
   );
-  const isCompact = rows > COMPACT_DIALOGUE_LINES;
+  const isCompact = rows > COMPACT_DIALOGUE_ROWS;
+  const isDense = rows > DENSE_DIALOGUE_ROWS;
   const sides = dialogueSides(slide.lines.map((line) => line.speaker));
   return (
     <div>
       <h2>
         <JapaneseText text={slide.title} />
       </h2>
-      <ol className={cn("slide-dialogue slide-dialogue-ja", isCompact && "is-compact")}>
+      <ol
+        className={cn(
+          "slide-dialogue slide-dialogue-ja",
+          isCompact && "is-compact",
+          isDense && "is-dense",
+        )}
+      >
         {slide.lines.map((line, index) => (
           <li key={index} data-side={sides[index]}>
             <span className="dialogue-person">
