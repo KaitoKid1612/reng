@@ -68,8 +68,9 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | SV09 | `/for-teachers` | Trang giới thiệu công khai cho giáo viên, tối ưu SEO |
 | SV10 | `/guide` | Hướng dẫn sử dụng công khai cho giáo viên, học viên và quản trị viên; link ở thanh đầu trang, chân trang, trang Giảng dạy và Lớp của tôi |
 | SV11 | `/teach/lessons/[id]/starter` | So sánh bản nháp với bài mẫu mới nhất và thay nội dung nháp bằng mẫu |
+| SV12 | `/self-study` | Tự học: bài học công khai và công cụ luyện tập theo từng môn, không cần tài khoản |
 
-SV01–SV05, SV08–SV11 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
+SV01–SV05, SV08–SV12 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
 
 ## Ngôn ngữ và chấm điểm
 
@@ -134,6 +135,18 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 5. **Cập nhật bài từ mẫu.** Bài tạo từ mẫu Minna có link "Cập nhật từ mẫu" ở trang Giảng dạy và editor. Trang này so sánh số slide, câu hỏi và hình của bản nháp với mẫu mới nhất. Sau khi giáo viên xác nhận, nội dung nháp được thay bằng mẫu; tên, thứ tự và khóa học giữ nguyên. Chỉnh sửa riêng trong nháp sẽ mất; phiên bản đã xuất bản, lớp đang dùng và bài đã giao không đổi. Muốn học viên thấy bản mới, giáo viên xuất bản rồi chọn phiên bản mới cho lớp.
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
+
+## Nền tảng dạy học online, không gắn môn — 03/11/2026
+
+Theo yêu cầu người dùng: Reng là nơi dạy và học online, không phải trang riêng của tiếng Nhật hay tiếng Trung; sau này có thể dạy toán hoặc lớp khác. Phần chung của trang không nêu môn. Môn chỉ xuất hiện ở trang của môn đó, hoặc ở chỗ cần nói rõ môn nào đang có công cụ.
+
+1. **Trang chủ, header, chân trang, metadata, ảnh chia sẻ** dùng chung một câu giới thiệu: "Lớp học online cho giáo viên và học viên". Trang chủ thay mẫu Hiragana bằng ba bước của một buổi học (trước, trong, sau buổi học) và ba chức năng chung (trình chiếu, bài tập tự chấm, theo dõi và ôn lại). Ba lối vào: có mã lớp, giảng dạy, tự học.
+2. **Header.** Khách thấy Vào lớp, Cho giáo viên, Tự học, Hướng dẫn, Đăng nhập. Người đã đăng nhập thấy các mục tài khoản như trước, rồi Tự học, Hướng dẫn. Bốn link tiếng Nhật cũ (Bài học, Ngữ pháp, Bảng chữ cái, Luyện kana) gộp vào Tự học. Mục này được đánh dấu khi đang ở trang Tự học, danh sách bài công khai hoặc trang công cụ của một môn. Điều này thay mục 1 của phần "Dễ dùng và dạy online Nhật–Trung" bên dưới.
+3. **Trang Tự học (SV12)** liệt kê bài học công khai và công cụ luyện tập của từng môn. Hiện có môn Tiếng Nhật: Bảng chữ cái, Luyện kana, Tra ngữ pháp. Trang công cụ của một môn có thanh "Tự học / tên môn" để chuyển giữa các công cụ cùng môn.
+4. **Trang cho giáo viên** giới thiệu việc dạy online nói chung. Mục "Môn học hiện có" nói rõ chỉ tiếng Nhật và tiếng Trung có công cụ soạn bài và chấm điểm; lớp học, trình chiếu, giao bài và theo dõi tiến độ dùng chung.
+5. **Biểu mẫu lớp** đổi nhãn "Ngôn ngữ học" thành "Môn học", ví dụ tên lớp không còn gắn tiếng Nhật. Giá trị lưu vẫn là `ja-JP`, `zh-Hans`, `zh-Hant`.
+
+Chưa đổi: dữ liệu lớp chỉ nhận hai môn ngôn ngữ, hai trình soạn bài theo ngôn ngữ, trang đọc và ôn tập dựa trên từ vựng, chấm điểm theo kana/pinyin. Đây là phần phải làm trước khi dạy môn không phải ngôn ngữ; danh sách ở [rà soát](../testing/platform-neutral-ui-2026-11-03.md#phần-còn-gắn-với-ngôn-ngữ).
 
 ## Danh sách câu trả lời và thanh điều hướng — 02/11/2026
 

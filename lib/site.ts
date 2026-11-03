@@ -1,7 +1,11 @@
 export const SITE_NAME = "Reng";
 
+// Reng is an online classroom for any subject; subjects appear on their own pages, never in the
+// site-wide name, tagline or description. app/opengraph-image.png repeats the tagline.
+export const SITE_TAGLINE = "Lớp học online cho giáo viên và học viên";
+
 export const SITE_DESCRIPTION =
-  "Lớp học ngoại ngữ online cho giáo viên và học viên Việt Nam: tạo lớp riêng, soạn slide tiếng Nhật và tiếng Trung theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ.";
+  "Lớp học online cho giáo viên và học viên Việt Nam: tạo lớp riêng, soạn slide theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ.";
 
 const LOCAL_ORIGIN = "http://127.0.0.1:3000";
 

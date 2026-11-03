@@ -14,7 +14,7 @@ import "./learning-history.css";
 import { SiteHeader } from "@/components/site-header";
 import { AudioProvider } from "@/components/audio-provider";
 import { audioManifest } from "@/lib/data";
-import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -24,7 +24,7 @@ const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
 export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
   title: {
-    default: "Reng — Lớp học ngoại ngữ online cho giáo viên và học viên",
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
     template: "%s | Reng",
   },
   description: SITE_DESCRIPTION,
@@ -52,7 +52,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </AudioProvider>
         <footer className="site-footer">
           <div>
-            <span>Reng — Lớp học ngoại ngữ online cho thầy cô và học viên.</span>
+            <span>
+              {SITE_NAME} — {SITE_TAGLINE}.
+            </span>
             <nav className="footer-links" aria-label="Liên kết cuối trang">
               <Link href="/guide">Hướng dẫn sử dụng</Link>
               <Link href="/sources">Nguồn dữ liệu</Link>

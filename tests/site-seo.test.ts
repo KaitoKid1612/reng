@@ -24,6 +24,7 @@ test("the sitemap lists public pages and public lessons without version paramete
   const urls = (await sitemap()).map((entry) => entry.url);
   assert.ok(urls.includes("https://reng.example/"));
   assert.ok(urls.includes("https://reng.example/for-teachers"));
+  assert.ok(urls.includes("https://reng.example/self-study"));
   assert.ok(urls.includes("https://reng.example/lessons/lesson-01"));
   assert.ok(urls.every((url) => !url.includes("?") && !new URL(url).pathname.startsWith("/teach")));
 });

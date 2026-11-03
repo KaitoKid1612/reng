@@ -1,4 +1,5 @@
 import { KanaChart } from "@/components/kana/kana-chart";
+import { SubjectStudyNav } from "@/components/self-study/subject-study-nav";
 import { kanaItems } from "@/lib/data";
 
 import type { Metadata } from "next";
@@ -10,5 +11,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/kana" },
 };
 export default function KanaPage() {
-  return <KanaChart items={kanaItems} />;
+  return (
+    <>
+      <SubjectStudyNav subjectId="japanese" currentHref="/kana" />
+      <KanaChart items={kanaItems} />
+    </>
+  );
 }

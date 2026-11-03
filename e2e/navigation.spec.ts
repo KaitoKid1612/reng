@@ -9,23 +9,24 @@ for (const width of [1280, 360]) {
     await page.setViewportSize({ width, height: 800 });
     await page.goto("/");
     await expect(
-      page.getByRole("link", { name: "Tự học tiếng Nhật, chưa cần tài khoản", exact: true }),
-    ).toHaveAttribute("href", "/kana");
+      page.getByRole("link", { name: "Tự học miễn phí, chưa cần tài khoản", exact: true }),
+    ).toHaveAttribute("href", "/self-study");
     await page.getByRole("link", { name: "Vào lớp bằng mã", exact: true }).click();
     await expect(page).toHaveURL(/\/join-class$/);
     await expect(page.getByRole("heading", { level: 1, name: "Vào lớp" })).toBeVisible();
 
     await page.goto("/");
-    await page.getByRole("link", { name: "Học bảng chữ cái", exact: true }).click();
-    await expect(page).toHaveURL(/\/kana$/);
+    await page.getByRole("link", { name: "Xem các môn tự học", exact: true }).click();
+    await expect(page).toHaveURL(/\/self-study$/);
+    await expect(page.getByRole("heading", { level: 2, name: "Tiếng Nhật" })).toBeVisible();
     await page.goto("/");
     await page.getByRole("link", { name: "Tìm hiểu cách dạy trên Reng" }).click();
     await expect(page).toHaveURL(/\/for-teachers$/);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "tiếng Nhật và tiếng Trung",
-    );
+    // The platform is not tied to a subject; subjects are listed further down the page.
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("dạy online");
+    await expect(page.getByRole("heading", { level: 2, name: "Môn học hiện có" })).toBeVisible();
 
-    for (const path of ["/", "/join-class", "/for-teachers"]) {
+    for (const path of ["/", "/join-class", "/for-teachers", "/self-study"]) {
       await page.goto(path);
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -75,8 +76,12 @@ test("the phone header keeps the person's main page and folds the rest", async (
     "aria-expanded",
     "true",
   );
-  await navigation.getByRole("link", { name: "Luyện kana", exact: true }).click();
-  await expect(page).toHaveURL(/\/kana\/practice$/);
+  // Subject tools are not header entries; the kana chart belongs to the Tự học area.
+  await expect(navigation.getByRole("link", { name: "Luyện kana", exact: true })).toHaveCount(0);
+  const selfStudy = navigation.getByRole("link", { name: "Tự học", exact: true });
+  await expect(selfStudy).toHaveAttribute("aria-current", "page");
+  await selfStudy.click();
+  await expect(page).toHaveURL(/\/self-study$/);
   await expect(navigation).toBeHidden();
   await page.getByRole("button", { name: "Menu", exact: true }).click();
   await page.keyboard.press("Escape");

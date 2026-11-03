@@ -32,11 +32,9 @@ test("the teacher landing page has a clear heading, description, canonical and F
   await page.waitForURL("**/for-teachers");
   await page.reload();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam",
+    "Mở lớp dạy online cho học viên Việt Nam",
   );
-  await expect(page).toHaveTitle(
-    "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam | Reng",
-  );
+  await expect(page).toHaveTitle("Mở lớp dạy online cho học viên Việt Nam | Reng");
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /Google Meet/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",

@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bài học",
   description:
-    "Bài học công khai trên Reng: đọc bài, xem slide và luyện tập tiếng Nhật, tiếng Trung cho người Việt mới bắt đầu.",
+    "Bài học công khai trên Reng: đọc bài, xem slide và luyện tập theo từng bài, chưa cần vào lớp.",
   alternates: { canonical: "/lessons" },
 };
 export const dynamic = "force-dynamic";
@@ -20,11 +20,14 @@ export default async function LessonsPage() {
     <>
       <div className="page-heading">
         <div>
-          <h1>Bài học nhập môn</h1>
-          <p>Từ những câu chào đầu tiên đến cách nói về cuộc sống mỗi ngày.</p>
+          <h1>Bài học công khai</h1>
+          <p>
+            Đọc bài và xem slide các bài giáo viên đã công khai trên Reng. Bài của lớp bạn nằm ở{" "}
+            <Link href="/classes">Lớp của tôi</Link>.
+          </p>
         </div>
-        <Link href="/grammar" className={buttonVariants({ variant: "outline" })}>
-          Tra ngữ pháp
+        <Link href="/self-study" className={buttonVariants({ variant: "outline" })}>
+          Công cụ tự học theo môn
         </Link>
       </div>
       <div className="lesson-list">
@@ -64,9 +67,8 @@ export default async function LessonsPage() {
       </div>
       {lessons.length === 0 && (
         <p>
-          Chưa có bài học công khai. Bài của lớp nằm ở <Link href="/classes">Lớp của tôi</Link>{" "}
-          (hoặc <Link href="/join-class">vào lớp bằng mã</Link> giáo viên gửi). Mới bắt đầu tiếng
-          Nhật? Học <Link href="/kana">bảng chữ cái</Link> trước.
+          Chưa có bài học công khai. Có mã lớp? <Link href="/join-class">Vào lớp bằng mã</Link> giáo
+          viên gửi, hoặc luyện tập với <Link href="/self-study">công cụ tự học</Link> của từng môn.
         </p>
       )}
     </>

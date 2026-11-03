@@ -4,8 +4,11 @@ export default function NotFound() {
   return (
     <div className="prose-page">
       <h1>Trang này chưa có</h1>
-      <p>Bạn có thể quay lại bảng chữ cái để tiếp tục học.</p>
-      <Link href="/kana">Mở bảng chữ cái</Link>
+      <p>Đường dẫn có thể đã đổi hoặc bị gõ nhầm.</p>
+      <div className="button-row">
+        <Link href="/">Về trang chủ</Link>
+        <Link href="/classes">Lớp của tôi</Link>
+      </div>
     </div>
   );
 }

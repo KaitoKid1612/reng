@@ -317,6 +317,11 @@ h3 {
   max-width: 68ch;
   margin-bottom: 0;
 }
+/* A link inside a sentence needs more than colour to stand out from the text around it. */
+.page-heading p a,
+.subject-nav p a {
+  text-decoration: underline;
+}
 .page-heading > .button {
   flex-shrink: 0;
 }
@@ -353,21 +358,44 @@ h3 {
   background: var(--surface);
 }
 .paper-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
   color: var(--muted);
   font-size: 14px;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
-.paper-caption [lang="ja"] {
-  font-size: 18px;
-}
-.sample-grid {
+/* The home page's class steps: subject-neutral, numbered in notebook squares. */
+.class-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--grid);
-  border-left: 1px solid var(--grid);
+  gap: 20px;
+}
+.class-steps li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+}
+.class-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--grid);
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.class-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.class-steps .class-step-title {
+  color: var(--foreground);
+  font-size: 17px;
+  font-weight: 600;
 }
 .writing-square {
   position: relative;
@@ -394,27 +422,10 @@ h3 {
   left: 50%;
   border-left: 1px dashed var(--grid);
 }
-.sample-cell {
-  aspect-ratio: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid var(--grid);
-  border-bottom: 1px solid var(--grid);
-}
-.sample-cell .kana-font {
-  font-size: clamp(36px, 4vw, 56px);
-  line-height: 1.3;
-}
-.sample-cell > span:last-child {
-  color: var(--muted);
-  font-size: 13px;
-}
-.hero-paper > p {
+.hero-paper > p:last-child {
   margin: 16px 0 0;
 }
-.home-learning {
+.home-features {
   padding-top: 40px;
   border-top: 1px solid var(--border);
 }
@@ -882,8 +893,12 @@ progress::-webkit-progress-value {
     width: 100%;
     padding: 20px;
   }
-  .sample-cell .kana-font {
-    font-size: 48px;
+  .class-steps li {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .class-step-number {
+    font-size: 26px;
   }
   .learning-columns {
     grid-template-columns: minmax(0, 1fr);
@@ -2773,6 +2788,44 @@ rt {
 .home-start {
   padding: 40px 0;
   border-top: 1px solid var(--border);
+}
+
+/* Self-study: the subject list and each subject's own tool links. */
+.subject-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 20px;
+  margin: -12px 0 24px;
+  font-size: 14px;
+}
+.subject-nav p {
+  margin: 0;
+  color: var(--muted);
+}
+.subject-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.subject-nav a {
+  white-space: nowrap;
+}
+.subject-nav a[aria-current="page"] {
+  color: var(--foreground);
+  font-weight: 600;
+  text-decoration: none;
+}
+.study-subject {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+}
+.study-subject > p {
+  color: var(--muted);
+  max-width: 68ch;
 }
 
 /* User guide. */

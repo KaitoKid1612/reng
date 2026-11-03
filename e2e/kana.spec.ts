@@ -18,8 +18,8 @@ test("navigates to the full kana chart and switches scripts without overflow at 
   page,
 }) => {
   await page.setViewportSize({ width: 360, height: 800 });
-  await page.goto("/");
-  await page.getByRole("link", { name: "Học bảng chữ cái", exact: true }).click();
+  await page.goto("/self-study");
+  await page.getByRole("link", { name: "Bảng chữ cái", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Bảng chữ cái", exact: true })).toBeVisible();
   await expect(page.locator("button.kana-cell")).toHaveCount(104);
   await page.getByRole("button", { name: "Katakana" }).click();

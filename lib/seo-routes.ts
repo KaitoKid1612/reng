@@ -28,6 +28,7 @@ export const PUBLIC_PAGES = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/for-teachers", priority: 0.9, changeFrequency: "monthly" },
   { path: "/lessons", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/self-study", priority: 0.7, changeFrequency: "monthly" },
   { path: "/kana", priority: 0.7, changeFrequency: "yearly" },
   { path: "/kana/practice", priority: 0.6, changeFrequency: "yearly" },
   { path: "/grammar", priority: 0.6, changeFrequency: "weekly" },

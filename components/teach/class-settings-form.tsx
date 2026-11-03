@@ -42,7 +42,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             required
             maxLength={120}
             defaultValue={classRow?.name}
-            placeholder="Tiếng Nhật Minna sơ cấp – tối thứ Ba"
+            placeholder="Ví dụ: Lớp sơ cấp – tối thứ Ba"
           />
         </div>
         <div className="field">
@@ -60,7 +60,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
       </div>
       <div className="form-grid">
         <div className="field">
-          <label htmlFor="class-language">Ngôn ngữ học</label>
+          <label htmlFor="class-language">Môn học</label>
           <select
             key={classRow?.language_tag ?? "new"}
             id="class-language"

@@ -102,7 +102,7 @@ test("the teacher opens a Japanese class, pins lesson 11 and assigns practice", 
 }) => {
   const page = await teacherPage(browser);
   await page.goto("/teach/classes");
-  await expect(page.getByLabel("Ngôn ngữ học")).toHaveValue("ja-JP");
+  await expect(page.getByLabel("Môn học", { exact: true })).toHaveValue("ja-JP");
   await page.getByLabel("Tên lớp", { exact: true }).fill(CLASS_NAME);
   await page.getByLabel("Số học viên tối đa").fill("10");
   await page.getByLabel("Link Google Meet").fill("https://meet.google.com/abc-defg-hij");

@@ -40,11 +40,11 @@ const TEACHER_SECTIONS: GuideSection[] = [
   },
   {
     id: "teacher-lesson",
-    title: "Tạo bài học",
+    title: "Soạn bài tiếng Nhật",
     steps: [
       "Vào Giảng dạy → Tạo bài mới. Chọn bài mẫu (bài 1, 2, 11, 12, 13) và bấm Tạo bài từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
       "Bài mẫu là bản nháp riêng của bạn. Đọc lại, sửa theo lớp mình rồi bấm Xuất bản; học viên dùng sách của mình để đối chiếu.",
-      "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc soạn mới ở mục Soạn bài tiếng Nhật.",
+      "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc soạn từ đầu ở mục Soạn bài tiếng Nhật của trang Tạo bài mới.",
       "Bài mẫu được bổ sung dần (hình, slide, câu luyện) nhưng bài đã tạo không tự cập nhật. Bấm Cập nhật từ mẫu ở bài đó để so sánh và thay bản nháp bằng mẫu mới nhất; chỉnh sửa riêng trong nháp sẽ mất, phiên bản đã xuất bản và lớp đang dùng giữ nguyên.",
     ],
   },
@@ -172,7 +172,7 @@ const QUESTIONS = [
   {
     question: "Nút Nghe không có tiếng?",
     answer:
-      "Bài chưa có file đọc mẫu sẽ dùng giọng tiếng Nhật của thiết bị. Cài giọng tiếng Nhật trong phần chuyển văn bản thành giọng nói của điện thoại hoặc máy tính rồi thử lại.",
+      "Bài chưa có file đọc mẫu sẽ dùng giọng đọc của thiết bị theo ngôn ngữ của bài. Cài giọng tiếng Nhật hoặc tiếng Trung trong phần chuyển văn bản thành giọng nói của điện thoại hoặc máy tính rồi thử lại.",
   },
   {
     question: "Bài giảng của giáo viên có bị công khai không?",

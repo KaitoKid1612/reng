@@ -1,4 +1,5 @@
 import { KanaPractice } from "@/components/kana/kana-practice";
+import { SubjectStudyNav } from "@/components/self-study/subject-study-nav";
 import { kanaItems } from "@/lib/data";
 
 import type { Metadata } from "next";
@@ -16,9 +17,12 @@ interface PracticePageProps {
 export default async function PracticePage({ searchParams }: PracticePageProps) {
   const query = await searchParams;
   return (
-    <KanaPractice
-      items={kanaItems}
-      initialScript={query.script === "katakana" ? "katakana" : "hiragana"}
-    />
+    <>
+      <SubjectStudyNav subjectId="japanese" currentHref="/kana/practice" />
+      <KanaPractice
+        items={kanaItems}
+        initialScript={query.script === "katakana" ? "katakana" : "hiragana"}
+      />
+    </>
   );
 }

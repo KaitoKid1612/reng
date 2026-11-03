@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 
 import { useAccountSummary } from "@/components/account-summary";
 import { BrandMark } from "@/components/brand-mark";
+import { SELF_STUDY_PATHS } from "@/lib/self-study";
 
 import type { AccountSummary } from "@/components/account-summary";
 import type { KeyboardEvent } from "react";
@@ -15,6 +16,8 @@ interface NavigationLink {
   label: string;
   // Account areas stay marked on their inner pages, e.g. a class under /teach.
   isSection?: boolean;
+  // Pages at other paths that belong to this entry.
+  relatedPaths?: readonly string[];
 }
 
 // Ways in for visitors; signed-in people reach the same pages from their own areas.
@@ -23,14 +26,13 @@ const GUEST_LINKS: NavigationLink[] = [
   { href: "/for-teachers", label: "Cho giáo viên" },
 ];
 
-// Japanese self-study pages that work without an account. "Luyện tập" is the label of class
-// practice sets, so the kana drill names its script instead.
-const SELF_STUDY_LINKS: NavigationLink[] = [
-  { href: "/lessons", label: "Bài học" },
-  { href: "/grammar", label: "Ngữ pháp" },
-  { href: "/kana", label: "Bảng chữ cái" },
-  { href: "/kana/practice", label: "Luyện kana" },
-];
+// Free practice without an account. Subject tools are listed on /self-study, so the header stays
+// the same whichever subjects Reng teaches.
+const SELF_STUDY_LINK: NavigationLink = {
+  href: "/self-study",
+  label: "Tự học",
+  relatedPaths: SELF_STUDY_PATHS,
+};
 
 const GUIDE_LINK: NavigationLink = { href: "/guide", label: "Hướng dẫn" };
 const SIGN_IN_LINK: NavigationLink = { href: "/sign-in", label: "Đăng nhập" };
@@ -53,9 +55,9 @@ function listAccountLinks(account: AccountSummary): NavigationLink[] {
 // While the account loads the menu matches the server-rendered guest menu, minus sign-in.
 function listLinks(account: AccountSummary | null | undefined) {
   if (account) {
-    return [...listAccountLinks(account), ...SELF_STUDY_LINKS, GUIDE_LINK];
+    return [...listAccountLinks(account), SELF_STUDY_LINK, GUIDE_LINK];
   }
-  const links = [...GUEST_LINKS, ...SELF_STUDY_LINKS, GUIDE_LINK];
+  const links = [...GUEST_LINKS, SELF_STUDY_LINK, GUIDE_LINK];
   return account === null ? [...links, SIGN_IN_LINK] : links;
 }
 
@@ -73,6 +75,9 @@ function findShortcut(account: AccountSummary | null | undefined) {
 }
 
 function isCurrent(link: NavigationLink, pathname: string) {
+  if (link.relatedPaths?.includes(pathname)) {
+    return true;
+  }
   return link.isSection ? pathname.startsWith(link.href) : pathname === link.href;
 }
 
@@ -99,7 +104,7 @@ export function SiteHeader() {
           <BrandMark />
           <span>
             Reng
-            <span className="brand-caption">Học và dạy ngoại ngữ online</span>
+            <span className="brand-caption">Dạy và học online</span>
           </span>
         </Link>
         {shortcut && (

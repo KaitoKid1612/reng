@@ -18,6 +18,8 @@ Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên w
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
 
+Trang chung không gắn môn (03/11/2026): trang chủ, header, chân trang, metadata và ảnh chia sẻ giới thiệu Reng là nơi dạy và học online, không gắn tiếng Nhật; công cụ tự học tiếng Nhật nằm ở trang Tự học (`/self-study`). Xem [rà soát và phần còn gắn với ngôn ngữ](docs/testing/platform-neutral-ui-2026-11-03.md).
+
 Công cụ giáo viên (03/11/2026): từ chối yêu cầu làm giáo viên, audio sinh sẵn cho bài tiếng Trung, trang không còn lỗi khi danh sách dài; chấp nhận đáp án tương đương đang chờ áp migration. Xem [báo cáo](docs/testing/teacher-tools-2026-11-03.md).
 
 Soạn câu sắp xếp và đọc hiểu (03/11/2026): giáo viên thêm câu sắp xếp và câu có đoạn văn ngay trên trình soạn tiếng Nhật, tiếng Trung và câu kiểm tra riêng; sửa câu ngân hàng ôn không còn mất đoạn văn hay ngôn ngữ. Xem [báo cáo](docs/testing/question-authoring-2026-11-03.md).

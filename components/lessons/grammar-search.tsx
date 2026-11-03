@@ -31,7 +31,7 @@ export function GrammarSearch({ lessons }: GrammarSearchProps) {
     <>
       <div className="page-heading">
         <div>
-          <h1>Tra cứu ngữ pháp</h1>
+          <h1>Tra cứu ngữ pháp tiếng Nhật</h1>
           <p>Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt.</p>
         </div>
       </div>

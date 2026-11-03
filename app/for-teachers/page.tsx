@@ -5,9 +5,9 @@ import { absoluteUrl, serializeJsonLd, SITE_NAME } from "@/lib/site";
 
 import type { Metadata } from "next";
 
-const TITLE = "Dạy tiếng Nhật và tiếng Trung online cho học viên Việt Nam";
+const TITLE = "Mở lớp dạy online cho học viên Việt Nam";
 const DESCRIPTION =
-  "Tạo lớp tiếng Nhật hoặc tiếng Trung, soạn slide theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ từng học viên.";
+  "Mở lớp riêng, soạn slide theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ từng học viên.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -23,7 +23,7 @@ const FEATURES = [
   },
   {
     title: "Soạn bài theo mẫu",
-    body: "Tiếng Nhật có bài mẫu theo trình tự Minna no Nihongo để sửa theo lớp; tiếng Trung có mẫu chữ Hán, pinyin, nghĩa Việt và dựng slide từ bảng từ.",
+    body: "Bắt đầu từ bài mẫu hoặc khung bài có sẵn, sửa theo lớp rồi xuất bản. Một bài dùng cho trình chiếu, trang đọc và bài tập.",
   },
   {
     title: "Trình chiếu khi dạy",
@@ -31,15 +31,28 @@ const FEATURES = [
   },
   {
     title: "Bài tập tự chấm",
-    body: "Trắc nghiệm và điền từ tiếng Nhật hoặc tiếng Trung; hỗ trợ gõ romaji sang kana, chấm pinyin đúng thanh điệu và phân biệt giản thể, phồn thể. Giáo viên duyệt đáp án trước khi giao.",
+    body: "Trắc nghiệm, điền đáp án, sắp xếp câu, nghe và đọc hiểu. Bạn duyệt đáp án trước khi giao, và sau khi chấm vẫn chấp nhận thêm được đáp án đúng.",
   },
   {
     title: "Theo dõi và nhắc học",
-    body: "Báo cáo điểm theo lớp, câu sai nhiều, sổ lỗi và thẻ ôn tập của học viên; email nhắc bài khi học viên bật nhận thư.",
+    body: "Báo cáo điểm theo lớp, câu sai nhiều, bài luyện hằng ngày tự giao, sổ lỗi và thẻ ôn tập của học viên; email nhắc bài khi học viên bật nhận thư.",
   },
   {
     title: "Chia sẻ với đồng nghiệp",
     body: "Chia sẻ đúng một phiên bản bài để đồng nghiệp xem hoặc sao chép; ghi chú riêng và dữ liệu lớp không đi kèm.",
+  },
+];
+
+// Classes, slides, assignments and reports are shared by every subject; authoring and grading
+// are built per subject, so the page says which subjects have them today.
+const SUBJECTS = [
+  {
+    title: "Tiếng Nhật",
+    body: "Bài mẫu tự biên soạn theo trình tự Minna no Nihongo để sửa theo lớp; học viên gõ romaji, hệ thống đổi sang kana.",
+  },
+  {
+    title: "Tiếng Trung",
+    body: "Soạn từ bảng chữ Hán – pinyin – nghĩa Việt và dựng slide tự động; chấm pinyin đúng thanh điệu, phân biệt giản thể và phồn thể.",
   },
 ];
 
@@ -67,9 +80,9 @@ const QUESTIONS = [
       "Không. Bài mới chỉ bạn và lớp được giao xem được. Công khai trên website hoặc chia sẻ cho đồng nghiệp là thao tác riêng do bạn chọn.",
   },
   {
-    question: "Tôi có thể dạy tiếng Nhật trên Reng không?",
+    question: "Reng dạy được những môn nào?",
     answer:
-      "Có. Pilot hiện tại ưu tiên tiếng Nhật cho người Việt theo trình tự Minna no Nihongo. Bạn có thể tạo bài 11 từ mẫu tự biên soạn, sửa rồi xuất bản riêng cho lớp; luồng tiếng Trung vẫn được hỗ trợ.",
+      "Hiện có công cụ soạn bài và chấm điểm cho tiếng Nhật và tiếng Trung. Lớp học, trình chiếu, giao bài và theo dõi tiến độ được làm chung để bổ sung môn khác về sau.",
   },
 ];
 
@@ -102,11 +115,12 @@ export default function ForTeachersPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <section className="landing-hero">
-        <p className="hero-intro">Dành cho giáo viên tiếng Nhật và tiếng Trung</p>
+        <p className="hero-intro">Dành cho giáo viên</p>
         <h1>{TITLE}</h1>
         <p className="hero-description">
           Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua
-          Google Meet. Soạn một bài nhập môn chỉ từ một mục tiêu nhỏ và bảng từ bạn đã có.
+          Google Meet. Bắt đầu từ bài mẫu hoặc tự soạn, rồi trình chiếu, giao bài và xem kết quả
+          từng học viên.
         </p>
         <div className="button-row">
           <Link href="/sign-up/teacher" className={buttonVariants()}>
@@ -124,6 +138,21 @@ export default function ForTeachersPage() {
             <article key={feature.title}>
               <h3>{feature.title}</h3>
               <p>{feature.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="landing-section" aria-labelledby="subjects-title">
+        <h2 id="subjects-title">Môn học hiện có</h2>
+        <p className="muted">
+          Lớp học, trình chiếu, giao bài và theo dõi tiến độ dùng chung; công cụ soạn bài và chấm
+          điểm làm riêng cho từng môn.
+        </p>
+        <div className="landing-features">
+          {SUBJECTS.map((subject) => (
+            <article key={subject.title}>
+              <h3>{subject.title}</h3>
+              <p>{subject.body}</p>
             </article>
           ))}
         </div>

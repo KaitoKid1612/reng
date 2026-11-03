@@ -257,6 +257,18 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Trang chung không gắn môn — 03/11/2026
+
+Luồng ở [BD](../basic-design/teaching-service.md#nền-tảng-dạy-học-online-không-gắn-môn--03112026), kiểm tra ở [rà soát](../testing/platform-neutral-ui-2026-11-03.md).
+
+- `lib/site.ts`: `SITE_TAGLINE` dùng cho tiêu đề mặc định, tiêu đề trang chủ và chân trang; `SITE_DESCRIPTION` không nêu môn. `app/opengraph-image.png` và `app/twitter-image.png` vẽ lại cùng bố cục (1200×630, Be Vietnam Pro) với câu giới thiệu mới; alt text đi kèm.
+- `lib/self-study.ts`: `SELF_STUDY_SUBJECTS` (mỗi môn có tên, mô tả và công cụ `href`/`label`/`description`), `getSelfStudySubject` (mã môn lạ thì ném lỗi), `SELF_STUDY_PATHS`. Thêm môn tự học là thêm một mục; trang Tự học và thanh môn tự cập nhật, header không đổi.
+- `components/site-header.tsx`: một mục `SELF_STUDY_LINK` thay bốn link tiếng Nhật. `relatedPaths` so khớp đúng đường dẫn, nên `/lessons/[id]` mở từ lớp không đánh dấu Tự học.
+- `app/self-study/page.tsx` là trang tĩnh. `components/self-study/subject-study-nav.tsx` (Server Component) nằm đầu `/kana`, `/kana/practice`, `/grammar` và đặt `aria-current="page"` cho công cụ đang mở. `lib/seo-routes.ts` thêm `/self-study` vào sitemap.
+- `app/page.tsx` không còn import `kanaItems`. Khối `.hero-paper` hiện `CLASS_STEPS`, số bước nằm trong ô vở `.writing-square` (CSS `.class-steps`). CSS mẫu kana của trang chủ (`.sample-grid`, `.sample-cell`) đã xóa. Link nằm trong câu ở `.page-heading p` và ở thanh môn có gạch chân, vì preflight Tailwind bỏ gạch chân của link (axe `link-in-text-block`).
+- `/for-teachers`: `SUBJECTS` cho mục "Môn học hiện có"; câu hỏi "Reng dạy được những môn nào?" nằm trong JSON-LD FAQPage. `/lessons` đổi tiêu đề thành "Bài học công khai"; `/grammar` ghi "Tra cứu ngữ pháp tiếng Nhật"; `app/not-found.tsx` dẫn về trang chủ và Lớp của tôi.
+- `ClassSettingsForm`: nhãn "Môn học" (trường vẫn là `languageTag`). Không đổi schema, RPC hay migration.
+
 ## SEO cho trang công khai — đã triển khai
 
 `metadataBase` lấy từ `SITE_URL` (`lib/site.ts`), metadata gốc mô tả dịch vụ, Open Graph `vi_VN` và thẻ xác minh Search Console qua `GOOGLE_SITE_VERIFICATION`. `app/sitemap.ts` liệt kê trang công khai cố định và bài có visibility public (làm mới mỗi giờ, lỗi database vẫn trả trang cố định); `app/robots.ts` chặn `/admin`, `/teach`, `/classes`, `/assignments`, trang tài khoản, API và `/lessons/*/slide|presenter`. Trang bài dùng `generateMetadata` với canonical `/lessons/[id]` (bỏ `?version=`) và JSON-LD LearningResource; trang chủ có Organization/WebSite, `/for-teachers` có WebPage/FAQPage. Bài riêng tư không đọc được khi chưa đăng nhập nên không vào sitemap hay chỉ mục. Trang luyện kanji `/kanji/` cũng bị chặn chỉ mục như flashcard/luyện nghe.
