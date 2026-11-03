@@ -281,7 +281,11 @@ export interface ClassLesson {
   title: string;
   orderNo: number;
   availableAt: string;
+  // A question bank has no words, so flashcards and character practice would open empty.
+  hasVocab: boolean;
 }
+
+const classVersionSchema = versionSummarySchema.extend({ first_word: z.unknown() });
 
 export async function listClassLessons(classId: string): Promise<ClassLesson[]> {
   const service = createServiceClient();
@@ -300,13 +304,13 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
     service
       .from("lesson_versions")
       .select(
-        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag",
+        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag, first_word:content->vocab->0",
       )
       .in(
         "id",
         rows.map((row) => row.lesson_version_id),
       ),
-    versionSummarySchema,
+    classVersionSchema,
   );
   return rows.map((row) => {
     const version = versions.find((item) => item.id === row.lesson_version_id);
@@ -320,6 +324,7 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
       title: version.title,
       orderNo: row.order_no,
       availableAt: row.available_at,
+      hasVocab: version.first_word !== null && version.first_word !== undefined,
     };
   });
 }

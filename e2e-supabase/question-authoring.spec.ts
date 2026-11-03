@@ -155,6 +155,13 @@ test("a Japanese teacher writes sentence-order and reading questions and a learn
     await student.getByLabel("Mã lớp", { exact: true }).fill(state.code);
     await student.getByRole("button", { name: "Vào lớp", exact: true }).click();
     await student.waitForURL(`**/classes/${state.classId}`);
+    // The lesson has questions but no words: no empty flashcard or kanji practice to open.
+    await expect(student.getByRole("link", { name: "Đọc bài", exact: true })).toBeVisible();
+    await expect(student.getByRole("link", { name: "Flashcard", exact: true })).toHaveCount(0);
+    await expect(student.getByRole("link", { name: "Luyện kanji", exact: true })).toHaveCount(0);
+    await student.getByRole("link", { name: "Đọc bài", exact: true }).click();
+    await expect(student.getByRole("link", { name: "Flashcard từ vựng" })).toHaveCount(0);
+    await student.goto(`/classes/${state.classId}`);
     await student.getByRole("link", { name: state.practiceTitle, exact: true }).click();
     await student.getByRole("button", { name: "Bắt đầu làm bài", exact: true }).click();
     await expect(student.locator(".question-passage").filter({ hasText: PASSAGE })).toHaveCount(2);

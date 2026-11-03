@@ -246,12 +246,14 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
         >
           Ôn lại bằng slide
         </Link>
-        <Link
-          href={`/vocabulary/${lesson.lessonId}?version=${lesson.id}`}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          Flashcard từ vựng
-        </Link>
+        {lesson.content.vocab.length > 0 && (
+          <Link
+            href={`/vocabulary/${lesson.lessonId}?version=${lesson.id}`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Flashcard từ vựng
+          </Link>
+        )}
         {listeningCount > 0 && (
           <Link
             href={`/listening/${lesson.lessonId}?version=${lesson.id}`}
