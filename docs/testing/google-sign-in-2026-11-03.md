@@ -18,7 +18,17 @@ Dev server có `AUTH_GOOGLE_ENABLED=true` và Supabase local; Google chưa bật
 | `next` trỏ ra ngoài site bị bỏ | Đạt |
 | `npm run check`; test `tests/auth-paths.test.ts` cho `googleCallbackPath`, `signInErrorPath` | Đạt |
 
+## Production — 03/11/2026
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Link `/auth/v1/authorize?provider=google` của Supabase production mở màn hình chọn tài khoản Google (người dùng kiểm tra) | Đạt sau khi bật nhà cung cấp; trước đó trả "provider is not enabled" |
+| Sau khi push `d071fd8`, `/sign-in` trên `reng-class.vercel.app` có nút "Đăng nhập bằng Google" | Đạt |
+| `/auth/callback` không có mã chuyển về `/sign-in?error=google` | Đạt |
+| Client ID/secret trong `~/.config/reng/supabase-prod.env` đúng định dạng (không in giá trị) | Đạt |
+
 ## Chưa kiểm tra
 
-- Đăng nhập thật qua Google (cần OAuth client trên Google Cloud và bật nhà cung cấp trong Supabase), gộp vào tài khoản email đã có, và đăng ký giáo viên bằng Google trên production.
+- Đăng nhập thật bằng tài khoản Google trên production, gộp vào tài khoản email đã có, và đăng ký giáo viên bằng Google (người dùng thử).
+- `npx supabase config diff` sau khi đặt `enabled = true`: lệnh đọc production bị chế độ tự động chặn, người dùng tự chạy.
 - E2E chưa chạy theo yêu cầu người dùng ngày 03/11/2026.

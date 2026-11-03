@@ -455,10 +455,10 @@ content_path = ""
 subject = "Reset your password"
 content_path = ""
 
-# Production Google sign-in: set enabled = true once the two variables are in
-# ~/.config/reng/supabase-prod.env, and load that file before `config diff` / `config push`.
+# Production Google sign-in, on since 2026-11-03. The client ID and secret live in
+# ~/.config/reng/supabase-prod.env: load that file before `config diff` / `config push`.
 [remotes.production.auth.external.google]
-enabled = false
+enabled = true
 client_id = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)"
 secret = "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)"
 
