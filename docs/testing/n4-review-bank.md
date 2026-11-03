@@ -37,3 +37,49 @@ Sau đợt bổ sung 1–28, người học chọn **Mở rộng toàn bộ N4**
 - Chạy thử transaction tạo bài/thêm lớp/ghim nguồn rồi rollback; sau đó thực thi với khóa lớp, kiểm tra revision/nguồn cũ/chủ lớp và audit chống chạy lặp. Có bản sao thiết lập lớp trước thay đổi ngoài repo. Không sửa schema, RLS hoặc tạo thẻ SRS/lượt học giả.
 - Đọc lại production: bộ mới v1 có 200 câu/80 từ, visibility `class`, nằm trong lớp và là nguồn ghim; bộ cũ v2 vẫn có 200 câu/40 từ. Chủ lớp đọc được bộ mới qua `read_lesson_version`, người không đăng nhập không đọc được. Bốn bài đã giao trước đó vẫn dùng bộ cũ và mỗi bài 40 câu.
 - Không thêm bài giao hôm nay ở đợt mở rộng này. Không đổi route/tương tác/framework nên không chạy lại E2E/build; không đăng nhập thay người học.
+
+## Đa dạng dạng bài — 03/11/2026
+
+Người học thấy bài N4 "lộn xộn" và ít kiểu bài. Phân tích bộ 200 câu và cách chọn câu cho thấy:
+
+- Chỉ có 4 kiểu, câu chữ lặp lại y hệt: gõ cách đọc kanji, gõ dạng biến đổi, trắc nghiệm ngữ pháp, trắc nghiệm đọc hiểu.
+- Đoạn văn đọc hiểu nằm trong từng đề. Đề không giữ xuống dòng nên đoạn văn và câu hỏi dính thành một khối. Các câu cùng một đoạn bị xáo xen kẽ trong bài, nên phải đọc cùng một đoạn nhiều lần ở các chỗ khác nhau.
+
+Không đọc được dữ liệu production để xem bài 03/11: quyền đọc production bị chặn trong phiên này.
+
+[Bộ mới](../../content/review-banks/n4-comprehensive.json) có **304 câu, 10 dạng**, vẫn 80 từ vựng:
+
+| Dạng | Số câu | Mỗi ngày (40 câu) |
+| --- | --- | --- |
+| Đọc kanji, gõ hiragana (cũ) | 50 | 7 |
+| Chọn cách đọc kanji trong câu (mới) | 18 | 2 |
+| Chọn chữ Hán đúng, có cặp đồng âm như 機会/機械, 人口/人工 (mới) | 18 | 2 |
+| Chọn từ hợp ngữ cảnh (mới) | 18 | 2 |
+| Chọn câu cùng nghĩa (mới) | 14 | 2 |
+| Biến đổi từ, gõ hiragana (cũ) | 50 | 7 |
+| Điền trợ từ, gõ romaji (mới) | 16 | 2 |
+| Ngữ pháp trắc nghiệm (cũ) | 50 | 7 |
+| Sắp xếp câu, bấm mảnh theo thứ tự (mới) | 20 | 3 |
+| Đọc hiểu, 10 đoạn × 5 câu (cũ, tách đoạn văn) | 50 | 6 |
+
+Câu mới tự biên soạn, dùng lại 80 từ của bộ để ôn cùng một từ qua nhiều dạng. Câu sắp xếp theo các mẫu ngữ pháp bài 16–50, mỗi câu chỉ có một thứ tự đúng với nghĩa đã cho. Câu trợ từ nhận các đáp án đúng khác (に/へ, を/から…).
+
+Bài hằng ngày đi theo thứ tự: Kanji → Chữ Hán → Từ vựng → Câu cùng nghĩa → Biến đổi từ → Trợ từ → Ngữ pháp → Sắp xếp câu → Đọc hiểu. Mỗi câu có nhãn phần. Câu đọc hiểu lấy trọn một đoạn trước, các câu cùng đoạn đi liền nhau, và đoạn văn nằm trong khung riêng phía trên câu hỏi.
+
+Kiểm chứng:
+
+- `tests/n4-comprehensive.test.ts`: schema xuất bản và giới hạn editor; mọi câu giao được. Chỉ đáp án khai báo được chấm đúng: kiểm từng lựa chọn, mọi biến thể đáp án điền, câu sắp xếp đúng và đảo. Có 10 đoạn × 5 câu. Năm ngày liên tiếp: mỗi ngày đúng số câu từng dạng như bảng, đúng thứ tự dạng, không trùng câu, không tách đoạn văn.
+- Chạy local đầy đủ: xuất bản bộ mới cho giáo viên thử, bấm "Giao bài hôm nay ngay" trên trang lớp. Server giao 40 câu đủ 9 nhãn phần, 6 câu đọc hiểu có khung đoạn văn, 3 câu sắp xếp. Học viên ở 390px bấm mảnh, xếp lại, nhảy câu bằng danh sách câu.
+- `npm run bank:sql` trên database local: tạo bộ cũ v1 trong một lớp. File chạy thử hiện v2 304 câu rồi rollback. File commit đưa lớp sang v2. Chạy lại không tạo v3.
+
+**Trạng thái production:** code đã deploy khi push. Sau deploy, câu đọc hiểu cũ cũng tách đoạn văn khỏi câu hỏi, vì đề giữ xuống dòng. **Bộ 304 câu chưa áp dụng**, vì phiên này không có quyền ghi production. Để áp dụng (chỉ chạy sau khi deploy đã xong):
+
+```bash
+npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --out /tmp/n4-v2.sql          # chạy thử
+npm run bank:sql -- --file content/review-banks/n4-comprehensive.json --out /tmp/n4-v2-commit.sql --commit
+set -a; . ~/.config/reng/supabase-prod.env; set +a
+npx supabase db query --linked --file /tmp/n4-v2.sql         # xem phiên bản và lớp, rồi rollback
+npx supabase db query --linked --file /tmp/n4-v2-commit.sql  # áp dụng; chạy lại không tạo phiên bản thừa
+```
+
+Lớp "Ôn JLPT N4 – Việt" giữ nguồn ghim cũ và số câu mỗi ngày; bài từ ngày hôm sau dùng v2. Bài đã giao (kể cả 03/11) giữ snapshot cũ.

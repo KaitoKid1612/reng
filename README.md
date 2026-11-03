@@ -1,6 +1,6 @@
 # Reng
 
-Ôn N4 (02/11/2026): lớp tự học của Việt có bộ **Tổng ôn N4 — Minna 1–50** với **200 câu và 80 từ vựng**; bài hằng ngày từ 03/11 lấy 40 câu từ bộ này, mỗi nhóm kanji/biến đổi từ/ngữ pháp/đọc hiểu 10 câu. Bộ Minna 1–28 vẫn giữ riêng. Bài được chọn tự động từ ngân hàng, chưa tự sinh câu mới bằng AI; chưa có phần nghe. Xem [nội dung bổ sung và kiểm chứng](docs/testing/n4-review-bank.md).
+Ôn N4 (03/11/2026): bộ **Tổng ôn N4 — Minna 1–50** trong repo có **304 câu, 10 dạng bài** và 80 từ vựng. Ngoài đọc kanji, biến đổi từ, ngữ pháp và đọc hiểu, nay thêm chọn cách đọc kanji, chọn chữ Hán, từ vựng theo ngữ cảnh, câu cùng nghĩa, điền trợ từ và sắp xếp câu (bấm mảnh theo thứ tự). Đoạn văn đọc hiểu nằm trong khung riêng, và các câu cùng đoạn đi liền nhau. Bài hằng ngày 40 câu đủ 10 dạng. Production vẫn dùng bản 200 câu cho đến khi chạy `npm run bank:sql` theo [hướng dẫn](docs/testing/n4-review-bank.md#đa-dạng-dạng-bài--03112026). Bộ Minna 1–28 vẫn giữ riêng. Câu tự biên soạn, chưa sinh câu mới bằng AI; chưa có phần nghe.
 
 Tên sản phẩm là **Reng** (tiếng chuông vào lớp).
 
