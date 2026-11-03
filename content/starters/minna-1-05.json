@@ -1,0 +1,1548 @@
+{
+  "id": "minna-1-05",
+  "title": "Bài 5 – Đi lại và ngày tháng",
+  "titleJa": "第5課　どこへ いきますか",
+  "summary": "Theo trình tự bài 5 Minna no Nihongo Sơ cấp I: 行きます・来ます・帰ります với nơi chốn へ, không đi đâu cả どこも 行きません, phương tiện で và đi bộ あるいて, người đi cùng と và một mình ひとりで, hỏi khi nào いつ, tuần・tháng・năm trước, này, sau và cách đọc ngày tháng 〜月〜日.",
+  "order": 5,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0501",
+        "jp": "いきます",
+        "kanji": "行きます",
+        "romaji": "ikimasu",
+        "vi": "đi",
+        "audio": null
+      },
+      {
+        "id": "v0502",
+        "jp": "きます",
+        "kanji": "来ます",
+        "romaji": "kimasu",
+        "vi": "đến",
+        "audio": null
+      },
+      {
+        "id": "v0503",
+        "jp": "かえります",
+        "kanji": "帰ります",
+        "romaji": "kaerimasu",
+        "vi": "về (nhà, nước)",
+        "audio": null,
+        "image": "/icons/vocab/house-with-garden.svg"
+      },
+      {
+        "id": "v0504",
+        "jp": "がっこう",
+        "kanji": "学校",
+        "romaji": "gakkou",
+        "vi": "trường học",
+        "audio": null,
+        "image": "/icons/vocab/school.svg"
+      },
+      {
+        "id": "v0505",
+        "jp": "スーパー",
+        "romaji": "suupaa",
+        "vi": "siêu thị",
+        "audio": null,
+        "image": "/icons/vocab/convenience-store.svg"
+      },
+      {
+        "id": "v0506",
+        "jp": "えき",
+        "kanji": "駅",
+        "romaji": "eki",
+        "vi": "ga, nhà ga",
+        "audio": null,
+        "image": "/icons/vocab/station.svg"
+      },
+      {
+        "id": "v0507",
+        "jp": "くうこう",
+        "kanji": "空港",
+        "romaji": "kuukou",
+        "vi": "sân bay",
+        "audio": null,
+        "image": "/icons/vocab/airplane-arrival.svg"
+      },
+      {
+        "id": "v0508",
+        "jp": "ひこうき",
+        "kanji": "飛行機",
+        "romaji": "hikouki",
+        "vi": "máy bay",
+        "audio": null,
+        "image": "/icons/vocab/airplane.svg"
+      },
+      {
+        "id": "v0509",
+        "jp": "ふね",
+        "kanji": "船",
+        "romaji": "fune",
+        "vi": "tàu thủy, thuyền",
+        "audio": null,
+        "image": "/icons/vocab/ship.svg"
+      },
+      {
+        "id": "v0510",
+        "jp": "でんしゃ",
+        "kanji": "電車",
+        "romaji": "densha",
+        "vi": "tàu điện",
+        "audio": null,
+        "image": "/icons/vocab/train.svg"
+      },
+      {
+        "id": "v0511",
+        "jp": "ちかてつ",
+        "kanji": "地下鉄",
+        "romaji": "chikatetsu",
+        "vi": "tàu điện ngầm",
+        "audio": null
+      },
+      {
+        "id": "v0512",
+        "jp": "しんかんせん",
+        "kanji": "新幹線",
+        "romaji": "shinkansen",
+        "vi": "tàu cao tốc Shinkansen",
+        "audio": null,
+        "image": "/icons/vocab/bullet-train.svg"
+      },
+      {
+        "id": "v0513",
+        "jp": "バス",
+        "romaji": "basu",
+        "vi": "xe buýt",
+        "audio": null,
+        "image": "/icons/vocab/bus.svg"
+      },
+      {
+        "id": "v0514",
+        "jp": "タクシー",
+        "romaji": "takushii",
+        "vi": "taxi",
+        "audio": null,
+        "image": "/icons/vocab/taxi.svg"
+      },
+      {
+        "id": "v0515",
+        "jp": "じてんしゃ",
+        "kanji": "自転車",
+        "romaji": "jitensha",
+        "vi": "xe đạp",
+        "audio": null,
+        "image": "/icons/vocab/bicycle.svg"
+      },
+      {
+        "id": "v0516",
+        "jp": "バイク",
+        "romaji": "baiku",
+        "vi": "xe máy",
+        "audio": null
+      },
+      {
+        "id": "v0517",
+        "jp": "あるいて",
+        "kanji": "歩いて",
+        "romaji": "aruite",
+        "vi": "đi bộ",
+        "audio": null,
+        "image": "/icons/vocab/person-walking.svg"
+      },
+      {
+        "id": "v0518",
+        "jp": "ひと",
+        "kanji": "人",
+        "romaji": "hito",
+        "vi": "người",
+        "audio": null
+      },
+      {
+        "id": "v0519",
+        "jp": "ともだち",
+        "kanji": "友達",
+        "romaji": "tomodachi",
+        "vi": "bạn bè",
+        "audio": null,
+        "image": "/icons/vocab/handshake.svg"
+      },
+      {
+        "id": "v0520",
+        "jp": "かれ",
+        "kanji": "彼",
+        "romaji": "kare",
+        "vi": "anh ấy; bạn trai",
+        "audio": null,
+        "image": "/icons/vocab/man.svg"
+      },
+      {
+        "id": "v0521",
+        "jp": "かのじょ",
+        "kanji": "彼女",
+        "romaji": "kanojo",
+        "vi": "cô ấy; bạn gái",
+        "audio": null,
+        "image": "/icons/vocab/woman.svg"
+      },
+      {
+        "id": "v0522",
+        "jp": "かぞく",
+        "kanji": "家族",
+        "romaji": "kazoku",
+        "vi": "gia đình",
+        "audio": null
+      },
+      {
+        "id": "v0523",
+        "jp": "ひとりで",
+        "kanji": "一人で",
+        "romaji": "hitori de",
+        "vi": "một mình",
+        "audio": null,
+        "image": "/icons/vocab/bust-in-silhouette.svg"
+      },
+      {
+        "id": "v0524",
+        "jp": "どこも",
+        "romaji": "doko mo",
+        "vi": "(không …) đâu cả (đi với phủ định)",
+        "audio": null
+      },
+      {
+        "id": "v0525",
+        "jp": "せんしゅう",
+        "kanji": "先週",
+        "romaji": "senshuu",
+        "vi": "tuần trước",
+        "audio": null
+      },
+      {
+        "id": "v0526",
+        "jp": "こんしゅう",
+        "kanji": "今週",
+        "romaji": "konshuu",
+        "vi": "tuần này",
+        "audio": null
+      },
+      {
+        "id": "v0527",
+        "jp": "らいしゅう",
+        "kanji": "来週",
+        "romaji": "raishuu",
+        "vi": "tuần sau",
+        "audio": null
+      },
+      {
+        "id": "v0528",
+        "jp": "せんげつ",
+        "kanji": "先月",
+        "romaji": "sengetsu",
+        "vi": "tháng trước",
+        "audio": null
+      },
+      {
+        "id": "v0529",
+        "jp": "こんげつ",
+        "kanji": "今月",
+        "romaji": "kongetsu",
+        "vi": "tháng này",
+        "audio": null
+      },
+      {
+        "id": "v0530",
+        "jp": "らいげつ",
+        "kanji": "来月",
+        "romaji": "raigetsu",
+        "vi": "tháng sau",
+        "audio": null
+      },
+      {
+        "id": "v0531",
+        "jp": "きょねん",
+        "kanji": "去年",
+        "romaji": "kyonen",
+        "vi": "năm ngoái",
+        "audio": null
+      },
+      {
+        "id": "v0532",
+        "jp": "ことし",
+        "kanji": "今年",
+        "romaji": "kotoshi",
+        "vi": "năm nay",
+        "audio": null
+      },
+      {
+        "id": "v0533",
+        "jp": "らいねん",
+        "kanji": "来年",
+        "romaji": "rainen",
+        "vi": "năm sau",
+        "audio": null
+      },
+      {
+        "id": "v0534",
+        "jp": "〜がつ",
+        "kanji": "〜月",
+        "romaji": "~gatsu",
+        "vi": "tháng …",
+        "audio": null,
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v0535",
+        "jp": "なんがつ",
+        "kanji": "何月",
+        "romaji": "nangatsu",
+        "vi": "tháng mấy",
+        "audio": null
+      },
+      {
+        "id": "v0536",
+        "jp": "ついたち",
+        "kanji": "1日",
+        "romaji": "tsuitachi",
+        "vi": "ngày mồng 1",
+        "audio": null
+      },
+      {
+        "id": "v0537",
+        "jp": "〜にち",
+        "kanji": "〜日",
+        "romaji": "~nichi",
+        "vi": "ngày …",
+        "audio": null
+      },
+      {
+        "id": "v0538",
+        "jp": "なんにち",
+        "kanji": "何日",
+        "romaji": "nannichi",
+        "vi": "ngày mấy",
+        "audio": null
+      },
+      {
+        "id": "v0539",
+        "jp": "いつ",
+        "romaji": "itsu",
+        "vi": "khi nào",
+        "audio": null
+      },
+      {
+        "id": "v0540",
+        "jp": "たんじょうび",
+        "kanji": "誕生日",
+        "romaji": "tanjoubi",
+        "vi": "sinh nhật",
+        "audio": null,
+        "image": "/icons/vocab/birthday-cake.svg"
+      },
+      {
+        "id": "v0541",
+        "jp": "どういたしまして",
+        "romaji": "dou itashimashite",
+        "vi": "không có gì (đáp lại lời cảm ơn)",
+        "audio": null
+      },
+      {
+        "id": "v0542",
+        "jp": "つぎの",
+        "kanji": "次の",
+        "romaji": "tsugi no",
+        "vi": "… tiếp theo",
+        "audio": null
+      },
+      {
+        "id": "v0543",
+        "jp": "〜へ",
+        "romaji": "~e",
+        "vi": "đến, về phía (nơi chốn); đọc là え",
+        "audio": null
+      },
+      {
+        "id": "v0544",
+        "jp": "〜で",
+        "romaji": "~de",
+        "vi": "bằng (phương tiện)",
+        "audio": null
+      },
+      {
+        "id": "v0545",
+        "jp": "〜と",
+        "romaji": "~to",
+        "vi": "cùng với (ai đó)",
+        "audio": null
+      },
+      {
+        "id": "v0546",
+        "jp": "ホーチミン",
+        "romaji": "hoochimin",
+        "vi": "Thành phố Hồ Chí Minh",
+        "audio": null
+      },
+      {
+        "id": "v0547",
+        "jp": "ダナン",
+        "romaji": "danan",
+        "vi": "Đà Nẵng",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0501",
+        "pattern": "N (nơi chốn) へ 行きます／来ます／帰ります",
+        "vi": "Đi / đến / về N",
+        "explain": "へ chỉ hướng đi, đứng sau nơi chốn. {行|い}きます: đi; {来|き}ます: đến (chỗ người nói); {帰|かえ}ります: về nhà, về nước. Hỏi: どこへ {行|い}きますか.",
+        "viMistake": "Trợ từ へ viết bằng chữ へ nhưng đọc là え.",
+        "examples": [
+          {
+            "jp": "あした {銀行|ぎんこう}へ {行|い}きます。",
+            "vi": "Ngày mai tôi đi ngân hàng.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {来月|らいげつ} ハノイへ {来|き}ます。",
+            "vi": "Tháng sau anh Tanaka sẽ đến Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "きのう 6{時|じ}に うちへ {帰|かえ}りました。",
+            "vi": "Hôm qua tôi về nhà lúc 6 giờ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0502",
+        "pattern": "どこ（へ）も 行きません",
+        "vi": "Không đi đâu cả",
+        "explain": "Từ để hỏi + も + động từ phủ định: hoàn toàn không. Hỏi どこへ {行|い}きましたか, trả lời どこも {行|い}きませんでした (hoặc どこへも).",
+        "viMistake": "どこも luôn đi với động từ phủ định: không nói どこも {行|い}きます.",
+        "examples": [
+          {
+            "jp": "{日曜日|にちようび} どこへ {行|い}きましたか。…どこも {行|い}きませんでした。",
+            "vi": "Chủ nhật bạn đã đi đâu? … Tôi không đi đâu cả.",
+            "audio": null
+          },
+          {
+            "jp": "あした どこへも {行|い}きません。",
+            "vi": "Ngày mai tôi không đi đâu cả.",
+            "audio": null
+          },
+          {
+            "jp": "{今週|こんしゅう}は どこも {行|い}きません。",
+            "vi": "Tuần này tôi không đi đâu cả.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0503",
+        "pattern": "N (phương tiện) で 行きます",
+        "vi": "Đi bằng N",
+        "explain": "で đứng sau phương tiện. Đi bộ là {歩|ある}いて, không có で. Hỏi: {何|なん}で {行|い}きますか (đi bằng gì).",
+        "viMistake": "Không nói あるいてで; chỉ nói {歩|ある}いて {行|い}きます.",
+        "examples": [
+          {
+            "jp": "{電車|でんしゃ}で {会社|かいしゃ}へ {行|い}きます。",
+            "vi": "Tôi đi làm bằng tàu điện.",
+            "audio": null
+          },
+          {
+            "jp": "{何|なん}で {学校|がっこう}へ {来|き}ましたか。…バイクで {来|き}ました。",
+            "vi": "Bạn đến trường bằng gì? … Tôi đến bằng xe máy.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}から {歩|ある}いて {帰|かえ}りました。",
+            "vi": "Tôi đi bộ từ ga về.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0504",
+        "pattern": "N (người) と 行きます・一人で",
+        "vi": "Đi cùng N / đi một mình",
+        "explain": "と đứng sau người đi cùng. Đi một mình là {一人|ひとり}で, không có と. Hỏi: だれと {行|い}きますか.",
+        "viMistake": "Không nói {一人|ひとり}と; một mình là {一人|ひとり}で.",
+        "examples": [
+          {
+            "jp": "{友達|ともだち}と {美術館|びじゅつかん}へ {行|い}きます。",
+            "vi": "Tôi đi bảo tàng mỹ thuật với bạn.",
+            "audio": null
+          },
+          {
+            "jp": "だれと {日本|にほん}へ {来|き}ましたか。…{家族|かぞく}と {来|き}ました。",
+            "vi": "Bạn đến Nhật cùng ai? … Tôi đến cùng gia đình.",
+            "audio": null
+          },
+          {
+            "jp": "{一人|ひとり}で うちへ {帰|かえ}ります。",
+            "vi": "Tôi về nhà một mình.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0505",
+        "pattern": "いつ・〜月〜日",
+        "vi": "Khi nào; ngày … tháng …",
+        "explain": "Hỏi thời điểm: いつ (không thêm に). Ngày tháng: tháng trước, ngày sau: 〜{月|がつ}〜{日|にち}. Ngày 1–10, 14, 20, 24 có cách đọc riêng: ついたち, ふつか, みっか, よっか, いつか, むいか, なのか, ようか, ここのか, とおか, じゅうよっか, はつか, にじゅうよっか.",
+        "viMistake": "Tiếng Nhật nói tháng trước ngày sau: 3{月|がつ}{5日|いつか} là ngày 5 tháng 3. Tháng 4, 7, 9 đọc しがつ, しちがつ, くがつ.",
+        "examples": [
+          {
+            "jp": "いつ {日本|にほん}へ {行|い}きますか。…{来月|らいげつ} {行|い}きます。",
+            "vi": "Khi nào bạn đi Nhật? … Tháng sau tôi đi.",
+            "audio": null
+          },
+          {
+            "jp": "{誕生日|たんじょうび}は いつですか。…7{月|がつ}{10日|とおか}です。",
+            "vi": "Sinh nhật bạn là khi nào? … Ngày 10 tháng 7.",
+            "audio": null
+          },
+          {
+            "jp": "9{月|がつ}{1日|ついたち}に ハノイへ {来|き}ました。",
+            "vi": "Tôi đã đến Hà Nội vào ngày 1 tháng 9.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0501",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"cuối tuần bạn đi đâu, bằng gì, với ai?\". Bài đi theo trình tự bài 5 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}5{課|か}",
+        "vi": "Đi lại: どこへ いきますか"
+      },
+      {
+        "id": "s0502",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Nói nơi đi, đến, về: 〜へ 行きます／来ます／帰ります\n2. Nói phương tiện 〜で và người đi cùng 〜と, một mình ひとりで\n3. Không đi đâu cả: どこも 行きません\n4. Hỏi khi nào いつ, nói ngày tháng 〜月〜日"
+      },
+      {
+        "id": "s0503",
+        "teacherNotes": "Ba động từ chuyển động: いきます (đi khỏi chỗ mình), きます (đến chỗ mình), かえります (về nhà, về nước).",
+        "type": "vocab",
+        "refs": ["v0501", "v0502", "v0503", "v0504", "v0505", "v0506", "v0507", "v0508"]
+      },
+      {
+        "id": "s0504",
+        "teacherNotes": "Hỏi học viên đi làm, đi học bằng gì; ở Việt Nam bạn thường đi バイク.",
+        "type": "vocab",
+        "refs": ["v0509", "v0510", "v0511", "v0512", "v0513", "v0514", "v0515", "v0516"]
+      },
+      {
+        "id": "s0505",
+        "teacherNotes": "ひとりで: một mình; ともだちと: cùng bạn.",
+        "type": "vocab",
+        "refs": ["v0517", "v0518", "v0519", "v0520", "v0521", "v0522", "v0523", "v0524"]
+      },
+      {
+        "id": "s0506",
+        "teacherNotes": "Bảng 先・今・来: tuần, tháng, năm (xem bảng phía sau).",
+        "type": "vocab",
+        "refs": ["v0525", "v0526", "v0527", "v0528", "v0529", "v0530", "v0531", "v0532"]
+      },
+      {
+        "id": "s0507",
+        "teacherNotes": "Ngày mồng 1 đọc ついたち, không phải いちにち.",
+        "type": "vocab",
+        "refs": ["v0533", "v0534", "v0535", "v0536", "v0537", "v0538", "v0539", "v0540"]
+      },
+      {
+        "id": "s0508",
+        "teacherNotes": "Trợ từ へ viết へ, đọc え.",
+        "type": "vocab",
+        "refs": ["v0541", "v0542", "v0543", "v0544", "v0545", "v0546", "v0547"]
+      },
+      {
+        "id": "s0509",
+        "teacherNotes": "Đi lại trong lớp: giáo viên đi ra cửa (いきます), học viên gọi giáo viên lại (きます).",
+        "type": "grammar",
+        "ref": "g0501"
+      },
+      {
+        "id": "s0510",
+        "type": "example",
+        "ref": "g0501",
+        "reveal": true
+      },
+      {
+        "id": "s0511",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: đi đâu?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["あした・{銀行|ぎんこう}", "あした {銀行|ぎんこう}へ {行|い}きます。"],
+          ["きのう・{図書館|としょかん}", "きのう {図書館|としょかん}へ {行|い}きました。"],
+          ["{来週|らいしゅう}・ダナン", "{来週|らいしゅう} ダナンへ {行|い}きます。"],
+          ["7{時|じ}・うち（{帰|かえ}ります）", "7{時|じ}に うちへ {帰|かえ}ります。"],
+          [
+            "{来月|らいげつ}・{田中|たなか}さん・ハノイ（{来|き}ます）",
+            "{田中|たなか}さんは {来月|らいげつ} ハノイへ {来|き}ます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0512",
+        "type": "quiz",
+        "ref": "q0501"
+      },
+      {
+        "id": "s0513",
+        "type": "quiz",
+        "ref": "q0503"
+      },
+      {
+        "id": "s0514",
+        "teacherNotes": "Hỏi từng học viên chủ nhật vừa rồi đi đâu; ai không đi đâu thì trả lời どこも いきませんでした.",
+        "type": "grammar",
+        "ref": "g0502"
+      },
+      {
+        "id": "s0515",
+        "type": "example",
+        "ref": "g0502",
+        "reveal": true
+      },
+      {
+        "id": "s0516",
+        "type": "quiz",
+        "ref": "q0504"
+      },
+      {
+        "id": "s0517",
+        "teacherNotes": "Dán hình phương tiện lên bảng; học viên chọn hình và nói 〜で いきます.",
+        "type": "grammar",
+        "ref": "g0503"
+      },
+      {
+        "id": "s0518",
+        "type": "example",
+        "ref": "g0503",
+        "reveal": true
+      },
+      {
+        "id": "s0519",
+        "teacherNotes": "Hỏi: だれと いきますか. Ai đi một mình thì trả lời ひとりで.",
+        "type": "grammar",
+        "ref": "g0504"
+      },
+      {
+        "id": "s0520",
+        "type": "example",
+        "ref": "g0504",
+        "reveal": true
+      },
+      {
+        "id": "s0521",
+        "teacherNotes": "Học viên ghép phương tiện, người đi cùng và nơi đến thành câu.",
+        "type": "table",
+        "title": "Luyện tập 2: bằng gì, với ai?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["バス・{学校|がっこう}", "バスで {学校|がっこう}へ {行|い}きます。"],
+          ["{友達|ともだち}・スーパー", "{友達|ともだち}と スーパーへ {行|い}きます。"],
+          ["{一人|ひとり}・うち（{帰|かえ}ります）", "{一人|ひとり}で うちへ {帰|かえ}ります。"],
+          ["{歩|ある}いて・{駅|えき}", "{歩|ある}いて {駅|えき}へ {行|い}きます。"],
+          [
+            "{新幹線|しんかんせん}・{大阪|おおさか}",
+            "{新幹線|しんかんせん}で {大阪|おおさか}へ {行|い}きます。"
+          ],
+          [
+            "{家族|かぞく}・{飛行機|ひこうき}・ホーチミン",
+            "{家族|かぞく}と {飛行機|ひこうき}で ホーチミンへ {行|い}きます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0522",
+        "type": "quiz",
+        "ref": "q0505"
+      },
+      {
+        "id": "s0523",
+        "type": "quiz",
+        "ref": "q0508"
+      },
+      {
+        "id": "s0524",
+        "teacherNotes": "Đọc theo cột: 先 (trước), 今 (này), 来 (sau). Năm có cách nói riêng: きょねん, ことし, らいねん.",
+        "type": "table",
+        "title": "Tuần, tháng, năm",
+        "columns": ["Đơn vị", "Trước", "Này", "Sau"],
+        "rows": [
+          ["Tuần", "せんしゅう", "こんしゅう", "らいしゅう"],
+          ["Tháng", "せんげつ", "こんげつ", "らいげつ"],
+          ["Năm", "きょねん", "ことし", "らいねん"]
+        ]
+      },
+      {
+        "id": "s0525",
+        "teacherNotes": "Tháng 4, 7, 9 đọc riêng; các tháng khác là số + がつ.",
+        "type": "table",
+        "title": "Tháng",
+        "columns": ["Tháng", "Cách đọc"],
+        "rows": [
+          ["1月", "いちがつ"],
+          ["4月", "しがつ"],
+          ["7月", "しちがつ"],
+          ["9月", "くがつ"],
+          ["10月", "じゅうがつ"],
+          ["12月", "じゅうにがつ"],
+          ["何月", "なんがつ"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0526",
+        "teacherNotes": "Ngày 1–10, 14, 20 đọc riêng; các ngày khác là số + にち (11日 じゅういちにち).",
+        "type": "table",
+        "title": "Ngày trong tháng",
+        "columns": ["Ngày", "Cách đọc"],
+        "rows": [
+          ["1日", "ついたち"],
+          ["2日", "ふつか"],
+          ["3日", "みっか"],
+          ["4日", "よっか"],
+          ["5日", "いつか"],
+          ["6日", "むいか"],
+          ["7日", "なのか"],
+          ["8日", "ようか"],
+          ["9日", "ここのか"],
+          ["10日", "とおか"],
+          ["14日", "じゅうよっか"],
+          ["20日", "はつか"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0527",
+        "teacherNotes": "Hỏi sinh nhật từng học viên và viết lên bảng theo thứ tự tháng → ngày.",
+        "type": "grammar",
+        "ref": "g0505"
+      },
+      {
+        "id": "s0528",
+        "type": "example",
+        "ref": "g0505",
+        "reveal": true
+      },
+      {
+        "id": "s0529",
+        "teacherNotes": "Học viên đọc ngày tháng thành tiếng trước khi bấm mũi tên.",
+        "type": "table",
+        "title": "Luyện tập 3: ngày tháng",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{誕生日|たんじょうび}・ngày 5 tháng 3",
+            "{誕生日|たんじょうび}は 3{月|がつ}{5日|いつか}です。"
+          ],
+          ["{試験|しけん}・ngày 20 tháng 7", "{試験|しけん}は 7{月|がつ}{20日|はつか}です。"],
+          [
+            "ハノイへ {来|き}ました・ngày 1 tháng 9",
+            "9{月|がつ}{1日|ついたち}に ハノイへ {来|き}ました。"
+          ],
+          [
+            "{日本|にほん}へ {行|い}きます・ngày 8 tháng 4",
+            "4{月|がつ}{8日|ようか}に {日本|にほん}へ {行|い}きます。"
+          ],
+          ["{休|やす}み・ngày 2 tháng 9", "{休|やす}みは 9{月|がつ}{2日|ふつか}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0530",
+        "type": "quiz",
+        "ref": "q0512"
+      },
+      {
+        "id": "s0531",
+        "type": "quiz",
+        "ref": "q0524"
+      },
+      {
+        "id": "s0532",
+        "teacherNotes": "Học viên kể chủ nhật vừa rồi của mình theo mẫu này.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Chủ nhật bạn đi đâu?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ハナさん、{日曜日|にちようび} どこへ {行|い}きましたか。",
+            "vi": "Hana, Chủ nhật bạn đã đi đâu?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{友達|ともだち}と {美術館|びじゅつかん}へ {行|い}きました。",
+            "vi": "Mình đi bảo tàng mỹ thuật với bạn."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{何|なん}で {行|い}きましたか。",
+            "vi": "Bạn đi bằng gì?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "バスで {行|い}きました。ナムさんは？",
+            "vi": "Mình đi xe buýt. Còn Nam?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わたしは どこも {行|い}きませんでした。",
+            "vi": "Mình không đi đâu cả."
+          }
+        ]
+      },
+      {
+        "id": "s0533",
+        "teacherNotes": "Đổi nơi về (ダナン, ホーチミン) và phương tiện (バス, {新幹線|しんかんせん}).",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Khi nào em về nước?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "リンさん、いつ ベトナムへ {帰|かえ}りますか。",
+            "vi": "Linh, khi nào em về Việt Nam?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{来月|らいげつ}の {20日|はつか}に {帰|かえ}ります。",
+            "vi": "Em về vào ngày 20 tháng sau."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{一人|ひとり}で {帰|かえ}りますか。",
+            "vi": "Em về một mình à?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "いいえ、{友達|ともだち}と {帰|かえ}ります。",
+            "vi": "Không, em về cùng bạn ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "そうですか。{空港|くうこう}まで {何|なん}で {行|い}きますか。",
+            "vi": "Vậy à. Em ra sân bay bằng gì?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "タクシーで {行|い}きます。",
+            "vi": "Em đi taxi ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0534",
+        "teacherNotes": "Học viên hỏi sinh nhật của nhau và kế hoạch ngày đó.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Sinh nhật là khi nào?",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "ナムさん、{誕生日|たんじょうび}は いつですか。",
+            "vi": "Nam ơi, sinh nhật bạn là khi nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "6{月|がつ}{8日|ようか}です。",
+            "vi": "Ngày 8 tháng 6."
+          },
+          {
+            "speaker": "アン",
+            "jp": "えっ、{来週|らいしゅう}の {土曜日|どようび}ですね。",
+            "vi": "Ồ, vậy là thứ Bảy tuần sau nhỉ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい。{家族|かぞく}と {大阪|おおさか}へ {行|い}きます。",
+            "vi": "Ừ. Mình sẽ đi Osaka với gia đình."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{新幹線|しんかんせん}で {行|い}きますか。",
+            "vi": "Bạn đi bằng Shinkansen à?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいえ、バスで {行|い}きます。",
+            "vi": "Không, mình đi xe buýt."
+          }
+        ]
+      },
+      {
+        "id": "s0535",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật về mình.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["{日曜日|にちようび} どこへ {行|い}きましたか。", "どこも {行|い}きませんでした。"],
+          ["{何|なん}で {会社|かいしゃ}へ {行|い}きますか。", "バイクで {行|い}きます。"],
+          ["だれと スーパーへ {行|い}きますか。", "{家族|かぞく}と {行|い}きます。"],
+          ["いつ {日本|にほん}へ {行|い}きますか。", "{来年|らいねん} {行|い}きます。"],
+          ["{誕生日|たんじょうび}は いつですか。", "11{月|がつ}{3日|みっか}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0536",
+        "type": "quiz",
+        "ref": "q0531"
+      },
+      {
+        "id": "s0537",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Nơi chốn + へ 行きます／来ます／帰ります (へ đọc え)\n• Phương tiện + で; đi bộ: あるいて\n• Người + と; một mình: ひとりで\n• どこも + phủ định: không đi đâu cả\n• いつ (không có に); 〜月〜日: ついたち, ふつか, みっか, よっか, いつか, むいか, なのか, ようか, ここのか, とおか, はつか"
+      },
+      {
+        "id": "s0538",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết 3 câu về chuyến đi gần nhất của bạn: đi đâu, bằng gì, với ai.\n3. Hỏi sinh nhật 3 người trong gia đình và nói thành câu 〜は 〜月〜日です."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0501",
+        "prompt": "あした ぎんこう（　　） いきます。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Nơi đến + へ.",
+        "type": "choice",
+        "options": ["を", "へ", "で", "と"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0502",
+        "prompt": "Trợ từ へ trong がっこうへ いきます đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Trợ từ へ đọc là え.",
+        "type": "choice",
+        "options": ["え", "へ", "は", "わ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0503",
+        "prompt": "Chọn câu đúng: Hôm qua tôi về nhà lúc 6 giờ.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Quá khứ: かえりました; nơi về + へ.",
+        "type": "choice",
+        "options": [
+          "きのう 6じに うちへ かえります。",
+          "きのう 6じに うちで かえりました。",
+          "きのう 6じに うちと かえりました。",
+          "きのう 6じに うちへ かえりました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0504",
+        "prompt": "にちようび どこへ いきましたか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "どこも + phủ định: không đi đâu cả.",
+        "type": "choice",
+        "options": [
+          "どこへ いきました",
+          "どこも いきました",
+          "どこも いきませんでした",
+          "どこへも いきます"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0505",
+        "prompt": "でんしゃ（　　） かいしゃへ いきます。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Phương tiện + で.",
+        "type": "choice",
+        "options": ["と", "で", "へ", "に"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0506",
+        "prompt": "Hỏi: Bạn đến trường bằng gì?",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi phương tiện: なんで.",
+        "type": "choice",
+        "options": [
+          "なんで がっこうへ きましたか。",
+          "だれと がっこうへ きましたか。",
+          "いつ がっこうへ きましたか。",
+          "どこへ がっこうへ きましたか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0507",
+        "prompt": "Đi bộ đến ga:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "あるいて không đi với で.",
+        "type": "choice",
+        "options": [
+          "あるいてで えきへ いきます。",
+          "あるいてと えきへ いきます。",
+          "えきで あるいて いきます。",
+          "あるいて えきへ いきます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0508",
+        "prompt": "ともだち（　　） びじゅつかんへ いきます。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Người đi cùng + と.",
+        "type": "choice",
+        "options": ["で", "へ", "と", "を"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0509",
+        "prompt": "Đi một mình:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Một mình: ひとりで.",
+        "type": "choice",
+        "options": [
+          "ひとりと いきます。",
+          "ひとりで いきます。",
+          "ひとりへ いきます。",
+          "ひとりに いきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0510",
+        "prompt": "だれと にほんへ きましたか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi だれと, trả lời người + と.",
+        "type": "choice",
+        "options": [
+          "かぞくと きました",
+          "かぞくで きました",
+          "かぞくへ きました",
+          "ひこうきで きました"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0511",
+        "prompt": "Hỏi: Khi nào bạn đi Nhật?",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "いつ không đi với に.",
+        "type": "choice",
+        "options": [
+          "いつに にほんへ いきますか。",
+          "なんで にほんへ いきますか。",
+          "どこへ にほんへ いきますか。",
+          "いつ にほんへ いきますか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0512",
+        "prompt": "1日 (ngày mồng 1) đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Ngày mồng 1: ついたち; いちにち là \"một ngày\".",
+        "type": "choice",
+        "options": ["いちにち", "いちび", "ついたち", "ひとか"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0513",
+        "prompt": "8日 (ngày mồng 8) đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "8日: ようか.",
+        "type": "choice",
+        "options": ["はちにち", "ようか", "やっか", "はっか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0514",
+        "prompt": "20日 (ngày 20) đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "20日: はつか.",
+        "type": "choice",
+        "options": ["はつか", "にじゅうにち", "にじゅっか", "ふたとおか"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0515",
+        "prompt": "4月 đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "4月: しがつ.",
+        "type": "choice",
+        "options": ["よんがつ", "よつき", "よがつ", "しがつ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0516",
+        "prompt": "9月 đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "9月: くがつ.",
+        "type": "choice",
+        "options": ["きゅうがつ", "くつき", "くがつ", "ここのがつ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0517",
+        "prompt": "らいしゅう nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "らいしゅう (来週): tuần sau.",
+        "type": "choice",
+        "options": ["tuần trước", "tuần sau", "tuần này", "cuối tuần"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0518",
+        "prompt": "きょねん nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "きょねん (去年): năm ngoái.",
+        "type": "choice",
+        "options": ["năm ngoái", "năm nay", "năm sau", "hôm qua"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0519",
+        "prompt": "せんげつ nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "せんげつ (先月): tháng trước.",
+        "type": "choice",
+        "options": ["tháng này", "tháng sau", "tuần trước", "tháng trước"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0520",
+        "prompt": "かえります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "かえります: về.",
+        "type": "choice",
+        "options": ["đi", "đến", "về (nhà, nước)", "nghỉ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0521",
+        "prompt": "Ngày 5 tháng 3 nói là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Tháng trước ngày sau; ngày 5: いつか.",
+        "type": "choice",
+        "options": ["5がつ みっか", "3がつ いつか", "3がつ ごにち", "いつか 3がつ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0522",
+        "prompt": "Chọn câu đúng: Tháng sau anh Tanaka sẽ đến Hà Nội.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "らいげつ không có に; nơi đến + へ.",
+        "type": "choice",
+        "options": [
+          "たなかさんは らいげつ ハノイへ きます。",
+          "たなかさんは らいげつ ハノイで きます。",
+          "たなかさんは せんげつ ハノイへ きます。",
+          "たなかさんは らいげつに ハノイへ きます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0523",
+        "prompt": "Chọn câu đúng: Tôi đi Osaka bằng Shinkansen.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Phương tiện + で, nơi đến + へ.",
+        "type": "choice",
+        "options": [
+          "しんかんせんと おおさかへ いきます。",
+          "しんかんせんへ おおさかで いきます。",
+          "おおさかで しんかんせんへ いきます。",
+          "しんかんせんで おおさかへ いきます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0524",
+        "prompt": "たんじょうびは （　　）ですか。…7がつ とおかです。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi ngày: いつ.",
+        "type": "choice",
+        "options": ["なんじ", "どこ", "いつ", "だれ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0525",
+        "prompt": "Hỏi: Bạn đi cùng ai?",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi người đi cùng: だれと.",
+        "type": "choice",
+        "options": [
+          "だれで いきますか。",
+          "だれと いきますか。",
+          "なんで いきますか。",
+          "だれへ いきますか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0526",
+        "prompt": "Hỏi: Hôm nay ngày mấy?",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi ngày: なんにち.",
+        "type": "choice",
+        "options": [
+          "きょうは なんにちですか。",
+          "きょうは なんようびですか。",
+          "きょうは なんじですか。",
+          "きょうは なんがつですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0527",
+        "prompt": "どういたしまして dùng khi:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Đáp lại lời cảm ơn: どういたしまして.",
+        "type": "choice",
+        "options": ["mình xin lỗi", "chào buổi sáng", "hỏi đường", "người khác cảm ơn mình"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0528",
+        "prompt": "つぎの バス nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "つぎの: … tiếp theo.",
+        "type": "choice",
+        "options": ["xe buýt trước", "xe buýt này", "xe buýt tiếp theo", "xe buýt cuối"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0529",
+        "prompt": "Chọn câu đúng: Tuần này tôi không đi đâu cả.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "どこも + phủ định.",
+        "type": "choice",
+        "options": [
+          "こんしゅうは どこも いきます。",
+          "こんしゅうは どこも いきません。",
+          "こんしゅうは どこへ いきません。",
+          "こんしゅうは どこで いきません。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0530",
+        "prompt": "Bằng xe máy: バイク（　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Phương tiện + で.",
+        "type": "choice",
+        "options": ["で", "と", "へ", "に"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0531",
+        "prompt": "Chọn câu đúng: Hôm qua tôi về nhà một mình bằng taxi.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "ひとりで; phương tiện + で; nơi về + へ.",
+        "type": "choice",
+        "options": [
+          "きのう ひとりと タクシーで うちへ かえりました。",
+          "きのう ひとりで タクシーと うちへ かえりました。",
+          "きのう ひとりで タクシーで うちを かえりました。",
+          "きのう ひとりで タクシーで うちへ かえりました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0532",
+        "prompt": "ホーチミン là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "ホーチミン: Thành phố Hồ Chí Minh.",
+        "type": "choice",
+        "options": ["Hà Nội", "Đà Nẵng", "Thành phố Hồ Chí Minh", "Huế"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0533",
+        "prompt": "6日 (ngày mồng 6) đọc là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "6日: むいか.",
+        "type": "choice",
+        "options": ["ろくにち", "むいか", "むっか", "ろっか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0534",
+        "prompt": "らいねん nghĩa là:",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "らいねん (来年): năm sau.",
+        "type": "choice",
+        "options": ["năm sau", "năm ngoái", "năm nay", "tháng sau"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0535",
+        "prompt": "Chọn câu đúng: Gia đình tôi đến Nhật vào ngày 1 tháng 9.",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Ngày tháng + に; tháng trước ngày sau.",
+        "type": "choice",
+        "options": [
+          "かぞくは 9がつ ついたちで にほんへ きました。",
+          "かぞくは 9がつ ついたちに にほんで きました。",
+          "かぞくは ついたち 9がつに にほんへ きました。",
+          "かぞくは 9がつ ついたちに にほんへ きました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0536",
+        "prompt": "Từ Hà Nội đi Tokyo, cách nào hợp lý nhất?",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Đi nước ngoài: ひこうきで.",
+        "type": "choice",
+        "options": [
+          "じてんしゃで いきます。",
+          "あるいて いきます。",
+          "ひこうきで いきます。",
+          "バイクで いきます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0537",
+        "prompt": "Điền trợ từ chỉ hướng (viết theo chữ, không theo cách đọc): がっこう（　　） いきます。",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Trợ từ chỉ hướng viết là へ (đọc え).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["へ"]
+      },
+      {
+        "id": "q0538",
+        "prompt": "Điền: でんしゃ（　　） いきます。(bằng tàu điện)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Phương tiện + で.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["で"]
+      },
+      {
+        "id": "q0539",
+        "prompt": "Điền: ともだち（　　） いきます。(cùng với bạn)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Người đi cùng + と.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["と"]
+      },
+      {
+        "id": "q0540",
+        "prompt": "Điền: （　　）で うちへ かえります。(một mình)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Một mình: ひとりで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ひとり"]
+      },
+      {
+        "id": "q0541",
+        "prompt": "Điền: にちようび どこ（　　） いきませんでした。(không đi đâu cả)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "どこも／どこへも + phủ định.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["も", "へも"]
+      },
+      {
+        "id": "q0542",
+        "prompt": "Điền: （　　） にほんへ いきますか。…らいげつ いきます。(hỏi khi nào)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Hỏi khi nào: いつ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いつ"]
+      },
+      {
+        "id": "q0543",
+        "prompt": "Điền cách đọc: 1日 (ngày mồng 1) = （　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "1日: ついたち.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ついたち"]
+      },
+      {
+        "id": "q0544",
+        "prompt": "Điền cách đọc: 3日 (ngày mồng 3) = （　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "3日: みっか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["みっか"]
+      },
+      {
+        "id": "q0545",
+        "prompt": "Điền cách đọc: 10日 (ngày 10) = （　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "10日: とおか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["とおか"]
+      },
+      {
+        "id": "q0546",
+        "prompt": "Điền cách đọc: 7月 = （　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "7月: しちがつ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しちがつ"]
+      },
+      {
+        "id": "q0547",
+        "prompt": "Điền: あした おおさかへ （　　）。(đi)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Đi: いきます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いきます"]
+      },
+      {
+        "id": "q0548",
+        "prompt": "Điền: きのう 7じに うちへ （　　）。(đã về)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Đã về: かえりました.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かえりました"]
+      },
+      {
+        "id": "q0549",
+        "prompt": "Điền: えきから （　　） かえります。(đi bộ)",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Đi bộ: あるいて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あるいて"]
+      },
+      {
+        "id": "q0550",
+        "prompt": "Điền: らいしゅう là tuần sau; tuần trước là （　　）",
+        "points": 1,
+        "tags": ["minna-5"],
+        "explain": "Tuần trước: せんしゅう.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["せんしゅう"]
+      }
+    ]
+  }
+}
