@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { ExampleFields } from "@/components/teaching/example-fields";
 import { Button } from "@/components/ui/button";
+import { MAX_TEACHING_VOCAB } from "@/lib/teaching-content";
 import { parseVocabularyTable, TABLE_COLUMNS } from "@/lib/teaching-table";
 
 import type { TeachingDraft, TeachingVocab } from "@/lib/teaching-content";
@@ -254,7 +255,7 @@ export function VocabularyStep({ draft, dispatch }: VocabularyStepProps) {
       <Button
         type="button"
         variant="outline"
-        disabled={vocab.length >= 100}
+        disabled={vocab.length >= MAX_TEACHING_VOCAB}
         onClick={() => dispatch({ type: "addVocab" })}
       >
         Thêm từ

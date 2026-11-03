@@ -27,6 +27,8 @@ const audio = z
   .default(null);
 
 export const TEMPLATE_IDS = ["starter", "vocabulary", "dialogue", "review"] as const;
+// A larger lesson would fail to save, so pasting and adding words stop at this limit.
+export const MAX_TEACHING_VOCAB = 100;
 export type TemplateId = (typeof TEMPLATE_IDS)[number];
 
 export const TEACHING_TEMPLATES: readonly { id: TemplateId; label: string; hint: string }[] = [
@@ -176,7 +178,7 @@ const contentShape = {
   schemaVersion: z.literal(2),
   context: teachingContextSchema,
   objectives: z.array(draftText(200)).max(5),
-  vocab: z.array(vocabularySchema).max(100),
+  vocab: z.array(vocabularySchema).max(MAX_TEACHING_VOCAB),
   grammar: z.array(grammarSchema).max(50),
   dialogue: z.array(dialogueSchema).max(100),
   slides: z.array(teachingSlideSchema).max(200),

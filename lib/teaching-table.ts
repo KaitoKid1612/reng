@@ -1,4 +1,4 @@
-import { SLIDE_LIMITS } from "@/lib/teaching-content";
+import { MAX_TEACHING_VOCAB, SLIDE_LIMITS } from "@/lib/teaching-content";
 import { detectDelimiter, parseDelimited } from "@/lib/vocab-csv";
 
 import type { TeachingVocab } from "@/lib/teaching-content";
@@ -83,6 +83,7 @@ export function parseVocabularyTable(
     return { rows: [], error: `Mỗi lần dán tối đa ${MAX_PASTED_ROWS} dòng.` };
   }
   const seen = new Set(existing.map((item) => item.text));
+  let room = MAX_TEACHING_VOCAB - existing.length;
   const rows = dataRecords.map((record): TableRow => {
     const [
       text = "",
@@ -114,6 +115,17 @@ export function parseVocabularyTable(
         warnings,
       };
     }
+    if (room <= 0) {
+      return {
+        ...values,
+        status: "invalid",
+        problems: [
+          `Bài đã đủ ${MAX_TEACHING_VOCAB} từ, dòng này không thêm được. Tạo bài tiếp theo cho các từ còn lại.`,
+        ],
+        warnings,
+      };
+    }
+    room -= 1;
     seen.add(text);
     return { ...values, status: "valid", problems, warnings };
   });

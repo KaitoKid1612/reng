@@ -1,5 +1,9 @@
 import { createUniqueId } from "@/lib/item-ids";
-import { createTeachingContext, toPublicQuestion } from "@/lib/teaching-content";
+import {
+  createTeachingContext,
+  MAX_TEACHING_VOCAB,
+  toPublicQuestion,
+} from "@/lib/teaching-content";
 import { isSameSlideContent, stableJson } from "@/lib/teaching-templates";
 
 import type {
@@ -166,9 +170,12 @@ function moveItem(draft: TeachingDraft, collection: ItemCollection, id: string, 
   }
 }
 
+// A preview made before other words were added could overfill the lesson, so adding stops at
+// the limit; the preview names the rows over it.
 function addVocabRows(draft: TeachingDraft, rows: readonly TableRow[]) {
   let content = draft.content;
-  for (const row of rows.filter((item) => item.status === "valid")) {
+  const room = Math.max(0, MAX_TEACHING_VOCAB - content.vocab.length);
+  for (const row of rows.filter((item) => item.status === "valid").slice(0, room)) {
     const vocab: TeachingVocab = {
       id: createTeachingId("vocab", content),
       text: row.text,
@@ -200,6 +207,9 @@ export function teachingReducer(draft: TeachingDraft, action: TeachingAction): T
     case "setObjectives":
       return withContent(draft, { objectives: action.objectives });
     case "addVocab":
+      if (content.vocab.length >= MAX_TEACHING_VOCAB) {
+        return draft;
+      }
       return withContent(draft, {
         vocab: [
           ...content.vocab,

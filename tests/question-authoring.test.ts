@@ -28,6 +28,7 @@ import {
   isQuestionReviewed,
   teachingReducer,
 } from "../lib/teaching-draft";
+import { parseVocabularyTable } from "../lib/teaching-table";
 import {
   createQuestionDraft,
   describeQuestionProblem,
@@ -325,4 +326,34 @@ test("slides show the pieces in a shuffle that is never the answer, with the pas
   assert.deepEqual([...(shown.pieces ?? [])].sort(), ["学生", "我", "是"].sort());
   assert.notDeepEqual(shown.pieces, ["我", "是", "学生"]);
   assert.equal(shown.options, undefined);
+});
+
+test("pasting words stops at the lesson limit instead of leaving a draft that cannot be saved", () => {
+  let draft = createTeachingDraft("Từ vựng dài", "vocabulary", "zh-Hans", "Học nhiều từ");
+  const filler = Array.from({ length: 98 }, (_, index) => `字${index}\tzì\tchữ ${index}`).join(
+    "\n",
+  );
+  draft = teachingReducer(draft, {
+    type: "addVocabRows",
+    rows: parseVocabularyTable(filler, draft.content.vocab).rows,
+  });
+  assert.equal(draft.content.vocab.length, 98);
+  const pasted = parseVocabularyTable("一\tyī\tmột\n二\tèr\thai\n三\tsān\tba", draft.content.vocab);
+  assert.deepEqual(
+    pasted.rows.map((row) => row.status),
+    ["valid", "valid", "invalid"],
+  );
+  assert.match(pasted.rows[2].problems[0], /đã đủ 100 từ/);
+  draft = teachingReducer(draft, { type: "addVocabRows", rows: pasted.rows });
+  assert.equal(draft.content.vocab.length, 100);
+  assert.ok(teachingDraftSchema.safeParse(draft).success);
+
+  // A preview made before more words were added cannot overfill the lesson either.
+  const stale = parseVocabularyTable("四\tsì\tbốn", draft.content.vocab.slice(0, 99));
+  assert.equal(stale.rows[0].status, "valid");
+  assert.equal(
+    teachingReducer(draft, { type: "addVocabRows", rows: stale.rows }).content.vocab.length,
+    100,
+  );
+  assert.equal(teachingReducer(draft, { type: "addVocab" }).content.vocab.length, 100);
 });
