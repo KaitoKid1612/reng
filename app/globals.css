@@ -1430,6 +1430,26 @@ body:has(.slide-shell) .site-footer {
 .presenter-preview .slide-examples[data-size="compact"] .slide-translation {
   font-size: 14px;
 }
+/* A long pattern or explanation: smaller type so the grammar slide fits 1280×720. */
+.slide-grammar[data-size="compact"] .slide-japanese {
+  font-size: 52px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.slide-grammar[data-size="compact"] .slide-translation {
+  font-size: 28px;
+}
+.slide-grammar[data-size="compact"] .slide-explanation {
+  font-size: 26px;
+  line-height: 1.7;
+}
+.presenter-preview .slide-grammar[data-size="compact"] .slide-japanese {
+  font-size: 26px;
+}
+.presenter-preview .slide-grammar[data-size="compact"] .slide-translation,
+.presenter-preview .slide-grammar[data-size="compact"] .slide-explanation {
+  font-size: 16px;
+}
 /* Long examples that wrap: smaller type so three of them still fit 1280×720. */
 .slide-examples[data-size="dense"] > div {
   margin-bottom: 12px;
@@ -1537,6 +1557,13 @@ rt {
 }
 .presenter-preview .slide-dialogue-line {
   font-size: 18px;
+}
+/* The compact and dense deck rules are more specific, so the preview restates its sizes. */
+.presenter-preview .slide-dialogue-ja:is(.is-compact, .is-dense) .slide-dialogue-line {
+  font-size: 18px;
+}
+.presenter-preview .slide-dialogue.slide-dialogue-ja:is(.is-compact, .is-dense) .slide-translation {
+  font-size: 14px;
 }
 
 /* Reader view of the same tables; wide tables scroll inside their own box on phones. */

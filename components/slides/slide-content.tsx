@@ -20,6 +20,22 @@ interface SlideContentProps {
 // Beyond these counts a slide switches to a denser layout so it stays within 1280×720.
 const COMPACT_VOCAB_ITEMS = 3;
 const COMPACT_EXAMPLES = 1;
+// A grammar slide holds the pattern at 72 px (about 16 Japanese characters a line, each line
+// worth two explanation lines) and the explanation at 32 px (about 36 Japanese characters a
+// line; Vietnamese letters are about half as wide). Measured in the deck, starter slides up to
+// eight such lines fit and nine ran off the bottom, so past eight it switches to smaller type.
+const PATTERN_ROW_UNITS = 16;
+const EXPLANATION_ROW_UNITS = 36;
+const MAX_GRAMMAR_ROWS = 8;
+const WIDE_CHARACTER = /[\u3000-\u30ff\u3400-\u9fff\uff00-\uffef]/u;
+
+function lineUnits(text: string) {
+  let units = 0;
+  for (const character of toPlainJapanese(text)) {
+    units += WIDE_CHARACTER.test(character) ? 1 : 0.55;
+  }
+  return units;
+}
 // About this many characters fit one line of a compact example; past four lines in all (two
 // long question-and-answer examples, say) the slide runs off the bottom, so it gets denser.
 const EXAMPLE_ROW_CHARACTERS = 26;
@@ -110,8 +126,11 @@ function GrammarSlide({ slide, lesson }: SlideContentProps) {
   if (!grammar) {
     return null;
   }
+  const rows =
+    2 * Math.ceil(lineUnits(grammar.pattern) / PATTERN_ROW_UNITS) +
+    Math.ceil(lineUnits(grammar.explain) / EXPLANATION_ROW_UNITS);
   return (
-    <div>
+    <div className="slide-grammar" data-size={rows > MAX_GRAMMAR_ROWS ? "compact" : undefined}>
       <h2>Mẫu câu</h2>
       <p lang="ja" className="slide-japanese">
         <JapaneseText text={grammar.pattern} />
