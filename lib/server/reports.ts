@@ -18,7 +18,13 @@ import {
   loadAttemptResultItems,
 } from "@/lib/server/assignments";
 import { countsAsLearner, getTeacherClass, listClassLessons } from "@/lib/server/classes";
-import { callRpc, createServiceClient, selectRows, ServiceError } from "@/lib/server/supabase";
+import {
+  callRpc,
+  createServiceClient,
+  selectRows,
+  selectRowsIn,
+  ServiceError,
+} from "@/lib/server/supabase";
 import { latestStudyDay } from "@/lib/study-days";
 
 import type { ReportMember } from "@/lib/class-report";
@@ -127,26 +133,28 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
   ]);
   const assignmentIds = assignments.map((assignment) => assignment.id);
   const service = createServiceClient();
-  const [submitted, inProgress] = assignmentIds.length
-    ? await Promise.all([
-        selectRows(
-          service
-            .from("submissions")
-            .select("assignment_id, user_id, attempt_no, score, max_score, submitted_at")
-            .in("assignment_id", assignmentIds)
-            .eq("status", "submitted"),
-          submittedRowSchema,
-        ),
-        selectRows(
-          service
-            .from("submissions")
-            .select("assignment_id, user_id")
-            .in("assignment_id", assignmentIds)
-            .eq("status", "in_progress"),
-          z.object({ assignment_id: z.uuid(), user_id: z.uuid() }),
-        ),
-      ])
-    : [[], []];
+  const [submitted, inProgress] = await Promise.all([
+    selectRowsIn(
+      assignmentIds,
+      (chunk) =>
+        service
+          .from("submissions")
+          .select("assignment_id, user_id, attempt_no, score, max_score, submitted_at")
+          .in("assignment_id", chunk)
+          .eq("status", "submitted"),
+      submittedRowSchema,
+    ),
+    selectRowsIn(
+      assignmentIds,
+      (chunk) =>
+        service
+          .from("submissions")
+          .select("assignment_id, user_id")
+          .in("assignment_id", chunk)
+          .eq("status", "in_progress"),
+      z.object({ assignment_id: z.uuid(), user_id: z.uuid() }),
+    ),
+  ]);
   const isLearner = (userId: string) => countsAsLearner(classRow, userId);
   const open = inProgress.filter((row) => isLearner(row.user_id));
   const latest = selectLatestSubmissions(

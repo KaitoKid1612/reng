@@ -27,6 +27,7 @@ import {
   createServiceClient,
   selectOptional,
   selectRows,
+  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 import { createSchedulerState, SCHEDULER_VERSION } from "@/lib/srs";
@@ -202,20 +203,22 @@ export async function loadAssignmentItems(assignmentId: string): Promise<Assigna
   return rows.map((row) => parseAssignableQuestion(row.question_snapshot));
 }
 
+// A class with daily practice gains an assignment a day, so the IDs are read in chunks and the
+// attempts sorted again afterwards.
 export async function listUserAttempts(userId: string, assignmentIds: readonly string[]) {
-  if (!assignmentIds.length) {
-    return [];
-  }
-  const rows = await selectRows(
-    createServiceClient()
-      .from("submissions")
-      .select(SUBMISSION_COLUMNS)
-      .eq("user_id", userId)
-      .in("assignment_id", [...assignmentIds])
-      .order("attempt_no"),
+  const rows = await selectRowsIn(
+    assignmentIds,
+    (chunk) =>
+      createServiceClient()
+        .from("submissions")
+        .select(SUBMISSION_COLUMNS)
+        .eq("user_id", userId)
+        .in("assignment_id", chunk),
     submissionRowSchema,
   );
-  return rows.map((row) => ({ assignmentId: row.assignment_id, ...toAttempt(row) }));
+  return rows
+    .sort((first, second) => first.attempt_no - second.attempt_no)
+    .map((row) => ({ assignmentId: row.assignment_id, ...toAttempt(row) }));
 }
 
 async function loadVersion(versionId: string) {

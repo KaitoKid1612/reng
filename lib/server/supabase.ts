@@ -60,6 +60,26 @@ export async function selectRows<Schema extends z.ZodType>(
   return (Array.isArray(data) ? data : []).map((row) => schema.parse(row));
 }
 
+// An `in` filter travels in the request URL; a long ID list (every teacher of the platform, every
+// submission of a big class) would exceed the gateway's URL limit, so it is read in chunks.
+const IN_FILTER_CHUNK = 100;
+
+export async function selectRowsIn<Schema extends z.ZodType>(
+  values: readonly string[],
+  query: (
+    chunk: string[],
+  ) => PromiseLike<{ data: unknown; error: { message: string; code?: string } | null }>,
+  schema: Schema,
+): Promise<z.infer<Schema>[]> {
+  const unique = [...new Set(values)];
+  const chunks: string[][] = [];
+  for (let start = 0; start < unique.length; start += IN_FILTER_CHUNK) {
+    chunks.push(unique.slice(start, start + IN_FILTER_CHUNK));
+  }
+  const pages = await Promise.all(chunks.map((chunk) => selectRows(query(chunk), schema)));
+  return pages.flat();
+}
+
 export async function selectOptional<Schema extends z.ZodType>(
   query: PromiseLike<{ data: unknown; error: { message: string; code?: string } | null }>,
   schema: Schema,

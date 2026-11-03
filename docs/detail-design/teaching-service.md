@@ -236,6 +236,8 @@ Sửa các lỗi còn mở trong rà soát hiện trạng 02/11: [báo cáo](../
 - **ID mục.** `createUniqueId(prefix, usedIds)` trong `lib/item-ids.ts` dùng chung cho `createItemId` (trình soạn v1) và `createTeachingId` (trình soạn tiếng Trung v2): tiền tố + 6 ký tự ngẫu nhiên, không trùng ID đang có trong bài. ID của mục đã xóa không bị cấp lại, nên thẻ ôn gắn theo bài + ID không chuyển sang từ khác. Script dùng ID của nháp phải đọc ID trong nội dung, không đoán `vocab-1`.
 - **Cảnh báo lặp bài hằng ngày.** `repeatsEveryDay(số câu, số câu/ngày)` đúng khi số câu ≤ số câu mỗi ngày. Trường hợp bằng nhau cũng lặp toàn bộ mỗi ngày.
 
+- **Danh sách ID dài (03/11/2026).** Bộ lọc `in` của PostgREST nằm trong URL. Khoảng 200 UUID đã vượt giới hạn URL của gateway, nên trang Giáo viên của quản trị lỗi `database_error` khi stack E2E có 231 giáo viên. Lớp có bài hằng ngày cũng thêm một bài giao mỗi ngày. `selectRowsIn` (`lib/server/supabase.ts`) đọc theo lô 100 ID rồi gộp kết quả; nơi cần thứ tự thì sắp xếp lại sau khi gộp. Dùng cho trang Giáo viên của quản trị, `listUserAttempts` (mọi bài giao của lớp), báo cáo lớp và sổ lỗi.
+
 ### Soạn câu sắp xếp và đọc hiểu trong trình soạn — 03/11/2026
 
 Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testing/question-authoring-2026-11-03.md).

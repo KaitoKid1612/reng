@@ -9,6 +9,7 @@ import {
   createServiceClient,
   selectOptional,
   selectRows,
+  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 
@@ -101,33 +102,34 @@ export async function listTeacherAccounts(): Promise<TeacherEntry[]> {
   }
   const ids = teachers.map((teacher) => teacher.user_id);
   const [profiles, classes, lessons, emails] = await Promise.all([
-    selectRows(
-      service.from("profiles").select("id, full_name").in("id", ids),
+    selectRowsIn(
+      ids,
+      (chunk) => service.from("profiles").select("id, full_name").in("id", chunk),
       z.object({ id: z.uuid(), full_name: z.string() }),
     ),
-    selectRows(
-      service.from("classes").select("id, teacher_id").in("teacher_id", ids),
+    selectRowsIn(
+      ids,
+      (chunk) => service.from("classes").select("id, teacher_id").in("teacher_id", chunk),
       z.object({ id: z.uuid(), teacher_id: z.uuid() }),
     ),
-    selectRows(
-      service.from("lessons").select("owner_id").in("owner_id", ids).is("archived_at", null),
+    selectRowsIn(
+      ids,
+      (chunk) =>
+        service.from("lessons").select("owner_id").in("owner_id", chunk).is("archived_at", null),
       z.object({ owner_id: z.uuid() }),
     ),
     loadEmails(),
   ]);
-  const enrollments = classes.length
-    ? await selectRows(
-        service
-          .from("enrollments")
-          .select("class_id, user_id")
-          .in(
-            "class_id",
-            classes.map((item) => item.id),
-          )
-          .is("left_at", null),
-        z.object({ class_id: z.uuid(), user_id: z.uuid() }),
-      )
-    : [];
+  const enrollments = await selectRowsIn(
+    classes.map((item) => item.id),
+    (chunk) =>
+      service
+        .from("enrollments")
+        .select("class_id, user_id")
+        .in("class_id", chunk)
+        .is("left_at", null),
+    z.object({ class_id: z.uuid(), user_id: z.uuid() }),
+  );
   const statusOrder = { pending: 0, active: 1, suspended: 2 } as const;
   return teachers
     .map((teacher) => {

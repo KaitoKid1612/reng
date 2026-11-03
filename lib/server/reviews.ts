@@ -21,6 +21,7 @@ import {
   createServiceClient,
   selectOptional,
   selectRows,
+  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 import {
@@ -457,36 +458,35 @@ export async function listMistakes(userId: string, now: Date): Promise<MistakeBo
   const visibleIds = [...sources.values()]
     .filter((source) => source.isVisible)
     .map((source) => source.assignmentId);
-  const submissions = visibleIds.length
-    ? await selectRows(
+  // Newest attempt first, also across the chunks of a long assignment list.
+  const submissions = (
+    await selectRowsIn(
+      visibleIds,
+      (chunk) =>
         service
           .from("submissions")
           .select("id, assignment_id, attempt_no")
           .eq("user_id", userId)
           .eq("status", "submitted")
-          .in("assignment_id", visibleIds)
-          .order("attempt_no", { ascending: false }),
-        z.object({ id: z.uuid(), assignment_id: z.uuid(), attempt_no: z.number().int() }),
-      )
-    : [];
-  const answers = submissions.length
-    ? await selectRows(
-        service
-          .from("answers")
-          .select("submission_id, question_id, raw, is_correct")
-          .in(
-            "submission_id",
-            submissions.map((submission) => submission.id),
-          )
-          .eq("is_correct", false),
-        z.object({
-          submission_id: z.uuid(),
-          question_id: z.string(),
-          raw: z.unknown(),
-          is_correct: z.boolean(),
-        }),
-      )
-    : [];
+          .in("assignment_id", chunk),
+      z.object({ id: z.uuid(), assignment_id: z.uuid(), attempt_no: z.number().int() }),
+    )
+  ).sort((first, second) => second.attempt_no - first.attempt_no);
+  const answers = await selectRowsIn(
+    submissions.map((submission) => submission.id),
+    (chunk) =>
+      service
+        .from("answers")
+        .select("submission_id, question_id, raw, is_correct")
+        .in("submission_id", chunk)
+        .eq("is_correct", false),
+    z.object({
+      submission_id: z.uuid(),
+      question_id: z.string(),
+      raw: z.unknown(),
+      is_correct: z.boolean(),
+    }),
+  );
   const entries: MistakeEntry[] = [];
   const hidden = new Map<string, MistakeBook["hidden"][number]>();
   for (const card of cards) {
