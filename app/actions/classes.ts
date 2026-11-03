@@ -14,6 +14,7 @@ import {
 import { signInPath } from "@/lib/auth-paths";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
+import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
 import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
@@ -49,6 +50,10 @@ const ERROR_MESSAGES: Record<string, string> = {
   due_in_past: "Hạn nộp phải ở sau thời điểm hiện tại.",
   invalid_items: "Chọn ít nhất một câu hỏi hợp lệ (tối đa 60 câu).",
   assignment_not_found: "Bài giao không còn mở để đóng.",
+  not_typed: "Chỉ chấp nhận thêm được câu trả lời gõ chữ (câu điền, nghe gõ, chính tả).",
+  already_correct: "Câu trả lời này đã được tính đúng.",
+  invalid_answer: "Câu trả lời trống hoặc quá dài nên không chấp nhận thêm được.",
+  kanji_required: "Câu này bắt buộc viết kanji nên không nhận câu trả lời thiếu kanji.",
 };
 
 function readField(formData: FormData, name: string) {
@@ -291,6 +296,34 @@ export async function publishAssignmentAction(input: PublishAssignmentInput): Pr
     return { error: describeError(error) };
   }
   redirect(`/teach/classes/${input.classId}`);
+}
+
+export async function acceptAnswerAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  let result;
+  try {
+    result = await acceptAnswerVariant(account.id, {
+      classId: readField(formData, "classId"),
+      studentId: readField(formData, "studentId"),
+      assignmentId: readField(formData, "assignmentId"),
+      questionId: readField(formData, "questionId"),
+    });
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  const later = result.isPractice
+    ? " Các bài luyện sau từ cùng bài học cũng chấp nhận câu trả lời này."
+    : "";
+  return {
+    notice: `Đã chấp nhận “${result.variant}”: ${result.regraded} bài làm được cộng điểm.${later}`,
+  };
 }
 
 export async function closeAssignmentAction(

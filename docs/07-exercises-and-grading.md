@@ -35,6 +35,22 @@ function normalizeAnswer(s: string): string {
 - `kanjiStrict = true`: validator yêu cầu đáp án chứa dạng kanji mục tiêu; không tự thêm phương án kana. `kanjiStrict = false` vẫn chỉ chấp nhận các phương án được khai báo, không có phép suy diễn vô hạn.
 - Choice từ chối chỉ số ngoài phạm vi hoặc trùng; match từ chối cặp thiếu/trùng; order từ chối token lạ hoặc thiếu. Giới hạn kích thước câu trả lời tại API theo từng dạng, không chuyển kiểu ngầm từ dữ liệu tùy ý.
 
+### Giáo viên chấp nhận đáp án tương đương (migration 202611030001)
+
+Ở trang học viên (`/teach/classes/[id]/students/[uid]`), câu gõ chữ bị chấm sai (điền, nghe gõ, chính tả) có nút **Chấp nhận câu trả lời này**. Đây là thao tác thay cho việc sửa điểm bằng SQL như đợt N5 ngày 02/11.
+
+- Server đọc câu trả lời từ lượt nộp mới nhất của học viên, không nhận chữ từ trình duyệt. Câu trả lời được bỏ khoảng trắng đầu/cuối, tối đa 200 ký tự.
+- Server chấm lại mọi câu trả lời sai của câu đó trong bài giao bằng chính `lib/grading` với đáp án mới. Ví dụ, chấp nhận `ありがとう` thì `ありがとう。` cũng đúng theo luật tiếng Nhật; tiếng Trung vẫn khớp chính xác.
+- RPC `accept_answer_variant` làm mọi việc trong một transaction:
+  - thêm đáp án vào bản chụp câu hỏi của bài giao;
+  - đổi các câu trả lời đó thành đúng và cộng điểm;
+  - tính lại `score`/`passed` theo cùng công thức lúc nộp;
+  - đóng thẻ sổ lỗi khi không còn lượt nào sai câu đó;
+  - ghi `audit_events` (`answer.variant_accepted`).
+- Bài luyện tập ghi đáp án vào `answer_variants` (theo bài học + câu + đề). `publish_assignment` gộp các đáp án này vào bản chụp của mọi bài luyện sau, kể cả bài hằng ngày. Nếu đề câu hỏi đã đổi ở phiên bản sau thì không gộp. Câu kiểm tra riêng chỉ chấm lại trong bài kiểm tra đó.
+- Lịch sử chấm vẫn bất biến. Trigger chỉ cho đổi đúng các trường trên (thêm đáp án vào bản chụp, câu sai thành đúng, điểm và kết quả đạt), và chỉ trong transaction đã bật `reng.regrade`. Mọi thay đổi khác vẫn bị chặn như trước.
+- Câu `kanjiStrict` vẫn không nhận câu trả lời thiếu kanji.
+
 ## Bài luyện và bài kiểm tra
 
 Logic chấm thuần nằm ở `lib/grading/`, không chứa khóa hoặc truy cập database.

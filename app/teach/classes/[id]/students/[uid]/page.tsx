@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { AcceptAnswerForm, AcceptNoticeArea } from "@/components/teach/accept-answer-form";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
 import {
   ANSWER_OUTCOME_LABELS,
@@ -10,6 +11,7 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
+import { isTypedQuestion } from "@/lib/answer-variants";
 import { answerLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { formatPercent } from "@/lib/grading/grade";
@@ -58,77 +60,88 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
       </p>
       <section className="section-block" aria-labelledby="student-answers">
         <h2 id="student-answers">Bài đã giao và câu trả lời</h2>
-        <OutcomeFilter
-          path={path}
-          outcome={outcome}
-          counts={countOutcomes(detail.rows.flatMap((row) => row.items))}
-        />
-        <p className="small muted">
-          Bộ lọc áp dụng cho mọi bài, chỉ tính lượt nộp mới nhất. Bấm tên bài để mở hoặc thu gọn.
-        </p>
-        {detail.rows.map((row, rowIndex) => {
-          const counts = countOutcomes(row.items);
-          const visible = numberAnswers(row.items).filter(({ item }) =>
-            matchesOutcome(item.isCorrect, outcome),
-          );
-          return (
-            <details
-              key={row.assignment.id}
-              className="collapse-card student-assignment"
-              open={outcome ? visible.length > 0 : rowIndex === newestGraded}
-            >
-              <summary>
-                <span>{row.assignment.title}</span>
-                <span className="item-meta">
-                  {row.items.length ? `${counts.wrong} sai / ${counts.all} câu` : "chưa nộp"}
-                </span>
-              </summary>
-              <div className="student-assignment-body">
-                <p className="item-meta">
-                  {MODE_LABELS[row.assignment.mode]}, {describeDue(row.assignment.dueAt)},{" "}
-                  {row.attemptCount} lượt
-                  {row.latest?.submittedAt
-                    ? `, nộp lúc ${formatStudyDateTime(row.latest.submittedAt)}${row.latest.isLate ? " (muộn)" : ""}`
-                    : ", chưa nộp"}
-                  {row.percent !== null ? `, ${formatPercent(row.percent)}` : ""}
-                </p>
-                {outcome && row.items.length > 0 && !visible.length && (
-                  <p className="muted">
-                    Không có câu {ANSWER_OUTCOME_LABELS[outcome].toLowerCase()} trong bài này.
+        <AcceptNoticeArea>
+          <OutcomeFilter
+            path={path}
+            outcome={outcome}
+            counts={countOutcomes(detail.rows.flatMap((row) => row.items))}
+          />
+          <p className="small muted">
+            Bộ lọc áp dụng cho mọi bài, chỉ tính lượt nộp mới nhất. Bấm tên bài để mở hoặc thu gọn.
+          </p>
+          {detail.rows.map((row, rowIndex) => {
+            const counts = countOutcomes(row.items);
+            const visible = numberAnswers(row.items).filter(({ item }) =>
+              matchesOutcome(item.isCorrect, outcome),
+            );
+            return (
+              <details
+                key={row.assignment.id}
+                className="collapse-card student-assignment"
+                open={outcome ? visible.length > 0 : rowIndex === newestGraded}
+              >
+                <summary>
+                  <span>{row.assignment.title}</span>
+                  <span className="item-meta">
+                    {row.items.length ? `${counts.wrong} sai / ${counts.all} câu` : "chưa nộp"}
+                  </span>
+                </summary>
+                <div className="student-assignment-body">
+                  <p className="item-meta">
+                    {MODE_LABELS[row.assignment.mode]}, {describeDue(row.assignment.dueAt)},{" "}
+                    {row.attemptCount} lượt
+                    {row.latest?.submittedAt
+                      ? `, nộp lúc ${formatStudyDateTime(row.latest.submittedAt)}${row.latest.isLate ? " (muộn)" : ""}`
+                      : ", chưa nộp"}
+                    {row.percent !== null ? `, ${formatPercent(row.percent)}` : ""}
                   </p>
-                )}
-                {visible.map(({ item, number }) => (
-                  <div key={item.view.id} className="result-row" data-correct={item.isCorrect}>
-                    <p className="result-row-meta">
-                      <span
-                        className={`status-badge ${item.isCorrect ? "status-correct" : "status-wrong"}`}
-                      >
-                        {item.isCorrect ? "Đúng" : "Sai"}
-                      </span>{" "}
-                      Câu {number}
-                      {item.listenCount !== null && ` · nghe ${item.listenCount} lần`}
+                  {outcome && row.items.length > 0 && !visible.length && (
+                    <p className="muted">
+                      Không có câu {ANSWER_OUTCOME_LABELS[outcome].toLowerCase()} trong bài này.
                     </p>
-                    <PassageDetails passage={item.view.passage} lang={item.view.lang} />
-                    <p lang={item.view.lang} className="result-row-prompt">
-                      {item.view.prompt}
-                    </p>
-                    <p>
-                      Trả lời:{" "}
-                      <strong lang={answerLang(item.view)}>
-                        {item.answerText || "(bỏ trống)"}
-                      </strong>
-                    </p>
-                    {!item.isCorrect && (
-                      <p>
-                        Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
+                  )}
+                  {visible.map(({ item, number }) => (
+                    <div key={item.view.id} className="result-row" data-correct={item.isCorrect}>
+                      <p className="result-row-meta">
+                        <span
+                          className={`status-badge ${item.isCorrect ? "status-correct" : "status-wrong"}`}
+                        >
+                          {item.isCorrect ? "Đúng" : "Sai"}
+                        </span>{" "}
+                        Câu {number}
+                        {item.listenCount !== null && ` · nghe ${item.listenCount} lần`}
                       </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </details>
-          );
-        })}
+                      <PassageDetails passage={item.view.passage} lang={item.view.lang} />
+                      <p lang={item.view.lang} className="result-row-prompt">
+                        {item.view.prompt}
+                      </p>
+                      <p>
+                        Trả lời:{" "}
+                        <strong lang={answerLang(item.view)}>
+                          {item.answerText || "(bỏ trống)"}
+                        </strong>
+                      </p>
+                      {!item.isCorrect && (
+                        <p>
+                          Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
+                        </p>
+                      )}
+                      {!item.isCorrect && item.answerText && isTypedQuestion(item.view) && (
+                        <AcceptAnswerForm
+                          classId={detail.classRow.id}
+                          studentId={uid}
+                          assignmentId={row.assignment.id}
+                          questionId={item.view.id}
+                          questionNumber={number}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </details>
+            );
+          })}
+        </AcceptNoticeArea>
       </section>
     </>
   );

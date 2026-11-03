@@ -238,6 +238,14 @@ Sửa các lỗi còn mở trong rà soát hiện trạng 02/11: [báo cáo](../
 
 - **Danh sách ID dài (03/11/2026).** Bộ lọc `in` của PostgREST nằm trong URL. Khoảng 200 UUID đã vượt giới hạn URL của gateway, nên trang Giáo viên của quản trị lỗi `database_error` khi stack E2E có 231 giáo viên. Lớp có bài hằng ngày cũng thêm một bài giao mỗi ngày. `selectRowsIn` (`lib/server/supabase.ts`) đọc theo lô 100 ID rồi gộp kết quả; nơi cần thứ tự thì sắp xếp lại sau khi gộp. Dùng cho trang Giáo viên của quản trị, `listUserAttempts` (mọi bài giao của lớp), báo cáo lớp và sổ lỗi.
 
+### Giáo viên chấp nhận đáp án tương đương — 03/11/2026
+
+Migration `202611030001_accept_answer_variants.sql`. Luồng và quy tắc ở [bài tập và chấm điểm](../07-exercises-and-grading.md#giáo-viên-chấp-nhận-đáp-án-tương-đương-migration-202611030001).
+
+- `lib/answer-variants.ts`: `isTypedQuestion`, `toAcceptedVariant`, `findRegradedSubmissions` (chấm lại bằng `gradeQuestion` với đáp án mới). `lib/server/answer-variants.ts`: kiểm tra lớp của giáo viên và bài giao thuộc lớp, đọc câu trả lời từ database, chọn lượt nộp được chấm lại rồi gọi RPC.
+- `acceptAnswerAction` (`app/actions/classes.ts`) và `AcceptAnswerForm`. Thông báo kết quả nằm ở `AcceptNoticeArea` cấp section, dính cuối màn hình. Lý do: câu vừa được chấp nhận thành đúng nên form của nó rời trang, và cả rời bộ lọc "Sai".
+- Phải chạy migration trước khi deploy code. Trước khi có migration, nút này lỗi; các phần khác không phụ thuộc migration.
+
 ### Soạn câu sắp xếp và đọc hiểu trong trình soạn — 03/11/2026
 
 Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testing/question-authoring-2026-11-03.md).
