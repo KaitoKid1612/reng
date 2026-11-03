@@ -11,6 +11,35 @@ import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slid
 import type { RevealApi } from "reveal.js";
 import type { PublicAnyLesson } from "@/lib/teaching-content";
 
+const SLIDE_HEIGHT = 720;
+// Below this the text gets hard to read; content that still does not fit scrolls off as before.
+const MIN_FIT_ZOOM = 0.6;
+const FIT_SPARE_PIXELS = 4;
+
+// The slide layouts already switch to denser type for long content. Anything still taller than
+// the 1280×720 slide (a teacher's very long note, say) is zoomed out here so nothing is cut off in
+// class. Sizes are CSS pixels, so the deck's own scaling of the stage does not affect them.
+function fitSlide(section: Element | undefined) {
+  if (!(section instanceof HTMLElement)) {
+    return;
+  }
+  const content = section.firstElementChild;
+  if (!(content instanceof HTMLElement)) {
+    return;
+  }
+  content.style.removeProperty("zoom");
+  if (section.scrollHeight <= SLIDE_HEIGHT || !content.offsetHeight) {
+    return;
+  }
+  const available = SLIDE_HEIGHT - (section.scrollHeight - content.offsetHeight);
+  // Zoomed line boxes round their heights, so a few pixels are kept spare.
+  const zoom = Math.max(
+    MIN_FIT_ZOOM,
+    Math.floor(((available - FIT_SPARE_PIXELS) / content.offsetHeight) * 1000) / 1000,
+  );
+  content.style.setProperty("zoom", String(zoom));
+}
+
 interface SlideDeckProps {
   lesson: PublicAnyLesson;
   printMode: boolean;
@@ -84,6 +113,14 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
           return;
         }
         deckRef.current = deck;
+        const fitCurrentSlide = () => {
+          if (!deck) {
+            return;
+          }
+          fitSlide(deck.getCurrentSlide());
+          deck.layout();
+        };
+        deck.on("slidechanged", fitCurrentSlide);
         deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
           const popup = window.open(
             `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`,
@@ -113,6 +150,7 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
           };
         }
         handleHashChange();
+        fitCurrentSlide();
         window.addEventListener("hashchange", handleHashChange);
         setIsReady(true);
       })

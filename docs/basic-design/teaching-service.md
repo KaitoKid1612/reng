@@ -136,6 +136,11 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Slide luôn vừa khung — 03/11/2026
+
+- Hội thoại, bảng, câu ví dụ và mẫu câu dài tự chuyển sang bố cục gọn hoặc dày để vừa khung 1280×720. Ngưỡng được đo trên toàn bộ slide của bài mẫu 1–13.
+- Slide đang chiếu mà vẫn cao hơn khung (ví dụ ghi chú giáo viên viết rất dài) sẽ tự thu nhỏ cho vừa, tối thiểu còn 60% cỡ chữ. Nhờ vậy không có chữ nào bị cắt khi đang dạy.
+
 ## Hôm nay học gì — 03/11/2026
 
 Trước đây học viên phải tự ghép buổi học, bài tập, bài mới và thẻ ôn từ nhiều mục. Giờ **Lớp của tôi** mở đầu bằng mục **Hôm nay học gì**. **Trang chủ** (đã đăng nhập) hiện 4 dòng đầu của mục này, kèm link "Xem thêm N việc ở Lớp của tôi".

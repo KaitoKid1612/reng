@@ -129,6 +129,12 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Slide tự thu nhỏ khi vẫn quá cao — 03/11/2026
+
+- PASS local: slide "Mục tiêu buổi học" của bài 3 (403 px) không bị đổi. Chèn thêm 14 dòng ghi chú cho slide cao 795 px, chuyển slide đi rồi quay lại: nội dung được thu về zoom 0,889, slide cao 721 px (reveal làm tròn 1 px), không chữ nào bị cắt.
+- PASS local: bài 7 và bài 10 không có slide nào tràn sau thay đổi.
+- E2E chưa chạy (đợt này tạm hoãn E2E).
+
 ## Bài mẫu Minna 10 — 03/11/2026
 
 Thêm `content/starters/minna-1-10.json` và đăng ký sau bài 9: 48 từ (12 từ có icon), 5 mục ngữ pháp, 37 slide (6 bảng, 3 hội thoại), 50 câu luyện (36 choice chia đều 9/9/9/9 vị trí, 14 fill hiragana). Bộ bài mẫu giờ liền mạch từ bài 1 đến 13.
