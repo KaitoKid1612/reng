@@ -63,21 +63,23 @@ function buildLessonDraft() {
     type: "addVocabRows",
     rows: parseVocabularyTable(VOCABULARY, []).rows,
   });
+  // Item IDs are random (they are never reused after a deletion), so read them from the draft.
   draft = teachingReducer(draft, { type: "addGrammar" });
+  const grammarId = draft.content.grammar.at(-1)?.id ?? "";
   draft = teachingReducer(draft, {
     type: "updateGrammar",
-    id: "grammar-1",
+    id: grammarId,
     patch: {
       pattern: "我叫 + tên",
       meaning: "Tôi tên là …",
       explain: "Dùng 叫 (jiào) để nói tên của mình; hỏi tên người khác bằng 你叫什么名字？",
     },
   });
-  draft = teachingReducer(draft, { type: "addExample", collection: "grammar", id: "grammar-1" });
+  draft = teachingReducer(draft, { type: "addExample", collection: "grammar", id: grammarId });
   draft = teachingReducer(draft, {
     type: "updateExample",
     collection: "grammar",
-    id: "grammar-1",
+    id: grammarId,
     index: 0,
     patch: { text: "我叫小明。", reading: "Wǒ jiào Xiǎomíng.", meaning: "Tôi tên là Tiểu Minh." },
   });
@@ -86,14 +88,15 @@ function buildLessonDraft() {
     const id = draft.content.dialogue.at(-1)?.id ?? "";
     draft = teachingReducer(draft, { type: "updateDialogue", id, patch: line });
   }
-  for (const [vocabId, kind] of [
-    ["vocab-1", "meaning"],
-    ["vocab-2", "hanzi"],
-    ["vocab-3", "pinyin"],
+  for (const [index, kind] of [
+    [0, "meaning"],
+    [1, "hanzi"],
+    [2, "pinyin"],
   ] as const) {
+    const vocabId = draft.content.vocab[index]?.id ?? "";
     const question = buildVocabularyQuestion(draft.content, vocabId, kind);
     if (!question) {
-      throw new Error(`Unable to build the demo question for ${vocabId}.`);
+      throw new Error(`Unable to build the demo question for word ${index + 1}.`);
     }
     draft = teachingReducer(draft, { type: "addQuestion", question });
   }
@@ -142,19 +145,29 @@ async function rpc<Schema extends z.ZodType>(
 
 async function ensureLesson(client: SupabaseClient, teacherId: string) {
   const draft = buildLessonDraft();
-  const lessonId = await rpc(
-    client,
-    "create_teaching_lesson",
-    {
-      p_teacher_id: teacherId,
-      p_request_id: LESSON_REQUEST,
-      p_title: draft.title,
-      p_order: draft.order,
-      p_content: draft.content,
-      p_authoring: draft.authoring,
-    },
-    z.string(),
-  );
+  // Item IDs are random, so a rerun builds another draft, which create_teaching_lesson would refuse
+  // for the same request. Look for the lesson of this request first.
+  const { data: existing } = await client
+    .from("lessons")
+    .select("id")
+    .eq("owner_id", teacherId)
+    .eq("creation_request_id", LESSON_REQUEST)
+    .maybeSingle();
+  const lessonId = existing
+    ? String(existing.id)
+    : await rpc(
+        client,
+        "create_teaching_lesson",
+        {
+          p_teacher_id: teacherId,
+          p_request_id: LESSON_REQUEST,
+          p_title: draft.title,
+          p_order: draft.order,
+          p_content: draft.content,
+          p_authoring: draft.authoring,
+        },
+        z.string(),
+      );
   const { data: lesson } = await client
     .from("lessons")
     .select("published_version_id, draft_revision")

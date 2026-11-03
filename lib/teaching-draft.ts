@@ -1,3 +1,4 @@
+import { createUniqueId } from "@/lib/item-ids";
 import { createTeachingContext } from "@/lib/teaching-content";
 import { isSameSlideContent } from "@/lib/teaching-templates";
 
@@ -23,7 +24,13 @@ export const MAX_DRAFT_JSON_LENGTH = 200_000;
 
 type ItemCollection = "vocab" | "grammar" | "dialogue" | "questions" | "slides";
 
-export function createTeachingId(prefix: string, content: TeachingDraftContent) {
+// The smallest free number would hand a deleted word's ID to the next new word, and its review
+// cards with it, so new items get a random suffix like the web editor's.
+export function createTeachingId(
+  prefix: string,
+  content: TeachingDraftContent,
+  random: () => number = Math.random,
+) {
   const used = new Set(
     [
       ...content.vocab,
@@ -33,11 +40,7 @@ export function createTeachingId(prefix: string, content: TeachingDraftContent) 
       ...content.slides,
     ].map((item) => item.id),
   );
-  let number = 1;
-  while (used.has(`${prefix}-${number}`)) {
-    number++;
-  }
-  return `${prefix}-${number}`;
+  return createUniqueId(prefix, used, random);
 }
 
 const EMPTY_EXAMPLE: TeachingExample = { text: "", reading: "", meaning: "" };

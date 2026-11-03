@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
+import { createUniqueId } from "@/lib/item-ids";
 import {
   lessonContentSchema,
   MAX_DIALOGUE_LINES,
@@ -265,28 +266,15 @@ function collectItemIds(content: Pick<DraftContent, "vocab" | "grammar" | "slide
 }
 
 const ID_PREFIXES = { vocab: "v", grammar: "g", slide: "s", question: "q" } as const;
-const ID_ALPHABET = "abcdefghjkmnpqrstuvwxyz23456789";
 
 export type ItemKind = keyof typeof ID_PREFIXES;
 
-// Random suffixes keep IDs from being reused for a different meaning after a deletion,
-// which would silently repoint review cards keyed by lesson and item ID.
 export function createItemId(
   kind: ItemKind,
   content: DraftContent,
   random: () => number = Math.random,
 ) {
-  const used = new Set(collectItemIds(content));
-  for (;;) {
-    let suffix = "";
-    for (let index = 0; index < 6; index++) {
-      suffix += ID_ALPHABET[Math.floor(random() * ID_ALPHABET.length)];
-    }
-    const id = `${ID_PREFIXES[kind]}-${suffix}`;
-    if (!used.has(id)) {
-      return id;
-    }
-  }
+  return createUniqueId(ID_PREFIXES[kind], new Set(collectItemIds(content)), random);
 }
 
 export function createSlide(type: SlideType, id: string): DraftSlide {

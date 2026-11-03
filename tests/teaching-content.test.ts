@@ -13,6 +13,7 @@ import {
 import {
   buildVocabularyQuestion,
   createReviewedQuestions,
+  createTeachingId,
   isQuestionReviewed,
   teachingReducer,
 } from "../lib/teaching-draft";
@@ -31,7 +32,7 @@ function buildDraft(): TeachingDraft {
     draft.content.vocab,
   );
   draft = teachingReducer(draft, { type: "addVocabRows", rows: pasted.rows });
-  const question = buildVocabularyQuestion(draft.content, "vocab-1", "meaning");
+  const question = buildVocabularyQuestion(draft.content, draft.content.vocab[0].id, "meaning");
   assert.ok(question);
   return teachingReducer(draft, { type: "addQuestion", question });
 }
@@ -81,7 +82,7 @@ test("publishing requires objectives, slides and complete answers; missing pinyi
 
   const withoutPinyin = teachingReducer(draft, {
     type: "updateVocab",
-    id: "vocab-2",
+    id: draft.content.vocab[1].id,
     patch: { reading: "" },
   });
   const report = reviewTeachingDraft(withoutPinyin);
@@ -100,17 +101,20 @@ test("publishing requires objectives, slides and complete answers; missing pinyi
 
 test("slide generation is deterministic, ordered and keeps the teacher's edits", () => {
   const draft = buildDraft();
+  // Item IDs are random; generated slide IDs are built from them.
+  const [hello, thanks, teacher] = draft.content.vocab.map((item) => item.id);
+  const quiz = draft.content.questions[0].id;
   const first = generateTeachingSlides(draft);
   assert.deepEqual(
     first.slides.map((slide) => slide.id),
     [
       "g-title",
       "g-goals",
-      "g-vocab-vocab-1",
-      "g-example-vocab-1-0",
-      "g-vocab-vocab-2",
-      "g-vocab-vocab-3",
-      "g-quiz-question-1",
+      `g-vocab-${hello}`,
+      `g-example-${hello}-0`,
+      `g-vocab-${thanks}`,
+      `g-vocab-${teacher}`,
+      `g-quiz-${quiz}`,
       "g-homework",
     ],
   );
@@ -133,7 +137,7 @@ test("slide generation is deterministic, ordered and keeps the teacher's edits",
   current = teachingReducer(current, {
     type: "removeItem",
     collection: "slides",
-    id: "g-vocab-vocab-3",
+    id: `g-vocab-${teacher}`,
   });
   current = teachingReducer(current, {
     type: "moveItem",
@@ -143,19 +147,20 @@ test("slide generation is deterministic, ordered and keeps the teacher's edits",
   });
   current = teachingReducer(current, { type: "setTitle", title: "Chào hỏi cơ bản" });
   current = teachingReducer(current, { type: "addVocab" });
+  const me = current.content.vocab.at(-1)?.id ?? "";
   current = teachingReducer(current, {
     type: "updateVocab",
-    id: "vocab-4",
+    id: me,
     patch: { text: "我", reading: "wǒ", meaning: "tôi" },
   });
-  current = teachingReducer(current, { type: "removeItem", collection: "vocab", id: "vocab-2" });
+  current = teachingReducer(current, { type: "removeItem", collection: "vocab", id: thanks });
 
   const update = generateTeachingSlides(current);
   const ids = update.slides.map((slide) => slide.id);
   assert.equal(ids[0], "g-goals", "the teacher's order is kept");
-  assert.ok(!ids.includes("g-vocab-vocab-3"), "a slide the teacher deleted stays deleted");
-  assert.ok(!ids.includes("g-vocab-vocab-2"), "a slide whose source was removed is dropped");
-  assert.ok(ids.indexOf("g-vocab-vocab-4") < ids.indexOf("g-quiz-question-1"));
+  assert.ok(!ids.includes(`g-vocab-${teacher}`), "a slide the teacher deleted stays deleted");
+  assert.ok(!ids.includes(`g-vocab-${thanks}`), "a slide whose source was removed is dropped");
+  assert.ok(ids.indexOf(`g-vocab-${me}`) < ids.indexOf(`g-quiz-${quiz}`));
   assert.deepEqual(update.changes.preserved, ["g-homework"]);
   const editedHomework = update.slides.find((slide) => slide.id === "g-homework");
   assert.ok(editedHomework?.type === "note" && editedHomework.body === "Viết 你好 năm lần.");
@@ -165,7 +170,7 @@ test("slide generation is deterministic, ordered and keeps the teacher's edits",
 
   const replaced = generateTeachingSlides(current, true);
   assert.ok(
-    replaced.slides.some((slide) => slide.id === "g-vocab-vocab-3"),
+    replaced.slides.some((slide) => slide.id === `g-vocab-${teacher}`),
     "replacing edits also restores deleted generated slides",
   );
   const replacedHomework = replaced.slides.find((slide) => slide.id === "g-homework");
@@ -178,15 +183,16 @@ test("generated questions are editable frames and any edit invalidates a review"
   assert.equal(choice.type, "choice");
   assert.ok(choice.type === "choice");
   assert.equal(choice.options[choice.answer[0]], "xin chào");
-  const hanzi = buildVocabularyQuestion(draft.content, "vocab-3", "hanzi");
+  const teacherWord = draft.content.vocab[2].id;
+  const hanzi = buildVocabularyQuestion(draft.content, teacherWord, "hanzi");
   assert.ok(hanzi?.type === "fill" && hanzi.inputMode === "chinese");
   assert.deepEqual(hanzi.answer, ["老师"]);
   const noReading = teachingReducer(draft, {
     type: "updateVocab",
-    id: "vocab-3",
+    id: teacherWord,
     patch: { reading: "" },
   });
-  assert.equal(buildVocabularyQuestion(noReading.content, "vocab-3", "pinyin"), null);
+  assert.equal(buildVocabularyQuestion(noReading.content, teacherWord, "pinyin"), null);
 
   const reviewed = createReviewedQuestions(draft, [choice.id]);
   assert.ok(isQuestionReviewed(choice, reviewed));
@@ -224,4 +230,26 @@ test("published v2 rows load as teaching versions and hide notes and answers", (
   assert.ok(!serialized.includes("SECRET-NOTE"));
   assert.ok(!("answer" in lesson.content.questions[0]));
   assert.ok(!("explain" in lesson.content.questions[0]));
+});
+
+test("a deleted word's ID never comes back for a new word, so review cards stay with their word", () => {
+  let draft = buildDraft();
+  const removed = draft.content.vocab[2].id;
+  draft = teachingReducer(draft, { type: "removeItem", collection: "vocab", id: removed });
+  for (let index = 0; index < 20; index += 1) {
+    draft = teachingReducer(draft, { type: "addVocab" });
+  }
+  const ids = draft.content.vocab.map((item) => item.id);
+  assert.ok(!ids.includes(removed));
+  assert.equal(new Set(ids).size, ids.length);
+  // When the first random pick is taken, the next pick is used instead.
+  const picks = [...Array(6).fill(0), ...Array(6).fill(0.5)];
+  const taken = createTeachingId("vocab", draft.content, () => 0);
+  const withTaken = {
+    ...draft.content,
+    vocab: [...draft.content.vocab, { ...draft.content.vocab[0], id: taken }],
+  };
+  const fresh = createTeachingId("vocab", withTaken, () => picks.shift() ?? 0.5);
+  assert.notEqual(fresh, taken);
+  assert.match(fresh, /^vocab-[a-z0-9]{6}$/);
 });
