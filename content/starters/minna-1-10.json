@@ -1,0 +1,1474 @@
+{
+  "id": "minna-1-10",
+  "title": "Bài 10 – Có gì, ở đâu",
+  "titleJa": "第10課　あそこに コンビニが あります",
+  "summary": "Theo trình tự bài 10 Minna no Nihongo Sơ cấp I: あります (đồ vật, cây cối, nơi chốn) và います (người, động vật), N1 に N2 が あります／います (ở N1 có N2), N2 は N1 に あります／います (N2 ở N1), từ chỉ vị trí うえ・した・まえ・うしろ・みぎ・ひだり・なか・そと・となり・ちかく・あいだ, liệt kê tiêu biểu N1 や N2 など và hỏi đồ ở siêu thị.",
+  "order": 10,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1001",
+        "jp": "います",
+        "romaji": "imasu",
+        "vi": "có, ở (người, động vật)",
+        "audio": null
+      },
+      {
+        "id": "v1002",
+        "jp": "あります",
+        "romaji": "arimasu",
+        "vi": "có, ở (đồ vật, cây cối, nơi chốn)",
+        "audio": null
+      },
+      {
+        "id": "v1003",
+        "jp": "おとこの ひと",
+        "kanji": "男の 人",
+        "romaji": "otoko no hito",
+        "vi": "người đàn ông",
+        "audio": null,
+        "image": "/icons/vocab/man.svg"
+      },
+      {
+        "id": "v1004",
+        "jp": "おんなの ひと",
+        "kanji": "女の 人",
+        "romaji": "onna no hito",
+        "vi": "người phụ nữ",
+        "audio": null,
+        "image": "/icons/vocab/woman.svg"
+      },
+      {
+        "id": "v1005",
+        "jp": "おとこの こ",
+        "kanji": "男の 子",
+        "romaji": "otoko no ko",
+        "vi": "bé trai",
+        "audio": null,
+        "image": "/icons/vocab/boy.svg"
+      },
+      {
+        "id": "v1006",
+        "jp": "おんなの こ",
+        "kanji": "女の 子",
+        "romaji": "onna no ko",
+        "vi": "bé gái",
+        "audio": null,
+        "image": "/icons/vocab/girl.svg"
+      },
+      {
+        "id": "v1007",
+        "jp": "パンダ",
+        "romaji": "panda",
+        "vi": "gấu trúc",
+        "audio": null
+      },
+      {
+        "id": "v1008",
+        "jp": "とり",
+        "kanji": "鳥",
+        "romaji": "tori",
+        "vi": "con chim",
+        "audio": null
+      },
+      {
+        "id": "v1009",
+        "jp": "き",
+        "kanji": "木",
+        "romaji": "ki",
+        "vi": "cây",
+        "audio": null
+      },
+      {
+        "id": "v1010",
+        "jp": "もの",
+        "kanji": "物",
+        "romaji": "mono",
+        "vi": "đồ vật, thứ",
+        "audio": null
+      },
+      {
+        "id": "v1011",
+        "jp": "でんち",
+        "kanji": "電池",
+        "romaji": "denchi",
+        "vi": "pin",
+        "audio": null
+      },
+      {
+        "id": "v1012",
+        "jp": "はこ",
+        "kanji": "箱",
+        "romaji": "hako",
+        "vi": "cái hộp",
+        "audio": null
+      },
+      {
+        "id": "v1013",
+        "jp": "スイッチ",
+        "romaji": "suicchi",
+        "vi": "công tắc",
+        "audio": null
+      },
+      {
+        "id": "v1014",
+        "jp": "れいぞうこ",
+        "kanji": "冷蔵庫",
+        "romaji": "reizouko",
+        "vi": "tủ lạnh",
+        "audio": null
+      },
+      {
+        "id": "v1015",
+        "jp": "テーブル",
+        "romaji": "teeburu",
+        "vi": "cái bàn",
+        "audio": null
+      },
+      {
+        "id": "v1016",
+        "jp": "ベッド",
+        "romaji": "beddo",
+        "vi": "cái giường",
+        "audio": null,
+        "image": "/icons/vocab/bed.svg"
+      },
+      {
+        "id": "v1017",
+        "jp": "たな",
+        "kanji": "棚",
+        "romaji": "tana",
+        "vi": "cái kệ, giá",
+        "audio": null
+      },
+      {
+        "id": "v1018",
+        "jp": "ドア",
+        "romaji": "doa",
+        "vi": "cửa ra vào",
+        "audio": null,
+        "image": "/icons/vocab/door.svg"
+      },
+      {
+        "id": "v1019",
+        "jp": "まど",
+        "kanji": "窓",
+        "romaji": "mado",
+        "vi": "cửa sổ",
+        "audio": null
+      },
+      {
+        "id": "v1020",
+        "jp": "いす",
+        "romaji": "isu",
+        "vi": "cái ghế",
+        "audio": null,
+        "image": "/icons/vocab/chair.svg"
+      },
+      {
+        "id": "v1021",
+        "jp": "ポスト",
+        "romaji": "posuto",
+        "vi": "hòm thư",
+        "audio": null
+      },
+      {
+        "id": "v1022",
+        "jp": "ビル",
+        "romaji": "biru",
+        "vi": "tòa nhà",
+        "audio": null,
+        "image": "/icons/vocab/office-building.svg"
+      },
+      {
+        "id": "v1023",
+        "jp": "コンビニ",
+        "romaji": "konbini",
+        "vi": "cửa hàng tiện lợi",
+        "audio": null,
+        "image": "/icons/vocab/convenience-store.svg"
+      },
+      {
+        "id": "v1024",
+        "jp": "きっさてん",
+        "kanji": "喫茶店",
+        "romaji": "kissaten",
+        "vi": "quán cà phê",
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v1025",
+        "jp": "〜や",
+        "kanji": "〜屋",
+        "romaji": "~ya",
+        "vi": "cửa hàng … (ví dụ: ほんや hiệu sách)",
+        "audio": null
+      },
+      {
+        "id": "v1026",
+        "jp": "のりば",
+        "kanji": "乗り場",
+        "romaji": "noriba",
+        "vi": "chỗ lên xe, bến",
+        "audio": null
+      },
+      {
+        "id": "v1027",
+        "jp": "みずうみ",
+        "kanji": "湖",
+        "romaji": "mizuumi",
+        "vi": "hồ",
+        "audio": null
+      },
+      {
+        "id": "v1028",
+        "jp": "かわ",
+        "kanji": "川",
+        "romaji": "kawa",
+        "vi": "sông",
+        "audio": null,
+        "image": "/icons/vocab/water-wave.svg"
+      },
+      {
+        "id": "v1029",
+        "jp": "うえ",
+        "kanji": "上",
+        "romaji": "ue",
+        "vi": "phía trên",
+        "audio": null
+      },
+      {
+        "id": "v1030",
+        "jp": "した",
+        "kanji": "下",
+        "romaji": "shita",
+        "vi": "phía dưới",
+        "audio": null
+      },
+      {
+        "id": "v1031",
+        "jp": "まえ",
+        "kanji": "前",
+        "romaji": "mae",
+        "vi": "phía trước",
+        "audio": null
+      },
+      {
+        "id": "v1032",
+        "jp": "うしろ",
+        "romaji": "ushiro",
+        "vi": "phía sau",
+        "audio": null
+      },
+      {
+        "id": "v1033",
+        "jp": "みぎ",
+        "kanji": "右",
+        "romaji": "migi",
+        "vi": "bên phải",
+        "audio": null
+      },
+      {
+        "id": "v1034",
+        "jp": "ひだり",
+        "kanji": "左",
+        "romaji": "hidari",
+        "vi": "bên trái",
+        "audio": null
+      },
+      {
+        "id": "v1035",
+        "jp": "なか",
+        "kanji": "中",
+        "romaji": "naka",
+        "vi": "bên trong",
+        "audio": null
+      },
+      {
+        "id": "v1036",
+        "jp": "そと",
+        "kanji": "外",
+        "romaji": "soto",
+        "vi": "bên ngoài",
+        "audio": null
+      },
+      {
+        "id": "v1037",
+        "jp": "となり",
+        "kanji": "隣",
+        "romaji": "tonari",
+        "vi": "bên cạnh",
+        "audio": null
+      },
+      {
+        "id": "v1038",
+        "jp": "ちかく",
+        "kanji": "近く",
+        "romaji": "chikaku",
+        "vi": "gần, chỗ gần",
+        "audio": null
+      },
+      {
+        "id": "v1039",
+        "jp": "あいだ",
+        "kanji": "間",
+        "romaji": "aida",
+        "vi": "ở giữa",
+        "audio": null
+      },
+      {
+        "id": "v1040",
+        "jp": "いろいろ［な］",
+        "romaji": "iroiro [na]",
+        "vi": "nhiều loại, khác nhau",
+        "audio": null
+      },
+      {
+        "id": "v1041",
+        "jp": "〜や 〜［など］",
+        "romaji": "~ya ~ [nado]",
+        "vi": "…, … v.v. (liệt kê tiêu biểu)",
+        "audio": null
+      },
+      {
+        "id": "v1042",
+        "jp": "いちばん 〜",
+        "romaji": "ichiban ~",
+        "vi": "… nhất (いちばん した: dưới cùng)",
+        "audio": null
+      },
+      {
+        "id": "v1043",
+        "jp": "おく",
+        "kanji": "奥",
+        "romaji": "oku",
+        "vi": "phía trong cùng",
+        "audio": null
+      },
+      {
+        "id": "v1044",
+        "jp": "コーナー",
+        "romaji": "koonaa",
+        "vi": "quầy, khu (trong cửa hàng)",
+        "audio": null
+      },
+      {
+        "id": "v1045",
+        "jp": "ヌクマム",
+        "romaji": "nukumamu",
+        "vi": "nước mắm",
+        "audio": null
+      },
+      {
+        "id": "v1046",
+        "jp": "しょうゆ",
+        "romaji": "shouyu",
+        "vi": "nước tương, xì dầu",
+        "audio": null
+      },
+      {
+        "id": "v1047",
+        "jp": "あのう",
+        "romaji": "anou",
+        "vi": "dạ, ừm (mở lời ngập ngừng)",
+        "audio": null
+      },
+      {
+        "id": "v1048",
+        "jp": "どうも すみません",
+        "romaji": "doumo sumimasen",
+        "vi": "cảm ơn, xin lỗi đã làm phiền",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1001",
+        "pattern": "N が あります／います",
+        "vi": "Có N",
+        "explain": "あります dùng cho đồ vật, cây cối, nơi chốn (thứ không tự di chuyển). います dùng cho người và động vật.",
+        "viMistake": "Người và con vật dùng います: いぬが います. Đồ vật dùng あります: {電池|でんち}が あります.",
+        "examples": [
+          {
+            "jp": "{電池|でんち}が ありますか。…はい、あります。",
+            "vi": "Có pin không? … Có.",
+            "audio": null
+          },
+          {
+            "jp": "{男|おとこ}の {子|こ}が います。",
+            "vi": "Có một cậu bé.",
+            "audio": null
+          },
+          {
+            "jp": "いぬが いますか。…いいえ、いません。",
+            "vi": "Có con chó nào không? … Không có.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1002",
+        "pattern": "N1 (nơi chốn) に N2 が あります／います",
+        "vi": "Ở N1 có N2",
+        "explain": "に đứng sau nơi tồn tại; が đánh dấu thứ mới được nhắc tới. Hỏi: N1 に {何|なに}が ありますか／だれが いますか.",
+        "examples": [
+          {
+            "jp": "あそこに コンビニが あります。",
+            "vi": "Ở đằng kia có cửa hàng tiện lợi.",
+            "audio": null
+          },
+          {
+            "jp": "{部屋|へや}に だれが いますか。…{田中|たなか}さんが います。",
+            "vi": "Trong phòng có ai? … Có anh Tanaka.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイに ホアンキエム{湖|こ}が あります。",
+            "vi": "Ở Hà Nội có hồ Hoàn Kiếm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1003",
+        "pattern": "N2 は N1 (nơi chốn) に あります／います",
+        "vi": "N2 ở N1",
+        "explain": "Nói vị trí của thứ đã biết: N2 làm chủ đề (は), nơi chốn + に. Hỏi: N2 は どこに ありますか → N1 に あります. Có thể rút gọn như bài 3: N2 は N1 です.",
+        "viMistake": "Hỏi vị trí thứ đã biết dùng は (トイレは どこに ありますか); giới thiệu thứ mới dùng が (あそこに トイレが あります).",
+        "examples": [
+          {
+            "jp": "{田中|たなか}さんは {会議室|かいぎしつ}に います。",
+            "vi": "Anh Tanaka ở phòng họp.",
+            "audio": null
+          },
+          {
+            "jp": "{電池|でんち}は どこに ありますか。…{箱|はこ}の {中|なか}に あります。",
+            "vi": "Pin ở đâu? … Ở trong hộp.",
+            "audio": null
+          },
+          {
+            "jp": "ヌクマムは どこに ありますか。…あの コーナーに あります。",
+            "vi": "Nước mắm ở đâu? … Ở quầy kia.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1004",
+        "pattern": "N の うえ／した／まえ／うしろ／なか／となり／ちかく",
+        "vi": "Trên / dưới / trước / sau / trong / bên cạnh / gần N",
+        "explain": "N + の + từ chỉ vị trí + に: テーブルの {上|うえ}に. Ở giữa hai nơi: N1 と N2 の {間|あいだ}.",
+        "viMistake": "Thứ tự ngược tiếng Việt: \"trên bàn\" là テーブルの {上|うえ} (bàn trước, trên sau).",
+        "examples": [
+          {
+            "jp": "テーブルの {上|うえ}に {本|ほん}が あります。",
+            "vi": "Trên bàn có quyển sách.",
+            "audio": null
+          },
+          {
+            "jp": "{銀行|ぎんこう}は {郵便局|ゆうびんきょく}の となりに あります。",
+            "vi": "Ngân hàng ở bên cạnh bưu điện.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}と {公園|こうえん}の {間|あいだ}に コンビニが あります。",
+            "vi": "Giữa nhà ga và công viên có cửa hàng tiện lợi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1005",
+        "pattern": "N1 や N2［など］",
+        "vi": "N1, N2 và … (liệt kê tiêu biểu)",
+        "explain": "や liệt kê vài thứ tiêu biểu, ngầm hiểu còn thứ khác; thêm など ở cuối (v.v.). と thì liệt kê đủ hết.",
+        "viMistake": "と liệt kê đủ hết; や chỉ nêu vài thứ tiêu biểu.",
+        "examples": [
+          {
+            "jp": "{箱|はこ}の {中|なか}に {手紙|てがみ}や {写真|しゃしん}が あります。",
+            "vi": "Trong hộp có thư, ảnh, …",
+            "audio": null
+          },
+          {
+            "jp": "{冷蔵庫|れいぞうこ}に {卵|たまご}や {牛乳|ぎゅうにゅう}などが あります。",
+            "vi": "Trong tủ lạnh có trứng, sữa, v.v.",
+            "audio": null
+          },
+          {
+            "jp": "{店|みせ}に いろいろな {物|もの}が あります。",
+            "vi": "Ở cửa hàng có nhiều thứ khác nhau.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1001",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"trong phòng học có những gì, ai đang ngồi cạnh bạn?\". Bài đi theo trình tự bài 10 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}10{課|か}",
+        "vi": "Có gì, ở đâu: あります・います"
+      },
+      {
+        "id": "s1002",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Có: đồ vật あります, người và động vật います\n2. Ở N1 có N2: N1 に N2 が あります／います\n3. N2 ở N1: N2 は N1 に あります／います\n4. Từ chỉ vị trí うえ, した, まえ, うしろ, となり, あいだ…; liệt kê 〜や〜など"
+      },
+      {
+        "id": "s1003",
+        "teacherNotes": "あります hay います: thứ tự di chuyển được (người, con vật) dùng います.",
+        "type": "vocab",
+        "refs": ["v1001", "v1002", "v1003", "v1004", "v1005", "v1006", "v1007", "v1008"]
+      },
+      {
+        "id": "s1004",
+        "teacherNotes": "Chỉ đồ vật thật trong lớp: テーブル, いす, ドア, まど.",
+        "type": "vocab",
+        "refs": ["v1009", "v1010", "v1011", "v1012", "v1013", "v1014", "v1015", "v1016"]
+      },
+      {
+        "id": "s1005",
+        "teacherNotes": "Hỏi học viên gần nhà có gì: コンビニ, きっさてん, ポスト…",
+        "type": "vocab",
+        "refs": ["v1017", "v1018", "v1019", "v1020", "v1021", "v1022", "v1023", "v1024"]
+      },
+      {
+        "id": "s1006",
+        "teacherNotes": "Đặt một đồ vật lên, xuống, trước, sau hộp để học từ chỉ vị trí.",
+        "type": "vocab",
+        "refs": ["v1025", "v1026", "v1027", "v1028", "v1029", "v1030", "v1031", "v1032"]
+      },
+      {
+        "id": "s1007",
+        "teacherNotes": "みぎ／ひだり, なか／そと, まえ／うしろ: học theo cặp trái nghĩa.",
+        "type": "vocab",
+        "refs": ["v1033", "v1034", "v1035", "v1036", "v1037", "v1038", "v1039", "v1040"]
+      },
+      {
+        "id": "s1008",
+        "teacherNotes": "Đóng vai hỏi nhân viên siêu thị: あのう、ヌクマムは ありますか.",
+        "type": "vocab",
+        "refs": ["v1041", "v1042", "v1043", "v1044", "v1045", "v1046", "v1047", "v1048"]
+      },
+      {
+        "id": "s1009",
+        "teacherNotes": "Học viên nói あります hay います trước, rồi bấm mũi tên.",
+        "type": "table",
+        "title": "あります hay います?",
+        "columns": ["Thứ", "Động từ"],
+        "rows": [
+          ["{本|ほん}", "あります"],
+          ["いぬ", "います"],
+          ["{木|き}", "あります"],
+          ["{男|おとこ}の {人|ひと}", "います"],
+          ["コンビニ", "あります"],
+          ["{鳥|とり}", "います"],
+          ["{電池|でんち}", "あります"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1010",
+        "teacherNotes": "Chỉ quanh lớp: ほんが あります, がくせいが います.",
+        "type": "grammar",
+        "ref": "g1001"
+      },
+      {
+        "id": "s1011",
+        "type": "example",
+        "ref": "g1001",
+        "reveal": true
+      },
+      {
+        "id": "s1012",
+        "type": "quiz",
+        "ref": "q1001"
+      },
+      {
+        "id": "s1013",
+        "type": "quiz",
+        "ref": "q1002"
+      },
+      {
+        "id": "s1014",
+        "teacherNotes": "Vẽ sơ đồ phố lên bảng; học viên nói 〜に 〜が あります.",
+        "type": "grammar",
+        "ref": "g1002"
+      },
+      {
+        "id": "s1015",
+        "type": "example",
+        "ref": "g1002",
+        "reveal": true
+      },
+      {
+        "id": "s1016",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: ở đâu có gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["あそこ・コンビニ", "あそこに コンビニが あります。"],
+          ["{部屋|へや}・{田中|たなか}さん", "{部屋|へや}に {田中|たなか}さんが います。"],
+          ["{公園|こうえん}・いぬ", "{公園|こうえん}に いぬが います。"],
+          ["{冷蔵庫|れいぞうこ}・ビール", "{冷蔵庫|れいぞうこ}に ビールが あります。"],
+          ["ハノイ・ホアンキエム{湖|こ}", "ハノイに ホアンキエム{湖|こ}が あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1017",
+        "type": "quiz",
+        "ref": "q1004"
+      },
+      {
+        "id": "s1018",
+        "teacherNotes": "So sánh hai câu trên bảng: あそこに トイレが あります (giới thiệu) và トイレは あそこに あります (vị trí).",
+        "type": "grammar",
+        "ref": "g1003"
+      },
+      {
+        "id": "s1019",
+        "type": "example",
+        "ref": "g1003",
+        "reveal": true
+      },
+      {
+        "id": "s1020",
+        "teacherNotes": "Học viên trả lời vị trí bằng sơ đồ trên bảng.",
+        "type": "table",
+        "title": "Luyện tập 2: ở đâu?",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["{田中|たなか}さんは どこに いますか。", "{会議室|かいぎしつ}に います。"],
+          ["{電池|でんち}は どこに ありますか。", "{箱|はこ}の {中|なか}に あります。"],
+          ["ねこは どこに いますか。", "ベッドの {上|うえ}に います。"],
+          ["コンビニは どこに ありますか。", "{駅|えき}の {前|まえ}に あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1021",
+        "type": "quiz",
+        "ref": "q1007"
+      },
+      {
+        "id": "s1022",
+        "teacherNotes": "Đặt một đồ vật quanh cái hộp và cho học viên nói vị trí.",
+        "type": "table",
+        "title": "Từ chỉ vị trí",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{上|うえ}", "phía trên"],
+          ["{下|した}", "phía dưới"],
+          ["{前|まえ}", "phía trước"],
+          ["うしろ", "phía sau"],
+          ["{右|みぎ}", "bên phải"],
+          ["{左|ひだり}", "bên trái"],
+          ["{中|なか}", "bên trong"],
+          ["{外|そと}", "bên ngoài"],
+          ["となり", "bên cạnh"],
+          ["{近|ちか}く", "gần"],
+          ["{間|あいだ}", "ở giữa"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1023",
+        "teacherNotes": "Viết lên bảng: テーブルの うえ (bàn trước, trên sau) để nhớ thứ tự ngược tiếng Việt.",
+        "type": "grammar",
+        "ref": "g1004"
+      },
+      {
+        "id": "s1024",
+        "type": "example",
+        "ref": "g1004",
+        "reveal": true
+      },
+      {
+        "id": "s1025",
+        "teacherNotes": "Học viên nói câu theo gợi ý vị trí, rồi bấm mũi tên.",
+        "type": "table",
+        "title": "Luyện tập 3: vị trí",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["テーブル・{上|うえ}・{本|ほん}", "テーブルの {上|うえ}に {本|ほん}が あります。"],
+          ["ベッド・{下|した}・ねこ", "ベッドの {下|した}に ねこが います。"],
+          [
+            "{銀行|ぎんこう}・となり・{郵便局|ゆうびんきょく}",
+            "{銀行|ぎんこう}の となりに {郵便局|ゆうびんきょく}が あります。"
+          ],
+          [
+            "{駅|えき}と {公園|こうえん}・{間|あいだ}・コンビニ",
+            "{駅|えき}と {公園|こうえん}の {間|あいだ}に コンビニが あります。"
+          ],
+          [
+            "ドア・{前|まえ}・{男|おとこ}の {人|ひと}",
+            "ドアの {前|まえ}に {男|おとこ}の {人|ひと}が います。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1026",
+        "type": "quiz",
+        "ref": "q1010"
+      },
+      {
+        "id": "s1027",
+        "type": "quiz",
+        "ref": "q1016"
+      },
+      {
+        "id": "s1028",
+        "teacherNotes": "Mở túi xách hoặc hộp bút và nói 〜や 〜などが あります.",
+        "type": "grammar",
+        "ref": "g1005"
+      },
+      {
+        "id": "s1029",
+        "type": "example",
+        "ref": "g1005",
+        "reveal": true
+      },
+      {
+        "id": "s1030",
+        "type": "quiz",
+        "ref": "q1018"
+      },
+      {
+        "id": "s1031",
+        "teacherNotes": "Đóng vai hỏi nhân viên siêu thị; thay ヌクマム bằng しょうゆ, でんち.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Ở siêu thị",
+        "lines": [
+          {
+            "speaker": "リン",
+            "jp": "あのう、ヌクマムは ありますか。",
+            "vi": "Dạ, ở đây có nước mắm không ạ?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "ヌクマムですか。ええ、あります。",
+            "vi": "Nước mắm à? Vâng, có ạ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "どこに ありますか。",
+            "vi": "Ở đâu ạ?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "あの コーナーの いちばん {下|した}に あります。",
+            "vi": "Ở dưới cùng của quầy kia ạ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "どうも すみません。",
+            "vi": "Cảm ơn anh nhiều ạ."
+          }
+        ]
+      },
+      {
+        "id": "s1032",
+        "teacherNotes": "Học viên hỏi nhau gần nhà mình có gì, ở đâu.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Gần đây có ngân hàng không?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ハナさん、この {近|ちか}くに {銀行|ぎんこう}が ありますか。",
+            "vi": "Hana, gần đây có ngân hàng không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "ええ、あります。{駅|えき}の {前|まえ}に あります。",
+            "vi": "Có. Ở trước nhà ga."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "コンビニも ありますか。",
+            "vi": "Có cả cửa hàng tiện lợi không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "はい。{銀行|ぎんこう}の となりに あります。",
+            "vi": "Có. Ở bên cạnh ngân hàng."
+          }
+        ]
+      },
+      {
+        "id": "s1033",
+        "teacherNotes": "Giấu một đồ vật trong lớp; học viên hỏi どこに ありますか để tìm.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Con mèo ở đâu?",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "ナムさん、ねこは どこに いますか。",
+            "vi": "Nam ơi, con mèo ở đâu?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "テーブルの {下|した}に います。",
+            "vi": "Ở dưới gầm bàn."
+          },
+          {
+            "speaker": "アン",
+            "jp": "いいえ、いません。",
+            "vi": "Không có."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、ベッドの {上|うえ}ですか。",
+            "vi": "Vậy thì ở trên giường à?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "あ、いました。{窓|まど}の {近|ちか}くに います。",
+            "vi": "A, đây rồi. Nó ở gần cửa sổ."
+          }
+        ]
+      },
+      {
+        "id": "s1034",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật về nơi mình ở.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["うちの {近|ちか}くに {何|なに}が ありますか。", "コンビニや きっさてんが あります。"],
+          ["{教室|きょうしつ}に だれが いますか。", "{先生|せんせい}と {学生|がくせい}が います。"],
+          ["かばんの {中|なか}に {何|なに}が ありますか。", "{本|ほん}や ペンなどが あります。"],
+          ["トイレは どこに ありますか。", "エレベーターの となりに あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1035",
+        "type": "quiz",
+        "ref": "q1028"
+      },
+      {
+        "id": "s1036",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Đồ vật, cây, nơi chốn: あります; người, động vật: います\n• N1 に N2 が あります (ở N1 có N2) — hỏi なにが／だれが\n• N2 は N1 に あります (N2 ở N1) — hỏi どこに\n• N の うえ／した／まえ／うしろ／なか／そと／となり／ちかく; N1 と N2 の あいだ\n• N1 や N2 など: liệt kê tiêu biểu (と: liệt kê đủ)"
+      },
+      {
+        "id": "s1037",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Vẽ sơ đồ phòng của bạn, viết 5 câu: 〜の うえに 〜が あります.\n3. Viết 3 câu giới thiệu khu phố nhà bạn: ちかくに 〜や 〜が あります."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1001",
+        "prompt": "テーブルの うえに ほんが （　　）。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Đồ vật: あります.",
+        "type": "choice",
+        "options": ["います", "あります", "です", "ありますか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1002",
+        "prompt": "こうえんに いぬが （　　）。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Động vật: います.",
+        "type": "choice",
+        "options": ["います", "あります", "です", "いますか"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1003",
+        "prompt": "Chọn động từ đúng: おとこの こが （　　）。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Người: います.",
+        "type": "choice",
+        "options": ["あります", "です", "ありません", "います"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1004",
+        "prompt": "あそこ（　　） コンビニが あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Nơi tồn tại + に.",
+        "type": "choice",
+        "options": ["で", "を", "に", "へ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1005",
+        "prompt": "へやに （　　）が いますか。…たなかさんが います。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Hỏi người: だれ.",
+        "type": "choice",
+        "options": ["なに", "だれ", "どこ", "いつ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1006",
+        "prompt": "はこの なかに （　　）が ありますか。…てがみが あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Hỏi đồ vật: なに.",
+        "type": "choice",
+        "options": ["なに", "だれ", "どこ", "いつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1007",
+        "prompt": "でんちは どこに （　　）。…はこの なかに あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Đồ vật: ありますか.",
+        "type": "choice",
+        "options": ["いますか", "ですか", "しますか", "ありますか"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1008",
+        "prompt": "たなかさんは かいぎしつ（　　） います。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Nơi ở + に.",
+        "type": "choice",
+        "options": ["で", "を", "に", "が"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1009",
+        "prompt": "Chọn câu đúng: Pin ở trong hộp.",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "N の なか; đồ vật: あります.",
+        "type": "choice",
+        "options": [
+          "でんちは なかの はこに あります。",
+          "でんちは はこの なかに あります。",
+          "でんちは はこの なかに います。",
+          "はこは でんちの なかに あります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1010",
+        "prompt": "Chọn câu đúng: Trên bàn có quyển sách.",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "テーブルの うえに + が あります.",
+        "type": "choice",
+        "options": [
+          "テーブルの うえに ほんが あります。",
+          "うえの テーブルに ほんが あります。",
+          "テーブルの うえに ほんが います。",
+          "ほんの うえに テーブルが あります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1011",
+        "prompt": "うしろ nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "うしろ: phía sau.",
+        "type": "choice",
+        "options": ["phía trước", "bên cạnh", "bên trong", "phía sau"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1012",
+        "prompt": "となり nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "となり: bên cạnh.",
+        "type": "choice",
+        "options": ["bên trong", "bên ngoài", "bên cạnh", "phía trên"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1013",
+        "prompt": "みぎ nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "みぎ: bên phải.",
+        "type": "choice",
+        "options": ["bên trái", "bên phải", "phía trên", "phía dưới"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1014",
+        "prompt": "した nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "した: phía dưới.",
+        "type": "choice",
+        "options": ["phía dưới", "phía trên", "phía sau", "bên trong"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1015",
+        "prompt": "ちかく nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "ちかく: gần.",
+        "type": "choice",
+        "options": ["xa", "ở giữa", "bên ngoài", "gần"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1016",
+        "prompt": "えきと こうえんの （　　）に コンビニが あります。(ở giữa)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Ở giữa: N1 と N2 の あいだ.",
+        "type": "choice",
+        "options": ["となり", "まえ", "あいだ", "なか"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1017",
+        "prompt": "ぎんこうは ゆうびんきょくの （　　）に あります。(bên cạnh)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Bên cạnh: となり.",
+        "type": "choice",
+        "options": ["あいだ", "となり", "うえ", "なか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1018",
+        "prompt": "れいぞうこに たまご（　　） ぎゅうにゅうなどが あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Liệt kê tiêu biểu + など: や.",
+        "type": "choice",
+        "options": ["や", "と", "の", "が"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1019",
+        "prompt": "や khác と ở chỗ:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "や: tiêu biểu; と: đủ hết.",
+        "type": "choice",
+        "options": [
+          "や liệt kê đủ, と chỉ nêu vài thứ",
+          "や nối hai câu, と nối hai danh từ",
+          "không khác nhau",
+          "や chỉ nêu vài thứ tiêu biểu, と liệt kê đủ"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1020",
+        "prompt": "Chọn câu đúng: Ở cửa hàng có nhiều thứ khác nhau.",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "いろいろな + danh từ; đồ vật: あります.",
+        "type": "choice",
+        "options": [
+          "みせに いろいろ ものが あります。",
+          "みせで いろいろな ものが います。",
+          "みせに いろいろな ものが あります。",
+          "みせに いろいろな ものを あります。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1021",
+        "prompt": "れいぞうこ là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "れいぞうこ (冷蔵庫): tủ lạnh.",
+        "type": "choice",
+        "options": ["cái hộp", "tủ lạnh", "cái kệ", "cái giường"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1022",
+        "prompt": "まど là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "まど (窓): cửa sổ.",
+        "type": "choice",
+        "options": ["cửa sổ", "cửa ra vào", "cái bàn", "cái kệ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1023",
+        "prompt": "おんなの こ là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "おんなの こ: bé gái.",
+        "type": "choice",
+        "options": ["người phụ nữ", "bé trai", "người đàn ông", "bé gái"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1024",
+        "prompt": "おとこの ひと là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "おとこの ひと: người đàn ông.",
+        "type": "choice",
+        "options": ["bé trai", "người phụ nữ", "người đàn ông", "bé gái"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1025",
+        "prompt": "Hỏi: Gần đây có ngân hàng không?",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Hỏi có hay không: 〜に 〜が ありますか.",
+        "type": "choice",
+        "options": [
+          "この ちかくに ぎんこうが いますか。",
+          "この ちかくに ぎんこうが ありますか。",
+          "この ちかくで ぎんこうが ありますか。",
+          "この ちかくに ぎんこうを ありますか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1026",
+        "prompt": "Trong siêu thị, hỏi nhân viên có nước mắm không:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Đồ vật: ありますか.",
+        "type": "choice",
+        "options": [
+          "ヌクマムは ありますか。",
+          "ヌクマムは いますか。",
+          "ヌクマムを ありますか。",
+          "ヌクマムで ありますか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1027",
+        "prompt": "あの コーナーの いちばん したに あります。nghĩa là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "いちばん した: dưới cùng.",
+        "type": "choice",
+        "options": [
+          "Ở trên cùng của quầy kia.",
+          "Ở bên cạnh quầy kia.",
+          "Ở trước quầy kia.",
+          "Ở dưới cùng của quầy kia."
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1028",
+        "prompt": "Chọn câu đúng: Con mèo ở dưới gầm bàn.",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Động vật: います; テーブルの した.",
+        "type": "choice",
+        "options": [
+          "ねこは テーブルの したに あります。",
+          "ねこは したの テーブルに います。",
+          "ねこは テーブルの したに います。",
+          "テーブルは ねこの したに います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1029",
+        "prompt": "Chọn câu đúng: Ở Hà Nội có hồ Hoàn Kiếm.",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Nơi chốn + に; hồ: あります.",
+        "type": "choice",
+        "options": [
+          "ハノイに ホアンキエムこが います。",
+          "ハノイに ホアンキエムこが あります。",
+          "ハノイで ホアンキエムこが あります。",
+          "ホアンキエムこに ハノイが あります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1030",
+        "prompt": "きっさてん là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "きっさてん (喫茶店): quán cà phê.",
+        "type": "choice",
+        "options": ["quán cà phê", "siêu thị", "bưu điện", "ngân hàng"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1031",
+        "prompt": "のりば là:",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "のりば (乗り場): chỗ lên xe, bến.",
+        "type": "choice",
+        "options": ["nhà ga", "sân bay", "trạm xăng", "chỗ lên xe, bến"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1032",
+        "prompt": "なか ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "なか (trong) ↔ そと (ngoài).",
+        "type": "choice",
+        "options": ["うえ", "うしろ", "そと", "となり"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1033",
+        "prompt": "まえ ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "まえ (trước) ↔ うしろ (sau).",
+        "type": "choice",
+        "options": ["した", "うしろ", "ひだり", "そと"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1034",
+        "prompt": "ひだり ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "ひだり (trái) ↔ みぎ (phải).",
+        "type": "choice",
+        "options": ["みぎ", "まえ", "なか", "ちかく"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1035",
+        "prompt": "Chọn câu đúng: Bưu điện ở đâu?",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Thứ đã biết + は + どこに ありますか.",
+        "type": "choice",
+        "options": [
+          "ゆうびんきょくは どこに いますか。",
+          "どこに ゆうびんきょくは ありますか。",
+          "ゆうびんきょくを どこに ありますか。",
+          "ゆうびんきょくは どこに ありますか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1036",
+        "prompt": "Tìm thấy con mèo, bạn nói: A, đây rồi!",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Tìm thấy người, con vật: いました; đồ vật: ありました.",
+        "type": "choice",
+        "options": ["あ、ありました。", "あ、いません。", "あ、いました。", "あ、います。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1037",
+        "prompt": "Điền: こうえんに いぬが （　　）。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Động vật: います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["います"]
+      },
+      {
+        "id": "q1038",
+        "prompt": "Điền: テーブルの うえに ほんが （　　）。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Đồ vật: あります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あります"]
+      },
+      {
+        "id": "q1039",
+        "prompt": "Điền trợ từ: あそこ（　　） コンビニが あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Nơi tồn tại + に.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["に"]
+      },
+      {
+        "id": "q1040",
+        "prompt": "Điền: でんちは はこの （　　）に あります。(bên trong)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Bên trong: なか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なか"]
+      },
+      {
+        "id": "q1041",
+        "prompt": "Điền: ぎんこうは えきの （　　）に あります。(phía trước)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Phía trước: まえ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まえ"]
+      },
+      {
+        "id": "q1042",
+        "prompt": "Điền: ねこは テーブルの （　　）に います。(phía dưới)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Phía dưới: した.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["した"]
+      },
+      {
+        "id": "q1043",
+        "prompt": "Điền: ほんは かばんの （　　）に あります。(phía trên)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Phía trên: うえ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["うえ"]
+      },
+      {
+        "id": "q1044",
+        "prompt": "Điền: ゆうびんきょくは ぎんこうの （　　）に あります。(bên cạnh)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Bên cạnh: となり.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["となり"]
+      },
+      {
+        "id": "q1045",
+        "prompt": "Điền: この （　　）に コンビニが ありますか。(gần đây)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Gần đây: この ちかく.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ちかく"]
+      },
+      {
+        "id": "q1046",
+        "prompt": "Điền: へやに （　　）が いますか。(ai)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Hỏi người: だれ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["だれ"]
+      },
+      {
+        "id": "q1047",
+        "prompt": "Điền: はこの なかに （　　）が ありますか。(cái gì)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Hỏi đồ vật: なに.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なに"]
+      },
+      {
+        "id": "q1048",
+        "prompt": "Điền trợ từ liệt kê tiêu biểu: たまご（　　） ぎゅうにゅうなどが あります。",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Liệt kê tiêu biểu: や.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["や"]
+      },
+      {
+        "id": "q1049",
+        "prompt": "Điền: えきと こうえんの （　　）に あります。(ở giữa)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Ở giữa: あいだ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あいだ"]
+      },
+      {
+        "id": "q1050",
+        "prompt": "Điền: たなかさんは かいぎしつに （　　）。(ở, nói về người)",
+        "points": 1,
+        "tags": ["minna-10"],
+        "explain": "Người: います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["います"]
+      }
+    ]
+  }
+}
