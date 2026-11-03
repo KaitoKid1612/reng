@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Chính sách quyền riêng tư và điều khoản sử dụng 03/11/2026: [bản nháp chưa công bố, cần điền người vận hành và rà soát pháp lý](legal/privacy-policy-draft.md), [điều khoản](legal/terms-of-use-draft.md).
+
 Lỗi luồng học và dạy 03/11/2026: [chức năng đang lỗi trên production, phần đã sửa và phần cần quyết định](testing/flow-fixes-2026-11-03.md).
 
 Kiểm tra bố cục bằng code 03/11/2026: [công cụ `npm run audit:layout`, lỗi tìm thấy và cách sửa](testing/layout-audit-2026-11-03.md).

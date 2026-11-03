@@ -75,7 +75,7 @@ Thử local cần một OAuth client riêng có redirect URI `http://127.0.0.1:5
 - **Google Meet 60 phút**: báo trước cho giáo viên; ai dùng tài khoản miễn phí cần chia buổi hoặc tự mua gói Workspace. Reng không cung cấp video và không cần tài khoản Google.
 - **Gói hosting**: không dùng Vercel Hobby khi đã thu tiền; vi phạm điều khoản có thể bị dừng dịch vụ.
 - **Email đăng nhập**: chưa cấu hình SMTP riêng thì học viên không nhận được email xác nhận khi đăng ký cùng lúc.
-- **Dữ liệu học viên**: email và kết quả học là dữ liệu cá nhân; cần điều khoản sử dụng, chính sách quyền riêng tư và người phụ trách yêu cầu xóa dữ liệu theo quy định hiện hành tại Việt Nam trước khi nhận học viên thật.
+- **Dữ liệu học viên**: email và kết quả học là dữ liệu cá nhân; cần điều khoản sử dụng, chính sách quyền riêng tư và người phụ trách yêu cầu xóa dữ liệu theo quy định hiện hành tại Việt Nam trước khi nhận học viên thật. Bản nháp ngày 03/11/2026 (chưa công bố, cần điền thông tin người vận hành và rà soát pháp lý): [chính sách quyền riêng tư](legal/privacy-policy-draft.md), [điều khoản sử dụng](legal/terms-of-use-draft.md).
 - **Quota**: trang quản trị chưa có trần chi phí TTS; khi bật TTS web phải thêm hạn mức ký tự theo tháng như đã đề xuất.
 
 ## SEO khi lên production
