@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Bài tập học viên cho cả tiếng Nhật và tiếng Trung 03/11/2026: [chỗ gắn cứng tiếng Nhật đã sửa, luyện chữ Hán, kiểm tra ngôn ngữ ngân hàng ôn và phần còn lại](testing/exercise-languages-2026-11-03.md).
+
 Rà soát độ dễ dùng và dạy online Nhật–Trung 02/11/2026: [vấn đề đã sửa, số đo trước/sau, quy trình dạy một buổi và đề xuất tiếp theo](testing/user-flow-review-2026-11-02.md).
 
 Rà soát hiện trạng 02/11/2026: [lỗi còn xác nhận được, giới hạn kiểm chứng và thứ tự ưu tiên](testing/project-health-2026-11-02.md). Bộ kiểm tra hiện tại đạt 161/161; báo cáo phân biệt lỗi source, việc vận hành cần nghiệm thu và cải tiến sản phẩm.

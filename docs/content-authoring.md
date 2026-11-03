@@ -127,6 +127,31 @@ Ví dụ mục tiêu bài nhỏ: “Học sinh chào hỏi và nói tên mình�
 
 Thử với một giáo viên tiếng Trung chưa được hướng dẫn editor, một bài nhập môn và một lớp thật trước khi làm nhiều mẫu. Mục tiêu thử nghiệm: từ chọn mẫu đến bản sẵn sàng dạy dưới 30 phút với nội dung giáo viên đã chuẩn bị; đo riêng thời gian chuẩn bị chuyên môn, nhập/sửa/xem trước và các chỗ cần người hỗ trợ. Đây là mục tiêu cần đo, chưa phải kết quả. Ưu tiên mẫu + bảng + dựng slide + practice trước OCR.
 
+## Ngân hàng ôn cho lớp Nhật và Trung
+
+Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu), làm nguồn cho bài luyện hằng ngày. Cùng một định dạng JSON (`content/review-banks/*.json`, schema bài v1) dùng cho cả hai ngôn ngữ; bài hằng ngày, làm bài, kết quả, sổ lỗi và ôn tập xử lý như nhau.
+
+- **Dạng bài:** `choice`, `fill`, `order` (sắp xếp mảnh) vào được bài hằng ngày; `listen`/`dictation` cần audio nên chỉ giao tay. Mỗi câu gắn một tag dạng; tag quyết định tỉ lệ trong bài hằng ngày và nhãn phần học viên thấy:
+
+| Tag | Nhãn | Dùng cho |
+| --- | --- | --- |
+| `kanji` | Kanji | Tiếng Nhật: đọc/chọn cách đọc kanji |
+| `hanzi`, `writing` | Chữ Hán | Nhận mặt chữ, chọn cách viết |
+| `pinyin` | Pinyin | Tiếng Trung: đọc/viết pinyin có dấu thanh |
+| `tones` | Thanh điệu | Tiếng Trung: phân biệt thanh |
+| `vocabulary`, `meaning` | Từ vựng, Nghĩa từ | Từ hợp ngữ cảnh, chọn nghĩa |
+| `measure-words` | Lượng từ | Tiếng Trung |
+| `forms`, `particles` | Biến đổi từ, Trợ từ | Tiếng Nhật |
+| `grammar`, `paraphrase`, `sentence-order` | Ngữ pháp, Câu cùng nghĩa, Sắp xếp câu | Cả hai |
+| `reading`, `listening` | Đọc hiểu, Nghe | Cả hai |
+
+  Tag tiếng Việt trùng một nhãn (ví dụ "Từ vựng" của trình soạn tiếng Trung, "Ngữ pháp" từ Sheet) cũng hiện như nhãn.
+- **Đọc hiểu:** đặt đoạn văn vào `passage`, đề chỉ là câu hỏi. Các câu cùng `passage` được chọn liền nhau, theo thứ tự trong bài.
+- **Sắp xếp câu:** `tokens` theo thứ tự đúng và `answer` là danh sách mã mảnh; mỗi mảnh dùng đúng một lần, chỉ có một thứ tự đúng với nghĩa ghi trong đề (tránh hai cụm có thể đổi chỗ mà vẫn đúng). Đặt mã mảnh ngẫu nhiên (`p27`, `p05`…), không theo thứ tự câu.
+- **Tiếng Trung:** mỗi câu khai báo `"gradingProfile": "zh-exact-v1"`; ô điền dùng `inputMode` `chinese` hoặc `pinyin` (hoặc `text` khi trả lời bằng tiếng Việt); `vocab` để trống vì từ vựng có chữ Hán/pinyin nằm trong bài soạn bằng trình soạn tiếng Trung (flashcard, luyện chữ Hán lấy từ đó). Bài kiểm thử `tests/review-bank.test.ts` có một ngân hàng Trung mẫu.
+- **Tiếng Nhật:** không dùng profile hoặc ô nhập tiếng Trung; đáp án kana/kanji tương đương phải khai báo đủ.
+- **Đưa lên phiên bản mới:** `npm run bank:sql -- --file <bank.json> --language ja-JP|zh-Hans|zh-Hant --out <file.sql> [--commit]` kiểm tra ngôn ngữ và dạng bài rồi viết transaction (chi tiết ở [DD](detail-design/teaching-service.md#đa-dạng-dạng-bài-và-đoạn-văn-đọc-hiểu--03112026)).
+
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
 Ở `/teach`, lọc theo tên, ngôn ngữ bản soạn và trạng thái xuất bản. Dùng nhãn ngôn ngữ ở lớp và từng phiên bản khi Giao bài để tránh chọn nhầm bài Nhật/Trung hoặc giản/phồn. Bộ lọc không tự dịch bài, không gộp hai cách viết, không thay đổi nội dung lớp đang học.

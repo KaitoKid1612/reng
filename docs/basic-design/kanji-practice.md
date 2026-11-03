@@ -52,6 +52,14 @@ Nút của giáo viên tạo cho mỗi từ chưa có câu kanji: một câu đi
 | Bấm Kiểm tra khi chưa nhập/chọn | Nhắc nhập cách đọc hoặc chọn đáp án, không chấm |
 | Bài đã đủ 200 câu luyện | Không thêm câu, báo cho giáo viên |
 
+## Luyện chữ Hán cho lớp tiếng Trung — 03/11/2026
+
+Cùng màn hình và ba dạng câu phục vụ bài tiếng Trung. Từ vựng bài soạn bằng trình soạn tiếng Trung có chữ Hán và pinyin, nên mọi từ có cả hai đều được luyện:
+
+- Đọc chữ: gõ pinyin có dấu thanh. Ô nhập nhận số thanh (`lao3shi1` → `lǎoshī`). Phiên luyện không chấm điểm nên bỏ qua hoa/thường, khoảng trắng giữa âm tiết và dấu chấm cuối, nhưng vẫn tính dấu thanh.
+- Nhận mặt chữ và hiểu nghĩa như tiếng Nhật; chữ hiện theo giản thể hoặc phồn thể của bài.
+- Trang bài tiếng Trung có "Luyện chữ Hán (n từ)", trang lớp tiếng Trung có "Luyện chữ Hán" cạnh Đọc bài và Flashcard. Đường dẫn vẫn là `/kanji/[lessonId]`; lớp tiếng Nhật giữ nguyên chữ "Luyện kanji".
+
 ## Ngoài K1
 
 - Lưu kết quả phiên tự luyện, thẻ SRS loại `kanji` (bảng `srs_cards` đã cho phép loại này; RPC ôn tập cần cho tạo thẻ kanji lần đầu và đưa vào hàng ôn) và hiển thị trong lịch sử học tập.

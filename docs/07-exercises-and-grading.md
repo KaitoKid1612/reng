@@ -7,15 +7,17 @@ Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có m
 | Dạng | Tương tác | Quy tắc chấm bản đầu |
 |---|---|---|
 | choice | Chọn một hoặc nhiều lựa chọn | Tập chỉ số trùng hoàn toàn với đáp án; không tính thứ tự chọn |
-| fill | Gõ tiếng Nhật | Chuỗi chuẩn hóa trùng một đáp án được khai báo |
+| fill | Gõ theo `inputMode`: hiragana/katakana/tiếng Nhật (romaji tự đổi kana, nhận IME), chữ Hán (IME tiếng Trung), pinyin (số thanh tự đổi dấu: `ni3` → `nǐ`), tiếng Việt | Chuỗi chuẩn hóa theo profile (`ja-default-v1` hoặc `zh-exact-v1`) trùng một đáp án được khai báo; ô tiếng Việt bỏ qua hoa/thường, khoảng trắng, dấu câu |
 | match | Bấm chọn hai bên, có bàn phím (chưa có màn hình làm bài nên chưa giao được) | Tất cả cặp đúng, không tính thứ tự ghép |
 | order | Bấm từng mảnh theo thứ tự, bấm mảnh đã xếp để bỏ (từ 03/11/2026, không kéo thả) | Đúng toàn bộ thứ tự ID token; mảnh hiện theo thứ tự xáo cố định, không bao giờ trùng đáp án |
-| listen | Player và choice/fill | Theo responseType; áp dụng giới hạn nghe nếu có |
-| dictation | Player và gõ tiếng Nhật | Như fill |
+| listen | Player và choice/fill; ô điền theo ngôn ngữ câu (tiếng Nhật đổi romaji, tiếng Trung gõ bằng IME) | Theo responseType; áp dụng giới hạn nghe nếu có |
+| dictation | Player và gõ theo `inputMode` như fill | Như fill |
 
 Mỗi câu đúng nhận đủ `points`, sai hoặc bỏ trống nhận 0; bản đầu không có điểm từng phần. Tổng điểm nguyên, phần trăm tính từ tổng điểm đạt/tổng điểm tối đa, không lấy trung bình tỷ lệ từng câu. Chỉ làm tròn số hiển thị; xét đạt bằng giá trị chưa làm tròn. Tổng điểm tối đa phải lớn hơn 0.
 
-Riêng ô nhập tiếng Nhật hỗ trợ wanakana cho người chưa có IME. `inputMode` hiragana/katakana quyết định chuyển romaji; chế độ japanese phải cho nhập kanji bằng IME hoặc dán văn bản. Khi đang composition không can thiệp chuyển đổi. Bài luyện kana hỏi romaji dùng input Latin, không gắn chuyển kana. Chấp nhận các biến thể romaji được khai báo trong acceptedRomaji; chuẩn hóa chữ thường và khoảng trắng đầu/cuối.
+Một ô nhập (`components/classroom/answer-input.tsx`) dùng cho mọi ngôn ngữ; chỉ chế độ tiếng Nhật đổi romaji và chỉ chế độ pinyin đổi số thanh. Ô tiếng Nhật hỗ trợ wanakana cho người chưa có IME. `inputMode` hiragana/katakana quyết định chuyển romaji; chế độ japanese phải cho nhập kanji bằng IME hoặc dán văn bản. Khi đang composition không can thiệp chuyển đổi. Bài luyện kana hỏi romaji dùng input Latin, không gắn chuyển kana. Chấp nhận các biến thể romaji được khai báo trong acceptedRomaji; chuẩn hóa chữ thường và khoảng trắng đầu/cuối.
+
+Mỗi câu thuộc một ngôn ngữ qua `gradingProfile`: không khai báo là tiếng Nhật (`ja-default-v1`), `zh-exact-v1` là tiếng Trung. Profile quyết định cả cách chấm lẫn thẻ `lang` khi hiển thị (font chữ Hán Nhật hay Trung), nên câu tiếng Trung luôn phải có `zh-exact-v1`; bài soạn bằng trình soạn tiếng Trung và câu kiểm tra của lớp tiếng Trung tự gắn. Câu có thể gắn `passage` (đoạn văn đọc hiểu dùng chung) và tag dạng bài (bảng nhãn ở [biên soạn](content-authoring.md#ngân-hàng-ôn-cho-lớp-nhật-và-trung)).
 
 ## Chuẩn hóa và đáp án tương đương
 
@@ -27,7 +29,8 @@ function normalizeAnswer(s: string): string {
 }
 ```
 
-- Giữ dấu `、` giữa câu, âm dài, âm ngắt, âm đục và sự khác nhau hiragana/katakana; không tự sửa lỗi ngữ pháp.
+- Tiếng Nhật (`ja-default-v1`, hàm trên): giữ dấu `、` giữa câu, âm dài, âm ngắt, âm đục và sự khác nhau hiragana/katakana; không tự sửa lỗi ngữ pháp.
+- Tiếng Trung (`zh-exact-v1`): chỉ chuẩn hóa NFC và khoảng trắng đầu/cuối; giữ dấu thanh, khoảng cách giữa âm tiết pinyin, giản/phồn thể và dấu câu. Đáp án khác cách viết phải khai báo riêng.
 - Hàm trên không chuyển kanji sang kana. Giảng viên phải khai báo rõ các đáp án tương đương, ví dụ `["行きます", "いきます"]`. Không dùng đọc âm tự động để kết luận hai câu cùng nghĩa.
 - `kanjiStrict = true`: validator yêu cầu đáp án chứa dạng kanji mục tiêu; không tự thêm phương án kana. `kanjiStrict = false` vẫn chỉ chấp nhận các phương án được khai báo, không có phép suy diễn vô hạn.
 - Choice từ chối chỉ số ngoài phạm vi hoặc trùng; match từ chối cặp thiếu/trùng; order từ chối token lạ hoặc thiếu. Giới hạn kích thước câu trả lời tại API theo từng dạng, không chuyển kiểu ngầm từ dữ liệu tùy ý.
