@@ -216,7 +216,7 @@ Không có migration: `assignment_items` đã cho phép `order`, `publish_assign
 - **Đoạn văn.** `questionBase.passage` (tùy chọn) trong `lib/lesson-schema.ts`, đi vào view. `QuestionField` hiện khung `.question-passage` trên đề; trang kết quả, sổ lỗi và trang học viên hiện "Xem đoạn văn" gập (`PassageDetails`). Đề và legend giữ xuống dòng (`white-space: pre-line`), nên câu cũ viết đoạn văn trong đề cũng tách dòng.
 - **Nhãn phần.** `questionSection(tags)` đặt `section` cho view từ các tag `kanji`, `writing`, `vocabulary`, `forms`, `particles`, `grammar`, `paraphrase`, `sentence-order`, `reading`; dòng đầu câu hiện "Câu n / N · Đọc hiểu".
 - **Bài hằng ngày.** `DAILY_QUESTION_TYPES` = choice, fill, order. `DailyCandidate.group` = đoạn văn: câu cùng nhóm dùng chung hash nên được chọn liền nhau, câu được chọn của một nhóm hiện liền và theo thứ tự trong bài.
-- **Giới hạn editor.** `MAX_QUESTIONS` = 400 trong `lib/lesson-draft.ts` (ngân hàng ôn vài trăm câu; vẫn chặn bởi 512KB), dùng chung cho bộ tạo câu kanji. Câu có `passage` hoặc `order` mở ở editor dạng chỉ đọc và được giữ nguyên khi lưu.
+- **Giới hạn editor.** `MAX_QUESTIONS` = 400 trong `lib/lesson-draft.ts` (ngân hàng ôn vài trăm câu; vẫn chặn bởi 512KB), dùng chung cho bộ tạo câu kanji. Từ 03/11/2026 câu `order` và đoạn văn `passage` soạn được trên cả hai trình soạn, xem mục bên dưới.
 - **Đưa ngân hàng lên phiên bản mới.** `npm run bank:sql -- --file <bank.json> --out <file.sql> [--commit]` viết một transaction: khóa bài, gọi `publish_lesson` với `draft_revision` hiện tại (bỏ qua khi phiên bản mới nhất đã có đúng nội dung), rồi `upsert_class_lesson` cho mọi lớp của chủ bài đang dùng bài đó, giữ thứ tự và giờ mở; cuối file đọc lại phiên bản và lớp. Không có `--commit` thì kết thúc bằng `ROLLBACK`. Chạy bằng `npx supabase db query --linked --file <file.sql>` sau khi code mới đã deploy (code cũ không đọc được `passage`/`order`).
 
 ### Bài tập dùng chung cho tiếng Nhật và tiếng Trung — 03/11/2026
@@ -235,6 +235,16 @@ Sửa các lỗi còn mở trong rà soát hiện trạng 02/11: [báo cáo](../
 
 - **ID mục.** `createUniqueId(prefix, usedIds)` trong `lib/item-ids.ts` dùng chung cho `createItemId` (trình soạn v1) và `createTeachingId` (trình soạn tiếng Trung v2): tiền tố + 6 ký tự ngẫu nhiên, không trùng ID đang có trong bài. ID của mục đã xóa không bị cấp lại, nên thẻ ôn gắn theo bài + ID không chuyển sang từ khác. Script dùng ID của nháp phải đọc ID trong nội dung, không đoán `vocab-1`.
 - **Cảnh báo lặp bài hằng ngày.** `repeatsEveryDay(số câu, số câu/ngày)` đúng khi số câu ≤ số câu mỗi ngày. Trường hợp bằng nhau cũng lặp toàn bộ mỗi ngày.
+
+### Soạn câu sắp xếp và đọc hiểu trong trình soạn — 03/11/2026
+
+Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testing/question-authoring-2026-11-03.md).
+
+- **Quy tắc chung** (`lib/order-pieces.ts`): giáo viên ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh. `toOrderTokens` tạo `tokens`/`answer`; mã mảnh ngẫu nhiên (`createUniqueId("p")`) vì mã đi tới trình duyệt học viên, mã theo thứ tự câu sẽ lộ đáp án. `describeOrderPiecesProblem`: 2–10 mảnh, mỗi mảnh ≤ 60 ký tự, không trùng nhau (chấm theo mảnh, hai mảnh giống nhau học viên không phân biệt được); dòng trống bị bỏ qua. Đoạn văn tối đa 2.000 ký tự. Hợp đồng bài đã xuất bản (`lesson-schema`) giữ giới hạn cũ nên ngân hàng ôn có sẵn vẫn đọc được.
+- **Trình soạn web (v1) và câu kiểm tra riêng** dùng chung `TestQuestionEditor`: dạng `order` (`OrderPiecesField`, hiện "Câu đúng: …" để giáo viên xem cách ghép), ô "Đoạn văn đọc hiểu" mở bằng nút, nút "Thêm câu hỏi cho đoạn văn này" chèn câu trắc nghiệm cùng đoạn văn ngay sau câu đang sửa (`addQuestion.afterId`). `lib/editor-questions.ts` chuyển câu nháp ↔ form: giữ `passage`, `tags` và `gradingProfile`. Câu điền đổi ô nhập sang chữ Hán/pinyin nhận `zh-exact-v1`, sang ô tiếng Nhật thì bỏ profile, như câu kiểm tra (CR-28). Nháp v1 giữ dòng trống khi đang gõ; `toPublishableContent` bỏ mảnh trống và đoạn văn trống.
+- **Câu kiểm tra riêng**: `testQuestionInputSchema` có `order` và `passage`; `toTestQuestions` parse lại đầu vào ở server vì server action nhận dữ liệu từ trình duyệt (trước đây chỉ schema câu chung chặn, không áp giới hạn của form).
+- **Trình soạn tiếng Trung (v2)**: nháp có `order` và `passage`. Bài v2 xuất bản đúng nháp đã lưu nên nháp không chứa mảnh trống (`OrderQuestionPieces` giữ dòng đang gõ trong ô, nháp chỉ nhận mảnh có chữ) và schema bỏ đoạn văn chỉ có khoảng trắng (`z.preprocess`). Dấu xác nhận đáp án so `stableJson` sâu: replacer theo khóa cấp đầu trước đây bỏ qua chữ trong mảnh nên sửa mảnh vẫn hiện "Đã xác nhận" trong khi server từ chối xuất bản.
+- **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
 ## SEO cho trang công khai — đã triển khai
 

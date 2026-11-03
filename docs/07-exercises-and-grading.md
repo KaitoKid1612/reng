@@ -9,7 +9,7 @@ Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có m
 | choice | Chọn một hoặc nhiều lựa chọn | Tập chỉ số trùng hoàn toàn với đáp án; không tính thứ tự chọn |
 | fill | Gõ theo `inputMode`: hiragana/katakana/tiếng Nhật (romaji tự đổi kana, nhận IME), chữ Hán (IME tiếng Trung), pinyin (số thanh tự đổi dấu: `ni3` → `nǐ`), tiếng Việt | Chuỗi chuẩn hóa theo profile (`ja-default-v1` hoặc `zh-exact-v1`) trùng một đáp án được khai báo; ô tiếng Việt bỏ qua hoa/thường, khoảng trắng, dấu câu |
 | match | Bấm chọn hai bên, có bàn phím (chưa có màn hình làm bài nên chưa giao được) | Tất cả cặp đúng, không tính thứ tự ghép |
-| order | Bấm từng mảnh theo thứ tự, bấm mảnh đã xếp để bỏ (từ 03/11/2026, không kéo thả) | Đúng toàn bộ thứ tự ID token; mảnh hiện theo thứ tự xáo cố định, không bao giờ trùng đáp án |
+| order | Bấm từng mảnh theo thứ tự, bấm mảnh đã xếp để bỏ (từ 03/11/2026, không kéo thả). Giáo viên soạn trên trình soạn: mỗi dòng một mảnh, 2–10 mảnh không trùng nhau | Đúng toàn bộ thứ tự ID token; mảnh hiện theo thứ tự xáo cố định, không bao giờ trùng đáp án. Mã mảnh ngẫu nhiên để trang học viên không lộ thứ tự |
 | listen | Player và choice/fill; ô điền theo ngôn ngữ câu (tiếng Nhật đổi romaji, tiếng Trung gõ bằng IME) | Theo responseType; áp dụng giới hạn nghe nếu có |
 | dictation | Player và gõ theo `inputMode` như fill | Như fill |
 
@@ -17,7 +17,7 @@ Mỗi câu đúng nhận đủ `points`, sai hoặc bỏ trống nhận 0; bản
 
 Một ô nhập (`components/classroom/answer-input.tsx`) dùng cho mọi ngôn ngữ; chỉ chế độ tiếng Nhật đổi romaji và chỉ chế độ pinyin đổi số thanh. Ô tiếng Nhật hỗ trợ wanakana cho người chưa có IME. `inputMode` hiragana/katakana quyết định chuyển romaji; chế độ japanese phải cho nhập kanji bằng IME hoặc dán văn bản. Khi đang composition không can thiệp chuyển đổi. Bài luyện kana hỏi romaji dùng input Latin, không gắn chuyển kana. Chấp nhận các biến thể romaji được khai báo trong acceptedRomaji; chuẩn hóa chữ thường và khoảng trắng đầu/cuối.
 
-Mỗi câu thuộc một ngôn ngữ qua `gradingProfile`: không khai báo là tiếng Nhật (`ja-default-v1`), `zh-exact-v1` là tiếng Trung. Profile quyết định cả cách chấm lẫn thẻ `lang` khi hiển thị (font chữ Hán Nhật hay Trung), nên câu tiếng Trung luôn phải có `zh-exact-v1`; bài soạn bằng trình soạn tiếng Trung và câu kiểm tra của lớp tiếng Trung tự gắn. Câu có thể gắn `passage` (đoạn văn đọc hiểu dùng chung) và tag dạng bài (bảng nhãn ở [biên soạn](content-authoring.md#ngân-hàng-ôn-cho-lớp-nhật-và-trung)).
+Mỗi câu thuộc một ngôn ngữ qua `gradingProfile`: không khai báo là tiếng Nhật (`ja-default-v1`), `zh-exact-v1` là tiếng Trung. Profile quyết định cả cách chấm lẫn thẻ `lang` khi hiển thị (font chữ Hán Nhật hay Trung), nên câu tiếng Trung luôn phải có `zh-exact-v1`; bài soạn bằng trình soạn tiếng Trung và câu kiểm tra của lớp tiếng Trung tự gắn. Câu có thể gắn `passage` (đoạn văn đọc hiểu dùng chung, soạn được trên trình soạn và ở câu kiểm tra riêng) và tag dạng bài (bảng nhãn ở [biên soạn](content-authoring.md#ngân-hàng-ôn-cho-lớp-nhật-và-trung)).
 
 ## Chuẩn hóa và đáp án tương đương
 

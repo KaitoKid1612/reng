@@ -109,7 +109,7 @@ Dựng lại chỉ cập nhật phần do hệ thống tạo sau khi xem danh s�
 
 ### Bước 4 — Tạo bài tập có kiểm tra
 
-Giáo viên chọn từ/câu vừa nhập và dạng **Trắc nghiệm** hoặc **Điền từ**. Hệ thống điền khung câu hỏi, giáo viên bổ sung lựa chọn, đáp án chấp nhận, điểm và giải thích. Không tự coi tất cả từ còn lại là đáp án nhiễu hợp lệ; các lựa chọn phải được kiểm tra để tránh nhiều đáp án đúng ngoài ý muốn. Nếu chưa đủ dữ liệu thì báo phần cần nhập, không bịa đáp án.
+Giáo viên chọn từ/câu vừa nhập và dạng **Trắc nghiệm** hoặc **Điền từ**, hoặc tự thêm câu **Sắp xếp** và câu có đoạn văn đọc hiểu (xem [mục bên dưới](#câu-sắp-xếp-và-đọc-hiểu-trên-trình-soạn)). Hệ thống điền khung câu hỏi, giáo viên bổ sung lựa chọn, đáp án chấp nhận, điểm và giải thích. Không tự coi tất cả từ còn lại là đáp án nhiễu hợp lệ; các lựa chọn phải được kiểm tra để tránh nhiều đáp án đúng ngoài ý muốn. Nếu chưa đủ dữ liệu thì báo phần cần nhập, không bịa đáp án.
 
 Giáo viên xác nhận từng câu sau khi sửa cuối cùng trước khi dùng trong bài xuất bản. Câu luyện hiện trên slide không được dùng làm câu test bí mật. Giáo viên chọn câu luyện cho bài về nhà practice; test dùng luồng câu riêng và chính sách phản hồi hiện tại. Scan chỉ là một nguồn bổ sung để tạo draft ở bước nhập nội dung/bài tập, vẫn đi qua kiểm tra này.
 
@@ -126,6 +126,18 @@ Mỗi bài có mục tiêu làm được gì, đối tượng, kiến thức c�
 Ví dụ mục tiêu bài nhỏ: “Học sinh chào hỏi và nói tên mình”. Giáo viên chọn vài từ/cụm từ, một mẫu tự giới thiệu, hội thoại ngắn và vài câu luyện; không nhồi toàn bộ kiến thức phát âm vào một buổi. Reng gợi ý thứ tự, giáo viên quyết định độ khó và thời lượng theo lớp.
 
 Thử với một giáo viên tiếng Trung chưa được hướng dẫn editor, một bài nhập môn và một lớp thật trước khi làm nhiều mẫu. Mục tiêu thử nghiệm: từ chọn mẫu đến bản sẵn sàng dạy dưới 30 phút với nội dung giáo viên đã chuẩn bị; đo riêng thời gian chuẩn bị chuyên môn, nhập/sửa/xem trước và các chỗ cần người hỗ trợ. Đây là mục tiêu cần đo, chưa phải kết quả. Ưu tiên mẫu + bảng + dựng slide + practice trước OCR.
+
+## Câu sắp xếp và đọc hiểu trên trình soạn
+
+Từ 03/11/2026 hai dạng này soạn được ngay trên trình soạn tiếng Nhật, trình soạn tiếng Trung và ở câu kiểm tra riêng khi giao bài, không cần sửa JSON.
+
+- **Sắp xếp câu:** bấm **Thêm câu sắp xếp**, ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh. Dòng "Câu đúng" bên dưới cho xem câu ghép lại (tiếng Nhật và tiếng Trung ghép liền, chữ Latin cách nhau một khoảng trắng). Học viên nhận các mảnh đã xáo và bấm theo thứ tự.
+  - Từ 2 đến 10 mảnh, mỗi mảnh tối đa 60 ký tự.
+  - Không để hai mảnh giống nhau, vì học viên không phân biệt được. Gộp mảnh trùng vào mảnh bên cạnh, ví dụ `わたしの` thay vì `わたし` và `の`.
+  - Chỉ có một thứ tự đúng với nghĩa ghi trong đề. Tránh hai cụm đổi chỗ cho nhau mà câu vẫn đúng.
+- **Đọc hiểu:** bấm **Thêm đoạn văn đọc hiểu** (trình soạn tiếng Trung: **Thêm đoạn văn cho câu N**), dán đoạn văn, rồi ghi đề chỉ là câu hỏi. Bấm **Thêm câu hỏi cho đoạn văn này** để thêm câu trắc nghiệm mới ngay sau, dùng đúng đoạn văn đó. Các câu cùng đoạn văn được giao liền nhau trong bài hằng ngày. Đoạn văn tối đa 2.000 ký tự; xóa hết chữ để bỏ đoạn văn.
+- Câu sắp xếp hiện được trên slide câu luyện của bài tiếng Trung: slide hiện đoạn văn và các mảnh đã xáo, nút "Hiện đáp án" cho câu đúng. Slide của bài tiếng Nhật vẫn chỉ chọn câu trắc nghiệm và điền.
+- Sửa câu của ngân hàng ôn trên trình soạn tiếng Nhật giữ nguyên đoạn văn và ngôn ngữ của câu (`zh-exact-v1`). Đổi ô nhập của câu điền sang chữ Hán/pinyin thì câu chấm theo luật tiếng Trung, sang ô tiếng Nhật thì theo luật tiếng Nhật.
 
 ## Ngân hàng ôn cho lớp Nhật và Trung
 

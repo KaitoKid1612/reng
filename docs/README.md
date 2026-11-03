@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Soạn câu sắp xếp và đọc hiểu 03/11/2026: [hai dạng bài mới trên cả hai trình soạn và câu kiểm tra riêng, lỗi mất đoạn văn khi sửa câu ngân hàng ôn và kiểm chứng](testing/question-authoring-2026-11-03.md).
+
 Sửa độ đúng dữ liệu học tập 03/11/2026: [ID mục không bị cấp lại, hàng ôn, flashcard theo bản lớp ghim, thử lại khi mất phản hồi, chuỗi ngày học](testing/data-correctness-2026-11-03.md).
 
 Bài tập học viên cho cả tiếng Nhật và tiếng Trung 03/11/2026: [chỗ gắn cứng tiếng Nhật đã sửa, luyện chữ Hán, kiểm tra ngôn ngữ ngân hàng ôn và phần còn lại](testing/exercise-languages-2026-11-03.md).

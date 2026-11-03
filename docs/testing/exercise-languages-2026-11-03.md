@@ -39,7 +39,7 @@ Màn hình học viên: làm bài, phản hồi khi kiểm tra câu, kết quả
 | Việc | Lý do | Đề xuất |
 | --- | --- | --- |
 | Audio sinh sẵn và câu nghe cho tiếng Trung | `lib/audio-config.ts` chỉ nhận giọng Azure `ja-JP-*Neural`; kế hoạch audio đọc trường từ vựng của bài tiếng Nhật v1. Nút Nghe ở bài tiếng Trung dùng giọng `zh-CN`/`zh-TW` của thiết bị | Thêm giọng `zh-CN`/`zh-TW`, kế hoạch audio cho bài v2 và trình soạn câu nghe tiếng Trung; cần khóa Azure để kiểm thử |
-| Câu sắp xếp và đọc hiểu có đoạn văn cho tiếng Trung | Trình soạn tiếng Trung tạo câu nghĩa/chữ Hán/pinyin; câu `order` và `passage` hiện soạn bằng JSON ngân hàng ôn | Thêm hai dạng này vào bước Câu luyện của trình soạn |
+| Câu sắp xếp và đọc hiểu có đoạn văn cho tiếng Trung | Đã làm cùng ngày, cho cả trình soạn tiếng Nhật và câu kiểm tra riêng: [soạn câu sắp xếp và đọc hiểu](question-authoring-2026-11-03.md) | — |
 | Trang tự học công khai | Bảng chữ cái, luyện kana, ngữ pháp chỉ có tiếng Nhật | Bảng pinyin và luyện thanh điệu (đã đề xuất ở rà soát 02/11) |
 | Mặc định lớp mới là tiếng Nhật | Lựa chọn của pilot | Giữ; giáo viên chọn ngôn ngữ khi tạo lớp |
 | Đường dẫn `/kanji/[lessonId]` dùng cho cả chữ Hán | Giữ link cũ đã gửi cho học viên | Có thể đổi sang đường dẫn trung tính kèm redirect khi cần |
