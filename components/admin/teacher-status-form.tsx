@@ -9,31 +9,54 @@ import { Button } from "@/components/ui/button";
 interface TeacherStatusFormProps {
   userId: string;
   status: "pending" | "active" | "suspended";
+  // A rejected request was never activated; a paused teacher was.
+  wasActivated: boolean;
   teacherLabel: string;
 }
 
-const NEXT_ACTION = {
-  pending: { status: "active", label: "Duyệt" },
-  active: { status: "suspended", label: "Tạm dừng" },
-  suspended: { status: "active", label: "Mở lại" },
-} as const;
+interface StatusAction {
+  status: "active" | "suspended";
+  label: string;
+}
 
-export function TeacherStatusForm({ userId, status, teacherLabel }: TeacherStatusFormProps) {
+function listActions(status: TeacherStatusFormProps["status"], wasActivated: boolean) {
+  const actions: Record<TeacherStatusFormProps["status"], StatusAction[]> = {
+    pending: [
+      { status: "active", label: "Duyệt" },
+      { status: "suspended", label: "Từ chối" },
+    ],
+    active: [{ status: "suspended", label: "Tạm dừng" }],
+    suspended: [{ status: "active", label: wasActivated ? "Mở lại" : "Duyệt" }],
+  };
+  return actions[status];
+}
+
+export function TeacherStatusForm({
+  userId,
+  status,
+  wasActivated,
+  teacherLabel,
+}: TeacherStatusFormProps) {
   const [state, action, isPending] = useActionState(setTeacherStatusAction, {});
-  const next = NEXT_ACTION[status];
   return (
-    <form action={action}>
-      <input type="hidden" name="userId" value={userId} />
-      <input type="hidden" name="status" value={next.status} />
-      <Button
-        type="submit"
-        variant={next.status === "active" ? "default" : "outline"}
-        disabled={isPending}
-        aria-label={`${next.label} ${teacherLabel}`}
-      >
-        {next.label}
-      </Button>
+    <div>
+      <div className="button-row">
+        {listActions(status, wasActivated).map((next) => (
+          <form key={next.status} action={action}>
+            <input type="hidden" name="userId" value={userId} />
+            <input type="hidden" name="status" value={next.status} />
+            <Button
+              type="submit"
+              variant={next.status === "active" ? "default" : "outline"}
+              disabled={isPending}
+              aria-label={`${next.label} ${teacherLabel}`}
+            >
+              {next.label}
+            </Button>
+          </form>
+        ))}
+      </div>
       <ActionFeedback state={state} />
-    </form>
+    </div>
   );
 }

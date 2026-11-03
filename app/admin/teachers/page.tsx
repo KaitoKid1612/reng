@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { TeacherPlanForm } from "@/components/admin/teacher-plan-form";
 import { TeacherStatusForm } from "@/components/admin/teacher-status-form";
-import { TEACHER_STATUS_LABELS } from "@/lib/admin-labels";
+import { teacherStatusLabel } from "@/lib/admin-labels";
 import { listTeacherAccounts, requireAdmin } from "@/lib/server/admin";
 import { formatStudyDateTime, formatStudyDay, toStudyDay } from "@/lib/study-days";
 
@@ -26,8 +26,8 @@ export default async function AdminTeachersPage() {
         <div>
           <h1>Giáo viên</h1>
           <p>
-            <Link href="/admin">Quản trị</Link>. Duyệt yêu cầu, tạm dừng khi hết hạn thuê và ghi chú
-            thanh toán.
+            <Link href="/admin">Quản trị</Link>. Duyệt hoặc từ chối yêu cầu, tạm dừng khi hết hạn
+            thuê và ghi chú thanh toán.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default async function AdminTeachersPage() {
                   <h3>
                     {label}{" "}
                     <span className={`status-badge ${STATUS_TONES[teacher.status]}`}>
-                      {TEACHER_STATUS_LABELS[teacher.status]}
+                      {teacherStatusLabel(teacher.status, teacher.activatedAt)}
                     </span>{" "}
                     {isExpired && <span className="status-badge status-wrong">Quá hạn thuê</span>}
                   </h3>
@@ -69,6 +69,7 @@ export default async function AdminTeachersPage() {
                   <TeacherStatusForm
                     userId={teacher.userId}
                     status={teacher.status}
+                    wasActivated={teacher.activatedAt !== null}
                     teacherLabel={label}
                   />
                   <TeacherPlanForm

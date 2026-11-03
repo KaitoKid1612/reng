@@ -4,6 +4,14 @@ export const TEACHER_STATUS_LABELS = {
   suspended: "Tạm dừng",
 } as const;
 
+// A rejected request is stored as suspended; it was never activated, unlike a paused teacher.
+export function teacherStatusLabel(
+  status: keyof typeof TEACHER_STATUS_LABELS,
+  activatedAt: string | null,
+) {
+  return status === "suspended" && !activatedAt ? "Đã từ chối" : TEACHER_STATUS_LABELS[status];
+}
+
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   "teacher.requested": "Gửi yêu cầu giảng dạy",
   "teacher.activated": "Tự kích hoạt giảng dạy",

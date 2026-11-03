@@ -296,14 +296,18 @@ export async function setTeacherApproval(adminId: string, isRequired: boolean) {
   );
 }
 
+// wasActivated tells a paused teacher apart from a rejected request; both are suspended.
 export async function getTeacherRequestStatus(userId: string) {
   const row = await selectOptional(
     createServiceClient()
       .from("teacher_accounts")
-      .select("status")
+      .select("status, activated_at")
       .eq("user_id", userId)
       .maybeSingle(),
-    z.object({ status: z.enum(["pending", "active", "suspended"]) }),
+    z.object({
+      status: z.enum(["pending", "active", "suspended"]),
+      activated_at: timestamp.nullable(),
+    }),
   );
-  return row?.status ?? null;
+  return row ? { status: row.status, wasActivated: row.activated_at !== null } : null;
 }

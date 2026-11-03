@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 import { adminClient, createConfirmedStudent, RUN_ID, signIn } from "./support";
 
-import type { Browser } from "@playwright/test";
+import type { Browser, Page } from "@playwright/test";
 
 const PASSWORD = `admin-pass-${RUN_ID}`;
 
@@ -14,6 +14,13 @@ async function newAccount(browser: Browser, suffix: string, fullName: string) {
   const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
   const id = data.users.find((user) => user.email === email)?.id ?? "";
   return { page, email, id };
+}
+
+async function requestTeaching(page: Page) {
+  await page.goto("/teach/start");
+  await page.getByLabel(/Tôi chịu trách nhiệm/).check();
+  await page.getByRole("button", { name: "Gửi yêu cầu giảng dạy", exact: true }).click();
+  await expect(page.getByText(/Đã gửi yêu cầu/)).toBeVisible();
 }
 
 async function setApprovalRequired(isRequired: boolean) {
@@ -33,7 +40,13 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
   expect(error).toBeNull();
   const applicantName = `Cô Mai ${RUN_ID}`;
   const applicant = await newAccount(browser, "applicant", applicantName);
+  const rejectedName = `Anh Tú ${RUN_ID}`;
+  const rejected = await newAccount(browser, "rejected", rejectedName);
+  // Asked while approval is still required, then approval is turned off.
+  const waiting = await newAccount(browser, "waiting", `Chị Lan ${RUN_ID}`);
   try {
+    await requestTeaching(rejected.page);
+    await requestTeaching(waiting.page);
     await applicant.page.goto("/admin");
     await expect(
       applicant.page.getByRole("heading", { name: "Quản trị", exact: true }),
@@ -71,6 +84,15 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
       applicant.page.getByRole("heading", { name: "Giảng dạy", exact: true }),
     ).toBeVisible();
 
+    const rejectedRow = admin.page.getByRole("listitem").filter({ hasText: rejected.email });
+    await rejectedRow.getByRole("button", { name: `Từ chối ${rejectedName}`, exact: true }).click();
+    await expect(rejectedRow.getByText("Đã từ chối", { exact: true })).toBeVisible();
+    await expect(
+      rejectedRow.getByRole("button", { name: `Duyệt ${rejectedName}`, exact: true }),
+    ).toBeVisible();
+    await rejected.page.goto("/teach/start");
+    await expect(rejected.page.getByText(/Yêu cầu giảng dạy chưa được chấp nhận/)).toBeVisible();
+
     await row.getByRole("button", { name: `Tạm dừng ${applicantName}`, exact: true }).click();
     await expect(
       row.getByRole("button", { name: `Mở lại ${applicantName}`, exact: true }),
@@ -86,6 +108,12 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
     await admin.page.getByLabel("Duyệt giáo viên mới trước khi cho dạy").uncheck();
     await admin.page.getByRole("button", { name: "Lưu cài đặt", exact: true }).click();
     await expect(admin.page.getByText(/tự kích hoạt sau khi xác minh email/)).toBeVisible();
+    // The request sent earlier is no longer stuck waiting for approval.
+    await waiting.page.goto("/teach/start");
+    await expect(waiting.page.getByText(/không còn yêu cầu duyệt giáo viên mới/)).toBeVisible();
+    await waiting.page.getByLabel(/Tôi chịu trách nhiệm/).check();
+    await waiting.page.getByRole("button", { name: "Kích hoạt giảng dạy", exact: true }).click();
+    await waiting.page.waitForURL("**/teach");
     const selfServe = await newAccount(browser, "self", `Thầy Nam ${RUN_ID}`);
     await selfServe.page.goto("/teach/start");
     await selfServe.page.getByLabel(/Tôi chịu trách nhiệm/).check();
@@ -107,6 +135,8 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
     await narrow.context().close();
   } finally {
     await setApprovalRequired(true);
-    await Promise.all([admin.page.context().close(), applicant.page.context().close()]);
+    await Promise.all(
+      [admin, applicant, rejected, waiting].map((account) => account.page.context().close()),
+    );
   }
 });
