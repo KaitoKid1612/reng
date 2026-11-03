@@ -13,6 +13,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
+    "audit:layout": "node --import tsx scripts/audit-layout.ts",
     "validate:data": "node --import tsx scripts/validate-data.ts",
     "audio:plan": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts",
     "audio:generate": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts --generate",

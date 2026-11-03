@@ -91,7 +91,7 @@ export function QuestionField({
 
   if (view.type === "order") {
     return (
-      <div>
+      <div className="question-field">
         {meta}
         {passage}
         <fieldset>
@@ -114,7 +114,7 @@ export function QuestionField({
 
   if (!choices) {
     return (
-      <div>
+      <div className="question-field">
         {meta}
         {passage}
         <label htmlFor={fieldId} className="question-prompt" lang={view.lang}>

@@ -89,6 +89,7 @@ Lỗi trường nhập đưa focus về nơi sửa; lỗi mạng giữ dữ li�
 Dùng nội dung học thật được phép sử dụng, có ví dụ dài và dấu đầy đủ; tên/điểm/email là dữ liệu thử ẩn danh, không dùng học sinh thật làm fixture/screenshot công khai. Không dùng Lorem ipsum thay nội dung Việt–Trung khi kiểm tra bố cục.
 
 - Kiểm tra 360px và 1280×720, câu dài/pinyin nhiều dấu/tên dài không cắt hoặc cuộn ngang trang.
+- Chạy `npm run audit:layout` cho trang công khai và sau khi đăng nhập ([cách dùng](testing/layout-audit-2026-11-03.md)): không còn lỗi; cảnh báo còn lại phải có lý do được ghi lại.
 - Dùng bàn phím hoàn thành soạn/giao, focus rõ, label và aria-label đúng; lỗi có thông báo đọc được.
 - Tương phản mục tiêu WCAG AA; không chỉ phân biệt bằng màu; tôn trọng prefers-reduced-motion.
 - Preview học sinh/PDF/share tab không lộ notes hoặc đáp án test; trạng thái lưu/giao phản ánh server.

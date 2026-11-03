@@ -289,8 +289,18 @@ h3 {
 }
 .button-row {
   display: flex;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+/* Tailwind's preflight removes paragraph margins, so buttons placed right after text get their own
+   space; :where() keeps this weaker than any component's own margin. Toolbars lay status text and
+   buttons out in a row, where a top margin would push the buttons off-centre. */
+:where(p, ul, ol, dl, .choice-label, .question-field) + :where(.button-row, .button) {
+  margin-top: 16px;
+}
+:where(.attempt-toolbar, .editor-toolbar) > :where(.button-row, .button) {
+  margin-top: 0;
 }
 /* A status badge beside a button keeps its own height. */
 .item-actions {
@@ -636,6 +646,14 @@ input[type="radio"] {
 }
 .field {
   margin-bottom: 20px;
+}
+/* A hint under a field stays visibly apart from the box it explains. */
+.field :where(input, select, textarea) + p,
+.answer-hint {
+  margin-top: 6px;
+}
+.accept-answer > .button + p {
+  margin-top: 8px;
 }
 .field label,
 .answer-form > label {
@@ -2195,7 +2213,7 @@ rt {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 20px;
+  margin: 20px 0 16px;
 }
 .assignment-facts {
   list-style: none;
@@ -2290,7 +2308,8 @@ rt {
   font-size: 19px;
   min-height: 32px;
 }
-.editor-section[open] > summary {
+.editor-section[open] > summary,
+.editor-section > h2 {
   margin-bottom: 16px;
 }
 .editor-section input:not([type="checkbox"], [type="radio"], [type="file"]),

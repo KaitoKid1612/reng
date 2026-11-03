@@ -128,7 +128,7 @@ export function AnswerInput({
         maxLength={200}
         aria-describedby={describedBy ? `${id}-hint ${describedBy}` : `${id}-hint`}
       />
-      <p id={`${id}-hint`} className="small muted">
+      <p id={`${id}-hint`} className="small muted answer-hint">
         {MODE_HINTS[inputMode]}
       </p>
     </>

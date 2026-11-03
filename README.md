@@ -18,6 +18,8 @@ Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên w
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
 
+Kiểm tra bố cục bằng code (03/11/2026): `npm run audit:layout` mở các trang ở 360/768/1280px và báo chữ chồng hoặc dính nhau, hàng lệch, nút sát chữ, chữ bị cắt, tràn ngang và vùng bấm nhỏ; các chỗ nó tìm thấy đã được sửa. Xem [công cụ và kết quả](docs/testing/layout-audit-2026-11-03.md).
+
 Đăng nhập bằng Google (03/11/2026): nút Google ở trang đăng nhập và hai trang đăng ký, quay lại đúng trang đang mở. Nút chỉ hiện khi `AUTH_GOOGLE_ENABLED=true` và nhà cung cấp Google đã bật trong Supabase Auth; production chưa bật. Xem [các bước bật](docs/poc-setup.md#bật-đăng-nhập-bằng-google-03112026) và [kiểm tra](docs/testing/google-sign-in-2026-11-03.md).
 
 Trang chung không gắn môn (03/11/2026): trang chủ, header, chân trang, metadata và ảnh chia sẻ giới thiệu Reng là nơi dạy và học online, không gắn tiếng Nhật; công cụ tự học tiếng Nhật nằm ở trang Tự học (`/self-study`). Xem [rà soát và phần còn gắn với ngôn ngữ](docs/testing/platform-neutral-ui-2026-11-03.md).

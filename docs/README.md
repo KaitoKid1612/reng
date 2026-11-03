@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Kiểm tra bố cục bằng code 03/11/2026: [công cụ `npm run audit:layout`, lỗi tìm thấy và cách sửa](testing/layout-audit-2026-11-03.md).
+
 Đăng nhập bằng Google 03/11/2026: [kiểm tra local và phần chưa thử](testing/google-sign-in-2026-11-03.md); [các bước bật trên Google Cloud, Supabase và Vercel](poc-setup.md#bật-đăng-nhập-bằng-google-03112026).
 
 Trang chung không gắn môn 03/11/2026: [trang chủ, header, metadata và ảnh chia sẻ giới thiệu nơi dạy online chung, trang Tự học theo môn và phần còn gắn với ngôn ngữ](testing/platform-neutral-ui-2026-11-03.md).
