@@ -16,6 +16,11 @@ const bodySchema = z.discriminatedUnion("kind", [
     vocabId: identifier,
     rating: z.union(REVIEW_RATINGS.map((rating) => z.literal(rating))),
     revision: z.number().int().positive().nullable(),
+    versionId: z
+      .string()
+      .regex(/^[a-z0-9][a-z0-9-]*$/i)
+      .max(100)
+      .optional(),
   }),
   z.object({
     kind: z.literal("mistake"),

@@ -14,11 +14,13 @@ import type { VocabDeckCard } from "@/lib/server/reviews";
 
 interface FlashcardDeckProps {
   lessonId: string;
+  // Ratings are checked against the version the cards come from.
+  versionId: string;
   cards: VocabDeckCard[];
   canSchedule: boolean;
 }
 
-export function FlashcardDeck({ lessonId, cards, canSchedule }: FlashcardDeckProps) {
+export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: FlashcardDeckProps) {
   const [index, setIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [revisions, setRevisions] = useState(
@@ -48,6 +50,7 @@ export function FlashcardDeck({ lessonId, cards, canSchedule }: FlashcardDeckPro
       vocabId: card.vocab.id,
       rating,
       revision: revisions.get(card.vocab.id) ?? null,
+      versionId,
     });
     setIsSending(false);
     if (response.status === "ok" && typeof response.data.revision === "number") {
@@ -82,8 +85,10 @@ export function FlashcardDeck({ lessonId, cards, canSchedule }: FlashcardDeckPro
       {isFlipped && canSchedule && <RatingButtons isDisabled={isSending} onRate={handleRate} />}
       {isFlipped && !canSchedule && (
         <p className="small muted">
-          <Link href={signInPath(`/vocabulary/${lessonId}`)}>Đăng nhập tài khoản học viên</Link> để
-          lưu lịch ôn theo FSRS.
+          <Link href={signInPath(`/vocabulary/${lessonId}?version=${versionId}`)}>
+            Đăng nhập tài khoản học viên
+          </Link>{" "}
+          để lưu lịch ôn theo FSRS.
         </p>
       )}
       {message && (

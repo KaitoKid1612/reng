@@ -12,13 +12,19 @@ export const dynamic = "force-dynamic";
 
 interface VocabularyPageProps {
   params: Promise<{ lessonId: string }>;
+  searchParams: Promise<{ version?: string | string[] }>;
 }
 
-export default async function VocabularyPage({ params }: VocabularyPageProps) {
+export default async function VocabularyPage({ params, searchParams }: VocabularyPageProps) {
   const { lessonId } = await params;
+  const { version } = await searchParams;
   const account = await getCurrentAccount();
   const isStudent = account !== null;
-  const deck = await getVocabularyDeck(isStudent ? account.id : null, lessonId);
+  const deck = await getVocabularyDeck(
+    isStudent ? account.id : null,
+    lessonId,
+    typeof version === "string" ? version : undefined,
+  );
   if (!deck) {
     notFound();
   }
@@ -39,7 +45,12 @@ export default async function VocabularyPage({ params }: VocabularyPageProps) {
       {deck.isSample && (
         <p className="sample-notice">Bài mẫu đang chờ giảng viên duyệt nội dung và phát âm.</p>
       )}
-      <FlashcardDeck lessonId={deck.lessonId} cards={deck.cards} canSchedule={isStudent} />
+      <FlashcardDeck
+        lessonId={deck.lessonId}
+        versionId={deck.versionId}
+        cards={deck.cards}
+        canSchedule={isStudent}
+      />
       <p>
         <Link href={`/lessons/${deck.lessonId}?version=${deck.versionId}`}>Đọc lại bài học</Link>
       </p>

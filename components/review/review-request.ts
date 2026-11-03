@@ -8,6 +8,7 @@ export type ReviewRequest =
       vocabId: string;
       rating: ReviewRating;
       revision: number | null;
+      versionId?: string;
     }
   | {
       kind: "mistake";

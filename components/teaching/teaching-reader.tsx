@@ -147,7 +147,7 @@ export function TeachingReader({ lesson, progress, isPreview = false }: Teaching
           </Link>
           {vocab.length > 0 && (
             <Link
-              href={`/vocabulary/${lesson.lessonId}`}
+              href={`/vocabulary/${lesson.lessonId}?version=${lesson.id}`}
               className={buttonVariants({ variant: "outline" })}
             >
               Flashcard từ vựng

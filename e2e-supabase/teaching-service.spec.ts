@@ -144,3 +144,103 @@ test("teachers activate, learn in other classes and keep private lessons scoped 
     ]);
   }
 });
+
+test("flashcards and vocabulary review keep the version a class pins after a newer public one", async ({
+  browser,
+}) => {
+  const owner = await newAccount(browser, "pin-owner", true);
+  const learner = await newAccount(browser, "pin-learner", false);
+  try {
+    await owner.page.goto("/teach/classes");
+    await owner.page.getByLabel("Tên lớp", { exact: true }).fill(`Ghim bản ${RUN_ID}`);
+    await owner.page.getByRole("button", { name: "Tạo lớp", exact: true }).click();
+    await owner.page.waitForURL(/\/teach\/classes\/[a-f0-9-]{36}$/);
+    const classId = owner.page.url().split("/").at(-1) ?? "";
+    const code = ((await owner.page.locator(".join-code").textContent()) ?? "").replace("-", "");
+    const lessonId = `pinned-${RUN_ID}`;
+    const draft = JSON.parse(await readFile("content/lessons/lesson-01.json", "utf8"));
+    const publish = async (revision: number, content: unknown) => {
+      const result = await adminClient().rpc("publish_lesson", {
+        p_lesson_id: lessonId,
+        p_owner_id: owner.id,
+        p_expected_revision: revision,
+        p_title: `Ghim ${RUN_ID}`,
+        p_title_ja: draft.titleJa,
+        p_summary: draft.summary,
+        p_order_no: 1,
+        p_course_id: "n5",
+        p_content: content,
+      });
+      if (result.error || typeof result.data !== "string") {
+        throw new Error("Unable to publish a lesson fixture.");
+      }
+      return result.data;
+    };
+    const firstVersion = await publish(0, draft.content);
+    const madePublic = await adminClient()
+      .from("lessons")
+      .update({ visibility: "public" })
+      .eq("id", lessonId);
+    expect(madePublic.error).toBeNull();
+    const pinned = await adminClient().rpc("upsert_class_lesson", {
+      p_teacher_id: owner.id,
+      p_class_id: classId,
+      p_lesson_id: lessonId,
+      p_version_id: firstVersion,
+      p_order_no: 1,
+      p_available_at: new Date(Date.now() - 60_000).toISOString(),
+    });
+    expect(pinned.error).toBeNull();
+    await learner.page.goto("/join-class");
+    await learner.page.getByLabel("Mã lớp", { exact: true }).fill(code);
+    await learner.page.getByRole("button", { name: "Vào lớp", exact: true }).click();
+    await learner.page.waitForURL(`**/classes/${classId}`);
+
+    // The teacher publishes a new meaning for the first word; the class still teaches version 1.
+    const newMeaning = `nghĩa mới ${RUN_ID}`;
+    const changed = structuredClone(draft.content);
+    changed.vocab[0].vi = newMeaning;
+    const secondVersion = await publish(1, changed);
+    const firstMeaning: string = draft.content.vocab[0].vi;
+    const flipFirstCard = async (region: string) => {
+      const deck = learner.page.getByRole("region", { name: region });
+      await deck.getByRole("button", { name: "Lật thẻ", exact: true }).click();
+      return deck.locator(".flashcard-back");
+    };
+
+    await learner.page.getByRole("link", { name: "Flashcard", exact: true }).click();
+    await expect(learner.page).toHaveURL(`/vocabulary/${lessonId}?version=${firstVersion}`);
+    await expect(await flipFirstCard("Flashcard từ vựng")).toContainText(firstMeaning);
+    await learner.page.goto(`/vocabulary/${lessonId}`);
+    const back = await flipFirstCard("Flashcard từ vựng");
+    await expect(back).toContainText(firstMeaning);
+    await expect(back).not.toContainText(newMeaning);
+    await learner.page.getByRole("button", { name: "Quên", exact: true }).click();
+    await expect
+      .poll(async () => {
+        const { count } = await adminClient()
+          .from("srs_cards")
+          .select("item_id", { count: "exact", head: true })
+          .eq("user_id", learner.id)
+          .eq("source_id", lessonId);
+        return count;
+      })
+      .toBe(1);
+    const madeDue = await adminClient()
+      .from("srs_cards")
+      .update({ due: new Date(Date.now() - 60_000).toISOString() })
+      .eq("user_id", learner.id)
+      .eq("source_id", lessonId);
+    expect(madeDue.error).toBeNull();
+    await learner.page.goto("/review");
+    await learner.page.getByRole("button", { name: "Lật thẻ", exact: true }).click();
+    await expect(learner.page.locator(".flashcard-back")).toContainText(firstMeaning);
+    await expect(learner.page.locator(".flashcard-back")).not.toContainText(newMeaning);
+
+    // The newer public version stays readable when a link names it.
+    await learner.page.goto(`/vocabulary/${lessonId}?version=${secondVersion}`);
+    await expect(await flipFirstCard("Flashcard từ vựng")).toContainText(newMeaning);
+  } finally {
+    await Promise.all([owner.page.context().close(), learner.page.context().close()]);
+  }
+});

@@ -120,7 +120,9 @@ export default async function ClassPage({ params }: ClassPageProps) {
                   <Link href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}`}>
                     Đọc bài
                   </Link>
-                  <Link href={`/vocabulary/${lesson.lessonId}`}>Flashcard</Link>
+                  <Link href={`/vocabulary/${lesson.lessonId}?version=${lesson.versionId}`}>
+                    Flashcard
+                  </Link>
                   <Link href={`/kanji/${lesson.lessonId}?version=${lesson.versionId}`}>
                     {view.classRow.language_tag === "ja-JP" ? "Luyện kanji" : "Luyện chữ Hán"}
                   </Link>

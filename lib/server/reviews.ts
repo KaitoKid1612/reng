@@ -12,7 +12,7 @@ import {
 } from "@/lib/assignment";
 import { gradeQuestion } from "@/lib/grading/grade";
 import { parseRawAnswer } from "@/lib/grading/raw-answer";
-import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { findClassLessonVersions, loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { toStudyWords } from "@/lib/study-words";
 import { isTeachingVersion, LANGUAGE_LABELS } from "@/lib/teaching-content";
 import { loadAssignment } from "@/lib/server/assignments";
@@ -81,11 +81,37 @@ export interface MistakeReviewCard {
 
 export type ReviewCard = VocabReviewCard | MistakeReviewCard;
 
-async function loadVocabDecks(userId: string, lessonIds: readonly string[]) {
+// A flashcard link names the version it was opened from (the class page or the lesson being read).
+// Without one, or when the reader may not open it, the reader's class version is used; public
+// lessons and their owner otherwise read the newest published version.
+async function loadVocabVersion(
+  userId: string | null,
+  lessonId: string,
+  versionId: string | undefined,
+  now: Date,
+) {
+  const requested = versionId
+    ? await loadAccessibleLessonVersion(lessonId, versionId, userId)
+    : undefined;
+  if (requested) {
+    return requested;
+  }
+  const classVersionId = userId
+    ? (await findClassLessonVersions(userId, [lessonId], now)).get(lessonId)
+    : undefined;
+  return loadAccessibleLessonVersion(lessonId, classVersionId, userId);
+}
+
+async function loadVocabDecks(userId: string, lessonIds: readonly string[], now: Date) {
   const decks = new Map<string, { title: string; vocab: VocabItem[] }>();
+  const classVersions = await findClassLessonVersions(userId, lessonIds, now);
   await Promise.all(
     [...new Set(lessonIds)].map(async (lessonId) => {
-      const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
+      const version = await loadAccessibleLessonVersion(
+        lessonId,
+        classVersions.get(lessonId),
+        userId,
+      );
       if (version) {
         decks.set(lessonId, { title: version.title, vocab: toStudyWords(version) });
       }
@@ -138,6 +164,7 @@ async function toReviewCards(userId: string, rows: readonly CardRow[], now: Date
   const decks = await loadVocabDecks(
     userId,
     rows.filter((row) => row.item_type === "vocab").map((row) => row.source_id),
+    now,
   );
   const sources = await loadMistakeSources(
     rows.filter((row) => row.item_type === "mistake").map((row) => row.source_id),
@@ -297,10 +324,12 @@ export interface VocabReviewInput {
   rating: ReviewRating;
   requestId: string;
   revision: number | null;
+  // The version the flashcard showed; review sessions leave it out and use the class version.
+  versionId?: string;
 }
 
 export async function recordVocabReview(userId: string, input: VocabReviewInput, now: Date) {
-  const version = await loadAccessibleLessonVersion(input.lessonId, undefined, userId);
+  const version = await loadVocabVersion(userId, input.lessonId, input.versionId, now);
   if (!version || !toStudyWords(version).some((item) => item.id === input.vocabId)) {
     throw new ServiceError("not_found");
   }
@@ -508,8 +537,13 @@ export interface VocabDeckCard {
   due: string | null;
 }
 
-export async function getVocabularyDeck(userId: string | null, lessonId: string) {
-  const version = await loadAccessibleLessonVersion(lessonId, undefined, userId);
+export async function getVocabularyDeck(
+  userId: string | null,
+  lessonId: string,
+  versionId?: string,
+  now: Date = new Date(),
+) {
+  const version = await loadVocabVersion(userId, lessonId, versionId, now);
   if (!version) {
     return null;
   }
