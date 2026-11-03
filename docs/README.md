@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Công cụ giáo viên 03/11/2026: [chấp nhận đáp án tương đương (chờ migration), từ chối yêu cầu giáo viên, audio tiếng Trung, danh sách ID dài](testing/teacher-tools-2026-11-03.md); [kịch bản học thử trên điện thoại](testing/device-trial-plan-2026-11-03.md).
+
 Soạn câu sắp xếp và đọc hiểu 03/11/2026: [hai dạng bài mới trên cả hai trình soạn và câu kiểm tra riêng, lỗi mất đoạn văn khi sửa câu ngân hàng ôn và kiểm chứng](testing/question-authoring-2026-11-03.md).
 
 Sửa độ đúng dữ liệu học tập 03/11/2026: [ID mục không bị cấp lại, hàng ôn, flashcard theo bản lớp ghim, thử lại khi mất phản hồi, chuỗi ngày học](testing/data-correctness-2026-11-03.md).
