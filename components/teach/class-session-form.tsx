@@ -9,6 +9,7 @@ import { MAX_SESSION_NOTES, MAX_SLIDE_NUMBER } from "@/lib/class-sessions";
 
 interface ClassSessionFormProps {
   classId: string;
+  languageTag: string;
   today: string;
   lessons: { lessonId: string; title: string }[];
   defaultLessonId: string;
@@ -16,8 +17,16 @@ interface ClassSessionFormProps {
   defaultSlide?: number | null;
 }
 
+// Examples follow the class language, so a Chinese class is not shown Japanese notes.
+const NOTES_PLACEHOLDERS: Record<string, string> = {
+  "ja-JP": "Học viên còn nhầm ~ています; buổi sau ôn mẫu câu 3 và giao bài kanji.",
+  "zh-Hans": "Học viên còn nhầm thanh 2 và thanh 3; buổi sau ôn mẫu câu 是…吗 và giao bài chữ Hán.",
+  "zh-Hant": "Học viên còn nhầm thanh 2 và thanh 3; buổi sau ôn mẫu câu 是…嗎 và giao bài chữ Hán.",
+};
+
 export function ClassSessionForm({
   classId,
+  languageTag,
   today,
   lessons,
   defaultLessonId,
@@ -72,7 +81,7 @@ export function ClassSessionForm({
           id="session-notes"
           name="notes"
           maxLength={MAX_SESSION_NOTES}
-          placeholder="Học viên còn nhầm ~ています; buổi sau ôn mẫu câu 3 và giao bài kanji."
+          placeholder={NOTES_PLACEHOLDERS[languageTag] ?? NOTES_PLACEHOLDERS["ja-JP"]}
         />
         <p className="small muted">Chỉ bạn thấy ghi chú này, học viên không thấy.</p>
       </div>

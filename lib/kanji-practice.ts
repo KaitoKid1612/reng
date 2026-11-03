@@ -4,14 +4,18 @@ import { createItemId, MAX_QUESTIONS } from "@/lib/lesson-draft";
 
 import type { DraftContent, DraftQuestion } from "@/lib/lesson-draft";
 
-// Kanji practice reuses the lesson's own vocabulary: the written form comes from the kanji
-// column and the only accepted reading is the kana the teacher wrote (docs/07: readings are
-// declared, never inferred). No outside dictionary data is needed.
+// Character practice reuses the lesson's own vocabulary, for Japanese kanji and Chinese hanzi
+// alike: the written form comes from the lesson and the only accepted reading is the one the
+// teacher wrote, kana or pinyin (docs/07: readings are declared, never inferred). No outside
+// dictionary data is needed.
+export type CharacterLang = "ja" | "zh-Hans" | "zh-Hant";
+
 export interface KanjiWord {
   id: string;
   written: string;
   reading: string;
   meaning: string;
+  lang: CharacterLang;
 }
 
 export const KANJI_QUESTION_KINDS = ["reading", "written", "meaning"] as const;
@@ -45,6 +49,30 @@ export function extractKanjiWords(vocab: readonly VocabSource[]): KanjiWord[] {
       written: (item.kanji ?? "").trim(),
       reading: item.jp.trim(),
       meaning: item.vi.trim(),
+      lang: "ja",
+    }));
+}
+
+interface HanziSource {
+  id: string;
+  text: string;
+  reading: string;
+  meaning: string;
+}
+
+// Chinese lessons write each word in hanzi with its pinyin, so every word with both is practised.
+export function extractHanziWords(
+  vocab: readonly HanziSource[],
+  lang: Exclude<CharacterLang, "ja">,
+): KanjiWord[] {
+  return vocab
+    .filter((item) => HAN.test(item.text) && item.reading.trim() && item.meaning.trim())
+    .map((item) => ({
+      id: item.id,
+      written: item.text.trim(),
+      reading: item.reading.trim(),
+      meaning: item.meaning.trim(),
+      lang,
     }));
 }
 
@@ -56,9 +84,20 @@ export function normalizeReading(value: string) {
   );
 }
 
+// Practice is not graded, so pinyin ignores letter case, spaces between syllables and a final
+// full stop; tone marks still count (a tone number typed in the field becomes its mark).
+export function normalizePinyin(value: string) {
+  return value
+    .normalize("NFC")
+    .toLowerCase()
+    .replace(/\s+/gu, "")
+    .replace(/[。.]$/u, "");
+}
+
 export function isCorrectReading(word: KanjiWord, answer: string) {
-  const given = normalizeReading(answer);
-  return given !== "" && given === normalizeReading(word.reading);
+  const normalize = word.lang === "ja" ? normalizeReading : normalizePinyin;
+  const given = normalize(answer);
+  return given !== "" && given === normalize(word.reading);
 }
 
 function shuffle<T>(items: readonly T[], random: () => number) {

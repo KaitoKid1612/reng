@@ -3,7 +3,7 @@
 import { Check, X } from "lucide-react";
 import { useReducer, useState } from "react";
 
-import { JapaneseInput } from "@/components/classroom/japanese-input";
+import { AnswerInput } from "@/components/classroom/answer-input";
 import { Button } from "@/components/ui/button";
 import {
   createKanjiSession,
@@ -15,12 +15,53 @@ import {
   kanjiPracticeReducer,
 } from "@/lib/kanji-practice";
 
-import type { KanjiQuestion, KanjiQuestionKind, KanjiWord } from "@/lib/kanji-practice";
+import type { InputMode } from "@/lib/assignment";
+import type {
+  CharacterLang,
+  KanjiQuestion,
+  KanjiQuestionKind,
+  KanjiWord,
+} from "@/lib/kanji-practice";
 import type { FormEvent } from "react";
 
 interface KanjiPracticeProps {
   words: KanjiWord[];
+  lang: CharacterLang;
 }
+
+interface ScriptSettings {
+  title: string;
+  noun: string;
+  readingLabel: string;
+  inputMode: InputMode;
+  readingLang: string;
+}
+
+// The same practice serves Japanese kanji and Chinese hanzi; only the names and the way a reading
+// is typed differ (pinyin accepts tone numbers, ni3 → nǐ).
+const SCRIPT_SETTINGS: Record<CharacterLang, ScriptSettings> = {
+  ja: {
+    title: "Kanji",
+    noun: "kanji",
+    readingLabel: "Cách đọc bằng hiragana",
+    inputMode: "hiragana",
+    readingLang: "ja",
+  },
+  "zh-Hans": {
+    title: "Chữ Hán",
+    noun: "chữ Hán",
+    readingLabel: "Pinyin có dấu thanh",
+    inputMode: "pinyin",
+    readingLang: "zh-Latn-pinyin",
+  },
+  "zh-Hant": {
+    title: "Chữ Hán",
+    noun: "chữ Hán",
+    readingLabel: "Pinyin có dấu thanh",
+    inputMode: "pinyin",
+    readingLang: "zh-Latn-pinyin",
+  },
+};
 
 const PROMPTS: Record<KanjiQuestionKind, string> = {
   reading: "Từ này đọc thế nào?",
@@ -33,7 +74,8 @@ function describeWord(question: KanjiQuestion) {
   return `${word.written} đọc là ${word.reading}: ${word.meaning}.`;
 }
 
-export function KanjiPractice({ words }: KanjiPracticeProps) {
+export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
+  const settings = SCRIPT_SETTINGS[lang];
   const [kinds, setKinds] = useState<KanjiQuestionKind[]>(["reading", "written"]);
   const [questionCount, setQuestionCount] = useState(words.length > 10 ? "10" : "all");
   const [state, dispatch] = useReducer(kanjiPracticeReducer, initialKanjiPractice);
@@ -122,8 +164,8 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
           Bắt đầu luyện
         </Button>
         <p className="small muted">
-          Phiên luyện chưa lưu điểm. Câu kanji giảng viên giao trong bài tập vẫn được chấm và vào sổ
-          lỗi như thường.
+          Phiên luyện chưa lưu điểm. Câu {settings.noun} giảng viên giao trong bài tập vẫn được chấm
+          và vào sổ lỗi như thường.
         </p>
       </form>
     );
@@ -147,13 +189,14 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
           <ul className="mistake-list">
             {mistakes.map(({ question, answer: given }) => (
               <li key={question.id}>
-                <span lang="ja" className="kana-font">
+                <span lang={lang} className={lang === "ja" ? "kana-font" : undefined}>
                   {question.word.written}
                 </span>
                 <span>
                   <span className="muted">Bạn trả lời: {describeKanjiAnswer(question, given)}</span>
                   <br />
-                  <span lang="ja">{question.word.reading}</span>: {question.word.meaning}
+                  <span lang={settings.readingLang}>{question.word.reading}</span>:{" "}
+                  {question.word.meaning}
                 </span>
               </li>
             ))}
@@ -185,7 +228,7 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
   return (
     <div className="practice-session">
       <div className="practice-top">
-        <p>Kanji</p>
+        <p>{settings.title}</p>
         <span>
           Câu {state.index + 1} / {state.questions.length}
         </span>
@@ -199,13 +242,17 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
       <div className="flashcard">
         {question.kind === "written" ? (
           <>
-            <span className="flashcard-front" lang="ja" data-testid="kanji-prompt">
+            <span
+              className="flashcard-front"
+              lang={settings.readingLang}
+              data-testid="kanji-prompt"
+            >
               {question.word.reading}
             </span>
             <p>{question.word.meaning}</p>
           </>
         ) : (
-          <span className="flashcard-front" lang="ja" data-testid="kanji-prompt">
+          <span className="flashcard-front" lang={lang} data-testid="kanji-prompt">
             {question.word.written}
           </span>
         )}
@@ -217,12 +264,12 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
       >
         {question.kind === "reading" ? (
           <>
-            <label htmlFor="kanji-answer">Cách đọc bằng hiragana</label>
-            <JapaneseInput
+            <label htmlFor="kanji-answer">{settings.readingLabel}</label>
+            <AnswerInput
               key={question.id}
               id="kanji-answer"
               value={answer}
-              inputMode="hiragana"
+              inputMode={settings.inputMode}
               isDisabled={Boolean(feedback)}
               autoFocus
               describedBy={inputError ? "kanji-input-error" : undefined}
@@ -243,7 +290,7 @@ export function KanjiPractice({ words }: KanjiPracticeProps) {
                     disabled={Boolean(feedback)}
                     onChange={() => setAnswer(String(index))}
                   />
-                  <span lang={question.kind === "written" ? "ja" : "vi"}>{option}</span>
+                  <span lang={question.kind === "written" ? lang : "vi"}>{option}</span>
                 </label>
               ))}
             </div>

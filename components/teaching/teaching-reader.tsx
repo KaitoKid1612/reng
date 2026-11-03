@@ -4,6 +4,7 @@ import { AudioStatus } from "@/components/audio-provider";
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
 import { buttonVariants } from "@/components/ui/button";
+import { extractHanziWords } from "@/lib/kanji-practice";
 import { LANGUAGE_LABELS } from "@/lib/teaching-content";
 
 import type { PublicTeachingLesson } from "@/lib/teaching-content";
@@ -18,6 +19,7 @@ interface TeachingReaderProps {
 export function TeachingReader({ lesson, progress, isPreview = false }: TeachingReaderProps) {
   const { context, objectives, vocab, grammar, dialogue } = lesson.content;
   const slideHref = `/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`;
+  const hanziCount = extractHanziWords(vocab, context.languageTag).length;
   return (
     <article className="lesson-reader">
       <div className="page-heading">
@@ -149,6 +151,14 @@ export function TeachingReader({ lesson, progress, isPreview = false }: Teaching
               className={buttonVariants({ variant: "outline" })}
             >
               Flashcard từ vựng
+            </Link>
+          )}
+          {hanziCount > 0 && (
+            <Link
+              href={`/kanji/${lesson.lessonId}?version=${lesson.id}`}
+              className={buttonVariants({ variant: "outline" })}
+            >
+              Luyện chữ Hán ({hanziCount} từ)
             </Link>
           )}
           <Link href="/classes" className={buttonVariants({ variant: "outline" })}>

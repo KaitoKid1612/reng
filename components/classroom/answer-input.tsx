@@ -13,7 +13,7 @@ import {
 import type { InputMode } from "@/lib/assignment";
 import type { ChangeEvent, KeyboardEvent } from "react";
 
-interface JapaneseInputProps {
+interface AnswerInputProps {
   id: string;
   value: string;
   inputMode: InputMode;
@@ -35,7 +35,7 @@ const MODE_HINTS: Record<InputMode, string> = {
   japanese: "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji.",
 };
 
-export function JapaneseInput({
+export function AnswerInput({
   id,
   value,
   inputMode,
@@ -45,7 +45,7 @@ export function JapaneseInput({
   enterKeyHint,
   onValueChange,
   onEnter,
-}: JapaneseInputProps) {
+}: AnswerInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const caretRef = useRef<number | null>(null);
 
@@ -113,7 +113,7 @@ export function JapaneseInput({
         id={id}
         type="text"
         lang={INPUT_LANGS[inputMode]}
-        className="japanese-input"
+        className="answer-input"
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}

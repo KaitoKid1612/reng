@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 
 import { KanjiPractice } from "@/components/kanji/kanji-practice";
 import { buttonVariants } from "@/components/ui/button";
-import { extractKanjiWords } from "@/lib/kanji-practice";
+import { extractHanziWords, extractKanjiWords } from "@/lib/kanji-practice";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { isTeachingVersion } from "@/lib/teaching-content";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Luyện kanji" };
+// Japanese lessons practise kanji, Chinese lessons hanzi with pinyin.
+export const metadata: Metadata = { title: "Luyện chữ Hán và kanji" };
 
 interface KanjiPageProps {
   params: Promise<{ lessonId: string }>;
@@ -24,8 +25,12 @@ export default async function KanjiPage({ params, searchParams }: KanjiPageProps
   if (!version) {
     notFound();
   }
-  // Kanji practice is for Japanese lessons; Chinese lessons keep their own vocabulary tools.
-  const words = isTeachingVersion(version) ? [] : extractKanjiWords(version.content.vocab);
+  const isChinese = isTeachingVersion(version);
+  const lang = isChinese ? version.content.context.languageTag : "ja";
+  const words = isChinese
+    ? extractHanziWords(version.content.vocab, version.content.context.languageTag)
+    : extractKanjiWords(version.content.vocab);
+  const scriptName = isChinese ? "chữ Hán" : "kanji";
   return (
     <>
       <div className="page-heading">
@@ -35,10 +40,12 @@ export default async function KanjiPage({ params, searchParams }: KanjiPageProps
               {version.titleJa}
             </p>
           )}
-          <h1>Luyện kanji: {version.title}</h1>
+          <h1>
+            Luyện {scriptName}: {version.title}
+          </h1>
           <p>
             Luyện các từ viết bằng chữ Hán trong bài: đọc chữ, nhận mặt chữ và hiểu nghĩa. Cách đọc
-            đúng là cách đọc giảng viên ghi trong bài.
+            đúng là {isChinese ? "pinyin" : "cách đọc"} giảng viên ghi trong bài.
           </p>
         </div>
         <Link
@@ -49,7 +56,7 @@ export default async function KanjiPage({ params, searchParams }: KanjiPageProps
         </Link>
       </div>
       {words.length ? (
-        <KanjiPractice words={words} />
+        <KanjiPractice words={words} lang={lang} />
       ) : (
         <p className="notice-panel">Bài này chưa có từ vựng viết bằng chữ Hán để luyện.</p>
       )}

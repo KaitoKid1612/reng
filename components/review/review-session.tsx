@@ -9,6 +9,7 @@ import { RatingButtons } from "@/components/review/rating-buttons";
 import { REVIEW_FAILURES, sendReview } from "@/components/review/review-request";
 import { VocabCardFace } from "@/components/review/vocab-card-face";
 import { Button } from "@/components/ui/button";
+import { answerLang } from "@/lib/assignment";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
 
 import type { ReviewRequest } from "@/components/review/review-request";
@@ -176,7 +177,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
                 isCorrect={outcome.isCorrect}
                 correctText={outcome.correctText}
                 explain={outcome.explain}
-                lang={card.view.lang}
+                lang={answerLang(card.view)}
               />
               <p className="small muted">
                 {outcome.isResolved

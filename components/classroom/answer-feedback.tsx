@@ -5,7 +5,10 @@ interface AnswerFeedbackProps {
   correctText: string;
   explain: string;
   transcript?: string | null;
+  // The correct answer's language, which follows how it is typed (pinyin, Chinese, Japanese…).
   lang?: string;
+  // The language the audio speaks; by default the same as the answer.
+  transcriptLang?: string;
 }
 
 export function AnswerFeedback({
@@ -14,6 +17,7 @@ export function AnswerFeedback({
   explain,
   transcript,
   lang = "ja",
+  transcriptLang = lang,
 }: AnswerFeedbackProps) {
   return (
     <div
@@ -29,7 +33,7 @@ export function AnswerFeedback({
         <p className="muted">{explain}</p>
         {transcript && (
           <p className="transcript">
-            Transcript: <span lang="ja">{transcript}</span>
+            Transcript: <span lang={transcriptLang}>{transcript}</span>
           </p>
         )}
       </div>

@@ -5,6 +5,7 @@ import { test } from "node:test";
 import {
   buildKanjiQuestions,
   createKanjiSession,
+  extractHanziWords,
   extractKanjiWords,
   findWordsWithoutKanjiQuestions,
   getKanjiMistakes,
@@ -47,14 +48,53 @@ test("only vocabulary written with kanji becomes practice material", () => {
 });
 
 test("readings ignore spaces, the 〜 mark, katakana and a final full stop only", () => {
-  const counter = { id: "v", written: "〜人", reading: "〜にん", meaning: "… người" };
+  const counter = {
+    id: "v",
+    written: "〜人",
+    reading: "〜にん",
+    meaning: "… người",
+    lang: "ja" as const,
+  };
   assert.equal(isCorrectReading(counter, "にん"), true);
   assert.equal(isCorrectReading(counter, "ニン"), true);
   assert.equal(isCorrectReading(counter, "じん"), false);
-  const phrase = { id: "p", written: "いい天気ですね", reading: "いい てんきですね", meaning: "" };
+  const phrase = {
+    id: "p",
+    written: "いい天気ですね",
+    reading: "いい てんきですね",
+    meaning: "",
+    lang: "ja" as const,
+  };
   assert.equal(isCorrectReading(phrase, "いいてんきですね。"), true);
   assert.equal(isCorrectReading(phrase, "いいてんき"), false);
   assert.equal(isCorrectReading(phrase, "  "), false);
+});
+
+test("Chinese lessons practise hanzi with their pinyin; tones count, spaces and case do not", () => {
+  const words = extractHanziWords(
+    [
+      { id: "w1", text: "你好", reading: "nǐ hǎo", meaning: "xin chào" },
+      { id: "w2", text: "老师", reading: "lǎoshī", meaning: "thầy/cô giáo" },
+      { id: "w3", text: "OK", reading: "ou kei", meaning: "được" },
+      { id: "w4", text: "谢谢", reading: "", meaning: "cảm ơn" },
+    ],
+    "zh-Hans",
+  );
+  assert.deepEqual(
+    words.map((word) => [word.id, word.lang]),
+    [
+      ["w1", "zh-Hans"],
+      ["w2", "zh-Hans"],
+    ],
+  );
+  const [hello, teacher] = words;
+  assert.equal(isCorrectReading(hello, "nǐhǎo"), true);
+  assert.equal(isCorrectReading(hello, "Nǐ Hǎo."), true);
+  assert.equal(isCorrectReading(hello, "ni hao"), false);
+  assert.equal(isCorrectReading(hello, "nǐ hào"), false);
+  assert.equal(isCorrectReading(teacher, "lǎoshī"), true);
+  // Kana rules never apply to pinyin: "lao" is not turned into kana.
+  assert.equal(isCorrectReading(teacher, "らおし"), false);
 });
 
 test("sessions use each word once, rotate kinds and offer the right option", () => {

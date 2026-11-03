@@ -1767,7 +1767,7 @@ rt {
 .choice-option:has(input:disabled) {
   cursor: default;
 }
-.japanese-input {
+.answer-input {
   width: 100%;
   font-size: 23px !important;
 }

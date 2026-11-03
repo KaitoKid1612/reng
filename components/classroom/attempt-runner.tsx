@@ -264,6 +264,7 @@ export function AttemptRunner({
                   explain={answerKey.explain}
                   transcript={isListeningQuestion(answerKey) ? answerKey.transcript : undefined}
                   lang={answerLang(item.view)}
+                  transcriptLang={item.view.lang}
                 />
               )}
               {mode === "practice" && answerKey && !isChecked && (

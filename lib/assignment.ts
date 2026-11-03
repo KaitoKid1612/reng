@@ -237,22 +237,36 @@ export type QuestionView = QuestionViewBase &
     | { type: "order"; tokens: OrderToken[] }
   );
 
-// Bank tags that name a kind of exercise. Lessons without these tags show no section.
+// Bank tags that name a kind of exercise, for Japanese and Chinese alike. Tags that already are
+// one of these Vietnamese names (the Chinese template's "Từ vựng", a Sheet's "Ngữ pháp") show as
+// they are; other lessons show no section.
 const SECTION_LABELS: Record<string, string> = {
   kanji: "Kanji",
+  hanzi: "Chữ Hán",
   writing: "Chữ Hán",
+  pinyin: "Pinyin",
+  tones: "Thanh điệu",
   vocabulary: "Từ vựng",
+  meaning: "Nghĩa từ",
+  "measure-words": "Lượng từ",
   forms: "Biến đổi từ",
   particles: "Trợ từ",
   grammar: "Ngữ pháp",
   paraphrase: "Câu cùng nghĩa",
   "sentence-order": "Sắp xếp câu",
   reading: "Đọc hiểu",
+  listening: "Nghe",
 };
+const SECTION_NAMES = new Set(Object.values(SECTION_LABELS));
 
 export function questionSection(tags: readonly string[]) {
-  const tag = tags.find((item) => item in SECTION_LABELS);
-  return tag ? SECTION_LABELS[tag] : undefined;
+  for (const tag of tags) {
+    const label = SECTION_LABELS[tag] ?? (SECTION_NAMES.has(tag) ? tag : undefined);
+    if (label) {
+      return label;
+    }
+  }
+  return undefined;
 }
 
 function hashText(value: string) {

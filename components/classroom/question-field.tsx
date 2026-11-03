@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { JapaneseInput } from "@/components/classroom/japanese-input";
+import { AnswerInput } from "@/components/classroom/answer-input";
 import { OrderField } from "@/components/classroom/order-field";
 import { ListeningPlayer } from "@/components/listening/listening-player";
 
@@ -45,8 +45,9 @@ function textInputMode(view: QuestionView): InputMode {
   if (view.type === "fill" || view.type === "dictation") {
     return view.inputMode;
   }
-  // Listening answers may be kana or kanji, so learners can type romaji or use an IME.
-  return "japanese";
+  // A typed listening answer follows the question's language: Japanese converts romaji to
+  // kana and accepts an IME; Chinese is typed with the learner's own IME, never turned into kana.
+  return view.lang === "ja" ? "japanese" : "chinese";
 }
 
 export function QuestionField({
@@ -120,7 +121,7 @@ export function QuestionField({
           {view.prompt}
         </label>
         {player}
-        <JapaneseInput
+        <AnswerInput
           id={fieldId}
           value={typeof value === "string" ? value : ""}
           inputMode={textInputMode(view)}

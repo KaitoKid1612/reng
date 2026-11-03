@@ -281,7 +281,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             nhất đã mở có câu chọn/điền/sắp xếp. Nộp muộn vẫn được, tối đa 3 lượt, xem giải thích
             ngay sau khi nộp. Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả
             bài giao tay). Mỗi dạng câu giữ tỉ lệ như trong bài: dạng theo tag của câu (ví dụ ngữ
-            pháp, từ vựng, kanji) và loại câu (chọn, điền, sắp xếp). Câu sai vào sổ lỗi và lịch ôn
+            pháp, từ vựng, chữ Hán) và loại câu (chọn, điền, sắp xếp). Câu sai vào sổ lỗi và lịch ôn
             tập của học viên.
           </p>
         </details>
@@ -350,6 +350,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             // A new prefill from the slides must replace the defaults of a form already shown.
             key={`${prefill?.lessonId ?? ""}:${prefill?.slide ?? ""}`}
             classId={classRow.id}
+            languageTag={classRow.language_tag}
             today={toVietnamDate(now)}
             lessons={report.lessons.map((lesson) => ({
               lessonId: lesson.lessonId,
