@@ -1,0 +1,1481 @@
+{
+  "id": "minna-1-07",
+  "title": "Bài 7 – Cho, nhận và công cụ",
+  "titleJa": "第7課　はしで たべます",
+  "summary": "Theo trình tự bài 7 Minna no Nihongo Sơ cấp I: công cụ và ngôn ngữ N で V, hỏi cách nói 「…」は 〜ごで なんですか, cho và nhận với に (あげます・もらいます, かします・かります, おしえます・ならいます, おくります, でんわを かけます), もう V ました／まだです, cách gọi bố mẹ mình và của người khác, câu chào khi đến nhà và khi ăn.",
+  "order": 7,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0701",
+        "jp": "きります",
+        "kanji": "切ります",
+        "romaji": "kirimasu",
+        "vi": "cắt",
+        "audio": null
+      },
+      {
+        "id": "v0702",
+        "jp": "おくります",
+        "kanji": "送ります",
+        "romaji": "okurimasu",
+        "vi": "gửi",
+        "audio": null,
+        "image": "/icons/vocab/envelope.svg"
+      },
+      {
+        "id": "v0703",
+        "jp": "あげます",
+        "romaji": "agemasu",
+        "vi": "cho, tặng",
+        "audio": null
+      },
+      {
+        "id": "v0704",
+        "jp": "もらいます",
+        "romaji": "moraimasu",
+        "vi": "nhận",
+        "audio": null
+      },
+      {
+        "id": "v0705",
+        "jp": "かします",
+        "kanji": "貸します",
+        "romaji": "kashimasu",
+        "vi": "cho mượn",
+        "audio": null
+      },
+      {
+        "id": "v0706",
+        "jp": "かります",
+        "kanji": "借ります",
+        "romaji": "karimasu",
+        "vi": "mượn",
+        "audio": null
+      },
+      {
+        "id": "v0707",
+        "jp": "おしえます",
+        "kanji": "教えます",
+        "romaji": "oshiemasu",
+        "vi": "dạy",
+        "audio": null,
+        "image": "/icons/vocab/teacher.svg"
+      },
+      {
+        "id": "v0708",
+        "jp": "ならいます",
+        "kanji": "習います",
+        "romaji": "naraimasu",
+        "vi": "học (từ ai đó)",
+        "audio": null,
+        "image": "/icons/vocab/student.svg"
+      },
+      {
+        "id": "v0709",
+        "jp": "かけます",
+        "romaji": "kakemasu",
+        "vi": "gọi (điện thoại: でんわを かけます)",
+        "audio": null,
+        "image": "/icons/vocab/telephone.svg"
+      },
+      {
+        "id": "v0710",
+        "jp": "はし",
+        "kanji": "箸",
+        "romaji": "hashi",
+        "vi": "đôi đũa",
+        "audio": null
+      },
+      {
+        "id": "v0711",
+        "jp": "スプーン",
+        "romaji": "supuun",
+        "vi": "cái thìa",
+        "audio": null
+      },
+      {
+        "id": "v0712",
+        "jp": "ナイフ",
+        "romaji": "naifu",
+        "vi": "con dao",
+        "audio": null
+      },
+      {
+        "id": "v0713",
+        "jp": "フォーク",
+        "romaji": "fooku",
+        "vi": "cái nĩa",
+        "audio": null
+      },
+      {
+        "id": "v0714",
+        "jp": "はさみ",
+        "romaji": "hasami",
+        "vi": "cái kéo",
+        "audio": null
+      },
+      {
+        "id": "v0715",
+        "jp": "パソコン",
+        "romaji": "pasokon",
+        "vi": "máy tính cá nhân",
+        "audio": null,
+        "image": "/icons/vocab/laptop.svg"
+      },
+      {
+        "id": "v0716",
+        "jp": "ケータイ",
+        "romaji": "keetai",
+        "vi": "điện thoại di động",
+        "audio": null,
+        "image": "/icons/vocab/mobile-phone.svg"
+      },
+      {
+        "id": "v0717",
+        "jp": "ペン",
+        "romaji": "pen",
+        "vi": "cái bút",
+        "audio": null,
+        "image": "/icons/vocab/pen.svg"
+      },
+      {
+        "id": "v0718",
+        "jp": "て",
+        "kanji": "手",
+        "romaji": "te",
+        "vi": "tay",
+        "audio": null
+      },
+      {
+        "id": "v0719",
+        "jp": "メール",
+        "romaji": "meeru",
+        "vi": "email, tin nhắn",
+        "audio": null
+      },
+      {
+        "id": "v0720",
+        "jp": "かみ",
+        "kanji": "紙",
+        "romaji": "kami",
+        "vi": "giấy",
+        "audio": null
+      },
+      {
+        "id": "v0721",
+        "jp": "はな",
+        "kanji": "花",
+        "romaji": "hana",
+        "vi": "hoa",
+        "audio": null,
+        "image": "/icons/vocab/tulip.svg"
+      },
+      {
+        "id": "v0722",
+        "jp": "シャツ",
+        "romaji": "shatsu",
+        "vi": "áo sơ mi",
+        "audio": null,
+        "image": "/icons/vocab/t-shirt.svg"
+      },
+      {
+        "id": "v0723",
+        "jp": "プレゼント",
+        "romaji": "purezento",
+        "vi": "quà tặng",
+        "audio": null,
+        "image": "/icons/vocab/wrapped-gift.svg"
+      },
+      {
+        "id": "v0724",
+        "jp": "にもつ",
+        "kanji": "荷物",
+        "romaji": "nimotsu",
+        "vi": "hành lý, đồ đạc",
+        "audio": null,
+        "image": "/icons/vocab/luggage.svg"
+      },
+      {
+        "id": "v0725",
+        "jp": "おかね",
+        "kanji": "お金",
+        "romaji": "okane",
+        "vi": "tiền",
+        "audio": null,
+        "image": "/icons/vocab/yen-banknote.svg"
+      },
+      {
+        "id": "v0726",
+        "jp": "きっぷ",
+        "kanji": "切符",
+        "romaji": "kippu",
+        "vi": "vé",
+        "audio": null,
+        "image": "/icons/vocab/ticket.svg"
+      },
+      {
+        "id": "v0727",
+        "jp": "おみやげ",
+        "kanji": "お土産",
+        "romaji": "omiyage",
+        "vi": "quà (mang về, mang tặng)",
+        "audio": null
+      },
+      {
+        "id": "v0728",
+        "jp": "ケーキ",
+        "romaji": "keeki",
+        "vi": "bánh ngọt, bánh kem",
+        "audio": null,
+        "image": "/icons/vocab/shortcake.svg"
+      },
+      {
+        "id": "v0729",
+        "jp": "チョコレート",
+        "romaji": "chokoreeto",
+        "vi": "sô-cô-la",
+        "audio": null,
+        "image": "/icons/vocab/chocolate-bar.svg"
+      },
+      {
+        "id": "v0730",
+        "jp": "ねんがじょう",
+        "kanji": "年賀状",
+        "romaji": "nengajou",
+        "vi": "thiệp chúc Tết",
+        "audio": null
+      },
+      {
+        "id": "v0731",
+        "jp": "クリスマス",
+        "romaji": "kurisumasu",
+        "vi": "Giáng sinh",
+        "audio": null
+      },
+      {
+        "id": "v0732",
+        "jp": "ちち",
+        "kanji": "父",
+        "romaji": "chichi",
+        "vi": "bố tôi (kể với người ngoài)",
+        "audio": null
+      },
+      {
+        "id": "v0733",
+        "jp": "はは",
+        "kanji": "母",
+        "romaji": "haha",
+        "vi": "mẹ tôi (kể với người ngoài)",
+        "audio": null
+      },
+      {
+        "id": "v0734",
+        "jp": "おとうさん",
+        "kanji": "お父さん",
+        "romaji": "otousan",
+        "vi": "bố (của người khác; gọi bố mình)",
+        "audio": null
+      },
+      {
+        "id": "v0735",
+        "jp": "おかあさん",
+        "kanji": "お母さん",
+        "romaji": "okaasan",
+        "vi": "mẹ (của người khác; gọi mẹ mình)",
+        "audio": null
+      },
+      {
+        "id": "v0736",
+        "jp": "ことば",
+        "kanji": "言葉",
+        "romaji": "kotoba",
+        "vi": "từ, ngôn ngữ",
+        "audio": null
+      },
+      {
+        "id": "v0737",
+        "jp": "〜ご",
+        "kanji": "〜語",
+        "romaji": "~go",
+        "vi": "tiếng … (ngôn ngữ)",
+        "audio": null
+      },
+      {
+        "id": "v0738",
+        "jp": "もう",
+        "romaji": "mou",
+        "vi": "đã … rồi",
+        "audio": null
+      },
+      {
+        "id": "v0739",
+        "jp": "まだ",
+        "romaji": "mada",
+        "vi": "chưa",
+        "audio": null
+      },
+      {
+        "id": "v0740",
+        "jp": "これから",
+        "romaji": "korekara",
+        "vi": "từ bây giờ, sắp",
+        "audio": null
+      },
+      {
+        "id": "v0741",
+        "jp": "すてきですね",
+        "romaji": "suteki desu ne",
+        "vi": "đẹp quá, tuyệt quá nhỉ",
+        "audio": null
+      },
+      {
+        "id": "v0742",
+        "jp": "いらっしゃい",
+        "romaji": "irasshai",
+        "vi": "chào mừng (chủ nhà đón khách)",
+        "audio": null
+      },
+      {
+        "id": "v0743",
+        "jp": "どうぞ おあがり ください",
+        "romaji": "douzo oagari kudasai",
+        "vi": "mời vào nhà",
+        "audio": null
+      },
+      {
+        "id": "v0744",
+        "jp": "しつれいします",
+        "kanji": "失礼します",
+        "romaji": "shitsurei shimasu",
+        "vi": "xin phép (khi vào nhà, vào phòng)",
+        "audio": null
+      },
+      {
+        "id": "v0745",
+        "jp": "〜は いかがですか",
+        "romaji": "~wa ikaga desu ka",
+        "vi": "… nhé? (mời lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0746",
+        "jp": "いただきます",
+        "romaji": "itadakimasu",
+        "vi": "xin phép ăn (nói trước khi ăn)",
+        "audio": null
+      },
+      {
+        "id": "v0747",
+        "jp": "ごちそうさまでした",
+        "romaji": "gochisousama deshita",
+        "vi": "cảm ơn vì bữa ăn (nói khi ăn xong)",
+        "audio": null
+      },
+      {
+        "id": "v0748",
+        "jp": "〜に",
+        "romaji": "~ni",
+        "vi": "cho (người nhận); từ (người cho)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0701",
+        "pattern": "N (công cụ) で V",
+        "vi": "Làm V bằng N",
+        "explain": "で chỉ công cụ, phương tiện: はしで {食|た}べます, パソコンで {書|か}きます. Hỏi: {何|なに}で V ますか.",
+        "viMistake": "Công cụ dùng で, không dùng を: はしで {食|た}べます, không nói はしを {食|た}べます.",
+        "examples": [
+          {
+            "jp": "はしで ご{飯|はん}を {食|た}べます。",
+            "vi": "Tôi ăn cơm bằng đũa.",
+            "audio": null
+          },
+          {
+            "jp": "パソコンで レポートを {書|か}きます。",
+            "vi": "Tôi viết báo cáo bằng máy tính.",
+            "audio": null
+          },
+          {
+            "jp": "{何|なに}で {写真|しゃしん}を {撮|と}りましたか。…ケータイで {撮|と}りました。",
+            "vi": "Bạn chụp ảnh bằng gì? … Bằng điện thoại.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0702",
+        "pattern": "「từ」は 〜語で なんですか",
+        "vi": "Từ … tiếng … là gì?",
+        "explain": "Hỏi cách nói một từ trong ngôn ngữ khác: 「Cảm ơn」は {日本語|にほんご}で {何|なん}ですか → 「ありがとう」です. で ở đây là \"bằng (ngôn ngữ)\": {日本語|にほんご}で {書|か}きます.",
+        "examples": [
+          {
+            "jp": "「Thank you」は {日本語|にほんご}で {何|なん}ですか。…「ありがとう」です。",
+            "vi": "\"Thank you\" tiếng Nhật là gì? … Là \"arigatou\".",
+            "audio": null
+          },
+          {
+            "jp": "「さようなら」は ベトナム{語|ご}で {何|なん}ですか。…「Tạm biệt」です。",
+            "vi": "\"Sayounara\" tiếng Việt là gì? … Là \"Tạm biệt\".",
+            "audio": null
+          },
+          {
+            "jp": "{日本語|にほんご}で メールを {書|か}きます。",
+            "vi": "Tôi viết email bằng tiếng Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0703",
+        "pattern": "N1 (người) に N2 を あげます／かします／おしえます",
+        "vi": "Cho / cho mượn / dạy N2 cho N1",
+        "explain": "に đứng sau người nhận. Các động từ trao đi: あげます (cho, tặng), {貸|か}します (cho mượn), {教|おし}えます (dạy), {送|おく}ります (gửi), でんわを かけます (gọi điện).",
+        "viMistake": "Người khác cho mình thì không dùng あげます; dùng もらいます (mẫu tiếp theo).",
+        "examples": [
+          {
+            "jp": "{友達|ともだち}に {花|はな}を あげました。",
+            "vi": "Tôi đã tặng hoa cho bạn.",
+            "audio": null
+          },
+          {
+            "jp": "アンさんに {本|ほん}を {貸|か}します。",
+            "vi": "Tôi cho An mượn sách.",
+            "audio": null
+          },
+          {
+            "jp": "{家族|かぞく}に メールを {送|おく}ります。",
+            "vi": "Tôi gửi email cho gia đình.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0704",
+        "pattern": "N1 (người) に N2 を もらいます／かります／ならいます",
+        "vi": "Nhận / mượn / học N2 từ N1",
+        "explain": "に đứng sau người cho (người mình nhận từ đó). Các động từ nhận về: もらいます (nhận), {借|か}ります (mượn), {習|なら}います (học).",
+        "viMistake": "Người cho đứng trước に: {先生|せんせい}に {日本語|にほんご}を {習|なら}います là học tiếng Nhật với thầy cô.",
+        "examples": [
+          {
+            "jp": "{母|はは}に シャツを もらいました。",
+            "vi": "Tôi đã nhận áo sơ mi từ mẹ.",
+            "audio": null
+          },
+          {
+            "jp": "{友達|ともだち}に お{金|かね}を {借|か}りました。",
+            "vi": "Tôi đã mượn tiền của bạn.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんに {日本語|にほんご}を {習|なら}います。",
+            "vi": "Tôi học tiếng Nhật với anh Tanaka.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0705",
+        "pattern": "もう V ました／まだです",
+        "vi": "Đã V rồi / chưa",
+        "explain": "Hỏi việc đã xong chưa: もう V ましたか. Trả lời: はい、もう V ました hoặc いいえ、まだです.",
+        "viMistake": "\"Chưa\" là いいえ、まだです; いいえ、V ませんでした có nghĩa là đã không làm.",
+        "examples": [
+          {
+            "jp": "もう {昼|ひる}ご{飯|はん}を {食|た}べましたか。…はい、もう {食|た}べました。",
+            "vi": "Bạn đã ăn trưa chưa? … Rồi, mình ăn rồi.",
+            "audio": null
+          },
+          {
+            "jp": "もう {宿題|しゅくだい}を しましたか。…いいえ、まだです。",
+            "vi": "Em đã làm bài tập chưa? … Dạ, chưa ạ.",
+            "audio": null
+          },
+          {
+            "jp": "もう {荷物|にもつ}を {送|おく}りましたか。…いいえ、まだです。これから {送|おく}ります。",
+            "vi": "Bạn đã gửi hành lý chưa? … Chưa. Bây giờ mình gửi.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0701",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"bạn ăn cơm bằng gì?\", \"sinh nhật vừa rồi ai tặng quà cho bạn?\". Bài đi theo trình tự bài 7 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}7{課|か}",
+        "vi": "Cho, nhận và công cụ: はしで たべます"
+      },
+      {
+        "id": "s0702",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Nói công cụ, ngôn ngữ: N で V ます\n2. Hỏi cách nói: 「…」は 〜ごで なんですか\n3. Cho và nhận: あげます・もらいます, かします・かります, おしえます・ならいます\n4. Đã … chưa: もう V ましたか → もう V ました／まだです"
+      },
+      {
+        "id": "s0703",
+        "teacherNotes": "Ba cặp động từ ngược nhau: あげます／もらいます, かします／かります, おしえます／ならいます.",
+        "type": "vocab",
+        "refs": ["v0701", "v0702", "v0703", "v0704", "v0705", "v0706", "v0707", "v0708"]
+      },
+      {
+        "id": "s0704",
+        "teacherNotes": "Bày đồ dùng thật (đũa, thìa, kéo, bút) và hỏi これは にほんごで なんですか.",
+        "type": "vocab",
+        "refs": ["v0709", "v0710", "v0711", "v0712", "v0713", "v0714", "v0715", "v0716"]
+      },
+      {
+        "id": "s0705",
+        "teacherNotes": "Hỏi học viên đã nhận quà gì vào sinh nhật, ai tặng.",
+        "type": "vocab",
+        "refs": ["v0717", "v0718", "v0719", "v0720", "v0721", "v0722", "v0723", "v0724"]
+      },
+      {
+        "id": "s0706",
+        "teacherNotes": "おみやげ: quà mang về từ chuyến đi hoặc mang tặng khi đến thăm.",
+        "type": "vocab",
+        "refs": ["v0725", "v0726", "v0727", "v0728", "v0729", "v0730", "v0731", "v0732"]
+      },
+      {
+        "id": "s0707",
+        "teacherNotes": "Kể về gia đình mình với người ngoài: ちち, はは; nói về gia đình người khác: おとうさん, おかあさん.",
+        "type": "vocab",
+        "refs": ["v0733", "v0734", "v0735", "v0736", "v0737", "v0738", "v0739", "v0740"]
+      },
+      {
+        "id": "s0708",
+        "teacherNotes": "Luyện các câu chào khi đến nhà và khi ăn bằng đóng vai.",
+        "type": "vocab",
+        "refs": ["v0741", "v0742", "v0743", "v0744", "v0745", "v0746", "v0747", "v0748"]
+      },
+      {
+        "id": "s0709",
+        "teacherNotes": "Cầm đũa, kéo, bút và làm động tác; học viên nói 〜で 〜ます.",
+        "type": "grammar",
+        "ref": "g0701"
+      },
+      {
+        "id": "s0710",
+        "type": "example",
+        "ref": "g0701",
+        "reveal": true
+      },
+      {
+        "id": "s0711",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: bằng gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["はし・ご{飯|はん}・{食|た}べます", "はしで ご{飯|はん}を {食|た}べます。"],
+          ["パソコン・レポート・{書|か}きます", "パソコンで レポートを {書|か}きます。"],
+          ["はさみ・{紙|かみ}・{切|き}ります", "はさみで {紙|かみ}を {切|き}ります。"],
+          [
+            "ケータイ・{写真|しゃしん}・{撮|と}りました",
+            "ケータイで {写真|しゃしん}を {撮|と}りました。"
+          ],
+          [
+            "{日本語|にほんご}・メール・{書|か}きます",
+            "{日本語|にほんご}で メールを {書|か}きます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0712",
+        "type": "quiz",
+        "ref": "q0701"
+      },
+      {
+        "id": "s0713",
+        "type": "quiz",
+        "ref": "q0702"
+      },
+      {
+        "id": "s0714",
+        "teacherNotes": "Học viên hỏi giáo viên cách nói những từ mình muốn biết bằng mẫu này.",
+        "type": "grammar",
+        "ref": "g0702"
+      },
+      {
+        "id": "s0715",
+        "type": "example",
+        "ref": "g0702",
+        "reveal": true
+      },
+      {
+        "id": "s0716",
+        "teacherNotes": "Giáo viên hỏi 「…」は にほんごで なんですか; học viên trả lời rồi bấm mũi tên.",
+        "type": "table",
+        "title": "Luyện tập 2: tiếng Nhật là gì?",
+        "columns": ["Tiếng Việt", "Tiếng Nhật"],
+        "rows": [
+          ["Cảm ơn", "ありがとう"],
+          ["Xin lỗi", "すみません"],
+          ["Tạm biệt", "さようなら"],
+          ["Mời vào nhà", "どうぞ おあがり ください"],
+          ["Trước khi ăn", "いただきます"],
+          ["Ăn xong", "ごちそうさまでした"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0717",
+        "type": "quiz",
+        "ref": "q0703"
+      },
+      {
+        "id": "s0718",
+        "teacherNotes": "Cột trái: người nhận đứng trước に. Cột phải: người cho đứng trước に.",
+        "type": "table",
+        "title": "Cho và nhận",
+        "columns": ["Trao đi (người nhận に)", "Nhận về (người cho に)"],
+        "rows": [
+          ["あげます (cho, tặng)", "もらいます (nhận)"],
+          ["{貸|か}します (cho mượn)", "{借|か}ります (mượn)"],
+          ["{教|おし}えます (dạy)", "{習|なら}います (học)"],
+          ["{送|おく}ります (gửi)", "でんわを かけます (gọi điện)"]
+        ]
+      },
+      {
+        "id": "s0719",
+        "teacherNotes": "Đưa quyển sách cho một học viên và nói 〜さんに ほんを あげます.",
+        "type": "grammar",
+        "ref": "g0703"
+      },
+      {
+        "id": "s0720",
+        "type": "example",
+        "ref": "g0703",
+        "reveal": true
+      },
+      {
+        "id": "s0721",
+        "teacherNotes": "Học viên vừa nhận sách nói lại: せんせいに ほんを もらいました.",
+        "type": "grammar",
+        "ref": "g0704"
+      },
+      {
+        "id": "s0722",
+        "type": "example",
+        "ref": "g0704",
+        "reveal": true
+      },
+      {
+        "id": "s0723",
+        "teacherNotes": "Mũi tên chỉ hướng món đồ đi; học viên chọn あげます hay もらいます.",
+        "type": "table",
+        "title": "Luyện tập 3: cho và nhận",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["わたし → {友達|ともだち}・{花|はな}", "{友達|ともだち}に {花|はな}を あげました。"],
+          ["{母|はは} → わたし・シャツ", "{母|はは}に シャツを もらいました。"],
+          [
+            "わたし → アンさん・{本|ほん}（{貸|か}します）",
+            "アンさんに {本|ほん}を {貸|か}しました。"
+          ],
+          [
+            "{友達|ともだち} → わたし・お{金|かね}（{借|か}ります）",
+            "{友達|ともだち}に お{金|かね}を {借|か}りました。"
+          ],
+          [
+            "{田中|たなか}さん → わたし・{日本語|にほんご}（{習|なら}います）",
+            "{田中|たなか}さんに {日本語|にほんご}を {習|なら}います。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0724",
+        "type": "quiz",
+        "ref": "q0705"
+      },
+      {
+        "id": "s0725",
+        "type": "quiz",
+        "ref": "q0708"
+      },
+      {
+        "id": "s0726",
+        "teacherNotes": "Hỏi học viên: もう ひるごはんを たべましたか; ai chưa ăn thì trả lời まだです.",
+        "type": "grammar",
+        "ref": "g0705"
+      },
+      {
+        "id": "s0727",
+        "type": "example",
+        "ref": "g0705",
+        "reveal": true
+      },
+      {
+        "id": "s0728",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật.",
+        "type": "table",
+        "title": "Luyện tập 4: đã … chưa?",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["もう {昼|ひる}ご{飯|はん}を {食|た}べましたか。", "はい、もう {食|た}べました。"],
+          ["もう {宿題|しゅくだい}を しましたか。", "いいえ、まだです。"],
+          ["もう {切符|きっぷ}を {買|か}いましたか。", "はい、もう {買|か}いました。"],
+          ["もう メールを {送|おく}りましたか。", "いいえ、まだです。これから {送|おく}ります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0729",
+        "type": "quiz",
+        "ref": "q0711"
+      },
+      {
+        "id": "s0730",
+        "teacherNotes": "Học viên khen đồ của bạn bằng すてきですね và hỏi ai tặng.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Cái áo đẹp quá",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ハナさん、その シャツ、すてきですね。",
+            "vi": "Hana, cái áo đó đẹp quá."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "ありがとう ございます。{誕生日|たんじょうび}に {母|はは}に もらいました。",
+            "vi": "Cảm ơn bạn. Mình được mẹ tặng vào sinh nhật."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。わたしは {友達|ともだち}に ケーキを もらいました。",
+            "vi": "Vậy à. Mình thì được bạn tặng bánh kem."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "いいですね。",
+            "vi": "Hay quá nhỉ."
+          }
+        ]
+      },
+      {
+        "id": "s0731",
+        "teacherNotes": "Đóng vai đến nhà người Nhật: chào khi vào, tặng quà, nhận đồ uống.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Đến nhà anh Tanaka",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "いらっしゃい。どうぞ おあがり ください。",
+            "vi": "Chào mừng em. Mời em vào nhà."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{失礼|しつれい}します。これ、ベトナムの おみやげです。",
+            "vi": "Em xin phép ạ. Đây là quà Việt Nam ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "どうも ありがとう。コーヒーは いかがですか。",
+            "vi": "Cảm ơn em nhiều. Em uống cà phê nhé?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ありがとう ございます。いただきます。",
+            "vi": "Cảm ơn anh. Em xin ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "アンさんは だれに {日本語|にほんご}を {習|なら}いましたか。",
+            "vi": "An học tiếng Nhật với ai?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ハノイで {日本人|にほんじん}の {先生|せんせい}に {習|なら}いました。",
+            "vi": "Em học với thầy người Nhật ở Hà Nội ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0732",
+        "teacherNotes": "Đổi việc cần làm: {宿題|しゅくだい}, {切符|きっぷ}, {荷物|にもつ}.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Em đã gửi chưa?",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "リンさん、もう レポートを {送|おく}りましたか。",
+            "vi": "Linh, em đã gửi báo cáo chưa?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "いいえ、まだです。すみません。",
+            "vi": "Dạ chưa ạ. Em xin lỗi."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "パソコンで {書|か}きましたか。",
+            "vi": "Em viết bằng máy tính à?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "はい。これから メールで {送|おく}ります。",
+            "vi": "Vâng. Bây giờ em gửi bằng email ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "わかりました。",
+            "vi": "Được rồi."
+          }
+        ]
+      },
+      {
+        "id": "s0733",
+        "teacherNotes": "Học viên nói câu tiếng Nhật cho từng tình huống trước khi bấm mũi tên.",
+        "type": "table",
+        "title": "Câu nói khi đến nhà và khi ăn",
+        "columns": ["Tình huống", "Câu nói"],
+        "rows": [
+          ["Chủ nhà đón khách", "いらっしゃい"],
+          ["Khách bước vào", "{失礼|しつれい}します"],
+          ["Mời đồ uống", "コーヒーは いかがですか"],
+          ["Trước khi ăn", "いただきます"],
+          ["Ăn xong", "ごちそうさまでした"],
+          ["Khen món đồ", "すてきですね"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0734",
+        "type": "quiz",
+        "ref": "q0734"
+      },
+      {
+        "id": "s0735",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Công cụ, ngôn ngữ + で: はしで, にほんごで\n• 「…」は 〜ごで なんですか\n• Người nhận + に: あげます, かします, おしえます, おくります, かけます\n• Người cho + に: もらいます, かります, ならいます\n• もう V ましたか → はい、もう V ました／いいえ、まだです\n• Gia đình mình: ちち, はは; gia đình người khác: おとうさん, おかあさん"
+      },
+      {
+        "id": "s0736",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết 3 câu về món quà bạn đã tặng hoặc đã nhận: だれに なにを あげましたか／もらいましたか.\n3. Hỏi giáo viên cách nói 3 từ bạn hay dùng: 「…」は にほんごで なんですか."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0701",
+        "prompt": "はし（　　） ごはんを たべます。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Công cụ + で.",
+        "type": "choice",
+        "options": ["を", "で", "に", "へ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0702",
+        "prompt": "Hỏi: Bạn viết báo cáo bằng gì?",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Hỏi công cụ: なにで.",
+        "type": "choice",
+        "options": [
+          "なにで レポートを かきますか。",
+          "なにを レポートで かきますか。",
+          "だれに レポートを かきますか。",
+          "どこへ レポートを かきますか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0703",
+        "prompt": "「Thank you」は にほんご（　　） なんですか。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Bằng (ngôn ngữ): で.",
+        "type": "choice",
+        "options": ["を", "に", "の", "で"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0704",
+        "prompt": "「さようなら」は ベトナムごで なんですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "さようなら: Tạm biệt.",
+        "type": "choice",
+        "options": ["「Xin chào」です", "「Cảm ơn」です", "「Tạm biệt」です", "「Xin lỗi」です"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0705",
+        "prompt": "ともだち（　　） はなを あげました。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Người nhận + に.",
+        "type": "choice",
+        "options": ["で", "に", "を", "へ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0706",
+        "prompt": "はは（　　） シャツを もらいました。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Người cho + に (もらいます).",
+        "type": "choice",
+        "options": ["に", "を", "で", "と"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0707",
+        "prompt": "Chọn câu đúng: Tôi cho An mượn sách.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Cho mượn: かします.",
+        "type": "choice",
+        "options": [
+          "アンさんに ほんを かります。",
+          "アンさんを ほんに かします。",
+          "アンさんで ほんを かします。",
+          "アンさんに ほんを かします。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0708",
+        "prompt": "Chọn câu đúng: Tôi đã mượn tiền của bạn.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Mượn: かります.",
+        "type": "choice",
+        "options": [
+          "ともだちに おかねを かしました。",
+          "ともだちを おかねに かりました。",
+          "ともだちに おかねを かりました。",
+          "ともだちで おかねを かりました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0709",
+        "prompt": "Chọn câu đúng: Tôi học tiếng Nhật với anh Tanaka.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Học từ ai: N に ならいます.",
+        "type": "choice",
+        "options": [
+          "たなかさんに にほんごを おしえます。",
+          "たなかさんに にほんごを ならいます。",
+          "たなかさんを にほんごに ならいます。",
+          "たなかさんで にほんごを ならいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0710",
+        "prompt": "せんせいは がくせいに にほんごを （　　）。(dạy)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Dạy: おしえます.",
+        "type": "choice",
+        "options": ["おしえます", "ならいます", "もらいます", "かります"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0711",
+        "prompt": "もう ひるごはんを たべましたか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Chưa: まだです.",
+        "type": "choice",
+        "options": ["たべませんでした", "たべません", "もうです", "まだです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0712",
+        "prompt": "もう しゅくだいを しましたか。…はい、（　　）。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Đã rồi: もう しました.",
+        "type": "choice",
+        "options": ["まだです", "しません", "もう しました", "しませんでした"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0713",
+        "prompt": "あげます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "あげます: cho, tặng.",
+        "type": "choice",
+        "options": ["nhận", "cho, tặng", "mượn", "học"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0714",
+        "prompt": "もらいます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "もらいます: nhận.",
+        "type": "choice",
+        "options": ["nhận", "cho", "cho mượn", "gửi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0715",
+        "prompt": "かします nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "かします: cho mượn.",
+        "type": "choice",
+        "options": ["mượn", "trả lại", "mua", "cho mượn"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0716",
+        "prompt": "かります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "かります: mượn.",
+        "type": "choice",
+        "options": ["cho mượn", "bán", "mượn", "gửi"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0717",
+        "prompt": "ならいます nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "ならいます: học (từ ai đó).",
+        "type": "choice",
+        "options": ["dạy", "học (từ ai đó)", "đọc", "viết"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0718",
+        "prompt": "きります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "きります: cắt.",
+        "type": "choice",
+        "options": ["cắt", "gửi", "gọi điện", "viết"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0719",
+        "prompt": "はさみ là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "はさみ: cái kéo.",
+        "type": "choice",
+        "options": ["đôi đũa", "cái thìa", "con dao", "cái kéo"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0720",
+        "prompt": "はし là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "はし: đôi đũa.",
+        "type": "choice",
+        "options": ["cái nĩa", "cái thìa", "đôi đũa", "con dao"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0721",
+        "prompt": "Chọn câu đúng: Tôi cắt giấy bằng kéo.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Công cụ + で, đối tượng + を.",
+        "type": "choice",
+        "options": [
+          "はさみを かみで きります。",
+          "はさみで かみを きります。",
+          "はさみに かみを きります。",
+          "かみで はさみを きります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0722",
+        "prompt": "Chọn câu đúng: Tôi gọi điện cho gia đình.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Gọi điện cho ai: N に でんわを かけます.",
+        "type": "choice",
+        "options": [
+          "かぞくに でんわを かけます。",
+          "かぞくを でんわに かけます。",
+          "かぞくで でんわを かけます。",
+          "かぞくに でんわで かけます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0723",
+        "prompt": "Trước khi ăn, người Nhật nói:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Trước khi ăn: いただきます.",
+        "type": "choice",
+        "options": ["ごちそうさまでした", "いらっしゃい", "しつれいします", "いただきます"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0724",
+        "prompt": "Ăn xong, người Nhật nói:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Ăn xong: ごちそうさまでした.",
+        "type": "choice",
+        "options": ["いただきます", "いかがですか", "ごちそうさまでした", "どうぞ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0725",
+        "prompt": "Bước vào nhà người khác, bạn nói:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Vào nhà, vào phòng: しつれいします.",
+        "type": "choice",
+        "options": ["いらっしゃい", "しつれいします", "いただきます", "すてきですね"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0726",
+        "prompt": "Chủ nhà đón khách, nói:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Đón khách: いらっしゃい.",
+        "type": "choice",
+        "options": ["いらっしゃい", "しつれいします", "ごちそうさまでした", "まだです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0727",
+        "prompt": "コーヒーは いかがですか。nghĩa là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "〜は いかがですか: mời lịch sự.",
+        "type": "choice",
+        "options": [
+          "Cà phê giá bao nhiêu?",
+          "Cà phê ở đâu?",
+          "Cà phê của ai?",
+          "Anh/chị dùng cà phê nhé?"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0728",
+        "prompt": "すてきですね dùng khi:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "すてきですね: đẹp quá, tuyệt quá nhỉ.",
+        "type": "choice",
+        "options": ["xin lỗi", "từ chối", "khen một thứ đẹp, hay", "hỏi giá"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0729",
+        "prompt": "Chọn câu đúng: Tôi chụp ảnh bằng điện thoại.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Công cụ + で.",
+        "type": "choice",
+        "options": [
+          "ケータイを しゃしんで とります。",
+          "ケータイで しゃしんを とります。",
+          "ケータイに しゃしんを とります。",
+          "しゃしんで ケータイを とります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0730",
+        "prompt": "Chọn câu đúng: Tôi viết email bằng tiếng Nhật.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Ngôn ngữ + で.",
+        "type": "choice",
+        "options": [
+          "にほんごで メールを かきます。",
+          "にほんごを メールで かきます。",
+          "にほんごに メールを かきます。",
+          "にほんごと メールを かきます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0731",
+        "prompt": "Chọn câu đúng: Bây giờ tôi sẽ gửi.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "これから + việc sắp làm (ます).",
+        "type": "choice",
+        "options": [
+          "もう おくりました。",
+          "まだ おくります。",
+          "これから おくりました。",
+          "これから おくります。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0732",
+        "prompt": "ちち là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "ちち (父): bố tôi, khi kể với người ngoài.",
+        "type": "choice",
+        "options": ["mẹ tôi", "bố của người khác", "bố tôi", "anh trai"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0733",
+        "prompt": "おかあさん là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Kể về mẹ mình với người ngoài dùng はは.",
+        "type": "choice",
+        "options": [
+          "mẹ tôi khi kể với người ngoài",
+          "mẹ của người khác (hoặc gọi mẹ mình)",
+          "bố",
+          "chị gái"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0734",
+        "prompt": "Kể với người ngoài: Mẹ tôi đã cho tôi cái này.",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Mẹ mình (kể với người ngoài): はは; nhận: もらいました.",
+        "type": "choice",
+        "options": [
+          "ははに これを もらいました。",
+          "おかあさんに これを あげました。",
+          "ははに これを あげました。",
+          "おかあさんを これに もらいました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0735",
+        "prompt": "きっぷ là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "きっぷ (切符): vé.",
+        "type": "choice",
+        "options": ["hành lý", "tiền", "quà", "vé"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0736",
+        "prompt": "にもつ là:",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "にもつ (荷物): hành lý.",
+        "type": "choice",
+        "options": ["vé", "thư", "hành lý, đồ đạc", "hoa"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0737",
+        "prompt": "Điền: はし（　　） たべます。(bằng đũa)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Công cụ + で.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["で"]
+      },
+      {
+        "id": "q0738",
+        "prompt": "Điền: ともだち（　　） プレゼントを あげます。(cho bạn)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Người nhận + に.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["に"]
+      },
+      {
+        "id": "q0739",
+        "prompt": "Điền: 「Cảm ơn」は にほんごで （　　）ですか。(là gì)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Hỏi là gì: なんですか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なん"]
+      },
+      {
+        "id": "q0740",
+        "prompt": "Điền: もう たべましたか。…いいえ、（　　）です。(chưa)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Chưa: まだです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まだ"]
+      },
+      {
+        "id": "q0741",
+        "prompt": "Điền: はい、（　　） たべました。(đã … rồi)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Đã rồi: もう.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もう"]
+      },
+      {
+        "id": "q0742",
+        "prompt": "Điền: たんじょうびに ははに はなを （　　）。(đã nhận)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Đã nhận: もらいました.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もらいました"]
+      },
+      {
+        "id": "q0743",
+        "prompt": "Điền: ともだちに ほんを （　　）。(đã cho mượn)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Đã cho mượn: かしました.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かしました"]
+      },
+      {
+        "id": "q0744",
+        "prompt": "Điền: としょかんで ほんを （　　）。(mượn)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Mượn: かります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かります"]
+      },
+      {
+        "id": "q0745",
+        "prompt": "Điền: せんせいに にほんごを （　　）。(học)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Học từ ai: ならいます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ならいます"]
+      },
+      {
+        "id": "q0746",
+        "prompt": "Điền: かぞくに でんわを （　　）。(gọi điện)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Gọi điện: でんわを かけます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かけます"]
+      },
+      {
+        "id": "q0747",
+        "prompt": "Điền: はさみで かみを （　　）。(cắt)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Cắt: きります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きります"]
+      },
+      {
+        "id": "q0748",
+        "prompt": "Điền câu nói trước khi ăn: （　　）。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Trước khi ăn: いただきます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いただきます"]
+      },
+      {
+        "id": "q0749",
+        "prompt": "Điền câu nói khi ăn xong: （　　）。",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Ăn xong: ごちそうさまでした.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ごちそうさまでした"]
+      },
+      {
+        "id": "q0750",
+        "prompt": "Điền: （　　） おくります。(từ bây giờ)",
+        "points": 1,
+        "tags": ["minna-7"],
+        "explain": "Từ bây giờ: これから.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["これから"]
+      }
+    ]
+  }
+}
