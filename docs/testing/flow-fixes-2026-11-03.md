@@ -118,6 +118,15 @@ E2E chưa chạy (đợt này tạm hoãn E2E). Đã sửa `e2e-supabase/teach-a
 
 Chưa thử với Resend thật (chưa có domain và API key). Vòng lặp nhiều lô và 409 kiểm bằng test đơn vị và đọc mã.
 
+## Thu hồi quyền gọi hàm trigger
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/trigger-function-execute-migration.test.ts` (PGlite, mọi migration): không hàm trigger nào trong `public` cho anon/authenticated EXECUTE; `teaches_class`/`teaches_assignment` vẫn gọi được; tạo tài khoản vẫn có hồ sơ, tạo lớp tự học vẫn ghi danh chủ lớp dù vai tạo lớp không còn EXECUTE hàm trigger | Đạt |
+| Supabase local sau migration: 0/11 hàm trigger còn gọi được bởi anon/authenticated; đăng ký tài khoản thử qua Auth API vẫn tạo `profiles` | Đạt |
+
+Migration chưa chạy trên production. Code không phụ thuộc migration này nên đã lên trước; người dùng chạy `supabase db push` khi tiện.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).
