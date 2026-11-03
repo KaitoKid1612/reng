@@ -1,0 +1,1504 @@
+{
+  "id": "minna-1-08",
+  "title": "Bài 8 – Tính từ: miêu tả người, vật và nơi chốn",
+  "titleJa": "第8課　ハノイは どんな まちですか",
+  "summary": "Theo trình tự bài 8 Minna no Nihongo Sơ cấp I: hai loại tính từ đuôi な và đuôi い, phủ định じゃ ありません／〜くないです (いい → よくないです), tính từ đứng trước danh từ (しずかな まち, おおきい まち), hỏi どう và どんな N, とても／あまり 〜ない, nối ý bằng 〜が và そして, câu nói khi được mời thêm và khi xin phép về.",
+  "order": 8,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0801",
+        "jp": "ハンサム［な］",
+        "romaji": "hansamu [na]",
+        "vi": "đẹp trai",
+        "audio": null
+      },
+      {
+        "id": "v0802",
+        "jp": "きれい［な］",
+        "romaji": "kirei [na]",
+        "vi": "đẹp, sạch",
+        "audio": null,
+        "image": "/icons/vocab/tulip.svg"
+      },
+      {
+        "id": "v0803",
+        "jp": "しずか［な］",
+        "kanji": "静か［な］",
+        "romaji": "shizuka [na]",
+        "vi": "yên tĩnh",
+        "audio": null,
+        "image": "/icons/vocab/leaf-fluttering-in-wind.svg"
+      },
+      {
+        "id": "v0804",
+        "jp": "にぎやか［な］",
+        "romaji": "nigiyaka [na]",
+        "vi": "nhộn nhịp, náo nhiệt",
+        "audio": null,
+        "image": "/icons/vocab/red-paper-lantern.svg"
+      },
+      {
+        "id": "v0805",
+        "jp": "ゆうめい［な］",
+        "kanji": "有名［な］",
+        "romaji": "yuumei [na]",
+        "vi": "nổi tiếng",
+        "audio": null,
+        "image": "/icons/vocab/1st-place-medal.svg"
+      },
+      {
+        "id": "v0806",
+        "jp": "しんせつ［な］",
+        "kanji": "親切［な］",
+        "romaji": "shinsetsu [na]",
+        "vi": "tốt bụng, tử tế",
+        "audio": null
+      },
+      {
+        "id": "v0807",
+        "jp": "げんき［な］",
+        "kanji": "元気［な］",
+        "romaji": "genki [na]",
+        "vi": "khỏe mạnh",
+        "audio": null,
+        "image": "/icons/vocab/person-lifting-weights.svg"
+      },
+      {
+        "id": "v0808",
+        "jp": "ひま［な］",
+        "kanji": "暇［な］",
+        "romaji": "hima [na]",
+        "vi": "rảnh rỗi",
+        "audio": null
+      },
+      {
+        "id": "v0809",
+        "jp": "べんり［な］",
+        "kanji": "便利［な］",
+        "romaji": "benri [na]",
+        "vi": "tiện lợi",
+        "audio": null
+      },
+      {
+        "id": "v0810",
+        "jp": "おおきい",
+        "kanji": "大きい",
+        "romaji": "ookii",
+        "vi": "to, lớn",
+        "audio": null
+      },
+      {
+        "id": "v0811",
+        "jp": "ちいさい",
+        "kanji": "小さい",
+        "romaji": "chiisai",
+        "vi": "nhỏ, bé",
+        "audio": null
+      },
+      {
+        "id": "v0812",
+        "jp": "あたらしい",
+        "kanji": "新しい",
+        "romaji": "atarashii",
+        "vi": "mới",
+        "audio": null
+      },
+      {
+        "id": "v0813",
+        "jp": "ふるい",
+        "kanji": "古い",
+        "romaji": "furui",
+        "vi": "cũ, cổ",
+        "audio": null
+      },
+      {
+        "id": "v0814",
+        "jp": "いい（よい）",
+        "romaji": "ii (yoi)",
+        "vi": "tốt",
+        "audio": null,
+        "image": "/icons/vocab/thumbs-up.svg"
+      },
+      {
+        "id": "v0815",
+        "jp": "わるい",
+        "kanji": "悪い",
+        "romaji": "warui",
+        "vi": "xấu, kém",
+        "audio": null
+      },
+      {
+        "id": "v0816",
+        "jp": "あつい",
+        "kanji": "暑い",
+        "romaji": "atsui",
+        "vi": "nóng (thời tiết)",
+        "audio": null,
+        "image": "/icons/vocab/sun.svg"
+      },
+      {
+        "id": "v0817",
+        "jp": "さむい",
+        "kanji": "寒い",
+        "romaji": "samui",
+        "vi": "lạnh (thời tiết)",
+        "audio": null,
+        "image": "/icons/vocab/snowman.svg"
+      },
+      {
+        "id": "v0818",
+        "jp": "つめたい",
+        "kanji": "冷たい",
+        "romaji": "tsumetai",
+        "vi": "lạnh, mát (đồ vật, đồ uống)",
+        "audio": null,
+        "image": "/icons/vocab/soft-ice-cream.svg"
+      },
+      {
+        "id": "v0819",
+        "jp": "むずかしい",
+        "kanji": "難しい",
+        "romaji": "muzukashii",
+        "vi": "khó",
+        "audio": null
+      },
+      {
+        "id": "v0820",
+        "jp": "やさしい",
+        "kanji": "易しい",
+        "romaji": "yasashii",
+        "vi": "dễ",
+        "audio": null
+      },
+      {
+        "id": "v0821",
+        "jp": "たかい",
+        "kanji": "高い",
+        "romaji": "takai",
+        "vi": "đắt; cao",
+        "audio": null
+      },
+      {
+        "id": "v0822",
+        "jp": "やすい",
+        "kanji": "安い",
+        "romaji": "yasui",
+        "vi": "rẻ",
+        "audio": null
+      },
+      {
+        "id": "v0823",
+        "jp": "おもしろい",
+        "kanji": "面白い",
+        "romaji": "omoshiroi",
+        "vi": "thú vị, hay",
+        "audio": null
+      },
+      {
+        "id": "v0824",
+        "jp": "おいしい",
+        "romaji": "oishii",
+        "vi": "ngon",
+        "audio": null,
+        "image": "/icons/vocab/sushi.svg"
+      },
+      {
+        "id": "v0825",
+        "jp": "いそがしい",
+        "kanji": "忙しい",
+        "romaji": "isogashii",
+        "vi": "bận",
+        "audio": null,
+        "image": "/icons/vocab/tired-face.svg"
+      },
+      {
+        "id": "v0826",
+        "jp": "たのしい",
+        "kanji": "楽しい",
+        "romaji": "tanoshii",
+        "vi": "vui",
+        "audio": null,
+        "image": "/icons/vocab/party-popper.svg"
+      },
+      {
+        "id": "v0827",
+        "jp": "しろい",
+        "kanji": "白い",
+        "romaji": "shiroi",
+        "vi": "trắng",
+        "audio": null
+      },
+      {
+        "id": "v0828",
+        "jp": "くろい",
+        "kanji": "黒い",
+        "romaji": "kuroi",
+        "vi": "đen",
+        "audio": null
+      },
+      {
+        "id": "v0829",
+        "jp": "あかい",
+        "kanji": "赤い",
+        "romaji": "akai",
+        "vi": "đỏ",
+        "audio": null
+      },
+      {
+        "id": "v0830",
+        "jp": "あおい",
+        "kanji": "青い",
+        "romaji": "aoi",
+        "vi": "xanh dương",
+        "audio": null
+      },
+      {
+        "id": "v0831",
+        "jp": "さくら",
+        "kanji": "桜",
+        "romaji": "sakura",
+        "vi": "hoa anh đào",
+        "audio": null,
+        "image": "/icons/vocab/cherry-blossom.svg"
+      },
+      {
+        "id": "v0832",
+        "jp": "やま",
+        "kanji": "山",
+        "romaji": "yama",
+        "vi": "núi",
+        "audio": null,
+        "image": "/icons/vocab/mountain.svg"
+      },
+      {
+        "id": "v0833",
+        "jp": "ふじさん",
+        "kanji": "富士山",
+        "romaji": "fujisan",
+        "vi": "núi Phú Sĩ",
+        "audio": null,
+        "image": "/icons/vocab/mount-fuji.svg"
+      },
+      {
+        "id": "v0834",
+        "jp": "まち",
+        "kanji": "町",
+        "romaji": "machi",
+        "vi": "thị trấn, thành phố",
+        "audio": null
+      },
+      {
+        "id": "v0835",
+        "jp": "たべもの",
+        "kanji": "食べ物",
+        "romaji": "tabemono",
+        "vi": "đồ ăn",
+        "audio": null,
+        "image": "/icons/vocab/pot-of-food.svg"
+      },
+      {
+        "id": "v0836",
+        "jp": "ところ",
+        "kanji": "所",
+        "romaji": "tokoro",
+        "vi": "nơi, chỗ",
+        "audio": null
+      },
+      {
+        "id": "v0837",
+        "jp": "りょう",
+        "kanji": "寮",
+        "romaji": "ryou",
+        "vi": "ký túc xá",
+        "audio": null
+      },
+      {
+        "id": "v0838",
+        "jp": "せいかつ",
+        "kanji": "生活",
+        "romaji": "seikatsu",
+        "vi": "cuộc sống, sinh hoạt",
+        "audio": null
+      },
+      {
+        "id": "v0839",
+        "jp": "どう",
+        "romaji": "dou",
+        "vi": "thế nào",
+        "audio": null
+      },
+      {
+        "id": "v0840",
+        "jp": "どんな 〜",
+        "romaji": "donna ~",
+        "vi": "… như thế nào, loại gì",
+        "audio": null
+      },
+      {
+        "id": "v0841",
+        "jp": "とても",
+        "romaji": "totemo",
+        "vi": "rất",
+        "audio": null
+      },
+      {
+        "id": "v0842",
+        "jp": "あまり",
+        "romaji": "amari",
+        "vi": "không … lắm (đi với phủ định)",
+        "audio": null
+      },
+      {
+        "id": "v0843",
+        "jp": "そして",
+        "romaji": "soshite",
+        "vi": "và, thêm nữa (nối hai câu)",
+        "audio": null
+      },
+      {
+        "id": "v0844",
+        "jp": "〜が、〜",
+        "romaji": "~ga, ~",
+        "vi": "…, nhưng …",
+        "audio": null
+      },
+      {
+        "id": "v0845",
+        "jp": "おげんきですか",
+        "kanji": "お元気ですか",
+        "romaji": "ogenki desu ka",
+        "vi": "bạn có khỏe không?",
+        "audio": null
+      },
+      {
+        "id": "v0846",
+        "jp": "もう いっぱい いかがですか",
+        "kanji": "もう 一杯 いかがですか",
+        "romaji": "mou ippai ikaga desu ka",
+        "vi": "dùng thêm một cốc nữa nhé?",
+        "audio": null
+      },
+      {
+        "id": "v0847",
+        "jp": "いいえ、けっこうです",
+        "kanji": "いいえ、結構です",
+        "romaji": "iie, kekkou desu",
+        "vi": "không, đủ rồi ạ (từ chối lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0848",
+        "jp": "そろそろ しつれいします",
+        "kanji": "そろそろ 失礼します",
+        "romaji": "sorosoro shitsurei shimasu",
+        "vi": "tôi xin phép về (sắp về)",
+        "audio": null
+      },
+      {
+        "id": "v0849",
+        "jp": "また いらっしゃって ください",
+        "romaji": "mata irasshatte kudasai",
+        "vi": "lần sau lại đến chơi nhé",
+        "audio": null
+      },
+      {
+        "id": "v0850",
+        "jp": "ホイアン",
+        "romaji": "hoian",
+        "vi": "Hội An",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0801",
+        "pattern": "N は な-adj です／N は い-adj です",
+        "vi": "N thì … (tính từ)",
+        "explain": "Tính từ có hai loại. Tính từ đuôi な đứng trước です không có な: しずかです. Tính từ đuôi い giữ い: おおきいです. Hỏi: N は どうですか (thế nào).",
+        "viMistake": "Không nói しずかなです; trước です tính từ đuôi な bỏ な.",
+        "examples": [
+          {
+            "jp": "ハノイは にぎやかです。",
+            "vi": "Hà Nội nhộn nhịp.",
+            "audio": null
+          },
+          {
+            "jp": "この {本|ほん}は おもしろいです。",
+            "vi": "Quyển sách này hay.",
+            "audio": null
+          },
+          {
+            "jp": "{富士山|ふじさん}は {有名|ゆうめい}です。",
+            "vi": "Núi Phú Sĩ nổi tiếng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0802",
+        "pattern": "な-adj じゃ ありません／い-adj くないです",
+        "vi": "Không … (phủ định của tính từ)",
+        "explain": "Tính từ đuôi な: じゃ ありません (giống danh từ). Tính từ đuôi い: bỏ い thêm くないです: あつい → あつくないです. Riêng いい → よくないです.",
+        "viMistake": "Không nói いいくないです; phủ định của いい là よくないです.",
+        "examples": [
+          {
+            "jp": "{寮|りょう}は しずかじゃ ありません。",
+            "vi": "Ký túc xá không yên tĩnh.",
+            "audio": null
+          },
+          {
+            "jp": "きょうは {寒|さむ}くないです。",
+            "vi": "Hôm nay không lạnh.",
+            "audio": null
+          },
+          {
+            "jp": "この {映画|えいが}は よくないです。",
+            "vi": "Bộ phim này không hay.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0803",
+        "pattern": "な-adj な N／い-adj N",
+        "vi": "N … (tính từ đứng trước danh từ)",
+        "explain": "Đứng trước danh từ, tính từ đuôi な thêm な: しずかな まち. Tính từ đuôi い giữ nguyên: おおきい まち. Thứ tự ngược tiếng Việt: tính từ trước, danh từ sau.",
+        "viMistake": "Tiếng Việt nói \"thành phố yên tĩnh\", tiếng Nhật nói しずかな まち (tính từ đứng trước).",
+        "examples": [
+          {
+            "jp": "ホイアンは きれいな まちです。",
+            "vi": "Hội An là thành phố đẹp.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {親切|しんせつ}な {人|ひと}です。",
+            "vi": "Anh Tanaka là người tốt bụng.",
+            "audio": null
+          },
+          {
+            "jp": "{赤|あか}い かさを {買|か}いました。",
+            "vi": "Tôi đã mua cái ô màu đỏ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0804",
+        "pattern": "N は どうですか・N は どんな N ですか",
+        "vi": "N thế nào? / N là … như thế nào?",
+        "explain": "どう hỏi cảm nhận, đánh giá: {日本|にほん}の {生活|せいかつ}は どうですか. どんな + danh từ hỏi đặc điểm: ハノイは どんな まちですか → にぎやかな まちです.",
+        "viMistake": "Trả lời どんな N ですか bằng tính từ + danh từ: しずかな まちです, không chỉ trả lời しずかです.",
+        "examples": [
+          {
+            "jp": "{日本|にほん}の {生活|せいかつ}は どうですか。…とても {楽|たの}しいです。",
+            "vi": "Cuộc sống ở Nhật thế nào? … Rất vui.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイは どんな まちですか。…にぎやかな まちです。",
+            "vi": "Hà Nội là thành phố như thế nào? … Là thành phố nhộn nhịp.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは どんな {人|ひと}ですか。…{親切|しんせつ}な {人|ひと}です。",
+            "vi": "Anh Tanaka là người thế nào? … Là người tốt bụng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0805",
+        "pattern": "とても／あまり 〜ない・〜が、〜・そして",
+        "vi": "Rất / không … lắm; nhưng; và",
+        "explain": "とても + tính từ khẳng định (rất); あまり + tính từ phủ định (không … lắm). 〜が、〜 nối hai ý trái ngược (nhưng). そして nối thêm ý cùng chiều ở câu sau (và).",
+        "viMistake": "あまり luôn đi với phủ định: あまり {寒|さむ}くないです, không nói あまり {寒|さむ}いです.",
+        "examples": [
+          {
+            "jp": "この フォーは とても おいしいです。",
+            "vi": "Bát phở này rất ngon.",
+            "audio": null
+          },
+          {
+            "jp": "{日本語|にほんご}は {難|むずか}しいですが、おもしろいです。",
+            "vi": "Tiếng Nhật khó nhưng thú vị.",
+            "audio": null
+          },
+          {
+            "jp": "ハノイは あまり {寒|さむ}くないです。そして、{食|た}べ{物|もの}は おいしいです。",
+            "vi": "Hà Nội không lạnh lắm. Và đồ ăn thì ngon.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0801",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"Hà Nội là thành phố thế nào?\", \"tiếng Nhật khó không?\". Bài đi theo trình tự bài 8 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}8{課|か}",
+        "vi": "Tính từ: ハノイは どんな まちですか"
+      },
+      {
+        "id": "s0802",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Hai loại tính từ: đuôi な (しずか) và đuôi い (おおきい)\n2. Phủ định: じゃ ありません／〜くないです; いい → よくないです\n3. Tính từ trước danh từ: しずかな まち, おおきい まち\n4. Hỏi どう／どんな N; とても, あまり 〜ない, 〜が, そして"
+      },
+      {
+        "id": "s0803",
+        "teacherNotes": "Tính từ đuôi な: ghi kèm ［な］ để nhớ thêm な trước danh từ.",
+        "type": "vocab",
+        "refs": ["v0801", "v0802", "v0803", "v0804", "v0805", "v0806", "v0807", "v0808"]
+      },
+      {
+        "id": "s0804",
+        "teacherNotes": "Cặp trái nghĩa: おおきい／ちいさい, あたらしい／ふるい, いい／わるい, あつい／さむい.",
+        "type": "vocab",
+        "refs": ["v0809", "v0810", "v0811", "v0812", "v0813", "v0814", "v0815", "v0816"]
+      },
+      {
+        "id": "s0805",
+        "teacherNotes": "あつい／さむい cho thời tiết; つめたい cho đồ vật, đồ uống.",
+        "type": "vocab",
+        "refs": ["v0817", "v0818", "v0819", "v0820", "v0821", "v0822", "v0823", "v0824"]
+      },
+      {
+        "id": "s0806",
+        "teacherNotes": "Màu sắc dùng như tính từ đuôi い: あかい かさ, しろい シャツ.",
+        "type": "vocab",
+        "refs": ["v0825", "v0826", "v0827", "v0828", "v0829", "v0830", "v0831", "v0832"]
+      },
+      {
+        "id": "s0807",
+        "teacherNotes": "Hỏi học viên về quê mình: どんな まちですか.",
+        "type": "vocab",
+        "refs": ["v0833", "v0834", "v0835", "v0836", "v0837", "v0838", "v0839", "v0840"]
+      },
+      {
+        "id": "s0808",
+        "teacherNotes": "あまり luôn đi với phủ định: あまり たかくないです.",
+        "type": "vocab",
+        "refs": ["v0841", "v0842", "v0843", "v0844", "v0845", "v0846", "v0847", "v0848"]
+      },
+      {
+        "id": "s0809",
+        "teacherNotes": "Đóng vai đến nhà người Nhật: được mời thêm, từ chối lịch sự, xin phép về.",
+        "type": "vocab",
+        "refs": ["v0849", "v0850"]
+      },
+      {
+        "id": "s0810",
+        "teacherNotes": "Đọc theo hàng: khẳng định → phủ định → trước danh từ. Chú ý いい → よくない.",
+        "type": "table",
+        "title": "Hai loại tính từ",
+        "columns": ["Tính từ", "Khẳng định", "Phủ định", "Trước danh từ"],
+        "rows": [
+          ["しずか (đuôi な)", "しずかです", "しずかじゃ ありません", "しずかな まち"],
+          ["おおきい (đuôi い)", "おおきいです", "おおきくないです", "おおきい まち"],
+          ["いい (đặc biệt)", "いいです", "よくないです", "いい {人|ひと}"]
+        ]
+      },
+      {
+        "id": "s0811",
+        "teacherNotes": "Cầm hai vật to nhỏ khác nhau và nói これは おおきいです／ちいさいです.",
+        "type": "grammar",
+        "ref": "g0801"
+      },
+      {
+        "id": "s0812",
+        "type": "example",
+        "ref": "g0801",
+        "reveal": true
+      },
+      {
+        "id": "s0813",
+        "teacherNotes": "Hỏi: きょうは さむいですか → いいえ、さむくないです.",
+        "type": "grammar",
+        "ref": "g0802"
+      },
+      {
+        "id": "s0814",
+        "type": "example",
+        "ref": "g0802",
+        "reveal": true
+      },
+      {
+        "id": "s0815",
+        "teacherNotes": "Học viên nói phủ định trước, rồi bấm mũi tên để kiểm tra.",
+        "type": "table",
+        "title": "Luyện tập 1: phủ định",
+        "columns": ["Khẳng định", "Phủ định"],
+        "rows": [
+          ["ひまです", "ひまじゃ ありません"],
+          ["げんきです", "げんきじゃ ありません"],
+          ["{暑|あつ}いです", "{暑|あつ}くないです"],
+          ["{高|たか}いです", "{高|たか}くないです"],
+          ["おもしろいです", "おもしろくないです"],
+          ["いいです", "よくないです"],
+          ["きれいです", "きれいじゃ ありません"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0816",
+        "type": "quiz",
+        "ref": "q0803"
+      },
+      {
+        "id": "s0817",
+        "type": "quiz",
+        "ref": "q0805"
+      },
+      {
+        "id": "s0818",
+        "teacherNotes": "Viết lên bảng: しずかな まち ○, しずか まち ×; おおきい まち ○, おおきいな まち ×.",
+        "type": "grammar",
+        "ref": "g0803"
+      },
+      {
+        "id": "s0819",
+        "type": "example",
+        "ref": "g0803",
+        "reveal": true
+      },
+      {
+        "id": "s0820",
+        "teacherNotes": "Học viên ghép tính từ với danh từ, nhớ thêm な cho tính từ đuôi な.",
+        "type": "table",
+        "title": "Luyện tập 2: tính từ trước danh từ",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ホイアン・きれい・まち", "ホイアンは きれいな まちです。"],
+          [
+            "{田中|たなか}さん・{親切|しんせつ}・{人|ひと}",
+            "{田中|たなか}さんは {親切|しんせつ}な {人|ひと}です。"
+          ],
+          [
+            "{富士山|ふじさん}・{高|たか}い・{山|やま}",
+            "{富士山|ふじさん}は {高|たか}い {山|やま}です。"
+          ],
+          ["これ・{新|あたら}しい・パソコン", "これは {新|あたら}しい パソコンです。"],
+          ["ハノイ・にぎやか・まち", "ハノイは にぎやかな まちです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0821",
+        "type": "quiz",
+        "ref": "q0806"
+      },
+      {
+        "id": "s0822",
+        "type": "quiz",
+        "ref": "q0807"
+      },
+      {
+        "id": "s0823",
+        "teacherNotes": "Hỏi học viên về quê, công việc, cuộc sống: 〜は どうですか／どんな 〜ですか.",
+        "type": "grammar",
+        "ref": "g0804"
+      },
+      {
+        "id": "s0824",
+        "type": "example",
+        "ref": "g0804",
+        "reveal": true
+      },
+      {
+        "id": "s0825",
+        "teacherNotes": "Cho học viên tự nói một điểm tốt và một điểm chưa tốt của nơi mình sống, nối bằng が.",
+        "type": "grammar",
+        "ref": "g0805"
+      },
+      {
+        "id": "s0826",
+        "type": "example",
+        "ref": "g0805",
+        "reveal": true
+      },
+      {
+        "id": "s0827",
+        "teacherNotes": "Học viên hỏi nhau theo cặp, trả lời thật và dùng とても／あまり.",
+        "type": "table",
+        "title": "Luyện tập 3: thế nào?",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["{日本語|にほんご}は どうですか。", "{難|むずか}しいですが、おもしろいです。"],
+          ["ハノイは どんな まちですか。", "にぎやかな まちです。"],
+          ["{仕事|しごと}は どうですか。", "とても {忙|いそが}しいです。"],
+          ["{寮|りょう}は どうですか。", "あまり {大|おお}きくないです。"],
+          ["フォーは どうですか。", "{安|やす}いです。そして、おいしいです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0828",
+        "type": "quiz",
+        "ref": "q0812"
+      },
+      {
+        "id": "s0829",
+        "type": "quiz",
+        "ref": "q0813"
+      },
+      {
+        "id": "s0830",
+        "teacherNotes": "Học viên kể cuộc sống của mình (đi học, đi làm) theo mẫu này.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Cuộc sống ở Nhật thế nào?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "リンさん、{日本|にほん}の {生活|せいかつ}は どうですか。",
+            "vi": "Linh, cuộc sống ở Nhật thế nào?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "とても {楽|たの}しいです。",
+            "vi": "Rất vui ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{仕事|しごと}は どうですか。",
+            "vi": "Công việc thì sao?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{忙|いそが}しいですが、おもしろいです。",
+            "vi": "Bận nhưng thú vị ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{寮|りょう}は どうですか。",
+            "vi": "Ký túc xá thế nào?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{新|あたら}しいですが、あまり {大|おお}きくないです。",
+            "vi": "Mới nhưng không to lắm ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0831",
+        "teacherNotes": "Học viên giới thiệu quê mình bằng どんな まち và そして.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Hội An là thành phố thế nào?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ナムさん、ホイアンは どんな まちですか。",
+            "vi": "Nam, Hội An là thành phố như thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{古|ふる}い まちです。そして、とても きれいです。",
+            "vi": "Là thành phố cổ. Và rất đẹp."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{食|た}べ{物|もの}は どうですか。",
+            "vi": "Đồ ăn thì sao?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "おいしいです。そして、{安|やす}いです。",
+            "vi": "Ngon. Và rẻ nữa."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "いいですね。",
+            "vi": "Hay quá nhỉ."
+          }
+        ]
+      },
+      {
+        "id": "s0832",
+        "teacherNotes": "Đóng vai cuối buổi đến thăm nhà: từ chối lịch sự và xin phép về.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Em xin phép về",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "コーヒーを もう {一杯|いっぱい} いかがですか。",
+            "vi": "Em dùng thêm một tách cà phê nữa nhé?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "いいえ、けっこうです。もう 9{時|じ}ですね。",
+            "vi": "Dạ thôi ạ. Đã 9 giờ rồi nhỉ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "そろそろ {失礼|しつれい}します。",
+            "vi": "Em xin phép về ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "そうですか。また いらっしゃって ください。",
+            "vi": "Vậy à. Lần sau em lại đến chơi nhé."
+          },
+          {
+            "speaker": "アン",
+            "jp": "ありがとう ございます。ごちそうさまでした。",
+            "vi": "Cảm ơn anh. Cảm ơn vì bữa ăn ạ."
+          }
+        ]
+      },
+      {
+        "id": "s0833",
+        "teacherNotes": "Học viên ghép hai câu bằng が (trái ngược) hoặc そして (cùng chiều).",
+        "type": "table",
+        "title": "Luyện tập 4: が hay そして?",
+        "columns": ["Hai ý", "Câu mẫu"],
+        "rows": [
+          ["{難|むずか}しい・おもしろい", "{難|むずか}しいですが、おもしろいです。"],
+          ["{安|やす}い・おいしい", "{安|やす}いです。そして、おいしいです。"],
+          ["{古|ふる}い・きれい", "{古|ふる}いですが、きれいです。"],
+          ["{高|たか}い・おいしくない", "{高|たか}いですが、おいしくないです。"],
+          ["しずか・{便利|べんり}", "しずかです。そして、{便利|べんり}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0834",
+        "type": "quiz",
+        "ref": "q0833"
+      },
+      {
+        "id": "s0835",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Tính từ đuôi な: しずかです／しずかじゃ ありません／しずかな まち\n• Tính từ đuôi い: おおきいです／おおきくないです／おおきい まち\n• いい → よくないです\n• N は どうですか; N は どんな N ですか → しずかな まちです\n• とても + khẳng định; あまり + phủ định; 〜が、〜 (nhưng); そして (và)"
+      },
+      {
+        "id": "s0836",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết 5 câu giới thiệu quê bạn: どんな まちですか, たべものは どうですか.\n3. Tìm 5 đồ vật quanh bạn và nói màu, to nhỏ, mới cũ: あかい かさ, ふるい とけい…"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0801",
+        "prompt": "ハノイは （　　）です。(nhộn nhịp)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Trước です, tính từ đuôi な bỏ な.",
+        "type": "choice",
+        "options": ["にぎやかな", "にぎやか", "にぎやかい", "にぎやかく"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0802",
+        "prompt": "この ほんは （　　）です。(hay)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi い giữ い trước です.",
+        "type": "choice",
+        "options": ["おもしろい", "おもしろいな", "おもしろな", "おもしろく"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0803",
+        "prompt": "Phủ định của しずかです:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi な: じゃ ありません.",
+        "type": "choice",
+        "options": [
+          "しずかくないです",
+          "しずくないです",
+          "しずかないです",
+          "しずかじゃ ありません"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0804",
+        "prompt": "Phủ định của あついです:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi い: bỏ い + くないです.",
+        "type": "choice",
+        "options": [
+          "あついじゃ ありません",
+          "あつじゃ ありません",
+          "あつくないです",
+          "あついくないです"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0805",
+        "prompt": "Phủ định của いいです:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "いい → よくないです.",
+        "type": "choice",
+        "options": ["いくないです", "よくないです", "いいくないです", "いいじゃ ありません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0806",
+        "prompt": "ホイアンは （　　） まちです。(đẹp)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Trước danh từ, tính từ đuôi な thêm な.",
+        "type": "choice",
+        "options": ["きれいな", "きれい", "きれいい", "きれいの"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0807",
+        "prompt": "（　　） かさを かいました。(màu đỏ)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi い đứng thẳng trước danh từ.",
+        "type": "choice",
+        "options": ["あかな", "あかいな", "あかの", "あかい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0808",
+        "prompt": "Chọn câu đúng: Anh Tanaka là người tốt bụng.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "しんせつな ひと.",
+        "type": "choice",
+        "options": [
+          "たなかさんは しんせつ ひとです。",
+          "たなかさんは ひと しんせつです。",
+          "たなかさんは しんせつな ひとです。",
+          "たなかさんは しんせついい ひとです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0809",
+        "prompt": "にほんの せいかつは （　　）ですか。…たのしいです。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Hỏi cảm nhận: どう.",
+        "type": "choice",
+        "options": ["どんな", "どう", "どこ", "なん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0810",
+        "prompt": "ハノイは （　　） まちですか。…にぎやかな まちです。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "どんな + danh từ.",
+        "type": "choice",
+        "options": ["どんな", "どう", "どこ", "なんの"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0811",
+        "prompt": "この フォーは （　　） おいしいです。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "とても + khẳng định: rất.",
+        "type": "choice",
+        "options": ["あまり", "どう", "どんな", "とても"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0812",
+        "prompt": "ハノイは （　　） さむくないです。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "あまり + phủ định: không … lắm.",
+        "type": "choice",
+        "options": ["とても", "そして", "あまり", "どう"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0813",
+        "prompt": "にほんごは むずかしいです（　　）、おもしろいです。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Hai ý trái ngược: 〜が、〜.",
+        "type": "choice",
+        "options": ["そして", "が", "と", "の"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0814",
+        "prompt": "Chọn câu đúng: Rẻ và ngon.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Ý cùng chiều: そして.",
+        "type": "choice",
+        "options": [
+          "やすいです。そして、おいしいです。",
+          "やすいですが、おいしいです。",
+          "やすいです。あまり おいしいです。",
+          "やすい おいしいです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0815",
+        "prompt": "Từ trái nghĩa với おおきい:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "おおきい ↔ ちいさい.",
+        "type": "choice",
+        "options": ["あたらしい", "たかい", "わるい", "ちいさい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0816",
+        "prompt": "Từ trái nghĩa với あたらしい:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "あたらしい ↔ ふるい.",
+        "type": "choice",
+        "options": ["やすい", "さむい", "ふるい", "ひくい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0817",
+        "prompt": "Từ trái nghĩa với たかい (đắt):",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "たかい (đắt) ↔ やすい (rẻ).",
+        "type": "choice",
+        "options": ["ひくい", "やすい", "ちいさい", "わるい"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0818",
+        "prompt": "Từ trái nghĩa với むずかしい:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "むずかしい ↔ やさしい.",
+        "type": "choice",
+        "options": ["やさしい", "いそがしい", "おもしろい", "つめたい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0819",
+        "prompt": "あつい ↔ （　　）(nói về thời tiết)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Thời tiết: あつい ↔ さむい; つめたい dùng cho đồ vật.",
+        "type": "choice",
+        "options": ["つめたい", "ひくい", "やすい", "さむい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0820",
+        "prompt": "この ジュースは （　　）です。(mát lạnh)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Đồ uống, đồ vật lạnh: つめたい; さむい dùng cho thời tiết.",
+        "type": "choice",
+        "options": ["さむい", "あつい", "つめたい", "たかい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0821",
+        "prompt": "ひま nghĩa là:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "ひま: rảnh rỗi.",
+        "type": "choice",
+        "options": ["bận rộn", "rảnh rỗi", "khỏe mạnh", "tiện lợi"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0822",
+        "prompt": "いそがしい nghĩa là:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "いそがしい: bận.",
+        "type": "choice",
+        "options": ["bận", "rảnh", "vui", "khó"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0823",
+        "prompt": "べんり nghĩa là:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "べんり: tiện lợi.",
+        "type": "choice",
+        "options": ["nổi tiếng", "yên tĩnh", "đẹp", "tiện lợi"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0824",
+        "prompt": "ゆうめい nghĩa là:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "ゆうめい: nổi tiếng.",
+        "type": "choice",
+        "options": ["nhộn nhịp", "tốt bụng", "nổi tiếng", "khỏe mạnh"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0825",
+        "prompt": "くろい là màu:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "くろい: đen.",
+        "type": "choice",
+        "options": ["trắng", "đen", "đỏ", "xanh dương"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0826",
+        "prompt": "Chọn câu đúng: Ký túc xá không yên tĩnh.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi な: じゃ ありません.",
+        "type": "choice",
+        "options": [
+          "りょうは しずかじゃ ありません。",
+          "りょうは しずかくないです。",
+          "りょうは しずかないです。",
+          "りょうは しずかな ありません。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0827",
+        "prompt": "Chọn câu đúng: Hôm nay không lạnh.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "さむい → さむくないです.",
+        "type": "choice",
+        "options": [
+          "きょうは さむいじゃ ありません。",
+          "きょうは さむないです。",
+          "きょうは さむくじゃ ありません。",
+          "きょうは さむくないです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0828",
+        "prompt": "たなかさんは どんな ひとですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Trả lời どんな N bằng tính từ + N.",
+        "type": "choice",
+        "options": ["しんせつです ひと", "どうですか", "しんせつな ひとです", "ひとです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0829",
+        "prompt": "Mời thêm cà phê một cách lịch sự:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Mời thêm: もう いっぱい いかがですか.",
+        "type": "choice",
+        "options": [
+          "コーヒーを もう いっぱい ください。",
+          "コーヒーを もう いっぱい いかがですか。",
+          "コーヒーは どうですか。",
+          "コーヒーは いくらですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0830",
+        "prompt": "Từ chối lịch sự khi được mời thêm:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Từ chối lịch sự: いいえ、けっこうです.",
+        "type": "choice",
+        "options": [
+          "いいえ、けっこうです。",
+          "いいえ、ちがいます。",
+          "いいえ、まだです。",
+          "いいえ、そうじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0831",
+        "prompt": "Khách muốn xin phép ra về:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Xin phép về: そろそろ しつれいします.",
+        "type": "choice",
+        "options": [
+          "いらっしゃいませ。",
+          "いただきます。",
+          "どうぞ おあがり ください。",
+          "そろそろ しつれいします。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0832",
+        "prompt": "Chủ nhà tiễn khách:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tiễn khách: また いらっしゃって ください.",
+        "type": "choice",
+        "options": [
+          "そろそろ しつれいします。",
+          "いいえ、けっこうです。",
+          "また いらっしゃって ください。",
+          "おげんきですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0833",
+        "prompt": "Chọn câu đúng: Bộ phim này không hay lắm.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "あまり + phủ định của tính từ đuôi い.",
+        "type": "choice",
+        "options": [
+          "この えいがは あまり おもしろいです。",
+          "この えいがは あまり おもしろくないです。",
+          "この えいがは とても おもしろくないです。",
+          "この えいがは あまり おもしろじゃ ありません。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0834",
+        "prompt": "Chọn câu đúng: Đây là một ngọn núi cao.",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi い đứng thẳng trước danh từ: たかい やま.",
+        "type": "choice",
+        "options": [
+          "これは たかい やまです。",
+          "これは たかいな やまです。",
+          "これは やま たかいです。",
+          "これは たかく やまです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0835",
+        "prompt": "げんき［な］ nghĩa là:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "げんき: khỏe mạnh.",
+        "type": "choice",
+        "options": ["rảnh rỗi", "đẹp trai", "tiện lợi", "khỏe mạnh"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0836",
+        "prompt": "Bạn bè lâu ngày gặp lại, hỏi:",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Hỏi thăm sức khỏe: おげんきですか.",
+        "type": "choice",
+        "options": [
+          "おいくつですか。",
+          "おくには どちらですか。",
+          "おげんきですか。",
+          "いかがですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0837",
+        "prompt": "Điền phủ định: さむい → さむ（　　）です",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi い: bỏ い + くないです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くない"]
+      },
+      {
+        "id": "q0838",
+        "prompt": "Điền phủ định: いい → （　　）です",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "いい → よくないです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よくない"]
+      },
+      {
+        "id": "q0839",
+        "prompt": "Điền: しずか（　　） まちです。(trước danh từ)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Tính từ đuôi な + な + danh từ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["な"]
+      },
+      {
+        "id": "q0840",
+        "prompt": "Điền: にほんの せいかつは （　　）ですか。(thế nào)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Hỏi cảm nhận: どう.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どう"]
+      },
+      {
+        "id": "q0841",
+        "prompt": "Điền: ハノイは （　　） まちですか。(như thế nào)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "どんな + danh từ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どんな"]
+      },
+      {
+        "id": "q0842",
+        "prompt": "Điền: この フォーは （　　） おいしいです。(rất)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Rất: とても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["とても"]
+      },
+      {
+        "id": "q0843",
+        "prompt": "Điền: きょうは （　　） あつくないです。(không … lắm)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "あまり + phủ định.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あまり"]
+      },
+      {
+        "id": "q0844",
+        "prompt": "Điền: たかいです（　　）、おいしいです。(nhưng)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Nhưng: 〜が、〜.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["が"]
+      },
+      {
+        "id": "q0845",
+        "prompt": "Điền: やすいです。（　　）、おいしいです。(và)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Và (nối câu): そして.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["そして"]
+      },
+      {
+        "id": "q0846",
+        "prompt": "Điền từ trái nghĩa: おおきい ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "おおきい ↔ ちいさい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ちいさい"]
+      },
+      {
+        "id": "q0847",
+        "prompt": "Điền từ trái nghĩa: あたらしい ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "あたらしい ↔ ふるい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ふるい"]
+      },
+      {
+        "id": "q0848",
+        "prompt": "Điền: いいえ、（　　）です。(từ chối lịch sự: đủ rồi ạ)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Từ chối lịch sự: いいえ、けっこうです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["けっこう"]
+      },
+      {
+        "id": "q0849",
+        "prompt": "Điền: そろそろ （　　）します。(xin phép về)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Xin phép về: そろそろ しつれいします.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しつれい"]
+      },
+      {
+        "id": "q0850",
+        "prompt": "Điền: たなかさんは しんせつな （　　）です。(người)",
+        "points": 1,
+        "tags": ["minna-8"],
+        "explain": "Người: ひと.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ひと"]
+      }
+    ]
+  }
+}
