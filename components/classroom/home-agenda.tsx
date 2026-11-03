@@ -11,6 +11,7 @@ const agendaSchema = z.object({
   agenda: z
     .object({
       dueCardCount: z.number().int(),
+      hasMoreDueCards: z.boolean().default(false),
       assignments: z.array(
         z.object({ id: z.string(), title: z.string(), dueAt: z.string().nullable() }),
       ),
@@ -63,7 +64,8 @@ export function HomeAgenda() {
       <div className="button-row">
         {agenda.dueCardCount > 0 && (
           <Link href="/review" className={buttonVariants({ variant: "outline" })}>
-            Ôn {agenda.dueCardCount} thẻ
+            Ôn {agenda.dueCardCount}
+            {agenda.hasMoreDueCards ? "+" : ""} thẻ
           </Link>
         )}
         <Link href="/classes">Mở lớp của tôi</Link>

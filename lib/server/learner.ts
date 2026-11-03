@@ -7,7 +7,7 @@ import { toPercent } from "@/lib/grading/grade";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
-import { listDueCards } from "@/lib/server/reviews";
+import { listDueCards, MAX_SESSION_CARDS } from "@/lib/server/reviews";
 import {
   createServiceClient,
   runMutation,
@@ -15,7 +15,7 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
-import { countStudyStreak } from "@/lib/study-days";
+import { countStudyStreak, isStreakSettled } from "@/lib/study-days";
 
 import type { Assignment, Attempt } from "@/lib/server/assignments";
 import type { ClassLesson } from "@/lib/server/classes";
@@ -132,11 +132,13 @@ function isOpenWork(item: LearnerAssignment) {
 export async function getLearnerAgenda(userId: string, now: Date) {
   const [{ classes, assignments }, dueCards] = await Promise.all([
     listLearnerAssignments(userId, now),
-    listDueCards(userId, now),
+    // One card past a session tells "50" apart from a longer backlog.
+    listDueCards(userId, now, MAX_SESSION_CARDS + 1),
   ]);
   return {
     classes,
-    dueCardCount: dueCards.length,
+    dueCardCount: Math.min(dueCards.length, MAX_SESSION_CARDS),
+    hasMoreDueCards: dueCards.length > MAX_SESSION_CARDS,
     openAssignments: assignments
       .filter(isOpenWork)
       .sort((first, second) =>
@@ -145,37 +147,49 @@ export async function getLearnerAgenda(userId: string, now: Date) {
   };
 }
 
-export async function getStudyActivity(userId: string) {
+// Many reviews a day used to fill a fixed window of events and cut long streaks short. Reviews
+// are now read a page at a time until the streak's first missing day lies inside what was read.
+const ACTIVITY_PAGE_SIZE = 1000;
+const MAX_ACTIVITY_PAGES = 10;
+
+export async function getStudyActivity(userId: string, now: Date = new Date()) {
   const service = createServiceClient();
-  const [reviews, submissions] = await Promise.all([
-    selectRows(
+  // Submissions come one or two a day, so the newest 400 cover more than a year.
+  const submissions = await selectRows(
+    service
+      .from("submissions")
+      .select("submitted_at")
+      .eq("user_id", userId)
+      .eq("status", "submitted")
+      .order("submitted_at", { ascending: false })
+      .limit(400),
+    z.object({ submitted_at: timestamp }),
+  );
+  const activity = submissions.map((row) => row.submitted_at);
+  for (let page = 0; page < MAX_ACTIVITY_PAGES; page += 1) {
+    const reviews = await selectRows(
       service
         .from("review_events")
         .select("reviewed_at")
         .eq("user_id", userId)
         .order("reviewed_at", { ascending: false })
-        .limit(400),
+        .range(page * ACTIVITY_PAGE_SIZE, (page + 1) * ACTIVITY_PAGE_SIZE - 1),
       z.object({ reviewed_at: timestamp }),
-    ),
-    selectRows(
-      service
-        .from("submissions")
-        .select("submitted_at")
-        .eq("user_id", userId)
-        .eq("status", "submitted")
-        .order("submitted_at", { ascending: false })
-        .limit(400),
-      z.object({ submitted_at: timestamp }),
-    ),
-  ]);
-  return [...reviews.map((row) => row.reviewed_at), ...submissions.map((row) => row.submitted_at)];
+    );
+    activity.push(...reviews.map((row) => row.reviewed_at));
+    const oldest = reviews.at(-1)?.reviewed_at;
+    if (reviews.length < ACTIVITY_PAGE_SIZE || !oldest || isStreakSettled(activity, oldest, now)) {
+      break;
+    }
+  }
+  return activity;
 }
 
 export async function getProgressSummary(userId: string, now: Date) {
   const service = createServiceClient();
   const [{ classes, assignments }, activity, reading, cards] = await Promise.all([
     listLearnerAssignments(userId, now),
-    getStudyActivity(userId),
+    getStudyActivity(userId, now),
     selectRows(
       service
         .from("lesson_progress")

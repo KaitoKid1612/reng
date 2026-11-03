@@ -440,7 +440,7 @@ async function composeContent(
     return null;
   }
   const [activity, word] = await Promise.all([
-    getStudyActivity(recipient.user_id),
+    getStudyActivity(recipient.user_id, now),
     pickWordOfDay(recipient.user_id, now),
   ]);
   return renderDailyReminder({

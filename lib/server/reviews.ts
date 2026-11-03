@@ -37,7 +37,11 @@ import type { ReviewRating } from "@/lib/review-ratings";
 import type { StudyWord } from "@/lib/study-words";
 
 const timestamp = z.iso.datetime({ offset: true });
-const MAX_SESSION_CARDS = 50;
+export const MAX_SESSION_CARDS = 50;
+// Due rows are read a page at a time: a page of cards the learner can no longer open (a class left,
+// a lesson removed) must not hide the due cards behind it. The page cap bounds one request.
+const DUE_PAGE_SIZE = 200;
+const MAX_DUE_PAGES = 5;
 
 const cardRowSchema = z.object({
   item_type: z.enum(["vocab", "kanji", "mistake"]),
@@ -130,19 +134,7 @@ async function loadMistakeSources(assignmentIds: readonly string[], now: Date) {
   return sources;
 }
 
-export async function listDueCards(userId: string, now: Date): Promise<ReviewCard[]> {
-  const rows = await selectRows(
-    createServiceClient()
-      .from("srs_cards")
-      .select(CARD_COLUMNS)
-      .eq("user_id", userId)
-      .in("item_type", ["vocab", "mistake"])
-      .is("resolved_at", null)
-      .lte("due", now.toISOString())
-      .order("due")
-      .limit(200),
-    cardRowSchema,
-  );
+async function toReviewCards(userId: string, rows: readonly CardRow[], now: Date) {
   const decks = await loadVocabDecks(
     userId,
     rows.filter((row) => row.item_type === "vocab").map((row) => row.source_id),
@@ -180,7 +172,39 @@ export async function listDueCards(userId: string, now: Date): Promise<ReviewCar
       });
     }
   }
-  return cards.slice(0, MAX_SESSION_CARDS);
+  return cards;
+}
+
+// A session takes up to MAX_SESSION_CARDS; asking for one more tells whether more are waiting.
+export async function listDueCards(
+  userId: string,
+  now: Date,
+  limit = MAX_SESSION_CARDS,
+): Promise<ReviewCard[]> {
+  const cards: ReviewCard[] = [];
+  for (let page = 0; page < MAX_DUE_PAGES && cards.length < limit; page += 1) {
+    const rows = await selectRows(
+      createServiceClient()
+        .from("srs_cards")
+        .select(CARD_COLUMNS)
+        .eq("user_id", userId)
+        .in("item_type", ["vocab", "mistake"])
+        .is("resolved_at", null)
+        .lte("due", now.toISOString())
+        // Cards due at the same moment keep one order, so pages neither repeat nor skip rows.
+        .order("due")
+        .order("item_type")
+        .order("source_id")
+        .order("item_id")
+        .range(page * DUE_PAGE_SIZE, (page + 1) * DUE_PAGE_SIZE - 1),
+      cardRowSchema,
+    );
+    cards.push(...(await toReviewCards(userId, rows, now)));
+    if (rows.length < DUE_PAGE_SIZE) {
+      break;
+    }
+  }
+  return cards.slice(0, limit);
 }
 
 async function loadCard(userId: string, itemType: string, sourceId: string, itemId: string) {

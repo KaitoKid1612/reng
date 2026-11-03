@@ -76,7 +76,8 @@ export default async function ClassesPage() {
               variant: !hasOpenWork && agenda.dueCardCount > 0 ? "default" : "outline",
             })}
           >
-            Ôn tập ({agenda.dueCardCount} thẻ)
+            Ôn tập ({agenda.dueCardCount}
+            {agenda.hasMoreDueCards ? "+" : ""} thẻ)
           </Link>
           <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
             Sổ lỗi

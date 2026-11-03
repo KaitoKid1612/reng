@@ -11,6 +11,7 @@ export async function GET() {
     return jsonResponse({
       agenda: {
         dueCardCount: agenda.dueCardCount,
+        hasMoreDueCards: agenda.hasMoreDueCards,
         assignments: agenda.openAssignments.slice(0, 3).map((item) => ({
           id: item.assignment.id,
           title: item.assignment.title,

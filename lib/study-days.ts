@@ -17,6 +17,30 @@ function previousDay(day: string) {
 }
 
 // Counts consecutive study days ending today, or yesterday when today has no activity yet.
+// The first day without study before the streak, walking back from today (or yesterday when
+// nobody studied yet today).
+function findStreakGap(days: ReadonlySet<string>, now: Date) {
+  let cursor = toStudyDay(now);
+  if (!days.has(cursor)) {
+    cursor = previousDay(cursor);
+  }
+  while (days.has(cursor)) {
+    cursor = previousDay(cursor);
+  }
+  return cursor;
+}
+
+// Activity is read newest first, so every day after the oldest loaded instant is complete. The
+// streak is known once its gap day falls after that instant; until then older activity could
+// still extend it.
+export function isStreakSettled(
+  activity: readonly (Date | string)[],
+  oldestLoaded: Date | string,
+  now: Date,
+) {
+  return findStreakGap(new Set(activity.map(toStudyDay)), now) > toStudyDay(oldestLoaded);
+}
+
 export function countStudyStreak(activity: readonly (Date | string)[], now: Date) {
   const days = new Set(activity.map(toStudyDay));
   let cursor = toStudyDay(now);

@@ -18,7 +18,7 @@ import {
   SCHEDULER_VERSION,
   updateMistakeProgress,
 } from "../lib/srs";
-import { countStudyStreak, toStudyDay } from "../lib/study-days";
+import { countStudyStreak, isStreakSettled, toStudyDay } from "../lib/study-days";
 
 test("FSRS state round-trips with a locked scheduler version", () => {
   const now = new Date("2026-10-28T01:00:00Z");
@@ -59,6 +59,18 @@ test("study streaks use Vietnam calendar days", () => {
   assert.equal(countStudyStreak(["2026-10-27T02:00:00Z", "2026-10-26T02:00:00Z"], now), 2);
   assert.equal(countStudyStreak(["2026-10-28T00:10:00Z", "2026-10-27T02:00:00Z"], now), 2);
   assert.equal(countStudyStreak(["2026-10-25T02:00:00Z"], now), 0);
+});
+
+test("a streak is settled only once its first missing day lies inside the loaded activity", () => {
+  // Noon on 3 November in Vietnam; studied 3, 2 and 1 November, nothing on 31 October.
+  const now = new Date("2026-11-03T05:00:00Z");
+  const studied = ["2026-11-03T02:00:00Z", "2026-11-02T02:00:00Z", "2026-11-01T02:00:00Z"];
+  // Loaded back to 30 October: 31 October is known to be empty, so the streak is 3.
+  const loaded = [...studied, "2026-10-30T02:00:00Z"];
+  assert.equal(isStreakSettled(loaded, "2026-10-30T02:00:00Z", now), true);
+  assert.equal(countStudyStreak(loaded, now), 3);
+  // Loaded only back to 1 November: 31 October may still hold reviews, so read further.
+  assert.equal(isStreakSettled(studied, "2026-11-01T02:00:00Z", now), false);
 });
 
 test("join codes avoid ambiguous characters and normalize learner input", () => {
