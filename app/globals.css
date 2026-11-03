@@ -3146,3 +3146,8 @@ rt {
   font-weight: 600;
   color: var(--muted);
 }
+
+/* Before /api/me answers, a browser that was signed in hides the visitor-only header links. */
+html[data-account="member"] .site-header [data-guest-only] {
+  display: none;
+}

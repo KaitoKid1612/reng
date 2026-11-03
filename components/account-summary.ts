@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { rememberAccountHint } from "@/lib/account-hint";
+
 export interface AccountSummary {
   name: string;
   role: "student" | "teacher";
@@ -44,7 +46,11 @@ export function useAccountSummary() {
     const controller = new AbortController();
     fetch("/api/me", { cache: "no-store", signal: controller.signal })
       .then((response) => (response.ok ? response.json() : null))
-      .then((data: unknown) => setAccount(parseAccount(data)))
+      .then((data: unknown) => {
+        const next = parseAccount(data);
+        rememberAccountHint(next !== null);
+        setAccount(next);
+      })
       .catch(() => {
         if (!controller.signal.aborted) {
           setAccount(null);

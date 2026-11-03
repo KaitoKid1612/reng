@@ -14,6 +14,8 @@ import type { KeyboardEvent } from "react";
 interface NavigationLink {
   href: string;
   label: string;
+  // Shown to visitors only; hidden before the account loads in a browser that was signed in.
+  isGuestOnly?: boolean;
   // Account areas stay marked on their inner pages, e.g. a class under /teach.
   isSection?: boolean;
   // Pages at other paths that belong to this entry.
@@ -22,8 +24,8 @@ interface NavigationLink {
 
 // Ways in for visitors; signed-in people reach the same pages from their own areas.
 const GUEST_LINKS: NavigationLink[] = [
-  { href: "/join-class", label: "Vào lớp" },
-  { href: "/for-teachers", label: "Cho giáo viên" },
+  { href: "/join-class", label: "Vào lớp", isGuestOnly: true },
+  { href: "/for-teachers", label: "Cho giáo viên", isGuestOnly: true },
 ];
 
 // Free practice without an account. Subject tools are listed on /self-study, so the header stays
@@ -132,6 +134,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               aria-current={isCurrent(link, pathname) ? "page" : undefined}
+              data-guest-only={account === undefined && link.isGuestOnly ? "" : undefined}
               onClick={() => setOpenPath(null)}
             >
               {link.label}

@@ -127,6 +127,15 @@ Chưa thử với Resend thật (chưa có domain và API key). Vòng lặp nhi�
 
 Migration chưa chạy trên production. Code không phụ thuộc migration này nên đã lên trước; người dùng chạy `supabase db push` khi tiện.
 
+## Header không còn nháy menu khách
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Chặn JS của Next để giữ trang ở trạng thái trước hydration: khách mới thấy Vào lớp, Cho giáo viên, Tự học, Hướng dẫn | Đạt |
+| Đăng nhập rồi tải lại: trước hydration chỉ còn Tự học, Hướng dẫn; sau hydration là Lớp của tôi, Tự học, Hướng dẫn; console không có lỗi hydration | Đạt |
+| Đăng xuất xóa gợi ý; tải lại trước hydration lại thấy menu khách | Đạt |
+| Console ở `/`, `/guide`, `/self-study` và khi chuyển trang trong ứng dụng | Không có lỗi hay cảnh báo |
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).
