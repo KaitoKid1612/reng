@@ -31,6 +31,7 @@ Không đổi schema database, không cần migration; deploy code là đủ.
 | QA-05 | P2 | Xem trước slide trong trình soạn tiếng Trung tự chép phần chuyển câu hỏi, thiếu đoạn văn và mảnh. E2E phát hiện | Dùng chung `toPublicQuestion` với bài đã xuất bản |
 | QA-06 (CR-28) | P3 | Câu điền đổi ô nhập sang chữ Hán/pinyin trên trình soạn tiếng Nhật vẫn chấm theo luật tiếng Nhật | Ô chữ Hán/pinyin gắn `zh-exact-v1`, ô tiếng Nhật bỏ profile, như câu kiểm tra riêng |
 | QA-07 | P3 | Trang lớp hiện "Flashcard" và "Luyện kanji/chữ Hán" cho cả ngân hàng câu hỏi không có từ vựng; trang đọc bài tiếng Nhật luôn hiện "Flashcard từ vựng". Học viên mở ra trang trống | `listClassLessons` đọc thêm từ đầu tiên của bài (`hasVocab`); hai link chỉ hiện khi bài có từ vựng |
+| QA-08 (CR-26) | P3 | Dán hơn 100 từ vào trình soạn tiếng Trung vượt giới hạn của nháp, sau đó không lưu được | Xem trước báo dòng vượt 100 từ và không thêm; reducer dừng ở 100 từ kể cả khi bản xem trước đã cũ |
 
 ## Giới hạn còn lại
 
@@ -48,6 +49,7 @@ Không đổi schema database, không cần migration; deploy code là đủ.
   - Câu kiểm tra riêng có câu sắp xếp và đoạn văn; server áp cùng giới hạn.
   - Trình soạn tiếng Trung báo lỗi mảnh, bỏ đoạn văn trống, nhận ra mảnh đã sửa.
   - Slide hiện mảnh theo thứ tự xáo, không bao giờ trùng đáp án.
+  - Dán từ dừng ở 100 từ, nháp vẫn lưu được.
 - `e2e-supabase/question-authoring.spec.ts`:
   - Giáo viên tiếng Nhật soạn câu sắp xếp và hai câu đọc hiểu cùng đoạn văn trên trình soạn web, xuất bản, giao luyện tập và bài kiểm tra có câu sắp xếp. Học viên làm bài trên khổ 390px, không cuộn ngang, đạt 100%; bài kiểm tra được chấm đúng. Bài không có từ vựng nên trang lớp và trang đọc bài không có link Flashcard/Luyện kanji.
   - Giáo viên tiếng Trung soạn câu sắp xếp có đoạn văn, xác nhận, sửa mảnh thì phải xác nhận lại. Xem trước slide hiện đoạn văn và mảnh đã xáo; slide đã xuất bản "Hiện đáp án" ra câu ghép đúng.

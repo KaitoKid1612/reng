@@ -27,6 +27,8 @@ Quy ước mức: **Cao** = mất dữ liệu người dùng hoặc lỗ hổng 
 | CR-31 | Thấp | Ôn tập: thử lại sau khi mất phản hồi có thể báo đúng cho câu trả lời không được ghi | Server trả kết quả đã lưu của request; ô trả lời khóa, nút "Gửi lại câu trả lời". Sửa ngày 03/11/2026 | `d44af98` |
 | CR-32 | Thấp | Chuỗi ngày học chỉ đọc 400 sự kiện gần nhất nên tính thiếu khi ôn nhiều | Đọc thêm từng trang lượt ôn tới khi xác định được chuỗi; số thẻ cần ôn hiện "50+" khi còn nhiều hơn một phiên. Sửa ngày 03/11/2026 | `dbaec86` |
 | CR-28 | Thấp | Câu điền tiếng Trung trong bài tiếng Nhật chấm theo luật Nhật | Trình soạn web gán `zh-exact-v1` khi ô nhập là chữ Hán/pinyin, bỏ profile khi là ô tiếng Nhật, như câu kiểm tra. Sửa ngày 03/11/2026, xem [soạn câu sắp xếp và đọc hiểu](question-authoring-2026-11-03.md) | `84d2331` |
+| CR-26 | Thấp | Dán hơn 100 từ tiếng Trung vượt giới hạn nháp, sau đó không lưu được | Bước xem trước báo các dòng vượt 100 từ và không thêm chúng; trình soạn dừng ở 100 từ kể cả với bản xem trước cũ. Sửa ngày 03/11/2026 | `0ec45eb` |
+| CR-29 | Thấp | `/reset-password` đổi được mật khẩu với bất kỳ phiên nào, không cần link khôi phục | Chỉ phiên mở từ link email trong 1 giờ (`amr` qua `getClaims`) mới thấy form và đổi được mật khẩu. Sửa ngày 03/11/2026 | `4b4a385` |
 
 Cải tiến trải nghiệm cùng đợt: link mời vào lớp có nút sao chép, đặt ở đầu trang lớp khi lớp chưa có học viên (`3e8ee50`); trang chủ và hướng dẫn không còn bắt buộc bước xác nhận email vì production đang tắt bước này (`01d357c`).
 
@@ -38,8 +40,6 @@ Chi tiết và kiểm chứng của CR-21, CR-22, CR-23, CR-31, CR-32: [sửa đ
 | --- | --- | --- | --- |
 | CR-24 | Thấp | Rời trình soạn bằng link trong trang không cảnh báo; nay thay đổi vẫn được giữ trên máy và khôi phục khi mở lại | Thêm cảnh báo khi điều hướng nội bộ nếu cần |
 | CR-25 | Thấp | "Áp dụng thay đổi slide" (v2) ghi đè chỉnh sửa slide làm sau khi dựng kế hoạch | Tính lại kế hoạch khi nháp đổi |
-| CR-26 | Thấp | Dán hơn 100 từ tiếng Trung vượt giới hạn nháp, sau đó không lưu được | Chặn ở bước xem trước bảng |
-| CR-29 | Thấp | `/reset-password` đổi được mật khẩu với bất kỳ phiên nào, không cần link khôi phục | Kiểm tra phiên đến từ link recovery |
 | CR-30 | Thấp | Yêu cầu giảng dạy đang chờ duyệt không có nút từ chối; tắt duyệt thì yêu cầu cũ kẹt | Thêm thao tác từ chối/kích hoạt |
 | CR-34 | Thấp | Email (khi bật): cron Hobby chạy lệch tới 59 phút nên nhắc hạn 24 giờ có thể bỏ sót; tối đa 50 email mỗi lần; retry có thể bị Resend trả 409 do nội dung đổi; header List-Unsubscribe chỉ nhận POST; tiêu đề "sắp đến hạn" có thể dùng cho bài đã quá hạn | Xử lý trước khi bật email cho lớp thật |
 
