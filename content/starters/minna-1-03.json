@@ -1,0 +1,1559 @@
+{
+  "id": "minna-1-03",
+  "title": "Bài 3 – Nơi chốn và mua sắm",
+  "titleJa": "第3課　ここは どこですか",
+  "summary": "Theo trình tự bài 3 Minna no Nihongo Sơ cấp I: ここ・そこ・あそこ (chỗ này, đó, kia) và cách nói lịch sự こちら・そちら・あちら, hỏi nơi chốn N は どこですか, お国は どちらですか, hỏi xuất xứ どこの N, hỏi giá いくらですか, xin xem và mua 〜を みせて ください／〜を ください, đọc số đến hàng vạn và tầng 〜かい.",
+  "order": 3,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v0301",
+        "jp": "ここ",
+        "romaji": "koko",
+        "vi": "chỗ này (gần người nói)",
+        "audio": null
+      },
+      {
+        "id": "v0302",
+        "jp": "そこ",
+        "romaji": "soko",
+        "vi": "chỗ đó (gần người nghe)",
+        "audio": null
+      },
+      {
+        "id": "v0303",
+        "jp": "あそこ",
+        "romaji": "asoko",
+        "vi": "chỗ kia (xa cả hai người)",
+        "audio": null
+      },
+      {
+        "id": "v0304",
+        "jp": "どこ",
+        "romaji": "doko",
+        "vi": "ở đâu, chỗ nào",
+        "audio": null
+      },
+      {
+        "id": "v0305",
+        "jp": "こちら",
+        "romaji": "kochira",
+        "vi": "phía này, chỗ này (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0306",
+        "jp": "そちら",
+        "romaji": "sochira",
+        "vi": "phía đó, chỗ đó (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0307",
+        "jp": "あちら",
+        "romaji": "achira",
+        "vi": "phía kia, chỗ kia (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0308",
+        "jp": "どちら",
+        "romaji": "dochira",
+        "vi": "phía nào, ở đâu (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0309",
+        "jp": "きょうしつ",
+        "kanji": "教室",
+        "romaji": "kyoushitsu",
+        "vi": "phòng học",
+        "audio": null,
+        "image": "/icons/vocab/school.svg"
+      },
+      {
+        "id": "v0310",
+        "jp": "しょくどう",
+        "kanji": "食堂",
+        "romaji": "shokudou",
+        "vi": "nhà ăn, căng tin",
+        "audio": null,
+        "image": "/icons/vocab/steaming-bowl.svg"
+      },
+      {
+        "id": "v0311",
+        "jp": "じむしょ",
+        "kanji": "事務所",
+        "romaji": "jimusho",
+        "vi": "văn phòng",
+        "audio": null,
+        "image": "/icons/vocab/briefcase.svg"
+      },
+      {
+        "id": "v0312",
+        "jp": "かいぎしつ",
+        "kanji": "会議室",
+        "romaji": "kaigishitsu",
+        "vi": "phòng họp",
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
+      },
+      {
+        "id": "v0313",
+        "jp": "うけつけ",
+        "kanji": "受付",
+        "romaji": "uketsuke",
+        "vi": "quầy lễ tân, bàn tiếp đón",
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
+      },
+      {
+        "id": "v0314",
+        "jp": "ロビー",
+        "romaji": "robii",
+        "vi": "sảnh",
+        "audio": null,
+        "image": "/icons/vocab/hotel.svg"
+      },
+      {
+        "id": "v0315",
+        "jp": "へや",
+        "kanji": "部屋",
+        "romaji": "heya",
+        "vi": "căn phòng",
+        "audio": null,
+        "image": "/icons/vocab/bed.svg"
+      },
+      {
+        "id": "v0316",
+        "jp": "うち",
+        "romaji": "uchi",
+        "vi": "nhà (của mình)",
+        "audio": null,
+        "image": "/icons/vocab/house.svg"
+      },
+      {
+        "id": "v0317",
+        "jp": "トイレ",
+        "romaji": "toire",
+        "vi": "nhà vệ sinh",
+        "audio": null
+      },
+      {
+        "id": "v0318",
+        "jp": "おてあらい",
+        "kanji": "お手洗い",
+        "romaji": "otearai",
+        "vi": "nhà vệ sinh (lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v0319",
+        "jp": "かいだん",
+        "kanji": "階段",
+        "romaji": "kaidan",
+        "vi": "cầu thang",
+        "audio": null
+      },
+      {
+        "id": "v0320",
+        "jp": "エレベーター",
+        "romaji": "erebeetaa",
+        "vi": "thang máy",
+        "audio": null
+      },
+      {
+        "id": "v0321",
+        "jp": "エスカレーター",
+        "romaji": "esukareetaa",
+        "vi": "thang cuốn",
+        "audio": null
+      },
+      {
+        "id": "v0322",
+        "jp": "じどうはんばいき",
+        "kanji": "自動販売機",
+        "romaji": "jidouhanbaiki",
+        "vi": "máy bán hàng tự động",
+        "audio": null
+      },
+      {
+        "id": "v0323",
+        "jp": "でんわ",
+        "kanji": "電話",
+        "romaji": "denwa",
+        "vi": "điện thoại",
+        "audio": null,
+        "image": "/icons/vocab/telephone.svg"
+      },
+      {
+        "id": "v0324",
+        "jp": "いりぐち",
+        "kanji": "入口",
+        "romaji": "iriguchi",
+        "vi": "lối vào",
+        "audio": null,
+        "image": "/icons/vocab/door.svg"
+      },
+      {
+        "id": "v0325",
+        "jp": "くに",
+        "kanji": "国",
+        "romaji": "kuni",
+        "vi": "đất nước",
+        "audio": null,
+        "image": "/icons/vocab/world-map.svg"
+      },
+      {
+        "id": "v0326",
+        "jp": "おくに",
+        "kanji": "お国",
+        "romaji": "okuni",
+        "vi": "nước (của người đối diện, lịch sự)",
+        "audio": null,
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
+      },
+      {
+        "id": "v0327",
+        "jp": "かいしゃ",
+        "kanji": "会社",
+        "romaji": "kaisha",
+        "vi": "công ty",
+        "audio": null,
+        "image": "/icons/vocab/office-building.svg"
+      },
+      {
+        "id": "v0328",
+        "jp": "デパート",
+        "romaji": "depaato",
+        "vi": "cửa hàng bách hóa",
+        "audio": null,
+        "image": "/icons/vocab/department-store.svg"
+      },
+      {
+        "id": "v0329",
+        "jp": "うりば",
+        "kanji": "売り場",
+        "romaji": "uriba",
+        "vi": "quầy, khu bán hàng",
+        "audio": null
+      },
+      {
+        "id": "v0330",
+        "jp": "ちか",
+        "kanji": "地下",
+        "romaji": "chika",
+        "vi": "tầng hầm",
+        "audio": null
+      },
+      {
+        "id": "v0331",
+        "jp": "〜かい",
+        "kanji": "〜階",
+        "romaji": "~kai",
+        "vi": "tầng …",
+        "audio": null
+      },
+      {
+        "id": "v0332",
+        "jp": "なんがい",
+        "kanji": "何階",
+        "romaji": "nangai",
+        "vi": "tầng mấy",
+        "audio": null
+      },
+      {
+        "id": "v0333",
+        "jp": "くつ",
+        "kanji": "靴",
+        "romaji": "kutsu",
+        "vi": "giày",
+        "audio": null
+      },
+      {
+        "id": "v0334",
+        "jp": "ネクタイ",
+        "romaji": "nekutai",
+        "vi": "cà vạt",
+        "audio": null,
+        "image": "/icons/vocab/necktie.svg"
+      },
+      {
+        "id": "v0335",
+        "jp": "とけい",
+        "kanji": "時計",
+        "romaji": "tokei",
+        "vi": "đồng hồ",
+        "audio": null,
+        "image": "/icons/vocab/watch.svg"
+      },
+      {
+        "id": "v0336",
+        "jp": "カメラ",
+        "romaji": "kamera",
+        "vi": "máy ảnh",
+        "audio": null,
+        "image": "/icons/vocab/camera.svg"
+      },
+      {
+        "id": "v0337",
+        "jp": "ワイン",
+        "romaji": "wain",
+        "vi": "rượu vang",
+        "audio": null
+      },
+      {
+        "id": "v0338",
+        "jp": "めがね",
+        "kanji": "眼鏡",
+        "romaji": "megane",
+        "vi": "kính đeo mắt",
+        "audio": null,
+        "image": "/icons/vocab/glasses.svg"
+      },
+      {
+        "id": "v0339",
+        "jp": "スイス",
+        "romaji": "suisu",
+        "vi": "Thụy Sĩ",
+        "audio": null
+      },
+      {
+        "id": "v0340",
+        "jp": "イタリア",
+        "romaji": "itaria",
+        "vi": "Ý (Italia)",
+        "audio": null
+      },
+      {
+        "id": "v0341",
+        "jp": "〜えん",
+        "kanji": "〜円",
+        "romaji": "~en",
+        "vi": "… yên (tiền Nhật)",
+        "audio": null,
+        "image": "/icons/vocab/yen-banknote.svg"
+      },
+      {
+        "id": "v0342",
+        "jp": "ドン",
+        "romaji": "don",
+        "vi": "đồng (tiền Việt Nam)",
+        "audio": null
+      },
+      {
+        "id": "v0343",
+        "jp": "いくら",
+        "romaji": "ikura",
+        "vi": "bao nhiêu tiền",
+        "audio": null
+      },
+      {
+        "id": "v0344",
+        "jp": "ひゃく",
+        "kanji": "百",
+        "romaji": "hyaku",
+        "vi": "một trăm",
+        "audio": null
+      },
+      {
+        "id": "v0345",
+        "jp": "せん",
+        "kanji": "千",
+        "romaji": "sen",
+        "vi": "một nghìn",
+        "audio": null
+      },
+      {
+        "id": "v0346",
+        "jp": "まん",
+        "kanji": "万",
+        "romaji": "man",
+        "vi": "mười nghìn (một vạn)",
+        "audio": null
+      },
+      {
+        "id": "v0347",
+        "jp": "すみません",
+        "romaji": "sumimasen",
+        "vi": "xin lỗi, cho hỏi (khi gọi người khác)",
+        "audio": null
+      },
+      {
+        "id": "v0348",
+        "jp": "いらっしゃいませ",
+        "romaji": "irasshaimase",
+        "vi": "xin mời quý khách (nhân viên chào khách)",
+        "audio": null
+      },
+      {
+        "id": "v0349",
+        "jp": "〜を みせて ください",
+        "kanji": "〜を 見せて ください",
+        "romaji": "~o misete kudasai",
+        "vi": "cho tôi xem …",
+        "audio": null
+      },
+      {
+        "id": "v0350",
+        "jp": "〜を ください",
+        "romaji": "~o kudasai",
+        "vi": "cho tôi …, lấy cho tôi …",
+        "audio": null
+      },
+      {
+        "id": "v0351",
+        "jp": "じゃ",
+        "romaji": "ja",
+        "vi": "vậy thì",
+        "audio": null
+      },
+      {
+        "id": "v0352",
+        "jp": "どうも",
+        "romaji": "doumo",
+        "vi": "cảm ơn (nói gọn)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g0301",
+        "pattern": "ここ／そこ／あそこ は N です",
+        "vi": "Chỗ này / đó / kia là N",
+        "explain": "ここ: nơi người nói đang đứng; そこ: nơi gần người nghe; あそこ: nơi xa cả hai người. Hỏi: ここは どこですか (Đây là đâu?).",
+        "viMistake": "ここ・そこ・あそこ chỉ nơi chốn; chỉ đồ vật thì dùng これ・それ・あれ (bài 2).",
+        "examples": [
+          {
+            "jp": "ここは {教室|きょうしつ}です。",
+            "vi": "Đây là phòng học.",
+            "audio": null
+          },
+          {
+            "jp": "そこは {食堂|しょくどう}ですか。",
+            "vi": "Chỗ đó là nhà ăn phải không?",
+            "audio": null
+          },
+          {
+            "jp": "あそこは {事務所|じむしょ}です。",
+            "vi": "Chỗ kia là văn phòng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0302",
+        "pattern": "N は ここ／そこ／あそこ です・N は どこですか",
+        "vi": "N ở chỗ này / đó / kia; N ở đâu?",
+        "explain": "Nói vị trí của nơi chốn, đồ vật hoặc người: N đứng trước は, từ chỉ nơi đứng sau は. Hỏi: N は どこですか.",
+        "viMistake": "Không nói どこは トイレですか. Từ để hỏi đứng đúng chỗ của câu trả lời: トイレは どこですか → トイレは あそこです.",
+        "examples": [
+          {
+            "jp": "トイレは あそこです。",
+            "vi": "Nhà vệ sinh ở đằng kia.",
+            "audio": null
+          },
+          {
+            "jp": "エレベーターは どこですか。",
+            "vi": "Thang máy ở đâu?",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {会議室|かいぎしつ}です。",
+            "vi": "Anh Tanaka ở phòng họp.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0303",
+        "pattern": "こちら／そちら／あちら／どちら",
+        "vi": "Phía này / đó / kia / nào (lịch sự)",
+        "explain": "Cách nói lịch sự của ここ・そこ・あそこ・どこ, dùng với khách, người lớn tuổi hoặc cấp trên; cũng dùng để chỉ hướng. Hỏi lịch sự người đối diện là người nước nào: お{国|くに}は どちらですか.",
+        "viMistake": "お国 chỉ dùng khi hỏi về nước của người khác; nói về nước mình thì dùng tên nước.",
+        "examples": [
+          {
+            "jp": "{受付|うけつけ}は こちらです。",
+            "vi": "Quầy lễ tân ở phía này ạ.",
+            "audio": null
+          },
+          {
+            "jp": "エスカレーターは あちらです。",
+            "vi": "Thang cuốn ở phía kia ạ.",
+            "audio": null
+          },
+          {
+            "jp": "お{国|くに}は どちらですか。…ベトナムです。",
+            "vi": "Anh/chị là người nước nào? … Việt Nam ạ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0304",
+        "pattern": "どこの N ですか・N1 の N2",
+        "vi": "N của nước nào / hãng nào?",
+        "explain": "Hỏi nơi làm ra đồ vật: どこの + danh từ. Trả lời bằng tên nước hoặc tên công ty + の + danh từ. Danh từ đã rõ thì bỏ đi: {日本|にほん}のです.",
+        "viMistake": "Hỏi xuất xứ dùng どこの; なんの hỏi nội dung (sách về cái gì), だれの hỏi người sở hữu.",
+        "examples": [
+          {
+            "jp": "これは どこの {時計|とけい}ですか。…スイスの {時計|とけい}です。",
+            "vi": "Đây là đồng hồ của nước nào? … Đồng hồ Thụy Sĩ.",
+            "audio": null
+          },
+          {
+            "jp": "その カメラは どこのですか。…{日本|にほん}のです。",
+            "vi": "Cái máy ảnh đó của nước nào? … Của Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "この ワインは イタリアの ワインです。",
+            "vi": "Rượu vang này là rượu vang Ý.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g0305",
+        "pattern": "N は いくらですか・N を ください",
+        "vi": "N giá bao nhiêu? / Cho tôi N",
+        "explain": "Hỏi giá: いくらですか, trả lời bằng số + {円|えん} (hoặc ドン). Đọc số: ひゃく (100), せん (1000), まん (10000), ví dụ 1500 = せん ごひゃく, 25000 = にまん ごせん. Muốn xem: N を {見|み}せて ください; muốn mua: N を ください.",
+        "viMistake": "Chú ý biến âm: 300 さんびゃく, 600 ろっぴゃく, 800 はっぴゃく, 3000 さんぜん, 8000 はっせん. 10000 là いちまん, không nói まん một mình.",
+        "examples": [
+          {
+            "jp": "この ネクタイは いくらですか。…2500{円|えん}です。",
+            "vi": "Cái cà vạt này bao nhiêu tiền? … 2500 yên.",
+            "audio": null
+          },
+          {
+            "jp": "すみません、あの {時計|とけい}を {見|み}せて ください。",
+            "vi": "Xin lỗi, cho tôi xem cái đồng hồ kia.",
+            "audio": null
+          },
+          {
+            "jp": "じゃ、これを ください。",
+            "vi": "Vậy thì, cho tôi cái này.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s0301",
+        "teacherNotes": "Khởi động: chỉ các chỗ trong lớp (bàn giáo viên, cửa ra vào, cửa sổ) và hỏi bằng tiếng Việt \"chỗ này là đâu?\". Bài đi theo trình tự bài 3 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}3{課|か}",
+        "vi": "Nơi chốn và mua sắm: ここ・そこ・あそこ"
+      },
+      {
+        "id": "s0302",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Chỉ nơi chốn: ここ・そこ・あそこ, hỏi どこ\n2. Nói lịch sự với khách: こちら・そちら・あちら・どちら\n3. Hỏi xuất xứ どこの N, hỏi giá いくら, xin xem và mua đồ\n4. Đọc số đến hàng vạn và tầng 〜かい"
+      },
+      {
+        "id": "s0303",
+        "teacherNotes": "Đứng ở các chỗ khác nhau trong lớp: ここ (chỗ mình đứng), そこ (chỗ học viên ngồi), あそこ (góc xa).",
+        "type": "vocab",
+        "refs": ["v0301", "v0302", "v0303", "v0304", "v0305", "v0306", "v0307", "v0308"]
+      },
+      {
+        "id": "s0304",
+        "teacherNotes": "Vẽ sơ đồ một tầng của trường lên bảng và ghi tên từng phòng.",
+        "type": "vocab",
+        "refs": ["v0309", "v0310", "v0311", "v0312", "v0313", "v0314", "v0315", "v0316"]
+      },
+      {
+        "id": "s0305",
+        "teacherNotes": "エレベーター (thang máy) và エスカレーター (thang cuốn) dễ nhầm: cho học viên nói nhanh khi giáo viên chỉ hình.",
+        "type": "vocab",
+        "refs": ["v0317", "v0318", "v0319", "v0320", "v0321", "v0322", "v0323", "v0324"]
+      },
+      {
+        "id": "s0306",
+        "teacherNotes": "〜階: 1階 いっかい, 3階 さんがい, 6階 ろっかい, 8階 はっかい, 10階 じゅっかい.",
+        "type": "vocab",
+        "refs": ["v0325", "v0326", "v0327", "v0328", "v0329", "v0330", "v0331", "v0332"]
+      },
+      {
+        "id": "s0307",
+        "teacherNotes": "Mang vài món đồ thật hoặc hình (đồng hồ, kính, cà vạt) để luyện どこの N ở phần sau.",
+        "type": "vocab",
+        "refs": ["v0333", "v0334", "v0335", "v0336", "v0337", "v0338", "v0339", "v0340"]
+      },
+      {
+        "id": "s0308",
+        "teacherNotes": "Tiền Việt Nam đọc là ドン: 20000ドン = にまん ドン.",
+        "type": "vocab",
+        "refs": ["v0341", "v0342", "v0343", "v0344", "v0345", "v0346"]
+      },
+      {
+        "id": "s0309",
+        "teacherNotes": "Luyện ngữ điệu いらっしゃいませ của nhân viên và すみません khi gọi người.",
+        "type": "vocab",
+        "refs": ["v0347", "v0348", "v0349", "v0350", "v0351", "v0352"]
+      },
+      {
+        "id": "s0310",
+        "teacherNotes": "Giáo viên đứng ở bàn mình (ここ), chỉ chỗ học viên ngồi (そこ), chỉ cửa ra vào ở xa (あそこ).",
+        "type": "table",
+        "title": "ここ・そこ・あそこ và cách nói lịch sự",
+        "columns": ["Vị trí", "Nơi chốn", "Lịch sự", "Đồ vật (bài 2)"],
+        "rows": [
+          ["Gần người nói", "ここ", "こちら", "これ"],
+          ["Gần người nghe", "そこ", "そちら", "それ"],
+          ["Xa cả hai", "あそこ", "あちら", "あれ"],
+          ["Hỏi", "どこ", "どちら", "なん"]
+        ]
+      },
+      {
+        "id": "s0311",
+        "teacherNotes": "Đi quanh lớp, đứng ở từng chỗ và cho học viên nói ここは 〜です.",
+        "type": "grammar",
+        "ref": "g0301"
+      },
+      {
+        "id": "s0312",
+        "type": "example",
+        "ref": "g0301",
+        "reveal": true
+      },
+      {
+        "id": "s0313",
+        "teacherNotes": "Đổi câu: ここは トイレです → トイレは ここです. Nhấn mạnh N đứng trước は.",
+        "type": "grammar",
+        "ref": "g0302"
+      },
+      {
+        "id": "s0314",
+        "type": "example",
+        "ref": "g0302",
+        "reveal": true
+      },
+      {
+        "id": "s0315",
+        "teacherNotes": "Gọi từng học viên nói trước, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: ở đâu?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ここ・{教室|きょうしつ}", "ここは {教室|きょうしつ}です。"],
+          ["トイレ・あそこ", "トイレは あそこです。"],
+          ["{食堂|しょくどう}（hỏi）", "{食堂|しょくどう}は どこですか。"],
+          ["ナムさん・{会議室|かいぎしつ}", "ナムさんは {会議室|かいぎしつ}です。"],
+          ["{電話|でんわ}・そこ", "{電話|でんわ}は そこです。"],
+          ["エレベーター（hỏi）", "エレベーターは どこですか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0316",
+        "type": "quiz",
+        "ref": "q0301"
+      },
+      {
+        "id": "s0317",
+        "type": "quiz",
+        "ref": "q0302"
+      },
+      {
+        "id": "s0318",
+        "type": "quiz",
+        "ref": "q0304"
+      },
+      {
+        "id": "s0319",
+        "teacherNotes": "Đóng vai nhân viên khách sạn chỉ đường cho khách: {受付|うけつけ}は こちらです.",
+        "type": "grammar",
+        "ref": "g0303"
+      },
+      {
+        "id": "s0320",
+        "type": "example",
+        "ref": "g0303",
+        "reveal": true
+      },
+      {
+        "id": "s0321",
+        "teacherNotes": "Giáo viên chỉ vào số, học viên đọc to rồi bấm mũi tên để kiểm tra.",
+        "type": "table",
+        "title": "Số đếm: trăm, nghìn, vạn",
+        "columns": ["Số", "Cách đọc"],
+        "rows": [
+          ["100", "ひゃく"],
+          ["300", "さんびゃく"],
+          ["600", "ろっぴゃく"],
+          ["800", "はっぴゃく"],
+          ["1000", "せん"],
+          ["3000", "さんぜん"],
+          ["8000", "はっせん"],
+          ["10000", "いちまん"],
+          ["15800", "いちまん ごせん はっぴゃく"],
+          ["100000", "じゅうまん"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0322",
+        "teacherNotes": "Cho học viên nói tầng của các phòng trong sơ đồ trên bảng.",
+        "type": "table",
+        "title": "Tầng mấy?",
+        "columns": ["Tầng", "Cách đọc"],
+        "rows": [
+          ["1階", "いっかい"],
+          ["2階", "にかい"],
+          ["3階", "さんがい"],
+          ["4階", "よんかい"],
+          ["6階", "ろっかい"],
+          ["8階", "はっかい"],
+          ["10階", "じゅっかい"],
+          ["何階", "なんがい"],
+          ["地下1階", "ちか いっかい"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0323",
+        "teacherNotes": "Cầm đồ vật thật lên và hỏi これは どこの 〜ですか.",
+        "type": "grammar",
+        "ref": "g0304"
+      },
+      {
+        "id": "s0324",
+        "type": "example",
+        "ref": "g0304",
+        "reveal": true
+      },
+      {
+        "id": "s0325",
+        "teacherNotes": "Giáo viên hỏi これは どこの 〜ですか; học viên trả lời theo cột Nước.",
+        "type": "table",
+        "title": "Luyện tập 2: của nước nào?",
+        "columns": ["Đồ vật", "Nước", "Câu trả lời"],
+        "rows": [
+          ["この {時計|とけい}", "スイス", "スイスの {時計|とけい}です。"],
+          ["その カメラ", "{日本|にほん}", "{日本|にほん}の カメラです。"],
+          ["あの ワイン", "フランス", "フランスの ワインです。"],
+          ["この {靴|くつ}", "イタリア", "イタリアの {靴|くつ}です。"],
+          ["その めがね", "ベトナム", "ベトナムの めがねです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0326",
+        "type": "quiz",
+        "ref": "q0308"
+      },
+      {
+        "id": "s0327",
+        "type": "quiz",
+        "ref": "q0310"
+      },
+      {
+        "id": "s0328",
+        "teacherNotes": "Dán giá lên vài món đồ; học viên hỏi いくらですか và đọc to giá.",
+        "type": "grammar",
+        "ref": "g0305"
+      },
+      {
+        "id": "s0329",
+        "type": "example",
+        "ref": "g0305",
+        "reveal": true
+      },
+      {
+        "id": "s0330",
+        "teacherNotes": "Học viên đọc giá thành tiếng trước, rồi bấm mũi tên để xem cách đọc.",
+        "type": "table",
+        "title": "Luyện tập 3: bao nhiêu tiền?",
+        "columns": ["Đồ vật và giá", "Trả lời"],
+        "rows": [
+          ["この ネクタイ・2500{円|えん}", "にせん ごひゃく えんです。"],
+          ["その {時計|とけい}・18000{円|えん}", "いちまん はっせん えんです。"],
+          ["あの カメラ・36000{円|えん}", "さんまん ろくせん えんです。"],
+          ["この {靴|くつ}・7800{円|えん}", "ななせん はっぴゃく えんです。"],
+          ["コーヒー・350{円|えん}", "さんびゃく ごじゅう えんです。"],
+          ["フォー・60000ドン", "ろくまん ドンです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0331",
+        "type": "quiz",
+        "ref": "q0311"
+      },
+      {
+        "id": "s0332",
+        "type": "quiz",
+        "ref": "q0318"
+      },
+      {
+        "id": "s0333",
+        "teacherNotes": "Vẽ sơ đồ tòa nhà lên bảng; học viên đổi vai, thay {会議室|かいぎしつ} bằng {食堂|しょくどう}, {事務所|じむしょ}, トイレ.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Phòng họp ở đâu?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "すみません。{会議室|かいぎしつ}は どこですか。",
+            "vi": "Xin lỗi, phòng họp ở đâu ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "{会議室|かいぎしつ}は 3{階|がい}です。",
+            "vi": "Phòng họp ở tầng 3 ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "エレベーターは どこですか。",
+            "vi": "Thang máy ở đâu ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "あちらです。",
+            "vi": "Ở phía kia ạ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "どうも ありがとう ございます。",
+            "vi": "Cảm ơn chị nhiều."
+          }
+        ]
+      },
+      {
+        "id": "s0334",
+        "teacherNotes": "Học viên hỏi nhau quê ở đâu: ベトナムの どこですか → ダナンです、フエです….",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Anh là người nước nào?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "アンさん、お{国|くに}は どちらですか。",
+            "vi": "Chị An là người nước nào?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ベトナムです。",
+            "vi": "Việt Nam ạ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ベトナムの どこですか。",
+            "vi": "Ở đâu của Việt Nam?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "ハノイです。{田中|たなか}さんは？",
+            "vi": "Hà Nội ạ. Còn anh Tanaka?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "わたしは {大阪|おおさか}から {来|き}ました。",
+            "vi": "Tôi đến từ Osaka."
+          }
+        ]
+      },
+      {
+        "id": "s0335",
+        "teacherNotes": "Mang vài món đồ có dán giá (yên hoặc đồng) để học viên đóng vai người bán và người mua.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Ở quầy đồng hồ",
+        "lines": [
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "いらっしゃいませ。",
+            "vi": "Xin mời quý khách."
+          },
+          {
+            "speaker": "リン",
+            "jp": "すみません、その {時計|とけい}を {見|み}せて ください。",
+            "vi": "Xin lỗi, cho tôi xem cái đồng hồ đó."
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "はい、どうぞ。",
+            "vi": "Vâng, mời chị."
+          },
+          {
+            "speaker": "リン",
+            "jp": "これは どこの {時計|とけい}ですか。",
+            "vi": "Đây là đồng hồ của nước nào?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "スイスの {時計|とけい}です。",
+            "vi": "Đồng hồ Thụy Sĩ ạ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "いくらですか。",
+            "vi": "Bao nhiêu tiền ạ?"
+          },
+          {
+            "speaker": "{店員|てんいん}",
+            "jp": "38000{円|えん}です。",
+            "vi": "38000 yên ạ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "じゃ、これを ください。",
+            "vi": "Vậy thì, cho tôi cái này."
+          }
+        ]
+      },
+      {
+        "id": "s0336",
+        "teacherNotes": "Học viên hỏi nhau theo cặp; người trả lời dùng sơ đồ trên bảng.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi đường và mua đồ",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["すみません、トイレは どこですか。", "あそこです。"],
+          ["{受付|うけつけ}は どちらですか。", "こちらです。"],
+          ["{靴|くつ}の {売り場|うりば}は {何階|なんがい}ですか。", "{地下|ちか}1{階|かい}です。"],
+          ["お{国|くに}は どちらですか。", "ベトナムです。"],
+          ["この {時計|とけい}は いくらですか。", "12000{円|えん}です。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s0337",
+        "type": "quiz",
+        "ref": "q0346"
+      },
+      {
+        "id": "s0338",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• ここ・そこ・あそこ・どこ — lịch sự: こちら・そちら・あちら・どちら\n• N は どこですか → N は あそこです\n• どこの N ですか → スイスの N です\n• いくらですか → 〜えんです; 〜を みせて ください; 〜を ください\n• Biến âm: さんびゃく, ろっぴゃく, はっぴゃく, さんぜん, はっせん; いっかい, ろっかい, はっかい"
+      },
+      {
+        "id": "s0339",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Vẽ sơ đồ trường hoặc nơi làm việc, viết 5 câu chỉ vị trí: 〜は 〜です.\n3. Chụp giá 3 món đồ ở cửa hàng gần nhà và đọc to giá bằng tiếng Nhật."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q0301",
+        "prompt": "（　　）は きょうしつです。(nơi người nói đang đứng)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Nơi người nói đang đứng: ここ. これ chỉ đồ vật.",
+        "type": "choice",
+        "options": ["そこ", "ここ", "あそこ", "これ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0302",
+        "prompt": "トイレは （　　）ですか。(hỏi nơi chốn)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi nơi chốn: どこ.",
+        "type": "choice",
+        "options": ["どこ", "なん", "だれ", "いくら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0303",
+        "prompt": "Chọn câu đúng: Nhà ăn ở đằng kia.",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Nói vị trí: N は あそこです. あれ chỉ đồ vật.",
+        "type": "choice",
+        "options": [
+          "あそこは しょくどうですか。",
+          "しょくどうは あれです。",
+          "あそこの しょくどうです。",
+          "しょくどうは あそこです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0304",
+        "prompt": "ナムさんは どこですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi どこ thì trả lời bằng nơi chốn: かいぎしつです.",
+        "type": "choice",
+        "options": [
+          "ナムさんです",
+          "かいぎしつの ナムさんです",
+          "かいぎしつです",
+          "はい、そうです"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0305",
+        "prompt": "Cách nói lịch sự của ここ là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "ここ → こちら, そこ → そちら, あそこ → あちら, どこ → どちら.",
+        "type": "choice",
+        "options": ["そちら", "こちら", "あちら", "どちら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0306",
+        "prompt": "Nhân viên chỉ hướng cho khách: Thang cuốn ở phía kia ạ.",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Chỉ hướng lịch sự: N は あちらです.",
+        "type": "choice",
+        "options": [
+          "エスカレーターは あちらです。",
+          "エスカレーターは あれです。",
+          "エスカレーターは あそこですか。",
+          "あちらは エスカレーターですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0307",
+        "prompt": "Hỏi lịch sự người đối diện là người nước nào:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi lịch sự: おくには どちらですか.",
+        "type": "choice",
+        "options": [
+          "くには どこですか。",
+          "おくには なんですか。",
+          "くには だれですか。",
+          "おくには どちらですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0308",
+        "prompt": "これは （　　）の とけいですか。…スイスの とけいです。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi xuất xứ: どこの N.",
+        "type": "choice",
+        "options": ["なん", "だれ", "どこ", "いくら"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0309",
+        "prompt": "その カメラは どこのですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Trả lời xuất xứ bằng tên nước + の: にほんのです.",
+        "type": "choice",
+        "options": ["にほんです", "にほんのです", "カメラです", "はい、そうです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0310",
+        "prompt": "Chọn câu đúng: Đây là rượu vang Ý.",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Nơi làm ra đứng trước: イタリアの ワイン.",
+        "type": "choice",
+        "options": [
+          "これは イタリアの ワインです。",
+          "これは ワインの イタリアです。",
+          "これは イタリア ワインのです。",
+          "この イタリアは ワインです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0311",
+        "prompt": "この ネクタイは （　　）ですか。…3000えんです。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi giá: いくら.",
+        "type": "choice",
+        "options": ["どこ", "なん", "どちら", "いくら"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0312",
+        "prompt": "300 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "300: さんびゃく (ひゃく đổi thành びゃく).",
+        "type": "choice",
+        "options": ["さんひゃく", "さんぴゃく", "さんびゃく", "みっひゃく"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0313",
+        "prompt": "600 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "600: ろっぴゃく.",
+        "type": "choice",
+        "options": ["ろくひゃく", "ろっぴゃく", "ろくびゃく", "むっぴゃく"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0314",
+        "prompt": "800 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "800: はっぴゃく.",
+        "type": "choice",
+        "options": ["はっぴゃく", "はちひゃく", "はちびゃく", "やっぴゃく"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0315",
+        "prompt": "3000 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "3000: さんぜん (せん đổi thành ぜん).",
+        "type": "choice",
+        "options": ["さんせん", "さっせん", "みせん", "さんぜん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0316",
+        "prompt": "8000 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "8000: はっせん.",
+        "type": "choice",
+        "options": ["はちせん", "はちぜん", "はっせん", "やっせん"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0317",
+        "prompt": "10000 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "10000: いちまん; まん không đứng một mình.",
+        "type": "choice",
+        "options": ["まん", "いちまん", "じゅうせん", "ひゃくせん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0318",
+        "prompt": "Muốn mua cái này, bạn nói:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Mua: N を ください. みせて ください là xin xem.",
+        "type": "choice",
+        "options": [
+          "これを ください。",
+          "これは ください。",
+          "これを みせて ください。",
+          "これは いくらですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0319",
+        "prompt": "Muốn xem cái đồng hồ kia, bạn nói:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Xin xem: N を みせて ください.",
+        "type": "choice",
+        "options": [
+          "あの とけいを ください。",
+          "あの とけいは どこですか。",
+          "あれは とけいですか。",
+          "あの とけいを みせて ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0320",
+        "prompt": "Nhân viên cửa hàng chào khách vừa bước vào:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Nhân viên chào khách: いらっしゃいませ.",
+        "type": "choice",
+        "options": ["すみません。", "どうも。", "いらっしゃいませ。", "じゃ。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0321",
+        "prompt": "くつの うりばは （　　）ですか。…ちか 1かいです。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi tầng: なんがい (何階).",
+        "type": "choice",
+        "options": ["なんさい", "なんがい", "だれ", "いくら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0322",
+        "prompt": "1かい (tầng 1) đọc đúng là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "1階: いっかい.",
+        "type": "choice",
+        "options": ["いっかい", "いちかい", "いちがい", "ひとかい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0323",
+        "prompt": "Chọn câu đúng: Văn phòng ở tầng 2.",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Nói vị trí: N は 〜かいです.",
+        "type": "choice",
+        "options": [
+          "じむしょは 2かいですか。",
+          "2かいは じむしょの です。",
+          "じむしょの 2かいです。",
+          "じむしょは 2かいです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0324",
+        "prompt": "(Ở sảnh) すみません、エレベーターは どこですか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi どこ thì trả lời bằng nơi chốn: あちらです.",
+        "type": "choice",
+        "options": ["エレベーターです", "はい、そうです", "あちらです", "いいえ、ちがいます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0325",
+        "prompt": "Bạn đi lạc và muốn hỏi: Đây là đâu?",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi nơi mình đang đứng: ここは どこですか.",
+        "type": "choice",
+        "options": [
+          "どこは ここですか。",
+          "ここは どこですか。",
+          "ここは なんですか。",
+          "これは どこですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0326",
+        "prompt": "Hỏi giá cái máy ảnh đó:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi giá: N は いくらですか. どこのですか hỏi xuất xứ.",
+        "type": "choice",
+        "options": [
+          "その カメラは いくらですか。",
+          "その カメラは どこですか。",
+          "その カメラは どこのですか。",
+          "その カメラを ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0327",
+        "prompt": "Hỏi lịch sự: Anh Tanaka ở đâu ạ?",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "どちら là cách hỏi nơi chốn lịch sự; どなた hỏi \"vị nào\".",
+        "type": "choice",
+        "options": [
+          "たなかさんは どなたですか。",
+          "たなかさんは なんですか。",
+          "たなかさんは どこのですか。",
+          "たなかさんは どちらですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0328",
+        "prompt": "うち nghĩa là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "うち: nhà (của mình).",
+        "type": "choice",
+        "options": ["trường học", "công ty", "nhà (của mình)", "cửa hàng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0329",
+        "prompt": "うけつけ nghĩa là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "うけつけ (受付): quầy lễ tân.",
+        "type": "choice",
+        "options": ["phòng họp", "quầy lễ tân", "nhà ăn", "cầu thang"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0330",
+        "prompt": "Từ nào nghĩa là \"thang máy\"?",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Thang máy: エレベーター; thang cuốn: エスカレーター.",
+        "type": "choice",
+        "options": ["エレベーター", "エスカレーター", "かいだん", "ロビー"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0331",
+        "prompt": "じどうはんばいき nghĩa là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "じどうはんばいき (自動販売機): máy bán hàng tự động.",
+        "type": "choice",
+        "options": ["điện thoại", "đồng hồ", "máy ảnh", "máy bán hàng tự động"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0332",
+        "prompt": "1500えん đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "1000 là せん (không nói いちせん); 500 là ごひゃく.",
+        "type": "choice",
+        "options": [
+          "いちせん ごひゃく えん",
+          "せん ごびゃく えん",
+          "せん ごひゃく えん",
+          "いっせん ごひゃく えん"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0333",
+        "prompt": "25000 đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "25000 = 2 vạn 5 nghìn: にまん ごせん.",
+        "type": "choice",
+        "options": ["にじゅうご せん", "にまん ごせん", "にまん ごぜん", "にせん ごまん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q0334",
+        "prompt": "Chọn câu đúng: Cái đồng hồ này của nước nào?",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi xuất xứ: どこのですか. どこですか hỏi đồng hồ đang ở đâu.",
+        "type": "choice",
+        "options": [
+          "この とけいは どこのですか。",
+          "この とけいは どこですか。",
+          "この とけいは なんのですか。",
+          "この とけいは だれですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q0335",
+        "prompt": "Nhận đồ từ nhân viên, bạn cảm ơn ngắn gọn:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Cảm ơn nói gọn: どうも.",
+        "type": "choice",
+        "options": ["いらっしゃいませ。", "どこですか。", "じゃ。", "どうも。"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q0336",
+        "prompt": "60000ドン đọc là:",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "60000 = 6 vạn: ろくまん.",
+        "type": "choice",
+        "options": ["ろっまん ドン", "ろくせん ドン", "ろくまん ドン", "むまん ドン"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q0337",
+        "prompt": "Điền: トイレは （　　）ですか。(hỏi nơi chốn)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi nơi chốn: どこ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どこ"]
+      },
+      {
+        "id": "q0338",
+        "prompt": "Điền: すみません、この とけいは （　　）ですか。(hỏi giá)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi giá: いくら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いくら"]
+      },
+      {
+        "id": "q0339",
+        "prompt": "Điền: じゃ、これを （　　）。(mua cái này)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Mua: N を ください.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ください"]
+      },
+      {
+        "id": "q0340",
+        "prompt": "Điền: うけつけは （　　）です。(phía này, lịch sự)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Phía này, lịch sự: こちら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["こちら"]
+      },
+      {
+        "id": "q0341",
+        "prompt": "Điền: おくには （　　）ですか。(hỏi lịch sự là nước nào)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi lịch sự: おくには どちらですか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どちら"]
+      },
+      {
+        "id": "q0342",
+        "prompt": "Điền: これは （　　）の ワインですか。…フランスの ワインです。",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi xuất xứ: どこの N.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どこ"]
+      },
+      {
+        "id": "q0343",
+        "prompt": "Điền: あの カメラを （　　） ください。(cho tôi xem)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Xin xem: N を みせて ください.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["みせて"]
+      },
+      {
+        "id": "q0344",
+        "prompt": "Điền cách đọc: 300 = （　　）",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "300: さんびゃく.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さんびゃく"]
+      },
+      {
+        "id": "q0345",
+        "prompt": "Điền cách đọc: 8000 = （　　）",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "8000: はっせん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はっせん"]
+      },
+      {
+        "id": "q0346",
+        "prompt": "Điền: くつの うりばは （　　）ですか。…3がいです。(tầng mấy)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Hỏi tầng: なんがい (cũng nghe nói なんかい).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なんがい", "なんかい"]
+      },
+      {
+        "id": "q0347",
+        "prompt": "Điền: （　　）は きょうしつです。(chỗ này)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Chỗ này: ここ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ここ"]
+      },
+      {
+        "id": "q0348",
+        "prompt": "Điền: トイレは （　　）です。(chỗ kia, xa cả hai người)",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Chỗ kia: あそこ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あそこ"]
+      },
+      {
+        "id": "q0349",
+        "prompt": "Điền: \"tầng hầm\" là （　　）。ví dụ: （　　） 1かい",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "Tầng hầm: ちか (地下).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ちか"]
+      },
+      {
+        "id": "q0350",
+        "prompt": "Điền cách đọc: 1かい (tầng 1) = （　　）",
+        "points": 1,
+        "tags": ["minna-3"],
+        "explain": "1階: いっかい.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いっかい"]
+      }
+    ]
+  }
+}

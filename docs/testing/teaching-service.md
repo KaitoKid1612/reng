@@ -129,6 +129,14 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Bài mẫu Minna 3 — 03/11/2026
+
+Thêm `content/starters/minna-1-03.json` và đăng ký trong `STARTER_LESSONS` sau bài 2: 52 từ (24 từ có icon), 5 mục ngữ pháp, 39 slide (6 bảng, 3 hội thoại), 50 câu luyện (36 choice với đáp án chia đều 9/9/9/9 vị trí, 14 fill hiragana).
+
+- PASS local: `npm run check`. Test chung của bài mẫu (xuất bản được ngay, đủ loại slide, đáp án nhiều vị trí, câu điền chỉ hiragana, bản công khai không lộ ghi chú và đáp án) và test hình (mọi icon tồn tại).
+- PASS local, Supabase local: tạo bài từ mẫu bằng tài khoản giáo viên thử, xuất bản, rồi đi qua từng slide trong deck 1280×720 và đo chiều cao, chiều rộng. Lần đầu ba slide hội thoại tràn (745, 750 và 865 px). Nguyên nhân là ngưỡng bố cục hội thoại, không phải nội dung bài; đã sửa ngưỡng và thêm bố cục dày. Sau sửa, bài 1, 2, 3, 11, 12, 13 không còn slide nào tràn.
+- E2E chưa chạy (đợt này tạm hoãn E2E).
+
 ## Bài mẫu Minna 13 — 02/11/2026
 
 Thêm `content/starters/minna-1-13.json` và đăng ký trong `STARTER_LESSONS`: 46 từ, 5 mục ngữ pháp, 41 slide (5 bảng, 4 hội thoại), 50 câu luyện (30 choice, 20 fill hiragana, gồm 10 câu đọc kanji). Kiểm tra tham chiếu xác nhận mọi từ vựng và mục ngữ pháp đều có trên slide.
