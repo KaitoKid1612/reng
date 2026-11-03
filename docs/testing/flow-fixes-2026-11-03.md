@@ -147,6 +147,17 @@ Migration chưa chạy trên production. Code không phụ thuộc migration nà
 
 E2E chưa chạy. Bước trong `e2e-supabase/teaching-authoring.spec.ts` vẫn đúng: spec mở trang có bộ lọc, còn ô lọc nằm trong mục gập vẫn đọc được giá trị.
 
+## Tự học tiếng Trung: bảng pinyin và luyện gõ
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/pinyin-study.test.ts`: chuẩn hóa câu trả lời; thanh nhẹ nhận cả cách viết đủ thanh, sai thanh vẫn sai; mỗi từ có số âm tiết bằng số chữ Hán; cả 48 từ gõ được bằng số thanh qua bộ đổi thật; phiên bốc không trùng và lặp lại được | Đạt |
+| Trang Tự học có mục Tiếng Trung với hai công cụ; trang Bảng pinyin có 5 thanh, 21 thanh mẫu, 6 nhóm vận mẫu; header đánh dấu Tự học | Đạt |
+| Phiên luyện ở 390px: gõ số thanh tự thành dấu (hàn yǔ), Enter kiểm tra rồi Enter sang từ sau; 2 câu cố ý sai cho kết quả 8/10; Luyện lại từ sai mở phiên 2 từ; không có lỗi console | Đạt |
+| `npm run audit:layout` cho `/self-study`, `/pinyin`, `/pinyin/practice` ở 360/768/1280px; `npm run build` dựng tĩnh hai trang mới | Không có lỗi hay cảnh báo |
+
+Phần so sánh âm với tiếng Việt chỉ là gần đúng để bắt đầu, trang có ghi rõ điều đó. Chưa có audio đọc mẫu; cần khóa Azure như bài tiếng Nhật. E2E chưa chạy.
+
 ## Còn lại, cần người dùng quyết định
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

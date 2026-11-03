@@ -4,7 +4,7 @@ export interface SelfStudyTool {
   description: string;
 }
 
-export type SelfStudySubjectId = "japanese";
+export type SelfStudySubjectId = "japanese" | "chinese";
 
 export interface SelfStudySubject {
   id: SelfStudySubjectId;
@@ -36,6 +36,23 @@ export const SELF_STUDY_SUBJECTS: readonly SelfStudySubject[] = [
         href: "/grammar",
         label: "Tra ngữ pháp",
         description: "Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt, kèm ví dụ.",
+      },
+    ],
+  },
+  {
+    id: "chinese",
+    name: "Tiếng Trung",
+    summary: "Cho người mới bắt đầu: làm quen pinyin, thanh điệu và cách gõ pinyin có dấu.",
+    tools: [
+      {
+        href: "/pinyin",
+        label: "Bảng pinyin",
+        description: "Bốn thanh điệu và thanh nhẹ, thanh mẫu, vận mẫu, cách đặt dấu thanh.",
+      },
+      {
+        href: "/pinyin/practice",
+        label: "Luyện gõ pinyin",
+        description: "Nhìn chữ Hán và nghĩa, gõ pinyin có dấu (gõ được số thanh: ni3 → nǐ).",
       },
     ],
   },

@@ -31,6 +31,8 @@ export const PUBLIC_PAGES = [
   { path: "/self-study", priority: 0.7, changeFrequency: "monthly" },
   { path: "/kana", priority: 0.7, changeFrequency: "yearly" },
   { path: "/kana/practice", priority: 0.6, changeFrequency: "yearly" },
+  { path: "/pinyin", priority: 0.6, changeFrequency: "yearly" },
+  { path: "/pinyin/practice", priority: 0.5, changeFrequency: "yearly" },
   { path: "/grammar", priority: 0.6, changeFrequency: "weekly" },
   { path: "/sign-up/teacher", priority: 0.5, changeFrequency: "yearly" },
   { path: "/guide", priority: 0.5, changeFrequency: "monthly" },

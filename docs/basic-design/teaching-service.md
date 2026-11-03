@@ -69,8 +69,9 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | SV10 | `/guide` | Hướng dẫn sử dụng công khai cho giáo viên, học viên và quản trị viên; link ở thanh đầu trang, chân trang, trang Giảng dạy và Lớp của tôi |
 | SV11 | `/teach/lessons/[id]/starter` | So sánh bản nháp với bài mẫu mới nhất và thay nội dung nháp bằng mẫu |
 | SV12 | `/self-study` | Tự học: bài học công khai và công cụ luyện tập theo từng môn, không cần tài khoản |
+| SV13 | `/pinyin`, `/pinyin/practice` | Tự học tiếng Trung: bảng pinyin (thanh điệu, thanh mẫu, vận mẫu, đặt dấu) và luyện gõ pinyin có dấu, gõ được số thanh |
 
-SV01–SV05, SV08–SV12 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
+SV01–SV05, SV08–SV13 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
 
 ## Ngôn ngữ và chấm điểm
 

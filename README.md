@@ -24,7 +24,7 @@ Kiểm tra bố cục bằng code (03/11/2026): `npm run audit:layout` mở các
 
 Đăng nhập bằng Google (03/11/2026): nút Google ở trang đăng nhập và hai trang đăng ký, quay lại đúng trang đang mở. Nút chỉ hiện khi `AUTH_GOOGLE_ENABLED=true` và nhà cung cấp Google đã bật trong Supabase Auth; production đã bật từ 03/11/2026. Xem [các bước bật](docs/poc-setup.md#bật-đăng-nhập-bằng-google-03112026) và [kiểm tra](docs/testing/google-sign-in-2026-11-03.md).
 
-Trang chung không gắn môn (03/11/2026): trang chủ, header, chân trang, metadata và ảnh chia sẻ giới thiệu Reng là nơi dạy và học online, không gắn tiếng Nhật; công cụ tự học tiếng Nhật nằm ở trang Tự học (`/self-study`). Xem [rà soát và phần còn gắn với ngôn ngữ](docs/testing/platform-neutral-ui-2026-11-03.md).
+Trang chung không gắn môn (03/11/2026): trang chủ, header, chân trang, metadata và ảnh chia sẻ giới thiệu Reng là nơi dạy và học online, không gắn tiếng Nhật; công cụ tự học tiếng Nhật nằm ở trang Tự học (`/self-study`), cùng môn tiếng Trung với bảng pinyin và luyện gõ pinyin (`/pinyin`). Xem [rà soát và phần còn gắn với ngôn ngữ](docs/testing/platform-neutral-ui-2026-11-03.md).
 
 Công cụ giáo viên (03/11/2026): từ chối yêu cầu làm giáo viên, audio sinh sẵn cho bài tiếng Trung, trang không còn lỗi khi danh sách dài; chấp nhận đáp án tương đương đang chờ áp migration. Xem [báo cáo](docs/testing/teacher-tools-2026-11-03.md).
 
