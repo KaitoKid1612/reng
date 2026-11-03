@@ -232,7 +232,24 @@ test("flashcards and vocabulary review keep the version a class pins after a new
       .eq("user_id", learner.id)
       .eq("source_id", lessonId);
     expect(madeDue.error).toBeNull();
+    // More than a page of due cards the learner can no longer open come first; the readable card
+    // behind them must still reach the session.
+    const unreadable = await adminClient()
+      .from("srs_cards")
+      .insert(
+        Array.from({ length: 205 }, (_, index) => ({
+          user_id: learner.id,
+          item_type: "vocab",
+          source_id: `removed-${RUN_ID}`,
+          item_id: `word-${index}`,
+          scheduler_version: "ts-fsrs-5.4.2",
+          scheduler_state: {},
+          due: new Date(Date.now() - 2 * 86_400_000).toISOString(),
+        })),
+      );
+    expect(unreadable.error).toBeNull();
     await learner.page.goto("/review");
+    await expect(learner.page.getByText(/^1 thẻ cần ôn/)).toBeVisible();
     await learner.page.getByRole("button", { name: "Lật thẻ", exact: true }).click();
     await expect(learner.page.locator(".flashcard-back")).toContainText(firstMeaning);
     await expect(learner.page.locator(".flashcard-back")).not.toContainText(newMeaning);
