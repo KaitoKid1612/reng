@@ -29,6 +29,7 @@ import {
   teachingReducer,
 } from "../lib/teaching-draft";
 import { parseVocabularyTable } from "../lib/teaching-table";
+import { currentSlidePlan, generateTeachingSlides } from "../lib/teaching-templates";
 import {
   createQuestionDraft,
   describeQuestionProblem,
@@ -356,4 +357,29 @@ test("pasting words stops at the lesson limit instead of leaving a draft that ca
     100,
   );
   assert.equal(teachingReducer(draft, { type: "addVocab" }).content.vocab.length, 100);
+});
+
+test("a slide plan built before a later slide edit is not applied over that edit", () => {
+  let draft = createTeachingDraft("Slide", "starter", "zh-Hans", "Chào hỏi");
+  draft = teachingReducer(draft, {
+    type: "applySlides",
+    generation: generateTeachingSlides(draft),
+  });
+  draft = teachingReducer(draft, {
+    type: "addQuestion",
+    question: createBlankQuestion(draft.content, "choice"),
+  });
+  const plan = { generation: generateTeachingSlides(draft), content: draft.content };
+  assert.ok(currentSlidePlan(plan, draft.content));
+  const title = draft.content.slides[0];
+  assert.ok(title.type === "title");
+  const edits = [
+    teachingReducer(draft, { type: "updateSlide", slide: { ...title, teacherNotes: "Mở đầu" } }),
+    teachingReducer(draft, { type: "addNoteSlide" }),
+    teachingReducer(draft, { type: "removeItem", collection: "slides", id: title.id }),
+    teachingReducer(draft, { type: "moveItem", collection: "slides", id: title.id, offset: 1 }),
+  ];
+  for (const edited of edits) {
+    assert.equal(currentSlidePlan(plan, edited.content), null);
+  }
 });

@@ -127,6 +127,18 @@ export interface SlideGeneration {
   changes: SlideChanges;
 }
 
+// A plan shown to the teacher, with the content it was built from.
+export interface SlidePlan {
+  generation: SlideGeneration;
+  content: TeachingDraft["content"];
+}
+
+// Applying a plan after a later edit would put the old slides back, so a plan only counts while
+// the content is the one it was built from; every edit makes a new content object.
+export function currentSlidePlan(plan: SlidePlan | null, content: TeachingDraft["content"]) {
+  return plan && plan.content === content ? plan.generation : null;
+}
+
 export function hasSlideChanges(changes: SlideChanges) {
   return Boolean(changes.added.length || changes.updated.length || changes.removed.length);
 }

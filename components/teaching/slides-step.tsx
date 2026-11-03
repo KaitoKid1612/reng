@@ -5,11 +5,15 @@ import { useState } from "react";
 import { TeachingSlidePreview } from "@/components/teaching/teaching-slide-preview";
 import { Button } from "@/components/ui/button";
 import { countEditedGeneratedSlides, toPreviewLesson } from "@/lib/teaching-draft";
-import { generateTeachingSlides, hasSlideChanges } from "@/lib/teaching-templates";
+import {
+  currentSlidePlan,
+  generateTeachingSlides,
+  hasSlideChanges,
+} from "@/lib/teaching-templates";
 
 import type { TeachingDraft, TeachingSlide } from "@/lib/teaching-content";
 import type { TeachingDispatch } from "@/lib/teaching-draft";
-import type { SlideGeneration } from "@/lib/teaching-templates";
+import type { SlidePlan } from "@/lib/teaching-templates";
 
 const SLIDE_TYPE_LABELS: Record<TeachingSlide["type"], string> = {
   title: "Tiêu đề",
@@ -120,19 +124,21 @@ interface SlidesStepProps {
 export function SlidesStep({ draft, dispatch, lessonId }: SlidesStepProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [replaceEdited, setReplaceEdited] = useState(false);
-  const [generation, setGeneration] = useState<SlideGeneration | null>(null);
+  const [plan, setPlan] = useState<SlidePlan | null>(null);
+  const generation = currentSlidePlan(plan, draft.content);
+  const isPlanStale = plan !== null && generation === null;
   const { slides } = draft.content;
   const selected = slides.find((slide) => slide.id === selectedId) ?? slides[0] ?? null;
   const editedCount = countEditedGeneratedSlides(draft);
 
   function handlePlan() {
-    setGeneration(generateTeachingSlides(draft, replaceEdited));
+    setPlan({ generation: generateTeachingSlides(draft, replaceEdited), content: draft.content });
   }
 
   function handleApply() {
     if (generation) {
       dispatch({ type: "applySlides", generation });
-      setGeneration(null);
+      setPlan(null);
     }
   }
 
@@ -151,7 +157,7 @@ export function SlidesStep({ draft, dispatch, lessonId }: SlidesStepProps) {
               checked={replaceEdited}
               onChange={(event) => {
                 setReplaceEdited(event.target.checked);
-                setGeneration(null);
+                setPlan(null);
               }}
             />
             Sinh lại cả {editedCount} slide đã sửa tay và slide đã xóa
@@ -160,6 +166,12 @@ export function SlidesStep({ draft, dispatch, lessonId }: SlidesStepProps) {
         <Button type="button" variant="outline" onClick={handlePlan}>
           Dựng slide từ nội dung
         </Button>
+        {isPlanStale && (
+          <p role="status" className="notice-panel">
+            Bài vừa thay đổi sau khi dựng. Bấm Dựng slide từ nội dung để xem lại thay đổi trước khi
+            áp dụng.
+          </p>
+        )}
         {generation && (
           <div role="status" className="notice-panel">
             {hasSlideChanges(generation.changes) ? (
@@ -177,7 +189,7 @@ export function SlidesStep({ draft, dispatch, lessonId }: SlidesStepProps) {
                   Áp dụng thay đổi slide
                 </Button>
               )}
-              <Button type="button" variant="ghost" onClick={() => setGeneration(null)}>
+              <Button type="button" variant="ghost" onClick={() => setPlan(null)}>
                 Đóng
               </Button>
             </div>
