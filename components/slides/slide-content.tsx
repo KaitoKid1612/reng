@@ -26,7 +26,9 @@ const COMPACT_DIALOGUE_ROWS = 4;
 const DENSE_DIALOGUE_ROWS = 6;
 // About this many Japanese characters fit one row of a dialogue bubble at full size.
 const DIALOGUE_ROW_CHARACTERS = 20;
-const COMPACT_TABLE_ROWS = 8;
+// Full-size rows are about 62 px and compact rows about 44 px in the deck, so eight rows need the
+// compact layout and the twelve-row maximum still fits.
+const COMPACT_TABLE_ROWS = 7;
 
 function TitleSlide({ slide }: SlideContentProps) {
   if (slide.type !== "title") {
