@@ -18,6 +18,8 @@ Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên w
 
 Rà soát trải nghiệm ngày 30/10/2026: trang chủ có lối vào lớp bằng mã, tự học và giảng dạy; menu giáo viên mở trực tiếp cả lớp đang học. Trang giao bài hướng dẫn tạo/xuất bản khi chưa có học liệu và chỉ cho chọn bài đã có phiên bản xuất bản. Xem [báo cáo bug UI, cải tiến và giới hạn kiểm chứng](docs/testing/user-flow-review.md).
 
+Sửa lỗi luồng học và dạy (03/11/2026): trang Tài khoản (đổi họ tên, mật khẩu), quên mật khẩu có lối vào bằng Google, thông báo câu luyện nghe rõ ràng, trình soạn hỏi lại trước khi rời trang chưa lưu. Xem [lỗi còn lại và phần cần quyết định](docs/testing/flow-fixes-2026-11-03.md).
+
 Kiểm tra bố cục bằng code (03/11/2026): `npm run audit:layout` mở các trang ở 360/768/1280px và báo chữ chồng hoặc dính nhau, hàng lệch, nút sát chữ, chữ bị cắt, tràn ngang và vùng bấm nhỏ; các chỗ nó tìm thấy đã được sửa. Xem [công cụ và kết quả](docs/testing/layout-audit-2026-11-03.md).
 
 Đăng nhập bằng Google (03/11/2026): nút Google ở trang đăng nhập và hai trang đăng ký, quay lại đúng trang đang mở. Nút chỉ hiện khi `AUTH_GOOGLE_ENABLED=true` và nhà cung cấp Google đã bật trong Supabase Auth; production đã bật từ 03/11/2026. Xem [các bước bật](docs/poc-setup.md#bật-đăng-nhập-bằng-google-03112026) và [kiểm tra](docs/testing/google-sign-in-2026-11-03.md).

@@ -53,6 +53,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Vào lớp | `/join-class` | 3 |
 | Nguồn dữ liệu | `/sources` | 1, cập nhật khi thêm nguồn |
 | Cài đặt thông báo | `/settings/notifications` | 4; thêm push ở 6 |
+| Tài khoản: họ tên, mật khẩu | `/settings/account` | 03/11/2026 |
 
 Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung; S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình-dự-kiến)).
 

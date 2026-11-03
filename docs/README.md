@@ -1,5 +1,7 @@
 # Reng — Tài liệu dịch vụ hỗ trợ giảng dạy
 
+Lỗi luồng học và dạy 03/11/2026: [chức năng đang lỗi trên production, phần đã sửa và phần cần quyết định](testing/flow-fixes-2026-11-03.md).
+
 Kiểm tra bố cục bằng code 03/11/2026: [công cụ `npm run audit:layout`, lỗi tìm thấy và cách sửa](testing/layout-audit-2026-11-03.md).
 
 Đăng nhập bằng Google 03/11/2026: [kiểm tra local và phần chưa thử](testing/google-sign-in-2026-11-03.md); [các bước bật trên Google Cloud, Supabase và Vercel](poc-setup.md#bật-đăng-nhập-bằng-google-03112026).

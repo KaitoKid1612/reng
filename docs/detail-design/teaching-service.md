@@ -257,6 +257,16 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Tài khoản, quên mật khẩu và trình soạn — 03/11/2026
+
+Kiểm tra ở [báo cáo](../testing/flow-fixes-2026-11-03.md).
+
+- `updateAccountName` và `changePassword` (`app/actions/auth.ts`) dùng session client. Đổi tên ghi `profiles.full_name` qua RLS sẵn có (`profile_update_own`, chỉ cột `full_name`), dùng lại kiểm tra họ tên của form đăng ký. Đổi mật khẩu gọi `auth.updateUser`, dùng lại `resetSchema`, báo riêng `same_password`, `weak_password`, `reauthentication_needed` và rate limit, rồi `signOut({ scope: "others" })`. Không có migration.
+- `app/settings/account/page.tsx` (`requireAccount`) và `components/settings/account-forms.tsx` (`AccountNameForm`, `PasswordChangeForm`, `FormFeedback` dùng chung).
+- `/forgot-password` hiện `GoogleSignIn` khi `isGoogleAuthEnabled()`. Lời nhắc sau `requestPasswordReset` chỉ người nhận hỗ trợ khi không có thư.
+- `lib/lesson-draft.ts` bỏ `AUDIO_COMMAND` khỏi giao diện; lệnh tạo audio vẫn ghi ở [06](../06-audio.md) cho người vận hành.
+- `useLeaveWarning` (`components/editor/use-leave-warning.ts`) thay hai effect `beforeunload` trong `LessonEditor` và `TeachingEditor`. Hook bắt click ở pha capture trên `document`, trước khi Next.js `Link` xử lý, và dùng `isInPlaceNavigation` (`lib/leave-warning.ts`) để chỉ hỏi khi click trái thường vào trang khác cùng site trong cùng tab. Đã đồng ý rời trang thì `beforeunload` không hỏi lần hai.
+
 ## Đăng nhập bằng Google — 03/11/2026
 
 Luồng PKCE của Supabase Auth với `@supabase/ssr` (cookie phiên httpOnly như đăng nhập email). Kiểm tra ở [báo cáo](../testing/google-sign-in-2026-11-03.md).

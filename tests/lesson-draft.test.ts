@@ -4,7 +4,6 @@ import { test } from "node:test";
 import rawCatalog from "../content/lesson-catalog.json";
 import rawDraft from "../content/lessons/lesson-01.json";
 import {
-  AUDIO_COMMAND,
   countMissingAudio,
   countMissingListeningAudio,
   createItemId,
@@ -130,7 +129,7 @@ test("listening questions publish only with a transcript, valid answers and gene
   });
   const messages = () => findPublishProblems(draft).map((problem) => problem.message);
   assert.ok(messages().includes("Câu luyện 2: nhập transcript tiếng Nhật để tạo audio."));
-  assert.ok(messages().includes(`Câu luyện 3: chưa có audio. Lưu nháp rồi chạy ${AUDIO_COMMAND}.`));
+  assert.ok(messages().some((message) => message.startsWith("Câu luyện 3: chưa có audio")));
   assert.equal(countMissingListeningAudio(draft.content), 2);
 
   const [, listen, dictation] = draft.content.questions;

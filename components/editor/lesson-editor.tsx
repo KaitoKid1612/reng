@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { unstable_rethrow, useRouter } from "next/navigation";
-import { useEffect, useReducer, useState, useTransition } from "react";
+import { useReducer, useState, useTransition } from "react";
 
 import {
   loadLessonDraftAction,
@@ -18,9 +18,9 @@ import { SLIDE_TYPE_LABELS, SLIDE_TYPES } from "@/components/editor/slide-labels
 import { SlideList } from "@/components/editor/slide-list";
 import { SlidePreview } from "@/components/editor/slide-preview";
 import { useEditorBackup } from "@/components/editor/use-editor-backup";
+import { useLeaveWarning } from "@/components/editor/use-leave-warning";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
-  AUDIO_COMMAND,
   countMissingAudio,
   countMissingListeningAudio,
   createItemId,
@@ -110,16 +110,7 @@ export function LessonEditor({
   const missingListeningAudio = countMissingListeningAudio(draft.content);
   useEditorBackup(lessonId, revision, draft, isDirty);
 
-  useEffect(() => {
-    if (!isDirty) {
-      return;
-    }
-    function handleBeforeUnload(event: BeforeUnloadEvent) {
-      event.preventDefault();
-    }
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  }, [isDirty]);
+  useLeaveWarning(isDirty);
 
   function createId(kind: ItemKind) {
     return createItemId(kind, draft.content);
@@ -306,9 +297,9 @@ export function LessonEditor({
         )}
         {missingListeningAudio > 0 && (
           <p className="small muted">
-            {missingListeningAudio} câu nghe chưa có audio nên chưa xuất bản được. Lưu nháp rồi nhờ
-            người vận hành chạy <code>{AUDIO_COMMAND}</code> và tải lại trang, hoặc xóa câu nghe nếu
-            chưa cần.
+            {missingListeningAudio} câu nghe chưa có audio nên chưa xuất bản được. Reng chưa tạo
+            được audio ngay trên trình soạn: xóa câu nghe nếu chưa cần, hoặc nhờ quản trị viên Reng
+            tạo audio rồi tải lại trang.
           </p>
         )}
         <details className="editor-section" open>

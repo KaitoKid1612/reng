@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
-import { AUDIO_COMMAND } from "@/lib/lesson-draft";
 
 import type { InputMode } from "@/lib/assignment";
 import type { DraftListeningQuestion } from "@/lib/lesson-draft";
@@ -113,7 +112,7 @@ export function ListeningQuestionEditor({
         <p id={`${id}-audio`} className="small muted" data-testid="question-audio-status">
           {question.audio
             ? "Đã có audio. Sửa transcript thì cần tạo lại audio."
-            : `Chưa có audio: lưu nháp rồi chạy ${AUDIO_COMMAND}. Học viên chỉ thấy transcript sau khi trả lời.`}
+            : "Chưa có audio. Reng chưa tạo được audio ngay trên web, nên câu nghe chỉ xuất bản được sau khi quản trị viên tạo audio. Học viên chỉ thấy transcript sau khi trả lời."}
         </p>
       </div>
       {question.type === "listen" && (

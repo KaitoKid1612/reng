@@ -122,6 +122,9 @@ export default async function ClassesPage() {
         <Link href="/guide#learner-title" className={buttonVariants({ variant: "ghost" })}>
           Hướng dẫn
         </Link>
+        <Link href="/settings/account" className={buttonVariants({ variant: "ghost" })}>
+          Tài khoản
+        </Link>
         <Link
           href={account.role === "teacher" ? "/teach" : "/teach/start"}
           className={buttonVariants({ variant: "ghost" })}

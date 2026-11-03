@@ -10,6 +10,7 @@ import {
 } from "@/app/actions/teaching-lessons";
 import { LessonVisibilityForm } from "@/components/editor/lesson-visibility-form";
 import { useEditorBackup } from "@/components/editor/use-editor-backup";
+import { useLeaveWarning } from "@/components/editor/use-leave-warning";
 import { GoalStep } from "@/components/teaching/goal-step";
 import { QuestionStep } from "@/components/teaching/question-step";
 import { SlidesStep } from "@/components/teaching/slides-step";
@@ -132,16 +133,7 @@ export function TeachingEditor({
     draftRef.current = draft;
   }, [draft]);
 
-  useEffect(() => {
-    if (!isDirty) {
-      return;
-    }
-    function handleBeforeUnload(event: BeforeUnloadEvent) {
-      event.preventDefault();
-    }
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  }, [isDirty]);
+  useLeaveWarning(isDirty);
 
   function applySaved(editor: TeachingEditorData, sentSnapshot: string) {
     const next: TeachingDraft = {

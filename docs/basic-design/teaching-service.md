@@ -136,6 +136,15 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Tài khoản, quên mật khẩu và trình soạn — 03/11/2026
+
+Sửa những chức năng đã có nhưng không chạy đúng trên production; danh sách và phần còn lại ở [báo cáo](../testing/flow-fixes-2026-11-03.md).
+
+- **Trang Tài khoản** (`/settings/account`): mọi tài khoản đổi được họ tên hiển thị và đặt mật khẩu mới khi đang đăng nhập. Đổi mật khẩu đăng xuất các thiết bị khác. Link ở cuối trang Lớp của tôi và trang Giảng dạy.
+- **Quên mật khẩu:** khi Google đã bật, trang có nút Đăng nhập bằng Google để người dùng Gmail vào lại ngay. Không thấy thư thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.
+- **Câu luyện nghe:** trình soạn nói rõ Reng chưa tạo audio trên web. Bài có câu nghe thiếu audio chưa xuất bản được; giáo viên xóa câu nghe, hoặc nhờ quản trị viên tạo audio.
+- **Trình soạn:** còn thay đổi chưa lưu mà bấm link chuyển trang thì Reng hỏi lại.
+
 ## Đăng nhập bằng Google — 03/11/2026
 
 Học viên và giáo viên có thể bấm "Đăng nhập bằng Google" ở trang đăng nhập, hoặc "Đăng ký bằng Google" ở trang tạo tài khoản học viên và đăng ký giáo viên, thay cho email và mật khẩu. Email và mật khẩu vẫn dùng như cũ.

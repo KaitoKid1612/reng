@@ -29,6 +29,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Bạn được đăng nhập ngay và chuyển tới trang đăng ký giảng dạy. Nếu Reng báo đã gửi thư xác nhận, mở thư, bấm liên kết rồi quay lại trang đó.",
       "Ở trang Đăng ký giảng dạy, đánh dấu ô cam kết rồi bấm Gửi yêu cầu giảng dạy.",
       "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
+      "Đổi họ tên hiển thị với học viên hoặc mật khẩu ở nút Tài khoản cuối trang Giảng dạy.",
     ],
   },
   {
@@ -67,8 +68,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Editor có các mục Thông tin bài, Từ vựng, Ngữ pháp (mẫu câu và câu ví dụ), Câu luyện và Slide; khung bên cạnh xem trước đúng như khi chiếu.",
       "Thêm slide bằng cách chọn loại: tiêu đề, từ vựng (tối đa 8 từ), mẫu câu, câu ví dụ, hội thoại, bảng / luyện thay thế, câu luyện, ghi chú hoặc ảnh. Kéo hoặc dùng mũi tên để đổi thứ tự.",
       "Furigana viết {漢字|かんじ}, ví dụ {郵便局|ゆうびんきょく}. Bảng có thể dán từ Excel hoặc gõ các ô cách nhau bằng dấu |; bật luyện thay thế để ẩn câu mẫu và hiện từng hàng khi dạy.",
-      "Câu luyện có trắc nghiệm, điền, sắp xếp câu, nghe và chính tả. Câu sắp xếp: ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh, không để hai mảnh giống nhau. Câu đọc hiểu: bấm Thêm đoạn văn đọc hiểu, rồi Thêm câu hỏi cho đoạn văn này để hỏi tiếp về cùng đoạn văn. Câu kiểm tra riêng ở trang Giao bài cũng có hai dạng này.",
-      "Ghi chú giảng viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên; Xuất bản tạo phiên bản mới, lớp chỉ chuyển sang phiên bản mới khi bạn chọn trong trang Giao bài.",
+      "Câu luyện có trắc nghiệm, điền, sắp xếp câu, nghe và chính tả. Câu nghe chỉ xuất bản được khi đã có audio; Reng chưa tạo audio ngay trên trình soạn, nên cần quản trị viên tạo giúp. Câu sắp xếp: ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh, không để hai mảnh giống nhau. Câu đọc hiểu: bấm Thêm đoạn văn đọc hiểu, rồi Thêm câu hỏi cho đoạn văn này để hỏi tiếp về cùng đoạn văn. Câu kiểm tra riêng ở trang Giao bài cũng có hai dạng này.",
+      "Ghi chú giảng viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên (rời trang khi còn thay đổi chưa lưu, Reng sẽ hỏi lại); Xuất bản tạo phiên bản mới, lớp chỉ chuyển sang phiên bản mới khi bạn chọn trong trang Giao bài.",
     ],
   },
   {
@@ -151,6 +152,13 @@ const LEARNER_SECTIONS: GuideSection[] = [
     ],
   },
   {
+    id: "learner-account",
+    title: "Tài khoản",
+    steps: [
+      "Ở cuối trang Lớp của tôi, bấm Tài khoản để đổi họ tên hiển thị hoặc đặt mật khẩu mới. Đổi mật khẩu sẽ đăng xuất các thiết bị khác.",
+    ],
+  },
+  {
     id: "learner-review",
     title: "Ôn tập và tiến độ",
     steps: [
@@ -164,7 +172,7 @@ const QUESTIONS = [
   {
     question: "Quên mật khẩu thì làm sao?",
     answer:
-      "Bấm Quên mật khẩu? ở trang Đăng nhập để nhận link đặt lại qua email. Nếu không thấy thư, hãy báo giáo viên hoặc quản trị viên để được hỗ trợ.",
+      "Bấm Quên mật khẩu? ở trang Đăng nhập. Nếu trang có nút Đăng nhập bằng Google và email của bạn là Gmail, bấm nút đó để vào ngay. Nếu không, nhập email để nhận link đặt lại; không thấy thư thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.",
   },
   {
     question: "Không vào được lớp?",

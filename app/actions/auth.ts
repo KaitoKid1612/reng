@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -23,6 +24,7 @@ export interface AuthFormState {
 }
 
 const UNAVAILABLE = "Tài khoản chưa được kích hoạt trên hệ thống này.";
+const SESSION_EXPIRED = "Phiên đăng nhập đã hết. Đăng nhập lại rồi thử lại nhé.";
 const RATE_LIMITED = "Bạn thao tác hơi nhanh. Đợi vài phút rồi thử lại nhé.";
 
 const email = z.email("Email chưa đúng định dạng.").max(254);
@@ -203,7 +205,10 @@ export async function requestPasswordReset(
   if (error && isRateLimited(error)) {
     return { error: RATE_LIMITED };
   }
-  return { notice: "Nếu email này có tài khoản, thư đặt lại mật khẩu sẽ đến trong vài phút." };
+  return {
+    notice:
+      "Nếu email này có tài khoản, thư đặt lại mật khẩu sẽ đến trong vài phút. Không thấy thư (kể cả mục Spam) thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm.",
+  };
 }
 
 const resetSchema = z
@@ -252,4 +257,77 @@ export async function signOut() {
   const client = await createSessionClient();
   await client?.auth.signOut({ scope: "local" });
   redirect("/");
+}
+
+// The account page: profiles RLS lets a person change only their own full_name.
+export async function updateAccountName(
+  _state: AuthFormState,
+  formData: FormData,
+): Promise<AuthFormState> {
+  const client = await createSessionClient();
+  if (!client) {
+    return { error: UNAVAILABLE };
+  }
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) {
+    return { error: SESSION_EXPIRED };
+  }
+  const parsed = signUpSchema.shape.fullName.safeParse(readField(formData, "fullName"));
+  if (!parsed.success) {
+    return { error: firstIssue(parsed.error) };
+  }
+  const { error } = await client
+    .from("profiles")
+    .update({ full_name: parsed.data })
+    .eq("id", user.id);
+  if (error) {
+    return { error: "Chưa lưu được họ tên. Bạn thử lại nhé." };
+  }
+  revalidatePath("/settings/account");
+  return { notice: "Đã lưu họ tên." };
+}
+
+// A signed-in person sets a new password without the reset email; other devices sign out, as
+// after a reset.
+export async function changePassword(
+  _state: AuthFormState,
+  formData: FormData,
+): Promise<AuthFormState> {
+  const client = await createSessionClient();
+  if (!client) {
+    return { error: UNAVAILABLE };
+  }
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) {
+    return { error: SESSION_EXPIRED };
+  }
+  const parsed = resetSchema.safeParse({
+    password: readField(formData, "password"),
+    confirmPassword: readField(formData, "confirmPassword"),
+  });
+  if (!parsed.success) {
+    return { error: firstIssue(parsed.error) };
+  }
+  const { error } = await client.auth.updateUser({ password: parsed.data.password });
+  if (error?.code === "same_password") {
+    return { error: "Mật khẩu mới cần khác mật khẩu đang dùng." };
+  }
+  if (error?.code === "weak_password") {
+    return { error: "Mật khẩu quá dễ đoán. Chọn mật khẩu dài hơn hoặc khó đoán hơn." };
+  }
+  if (error?.code === "reauthentication_needed") {
+    return { error: "Vì an toàn, hãy đăng xuất, đăng nhập lại rồi đổi mật khẩu." };
+  }
+  if (error && isRateLimited(error)) {
+    return { error: RATE_LIMITED };
+  }
+  if (error) {
+    return { error: "Chưa đổi được mật khẩu. Bạn thử lại nhé." };
+  }
+  await client.auth.signOut({ scope: "others" });
+  return { notice: "Đã lưu mật khẩu mới. Các thiết bị khác cần đăng nhập lại." };
 }

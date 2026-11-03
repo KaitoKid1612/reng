@@ -130,8 +130,8 @@ test("teacher authors listening questions, generates audio for the saved draft a
   await expect(page.getByText("2 câu nghe chưa có audio nên chưa xuất bản được.")).toBeVisible();
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   const problems = page.getByRole("region", { name: "Cần sửa trước khi xuất bản" });
-  await expect(problems).toContainText("Câu luyện 1: chưa có audio.");
-  await expect(problems).toContainText("Câu luyện 2: chưa có audio.");
+  await expect(problems).toContainText("Câu luyện 1: chưa có audio");
+  await expect(problems).toContainText("Câu luyện 2: chưa có audio");
 
   // The real script reads the saved draft; files already on disk mean no TTS call is made.
   const files = [LISTEN_HASH, DICTATION_HASH].map((hash) => `public/audio/lessons/${hash}.mp3`);

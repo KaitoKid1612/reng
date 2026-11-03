@@ -192,6 +192,9 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
         <Link href="/guide#teacher-title" className={buttonVariants({ variant: "ghost" })}>
           Hướng dẫn sử dụng
         </Link>
+        <Link href="/settings/account" className={buttonVariants({ variant: "ghost" })}>
+          Tài khoản
+        </Link>
         <SignOutButton />
       </div>
     </>

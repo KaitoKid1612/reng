@@ -361,8 +361,6 @@ export function isListeningDraft(question: DraftQuestion): question is DraftList
   return question.type === "listen" || question.type === "dictation";
 }
 
-export const AUDIO_COMMAND = "npm run audio:generate -- --lessons --db --sync-db";
-
 export interface PublishProblem {
   section: "info" | "vocab" | "grammar" | "questions" | "slides";
   itemId?: string;
@@ -496,7 +494,9 @@ function describeQuestionProblems(content: DraftContent): PublishProblem[] {
     }
     // Audio comes last: it is generated from the saved transcript once the question is ready.
     if (isListeningDraft(question) && !question.audio) {
-      return problem(`chưa có audio. Lưu nháp rồi chạy ${AUDIO_COMMAND}.`);
+      return problem(
+        "chưa có audio nên chưa xuất bản được. Reng chưa tạo audio ngay trên web: xóa câu nghe này, hoặc nhờ quản trị viên Reng tạo audio.",
+      );
     }
     return [];
   });
