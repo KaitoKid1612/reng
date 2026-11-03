@@ -144,6 +144,7 @@ Sửa những chức năng đã có nhưng không chạy đúng trên production
 - **Quên mật khẩu:** khi Google đã bật, trang có nút Đăng nhập bằng Google để người dùng Gmail vào lại ngay. Không thấy thư thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.
 - **Câu luyện nghe:** trình soạn nói rõ Reng chưa tạo audio trên web. Bài có câu nghe thiếu audio chưa xuất bản được; giáo viên xóa câu nghe, hoặc nhờ quản trị viên tạo audio.
 - **Trình soạn:** còn thay đổi chưa lưu mà bấm link chuyển trang thì Reng hỏi lại.
+- **Thành viên lớp:** giáo viên xóa học viên khỏi lớp ở trang chi tiết học viên; học viên tự rời lớp ở cuối trang lớp. Cả hai có bước xác nhận. Điểm và bài đã nộp vẫn giữ; học viên còn mã lớp thì vào lại được, muốn chặn thì đổi mã lớp. Lớp tự học không có hai thao tác này.
 
 ## Đăng nhập bằng Google — 03/11/2026
 

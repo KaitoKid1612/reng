@@ -187,6 +187,41 @@ export async function rotateJoinCode(teacherId: string, classId: string) {
   );
 }
 
+// Leaving keeps every submission and score. left_at hides the class from the learner, frees the
+// seat and blocks new attempts; joining again with a valid code clears it (join_class).
+async function endEnrollment(classId: string, userId: string) {
+  const ended = await selectRows(
+    createServiceClient()
+      .from("enrollments")
+      .update({ left_at: new Date().toISOString() })
+      .eq("class_id", classId)
+      .eq("user_id", userId)
+      .is("left_at", null)
+      .select("user_id"),
+    z.object({ user_id: z.uuid() }),
+  );
+  if (!ended.length) {
+    throw new ServiceError("not_member");
+  }
+}
+
+// A self-study class has its owner as the only learner; archiving the class is the way out.
+export async function removeClassMember(teacherId: string, classId: string, studentId: string) {
+  const classRow = await getTeacherClass(teacherId, classId);
+  if (classRow.self_study || studentId === teacherId || !z.uuid().safeParse(studentId).success) {
+    throw new ServiceError("not_member");
+  }
+  await endEnrollment(classId, studentId);
+}
+
+export async function leaveClass(userId: string, classId: string) {
+  const { classRow } = await requireMembership(userId, classId);
+  if (classRow.self_study) {
+    throw new ServiceError("not_member");
+  }
+  await endEnrollment(classId, userId);
+}
+
 export async function setJoinEnabled(teacherId: string, classId: string, isEnabled: boolean) {
   await getTeacherClass(teacherId, classId);
   await runMutation(

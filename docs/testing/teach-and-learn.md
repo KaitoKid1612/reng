@@ -52,6 +52,6 @@ Thứ tự đã làm:
 ## Giới hạn
 
 - Chưa kiểm chứng trên production và chưa dùng Sheet N4 thật.
-- Chủ lớp đã lỡ vào lớp mình có học viên khác trước 02/11/2026 vẫn thấy lớp đó ở Lớp của tôi; chưa có thao tác rời lớp cho học viên. Báo cáo, CSV, sức chứa và câu sai nhiều không tính người này. Lớp chỉ có chủ lớp được chuyển thành lớp tự học.
+- Chủ lớp đã lỡ vào lớp mình có học viên khác trước 02/11/2026 vẫn thấy lớp đó ở Lớp của tôi. Báo cáo, CSV, sức chứa và câu sai nhiều không tính người này. Lớp chỉ có chủ lớp được chuyển thành lớp tự học. Từ 03/11/2026 người này tự bấm Rời lớp ở cuối trang lớp ([lỗi luồng học và dạy](flow-fixes-2026-11-03.md#xóa-học-viên-khỏi-lớp-và-rời-lớp)).
 - Bài luyện hằng ngày vẫn lấy câu từ một bài mỗi ngày (bài giao gắn một bài học); trộn ngân hàng với bài mới cần đổi mô hình bài giao.
 - Nhật ký buổi dạy hiện 12 buổi gần nhất; chưa ghi tự động slide cuối từ cửa sổ trình chiếu.

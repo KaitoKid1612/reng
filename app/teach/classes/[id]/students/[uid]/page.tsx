@@ -3,6 +3,7 @@ import Link from "next/link";
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
 import { AcceptAnswerForm, AcceptNoticeArea } from "@/components/teach/accept-answer-form";
+import { RemoveStudentButton } from "@/components/teach/remove-student-button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
 import {
   ANSWER_OUTCOME_LABELS,
@@ -143,6 +144,19 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
           })}
         </AcceptNoticeArea>
       </section>
+      {!detail.classRow.self_study && (
+        <section className="section-block" aria-labelledby="student-membership">
+          <h2 id="student-membership">Thành viên lớp</h2>
+          {detail.hasLeft ? (
+            <p className="muted">
+              Học viên đã rời lớp. Điểm và bài đã nộp vẫn giữ ở đây; nếu còn mã lớp, học viên vào
+              lại được. Muốn chặn thì đổi mã lớp ở trang lớp.
+            </p>
+          ) : (
+            <RemoveStudentButton classId={detail.classRow.id} studentId={uid} />
+          )}
+        </section>
+      )}
     </>
   );
 }

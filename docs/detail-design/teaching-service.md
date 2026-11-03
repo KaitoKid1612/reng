@@ -265,6 +265,7 @@ Kiểm tra ở [báo cáo](../testing/flow-fixes-2026-11-03.md).
 - `app/settings/account/page.tsx` (`requireAccount`) và `components/settings/account-forms.tsx` (`AccountNameForm`, `PasswordChangeForm`, `FormFeedback` dùng chung).
 - `/forgot-password` hiện `GoogleSignIn` khi `isGoogleAuthEnabled()`. Lời nhắc sau `requestPasswordReset` chỉ người nhận hỗ trợ khi không có thư.
 - `lib/lesson-draft.ts` bỏ `AUDIO_COMMAND` khỏi giao diện; lệnh tạo audio vẫn ghi ở [06](../06-audio.md) cho người vận hành.
+- `removeClassMember` và `leaveClass` (`lib/server/classes.ts`) cùng gọi `endEnrollment`: service client đặt `enrollments.left_at = now` cho dòng còn `left_at is null`; không có dòng nào thì báo `not_member`. Giáo viên phải là chủ lớp (`getTeacherClass`); người rời lớp phải đang là thành viên (`requireMembership`). Lớp tự học bị từ chối. `removeStudentAction` gọi `refresh()`; `leaveClassAction` chuyển về `/classes`. Các truy vấn sẵn có đã lọc `left_at is null` (quyền vào bài, sức chứa, nộp bài, email nhắc), báo cáo tách người đã rời, và `join_class` xóa `left_at` khi vào lại. Không có migration.
 - `useLeaveWarning` (`components/editor/use-leave-warning.ts`) thay hai effect `beforeunload` trong `LessonEditor` và `TeachingEditor`. Hook bắt click ở pha capture trên `document`, trước khi Next.js `Link` xử lý, và dùng `isInPlaceNavigation` (`lib/leave-warning.ts`) để chỉ hỏi khi click trái thường vào trang khác cùng site trong cùng tab. Đã đồng ý rời trang thì `beforeunload` không hỏi lần hai.
 
 ## Đăng nhập bằng Google — 03/11/2026

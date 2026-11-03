@@ -5,6 +5,7 @@ import {
   describeDue,
   MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
+import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
@@ -159,6 +160,11 @@ export default async function ClassPage({ params }: ClassPageProps) {
               </ul>
             </details>
           )}
+        </section>
+      )}
+      {!view.classRow.self_study && (
+        <section className="section-block" aria-label="Rời lớp">
+          <LeaveClassButton classId={view.classRow.id} />
         </section>
       )}
     </>

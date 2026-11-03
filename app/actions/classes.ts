@@ -21,6 +21,8 @@ import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practi
 import {
   createClass,
   joinClass,
+  leaveClass,
+  removeClassMember,
   rotateJoinCode,
   setClassLesson,
   setJoinEnabled,
@@ -54,6 +56,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   already_correct: "Câu trả lời này đã được tính đúng.",
   invalid_answer: "Câu trả lời trống hoặc quá dài nên không chấp nhận thêm được.",
   kanji_required: "Câu này bắt buộc viết kanji nên không nhận câu trả lời thiếu kanji.",
+  not_member: "Học viên này không còn trong lớp.",
 };
 
 function readField(formData: FormData, name: string) {
@@ -189,6 +192,49 @@ export async function joinCodeAction(
         ? "Đã đổi mã lớp. Mã cũ không dùng được nữa."
         : "Đã cập nhật trạng thái nhận học viên.",
   };
+}
+
+export async function removeStudentAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  try {
+    await removeClassMember(
+      account.id,
+      readField(formData, "classId"),
+      readField(formData, "studentId"),
+    );
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  return { notice: "Đã xóa học viên khỏi lớp." };
+}
+
+export async function leaveClassAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await getCurrentAccount();
+  if (!account) {
+    redirect(signInPath("/classes"));
+  }
+  try {
+    await leaveClass(account.id, readField(formData, "classId"));
+  } catch (error) {
+    if (
+      error instanceof ServiceError &&
+      (error.code === "not_member" || error.code === "not_found")
+    ) {
+      return { error: "Bạn không còn trong lớp này." };
+    }
+    return { error: GENERIC_ERROR };
+  }
+  redirect("/classes");
 }
 
 const dailySizeSchema = z

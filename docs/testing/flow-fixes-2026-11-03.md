@@ -35,9 +35,26 @@ Người dùng hỏi những chức năng nào đang lỗi trong luồng học v
 
 Kiểm tra trên dev server local với Supabase local, dùng tài khoản thử local. Chưa thử đặt mật khẩu cho tài khoản chỉ đăng nhập bằng Google, vì Supabase local chưa bật Google. E2E chưa chạy theo yêu cầu người dùng ngày 03/11/2026.
 
-## Còn lại, cần người dùng quyết định
+## Xóa học viên khỏi lớp và rời lớp
 
-- **Xóa học viên khỏi lớp, học viên tự rời lớp:** hiện không có thao tác nào ghi `enrollments.left_at`. Cần một hàm database mới (migration production).
+Làm sau khi người dùng đồng ý, cùng ngày. **Không cần migration:** dữ liệu đã có `enrollments.left_at`. Khi có giá trị này, học viên không vào được bài và bài tập, không chiếm chỗ trong lớp, không nhận email nhắc, báo cáo tách riêng "đã rời lớp", còn vào lại bằng mã thì được khôi phục (`join_class`). Trước đó chỉ thiếu thao tác ghi giá trị này.
+
+- **Giáo viên:** trang chi tiết học viên có mục Thành viên lớp, nút Xóa khỏi lớp với bước xác nhận. Lời xác nhận nói rõ học viên không mở được bài (kể cả bài đang làm dở), điểm và bài đã nộp vẫn giữ, học viên còn mã thì vào lại được, muốn chặn thì đổi mã lớp.
+- **Học viên:** cuối trang lớp có nút Rời lớp với bước xác nhận; rời xong về Lớp của tôi.
+- Lớp tự học không có hai nút này, vì chủ lớp là học viên duy nhất; muốn bỏ thì lưu trữ lớp.
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Giáo viên bấm Xóa khỏi lớp: hiện lời xác nhận; Giữ trong lớp thì hủy | Đạt |
+| Xác nhận xóa: trang học viên ghi "đã rời lớp"; báo cáo lớp đếm người đã rời | Đạt |
+| Học viên bị xóa không còn thấy lớp; mở trang lớp thì 404 | Đạt |
+| Nhập lại mã lớp: vào lại được lớp | Đạt |
+| Học viên bấm Rời lớp, xác nhận: về Lớp của tôi, lớp không còn trong danh sách | Đạt |
+| `npm run audit:layout` trang chi tiết học viên và trang lớp | Không có lỗi hay cảnh báo |
+
+Kiểm tra trên dev server local với Supabase local, tài khoản thử (`co.lan@reng.local`, `hoc.vien@reng.local`). Sau đó đã cho học viên vào lại lớp để giữ dữ liệu mẫu. Chưa thử với lớp tự học trên trình duyệt; ở đó nút bị ẩn và server cũng từ chối.
+
+## Còn lại, cần người dùng quyết định
 - **Lịch học (buổi tới):** chưa có dữ liệu lịch; cần bảng mới (migration production).
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).
