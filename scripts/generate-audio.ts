@@ -19,9 +19,16 @@ import {
 } from "../lib/lesson-audio";
 import { draftContentSchema } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
+import {
+  applyTeachingAudio,
+  DEFAULT_CHINESE_VOICES,
+  planTeachingAudio,
+} from "../lib/teaching-audio";
+import { teachingDraftContentSchema } from "../lib/teaching-content";
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { DraftContent } from "../lib/lesson-draft";
+import type { TeachingDraftContent } from "../lib/teaching-content";
 
 function required(name: string): string {
   const value = process.env[name];
@@ -45,11 +52,10 @@ function isLocalSupabase(url: string) {
   return ["127.0.0.1", "localhost"].includes(new URL(url).hostname);
 }
 
-interface DatabaseDraft {
-  id: string;
-  revision: number;
-  content: DraftContent;
-}
+// Japanese (v1) and Chinese (v2) drafts; each kind has its own audio items and voices.
+type DatabaseDraft =
+  | { kind: "japanese"; id: string; revision: number; content: DraftContent }
+  | { kind: "chinese"; id: string; revision: number; content: TeachingDraftContent };
 
 // Drafts edited on the web live in Supabase; the revision guards against concurrent edits.
 async function loadDatabaseDrafts(client: SupabaseClient, lessonId: string | undefined) {
@@ -67,12 +73,18 @@ async function loadDatabaseDrafts(client: SupabaseClient, lessonId: string | und
     );
   }
   return (data ?? []).flatMap((row): DatabaseDraft[] => {
-    const parsed = draftContentSchema.safeParse(row.draft_content);
-    if (!parsed.success) {
-      console.warn(`Skipped ${String(row.id)}: draft content does not match the draft contract.`);
-      return [];
+    const id = String(row.id);
+    const revision = Number(row.draft_revision);
+    const japanese = draftContentSchema.safeParse(row.draft_content);
+    if (japanese.success) {
+      return [{ kind: "japanese", id, revision, content: japanese.data }];
     }
-    return [{ id: String(row.id), revision: Number(row.draft_revision), content: parsed.data }];
+    const chinese = teachingDraftContentSchema.safeParse(row.draft_content);
+    if (chinese.success) {
+      return [{ kind: "chinese", id, revision, content: chinese.data }];
+    }
+    console.warn(`Skipped ${id}: draft content does not match a draft contract.`);
+    return [];
   });
 }
 
@@ -98,6 +110,10 @@ async function main() {
   const cloud = values.r2;
   const sync = values["sync-db"];
   const voice = process.env.AZURE_SPEECH_VOICE || "ja-JP-NanamiNeural";
+  const chineseVoices = {
+    "zh-Hans": process.env.AZURE_SPEECH_VOICE_ZH_CN || DEFAULT_CHINESE_VOICES["zh-Hans"],
+    "zh-Hant": process.env.AZURE_SPEECH_VOICE_ZH_TW || DEFAULT_CHINESE_VOICES["zh-Hant"],
+  };
   const sourceClient = isDatabaseSource
     ? createClient(required("SUPABASE_URL"), required("SUPABASE_SECRET_KEY"), {
         auth: { persistSession: false, autoRefreshToken: false },
@@ -121,7 +137,11 @@ async function main() {
     return { itemId: item.id, config, hash: audioHash(config) };
   });
   if (isDatabaseSource) {
-    plan = databaseDrafts.flatMap((draft) => planContentAudio(draft.id, draft.content, voice));
+    plan = databaseDrafts.flatMap((draft) =>
+      draft.kind === "japanese"
+        ? planContentAudio(draft.id, draft.content, voice)
+        : planTeachingAudio(draft.id, draft.content, chineseVoices),
+    );
   } else if (isLessonAudio) {
     plan = planLessonAudio(
       draftFiles
@@ -134,8 +154,9 @@ async function main() {
     if (values.local || cloud || sync) {
       throw new Error("Use --local, --r2 and --sync-db only with --generate.");
     }
+    const voices = [...new Set(plan.map((asset) => asset.config.voice))].join(", ") || voice;
     console.log(
-      `Dry-run: ${plan.length} ${isLessonAudio ? "lesson audio entries" : "kana items"}, voice ${voice}, ${new Set(plan.map((asset) => asset.hash)).size} hashes. No network calls or file writes.`,
+      `Dry-run: ${plan.length} ${isLessonAudio ? "lesson audio entries" : "kana items"}, voices ${voices}, ${new Set(plan.map((asset) => asset.hash)).size} hashes. No network calls or file writes.`,
     );
     const lessonFlags = `${isLessonAudio ? " --lessons" : ""}${isDatabaseSource ? " --db --sync-db" : ""}`;
     console.log(
@@ -272,7 +293,7 @@ async function main() {
           {
             hash: asset.hash,
             text: asset.config.text,
-            voice,
+            voice: asset.config.voice,
             url: `${base}/${asset.hash}.mp3`,
             config: asset.config,
           },
@@ -298,7 +319,10 @@ async function main() {
     });
     if (sourceClient) {
       for (const draft of databaseDrafts) {
-        const content = applyContentAudio(draft.id, draft.content, result.manifest.assets);
+        const content =
+          draft.kind === "japanese"
+            ? applyContentAudio(draft.id, draft.content, result.manifest.assets)
+            : applyTeachingAudio(draft.id, draft.content, result.manifest.assets);
         if (JSON.stringify(content) === JSON.stringify(draft.content)) {
           continue;
         }

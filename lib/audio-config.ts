@@ -9,13 +9,18 @@ export interface AudioConfig {
   format: string;
   pipelineVersion: number;
 }
+// Japanese lessons and Chinese lessons in simplified (zh-CN) or traditional (zh-TW) script. The
+// locale comes from the voice, so existing Japanese hashes stay the same.
+const VOICE_PATTERN = /^(ja-JP|zh-CN|zh-TW)-[A-Za-z]+Neural$/;
+
 export function canonicalAudio(text: string, voice = "ja-JP-NanamiNeural"): AudioConfig {
-  if (!/^ja-JP-[A-Za-z]+Neural$/.test(voice)) {
-    throw new Error("Voice must be a valid ja-JP Neural voice.");
+  const locale = VOICE_PATTERN.exec(voice)?.[1];
+  if (!locale) {
+    throw new Error("Voice must be a ja-JP, zh-CN or zh-TW Neural voice.");
   }
   return {
     text,
-    locale: "ja-JP",
+    locale,
     voice,
     rate: "0%",
     pitch: "0%",

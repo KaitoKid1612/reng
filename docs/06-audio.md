@@ -23,7 +23,7 @@ Tạo audio và duyệt là hai việc riêng. Câu nghe không được xuất 
 
 `language_tag` của nội dung, locale/voice phát âm và `instruction_language_tag` là các trường riêng. Giáo viên chọn cấu hình phát âm phù hợp bài; không tự suy giọng/giản-phồn từ UI tiếng Việt. Module Nhật hiện có giữ ja-JP; Trung chưa cấu hình thì báo chưa sẵn sàng, không fallback sang Nhật.
 
-Nguồn là TTS hoặc bản thu được phép dùng, có attribution khi cần. Chưa chọn voice Trung và chưa nghe duyệt tài liệu thật. Nhà cung cấp hiện có trong code là Azure; chọn giọng/gói cho Trung sau thử nghiệm và kiểm tra điều khoản, không mặc định mọi locale có cùng khả năng hoặc giá.
+Nguồn là TTS hoặc bản thu được phép dùng, có attribution khi cần. Chưa nghe duyệt tài liệu thật bằng giọng Trung. Nhà cung cấp hiện có trong code là Azure; chọn giọng/gói cho Trung sau thử nghiệm và kiểm tra điều khoản, không mặc định mọi locale có cùng khả năng hoặc giá.
 
 ## Asset, cache và quyền
 
@@ -49,6 +49,13 @@ Cần worker/queue và metadata review mới trước khi có nút tạo audio t
 Phát/dừng, đổi câu/rời trang hủy nguồn cũ; lỗi có thử lại và timeout. Không tự phát khi mở trang. Bài nghe có lùi 5 giây và tốc độ 0.75x với preservesPitch; lỗi phát không tăng listen_count. Chỉ đếm lượt thành công, không coi dữ liệu client là bằng chứng chống gian lận.
 
 Transcript/đáp án theo practice/test và feedback_policy ở [07](07-exercises-and-grading.md). Giới hạn nghe trên file đã tải không ngăn phát ngoài hệ thống; test nghe chưa được hỗ trợ trong bản hiện tại. Không tuyên bố chấm phát âm, waveform hoặc ghi âm đã có; các phần đó ngoài MVP.
+
+**Audio sinh sẵn cho bài tiếng Trung (03/11/2026, chạy bằng CLI):**
+- `npm run audio:generate -- --r2 --lessons --db --sync-db` đọc cả nháp tiếng Trung (v2). Câu lệnh sinh audio cho từ vựng (chữ Hán) và từng lượt hội thoại, rồi ghi hash vào nháp. Trang bài và slide phát các file này thay cho giọng thiết bị.
+- Giọng mặc định: giản thể `zh-CN-XiaoxiaoNeural`, phồn thể `zh-TW-HsiaoChenNeural`. Đổi giọng bằng `AZURE_SPEECH_VOICE_ZH_CN` / `AZURE_SPEECH_VOICE_ZH_TW`. `canonicalAudio` lấy locale từ giọng, nên hash audio tiếng Nhật giữ nguyên.
+- Metadata `audio_assets.voice` ghi đúng giọng của từng file. Trước đây mọi file đều ghi giọng tiếng Nhật.
+- Chạy không có `--generate` (gọi thẳng `scripts/generate-audio.ts`) là dry-run, chỉ liệt kê số mục và giọng.
+- Cần khóa Azure Speech và R2. Sau khi sinh, giáo viên nghe duyệt rồi xuất bản lại bài; chưa có nút tạo audio trên web. Chưa nghe duyệt giọng thật trong đợt này vì máy local không có khóa.
 
 Fallback giọng thiết bị chỉ dùng đúng ngôn ngữ khi có voice phù hợp và có thông báo; thiếu voice báo rõ. Đã triển khai trong `lib/audio-player.ts`: bài v2 truyền locale `zh-CN`/`zh-TW` và chỉ nhận voice cùng locale (không lấy zh-HK hay giọng Nhật); TTS web cho tiếng Trung vẫn chưa có. Bài nghe cần audio chuẩn vẫn bị chặn nếu chưa đủ điều kiện. Giọng thiết bị không thay thế việc nghe duyệt asset.
 
