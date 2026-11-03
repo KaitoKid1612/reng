@@ -1430,6 +1430,24 @@ body:has(.slide-shell) .site-footer {
 .presenter-preview .slide-examples[data-size="compact"] .slide-translation {
   font-size: 14px;
 }
+/* Long examples that wrap: smaller type so three of them still fit 1280×720. */
+.slide-examples[data-size="dense"] > div {
+  margin-bottom: 12px;
+}
+.slide-examples[data-size="dense"] .slide-japanese {
+  font-size: 34px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.slide-examples[data-size="dense"] .slide-translation {
+  font-size: 22px;
+}
+.presenter-preview .slide-examples[data-size="dense"] .slide-japanese {
+  font-size: 17px;
+}
+.presenter-preview .slide-examples[data-size="dense"] .slide-translation {
+  font-size: 12px;
+}
 
 /* Furigana written as {漢字|かんじ} in Japanese lessons. */
 ruby {

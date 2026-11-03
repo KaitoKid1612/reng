@@ -20,6 +20,10 @@ interface SlideContentProps {
 // Beyond these counts a slide switches to a denser layout so it stays within 1280×720.
 const COMPACT_VOCAB_ITEMS = 3;
 const COMPACT_EXAMPLES = 1;
+// About this many characters fit one line of a compact example; past four lines in all (two
+// long question-and-answer examples, say) the slide runs off the bottom, so it gets denser.
+const EXAMPLE_ROW_CHARACTERS = 26;
+const DENSE_EXAMPLE_ROWS = 4;
 // Measured in the 1280×720 deck: five full-size rows already run past the bottom edge, and
 // seven or eight compact rows do too, so those get the dense layout.
 const COMPACT_DIALOGUE_ROWS = 4;
@@ -128,13 +132,22 @@ function ExampleSlide({ slide, lesson, staticMode }: SlideContentProps) {
   if (!grammar) {
     return null;
   }
+  const rows = grammar.examples.reduce(
+    (total, example) =>
+      total +
+      Math.max(1, Math.ceil([...toPlainJapanese(example.jp)].length / EXAMPLE_ROW_CHARACTERS)),
+    0,
+  );
+  let size: "compact" | "dense" | undefined;
+  if (rows > DENSE_EXAMPLE_ROWS) {
+    size = "dense";
+  } else if (grammar.examples.length > COMPACT_EXAMPLES) {
+    size = "compact";
+  }
   return (
     <div>
       <h2>Câu ví dụ</h2>
-      <div
-        className="slide-examples"
-        data-size={grammar.examples.length > COMPACT_EXAMPLES ? "compact" : undefined}
-      >
+      <div className="slide-examples" data-size={size}>
         {grammar.examples.map((example, index) => (
           <div key={index}>
             <p lang="ja" className="slide-japanese">
