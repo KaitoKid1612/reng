@@ -1,6 +1,13 @@
 import { z } from "zod";
 
+import { shuffleOrderTokens } from "@/lib/assignment";
 import { questionSchema, toPublicLesson } from "@/lib/lesson-schema";
+import {
+  describeOrderPiecesProblem,
+  describePassageProblem,
+  MAX_PASSAGE_LENGTH,
+  toOrderPieces,
+} from "@/lib/order-pieces";
 
 import type { LessonQuestion, LessonVersion, PublicLesson } from "@/lib/lesson-schema";
 
@@ -100,6 +107,11 @@ const dialogueSchema = z
 
 const draftQuestionBase = {
   id: identifier,
+  // Published v2 content is the saved draft itself, so an emptied passage is dropped here.
+  passage: z.preprocess(
+    (value) => (typeof value === "string" && !value.trim() ? undefined : value),
+    draftText(MAX_PASSAGE_LENGTH).optional(),
+  ),
   prompt: draftText(500),
   explain: draftText(1000),
   points: z.number().int().min(1).max(100),
@@ -123,6 +135,15 @@ const draftQuestionSchema = z.discriminatedUnion("type", [
       inputMode: z.enum(["chinese", "pinyin"]),
       kanjiStrict: z.literal(false).default(false),
       answer: z.array(draftText(200)).max(10),
+    })
+    .strict(),
+  // Pieces in sentence order; the editor never stores blank pieces and the limits apply at publish.
+  z
+    .object({
+      ...draftQuestionBase,
+      type: z.literal("order"),
+      tokens: z.array(z.object({ id: identifier, text: draftText(200) }).strict()).max(30),
+      answer: z.array(identifier).max(30),
     })
     .strict(),
 ]);
@@ -306,7 +327,18 @@ export function reviewTeachingDraft(draft: TeachingDraft): TeachingReport {
     if (!question.prompt || !question.explain) {
       problems.push(`${label}: cần đề bài và lời giải thích.`);
     }
-    if (question.type === "choice") {
+    const passageProblem = describePassageProblem(question.passage);
+    if (passageProblem) {
+      problems.push(`${label}: ${passageProblem}`);
+    }
+    if (question.type === "order") {
+      const piecesProblem = question.tokens.some((token) => !token.text)
+        ? "xóa mảnh trống."
+        : describeOrderPiecesProblem(toOrderPieces(question));
+      if (piecesProblem) {
+        problems.push(`${label}: ${piecesProblem}`);
+      }
+    } else if (question.type === "choice") {
       if (
         question.options.some((option) => !option) ||
         new Set(question.options).size !== question.options.length
@@ -403,20 +435,30 @@ export function parseTeachingVersion(row: Record<string, unknown>): TeachingVers
 export interface PublicQuestion {
   id: string;
   type: LessonQuestion["type"];
+  passage?: string;
   prompt: string;
   points: number;
   tags: string[];
   options?: string[];
+  // Sentence pieces in the fixed shuffle learners get, never in answer order.
+  pieces?: string[];
 }
 
 export function toPublicQuestion(question: LessonQuestion): PublicQuestion {
   return {
     id: question.id,
     type: question.type,
+    passage: question.passage,
     prompt: question.prompt,
     points: question.points,
     tags: question.tags,
     options: question.type === "choice" ? question.options : undefined,
+    pieces:
+      question.type === "order"
+        ? shuffleOrderTokens(question.id, question.tokens, question.answer).map(
+            (token) => token.text,
+          )
+        : undefined,
   };
 }
 

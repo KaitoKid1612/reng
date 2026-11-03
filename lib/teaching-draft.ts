@@ -1,6 +1,6 @@
 import { createUniqueId } from "@/lib/item-ids";
-import { createTeachingContext } from "@/lib/teaching-content";
-import { isSameSlideContent } from "@/lib/teaching-templates";
+import { createTeachingContext, toPublicQuestion } from "@/lib/teaching-content";
+import { isSameSlideContent, stableJson } from "@/lib/teaching-templates";
 
 import type {
   AuthoringState,
@@ -73,7 +73,8 @@ export type TeachingAction =
     }
   | { type: "addDialogue" }
   | { type: "updateDialogue"; id: string; patch: Partial<Omit<TeachingDialogueLine, "id">> }
-  | { type: "addQuestion"; question: TeachingDraftQuestion }
+  // afterId places a question for the same reading passage right after the one it extends.
+  | { type: "addQuestion"; question: TeachingDraftQuestion; afterId?: string }
   | { type: "updateQuestion"; question: TeachingDraftQuestion }
   | { type: "applySlides"; generation: SlideGeneration }
   | { type: "addNoteSlide" }
@@ -264,8 +265,17 @@ export function teachingReducer(draft: TeachingDraft, action: TeachingAction): T
       return withContent(draft, {
         dialogue: updateById(content.dialogue, action.id, action.patch),
       });
-    case "addQuestion":
-      return withContent(draft, { questions: [...content.questions, action.question] });
+    case "addQuestion": {
+      const after = content.questions.findIndex((item) => item.id === action.afterId);
+      const position = after === -1 ? content.questions.length : after + 1;
+      return withContent(draft, {
+        questions: [
+          ...content.questions.slice(0, position),
+          action.question,
+          ...content.questions.slice(position),
+        ],
+      });
+    }
     case "updateQuestion":
       return withContent(draft, {
         questions: content.questions.map((item) =>
@@ -298,21 +308,31 @@ export function teachingReducer(draft: TeachingDraft, action: TeachingAction): T
   }
 }
 
+export type BlankQuestionType = "choice" | "fill" | "order";
+
+// A question added for the same passage shares its text exactly, so a daily set keeps them together.
 export function createBlankQuestion(
   content: TeachingDraftContent,
-  type: "choice" | "fill",
+  type: BlankQuestionType,
+  passage?: string,
 ): TeachingDraftQuestion {
   const base = {
     id: createTeachingId("question", content),
+    ...(passage ? { passage } : {}),
     prompt: "",
     explain: "",
     points: 1,
     tags: [],
     gradingProfile: "zh-exact-v1" as const,
   };
-  return type === "choice"
-    ? { ...base, type, options: ["", ""], multiple: false, answer: [] }
-    : { ...base, type, inputMode: "chinese", kanjiStrict: false, answer: [""] };
+  switch (type) {
+    case "choice":
+      return { ...base, type, options: ["", ""], multiple: false, answer: [] };
+    case "fill":
+      return { ...base, type, inputMode: "chinese", kanjiStrict: false, answer: [""] };
+    case "order":
+      return { ...base, type, tokens: [], answer: [] };
+  }
 }
 
 function describeWord(item: TeachingVocab) {
@@ -390,8 +410,10 @@ export function buildVocabularyQuestion(
   };
 }
 
+// A replacer list of top-level keys would also filter nested objects, so an edited order piece
+// would still look reviewed; the server compares the whole question.
 function stableQuestionJson(question: TeachingDraftQuestion) {
-  return JSON.stringify(question, Object.keys(question).sort());
+  return stableJson(question);
 }
 
 export type ReviewedQuestions = ReadonlyMap<string, string>;
@@ -443,14 +465,8 @@ export function toPreviewLesson(draft: TeachingDraft, lessonId: string): PublicT
         void teacherNotes;
         return slide;
       }),
-      questions: content.questions.map((question) => ({
-        id: question.id,
-        type: question.type,
-        prompt: question.prompt,
-        points: question.points,
-        tags: question.tags,
-        options: question.type === "choice" ? question.options : undefined,
-      })),
+      // The same learner view as the published lesson: passage, options and shuffled pieces.
+      questions: content.questions.map(toPublicQuestion),
     },
   };
 }

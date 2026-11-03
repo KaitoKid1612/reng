@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
 import { createUniqueId } from "@/lib/item-ids";
+import { GRADING_PROFILES } from "@/lib/language-profile";
 import {
   lessonContentSchema,
   MAX_DIALOGUE_LINES,
@@ -9,6 +10,12 @@ import {
   MAX_TABLE_ROWS,
   questionSchema,
 } from "@/lib/lesson-schema";
+import {
+  describeOrderPiecesProblem,
+  describePassageProblem,
+  MAX_PASSAGE_LENGTH,
+  toOrderPieces,
+} from "@/lib/order-pieces";
 
 import type { LessonContent } from "@/lib/lesson-schema";
 
@@ -133,12 +140,16 @@ const draftSlideSchema = z.discriminatedUnion("type", [
     .strict(),
 ]);
 
+// Passage and grading profile belong to the question, so editing it must keep them: a reading
+// question would lose its text and a Chinese question would fall back to the Japanese rules.
 const questionFields = {
   id: identifier,
+  passage: draftText(MAX_PASSAGE_LENGTH).optional(),
   prompt: draftText(500),
   explain: draftText(1000),
   points: z.number().int().min(0).max(100),
   tags: z.array(z.string().max(40)).max(10).default([]),
+  gradingProfile: z.enum(GRADING_PROFILES).optional(),
 };
 
 const draftChoiceSchema = z
@@ -192,12 +203,24 @@ const draftDictationSchema = z
   })
   .strict();
 
+// Pieces stay as typed, blank lines included, and the limits apply at publish; the generous
+// bounds here only keep a draft from growing without end.
+const draftOrderSchema = z
+  .object({
+    ...questionFields,
+    type: z.literal("order"),
+    tokens: z.array(z.object({ id: identifier, text: draftText(200) }).strict()).max(30),
+    answer: z.array(identifier).max(30),
+  })
+  .strict();
+
 // Other question types are kept exactly as authored; the web editor shows them read-only.
 const draftQuestionSchema = z.union([
   draftChoiceSchema,
   draftFillSchema,
   draftListenSchema,
   draftDictationSchema,
+  draftOrderSchema,
   questionSchema,
 ]);
 
@@ -317,13 +340,14 @@ export function findReferencingSlides(content: DraftContent, itemId: string) {
 
 export type DraftChoiceQuestion = z.infer<typeof draftChoiceSchema>;
 export type DraftFillQuestion = z.infer<typeof draftFillSchema>;
+export type DraftOrderQuestion = z.infer<typeof draftOrderSchema>;
 export type DraftListeningQuestion =
   z.infer<typeof draftListenSchema> | z.infer<typeof draftDictationSchema>;
+export type EditableDraftQuestion =
+  DraftChoiceQuestion | DraftFillQuestion | DraftOrderQuestion | DraftListeningQuestion;
 
-export function isEditableQuestion(
-  question: DraftQuestion,
-): question is DraftChoiceQuestion | DraftFillQuestion | DraftListeningQuestion {
-  return ["choice", "fill", "listen", "dictation"].includes(question.type);
+export function isEditableQuestion(question: DraftQuestion): question is EditableDraftQuestion {
+  return ["choice", "fill", "order", "listen", "dictation"].includes(question.type);
 }
 
 // Slides show quizzes without audio, so only choice and fill questions can be referenced.
@@ -459,6 +483,10 @@ function describeQuestionProblems(content: DraftContent): PublishProblem[] {
     if (question.points < 1) {
       return problem("điểm là số nguyên từ 1 đến 100.");
     }
+    const passageProblem = describePassageProblem(question.passage);
+    if (passageProblem) {
+      return problem(passageProblem);
+    }
     if (isListeningDraft(question) && blank(question.transcript)) {
       return problem("nhập transcript tiếng Nhật để tạo audio.");
     }
@@ -499,10 +527,19 @@ function describeTextAnswerProblem(answer: readonly (string | number)[], kanjiSt
   return null;
 }
 
-function describeAnswerProblem(
-  question: DraftChoiceQuestion | DraftFillQuestion | DraftListeningQuestion,
-) {
+function describeAnswerProblem(question: EditableDraftQuestion) {
   switch (question.type) {
+    case "order": {
+      const pieces = toOrderPieces(question);
+      // Imported questions may name pieces outside the answer; editing rewrites them in order.
+      if (
+        pieces.length !== question.tokens.length ||
+        new Set(question.answer).size !== question.answer.length
+      ) {
+        return "mỗi mảnh phải có trong đáp án đúng một lần; nhập lại các mảnh theo thứ tự câu.";
+      }
+      return describeOrderPiecesProblem(pieces);
+    }
     case "choice": {
       const choiceProblem = describeChoiceProblem(question.options, question.answer);
       if (choiceProblem) {
@@ -640,6 +677,10 @@ export function toPublishableContent(content: DraftContent): LessonContent {
 }
 
 function toPublishableQuestion(question: DraftQuestion) {
+  return withoutBlankOptionals(withPublishableAnswer(question), ["passage"]);
+}
+
+function withPublishableAnswer(question: DraftQuestion) {
   const filledAnswers = (answer: readonly (string | number)[]) =>
     answer.filter((item) => typeof item !== "string" || !blank(item));
   switch (question.type) {
@@ -651,6 +692,14 @@ function toPublishableQuestion(question: DraftQuestion) {
       return question.responseType === "fill"
         ? { ...question, options: undefined, answer: filledAnswers(question.answer) }
         : question;
+    case "order": {
+      // Blank lines left while typing are not pieces.
+      const tokens = question.tokens
+        .filter((token) => !blank(token.text))
+        .map((token) => ({ ...token, text: token.text.trim() }));
+      const kept = new Set(tokens.map((token) => token.id));
+      return { ...question, tokens, answer: question.answer.filter((id) => kept.has(id)) };
+    }
     default:
       return question;
   }

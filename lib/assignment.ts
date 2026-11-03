@@ -7,6 +7,12 @@ import {
   parseTokenOrder,
 } from "@/lib/grading/raw-answer";
 import { questionSchema } from "@/lib/lesson-schema";
+import {
+  MAX_ORDER_PIECE_LENGTH,
+  MAX_ORDER_PIECES,
+  MAX_PASSAGE_LENGTH,
+  MIN_ORDER_PIECES,
+} from "@/lib/order-pieces";
 
 import type { RawAnswer } from "@/lib/grading/raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
@@ -129,11 +135,17 @@ export const assignmentSettingsSchema = z
 const promptText = z.string().trim().min(1).max(500);
 const optionText = z.string().trim().min(1).max(120);
 const points = z.number().int().min(1).max(100);
+const passageText = z.string().trim().min(1).max(MAX_PASSAGE_LENGTH).optional();
+const pieceId = z
+  .string()
+  .regex(/^[a-z0-9][a-z0-9-]*$/)
+  .max(20);
 
 export const testQuestionInputSchema = z.discriminatedUnion("type", [
   z
     .object({
       type: z.literal("choice"),
+      passage: passageText,
       prompt: promptText,
       options: z.array(optionText).min(2).max(6),
       answer: z.array(z.number().int().nonnegative()).min(1),
@@ -145,10 +157,36 @@ export const testQuestionInputSchema = z.discriminatedUnion("type", [
   z
     .object({
       type: z.literal("fill"),
+      passage: passageText,
       prompt: promptText,
       answer: z.array(optionText).min(1).max(10),
       inputMode: z.enum(INPUT_MODES),
       kanjiStrict: z.boolean(),
+      explain: promptText,
+      points,
+    })
+    .strict(),
+  z
+    .object({
+      type: z.literal("order"),
+      passage: passageText,
+      prompt: promptText,
+      tokens: z
+        .array(
+          z
+            .object({
+              id: pieceId,
+              text: z.string().trim().min(1).max(MAX_ORDER_PIECE_LENGTH),
+            })
+            .strict(),
+        )
+        .min(MIN_ORDER_PIECES)
+        .max(MAX_ORDER_PIECES)
+        .refine(
+          (tokens) => new Set(tokens.map((token) => token.text)).size === tokens.length,
+          "Order pieces must differ.",
+        ),
+      answer: z.array(pieceId).max(MAX_ORDER_PIECES),
       explain: promptText,
       points,
     })
@@ -159,23 +197,27 @@ export type TestQuestionInput = z.infer<typeof testQuestionInputSchema>;
 
 // Test questions get private IDs so they never collide with public practice questions.
 // Fill questions follow their input mode (hiragana stays on the Japanese rules even in a Chinese
-// class); choice questions follow the class language, which only affects display.
+// class); choice and order questions follow the class language, which only affects display.
+// The inputs come from the browser, so the authoring limits are checked here as well.
 export function toTestQuestions(
   inputs: readonly TestQuestionInput[],
   languageTag = "ja-JP",
 ): AssignableQuestion[] {
-  return inputs.map((input, index) => {
-    const isChinese =
-      input.type === "fill"
-        ? input.inputMode === "chinese" || input.inputMode === "pinyin"
-        : languageTag !== "ja-JP";
-    return parseAssignableQuestion({
-      ...input,
-      id: `t${index + 1}`,
-      tags: [],
-      ...(isChinese ? { gradingProfile: "zh-exact-v1" } : {}),
+  return z
+    .array(testQuestionInputSchema)
+    .parse(inputs)
+    .map((input, index) => {
+      const isChinese =
+        input.type === "fill"
+          ? input.inputMode === "chinese" || input.inputMode === "pinyin"
+          : languageTag !== "ja-JP";
+      return parseAssignableQuestion({
+        ...input,
+        id: `t${index + 1}`,
+        tags: [],
+        ...(isChinese ? { gradingProfile: "zh-exact-v1" } : {}),
+      });
     });
-  });
 }
 
 interface ListeningFields {

@@ -362,6 +362,7 @@ export function toPublicLesson(version: LessonVersion) {
       questions: version.content.questions.map((question) => ({
         id: question.id,
         type: question.type,
+        passage: question.passage,
         prompt: question.prompt,
         points: question.points,
         tags: question.tags,

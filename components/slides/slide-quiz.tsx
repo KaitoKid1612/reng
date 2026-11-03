@@ -56,9 +56,23 @@ export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: Slide
   return (
     <div className="slide-quiz">
       <h2>Cùng thử một câu</h2>
+      {question.passage && (
+        <p lang={lang} className="slide-passage">
+          {question.passage}
+        </p>
+      )}
       <p lang={lang} className="slide-japanese">
         {question.prompt}
       </p>
+      {question.pieces && (
+        <ul className="slide-order-pieces" aria-label="Các mảnh cần sắp xếp">
+          {question.pieces.map((piece, index) => (
+            <li key={index} lang={lang}>
+              {piece}
+            </li>
+          ))}
+        </ul>
+      )}
       {question.options && (
         <ol className="slide-options">
           {question.options.map((option, index) => (

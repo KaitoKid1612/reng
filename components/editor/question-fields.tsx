@@ -3,16 +3,18 @@
 import { ListeningQuestionEditor } from "@/components/editor/listening-question-editor";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
 import { Button } from "@/components/ui/button";
+import {
+  ADD_QUESTION_LABELS,
+  createQuestion,
+  editorLanguageTag,
+  fromQuestionDraft,
+  isTextQuestion,
+  toQuestionDraft,
+} from "@/lib/editor-questions";
 import { findReferencingSlides, isEditableQuestion, isListeningDraft } from "@/lib/lesson-draft";
 
-import type {
-  DraftChoiceQuestion,
-  DraftContent,
-  DraftFillQuestion,
-  DraftQuestion,
-} from "@/lib/lesson-draft";
+import type { DraftContent } from "@/lib/lesson-draft";
 import type { EditorAction } from "@/lib/lesson-editor";
-import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
 interface QuestionFieldsProps {
   content: DraftContent;
@@ -20,96 +22,7 @@ interface QuestionFieldsProps {
   createId: () => string;
 }
 
-type EditableQuestion = DraftChoiceQuestion | DraftFillQuestion;
-type NewQuestionType = "choice" | "fill" | "listen" | "dictation";
-
-const ADD_LABELS: Record<NewQuestionType, string> = {
-  choice: "Thêm câu trắc nghiệm",
-  fill: "Thêm câu điền từ",
-  listen: "Thêm câu nghe",
-  dictation: "Thêm câu chính tả",
-};
-
-function toQuestionDraft(question: EditableQuestion, key: number): TestQuestionDraft {
-  if (question.type === "choice") {
-    return {
-      key,
-      type: "choice",
-      prompt: question.prompt,
-      options: question.options,
-      answer: question.answer,
-      multiple: question.multiple,
-      explain: question.explain,
-      points: question.points,
-    };
-  }
-  return {
-    key,
-    type: "fill",
-    prompt: question.prompt,
-    acceptedText: question.answer.join("\n"),
-    inputMode: question.inputMode,
-    kanjiStrict: question.kanjiStrict,
-    explain: question.explain,
-    points: question.points,
-  };
-}
-
-// Keeps ID and tags; blank answer lines stay while typing and are dropped on publish.
-function fromQuestionDraft(draft: TestQuestionDraft, original: EditableQuestion): DraftQuestion {
-  const shared = {
-    id: original.id,
-    tags: original.tags,
-    prompt: draft.prompt,
-    explain: draft.explain,
-    points: Number.isInteger(draft.points) ? Math.max(0, Math.min(100, draft.points)) : 0,
-  };
-  if (draft.type === "choice") {
-    return {
-      ...shared,
-      type: "choice",
-      options: draft.options,
-      answer: draft.answer,
-      multiple: draft.multiple,
-    };
-  }
-  return {
-    ...shared,
-    type: "fill",
-    answer: draft.acceptedText.split("\n"),
-    inputMode: draft.inputMode,
-    kanjiStrict: draft.kanjiStrict,
-  };
-}
-
-function createQuestion(id: string, type: NewQuestionType): DraftQuestion {
-  const shared = { id, prompt: "", explain: "", points: 1, tags: [] };
-  const listening = { transcript: "", audio: null, maxListens: null };
-  switch (type) {
-    case "choice":
-      return { ...shared, type, options: ["", ""], answer: [], multiple: false };
-    case "fill":
-      return { ...shared, type, answer: [""], inputMode: "hiragana", kanjiStrict: false };
-    case "listen":
-      return {
-        ...shared,
-        ...listening,
-        type,
-        responseType: "choice",
-        options: ["", ""],
-        answer: [],
-      };
-    case "dictation":
-      return {
-        ...shared,
-        ...listening,
-        type,
-        answer: [""],
-        inputMode: "japanese",
-        kanjiStrict: false,
-      };
-  }
-}
+const NEW_QUESTION_TYPES = ["choice", "fill", "order", "listen", "dictation"] as const;
 
 export function QuestionFields({ content, dispatch, createId }: QuestionFieldsProps) {
   return (
@@ -142,10 +55,14 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
             />
           );
         }
+        if (!isTextQuestion(question)) {
+          return null;
+        }
         return (
           <TestQuestionEditor
             key={question.id}
             draft={toQuestionDraft(question, index + 1)}
+            languageTag={editorLanguageTag(question)}
             position={index + 1}
             showProblems={false}
             removeBlockedReason={usage}
@@ -153,11 +70,18 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
               dispatch({ type: "updateQuestion", question: fromQuestionDraft(next, question) })
             }
             onRemove={() => dispatch({ type: "removeQuestion", id: question.id })}
+            onAddSamePassage={() =>
+              dispatch({
+                type: "addQuestion",
+                question: createQuestion(createId(), "choice", question),
+                afterId: question.id,
+              })
+            }
           />
         );
       })}
       <div className="button-row">
-        {(["choice", "fill", "listen", "dictation"] as const).map((type) => (
+        {NEW_QUESTION_TYPES.map((type) => (
           <Button
             key={type}
             variant="outline"
@@ -165,7 +89,7 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
               dispatch({ type: "addQuestion", question: createQuestion(createId(), type) })
             }
           >
-            {ADD_LABELS[type]}
+            {ADD_QUESTION_LABELS[type]}
           </Button>
         ))}
       </div>

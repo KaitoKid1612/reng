@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
+import { OrderPiecesField } from "@/components/teach/order-pieces-field";
 import { Button } from "@/components/ui/button";
+import { filledPieces, toOrderPieces, toOrderTokens } from "@/lib/order-pieces";
 import {
   buildVocabularyQuestion,
   createBlankQuestion,
@@ -12,29 +14,76 @@ import {
 } from "@/lib/teaching-draft";
 
 import type { TeachingDraft, TeachingDraftQuestion } from "@/lib/teaching-content";
-import type { QuestionKind, ReviewedQuestions, TeachingDispatch } from "@/lib/teaching-draft";
+import type {
+  BlankQuestionType,
+  QuestionKind,
+  ReviewedQuestions,
+  TeachingDispatch,
+} from "@/lib/teaching-draft";
 
 const QUESTION_KINDS = ["meaning", "hanzi", "pinyin"] as const;
 const INPUT_MODES = ["chinese", "pinyin"] as const;
 const MAX_OPTIONS = 6;
+const ADD_LABELS: Record<BlankQuestionType, string> = {
+  choice: "Thêm câu trắc nghiệm",
+  fill: "Thêm câu điền",
+  order: "Thêm câu sắp xếp",
+};
+
+type OrderQuestion = Extract<TeachingDraftQuestion, { type: "order" }>;
+
+interface OrderQuestionPiecesProps {
+  question: OrderQuestion;
+  label: string;
+  lang: string;
+  onChange: (question: TeachingDraftQuestion) => void;
+}
+
+// Published lessons are the saved draft itself, so the draft holds only filled pieces while the
+// box keeps the blank line being typed. It shows the draft again when it changed elsewhere.
+function OrderQuestionPieces({ question, label, lang, onChange }: OrderQuestionPiecesProps) {
+  const pieces = toOrderPieces(question);
+  const [text, setText] = useState(() => pieces.join("\n"));
+  const typed = filledPieces(text.split("\n"));
+  const isCurrent =
+    typed.length === pieces.length && typed.every((piece, index) => piece === pieces[index]);
+  return (
+    <OrderPiecesField
+      id={question.id}
+      label={`Các mảnh của ${label} theo đúng thứ tự (mỗi dòng một mảnh)`}
+      pieces={isCurrent ? text : pieces.join("\n")}
+      lang={lang}
+      onChange={(value) => {
+        setText(value);
+        onChange({ ...question, ...toOrderTokens(filledPieces(value.split("\n"))) });
+      }}
+    />
+  );
+}
 
 interface QuestionEditorProps {
   question: TeachingDraftQuestion;
   label: string;
+  lang: string;
   isReviewed: boolean;
   isBusy: boolean;
   onChange: (question: TeachingDraftQuestion) => void;
   onConfirm: () => void;
+  onAddSamePassage: () => void;
 }
 
 function QuestionEditor({
   question,
   label,
+  lang,
   isReviewed,
   isBusy,
   onChange,
   onConfirm,
+  onAddSamePassage,
 }: QuestionEditorProps) {
+  const [isPassageOpen, setIsPassageOpen] = useState(Boolean(question.passage));
+
   function handleInputMode(value: string) {
     const inputMode = pickOption(INPUT_MODES, value);
     if (question.type === "fill" && inputMode) {
@@ -49,6 +98,26 @@ function QuestionEditor({
           {isReviewed ? "Đã xác nhận đáp án" : "Chưa xác nhận đáp án"}
         </span>
       </p>
+      {(isPassageOpen || question.passage) && (
+        <div className="field">
+          <label htmlFor={`${question.id}-passage`}>Đoạn văn đọc hiểu của {label}</label>
+          <textarea
+            id={`${question.id}-passage`}
+            rows={4}
+            value={question.passage ?? ""}
+            onChange={(event) =>
+              onChange({
+                ...question,
+                passage: event.target.value.trim() ? event.target.value : undefined,
+              })
+            }
+          />
+          <p className="small muted">
+            Học viên đọc đoạn văn ngay trên đề. Các câu có cùng đoạn văn được giao liền nhau trong
+            bài hằng ngày. Xóa hết chữ để bỏ đoạn văn.
+          </p>
+        </div>
+      )}
       <div className="field">
         <label htmlFor={`${question.id}-prompt`}>Đề bài {label}</label>
         <textarea
@@ -58,7 +127,10 @@ function QuestionEditor({
           onChange={(event) => onChange({ ...question, prompt: event.target.value })}
         />
       </div>
-      {question.type === "choice" ? (
+      {question.type === "order" && (
+        <OrderQuestionPieces question={question} label={label} lang={lang} onChange={onChange} />
+      )}
+      {question.type === "choice" && (
         <fieldset className="teaching-fieldset">
           <legend>Lựa chọn của {label} (chọn một đáp án đúng)</legend>
           {question.options.map((option, index) => (
@@ -111,7 +183,8 @@ function QuestionEditor({
             Thêm lựa chọn
           </Button>
         </fieldset>
-      ) : (
+      )}
+      {question.type === "fill" && (
         <fieldset className="teaching-fieldset">
           <legend>Đáp án được chấp nhận của {label}</legend>
           <div className="field">
@@ -179,9 +252,21 @@ function QuestionEditor({
           onChange={(event) => onChange({ ...question, explain: event.target.value })}
         />
       </div>
-      <Button type="button" disabled={isReviewed || isBusy} onClick={onConfirm}>
-        Lưu và xác nhận đáp án {label}
-      </Button>
+      <div className="button-row">
+        <Button type="button" disabled={isReviewed || isBusy} onClick={onConfirm}>
+          Lưu và xác nhận đáp án {label}
+        </Button>
+        {!isPassageOpen && !question.passage && (
+          <Button type="button" variant="ghost" onClick={() => setIsPassageOpen(true)}>
+            Thêm đoạn văn cho {label}
+          </Button>
+        )}
+        {question.passage && (
+          <Button type="button" variant="outline" onClick={onAddSamePassage}>
+            Thêm câu hỏi cho đoạn văn của {label}
+          </Button>
+        )}
+      </div>
     </>
   );
 }
@@ -276,10 +361,18 @@ export function QuestionStep({ draft, dispatch, reviewed, isBusy, onConfirm }: Q
               <QuestionEditor
                 question={question}
                 label={label}
+                lang={draft.content.context.languageTag}
                 isReviewed={isQuestionReviewed(question, reviewed)}
                 isBusy={isBusy}
                 onChange={(next) => dispatch({ type: "updateQuestion", question: next })}
                 onConfirm={() => onConfirm(question.id)}
+                onAddSamePassage={() =>
+                  dispatch({
+                    type: "addQuestion",
+                    question: createBlankQuestion(draft.content, "choice", question.passage),
+                    afterId: question.id,
+                  })
+                }
               />
               <div className="button-row">
                 <Button
@@ -314,29 +407,19 @@ export function QuestionStep({ draft, dispatch, reviewed, isBusy, onConfirm }: Q
         })}
       </ol>
       <div className="button-row">
-        <Button
-          type="button"
-          variant="outline"
-          disabled={questions.length >= 100}
-          onClick={() =>
-            dispatch({
-              type: "addQuestion",
-              question: createBlankQuestion(draft.content, "choice"),
-            })
-          }
-        >
-          Thêm câu trắc nghiệm
-        </Button>
-        <Button
-          type="button"
-          variant="outline"
-          disabled={questions.length >= 100}
-          onClick={() =>
-            dispatch({ type: "addQuestion", question: createBlankQuestion(draft.content, "fill") })
-          }
-        >
-          Thêm câu điền
-        </Button>
+        {(["choice", "fill", "order"] as const).map((type) => (
+          <Button
+            key={type}
+            type="button"
+            variant="outline"
+            disabled={questions.length >= 100}
+            onClick={() =>
+              dispatch({ type: "addQuestion", question: createBlankQuestion(draft.content, type) })
+            }
+          >
+            {ADD_LABELS[type]}
+          </Button>
+        ))}
       </div>
     </section>
   );

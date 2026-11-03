@@ -28,7 +28,8 @@ export type EditorAction =
   | { type: "addExample"; grammarId: string }
   | { type: "updateExample"; grammarId: string; index: number; patch: { jp?: string; vi?: string } }
   | { type: "removeExample"; grammarId: string; index: number }
-  | { type: "addQuestion"; question: DraftQuestion }
+  // afterId places a question for the same reading passage right after the one it extends.
+  | { type: "addQuestion"; question: DraftQuestion; afterId?: string }
   | { type: "updateQuestion"; question: DraftQuestion }
   | { type: "removeQuestion"; id: string }
   | { type: "addSlide"; slideType: SlideType; id: string }
@@ -174,8 +175,18 @@ export function editorReducer(state: EditorState, action: EditorAction): EditorS
             : item,
         ),
       });
-    case "addQuestion":
-      return withContent(state, { ...content, questions: [...content.questions, action.question] });
+    case "addQuestion": {
+      const after = content.questions.findIndex((item) => item.id === action.afterId);
+      const position = after === -1 ? content.questions.length : after + 1;
+      return withContent(state, {
+        ...content,
+        questions: [
+          ...content.questions.slice(0, position),
+          action.question,
+          ...content.questions.slice(position),
+        ],
+      });
+    }
     case "updateQuestion":
       return withContent(state, {
         ...content,

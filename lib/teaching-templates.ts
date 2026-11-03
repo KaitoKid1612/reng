@@ -94,7 +94,8 @@ function withoutNotes(slide: TeachingSlide) {
   return rest;
 }
 
-function stableJson(value: unknown): string {
+// Key order never matters, at any depth, so nested objects such as order pieces compare too.
+export function stableJson(value: unknown): string {
   if (Array.isArray(value)) {
     return `[${value.map(stableJson).join(",")}]`;
   }

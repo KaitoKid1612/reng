@@ -1292,6 +1292,32 @@ body:has(.slide-shell) .site-footer {
   font-size: 56px;
   line-height: 1.5;
 }
+/* A reading passage stays readable on a shared screen without pushing the question off it. */
+.slide-passage {
+  max-height: 240px;
+  overflow: auto;
+  margin: 0 0 16px;
+  padding: 12px 20px;
+  border-left: 4px solid var(--brand-bell);
+  font-size: 30px;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.slide-order-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 40px;
+}
+.slide-order-pieces > li {
+  padding: 4px 20px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
 .slide-quiz h2 {
   margin-bottom: 24px;
 }

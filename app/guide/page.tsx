@@ -55,6 +55,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Ở Tạo bài mới, chọn Soạn bài tiếng Trung. Chọn giản thể hoặc phồn thể, mẫu bài và mục tiêu nhỏ đầu tiên.",
       "Đi qua năm bước: mục tiêu, từ vựng, mẫu câu và hội thoại, câu luyện, slide và xuất bản. Bước Từ vựng cho dán bảng chữ Hán – pinyin – nghĩa Việt từ Excel; CSV tiếng Nhật là công cụ riêng.",
       "Duyệt từng đáp án trước khi xuất bản. Pinyin cần đúng dấu thanh và khoảng trắng; giản thể và phồn thể không tự đổi cho nhau.",
+      "Ngoài câu tạo từ từ vựng, bấm Thêm câu sắp xếp để học viên xếp các mảnh thành câu, hoặc thêm đoạn văn cho một câu để luyện đọc hiểu.",
     ],
   },
   {
@@ -64,6 +65,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Editor có các mục Thông tin bài, Từ vựng, Ngữ pháp (mẫu câu và câu ví dụ), Câu luyện và Slide; khung bên cạnh xem trước đúng như khi chiếu.",
       "Thêm slide bằng cách chọn loại: tiêu đề, từ vựng (tối đa 8 từ), mẫu câu, câu ví dụ, hội thoại, bảng / luyện thay thế, câu luyện, ghi chú hoặc ảnh. Kéo hoặc dùng mũi tên để đổi thứ tự.",
       "Furigana viết {漢字|かんじ}, ví dụ {郵便局|ゆうびんきょく}. Bảng có thể dán từ Excel hoặc gõ các ô cách nhau bằng dấu |; bật luyện thay thế để ẩn câu mẫu và hiện từng hàng khi dạy.",
+      "Câu luyện có trắc nghiệm, điền, sắp xếp câu, nghe và chính tả. Câu sắp xếp: ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh, không để hai mảnh giống nhau. Câu đọc hiểu: bấm Thêm đoạn văn đọc hiểu, rồi Thêm câu hỏi cho đoạn văn này để hỏi tiếp về cùng đoạn văn. Câu kiểm tra riêng ở trang Giao bài cũng có hai dạng này.",
       "Ghi chú giảng viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên; Xuất bản tạo phiên bản mới, lớp chỉ chuyển sang phiên bản mới khi bạn chọn trong trang Giao bài.",
     ],
   },
@@ -140,6 +142,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Ở Lớp của tôi (hoặc trang lớp), bấm Làm bài cạnh bài ở mục Bài tập cần làm rồi bấm Bắt đầu làm bài. Bài tự lưu trong lúc làm; bài đang làm dở hiện nút Làm tiếp.",
       "Câu điền tiếng Nhật: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô.",
       "Bài tiếng Trung: nhập chữ Hán bằng bàn phím tiếng Trung hoặc pinyin có dấu theo yêu cầu câu hỏi; hệ thống không đổi romaji thành kana trong ô chữ Hán/pinyin.",
+      "Câu sắp xếp: bấm các mảnh theo đúng thứ tự câu; bấm một mảnh đã xếp để bỏ ra, hoặc Xếp lại từ đầu. Câu đọc hiểu có đoạn văn ngay trên đề; các câu cùng đoạn văn nằm liền nhau.",
       "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Bài dài có Danh sách câu để nhảy tới câu bất kỳ; khi nộp mà còn câu trống, bấm Đến câu chưa làm.",
       "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lượt mới.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",

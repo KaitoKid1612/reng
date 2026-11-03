@@ -18,7 +18,7 @@ import { fromVietnamInput } from "@/lib/vietnam-time";
 
 import type { AssignableQuestion, AssignmentMode, FeedbackPolicy } from "@/lib/assignment";
 import type { TeachingLanguageTag } from "@/lib/teaching-language";
-import type { TestQuestionDraft } from "@/lib/test-question-draft";
+import type { TestQuestionDraft, TestQuestionType } from "@/lib/test-question-draft";
 
 const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
   after_due: ", công bố kết quả sau hạn",
@@ -96,10 +96,16 @@ export function AssignmentForm({
     setError("");
   }
 
-  function handleAddQuestion(type: "choice" | "fill") {
+  // A question for the same reading passage goes right after the one it extends.
+  function handleAddQuestion(type: TestQuestionType, from?: TestQuestionDraft) {
     const key = nextKeyRef.current;
     nextKeyRef.current += 1;
-    setTestQuestions((current) => [...current, createQuestionDraft(key, type, languageTag)]);
+    const draft = createQuestionDraft(key, type, languageTag, from?.passage);
+    setTestQuestions((current) => {
+      const after = current.findIndex((item) => item.key === from?.key);
+      const position = after === -1 ? current.length : after + 1;
+      return [...current.slice(0, position), draft, ...current.slice(position)];
+    });
   }
 
   // The server also rejects deadlines in the past, using its own clock.
@@ -330,6 +336,7 @@ export function AssignmentForm({
               onRemove={() =>
                 setTestQuestions((current) => current.filter((item) => item.key !== draft.key))
               }
+              onAddSamePassage={() => handleAddQuestion("choice", draft)}
             />
           ))}
           <div className="button-row">
@@ -338,6 +345,9 @@ export function AssignmentForm({
             </Button>
             <Button variant="outline" onClick={() => handleAddQuestion("fill")}>
               Thêm câu điền từ
+            </Button>
+            <Button variant="outline" onClick={() => handleAddQuestion("order")}>
+              Thêm câu sắp xếp
             </Button>
           </div>
         </section>

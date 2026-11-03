@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from "react";
+
+import { OrderPiecesField } from "@/components/teach/order-pieces-field";
 import { Button } from "@/components/ui/button";
 import { INPUT_MODES } from "@/lib/assignment";
-import { describeQuestionProblem } from "@/lib/test-question-draft";
+import { describeQuestionProblem, TEST_QUESTION_TYPE_LABELS } from "@/lib/test-question-draft";
 
 import type { InputMode } from "@/lib/assignment";
 import type { TeachingLanguageTag } from "@/lib/teaching-language";
@@ -16,6 +19,8 @@ interface TestQuestionEditorProps {
   removeBlockedReason?: string;
   onChange: (draft: TestQuestionDraft) => void;
   onRemove: () => void;
+  // Adds another question that shares this question's reading passage.
+  onAddSamePassage?: () => void;
 }
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
@@ -35,13 +40,17 @@ export function TestQuestionEditor({
   removeBlockedReason,
   onChange,
   onRemove,
+  onAddSamePassage,
 }: TestQuestionEditorProps) {
+  const [isPassageOpen, setIsPassageOpen] = useState(Boolean(draft.passage));
   const isJapanese = languageTag === "ja-JP";
   const isJapaneseInput =
     draft.type === "fill"
       ? draft.inputMode !== "chinese" && draft.inputMode !== "pinyin" && draft.inputMode !== "text"
       : isJapanese;
   const contentLang = isJapanese ? "ja" : "vi";
+  // Pieces are sentence fragments in the language taught, without Vietnamese around them.
+  const piecesLang = isJapanese ? "ja" : languageTag;
   let answerLang = "ja";
   if (draft.type === "fill" && !isJapaneseInput) {
     answerLang = languageTag === "zh-Hant" ? "zh-Hant" : "zh-Hans";
@@ -62,11 +71,29 @@ export function TestQuestionEditor({
   }
   const id = `test-question-${draft.key}`;
   const problem = showProblems ? describeQuestionProblem(draft) : null;
+  const hasPassage = Boolean(draft.passage.trim());
   return (
     <fieldset className="question-card">
       <legend className="question-meta">
-        Câu {position}: {draft.type === "choice" ? "trắc nghiệm" : "điền từ"}
+        Câu {position}: {TEST_QUESTION_TYPE_LABELS[draft.type]}
       </legend>
+      {(isPassageOpen || draft.passage) && (
+        <div className="field">
+          <label htmlFor={`${id}-passage`}>Đoạn văn đọc hiểu</label>
+          <textarea
+            id={`${id}-passage`}
+            lang={contentLang}
+            rows={4}
+            value={draft.passage}
+            onChange={(event) => onChange({ ...draft, passage: event.target.value })}
+            aria-describedby={`${id}-passage-hint`}
+          />
+          <p id={`${id}-passage-hint`} className="small muted">
+            Học viên đọc đoạn văn ngay trên đề. Các câu có cùng đoạn văn được giao liền nhau trong
+            bài hằng ngày. Xóa hết chữ để bỏ đoạn văn.
+          </p>
+        </div>
+      )}
       <div className="field">
         <label htmlFor={`${id}-prompt`}>Đề bài</label>
         <textarea
@@ -77,7 +104,7 @@ export function TestQuestionEditor({
           onChange={(event) => onChange({ ...draft, prompt: event.target.value })}
         />
       </div>
-      {draft.type === "choice" ? (
+      {draft.type === "choice" && (
         <>
           <p className="small muted">Đánh dấu ô bên cạnh các lựa chọn đúng.</p>
           {draft.options.map((option, index) => (
@@ -142,7 +169,8 @@ export function TestQuestionEditor({
             Có nhiều đáp án đúng
           </label>
         </>
-      ) : (
+      )}
+      {draft.type === "fill" && (
         <>
           <div className="field">
             <label htmlFor={`${id}-answers`}>Các đáp án được chấp nhận (mỗi dòng một đáp án)</label>
@@ -199,6 +227,14 @@ export function TestQuestionEditor({
           </div>
         </>
       )}
+      {draft.type === "order" && (
+        <OrderPiecesField
+          id={id}
+          pieces={draft.pieces}
+          lang={piecesLang}
+          onChange={(pieces) => onChange({ ...draft, pieces })}
+        />
+      )}
       <div className="form-grid">
         <div className="field">
           <label htmlFor={`${id}-explain`}>Giải thích đáp án</label>
@@ -226,9 +262,21 @@ export function TestQuestionEditor({
           {problem}
         </p>
       )}
-      <Button variant="ghost" onClick={onRemove} disabled={Boolean(removeBlockedReason)}>
-        Xóa câu này
-      </Button>
+      <div className="button-row">
+        {!isPassageOpen && !draft.passage && (
+          <Button variant="ghost" onClick={() => setIsPassageOpen(true)}>
+            Thêm đoạn văn đọc hiểu
+          </Button>
+        )}
+        {hasPassage && onAddSamePassage && (
+          <Button variant="outline" onClick={onAddSamePassage}>
+            Thêm câu hỏi cho đoạn văn này
+          </Button>
+        )}
+        <Button variant="ghost" onClick={onRemove} disabled={Boolean(removeBlockedReason)}>
+          Xóa câu này
+        </Button>
+      </div>
       {removeBlockedReason && <p className="small muted">{removeBlockedReason}</p>}
     </fieldset>
   );
