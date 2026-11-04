@@ -150,6 +150,13 @@ export function toPercent(score: number, maxScore: number) {
   return (score / maxScore) * 100;
 }
 
+// Vietnamese writes a decimal comma: 66,7% rather than 66.7%. CSV exports keep their own format.
+const decimalFormat = new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 });
+
+export function formatDecimal(value: number) {
+  return decimalFormat.format(value);
+}
+
 export function formatPercent(value: number) {
-  return `${Math.round(value * 10) / 10}%`;
+  return `${formatDecimal(value)}%`;
 }

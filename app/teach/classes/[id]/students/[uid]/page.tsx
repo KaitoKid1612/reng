@@ -18,7 +18,7 @@ import {
 import { isTypedQuestion } from "@/lib/answer-variants";
 import { answerLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
-import { formatPercent } from "@/lib/grading/grade";
+import { formatDecimal, formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getStudentDetail } from "@/lib/server/reports";
@@ -67,7 +67,7 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
         Đã nộp {detail.report.submittedCount}/{detail.report.assignedCount} bài, điểm trung bình{" "}
         {detail.report.averagePercent === null ? "—" : formatPercent(detail.report.averagePercent)}
         {detail.report.averageListens !== null &&
-          `, nghe trung bình ${detail.report.averageListens.toFixed(1)} lần mỗi câu nghe`}
+          `, nghe trung bình ${formatDecimal(detail.report.averageListens)} lần mỗi câu nghe`}
         .
       </p>
       {detail.dailyDays.length > 0 && (

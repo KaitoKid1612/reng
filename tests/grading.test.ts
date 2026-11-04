@@ -1,7 +1,14 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { gradeAttempt, gradeQuestion, isPassingScore, toPercent } from "../lib/grading/grade";
+import {
+  formatDecimal,
+  formatPercent,
+  gradeAttempt,
+  gradeQuestion,
+  isPassingScore,
+  toPercent,
+} from "../lib/grading/grade";
 import { normalizeAnswer } from "../lib/grading/normalize";
 import { parseRawAnswer } from "../lib/grading/raw-answer";
 import { questionSchema } from "../lib/lesson-schema";
@@ -176,4 +183,12 @@ test("Vietnamese free-text answers ignore letter case, spacing and punctuation o
   assert.equal(gradeQuestion(meaning, "...").isCorrect, false);
   // Japanese answers keep the existing exact profile.
   assert.equal(gradeQuestion(fill, "イキマス").isCorrect, false);
+});
+
+test("displayed percentages use the Vietnamese decimal comma and one decimal", () => {
+  assert.equal(formatPercent(toPercent(2, 3)), "66,7%");
+  assert.equal(formatPercent(100), "100%");
+  assert.equal(formatPercent(0), "0%");
+  assert.equal(formatPercent(87.25), "87,3%");
+  assert.equal(formatDecimal(1.5), "1,5");
 });

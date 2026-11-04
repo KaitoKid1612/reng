@@ -16,7 +16,7 @@ import { classQuestionLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
-import { formatPercent } from "@/lib/grading/grade";
+import { formatDecimal, formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
 import { describeUpcomingSession } from "@/lib/class-schedule";
 import { getClassSchedule } from "@/lib/server/class-schedule";
@@ -236,7 +236,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
                     {row.averagePercent === null ? "—" : formatPercent(row.averagePercent)}
                   </td>
                   <td className="numeric" data-label="Nghe lại TB">
-                    {row.averageListens === null ? "—" : row.averageListens.toFixed(1)}
+                    {row.averageListens === null ? "—" : formatDecimal(row.averageListens)}
                   </td>
                   <td data-label="Học gần nhất">
                     {row.lastStudyDay ? formatStudyDay(row.lastStudyDay) : "—"}
