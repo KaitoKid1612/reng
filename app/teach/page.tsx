@@ -6,6 +6,7 @@ import { SignOutButton } from "@/components/auth/sign-out-button";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeacherTodayPanel } from "@/components/teach/teacher-today";
+import { ArchiveLessonButton } from "@/components/teach/archive-lesson-button";
 import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { filterManagedLessons, parseLessonFilters } from "@/lib/lesson-management";
@@ -13,7 +14,7 @@ import { TEACHING_LANGUAGE_LABELS, teachingLanguageLabel } from "@/lib/teaching-
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
 import { listClassSchedules } from "@/lib/server/class-schedule";
-import { getClassProgressFlags } from "@/lib/server/lesson-usage";
+import { getClassProgressFlags, listArchivedLessons } from "@/lib/server/lesson-usage";
 import { buildStartSteps, showsStartSteps } from "@/lib/teaching-start";
 import { buildTeacherToday } from "@/lib/teacher-today";
 import { loadTeacherTodayActivity } from "@/lib/server/teacher-today";
@@ -35,9 +36,10 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
   const filters = parseLessonFilters(await searchParams);
   const account = await requireTeacher("/teach");
   const now = new Date();
-  const [classes, lessons] = await Promise.all([
+  const [classes, lessons, archivedLessons] = await Promise.all([
     listTeacherClasses(account.id),
     listOwnedLessons(account.id),
+    listArchivedLessons(account.id),
   ]);
   // A self-study class never takes learners, so the start steps look at teaching classes only.
   const teachingClasses = classes.filter((item) => !item.self_study && item.active);
@@ -241,6 +243,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                     requestId={randomUUID()}
                     label="Tạo bản sao"
                   />
+                  <ArchiveLessonButton lessonId={lesson.id} title={lesson.title} />
                 </div>
               </li>
             ))}
@@ -251,6 +254,19 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
               ? "Không có bài phù hợp bộ lọc. Thử đổi điều kiện hoặc xóa bộ lọc."
               : "Chưa có bài nào. Chọn Tạo bài mới để soạn bài của bạn."}
           </p>
+        )}
+        {archivedLessons.length > 0 && (
+          <details className="older-assignments">
+            <summary>Bài đã lưu trữ ({archivedLessons.length})</summary>
+            <ul className="item-list">
+              {archivedLessons.map((lesson) => (
+                <li key={lesson.id}>
+                  <span>{lesson.title}</span>
+                  <ArchiveLessonButton lessonId={lesson.id} title={lesson.title} isArchived />
+                </li>
+              ))}
+            </ul>
+          </details>
         )}
       </section>
       <div className="button-row">

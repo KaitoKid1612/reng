@@ -163,6 +163,7 @@ Kết quả rà soát và đề xuất còn lại: [kiểm chứng](../testing/u
   - Bài có hạn hiện đồng hồ trong giờ cuối; bài không cho nộp muộn tự nộp khi còn 1 phút.
   - Sổ lỗi gộp theo bài và lọc câu đến hạn ôn.
   - Bài chỉ được đưa vào lớp cùng ngôn ngữ (Dùng bài trong lớp, ô chọn bài ở trang Giao bài).
+  - **Gỡ khỏi lớp** (mục Nội dung lớp): chỉ khi lớp chưa giao bài tập từ bài đó; nhật ký buổi dạy giữ ghi chú, nguồn luyện hằng ngày ghim vào bài trở về Tự động. **Lưu trữ bài** (trang Giảng dạy): chỉ khi bài không còn trong lớp đang hoạt động; mục Bài đã lưu trữ cho đưa bài trở lại.
 
 ## Lịch sử bài tập hằng ngày — 04/11/2026
 

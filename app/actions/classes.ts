@@ -18,7 +18,7 @@ import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
 import { saveClassSchedule } from "@/lib/server/class-schedule";
-import { pinLatestVersion } from "@/lib/server/lesson-usage";
+import { pinLatestVersion, removeClassLesson, setLessonArchived } from "@/lib/server/lesson-usage";
 import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
@@ -213,6 +213,70 @@ export async function joinCodeAction(
 }
 
 // From the editor: put the lesson's newest published version into one class in a single step.
+const REMOVE_MESSAGES = {
+  removed: "Đã gỡ bài khỏi lớp. Học viên không còn thấy bài này.",
+  not_in_class: "Bài này không còn trong lớp.",
+  has_assignments:
+    "Lớp đã có bài tập giao từ bài này nên không gỡ được. Muốn học viên tạm không thấy bài, đặt giờ mở bài vào tương lai ở trang Giao bài.",
+} as const;
+
+export async function removeClassLessonAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  let status: keyof typeof REMOVE_MESSAGES;
+  try {
+    status = await removeClassLesson(
+      account.id,
+      readField(formData, "classId"),
+      readField(formData, "lessonId"),
+    );
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  if (status === "has_assignments") {
+    return { error: REMOVE_MESSAGES[status] };
+  }
+  refresh();
+  return { notice: REMOVE_MESSAGES[status] };
+}
+
+const ARCHIVE_MESSAGES = {
+  archived: "Đã lưu trữ bài. Bài nằm ở mục Bài đã lưu trữ cuối trang và không tính vào hạn mức.",
+  restored: "Đã đưa bài trở lại danh sách.",
+  in_class: "Bài đang dùng trong một lớp đang hoạt động. Gỡ bài khỏi lớp trước rồi mới lưu trữ.",
+  quota_exceeded: "Đã đạt hạn mức bài học. Lưu trữ bớt bài khác trước khi đưa bài này trở lại.",
+} as const;
+
+export async function archiveLessonAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  let status: keyof typeof ARCHIVE_MESSAGES;
+  try {
+    status = await setLessonArchived(
+      account.id,
+      readField(formData, "lessonId"),
+      readField(formData, "operation") !== "restore",
+    );
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  if (status === "in_class" || status === "quota_exceeded") {
+    return { error: ARCHIVE_MESSAGES[status] };
+  }
+  refresh();
+  return { notice: ARCHIVE_MESSAGES[status] };
+}
+
 export async function pinLatestVersionAction(
   _state: ActionState,
   formData: FormData,

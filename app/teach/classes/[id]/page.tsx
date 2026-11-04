@@ -10,6 +10,7 @@ import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
+import { RemoveClassLessonButton } from "@/components/teach/remove-class-lesson-button";
 import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeachingPanel } from "@/components/teach/teaching-panel";
 import { buttonVariants } from "@/components/ui/button";
@@ -511,6 +512,11 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
                   <Link href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}`}>
                     Đọc bài
                   </Link>
+                  <RemoveClassLessonButton
+                    classId={classRow.id}
+                    lessonId={lesson.lessonId}
+                    title={lesson.title}
+                  />
                 </div>
               </li>
             ))}

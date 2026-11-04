@@ -3,14 +3,15 @@ import "server-only";
 import { z } from "zod";
 
 import { getTeacherClass, listTeacherClasses, setClassLesson } from "@/lib/server/classes";
-import { lessonLanguage } from "@/lib/teaching-language";
 import {
+  callRpc,
   createServiceClient,
   selectOptional,
   selectRows,
   selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
+import { lessonLanguage } from "@/lib/teaching-language";
 
 export interface ClassUsage {
   classId: string;
@@ -156,4 +157,35 @@ export async function getClassProgressFlags(classIds: readonly string[]) {
     ),
   ]);
   return { hasClassLesson: lessons.length > 0, hasAssignment: assignments.length > 0 };
+}
+
+// Takes a lesson out of a class. A lesson with assignments in the class stays (they keep their
+// link to it); the database clears the session log's link and a daily practice pinned to it.
+export async function removeClassLesson(teacherId: string, classId: string, lessonId: string) {
+  return callRpc(
+    "remove_class_lesson",
+    { p_teacher_id: teacherId, p_class_id: classId, p_lesson_id: lessonId },
+    z.enum(["removed", "not_in_class", "has_assignments"]),
+  );
+}
+
+// Archives or restores one of the teacher's lessons; a lesson in an active class stays.
+export async function setLessonArchived(teacherId: string, lessonId: string, archived: boolean) {
+  return callRpc(
+    "set_lesson_archived",
+    { p_teacher_id: teacherId, p_lesson_id: lessonId, p_archived: archived },
+    z.enum(["archived", "restored", "in_class", "quota_exceeded"]),
+  );
+}
+
+export async function listArchivedLessons(teacherId: string) {
+  return selectRows(
+    createServiceClient()
+      .from("lessons")
+      .select("id, title")
+      .eq("owner_id", teacherId)
+      .not("archived_at", "is", null)
+      .order("updated_at", { ascending: false }),
+    z.object({ id: z.string(), title: z.string() }),
+  );
 }
