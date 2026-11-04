@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
@@ -19,7 +20,7 @@ import { LEARNER_LABELS } from "@/lib/class-report";
 import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
 import { formatDecimal, formatPercent } from "@/lib/grading/grade";
-import { requireTeacher } from "@/lib/server/account";
+import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { describeUpcomingSession } from "@/lib/class-schedule";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { listClassSessions } from "@/lib/server/class-sessions";
@@ -32,7 +33,23 @@ import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 import type { AssignmentResult, LearnerLabel } from "@/lib/class-report";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Theo dõi lớp" };
+// Request-scoped, so the tab title and the page share one read of the report.
+const loadReport = cache((teacherId: string, id: string) =>
+  getClassReport(teacherId, id, new Date()),
+);
+
+export async function generateMetadata({ params }: ClassReportPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const account = await getCurrentAccount();
+  if (account?.role === "teacher") {
+    try {
+      return { title: `${(await loadReport(account.id, id)).classRow.name} · Theo dõi lớp` };
+    } catch {
+      // Not the class owner: the generic title reveals nothing.
+    }
+  }
+  return { title: "Theo dõi lớp" };
+}
 
 interface ClassReportPageProps {
   params: Promise<{ id: string }>;
@@ -135,7 +152,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
   const { id } = await params;
   const account = await requireTeacher(`/teach/classes/${id}`);
   const now = new Date();
-  const report = await loadOrNotFound(getClassReport(account.id, id, now));
+  const report = await loadOrNotFound(loadReport(account.id, id));
   const { classRow, summary, week } = report;
   const query = await searchParams;
   const prefill = parseSessionPrefill(

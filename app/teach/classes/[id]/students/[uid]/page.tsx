@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
@@ -19,7 +20,7 @@ import { isTypedQuestion } from "@/lib/answer-variants";
 import { answerLang } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { formatDecimal, formatPercent } from "@/lib/grading/grade";
-import { requireTeacher } from "@/lib/server/account";
+import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getStudentDetail } from "@/lib/server/reports";
 import { formatStudyDateTime, toStudyDay } from "@/lib/study-days";
@@ -27,7 +28,26 @@ import { formatStudyDateTime, toStudyDay } from "@/lib/study-days";
 import type { DailyDay } from "@/lib/daily-history";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Chi tiết học viên" };
+// Request-scoped, so the tab title and the page share one read.
+const loadDetail = cache((teacherId: string, id: string, uid: string) =>
+  getStudentDetail(teacherId, id, uid, new Date()),
+);
+
+export async function generateMetadata({ params }: StudentDetailPageProps): Promise<Metadata> {
+  const { id, uid } = await params;
+  const account = await getCurrentAccount();
+  if (account?.role === "teacher") {
+    try {
+      const detail = await loadDetail(account.id, id, uid);
+      return {
+        title: `${detail.member.full_name || detail.member.email} · ${detail.classRow.name}`,
+      };
+    } catch {
+      // Not the class owner: the generic title reveals nothing.
+    }
+  }
+  return { title: "Chi tiết học viên" };
+}
 
 interface StudentDetailPageProps {
   params: Promise<{ id: string; uid: string }>;
@@ -41,7 +61,7 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
   const path = `/teach/classes/${id}/students/${uid}`;
   const account = await requireTeacher(path);
   const now = new Date();
-  const detail = await loadOrNotFound(getStudentDetail(account.id, id, uid, now));
+  const detail = await loadOrNotFound(loadDetail(account.id, id, uid));
   const selectedDay = detail.dailyDays.find((day) => day.date === query.day);
   // Without a filter only the chosen day's assignment, or else the newest graded one, is open;
   // with a filter every assignment that has matching answers opens so they read in one pass.

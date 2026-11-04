@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { z } from "zod";
 
 import { SlideDeck } from "@/components/slides/slide-deck";
@@ -9,7 +10,22 @@ import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access
 import type { Metadata } from "next";
 
 // Presentation views duplicate the reader and are not meant for search results.
-export const metadata: Metadata = { title: "Trình chiếu", robots: { index: false, follow: false } };
+// Request-scoped, so the tab title and the slides share one read.
+const loadSlides = cache((id: string, version?: string) => loadAccessibleLesson(id, version));
+
+// Meet's tab picker lists tabs by title, so the shared tab names its lesson.
+export async function generateMetadata({
+  params,
+  searchParams,
+}: SlidePageProps): Promise<Metadata> {
+  const { id } = await params;
+  const { version } = await searchParams;
+  const lesson = await loadSlides(id, typeof version === "string" ? version : undefined);
+  return {
+    title: lesson ? `Trình chiếu: ${lesson.title}` : "Trình chiếu",
+    robots: { index: false, follow: false },
+  };
+}
 
 interface SlidePageProps {
   params: Promise<{ id: string }>;
@@ -19,7 +35,10 @@ interface SlidePageProps {
 export default async function SlidePage({ params, searchParams }: SlidePageProps) {
   const { id } = await params;
   const query = await searchParams;
-  const lesson = await loadAccessibleLesson(id, query.version);
+  const lesson = await loadSlides(
+    id,
+    typeof query.version === "string" ? query.version : undefined,
+  );
   if (!lesson) {
     const back = new URLSearchParams();
     if (typeof query.version === "string") {

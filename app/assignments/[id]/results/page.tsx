@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import { MODE_LABELS } from "@/components/classroom/assignment-labels";
@@ -12,7 +13,7 @@ import {
 } from "@/lib/answer-outcome";
 import { getDeadlineState } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
-import { requireStudent } from "@/lib/server/account";
+import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
 import { findDailyRunDate } from "@/lib/server/daily-history";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -20,7 +21,23 @@ import { formatStudyDateTime } from "@/lib/study-days";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Kết quả bài tập" };
+// Request-scoped, so the tab title and the page share one read.
+const loadResults = cache((userId: string, id: string) =>
+  getStudentResults(userId, id, new Date()),
+);
+
+export async function generateMetadata({ params }: ResultsPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const account = await getCurrentAccount();
+  if (account) {
+    try {
+      return { title: `Kết quả: ${(await loadResults(account.id, id)).assignment.title}` };
+    } catch {
+      // Not a member, or no such assignment: the generic title reveals nothing.
+    }
+  }
+  return { title: "Kết quả bài tập" };
+}
 
 interface ResultsPageProps {
   params: Promise<{ id: string }>;
@@ -32,7 +49,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
   const outcome = parseAnswerOutcome((await searchParams).outcome);
   const account = await requireStudent(`/assignments/${id}/results`);
   const [view, dailyDate] = await Promise.all([
-    loadOrNotFound(getStudentResults(account.id, id, new Date())),
+    loadOrNotFound(loadResults(account.id, id)),
     findDailyRunDate(id),
   ]);
   const { assignment, attempt } = view;

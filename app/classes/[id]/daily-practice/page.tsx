@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import { ResultRow } from "@/components/classroom/result-row";
@@ -15,7 +16,7 @@ import {
 import { getDeadlineState } from "@/lib/assignment";
 import { neighbourDays, pickDailyDay, scoreBand } from "@/lib/daily-history";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
-import { requireStudent } from "@/lib/server/account";
+import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
 import { getLearnerDailyHistory } from "@/lib/server/daily-history";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -26,7 +27,25 @@ import type { DailyDay } from "@/lib/daily-history";
 import type { StudentResultsView } from "@/lib/server/assignments";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Luyện tập hằng ngày" };
+// Request-scoped, so the tab title and the page share one read.
+const loadHistory = cache((userId: string, id: string) =>
+  getLearnerDailyHistory(userId, id, new Date()),
+);
+
+export async function generateMetadata({ params }: DailyPracticePageProps): Promise<Metadata> {
+  const { id } = await params;
+  const account = await getCurrentAccount();
+  if (account) {
+    try {
+      return {
+        title: `Luyện tập hằng ngày · ${(await loadHistory(account.id, id)).classRow.name}`,
+      };
+    } catch {
+      // Not a member: the generic title reveals nothing.
+    }
+  }
+  return { title: "Luyện tập hằng ngày" };
+}
 
 interface DailyPracticePageProps {
   params: Promise<{ id: string }>;
@@ -174,7 +193,7 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
   const path = `/classes/${id}/daily-practice`;
   const account = await requireStudent(path);
   const now = new Date();
-  const history = await loadOrNotFound(getLearnerDailyHistory(account.id, id, now));
+  const history = await loadOrNotFound(loadHistory(account.id, id));
   const { days } = history;
   const day = pickDailyDay(days, typeof query.day === "string" ? query.day : undefined);
   const outcome = parseAnswerOutcome(query.outcome);

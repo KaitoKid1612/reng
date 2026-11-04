@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import {
@@ -13,7 +14,7 @@ import { compareDueUrgency } from "@/lib/assignment";
 import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
 import { foldMissedDailySets } from "@/lib/learner-today";
-import { requireStudent } from "@/lib/server/account";
+import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { hasDailyRuns } from "@/lib/server/daily-history";
 import { getStudentClassView } from "@/lib/server/learner";
@@ -22,7 +23,23 @@ import { loadOrNotFound } from "@/lib/server/pages";
 import type { LearnerAssignment } from "@/lib/server/learner";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Lớp học" };
+// Request-scoped, so the tab title and the page share one read.
+const loadClassView = cache((userId: string, id: string) =>
+  getStudentClassView(userId, id, new Date()),
+);
+
+export async function generateMetadata({ params }: ClassPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const account = await getCurrentAccount();
+  if (account) {
+    try {
+      return { title: (await loadClassView(account.id, id)).classRow.name };
+    } catch {
+      // Not a member: the generic title reveals nothing.
+    }
+  }
+  return { title: "Lớp học" };
+}
 
 interface ClassPageProps {
   params: Promise<{ id: string }>;
@@ -81,7 +98,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const { id } = await params;
   const account = await requireStudent(`/classes/${id}`);
   const now = new Date();
-  const view = await loadOrNotFound(getStudentClassView(account.id, id, now));
+  const view = await loadOrNotFound(loadClassView(account.id, id));
   // Membership was checked above, so the timetable is read only for a member.
   const [schedule, hasDaily] = await Promise.all([
     getClassSchedule(view.classRow.id),

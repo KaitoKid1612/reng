@@ -1,3 +1,4 @@
+import { cache } from "react";
 import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
@@ -6,7 +7,7 @@ import { StartAttemptButton } from "@/components/classroom/start-attempt-button"
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
-import { requireStudent } from "@/lib/server/account";
+import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -14,7 +15,22 @@ import { formatStudyDateTime } from "@/lib/study-days";
 import type { StudentAssignmentView } from "@/lib/server/assignments";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Làm bài" };
+// Request-scoped, so the tab title and the page share one read.
+const loadView = cache((userId: string, id: string) => getStudentAssignment(userId, id));
+
+// The tab names the assignment, so several open tabs (or Meet's tab picker) tell them apart.
+export async function generateMetadata({ params }: AssignmentPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const account = await getCurrentAccount();
+  if (account) {
+    try {
+      return { title: (await loadView(account.id, id)).assignment.title };
+    } catch {
+      // Not a member, or no such assignment: the generic title reveals nothing.
+    }
+  }
+  return { title: "Làm bài" };
+}
 
 interface AssignmentPageProps {
   params: Promise<{ id: string }>;
@@ -47,7 +63,7 @@ function describeFeedback(view: StudentAssignmentView) {
 export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const { id } = await params;
   const account = await requireStudent(`/assignments/${id}`);
-  const view = await loadOrNotFound(getStudentAssignment(account.id, id));
+  const view = await loadOrNotFound(loadView(account.id, id));
   const now = new Date();
   const { assignment, openAttempt } = view;
   const blocker = describeBlocker(view, now);
