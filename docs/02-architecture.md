@@ -1,167 +1,148 @@
 # Kiến trúc kỹ thuật
 
-Phần nền mô tả mã nguồn hiện có; phần dịch vụ ngày 29/10/2026 ưu tiên Việt–Trung và soạn theo mẫu. [DD dịch vụ](detail-design/teaching-service.md) phân biệt schema/API đề xuất và runtime. Lựa chọn gói/giá cần hồ sơ xác minh trước vận hành, không suy ra đã deploy từ bảng stack.
+Mô tả hệ thống đang chạy trên production thử từ 29/10/2026 (cập nhật theo mã nguồn ngày 04/11/2026). Phần còn là thiết kế (nhập scan/OCR, TTS trên web) ghi rõ "dự kiến" ở cuối. Cách đặt biến môi trường, lịch cron, migration và phát hành ở [vận hành](operations.md); [DD dịch vụ](detail-design/teaching-service.md) ghi chi tiết từng lát đã triển khai.
 
 ## Stack
 
-| Lớp | Chọn | Lý do |
+| Lớp | Đang dùng | Ghi chú |
 |---|---|---|
-| Frontend | Next.js (App Router) + TypeScript | Một codebase cho web và mobile browser, render phía server cho trang nội dung |
-| Giao diện | Tailwind CSS + component trong repo | Button cva/clsx/tailwind-merge hiện có; không coi shadcn/Radix là đã cài |
-| API nghiệp vụ | Next.js phía server | Kiểm tra quyền, giao/nộp/chấm bài ở các giai đoạn sau |
-| Dữ liệu và xác thực | Supabase (Postgres + Auth + Realtime) | Database, đăng nhập, RLS; realtime chỉ bật khi triển khai quiz trực tiếp |
-| Lưu media | Adapter R2 hiện có cho audio; storage private cho lớp/scan là thiết kế mới | Kiểm tra gói/quota thực tế; cache và quyền theo từng loại asset |
-| Scan/OCR | Storage private + queue/worker dự kiến | Chưa chọn provider OCR/worker hosting; không xử lý job dài trong request web |
-| Hosting | Vercel | Deploy bằng git push, cron tích hợp sẵn |
-| Email | Resend adapter / Mailpit local | Template chuỗi escape trong repo, chưa dùng React Email; gửi thật còn chờ nghiệm thu |
-| TTS | Azure adapter hiện có cho Nhật; Trung cần chọn locale/voice và nghe duyệt | Sinh sẵn, không gọi theo lượt học sinh; job web và review là phần mới |
+| Web | Next.js 16 (App Router), React 19, TypeScript strict | Server Component mặc định; `"use client"` chỉ ở phần cần tương tác hoặc API trình duyệt |
+| Giao diện | Tailwind CSS 4 + token CSS trong `app/globals.css`, component trong repo | Button dùng cva/clsx/tailwind-merge; không cài shadcn/Radix. Font tự phục vụ từ @fontsource |
+| Nghiệp vụ phía server | Server Actions (`app/actions/`) cho form; Route Handlers (`app/api/`) cho API JSON khi làm bài, ôn tập, cron và webhook | Mọi lối vào đều kiểm tra lại người gọi |
+| Dữ liệu và đăng nhập | Supabase: Postgres, Auth (email/mật khẩu, Google), RLS, hàm RPC | Project `reng` ở Singapore |
+| Hosting | Vercel, hàm ở `sin1` cạnh database | Push `main` là deploy production; cron khai báo trong `vercel.json` |
+| Slide | reveal.js 6 | Cửa sổ Presenter đồng bộ qua BroadcastChannel trong cùng trình duyệt |
+| Ôn tập | ts-fsrs | Trạng thái ghi kèm phiên bản bộ lập lịch |
+| Nhập tiếng Nhật | wanakana | Chỉ cho ô trả lời tiếng Nhật; pinyin có bộ chuyển số thanh riêng |
+| Kiểm tra dữ liệu | Zod | Ở mọi biên: JSON bài học, body API, kết quả RPC |
+| Audio | MP3 sinh sẵn bằng script (Azure; tạm Unreal Speech cho bộ đề nghe), đặt trong `public/audio` hoặc R2 | Không gọi TTS theo lượt học viên |
+| Email | Adapter Resend, Mailpit ở local | Production chưa bật gửi thư |
 
-Bản đầu dùng Next.js + Supabase theo bảng trên, xuyên suốt các giai đoạn. Astro với JSON tĩnh chỉ là phương án từng cân nhắc, không nằm trong kế hoạch triển khai hiện tại.
+Phiên bản chính xác lấy theo `package.json` và `package-lock.json` (Node 24, npm).
 
-## Baseline triển khai local
-
-Giai đoạn 1 đã có source Next.js/React/TypeScript, Tailwind và component UI trong repo. Button dùng cấu trúc cva/clsx/tailwind-merge; chưa cài toàn bộ component shadcn/Radix khi chưa cần. Font được self-host bằng @fontsource, không gọi Google Fonts lúc build. Phiên bản chính xác lấy từ package.json và package-lock.json; Node 24, npm.
-
-Kana lấy từ JSON đã validate, không cần API hoặc Supabase runtime để mở trang/luyện. Giai đoạn 3 dùng Supabase Auth và các RPC transaction; supabase/config.toml chạy stack local bằng Supabase CLI để kiểm chứng trước cloud. Supabase hiện có migration nền và kiểm tra trên PostgreSQL nhúng, chưa áp dụng cloud. Azure/R2 có script chuẩn bị sẵn, chưa sinh MP3 thật khi chưa có credentials. Không coi các dịch vụ liệt kê trong stack là đã tích hợp hết.
-
-Hosting chưa triển khai. Trước chọn gói Vercel cần xác minh điều kiện thương mại, lịch cron, hạn mức và giá hiện hành từ nguồn chính thức; không mặc định gói cá nhân đáp ứng dịch vụ hoặc chi phí hosting bằng 0.
-
-## Sơ đồ luồng nội dung
-
-```
-  Soạn trên web          Nhập CSV từ vựng
-        |                       |
-        +-----------+-----------+
-                    |
-                    v
-          Kho nội dung (Postgres)
-          mỗi bài một khối JSON
-                    |
-                    v
-        Sinh audio hàng loạt (script)
-        Azure TTS -> mp3 -> R2
-                    |
-        +-----------+-----------+
-        |           |           |
-        v           v           v
-   Slide        Trang        Bài tập
-   dạy lớp     tự học     chấm tự động
-```
-
-## Lý do tách nội dung khỏi giao diện
-
-Nếu slide là một file riêng, bài tập là một file riêng, thì sửa một từ vựng phải sửa ba chỗ và sẽ có ngày ba chỗ lệch nhau.
-
-Khi nội dung là một khối JSON duy nhất:
-
-- Sửa một chỗ trong draft, các preview dựa trên draft dùng cùng nội dung; bản đã xuất bản/bài giao chỉ đổi khi có thao tác phiên bản riêng
-- Thêm chế độ hiển thị mới (ví dụ xuất PDF) không phải nhập lại nội dung
-- Tạo khung câu luyện từ nội dung, giáo viên bổ sung và xác nhận đáp án; không tự coi gợi ý là đáp án đúng
-- Script audio quét được toàn bộ nội dung để biết câu nào còn thiếu file
-
-## Quy ước thư mục
+## Sơ đồ runtime
 
 ```text
-app/
-  page.tsx                    home
-  kana/
-    page.tsx                  kana chart
-    practice/page.tsx         romaji practice
-  sources/page.tsx            attribution and audio status
-  lessons/[id]/               lesson reader, slide and presenter
-  classes/, assignments/[id]/ learner classes, attempts and results
-  review/, mistakes/, progress/, vocabulary/[lessonId]/
-  teach/                      class management, assignments, reports
-  actions/                    Server Actions for account and class forms
-  api/                        attempts, drafts, submissions, reviews, CSV
-components/
-  kana/                       chart, setup, question and result views
-  ui/                         shared UI primitives
-  audio-provider.tsx
-lib/
-  kana.ts                     validation and practice domain logic
-  audio-config.ts
-  grading/                    shared client/server grading
-  server/                     server-only Supabase access and authorization
-scripts/
-  generate-audio.ts
-  validate-data.ts
-  import-dictionary.ts        planned
-  import-csv.ts               planned
+ Trình duyệt (học viên, giáo viên, khách)
+        |
+        v
+ Vercel (sin1)
+   proxy.ts ............ làm mới phiên Supabase sắp hết hạn (Server Component không ghi được cookie)
+   Server Components .... đọc dữ liệu, render trang
+   Server Actions ....... form của giáo viên, tài khoản, lớp
+   Route Handlers ....... /api/assignments, /api/submissions, /api/reviews, /api/lessons/...
+   /api/cron/* .......... Vercel Cron gọi kèm Bearer CRON_SECRET
+        |
+        |  lib/server/*: xác định người gọi, kiểm tra quyền, gọi RPC
+        v
+ Supabase (Singapore)
+   Auth ................. phiên đăng nhập trong cookie HttpOnly
+   Postgres + RLS ....... bảng nội dung, lớp, bài nộp, ôn tập, email
+   Hàm RPC .............. thao tác nghiệp vụ trong một transaction
+
+ Máy người vận hành: scripts/ (sinh audio, seed local, nhập ngân hàng câu) -> Azure/Unreal TTS, R2, Supabase
 ```
 
-## Nguyên tắc chấm điểm: chia đôi client và server
+## Lớp mã nguồn
 
-**Bài luyện** có thể công bố đáp án theo trải nghiệm luyện; reader/slide DTO thường lược đáp án và trả qua API đúng mục đích. Điểm lưu báo cáo luôn do server chấm lại từ raw và snapshot. Không coi mọi luồng hiện tại đều chấm client.
+```text
+app/                       route, layout, CSS chung
+  actions/                 Server Actions; mỗi action tự kiểm tra người gọi
+  api/                     Route Handlers JSON, cron, webhook, unsubscribe
+components/<tính năng>/    tương tác của từng tính năng (classroom, editor, teach, slides, review…)
+components/ui/             thành phần dùng chung (Button, LinkPending…)
+lib/                       logic thuần: chấm điểm, lập lịch ôn, ngày giờ, nhập CSV, schema nội dung
+lib/server/                chỉ chạy ở server (`server-only`): phiên, quyền, truy vấn, RPC, email
+scripts/                   lệnh CLI, không được UI import
+content/                   bài mẫu, kana, bộ đề nghe, bảng audio — đã kiểm tra bằng Zod
+supabase/migrations/       schema, RLS và hàm RPC
+tests/ e2e/ e2e-supabase/  test logic và migration (PGlite), browser không dịch vụ, browser trên Supabase local
+```
 
-**Bài kiểm tra** chỉ gửi câu hỏi đã lọc. Server chấm khi nộp nhưng chỉ công bố điểm/đáp án theo feedback_policy, có thể sau hạn. RLS và API cùng bảo vệ câu test; nộp xong không mặc định được xem kết quả ngay.
+Quy ước đặt tên và tách component ở [coding standards](coding-standards.md).
 
-Logic chấm thuần ở `lib/grading/`; các UI/API dùng cùng hợp đồng. Server là nguồn điểm chính; profile ngôn ngữ trong snapshot quyết định chuẩn hóa, không dùng mặc định Nhật cho Trung.
+## Đọc và ghi dữ liệu
 
-## Thư viện và phạm vi thực tế
+- **Người gọi là ai:** `getCurrentAccount` (`lib/server/account.ts`) đọc phiên Supabase từ cookie bằng khóa publishable, lấy vai trò từ bảng `profiles` (không lấy từ metadata người dùng tự sửa được) và được nhớ trong một request. Trang cần đăng nhập dùng `requireAccount`, `requireTeacher`, `requireStudent`; trang đọc phiên không bao giờ được prerender.
+- **Đọc và ghi:** sau khi biết người gọi, mã server dùng client service role (`createServiceClient`, vượt RLS) nên phải tự lọc theo người gọi. Thao tác nghiệp vụ đi qua hàm RPC (`callRpc`): hàm nhận ID người gọi (`p_teacher_id`, `p_learner_id`…), kiểm tra lại quyền sở hữu hoặc tư cách thành viên trong cùng transaction và chỉ `service_role` được gọi. Lỗi nghiệp vụ trả dạng `reng:<mã>`, thành `ServiceError` rồi thành mã HTTP trong `lib/server/api.ts` (404, 409, 413…), không lộ chi tiết database.
+- **RLS** vẫn bật cho mọi bảng để chặn truy cập trực tiếp bằng khóa anon/authenticated. API ghi chú giáo viên dùng chính phiên người dùng để RLS quyết định.
+- **API ghi dữ liệu** kiểm tra header `Origin` trùng site (chống CSRF), giới hạn body 64 KB và trả `Cache-Control: private, no-store`.
+- **Danh sách lớn:** truy vấn có thể vượt 1.000 dòng đọc theo trang (`selectEveryPage`), danh sách ID dài chia nhóm 100 (`selectEveryPageIn`) để không vượt giới hạn URL.
 
-| Thành phần | Trạng thái |
-|---|---|
-| reveal.js | Đã dùng renderer; presenter riêng qua BroadcastChannel cùng trình duyệt |
-| wanakana | Đã dùng cho input Nhật, không dùng cho Trung |
-| ts-fsrs | Đã dùng ôn tập; state theo phiên bản scheduler |
-| @dnd-kit | Đã dùng sắp xếp slide; không suy ra UI bài order đã triển khai |
-| Zod / Supabase SSR / AWS SDK S3 | Validator/Auth/storage adapter hiện có theo package.json |
-| kuromoji/kuroshiro/howler/qrcode/react-email | Không nằm trong dependency hiện tại; chỉ cân nhắc khi có phạm vi riêng |
-| OCR/queue/TTS web/font Trung | Chưa chọn/tích hợp; thiết kế theo DD dịch vụ |
+## Nội dung bài học và phiên bản
 
-Phiên bản lấy package.json/lockfile, không chốt lại bằng tài liệu ước lượng.
+- `LESSON_SOURCE=local` đọc 5 bài mẫu trong `content/`; `supabase` đọc phiên bản đã xuất bản.
+- Bài có một bản nháp. **Xuất bản** tạo một dòng `lesson_versions` không đổi; lớp **ghim** một phiên bản (`class_lessons`); **bài giao** chụp câu hỏi vào `assignment_items`. Sửa nháp không đổi bài lớp đang dùng hay điểm đã có; lớp chỉ chuyển khi giáo viên bấm Cập nhật lên phiên bản mới.
+- Hai schema nội dung chạy song song: v1 (bài tiếng Nhật, trình soạn Nhật, bài mẫu Minna) và v2 (mẫu Việt–Trung 5 bước, `lib/teaching-content.ts`). `lib/lesson-repository.ts` nhận diện theo `schemaVersion`.
+- Xuất bản không tự công khai bài; công khai là thao tác riêng ở trang Chia sẻ.
+
+## Chấm điểm: chia đôi client và server
+
+**Bài luyện** có thể công bố đáp án theo trải nghiệm luyện; reader/slide DTO thường lược đáp án và trả qua API đúng mục đích. Điểm lưu báo cáo luôn do server chấm lại từ câu trả lời gốc và snapshot.
+
+**Bài kiểm tra** chỉ gửi câu hỏi đã lọc. Server chấm khi nộp nhưng chỉ công bố điểm/đáp án theo `feedback_policy`, có thể sau hạn. RLS và API cùng bảo vệ câu kiểm tra; nộp xong không mặc định được xem kết quả ngay.
+
+Logic chấm thuần ở `lib/grading/`; UI và API dùng cùng hợp đồng. Server là nguồn điểm chính; profile ngôn ngữ trong snapshot quyết định chuẩn hóa, không dùng mặc định Nhật cho Trung. Khi giáo viên chấp nhận một câu trả lời tương đương sau khi chấm (RPC `accept_answer_variant`), snapshot bài giao nhận thêm đáp án đó, các bài đã nộp có câu trả lời này được chấm lại thành đúng (điểm và thẻ lỗi theo sau), và bài luyện sau dùng cùng câu cũng chấp nhận; ngoài thay đổi đó, lịch sử điểm không sửa được.
 
 ## Xác thực và phân quyền
 
-Ba vai:
+Bốn vai:
 
-- **Khách** xem được bảng chữ cái và nội dung công khai
-- **Học viên** vào lớp bằng mã, làm bài, xem kết quả của mình
-- **Giảng viên** soạn bài, tạo lớp, xem toàn bộ kết quả lớp
-- **Quản trị viên nền tảng** duyệt/tạm dừng giáo viên, ghi hạn thuê, xem số liệu tổng hợp và nhật ký; không đọc bài nộp hay bài riêng
+- **Khách** xem bảng chữ cái, công cụ tự học và nội dung đã công khai.
+- **Học viên** vào lớp bằng mã hoặc link mời, làm bài, xem kết quả của mình.
+- **Giáo viên** soạn bài, tạo lớp, giao bài, xem kết quả lớp mình.
+- **Quản trị viên nền tảng** duyệt/tạm dừng giáo viên, ghi hạn thuê, xem số liệu tổng hợp và nhật ký; không đọc bài nộp hay bài riêng.
 
-Thực hiện bằng Supabase Auth cộng Row Level Security. RLS bảo vệ truy cập trực tiếp database; API vẫn phải xác thực người dùng và kiểm tra quyền theo lớp, bài học, lượt làm. API dùng service role phải tự kiểm tra đầy đủ vì khóa này có quyền vượt RLS. Không đưa khóa đó vào trình duyệt.
+Mọi người đăng ký như học viên. Tài khoản tự kích hoạt giảng dạy tại `/teach/start` sau khi xác nhận trách nhiệm nội dung; server gọi RPC `activate_teacher`, ghi `teacher_accounts` và `audit_events`. Người dùng không tự sửa `profiles.role`; cột này do trigger đồng bộ từ `teacher_accounts`. Tư cách học đến từ enrollment, nên một tài khoản vừa dạy lớp mình vừa học lớp khác, và giáo viên học trong lớp tự học của mình. Khi bật cài đặt duyệt (mặc định), yêu cầu giảng dạy chờ quản trị viên mở quyền ở `/admin/teachers`. Quyền quản trị nằm ở bảng `platform_admins`, chỉ cấp bằng SQL (hoặc `npm run admin:grant` trên máy local).
 
-Mọi người đăng ký như học viên. Tài khoản đã xác minh email tự kích hoạt giảng dạy tại `/teach/start` sau khi xác nhận trách nhiệm nội dung; server gọi RPC `activate_teacher`, ghi `teacher_accounts` và `audit_events`. Người dùng không tự sửa `profiles.role`; cột này là capability tương thích do trigger đồng bộ từ `teacher_accounts`. Tư cách học đến từ enrollment, nên một tài khoản vừa dạy lớp mình vừa học lớp khác ([DD dịch vụ](detail-design/teaching-service.md)). Khi bật cài đặt duyệt (mặc định), yêu cầu giảng dạy ở trạng thái chờ đến khi quản trị viên mở quyền ở `/admin/teachers`. Quyền quản trị nằm ở bảng `platform_admins`, chỉ cấp bằng SQL (hoặc `npm run admin:grant` trên máy local).
+Giáo viên chỉ sửa bài mình sở hữu và quản lý lớp mình tạo; chia sẻ chỉ cấp quyền xem/sao chép một phiên bản cụ thể, không mở dữ liệu lớp. Ghi chú giáo viên và đáp án câu kiểm tra không xuất hiện ở API đọc công khai, slide học viên hay bản chia sẻ. Chi tiết ranh giới nội dung ở [thiết kế dữ liệu](03-data-design.md).
 
-SEO: metadata gốc dùng `SITE_URL` làm `metadataBase`; `app/sitemap.ts` liệt kê trang công khai và bài công khai, `app/robots.ts` chặn khu vực đăng nhập, quản trị và trang trình chiếu; trang bài có canonical không kèm `?version=` và JSON-LD LearningResource. Giảng viên chỉ sửa bài mình sở hữu, quản lý lớp mình tạo; chia sẻ chỉ cấp quyền trên version cụ thể, không mở dữ liệu lớp. Khách chỉ đọc nội dung đã xuất bản và được đánh dấu công khai.
+## Render và bộ nhớ đệm
 
-Đáp án của bài kiểm tra phải thuộc phiên bản riêng không xuất hiện ở bất kỳ API đọc công khai nào, kể cả bài luyện hoặc slide. Chi tiết ranh giới nội dung tại `03-data-design.md`.
+- Trang đọc phiên đăng nhập luôn render theo request (`connection()` trong `getCurrentAccount`).
+- `/for-teachers` và `sitemap.xml` làm mới mỗi giờ; đổi quyền đọc hoặc lưu trữ bài làm mới `/for-teachers` ngay.
+- Danh mục bài, `/grammar` và flashcard từ vựng render theo request vì đọc bài từ database.
+- Trình soạn bài chỉ render ở trình duyệt (`ssr: false`) để khôi phục thay đổi chưa lưu trên máy trước lần vẽ đầu tiên.
+- Không dùng `loading.tsx` cho trang riêng tư: trang phải trả 404 thật cho người không có quyền ([lý do](testing/ux-review-2026-11-04.md)). Nút điều hướng chậm có dấu xoay (`components/ui/link-pending.tsx`).
 
-## Vận hành định kỳ
+## Ngày giờ
 
-| Việc | Tần suất | Chạy bằng |
+Lớp học chạy theo giờ Việt Nam (UTC+7, không đổi giờ mùa hè). Ngày học, hạn nộp, lịch cron và bài luyện hằng ngày tính theo lịch Việt Nam bằng `lib/study-days.ts` và `lib/vietnam-time.ts`, không theo múi giờ của máy chủ (UTC trên Vercel) hay của thiết bị. Cách hiển thị ở [thiết kế UI](12-ui-design.md#ngày-giờ-và-số).
+
+## Việc định kỳ
+
+| Việc | Giờ Việt Nam | Chạy bằng |
 |---|---|---|
-| Gửi email nhắc học viên | 20h hằng ngày | Vercel Cron |
-| Gửi tóm tắt lớp cho giảng viên | 6h hằng ngày | Vercel Cron |
-| Rà soát bài quá hạn và nhãn học viên | Hằng ngày; tính lại khi mở báo cáo | Báo cáo tính khi mở; tóm tắt giảng viên dùng cùng phép tính |
-| Sinh audio cho nội dung mới | Thủ công khi thêm bài | Script |
+| Giao bài luyện tập hằng ngày | 6:00 | Vercel Cron `/api/cron/daily-practice` |
+| Email nhắc học viên | 20:00 | Vercel Cron `/api/cron/student-reminders` (chưa bật email trên production) |
+| Email tóm tắt lớp cho giáo viên | 6:00 | Vercel Cron `/api/cron/teacher-digest` (chưa bật email) |
+| Email tổng kết tuần | 19:00 Chủ nhật | Vercel Cron `/api/cron/weekly-summary` (chưa bật email) |
+| Báo cáo lớp và nhãn học viên | Khi mở trang | Tính lúc đọc, cùng phép tính với email tóm tắt |
+| Sinh audio cho nội dung mới | Thủ công | `npm run audio:generate` |
 
-Vercel Cron chạy theo giờ UTC. Muốn 20h giờ Việt Nam thì đặt `0 13 * * *`. Lịch đã khai báo trong vercel.json, gọi /api/cron/[job] với `Authorization: Bearer CRON_SECRET`.
+Lịch UTC, cách gọi tay và kết quả trả về ở [vận hành](operations.md#lịch-cron).
 
-## Môi trường và vận hành
+## Nguyên tắc vận hành
 
-- Tách local, staging và production; staging dùng database, bucket, khóa và tài khoản thử riêng. Preview deployment không được ghi vào production.
-- Cung cấp `.env.example` chỉ chứa tên biến và giá trị mẫu. Khóa Supabase service role, TTS, R2 và email chỉ dùng phía server/script. Cron và webhook phải xác thực nguồn gọi.
-- Trước khi dùng thật, có bản sao database và media, thời hạn giữ bản sao, người phụ trách và một lần khôi phục thử trên môi trường riêng. Không mặc định gói miễn phí có backup đủ dùng.
-- Ghi lỗi API, audio và cron kèm mã yêu cầu; không ghi token, đáp án kiểm tra hoặc toàn bộ nội dung bài nộp vào log. Theo dõi lỗi gửi email và giới hạn sử dụng dịch vụ.
-- Migration được lưu trong mã nguồn, kiểm tra trên staging trước production. Mỗi thay đổi schema có hướng khôi phục hoặc bản backup phù hợp.
-- Quyền xem dữ liệu học viên giới hạn theo lớp. Bản đầu chưa có giao diện xóa tài khoản; có quy trình yêu cầu người vận hành xuất/xóa dữ liệu và chính sách giữ dữ liệu trước khi nhận lớp thật.
-- Trước khi deploy, xác minh gói hosting phù hợp cách sử dụng, lịch cron và quota. Không xem ping định kỳ là bảo đảm dịch vụ không tạm dừng; cần hướng dẫn khôi phục khi gặp sự cố.
+- Tách local, staging và production; staging dùng database, bucket, khóa và tài khoản thử riêng. Preview deployment không ghi vào production. Test tự động không dùng tài khoản cloud thật.
+- Khóa service role, TTS, R2 và email chỉ dùng phía server/script, không đặt trong biến `NEXT_PUBLIC_`. Cron và webhook xác thực nguồn gọi (Bearer secret, chữ ký webhook).
+- Ghi lỗi API, audio và cron kèm mã lỗi; không ghi token, đáp án kiểm tra hoặc nội dung bài nộp vào log.
+- Migration nằm trong mã nguồn, được test trên PostgreSQL nhúng và Supabase local trước production, và phải tương thích với bản web đang chạy ([quy trình](operations.md#migration)).
+- Trước khi nhận lớp thật cần bản sao database và media, người phụ trách và một lần khôi phục thử; gói Free hiện tại không có bản sao tự khôi phục. Chưa có giao diện xóa tài khoản: yêu cầu xuất/xóa dữ liệu do người vận hành xử lý.
+- Trước khi thu tiền: chuyển gói hosting phù hợp sử dụng thương mại và bật email riêng ([kế hoạch POC](poc-setup.md)).
 
 ## Những thứ cố tình không dùng
 
-**Google Slides nhúng iframe.** Khác domain nên JavaScript không đọc được trạng thái slide. Không gắn được nút phát âm, furigana hay quiz vào slide. Dùng được ở giai đoạn tạm thời, không dùng lâu dài.
+**Google Slides nhúng iframe.** Khác domain nên JavaScript không đọc được trạng thái slide. Không gắn được nút phát âm, furigana hay quiz vào slide.
 
 **Hotlink ảnh từ Google Drive.** Bị giới hạn lượt tải, định dạng URL thay đổi không báo trước, không có CDN.
 
-**localStorage làm nơi lưu tiến độ chính.** Mất khi học viên đổi máy hoặc xóa cache. Chỉ dùng cho tiện ích nhỏ như nhớ tab đang mở.
+**localStorage làm nơi lưu tiến độ chính.** Mất khi học viên đổi máy hoặc xóa cache. Chỉ dùng cho tiện ích nhỏ (nhớ tab, giữ thay đổi chưa lưu của trình soạn và bài đang làm để khôi phục).
 
 **Sinh hai file audio cho hai tốc độ.** Dùng `playbackRate` kèm `preservesPitch` là đủ, tiết kiệm nửa dung lượng.
 
-## Kiến trúc dịch vụ nhiều giáo viên — dự kiến
+**Tích hợp video.** Google Meet là dịch vụ bên ngoài; Reng lưu link Meet của lớp và cung cấp thẻ slide để giáo viên chia sẻ. Không cần OAuth hay SDK video. Đồng bộ Presenter bằng BroadcastChannel không phải đồng bộ slide từ xa.
 
-Tiếp tục Next.js + Supabase, tách quyền chủ sở hữu và quyền chia sẻ rõ ràng. Google Meet là dịch vụ video bên ngoài; Reng lưu link riêng cho lớp và cung cấp tab slide để giáo viên chia sẻ. Không cần OAuth/SDK video cho mốc đầu. Đồng bộ presenter bằng BroadcastChannel hiện tại không phải đồng bộ slide từ xa.
+## Phần còn dự kiến
 
-Nhập scan cần object storage riêng tư, worker/queue bất đồng bộ, OCR adapter và editor duyệt; chỉ chuyển dữ liệu đã duyệt sang draft bài học/bộ câu hỏi. Không đặt ảnh chứa đáp án vào bucket audio công khai hoặc chạy OCR dài trong request web. Chưa chọn nhà cung cấp/worker hosting. Xem [BD](basic-design/teaching-service.md) và [DD dự kiến](detail-design/teaching-service.md); toàn bộ phần mở rộng chưa có trong code.
+Nhập scan cần object storage riêng tư, worker/queue bất đồng bộ, OCR adapter và editor duyệt; chỉ chuyển dữ liệu đã duyệt sang draft bài học/bộ câu hỏi. Không đặt ảnh chứa đáp án vào bucket audio công khai hoặc chạy OCR dài trong request web. TTS trên web cần hạn mức ký tự theo tháng và bước nghe duyệt. Chưa chọn nhà cung cấp hay nơi chạy worker. Xem [BD](basic-design/teaching-service.md) và [DD](detail-design/teaching-service.md); phần này chưa có trong mã nguồn.
