@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { test } from "node:test";
+
+import { format, resolveConfig } from "prettier";
 
 import { parseAssignableQuestion } from "../lib/assignment";
 import { gradeQuestion } from "../lib/grading/grade";
@@ -10,6 +12,12 @@ import {
   parseLessonDraftState,
 } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
+import {
+  applyListeningAudio,
+  findListeningAudio,
+  parseListeningSet,
+  planListeningAudio,
+} from "../lib/listening-set";
 
 const FILE = "content/listening/minna-1-15.json";
 
@@ -102,4 +110,35 @@ test("without audio the editor blocks publishing, as the audio policy requires",
   );
   assert.equal(missingAudio.length, 1);
   assert.match(missingAudio[0].message, /^Câu luyện 1–90: 90 câu nghe chưa có audio/);
+});
+
+test("generated audio is written back as hashes that match each transcript", async () => {
+  const set = parseListeningSet(await readBank());
+  const plan = planListeningAudio(set);
+  assert.equal(plan.length, 90);
+  const assets = Object.fromEntries(plan.map((asset) => [asset.itemId, asset.hash]));
+  const withAudio = applyListeningAudio(set, assets);
+  // The script writes the file through Prettier, so it still passes the format check.
+  const path = FILE;
+  const formatted = await format(JSON.stringify(withAudio), {
+    ...(await resolveConfig(path)),
+    filepath: path,
+  });
+  const reread = parseListeningSet(JSON.parse(formatted));
+  assert.equal(findListeningAudio(reread).assets.length, 90);
+  // A transcript edited after its audio was made needs new audio.
+  const [first] = reread.content.questions;
+  assert.ok(first.type === "listen" || first.type === "dictation");
+  first.transcript = `${first.transcript} もう いちど。`;
+  assert.deepEqual(findListeningAudio(reread).stale, [first.id]);
+});
+
+test("audio recorded in the committed set matches its transcript and ships as a file", async () => {
+  const set = parseListeningSet(await readBank());
+  const { assets, stale } = findListeningAudio(set);
+  assert.deepEqual(stale, []);
+  for (const asset of assets) {
+    const file = await stat(`public/audio/lessons/${asset.hash}.mp3`);
+    assert.ok(file.size > 100, asset.itemId);
+  }
 });

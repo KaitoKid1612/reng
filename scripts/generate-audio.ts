@@ -4,6 +4,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { parseArgs } from "node:util";
 
 import { S3Client, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+import { format, resolveConfig } from "prettier";
 import { createClient } from "@supabase/supabase-js";
 
 import { kanaItems } from "../lib/data";
@@ -18,6 +19,7 @@ import {
   planLessonAudio,
 } from "../lib/lesson-audio";
 import { draftContentSchema } from "../lib/lesson-draft";
+import { applyListeningAudio, parseListeningSet, planListeningAudio } from "../lib/listening-set";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 import {
   applyTeachingAudio,
@@ -98,12 +100,19 @@ async function main() {
       lessons: { type: "boolean", default: false },
       db: { type: "boolean", default: false },
       lesson: { type: "string" },
+      // A listening set file (content/listening/*.json): its audio is written next to the web in
+      // public/audio/lessons and the hashes go back into the file.
+      listening: { type: "string" },
     },
   });
-  const isLessonAudio = values.lessons;
+  const listeningPath = values.listening ? resolve(values.listening) : null;
+  const isLessonAudio = values.lessons || listeningPath !== null;
   const isDatabaseSource = values.db;
-  if ((isDatabaseSource || values.lesson) && !isLessonAudio) {
+  if ((isDatabaseSource || values.lesson) && !values.lessons) {
     throw new Error("--db and --lesson only apply to lesson audio (--lessons).");
+  }
+  if (listeningPath && (values.lessons || values.r2)) {
+    throw new Error("--listening reads one set and keeps its audio with the web; use it alone.");
   }
   const audioFolder = isLessonAudio ? "audio/lessons" : "audio/kana";
   const generate = values.generate;
@@ -120,8 +129,10 @@ async function main() {
       })
     : null;
   const databaseDrafts = sourceClient ? await loadDatabaseDrafts(sourceClient, values.lesson) : [];
+  const listeningOriginal = listeningPath ? await readFile(listeningPath, "utf8") : null;
+  const listeningSet = listeningOriginal ? parseListeningSet(JSON.parse(listeningOriginal)) : null;
   const draftFiles =
-    isLessonAudio && !isDatabaseSource
+    values.lessons && !isDatabaseSource
       ? await Promise.all(
           (await readdir("content/lessons"))
             .filter((file) => file.endsWith(".json"))
@@ -142,6 +153,8 @@ async function main() {
         ? planContentAudio(draft.id, draft.content, voice)
         : planTeachingAudio(draft.id, draft.content, chineseVoices),
     );
+  } else if (listeningSet) {
+    plan = planListeningAudio(listeningSet, voice);
   } else if (isLessonAudio) {
     plan = planLessonAudio(
       draftFiles
@@ -158,6 +171,10 @@ async function main() {
     console.log(
       `Dry-run: ${plan.length} ${isLessonAudio ? "lesson audio entries" : "kana items"}, voices ${voices}, ${new Set(plan.map((asset) => asset.hash)).size} hashes. No network calls or file writes.`,
     );
+    if (listeningPath) {
+      console.log(`Generate: npm run audio:generate -- --local --listening ${values.listening}`);
+      return;
+    }
     const lessonFlags = `${isLessonAudio ? " --lessons" : ""}${isDatabaseSource ? " --db --sync-db" : ""}`;
     console.log(
       `Generate locally: npm run audio:generate -- --local${lessonFlags}; upload: npm run audio:generate -- --r2${lessonFlags}`,
@@ -347,6 +364,21 @@ async function main() {
         );
       }
       console.log("Publish from the lesson editor after reviewing the audio.");
+    } else if (listeningPath && listeningSet && listeningOriginal) {
+      if ((await readFile(listeningPath, "utf8")) !== listeningOriginal) {
+        throw new Error(`The listening set changed during generation: ${listeningPath}. Re-run.`);
+      }
+      const next = applyListeningAudio(listeningSet, result.manifest.assets);
+      // The repository formats JSON with Prettier, so the file is written the way it checks.
+      const formatted = await format(JSON.stringify(next), {
+        ...(await resolveConfig(listeningPath)),
+        filepath: listeningPath,
+      });
+      await writeFile(`${listeningPath}.tmp`, formatted);
+      await rename(`${listeningPath}.tmp`, listeningPath);
+      console.log(
+        `${values.listening}: audio hashes written. Commit it with public/${audioFolder}, then run npm run listening:sql.`,
+      );
     } else if (isLessonAudio) {
       for (const file of draftFiles) {
         if ((await readFile(file.path, "utf8")) !== file.original) {

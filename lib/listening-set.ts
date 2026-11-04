@@ -1,0 +1,61 @@
+import { z } from "zod";
+
+import { draftContentSchema, draftMetadataSchema } from "@/lib/lesson-draft";
+import { applyContentAudio, planContentAudio } from "@/lib/lesson-audio";
+
+// A listening set file (content/listening/*.json): lesson metadata and listening or dictation
+// questions in draft form, so audio stays null until it is generated. Generated audio is served
+// with the web from public/audio/lessons, and the file records each question's hash.
+export const LISTENING_AUDIO_FOLDER = "audio/lessons";
+export const DEFAULT_LISTENING_VOICE = "ja-JP-NanamiNeural";
+
+const listeningSetSchema = draftMetadataSchema.extend({
+  id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
+  content: draftContentSchema,
+});
+
+export type ListeningSet = z.infer<typeof listeningSetSchema>;
+
+export function parseListeningSet(value: unknown): ListeningSet {
+  const set = listeningSetSchema.parse(value);
+  const { questions } = set.content;
+  if (!questions.length || questions.some((q) => q.type !== "listen" && q.type !== "dictation")) {
+    throw new Error("A listening set holds listening and dictation questions only.");
+  }
+  return set;
+}
+
+export function planListeningAudio(set: ListeningSet, voice = DEFAULT_LISTENING_VOICE) {
+  return planContentAudio(set.id, set.content, voice);
+}
+
+// The set with the hashes of generated audio; questions without new audio keep theirs.
+export function applyListeningAudio(
+  set: ListeningSet,
+  assets: Record<string, string>,
+): ListeningSet {
+  return { ...set, content: applyContentAudio(set.id, set.content, assets) };
+}
+
+// Audio recorded in the file must still match its transcript; a transcript edited after the
+// audio was made needs new audio, or learners would hear the old sentence.
+export function findListeningAudio(set: ListeningSet, voice = DEFAULT_LISTENING_VOICE) {
+  const planned = new Map(planListeningAudio(set, voice).map((asset) => [asset.itemId, asset]));
+  const assets = [];
+  const stale = [];
+  const missing = [];
+  for (const question of set.content.questions) {
+    if (question.type !== "listen" && question.type !== "dictation") {
+      continue;
+    }
+    const asset = planned.get(`${set.id}:question:${question.id}`);
+    if (!question.audio) {
+      missing.push(question.id);
+    } else if (!asset || asset.hash !== question.audio) {
+      stale.push(question.id);
+    } else {
+      assets.push(asset);
+    }
+  }
+  return { assets, stale, missing };
+}

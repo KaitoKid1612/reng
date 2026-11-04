@@ -6,7 +6,9 @@ out/
 *.tsbuildinfo
 playwright-report/
 test-results/
-public/audio/
+# Generated audio stays local, except lesson audio, which ships with the web (see docs/06-audio.md).
+public/audio/*
+!public/audio/lessons/
 .audio-generation.lock
 *.tmp
 next-env.d.ts
