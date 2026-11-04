@@ -33,8 +33,10 @@ export function ClassSessionForm({
   defaultSlide,
 }: ClassSessionFormProps) {
   const [state, action, isPending] = useActionState(classSessionAction, {});
+  const typed = state.values;
   return (
-    <form action={action} className="form-card">
+    // React resets the form after each action; remounting with the typed values keeps a long note.
+    <form key={typed ? JSON.stringify(typed) : "saved"} action={action} className="form-card">
       <input type="hidden" name="classId" value={classId} />
       <div className="form-grid">
         <div className="field">
@@ -45,12 +47,16 @@ export function ClassSessionForm({
             type="date"
             required
             max={today}
-            defaultValue={today}
+            defaultValue={typed?.taughtOn ?? today}
           />
         </div>
         <div className="field">
           <label htmlFor="session-lesson">Bài đã dạy</label>
-          <select id="session-lesson" name="lessonId" defaultValue={defaultLessonId}>
+          <select
+            id="session-lesson"
+            name="lessonId"
+            defaultValue={typed?.lessonId ?? defaultLessonId}
+          >
             <option value="">Không dùng bài trong lớp</option>
             {lessons.map((lesson) => (
               <option key={lesson.lessonId} value={lesson.lessonId}>
@@ -69,7 +75,7 @@ export function ClassSessionForm({
           min={1}
           max={MAX_SLIDE_NUMBER}
           inputMode="numeric"
-          defaultValue={defaultSlide ?? ""}
+          defaultValue={typed?.slideReached ?? defaultSlide ?? ""}
         />
         <p className="small muted">
           Số trên thanh trình chiếu. Buổi sau mở lại đúng slide này. Để trống nếu không dùng slide.
@@ -81,6 +87,7 @@ export function ClassSessionForm({
           id="session-notes"
           name="notes"
           maxLength={MAX_SESSION_NOTES}
+          defaultValue={typed?.notes}
           placeholder={NOTES_PLACEHOLDERS[languageTag] ?? NOTES_PLACEHOLDERS["ja-JP"]}
         />
         <p className="small muted">Chỉ bạn thấy ghi chú này, học viên không thấy.</p>

@@ -44,6 +44,14 @@ export interface ActionState {
 
 const GENERIC_ERROR = "Chưa lưu được thay đổi. Bạn thử lại nhé.";
 
+const CLASS_FIELDS = ["name", "capacity", "meetingUrl", "languageTag", "passScore"];
+const SESSION_FIELDS = ["taughtOn", "lessonId", "slideReached", "notes"];
+
+// React clears a form after its action; an error returns what was typed so nothing is retyped.
+function typedValues(formData: FormData, names: readonly string[]) {
+  return Object.fromEntries(names.map((name) => [name, readField(formData, name)]));
+}
+
 const ERROR_MESSAGES: Record<string, string> = {
   not_found: "Không tìm thấy lớp hoặc bài này trong tài khoản của bạn.",
   revision_conflict: "Cài đặt lớp đã đổi ở tab khác. Tải lại trang trước khi sửa tiếp.",
@@ -143,7 +151,7 @@ export async function createClassAction(
     });
     classId = await createClass(account.id, settings, readField(formData, "selfStudy") === "on");
   } catch (error) {
-    return { error: describeError(error) };
+    return { error: describeError(error), values: typedValues(formData, CLASS_FIELDS) };
   }
   redirect(`/teach/classes/${classId}`);
 }
@@ -170,7 +178,7 @@ export async function updateClassAction(
       revision: z.coerce.number().int().nonnegative().parse(readField(formData, "revision")),
     });
   } catch (error) {
-    return { error: describeError(error) };
+    return { error: describeError(error), values: typedValues(formData, CLASS_FIELDS) };
   }
   refresh();
   return { notice: "Đã lưu cài đặt lớp." };
@@ -333,6 +341,13 @@ export async function dailyPracticeAction(
   const classId = readField(formData, "classId");
   if (readField(formData, "operation") === "today") {
     try {
+      // The choices on screen are saved first, so today's set uses the source just picked
+      // instead of the one saved earlier. "Tắt" is never saved from this button.
+      const size = dailySizeSchema.parse(readField(formData, "size"));
+      if (size) {
+        const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
+        await setDailyPractice(account.id, classId, size, lessonId);
+      }
       const outcome = await createTodayPractice(account.id, classId, new Date());
       if (outcome.status !== "created" && outcome.status !== "exists") {
         return { error: TODAY_ERRORS[outcome.status] };
@@ -488,11 +503,14 @@ export async function classSessionAction(
       notes: readField(formData, "notes"),
     });
     if (isFutureSession(input.taughtOn, toVietnamDate(new Date()))) {
-      return { error: "Ngày dạy không được ở sau hôm nay." };
+      return {
+        error: "Ngày dạy không được ở sau hôm nay.",
+        values: typedValues(formData, SESSION_FIELDS),
+      };
     }
     await recordClassSession(account.id, input);
   } catch (error) {
-    return { error: describeError(error) };
+    return { error: describeError(error), values: typedValues(formData, SESSION_FIELDS) };
   }
   refresh();
   return { notice: "Đã ghi buổi dạy vào nhật ký." };

@@ -25,8 +25,10 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
     classRow ? updateClassAction : createClassAction,
     {},
   );
+  const typed = state.values;
   return (
-    <form action={action} className="form-card">
+    // React resets the form after each action; remounting with the typed values keeps them.
+    <form key={typed ? JSON.stringify(typed) : "saved"} action={action} className="form-card">
       {classRow && (
         <>
           <input type="hidden" name="classId" value={classRow.id} />
@@ -41,7 +43,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             name="name"
             required
             maxLength={120}
-            defaultValue={classRow?.name}
+            defaultValue={typed?.name ?? classRow?.name}
             placeholder="Ví dụ: Lớp sơ cấp – tối thứ Ba"
           />
         </div>
@@ -54,7 +56,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             min={0}
             max={100}
             required
-            defaultValue={classRow?.pass_score ?? 70}
+            defaultValue={typed?.passScore ?? classRow?.pass_score ?? 70}
           />
         </div>
       </div>
@@ -65,7 +67,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             key={classRow?.language_tag ?? "new"}
             id="class-language"
             name="languageTag"
-            defaultValue={classRow?.language_tag ?? "ja-JP"}
+            defaultValue={typed?.languageTag ?? classRow?.language_tag ?? "ja-JP"}
           >
             <option value="ja-JP">Tiếng Nhật</option>
             <option value="zh-Hans">Tiếng Trung giản thể</option>
@@ -83,7 +85,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
               type="number"
               min={1}
               max={1000}
-              defaultValue={classRow?.capacity ?? ""}
+              defaultValue={typed?.capacity ?? classRow?.capacity ?? ""}
             />
             <p className="small muted">
               Để trống nếu chưa giới hạn số chỗ.
@@ -98,7 +100,7 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
           id="class-meeting"
           name="meetingUrl"
           type="url"
-          defaultValue={classRow?.meeting_url ?? ""}
+          defaultValue={typed?.meetingUrl ?? classRow?.meeting_url ?? ""}
           placeholder="https://meet.google.com/abc-defg-hij"
         />
         <p className="small muted">
