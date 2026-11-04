@@ -37,6 +37,8 @@ export interface AssignableLesson {
   lessonId: string;
   title: string;
   versionNo: number;
+  // A newer published version the class does not use yet; its new questions are not offered.
+  newerVersionNo?: number | null;
   questions: { id: string; type: AssignableQuestion["type"]; prompt: string; points: number }[];
 }
 
@@ -71,6 +73,18 @@ export function AssignmentForm({
   // Lessons can arrive after the first render (added to the class on this page), so the
   // selection falls back to the first available lesson instead of an empty value.
   const lesson = lessons.find((item) => item.lessonId === lessonId) ?? lessons[0];
+  const listeningIds = (lesson?.questions ?? [])
+    .filter((question) => question.type === "listen" || question.type === "dictation")
+    .map((question) => question.id);
+
+  // A listening set beside the day's daily practice: its questions, and a title if none is set.
+  function handlePickListening() {
+    setPracticeIds(listeningIds);
+    if (!title.trim() && lesson) {
+      setTitle(`Luyện nghe – ${lesson.title}`.slice(0, 160));
+    }
+    setIsReviewing(false);
+  }
 
   const settings = {
     title: title.trim(),
@@ -315,10 +329,22 @@ export function AssignmentForm({
               >
                 Bỏ chọn
               </Button>
+              {listeningIds.length > 0 && (
+                <Button type="button" variant="outline" onClick={handlePickListening}>
+                  Chỉ chọn câu nghe ({listeningIds.length})
+                </Button>
+              )}
               <span className="small muted" aria-live="polite">
                 Đã chọn {practiceIds.length}/{lesson.questions.length} câu
               </span>
             </div>
+          )}
+          {lesson.newerVersionNo && (
+            <p className="notice-panel small">
+              Lớp đang dùng phiên bản {lesson.versionNo}. Phiên bản {lesson.newerVersionNo} có câu
+              mới (ví dụ câu nghe vừa thêm) chỉ hiện ở đây sau khi bấm Cập nhật lớp lên phiên bản{" "}
+              {lesson.newerVersionNo} ở mục Nội dung lớp phía trên.
+            </p>
           )}
           {lesson.questions.map((question) => (
             <label key={question.id} className="choice-option">

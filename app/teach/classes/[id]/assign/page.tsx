@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { AssignmentForm } from "@/components/teach/assignment-form";
 import { ClassLessonForm } from "@/components/teach/class-lesson-form";
+import { PinVersionButton } from "@/components/teach/pin-version-button";
 import { requireTeacher } from "@/lib/server/account";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass, listClassLessons, listOwnedLessons } from "@/lib/server/classes";
@@ -24,11 +25,25 @@ export default async function AssignPage({ params }: AssignPageProps) {
     listOwnedLessons(account.id),
     listClassLessons(classRow.id),
   ]);
+  // A lesson published again (for example with listening questions added) only offers its new
+  // questions once the class uses that version, so the newer version is pointed out here.
+  const latestVersionNo = new Map(
+    ownedLessons.map((lesson) => [
+      lesson.id,
+      lesson.versions.find((version) => version.id === lesson.publishedVersionId)?.version_no ??
+        null,
+    ]),
+  );
+  const newerVersion = (lesson: { lessonId: string; versionNo: number }) => {
+    const latest = latestVersionNo.get(lesson.lessonId) ?? null;
+    return latest !== null && latest > lesson.versionNo ? latest : null;
+  };
   const assignableLessons = await Promise.all(
     classLessons.map(async (lesson) => ({
       lessonId: lesson.lessonId,
       title: lesson.title,
       versionNo: lesson.versionNo,
+      newerVersionNo: newerVersion(lesson),
       questions: (await listAssignablePracticeQuestions(classRow.id, lesson.lessonId)).map(
         (question) => ({
           id: question.id,
@@ -55,10 +70,26 @@ export default async function AssignPage({ params }: AssignPageProps) {
           <ul className="item-list">
             {classLessons.map((lesson) => (
               <li key={lesson.lessonId}>
-                <span>
-                  {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
-                </span>
-                <span className="item-meta">Mở từ {formatStudyDateTime(lesson.availableAt)}</span>
+                <div>
+                  <span>
+                    {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
+                  </span>
+                  <span className="item-meta">
+                    {" "}
+                    Mở từ {formatStudyDateTime(lesson.availableAt)}
+                    {newerVersion(lesson) !== null &&
+                      ` · đã có phiên bản ${newerVersion(lesson)}, lớp chưa dùng`}
+                  </span>
+                </div>
+                {newerVersion(lesson) !== null && (
+                  <PinVersionButton
+                    classId={classRow.id}
+                    className={classRow.name}
+                    lessonId={lesson.lessonId}
+                    label={`Cập nhật lớp lên phiên bản ${newerVersion(lesson)}`}
+                    isPrimary
+                  />
+                )}
               </li>
             ))}
           </ul>
