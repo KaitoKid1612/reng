@@ -122,6 +122,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Trang lớp cho thấy từng học viên đã nộp bao nhiêu bài, điểm trung bình, lần học gần nhất và nhãn cần chú ý.",
       "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại: mỗi bài giao là một nhóm, bài mới nhất mở sẵn, bấm tên bài để xem các bài trước; số bên phải là số học viên sai trên số học viên đã nộp. Mục Bài đã giao hiện 5 bài mới nhất, bài cũ hơn nằm trong Bài cũ hơn. Bấm tên học viên để xem từng bài đã giao (mỗi bài một nhóm, lọc Sai/Đúng cho mọi bài), bấm Xuất CSV để lưu điểm.",
+      "Mỗi bài trong mục Bài đã giao ghi tên học viên chưa nộp; bấm tên để mở trang của học viên đó.",
       "Ở trang một học viên: mục Luyện tập hằng ngày có điểm từng ngày (bấm một ngày để mở câu trả lời của ngày đó); câu điền đúng ý nhưng khác chữ có nút Chấp nhận câu trả lời này để cộng điểm cho mọi học viên trả lời giống vậy.",
       "Bấm Chia sẻ ở một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép; ghi chú riêng và dữ liệu lớp không đi kèm.",
     ],
