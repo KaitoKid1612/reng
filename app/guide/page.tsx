@@ -26,8 +26,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-sign-up",
     title: "Đăng ký giảng dạy",
     steps: [
-      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Bạn được đăng nhập ngay và chuyển tới trang đăng ký giảng dạy. Nếu Reng báo đã gửi thư xác nhận, mở thư, bấm liên kết rồi quay lại trang đó.",
-      "Ở trang Đăng ký giảng dạy, đánh dấu ô cam kết rồi bấm Gửi yêu cầu giảng dạy.",
+      "Mở trang Đăng ký giáo viên, nhập họ tên, email và mật khẩu (ít nhất 8 ký tự). Bạn được đăng nhập ngay và chuyển tới trang Bắt đầu giảng dạy. Nếu Reng báo đã gửi thư xác nhận, mở thư, bấm liên kết rồi quay lại trang đó.",
+      "Ở trang Bắt đầu giảng dạy, đánh dấu ô cam kết rồi bấm Gửi yêu cầu giảng dạy.",
       "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
       "Đổi họ tên hiển thị với học viên hoặc mật khẩu ở nút Tài khoản cuối trang Giảng dạy.",
       "Mới bắt đầu, trang Giảng dạy có danh sách Các bước bắt đầu dạy (tạo lớp, tạo và xuất bản bài, đưa bài vào lớp, mời học viên, đặt lịch, giao bài tập); danh sách tự ẩn khi lớp đã có học viên và bài tập.",
@@ -72,7 +72,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Thêm slide bằng cách chọn loại: tiêu đề, từ vựng (tối đa 8 từ), mẫu câu, câu ví dụ, hội thoại, bảng / luyện thay thế, câu luyện, ghi chú hoặc ảnh. Kéo hoặc dùng mũi tên để đổi thứ tự.",
       "Furigana viết {漢字|かんじ}, ví dụ {郵便局|ゆうびんきょく}. Bảng có thể dán từ Excel hoặc gõ các ô cách nhau bằng dấu |; bật luyện thay thế để ẩn câu mẫu và hiện từng hàng khi dạy.",
       "Câu luyện có trắc nghiệm, điền, sắp xếp câu, nghe và chính tả. Câu nghe chỉ xuất bản được khi đã có audio; Reng chưa tạo audio ngay trên trình soạn, nên cần quản trị viên tạo giúp. Câu sắp xếp: ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh, không để hai mảnh giống nhau. Câu đọc hiểu: bấm Thêm đoạn văn đọc hiểu, rồi Thêm câu hỏi cho đoạn văn này để hỏi tiếp về cùng đoạn văn. Câu kiểm tra riêng ở trang Giao bài cũng có hai dạng này.",
-      "Ghi chú giảng viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên (rời trang khi còn thay đổi chưa lưu, Reng sẽ hỏi lại); Xuất bản tạo phiên bản mới, lớp chỉ chuyển sang phiên bản mới khi bạn chọn trong trang Giao bài.",
+      "Ghi chú giáo viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên (rời trang khi còn thay đổi chưa lưu, Reng sẽ hỏi lại); Xuất bản tạo phiên bản mới; lớp đang dùng bản cũ chỉ chuyển sang khi bạn bấm Cập nhật lên phiên bản mới ở mục Dùng bài trong lớp.",
     ],
   },
   {
@@ -111,7 +111,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Trong Google Meet chọn Trình bày → Một thẻ và chọn thẻ đang chiếu slide.",
       "Chuyển slide bằng phím mũi tên, phím cách hoặc nút Tiếp/Trước. Nghĩa tiếng Việt và câu mẫu hiện dần sau mỗi lần bấm Tiếp để hỏi lớp trước.",
       "Bấm Presenter (hoặc phím S) để mở cửa sổ riêng có ghi chú, slide kế tiếp và đồng hồ; không chia sẻ cửa sổ này. Nút PDF dùng để in bài.",
-      "Hết buổi, bấm Ghi buổi dạy (slide …) trên thanh trình chiếu: Nhật ký buổi dạy ở trang lớp mở ra với bài và slide điền sẵn; thêm ghi chú riêng rồi bấm Ghi buổi dạy. Buổi sau bấm Trình chiếu tiếp ở khối Buổi dạy online để chiếu đúng chỗ.",
+      "Trong cửa sổ Presenter, phím mũi tên, Page Up/Page Down, phím cách và bút trình chiếu cũng chuyển slide của thẻ đang chiếu.",
+      "Hết buổi, bấm Ghi buổi dạy (slide …) trên thanh trình chiếu: Nhật ký buổi dạy mở ở thẻ mới với bài và slide điền sẵn, nên thẻ đang chia sẻ trong Meet vẫn là slide và học viên không thấy điểm của lớp. Thêm ghi chú riêng rồi bấm Ghi buổi dạy. Buổi sau bấm Trình chiếu tiếp ở khối Buổi dạy online để chiếu đúng chỗ.",
     ],
     note: "Tài khoản Google miễn phí giới hạn 60 phút cho cuộc gọi từ 3 người; buổi dài hơn cần chia buổi hoặc dùng Google Workspace.",
   },
@@ -121,6 +122,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Trang lớp cho thấy từng học viên đã nộp bao nhiêu bài, điểm trung bình, lần học gần nhất và nhãn cần chú ý.",
       "Mục Câu cả lớp sai nhiều gợi ý phần cần giảng lại: mỗi bài giao là một nhóm, bài mới nhất mở sẵn, bấm tên bài để xem các bài trước; số bên phải là số học viên sai trên số học viên đã nộp. Mục Bài đã giao hiện 5 bài mới nhất, bài cũ hơn nằm trong Bài cũ hơn. Bấm tên học viên để xem từng bài đã giao (mỗi bài một nhóm, lọc Sai/Đúng cho mọi bài), bấm Xuất CSV để lưu điểm.",
+      "Ở trang một học viên: mục Luyện tập hằng ngày có điểm từng ngày (bấm một ngày để mở câu trả lời của ngày đó); câu điền đúng ý nhưng khác chữ có nút Chấp nhận câu trả lời này để cộng điểm cho mọi học viên trả lời giống vậy.",
       "Bấm Chia sẻ ở một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép; ghi chú riêng và dữ liệu lớp không đi kèm.",
     ],
   },

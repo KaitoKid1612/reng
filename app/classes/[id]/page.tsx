@@ -96,7 +96,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
             href={`/classes/${view.classRow.id}/daily-practice`}
             className={buttonVariants({ variant: "outline" })}
           >
-            Điểm bài tập hằng ngày
+            Điểm luyện tập hằng ngày
           </Link>
         )}
       </div>
@@ -172,7 +172,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
             ))}
           </ul>
         ) : (
-          <p className="muted">Giảng viên chưa mở bài học nào cho lớp.</p>
+          <p className="muted">Giáo viên chưa mở bài học nào cho lớp.</p>
         )}
         {view.upcomingLessonCount > 0 && (
           <p className="small muted">{view.upcomingLessonCount} bài sẽ mở theo lịch của lớp.</p>

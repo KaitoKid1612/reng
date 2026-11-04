@@ -63,8 +63,8 @@ export default async function StarterRefreshPage({ params }: StarterRefreshPageP
             bài đã giao không đổi.
           </li>
           <li>
-            Sau khi thay: xem lại, xuất bản, rồi chọn phiên bản mới cho lớp ở trang Giao bài khi
-            muốn học viên thấy.
+            Sau khi thay: xem lại, xuất bản, rồi bấm Cập nhật lên phiên bản mới ở mục Dùng bài trong
+            lớp khi muốn học viên thấy.
           </li>
         </ul>
         <StarterRefreshForm lessonId={refresh.lessonId} revision={refresh.revision} />

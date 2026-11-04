@@ -102,7 +102,7 @@ export function shortDayLabel(day: DailyResult) {
 export function fullDayLabel(day: DailyResult) {
   return day.percent === null
     ? FULL_STATE_LABELS[unscoredState(day)]
-    : `đạt ${formatDayPercent(day.percent)}`;
+    : formatDayPercent(day.percent);
 }
 
 /**

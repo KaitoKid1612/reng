@@ -96,7 +96,7 @@ export function DailyStatTiles({ days, today }: DailyStatTilesProps) {
         <span>điểm trung bình</span>
         <span className="stat-tile-detail">
           {overview.scoredCount
-            ? `${overview.goodCount} / ${overview.scoredCount} ngày đạt từ ${SCORE_TARGET_PERCENT}%`
+            ? `${overview.goodCount} / ${overview.scoredCount} ngày từ ${SCORE_TARGET_PERCENT}% trở lên`
             : "Chưa có ngày nào có điểm"}
         </span>
       </div>

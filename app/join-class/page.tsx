@@ -22,7 +22,7 @@ export default async function JoinClassPage({ searchParams }: JoinClassPageProps
       <p className="muted">
         {account && code
           ? "Mã lớp đã được điền sẵn từ link mời. Bấm Vào lớp để hoàn tất."
-          : "Nhập mã lớp giảng viên gửi cho bạn."}
+          : "Nhập mã lớp giáo viên gửi cho bạn."}
       </p>
       {isClassroomConfigured() ? (
         <>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 
 import { classSessionAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
@@ -11,15 +11,33 @@ interface DeleteSessionButtonProps {
   sessionId: string;
 }
 
+// A session note cannot be brought back, so deleting it takes a second, deliberate click.
 export function DeleteSessionButton({ classId, sessionId }: DeleteSessionButtonProps) {
   const [state, action, isPending] = useActionState(classSessionAction, {});
+  const [isConfirming, setIsConfirming] = useState(false);
+  if (!isConfirming) {
+    return (
+      <>
+        <Button variant="ghost" onClick={() => setIsConfirming(true)}>
+          Xóa
+        </Button>
+        <ActionFeedback state={state} />
+      </>
+    );
+  }
   return (
-    <form action={action}>
+    <form action={action} className="inline-form">
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="sessionId" value={sessionId} />
-      <Button type="submit" name="operation" value="delete" variant="ghost" disabled={isPending}>
-        Xóa
-      </Button>
+      <p className="small">Xóa ghi chú buổi dạy này? Không khôi phục được.</p>
+      <div className="button-row">
+        <Button type="submit" name="operation" value="delete" disabled={isPending}>
+          Xác nhận xóa
+        </Button>
+        <Button variant="ghost" onClick={() => setIsConfirming(false)}>
+          Giữ lại
+        </Button>
+      </div>
       <ActionFeedback state={state} />
     </form>
   );

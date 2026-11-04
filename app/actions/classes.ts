@@ -74,6 +74,9 @@ function describeError(error: unknown) {
     return ERROR_MESSAGES[error.code] ?? GENERIC_ERROR;
   }
   if (error instanceof z.ZodError) {
+    if (error.issues.some((issue) => issue.path[0] === "meetingUrl")) {
+      return "Link Google Meet cần có dạng https://meet.google.com/abc-defg-hij.";
+    }
     return "Thông tin chưa hợp lệ. Kiểm tra lại các trường đã nhập.";
   }
   return GENERIC_ERROR;
@@ -85,7 +88,7 @@ async function requireTeacherAction() {
 }
 
 const JOIN_MESSAGES: Record<string, string> = {
-  invalid_code: "Mã lớp không đúng hoặc đã ngừng nhận học viên. Kiểm tra lại với giảng viên.",
+  invalid_code: "Mã lớp không đúng hoặc đã ngừng nhận học viên. Kiểm tra lại với giáo viên.",
   rate_limited: "Bạn đã nhập sai nhiều lần. Đợi 15 phút rồi thử lại.",
   not_found: "Không tìm thấy tài khoản đang hoạt động.",
   class_full: "Lớp đã đủ số học viên. Liên hệ giáo viên để được hỗ trợ.",
@@ -400,12 +403,14 @@ export async function publishAssignmentAction(input: PublishAssignmentInput): Pr
   if (!account) {
     return { error: ERROR_MESSAGES.not_found };
   }
+  let assignmentId: string;
   try {
-    await publishAssignment(account.id, input);
+    assignmentId = await publishAssignment(account.id, input);
   } catch (error) {
     return { error: describeError(error) };
   }
-  redirect(`/teach/classes/${input.classId}`);
+  // Back on the class page the new assignment is named and its list is in view.
+  redirect(`/teach/classes/${input.classId}?assigned=${assignmentId}#assignments-title`);
 }
 
 export async function acceptAnswerAction(

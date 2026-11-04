@@ -110,7 +110,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
       {showsStartSteps(progress, startSteps) && <StartChecklist steps={startSteps} />}
       {teachingClasses.length > 0 && <TeacherTodayPanel today={teacherToday} />}
       <section className="section-block" aria-labelledby="teacher-classes">
-        <h2 id="teacher-classes">Lớp của tôi</h2>
+        <h2 id="teacher-classes">Lớp đang dạy</h2>
         {classes.length ? (
           <ul className="item-list">
             {classes.map((item) => (
@@ -258,7 +258,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
           Email tóm tắt lớp
         </Link>
         <Link href="/classes" className={buttonVariants({ variant: "ghost" })}>
-          Lớp tôi đang học
+          Lớp đang học
         </Link>
         <Link href="/guide#teacher-title" className={buttonVariants({ variant: "ghost" })}>
           Hướng dẫn sử dụng

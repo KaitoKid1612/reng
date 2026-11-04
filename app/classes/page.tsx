@@ -140,7 +140,7 @@ export default async function ClassesPage() {
                   <p className="item-meta">
                     {item.isSelfStudy
                       ? "Lớp tự học của bạn"
-                      : `Giảng viên: ${item.teacherName || "chưa cập nhật"}`}
+                      : `Giáo viên: ${item.teacherName || "chưa cập nhật"}`}
                   </p>
                   <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
                 </div>

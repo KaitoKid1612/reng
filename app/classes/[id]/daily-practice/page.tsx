@@ -26,7 +26,7 @@ import type { DailyDay } from "@/lib/daily-history";
 import type { StudentResultsView } from "@/lib/server/assignments";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Bài tập hằng ngày" };
+export const metadata: Metadata = { title: "Luyện tập hằng ngày" };
 
 interface DailyPracticePageProps {
   params: Promise<{ id: string }>;
@@ -186,7 +186,7 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
     <>
       <div className="page-heading">
         <div>
-          <h1>Bài tập hằng ngày</h1>
+          <h1>Luyện tập hằng ngày</h1>
           <p>
             <Link href={`/classes/${history.classRow.id}`}>{history.classRow.name}</Link>, điểm từng
             ngày từ khi bạn vào lớp
@@ -195,8 +195,8 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
       </div>
       {!day || !view ? (
         <p className="muted">
-          Lớp chưa có bài tập hằng ngày nào. Khi giảng viên bật bài tập hằng ngày, mỗi sáng lớp nhận
-          một bài và điểm của từng ngày sẽ hiện ở đây.
+          Lớp chưa có bài luyện tập hằng ngày nào. Khi giáo viên bật luyện tập hằng ngày, mỗi sáng
+          lớp nhận một bài và điểm của từng ngày sẽ hiện ở đây.
         </p>
       ) : (
         <>

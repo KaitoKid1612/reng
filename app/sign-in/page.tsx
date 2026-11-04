@@ -37,7 +37,7 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
   return (
     <div className="narrow-page">
       <h1>Đăng nhập</h1>
-      <p className="muted">Dùng chung cho học viên và giảng viên.</p>
+      <p className="muted">Dùng chung cho học viên và giáo viên.</p>
       {isSignInError(query.error) && (
         <p role="alert" className="error-text">
           {SIGN_IN_ERRORS[query.error]}

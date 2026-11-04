@@ -45,7 +45,7 @@ export default async function VocabularyPage({ params, searchParams }: Vocabular
         {isStudent ? "Chấm mức nhớ để Reng hẹn ngày ôn lại." : "Không cần tài khoản để lật thẻ."}
       </p>
       {deck.isSample && (
-        <p className="sample-notice">Bài mẫu đang chờ giảng viên duyệt nội dung và phát âm.</p>
+        <p className="sample-notice">Bài mẫu đang chờ giáo viên duyệt nội dung và phát âm.</p>
       )}
       <FlashcardDeck
         lessonId={deck.lessonId}

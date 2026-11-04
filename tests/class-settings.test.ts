@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { classSettingsSchema } from "../lib/class-settings";
+import { classSettingsSchema, normalizeMeetingUrl } from "../lib/class-settings";
 
 test("class settings keep optional capacity and restrict meeting links to real Meet paths", () => {
   const input = {
@@ -27,4 +27,17 @@ test("class settings keep optional capacity and restrict meeting links to real M
   ]) {
     assert.equal(classSettingsSchema.safeParse({ ...input, meetingUrl }).success, false);
   }
+});
+
+test("pasted Meet links keep only the meeting code", () => {
+  for (const pasted of [
+    "https://meet.google.com/abc-defg-hij?authuser=0",
+    "https://meet.google.com/abc-defg-hij/",
+    "  HTTPS://MEET.GOOGLE.COM/ABC-DEFG-HIJ?pli=1  ",
+    "meet.google.com/abc-defg-hij",
+  ]) {
+    assert.equal(normalizeMeetingUrl(pasted), "https://meet.google.com/abc-defg-hij", pasted);
+  }
+  assert.equal(normalizeMeetingUrl("https://zoom.us/j/123/"), "https://zoom.us/j/123");
+  assert.equal(normalizeMeetingUrl(""), "");
 });

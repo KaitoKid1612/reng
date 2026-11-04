@@ -1,5 +1,15 @@
 import { z } from "zod";
 
+// Links copied from Meet, Calendar or a phone often end in ?authuser=0 or ?pli=1, use capitals
+// or lack the scheme; only the meeting code matters, so they are rewritten to the plain link.
+const MEET_LINK = /^(?:https:\/\/)?meet\.google\.com\/([a-z]{3}-[a-z]{4}-[a-z]{3})\/?(?:[?#].*)?$/i;
+
+export function normalizeMeetingUrl(value: string) {
+  const trimmed = value.trim();
+  const match = MEET_LINK.exec(trimmed);
+  return match ? `https://meet.google.com/${match[1].toLowerCase()}` : trimmed.replace(/\/$/, "");
+}
+
 export const classSettingsSchema = z.object({
   name: z.string().trim().min(1).max(120),
   passScore: z.coerce.number().int().min(0).max(100),
@@ -8,7 +18,7 @@ export const classSettingsSchema = z.object({
     z.coerce.number().int().min(1).max(1000).nullable(),
   ),
   meetingUrl: z.preprocess(
-    (value) => (typeof value === "string" ? value.trim().replace(/\/$/, "") : value),
+    (value) => (typeof value === "string" ? normalizeMeetingUrl(value) : value),
     z.union([
       z.literal(""),
       z.string().regex(/^https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}$/),

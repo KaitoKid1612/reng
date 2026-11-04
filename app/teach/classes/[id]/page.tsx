@@ -35,7 +35,7 @@ export const metadata: Metadata = { title: "Theo dõi lớp" };
 interface ClassReportPageProps {
   params: Promise<{ id: string }>;
   // Set by the "Ghi buổi dạy" link on the slides.
-  searchParams: Promise<{ lesson?: string; slide?: string }>;
+  searchParams: Promise<{ lesson?: string; slide?: string; assigned?: string }>;
 }
 
 const LABEL_TONES: Record<LearnerLabel, string> = {
@@ -107,10 +107,12 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
   const now = new Date();
   const report = await loadOrNotFound(getClassReport(account.id, id, now));
   const { classRow, summary, week } = report;
+  const query = await searchParams;
   const prefill = parseSessionPrefill(
-    await searchParams,
+    query,
     report.lessons.map((lesson) => lesson.lessonId),
   );
+  const justAssigned = report.assignments.find((assignment) => assignment.id === query.assigned);
   // The source lookup reads question lists, so it only runs while daily practice is on.
   const [sessions, dailySource, schedule] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
@@ -154,7 +156,10 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           )}
         </div>
         <div className="button-row">
-          <Link href={`/teach/classes/${classRow.id}/assign`} className={buttonVariants()}>
+          <Link
+            href={`/teach/classes/${classRow.id}/assign#new-assignment-title`}
+            className={buttonVariants()}
+          >
             Giao bài
           </Link>
           <a
@@ -333,6 +338,11 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
       </section>
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>
+        {justAssigned && (
+          <p className="notice-panel" role="status">
+            Đã giao «{justAssigned.title}». Học viên thấy bài ở mục Hôm nay học gì và trang lớp.
+          </p>
+        )}
         {report.assignments.length ? (
           <>
             <ul className="item-list">
@@ -354,7 +364,10 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         ) : (
           <p>
             Chưa có bài tập nào.{" "}
-            <Link href={`/teach/classes/${classRow.id}/assign`}>Giao bài đầu tiên</Link>.
+            <Link href={`/teach/classes/${classRow.id}/assign#new-assignment-title`}>
+              Giao bài đầu tiên
+            </Link>
+            .
           </p>
         )}
       </section>

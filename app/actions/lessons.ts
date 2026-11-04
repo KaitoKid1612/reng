@@ -28,7 +28,7 @@ export interface CreateLessonState {
 }
 
 const FAILURE = "Chưa lưu được. Kiểm tra kết nối rồi thử lại.";
-const NOT_FOUND = "Không tìm thấy bài này trong tài khoản giảng viên của bạn.";
+const NOT_FOUND = "Không tìm thấy bài này trong tài khoản giáo viên của bạn.";
 
 async function requireTeacherId() {
   const account = await getCurrentAccount();

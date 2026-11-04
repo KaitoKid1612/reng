@@ -48,7 +48,7 @@ const STATUS_TEXT: Record<SyncStatus, string> = {
   conflict: "Có bản lưu mới hơn từ tab hoặc thiết bị khác.",
   signed_out: "Phiên đăng nhập đã hết. Câu trả lời vẫn được giữ trên máy này.",
   submitted: "Lượt này đã được nộp.",
-  closed: "Giảng viên đã đóng bài này.",
+  closed: "Giáo viên đã đóng bài này.",
   past_due: "Đã quá hạn nộp.",
 };
 

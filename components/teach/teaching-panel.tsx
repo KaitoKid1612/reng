@@ -89,7 +89,8 @@ export function TeachingPanel({
       </div>
       <p className="small muted">
         Trong Meet, chia sẻ tab trình chiếu; bấm Presenter (phím S) để mở cửa sổ ghi chú riêng mà
-        học viên không thấy. Hết buổi, bấm Ghi buổi dạy trên thanh trình chiếu.
+        học viên không thấy. Hết buổi, bấm Ghi buổi dạy trên thanh trình chiếu: trang ghi mở ở tab
+        mới nên học viên không thấy điểm của lớp.
       </p>
     </section>
   );

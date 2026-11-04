@@ -108,12 +108,19 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   await page.getByRole("link", { name: "Mở slide 12" }).first().click();
   await expect(page.getByTestId("slide-counter")).toHaveText("12 / 38");
   await page.getByRole("button", { name: "Tiếp", exact: true }).click();
-  await page.getByRole("link", { name: "Ghi buổi dạy (slide 13)" }).click();
-  await expect(page.getByLabel("Bài đã dạy")).toHaveValue(state.lesson11);
-  await expect(page.getByLabel("Dạy đến slide số")).toHaveValue("13");
+  // The log opens in a new tab, so the tab shared in Meet keeps showing the slides.
+  const [logPage] = await Promise.all([
+    page.context().waitForEvent("page"),
+    page.getByRole("link", { name: "Ghi buổi dạy (slide 13)" }).click(),
+  ]);
+  await expect(logPage.getByLabel("Bài đã dạy")).toHaveValue(state.lesson11);
+  await expect(logPage.getByLabel("Dạy đến slide số")).toHaveValue("13");
+  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 38");
+  await logPage.close();
   await page.goto(`/teach/classes/${state.classId}`);
   // The deleted row, with its button, leaves the list; the empty log is the confirmation.
   await page.getByRole("button", { name: "Xóa", exact: true }).click();
+  await page.getByRole("button", { name: "Xác nhận xóa", exact: true }).click();
   await expect(page.getByText("Chưa ghi buổi dạy nào.")).toBeVisible();
   await expect(page.getByText(/^Buổi gần nhất/)).toHaveCount(0);
   await page.context().close();

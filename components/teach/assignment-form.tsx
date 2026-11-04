@@ -292,10 +292,33 @@ export function AssignmentForm({
       {mode === "practice" && lesson && (
         <fieldset className="form-card">
           <legend>Câu luyện từ phiên bản {lesson.versionNo}</legend>
-          {lesson.questions.length === 0 && (
+          {lesson.questions.length === 0 ? (
             <p className="muted">
               Bài này chưa có câu luyện giao được (trắc nghiệm, điền từ, nghe).
             </p>
+          ) : (
+            // A starter lesson has about 50 questions; ticking each one is not a task.
+            <div className="button-row question-pick-actions">
+              <Button
+                type="button"
+                variant="outline"
+                disabled={practiceIds.length === lesson.questions.length}
+                onClick={() => setPracticeIds(lesson.questions.map((question) => question.id))}
+              >
+                Chọn tất cả
+              </Button>
+              <Button
+                type="button"
+                variant="ghost"
+                disabled={practiceIds.length === 0}
+                onClick={() => setPracticeIds([])}
+              >
+                Bỏ chọn
+              </Button>
+              <span className="small muted" aria-live="polite">
+                Đã chọn {practiceIds.length}/{lesson.questions.length} câu
+              </span>
+            </div>
           )}
           {lesson.questions.map((question) => (
             <label key={question.id} className="choice-option">

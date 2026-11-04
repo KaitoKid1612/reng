@@ -10,7 +10,7 @@ test("lists five lessons, reads an original sample and searches grammar without 
   await expect(
     page.getByRole("heading", { name: "Làm quen và chào hỏi", exact: true }),
   ).toBeVisible();
-  await expect(page.locator(".sample-notice")).toContainText("chờ giảng viên duyệt");
+  await expect(page.locator(".sample-notice")).toContainText("chờ giáo viên duyệt");
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,
   );

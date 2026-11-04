@@ -50,7 +50,7 @@ test("a day without a score says why: hidden score, open attempt or not done", (
   assert.equal(shortDayLabel(result({ percent: 66.67, submitted: true })), "67%");
   assert.equal(shortDayLabel(result({ attemptCount: 1 })), "làm dở");
   assert.equal(shortDayLabel(result()), "—");
-  assert.equal(fullDayLabel(result({ percent: 90, submitted: true })), "đạt 90%");
+  assert.equal(fullDayLabel(result({ percent: 90, submitted: true })), "90%");
   assert.equal(fullDayLabel(result({ submitted: true })), "đã nộp, chưa công bố điểm");
   assert.equal(fullDayLabel(result()), "chưa làm");
 });

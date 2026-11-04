@@ -128,7 +128,7 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
       </div>
       {lesson.isSample && (
         <p className="sample-notice">
-          Bài mẫu tự biên soạn, đang chờ giảng viên duyệt nội dung và phát âm.
+          Bài mẫu tự biên soạn, đang chờ giáo viên duyệt nội dung và phát âm.
         </p>
       )}
       <AudioStatus />

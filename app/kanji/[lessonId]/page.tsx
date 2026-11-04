@@ -44,7 +44,7 @@ export default async function KanjiPage({ params, searchParams }: KanjiPageProps
           </h1>
           <p>
             Luyện các từ viết bằng chữ Hán trong bài: đọc chữ, nhận mặt chữ và hiểu nghĩa. Cách đọc
-            đúng là {isChinese ? "pinyin" : "cách đọc"} giảng viên ghi trong bài.
+            đúng là {isChinese ? "pinyin" : "cách đọc"} giáo viên ghi trong bài.
           </p>
         </div>
         <Link

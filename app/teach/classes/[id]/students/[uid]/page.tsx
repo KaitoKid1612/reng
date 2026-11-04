@@ -72,7 +72,7 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
       </p>
       {detail.dailyDays.length > 0 && (
         <section className="section-block" aria-labelledby="student-daily">
-          <h2 id="student-daily">Bài tập hằng ngày</h2>
+          <h2 id="student-daily">Luyện tập hằng ngày</h2>
           <DailyStatTiles days={detail.dailyDays} today={toStudyDay(now)} />
           <section className="chart-panel" aria-labelledby="student-daily-chart">
             <h3 id="student-daily-chart">Điểm theo ngày</h3>

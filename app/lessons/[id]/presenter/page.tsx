@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { z } from "zod";
 
 import { PresenterView } from "@/components/slides/presenter-view";
 import { loadAccessibleLesson } from "@/lib/server/lesson-access";
@@ -10,15 +11,16 @@ export const metadata: Metadata = { title: "Presenter", robots: { index: false, 
 
 interface PresenterPageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ version?: string }>;
+  searchParams: Promise<{ version?: string; class?: string }>;
 }
 
 export default async function PresenterPage({ params, searchParams }: PresenterPageProps) {
   const { id } = await params;
-  const { version } = await searchParams;
+  const { version, class: classParam } = await searchParams;
   const lesson = await loadAccessibleLesson(id, version);
   if (!lesson) {
     notFound();
   }
-  return <PresenterView lesson={lesson} />;
+  // The class only shapes a link back to the slides, where access is checked again.
+  return <PresenterView lesson={lesson} classId={z.uuid().safeParse(classParam).data} />;
 }

@@ -96,7 +96,7 @@ async function readJson(response: Response): Promise<Record<string, unknown>> {
 
 const SUBMIT_MESSAGES: Record<string, string> = {
   conflict: "Bài làm vừa được lưu từ tab khác. Tải bản mới nhất rồi nộp lại.",
-  closed: "Giảng viên đã đóng bài này nên không nộp được nữa.",
+  closed: "Giáo viên đã đóng bài này nên không nộp được nữa.",
   past_due: "Đã quá hạn và bài không cho nộp muộn.",
   not_found: "Không tìm thấy lượt làm bài này.",
 };

@@ -107,7 +107,8 @@ test("teachers can reach teaching and learning directly from the header", async 
     "href",
     "/teach",
   );
-  await expect(navigation.getByRole("link", { name: "Lớp của tôi", exact: true })).toHaveAttribute(
+  // A teacher's own classes are under Giảng dạy; this entry is where they study as a learner.
+  await expect(navigation.getByRole("link", { name: "Lớp đang học", exact: true })).toHaveAttribute(
     "href",
     "/classes",
   );

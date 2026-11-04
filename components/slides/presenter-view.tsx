@@ -6,22 +6,30 @@ import Link from "next/link";
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
 import { signInPath } from "@/lib/auth-paths";
+import { slidePresenterPath } from "@/lib/class-sessions";
 import { slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { PublicAnyLesson } from "@/lib/teaching-content";
 
 interface PresenterViewProps {
   lesson: PublicAnyLesson;
+  /** Kept on the link back to the slides, so their "Ghi buổi dạy" button stays. */
+  classId?: string;
 }
 
-export function PresenterView({ lesson }: PresenterViewProps) {
+// Keys a presentation clicker or a keyboard sends for the next and previous slide.
+const NEXT_KEYS = new Set(["ArrowRight", "ArrowDown", "PageDown"]);
+const PREVIOUS_KEYS = new Set(["ArrowLeft", "ArrowUp", "PageUp"]);
+
+export function PresenterView({ lesson, classId }: PresenterViewProps) {
   const [index, setIndex] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [isConnected, setIsConnected] = useState(false);
   const [notes, setNotes] = useState<Record<string, string>>({});
   const [notesMessage, setNotesMessage] = useState(
-    "Đăng nhập tài khoản giảng viên để xem ghi chú riêng.",
+    "Đăng nhập tài khoản giáo viên để xem ghi chú riêng.",
   );
+  const [hasNotes, setHasNotes] = useState(false);
 
   useEffect(() => {
     const startedAt = Date.now();
@@ -76,10 +84,43 @@ export function PresenterView({ lesson }: PresenterViewProps) {
           );
           setNotes(Object.fromEntries(entries));
           setNotesMessage("Không có ghi chú cho slide này.");
+          setHasNotes(true);
         }
       })
       .catch(() => {});
     return () => controller.abort();
+  }, [lesson]);
+
+  // The presenter window has focus while the teacher looks at it, so it turns the slides too.
+  useEffect(() => {
+    if (!("BroadcastChannel" in window)) {
+      return;
+    }
+    const channel = new BroadcastChannel(slideChannelName(lesson.lessonId, lesson.id));
+    function handleKey(event: KeyboardEvent) {
+      if (event.altKey || event.ctrlKey || event.metaKey) {
+        return;
+      }
+      // Space on a focused button or link already presses it.
+      const isOnControl =
+        event.target instanceof HTMLElement &&
+        event.target.closest("button, a, input, textarea, select") !== null;
+      let command: "prev" | "next" | null = null;
+      if (NEXT_KEYS.has(event.key) || (event.key === " " && !isOnControl)) {
+        command = "next";
+      } else if (PREVIOUS_KEYS.has(event.key)) {
+        command = "prev";
+      }
+      if (command) {
+        event.preventDefault();
+        channel.postMessage({ type: "command", command });
+      }
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      channel.close();
+    };
   }, [lesson]);
 
   function handleCommand(command: "prev" | "next") {
@@ -113,7 +154,7 @@ export function PresenterView({ lesson }: PresenterViewProps) {
         <Button onClick={() => handleCommand("prev")}>Trước</Button>
         <Button onClick={() => handleCommand("next")}>Tiếp</Button>
         <Link
-          href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#${index + 1}`}
+          href={slidePresenterPath(lesson.lessonId, lesson.id, index + 1, classId)}
           target="reng-slides"
         >
           Mở trình chiếu
@@ -138,11 +179,13 @@ export function PresenterView({ lesson }: PresenterViewProps) {
         </section>
       </div>
       <section className="presenter-notes">
-        <h2>Ghi chú giảng viên</h2>
+        <h2>Ghi chú giáo viên</h2>
         <p>{currentId && notes[currentId] ? notes[currentId] : notesMessage}</p>
-        <Link href={signInPath(`/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`)}>
-          Đăng nhập giảng viên
-        </Link>
+        {!hasNotes && (
+          <Link href={signInPath(`/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`)}>
+            Đăng nhập giáo viên
+          </Link>
+        )}
       </section>
     </div>
   );

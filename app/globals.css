@@ -1877,6 +1877,10 @@ rt {
   display: grid;
   gap: 8px;
 }
+.question-pick-actions {
+  align-items: center;
+  margin-bottom: 12px;
+}
 .choice-option {
   display: flex;
   align-items: center;

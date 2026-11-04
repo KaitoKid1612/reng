@@ -47,7 +47,12 @@ function listAccountLinks(account: AccountSummary): NavigationLink[] {
   if (account.role === "teacher") {
     links.push({ href: "/teach", label: "Giảng dạy", isSection: true });
   }
-  links.push({ href: "/classes", label: "Lớp của tôi", isSection: true });
+  // A teacher's own classes live under Giảng dạy; this entry is where they study as a learner.
+  links.push({
+    href: "/classes",
+    label: account.role === "teacher" ? "Lớp đang học" : "Lớp của tôi",
+    isSection: true,
+  });
   return links;
 }
 

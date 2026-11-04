@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
-import { sessionLogPath } from "@/lib/class-sessions";
+import { sessionLogPath, slidePresenterPath } from "@/lib/class-sessions";
 import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { RevealApi } from "reveal.js";
@@ -54,6 +54,8 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
   const [notice, setNotice] = useState("");
   const [isReady, setIsReady] = useState(false);
   const base = `/lessons/${lesson.lessonId}`;
+  // The presenter keeps the class so its link back to the slides keeps "Ghi buổi dạy".
+  const classQuery = classId ? `&class=${classId}` : "";
   const slideIds = listSlideIds(lesson);
 
   useEffect(() => {
@@ -123,7 +125,7 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
         deck.on("slidechanged", fitCurrentSlide);
         deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
           const popup = window.open(
-            `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}`,
+            `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}${classQuery}`,
             "reng-presenter",
             "width=1200,height=850",
           );
@@ -169,7 +171,7 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
       }
       deckRef.current = null;
     };
-  }, [lesson, printMode]);
+  }, [classQuery, lesson, printMode]);
 
   function handlePresenter() {
     deckRef.current?.triggerKey(83);
@@ -192,7 +194,9 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
       <div className="lesson-print">
         <div className="print-toolbar">
           <Button onClick={() => window.print()}>In / Lưu PDF</Button>
-          <Link href={`${base}/slide?version=${lesson.id}#1`}>Quay lại trình chiếu</Link>
+          <Link href={slidePresenterPath(lesson.lessonId, lesson.id, 1, classId)}>
+            Quay lại trình chiếu
+          </Link>
         </div>
         {slideIds.map((id, index) => (
           <section key={id} className="print-slide">
@@ -229,10 +233,16 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
             Presenter
           </Button>
           <Link href={`${base}/slide?version=${lesson.id}&print-pdf`}>PDF</Link>
+          {/* A new tab: this tab is the one shared in Meet, and the class page shows learners'
+              names and scores. */}
           {classId && (
-            <Link href={sessionLogPath(classId, lesson.lessonId, position + 1)}>
+            <a
+              href={sessionLogPath(classId, lesson.lessonId, position + 1)}
+              target="_blank"
+              rel="noopener"
+            >
               Ghi buổi dạy (slide {position + 1})
-            </Link>
+            </a>
           )}
         </div>
       </div>
@@ -250,7 +260,7 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
       {notice && (
         <p role="status" className="slide-notice">
           {notice}{" "}
-          <a href={`${base}/presenter?version=${lesson.id}`} target="reng-presenter">
+          <a href={`${base}/presenter?version=${lesson.id}${classQuery}`} target="reng-presenter">
             Mở presenter
           </a>
         </p>

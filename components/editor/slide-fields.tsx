@@ -372,7 +372,7 @@ export function SlideFields({ slide, position, content, onChange, onRemove }: Sl
       </h3>
       <TypeFields slide={slide} content={content} onChange={onChange} />
       <div className="field">
-        <label htmlFor={`slide-${slide.id}-notes`}>Ghi chú giảng viên (chỉ hiện ở presenter)</label>
+        <label htmlFor={`slide-${slide.id}-notes`}>Ghi chú giáo viên (chỉ hiện ở presenter)</label>
         <textarea
           id={`slide-${slide.id}-notes`}
           maxLength={2000}

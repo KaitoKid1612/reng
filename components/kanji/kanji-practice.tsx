@@ -164,7 +164,7 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
           Bắt đầu luyện
         </Button>
         <p className="small muted">
-          Phiên luyện chưa lưu điểm. Câu {settings.noun} giảng viên giao trong bài tập vẫn được chấm
+          Phiên luyện chưa lưu điểm. Câu {settings.noun} giáo viên giao trong bài tập vẫn được chấm
           và vào sổ lỗi như thường.
         </p>
       </form>

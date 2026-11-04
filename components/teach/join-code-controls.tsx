@@ -7,6 +7,8 @@ import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 import { formatJoinCode } from "@/lib/join-code";
 
+import type { ActionState } from "@/app/actions/classes";
+
 interface JoinCodeControlsProps {
   classId: string;
   joinCode: string;
@@ -20,7 +22,16 @@ export function JoinCodeControls({
   isEnabled,
   inviteUrl,
 }: JoinCodeControlsProps) {
-  const [state, action, isPending] = useActionState(joinCodeAction, {});
+  // A new code stops every invite link already sent, so it is confirmed first like Xóa khỏi lớp.
+  const [isConfirmingRotate, setIsConfirmingRotate] = useState(false);
+  const [state, action, isPending] = useActionState(
+    async (previous: ActionState, formData: FormData) => {
+      const result = await joinCodeAction(previous, formData);
+      setIsConfirmingRotate(false);
+      return result;
+    },
+    {},
+  );
   const [copyNotice, setCopyNotice] = useState("");
 
   async function handleCopy() {
@@ -52,31 +63,50 @@ export function JoinCodeControls({
       ) : (
         <p className="small muted">Đang ngừng nhận học viên mới; mã hiện tại không dùng được.</p>
       )}
-      <form action={action} className="button-row">
+      <form action={action}>
         <input type="hidden" name="classId" value={classId} />
-        {isEnabled && (
-          <Button type="button" onClick={handleCopy}>
-            Sao chép link mời
+        <div className="button-row">
+          {isEnabled && (
+            <Button type="button" onClick={handleCopy}>
+              Sao chép link mời
+            </Button>
+          )}
+          {!isConfirmingRotate && (
+            <Button
+              type="button"
+              variant="outline"
+              disabled={isPending}
+              onClick={() => setIsConfirmingRotate(true)}
+            >
+              Đổi mã mới
+            </Button>
+          )}
+          <Button
+            type="submit"
+            name="operation"
+            value={isEnabled ? "disable" : "enable"}
+            variant="ghost"
+            disabled={isPending}
+          >
+            {isEnabled ? "Ngừng nhận học viên" : "Mở lại nhận học viên"}
           </Button>
+        </div>
+        {isConfirmingRotate && (
+          <div className="inline-form">
+            <p className="small">
+              Mã và link mời cũ sẽ không dùng được nữa; học viên đã vào lớp vẫn ở lại. Sau khi đổi,
+              gửi link mời mới cho người chưa vào lớp.
+            </p>
+            <div className="button-row">
+              <Button type="submit" name="operation" value="rotate" disabled={isPending}>
+                Xác nhận đổi mã
+              </Button>
+              <Button type="button" variant="ghost" onClick={() => setIsConfirmingRotate(false)}>
+                Giữ mã cũ
+              </Button>
+            </div>
+          </div>
         )}
-        <Button
-          type="submit"
-          name="operation"
-          value="rotate"
-          variant="outline"
-          disabled={isPending}
-        >
-          Đổi mã mới
-        </Button>
-        <Button
-          type="submit"
-          name="operation"
-          value={isEnabled ? "disable" : "enable"}
-          variant="ghost"
-          disabled={isPending}
-        >
-          {isEnabled ? "Ngừng nhận học viên" : "Mở lại nhận học viên"}
-        </Button>
       </form>
       {copyNotice && (
         <p className="small muted" role="status">

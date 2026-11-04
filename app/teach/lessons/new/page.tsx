@@ -8,7 +8,7 @@ import { CreateTeachingLessonForm } from "@/components/teaching/create-teaching-
 import { buttonVariants } from "@/components/ui/button";
 import { requireTeacher } from "@/lib/server/account";
 import { listOwnedLessons } from "@/lib/server/classes";
-import { STARTER_LESSONS } from "@/lib/starter-lessons";
+import { findStarterForLesson, STARTER_LESSONS } from "@/lib/starter-lessons";
 
 import type { Metadata } from "next";
 
@@ -18,6 +18,13 @@ export default async function NewLessonPage() {
   const account = await requireTeacher("/teach/lessons/new");
   const lessons = await listOwnedLessons(account.id);
   const nextOrder = lessons.length + 1;
+  // A revisit can open the lesson already made from a starter instead of making a duplicate.
+  const lessonFromStarter = new Map(
+    lessons.flatMap((lesson) => {
+      const starter = findStarterForLesson(lesson.creationFingerprint);
+      return starter ? [[starter.id, lesson] as const] : [];
+    }),
+  );
   return (
     <div className="narrow-page">
       <h1>Tạo bài mới</h1>
@@ -43,6 +50,7 @@ export default async function NewLessonPage() {
         <ul className="item-list">
           {STARTER_LESSONS.map((starter) => {
             const { content } = starter.draft;
+            const existing = lessonFromStarter.get(starter.id);
             return (
               <li key={starter.id}>
                 <div>
@@ -50,13 +58,24 @@ export default async function NewLessonPage() {
                   <p className="item-meta">
                     {starter.course} · {content.vocab.length} từ vựng · {content.grammar.length} mẫu
                     câu · {content.slides.length} slide · {content.questions.length} câu luyện
+                    {existing && ` · bạn đã tạo «${existing.title}»`}
                   </p>
                 </div>
-                <StarterLessonForm
-                  starterId={starter.id}
-                  requestId={randomUUID()}
-                  label={starter.buttonLabel}
-                />
+                <div className="button-row">
+                  {existing && (
+                    <Link
+                      href={`/teach/lessons/${existing.id}/edit`}
+                      className={buttonVariants({ variant: "outline" })}
+                    >
+                      Mở bài đã tạo
+                    </Link>
+                  )}
+                  <StarterLessonForm
+                    starterId={starter.id}
+                    requestId={randomUUID()}
+                    label={starter.buttonLabel}
+                  />
+                </div>
               </li>
             );
           })}
