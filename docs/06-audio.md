@@ -70,5 +70,6 @@ Nghiệm thu mới: cùng chữ Hán có locale khác không dùng nhầm giọn
 - `content/listening/minna-1-15.json`: 90 câu nghe tự biên soạn (bài 1–15, mỗi bài 6 câu), lời nghe viết bằng kana có cách, một giọng đọc, tổng 1.843 ký tự. `audio` để `null` cho tới khi sinh.
 - `npm run listening:sql` viết transaction gọi `insert_lesson_copy` (fingerprint `listening:<id>`, request id lấy từ md5 của fingerprint và giáo viên) để tạo bài nháp cho một giáo viên đang hoạt động; chạy lại trả về đúng bài đó. Không có `--commit` thì kết thúc bằng rollback.
 - `npm run audio:plan -- --lessons --db --lesson <mã bài>` liệt kê đúng 90 file `ja-JP-NanamiNeural`. Chính sách không đổi: câu nghe chỉ xuất bản khi có audio; trình soạn gộp các câu chỉ thiếu audio thành một dòng ("Câu luyện 1–90: 90 câu nghe chưa có audio…").
-- Chưa sinh audio thật vì chưa có khóa Azure và R2.
+- Người dùng chọn (04/11/2026): sinh bằng Azure Speech, **file đi kèm bản web**. `npm run audio:generate -- --local --listening <file>` ghi `public/audio/lessons/<hash>.mp3`, ghi hash vào bộ đề (qua Prettier) và manifest; `.gitignore` chỉ còn bỏ qua các thư mục audio khác. `listening:sql` kiểm tra hash còn khớp lời nghe và giọng, kiểm tra có file, rồi đăng ký `audio_assets` (url `/audio/lessons/<hash>.mp3`) trước khi tạo bài nháp. Web đọc từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL`, để trống thì là `/audio/lessons`.
+- Chưa sinh audio thật: đang chờ khóa Azure trong `.env.local`.
 

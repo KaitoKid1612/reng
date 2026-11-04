@@ -163,28 +163,36 @@ Từ 03/11/2026 hai dạng này soạn được ngay trên trình soạn tiếng
 
 Từ 04/11/2026 có sẵn bộ đề nghe tự biên soạn cho Minna no Nihongo Sơ cấp I, bài 1–15: [content/listening/minna-1-15.json](../content/listening/minna-1-15.json). Mỗi bài 6 câu: 3 câu nghe rồi chọn đáp án, 2 câu nghe rồi gõ một từ, 1 câu chép chính tả. Tổng cộng 90 câu, lời nghe 1.843 ký tự. Mỗi câu có nhãn `(Bài N)` ở đầu đề và tag `listening`, `minna:N`.
 
-Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-audio.md)): trình soạn chặn xuất bản và báo một dòng "Câu luyện …: N câu nghe chưa có audio". Các bước:
+Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-audio.md)): trình soạn chặn xuất bản và báo một dòng "Câu luyện …: N câu nghe chưa có audio". Audio của bộ đề được sinh bằng Azure Speech và **đi kèm bản web** (`public/audio/lessons`), không cần kho R2. Các bước:
 
-1. **Nạp bộ đề thành bài nháp của giáo viên** (không đụng bài đang dạy). Chạy lại không tạo bài trùng.
+1. **Tạo khóa Azure Speech** (người vận hành, một lần):
+   - Vào https://portal.azure.com, đăng nhập hoặc tạo tài khoản. Azure cần số điện thoại và thẻ để xác minh; gói Free F0 không tính phí (500.000 ký tự giọng neural mỗi tháng; bộ 90 câu dùng khoảng 1.900 ký tự).
+   - **Create a resource** → tìm **Speech** → **Create**. Resource group: tạo mới (ví dụ `reng`); Region: **Southeast Asia**; Name: ví dụ `reng-speech`; Pricing tier: **Free F0** → **Review + create** → **Create**.
+   - Mở resource vừa tạo → **Keys and Endpoint** → chép **KEY 1** và **Location/Region** (ví dụ `southeastasia`).
+   - Thêm vào `.env.local` ở thư mục dự án: `AZURE_SPEECH_KEY=<KEY 1>` và `AZURE_SPEECH_REGION=southeastasia`. Không dán khóa vào chat, không commit.
+2. **Sinh audio và đưa lên cùng bản web:**
+
+   ```bash
+   npm run audio:plan -- --listening content/listening/minna-1-15.json        # chạy thử: 90 file, không gọi Azure
+   npm run audio:generate -- --local --listening content/listening/minna-1-15.json
+   ```
+
+   Lệnh ghi 90 file vào `public/audio/lessons/`, ghi mã audio vào bộ đề và `content/lesson-audio-manifest.json`. Nghe thử vài file, rồi commit cả ba và push. Vercel phục vụ file tại `/audio/lessons/<mã>.mp3`; trên Vercel để trống `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` (mặc định là `/audio/lessons`).
+3. **Nạp bài nháp kèm audio cho giáo viên** (sau khi bản web đã có file). Chạy lại không tạo bài trùng; bài nháp tạo trước khi có audio mà giáo viên chưa lưu lần nào sẽ được cập nhật.
 
    ```bash
    npm run listening:sql -- --file content/listening/minna-1-15.json --owner <email giáo viên> --out /tmp/listening.sql          # chạy thử (rollback)
    npm run listening:sql -- --file content/listening/minna-1-15.json --owner <email giáo viên> --out /tmp/listening-commit.sql --commit
    npx supabase db query --linked --file /tmp/listening.sql         # xem mã bài và số câu, rồi rollback
-   npx supabase db query --linked --file /tmp/listening-commit.sql  # tạo bài nháp "Luyện nghe Minna 1–15"
+   npx supabase db query --linked --file /tmp/listening-commit.sql  # đăng ký 90 audio và tạo bài nháp "Luyện nghe Minna 1–15"
    ```
 
-2. **Sinh audio** (người vận hành, cần khóa Azure Speech và R2 trong `.env.local`, cùng `SUPABASE_URL`/`SUPABASE_SECRET_KEY` của database cần ghi). Thêm `--lesson <mã bài>` để chỉ sinh cho bài nghe (90 file, giọng `ja-JP-NanamiNeural`):
+   SQL dừng lại nếu một câu đã sửa lời nghe sau khi sinh audio, hoặc thiếu file audio.
 
-   ```bash
-   npm run audio:plan -- --lessons --db --lesson <mã bài>                       # chạy thử, không gọi Azure
-   npm run audio:generate -- --r2 --lessons --db --sync-db --lesson <mã bài>    # sinh, tải lên R2, ghi hash vào bản nháp
-   ```
+4. **Giáo viên nghe duyệt**: mở bài ở Giảng dạy → Soạn bài, nghe từng câu. Máy đọc sai thì sửa lời nghe trong bộ đề, sinh lại audio rồi làm lại bước 2–3 (hoặc xóa câu đó trên trình soạn). Xong thì Xuất bản.
+5. **Đưa vào lớp và giao bài**: Dùng bài trong lớp → Đưa vào lớp; ở Giao bài tập chọn các câu `(Bài N)` của bài vừa học. Câu nghe không tự vào bài luyện tập hằng ngày.
 
-   Web đọc audio bài học từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` (đặt trên Vercel, cùng giá trị `R2_LESSON_PUBLIC_BASE_URL`, đường dẫn `audio/lessons/{hash}.mp3`), rồi deploy lại.
-
-3. **Giáo viên nghe duyệt**: mở bài ở Giảng dạy → Soạn bài, nghe từng câu, sửa lời nghe nếu đọc sai (sửa lời nghe thì phải sinh lại audio), rồi Xuất bản.
-4. **Đưa vào lớp và giao bài**: Dùng bài trong lớp → Đưa vào lớp; ở Giao bài tập chọn các câu `(Bài N)` của bài vừa học. Câu nghe không tự vào bài luyện tập hằng ngày.
+Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫn sinh audio bằng `npm run audio:generate -- --r2 --lessons --db --sync-db --lesson <mã bài>`, vì cách này cần kho R2 có địa chỉ công khai.
 
 Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm câu chính tả**):
 

@@ -23,7 +23,16 @@ Người dùng yêu cầu làm tiếp các đề cho bài nghe và cách làm.
 
 Chưa sinh audio thật và chưa nghe giọng đọc thật: máy này và production chưa có khóa Azure Speech và R2. Chưa chạy E2E, theo yêu cầu tạm hoãn.
 
+## Cách làm audio (người dùng chọn)
+
+Azure Speech, file đi kèm bản web, không dùng R2. Đã làm:
+
+- `npm run audio:generate -- --local --listening <file>`: sinh 90 file vào `public/audio/lessons`, ghi mã audio vào bộ đề (đã qua Prettier) và manifest. Chạy thử (`audio:plan`) báo 90 file, không gọi Azure.
+- `.gitignore` cho phép commit `public/audio/lessons`.
+- `listening:sql` từ chối câu đã sửa lời nghe sau khi sinh audio hoặc thiếu file, đăng ký `audio_assets`, rồi tạo bài nháp kèm audio. Bài nháp tạo trước khi có audio mà giáo viên chưa lưu lần nào sẽ được cập nhật.
+- Test mới: ghi mã audio rồi đọc lại khớp lời nghe; sửa lời nghe thì bị báo audio cũ; mã audio trong bộ đề đã commit phải có file đi kèm.
+
 ## Còn lại
 
-- Chọn cách làm audio (cần người dùng quyết định): Azure Speech theo thiết kế ([06](../06-audio.md)), hoặc đổi chính sách để tạm dùng giọng đọc của thiết bị.
-- Sau khi có audio: chạy SQL trên production cho tài khoản giáo viên, sinh audio cho bài đó, giáo viên nghe duyệt rồi xuất bản.
+- Người dùng tạo khóa Azure (gói Free F0) và thêm vào `.env.local`. Sau đó sinh audio, nghe thử, commit file và push.
+- Chạy `listening:sql` trên production cho tài khoản giáo viên; giáo viên nghe duyệt, xuất bản, đưa vào lớp và giao theo bài.

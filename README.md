@@ -90,7 +90,7 @@ Upload R2: điền R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUC
 npm run audio:generate -- --r2
 ```
 
-Audio bài học (từ vựng, câu ví dụ, câu nghe) dùng `--lessons` (thêm `--db` cho bản nháp trên database, `--lesson <mã bài>` để chỉ sinh cho một bài), tải lên theo `R2_LESSON_PUBLIC_BASE_URL`; web đọc từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL`. Bộ đề nghe Minna 1–15 có sẵn ở `content/listening/`; cách nạp và sinh audio xem [hướng dẫn soạn bài](docs/content-authoring.md#làm-bài-nghe).
+Audio bài học (từ vựng, câu ví dụ, câu nghe) dùng `--lessons` (thêm `--db` cho bản nháp trên database, `--lesson <mã bài>` để chỉ sinh cho một bài), tải lên theo `R2_LESSON_PUBLIC_BASE_URL`; web đọc từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL`. Bộ đề nghe Minna 1–15 có sẵn ở `content/listening/`; audio của bộ đề sinh bằng `--local --listening <file>` và đi kèm bản web trong `public/audio/lessons` (không cần R2). Cách tạo khóa Azure, sinh audio và nạp bài xem [hướng dẫn soạn bài](docs/content-authoring.md#làm-bài-nghe).
 
 Đặt NEXT_PUBLIC_AUDIO_BASE_URL cùng giá trị public base rồi rebuild/restart web. Đường dẫn object là audio/kana/{hash}.mp3. Bucket/domain phải được người vận hành tạo trước. Muốn đồng bộ metadata thêm --sync-db và SUPABASE_URL/SUPABASE_SECRET_KEY. Script không tạo bucket hoặc tự migrate. Chạy lại kiểm tra asset theo hash và tiếp tục mapping sau lỗi; lock local ngăn chạy trùng cùng workspace, chưa hỗ trợ chạy nhiều máy đồng thời.
 
