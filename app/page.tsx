@@ -24,7 +24,10 @@ const CLASS_STEPS = [
     title: "Trong buổi học",
     body: "Giáo viên trình chiếu qua Google Meet; buổi sau dạy tiếp đúng chỗ.",
   },
-  { title: "Sau buổi học", body: "Làm bài tập tự chấm, xem điểm ngay và ôn lại câu sai." },
+  {
+    title: "Sau buổi học",
+    body: "Làm bài tập tự chấm, xem điểm ngay khi nộp hoặc sau hạn (tùy giáo viên đặt) và ôn lại câu sai.",
+  },
 ] as const;
 
 const FEATURES = [

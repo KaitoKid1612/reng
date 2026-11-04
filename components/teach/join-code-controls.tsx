@@ -63,7 +63,7 @@ export function JoinCodeControls({
       ) : (
         <p className="small muted">Đang ngừng nhận học viên mới; mã hiện tại không dùng được.</p>
       )}
-      <form action={action}>
+      <form action={action} className="join-code-actions">
         <input type="hidden" name="classId" value={classId} />
         <div className="button-row">
           {isEnabled && (

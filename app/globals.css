@@ -331,9 +331,12 @@ h3 {
   max-width: 68ch;
   margin-bottom: 0;
 }
-/* A link inside a sentence needs more than colour to stand out from the text around it. */
+/* A link inside a sentence needs more than colour to stand out from the text around it. Small
+   and muted sentences sit closest to the link colour; :where() lets buttons and chips keep their
+   own look. */
 .page-heading p a,
-.subject-nav p a {
+.subject-nav p a,
+:where(p.small, p.muted) a {
   text-decoration: underline;
 }
 .page-heading > .button {
@@ -1789,9 +1792,11 @@ rt {
   padding: 24px;
   margin-bottom: 20px;
 }
-/* Prompts keep the author's line breaks, so a passage written above its question stays apart. */
+/* Prompts keep the author's line breaks, so a passage written above its question stays apart. A
+   typed answer's prompt is a <label>, which only keeps its bottom margin as a block. */
 .question-card legend,
 .question-prompt {
+  display: block;
   font-size: 23px;
   line-height: 1.7;
   font-weight: 400;
@@ -2135,6 +2140,10 @@ rt {
 }
 .join-invite-link {
   overflow-wrap: anywhere;
+}
+/* The invite text ends in a paragraph, so the buttons below need their own space. */
+.join-code-actions {
+  margin-top: 16px;
 }
 .older-assignments > summary {
   width: fit-content;

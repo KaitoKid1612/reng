@@ -224,7 +224,8 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
             <DailyStatTiles days={days} today={history.today} />
             <section className="chart-panel" aria-labelledby="daily-chart">
               <h3 id="daily-chart">Điểm theo ngày</h3>
-              <p className="small muted">Bấm vào cột để mở ngày đó.</p>
+              {/* On a phone the columns are narrow; the day tiles below are the larger targets. */}
+              <p className="small muted">Bấm vào cột hoặc ô ở mục Chọn ngày để mở ngày đó.</p>
               <DailyScoreChart days={days} selectedDate={day.date} hrefForDay={hrefForDay} />
             </section>
           </section>

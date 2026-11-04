@@ -32,9 +32,13 @@ export default async function NewLessonPage() {
         <Link href="/teach">Giảng dạy</Link>. Bài mới là bản nháp riêng; học viên chỉ thấy sau khi
         bạn xuất bản và giao cho lớp.
       </p>
-      <nav className="button-row" aria-label="Chọn ngôn ngữ soạn bài">
+      {/* The starter list runs long on a phone, so each way of starting has its own jump link. */}
+      <nav className="button-row" aria-label="Chọn cách soạn bài">
         <Link href="#starter-lesson-title" className={buttonVariants({ variant: "outline" })}>
-          Soạn bài tiếng Nhật
+          Dùng bài mẫu Minna
+        </Link>
+        <Link href="#detailed-lesson-title" className={buttonVariants({ variant: "outline" })}>
+          Soạn tiếng Nhật từ đầu
         </Link>
         <Link href="#template-lesson-title" className={buttonVariants({ variant: "outline" })}>
           Soạn bài tiếng Trung
@@ -82,7 +86,7 @@ export default async function NewLessonPage() {
         </ul>
       </section>
       <section className="section-block" aria-labelledby="detailed-lesson-title">
-        <h2 id="detailed-lesson-title">Soạn bài tiếng Nhật</h2>
+        <h2 id="detailed-lesson-title">Soạn bài tiếng Nhật từ đầu</h2>
         <p className="small muted">
           Soạn từ đầu: từ vựng, mẫu câu, câu luyện và slide (tiêu đề, từ vựng, mẫu câu, ví dụ, hội
           thoại, bảng/luyện thay thế, câu hỏi). Muốn làm bài tiếp theo nhanh hơn, dùng Tạo bản sao

@@ -50,7 +50,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Vào Giảng dạy → Tạo bài mới. Chọn bài mẫu (bài 1 đến 15) và bấm Tạo bài từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
       "Bài mẫu là bản nháp riêng của bạn. Đọc lại, sửa theo lớp mình rồi bấm Xuất bản; học viên dùng sách của mình để đối chiếu.",
       "Xuất bản xong, mục Dùng bài trong lớp phía trên trình soạn liệt kê các lớp của bạn: bấm Đưa vào lớp (bài mở ngay, xếp cuối danh sách bài của lớp) hoặc Cập nhật lên phiên bản mới cho lớp đang dùng bản cũ.",
-      "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc soạn từ đầu ở mục Soạn bài tiếng Nhật của trang Tạo bài mới.",
+      "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc dùng mục Soạn bài tiếng Nhật từ đầu ở trang Tạo bài mới.",
       "Bài mẫu được bổ sung dần (hình, slide, câu luyện) nhưng bài đã tạo không tự cập nhật. Bấm Cập nhật từ mẫu ở bài đó để so sánh và thay bản nháp bằng mẫu mới nhất; chỉnh sửa riêng trong nháp sẽ mất, phiên bản đã xuất bản và lớp đang dùng giữ nguyên.",
     ],
   },
