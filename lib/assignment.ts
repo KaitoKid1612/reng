@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { typedAnswerKey } from "@/lib/grading/grade";
 import {
   isBlankAnswer,
   parseChoiceSelection,
@@ -60,6 +61,17 @@ export function isListeningQuestion(
   return question.type === "listen" || question.type === "dictation";
 }
 
+// The options a checked practice answer marks as right; null for questions without options.
+export function correctChoiceIndexes(question: AssignableQuestion): number[] | null {
+  if (question.type === "choice") {
+    return question.answer;
+  }
+  if (question.type === "listen" && question.responseType === "choice") {
+    return question.answer.filter((item): item is number => typeof item === "number");
+  }
+  return null;
+}
+
 const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
 
 // Every token belongs in the sentence, so one arrangement is the whole answer.
@@ -105,6 +117,28 @@ export function parseAssignableQuestion(value: unknown): AssignableQuestion {
     throw new Error("Only choice, fill, listen, dictation and order questions can be assigned.");
   }
   return question;
+}
+
+const kanjiStrictSnapshot = z
+  .object({
+    type: z.enum(["fill", "dictation"]),
+    kanjiStrict: z.literal(true),
+    answer: z.array(z.string()),
+  })
+  .loose();
+
+// A snapshot also holds the typed answers a teacher accepted for its question, including one
+// accepted before the question became kanji-strict. Reading leaves out those answers without
+// kanji, which the question no longer takes, instead of failing the whole set for every learner.
+export function parseSnapshotQuestion(value: unknown): AssignableQuestion {
+  const strict = kanjiStrictSnapshot.safeParse(value);
+  if (strict.success) {
+    const kept = strict.data.answer.filter(containsKanji);
+    if (kept.length && kept.length < strict.data.answer.length) {
+      return parseAssignableQuestion({ ...strict.data, answer: kept });
+    }
+  }
+  return parseAssignableQuestion(value);
 }
 
 const title = z.string().trim().min(1).max(160);
@@ -197,7 +231,8 @@ export type TestQuestionInput = z.infer<typeof testQuestionInputSchema>;
 
 // Test questions get private IDs so they never collide with public practice questions.
 // Fill questions follow their input mode (hiragana stays on the Japanese rules even in a Chinese
-// class); choice and order questions follow the class language, which only affects display.
+// class); Vietnamese text answers, choice and order questions follow the class language, which
+// only affects display.
 // The inputs come from the browser, so the authoring limits are checked here as well.
 export function toTestQuestions(
   inputs: readonly TestQuestionInput[],
@@ -209,7 +244,9 @@ export function toTestQuestions(
     .map((input, index) => {
       const isChinese =
         input.type === "fill"
-          ? input.inputMode === "chinese" || input.inputMode === "pinyin"
+          ? input.inputMode === "chinese" ||
+            input.inputMode === "pinyin" ||
+            (input.inputMode === "text" && languageTag !== "ja-JP")
           : languageTag !== "ja-JP";
       return parseAssignableQuestion({
         ...input,
@@ -554,6 +591,12 @@ export function countBlankAnswers(views: readonly QuestionView[], draft: Attempt
   return views.filter((view) => isBlankAnswer(draft.answers[view.id])).length;
 }
 
+// A multiple-choice answer needs every listed option, so they are joined with "+" rather than the
+// "/" that separates alternative typed answers ("A / B" would read as "A or B").
+function choiceSeparator(question: AssignableQuestion) {
+  return question.type === "choice" && question.multiple ? " + " : " / ";
+}
+
 export function describeCorrectAnswer(question: AssignableQuestion) {
   if (
     question.type === "choice" ||
@@ -562,12 +605,24 @@ export function describeCorrectAnswer(question: AssignableQuestion) {
     const options = question.options ?? [];
     return question.answer
       .map((answer) => (typeof answer === "number" ? options[answer] : answer))
-      .join(" / ");
+      .join(choiceSeparator(question));
   }
   if (question.type === "order") {
     return joinOrderTokens(orderTokenTexts(question.tokens, question.answer));
   }
-  return question.answer.join(" / ");
+  // "わたしはがくせいです。" and "わたしはがくせいです" grade the same, so only the first is shown.
+  const shown = new Set<string>();
+  return question.answer
+    .map(String)
+    .filter((answer) => {
+      const key = typedAnswerKey(question, answer);
+      if (shown.has(key)) {
+        return false;
+      }
+      shown.add(key);
+      return true;
+    })
+    .join(" / ");
 }
 
 // Stored answers are JSON; anything outside the known raw shapes is treated as blank.
@@ -606,7 +661,7 @@ export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer |
   return raw
     .map((index) => (typeof index === "number" ? options[index] : undefined))
     .filter((option): option is string => option !== undefined)
-    .join(" / ");
+    .join(choiceSeparator(question));
 }
 
 // The last hour before a deadline shows a countdown on the submit bar; the last ten minutes

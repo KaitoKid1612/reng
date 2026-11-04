@@ -764,6 +764,10 @@ progress::-webkit-progress-value {
   flex-shrink: 0;
   margin-top: 3px;
 }
+.answer-feedback > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .feedback-correct {
   color: var(--correct);
 }
@@ -795,14 +799,23 @@ progress::-webkit-progress-value {
 .transcript {
   color: var(--foreground);
 }
+/* The big figure and its smaller "(7/11 điểm)" wrap as two boxes, so a narrow screen moves the
+   whole caption under the figure instead of splitting it across a 64px line. */
 .result-score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
   font-size: 64px;
+  line-height: 1.15;
   color: var(--primary);
   margin: 28px 0 12px;
 }
 .result-score span {
   font-size: 20px;
+  line-height: 1.6;
   color: var(--muted);
+  white-space: nowrap;
 }
 .mistake-list {
   padding: 0;
@@ -1907,6 +1920,26 @@ rt {
 .choice-option:has(input:disabled) {
   cursor: default;
 }
+/* A checked practice answer marks the right options and a wrong pick on the list itself, with an
+   icon as well as colour. The list prefix outranks the selected-option rule above. */
+.choice-list .choice-option[data-result="correct"] {
+  border-color: var(--correct);
+  background: color-mix(in srgb, var(--correct) 10%, var(--surface));
+}
+.choice-list .choice-option[data-result="wrong"] {
+  border-color: var(--wrong);
+  background: color-mix(in srgb, var(--wrong) 8%, var(--surface));
+}
+.choice-mark {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.choice-option[data-result="correct"] .choice-mark {
+  color: var(--correct);
+}
+.choice-option[data-result="wrong"] .choice-mark {
+  color: var(--wrong);
+}
 .answer-input {
   width: 100%;
   font-size: 23px !important;
@@ -1954,11 +1987,13 @@ rt {
 .dialog-panel::backdrop {
   background: rgb(28 27 26 / 35%);
 }
+/* A URL in an explanation or a long typed answer wraps instead of widening the page. */
 .result-row {
   border-left: 3px solid var(--border);
   padding: 14px 18px;
   margin-bottom: 14px;
   background: var(--surface);
+  overflow-wrap: anywhere;
 }
 .result-row[data-correct="true"] {
   border-left-color: var(--correct);
@@ -2252,7 +2287,8 @@ rt {
   padding: 0;
   margin: 0 0 20px;
 }
-.question-card:focus-visible {
+.question-card:focus-visible,
+.review-card:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }

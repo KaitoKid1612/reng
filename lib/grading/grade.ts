@@ -62,6 +62,15 @@ function normalizeFreeText(value: string) {
     .replace(/[\s\p{P}]+/gu, "");
 }
 
+// The form a typed answer is compared in, so screens can show accepted spellings that grade the
+// same (a final 。, spacing, letter case in Vietnamese) only once.
+export function typedAnswerKey(question: LessonQuestion, value: string) {
+  return (question.type === "fill" || question.type === "dictation") &&
+    question.inputMode === "text"
+    ? normalizeFreeText(value)
+    : normalizeAnswer(value, question.gradingProfile);
+}
+
 function matchesFreeText(accepted: readonly string[], raw: RawAnswer) {
   if (typeof raw !== "string") {
     return false;
@@ -98,7 +107,9 @@ function isCorrectAnswer(question: LessonQuestion, raw: RawAnswer) {
         ? matchesFreeText(question.answer, raw)
         : matchesText(question.answer, raw, question.gradingProfile);
     case "dictation":
-      return matchesText(question.answer, raw, question.gradingProfile);
+      return question.inputMode === "text"
+        ? matchesFreeText(question.answer, raw)
+        : matchesText(question.answer, raw, question.gradingProfile);
     case "match":
       return matchesPairs(question.answer, raw);
     case "order":

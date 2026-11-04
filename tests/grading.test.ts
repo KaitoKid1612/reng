@@ -183,6 +183,20 @@ test("Vietnamese free-text answers ignore letter case, spacing and punctuation o
   assert.equal(gradeQuestion(meaning, "...").isCorrect, false);
   // Japanese answers keep the existing exact profile.
   assert.equal(gradeQuestion(fill, "イキマス").isCorrect, false);
+  // A dictation typed as Vietnamese text follows the same rules as a text fill.
+  const heard = questionSchema.parse({
+    id: "d1",
+    type: "dictation",
+    prompt: "Nghe và viết lời chào bằng tiếng Việt.",
+    audio: "a".repeat(32),
+    transcript: "Xin chào!",
+    answer: ["xin chào"],
+    explain: "Lời chào.",
+    points: 1,
+    inputMode: "text",
+  });
+  assert.equal(gradeQuestion(heard, "Xin chào!").isCorrect, true);
+  assert.equal(gradeQuestion(heard, "xin chao").isCorrect, false);
 });
 
 test("displayed percentages use the Vietnamese decimal comma and one decimal", () => {

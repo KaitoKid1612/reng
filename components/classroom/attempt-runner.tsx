@@ -13,6 +13,7 @@ import { DeadlineCountdown } from "@/components/classroom/deadline-countdown";
 import { Button } from "@/components/ui/button";
 import {
   answerLang,
+  correctChoiceIndexes,
   countBlankAnswers,
   describeCorrectAnswer,
   isListeningQuestion,
@@ -152,6 +153,16 @@ export function AttemptRunner({
     card.scrollIntoView({ block: card.getBoundingClientRect().top < 0 ? "start" : "nearest" });
   }
 
+  // The check button gives way to the feedback, which would drop focus back to the page; it goes
+  // to the card instead, as after Enter, without scrolling away from the feedback just shown.
+  function handleCheckButton(index: number) {
+    flushSync(() => handleCheck(items[index].view.id));
+    const card = listRef.current?.children[index];
+    if (card instanceof HTMLElement) {
+      card.focus({ preventScroll: true });
+    }
+  }
+
   // Enter checks a practice answer, then a second Enter (on the locked card) moves to the next
   // question. The last question never opens the submit dialog, so Enter cannot submit by accident.
   function handleEnter(index: number) {
@@ -271,6 +282,11 @@ export function AttemptRunner({
                 listenCount={sync.draft.listens[item.view.id] ?? 0}
                 onListen={() => handleListen(item.view.id)}
                 onEnter={() => handleEnter(index)}
+                revealedChoices={
+                  mode === "practice" && answerKey && isChecked
+                    ? correctChoiceIndexes(answerKey)
+                    : null
+                }
               />
               {mode === "practice" && answerKey && isChecked && (
                 <AnswerFeedback
@@ -286,7 +302,7 @@ export function AttemptRunner({
                 <Button
                   variant="outline"
                   disabled={isReadOnly || isBlankAnswer(raw)}
-                  onClick={() => handleCheck(item.view.id)}
+                  onClick={() => handleCheckButton(index)}
                 >
                   Kiểm tra câu này
                 </Button>

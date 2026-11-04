@@ -12,7 +12,7 @@ import {
   isAssignableQuestion,
   isFeedbackAvailable,
   isListeningQuestion,
-  parseAssignableQuestion,
+  parseSnapshotQuestion,
   parseAttemptDraft,
   toAttemptItems,
   toQuestionView,
@@ -215,7 +215,7 @@ export async function loadAssignmentItems(assignmentId: string): Promise<Assigna
       question_snapshot: z.unknown(),
     }),
   );
-  return rows.map((row) => parseAssignableQuestion(row.question_snapshot));
+  return rows.map((row) => parseSnapshotQuestion(row.question_snapshot));
 }
 
 // A class with daily practice gains an assignment a day, so the IDs are read in chunks and the

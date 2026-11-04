@@ -17,6 +17,7 @@ import {
   joinOrderTokens,
   parseAssignableQuestion,
   parseAttemptDraft,
+  parseSnapshotQuestion,
   toAttemptItems,
   toQuestionView,
   toStoredRawAnswer,
@@ -58,6 +59,84 @@ test("test payloads expose only the question allowlist before feedback", () => {
   const practiceItems = toAttemptItems(questions, "practice");
   assert.equal(practiceItems[0].answerKey?.explain, "は đánh dấu chủ đề.");
   assert.equal(describeCorrectAnswer(questions[0]), "は");
+});
+
+test("a kana answer accepted before a question became kanji-strict is left out, not fatal", () => {
+  const snapshot = {
+    id: "k1",
+    type: "fill",
+    prompt: "Viết bằng kanji: がっこう",
+    inputMode: "japanese",
+    kanjiStrict: true,
+    answer: ["学校", "がっこう"],
+    explain: "学校.",
+    points: 1,
+  };
+  const question = parseSnapshotQuestion(snapshot);
+  assert.ok(question.type === "fill");
+  assert.deepEqual(question.answer, ["学校"]);
+  assert.equal(gradeQuestion(question, "がっこう").isCorrect, false);
+  // A question whose answers are all kana is still an authoring error.
+  assert.throws(() => parseSnapshotQuestion({ ...snapshot, answer: ["がっこう"] }));
+});
+
+test("multiple-choice answers read as all options, typed alternatives as any one", () => {
+  const multiple = parseAssignableQuestion({
+    id: "c1",
+    type: "choice",
+    prompt: "Từ nào đếm bằng 〜つ?",
+    options: ["りんご", "がくせい", "いす"],
+    multiple: true,
+    answer: [0, 2],
+    explain: "Đồ vật.",
+    points: 1,
+  });
+  assert.equal(describeCorrectAnswer(multiple), "りんご + いす");
+  assert.equal(describeRawAnswer(multiple, [0, 1]), "りんご + がくせい");
+});
+
+test("a Vietnamese text answer in a Chinese class keeps the class language", () => {
+  const [text] = toTestQuestions(
+    [
+      {
+        type: "fill",
+        prompt: "Dịch: 我是学生",
+        inputMode: "text",
+        kanjiStrict: false,
+        answer: ["tôi là học sinh"],
+        explain: "我是学生: tôi là học sinh.",
+        points: 1,
+      },
+    ],
+    "zh-Hans",
+  );
+  assert.equal(toQuestionView(text).lang, "vi");
+});
+
+test("accepted spellings that grade the same are shown once, others all", () => {
+  const [dictation, meaning] = [
+    {
+      id: "d1",
+      type: "dictation",
+      prompt: "Nghe và chép lại câu.",
+      audio: "e685a87a352360eca77cdc6f1e9625c6",
+      transcript: "わたしはがくせいです。",
+      answer: ["わたしはがくせいです。", "わたしはがくせいです", "わたし は がくせいです"],
+      explain: "Câu giới thiệu.",
+      points: 1,
+    },
+    {
+      id: "m1",
+      type: "fill",
+      prompt: "Nghĩa của せんせい",
+      inputMode: "text",
+      answer: ["giáo viên", "Giáo viên.", "thầy giáo"],
+      explain: "Giáo viên.",
+      points: 1,
+    },
+  ].map(parseAssignableQuestion);
+  assert.equal(describeCorrectAnswer(dictation), "わたしはがくせいです。");
+  assert.equal(describeCorrectAnswer(meaning), "giáo viên / thầy giáo");
 });
 
 test("assignment questions are limited to supported types with valid kanji-strict answers", () => {
