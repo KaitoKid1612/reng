@@ -1,0 +1,1456 @@
+{
+  "id": "minna-1-15",
+  "title": "Bài 15 – Xin phép, cấm đoán và trạng thái",
+  "titleJa": "第15課　しゃしんを とっても いいですか",
+  "summary": "Theo trình tự bài 15 Minna no Nihongo Sơ cấp I: xin phép V ても いいですか và các cách trả lời, cấm V ては いけません (nội quy, biển báo), V て います chỉ trạng thái kéo dài (kết hôn, sống ở, có, biết — phủ định しりません) và nghề nghiệp, việc lâu dài, nơi cư trú và nơi đi vào dùng に, hỏi lịch sự về gia đình người khác.",
+  "order": 15,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1501",
+        "jp": "おきます",
+        "kanji": "置きます",
+        "romaji": "okimasu",
+        "vi": "đặt, để",
+        "audio": null,
+        "note": "nhóm I · おいて"
+      },
+      {
+        "id": "v1502",
+        "jp": "つくります",
+        "kanji": "作ります",
+        "romaji": "tsukurimasu",
+        "vi": "làm, chế tạo, nấu",
+        "audio": null,
+        "note": "nhóm I · つくって",
+        "image": "/icons/vocab/pot-of-food.svg"
+      },
+      {
+        "id": "v1503",
+        "jp": "うります",
+        "kanji": "売ります",
+        "romaji": "urimasu",
+        "vi": "bán",
+        "audio": null,
+        "note": "nhóm I · うって"
+      },
+      {
+        "id": "v1504",
+        "jp": "しります",
+        "kanji": "知ります",
+        "romaji": "shirimasu",
+        "vi": "biết (知って います; phủ định: 知りません)",
+        "audio": null,
+        "note": "nhóm I · しって"
+      },
+      {
+        "id": "v1505",
+        "jp": "すみます",
+        "kanji": "住みます",
+        "romaji": "sumimasu",
+        "vi": "sống, cư trú (N に すみます)",
+        "audio": null,
+        "note": "nhóm I · すんで",
+        "image": "/icons/vocab/house.svg"
+      },
+      {
+        "id": "v1506",
+        "jp": "けっこんします",
+        "kanji": "結婚します",
+        "romaji": "kekkon shimasu",
+        "vi": "kết hôn",
+        "audio": null,
+        "note": "nhóm III · けっこんして"
+      },
+      {
+        "id": "v1507",
+        "jp": "けんきゅうします",
+        "kanji": "研究します",
+        "romaji": "kenkyuu shimasu",
+        "vi": "nghiên cứu",
+        "audio": null,
+        "note": "nhóm III · けんきゅうして",
+        "image": "/icons/vocab/microscope.svg"
+      },
+      {
+        "id": "v1508",
+        "jp": "おもいだします",
+        "kanji": "思い出します",
+        "romaji": "omoidashimasu",
+        "vi": "nhớ ra",
+        "audio": null,
+        "note": "nhóm I · おもいだして"
+      },
+      {
+        "id": "v1509",
+        "jp": "いらっしゃいます",
+        "romaji": "irasshaimasu",
+        "vi": "có, ở (kính ngữ của います)",
+        "audio": null,
+        "note": "nhóm I"
+      },
+      {
+        "id": "v1510",
+        "jp": "すいます",
+        "kanji": "吸います",
+        "romaji": "suimasu",
+        "vi": "hút (thuốc)",
+        "audio": null,
+        "note": "nhóm I · すって"
+      },
+      {
+        "id": "v1511",
+        "jp": "とめます",
+        "kanji": "止めます",
+        "romaji": "tomemasu",
+        "vi": "đỗ, dừng (xe)",
+        "audio": null,
+        "note": "nhóm II · とめて"
+      },
+      {
+        "id": "v1512",
+        "jp": "はいります",
+        "kanji": "入ります",
+        "romaji": "hairimasu",
+        "vi": "vào (N に はいります)",
+        "audio": null,
+        "note": "nhóm I · はいって"
+      },
+      {
+        "id": "v1513",
+        "jp": "しりょう",
+        "kanji": "資料",
+        "romaji": "shiryou",
+        "vi": "tài liệu",
+        "audio": null
+      },
+      {
+        "id": "v1514",
+        "jp": "カタログ",
+        "romaji": "katarogu",
+        "vi": "ca-ta-lô",
+        "audio": null
+      },
+      {
+        "id": "v1515",
+        "jp": "じこくひょう",
+        "kanji": "時刻表",
+        "romaji": "jikokuhyou",
+        "vi": "bảng giờ tàu xe",
+        "audio": null
+      },
+      {
+        "id": "v1516",
+        "jp": "ふく",
+        "kanji": "服",
+        "romaji": "fuku",
+        "vi": "quần áo",
+        "audio": null,
+        "image": "/icons/vocab/t-shirt.svg"
+      },
+      {
+        "id": "v1517",
+        "jp": "せいひん",
+        "kanji": "製品",
+        "romaji": "seihin",
+        "vi": "sản phẩm",
+        "audio": null
+      },
+      {
+        "id": "v1518",
+        "jp": "ソフト",
+        "romaji": "sofuto",
+        "vi": "phần mềm",
+        "audio": null
+      },
+      {
+        "id": "v1519",
+        "jp": "でんしじしょ",
+        "kanji": "電子辞書",
+        "romaji": "denshi jisho",
+        "vi": "từ điển điện tử",
+        "audio": null
+      },
+      {
+        "id": "v1520",
+        "jp": "けいざい",
+        "kanji": "経済",
+        "romaji": "keizai",
+        "vi": "kinh tế",
+        "audio": null
+      },
+      {
+        "id": "v1521",
+        "jp": "しやくしょ",
+        "kanji": "市役所",
+        "romaji": "shiyakusho",
+        "vi": "ủy ban thành phố",
+        "audio": null,
+        "image": "/icons/vocab/classical-building.svg"
+      },
+      {
+        "id": "v1522",
+        "jp": "こうこう",
+        "kanji": "高校",
+        "romaji": "koukou",
+        "vi": "trường cấp ba",
+        "audio": null
+      },
+      {
+        "id": "v1523",
+        "jp": "はいしゃ",
+        "kanji": "歯医者",
+        "romaji": "haisha",
+        "vi": "nha sĩ",
+        "audio": null,
+        "image": "/icons/vocab/stethoscope.svg"
+      },
+      {
+        "id": "v1524",
+        "jp": "どくしん",
+        "kanji": "独身",
+        "romaji": "dokushin",
+        "vi": "độc thân",
+        "audio": null
+      },
+      {
+        "id": "v1525",
+        "jp": "たばこ",
+        "romaji": "tabako",
+        "vi": "thuốc lá",
+        "audio": null
+      },
+      {
+        "id": "v1526",
+        "jp": "ちゅうしゃじょう",
+        "kanji": "駐車場",
+        "romaji": "chuushajou",
+        "vi": "bãi đỗ xe",
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v1527",
+        "jp": "びょういん",
+        "kanji": "病院",
+        "romaji": "byouin",
+        "vi": "bệnh viện",
+        "audio": null,
+        "image": "/icons/vocab/hospital.svg"
+      },
+      {
+        "id": "v1528",
+        "jp": "つかいかた",
+        "kanji": "使い方",
+        "romaji": "tsukaikata",
+        "vi": "cách dùng",
+        "audio": null
+      },
+      {
+        "id": "v1529",
+        "jp": "ききます",
+        "kanji": "聞きます",
+        "romaji": "kikimasu",
+        "vi": "hỏi (N に ききます); nghe",
+        "audio": null,
+        "note": "nhóm I · きいて"
+      },
+      {
+        "id": "v1530",
+        "jp": "〜ても いいです",
+        "romaji": "~te mo ii desu",
+        "vi": "được phép …",
+        "audio": null
+      },
+      {
+        "id": "v1531",
+        "jp": "〜ては いけません",
+        "romaji": "~te wa ikemasen",
+        "vi": "không được …",
+        "audio": null
+      },
+      {
+        "id": "v1532",
+        "jp": "〜て います",
+        "romaji": "~te imasu",
+        "vi": "(đã) … và đang ở trạng thái đó; làm … (nghề, việc lâu dài)",
+        "audio": null
+      },
+      {
+        "id": "v1533",
+        "jp": "いいですよ",
+        "romaji": "ii desu yo",
+        "vi": "được chứ (cho phép)",
+        "audio": null
+      },
+      {
+        "id": "v1534",
+        "jp": "いけません",
+        "romaji": "ikemasen",
+        "vi": "không được",
+        "audio": null
+      },
+      {
+        "id": "v1535",
+        "jp": "ごかぞく",
+        "kanji": "ご家族",
+        "romaji": "gokazoku",
+        "vi": "gia đình (của người khác)",
+        "audio": null
+      },
+      {
+        "id": "v1536",
+        "jp": "むすこ",
+        "kanji": "息子",
+        "romaji": "musuko",
+        "vi": "con trai (của tôi)",
+        "audio": null,
+        "image": "/icons/vocab/boy.svg"
+      },
+      {
+        "id": "v1537",
+        "jp": "むすめ",
+        "kanji": "娘",
+        "romaji": "musume",
+        "vi": "con gái (của tôi)",
+        "audio": null,
+        "image": "/icons/vocab/girl.svg"
+      },
+      {
+        "id": "v1538",
+        "jp": "しゃしん",
+        "kanji": "写真",
+        "romaji": "shashin",
+        "vi": "ảnh (ôn bài 6)",
+        "audio": null,
+        "image": "/icons/vocab/camera.svg"
+      },
+      {
+        "id": "v1539",
+        "jp": "ホーチミンし",
+        "kanji": "ホーチミン市",
+        "romaji": "hoochimin shi",
+        "vi": "Thành phố Hồ Chí Minh",
+        "audio": null
+      },
+      {
+        "id": "v1540",
+        "jp": "そうですね",
+        "romaji": "sou desu ne",
+        "vi": "để xem nào; đúng vậy nhỉ",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1501",
+        "pattern": "V ても いいですか／V ても いいです",
+        "vi": "Tôi … được không? / … cũng được",
+        "explain": "Xin phép: V て (bài 14) + も いいですか. Cho phép: ええ、いいですよ hoặc ええ、どうぞ. Từ chối nhẹ: すみません、ちょっと…. Cấm hẳn: いいえ、いけません.",
+        "viMistake": "Bỏ も thì thành câu khác nghĩa; xin phép luôn là V ても いいですか.",
+        "examples": [
+          {
+            "jp": "{写真|しゃしん}を {撮|と}っても いいですか。…ええ、いいですよ。",
+            "vi": "Tôi chụp ảnh được không? … Được chứ.",
+            "audio": null
+          },
+          {
+            "jp": "ここに {座|すわ}っても いいですか。…ええ、どうぞ。",
+            "vi": "Tôi ngồi đây được không? … Vâng, xin mời.",
+            "audio": null
+          },
+          {
+            "jp": "この ペンを {使|つか}っても いいですか。…すみません、ちょっと…。",
+            "vi": "Tôi dùng cái bút này được không? … Xin lỗi, hơi…",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1502",
+        "pattern": "V ては いけません",
+        "vi": "Không được V (cấm)",
+        "explain": "Nói điều bị cấm: V て + は いけません. Thường gặp trên biển báo, nội quy. Trả lời xin phép bằng cấm hẳn: いいえ、いけません.",
+        "viMistake": "Với người trên, khách, nên từ chối nhẹ すみません、ちょっと… thay vì いけません.",
+        "examples": [
+          {
+            "jp": "ここで たばこを {吸|す}っては いけません。",
+            "vi": "Không được hút thuốc ở đây.",
+            "audio": null
+          },
+          {
+            "jp": "{美術館|びじゅつかん}の {中|なか}で {写真|しゃしん}を {撮|と}っては いけません。",
+            "vi": "Không được chụp ảnh trong bảo tàng mỹ thuật.",
+            "audio": null
+          },
+          {
+            "jp": "ここに {車|くるま}を {止|と}めても いいですか。…いいえ、いけません。",
+            "vi": "Tôi đỗ xe ở đây được không? … Không, không được.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1503",
+        "pattern": "V て います (trạng thái)",
+        "vi": "Đã V và vẫn đang như vậy",
+        "explain": "Một số động từ dùng V て います để nói trạng thái kéo dài sau hành động: {結婚|けっこん}して います (đã kết hôn), {住|す}んで います (đang sống), {知|し}って います (biết), {持|も}って います (có, đang giữ).",
+        "viMistake": "Phủ định của {知|し}って います là {知|し}りません, không nói {知|し}って いません.",
+        "examples": [
+          {
+            "jp": "{田中|たなか}さんは {結婚|けっこん}して いますか。…いいえ、{独身|どくしん}です。",
+            "vi": "Anh Tanaka đã kết hôn chưa? … Chưa, anh ấy độc thân.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}の {住所|じゅうしょ}を {知|し}って いますか。…いいえ、{知|し}りません。",
+            "vi": "Bạn có biết địa chỉ của thầy không? … Không, tôi không biết.",
+            "audio": null
+          },
+          {
+            "jp": "{電子辞書|でんしじしょ}を {持|も}って いますか。",
+            "vi": "Bạn có từ điển điện tử không?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1504",
+        "pattern": "V て います (nghề nghiệp, việc lâu dài)",
+        "vi": "Làm V (công việc, việc thường xuyên)",
+        "explain": "Nói nghề nghiệp, việc làm lâu dài: 〜で {働|はたら}いて います, 〜を {研究|けんきゅう}して います, 〜を {教|おし}えて います. Công ty bán gì: 〜を {売|う}って います.",
+        "examples": [
+          {
+            "jp": "{姉|あね}は {病院|びょういん}で {働|はたら}いて います。",
+            "vi": "Chị tôi làm việc ở bệnh viện.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんは {大学|だいがく}で {経済|けいざい}を {研究|けんきゅう}して います。",
+            "vi": "Linh nghiên cứu kinh tế ở trường đại học.",
+            "audio": null
+          },
+          {
+            "jp": "この {会社|かいしゃ}は パソコンの ソフトを {売|う}って います。",
+            "vi": "Công ty này bán phần mềm máy tính.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1505",
+        "pattern": "N (nơi chốn) に 住んで います／入ります",
+        "vi": "Sống ở N; vào N",
+        "explain": "Nơi ở và nơi đi vào dùng に: ハノイに {住|す}んで います, {部屋|へや}に {入|はい}ります. Hỏi lịch sự về gia đình người khác: ごかぞくは どちらに いらっしゃいますか.",
+        "viMistake": "Không nói ハノイで {住|す}んで います; nơi cư trú dùng に.",
+        "examples": [
+          {
+            "jp": "どこに {住|す}んで いますか。…ハノイに {住|す}んで います。",
+            "vi": "Bạn sống ở đâu? … Tôi sống ở Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "ごかぞくは どちらに いらっしゃいますか。…ホーチミン{市|し}に います。",
+            "vi": "Gia đình anh ở đâu ạ? … Ở Thành phố Hồ Chí Minh.",
+            "audio": null
+          },
+          {
+            "jp": "{会議室|かいぎしつ}に {入|はい}っても いいですか。",
+            "vi": "Tôi vào phòng họp được không?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1501",
+        "teacherNotes": "Khởi động: hỏi bằng tiếng Việt \"ở bảo tàng có được chụp ảnh không?\", \"bạn sống ở đâu?\". Bài đi theo trình tự bài 15 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}15{課|か}",
+        "vi": "Xin phép, cấm đoán và trạng thái: 〜ても いいですか"
+      },
+      {
+        "id": "s1502",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Xin phép và cho phép: V ても いいですか → ええ、いいですよ\n2. Cấm: V ては いけません\n3. Trạng thái kéo dài: けっこんして います, すんで います, しって います (phủ định: しりません)\n4. Nghề nghiệp, việc lâu dài: 〜で はたらいて います"
+      },
+      {
+        "id": "s1503",
+        "teacherNotes": "Ôn thể て với mỗi động từ: ghi chú ở thẻ có nhóm và thể て.",
+        "type": "vocab",
+        "refs": ["v1501", "v1502", "v1503", "v1504", "v1505", "v1506", "v1507", "v1508"]
+      },
+      {
+        "id": "s1504",
+        "teacherNotes": "おきます (置きます, đặt) khác おきます (起きます, thức dậy): cùng cách đọc.",
+        "type": "vocab",
+        "refs": ["v1509", "v1510", "v1511", "v1512", "v1513", "v1514", "v1515", "v1516"]
+      },
+      {
+        "id": "s1505",
+        "teacherNotes": "Nói nghề của người thân: はいしゃ, しやくしょ, こうこう の せんせい…",
+        "type": "vocab",
+        "refs": ["v1517", "v1518", "v1519", "v1520", "v1521", "v1522", "v1523", "v1524"]
+      },
+      {
+        "id": "s1506",
+        "teacherNotes": "Nội quy nơi công cộng: たばこ, しゃしん, ちゅうしゃじょう.",
+        "type": "vocab",
+        "refs": ["v1525", "v1526", "v1527", "v1528", "v1529", "v1530", "v1531", "v1532"]
+      },
+      {
+        "id": "s1507",
+        "teacherNotes": "Hỏi về gia đình người khác dùng ごかぞく, いらっしゃいます.",
+        "type": "vocab",
+        "refs": ["v1533", "v1534", "v1535", "v1536", "v1537", "v1538", "v1539", "v1540"]
+      },
+      {
+        "id": "s1508",
+        "teacherNotes": "Học viên xin phép giáo viên những việc trong lớp: まどを あけても いいですか.",
+        "type": "grammar",
+        "ref": "g1501"
+      },
+      {
+        "id": "s1509",
+        "type": "example",
+        "ref": "g1501",
+        "reveal": true
+      },
+      {
+        "id": "s1510",
+        "teacherNotes": "Ba cách trả lời lời xin phép, từ mềm đến cứng.",
+        "type": "table",
+        "title": "Trả lời lời xin phép",
+        "columns": ["Ý", "Câu trả lời"],
+        "rows": [
+          ["Cho phép", "ええ、いいですよ／ええ、どうぞ。"],
+          ["Từ chối nhẹ", "すみません、ちょっと…。"],
+          ["Cấm hẳn", "いいえ、いけません。"]
+        ]
+      },
+      {
+        "id": "s1511",
+        "teacherNotes": "Gọi từng học viên xin phép theo gợi ý, rồi bấm mũi tên để hiện câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 1: xin phép",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{写真|しゃしん}・{撮|と}ります", "{写真|しゃしん}を {撮|と}っても いいですか。"],
+          ["ここ・{座|すわ}ります", "ここに {座|すわ}っても いいですか。"],
+          ["この ペン・{使|つか}います", "この ペンを {使|つか}っても いいですか。"],
+          ["まど・{開|あ}けます", "まどを {開|あ}けても いいですか。"],
+          [
+            "{荷物|にもつ}・ここ・{置|お}きます",
+            "{荷物|にもつ}を ここに {置|お}いても いいですか。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1512",
+        "type": "quiz",
+        "ref": "q1501"
+      },
+      {
+        "id": "s1513",
+        "teacherNotes": "Chiếu vài biển báo (cấm hút thuốc, cấm chụp ảnh, cấm đỗ xe); học viên đọc thành câu.",
+        "type": "grammar",
+        "ref": "g1502"
+      },
+      {
+        "id": "s1514",
+        "type": "example",
+        "ref": "g1502",
+        "reveal": true
+      },
+      {
+        "id": "s1515",
+        "teacherNotes": "Học viên đọc biển báo thành câu tiếng Nhật trước khi bấm mũi tên.",
+        "type": "table",
+        "title": "Luyện tập 2: biển báo",
+        "columns": ["Biển báo", "Câu tiếng Nhật"],
+        "rows": [
+          ["Cấm hút thuốc", "ここで たばこを {吸|す}っては いけません。"],
+          ["Cấm chụp ảnh", "ここで {写真|しゃしん}を {撮|と}っては いけません。"],
+          ["Cấm đỗ xe", "ここに {車|くるま}を {止|と}めては いけません。"],
+          ["Cấm vào", "ここに {入|はい}っては いけません。"],
+          ["Cấm ăn uống", "ここで {食|た}べては いけません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1516",
+        "type": "quiz",
+        "ref": "q1503"
+      },
+      {
+        "id": "s1517",
+        "type": "quiz",
+        "ref": "q1504"
+      },
+      {
+        "id": "s1518",
+        "teacherNotes": "Hỏi thật (nếu học viên thoải mái): けっこんして いますか, どこに すんで いますか.",
+        "type": "grammar",
+        "ref": "g1503"
+      },
+      {
+        "id": "s1519",
+        "type": "example",
+        "ref": "g1503",
+        "reveal": true
+      },
+      {
+        "id": "s1520",
+        "teacherNotes": "Chú ý dòng cuối: phủ định của しって います là しりません.",
+        "type": "table",
+        "title": "Trạng thái với て います",
+        "columns": ["Khẳng định", "Phủ định"],
+        "rows": [
+          ["{結婚|けっこん}して います", "{結婚|けっこん}して いません"],
+          ["{住|す}んで います", "{住|す}んで いません"],
+          ["{持|も}って います", "{持|も}って いません"],
+          ["{知|し}って います", "{知|し}りません"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1521",
+        "type": "quiz",
+        "ref": "q1508"
+      },
+      {
+        "id": "s1522",
+        "teacherNotes": "Học viên giới thiệu nghề của một người thân: 〜で はたらいて います.",
+        "type": "grammar",
+        "ref": "g1504"
+      },
+      {
+        "id": "s1523",
+        "type": "example",
+        "ref": "g1504",
+        "reveal": true
+      },
+      {
+        "id": "s1524",
+        "teacherNotes": "Viết lên bảng: ハノイに すんで います ○, ハノイで すんで います ×.",
+        "type": "grammar",
+        "ref": "g1505"
+      },
+      {
+        "id": "s1525",
+        "type": "example",
+        "ref": "g1505",
+        "reveal": true
+      },
+      {
+        "id": "s1526",
+        "teacherNotes": "Học viên giới thiệu người thân theo gợi ý.",
+        "type": "table",
+        "title": "Luyện tập 3: nghề nghiệp và nơi ở",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{姉|あね}・{病院|びょういん}・{働|はたら}きます",
+            "{姉|あね}は {病院|びょういん}で {働|はたら}いて います。"
+          ],
+          [
+            "{兄|あに}・{高校|こうこう}・{教|おし}えます",
+            "{兄|あに}は {高校|こうこう}で {教|おし}えて います。"
+          ],
+          ["{父|ちち}・ダナン・{住|す}みます", "{父|ちち}は ダナンに {住|す}んで います。"],
+          [
+            "むすこ・{大学|だいがく}・{経済|けいざい}・{研究|けんきゅう}します",
+            "むすこは {大学|だいがく}で {経済|けいざい}を {研究|けんきゅう}して います。"
+          ],
+          [
+            "この {会社|かいしゃ}・{服|ふく}・{売|う}ります",
+            "この {会社|かいしゃ}は {服|ふく}を {売|う}って います。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1527",
+        "type": "quiz",
+        "ref": "q1512"
+      },
+      {
+        "id": "s1528",
+        "teacherNotes": "Đổi nơi (thư viện, nhà ga) và việc xin phép (ngồi, dùng điện thoại).",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Ở bảo tàng",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "すみません。ここで {写真|しゃしん}を {撮|と}っても いいですか。",
+            "vi": "Xin lỗi, tôi chụp ảnh ở đây được không ạ?"
+          },
+          {
+            "speaker": "{係員|かかりいん}",
+            "jp": "すみません、{中|なか}で {写真|しゃしん}を {撮|と}っては いけません。",
+            "vi": "Xin lỗi, không được chụp ảnh bên trong ạ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "そうですか。{外|そと}は いいですか。",
+            "vi": "Vậy à. Bên ngoài thì được chứ ạ?"
+          },
+          {
+            "speaker": "{係員|かかりいん}",
+            "jp": "ええ、{外|そと}は いいですよ。",
+            "vi": "Vâng, bên ngoài thì được ạ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "わかりました。どうも。",
+            "vi": "Tôi hiểu rồi. Cảm ơn."
+          }
+        ]
+      },
+      {
+        "id": "s1529",
+        "teacherNotes": "Học viên hỏi nhau về nơi ở và gia đình, có thể trả lời ngắn nếu không muốn nói nhiều.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Anh sống ở đâu?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{田中|たなか}さんは どこに {住|す}んで いますか。",
+            "vi": "Anh Tanaka sống ở đâu ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{会社|かいしゃ}の {近|ちか}くに {住|す}んで います。",
+            "vi": "Tôi sống gần công ty."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ごかぞくも ハノイに いらっしゃいますか。",
+            "vi": "Gia đình anh cũng ở Hà Nội ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "いいえ、{家族|かぞく}は {大阪|おおさか}に います。{娘|むすめ}は {高校|こうこう}に {行|い}って います。",
+            "vi": "Không, gia đình tôi ở Osaka. Con gái tôi đang học cấp ba."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。",
+            "vi": "Vậy ạ."
+          }
+        ]
+      },
+      {
+        "id": "s1530",
+        "teacherNotes": "Đổi đồ cần mượn: từ điển điện tử, bút, tài liệu.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Ở văn phòng",
+        "lines": [
+          {
+            "speaker": "リン",
+            "jp": "{田中|たなか}さん、この {資料|しりょう}を コピーしても いいですか。",
+            "vi": "Anh Tanaka, em photo tài liệu này được không ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ええ、どうぞ。",
+            "vi": "Ừ, cứ tự nhiên."
+          },
+          {
+            "speaker": "リン",
+            "jp": "あのう、コピーの {使|つか}い{方|かた}を {知|し}って いますか。",
+            "vi": "Dạ, anh có biết cách dùng máy photo không ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "すみません、{知|し}りません。{受付|うけつけ}で {聞|き}いて ください。",
+            "vi": "Xin lỗi, tôi không biết. Em hỏi ở quầy lễ tân nhé."
+          }
+        ]
+      },
+      {
+        "id": "s1531",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật (được phép trả lời chung chung).",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["ここに {座|すわ}っても いいですか。", "ええ、どうぞ。"],
+          ["どこに {住|す}んで いますか。", "ハノイに {住|す}んで います。"],
+          ["{電子辞書|でんしじしょ}を {持|も}って いますか。", "いいえ、{持|も}って いません。"],
+          [
+            "{先生|せんせい}の {住所|じゅうしょ}を {知|し}って いますか。",
+            "いいえ、{知|し}りません。"
+          ],
+          ["ここで たばこを {吸|す}っても いいですか。", "すみません、ちょっと…。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1532",
+        "type": "quiz",
+        "ref": "q1526"
+      },
+      {
+        "id": "s1533",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• V ても いいですか → ええ、いいですよ／ええ、どうぞ; すみません、ちょっと…; いいえ、いけません\n• V ては いけません: không được (nội quy, biển báo)\n• V て います (trạng thái): けっこんして います, すんで います, もって います; しって います → しりません\n• V て います (việc lâu dài): 〜で はたらいて います, 〜を うって います\n• Nơi ở, nơi đi vào + に: 〜に すんで います, 〜に はいります"
+      },
+      {
+        "id": "s1534",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài.\n2. Viết 5 câu nội quy cho phòng học hoặc nơi làm việc của bạn bằng 〜ては いけません.\n3. Viết 3 câu giới thiệu người thân: sống ở đâu, làm nghề gì (〜て います)."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1501",
+        "prompt": "Xin phép: Tôi chụp ảnh được không?",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Xin phép: V て + も いいですか.",
+        "type": "choice",
+        "options": [
+          "しゃしんを とって いいですか。",
+          "しゃしんを とっても いいですか。",
+          "しゃしんを とっては いけませんか。",
+          "しゃしんを とりても いいですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1502",
+        "prompt": "ここに すわっても いいですか。…（　　）。(cho phép)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cho phép: ええ、どうぞ／ええ、いいですよ.",
+        "type": "choice",
+        "options": [
+          "ええ、どうぞ",
+          "いいえ、すわります",
+          "はい、すわって います",
+          "ええ、いけません"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1503",
+        "prompt": "Biển báo: Không được hút thuốc ở đây.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cấm: V て + は いけません; すいます → すって.",
+        "type": "choice",
+        "options": [
+          "ここで たばこを すっても いいです。",
+          "ここで たばこを すいては いけません。",
+          "ここに たばこを すっては いけません。",
+          "ここで たばこを すっては いけません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1504",
+        "prompt": "ここに くるまを とめても いいですか。…（　　）。(cấm hẳn)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cấm: いいえ、いけません.",
+        "type": "choice",
+        "options": [
+          "ええ、いいですよ",
+          "はい、とめます",
+          "いいえ、いけません",
+          "いいえ、とめて います"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1505",
+        "prompt": "Từ chối nhẹ nhàng lời xin phép của khách:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Từ chối nhẹ: すみません、ちょっと….",
+        "type": "choice",
+        "options": [
+          "いいえ、いけません。",
+          "すみません、ちょっと…。",
+          "ええ、どうぞ。",
+          "いいですよ。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1506",
+        "prompt": "Thể て + も của つかいます:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "い → って: つかっても.",
+        "type": "choice",
+        "options": ["つかっても", "つかいても", "つかんでも", "つかいって も"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1507",
+        "prompt": "Thể て + は của のみます:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "み → んで: のんでは.",
+        "type": "choice",
+        "options": ["のみては", "のっては", "のいては", "のんでは"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1508",
+        "prompt": "せんせいの じゅうしょを しって いますか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Phủ định của しって います là しりません.",
+        "type": "choice",
+        "options": ["しって いません", "しりませんでした", "しりません", "しって ください"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1509",
+        "prompt": "Chọn câu đúng: Anh Tanaka đã kết hôn.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Trạng thái: けっこんして います.",
+        "type": "choice",
+        "options": [
+          "たなかさんは けっこんします。",
+          "たなかさんは けっこんして います。",
+          "たなかさんは けっこんして いません。",
+          "たなかさんは けっこんしました います。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1510",
+        "prompt": "Chọn câu đúng: Tôi sống ở Hà Nội.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi cư trú + に; すみます → すんで.",
+        "type": "choice",
+        "options": [
+          "ハノイに すんで います。",
+          "ハノイで すんで います。",
+          "ハノイを すんで います。",
+          "ハノイに すみて います。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1511",
+        "prompt": "どこに すんで いますか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi cư trú + に + すんで います.",
+        "type": "choice",
+        "options": [
+          "ダナンで すみます",
+          "ダナンへ すんで います",
+          "ダナンに すみません",
+          "ダナンに すんで います"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1512",
+        "prompt": "Chọn câu đúng: Chị tôi làm việc ở bệnh viện.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi làm việc + で; はたらきます → はたらいて.",
+        "type": "choice",
+        "options": [
+          "あねは びょういんに はたらいて います。",
+          "あねは びょういんで はたらきて います。",
+          "あねは びょういんで はたらいて います。",
+          "あねは びょういんを はたらいて います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1513",
+        "prompt": "Chọn câu đúng: Linh nghiên cứu kinh tế ở trường đại học.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi + で, đối tượng + を, けんきゅうして います.",
+        "type": "choice",
+        "options": [
+          "リンさんは だいがくに けいざいを けんきゅうして います。",
+          "リンさんは だいがくで けいざいを けんきゅうして います。",
+          "リンさんは だいがくで けいざいが けんきゅうして います。",
+          "リンさんは だいがくで けいざいを けんきゅうしって います。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1514",
+        "prompt": "Hỏi: Bạn có từ điển điện tử không?",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Có (đang giữ): もって います.",
+        "type": "choice",
+        "options": [
+          "でんしじしょを もって いますか。",
+          "でんしじしょを もちますか。",
+          "でんしじしょを もって ください。",
+          "でんしじしょに もって いますか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1515",
+        "prompt": "この かいしゃは なにを （　　）か。…カメラを うって います。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Công ty bán gì (việc lâu dài): うって います.",
+        "type": "choice",
+        "options": ["うります", "うっても いいです", "うっては いけません", "うって います"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1516",
+        "prompt": "Hỏi lịch sự: Gia đình anh ở đâu ạ?",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Hỏi lịch sự về gia đình người khác: ごかぞく, どちら, いらっしゃいます.",
+        "type": "choice",
+        "options": [
+          "かぞくは どこに いますか。",
+          "ごかぞくは どこで すみますか。",
+          "ごかぞくは どちらに いらっしゃいますか。",
+          "ごかぞくは どちらに いますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1517",
+        "prompt": "どくしん nghĩa là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "どくしん (独身): độc thân.",
+        "type": "choice",
+        "options": ["đã kết hôn", "độc thân", "gia đình", "con cái"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1518",
+        "prompt": "しやくしょ là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "しやくしょ (市役所): ủy ban thành phố.",
+        "type": "choice",
+        "options": ["ủy ban thành phố", "bệnh viện", "trường cấp ba", "nha sĩ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1519",
+        "prompt": "はいしゃ là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "はいしゃ (歯医者): nha sĩ.",
+        "type": "choice",
+        "options": ["bác sĩ", "y tá", "dược sĩ", "nha sĩ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1520",
+        "prompt": "じこくひょう là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "じこくひょう (時刻表): bảng giờ tàu xe.",
+        "type": "choice",
+        "options": ["bản đồ", "ca-ta-lô", "bảng giờ tàu xe", "tài liệu"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1521",
+        "prompt": "つくります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "つくります: làm, chế tạo.",
+        "type": "choice",
+        "options": ["bán", "làm, chế tạo, nấu", "đặt, để", "biết"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1522",
+        "prompt": "うります nghĩa là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "うります: bán; かいます: mua.",
+        "type": "choice",
+        "options": ["bán", "mua", "làm", "đặt"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1523",
+        "prompt": "おきます (置きます) nghĩa là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "おきます (置きます): đặt, để; khác おきます (起きます): thức dậy.",
+        "type": "choice",
+        "options": ["thức dậy", "mở", "đóng", "đặt, để"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1524",
+        "prompt": "Thể て của おきます (置きます, nhóm I):",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "き → いて: おいて.",
+        "type": "choice",
+        "options": ["おきて", "おって", "おいて", "おんで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1525",
+        "prompt": "Thể て của すみます:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "み → んで: すんで.",
+        "type": "choice",
+        "options": ["すみて", "すんで", "すって", "すいて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1526",
+        "prompt": "Chọn câu đúng: Tôi đặt hành lý ở đây được không?",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi đặt + に; おきます (置) → おいても.",
+        "type": "choice",
+        "options": [
+          "にもつを ここに おいても いいですか。",
+          "にもつを ここで おいても いいですか。",
+          "にもつを ここに おきても いいですか。",
+          "にもつを ここに おいては いいですか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1527",
+        "prompt": "Chọn câu đúng: Không được chụp ảnh trong bảo tàng.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cấm: とっては いけません.",
+        "type": "choice",
+        "options": [
+          "びじゅつかんの なかで しゃしんを とっても いけません。",
+          "びじゅつかんの なかに しゃしんを とっては いけません。",
+          "びじゅつかんの なかで しゃしんを とりては いけません。",
+          "びじゅつかんの なかで しゃしんを とっては いけません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1528",
+        "prompt": "Con trai của tôi (kể với người ngoài) là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Con trai tôi: むすこ; con gái tôi: むすめ.",
+        "type": "choice",
+        "options": ["むすめ", "おとこの こ", "むすこ", "ごかぞく"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1529",
+        "prompt": "いらっしゃいます là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "いらっしゃいます: kính ngữ của います (ở bài này).",
+        "type": "choice",
+        "options": [
+          "kính ngữ của いきます",
+          "kính ngữ của います",
+          "khiêm nhường của あります",
+          "lời chào khách"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1530",
+        "prompt": "おもいだします nghĩa là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "おもいだします: nhớ ra.",
+        "type": "choice",
+        "options": ["nhớ ra", "quên", "nghĩ", "biết"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1531",
+        "prompt": "Chọn câu đúng: Tôi vào phòng họp được không?",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi đi vào + に; はいります → はいって.",
+        "type": "choice",
+        "options": [
+          "かいぎしつで はいっても いいですか。",
+          "かいぎしつを はいっても いいですか。",
+          "かいぎしつに はいりても いいですか。",
+          "かいぎしつに はいっても いいですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1532",
+        "prompt": "けっこんして いますか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Chưa kết hôn: どくしんです (hoặc けっこんして いません).",
+        "type": "choice",
+        "options": ["けっこんしません", "けっこんして ください", "どくしんです", "しりません"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1533",
+        "prompt": "Phủ định của けっこんして います:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Phủ định: V て いません (riêng しって います → しりません).",
+        "type": "choice",
+        "options": [
+          "けっこんしりません",
+          "けっこんして いません",
+          "けっこんして ありません",
+          "けっこんしません います"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1534",
+        "prompt": "ちゅうしゃじょう là:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "ちゅうしゃじょう (駐車場): bãi đỗ xe.",
+        "type": "choice",
+        "options": ["bãi đỗ xe", "nhà ga", "bệnh viện", "bưu điện"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1535",
+        "prompt": "Được hỏi một câu khó trả lời, bạn ngập ngừng:",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "そうですね…: để xem nào.",
+        "type": "choice",
+        "options": ["いいですよ。", "いけません。", "どうぞ。", "そうですね…。"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1536",
+        "prompt": "Chọn câu đúng: Công ty này bán phần mềm máy tính.",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Bán (việc lâu dài): うって います.",
+        "type": "choice",
+        "options": [
+          "この かいしゃは パソコンの ソフトを かって います。",
+          "この かいしゃは パソコンの ソフトが うって います。",
+          "この かいしゃは パソコンの ソフトを うって います。",
+          "この かいしゃに パソコンの ソフトを うって います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1537",
+        "prompt": "Điền: しゃしんを とっても （　　）ですか。(được không)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Xin phép: ても いいですか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いい"]
+      },
+      {
+        "id": "q1538",
+        "prompt": "Điền: ここで たばこを すっては （　　）。(không được)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cấm: ては いけません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いけません"]
+      },
+      {
+        "id": "q1539",
+        "prompt": "Điền thể て: つかいます → つか（　　）も いいですか",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "い → って: つかっても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["って"]
+      },
+      {
+        "id": "q1540",
+        "prompt": "Điền: せんせいの でんわばんごうを しって いますか。…いいえ、（　　）。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Phủ định: しりません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しりません"]
+      },
+      {
+        "id": "q1541",
+        "prompt": "Điền: たなかさんは けっこん（　　）います。(đã kết hôn)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "けっこんします → けっこんして います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["して"]
+      },
+      {
+        "id": "q1542",
+        "prompt": "Điền trợ từ: ハノイ（　　） すんで います。",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Nơi cư trú + に.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["に"]
+      },
+      {
+        "id": "q1543",
+        "prompt": "Điền thể て: すみます → （　　）",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "み → んで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["すんで"]
+      },
+      {
+        "id": "q1544",
+        "prompt": "Điền thể て: おきます (置きます) → （　　）",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "き → いて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おいて"]
+      },
+      {
+        "id": "q1545",
+        "prompt": "Điền thể て: つくります → （　　）",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "り → って.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["つくって"]
+      },
+      {
+        "id": "q1546",
+        "prompt": "Điền: あねは びょういんで はたらいて （　　）。(làm việc, việc lâu dài)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Việc lâu dài: V て います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["います"]
+      },
+      {
+        "id": "q1547",
+        "prompt": "Điền: ええ、（　　）ですよ。(được chứ)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cho phép: ええ、いいですよ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いい"]
+      },
+      {
+        "id": "q1548",
+        "prompt": "Điền: でんしじしょを （　　） いますか。(có, đang giữ)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "もちます → もって います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もって"]
+      },
+      {
+        "id": "q1549",
+        "prompt": "Điền: ここに すわっても いいですか。…ええ、（　　）。(xin mời)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Cho phép: ええ、どうぞ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どうぞ"]
+      },
+      {
+        "id": "q1550",
+        "prompt": "Điền: いいえ、（　　）です。(chưa kết hôn: độc thân)",
+        "points": 1,
+        "tags": ["minna-15"],
+        "explain": "Độc thân: どくしん.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どくしん"]
+      }
+    ]
+  }
+}
