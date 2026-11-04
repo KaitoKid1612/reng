@@ -1,0 +1,1515 @@
+{
+  "id": "minna-1-14",
+  "title": "Bài 14 – Nhờ vả và việc đang làm: thể て",
+  "titleJa": "第14課　ちょっと まって ください",
+  "summary": "Theo trình tự bài 14 Minna no Nihongo Sơ cấp I: ba nhóm động từ và cách đổi sang thể て, nhờ vả lịch sự V て ください, việc đang diễn ra V て います (trời đang mưa), đề nghị làm giúp V ましょうか và cách nhận lời hoặc từ chối, chỉ đường cho tài xế (まっすぐ, rẽ, dừng).",
+  "order": 14,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1401",
+        "jp": "つけます",
+        "romaji": "tsukemasu",
+        "vi": "bật (đèn, điều hòa)",
+        "audio": null,
+        "note": "nhóm II · つけて"
+      },
+      {
+        "id": "v1402",
+        "jp": "けします",
+        "kanji": "消します",
+        "romaji": "keshimasu",
+        "vi": "tắt",
+        "audio": null,
+        "note": "nhóm I · けして"
+      },
+      {
+        "id": "v1403",
+        "jp": "あけます",
+        "kanji": "開けます",
+        "romaji": "akemasu",
+        "vi": "mở (cửa)",
+        "audio": null,
+        "note": "nhóm II · あけて",
+        "image": "/icons/vocab/door.svg"
+      },
+      {
+        "id": "v1404",
+        "jp": "しめます",
+        "kanji": "閉めます",
+        "romaji": "shimemasu",
+        "vi": "đóng (cửa)",
+        "audio": null,
+        "note": "nhóm II · しめて"
+      },
+      {
+        "id": "v1405",
+        "jp": "いそぎます",
+        "kanji": "急ぎます",
+        "romaji": "isogimasu",
+        "vi": "vội, gấp",
+        "audio": null,
+        "note": "nhóm I · いそいで",
+        "image": "/icons/vocab/person-running.svg"
+      },
+      {
+        "id": "v1406",
+        "jp": "まちます",
+        "kanji": "待ちます",
+        "romaji": "machimasu",
+        "vi": "chờ, đợi",
+        "audio": null,
+        "note": "nhóm I · まって"
+      },
+      {
+        "id": "v1407",
+        "jp": "もちます",
+        "kanji": "持ちます",
+        "romaji": "mochimasu",
+        "vi": "cầm, mang",
+        "audio": null,
+        "note": "nhóm I · もって",
+        "image": "/icons/vocab/handbag.svg"
+      },
+      {
+        "id": "v1408",
+        "jp": "とります",
+        "kanji": "取ります",
+        "romaji": "torimasu",
+        "vi": "lấy, chuyền (đồ)",
+        "audio": null,
+        "note": "nhóm I · とって"
+      },
+      {
+        "id": "v1409",
+        "jp": "てつだいます",
+        "kanji": "手伝います",
+        "romaji": "tetsudaimasu",
+        "vi": "giúp đỡ (công việc)",
+        "audio": null,
+        "note": "nhóm I · てつだって"
+      },
+      {
+        "id": "v1410",
+        "jp": "よびます",
+        "kanji": "呼びます",
+        "romaji": "yobimasu",
+        "vi": "gọi (người, taxi)",
+        "audio": null,
+        "note": "nhóm I · よんで"
+      },
+      {
+        "id": "v1411",
+        "jp": "はなします",
+        "kanji": "話します",
+        "romaji": "hanashimasu",
+        "vi": "nói chuyện",
+        "audio": null,
+        "note": "nhóm I · はなして",
+        "image": "/icons/vocab/speaking-head.svg"
+      },
+      {
+        "id": "v1412",
+        "jp": "つかいます",
+        "kanji": "使います",
+        "romaji": "tsukaimasu",
+        "vi": "dùng, sử dụng",
+        "audio": null,
+        "note": "nhóm I · つかって"
+      },
+      {
+        "id": "v1413",
+        "jp": "とめます",
+        "kanji": "止めます",
+        "romaji": "tomemasu",
+        "vi": "dừng (xe)",
+        "audio": null,
+        "note": "nhóm II · とめて"
+      },
+      {
+        "id": "v1414",
+        "jp": "すわります",
+        "kanji": "座ります",
+        "romaji": "suwarimasu",
+        "vi": "ngồi",
+        "audio": null,
+        "note": "nhóm I · すわって",
+        "image": "/icons/vocab/chair.svg"
+      },
+      {
+        "id": "v1415",
+        "jp": "たちます",
+        "kanji": "立ちます",
+        "romaji": "tachimasu",
+        "vi": "đứng",
+        "audio": null,
+        "note": "nhóm I · たって"
+      },
+      {
+        "id": "v1416",
+        "jp": "はいります",
+        "kanji": "入ります",
+        "romaji": "hairimasu",
+        "vi": "vào",
+        "audio": null,
+        "note": "nhóm I · はいって"
+      },
+      {
+        "id": "v1417",
+        "jp": "でます",
+        "kanji": "出ます",
+        "romaji": "demasu",
+        "vi": "ra, rời khỏi",
+        "audio": null,
+        "note": "nhóm II · でて"
+      },
+      {
+        "id": "v1418",
+        "jp": "まがります",
+        "kanji": "曲がります",
+        "romaji": "magarimasu",
+        "vi": "rẽ",
+        "audio": null,
+        "note": "nhóm I · まがって"
+      },
+      {
+        "id": "v1419",
+        "jp": "ふります",
+        "kanji": "降ります",
+        "romaji": "furimasu",
+        "vi": "rơi (mưa)",
+        "audio": null,
+        "note": "nhóm I · ふって",
+        "image": "/icons/vocab/cloud-with-rain.svg"
+      },
+      {
+        "id": "v1420",
+        "jp": "コピーします",
+        "romaji": "kopii shimasu",
+        "vi": "photo, sao chép",
+        "audio": null,
+        "note": "nhóm III · コピーして"
+      },
+      {
+        "id": "v1421",
+        "jp": "でんき",
+        "kanji": "電気",
+        "romaji": "denki",
+        "vi": "điện, đèn điện",
+        "audio": null
+      },
+      {
+        "id": "v1422",
+        "jp": "エアコン",
+        "romaji": "eakon",
+        "vi": "điều hòa",
+        "audio": null
+      },
+      {
+        "id": "v1423",
+        "jp": "パスポート",
+        "romaji": "pasupooto",
+        "vi": "hộ chiếu",
+        "audio": null,
+        "image": "/icons/vocab/identification-card.svg"
+      },
+      {
+        "id": "v1424",
+        "jp": "じゅうしょ",
+        "kanji": "住所",
+        "romaji": "juusho",
+        "vi": "địa chỉ",
+        "audio": null
+      },
+      {
+        "id": "v1425",
+        "jp": "ちず",
+        "kanji": "地図",
+        "romaji": "chizu",
+        "vi": "bản đồ",
+        "audio": null,
+        "image": "/icons/vocab/map-of-japan.svg"
+      },
+      {
+        "id": "v1426",
+        "jp": "しお",
+        "kanji": "塩",
+        "romaji": "shio",
+        "vi": "muối",
+        "audio": null
+      },
+      {
+        "id": "v1427",
+        "jp": "さとう",
+        "kanji": "砂糖",
+        "romaji": "satou",
+        "vi": "đường (ăn)",
+        "audio": null
+      },
+      {
+        "id": "v1428",
+        "jp": "もんだい",
+        "kanji": "問題",
+        "romaji": "mondai",
+        "vi": "câu hỏi (bài tập), vấn đề",
+        "audio": null
+      },
+      {
+        "id": "v1429",
+        "jp": "こたえ",
+        "kanji": "答え",
+        "romaji": "kotae",
+        "vi": "câu trả lời",
+        "audio": null
+      },
+      {
+        "id": "v1430",
+        "jp": "よみかた",
+        "kanji": "読み方",
+        "romaji": "yomikata",
+        "vi": "cách đọc",
+        "audio": null
+      },
+      {
+        "id": "v1431",
+        "jp": "〜かた",
+        "kanji": "〜方",
+        "romaji": "~kata",
+        "vi": "cách … (V bỏ ます + かた)",
+        "audio": null
+      },
+      {
+        "id": "v1432",
+        "jp": "あめ",
+        "kanji": "雨",
+        "romaji": "ame",
+        "vi": "mưa",
+        "audio": null,
+        "image": "/icons/vocab/umbrella.svg"
+      },
+      {
+        "id": "v1433",
+        "jp": "しんごう",
+        "kanji": "信号",
+        "romaji": "shingou",
+        "vi": "đèn giao thông",
+        "audio": null
+      },
+      {
+        "id": "v1434",
+        "jp": "おつり",
+        "romaji": "otsuri",
+        "vi": "tiền thối lại",
+        "audio": null
+      },
+      {
+        "id": "v1435",
+        "jp": "まっすぐ",
+        "romaji": "massugu",
+        "vi": "thẳng",
+        "audio": null
+      },
+      {
+        "id": "v1436",
+        "jp": "ゆっくり",
+        "romaji": "yukkuri",
+        "vi": "chậm, thong thả",
+        "audio": null
+      },
+      {
+        "id": "v1437",
+        "jp": "すぐ",
+        "romaji": "sugu",
+        "vi": "ngay",
+        "audio": null
+      },
+      {
+        "id": "v1438",
+        "jp": "また",
+        "romaji": "mata",
+        "vi": "lại, lần nữa",
+        "audio": null
+      },
+      {
+        "id": "v1439",
+        "jp": "あとで",
+        "romaji": "ato de",
+        "vi": "sau, lát nữa",
+        "audio": null
+      },
+      {
+        "id": "v1440",
+        "jp": "もう すこし",
+        "kanji": "もう 少し",
+        "romaji": "mou sukoshi",
+        "vi": "thêm một chút",
+        "audio": null
+      },
+      {
+        "id": "v1441",
+        "jp": "もう 〜",
+        "romaji": "mou ~",
+        "vi": "thêm … (もう いちど: thêm một lần)",
+        "audio": null
+      },
+      {
+        "id": "v1442",
+        "jp": "さあ",
+        "romaji": "saa",
+        "vi": "nào (thúc giục, mời)",
+        "audio": null
+      },
+      {
+        "id": "v1443",
+        "jp": "あれ？",
+        "romaji": "are?",
+        "vi": "ơ? (ngạc nhiên)",
+        "audio": null
+      },
+      {
+        "id": "v1444",
+        "jp": "すみませんが",
+        "romaji": "sumimasen ga",
+        "vi": "xin lỗi, nhưng … (mở đầu lời nhờ)",
+        "audio": null
+      },
+      {
+        "id": "v1445",
+        "jp": "〜て ください",
+        "romaji": "~te kudasai",
+        "vi": "hãy … (nhờ, đề nghị lịch sự)",
+        "audio": null
+      },
+      {
+        "id": "v1446",
+        "jp": "〜て います",
+        "romaji": "~te imasu",
+        "vi": "đang …",
+        "audio": null
+      },
+      {
+        "id": "v1447",
+        "jp": "〜ましょうか",
+        "romaji": "~mashou ka",
+        "vi": "tôi … giúp nhé? (đề nghị giúp)",
+        "audio": null
+      },
+      {
+        "id": "v1448",
+        "jp": "ミーケービーチ",
+        "romaji": "miikee biichi",
+        "vi": "bãi biển Mỹ Khê (Đà Nẵng)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1401",
+        "pattern": "Nhóm động từ và thể て",
+        "vi": "Ba nhóm động từ; đổi V ます → V て",
+        "explain": "Nhóm I (đuôi ます đứng sau âm cột い: かいます, まちます…): い・ち・り → って; み・び・に → んで; き → いて; ぎ → いで; し → して. Riêng いきます → いって. Nhóm II (đa số đuôi え + ます, và một số động từ như みます, おきます): bỏ ます thêm て. Nhóm III: します → して, きます → きて.",
+        "viMistake": "Thuộc nhóm của từng động từ, nhất là nhóm II đuôi い như みます, おきます, かります; ghi chú ở mỗi thẻ từ có sẵn nhóm và thể て.",
+        "examples": [
+          {
+            "jp": "ちょっと {待|ま}って ください。",
+            "vi": "Đợi một chút.",
+            "audio": null
+          },
+          {
+            "jp": "ここに {名前|なまえ}を {書|か}いて ください。",
+            "vi": "Hãy viết tên vào đây.",
+            "audio": null
+          },
+          {
+            "jp": "ゆっくり {話|はな}して ください。",
+            "vi": "Hãy nói chậm thôi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1402",
+        "pattern": "V て ください",
+        "vi": "Hãy V (nhờ, đề nghị lịch sự)",
+        "explain": "Nhờ hoặc đề nghị người khác làm gì: V て ください. Mở đầu bằng すみませんが để lịch sự hơn. Với người trên, khách hàng, đây vẫn là cách nhờ nhẹ nhàng.",
+        "viMistake": "Không dùng V ます ください; luôn đổi sang thể て: {待|ま}って ください.",
+        "examples": [
+          {
+            "jp": "すみませんが、まどを {開|あ}けて ください。",
+            "vi": "Xin lỗi, làm ơn mở cửa sổ giúp tôi.",
+            "audio": null
+          },
+          {
+            "jp": "パスポートを {見|み}せて ください。",
+            "vi": "Xin cho xem hộ chiếu.",
+            "audio": null
+          },
+          {
+            "jp": "もう {一度|いちど} {言|い}って ください。",
+            "vi": "Xin nói lại một lần nữa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1403",
+        "pattern": "V て います",
+        "vi": "Đang V",
+        "explain": "Diễn tả việc đang diễn ra ngay lúc nói: V て います. Hỏi: いま {何|なに}を して いますか. Trời đang mưa: {雨|あめ}が {降|ふ}って います.",
+        "viMistake": "Phủ định: V て いません (không đang làm).",
+        "examples": [
+          {
+            "jp": "いま {何|なに}を して いますか。…テレビを {見|み}て います。",
+            "vi": "Bây giờ bạn đang làm gì? … Tôi đang xem tivi.",
+            "audio": null
+          },
+          {
+            "jp": "{外|そと}は {雨|あめ}が {降|ふ}って います。",
+            "vi": "Bên ngoài trời đang mưa.",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは {先生|せんせい}と {話|はな}して います。",
+            "vi": "Nam đang nói chuyện với thầy giáo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1404",
+        "pattern": "V ましょうか",
+        "vi": "Tôi V giúp nhé? (đề nghị giúp)",
+        "explain": "Đề nghị làm giúp người khác: V ましょうか. Nhận lời: ええ、おねがいします. Từ chối lịch sự: いいえ、けっこうです.",
+        "viMistake": "V ましょう (bài 6) là rủ cùng làm; V ましょうか ở đây là xin làm giúp.",
+        "examples": [
+          {
+            "jp": "{荷物|にもつ}を {持|も}ちましょうか。…ええ、おねがいします。",
+            "vi": "Tôi xách đồ giúp nhé? … Vâng, nhờ bạn.",
+            "audio": null
+          },
+          {
+            "jp": "エアコンを つけましょうか。…いいえ、けっこうです。",
+            "vi": "Tôi bật điều hòa nhé? … Không, không cần đâu.",
+            "audio": null
+          },
+          {
+            "jp": "タクシーを {呼|よ}びましょうか。",
+            "vi": "Tôi gọi taxi giúp nhé?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1405",
+        "pattern": "Chỉ đường: まっすぐ 行って ください",
+        "vi": "Đi thẳng / rẽ / dừng",
+        "explain": "Chỉ đường cho tài xế hoặc người đi cùng bằng V て ください: まっすぐ {行|い}って ください, {右|みぎ}へ {曲|ま}がって ください, ここで {止|と}めて ください. Chỗ rẽ đánh dấu bằng を: しんごうを {右|みぎ}へ {曲|ま}がって ください.",
+        "examples": [
+          {
+            "jp": "まっすぐ {行|い}って ください。",
+            "vi": "Hãy đi thẳng.",
+            "audio": null
+          },
+          {
+            "jp": "つぎの しんごうを {左|ひだり}へ {曲|ま}がって ください。",
+            "vi": "Đến đèn giao thông tiếp theo thì rẽ trái.",
+            "audio": null
+          },
+          {
+            "jp": "ここで {止|と}めて ください。",
+            "vi": "Dừng ở đây.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1401",
+        "teacherNotes": "Khởi động: nhờ học viên làm vài việc bằng tiếng Việt (mở cửa, bật đèn) rồi giới thiệu: tiếng Nhật nhờ vả bằng thể て. Bài đi theo trình tự bài 14 Minna no Nihongo Sơ cấp I.",
+        "type": "title",
+        "jp": "{第|だい}14{課|か}",
+        "vi": "Nhờ vả và việc đang làm: thể て"
+      },
+      {
+        "id": "s1402",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Biết động từ thuộc nhóm I, II hay III và đổi sang thể て\n2. Nhờ vả lịch sự: V て ください\n3. Nói việc đang làm: V て います\n4. Đề nghị giúp: V ましょうか; chỉ đường cho tài xế"
+      },
+      {
+        "id": "s1403",
+        "teacherNotes": "Mỗi động từ có ghi chú nhóm và thể て. Diễn động tác: bật/tắt đèn, mở/đóng cửa.",
+        "type": "vocab",
+        "refs": ["v1401", "v1402", "v1403", "v1404", "v1405", "v1406", "v1407", "v1408"]
+      },
+      {
+        "id": "s1404",
+        "teacherNotes": "Cặp trái nghĩa: すわります／たちます, はいります／でます.",
+        "type": "vocab",
+        "refs": ["v1409", "v1410", "v1411", "v1412", "v1413", "v1414", "v1415", "v1416"]
+      },
+      {
+        "id": "s1405",
+        "teacherNotes": "Nhóm III chỉ có します và きます (cùng các động từ 〜します như コピーします).",
+        "type": "vocab",
+        "refs": ["v1417", "v1418", "v1419", "v1420", "v1421", "v1422", "v1423", "v1424"]
+      },
+      {
+        "id": "s1406",
+        "teacherNotes": "〜かた: V bỏ ます + かた = cách làm: よみかた, かきかた, つかいかた.",
+        "type": "vocab",
+        "refs": ["v1425", "v1426", "v1427", "v1428", "v1429", "v1430", "v1431", "v1432"]
+      },
+      {
+        "id": "s1407",
+        "teacherNotes": "Chỉ đường: まっすぐ, みぎ, ひだり, しんごう.",
+        "type": "vocab",
+        "refs": ["v1433", "v1434", "v1435", "v1436", "v1437", "v1438", "v1439", "v1440"]
+      },
+      {
+        "id": "s1408",
+        "teacherNotes": "すみませんが mở đầu lời nhờ; さあ khi mời bắt đầu.",
+        "type": "vocab",
+        "refs": ["v1441", "v1442", "v1443", "v1444", "v1445", "v1446", "v1447", "v1448"]
+      },
+      {
+        "id": "s1409",
+        "teacherNotes": "Đọc từng hàng: đuôi ます → thể て. Học thuộc câu vần: い・ち・り って, み・び・に んで.",
+        "type": "table",
+        "title": "Nhóm I: đổi đuôi sang て",
+        "columns": ["Đuôi ます", "Ví dụ", "Thể て"],
+        "rows": [
+          ["い・ち・り → って", "かいます・まちます・とります", "かって・まって・とって"],
+          ["み・び・に → んで", "よみます・よびます", "よんで・よんで"],
+          ["き → いて", "かきます", "かいて"],
+          ["ぎ → いで", "いそぎます", "いそいで"],
+          ["し → して", "はなします", "はなして"],
+          ["Ngoại lệ", "いきます", "いって"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1410",
+        "teacherNotes": "Nhóm II: bỏ ます thêm て. Chú ý みます, おきます là nhóm II dù đuôi là い.",
+        "type": "table",
+        "title": "Nhóm II và III",
+        "columns": ["Động từ", "Nhóm", "Thể て"],
+        "rows": [
+          ["たべます", "II", "たべて"],
+          ["みます", "II", "みて"],
+          ["おきます", "II", "おきて"],
+          ["ねます", "II", "ねて"],
+          ["します", "III", "して"],
+          ["きます", "III", "きて"],
+          ["べんきょうします", "III", "べんきょうして"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1411",
+        "teacherNotes": "Viết ba cột nhóm I, II, III lên bảng; học viên xếp các động từ đã học vào đúng cột.",
+        "type": "grammar",
+        "ref": "g1401"
+      },
+      {
+        "id": "s1412",
+        "type": "example",
+        "ref": "g1401",
+        "reveal": true
+      },
+      {
+        "id": "s1413",
+        "teacherNotes": "Gọi từng học viên đổi nhanh, rồi bấm mũi tên để kiểm tra.",
+        "type": "table",
+        "title": "Luyện tập 1: đổi sang thể て",
+        "columns": ["Thể ます", "Thể て"],
+        "rows": [
+          ["{待|ま}ちます", "{待|ま}って"],
+          ["{読|よ}みます", "{読|よ}んで"],
+          ["{書|か}きます", "{書|か}いて"],
+          ["{急|いそ}ぎます", "{急|いそ}いで"],
+          ["{消|け}します", "{消|け}して"],
+          ["{行|い}きます", "{行|い}って"],
+          ["{見|み}せます", "{見|み}せて"],
+          ["{来|き}ます", "{来|き}て"],
+          ["コピーします", "コピーして"],
+          ["{座|すわ}ります", "{座|すわ}って"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1414",
+        "type": "quiz",
+        "ref": "q1401"
+      },
+      {
+        "id": "s1415",
+        "type": "quiz",
+        "ref": "q1408"
+      },
+      {
+        "id": "s1416",
+        "teacherNotes": "Học viên nhờ nhau làm việc trong lớp: まどを あけて ください, でんきを けして ください.",
+        "type": "grammar",
+        "ref": "g1402"
+      },
+      {
+        "id": "s1417",
+        "type": "example",
+        "ref": "g1402",
+        "reveal": true
+      },
+      {
+        "id": "s1418",
+        "teacherNotes": "Học viên nói lời nhờ trước, rồi bấm mũi tên để xem câu mẫu.",
+        "type": "table",
+        "title": "Luyện tập 2: nhờ vả",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["まど・{開|あ}けます", "すみませんが、まどを {開|あ}けて ください。"],
+          ["{電気|でんき}・{消|け}します", "{電気|でんき}を {消|け}して ください。"],
+          ["ゆっくり・{話|はな}します", "ゆっくり {話|はな}して ください。"],
+          ["{塩|しお}・{取|と}ります", "すみませんが、{塩|しお}を {取|と}って ください。"],
+          ["{住所|じゅうしょ}・{書|か}きます", "ここに {住所|じゅうしょ}を {書|か}いて ください。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1419",
+        "type": "quiz",
+        "ref": "q1415"
+      },
+      {
+        "id": "s1420",
+        "teacherNotes": "Làm động tác (đọc sách, viết, ngồi) và hỏi: いま なにを して いますか.",
+        "type": "grammar",
+        "ref": "g1403"
+      },
+      {
+        "id": "s1421",
+        "type": "example",
+        "ref": "g1403",
+        "reveal": true
+      },
+      {
+        "id": "s1422",
+        "teacherNotes": "Chiếu tranh hoặc diễn động tác; học viên nói người đó đang làm gì.",
+        "type": "table",
+        "title": "Luyện tập 3: đang làm gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ナムさん・{本|ほん}・{読|よ}みます", "ナムさんは {本|ほん}を {読|よ}んで います。"],
+          ["アンさん・{電話|でんわ}・かけます", "アンさんは {電話|でんわ}を かけて います。"],
+          ["{外|そと}・{雨|あめ}・{降|ふ}ります", "{外|そと}は {雨|あめ}が {降|ふ}って います。"],
+          ["{先生|せんせい}・コピーします", "{先生|せんせい}は コピーして います。"],
+          ["リンさん・{待|ま}ちます", "リンさんは {駅|えき}で {待|ま}って います。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1423",
+        "type": "quiz",
+        "ref": "q1418"
+      },
+      {
+        "id": "s1424",
+        "teacherNotes": "Mang túi nặng vào lớp; học viên đề nghị giúp: もちましょうか.",
+        "type": "grammar",
+        "ref": "g1404"
+      },
+      {
+        "id": "s1425",
+        "type": "example",
+        "ref": "g1404",
+        "reveal": true
+      },
+      {
+        "id": "s1426",
+        "type": "quiz",
+        "ref": "q1420"
+      },
+      {
+        "id": "s1427",
+        "teacherNotes": "Vẽ bản đồ đơn giản lên bảng; học viên chỉ đường cho \"tài xế\" bằng 〜て ください.",
+        "type": "grammar",
+        "ref": "g1405"
+      },
+      {
+        "id": "s1428",
+        "type": "example",
+        "ref": "g1405",
+        "reveal": true
+      },
+      {
+        "id": "s1429",
+        "teacherNotes": "Đổi việc nhờ: bật điều hòa, đóng cửa, photo tài liệu.",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Trong lớp học",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "さあ、{始|はじ}めましょう。ナムさん、まどを {閉|し}めて ください。",
+            "vi": "Nào, bắt đầu thôi. Nam, đóng cửa sổ giúp thầy."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい。エアコンも つけましょうか。",
+            "vi": "Vâng. Em bật cả điều hòa nhé?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ええ、おねがいします。",
+            "vi": "Ừ, nhờ em."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{先生|せんせい}、もう すこし ゆっくり {話|はな}して ください。",
+            "vi": "Thầy ơi, thầy nói chậm hơn một chút được không ạ."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "わかりました。もう {一度|いちど} {言|い}いますね。",
+            "vi": "Được. Thầy nói lại một lần nữa nhé."
+          }
+        ]
+      },
+      {
+        "id": "s1430",
+        "teacherNotes": "Học viên gọi điện cho nhau và hỏi đang làm gì.",
+        "type": "dialogue",
+        "title": "Hội thoại 2: Bạn đang làm gì?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "もしもし、リンさん。いま {何|なに}を して いますか。",
+            "vi": "Alô, Linh à. Bây giờ bạn đang làm gì?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{図書館|としょかん}で {勉強|べんきょう}して います。",
+            "vi": "Mình đang học ở thư viện."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。{外|そと}は {雨|あめ}が {降|ふ}って いますよ。",
+            "vi": "Vậy à. Bên ngoài trời đang mưa đấy."
+          },
+          {
+            "speaker": "リン",
+            "jp": "えっ、かさを {持|も}って いません。",
+            "vi": "Hả, mình không mang ô."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、あとで {迎|むか}えに {行|い}きましょうか。",
+            "vi": "Vậy lát nữa mình đến đón nhé?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "ありがとう。おねがいします。",
+            "vi": "Cảm ơn. Nhờ bạn nhé."
+          }
+        ]
+      },
+      {
+        "id": "s1431",
+        "teacherNotes": "Đổi điểm đến và đường đi theo bản đồ thành phố của học viên.",
+        "type": "dialogue",
+        "title": "Hội thoại 3: Trên taxi ở Đà Nẵng",
+        "lines": [
+          {
+            "speaker": "{運転手|うんてんしゅ}",
+            "jp": "どちらまでですか。",
+            "vi": "Anh chị đi đâu ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ミーケービーチまで おねがいします。",
+            "vi": "Cho tôi đến bãi biển Mỹ Khê."
+          },
+          {
+            "speaker": "{運転手|うんてんしゅ}",
+            "jp": "はい。",
+            "vi": "Vâng."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "あの しんごうを {右|みぎ}へ {曲|ま}がって ください。それから、まっすぐ {行|い}って ください。",
+            "vi": "Đến đèn giao thông kia thì rẽ phải. Sau đó đi thẳng."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "あ、ここで {止|と}めて ください。",
+            "vi": "À, dừng ở đây."
+          },
+          {
+            "speaker": "{運転手|うんてんしゅ}",
+            "jp": "はい、おつりです。",
+            "vi": "Vâng, tiền thối của anh đây."
+          }
+        ]
+      },
+      {
+        "id": "s1432",
+        "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật.",
+        "type": "table",
+        "title": "Luyện tập 4: hỏi và trả lời",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          [
+            "いま {何|なに}を して いますか。",
+            "{日本語|にほんご}を {勉強|べんきょう}して います。"
+          ],
+          ["この {漢字|かんじ}の {読|よ}み{方|かた}を {教|おし}えて ください。", "「やま」です。"],
+          ["{荷物|にもつ}を {持|も}ちましょうか。", "ええ、おねがいします。"],
+          ["エアコンを つけましょうか。", "いいえ、けっこうです。"],
+          ["{外|そと}は {雨|あめ}が {降|ふ}って いますか。", "いいえ、{降|ふ}って いません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1433",
+        "type": "quiz",
+        "ref": "q1425"
+      },
+      {
+        "id": "s1434",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "• Nhóm I: い・ち・り → って; み・び・に → んで; き → いて; ぎ → いで; し → して; いきます → いって\n• Nhóm II: bỏ ます + て (みて, おきて, たべて)\n• Nhóm III: して, きて\n• V て ください: nhờ lịch sự; すみませんが mở đầu\n• V て います: đang làm; phủ định V て いません\n• V ましょうか: xin làm giúp → ええ、おねがいします／いいえ、けっこうです"
+      },
+      {
+        "id": "s1435",
+        "type": "note",
+        "title": "Luyện thêm sau buổi học",
+        "body": "1. Làm bài luyện tập giáo viên giao trên Reng và ôn thẻ từ vựng của bài (ghi chú mỗi thẻ có nhóm và thể て).\n2. Viết thể て của 20 động từ đã học từ bài 4 đến bài 14.\n3. Viết 3 câu nhờ vả bạn bè bằng 〜て ください và 2 câu kể việc bạn đang làm bằng 〜て います."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1401",
+        "prompt": "Thể て của まちます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ち → って: まって.",
+        "type": "choice",
+        "options": ["まちて", "まって", "まんで", "まいて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1402",
+        "prompt": "Thể て của よびます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "び → んで: よんで.",
+        "type": "choice",
+        "options": ["よんで", "よびて", "よって", "よいて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1403",
+        "prompt": "Thể て của かきます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "き → いて: かいて.",
+        "type": "choice",
+        "options": ["かきて", "かって", "かんで", "かいて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1404",
+        "prompt": "Thể て của いそぎます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ぎ → いで: いそいで.",
+        "type": "choice",
+        "options": ["いそぎて", "いそいて", "いそいで", "いそって"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1405",
+        "prompt": "Thể て của はなします là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "し → して: はなして.",
+        "type": "choice",
+        "options": ["はなって", "はなして", "はなしいて", "はなんで"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1406",
+        "prompt": "Thể て của いきます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Ngoại lệ: いきます → いって.",
+        "type": "choice",
+        "options": ["いって", "いきて", "いいて", "いんで"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1407",
+        "prompt": "Thể て của たべます (nhóm II) là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhóm II: bỏ ます thêm て.",
+        "type": "choice",
+        "options": ["たべって", "たんで", "たべいて", "たべて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1408",
+        "prompt": "Thể て của みます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "みます là nhóm II: みて.",
+        "type": "choice",
+        "options": ["みって", "みんで", "みて", "みいて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1409",
+        "prompt": "Thể て của おきます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "おきます là nhóm II: おきて.",
+        "type": "choice",
+        "options": ["おいて", "おきて", "おきって", "おって"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1410",
+        "prompt": "Thể て của きます (đến) là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhóm III: きます → きて.",
+        "type": "choice",
+        "options": ["きて", "きって", "いて", "こて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1411",
+        "prompt": "Thể て của べんきょうします là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhóm III: します → して.",
+        "type": "choice",
+        "options": ["べんきょうしって", "べんきょうすて", "べんきょうしいて", "べんきょうして"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1412",
+        "prompt": "Thể て của のみます là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "み → んで: のんで.",
+        "type": "choice",
+        "options": ["のみて", "のって", "のんで", "のいて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1413",
+        "prompt": "Thể て của かいます (mua) là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "い → って: かって.",
+        "type": "choice",
+        "options": ["かいて", "かって", "かんで", "かいって"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1414",
+        "prompt": "Động từ nào thuộc nhóm II?",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "たべます (đuôi え + ます) là nhóm II.",
+        "type": "choice",
+        "options": ["たべます", "のみます", "かきます", "いそぎます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1415",
+        "prompt": "Nhờ: Xin đợi một chút.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "まちます → まって ください.",
+        "type": "choice",
+        "options": [
+          "ちょっと まちて ください。",
+          "ちょっと まちます ください。",
+          "ちょっと まって います。",
+          "ちょっと まって ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1416",
+        "prompt": "Nhờ lịch sự: Xin lỗi, làm ơn mở cửa sổ.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "あけます (nhóm II) → あけて ください.",
+        "type": "choice",
+        "options": [
+          "すみませんが、まどを あけます ください。",
+          "すみませんが、まどを あけって ください。",
+          "すみませんが、まどを あけて ください。",
+          "すみませんが、まどで あけて ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1417",
+        "prompt": "Xin nói chậm lại:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ゆっくり: chậm; はなして ください.",
+        "type": "choice",
+        "options": [
+          "ゆっくり はなって ください。",
+          "ゆっくり はなして ください。",
+          "すぐ はなして ください。",
+          "ゆっくり はなします ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1418",
+        "prompt": "いま なにを して いますか。…（　　）。",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Đang làm: V て います.",
+        "type": "choice",
+        "options": [
+          "テレビを みて います",
+          "テレビを みます",
+          "テレビを みて ください",
+          "テレビを みましょう"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1419",
+        "prompt": "Bên ngoài trời đang mưa:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "あめが ふって います.",
+        "type": "choice",
+        "options": [
+          "そとは あめが ふります。",
+          "そとは あめを ふって います。",
+          "そとは あめが ふりて います。",
+          "そとは あめが ふって います。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1420",
+        "prompt": "Đề nghị giúp: Tôi xách đồ giúp nhé?",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Xin làm giúp: V ましょうか.",
+        "type": "choice",
+        "options": [
+          "にもつを もちましょう。",
+          "にもつを もって ください。",
+          "にもつを もちましょうか。",
+          "にもつを もって います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1421",
+        "prompt": "タクシーを よびましょうか。…（　　）。(nhận lời)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhận lời: ええ、おねがいします.",
+        "type": "choice",
+        "options": [
+          "いいえ、よびません",
+          "ええ、おねがいします",
+          "はい、よんで います",
+          "ええ、よびましょうか"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1422",
+        "prompt": "エアコンを つけましょうか。…（　　）。(từ chối lịch sự)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Từ chối lịch sự: いいえ、けっこうです.",
+        "type": "choice",
+        "options": [
+          "いいえ、けっこうです",
+          "いいえ、つけません",
+          "ええ、つけましょう",
+          "はい、つけて います"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1423",
+        "prompt": "Nói với tài xế: Hãy đi thẳng.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "いきます → いって ください.",
+        "type": "choice",
+        "options": [
+          "まっすぐ いきて ください。",
+          "まっすぐ いって います。",
+          "まっすぐ いきましょうか。",
+          "まっすぐ いって ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1424",
+        "prompt": "Nói với tài xế: Dừng ở đây.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Dừng ở đây: ここで とめて ください.",
+        "type": "choice",
+        "options": [
+          "ここに とめて ください。",
+          "ここで とまって います。",
+          "ここで とめて ください。",
+          "ここを とめて ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1425",
+        "prompt": "つぎの しんごう（　　） みぎへ まがって ください。",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Chỗ rẽ: を.",
+        "type": "choice",
+        "options": ["で", "を", "に", "が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1426",
+        "prompt": "Phủ định của べんきょうして います (đang học):",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Phủ định: V て いません.",
+        "type": "choice",
+        "options": [
+          "べんきょうして いません",
+          "べんきょうしません います",
+          "べんきょうして ありません",
+          "べんきょうして いませんでした"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1427",
+        "prompt": "つけます ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Bật (つけます) ↔ tắt (けします).",
+        "type": "choice",
+        "options": ["しめます", "あけます", "とめます", "けします"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1428",
+        "prompt": "あけます ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Mở cửa (あけます) ↔ đóng (しめます).",
+        "type": "choice",
+        "options": ["けします", "でます", "しめます", "とります"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1429",
+        "prompt": "はいります ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Vào (はいります) ↔ ra (でます).",
+        "type": "choice",
+        "options": ["たちます", "でます", "まちます", "すわります"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1430",
+        "prompt": "すわります ↔ （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Ngồi (すわります) ↔ đứng (たちます).",
+        "type": "choice",
+        "options": ["たちます", "でます", "まがります", "いそぎます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1431",
+        "prompt": "よみかた nghĩa là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "よみかた (読み方): cách đọc.",
+        "type": "choice",
+        "options": ["cách viết", "câu trả lời", "câu hỏi", "cách đọc"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1432",
+        "prompt": "Hỏi cách đọc chữ này:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Xin chỉ cách đọc: よみかたを おしえて ください.",
+        "type": "choice",
+        "options": [
+          "この かんじの よみかたを おしえます ください。",
+          "この かんじを よみかたで おしえて ください。",
+          "この かんじの よみかたを おしえて ください。",
+          "この かんじの よみかたは おしえて います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1433",
+        "prompt": "おつり là:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "おつり: tiền thối lại.",
+        "type": "choice",
+        "options": ["tiền lẻ", "tiền thối lại", "vé xe", "địa chỉ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1434",
+        "prompt": "Bạn ngạc nhiên vì không thấy chìa khóa, bạn buột miệng:",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Ngạc nhiên: あれ？",
+        "type": "choice",
+        "options": ["あれ？", "さあ。", "どうぞ。", "すぐ。"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1435",
+        "prompt": "Chọn câu đúng: Nam đang nói chuyện với thầy giáo.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Người cùng nói chuyện + と; はなして います.",
+        "type": "choice",
+        "options": [
+          "ナムさんは せんせいを はなして います。",
+          "ナムさんは せんせいと はなって います。",
+          "ナムさんは せんせいと はなします います。",
+          "ナムさんは せんせいと はなして います。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1436",
+        "prompt": "Chọn câu đúng: Xin cho xem hộ chiếu.",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Cho xem: みせます → みせて ください.",
+        "type": "choice",
+        "options": [
+          "パスポートを みて ください。",
+          "パスポートを みせって ください。",
+          "パスポートを みせて ください。",
+          "パスポートに みせて ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1437",
+        "prompt": "Điền thể て: まちます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ち → って.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まって"]
+      },
+      {
+        "id": "q1438",
+        "prompt": "Điền thể て: よみます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "み → んで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よんで"]
+      },
+      {
+        "id": "q1439",
+        "prompt": "Điền thể て: かきます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "き → いて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かいて"]
+      },
+      {
+        "id": "q1440",
+        "prompt": "Điền thể て: いそぎます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ぎ → いで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いそいで"]
+      },
+      {
+        "id": "q1441",
+        "prompt": "Điền thể て: けします → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "し → して.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["けして"]
+      },
+      {
+        "id": "q1442",
+        "prompt": "Điền thể て: いきます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Ngoại lệ: いって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いって"]
+      },
+      {
+        "id": "q1443",
+        "prompt": "Điền thể て: たべます → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhóm II: たべて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たべて"]
+      },
+      {
+        "id": "q1444",
+        "prompt": "Điền thể て: します → （　　）",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Nhóm III: して.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["して"]
+      },
+      {
+        "id": "q1445",
+        "prompt": "Điền: ちょっと （　　） ください。(đợi)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "まちます → まって ください.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まって"]
+      },
+      {
+        "id": "q1446",
+        "prompt": "Điền: いま テレビを み（　　）。(đang xem)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Đang làm: V て います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ています"]
+      },
+      {
+        "id": "q1447",
+        "prompt": "Điền: にもつを もち（　　）。(tôi xách giúp nhé?)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Đề nghị giúp: V ましょうか.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ましょうか"]
+      },
+      {
+        "id": "q1448",
+        "prompt": "Điền: （　　） いって ください。(đi thẳng)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Thẳng: まっすぐ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まっすぐ"]
+      },
+      {
+        "id": "q1449",
+        "prompt": "Điền: もう すこし （　　） はなして ください。(chậm)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "Chậm: ゆっくり.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ゆっくり"]
+      },
+      {
+        "id": "q1450",
+        "prompt": "Điền: そとは あめが （　　） います。(đang rơi)",
+        "points": 1,
+        "tags": ["minna-14"],
+        "explain": "ふります → ふって います.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ふって"]
+      }
+    ]
+  }
+}
