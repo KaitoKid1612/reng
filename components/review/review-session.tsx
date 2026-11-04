@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { AnswerFeedback } from "@/components/classroom/answer-feedback";
 import { QuestionField } from "@/components/classroom/question-field";
@@ -27,12 +27,13 @@ interface MistakeOutcome {
   isCorrect: boolean;
   correctText: string;
   explain: string;
+  transcript: string | null;
   correctStreak: number;
   isResolved: boolean;
 }
 
 function parseMistakeOutcome(data: Record<string, unknown>): MistakeOutcome | null {
-  const { isCorrect, correctText, explain, correctStreak, isResolved } = data;
+  const { isCorrect, correctText, explain, transcript, correctStreak, isResolved } = data;
   if (
     typeof isCorrect !== "boolean" ||
     typeof correctText !== "string" ||
@@ -42,7 +43,14 @@ function parseMistakeOutcome(data: Record<string, unknown>): MistakeOutcome | nu
   ) {
     return null;
   }
-  return { isCorrect, correctText, explain, correctStreak, isResolved };
+  return {
+    isCorrect,
+    correctText,
+    explain,
+    transcript: typeof transcript === "string" ? transcript : null,
+    correctStreak,
+    isResolved,
+  };
 }
 
 export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionProps) {
@@ -58,10 +66,36 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   const [reviewedCount, setReviewedCount] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const requestIdRef = useRef<string | null>(null);
+  // Enter finishes a pending romaji "n" right before answering, so the answer sent is read from
+  // here rather than from state that has not re-rendered yet.
+  const answerRef = useRef<RawAnswer | undefined>(undefined);
+  const sectionRef = useRef<HTMLElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
+  const hasMovedRef = useRef(false);
   const card = cards[index];
+
+  // The buttons a learner presses give way to the next step, so focus follows: to Thẻ tiếp theo
+  // once an answer is graded, and to the new card after moving on.
+  useEffect(() => {
+    if (outcome) {
+      nextButtonRef.current?.focus();
+    }
+  }, [outcome]);
+  useEffect(() => {
+    if (hasMovedRef.current) {
+      sectionRef.current?.focus({ preventScroll: true });
+    }
+  }, [index]);
+
+  function handleAnswerChange(value: RawAnswer) {
+    answerRef.current = value;
+    setAnswer(value);
+  }
 
   function handleNext() {
     requestIdRef.current = null;
+    hasMovedRef.current = true;
+    answerRef.current = undefined;
     setIndex((value) => value + 1);
     setIsFlipped(false);
     setAnswer(undefined);
@@ -105,7 +139,8 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   }
 
   async function handleAnswer() {
-    if (card?.kind !== "mistake") {
+    const current = answerRef.current;
+    if (card?.kind !== "mistake" || isSending || isBlankAnswer(current)) {
       return;
     }
     setIsAnswerSent(true);
@@ -113,7 +148,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
       kind: "mistake",
       assignmentId: card.assignmentId,
       questionId: card.view.id,
-      answer,
+      answer: current,
       revision: card.revision,
     });
     const parsed = data ? parseMistakeOutcome(data) : null;
@@ -149,7 +184,12 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   }
 
   return (
-    <section aria-labelledby="review-card-title">
+    <section
+      ref={sectionRef}
+      className="review-card"
+      aria-labelledby="review-card-title"
+      tabIndex={-1}
+    >
       <p id="review-card-title" className="question-meta">
         <span>
           Thẻ {index + 1} / {cards.length}
@@ -172,14 +212,16 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
           )}
         </>
       ) : (
-        <div className="question-card">
+        // A key per card starts each one fresh: listen count, audio and pieces never carry over.
+        <div key={`${card.assignmentId}:${card.view.id}`} className="question-card">
           <QuestionField
             view={card.view}
             position={index + 1}
             total={cards.length}
             value={answer}
             isLocked={outcome !== null || isSending || isAnswerSent}
-            onAnswerChange={setAnswer}
+            onAnswerChange={handleAnswerChange}
+            onEnter={() => void handleAnswer()}
           />
           {outcome ? (
             <>
@@ -187,14 +229,18 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
                 isCorrect={outcome.isCorrect}
                 correctText={outcome.correctText}
                 explain={outcome.explain}
+                transcript={outcome.transcript}
                 lang={answerLang(card.view)}
+                transcriptLang={card.view.lang}
               />
               <p className="small muted">
                 {outcome.isResolved
                   ? "Đã đúng 3 lần liên tiếp: câu này được đánh dấu đã giải quyết."
                   : `Chuỗi đúng: ${outcome.correctStreak}/3.`}
               </p>
-              <Button onClick={handleNext}>Thẻ tiếp theo</Button>
+              <Button ref={nextButtonRef} onClick={handleNext}>
+                Thẻ tiếp theo
+              </Button>
             </>
           ) : (
             <Button disabled={isSending || isBlankAnswer(answer)} onClick={handleAnswer}>

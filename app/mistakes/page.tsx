@@ -116,6 +116,11 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
                 <p>
                   Đáp án: <strong lang={answerLang(entry.view)}>{entry.correctText}</strong>
                 </p>
+                {entry.transcript && (
+                  <p className="transcript">
+                    Lời nghe: <span lang={entry.view.lang}>{entry.transcript}</span>
+                  </p>
+                )}
                 <p className="muted">{entry.explain}</p>
               </article>
             ))}

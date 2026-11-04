@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-import type { ButtonHTMLAttributes } from "react";
+import type { ComponentPropsWithRef } from "react";
 
 export const buttonVariants = cva("button", {
   variants: {
@@ -14,8 +14,9 @@ export const buttonVariants = cva("button", {
   },
   defaultVariants: { variant: "default" },
 });
+// React 19 passes ref as a prop, so a caller can move focus to a button.
 interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
+  extends ComponentPropsWithRef<"button">, VariantProps<typeof buttonVariants> {}
 
 export function Button({ className, variant, type = "button", ...props }: ButtonProps) {
   return <button type={type} className={cn(buttonVariants({ variant }), className)} {...props} />;

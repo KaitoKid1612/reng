@@ -6,7 +6,8 @@ import {
   describeCorrectAnswer,
   describeRawAnswer,
   hasFeedbackTimeArrived,
-  parseAssignableQuestion,
+  isListeningQuestion,
+  parseSnapshotQuestion,
   toQuestionView,
   toStoredRawAnswer,
 } from "@/lib/assignment";
@@ -127,7 +128,7 @@ interface MistakeSource {
   title: string;
   isVisible: boolean;
   feedbackAt: string | null;
-  questions: ReturnType<typeof parseAssignableQuestion>[];
+  questions: ReturnType<typeof parseSnapshotQuestion>[];
 }
 
 // Mistakes from tests stay hidden until the assignment's feedback time.
@@ -155,7 +156,7 @@ async function loadMistakeSources(assignmentIds: readonly string[], now: Date) {
         title: assignment.title,
         isVisible,
         feedbackAt: assignment.feedbackPolicy === "after_due" ? assignment.dueAt : null,
-        questions: rows.map((row) => parseAssignableQuestion(row.question_snapshot)),
+        questions: rows.map((row) => parseSnapshotQuestion(row.question_snapshot)),
       });
     }),
   );
@@ -379,7 +380,12 @@ export async function recordMistakeReview(userId: string, input: MistakeReviewIn
   if (!question) {
     throw new ServiceError("not_found");
   }
-  const feedback = { correctText: describeCorrectAnswer(question), explain: question.explain };
+  // A listening question shows what was said once answered, as on the attempt and results pages.
+  const feedback = {
+    correctText: describeCorrectAnswer(question),
+    explain: question.explain,
+    transcript: isListeningQuestion(question) ? question.transcript : null,
+  };
   // The learner may change the answer after a lost response; the stored result is the one that
   // counted, so a retry reports it instead of grading the new answer.
   const recorded = await findRecordedReview(userId, input.requestId);
@@ -429,6 +435,8 @@ export interface MistakeEntry {
   view: QuestionView;
   correctText: string;
   explain: string;
+  // What a listening question says, so the mistake still makes sense without its audio.
+  transcript: string | null;
   lastAnswerText: string;
   correctStreak: number;
   resolvedAt: string | null;
@@ -526,6 +534,7 @@ export async function listMistakes(userId: string, now: Date): Promise<MistakeBo
       view: toQuestionView(question),
       correctText: describeCorrectAnswer(question),
       explain: question.explain,
+      transcript: isListeningQuestion(question) ? question.transcript : null,
       lastAnswerText: describeRawAnswer(question, toStoredRawAnswer(lastWrong?.raw)),
       correctStreak: card.correct_streak,
       resolvedAt: card.resolved_at,
