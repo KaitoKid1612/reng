@@ -18,7 +18,13 @@ import {
   SCHEDULER_VERSION,
   updateMistakeProgress,
 } from "../lib/srs";
-import { countStudyStreak, isStreakSettled, toStudyDay } from "../lib/study-days";
+import {
+  countStudyStreak,
+  formatStudyDateTime,
+  formatStudyDay,
+  isStreakSettled,
+  toStudyDay,
+} from "../lib/study-days";
 
 test("FSRS state round-trips with a locked scheduler version", () => {
   const now = new Date("2026-10-28T01:00:00Z");
@@ -59,6 +65,13 @@ test("study streaks use Vietnam calendar days", () => {
   assert.equal(countStudyStreak(["2026-10-27T02:00:00Z", "2026-10-26T02:00:00Z"], now), 2);
   assert.equal(countStudyStreak(["2026-10-28T00:10:00Z", "2026-10-27T02:00:00Z"], now), 2);
   assert.equal(countStudyStreak(["2026-10-25T02:00:00Z"], now), 0);
+});
+
+test("dates read the same everywhere: time then full Vietnam date", () => {
+  assert.equal(formatStudyDay("2026-11-04"), "04/11/2026");
+  assert.equal(formatStudyDateTime("2026-11-04T16:59:00Z"), "23:59 04/11/2026");
+  // After 17:00 UTC it is already the next day in Vietnam.
+  assert.equal(formatStudyDateTime(new Date("2026-11-04T17:05:00Z")), "00:05 05/11/2026");
 });
 
 test("a streak is settled only once its first missing day lies inside the loaded activity", () => {

@@ -64,6 +64,19 @@ Không dùng màu làm tín hiệu duy nhất: đúng/sai/cần duyệt có ch�
 
 Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn trạng thái 4 px; dùng token thay hex/radius rải trong component. Bóng dành cho menu/hộp thoại/thanh nổi, nội dung trong luồng dùng viền. Không đổi theme chỉ để khác với mẫu công cụ sinh UI.
 
+## Ngày giờ và số
+
+Giờ luôn theo giờ Việt Nam (`Asia/Ho_Chi_Minh`), không theo múi giờ của thiết bị, và chỉ viết bằng các hàm trong `lib/study-days.ts`:
+
+| Loại | Hàm | Ví dụ |
+|---|---|---|
+| Ngày | `formatStudyDay` | 04/11/2026 |
+| Ngày giờ (hạn nộp, lúc nộp, lúc lưu) | `formatStudyDateTime` | 23:59 04/11/2026 |
+| Giờ trong ngày đã rõ (hạn hôm nay, vừa lưu) | `formatStudyTime` | 23:59 |
+| Nhãn trục biểu đồ, ô ngày | `formatStudyDay(...).slice(0, 5)` | 04/11 |
+
+Số thập phân dùng dấu phẩy ("66,7%", "1,5 lần") qua `formatPercent`/`formatDecimal` trong `lib/grading/grade.ts`; file CSV giữ dấu chấm cho bảng tính. Từ 04/11/2026 ngày giờ không còn dạng rút gọn "23:59 4/11/26" của `vi-VN`.
+
 ## Hình minh họa trong bài Nhật
 
 Từ 30/10/2026 (phương án B, [chi tiết](illustrations.md)): icon Fluent Emoji (MIT) cạnh từ vựng cụ thể trên slide, trang đọc và mặt sau flashcard; hội thoại dạng bong bóng, người nói đầu bên trái màu `--primary-soft`, người thứ hai bên phải pha `--brand-bell`, avatar cùng màu bên; tiêu đề slide có vạch nhấn `--brand-bell` bên trái và thanh tiến độ cùng màu. Ảnh AI cho nhân vật và tranh mở đầu dùng chung một phong cách, không chứa chữ. Các yếu tố này nằm trong bài tiếng Nhật, không thành mặc định của giao diện chung. Slide luyện tập có thể dùng hình ghép từ icon (thẻ trắng đánh số, không chữ; chú thích và alt mang phần ngôn ngữ). CSS ở `app/lesson-visuals.css` (kể cả căn giữa slide ảnh); slide vẫn phải vừa khung 1280×720 và trang đọc không cuộn ngang ở 360px.

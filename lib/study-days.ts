@@ -76,14 +76,12 @@ export function latestStudyDay(activity: readonly (Date | string)[]) {
   return activity.map(toStudyDay).sort().at(-1) ?? null;
 }
 
-const dateTimeFormatter = new Intl.DateTimeFormat("vi-VN", {
-  timeZone: STUDY_TIME_ZONE,
-  dateStyle: "short",
-  timeStyle: "short",
-});
-
+/**
+ * "23:59 04/11/2026" in Vietnam time. Built from the day and time helpers so every page writes a
+ * date the same way ("vi-VN" short style would give "23:59 4/11/26" beside "04/11/2026").
+ */
 export function formatStudyDateTime(instant: string | Date) {
-  return dateTimeFormatter.format(typeof instant === "string" ? new Date(instant) : instant);
+  return `${formatStudyTime(instant)} ${formatStudyDay(toStudyDay(instant))}`;
 }
 
 const timeFormatter = new Intl.DateTimeFormat("vi-VN", {

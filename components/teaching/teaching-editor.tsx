@@ -24,6 +24,7 @@ import {
   removeLocalDraft,
   restoreEditorDraft,
 } from "@/lib/local-draft";
+import { formatStudyDateTime, formatStudyTime } from "@/lib/study-days";
 import { reviewTeachingDraft, teachingDraftSchema } from "@/lib/teaching-content";
 import {
   createReviewedQuestions,
@@ -62,10 +63,6 @@ function parseTeachingDraft(value: unknown) {
 // Moving between steps is saved with the draft but never counts as unsaved work.
 function toSnapshot(draft: TeachingDraft) {
   return JSON.stringify({ ...draft, authoring: { ...draft.authoring, step: 0 } });
-}
-
-function formatTime(value: string) {
-  return new Date(value).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
 }
 
 export interface TeachingEditorProps {
@@ -111,7 +108,7 @@ export function TeachingEditor({
     restored
       ? {
           tone: "idle",
-          message: `Đã khôi phục thay đổi chưa lưu trên máy này (lúc ${formatTime(restored.changedAt)}). Bấm Lưu nháp để lưu lên máy chủ.`,
+          message: `Đã khôi phục thay đổi chưa lưu trên máy này (lúc ${formatStudyDateTime(restored.changedAt)}). Bấm Lưu nháp để lưu lên máy chủ.`,
         }
       : { tone: "idle", message: "" },
   );
@@ -184,7 +181,7 @@ export function TeachingEditor({
         tone: "success",
         message: confirmedIds.length
           ? "Đã lưu và xác nhận đáp án."
-          : `Đã lưu lúc ${formatTime(result.editor.savedAt)}.`,
+          : `Đã lưu lúc ${formatStudyTime(result.editor.savedAt)}.`,
       });
       return result.editor.revision;
     }
@@ -269,7 +266,7 @@ export function TeachingEditor({
 
   const statusMessage =
     status.message ||
-    (isDirty ? "Có thay đổi chưa lưu." : `Đã lưu lúc ${formatTime(saved.savedAt)}.`);
+    (isDirty ? "Có thay đổi chưa lưu." : `Đã lưu lúc ${formatStudyDateTime(saved.savedAt)}.`);
   return (
     <div className="teaching-editor">
       <div className="editor-toolbar">
