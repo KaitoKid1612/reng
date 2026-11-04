@@ -301,6 +301,28 @@ function analyzeLayout(): LayoutIssue[] {
       if (current.index === other.index || currentPiece.layer !== otherPiece.layer) {
         continue;
       }
+      // Furigana sits just above its base and may overhang the next character, so an <rt> box
+      // always grazes the line box below it. Text it reaches from above still counts.
+      const isCurrentRuby = Boolean(currentPiece.element.closest("rt"));
+      const isOtherRuby = Boolean(otherPiece.element.closest("rt"));
+      if (isCurrentRuby !== isOtherRuby) {
+        const [rubyRect, baseRect] = isCurrentRuby
+          ? [current.rect, other.rect]
+          : [other.rect, current.rect];
+        if (rubyRect.top < baseRect.top) {
+          continue;
+        }
+      }
+      // A ruby base is centred in a box as wide as its furigana, so that box overhangs the
+      // characters beside it by part of the extra width.
+      const currentRuby = currentPiece.element.closest("ruby");
+      const otherRuby = otherPiece.element.closest("ruby");
+      if (currentRuby !== otherRuby) {
+        const rubyWidth = currentRuby ? current.rect.width : other.rect.width;
+        if (horizontalOverlap(current.rect, other.rect) < rubyWidth / 4) {
+          continue;
+        }
+      }
       const minHeight = Math.min(current.rect.height, other.rect.height);
       const isOverlapping =
         horizontalOverlap(current.rect, other.rect) > 2 &&
