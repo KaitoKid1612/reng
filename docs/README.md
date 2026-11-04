@@ -34,6 +34,8 @@ Kiểm tra cập nhật thư viện 04/11/2026: [đã nâng bản vá, bản l�
 
 Rà soát giao diện 04/11/2026: [đã sửa (2 đợt), cách kiểm tra và các đề xuất còn lại theo thứ tự](testing/ux-review-2026-11-04.md).
 
+Kiểm tra các dạng bài tập 04/11/2026: [từng dạng trên điện thoại, kết quả, Sổ lỗi, Ôn tập và những gì đã sửa](testing/question-types-review-2026-11-04.md).
+
 Lịch sử bài tập hằng ngày (04/11/2026, trang Luyện tập hằng ngày): điểm từng ngày như trang Sheet cũ, cho học viên và giáo viên — [BD](basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [DD](detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [kiểm chứng](testing/flow-fixes-2026-11-03.md#lịch-sử-bài-tập-hằng-ngày-04112026).
 
 Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ): [Basic Design](basic-design/learning-history.md), [Detail Design](detail-design/learning-history.md), [kiểm chứng cũ](testing/learning-history.md).

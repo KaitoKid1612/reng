@@ -255,6 +255,17 @@ Theo yêu cầu người dùng: Reng là nơi dạy và học online, không ph�
 
 Chưa đổi: dữ liệu lớp chỉ nhận hai môn ngôn ngữ, hai trình soạn bài theo ngôn ngữ, trang đọc và ôn tập dựa trên từ vựng, chấm điểm theo kana/pinyin. Đây là phần phải làm trước khi dạy môn không phải ngôn ngữ; danh sách ở [rà soát](../testing/platform-neutral-ui-2026-11-03.md#phần-còn-gắn-với-ngôn-ngữ).
 
+## Các dạng bài tập dễ làm hơn — 04/11/2026
+
+Kiểm tra từng dạng (trắc nghiệm một/nhiều đáp án, điền từ theo kiểu gõ, sắp xếp câu, nghe chọn/nghe gõ, chép chính tả, đọc hiểu) trên điện thoại; chi tiết ở [báo cáo](../testing/question-types-review-2026-11-04.md).
+
+1. **Kiểm tra câu luyện tập trắc nghiệm** tô ngay trên các lựa chọn: đáp án đúng ✓ xanh, lựa chọn sai đã chọn ✗ đỏ. Bài kiểm tra không tô vì đáp án chưa công bố.
+2. **Đáp án nhiều lựa chọn** ghi "A + B" (cần chọn đủ). "A / B" chỉ dùng cho các cách viết được chấp nhận của câu gõ; cách viết chấm giống nhau chỉ hiện một lần.
+3. **Gõ romaji** đổi cả dấu câu như bộ gõ tiếng Nhật: "," → 、, "." → 。, "?" → ？, "!" → ！.
+4. **Ôn tập:** mỗi thẻ bắt đầu mới (số lần nghe, audio); Enter gửi câu trả lời; câu nghe hiện "Lời nghe" sau khi trả lời, Sổ lỗi cũng vậy.
+5. **Soạn bài:** hai lựa chọn giống nhau bị báo trước khi xuất bản, ở cả trình soạn tiếng Nhật và câu kiểm tra (trình soạn tiếng Trung đã có).
+6. **Chép chính tả nhập văn bản** chấm như câu điền văn bản tiếng Việt.
+
 ## Danh sách câu trả lời và thanh điều hướng — 02/11/2026
 
 Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
