@@ -45,6 +45,16 @@ export default function SourcesPage() {
         Chế độ dự phòng phụ thuộc hệ điều hành và trình duyệt. Bạn vẫn có thể học bảng chữ và luyện
         romaji khi audio chưa khả dụng.
       </p>
+      <h2>Giọng đọc bài nghe</h2>
+      {/* Unreal Speech's free plan asks for a link to unrealspeech.com wherever its audio is used. */}
+      <p>
+        Audio của bộ đề nghe Minna no Nihongo 1–15 do Reng tự biên soạn được tạo bằng{" "}
+        <a href="https://unrealspeech.com" rel="noopener">
+          Unreal Speech
+        </a>{" "}
+        (giọng Sakura). Lời nghe và câu hỏi do Reng viết; giáo viên nghe duyệt trước khi giao cho
+        lớp.
+      </p>
     </article>
   );
 }
