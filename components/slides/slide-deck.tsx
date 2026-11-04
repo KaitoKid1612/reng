@@ -45,9 +45,11 @@ interface SlideDeckProps {
   printMode: boolean;
   // Set when the teacher opened the slides from a class page.
   classId?: string;
+  /** Teachers get the Presenter button; learners reading slides have no notes to open. */
+  canPresent?: boolean;
 }
 
-export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
+export function SlideDeck({ lesson, printMode, classId, canPresent = false }: SlideDeckProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const deckRef = useRef<RevealApi | null>(null);
   const [position, setPosition] = useState(0);
@@ -107,6 +109,9 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
           transition: "none",
           center: true,
           touch: true,
+          // reveal.js 6 turns narrow screens into a scrolling page; that view loops with the
+          // slide fitting below and leaves the counter and Trước/Tiếp without a current slide.
+          scrollActivationWidth: 0,
         });
         await deck.initialize();
         await document.fonts.ready;
@@ -229,9 +234,11 @@ export function SlideDeck({ lesson, printMode, classId }: SlideDeckProps) {
           <Button variant="ghost" onClick={handleFullscreen}>
             Toàn màn hình
           </Button>
-          <Button variant="ghost" onClick={handlePresenter}>
-            Presenter
-          </Button>
+          {canPresent && (
+            <Button variant="ghost" onClick={handlePresenter}>
+              Presenter
+            </Button>
+          )}
           <Link href={`${base}/slide?version=${lesson.id}&print-pdf`}>PDF</Link>
           {/* A new tab: this tab is the one shared in Meet, and the class page shows learners'
               names and scores. */}

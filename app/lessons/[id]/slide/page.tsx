@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { SlideDeck } from "@/components/slides/slide-deck";
+import { getCurrentAccount } from "@/lib/server/account";
 import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access";
 
 import type { Metadata } from "next";
@@ -29,7 +30,14 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
   }
   // The class only shapes a link back to its own page, where access is checked again.
   const classId = z.uuid().safeParse(query.class).data;
+  // A learner has no notes to open, so the teacher-only Presenter button stays out of their way.
+  const account = await getCurrentAccount();
   return (
-    <SlideDeck lesson={lesson} printMode={query["print-pdf"] !== undefined} classId={classId} />
+    <SlideDeck
+      lesson={lesson}
+      printMode={query["print-pdf"] !== undefined}
+      classId={classId}
+      canPresent={account?.role !== "student"}
+    />
   );
 }
