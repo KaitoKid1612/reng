@@ -196,6 +196,8 @@ Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-a
 
 Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫn sinh audio bằng `npm run audio:generate -- --r2 --lessons --db --sync-db --lesson <mã bài>`, vì cách này cần kho R2 có địa chỉ công khai.
 
+**Gắn câu nghe vào từng bài (khuyên dùng):** mở bài Minna (ví dụ "Bài 3 – …") ở trình soạn → mục Câu luyện → khung **Câu nghe Minna có sẵn** (tự chọn đúng bài theo tiêu đề) → **Thêm 6 câu nghe** → nghe thử → Lưu nháp → Xuất bản → cập nhật lớp lên phiên bản mới. Câu nghe khi đó thuộc chính bài đó (tag `minna:N`): vào bài hằng ngày theo tỉ lệ, chọn được ở Giao bài tập và hiện ở trang Luyện nghe của bài. Audio đi kèm web và được đăng ký tự động khi xuất bản, không cần chạy SQL. Bài nháp riêng "Luyện nghe Minna 1–15" (`listening:sql`) vẫn dùng được khi muốn giao riêng.
+
 Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm câu chính tả**):
 
 - Lời nghe ngắn (một đến ba câu), một giọng đọc: dùng lời kể hoặc lời của một người, không viết hội thoại hai người.
@@ -209,7 +211,7 @@ Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm 
 
 Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu), làm nguồn cho bài luyện hằng ngày. Cùng một định dạng JSON (`content/review-banks/*.json`, schema bài v1) dùng cho cả hai ngôn ngữ; bài hằng ngày, làm bài, kết quả, sổ lỗi và ôn tập xử lý như nhau.
 
-- **Dạng bài:** `choice`, `fill`, `order` (sắp xếp mảnh) vào được bài hằng ngày; `listen`/`dictation` cần audio nên chỉ giao tay. Mỗi câu gắn một tag dạng; tag quyết định tỉ lệ trong bài hằng ngày và nhãn phần học viên thấy:
+- **Dạng bài:** `choice`, `fill`, `order` (sắp xếp mảnh), `listen`, `dictation` đều vào được bài hằng ngày; câu nghe luôn có audio vì thiếu audio thì không xuất bản được. Mỗi câu gắn một tag dạng; tag quyết định tỉ lệ trong bài hằng ngày và nhãn phần học viên thấy:
 
 | Tag | Nhãn | Dùng cho |
 | --- | --- | --- |

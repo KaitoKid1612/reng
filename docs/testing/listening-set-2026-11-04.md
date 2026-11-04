@@ -42,6 +42,14 @@ Người dùng chưa đăng ký được Azure (thẻ chưa đủ số dư để
 - Ghi nguồn theo điều kiện gói miễn phí: trang Nguồn dữ liệu và slide hướng dẫn.
 - Chưa có ai nghe duyệt phát âm; giáo viên nghe trong trình soạn trước khi xuất bản.
 
+## Câu nghe thuộc từng bài và vào bài hằng ngày
+
+- Trình soạn có khung "Câu nghe Minna có sẵn"; mỗi câu nghe có trình phát để nghe duyệt.
+- Supabase local, giáo viên local, Bài 11: khung tự chọn Bài 11; Thêm 6 câu nghe → 6 trình phát; Lưu nháp, Xuất bản → phiên bản 2 có 56 câu.
+- Lớp mới, ghim Bài 11, 10 câu mỗi ngày, Giao bài hôm nay ngay: 4 trắc nghiệm, 5 điền, 1 câu nghe.
+- Xóa 6 dòng `audio_assets` của các câu đó rồi xuất bản lại: thành công, 6 dòng được đăng ký lại.
+- Test: `tests/minna-listening.test.ts` (6 câu mỗi bài, bỏ nhãn trong bài, đoán bài theo tiêu đề, bài mẫu + câu nghe không có lỗi xuất bản, danh sách audio đủ 90 với url đúng), `tests/daily-practice.test.ts` (câu nghe là dạng của bài hằng ngày).
+
 ## Còn lại
 
 - Người dùng tạo khóa Azure (gói Free F0) và thêm vào `.env.local`. Sau đó sinh audio, nghe thử, commit file và push.
