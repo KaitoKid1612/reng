@@ -2,6 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
+import minnaListening from "@/content/listening/minna-1-15.json";
 import {
   createItemId,
   draftContentSchema,
@@ -18,6 +19,7 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
+import { listeningAudioRegistry, parseListeningSet } from "@/lib/listening-set";
 import { findStarterForLesson, summarizeLessonContent } from "@/lib/starter-lessons";
 import { parseVocabularyCsv } from "@/lib/vocab-csv";
 
@@ -25,6 +27,9 @@ import type { LessonDraftState, PublishProblem } from "@/lib/lesson-draft";
 import type { StarterLesson } from "@/lib/starter-lessons";
 
 const timestamp = z.iso.datetime({ offset: true });
+
+// Audio of the bundled listening sets (public/audio/lessons), registered on first publish.
+const BUNDLED_LISTENING_AUDIO = listeningAudioRegistry([parseListeningSet(minnaListening)]);
 
 const lessonRowSchema = z.object({
   id: z.string(),
@@ -284,7 +289,21 @@ export async function publishLessonDraft(
       createServiceClient().from("audio_assets").select("hash").in("hash", hashes),
       z.object({ hash: z.string() }),
     );
-    if (assets.length !== hashes.length) {
+    const registered = new Set(assets.map((asset) => asset.hash));
+    // Listening questions added from a bundled set bring audio that ships with the web; it is
+    // registered here, so the teacher never runs a script for it.
+    const bundled = hashes.flatMap((hash) =>
+      registered.has(hash) ? [] : (BUNDLED_LISTENING_AUDIO.get(hash) ?? []),
+    );
+    if (bundled.length) {
+      const { error } = await createServiceClient()
+        .from("audio_assets")
+        .upsert(bundled, { onConflict: "hash", ignoreDuplicates: true });
+      if (error) {
+        throw new ServiceError("database_error");
+      }
+    }
+    if (registered.size + bundled.length !== hashes.length) {
       problems.push({
         section: "info",
         message: "Một số mã audio chưa được đăng ký. Chạy lại script sinh audio hoặc xóa mã đó.",

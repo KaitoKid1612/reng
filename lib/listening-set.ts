@@ -65,3 +65,24 @@ export function findListeningAudio(
   }
   return { assets, stale, missing };
 }
+
+// Audio that ships with the web for listening sets, keyed by hash, as audio_assets rows. A lesson
+// that takes these questions can publish without anyone registering the audio by hand.
+export function listeningAudioRegistry(sets: readonly ListeningSet[]) {
+  const rows = new Map<
+    string,
+    { hash: string; text: string; voice: string; url: string; config: unknown }
+  >();
+  for (const set of sets) {
+    for (const asset of findListeningAudio(set).assets) {
+      rows.set(asset.hash, {
+        hash: asset.hash,
+        text: asset.config.text,
+        voice: asset.config.voice,
+        url: `/${LISTENING_AUDIO_FOLDER}/${asset.hash}.mp3`,
+        config: asset.config,
+      });
+    }
+  }
+  return rows;
+}

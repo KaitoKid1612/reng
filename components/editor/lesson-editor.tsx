@@ -11,6 +11,7 @@ import {
 } from "@/app/actions/lessons";
 import { GrammarFields, VocabularyFields } from "@/components/editor/content-fields";
 import { KanjiQuestionGenerator } from "@/components/editor/kanji-question-generator";
+import { MinnaListeningPicker } from "@/components/editor/minna-listening-picker";
 import { LessonVisibilityForm } from "@/components/editor/lesson-visibility-form";
 import { QuestionFields } from "@/components/editor/question-fields";
 import { SlideFields } from "@/components/editor/slide-fields";
@@ -374,6 +375,11 @@ export function LessonEditor({
             createId={() => createId("question")}
           />
           <KanjiQuestionGenerator content={draft.content} dispatch={dispatch} />
+          <MinnaListeningPicker
+            content={draft.content}
+            title={draft.metadata.title}
+            dispatch={dispatch}
+          />
         </details>
         <section className="editor-section" aria-labelledby="slides-title">
           <h2 id="slides-title">Slide ({draft.content.slides.length})</h2>
