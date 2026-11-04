@@ -3288,3 +3288,11 @@ a:has(> .link-pending) {
 .deadline-countdown[data-urgent] {
   color: var(--wrong);
 }
+
+/* Mistake book: one collapsible group per assignment. */
+.mistake-group {
+  margin-bottom: 12px;
+}
+.mistake-group > .result-row:first-of-type {
+  margin-top: 12px;
+}

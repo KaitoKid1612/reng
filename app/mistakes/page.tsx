@@ -11,11 +11,33 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Sổ lỗi" };
 
-export default async function MistakesPage() {
+interface MistakesPageProps {
+  searchParams: Promise<{ filter?: string | string[] }>;
+}
+
+type MistakeEntry = Awaited<ReturnType<typeof listMistakes>>["entries"][number];
+
+// Daily sets add many questions a day, so open mistakes are grouped by assignment (newest group
+// open) and can be narrowed to the ones due for review now.
+function groupByAssignment(entries: readonly MistakeEntry[]) {
+  const groups = new Map<string, { title: string; entries: MistakeEntry[] }>();
+  for (const entry of entries) {
+    const group = groups.get(entry.assignmentId) ?? { title: entry.assignmentTitle, entries: [] };
+    group.entries.push(entry);
+    groups.set(entry.assignmentId, group);
+  }
+  return [...groups].map(([assignmentId, group]) => ({ assignmentId, ...group }));
+}
+
+export default async function MistakesPage({ searchParams }: MistakesPageProps) {
   const account = await requireStudent("/mistakes");
   const now = new Date();
+  const onlyDue = (await searchParams).filter === "due";
   const book = await listMistakes(account.id, now);
+  const isDue = (entry: MistakeEntry) => Date.parse(entry.due) <= now.getTime();
   const open = book.entries.filter((entry) => !entry.resolvedAt);
+  const dueCount = open.filter(isDue).length;
+  const groups = groupByAssignment(onlyDue ? open.filter(isDue) : open);
   const resolved = book.entries.filter((entry) => entry.resolvedAt);
   return (
     <div className="lesson-reader">
@@ -38,38 +60,71 @@ export default async function MistakesPage() {
       ))}
       <section className="section-block" aria-labelledby="open-mistakes">
         <h2 id="open-mistakes">Đang cần ôn ({open.length})</h2>
+        {open.length > 0 && (
+          <nav className="filter-pills" aria-label="Lọc câu sai">
+            <Link href="/mistakes" aria-current={onlyDue ? undefined : "true"} scroll={false}>
+              Tất cả <span className="filter-pill-count">{open.length}</span>
+            </Link>
+            <Link
+              href="/mistakes?filter=due"
+              aria-current={onlyDue ? "true" : undefined}
+              scroll={false}
+            >
+              Đến hạn ôn <span className="filter-pill-count">{dueCount}</span>
+            </Link>
+          </nav>
+        )}
         {open.length === 0 && <p className="muted">Chưa có câu sai nào cần ôn. Giữ vững nhé!</p>}
-        {open.map((entry) => (
-          <article
-            key={`${entry.assignmentId}:${entry.view.id}`}
-            className="result-row"
-            data-correct="false"
+        {onlyDue && open.length > 0 && dueCount === 0 && (
+          <p className="muted">Chưa có câu nào đến hạn ôn. Quay lại sau nhé.</p>
+        )}
+        {groups.map((group, index) => (
+          <details
+            key={group.assignmentId}
+            className="collapse-card mistake-group"
+            open={index === 0 || onlyDue}
           >
-            <p className="small muted">
-              {entry.assignmentTitle}, chuỗi đúng {entry.correctStreak}/3
-              {Date.parse(entry.due) > now.getTime()
-                ? `, ôn lại lúc ${formatStudyDateTime(entry.due)}`
-                : ", đến hạn ôn"}
-            </p>
-            <PassageDetails passage={entry.view.passage} lang={entry.view.lang} />
-            <p lang={entry.view.lang} className="question-prompt">
-              {entry.view.prompt}
-            </p>
-            {entry.lastAnswerText && (
-              <p>
-                Lần sai gần nhất: <span lang={answerLang(entry.view)}>{entry.lastAnswerText}</span>
-              </p>
-            )}
-            <p>
-              Đáp án: <strong lang={answerLang(entry.view)}>{entry.correctText}</strong>
-            </p>
-            <p className="muted">{entry.explain}</p>
-          </article>
+            <summary>
+              <span>{group.title}</span>
+              <span className="item-meta">
+                {group.entries.length} câu
+                {!onlyDue && group.entries.some(isDue)
+                  ? `, ${group.entries.filter(isDue).length} đến hạn`
+                  : ""}
+              </span>
+            </summary>
+            {group.entries.map((entry) => (
+              <article
+                key={`${entry.assignmentId}:${entry.view.id}`}
+                className="result-row"
+                data-correct="false"
+              >
+                <p className="small muted">
+                  Chuỗi đúng {entry.correctStreak}/3
+                  {isDue(entry) ? ", đến hạn ôn" : `, ôn lại lúc ${formatStudyDateTime(entry.due)}`}
+                </p>
+                <PassageDetails passage={entry.view.passage} lang={entry.view.lang} />
+                <p lang={entry.view.lang} className="question-prompt">
+                  {entry.view.prompt}
+                </p>
+                {entry.lastAnswerText && (
+                  <p>
+                    Lần sai gần nhất:{" "}
+                    <span lang={answerLang(entry.view)}>{entry.lastAnswerText}</span>
+                  </p>
+                )}
+                <p>
+                  Đáp án: <strong lang={answerLang(entry.view)}>{entry.correctText}</strong>
+                </p>
+                <p className="muted">{entry.explain}</p>
+              </article>
+            ))}
+          </details>
         ))}
       </section>
       {resolved.length > 0 && (
-        <section className="section-block" aria-labelledby="resolved-mistakes">
-          <h2 id="resolved-mistakes">Đã giải quyết ({resolved.length})</h2>
+        <details className="section-block older-assignments">
+          <summary>Đã giải quyết ({resolved.length})</summary>
           <ul className="item-list">
             {resolved.map((entry) => (
               <li key={`${entry.assignmentId}:${entry.view.id}`}>
@@ -81,7 +136,7 @@ export default async function MistakesPage() {
               </li>
             ))}
           </ul>
-        </section>
+        </details>
       )}
     </div>
   );
