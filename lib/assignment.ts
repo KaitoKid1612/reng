@@ -608,3 +608,29 @@ export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer |
     .filter((option): option is string => option !== undefined)
     .join(" / ");
 }
+
+// The last hour before a deadline shows a countdown on the submit bar; the last ten minutes
+// stand out. When late work is refused the attempt submits itself a minute early, because the
+// server rejects anything that arrives after the deadline.
+export const COUNTDOWN_WINDOW_MS = 60 * 60 * 1000;
+export const COUNTDOWN_URGENT_MS = 10 * 60 * 1000;
+export const AUTO_SUBMIT_LEAD_MS = 60 * 1000;
+
+export function describeTimeLeft(dueAt: string | null, allowLate: boolean, now: number) {
+  if (!dueAt) {
+    return null;
+  }
+  const left = Date.parse(dueAt) - now;
+  if (left <= 0 || left > COUNTDOWN_WINDOW_MS) {
+    return null;
+  }
+  const totalSeconds = Math.ceil(left / 1000);
+  const clock = `${Math.floor(totalSeconds / 60)}:${String(totalSeconds % 60).padStart(2, "0")}`;
+  return {
+    text: allowLate
+      ? `Còn ${clock} tới hạn; nộp sau đó sẽ ghi là nộp muộn.`
+      : `Còn ${clock} tới hạn. Bài tự nộp khi còn 1 phút.`,
+    isUrgent: left <= COUNTDOWN_URGENT_MS,
+    shouldAutoSubmit: !allowLate && left <= AUTO_SUBMIT_LEAD_MS,
+  };
+}

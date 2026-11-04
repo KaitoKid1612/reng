@@ -8,6 +8,7 @@ import {
   compareDueUrgency,
   countBlankAnswers,
   describeCorrectAnswer,
+  describeTimeLeft,
   getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
@@ -384,4 +385,24 @@ test("an order question must use every piece once, and passages reach the learne
   assert.equal(view.passage, "山田さんは毎週土曜日に料理の学校に通っています。");
   assert.equal(view.section, "Đọc hiểu");
   assert.equal(joinOrderTokens(["Tôi", "đi", "học"]), "Tôi đi học");
+});
+
+test("the countdown shows in the last hour and submits a minute early when late work is refused", () => {
+  const due = "2026-11-04T16:59:00.000Z";
+  const at = (iso: string) => Date.parse(iso);
+  assert.equal(describeTimeLeft(null, false, at("2026-11-04T16:30:00Z")), null);
+  assert.equal(describeTimeLeft(due, false, at("2026-11-04T15:58:00Z")), null);
+  assert.deepEqual(describeTimeLeft(due, false, at("2026-11-04T16:30:00Z")), {
+    text: "Còn 29:00 tới hạn. Bài tự nộp khi còn 1 phút.",
+    isUrgent: false,
+    shouldAutoSubmit: false,
+  });
+  const urgent = describeTimeLeft(due, false, at("2026-11-04T16:55:30Z"));
+  assert.equal(urgent?.isUrgent, true);
+  assert.equal(urgent?.shouldAutoSubmit, false);
+  assert.equal(describeTimeLeft(due, false, at("2026-11-04T16:58:01Z"))?.shouldAutoSubmit, true);
+  const late = describeTimeLeft(due, true, at("2026-11-04T16:58:30Z"));
+  assert.equal(late?.shouldAutoSubmit, false);
+  assert.equal(late?.text, "Còn 0:30 tới hạn; nộp sau đó sẽ ghi là nộp muộn.");
+  assert.equal(describeTimeLeft(due, false, at("2026-11-04T17:00:00Z")), null);
 });

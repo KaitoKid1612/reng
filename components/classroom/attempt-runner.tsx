@@ -9,6 +9,7 @@ import { AnswerFeedback } from "@/components/classroom/answer-feedback";
 import { QuestionField } from "@/components/classroom/question-field";
 import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
+import { DeadlineCountdown } from "@/components/classroom/deadline-countdown";
 import { Button } from "@/components/ui/button";
 import {
   answerLang,
@@ -37,6 +38,8 @@ export interface AttemptRunnerProps {
   initialDraft: AttemptDraft;
   initialRevision: number;
   initialSavedAt: string;
+  dueAt?: string | null;
+  allowLate?: boolean;
 }
 
 const STATUS_TEXT: Record<SyncStatus, string> = {
@@ -68,6 +71,8 @@ export function AttemptRunner({
   initialDraft,
   initialRevision,
   initialSavedAt,
+  dueAt = null,
+  allowLate = true,
 }: AttemptRunnerProps) {
   const router = useRouter();
   const views = items.map((item) => item.view);
@@ -185,6 +190,15 @@ export function AttemptRunner({
   function handleReload() {
     sync.discardLocalCopy();
     router.refresh();
+  }
+
+  // The last saved and unsaved answers go in a minute before a deadline that refuses late work.
+  function handleAutoSubmit() {
+    if (isReadOnly) {
+      return;
+    }
+    setIsConfirming(false);
+    void handleSubmit();
   }
 
   async function handleSubmit() {
@@ -342,6 +356,7 @@ export function AttemptRunner({
             </div>
           </section>
         )}
+        <DeadlineCountdown dueAt={dueAt} allowLate={allowLate} onAutoSubmit={handleAutoSubmit} />
         <p className="save-status" data-state={sync.status} role="status" aria-live="polite">
           {STATUS_TEXT[sync.status]}
           {sync.status === "saved" && ` lúc ${formatStudyDateTime(sync.savedAt)}`}

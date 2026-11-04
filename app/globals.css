@@ -3276,3 +3276,15 @@ a:has(> .link-pending) {
     border-right-color: currentColor;
   }
 }
+
+/* Countdown on the submit bar in the last hour before a deadline (deadline-countdown.tsx). */
+.deadline-countdown {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.deadline-countdown[data-urgent] {
+  color: var(--wrong);
+}

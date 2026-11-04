@@ -89,6 +89,8 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           initialDraft={openAttempt.draft}
           initialRevision={openAttempt.revision}
           initialSavedAt={openAttempt.savedAt}
+          dueAt={assignment.dueAt}
+          allowLate={assignment.allowLate}
         />
       ) : (
         <div className="form-card">
