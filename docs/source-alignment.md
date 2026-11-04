@@ -37,7 +37,7 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 | SCAN-02 | Chưa có | 0 | Không có import_jobs/import_items hoặc review OCR. [Nguồn](detail-design/teaching-service.md) |
 | SCAN-03 | Chưa có | 0 | Không có đường ảnh/PDF → câu draft choice/fill; editor đang nhập câu thủ công. [Nguồn](../components/editor/question-fields.tsx#L1) |
 | GRADE-01 | Một phần | 0.5 | Chấm khách quan có profile Trung `zh-exact-v1` theo snapshot; chưa pending_review/graded hoặc chấm tay. [Nguồn](../lib/language-profile.ts) |
-| OPS-01 | Một phần | 0.5 | Có cấu hình/migration/test local và hướng dẫn staging; chưa bằng chứng backup/restore/cloud. [Nguồn](staging-setup.md#L1) |
+| OPS-01 | Một phần | 0.5 | Có cấu hình/migration/test local và hướng dẫn staging; chưa bằng chứng backup/restore/cloud. [Nguồn](staging-setup.md) |
 | OPS-02 | Một phần | 0.5 | Có audit kích hoạt/chia sẻ/thu hồi/sao chép, quota 2000 bài/giáo viên và giới hạn 60 lần chia sẻ/giờ; chưa có retention scan hoặc xử lý báo cáo nội dung. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
 | AUTHOR-01 | Đã có | 1 | Chọn một trong 4 mẫu, nhập mục tiêu nhỏ, không cần mã bài/scan/AI. [Nguồn](../components/teaching/create-teaching-lesson-form.tsx) |
 | AUTHOR-02 | Đã có | 1 | Bảng chữ Hán/pinyin/nghĩa Việt/ví dụ, nhập từng dòng hoặc dán Excel, xem trước lỗi từng dòng. [Nguồn](../lib/teaching-table.ts) |
