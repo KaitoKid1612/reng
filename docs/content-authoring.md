@@ -198,7 +198,9 @@ Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫ
 
 **Gắn câu nghe vào từng bài (khuyên dùng):** mở bài Minna (ví dụ "Bài 3 – …") ở trình soạn → mục Câu luyện → khung **Câu nghe Minna có sẵn** (tự chọn đúng bài theo tiêu đề) → **Thêm 6 câu nghe** → nghe thử → Lưu nháp → Xuất bản → cập nhật lớp lên phiên bản mới. Câu nghe khi đó thuộc chính bài đó (tag `minna:N`): vào bài hằng ngày theo tỉ lệ, chọn được ở Giao bài tập và hiện ở trang Luyện nghe của bài. Audio đi kèm web và được đăng ký tự động khi xuất bản, không cần chạy SQL. Bài nháp riêng "Luyện nghe Minna 1–15" (`listening:sql`) vẫn dùng được khi muốn giao riêng.
 
-**Giao bài nghe riêng trong ngày:** bài đã giao (kể cả bài luyện tập hằng ngày hôm nay) không sửa được, để điểm học viên đã làm giữ nguyên. Muốn cho học viên nghe ngay thì vào Giao bài: ở Nội dung lớp, nếu bài báo "đã có phiên bản N, lớp chưa dùng" thì bấm **Cập nhật lớp lên phiên bản N**; ở Giao bài tập chọn bài, bấm **Chỉ chọn câu nghe** (tên bài giao tự điền "Luyện nghe – …"), rồi Xem lại và xuất bản. Từ hôm sau, bài luyện tập hằng ngày của bài đó tự có câu nghe.
+**Một bài luyện tập mỗi ngày:** không cần giao thêm bài nghe. Từ hôm sau khi bài có câu nghe (và lớp đã cập nhật lên phiên bản đó), bài luyện tập hằng ngày tự có câu nghe trong cùng một bài. Trong lúc chờ, học viên tự luyện ở link **Luyện nghe** cạnh Đọc bài trên trang lớp (không tính điểm, không thêm bài tập).
+
+**Giao bài nghe riêng trong ngày (khi cần có điểm):** bài đã giao (kể cả bài luyện tập hằng ngày hôm nay) không sửa được, để điểm học viên đã làm giữ nguyên. Muốn cho học viên nghe ngay thì vào Giao bài: ở Nội dung lớp, nếu bài báo "đã có phiên bản N, lớp chưa dùng" thì bấm **Cập nhật lớp lên phiên bản N**; ở Giao bài tập chọn bài, bấm **Chỉ chọn câu nghe** (tên bài giao tự điền "Luyện nghe – …"), rồi Xem lại và xuất bản. Từ hôm sau, bài luyện tập hằng ngày của bài đó tự có câu nghe.
 
 Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm câu chính tả**):
 
