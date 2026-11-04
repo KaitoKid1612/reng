@@ -4,6 +4,7 @@ import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labe
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
 import { StartAttemptButton } from "@/components/classroom/start-attempt-button";
 import { buttonVariants } from "@/components/ui/button";
+import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
@@ -98,6 +99,7 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
             {hasSubmitted && (
               <Link href={`/assignments/${assignment.id}/results`} className={buttonVariants()}>
                 Xem kết quả
+                <LinkPending />
               </Link>
             )}
             {!blocker && (

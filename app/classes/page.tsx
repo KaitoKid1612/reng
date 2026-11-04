@@ -10,6 +10,7 @@ import {
   MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
+import { LinkPending } from "@/components/ui/link-pending";
 import { requireStudent } from "@/lib/server/account";
 import { getLearnerAgenda } from "@/lib/server/learner";
 import { foldMissedDailySets } from "@/lib/learner-today";
@@ -99,6 +100,7 @@ export default async function ClassesPage() {
                       })}
                     >
                       {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+                      <LinkPending />
                     </Link>
                   </div>
                 </li>

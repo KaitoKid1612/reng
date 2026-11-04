@@ -8,6 +8,7 @@ import {
 } from "@/components/classroom/assignment-labels";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { buttonVariants } from "@/components/ui/button";
+import { LinkPending } from "@/components/ui/link-pending";
 import { compareDueUrgency } from "@/lib/assignment";
 import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
@@ -68,6 +69,7 @@ function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignment
             className={buttonVariants({ variant: isFirst ? "default" : "outline" })}
           >
             {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+            <LinkPending />
           </Link>
         )}
       </div>

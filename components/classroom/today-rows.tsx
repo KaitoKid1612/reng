@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
+import { LinkPending } from "@/components/ui/link-pending";
 
 import type { TodayRow } from "@/lib/learner-today";
 
@@ -41,6 +42,7 @@ export function TodayRows({ rows }: TodayRowsProps) {
               })}
             >
               {row.action}
+              <LinkPending />
             </Link>
           )}
         </li>
