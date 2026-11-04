@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { Button } from "@/components/ui/button";
 import { sessionLogPath, slidePresenterPath } from "@/lib/class-sessions";
@@ -47,9 +48,17 @@ interface SlideDeckProps {
   classId?: string;
   /** Teachers get the Presenter button; learners reading slides have no notes to open. */
   canPresent?: boolean;
+  /** A learner's reading progress: the last slide offers to mark the lesson as read. */
+  readProgress?: { completedAt: string | null };
 }
 
-export function SlideDeck({ lesson, printMode, classId, canPresent = false }: SlideDeckProps) {
+export function SlideDeck({
+  lesson,
+  printMode,
+  classId,
+  canPresent = false,
+  readProgress,
+}: SlideDeckProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const deckRef = useRef<RevealApi | null>(null);
   const [position, setPosition] = useState(0);
@@ -242,7 +251,7 @@ export function SlideDeck({ lesson, printMode, classId, canPresent = false }: Sl
           <Link href={`${base}/slide?version=${lesson.id}&print-pdf`}>PDF</Link>
           {/* A new tab: this tab is the one shared in Meet, and the class page shows learners'
               names and scores. */}
-          {classId && (
+          {canPresent && classId && (
             <a
               href={sessionLogPath(classId, lesson.lessonId, position + 1)}
               target="_blank"
@@ -252,6 +261,14 @@ export function SlideDeck({ lesson, printMode, classId, canPresent = false }: Sl
             </a>
           )}
         </div>
+        {/* Reading the lesson as slides counts too, so it leaves "Bài mới mở" in Hôm nay học gì. */}
+        {readProgress && position === slideIds.length - 1 && (
+          <LessonProgressButton
+            lessonId={lesson.lessonId}
+            versionId={lesson.id}
+            completedAt={readProgress.completedAt}
+          />
+        )}
       </div>
       <div className="slide-stage">
         <div className="reveal" ref={rootRef} data-ready={isReady}>

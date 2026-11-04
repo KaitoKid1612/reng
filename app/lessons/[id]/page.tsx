@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { z } from "zod";
 
 import { LessonReader } from "@/components/lessons/lesson-reader";
 import { TeachingReader } from "@/components/teaching/teaching-reader";
@@ -14,7 +15,7 @@ import type { Metadata } from "next";
 
 interface LessonPageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ version?: string }>;
+  searchParams: Promise<{ version?: string; class?: string }>;
 }
 
 // Metadata and the page read the same lesson once per request.
@@ -43,7 +44,9 @@ export async function generateMetadata({
 
 export default async function LessonPage({ params, searchParams }: LessonPageProps) {
   const { id } = await params;
-  const { version } = await searchParams;
+  const { version, class: classParam } = await searchParams;
+  // The class only shapes the link back to its page, where membership is checked again.
+  const classId = z.uuid().safeParse(classParam).data;
   const lesson = await loadLesson(id, version);
   if (!lesson) {
     return lessonNotFound(
@@ -63,9 +66,9 @@ export default async function LessonPage({ params, searchParams }: LessonPagePro
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(lessonJsonLd(lesson)) }}
       />
       {isPublicTeachingLesson(lesson) ? (
-        <TeachingReader lesson={lesson} progress={progress} />
+        <TeachingReader lesson={lesson} progress={progress} classId={classId} />
       ) : (
-        <LessonReader lesson={lesson} progress={progress} />
+        <LessonReader lesson={lesson} progress={progress} classId={classId} />
       )}
     </>
   );

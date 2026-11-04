@@ -14,9 +14,16 @@ interface TeachingReaderProps {
   progress: { completedAt: string | null } | null;
   // The editor preview has no published version yet, so version links are hidden.
   isPreview?: boolean;
+  /** The class the reader came from; its page is the way back. */
+  classId?: string;
 }
 
-export function TeachingReader({ lesson, progress, isPreview = false }: TeachingReaderProps) {
+export function TeachingReader({
+  lesson,
+  progress,
+  isPreview = false,
+  classId,
+}: TeachingReaderProps) {
   const { context, objectives, vocab, grammar, dialogue } = lesson.content;
   const slideHref = `/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`;
   const hanziCount = extractHanziWords(vocab, context.languageTag).length;
@@ -161,8 +168,11 @@ export function TeachingReader({ lesson, progress, isPreview = false }: Teaching
               Luyện chữ Hán ({hanziCount} từ)
             </Link>
           )}
-          <Link href="/classes" className={buttonVariants({ variant: "outline" })}>
-            Lớp của tôi
+          <Link
+            href={classId ? `/classes/${classId}` : "/classes"}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            {classId ? "Về lớp" : "Lớp của tôi"}
           </Link>
         </div>
       )}

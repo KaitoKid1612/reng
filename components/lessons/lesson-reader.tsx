@@ -16,6 +16,8 @@ import type { PublicLesson, PublicSlide } from "@/lib/lesson-schema";
 interface LessonReaderProps {
   lesson: PublicLesson;
   progress: { completedAt: string | null } | null;
+  /** The class the reader came from; its page is the way back. */
+  classId?: string;
 }
 
 interface ReaderTableProps {
@@ -101,7 +103,7 @@ function ReaderDialogue({ slide, lessonId }: ReaderDialogueProps) {
   );
 }
 
-export function LessonReader({ lesson, progress }: LessonReaderProps) {
+export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
   const listeningCount = lesson.content.questions.filter(
     (question) => question.type === "listen" || question.type === "dictation",
   ).length;
@@ -270,9 +272,22 @@ export function LessonReader({ lesson, progress }: LessonReaderProps) {
             Luyện kanji ({kanjiCount} từ)
           </Link>
         )}
-        <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
-          Các bài học
-        </Link>
+        {/* A class learner goes back to the class; only a guest browses the public catalog. */}
+        {classId && (
+          <Link href={`/classes/${classId}`} className={buttonVariants({ variant: "outline" })}>
+            Về lớp
+          </Link>
+        )}
+        {!classId && progress && (
+          <Link href="/classes" className={buttonVariants({ variant: "outline" })}>
+            Lớp của tôi
+          </Link>
+        )}
+        {!classId && !progress && (
+          <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
+            Các bài học
+          </Link>
+        )}
       </div>
     </article>
   );

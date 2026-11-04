@@ -203,7 +203,9 @@ export default async function ClassPage({ params }: ClassPageProps) {
                   </h3>
                 </div>
                 <div className="button-row">
-                  <Link href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}`}>
+                  <Link
+                    href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}&class=${view.classRow.id}`}
+                  >
                     Đọc bài
                   </Link>
                   {lesson.hasVocab && (
