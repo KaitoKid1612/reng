@@ -255,6 +255,13 @@ Theo yêu cầu người dùng: Reng là nơi dạy và học online, không ph�
 
 Chưa đổi: dữ liệu lớp chỉ nhận hai môn ngôn ngữ, hai trình soạn bài theo ngôn ngữ, trang đọc và ôn tập dựa trên từ vựng, chấm điểm theo kana/pinyin. Đây là phần phải làm trước khi dạy môn không phải ngôn ngữ; danh sách ở [rà soát](../testing/platform-neutral-ui-2026-11-03.md#phần-còn-gắn-với-ngôn-ngữ).
 
+## Bộ đề nghe Minna 1–15 — 04/11/2026
+
+- 90 câu nghe tự biên soạn cho bài 1–15 (mỗi bài 3 câu nghe chọn, 2 câu nghe điền, 1 câu chép chính tả), chỉ dùng từ và mẫu câu đã học tới bài đó. Đề có nhãn "(Bài N)" để giáo viên chọn câu theo bài khi giao.
+- Bộ đề được nạp thành một bài nháp riêng của giáo viên ("Luyện nghe Minna 1–15"), không đụng bài đang dạy. Sau khi có audio, giáo viên nghe duyệt, xuất bản, đưa vào lớp và giao các câu của bài vừa học. Câu nghe không vào bài luyện tập hằng ngày.
+- Câu nghe vẫn phải có audio đã duyệt mới xuất bản được ([06](../06-audio.md)). Thiếu audio, trình soạn báo một dòng cho cả nhóm câu thay vì lặp lại từng câu.
+- Ô gõ hiragana nhắc trợ từ は, へ, を gõ ha, he, wo, để câu chép chính tả không bị sai vì gõ theo âm nghe được.
+
 ## Các dạng bài tập dễ làm hơn — 04/11/2026
 
 Kiểm tra từng dạng (trắc nghiệm một/nhiều đáp án, điền từ theo kiểu gõ, sắp xếp câu, nghe chọn/nghe gõ, chép chính tả, đọc hiểu) trên điện thoại; chi tiết ở [báo cáo](../testing/question-types-review-2026-11-04.md).

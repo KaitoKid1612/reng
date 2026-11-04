@@ -64,3 +64,11 @@ Fallback giọng thiết bị chỉ dùng đúng ngôn ngữ khi có voice phù 
 `scripts/generate-audio.ts` hỗ trợ dry-run mặc định, kana, `--lessons` và `--db` cho nháp database tiếng Nhật. Dùng theo README; không xem các flag này là pipeline Trung đã hoạt động. Web wizard không được đưa hướng dẫn chạy script vào luồng giáo viên.
 
 Nghiệm thu mới: cùng chữ Hán có locale khác không dùng nhầm giọng; nội dung đổi làm mất duyệt; retry/timeout không nhân asset/điểm/nghe; quyền lớp/test đúng; phát được và nghe rõ trên Chrome/Safari, mobile/Meet/máy chiếu thật. Ghi thời gian khởi phát cold/warm, lỗi và dung lượng; mục tiêu 300 ms là yêu cầu cần đo, không phải kết quả.
+
+## Bộ đề nghe Minna 1–15 — 04/11/2026
+
+- `content/listening/minna-1-15.json`: 90 câu nghe tự biên soạn (bài 1–15, mỗi bài 6 câu), lời nghe viết bằng kana có cách, một giọng đọc, tổng 1.843 ký tự. `audio` để `null` cho tới khi sinh.
+- `npm run listening:sql` viết transaction gọi `insert_lesson_copy` (fingerprint `listening:<id>`, request id lấy từ md5 của fingerprint và giáo viên) để tạo bài nháp cho một giáo viên đang hoạt động; chạy lại trả về đúng bài đó. Không có `--commit` thì kết thúc bằng rollback.
+- `npm run audio:plan -- --lessons --db --lesson <mã bài>` liệt kê đúng 90 file `ja-JP-NanamiNeural`. Chính sách không đổi: câu nghe chỉ xuất bản khi có audio; trình soạn gộp các câu chỉ thiếu audio thành một dòng ("Câu luyện 1–90: 90 câu nghe chưa có audio…").
+- Chưa sinh audio thật vì chưa có khóa Azure và R2.
+

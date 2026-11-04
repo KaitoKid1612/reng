@@ -36,6 +36,8 @@ Rà soát giao diện 04/11/2026: [đã sửa (2 đợt), cách kiểm tra và c
 
 Kiểm tra các dạng bài tập 04/11/2026: [từng dạng trên điện thoại, kết quả, Sổ lỗi, Ôn tập và những gì đã sửa](testing/question-types-review-2026-11-04.md).
 
+Bộ đề nghe Minna 1–15 (04/11/2026): [90 câu, cách nạp, sinh audio và kiểm tra](testing/listening-set-2026-11-04.md); hướng dẫn ở [soạn bài › Làm bài nghe](content-authoring.md#làm-bài-nghe).
+
 Lịch sử bài tập hằng ngày (04/11/2026, trang Luyện tập hằng ngày): điểm từng ngày như trang Sheet cũ, cho học viên và giáo viên — [BD](basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [DD](detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [kiểm chứng](testing/flow-fixes-2026-11-03.md#lịch-sử-bài-tập-hằng-ngày-04112026).
 
 Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ): [Basic Design](basic-design/learning-history.md), [Detail Design](detail-design/learning-history.md), [kiểm chứng cũ](testing/learning-history.md).
