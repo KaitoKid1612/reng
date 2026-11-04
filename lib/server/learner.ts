@@ -189,6 +189,8 @@ export async function getLearnerAgenda(userId: string, now: Date) {
     readLessonIds,
     dailyAssignmentIds,
     dueCardCount: Math.min(dueCards.length, MAX_SESSION_CARDS),
+    dueMistakeCount: dueCards.slice(0, MAX_SESSION_CARDS).filter((card) => card.kind === "mistake")
+      .length,
     hasMoreDueCards: dueCards.length > MAX_SESSION_CARDS,
     openAssignments,
   };

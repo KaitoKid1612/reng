@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import {
   buildTodayPlan,
+  describeDueReview,
   describeLessonOpened,
   describeTodayAssignment,
   MAX_TODAY_ASSIGNMENTS,
@@ -56,6 +57,7 @@ const empty: TodayInput = {
   lessons: [],
   readLessonIds: new Set(),
   dueCardCount: 0,
+  dueMistakeCount: 0,
   hasMoreDueCards: false,
 };
 
@@ -211,12 +213,41 @@ test("new lessons are capped, and due review cards close the list", () => {
       classes: [{ ...teacherClass, slots: [] }],
       lessons,
       dueCardCount: 50,
+      dueMistakeCount: 12,
       hasMoreDueCards: true,
     },
     now,
   );
   assert.equal(plan.items.filter((item) => item.kind === "lesson").length, MAX_TODAY_LESSONS);
-  assert.deepEqual(plan.items.at(-1), { kind: "review", count: 50, hasMore: true });
+  assert.deepEqual(plan.items.at(-1), {
+    kind: "review",
+    count: 50,
+    mistakeCount: 12,
+    hasMore: true,
+  });
+});
+
+test("the review row names vocabulary cards, mistakes or both", () => {
+  assert.deepEqual(describeDueReview(12, 0, false), {
+    title: "Thẻ từ vựng đến hạn",
+    meta: "12 thẻ",
+  });
+  assert.deepEqual(describeDueReview(5, 5, false), { title: "Câu sai cần ôn lại", meta: "5 câu" });
+  assert.deepEqual(describeDueReview(17, 5, false), {
+    title: "Thẻ ôn tập đến hạn",
+    meta: "12 từ vựng, 5 câu sai",
+  });
+  assert.deepEqual(describeDueReview(50, 12, true), {
+    title: "Thẻ ôn tập đến hạn",
+    meta: "50+ thẻ, gồm từ vựng và câu sai",
+  });
+  const [row] = toTodayRows(
+    [{ kind: "review", count: 5, mistakeCount: 5, hasMore: false }],
+    now,
+    false,
+  );
+  assert.equal(row?.title, "Câu sai cần ôn lại");
+  assert.equal(row?.href, "/review");
 });
 
 test("work in the plan says when it is due, in Vietnam time", () => {

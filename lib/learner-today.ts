@@ -49,6 +49,8 @@ export interface TodayInput {
   lessons: readonly TodayLesson[];
   readLessonIds: ReadonlySet<string>;
   dueCardCount: number;
+  // How many of the counted cards are mistakes from assignments; the rest are vocabulary.
+  dueMistakeCount: number;
   hasMoreDueCards: boolean;
 }
 
@@ -80,7 +82,7 @@ export type TodayItem =
       openedAt: string;
       isSelfStudy: boolean;
     }
-  | { kind: "review"; count: number; hasMore: boolean };
+  | { kind: "review"; count: number; mistakeCount: number; hasMore: boolean };
 
 function todaySessions(classes: readonly TodayClass[], now: Date) {
   const today = toStudyDay(now);
@@ -235,7 +237,12 @@ export function buildTodayPlan(input: TodayInput, now: Date): TodayPlan {
   const work = todayAssignments(input, names, now);
   const items = [...todaySessions(input.classes, now), ...work.items, ...todayLessons(input, now)];
   if (input.dueCardCount > 0) {
-    items.push({ kind: "review", count: input.dueCardCount, hasMore: input.hasMoreDueCards });
+    items.push({
+      kind: "review",
+      count: input.dueCardCount,
+      mistakeCount: input.dueMistakeCount,
+      hasMore: input.hasMoreDueCards,
+    });
   }
   return { items, moreAssignmentCount: work.hiddenCount };
 }
@@ -268,6 +275,24 @@ export function describeLessonOpened(openedAt: string, now: Date) {
   }
   const [, month, date] = day.split("-");
   return `Mở ngày ${date}/${month}`;
+}
+
+// Due cards are vocabulary from lessons and mistakes from assignments, so the row names what is
+// waiting instead of calling every card a vocabulary card.
+export function describeDueReview(count: number, mistakeCount: number, hasMore: boolean) {
+  const total = `${count}${hasMore ? "+" : ""}`;
+  if (mistakeCount === 0) {
+    return { title: "Thẻ từ vựng đến hạn", meta: `${total} thẻ` };
+  }
+  if (mistakeCount >= count) {
+    return { title: "Câu sai cần ôn lại", meta: `${total} câu` };
+  }
+  return {
+    title: "Thẻ ôn tập đến hạn",
+    meta: hasMore
+      ? `${total} thẻ, gồm từ vựng và câu sai`
+      : `${count - mistakeCount} từ vựng, ${mistakeCount} câu sai`,
+  };
 }
 
 // One line of "Hôm nay học gì", ready to render on the server page or send to the home page.
@@ -339,9 +364,8 @@ export function toTodayRows(items: readonly TodayItem[], now: Date, showClass: b
         return {
           key: "review",
           kind: "Ôn tập",
-          title: "Thẻ từ vựng đến hạn",
+          ...describeDueReview(item.count, item.mistakeCount, item.hasMore),
           href: "/review",
-          meta: `${item.count}${item.hasMore ? "+" : ""} thẻ`,
           action: "Ôn tập",
           isAction: true,
         };

@@ -28,6 +28,7 @@ export async function planLearnerToday(agenda: LearnerAgenda, now: Date) {
       lessons: agenda.openLessons,
       readLessonIds: agenda.readLessonIds,
       dueCardCount: agenda.dueCardCount,
+      dueMistakeCount: agenda.dueMistakeCount,
       hasMoreDueCards: agenda.hasMoreDueCards,
     },
     now,

@@ -20,6 +20,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Lớp của tôi" };
 
+// The full work list stays short on a phone; less urgent work folds below it.
+const LISTED_WORK = 5;
+
 export default async function ClassesPage() {
   const account = await requireStudent("/classes");
   const now = new Date();
@@ -37,6 +40,55 @@ export default async function ClassesPage() {
   // "Hôm nay học gì" holds the page's main button whenever it lists something to do.
   const todayHasAction = today.items.some((item) => item.kind !== "session" || item.isLive);
   const hasClass = agenda.classes.length > 0;
+  // Most urgent first: open work, then each class's missed daily sets as one row.
+  const workRows = [
+    ...openWork.map((item, index) => (
+      <li key={item.assignment.id}>
+        <div>
+          <h3>
+            <Link href={`/assignments/${item.assignment.id}`}>{item.assignment.title}</Link>
+          </h3>
+          <p className="item-meta">
+            {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
+            {MODE_LABELS[item.assignment.mode]}, {describeOpenDue(item.assignment.dueAt, now)}
+          </p>
+        </div>
+        <div className="button-row item-actions">
+          <AssignmentStatusBadge status={item.status} />
+          <Link
+            href={`/assignments/${item.assignment.id}`}
+            className={buttonVariants({
+              variant: index === 0 && !todayHasAction ? "default" : "outline",
+            })}
+          >
+            {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+            <LinkPending />
+          </Link>
+        </div>
+      </li>
+    )),
+    ...[...missedDaily].map(([classId, count]) => (
+      <li key={`missed-${classId}`}>
+        <div>
+          <h3>
+            <Link href={`/classes/${classId}/daily-practice`}>Luyện tập hằng ngày đã lỡ</Link>
+          </h3>
+          <p className="item-meta">
+            {hasSeveralClasses && `${classNames.get(classId) ?? ""} · `}
+            {count} ngày chưa làm, vẫn nộp muộn được
+          </p>
+        </div>
+        <div className="button-row item-actions">
+          <Link
+            href={`/classes/${classId}/daily-practice`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Xem các ngày
+          </Link>
+        </div>
+      </li>
+    )),
+  ];
   return (
     <>
       <div className="page-heading">
@@ -72,65 +124,48 @@ export default async function ClassesPage() {
           </p>
         </section>
       )}
+      {/* Classes come before the full work list, which can run long, so opening a class to read a
+          lesson or check the timetable never means scrolling past every open assignment. */}
+      {hasClass && (
+        <section className="section-block" aria-labelledby="my-classes">
+          <h2 id="my-classes">Lớp đang học</h2>
+          <ul className="item-list">
+            {agenda.classes.map((item) => (
+              <li key={item.id}>
+                <div>
+                  <h3>
+                    <Link href={`/classes/${item.id}`}>{item.name}</Link>
+                  </h3>
+                  <p className="item-meta">
+                    {item.isSelfStudy
+                      ? "Lớp tự học của bạn"
+                      : `Giáo viên: ${item.teacherName || "chưa cập nhật"}`}
+                  </p>
+                  <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {hasClass && (
         <section className="section-block" aria-labelledby="open-work">
           <h2 id="open-work">Bài tập cần làm</h2>
           {hasOpenWork ? (
-            <ul className="item-list">
-              {openWork.map((item, index) => (
-                <li key={item.assignment.id}>
-                  <div>
-                    <h3>
-                      <Link href={`/assignments/${item.assignment.id}`}>
-                        {item.assignment.title}
-                      </Link>
-                    </h3>
-                    <p className="item-meta">
-                      {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
-                      {MODE_LABELS[item.assignment.mode]},{" "}
-                      {describeOpenDue(item.assignment.dueAt, now)}
-                    </p>
-                  </div>
-                  <div className="button-row item-actions">
-                    <AssignmentStatusBadge status={item.status} />
-                    <Link
-                      href={`/assignments/${item.assignment.id}`}
-                      className={buttonVariants({
-                        variant: index === 0 && !todayHasAction ? "default" : "outline",
-                      })}
-                    >
-                      {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
-                      <LinkPending />
-                    </Link>
-                  </div>
-                </li>
-              ))}
-              {[...missedDaily].map(([classId, count]) => (
-                <li key={`missed-${classId}`}>
-                  <div>
-                    <h3>
-                      <Link href={`/classes/${classId}/daily-practice`}>
-                        Luyện tập hằng ngày đã lỡ
-                      </Link>
-                    </h3>
-                    <p className="item-meta">
-                      {hasSeveralClasses && `${classNames.get(classId) ?? ""} · `}
-                      {count} ngày chưa làm, vẫn nộp muộn được
-                    </p>
-                  </div>
-                  <div className="button-row item-actions">
-                    <Link
-                      href={`/classes/${classId}/daily-practice`}
-                      className={buttonVariants({ variant: "outline" })}
-                    >
-                      Xem các ngày
-                    </Link>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <>
+              <ul className="item-list">{workRows.slice(0, LISTED_WORK)}</ul>
+              {workRows.length > LISTED_WORK && (
+                <details className="older-assignments">
+                  <summary>Xem thêm {workRows.length - LISTED_WORK} bài tập</summary>
+                  <ul className="item-list">{workRows.slice(LISTED_WORK)}</ul>
+                </details>
+              )}
+            </>
           ) : (
-            <p className="muted">Không có bài nào đang chờ. Ôn lại thẻ từ vựng nhé.</p>
+            <p className="muted">
+              Không có bài nào đang chờ.
+              {agenda.dueCardCount > 0 && " Ôn lại các thẻ đến hạn ở mục bên dưới nhé."}
+            </p>
           )}
         </section>
       )}
@@ -157,28 +192,6 @@ export default async function ClassesPage() {
               Tiến độ của tôi
             </Link>
           </div>
-        </section>
-      )}
-      {hasClass && (
-        <section className="section-block" aria-labelledby="my-classes">
-          <h2 id="my-classes">Lớp đang học</h2>
-          <ul className="item-list">
-            {agenda.classes.map((item) => (
-              <li key={item.id}>
-                <div>
-                  <h3>
-                    <Link href={`/classes/${item.id}`}>{item.name}</Link>
-                  </h3>
-                  <p className="item-meta">
-                    {item.isSelfStudy
-                      ? "Lớp tự học của bạn"
-                      : `Giáo viên: ${item.teacherName || "chưa cập nhật"}`}
-                  </p>
-                  <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
-                </div>
-              </li>
-            ))}
-          </ul>
         </section>
       )}
       <div className="button-row">
