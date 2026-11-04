@@ -4,15 +4,16 @@ import type { StartStep } from "@/lib/teaching-start";
 
 interface StartChecklistProps {
   steps: StartStep[];
+  title?: string;
 }
 
 // The page decides whether to show it (showsStartSteps); established teachers never see it.
-export function StartChecklist({ steps }: StartChecklistProps) {
+export function StartChecklist({ steps, title = "Các bước bắt đầu dạy" }: StartChecklistProps) {
   const doneCount = steps.filter((step) => step.isDone).length;
   const nextIndex = steps.findIndex((step) => !step.isDone);
   return (
     <section className="start-checklist" aria-labelledby="start-checklist-title">
-      <h2 id="start-checklist-title">Các bước bắt đầu dạy</h2>
+      <h2 id="start-checklist-title">{title}</h2>
       <p className="small muted">
         Đã xong {doneCount}/{steps.length} bước. Danh sách tự ẩn khi bạn làm xong.
       </p>

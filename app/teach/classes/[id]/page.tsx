@@ -10,6 +10,7 @@ import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
+import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeachingPanel } from "@/components/teach/teaching-panel";
 import { buttonVariants } from "@/components/ui/button";
 import { classQuestionLang } from "@/lib/assignment";
@@ -167,6 +168,42 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
   );
   // A class without learners needs its code first; afterwards the report comes first.
   const hasLearners = report.reports.length > 0;
+  // A new class says what to set up next, in order, until everything is done.
+  const setupSteps = [
+    {
+      label: "Đưa bài vào lớp",
+      href: `/teach/classes/${classRow.id}/assign#class-content-title`,
+      isDone: report.lessons.length > 0,
+      hint: "Chọn bài đã xuất bản; học viên thấy bài từ giờ mở bạn đặt.",
+    },
+    {
+      label: "Mời học viên",
+      href: "#join-code",
+      isDone: hasLearners,
+      hint: "Sao chép link mời và gửi qua Zalo hoặc Messenger.",
+    },
+    {
+      label: "Thêm link Google Meet",
+      href: "#class-settings",
+      isDone: Boolean(classRow.meeting_url),
+      hint: "Học viên vào buổi học bằng một nút ở Hôm nay học gì.",
+    },
+    {
+      label: "Đặt lịch học hằng tuần",
+      href: "#class-schedule",
+      isDone: schedule.slots.length > 0,
+      hint: "Học viên thấy buổi tới ở trang lớp và ở Hôm nay học gì.",
+    },
+    {
+      label: "Giao bài tập đầu tiên",
+      href: `/teach/classes/${classRow.id}/assign#new-assignment-title`,
+      isDone: report.assignments.length > 0,
+      hint: "Bài luyện tập chấm ngay; câu sai vào sổ lỗi của học viên.",
+    },
+  ];
+  // Meet and the timetable are optional, so a class already teaching is not nagged about them.
+  const showsSetup =
+    !classRow.self_study && (!report.lessons.length || !hasLearners || !report.assignments.length);
   return (
     <>
       <div className="page-heading">
@@ -197,8 +234,14 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           >
             Xuất CSV
           </a>
+          {hasLearners && joinCodeControls && (
+            <Link href="#join-code" className={buttonVariants({ variant: "ghost" })}>
+              Mời thêm học viên
+            </Link>
+          )}
         </div>
       </div>
+      {showsSetup && <StartChecklist steps={setupSteps} title="Các bước tiếp theo cho lớp" />}
       {!hasLearners && joinCodeControls}
       {!classRow.self_study && (
         <TeachingPanel
