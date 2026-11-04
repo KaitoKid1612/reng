@@ -201,6 +201,7 @@ Mỗi nhóm hiện tối đa 5 dòng; phần còn lại được đếm và tr�
 Trước đây học viên phải tự ghép buổi học, bài tập, bài mới và thẻ ôn từ nhiều mục. Giờ **Lớp của tôi** mở đầu bằng mục **Hôm nay học gì**. **Trang chủ** (đã đăng nhập) hiện 4 dòng đầu của mục này, kèm link "Xem thêm N việc ở Lớp của tôi".
 
 - Thứ tự: buổi học hôm nay theo lịch lớp (đang diễn ra thì nút Vào lớp) → bài tập → bài mới mở → thẻ ôn đến hạn.
+- Dòng ôn tập gọi đúng loại thẻ (04/11/2026): chỉ có từ vựng thì "Thẻ từ vựng đến hạn · N thẻ"; chỉ có câu sai từ bài tập thì "Câu sai cần ôn lại · N câu"; có cả hai thì "Thẻ ôn tập đến hạn · X từ vựng, Y câu sai" (quá 50 thẻ ghi "50+ thẻ, gồm từ vựng và câu sai").
 - Bài tập: bài đang làm dở trước, rồi bài hạn trước hết ngày hôm nay, rồi bài quá hạn giáo viên còn nhận. Hiện tối đa 3 bài; phần còn lại báo "Còn N bài tập khác" và trỏ xuống mục Bài tập cần làm (mục này vẫn đủ mọi bài).
 - Bài luyện hằng ngày của ngày trước không vào danh sách, trừ khi đang làm dở. Nhờ vậy học viên vào lớp muộn không mở đầu ngày bằng cả tuần bài cũ.
 - Bài mới mở: bài giáo viên mở trong 7 ngày mà học viên chưa bấm "Đánh dấu đã đọc xong" (đọc ở phiên bản nào cũng tính), tối đa 3 bài. Lớp tự học chỉ gợi ý bài tiếp theo chưa đọc.
@@ -267,7 +268,7 @@ Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
 Đi thử bốn vai (học viên và giáo viên lớp Nhật, lớp Trung) ở 1280px và 390px; chi tiết, số đo và đề xuất tiếp theo ở [báo cáo](../testing/user-flow-review-2026-11-02.md).
 
 1. **Header theo vai.** Khách thấy Vào lớp, Cho giáo viên, nhóm tự học tiếng Nhật, Hướng dẫn, Đăng nhập. Người đã đăng nhập thấy Quản trị (nếu có), Giảng dạy (giáo viên), Lớp của tôi trước. (Link "Lịch sử Sheet" từng hiện khi có bản lưu nhập từ Google Sheet; đã gỡ ngày 04/11/2026.) Link luyện kana tên "Luyện kana" để không trùng "Luyện tập" của bài giao. Trên điện thoại menu gập sau nút Menu; trang chính của người dùng luôn ở cạnh nút.
-2. **Học viên thấy việc hôm nay trước.** Trang chủ (đã đăng nhập) và Lớp của tôi đặt bài cần làm lên đầu với nút Làm bài/Làm tiếp; Ôn tập, Sổ lỗi, Tiến độ nằm ở mục "Ôn lại và tiến độ". Trang lớp tách bài cần làm và bài đã làm, bài cũ gập sau 5 bài.
+2. **Học viên thấy việc hôm nay trước.** Trang chủ (đã đăng nhập) và Lớp của tôi đặt bài cần làm lên đầu với nút Làm bài/Làm tiếp; Ôn tập, Sổ lỗi, Tiến độ nằm ở mục "Ôn lại và tiến độ". Trang lớp tách bài cần làm và bài đã làm, bài cũ gập sau 5 bài. Từ 04/11/2026, Lớp của tôi xếp: Hôm nay học gì → Lớp đang học → Bài tập cần làm (5 bài gấp nhất, phần còn lại gập sau "Xem thêm N bài tập") → Ôn lại và tiến độ, để mở lớp không phải cuộn qua mọi bài tồn đọng.
 3. **Làm bài dài.** Từ 6 câu có danh sách câu để nhảy; Enter kiểm tra câu luyện tập rồi sang câu sau; hộp nộp bài có "Đến câu chưa làm". Nộp bài luyện tập có câu sai mở thẳng các câu sai; bài kiểm tra giữ nguyên để không lộ kết quả trước giờ công bố.
 4. **Tiếng Trung.** Đề, đáp án và câu trả lời mang thẻ ngôn ngữ đúng (không còn `ja`); ô pinyin nhận số thanh (`ni3 hao3` → `nǐ hǎo`, `v` → `ü`). Chấm điểm không đổi.
 5. **Buổi dạy online.** Đầu trang lớp có khối Buổi dạy online; Nội dung lớp có Trình chiếu/Đọc bài theo phiên bản lớp; slide mở từ lớp ghi được buổi dạy ngay trên thanh trình chiếu.
