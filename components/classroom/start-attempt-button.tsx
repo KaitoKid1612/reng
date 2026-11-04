@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 interface StartAttemptButtonProps {
   assignmentId: string;
   label: string;
+  /** Outline once the learner has a submitted attempt: seeing it again is the usual reason to come back. */
+  variant?: "default" | "outline";
 }
 
 const START_ERRORS: Record<string, string> = {
@@ -18,7 +20,11 @@ const START_ERRORS: Record<string, string> = {
   not_found: "Không tìm thấy bài này trong lớp của bạn.",
 };
 
-export function StartAttemptButton({ assignmentId, label }: StartAttemptButtonProps) {
+export function StartAttemptButton({
+  assignmentId,
+  label,
+  variant = "default",
+}: StartAttemptButtonProps) {
   const router = useRouter();
   const [isStarting, setIsStarting] = useState(false);
   const [error, setError] = useState("");
@@ -48,7 +54,7 @@ export function StartAttemptButton({ assignmentId, label }: StartAttemptButtonPr
 
   return (
     <div>
-      <Button onClick={handleStart} disabled={isStarting}>
+      <Button variant={variant} onClick={handleStart} disabled={isStarting}>
         {isStarting ? "Đang mở…" : label}
       </Button>
       {error && (

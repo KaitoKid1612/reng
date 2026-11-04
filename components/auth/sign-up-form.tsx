@@ -33,11 +33,28 @@ export function SignUpForm({ nextPath }: SignUpFormProps) {
       <input type="hidden" name="next" value={nextPath} />
       <div className="field">
         <label htmlFor="full-name">Họ tên</label>
-        <input id="full-name" name="fullName" autoComplete="name" required maxLength={80} />
+        <input
+          key={state.values?.fullName ?? ""}
+          id="full-name"
+          name="fullName"
+          defaultValue={state.values?.fullName}
+          autoComplete="name"
+          required
+          maxLength={80}
+        />
       </div>
       <div className="field">
         <label htmlFor="email">Email</label>
-        <input id="email" name="email" type="email" autoComplete="email" required maxLength={254} />
+        <input
+          key={state.values?.email ?? ""}
+          id="email"
+          name="email"
+          type="email"
+          defaultValue={state.values?.email}
+          autoComplete="email"
+          required
+          maxLength={254}
+        />
       </div>
       <div className="field">
         <label htmlFor="password">Mật khẩu</label>

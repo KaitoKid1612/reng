@@ -37,7 +37,11 @@ interface LearnerAssignmentItemProps {
 }
 
 function LearnerAssignmentItem({ item, isFirst = false }: LearnerAssignmentItemProps) {
-  const path = `/assignments/${item.assignment.id}`;
+  // Submitted work opens on its results; a new attempt is one more deliberate tap from there.
+  const path =
+    item.status === "submitted"
+      ? `/assignments/${item.assignment.id}/results`
+      : `/assignments/${item.assignment.id}`;
   return (
     <li>
       <div>

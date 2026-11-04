@@ -2286,10 +2286,15 @@ rt {
   outline-offset: 1px;
   font-weight: 700;
 }
-.question-nav {
+.question-nav,
+.question-next {
   display: none;
 }
 @media (max-width: 600px) {
+  .question-next {
+    display: flex;
+    margin-top: 16px;
+  }
   .attempt-questions .question-card[data-current="false"] {
     display: none;
   }

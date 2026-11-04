@@ -126,13 +126,12 @@ export function AttemptRunner({
   }
 
   // Phones show one question at a time, so the card is rendered before it can take focus. Focus
-  // goes to the card for jumps (no keyboard pops up) and to the answer field for Enter.
+  // goes to the card for jumps (no keyboard pops up) and to the answer field for Enter. Without a
+  // focus target (the Câu trước/Câu sau buttons) focus stays on the button, but a new card whose
+  // top is above the screen is brought into view so the learner does not scroll back up.
   function handleMove(nextIndex: number, focus?: FocusTarget) {
     flushSync(() => setCurrentIndex(nextIndex));
     void sync.flush();
-    if (!focus) {
-      return;
-    }
     const card = listRef.current?.children[nextIndex];
     if (!(card instanceof HTMLElement)) {
       return;
@@ -142,8 +141,10 @@ export function AttemptRunner({
       field.focus();
       return;
     }
-    card.focus();
-    card.scrollIntoView({ block: "nearest" });
+    if (focus) {
+      card.focus({ preventScroll: true });
+    }
+    card.scrollIntoView({ block: card.getBoundingClientRect().top < 0 ? "start" : "nearest" });
   }
 
   // Enter checks a practice answer, then a second Enter (on the locked card) moves to the next
@@ -275,6 +276,17 @@ export function AttemptRunner({
                 >
                   Kiểm tra câu này
                 </Button>
+              )}
+              {/* On a phone the next step takes the check button's place, so a long daily set
+                  needs no scrolling down to Câu sau and back up to the next prompt. */}
+              {mode === "practice" && answerKey && isChecked && (
+                <div className="question-next">
+                  {index < items.length - 1 ? (
+                    <Button onClick={() => handleMove(index + 1, "card")}>Câu sau ›</Button>
+                  ) : (
+                    !isReadOnly && <Button onClick={() => setIsConfirming(true)}>Nộp bài</Button>
+                  )}
+                </div>
               )}
             </li>
           );

@@ -30,7 +30,11 @@ function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
   return (
     <li>
       <div>
-        <Link href={`/assignments/${item.assignment.id}`}>{item.assignment.title}</Link>
+        <Link
+          href={`/assignments/${item.assignment.id}${item.status === "submitted" ? "/results" : ""}`}
+        >
+          {item.assignment.title}
+        </Link>
         <p className="item-meta">
           {item.latestPercent === null
             ? "Chưa có điểm hiển thị"

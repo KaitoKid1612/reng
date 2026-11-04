@@ -22,12 +22,27 @@ export function TodayRows({ rows }: TodayRowsProps) {
             </h3>
             <p className="item-meta">{row.meta}</p>
           </div>
-          <Link
-            href={row.href}
-            className={buttonVariants({ variant: row.key === primaryKey ? "default" : "outline" })}
-          >
-            {row.action}
-          </Link>
+          {row.isExternal && row.actionHref ? (
+            <a
+              href={row.actionHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonVariants({
+                variant: row.key === primaryKey ? "default" : "outline",
+              })}
+            >
+              {row.action}
+            </a>
+          ) : (
+            <Link
+              href={row.actionHref ?? row.href}
+              className={buttonVariants({
+                variant: row.key === primaryKey ? "default" : "outline",
+              })}
+            >
+              {row.action}
+            </Link>
+          )}
         </li>
       ))}
     </ul>

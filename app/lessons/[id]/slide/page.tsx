@@ -1,8 +1,7 @@
-import { notFound } from "next/navigation";
 import { z } from "zod";
 
 import { SlideDeck } from "@/components/slides/slide-deck";
-import { loadAccessibleLesson } from "@/lib/server/lesson-access";
+import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access";
 
 import type { Metadata } from "next";
 
@@ -19,7 +18,14 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
   const query = await searchParams;
   const lesson = await loadAccessibleLesson(id, query.version);
   if (!lesson) {
-    notFound();
+    const back = new URLSearchParams();
+    if (typeof query.version === "string") {
+      back.set("version", query.version);
+    }
+    if (typeof query.class === "string") {
+      back.set("class", query.class);
+    }
+    return lessonNotFound(`/lessons/${id}/slide${back.size ? `?${back}` : ""}`);
   }
   // The class only shapes a link back to its own page, where access is checked again.
   const classId = z.uuid().safeParse(query.class).data;

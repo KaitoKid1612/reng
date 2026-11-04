@@ -1,7 +1,9 @@
 import "server-only";
 
+import { notFound, redirect } from "next/navigation";
 import { z } from "zod";
 
+import { signInPath } from "@/lib/auth-paths";
 import {
   isDatabaseLessonSource,
   loadLessonVersion,
@@ -10,6 +12,16 @@ import {
 import { getCurrentAccount } from "@/lib/server/account";
 import { callRpc, createServiceClient, selectRows } from "@/lib/server/supabase";
 import { toPublicAnyLesson } from "@/lib/teaching-content";
+
+// A class lesson opened without a session (a link tapped in a chat app's own browser, an expired
+// sign-in) asks the reader to sign in and come back; only a signed-in reader gets the 404, so
+// nothing reveals whether a private lesson exists.
+export async function lessonNotFound(path: string): Promise<never> {
+  if (isDatabaseLessonSource() && !(await getCurrentAccount())) {
+    redirect(signInPath(path));
+  }
+  notFound();
+}
 
 // actorId is supplied only by trusted server callers (session or an already-scoped email job).
 export async function loadAccessibleLessonVersion(

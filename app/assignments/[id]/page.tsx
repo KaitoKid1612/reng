@@ -3,6 +3,7 @@ import Link from "next/link";
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
 import { StartAttemptButton } from "@/components/classroom/start-attempt-button";
+import { buttonVariants } from "@/components/ui/button";
 import { getDeadlineState } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
@@ -90,18 +91,25 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
         />
       ) : (
         <div className="form-card">
-          {blocker ? (
-            <p>{blocker}</p>
-          ) : (
-            <StartAttemptButton
-              assignmentId={assignment.id}
-              label={hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài"}
-            />
-          )}
-          {hasSubmitted && (
-            <p>
-              <Link href={`/assignments/${assignment.id}/results`}>Xem lượt đã nộp</Link>
-            </p>
+          {blocker && <p>{blocker}</p>}
+          {/* A finished assignment opens on its results; a new attempt is the second choice, since
+              it cannot be cancelled and its score replaces the one shown everywhere. */}
+          <div className="button-row">
+            {hasSubmitted && (
+              <Link href={`/assignments/${assignment.id}/results`} className={buttonVariants()}>
+                Xem kết quả
+              </Link>
+            )}
+            {!blocker && (
+              <StartAttemptButton
+                assignmentId={assignment.id}
+                label={hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài"}
+                variant={hasSubmitted ? "outline" : "default"}
+              />
+            )}
+          </div>
+          {hasSubmitted && !blocker && (
+            <p className="small muted">Lượt mới sẽ thay điểm của lượt trước khi bạn nộp.</p>
           )}
         </div>
       )}

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import { ListeningPractice } from "@/components/listening/listening-practice";
 import { buttonVariants } from "@/components/ui/button";
 import { isListeningQuestion, toQuestionView } from "@/lib/assignment";
-import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { loadAccessibleLessonVersion, lessonNotFound } from "@/lib/server/lesson-access";
 import { isTeachingVersion } from "@/lib/teaching-content";
 
 import type { Metadata } from "next";
@@ -21,7 +20,9 @@ export default async function ListeningPage({ params, searchParams }: ListeningP
   const { version: versionId } = await searchParams;
   const version = await loadAccessibleLessonVersion(lessonId, versionId);
   if (!version) {
-    notFound();
+    return lessonNotFound(
+      `/listening/${lessonId}${typeof versionId === "string" ? `?version=${versionId}` : ""}`,
+    );
   }
   // Views carry audio and prompts only; answers and transcripts come from the check API.
   const views = version.content.questions.filter(isListeningQuestion).map(toQuestionView);

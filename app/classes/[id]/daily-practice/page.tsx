@@ -224,7 +224,9 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
               <DaySteps days={days} day={day} hrefForDay={hrefForDay} />
             </div>
             <p className="item-meta day-assignment">
-              <Link href={`/assignments/${day.assignmentId}`}>{day.title}</Link>
+              <Link href={`/assignments/${day.assignmentId}${day.submitted ? "/results" : ""}`}>
+                {day.title}
+              </Link>
             </p>
             <DayResult day={day} view={view} path={path} outcome={outcome} now={now} />
           </section>

@@ -23,6 +23,8 @@ const agendaSchema = z.object({
           meta: z.string(),
           action: z.string(),
           isAction: z.boolean(),
+          actionHref: z.string().optional(),
+          isExternal: z.boolean().optional(),
         }),
       ),
       moreAssignmentCount: z.number().int().nonnegative(),

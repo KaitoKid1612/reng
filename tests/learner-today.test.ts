@@ -7,6 +7,7 @@ import {
   describeTodayAssignment,
   MAX_TODAY_ASSIGNMENTS,
   MAX_TODAY_LESSONS,
+  toTodayRows,
 } from "../lib/learner-today";
 
 import type { TodayAssignment, TodayInput, TodayLesson } from "../lib/learner-today";
@@ -73,6 +74,7 @@ test("a session later today comes first; tomorrow's session and self-study class
     className: "Lớp A",
     time: "19:30–21:00",
     isLive: false,
+    meetingUrl: null,
   });
   assert.equal(plan.filter((item) => item.kind === "session").length, 1);
   const live = buildTodayPlan(empty, at("2026-11-03T20:00:00")).items[0];
@@ -248,4 +250,23 @@ test("a new lesson says which Vietnam day it opened", () => {
   // 23:30 on 2 November in Vietnam is still 2 November there, though UTC has moved on.
   assert.equal(describeLessonOpened(iso("2026-11-02T23:30:00"), now), "Mở hôm qua");
   assert.equal(describeLessonOpened(iso("2026-10-28T08:00:00"), now), "Mở ngày 28/10");
+});
+
+test("a live session with a Meet link opens the call; without one it opens the class", () => {
+  const live = at("2026-11-03T20:00:00");
+  const withMeet = buildTodayPlan(
+    {
+      ...empty,
+      classes: [{ ...teacherClass, meetingUrl: "https://meet.google.com/abc-defg-hij" }],
+    },
+    live,
+  ).items;
+  const [meetRow] = toTodayRows(withMeet, live, false);
+  assert.equal(meetRow?.action, "Vào Google Meet");
+  assert.equal(meetRow?.actionHref, "https://meet.google.com/abc-defg-hij");
+  assert.equal(meetRow?.isExternal, true);
+  assert.equal(meetRow?.href, "/classes/class-a");
+  const [classRow] = toTodayRows(buildTodayPlan(empty, live).items, live, false);
+  assert.equal(classRow?.action, "Vào lớp");
+  assert.equal(classRow?.actionHref, undefined);
 });

@@ -21,9 +21,11 @@ export function SignInForm({ nextPath }: SignInFormProps) {
         <div className="field">
           <label htmlFor="email">Email</label>
           <input
+            key={state.values?.email ?? ""}
             id="email"
             name="email"
             type="email"
+            defaultValue={state.values?.email}
             autoComplete="username"
             required
             maxLength={254}

@@ -21,6 +21,8 @@ export interface AuthFormState {
   notice?: string;
   sentTo?: string;
   unconfirmedEmail?: string;
+  /** What was typed, so the form shows it again after React clears it (passwords never). */
+  values?: { email?: string; fullName?: string };
 }
 
 const UNAVAILABLE = "Tài khoản chưa được kích hoạt trên hệ thống này.";
@@ -64,7 +66,15 @@ const signUpSchema = z.object({
   password,
 });
 
-export async function signUp(_state: AuthFormState, formData: FormData): Promise<AuthFormState> {
+export async function signUp(state: AuthFormState, formData: FormData): Promise<AuthFormState> {
+  const result = await createAccount(state, formData);
+  return {
+    ...result,
+    values: { fullName: readField(formData, "fullName"), email: readField(formData, "email") },
+  };
+}
+
+async function createAccount(_state: AuthFormState, formData: FormData): Promise<AuthFormState> {
   const client = await createSessionClient();
   if (!client) {
     return { error: UNAVAILABLE };
@@ -105,7 +115,16 @@ export async function signUp(_state: AuthFormState, formData: FormData): Promise
 
 const signInSchema = z.object({ email, password: z.string().min(1, "Nhập mật khẩu.").max(72) });
 
-export async function signIn(_state: AuthFormState, formData: FormData): Promise<AuthFormState> {
+export async function signIn(state: AuthFormState, formData: FormData): Promise<AuthFormState> {
+  const result = await signInWithPassword(state, formData);
+  // A wrong password should be the only thing to type again.
+  return { ...result, values: { email: readField(formData, "email") } };
+}
+
+async function signInWithPassword(
+  _state: AuthFormState,
+  formData: FormData,
+): Promise<AuthFormState> {
   const client = await createSessionClient();
   if (!client) {
     return { error: UNAVAILABLE };

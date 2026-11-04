@@ -10,6 +10,7 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
+import { getDeadlineState } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
@@ -38,10 +39,38 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
   const visibleItems = numberAnswers(view.items).filter(({ item }) =>
     matchesOutcome(item.isCorrect, outcome),
   );
-  const canRetry =
+  const now = new Date();
+  // A closed or past-due assignment would only answer a retry with its blocker message.
+  const isAccepting =
     assignment.status === "published" &&
-    !view.hasOpenAttempt &&
-    view.attemptsUsed < assignment.maxAttempts;
+    getDeadlineState(assignment.dueAt, assignment.allowLate, now) !== "past_due";
+  const canRetry =
+    isAccepting && !view.hasOpenAttempt && view.attemptsUsed < assignment.maxAttempts;
+  const actions = (
+    <div className="button-row">
+      {isAccepting && view.hasOpenAttempt && (
+        <Link href={`/assignments/${assignment.id}`} className={buttonVariants()}>
+          Làm tiếp lượt đang làm
+        </Link>
+      )}
+      {canRetry && (
+        <Link href={`/assignments/${assignment.id}`} className={buttonVariants()}>
+          Làm lại lượt mới
+        </Link>
+      )}
+      <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
+        Mở sổ lỗi
+      </Link>
+      {dailyDate && (
+        <Link
+          href={`/classes/${assignment.classId}/daily-practice?day=${dailyDate}#daily-day`}
+          className={buttonVariants({ variant: "outline" })}
+        >
+          Xem điểm các ngày
+        </Link>
+      )}
+    </div>
+  );
   return (
     <div className="results-page">
       <div className="page-heading">
@@ -92,6 +121,8 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               {attempt.isLate ? " (nộp muộn)" : ""}.
             </p>
           </div>
+          {/* The next step sits above a long answer list, not after it. */}
+          {actions}
           <section className="section-block" aria-labelledby="answer-review">
             <h2 id="answer-review">Xem lại từng câu</h2>
             <OutcomeFilter
@@ -108,24 +139,8 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
           </section>
         </>
       )}
-      <div className="button-row">
-        {canRetry && (
-          <Link href={`/assignments/${assignment.id}`} className={buttonVariants()}>
-            Làm lượt mới
-          </Link>
-        )}
-        <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
-          Mở sổ lỗi
-        </Link>
-        {dailyDate && (
-          <Link
-            href={`/classes/${assignment.classId}/daily-practice?day=${dailyDate}#daily-day`}
-            className={buttonVariants({ variant: "outline" })}
-          >
-            Xem điểm các ngày
-          </Link>
-        )}
-      </div>
+      {!(attempt && view.isFeedbackAvailable && attempt.score !== null && attempt.maxScore) &&
+        actions}
     </div>
   );
 }

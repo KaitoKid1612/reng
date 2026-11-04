@@ -20,6 +20,7 @@ export interface TodayClass {
   name: string;
   isSelfStudy: boolean;
   slots: readonly ScheduleSlot[];
+  meetingUrl?: string | null;
 }
 
 export interface TodayAssignment {
@@ -52,7 +53,14 @@ export interface TodayInput {
 }
 
 export type TodayItem =
-  | { kind: "session"; classId: string; className: string; time: string; isLive: boolean }
+  | {
+      kind: "session";
+      classId: string;
+      className: string;
+      time: string;
+      isLive: boolean;
+      meetingUrl: string | null;
+    }
   | {
       kind: "assignment";
       assignmentId: string;
@@ -91,6 +99,7 @@ function todaySessions(classes: readonly TodayClass[], now: Date) {
       className: item.name,
       time: describeSessionTime(session),
       isLive: session.isLive,
+      meetingUrl: item.meetingUrl ?? null,
     }));
 }
 
@@ -237,6 +246,9 @@ export interface TodayRow {
   action: string;
   // A session later today is a reminder; everything else, and a live session, is a thing to do.
   isAction: boolean;
+  /** Where the button goes when it differs from the title link, such as the class's Meet call. */
+  actionHref?: string;
+  isExternal?: boolean;
 }
 
 export function toTodayRows(items: readonly TodayItem[], now: Date, showClass: boolean) {
@@ -244,6 +256,20 @@ export function toTodayRows(items: readonly TodayItem[], now: Date, showClass: b
   return items.map((item): TodayRow => {
     switch (item.kind) {
       case "session":
+        // A live session with a Meet link opens the call itself; the title still opens the class.
+        if (item.isLive && item.meetingUrl) {
+          return {
+            key: `session-${item.classId}`,
+            kind: "Buổi học",
+            title: item.className,
+            href: `/classes/${item.classId}`,
+            meta: `${item.time} · đang diễn ra`,
+            action: "Vào Google Meet",
+            isAction: true,
+            actionHref: item.meetingUrl,
+            isExternal: true,
+          };
+        }
         return {
           key: `session-${item.classId}`,
           kind: "Buổi học",

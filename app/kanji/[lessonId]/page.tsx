@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import { KanjiPractice } from "@/components/kanji/kanji-practice";
 import { buttonVariants } from "@/components/ui/button";
 import { extractHanziWords, extractKanjiWords } from "@/lib/kanji-practice";
-import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
+import { loadAccessibleLessonVersion, lessonNotFound } from "@/lib/server/lesson-access";
 import { isTeachingVersion } from "@/lib/teaching-content";
 
 import type { Metadata } from "next";
@@ -23,7 +22,7 @@ export default async function KanjiPage({ params, searchParams }: KanjiPageProps
   const versionId = typeof versionParam === "string" ? versionParam : undefined;
   const version = await loadAccessibleLessonVersion(lessonId, versionId);
   if (!version) {
-    notFound();
+    return lessonNotFound(`/kanji/${lessonId}${versionId ? `?version=${versionId}` : ""}`);
   }
   const isChinese = isTeachingVersion(version);
   const lang = isChinese ? version.content.context.languageTag : "ja";

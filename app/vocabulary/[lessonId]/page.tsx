@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import { FlashcardDeck } from "@/components/review/flashcard-deck";
 import { getCurrentAccount } from "@/lib/server/account";
 import { getVocabularyDeck } from "@/lib/server/reviews";
+import { lessonNotFound } from "@/lib/server/lesson-access";
 
 import type { Metadata } from "next";
 
@@ -26,7 +26,9 @@ export default async function VocabularyPage({ params, searchParams }: Vocabular
     typeof version === "string" ? version : undefined,
   );
   if (!deck) {
-    notFound();
+    return lessonNotFound(
+      `/vocabulary/${lessonId}${typeof version === "string" ? `?version=${version}` : ""}`,
+    );
   }
   return (
     <div className="narrow-page">

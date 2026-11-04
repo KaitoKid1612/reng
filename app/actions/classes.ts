@@ -38,6 +38,8 @@ import type { PublishAssignmentInput } from "@/lib/server/assignments";
 export interface ActionState {
   error?: string;
   notice?: string;
+  /** What was typed, so a form shows it again after React clears it. */
+  values?: Record<string, string>;
 }
 
 const GENERIC_ERROR = "Chưa lưu được thay đổi. Bạn thử lại nhé.";
@@ -95,24 +97,26 @@ export async function joinClassAction(
   _state: ActionState,
   formData: FormData,
 ): Promise<ActionState> {
-  const code = normalizeJoinCode(readField(formData, "code"));
+  const typed = readField(formData, "code");
+  const code = normalizeJoinCode(typed);
+  const values = { code: typed };
   const account = await getCurrentAccount();
   if (!account) {
     redirect(signInPath(`/join-class?code=${encodeURIComponent(code)}`));
   }
   // The message for a malformed code matches an unknown code so nothing is revealed.
   if (!isJoinCode(code)) {
-    return { error: JOIN_MESSAGES.invalid_code };
+    return { error: JOIN_MESSAGES.invalid_code, values };
   }
   let classId: string | null;
   try {
     const result = await joinClass(account.id, code);
     if (result.status !== "joined" && result.status !== "already_member") {
-      return { error: JOIN_MESSAGES[result.status] };
+      return { error: JOIN_MESSAGES[result.status], values };
     }
     classId = result.class_id;
   } catch {
-    return { error: GENERIC_ERROR };
+    return { error: "Chưa vào được lớp. Bạn thử lại nhé.", values };
   }
   redirect(classId ? `/classes/${classId}` : "/classes");
 }

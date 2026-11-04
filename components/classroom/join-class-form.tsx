@@ -16,9 +16,10 @@ export function JoinClassForm({ initialCode }: JoinClassFormProps) {
       <div className="field">
         <label htmlFor="code">Mã lớp</label>
         <input
+          key={state.values?.code ?? ""}
           id="code"
           name="code"
-          defaultValue={initialCode}
+          defaultValue={state.values?.code ?? initialCode}
           autoComplete="off"
           autoCapitalize="characters"
           spellCheck={false}

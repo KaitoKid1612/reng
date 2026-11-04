@@ -461,6 +461,7 @@ export async function listStudentClasses(userId: string): Promise<StudentClassSu
         name: row.name,
         teacherName: teachers.find((teacher) => teacher.id === row.teacher_id)?.full_name ?? "",
         isSelfStudy: row.self_study,
+        meetingUrl: row.meeting_url,
         joinedAt: enrollment.joined_at,
       },
     ];

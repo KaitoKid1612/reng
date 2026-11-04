@@ -1,11 +1,10 @@
-import { notFound } from "next/navigation";
 import { cache } from "react";
 
 import { LessonReader } from "@/components/lessons/lesson-reader";
 import { TeachingReader } from "@/components/teaching/teaching-reader";
 import { isDatabaseLessonSource } from "@/lib/lesson-repository";
 import { describeLessonForSearch, lessonJsonLd } from "@/lib/lesson-seo";
-import { loadAccessibleLesson } from "@/lib/server/lesson-access";
+import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access";
 import { getCurrentAccount } from "@/lib/server/account";
 import { getLessonProgress } from "@/lib/server/learner";
 import { serializeJsonLd } from "@/lib/site";
@@ -47,7 +46,9 @@ export default async function LessonPage({ params, searchParams }: LessonPagePro
   const { version } = await searchParams;
   const lesson = await loadLesson(id, version);
   if (!lesson) {
-    notFound();
+    return lessonNotFound(
+      `/lessons/${id}${typeof version === "string" ? `?version=${version}` : ""}`,
+    );
   }
   // Reading progress references database lessons, so local samples have no tracker.
   const account = isDatabaseLessonSource() ? await getCurrentAccount() : null;
