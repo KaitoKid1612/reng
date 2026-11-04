@@ -46,7 +46,7 @@ export default async function LessonsPage() {
             <p>{lesson.summary}</p>
             <p className="small muted">
               {lesson.content.vocab.length} từ vựng, {lesson.content.grammar.length} mẫu câu
-              {lesson.isSample ? ", bài mẫu chờ duyệt" : ""}
+              {lesson.isSample ? ", bài mẫu tự biên soạn" : ""}
             </p>
             <div className="button-row">
               <Link

@@ -50,14 +50,14 @@ export default function PinyinPage() {
           <tbody>
             {PINYIN_TONES.map((tone) => (
               <tr key={tone.tone}>
-                <td>{tone.tone ? `Thanh ${tone.tone}` : "Thanh nhẹ"}</td>
-                <td>
+                <td data-label="Thanh">{tone.tone ? `Thanh ${tone.tone}` : "Thanh nhẹ"}</td>
+                <td data-label="Ví dụ">
                   <span lang="zh-Latn-pinyin" className="pinyin-syllable">
                     {tone.syllable}
                   </span>{" "}
                   <span lang="zh-Hans">{tone.hanzi}</span> ({tone.meaning})
                 </td>
-                <td>{tone.hint}</td>
+                <td data-label="Cách đọc">{tone.hint}</td>
               </tr>
             ))}
           </tbody>

@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+import { Button, buttonVariants } from "@/components/ui/button";
 
 import type { PracticeMistake } from "@/lib/kana";
 
@@ -48,6 +50,12 @@ export function PracticeResult({
         <Button variant="outline" onClick={onReset}>
           Chọn phiên mới
         </Button>
+        <Link href="/kana" className={buttonVariants({ variant: "ghost" })}>
+          Xem lại bảng chữ
+        </Link>
+        <Link href="/join-class" className={buttonVariants({ variant: "ghost" })}>
+          Có mã lớp? Vào lớp
+        </Link>
       </div>
     </div>
   );

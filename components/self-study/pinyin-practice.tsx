@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { Check, X } from "lucide-react";
 import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { isPinyinCorrect, pickPinyinSession, PINYIN_SESSION_SIZE } from "@/lib/pinyin-study";
 
 import type { PinyinWord } from "@/lib/pinyin-study";
@@ -110,6 +111,12 @@ export function PinyinPractice({ words }: PinyinPracticeProps) {
           <Button variant="outline" onClick={() => start(words)}>
             Phiên mới
           </Button>
+          <Link href="/pinyin" className={buttonVariants({ variant: "ghost" })}>
+            Xem lại bảng pinyin
+          </Link>
+          <Link href="/join-class" className={buttonVariants({ variant: "ghost" })}>
+            Có mã lớp? Vào lớp
+          </Link>
         </div>
       </div>
     );
