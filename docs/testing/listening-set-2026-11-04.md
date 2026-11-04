@@ -32,6 +32,16 @@ Azure Speech, file đi kèm bản web, không dùng R2. Đã làm:
 - `listening:sql` từ chối câu đã sửa lời nghe sau khi sinh audio hoặc thiếu file, đăng ký `audio_assets`, rồi tạo bài nháp kèm audio. Bài nháp tạo trước khi có audio mà giáo viên chưa lưu lần nào sẽ được cập nhật.
 - Test mới: ghi mã audio rồi đọc lại khớp lời nghe; sửa lời nghe thì bị báo audio cũ; mã audio trong bộ đề đã commit phải có file đi kèm.
 
+## Audio tạm bằng Unreal Speech
+
+Người dùng chưa đăng ký được Azure (thẻ chưa đủ số dư để xác minh) nên chọn tạm Unreal Speech.
+
+- Gọi thử: Unreal Speech nhận các giọng Nhật Haruto, Rina, Yuki, Hana, Sakura (tên trong danh sách giọng hợp lệ API trả về). Đã lưu file mẫu cho người dùng nghe.
+- Sinh 90 file bằng `unreal:Sakura`: 90/90, tổng 2,6 MB (18–67 KB mỗi file). Bộ đề ghi 90 mã audio và `audioVoice: unreal:Sakura`, vẫn đúng định dạng Prettier.
+- Test mới (`tests/unreal-speech.test.ts`): hash giọng Unreal tách khỏi Azure, hash Azure giữ nguyên; client gửi đúng chữ và giọng, thử lại khi bận, lỗi không lộ key. Bộ đề kiểm tra theo đúng giọng đã ghi.
+- Ghi nguồn theo điều kiện gói miễn phí: trang Nguồn dữ liệu và slide hướng dẫn.
+- Chưa có ai nghe duyệt phát âm; giáo viên nghe trong trình soạn trước khi xuất bản.
+
 ## Còn lại
 
 - Người dùng tạo khóa Azure (gói Free F0) và thêm vào `.env.local`. Sau đó sinh audio, nghe thử, commit file và push.

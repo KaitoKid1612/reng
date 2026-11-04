@@ -177,7 +177,9 @@ Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-a
    npm run audio:generate -- --local --listening content/listening/minna-1-15.json
    ```
 
-   Lệnh ghi 90 file vào `public/audio/lessons/`, ghi mã audio vào bộ đề và `content/lesson-audio-manifest.json`. Nghe thử vài file, rồi commit cả ba và push. Vercel phục vụ file tại `/audio/lessons/<mã>.mp3`; trên Vercel để trống `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` (mặc định là `/audio/lessons`).
+   Chưa có khóa Azure thì tạm dùng Unreal Speech: thêm `UNREAL_SPEECH_API_KEY=<key>` vào `.env.local` và chạy lệnh trên kèm `--voice unreal:Sakura` (giọng Nhật: Haruto, Rina, Yuki, Hana, Sakura). Gói miễn phí của Unreal Speech yêu cầu ghi nguồn có link unrealspeech.com; trang Nguồn dữ liệu và slide hướng dẫn của bộ đề đã ghi. Có khóa Azure thì chạy lại không có `--voice` để thay bằng giọng Azure (mã file mới, file cũ có thể xóa).
+
+   Lệnh ghi 90 file vào `public/audio/lessons/`, ghi mã audio và giọng đã dùng (`audioVoice`) vào bộ đề, và `content/lesson-audio-manifest.json`. Nghe thử vài file, rồi commit cả ba và push. Vercel phục vụ file tại `/audio/lessons/<mã>.mp3`; trên Vercel để trống `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` (mặc định là `/audio/lessons`).
 3. **Nạp bài nháp kèm audio cho giáo viên** (sau khi bản web đã có file). Chạy lại không tạo bài trùng; bài nháp tạo trước khi có audio mà giáo viên chưa lưu lần nào sẽ được cập nhật.
 
    ```bash
