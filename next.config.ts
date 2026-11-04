@@ -22,6 +22,9 @@ const config: NextConfig = {
       { source: "/kana/luyen", destination: "/kana/practice", permanent: true },
       { source: "/nguon-du-lieu", destination: "/sources", permanent: true },
       { source: "/teach/sign-in", destination: "/sign-in?next=/teach", permanent: true },
+      // The Google Sheet archive was removed on 2026-11-04; old links land on the learner's progress.
+      { source: "/history", destination: "/progress", permanent: false },
+      { source: "/history/:path*", destination: "/progress", permanent: false },
     ];
   },
 };

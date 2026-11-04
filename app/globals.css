@@ -2999,20 +2999,6 @@ rt {
   }
 }
 
-/* Imported history keeps source text readable on narrow screens. */
-.history-text {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-.history-answer summary {
-  cursor: pointer;
-  overflow-wrap: anywhere;
-}
-.history-answer summary:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
-}
-
 /* Google sign-in above the email form. */
 .oauth-options {
   margin: 24px 0 4px;

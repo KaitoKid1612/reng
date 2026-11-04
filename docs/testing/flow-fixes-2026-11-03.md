@@ -179,7 +179,21 @@ Dòng bài tập hạn hôm nay và bài nộp mới chưa xem được trên tr
 
 Chưa thử trên trình duyệt trường hợp bài kiểm tra chưa tới lúc xem kết quả; phần lọc dùng cùng quy tắc `isFeedbackAvailable` với điểm trên trang Tiến độ. E2E chưa chạy.
 
+## Gỡ trang Lịch sử Sheet (04/11/2026)
+
+Người dùng xác nhận trang này không còn cần: nó phục vụ việc xem lại kết quả cũ của hai học viên trước khi chuyển sang dạy online trên Reng. Đã xóa trang `/history` và `/history/[id]`, server action liên kết học viên, 6 component, `lib/server/learning-history.ts`, `lib/learning-history-stats.ts`, `lib/history-sheet-import.ts`, script `history:import`, `app/learning-history.css` và các test/E2E chỉ dành cho tính năng này. Đã gỡ link ở header, Lớp của tôi, Tiến độ, Giảng dạy và Hướng dẫn, cùng trường `hasLearningHistory` của `/api/me`. Giữ nguyên bảng `learning_history_archives`, dữ liệu đã nhập, migration và test RLS của bảng.
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Khách mở `/history/abc`: chuyển tới đăng nhập với đích là `/progress` | Đạt |
+| Học viên: `/api/me` không còn trường lịch sử; header là Lớp của tôi, Tự học, Hướng dẫn; Lớp của tôi và Tiến độ không còn nút hay mục Sheet; mở `/history` tới `/progress`; không lỗi console | Đạt |
+| Giáo viên: trang Giảng dạy không còn link lịch sử | Đạt |
+| `npm run check`, `npm run build` | Đạt |
+
+E2E chưa chạy; `e2e/navigation.spec.ts` đã bỏ bước kiểm tra link Sheet và thêm bước link cũ chuyển hướng.
+
 ## Còn lại, cần người dùng quyết định
+- **Dữ liệu Lịch sử Sheet:** bảng `learning_history_archives` và các RPC nhập/liên kết vẫn còn trong database. Nếu không cần giữ bản lưu của hai học viên nữa, có thể thêm migration xóa bảng (không hoàn tác được; nên xuất bản sao trước).
 - **Chính sách quyền riêng tư và điều khoản sử dụng:** đã có bản nháp mô tả đúng dữ liệu Reng đang lưu ([quyền riêng tư](../legal/privacy-policy-draft.md), [điều khoản](../legal/terms-of-use-draft.md)). Cần điền người vận hành, email liên hệ, thời hạn xử lý yêu cầu, độ tuổi tối thiểu, rồi nhờ người có chuyên môn pháp lý rà soát trước khi công bố.
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.
 - **Audio:** khóa Azure Speech và R2, chạy công cụ tạo audio cho bài đang dùng; sau đó làm nút tạo audio trên trình soạn (cần trần chi phí ở trang quản trị).

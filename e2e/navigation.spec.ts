@@ -94,7 +94,7 @@ test("teachers can reach teaching and learning directly from the header", async 
   await page.route("**/api/me", (route) =>
     route.fulfill({
       json: {
-        user: { name: "Giáo viên", role: "teacher", isAdmin: false, hasLearningHistory: false },
+        user: { name: "Giáo viên", role: "teacher", isAdmin: false },
       },
     }),
   );
@@ -111,32 +111,25 @@ test("teachers can reach teaching and learning directly from the header", async 
     "href",
     "/classes",
   );
-  // Signed-in teachers no longer see the visitor pages or an empty Sheet archive.
+  // Signed-in teachers no longer see the visitor pages.
   await expect(navigation.getByRole("link", { name: "Cho giáo viên", exact: true })).toHaveCount(0);
-  await expect(navigation.getByRole("link", { name: "Lịch sử Sheet", exact: true })).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,
   );
 });
 
-test("students see their classes first, and the Sheet archive only when they have one", async ({
-  page,
-}) => {
-  let hasLearningHistory = false;
+test("students see their classes first and no teaching or visitor links", async ({ page }) => {
   await page.route("**/api/me", (route) =>
-    route.fulfill({
-      json: { user: { name: "Học viên", role: "student", isAdmin: false, hasLearningHistory } },
-    }),
+    route.fulfill({ json: { user: { name: "Học viên", role: "student", isAdmin: false } } }),
   );
   await page.goto("/");
   const navigation = page.getByRole("navigation", { name: "Điều hướng chính" });
   await expect(navigation.getByRole("link").first()).toHaveText("Lớp của tôi");
   await expect(navigation.getByRole("link", { name: "Giảng dạy", exact: true })).toHaveCount(0);
   await expect(navigation.getByRole("link", { name: "Vào lớp", exact: true })).toHaveCount(0);
-  await expect(navigation.getByRole("link", { name: "Lịch sử Sheet", exact: true })).toHaveCount(0);
-  hasLearningHistory = true;
-  await page.goto("/lessons");
-  await expect(
-    navigation.getByRole("link", { name: "Lịch sử Sheet", exact: true }),
-  ).toHaveAttribute("href", "/history");
+});
+
+test("old Sheet archive links lead to the learner's progress", async ({ page }) => {
+  await page.goto("/history");
+  await expect(page).toHaveURL(/\/(progress|sign-in)/);
 });

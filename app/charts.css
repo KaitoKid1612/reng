@@ -1,5 +1,5 @@
 /* Shared statistics pieces: stat tile details, the score column chart, meters, score-band dots
-   and sparklines. Used by learning history, progress and class pages; loaded after globals.css.
+   and sparklines. Used by the progress and class pages; loaded after globals.css.
    Score bands always sit beside the number they describe, so colour is never the only cue
    (green/red is a close pair for colour-blind readers). */
 

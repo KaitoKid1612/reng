@@ -10,7 +10,6 @@ import "reveal.js/reveal.css";
 import "./globals.css";
 import "./lesson-visuals.css";
 import "./charts.css";
-import "./learning-history.css";
 import { SiteHeader } from "@/components/site-header";
 import { AudioProvider } from "@/components/audio-provider";
 import { ACCOUNT_HINT_SCRIPT } from "@/lib/account-hint";

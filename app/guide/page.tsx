@@ -171,7 +171,6 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Ôn tập và tiến độ",
     steps: [
       "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn; Sổ lỗi gom các câu bạn làm sai; Tiến độ của tôi cho thấy bài đã đọc, kết quả bài tập và thẻ ôn tập. Ba nút này nằm ở mục Ôn lại và tiến độ trong Lớp của tôi.",
-      "Lịch sử Sheet chỉ hiện khi bạn có kết quả cũ được nhập từ Google Sheet. Đó là bản lưu, không nhận bài mới: bài hằng ngày và điểm mới nằm ở Lớp của tôi và Tiến độ của tôi.",
     ],
   },
 ];

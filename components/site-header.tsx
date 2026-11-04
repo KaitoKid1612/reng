@@ -48,9 +48,6 @@ function listAccountLinks(account: AccountSummary): NavigationLink[] {
     links.push({ href: "/teach", label: "Giảng dạy", isSection: true });
   }
   links.push({ href: "/classes", label: "Lớp của tôi", isSection: true });
-  if (account.hasLearningHistory) {
-    links.push({ href: "/history", label: "Lịch sử Sheet", isSection: true });
-  }
   return links;
 }
 

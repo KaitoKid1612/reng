@@ -30,7 +30,7 @@ Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết q
 
 ## Cách đọc
 
-Lịch sử bài tập từ Sheets: [Basic Design](basic-design/learning-history.md), [Detail Design và lệnh nhập](detail-design/learning-history.md), [kiểm chứng và trạng thái triển khai](testing/learning-history.md). Một tài khoản vừa dạy vừa học; hồ sơ học viên chờ đăng ký cần giáo viên xác nhận liên kết.
+Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ): [Basic Design](basic-design/learning-history.md), [Detail Design](detail-design/learning-history.md), [kiểm chứng cũ](testing/learning-history.md).
 
 Vừa dạy vừa học (02/11/2026): lớp tự học, chặn chủ lớp tự vào lớp dạy (CR-20), chọn nguồn bài luyện hằng ngày, nhật ký buổi dạy và cập nhật bài từ mẫu — [BD Luồng 7](basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026), [DD](detail-design/teaching-service.md#vừa-dạy-vừa-học--đã-triển-khai-02112026), [kiểm chứng](testing/teach-and-learn.md).
 

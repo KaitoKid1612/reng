@@ -2,12 +2,10 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { AssignmentStatusBadge } from "@/components/classroom/assignment-labels";
-import { HistoryListStats } from "@/components/history/history-list-stats";
 import { WeeklyScoreChart } from "@/components/progress/weekly-score-chart";
 import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
-import { listLearningHistory } from "@/lib/server/learning-history";
 import { getProgressSummary, getQuestionKindStats } from "@/lib/server/learner";
 import { weakestKind } from "@/lib/question-kinds";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -47,14 +45,11 @@ function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
   const now = new Date();
-  const [summary, histories, kindStats] = await Promise.all([
+  const [summary, kindStats] = await Promise.all([
     getProgressSummary(account.id, now),
-    listLearningHistory(),
     getQuestionKindStats(account.id, now),
   ]);
   const weakest = weakestKind(kindStats);
-  // Teachers who also study see their own imported history here, not their learners'.
-  const ownHistories = histories.filter((item) => item.learner_id === account.id);
   const weeks = weeklyScores(
     summary.assignments.map((item) => ({
       percent: item.latestPercent,
@@ -196,21 +191,6 @@ export default async function ProgressPage() {
           <p className="muted">Chưa có câu trả lời nào để thống kê.</p>
         )}
       </section>
-      {ownHistories.length > 0 && (
-        <section className="section-block" aria-labelledby="sheet-history">
-          <h2 id="sheet-history">Lịch sử từ Google Sheet</h2>
-          <ul className="item-list">
-            {ownHistories.map((history) => (
-              <li key={history.id}>
-                <div>
-                  <Link href={`/history/${history.id}`}>{history.course}</Link>
-                  <HistoryListStats sessions={history.sessions} />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
       <section className="section-block" aria-labelledby="card-progress">
         <h2 id="card-progress">Thẻ ôn tập</h2>
         <p>

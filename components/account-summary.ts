@@ -9,8 +9,6 @@ export interface AccountSummary {
   name: string;
   role: "student" | "teacher";
   isAdmin: boolean;
-  // Only people who can read an imported Google Sheet archive get a header link to it.
-  hasLearningHistory: boolean;
 }
 
 function parseAccount(data: unknown): AccountSummary | null {
@@ -32,7 +30,6 @@ function parseAccount(data: unknown): AccountSummary | null {
     name: user.name,
     role: user.role,
     isAdmin: "isAdmin" in user && user.isAdmin === true,
-    hasLearningHistory: "hasLearningHistory" in user && user.hasLearningHistory === true,
   };
 }
 

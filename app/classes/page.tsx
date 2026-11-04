@@ -12,7 +12,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { requireStudent } from "@/lib/server/account";
 import { getLearnerAgenda } from "@/lib/server/learner";
 import { planLearnerToday } from "@/lib/server/learner-today";
-import { hasLearningHistory } from "@/lib/server/learning-history";
 
 import type { Metadata } from "next";
 
@@ -21,10 +20,7 @@ export const metadata: Metadata = { title: "Lớp của tôi" };
 export default async function ClassesPage() {
   const account = await requireStudent("/classes");
   const now = new Date();
-  const [agenda, hasHistory] = await Promise.all([
-    getLearnerAgenda(account.id, now),
-    hasLearningHistory().catch(() => false),
-  ]);
+  const agenda = await getLearnerAgenda(account.id, now);
   const { schedules, plan: today } = await planLearnerToday(agenda, now);
   // With work from several classes, each item says which class it belongs to.
   const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
@@ -128,11 +124,6 @@ export default async function ClassesPage() {
         )}
       </section>
       <div className="button-row">
-        {hasHistory && (
-          <Link href="/history" className={buttonVariants({ variant: "ghost" })}>
-            Lịch sử từ Google Sheet
-          </Link>
-        )}
         <Link href="/guide#learner-title" className={buttonVariants({ variant: "ghost" })}>
           Hướng dẫn
         </Link>
