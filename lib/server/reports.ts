@@ -5,6 +5,7 @@ import { z } from "zod";
 import {
   buildMemberReport,
   buildReportCsv,
+  listMissingLearners,
   selectLatestSubmissions,
   summarizeAssignmentResults,
   summarizeClass,
@@ -23,8 +24,8 @@ import { listDailyRuns } from "@/lib/server/daily-history";
 import {
   callRpc,
   createServiceClient,
+  selectEveryPageIn,
   selectRows,
-  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 import { latestStudyDay, toStudyDay } from "@/lib/study-days";
@@ -125,6 +126,8 @@ const statsSchema = z.array(
   }),
 );
 
+export const HARD_QUESTION_ASSIGNMENTS = 10;
+
 export async function getClassReport(teacherId: string, classId: string, now: Date) {
   const classRow = await getTeacherClass(teacherId, classId);
   const [roster, assignments, lessons, listening] = await Promise.all([
@@ -136,24 +139,28 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
   const assignmentIds = assignments.map((assignment) => assignment.id);
   const service = createServiceClient();
   const [submitted, inProgress] = await Promise.all([
-    selectRowsIn(
+    selectEveryPageIn(
       assignmentIds,
-      (chunk) =>
+      (chunk, from, to) =>
         service
           .from("submissions")
           .select("assignment_id, user_id, attempt_no, score, max_score, submitted_at")
           .in("assignment_id", chunk)
-          .eq("status", "submitted"),
+          .eq("status", "submitted")
+          .order("id")
+          .range(from, to),
       submittedRowSchema,
     ),
-    selectRowsIn(
+    selectEveryPageIn(
       assignmentIds,
-      (chunk) =>
+      (chunk, from, to) =>
         service
           .from("submissions")
           .select("assignment_id, user_id")
           .in("assignment_id", chunk)
-          .eq("status", "in_progress"),
+          .eq("status", "in_progress")
+          .order("id")
+          .range(from, to),
       z.object({ assignment_id: z.uuid(), user_id: z.uuid() }),
     ),
   ]);
@@ -197,8 +204,14 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
       lastStudyDay: lastStudyDays.get(member.userId) ?? null,
     }),
   );
+  // One stats call per assignment: with a daily set each morning that grew to dozens of calls
+  // and groups per page load, so only the newest assignments that have submissions are read.
+  const submittedIds = new Set([...latest.values()].map((item) => item.assignmentId));
+  const statsAssignments = assignments
+    .filter((assignment) => submittedIds.has(assignment.id))
+    .slice(0, HARD_QUESTION_ASSIGNMENTS);
   const questionStats = await Promise.all(
-    assignments.map(async (assignment) => ({
+    statsAssignments.map(async (assignment) => ({
       assignment,
       questions: await callRpc(
         "assignment_question_stats",
@@ -217,12 +230,18 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
         .length,
       openAttemptCount: open.filter((item) => item.assignment_id === assignment.id).length,
       result: results.get(assignment.id) ?? null,
+      missing: listMissingLearners(reports, assignment.id).map((item) => ({
+        userId: item.userId,
+        name: item.fullName || item.email,
+      })),
     })),
     reportAssignments,
     reports,
     summary: summarizeClass(reports),
     week: summarizeWeekSubmissions(reportAssignments, reports, now),
     questionStats: questionStats.filter((entry) => entry.questions.length > 0),
+    // Assignments with submissions beyond the newest ones the stats are read for.
+    olderStatsCount: Math.max(0, submittedIds.size - statsAssignments.length),
     formerMemberCount: roster.filter((row) => row.left_at !== null && isLearner(row.user_id))
       .length,
   };

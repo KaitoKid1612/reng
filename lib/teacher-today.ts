@@ -18,6 +18,8 @@ export interface TeacherTodayAssignment {
   classId: string;
   title: string;
   dueAt: string;
+  // The automatic daily set is due at 23:59 every day in every class, so it is not news.
+  isDaily?: boolean;
 }
 
 export interface TeacherTodaySubmissions {
@@ -63,6 +65,7 @@ export function buildTeacherToday(input: TeacherTodayInput, now: Date): TeacherT
     input.assignments
       .filter(
         (assignment) =>
+          !assignment.isDaily &&
           names.has(assignment.classId) &&
           toStudyDay(assignment.dueAt) === today &&
           Date.parse(assignment.dueAt) > now.getTime(),
@@ -89,7 +92,7 @@ export function buildTeacherToday(input: TeacherTodayInput, now: Date): TeacherT
       key: `due-${assignment.id}`,
       kind: "Bài tập hạn hôm nay",
       title: assignment.title,
-      href: `/teach/classes/${assignment.classId}`,
+      href: `/teach/classes/${assignment.classId}#assignments-title`,
       meta: `${names.get(assignment.classId) ?? ""} · hạn ${formatStudyTime(assignment.dueAt)}`,
       action: "Xem lớp",
       isAction: false,
@@ -98,7 +101,7 @@ export function buildTeacherToday(input: TeacherTodayInput, now: Date): TeacherT
       key: `submissions-${entry.classId}`,
       kind: "Bài nộp mới",
       title: names.get(entry.classId) ?? "",
-      href: `/teach/classes/${entry.classId}`,
+      href: `/teach/classes/${entry.classId}#students-title`,
       meta: `${entry.count} bài nộp trong 24 giờ qua`,
       action: "Xem lớp",
       isAction: false,

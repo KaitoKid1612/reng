@@ -6,12 +6,13 @@ import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import {
   AssignmentStatusBadge,
-  describeDue,
+  describeOpenDue,
   MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
 import { requireStudent } from "@/lib/server/account";
 import { getLearnerAgenda } from "@/lib/server/learner";
+import { foldMissedDailySets } from "@/lib/learner-today";
 import { planLearnerToday } from "@/lib/server/learner-today";
 
 import type { Metadata } from "next";
@@ -26,6 +27,11 @@ export default async function ClassesPage() {
   // With work from several classes, each item says which class it belongs to.
   const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
   const hasSeveralClasses = agenda.classes.length > 1;
+  const { listed: openWork, missed: missedDaily } = foldMissedDailySets(
+    agenda.openAssignments,
+    agenda.dailyAssignmentIds,
+    now,
+  );
   const hasOpenWork = agenda.openAssignments.length > 0;
   // "Hôm nay học gì" holds the page's main button whenever it lists something to do.
   const todayHasAction = today.items.some((item) => item.kind !== "session" || item.isLive);
@@ -70,7 +76,7 @@ export default async function ClassesPage() {
           <h2 id="open-work">Bài tập cần làm</h2>
           {hasOpenWork ? (
             <ul className="item-list">
-              {agenda.openAssignments.map((item, index) => (
+              {openWork.map((item, index) => (
                 <li key={item.assignment.id}>
                   <div>
                     <h3>
@@ -80,7 +86,8 @@ export default async function ClassesPage() {
                     </h3>
                     <p className="item-meta">
                       {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
-                      {MODE_LABELS[item.assignment.mode]}, {describeDue(item.assignment.dueAt)}
+                      {MODE_LABELS[item.assignment.mode]},{" "}
+                      {describeOpenDue(item.assignment.dueAt, now)}
                     </p>
                   </div>
                   <div className="button-row item-actions">
@@ -92,6 +99,29 @@ export default async function ClassesPage() {
                       })}
                     >
                       {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+              {[...missedDaily].map(([classId, count]) => (
+                <li key={`missed-${classId}`}>
+                  <div>
+                    <h3>
+                      <Link href={`/classes/${classId}/daily-practice`}>
+                        Luyện tập hằng ngày đã lỡ
+                      </Link>
+                    </h3>
+                    <p className="item-meta">
+                      {hasSeveralClasses && `${classNames.get(classId) ?? ""} · `}
+                      {count} ngày chưa làm, vẫn nộp muộn được
+                    </p>
+                  </div>
+                  <div className="button-row item-actions">
+                    <Link
+                      href={`/classes/${classId}/daily-practice`}
+                      className={buttonVariants({ variant: "outline" })}
+                    >
+                      Xem các ngày
                     </Link>
                   </div>
                 </li>

@@ -120,6 +120,40 @@ export function isStaleDailySet(
   );
 }
 
+export interface OpenWorkEntry {
+  assignment: { id: string; classId: string; dueAt: string | null };
+  status: string;
+}
+
+/**
+ * Open work to list one by one, and the missed daily sets folded into a count per class: after a
+ * missed week the list would otherwise start with seven identical rows above the teacher's work.
+ */
+export function foldMissedDailySets<Entry extends OpenWorkEntry>(
+  entries: readonly Entry[],
+  dailyIds: ReadonlySet<string>,
+  now: Date,
+) {
+  const listed: Entry[] = [];
+  const missed = new Map<string, number>();
+  for (const entry of entries) {
+    const isMissed = isStaleDailySet(
+      {
+        isDaily: dailyIds.has(entry.assignment.id),
+        inProgress: entry.status === "in_progress",
+        dueAt: entry.assignment.dueAt,
+      },
+      now,
+    );
+    if (isMissed) {
+      missed.set(entry.assignment.classId, (missed.get(entry.assignment.classId) ?? 0) + 1);
+    } else {
+      listed.push(entry);
+    }
+  }
+  return { listed, missed };
+}
+
 function todayAssignments(input: TodayInput, names: Map<string, string>, now: Date) {
   const endOfToday = studyDayStart(shiftStudyDay(toStudyDay(now), 1));
   const rank = (item: TodayAssignment) => {

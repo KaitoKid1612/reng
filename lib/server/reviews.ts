@@ -19,6 +19,7 @@ import { loadAssignment } from "@/lib/server/assignments";
 import {
   callRpc,
   createServiceClient,
+  selectEveryPageIn,
   selectOptional,
   selectRows,
   selectRowsIn,
@@ -472,14 +473,17 @@ export async function listMistakes(userId: string, now: Date): Promise<MistakeBo
       z.object({ id: z.uuid(), assignment_id: z.uuid(), attempt_no: z.number().int() }),
     )
   ).sort((first, second) => second.attempt_no - first.attempt_no);
-  const answers = await selectRowsIn(
+  const answers = await selectEveryPageIn(
     submissions.map((submission) => submission.id),
-    (chunk) =>
+    (chunk, from, to) =>
       service
         .from("answers")
         .select("submission_id, question_id, raw, is_correct")
         .in("submission_id", chunk)
-        .eq("is_correct", false),
+        .eq("is_correct", false)
+        .order("submission_id")
+        .order("question_id")
+        .range(from, to),
     z.object({
       submission_id: z.uuid(),
       question_id: z.string(),

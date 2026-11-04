@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import {
   buildMemberReport,
+  listMissingLearners,
   selectLatestSubmissions,
   summarizeAssignmentResults,
   summarizeWeekSubmissions,
@@ -75,6 +76,15 @@ test("assignment results use current members' latest attempts and skip unassigne
     submittedCount: 0,
     averagePercent: null,
   });
+  // Only work that counts for a learner can be missing: m2 never owed a1.
+  assert.deepEqual(
+    listMissingLearners(reports, "a1").map((item) => item.userId),
+    [],
+  );
+  assert.deepEqual(
+    listMissingLearners(reports, "a3").map((item) => item.userId),
+    ["m1", "m2"],
+  );
 });
 
 test("the weekly submission rate counts only work already due since Monday", () => {

@@ -107,6 +107,29 @@ export async function selectRowsIn<Schema extends z.ZodType>(
   return pages.flat();
 }
 
+// Chunked like selectRowsIn, but each chunk is read a page at a time: the submissions of 100
+// daily sets in a class of 30, or the wrong answers of 100 sixty-question attempts, pass the
+// 1000-row cap and would come back cut without an error. The query must be ordered.
+export async function selectEveryPageIn<Schema extends z.ZodType>(
+  values: readonly string[],
+  query: (
+    chunk: string[],
+    from: number,
+    to: number,
+  ) => PromiseLike<{ data: unknown; error: { message: string; code?: string } | null }>,
+  schema: Schema,
+): Promise<z.infer<Schema>[]> {
+  const unique = [...new Set(values)];
+  const chunks: string[][] = [];
+  for (let start = 0; start < unique.length; start += IN_FILTER_CHUNK) {
+    chunks.push(unique.slice(start, start + IN_FILTER_CHUNK));
+  }
+  const pages = await Promise.all(
+    chunks.map((chunk) => selectEveryPage((from, to) => query(chunk, from, to), schema)),
+  );
+  return pages.flat();
+}
+
 export async function selectOptional<Schema extends z.ZodType>(
   query: PromiseLike<{ data: unknown; error: { message: string; code?: string } | null }>,
   schema: Schema,

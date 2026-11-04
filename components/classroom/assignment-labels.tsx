@@ -29,3 +29,12 @@ export function AssignmentStatusBadge({ status }: AssignmentStatusBadgeProps) {
 export function describeDue(dueAt: string | null) {
   return dueAt ? `Hạn ${formatStudyDateTime(dueAt)}` : "Không có hạn nộp";
 }
+
+// For work the learner can still do: past the deadline means it will count as late, not that
+// the chance is gone.
+export function describeOpenDue(dueAt: string | null, now: Date) {
+  if (dueAt && Date.parse(dueAt) <= now.getTime()) {
+    return `Quá hạn từ ${formatStudyDateTime(dueAt)}, vẫn nộp được`;
+  }
+  return describeDue(dueAt);
+}

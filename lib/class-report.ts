@@ -190,6 +190,16 @@ export function buildMemberReport(input: MemberReportInput): MemberReport {
   };
 }
 
+/**
+ * Current learners the assignment counts for (published after they joined, or already done)
+ * who have no submission yet, in roster order.
+ */
+export function listMissingLearners(reports: readonly MemberReport[], assignmentId: string) {
+  return reports
+    .filter((report) => assignmentId in report.percents && report.percents[assignmentId] === null)
+    .map((report) => report.member);
+}
+
 export function summarizeClass(reports: readonly MemberReport[]) {
   const averages = reports
     .map((report) => report.averagePercent)

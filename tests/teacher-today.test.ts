@@ -47,6 +47,14 @@ test("work still due today and classes with new submissions follow", () => {
         },
         { id: "past", classId: "a", title: "Đã quá hạn", dueAt: iso("2026-11-03T12:00:00") },
         { id: "other", classId: "x", title: "Lớp người khác", dueAt: iso("2026-11-03T23:00:00") },
+        // The automatic daily set is due every day, so it never fills the list.
+        {
+          id: "daily",
+          classId: "a",
+          title: "Luyện tập hằng ngày 03/11 (tự giao)",
+          dueAt: iso("2026-11-03T23:59:59"),
+          isDaily: true,
+        },
       ],
       submissions: [
         { classId: "a", count: 4 },

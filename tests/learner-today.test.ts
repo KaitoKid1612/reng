@@ -7,6 +7,7 @@ import {
   describeTodayAssignment,
   MAX_TODAY_ASSIGNMENTS,
   MAX_TODAY_LESSONS,
+  foldMissedDailySets,
   toTodayRows,
 } from "../lib/learner-today";
 
@@ -269,4 +270,34 @@ test("a live session with a Meet link opens the call; without one it opens the c
   const [classRow] = toTodayRows(buildTodayPlan(empty, live).items, live, false);
   assert.equal(classRow?.action, "Vào lớp");
   assert.equal(classRow?.actionHref, undefined);
+});
+
+test("missed daily sets fold into a count per class; started and current ones stay listed", () => {
+  const entry = (id: string, classId: string, dueAt: string | null, status = "not_started") => ({
+    assignment: { id, classId, dueAt },
+    status,
+  });
+  const { listed, missed } = foldMissedDailySets(
+    [
+      entry("today", "a", iso("2026-11-03T23:59:59")),
+      entry("mon", "a", iso("2026-11-02T23:59:59")),
+      entry("sun", "a", iso("2026-11-01T23:59:59")),
+      entry("started", "a", iso("2026-10-31T23:59:59"), "in_progress"),
+      entry("homework", "a", iso("2026-11-01T23:59:00")),
+      entry("other-class", "b", iso("2026-11-02T23:59:59")),
+    ],
+    new Set(["today", "mon", "sun", "started", "other-class"]),
+    now,
+  );
+  assert.deepEqual(
+    listed.map((item) => item.assignment.id),
+    ["today", "started", "homework"],
+  );
+  assert.deepEqual(
+    [...missed],
+    [
+      ["a", 2],
+      ["b", 1],
+    ],
+  );
 });

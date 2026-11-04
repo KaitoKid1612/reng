@@ -12,6 +12,7 @@ import {
   selectEveryPage,
   selectOptional,
   selectRows,
+  selectRowsIn,
 } from "@/lib/server/supabase";
 import { toStudyDay } from "@/lib/study-days";
 
@@ -32,6 +33,20 @@ export async function listDailyRuns(classId: string): Promise<DailyRun[]> {
     z.object({ practice_date: z.iso.date(), assignment_id: z.uuid() }),
   );
   return rows.map((row) => ({ date: row.practice_date, assignmentId: row.assignment_id }));
+}
+
+// Assignments the class's daily practice created, one per Vietnam day.
+export async function listDailyAssignmentIds(assignmentIds: readonly string[]) {
+  const rows = await selectRowsIn(
+    assignmentIds,
+    (chunk) =>
+      createServiceClient()
+        .from("daily_practice_runs")
+        .select("assignment_id")
+        .in("assignment_id", chunk),
+    z.object({ assignment_id: z.uuid() }),
+  );
+  return new Set(rows.map((row) => row.assignment_id));
 }
 
 // The day a daily set belongs to, or null for an assignment the teacher gave by hand. Only a

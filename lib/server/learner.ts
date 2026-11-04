@@ -12,6 +12,7 @@ import { toPercent } from "@/lib/grading/grade";
 import { questionKind, summarizeQuestionKinds } from "@/lib/question-kinds";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
+import { listDailyAssignmentIds } from "@/lib/server/daily-history";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { listDueCards, MAX_SESSION_CARDS } from "@/lib/server/reviews";
 import {
@@ -89,12 +90,16 @@ export async function getStudentClassView(userId: string, classId: string, now: 
     listClassLessons(classId),
     listClassAssignments([classId]),
   ]);
-  const attempts = await listUserAttempts(
-    userId,
-    assignments.map((assignment) => assignment.id),
-  );
+  const [attempts, dailyAssignmentIds] = await Promise.all([
+    listUserAttempts(
+      userId,
+      assignments.map((assignment) => assignment.id),
+    ),
+    listDailyAssignmentIds(assignments.map((assignment) => assignment.id)),
+  ]);
   return {
     classRow,
+    dailyAssignmentIds,
     lessons: lessons.filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime()),
     upcomingLessonCount: lessons.filter((lesson) => Date.parse(lesson.availableAt) > now.getTime())
       .length,
@@ -149,20 +154,6 @@ async function listReadLessonIds(userId: string, lessonIds: readonly string[]) {
     z.object({ lesson_id: z.string() }),
   );
   return new Set(rows.map((row) => row.lesson_id));
-}
-
-// Assignments the class's daily practice created, one per Vietnam day.
-async function listDailyAssignmentIds(assignmentIds: readonly string[]) {
-  const rows = await selectRowsIn(
-    assignmentIds,
-    (chunk) =>
-      createServiceClient()
-        .from("daily_practice_runs")
-        .select("assignment_id")
-        .in("assignment_id", chunk),
-    z.object({ assignment_id: z.uuid() }),
-  );
-  return new Set(rows.map((row) => row.assignment_id));
 }
 
 function isOpenWork(item: LearnerAssignment) {

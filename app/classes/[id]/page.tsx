@@ -3,12 +3,15 @@ import Link from "next/link";
 import {
   AssignmentStatusBadge,
   describeDue,
+  describeOpenDue,
   MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { buttonVariants } from "@/components/ui/button";
+import { compareDueUrgency } from "@/lib/assignment";
 import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
+import { foldMissedDailySets } from "@/lib/learner-today";
 import { requireStudent } from "@/lib/server/account";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { hasDailyRuns } from "@/lib/server/daily-history";
@@ -33,10 +36,11 @@ function isOpenWork(item: LearnerAssignment) {
 
 interface LearnerAssignmentItemProps {
   item: LearnerAssignment;
+  now: Date;
   isFirst?: boolean;
 }
 
-function LearnerAssignmentItem({ item, isFirst = false }: LearnerAssignmentItemProps) {
+function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignmentItemProps) {
   // Submitted work opens on its results; a new attempt is one more deliberate tap from there.
   const path =
     item.status === "submitted"
@@ -49,7 +53,10 @@ function LearnerAssignmentItem({ item, isFirst = false }: LearnerAssignmentItemP
           <Link href={path}>{item.assignment.title}</Link>
         </h3>
         <p className="item-meta">
-          {MODE_LABELS[item.assignment.mode]}, {describeDue(item.assignment.dueAt)}
+          {MODE_LABELS[item.assignment.mode]},{" "}
+          {isOpenWork(item)
+            ? describeOpenDue(item.assignment.dueAt, now)
+            : describeDue(item.assignment.dueAt)}
           {item.latestPercent !== null && `, điểm ${formatPercent(item.latestPercent)}`}
         </p>
       </div>
@@ -80,7 +87,17 @@ export default async function ClassPage({ params }: ClassPageProps) {
   ]);
   const nextSession = describeUpcomingSession(schedule.slots, now);
   const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
-  const openWork = view.assignments.filter(isOpenWork);
+  // Same order as Lớp của tôi: on-time work by deadline, then late work, missed daily sets folded.
+  const { listed: openWork, missed: missedDaily } = foldMissedDailySets(
+    view.assignments
+      .filter(isOpenWork)
+      .toSorted((first, second) =>
+        compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
+      ),
+    view.dailyAssignmentIds,
+    now,
+  );
+  const missedDailyCount = missedDaily.get(view.classRow.id) ?? 0;
   const otherWork = view.assignments.filter((item) => !isOpenWork(item));
   return (
     <>
@@ -128,11 +145,36 @@ export default async function ClassPage({ params }: ClassPageProps) {
       )}
       <section className="section-block" aria-labelledby="class-assignments">
         <h2 id="class-assignments">Bài tập cần làm</h2>
-        {openWork.length ? (
+        {openWork.length || missedDailyCount ? (
           <ul className="item-list">
             {openWork.map((item, index) => (
-              <LearnerAssignmentItem key={item.assignment.id} item={item} isFirst={index === 0} />
+              <LearnerAssignmentItem
+                key={item.assignment.id}
+                item={item}
+                now={now}
+                isFirst={index === 0}
+              />
             ))}
+            {missedDailyCount > 0 && (
+              <li>
+                <div>
+                  <h3>
+                    <Link href={`/classes/${view.classRow.id}/daily-practice`}>
+                      Luyện tập hằng ngày đã lỡ
+                    </Link>
+                  </h3>
+                  <p className="item-meta">{missedDailyCount} ngày chưa làm, vẫn nộp muộn được</p>
+                </div>
+                <div className="button-row item-actions">
+                  <Link
+                    href={`/classes/${view.classRow.id}/daily-practice`}
+                    className={buttonVariants({ variant: "outline" })}
+                  >
+                    Xem các ngày
+                  </Link>
+                </div>
+              </li>
+            )}
           </ul>
         ) : (
           <p className="muted">
@@ -188,7 +230,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
           <h2 id="done-assignments">Bài đã làm và bài khác</h2>
           <ul className="item-list">
             {otherWork.slice(0, RECENT_DONE_ASSIGNMENTS).map((item) => (
-              <LearnerAssignmentItem key={item.assignment.id} item={item} />
+              <LearnerAssignmentItem key={item.assignment.id} item={item} now={now} />
             ))}
           </ul>
           {otherWork.length > RECENT_DONE_ASSIGNMENTS && (
@@ -196,7 +238,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
               <summary>Bài cũ hơn ({otherWork.length - RECENT_DONE_ASSIGNMENTS})</summary>
               <ul className="item-list">
                 {otherWork.slice(RECENT_DONE_ASSIGNMENTS).map((item) => (
-                  <LearnerAssignmentItem key={item.assignment.id} item={item} />
+                  <LearnerAssignmentItem key={item.assignment.id} item={item} now={now} />
                 ))}
               </ul>
             </details>

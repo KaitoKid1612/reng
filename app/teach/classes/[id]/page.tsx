@@ -23,7 +23,7 @@ import { getClassSchedule } from "@/lib/server/class-schedule";
 import { listClassSessions } from "@/lib/server/class-sessions";
 import { findDailyPracticeSource } from "@/lib/server/daily-practice";
 import { loadOrNotFound } from "@/lib/server/pages";
-import { getClassReport } from "@/lib/server/reports";
+import { getClassReport, HARD_QUESTION_ASSIGNMENTS } from "@/lib/server/reports";
 import { absoluteUrl } from "@/lib/site";
 import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 
@@ -74,10 +74,35 @@ type ReportAssignment = Awaited<ReturnType<typeof getClassReport>>["assignments"
 const RECENT_ASSIGNMENTS = 5;
 
 interface AssignmentItemProps {
+  classId: string;
   assignment: ReportAssignment;
 }
 
-function AssignmentItem({ assignment }: AssignmentItemProps) {
+interface MissingLearnersProps {
+  classId: string;
+  learners: ReportAssignment["missing"];
+}
+
+// A few names are enough to message the learners; the rest are counted.
+const MISSING_NAMES = 5;
+
+function MissingLearners({ classId, learners }: MissingLearnersProps) {
+  const shown = learners.slice(0, MISSING_NAMES);
+  return (
+    <p className="small missing-learners">
+      Chưa nộp:{" "}
+      {shown.map((learner, index) => (
+        <span key={learner.userId}>
+          {index > 0 && ", "}
+          <Link href={`/teach/classes/${classId}/students/${learner.userId}`}>{learner.name}</Link>
+        </span>
+      ))}
+      {learners.length > shown.length && ` và ${learners.length - shown.length} học viên khác`}
+    </p>
+  );
+}
+
+function AssignmentItem({ classId, assignment }: AssignmentItemProps) {
   return (
     <li>
       <div>
@@ -89,6 +114,9 @@ function AssignmentItem({ assignment }: AssignmentItemProps) {
         </p>
         {assignment.result && assignment.result.assignedCount > 0 && (
           <AssignmentResultLine result={assignment.result} />
+        )}
+        {assignment.missing.length > 0 && (
+          <MissingLearners classId={classId} learners={assignment.missing} />
         )}
       </div>
       {assignment.status === "published" && (
@@ -279,6 +307,12 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         ) : (
           <p className="muted">Chưa có câu nào bị sai từ 50% trở lên.</p>
         )}
+        {report.olderStatsCount > 0 && (
+          <p className="small muted">
+            Tính trên {HARD_QUESTION_ASSIGNMENTS} bài giao gần nhất có bài nộp;{" "}
+            {report.olderStatsCount} bài cũ hơn xem ở trang từng học viên.
+          </p>
+        )}
       </section>
       <section className="section-block" aria-labelledby="daily-practice-title">
         <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
@@ -347,7 +381,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           <>
             <ul className="item-list">
               {report.assignments.slice(0, RECENT_ASSIGNMENTS).map((assignment) => (
-                <AssignmentItem key={assignment.id} assignment={assignment} />
+                <AssignmentItem key={assignment.id} classId={classRow.id} assignment={assignment} />
               ))}
             </ul>
             {report.assignments.length > RECENT_ASSIGNMENTS && (
@@ -355,7 +389,11 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
                 <summary>Bài cũ hơn ({report.assignments.length - RECENT_ASSIGNMENTS})</summary>
                 <ul className="item-list">
                   {report.assignments.slice(RECENT_ASSIGNMENTS).map((assignment) => (
-                    <AssignmentItem key={assignment.id} assignment={assignment} />
+                    <AssignmentItem
+                      key={assignment.id}
+                      classId={classRow.id}
+                      assignment={assignment}
+                    />
                   ))}
                 </ul>
               </details>
