@@ -3,6 +3,7 @@ import "server-only";
 import { z } from "zod";
 
 import { getTeacherClass, listTeacherClasses, setClassLesson } from "@/lib/server/classes";
+import { lessonLanguage } from "@/lib/teaching-language";
 import {
   createServiceClient,
   selectOptional,
@@ -24,6 +25,22 @@ export interface LessonUsage {
 }
 
 const versionSchema = z.object({ id: z.uuid(), version_no: z.number().int() });
+
+// The lesson's language decides which classes may use it; null for an unknown schema.
+async function loadOwnedLessonLanguage(teacherId: string, lessonId: string) {
+  const lesson = await selectOptional(
+    createServiceClient()
+      .from("lessons")
+      .select(
+        "schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
+      )
+      .eq("id", lessonId)
+      .eq("owner_id", teacherId)
+      .maybeSingle(),
+    z.object({ schema_version: z.string().nullable(), language_tag: z.string().nullable() }),
+  );
+  return lesson ? lessonLanguage(lesson.schema_version, lesson.language_tag) : null;
+}
 
 async function loadPublishedVersion(teacherId: string, lessonId: string) {
   const service = createServiceClient();
@@ -56,11 +73,15 @@ async function loadPublishedVersion(teacherId: string, lessonId: string) {
 // Which of the teacher's active classes use this lesson, and at which version.
 export async function getLessonUsage(teacherId: string, lessonId: string): Promise<LessonUsage> {
   const service = createServiceClient();
-  const [published, classes] = await Promise.all([
+  const [published, classes, language] = await Promise.all([
     loadPublishedVersion(teacherId, lessonId),
     listTeacherClasses(teacherId),
+    loadOwnedLessonLanguage(teacherId, lessonId),
   ]);
-  const activeClasses = classes.filter((item) => item.active);
+  // A Japanese lesson is offered to Japanese classes only, and a Chinese one to Chinese classes.
+  const activeClasses = classes.filter(
+    (item) => item.active && (language === null || item.language_tag === language),
+  );
   const rows = await selectRowsIn(
     activeClasses.map((item) => item.id),
     (chunk) =>

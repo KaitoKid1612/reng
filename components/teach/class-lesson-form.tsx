@@ -31,7 +31,14 @@ export function ClassLessonForm({
   defaultAvailableAt,
 }: ClassLessonFormProps) {
   const [state, action, isPending] = useActionState(setClassLessonAction, {});
-  const publishedLessons = lessons.filter((item) => item.versions.length > 0);
+  // Only lessons in the class's language, plus any the class already has, are offered.
+  const publishedLessons = lessons.filter(
+    (item) =>
+      item.versions.length > 0 &&
+      (item.languageTag === null ||
+        item.languageTag === classLanguageTag ||
+        classLessons.some((row) => row.lessonId === item.id)),
+  );
   // Start with the first published lesson the class does not have yet.
   const [lessonId, setLessonId] = useState(
     () =>
