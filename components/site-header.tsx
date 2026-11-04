@@ -56,10 +56,18 @@ function listAccountLinks(account: AccountSummary): NavigationLink[] {
   return links;
 }
 
+// Settings, progress and sign-out sit behind one entry, so they are reachable from every page.
+const ACCOUNT_LINK: NavigationLink = {
+  href: "/settings/account",
+  label: "Tài khoản",
+  isSection: true,
+  relatedPaths: ["/settings/notifications"],
+};
+
 // While the account loads the menu matches the server-rendered guest menu, minus sign-in.
 function listLinks(account: AccountSummary | null | undefined) {
   if (account) {
-    return [...listAccountLinks(account), SELF_STUDY_LINK, GUIDE_LINK];
+    return [...listAccountLinks(account), SELF_STUDY_LINK, GUIDE_LINK, ACCOUNT_LINK];
   }
   const links = [...GUEST_LINKS, SELF_STUDY_LINK, GUIDE_LINK];
   return account === null ? [...links, SIGN_IN_LINK] : links;
