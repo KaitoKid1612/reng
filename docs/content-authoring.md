@@ -191,7 +191,7 @@ Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-a
 
    SQL dừng lại nếu một câu đã sửa lời nghe sau khi sinh audio, hoặc thiếu file audio.
 
-4. **Giáo viên nghe duyệt**: mở bài ở Giảng dạy → Soạn bài, nghe từng câu. Máy đọc sai thì sửa lời nghe trong bộ đề, sinh lại audio rồi làm lại bước 2–3 (hoặc xóa câu đó trên trình soạn). Xong thì Xuất bản.
+4. **Giáo viên nghe duyệt**: mở bài ở Giảng dạy → Soạn bài → mục Câu luyện; mỗi câu có trình phát ngay dưới lời nghe, nghe từng câu. Máy đọc sai thì sửa lời nghe trong bộ đề, sinh lại audio rồi làm lại bước 2–3 (hoặc xóa câu đó trên trình soạn). Xong thì Xuất bản.
 5. **Đưa vào lớp và giao bài**: Dùng bài trong lớp → Đưa vào lớp; ở Giao bài tập chọn các câu `(Bài N)` của bài vừa học. Câu nghe không tự vào bài luyện tập hằng ngày.
 
 Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫn sinh audio bằng `npm run audio:generate -- --r2 --lessons --db --sync-db --lesson <mã bài>`, vì cách này cần kho R2 có địa chỉ công khai.

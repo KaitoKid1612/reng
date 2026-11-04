@@ -2177,6 +2177,12 @@ rt {
   overflow-wrap: anywhere;
 }
 /* The invite text ends in a paragraph, so the buttons below need their own space. */
+.editor-audio {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 8px;
+}
 .join-code-actions {
   margin-top: 16px;
 }

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
+import { lessonAudioUrl } from "@/lib/lesson-audio-url";
 
 import type { InputMode } from "@/lib/assignment";
 import type { DraftListeningQuestion } from "@/lib/lesson-draft";
@@ -111,9 +112,19 @@ export function ListeningQuestionEditor({
         />
         <p id={`${id}-audio`} className="small muted" data-testid="question-audio-status">
           {question.audio
-            ? "Đã có audio. Sửa transcript thì cần tạo lại audio."
+            ? "Đã có audio: nghe thử bên dưới trước khi xuất bản. Sửa transcript thì cần tạo lại audio."
             : "Chưa có audio. Reng chưa tạo được audio ngay trên web, nên câu nghe chỉ xuất bản được sau khi quản trị viên tạo audio. Học viên chỉ thấy transcript sau khi trả lời."}
         </p>
+        {/* The teacher reviews the generated voice here; learners get the counted player instead. */}
+        {question.audio && (
+          <audio
+            className="editor-audio"
+            controls
+            preload="none"
+            src={lessonAudioUrl(question.audio) ?? undefined}
+            aria-label={`Nghe thử audio câu ${position}`}
+          />
+        )}
       </div>
       {question.type === "listen" && (
         <fieldset>
