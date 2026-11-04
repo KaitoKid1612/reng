@@ -169,6 +169,16 @@ Phần so sánh âm với tiếng Việt chỉ là gần đúng để bắt đ�
 
 Dòng bài tập hạn hôm nay và bài nộp mới chưa xem được trên trình duyệt, vì dữ liệu local không có bài đến hạn hay bài nộp trong ngày; logic đã có test và dùng chung phần hiển thị với Hôm nay học gì. E2E chưa chạy.
 
+## Tiến độ theo dạng câu (04/11/2026)
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/question-kinds.test.ts`: phân loại dạng câu (đọc hiểu, nghe, bỏ dạng lạ); thứ tự và phần trăm; dạng hay sai nhất cần đủ câu và có dạng để so | Đạt |
+| Học viên demo có một lượt nộp: trang Tiến độ hiện Trắc nghiệm 1/1 (100%), Điền từ 0/2 (0%); khớp truy vấn đối chiếu trực tiếp trên database | Đạt |
+| Ở 390px bảng xếp dọc có nhãn từng ô; `npm run audit:layout` trang Tiến độ | Không có lỗi hay cảnh báo |
+
+Chưa thử trên trình duyệt trường hợp bài kiểm tra chưa tới lúc xem kết quả; phần lọc dùng cùng quy tắc `isFeedbackAvailable` với điểm trên trang Tiến độ. E2E chưa chạy.
+
 ## Còn lại, cần người dùng quyết định
 - **Chính sách quyền riêng tư và điều khoản sử dụng:** đã có bản nháp mô tả đúng dữ liệu Reng đang lưu ([quyền riêng tư](../legal/privacy-policy-draft.md), [điều khoản](../legal/terms-of-use-draft.md)). Cần điền người vận hành, email liên hệ, thời hạn xử lý yêu cầu, độ tuổi tối thiểu, rồi nhờ người có chuyên môn pháp lý rà soát trước khi công bố.
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.

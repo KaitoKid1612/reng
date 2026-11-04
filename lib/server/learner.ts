@@ -2,8 +2,14 @@ import "server-only";
 
 import { z } from "zod";
 
-import { compareDueUrgency, getDeadlineState, isFeedbackAvailable } from "@/lib/assignment";
+import {
+  compareDueUrgency,
+  FEEDBACK_POLICIES,
+  getDeadlineState,
+  isFeedbackAvailable,
+} from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
+import { questionKind, summarizeQuestionKinds } from "@/lib/question-kinds";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
@@ -329,5 +335,142 @@ export async function markLessonRead(userId: string, lessonId: string, versionId
       },
       { onConflict: "user_id,lesson_id" },
     ),
+  );
+}
+
+// The newest submitted attempts are enough to show a learner's weak spots.
+const KIND_SUBMISSIONS = 100;
+// Matches [api] max_rows in supabase/config.toml: a longer result comes back cut to this.
+const PAGE_ROWS = 1000;
+const KIND_BATCH = 10;
+
+async function selectEveryPage<Schema extends z.ZodType>(
+  query: (
+    from: number,
+    to: number,
+  ) => PromiseLike<{
+    data: unknown;
+    error: { message: string; code?: string } | null;
+  }>,
+  schema: Schema,
+) {
+  const rows: z.infer<Schema>[] = [];
+  for (let from = 0; ; from += PAGE_ROWS) {
+    const page = await selectRows(query(from, from + PAGE_ROWS - 1), schema);
+    rows.push(...page);
+    if (page.length < PAGE_ROWS) {
+      return rows;
+    }
+  }
+}
+
+function inBatches(values: readonly string[]) {
+  const batches: string[][] = [];
+  for (let start = 0; start < values.length; start += KIND_BATCH) {
+    batches.push(values.slice(start, start + KIND_BATCH));
+  }
+  return batches;
+}
+
+// Share of right answers per kind of question. Only attempts whose results the learner may
+// already see count, so a test never shows right or wrong before its feedback time.
+export async function getQuestionKindStats(userId: string, now: Date) {
+  const service = createServiceClient();
+  const submissions = await selectRows(
+    service
+      .from("submissions")
+      .select("id, assignment_id, submitted_at")
+      .eq("user_id", userId)
+      .eq("status", "submitted")
+      .order("submitted_at", { ascending: false })
+      .limit(KIND_SUBMISSIONS),
+    z.object({ id: z.uuid(), assignment_id: z.uuid(), submitted_at: timestamp }),
+  );
+  if (!submissions.length) {
+    return [];
+  }
+  const rules = await selectRowsIn(
+    submissions.map((row) => row.assignment_id),
+    (chunk) => service.from("assignments").select("id, feedback_policy, due_at").in("id", chunk),
+    z.object({
+      id: z.uuid(),
+      feedback_policy: z.enum(FEEDBACK_POLICIES),
+      due_at: timestamp.nullable(),
+    }),
+  );
+  const ruleOf = new Map(rules.map((rule) => [rule.id, rule]));
+  const visible = submissions.filter((row) => {
+    const rule = ruleOf.get(row.assignment_id);
+    return (
+      rule !== undefined &&
+      isFeedbackAvailable(
+        { feedbackPolicy: rule.feedback_policy, dueAt: rule.due_at },
+        row.submitted_at,
+        now,
+      )
+    );
+  });
+  if (!visible.length) {
+    return [];
+  }
+  const answerSchema = z.object({
+    submission_id: z.uuid(),
+    question_id: z.string(),
+    is_correct: z.boolean(),
+  });
+  const itemSchema = z.object({
+    assignment_id: z.uuid(),
+    question_id: z.string(),
+    type: z.string(),
+    passage: z.string().nullable(),
+  });
+  const [answerPages, itemPages] = await Promise.all([
+    Promise.all(
+      inBatches(visible.map((row) => row.id)).map((batch) =>
+        selectEveryPage(
+          (from, to) =>
+            service
+              .from("answers")
+              .select("submission_id, question_id, is_correct")
+              .in("submission_id", batch)
+              .order("submission_id")
+              .order("question_id")
+              .range(from, to),
+          answerSchema,
+        ),
+      ),
+    ),
+    Promise.all(
+      inBatches([...new Set(visible.map((row) => row.assignment_id))]).map((batch) =>
+        selectEveryPage(
+          (from, to) =>
+            service
+              .from("assignment_items")
+              .select(
+                "assignment_id, question_id, type:question_snapshot->>type, passage:question_snapshot->>passage",
+              )
+              .in("assignment_id", batch)
+              .order("assignment_id")
+              .order("question_id")
+              .range(from, to),
+          itemSchema,
+        ),
+      ),
+    ),
+  ]);
+  const assignmentOf = new Map(visible.map((row) => [row.id, row.assignment_id]));
+  const kindOf = new Map(
+    itemPages
+      .flat()
+      .map((item) => [
+        `${item.assignment_id}:${item.question_id}`,
+        questionKind(item.type, Boolean(item.passage)),
+      ]),
+  );
+  return summarizeQuestionKinds(
+    answerPages.flat().flatMap((answer) => {
+      const kind = kindOf.get(`${assignmentOf.get(answer.submission_id)}:${answer.question_id}`);
+      return kind ? [{ kind, isCorrect: answer.is_correct }] : [];
+    }),
   );
 }

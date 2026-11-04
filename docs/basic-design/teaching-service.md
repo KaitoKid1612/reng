@@ -137,6 +137,10 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Tiến độ theo dạng câu — 04/11/2026
+
+Trang Tiến độ của học viên có mục **Theo dạng câu**: số câu đã làm, số câu đúng và tỉ lệ đúng cho từng dạng (trắc nghiệm, điền từ, sắp xếp câu, ghép cặp, nghe, đọc hiểu). Câu có đoạn văn tính là đọc hiểu. Khi có từ hai dạng, mỗi dạng ít nhất 5 câu, trang chỉ ra dạng hay sai nhất và trỏ tới Sổ lỗi. Số liệu tính trên tối đa 100 lượt nộp gần nhất. Bài kiểm tra chỉ được tính khi đã tới lúc học viên xem được kết quả, nên mục này không lộ đúng sai sớm.
+
 ## Hôm nay dạy gì — 04/11/2026
 
 Trang Giảng dạy có mục **Hôm nay dạy gì**, đặt sau Các bước bắt đầu dạy, khi giáo viên có ít nhất một lớp dạy đang hoạt động:

@@ -8,7 +8,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { listLearningHistory } from "@/lib/server/learning-history";
-import { getProgressSummary } from "@/lib/server/learner";
+import { getProgressSummary, getQuestionKindStats } from "@/lib/server/learner";
+import { weakestKind } from "@/lib/question-kinds";
 import { formatStudyDateTime } from "@/lib/study-days";
 import { weeklyScores } from "@/lib/weekly-scores";
 
@@ -46,10 +47,12 @@ function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
   const now = new Date();
-  const [summary, histories] = await Promise.all([
+  const [summary, histories, kindStats] = await Promise.all([
     getProgressSummary(account.id, now),
     listLearningHistory(),
+    getQuestionKindStats(account.id, now),
   ]);
+  const weakest = weakestKind(kindStats);
   // Teachers who also study see their own imported history here, not their learners'.
   const ownHistories = histories.filter((item) => item.learner_id === account.id);
   const weeks = weeklyScores(
@@ -140,6 +143,57 @@ export default async function ProgressPage() {
           </>
         ) : (
           <p className="muted">Chưa có bài tập nào được giao.</p>
+        )}
+      </section>
+      <section className="section-block" aria-labelledby="kind-progress">
+        <h2 id="kind-progress">Theo dạng câu</h2>
+        {kindStats.length ? (
+          <>
+            {weakest && (
+              <p>
+                Dạng bạn hay sai nhất: <strong>{weakest.label}</strong> ({weakest.percent}% đúng).
+                Ôn lại các câu sai trong <Link href="/mistakes">Sổ lỗi</Link>.
+              </p>
+            )}
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Dạng câu</th>
+                  <th scope="col" className="numeric">
+                    Đã làm
+                  </th>
+                  <th scope="col" className="numeric">
+                    Đúng
+                  </th>
+                  <th scope="col" className="numeric">
+                    Tỉ lệ đúng
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {kindStats.map((stat) => (
+                  <tr key={stat.kind}>
+                    <td>{stat.label}</td>
+                    <td className="numeric" data-label="Đã làm">
+                      {stat.answered}
+                    </td>
+                    <td className="numeric" data-label="Đúng">
+                      {stat.correct}
+                    </td>
+                    <td className="numeric" data-label="Tỉ lệ đúng">
+                      {stat.percent}%
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="small muted">
+              Tính trên tối đa 100 lượt nộp gần nhất. Bài kiểm tra chỉ được tính khi đã tới lúc xem
+              kết quả.
+            </p>
+          </>
+        ) : (
+          <p className="muted">Chưa có câu trả lời nào để thống kê.</p>
         )}
       </section>
       {ownHistories.length > 0 && (

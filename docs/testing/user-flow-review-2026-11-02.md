@@ -79,7 +79,7 @@ Các mục dưới đây chưa làm trong đợt này. Thứ tự theo tác đ�
 | 7 | Cả hai | Đánh dấu loại bài "ngân hàng câu hỏi" và "bài học" | Lớp đang trộn hai loại: học viên thấy Flashcard/Luyện kanji cho ngân hàng không có từ vựng; khối Buổi dạy online chưa tự gợi ý được bài đầu tiên. Một phần ngày 03/11/2026: hai link chỉ hiện khi bài có từ vựng ([QA-07](question-authoring-2026-11-03.md)) |
 | 8 | Cả hai | Trang Giảng dạy: chỉ hiện form lọc bài khi có nhiều bài, hoặc gập lại | Với 2 bài, form lọc chiếm phần lớn màn hình đầu. Đã làm 03/11/2026: form gập trong mục "Lọc bài học", mở sẵn khi có hơn 6 bài hoặc đang lọc |
 | 9 | Cả hai | Render phần tài khoản của header ở server cho các trang cần đăng nhập | Header vẫn tải tài khoản sau khi trang hiện, nên các mục đổi một nhịp sau khi tải. Một phần 03/11/2026: trình duyệt đã đăng nhập không còn thấy menu khách nháy qua (gợi ý trong localStorage, script inline trước lần vẽ đầu) |
-| 10 | Cả hai | Tiến độ theo ngày và theo dạng bài cho bài làm trên Reng, như trang lịch sử Sheet | Người học không còn cần mở bản lưu cũ để xem mình yếu dạng nào (mục 5 của rà soát 02/11) |
+| 10 | Cả hai | Tiến độ theo ngày và theo dạng bài cho bài làm trên Reng, như trang lịch sử Sheet | Người học không còn cần mở bản lưu cũ để xem mình yếu dạng nào (mục 5 của rà soát 02/11). Một phần 04/11/2026: trang Tiến độ có mục Theo dạng câu (tỉ lệ đúng từng dạng, dạng hay sai nhất); theo ngày vẫn là biểu đồ theo tuần sẵn có |
 
 ## Quy trình dạy một buổi online sau đợt này
 
