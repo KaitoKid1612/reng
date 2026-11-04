@@ -128,7 +128,7 @@ Thư xuất hiện trong Mailpit. Job chạy lại trong cùng ngày không gử
 
 Nguồn bài mặc định LESSON_SOURCE=local. Để đọc Supabase, cần LESSON_SOURCE=supabase, SUPABASE_URL và SUPABASE_SECRET_KEY. Teacher sign-in và API notes dùng SUPABASE_PUBLISHABLE_KEY/cookie HttpOnly, không dùng secret key để bỏ qua quyền notes. Thiếu cấu hình thì không có session giả và không trả ghi chú riêng. Xem [staging setup](docs/staging-setup.md).
 
-Migration trong supabase/migrations được kiểm tra trên PostgreSQL nhúng và Supabase local, và đã áp dụng vào project production `reng` bằng `npx supabase db push` (sau khi `npx supabase link`). Migration mới phải chạy test và E2E local trước khi push lên production; không cần database để chạy kana.
+Migration trong supabase/migrations được kiểm tra trên PostgreSQL nhúng và Supabase local, và đã áp dụng vào project production `reng` bằng `npx supabase db push --linked` (sau khi `npx supabase link`; xem trước bằng `--dry-run`). Luôn ghi `--linked`: từ Supabase CLI 3, `db push` không có cờ này sẽ đẩy vào database local. Migration mới phải chạy test và E2E local trước khi push lên production; không cần database để chạy kana.
 
 ## Font và nguồn
 
