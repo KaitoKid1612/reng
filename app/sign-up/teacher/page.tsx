@@ -22,7 +22,10 @@ export default async function TeacherSignUpPage() {
   return (
     <div className="narrow-page">
       <h1>Đăng ký giáo viên</h1>
-      <p>Xác minh email, sau đó xác nhận trách nhiệm nội dung để bắt đầu giảng dạy.</p>
+      <p>
+        Tạo tài khoản, sau đó xác nhận trách nhiệm nội dung để bắt đầu giảng dạy. Nếu Reng gửi thư
+        xác nhận, mở thư và bấm liên kết trước.
+      </p>
       {isClassroomConfigured() ? (
         <>
           {isGoogleAuthEnabled() && (

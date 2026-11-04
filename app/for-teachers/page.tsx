@@ -57,7 +57,7 @@ const SUBJECTS = [
 ];
 
 const STEPS = [
-  "Tạo tài khoản và xác minh email.",
+  "Tạo tài khoản (nếu Reng gửi thư xác nhận, mở thư và bấm liên kết).",
   "Gửi yêu cầu giảng dạy; trong giai đoạn thử nghiệm, quản trị viên mở quyền cho từng giáo viên.",
   "Tạo lớp, dán link Google Meet và soạn bài đầu tiên theo mẫu.",
   "Gửi mã lớp cho học viên, trình chiếu khi dạy và giao bài tập sau buổi học.",

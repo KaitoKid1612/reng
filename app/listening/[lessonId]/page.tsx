@@ -37,7 +37,7 @@ export default async function ListeningPage({ params, searchParams }: ListeningP
           )}
           <h1>Luyện nghe: {version.title}</h1>
           <p>
-            Bấm Nghe để phát, Lùi 5 giây để nghe lại đoạn vừa qua. Transcript hiện sau khi bạn trả
+            Bấm Nghe để phát, Lùi 5 giây để nghe lại đoạn vừa qua. Lời nghe hiện sau khi bạn trả
             lời.
           </p>
         </div>

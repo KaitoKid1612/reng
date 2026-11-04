@@ -33,7 +33,7 @@ export function ResultRow({ item, number }: ResultRowProps) {
       )}
       {item.transcript !== null && (
         <p className="transcript">
-          Transcript: <span lang={item.view.lang}>{item.transcript}</span> (bạn đã nghe{" "}
+          Lời nghe: <span lang={item.view.lang}>{item.transcript}</span> (bạn đã nghe{" "}
           {item.listenCount} lần)
         </p>
       )}

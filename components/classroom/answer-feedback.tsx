@@ -33,7 +33,7 @@ export function AnswerFeedback({
         <p className="muted">{explain}</p>
         {transcript && (
           <p className="transcript">
-            Transcript: <span lang={transcriptLang}>{transcript}</span>
+            Lời nghe: <span lang={transcriptLang}>{transcript}</span>
           </p>
         )}
       </div>

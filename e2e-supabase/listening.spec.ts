@@ -322,8 +322,8 @@ test("practice assignments keep listen counts and the report flags weak listenin
   await student.waitForURL(/\/results$/);
   await expect(student.locator(".result-score")).toContainText("100%");
   await expect(student.locator(".transcript")).toHaveText([
-    `Transcript: ${LISTEN.transcript} (bạn đã nghe 1 lần)`,
-    `Transcript: ${DICTATION.transcript} (bạn đã nghe 6 lần)`,
+    `Lời nghe: ${LISTEN.transcript} (bạn đã nghe 1 lần)`,
+    `Lời nghe: ${DICTATION.transcript} (bạn đã nghe 6 lần)`,
   ]);
 
   await teacher.goto(`/teach/classes/${classId}`);
