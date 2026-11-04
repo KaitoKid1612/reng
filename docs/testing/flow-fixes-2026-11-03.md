@@ -203,7 +203,7 @@ Dữ liệu thử trên Supabase local: 14 ngày bài hằng ngày (22/10–04/1
 | `tests/daily-history.test.ts`: dải màu 80/60, trạng thái và nhãn ngày, lọc ngày trước khi vào lớp và sau ngày cuối, tổng quan, chuỗi ngày (bài hôm nay chưa nộp không làm đứt chuỗi), so sánh với 5 ngày trước, nhóm theo tháng, ngày trước/sau; `tests/answer-outcome.test.ts` thêm link lọc giữ `?day=` | Đạt |
 | Học viên ở 1280px: tổng quan 11/14 ngày, trung bình 78% (7/11 ngày đạt từ 80%), gần nhất 100% ngày 03/11 tăng 26 điểm % so với trung bình 5 ngày trước, 3 ngày liên tiếp; khớp tính tay từ dữ liệu thử | Đạt |
 | Bấm ô 01/11: trang cuộn tới ngày, hiện 40% (4/10 điểm), Đúng 4, Sai 6 gồm 1 câu bỏ trống; lọc Sai giữ ngày (`?day=2026-11-01&outcome=wrong`), hiện 6/10 câu; Ngày trước mở 31/10 "đang làm dở" với nút Làm tiếp; hôm nay chưa làm có nút Làm bài; `day` sai thì mở ngày mới nhất | Đạt |
-| Trang lớp có nút "Điểm bài tập hằng ngày"; trang kết quả của bài hằng ngày có nút "Xem điểm các ngày" tới đúng ngày, bài giao tay thì không có; lớp không phải thành viên và ID bài sai trả 404 | Đạt |
+| Trang lớp có nút "Điểm bài tập hằng ngày" (cùng ngày đổi thành "Điểm luyện tập hằng ngày"); trang kết quả của bài hằng ngày có nút "Xem điểm các ngày" tới đúng ngày, bài giao tay thì không có; lớp không phải thành viên và ID bài sai trả 404 | Đạt |
 | 390px và 360px: không tràn ngang, 5 ô ngày mỗi hàng ở 360px, ba ô Tổng câu/Đúng/Sai cùng một hàng | Đạt |
 | Giáo viên (lớp Minna local): mục Bài tập hằng ngày cùng số liệu; bấm ô 28/10 tới `#assignment-…`, chỉ bài 28/10 mở sẵn (4 sai / 10 câu) | Đạt |
 | Không có lỗi console trên các trang trên; `npm run check` | Đạt |

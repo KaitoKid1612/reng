@@ -30,6 +30,8 @@ AUDIT_EMAIL=… AUDIT_PASSWORD=… npm run audit:layout -- --login --crawl 40  #
 
 Công cụ chỉ mở trang (GET) và không bấm nút sau khi đăng nhập, nên không đổi dữ liệu. Chỉ dùng tài khoản local hoặc tài khoản thử; mật khẩu chỉ đọc từ biến môi trường. Bỏ qua `/api`, `/auth`, `/unsubscribe`, cửa sổ presenter và tệp tải về.
 
+Ngày 04/11/2026 quy tắc `text-overlap` bỏ qua furigana: `<rt>` nằm trên dòng chữ gốc và khung chữ gốc được nới theo furigana không còn bị báo; furigana chạm vào dòng phía trên vẫn bị báo ([rà soát 04/11](ux-review-2026-11-04.md)).
+
 Đã thử công cụ trên một trang mẫu có sẵn đủ 11 loại lỗi: cả 11 loại đều được báo. Lần chạy đầu trên trang công khai báo nhiều cảnh báo sai, nên đã sửa ba quy tắc: link đứng riêng được miễn nếu đủ khoảng trống theo WCAG; link xuống hai dòng được so theo từng dòng; khung đánh dấu chỉ vẽ quanh dòng chữ quá sát.
 
 ## Lần chạy ngày 03/11/2026

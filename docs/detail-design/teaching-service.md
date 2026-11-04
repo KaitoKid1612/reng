@@ -259,6 +259,22 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Rà soát giao diện — 04/11/2026
+
+- `components/classroom/attempt-runner.tsx`: khối `.question-next` (chỉ hiện dưới 600px) sau phản hồi của câu đã kiểm tra: Câu sau › gọi `handleMove(index + 1, "card")`, câu cuối mở hộp nộp bài. `handleMove` không có đích focus vẫn cuộn tới thẻ (`block: "start"` khi đầu thẻ ở trên màn hình).
+- `app/assignments/[id]/page.tsx`: đã nộp thì Xem kết quả (`buttonVariants()`) + `StartAttemptButton variant="outline"` (prop mới). Trang kết quả: `isAccepting` = `published` và `getDeadlineState` khác `past_due`; khối `actions` dựng một lần, đặt dưới điểm (hoặc cuối trang khi chưa có điểm).
+- `AuthFormState.values` và `ActionState.values` (`app/actions/auth.ts`, `app/actions/classes.ts`): `signIn`/`signUp` bọc hàm cũ và trả lại email/họ tên, `joinClassAction` trả lại mã đã gõ. Ô nhập dùng `key` + `defaultValue` theo giá trị trả về, vì React đặt lại form sau action.
+- `lessonNotFound(path)` (`lib/server/lesson-access.ts`): nguồn database và chưa đăng nhập thì `redirect(signInPath(path))`, còn lại `notFound()`. Các trang bài, slide, flashcard, kanji, nghe `return lessonNotFound(...)` để kiểu được thu hẹp.
+- `TodayClass.meetingUrl` (từ `listStudentClasses`), `TodayItem` buổi học có `meetingUrl`; `toTodayRows` trả `actionHref` + `isExternal` cho buổi đang diễn ra có link Meet; `TodayRows` vẽ `<a target="_blank">`; schema ở `home-agenda.tsx` thêm hai trường tùy chọn.
+- `formatDecimal`/`formatPercent` (`lib/grading/grade.ts`) dùng `Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 })`; CSV vẫn dùng `formatPercentValue`.
+- Trình chiếu: link Ghi buổi dạy là `<a target="_blank" rel="noopener">`; `slidePresenterPath` cho Quay lại trình chiếu và Mở trình chiếu; `classQuery` thêm vào mọi link Presenter; `PresenterView` nhận `classId`, nghe `keydown` (ArrowRight/ArrowDown/PageDown/phím cách ngoài nút → next, ArrowLeft/ArrowUp/PageUp → prev) qua `BroadcastChannel`, ẩn link đăng nhập khi đã tải ghi chú. `SlideDeck` có `canPresent` (trang slide truyền `account?.role !== "student"`) và `scrollActivationWidth: 0`.
+- Giao bài: `.question-pick-actions` (Chọn tất cả theo thứ tự câu của bài, Bỏ chọn, đếm `aria-live`). `publishAssignmentAction` nhận ID bài mới và chuyển tới `?assigned=<id>#assignments-title`; trang lớp tìm bài trong `report.assignments` để hiện thông báo.
+- `normalizeMeetingUrl` (`lib/class-settings.ts`): `^(?:https://)?meet.google.com/<mã>/?(?:[?#].*)?$` không phân biệt hoa thường → `https://meet.google.com/<mã thường>`; `http://`, tên miền khác và `user@` vẫn bị từ chối. `describeError` báo riêng lỗi ô `meetingUrl`.
+- Xác nhận: `JoinCodeControls` bọc `joinCodeAction` để đóng hộp hỏi sau khi xong; `DeleteSessionButton` theo mẫu `RemoveStudentButton`.
+- `app/teach/lessons/new/page.tsx` dùng `findStarterForLesson(creationFingerprint)` để chỉ ra bài mẫu đã tạo.
+- `app/lessons/error.tsx` dùng `retry` (Next 16: `reset` chỉ xóa trạng thái lỗi). `GrammarSearch` vẽ mẫu câu và giải thích bằng `JapaneseText`. `QuestionMap` thêm `.question-map-mark` ✓/✗. `FlashcardDeck` giữ `ratedIds` và dừng ở màn hình Xong bộ thẻ.
+- `scripts/audit-layout.ts`: bỏ qua cặp chữ khi một bên là `<rt>` nằm trên dòng kia, và khi một bên thuộc `<ruby>` khác với độ chồng ngang dưới 1/4 bề rộng khung ruby.
+
 ## Lịch sử bài tập hằng ngày — 04/11/2026
 
 - `lib/daily-history.ts` (thuần, `tests/daily-history.test.ts`):

@@ -30,7 +30,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S16 | Đề thi thử | `/mock-exams` | 6 |
 | S17 | Lớp của tôi | `/classes` | 3 |
 | S18 | Lớp học: bài đã mở và bài tập | `/classes/[id]` | 3 |
-| S19 | Lịch sử bài tập hằng ngày | `/classes/[id]/daily-practice` | 3 |
+| S19 | Luyện tập hằng ngày (điểm từng ngày) | `/classes/[id]/daily-practice` | 3 |
 
 ### Dành cho giảng viên
 
