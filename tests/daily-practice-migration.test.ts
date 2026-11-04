@@ -98,6 +98,24 @@ test("daily practice publishes one assignment per class and Vietnam day, only wh
       /reng:invalid_input/,
     );
     await db.query("select public.set_daily_practice($1, $2, 5)", [TEACHER, classRow.id]);
+    // How many listening questions a day: null (proportional) by default, 0–10 when chosen.
+    await db.query("select public.set_daily_practice($1, $2, 5, null, 2)", [TEACHER, classRow.id]);
+    const listening = await one<{ daily_listening_count: number | null }>(
+      "select daily_listening_count from public.classes where id = $1",
+      [classRow.id],
+    );
+    assert.equal(listening.daily_listening_count, 2);
+    await assert.rejects(
+      db.query("select public.set_daily_practice($1, $2, 5, null, 11)", [TEACHER, classRow.id]),
+      /reng:invalid_input/,
+    );
+    // An older caller without the argument goes back to the proportional rule.
+    await db.query("select public.set_daily_practice($1, $2, 5)", [TEACHER, classRow.id]);
+    const reset = await one<{ daily_listening_count: number | null }>(
+      "select daily_listening_count from public.classes where id = $1",
+      [classRow.id],
+    );
+    assert.equal(reset.daily_listening_count, null);
 
     const first = await publish(tomorrow, ["q2", "q1"]);
     const assignment = await one<{
