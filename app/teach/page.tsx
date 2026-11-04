@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import { StartChecklist } from "@/components/teach/start-checklist";
+import { TeacherTodayPanel } from "@/components/teach/teacher-today";
 import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { filterManagedLessons, parseLessonFilters } from "@/lib/lesson-management";
@@ -14,6 +15,8 @@ import { requireTeacher } from "@/lib/server/account";
 import { listClassSchedules } from "@/lib/server/class-schedule";
 import { getClassProgressFlags } from "@/lib/server/lesson-usage";
 import { buildStartSteps, showsStartSteps } from "@/lib/teaching-start";
+import { buildTeacherToday } from "@/lib/teacher-today";
+import { loadTeacherTodayActivity } from "@/lib/server/teacher-today";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
 import { findStarterForLesson } from "@/lib/starter-lessons";
 
@@ -38,10 +41,25 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
   ]);
   // A self-study class never takes learners, so the start steps look at teaching classes only.
   const teachingClasses = classes.filter((item) => !item.self_study && item.active);
-  const [schedules, flags] = await Promise.all([
+  const [schedules, flags, activity] = await Promise.all([
     listClassSchedules(classes.map((item) => item.id)),
     getClassProgressFlags(teachingClasses.map((item) => item.id)),
+    loadTeacherTodayActivity(
+      teachingClasses.map((item) => item.id),
+      now,
+    ),
   ]);
+  const teacherToday = buildTeacherToday(
+    {
+      classes: teachingClasses.map((item) => ({
+        id: item.id,
+        name: item.name,
+        slots: schedules.get(item.id)?.slots ?? [],
+      })),
+      ...activity,
+    },
+    now,
+  );
   const firstClass = teachingClasses[0];
   const firstLesson = lessons[0];
   const firstPublished = lessons.find((lesson) => lesson.publishedVersionId) ?? firstLesson;
@@ -90,6 +108,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
         </div>
       </div>
       {showsStartSteps(progress, startSteps) && <StartChecklist steps={startSteps} />}
+      {teachingClasses.length > 0 && <TeacherTodayPanel today={teacherToday} />}
       <section className="section-block" aria-labelledby="teacher-classes">
         <h2 id="teacher-classes">Lớp của tôi</h2>
         {classes.length ? (

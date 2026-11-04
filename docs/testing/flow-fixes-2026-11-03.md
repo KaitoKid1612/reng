@@ -158,6 +158,17 @@ E2E chưa chạy. Bước trong `e2e-supabase/teaching-authoring.spec.ts` vẫn 
 
 Phần so sánh âm với tiếng Việt chỉ là gần đúng để bắt đầu, trang có ghi rõ điều đó. Chưa có audio đọc mẫu; cần khóa Azure như bài tiếng Nhật. E2E chưa chạy.
 
+## Hôm nay dạy gì (04/11/2026)
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/teacher-today.test.ts`: buổi hôm nay theo giờ, buổi đang diễn ra, bỏ buổi ngày khác; bài hạn hôm nay chưa qua giờ; bỏ lớp không phải của giáo viên; giới hạn 5 dòng mỗi nhóm và đếm phần còn lại | Đạt |
+| Giáo viên co.lan (81 lớp) lúc 20:14 thứ Ba: mục hiện buổi "Tiếng Trung nhập môn – tối thứ Ba" 19:30–21:00 đang diễn ra, nút chính Vào lớp; sau nửa đêm mục hiện câu không có việc | Đạt |
+| Giáo viên chưa có lớp dạy (gv.moi): không hiện mục | Đạt |
+| `npm run audit:layout` trang Giảng dạy ở 360/768/1280px | Không có lỗi hay cảnh báo |
+
+Dòng bài tập hạn hôm nay và bài nộp mới chưa xem được trên trình duyệt, vì dữ liệu local không có bài đến hạn hay bài nộp trong ngày; logic đã có test và dùng chung phần hiển thị với Hôm nay học gì. E2E chưa chạy.
+
 ## Còn lại, cần người dùng quyết định
 - **Chính sách quyền riêng tư và điều khoản sử dụng:** đã có bản nháp mô tả đúng dữ liệu Reng đang lưu ([quyền riêng tư](../legal/privacy-policy-draft.md), [điều khoản](../legal/terms-of-use-draft.md)). Cần điền người vận hành, email liên hệ, thời hạn xử lý yêu cầu, độ tuổi tối thiểu, rồi nhờ người có chuyên môn pháp lý rà soát trước khi công bố.
 - **Email:** mua tên miền, cấu hình Resend và SMTP cho Supabase Auth, rồi bật xác nhận email, quên mật khẩu và nhắc bài.

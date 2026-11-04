@@ -137,6 +137,16 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Hôm nay dạy gì — 04/11/2026
+
+Trang Giảng dạy có mục **Hôm nay dạy gì**, đặt sau Các bước bắt đầu dạy, khi giáo viên có ít nhất một lớp dạy đang hoạt động:
+
+- Buổi dạy hôm nay theo lịch lớp, xếp theo giờ. Buổi đang diễn ra có nút chính Vào lớp.
+- Bài tập còn hạn trong hôm nay.
+- Lớp có bài nộp mới trong 24 giờ qua, lớp nhiều bài nộp trước.
+
+Mỗi nhóm hiện tối đa 5 dòng; phần còn lại được đếm và trỏ xuống danh sách lớp. Lớp tự học không tính.
+
 ## Slide luôn vừa khung — 03/11/2026
 
 - Hội thoại, bảng, câu ví dụ và mẫu câu dài tự chuyển sang bố cục gọn hoặc dày để vừa khung 1280×720. Ngưỡng được đo trên toàn bộ slide của bài mẫu 1–13.

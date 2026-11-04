@@ -31,6 +31,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
       "Đổi họ tên hiển thị với học viên hoặc mật khẩu ở nút Tài khoản cuối trang Giảng dạy.",
       "Mới bắt đầu, trang Giảng dạy có danh sách Các bước bắt đầu dạy (tạo lớp, tạo và xuất bản bài, đưa bài vào lớp, mời học viên, đặt lịch, giao bài tập); danh sách tự ẩn khi lớp đã có học viên và bài tập.",
+      "Mục Hôm nay dạy gì ở đầu trang Giảng dạy gom buổi dạy hôm nay theo lịch lớp, bài tập hạn hôm nay và lớp có bài nộp mới trong 24 giờ; bấm từng dòng để mở đúng lớp.",
     ],
   },
   {
