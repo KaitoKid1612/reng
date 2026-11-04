@@ -66,6 +66,27 @@ export async function selectRows<Schema extends z.ZodType>(
   return (Array.isArray(data) ? data : []).map((row) => schema.parse(row));
 }
 
+// Matches [api] max_rows in supabase/config.toml: a longer result comes back cut to this.
+const PAGE_ROWS = 1000;
+
+// Reads a growing table a page at a time; the query must be ordered so pages do not overlap.
+export async function selectEveryPage<Schema extends z.ZodType>(
+  query: (
+    from: number,
+    to: number,
+  ) => PromiseLike<{ data: unknown; error: { message: string; code?: string } | null }>,
+  schema: Schema,
+): Promise<z.infer<Schema>[]> {
+  const rows: z.infer<Schema>[] = [];
+  for (let from = 0; ; from += PAGE_ROWS) {
+    const page = await selectRows(query(from, from + PAGE_ROWS - 1), schema);
+    rows.push(...page);
+    if (page.length < PAGE_ROWS) {
+      return rows;
+    }
+  }
+}
+
 // An `in` filter travels in the request URL; a long ID list (every teacher of the platform, every
 // submission of a big class) would exceed the gateway's URL limit, so it is read in chunks.
 const IN_FILTER_CHUNK = 100;

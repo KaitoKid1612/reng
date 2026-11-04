@@ -192,6 +192,24 @@ Người dùng xác nhận trang này không còn cần: nó phục vụ việc 
 
 E2E chưa chạy; `e2e/navigation.spec.ts` đã bỏ bước kiểm tra link Sheet và thêm bước link cũ chuyển hướng.
 
+## Lịch sử bài tập hằng ngày (04/11/2026)
+
+Người dùng hỏi có xem được bài tập hằng ngày theo từng ngày như trang lịch sử Google Sheet cũ không, bấm vào ngày thì thấy %. Đã làm trang Bài tập hằng ngày cho học viên và mục cùng tên trên trang chi tiết học viên của giáo viên ([BD](../basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [DD](../detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026)).
+
+Dữ liệu thử trên Supabase local: 14 ngày bài hằng ngày (22/10–04/11) của học viên demo trong lớp "Tiếng Nhật Minna – Lớp 1", 10 câu mỗi ngày, có ngày chưa làm, ngày làm dở và ngày hôm nay chưa nộp.
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `tests/daily-history.test.ts`: dải màu 80/60, trạng thái và nhãn ngày, lọc ngày trước khi vào lớp và sau ngày cuối, tổng quan, chuỗi ngày (bài hôm nay chưa nộp không làm đứt chuỗi), so sánh với 5 ngày trước, nhóm theo tháng, ngày trước/sau; `tests/answer-outcome.test.ts` thêm link lọc giữ `?day=` | Đạt |
+| Học viên ở 1280px: tổng quan 11/14 ngày, trung bình 78% (7/11 ngày đạt từ 80%), gần nhất 100% ngày 03/11 tăng 26 điểm % so với trung bình 5 ngày trước, 3 ngày liên tiếp; khớp tính tay từ dữ liệu thử | Đạt |
+| Bấm ô 01/11: trang cuộn tới ngày, hiện 40% (4/10 điểm), Đúng 4, Sai 6 gồm 1 câu bỏ trống; lọc Sai giữ ngày (`?day=2026-11-01&outcome=wrong`), hiện 6/10 câu; Ngày trước mở 31/10 "đang làm dở" với nút Làm tiếp; hôm nay chưa làm có nút Làm bài; `day` sai thì mở ngày mới nhất | Đạt |
+| Trang lớp có nút "Điểm bài tập hằng ngày"; trang kết quả của bài hằng ngày có nút "Xem điểm các ngày" tới đúng ngày, bài giao tay thì không có; lớp không phải thành viên và ID bài sai trả 404 | Đạt |
+| 390px và 360px: không tràn ngang, 5 ô ngày mỗi hàng ở 360px, ba ô Tổng câu/Đúng/Sai cùng một hàng | Đạt |
+| Giáo viên (lớp Minna local): mục Bài tập hằng ngày cùng số liệu; bấm ô 28/10 tới `#assignment-…`, chỉ bài 28/10 mở sẵn (4 sai / 10 câu) | Đạt |
+| Không có lỗi console trên các trang trên; `npm run check` | Đạt |
+
+E2E chưa chạy.
+
 ## Còn lại, cần người dùng quyết định
 - **Dữ liệu Lịch sử Sheet:** bảng `learning_history_archives` và các RPC nhập/liên kết vẫn còn trong database. Nếu không cần giữ bản lưu của hai học viên nữa, có thể thêm migration xóa bảng (không hoàn tác được; nên xuất bản sao trước).
 - **Chính sách quyền riêng tư và điều khoản sử dụng:** đã có bản nháp mô tả đúng dữ liệu Reng đang lưu ([quyền riêng tư](../legal/privacy-policy-draft.md), [điều khoản](../legal/terms-of-use-draft.md)). Cần điền người vận hành, email liên hệ, thời hạn xử lý yêu cầu, độ tuổi tối thiểu, rồi nhờ người có chuyên môn pháp lý rà soát trước khi công bố.

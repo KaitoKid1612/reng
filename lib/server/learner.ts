@@ -18,6 +18,7 @@ import {
   createServiceClient,
   runMutation,
   selectOptional,
+  selectEveryPage,
   selectRows,
   selectRowsIn,
   ServiceError,
@@ -340,29 +341,7 @@ export async function markLessonRead(userId: string, lessonId: string, versionId
 
 // The newest submitted attempts are enough to show a learner's weak spots.
 const KIND_SUBMISSIONS = 100;
-// Matches [api] max_rows in supabase/config.toml: a longer result comes back cut to this.
-const PAGE_ROWS = 1000;
 const KIND_BATCH = 10;
-
-async function selectEveryPage<Schema extends z.ZodType>(
-  query: (
-    from: number,
-    to: number,
-  ) => PromiseLike<{
-    data: unknown;
-    error: { message: string; code?: string } | null;
-  }>,
-  schema: Schema,
-) {
-  const rows: z.infer<Schema>[] = [];
-  for (let from = 0; ; from += PAGE_ROWS) {
-    const page = await selectRows(query(from, from + PAGE_ROWS - 1), schema);
-    rows.push(...page);
-    if (page.length < PAGE_ROWS) {
-      return rows;
-    }
-  }
-}
 
 function inBatches(values: readonly string[]) {
   const batches: string[][] = [];

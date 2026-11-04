@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { MODE_LABELS } from "@/components/classroom/assignment-labels";
-import { PassageDetails } from "@/components/classroom/passage-details";
+import { ResultRow } from "@/components/classroom/result-row";
 import { buttonVariants } from "@/components/ui/button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
 import {
@@ -10,10 +10,10 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
-import { answerLang } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
+import { findDailyRunDate } from "@/lib/server/daily-history";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -30,7 +30,10 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
   const { id } = await params;
   const outcome = parseAnswerOutcome((await searchParams).outcome);
   const account = await requireStudent(`/assignments/${id}/results`);
-  const view = await loadOrNotFound(getStudentResults(account.id, id, new Date()));
+  const [view, dailyDate] = await Promise.all([
+    loadOrNotFound(getStudentResults(account.id, id, new Date())),
+    findDailyRunDate(id),
+  ]);
   const { assignment, attempt } = view;
   const visibleItems = numberAnswers(view.items).filter(({ item }) =>
     matchesOutcome(item.isCorrect, outcome),
@@ -100,36 +103,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               Hiển thị {visibleItems.length} / {view.items.length} câu.
             </p>
             {visibleItems.map(({ item, number }) => (
-              <div key={item.view.id} className="result-row" data-correct={item.isCorrect}>
-                <p className="result-row-meta">
-                  <span
-                    className={`status-badge ${item.isCorrect ? "status-correct" : "status-wrong"}`}
-                  >
-                    {item.isCorrect ? "Đúng" : "Sai"}
-                  </span>{" "}
-                  Câu {number} · {item.pointsEarned}/{item.view.points} điểm
-                </p>
-                <PassageDetails passage={item.view.passage} lang={item.view.lang} />
-                <p lang={item.view.lang} className="question-prompt">
-                  {item.view.prompt}
-                </p>
-                <p>
-                  Bạn trả lời:{" "}
-                  <strong lang={answerLang(item.view)}>{item.answerText || "(bỏ trống)"}</strong>
-                </p>
-                {!item.isCorrect && (
-                  <p>
-                    Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
-                  </p>
-                )}
-                {item.transcript !== null && (
-                  <p className="transcript">
-                    Transcript: <span lang={item.view.lang}>{item.transcript}</span> (bạn đã nghe{" "}
-                    {item.listenCount} lần)
-                  </p>
-                )}
-                <p className="muted">{item.explain}</p>
-              </div>
+              <ResultRow key={item.view.id} item={item} number={number} />
             ))}
           </section>
         </>
@@ -143,6 +117,14 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
         <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
           Mở sổ lỗi
         </Link>
+        {dailyDate && (
+          <Link
+            href={`/classes/${assignment.classId}/daily-practice?day=${dailyDate}#daily-day`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Xem điểm các ngày
+          </Link>
+        )}
       </div>
     </div>
   );

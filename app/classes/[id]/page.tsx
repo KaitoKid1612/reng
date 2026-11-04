@@ -11,6 +11,7 @@ import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { getClassSchedule } from "@/lib/server/class-schedule";
+import { hasDailyRuns } from "@/lib/server/daily-history";
 import { getStudentClassView } from "@/lib/server/learner";
 import { loadOrNotFound } from "@/lib/server/pages";
 
@@ -69,7 +70,10 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const now = new Date();
   const view = await loadOrNotFound(getStudentClassView(account.id, id, now));
   // Membership was checked above, so the timetable is read only for a member.
-  const schedule = await getClassSchedule(view.classRow.id);
+  const [schedule, hasDaily] = await Promise.all([
+    getClassSchedule(view.classRow.id),
+    hasDailyRuns(view.classRow.id),
+  ]);
   const nextSession = describeUpcomingSession(schedule.slots, now);
   const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
   const openWork = view.assignments.filter(isOpenWork);
@@ -83,6 +87,14 @@ export default async function ClassPage({ params }: ClassPageProps) {
             <Link href="/classes">Lớp của tôi</Link>
           </p>
         </div>
+        {hasDaily && (
+          <Link
+            href={`/classes/${view.classRow.id}/daily-practice`}
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Điểm bài tập hằng ngày
+          </Link>
+        )}
       </div>
       {hasSessionInfo && (
         <section className="section-block" aria-labelledby="class-session-title">

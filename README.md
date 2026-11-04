@@ -42,7 +42,7 @@ Quản lý Nhật–Trung: đã bổ sung tìm/lọc bài theo ngôn ngữ và t
 
 Giáo viên vừa dạy vừa học dùng một tài khoản: học trong **lớp tự học** của mình (chỉ mình là học viên, không có mã mời) và không tự vào lớp mình dạy; báo cáo lớp dạy không tính chủ lớp. Trang lớp có **nhật ký buổi dạy** (bài, slide dạy tới, ghi chú riêng, mở lại đúng slide), và bài tạo từ mẫu Minna có trang **cập nhật từ mẫu** mới nhất. Xem [Luồng 7](docs/basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026) và [kiểm chứng](docs/testing/teach-and-learn.md).
 
-Trang lịch sử bài tập cũ từ Google Sheets (`/history`) đã gỡ ngày 04/11/2026: bài làm trên Reng xem ở trang Tiến độ (điểm theo tuần, sổ lỗi, tỉ lệ đúng theo dạng câu); link cũ chuyển về `/progress`. Bảng dữ liệu đã nhập vẫn giữ trong database. Xem [thiết kế cũ](docs/basic-design/learning-history.md).
+Trang lịch sử bài tập cũ từ Google Sheets (`/history`) đã gỡ ngày 04/11/2026: bài làm trên Reng xem ở trang Tiến độ (điểm theo tuần, sổ lỗi, tỉ lệ đúng theo dạng câu) và trang Bài tập hằng ngày của lớp (`/classes/[id]/daily-practice`: điểm từng ngày với ô màu như Sheet cũ, bấm ngày để xem từng câu; giáo viên xem ở trang chi tiết học viên); link cũ chuyển về `/progress`. Bảng dữ liệu đã nhập vẫn giữ trong database. Xem [thiết kế cũ](docs/basic-design/learning-history.md).
 
 ## Chạy local
 

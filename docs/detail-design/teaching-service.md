@@ -259,6 +259,23 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - **Giới hạn và kế hoạch slide (CR-26, CR-25)**: dán bảng từ dừng ở `MAX_TEACHING_VOCAB` = 100 (dòng vượt bị báo, reducer cũng dừng ở 100). Kế hoạch slide nhớ `content` nó được dựng từ; `currentSlidePlan` bỏ kế hoạch khi nội dung đã đổi, nên Áp dụng không ghi đè chỉnh sửa làm sau đó.
 - **Học viên**: `toPublicQuestion` gửi `passage` và `pieces` (chữ của mảnh theo thứ tự xáo cố định, không có mã). Slide câu luyện hiện đoạn văn và các mảnh; "Hiện đáp án" (`/api/lessons/[id]/questions/[questionId]`) trả câu ghép đúng qua `describeCorrectAnswer`. Xem trước trong trình soạn v2 dùng chung `toPublicQuestion`. Slide bài v1 vẫn chỉ tham chiếu câu trắc nghiệm/điền (`isQuizQuestion`).
 
+## Lịch sử bài tập hằng ngày — 04/11/2026
+
+- `lib/daily-history.ts` (thuần, `tests/daily-history.test.ts`):
+  - `buildDailyDays(runs, results, fromDay, untilDay)` ghép `daily_practice_runs` với kết quả của người xem, cũ trước. Bỏ ngày sau `untilDay` (hôm nay, hoặc ngày rời lớp), bỏ ngày trước khi vào lớp nếu không có lượt làm, bỏ run không còn bài.
+  - `scoreBand` (good ≥ `SCORE_TARGET_PERCENT = 80`, fair ≥ 60, low, none), `dailyDayState` (scored, submitted, in_progress, not_done), `shortDayLabel`/`fullDayLabel` cho ô ngày và nhãn đọc màn hình.
+  - `dailyOverview(days, today)`: số ngày, số ngày đã nộp, trung bình các ngày có điểm, số ngày đạt mốc, ngày có điểm mới nhất so với trung bình tối đa `BASELINE_DAYS = 5` ngày có điểm trước đó, chuỗi ngày đã nộp liên tiếp (bỏ qua bài hôm nay chưa nộp). `describeDelta` làm tròn điểm % và dùng dấu trừ thật.
+  - `groupDaysByMonth` (tháng và ngày mới nhất trước), `pickDailyDay` (ngày yêu cầu, không có thì ngày mới nhất), `neighbourDays`.
+- `lib/server/daily-history.ts`:
+  - `listDailyRuns(classId)` đọc `daily_practice_runs` theo `practice_date` từng trang 1000 dòng (`selectEveryPage`, chuyển từ `lib/server/learner.ts` sang `lib/server/supabase.ts` để dùng chung).
+  - `getLearnerDailyHistory(userId, classId, now)`: `requireMembership` (lấy `joined_at`), rồi `listAssignmentsByIds` (mới, đọc theo lô 100 ID) và `listUserAttempts`. Điểm là lượt nộp mới nhất, chỉ khi `isFeedbackAvailable`.
+  - `findDailyRunDate(assignmentId)` (ID không phải UUID trả null) cho nút ở trang kết quả; `hasDailyRuns(classId)` cho nút ở trang lớp.
+- `getStudentDetail` (`lib/server/reports.ts`) trả thêm `dailyDays`, dựng từ các dòng bài đã có (giáo viên thấy điểm ngay), giới hạn từ `joined_at` tới `left_at` hoặc hôm nay.
+- Component (`components/daily-history/`): `DailyStatTiles`, `DailyScoreChart` (dùng `ScoreColumnChart`, `CHART_DAYS = 30`), `DailyDayChips` (chú thích màu, ô `.day-chip` có `aria-current="date"`, tên đọc màn hình gồm ngày đầy đủ và kết quả). CSS ở `app/charts.css` (`.band-legend`, `.day-chips`, `.day-chip`, `.day-figures`, `.day-heading`, `.day-steps`).
+- `app/classes/[id]/daily-practice/page.tsx`: tham số `day` (YYYY-MM-DD, sai hoặc thiếu thì lấy ngày mới nhất) và `outcome`. Ngày đã chọn dùng `getStudentResults`, nên điểm và đáp án qua cùng cổng `isFeedbackAvailable` như trang kết quả. Link ô ngày và cột có `#daily-day`.
+- `components/classroom/result-row.tsx` (`ResultRow`) tách từ trang kết quả để trang kết quả và trang ngày dùng chung. `outcomeHref` nối `&outcome=` khi đường dẫn đã có query.
+- Trang giáo viên `app/teach/classes/[id]/students/[uid]/page.tsx`: tham số `day`; link ngày là `?day=…#assignment-<id>`, mỗi `details.student-assignment` có `id` tương ứng và bài của ngày được chọn mở sẵn khi không lọc Đúng/Sai.
+
 ## Hôm nay học gì — 03/11/2026
 
 - `lib/learner-today.ts` (thuần, `tests/learner-today.test.ts`):

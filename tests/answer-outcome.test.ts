@@ -42,4 +42,8 @@ test("an unknown or repeated outcome shows everything, and links keep the path",
     "/assignments/a/results?outcome=correct",
   );
   assert.equal(outcomeHref("/assignments/a/results", undefined), "/assignments/a/results");
+  assert.equal(
+    outcomeHref("/classes/c/daily-practice?day=2026-11-03", "wrong"),
+    "/classes/c/daily-practice?day=2026-11-03&outcome=wrong",
+  );
 });

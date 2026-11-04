@@ -137,6 +137,17 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
+## Lịch sử bài tập hằng ngày — 04/11/2026
+
+Người dùng muốn xem bài luyện hằng ngày theo từng ngày như trang lịch sử Google Sheet cũ: bấm vào một ngày để thấy điểm %. Trang mới **Bài tập hằng ngày** (`/classes/[id]/daily-practice`) mở từ nút "Điểm bài tập hằng ngày" ở đầu trang lớp (chỉ hiện khi lớp đã có bài hằng ngày) và từ nút "Xem điểm các ngày" ở trang kết quả của một bài hằng ngày.
+
+- **Tổng quan:** số ngày đã làm trên số ngày có bài, điểm trung bình và số ngày đạt từ 80%, điểm gần nhất so với trung bình 5 ngày có điểm trước đó (▲/▼), số ngày làm liên tiếp. Bài hôm nay chưa nộp không làm đứt chuỗi vì vẫn còn trong ngày.
+- **Biểu đồ điểm theo ngày:** 30 ngày gần nhất, đường mốc 80%. Ngày chưa có điểm là vòng tròn rỗng, không tính là 0. Bấm cột để mở ngày đó.
+- **Chọn ngày:** mỗi ngày là một ô có chấm màu và số %, nhóm theo tháng, mới nhất trước. Màu giống Sheet cũ: xanh từ 80%, cam 60–79%, đỏ dưới 60%, vòng rỗng khi chưa có điểm. Ô ghi "làm dở" khi đang làm, "—" khi chưa làm. Số luôn hiện cạnh màu, nên không phải chỉ dựa vào màu.
+- **Ngày đã chọn:** điểm % lớn, số điểm, Đạt/Chưa đạt, ô Tổng câu, Đúng, Sai (kèm số câu bỏ trống), lượt và giờ nộp, rồi từng câu với bộ lọc Tất cả/Sai/Đúng. Ngày chưa nộp có nút Làm bài hoặc Làm tiếp. Có link sang ngày trước, ngày sau để xem lần lượt mà không phải cuộn lên.
+- Chỉ tính các ngày từ khi học viên vào lớp; ngày trước đó chỉ hiện nếu học viên đã làm bài ngày đó. Điểm chỉ hiện khi đã tới lúc xem kết quả, như trang kết quả bài tập.
+- **Giáo viên:** trang chi tiết một học viên có mục **Bài tập hằng ngày** với cùng tổng quan, biểu đồ và ô ngày. Bấm một ngày thì trang mở sẵn bài của ngày đó trong mục "Bài đã giao và câu trả lời" và cuộn tới đó. Ngày sau khi học viên rời lớp không tính.
+
 ## Tiến độ theo dạng câu — 04/11/2026
 
 Trang Tiến độ của học viên có mục **Theo dạng câu**: số câu đã làm, số câu đúng và tỉ lệ đúng cho từng dạng (trắc nghiệm, điền từ, sắp xếp câu, ghép cặp, nghe, đọc hiểu). Câu có đoạn văn tính là đọc hiểu. Khi có từ hai dạng, mỗi dạng ít nhất 5 câu, trang chỉ ra dạng hay sai nhất và trỏ tới Sổ lỗi. Số liệu tính trên tối đa 100 lượt nộp gần nhất. Bài kiểm tra chỉ được tính khi đã tới lúc học viên xem được kết quả, nên mục này không lộ đúng sai sớm.

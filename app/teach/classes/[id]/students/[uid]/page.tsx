@@ -2,6 +2,9 @@ import Link from "next/link";
 
 import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { DailyDayChips } from "@/components/daily-history/daily-day-chips";
+import { DailyScoreChart } from "@/components/daily-history/daily-score-chart";
+import { DailyStatTiles } from "@/components/daily-history/daily-stat-tiles";
 import { AcceptAnswerForm, AcceptNoticeArea } from "@/components/teach/accept-answer-form";
 import { RemoveStudentButton } from "@/components/teach/remove-student-button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
@@ -19,26 +22,34 @@ import { formatPercent } from "@/lib/grading/grade";
 import { requireTeacher } from "@/lib/server/account";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getStudentDetail } from "@/lib/server/reports";
-import { formatStudyDateTime } from "@/lib/study-days";
+import { formatStudyDateTime, toStudyDay } from "@/lib/study-days";
 
+import type { DailyDay } from "@/lib/daily-history";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Chi tiết học viên" };
 
 interface StudentDetailPageProps {
   params: Promise<{ id: string; uid: string }>;
-  searchParams: Promise<{ outcome?: string }>;
+  searchParams: Promise<{ outcome?: string; day?: string | string[] }>;
 }
 
 export default async function StudentDetailPage({ params, searchParams }: StudentDetailPageProps) {
   const { id, uid } = await params;
-  const outcome = parseAnswerOutcome((await searchParams).outcome);
+  const query = await searchParams;
+  const outcome = parseAnswerOutcome(query.outcome);
   const path = `/teach/classes/${id}/students/${uid}`;
   const account = await requireTeacher(path);
-  const detail = await loadOrNotFound(getStudentDetail(account.id, id, uid, new Date()));
-  // Without a filter only the newest graded assignment is open; with one, every assignment that
-  // has matching answers opens so they can be read in one pass.
-  const newestGraded = detail.rows.findIndex((row) => row.items.length > 0);
+  const now = new Date();
+  const detail = await loadOrNotFound(getStudentDetail(account.id, id, uid, now));
+  const selectedDay = detail.dailyDays.find((day) => day.date === query.day);
+  // Without a filter only the chosen day's assignment, or else the newest graded one, is open;
+  // with a filter every assignment that has matching answers opens so they read in one pass.
+  const openIndex = selectedDay
+    ? detail.rows.findIndex((row) => row.assignment.id === selectedDay.assignmentId)
+    : detail.rows.findIndex((row) => row.items.length > 0);
+  // A day opens its assignment below, where the answers already are.
+  const hrefForDay = (day: DailyDay) => `${path}?day=${day.date}#assignment-${day.assignmentId}`;
   return (
     <>
       <div className="page-heading">
@@ -59,6 +70,27 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
           `, nghe trung bình ${detail.report.averageListens.toFixed(1)} lần mỗi câu nghe`}
         .
       </p>
+      {detail.dailyDays.length > 0 && (
+        <section className="section-block" aria-labelledby="student-daily">
+          <h2 id="student-daily">Bài tập hằng ngày</h2>
+          <DailyStatTiles days={detail.dailyDays} today={toStudyDay(now)} />
+          <section className="chart-panel" aria-labelledby="student-daily-chart">
+            <h3 id="student-daily-chart">Điểm theo ngày</h3>
+            <p className="small muted">Bấm vào cột hoặc ô ngày để mở câu trả lời của ngày đó.</p>
+            <DailyScoreChart
+              days={detail.dailyDays}
+              selectedDate={selectedDay?.date}
+              hrefForDay={hrefForDay}
+            />
+          </section>
+          <DailyDayChips
+            days={detail.dailyDays}
+            selectedDate={selectedDay?.date}
+            hrefForDay={hrefForDay}
+            monthHeadingLevel={3}
+          />
+        </section>
+      )}
       <section className="section-block" aria-labelledby="student-answers">
         <h2 id="student-answers">Bài đã giao và câu trả lời</h2>
         <AcceptNoticeArea>
@@ -78,8 +110,9 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
             return (
               <details
                 key={row.assignment.id}
+                id={`assignment-${row.assignment.id}`}
                 className="collapse-card student-assignment"
-                open={outcome ? visible.length > 0 : rowIndex === newestGraded}
+                open={outcome ? visible.length > 0 : rowIndex === openIndex}
               >
                 <summary>
                   <span>{row.assignment.title}</span>

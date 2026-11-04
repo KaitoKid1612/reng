@@ -11,6 +11,7 @@ import {
   summarizeListening,
   summarizeWeekSubmissions,
 } from "@/lib/class-report";
+import { buildDailyDays } from "@/lib/daily-history";
 import { toPercent } from "@/lib/grading/grade";
 import {
   listClassAssignments,
@@ -18,6 +19,7 @@ import {
   loadAttemptResultItems,
 } from "@/lib/server/assignments";
 import { countsAsLearner, getTeacherClass, listClassLessons } from "@/lib/server/classes";
+import { listDailyRuns } from "@/lib/server/daily-history";
 import {
   callRpc,
   createServiceClient,
@@ -25,7 +27,7 @@ import {
   selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
-import { latestStudyDay } from "@/lib/study-days";
+import { latestStudyDay, toStudyDay } from "@/lib/study-days";
 
 import type { ReportMember } from "@/lib/class-report";
 
@@ -246,9 +248,10 @@ export async function getStudentDetail(
   if (!member) {
     throw new ServiceError("not_found");
   }
-  const [assignments, listening] = await Promise.all([
+  const [assignments, listening, dailyRuns] = await Promise.all([
     listClassAssignments([classId]),
     loadListening(classId),
+    listDailyRuns(classId),
   ]);
   const attempts = await listUserAttempts(
     studentId,
@@ -310,5 +313,22 @@ export async function getStudentDetail(
     now,
     listening: listening.get(member.user_id),
   });
-  return { classRow, member, hasLeft: member.left_at !== null, report, rows };
+  // Teachers see every score straight away, so a day's percent is the latest submission's.
+  const dailyDays = buildDailyDays(
+    dailyRuns,
+    new Map(
+      rows.map((row) => [
+        row.assignment.id,
+        {
+          title: row.assignment.title,
+          percent: row.percent,
+          submitted: row.latest !== null,
+          attemptCount: row.attemptCount,
+        },
+      ]),
+    ),
+    toStudyDay(member.joined_at),
+    toStudyDay(member.left_at ?? now),
+  );
+  return { classRow, member, hasLeft: member.left_at !== null, report, rows, dailyDays };
 }

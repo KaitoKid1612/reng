@@ -30,6 +30,10 @@ export function countOutcomes(items: readonly { isCorrect: boolean }[]) {
   return { all: items.length, correct, wrong: items.length - correct };
 }
 
+// The path may already carry a query, such as the chosen day of the daily history.
 export function outcomeHref(path: string, outcome: AnswerOutcome | undefined) {
-  return outcome ? `${path}?outcome=${outcome}` : path;
+  if (!outcome) {
+    return path;
+  }
+  return `${path}${path.includes("?") ? "&" : "?"}outcome=${outcome}`;
 }

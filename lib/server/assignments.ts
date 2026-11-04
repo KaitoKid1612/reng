@@ -187,6 +187,21 @@ export async function listClassAssignments(classIds: readonly string[]) {
   return rows.map(toAssignment);
 }
 
+// Published or closed assignments by ID, in chunks so a long daily history stays one URL each.
+export async function listAssignmentsByIds(assignmentIds: readonly string[]) {
+  const rows = await selectRowsIn(
+    assignmentIds,
+    (chunk) =>
+      createServiceClient()
+        .from("assignments")
+        .select(ASSIGNMENT_COLUMNS)
+        .in("id", chunk)
+        .neq("status", "draft"),
+    assignmentRowSchema,
+  );
+  return rows.map(toAssignment);
+}
+
 export async function loadAssignmentItems(assignmentId: string): Promise<AssignableQuestion[]> {
   const rows = await selectRows(
     createServiceClient()
