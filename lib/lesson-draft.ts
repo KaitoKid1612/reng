@@ -463,7 +463,48 @@ function describeGrammarProblems(content: DraftContent): PublishProblem[] {
   });
 }
 
+const MISSING_AUDIO =
+  "chưa có audio nên chưa xuất bản được. Reng chưa tạo audio ngay trên web: xóa câu nghe này, hoặc nhờ quản trị viên Reng tạo audio.";
+
+// "1–3, 7, 9–12" for question numbers in order.
+function formatNumberRanges(numbers: readonly number[]) {
+  const ranges: string[] = [];
+  numbers.forEach((number, index) => {
+    const isRangeStart = index === 0 || numbers[index - 1] !== number - 1;
+    const isRangeEnd = index === numbers.length - 1 || numbers[index + 1] !== number + 1;
+    if (isRangeStart && isRangeEnd) {
+      ranges.push(String(number));
+    } else if (isRangeStart) {
+      ranges.push(`${number}`);
+    } else if (isRangeEnd) {
+      ranges[ranges.length - 1] += `–${number}`;
+    }
+  });
+  return ranges.join(", ");
+}
+
+// A listening set waiting for audio would list the same sentence for every question, so the
+// questions missing only their audio share one line.
 function describeQuestionProblems(content: DraftContent): PublishProblem[] {
+  const problems = describeEachQuestion(content);
+  const missingAudio = problems.filter((problem) => problem.message.endsWith(MISSING_AUDIO));
+  if (missingAudio.length < 2) {
+    return problems;
+  }
+  const numbers = missingAudio.map((problem) =>
+    content.questions.findIndex((question) => question.id === problem.itemId),
+  );
+  return [
+    ...problems.filter((problem) => !missingAudio.includes(problem)),
+    {
+      section: "questions",
+      itemId: missingAudio[0].itemId,
+      message: `Câu luyện ${formatNumberRanges(numbers.map((index) => index + 1))}: ${missingAudio.length} câu nghe chưa có audio nên chưa xuất bản được. Reng chưa tạo audio ngay trên web: xóa các câu này, hoặc nhờ quản trị viên Reng tạo audio.`,
+    },
+  ];
+}
+
+function describeEachQuestion(content: DraftContent): PublishProblem[] {
   return content.questions.flatMap((question, index): PublishProblem[] => {
     const label = `Câu luyện ${index + 1}`;
     const problem = (message: string) => [
@@ -494,9 +535,7 @@ function describeQuestionProblems(content: DraftContent): PublishProblem[] {
     }
     // Audio comes last: it is generated from the saved transcript once the question is ready.
     if (isListeningDraft(question) && !question.audio) {
-      return problem(
-        "chưa có audio nên chưa xuất bản được. Reng chưa tạo audio ngay trên web: xóa câu nghe này, hoặc nhờ quản trị viên Reng tạo audio.",
-      );
+      return problem(MISSING_AUDIO);
     }
     return [];
   });

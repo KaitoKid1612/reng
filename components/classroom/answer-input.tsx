@@ -30,9 +30,12 @@ const MODE_HINTS: Record<InputMode, string> = {
   chinese: "Dùng bộ gõ tiếng Trung hoặc dán chữ Hán; giữ đúng giản thể/phồn thể theo bài.",
   pinyin:
     "Nhập pinyin có dấu thanh, ví dụ nǐ hǎo. Không có dấu trên bàn phím thì gõ số thanh sau mỗi âm: ni3 hao3 → nǐ hǎo, v thay cho ü (lv4 → lǜ).",
-  hiragana: "Gõ romaji để ra hiragana, ví dụ ko → こ; ん giữa từ gõ nn (さんにん: sannnin).",
+  // Particles are written は, へ, を but heard as wa, e, o; typing what is heard gives わ, え, お.
+  hiragana:
+    "Gõ romaji để ra hiragana, ví dụ ko → こ; ん giữa từ gõ nn (さんにん: sannnin); trợ từ は, へ, を gõ ha, he, wo.",
   katakana: "Gõ romaji để ra katakana, ví dụ ko → コ.",
-  japanese: "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji.",
+  japanese:
+    "Gõ romaji ra hiragana, hoặc dùng bộ gõ tiếng Nhật/dán kanji; trợ từ は, へ, を gõ ha, he, wo.",
 };
 
 export function AnswerInput({
