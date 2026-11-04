@@ -136,9 +136,14 @@ export default async function ClassPage({ params }: ClassPageProps) {
           </ul>
         ) : (
           <p className="muted">
-            {view.assignments.length
-              ? "Bạn đã làm hết bài đang mở. Ôn lại câu sai trong sổ lỗi nhé."
-              : "Chưa có bài tập nào được giao."}
+            {view.assignments.length ? (
+              <>
+                Bạn đã làm hết bài đang mở. Ôn lại câu sai trong{" "}
+                <Link href="/mistakes">sổ lỗi</Link> nhé.
+              </>
+            ) : (
+              "Chưa có bài tập nào được giao."
+            )}
           </p>
         )}
       </section>

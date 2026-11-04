@@ -118,7 +118,9 @@ export default async function ProgressPage() {
         {summary.assignments.length > 0 && (
           <section className="chart-panel" aria-labelledby="weekly-scores">
             <h3 id="weekly-scores">Điểm bài tập theo tuần</h3>
-            <p className="small muted">Rê chuột hoặc dùng phím Tab trên cột để xem từng tuần.</p>
+            <p className="small muted">
+              Chạm, rê chuột hoặc dùng phím Tab trên cột để xem từng tuần.
+            </p>
             <WeeklyScoreChart weeks={weeks} />
           </section>
         )}

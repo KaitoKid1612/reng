@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { RatingButtons } from "@/components/review/rating-buttons";
 import { REVIEW_FAILURES, sendReview } from "@/components/review/review-request";
 import { VocabCardFace } from "@/components/review/vocab-card-face";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { signInPath } from "@/lib/auth-paths";
 
 import type { ReviewRating } from "@/lib/review-ratings";
@@ -28,6 +28,9 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
   );
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
+  // Cards rated in this visit. Once every card has a rating the deck ends instead of wrapping to
+  // card 1, where a second rating would reschedule cards just learned.
+  const [ratedIds, setRatedIds] = useState<ReadonlySet<string>>(() => new Set());
   const requestIdRef = useRef<string | null>(null);
   const card = cards[index % cards.length];
 
@@ -56,7 +59,11 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
     if (response.status === "ok" && typeof response.data.revision === "number") {
       const revision = response.data.revision;
       setRevisions((current) => new Map(current).set(card.vocab.id, revision));
-      handleMove(1);
+      const nextRated = new Set(ratedIds).add(card.vocab.id);
+      setRatedIds(nextRated);
+      if (nextRated.size < cards.length) {
+        handleMove(1);
+      }
       return;
     }
     if (response.status !== "ok") {
@@ -66,6 +73,36 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
 
   if (!card) {
     return <p>Bài này chưa có từ vựng.</p>;
+  }
+
+  if (canSchedule && ratedIds.size >= cards.length) {
+    return (
+      <section aria-labelledby="deck-done-title" className="form-card">
+        <h2 id="deck-done-title">Xong bộ thẻ</h2>
+        <p>
+          Bạn đã ôn xong {cards.length} thẻ của bài này. Reng đã lưu lịch ôn: thẻ nào đến hạn sẽ
+          hiện ở Ôn tập.
+        </p>
+        <div className="button-row">
+          <Link href="/review" className={buttonVariants()}>
+            Ôn tập thẻ đến hạn
+          </Link>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setRatedIds(new Set());
+              setIndex(0);
+              setIsFlipped(false);
+            }}
+          >
+            Xem lại từ đầu
+          </Button>
+          <Link href="/classes" className={buttonVariants({ variant: "ghost" })}>
+            Về Lớp của tôi
+          </Link>
+        </div>
+      </section>
+    );
   }
 
   return (

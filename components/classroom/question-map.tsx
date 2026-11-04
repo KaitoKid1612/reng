@@ -15,6 +15,9 @@ interface QuestionMapProps {
   onSelect: (index: number) => void;
 }
 
+// Correct and wrong share a lightness, so each gets a mark as well as a colour (WCAG 1.4.1).
+const STATE_MARKS: Partial<Record<QuestionMapState, string>> = { correct: "✓", wrong: "✗" };
+
 const STATE_LABELS: Record<QuestionMapState, string> = {
   blank: "chưa trả lời",
   answered: "đã trả lời",
@@ -52,6 +55,11 @@ export function QuestionMap({ items, currentIndex, onSelect }: QuestionMapProps)
             onClick={() => handleSelect(index)}
           >
             {index + 1}
+            {STATE_MARKS[item.state] && (
+              <span className="question-map-mark" aria-hidden="true">
+                {STATE_MARKS[item.state]}
+              </span>
+            )}
           </button>
         ))}
       </div>

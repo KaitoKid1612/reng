@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import { JapaneseText } from "@/components/lessons/japanese-text";
+
 import type { PublicLesson } from "@/lib/lesson-schema";
 
 interface GrammarSearchProps {
@@ -51,11 +53,14 @@ export function GrammarSearch({ lessons }: GrammarSearchProps) {
       <div className="grammar-results">
         {results.map(({ grammar, lesson }) => (
           <article className="grammar-block" key={`${lesson.id}:${grammar.id}`}>
+            {/* Patterns and notes carry {漢字|かんじ} furigana marks, drawn as in the reader. */}
             <h2 lang="ja" className="japanese-text">
-              {grammar.pattern}
+              <JapaneseText text={grammar.pattern} />
             </h2>
             <p>{grammar.vi}</p>
-            <p>{grammar.explain}</p>
+            <p>
+              <JapaneseText text={grammar.explain} />
+            </p>
             <Link href={`/lessons/${lesson.lessonId}?version=${lesson.id}#${grammar.id}`}>
               {lesson.title}
             </Link>

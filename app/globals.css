@@ -2285,6 +2285,10 @@ rt {
   border-color: var(--wrong);
   color: var(--wrong);
 }
+.question-map-mark {
+  margin-left: 2px;
+  font-size: 12px;
+}
 .question-map-grid button[aria-current="step"] {
   outline: 2px solid var(--primary);
   outline-offset: 1px;
