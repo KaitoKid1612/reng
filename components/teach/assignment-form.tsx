@@ -408,7 +408,7 @@ export function AssignmentForm({
       )}
       {isReviewing ? (
         <section className="notice-panel" aria-labelledby="publish-review-title">
-          <h3 id="publish-review-title">Xem lại trước khi xuất bản</h3>
+          <h3 id="publish-review-title">Xem lại trước khi giao</h3>
           <p>
             “{settings.title}”: {MODE_LABELS[mode]}, {questionCount} câu, đạt từ {passScore}%,{" "}
             {settings.maxAttempts} lượt,{" "}
@@ -417,12 +417,12 @@ export function AssignmentForm({
             {mode === "test" && FEEDBACK_SUMMARIES[settings.feedbackPolicy]}.
           </p>
           <p>
-            Sau khi xuất bản, đề và điều kiện không sửa được; chỉ đổi tiêu đề hoặc đóng bài rồi giao
-            bài mới.
+            Sau khi giao, đề và điều kiện không sửa được; chỉ đổi tiêu đề hoặc đóng bài rồi giao bài
+            mới.
           </p>
           <div className="button-row">
             <Button onClick={handlePublish} disabled={isPending}>
-              {isPending ? "Đang xuất bản…" : "Xuất bản bài giao"}
+              {isPending ? "Đang giao bài…" : "Giao bài cho lớp"}
             </Button>
             <Button variant="ghost" onClick={() => setIsReviewing(false)} disabled={isPending}>
               Sửa tiếp
@@ -430,7 +430,7 @@ export function AssignmentForm({
           </div>
         </section>
       ) : (
-        <Button onClick={handleReview}>Xem lại và xuất bản</Button>
+        <Button onClick={handleReview}>Xem lại trước khi giao</Button>
       )}
     </div>
   );

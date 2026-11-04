@@ -130,8 +130,8 @@ test("a teacher builds a Vietnamese–Chinese lesson from a template, reviews an
   await page.getByLabel("Tiêu đề", { exact: true }).fill(ASSIGNMENT_TITLE);
   await page.getByRole("checkbox", { name: HANZI_PROMPT }).check();
   await page.getByRole("checkbox", { name: MEANING_PROMPT }).check();
-  await page.getByRole("button", { name: "Xem lại và xuất bản", exact: true }).click();
-  await page.getByRole("button", { name: "Xuất bản bài giao", exact: true }).click();
+  await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
+  await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
   await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
   await page.context().close();
 });

@@ -105,7 +105,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
             Tạo bài mới
           </Link>
           <Link href="/teach/library" className={buttonVariants({ variant: "outline" })}>
-            Bài được chia sẻ
+            Bài được chia sẻ với tôi
           </Link>
         </div>
       </div>

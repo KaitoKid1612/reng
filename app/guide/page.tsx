@@ -91,7 +91,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Ở Giảng dạy, tìm bài theo tên, ngôn ngữ và trạng thái. Bộ lọc ngôn ngữ dùng bản soạn hiện tại; bài đã có bản xuất bản vẫn có thể đang được sửa nháp.",
       "Trong trang lớp bấm Giao bài, kiểm tra nhãn ngôn ngữ của bài và phiên bản, bấm Lưu vào lớp để học viên đọc được bài. Xuất bản lại không tự đổi phiên bản lớp đang dùng; cách nhanh nhất là mục Dùng bài trong lớp của trình soạn. Ở đây bạn chọn được thứ tự và hẹn giờ mở.",
-      "Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại và xuất bản.",
+      "Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại trước khi giao rồi Giao bài cho lớp.",
     ],
   },
   {

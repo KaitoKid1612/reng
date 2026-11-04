@@ -9,7 +9,7 @@ import { formatStudyDateTime } from "@/lib/study-days";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Thư viện chia sẻ" };
+export const metadata: Metadata = { title: "Bài được chia sẻ với tôi" };
 
 export default async function TeachingLibraryPage() {
   const account = await requireTeacher("/teach/library");

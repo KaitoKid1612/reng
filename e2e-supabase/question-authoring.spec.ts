@@ -37,8 +37,8 @@ async function openSection(page: Page, name: RegExp) {
 }
 
 async function publishAssignment(page: Page) {
-  await page.getByRole("button", { name: "Xem lại và xuất bản", exact: true }).click();
-  await page.getByRole("button", { name: "Xuất bản bài giao", exact: true }).click();
+  await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
+  await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
   await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
 }
 

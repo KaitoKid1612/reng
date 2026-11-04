@@ -296,8 +296,8 @@ test("practice assignments keep listen counts and the report flags weak listenin
     .filter({ hasText: DICTATION.prompt });
   await expect(dictationOption).toContainText("chính tả, 1 điểm");
   await dictationOption.getByRole("checkbox").check();
-  await teacher.getByRole("button", { name: "Xem lại và xuất bản", exact: true }).click();
-  await teacher.getByRole("button", { name: "Xuất bản bài giao", exact: true }).click();
+  await teacher.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
+  await teacher.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
   await teacher.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
 
   const student = await newSignedInPage(browser, learner.email, learner.password);
