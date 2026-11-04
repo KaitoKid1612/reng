@@ -13,7 +13,31 @@ export interface AudioConfig {
 // locale comes from the voice, so existing Japanese hashes stay the same.
 const VOICE_PATTERN = /^(ja-JP|zh-CN|zh-TW)-[A-Za-z]+Neural$/;
 
+// Unreal Speech voices that read Japanese, written "unreal:<VoiceId>". Their audio gets its own
+// hashes, so it never takes the place of an Azure file with the same text.
+export const UNREAL_JAPANESE_VOICES = ["Haruto", "Rina", "Yuki", "Hana", "Sakura"] as const;
+export const UNREAL_FORMAT = "unreal-64k-mp3";
+
+export function unrealVoiceId(voice: string) {
+  const id = voice.startsWith("unreal:") ? voice.slice("unreal:".length) : null;
+  return id && (UNREAL_JAPANESE_VOICES as readonly string[]).includes(id) ? id : null;
+}
+
 export function canonicalAudio(text: string, voice = "ja-JP-NanamiNeural"): AudioConfig {
+  if (voice.startsWith("unreal:")) {
+    if (!unrealVoiceId(voice)) {
+      throw new Error(`Unreal voice must be one of ${UNREAL_JAPANESE_VOICES.join(", ")}.`);
+    }
+    return {
+      text,
+      locale: "ja-JP",
+      voice,
+      rate: "0%",
+      pitch: "0%",
+      format: UNREAL_FORMAT,
+      pipelineVersion: 1,
+    };
+  }
   const locale = VOICE_PATTERN.exec(voice)?.[1];
   if (!locale) {
     throw new Error("Voice must be a ja-JP, zh-CN or zh-TW Neural voice.");

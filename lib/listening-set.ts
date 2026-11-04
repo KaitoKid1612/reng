@@ -11,6 +11,8 @@ export const DEFAULT_LISTENING_VOICE = "ja-JP-NanamiNeural";
 
 const listeningSetSchema = draftMetadataSchema.extend({
   id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
+  // The voice the recorded audio was made with, so its hashes can be checked again later.
+  audioVoice: z.string().optional(),
   content: draftContentSchema,
 });
 
@@ -29,17 +31,21 @@ export function planListeningAudio(set: ListeningSet, voice = DEFAULT_LISTENING_
   return planContentAudio(set.id, set.content, voice);
 }
 
-// The set with the hashes of generated audio; questions without new audio keep theirs.
+// The set with the hashes of audio generated with one voice; it records that voice.
 export function applyListeningAudio(
   set: ListeningSet,
   assets: Record<string, string>,
+  voice = DEFAULT_LISTENING_VOICE,
 ): ListeningSet {
-  return { ...set, content: applyContentAudio(set.id, set.content, assets) };
+  return { ...set, audioVoice: voice, content: applyContentAudio(set.id, set.content, assets) };
 }
 
-// Audio recorded in the file must still match its transcript; a transcript edited after the
-// audio was made needs new audio, or learners would hear the old sentence.
-export function findListeningAudio(set: ListeningSet, voice = DEFAULT_LISTENING_VOICE) {
+// Audio recorded in the file must still match its transcript and voice; a transcript edited
+// after the audio was made needs new audio, or learners would hear the old sentence.
+export function findListeningAudio(
+  set: ListeningSet,
+  voice = set.audioVoice ?? DEFAULT_LISTENING_VOICE,
+) {
   const planned = new Map(planListeningAudio(set, voice).map((asset) => [asset.itemId, asset]));
   const assets = [];
   const stale = [];

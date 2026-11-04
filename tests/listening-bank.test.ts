@@ -29,6 +29,7 @@ async function readBank() {
     summary: string;
     order: number;
     courseId: string;
+    audioVoice?: string;
     content: { questions: Record<string, unknown>[] };
   };
 }
@@ -65,7 +66,9 @@ test("dictation answers are the transcript in kana, so typing what is heard is r
 });
 
 test("once audio exists every question publishes, can be assigned and grades its own key", async () => {
-  const bank = await readBank();
+  // The voice the audio was made with is a field of the set file, not of a published lesson.
+  const { audioVoice, ...bank } = await readBank();
+  assert.ok(audioVoice, "a set with audio records the voice it was made with");
   const withAudio = {
     ...bank,
     content: {
@@ -102,7 +105,10 @@ test("without audio the editor blocks publishing, as the audio policy requires",
       order: bank.order,
       courseId: bank.courseId,
     },
-    content: bank.content,
+    content: {
+      ...bank.content,
+      questions: bank.content.questions.map((question) => ({ ...question, audio: null })),
+    },
   });
   // One line for the whole set rather than the same sentence 90 times.
   const missingAudio = findPublishProblems(state).filter((problem) =>
@@ -118,6 +124,7 @@ test("generated audio is written back as hashes that match each transcript", asy
   assert.equal(plan.length, 90);
   const assets = Object.fromEntries(plan.map((asset) => [asset.itemId, asset.hash]));
   const withAudio = applyListeningAudio(set, assets);
+  assert.equal(withAudio.audioVoice, "ja-JP-NanamiNeural");
   // The script writes the file through Prettier, so it still passes the format check.
   const path = FILE;
   const formatted = await format(JSON.stringify(withAudio), {
@@ -141,4 +148,15 @@ test("audio recorded in the committed set matches its transcript and ships as a 
     const file = await stat(`public/audio/lessons/${asset.hash}.mp3`);
     assert.ok(file.size > 100, asset.itemId);
   }
+});
+
+test("audio made with an Unreal voice is checked against that voice", async () => {
+  const set = parseListeningSet(await readBank());
+  const plan = planListeningAudio(set, "unreal:Sakura");
+  const assets = Object.fromEntries(plan.map((asset) => [asset.itemId, asset.hash]));
+  const withAudio = applyListeningAudio(set, assets, "unreal:Sakura");
+  assert.equal(withAudio.audioVoice, "unreal:Sakura");
+  assert.equal(findListeningAudio(withAudio).assets.length, 90);
+  // Checked against another voice, every file counts as stale.
+  assert.equal(findListeningAudio(withAudio, "ja-JP-NanamiNeural").stale.length, 90);
 });

@@ -52,7 +52,8 @@ async function main() {
   if (!/^[^\s@]+@[^\s@]+$/.test(owner)) {
     throw new Error("--owner must be the teacher's email address.");
   }
-  const voice = process.env.AZURE_SPEECH_VOICE || DEFAULT_LISTENING_VOICE;
+  // The set records the voice its audio was made with; older files fall back to the default.
+  const voice = set.audioVoice ?? (process.env.AZURE_SPEECH_VOICE || DEFAULT_LISTENING_VOICE);
   const audio = findListeningAudio(set, voice);
   if (audio.stale.length) {
     throw new Error(

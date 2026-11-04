@@ -9,9 +9,15 @@ import { createClient } from "@supabase/supabase-js";
 
 import { kanaItems } from "../lib/data";
 import { manifestSchema } from "../lib/kana";
-import { audioHash, canonicalAudio } from "../lib/audio-config";
+import {
+  audioHash,
+  canonicalAudio,
+  UNREAL_JAPANESE_VOICES,
+  unrealVoiceId,
+} from "../lib/audio-config";
 import { generateAudioAssets } from "../lib/audio-generation";
 import { synthesizeSpeech } from "../lib/azure-speech";
+import { synthesizeUnrealSpeech } from "../lib/unreal-speech";
 import {
   applyContentAudio,
   applyLessonAudio,
@@ -103,6 +109,9 @@ async function main() {
       // A listening set file (content/listening/*.json): its audio is written next to the web in
       // public/audio/lessons and the hashes go back into the file.
       listening: { type: "string" },
+      // Japanese voice for lesson audio: an Azure Neural voice, or "unreal:<VoiceId>" for Unreal
+      // Speech (needs UNREAL_SPEECH_API_KEY instead of the Azure key).
+      voice: { type: "string" },
     },
   });
   const listeningPath = values.listening ? resolve(values.listening) : null;
@@ -118,7 +127,11 @@ async function main() {
   const generate = values.generate;
   const cloud = values.r2;
   const sync = values["sync-db"];
-  const voice = process.env.AZURE_SPEECH_VOICE || "ja-JP-NanamiNeural";
+  const voice = values.voice || process.env.AZURE_SPEECH_VOICE || "ja-JP-NanamiNeural";
+  const isUnrealVoice = voice.startsWith("unreal:");
+  if (isUnrealVoice && !unrealVoiceId(voice)) {
+    throw new Error(`--voice unreal:<id> takes one of ${UNREAL_JAPANESE_VOICES.join(", ")}.`);
+  }
   const chineseVoices = {
     "zh-Hans": process.env.AZURE_SPEECH_VOICE_ZH_CN || DEFAULT_CHINESE_VOICES["zh-Hans"],
     "zh-Hant": process.env.AZURE_SPEECH_VOICE_ZH_TW || DEFAULT_CHINESE_VOICES["zh-Hant"],
@@ -172,7 +185,9 @@ async function main() {
       `Dry-run: ${plan.length} ${isLessonAudio ? "lesson audio entries" : "kana items"}, voices ${voices}, ${new Set(plan.map((asset) => asset.hash)).size} hashes. No network calls or file writes.`,
     );
     if (listeningPath) {
-      console.log(`Generate: npm run audio:generate -- --local --listening ${values.listening}`);
+      console.log(
+        `Generate: npm run audio:generate -- --local --listening ${values.listening}${values.voice ? ` --voice ${values.voice}` : ""}`,
+      );
       return;
     }
     const lessonFlags = `${isLessonAudio ? " --lessons" : ""}${isDatabaseSource ? " --db --sync-db" : ""}`;
@@ -193,9 +208,10 @@ async function main() {
       "Without --sync-db the new hashes are not registered and publishing will reject them.",
     );
   }
-  const key = required("AZURE_SPEECH_KEY");
-  const region = required("AZURE_SPEECH_REGION");
-  if (!/^[a-z0-9-]+$/.test(region)) {
+  const unrealKey = isUnrealVoice ? required("UNREAL_SPEECH_API_KEY") : "";
+  const key = isUnrealVoice ? "" : required("AZURE_SPEECH_KEY");
+  const region = isUnrealVoice ? "" : required("AZURE_SPEECH_REGION");
+  if (!isUnrealVoice && !/^[a-z0-9-]+$/.test(region)) {
     throw new Error("Azure region must be a region code, not a URL.");
   }
   const bucket = cloud ? required("R2_BUCKET") : "";
@@ -300,7 +316,10 @@ async function main() {
           await delay(150);
         },
       },
-      synthesize: (config) => synthesizeSpeech(config, { region, key }),
+      synthesize: (config) =>
+        unrealVoiceId(config.voice)
+          ? synthesizeUnrealSpeech(config, { key: unrealKey })
+          : synthesizeSpeech(config, { region, key }),
       async syncMetadata(asset) {
         if (!db) {
           return;
@@ -368,7 +387,7 @@ async function main() {
       if ((await readFile(listeningPath, "utf8")) !== listeningOriginal) {
         throw new Error(`The listening set changed during generation: ${listeningPath}. Re-run.`);
       }
-      const next = applyListeningAudio(listeningSet, result.manifest.assets);
+      const next = applyListeningAudio(listeningSet, result.manifest.assets, voice);
       // The repository formats JSON with Prettier, so the file is written the way it checks.
       const formatted = await format(JSON.stringify(next), {
         ...(await resolveConfig(listeningPath)),
