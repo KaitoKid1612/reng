@@ -94,6 +94,8 @@ npm run audio:generate -- --r2
 
 ## Lớp học trên Supabase local
 
+Chuẩn hóa Kanji Nhật v1 (04/11/2026): migration `20261104063229` đã áp dụng trên cloud `reng`, sửa `kanji: null` thành bỏ trường trong nháp và snapshot, giữ ID/version lớp đang ghim, thêm ràng buộc chặn giá trị sai kiểu. Xem [thiết kế](docs/detail-design/phase-4.md#chuẩn-hóa-kanji-v1) và [kiểm chứng](docs/testing/phase-4.md).
+
 Cần Docker hoặc Podman. Supabase CLI đã khóa trong devDependencies; cấu hình ở supabase/config.toml chỉ bật database, Auth, REST và Mailpit, bắt buộc xác nhận email.
 
 ```bash

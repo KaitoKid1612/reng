@@ -24,6 +24,12 @@ PASS local không thay thế nghiệm thu gửi email thật, DNS hoặc lịch 
 
 ## Bằng chứng
 
+Chuẩn hóa Kanji v1 (04/11/2026), test `tests/vocabulary-normalization-migration.test.ts`: dữ liệu `kanji: null` trước migration được bỏ đúng khóa; giữ chữ Kanji, `audio: null`, thứ tự từ, metadata version và pin lớp; nháp tăng revision. Kiểm tra rollback khi có dữ liệu sai khác, guard version bật lại, từ chối null/số/boolean/object/array ở cả nháp và version, schema ứng dụng đọc được dữ liệu sửa và v2 không bị chặn.
+
+- PASS `npm run check`: 247 test; PASS `npm run test:e2e`: 34 test Chromium local, không kết nối cloud. Supabase local không chạy nên không chạy bộ E2E tích hợp Supabase.
+- Đã áp dụng migration `20261104063229` vào cloud `reng` (`gqawttlaxibdxliaofun`). Bỏ 36 khóa null trong 3 nháp và 36 khóa null trong 3 version của `minna-1-viet-lesson-03`, `minna-1-viet-lesson-13`, `minna-1-viet-lesson-14`. Sao lưu 6 dòng đầy đủ ở file ngoài Git, quyền 0600.
+- Đọc lại cloud: cả 6 dòng qua validator ứng dụng; so sánh với backup chỉ khác các khóa null đã bỏ, revision nháp +1 và updated_at nháp. Hash toàn bộ bảng `class_lessons` và `assignments` không đổi; vẫn 12 bài/15 version. Hai CHECK đã validated, không còn Kanji sai kiểu trong nháp/version v1, trigger `immutable_lesson_version` đang bật; audit có 3 sự kiện nháp và 3 sự kiện version.
+
 - 28/10/2026: npm run check qua (63 test logic/database, gồm PGlite cho email_log/claim). npm run test:e2e:supabase 15/15 (lớp học, soạn bài, email qua Mailpit); npm run test:e2e 21/21. Production build thành công, các route soạn bài render theo request.
 - Email thật chụp từ Mailpit để rà giao diện: tiêu đề có tên và con số, một nút chính, chân thư có lý do nhận, link đổi tần suất và link hủy riêng dòng.
 - Lỗi tìm thấy khi kiểm chứng và đã sửa: dnd-kit sinh ID mô tả khác nhau giữa server/client (lệch hydrate) — truyền `id` ổn định; editor mount lại sau khi xuất bản làm mất thông báo — tải bản máy chủ bằng action thay vì đổi key; nút bị disabled trong lúc lưu làm mất focus bàn phím — dùng aria-disabled.

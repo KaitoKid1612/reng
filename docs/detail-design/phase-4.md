@@ -25,6 +25,12 @@ Theo [BD](../basic-design/phase-4.md), dữ liệu 03, thông báo 08. Dependenc
 - Xem trước dùng SlideContent ở chế độ tĩnh (không gọi API đáp án) trong khung 1280×720 co theo chiều rộng cột; slide ảnh thiếu/sai đường dẫn hiện ô báo thay vì gọi next/image. Ghi chú giảng viên chỉ hiện trong form, không vào khung xem trước.
 - Danh sách slide: dnd-kit sortable (chuột, chạm, bàn phím Space/mũi tên) kèm nút Lên/Xuống.
 
+## Chuẩn hóa Kanji v1
+
+Migration `20261104063229_normalize_vocabulary_kanji.sql` chỉ bỏ khóa `kanji` có giá trị JSON `null` trong `lessons.draft_content` và `lesson_versions.content` schemaVersion=1, giữ thứ tự từ và mọi trường khác. Bản nháp tăng `draft_revision` và đổi `updated_at` để tab cũ không ghi đè; version ID/metadata và mọi liên kết lớp/bài giao giữ nguyên. Có audit riêng cho từng nháp/version được sửa.
+
+Migration chạy trong transaction, khóa hai bảng với lock timeout 5 giây; kiểm tra guard version đang bật, tạm tắt đúng guard đó trong lúc sửa biểu diễn snapshot rồi bật lại trước commit. Mọi lỗi rollback cả dữ liệu và trạng thái trigger. Hai CHECK `lessons_v1_kanji_string`/`lesson_versions_v1_kanji_string` chặn `kanji` khác chuỗi khi trường có mặt, bao gồm ghi SQL, RPC và nhân bản; v2 không đổi. Không dùng `jsonb_strip_nulls` vì `audio: null` là hợp lệ. Backup trước khi chạy cloud lưu ngoài Git; không sửa snapshot bằng lệnh tay sau migration.
+
 ## Nhập CSV
 
 - Nhận file ≤ 200 KB hoặc văn bản dán. File phải giải mã UTF-8 nghiêm ngặt; bỏ BOM. Dấu phân cách: tab nếu dòng tiêu đề có tab, sau đó `;` nếu nhiều hơn `,`, mặc định `,`.

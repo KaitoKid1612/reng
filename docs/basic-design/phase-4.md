@@ -46,6 +46,8 @@ T01 có lối vào soạn bài, tạo bài và nhập CSV. Trang tiến độ h�
 
 ## Quyền
 
+Chuẩn hóa dữ liệu Nhật v1 (04/11/2026): từ không có chữ Kanji bỏ trường `kanji`; không lưu `null`. Chữ đã có và `audio: null` giữ nguyên. Sửa biểu diễn dữ liệu cũ giữ ID/version lớp đang dùng; không xuất bản lại hoặc đổi bài giao. Hợp đồng ứng dụng vẫn nghiêm ngặt, database chặn ghi `kanji` sai kiểu.
+
 Chỉ giảng viên sở hữu bài được soạn, nhập CSV và xuất bản; xuất bản đi qua RPC kiểm tra owner/revision trong transaction. Mỗi người chỉ đọc/sửa tùy chọn thông báo của mình. Cron và webhook xác thực bằng secret/chữ ký, không dùng phiên người dùng. Link hủy là token ký có phạm vi, không phải user_id thuần.
 
 ## Điều kiện nghiệm thu
