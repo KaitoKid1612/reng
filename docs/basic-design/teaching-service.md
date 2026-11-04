@@ -159,6 +159,10 @@ Kết quả rà soát và đề xuất còn lại: [kiểm chứng](../testing/u
   - Header có mục Tài khoản (Tiến độ, Sổ lỗi, Cài đặt email, Đăng xuất).
   - Trang đọc bài mở từ lớp có nút Về lớp; slide cuối cho học viên đánh dấu đã đọc.
   - Lớp mới có thẻ Các bước tiếp theo; form lớp và nhật ký giữ chữ đã gõ khi lỗi; Trình chiếu tiếp dùng phiên bản lớp đang dùng.
+- **Đợt 3:**
+  - Bài có hạn hiện đồng hồ trong giờ cuối; bài không cho nộp muộn tự nộp khi còn 1 phút.
+  - Sổ lỗi gộp theo bài và lọc câu đến hạn ôn.
+  - Bài chỉ được đưa vào lớp cùng ngôn ngữ (Dùng bài trong lớp, ô chọn bài ở trang Giao bài).
 
 ## Lịch sử bài tập hằng ngày — 04/11/2026
 

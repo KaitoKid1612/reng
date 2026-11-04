@@ -282,6 +282,9 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
   - Header thêm `ACCOUNT_LINK` (`/settings/account`, kèm `/settings/notifications`). Trang Tài khoản có `SignOutButton`.
   - `LessonReader`/`TeachingReader` nhận `classId` (trang đọc lấy từ `?class=`, kiểm tra UUID). `SlideDeck` nhận `readProgress` (chỉ học viên, nguồn database) và vẽ `LessonProgressButton` ở slide cuối; link Ghi buổi dạy cần `canPresent`.
   - `TeachingPanel.currentVersionId` lấy từ `report.lessons`. `StartChecklist` nhận `title`; trang lớp dựng 5 bước và chỉ hiện khi thiếu bài, học viên hoặc bài tập.
+  - `describeTimeLeft` (`lib/assignment.ts`, `COUNTDOWN_WINDOW_MS` 1 giờ, `COUNTDOWN_URGENT_MS` 10 phút, `AUTO_SUBMIT_LEAD_MS` 1 phút) và `DeadlineCountdown` (`components/classroom/deadline-countdown.tsx`, `role="timer"`). `AttemptRunner` nhận `dueAt`/`allowLate` và gọi `handleSubmit` một lần khi `shouldAutoSubmit`. Máy chủ (`check_open_attempt`) vẫn từ chối bài đến sau hạn khi không cho nộp muộn.
+  - `app/mistakes/page.tsx`: `groupByAssignment`, tham số `filter=due`, nhóm `details.mistake-group`, Đã giải quyết trong `details`.
+  - `getLessonUsage` lọc lớp theo `lessonLanguage` của bài (`loadOwnedLessonLanguage`); `ClassLessonForm` lọc bài theo `classLanguageTag`, giữ bài đã có trong lớp.
   - `typedValues` trong `app/actions/classes.ts` trả lại ô đã gõ cho form lớp và nhật ký (form remount bằng `key`). `dailyPracticeAction` thao tác `today` lưu số câu/bài nguồn trước khi gọi `createTodayPractice`.
 
 ## Lịch sử bài tập hằng ngày — 04/11/2026
