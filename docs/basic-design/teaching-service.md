@@ -261,6 +261,7 @@ Chưa đổi: dữ liệu lớp chỉ nhận hai môn ngôn ngữ, hai trình so
 - Bộ đề được nạp thành một bài nháp riêng của giáo viên ("Luyện nghe Minna 1–15"), không đụng bài đang dạy. Sau khi có audio, giáo viên nghe duyệt, xuất bản, đưa vào lớp và giao các câu của bài vừa học. Câu nghe không vào bài luyện tập hằng ngày.
 - Câu nghe vẫn phải có audio đã duyệt mới xuất bản được ([06](../06-audio.md)). Thiếu audio, trình soạn báo một dòng cho cả nhóm câu thay vì lặp lại từng câu.
 - Audio của bộ đề đi kèm bản web, không cần kho lưu trữ riêng (tạm sinh bằng Unreal Speech, giọng Sakura; sẽ thay bằng Azure). Giáo viên nghe duyệt ngay trong trình soạn trước khi xuất bản.
+- **Giao bài nghe riêng:** trang Giao bài báo bài nào có phiên bản mới hơn bản lớp đang dùng, kèm nút cập nhật lớp. Form giao bài có nút "Chỉ chọn câu nghe" (tự điền tên "Luyện nghe – …"). Bài đã giao không sửa được; bài nghe giao thêm là một bài tập riêng.
 - **Câu nghe thuộc từng bài:** trong trình soạn, khung "Câu nghe Minna có sẵn" thêm 6 câu nghe của Bài N vào chính Bài N. Sau khi xuất bản, các câu này vào bài luyện tập hằng ngày theo tỉ lệ (khoảng 1 trên 10 câu), được chọn khi giao bài và hiện ở trang Luyện nghe của bài. Audio được đăng ký tự động khi xuất bản.
 - Ô gõ hiragana nhắc trợ từ は, へ, を gõ ha, he, wo, để câu chép chính tả không bị sai vì gõ theo âm nghe được.
 

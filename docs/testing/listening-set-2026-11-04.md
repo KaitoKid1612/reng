@@ -50,6 +50,13 @@ Người dùng chưa đăng ký được Azure (thẻ chưa đủ số dư để
 - Xóa 6 dòng `audio_assets` của các câu đó rồi xuất bản lại: thành công, 6 dòng được đăng ký lại.
 - Test: `tests/minna-listening.test.ts` (6 câu mỗi bài, bỏ nhãn trong bài, đoán bài theo tiêu đề, bài mẫu + câu nghe không có lỗi xuất bản, danh sách audio đủ 90 với url đúng), `tests/daily-practice.test.ts` (câu nghe là dạng của bài hằng ngày).
 
+## Giao bài nghe riêng khi bài hằng ngày đã giao
+
+Bài đã giao không sửa được (snapshot cố định để điểm công bằng), nên câu nghe được giao thành bài tập riêng.
+
+- Lớp demo đang dùng Bài 11 phiên bản 1; trang Giao bài hiện "đã có phiên bản 3, lớp chưa dùng" và nút Cập nhật lớp lên phiên bản 3. Form giao bài cũng nhắc lớp đang dùng phiên bản cũ.
+- Bấm cập nhật: lớp lên phiên bản 3; form hiện "Chỉ chọn câu nghe (6)"; bấm thì chọn 6/56 câu, tên bài giao tự điền "Luyện nghe – Bài 11 – …"; xuất bản thành công.
+
 ## Còn lại
 
 - Người dùng tạo khóa Azure (gói Free F0) và thêm vào `.env.local`. Sau đó sinh audio, nghe thử, commit file và push.
