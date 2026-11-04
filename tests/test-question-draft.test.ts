@@ -24,6 +24,10 @@ test("teacher test questions explain the first problem before publishing", () =>
     "Câu một đáp án chỉ được đánh dấu một lựa chọn đúng.",
   );
   assert.equal(describeQuestionProblem({ ...filled, answer: [0] }), null);
+  assert.equal(
+    describeQuestionProblem({ ...filled, options: ["は", "は "], answer: [0] }),
+    "Có hai lựa chọn giống nhau; sửa để mỗi lựa chọn khác nhau.",
+  );
   const fillDraft = createQuestionDraft(2, "fill");
   assert.ok(fillDraft.type === "fill");
   const fill = {

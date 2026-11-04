@@ -506,6 +506,10 @@ function describeChoiceProblem(options: readonly string[], answer: readonly numb
   if (options.length < 2 || options.some(blank)) {
     return "cần ít nhất 2 lựa chọn và không để trống lựa chọn nào.";
   }
+  // Two identical options look alike to the learner, but only the marked one counts.
+  if (new Set(options.map((option) => option.trim())).size !== options.length) {
+    return "có hai lựa chọn giống nhau; sửa để mỗi lựa chọn khác nhau.";
+  }
   if (
     !answer.length ||
     answer.some((index) => index >= options.length) ||

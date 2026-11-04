@@ -139,6 +139,11 @@ test("listening questions publish only with a transcript, valid answers and gene
   listen.answer = [0];
   listen.audio = "a".repeat(32);
   dictation.audio = "b".repeat(32);
+  listen.options = ["がっこう", "がっこう"];
+  assert.ok(
+    messages().includes("Câu luyện 2: có hai lựa chọn giống nhau; sửa để mỗi lựa chọn khác nhau."),
+  );
+  listen.options = ["がっこう", "えき"];
   assert.deepEqual(messages(), []);
   assert.deepEqual(listAudioHashes(draft.content).slice(-2), ["a".repeat(32), "b".repeat(32)]);
   const published = toPublishableContent(draft.content);

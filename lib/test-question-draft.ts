@@ -127,6 +127,9 @@ export function describeQuestionProblem(draft: TestQuestionDraft) {
     if (input.options.length < 2 || input.options.some((option) => !option)) {
       return "Cần ít nhất 2 lựa chọn và không để trống lựa chọn nào.";
     }
+    if (new Set(input.options.map((option) => option.trim())).size !== input.options.length) {
+      return "Có hai lựa chọn giống nhau; sửa để mỗi lựa chọn khác nhau.";
+    }
     if (!input.answer.length) {
       return "Chọn ít nhất một đáp án đúng.";
     }
