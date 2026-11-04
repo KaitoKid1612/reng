@@ -30,7 +30,7 @@ Nâng cấp quản lý bài học/bài tập Nhật–Trung: [phạm vi, kết q
 
 ## Cách đọc
 
-Rà soát giao diện 04/11/2026: [đã sửa, cách kiểm tra và 15 đề xuất còn lại theo thứ tự](testing/ux-review-2026-11-04.md).
+Rà soát giao diện 04/11/2026: [đã sửa (2 đợt), cách kiểm tra và các đề xuất còn lại theo thứ tự](testing/ux-review-2026-11-04.md).
 
 Lịch sử bài tập hằng ngày (04/11/2026, trang Luyện tập hằng ngày): điểm từng ngày như trang Sheet cũ, cho học viên và giáo viên — [BD](basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [DD](detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026), [kiểm chứng](testing/flow-fixes-2026-11-03.md#lịch-sử-bài-tập-hằng-ngày-04112026).
 

@@ -151,6 +151,14 @@ Kết quả rà soát và đề xuất còn lại: [kiểm chứng](../testing/u
 - **Giáo viên:** Ghi buổi dạy mở ở thẻ mới để thẻ đang chia sẻ Meet không lộ điểm của lớp. Presenter nhận phím mũi tên, Page Up/Down, phím cách và bút trình chiếu. Giao bài có Chọn tất cả và đếm số câu; nút Giao bài đưa thẳng tới form, giao xong báo "Đã giao «…»". Link Meet dán kèm `?authuser=0`, chữ hoa hay `/` cuối được rút gọn. Đổi mã mới và Xóa nhật ký buổi dạy hỏi lại. Tạo bài mới chỉ ra bài mẫu đã tạo.
 - **Chữ:** dùng "giáo viên" thống nhất; phần trăm và số thập phân dùng dấu phẩy; với giáo viên, header ghi Lớp đang học và trang Giảng dạy ghi Lớp đang dạy.
 - **Slide trên điện thoại:** luôn ở chế độ trình chiếu (reveal.js không tự chuyển sang trang cuộn dọc dưới 435px).
+- **Đợt 2:**
+  - Trang lớp của giáo viên ghi tên học viên chưa nộp từng bài; "Câu cả lớp sai nhiều" tính trên 10 bài gần nhất có bài nộp.
+  - Hôm nay dạy gì không liệt kê bài hằng ngày tự giao; các dòng mở thẳng mục liên quan.
+  - Học viên thấy bài hằng ngày đã lỡ gộp thành một dòng mỗi lớp; bài quá hạn còn nhận ghi rõ "vẫn nộp được".
+  - Nút học viên hay bấm có dấu xoay khi trang tiếp theo đang tải.
+  - Header có mục Tài khoản (Tiến độ, Sổ lỗi, Cài đặt email, Đăng xuất).
+  - Trang đọc bài mở từ lớp có nút Về lớp; slide cuối cho học viên đánh dấu đã đọc.
+  - Lớp mới có thẻ Các bước tiếp theo; form lớp và nhật ký giữ chữ đã gõ khi lỗi; Trình chiếu tiếp dùng phiên bản lớp đang dùng.
 
 ## Lịch sử bài tập hằng ngày — 04/11/2026
 

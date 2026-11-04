@@ -274,6 +274,15 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 - `app/teach/lessons/new/page.tsx` dùng `findStarterForLesson(creationFingerprint)` để chỉ ra bài mẫu đã tạo.
 - `app/lessons/error.tsx` dùng `retry` (Next 16: `reset` chỉ xóa trạng thái lỗi). `GrammarSearch` vẽ mẫu câu và giải thích bằng `JapaneseText`. `QuestionMap` thêm `.question-map-mark` ✓/✗. `FlashcardDeck` giữ `ratedIds` và dừng ở màn hình Xong bộ thẻ.
 - `scripts/audit-layout.ts`: bỏ qua cặp chữ khi một bên là `<rt>` nằm trên dòng kia, và khi một bên thuộc `<ruby>` khác với độ chồng ngang dưới 1/4 bề rộng khung ruby.
+- **Đợt 2.**
+  - `selectEveryPageIn` (`lib/server/supabase.ts`): chia nhóm 100 ID như `selectRowsIn`, mỗi nhóm đọc từng trang 1000 dòng (truy vấn phải có `order`). Dùng cho bài nộp trong `getClassReport` (theo `id`) và câu sai trong `listMistakes` (theo `submission_id`, `question_id`).
+  - `getClassReport` chỉ gọi `assignment_question_stats` cho `HARD_QUESTION_ASSIGNMENTS = 10` bài mới nhất có bài nộp của học viên và trả `olderStatsCount`. Mỗi bài có `missing` từ `listMissingLearners` (`lib/class-report.ts`).
+  - `listDailyAssignmentIds` chuyển sang `lib/server/daily-history.ts`. `TeacherTodayAssignment.isDaily` loại bài hằng ngày khỏi "hạn hôm nay". `getStudentClassView` trả `dailyAssignmentIds`. `foldMissedDailySets` (`lib/learner-today.ts`) dùng `isStaleDailySet`. `describeOpenDue` (`components/classroom/assignment-labels.tsx`) ghi việc quá hạn còn nhận.
+  - `LinkPending` (`components/ui/link-pending.tsx`) dùng `useLinkStatus`, luôn vẽ và đặt tuyệt đối trong link (`a:has(> .link-pending)`), hiện sau 0,15 giây, tắt quay khi người dùng chọn giảm chuyển động. Không dùng `loading.tsx` vì trang riêng phải trả 404 thật.
+  - Header thêm `ACCOUNT_LINK` (`/settings/account`, kèm `/settings/notifications`). Trang Tài khoản có `SignOutButton`.
+  - `LessonReader`/`TeachingReader` nhận `classId` (trang đọc lấy từ `?class=`, kiểm tra UUID). `SlideDeck` nhận `readProgress` (chỉ học viên, nguồn database) và vẽ `LessonProgressButton` ở slide cuối; link Ghi buổi dạy cần `canPresent`.
+  - `TeachingPanel.currentVersionId` lấy từ `report.lessons`. `StartChecklist` nhận `title`; trang lớp dựng 5 bước và chỉ hiện khi thiếu bài, học viên hoặc bài tập.
+  - `typedValues` trong `app/actions/classes.ts` trả lại ô đã gõ cho form lớp và nhật ký (form remount bằng `key`). `dailyPracticeAction` thao tác `today` lưu số câu/bài nguồn trước khi gọi `createTodayPractice`.
 
 ## Lịch sử bài tập hằng ngày — 04/11/2026
 
