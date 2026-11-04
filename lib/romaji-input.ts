@@ -2,8 +2,10 @@ import { toHiragana, toKana, toKatakana } from "wanakana";
 
 import type { InputMode } from "@/lib/assignment";
 
-const ROMAJI_BEFORE_CARET = /[A-Za-z'-]+$/;
-const ROMAJI_RUN = /[A-Za-z'-]+/g;
+// Punctuation goes with the romaji, as in a Japanese IME: "," → 、 "." → 。 "?" → ？ "!" → ！.
+// Without it "hai,soudesu" stayed はい,そうです and missed an answer written はい、そうです.
+const ROMAJI_BEFORE_CARET = /[A-Za-z'\-,.?!]+$/;
+const ROMAJI_RUN = /[A-Za-z'\-,.?!]+/g;
 const JAPANESE_TEXT = /[぀-ヿ㐀-鿿]/;
 
 // Converts only the Latin run the learner is typing, so kana/kanji already in the field

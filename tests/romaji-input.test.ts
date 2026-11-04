@@ -17,6 +17,18 @@ test("converts the romaji being typed and keeps an unfinished n or consonant", (
   assert.equal(convertRomajiBeforeCaret("ra-men", 6, "katakana").value, "ラーメn");
 });
 
+test("typed punctuation becomes Japanese punctuation, as in an IME", () => {
+  assert.equal(convertRomajiBeforeCaret("hai,", 4, "hiragana").value, "はい、");
+  assert.equal(
+    convertRomajiBeforeCaret("はい、soudesu.", 13, "hiragana").value,
+    "はい、そうです。",
+  );
+  assert.equal(convertRomajiBeforeCaret("なん desuka?", 10, "japanese").value, "なん ですか？");
+  assert.equal(convertRomajiBeforeCaret("kon,", 4, "hiragana").value, "こん、");
+  assert.equal(finalizeRomaji("わたしはがくせいです.", "hiragana"), "わたしはがくせいです。");
+  assert.equal(finalizeRomaji("Thứ hai.", "text"), "Thứ hai.");
+});
+
 test("leaves pasted kanji and text after the caret unchanged", () => {
   assert.deepEqual(convertRomajiBeforeCaret("行きmasu", 6, "japanese"), {
     value: "行きます",
