@@ -100,6 +100,23 @@ export async function listPublicLessons() {
     .sort((first, second) => first.order - second.order);
 }
 
+// Landing pages only need to know whether the public catalog has a lesson to open.
+export async function hasPublicLessons() {
+  if (isLocalLessonSource()) {
+    return (await listPublicLessons()).length > 0;
+  }
+  const { count, error } = await createLessonClient()
+    .from("lessons")
+    .select("id", { count: "exact", head: true })
+    .eq("visibility", "public")
+    .is("archived_at", null)
+    .not("published_version_id", "is", null);
+  if (error) {
+    throw new Error("Unable to count published lessons.");
+  }
+  return (count ?? 0) > 0;
+}
+
 export async function loadLessonVersion(lessonId: string, versionId?: string) {
   if (isLocalLessonSource()) {
     return findPublicVersion(await readCatalog(), lessonId, versionId);

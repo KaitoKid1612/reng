@@ -66,10 +66,17 @@ export default async function LessonsPage() {
         ))}
       </div>
       {lessons.length === 0 && (
-        <p>
-          Chưa có bài học công khai. Có mã lớp? <Link href="/join-class">Vào lớp bằng mã</Link> giáo
-          viên gửi, hoặc luyện tập với <Link href="/self-study">công cụ tự học</Link> của từng môn.
-        </p>
+        <>
+          <p>
+            Chưa có bài học công khai. Có mã lớp? <Link href="/join-class">Vào lớp bằng mã</Link>{" "}
+            giáo viên gửi, hoặc luyện tập với <Link href="/self-study">công cụ tự học</Link> của
+            từng môn.
+          </p>
+          <p className="small muted">
+            Bạn là giáo viên? Sau khi <Link href="/sign-up/teacher">đăng ký giáo viên</Link>, bạn có
+            sẵn bài mẫu theo trình tự Minna no Nihongo để sửa, trình chiếu và giao bài.
+          </p>
+        </>
       )}
     </>
   );

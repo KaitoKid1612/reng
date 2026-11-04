@@ -288,5 +288,6 @@ export async function setLessonVisibilityAction(
   }
   revalidatePath("/lessons");
   revalidatePath("/grammar");
+  revalidatePath("/for-teachers");
   return { notice: "Đã cập nhật quyền đọc. Lưu nháp hoặc xuất bản sẽ không tự đổi quyền này." };
 }

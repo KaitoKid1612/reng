@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
+import { hasPublicLessons } from "@/lib/lesson-repository";
 import { absoluteUrl, serializeJsonLd, SITE_NAME } from "@/lib/site";
 
 import type { Metadata } from "next";
@@ -8,6 +9,10 @@ import type { Metadata } from "next";
 const TITLE = "Mở lớp dạy online cho học viên Việt Nam";
 const DESCRIPTION =
   "Mở lớp riêng, soạn slide theo mẫu, dạy qua Google Meet, giao bài tập tự chấm và theo dõi tiến độ từng học viên.";
+
+// Rebuilt at most hourly, and right away when a teacher changes who can read a lesson, so the
+// sample button never leads to an empty catalog.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -86,7 +91,17 @@ const QUESTIONS = [
   },
 ];
 
-export default function ForTeachersPage() {
+// Without a public lesson to open, the guide shows how teaching works instead of an empty list.
+async function loadHasSamples() {
+  try {
+    return await hasPublicLessons();
+  } catch {
+    return false;
+  }
+}
+
+export default async function ForTeachersPage() {
+  const hasSamples = await loadHasSamples();
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -126,9 +141,15 @@ export default function ForTeachersPage() {
           <Link href="/sign-up/teacher" className={buttonVariants()}>
             Đăng ký giáo viên
           </Link>
-          <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
-            Xem bài học mẫu
-          </Link>
+          {hasSamples ? (
+            <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
+              Xem bài học mẫu
+            </Link>
+          ) : (
+            <Link href="/guide#teacher-title" className={buttonVariants({ variant: "outline" })}>
+              Xem hướng dẫn cho giáo viên
+            </Link>
+          )}
         </div>
       </section>
       <section className="landing-section" aria-labelledby="features-title">

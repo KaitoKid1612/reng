@@ -1,6 +1,6 @@
 "use server";
 
-import { refresh } from "next/cache";
+import { refresh, revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
@@ -273,6 +273,8 @@ export async function archiveLessonAction(
   if (status === "in_class" || status === "quota_exceeded") {
     return { error: ARCHIVE_MESSAGES[status] };
   }
+  // An archived public lesson leaves the catalog the teacher page points guests to.
+  revalidatePath("/for-teachers");
   refresh();
   return { notice: ARCHIVE_MESSAGES[status] };
 }
