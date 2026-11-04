@@ -56,10 +56,9 @@ export async function setDailyPractice(
   );
 }
 
-// The pinned lesson is used while it is open and has choice or fill questions; otherwise the
+// The pinned lesson is used while it is open and has questions for daily sets; otherwise the
 // newest open lesson with such questions keeps the daily habit going, because the newest lesson
-// may still be slides only. Listening items need recorded audio and a quiet room, so daily sets
-// stay choice and fill.
+// may still be slides only. Listening questions join in their share of the set.
 export async function findDailyPracticeSource(
   classId: string,
   pinnedLessonId: string | null,

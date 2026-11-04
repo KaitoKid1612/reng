@@ -75,8 +75,15 @@ export function repeatsEveryDay(questionCount: number, size: number | null) {
   return size !== null && questionCount <= size;
 }
 
-// Listening needs audio that a bank may not have, so daily sets use the other kinds.
-export const DAILY_QUESTION_TYPES: readonly string[] = ["choice", "fill", "order"];
+// A listening question can only be published with reviewed audio, so a lesson that has some
+// (such as the Minna listening sets) puts them in its daily sets as their own kinds.
+export const DAILY_QUESTION_TYPES: readonly string[] = [
+  "choice",
+  "fill",
+  "order",
+  "listen",
+  "dictation",
+];
 
 export function isDailyQuestionType(type: string) {
   return DAILY_QUESTION_TYPES.includes(type);

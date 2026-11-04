@@ -175,8 +175,9 @@ test("a reading passage's questions are taken together and shown in lesson order
   assert.equal((positions.at(-1) ?? 0) - positions[0] + 1, positions.length, partial.join(","));
 });
 
-test("order questions join the daily set as their own kind; listening stays out", () => {
+test("order and listening questions join the daily set as their own kinds", () => {
   assert.equal(isDailyQuestionType("order"), true);
-  assert.equal(isDailyQuestionType("listen"), false);
-  assert.equal(isDailyQuestionType("dictation"), false);
+  assert.equal(isDailyQuestionType("listen"), true);
+  assert.equal(isDailyQuestionType("dictation"), true);
+  assert.equal(isDailyQuestionType("match"), false);
 });
