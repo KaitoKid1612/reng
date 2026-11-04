@@ -364,6 +364,27 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
   });
 }
 
+// Lesson versions with at least one listening question, decided by the database (jsonb
+// containment) so a class page never downloads every question to show one link.
+export async function findListeningVersionIds(versionIds: readonly string[]) {
+  if (!versionIds.length) {
+    return new Set<string>();
+  }
+  const service = createServiceClient();
+  const byType = (type: string) =>
+    selectRows(
+      service
+        .from("lesson_versions")
+        .select("id")
+        .in("id", [...versionIds])
+        // contains() would send a Postgres array literal; jsonb containment needs JSON text.
+        .filter("content->questions", "cs", JSON.stringify([{ type }])),
+      z.object({ id: z.uuid() }),
+    );
+  const [listen, dictation] = await Promise.all([byType("listen"), byType("dictation")]);
+  return new Set([...listen, ...dictation].map((row) => row.id));
+}
+
 export async function setClassLesson(
   teacherId: string,
   input: {

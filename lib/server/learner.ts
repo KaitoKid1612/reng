@@ -11,7 +11,12 @@ import {
 import { toPercent } from "@/lib/grading/grade";
 import { questionKind, summarizeQuestionKinds } from "@/lib/question-kinds";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
-import { listClassLessons, listStudentClasses, requireMembership } from "@/lib/server/classes";
+import {
+  findListeningVersionIds,
+  listClassLessons,
+  listStudentClasses,
+  requireMembership,
+} from "@/lib/server/classes";
 import { listDailyAssignmentIds } from "@/lib/server/daily-history";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { listDueCards, MAX_SESSION_CARDS } from "@/lib/server/reviews";
@@ -90,17 +95,23 @@ export async function getStudentClassView(userId: string, classId: string, now: 
     listClassLessons(classId),
     listClassAssignments([classId]),
   ]);
-  const [attempts, dailyAssignmentIds] = await Promise.all([
+  const openLessons = lessons.filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime());
+  const [attempts, dailyAssignmentIds, listeningVersionIds] = await Promise.all([
     listUserAttempts(
       userId,
       assignments.map((assignment) => assignment.id),
     ),
     listDailyAssignmentIds(assignments.map((assignment) => assignment.id)),
+    findListeningVersionIds(openLessons.map((lesson) => lesson.versionId)),
   ]);
   return {
     classRow,
     dailyAssignmentIds,
-    lessons: lessons.filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime()),
+    // Listening practice on the lesson's own page needs no assignment and keeps no score.
+    lessons: openLessons.map((lesson) => ({
+      ...lesson,
+      hasListening: listeningVersionIds.has(lesson.versionId),
+    })),
     upcomingLessonCount: lessons.filter((lesson) => Date.parse(lesson.availableAt) > now.getTime())
       .length,
     assignments: assignments.map((assignment) =>

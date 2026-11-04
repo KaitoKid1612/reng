@@ -225,6 +225,11 @@ export default async function ClassPage({ params }: ClassPageProps) {
                   >
                     Đọc bài
                   </Link>
+                  {lesson.hasListening && (
+                    <Link href={`/listening/${lesson.lessonId}?version=${lesson.versionId}`}>
+                      Luyện nghe
+                    </Link>
+                  )}
                   {lesson.hasVocab && (
                     <>
                       <Link href={`/vocabulary/${lesson.lessonId}?version=${lesson.versionId}`}>
