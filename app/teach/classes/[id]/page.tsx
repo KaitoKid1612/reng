@@ -205,6 +205,10 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           classId={classRow.id}
           meetingUrl={classRow.meeting_url}
           latestSession={latestSession}
+          currentVersionId={
+            report.lessons.find((lesson) => lesson.lessonId === latestSession?.lesson?.id)
+              ?.versionId
+          }
           nextSession={nextSessionText}
         />
       )}

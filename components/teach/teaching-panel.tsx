@@ -10,6 +10,8 @@ interface TeachingPanelProps {
   classId: string;
   meetingUrl: string | null;
   latestSession: ClassSession | undefined;
+  /** The version of the logged lesson the class uses now, which may be newer than the log's. */
+  currentVersionId?: string;
   // Already worded for display, e.g. "Hôm nay, 19:30–21:00"; null without a timetable.
   nextSession: string | null;
 }
@@ -21,9 +23,12 @@ export function TeachingPanel({
   classId,
   meetingUrl,
   latestSession,
+  currentVersionId,
   nextSession,
 }: TeachingPanelProps) {
   const sessionLesson = latestSession?.lesson;
+  // After "Cập nhật lên phiên bản mới" the class teaches the new version, so it resumes there.
+  const resumeVersionId = currentVersionId ?? sessionLesson?.versionId;
   const resumeSlide = latestSession?.slideReached ?? 1;
   return (
     <section className="teaching-panel" aria-labelledby="teaching-panel-title">
@@ -70,7 +75,7 @@ export function TeachingPanel({
           <Link
             href={slidePresenterPath(
               sessionLesson.id,
-              sessionLesson.versionId,
+              resumeVersionId ?? sessionLesson.versionId,
               resumeSlide,
               classId,
             )}
