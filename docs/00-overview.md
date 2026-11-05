@@ -1,8 +1,12 @@
 # Tổng quan
 
+## Hiện trạng — 05/11/2026
+
+Reng chạy trên production thử (https://reng-class.vercel.app) từ 29/10/2026 cho lớp pilot. **Pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự Minna no Nihongo**: giáo viên tạo bài từ 15 bài mẫu tự biên soạn (không chép sách), sửa trong trình soạn tiếng Nhật, trình chiếu qua Meet, giao bài, bật luyện tập hằng ngày và theo dõi lớp. Luồng Việt–Trung (trình soạn 5 bước, chấm pinyin và giản/phồn thể) vẫn giữ và chạy được; nền tảng giữ khả năng mở rộng sang môn khác. Chưa có: nhập scan/OCR, TTS trên web, gửi email trên production (chưa có tên miền và SMTP riêng), thanh toán. Chưa nghiệm thu đầy đủ với lớp thật. Tính năng theo giai đoạn và nhật ký thay đổi ở [README gốc](../README.md); mức đáp ứng yêu cầu dịch vụ ở [đối chiếu source](source-alignment.md).
+
 ## Định hướng dịch vụ — 29/10/2026
 
-Reng là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Reng cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung): giao diện/hướng dẫn và nghĩa bằng tiếng Việt, nội dung học bằng tiếng Trung. Nền tảng hướng tới nhiều môn và ngôn ngữ; chưa mở đồng thời tất cả trong MVP.
+Reng là dịch vụ hỗ trợ giáo viên tổ chức lớp, soạn và chia sẻ học liệu, giao bài, chấm điểm và theo dõi học sinh. Giáo viên dạy trực tiếp hoặc qua Google Meet; Reng cung cấp slide và hoạt động học tập trước, trong và sau buổi học. Tiếng Nhật N5 là bộ nội dung đầu tiên đã có mã nguồn, không phải giới hạn của sản phẩm. Mốc dịch vụ đầu tiên ưu tiên dạy tiếng Trung cho người Việt (Việt–Trung): giao diện/hướng dẫn và nghĩa bằng tiếng Việt, nội dung học bằng tiếng Trung (cùng ngày, pilot đổi sang ưu tiên tiếng Nhật theo Minna; xem mục Hiện trạng). Nền tảng hướng tới nhiều môn và ngôn ngữ; chưa mở đồng thời tất cả trong MVP.
 
 Ví dụ: một giáo viên tiếng Trung đăng ký tài khoản giáo viên, tạo lớp 10 học sinh, gửi lời mời vào lớp và lưu link Meet. Trong buổi học giáo viên mở slide Reng, chia sẻ tab trình chiếu qua Meet. Học sinh dùng tài khoản của mình để đọc bài được cấp quyền, làm bài trên điện thoại và xem kết quả theo chính sách bài giao. Giáo viên nhìn được ai chưa nộp, ai sai nhiều và ai cần nhắc.
 
@@ -33,7 +37,7 @@ Google Meet đảm nhiệm âm thanh/video. Bản đầu chỉ lưu link cuộc 
 
 ## Phạm vi và trạng thái
 
-Đã có mã nguồn cho nền tiếng Nhật, lớp học/bài giao, editor, chấm khách quan, tiến độ và email; bằng chứng local xem checklist từng giai đoạn. Chưa suy ra đã triển khai cloud hoặc sẵn sàng phục vụ khách hàng.
+Đã có mã nguồn cho nền tiếng Nhật, lớp học/bài giao, editor, chấm khách quan, tiến độ và email; bằng chứng local xem checklist từng giai đoạn. Đã chạy trên production thử từ 29/10/2026 (Vercel Hobby, Supabase Free); chưa sẵn sàng thu phí hay nhận nhiều lớp thật ([kế hoạch POC](poc-setup.md)).
 
 Đăng ký giáo viên (có quản trị viên duyệt), tiếng Trung, sức chứa lớp, link Meet và chia sẻ giữa giáo viên **đã triển khai** và chạy trên production thử từ 29/10/2026; nhập scan và TTS web **chưa triển khai**. [Basic Design dịch vụ](basic-design/teaching-service.md), [thiết kế kỹ thuật dự kiến](detail-design/teaching-service.md) và [tiêu chí nghiệm thu](testing/teaching-service.md) phân biệt phần có thể tái sử dụng và phần phải làm thêm.
 
@@ -45,4 +49,4 @@ Hai giáo viên tiếng Trung độc lập, cùng dạy học sinh Việt Nam, v
 
 ## Cách giáo viên chuẩn bị bài
 
-Giáo viên tự soạn chuyên môn, Reng cung cấp mẫu bố cục và bộ bài minh họa nhỏ được giáo viên tiếng Trung duyệt. Luồng ưu tiên là chọn mẫu → nhập bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → thêm/duyệt câu luyện → xem trước và giao lớp. Bắt đầu bằng một bài có mục tiêu nhỏ, dạy từ dễ đến khó theo lựa chọn giáo viên; thử dùng trong lớp trước khi làm nhiều mẫu hoặc OCR. [Quy trình biên soạn dự kiến](content-authoring.md) mô tả các bước và trách nhiệm; chưa triển khai luồng này trong code.
+Giáo viên tự soạn chuyên môn, Reng cung cấp mẫu bố cục và bộ bài minh họa nhỏ được giáo viên tiếng Trung duyệt. Luồng ưu tiên là chọn mẫu → nhập bảng chữ Hán/pinyin/nghĩa Việt → dựng slide → thêm/duyệt câu luyện → xem trước và giao lớp. Bắt đầu bằng một bài có mục tiêu nhỏ, dạy từ dễ đến khó theo lựa chọn giáo viên; thử dùng trong lớp trước khi làm nhiều mẫu hoặc OCR. [Quy trình biên soạn](content-authoring.md) mô tả các bước và trách nhiệm. Luồng 5 bước này đã có trong trình soạn bài Việt–Trung (schema v2); bài tiếng Nhật bắt đầu từ bài mẫu Minna rồi sửa trong trình soạn tiếng Nhật.
