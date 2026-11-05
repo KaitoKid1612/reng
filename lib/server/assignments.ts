@@ -20,7 +20,7 @@ import {
   toTestQuestions,
 } from "@/lib/assignment";
 import { gradeAttempt } from "@/lib/grading/grade";
-import { parseDatabaseVersion } from "@/lib/lesson-repository";
+import { questionSchema } from "@/lib/lesson-schema";
 import { getTeacherClass, requireMembership } from "@/lib/server/classes";
 import {
   callRpc,
@@ -237,15 +237,35 @@ export async function listUserAttempts(userId: string, assignmentIds: readonly s
     .map((row) => ({ assignmentId: row.assignment_id, ...toAttempt(row) }));
 }
 
-async function loadVersion(versionId: string) {
+// Assignments read only what they use from a lesson version. Parsing the whole lesson for the
+// reader would also demand slides, vocabulary and every other part, so one version the reader
+// refuses (on 05/11/2026 a version with no slides) took down the assignment page of every
+// learner whose assignment came from it.
+async function loadVersionTitle(versionId: string) {
   const row = await selectOptional(
-    createServiceClient().from("lesson_versions").select("*").eq("id", versionId).maybeSingle(),
-    z.record(z.string(), z.unknown()),
+    createServiceClient().from("lesson_versions").select("title").eq("id", versionId).maybeSingle(),
+    z.object({ title: z.string() }),
   );
   if (!row) {
     throw new ServiceError("not_found");
   }
-  return parseDatabaseVersion(row);
+  return row.title;
+}
+
+async function loadVersionQuestions(versionId: string) {
+  const row = await selectOptional(
+    createServiceClient()
+      .from("lesson_versions")
+      .select("questions:content->questions")
+      .eq("id", versionId)
+      .maybeSingle(),
+    // v1 and v2 lessons publish questions with the same contract.
+    z.object({ questions: z.array(questionSchema) }),
+  );
+  if (!row) {
+    throw new ServiceError("not_found");
+  }
+  return row.questions;
 }
 
 async function loadPinnedVersionId(classId: string, lessonId: string) {
@@ -267,8 +287,8 @@ async function loadPinnedVersionId(classId: string, lessonId: string) {
 // Practice questions that can be assigned from the version currently pinned for the class.
 export async function listAssignablePracticeQuestions(classId: string, lessonId: string) {
   const pinned = await loadPinnedVersionId(classId, lessonId);
-  const version = await loadVersion(pinned.lesson_version_id);
-  return version.content.questions.filter(isAssignableQuestion);
+  const questions = await loadVersionQuestions(pinned.lesson_version_id);
+  return questions.filter(isAssignableQuestion);
 }
 
 export interface PublishAssignmentInput {
@@ -374,9 +394,9 @@ export async function getStudentAssignment(
 ): Promise<StudentAssignmentView> {
   const assignment = await loadAssignment(assignmentId);
   const { classRow } = await requireMembership(userId, assignment.classId);
-  const [pinned, version, attempts, items] = await Promise.all([
+  const [pinned, lessonTitle, attempts, items] = await Promise.all([
     loadPinnedVersionId(assignment.classId, assignment.lessonId),
-    loadVersion(assignment.lessonVersionId),
+    loadVersionTitle(assignment.lessonVersionId),
     listUserAttempts(userId, [assignment.id]),
     loadAssignmentItems(assignment.id),
   ]);
@@ -384,7 +404,7 @@ export async function getStudentAssignment(
   return {
     assignment,
     className: classRow.name,
-    lessonTitle: version.title,
+    lessonTitle,
     availableAt: pinned.available_at,
     isClassActive: classRow.active,
     attempts,
