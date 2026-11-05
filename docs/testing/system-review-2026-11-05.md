@@ -36,8 +36,8 @@ Người dùng yêu cầu: kiểm tra dự án, bổ sung tài liệu, sửa mã
 |---|---|
 | Hiện tượng | Người dùng báo bài tập hằng ngày hôm nay mở ra là "Trang chưa hiển thị được" |
 | Bằng chứng | `npx vercel logs -e production` (gói Hobby chỉ giữ log khoảng 30 phút gần nhất): từ 08:26 đến 08:53 giờ Việt Nam, mọi lần mở `/assignments/c192912d…` và `/assignments/2839f0f6…` lỗi `ZodError` ở `content.slides` (mảng rỗng) trong `parseDatabaseVersion`, gọi từ trang bài tập. Production chạy deployment của commit `5386c19` (18:07 ngày 04/11), chưa có commit nào của đợt này |
-| Nguyên nhân | Trang bài tập đọc và kiểm tra cả phiên bản bài theo hợp đồng của trang đọc bài (ít nhất một slide) chỉ để lấy tiêu đề. Phiên bản bài nguồn của hai bài giao này không có slide. Chưa xác định phiên bản đó được tạo bằng đường nào: lệnh đọc database production để kiểm tra bị chặn ở phiên này. `bank:sql` là một đường cho lọt bài 0 slide |
-| Đã sửa | Trang bài tập chỉ đọc tiêu đề; phần chọn câu cho cron và trang Giao bài chỉ đọc danh sách câu; `bank:sql` từ chối bài 0 slide ([chi tiết](../detail-design/phase-3.md#bài-giao-chỉ-đọc-phần-cần-của-phiên-bản-bài--05112026)) |
+| Nguyên nhân | Trang bài tập đọc và kiểm tra cả phiên bản bài theo hợp đồng của trang đọc bài (ít nhất một slide) chỉ để lấy tiêu đề. Phiên bản bài nguồn của hai bài giao này không có slide. Chưa xác định phiên bản đó được tạo bằng đường nào: lệnh đọc database production để kiểm tra bị chặn ở phiên này. Trình soạn, `bank:sql` và `daily:import` đều đã chặn bài 0 slide (lúc đầu báo cáo này ghi nhầm `bank:sql` cho lọt), nên nhiều khả năng là SQL ghi thẳng vào database |
+| Đã sửa | Trang bài tập chỉ đọc tiêu đề; phần chọn câu cho cron và trang Giao bài chỉ đọc danh sách câu ([chi tiết](../detail-design/phase-3.md#bài-giao-chỉ-đọc-phần-cần-của-phiên-bản-bài--05112026)) |
 | Kiểm chứng | Tái hiện ở Supabase local: code cũ hiện đúng trang lỗi và cùng lỗi `content.slides`; code mới mở được bài và cron tạo được bài hằng ngày từ bài 0 slide |
 | Còn phải làm | Push bản sửa để production hết lỗi. Xác định bài nguồn 0 slide và thêm một slide rồi xuất bản lại, để nút Đọc bài của bài đó cũng mở được |
 
