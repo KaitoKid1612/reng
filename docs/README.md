@@ -63,6 +63,10 @@ Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt �
 
 Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "còn lại" của báo cáo cũ có thể đã được làm ở báo cáo sau.
 
+### 05/11/2026
+
+- Rà soát tài liệu, mã nguồn và trải nghiệm: [ngày giờ một định dạng, thuật ngữ giao bài, sổ tay vận hành, kiến trúc viết lại, phần còn lại](testing/system-review-2026-11-05.md).
+
 ### 04/11/2026
 
 - Rà soát giao diện: [đã sửa (3 đợt), cách kiểm tra và các đề xuất còn lại theo thứ tự](testing/ux-review-2026-11-04.md).

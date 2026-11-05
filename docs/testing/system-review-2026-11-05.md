@@ -1,0 +1,36 @@
+# Rà soát tài liệu, mã nguồn và trải nghiệm — 04–05/11/2026
+
+Người dùng yêu cầu: kiểm tra dự án, bổ sung tài liệu, sửa mã nguồn và các vấn đề trải nghiệm theo đề xuất của Claude; commit ở máy, chưa push.
+
+## Cách kiểm tra
+
+- **Mốc ban đầu:** `npm run check` đạt 266/266 test trên `main` sạch (commit `5386c19`).
+- **Link trong tài liệu:** script tạm (không đưa vào repo) đọc mọi file Markdown, kiểm tra link tương đối, anchor `#…` và đường dẫn mã nguồn trong backtick. 20 chỗ trỏ tới file không còn: 19 chỗ thuộc tính năng Lịch sử Sheet đã gỡ ngày 04/11/2026 (các file đó đã có ghi chú "Đã gỡ" ở đầu, báo cáo cũ giữ nguyên làm lịch sử) hoặc thư mục ảnh AI chưa tạo; 1 anchor `#L1` không phải tiêu đề, đã sửa.
+- **Biến môi trường:** so tên biến mà `app/`, `lib/`, `scripts/` đọc với `.env.example`.
+- **Tài liệu so với mã nguồn:** đọc lại `02-architecture.md`, `docs/README.md`, `poc-setup.md`, `staging-setup.md` theo code hiện tại (proxy, client Supabase, RPC, cron, cache).
+- **Rà soát mã nguồn theo khu vực:** đã giao 4 lượt đọc song song (tài khoản/quản trị/email, tự học/slide, công cụ giáo viên, lớp học của học viên). Cả bốn dừng giữa chừng vì tổ chức hết hạn mức sử dụng, chưa trả kết quả; phần này chưa làm.
+
+## Đã làm
+
+| # | Việc | Chi tiết | Kiểm tra |
+|---|---|---|---|
+| 1 | Ngày giờ một định dạng (mục 13b của [rà soát 04/11](ux-review-2026-11-04.md#còn-lại--đề-xuất-theo-thứ-tự-nên-làm)) | `formatStudyDateTime` ghép từ giờ và ngày Việt Nam nên mọi trang ghi "23:59 04/11/2026", không còn "23:59 4/11/26" cạnh "04/11/2026" (28 file dùng chung hàm này: hạn nộp, lúc nộp, lúc lưu, email, quản trị). Trình soạn Việt–Trung ghi giờ lưu theo giờ Việt Nam thay vì múi giờ thiết bị; lần lưu cũ hoặc bản khôi phục có cả ngày. Quy ước ghi ở [thiết kế UI › Ngày giờ và số](../12-ui-design.md#ngày-giờ-và-số) | Unit test mới: "23:59 04/11/2026", và 17:05 UTC thành "00:05 05/11/2026". Không kịch bản E2E nào so chuỗi ngày |
+| 2 | Thuật ngữ ở form giao bài (mục 14) | "Xem lại và xuất bản" / "Xuất bản bài giao" dùng cùng chữ với xuất bản bài học, dễ hiểu nhầm là công khai bài. Nay là **Xem lại trước khi giao** → **Giao bài cho lớp** ("Đang giao bài…", "Sau khi giao, đề và điều kiện không sửa được…"). Hướng dẫn và [soạn bài](../content-authoring.md) sửa theo | 5 kịch bản E2E dùng tên nút mới |
+| 2 | Một tên cho trang bài được chia sẻ (mục 14) | Nút "Bài được chia sẻ", tiêu đề thẻ "Thư viện chia sẻ" và tiêu đề trang "Bài được chia sẻ với tôi" nay cùng là **Bài được chia sẻ với tôi**. "Presenter" giữ nguyên: đó là tên cửa sổ, dùng nhất quán ở nút, phím S, Hướng dẫn và trình soạn | Đọc lại nút ở trang Giảng dạy và `metadata` |
+| 3 | `.env.example` thiếu biến | Thêm `UNREAL_SPEECH_API_KEY`, `AZURE_SPEECH_VOICE_ZH_CN`, `AZURE_SPEECH_VOICE_ZH_TW` (script audio đọc nhưng mẫu không có); ghi chú biến audio bài học | So lại danh sách biến |
+| 4 | Sổ tay vận hành mới: [vận hành](../operations.md) | Môi trường; bảng biến môi trường theo nơi dùng (web, chỉ script, E2E); lịch cron UTC → giờ Việt Nam và kết quả trả về; quy trình migration (mã thời gian 14 chữ số, tương thích bản web đang chạy, sao lưu, `--linked`); checklist trước và sau khi push; lỗi hay gặp; bảng lệnh npm | Link và anchor đã kiểm tra bằng script |
+| 5 | [Kiến trúc](../02-architecture.md) viết lại theo hệ thống đang chạy | Bản cũ còn ghi "Hosting chưa triển khai", "migration chưa áp dụng cloud". Bản mới: stack, sơ đồ runtime, lớp mã nguồn, cách đọc/ghi dữ liệu (phiên, service role + RPC kiểm tra lại quyền, RLS, Origin, giới hạn body), phiên bản bài học, chấm điểm, phân quyền, render/cache, ngày giờ, việc định kỳ; giữ các nguyên tắc và phần "cố tình không dùng" | Đối chiếu `proxy.ts`, `lib/server/*`, migration, `vercel.json` |
+| 6 | [Mục lục tài liệu](../README.md) sắp xếp lại | Bảng "Bắt đầu từ đâu" theo việc cần làm, bảng tài liệu chung, bảng BD/DD/kiểm chứng theo tính năng, báo cáo theo ngày (mới nhất trước). Giữ mọi link cũ; số "161/161" ghi rõ là số lúc đó | So danh sách link trước/sau: không mất link nào |
+
+## Kiểm tra
+
+- `npm run check` đạt (267 test) sau thay đổi ngày giờ; định dạng và ESLint đạt cho các file đổi thuật ngữ.
+- E2E chưa chạy, theo yêu cầu tạm hoãn trong đợt này. Kịch bản đã sửa theo tên nút mới: `e2e-supabase/classroom.spec.ts`, `question-authoring.spec.ts`, `listening.spec.ts`, `teaching-authoring.spec.ts`, `minna-teaching.spec.ts`.
+
+## Còn lại
+
+| Việc | Ghi chú |
+|---|---|
+| Rà soát mã nguồn theo bốn khu vực | Chưa có kết quả vì hết hạn mức; chạy lại sau khi hạn mức được làm mới |
+| Danh mục bài chia theo môn (mục 15b) | Chưa cần khi mới có 5 bài công khai |
+| Số câu nghe mỗi ngày của lớp | Migration `20261104110635_daily_listening_count.sql` đã có trên `main` nhưng chưa có giao diện hay chỗ dùng trong mã; có thể một phiên khác đang làm, nên đợt này không đụng tới. Nếu áp `db push`, migration này cũng được áp |
