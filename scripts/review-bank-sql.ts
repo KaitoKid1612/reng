@@ -39,6 +39,13 @@ async function main() {
     throw new Error(`--language must be one of ${BANK_LANGUAGES.join(", ")}.`);
   }
   const bank = lessonDraftSchema.parse(JSON.parse(await readFile(resolve(values.file), "utf8")));
+  // The draft schema allows a bank without slides, but the published version must also open in
+  // the lesson reader; before 05/11/2026 such a version also broke the assignment page.
+  if (!bank.content.slides.length) {
+    throw new Error(
+      "The bank needs at least one slide (for example an intro note) before it can be published.",
+    );
+  }
   const problems = findBankLanguageProblems(bank.content, language);
   if (problems.length) {
     throw new Error(`The bank does not fit ${language}:\n${problems.slice(0, 10).join("\n")}`);

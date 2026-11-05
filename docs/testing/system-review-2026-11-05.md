@@ -30,6 +30,17 @@ Người dùng yêu cầu: kiểm tra dự án, bổ sung tài liệu, sửa mã
 | 14 | Giữ chữ đã gõ khi form báo lỗi | React tự xóa form sau mỗi lần gửi, kể cả khi lỗi. Quét mọi form dùng `useActionState`: **Soạn bài tiếng Nhật từ đầu** mất tiêu đề khi mã bài bị trùng, **Chia sẻ bài** mất email người nhận (lỗi hay gặp nhất là gõ sai email). Hai form nay trả lại giá trị đã gõ và dựng lại form với giá trị đó, như form lớp. Các form còn lại chỉ có ô ẩn, mật khẩu (nhập lại là đúng) hoặc là form ít dùng của quản trị | Trình duyệt 390px, Supabase local, giáo viên demo: tạo bài trùng mã giữ mã và tiêu đề; chia sẻ tới email không có giữ email |
 | 15 | Trang 404 gợi ý kiểm tra tài khoản | Trang lớp, bài học, bài tập riêng trả 404 cho tài khoản không có quyền (cố ý, để không lộ trang có tồn tại). Học viên mở link giáo viên gửi nhưng đang đăng nhập tài khoản khác (ví dụ tài khoản Google thứ hai) chỉ thấy "Đường dẫn có thể đã đổi hoặc bị gõ nhầm". Nay thêm một câu: link lớp/bài/bài tập chỉ mở bằng tài khoản có quyền, kiểm tra ở mục **Tài khoản** (trang đó ghi email đang đăng nhập và có nút Đăng xuất) | Lint, typecheck; không kịch bản nào so chữ của trang 404 |
 
+## Sự cố production sáng 05/11/2026
+
+| | |
+|---|---|
+| Hiện tượng | Người dùng báo bài tập hằng ngày hôm nay mở ra là "Trang chưa hiển thị được" |
+| Bằng chứng | `npx vercel logs -e production` (gói Hobby chỉ giữ log khoảng 30 phút gần nhất): từ 08:26 đến 08:53 giờ Việt Nam, mọi lần mở `/assignments/c192912d…` và `/assignments/2839f0f6…` lỗi `ZodError` ở `content.slides` (mảng rỗng) trong `parseDatabaseVersion`, gọi từ trang bài tập. Production chạy deployment của commit `5386c19` (18:07 ngày 04/11), chưa có commit nào của đợt này |
+| Nguyên nhân | Trang bài tập đọc và kiểm tra cả phiên bản bài theo hợp đồng của trang đọc bài (ít nhất một slide) chỉ để lấy tiêu đề. Phiên bản bài nguồn của hai bài giao này không có slide. Chưa xác định phiên bản đó được tạo bằng đường nào: lệnh đọc database production để kiểm tra bị chặn ở phiên này. `bank:sql` là một đường cho lọt bài 0 slide |
+| Đã sửa | Trang bài tập chỉ đọc tiêu đề; phần chọn câu cho cron và trang Giao bài chỉ đọc danh sách câu; `bank:sql` từ chối bài 0 slide ([chi tiết](../detail-design/phase-3.md#bài-giao-chỉ-đọc-phần-cần-của-phiên-bản-bài--05112026)) |
+| Kiểm chứng | Tái hiện ở Supabase local: code cũ hiện đúng trang lỗi và cùng lỗi `content.slides`; code mới mở được bài và cron tạo được bài hằng ngày từ bài 0 slide |
+| Còn phải làm | Push bản sửa để production hết lỗi. Xác định bài nguồn 0 slide và thêm một slide rồi xuất bản lại, để nút Đọc bài của bài đó cũng mở được |
+
 ## Kiểm tra
 
 - `npm run check` đạt (267 test) sau thay đổi ngày giờ; định dạng và ESLint đạt cho các file đổi thuật ngữ; đạt 269 test sau phần tự nộp.
