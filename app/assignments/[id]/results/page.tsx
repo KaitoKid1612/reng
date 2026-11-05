@@ -11,7 +11,7 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
-import { getDeadlineState } from "@/lib/assignment";
+import { getDeadlineState, isHandedInAtDeadline } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
@@ -63,6 +63,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
     getDeadlineState(assignment.dueAt, assignment.allowLate, now) !== "past_due";
   const canRetry =
     isAccepting && !view.hasOpenAttempt && view.attemptsUsed < assignment.maxAttempts;
+  const handedInAtDeadline = isHandedInAtDeadline(attempt?.submittedAt ?? null, assignment.dueAt);
   const actions = (
     <div className="button-row">
       {isAccepting && view.hasOpenAttempt && (
@@ -108,8 +109,12 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
         <div className="form-card" role="status">
           <h2>Đã nộp bài</h2>
           <p>
-            Reng đã nhận bài lúc {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
-            {attempt.isLate ? " (nộp muộn)" : ""}.
+            {handedInAtDeadline
+              ? "Bạn chưa bấm Nộp bài nên Reng tự nộp lúc hết hạn, "
+              : "Reng đã nhận bài lúc "}
+            {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
+            {attempt.isLate ? " (nộp muộn)" : ""}
+            {handedInAtDeadline ? ", với các câu đã lưu trước hạn" : ""}.
           </p>
           <p>
             Điểm và đáp án sẽ công bố sau{" "}
@@ -133,9 +138,10 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               ) : (
                 <span className="status-badge status-wrong">Chưa đạt</span>
               )}{" "}
-              Lượt {attempt.attemptNo}, nộp lúc{" "}
+              Lượt {attempt.attemptNo}, {handedInAtDeadline ? "Reng tự nộp lúc hết hạn" : "nộp lúc"}{" "}
               {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
-              {attempt.isLate ? " (nộp muộn)" : ""}.
+              {attempt.isLate ? " (nộp muộn)" : ""}
+              {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
             </p>
           </div>
           {/* The next step sits above a long answer list, not after it. */}

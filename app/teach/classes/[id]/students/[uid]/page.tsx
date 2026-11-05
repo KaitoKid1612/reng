@@ -17,7 +17,7 @@ import {
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
 import { isTypedQuestion } from "@/lib/answer-variants";
-import { answerLang } from "@/lib/assignment";
+import { answerLang, isHandedInAtDeadline } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { formatDecimal, formatPercent } from "@/lib/grading/grade";
 import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
@@ -47,6 +47,15 @@ export async function generateMetadata({ params }: StudentDetailPageProps): Prom
     }
   }
   return { title: "Chi tiết học viên" };
+}
+
+// An attempt the morning job handed in at the deadline says so, so the teacher does not read
+// a half-finished attempt as the learner's own submission.
+function describeSubmittedAt(submittedAt: string, isLate: boolean | null, dueAt: string | null) {
+  if (isHandedInAtDeadline(submittedAt, dueAt)) {
+    return `, Reng tự nộp lúc hết hạn ${formatStudyDateTime(submittedAt)} (học viên chưa bấm Nộp)`;
+  }
+  return `, nộp lúc ${formatStudyDateTime(submittedAt)}${isLate ? " (muộn)" : ""}`;
 }
 
 interface StudentDetailPageProps {
@@ -145,7 +154,11 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                     {MODE_LABELS[row.assignment.mode]}, {describeDue(row.assignment.dueAt)},{" "}
                     {row.attemptCount} lượt
                     {row.latest?.submittedAt
-                      ? `, nộp lúc ${formatStudyDateTime(row.latest.submittedAt)}${row.latest.isLate ? " (muộn)" : ""}`
+                      ? describeSubmittedAt(
+                          row.latest.submittedAt,
+                          row.latest.isLate,
+                          row.assignment.dueAt,
+                        )
                       : ", chưa nộp"}
                     {row.percent !== null ? `, ${formatPercent(row.percent)}` : ""}
                   </p>

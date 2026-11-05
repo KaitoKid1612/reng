@@ -12,6 +12,7 @@ import {
   getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
+  isHandedInAtDeadline,
   describeRawAnswer,
   isSameAttemptDraft,
   joinOrderTokens,
@@ -45,6 +46,15 @@ const questions = toTestQuestions([
     points: 2,
   },
 ]);
+
+test("an attempt stamped with the deadline itself was handed in by the morning job", () => {
+  const due = "2026-11-04T16:59:59+00:00";
+  // Postgres may write the same instant with another offset or precision.
+  assert.equal(isHandedInAtDeadline("2026-11-04T23:59:59.000+07:00", due), true);
+  assert.equal(isHandedInAtDeadline("2026-11-04T16:58:12.345+00:00", due), false);
+  assert.equal(isHandedInAtDeadline("2026-11-04T16:59:59+00:00", null), false);
+  assert.equal(isHandedInAtDeadline(null, due), false);
+});
 
 test("test payloads expose only the question allowlist before feedback", () => {
   const testItems = toAttemptItems(questions, "test");

@@ -21,16 +21,18 @@ Người dùng yêu cầu: kiểm tra dự án, bổ sung tài liệu, sửa mã
 | 4 | Sổ tay vận hành mới: [vận hành](../operations.md) | Môi trường; bảng biến môi trường theo nơi dùng (web, chỉ script, E2E); lịch cron UTC → giờ Việt Nam và kết quả trả về; quy trình migration (mã thời gian 14 chữ số, tương thích bản web đang chạy, sao lưu, `--linked`); checklist trước và sau khi push; lỗi hay gặp; bảng lệnh npm | Link và anchor đã kiểm tra bằng script |
 | 5 | [Kiến trúc](../02-architecture.md) viết lại theo hệ thống đang chạy | Bản cũ còn ghi "Hosting chưa triển khai", "migration chưa áp dụng cloud". Bản mới: stack, sơ đồ runtime, lớp mã nguồn, cách đọc/ghi dữ liệu (phiên, service role + RPC kiểm tra lại quyền, RLS, Origin, giới hạn body), phiên bản bài học, chấm điểm, phân quyền, render/cache, ngày giờ, việc định kỳ; giữ các nguyên tắc và phần "cố tình không dùng" | Đối chiếu `proxy.ts`, `lib/server/*`, migration, `vercel.json` |
 | 6 | [Mục lục tài liệu](../README.md) sắp xếp lại | Bảng "Bắt đầu từ đâu" theo việc cần làm, bảng tài liệu chung, bảng BD/DD/kiểm chứng theo tính năng, báo cáo theo ngày (mới nhất trước). Giữ mọi link cũ; số "161/161" ghi rõ là số lúc đó | So danh sách link trước/sau: không mất link nào |
+| 7 | Tự nộp lượt bỏ dở khi hết hạn (mục 4b) | Lượt của bài **không cho nộp muộn** mà học viên đóng trang trước khi đồng hồ tự nộp trước đây thành chỉ đọc và không được chấm. Nay cron 6:00 (sau bài luyện hằng ngày) tự nộp các câu đã lưu trước hạn, với `submitted_at` bằng hạn và không tính muộn. Bỏ qua lượt làm lại khi đã có lượt nộp (để không đè điểm học viên đã chọn), học viên đã rời lớp, lớp đã tắt, bài đã đóng. Trang kết quả ghi "Reng tự nộp lúc hết hạn"; giáo viên thấy "(học viên chưa bấm Nộp)"; Hướng dẫn nói cho cả hai vai. [Thiết kế](../detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026) | Test PGlite mới (6 trường hợp bỏ qua, xung đột, kết quả sai, gọi lại, quyền) và unit test. **Chưa chạy trên Supabase local**; cần áp migration `20261105012503` lên production |
 
 ## Kiểm tra
 
-- `npm run check` đạt (267 test) sau thay đổi ngày giờ; định dạng và ESLint đạt cho các file đổi thuật ngữ.
+- `npm run check` đạt (267 test) sau thay đổi ngày giờ; định dạng và ESLint đạt cho các file đổi thuật ngữ; đạt 269 test sau phần tự nộp.
 - E2E chưa chạy, theo yêu cầu tạm hoãn trong đợt này. Kịch bản đã sửa theo tên nút mới: `e2e-supabase/classroom.spec.ts`, `question-authoring.spec.ts`, `listening.spec.ts`, `teaching-authoring.spec.ts`, `minna-teaching.spec.ts`.
 
 ## Còn lại
 
 | Việc | Ghi chú |
 |---|---|
+| **Áp migration lên production trước hoặc cùng lúc push** | `npx supabase db push --linked --dry-run` liệt kê các migration chưa áp; dự kiến là `20261104110635_daily_listening_count.sql` (nếu chưa áp) và `20261105012503_submit_expired_attempts.sql`. Cả hai tương thích bản web đang chạy. Chưa áp thì web vẫn chạy, chỉ phần tự nộp ghi log lỗi mỗi sáng ([vận hành › Migration](../operations.md#migration)) |
 | Rà soát mã nguồn theo bốn khu vực | Chưa có kết quả vì hết hạn mức; chạy lại sau khi hạn mức được làm mới |
 | Danh mục bài chia theo môn (mục 15b) | Chưa cần khi mới có 5 bài công khai |
 | Số câu nghe mỗi ngày của lớp | Migration `20261104110635_daily_listening_count.sql` đã có trên `main` nhưng chưa có giao diện hay chỗ dùng trong mã; có thể một phiên khác đang làm, nên đợt này không đụng tới. Nếu áp `db push`, migration này cũng được áp |

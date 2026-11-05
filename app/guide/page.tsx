@@ -91,7 +91,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Ở Giảng dạy, tìm bài theo tên, ngôn ngữ và trạng thái. Bộ lọc ngôn ngữ dùng bản soạn hiện tại; bài đã có bản xuất bản vẫn có thể đang được sửa nháp.",
       "Trong trang lớp bấm Giao bài, kiểm tra nhãn ngôn ngữ của bài và phiên bản, bấm Lưu vào lớp để học viên đọc được bài. Xuất bản lại không tự đổi phiên bản lớp đang dùng; cách nhanh nhất là mục Dùng bài trong lớp của trình soạn. Ở đây bạn chọn được thứ tự và hẹn giờ mở.",
-      "Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại trước khi giao rồi Giao bài cho lớp.",
+      'Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại trước khi giao rồi Giao bài cho lớp. Bài không cho nộp muộn mà học viên bỏ dở (chưa bấm Nộp) được Reng tự nộp khoảng 6 giờ sáng sau hạn với các câu đã lưu; trang học viên ghi rõ "Reng tự nộp".',
     ],
   },
   {
@@ -159,6 +159,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Câu sắp xếp: bấm các mảnh theo đúng thứ tự câu; bấm một mảnh đã xếp để bỏ ra, hoặc Xếp lại từ đầu. Câu đọc hiểu có đoạn văn ngay trên đề; các câu cùng đoạn văn nằm liền nhau.",
       "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Trên điện thoại, sau khi kiểm tra có nút Câu sau ngay dưới câu. Bài dài có Danh sách câu (✓ đúng, ✗ chưa đúng) để nhảy tới câu bất kỳ; khi nộp mà còn câu trống, bấm Đến câu chưa làm.",
       "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lại lượt mới; điểm của lượt mới sẽ thay điểm cũ. Mở lại bài đã nộp thì nút chính là Xem kết quả.",
+      "Bài có hạn và không cho nộp muộn: trong giờ cuối có đồng hồ đếm ngược và bài tự nộp khi còn 1 phút. Nếu bạn đã đóng trang trước đó, Reng tự nộp các câu đã lưu vào khoảng 6 giờ sáng sau hạn. Lượt làm lại khi đã có lượt nộp trước thì không bị nộp, để giữ điểm cũ.",
       "Lớp có luyện tập hằng ngày: bấm Điểm luyện tập hằng ngày ở đầu trang lớp để xem điểm từng ngày, bấm một ngày để xem lại từng câu.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",
     ],

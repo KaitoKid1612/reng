@@ -25,6 +25,7 @@ import { getTeacherClass, requireMembership } from "@/lib/server/classes";
 import {
   callRpc,
   createServiceClient,
+  describeServiceFailure,
   selectOptional,
   selectRows,
   selectRowsIn,
@@ -551,6 +552,101 @@ export async function submitAttempt(
     throw new ServiceError("invalid_results");
   }
   return { status: result.status, assignmentId: submission.assignment_id };
+}
+
+// One morning run hands in at most this many attempts and stops starting new ones after the
+// budget, inside the cron route's limit; anything left waits for the next morning.
+const EXPIRED_ATTEMPT_BATCH = 200;
+const EXPIRED_RUN_BUDGET_MS = 30_000;
+
+const expiredAttemptSchema = z.array(
+  z.object({
+    submission_id: z.string(),
+    assignment_id: z.string(),
+    draft_revision: z.number().int(),
+    draft_answers: z.unknown(),
+  }),
+);
+
+const expiredSubmitSchema = z
+  .array(
+    z.object({
+      status: z.enum([
+        "submitted",
+        "already_submitted",
+        "not_expired",
+        "conflict",
+        "not_found",
+        "invalid_results",
+      ]),
+    }),
+  )
+  .length(1)
+  .transform((rows) => rows[0]);
+
+/**
+ * Hands in attempts still open after a deadline that refuses late work (the learner closed the
+ * page), grading the answers the server saved before the deadline. The database picks only
+ * attempts the learner can no longer submit and leaves a retake alone when an earlier attempt
+ * was submitted. One failing attempt never stops the others.
+ */
+export async function submitExpiredAttempts(now = new Date()) {
+  const deadline = now.getTime() + EXPIRED_RUN_BUDGET_MS;
+  const attempts = await callRpc(
+    "list_expired_attempts",
+    { p_limit: EXPIRED_ATTEMPT_BATCH },
+    expiredAttemptSchema,
+  );
+  const summary = { submitted: 0, skipped: 0, failed: 0, left: 0 };
+  const itemsByAssignment = new Map<string, Promise<AssignableQuestion[]>>();
+  for (const attempt of attempts) {
+    if (Date.now() >= deadline) {
+      summary.left += 1;
+      continue;
+    }
+    try {
+      let loading = itemsByAssignment.get(attempt.assignment_id);
+      if (!loading) {
+        loading = loadAssignmentItems(attempt.assignment_id);
+        itemsByAssignment.set(attempt.assignment_id, loading);
+      }
+      const items = await loading;
+      // A stored draft that no longer parses is not handed in as an empty, zero-score attempt.
+      const draft = parseIncomingDraft(items, attempt.draft_answers);
+      const grade = gradeAttempt(items, draft.answers);
+      const result = await callRpc(
+        "submit_expired_attempt",
+        {
+          p_submission_id: attempt.submission_id,
+          p_expected_revision: attempt.draft_revision,
+          p_results: grade.results.map((item) => ({
+            question_id: item.questionId,
+            raw: item.raw,
+            is_correct: item.isCorrect,
+            points_earned: item.pointsEarned,
+            listen_count: draft.listens[item.questionId] ?? 0,
+          })),
+          p_score: grade.score,
+          p_max_score: grade.maxScore,
+          p_mistake_state: createSchedulerState(now),
+          p_scheduler_version: SCHEDULER_VERSION,
+        },
+        expiredSubmitSchema,
+      );
+      if (result.status === "invalid_results") {
+        throw new ServiceError("invalid_results");
+      }
+      if (result.status === "submitted") {
+        summary.submitted += 1;
+      } else {
+        summary.skipped += 1;
+      }
+    } catch (error) {
+      summary.failed += 1;
+      console.error("Expired attempt failed", attempt.submission_id, describeServiceFailure(error));
+    }
+  }
+  return summary;
 }
 
 export interface ResultItem {

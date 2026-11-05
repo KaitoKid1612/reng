@@ -147,3 +147,16 @@ Mọi API trả `Cache-Control: private, no-store`, body ≤ 64 KB, kiểm tra J
 | RPC/network lỗi | Thông báo thử lại; không báo "Đã lưu"; không mất bản cục bộ |
 | JSON sai/vượt kích thước | 400, không ghi |
 | Mã RPC không biết | 500 chung, không lộ chi tiết SQL |
+
+## Tự nộp lượt còn mở khi hết hạn — 05/11/2026
+
+Trước đây lượt học viên bỏ dở (đóng trang, mất mạng trước khi đồng hồ tự nộp lúc còn 1 phút) của bài **không cho nộp muộn** thành chỉ đọc sau hạn và không bao giờ được chấm: `check_open_attempt` trả `past_due` nên cả lưu nháp lẫn nộp đều bị từ chối.
+
+- Migration `20261105012503_submit_expired_attempts.sql` (chỉ `service_role` được gọi):
+  - `list_expired_attempts(p_limit)` trả `submission_id`, `assignment_id`, `draft_revision`, `draft_answers` của lượt `in_progress` khi bài giao đang `published`, có `due_at` đã qua, `allow_late = false`, lớp còn `active`, học viên chưa rời lớp và **chưa có lượt nào đã nộp** cho bài đó. Tối đa 500 dòng, hạn sớm nhất trước.
+  - `submit_expired_attempt(p_submission_id, p_expected_revision, p_results, p_score, p_max_score, p_mistake_state, p_scheduler_version)` khóa dòng, kiểm tra lại đúng các điều kiện trên (sai thì `not_expired`), so `draft_revision` (`conflict`), kiểm tra kết quả như `submit_attempt` (`invalid_results`), ghi `answers`, đặt `status = 'submitted'`, `submitted_at = due_at`, `is_late = false`, giữ nguyên `draft_answers`, và tạo thẻ lỗi đến hạn ngay (hạn đã qua nên bài kiểm tra `after_due` cũng đã được xem đáp án). Gọi lại trả `already_submitted`.
+- `submitExpiredAttempts` (`lib/server/assignments.ts`) đọc tối đa 200 lượt mỗi lần, ngừng bắt đầu lượt mới sau 30 giây (`left` đếm phần chờ lần sau), đọc snapshot một lần cho mỗi bài giao, kiểm tra nháp đã lưu bằng cùng parser với API nộp (nháp không đọc được thì bỏ qua, không nộp thành 0 điểm), chấm bằng `gradeAttempt` rồi gọi RPC. Mỗi lượt lỗi chỉ ghi log mã lỗi và ID lượt.
+- Cron `/api/cron/daily-practice` (6:00 Việt Nam) chạy việc này **sau** khi giao bài hằng ngày và tách lỗi riêng: thiếu migration hay lỗi database chỉ ghi `Expired attempts job failed`, bài hằng ngày vẫn trả bình thường. Kết quả thêm `expiredAttempts: { submitted, skipped, failed, left }`. Route đặt `maxDuration = 60`.
+- Giao diện: `isHandedInAtDeadline` (`lib/assignment.ts`) nhận ra lượt có `submitted_at` đúng bằng hạn. Trang kết quả của học viên ghi "Reng tự nộp lúc hết hạn … với các câu đã lưu"; trang chi tiết học viên của giáo viên ghi "(học viên chưa bấm Nộp)". Hướng dẫn `/guide` nói cho cả hai vai.
+- Kiểm chứng: `tests/expired-attempts-migration.test.ts` (PGlite) — chỉ lượt đủ điều kiện được liệt kê; lượt làm lại khi đã có lượt nộp, học viên đã rời lớp, bài cho nộp muộn và bài chưa tới hạn đều bị bỏ qua; `conflict`, `invalid_results`, `already_submitted`; điểm, `submitted_at = due_at`, thẻ lỗi; `authenticated` không gọi được. Unit test `isHandedInAtDeadline`.
+- Chưa chạy trên Supabase local hay production. Tính năng chỉ hoạt động sau khi áp migration lên production (`npx supabase db push --linked`, [quy trình](../operations.md#migration)); trước đó mã vẫn deploy được, cron chỉ ghi lỗi trên.

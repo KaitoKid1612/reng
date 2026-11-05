@@ -52,7 +52,7 @@ Lịch nằm trong `vercel.json` theo giờ UTC. Gói Hobby chạy mỗi job t�
 
 | Đường dẫn | Lịch UTC | Giờ Việt Nam | Việc | Khi chưa cấu hình |
 |---|---|---|---|---|
-| `/api/cron/daily-practice` | `0 23 * * *` | 6:00 mỗi sáng | Giao bài luyện tập hằng ngày cho các lớp đã bật; trả `{ created, exists, skipped, failed }`. Lớp lỗi ghi log riêng, không chặn lớp khác. Chạy lại cùng ngày không giao trùng | 503 `not_configured` |
+| `/api/cron/daily-practice` | `0 23 * * *` | 6:00 mỗi sáng | Giao bài luyện tập hằng ngày cho các lớp đã bật; trả `{ created, exists, skipped, failed }`. Lớp lỗi ghi log riêng, không chặn lớp khác. Chạy lại cùng ngày không giao trùng. Sau đó tự nộp các lượt bỏ dở đã quá hạn của bài không cho nộp muộn, trả thêm `expiredAttempts: { submitted, skipped, failed, left }`; thiếu migration `20261105012503` thì phần này chỉ ghi log `Expired attempts job failed` ([DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)) | 503 `not_configured` |
 | `/api/cron/student-reminders` | `0 13 * * *` | 20:00 mỗi tối | Email nhắc bài cho học viên đã bật nhắc | 503 khi chưa có email |
 | `/api/cron/teacher-digest` | `0 23 * * *` | 6:00 mỗi sáng | Email tóm tắt lớp cho giáo viên | 503 khi chưa có email |
 | `/api/cron/weekly-summary` | `0 12 * * 0` | 19:00 Chủ nhật | Email tổng kết tuần cho học viên | 503 khi chưa có email |

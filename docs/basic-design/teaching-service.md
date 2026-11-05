@@ -161,6 +161,7 @@ Kết quả rà soát và đề xuất còn lại: [kiểm chứng](../testing/u
   - Lớp mới có thẻ Các bước tiếp theo; form lớp và nhật ký giữ chữ đã gõ khi lỗi; Trình chiếu tiếp dùng phiên bản lớp đang dùng.
 - **Đợt 3:**
   - Bài có hạn hiện đồng hồ trong giờ cuối; bài không cho nộp muộn tự nộp khi còn 1 phút.
+  - (05/11/2026) Học viên đã đóng trang trước đó thì lượt bỏ dở được Reng tự nộp khoảng 6 giờ sáng sau hạn với các câu đã lưu, trừ khi đó là lượt làm lại sau một lượt đã nộp (giữ điểm học viên đã chọn nộp). Trang kết quả ghi rõ "Reng tự nộp" ([DD](../detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)).
   - Sổ lỗi gộp theo bài và lọc câu đến hạn ôn.
   - Bài chỉ được đưa vào lớp cùng ngôn ngữ (Dùng bài trong lớp, ô chọn bài ở trang Giao bài).
   - Thẻ trình duyệt mang tên lớp, bài tập hoặc bài đang trình chiếu, nên dễ chọn đúng thẻ khi chia sẻ Meet. Trang công khai: nút trên đầu trang điện thoại cao 44px, kết quả luyện kana/pinyin có bước tiếp theo.

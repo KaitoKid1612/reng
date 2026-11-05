@@ -35,6 +35,14 @@ export class ServiceError extends Error {
   }
 }
 
+/** A log-safe name for a failure: the service code, or the error class, never its message. */
+export function describeServiceFailure(error: unknown) {
+  if (error instanceof ServiceError) {
+    return error.code;
+  }
+  return error instanceof Error ? error.name : "unknown";
+}
+
 function toServiceError(error: { message: string; code?: string }) {
   if (error.code === "23505") {
     return new ServiceError("duplicate");

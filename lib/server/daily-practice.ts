@@ -16,9 +16,9 @@ import { getTeacherClass } from "@/lib/server/classes";
 import {
   callRpc,
   createServiceClient,
+  describeServiceFailure,
   selectOptional,
   selectRows,
-  ServiceError,
 } from "@/lib/server/supabase";
 
 import type { AssignableQuestion } from "@/lib/assignment";
@@ -215,13 +215,6 @@ export async function createTodayPractice(teacherId: string, classId: string, no
 }
 
 // The service error code (for example class_not_found for a suspended teacher) says what to fix.
-function describeFailure(error: unknown) {
-  if (error instanceof ServiceError) {
-    return error.code;
-  }
-  return error instanceof Error ? error.name : "unknown";
-}
-
 // One failing class must not stop the others; the summary only counts outcomes.
 export async function runDailyPractice(now: Date) {
   const classes = await selectRows(
@@ -243,7 +236,7 @@ export async function runDailyPractice(now: Date) {
       }
     } catch (error) {
       summary.failed += 1;
-      console.error("Daily practice failed", item.id, describeFailure(error));
+      console.error("Daily practice failed", item.id, describeServiceFailure(error));
     }
   }
   return summary;

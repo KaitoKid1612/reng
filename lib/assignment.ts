@@ -460,6 +460,12 @@ export function isFeedbackAvailable(rule: FeedbackRule, submittedAt: string | nu
   return submittedAt !== null && hasFeedbackTimeArrived(rule, now);
 }
 
+// The morning job hands in an attempt left open past its deadline as of the deadline itself
+// (migration 20261105012503); a learner's own submit is stamped with the moment it arrived.
+export function isHandedInAtDeadline(submittedAt: string | null, dueAt: string | null) {
+  return submittedAt !== null && dueAt !== null && Date.parse(submittedAt) === Date.parse(dueAt);
+}
+
 export type DeadlineState = "no_deadline" | "on_time" | "late" | "past_due";
 
 // Submitting exactly at the deadline is on time; later submissions are late when allowed.
