@@ -232,7 +232,7 @@ test("learners practise listening with counted plays, rewind, slow speed and a l
       }
     });
   await expect(count).toHaveText("Đã nghe 0 lần / tối đa 2");
-  await listen.getByRole("button", { name: "Chậm 0.75x", exact: true }).click();
+  await listen.getByRole("button", { name: "Chậm 0,75x", exact: true }).click();
   await listen.getByRole("button", { name: "Nghe", exact: true }).click();
   await expect(count).toHaveText("Đã nghe 1 lần / tối đa 2");
   await expect(status).toHaveText("Đang phát");

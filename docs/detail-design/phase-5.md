@@ -28,7 +28,7 @@ Theo [BD](../basic-design/phase-5.md), schema câu listen/dictation trong 03 (đ
 
 ## Player
 
-`components/listening/listening-player.tsx` dùng HTMLAudioElement riêng cho từng câu: Nghe/Tạm dừng, Lùi 5 giây (`currentTime - 5`, không âm, chỉ bật khi đang phát/tạm dừng), Chậm 0.75x (`playbackRate`, `preservesPitch`, `aria-pressed`). Không render thanh tua hay thời lượng. Lượt nghe tăng ở sự kiện `playing` khi bắt đầu từ đầu hoặc sau `ended`; tạm dừng/tiếp tục không tăng; lỗi tải hoặc quá 10 giây chưa phát thì hủy element, báo lỗi, không tăng. Đạt maxListens thì vô hiệu nút Nghe và báo hết lượt. Hủy nguồn khi unmount. URL từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` hoặc `/audio/lessons`.
+`components/listening/listening-player.tsx` dùng HTMLAudioElement riêng cho từng câu: Nghe/Tạm dừng, Lùi 5 giây (`currentTime - 5`, không âm, chỉ bật khi đang phát/tạm dừng), Chậm 0,75x (`playbackRate`, `preservesPitch`, `aria-pressed`). Không render thanh tua hay thời lượng. Lượt nghe tăng ở sự kiện `playing` khi bắt đầu từ đầu hoặc sau `ended`; tạm dừng/tiếp tục không tăng; lỗi tải hoặc quá 10 giây chưa phát thì hủy element, báo lỗi, không tăng. Đạt maxListens thì vô hiệu nút Nghe và báo hết lượt. Hủy nguồn khi unmount. URL từ `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` hoặc `/audio/lessons`.
 
 ## S15
 

@@ -165,7 +165,7 @@ export function ListeningPlayer({
           Lùi 5 giây
         </Button>
         <Button variant="ghost" aria-pressed={isSlow} onClick={handleSpeed}>
-          Chậm 0.75x
+          Chậm 0,75x
         </Button>
       </div>
       <p className="listen-count small muted" data-testid="listen-count">
