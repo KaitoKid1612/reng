@@ -1754,11 +1754,51 @@ rt {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
-/* Display fixes for an assignment already given (/teach/assignments/[id]). */
+/* Display fixes for an assignment already given (/teach/assignments/[id]). On wide screens the
+   question as learners see it sits beside its edit form, so the teacher compares while typing. */
+.fix-intro {
+  max-width: 760px;
+}
+.fix-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.fix-jump a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  text-decoration: none;
+  font-size: 14px;
+}
+.fix-jump a[data-edited="true"] {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+/* On a phone 60 numbers would fill a screen; they scroll sideways in one row instead. */
+@media (max-width: 899px) {
+  .fix-jump {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .fix-jump > * {
+    flex: 0 0 auto;
+  }
+}
 .fix-question-list {
   list-style: none;
   padding: 0;
-  margin: 24px 0 0;
+  margin: 20px 0 0;
   display: grid;
   gap: 16px;
 }
@@ -1768,6 +1808,23 @@ rt {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px 20px;
+  scroll-margin-top: 16px;
+}
+.fix-question-view,
+.fix-question-edit {
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .fix-question-list > li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 32px;
+    align-items: start;
+    padding: 20px 24px;
+  }
+  .fix-question-edit .question-fix-form {
+    margin-top: 0;
+  }
 }
 .fix-options {
   margin: 0 0 8px;
@@ -1791,6 +1848,18 @@ rt {
 }
 .question-fix-list .field {
   margin-bottom: 12px;
+}
+.question-fix-preview {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--background);
+}
+.question-fix-preview ol {
+  margin: 4px 0 0;
+  padding-left: 24px;
+  list-style: decimal;
 }
 .item-list > li > div {
   min-width: 0;

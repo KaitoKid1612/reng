@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef, useState } from "react";
 
 import { fixQuestionAction } from "@/app/actions/assignment-fixes";
 import { QUESTION_FURIGANA_HINT } from "@/components/editor/slide-labels";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 
@@ -117,6 +118,22 @@ export function QuestionFixForm({
           value={values.prompt}
           onChange={(event) => setText("prompt", event.target.value)}
         />
+      </div>
+      {/* What learners will read, furigana included, while the teacher types the marks. */}
+      <div className="question-fix-preview">
+        <p className="small muted">Học viên sẽ thấy:</p>
+        <p lang={lang} className="question-prompt">
+          <FuriganaText text={values.prompt} />
+        </p>
+        {values.options && (
+          <ol>
+            {values.options.map((option, index) => (
+              <li key={index} lang={lang}>
+                <FuriganaText text={option} />
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
       {values.passage !== undefined && (
         <div className="field">
