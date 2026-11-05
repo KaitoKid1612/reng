@@ -18,6 +18,9 @@ import { ServiceError } from "@/lib/server/supabase";
 export interface SharingActionState {
   error?: string;
   notice?: string;
+  // The share form's email and version, returned with an error so a typo can be corrected
+  // instead of retyped (React resets the form after an action).
+  values?: { email: string; versionId: string };
 }
 
 const NOT_FOUND = "Không tìm thấy bài hoặc quyền chia sẻ này trong tài khoản của bạn.";
@@ -61,11 +64,18 @@ export async function shareLessonAction(
   if (!teacherId) {
     return { error: NOT_FOUND };
   }
+  const values = {
+    email: String(formData.get("email") ?? ""),
+    versionId: String(formData.get("versionId") ?? ""),
+  };
   if (!parsed.success) {
-    return { error: "Chọn phiên bản, quyền và nhập email hợp lệ của giáo viên nhận." };
+    return { error: "Chọn phiên bản, quyền và nhập email hợp lệ của giáo viên nhận.", values };
   }
   if (parsed.data.permission === "copy" && formData.get("acknowledgeCopy") !== "on") {
-    return { error: "Xác nhận bạn đã hiểu bản sao không bị thu hồi trước khi cho phép sao chép." };
+    return {
+      error: "Xác nhận bạn đã hiểu bản sao không bị thu hồi trước khi cho phép sao chép.",
+      values,
+    };
   }
   try {
     const status = await shareLessonVersion(
@@ -78,13 +88,14 @@ export async function shareLessonAction(
     if (status === "recipient_not_found") {
       return {
         error: "Không chia sẻ được. Người nhận cần là giáo viên khác đã kích hoạt giảng dạy.",
+        values,
       };
     }
     if (status === "rate_limited") {
-      return { error: "Bạn đã thử chia sẻ quá nhiều lần trong một giờ. Thử lại sau nhé." };
+      return { error: "Bạn đã thử chia sẻ quá nhiều lần trong một giờ. Thử lại sau nhé.", values };
     }
   } catch (error) {
-    return { error: describeError(error) };
+    return { error: describeError(error), values };
   }
   refresh();
   return { notice: "Đã chia sẻ phiên bản cho giáo viên nhận." };

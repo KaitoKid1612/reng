@@ -12,8 +12,10 @@ interface CreateLessonFormProps {
 
 export function CreateLessonForm({ suggestedId, suggestedOrder }: CreateLessonFormProps) {
   const [state, action, isPending] = useActionState(createLessonAction, {});
+  const typed = state.values;
   return (
-    <form action={action} className="form-card">
+    // React resets the form after each action; remounting with the typed values keeps them.
+    <form key={typed ? JSON.stringify(typed) : "new"} action={action} className="form-card">
       <div className="form-grid">
         <div className="field">
           <label htmlFor="lesson-id">Mã bài</label>
@@ -24,7 +26,7 @@ export function CreateLessonForm({ suggestedId, suggestedOrder }: CreateLessonFo
             minLength={3}
             maxLength={64}
             pattern="[a-z0-9][a-z0-9\-]*"
-            defaultValue={suggestedId}
+            defaultValue={typed?.id ?? suggestedId}
             aria-describedby="lesson-id-hint"
           />
           <p id="lesson-id-hint" className="small muted">
@@ -40,13 +42,20 @@ export function CreateLessonForm({ suggestedId, suggestedOrder }: CreateLessonFo
             min={1}
             max={999}
             required
-            defaultValue={suggestedOrder}
+            defaultValue={typed?.order ?? suggestedOrder}
           />
         </div>
       </div>
       <div className="field">
         <label htmlFor="lesson-title">Tiêu đề tiếng Việt</label>
-        <input id="lesson-title" name="title" required maxLength={160} placeholder="Mua sắm" />
+        <input
+          id="lesson-title"
+          name="title"
+          required
+          maxLength={160}
+          placeholder="Mua sắm"
+          defaultValue={typed?.title}
+        />
       </div>
       {state.error && (
         <p role="alert" className="error-text">

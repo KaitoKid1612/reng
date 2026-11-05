@@ -14,13 +14,19 @@ interface LessonShareFormProps {
 export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
   const [state, action, isPending] = useActionState(shareLessonAction, {});
   const [permission, setPermission] = useState<"view" | "copy">("view");
+  const typed = state.values;
   return (
-    <form action={action} className="form-card">
+    // React resets the form after each action; remounting with the typed values keeps them.
+    <form key={typed ? JSON.stringify(typed) : "new"} action={action} className="form-card">
       <input type="hidden" name="lessonId" value={lessonId} />
       <div className="form-grid">
         <div className="field">
           <label htmlFor="share-version">Phiên bản chia sẻ</label>
-          <select id="share-version" name="versionId" defaultValue={versions[0]?.id}>
+          <select
+            id="share-version"
+            name="versionId"
+            defaultValue={typed?.versionId ?? versions[0]?.id}
+          >
             {versions.map((version) => (
               <option key={version.id} value={version.id}>
                 Phiên bản {version.versionNo}
@@ -30,7 +36,14 @@ export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
         </div>
         <div className="field">
           <label htmlFor="share-email">Email giáo viên nhận</label>
-          <input id="share-email" name="email" type="email" required maxLength={320} />
+          <input
+            id="share-email"
+            name="email"
+            type="email"
+            required
+            maxLength={320}
+            defaultValue={typed?.email}
+          />
         </div>
       </div>
       <fieldset className="teaching-fieldset">

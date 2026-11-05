@@ -25,6 +25,16 @@ import type { PublishResult } from "@/lib/server/lessons";
 
 export interface CreateLessonState {
   error?: string;
+  // What the teacher typed, returned with an error because React resets the form after an action.
+  values?: { id: string; title: string; order: string };
+}
+
+function typedLessonFields(formData: FormData) {
+  const read = (name: string) => {
+    const value = formData.get(name);
+    return typeof value === "string" ? value : "";
+  };
+  return { id: read("id"), title: read("title"), order: read("order") };
 }
 
 const FAILURE = "Chưa lưu được. Kiểm tra kết nối rồi thử lại.";
@@ -58,15 +68,19 @@ export async function createLessonAction(
     return {
       error:
         "Mã bài gồm 3–64 ký tự chữ thường, số hoặc gạch nối (ví dụ lesson-06); tiêu đề và thứ tự là bắt buộc.",
+      values: typedLessonFields(formData),
     };
   }
   try {
     await createLesson(teacherId, parsed.data);
   } catch (error) {
     if (error instanceof ServiceError && error.code === "duplicate") {
-      return { error: "Mã bài này đã được dùng. Chọn mã khác." };
+      return {
+        error: "Mã bài này đã được dùng. Chọn mã khác.",
+        values: typedLessonFields(formData),
+      };
     }
-    return { error: FAILURE };
+    return { error: FAILURE, values: typedLessonFields(formData) };
   }
   redirect(`/teach/lessons/${parsed.data.id}/edit`);
 }
