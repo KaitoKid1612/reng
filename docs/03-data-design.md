@@ -172,6 +172,39 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
 
+### Danh sách migration (cập nhật 05/11/2026)
+
+Tra cứu nhanh; chi tiết ở dòng chú thích đầu mỗi file trong `supabase/migrations` và DD tương ứng. Quy trình tạo và áp dụng ở [vận hành › Migration](operations.md#migration).
+
+| Migration | Nội dung |
+|---|---|
+| `202610280001_foundation` | `profiles`, `lessons`, `lesson_versions`, `audio_assets`, RLS nền |
+| `202610280002_lesson_publication` | Xuất bản phiên bản bài từ script nhập |
+| `202610280003_sample_lessons` | Bài mẫu giữ nhãn chờ duyệt (`is_sample`) |
+| `202610280004_classroom` | Lớp, ghi danh, bài giao, lượt làm, câu trả lời, ôn tập FSRS, tiến độ đọc; mọi thao tác ghi qua RPC |
+| `202610280005_notifications` | Tùy chọn nhắc bài, `email_log` có lease cho cron |
+| `202610280006_listening` | Số lần nghe trong câu trả lời, tổng hợp nghe của lớp |
+| `202610290001_teaching_service` | `teacher_accounts`, `audit_events`, sức chứa/Meet/ngôn ngữ lớp, đọc phiên bản theo quyền |
+| `202610290002_teacher_activation` | Kiểm tra tài khoản Auth hẹp cho kích hoạt giảng dạy |
+| `202610290003_teaching_authoring` | Bài v2 Việt–Trung theo mẫu, duyệt đáp án theo hash câu |
+| `202610290004_lesson_sharing` | `lesson_shares`: chia sẻ một phiên bản, sao chép thành bài mới |
+| `202610290005_platform_admin` | `platform_admins`, `platform_settings`: duyệt, tạm dừng, hạn thuê giáo viên |
+| `202610290006_daily_practice` | `daily_practice_runs`: mỗi lớp một bài luyện hằng ngày theo ngày Việt Nam |
+| `202610300001_learning_history` | `learning_history_archives` (giao diện đã gỡ 04/11/2026, dữ liệu giữ) |
+| `202610300002_daily_practice_sixty` | Bài hằng ngày tới 60 câu |
+| `202611020001_daily_practice_source` | Lớp ghim bài nguồn cho bài hằng ngày |
+| `202611020002_self_study_classes` | Lớp tự học; chủ lớp không tự vào lớp mình dạy (CR-20) |
+| `202611020003_class_sessions` | `class_sessions`: nhật ký buổi dạy |
+| `202611020004_reshare_guard` | Bản sao bài được chia sẻ không công khai lại |
+| `20261102044627_correct_n5_review_answer_variants` | Sửa 14 đáp án tương đương của bài N5 ngày 01/11 (đã duyệt) |
+| `202611030001_accept_answer_variants` | `answer_variants`: giáo viên chấp nhận đáp án tương đương, chấm lại bài đã nộp |
+| `202611030002_class_schedules` | `class_schedules`: lịch học hằng tuần |
+| `202611030003_trigger_function_execute` | Thu hồi quyền gọi trực tiếp hàm trigger |
+| `202611040001_remove_and_archive_lessons` | Gỡ bài khỏi lớp, lưu trữ bài |
+| `20261104063229_normalize_vocabulary_kanji` | Chuẩn hóa `kanji` trong từ vựng v1, chặn giá trị sai kiểu |
+| `20261104110635_daily_listening_count` | `classes.daily_listening_count`: số câu nghe mỗi ngày (chưa có giao diện) |
+| `20261105012503_submit_expired_attempts` | Tự nộp lượt bỏ dở đã quá hạn của bài không cho nộp muộn ([DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)) |
+
 ## Mở rộng dữ liệu dịch vụ
 
 Đã migration: teacher_accounts, audit_events, metadata lớp, lesson_shares và nguồn bản sao (mục 5 ở trên). Phần còn lại vẫn là đề xuất: [DD dịch vụ](detail-design/teaching-service.md) thêm nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.

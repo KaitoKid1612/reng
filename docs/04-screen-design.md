@@ -21,18 +21,21 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S07 | Flashcard từ vựng | `/vocabulary/[lessonId]` | 3 |
 | S08 | Ôn tập hằng ngày | `/review` | 3 |
 | S09 | Tra cứu ngữ pháp | `/grammar` | 2 |
-| S10 | Kanji N5 | `/kanji` | 5 |
+| S10 | Luyện chữ Hán và kanji theo bài | `/kanji/[lessonId]` | 5 |
 | S11 | Làm bài tập | `/assignments/[id]` | 3 |
 | S12 | Kết quả bài tập | `/assignments/[id]/results` | 3 |
 | S13 | Sổ lỗi | `/mistakes` | 3 |
 | S14 | Tiến độ của tôi | `/progress` | 3 |
-| S15 | Luyện nghe | `/listening/[id]` | 5 |
+| S15 | Luyện nghe theo bài | `/listening/[lessonId]` | 5 |
 | S16 | Đề thi thử | `/mock-exams` | 6 |
 | S17 | Lớp của tôi | `/classes` | 3 |
 | S18 | Lớp học: bài đã mở và bài tập | `/classes/[id]` | 3 |
 | S19 | Luyện tập hằng ngày (điểm từng ngày) | `/classes/[id]/daily-practice` | 3 |
+| S20 | Tự học miễn phí theo môn | `/self-study` | 03/11/2026 |
+| S21 | Bảng pinyin tiếng Trung | `/pinyin` | 03/11/2026 |
+| S22 | Luyện gõ pinyin | `/pinyin/practice` | 03/11/2026 |
 
-### Dành cho giảng viên
+### Dành cho giáo viên
 
 | Mã | Màn hình | Đường dẫn | Giai đoạn |
 |---|---|---|---|
@@ -43,7 +46,12 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | T05 | Giao bài tập | `/teach/classes/[id]/assign` | 3 |
 | T06 | Soạn bài (tạo bài: `/teach/lessons/new`) | `/teach/lessons/[id]/edit` | 4 |
 | T07 | Nhập từ vựng CSV | `/teach/import-csv` | 4 |
-| T08 | Thi đấu trực tiếp | `/teach/live-quiz/[id]` | 6 |
+| T08 | Thi đấu trực tiếp (chưa làm) | `/teach/live-quiz/[id]` | 6 |
+| T09 | Cửa sổ Presenter: ghi chú, slide kế tiếp, đồng hồ | `/lessons/[id]/presenter` | 2 |
+| T10 | Bắt đầu giảng dạy (kích hoạt hoặc gửi yêu cầu) | `/teach/start` | Dịch vụ |
+| T11 | Chia sẻ bài: cấp/thu hồi quyền phiên bản, công khai | `/teach/lessons/[id]/sharing` | Dịch vụ |
+| T12 | Bài được chia sẻ với tôi | `/teach/library` | Dịch vụ |
+| T13 | Cập nhật từ bài mẫu | `/teach/lessons/[id]/starter` | 02/11/2026 |
 
 ### Màn hình dùng chung
 
@@ -55,6 +63,10 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Nguồn dữ liệu | `/sources` | 1, cập nhật khi thêm nguồn |
 | Cài đặt thông báo | `/settings/notifications` | 4; thêm push ở 6 |
 | Tài khoản: họ tên, mật khẩu | `/settings/account` | 03/11/2026 |
+| Hướng dẫn sử dụng cho giáo viên, học viên, quản trị viên | `/guide` | Dịch vụ |
+| Giới thiệu cho giáo viên, đăng ký giáo viên | `/for-teachers`, `/sign-up/teacher` | Dịch vụ |
+| Hủy nhận email (link một chạm trong thư) | `/unsubscribe/[token]` | 4 |
+| Quản trị: tổng quan, giáo viên, nhật ký hoạt động | `/admin`, `/admin/teachers`, `/admin/activity` | Dịch vụ |
 
 Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung; S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình-dự-kiến)).
 
