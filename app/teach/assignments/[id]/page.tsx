@@ -39,6 +39,12 @@ export async function generateMetadata({ params }: AssignmentFixPageProps): Prom
   }
 }
 
+function correctChoices(question: FixableQuestion["question"]) {
+  return question.type === "choice" || question.type === "listen"
+    ? question.answer.filter((answer): answer is number => typeof answer === "number")
+    : [];
+}
+
 function choiceOptions(question: FixableQuestion["question"]) {
   return question.type === "choice" || question.type === "listen" ? (question.options ?? []) : [];
 }
@@ -84,8 +90,13 @@ function QuestionCard({ assignmentId, item }: { assignmentId: string; item: Fixa
             {item.edits.map((edit, index) => (
               <li key={index}>
                 {formatStudyDateTime(edit.at)}: đề trước{" "}
-                <span lang={lang}>«{edit.beforePrompt}»</span>, sau{" "}
-                <span lang={lang}>«{edit.afterPrompt}»</span>
+                <span lang={lang}>
+                  «<FuriganaText text={edit.beforePrompt} />»
+                </span>
+                , sau{" "}
+                <span lang={lang}>
+                  «<FuriganaText text={edit.afterPrompt} />»
+                </span>
               </li>
             ))}
           </ol>
@@ -98,6 +109,7 @@ function QuestionCard({ assignmentId, item }: { assignmentId: string; item: Fixa
         position={item.position}
         fix={item.fix}
         lang={lang}
+        correctOptions={correctChoices(question)}
       />
     </li>
   );

@@ -12,8 +12,6 @@ export interface FixQuestionState {
   error?: string;
   notice?: string;
   isSaved?: boolean;
-  // What the teacher typed, returned with an error because React resets the form after an action.
-  values?: DisplayFix;
 }
 
 const NOT_FOUND = "Không tìm thấy câu này trong bài giao của lớp bạn.";
@@ -60,19 +58,16 @@ export async function fixQuestionAction(
             "Đã sửa. Học viên mở lại bài sẽ thấy nội dung mới; câu trả lời và điểm giữ nguyên.",
         };
       case "unchanged":
-        return { notice: "Chưa có gì thay đổi.", values: fix };
+        return { notice: "Chưa có gì thay đổi." };
       case "conflict":
-        return {
-          error: "Câu này vừa được sửa ở nơi khác. Tải lại trang rồi sửa tiếp.",
-          values: fix,
-        };
+        return { error: "Câu này vừa được sửa ở nơi khác. Tải lại trang rồi sửa tiếp." };
       case "invalid":
-        return { error: result.message, values: fix };
+        return { error: result.message };
       case "not_found":
         return { error: NOT_FOUND };
     }
   } catch (error) {
     console.error("Display fix failed", describeServiceFailure(error));
-    return { error: "Chưa lưu được. Thử lại sau nhé.", values: fix };
+    return { error: "Chưa lưu được. Thử lại sau nhé." };
   }
 }

@@ -17,12 +17,15 @@ interface QuestionFixFormProps {
   position: number;
   fix: DisplayFix;
   lang: string;
+  /** Options that count as right, so the teacher sees which one each box is. */
+  correctOptions?: readonly number[];
 }
 
 const FURIGANA_ONLY = "chỉ thêm hoặc bỏ furigana";
 
-// Closed until the teacher asks for it, so a 60-question set stays a readable list. A saved fix
-// closes the form and returns focus to its button; reopening it reads the page's new text.
+// Closed until the teacher asks for it, so a 60-question set stays a readable list. The fields
+// are controlled, so a refused save keeps what was typed and focus stays where it was; opening
+// moves focus to the prompt, and closing or saving returns it to this question's button.
 export function QuestionFixForm({
   assignmentId,
   questionId,
@@ -30,25 +33,50 @@ export function QuestionFixForm({
   position,
   fix,
   lang,
+  correctOptions = [],
 }: QuestionFixFormProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [values, setValues] = useState<DisplayFix>(fix);
+  // The version the teacher started from: a save made elsewhere since then is a conflict, even
+  // after this page refreshes for another question's save.
+  const [openedHash, setOpenedHash] = useState(hash);
+  const [shouldFocusToggle, setShouldFocusToggle] = useState(false);
   const [state, action, isPending] = useActionState(
     async (previous: FixQuestionState, formData: FormData) => {
       const next = await fixQuestionAction(previous, formData);
       if (next.isSaved) {
         setIsOpen(false);
+        setShouldFocusToggle(true);
       }
       return next;
     },
     {},
   );
   const toggle = useRef<HTMLButtonElement>(null);
+  const prompt = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
-    if (!isOpen && state.isSaved) {
+    if (isOpen) {
+      prompt.current?.focus();
+    } else if (shouldFocusToggle) {
       toggle.current?.focus();
     }
-  }, [isOpen, state.isSaved]);
+  }, [isOpen, shouldFocusToggle]);
   const id = `fix-${questionId}`;
+  const feedback = <ActionFeedback state={{ error: state.error, notice: state.notice }} />;
+
+  function open() {
+    // The page may have new text since the last save; start from it.
+    setValues(fix);
+    setOpenedHash(hash);
+    setShouldFocusToggle(false);
+    setIsOpen(true);
+  }
+
+  function close() {
+    setIsOpen(false);
+    setShouldFocusToggle(true);
+  }
+
   if (!isOpen) {
     return (
       <div>
@@ -56,35 +84,38 @@ export function QuestionFixForm({
           ref={toggle}
           variant="outline"
           aria-label={`Sửa lỗi hiển thị câu ${position}`}
-          onClick={() => setIsOpen(true)}
+          onClick={open}
         >
           Sửa lỗi hiển thị
         </Button>
-        <ActionFeedback state={{ error: state.error, notice: state.notice }} />
+        {feedback}
       </div>
     );
   }
-  const values = state.values ?? fix;
+  const setText = (key: "prompt" | "explain" | "passage" | "transcript", value: string) =>
+    setValues((current) => ({ ...current, [key]: value }));
+  const setItem = (key: "options" | "tokens", index: number, value: string) =>
+    setValues((current) => ({
+      ...current,
+      [key]: current[key]?.map((item, itemIndex) => (itemIndex === index ? value : item)),
+    }));
   return (
-    // React resets the form after each action; remounting with the typed values keeps them.
-    <form
-      key={state.values ? JSON.stringify(state.values) : "start"}
-      action={action}
-      className="question-fix-form"
-    >
+    <form action={action} className="question-fix-form" aria-label={`Sửa câu ${position}`}>
       <input type="hidden" name="assignmentId" value={assignmentId} />
       <input type="hidden" name="questionId" value={questionId} />
-      <input type="hidden" name="hash" value={hash} />
+      <input type="hidden" name="hash" value={openedHash} />
       <div className="field">
         <label htmlFor={`${id}-prompt`}>Đề bài</label>
         <textarea
+          ref={prompt}
           id={`${id}-prompt`}
           name="prompt"
           rows={3}
           maxLength={500}
           required
           lang={lang}
-          defaultValue={values.prompt}
+          value={values.prompt}
+          onChange={(event) => setText("prompt", event.target.value)}
         />
       </div>
       {values.passage !== undefined && (
@@ -93,9 +124,10 @@ export function QuestionFixForm({
           <textarea
             id={`${id}-passage`}
             name="passage"
-            rows={4}
+            rows={6}
             lang={lang}
-            defaultValue={values.passage}
+            value={values.passage}
+            onChange={(event) => setText("passage", event.target.value)}
           />
         </div>
       )}
@@ -103,10 +135,19 @@ export function QuestionFixForm({
         <fieldset className="question-fix-list">
           <legend>Lựa chọn ({FURIGANA_ONLY})</legend>
           {values.options.map((option, index) => (
-            <label key={index} className="field">
-              <span>Lựa chọn {index + 1}</span>
-              <input name="option" lang={lang} defaultValue={option} />
-            </label>
+            <div key={index} className="field">
+              <label htmlFor={`${id}-option-${index}`}>
+                Lựa chọn {index + 1}
+                {correctOptions.includes(index) ? " (đáp án đúng)" : ""}
+              </label>
+              <input
+                id={`${id}-option-${index}`}
+                name="option"
+                lang={lang}
+                value={option}
+                onChange={(event) => setItem("options", index, event.target.value)}
+              />
+            </div>
           ))}
         </fieldset>
       )}
@@ -114,10 +155,16 @@ export function QuestionFixForm({
         <fieldset className="question-fix-list">
           <legend>Mảnh câu ({FURIGANA_ONLY})</legend>
           {values.tokens.map((token, index) => (
-            <label key={index} className="field">
-              <span>Mảnh {index + 1}</span>
-              <input name="token" lang={lang} defaultValue={token} />
-            </label>
+            <div key={index} className="field">
+              <label htmlFor={`${id}-token-${index}`}>Mảnh {index + 1}</label>
+              <input
+                id={`${id}-token-${index}`}
+                name="token"
+                lang={lang}
+                value={token}
+                onChange={(event) => setItem("tokens", index, event.target.value)}
+              />
+            </div>
           ))}
         </fieldset>
       )}
@@ -129,7 +176,8 @@ export function QuestionFixForm({
             name="transcript"
             rows={3}
             lang={lang}
-            defaultValue={values.transcript}
+            value={values.transcript}
+            onChange={(event) => setText("transcript", event.target.value)}
           />
         </div>
       )}
@@ -141,7 +189,8 @@ export function QuestionFixForm({
           rows={3}
           maxLength={1000}
           required
-          defaultValue={values.explain}
+          value={values.explain}
+          onChange={(event) => setText("explain", event.target.value)}
         />
       </div>
       <p className="small muted">{QUESTION_FURIGANA_HINT}</p>
@@ -149,11 +198,11 @@ export function QuestionFixForm({
         <Button type="submit" disabled={isPending}>
           {isPending ? "Đang lưu…" : "Lưu sửa"}
         </Button>
-        <Button variant="ghost" onClick={() => setIsOpen(false)}>
+        <Button variant="ghost" onClick={close}>
           Đóng
         </Button>
       </div>
-      <ActionFeedback state={{ error: state.error, notice: state.notice }} />
+      {feedback}
     </form>
   );
 }

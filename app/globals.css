@@ -1628,7 +1628,9 @@ rt {
 .form-card input:not([type="checkbox"], [type="radio"]),
 .form-card select,
 .form-card textarea,
-.admin-plan-form input:not([type="hidden"]) {
+.admin-plan-form input:not([type="hidden"]),
+.question-fix-form input:not([type="hidden"]),
+.question-fix-form textarea {
   width: 100%;
   border: 1px solid #a8a49d;
   border-radius: 6px;
@@ -1638,7 +1640,8 @@ rt {
   color: var(--foreground);
   font: inherit;
 }
-.form-card textarea {
+.form-card textarea,
+.question-fix-form textarea {
   min-height: 88px;
   resize: vertical;
 }
@@ -1769,6 +1772,7 @@ rt {
 .fix-options {
   margin: 0 0 8px;
   padding-left: 24px;
+  list-style: decimal;
 }
 .fix-history {
   margin: 8px 0 12px;
@@ -1784,6 +1788,9 @@ rt {
 .question-fix-list legend {
   font-weight: 600;
   margin-bottom: 8px;
+}
+.question-fix-list .field {
+  margin-bottom: 12px;
 }
 .item-list > li > div {
   min-width: 0;
