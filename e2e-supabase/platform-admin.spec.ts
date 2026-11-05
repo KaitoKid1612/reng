@@ -86,6 +86,9 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
 
     const rejectedRow = admin.page.getByRole("listitem").filter({ hasText: rejected.email });
     await rejectedRow.getByRole("button", { name: `Từ chối ${rejectedName}`, exact: true }).click();
+    await rejectedRow
+      .getByRole("button", { name: `Xác nhận từ chối ${rejectedName}`, exact: true })
+      .click();
     await expect(rejectedRow.getByText("Đã từ chối", { exact: true })).toBeVisible();
     await expect(
       rejectedRow.getByRole("button", { name: `Duyệt ${rejectedName}`, exact: true }),
@@ -94,6 +97,9 @@ test("an admin approves, tracks and suspends rented teachers; others cannot open
     await expect(rejected.page.getByText(/Yêu cầu giảng dạy chưa được chấp nhận/)).toBeVisible();
 
     await row.getByRole("button", { name: `Tạm dừng ${applicantName}`, exact: true }).click();
+    await row
+      .getByRole("button", { name: `Xác nhận tạm dừng ${applicantName}`, exact: true })
+      .click();
     await expect(
       row.getByRole("button", { name: `Mở lại ${applicantName}`, exact: true }),
     ).toBeVisible();
