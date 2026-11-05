@@ -150,6 +150,9 @@ test("teachers share one version, copy it without private notes and lose access 
     );
 
     await owner.page.getByRole("button", { name: `Thu hồi quyền của ${recipient.email}` }).click();
+    await owner.page
+      .getByRole("button", { name: `Xác nhận thu hồi quyền của ${recipient.email}` })
+      .click();
     await expect(owner.page.getByRole("heading", { name: "Đã thu hồi" })).toBeVisible();
     await recipient.page.goto("/teach/library");
     await expect(recipient.page.getByText("Chưa có bài nào được chia sẻ với bạn.")).toBeVisible();
