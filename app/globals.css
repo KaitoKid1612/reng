@@ -1754,103 +1754,196 @@ rt {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
-/* Display fixes for an assignment already given (/teach/assignments/[id]). On wide screens the
-   question as learners see it sits beside its edit form, so the teacher compares while typing. */
+/* Display fixes for an assignment already given (/teach/assignments/[id]): one compact row per
+   question; "Sửa" opens Trước | Sau under the row. On a phone each row becomes a small card. */
 .fix-intro {
   max-width: 760px;
 }
-.fix-jump {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-top: 20px;
-}
-.fix-jump a {
+.filter-pills button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  min-height: 36px;
-  padding: 0 6px;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 14px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 999px;
   background: var(--surface);
-  text-decoration: none;
-  font-size: 14px;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
 }
-.fix-jump a[data-edited="true"] {
-  background: var(--primary-soft);
+.filter-pills button:hover {
   border-color: var(--primary);
-  font-weight: 600;
 }
-/* On a phone 60 numbers would fill a screen; they scroll sideways in one row instead. */
-@media (max-width: 899px) {
-  .fix-jump {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 6px;
-  }
-  .fix-jump > * {
-    flex: 0 0 auto;
-  }
+.filter-pills button[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
 }
-.fix-question-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0;
-  display: grid;
-  gap: 16px;
+.filter-pills button[aria-pressed="true"] .filter-pill-count {
+  color: inherit;
 }
-.fix-question-list > li {
-  min-width: 0;
+.fix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 8px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px 20px;
-  scroll-margin-top: 16px;
 }
-.fix-question-view,
-.fix-question-edit {
+.fix-table th,
+.fix-table td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.fix-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.fix-table thead th {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--background);
+}
+.fix-table thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.fix-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+.fix-cell-number {
+  width: 56px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.fix-cell-question {
   min-width: 0;
 }
-@media (min-width: 900px) {
-  .fix-question-list > li {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 0 32px;
-    align-items: start;
-    padding: 20px 24px;
-  }
-  .fix-question-edit .question-fix-form {
-    margin-top: 0;
-  }
+.fix-type {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.fix-prompt {
+  overflow-wrap: anywhere;
+}
+.fix-cell-answer {
+  width: 22%;
+  overflow-wrap: anywhere;
+}
+.fix-mobile-label {
+  display: none;
+}
+.fix-cell-action {
+  width: 300px;
+}
+.fix-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.fix-cell-action .form-notice,
+.fix-cell-action .error-text {
+  margin-top: 8px;
+  text-align: left;
+}
+.fix-row[data-open="true"] > * {
+  background: var(--primary-soft);
+}
+.fix-editor-row > td {
+  padding: 20px;
+  background: var(--background);
+}
+.fix-compare {
+  display: grid;
+  gap: 16px;
+}
+.fix-before,
+.fix-after {
+  min-width: 0;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.fix-compare-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
 }
 .fix-options {
   margin: 0 0 8px;
   padding-left: 24px;
   list-style: decimal;
 }
+.fix-correct {
+  color: var(--correct);
+  font-size: 14px;
+}
 .fix-history {
-  margin: 8px 0 12px;
+  margin: 8px 0 0;
 }
-.question-fix-form {
-  margin-top: 12px;
+.question-fix-form .field {
+  margin-bottom: 12px;
 }
-.question-fix-list {
+.reading-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 16px;
+}
+.reading-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.reading-item {
+  flex: none;
+}
+.reading-word {
+  font-size: 18px;
+  white-space: nowrap;
+}
+.question-fix-form .reading-grid input.reading-input {
+  width: 7.5em;
+  min-height: 38px;
+  padding: 4px 8px;
+}
+.question-fix-form .reading-grid input.reading-input[aria-invalid="true"] {
+  border-color: var(--wrong);
+}
+.fix-reading-caption,
+.question-fix-form .fix-note {
+  margin: 0 0 8px;
+}
+.question-fix-form .fix-note {
+  margin-bottom: 16px;
+}
+.fix-reading-group {
   border: 0;
   padding: 0;
   margin: 0 0 12px;
 }
-.question-fix-list legend {
+.fix-reading-group legend,
+.fix-reading-group summary {
   font-weight: 600;
   margin-bottom: 8px;
 }
-.question-fix-list .field {
-  margin-bottom: 12px;
+.fix-reading-line .reading-grid {
+  margin-bottom: 8px;
 }
 .question-fix-preview {
-  margin: 0 0 20px;
+  margin: 4px 0 16px;
   padding: 12px 14px;
   border: 1px dashed var(--border);
   border-radius: 8px;
@@ -1860,6 +1953,71 @@ rt {
   margin: 4px 0 0;
   padding-left: 24px;
   list-style: decimal;
+}
+@media (min-width: 900px) {
+  .fix-compare {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 899px) {
+  .fix-table,
+  .fix-table tbody,
+  .fix-table tr,
+  .fix-table td,
+  .fix-table th {
+    display: block;
+  }
+  .fix-table {
+    border: 0;
+    background: none;
+  }
+  .fix-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .fix-table tr.fix-row {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .fix-table tr.fix-row > * {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .fix-table .fix-cell-number {
+    display: none;
+  }
+  .fix-mobile-label {
+    display: inline;
+  }
+  .fix-cell-answer {
+    width: auto;
+    margin-top: 6px;
+  }
+  .fix-cell-action {
+    width: auto;
+    margin-top: 10px;
+    text-align: left;
+  }
+  .fix-actions {
+    justify-content: flex-start;
+  }
+  .fix-editor-row > td {
+    padding: 12px 0 0;
+    border: 0;
+    background: none;
+  }
+  .fix-before,
+  .fix-after {
+    padding: 12px 14px;
+  }
 }
 .item-list > li > div {
   min-width: 0;

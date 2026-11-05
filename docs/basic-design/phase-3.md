@@ -91,7 +91,7 @@ Truy vết tại [checklist giai đoạn 3](../testing/phase-3.md). Local cần 
 
 ## Sửa lỗi hiển thị bài đã giao — 05/11/2026
 
-- Giáo viên mở bài đã giao (kể cả bài luyện hằng ngày) từ trang lớp, bấm **Sửa lỗi hiển thị** ở câu cần sửa: sửa được đề bài, giải thích và furigana. Đáp án, lựa chọn, điểm, loại câu và thứ tự câu không đổi được; chữ của lựa chọn, mảnh câu, đoạn văn và lời nghe chỉ thêm hoặc bỏ furigana.
+- Giáo viên mở bài đã giao (kể cả bài luyện hằng ngày) từ trang lớp (Xem câu hỏi, sửa lỗi hiển thị). Trang là bảng gọn mỗi câu một dòng, lọc được câu có chữ Hán chưa có cách đọc và câu đã sửa. Bấm **Sửa** ở câu cần sửa để mở hai cột **Trước | Sau**: sửa đề bài, giải thích, và gõ cách đọc vào ô cạnh từng chữ Hán (gõ romaji tự ra hiragana), không phải gõ ký hiệu furigana. Đáp án, lựa chọn, điểm, loại câu và thứ tự câu không đổi được; chữ của lựa chọn, mảnh câu, đoạn văn và lời nghe chỉ thêm hoặc bỏ furigana.
 - Câu trả lời học viên đang làm, lượt đã nộp và điểm giữ nguyên; học viên mở lại bài là thấy nội dung mới.
 - Mỗi lần sửa lưu nội dung trước và sau; trang hiện "Đã sửa N lần" kèm đề trước/sau.
 - Sửa trong bài giao không đổi bài nguồn: muốn các bài giao sau không lặp lỗi thì sửa cả bài nguồn rồi xuất bản ([DD](../detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)).

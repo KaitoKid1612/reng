@@ -6,15 +6,14 @@ import {
   MODE_LABELS,
   QUESTION_TYPE_LABELS,
 } from "@/components/classroom/assignment-labels";
-import { PassageDetails } from "@/components/classroom/passage-details";
-import { FuriganaText } from "@/components/lessons/japanese-text";
-import { QuestionFixForm } from "@/components/teach/question-fix-form";
+import { AssignmentFixTable } from "@/components/teach/assignment-fix-table";
 import { answerLang, describeCorrectAnswer, toQuestionView } from "@/lib/assignment";
+import { countUnreadUnits } from "@/lib/furigana-units";
 import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { getFixableAssignment } from "@/lib/server/assignment-fixes";
 import { loadOrNotFound } from "@/lib/server/pages";
-import { formatStudyDateTime } from "@/lib/study-days";
 
+import type { FixRow } from "@/components/teach/assignment-fix-table";
 import type { FixableQuestion } from "@/lib/server/assignment-fixes";
 import type { Metadata } from "next";
 
@@ -39,84 +38,42 @@ export async function generateMetadata({ params }: AssignmentFixPageProps): Prom
   }
 }
 
-function correctChoices(question: FixableQuestion["question"]) {
-  return question.type === "choice" || question.type === "listen"
-    ? question.answer.filter((answer): answer is number => typeof answer === "number")
-    : [];
+function furiganaPlace(isJapanese: boolean, asksReading: boolean): FixRow["furigana"] {
+  if (!isJapanese) {
+    return "none";
+  }
+  return asksReading ? "after-answer" : "all";
 }
 
-function choiceOptions(question: FixableQuestion["question"]) {
-  return question.type === "choice" || question.type === "listen" ? (question.options ?? []) : [];
-}
-
-function QuestionCard({ assignmentId, item }: { assignmentId: string; item: FixableQuestion }) {
-  const { question } = item;
+function toFixRow(item: FixableQuestion): FixRow {
+  const { question, fix } = item;
   const view = toQuestionView(question);
-  const { lang } = view;
-  const lastEdit = item.edits.at(-1);
-  return (
-    <li id={`question-${item.questionId}`}>
-      <div className="fix-question-view">
-        <p className="item-meta">
-          Câu {item.position} · {QUESTION_TYPE_LABELS[question.type]} · {question.points} điểm
-        </p>
-        <PassageDetails passage={question.passage} lang={lang} />
-        <p lang={lang} className="question-prompt">
-          <FuriganaText text={question.prompt} />
-        </p>
-        {choiceOptions(question).length > 0 && (
-          <ol className="fix-options">
-            {choiceOptions(question).map((option, index) => (
-              <li key={index} lang={lang}>
-                <FuriganaText text={option} />
-              </li>
-            ))}
-          </ol>
-        )}
-        <p>
-          Đáp án:{" "}
-          <strong lang={answerLang(view)}>
-            <FuriganaText text={describeCorrectAnswer(question)} />
-          </strong>
-        </p>
-        <p className="muted">
-          <FuriganaText text={question.explain} />
-        </p>
-        {lastEdit && (
-          <details className="fix-history">
-            <summary>
-              Đã sửa {item.edits.length} lần, gần nhất {formatStudyDateTime(lastEdit.at)}
-            </summary>
-            <ol>
-              {item.edits.map((edit, index) => (
-                <li key={index}>
-                  {formatStudyDateTime(edit.at)}: đề trước{" "}
-                  <span lang={lang}>
-                    «<FuriganaText text={edit.beforePrompt} />»
-                  </span>
-                  , sau{" "}
-                  <span lang={lang}>
-                    «<FuriganaText text={edit.afterPrompt} />»
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </details>
-        )}
-      </div>
-      <div className="fix-question-edit">
-        <QuestionFixForm
-          assignmentId={assignmentId}
-          questionId={item.questionId}
-          hash={item.hash}
-          position={item.position}
-          fix={item.fix}
-          lang={lang}
-          correctOptions={correctChoices(question)}
-        />
-      </div>
-    </li>
-  );
+  // Furigana is for Japanese; a kanji reading question must not show the reading it asks for.
+  const isJapanese = view.lang === "ja";
+  const asksReading = question.tags.includes("kanji");
+  const isChoice = question.type === "choice" || question.type === "listen";
+  return {
+    questionId: item.questionId,
+    position: item.position,
+    hash: item.hash,
+    typeLabel: QUESTION_TYPE_LABELS[question.type],
+    furigana: furiganaPlace(isJapanese, asksReading),
+    lang: view.lang,
+    answerLang: answerLang(view),
+    answerText: describeCorrectAnswer(question),
+    correctOptions: isChoice
+      ? question.answer.filter((answer): answer is number => typeof answer === "number")
+      : [],
+    current: fix,
+    edits: item.edits,
+    unreadCount:
+      isJapanese && !asksReading
+        ? [fix.prompt, ...(fix.options ?? [])].reduce(
+            (total, text) => total + countUnreadUnits(text),
+            0,
+          )
+        : 0,
+  };
 }
 
 export default async function AssignmentFixPage({ params }: AssignmentFixPageProps) {
@@ -136,33 +93,15 @@ export default async function AssignmentFixPage({ params }: AssignmentFixPagePro
         {assignment.status === "closed" ? ", đã đóng" : ""}
       </p>
       <p className="fix-intro">
-        Đề bị sai hoặc khó đọc sau khi đã giao thì sửa ở đây: đề bài, giải thích và furigana. Đáp
-        án, lựa chọn, điểm và thứ tự câu giữ nguyên, nên câu học viên đang làm và điểm đã nộp không
-        đổi. Học viên mở lại bài sẽ thấy nội dung mới; mỗi lần sửa được lưu lại.
+        Bấm <strong>Sửa</strong> ở câu cần sửa: bên trái là câu học viên đang thấy, bên phải là bản
+        sửa với ô cách đọc cho từng chữ Hán. Đáp án, lựa chọn và thứ tự câu giữ nguyên, nên bài làm
+        và điểm của học viên không đổi; học viên mở lại bài là thấy nội dung mới.
       </p>
       <p className="small muted fix-intro">
-        Câu trong bài giao được chép từ bài nguồn lúc giao. Để các bài giao sau không lặp lỗi, sửa
-        cả trong <Link href={`/teach/lessons/${assignment.lessonId}/edit`}>bài nguồn</Link> rồi xuất
-        bản và cập nhật lớp lên phiên bản mới.
+        Câu được chép từ bài nguồn lúc giao. Để các bài giao sau không lặp lỗi, sửa cả trong{" "}
+        <Link href={`/teach/lessons/${assignment.lessonId}/edit`}>bài nguồn</Link>.
       </p>
-      <nav className="fix-jump" aria-label="Đi tới câu">
-        <span className="small muted">Đi tới câu:</span>
-        {questions.map((item) => (
-          <a
-            key={item.questionId}
-            href={`#question-${item.questionId}`}
-            data-edited={item.edits.length > 0}
-            aria-label={`Câu ${item.position}${item.edits.length ? ", đã sửa" : ""}`}
-          >
-            {item.position}
-          </a>
-        ))}
-      </nav>
-      <ol className="fix-question-list">
-        {questions.map((item) => (
-          <QuestionCard key={item.questionId} assignmentId={assignment.id} item={item} />
-        ))}
-      </ol>
+      <AssignmentFixTable assignmentId={assignment.id} rows={questions.map(toFixRow)} />
     </div>
   );
 }

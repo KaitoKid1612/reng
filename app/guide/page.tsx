@@ -92,7 +92,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Ở Giảng dạy, tìm bài theo tên, ngôn ngữ và trạng thái. Bộ lọc ngôn ngữ dùng bản soạn hiện tại; bài đã có bản xuất bản vẫn có thể đang được sửa nháp.",
       "Trong trang lớp bấm Giao bài, kiểm tra nhãn ngôn ngữ của bài và phiên bản, bấm Lưu vào lớp để học viên đọc được bài. Xuất bản lại không tự đổi phiên bản lớp đang dùng; cách nhanh nhất là mục Dùng bài trong lớp của trình soạn. Ở đây bạn chọn được thứ tự và hẹn giờ mở.",
       'Tạo bài giao: Luyện tập cho làm nhiều lượt và xem giải thích ngay; Kiểm tra chỉ một lượt với câu hỏi riêng. Chọn câu, đặt hạn nộp, bấm Xem lại trước khi giao rồi Giao bài cho lớp. Bài không cho nộp muộn mà học viên bỏ dở (chưa bấm Nộp) được Reng tự nộp khoảng 6 giờ sáng sau hạn với các câu đã lưu; trang học viên ghi rõ "Reng tự nộp".',
-      "Đề bị sai hoặc khó đọc sau khi đã giao (kể cả bài luyện hằng ngày): ở trang lớp bấm Xem câu hỏi, sửa lỗi hiển thị cạnh bài, rồi bấm Sửa lỗi hiển thị ở câu cần sửa. Sửa được đề bài, giải thích và furigana; đáp án, lựa chọn và thứ tự câu giữ nguyên nên bài học viên đang làm và điểm không đổi. Sửa cả trong bài nguồn để các bài giao sau không lặp lỗi.",
+      "Đề bị sai hoặc khó đọc sau khi đã giao (kể cả bài luyện hằng ngày): ở trang lớp bấm Xem câu hỏi, sửa lỗi hiển thị cạnh bài, rồi bấm Sửa ở câu cần sửa: bên trái là câu học viên đang thấy, bên phải là bản sửa. Sửa được đề bài và giải thích; furigana thì gõ cách đọc vào ô cạnh từng chữ Hán (gõ romaji tự ra hiragana). Đáp án, lựa chọn và thứ tự câu giữ nguyên nên bài học viên đang làm và điểm không đổi. Sửa cả trong bài nguồn để các bài giao sau không lặp lỗi.",
     ],
   },
   {
