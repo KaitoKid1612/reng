@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import { FEEDBACK_POLICIES, isFeedbackAvailable } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
+import { toPlainJapanese } from "@/lib/japanese-text";
 import { isStaleDailySet } from "@/lib/learner-today";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { toStudyWords } from "@/lib/study-words";
@@ -404,7 +405,7 @@ async function describeDigest(teacherId: string, now: Date, origin: string) {
           .flatMap((stat) => stat.questions)
           .slice(0, 3)
           .map((question) => ({
-            prompt: question.prompt,
+            prompt: toPlainJapanese(question.prompt),
             wrong: question.wrong_count,
             total: question.total_count,
           })),

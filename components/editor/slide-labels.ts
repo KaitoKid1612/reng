@@ -19,6 +19,9 @@ export const SLIDE_TYPES = Object.keys(SLIDE_TYPE_LABELS).filter(
 );
 
 export const FURIGANA_HINT = "Furigana: viết {漢字|かんじ}, ví dụ {郵便局|ゆうびんきょく}.";
+// Learners who cannot read the kanji yet see the reading above it in exercises too.
+export const QUESTION_FURIGANA_HINT =
+  "Furigana trong đề, lựa chọn, đoạn văn và giải thích: viết {漢字|かんじ}, ví dụ {昨日|きのう}、{学校|がっこう}へ{行|い}きました。 Không đặt furigana lên chữ đang hỏi cách đọc, và không dùng trong đáp án học viên gõ.";
 
 // Short text shown in the slide list so teachers recognise each slide without opening it.
 export function summarizeSlide(slide: DraftSlide, content: DraftContent) {

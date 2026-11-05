@@ -1,5 +1,7 @@
 import { Check, X } from "lucide-react";
 
+import { FuriganaText } from "@/components/lessons/japanese-text";
+
 interface AnswerFeedbackProps {
   isCorrect: boolean;
   correctText: string;
@@ -28,12 +30,19 @@ export function AnswerFeedback({
       <div>
         <p>
           {isCorrect ? "Đúng rồi!" : "Chưa đúng."} Đáp án:{" "}
-          <strong lang={lang}>{correctText}</strong>
+          <strong lang={lang}>
+            <FuriganaText text={correctText} />
+          </strong>
         </p>
-        <p className="muted">{explain}</p>
+        <p className="muted">
+          <FuriganaText text={explain} />
+        </p>
         {transcript && (
           <p className="transcript">
-            Lời nghe: <span lang={transcriptLang}>{transcript}</span>
+            Lời nghe:{" "}
+            <span lang={transcriptLang}>
+              <FuriganaText text={transcript} />
+            </span>
           </p>
         )}
       </div>

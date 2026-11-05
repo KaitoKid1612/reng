@@ -6,6 +6,7 @@ import { PassageDetails } from "@/components/classroom/passage-details";
 import { DailyDayChips } from "@/components/daily-history/daily-day-chips";
 import { DailyScoreChart } from "@/components/daily-history/daily-score-chart";
 import { DailyStatTiles } from "@/components/daily-history/daily-stat-tiles";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { AcceptAnswerForm, AcceptNoticeArea } from "@/components/teach/accept-answer-form";
 import { RemoveStudentButton } from "@/components/teach/remove-student-button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
@@ -180,17 +181,20 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                       </p>
                       <PassageDetails passage={item.view.passage} lang={item.view.lang} />
                       <p lang={item.view.lang} className="result-row-prompt">
-                        {item.view.prompt}
+                        <FuriganaText text={item.view.prompt} />
                       </p>
                       <p>
                         Trả lời:{" "}
                         <strong lang={answerLang(item.view)}>
-                          {item.answerText || "(bỏ trống)"}
+                          {item.answerText ? <FuriganaText text={item.answerText} /> : "(bỏ trống)"}
                         </strong>
                       </p>
                       {!item.isCorrect && (
                         <p>
-                          Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
+                          Đáp án:{" "}
+                          <strong lang={answerLang(item.view)}>
+                            <FuriganaText text={item.correctText} />
+                          </strong>
                         </p>
                       )}
                       {!item.isCorrect && item.answerText && isTypedQuestion(item.view) && (

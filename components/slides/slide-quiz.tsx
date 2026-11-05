@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { Button } from "@/components/ui/button";
 
 import type { PublicQuestion } from "@/lib/teaching-content";
@@ -58,17 +59,17 @@ export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: Slide
       <h2>Cùng thử một câu</h2>
       {question.passage && (
         <p lang={lang} className="slide-passage">
-          {question.passage}
+          <FuriganaText text={question.passage} />
         </p>
       )}
       <p lang={lang} className="slide-japanese">
-        {question.prompt}
+        <FuriganaText text={question.prompt} />
       </p>
       {question.pieces && (
         <ul className="slide-order-pieces" aria-label="Các mảnh cần sắp xếp">
           {question.pieces.map((piece, index) => (
             <li key={index} lang={lang}>
-              {piece}
+              <FuriganaText text={piece} />
             </li>
           ))}
         </ul>
@@ -77,7 +78,7 @@ export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: Slide
         <ol className="slide-options">
           {question.options.map((option, index) => (
             <li key={index} lang={lang}>
-              {option}
+              <FuriganaText text={option} />
             </li>
           ))}
         </ol>
@@ -89,8 +90,12 @@ export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: Slide
       )}
       {result && (
         <div className="quiz-feedback" role="status">
-          <p lang={lang}>{result.answer}</p>
-          <p>{result.explain}</p>
+          <p lang={lang}>
+            <FuriganaText text={result.answer} />
+          </p>
+          <p>
+            <FuriganaText text={result.explain} />
+          </p>
         </div>
       )}
       {error && (

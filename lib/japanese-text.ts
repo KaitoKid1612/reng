@@ -40,6 +40,20 @@ export function toPlainJapanese(value: string) {
   return value.replace(FURIGANA, (_match, base: string) => base.trim());
 }
 
+// The written form and reading of every {漢字|かんじ} mark, in order.
+export function listFuriganaMarks(value: string) {
+  return [...value.matchAll(FURIGANA)].map((match) => ({
+    base: match[1].trim(),
+    reading: match[2].trim(),
+  }));
+}
+
+// A brace left once the well-formed marks are removed means a mark lost its "|" or a brace, and
+// learners would see the raw text.
+export function hasBrokenFurigana(value: string) {
+  return /[{}]/.test(value.replace(FURIGANA, ""));
+}
+
 // Splits mixed Vietnamese/Japanese text so Japanese runs can be marked lang="ja" for the font.
 export function splitJapaneseRuns(value: string) {
   const runs: { text: string; isJapanese: boolean }[] = [];

@@ -1,4 +1,5 @@
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { answerLang } from "@/lib/assignment";
 
 import type { ResultItem } from "@/lib/server/assignments";
@@ -21,23 +22,34 @@ export function ResultRow({ item, number }: ResultRowProps) {
       </p>
       <PassageDetails passage={item.view.passage} lang={item.view.lang} />
       <p lang={item.view.lang} className="question-prompt">
-        {item.view.prompt}
+        <FuriganaText text={item.view.prompt} />
       </p>
       <p>
-        Bạn trả lời: <strong lang={answerLang(item.view)}>{item.answerText || "(bỏ trống)"}</strong>
+        Bạn trả lời:{" "}
+        <strong lang={answerLang(item.view)}>
+          {item.answerText ? <FuriganaText text={item.answerText} /> : "(bỏ trống)"}
+        </strong>
       </p>
       {!item.isCorrect && (
         <p>
-          Đáp án: <strong lang={answerLang(item.view)}>{item.correctText}</strong>
+          Đáp án:{" "}
+          <strong lang={answerLang(item.view)}>
+            <FuriganaText text={item.correctText} />
+          </strong>
         </p>
       )}
       {item.transcript !== null && (
         <p className="transcript">
-          Lời nghe: <span lang={item.view.lang}>{item.transcript}</span> (bạn đã nghe{" "}
-          {item.listenCount} lần)
+          Lời nghe:{" "}
+          <span lang={item.view.lang}>
+            <FuriganaText text={item.transcript} />
+          </span>{" "}
+          (bạn đã nghe {item.listenCount} lần)
         </p>
       )}
-      <p className="muted">{item.explain}</p>
+      <p className="muted">
+        <FuriganaText text={item.explain} />
+      </p>
     </div>
   );
 }

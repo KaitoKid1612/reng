@@ -33,7 +33,7 @@ export function planContentAudio(
     ),
     ...content.questions.flatMap((question) =>
       (question.type === "listen" || question.type === "dictation") && question.transcript.trim()
-        ? [planned(`${lessonId}:question:${question.id}`, question.transcript, voice)]
+        ? [planned(`${lessonId}:question:${question.id}`, toSpeechText(question.transcript), voice)]
         : [],
     ),
   ];

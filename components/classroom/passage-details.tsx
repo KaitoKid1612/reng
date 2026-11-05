@@ -1,3 +1,5 @@
+import { FuriganaText } from "@/components/lessons/japanese-text";
+
 interface PassageDetailsProps {
   passage: string | undefined;
   lang: string;
@@ -11,7 +13,9 @@ export function PassageDetails({ passage, lang }: PassageDetailsProps) {
   return (
     <details className="result-passage">
       <summary>Xem đoạn văn</summary>
-      <p lang={lang}>{passage}</p>
+      <p lang={lang}>
+        <FuriganaText text={passage} />
+      </p>
     </details>
   );
 }

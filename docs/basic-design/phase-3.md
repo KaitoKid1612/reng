@@ -82,3 +82,9 @@ Theo ma trận 03. Học viên không đọc trực tiếp bảng lớp/bài gia
 ## Điều kiện nghiệm thu
 
 Truy vết tại [checklist giai đoạn 3](../testing/phase-3.md). Local cần chạy trọn luồng với một giảng viên, hai học viên thuộc hai lớp khác nhau trên Supabase local: vượt quyền bị từ chối, test không lộ đáp án/kết quả trước hạn, nộp trùng chấm một lần, hai tab và mất mạng giữ đúng draft, sửa bài không đổi snapshot, nhãn/thống kê/CSV đúng 07. Supabase cloud, email thật (SPF/DKIM), backup/khôi phục thử và lớp học thật là điều kiện nghiệm thu riêng.
+
+## Furigana trong bài tập — 05/11/2026
+
+- Học viên chưa đọc được kanji (lớp N5) thấy cách đọc phía trên chữ Hán ở đề, lựa chọn, đoạn văn, mảnh sắp xếp, giải thích và lời nghe, khi giáo viên viết `{漢字|かんじ}` như ở trang đọc bài. Áp dụng khi làm bài, ở phản hồi Kiểm tra câu này, trang kết quả, lịch sử bài hằng ngày, sổ lỗi và các trang của giáo viên.
+- Không đặt furigana lên chữ đang hỏi cách đọc và không dùng trong đáp án học viên gõ: Reng từ chối xuất bản và nói câu nào cần sửa.
+- Bài đã giao giữ nguyên nội dung lúc giao. Furigana có từ bài giao tạo sau khi lớp dùng phiên bản mới của bài nguồn ([DD](../detail-design/phase-3.md#furigana-trong-bài-tập--05112026)).

@@ -1,3 +1,5 @@
+import { FuriganaText } from "@/components/lessons/japanese-text";
+
 import type { QuestionLang } from "@/lib/assignment";
 
 interface HardQuestion {
@@ -32,7 +34,9 @@ function HardQuestionItems({ questions, lang, start }: HardQuestionItemsProps) {
     <ol className="hard-question-list" start={start}>
       {questions.map((question) => (
         <li key={question.question_id}>
-          <span lang={lang}>{question.prompt}</span>
+          <span lang={lang}>
+            <FuriganaText text={question.prompt} />
+          </span>
           <span className="hard-question-count">
             {question.wrong_count}/{question.total_count}
             <span className="visually-hidden"> học viên sai</span>

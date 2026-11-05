@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { parseArgs } from "node:util";
 
 import { parseAssignableQuestion } from "../lib/assignment";
+import { findFuriganaProblems } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 import { BANK_LANGUAGES, findBankLanguageProblems } from "../lib/review-bank";
 
@@ -39,11 +40,14 @@ async function main() {
     throw new Error(`--language must be one of ${BANK_LANGUAGES.join(", ")}.`);
   }
   const bank = lessonDraftSchema.parse(JSON.parse(await readFile(resolve(values.file), "utf8")));
-  // The draft schema allows a bank without slides, but the published version must also open in
-  // the lesson reader; before 05/11/2026 such a version also broke the assignment page.
-  if (!bank.content.slides.length) {
+  // Learners see furigana as written, so a broken mark or one that shows the answer stops here.
+  const furiganaProblems = findFuriganaProblems(bank.content.questions);
+  if (furiganaProblems.length) {
     throw new Error(
-      "The bank needs at least one slide (for example an intro note) before it can be published.",
+      `Furigana needs fixing:\n${furiganaProblems
+        .slice(0, 10)
+        .map((problem) => problem.message)
+        .join("\n")}`,
     );
   }
   const problems = findBankLanguageProblems(bank.content, language);

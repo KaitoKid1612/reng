@@ -71,6 +71,8 @@ Mọi slide có `id`, `type`; `teacherNotes` tùy chọn chỉ có trong payload
 
 Mọi câu có `id`, `type`, `prompt`, `points` là số nguyên dương, `tags`, `answer` là mảng và `explain`. Trường phục vụ nghe gồm `audio`, `transcript`, `maxListens` (null nghĩa là không giới hạn). Transcript cũng phải ẩn trước thời điểm được xem.
 
+Văn bản hiển thị của câu tiếng Nhật (`prompt`, `passage`, `options`, `tokens[].text`, `explain`, `transcript`) có thể chứa furigana `{漢字|かんじ}`, cùng cú pháp với nội dung bài học; không có trường furigana riêng. Đáp án học viên gõ (`answer` của `fill`, `dictation`, `listen` dạng điền) không chứa furigana (05/11/2026, [DD](detail-design/phase-3.md#furigana-trong-bài-tập--05112026)).
+
 | Type | Dữ liệu | Kiểu answer |
 |---|---|---|
 | `choice` | `options: string[]`, `multiple: boolean` mặc định false | Chỉ số các lựa chọn đúng, không trùng |

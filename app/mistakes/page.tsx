@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { buttonVariants } from "@/components/ui/button";
 import { answerLang } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
@@ -105,23 +106,33 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
                 </p>
                 <PassageDetails passage={entry.view.passage} lang={entry.view.lang} />
                 <p lang={entry.view.lang} className="question-prompt">
-                  {entry.view.prompt}
+                  <FuriganaText text={entry.view.prompt} />
                 </p>
                 {entry.lastAnswerText && (
                   <p>
                     Lần sai gần nhất:{" "}
-                    <span lang={answerLang(entry.view)}>{entry.lastAnswerText}</span>
+                    <span lang={answerLang(entry.view)}>
+                      <FuriganaText text={entry.lastAnswerText} />
+                    </span>
                   </p>
                 )}
                 <p>
-                  Đáp án: <strong lang={answerLang(entry.view)}>{entry.correctText}</strong>
+                  Đáp án:{" "}
+                  <strong lang={answerLang(entry.view)}>
+                    <FuriganaText text={entry.correctText} />
+                  </strong>
                 </p>
                 {entry.transcript && (
                   <p className="transcript">
-                    Lời nghe: <span lang={entry.view.lang}>{entry.transcript}</span>
+                    Lời nghe:{" "}
+                    <span lang={entry.view.lang}>
+                      <FuriganaText text={entry.transcript} />
+                    </span>
                   </p>
                 )}
-                <p className="muted">{entry.explain}</p>
+                <p className="muted">
+                  <FuriganaText text={entry.explain} />
+                </p>
               </article>
             ))}
           </details>
@@ -134,7 +145,9 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
             {resolved.map((entry) => (
               <li key={`${entry.assignmentId}:${entry.view.id}`}>
                 <div>
-                  <p lang={entry.view.lang}>{entry.view.prompt}</p>
+                  <p lang={entry.view.lang}>
+                    <FuriganaText text={entry.view.prompt} />
+                  </p>
                   <p className="item-meta">{entry.assignmentTitle}</p>
                 </div>
                 <span className="status-badge status-correct">Đã giải quyết</span>

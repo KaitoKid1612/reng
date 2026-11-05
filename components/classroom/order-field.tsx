@@ -1,7 +1,9 @@
 "use client";
 
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { Button } from "@/components/ui/button";
 import { joinOrderTokens } from "@/lib/assignment";
+import { toPlainJapanese } from "@/lib/japanese-text";
 
 import type { OrderToken } from "@/lib/assignment";
 
@@ -33,7 +35,7 @@ export function OrderField({ tokens, value, lang, isDisabled, onValueChange }: O
               disabled={isDisabled}
               onClick={() => onValueChange(value.filter((id) => id !== token.id))}
             >
-              {token.text}
+              <FuriganaText text={token.text} />
             </button>
           ))
         ) : (
@@ -41,7 +43,9 @@ export function OrderField({ tokens, value, lang, isDisabled, onValueChange }: O
         )}
       </div>
       <p className="visually-hidden" aria-live="polite">
-        {placed.length ? `Câu đang xếp: ${joinOrderTokens(placed.map((token) => token.text))}` : ""}
+        {placed.length
+          ? `Câu đang xếp: ${joinOrderTokens(placed.map((token) => toPlainJapanese(token.text)))}`
+          : ""}
       </p>
       <div className="order-bank" role="group" aria-label="Các mảnh còn lại">
         {remaining.map((token) => (
@@ -53,7 +57,7 @@ export function OrderField({ tokens, value, lang, isDisabled, onValueChange }: O
             disabled={isDisabled}
             onClick={() => onValueChange([...value, token.id])}
           >
-            {token.text}
+            <FuriganaText text={token.text} />
           </button>
         ))}
       </div>

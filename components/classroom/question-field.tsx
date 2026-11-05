@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
 import { OrderField } from "@/components/classroom/order-field";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { ListeningPlayer } from "@/components/listening/listening-player";
 
 import type { InputMode, QuestionView } from "@/lib/assignment";
@@ -80,7 +81,7 @@ export function QuestionField({
   // Outside the fieldset too: a passage there would push the legend off the top border.
   const passage = view.passage ? (
     <blockquote className="question-passage" lang={view.lang}>
-      {view.passage}
+      <FuriganaText text={view.passage} />
     </blockquote>
   ) : null;
   const player =
@@ -100,7 +101,9 @@ export function QuestionField({
         {meta}
         {passage}
         <fieldset>
-          <legend lang={view.lang}>{view.prompt}</legend>
+          <legend lang={view.lang}>
+            <FuriganaText text={view.prompt} />
+          </legend>
           <OrderField
             tokens={view.tokens}
             value={
@@ -123,7 +126,7 @@ export function QuestionField({
         {meta}
         {passage}
         <label htmlFor={fieldId} className="question-prompt" lang={view.lang}>
-          {view.prompt}
+          <FuriganaText text={view.prompt} />
         </label>
         {player}
         <AnswerInput
@@ -148,7 +151,9 @@ export function QuestionField({
       {meta}
       {passage}
       <fieldset>
-        <legend lang={view.lang}>{view.prompt}</legend>
+        <legend lang={view.lang}>
+          <FuriganaText text={view.prompt} />
+        </legend>
         {player}
         {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
         <div className="choice-list">
@@ -169,7 +174,9 @@ export function QuestionField({
                   disabled={isLocked}
                   onChange={() => onAnswerChange(toggleIndex(selection, index, choices.isMultiple))}
                 />
-                <span lang={view.lang}>{option}</span>
+                <span lang={view.lang}>
+                  <FuriganaText text={option} />
+                </span>
                 {result === "correct" && (
                   <>
                     <Check className="choice-mark" size={22} aria-hidden="true" />

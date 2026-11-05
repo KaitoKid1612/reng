@@ -2,6 +2,7 @@
 
 import { ListeningQuestionEditor } from "@/components/editor/listening-question-editor";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
+import { QUESTION_FURIGANA_HINT } from "@/components/editor/slide-labels";
 import { Button } from "@/components/ui/button";
 import {
   ADD_QUESTION_LABELS,
@@ -31,6 +32,7 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
         Câu luyện công khai dùng cho slide và bài luyện. Câu kiểm tra cần giữ kín đáp án nhập ở màn
         hình giao bài.
       </p>
+      <p className="small muted">{QUESTION_FURIGANA_HINT}</p>
       {content.questions.map((question, index) => {
         const slides = findReferencingSlides(content, question.id);
         const usage = slides.length

@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
 import { createUniqueId } from "@/lib/item-ids";
+import { hasBrokenFurigana, listFuriganaMarks, toPlainJapanese } from "@/lib/japanese-text";
 import { GRADING_PROFILES } from "@/lib/language-profile";
 import {
   lessonContentSchema,
@@ -533,11 +534,116 @@ function describeEachQuestion(content: DraftContent): PublishProblem[] {
     if (answerProblem) {
       return problem(answerProblem);
     }
+    const furiganaProblem = describeFuriganaProblem(question);
+    if (furiganaProblem) {
+      return problem(furiganaProblem);
+    }
     // Audio comes last: it is generated from the saved transcript once the question is ready.
     if (isListeningDraft(question) && !question.audio) {
       return problem(MISSING_AUDIO);
     }
     return [];
+  });
+}
+
+// Furigana in exercise text is written {漢字|かんじ}, as in the reader. A reading goes over kanji
+// or a number ({8つ|やっつ} for counters), and it must never give away what a question asks.
+const KANA_READING = /^[\p{Script=Hiragana}\p{Script=Katakana}ー]+$/u;
+const READABLE_BASE = /[\p{Script=Han}\p{Nd}]/u;
+
+// What the learner reads while answering; the explanation and transcript come afterwards.
+function textsShownWhileAnswering(question: EditableDraftQuestion) {
+  const texts = [question.prompt, question.passage ?? ""];
+  if (question.type === "choice" || question.type === "listen") {
+    texts.push(...(question.options ?? []));
+  }
+  if (question.type === "order") {
+    texts.push(...question.tokens.map((token) => token.text));
+  }
+  return texts;
+}
+
+function typedAnswers(question: EditableDraftQuestion) {
+  if (question.type === "fill" || question.type === "dictation") {
+    return question.answer;
+  }
+  if (question.type === "listen" && question.responseType === "fill") {
+    return question.answer.filter((item): item is string => typeof item === "string");
+  }
+  return [];
+}
+
+function correctOptions(question: EditableDraftQuestion) {
+  const isChoice =
+    question.type === "choice" ||
+    (question.type === "listen" && question.responseType === "choice");
+  if (!isChoice) {
+    return [];
+  }
+  const options = question.options ?? [];
+  return question.answer
+    .map((index) => (typeof index === "number" ? options[index] : undefined))
+    .filter((option): option is string => option !== undefined);
+}
+
+function describeFuriganaProblem(question: EditableDraftQuestion) {
+  const shown = textsShownWhileAnswering(question);
+  const texts = [
+    ...shown,
+    question.explain,
+    ...(isListeningDraft(question) ? [question.transcript] : []),
+  ];
+  if (texts.some(hasBrokenFurigana)) {
+    return "furigana viết theo dạng {漢字|かんじ}; kiểm tra lại dấu ngoặc nhọn và dấu |.";
+  }
+  if (
+    texts
+      .flatMap(listFuriganaMarks)
+      .some((mark) => !READABLE_BASE.test(mark.base) || !KANA_READING.test(mark.reading))
+  ) {
+    return "furigana đặt trên chữ Hán và ghi cách đọc bằng kana, ví dụ {学校|がっこう}.";
+  }
+  if (typedAnswers(question).some((answer) => /[{}]/.test(answer))) {
+    return "đáp án học viên gõ không dùng furigana; chỉ ghi chữ cần gõ.";
+  }
+  // Reading questions ask exactly what furigana would show.
+  if (question.tags.includes("kanji") && shown.some((text) => listFuriganaMarks(text).length)) {
+    return "câu luyện kanji không đặt furigana ở đề và lựa chọn, vì học viên sẽ thấy cách đọc.";
+  }
+  const promptReadings = [question.prompt, question.passage ?? ""]
+    .flatMap(listFuriganaMarks)
+    .map((mark) => mark.reading);
+  const answers = [...typedAnswers(question), ...correctOptions(question).map(toPlainJapanese)]
+    .map((answer) => answer.trim())
+    .filter(Boolean);
+  if (promptReadings.some((reading) => answers.includes(reading))) {
+    return "furigana trên đề trùng đáp án, học viên sẽ thấy đáp án; bỏ furigana ở chữ đang hỏi.";
+  }
+  // "「がっこう」はどれ？" with {学校|がっこう} on the right option shows which one it is.
+  const plainPrompt = toPlainJapanese(`${question.prompt} ${question.passage ?? ""}`);
+  if (
+    correctOptions(question)
+      .flatMap(listFuriganaMarks)
+      .some((mark) => mark.reading.length > 1 && plainPrompt.includes(mark.reading))
+  ) {
+    return "furigana ở đáp án đúng trùng chữ trong đề, học viên sẽ đoán ra; bỏ furigana ở các lựa chọn.";
+  }
+  return null;
+}
+
+/** Furigana problems alone, for scripts that publish banks without the full editor checks. */
+export function findFuriganaProblems(questions: readonly DraftQuestion[]): PublishProblem[] {
+  return questions.flatMap((question, index): PublishProblem[] => {
+    const message = isEditableQuestion(question) ? describeFuriganaProblem(question) : null;
+    return message
+      ? [
+          {
+            section: "questions",
+            itemId: question.id,
+            message: `Câu luyện ${index + 1}: ${message}`,
+          },
+        ]
+      : [];
   });
 }
 

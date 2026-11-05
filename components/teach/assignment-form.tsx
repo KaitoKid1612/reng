@@ -5,6 +5,7 @@ import { useRef, useState, useTransition } from "react";
 
 import { publishAssignmentAction } from "@/app/actions/classes";
 import { MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { FuriganaText } from "@/components/lessons/japanese-text";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
 import { Button } from "@/components/ui/button";
 import { assignmentSettingsSchema, MAX_ASSIGNMENT_QUESTIONS, MAX_ATTEMPTS } from "@/lib/assignment";
@@ -359,7 +360,9 @@ export function AssignmentForm({
                   )
                 }
               />
-              <span lang={languageTag === "ja-JP" ? "ja" : "vi"}>{question.prompt}</span>
+              <span lang={languageTag === "ja-JP" ? "ja" : "vi"}>
+                <FuriganaText text={question.prompt} />
+              </span>
               <span className="small muted">
                 {QUESTION_TYPE_LABELS[question.type]}, {question.points} điểm
               </span>
