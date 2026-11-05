@@ -119,3 +119,4 @@ Quay lại bản trước: dùng Instant Rollback ở Vercel › Deployments đ�
 | `npm run seed:local`, `seed:demo`, `admin:grant` | Tạo tài khoản và dữ liệu thử, cấp quyền quản trị; chỉ Supabase local |
 | `npm run daily:import` | Chuyển Google Sheet bài hằng ngày của giáo viên thành ngân hàng câu N5/N4 ([hướng dẫn](testing/n4-review-bank.md)) |
 | `npm run bank:sql`, `listening:sql` | Viết một file SQL (mặc định kết thúc bằng ROLLBACK) để xuất bản ngân hàng ôn hoặc nạp bộ đề nghe; không tự gửi tới database |
+| `npm run furigana:sql` | Viết một file SQL (mặc định ROLLBACK) thêm furigana cho nhiều câu của bài đã giao một lần, ví dụ cả bài hằng ngày, từ file xuất `assignment_items` và bản đã viết `{漢字|かんじ}`. Gọi `fix_assignment_question` cho từng câu (cần migration `20261105044634`), ghi lịch sử như khi sửa trên web; từ chối nếu khác gì ngoài furigana ([DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)) |

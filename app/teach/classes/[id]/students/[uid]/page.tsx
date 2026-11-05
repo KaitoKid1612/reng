@@ -163,6 +163,11 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                       : ", chưa nộp"}
                     {row.percent !== null ? `, ${formatPercent(row.percent)}` : ""}
                   </p>
+                  <p className="small">
+                    <Link href={`/teach/assignments/${row.assignment.id}`}>
+                      Đề sai hoặc khó đọc? Sửa lỗi hiển thị bài này
+                    </Link>
+                  </p>
                   {outcome && row.items.length > 0 && !visible.length && (
                     <p className="muted">
                       Không có câu {ANSWER_OUTCOME_LABELS[outcome].toLowerCase()} trong bài này.

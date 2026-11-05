@@ -206,6 +206,7 @@ Tra cứu nhanh; chi tiết ở dòng chú thích đầu mỗi file trong `supab
 | `20261104063229_normalize_vocabulary_kanji` | Chuẩn hóa `kanji` trong từ vựng v1, chặn giá trị sai kiểu |
 | `20261104110635_daily_listening_count` | `classes.daily_listening_count`: số câu nghe mỗi ngày (chưa có giao diện) |
 | `20261105012503_submit_expired_attempts` | Tự nộp lượt bỏ dở đã quá hạn của bài không cho nộp muộn ([DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)) |
+| `20261105044634_fix_assignment_question` | `assignment_item_edits` (lịch sử trước/sau), `fix_assignment_question`: giáo viên sửa đề, giải thích, furigana của câu đã giao; trigger snapshot chỉ cho qua đúng thay đổi này ([DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)) |
 
 ## Mở rộng dữ liệu dịch vụ
 

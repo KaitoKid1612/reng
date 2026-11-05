@@ -48,6 +48,20 @@ export function listFuriganaMarks(value: string) {
   }));
 }
 
+// Trims inside each mark, so saved text strips the same way in the database (strip_furigana in
+// migration 20261105044634) as it does here.
+export function tidyFurigana(value: string) {
+  return value.replace(
+    FURIGANA,
+    (_match, base: string, reading: string) => `{${base.trim()}|${reading.trim()}}`,
+  );
+}
+
+// Removes marks exactly like strip_furigana in the database: the written form stays as typed.
+export function stripFuriganaMarks(value: string) {
+  return value.replace(FURIGANA, (_match, base: string) => base);
+}
+
 // A brace left once the well-formed marks are removed means a mark lost its "|" or a brace, and
 // learners would see the raw text.
 export function hasBrokenFurigana(value: string) {

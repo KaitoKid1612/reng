@@ -28,6 +28,7 @@
     "test:e2e:supabase": "playwright test -c playwright.supabase.config.ts",
     "daily:import": "node --import tsx scripts/import-daily-sheet.ts",
     "bank:sql": "node --import tsx scripts/review-bank-sql.ts",
+    "furigana:sql": "node --import tsx scripts/furigana-snapshot-sql.ts",
     "listening:sql": "node --env-file-if-exists=.env.local --import tsx scripts/listening-draft-sql.ts"
   },
   "dependencies": {

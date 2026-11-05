@@ -52,6 +52,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | T11 | Chia sẻ bài: cấp/thu hồi quyền phiên bản, công khai | `/teach/lessons/[id]/sharing` | Dịch vụ |
 | T12 | Bài được chia sẻ với tôi | `/teach/library` | Dịch vụ |
 | T13 | Cập nhật từ bài mẫu | `/teach/lessons/[id]/starter` | 02/11/2026 |
+| T14 | Sửa lỗi hiển thị bài đã giao (đề, giải thích, furigana) | `/teach/assignments/[id]` | 05/11/2026 |
 
 ### Màn hình dùng chung
 

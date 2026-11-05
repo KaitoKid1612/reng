@@ -131,6 +131,9 @@ function AssignmentItem({ classId, assignment }: AssignmentItemProps) {
           {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
           {assignment.status === "closed" ? ", đã đóng" : ""}
         </p>
+        <p className="small">
+          <Link href={`/teach/assignments/${assignment.id}`}>Xem câu hỏi, sửa lỗi hiển thị</Link>
+        </p>
         {assignment.result && assignment.result.assignedCount > 0 && (
           <AssignmentResultLine result={assignment.result} />
         )}

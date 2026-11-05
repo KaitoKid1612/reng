@@ -88,3 +88,10 @@ Truy vết tại [checklist giai đoạn 3](../testing/phase-3.md). Local cần 
 - Học viên chưa đọc được kanji (lớp N5) thấy cách đọc phía trên chữ Hán ở đề, lựa chọn, đoạn văn, mảnh sắp xếp, giải thích và lời nghe, khi giáo viên viết `{漢字|かんじ}` như ở trang đọc bài. Áp dụng khi làm bài, ở phản hồi Kiểm tra câu này, trang kết quả, lịch sử bài hằng ngày, sổ lỗi và các trang của giáo viên.
 - Không đặt furigana lên chữ đang hỏi cách đọc và không dùng trong đáp án học viên gõ: Reng từ chối xuất bản và nói câu nào cần sửa.
 - Bài đã giao giữ nguyên nội dung lúc giao. Furigana có từ bài giao tạo sau khi lớp dùng phiên bản mới của bài nguồn ([DD](../detail-design/phase-3.md#furigana-trong-bài-tập--05112026)).
+
+## Sửa lỗi hiển thị bài đã giao — 05/11/2026
+
+- Giáo viên mở bài đã giao (kể cả bài luyện hằng ngày) từ trang lớp, bấm **Sửa lỗi hiển thị** ở câu cần sửa: sửa được đề bài, giải thích và furigana. Đáp án, lựa chọn, điểm, loại câu và thứ tự câu không đổi được; chữ của lựa chọn, mảnh câu, đoạn văn và lời nghe chỉ thêm hoặc bỏ furigana.
+- Câu trả lời học viên đang làm, lượt đã nộp và điểm giữ nguyên; học viên mở lại bài là thấy nội dung mới.
+- Mỗi lần sửa lưu nội dung trước và sau; trang hiện "Đã sửa N lần" kèm đề trước/sau.
+- Sửa trong bài giao không đổi bài nguồn: muốn các bài giao sau không lặp lỗi thì sửa cả bài nguồn rồi xuất bản ([DD](../detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)).

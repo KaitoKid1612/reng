@@ -116,6 +116,7 @@ Mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ theo n
 
 ### 05/11/2026
 
+- Sửa lỗi hiển thị bài đã giao: giáo viên sửa đề, giải thích và furigana của câu đã giao (kể cả bài hằng ngày) mà không đổi đáp án, bài làm hay điểm; mỗi lần sửa được lưu lại. Cần áp migration `20261105044634`. Xem [thiết kế](docs/detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026).
 - Furigana trong bài tập: đề, lựa chọn, đoạn văn, giải thích và lời nghe hiện cách đọc khi giáo viên viết `{漢字|かんじ}`, như trang đọc bài; xuất bản từ chối furigana làm lộ đáp án. Xem [thiết kế](docs/detail-design/phase-3.md#furigana-trong-bài-tập--05112026).
 - Rà soát tài liệu, mã nguồn và trải nghiệm (04–05/11/2026): mọi trang ghi ngày giờ một kiểu ("23:59 04/11/2026"), form giao bài dùng chữ "giao" thay cho "xuất bản", lượt bỏ dở của bài không cho nộp muộn được tự nộp khoảng 6:00 sau hạn (cần áp migration `20261105012503`), thêm [sổ tay vận hành](docs/operations.md), viết lại [kiến trúc](docs/02-architecture.md). Xem [báo cáo](docs/testing/system-review-2026-11-05.md).
 

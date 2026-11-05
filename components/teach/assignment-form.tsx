@@ -4,7 +4,7 @@ import { unstable_rethrow } from "next/navigation";
 import { useRef, useState, useTransition } from "react";
 
 import { publishAssignmentAction } from "@/app/actions/classes";
-import { MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { MODE_LABELS, QUESTION_TYPE_LABELS } from "@/components/classroom/assignment-labels";
 import { FuriganaText } from "@/components/lessons/japanese-text";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
 import { Button } from "@/components/ui/button";
@@ -24,14 +24,6 @@ import type { TestQuestionDraft, TestQuestionType } from "@/lib/test-question-dr
 const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
   after_due: ", công bố kết quả sau hạn",
   after_submit: ", công bố kết quả ngay sau khi nộp",
-};
-
-const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = {
-  choice: "trắc nghiệm",
-  fill: "điền từ",
-  listen: "nghe",
-  dictation: "chính tả",
-  order: "sắp xếp câu",
 };
 
 export interface AssignableLesson {

@@ -1,11 +1,19 @@
 import { formatStudyDateTime } from "@/lib/study-days";
 
-import type { AssignmentMode } from "@/lib/assignment";
+import type { AssignableQuestion, AssignmentMode } from "@/lib/assignment";
 import type { AssignmentStatus } from "@/lib/server/learner";
 
 export const MODE_LABELS: Record<AssignmentMode, string> = {
   practice: "Luyện tập",
   test: "Kiểm tra",
+};
+
+export const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = {
+  choice: "trắc nghiệm",
+  fill: "điền từ",
+  listen: "nghe",
+  dictation: "chính tả",
+  order: "sắp xếp câu",
 };
 
 const STATUS_LABELS: Record<AssignmentStatus, { label: string; tone: string }> = {

@@ -1751,6 +1751,40 @@ rt {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
+/* Display fixes for an assignment already given (/teach/assignments/[id]). */
+.fix-question-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+.fix-question-list > li {
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+.fix-options {
+  margin: 0 0 8px;
+  padding-left: 24px;
+}
+.fix-history {
+  margin: 8px 0 12px;
+}
+.question-fix-form {
+  margin-top: 12px;
+}
+.question-fix-list {
+  border: 0;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.question-fix-list legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
 .item-list > li > div {
   min-width: 0;
 }
