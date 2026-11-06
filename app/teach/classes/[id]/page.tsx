@@ -534,7 +534,15 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             }
             defaultSlide={prefill?.slide}
           />
-          <ClassSessionList classId={classRow.id} sessions={sessions} />
+          <ClassSessionList
+            classId={classRow.id}
+            sessions={sessions}
+            members={report.reports.map(({ member }) => ({
+              userId: member.userId,
+              fullName: member.fullName,
+              joinedAt: member.joinedAt,
+            }))}
+          />
         </section>
       )}
       <section className="section-block" aria-labelledby="class-content">

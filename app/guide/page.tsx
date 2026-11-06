@@ -113,7 +113,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Chuyển slide bằng phím mũi tên, phím cách hoặc nút Tiếp/Trước. Nghĩa tiếng Việt và câu mẫu hiện dần sau mỗi lần bấm Tiếp để hỏi lớp trước.",
       "Bấm Presenter (hoặc phím S) để mở cửa sổ riêng có ghi chú, slide kế tiếp và đồng hồ; không chia sẻ cửa sổ này. Nút PDF dùng để in bài.",
       "Trong cửa sổ Presenter, phím mũi tên, Page Up/Page Down, phím cách và bút trình chiếu cũng chuyển slide của thẻ đang chiếu.",
-      "Hết buổi, bấm Ghi buổi dạy (slide …) trên thanh trình chiếu: Nhật ký buổi dạy mở ở thẻ mới với bài và slide điền sẵn, nên thẻ đang chia sẻ trong Meet vẫn là slide và học viên không thấy điểm của lớp. Thêm ghi chú riêng rồi bấm Ghi buổi dạy. Buổi sau bấm Trình chiếu tiếp ở khối Buổi dạy online để chiếu đúng chỗ.",
+      "Hết buổi, bấm Ghi buổi dạy (slide …) trên thanh trình chiếu: Nhật ký buổi dạy mở ở thẻ mới với bài và slide điền sẵn, nên thẻ đang chia sẻ trong Meet vẫn là slide và học viên không thấy điểm của lớp. Thêm ghi chú riêng rồi bấm Ghi buổi dạy. Ngay dưới buổi vừa ghi là mục Điểm danh: bỏ chọn học viên vắng rồi bấm Lưu điểm danh (học viên không thấy); danh sách buổi ghi ai hay vắng. Buổi sau bấm Trình chiếu tiếp ở khối Buổi dạy online để chiếu đúng chỗ.",
     ],
     note: "Tài khoản Google miễn phí giới hạn 60 phút cho cuộc gọi từ 3 người; buổi dài hơn cần chia buổi hoặc dùng Google Workspace.",
   },

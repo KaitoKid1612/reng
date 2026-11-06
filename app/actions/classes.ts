@@ -5,7 +5,11 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { classScheduleSchema } from "@/lib/class-schedule";
-import { classSessionInputSchema, isFutureSession } from "@/lib/class-sessions";
+import {
+  classSessionInputSchema,
+  isFutureSession,
+  sessionAttendanceInputSchema,
+} from "@/lib/class-sessions";
 import { classSettingsSchema } from "@/lib/class-settings";
 import {
   MAX_DAILY_PRACTICE_SIZE,
@@ -19,7 +23,11 @@ import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
 import { saveClassSchedule } from "@/lib/server/class-schedule";
 import { pinLatestVersion, removeClassLesson, setLessonArchived } from "@/lib/server/lesson-usage";
-import { deleteClassSession, recordClassSession } from "@/lib/server/class-sessions";
+import {
+  deleteClassSession,
+  recordClassSession,
+  saveSessionAttendance,
+} from "@/lib/server/class-sessions";
 import { createTodayPractice, setDailyPractice } from "@/lib/server/daily-practice";
 import {
   createClass,
@@ -584,4 +592,33 @@ export async function classSessionAction(
   }
   refresh();
   return { notice: "Đã ghi buổi dạy vào nhật ký." };
+}
+
+// The teacher marks who took part in a recorded session; a learner left unticked is absent.
+export async function sessionAttendanceAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found };
+  }
+  const parsed = sessionAttendanceInputSchema.safeParse({
+    classId: readField(formData, "classId"),
+    sessionId: readField(formData, "sessionId"),
+    memberIds: formData.getAll("memberId").map(String),
+    presentIds: formData.getAll("presentId").map(String),
+  });
+  if (!parsed.success) {
+    return { error: GENERIC_ERROR };
+  }
+  try {
+    await saveSessionAttendance(account.id, parsed.data);
+  } catch (error) {
+    return { error: describeError(error) };
+  }
+  refresh();
+  const present = parsed.data.presentIds.length;
+  const marked = present + parsed.data.absentIds.length;
+  return { notice: `Đã lưu điểm danh: có mặt ${present}/${marked}.` };
 }

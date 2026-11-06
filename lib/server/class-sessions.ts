@@ -4,14 +4,21 @@ import { z } from "zod";
 
 import { getTeacherClass } from "@/lib/server/classes";
 import {
+  callRpc,
   createServiceClient,
+  describeServiceFailure,
   runMutation,
+  selectEveryPage,
   selectOptional,
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
 
-import type { ClassSessionInput } from "@/lib/class-sessions";
+import type {
+  AttendanceMark,
+  ClassSessionInput,
+  SessionAttendanceInput,
+} from "@/lib/class-sessions";
 
 // The class page shows the latest sessions; older ones stay in the database.
 const RECENT_SESSIONS = 12;
@@ -31,6 +38,45 @@ export interface ClassSession {
   lesson: { id: string; versionId: string; title: string; versionNo: number } | null;
   slideReached: number | null;
   notes: string;
+  /** Learners marked present or absent; null while the attendance table is not available. */
+  marks: AttendanceMark[] | null;
+}
+
+const markRowSchema = z.object({
+  session_id: z.uuid(),
+  user_id: z.uuid(),
+  is_present: z.boolean(),
+});
+
+// Before migration 20261106102652 is applied the attendance table is missing; the log still opens,
+// without attendance. Twelve sessions of a large class pass the 1000-row cap, so it is paged.
+async function listAttendance(sessionIds: readonly string[]) {
+  const marks = new Map<string, AttendanceMark[]>();
+  if (!sessionIds.length) {
+    return marks;
+  }
+  try {
+    const rows = await selectEveryPage(
+      (from, to) =>
+        createServiceClient()
+          .from("class_session_attendance")
+          .select("session_id, user_id, is_present")
+          .in("session_id", [...sessionIds])
+          .order("session_id")
+          .order("user_id")
+          .range(from, to),
+      markRowSchema,
+    );
+    for (const row of rows) {
+      const list = marks.get(row.session_id) ?? [];
+      list.push({ userId: row.user_id, isPresent: row.is_present });
+      marks.set(row.session_id, list);
+    }
+    return marks;
+  } catch (error) {
+    console.error("Session attendance unavailable", describeServiceFailure(error));
+    return null;
+  }
 }
 
 // Callers check that the teacher owns the class before listing its sessions.
@@ -49,12 +95,15 @@ export async function listClassSessions(classId: string): Promise<ClassSession[]
   const versionIds = [
     ...new Set(rows.flatMap((row) => (row.lesson_version_id ? [row.lesson_version_id] : []))),
   ];
-  const versions = versionIds.length
-    ? await selectRows(
-        service.from("lesson_versions").select("id, title, version_no").in("id", versionIds),
-        z.object({ id: z.uuid(), title: z.string(), version_no: z.number().int() }),
-      )
-    : [];
+  const [versions, attendance] = await Promise.all([
+    versionIds.length
+      ? selectRows(
+          service.from("lesson_versions").select("id, title, version_no").in("id", versionIds),
+          z.object({ id: z.uuid(), title: z.string(), version_no: z.number().int() }),
+        )
+      : [],
+    listAttendance(rows.map((row) => row.id)),
+  ]);
   return rows.map((row) => {
     const version = versions.find((item) => item.id === row.lesson_version_id);
     return {
@@ -71,8 +120,24 @@ export async function listClassSessions(classId: string): Promise<ClassSession[]
           : null,
       slideReached: row.slide_reached,
       notes: row.notes,
+      marks: attendance ? (attendance.get(row.id) ?? []) : null,
     };
   });
+}
+
+/** Marks learners of the teacher's own class present or absent for one recorded session. */
+export async function saveSessionAttendance(teacherId: string, input: SessionAttendanceInput) {
+  return callRpc(
+    "save_session_attendance",
+    {
+      p_teacher_id: teacherId,
+      p_class_id: input.classId,
+      p_session_id: input.sessionId,
+      p_present_ids: input.presentIds,
+      p_absent_ids: input.absentIds,
+    },
+    z.number().int(),
+  );
 }
 
 // The session keeps the version the class shows at the time, so its slide number still points

@@ -61,3 +61,62 @@ export function parseSessionPrefill(query: unknown, classLessonIds: readonly str
   }
   return { lessonId: parsed.data.lesson, slide: parsed.data.slide ?? null };
 }
+
+export interface AttendanceMark {
+  userId: string;
+  isPresent: boolean;
+}
+
+// The form lists every learner shown with a checkbox each; unticked listed learners are absent.
+export const sessionAttendanceInputSchema = z
+  .object({
+    classId: z.uuid(),
+    sessionId: z.uuid(),
+    memberIds: z.array(z.uuid()).min(1).max(1000),
+    presentIds: z.array(z.uuid()).max(1000),
+  })
+  .refine((input) => input.presentIds.every((id) => input.memberIds.includes(id)), {
+    path: ["presentIds"],
+  })
+  .transform((input) => ({
+    classId: input.classId,
+    sessionId: input.sessionId,
+    presentIds: [...new Set(input.presentIds)],
+    absentIds: [...new Set(input.memberIds)].filter((id) => !input.presentIds.includes(id)),
+  }));
+
+export type SessionAttendanceInput = z.infer<typeof sessionAttendanceInputSchema>;
+
+// Read after "Điểm danh:" in the session log.
+export function describeAttendance(marks: readonly AttendanceMark[]) {
+  if (!marks.length) {
+    return "chưa ghi";
+  }
+  const present = marks.filter((mark) => mark.isPresent).length;
+  return `có mặt ${present}/${marks.length}`;
+}
+
+export interface LearnerAttendance {
+  userId: string;
+  absent: number;
+  marked: number;
+}
+
+/**
+ * Learners missing sessions, most absences first, counted over the sessions given: only sessions a
+ * learner was marked in count, so a learner who joined later is not absent from earlier ones.
+ */
+export function findFrequentAbsences(sessions: readonly { marks: readonly AttendanceMark[] }[]) {
+  const totals = new Map<string, LearnerAttendance>();
+  for (const session of sessions) {
+    for (const mark of session.marks) {
+      const total = totals.get(mark.userId) ?? { userId: mark.userId, absent: 0, marked: 0 };
+      total.marked += 1;
+      total.absent += mark.isPresent ? 0 : 1;
+      totals.set(mark.userId, total);
+    }
+  }
+  return [...totals.values()]
+    .filter((total) => total.absent > 0)
+    .sort((first, second) => second.absent - first.absent || second.marked - first.marked);
+}

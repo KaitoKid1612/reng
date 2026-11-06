@@ -2444,6 +2444,14 @@ rt {
 .join-invite-link {
   overflow-wrap: anywhere;
 }
+/* Attendance under a logged session: the legend is a hint, not a heading. */
+.session-attendance {
+  margin-top: 8px;
+}
+.session-attendance legend {
+  font-weight: 400;
+  margin-bottom: 4px;
+}
 /* The assignment message for the class chat: a copy button, its status and a hand-copy fallback. */
 .copy-message {
   display: grid;
