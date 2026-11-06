@@ -39,7 +39,7 @@ async function openSection(page: Page, name: RegExp) {
 async function publishAssignment(page: Page) {
   await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
   await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
-  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
+  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
 }
 
 async function placePieces(page: Page, prompt: string, pieces: readonly string[]) {

@@ -50,7 +50,7 @@ async function createClass(page: Page, name: string) {
 async function publishAssignment(page: Page) {
   await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
   await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
-  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
+  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
 }
 
 async function assignmentIdByTitle(page: Page, title: string) {
@@ -93,7 +93,7 @@ test("teacher creates classes, adds a pinned lesson and publishes practice and t
   await page.getByLabel(/Các đáp án được chấp nhận/).fill("きみ\nあなた");
   await page.getByLabel("Giải thích đáp án", { exact: true }).fill(PRIVATE_EXPLANATION);
   await publishAssignment(page);
-  await expect(page.getByText(`Kiểm tra nhanh ${RUN_ID}`)).toBeVisible();
+  await expect(page.getByRole("heading", { name: `Kiểm tra nhanh ${RUN_ID}` })).toBeVisible();
 });
 
 test("a new learner joins through sign-up, email confirmation and the class code", async ({
@@ -137,7 +137,7 @@ test("practice feedback, mistake book, two-tab conflict and offline saving", asy
   await waitForSaved(page);
   await page.getByRole("button", { name: "Kiểm tra câu này", exact: true }).click();
   await expect(page.getByText("Chưa đúng.")).toBeVisible();
-  await expect(page.getByRole("radio", { name: "ます", exact: true })).toBeDisabled();
+  await expect(page.getByRole("radio", { name: /^ます , bạn chọn, chưa đúng$/ })).toBeDisabled();
   await page.getByRole("button", { name: "Nộp bài", exact: true }).click();
   await page.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();
   // With a wrong practice answer the review opens on the mistakes.
@@ -252,10 +252,13 @@ test("learners outside the class and anonymous callers are refused", async ({
     `/assignments/${state.practiceId}`,
     `/assignments/${state.testId}/results`,
     `/classes/${state.classA}`,
-    "/teach",
-    `/teach/classes/${state.classA}`,
   ]) {
     expect((await page.goto(path))?.status(), path).toBe(404);
+  }
+  // Teacher pages send a learner to the teaching start page before any class lookup.
+  for (const path of ["/teach", `/teach/classes/${state.classA}`]) {
+    await page.goto(path);
+    await expect(page, path).toHaveURL(/\/teach\/start$/);
   }
   const origin = new URL(page.url()).origin;
   const start = await page.request.post(`/api/assignments/${state.practiceId}/attempts`, {

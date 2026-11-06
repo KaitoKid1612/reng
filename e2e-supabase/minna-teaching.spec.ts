@@ -121,8 +121,8 @@ test("the teacher opens a Japanese class, pins lesson 11 and assigns practice", 
   await page.getByRole("checkbox", { name: FINAL_N_PROMPT }).check();
   await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
   await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
-  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
-  await expect(page.getByText(ASSIGNMENT_TITLE)).toBeVisible();
+  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
+  await expect(page.getByRole("heading", { name: ASSIGNMENT_TITLE })).toBeVisible();
 
   const today = page.getByRole("button", { name: "Giao bài hôm nay ngay", exact: true });
   await expect(today).toBeDisabled();

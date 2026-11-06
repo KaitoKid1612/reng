@@ -130,8 +130,7 @@ test("teacher authors listening questions, generates audio for the saved draft a
   await expect(page.getByText("2 câu nghe chưa có audio nên chưa xuất bản được.")).toBeVisible();
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   const problems = page.getByRole("region", { name: "Cần sửa trước khi xuất bản" });
-  await expect(problems).toContainText("Câu luyện 1: chưa có audio");
-  await expect(problems).toContainText("Câu luyện 2: chưa có audio");
+  await expect(problems).toContainText("Câu luyện 1–2: 2 câu nghe chưa có audio");
 
   // The real script reads the saved draft; files already on disk mean no TTS call is made.
   const files = [LISTEN_HASH, DICTATION_HASH].map((hash) => `public/audio/lessons/${hash}.mp3`);
@@ -298,7 +297,7 @@ test("practice assignments keep listen counts and the report flags weak listenin
   await dictationOption.getByRole("checkbox").check();
   await teacher.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
   await teacher.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
-  await teacher.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
+  await teacher.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
 
   const student = await newSignedInPage(browser, learner.email, learner.password);
   await serveAudio(student, SHORT_MP3);
@@ -328,10 +327,10 @@ test("practice assignments keep listen counts and the report flags weak listenin
 
   await teacher.goto(`/teach/classes/${classId}`);
   const row = teacher.getByRole("row", { name: new RegExp(learner.name) });
-  await expect(row).toContainText("3.5");
+  await expect(row).toContainText("3,5");
   await expect(row).toContainText("Yếu phần nghe");
   await row.getByRole("link", { name: learner.name }).click();
-  await expect(teacher.getByText("nghe trung bình 3.5 lần mỗi câu nghe")).toBeVisible();
+  await expect(teacher.getByText("nghe trung bình 3,5 lần mỗi câu nghe")).toBeVisible();
   await expect(teacher.locator(".result-row-meta").filter({ hasText: "nghe 6 lần" })).toBeVisible();
   await teacher.context().close();
   await student.context().close();
