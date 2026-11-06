@@ -93,9 +93,9 @@ export default async function AssignmentFixPage({ params }: AssignmentFixPagePro
         {assignment.status === "closed" ? ", đã đóng" : ""}
       </p>
       <p className="fix-intro">
-        Bấm <strong>Sửa</strong> ở câu cần sửa: bên trái là câu học viên đang thấy, bên phải là bản
-        sửa với ô cách đọc cho từng chữ Hán. Đáp án, lựa chọn và thứ tự câu giữ nguyên, nên bài làm
-        và điểm của học viên không đổi; học viên mở lại bài là thấy nội dung mới.
+        Bấm <strong>Sửa</strong> ở câu cần sửa: khung Trước là câu học viên đang thấy, khung Sau là
+        bản sửa với ô cách đọc cho từng chữ Hán. Đáp án, lựa chọn và thứ tự câu giữ nguyên, nên bài
+        làm và điểm của học viên không đổi; học viên mở lại bài là thấy nội dung mới.
       </p>
       <p className="small muted fix-intro">
         Câu được chép từ bài nguồn lúc giao. Để các bài giao sau không lặp lỗi, sửa cả trong{" "}

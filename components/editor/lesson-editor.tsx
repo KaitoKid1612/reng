@@ -273,7 +273,12 @@ export function LessonEditor({
             <ul>
               {problems.map((problem, index) => (
                 <li key={index}>
-                  <strong>{SECTION_LABELS[problem.section]}:</strong>{" "}
+                  {/* "Câu luyện 3: …" already names its section; a second label would repeat it. */}
+                  {!problem.message.startsWith(SECTION_LABELS[problem.section]) && (
+                    <>
+                      <strong>{SECTION_LABELS[problem.section]}:</strong>{" "}
+                    </>
+                  )}
                   {problem.section === "slides" && problem.itemId ? (
                     <button
                       type="button"
