@@ -2444,6 +2444,30 @@ rt {
 .join-invite-link {
   overflow-wrap: anywhere;
 }
+/* The assignment message for the class chat: a copy button, its status and a hand-copy fallback. */
+.copy-message {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  margin-top: 8px;
+}
+.copy-message p {
+  margin: 0;
+}
+/* .link-button resets font, so the list action needs the same size as the links beside it. */
+.copy-message .copy-message-link {
+  font-size: 14px;
+}
+.copy-message-text {
+  width: 100%;
+  border: 1px solid #a8a49d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  resize: vertical;
+}
 /* The invite text ends in a paragraph, so the buttons below need their own space. */
 .editor-audio {
   display: block;

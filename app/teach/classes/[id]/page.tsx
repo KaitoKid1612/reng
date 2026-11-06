@@ -7,6 +7,7 @@ import { ClassSessionForm } from "@/components/teach/class-session-form";
 import { ClassSessionList } from "@/components/teach/class-session-list";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
 import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
+import { CopyMessageButton } from "@/components/teach/copy-message-button";
 import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
@@ -16,6 +17,7 @@ import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeachingPanel } from "@/components/teach/teaching-panel";
 import { buttonVariants } from "@/components/ui/button";
 import { classQuestionLang } from "@/lib/assignment";
+import { buildAssignmentMessage } from "@/lib/assignment-message";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
@@ -95,6 +97,8 @@ const RECENT_ASSIGNMENTS = 5;
 interface AssignmentItemProps {
   classId: string;
   assignment: ReportAssignment;
+  /** The class chat message; null for a self-study class, which has no one to tell. */
+  message: string | null;
 }
 
 interface MissingLearnersProps {
@@ -121,7 +125,7 @@ function MissingLearners({ classId, learners }: MissingLearnersProps) {
   );
 }
 
-function AssignmentItem({ classId, assignment }: AssignmentItemProps) {
+function AssignmentItem({ classId, assignment, message }: AssignmentItemProps) {
   return (
     <li>
       <div>
@@ -134,6 +138,9 @@ function AssignmentItem({ classId, assignment }: AssignmentItemProps) {
         <p className="small">
           <Link href={`/teach/assignments/${assignment.id}`}>Xem câu hỏi, sửa lỗi hiển thị</Link>
         </p>
+        {message && assignment.status === "published" && (
+          <CopyMessageButton message={message} isCompact />
+        )}
         {assignment.result && assignment.result.assignedCount > 0 && (
           <AssignmentResultLine result={assignment.result} />
         )}
@@ -163,6 +170,18 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
     report.lessons.map((lesson) => lesson.lessonId),
   );
   const justAssigned = report.assignments.find((assignment) => assignment.id === query.assigned);
+  const messageFor = (assignment: ReportAssignment) =>
+    classRow.self_study
+      ? null
+      : buildAssignmentMessage({
+          className: classRow.name,
+          title: assignment.title,
+          mode: assignment.mode,
+          dueAt: assignment.dueAt,
+          allowLate: assignment.allowLate,
+          url: absoluteUrl(`/assignments/${assignment.id}`),
+        });
+  const justAssignedMessage = justAssigned ? messageFor(justAssigned) : null;
   // The source lookup reads question lists, so it only runs while daily practice is on.
   const [sessions, dailySource, schedule] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
@@ -445,15 +464,23 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
       <section className="section-block" aria-labelledby="assignments-title">
         <h2 id="assignments-title">Bài đã giao</h2>
         {justAssigned && (
-          <p className="notice-panel" role="status">
-            Đã giao «{justAssigned.title}». Học viên thấy bài ở mục Hôm nay học gì và trang lớp.
-          </p>
+          <div className="notice-panel">
+            <p role="status">
+              Đã giao «{justAssigned.title}». Học viên thấy bài ở mục Hôm nay học gì và trang lớp.
+            </p>
+            {justAssignedMessage && <CopyMessageButton message={justAssignedMessage} />}
+          </div>
         )}
         {report.assignments.length ? (
           <>
             <ul className="item-list">
               {report.assignments.slice(0, RECENT_ASSIGNMENTS).map((assignment) => (
-                <AssignmentItem key={assignment.id} classId={classRow.id} assignment={assignment} />
+                <AssignmentItem
+                  key={assignment.id}
+                  classId={classRow.id}
+                  assignment={assignment}
+                  message={messageFor(assignment)}
+                />
               ))}
             </ul>
             {report.assignments.length > RECENT_ASSIGNMENTS && (
@@ -465,6 +492,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
                       key={assignment.id}
                       classId={classRow.id}
                       assignment={assignment}
+                      message={messageFor(assignment)}
                     />
                   ))}
                 </ul>
