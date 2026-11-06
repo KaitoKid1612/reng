@@ -215,3 +215,20 @@ Yêu cầu mới mở Reng thành dịch vụ cho nhiều giáo viên, hướng 
 Chưa ước lượng lịch trước khi chốt lát kỹ thuật. OCR provider, hosting worker và ngân sách theo trang cần thử dữ liệu thực; không trì hoãn A/B vì C2. Thu phí, marketplace, tự tạo Meet bằng OAuth và đồng bộ slide từ xa chưa thuộc mốc đầu. Xem [BD](basic-design/teaching-service.md), [DD dự kiến](detail-design/teaching-service.md), [checklist NOT RUN](testing/teaching-service.md).
 
 Ưu tiên trong Service B là B1 trước B2: hoàn thiện luồng giáo viên tự soạn theo [hướng dẫn sản phẩm](content-authoring.md), dùng một bài dễ và một lớp để đo tính thực tế. Reng chuẩn bị mẫu và một bộ minh họa nhỏ có giáo viên duyệt, không nhập cả giáo trình trước khi thử. Scan/OCR vẫn sau luồng nhập bảng thủ công; không phụ thuộc AI để dựng slide hoặc giao practice.
+
+## Ý tưởng bổ sung cho pilot — 06/11/2026
+
+Đề xuất sau đợt rà soát ngày 06/11/2026 ([báo cáo](testing/project-audit-2026-11-06.md)), người dùng đồng ý làm tiếp. Thứ tự theo tác động với pilot dạy tiếng Nhật online cho người Việt; công sức là ước lượng tương đối.
+
+| # | Ý tưởng | Vì sao | Công sức | Trạng thái |
+|---|---|---|---|---|
+| 1 | Chế độ luyện thi JLPT: đề thi thử có giới hạn thời gian mỗi lượt, điểm theo phần (từ vựng, ngữ pháp – đọc, nghe), đếm ngược ngày thi | Kỳ JLPT Chủ nhật 6/12/2026; đã có ngân hàng N5/N4, bài kiểm tra và đồng hồ hạn nộp. Kéo mục "Đề thi thử có đếm giờ" của giai đoạn 6 lên sớm | Vừa | Chờ quyết định: giới hạn thời gian theo lượt hay theo bài, chia phần theo nhãn câu, ngày thi theo lớp hay theo học viên |
+| 2 | Tin nhắn giao bài cho nhóm Zalo/Messenger | Lớp ở Việt Nam nhận bài qua nhóm chat; trước đây chỉ sao chép được link mời | Nhỏ | **Đã làm 06/11/2026** ([DD](detail-design/phase-3.md#tin-nhắn-giao-bài-cho-nhóm-lớp--06112026)) |
+| 3 | Điểm danh trong nhật ký buổi dạy | Lớp thật và trung tâm cần tỉ lệ đi học | Nhỏ | **Đã làm 06/11/2026** ([DD](detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026)), cần áp migration `20261106102652` |
+| 4 | Học viên hỏi giáo viên ngay trên câu sai; giáo viên trả lời và dùng luôn "chấp nhận đáp án tương đương" hoặc "sửa hiển thị" | Hiện học viên chụp màn hình gửi Zalo, mất ngữ cảnh câu và câu trả lời | Vừa | Chờ quyết định: thông báo cho giáo viên qua đâu khi email chưa bật |
+| 5 | AI soạn nháp câu luyện từ từ vựng và mẫu câu của bài, giáo viên duyệt từng câu trước khi xuất bản | Soạn câu là khâu tốn công nhất của giáo viên | Vừa | Chờ quyết định: nhà cung cấp, khóa API, hạn mức chi phí theo giáo viên |
+| 6 | Shadowing: học viên ghi âm và nghe lại cạnh audio mẫu (không lưu file, không chấm) | Bước đầu rẻ của "chấm phát âm" | Nhỏ–vừa | Chờ audio mẫu sinh sẵn (khóa Azure) |
+| 7 | Cài Reng lên màn hình chính (PWA) và nhắc bài bằng Web Push | Production chưa bật email nên chưa có kênh nhắc bài; iPhone chỉ nhận push khi đã cài | Nhỏ + vừa | Chờ quyết định: khóa VAPID, nội dung và giờ nhắc |
+| 8 | Theo dõi học phí với mã VietQR (giáo viên tick đã thu, không qua cổng thanh toán) | Giáo viên tự do thu học phí bằng chuyển khoản | Vừa | Khi mở cho nhiều giáo viên; cần quyết định lưu thông tin tài khoản ngân hàng |
+| 9 | Trang giới thiệu giáo viên và đăng ký học thử | Giáo viên tự tuyển học viên | Vừa | Sau khi có nhiều giáo viên |
+| 10 | Học viên tự xuất hoặc xóa dữ liệu | Hiện không xóa được học viên đã nộp bài (trigger chặn xóa lịch sử, khóa ngoại không cascade) trong khi bản nháp chính sách quyền riêng tư hứa xử lý yêu cầu xóa | Vừa | Chờ quyết định: xóa hẳn hay ẩn danh hóa bài làm |

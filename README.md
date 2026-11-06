@@ -114,6 +114,12 @@ Font phục vụ từ các gói @fontsource, không tải Google Fonts lúc buil
 
 Mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ theo ngày ở [mục lục tài liệu](docs/README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 06/11/2026
+
+- Rà soát giao diện, luồng và database: quyền, RLS và quan hệ dữ liệu đúng thiết kế; 38/38 và 34/34 kịch bản E2E đạt sau khi cập nhật 7 kịch bản theo giao diện mới; crawl 326 trang theo vai không có lỗi. Còn lại: quyền ghi thẳng bảng `lessons` cho phép lách kiểm tra chia sẻ lại, chưa có đường xóa dữ liệu học viên. Xem [báo cáo](docs/testing/project-audit-2026-11-06.md).
+- Giáo viên sao chép tin nhắn giao bài (tên bài, hạn nộp, link) để dán vào nhóm Zalo/Messenger của lớp. Xem [thiết kế](docs/detail-design/phase-3.md#tin-nhắn-giao-bài-cho-nhóm-lớp--06112026).
+- Điểm danh trong nhật ký buổi dạy và danh sách học viên hay vắng. Cần áp migration `20261106102652`. Xem [thiết kế](docs/detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026).
+
 ### 05/11/2026
 
 - Sửa lỗi hiển thị bài đã giao: giáo viên sửa đề, giải thích và furigana của câu đã giao (kể cả bài hằng ngày) mà không đổi đáp án, bài làm hay điểm; mỗi lần sửa được lưu lại. Cần áp migration `20261105044634`. Xem [thiết kế](docs/detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026).
