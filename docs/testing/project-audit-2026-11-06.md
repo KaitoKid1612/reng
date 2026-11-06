@@ -47,6 +47,7 @@ Người dùng yêu cầu: kiểm tra giao diện còn lỗi không, kiểm tra 
 
 - `npm run check`: 291/291 test.
 - Trình duyệt 390px trên Supabase local: hai nút sao chép tin nhắn chép đúng nội dung (đọc lại clipboard); điểm danh mở sẵn sau khi ghi buổi, lưu hiện "có mặt 1/2" và dòng vắng nhiều; giả lập production chưa áp migration (đổi tên bảng) thì trang lớp vẫn 200 và chỉ ẩn phần điểm danh; không lỗi console, không tràn ngang.
+- Máy tính 1280, 1440 và 1920px (ưu tiên trước điện thoại cho trang giáo viên): bấm nút chép bằng phím Enter, có viền focus, clipboard đúng; điểm danh mở, bỏ chọn, lưu và tóm tắt đúng ở cả ba độ rộng; nội dung trang lớp rộng 1136px trong khung 1200px, không tràn ngang, không lỗi console; axe (WCAG 2 A/AA) sạch trên trang lớp có bài giao. Trên lớp chưa có bài giao, axe báo `link-in-text-block` ở link "Giao bài đầu tiên" của dòng "Chưa có bài tập nào" (có từ trước, chưa sửa).
 - `npm run test:e2e:supabase` chạy lại sau mọi thay đổi trên trang lớp: 38/38 đạt. Chưa thêm kịch bản E2E riêng cho tin nhắn giao bài và điểm danh (kịch bản nhật ký buổi dạy hiện dùng lớp chưa có học viên).
 
 ## Cần áp lên production
