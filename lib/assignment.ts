@@ -18,7 +18,7 @@ import {
 import type { RawAnswer } from "@/lib/grading/raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
-export const MAX_ASSIGNMENT_QUESTIONS = 60;
+export const MAX_ASSIGNMENT_QUESTIONS = 70;
 export const MAX_ATTEMPTS = 10;
 export const MAX_DRAFT_BYTES = 32 * 1024;
 
