@@ -16,11 +16,12 @@ interface DailyPracticeLessonOption {
 interface DailyPracticeFormProps {
   classId: string;
   size: number | null;
+  listeningCount: number | null;
   lessonId: string | null;
   lessons: DailyPracticeLessonOption[];
 }
 
-export function DailyPracticeForm({ classId, size, lessonId, lessons }: DailyPracticeFormProps) {
+export function DailyPracticeForm({ classId, size, listeningCount, lessonId, lessons }: DailyPracticeFormProps) {
   const [state, action, isPending] = useActionState(dailyPracticeAction, {});
   return (
     <form action={action} className="form-card">
@@ -43,6 +44,15 @@ export function DailyPracticeForm({ classId, size, lessonId, lessons }: DailyPra
               </option>
             ))}
           </select>
+        </div>
+        <div className="field">
+          <label htmlFor="daily-listening-count">Số câu nghe mỗi ngày</label>
+          <select key={listeningCount ?? "unset"} id="daily-listening-count" name="listeningCount" defaultValue={listeningCount ?? 0}>
+            {Array.from({ length: 11 }, (_, count) => (
+              <option key={count} value={count}>{count} câu nghe</option>
+            ))}
+          </select>
+          <p className="muted">Câu nghe nằm trong tổng số câu mỗi ngày; ngân hàng cần có audio đã duyệt.</p>
         </div>
         <div className="field">
           <label htmlFor="daily-practice-lesson">Lấy câu từ</label>
