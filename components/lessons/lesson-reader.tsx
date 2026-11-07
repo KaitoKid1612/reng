@@ -122,7 +122,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           <p>{lesson.summary}</p>
         </div>
         <Link
-          href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`}
+          href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}`}
           className={buttonVariants()}
         >
           Trình chiếu
@@ -243,7 +243,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
       )}
       <div className="button-row">
         <Link
-          href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`}
+          href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}`}
           className={buttonVariants()}
         >
           Ôn lại bằng slide
