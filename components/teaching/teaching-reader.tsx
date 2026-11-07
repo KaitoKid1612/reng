@@ -25,7 +25,7 @@ export function TeachingReader({
   classId,
 }: TeachingReaderProps) {
   const { context, objectives, vocab, grammar, dialogue } = lesson.content;
-  const slideHref = `/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`;
+  const slideHref = `/lessons/${lesson.lessonId}/slide?version=${lesson.id}`;
   const hanziCount = extractHanziWords(vocab, context.languageTag).length;
   return (
     <article className="lesson-reader">
