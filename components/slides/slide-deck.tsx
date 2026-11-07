@@ -199,7 +199,9 @@ export function SlideDeck({
 
     return () => {
       cancelled = true;
-      if (saveTimer) clearTimeout(saveTimer);
+      if (saveTimer) {
+        clearTimeout(saveTimer);
+      }
       window.removeEventListener("hashchange", handleHashChange);
       channel?.close();
       if (deck?.isReady()) {
