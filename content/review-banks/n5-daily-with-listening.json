@@ -8,7 +8,14 @@
   "isSample": false,
   "content": {
     "vocab": [],
-    "slides": [],
+    "slides": [
+      {
+        "id": "intro",
+        "type": "title",
+        "jp": "N5 ふくしゅう",
+        "vi": "Ôn tập N5 – Nguyên"
+      }
+    ],
     "grammar": [],
     "questions": [
       {
