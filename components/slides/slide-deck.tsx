@@ -92,6 +92,8 @@ export function SlideDeck({
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ versionId: lesson.id, slideId: slideIds[h] }),
+          }).then((response) => {
+            if (!response.ok) setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
           }).catch(() => setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại."));
         }, 600);
       }
