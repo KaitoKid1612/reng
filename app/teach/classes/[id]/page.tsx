@@ -412,6 +412,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         <DailyPracticeForm
           classId={classRow.id}
           size={classRow.daily_practice_size}
+          listeningCount={classRow.daily_listening_count}
           lessonId={classRow.daily_practice_lesson_id}
           lessons={report.lessons.map((lesson) => ({
             lessonId: lesson.lessonId,
