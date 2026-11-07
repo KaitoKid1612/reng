@@ -160,6 +160,35 @@ export function selectBalancedDailyQuestions(
   );
 }
 
+// Reserve a requested number of audio questions before distributing the remaining slots.
+// Keep the existing proportional selector for both pools, preserving per-kind balance and rotation.
+// When audio is insufficient, fill the rest from non-audio questions without duplicating IDs.
+export function selectDailyQuestionsWithListeningQuota(
+  candidates: readonly DailyCandidate[],
+  recentUses: readonly DailyQuestionUse[],
+  size: number,
+  seed: string,
+  listeningCount: number | null,
+) {
+  if (listeningCount === null) {
+    return selectBalancedDailyQuestions(candidates, recentUses, size, seed);
+  }
+  const unique = [...new Map(candidates.map((candidate) => [candidate.id, candidate])).values()];
+  const listening = unique.filter((item) => item.type === "listen" || item.type === "dictation");
+  const others = unique.filter((item) => item.type !== "listen" && item.type !== "dictation");
+  const target = Math.min(size, unique.length);
+  const listeningSize = Math.min(listeningCount, target, listening.length);
+  const selectedListening = selectBalancedDailyQuestions(listening, recentUses, listeningSize, seed);
+  const selectedOthers = selectBalancedDailyQuestions(others, recentUses, target - selectedListening.length, seed);
+  const missing = target - selectedListening.length - selectedOthers.length;
+  const extraListening = missing > 0
+    ? selectBalancedDailyQuestions(
+        listening.filter((item) => !selectedListening.includes(item.id)), recentUses, missing, seed,
+      )
+    : [];
+  return [...selectedListening, ...selectedOthers, ...extraListening];
+}
+
 // Least recently used first, never-used questions before anything else; ties break by a hash
 // of the day so the set changes daily but stays the same on every retry of that day. Grouped
 // questions share their group's hash, so a passage's questions are picked one after another,
