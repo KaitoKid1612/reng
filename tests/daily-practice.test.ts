@@ -10,6 +10,7 @@ import {
   repeatsEveryDay,
   selectBalancedDailyQuestions,
   selectDailyQuestions,
+  selectDailyQuestionsWithListeningQuota,
   toVietnamDate,
 } from "../lib/daily-practice";
 
@@ -188,5 +189,39 @@ test("70-question daily selection keeps unique IDs and respects the requested si
   }));
   const selected = selectBalancedDailyQuestions(candidates, [], 70, "class:2026-11-07");
   assert.equal(selected.length, 70);
+  assert.equal(new Set(selected).size, 70);
+});
+
+
+test("daily listening quota reserves eight N5 audio questions in sixty", () => {
+  const candidates = [
+    ...Array.from({ length: 100 }, (_, i) => ({ id: `regular-${i}`, type: "choice", tags: [] })),
+    ...Array.from({ length: 30 }, (_, i) => ({ id: `audio-${i}`, type: "listen", tags: [] })),
+  ];
+  const selected = selectDailyQuestionsWithListeningQuota(candidates, [], 60, "n5:day", 8);
+  assert.equal(selected.length, 60);
+  assert.equal(new Set(selected).size, 60);
+  assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 8);
+});
+
+test("daily listening quota reserves ten N4 audio questions in seventy", () => {
+  const candidates = [
+    ...Array.from({ length: 150 }, (_, i) => ({ id: `regular-${i}`, type: "fill", tags: [] })),
+    ...Array.from({ length: 30 }, (_, i) => ({ id: `audio-${i}`, type: "listen", tags: [] })),
+  ];
+  const selected = selectDailyQuestionsWithListeningQuota(candidates, [], 70, "n4:day", 10);
+  assert.equal(selected.length, 70);
+  assert.equal(new Set(selected).size, 70);
+  assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 10);
+});
+
+test("missing audio falls back to other questions without duplicates", () => {
+  const candidates = [
+    ...Array.from({ length: 75 }, (_, i) => ({ id: `regular-${i}`, type: "choice", tags: [] })),
+    ...Array.from({ length: 3 }, (_, i) => ({ id: `audio-${i}`, type: "listen", tags: [] })),
+  ];
+  const selected = selectDailyQuestionsWithListeningQuota(candidates, [], 70, "fallback", 10);
+  assert.equal(selected.length, 70);
+  assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 3);
   assert.equal(new Set(selected).size, 70);
 });
