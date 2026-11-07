@@ -385,6 +385,8 @@ const dailySizeSchema = z
     z.union([z.null(), z.number().int().min(MIN_DAILY_PRACTICE_SIZE).max(MAX_DAILY_PRACTICE_SIZE)]),
   );
 
+const dailyListeningSchema = z.coerce.number().int().min(0).max(10);
+
 const dailyLessonSchema = z
   .string()
   .max(100)
@@ -412,7 +414,8 @@ export async function dailyPracticeAction(
       const size = dailySizeSchema.parse(readField(formData, "size"));
       if (size) {
         const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
-        await setDailyPractice(account.id, classId, size, lessonId);
+        const listeningCount = dailyListeningSchema.parse(readField(formData, "listeningCount"));
+        await setDailyPractice(account.id, classId, size, lessonId, listeningCount);
       }
       const outcome = await createTodayPractice(account.id, classId, new Date());
       if (outcome.status !== "created" && outcome.status !== "exists") {
@@ -433,7 +436,8 @@ export async function dailyPracticeAction(
   try {
     size = dailySizeSchema.parse(readField(formData, "size"));
     const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
-    await setDailyPractice(account.id, classId, size, lessonId);
+    const listeningCount = dailyListeningSchema.parse(readField(formData, "listeningCount"));
+    await setDailyPractice(account.id, classId, size, lessonId, listeningCount);
   } catch (error) {
     return { error: describeError(error) };
   }
