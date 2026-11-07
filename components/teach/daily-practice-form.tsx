@@ -17,11 +17,12 @@ interface DailyPracticeFormProps {
   classId: string;
   size: number | null;
   listeningCount: number | null;
+  availableListeningCount: number | null;
   lessonId: string | null;
   lessons: DailyPracticeLessonOption[];
 }
 
-export function DailyPracticeForm({ classId, size, listeningCount, lessonId, lessons }: DailyPracticeFormProps) {
+export function DailyPracticeForm({ classId, size, listeningCount, availableListeningCount, lessonId, lessons }: DailyPracticeFormProps) {
   const [state, action, isPending] = useActionState(dailyPracticeAction, {});
   return (
     <form action={action} className="form-card">
@@ -53,6 +54,14 @@ export function DailyPracticeForm({ classId, size, listeningCount, lessonId, les
             ))}
           </select>
           <p className="muted">Câu nghe nằm trong tổng số câu mỗi ngày; ngân hàng cần có audio đã duyệt.</p>
+          {availableListeningCount !== null && (
+            <p className="muted" role="status">
+              Nguồn bài đang sử dụng có {availableListeningCount} câu nghe.
+              {listeningCount !== null && listeningCount > availableListeningCount
+                ? " Chưa đủ số câu nghe đã cấu hình: hệ thống sẽ bù bằng câu thường cho đến khi bổ sung audio."
+                : ""}
+            </p>
+          )}
         </div>
         <div className="field">
           <label htmlFor="daily-practice-lesson">Lấy câu từ</label>
