@@ -86,14 +86,18 @@ export function SlideDeck({
       const { h, f } = deck.getIndices();
       setPosition(h);
       if (readProgress && slideIds[h]) {
-        if (saveTimer) clearTimeout(saveTimer);
+        if (saveTimer) {
+          clearTimeout(saveTimer);
+        }
         saveTimer = setTimeout(() => {
           void fetch(`/api/lessons/${lesson.lessonId}/progress`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ versionId: lesson.id, slideId: slideIds[h] }),
           }).then((response) => {
-            if (!response.ok) setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
+            if (!response.ok) {
+              setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
+            }
           }).catch(() => setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại."));
         }, 600);
       }
