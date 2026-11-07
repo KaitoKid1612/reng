@@ -8,7 +8,7 @@ import {
   endOfVietnamDay,
   isDailyQuestionType,
   orderDailySourceLessons,
-  selectBalancedDailyQuestions,
+  selectDailyQuestionsWithListeningQuota,
   toVietnamDate,
 } from "@/lib/daily-practice";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
@@ -38,6 +38,7 @@ const classSchema = z.object({
   id: z.uuid(),
   active: z.boolean(),
   daily_practice_size: z.number().int().nullable(),
+  daily_listening_count: z.number().int().min(0).max(10).nullable(),
   daily_practice_lesson_id: z.string().nullable(),
 });
 
@@ -48,10 +49,11 @@ export async function setDailyPractice(
   classId: string,
   size: number | null,
   lessonId: string | null,
+  listeningCount: number | null = null,
 ) {
   await callRpc(
     "set_daily_practice",
-    { p_teacher_id: teacherId, p_class_id: classId, p_size: size, p_lesson_id: lessonId },
+    { p_teacher_id: teacherId, p_class_id: classId, p_size: size, p_lesson_id: lessonId, p_listening_count: listeningCount },
     z.unknown(),
   );
 }
@@ -114,7 +116,7 @@ export async function createDailyPractice(
   const classRow = await selectOptional(
     service
       .from("classes")
-      .select("id, active, daily_practice_size, daily_practice_lesson_id")
+      .select("id, active, daily_practice_size, daily_practice_lesson_id, daily_listening_count")
       .eq("id", classId)
       .maybeSingle(),
     classSchema,
@@ -184,7 +186,7 @@ export async function createDailyPractice(
     practiceDate: publishedDays.get(item.assignment_id) ?? "",
   }));
   // Kinds (the sheet's "Dạng bài", kanji, choice or fill) keep their share of each day's set.
-  const questionIds = selectBalancedDailyQuestions(
+  const questionIds = selectDailyQuestionsWithListeningQuota(
     questions.map((question) => ({
       id: question.id,
       type: question.type,
@@ -194,6 +196,7 @@ export async function createDailyPractice(
     uses,
     classRow.daily_practice_size,
     `${classId}:${practiceDate}`,
+    classRow.daily_listening_count,
   );
   const assignmentId = await callRpc(
     "publish_daily_practice",
