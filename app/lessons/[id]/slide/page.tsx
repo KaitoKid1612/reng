@@ -61,7 +61,7 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
       printMode={query["print-pdf"] !== undefined}
       classId={classId}
       canPresent={!isLearner}
-      readProgress={isLearner ? { completedAt: progress?.read_completed_at ?? null } : undefined}
+      readProgress={isLearner ? { completedAt: progress?.read_completed_at ?? null, lastSlideId: progress?.last_slide_id ?? null, versionId: progress?.lesson_version_id ?? null } : undefined}
     />
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
@@ -49,7 +49,7 @@ interface SlideDeckProps {
   /** Teachers get the Presenter button; learners reading slides have no notes to open. */
   canPresent?: boolean;
   /** A learner's reading progress: the last slide offers to mark the lesson as read. */
-  readProgress?: { completedAt: string | null };
+  readProgress?: { completedAt: string | null; lastSlideId: string | null; versionId: string | null };
 }
 
 export function SlideDeck({
@@ -67,7 +67,7 @@ export function SlideDeck({
   const base = `/lessons/${lesson.lessonId}`;
   // The presenter keeps the class so its link back to the slides keeps "Ghi buổi dạy".
   const classQuery = classId ? `&class=${classId}` : "";
-  const slideIds = listSlideIds(lesson);
+  const slideIds = useMemo(() => listSlideIds(lesson), [lesson]);
 
   useEffect(() => {
     if (printMode || !rootRef.current) {
@@ -77,6 +77,7 @@ export function SlideDeck({
     let cancelled = false;
     let deck: RevealApi | null = null;
     let channel: BroadcastChannel | null = null;
+    let saveTimer: ReturnType<typeof setTimeout> | null = null;
 
     function publishPosition() {
       if (!deck || cancelled) {
@@ -84,6 +85,18 @@ export function SlideDeck({
       }
       const { h, f } = deck.getIndices();
       setPosition(h);
+      if (readProgress && slideIds[h]) {
+        if (saveTimer) clearTimeout(saveTimer);
+        saveTimer = setTimeout(() => {
+          void fetch(`/api/lessons/${lesson.lessonId}/progress`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ versionId: lesson.id, slideId: slideIds[h] }),
+          }).then((response) => {
+            if (!response.ok) setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
+          }).catch(() => setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại."));
+        }, 600);
+      }
       window.history.replaceState(
         null,
         "",
@@ -93,7 +106,11 @@ export function SlideDeck({
     }
 
     function handleHashChange() {
-      const result = parseSlideHash(window.location.hash, listSlideIds(lesson).length);
+      const savedIndex = readProgress?.versionId === lesson.id
+        ? slideIds.indexOf(readProgress.lastSlideId ?? "") : -1;
+      const result = !window.location.hash && savedIndex >= 0
+        ? { index: savedIndex, isValid: true }
+        : parseSlideHash(window.location.hash, slideIds.length);
       if (!result.isValid) {
         setNotice("Vị trí slide không hợp lệ. Đã mở slide đầu.");
       }
@@ -178,6 +195,7 @@ export function SlideDeck({
 
     return () => {
       cancelled = true;
+      if (saveTimer) clearTimeout(saveTimer);
       window.removeEventListener("hashchange", handleHashChange);
       channel?.close();
       if (deck?.isReady()) {
@@ -185,7 +203,7 @@ export function SlideDeck({
       }
       deckRef.current = null;
     };
-  }, [classQuery, lesson, printMode]);
+  }, [classQuery, lesson, printMode, readProgress, slideIds]);
 
   function handlePresenter() {
     deckRef.current?.triggerKey(83);
