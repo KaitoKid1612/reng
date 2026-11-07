@@ -310,11 +310,11 @@ export async function getLessonProgress(userId: string, lessonId: string) {
   return selectOptional(
     createServiceClient()
       .from("lesson_progress")
-      .select("lesson_version_id, read_completed_at")
+      .select("lesson_version_id, last_slide_id, read_completed_at")
       .eq("user_id", userId)
       .eq("lesson_id", lessonId)
       .maybeSingle(),
-    z.object({ lesson_version_id: z.uuid(), read_completed_at: timestamp.nullable() }),
+    z.object({ lesson_version_id: z.uuid(), last_slide_id: z.string().nullable(), read_completed_at: timestamp.nullable() }),
   );
 }
 
