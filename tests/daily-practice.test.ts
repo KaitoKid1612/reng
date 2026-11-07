@@ -181,3 +181,12 @@ test("order and listening questions join the daily set as their own kinds", () =
   assert.equal(isDailyQuestionType("dictation"), true);
   assert.equal(isDailyQuestionType("match"), false);
 });
+
+test("70-question daily selection keeps unique IDs and respects the requested size", () => {
+  const candidates = Array.from({ length: 180 }, (_, index) => ({
+    id: `q-${index + 1}`, type: index % 2 === 0 ? "choice" : "fill", tags: [],
+  }));
+  const selected = selectBalancedDailyQuestions(candidates, [], 70, "class:2026-11-07");
+  assert.equal(selected.length, 70);
+  assert.equal(new Set(selected).size, 70);
+});
