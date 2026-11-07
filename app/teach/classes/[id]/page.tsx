@@ -413,6 +413,9 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           classId={classRow.id}
           size={classRow.daily_practice_size}
           listeningCount={classRow.daily_listening_count}
+          availableListeningCount={dailySource?.status === "found"
+            ? dailySource.questions.filter((question) => question.type === "listen" || question.type === "dictation").length
+            : null}
           lessonId={classRow.daily_practice_lesson_id}
           lessons={report.lessons.map((lesson) => ({
             lessonId: lesson.lessonId,
