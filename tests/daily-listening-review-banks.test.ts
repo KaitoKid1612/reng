@@ -47,11 +47,14 @@ for (const config of banks) {
     for (const raw of questions) {
       const question = parseAssignableQuestion(raw);
       if (question.type === "listen" || question.type === "dictation") {
-        const answer = question.type === "dictation"
-          ? question.transcript
-          : question.responseType === "choice"
-            ? question.answer.filter((value): value is number => typeof value === "number")
-            : String(question.answer[0]);
+        let answer: string | number[];
+        if (question.type === "dictation") {
+          answer = question.transcript;
+        } else if (question.responseType === "choice") {
+          answer = question.answer.filter((value): value is number => typeof value === "number");
+        } else {
+          answer = String(question.answer[0]);
+        }
         assert.equal(gradeQuestion(question, answer).isCorrect, true, question.id);
       }
     }
