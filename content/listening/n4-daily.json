@@ -1,503 +1,299 @@
 {
-  "id": "n4-daily-listening",
   "title": "Luyện nghe N4 hằng ngày",
   "titleJa": "N4 まいにちの ちょうかい",
   "summary": "20 câu nghe hiểu N4 tự biên soạn. Chưa có audio: phải tạo MP3 và nghe duyệt trước khi xuất bản.",
   "order": 110,
   "courseId": "n4",
+  "id": "n4-daily-listening",
   "content": {
     "schemaVersion": 1,
     "vocab": [],
     "grammar": [],
     "slides": [
-      {
-        "id": "intro",
-        "type": "title",
-        "jp": "N4 ちょうかい",
-        "vi": "Luyện nghe hiểu N4"
-      }
+      { "id": "intro", "type": "title", "jp": "N4 ちょうかい", "vi": "Luyện nghe hiểu N4" }
     ],
     "questions": [
       {
         "id": "n4-daily-listen-01",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Cuộc họp bắt đầu muộn bao lâu?",
-        "options": [
-          "5 phút",
-          "10 phút",
-          "30 phút"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜ので: vì; 十分（じゅっぷん）: mười phút.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "4187da6bdc3e51c030e830b3e16c4062",
         "transcript": "電車が遅れているので、会議は十分遅く始まります。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["5 phút", "10 phút", "30 phút"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-02",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Người nói khuyên mang theo gì?",
-        "options": [
-          "Áo khoác",
-          "Ô",
-          "Giày"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜そうです: có vẻ sắp; 傘: ô.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "24dd95ae3d96e189e32b583c93cb47f1",
         "transcript": "雨が降りそうですから、傘を持って行ってください。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Áo khoác", "Ô", "Giày"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-03",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Hạn nộp tài liệu là khi nào?",
-        "options": [
-          "Thứ Tư",
-          "Thứ Sáu",
-          "Chủ Nhật"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜までに: chậm nhất vào; 〜なければなりません: phải.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "5f2fae6a55d1d2e2dedfab10c6aa50dc",
         "transcript": "この書類は金曜日までに出さなければなりません。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Thứ Tư", "Thứ Sáu", "Chủ Nhật"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-04",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Khi nào cần gọi điện?",
-        "options": [
-          "Trước khi ra khỏi nhà",
-          "Sau khi đến ga",
-          "Sau khi về nhà"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜たら: sau khi/nếu; 迎えに行く: đi đón.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "f543d9055d11ccccc6ee9e9b4d3bf294",
         "transcript": "駅に着いたら、電話してください。迎えに行きます。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Trước khi ra khỏi nhà", "Sau khi đến ga", "Sau khi về nhà"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-05",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Chiếc túi như thế nào so với dự đoán?",
-        "options": [
-          "Nhẹ hơn",
-          "Nặng hơn",
-          "Đắt hơn"
-        ],
-        "answer": [
-          0
-        ],
         "explain": "〜より: so với; 軽い: nhẹ.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "44b25199d02c2567f8b1378ebdec5fb6",
         "transcript": "昨日買ったかばんは、思ったより軽かったです。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Nhẹ hơn", "Nặng hơn", "Đắt hơn"],
+        "answer": [0]
       },
       {
         "id": "n4-daily-listen-06",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Người nói quyết định làm gì?",
-        "options": [
-          "Đi làm sớm",
-          "Nghỉ làm hôm nay",
-          "Đi du lịch"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜ことにしました: quyết định; 風邪をひく: bị cảm.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "84aa2b002df7dd484d81811c371c7153",
         "transcript": "風邪をひいたので、今日は会社を休むことにしました。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Đi làm sớm", "Nghỉ làm hôm nay", "Đi du lịch"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-07",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Bưu điện nằm ở đâu?",
-        "options": [
-          "Bên trái",
-          "Bên phải",
-          "Phía sau ga"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜と: nếu đi thì; 右側: bên phải.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "5f8063dbef80a68f184af3eb53cb4d8d",
         "transcript": "この道をまっすぐ行くと、右側に郵便局があります。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Bên trái", "Bên phải", "Phía sau ga"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-08",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Bạn đến vào lúc nào?",
-        "options": [
-          "Trong lúc nấu ăn",
-          "Sau khi ăn xong",
-          "Trước khi mua đồ"
-        ],
-        "answer": [
-          0
-        ],
         "explain": "〜間に: trong lúc; 料理を作る: nấu ăn.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "86117d4ba189b16a8ab946961151c471",
         "transcript": "料理を作っている間に、友達が来ました。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Trong lúc nấu ăn", "Sau khi ăn xong", "Trước khi mua đồ"],
+        "answer": [0]
       },
       {
         "id": "n4-daily-listen-09",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Uống thuốc khi nào?",
-        "options": [
-          "Trước bữa ăn",
-          "Sau bữa ăn",
-          "Trước khi ngủ"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜後で: sau khi; 一日に三回: ba lần mỗi ngày.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "4127d9301e2268f9ecbd5952735480d4",
         "transcript": "この薬は一日に三回、食事の後で飲んでください。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Trước bữa ăn", "Sau bữa ăn", "Trước khi ngủ"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-10",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Tanaka nói được những ngôn ngữ nào?",
-        "options": [
-          "Chỉ tiếng Nhật",
-          "Tiếng Nhật và tiếng Anh",
-          "Chỉ tiếng Anh"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜だけでなく〜も: không chỉ... mà còn...",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "3f63263f2df15eeec1c6edaab21dd421",
         "transcript": "田中さんは日本語だけでなく、英語も話せます。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Chỉ tiếng Nhật", "Tiếng Nhật và tiếng Anh", "Chỉ tiếng Anh"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-11",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Khi nào được xem TV?",
-        "options": [
-          "Trước khi làm bài",
-          "Sau khi làm bài",
-          "Trong giờ học"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜てから: sau khi làm; 〜てもいい: được phép.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "65ee83d1782a6dfa0f1ca0c93a50482c",
         "transcript": "宿題をしてから、テレビを見てもいいです。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Trước khi làm bài", "Sau khi làm bài", "Trong giờ học"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-12",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Khi nào bắt đầu công việc mới?",
-        "options": [
-          "Tháng này",
-          "Tháng sau",
-          "Năm sau"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜予定です: dự định; 来月: tháng sau.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "328023cbc32087e69e67c57261da96ba",
         "transcript": "来月から新しい仕事を始める予定です。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Tháng này", "Tháng sau", "Năm sau"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-13",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Vì sao căn phòng tiện lợi?",
-        "options": [
-          "Yên tĩnh và gần ga",
-          "Rộng và rẻ",
-          "Có bãi đỗ xe"
-        ],
-        "answer": [
-          0
-        ],
         "explain": "〜し〜し: liệt kê lý do; 静か: yên tĩnh.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "35367b38dd42d377b0f6de5de43be34f",
         "transcript": "この部屋は静かだし、駅から近いし、とても便利です。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Yên tĩnh và gần ga", "Rộng và rẻ", "Có bãi đỗ xe"],
+        "answer": [0]
       },
       {
         "id": "n4-daily-listen-14",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Vì sao không viết được báo cáo?",
-        "options": [
-          "Mất điện",
-          "Máy tính hỏng",
-          "Không có giấy"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜てしまう: sự việc đáng tiếc; 壊れる: hỏng.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "47dd337f2d7fb9a7ab66402957d556d6",
         "transcript": "パソコンが壊れてしまったので、レポートが書けません。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Mất điện", "Máy tính hỏng", "Không có giấy"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-15",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Người nói muốn làm gì trước khi đến Nhật?",
-        "options": [
-          "Học thêm kanji",
-          "Mua xe",
-          "Tìm nhà"
-        ],
-        "answer": [
-          0
-        ],
         "explain": "〜前に: trước khi; 〜ておく: làm sẵn để chuẩn bị.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "bb60e89b5c6ff41b056624094156c371",
         "transcript": "日本に行く前に、もっと漢字を勉強しておきたいです。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Học thêm kanji", "Mua xe", "Tìm nhà"],
+        "answer": [0]
       },
       {
         "id": "n4-daily-listen-16",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Điều gì gây ngạc nhiên về nhà hàng?",
-        "options": [
-          "Rẻ nhưng đồ ăn ngon",
-          "Đắt và xa",
-          "Không có đồ ăn"
-        ],
-        "answer": [
-          0
-        ],
         "explain": "〜のに: mặc dù; 安い: rẻ.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "9b22cef065aed40a39420b7b604212fb",
         "transcript": "この店は安いのに、料理がとてもおいしいです。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Rẻ nhưng đồ ăn ngon", "Đắt và xa", "Không có đồ ăn"],
+        "answer": [0]
       },
       {
         "id": "n4-daily-listen-17",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Tối nay người nói sẽ làm gì?",
-        "options": [
-          "Thức khuya",
-          "Ngủ sớm",
-          "Đi mua sắm"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜つもり: dự định; 早く寝る: ngủ sớm.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "323ba0ebb13a3f9012388f4f073afe8e",
         "transcript": "明日は早く起きるつもりなので、今夜は早く寝ます。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Thức khuya", "Ngủ sớm", "Đi mua sắm"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-18",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Vấn đề với chữ kanji là gì?",
-        "options": [
-          "Quá dễ",
-          "Quá khó để nhớ",
-          "Không có trong sách"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜すぎる: quá mức; 覚えられる: có thể nhớ.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "4d341e13444533ce17fb2b27ef4d7ab3",
         "transcript": "この漢字は難しすぎて、まだ覚えられません。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Quá dễ", "Quá khó để nhớ", "Không có trong sách"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-19",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Kỳ thi bắt đầu lúc mấy giờ?",
-        "options": [
-          "1 giờ chiều",
-          "2 giờ chiều",
-          "3 giờ chiều"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜によると〜そうです: theo nguồn tin; 午後二時: 14 giờ.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "e3c484ac588f3cf3c563e9b9083198e1",
         "transcript": "山田さんによると、明日の試験は午後二時からだそうです。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1 giờ chiều", "2 giờ chiều", "3 giờ chiều"],
+        "answer": [1]
       },
       {
         "id": "n4-daily-listen-20",
-        "type": "listen",
-        "responseType": "choice",
         "prompt": "Người nói đề nghị đi bằng gì?",
-        "options": [
-          "Xe buýt",
-          "Tàu điện",
-          "Taxi"
-        ],
-        "answer": [
-          1
-        ],
         "explain": "〜より〜のほうが: so sánh; 速い: nhanh.",
         "points": 1,
-        "tags": [
-          "n4",
-          "listening",
-          "daily-review"
-        ],
-        "audio": null,
+        "tags": ["n4", "listening", "daily-review"],
+        "audio": "62def36f316635cf39cdfa7feec831f4",
         "transcript": "バスより電車のほうが速いので、電車で行きましょう。",
-        "maxListens": null
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["Xe buýt", "Tàu điện", "Taxi"],
+        "answer": [1]
       }
     ]
-  }
+  },
+  "audioVoice": "unreal:Sakura"
 }
