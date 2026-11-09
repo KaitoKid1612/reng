@@ -41,7 +41,7 @@ Người dùng yêu cầu: kiểm tra giao diện còn lỗi không, kiểm tra 
 - Cập nhật 7 kịch bản E2E theo giao diện mới (commit `8117b48`).
 - Sửa hai lỗi chữ ở mục 4 và 5 (commit `1fda40a`).
 - Tin nhắn giao bài cho nhóm lớp ([DD](../detail-design/phase-3.md#tin-nhắn-giao-bài-cho-nhóm-lớp--06112026)).
-- Điểm danh trong nhật ký buổi dạy, migration `20261106102652` ([DD](../detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026)).
+- Điểm danh trong nhật ký buổi dạy, migration `20261109024203` (tên lúc viết báo cáo: `20261106102652`, đổi ngày 09/11 để xếp sau migration production mới nhất; [DD](../detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026)).
 
 ## Kiểm tra sau thay đổi
 
@@ -52,4 +52,4 @@ Người dùng yêu cầu: kiểm tra giao diện còn lỗi không, kiểm tra 
 
 ## Cần áp lên production
 
-`20261106102652_class_session_attendance.sql` (cùng các migration ở mục 8 nếu chưa áp). Chưa áp thì web vẫn chạy, chỉ chưa có điểm danh.
+`20261109024203_class_session_attendance.sql` (tên lúc viết báo cáo: `20261106102652_…`, [đổi ngày 09/11](review-2026-11-09.md); cùng các migration ở mục 8 nếu chưa áp). Chưa áp thì web vẫn chạy, chỉ chưa có điểm danh.

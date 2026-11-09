@@ -63,6 +63,10 @@ Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt �
 
 Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "còn lại" của báo cáo cũ có thể đã được làm ở báo cáo sau.
 
+### 09/11/2026
+
+- Rà soát sau đợt merge 07/11: [tên migration khớp production, số câu nghe mỗi ngày, lưu vị trí slide, CI và định dạng](testing/review-2026-11-09.md).
+
 ### 06/11/2026
 
 - Rà soát giao diện, luồng và database: [quyền và quan hệ dữ liệu, 72 kịch bản E2E, crawl 326 trang, phát hiện còn lại, tin nhắn giao bài và điểm danh](testing/project-audit-2026-11-06.md).
