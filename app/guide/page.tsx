@@ -106,6 +106,17 @@ const TEACHER_SECTIONS: GuideSection[] = [
     ],
   },
   {
+    id: "teacher-jlpt",
+    title: "Thi thử JLPT",
+    steps: [
+      "Lớp tiếng Nhật cần có ngân hàng ôn N5 hoặc N4 trong Nội dung lớp. Mở Giao bài, bấm Tạo đề thi thử JLPT ở đầu trang (hoặc cuộn tới mục Thi thử JLPT).",
+      "Chọn cấp N5 hoặc N4 và bài ở ô Lấy câu từ. Reng ghi trước đề sẽ có bao nhiêu câu mỗi phần (chữ Hán – từ vựng, ngữ pháp – đọc hiểu, nghe hiểu) và báo khi bài có ít câu hơn đề thật; đề sau ưu tiên câu chưa ra ở các đề trước của lớp.",
+      "Thời gian làm bài mặc định như đề thật (N5 90 phút, N4 115 phút) và tính riêng cho từng học viên từ lúc bấm Bắt đầu thi. Ô Mở đến là hạn bắt đầu thi; Công bố điểm chọn ngay sau khi nộp hoặc sau hạn để cả lớp xem cùng lúc. Bấm Giao đề thi thử.",
+      "Đề là bài kiểm tra một lượt, không nộp muộn. Kết quả của học viên có điểm từng phần và điểm ước tính trên thang 180.",
+    ],
+    note: "Điểm thang 180 là ước tính từ tỉ lệ đúng; điểm JLPT thật tính theo độ khó từng câu nên có thể khác.",
+  },
+  {
     id: "teacher-meet",
     title: "Dạy qua Google Meet",
     steps: [
@@ -164,6 +175,16 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Bài có hạn và không cho nộp muộn: trong giờ cuối có đồng hồ đếm ngược và bài tự nộp khi còn 1 phút. Nếu bạn đã đóng trang trước đó, Reng tự nộp các câu đã lưu vào khoảng 6 giờ sáng sau hạn. Lượt làm lại khi đã có lượt nộp trước thì không bị nộp, để giữ điểm cũ.",
       "Lớp có luyện tập hằng ngày: bấm Điểm luyện tập hằng ngày ở đầu trang lớp để xem điểm từng ngày, bấm một ngày để xem lại từng câu.",
       "Mỗi ngày có thể có bài Luyện tập hằng ngày, hạn 23:59 cùng ngày.",
+    ],
+  },
+  {
+    id: "learner-jlpt",
+    title: "Thi thử JLPT",
+    steps: [
+      "Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài. Trang đề cho biết còn bao nhiêu ngày tới kỳ thi JLPT tiếp theo.",
+      "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe.",
+      "Hết giờ, trang tự nộp. Nếu bạn đã đóng trang, Reng nộp các câu đã lưu khi bạn mở lại đề hoặc vào khoảng 6 giờ sáng hôm sau.",
+      "Trang kết quả có số câu đúng từng phần và điểm ước tính trên thang 180: đỗ cần tổng từ 80 (N5) hoặc 90 (N4), phần ngôn ngữ và đọc hiểu từ 38/120, nghe hiểu từ 19/60.",
     ],
   },
   {

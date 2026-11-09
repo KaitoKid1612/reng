@@ -1,7 +1,7 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
 import { DailyDayChips } from "@/components/daily-history/daily-day-chips";
 import { DailyScoreChart } from "@/components/daily-history/daily-score-chart";
@@ -152,7 +152,7 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                 </summary>
                 <div className="student-assignment-body">
                   <p className="item-meta">
-                    {MODE_LABELS[row.assignment.mode]}, {describeDue(row.assignment.dueAt)},{" "}
+                    {describeAssignmentKind(row.assignment)}, {describeDue(row.assignment.dueAt)},{" "}
                     {row.attemptCount} lượt
                     {row.latest?.submittedAt
                       ? describeSubmittedAt(

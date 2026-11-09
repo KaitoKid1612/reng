@@ -20,7 +20,9 @@ import {
   toTestQuestions,
 } from "@/lib/assignment";
 import { gradeAttempt } from "@/lib/grading/grade";
+import { isExamTimeUp, jlptSectionOf } from "@/lib/jlpt";
 import { questionSchema } from "@/lib/lesson-schema";
+import { listAssignmentExams } from "@/lib/server/assignment-exams";
 import { getTeacherClass, requireMembership } from "@/lib/server/classes";
 import {
   callRpc,
@@ -42,6 +44,8 @@ import type {
   QuestionView,
   TestQuestionInput,
 } from "@/lib/assignment";
+import type { JlptSection } from "@/lib/jlpt";
+import type { AssignmentExam } from "@/lib/server/assignment-exams";
 
 const timestamp = z.iso.datetime({ offset: true });
 
@@ -98,6 +102,8 @@ export interface Assignment {
   maxAttempts: number;
   feedbackPolicy: FeedbackPolicy;
   publishedAt: string;
+  // A JLPT mock exam: level and time limit per attempt (assignment_exams); null otherwise.
+  exam: AssignmentExam | null;
 }
 
 export interface Attempt {
@@ -115,7 +121,10 @@ export interface Attempt {
   submittedAt: string | null;
 }
 
-function toAssignment(row: z.infer<typeof assignmentRowSchema>): Assignment {
+function toAssignment(
+  row: z.infer<typeof assignmentRowSchema>,
+  exam: AssignmentExam | null = null,
+): Assignment {
   if (row.status === "draft" || !row.published_at) {
     throw new ServiceError("not_found");
   }
@@ -133,7 +142,13 @@ function toAssignment(row: z.infer<typeof assignmentRowSchema>): Assignment {
     maxAttempts: row.max_attempts,
     feedbackPolicy: row.feedback_policy,
     publishedAt: row.published_at,
+    exam,
   };
+}
+
+async function toAssignments(rows: readonly z.infer<typeof assignmentRowSchema>[]) {
+  const exams = await listAssignmentExams(rows.map((row) => row.id));
+  return rows.map((row) => toAssignment(row, exams.get(row.id) ?? null));
 }
 
 function toAttempt(row: z.infer<typeof submissionRowSchema>): Attempt {
@@ -169,7 +184,8 @@ export async function loadAssignment(assignmentId: string) {
   if (!row) {
     throw new ServiceError("not_found");
   }
-  return toAssignment(row);
+  const [assignment] = await toAssignments([row]);
+  return assignment;
 }
 
 export async function listClassAssignments(classIds: readonly string[]) {
@@ -185,7 +201,7 @@ export async function listClassAssignments(classIds: readonly string[]) {
       .order("published_at", { ascending: false }),
     assignmentRowSchema,
   );
-  return rows.map(toAssignment);
+  return toAssignments(rows);
 }
 
 // Published or closed assignments by ID, in chunks so a long daily history stays one URL each.
@@ -200,7 +216,7 @@ export async function listAssignmentsByIds(assignmentIds: readonly string[]) {
         .neq("status", "draft"),
     assignmentRowSchema,
   );
-  return rows.map(toAssignment);
+  return toAssignments(rows);
 }
 
 export async function loadAssignmentItems(assignmentId: string): Promise<AssignableQuestion[]> {
@@ -363,6 +379,7 @@ export interface OpenAttemptView {
   submissionId: string;
   attemptNo: number;
   revision: number;
+  startedAt: string;
   savedAt: string;
   draft: AttemptDraft;
   items: AttemptItem[];
@@ -394,13 +411,38 @@ export async function getStudentAssignment(
 ): Promise<StudentAssignmentView> {
   const assignment = await loadAssignment(assignmentId);
   const { classRow } = await requireMembership(userId, assignment.classId);
-  const [pinned, lessonTitle, attempts, items] = await Promise.all([
+  const [pinned, lessonTitle, loadedAttempts, items] = await Promise.all([
     loadPinnedVersionId(assignment.classId, assignment.lessonId),
     loadVersionTitle(assignment.lessonVersionId),
     listUserAttempts(userId, [assignment.id]),
     loadAssignmentItems(assignment.id),
   ]);
-  const open = attempts.find((attempt) => attempt.status === "in_progress");
+  let attempts = loadedAttempts;
+  let open = attempts.find((attempt) => attempt.status === "in_progress");
+  // A mock exam whose time ran out while its page was closed is handed in now, with the answers
+  // the server saved by then, instead of waiting for the morning job.
+  if (
+    open &&
+    assignment.exam &&
+    isExamTimeUp(open.startedAt, assignment.exam.timeLimitMinutes, new Date())
+  ) {
+    try {
+      await handInExpiredAttempt(
+        {
+          submission_id: open.id,
+          assignment_id: assignment.id,
+          draft_revision: open.revision,
+          draft_answers: open.rawDraft,
+        },
+        items,
+        new Date(),
+      );
+    } catch (error) {
+      console.error("Expired exam attempt failed", open.id, describeServiceFailure(error));
+    }
+    attempts = await listUserAttempts(userId, [assignment.id]);
+    open = attempts.find((attempt) => attempt.status === "in_progress");
+  }
   return {
     assignment,
     className: classRow.name,
@@ -413,6 +455,7 @@ export async function getStudentAssignment(
           submissionId: open.id,
           attemptNo: open.attemptNo,
           revision: open.revision,
+          startedAt: open.startedAt,
           savedAt: open.savedAt,
           draft: parseStoredDraft(items, open.rawDraft),
           items: toAttemptItems(items, assignment.mode),
@@ -604,11 +647,51 @@ const expiredSubmitSchema = z
   .length(1)
   .transform((rows) => rows[0]);
 
+type ExpiredAttempt = z.infer<typeof expiredAttemptSchema>[number];
+
 /**
- * Hands in attempts still open after a deadline that refuses late work (the learner closed the
- * page), grading the answers the server saved before the deadline. The database picks only
- * attempts the learner can no longer submit and leaves a retake alone when an earlier attempt
- * was submitted. One failing attempt never stops the others.
+ * Grades the answers the server saved for one attempt that can no longer be submitted and hands
+ * it in through submit_expired_attempt, which checks again under a row lock that the attempt is
+ * really closed. Returns that function's status.
+ */
+async function handInExpiredAttempt(
+  attempt: ExpiredAttempt,
+  items: readonly AssignableQuestion[],
+  now: Date,
+) {
+  // A stored draft that no longer parses is not handed in as an empty, zero-score attempt.
+  const draft = parseIncomingDraft(items, attempt.draft_answers);
+  const grade = gradeAttempt(items, draft.answers);
+  const result = await callRpc(
+    "submit_expired_attempt",
+    {
+      p_submission_id: attempt.submission_id,
+      p_expected_revision: attempt.draft_revision,
+      p_results: grade.results.map((item) => ({
+        question_id: item.questionId,
+        raw: item.raw,
+        is_correct: item.isCorrect,
+        points_earned: item.pointsEarned,
+        listen_count: draft.listens[item.questionId] ?? 0,
+      })),
+      p_score: grade.score,
+      p_max_score: grade.maxScore,
+      p_mistake_state: createSchedulerState(now),
+      p_scheduler_version: SCHEDULER_VERSION,
+    },
+    expiredSubmitSchema,
+  );
+  if (result.status === "invalid_results") {
+    throw new ServiceError("invalid_results");
+  }
+  return result.status;
+}
+
+/**
+ * Hands in attempts still open after a deadline that refuses late work, or after the time limit
+ * of a mock exam (the learner closed the page), grading the answers the server saved by then.
+ * The database picks only attempts the learner can no longer submit and leaves a retake alone
+ * when an earlier attempt was submitted. One failing attempt never stops the others.
  */
 export async function submitExpiredAttempts(now = new Date()) {
   const deadline = now.getTime() + EXPIRED_RUN_BUDGET_MS;
@@ -630,33 +713,8 @@ export async function submitExpiredAttempts(now = new Date()) {
         loading = loadAssignmentItems(attempt.assignment_id);
         itemsByAssignment.set(attempt.assignment_id, loading);
       }
-      const items = await loading;
-      // A stored draft that no longer parses is not handed in as an empty, zero-score attempt.
-      const draft = parseIncomingDraft(items, attempt.draft_answers);
-      const grade = gradeAttempt(items, draft.answers);
-      const result = await callRpc(
-        "submit_expired_attempt",
-        {
-          p_submission_id: attempt.submission_id,
-          p_expected_revision: attempt.draft_revision,
-          p_results: grade.results.map((item) => ({
-            question_id: item.questionId,
-            raw: item.raw,
-            is_correct: item.isCorrect,
-            points_earned: item.pointsEarned,
-            listen_count: draft.listens[item.questionId] ?? 0,
-          })),
-          p_score: grade.score,
-          p_max_score: grade.maxScore,
-          p_mistake_state: createSchedulerState(now),
-          p_scheduler_version: SCHEDULER_VERSION,
-        },
-        expiredSubmitSchema,
-      );
-      if (result.status === "invalid_results") {
-        throw new ServiceError("invalid_results");
-      }
-      if (result.status === "submitted") {
+      const status = await handInExpiredAttempt(attempt, await loading, now);
+      if (status === "submitted") {
         summary.submitted += 1;
       } else {
         summary.skipped += 1;
@@ -679,6 +737,9 @@ export interface ResultItem {
   // Listening questions only; null for other types.
   transcript: string | null;
   listenCount: number | null;
+  points: number;
+  // The JLPT section of the question, used by mock exam results; null when it fits none.
+  section: JlptSection | null;
 }
 
 const answerRowSchema = z.object({
@@ -712,6 +773,8 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
       explain: question.explain,
       transcript: isListeningQuestion(question) ? question.transcript : null,
       listenCount: isListeningQuestion(question) ? (answer?.listen_count ?? 0) : null,
+      points: question.points,
+      section: jlptSectionOf(question),
     };
   });
 }

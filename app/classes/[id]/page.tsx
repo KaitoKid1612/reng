@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import {
   AssignmentStatusBadge,
+  describeAssignmentKind,
   describeDue,
   describeOpenDue,
-  MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { buttonVariants } from "@/components/ui/button";
@@ -71,7 +71,7 @@ function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignment
           <Link href={path}>{item.assignment.title}</Link>
         </h3>
         <p className="item-meta">
-          {MODE_LABELS[item.assignment.mode]},{" "}
+          {describeAssignmentKind(item.assignment)},{" "}
           {isOpenWork(item)
             ? describeOpenDue(item.assignment.dueAt, now)
             : describeDue(item.assignment.dueAt)}

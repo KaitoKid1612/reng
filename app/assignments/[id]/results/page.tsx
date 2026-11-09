@@ -1,7 +1,8 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { describeAssignmentKind } from "@/components/classroom/assignment-labels";
+import { JlptResult } from "@/components/classroom/jlpt-result";
 import { ResultRow } from "@/components/classroom/result-row";
 import { buttonVariants } from "@/components/ui/button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
@@ -13,6 +14,7 @@ import {
 } from "@/lib/answer-outcome";
 import { getDeadlineState, isHandedInAtDeadline } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
+import { isHandedInAtTimeLimit } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
 import { findDailyRunDate } from "@/lib/server/daily-history";
@@ -63,7 +65,14 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
     getDeadlineState(assignment.dueAt, assignment.allowLate, now) !== "past_due";
   const canRetry =
     isAccepting && !view.hasOpenAttempt && view.attemptsUsed < assignment.maxAttempts;
-  const handedInAtDeadline = isHandedInAtDeadline(attempt?.submittedAt ?? null, assignment.dueAt);
+  const { exam } = assignment;
+  // Reng hands an attempt in when its deadline passes, or when a mock exam's time runs out.
+  const handedInAtDeadline =
+    isHandedInAtDeadline(attempt?.submittedAt ?? null, assignment.dueAt) ||
+    (exam !== null &&
+      attempt !== null &&
+      isHandedInAtTimeLimit(attempt.submittedAt, attempt.startedAt, exam.timeLimitMinutes));
+  const handInEnd = exam ? "hết giờ" : "hết hạn";
   const actions = (
     <div className="button-row">
       {isAccepting && view.hasOpenAttempt && (
@@ -96,7 +105,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
           <h1>Kết quả: {assignment.title}</h1>
           <p>
             <Link href={`/classes/${assignment.classId}`}>{view.className}</Link>,{" "}
-            {MODE_LABELS[assignment.mode]}
+            {describeAssignmentKind(assignment)}
           </p>
         </div>
       </div>
@@ -110,11 +119,11 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
           <h2>Đã nộp bài</h2>
           <p>
             {handedInAtDeadline
-              ? "Bạn chưa bấm Nộp bài nên Reng tự nộp lúc hết hạn, "
+              ? `Bạn chưa bấm Nộp bài nên Reng tự nộp lúc ${handInEnd}, `
               : "Reng đã nhận bài lúc "}
             {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
             {attempt.isLate ? " (nộp muộn)" : ""}
-            {handedInAtDeadline ? ", với các câu đã lưu trước hạn" : ""}.
+            {handedInAtDeadline ? `, với các câu đã lưu trước khi ${handInEnd}` : ""}.
           </p>
           <p>
             Điểm và đáp án sẽ công bố sau{" "}
@@ -133,17 +142,21 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               </span>
             </p>
             <p>
-              {attempt.passed ? (
-                <span className="status-badge status-correct">Đạt</span>
-              ) : (
-                <span className="status-badge status-wrong">Chưa đạt</span>
-              )}{" "}
-              Lượt {attempt.attemptNo}, {handedInAtDeadline ? "Reng tự nộp lúc hết hạn" : "nộp lúc"}{" "}
+              {/* A mock exam is judged by its JLPT estimate below, with the section minimums. */}
+              {!exam &&
+                (attempt.passed ? (
+                  <span className="status-badge status-correct">Đạt</span>
+                ) : (
+                  <span className="status-badge status-wrong">Chưa đạt</span>
+                ))}{" "}
+              Lượt {attempt.attemptNo},{" "}
+              {handedInAtDeadline ? `Reng tự nộp lúc ${handInEnd}` : "nộp lúc"}{" "}
               {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
               {attempt.isLate ? " (nộp muộn)" : ""}
               {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
             </p>
           </div>
+          {exam && <JlptResult level={exam.level} items={view.items} now={now} />}
           {/* The next step sits above a long answer list, not after it. */}
           {actions}
           <section className="section-block" aria-labelledby="answer-review">

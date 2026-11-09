@@ -2,8 +2,8 @@ import { cache } from "react";
 import Link from "next/link";
 
 import {
+  describeAssignmentKind,
   describeDue,
-  MODE_LABELS,
   QUESTION_TYPE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { AssignmentFixTable } from "@/components/teach/assignment-fix-table";
@@ -88,7 +88,8 @@ export default async function AssignmentFixPage({ params }: AssignmentFixPagePro
       </p>
       <h1>Sửa lỗi hiển thị: {assignment.title}</h1>
       <p className="item-meta">
-        {MODE_LABELS[assignment.mode]}, {describeDue(assignment.dueAt)}, {questions.length} câu
+        {describeAssignmentKind(assignment)}, {describeDue(assignment.dueAt)}, {questions.length}{" "}
+        câu
         {editedCount ? `, đã sửa ${editedCount} câu` : ""}
         {assignment.status === "closed" ? ", đã đóng" : ""}
       </p>

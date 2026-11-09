@@ -1,12 +1,13 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
 import { StartAttemptButton } from "@/components/classroom/start-attempt-button";
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
+import { describeJlptCountdown, examHandInAt } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -69,6 +70,17 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const blocker = describeBlocker(view, now);
   const hasSubmitted = view.attempts.some((attempt) => attempt.status === "submitted");
   const isLate = getDeadlineState(assignment.dueAt, assignment.allowLate, now) === "late";
+  const { exam } = assignment;
+  // A learner starting close to the deadline gets only the time left until it.
+  const minutesToDue = assignment.dueAt
+    ? Math.floor((Date.parse(assignment.dueAt) - now.getTime()) / 60_000)
+    : null;
+  const isShortened =
+    exam !== null && minutesToDue !== null && minutesToDue < exam.timeLimitMinutes;
+  let startLabel = hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài";
+  if (exam) {
+    startLabel = "Bắt đầu thi";
+  }
   return (
     <div className="assignment-page">
       <div className="page-heading">
@@ -82,10 +94,11 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
       </div>
       <ul className="item-meta assignment-facts">
         <li>
-          {MODE_LABELS[assignment.mode]}: {view.questionCount} câu, {view.totalPoints} điểm, đạt từ{" "}
-          {assignment.passScore}%
+          {describeAssignmentKind(assignment)}: {view.questionCount} câu, {view.totalPoints} điểm
+          {exam ? ", tính giờ từ lúc bắt đầu" : `, đạt từ ${assignment.passScore}%`}
         </li>
         <li>{describeDue(assignment.dueAt)}</li>
+        {exam && describeJlptCountdown(now) && <li>{describeJlptCountdown(now)}</li>}
         <li>
           Lượt làm: {view.attempts.length} / {assignment.maxAttempts}
         </li>
@@ -107,10 +120,43 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           initialSavedAt={openAttempt.savedAt}
           dueAt={assignment.dueAt}
           allowLate={assignment.allowLate}
+          exam={
+            exam
+              ? {
+                  handInAt: examHandInAt(
+                    openAttempt.startedAt,
+                    exam.timeLimitMinutes,
+                    assignment.dueAt,
+                    assignment.allowLate,
+                  ),
+                  serverNow: now.toISOString(),
+                }
+              : null
+          }
         />
       ) : (
         <div className="form-card">
           {blocker && <p>{blocker}</p>}
+          {exam && !blocker && (
+            <div className="notice-panel">
+              <p>
+                Đồng hồ {exam.timeLimitMinutes} phút bắt đầu ngay khi bạn bấm Bắt đầu thi và vẫn
+                chạy khi đóng trang hay mất mạng. Hết giờ, Reng tự nộp các câu đã lưu. Bài chỉ có
+                một lượt làm.
+              </p>
+              <p className="small">
+                Nên làm ở nơi yên tĩnh, có tai nghe cho phần nghe hiểu, máy đã sạc pin.
+              </p>
+              {isShortened && minutesToDue !== null && (
+                <p>
+                  <strong>
+                    Chỉ còn {Math.max(minutesToDue, 0)} phút tới hạn, nên lượt của bạn sẽ ngắn hơn{" "}
+                    {exam.timeLimitMinutes} phút.
+                  </strong>
+                </p>
+              )}
+            </div>
+          )}
           {/* A finished assignment opens on its results; a new attempt is the second choice, since
               it cannot be cancelled and its score replaces the one shown everywhere. */}
           <div className="button-row">
@@ -123,7 +169,7 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
             {!blocker && (
               <StartAttemptButton
                 assignmentId={assignment.id}
-                label={hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài"}
+                label={startLabel}
                 variant={hasSubmitted ? "outline" : "default"}
               />
             )}

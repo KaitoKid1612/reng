@@ -9,6 +9,8 @@ export interface AssignmentMessageInput {
   dueAt: string | null;
   allowLate: boolean;
   url: string;
+  // A JLPT mock exam: named as such, with its time per attempt.
+  exam?: { level: string; timeLimitMinutes: number } | null;
 }
 
 const MODE_WORDS: Record<AssignmentMode, string> = {
@@ -34,6 +36,15 @@ export function buildAssignmentMessage(input: AssignmentMessageInput) {
   const classLabel = /^lớp(\s|$)/iu.test(input.className.trim())
     ? input.className.trim()
     : `Lớp ${input.className.trim()}`;
+  if (input.exam) {
+    return [
+      `${classLabel}: có đề thi thử JLPT ${input.exam.level} mới «${input.title}», làm trong ${input.exam.timeLimitMinutes} phút từ lúc bấm Bắt đầu thi.`,
+      input.dueAt
+        ? `Bắt đầu thi trước ${formatStudyDateTime(input.dueAt)}.`
+        : "Không có hạn bắt đầu.",
+      `Làm bài tại: ${input.url}`,
+    ].join("\n");
+  }
   return [
     `${classLabel}: có bài ${MODE_WORDS[input.mode]} mới «${input.title}».`,
     describeDeadline(input.dueAt, input.allowLate),

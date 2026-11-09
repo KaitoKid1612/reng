@@ -49,3 +49,19 @@ test("a class name that already starts with Lớp is not prefixed twice", () => 
   // A word that only begins with the same letters is still a name to prefix.
   assert.match(message("Lớpxyz"), /^Lớp Lớpxyz: có bài/);
 });
+
+test("a JLPT mock exam names the exam, its time per attempt and when to start", () => {
+  const message = buildAssignmentMessage({
+    ...base,
+    title: "Thi thử JLPT N5 — 09/11",
+    mode: "test",
+    dueAt: "2026-11-16T16:59:00.000Z",
+    allowLate: false,
+    exam: { level: "N5", timeLimitMinutes: 90 },
+  });
+  assert.match(
+    message,
+    /có đề thi thử JLPT N5 mới «Thi thử JLPT N5 — 09\/11», làm trong 90 phút từ lúc bấm Bắt đầu thi\./,
+  );
+  assert.match(message, /\nBắt đầu thi trước 23:59 16\/11\/2026\.\n/);
+});

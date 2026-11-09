@@ -21,6 +21,7 @@ import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
+import { publishJlptExam, publishJlptExamSchema } from "@/lib/server/jlpt-exams";
 import { saveClassSchedule } from "@/lib/server/class-schedule";
 import { pinLatestVersion, removeClassLesson, setLessonArchived } from "@/lib/server/lesson-usage";
 import {
@@ -71,7 +72,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   duplicate: "Thứ tự này đã có bài khác trong lớp. Chọn số khác.",
   lesson_not_in_class: "Thêm bài học vào lớp trước khi giao bài.",
   due_in_past: "Hạn nộp phải ở sau thời điểm hiện tại.",
-  invalid_items: "Chọn ít nhất một câu hỏi hợp lệ (tối đa 60 câu).",
+  invalid_items: "Chọn ít nhất một câu hỏi hợp lệ (tối đa 70 câu).",
   assignment_not_found: "Bài giao không còn mở để đóng.",
   not_typed: "Chỉ chấp nhận thêm được câu trả lời gõ chữ (câu điền, nghe gõ, chính tả).",
   already_correct: "Câu trả lời này đã được tính đúng.",
@@ -508,6 +509,61 @@ export async function publishAssignmentAction(input: PublishAssignmentInput): Pr
   }
   // Back on the class page the new assignment is named and its list is in view.
   redirect(`/teach/classes/${input.classId}?assigned=${assignmentId}#assignments-title`);
+}
+
+const JLPT_EXAM_FIELDS = [
+  "lessonId",
+  "level",
+  "title",
+  "dueAt",
+  "timeLimitMinutes",
+  "feedbackPolicy",
+] as const;
+
+const JLPT_EXAM_ERRORS: Record<string, string> = {
+  not_japanese: "Thi thử JLPT chỉ dành cho lớp tiếng Nhật.",
+  no_exam_questions:
+    "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, reading hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
+  invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",
+  // Production before migration 20261109032029: the function does not exist yet.
+  database_error: "Chưa tạo được đề thi thử. Nếu lỗi lặp lại, cần cập nhật database của Reng.",
+};
+
+export async function publishJlptExamAction(
+  _state: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  const values = typedValues(formData, JLPT_EXAM_FIELDS);
+  const account = await requireTeacherAction();
+  if (!account) {
+    return { error: ERROR_MESSAGES.not_found, values };
+  }
+  const classId = readField(formData, "classId");
+  const parsed = publishJlptExamSchema.safeParse({
+    classId,
+    lessonId: values.lessonId,
+    level: values.level,
+    title: values.title,
+    dueAt: values.dueAt,
+    timeLimitMinutes: Number(values.timeLimitMinutes),
+    feedbackPolicy: values.feedbackPolicy,
+  });
+  if (!parsed.success) {
+    return {
+      error: values.dueAt
+        ? JLPT_EXAM_ERRORS.invalid_input
+        : "Chọn hạn làm bài (giờ Việt Nam) cho đề thi thử.",
+      values,
+    };
+  }
+  let assignmentId: string;
+  try {
+    ({ assignmentId } = await publishJlptExam(account.id, parsed.data));
+  } catch (error) {
+    const code = error instanceof ServiceError ? error.code : "";
+    return { error: JLPT_EXAM_ERRORS[code] ?? describeError(error), values };
+  }
+  redirect(`/teach/classes/${classId}?assigned=${assignmentId}#assignments-title`);
 }
 
 export async function acceptAnswerAction(

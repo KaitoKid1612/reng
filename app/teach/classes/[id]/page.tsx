@@ -1,7 +1,7 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { describeDue, MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { ClassScheduleForm } from "@/components/teach/class-schedule-form";
 import { ClassSessionForm } from "@/components/teach/class-session-form";
 import { ClassSessionList } from "@/components/teach/class-session-list";
@@ -131,7 +131,7 @@ function AssignmentItem({ classId, assignment, message }: AssignmentItemProps) {
       <div>
         <h3>{assignment.title}</h3>
         <p className="item-meta">
-          {MODE_LABELS[assignment.mode]}, {describeDue(assignment.dueAt)},{" "}
+          {describeAssignmentKind(assignment)}, {describeDue(assignment.dueAt)},{" "}
           {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
           {assignment.status === "closed" ? ", đã đóng" : ""}
         </p>
@@ -180,6 +180,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           dueAt: assignment.dueAt,
           allowLate: assignment.allowLate,
           url: absoluteUrl(`/assignments/${assignment.id}`),
+          exam: assignment.exam,
         });
   const justAssignedMessage = justAssigned ? messageFor(justAssigned) : null;
   // The source lookup reads question lists, so it only runs while daily practice is on.

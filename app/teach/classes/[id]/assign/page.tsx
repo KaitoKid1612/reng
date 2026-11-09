@@ -2,12 +2,14 @@ import Link from "next/link";
 
 import { AssignmentForm } from "@/components/teach/assignment-form";
 import { ClassLessonForm } from "@/components/teach/class-lesson-form";
+import { JlptExamForm } from "@/components/teach/jlpt-exam-form";
 import { PinVersionButton } from "@/components/teach/pin-version-button";
+import { countJlptSections, examTitle } from "@/lib/jlpt";
 import { requireTeacher } from "@/lib/server/account";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass, listClassLessons, listOwnedLessons } from "@/lib/server/classes";
 import { loadOrNotFound } from "@/lib/server/pages";
-import { formatStudyDateTime } from "@/lib/study-days";
+import { formatStudyDateTime, shiftStudyDay, toStudyDay } from "@/lib/study-days";
 
 import type { Metadata } from "next";
 
@@ -39,21 +41,26 @@ export default async function AssignPage({ params }: AssignPageProps) {
     return latest !== null && latest > lesson.versionNo ? latest : null;
   };
   const assignableLessons = await Promise.all(
-    classLessons.map(async (lesson) => ({
-      lessonId: lesson.lessonId,
-      title: lesson.title,
-      versionNo: lesson.versionNo,
-      newerVersionNo: newerVersion(lesson),
-      questions: (await listAssignablePracticeQuestions(classRow.id, lesson.lessonId)).map(
-        (question) => ({
+    classLessons.map(async (lesson) => {
+      const questions = await listAssignablePracticeQuestions(classRow.id, lesson.lessonId);
+      return {
+        lessonId: lesson.lessonId,
+        title: lesson.title,
+        versionNo: lesson.versionNo,
+        newerVersionNo: newerVersion(lesson),
+        questions: questions.map((question) => ({
           id: question.id,
           type: question.type,
           prompt: question.prompt,
           points: question.points,
-        }),
-      ),
-    })),
+        })),
+        jlptSections: countJlptSections(questions),
+      };
+    }),
   );
+  const now = new Date();
+  // A mock exam stays open a week by default, until 23:59 Vietnam time.
+  const examDueAt = new Date(`${shiftStudyDay(toStudyDay(now), 7)}T23:59:00+07:00`).toISOString();
   return (
     <>
       <div className="page-heading">
@@ -61,6 +68,12 @@ export default async function AssignPage({ params }: AssignPageProps) {
           <h1>Giao bài: {classRow.name}</h1>
           <p>
             <Link href={`/teach/classes/${classRow.id}`}>Theo dõi lớp</Link>
+            {classRow.language_tag === "ja-JP" && (
+              <>
+                {" · "}
+                <a href="#jlpt-exam-title">Tạo đề thi thử JLPT</a>
+              </>
+            )}
           </p>
         </div>
       </div>
@@ -112,6 +125,28 @@ export default async function AssignPage({ params }: AssignPageProps) {
           lessons={assignableLessons}
         />
       </section>
+      {classRow.language_tag === "ja-JP" && (
+        <section className="section-block" aria-labelledby="jlpt-exam-title">
+          <h2 id="jlpt-exam-title">Thi thử JLPT</h2>
+          <p className="small muted">
+            Reng lấy câu từ ngân hàng ôn của lớp theo ba phần như đề thật (chữ Hán – từ vựng, ngữ
+            pháp – đọc hiểu, nghe hiểu), một lượt làm có giới hạn thời gian; kết quả có điểm từng
+            phần và ước tính đỗ/trượt trên thang 180.
+          </p>
+          <JlptExamForm
+            classId={classRow.id}
+            lessons={assignableLessons
+              .filter((lesson) => lesson.questions.length > 0)
+              .map((lesson) => ({
+                lessonId: lesson.lessonId,
+                title: lesson.title,
+                sections: lesson.jlptSections,
+              }))}
+            defaultDueAt={examDueAt}
+            defaultTitles={{ N5: examTitle("N5", now), N4: examTitle("N4", now) }}
+          />
+        </section>
+      )}
     </>
   );
 }

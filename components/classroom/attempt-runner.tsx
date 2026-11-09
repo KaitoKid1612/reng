@@ -10,6 +10,7 @@ import { QuestionField } from "@/components/classroom/question-field";
 import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
 import { DeadlineCountdown } from "@/components/classroom/deadline-countdown";
+import { ExamTimer } from "@/components/classroom/exam-timer";
 import { Button } from "@/components/ui/button";
 import {
   answerLang,
@@ -41,6 +42,8 @@ export interface AttemptRunnerProps {
   initialSavedAt: string;
   dueAt?: string | null;
   allowLate?: boolean;
+  // A timed mock exam: when the page hands the attempt in, and the server's clock at render.
+  exam?: { handInAt: string; serverNow: string } | null;
 }
 
 const STATUS_TEXT: Record<SyncStatus, string> = {
@@ -74,6 +77,7 @@ export function AttemptRunner({
   initialSavedAt,
   dueAt = null,
   allowLate = true,
+  exam = null,
 }: AttemptRunnerProps) {
   const router = useRouter();
   const views = items.map((item) => item.view);
@@ -372,9 +376,17 @@ export function AttemptRunner({
             </div>
           </section>
         )}
-        <DeadlineCountdown dueAt={dueAt} allowLate={allowLate} onAutoSubmit={handleAutoSubmit} />
+        {exam ? (
+          <ExamTimer
+            handInAt={exam.handInAt}
+            serverNow={exam.serverNow}
+            onAutoSubmit={handleAutoSubmit}
+          />
+        ) : (
+          <DeadlineCountdown dueAt={dueAt} allowLate={allowLate} onAutoSubmit={handleAutoSubmit} />
+        )}
         <p className="save-status" data-state={sync.status} role="status" aria-live="polite">
-          {STATUS_TEXT[sync.status]}
+          {exam && sync.status === "past_due" ? "Đã hết giờ làm bài." : STATUS_TEXT[sync.status]}
           {sync.status === "saved" && ` lúc ${formatStudyDateTime(sync.savedAt)}`}
         </p>
         <div className="button-row">

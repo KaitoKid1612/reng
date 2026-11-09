@@ -8,6 +8,18 @@ export const MODE_LABELS: Record<AssignmentMode, string> = {
   test: "Kiểm tra",
 };
 
+interface KindSource {
+  mode: AssignmentMode;
+  exam?: { level: string; timeLimitMinutes: number } | null;
+}
+
+/** "Thi thử JLPT N5 (90 phút)" for a mock exam, otherwise practice or test. */
+export function describeAssignmentKind(assignment: KindSource) {
+  return assignment.exam
+    ? `Thi thử JLPT ${assignment.exam.level} (${assignment.exam.timeLimitMinutes} phút)`
+    : MODE_LABELS[assignment.mode];
+}
+
 export const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = {
   choice: "trắc nghiệm",
   fill: "điền từ",

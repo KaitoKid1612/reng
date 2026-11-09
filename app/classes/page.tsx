@@ -6,8 +6,8 @@ import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import {
   AssignmentStatusBadge,
+  describeAssignmentKind,
   describeOpenDue,
-  MODE_LABELS,
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
@@ -50,7 +50,7 @@ export default async function ClassesPage() {
           </h3>
           <p className="item-meta">
             {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
-            {MODE_LABELS[item.assignment.mode]}, {describeOpenDue(item.assignment.dueAt, now)}
+            {describeAssignmentKind(item.assignment)}, {describeOpenDue(item.assignment.dueAt, now)}
           </p>
         </div>
         <div className="button-row item-actions">
