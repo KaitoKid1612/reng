@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "vocab": [],
+  "grammar": [],
+  "slides": [
+    {
+      "id": "jlpt-n5-intro",
+      "type": "note",
+      "title": "JLPT N5 – Bài luyện tập nháp",
+      "body": "Bộ câu hỏi gốc đang chờ kiểm duyệt. Không xuất bản cho học viên trước khi kiểm tra nội dung."
+    }
+  ],
+  "questions": [
+    {
+      "id": "jlpt-n5-001",
+      "type": "choice",
+      "prompt": "「学校」の読み方を選んでください。",
+      "options": ["がっこう", "がこう", "かっこう", "がっこ"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["kanji"],
+      "explain": "学校（がっこう）: trường học."
+    },
+    {
+      "id": "jlpt-n5-002",
+      "type": "choice",
+      "prompt": "「あした」と同じ意味の漢字を選んでください。",
+      "options": ["昨日", "今日", "明日", "毎日"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["vocabulary"],
+      "explain": "明日（あした）: ngày mai."
+    },
+    {
+      "id": "jlpt-n5-003",
+      "type": "choice",
+      "prompt": "わたしは 毎朝 7時（　）起きます。",
+      "options": ["に", "で", "を", "が"],
+      "answer": [0],
+      "multiple": false,
+      "points": 1,
+      "tags": ["particles"],
+      "explain": "Dùng に để chỉ thời điểm cụ thể."
+    },
+    {
+      "id": "jlpt-n5-004",
+      "type": "choice",
+      "prompt": "きのう、友だちと 映画を（　）。",
+      "options": ["見ます", "見ました", "見ません", "見る"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["grammar"],
+      "explain": "きのう là hôm qua, nên dùng thể quá khứ 見ました."
+    },
+    {
+      "id": "jlpt-n5-005",
+      "type": "choice",
+      "prompt": "「水」の読み方を選んでください。",
+      "options": ["ひ", "き", "みず", "やま"],
+      "answer": [2],
+      "multiple": false,
+      "points": 1,
+      "tags": ["kanji"],
+      "explain": "水（みず）: nước."
+    },
+    {
+      "id": "jlpt-n5-006",
+      "type": "choice",
+      "prompt": "田中さんは 毎日 自転車で 学校へ 行きます。田中さんは 何で 学校へ 行きますか。",
+      "options": ["電車", "自転車", "バス", "歩いて"],
+      "answer": [1],
+      "multiple": false,
+      "points": 1,
+      "tags": ["reading"],
+      "explain": "自転車で: bằng xe đạp."
+    }
+  ]
+}

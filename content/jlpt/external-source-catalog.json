@@ -7,16 +7,8 @@
       "name": "JLPT Official Practice Workbooks",
       "url": "https://www.jlpt.jp/e/samples/sampleindex.html",
       "language": "ja,en",
-      "levels": [
-        "N4",
-        "N5"
-      ],
-      "material": [
-        "PDF",
-        "MP3",
-        "answers",
-        "listening scripts"
-      ],
+      "levels": ["N4", "N5"],
+      "material": ["PDF", "MP3", "answers", "listening scripts"],
       "rights": "copyrighted; permission required for republication",
       "use": "format reference"
     },
@@ -24,15 +16,8 @@
       "name": "Kanji.vn",
       "url": "https://kanji.vn/thi-thu",
       "language": "vi",
-      "levels": [
-        "N4",
-        "N5"
-      ],
-      "material": [
-        "mock tests",
-        "listening audio",
-        "Vietnamese explanations"
-      ],
+      "levels": ["N4", "N5"],
+      "material": ["mock tests", "listening audio", "Vietnamese explanations"],
       "rights": "not verified",
       "use": "format reference"
     },
@@ -40,14 +25,8 @@
       "name": "NihongoFree N4",
       "url": "https://nihongofree.com/jlpt-n4/luyen-nghe/",
       "language": "vi",
-      "levels": [
-        "N4"
-      ],
-      "material": [
-        "34 listening questions claimed",
-        "browser speech",
-        "scripts"
-      ],
+      "levels": ["N4"],
+      "material": ["34 listening questions claimed", "browser speech", "scripts"],
       "rights": "not verified",
       "use": "listening format reference"
     },
@@ -55,14 +34,8 @@
       "name": "NihongoFree N5",
       "url": "https://nihongofree.com/jlpt-n5/luyen-nghe/",
       "language": "vi",
-      "levels": [
-        "N5"
-      ],
-      "material": [
-        "34 listening questions claimed",
-        "synthetic audio",
-        "scripts"
-      ],
+      "levels": ["N5"],
+      "material": ["34 listening questions claimed", "synthetic audio", "scripts"],
       "rights": "not verified",
       "use": "listening format reference"
     },
@@ -70,13 +43,8 @@
       "name": "Mainichi JLPT",
       "url": "https://safa-lang.com/jlpt/vi/mock/n5/",
       "language": "vi",
-      "levels": [
-        "N5"
-      ],
-      "material": [
-        "33-question mock",
-        "listening"
-      ],
+      "levels": ["N5"],
+      "material": ["33-question mock", "listening"],
       "rights": "not verified",
       "use": "mock reference"
     },
@@ -84,10 +52,7 @@
       "name": "JPNotes",
       "url": "https://jpnotes.dev/listening/",
       "language": "en,ja",
-      "levels": [
-        "N4",
-        "N5"
-      ],
+      "levels": ["N4", "N5"],
       "material": [
         "80 original listening recordings per level claimed",
         "transcripts",
@@ -100,15 +65,8 @@
       "name": "Conjugaizen",
       "url": "https://conjugaizen.com/jlpt-practice-test/",
       "language": "en",
-      "levels": [
-        "N4",
-        "N5"
-      ],
-      "material": [
-        "2 mock exams per level claimed",
-        "timers",
-        "answer reviews"
-      ],
+      "levels": ["N4", "N5"],
+      "material": ["2 mock exams per level claimed", "timers", "answer reviews"],
       "rights": "not verified",
       "use": "mock reference"
     },
@@ -116,14 +74,8 @@
       "name": "FreeTag",
       "url": "https://freetag.jp/en/jlpt/practice/index.html",
       "language": "en,ja",
-      "levels": [
-        "N4",
-        "N5"
-      ],
-      "material": [
-        "question bank",
-        "synthetic audio"
-      ],
+      "levels": ["N4", "N5"],
+      "material": ["question bank", "synthetic audio"],
       "rights": "not verified",
       "use": "question-type reference"
     },
@@ -131,14 +83,8 @@
       "name": "GyanMirai",
       "url": "https://www.gyanmirai.com/jlpt/jlpt-n5/listening-practice-test",
       "language": "en,ja",
-      "levels": [
-        "N5"
-      ],
-      "material": [
-        "26 listening papers claimed",
-        "audio",
-        "transcripts"
-      ],
+      "levels": ["N5"],
+      "material": ["26 listening papers claimed", "audio", "transcripts"],
       "rights": "not verified",
       "use": "listening reference"
     },
@@ -146,14 +92,8 @@
       "name": "VNJPCLUB",
       "url": "https://jlpt.vnjpclub.com/nghe-hieu-n5-4-original02.html",
       "language": "vi,ja",
-      "levels": [
-        "N5"
-      ],
-      "material": [
-        "original listening practice",
-        "audio",
-        "Vietnamese explanations"
-      ],
+      "levels": ["N5"],
+      "material": ["original listening practice", "audio", "Vietnamese explanations"],
       "rights": "not verified",
       "use": "listening reference"
     }
@@ -171,12 +111,7 @@
       "sourceUrl",
       "licenseStatus"
     ],
-    "listeningAdditionalFields": [
-      "audioAsset",
-      "transcriptJa",
-      "audioVerified",
-      "speakerCount"
-    ],
+    "listeningAdditionalFields": ["audioAsset", "transcriptJa", "audioVerified", "speakerCount"],
     "publicationGates": [
       "source ownership or license confirmed",
       "Japanese correctness reviewed",
