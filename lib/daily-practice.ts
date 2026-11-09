@@ -178,14 +178,29 @@ export function selectDailyQuestionsWithListeningQuota(
   const others = unique.filter((item) => item.type !== "listen" && item.type !== "dictation");
   const target = Math.min(size, unique.length);
   const listeningSize = Math.min(listeningCount, target, listening.length);
-  const selectedListening = selectBalancedDailyQuestions(listening, recentUses, listeningSize, seed);
-  const selectedOthers = selectBalancedDailyQuestions(others, recentUses, target - selectedListening.length, seed);
+  const selectedListening = selectBalancedDailyQuestions(
+    listening,
+    recentUses,
+    listeningSize,
+    seed,
+  );
+  const selectedOthers = selectBalancedDailyQuestions(
+    others,
+    recentUses,
+    target - selectedListening.length,
+    seed,
+  );
   const missing = target - selectedListening.length - selectedOthers.length;
-  const extraListening = missing > 0
-    ? selectBalancedDailyQuestions(
-        listening.filter((item) => !selectedListening.includes(item.id)), recentUses, missing, seed,
-      )
-    : [];
+  // A count of 0 leaves listening out (migration 20261104110635), even if the set ends shorter.
+  const extraListening =
+    missing > 0 && listeningCount > 0
+      ? selectBalancedDailyQuestions(
+          listening.filter((item) => !selectedListening.includes(item.id)),
+          recentUses,
+          missing,
+          seed,
+        )
+      : [];
   return [...selectedListening, ...selectedOthers, ...extraListening];
 }
 

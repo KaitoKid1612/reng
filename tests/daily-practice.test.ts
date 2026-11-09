@@ -185,13 +185,14 @@ test("order and listening questions join the daily set as their own kinds", () =
 
 test("70-question daily selection keeps unique IDs and respects the requested size", () => {
   const candidates = Array.from({ length: 180 }, (_, index) => ({
-    id: `q-${index + 1}`, type: index % 2 === 0 ? "choice" : "fill", tags: [],
+    id: `q-${index + 1}`,
+    type: index % 2 === 0 ? "choice" : "fill",
+    tags: [],
   }));
   const selected = selectBalancedDailyQuestions(candidates, [], 70, "class:2026-11-07");
   assert.equal(selected.length, 70);
   assert.equal(new Set(selected).size, 70);
 });
-
 
 test("daily listening quota reserves eight N5 audio questions in sixty", () => {
   const candidates = [
@@ -224,4 +225,24 @@ test("missing audio falls back to other questions without duplicates", () => {
   assert.equal(selected.length, 70);
   assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 3);
   assert.equal(new Set(selected).size, 70);
+});
+
+test("a class without a listening count keeps listening questions in proportion", () => {
+  const candidates = [
+    ...Array.from({ length: 40 }, (_, i) => ({ id: `regular-${i}`, type: "choice", tags: [] })),
+    ...Array.from({ length: 20 }, (_, i) => ({ id: `audio-${i}`, type: "listen", tags: [] })),
+  ];
+  const selected = selectDailyQuestionsWithListeningQuota(candidates, [], 30, "rule", null);
+  assert.deepEqual(selected, selectBalancedDailyQuestions(candidates, [], 30, "rule"));
+  assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 10);
+});
+
+test("a listening count of 0 leaves listening out even when other questions run short", () => {
+  const candidates = [
+    ...Array.from({ length: 12 }, (_, i) => ({ id: `regular-${i}`, type: "choice", tags: [] })),
+    ...Array.from({ length: 20 }, (_, i) => ({ id: `audio-${i}`, type: "dictation", tags: [] })),
+  ];
+  const selected = selectDailyQuestionsWithListeningQuota(candidates, [], 20, "none", 0);
+  assert.equal(selected.length, 12);
+  assert.equal(selected.filter((id) => id.startsWith("audio-")).length, 0);
 });

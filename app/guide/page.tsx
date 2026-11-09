@@ -99,7 +99,8 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-daily",
     title: "Bài luyện hằng ngày",
     steps: [
-      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15, 20, 30, 40 hoặc 60 câu và bài ở ô Lấy câu từ (ví dụ ngân hàng ôn), rồi bấm Lưu. Để Tự động thì Reng lấy bài mới nhất đã mở có câu hỏi, nên thêm bài mới vào lớp sẽ đổi nguồn.",
+      "Trong trang lớp, mục Bài luyện hằng ngày: chọn 5, 7, 10, 15, 20, 30, 40, 60 hoặc 70 câu và bài ở ô Lấy câu từ (ví dụ ngân hàng ôn), rồi bấm Lưu. Để Tự động thì Reng lấy bài mới nhất đã mở có câu hỏi, nên thêm bài mới vào lớp sẽ đổi nguồn.",
+      "Ô Số câu nghe mỗi ngày: để Theo tỉ lệ của bài thì câu nghe xuất hiện theo tỉ lệ có trong bài nguồn; chọn 0 để bỏ câu nghe (ví dụ học viên không nghe được ở lớp); chọn 1–10 để mỗi ngày có tối đa chừng ấy câu nghe, nằm trong tổng số câu. Bài nguồn ít câu nghe hơn số đã chọn thì Reng bù bằng câu thường.",
       "Khoảng 6:00 sáng mỗi ngày, Reng tự giao một bài từ bài đã chọn, hạn 23:59 cùng ngày. Câu đổi mỗi ngày và ưu tiên câu học viên chưa gặp gần đây. Nếu bài nguồn có ít câu hơn số câu mỗi ngày, trang lớp sẽ cảnh báo vì học viên gặp lại toàn bộ câu mỗi ngày.",
       "Bấm Giao bài hôm nay ngay khi muốn có bài của hôm nay mà không chờ tới sáng mai.",
     ],

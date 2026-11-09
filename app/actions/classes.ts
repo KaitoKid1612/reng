@@ -393,7 +393,11 @@ const dailySizeSchema = z
     z.union([z.null(), z.number().int().min(MIN_DAILY_PRACTICE_SIZE).max(MAX_DAILY_PRACTICE_SIZE)]),
   );
 
-const dailyListeningSchema = z.coerce.number().int().min(0).max(10);
+// Empty is the proportional rule (null in the database), as the form's first option.
+const dailyListeningSchema = z
+  .string()
+  .transform((value) => (value ? Number(value) : null))
+  .pipe(z.union([z.null(), z.number().int().min(0).max(10)]));
 
 const dailyLessonSchema = z
   .string()

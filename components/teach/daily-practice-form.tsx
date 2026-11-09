@@ -22,7 +22,14 @@ interface DailyPracticeFormProps {
   lessons: DailyPracticeLessonOption[];
 }
 
-export function DailyPracticeForm({ classId, size, listeningCount, availableListeningCount, lessonId, lessons }: DailyPracticeFormProps) {
+export function DailyPracticeForm({
+  classId,
+  size,
+  listeningCount,
+  availableListeningCount,
+  lessonId,
+  lessons,
+}: DailyPracticeFormProps) {
   const [state, action, isPending] = useActionState(dailyPracticeAction, {});
   return (
     <form action={action} className="form-card">
@@ -48,12 +55,24 @@ export function DailyPracticeForm({ classId, size, listeningCount, availableList
         </div>
         <div className="field">
           <label htmlFor="daily-listening-count">Số câu nghe mỗi ngày</label>
-          <select key={listeningCount ?? "unset"} id="daily-listening-count" name="listeningCount" defaultValue={listeningCount ?? 0}>
+          {/* Empty keeps the class's rule from before the count existed: listening questions in
+              proportion to the source lesson. Saving size or source must not switch it to 0. */}
+          <select
+            key={listeningCount ?? "unset"}
+            id="daily-listening-count"
+            name="listeningCount"
+            defaultValue={listeningCount ?? ""}
+          >
+            <option value="">Theo tỉ lệ của bài</option>
             {Array.from({ length: 11 }, (_, count) => (
-              <option key={count} value={count}>{count} câu nghe</option>
+              <option key={count} value={count}>
+                {count} câu nghe
+              </option>
             ))}
           </select>
-          <p className="muted">Câu nghe nằm trong tổng số câu mỗi ngày; ngân hàng cần có audio đã duyệt.</p>
+          <p className="muted">
+            Câu nghe nằm trong tổng số câu mỗi ngày; ngân hàng cần có audio đã duyệt.
+          </p>
           {availableListeningCount !== null && (
             <p className="muted" role="status">
               Nguồn bài đang sử dụng có {availableListeningCount} câu nghe.
