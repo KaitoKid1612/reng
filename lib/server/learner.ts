@@ -314,7 +314,11 @@ export async function getLessonProgress(userId: string, lessonId: string) {
       .eq("user_id", userId)
       .eq("lesson_id", lessonId)
       .maybeSingle(),
-    z.object({ lesson_version_id: z.uuid(), last_slide_id: z.string().nullable(), read_completed_at: timestamp.nullable() }),
+    z.object({
+      lesson_version_id: z.uuid(),
+      last_slide_id: z.string().nullable(),
+      read_completed_at: timestamp.nullable(),
+    }),
   );
 }
 
@@ -345,6 +349,8 @@ export async function markLessonRead(userId: string, lessonId: string, versionId
 
 // Remember where a learner stopped without marking the lesson as completed.
 // A new published version may reorder slides, so validate the ID against the selected version.
+// read_completed_at is left out of the upsert: an update then keeps the stored value, so a
+// position saved while "mark as read" runs cannot put back the earlier, unread state.
 export async function saveLessonSlidePosition(
   userId: string,
   lessonId: string,
@@ -355,18 +361,14 @@ export async function saveLessonSlidePosition(
   if (!version || !version.content.slides.some((slide) => slide.id === slideId)) {
     throw new ServiceError("not_found");
   }
-  const service = createServiceClient();
-  const previous = await getLessonProgress(userId, lessonId);
-  const now = new Date().toISOString();
   await runMutation(
-    service.from("lesson_progress").upsert(
+    createServiceClient().from("lesson_progress").upsert(
       {
         user_id: userId,
         lesson_id: lessonId,
         lesson_version_id: versionId,
         last_slide_id: slideId,
-        read_completed_at: previous?.read_completed_at ?? null,
-        updated_at: now,
+        updated_at: new Date().toISOString(),
       },
       { onConflict: "user_id,lesson_id" },
     ),
