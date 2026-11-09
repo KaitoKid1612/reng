@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "purpose": "JLPT N4/N5 source discovery and rights review; links only, no exam questions or audio mirrored",
+  "updatedAt": "2026-11-09",
+  "sources": [
+    {
+      "id": "jlpt-official-workbook-2018",
+      "title": "JLPT Official Practice Workbook Vol. 2",
+      "year": 2018,
+      "levels": [
+        "N4",
+        "N5"
+      ],
+      "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
+      "materials": [
+        "question PDFs",
+        "answer keys",
+        "listening scripts",
+        "listening audio"
+      ],
+      "rights": "review-required",
+      "importPolicy": "metadata-only-until-rights-cleared",
+      "official": true
+    },
+    {
+      "id": "jlpt-official-workbook-2012",
+      "title": "JLPT Official Practice Workbook",
+      "year": 2012,
+      "levels": [
+        "N4",
+        "N5"
+      ],
+      "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
+      "materials": [
+        "question PDFs",
+        "answer keys",
+        "listening scripts",
+        "listening audio"
+      ],
+      "rights": "review-required",
+      "importPolicy": "metadata-only-until-rights-cleared",
+      "official": true
+    },
+    {
+      "id": "jlpt-official-samples-2009",
+      "title": "JLPT Sample Questions",
+      "year": 2009,
+      "levels": [
+        "N4",
+        "N5"
+      ],
+      "url": "https://samplequestions.jlpt.jp/e/samples/sample09.html",
+      "materials": [
+        "question PDFs",
+        "answers",
+        "audio samples"
+      ],
+      "rights": "review-required",
+      "importPolicy": "metadata-only-until-rights-cleared",
+      "official": true
+    }
+  ],
+  "discovery": {
+    "targetYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "status": "not-yet-verified",
+    "rule": "Do not label third-party compilations as authentic past JLPT exams without provenance"
+  },
+  "rightsNotes": [
+    "JLPT organizers do not release each full past test",
+    "Official sample questions and listening audio may contain third-party copyrighted works",
+    "Store references and provenance first; import or publish only when licensing and permissions are established"
+  ]
+}
