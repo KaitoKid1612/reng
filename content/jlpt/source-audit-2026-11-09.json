@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-09",
+  "officialPage": "https://www.jlpt.jp/e/samples/sampleindex.html",
+  "scope": {
+    "years": [
+      2012,
+      2018
+    ],
+    "levels": [
+      "N4",
+      "N5"
+    ],
+    "audioGroupsPerLevel": 4,
+    "audioLinks": 16
+  },
+  "results": {
+    "officialPageVerified": true,
+    "audioLinksPresentOnOfficialPage": 16,
+    "linkedAudioContentTypeObserved": "audio/mpeg (sample URLs through web retrieval)",
+    "pdfCategoriesListed": [
+      "vocabulary",
+      "grammar",
+      "reading",
+      "listening",
+      "answer sheet",
+      "answers",
+      "listening script"
+    ],
+    "audioDownloadedAndHashed": 0,
+    "audioDecodedAndPlayed": 0,
+    "pdfDownloadedAndParsed": 0,
+    "licenseToRepublish": false
+  },
+  "blockers": [
+    "Container outbound DNS resolution failed for www.jlpt.jp",
+    "Web text reader rejects audio/mpeg, so HTTP link existence is not playback validation",
+    "Rights clearance required before redistributing official MP3s or question text"
+  ],
+  "nextSteps": [
+    "Run python3 scripts/audit-jlpt-audio.py in GitHub Codespaces or CI with outbound network",
+    "Review output JSON for status, content-type, bytes, hash",
+    "Use ffprobe on authorized local files for codec/duration and manually listen to samples",
+    "Check official PDFs and transcript correspondence without republishing copyrighted content"
+  ],
+  "note": "Audit of official listing only. Do not interpret 16 listed links as 16 verified playable recordings."
+}
