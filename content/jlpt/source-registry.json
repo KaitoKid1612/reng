@@ -75,5 +75,49 @@
     "JLPT organizers do not release each full past test",
     "Official sample questions and listening audio may contain third-party copyrighted works",
     "Store references and provenance first; import or publish only when licensing and permissions are established"
-  ]
+  ],
+  "audit": {
+    "checkedAt": "2026-11-09",
+    "official2012and2018": {
+      "levels": [
+        "N4",
+        "N5"
+      ],
+      "perLevelPerWorkbook": {
+        "questionBooklets": [
+          "vocabulary",
+          "grammar",
+          "reading",
+          "listening"
+        ],
+        "audioGroups": [
+          "task-based comprehension",
+          "point comprehension",
+          "utterance expressions",
+          "quick response"
+        ],
+        "answers": true,
+        "listeningScript": true,
+        "sampleAnswerSheet": true
+      },
+      "totalAudioGroupFilesAcrossLevelsAndWorkbooks": 16,
+      "source": "https://www.jlpt.jp/e/samples/sampleindex.html",
+      "verification": "Official listing verified; individual media file download/integrity not verified"
+    },
+    "pastExam2022to2026": {
+      "officialFullExamRelease": false,
+      "verifiedAudioBundles": 0,
+      "verification": "No authenticated complete public past-exam bundles identified; third-party uploads not treated as authentic"
+    },
+    "copyright": {
+      "source": "https://www.jlpt.jp/e/faq/",
+      "warning": "https://www.jlpt.jp/e/topics/202401191708325175.html",
+      "policy": "Reference and catalog only; do not mirror question PDFs, answer keys or MP3s without permission"
+    },
+    "nextActions": [
+      "verify each individual official PDF/MP3 URL and file integrity in network-enabled runner",
+      "review third-party providers for provenance and reuse license",
+      "build original or licensed exam banks and track audio coverage"
+    ]
+  }
 }
