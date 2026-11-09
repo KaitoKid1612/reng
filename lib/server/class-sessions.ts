@@ -48,7 +48,7 @@ const markRowSchema = z.object({
   is_present: z.boolean(),
 });
 
-// Before migration 20261106102652 is applied the attendance table is missing; the log still opens,
+// Before migration 20261109024203 is applied the attendance table is missing; the log still opens,
 // without attendance. Twelve sessions of a large class pass the 1000-row cap, so it is paged.
 async function listAttendance(sessionIds: readonly string[]) {
   const marks = new Map<string, AttendanceMark[]>();
