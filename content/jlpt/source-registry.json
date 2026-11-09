@@ -7,17 +7,9 @@
       "id": "jlpt-official-workbook-2018",
       "title": "JLPT Official Practice Workbook Vol. 2",
       "year": 2018,
-      "levels": [
-        "N4",
-        "N5"
-      ],
+      "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
-      "materials": [
-        "question PDFs",
-        "answer keys",
-        "listening scripts",
-        "listening audio"
-      ],
+      "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
       "rights": "review-required",
       "importPolicy": "metadata-only-until-rights-cleared",
       "official": true
@@ -26,17 +18,9 @@
       "id": "jlpt-official-workbook-2012",
       "title": "JLPT Official Practice Workbook",
       "year": 2012,
-      "levels": [
-        "N4",
-        "N5"
-      ],
+      "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
-      "materials": [
-        "question PDFs",
-        "answer keys",
-        "listening scripts",
-        "listening audio"
-      ],
+      "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
       "rights": "review-required",
       "importPolicy": "metadata-only-until-rights-cleared",
       "official": true
@@ -45,29 +29,16 @@
       "id": "jlpt-official-samples-2009",
       "title": "JLPT Sample Questions",
       "year": 2009,
-      "levels": [
-        "N4",
-        "N5"
-      ],
+      "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sample09.html",
-      "materials": [
-        "question PDFs",
-        "answers",
-        "audio samples"
-      ],
+      "materials": ["question PDFs", "answers", "audio samples"],
       "rights": "review-required",
       "importPolicy": "metadata-only-until-rights-cleared",
       "official": true
     }
   ],
   "discovery": {
-    "targetYears": [
-      2022,
-      2023,
-      2024,
-      2025,
-      2026
-    ],
+    "targetYears": [2022, 2023, 2024, 2025, 2026],
     "status": "not-yet-verified",
     "rule": "Do not label third-party compilations as authentic past JLPT exams without provenance"
   },
@@ -79,17 +50,9 @@
   "audit": {
     "checkedAt": "2026-11-09",
     "official2012and2018": {
-      "levels": [
-        "N4",
-        "N5"
-      ],
+      "levels": ["N4", "N5"],
       "perLevelPerWorkbook": {
-        "questionBooklets": [
-          "vocabulary",
-          "grammar",
-          "reading",
-          "listening"
-        ],
+        "questionBooklets": ["vocabulary", "grammar", "reading", "listening"],
         "audioGroups": [
           "task-based comprehension",
           "point comprehension",

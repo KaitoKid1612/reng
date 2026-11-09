@@ -3,14 +3,8 @@
   "auditDate": "2026-11-09",
   "officialPage": "https://www.jlpt.jp/e/samples/sampleindex.html",
   "scope": {
-    "years": [
-      2012,
-      2018
-    ],
-    "levels": [
-      "N4",
-      "N5"
-    ],
+    "years": [2012, 2018],
+    "levels": ["N4", "N5"],
     "audioGroupsPerLevel": 4,
     "audioLinks": 16
   },

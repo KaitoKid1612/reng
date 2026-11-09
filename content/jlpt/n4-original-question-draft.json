@@ -10,120 +10,66 @@
       "id": "jlpt-n4-001",
       "type": "choice",
       "prompt": "「約束」の読み方を選んでください。",
-      "options": [
-        "やくそく",
-        "やっそく",
-        "やくぞく",
-        "やくしょう"
-      ],
-      "answer": [
-        0
-      ],
+      "options": ["やくそく", "やっそく", "やくぞく", "やくしょう"],
+      "answer": [0],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "kanji"
-      ],
+      "tags": ["kanji"],
       "explain": "約束（やくそく）: lời hứa, cuộc hẹn."
     },
     {
       "id": "jlpt-n4-002",
       "type": "choice",
       "prompt": "雨が 降っている（　）、出かけます。",
-      "options": [
-        "ので",
-        "のに",
-        "から",
-        "ため"
-      ],
-      "answer": [
-        1
-      ],
+      "options": ["ので", "のに", "から", "ため"],
+      "answer": [1],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "grammar"
-      ],
+      "tags": ["grammar"],
       "explain": "のに biểu thị sự tương phản: dù trời đang mưa nhưng vẫn ra ngoài."
     },
     {
       "id": "jlpt-n4-003",
       "type": "choice",
       "prompt": "この店は 安い（　）、品物も いいです。",
-      "options": [
-        "し",
-        "のに",
-        "なら",
-        "まで"
-      ],
-      "answer": [
-        0
-      ],
+      "options": ["し", "のに", "なら", "まで"],
+      "answer": [0],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "grammar"
-      ],
+      "tags": ["grammar"],
       "explain": "し nối các lý do hoặc đặc điểm cùng hướng."
     },
     {
       "id": "jlpt-n4-004",
       "type": "choice",
       "prompt": "電車が 遅れたので、会議に（　）。",
-      "options": [
-        "間に合いました",
-        "間に合いませんでした",
-        "間に合わせます",
-        "間に合います"
-      ],
-      "answer": [
-        1
-      ],
+      "options": ["間に合いました", "間に合いませんでした", "間に合わせます", "間に合います"],
+      "answer": [1],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "vocabulary"
-      ],
+      "tags": ["vocabulary"],
       "explain": "Vì tàu trễ nên đã không kịp giờ họp."
     },
     {
       "id": "jlpt-n4-005",
       "type": "choice",
       "prompt": "「準備」の読み方を選んでください。",
-      "options": [
-        "じゅび",
-        "じゅんび",
-        "しゅんび",
-        "じゅんぴ"
-      ],
-      "answer": [
-        1
-      ],
+      "options": ["じゅび", "じゅんび", "しゅんび", "じゅんぴ"],
+      "answer": [1],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "kanji"
-      ],
+      "tags": ["kanji"],
       "explain": "準備（じゅんび）: chuẩn bị."
     },
     {
       "id": "jlpt-n4-006",
       "type": "choice",
       "prompt": "図書館は 午後6時に 閉まります。今日は 午後5時半です。今から 図書館へ 行けば、まだ 開いていますか。",
-      "options": [
-        "はい、開いています",
-        "いいえ、閉まっています",
-        "明日 開きます",
-        "分かりません"
-      ],
-      "answer": [
-        0
-      ],
+      "options": ["はい、開いています", "いいえ、閉まっています", "明日 開きます", "分かりません"],
+      "answer": [0],
       "multiple": false,
       "points": 1,
-      "tags": [
-        "reading"
-      ],
+      "tags": ["reading"],
       "explain": "5 giờ 30 trước giờ đóng cửa 6 giờ nên thư viện vẫn mở, theo thông tin trong câu."
     }
   ]
