@@ -23,13 +23,17 @@ async function main() {
     },
   });
   if (!values.bank || !values.listening || !values.out) {
-    throw new Error("Provide --bank <existing-bank.json> --listening <audio-set.json> --out <new-bank.json>.");
+    throw new Error(
+      "Provide --bank <existing-bank.json> --listening <audio-set.json> --out <new-bank.json>.",
+    );
   }
   const bank = lessonDraftSchema.parse(JSON.parse(await readFile(resolve(values.bank), "utf8")));
   const set = parseListeningSet(JSON.parse(await readFile(resolve(values.listening), "utf8")));
   const audit = findListeningAudio(set);
   if (audit.missing.length || audit.stale.length) {
-    throw new Error(`Listening audio missing: ${audit.missing.length}; stale: ${audit.stale.length}`);
+    throw new Error(
+      `Listening audio missing: ${audit.missing.length}; stale: ${audit.stale.length}`,
+    );
   }
   for (const asset of audit.assets) {
     const file = resolve(`public/${LISTENING_AUDIO_FOLDER}/${asset.hash}.mp3`);
@@ -53,7 +57,9 @@ async function main() {
     throw new Error("Merged bank exceeds the supported question limit; split the bank.");
   }
   await writeFile(resolve(values.out), JSON.stringify(merged, null, 2) + "\n");
-  console.log(`Prepared ${merged.content.questions.length} questions (${additions.length} new listening); source bank untouched.`);
+  console.log(
+    `Prepared ${merged.content.questions.length} questions (${additions.length} new listening); source bank untouched.`,
+  );
 }
 
 main().catch((error) => {

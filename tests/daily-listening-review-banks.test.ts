@@ -61,7 +61,11 @@ for (const config of banks) {
     const candidates = questions.map((q) => ({ id: q.id, type: q.type, tags: q.tags }));
     for (const seed of ["2026-11-08", "2026-11-09", "2026-11-10"]) {
       const ids = selectDailyQuestionsWithListeningQuota(
-        candidates, [], config.dailySize, seed, config.dailyListening,
+        candidates,
+        [],
+        config.dailySize,
+        seed,
+        config.dailyListening,
       );
       assert.equal(ids.length, config.dailySize);
       assert.equal(new Set(ids).size, ids.length);

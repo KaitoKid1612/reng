@@ -49,7 +49,11 @@ interface SlideDeckProps {
   /** Teachers get the Presenter button; learners reading slides have no notes to open. */
   canPresent?: boolean;
   /** A learner's reading progress: the last slide offers to mark the lesson as read. */
-  readProgress?: { completedAt: string | null; lastSlideId: string | null; versionId: string | null };
+  readProgress?: {
+    completedAt: string | null;
+    lastSlideId: string | null;
+    versionId: string | null;
+  };
 }
 
 export function SlideDeck({
@@ -94,11 +98,13 @@ export function SlideDeck({
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ versionId: lesson.id, slideId: slideIds[h] }),
-          }).then((response) => {
-            if (!response.ok) {
-              setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
-            }
-          }).catch(() => setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại."));
+          })
+            .then((response) => {
+              if (!response.ok) {
+                setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại.");
+              }
+            })
+            .catch(() => setNotice("Chưa lưu được vị trí slide. Bạn có thể thử lại."));
         }, 600);
       }
       window.history.replaceState(
@@ -110,11 +116,14 @@ export function SlideDeck({
     }
 
     function handleHashChange() {
-      const savedIndex = readProgress?.versionId === lesson.id
-        ? slideIds.indexOf(readProgress.lastSlideId ?? "") : -1;
-      const result = !window.location.hash && savedIndex >= 0
-        ? { index: savedIndex, isValid: true }
-        : parseSlideHash(window.location.hash, slideIds.length);
+      const savedIndex =
+        readProgress?.versionId === lesson.id
+          ? slideIds.indexOf(readProgress.lastSlideId ?? "")
+          : -1;
+      const result =
+        !window.location.hash && savedIndex >= 0
+          ? { index: savedIndex, isValid: true }
+          : parseSlideHash(window.location.hash, slideIds.length);
       if (!result.isValid) {
         setNotice("Vị trí slide không hợp lệ. Đã mở slide đầu.");
       }

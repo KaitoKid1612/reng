@@ -20,37 +20,20 @@
     "questions": [
       {
         "id": "nguyen-n5-20261105-001",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・個数 1：「りんごが 三つ あります。」三つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
-        "options": [
-          "みっつ",
-          "さんつ",
-          "よんつ",
-          "にこ"
-        ],
+        "options": ["みっつ", "さんつ", "よんつ", "にこ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-002",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "よっつ"
-        ],
+        "answer": ["よっつ"],
         "points": 1,
         "prompt": "第11課・個数 2：「みかんが 四つ あります。」四つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
@@ -59,15 +42,9 @@
       },
       {
         "id": "nguyen-n5-20261105-003",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ふたつ"
-        ],
+        "answer": ["ふたつ"],
         "points": 1,
         "prompt": "第11課・個数 3：「パンが 二つ あります。」二つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
@@ -76,37 +53,20 @@
       },
       {
         "id": "nguyen-n5-20261105-004",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・個数 4：「たまごが 五つ あります。」五つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
-        "options": [
-          "いつつ",
-          "さんつ",
-          "よんつ",
-          "にこ"
-        ],
+        "options": ["いつつ", "さんつ", "よんつ", "にこ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-005",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ひとつ"
-        ],
+        "answer": ["ひとつ"],
         "points": 1,
         "prompt": "第11課・個数 5：「かばんが 一つ あります。」一つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
@@ -115,15 +75,9 @@
       },
       {
         "id": "nguyen-n5-20261105-006",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "むっつ"
-        ],
+        "answer": ["むっつ"],
         "points": 1,
         "prompt": "第11課・個数 6：「りんごが 六つ あります。」六つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
@@ -132,37 +86,20 @@
       },
       {
         "id": "nguyen-n5-20261105-007",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・冊数 1：「本が 二冊 あります。」二冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
-        "options": [
-          "にさつ",
-          "にほん",
-          "さんほん",
-          "ふたつ"
-        ],
+        "options": ["にさつ", "にほん", "さんほん", "ふたつ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-008",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "さんさつ"
-        ],
+        "answer": ["さんさつ"],
         "points": 1,
         "prompt": "第11課・冊数 2：「本が 三冊 あります。」三冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
@@ -171,15 +108,9 @@
       },
       {
         "id": "nguyen-n5-20261105-009",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いっさつ"
-        ],
+        "answer": ["いっさつ"],
         "points": 1,
         "prompt": "第11課・冊数 3：「雑誌が 一冊 あります。」一冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
@@ -188,37 +119,20 @@
       },
       {
         "id": "nguyen-n5-20261105-010",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・冊数 4：「ノートが 四冊 あります。」四冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
-        "options": [
-          "よんさつ",
-          "にほん",
-          "さんほん",
-          "ふたつ"
-        ],
+        "options": ["よんさつ", "にほん", "さんほん", "ふたつ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-011",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ごさつ"
-        ],
+        "answer": ["ごさつ"],
         "points": 1,
         "prompt": "第11課・冊数 5：「辞書が 五冊 あります。」五冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
@@ -227,15 +141,9 @@
       },
       {
         "id": "nguyen-n5-20261105-012",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ろくさつ"
-        ],
+        "answer": ["ろくさつ"],
         "points": 1,
         "prompt": "第11課・冊数 6：「雑誌が 六冊 あります。」六冊の読みをひらがなで書く。",
         "explain": "本・雑誌などは 冊 で数える。",
@@ -244,37 +152,20 @@
       },
       {
         "id": "nguyen-n5-20261105-013",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・人数 1：「学生が 三人 います。」三人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
-        "options": [
-          "さんにん",
-          "さんひと",
-          "ふたにん",
-          "よんひと"
-        ],
+        "options": ["さんにん", "さんひと", "ふたにん", "よんひと"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-014",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ふたり"
-        ],
+        "answer": ["ふたり"],
         "points": 1,
         "prompt": "第11課・人数 2：「先生が 二人 います。」二人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
@@ -283,15 +174,9 @@
       },
       {
         "id": "nguyen-n5-20261105-015",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ひとり"
-        ],
+        "answer": ["ひとり"],
         "points": 1,
         "prompt": "第11課・人数 3：「子どもが 一人 います。」一人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
@@ -300,37 +185,20 @@
       },
       {
         "id": "nguyen-n5-20261105-016",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・人数 4：「学生が 四人 います。」四人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
-        "options": [
-          "よにん",
-          "さんひと",
-          "ふたにん",
-          "よんひと"
-        ],
+        "options": ["よにん", "さんひと", "ふたにん", "よんひと"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-017",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ごにん"
-        ],
+        "answer": ["ごにん"],
         "points": 1,
         "prompt": "第11課・人数 5：「先生が 五人 います。」五人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
@@ -339,15 +207,9 @@
       },
       {
         "id": "nguyen-n5-20261105-018",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ろくにん"
-        ],
+        "answer": ["ろくにん"],
         "points": 1,
         "prompt": "第11課・人数 6：「子どもが 六人 います。」六人の読みをひらがなで書く。",
         "explain": "一人＝ひとり、二人＝ふたり に注意。",
@@ -356,37 +218,20 @@
       },
       {
         "id": "nguyen-n5-20261105-019",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・頻度 1：「一週間に 三回 日本語を勉強します。」三回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
-        "options": [
-          "さんかい",
-          "さんがい",
-          "ふたかい",
-          "よっか"
-        ],
+        "options": ["さんかい", "さんがい", "ふたかい", "よっか"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-020",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "にかい"
-        ],
+        "answer": ["にかい"],
         "points": 1,
         "prompt": "第11課・頻度 2：「一週間に 二回 日本語を勉強します。」二回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
@@ -395,15 +240,9 @@
       },
       {
         "id": "nguyen-n5-20261105-021",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いっかい"
-        ],
+        "answer": ["いっかい"],
         "points": 1,
         "prompt": "第11課・頻度 3：「一か月に 一回 日本語を勉強します。」一回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
@@ -412,37 +251,20 @@
       },
       {
         "id": "nguyen-n5-20261105-022",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文法"
-        ],
+        "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第11課・頻度 4：「一週間に 四回 日本語を勉強します。」四回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
-        "options": [
-          "よんかい",
-          "さんがい",
-          "ふたかい",
-          "よっか"
-        ],
+        "options": ["よんかい", "さんがい", "ふたかい", "よっか"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-023",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ごかい"
-        ],
+        "answer": ["ごかい"],
         "points": 1,
         "prompt": "第11課・頻度 5：「一か月に 五回 日本語を勉強します。」五回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
@@ -451,15 +273,9 @@
       },
       {
         "id": "nguyen-n5-20261105-024",
-        "tags": [
-          "n5",
-          "minna-11",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-11", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ろっかい"
-        ],
+        "answer": ["ろっかい"],
         "points": 1,
         "prompt": "第11課・頻度 6：「一週間に 六回 日本語を勉強します。」六回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
@@ -468,37 +284,20 @@
       },
       {
         "id": "nguyen-n5-20261105-025",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・比較 1：「東京は 大阪より（　）です。」形容詞「大きい」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
-        "options": [
-          "おおきい",
-          "いい",
-          "きれい",
-          "しずか"
-        ],
+        "options": ["おおきい", "いい", "きれい", "しずか"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-026",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "おもい"
-        ],
+        "answer": ["おもい"],
         "points": 1,
         "prompt": "第12課・比較 2：「このかばんは そのかばんより（　）です。」形容詞「重い」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
@@ -507,15 +306,9 @@
       },
       {
         "id": "nguyen-n5-20261105-027",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "はやい"
-        ],
+        "answer": ["はやい"],
         "points": 1,
         "prompt": "第12課・比較 3：「バスは 電車より（　）です。」形容詞「速い」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
@@ -524,37 +317,20 @@
       },
       {
         "id": "nguyen-n5-20261105-028",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・比較 4：「夏は 冬より（　）です。」形容詞「暑い」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
-        "options": [
-          "あつい",
-          "いい",
-          "きれい",
-          "しずか"
-        ],
+        "options": ["あつい", "いい", "きれい", "しずか"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-029",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "むずかしい"
-        ],
+        "answer": ["むずかしい"],
         "points": 1,
         "prompt": "第12課・比較 5：「日本語は 英語より（　）です。」形容詞「難しい」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
@@ -563,15 +339,9 @@
       },
       {
         "id": "nguyen-n5-20261105-030",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "たかい"
-        ],
+        "answer": ["たかい"],
         "points": 1,
         "prompt": "第12課・比較 6：「りんごは みかんより（　）です。」形容詞「高い」をひらがなで書く。",
         "explain": "AはBより〜 は二つを比較する。",
@@ -580,37 +350,20 @@
       },
       {
         "id": "nguyen-n5-20261105-031",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・二択 1：「日本と ベトナムと（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
-        "options": [
-          "どちら",
-          "どこ",
-          "だれ",
-          "なん"
-        ],
+        "options": ["どちら", "どこ", "だれ", "なん"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-032",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "どちら"
-        ],
+        "answer": ["どちら"],
         "points": 1,
         "prompt": "第12課・二択 2：「コーヒーと お茶と（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
@@ -619,15 +372,9 @@
       },
       {
         "id": "nguyen-n5-20261105-033",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "どちら"
-        ],
+        "answer": ["どちら"],
         "points": 1,
         "prompt": "第12課・二択 3：「バスと 電車と（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
@@ -636,37 +383,20 @@
       },
       {
         "id": "nguyen-n5-20261105-034",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・二択 4：「夏と 冬と（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
-        "options": [
-          "どちら",
-          "どこ",
-          "だれ",
-          "なん"
-        ],
+        "options": ["どちら", "どこ", "だれ", "なん"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-035",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "どちら"
-        ],
+        "answer": ["どちら"],
         "points": 1,
         "prompt": "第12課・二択 5：「日本語と 英語と（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
@@ -675,15 +405,9 @@
       },
       {
         "id": "nguyen-n5-20261105-036",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "どちら"
-        ],
+        "answer": ["どちら"],
         "points": 1,
         "prompt": "第12課・二択 6：「パンと ごはんと（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
@@ -692,37 +416,20 @@
       },
       {
         "id": "nguyen-n5-20261105-037",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・最上級 1：「季節で 春が（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
-        "options": [
-          "いちばん",
-          "どちら",
-          "より",
-          "もっと"
-        ],
+        "options": ["いちばん", "どちら", "より", "もっと"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-038",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いちばん"
-        ],
+        "answer": ["いちばん"],
         "points": 1,
         "prompt": "第12課・最上級 2：「果物で りんごが（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
@@ -731,15 +438,9 @@
       },
       {
         "id": "nguyen-n5-20261105-039",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いちばん"
-        ],
+        "answer": ["いちばん"],
         "points": 1,
         "prompt": "第12課・最上級 3：「スポーツで サッカーが（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
@@ -748,37 +449,20 @@
       },
       {
         "id": "nguyen-n5-20261105-040",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・最上級 4：「食べ物で ごはんが（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
-        "options": [
-          "いちばん",
-          "どちら",
-          "より",
-          "もっと"
-        ],
+        "options": ["いちばん", "どちら", "より", "もっと"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-041",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いちばん"
-        ],
+        "answer": ["いちばん"],
         "points": 1,
         "prompt": "第12課・最上級 5：「飲み物で お茶が（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
@@ -787,15 +471,9 @@
       },
       {
         "id": "nguyen-n5-20261105-042",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いちばん"
-        ],
+        "answer": ["いちばん"],
         "points": 1,
         "prompt": "第12課・最上級 6：「日本の町で 東京が（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
@@ -804,37 +482,20 @@
       },
       {
         "id": "nguyen-n5-20261105-043",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文法"
-        ],
+        "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第10課・位置 1：「机の 上に あります。」上の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
-        "options": [
-          "うえ",
-          "うしろ",
-          "そと",
-          "みぎ"
-        ],
+        "options": ["うえ", "うしろ", "そと", "みぎ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-044",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "した"
-        ],
+        "answer": ["した"],
         "points": 1,
         "prompt": "第10課・位置 2：「いすの 下に あります。」下の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
@@ -843,15 +504,9 @@
       },
       {
         "id": "nguyen-n5-20261105-045",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "まえ"
-        ],
+        "answer": ["まえ"],
         "points": 1,
         "prompt": "第10課・位置 3：「学校の 前に あります。」前の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
@@ -860,37 +515,20 @@
       },
       {
         "id": "nguyen-n5-20261105-046",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文法"
-        ],
+        "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第10課・位置 4：「銀行の 隣に あります。」隣の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
-        "options": [
-          "となり",
-          "うしろ",
-          "そと",
-          "みぎ"
-        ],
+        "options": ["となり", "うしろ", "そと", "みぎ"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-047",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "なか"
-        ],
+        "answer": ["なか"],
         "points": 1,
         "prompt": "第10課・位置 5：「部屋の 中に あります。」中の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
@@ -899,15 +537,9 @@
       },
       {
         "id": "nguyen-n5-20261105-048",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "ちかく"
-        ],
+        "answer": ["ちかく"],
         "points": 1,
         "prompt": "第10課・位置 6：「駅の 近くに あります。」近くの読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
@@ -916,37 +548,20 @@
       },
       {
         "id": "nguyen-n5-20261105-049",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文法"
-        ],
+        "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第10課・存在 1：「猫が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
-        "options": [
-          "います",
-          "あります",
-          "です",
-          "します"
-        ],
+        "options": ["います", "あります", "です", "します"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-050",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "います"
-        ],
+        "answer": ["います"],
         "points": 1,
         "prompt": "第10課・存在 2：「犬が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
@@ -955,15 +570,9 @@
       },
       {
         "id": "nguyen-n5-20261105-051",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "あります"
-        ],
+        "answer": ["あります"],
         "points": 1,
         "prompt": "第10課・存在 3：「本が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
@@ -972,37 +581,20 @@
       },
       {
         "id": "nguyen-n5-20261105-052",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文法"
-        ],
+        "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第10課・存在 4：「車が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
-        "options": [
-          "あります",
-          "います",
-          "です",
-          "します"
-        ],
+        "options": ["あります", "います", "です", "します"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-053",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "います"
-        ],
+        "answer": ["います"],
         "points": 1,
         "prompt": "第10課・存在 5：「学生が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
@@ -1011,15 +603,9 @@
       },
       {
         "id": "nguyen-n5-20261105-054",
-        "tags": [
-          "n5",
-          "minna-10",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-10", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "あります"
-        ],
+        "answer": ["あります"],
         "points": 1,
         "prompt": "第10課・存在 6：「机が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
@@ -1028,37 +614,20 @@
       },
       {
         "id": "nguyen-n5-20261105-055",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・過去 1：「きのうは 暑かったです。」暑かったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
-        "options": [
-          "あつかったです",
-          "あついです",
-          "さむいです",
-          "いいです"
-        ],
+        "options": ["あつかったです", "あついです", "さむいです", "いいです"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-056",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "さむかったです"
-        ],
+        "answer": ["さむかったです"],
         "points": 1,
         "prompt": "第12課・過去 2：「きのうは 寒かったです。」寒かったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
@@ -1067,15 +636,9 @@
       },
       {
         "id": "nguyen-n5-20261105-057",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "いそがしかったです"
-        ],
+        "answer": ["いそがしかったです"],
         "points": 1,
         "prompt": "第12課・過去 3：「先週は 忙しかったです。」忙しかったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
@@ -1084,37 +647,20 @@
       },
       {
         "id": "nguyen-n5-20261105-058",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文法"
-        ],
+        "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [
-          0
-        ],
+        "answer": [0],
         "points": 1,
         "prompt": "第12課・過去 4：「きのうは 楽しかったです。」楽しかったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
-        "options": [
-          "たのしかったです",
-          "あついです",
-          "さむいです",
-          "いいです"
-        ],
+        "options": ["たのしかったです", "あついです", "さむいです", "いいです"],
         "multiple": false
       },
       {
         "id": "nguyen-n5-20261105-059",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "おもしろかったです"
-        ],
+        "answer": ["おもしろかったです"],
         "points": 1,
         "prompt": "第12課・過去 5：「先週は おもしろかったです。」おもしろかったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
@@ -1123,15 +669,9 @@
       },
       {
         "id": "nguyen-n5-20261105-060",
-        "tags": [
-          "n5",
-          "minna-12",
-          "文字・語彙"
-        ],
+        "tags": ["n5", "minna-12", "文字・語彙"],
         "type": "fill",
-        "answer": [
-          "よかったです"
-        ],
+        "answer": ["よかったです"],
         "points": 1,
         "prompt": "第12課・過去 6：「きのうは よかったです。」よかったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
@@ -1143,56 +683,35 @@
         "prompt": "(Bài 1) Người nói đến từ nước nào?",
         "explain": "Nghĩa: Rất vui được gặp. Tôi là Lin, đến từ Trung Quốc. ちゅうごく = Trung Quốc.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "409b7ac16593a7cc20374f2389b130da",
         "transcript": "はじめまして。わたしは リンです。ちゅうごくから きました。どうぞ よろしく おねがいします。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Trung Quốc",
-          "Hàn Quốc",
-          "Thái Lan"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Trung Quốc", "Hàn Quốc", "Thái Lan"],
+        "answer": [0]
       },
       {
         "id": "nghe-01-2",
         "prompt": "(Bài 1) Anh/chị Tanaka làm nghề gì?",
         "explain": "Nghĩa: Tôi là Tanaka. Tôi không phải nhân viên công ty, tôi là nhân viên ngân hàng. 〜じゃ ありません là phủ định của 〜です.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "4918783a8020481ef01d45ac7857bfd5",
         "transcript": "わたしは たなかです。かいしゃいんじゃ ありません。ぎんこういんです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Nhân viên công ty",
-          "Nhân viên ngân hàng",
-          "Bác sĩ"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Nhân viên công ty", "Nhân viên ngân hàng", "Bác sĩ"],
+        "answer": [1]
       },
       {
         "id": "nghe-01-3",
         "prompt": "(Bài 1) Ông Watt là ai?",
         "explain": "Nghĩa: Người kia là ông Watt. Ông Watt là giáo viên của Đại học Sakura. N1の N2: N2 của N1.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "3a8d9f26d95813b622d01b128adb7bec",
         "transcript": "あの ひとは ワットさんです。ワットさんは さくらだいがくの せんせいです。",
         "maxListens": null,
@@ -1203,1375 +722,888 @@
           "Sinh viên Đại học Sakura",
           "Bác sĩ Bệnh viện Sakura"
         ],
-        "answer": [
-          0
-        ]
+        "answer": [0]
       },
       {
         "id": "nghe-01-4",
         "prompt": "(Bài 1) Người nói bao nhiêu tuổi? Gõ số tuổi bằng hiragana (ví dụ: にじゅっさい) hoặc chữ số.",
         "explain": "Nghĩa: Tôi 25 tuổi. にじゅうご = 25, 〜さい = … tuổi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "358d1f8c1d6656200529045a8627b54e",
         "transcript": "わたしは にじゅうごさいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "にじゅうごさい",
-          "にじゅうご",
-          "25さい",
-          "25",
-          "25歳",
-          "二十五歳"
-        ]
+        "answer": ["にじゅうごさい", "にじゅうご", "25さい", "25", "25歳", "二十五歳"]
       },
       {
         "id": "nghe-01-5",
         "prompt": "(Bài 1) Người nói tên là gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tên tôi là Yamada.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "9766fc74b5362dd5ba96068e0365e773",
         "transcript": "わたしの なまえは やまだです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "やまだ",
-          "やまださん",
-          "山田"
-        ]
+        "answer": ["やまだ", "やまださん", "山田"]
       },
       {
         "id": "nghe-01-6",
         "prompt": "(Bài 1) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Người kia là ai? だれ = ai.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:1"
-        ],
+        "tags": ["listening", "minna:1"],
         "audio": "55c5725852c73db62d42297297dc5d08",
         "transcript": "あの ひとは だれですか。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "あの ひとは だれですか。"
-        ]
+        "answer": ["あの ひとは だれですか。"]
       },
       {
         "id": "nghe-02-1",
         "prompt": "(Bài 2) Đây là sách gì?",
         "explain": "Nghĩa: Đây là sách tiếng Nhật, không phải sách tiếng Anh.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "e557a19ede663d15fc6884224d836069",
         "transcript": "これは にほんごの ほんです。えいごの ほんじゃ ありません。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Sách tiếng Nhật",
-          "Sách tiếng Anh",
-          "Từ điển tiếng Nhật"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Sách tiếng Nhật", "Sách tiếng Anh", "Từ điển tiếng Nhật"],
+        "answer": [0]
       },
       {
         "id": "nghe-02-2",
         "prompt": "(Bài 2) Chiếc ô đó là của ai?",
         "explain": "Nghĩa: Đó không phải ô của tôi. Đó là ô của anh Santos.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "e38d8683c4edc0ac0c0d02ce4b0367e3",
         "transcript": "それは わたしの かさじゃ ありません。サントスさんの かさです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Của người nói",
-          "Của anh Santos",
-          "Của cô giáo"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Của người nói", "Của anh Santos", "Của cô giáo"],
+        "answer": [1]
       },
       {
         "id": "nghe-02-3",
         "prompt": "(Bài 2) Chiếc cặp đằng kia là của ai?",
         "explain": "Nghĩa: Chiếc cặp kia là của thầy/cô. Chiếc cặp này là của tôi. あの = kia (xa cả hai người), この = này.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "8792b539b677c2b88b5ceb663973f31d",
         "transcript": "あの かばんは せんせいのです。この かばんは わたしのです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Của người nói",
-          "Của giáo viên",
-          "Của bạn người nói"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Của người nói", "Của giáo viên", "Của bạn người nói"],
+        "answer": [1]
       },
       {
         "id": "nghe-02-4",
         "prompt": "(Bài 2) Đây là cái gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Đây là cái đồng hồ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "e75c905a258b8810b5e14b918c9f228a",
         "transcript": "これは とけいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "とけい",
-          "時計"
-        ]
+        "answer": ["とけい", "時計"]
       },
       {
         "id": "nghe-02-5",
         "prompt": "(Bài 2) Đây là tạp chí về cái gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Đây là tạp chí về ô tô. N1の N2: N2 về N1.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "5381ed075747d4ffce8f5cc35d5da028",
         "transcript": "これは くるまの ざっしです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "くるま",
-          "車"
-        ]
+        "answer": ["くるま", "車"]
       },
       {
         "id": "nghe-02-6",
         "prompt": "(Bài 2) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Đây là chìa khóa của tôi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:2"
-        ],
+        "tags": ["listening", "minna:2"],
         "audio": "a237bd3df7d5babeea66425e493f348b",
         "transcript": "これは わたしの かぎです。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "これは わたしの かぎです。"
-        ]
+        "answer": ["これは わたしの かぎです。"]
       },
       {
         "id": "nghe-03-1",
         "prompt": "(Bài 3) Nhà ăn ở đâu?",
         "explain": "Nghĩa: Quầy lễ tân ở tầng 1. Nhà ăn ở tầng hầm. ちか = tầng hầm.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "90fef1a1ce0db78e998e47600b02e27a",
         "transcript": "うけつけは いっかいです。しょくどうは ちかです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Tầng 1",
-          "Tầng hầm",
-          "Tầng 3"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Tầng 1", "Tầng hầm", "Tầng 3"],
+        "answer": [1]
       },
       {
         "id": "nghe-03-2",
         "prompt": "(Bài 3) Chai rượu vang này giá bao nhiêu?",
         "explain": "Nghĩa: Chai rượu vang này giá 1.200 yên. せん = 1.000, にひゃく = 200.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "f3f99ae778bde2e9c9ebc1e1e9f8448e",
         "transcript": "この ワインは せんにひゃくえんです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "1.200 yên",
-          "2.100 yên",
-          "12.000 yên"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["1.200 yên", "2.100 yên", "12.000 yên"],
+        "answer": [0]
       },
       {
         "id": "nghe-03-3",
         "prompt": "(Bài 3) Đôi giày này của nước nào?",
         "explain": "Nghĩa: Đây là giày của Ý. Giá 20.000 yên. どこの N: N của nước nào.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "765af1425877e22149fe07ffa7d774f4",
         "transcript": "これは イタリアの くつです。にまんえんです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Ý",
-          "Thụy Sĩ",
-          "Nhật Bản"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Ý", "Thụy Sĩ", "Nhật Bản"],
+        "answer": [0]
       },
       {
         "id": "nghe-03-4",
         "prompt": "(Bài 3) Phòng họp ở tầng mấy? Gõ bằng hiragana (ví dụ: にかい).",
         "explain": "Nghĩa: Phòng họp ở tầng 3. Chú ý: tầng 3 đọc là さんがい.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "1a9562453711628882743cfda714c778",
         "transcript": "かいぎしつは さんがいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "さんがい",
-          "3階",
-          "三階"
-        ]
+        "answer": ["さんがい", "3階", "三階"]
       },
       {
         "id": "nghe-03-5",
         "prompt": "(Bài 3) Nhà vệ sinh ở đâu? Gõ từ chỉ nơi chốn bằng hiragana.",
         "explain": "Nghĩa: Nhà vệ sinh ở đằng kia. あそこ = chỗ kia (xa cả hai người).",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "29614a6d7910cbbf98b4900b733a76f6",
         "transcript": "トイレは あそこです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "あそこ"
-        ]
+        "answer": ["あそこ"]
       },
       {
         "id": "nghe-03-6",
         "prompt": "(Bài 3) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Điện thoại ở đâu? どこ = ở đâu.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:3"
-        ],
+        "tags": ["listening", "minna:3"],
         "audio": "118ae9105ffbd131a47b563630002110",
         "transcript": "でんわは どこですか。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "でんわは どこですか。"
-        ]
+        "answer": ["でんわは どこですか。"]
       },
       {
         "id": "nghe-04-1",
         "prompt": "(Bài 4) Mỗi sáng người nói thức dậy lúc mấy giờ?",
         "explain": "Nghĩa: Mỗi sáng tôi dậy lúc 6 giờ. ろくじ = 6 giờ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "ecbb5c6bf2a0b949e00b28afa954e6a6",
         "transcript": "わたしは まいあさ ろくじに おきます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "5 giờ",
-          "6 giờ",
-          "7 giờ"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["5 giờ", "6 giờ", "7 giờ"],
+        "answer": [1]
       },
       {
         "id": "nghe-04-2",
         "prompt": "(Bài 4) Ngân hàng làm việc từ mấy giờ đến mấy giờ?",
         "explain": "Nghĩa: Ngân hàng mở từ 9 giờ đến 3 giờ. N1から N2まで: từ N1 đến N2.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "6ff6b6fc8d9da2092db19d39ba1b1242",
         "transcript": "ぎんこうは くじから さんじまでです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Từ 9 giờ đến 3 giờ",
-          "Từ 9 giờ đến 5 giờ",
-          "Từ 4 giờ đến 9 giờ"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Từ 9 giờ đến 3 giờ", "Từ 9 giờ đến 5 giờ", "Từ 4 giờ đến 9 giờ"],
+        "answer": [0]
       },
       {
         "id": "nghe-04-3",
         "prompt": "(Bài 4) Hôm qua người nói thế nào?",
         "explain": "Nghĩa: Hôm qua tôi đã không học. 〜ませんでした là phủ định quá khứ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "cdd1c2b491f8c72bf95102ceb617c3d0",
         "transcript": "きのう わたしは べんきょうしませんでした。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Đã học bài",
-          "Không học bài",
-          "Học đến tối"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Đã học bài", "Không học bài", "Học đến tối"],
+        "answer": [1]
       },
       {
         "id": "nghe-04-4",
         "prompt": "(Bài 4) Ngày nghỉ là thứ mấy? Gõ bằng hiragana.",
         "explain": "Nghĩa: Ngày nghỉ là Chủ nhật.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "3826d976b674a4e5f3cc68e3984e492e",
         "transcript": "やすみは にちようびです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "にちようび",
-          "日曜日"
-        ]
+        "answer": ["にちようび", "日曜日"]
       },
       {
         "id": "nghe-04-5",
         "prompt": "(Bài 4) Bây giờ là mấy giờ? Gõ bằng hiragana (ví dụ: さんじ).",
         "explain": "Nghĩa: Bây giờ là 4 giờ rưỡi. Chú ý: 4 giờ đọc là よじ, はん = rưỡi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "2ef302a0ff7292d2602cb2ac5c2346eb",
         "transcript": "いま よじはんです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "よじはん",
-          "4じはん",
-          "4時半",
-          "四時半"
-        ]
+        "answer": ["よじはん", "4じはん", "4時半", "四時半"]
       },
       {
         "id": "nghe-04-6",
         "prompt": "(Bài 4) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Mỗi tối tôi ngủ lúc 11 giờ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:4"
-        ],
+        "tags": ["listening", "minna:4"],
         "audio": "142497ea95c5ca643bff03fb10a2e35a",
         "transcript": "まいばん じゅういちじに ねます。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "まいばん じゅういちじに ねます。"
-        ]
+        "answer": ["まいばん じゅういちじに ねます。"]
       },
       {
         "id": "nghe-05-1",
         "prompt": "(Bài 5) Tuần sau người nói đi Đà Nẵng với ai?",
         "explain": "Nghĩa: Tuần sau tôi đi Đà Nẵng với gia đình. N(người)と: cùng với ai.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "173cbd4ac6a331d645ae5b9ff74844fb",
         "transcript": "らいしゅう かぞくと ダナンへ いきます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Một mình",
-          "Với bạn",
-          "Với gia đình"
-        ],
-        "answer": [
-          2
-        ]
+        "options": ["Một mình", "Với bạn", "Với gia đình"],
+        "answer": [2]
       },
       {
         "id": "nghe-05-2",
         "prompt": "(Bài 5) Người nói đi làm bằng gì?",
         "explain": "Nghĩa: Hằng ngày tôi đi làm bằng tàu điện. N(phương tiện)で: đi bằng gì.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "5afa4e9e41f78efd4b11bfea7ebd67bf",
         "transcript": "わたしは まいにち でんしゃで かいしゃへ いきます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Xe buýt",
-          "Tàu điện",
-          "Xe đạp"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Xe buýt", "Tàu điện", "Xe đạp"],
+        "answer": [1]
       },
       {
         "id": "nghe-05-3",
         "prompt": "(Bài 5) Sinh nhật người nói là ngày nào?",
         "explain": "Nghĩa: Sinh nhật tôi là ngày 4 tháng 4. しがつ = tháng 4, よっか = ngày 4.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "4221248eea5ee6cef3bffedb86cda572",
         "transcript": "わたしの たんじょうびは しがつ よっかです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Ngày 4 tháng 4",
-          "Ngày 8 tháng 4",
-          "Ngày 4 tháng 7"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Ngày 4 tháng 4", "Ngày 8 tháng 4", "Ngày 4 tháng 7"],
+        "answer": [0]
       },
       {
         "id": "nghe-05-4",
         "prompt": "(Bài 5) Hôm qua người nói về nhà với ai? Gõ bằng hiragana.",
         "explain": "Nghĩa: Hôm qua tôi về nhà một mình. ひとりで = một mình.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "2237dd3d3b5fae390b934cb6de3da9e8",
         "transcript": "きのう ひとりで うちへ かえりました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "ひとりで",
-          "ひとり",
-          "一人で",
-          "一人"
-        ]
+        "answer": ["ひとりで", "ひとり", "一人で", "一人"]
       },
       {
         "id": "nghe-05-5",
         "prompt": "(Bài 5) Người nói đến Nhật bằng gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tuần trước tôi đến Nhật bằng máy bay.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "4d1652e1f724c25f8bace12dd6ab4813",
         "transcript": "せんしゅう ひこうきで にほんへ きました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "ひこうき",
-          "飛行機"
-        ]
+        "answer": ["ひこうき", "飛行機"]
       },
       {
         "id": "nghe-05-6",
         "prompt": "(Bài 5) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Tôi không đi đâu cả. どこ（へ）も + phủ định: không … đâu cả.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:5"
-        ],
+        "tags": ["listening", "minna:5"],
         "audio": "faf2d5219c3beaed8c15b80410fe4582",
         "transcript": "どこへも いきません。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "どこへも いきません。",
-          "どこも いきません。"
-        ]
+        "answer": ["どこへも いきません。", "どこも いきません。"]
       },
       {
         "id": "nghe-06-1",
         "prompt": "(Bài 6) Buổi sáng người nói uống gì?",
         "explain": "Nghĩa: Mỗi sáng tôi ăn bánh mì, sau đó uống cà phê.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "7da3916cbc540aabab8d47dd6c8c46d4",
         "transcript": "わたしは まいあさ パンを たべます。それから コーヒーを のみます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Trà",
-          "Cà phê",
-          "Sữa"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Trà", "Cà phê", "Sữa"],
+        "answer": [1]
       },
       {
         "id": "nghe-06-2",
         "prompt": "(Bài 6) Người nói rủ làm gì?",
         "explain": "Nghĩa: Chủ nhật cùng chơi quần vợt không? 〜ませんか dùng để rủ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "a9ef496f707df9b7ed0cf688d4097997",
         "transcript": "にちようび いっしょに テニスを しませんか。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Chơi quần vợt",
-          "Xem phim",
-          "Chơi bóng đá"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Chơi quần vợt", "Xem phim", "Chơi bóng đá"],
+        "answer": [0]
       },
       {
         "id": "nghe-06-3",
         "prompt": "(Bài 6) Hôm qua người nói mua giày ở đâu?",
         "explain": "Nghĩa: Hôm qua tôi mua giày ở cửa hàng bách hóa. N(nơi chốn)で: làm việc gì ở đâu.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "1da9392c248eb188071c16638c777bdb",
         "transcript": "きのう デパートで くつを かいました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Siêu thị",
-          "Cửa hàng bách hóa",
-          "Nhà ga"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Siêu thị", "Cửa hàng bách hóa", "Nhà ga"],
+        "answer": [1]
       },
       {
         "id": "nghe-06-4",
         "prompt": "(Bài 6) Người nói chụp ảnh ở đâu? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tôi chụp ảnh ở công viên.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "c51caf30f7d939d3e1efb33863c58c67",
         "transcript": "こうえんで しゃしんを とります。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "こうえん",
-          "公園"
-        ]
+        "answer": ["こうえん", "公園"]
       },
       {
         "id": "nghe-06-5",
         "prompt": "(Bài 6) Tối nay người nói viết gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tối nay tôi viết thư.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "211004f4242355dfbe3dfb0bd68e39ce",
         "transcript": "こんばん てがみを かきます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "てがみ",
-          "手紙"
-        ]
+        "answer": ["てがみ", "手紙"]
       },
       {
         "id": "nghe-06-6",
         "prompt": "(Bài 6) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Cùng ăn trưa nhé. 〜ましょう: cùng làm gì nhé.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:6"
-        ],
+        "tags": ["listening", "minna:6"],
         "audio": "933db0e0bcfeeb890184a740d024ae39",
         "transcript": "いっしょに ひるごはんを たべましょう。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "いっしょに ひるごはんを たべましょう。"
-        ]
+        "answer": ["いっしょに ひるごはんを たべましょう。"]
       },
       {
         "id": "nghe-07-1",
         "prompt": "(Bài 7) Người nói ăn cơm bằng gì?",
         "explain": "Nghĩa: Tôi ăn cơm bằng đũa. N(công cụ)で: làm bằng gì.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "66c7dfefe5b1a3f833a7e762768b99eb",
         "transcript": "わたしは はしで ごはんを たべます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Đũa",
-          "Thìa",
-          "Dĩa"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Đũa", "Thìa", "Dĩa"],
+        "answer": [0]
       },
       {
         "id": "nghe-07-2",
         "prompt": "(Bài 7) Người nói đã tặng bố cái gì?",
         "explain": "Nghĩa: Vào sinh nhật bố, tôi đã tặng áo sơ mi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "6e97a27eb5a1f85019ea01d8eb8c1cf1",
         "transcript": "ちちの たんじょうびに シャツを あげました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Cà vạt",
-          "Áo sơ mi",
-          "Đồng hồ"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Cà vạt", "Áo sơ mi", "Đồng hồ"],
+        "answer": [1]
       },
       {
         "id": "nghe-07-3",
         "prompt": "(Bài 7) Bài tập về nhà thế nào?",
         "explain": "Nghĩa: Bài tập thì chưa làm. Bây giờ tôi sẽ làm. まだです: vẫn chưa.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "d96302d8622c421a2dc0f163dbac7ca1",
         "transcript": "しゅくだいは まだです。これから します。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Đã làm xong",
-          "Chưa làm, bây giờ sẽ làm",
-          "Không có bài tập"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Đã làm xong", "Chưa làm, bây giờ sẽ làm", "Không có bài tập"],
+        "answer": [1]
       },
       {
         "id": "nghe-07-4",
         "prompt": "(Bài 7) Người nói học gì với thầy/cô? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tôi học tiếng Nhật với thầy/cô.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "1a20a27cfd68bc4c2feca5be52090aab",
         "transcript": "せんせいに にほんごを ならいます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "にほんご",
-          "日本語"
-        ]
+        "answer": ["にほんご", "日本語"]
       },
       {
         "id": "nghe-07-5",
         "prompt": "(Bài 7) Người nói nhận được gì từ bạn? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tôi đã nhận hoa từ bạn. N(người)に もらいます: nhận từ ai.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "3c3b7b32df52ec0368af8cdcb3edb38e",
         "transcript": "ともだちに はなを もらいました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "はな",
-          "花"
-        ]
+        "answer": ["はな", "花"]
       },
       {
         "id": "nghe-07-6",
         "prompt": "(Bài 7) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Tôi đã ăn trưa rồi. もう 〜ました: đã … rồi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:7"
-        ],
+        "tags": ["listening", "minna:7"],
         "audio": "24fa38012b2a7db1802106618c19af9b",
         "transcript": "もう ひるごはんを たべました。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "もう ひるごはんを たべました。"
-        ]
+        "answer": ["もう ひるごはんを たべました。"]
       },
       {
         "id": "nghe-08-1",
         "prompt": "(Bài 8) Thành phố của người nói thế nào?",
         "explain": "Nghĩa: Thành phố của tôi yên tĩnh. Và đẹp nữa. そして = và.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "9a40ade1ee9892697e06b91a162165fe",
         "transcript": "わたしの まちは しずかです。そして きれいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Yên tĩnh và đẹp",
-          "Náo nhiệt và đẹp",
-          "Yên tĩnh nhưng bẩn"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Yên tĩnh và đẹp", "Náo nhiệt và đẹp", "Yên tĩnh nhưng bẩn"],
+        "answer": [0]
       },
       {
         "id": "nghe-08-2",
         "prompt": "(Bài 8) Món ăn này thế nào?",
         "explain": "Nghĩa: Món này không ngon lắm. あまり + phủ định: không … lắm.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "8999863afcc3c37a2aafffcfed9060ac",
         "transcript": "この りょうりは あまり おいしくないです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Rất ngon",
-          "Không ngon lắm",
-          "Rất đắt"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Rất ngon", "Không ngon lắm", "Rất đắt"],
+        "answer": [1]
       },
       {
         "id": "nghe-08-3",
         "prompt": "(Bài 8) Cuộc sống ở Nhật của người nói thế nào?",
         "explain": "Nghĩa: Cuộc sống ở Nhật vui nhưng bận. 〜が: nhưng.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "e4399e10c66c65b4737ababca6dfa0be",
         "transcript": "にほんの せいかつは たのしいですが、いそがしいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Vui nhưng bận",
-          "Vui và rảnh",
-          "Buồn và bận"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Vui nhưng bận", "Vui và rảnh", "Buồn và bận"],
+        "answer": [0]
       },
       {
         "id": "nghe-08-4",
         "prompt": "(Bài 8) Núi Phú Sĩ là ngọn núi thế nào? Gõ tính từ bằng hiragana.",
         "explain": "Nghĩa: Núi Phú Sĩ là ngọn núi cao.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "e898da7be1d63f5abb61a823a89efdeb",
         "transcript": "ふじさんは たかい やまです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "たかい",
-          "高い"
-        ]
+        "answer": ["たかい", "高い"]
       },
       {
         "id": "nghe-08-5",
         "prompt": "(Bài 8) Hôm nay thời tiết thế nào? Gõ tính từ bằng hiragana.",
         "explain": "Nghĩa: Hôm nay rất lạnh.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "ecba3ec947c528a6ae3e019ed451069d",
         "transcript": "きょうは とても さむいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "さむい",
-          "寒い"
-        ]
+        "answer": ["さむい", "寒い"]
       },
       {
         "id": "nghe-08-6",
         "prompt": "(Bài 8) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Đây là chiếc ô tô mới.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:8"
-        ],
+        "tags": ["listening", "minna:8"],
         "audio": "da9645a7732ccc42b3f489ab2da6a847",
         "transcript": "これは あたらしい くるまです。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "これは あたらしい くるまです。"
-        ]
+        "answer": ["これは あたらしい くるまです。"]
       },
       {
         "id": "nghe-09-1",
         "prompt": "(Bài 9) Người nói thế nào với âm nhạc?",
         "explain": "Nghĩa: Tôi thích âm nhạc nhưng hát dở. へた = kém, dở.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "85101afafcffc0779ca899f4f56e1c40",
         "transcript": "わたしは おんがくが すきですが、うたは へたです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Thích âm nhạc nhưng hát dở",
-          "Không thích âm nhạc",
-          "Hát rất hay"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Thích âm nhạc nhưng hát dở", "Không thích âm nhạc", "Hát rất hay"],
+        "answer": [0]
       },
       {
         "id": "nghe-09-2",
         "prompt": "(Bài 9) Người nói hiểu chữ Kanji đến mức nào?",
         "explain": "Nghĩa: Tôi hoàn toàn không hiểu chữ Kanji. ぜんぜん + phủ định: hoàn toàn không.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "9d131600b17bb76cfd0bea2f8fd5d17d",
         "transcript": "かんじが ぜんぜん わかりません。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Hiểu rõ",
-          "Hiểu một chút",
-          "Hoàn toàn không hiểu"
-        ],
-        "answer": [
-          2
-        ]
+        "options": ["Hiểu rõ", "Hiểu một chút", "Hoàn toàn không hiểu"],
+        "answer": [2]
       },
       {
         "id": "nghe-09-3",
         "prompt": "(Bài 9) Vì sao hôm nay người nói không đi karaoke?",
         "explain": "Nghĩa: Hôm nay không có thời gian nên tôi không đi karaoke. 〜から: vì.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "f7a34d64aa346c533a49935f10cebb55",
         "transcript": "きょうは じかんが ありませんから、カラオケへ いきません。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Vì không có thời gian",
-          "Vì không thích karaoke",
-          "Vì không có tiền"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Vì không có thời gian", "Vì không thích karaoke", "Vì không có tiền"],
+        "answer": [0]
       },
       {
         "id": "nghe-09-4",
         "prompt": "(Bài 9) Người nói ghét con gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tôi ghét chó.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "5cbf6d3ac45e99f8d0ab9f8f6525bea3",
         "transcript": "わたしは いぬが きらいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "いぬ",
-          "犬"
-        ]
+        "answer": ["いぬ", "犬"]
       },
       {
         "id": "nghe-09-5",
         "prompt": "(Bài 9) Anh Miller giỏi việc gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Anh Miller nấu ăn giỏi. じょうず = giỏi.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "1c4b78f3c9bdd27330f046a5884fa835",
         "transcript": "ミラーさんは りょうりが じょうずです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "りょうり",
-          "料理"
-        ]
+        "answer": ["りょうり", "料理"]
       },
       {
         "id": "nghe-09-6",
         "prompt": "(Bài 9) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Tôi hiểu một chút Hiragana.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:9"
-        ],
+        "tags": ["listening", "minna:9"],
         "audio": "b4fbdeb29832b50b86ed4df4c63c7917",
         "transcript": "ひらがなが すこし わかります。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "ひらがなが すこし わかります。"
-        ]
+        "answer": ["ひらがなが すこし わかります。"]
       },
       {
         "id": "nghe-10-1",
         "prompt": "(Bài 10) Quyển sách ở đâu?",
         "explain": "Nghĩa: Trên bàn có quyển sách. うえ = trên.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "614eaf814b9b43adb7215fef490b7e73",
         "transcript": "つくえの うえに ほんが あります。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Trên bàn",
-          "Dưới bàn",
-          "Trong cặp"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Trên bàn", "Dưới bàn", "Trong cặp"],
+        "answer": [0]
       },
       {
         "id": "nghe-10-2",
         "prompt": "(Bài 10) Ở công viên có ai?",
         "explain": "Nghĩa: Ở công viên có một bé trai. Người và con vật dùng います.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "6ba168f0e19715c66e9bed9fc51ffe69",
         "transcript": "こうえんに おとこの こが います。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Một bé trai",
-          "Một bé gái",
-          "Một người phụ nữ"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Một bé trai", "Một bé gái", "Một người phụ nữ"],
+        "answer": [0]
       },
       {
         "id": "nghe-10-3",
         "prompt": "(Bài 10) Bưu điện ở đâu?",
         "explain": "Nghĩa: Bưu điện ở bên cạnh ngân hàng. となり = bên cạnh.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "77dda4245b57083d72b1739367b8e122",
         "transcript": "ゆうびんきょくは ぎんこうの となりです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Bên cạnh ngân hàng",
-          "Trước ngân hàng",
-          "Sau nhà ga"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Bên cạnh ngân hàng", "Trước ngân hàng", "Sau nhà ga"],
+        "answer": [0]
       },
       {
         "id": "nghe-10-4",
         "prompt": "(Bài 10) Con mèo ở đâu so với cái ghế? Gõ từ chỉ vị trí bằng hiragana.",
         "explain": "Nghĩa: Con mèo ở dưới ghế. した = dưới.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "ad30bf0448a205e4e73a56471e983bf6",
         "transcript": "ねこは いすの したに います。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "した",
-          "下"
-        ]
+        "answer": ["した", "下"]
       },
       {
         "id": "nghe-10-5",
         "prompt": "(Bài 10) Trong tủ lạnh có gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Trong tủ lạnh có trứng.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "876d6f489253b2b42e8795e1892fd24d",
         "transcript": "れいぞうこの なかに たまごが あります。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "たまご",
-          "卵",
-          "玉子"
-        ]
+        "answer": ["たまご", "卵", "玉子"]
       },
       {
         "id": "nghe-10-6",
         "prompt": "(Bài 10) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Trên cây có con chim.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:10"
-        ],
+        "tags": ["listening", "minna:10"],
         "audio": "c72ae031ac165ce9617eca5a99c9584a",
         "transcript": "きの うえに とりが います。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "きの うえに とりが います。"
-        ]
+        "answer": ["きの うえに とりが います。"]
       },
       {
         "id": "nghe-11-1",
         "prompt": "(Bài 11) Người nói mua mấy quả táo?",
         "explain": "Nghĩa: Cho tôi 3 quả táo. みっつ = 3 cái/quả.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "335b06171835afe3f41661d822103205",
         "transcript": "りんごを みっつ ください。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "2 quả",
-          "3 quả",
-          "4 quả"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["2 quả", "3 quả", "4 quả"],
+        "answer": [1]
       },
       {
         "id": "nghe-11-2",
         "prompt": "(Bài 11) Gia đình người nói có mấy người?",
         "explain": "Nghĩa: Gia đình tôi có 5 người. ごにん = 5 người.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "4bda227a6a3634332c9b28f807fc4db4",
         "transcript": "わたしの かぞくは ごにんです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "4 người",
-          "5 người",
-          "6 người"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["4 người", "5 người", "6 người"],
+        "answer": [1]
       },
       {
         "id": "nghe-11-3",
         "prompt": "(Bài 11) Người nói học tiếng Nhật mấy lần một tuần?",
         "explain": "Nghĩa: Một tuần tôi học tiếng Nhật 3 lần. 〜に 〜かい: bao nhiêu lần trong khoảng thời gian.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "c66b80cbfb45e8d5f60f570e098d5caf",
         "transcript": "いっしゅうかんに さんかい にほんごを べんきょうします。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "1 lần",
-          "2 lần",
-          "3 lần"
-        ],
-        "answer": [
-          2
-        ]
+        "options": ["1 lần", "2 lần", "3 lần"],
+        "answer": [2]
       },
       {
         "id": "nghe-11-4",
         "prompt": "(Bài 11) Đi từ nhà đến công ty mất bao lâu? Gõ bằng hiragana (ví dụ: じゅっぷん).",
         "explain": "Nghĩa: Từ nhà đến công ty đi tàu điện mất 30 phút. かかります: mất (thời gian).",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "adb65eda4948145900e291838fc41f22",
         "transcript": "うちから かいしゃまで でんしゃで さんじゅっぷん かかります。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "さんじゅっぷん",
-          "さんじっぷん",
-          "30ぷん",
-          "30分",
-          "三十分"
-        ]
+        "answer": ["さんじゅっぷん", "さんじっぷん", "30ぷん", "30分", "三十分"]
       },
       {
         "id": "nghe-11-5",
         "prompt": "(Bài 11) Người nói mua mấy tấm vé? Gõ bằng hiragana (ví dụ: いちまい).",
         "explain": "Nghĩa: Tôi đã mua 2 tấm vé. 〜まい đếm vật mỏng, phẳng.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "b7f6f4d9e9c449ef2718f1aee927a434",
         "transcript": "きっぷを にまい かいました。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "にまい",
-          "2まい",
-          "2枚",
-          "二枚"
-        ]
+        "answer": ["にまい", "2まい", "2枚", "二枚"]
       },
       {
         "id": "nghe-11-6",
         "prompt": "(Bài 11) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Tôi có 2 anh chị em. ふたり = 2 người.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:11"
-        ],
+        "tags": ["listening", "minna:11"],
         "audio": "297d190b95326f23d74beb687ac858e9",
         "transcript": "きょうだいが ふたり います。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "きょうだいが ふたり います。"
-        ]
+        "answer": ["きょうだいが ふたり います。"]
       },
       {
         "id": "nghe-12-1",
         "prompt": "(Bài 12) Hôm qua thời tiết thế nào?",
         "explain": "Nghĩa: Hôm qua trời mưa. Hôm nay trời đẹp. 〜でした: quá khứ của 〜です.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "94518f9d6f09434911333854c47f0e7b",
         "transcript": "きのうは あめでした。きょうは いい てんきです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Trời mưa",
-          "Trời đẹp",
-          "Có tuyết"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Trời mưa", "Trời đẹp", "Có tuyết"],
+        "answer": [0]
       },
       {
         "id": "nghe-12-2",
         "prompt": "(Bài 12) Câu nào đúng?",
         "explain": "Nghĩa: Tàu điện nhanh hơn xe buýt. N1は N2より Adj: N1 … hơn N2.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "20a06e2aad2d09f8899f68ed6d899439",
         "transcript": "でんしゃは バスより はやいです。",
         "maxListens": null,
@@ -2582,217 +1614,143 @@
           "Xe buýt nhanh hơn tàu điện",
           "Tàu điện và xe buýt nhanh như nhau"
         ],
-        "answer": [
-          0
-        ]
+        "answer": [0]
       },
       {
         "id": "nghe-12-3",
         "prompt": "(Bài 12) Trong các loại trái cây, người nói thích loại nào nhất?",
         "explain": "Nghĩa: Trong các loại trái cây, tôi thích quýt nhất. 〜の なかで 〜が いちばん: … nhất trong số …",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "71d9ec7da5dc9f5a9e4f466037d8469d",
         "transcript": "くだものの なかで みかんが いちばん すきです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Táo",
-          "Quýt",
-          "Chuối"
-        ],
-        "answer": [
-          1
-        ]
+        "options": ["Táo", "Quýt", "Chuối"],
+        "answer": [1]
       },
       {
         "id": "nghe-12-4",
         "prompt": "(Bài 12) Chuyến du lịch thế nào? Gõ tính từ người nói dùng, bằng hiragana.",
         "explain": "Nghĩa: Chuyến du lịch rất vui. たのしかった: quá khứ của たのしい.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "7d8513b0f651e67ed9d06d647fae9f5c",
         "transcript": "りょこうは とても たのしかったです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "たのしかった",
-          "楽しかった",
-          "たのしかったです",
-          "楽しかったです"
-        ]
+        "answer": ["たのしかった", "楽しかった", "たのしかったです", "楽しかったです"]
       },
       {
         "id": "nghe-12-5",
         "prompt": "(Bài 12) Người nói thích mùa nào hơn? Gõ bằng hiragana.",
         "explain": "Nghĩa: Tôi thích mùa đông hơn mùa hè. 〜の ほうが: … hơn.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "3afb6cce0d1c85caafe9bf4862eef7d3",
         "transcript": "わたしは なつより ふゆの ほうが すきです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "ふゆ",
-          "冬"
-        ]
+        "answer": ["ふゆ", "冬"]
       },
       {
         "id": "nghe-12-6",
         "prompt": "(Bài 12) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Bài thi hôm qua dễ.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:12"
-        ],
+        "tags": ["listening", "minna:12"],
         "audio": "ba70f2683fbe0cbfbd1b371b6c40f1b7",
         "transcript": "きのうの しけんは かんたんでした。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "きのうの しけんは かんたんでした。"
-        ]
+        "answer": ["きのうの しけんは かんたんでした。"]
       },
       {
         "id": "nghe-13-1",
         "prompt": "(Bài 13) Bây giờ người nói muốn có gì?",
         "explain": "Nghĩa: Bây giờ tôi muốn có máy tính mới. N が ほしいです: muốn có N.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "e62d71fa3ec8aee8d1869d8cfa373c57",
         "transcript": "いま あたらしい パソコンが ほしいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Máy tính mới",
-          "Điện thoại mới",
-          "Xe đạp mới"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Máy tính mới", "Điện thoại mới", "Xe đạp mới"],
+        "answer": [0]
       },
       {
         "id": "nghe-13-2",
         "prompt": "(Bài 13) Kỳ nghỉ hè người nói muốn đi đâu, để làm gì?",
         "explain": "Nghĩa: Kỳ nghỉ hè tôi muốn đi biển để bơi. V(bỏ ます)に いきます: đi để làm gì.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "7b7d3eb6ffd135acaeb087a2691650d0",
         "transcript": "なつやすみに うみへ およぎに いきたいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Đi biển để bơi",
-          "Đi núi để leo núi",
-          "Đi hồ bơi để chơi"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Đi biển để bơi", "Đi núi để leo núi", "Đi hồ bơi để chơi"],
+        "answer": [0]
       },
       {
         "id": "nghe-13-3",
         "prompt": "(Bài 13) Người nói đề nghị làm gì?",
         "explain": "Nghĩa: Đói bụng rồi nhỉ. Ăn gì đó đi. なにか = cái gì đó.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "fdd7d180c054ca354bd19eb6640a70c4",
         "transcript": "おなかが すきましたね。なにか たべましょう。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "Ăn gì đó",
-          "Uống gì đó",
-          "Đi đâu đó"
-        ],
-        "answer": [
-          0
-        ]
+        "options": ["Ăn gì đó", "Uống gì đó", "Đi đâu đó"],
+        "answer": [0]
       },
       {
         "id": "nghe-13-4",
         "prompt": "(Bài 13) Ngày mai người nói đến bưu điện để mua gì? Gõ bằng hiragana.",
         "explain": "Nghĩa: Ngày mai tôi đến bưu điện để mua tem.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "c41b79c182885445e17af0b68bd5b5fc",
         "transcript": "あした ゆうびんきょくへ きってを かいに いきます。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "きって",
-          "切手"
-        ]
+        "answer": ["きって", "切手"]
       },
       {
         "id": "nghe-13-5",
         "prompt": "(Bài 13) Cuối tuần người nói muốn nghỉ ở đâu? Gõ bằng hiragana.",
         "explain": "Nghĩa: Cuối tuần tôi không muốn đi đâu cả. Tôi muốn nghỉ ở nhà. 〜たくないです: không muốn.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "bb82e86ad4b38c8e18a590167fdf99fd",
         "transcript": "しゅうまつは どこへも いきたくないです。うちで やすみたいです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "fill",
-        "answer": [
-          "うち",
-          "家"
-        ]
+        "answer": ["うち", "家"]
       },
       {
         "id": "nghe-13-6",
         "prompt": "(Bài 13) Nghe và chép lại câu bằng hiragana.",
         "explain": "Nghĩa: Tôi muốn uống gì đó lạnh. V(bỏ ます)たいです: muốn làm.",
         "points": 1,
-        "tags": [
-          "listening",
-          "minna:13"
-        ],
+        "tags": ["listening", "minna:13"],
         "audio": "2efa112af8d649c5b9d50b9abf5fd5a8",
         "transcript": "つめたい ものが のみたいです。",
         "maxListens": null,
         "type": "dictation",
         "inputMode": "hiragana",
         "kanjiStrict": false,
-        "answer": [
-          "つめたい ものが のみたいです。"
-        ]
+        "answer": ["つめたい ものが のみたいです。"]
       }
     ],
     "schemaVersion": 1

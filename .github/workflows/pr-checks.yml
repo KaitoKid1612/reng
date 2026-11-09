@@ -3,7 +3,7 @@ name: PR checks
 on:
   push:
     branches:
-      - fix/learner-slide-progress
+      - main
   pull_request:
     branches:
       - main
@@ -22,6 +22,5 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - run: npm run lint
-      - run: npm run typecheck
-      - run: npm test
+      # Same gate as local hand-off: Prettier, ESLint, typecheck and unit tests.
+      - run: npm run check

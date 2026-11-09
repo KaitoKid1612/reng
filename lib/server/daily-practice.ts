@@ -53,7 +53,13 @@ export async function setDailyPractice(
 ) {
   await callRpc(
     "set_daily_practice",
-    { p_teacher_id: teacherId, p_class_id: classId, p_size: size, p_lesson_id: lessonId, p_listening_count: listeningCount },
+    {
+      p_teacher_id: teacherId,
+      p_class_id: classId,
+      p_size: size,
+      p_lesson_id: lessonId,
+      p_listening_count: listeningCount,
+    },
     z.unknown(),
   );
 }
