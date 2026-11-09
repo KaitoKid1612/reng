@@ -65,6 +65,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 09/11/2026
 
+- Thi thử JLPT: [kiểm chứng logic, database, E2E và trình duyệt, lỗi bắt được, việc khi đưa lên production](testing/jlpt-mock-exam-2026-11-09.md).
 - Rà soát sau đợt merge 07/11: [tên migration khớp production, số câu nghe mỗi ngày, lưu vị trí slide, CI và định dạng](testing/review-2026-11-09.md).
 
 ### 06/11/2026

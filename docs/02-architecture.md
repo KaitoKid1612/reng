@@ -114,7 +114,7 @@ Lớp học chạy theo giờ Việt Nam (UTC+7, không đổi giờ mùa hè). 
 | Việc | Giờ Việt Nam | Chạy bằng |
 |---|---|---|
 | Giao bài luyện tập hằng ngày | 6:00 | Vercel Cron `/api/cron/daily-practice` |
-| Tự nộp lượt bỏ dở đã quá hạn (bài không cho nộp muộn) | 6:00, sau bài hằng ngày | Cùng cron `/api/cron/daily-practice` |
+| Tự nộp lượt bỏ dở đã quá hạn (bài không cho nộp muộn) hoặc hết giờ thi thử JLPT | 6:00, sau bài hằng ngày | Cùng cron `/api/cron/daily-practice` |
 | Email nhắc học viên | 20:00 | Vercel Cron `/api/cron/student-reminders` (chưa bật email trên production) |
 | Email tóm tắt lớp cho giáo viên | 6:00 | Vercel Cron `/api/cron/teacher-digest` (chưa bật email) |
 | Email tổng kết tuần | 19:00 Chủ nhật | Vercel Cron `/api/cron/weekly-summary` (chưa bật email) |

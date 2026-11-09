@@ -116,6 +116,7 @@ Mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ theo n
 
 ### 09/11/2026
 
+- Thi thử JLPT: giáo viên lớp tiếng Nhật tạo đề N5/N4 từ ngân hàng ôn của lớp theo ba phần như đề thật, mỗi học viên một lượt có đồng hồ (mặc định 90/115 phút) tự nộp khi hết giờ; kết quả có điểm từng phần, điểm ước tính thang 180 và đếm ngược tới kỳ thi 06/12/2026. Cần áp migration `20261109032029`. Xem [thiết kế](docs/detail-design/phase-3.md#thi-thử-jlpt--09112026).
 - Rà soát sau đợt merge 07/11: tên file migration nay khớp lịch sử production (`20261107044229_daily_practice_seventy`, điểm danh đổi thành `20261109024203`) để `npx supabase db push --linked` chạy được; form bài luyện hằng ngày có lựa chọn **Theo tỉ lệ của bài** và lưu form không còn tự đổi lớp sang 0 câu nghe; lưu vị trí slide không còn xóa dấu "Đã học xong"; CI chạy `npm run check` (có kiểm tra định dạng) cho PR và `main`. Xem [báo cáo](docs/testing/review-2026-11-09.md).
 
 ### 07/11/2026

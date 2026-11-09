@@ -209,6 +209,7 @@ Tra cứu nhanh; chi tiết ở dòng chú thích đầu mỗi file trong `supab
 | `20261105044634_fix_assignment_question` | `assignment_item_edits` (lịch sử trước/sau), `fix_assignment_question`: giáo viên sửa đề, giải thích, furigana của câu đã giao; trigger snapshot chỉ cho qua đúng thay đổi này ([DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)) |
 | `20261107044229_daily_practice_seventy` | Bài hằng ngày và bài giao tối đa 70 câu (`set_daily_practice`, `publish_assignment`); áp production ngày 07/11/2026 với đúng mã này |
 | `20261109024203_class_session_attendance` | `class_session_attendance` (buổi, học viên, có mặt/vắng; xóa buổi thì xóa theo), `save_session_attendance`: giáo viên điểm danh buổi đã ghi trong nhật ký ([DD](detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026)) |
+| `20261109032029_jlpt_mock_exams` | `assignment_exams` (cấp N5/N4, số phút mỗi lượt; chỉ chèn khi bài còn nháp), `publish_jlpt_mock_exam`; `check_open_attempt`, `list_expired_attempts`, `submit_expired_attempt` tính giới hạn thời gian theo lượt ([DD](detail-design/phase-3.md#thi-thử-jlpt--09112026)) |
 
 ## Mở rộng dữ liệu dịch vụ
 
