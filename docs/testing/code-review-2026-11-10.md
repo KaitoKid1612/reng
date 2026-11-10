@@ -95,7 +95,7 @@ Người dùng bảo làm tiếp; làm theo phương án đã đề xuất (đ�
 
 - Bộ sinh audio đọc lời nghe có nhãn người nói theo từng lượt, mỗi lượt một giọng khai báo trong `speakerVoices` của bộ đề, rồi nối MP3 theo frame ([audio](../06-audio.md#hội-thoại-hai-giọng--10112026)). Bộ đề không khai báo `speakerVoices` giữ nguyên hash và file cũ.
 - Tài liệu Unreal Speech v8 không ghi giới tính giọng Nhật: đo cao độ một câu mẫu của mỗi giọng (5 lần gọi, khoảng 90 ký tự): Haruto 92 Hz là giọng nam duy nhất; Rina, Yuki, Hana, Sakura 242–356 Hz.
-- Sinh 20 file (39 lượt, 880 ký tự) bằng khóa Unreal Speech trên máy người dùng. Giải mã cả 20 file trong Chromium: dài 2,4–15,3 giây, cao độ từng nửa khớp người nói.
+- Sinh 20 file (39 lượt, 880 ký tự) bằng khóa Unreal Speech trên máy người dùng. Giải mã cả 20 file trong Chromium: dài 2,4–15,3 giây, cao độ từng nửa khớp người nói. Người dùng đã nghe và duyệt audio cùng ngày.
 - Test: `tests/listening-dialogue.test.ts` (tách lượt, hash theo giọng, nhãn thiếu giọng, đọc từng lượt rồi nối), `tests/audio-mp3.test.ts` (frame sau thẻ ID3, bỏ frame Info, từ chối file hỏng hoặc khác định dạng), `tests/listening-sets.test.ts` (mọi bộ đề: audio khớp lời nghe, file MP3 dài 1–60 giây).
 
 ## Kết quả

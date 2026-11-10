@@ -260,7 +260,7 @@ Quy trình:
 
 Audio chính thức: `npm run audit:jlpt-audio` (cần mạng) chỉ kiểm tra link còn tải được và ghi mã băm, không lưu file. Chỉ dùng audio chính thức khi đã có quyền.
 
-Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`, 09/11/2026) có audio từ 10/11/2026: hội thoại đọc hai giọng (nữ Sakura, nam Haruto; nhân viên cửa hàng Rina), 20 file MP3 trong `public/audio/lessons`. Câu 1 hỏi nhầm người đã được sửa. Bộ này chưa nằm trong bài nào trên production; muốn dùng thì tạo bài nháp cho giáo viên bằng `npm run listening:sql` như bộ Minna, nghe duyệt rồi xuất bản.
+Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`, 09/11/2026) có audio từ 10/11/2026: hội thoại đọc hai giọng (nữ Sakura, nam Haruto; nhân viên cửa hàng Rina), 20 file MP3 trong `public/audio/lessons`, người dùng đã nghe duyệt ngày 10/11/2026. Câu 1 hỏi nhầm người đã được sửa. Bộ này chưa nằm trong bài nào trên production; muốn dùng thì tạo bài nháp cho giáo viên bằng `npm run listening:sql` như bộ Minna, nghe duyệt rồi xuất bản.
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
