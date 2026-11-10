@@ -88,8 +88,8 @@ test("an N5 exam takes each section's share in the exam order and rotates questi
     second.questionIds.filter(
       (id) => sectionOf.get(id) === section && first.questionIds.includes(id),
     ).length;
-  // 40 vocabulary questions: 15 never used come first, so only 10 come back.
-  assert.equal(reused("vocabulary"), 10);
+  // 43 vocabulary questions: 18 never used come first, so only 7 come back.
+  assert.equal(reused("vocabulary"), 7);
   assert.equal(reused("listening"), 0, "65 listening questions cover two exams");
 });
 

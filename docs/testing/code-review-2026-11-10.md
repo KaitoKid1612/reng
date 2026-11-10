@@ -46,8 +46,8 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 
 ## Cần người dùng quyết định
 
-1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): chưa có file MP3 nào vì công cụ tạo bộ này ngày 09/11 chỉ tính mã audio, không gọi được dịch vụ đọc. Đọc database production (chỉ đọc, người dùng cho phép): bộ này chưa nằm trong bài, chưa có audio đăng ký, chưa giao cho ai; bài đang dùng là "Tổng ôn N4 — Minna 1–50" với 20 câu nghe ngày 07/11, đủ 20 file MP3. **Đã làm** cùng ngày theo phương án đề xuất: đọc hội thoại hai giọng (mục dưới). Còn lại: tạo bài nháp cho giáo viên bằng `npm run listening:sql` khi muốn dùng.
-2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): đã duyệt cùng ngày theo yêu cầu người dùng (mục dưới). File trong `content/jlpt/generated/` chưa có mã bài và tên nên `bank:sql`/`lesson:import` chưa nhận trực tiếp; muốn dùng thì chép vào ngân hàng ôn N5/N4.
+1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): chưa có file MP3 nào vì công cụ tạo bộ này ngày 09/11 chỉ tính mã audio, không gọi được dịch vụ đọc. Đọc database production (chỉ đọc, người dùng cho phép): bộ này chưa nằm trong bài, chưa có audio đăng ký, chưa giao cho ai; bài đang dùng là "Tổng ôn N4 — Minna 1–50" với 20 câu nghe ngày 07/11, đủ 20 file MP3. **Đã làm** cùng ngày theo phương án đề xuất: đọc hội thoại hai giọng (mục dưới). Cùng ngày 20 câu được đưa vào ngân hàng ôn N4 (350 câu) để dùng cho bài hằng ngày và đề thi thử.
+2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): đã duyệt cùng ngày theo yêu cầu người dùng (mục dưới). Cùng ngày đã chép vào ngân hàng ôn N4 (6 câu) và N5 (6 câu).
 3. **Email trên production**: khi bật, thêm lại email nhắc bài vào trang Cho giáo viên và trang Hướng dẫn.
 
 ## Duyệt 12 câu JLPT tự biên soạn

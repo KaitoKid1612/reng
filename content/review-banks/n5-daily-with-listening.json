@@ -2,7 +2,7 @@
   "id": "n5-sheet-review-bank",
   "title": "Ngân hàng ôn Minna N5 – Nguyên",
   "titleJa": "N5 復習 2026-11-05",
-  "summary": "Giữ nguyên 60 câu từ phiên bản N5 số 4 (42154090-c0d2-4fa5-a71a-e1dece49698f). Bổ sung 78 câu nghe có MP3; cần nghe duyệt trước khi xuất bản.",
+  "summary": "144 câu tự biên soạn: 60 câu chữ, từ vựng và ngữ pháp Minna 10–12, 6 câu theo dạng đề JLPT đã duyệt và 78 câu nghe có MP3 theo Minna 1–13.",
   "order": 1,
   "courseId": "n5",
   "isSample": false,
@@ -677,6 +677,72 @@
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
         "inputMode": "japanese",
         "kanjiStrict": false
+      },
+      {
+        "id": "jlpt-n5-001",
+        "type": "choice",
+        "prompt": "「学校」の読み方を選んでください。",
+        "options": ["がっこう", "がこう", "かっこう", "がっこ"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "文字・語彙"],
+        "explain": "学校（がっこう）: trường học. Chú ý âm ngắt っ và trường âm う."
+      },
+      {
+        "id": "jlpt-n5-002",
+        "type": "choice",
+        "prompt": "「あした」は 漢字で どう 書きますか。",
+        "options": ["昨日", "今日", "明日", "毎日"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "文字・語彙"],
+        "explain": "明日（あした）: ngày mai. 昨日（きのう）: hôm qua, 今日（きょう）: hôm nay, 毎日（まいにち）: mỗi ngày."
+      },
+      {
+        "id": "jlpt-n5-003",
+        "type": "choice",
+        "prompt": "わたしは {毎朝|まいあさ} 7時（　）{起|お}きます。",
+        "options": ["に", "で", "を", "が"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "文法"],
+        "explain": "Giờ cụ thể đi với に: 7時に起きます (dậy lúc 7 giờ). 毎朝 (mỗi sáng) thì không cần に."
+      },
+      {
+        "id": "jlpt-n5-004",
+        "type": "choice",
+        "prompt": "きのう、友だちと {映画|えいが}を（　）。",
+        "options": ["見ます", "見ました", "見ません", "見る"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "文法"],
+        "explain": "きのう (hôm qua) là chuyện đã xảy ra nên dùng thể quá khứ lịch sự 見ました."
+      },
+      {
+        "id": "jlpt-n5-005",
+        "type": "choice",
+        "prompt": "「水」の読み方を選んでください。",
+        "options": ["ひ", "き", "みず", "やま"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "文字・語彙"],
+        "explain": "水（みず）: nước. ひ là cách đọc của 火, き của 木, やま của 山."
+      },
+      {
+        "id": "jlpt-n5-006",
+        "type": "choice",
+        "prompt": "{田中|たなか}さんは 毎日 {自転車|じてんしゃ}で 学校へ 行きます。{田中|たなか}さんは {何|なん}で 学校へ 行きますか。",
+        "options": ["電車", "{自転車|じてんしゃ}", "バス", "{歩|ある}いて"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n5", "読解"],
+        "explain": "Câu đầu nói 自転車で (bằng xe đạp). 何で hỏi đi bằng phương tiện gì."
       },
       {
         "id": "nghe-01-1",

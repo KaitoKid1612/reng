@@ -3,25 +3,25 @@ import { readFile, stat } from "node:fs/promises";
 import { test } from "node:test";
 
 import { parseAssignableQuestion } from "../lib/assignment";
+import { BUNDLED_LISTENING_AUDIO } from "../lib/bundled-listening";
 import { selectDailyQuestionsWithListeningQuota } from "../lib/daily-practice";
 import { gradeQuestion } from "../lib/grading/grade";
 import { lessonDraftSchema } from "../lib/lesson-schema";
-import { findListeningAudio, parseListeningSet } from "../lib/listening-set";
 
 const banks = [
   {
     file: "content/review-banks/n4-daily-with-listening.json",
-    listeningFile: "content/listening/n4-daily.json",
-    expectedTotal: 324,
-    expectedListening: 20,
+    expectedTotal: 350,
+    expectedListening: 40,
+    expectedOriginals: 6,
     dailySize: 70,
     dailyListening: 10,
   },
   {
     file: "content/review-banks/n5-daily-with-listening.json",
-    listeningFile: "content/listening/n5-daily-1-13.json",
-    expectedTotal: 138,
+    expectedTotal: 144,
     expectedListening: 78,
+    expectedOriginals: 6,
     dailySize: 60,
     dailyListening: 8,
   },
@@ -30,7 +30,6 @@ const banks = [
 for (const config of banks) {
   test(`${config.file}: valid, audio-backed, assignable and correctly quota-selected`, async () => {
     const bank = lessonDraftSchema.parse(JSON.parse(await readFile(config.file, "utf8")));
-    const set = parseListeningSet(JSON.parse(await readFile(config.listeningFile, "utf8")));
     const questions = bank.content.questions;
     assert.equal(questions.length, config.expectedTotal);
     assert.equal(new Set(questions.map((question) => question.id)).size, questions.length);
@@ -38,13 +37,18 @@ for (const config of banks) {
       (question) => question.type === "listen" || question.type === "dictation",
     );
     assert.equal(audio.length, config.expectedListening);
-    const audit = findListeningAudio(set);
-    assert.deepEqual(audit.missing, []);
-    assert.deepEqual(audit.stale, []);
-    assert.equal(audit.assets.length, config.expectedListening);
-    for (const asset of audit.assets) {
-      const file = await stat(`public/audio/lessons/${asset.hash}.mp3`);
-      assert.ok(file.size > 100, asset.hash);
+    // The reviewed original JLPT-style questions (content/jlpt) are part of the bank.
+    assert.equal(
+      questions.filter((question) => question.id.startsWith("jlpt-")).length,
+      config.expectedOriginals,
+    );
+    // Every clip comes from a bundled listening set whose audio is current, so publishing the
+    // bank (app or npm run bank:sql) can register it.
+    for (const question of audio) {
+      const hash = "audio" in question ? question.audio : null;
+      assert.ok(hash && BUNDLED_LISTENING_AUDIO.has(hash), question.id);
+      const file = await stat(`public/audio/lessons/${hash}.mp3`);
+      assert.ok(file.size > 100, hash);
     }
     for (const raw of questions) {
       const question = parseAssignableQuestion(raw);
