@@ -1,4 +1,4 @@
-import type { KanaItem } from "./kana";
+import type { KanaItem } from "@/lib/kana";
 
 export type SpeechLocale = "ja-JP" | "zh-CN" | "zh-TW";
 

@@ -3,11 +3,11 @@ import { resolve } from "node:path";
 
 import { createClient } from "@supabase/supabase-js";
 
-import { findPublicVersion } from "./lesson-catalog";
-import { lessonCatalogSchema, lessonVersionSchema, toPublicLesson } from "./lesson-schema";
-import { parseTeachingVersion, toPublicAnyLesson } from "./teaching-content";
+import { findPublicVersion } from "@/lib/lesson-catalog";
+import { lessonCatalogSchema, lessonVersionSchema, toPublicLesson } from "@/lib/lesson-schema";
+import { parseTeachingVersion, toPublicAnyLesson } from "@/lib/teaching-content";
 
-import type { AnyLessonVersion } from "./teaching-content";
+import type { AnyLessonVersion } from "@/lib/teaching-content";
 
 function createLessonClient() {
   const url = process.env.SUPABASE_URL;

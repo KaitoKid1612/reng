@@ -1,7 +1,6 @@
-import data from "@/content/kana.json";
 import manifest from "@/content/audio-manifest.json";
-
-import { kanaSchema, manifestSchema } from "./kana";
+import data from "@/content/kana.json";
+import { kanaSchema, manifestSchema } from "@/lib/kana";
 
 export const kanaItems = kanaSchema.parse(data).items;
 export const audioManifest = manifestSchema.parse(manifest);

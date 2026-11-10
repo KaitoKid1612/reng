@@ -1,10 +1,10 @@
-import { audioHash, canonicalAudio } from "./audio-config";
-import { toSpeechText } from "./japanese-text";
-import { lessonDraftSchema } from "./lesson-schema";
+import { audioHash, canonicalAudio } from "@/lib/audio-config";
+import { toSpeechText } from "@/lib/japanese-text";
+import { lessonDraftSchema } from "@/lib/lesson-schema";
 
-import type { PlannedAudioAsset } from "./audio-generation";
-import type { DraftContent } from "./lesson-draft";
-import type { LessonDraft } from "./lesson-schema";
+import type { PlannedAudioAsset } from "@/lib/audio-generation";
+import type { DraftContent } from "@/lib/lesson-draft";
+import type { LessonDraft } from "@/lib/lesson-schema";
 
 type AudioContent = Pick<DraftContent, "vocab" | "grammar" | "questions">;
 

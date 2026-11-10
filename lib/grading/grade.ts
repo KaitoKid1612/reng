@@ -1,8 +1,8 @@
-import { normalizeAnswer } from "./normalize";
-import { isBlankAnswer } from "./raw-answer";
+import { normalizeAnswer } from "@/lib/grading/normalize";
+import { isBlankAnswer } from "@/lib/grading/raw-answer";
 
 import type { GradingProfile } from "@/lib/language-profile";
-import type { RawAnswer } from "./raw-answer";
+import type { RawAnswer } from "@/lib/grading/raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
 export interface QuestionResult {
