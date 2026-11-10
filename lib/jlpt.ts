@@ -332,6 +332,77 @@ export function isHandedInAtTimeLimit(
   );
 }
 
+// The real test's minutes for each section since 2020: N5 90 and N4 115 in all.
+export const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>> = {
+  N5: { vocabulary: 20, grammarReading: 40, listening: 30 },
+  N4: { vocabulary: 25, grammarReading: 55, listening: 35 },
+};
+
+export const JLPT_SECTION_SHORT_LABELS: Record<JlptSection, string> = {
+  vocabulary: "Chữ Hán – từ vựng",
+  grammarReading: "Ngữ pháp – đọc hiểu",
+  listening: "Nghe hiểu",
+};
+
+export interface ExamPacingStep {
+  section: JlptSection;
+  /** Question numbers as the learner sees them, from 1. */
+  firstPosition: number;
+  lastPosition: number;
+  minutes: number;
+  /** When the section's share of the time runs out. */
+  endsAt: string;
+}
+
+/**
+ * Pacing like the real test: the exam's sections in order, each with the official share of the
+ * attempt's time limit. It only guides; the attempt keeps its single limit, and an exam whose
+ * questions do not come one section after another gets no pacing.
+ */
+export function planExamPacing(
+  level: JlptLevel,
+  timeLimitMinutes: number,
+  sections: readonly (JlptSection | null)[],
+  startedAt: string,
+): ExamPacingStep[] {
+  const runs: { section: JlptSection; firstPosition: number; lastPosition: number }[] = [];
+  sections.forEach((section, index) => {
+    const last = runs.at(-1);
+    if (last && (section === null || section === last.section)) {
+      last.lastPosition = index + 1;
+    } else if (section) {
+      runs.push({ section, firstPosition: index + 1, lastPosition: index + 1 });
+    }
+  });
+  if (runs.length < 2 || new Set(runs.map((run) => run.section)).size !== runs.length) {
+    return [];
+  }
+  const official = JLPT_SECTION_MINUTES[level];
+  const total = runs.reduce((sum, run) => sum + official[run.section], 0);
+  let used = 0;
+  return runs.map((run, index) => {
+    const minutes =
+      index === runs.length - 1
+        ? timeLimitMinutes - used
+        : Math.round((timeLimitMinutes * official[run.section]) / total);
+    used += minutes;
+    const endsAt = new Date(Date.parse(startedAt) + used * 60 * 1000).toISOString();
+    return { ...run, minutes, endsAt };
+  });
+}
+
+/** "Chữ Hán – từ vựng 25 phút, …": the guide's split of an exam with all three sections. */
+export function describeExamPacing(level: JlptLevel, timeLimitMinutes: number) {
+  return planExamPacing(level, timeLimitMinutes, JLPT_SECTIONS, new Date(0).toISOString())
+    .map((step) => `${JLPT_SECTION_SHORT_LABELS[step.section]} ${step.minutes} phút`)
+    .join(", ");
+}
+
+/** The step the clock is in: the first whose share has not run out, else the last one. */
+export function currentPacingStep(steps: readonly ExamPacingStep[], now: number) {
+  return steps.find((step) => Date.parse(step.endsAt) > now) ?? steps.at(-1) ?? null;
+}
+
 export function formatExamClock(milliseconds: number) {
   const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
   const hours = Math.floor(totalSeconds / 3600);

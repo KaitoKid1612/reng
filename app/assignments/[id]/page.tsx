@@ -7,7 +7,12 @@ import { StartAttemptButton } from "@/components/classroom/start-attempt-button"
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
-import { describeJlptCountdown, examHandInAt } from "@/lib/jlpt";
+import {
+  describeExamPacing,
+  describeJlptCountdown,
+  examHandInAt,
+  planExamPacing,
+} from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
 import { loadOrNotFound } from "@/lib/server/pages";
@@ -130,6 +135,12 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
                     assignment.allowLate,
                   ),
                   serverNow: now.toISOString(),
+                  pacing: planExamPacing(
+                    exam.level,
+                    exam.timeLimitMinutes,
+                    openAttempt.sections ?? [],
+                    openAttempt.startedAt,
+                  ),
                 }
               : null
           }
@@ -143,6 +154,11 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
                 Đồng hồ {exam.timeLimitMinutes} phút bắt đầu ngay khi bạn bấm Bắt đầu thi và vẫn
                 chạy khi đóng trang hay mất mạng. Hết giờ, Reng tự nộp các câu đã lưu. Bài chỉ có
                 một lượt làm.
+              </p>
+              <p className="small">
+                Dưới đồng hồ có giờ gợi ý cho từng phần như đề thật (
+                {describeExamPacing(exam.level, exam.timeLimitMinutes)}); hết giờ của phần nào thì
+                nên chuyển sang phần sau.
               </p>
               <p className="small">
                 Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm: đọc câu

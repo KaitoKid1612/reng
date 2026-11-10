@@ -250,6 +250,25 @@
 .deadline-countdown[data-urgent] {
   color: var(--wrong);
 }
+/* Mock exam clock: the time left, then the real test's section for now (exam-timer.tsx). */
+.exam-clock {
+  display: grid;
+  gap: 2px;
+}
+.exam-pacing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.exam-pacing .button {
+  min-height: 32px;
+  padding: 4px 8px;
+}
 
 /* Mistake book: one collapsible group per assignment. */
 .mistake-group {

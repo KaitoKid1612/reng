@@ -6,6 +6,7 @@ import { parseAssignableQuestion, toAttemptItems } from "@/lib/assignment";
 import {
   composeJlptExam,
   countJlptSections,
+  currentPacingStep,
   describeJlptCountdown,
   estimateJlptScore,
   examHandInAt,
@@ -15,6 +16,7 @@ import {
   isHandedInAtTimeLimit,
   JLPT_EXAM_MAX_LISTENS,
   jlptSectionOf,
+  planExamPacing,
   planJlptExam,
 } from "@/lib/jlpt";
 
@@ -241,4 +243,42 @@ test("a mock exam plays each clip once; other questions and other assignments ar
   assert.deepEqual(listensOf(toAttemptItems(picked, "test")), [null, null, "none", 3]);
   // The snapshot itself keeps its own setting for the results page and later reports.
   assert.equal(listen.maxListens, null);
+});
+
+test("pacing splits the exam's time like the real test and follows the clock", () => {
+  const start = "2026-11-10T12:00:00.000Z";
+  const n4 = [
+    ...Array<"vocabulary">(25).fill("vocabulary"),
+    ...Array<"grammarReading">(25).fill("grammarReading"),
+    ...Array<"listening">(20).fill("listening"),
+  ];
+  const steps = planExamPacing("N4", 115, n4, start);
+  assert.deepEqual(
+    steps.map((step) => [step.section, step.firstPosition, step.lastPosition, step.minutes]),
+    [
+      ["vocabulary", 1, 25, 25],
+      ["grammarReading", 26, 50, 55],
+      ["listening", 51, 70, 35],
+    ],
+  );
+  assert.equal(steps[1].endsAt, "2026-11-10T13:20:00.000Z");
+  const at = (minutes: number) => Date.parse(start) + minutes * 60_000;
+  assert.equal(currentPacingStep(steps, at(0))?.section, "vocabulary");
+  assert.equal(currentPacingStep(steps, at(25))?.section, "grammarReading");
+  assert.equal(currentPacingStep(steps, at(80))?.section, "listening");
+  assert.equal(currentPacingStep(steps, at(200))?.section, "listening", "the last share holds");
+
+  // A shorter exam keeps the proportions; the last section takes what is left.
+  assert.deepEqual(
+    planExamPacing("N5", 60, n4, start).map((step) => step.minutes),
+    [13, 27, 20],
+  );
+  // A bank without listening splits the time over the two sections it has.
+  assert.deepEqual(
+    planExamPacing("N4", 115, n4.slice(0, 50), start).map((step) => step.minutes),
+    [36, 79],
+  );
+  // No pacing for one section, or when a section comes back after another.
+  assert.deepEqual(planExamPacing("N4", 115, n4.slice(0, 25), start), []);
+  assert.deepEqual(planExamPacing("N4", 115, ["vocabulary", "listening", "vocabulary"], start), []);
 });

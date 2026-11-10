@@ -383,6 +383,8 @@ export interface OpenAttemptView {
   savedAt: string;
   draft: AttemptDraft;
   items: AttemptItem[];
+  // A mock exam: the JLPT section of each item, in order, for the page's pacing guide.
+  sections: (JlptSection | null)[] | null;
 }
 
 export interface StudentAssignmentView {
@@ -463,6 +465,7 @@ export async function getStudentAssignment(
             assignment.mode,
             assignment.exam ? JLPT_EXAM_MAX_LISTENS : null,
           ),
+          sections: assignment.exam ? items.map((item) => jlptSectionOf(item)) : null,
         }
       : null,
     questionCount: items.length,

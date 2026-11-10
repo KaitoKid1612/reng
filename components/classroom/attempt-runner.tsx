@@ -25,6 +25,7 @@ import { gradeQuestion } from "@/lib/grading/grade";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
 import { formatStudyDateTime } from "@/lib/study-days";
 
+import type { ExamPacingStep } from "@/lib/jlpt";
 import type { QuestionMapItem } from "@/components/classroom/question-map";
 import type { SyncStatus } from "@/components/classroom/use-draft-sync";
 import type { AssignmentMode, AttemptDraft, AttemptItem } from "@/lib/assignment";
@@ -43,7 +44,8 @@ export interface AttemptRunnerProps {
   dueAt?: string | null;
   allowLate?: boolean;
   // A timed mock exam: when the page hands the attempt in, and the server's clock at render.
-  exam?: { handInAt: string; serverNow: string } | null;
+  // pacing: the real test's time split over the exam's sections, a guide shown under the clock.
+  exam?: { handInAt: string; serverNow: string; pacing?: ExamPacingStep[] } | null;
 }
 
 const STATUS_TEXT: Record<SyncStatus, string> = {
@@ -381,6 +383,8 @@ export function AttemptRunner({
           <ExamTimer
             handInAt={exam.handInAt}
             serverNow={exam.serverNow}
+            pacing={exam.pacing}
+            onJump={(position) => handleMove(position - 1, "card")}
             onAutoSubmit={handleAutoSubmit}
           />
         ) : (

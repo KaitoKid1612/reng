@@ -93,6 +93,10 @@ test("a teacher gives a timed N5 mock exam and a learner sees section results", 
   await expect(learnerPage.getByText(/mỗi câu nghe chỉ phát một lần/)).toBeVisible();
   await learnerPage.getByRole("button", { name: "Bắt đầu thi", exact: true }).click();
   await expect(learnerPage.getByRole("timer")).toContainText(/Thời gian còn lại 1:(30|29):\d\d/);
+  // The real test's split of 90 minutes for N5: 20, 40 and 30.
+  await expect(learnerPage.locator(".exam-pacing")).toContainText(
+    /Giờ đề thật: phần 1\/3, Chữ Hán – từ vựng \(câu 1–25\), còn (20:00|19:\d\d)/,
+  );
   // Like the real test, each clip plays once straight through: no pause, rewind or slow speed.
   const players = learnerPage.locator(".listening-player");
   await expect(players).toHaveCount(20);
