@@ -15,6 +15,7 @@ import { AudioProvider } from "@/components/audio-provider";
 import { ACCOUNT_HINT_SCRIPT } from "@/lib/account-hint";
 import { audioManifest } from "@/lib/data";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { THEME_SCRIPT } from "@/lib/theme";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -39,11 +40,12 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    // The account hint script sets a data attribute on <html> before hydration.
+    // The account hint and theme scripts set data attributes on <html> before hydration.
     <html lang="vi" suppressHydrationWarning>
       <head>
         {/* Inline so it runs while the HTML is parsed, before the first paint. */}
         <script dangerouslySetInnerHTML={{ __html: ACCOUNT_HINT_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">

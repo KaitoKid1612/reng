@@ -68,6 +68,19 @@ Người dùng nhờ duyệt sau khi đọc báo cáo. Tiêu chí: tiếng Nhậ
 
 Duyệt bởi Claude theo yêu cầu người dùng. Trước khi dùng cho một kỳ thi có điểm thật, nên nhờ giáo viên tiếng Nhật xem lại một lượt.
 
+## Gộp giao diện sáng và tối
+
+Người dùng yêu cầu gộp nhánh `feat/site-theme-light-dark-20261110` (7 commit của một công cụ khác, chưa vào `main`) rồi đẩy cùng đợt. Gộp kiểu squash thành một commit để lịch sử `main` vẫn thẳng.
+
+| # | Mức | Phát hiện | Trạng thái |
+|---|---|---|---|
+| 1 | Cao | Ở giao diện tối, chữ trên slide gần như trắng trên nền trắng (axe: tương phản 1,12), cả trang trình chiếu lẫn cửa sổ Presenter: nền slide là của reveal.js, chữ lấy token tối | **Đã sửa**: slide, Presenter, khung xem trước và bản in giữ token sáng và đặt lại màu chữ |
+| 2 | Trung bình | Nhánh không qua `npm run check`: thiếu ngoặc nhọn sau `if` (ESLint `curly`), lỗi kiểu ở `useSyncExternalStore`, ép kiểu giá trị ô chọn bằng `as` | **Đã sửa**; logic chuyển sang `lib/theme.ts` theo mẫu `lib/account-hint.ts`, thêm `tests/theme.test.ts` cho script đầu trang |
+| 3 | Thấp | Trên điện thoại, nhãn "Giao diện" bị ẩn nên Menu chỉ hiện ô "Tối"/"Sáng" | **Đã sửa**: nhãn hiện trong Menu |
+| 4 | Ghi nhận | Viền ô nhập đổi từ `#a8a49d` sang `--muted` (đậm hơn ở giao diện sáng, đạt 3:1 cho viền); ô đáp án trên điện thoại chữ 21px → 19px | Giữ |
+
+Kiểm tra: axe color-contrast trên 28 trang (khách 15 gồm slide và Presenter, học viên 8, giáo viên 5) ở cả hai giao diện: 0 lỗi sau khi sửa; ảnh chụp trang lớp, Presenter, bài tập, trang đọc bài ở giao diện tối; Menu 360px không tràn ngang, đổi giao diện có hiệu lực ngay và còn sau khi tải lại.
+
 ## Kết quả
 
 | Kiểm tra | Kết quả |

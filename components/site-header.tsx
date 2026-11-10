@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 
 import { useAccountSummary } from "@/components/account-summary";
 import { BrandMark } from "@/components/brand-mark";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { SELF_STUDY_PATHS } from "@/lib/self-study";
 
 import type { AccountSummary } from "@/components/account-summary";
@@ -150,6 +151,7 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

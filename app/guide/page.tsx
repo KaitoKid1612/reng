@@ -284,7 +284,8 @@ export default function GuidePage() {
         diễn ra trên Google Meet. Học viên chỉ cần trình duyệt trên điện thoại hoặc máy tính. Trên
         điện thoại, các mục nằm trong nút Menu ở góc trên; Lớp của tôi (giáo viên: Giảng dạy) luôn ở
         ngay cạnh nút đó. Mục <Link href="/self-study">Tự học</Link> có bài học công khai và công cụ
-        luyện tập của từng môn, không cần tài khoản.
+        luyện tập của từng môn, không cần tài khoản. Ô Giao diện trên thanh đầu trang đổi nền sáng,
+        tối hoặc theo cài đặt của máy; slide luôn giữ nền sáng.
       </p>
       <nav className="guide-toc" aria-label="Mục lục hướng dẫn">
         <div>
