@@ -37,7 +37,7 @@ const FEATURES = [
   },
   {
     title: "Bài tập tự chấm",
-    body: "Trắc nghiệm, điền đáp án, sắp xếp, nghe hiểu. Học viên làm trên điện thoại và biết kết quả ngay.",
+    body: "Trắc nghiệm, điền đáp án, sắp xếp, nghe hiểu. Học viên làm trên điện thoại và xem kết quả khi nộp hoặc sau hạn.",
   },
   {
     title: "Theo dõi và ôn lại",

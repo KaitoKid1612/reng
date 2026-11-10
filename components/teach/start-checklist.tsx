@@ -15,7 +15,7 @@ export function StartChecklist({ steps, title = "Các bước bắt đầu dạy
     <section className="start-checklist" aria-labelledby="start-checklist-title">
       <h2 id="start-checklist-title">{title}</h2>
       <p className="small muted">
-        Đã xong {doneCount}/{steps.length} bước. Danh sách tự ẩn khi bạn làm xong.
+        Đã xong {doneCount}/{steps.length} bước. Danh sách tự ẩn khi lớp đã có học viên và bài tập.
       </p>
       <ol>
         {steps.map((step, index) => (

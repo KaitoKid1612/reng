@@ -20,7 +20,8 @@ export default function SourcesPage() {
       <h2>Chữ hiển thị</h2>
       <p>
         Be Vietnam Pro cho tiếng Việt, Noto Sans JP cho nội dung tiếng Nhật và Klee One cho mẫu
-        kana. Font được phục vụ cùng website, không phụ thuộc font cài trên thiết bị.
+        kana. Ba font này được phục vụ cùng website, không phụ thuộc font cài trên thiết bị; chữ Hán
+        của bài tiếng Trung dùng font giản thể hoặc phồn thể có sẵn trên thiết bị.
       </p>
       <p>
         Giấy phép SIL Open Font License và thông tin tác giả:{" "}
@@ -35,7 +36,7 @@ export default function SourcesPage() {
         chữ (hình ghép chỉ có số thứ tự); nghĩa tiếng Việt luôn hiển thị bên cạnh để không phụ thuộc
         vào hình.
       </p>
-      <h2>Audio</h2>
+      <h2>Audio bảng chữ cái</h2>
       <p>
         {count
           ? `Đã cấu hình ${count} audio kana. File giọng đọc cần được kiểm duyệt phát âm trước khi dùng với lớp thật.`
@@ -48,7 +49,8 @@ export default function SourcesPage() {
       <h2>Giọng đọc bài nghe</h2>
       {/* Unreal Speech's free plan asks for a link to unrealspeech.com wherever its audio is used. */}
       <p>
-        Audio của bộ đề nghe Minna no Nihongo 1–15 do Reng tự biên soạn được tạo bằng{" "}
+        Audio của các câu nghe Reng tự biên soạn (bộ đề nghe Minna no Nihongo 1–15 và câu nghe N4
+        trong ngân hàng ôn) được tạo bằng{" "}
         <a href="https://unrealspeech.com" rel="noopener">
           Unreal Speech
         </a>{" "}

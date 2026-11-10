@@ -32,7 +32,10 @@ export default function SelfStudyPage() {
       </div>
       <section className="study-subject" aria-labelledby="public-lessons-title">
         <h2 id="public-lessons-title">Bài học công khai</h2>
-        <p>Đọc bài và xem slide các bài giáo viên đã công khai trên Reng.</p>
+        <p>
+          Đọc bài, xem slide, lật flashcard từ vựng và luyện nghe ở các bài giáo viên đã công khai
+          trên Reng.
+        </p>
         <Link href="/lessons" className={buttonVariants()}>
           Xem bài học công khai
         </Link>

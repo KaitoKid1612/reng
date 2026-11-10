@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FEATURES = [
   {
     title: "Lớp học riêng",
-    body: "Mã tham gia cho từng lớp, giới hạn sĩ số tùy chọn và link Google Meet chỉ học viên trong lớp nhìn thấy.",
+    body: "Mã lớp và link mời cho từng lớp, giới hạn sĩ số tùy chọn và link Google Meet chỉ học viên trong lớp nhìn thấy.",
   },
   {
     title: "Soạn bài theo mẫu",
@@ -36,11 +36,11 @@ const FEATURES = [
   },
   {
     title: "Bài tập tự chấm",
-    body: "Trắc nghiệm, điền đáp án, sắp xếp câu, nghe và đọc hiểu. Bạn duyệt đáp án trước khi giao, và sau khi chấm vẫn chấp nhận thêm được đáp án đúng.",
+    body: "Trắc nghiệm, điền đáp án, sắp xếp câu, nghe, chính tả và đọc hiểu. Bạn duyệt đáp án trước khi giao, sau khi chấm vẫn chấp nhận thêm được đáp án đúng, và sửa được câu chữ, furigana của đề đã giao.",
   },
   {
     title: "Theo dõi và nhắc học",
-    body: "Báo cáo điểm theo lớp, câu sai nhiều, bài luyện hằng ngày tự giao, sổ lỗi và thẻ ôn tập của học viên; email nhắc bài khi học viên bật nhận thư.",
+    body: "Báo cáo điểm theo lớp, câu sai nhiều, tên học viên chưa nộp, điểm danh từng buổi và bài luyện hằng ngày tự giao; học viên có sổ lỗi và thẻ ôn tập. Tin nhắn giao bài soạn sẵn để dán vào nhóm Zalo hoặc Messenger.",
   },
   {
     title: "Chia sẻ với đồng nghiệp",
@@ -53,7 +53,7 @@ const FEATURES = [
 const SUBJECTS = [
   {
     title: "Tiếng Nhật",
-    body: "Bài mẫu tự biên soạn theo trình tự Minna no Nihongo để sửa theo lớp; học viên gõ romaji, hệ thống đổi sang kana.",
+    body: "Bài mẫu tự biên soạn theo trình tự Minna no Nihongo để sửa theo lớp; học viên gõ romaji, hệ thống đổi sang kana. Đề thi thử JLPT N5/N4 có tính giờ, điểm từng phần và điểm ước tính thang 180.",
   },
   {
     title: "Tiếng Trung",
@@ -64,8 +64,8 @@ const SUBJECTS = [
 const STEPS = [
   "Tạo tài khoản (nếu Reng gửi thư xác nhận, mở thư và bấm liên kết).",
   "Gửi yêu cầu giảng dạy; trong giai đoạn thử nghiệm, quản trị viên mở quyền cho từng giáo viên.",
-  "Tạo lớp, dán link Google Meet và soạn bài đầu tiên theo mẫu.",
-  "Gửi mã lớp cho học viên, trình chiếu khi dạy và giao bài tập sau buổi học.",
+  "Tạo lớp, dán link Google Meet, soạn bài đầu tiên theo mẫu, xuất bản rồi đưa bài vào lớp.",
+  "Sao chép link mời gửi học viên, trình chiếu khi dạy và giao bài tập sau buổi học.",
 ];
 
 const QUESTIONS = [
@@ -77,7 +77,7 @@ const QUESTIONS = [
   {
     question: "Học viên cần cài ứng dụng không?",
     answer:
-      "Không cần. Học viên dùng trình duyệt trên điện thoại hoặc máy tính, đăng ký bằng email rồi nhập mã lớp bạn gửi.",
+      "Không cần. Học viên dùng trình duyệt trên điện thoại hoặc máy tính, tạo tài khoản rồi mở link mời hoặc nhập mã lớp bạn gửi.",
   },
   {
     question: "Bài giảng của tôi có bị công khai không?",
@@ -199,7 +199,7 @@ export default async function ForTeachersPage() {
       </section>
       <section className="landing-section landing-cta">
         <h2>Sẵn sàng mở lớp đầu tiên?</h2>
-        <p>Đăng ký bằng email, gửi yêu cầu giảng dạy và bắt đầu soạn bài sau khi được mở quyền.</p>
+        <p>Tạo tài khoản, gửi yêu cầu giảng dạy và bắt đầu soạn bài sau khi được mở quyền.</p>
         <Link href="/sign-up/teacher" className={buttonVariants()}>
           Đăng ký giáo viên
         </Link>

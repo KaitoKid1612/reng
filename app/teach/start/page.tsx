@@ -55,7 +55,7 @@ export default async function TeacherStartPage() {
   return (
     <div className="narrow-page">
       <h1>Bắt đầu giảng dạy</h1>
-      <p>Tạo lớp, soạn bài, giao bài tập và theo dõi học sinh của bạn.</p>
+      <p>Tạo lớp, soạn bài, giao bài tập và theo dõi học viên của bạn.</p>
       {body}
     </div>
   );
