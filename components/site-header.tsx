@@ -139,7 +139,6 @@ export function SiteHeader() {
         >
           {isMenuOpen ? "Đóng" : "Menu"}
         </button>
-        <ThemeToggle />
         <nav id="site-navigation" aria-label="Điều hướng chính" data-open={isMenuOpen}>
           {listLinks(account).map((link) => (
             <Link
@@ -152,6 +151,7 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>
