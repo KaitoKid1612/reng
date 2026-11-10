@@ -32,7 +32,7 @@
     "Rights clearance required before redistributing official MP3s or question text"
   ],
   "nextSteps": [
-    "Run python3 scripts/audit-jlpt-audio.py in GitHub Codespaces or CI with outbound network",
+    "Run npm run audit:jlpt-audio (scripts/audit-jlpt-audio.ts) in GitHub Codespaces or CI with outbound network",
     "Review output JSON for status, content-type, bytes, hash",
     "Use ffprobe on authorized local files for codec/duration and manually listen to samples",
     "Check official PDFs and transcript correspondence without republishing copyrighted content"

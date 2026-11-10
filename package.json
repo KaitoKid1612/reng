@@ -29,7 +29,9 @@
     "daily:import": "node --import tsx scripts/import-daily-sheet.ts",
     "bank:sql": "node --import tsx scripts/review-bank-sql.ts",
     "furigana:sql": "node --import tsx scripts/furigana-snapshot-sql.ts",
-    "listening:sql": "node --env-file-if-exists=.env.local --import tsx scripts/listening-draft-sql.ts"
+    "listening:sql": "node --env-file-if-exists=.env.local --import tsx scripts/listening-draft-sql.ts",
+    "jlpt:drafts": "node --import tsx scripts/jlpt-drafts.ts",
+    "audit:jlpt-audio": "node --import tsx scripts/audit-jlpt-audio.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.1161.0",
