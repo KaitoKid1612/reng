@@ -46,7 +46,7 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 
 ## Cần người dùng quyết định
 
-1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): chưa có file MP3 nào vì công cụ tạo bộ này ngày 09/11 chỉ tính mã audio, không gọi được dịch vụ đọc. Đọc database production (chỉ đọc, người dùng cho phép): bộ này chưa nằm trong bài, chưa có audio đăng ký, chưa giao cho ai; bài đang dùng là "Tổng ôn N4 — Minna 1–50" với 20 câu nghe ngày 07/11, đủ 20 file MP3. 18/20 lời nghe là hội thoại `男：…女：…` mà máy đọc bằng một giọng, kể cả nhãn người nói; câu 1 hỏi nhầm người (đã sửa). Cần chọn: đọc hai giọng (nam/nữ) hay viết lại thành lời một người, trước khi sinh audio.
+1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): chưa có file MP3 nào vì công cụ tạo bộ này ngày 09/11 chỉ tính mã audio, không gọi được dịch vụ đọc. Đọc database production (chỉ đọc, người dùng cho phép): bộ này chưa nằm trong bài, chưa có audio đăng ký, chưa giao cho ai; bài đang dùng là "Tổng ôn N4 — Minna 1–50" với 20 câu nghe ngày 07/11, đủ 20 file MP3. **Đã làm** cùng ngày theo phương án đề xuất: đọc hội thoại hai giọng (mục dưới). Còn lại: tạo bài nháp cho giáo viên bằng `npm run listening:sql` khi muốn dùng.
 2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): đã duyệt cùng ngày theo yêu cầu người dùng (mục dưới). File trong `content/jlpt/generated/` chưa có mã bài và tên nên `bank:sql`/`lesson:import` chưa nhận trực tiếp; muốn dùng thì chép vào ngân hàng ôn N5/N4.
 3. **Email trên production**: khi bật, thêm lại email nhắc bài vào trang Cho giáo viên và trang Hướng dẫn.
 
@@ -88,6 +88,15 @@ Sau khi gộp giao diện sáng/tối, `app/globals.css` (3.749 dòng) được 
 - Phần lớn file là các đoạn liền nhau của file cũ, nên thứ tự giữ nguyên. 12 đoạn nhỏ được thêm sau ở cuối file cũ (gợi ý tài khoản, link đang chuyển trang, bảng pinyin, lịch học hằng tuần, các bước bắt đầu, khung giảng dạy, hôm nay học gì, đếm ngược, sổ lỗi, điều hướng câu trong bài thi, audio của trình soạn, lớp dùng bài) được chuyển về file của tính năng. Trước khi chuyển, một script liệt kê mọi rule ở đoạn bị vượt qua có cùng class; các rule trùng đều có độ ưu tiên khác nhau nên thứ tự không đổi kết quả.
 - CSS biên dịch bằng Tailwind trước và sau khi tách có đúng 835 rule như nhau (59 rule đổi chỗ, không mất, không thêm).
 - Computed style của 59.628 phần tử trên 128 lượt xem (32 trang của khách, học viên, giáo viên; 1280px và 390px; sáng và tối) giống hệt nhau trước và sau khi tách; hai lượt ở trình soạn chỉ khác ID do React tự sinh.
+
+## Audio hai giọng cho bộ nghe thi thử N4
+
+Người dùng bảo làm tiếp; làm theo phương án đã đề xuất (đọc hai giọng thay vì viết lại thành lời một người).
+
+- Bộ sinh audio đọc lời nghe có nhãn người nói theo từng lượt, mỗi lượt một giọng khai báo trong `speakerVoices` của bộ đề, rồi nối MP3 theo frame ([audio](../06-audio.md#hội-thoại-hai-giọng--10112026)). Bộ đề không khai báo `speakerVoices` giữ nguyên hash và file cũ.
+- Tài liệu Unreal Speech v8 không ghi giới tính giọng Nhật: đo cao độ một câu mẫu của mỗi giọng (5 lần gọi, khoảng 90 ký tự): Haruto 92 Hz là giọng nam duy nhất; Rina, Yuki, Hana, Sakura 242–356 Hz.
+- Sinh 20 file (39 lượt, 880 ký tự) bằng khóa Unreal Speech trên máy người dùng. Giải mã cả 20 file trong Chromium: dài 2,4–15,3 giây, cao độ từng nửa khớp người nói.
+- Test: `tests/listening-dialogue.test.ts` (tách lượt, hash theo giọng, nhãn thiếu giọng, đọc từng lượt rồi nối), `tests/audio-mp3.test.ts` (frame sau thẻ ID3, bỏ frame Info, từ chối file hỏng hoặc khác định dạng), `tests/listening-sets.test.ts` (mọi bộ đề: audio khớp lời nghe, file MP3 dài 1–60 giây).
 
 ## Kết quả
 

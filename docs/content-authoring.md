@@ -204,7 +204,7 @@ Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫ
 
 Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm câu chính tả**):
 
-- Lời nghe ngắn (một đến ba câu), một giọng đọc: dùng lời kể hoặc lời của một người, không viết hội thoại hai người. Máy đọc nguyên văn lời nghe, nên nhãn người nói như `男：`, `女：` cũng bị đọc thành tiếng.
+- Lời nghe ngắn (một đến ba câu). Câu nghe gõ và chính tả là lời một người. Hội thoại thì ghi nhãn người nói ở đầu mỗi lượt (`女：…。男：…。`) và khai báo giọng cho từng nhãn ở `speakerVoices` của bộ đề, ví dụ `{"女": "unreal:Sakura", "男": "unreal:Haruto"}` (Haruto là giọng nam duy nhất của Unreal Speech; Sakura, Rina, Yuki, Hana là giọng nữ). Không có `speakerVoices` thì một giọng đọc cả nhãn ([audio](06-audio.md#hội-thoại-hai-giọng--10112026)).
 - Viết bằng kana có cách giữa các cụm như sách (`わたしは がくせいです。`), số viết bằng chữ (`ろくじ`, `せんにひゃくえん`) để máy đọc đúng cách đọc cần học.
 - Chỉ dùng từ và mẫu câu của bài đó và các bài trước. Mỗi câu hỏi hỏi đúng một thông tin nghe được; phương án sai phải hợp lý (cùng loại: giờ khác, nơi khác).
 - Nghe rồi gõ: hỏi một từ, khai báo mọi cách viết được chấp nhận (kana, kanji, chữ số nếu hợp lý, ví dụ `25さい`, `25歳`).
@@ -260,7 +260,7 @@ Quy trình:
 
 Audio chính thức: `npm run audit:jlpt-audio` (cần mạng) chỉ kiểm tra link còn tải được và ghi mã băm, không lưu file. Chỉ dùng audio chính thức khi đã có quyền.
 
-Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`, 09/11/2026) đã ghi mã audio cho giọng `unreal:Sakura`, nhưng chưa có file MP3 nào trong `public/audio/lessons` và chưa có test riêng. 18/20 lời nghe là hội thoại `男：…女：…`: một giọng sẽ đọc cả nhãn người nói. Trước khi sinh audio, viết lại thành lời một người (theo mục Làm bài nghe) hoặc chờ cách đọc nhiều giọng.
+Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`, 09/11/2026) có audio từ 10/11/2026: hội thoại đọc hai giọng (nữ Sakura, nam Haruto; nhân viên cửa hàng Rina), 20 file MP3 trong `public/audio/lessons`. Câu 1 hỏi nhầm người đã được sửa. Bộ này chưa nằm trong bài nào trên production; muốn dùng thì tạo bài nháp cho giáo viên bằng `npm run listening:sql` như bộ Minna, nghe duyệt rồi xuất bản.
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
