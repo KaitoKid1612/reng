@@ -10,9 +10,13 @@ import type { ReactNode } from "react";
 
 const AnnounceContext = createContext<(message: string) => void>(() => undefined);
 
+interface AcceptNoticeAreaProps {
+  children: ReactNode;
+}
+
 // A regrade turns the answer correct, so the form that sent it leaves the page (or the "wrong"
 // filter); the result stays here, at the bottom of the screen, until it is closed.
-export function AcceptNoticeArea({ children }: { children: ReactNode }) {
+export function AcceptNoticeArea({ children }: AcceptNoticeAreaProps) {
   const [notice, setNotice] = useState("");
   return (
     <AnnounceContext value={setNotice}>

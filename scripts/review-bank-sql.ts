@@ -115,7 +115,7 @@ ${values.commit ? "commit;" : "rollback;"}
   );
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : "Could not write the bank SQL.");
   process.exitCode = 1;
 });

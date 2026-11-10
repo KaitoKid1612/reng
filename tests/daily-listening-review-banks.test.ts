@@ -33,8 +33,10 @@ for (const config of banks) {
     const set = parseListeningSet(JSON.parse(await readFile(config.listeningFile, "utf8")));
     const questions = bank.content.questions;
     assert.equal(questions.length, config.expectedTotal);
-    assert.equal(new Set(questions.map((q) => q.id)).size, questions.length);
-    const audio = questions.filter((q) => q.type === "listen" || q.type === "dictation");
+    assert.equal(new Set(questions.map((question) => question.id)).size, questions.length);
+    const audio = questions.filter(
+      (question) => question.type === "listen" || question.type === "dictation",
+    );
     assert.equal(audio.length, config.expectedListening);
     const audit = findListeningAudio(set);
     assert.deepEqual(audit.missing, []);
@@ -58,7 +60,11 @@ for (const config of banks) {
         assert.equal(gradeQuestion(question, answer).isCorrect, true, question.id);
       }
     }
-    const candidates = questions.map((q) => ({ id: q.id, type: q.type, tags: q.tags }));
+    const candidates = questions.map((question) => ({
+      id: question.id,
+      type: question.type,
+      tags: question.tags,
+    }));
     for (const seed of ["2026-11-08", "2026-11-09", "2026-11-10"]) {
       const ids = selectDailyQuestionsWithListeningQuota(
         candidates,
@@ -69,7 +75,7 @@ for (const config of banks) {
       );
       assert.equal(ids.length, config.dailySize);
       assert.equal(new Set(ids).size, ids.length);
-      const audioIds = new Set(audio.map((q) => q.id));
+      const audioIds = new Set(audio.map((question) => question.id));
       assert.equal(ids.filter((id) => audioIds.has(id)).length, config.dailyListening);
     }
   });

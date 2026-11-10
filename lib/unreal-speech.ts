@@ -1,8 +1,8 @@
 import { setTimeout as delay } from "node:timers/promises";
 
-import { UNREAL_FORMAT, unrealVoiceId } from "./audio-config";
+import { UNREAL_FORMAT, unrealVoiceId } from "@/lib/audio-config";
 
-import type { AudioConfig } from "./audio-config";
+import type { AudioConfig } from "@/lib/audio-config";
 
 export interface UnrealSpeechOptions {
   key: string;

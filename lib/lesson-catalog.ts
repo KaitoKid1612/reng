@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
 
-import { lessonCatalogSchema } from "./lesson-schema";
+import { lessonCatalogSchema } from "@/lib/lesson-schema";
 
-import type { LessonCatalog, LessonDraft } from "./lesson-schema";
+import type { LessonCatalog, LessonDraft } from "@/lib/lesson-schema";
 
 export function findPublicVersion(catalog: LessonCatalog, lessonId: string, versionId?: string) {
   const lesson = catalog.lessons.find(

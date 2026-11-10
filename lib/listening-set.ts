@@ -21,7 +21,10 @@ export type ListeningSet = z.infer<typeof listeningSetSchema>;
 export function parseListeningSet(value: unknown): ListeningSet {
   const set = listeningSetSchema.parse(value);
   const { questions } = set.content;
-  if (!questions.length || questions.some((q) => q.type !== "listen" && q.type !== "dictation")) {
+  if (
+    !questions.length ||
+    questions.some((question) => question.type !== "listen" && question.type !== "dictation")
+  ) {
     throw new Error("A listening set holds listening and dictation questions only.");
   }
   return set;

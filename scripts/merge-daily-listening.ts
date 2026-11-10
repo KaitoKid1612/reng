@@ -10,10 +10,10 @@ import {
   parseListeningSet,
 } from "../lib/listening-set";
 
-// Builds a NEW bank file. It never publishes, updates a database, or modifies the source.
-// Example:
-// node --import tsx scripts/merge-daily-listening.ts --bank bank.json
-//   --listening content/listening/n5-daily-1-13.json --out bank-with-audio.json
+// Writes a new bank file that adds a listening set's audio-backed questions to a review bank. It
+// never publishes, updates a database or changes the source files. Example:
+//   npm run listening:merge -- --bank bank.json
+//     --listening content/listening/n5-daily-1-13.json --out bank-with-audio.json
 async function main() {
   const { values } = parseArgs({
     options: {
@@ -62,7 +62,7 @@ async function main() {
   );
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : "Cannot merge listening bank.");
   process.exitCode = 1;
 });

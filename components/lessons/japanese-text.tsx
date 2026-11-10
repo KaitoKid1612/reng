@@ -8,8 +8,12 @@ interface JapaneseTextProps {
   text: string;
 }
 
+interface RubyProps {
+  segment: Required<JapaneseSegment>;
+}
+
 // The parentheses only show where ruby is unsupported.
-function Ruby({ segment }: { segment: Required<JapaneseSegment> }) {
+function Ruby({ segment }: RubyProps) {
   return (
     <ruby lang="ja">
       {segment.text}

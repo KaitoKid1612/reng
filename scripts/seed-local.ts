@@ -100,7 +100,7 @@ async function main() {
   console.log(`Local teacher ${values.email} (${teacherId}) is ready with the sample lessons.`);
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : "Local seed failed.");
   process.exitCode = 1;
 });

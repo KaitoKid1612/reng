@@ -108,7 +108,7 @@ async function main() {
   console.log(`Published ${draft.id}, version ${String(data)}.`);
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : "Lesson import failed.");
   process.exitCode = 1;
 });

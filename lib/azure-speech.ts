@@ -1,8 +1,8 @@
 import { setTimeout as delay } from "node:timers/promises";
 
-import { ssml } from "./audio-config";
+import { ssml } from "@/lib/audio-config";
 
-import type { AudioConfig } from "./audio-config";
+import type { AudioConfig } from "@/lib/audio-config";
 
 export interface AzureSpeechOptions {
   region: string;

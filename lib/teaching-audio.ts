@@ -1,7 +1,7 @@
-import { audioHash, canonicalAudio } from "./audio-config";
+import { audioHash, canonicalAudio } from "@/lib/audio-config";
 
-import type { PlannedAudioAsset } from "./audio-generation";
-import type { ChineseLanguageTag, TeachingDraftContent } from "./teaching-content";
+import type { PlannedAudioAsset } from "@/lib/audio-generation";
+import type { ChineseLanguageTag, TeachingDraftContent } from "@/lib/teaching-content";
 
 // Simplified script is read with a mainland voice, traditional script with a Taiwan voice.
 export const DEFAULT_CHINESE_VOICES: Record<ChineseLanguageTag, string> = {

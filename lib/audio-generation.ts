@@ -1,4 +1,4 @@
-import type { AudioConfig } from "./audio-config";
+import type { AudioConfig } from "@/lib/audio-config";
 
 export interface PlannedAudioAsset {
   itemId: string;
