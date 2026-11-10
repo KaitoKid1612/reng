@@ -192,7 +192,7 @@ Câu nghe chỉ xuất bản được khi có file audio đã duyệt ([06](06-a
    SQL dừng lại nếu một câu đã sửa lời nghe sau khi sinh audio, hoặc thiếu file audio.
 
 4. **Giáo viên nghe duyệt**: mở bài ở Giảng dạy → Soạn bài → mục Câu luyện; mỗi câu có trình phát ngay dưới lời nghe, nghe từng câu. Máy đọc sai thì sửa lời nghe trong bộ đề, sinh lại audio rồi làm lại bước 2–3 (hoặc xóa câu đó trên trình soạn). Xong thì Xuất bản.
-5. **Đưa vào lớp và giao bài**: Dùng bài trong lớp → Đưa vào lớp; ở Giao bài tập chọn các câu `(Bài N)` của bài vừa học. Câu nghe không tự vào bài luyện tập hằng ngày.
+5. **Đưa vào lớp và giao bài**: Dùng bài trong lớp → Đưa vào lớp; ở Giao bài tập chọn các câu `(Bài N)` của bài vừa học. Khi bài này là nguồn của bài luyện tập hằng ngày, câu nghe vào bài hằng ngày theo tỉ lệ trong bài hoặc theo **Số câu nghe mỗi ngày** của lớp (mục Ngân hàng ôn bên dưới).
 
 Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫn sinh audio bằng `npm run audio:generate -- --r2 --lessons --db --sync-db --lesson <mã bài>`, vì cách này cần kho R2 có địa chỉ công khai.
 
@@ -204,7 +204,7 @@ Câu nghe giáo viên tự viết trên trình soạn (lưu trong database) vẫ
 
 Viết câu nghe mới (trên trình soạn: **Thêm câu nghe** hoặc **Thêm câu chính tả**):
 
-- Lời nghe ngắn (một đến ba câu), một giọng đọc: dùng lời kể hoặc lời của một người, không viết hội thoại hai người.
+- Lời nghe ngắn (một đến ba câu), một giọng đọc: dùng lời kể hoặc lời của một người, không viết hội thoại hai người. Máy đọc nguyên văn lời nghe, nên nhãn người nói như `男：`, `女：` cũng bị đọc thành tiếng.
 - Viết bằng kana có cách giữa các cụm như sách (`わたしは がくせいです。`), số viết bằng chữ (`ろくじ`, `せんにひゃくえん`) để máy đọc đúng cách đọc cần học.
 - Chỉ dùng từ và mẫu câu của bài đó và các bài trước. Mỗi câu hỏi hỏi đúng một thông tin nghe được; phương án sai phải hợp lý (cùng loại: giờ khác, nơi khác).
 - Nghe rồi gõ: hỏi một từ, khai báo mọi cách viết được chấp nhận (kana, kanji, chữ số nếu hợp lý, ví dụ `25さい`, `25歳`).
@@ -234,7 +234,33 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 - **Sắp xếp câu:** `tokens` theo thứ tự đúng và `answer` là danh sách mã mảnh; mỗi mảnh dùng đúng một lần, chỉ có một thứ tự đúng với nghĩa ghi trong đề (tránh hai cụm có thể đổi chỗ mà vẫn đúng). Đặt mã mảnh ngẫu nhiên (`p27`, `p05`…), không theo thứ tự câu.
 - **Tiếng Trung:** mỗi câu khai báo `"gradingProfile": "zh-exact-v1"`; ô điền dùng `inputMode` `chinese` hoặc `pinyin` (hoặc `text` khi trả lời bằng tiếng Việt); `vocab` để trống vì từ vựng có chữ Hán/pinyin nằm trong bài soạn bằng trình soạn tiếng Trung (flashcard, luyện chữ Hán lấy từ đó). Bài kiểm thử `tests/review-bank.test.ts` có một ngân hàng Trung mẫu.
 - **Tiếng Nhật:** không dùng profile hoặc ô nhập tiếng Trung; đáp án kana/kanji tương đương phải khai báo đủ.
+- **Câu nghe mỗi ngày:** mặc định bài hằng ngày lấy câu nghe theo tỉ lệ trong ngân hàng. Giáo viên đổi ở ô **Số câu nghe mỗi ngày** của lớp: `0` bỏ câu nghe, `1–10` lấy tối đa chừng ấy câu nghe trong tổng số câu; ngân hàng thiếu câu nghe thì Reng bù câu thường. Ngân hàng N4/N5 có câu nghe (07/11/2026): `review-banks/n4-daily-with-listening.json` (324 câu, 20 câu nghe từ `listening/n4-daily.json`) và `review-banks/n5-daily-with-listening.json` (138 câu, 78 câu nghe từ `listening/n5-daily-1-13.json`); test `tests/daily-listening-review-banks.test.ts` kiểm tra số câu, audio và cách chọn câu.
+- **Thêm câu nghe vào ngân hàng:** `npm run listening:merge -- --bank <bank.json> --listening <bộ đề nghe.json> --out <bank mới.json>` ghi một file mới có thêm các câu nghe chưa có trong ngân hàng. Lệnh dừng nếu bộ đề thiếu audio hoặc audio không khớp lời nghe, và không sửa hai file nguồn.
 - **Đưa lên phiên bản mới:** `npm run bank:sql -- --file <bank.json> --language ja-JP|zh-Hans|zh-Hant [--lesson <mã bài>] --out <file.sql> [--commit]` kiểm tra ngôn ngữ và dạng bài rồi viết transaction. `--lesson` dùng khi bài trên server có mã khác `id` trong file (chi tiết ở [DD](detail-design/teaching-service.md#đa-dạng-dạng-bài-và-đoạn-văn-đọc-hiểu--03112026)).
+
+## Nguồn đề JLPT và câu tự biên soạn
+
+Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề.
+
+| File trong `content/jlpt/` | Nội dung |
+|---|---|
+| `source-registry.json` | Ba bộ đề mẫu chính thức (2009, 2012, 2018): chỉ link, `importPolicy: metadata-only-until-rights-cleared` |
+| `official-audio-manifest.json` | 16 link MP3 nghe hiểu chính thức N4/N5; chưa tải, chưa nghe, chưa có quyền dùng lại |
+| `external-source-catalog.json` | 10 nguồn khác ở Việt Nam và nước ngoài để tham khảo dạng câu, cùng các điều kiện trước khi công bố (`publicationGates`) |
+| `source-audit-2026-11-09.json` | Kết quả rà soát ngày 09/11: việc đã kiểm, chỗ bị chặn, bước tiếp theo |
+| `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`, `reviewStatus: needs-japanese-review` |
+| `generated/` | Nội dung bài sinh từ hai file trên bằng `npm run jlpt:drafts`; không sửa tay |
+
+Quy trình:
+
+1. **Viết câu** trong file nháp của cấp. Mỗi câu là câu chọn một đáp án (`answer` một chỉ số, `multiple: false`), mã bắt đầu bằng `jlpt-n5-` hoặc `jlpt-n4-`, có giải thích tiếng Việt và đúng một tag phần (`kanji`, `vocabulary`, `grammar`, `particles`, `sentence-order`, `reading`) để câu vào đúng phần của đề thi thử. Schema ở `lib/jlpt-question-draft.ts`.
+2. **Chạy `npm run jlpt:drafts`** để kiểm tra và viết lại `generated/`, rồi `npm run check`: test báo lỗi khi file nháp đổi mà chưa sinh lại.
+3. **Duyệt trước khi dùng với lớp:** một người đọc được tiếng Nhật kiểm tra câu và đáp án duy nhất, độ khó đúng cấp, không trùng câu đã có. Chưa có ai được giao việc duyệt, và chưa có trường ghi nguồn hay giấy phép cho từng câu (danh sách `questionFields` trong catalog là đề xuất, khác với schema đang kiểm tra).
+4. **Đưa vào ngân hàng ôn:** file trong `generated/` chỉ có phần nội dung (`content`), chưa có mã bài, tên và thứ tự, nên `bank:sql` và `lesson:import` chưa nhận trực tiếp. Hiện phải chép các câu đã duyệt vào một ngân hàng ôn như `review-banks/n4-comprehensive.json` rồi nạp như mục trên.
+
+Audio chính thức: `npm run audit:jlpt-audio` (cần mạng) chỉ kiểm tra link còn tải được và ghi mã băm, không lưu file. Chỉ dùng audio chính thức khi đã có quyền.
+
+Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`, 09/11/2026) đã ghi mã audio cho giọng `unreal:Sakura`, nhưng chưa có file MP3 nào trong `public/audio/lessons` và chưa có test riêng. 18/20 lời nghe là hội thoại `男：…女：…`: một giọng sẽ đọc cả nhãn người nói. Trước khi sinh audio, viết lại thành lời một người (theo mục Làm bài nghe) hoặc chờ cách đọc nhiều giọng.
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 

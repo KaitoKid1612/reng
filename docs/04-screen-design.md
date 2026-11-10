@@ -1,6 +1,6 @@
 # Thiết kế màn hình
 
-Danh sách S/T giai đoạn 1–5 bên dưới là nền Nhật. Màn hình ưu tiên dịch vụ Việt–Trung là SV01–SV07 trong [BD dịch vụ](basic-design/teaching-service.md): đăng ký giáo viên → lớp → soạn theo mẫu → dạy/giao → theo dõi. Route mới là dự kiến; chưa có wizard hoặc màn hình scan trong code.
+Danh sách S/T giai đoạn 1–5 bên dưới là nền Nhật. Màn hình ưu tiên dịch vụ Việt–Trung là SV01–SV07 trong [BD dịch vụ](basic-design/teaching-service.md): đăng ký giáo viên → lớp → soạn theo mẫu → dạy/giao → theo dõi. Wizard soạn bài Việt–Trung năm bước đã có (`/teach/lessons/new`, `components/teaching/`); màn hình nhập scan vẫn là dự kiến, chưa có trong code.
 
 Route mới dùng tiếng Anh. Hai URL đã phục vụ trước đây `/kana/luyen` và `/nguon-du-lieu` redirect 308 sang `/kana/practice` và `/sources`; query được giữ. Các màn hình chưa triển khai bên dưới dùng tên tiếng Anh làm baseline.
 
@@ -22,12 +22,12 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S08 | Ôn tập hằng ngày | `/review` | 3 |
 | S09 | Tra cứu ngữ pháp | `/grammar` | 2 |
 | S10 | Luyện chữ Hán và kanji theo bài | `/kanji/[lessonId]` | 5 |
-| S11 | Làm bài tập | `/assignments/[id]` | 3 |
-| S12 | Kết quả bài tập | `/assignments/[id]/results` | 3 |
+| S11 | Làm bài tập; đề thi thử JLPT có nút Bắt đầu thi và đồng hồ theo lượt | `/assignments/[id]` | 3; thi thử 09/11/2026 |
+| S12 | Kết quả bài tập; đề thi thử có điểm từng phần và ước tính thang 180 | `/assignments/[id]/results` | 3; thi thử 09/11/2026 |
 | S13 | Sổ lỗi | `/mistakes` | 3 |
 | S14 | Tiến độ của tôi | `/progress` | 3 |
 | S15 | Luyện nghe theo bài | `/listening/[lessonId]` | 5 |
-| S16 | Đề thi thử | `/mock-exams` | 6 |
+| S16 | Đề thi thử JLPT: không có route riêng; giáo viên tạo đề ở T05, học viên làm ở S11 và xem kết quả ở S12 | — | 09/11/2026 |
 | S17 | Lớp của tôi | `/classes` | 3 |
 | S18 | Lớp học: bài đã mở và bài tập | `/classes/[id]` | 3 |
 | S19 | Luyện tập hằng ngày (điểm từng ngày) | `/classes/[id]/daily-practice` | 3 |
@@ -43,7 +43,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | T02 | Danh sách lớp | `/teach/classes` | 3 |
 | T03 | Theo dõi lớp | `/teach/classes/[id]` | 3 |
 | T04 | Chi tiết một học viên | `/teach/classes/[id]/students/[uid]` | 3 |
-| T05 | Giao bài tập | `/teach/classes/[id]/assign` | 3 |
+| T05 | Giao bài tập; mục Thi thử JLPT tạo đề N5/N4 cho lớp tiếng Nhật | `/teach/classes/[id]/assign` | 3; thi thử 09/11/2026 |
 | T06 | Soạn bài (tạo bài: `/teach/lessons/new`) | `/teach/lessons/[id]/edit` | 4 |
 | T07 | Nhập từ vựng CSV | `/teach/import-csv` | 4 |
 | T08 | Thi đấu trực tiếp (chưa làm) | `/teach/live-quiz/[id]` | 6 |

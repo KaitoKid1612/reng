@@ -112,6 +112,8 @@ Bản đầu soạn native theo mẫu/bảng; chưa có parser Google Slides/PPT
 
 Hash `#7` là số slide hiển thị 1-based; adapter đổi sang index của engine. Hash sai hoặc vượt phạm vi đưa về slide đầu và báo nhẹ. Hash chỉ ổn định trong cùng phiên bản; lớp dùng lesson_version_id đã ghim. URL giảng viên có thể dùng `?version=<id>#7`; API vẫn kiểm tra quyền.
 
+Từ 07/11/2026, slide của tài khoản học viên ghi lại slide đang xem (`PATCH /api/lessons/[id]/progress` với `versionId` và `slideId`, 600 ms sau mỗi lần đổi slide) vào `lesson_progress.last_slide_id`. Mở slide không có `#N` thì vào slide đã lưu nếu cùng phiên bản; có `#N` thì theo `#N`. Việc lưu này không ghi `read_completed_at`, nên không đổi dấu "Đã học xong" ([DD](detail-design/teaching-service.md#số-câu-nghe-mỗi-ngày-bài-70-câu-và-mở-lại-slide--0711-và-09112026)).
+
 Bản PDF cho học viên chỉ in nội dung xuất bản được phép xem; không chứa teacherNotes, dữ liệu test hoặc đáp án riêng. Kiểm tra font tải xong, câu dài có ruby, fragment hiện đủ và ngắt trang trên máy chiếu 1280×720 trước nghiệm thu.
 
 ## Dạy qua Meet và chia sẻ học liệu — thiết kế mới

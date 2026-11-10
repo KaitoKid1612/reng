@@ -74,7 +74,7 @@ Transcript khóa trong bài luyện là quy tắc trải nghiệm, không bảo 
 3. API trả snapshot đã lọc theo mode, không đọc câu hỏi từ bản nháp hiện tại.
 4. Lưu draft lên server sau khi câu trả lời thay đổi, debounce và khi chuyển câu. Dùng draft_revision để phát hiện ghi đè giữa hai tab; báo xung đột và yêu cầu tải bản mới. Chỉ hiện “Đã lưu” khi server xác nhận.
 5. Mất mạng: giữ bản chưa đồng bộ cục bộ theo user/submission, báo rõ chưa lưu; khi có mạng so revision trước khi gửi tiếp. Bản cục bộ là dự phòng, server là nguồn chính. Xóa bản cục bộ khi đăng xuất hoặc nộp thành công; không cache đáp án test. Không tự ghi đè draft mới hơn.
-6. Cho nộp khi có câu trống nhưng phải xác nhận số câu; câu trống tính 0. Bài quá hạn không được nộp nếu allow_late false, giữ draft để giải thích trạng thái.
+6. Cho nộp khi có câu trống nhưng phải xác nhận số câu; câu trống tính 0. Bài quá hạn không được nộp tay nếu allow_late false. Từ 05/11/2026, việc chạy khoảng 6:00 sáng nộp giúp lượt bỏ dở của những bài này bằng các câu đã lưu, ghi `submitted_at` bằng hạn và không tính muộn, trừ khi học viên đã có một lượt nộp trước ([DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)). Đề thi thử JLPT còn có giới hạn thời gian theo lượt: server nhận lưu và nộp tới hết giờ cộng 1 phút, sau đó lượt được nộp như trên.
 7. Khi nộp, server khóa submission, kiểm tra lại quyền, trạng thái và hạn, chấm từ snapshot, ghi answers/score/max_score/passed/is_late, cập nhật submitted_at và thẻ lỗi trong cùng transaction. Không nhận điểm từ client. Đã nộp thì không sửa raw hoặc chấm lại tự động.
 8. Bấm nộp hai lần hoặc gửi lại vì timeout: submission ID xác định một lần chấm. Nếu đã submitted, trả kết quả cũ theo quyền phản hồi, không cộng lượt hay tạo thêm answers/thẻ lỗi. Lỗi trước commit thì rollback toàn bộ và cho thử lại.
 
@@ -127,7 +127,7 @@ Câu sai tạo hoặc mở lại thẻ mistake. Ba lần đúng liên tiếp tro
 
 ## Đề thi thử
 
-Giai đoạn 6 mới làm. Bản đầu dùng điểm luyện tập theo trọng số, không tuyên bố tái tạo điểm chuẩn hóa của kỳ thi JLPT. Trước khi xây đề thi thử, đối chiếu nguồn JLPT chính thức về cấu trúc, thời lượng, điều kiện đạt và công bố rõ phương pháp quy đổi mang tính ước lượng. Chưa chốt bảng điểm thi thật trong hợp đồng chấm hiện tại.
+Đã làm ngày 09/11/2026 cho N5 và N4 ([BD](basic-design/phase-3.md#thi-thử-jlpt--09112026), [DD](detail-design/phase-3.md#thi-thử-jlpt--09112026)). Đề là bài kiểm tra một lượt, câu lấy từ ngân hàng ôn theo ba phần như đề thật (N5 25/20/20 câu, N4 25/25/20), thời gian mặc định 90 và 115 phút. Mỗi câu chấm như bài thường; điểm quy đổi chỉ là ước lượng theo tỉ lệ điểm: kiến thức ngôn ngữ và đọc hiểu về 120, nghe hiểu về 60, đỗ khi tổng đạt 80 (N5) hoặc 90 (N4) và hai phần đạt sàn 38 và 19 (`estimateJlptScore` trong `lib/jlpt.ts`). Không tuyên bố tái tạo điểm chuẩn hóa của kỳ thi JLPT, vốn tính theo độ khó từng câu; trang kết quả ghi rõ điều này.
 
 ## Xuất CSV
 

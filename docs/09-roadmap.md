@@ -130,10 +130,10 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 |---|---|---|
 | Thi đấu trực tiếp trong lớp | Rất cao, đổi hẳn không khí buổi học | Thấp, Supabase Realtime |
 | Bổ sung sâu nội dung "người Việt hay nhầm" | Có trường từ giai đoạn 2; tiếp tục biên soạn theo lỗi thực tế | Nội dung |
-| Ghép đôi và sắp xếp câu | Schema/chấm đã định nghĩa; thêm UI và kiểm chứng cả bàn phím/điện thoại | Trung bình |
+| Ghép đôi | Schema/chấm đã định nghĩa; còn thiếu UI và kiểm chứng cả bàn phím/điện thoại (câu sắp xếp đã có UI từ 03/11/2026) | Trung bình |
 | Mã QR trên slide | Cao | Rất thấp |
-| Đếm ngược ngày thi JLPT | Trung bình | Rất thấp |
-| Đề thi thử có đếm giờ | Cao | Trung bình |
+| Đếm ngược ngày thi JLPT — **đã làm 09/11/2026** cùng đề thi thử | Trung bình | Rất thấp |
+| Đề thi thử có đếm giờ — **đã làm 09/11/2026** cho N5/N4 (ý tưởng #1 bên dưới) | Cao | Trung bình |
 | Web Push | Trung bình | Thấp |
 | PWA chạy offline | Cao với học viên đi xe bus | Trung bình |
 | Từ điển bật lên khi bôi đen | Cao | Trung bình, `kuromoji` phải chạy server |
@@ -159,7 +159,7 @@ Sau giai đoạn 2, dạy thật một buổi rồi ngồi lại. Nhiều khả 
 - Dependency thực tế lấy package.json/lockfile: nền/classroom/editor/email/listening đã có; OCR/queue/font Trung/TTS web chưa tích hợp. Không xem mọi thư viện được nhắc trong tài liệu là đã cài.
 - Đã có 5 bài mẫu tự biên soạn, chưa giảng viên duyệt; chưa có audio sinh thật hoặc đo hiệu năng 4G/máy chiếu. Mục tiêu thời gian trong 01 là yêu cầu, chưa phải kết quả đo.
 - Chưa xác minh lại giá, free tier, điều khoản hosting/TTS và giấy phép dữ liệu từ nguồn chính thức. Chốt trước khi mở dịch vụ hoặc nhập nguồn bên ngoài.
-- PWA offline, thi thử, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6.
+- PWA offline, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6. Thi thử đã có thiết kế và chạy từ 09/11/2026.
 
 Không đánh dấu hoàn thành chỉ vì tài liệu mô tả đã có; mỗi mốc cần bằng chứng từ ứng dụng chạy thật.
 
@@ -189,7 +189,7 @@ Chưa nghiệm thu Supabase/Auth/Azure/R2 thật, chưa apply migrations hoặc 
 
 Đã có BD/DD, migration 0003–0004 (bảng lớp/bài giao/lượt/ôn tập, trigger bất biến, RLS chỉ đọc, RPC transaction), chấm điểm dùng chung ở lib/grading, tài khoản học viên với xác nhận email/đặt lại mật khẩu, vào lớp bằng mã, giao practice/test, làm bài có autosave/xung đột/mất mạng, kết quả theo chính sách phản hồi, sổ lỗi, flashcard/ôn tập FSRS, tiến độ, bảng theo dõi lớp, câu sai nhiều và CSV. Trước khi viết mã đã chạy Supabase local bằng Supabase CLI để kiểm chứng Auth và migration thật thay cho phiên giả.
 
-Đã kiểm chứng trên Supabase local với một giảng viên và hai học viên ở hai lớp (xem [checklist phase-3](testing/phase-3.md)). Chưa áp dụng cloud, chưa cấu hình SMTP/template email trên dashboard, chưa backup/khôi phục thử và chưa dùng với lớp thật. Dạng bài ghép đôi/sắp xếp/nghe vẫn chờ UI ở giai đoạn sau; nhãn yếu nghe chỉ có ý nghĩa khi có câu nghe.
+Đã kiểm chứng trên Supabase local với một giảng viên và hai học viên ở hai lớp (xem [checklist phase-3](testing/phase-3.md)). Chưa áp dụng cloud, chưa cấu hình SMTP/template email trên dashboard, chưa backup/khôi phục thử và chưa dùng với lớp thật. Dạng bài ghép đôi/sắp xếp/nghe vẫn chờ UI ở giai đoạn sau; nhãn yếu nghe chỉ có ý nghĩa khi có câu nghe. Cập nhật 10/11/2026: các migration này đã áp production và dùng với lớp thật; câu sắp xếp và câu nghe đã có UI, chỉ còn ghép đôi.
 
 ## Tiến độ local giai đoạn 4
 
@@ -197,7 +197,7 @@ Phần soạn nội dung đã có: tạo bài, editor form + xem trước slide,
 
 ## Tiến độ local giai đoạn 5 (phần A — luyện nghe)
 
-Đã có câu nghe chọn đáp án, nghe gõ đáp án và chính tả trong editor; script sinh audio đọc/ghi nháp database (`--db`) có kiểm tra revision; player không thanh tua (lùi 5 giây, chậm 0.75x, đếm lượt, giới hạn lượt, lỗi không tính lượt); trang S15 chấm qua API và chỉ hiện transcript sau khi trả lời; câu nghe trong bài giao practice lưu listen_count; báo cáo có điểm nghe, nghe trung bình và nhãn yếu nghe. Đã kiểm chứng trên Supabase local ([checklist phase-5](testing/phase-5.md)). Chưa có: câu nghe trong bài test (cần phân phối audio riêng), audio Azure thật đã nghe duyệt, kanji (KANJIDIC2/KanjiVG chờ quyết định giấy phép), furigana và audio hội thoại nhiều giọng.
+Đã có câu nghe chọn đáp án, nghe gõ đáp án và chính tả trong editor; script sinh audio đọc/ghi nháp database (`--db`) có kiểm tra revision; player không thanh tua (lùi 5 giây, chậm 0.75x, đếm lượt, giới hạn lượt, lỗi không tính lượt); trang S15 chấm qua API và chỉ hiện transcript sau khi trả lời; câu nghe trong bài giao practice lưu listen_count; báo cáo có điểm nghe, nghe trung bình và nhãn yếu nghe. Đã kiểm chứng trên Supabase local ([checklist phase-5](testing/phase-5.md)). Chưa có: câu nghe trong bài test (cần phân phối audio riêng), audio Azure thật đã nghe duyệt, kanji (KANJIDIC2/KanjiVG chờ quyết định giấy phép), furigana và audio hội thoại nhiều giọng. Cập nhật 10/11/2026: luyện kanji theo bài (30/10) và furigana trong bài tập (05/11) đã có; audio bộ đề nghe tạo bằng Unreal Speech; đề thi thử JLPT đưa câu nghe vào bài kiểm tra bằng file audio công khai, một ngoại lệ có chủ ý ghi ở [BD giai đoạn 3](basic-design/phase-3.md#thi-thử-jlpt--09112026). Vẫn chưa có KANJIDIC2/KanjiVG và audio nhiều giọng.
 
 ## Điều chỉnh ưu tiên dịch vụ — 29/10/2026
 

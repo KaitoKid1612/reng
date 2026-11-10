@@ -16,7 +16,7 @@ Tài liệu: [mục lục theo việc cần làm](docs/README.md), [vận hành]
 
 Giai đoạn 3 (lớp học, bài giao, làm bài, sổ lỗi, ôn tập FSRS, theo dõi lớp, CSV) và editor bài học/nhập từ vựng CSV của giai đoạn 4 chạy khi có Supabase; đã kiểm chứng trên Supabase local. [BD giai đoạn 4](docs/basic-design/phase-4.md), [DD giai đoạn 4](docs/detail-design/phase-4.md). [BD giai đoạn 3](docs/basic-design/phase-3.md), [DD giai đoạn 3](docs/detail-design/phase-3.md), [checklist](docs/testing/phase-3.md).
 
-Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên web, trang `/listening/[lessonId]`, câu nghe trong bài giao practice và báo cáo nghe. [BD](docs/basic-design/phase-5.md), [DD](docs/detail-design/phase-5.md), [checklist](docs/testing/phase-5.md). Kanji và furigana chưa làm.
+Giai đoạn 5 phần A thêm luyện nghe: câu nghe/chính tả soạn trên web, trang `/listening/[lessonId]`, câu nghe trong bài giao practice và báo cáo nghe. [BD](docs/basic-design/phase-5.md), [DD](docs/detail-design/phase-5.md), [checklist](docs/testing/phase-5.md). Luyện kanji theo bài (`/kanji/[lessonId]`, [BD](docs/basic-design/kanji-practice.md)) và furigana `{漢字|かんじ}` trong trang đọc, slide và bài tập đã có; chưa nhập KANJIDIC2/KanjiVG nên chưa có âm on/kun và thứ tự nét.
 
 ## Chạy local
 
@@ -113,6 +113,11 @@ Font phục vụ từ các gói @fontsource, không tải Google Fonts lúc buil
 ## Nhật ký cập nhật
 
 Mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ theo ngày ở [mục lục tài liệu](docs/README.md#báo-cáo-kiểm-thử-và-rà-soát).
+
+### 10/11/2026
+
+- Rà soát quy ước mã nguồn và tài liệu: ba script Python của đợt JLPT 09/11 viết lại bằng TypeScript (`npm run jlpt:drafts`, `npm run audit:jlpt-audio`) và bộ câu nháp nay được kiểm tra trong `npm run check`; tách trang lớp của giáo viên và bảng sửa lỗi hiển thị thành component theo từng phần; [quy ước code](docs/coding-standards.md) mô tả đủ cấu trúc thư mục, cách viết script, CSS, test và commit. Xem [báo cáo](docs/testing/code-review-2026-11-10.md).
+- Tài liệu nguồn đề JLPT N4/N5 (đợt 09/11): danh mục nguồn chính thức chỉ lưu link, chờ duyệt bản quyền; 6 câu N5 và 6 câu N4 tự biên soạn đang chờ duyệt tiếng Nhật; bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`) chưa có audio. Xem [hướng dẫn nội dung](docs/content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn).
 
 ### 09/11/2026
 

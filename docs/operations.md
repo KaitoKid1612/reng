@@ -84,6 +84,8 @@ Trước khi push:
 - Migration mới đã áp dụng lên production (mục trên); biến môi trường mới đã đặt trên Vercel cho Production.
 - Xem lại các file sẽ đẩy: không có `.env*`, khóa, `test-results/`, `.next/`.
 
+GitHub Actions ([`.github/workflows/pr-checks.yml`](../.github/workflows/pr-checks.yml)) chạy `npm ci` rồi `npm run check` cho mỗi lần push `main` và mỗi pull request vào `main`. Vercel deploy độc lập với CI, nên CI đỏ không chặn deploy: chạy `npm run check` ở máy trước khi push, và nếu CI báo lỗi sau khi push thì sửa ngay.
+
 Sau khi deploy:
 
 - Trên Vercel, deployment mới ở trạng thái Ready, không có lỗi build.
@@ -111,6 +113,7 @@ Quay lại bản trước: dùng Instant Rollback ở Vercel › Deployments đ�
 |---|---|
 | `npm run dev`, `build`, `start` | Chạy web local ở 127.0.0.1 |
 | `npm run check` | `format:check` + `lint` + `typecheck` + `test` |
+| `npm run format`, `lint:fix` | Sửa định dạng Prettier và lỗi ESLint tự sửa được |
 | `npm run test:e2e`, `test:e2e:supabase` | Playwright không dịch vụ / trên Supabase local |
 | `npm run audit:layout` | Mở các trang ở 360/768/1280px và báo lỗi bố cục ([cách dùng](testing/layout-audit-2026-11-03.md)) |
 | `npm run validate:data` | Kiểm tra dữ liệu kana, bảng audio kana và danh mục bài trong `content/` |
@@ -119,4 +122,7 @@ Quay lại bản trước: dùng Instant Rollback ở Vercel › Deployments đ�
 | `npm run seed:local`, `seed:demo`, `admin:grant` | Tạo tài khoản và dữ liệu thử, cấp quyền quản trị; chỉ Supabase local |
 | `npm run daily:import` | Chuyển Google Sheet bài hằng ngày của giáo viên thành ngân hàng câu N5/N4 ([hướng dẫn](testing/n4-review-bank.md)) |
 | `npm run bank:sql`, `listening:sql` | Viết một file SQL (mặc định kết thúc bằng ROLLBACK) để xuất bản ngân hàng ôn hoặc nạp bộ đề nghe; không tự gửi tới database |
+| `npm run listening:merge -- --bank <bank.json> --listening <set.json> --out <mới.json>` | Ghi một file ngân hàng ôn mới có thêm câu nghe đã có audio của một bộ đề nghe; không sửa file nguồn, không gửi tới database ([biên soạn](content-authoring.md#ngân-hàng-ôn-cho-lớp-nhật-và-trung)) |
+| `npm run jlpt:drafts` | Kiểm tra câu JLPT tự biên soạn trong `content/jlpt/` và viết lại `content/jlpt/generated/` ([biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn)) |
+| `npm run audit:jlpt-audio` | Cần mạng: tải lần lượt 16 file MP3 chính thức trong `content/jlpt/official-audio-manifest.json` để ghi mã HTTP, loại file, dung lượng, SHA-256 vào `content/jlpt/audio-audit-results.json` (đổi bằng `--out`); không lưu file audio |
 | `npm run furigana:sql` | Viết một file SQL (mặc định ROLLBACK) thêm furigana cho nhiều câu của bài đã giao một lần, ví dụ cả bài hằng ngày, từ file xuất `assignment_items` và bản đã viết `{漢字|かんじ}`. Gọi `fix_assignment_question` cho từng câu (cần migration `20261105044634`), ghi lịch sử như khi sửa trên web; từ chối nếu khác gì ngoài furigana ([DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)) |

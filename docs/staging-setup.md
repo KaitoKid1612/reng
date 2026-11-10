@@ -1,6 +1,6 @@
 # Chuẩn bị staging và nghiệm thu dịch vụ
 
-Hai phạm vi được tách rõ: các bước giai đoạn 2–5 phục vụ kiểm chứng nền Nhật hiện có; phần nghiệm thu dịch vụ ở cuối dành cho chức năng Việt–Trung mới chưa triển khai. Không chạy migration/API dự kiến hoặc bật provider thật chỉ vì tài liệu đã mô tả.
+Hai phạm vi được tách rõ: các bước giai đoạn 2–5 phục vụ kiểm chứng nền Nhật hiện có; phần nghiệm thu dịch vụ ở cuối dành cho chức năng Việt–Trung (đã chạy production từ 29/10/2026, trừ nhập scan). Không chạy migration/API dự kiến hoặc bật provider thật chỉ vì tài liệu đã mô tả.
 
 Không có credentials trong workspace tại thời điểm bắt đầu giai đoạn 2. Tài liệu này là hướng dẫn, chưa phải bằng chứng đã triển khai cloud.
 

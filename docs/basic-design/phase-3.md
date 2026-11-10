@@ -95,3 +95,25 @@ Truy vết tại [checklist giai đoạn 3](../testing/phase-3.md). Local cần 
 - Câu trả lời học viên đang làm, lượt đã nộp và điểm giữ nguyên; học viên mở lại bài là thấy nội dung mới.
 - Mỗi lần sửa lưu nội dung trước và sau; trang hiện "Đã sửa N lần" kèm đề trước/sau.
 - Sửa trong bài giao không đổi bài nguồn: muốn các bài giao sau không lặp lỗi thì sửa cả bài nguồn rồi xuất bản ([DD](../detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)).
+
+## Tự nộp lượt còn mở khi hết hạn — 05/11/2026
+
+- Bài **không cho nộp muộn**: học viên đã bắt đầu làm nhưng chưa bấm Nộp (đóng trang, mất mạng trước khi đồng hồ tự nộp) thì khoảng 6:00 sáng sau hạn Reng nộp các câu đã lưu và chấm như bài nộp tay; giờ nộp ghi bằng hạn nộp, không tính muộn.
+- Lượt làm lại khi học viên đã có một lượt nộp trước không bị nộp, để giữ điểm cũ. Nháp không đọc được thì bỏ qua, không thành 0 điểm. Học viên đã rời lớp, lớp đã lưu trữ và bài cho nộp muộn không thuộc việc này.
+- Trang kết quả của học viên ghi "Reng tự nộp lúc hết hạn … với các câu đã lưu"; trang chi tiết học viên của giáo viên ghi "(học viên chưa bấm Nộp)" ([DD](../detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)).
+
+## Tin nhắn giao bài cho nhóm lớp — 06/11/2026
+
+- Lớp nhận bài qua nhóm Zalo/Messenger. Giao bài xong, thông báo "Đã giao «…»" ở trang lớp có nút **Sao chép tin nhắn cho nhóm lớp**; mỗi bài còn mở trong mục Bài đã giao có nút **Sao chép tin nhắn giao bài** để nhắc lại. Lớp tự học không có nút.
+- Tin nhắn có tên lớp, loại bài và tên bài, hạn nộp theo giờ Việt Nam (có cho nộp muộn hay không) và link bài; đề thi thử JLPT ghi thêm số phút và hạn bắt đầu thi.
+- Trình duyệt chặn clipboard thì Reng hiện sẵn đoạn tin nhắn để chép tay. Link chỉ mở được với học viên trong lớp; người chưa đăng nhập được đưa qua trang đăng nhập rồi quay lại ([DD](../detail-design/phase-3.md#tin-nhắn-giao-bài-cho-nhóm-lớp--06112026)).
+
+## Thi thử JLPT — 09/11/2026
+
+Mục tiêu: học viên lớp tiếng Nhật làm đề N5/N4 có cấu trúc và thời gian như đề thật trước kỳ thi 06/12/2026.
+
+- **Giáo viên** mở trang Giao bài của lớp tiếng Nhật, mục **Thi thử JLPT**: chọn cấp N5 hoặc N4, bài nguồn (ngân hàng ôn của lớp), tên đề, số phút (mặc định N5 90, N4 115), **Mở đến** (hạn bắt đầu thi) và lúc công bố điểm. Reng xem trước số câu từng phần (chữ Hán – từ vựng, ngữ pháp – đọc hiểu, nghe hiểu), báo khi bài nguồn có ít câu hơn đề thật, và ưu tiên câu chưa ra ở các đề trước của lớp.
+- **Học viên** làm một lượt, không nộp muộn. Đồng hồ chạy từ lúc bấm **Bắt đầu thi** và vẫn chạy khi đóng trang; hết giờ trang tự nộp. Đã đóng trang thì Reng nộp các câu đã lưu khi học viên mở lại đề hoặc khoảng 6:00 sáng hôm sau. Trang đề và trang kết quả đếm ngày tới kỳ JLPT tiếp theo.
+- **Kết quả** có số câu đúng từng phần và điểm ước tính thang 180: kiến thức ngôn ngữ và đọc hiểu quy về 120, nghe hiểu về 60; đỗ khi tổng đạt 80 (N5) hoặc 90 (N4) và hai phần đạt sàn 38 và 19. Thiếu phần nghe thì không ước tính. Đây chỉ là ước tính: điểm thật tính theo độ khó từng câu.
+- **Câu nghe trong đề** dùng file audio công khai của bài nguồn như bài luyện tập; lời nghe không gửi tới trình duyệt trước khi nộp. Đây là ngoại lệ có chủ ý so với [phạm vi giai đoạn 5](phase-5.md#phạm-vi) (câu nghe trong bài test cần phân phối audio riêng có thời hạn): đề thi thử là để luyện, nên chấp nhận việc học viên có thể nghe lại file ngoài giới hạn lượt. Bài kiểm tra có điểm thật vẫn cần cách phân phối riêng.
+- Chi tiết dữ liệu, quyền và cách chọn câu ở [DD](../detail-design/phase-3.md#thi-thử-jlpt--09112026).

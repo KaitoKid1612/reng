@@ -54,7 +54,9 @@ components/ui/             thành phần dùng chung (Button, LinkPending…)
 lib/                       logic thuần: chấm điểm, lập lịch ôn, ngày giờ, nhập CSV, schema nội dung
 lib/server/                chỉ chạy ở server (`server-only`): phiên, quyền, truy vấn, RPC, email
 scripts/                   lệnh CLI, không được UI import
-content/                   bài mẫu, kana, bộ đề nghe, bảng audio — đã kiểm tra bằng Zod
+content/                   kana, bài mẫu, ngân hàng ôn, bộ đề nghe, câu nháp JLPT và bảng audio; mỗi
+                           loại có schema Zod trong lib, test đọc lại file của bài mẫu, ngân hàng ôn,
+                           bộ đề nghe và câu nháp JLPT; content/jlpt còn có danh mục nguồn đề (chỉ link)
 supabase/migrations/       schema, RLS và hàm RPC
 tests/ e2e/ e2e-supabase/  test logic và migration (PGlite), browser không dịch vụ, browser trên Supabase local
 ```

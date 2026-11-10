@@ -29,7 +29,7 @@ BD mô tả hành vi người dùng, màn hình, nghiệp vụ, quyền và ki�
 
 09 quyết định mốc triển khai; 01 mức quan trọng; 04 khớp mốc màn hình. 03 dữ liệu dùng chung; 07 chấm/nộp; 12 token UI. DD giai đoạn chi tiết hóa, không đặt quy tắc mâu thuẫn.
 
-Phiên bản dependency lấy từ package.json và lockfile. Mỗi phạm vi có một bản BD/DD cập nhật tại chỗ. Thay đổi lớn sau dạy thử phải cập nhật tác động; lỗi thiết kế được sửa ngay khi phát hiện. Giai đoạn 1 hoàn thiện BD/DD trước code. BD/DD nền giai đoạn 1–5 có tài liệu riêng và bằng chứng local tương ứng; dịch vụ Việt–Trung là thiết kế chưa triển khai, giai đoạn 6 ngoài MVP. Các lựa chọn provider/voice/font/gói cần hồ sơ quyết định trước tích hợp thật.
+Phiên bản dependency lấy từ package.json và lockfile. Mỗi phạm vi có một bản BD/DD cập nhật tại chỗ. Thay đổi lớn sau dạy thử phải cập nhật tác động; lỗi thiết kế được sửa ngay khi phát hiện. Giai đoạn 1 hoàn thiện BD/DD trước code. BD/DD nền giai đoạn 1–5 có tài liệu riêng và bằng chứng local tương ứng; dịch vụ Việt–Trung đã triển khai và chạy production từ 29/10/2026 (trừ nhập scan), giai đoạn 6 ngoài MVP. Các lựa chọn provider/voice/font/gói cần hồ sơ quyết định trước tích hợp thật.
 
 ## Thiết kế dịch vụ ngày 29/10/2026
 

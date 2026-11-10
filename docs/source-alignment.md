@@ -33,9 +33,9 @@ Nền Nhật/classroom đã có reader/slide/presenter/PDF, nháp/version, choic
 | LANG-01 | Một phần | 0.5 | Schema v2 có context subject/languageTag/locale/instructionLanguageTag, ô nhập chữ Hán/pinyin, font và giọng thiết bị theo locale; v1 Nhật giữ nguyên. Flashcard/SRS/email từ của ngày đọc được v2. Chưa có TTS web; tra ngữ pháp chưa đọc v2. [Nguồn](../lib/teaching-content.ts) |
 | SHARE-01 | Đã có | 1 | Chia sẻ một phiên bản cho giáo viên cụ thể theo email, quyền view/copy, thu hồi. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
 | SHARE-02 | Đã có | 1 | Bản sao độc lập giữ nguồn/tác giả, idempotent theo requestId, sửa bài gốc không đổi bản sao/bài giao. Chưa cần entitlement vì chưa có media riêng tư. [Nguồn](../lib/server/lesson-sharing.ts) |
-| SCAN-01 | Chưa có | 0 | Slide image nhận URL; không có upload/job/storage policy scan. [Nguồn](../lib/lesson-schema.ts#L169) |
+| SCAN-01 | Chưa có | 0 | Slide image nhận URL; không có upload/job/storage policy scan. [Nguồn](../lib/lesson-schema.ts) |
 | SCAN-02 | Chưa có | 0 | Không có import_jobs/import_items hoặc review OCR. [Nguồn](detail-design/teaching-service.md) |
-| SCAN-03 | Chưa có | 0 | Không có đường ảnh/PDF → câu draft choice/fill; editor đang nhập câu thủ công. [Nguồn](../components/editor/question-fields.tsx#L1) |
+| SCAN-03 | Chưa có | 0 | Không có đường ảnh/PDF → câu draft choice/fill; editor đang nhập câu thủ công. [Nguồn](../components/editor/question-fields.tsx) |
 | GRADE-01 | Một phần | 0.5 | Chấm khách quan có profile Trung `zh-exact-v1` theo snapshot; chưa pending_review/graded hoặc chấm tay. [Nguồn](../lib/language-profile.ts) |
 | OPS-01 | Một phần | 0.5 | Có cấu hình/migration/test local và hướng dẫn staging; chưa bằng chứng backup/restore/cloud. [Nguồn](staging-setup.md) |
 | OPS-02 | Một phần | 0.5 | Có audit kích hoạt/chia sẻ/thu hồi/sao chép, quota 2000 bài/giáo viên và giới hạn 60 lần chia sẻ/giờ; chưa có retention scan hoặc xử lý báo cáo nội dung. [Nguồn](../supabase/migrations/202610290004_lesson_sharing.sql) |
@@ -56,7 +56,7 @@ Các dòng “chưa có” được đối chiếu route/module, schemas và c�
 
 Đã sửa bằng migration 202610290001: publish giữ nguyên visibility (mặc định class), công khai là thao tác riêng có xác nhận, mọi trang/API đọc bài qua `read_lesson_version`. Mô tả lúc đối chiếu giữ lại bên dưới.
 
-`publish_lesson` tại [migration 0003](../supabase/migrations/202610280003_sample_lessons.sql#L37) đặt `visibility='public'` mỗi lần publish. [publishLessonDraft](../lib/server/lessons.ts#L223) gọi RPC đó, trong khi docs yêu cầu xuất bản/công khai/giao lớp là các thao tác riêng. [loadLessonVersion](../lib/lesson-repository.ts#L92) lại chỉ đọc bài public. Đây là hành vi của thiết kế cũ, chưa phù hợp yêu cầu riêng tư mới; chưa ghi nhận có dữ liệu thật bị lộ.
+`publish_lesson` tại [migration 0003](../supabase/migrations/202610280003_sample_lessons.sql#L37) đặt `visibility='public'` mỗi lần publish. [publishLessonDraft](../lib/server/lessons.ts) gọi RPC đó, trong khi docs yêu cầu xuất bản/công khai/giao lớp là các thao tác riêng. [loadLessonVersion](../lib/lesson-repository.ts) lại chỉ đọc bài public. Đây là hành vi của thiết kế cũ, chưa phù hợp yêu cầu riêng tư mới; chưa ghi nhận có dữ liệu thật bị lộ.
 
 Cần migration mới để publish giữ private/class mặc định, quyền chọn public có chủ đích, và loader kiểm tra owner/enrollment/version grant. Chỉ đổi visibility mà giữ loader cũ sẽ làm trang đọc/slide bài riêng không truy cập được. Không sửa migration đã áp dụng như cách nâng cấp duy nhất.
 
@@ -64,27 +64,27 @@ Cần migration mới để publish giữ private/class mặc định, quyền c
 
 Đã thêm schema v2 (`lib/teaching-content.ts`) đọc qua cùng loader với v1, profile `zh-exact-v1` lưu theo câu và renderer/reader riêng cho v2. Flashcard/SRS và email từ của ngày đã đọc v2. Còn lại: TTS web và tra ngữ pháp cho v2. Mô tả lúc đối chiếu giữ lại bên dưới.
 
-[lessonContentSchema](../lib/lesson-schema.ts#L179) chỉ nhận v1; [draftContentSchema](../lib/lesson-draft.ts#L170), reader, renderer và RPC cùng phụ thuộc cấu trúc Nhật. Đổi nhãn UI hoặc nhét pinyin vào romaji không đáp ứng context/schemaVersion=2 trong docs.
+[lessonContentSchema](../lib/lesson-schema.ts) chỉ nhận v1; [draftContentSchema](../lib/lesson-draft.ts), reader, renderer và RPC cùng phụ thuộc cấu trúc Nhật. Đổi nhãn UI hoặc nhét pinyin vào romaji không đáp ứng context/schemaVersion=2 trong docs.
 
-[normalizeAnswer](../lib/grading/normalize.ts#L3) luôn NFKC, xóa mọi khoảng trắng và dấu chấm cuối. Phép thử cho thấy `nǐ hǎo` và `nǐhǎo` được chuẩn hóa giống nhau, khác profile Trung NFC+trim giữ khoảng trắng pinyin đã chốt. Cần profile bất biến theo assignment snapshot và adapter v1, không thay global normalize làm đổi chấm bài Nhật cũ.
+[normalizeAnswer](../lib/grading/normalize.ts) luôn NFKC, xóa mọi khoảng trắng và dấu chấm cuối. Phép thử cho thấy `nǐ hǎo` và `nǐhǎo` được chuẩn hóa giống nhau, khác profile Trung NFC+trim giữ khoảng trắng pinyin đã chốt. Cần profile bất biến theo assignment snapshot và adapter v1, không thay global normalize làm đổi chấm bài Nhật cũ.
 
 ### 3. Ưu tiên cao: quyền dạy và học còn loại trừ nhau — đã xử lý
 
 Đã thêm `teacher_accounts`, backfill teacher cũ, bỏ chặn teacher ở join/requireStudent/agenda/thông báo học viên. Mô tả lúc đối chiếu giữ lại bên dưới.
 
-[requireStudent](../lib/server/account.ts#L72) chuyển teacher về /teach; [join_class](../supabase/migrations/202610280004_classroom.sql#L335) từ chối teacher, test hiện tại còn xác nhận `not_student`. Cần capability dạy độc lập với enrollment, backfill teacher cũ và cập nhật toàn bộ API/RLS/RPC/session/UI tests; không chỉ thêm lựa chọn teacher ở form đăng ký.
+[requireStudent](../lib/server/account.ts) chuyển teacher về /teach; [join_class](../supabase/migrations/202610280004_classroom.sql#L335) từ chối teacher, test hiện tại còn xác nhận `not_student`. Cần capability dạy độc lập với enrollment, backfill teacher cũ và cập nhật toàn bộ API/RLS/RPC/session/UI tests; không chỉ thêm lựa chọn teacher ở form đăng ký.
 
 ### 4. Luồng editor hiện tại còn là soạn chi tiết thủ công — đã xử lý
 
 Đã có wizard 5 bước cho bài v2; editor chi tiết cũ giữ cho bài tiếng Nhật. Mô tả lúc đối chiếu giữ lại bên dưới.
 
-[CreateLessonForm](../components/editor/create-lesson-form.tsx#L13) yêu cầu mã bài/thứ tự, [LessonEditor](../components/editor/lesson-editor.tsx#L251) dùng các khối từ/ngữ pháp/câu/slide; [CSV](../lib/vocab-csv.ts#L129) bắt kana và romaji. Không có 4 mẫu, generator giữ provenance/diff, objective nhỏ hoặc review đáp án theo revision.
+[CreateLessonForm](../components/editor/create-lesson-form.tsx) yêu cầu mã bài/thứ tự, [LessonEditor](../components/editor/lesson-editor.tsx) dùng các khối từ/ngữ pháp/câu/slide; [CSV](../lib/vocab-csv.ts) bắt kana và romaji. Không có 4 mẫu, generator giữ provenance/diff, objective nhỏ hoặc review đáp án theo revision.
 
 Giữ reducer, ref validation, save CAS, preview và slide reorder. Xây wizard dẫn dắt trên domain v2, tách quản lý phiên lưu/xuất bản khỏi từng bước; editor chi tiết tiếp tục là lựa chọn bổ sung. Lý do refactor là thay hợp đồng và luồng sử dụng, không phải vì số dòng component hoặc sở thích code style.
 
 ### 5. Audio có pipeline tốt nhưng bị giới hạn Nhật và cần người chạy script
 
-[canonicalAudio](../lib/audio-config.ts#L12) chỉ chấp nhận ja-JP; [editor](../components/editor/lesson-editor.tsx#L245) đưa lệnh script cho giáo viên. Cần locale/voice adapter, job web/quota/review/CAS và trạng thái nghe duyệt. Giữ hash/retry/escape/cancel đang có. Không coi tính năng này chỉ là sửa một chuỗi locale.
+[canonicalAudio](../lib/audio-config.ts) chỉ chấp nhận ja-JP; [editor](../components/editor/lesson-editor.tsx) đưa lệnh script cho giáo viên. Cần locale/voice adapter, job web/quota/review/CAS và trạng thái nghe duyệt. Giữ hash/retry/escape/cancel đang có. Không coi tính năng này chỉ là sửa một chuỗi locale.
 
 ### 6. Capacity, Meet, sharing và scan phần lớn là xây mới
 

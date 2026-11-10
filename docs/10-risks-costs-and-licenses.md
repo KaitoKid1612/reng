@@ -15,6 +15,7 @@ Giáo viên chịu trách nhiệm chuyên môn và quyền đưa tài liệu và
 | Bản thu/TTS/font | Điều khoản đúng voice/font/provider, quyền lưu/phát/chia sẻ, attribution khi có yêu cầu |
 | Từ điển/dữ liệu mở Nhật/Trung | URL nguồn chính thức, phiên bản/ngày lấy, bản giấy phép cụ thể, nghĩa vụ phân phối và ghi công đã được kiểm tra |
 | Bản sao đồng nghiệp | Source owner/version, grant, điều kiện sử dụng và giới hạn chia sẻ tiếp |
+| Đề và audio JLPT chính thức, sách luyện thi | Văn bản cho phép của chủ quyền trước khi chép câu, audio hay hình; đến lúc đó chỉ lưu link và ghi chú (`content/jlpt/source-registry.json`, `importPolicy: metadata-only-until-rights-cleared`). Câu luyện tự viết theo dạng đề phải qua các bước duyệt trong [biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn) |
 
 JMdict/KANJIDIC2/KanjiVG/VOICEVOX/Tatoeba từng được cân nhắc cho module Nhật; chưa mặc định cấp phép áp dụng cho sản phẩm mới. Không nhập dữ liệu hay khẳng định chỉ bỏ một cột là giải quyết toàn bộ quyền sử dụng. Trang /sources chỉ ghi nguồn thực tế đã dùng, không ghi công như thể dữ liệu đã được nhập khi chưa có.
 

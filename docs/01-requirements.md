@@ -80,7 +80,7 @@ Phạm vi dịch vụ cập nhật ngày 29/10/2026: nền tảng mở cho nhi�
 | EX-05 | Sắp xếp câu (dạng 文の組み立て) | P1 |
 | EX-06 | Giao bài tập có hạn nộp | P1 |
 | EX-07 | Sổ lỗi: gom mọi câu từng sai, ôn lại theo lịch | P1 |
-| EX-08 | Đề thi thử N5 thuộc module Nhật về sau; chưa có quy đổi điểm JLPT chính thức, ngoài MVP Việt–Trung | P2 |
+| EX-08 | Đề thi thử JLPT N5/N4 có tính giờ thuộc module Nhật (đã có từ 09/11/2026); điểm thang 180 chỉ là ước tính, không phải quy đổi chính thức; ngoài MVP Việt–Trung | P2 |
 
 ### Quản lý lớp
 

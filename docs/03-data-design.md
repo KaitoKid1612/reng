@@ -76,7 +76,7 @@ Văn bản hiển thị của câu tiếng Nhật (`prompt`, `passage`, `options
 | Type | Dữ liệu | Kiểu answer |
 |---|---|---|
 | `choice` | `options: string[]`, `multiple: boolean` mặc định false | Chỉ số các lựa chọn đúng, không trùng |
-| `fill` | `inputMode: hiragana / katakana / japanese`, `kanjiStrict: boolean` | Các chuỗi được chấp nhận |
+| `fill` | `inputMode: hiragana / katakana / japanese / chinese / pinyin / text`, `kanjiStrict: boolean` | Các chuỗi được chấp nhận |
 | `match` | `left: string[]`, `right: string[]` | Các cặp `[leftIndex, rightIndex]`, mỗi phần tử dùng đúng một lần |
 | `order` | `tokens: {id, text}[]` | Một mảng ID token theo thứ tự đúng; token trùng chữ vẫn có ID khác nhau |
 | `listen` | `responseType: choice / fill`, trường tương ứng và `audio` | Theo responseType |
@@ -94,7 +94,7 @@ Văn bản hiển thị của câu tiếng Nhật (`prompt`, `passage`, `options
 
 ## Hợp đồng database
 
-Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Migrations đã được chuẩn bị và kiểm tra local, chưa áp dụng cloud. Migration 202610280003 thêm cờ is_sample vào publish_lesson; 202610280004 tạo các bảng giai đoạn 3, trigger bất biến, RLS chỉ đọc và RPC transaction theo [DD giai đoạn 3](detail-design/phase-3.md). Nền 0001–0004 đã kiểm chứng local. Migration 0005 thêm email và 0006 thêm luyện nghe, có bằng chứng riêng tại testing/phase-4.md và phase-5.md; chưa áp dụng cloud.
+Migration 202610280002 bổ sung summary/title_ja trên bài và snapshot, order_no/course_id/is_sample trên snapshot; RPC publish_lesson dành cho service_role xuất bản trong transaction với owner/revision check. Metadata snapshot được đọc thay cho metadata draft khi mở version cũ. Các migration này đã kiểm tra local và đã áp dụng production cùng các migration sau. Migration 202610280003 thêm cờ is_sample vào publish_lesson; 202610280004 tạo các bảng giai đoạn 3, trigger bất biến, RLS chỉ đọc và RPC transaction theo [DD giai đoạn 3](detail-design/phase-3.md). Nền 0001–0004 đã kiểm chứng local. Migration 0005 thêm email và 0006 thêm luyện nghe, có bằng chứng riêng tại testing/phase-4.md và phase-5.md; cũng đã áp dụng production.
 
 Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác. Thời gian lưu `timestamptz` UTC; ngày học và ngày nhắc tính theo `Asia/Ho_Chi_Minh`.
 
@@ -104,7 +104,7 @@ Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác
 | `lessons` | `id text PK`, `owner_id` FK profiles, `course_id`, `order_no`, `title`, `draft_content jsonb`, `draft_revision int`, `published_version_id`, `visibility` CHECK public/class, `archived_at`, timestamps. |
 | `lesson_versions` | `id`, `lesson_id` FK lessons, `version_no`, `title`, `content jsonb`, `published_at`; UNIQUE lesson_id/version_no. Bất biến sau xuất bản. Con trỏ published_version_id phải thuộc đúng bài. |
 | `class_lessons` | `class_id`, `lesson_id`, `lesson_version_id`, `order_no`, `available_at` (bắt buộc); PK class_id/lesson_id, UNIQUE class_id/order_no. Phiên bản phải thuộc bài đã chọn; giáo viên lớp sở hữu bài. |
-| `classes` | `id`, `teacher_id`, `name`, `join_code text UNIQUE` (8 ký tự không nhầm lẫn), `join_enabled boolean DEFAULT true` để thu hồi mã, `active`, `pass_score int CHECK 0..100 DEFAULT 70`, `created_at`. |
+| `classes` | `id`, `teacher_id`, `name`, `join_code text UNIQUE` (8 ký tự không nhầm lẫn), `join_enabled boolean DEFAULT true` để thu hồi mã, `active`, `pass_score int CHECK 0..100 DEFAULT 70`, `created_at`. Thêm sau giai đoạn 3: `capacity` (1–1000, trống là không giới hạn), `meeting_url` (chỉ link Google Meet), `subject`, `language_tag` (ja-JP, zh-Hans, zh-Hant), `instruction_language_tag` (vi-VN), `revision`, `daily_practice_size` (3–70), `daily_practice_lesson_id`, `daily_listening_count` (null, 0–10), `self_study`. |
 | `enrollments` | `class_id`, `user_id`, `joined_at`, `left_at`; PK class_id/user_id. Chỉ thành viên còn hoạt động được bắt đầu/nộp bài. |
 | `assignments` | `id`, `class_id`, `lesson_id`, `lesson_version_id`, `title`, `mode` CHECK practice/test, `status` CHECK draft/published/closed, `due_at`, `allow_late boolean DEFAULT false`, `pass_score int CHECK 0..100 DEFAULT 70`, `max_attempts int CHECK >0 DEFAULT 1`, `feedback_policy` CHECK after_submit/after_due, `published_at`. |
 | `assignment_items` | `assignment_id`, `question_id text`, `position int`, `question_snapshot jsonb`; PK assignment_id/question_id, UNIQUE assignment_id/position. Snapshot chứa đầy đủ đề, đáp án và trọng số, chỉ server/giáo viên đọc. |
@@ -134,7 +134,7 @@ Cột bắt buộc NOT NULL trừ các trường trạng thái chưa có giá tr
 
 Giai đoạn 1 dùng `content/kana.json` được quản lý cùng mã nguồn: `schemaVersion`, danh sách `{id, script, group, row, column, kana, acceptedRomaji: string[], audio, strokes: string[]}`. `script` là hiragana/katakana; `group` là basic/dakuten/handakuten/yoon. `strokes` là URL SVG theo từng chữ, có thể rỗng trước khi làm thứ tự nét. Ô trống trong lưới do layout quyết định, không tạo ký tự giả. Kana là dữ liệu nền cố định; nội dung bài học vẫn thêm được mà không deploy.
 
-DD giai đoạn 1 quy định audio trong dataset là null; mapping ID → hash nằm tại content/audio-manifest.json, ban đầu rỗng. Trường config jsonb trong audio_assets lưu cấu hình canonical đã dùng tạo hash. Đây là thiết kế đã cụ thể hóa trong source/migration nền, chưa phải migration đã áp dụng vào Supabase thật.
+DD giai đoạn 1 quy định audio trong dataset là null; mapping ID → hash nằm tại content/audio-manifest.json, ban đầu rỗng. Trường config jsonb trong audio_assets lưu cấu hình canonical đã dùng tạo hash. Bảng `audio_assets` nằm trong migration nền `202610280001_foundation`, đã áp dụng production.
 
 Giai đoạn 5 thêm `kanji_entries`: `id text PK`, `character text UNIQUE`, `on_readings text[]`, `kun_readings text[]`, `meanings_vi text[]`, `compounds jsonb`, `stroke_asset_url`, `source`, `source_version`, `license`, `attribution`. Dữ liệu từ điển gốc và phần giải thích tự viết có nguồn gốc riêng; lưu nguồn theo từng bản import, không mặc định việc tách bảng tự giải quyết mọi nghĩa vụ giấy phép.
 
@@ -160,7 +160,7 @@ Giai đoạn 5 thêm `kanji_entries`: `id text PK`, `character text UNIQUE`, `on
 | Audio metadata / email log | Không đọc trực tiếp; API chỉ trả URL media được phép | Không có quyền database trực tiếp ngoài nhu cầu soạn bài |
 | Push subscription | API quản lý thiết bị của mình, không đọc khóa thiết bị khác | Không truy cập |
 
-RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầu tiên. Các bảng snapshot, điểm, log chỉ server ghi. Service role chỉ được gọi sau khi API kiểm tra user và quyền sở hữu/thành viên. Mã lớp sinh ngẫu nhiên, được đổi hoặc thu hồi; API vào lớp có giới hạn thử, thông báo mã không hợp lệ không tiết lộ thông tin lớp. Mã nguồn hiện tại chưa có chia sẻ bài giữa giảng viên; thiết kế dịch vụ bổ sung grant theo phiên bản, không cấp quyền dữ liệu lớp. Xem [DD dịch vụ](detail-design/teaching-service.md).
+RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầu tiên. Các bảng snapshot, điểm, log chỉ server ghi. Service role chỉ được gọi sau khi API kiểm tra user và quyền sở hữu/thành viên. Mã lớp sinh ngẫu nhiên, được đổi hoặc thu hồi; API vào lớp có giới hạn thử, thông báo mã không hợp lệ không tiết lộ thông tin lớp. Chia sẻ bài giữa giáo viên cấp quyền theo đúng một phiên bản (`lesson_shares`, migration `202610290004`), không cấp quyền dữ liệu lớp. Xem [DD dịch vụ](detail-design/teaching-service.md).
 
 ## Thứ tự migration
 
@@ -174,9 +174,9 @@ RLS bật trên mọi bảng người dùng/nội dung ngay từ migration đầ
 
 File migration có thứ tự rõ ràng, kiểm tra trên database trống và database có dữ liệu mẫu trước khi dùng thật.
 
-### Danh sách migration (cập nhật 05/11/2026)
+### Danh sách migration
 
-Tra cứu nhanh; chi tiết ở dòng chú thích đầu mỗi file trong `supabase/migrations` và DD tương ứng. Quy trình tạo và áp dụng ở [vận hành › Migration](operations.md#migration).
+Tra cứu nhanh, cập nhật tới 09/11/2026; chi tiết ở dòng chú thích đầu mỗi file trong `supabase/migrations` và DD tương ứng. Quy trình tạo và áp dụng ở [vận hành › Migration](operations.md#migration). Xem migration nào đã áp production bằng `npx supabase migration list --linked`.
 
 | Migration | Nội dung |
 |---|---|
@@ -213,7 +213,7 @@ Tra cứu nhanh; chi tiết ở dòng chú thích đầu mỗi file trong `supab
 
 ## Mở rộng dữ liệu dịch vụ
 
-Đã migration: teacher_accounts, audit_events, metadata lớp, lesson_shares và nguồn bản sao (mục 5 ở trên). Phần còn lại vẫn là đề xuất: [DD dịch vụ](detail-design/teaching-service.md) thêm nguồn bản sao, media_assets riêng tư, import_jobs/import_items và audit; metadata lớp thêm capacity/subject/language_tag/instruction_language_tag/meeting_url, nội dung thêm schema_version/locale và tách ngôn ngữ hướng dẫn khỏi ngôn ngữ học. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
+Đã migration: teacher_accounts, audit_events, metadata lớp (capacity, subject, language_tag, instruction_language_tag, meeting_url), lesson_shares và nguồn bản sao (mục 5 ở trên). Phần còn lại vẫn là đề xuất trong [DD dịch vụ](detail-design/teaching-service.md): media_assets riêng tư, import_jobs/import_items cho nhập scan, và `locale` cho nội dung. MVP Việt–Trung dùng hướng dẫn Việt, nội dung Trung; môn/ngôn ngữ khác mở sau. Đây là thiết kế dự kiến, không phải các bảng đã triển khai ở trên.
 
 Role độc quyền student/teacher đã được thay bằng khả năng dạy trong teacher_accounts kết hợp enrollment; teacher cũ được backfill active, student cũ không tự thành teacher. Chia sẻ không mở lesson_versions gốc cho mọi giáo viên. Copy remap refs, loại notes/test/dữ liệu lớp và giữ quyền dùng media. Snapshot cũ giữ nguyên, assignment không tự nâng phiên bản theo bài nguồn. Không thêm tiếng Trung bằng cách ép dữ liệu vào trường tiếng Nhật hiện tại.
 
