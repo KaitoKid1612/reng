@@ -38,7 +38,7 @@ Chúng tôi không bán dữ liệu và không dùng dữ liệu của bạn cho
 ## 5. Lưu trữ bao lâu
 
 - Khi bạn rời lớp hoặc được giáo viên xóa khỏi lớp, kết quả đã nộp vẫn được giữ để giáo viên xem báo cáo và để khôi phục nếu bạn vào lại lớp.
-- Tài khoản và dữ liệu được giữ cho tới khi bạn yêu cầu xóa. [Điền thời hạn xóa hẳn khỏi bản sao lưu sau khi nhận yêu cầu.]
+- Tài khoản và dữ liệu được giữ cho tới khi bạn xóa tài khoản. Khi xóa, họ tên, email, cách đăng nhập, cài đặt nhắc học, nhật ký email đã gửi và lịch sử học được giáo viên nhập vào bị xóa ngay; bài đã nộp, điểm, lịch sử ôn và điểm danh ở lại trong thống kê của lớp dưới tên “Học viên đã xóa”, không còn gắn với bạn. [Điền thời hạn các bản sao lưu cũ của database hết hạn.]
 
 ## 6. Quyền của bạn
 
@@ -46,7 +46,8 @@ Bạn có quyền được biết, xem, sửa dữ liệu của mình, yêu cầ
 
 - Sửa họ tên và mật khẩu: trang Tài khoản.
 - Tắt email nhắc học: link cuối mỗi thư hoặc trang cài đặt thông báo, bất kỳ lúc nào.
-- Các yêu cầu khác, kể cả xóa tài khoản: gửi về [email liên hệ]. Reng hiện chưa có nút tự xóa tài khoản; yêu cầu được xử lý thủ công trong [thời hạn].
+- Xóa tài khoản học viên: tự làm ở trang Tài khoản, mục Xóa tài khoản (gõ XÓA để xác nhận); không khôi phục được. Tài khoản giáo viên và quản trị viên có lớp, bài học phụ thuộc nên gửi yêu cầu về [email liên hệ].
+- Các yêu cầu khác: gửi về [email liên hệ]; xử lý trong [thời hạn].
 
 ## 7. Người chưa đủ tuổi
 

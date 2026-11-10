@@ -5,15 +5,23 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { ACCOUNT_DELETION_WORD, isAccountDeletionWord } from "@/lib/account-deletion";
 import {
   defaultHomePath,
   googleCallbackPath,
   safeNextPath,
   signInErrorPath,
 } from "@/lib/auth-paths";
+import { getCurrentAccount } from "@/lib/server/account";
+import { deleteLearnerAccount } from "@/lib/server/account-deletion";
 import { canSetNewPassword } from "@/lib/server/password-reset";
 import { getRequestOrigin } from "@/lib/server/request-origin";
-import { createServiceClient, isGoogleAuthEnabled, selectOptional } from "@/lib/server/supabase";
+import {
+  createServiceClient,
+  isGoogleAuthEnabled,
+  selectOptional,
+  ServiceError,
+} from "@/lib/server/supabase";
 import { createSessionClient } from "@/lib/supabase-session";
 
 export interface AuthFormState {
@@ -349,4 +357,37 @@ export async function changePassword(
   }
   await client.auth.signOut({ scope: "others" });
   return { notice: "Đã lưu mật khẩu mới. Các thiết bị khác cần đăng nhập lại." };
+}
+
+const TEACHING_ACCOUNT =
+  "Tài khoản dạy học hoặc quản trị có lớp và bài học phụ thuộc nên không tự xóa được. Hãy liên hệ quản trị viên Reng.";
+
+// A learner deletes their own account (lib/server/account-deletion.ts); a teaching or admin
+// account needs an operator because classes and lessons depend on it.
+export async function deleteOwnAccount(
+  _state: AuthFormState,
+  formData: FormData,
+): Promise<AuthFormState> {
+  const account = await getCurrentAccount();
+  if (!account) {
+    return { error: SESSION_EXPIRED };
+  }
+  if (account.role === "teacher") {
+    return { error: TEACHING_ACCOUNT };
+  }
+  if (!isAccountDeletionWord(readField(formData, "confirm"))) {
+    return { error: `Gõ ${ACCOUNT_DELETION_WORD} vào ô xác nhận để xóa tài khoản.` };
+  }
+  try {
+    await deleteLearnerAccount(account.id);
+  } catch (error) {
+    if (error instanceof ServiceError && error.code === "teaching_account") {
+      return { error: TEACHING_ACCOUNT };
+    }
+    console.error("Account deletion failed", account.id, error);
+    return { error: "Chưa xóa được tài khoản. Bạn thử lại sau ít phút nhé." };
+  }
+  const client = await createSessionClient();
+  await client?.auth.signOut({ scope: "local" }).catch(() => undefined);
+  redirect("/account-deleted");
 }

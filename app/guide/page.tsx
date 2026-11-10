@@ -205,6 +205,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Tài khoản",
     steps: [
       "Bấm Tài khoản trên thanh đầu trang (hoặc cuối trang Lớp của tôi) để đổi họ tên hiển thị hoặc đặt mật khẩu mới. Đổi mật khẩu sẽ đăng xuất các thiết bị khác.",
+      "Muốn ngừng dùng Reng, kéo xuống mục Xóa tài khoản và gõ XÓA để xác nhận. Họ tên, email và cách đăng nhập bị xóa, bạn rời mọi lớp; bài đã nộp vẫn ở lại trong thống kê của lớp dưới tên Học viên đã xóa. Không khôi phục được.",
     ],
   },
   {

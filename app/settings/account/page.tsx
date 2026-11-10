@@ -1,7 +1,11 @@
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
-import { AccountNameForm, PasswordChangeForm } from "@/components/settings/account-forms";
+import {
+  AccountNameForm,
+  DeleteAccountForm,
+  PasswordChangeForm,
+} from "@/components/settings/account-forms";
 import { SettingsNav } from "@/components/settings/settings-nav";
 import { requireAccount } from "@/lib/server/account";
 
@@ -42,6 +46,17 @@ export default async function AccountSettingsPage() {
           </Link>
         </div>
       </section>
+      {account.role === "teacher" ? (
+        <section className="section-block" aria-labelledby="delete-account-title">
+          <h2 id="delete-account-title">Xóa tài khoản</h2>
+          <p className="small muted">
+            Tài khoản dạy học có lớp và bài học phụ thuộc nên không tự xóa được. Muốn ngừng dùng
+            Reng, hãy liên hệ quản trị viên để chuyển hoặc đóng lớp trước.
+          </p>
+        </section>
+      ) : (
+        <DeleteAccountForm />
+      )}
     </div>
   );
 }

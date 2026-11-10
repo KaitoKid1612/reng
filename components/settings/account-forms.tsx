@@ -2,9 +2,10 @@
 
 import { useActionState } from "react";
 
-import { changePassword, updateAccountName } from "@/app/actions/auth";
+import { changePassword, deleteOwnAccount, updateAccountName } from "@/app/actions/auth";
 import { FormFeedback } from "@/components/auth/form-feedback";
 import { Button } from "@/components/ui/button";
+import { ACCOUNT_DELETION_WORD } from "@/lib/account-deletion";
 
 interface AccountNameFormProps {
   fullName: string;
@@ -75,6 +76,38 @@ export function PasswordChangeForm() {
       <FormFeedback state={state} />
       <Button type="submit" disabled={isPending}>
         {isPending ? "Đang lưu…" : "Lưu mật khẩu"}
+      </Button>
+    </form>
+  );
+}
+
+// Deleting is final, so the form spells out what goes and what stays, and asks for a typed word.
+export function DeleteAccountForm() {
+  const [state, action, isPending] = useActionState(deleteOwnAccount, {});
+  return (
+    <form action={action} className="form-card danger-zone" aria-labelledby="delete-account-title">
+      <h2 id="delete-account-title">Xóa tài khoản</h2>
+      <ul className="small">
+        <li>Xóa họ tên, email và cách đăng nhập; bạn rời mọi lớp và không nhận nhắc học nữa.</li>
+        <li>
+          Bài đã nộp, điểm và lịch sử ôn vẫn ở lại trong thống kê của lớp dưới tên “Học viên đã
+          xóa”; không ai liên kết được chúng với bạn.
+        </li>
+        <li>Không khôi phục được. Muốn học tiếp, bạn đăng ký lại và vào lớp bằng mã mới.</li>
+      </ul>
+      <div className="field">
+        <label htmlFor="delete-account-confirm">Gõ {ACCOUNT_DELETION_WORD} để xác nhận</label>
+        <input
+          id="delete-account-confirm"
+          name="confirm"
+          required
+          autoComplete="off"
+          maxLength={20}
+        />
+      </div>
+      <FormFeedback state={state} />
+      <Button type="submit" className="button-danger" disabled={isPending}>
+        {isPending ? "Đang xóa…" : "Xóa tài khoản vĩnh viễn"}
       </Button>
     </form>
   );

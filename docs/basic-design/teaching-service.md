@@ -308,6 +308,16 @@ Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
 4. **Tiếng Trung.** Đề, đáp án và câu trả lời mang thẻ ngôn ngữ đúng (không còn `ja`); ô pinyin nhận số thanh (`ni3 hao3` → `nǐ hǎo`, `v` → `ü`). Chấm điểm không đổi.
 5. **Buổi dạy online.** Đầu trang lớp có khối Buổi dạy online; Nội dung lớp có Trình chiếu/Đọc bài theo phiên bản lớp; slide mở từ lớp ghi được buổi dạy ngay trên thanh trình chiếu.
 
+## Học viên tự xóa tài khoản — 10/11/2026
+
+Người dùng chọn **ẩn danh hóa** thay vì xóa hẳn: thống kê lớp của giáo viên không bị lệch, còn người học không còn bị nhận ra.
+
+- **Ở đâu:** trang Tài khoản, mục **Xóa tài khoản**, chỉ với tài khoản học viên. Trang liệt kê những gì bị xóa, những gì ở lại, nói rõ không khôi phục được và đòi gõ **XÓA** (không phân biệt hoa thường hay dấu). Xong thì đăng xuất và mở trang **Đã xóa tài khoản**.
+- **Bị xóa:** họ tên (thành "Học viên đã xóa"), email, mật khẩu và mọi cách đăng nhập (xóa mềm của Supabase Auth: dòng auth giữ ID nhưng email, mã định danh và hồ sơ bị thay bằng chuỗi băm hoặc để trống), cài đặt nhắc học, nhật ký email đã gửi, lượt thử mã lớp, lịch sử học nhập từ hệ thống cũ (có tên và email), lời mời chia sẻ bài và hồ sơ đăng ký dạy chưa được duyệt. Học viên rời mọi lớp.
+- **Ở lại, không còn gắn với người:** bài đã nộp, câu trả lời, điểm, lịch sử ôn thẻ và điểm danh. Đây là dữ liệu bất biến mà báo cáo lớp dựa vào; danh sách lớp không còn hiện người đó, báo cáo bài và câu sai nhiều vẫn tính các lần nộp cũ.
+- **Không tự xóa được:** tài khoản giáo viên, quản trị viên và giáo viên đã tạm dừng còn bài học hay lớp; trang Tài khoản của giáo viên giải thích cần liên hệ quản trị viên.
+- Chi tiết: migration `20261110111047_learner_account_deletion.sql` (`anonymize_learner`, cột `profiles.deleted_at`, `class_roster` không trả email của người đã xóa), `lib/server/account-deletion.ts` và action `deleteOwnAccount` (`app/actions/auth.ts`). Nếu bước xóa đăng nhập lỗi sau khi database đã ẩn danh, lần sau người đó đăng nhập `getCurrentAccount` hoàn tất bước này và coi như đã đăng xuất. Kiểm chứng: `tests/learner-account-deletion-migration.test.ts`, `e2e-supabase/account-deletion.spec.ts`.
+
 ## Ma trận quyền sản phẩm và vòng đời
 
 | Người dùng | Học liệu | Lớp và kết quả |

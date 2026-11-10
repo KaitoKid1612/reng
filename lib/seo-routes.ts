@@ -19,6 +19,7 @@ export const PRIVATE_PATHS = [
   "/forgot-password",
   "/reset-password",
   "/verify-email",
+  "/account-deleted",
   "/lessons/*/slide",
   "/lessons/*/presenter",
 ] as const;
