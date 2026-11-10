@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { canonicalAudio } from "@/lib/audio-config";
 import { draftContentSchema, draftMetadataSchema } from "@/lib/lesson-draft";
 import { applyContentAudio, planContentAudio } from "@/lib/lesson-audio";
 
@@ -13,6 +14,23 @@ const listeningSetSchema = draftMetadataSchema.extend({
   id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
   // The voice the recorded audio was made with, so its hashes can be checked again later.
   audioVoice: z.string().optional(),
+  // Dialogues (女：…。男：…。) are read with one voice per speaker label; every label used in a
+  // transcript needs a voice here (lib/listening-dialogue.ts).
+  speakerVoices: z
+    .record(z.string().regex(/^[^\s：]{1,6}$/), z.string())
+    .refine(
+      (voices) =>
+        Object.values(voices).every((voice) => {
+          try {
+            canonicalAudio("", voice);
+            return true;
+          } catch {
+            return false;
+          }
+        }),
+      "Each speaker voice must be an Azure Neural voice or unreal:<voice>.",
+    )
+    .optional(),
   content: draftContentSchema,
 });
 
@@ -31,7 +49,7 @@ export function parseListeningSet(value: unknown): ListeningSet {
 }
 
 export function planListeningAudio(set: ListeningSet, voice = DEFAULT_LISTENING_VOICE) {
-  return planContentAudio(set.id, set.content, voice);
+  return planContentAudio(set.id, set.content, voice, set.speakerVoices);
 }
 
 // The set with the hashes of audio generated with one voice; it records that voice.

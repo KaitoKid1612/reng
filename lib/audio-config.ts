@@ -1,5 +1,10 @@
 import { createHash } from "node:crypto";
 
+export interface AudioSegment {
+  text: string;
+  voice: string;
+}
+
 export interface AudioConfig {
   text: string;
   locale: string;
@@ -8,6 +13,8 @@ export interface AudioConfig {
   pitch: string;
   format: string;
   pipelineVersion: number;
+  /** A dialogue: one segment per turn, each read in its speaker's voice and joined in order. */
+  segments?: AudioSegment[];
 }
 // Japanese lessons and Chinese lessons in simplified (zh-CN) or traditional (zh-TW) script. The
 // locale comes from the voice, so existing Japanese hashes stay the same.
@@ -52,6 +59,31 @@ export function canonicalAudio(text: string, voice = "ja-JP-NanamiNeural"): Audi
     pipelineVersion: 1,
   };
 }
+/**
+ * One audio file for several turns read in different voices. All voices must come from one
+ * service, so the parts share an MP3 format and can be joined.
+ */
+export function canonicalDialogueAudio(segments: readonly AudioSegment[]): AudioConfig {
+  const parts = segments.map((segment) => canonicalAudio(segment.text, segment.voice));
+  const [first] = parts;
+  if (
+    !first ||
+    parts.some((part) => part.format !== first.format || part.locale !== first.locale)
+  ) {
+    throw new Error("A dialogue needs turns read by voices of one service and one language.");
+  }
+  return {
+    text: parts.map((part) => part.text).join("\n"),
+    locale: first.locale,
+    voice: [...new Set(parts.map((part) => part.voice))].join("+"),
+    rate: first.rate,
+    pitch: first.pitch,
+    format: first.format,
+    pipelineVersion: first.pipelineVersion,
+    segments: parts.map((part) => ({ text: part.text, voice: part.voice })),
+  };
+}
+
 export function audioHash(config: AudioConfig): string {
   const canonical = {
     text: config.text,
@@ -61,6 +93,8 @@ export function audioHash(config: AudioConfig): string {
     pitch: config.pitch,
     format: config.format,
     pipelineVersion: config.pipelineVersion,
+    // Single-voice audio keeps the hash it had before dialogues existed.
+    ...(config.segments ? { segments: config.segments } : {}),
   };
   return createHash("sha256").update(JSON.stringify(canonical)).digest("hex").slice(0, 32);
 }

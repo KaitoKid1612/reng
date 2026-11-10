@@ -15,7 +15,7 @@ import {
   UNREAL_JAPANESE_VOICES,
   unrealVoiceId,
 } from "../lib/audio-config";
-import { generateAudioAssets } from "../lib/audio-generation";
+import { generateAudioAssets, synthesizeAsset } from "../lib/audio-generation";
 import { synthesizeSpeech } from "../lib/azure-speech";
 import { synthesizeUnrealSpeech } from "../lib/unreal-speech";
 import {
@@ -208,10 +208,20 @@ async function main() {
       "Without --sync-db the new hashes are not registered and publishing will reject them.",
     );
   }
-  const unrealKey = isUnrealVoice ? required("UNREAL_SPEECH_API_KEY") : "";
-  const key = isUnrealVoice ? "" : required("AZURE_SPEECH_KEY");
-  const region = isUnrealVoice ? "" : required("AZURE_SPEECH_REGION");
-  if (!isUnrealVoice && !/^[a-z0-9-]+$/.test(region)) {
+  // A dialogue's speakers may use other voices than --voice, so the keys follow the plan.
+  const planVoices = new Set(
+    plan.flatMap((asset) =>
+      asset.config.segments
+        ? asset.config.segments.map((segment) => segment.voice)
+        : [asset.config.voice],
+    ),
+  );
+  const needsUnreal = [...planVoices].some((planVoice) => unrealVoiceId(planVoice));
+  const needsAzure = [...planVoices].some((planVoice) => !unrealVoiceId(planVoice));
+  const unrealKey = needsUnreal ? required("UNREAL_SPEECH_API_KEY") : "";
+  const key = needsAzure ? required("AZURE_SPEECH_KEY") : "";
+  const region = needsAzure ? required("AZURE_SPEECH_REGION") : "";
+  if (needsAzure && !/^[a-z0-9-]+$/.test(region)) {
     throw new Error("Azure region must be a region code, not a URL.");
   }
   const bucket = cloud ? required("R2_BUCKET") : "";
@@ -317,9 +327,11 @@ async function main() {
         },
       },
       synthesize: (config) =>
-        unrealVoiceId(config.voice)
-          ? synthesizeUnrealSpeech(config, { key: unrealKey })
-          : synthesizeSpeech(config, { region, key }),
+        synthesizeAsset(config, (part) =>
+          unrealVoiceId(part.voice)
+            ? synthesizeUnrealSpeech(part, { key: unrealKey })
+            : synthesizeSpeech(part, { region, key }),
+        ),
       async syncMetadata(asset) {
         if (!db) {
           return;

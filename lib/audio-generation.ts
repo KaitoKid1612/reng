@@ -1,3 +1,6 @@
+import { canonicalAudio } from "@/lib/audio-config";
+import { joinMp3 } from "@/lib/audio-mp3";
+
 import type { AudioConfig } from "@/lib/audio-config";
 
 export interface PlannedAudioAsset {
@@ -52,4 +55,22 @@ export async function generateAudioAssets(options: AudioGenerationOptions) {
   }
 
   return { manifest, createdCount };
+}
+
+/**
+ * Synthesises one asset: a dialogue turn by turn in each speaker's voice, joined into one MP3;
+ * anything else in one request.
+ */
+export async function synthesizeAsset(
+  config: AudioConfig,
+  synthesizeOne: (config: AudioConfig) => Promise<Uint8Array>,
+): Promise<Uint8Array> {
+  if (!config.segments) {
+    return synthesizeOne(config);
+  }
+  const parts: Uint8Array[] = [];
+  for (const segment of config.segments) {
+    parts.push(await synthesizeOne(canonicalAudio(segment.text, segment.voice)));
+  }
+  return joinMp3(parts);
 }

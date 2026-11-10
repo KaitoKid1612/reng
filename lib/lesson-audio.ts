@@ -1,6 +1,7 @@
-import { audioHash, canonicalAudio } from "@/lib/audio-config";
+import { audioHash, canonicalAudio, canonicalDialogueAudio } from "@/lib/audio-config";
 import { toSpeechText } from "@/lib/japanese-text";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
+import { splitSpeakerTurns } from "@/lib/listening-dialogue";
 
 import type { PlannedAudioAsset } from "@/lib/audio-generation";
 import type { DraftContent } from "@/lib/lesson-draft";
@@ -8,8 +9,37 @@ import type { LessonDraft } from "@/lib/lesson-schema";
 
 type AudioContent = Pick<DraftContent, "vocab" | "grammar" | "questions">;
 
+/** The voice of each speaker label in a listening set's dialogues, such as 男 or 女. */
+export type SpeakerVoices = Readonly<Record<string, string>>;
+
 function planned(itemId: string, text: string, voice: string): PlannedAudioAsset {
   const config = canonicalAudio(text, voice);
+  return { itemId, hash: audioHash(config), config };
+}
+
+// A labelled transcript is read turn by turn in each speaker's voice when the set names voices;
+// otherwise, or without labels, one voice reads it as before.
+function plannedTranscript(
+  itemId: string,
+  transcript: string,
+  voice: string,
+  speakerVoices: SpeakerVoices | undefined,
+): PlannedAudioAsset {
+  const turns = speakerVoices ? splitSpeakerTurns(transcript) : null;
+  if (!speakerVoices || !turns) {
+    return planned(itemId, toSpeechText(transcript), voice);
+  }
+  const config = canonicalDialogueAudio(
+    turns.map((turn) => {
+      const speakerVoice = speakerVoices[turn.speaker];
+      if (!speakerVoice) {
+        throw new Error(
+          `${itemId}: no voice for speaker ${turn.speaker}; add it to speakerVoices.`,
+        );
+      }
+      return { text: toSpeechText(turn.text), voice: speakerVoice };
+    }),
+  );
   return { itemId, hash: audioHash(config), config };
 }
 
@@ -18,6 +48,7 @@ export function planContentAudio(
   lessonId: string,
   content: AudioContent,
   voice: string,
+  speakerVoices?: SpeakerVoices,
 ): PlannedAudioAsset[] {
   // Furigana is read as its reading and 〜 is skipped; plain text keeps its existing hash.
   return [
@@ -33,7 +64,14 @@ export function planContentAudio(
     ),
     ...content.questions.flatMap((question) =>
       (question.type === "listen" || question.type === "dictation") && question.transcript.trim()
-        ? [planned(`${lessonId}:question:${question.id}`, toSpeechText(question.transcript), voice)]
+        ? [
+            plannedTranscript(
+              `${lessonId}:question:${question.id}`,
+              question.transcript,
+              voice,
+              speakerVoices,
+            ),
+          ]
         : [],
     ),
   ];
