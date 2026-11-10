@@ -2,7 +2,12 @@ import { z } from "zod";
 
 import { INPUT_MODES, MAX_RECORDED_LISTENS } from "@/lib/assignment";
 import { createUniqueId } from "@/lib/item-ids";
-import { hasBrokenFurigana, listFuriganaMarks, toPlainJapanese } from "@/lib/japanese-text";
+import {
+  containsKanji,
+  hasBrokenFurigana,
+  listFuriganaMarks,
+  toPlainJapanese,
+} from "@/lib/japanese-text";
 import { GRADING_PROFILES } from "@/lib/language-profile";
 import {
   lessonContentSchema,
@@ -369,7 +374,6 @@ export interface PublishProblem {
 }
 
 const blank = (value: string | undefined) => !value || !value.trim();
-const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
 
 function isAllowedMedia(source: string) {
   if (source.startsWith("/") && !source.startsWith("//") && !source.includes("\\")) {

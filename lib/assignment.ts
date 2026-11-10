@@ -7,6 +7,7 @@ import {
   parseTextAnswer,
   parseTokenOrder,
 } from "@/lib/grading/raw-answer";
+import { containsKanji } from "@/lib/japanese-text";
 import { questionSchema } from "@/lib/lesson-schema";
 import {
   MAX_ORDER_PIECE_LENGTH,
@@ -71,8 +72,6 @@ export function correctChoiceIndexes(question: AssignableQuestion): number[] | n
   }
   return null;
 }
-
-const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
 
 // Every token belongs in the sentence, so one arrangement is the whole answer.
 function isTokenPermutation(tokens: readonly { id: string }[], answer: readonly string[]) {

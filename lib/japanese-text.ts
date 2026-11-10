@@ -6,6 +6,8 @@ const JAPANESE_RUN =
 // 〜 marks where a word attaches (〜にん); it is never read aloud.
 const PLACEHOLDER = /[〜～]/g;
 
+export const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
+
 export interface JapaneseSegment {
   text: string;
   reading?: string;
