@@ -1,38 +1,36 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
+import { ClassAssignmentList } from "@/components/teach/class-assignment-list";
+import { ClassLessonList } from "@/components/teach/class-lesson-list";
 import { ClassScheduleForm } from "@/components/teach/class-schedule-form";
 import { ClassSessionForm } from "@/components/teach/class-session-form";
 import { ClassSessionList } from "@/components/teach/class-session-list";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
-import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
+import { ClassStatTiles } from "@/components/teach/class-stat-tiles";
+import { ClassStudentTable } from "@/components/teach/class-student-table";
 import { CopyMessageButton } from "@/components/teach/copy-message-button";
 import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
-import { RemoveClassLessonButton } from "@/components/teach/remove-class-lesson-button";
 import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeachingPanel } from "@/components/teach/teaching-panel";
 import { buttonVariants } from "@/components/ui/button";
 import { classQuestionLang } from "@/lib/assignment";
 import { buildAssignmentMessage } from "@/lib/assignment-message";
-import { LEARNER_LABELS } from "@/lib/class-report";
-import { parseSessionPrefill, slidePresenterPath } from "@/lib/class-sessions";
-import { toVietnamDate } from "@/lib/daily-practice";
-import { formatDecimal, formatPercent } from "@/lib/grading/grade";
-import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { describeUpcomingSession } from "@/lib/class-schedule";
+import { parseSessionPrefill } from "@/lib/class-sessions";
+import { toVietnamDate } from "@/lib/daily-practice";
+import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { listClassSessions } from "@/lib/server/class-sessions";
 import { findDailyPracticeSource } from "@/lib/server/daily-practice";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getClassReport, HARD_QUESTION_ASSIGNMENTS } from "@/lib/server/reports";
 import { absoluteUrl } from "@/lib/site";
-import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 
-import type { AssignmentResult, LearnerLabel } from "@/lib/class-report";
+import type { ClassReportAssignment } from "@/lib/server/reports";
 import type { Metadata } from "next";
 
 // Request-scoped, so the tab title and the page share one read of the report.
@@ -59,105 +57,6 @@ interface ClassReportPageProps {
   searchParams: Promise<{ lesson?: string; slide?: string; assigned?: string }>;
 }
 
-const LABEL_TONES: Record<LearnerLabel, string> = {
-  abandoned: "status-wrong",
-  failing: "status-wrong",
-  weak_listening: "status-attention",
-  passing: "status-correct",
-  no_data: "status-neutral",
-};
-
-interface AssignmentResultLineProps {
-  result: AssignmentResult;
-}
-
-// Current members only, latest attempt each, so it can differ from the raw submission count.
-function AssignmentResultLine({ result }: AssignmentResultLineProps) {
-  const submitted = `${result.submittedCount}/${result.assignedCount} học viên đã nộp`;
-  if (result.averagePercent === null) {
-    return <p className="item-meta">Chưa có điểm · {submitted}</p>;
-  }
-  return (
-    <div className="score-meter-row">
-      <span className="score-meter" aria-hidden="true">
-        <span style={{ width: `${result.averagePercent}%` }} />
-      </span>
-      <span className="item-meta">
-        Điểm TB {formatPercent(result.averagePercent)} · {submitted}
-      </span>
-    </div>
-  );
-}
-
-type ReportAssignment = Awaited<ReturnType<typeof getClassReport>>["assignments"][number];
-
-// A daily set arrives every morning; the newest stay in view and older ones fold away.
-const RECENT_ASSIGNMENTS = 5;
-
-interface AssignmentItemProps {
-  classId: string;
-  assignment: ReportAssignment;
-  /** The class chat message; null for a self-study class, which has no one to tell. */
-  message: string | null;
-}
-
-interface MissingLearnersProps {
-  classId: string;
-  learners: ReportAssignment["missing"];
-}
-
-// A few names are enough to message the learners; the rest are counted.
-const MISSING_NAMES = 5;
-
-function MissingLearners({ classId, learners }: MissingLearnersProps) {
-  const shown = learners.slice(0, MISSING_NAMES);
-  return (
-    <p className="small missing-learners">
-      Chưa nộp:{" "}
-      {shown.map((learner, index) => (
-        <span key={learner.userId}>
-          {index > 0 && ", "}
-          <Link href={`/teach/classes/${classId}/students/${learner.userId}`}>{learner.name}</Link>
-        </span>
-      ))}
-      {learners.length > shown.length && ` và ${learners.length - shown.length} học viên khác`}
-    </p>
-  );
-}
-
-function AssignmentItem({ classId, assignment, message }: AssignmentItemProps) {
-  return (
-    <li>
-      <div>
-        <h3>{assignment.title}</h3>
-        <p className="item-meta">
-          {describeAssignmentKind(assignment)}, {describeDue(assignment.dueAt)},{" "}
-          {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
-          {assignment.status === "closed" ? ", đã đóng" : ""}
-        </p>
-        <p className="small">
-          <Link href={`/teach/assignments/${assignment.id}`}>Xem câu hỏi, sửa lỗi hiển thị</Link>
-        </p>
-        {message && assignment.status === "published" && (
-          <CopyMessageButton message={message} isCompact />
-        )}
-        {assignment.result && assignment.result.assignedCount > 0 && (
-          <AssignmentResultLine result={assignment.result} />
-        )}
-        {assignment.missing.length > 0 && (
-          <MissingLearners classId={classId} learners={assignment.missing} />
-        )}
-      </div>
-      {assignment.status === "published" && (
-        <CloseAssignmentButton
-          assignmentId={assignment.id}
-          openAttemptCount={assignment.openAttemptCount}
-        />
-      )}
-    </li>
-  );
-}
-
 export default async function ClassReportPage({ params, searchParams }: ClassReportPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/classes/${id}`);
@@ -170,7 +69,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
     report.lessons.map((lesson) => lesson.lessonId),
   );
   const justAssigned = report.assignments.find((assignment) => assignment.id === query.assigned);
-  const messageFor = (assignment: ReportAssignment) =>
+  const messageFor = (assignment: ClassReportAssignment) =>
     classRow.self_study
       ? null
       : buildAssignmentMessage({
@@ -183,6 +82,10 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           exam: assignment.exam,
         });
   const justAssignedMessage = justAssigned ? messageFor(justAssigned) : null;
+  const assignmentItems = report.assignments.map((assignment) => ({
+    assignment,
+    message: messageFor(assignment),
+  }));
   // The source lookup reads question lists, so it only runs while daily practice is on.
   const [sessions, dailySource, schedule] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
@@ -296,89 +199,14 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           nextSession={nextSessionText}
         />
       )}
-      <div className="stat-tiles">
-        <div className="stat-tile">
-          <strong>{week.percent === null ? "—" : formatPercent(week.percent)}</strong>
-          <span>nộp bài tuần này</span>
-          <span className="stat-tile-detail">
-            {week.expectedCount
-              ? `${week.submittedCount}/${week.expectedCount} bài đến hạn từ thứ Hai`
-              : "Chưa có bài đến hạn tuần này"}
-          </span>
-          <span className="stat-tile-detail">Tổng {summary.submittedCount} bài đã nộp</span>
-        </div>
-        <div className="stat-tile">
-          <strong>
-            {summary.averagePercent === null ? "—" : formatPercent(summary.averagePercent)}
-          </strong>
-          <span>điểm trung bình</span>
-        </div>
-        <div className="stat-tile">
-          <strong>{summary.passingCount}</strong>
-          <span>học viên đạt</span>
-        </div>
-        <div className="stat-tile">
-          <strong>{summary.attentionCount}</strong>
-          <span>cần chú ý</span>
-        </div>
-      </div>
+      <ClassStatTiles week={week} summary={summary} />
       <section className="section-block" aria-labelledby="students-title">
         <h2 id="students-title">Học viên</h2>
-        {report.reports.length ? (
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th scope="col">Học viên</th>
-                <th scope="col" className="numeric">
-                  Đã nộp
-                </th>
-                <th scope="col" className="numeric">
-                  Điểm TB
-                </th>
-                <th scope="col" className="numeric">
-                  Nghe lại TB
-                </th>
-                <th scope="col">Học gần nhất</th>
-                <th scope="col">Nhãn</th>
-              </tr>
-            </thead>
-            <tbody>
-              {report.reports.map((row) => (
-                <tr key={row.member.userId}>
-                  <td>
-                    <Link href={`/teach/classes/${classRow.id}/students/${row.member.userId}`}>
-                      {row.member.fullName || row.member.email}
-                    </Link>
-                  </td>
-                  <td className="numeric" data-label="Đã nộp">
-                    {row.submittedCount}/{row.assignedCount}
-                  </td>
-                  <td className="numeric" data-label="Điểm TB">
-                    {row.averagePercent === null ? "—" : formatPercent(row.averagePercent)}
-                  </td>
-                  <td className="numeric" data-label="Nghe lại TB">
-                    {row.averageListens === null ? "—" : formatDecimal(row.averageListens)}
-                  </td>
-                  <td data-label="Học gần nhất">
-                    {row.lastStudyDay ? formatStudyDay(row.lastStudyDay) : "—"}
-                  </td>
-                  <td>
-                    <span className={`status-badge ${LABEL_TONES[row.label]}`}>
-                      {LEARNER_LABELS[row.label]}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>Chưa có học viên. Gửi link mời hoặc mã lớp ở đầu trang để học viên tự vào lớp.</p>
-        )}
-        {report.formerMemberCount > 0 && (
-          <p className="small muted">
-            {report.formerMemberCount} học viên đã rời lớp không hiện ở đây.
-          </p>
-        )}
+        <ClassStudentTable
+          classId={classRow.id}
+          reports={report.reports}
+          formerMemberCount={report.formerMemberCount}
+        />
       </section>
       <section className="section-block" aria-labelledby="hard-questions">
         <h2 id="hard-questions">Câu cả lớp sai nhiều</h2>
@@ -476,43 +304,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             {justAssignedMessage && <CopyMessageButton message={justAssignedMessage} />}
           </div>
         )}
-        {report.assignments.length ? (
-          <>
-            <ul className="item-list">
-              {report.assignments.slice(0, RECENT_ASSIGNMENTS).map((assignment) => (
-                <AssignmentItem
-                  key={assignment.id}
-                  classId={classRow.id}
-                  assignment={assignment}
-                  message={messageFor(assignment)}
-                />
-              ))}
-            </ul>
-            {report.assignments.length > RECENT_ASSIGNMENTS && (
-              <details className="older-assignments">
-                <summary>Bài cũ hơn ({report.assignments.length - RECENT_ASSIGNMENTS})</summary>
-                <ul className="item-list">
-                  {report.assignments.slice(RECENT_ASSIGNMENTS).map((assignment) => (
-                    <AssignmentItem
-                      key={assignment.id}
-                      classId={classRow.id}
-                      assignment={assignment}
-                      message={messageFor(assignment)}
-                    />
-                  ))}
-                </ul>
-              </details>
-            )}
-          </>
-        ) : (
-          <p>
-            Chưa có bài tập nào.{" "}
-            <Link href={`/teach/classes/${classRow.id}/assign#new-assignment-title`}>
-              Giao bài đầu tiên
-            </Link>
-            .
-          </p>
-        )}
+        <ClassAssignmentList classId={classRow.id} items={assignmentItems} />
       </section>
       <section className="section-block" aria-labelledby="class-schedule">
         <h2 id="class-schedule">Lịch học</h2>
@@ -557,40 +349,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             Thêm bài hoặc đổi phiên bản, lịch mở
           </Link>
         </p>
-        {report.lessons.length ? (
-          <ul className="item-list">
-            {report.lessons.map((lesson) => (
-              <li key={lesson.lessonId}>
-                <div>
-                  <span>
-                    {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
-                  </span>
-                  <p className="item-meta">Mở từ {formatStudyDateTime(lesson.availableAt)}</p>
-                </div>
-                {/* The class's own version, which can differ from the newest published one. */}
-                <div className="button-row">
-                  <Link
-                    href={slidePresenterPath(lesson.lessonId, lesson.versionId, 1, classRow.id)}
-                  >
-                    Trình chiếu
-                  </Link>
-                  <Link href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}`}>
-                    Đọc bài
-                  </Link>
-                  <RemoveClassLessonButton
-                    classId={classRow.id}
-                    lessonId={lesson.lessonId}
-                    title={lesson.title}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="muted">
-            Chưa có bài học nào trong lớp; học viên chỉ thấy bài sau khi bạn thêm bài vào lớp.
-          </p>
-        )}
+        <ClassLessonList classId={classRow.id} lessons={report.lessons} />
       </section>
       {hasLearners && joinCodeControls}
       <section className="section-block" aria-labelledby="class-settings">

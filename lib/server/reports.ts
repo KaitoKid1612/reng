@@ -247,6 +247,10 @@ export async function getClassReport(teacherId: string, classId: string, now: Da
   };
 }
 
+export type ClassReport = Awaited<ReturnType<typeof getClassReport>>;
+export type ClassReportAssignment = ClassReport["assignments"][number];
+export type ClassReportLesson = ClassReport["lessons"][number];
+
 export async function getClassCsv(teacherId: string, classId: string, now: Date) {
   const report = await getClassReport(teacherId, classId, now);
   return {
