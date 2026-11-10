@@ -9,6 +9,10 @@ import type { DailyQuestionUse } from "@/lib/daily-practice";
 // as an estimate only; the official score uses item statistics this app does not have.
 
 export const JLPT_LEVELS = ["N5", "N4"] as const;
+
+// The real test plays each listening clip once, so a mock exam does too: no pause, rewind or
+// slower speed (see ListeningPlayer's isSinglePass).
+export const JLPT_EXAM_MAX_LISTENS = 1;
 export type JlptLevel = (typeof JLPT_LEVELS)[number];
 
 export const JLPT_SECTIONS = ["vocabulary", "grammarReading", "listening"] as const;

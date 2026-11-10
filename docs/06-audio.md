@@ -46,7 +46,7 @@ Cần worker/queue và metadata review mới trước khi có nút tạo audio t
 
 ## Player và bài nghe
 
-Phát/dừng, đổi câu/rời trang hủy nguồn cũ; lỗi có thử lại và timeout. Không tự phát khi mở trang. Bài nghe có lùi 5 giây và tốc độ 0.75x với preservesPitch; lỗi phát không tăng listen_count. Chỉ đếm lượt thành công, không coi dữ liệu client là bằng chứng chống gian lận.
+Phát/dừng, đổi câu/rời trang hủy nguồn cũ; lỗi có thử lại và timeout. Không tự phát khi mở trang. Bài nghe có lùi 5 giây và tốc độ 0.75x với preservesPitch (trừ đề thi thử JLPT: phát một lần, không dừng, lùi hay nghe chậm, từ 10/11/2026); lỗi phát không tăng listen_count. Chỉ đếm lượt thành công, không coi dữ liệu client là bằng chứng chống gian lận.
 
 Transcript/đáp án theo practice/test và feedback_policy ở [07](07-exercises-and-grading.md). Giới hạn nghe trên file đã tải không ngăn phát ngoài hệ thống; test nghe chưa được hỗ trợ trong bản hiện tại. Không tuyên bố chấm phát âm, waveform hoặc ghi âm đã có; các phần đó ngoài MVP.
 

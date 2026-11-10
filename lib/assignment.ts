@@ -433,14 +433,20 @@ export interface AttemptItem {
   answerKey: AssignableQuestion | null;
 }
 
+// listenLimit caps how often each clip plays (a JLPT mock exam plays it once); a question's own
+// lower limit still applies.
 export function toAttemptItems(
   questions: readonly AssignableQuestion[],
   mode: AssignmentMode,
+  listenLimit: number | null = null,
 ): AttemptItem[] {
-  return questions.map((question) => ({
-    view: toQuestionView(question),
-    answerKey: mode === "practice" ? question : null,
-  }));
+  return questions.map((question) => {
+    const view = toQuestionView(question);
+    if (listenLimit !== null && (view.type === "listen" || view.type === "dictation")) {
+      view.maxListens = Math.min(view.maxListens ?? listenLimit, listenLimit);
+    }
+    return { view, answerKey: mode === "practice" ? question : null };
+  });
 }
 
 export interface FeedbackRule {

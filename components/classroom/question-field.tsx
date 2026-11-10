@@ -20,6 +20,8 @@ interface QuestionFieldProps {
   onAnswerChange: (value: RawAnswer) => void;
   listenCount?: number;
   onListen?: () => void;
+  // A JLPT mock exam: each clip plays once, with no pause, rewind or slow speed.
+  isSinglePassListening?: boolean;
   // Typed answers move on with Enter; choices keep the browser's arrow-key behaviour.
   onEnter?: () => void;
   // The right options, once a practice answer has been checked; the list then marks them and a
@@ -64,6 +66,7 @@ export function QuestionField({
   onAnswerChange,
   listenCount,
   onListen,
+  isSinglePassListening = false,
   onEnter,
   revealedChoices,
 }: QuestionFieldProps) {
@@ -91,6 +94,7 @@ export function QuestionField({
         maxListens={view.maxListens}
         listenCount={listenCount ?? localListens}
         onListen={onListen ?? (() => setLocalListens((count) => count + 1))}
+        isSinglePass={isSinglePassListening}
       />
     ) : null;
   const choices = describeChoices(view);

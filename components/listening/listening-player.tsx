@@ -11,6 +11,8 @@ interface ListeningPlayerProps {
   maxListens: number | null;
   listenCount: number;
   onListen: () => void;
+  // A JLPT mock exam plays each clip once straight through, as the real test does.
+  isSinglePass?: boolean;
 }
 
 type PlayerState = "idle" | "loading" | "playing" | "paused" | "error";
@@ -28,12 +30,14 @@ const STATE_TEXT: Record<PlayerState, string> = {
 };
 
 // docs/06: no seek bar, a 5-second rewind and a pitch-preserving 0.75x speed. A listen is
-// counted only when playback actually starts from the beginning.
+// counted only when playback actually starts from the beginning. A single-pass player has none of
+// the controls: once started, a clip plays to the end (a pause by the device can be resumed).
 export function ListeningPlayer({
   audio,
   maxListens,
   listenCount,
   onListen,
+  isSinglePass = false,
 }: ListeningPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fromStartRef = useRef(true);
@@ -107,7 +111,9 @@ export function ListeningPlayer({
     }
     const current = audioRef.current;
     if (current && state === "playing") {
-      current.pause();
+      if (!isSinglePass) {
+        current.pause();
+      }
       return;
     }
     if (fromStartRef.current && isLimitReached) {
@@ -140,34 +146,48 @@ export function ListeningPlayer({
     return <p className="small muted">Câu này chưa có audio.</p>;
   }
 
-  const playLabel = state === "playing" ? "Tạm dừng" : "Nghe";
+  const canPause = !isSinglePass && state === "playing";
+  let playLabel = "Nghe";
+  if (state === "playing") {
+    playLabel = isSinglePass ? "Đang phát" : "Tạm dừng";
+  } else if (state === "paused" && isSinglePass) {
+    playLabel = "Phát tiếp";
+  }
   return (
     <div className="listening-player">
       <div className="button-row">
         <Button
           variant="outline"
           onClick={handlePlay}
-          disabled={state !== "playing" && state !== "paused" && isLimitReached}
+          disabled={
+            (isSinglePass && (state === "playing" || state === "loading")) ||
+            (state !== "playing" && state !== "paused" && isLimitReached)
+          }
         >
-          {state === "playing" ? (
+          {canPause ? (
             <Pause size={18} aria-hidden="true" />
           ) : (
             <Play size={18} aria-hidden="true" />
           )}
           {playLabel}
         </Button>
-        <Button
-          variant="ghost"
-          onClick={handleRewind}
-          disabled={state !== "playing" && state !== "paused"}
-        >
-          <RotateCcw size={18} aria-hidden="true" />
-          Lùi 5 giây
-        </Button>
-        <Button variant="ghost" aria-pressed={isSlow} onClick={handleSpeed}>
-          Chậm 0,75x
-        </Button>
+        {!isSinglePass && (
+          <>
+            <Button
+              variant="ghost"
+              onClick={handleRewind}
+              disabled={state !== "playing" && state !== "paused"}
+            >
+              <RotateCcw size={18} aria-hidden="true" />
+              Lùi 5 giây
+            </Button>
+            <Button variant="ghost" aria-pressed={isSlow} onClick={handleSpeed}>
+              Chậm 0,75x
+            </Button>
+          </>
+        )}
       </div>
+      {isSinglePass && <p className="small muted">Chỉ phát một lần, như đề thật.</p>}
       <p className="listen-count small muted" data-testid="listen-count">
         Đã nghe {listenCount} lần{maxListens !== null ? ` / tối đa ${maxListens}` : ""}
       </p>

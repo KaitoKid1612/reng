@@ -145,7 +145,9 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
                 một lượt làm.
               </p>
               <p className="small">
-                Nên làm ở nơi yên tĩnh, có tai nghe cho phần nghe hiểu, máy đã sạc pin.
+                Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm: đọc câu
+                hỏi và các lựa chọn trước khi bấm Nghe. Nên làm ở nơi yên tĩnh, có tai nghe, máy đã
+                sạc pin.
               </p>
               {isShortened && minutesToDue !== null && (
                 <p>

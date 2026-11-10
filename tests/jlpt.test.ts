@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
+import { parseAssignableQuestion, toAttemptItems } from "@/lib/assignment";
 import {
   composeJlptExam,
   countJlptSections,
@@ -12,6 +13,7 @@ import {
   formatExamClock,
   isExamTimeUp,
   isHandedInAtTimeLimit,
+  JLPT_EXAM_MAX_LISTENS,
   jlptSectionOf,
   planJlptExam,
 } from "@/lib/jlpt";
@@ -213,4 +215,30 @@ test("a timed attempt is handed in at its limit, or a minute before an earlier d
   assert.equal(formatExamClock(59 * 60 * 1000 + 59_500), "1:00:00");
   assert.equal(formatExamClock(65_000), "1:05");
   assert.equal(formatExamClock(-1000), "0:00");
+});
+
+test("a mock exam plays each clip once; other questions and other assignments are unchanged", async () => {
+  const bank = JSON.parse(
+    await readFile("content/review-banks/n5-daily-with-listening.json", "utf8"),
+  ) as { content: { questions: unknown[] } };
+  const questions = bank.content.questions.map((question) => parseAssignableQuestion(question));
+  const listen = questions.find((question) => question.type === "listen");
+  const dictation = questions.find((question) => question.type === "dictation");
+  const choice = questions.find((question) => question.type === "choice");
+  assert.ok(listen && dictation && choice);
+  const limited = { ...listen, id: "limited", maxListens: 3 };
+  const picked = [listen, dictation, choice, limited];
+  const listensOf = (items: ReturnType<typeof toAttemptItems>) =>
+    items.map((item) => ("maxListens" in item.view ? item.view.maxListens : "none"));
+
+  assert.equal(JLPT_EXAM_MAX_LISTENS, 1);
+  assert.deepEqual(listensOf(toAttemptItems(picked, "test", JLPT_EXAM_MAX_LISTENS)), [
+    1,
+    1,
+    "none",
+    1,
+  ]);
+  assert.deepEqual(listensOf(toAttemptItems(picked, "test")), [null, null, "none", 3]);
+  // The snapshot itself keeps its own setting for the results page and later reports.
+  assert.equal(listen.maxListens, null);
 });

@@ -285,6 +285,7 @@ export function AttemptRunner({
                 onAnswerChange={(value) => handleAnswerChange(item.view.id, value)}
                 listenCount={sync.draft.listens[item.view.id] ?? 0}
                 onListen={() => handleListen(item.view.id)}
+                isSinglePassListening={exam !== null}
                 onEnter={() => handleEnter(index)}
                 revealedChoices={
                   mode === "practice" && answerKey && isChecked

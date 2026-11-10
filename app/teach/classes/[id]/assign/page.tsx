@@ -130,8 +130,8 @@ export default async function AssignPage({ params }: AssignPageProps) {
           <h2 id="jlpt-exam-title">Thi thử JLPT</h2>
           <p className="small muted">
             Reng lấy câu từ ngân hàng ôn của lớp theo ba phần như đề thật (chữ Hán – từ vựng, ngữ
-            pháp – đọc hiểu, nghe hiểu), một lượt làm có giới hạn thời gian; kết quả có điểm từng
-            phần và ước tính đỗ/trượt trên thang 180.
+            pháp – đọc hiểu, nghe hiểu), một lượt làm có giới hạn thời gian, mỗi câu nghe phát một
+            lần; kết quả có điểm từng phần và ước tính đỗ/trượt trên thang 180.
           </p>
           <JlptExamForm
             classId={classRow.id}

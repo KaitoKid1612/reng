@@ -90,8 +90,16 @@ test("a teacher gives a timed N5 mock exam and a learner sees section results", 
   await expect(
     learnerPage.getByText(/Đồng hồ 90 phút bắt đầu ngay khi bạn bấm Bắt đầu thi/),
   ).toBeVisible();
+  await expect(learnerPage.getByText(/mỗi câu nghe chỉ phát một lần/)).toBeVisible();
   await learnerPage.getByRole("button", { name: "Bắt đầu thi", exact: true }).click();
   await expect(learnerPage.getByRole("timer")).toContainText(/Thời gian còn lại 1:(30|29):\d\d/);
+  // Like the real test, each clip plays once straight through: no pause, rewind or slow speed.
+  const players = learnerPage.locator(".listening-player");
+  await expect(players).toHaveCount(20);
+  await expect(players.first().getByTestId("listen-count")).toHaveText("Đã nghe 0 lần / tối đa 1");
+  await expect(
+    learnerPage.locator(".listening-player button", { hasText: /Lùi 5 giây|Chậm 0,75x/ }),
+  ).toHaveCount(0);
   const choice = learnerPage.locator("label.choice-option:visible");
   if (await choice.count()) {
     await choice.first().click();

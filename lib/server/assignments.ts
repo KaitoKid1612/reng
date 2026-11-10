@@ -20,7 +20,7 @@ import {
   toTestQuestions,
 } from "@/lib/assignment";
 import { gradeAttempt } from "@/lib/grading/grade";
-import { isExamTimeUp, jlptSectionOf } from "@/lib/jlpt";
+import { isExamTimeUp, JLPT_EXAM_MAX_LISTENS, jlptSectionOf } from "@/lib/jlpt";
 import { questionSchema } from "@/lib/lesson-schema";
 import { listAssignmentExams } from "@/lib/server/assignment-exams";
 import { getTeacherClass, requireMembership } from "@/lib/server/classes";
@@ -458,7 +458,11 @@ export async function getStudentAssignment(
           startedAt: open.startedAt,
           savedAt: open.savedAt,
           draft: parseStoredDraft(items, open.rawDraft),
-          items: toAttemptItems(items, assignment.mode),
+          items: toAttemptItems(
+            items,
+            assignment.mode,
+            assignment.exam ? JLPT_EXAM_MAX_LISTENS : null,
+          ),
         }
       : null,
     questionCount: items.length,

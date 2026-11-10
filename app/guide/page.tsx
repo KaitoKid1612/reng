@@ -114,7 +114,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Mở Giao bài, bấm Tạo đề thi thử JLPT ở đầu trang (hoặc cuộn tới mục Thi thử JLPT).",
       "Chọn cấp N5 hoặc N4 và bài ở ô Lấy câu từ. Reng ghi trước đề sẽ có bao nhiêu câu mỗi phần (chữ Hán – từ vựng, ngữ pháp – đọc hiểu, nghe hiểu) và báo khi bài có ít câu hơn đề thật; đề sau ưu tiên câu chưa ra ở các đề trước của lớp.",
       "Thời gian làm bài mặc định như đề thật (N5 90 phút, N4 115 phút) và tính riêng cho từng học viên từ lúc bấm Bắt đầu thi. Ô Mở đến là hạn bắt đầu thi; Công bố điểm chọn ngay sau khi nộp hoặc sau hạn để cả lớp xem cùng lúc. Bấm Giao đề thi thử.",
-      "Đề là bài kiểm tra một lượt, không nộp muộn. Kết quả của học viên có điểm từng phần và điểm ước tính trên thang 180.",
+      "Đề là bài kiểm tra một lượt, không nộp muộn. Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm. Kết quả của học viên có điểm từng phần và điểm ước tính trên thang 180.",
     ],
     note: "Điểm thang 180 là ước tính từ tỉ lệ đúng; điểm JLPT thật tính theo độ khó từng câu nên có thể khác.",
   },
@@ -194,7 +194,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Thi thử JLPT",
     steps: [
       "Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài. Trang đề cho biết còn bao nhiêu ngày tới kỳ thi JLPT tiếp theo.",
-      "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe.",
+      "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe. Mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm, nên đọc câu hỏi và các lựa chọn trước khi bấm Nghe.",
       "Hết giờ, trang tự nộp. Nếu bạn đã đóng trang, Reng nộp các câu đã lưu khi bạn mở lại đề hoặc vào khoảng 6 giờ sáng hôm sau.",
       "Trang kết quả có số câu đúng từng phần và điểm ước tính trên thang 180: đỗ cần tổng từ 80 (N5) hoặc 90 (N4), phần ngôn ngữ và đọc hiểu từ 38/120, nghe hiểu từ 19/60.",
     ],
