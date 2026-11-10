@@ -1,0 +1,271 @@
+/* Teacher area: class report, daily practice, attendance, chat message, join code, teaching
+   panel, weekly timetable and the start steps. */
+
+/* Class report: frequently missed questions, one collapsible group per assignment. */
+.hard-question-group {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+/* A details card whose summary is a title line with a count on the right. */
+.collapse-card > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.collapse-card > summary::-webkit-details-marker {
+  display: none;
+}
+/* A flex summary loses the built-in disclosure triangle, so the title carries its own. */
+.collapse-card > summary > span:first-child::before {
+  content: "▸ ";
+  color: var(--muted);
+}
+.collapse-card[open] > summary > span:first-child::before {
+  content: "▾ ";
+}
+.collapse-card > summary > .item-meta {
+  flex: none;
+  white-space: nowrap;
+}
+.student-assignment {
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.student-assignment-body {
+  padding: 0 16px 8px;
+}
+.student-assignment-body > .item-meta {
+  margin-bottom: 12px;
+}
+.student-assignment .result-row {
+  background: var(--background);
+}
+.collapse-card > summary:focus-visible,
+.older-assignments > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.hard-question-list {
+  margin: 0;
+  padding: 0 16px 8px;
+  list-style: none;
+}
+.hard-question-list > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.hard-question-count {
+  color: var(--wrong);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.hard-question-list > li > span:first-child {
+  font-size: 15px;
+}
+.hard-question-more > summary,
+.help-disclosure > summary {
+  width: fit-content;
+  color: var(--primary);
+  cursor: pointer;
+}
+.hard-question-more > summary {
+  padding: 4px 16px 12px;
+  font-size: 15px;
+}
+/* The daily practice source line and warnings sit apart from the intro above and the form below. */
+.daily-practice-status {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+.daily-practice-status > p {
+  margin: 0;
+}
+.help-disclosure {
+  margin-top: 16px;
+}
+.help-disclosure > summary {
+  padding: 8px 0;
+}
+.help-disclosure > ul {
+  display: grid;
+  gap: 6px;
+  list-style: disc;
+  margin: 4px 0 0;
+  padding: 12px 16px 12px 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+}
+.hard-question-more > summary:focus-visible,
+.help-disclosure > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.join-invite-link {
+  overflow-wrap: anywhere;
+}
+/* Attendance under a logged session: the legend is a hint, not a heading. */
+.session-attendance {
+  margin-top: 8px;
+}
+.session-attendance legend {
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+/* The assignment message for the class chat: a copy button, its status and a hand-copy fallback. */
+.copy-message {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  margin-top: 8px;
+}
+.copy-message p {
+  margin: 0;
+}
+/* .link-button resets font, so the list action needs the same size as the links beside it. */
+.copy-message .copy-message-link {
+  font-size: 14px;
+}
+.copy-message-text {
+  width: 100%;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  resize: vertical;
+}
+/* The invite text ends in a paragraph, so the buttons below need their own space. */
+.join-code-actions {
+  margin-top: 16px;
+}
+.older-assignments > summary {
+  width: fit-content;
+  padding: 12px 0;
+  color: var(--primary);
+  cursor: pointer;
+}
+.teaching-panel {
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.teaching-panel > h2 {
+  margin-bottom: 4px;
+}
+.teaching-panel > p {
+  margin: 0;
+}
+.teaching-panel > .button-row {
+  align-items: center;
+  margin: 16px 0 12px;
+}
+@media (max-width: 600px) {
+  .teaching-panel {
+    padding: 20px 16px;
+  }
+}
+/* Weekly timetable rows in the class schedule form. */
+.schedule-slots {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.schedule-slots li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+.schedule-slots .field {
+  margin-bottom: 12px;
+}
+.schedule-slots .button {
+  margin-bottom: 12px;
+}
+.schedule-add {
+  margin: 4px 0 20px;
+}
+@media (max-width: 600px) {
+  .schedule-slots li {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+}
+/* Giảng dạy: the start steps for a new teacher. */
+.start-checklist {
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.start-checklist > h2 {
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+.start-checklist > ol {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.start-checklist li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+.start-checklist .item-meta {
+  margin: 0;
+}
+.start-step-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.start-checklist li[data-done="true"] .start-step-mark {
+  border-color: var(--correct);
+  color: var(--correct);
+}
+.start-checklist li[data-done="true"] > div > span {
+  color: var(--muted);
+}
+.start-step-next {
+  font-weight: 600;
+}
+.lesson-usage-more > summary {
+  padding: 4px 0 12px;
+}

@@ -1,0 +1,66 @@
+/* Colour tokens for the light and dark themes (lib/theme.ts), the light palette slides keep
+   in the dark theme, and Tailwind's theme. */
+
+/* Slides keep the light palette in the dark theme: the class sees them over Meet and on paper
+   the way the teacher made them. */
+:root,
+:root[data-theme="dark"] :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print) {
+  --background: #faf8f3;
+  --surface: #fff;
+  --foreground: #1c1b1a;
+  --primary: #2b4c7e;
+  --primary-soft: #dce6f2;
+  /* Brass of the school bell in the Reng mark. */
+  --brand-bell: #e3a83e;
+  --muted: #625f5a;
+  --border: #e8e4dc;
+  --grid: #d7dce2;
+  --correct: #2e7d53;
+  --wrong: #c0392b;
+  --attention: #8b571f;
+  --radius: 0.375rem;
+  --font-sans: "Be Vietnam Pro", sans-serif;
+  --font-jp: "Noto Sans JP", sans-serif;
+  --font-kana: "Klee One", "Noto Sans JP", sans-serif;
+  /* Device CJK fonts keep simplified and traditional glyph shapes without a large download. */
+  --font-zh-hans:
+    "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  --font-zh-hant:
+    "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color-scheme: light;
+}
+
+/* Dark theme (lib/theme.ts): the same tokens with dark values, so every rule follows. */
+:root[data-theme="dark"] {
+  --background: #151a22;
+  --surface: #202936;
+  --foreground: #f4f1e9;
+  --primary: #a8c9f0;
+  --primary-soft: #304766;
+  --brand-bell: #e8c47a;
+  --muted: #b8c4d2;
+  --border: #3a4553;
+  --grid: #536274;
+  --correct: #83d7a4;
+  --wrong: #ff9a91;
+  --attention: #e8c47a;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+/* Text colour is inherited as computed on <body>, so the slide surfaces set it again from their
+   own light tokens. */
+:root[data-theme="dark"] :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print) {
+  color: var(--foreground);
+}
+:root[data-theme="dark"] .lesson-print {
+  background: var(--background);
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --font-sans: "Be Vietnam Pro", sans-serif;
+}

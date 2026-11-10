@@ -1,0 +1,253 @@
+/* Questions and answers wherever they show: prompts, passages, order pieces, choice marks, long
+   text and the outcome filter pills. */
+
+/* Prompts keep the author's line breaks, so a passage written above its question stays apart. A
+   typed answer's prompt is a <label>, which only keeps its bottom margin as a block. */
+.question-card legend,
+.question-prompt {
+  display: block;
+  font-size: 23px;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.question-passage {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--brand-bell);
+  background: var(--background);
+  font-size: 19px;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.result-passage {
+  margin: 0 0 8px;
+}
+.result-passage > summary {
+  width: fit-content;
+  color: var(--primary);
+  cursor: pointer;
+}
+.result-passage > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.result-passage > p {
+  margin: 8px 0 0;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+/* Sentence building: tapped pieces move between the bank and the answer line. */
+.order-answer,
+.order-bank {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.order-answer {
+  min-height: 60px;
+  padding: 8px 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.order-token {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+/* A class rule would otherwise replace the Japanese font the lang attribute selects. */
+.order-token[lang="ja"] {
+  font-family: var(--font-jp);
+}
+.order-answer .order-token {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.order-token:disabled {
+  cursor: default;
+}
+.order-token:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.question-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.choice-list {
+  display: grid;
+  gap: 8px;
+}
+.question-pick-actions {
+  align-items: center;
+  margin-bottom: 12px;
+}
+.choice-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  min-height: 48px;
+  font-size: 21px;
+}
+.choice-option:has(input:checked) {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.choice-option:has(input:disabled) {
+  cursor: default;
+}
+/* A checked practice answer marks the right options and a wrong pick on the list itself, with an
+   icon as well as colour. The list prefix outranks the selected-option rule above. */
+.choice-list .choice-option[data-result="correct"] {
+  border-color: var(--correct);
+  background: color-mix(in srgb, var(--correct) 10%, var(--surface));
+}
+.choice-list .choice-option[data-result="wrong"] {
+  border-color: var(--wrong);
+  background: color-mix(in srgb, var(--wrong) 8%, var(--surface));
+}
+.choice-mark {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.choice-option[data-result="correct"] .choice-mark {
+  color: var(--correct);
+}
+.choice-option[data-result="wrong"] .choice-mark {
+  color: var(--wrong);
+}
+.answer-input {
+  width: 100%;
+  font-size: 23px !important;
+}
+.attempt-toolbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 -4px 16px rgb(28 27 26 / 8%);
+}
+.save-status {
+  font-size: 14px;
+  color: var(--muted);
+}
+.save-status[data-state="error"],
+.save-status[data-state="conflict"],
+.save-status[data-state="offline"] {
+  color: var(--attention);
+}
+.notice-panel {
+  padding: 16px 20px;
+  background: var(--surface);
+  border-left: 3px solid var(--attention);
+  margin-bottom: 24px;
+}
+.notice-panel > :last-child {
+  margin-bottom: 0;
+}
+.dialog-panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 480px;
+  box-shadow: 0 12px 40px rgb(28 27 26 / 18%);
+}
+.dialog-panel::backdrop {
+  background: rgb(28 27 26 / 35%);
+}
+/* A URL in an explanation or a long typed answer wraps instead of widening the page. */
+.result-row {
+  border-left: 3px solid var(--border);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+}
+.result-row[data-correct="true"] {
+  border-left-color: var(--correct);
+}
+.result-row[data-correct="false"] {
+  border-left-color: var(--wrong);
+}
+.result-row p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.result-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.result-row-prompt {
+  font-size: 17px;
+  white-space: pre-line;
+}
+/* Pills that filter a list, such as answers by outcome; the current one is filled. */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.filter-pills a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.filter-pills a:hover {
+  border-color: var(--primary);
+}
+.filter-pill-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+.filter-pills a[aria-current="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
+}
+.filter-pills a[aria-current="true"] .filter-pill-count {
+  color: inherit;
+}

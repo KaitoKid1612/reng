@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
-import { useAccountSummary } from "@/components/account-summary";
+import { useAccountSummary } from "@/components/use-account-summary";
 import { BrandMark } from "@/components/brand-mark";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SELF_STUDY_PATHS } from "@/lib/self-study";
 
-import type { AccountSummary } from "@/components/account-summary";
+import type { AccountSummary } from "@/components/use-account-summary";
 import type { KeyboardEvent } from "react";
 
 interface NavigationLink {

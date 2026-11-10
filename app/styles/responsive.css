@@ -1,0 +1,149 @@
+/* Phone and tablet overrides for the shell, home, kana and practice styles above, and reduced
+   motion. Later files keep their own media queries next to their rules. */
+
+@media (max-width: 820px) {
+  .header-inner {
+    padding: 16px 24px;
+  }
+  .brand-caption {
+    display: none;
+  }
+  .page-container {
+    padding: 32px 24px 56px;
+  }
+  .home-hero {
+    gap: 32px;
+  }
+  .chart-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .character-detail {
+    grid-column: 1;
+    grid-row: 1;
+    position: static;
+    text-align: left;
+    padding: 20px;
+    display: flow-root;
+  }
+  .detail-square {
+    width: 100px;
+    float: left;
+    margin: 0 20px 12px 0;
+  }
+  .detail-square .kana-font {
+    font-size: 52px;
+  }
+  .character-detail .audio-status {
+    justify-content: flex-start;
+    clear: both;
+  }
+  .character-detail p {
+    margin-bottom: 12px;
+  }
+  .character-tables {
+    grid-row: 2;
+  }
+}
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .brand {
+    gap: 8px;
+    font-size: 20px;
+  }
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+  .site-header nav {
+    gap: 0 18px;
+  }
+  .site-header nav a {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  .page-container {
+    padding: 28px 16px 48px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .page-heading {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 8px;
+    gap: 36px;
+  }
+  .hero-copy h1 {
+    font-size: 38px;
+  }
+  .hero-paper {
+    max-width: 380px;
+    width: 100%;
+    padding: 20px;
+  }
+  .class-steps li {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .class-step-number {
+    font-size: 26px;
+  }
+  .learning-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .learning-columns p {
+    margin-bottom: 0;
+  }
+  .segmented {
+    display: flex;
+  }
+  .segmented button {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .kana-cell .kana-font {
+    font-size: 36px;
+  }
+  .kana-grid-yoon .kana-font {
+    font-size: 40px;
+  }
+  .kana-cell,
+  .kana-empty {
+    aspect-ratio: 0.85;
+  }
+  .cell-romaji {
+    font-size: 12px;
+  }
+  .practice-setup {
+    padding: 24px 20px;
+  }
+  .group-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .site-footer > div {
+    padding: 20px 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

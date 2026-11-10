@@ -7,7 +7,7 @@ Mô tả hệ thống đang chạy trên production thử từ 29/10/2026 (cập
 | Lớp | Đang dùng | Ghi chú |
 |---|---|---|
 | Web | Next.js 16 (App Router), React 19, TypeScript strict | Server Component mặc định; `"use client"` chỉ ở phần cần tương tác hoặc API trình duyệt |
-| Giao diện | Tailwind CSS 4 + token CSS trong `app/globals.css`, component trong repo | Button dùng cva/clsx/tailwind-merge; không cài shadcn/Radix. Font tự phục vụ từ @fontsource |
+| Giao diện | Tailwind CSS 4 + token CSS trong `app/styles/tokens.css` (CSS chia theo khu vực ở `app/styles/`, nạp qua `app/globals.css`), component trong repo | Button dùng cva/clsx/tailwind-merge; không cài shadcn/Radix. Font tự phục vụ từ @fontsource |
 | Nghiệp vụ phía server | Server Actions (`app/actions/`) cho form; Route Handlers (`app/api/`) cho API JSON khi làm bài, ôn tập, cron và webhook | Mọi lối vào đều kiểm tra lại người gọi |
 | Dữ liệu và đăng nhập | Supabase: Postgres, Auth (email/mật khẩu, Google), RLS, hàm RPC | Project `reng` ở Singapore |
 | Hosting | Vercel, hàm ở `sin1` cạnh database | Push `main` là deploy production; cron khai báo trong `vercel.json` |

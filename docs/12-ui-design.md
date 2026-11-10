@@ -58,11 +58,11 @@ Quy tắc dùng: kích thước nhỏ nhất 16px; chừa khoảng trống quanh
 
 ## Màu và khoảng cách
 
-Giữ màu nền `#FAF8F3`, chữ `#1C1B1A`, nền bề mặt `#FFFFFF`, hành động chàm `#2B4C7E`, nền phụ `#DCE6F2`, viền/chữ phụ theo token trong globals.css. Semantic: đúng `#2E7D53`, sai `#C0392B`, cần chú ý `#B87333`. Tương phản từng cặp màu cần đo, không mặc định một hex luôn đạt.
+Giữ màu nền `#FAF8F3`, chữ `#1C1B1A`, nền bề mặt `#FFFFFF`, hành động chàm `#2B4C7E`, nền phụ `#DCE6F2`, viền/chữ phụ theo token trong `app/styles/tokens.css`. Semantic: đúng `#2E7D53`, sai `#C0392B`, cần chú ý `#B87333`. Tương phản từng cặp màu cần đo, không mặc định một hex luôn đạt.
 
 Không dùng màu làm tín hiệu duy nhất: đúng/sai/cần duyệt có chữ/icon phù hợp. Trang thái draft/saved/published/assigned khác nhau, chờ chấm không có màu/nhãn như điểm 0. Màu trợ từ Nhật chỉ thuộc module Nhật; không tô thanh điệu Trung bằng màu nếu chưa có quy tắc chuyên môn.
 
-Giao diện tối (từ 10/11/2026): cùng tên token, giá trị tối khai báo ở `:root[data-theme="dark"]` trong `app/globals.css` (nền `#151A22`, bề mặt `#202936`, chữ `#F4F1E9`, chàm sáng `#A8C9F0`, đúng `#83D7A4`, sai `#FF9A91`). Vì vậy rule mới chỉ dùng token, không viết mã màu. Slide, cửa sổ Presenter, khung xem trước slide và bản in giữ bảng màu sáng ở mọi giao diện, vì lớp xem slide qua Meet và trên giấy như giáo viên soạn. Mỗi lần đổi màu, chạy kiểm tra tương phản (axe) ở cả hai giao diện.
+Giao diện tối (từ 10/11/2026): cùng tên token, giá trị tối khai báo ở `:root[data-theme="dark"]` trong `app/styles/tokens.css` (nền `#151A22`, bề mặt `#202936`, chữ `#F4F1E9`, chàm sáng `#A8C9F0`, đúng `#83D7A4`, sai `#FF9A91`). Vì vậy rule mới chỉ dùng token, không viết mã màu. Slide, cửa sổ Presenter, khung xem trước slide và bản in giữ bảng màu sáng ở mọi giao diện, vì lớp xem slide qua Meet và trên giấy như giáo viên soạn. Mỗi lần đổi màu, chạy kiểm tra tương phản (axe) ở cả hai giao diện.
 
 Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn trạng thái 4 px; dùng token thay hex/radius rải trong component. Bóng dành cho menu/hộp thoại/thanh nổi, nội dung trong luồng dùng viền. Không đổi theme chỉ để khác với mẫu công cụ sinh UI.
 

@@ -1,0 +1,79 @@
+/* Home page: hero, class steps in notebook squares, feature columns. */
+
+/* The home page's class steps: subject-neutral, numbered in notebook squares. */
+.class-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+.class-steps li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+}
+.class-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--grid);
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.class-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.class-steps .class-step-title {
+  color: var(--foreground);
+  font-size: 17px;
+  font-weight: 600;
+}
+.writing-square {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--surface);
+}
+.writing-square::before,
+.writing-square::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
+.writing-square::before {
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  border-top: 1px dashed var(--grid);
+}
+.writing-square::after {
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  border-left: 1px dashed var(--grid);
+}
+.hero-paper > p:last-child {
+  margin: 16px 0 0;
+}
+.home-features {
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.learning-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 28px;
+}
+.learning-columns p {
+  font-size: 15px;
+  color: var(--muted);
+}

@@ -1,0 +1,90 @@
+/* Element defaults: box sizing, body, fonts per language, links, buttons, headings, focus. */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+[lang="ja"] {
+  font-family: var(--font-jp);
+}
+[lang="ja"].kana-font {
+  font-family: var(--font-kana);
+}
+[lang="zh-Hans"] {
+  font-family: var(--font-zh-hans);
+}
+[lang="zh-Hant"] {
+  font-family: var(--font-zh-hant);
+}
+a {
+  color: var(--primary);
+  text-underline-offset: 4px;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+h3 {
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.small {
+  font-size: 14px;
+}
+.muted {
+  color: var(--muted);
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  padding: 12px;
+  background: var(--surface);
+  z-index: 50;
+}
+.skip-link:focus-visible {
+  top: 12px;
+}

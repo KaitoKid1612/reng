@@ -1,0 +1,43 @@
+/* Platform administration. */
+
+/* Platform administration. */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.admin-stats > div {
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.admin-stats dt {
+  font-size: 14px;
+  color: var(--muted);
+}
+.admin-stats dd {
+  margin: 4px 0 0;
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.admin-teachers > li {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.admin-teacher-actions,
+.admin-plan-form {
+  display: grid;
+  gap: 8px;
+}
+.admin-teacher-actions {
+  min-width: 240px;
+}
+@media (max-width: 600px) {
+  .admin-teacher-actions {
+    min-width: 0;
+    width: 100%;
+  }
+}

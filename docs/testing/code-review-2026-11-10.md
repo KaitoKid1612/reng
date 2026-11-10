@@ -25,10 +25,10 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 
 ## Chưa làm trong đợt này
 
-- **Tách `app/globals.css` (3.653 dòng) theo tính năng.** Nhánh `feat/site-theme-light-dark-20261110` trên remote (giao diện sáng/tối, commit 09:56 hôm nay) đang sửa file này cùng `app/layout.tsx` và `components/site-header.tsx`; tách lúc này sẽ xung đột. Nên làm sau khi nhánh đó vào `main`. Trong lúc chờ, quy ước code yêu cầu thêm rule vào nhóm có chú thích của đúng tính năng.
+- **Tách `app/globals.css` theo tính năng**: lúc đầu hoãn vì nhánh giao diện sáng/tối đang sửa file này; người dùng yêu cầu gộp nhánh đó nên đã tách cùng ngày (mục Tách app/globals.css bên dưới).
 - **Gom khoảng 60 file phẳng trong `lib/` thành thư mục con.** Phải đổi hàng trăm import và đường dẫn trong tài liệu, trong khi tiền tố tên file (`lesson-`, `class-`, `daily-`…) đã nhóm theo miền. Quy ước code ghi cách đặt tên này.
 - **`components/teach` và `components/teaching`** giữ tên; quy ước code ghi rõ thư mục nào chứa gì.
-- **`components/account-summary.ts`** xuất hook `useAccountSummary` nhưng chưa đặt tên `use-*.ts`; để nguyên vì nhánh giao diện sáng/tối đang sửa `site-header.tsx` dùng file này.
+- **`components/account-summary.ts`** chưa đặt tên `use-*.ts`: đổi thành `use-account-summary.ts` sau khi gộp nhánh giao diện sáng/tối.
 - **Năm nhánh cũ trên remote** (`feat/daily-listening-*`, `feat/daily-practice-quality-70-*`, `fix/learner-slide-progress`, `feat/n4-listening-mock-20-*`) đã vào `main`; xóa khi người dùng đồng ý. AGENTS.md quy định làm thẳng trên `main`.
 
 ## Phát hiện về tài liệu và trang hướng dẫn
@@ -81,7 +81,17 @@ Người dùng yêu cầu gộp nhánh `feat/site-theme-light-dark-20261110` (7 
 
 Kiểm tra: axe color-contrast trên 28 trang (khách 15 gồm slide và Presenter, học viên 8, giáo viên 5) ở cả hai giao diện: 0 lỗi sau khi sửa; ảnh chụp trang lớp, Presenter, bài tập, trang đọc bài ở giao diện tối; Menu 360px không tràn ngang, đổi giao diện có hiệu lực ngay và còn sau khi tải lại.
 
+## Tách app/globals.css
+
+Sau khi gộp giao diện sáng/tối, `app/globals.css` (3.749 dòng) được tách thành 18 file trong `app/styles/` theo khu vực (tokens, base, shell, home, kana, practice, responsive, lessons, slides, components, assignment-fixes, questions, teach, learner, editor, chinese-lessons, admin, public-pages); `globals.css` chỉ còn các dòng `@import` theo đúng thứ tự cascade.
+
+- Phần lớn file là các đoạn liền nhau của file cũ, nên thứ tự giữ nguyên. 12 đoạn nhỏ được thêm sau ở cuối file cũ (gợi ý tài khoản, link đang chuyển trang, bảng pinyin, lịch học hằng tuần, các bước bắt đầu, khung giảng dạy, hôm nay học gì, đếm ngược, sổ lỗi, điều hướng câu trong bài thi, audio của trình soạn, lớp dùng bài) được chuyển về file của tính năng. Trước khi chuyển, một script liệt kê mọi rule ở đoạn bị vượt qua có cùng class; các rule trùng đều có độ ưu tiên khác nhau nên thứ tự không đổi kết quả.
+- CSS biên dịch bằng Tailwind trước và sau khi tách có đúng 835 rule như nhau (59 rule đổi chỗ, không mất, không thêm).
+- Computed style của 59.628 phần tử trên 128 lượt xem (32 trang của khách, học viên, giáo viên; 1280px và 390px; sáng và tối) giống hệt nhau trước và sau khi tách; hai lượt ở trình soạn chỉ khác ID do React tự sinh.
+
 ## Kết quả
+
+Lượt 1 (rà soát quy ước, tài liệu, trang Hướng dẫn):
 
 | Kiểm tra | Kết quả |
 |---|---|
@@ -90,3 +100,13 @@ Kiểm tra: axe color-contrast trên 28 trang (khách 15 gồm slide và Present
 | `npm run test:e2e` | 34/34 đạt, gồm trang Hướng dẫn ở 360px và trang Cho giáo viên |
 | `npm run test:e2e:supabase` | 39/39 đạt trên Supabase local (đủ 30 migration). Cảnh báo dev "Encountered a script tag" (JSON-LD) đã ghi nhận ngày 06/11 |
 | Trình duyệt, Supabase local | Trang lớp của giáo viên (sau khi tách): đủ 7 mục, bảng học viên, bài đã giao, nội dung lớp, 4 ô thống kê. Trang sửa lỗi hiển thị của một đề thi thử 65 câu (chưa có E2E nào phủ): mở Sửa thì ô Đề bài nhận focus, có 14 ô cách đọc và phần xem trước; Lưu sửa hiện thông báo và nhãn "Đã sửa"; lọc Đã sửa còn 1 dòng; 390px không tràn ngang; không lỗi trang hay console. Đề sửa thử đã được trả lại như cũ |
+
+Lượt 2 (duyệt câu JLPT, gộp giao diện sáng/tối, tách CSS):
+
+| Kiểm tra | Kết quả |
+|---|---|
+| `npm run check` | Đạt; 316/316 unit test (thêm test câu nháp đã duyệt, furigana, script giao diện) |
+| `npm run build` | Đạt |
+| `npm run test:e2e` | 34/34 đạt |
+| `npm run test:e2e:supabase` | 39/39 đạt |
+| Giao diện | axe 0 lỗi tương phản trên 28 trang ở cả hai giao diện; computed style giống hệt trước và sau khi tách CSS (59.628 phần tử, 128 lượt xem) |

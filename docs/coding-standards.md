@@ -16,9 +16,12 @@ These conventions apply to handwritten code and documentation in Reng. Use the i
 app/                        Routes: pages, layouts, route handlers, metadata
   actions/                  Server Actions for forms (each re-checks the caller)
   api/                      Route handlers for client fetches, cron jobs and webhooks
-  globals.css               Tokens, base elements and feature styles (see Styles)
+  globals.css               Imports the files in app/styles/ in cascade order (see Styles)
   lesson-visuals.css        Lesson pictures and slide visuals
   charts.css                Score charts
+app/styles/                 One stylesheet per area: tokens, base, shell, home, kana, practice,
+                            responsive, lessons, slides, components, assignment-fixes, questions,
+                            teach, learner, editor, chinese-lessons, admin, public-pages
 components/
   ui/                       Shared primitives: button variants, pending link, outcome filter
   auth/ settings/ admin/    Sign-in and sign-up, account and email settings, platform admin
@@ -76,7 +79,8 @@ docs/                       Requirements, design, operations and dated test repo
 - Use Server Components by default; add `"use client"` only where interaction/browser APIs require it. Put a blank line after directives.
 - Keep browser playback and cleanup in the audio owner. Preserve keyboard behavior, focus, live feedback, cancellation and timeouts during refactoring.
 - Keep design tokens in CSS variables. Reuse component variants and meaningful classes; do not introduce hard-coded component colors or style changes during this cleanup.
-- Styles are plain CSS classes in the three files `app/layout.tsx` imports, in that order. `app/globals.css` is grouped by feature under one-line comments (`/* Lesson editor and vocabulary import. */`): put a rule in its feature's group, or start a new commented group for a new feature, and use the `:root` tokens rather than new colour values. Lesson pictures and slide visuals go in `app/lesson-visuals.css`, charts in `app/charts.css`.
+- Styles are plain CSS classes. `app/globals.css` only imports Tailwind and the files in `app/styles/`, one per area, and their order is part of the cascade: a later file may override an earlier one (`responsive.css` adjusts the shell, home, kana and practice files before it). Put a rule in the file of its feature, next to the rules it adjusts, with its media query beside it. A feature that fits no file gets a new file, imported after the files it builds on. Lesson pictures and slide visuals go in `app/lesson-visuals.css`, charts in `app/charts.css`; `app/layout.tsx` loads both after `globals.css`.
+- Colours come from the tokens in `app/styles/tokens.css`, never as values in a rule, so the dark theme follows. Slides, the presenter previews, the editor preview and the print view keep the light tokens in the dark theme. After changing colours, check contrast (axe) in both themes.
 - Maintain semantic controls, labels, visible focus and the 360px layout. Route names are English; displayed labels and learning content follow the relevant UI and course languages.
 - When renaming an existing URL, update internal links, docs and tests; provide an explicit redirect for previously served URLs when appropriate.
 

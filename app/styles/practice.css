@@ -1,0 +1,230 @@
+/* Form fields and the practice flow shared by kana and listening practice: setup, answer,
+   feedback, result and mistake list. */
+
+.practice-setup {
+  max-width: 640px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 28px;
+  min-width: 0;
+}
+legend {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.option-row,
+.group-options {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+}
+.group-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.choice-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  min-height: 36px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+.field {
+  margin-bottom: 20px;
+}
+/* A hint under a field stays visibly apart from the box it explains. */
+.field :where(input, select, textarea) + p,
+.answer-hint {
+  margin-top: 6px;
+}
+.accept-answer > .button + p {
+  margin-top: 8px;
+}
+.field label,
+.answer-form > label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+/* A select is as wide as its longest option unless limited, so long labels such as the question
+   input modes would widen the page on a 360px phone. */
+select {
+  max-width: 100%;
+}
+select,
+input[type="text"],
+input[name="romaji"] {
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: 10px 12px;
+  min-height: 46px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.practice-setup > p:last-child {
+  margin: 16px 0 0;
+}
+.practice-session,
+.practice-result {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.practice-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 14px;
+}
+.practice-top p {
+  margin-bottom: 12px;
+}
+progress {
+  display: block;
+  width: 100%;
+  height: 6px;
+  border: none;
+  accent-color: var(--primary);
+  background: var(--border);
+  margin-bottom: 32px;
+}
+progress::-webkit-progress-bar {
+  background: var(--border);
+}
+progress::-webkit-progress-value {
+  background: var(--primary);
+}
+.practice-title {
+  font-size: 24px;
+  text-align: center;
+}
+.question-square {
+  width: 200px;
+  aspect-ratio: 1;
+  margin: 28px auto;
+  border: 1px solid var(--grid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.question-square .kana-font {
+  font-size: 92px;
+  line-height: 1.3;
+}
+.answer-form {
+  max-width: 420px;
+  margin: auto;
+}
+.answer-form input {
+  width: 100%;
+  font-size: 23px;
+}
+.answer-form input[readonly] {
+  background: var(--background);
+}
+.answer-form > .button {
+  width: 100%;
+}
+.answer-form > .small {
+  margin: 8px 0 20px;
+}
+.answer-feedback {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 16px;
+  border-left: 3px solid;
+  margin-bottom: 20px;
+  font-size: 15px;
+  background: var(--surface);
+}
+.answer-feedback svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.answer-feedback > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.feedback-correct {
+  color: var(--correct);
+}
+.feedback-wrong,
+.error-text {
+  color: var(--wrong);
+}
+.practice-audio {
+  text-align: center;
+  margin-top: 20px;
+}
+.listening-player {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.listening-player .button-row {
+  margin: 0;
+}
+.listening-player p {
+  margin: 8px 0 0;
+}
+.listening-player button[aria-pressed="true"] {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.transcript {
+  color: var(--foreground);
+}
+/* The big figure and its smaller "(7/11 điểm)" wrap as two boxes, so a narrow screen moves the
+   whole caption under the figure instead of splitting it across a 64px line. */
+.result-score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  font-size: 64px;
+  line-height: 1.15;
+  color: var(--primary);
+  margin: 28px 0 12px;
+}
+.result-score span {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.mistake-list {
+  padding: 0;
+  list-style: none;
+  margin: 32px 0;
+}
+.mistake-list li {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+.mistake-list .kana-font {
+  font-size: 40px;
+  min-width: 76px;
+}
