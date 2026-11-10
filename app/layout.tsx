@@ -19,6 +19,21 @@ import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/sit
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+// Set the theme before first paint to avoid a flash of the wrong colours.
+const THEME_INIT_SCRIPT = `(() => {
+  try {
+    const saved = localStorage.getItem("reng-theme");
+    const preference = saved === "light" || saved === "dark" ? saved : "system";
+    const dark = preference === "dark" ||
+      (preference === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+  } catch {
+    document.documentElement.dataset.theme = "light";
+    document.documentElement.style.colorScheme = "light";
+  }
+})();`;
+
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
 
 export const metadata: Metadata = {
@@ -44,6 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         {/* Inline so it runs while the HTML is parsed, before the first paint. */}
         <script dangerouslySetInnerHTML={{ __html: ACCOUNT_HINT_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
