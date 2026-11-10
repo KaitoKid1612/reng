@@ -24,7 +24,7 @@ export function NotificationPreferencesForm({
 }: NotificationPreferencesFormProps) {
   const [state, action, isPending] = useActionState(saveNotificationPreferencesAction, {});
   return (
-    <form action={action} className="form-card">
+    <form action={action} className="form-card notification-form">
       {preferences.pauseReason && (
         <p className="notice-panel" role="alert">
           Reng đã tạm dừng gửi email vì thư{" "}
@@ -32,34 +32,43 @@ export function NotificationPreferencesForm({
           chỉ email rồi lưu lại cài đặt để gửi tiếp.
         </p>
       )}
-      <fieldset>
-        <legend>Nhắc học qua email</legend>
-        {FREQUENCY_OPTIONS.map((option) => (
-          <label key={option.value} className="choice-label">
+      <div className="notification-groups">
+        <fieldset>
+          <legend>Nhắc học qua email</legend>
+          {FREQUENCY_OPTIONS.map((option) => (
+            <label key={option.value} className="choice-label">
+              <input
+                type="radio"
+                name="reminderFrequency"
+                value={option.value}
+                defaultChecked={preferences.reminderFrequency === option.value}
+              />
+              {option.label}
+            </label>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Thư tóm tắt</legend>
+          <label className="choice-label">
             <input
-              type="radio"
-              name="reminderFrequency"
-              value={option.value}
-              defaultChecked={preferences.reminderFrequency === option.value}
+              type="checkbox"
+              name="weeklyEnabled"
+              defaultChecked={preferences.weeklyEnabled}
             />
-            {option.label}
+            Tổng kết tuần vào tối Chủ nhật
           </label>
-        ))}
-      </fieldset>
-      <label className="choice-label">
-        <input type="checkbox" name="weeklyEnabled" defaultChecked={preferences.weeklyEnabled} />
-        Tổng kết tuần vào tối Chủ nhật
-      </label>
-      {role === "teacher" && (
-        <label className="choice-label">
-          <input
-            type="checkbox"
-            name="teacherDigestEnabled"
-            defaultChecked={preferences.teacherDigestEnabled}
-          />
-          Tóm tắt lớp lúc 06:00: bài nộp mới, câu sai nhiều, học viên cần chú ý
-        </label>
-      )}
+          {role === "teacher" && (
+            <label className="choice-label">
+              <input
+                type="checkbox"
+                name="teacherDigestEnabled"
+                defaultChecked={preferences.teacherDigestEnabled}
+              />
+              Tóm tắt lớp lúc 06:00: bài nộp mới, câu sai nhiều, học viên cần chú ý
+            </label>
+          )}
+        </fieldset>
+      </div>
       <p className="small muted">
         Email chỉ gửi khi có việc cần làm. Mọi thư đều có link hủy một chạm.
       </p>

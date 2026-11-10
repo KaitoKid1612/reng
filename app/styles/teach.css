@@ -269,3 +269,24 @@
 .lesson-usage-more > summary {
   padding: 4px 0 12px;
 }
+/* Lesson sharing (/teach/lessons/[id]/sharing): the form beside the people it is shared with. */
+.sharing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0 40px;
+  align-items: start;
+}
+.sharing-layout > section > h2 {
+  margin-bottom: 16px;
+}
+.sharing-layout .section-block:first-child {
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .sharing-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sharing-layout .section-block:first-child {
+    margin-top: 40px;
+  }
+}

@@ -276,3 +276,43 @@
     justify-items: start;
   }
 }
+/* New lesson (/teach/lessons/new): starter lessons as a grid of cards, and the two ways of writing
+   from scratch side by side on wide screens. */
+.starter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.starter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.starter-card h3 {
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+.starter-card .item-meta {
+  margin: 0;
+}
+.starter-card .button-row {
+  margin-top: auto;
+}
+.create-lesson-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .create-lesson-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

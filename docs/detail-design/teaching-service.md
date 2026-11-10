@@ -439,8 +439,14 @@ Ba thay đổi merge ngày 07/11/2026, rà soát và sửa ngày 09/11/2026 ([b�
 
 Gộp từ nhánh `feat/site-theme-light-dark-20261110`, sửa thêm khi rà soát ([báo cáo](../testing/code-review-2026-11-10.md)).
 
-- Thanh đầu trang có ô **Giao diện**: Theo máy (mặc định), Sáng, Tối; trên điện thoại ô nằm trong Menu. Lựa chọn lưu ở `localStorage["reng-theme"]` của trình duyệt, không lưu vào tài khoản.
+- Thanh đầu trang có nhóm ba nút biểu tượng **Giao diện** (màn hình = Theo máy, mặc định; mặt trời = Sáng; mặt trăng = Tối; `aria-pressed`, tooltip là tên lựa chọn); trên điện thoại nhóm nút nằm trong Menu, có nhãn "Giao diện". Lựa chọn lưu ở `localStorage["reng-theme"]` của trình duyệt, không lưu vào tài khoản.
 - `lib/theme.ts` giữ khóa lưu, `THEME_SCRIPT` và các hàm đọc/áp dụng/lưu. Root layout chèn `THEME_SCRIPT` vào `<head>` như script gợi ý tài khoản, nên `html[data-theme]` và `color-scheme` có trước lần vẽ đầu, trang tối không nháy sáng. `components/theme-toggle.tsx` đọc lựa chọn bằng `useSyncExternalStore` (server trả "Theo máy"), nghe sự kiện `storage` để các thẻ khác cùng đổi, và khi chọn Theo máy thì theo thay đổi của thiết bị.
 - CSS: giá trị tối của các token ở `:root[data-theme="dark"]`. Slide (`.slide-stage`), Presenter (`.presenter-preview`), khung xem trước (`.slide-preview`) và bản in (`.lesson-print`) khai báo lại token sáng và đặt lại màu chữ, vì màu chữ kế thừa giá trị đã tính ở `<body>`.
 - Cùng đợt: ô đáp án trên điện thoại chữ 19px, nút trong Danh sách câu cao 44px, câu đã trả lời có nền nhạt, thanh nộp bài chừa vùng an toàn của màn hình.
 - Kiểm chứng: `tests/theme.test.ts` (script đầu trang với lựa chọn lưu, thiết bị tối, lựa chọn sai, storage bị chặn); axe color-contrast 28 trang của khách, học viên, giáo viên ở cả hai giao diện; Menu 360px không tràn ngang, đổi giao diện có hiệu lực ngay và còn sau khi tải lại.
+
+## Giao diện trên PC — 10/11/2026 (chiều)
+
+- **Cài đặt** (`/settings/account`, `/settings/notifications`): bố cục rộng với `page-heading` (Đăng xuất ở góc phải trang Tài khoản), tab chung `SettingsNav` (`components/settings/settings-nav.tsx`: Tài khoản, Email nhắc học), thẻ Họ tên và Mật khẩu cạnh nhau (`.settings-grid`, một cột từ 820px trở xuống), thẻ lối tắt Tiến độ của tôi và Sổ lỗi (`.link-cards`). Form email chia hai nhóm cạnh nhau: Nhắc học qua email và Thư tóm tắt. CSS ở `app/styles/settings.css`.
+- **Trang một cột** (`.narrow-page`: đăng nhập, đăng ký, quên/đặt lại mật khẩu, xác nhận email, hủy nhận thư, vào lớp, ôn tập, flashcard, bắt đầu giảng dạy): cột 560px nằm giữa màn hình thay vì dồn trái.
+- **Trang giáo viên**: Tạo bài mới (`/teach/lessons/new`) có ba thẻ cách soạn, lưới bài mẫu (`.starter-grid`) và hai form soạn từ đầu cạnh nhau (`.create-lesson-columns`); Bài được chia sẻ với tôi dùng bố cục rộng và khung trạng thái trống (`.empty-state`); Chia sẻ bài đặt form bên trái, danh sách đang chia sẻ bên phải (`.sharing-layout`).

@@ -20,7 +20,7 @@ app/                        Routes: pages, layouts, route handlers, metadata
   lesson-visuals.css        Lesson pictures and slide visuals
   charts.css                Score charts
 app/styles/                 One stylesheet per area: tokens, base, shell, home, kana, practice,
-                            responsive, lessons, slides, components, assignment-fixes, questions,
+                            responsive, lessons, slides, components, settings, assignment-fixes, questions,
                             teach, learner, editor, chinese-lessons, admin, public-pages
 components/
   ui/                       Shared primitives: button variants, pending link, outcome filter

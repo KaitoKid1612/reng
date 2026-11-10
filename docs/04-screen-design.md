@@ -62,8 +62,8 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Quên/đặt lại mật khẩu | `/forgot-password`, `/reset-password` | 3 |
 | Vào lớp | `/join-class` | 3 |
 | Nguồn dữ liệu | `/sources` | 1, cập nhật khi thêm nguồn |
-| Cài đặt thông báo | `/settings/notifications` | 4; thêm push ở 6 |
-| Tài khoản: họ tên, mật khẩu | `/settings/account` | 03/11/2026 |
+| Email nhắc học (cài đặt thông báo) | `/settings/notifications` | 4; thêm push ở 6 |
+| Tài khoản: họ tên, mật khẩu; tab chung với Email nhắc học (10/11/2026) | `/settings/account` | 03/11/2026 |
 | Hướng dẫn sử dụng cho giáo viên, học viên, quản trị viên | `/guide` | Dịch vụ |
 | Giới thiệu cho giáo viên, đăng ký giáo viên | `/for-teachers`, `/sign-up/teacher` | Dịch vụ |
 | Hủy nhận email (link một chạm trong thư) | `/unsubscribe/[token]` | 4 |

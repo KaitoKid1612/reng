@@ -15,12 +15,16 @@ export default async function TeachingLibraryPage() {
   const account = await requireTeacher("/teach/library");
   const shared = await listSharedWithMe(account.id);
   return (
-    <div className="narrow-page">
-      <h1>Bài được chia sẻ với tôi</h1>
-      <p className="muted">
-        <Link href="/teach">Giảng dạy</Link>. Bạn xem đúng phiên bản giáo viên đã chia sẻ. Muốn dạy
-        lớp mình, hãy sao chép thành bài của bạn rồi kiểm tra và xuất bản lại.
-      </p>
+    <>
+      <div className="page-heading">
+        <div>
+          <h1>Bài được chia sẻ với tôi</h1>
+          <p className="muted">
+            <Link href="/teach">Giảng dạy</Link>. Bạn xem đúng phiên bản giáo viên đã chia sẻ. Muốn
+            dạy lớp mình, hãy sao chép thành bài của bạn rồi kiểm tra và xuất bản lại.
+          </p>
+        </div>
+      </div>
       {shared.length ? (
         <ul className="item-list">
           {shared.map((item) => (
@@ -52,8 +56,14 @@ export default async function TeachingLibraryPage() {
           ))}
         </ul>
       ) : (
-        <p>Chưa có bài nào được chia sẻ với bạn.</p>
+        <div className="empty-state">
+          <p className="empty-state-title">Chưa có bài nào được chia sẻ với bạn.</p>
+          <p className="small muted">
+            Khi một giáo viên chia sẻ bài cho email của bạn, bài hiện ở đây để xem, trình chiếu hoặc
+            sao chép thành bài của bạn.
+          </p>
+        </div>
       )}
-    </div>
+    </>
   );
 }

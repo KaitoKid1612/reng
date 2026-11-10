@@ -2,8 +2,13 @@
    lists. */
 
 /* Accounts, classes, assignments and review. */
+/* A single task (sign in, join a class, a flashcard deck) in one column, centred on wide screens. */
 .narrow-page {
   max-width: 560px;
+  margin-inline: auto;
+}
+.narrow-page > h1 + p {
+  margin-bottom: 20px;
 }
 .form-card {
   background: var(--surface);
@@ -14,6 +19,13 @@
 }
 .form-card h2 {
   font-size: 21px;
+}
+/* A card's title and its one-line explanation sit together, apart from the fields below. */
+.form-card > h2 {
+  margin-bottom: 4px;
+}
+.form-card > h2 + p {
+  margin-bottom: 20px;
 }
 .form-card input:not([type="checkbox"], [type="radio"]),
 .form-card select,
@@ -143,4 +155,44 @@
   gap: 16px;
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
+}
+/* Cards that are links as a whole: shortcuts, ways to start, choices with a line of help. */
+.link-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+}
+.link-card:hover {
+  border-color: var(--primary);
+}
+.link-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.link-card-title {
+  color: var(--primary);
+  font-weight: 600;
+}
+/* An empty list says so in a quiet box, with what would make it fill up. */
+.empty-state {
+  padding: 40px 24px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  text-align: center;
+}
+.empty-state-title {
+  margin-bottom: 4px;
+  font-weight: 600;
 }

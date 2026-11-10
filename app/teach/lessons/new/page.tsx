@@ -26,22 +26,35 @@ export default async function NewLessonPage() {
     }),
   );
   return (
-    <div className="narrow-page">
-      <h1>Tạo bài mới</h1>
-      <p className="muted">
-        <Link href="/teach">Giảng dạy</Link>. Bài mới là bản nháp riêng; học viên chỉ thấy sau khi
-        bạn xuất bản và giao cho lớp.
-      </p>
-      {/* The starter list runs long on a phone, so each way of starting has its own jump link. */}
-      <nav className="button-row" aria-label="Chọn cách soạn bài">
-        <Link href="#starter-lesson-title" className={buttonVariants({ variant: "outline" })}>
-          Dùng bài mẫu Minna
+    <>
+      <div className="page-heading">
+        <div>
+          <h1>Tạo bài mới</h1>
+          <p className="muted">
+            <Link href="/teach">Giảng dạy</Link>. Bài mới là bản nháp riêng; học viên chỉ thấy sau
+            khi bạn xuất bản và giao cho lớp.
+          </p>
+        </div>
+      </div>
+      {/* The starter list runs long, so each way of starting is a card that jumps to its part. */}
+      <nav className="link-cards" aria-label="Chọn cách soạn bài">
+        <Link href="#starter-lesson-title" className="link-card">
+          <span className="link-card-title">Dùng bài mẫu Minna</span>
+          <span className="small muted">
+            Bài 1–15 có sẵn từ vựng, mẫu câu, hội thoại và câu luyện; sửa theo lớp rồi xuất bản.
+          </span>
         </Link>
-        <Link href="#detailed-lesson-title" className={buttonVariants({ variant: "outline" })}>
-          Soạn tiếng Nhật từ đầu
+        <Link href="#detailed-lesson-title" className="link-card">
+          <span className="link-card-title">Soạn tiếng Nhật từ đầu</span>
+          <span className="small muted">
+            Tự nhập từ vựng, mẫu câu, câu luyện và slide trong trình soạn.
+          </span>
         </Link>
-        <Link href="#template-lesson-title" className={buttonVariants({ variant: "outline" })}>
-          Soạn bài tiếng Trung
+        <Link href="#template-lesson-title" className="link-card">
+          <span className="link-card-title">Soạn bài tiếng Trung</span>
+          <span className="small muted">
+            Năm bước theo mẫu, từ mục tiêu đến slide dựng sẵn từ nội dung bạn nhập.
+          </span>
         </Link>
       </nav>
       <section className="section-block" aria-labelledby="starter-lesson-title">
@@ -51,12 +64,12 @@ export default async function NewLessonPage() {
           câu, hội thoại, luyện tập, câu hỏi), không chép nguyên văn sách. Bạn nhận một bản nháp
           riêng để kiểm tra, sửa rồi xuất bản; học viên dùng sách của mình để đối chiếu.
         </p>
-        <ul className="item-list">
+        <ul className="starter-grid">
           {STARTER_LESSONS.map((starter) => {
             const { content } = starter.draft;
             const existing = lessonFromStarter.get(starter.id);
             return (
-              <li key={starter.id}>
+              <li key={starter.id} className="starter-card">
                 <div>
                   <h3>{starter.draft.title}</h3>
                   <p className="item-meta">
@@ -85,26 +98,28 @@ export default async function NewLessonPage() {
           })}
         </ul>
       </section>
-      <section className="section-block" aria-labelledby="detailed-lesson-title">
-        <h2 id="detailed-lesson-title">Soạn bài tiếng Nhật từ đầu</h2>
-        <p className="small muted">
-          Soạn từ đầu: từ vựng, mẫu câu, câu luyện và slide (tiêu đề, từ vựng, mẫu câu, ví dụ, hội
-          thoại, bảng/luyện thay thế, câu hỏi). Muốn làm bài tiếp theo nhanh hơn, dùng Tạo bản sao
-          của một bài đã có ở trang Giảng dạy.
-        </p>
-        <CreateLessonForm
-          // Lesson IDs are shared by every teacher, so the suggestion carries a random suffix.
-          suggestedId={`lesson-${String(nextOrder).padStart(2, "0")}-${randomUUID().slice(0, 6)}`}
-          suggestedOrder={nextOrder}
-        />
-      </section>
-      <section className="section-block" aria-labelledby="template-lesson-title">
-        <h2 id="template-lesson-title">Soạn bài tiếng Trung theo mẫu</h2>
-        <p className="small muted">
-          Bắt đầu từ một mục tiêu nhỏ; hệ thống dẫn từng bước và dựng slide từ nội dung bạn nhập.
-        </p>
-        <CreateTeachingLessonForm requestId={randomUUID()} suggestedOrder={nextOrder} />
-      </section>
-    </div>
+      <div className="create-lesson-columns">
+        <section className="section-block" aria-labelledby="detailed-lesson-title">
+          <h2 id="detailed-lesson-title">Soạn bài tiếng Nhật từ đầu</h2>
+          <p className="small muted">
+            Soạn từ đầu: từ vựng, mẫu câu, câu luyện và slide (tiêu đề, từ vựng, mẫu câu, ví dụ, hội
+            thoại, bảng/luyện thay thế, câu hỏi). Muốn làm bài tiếp theo nhanh hơn, dùng Tạo bản sao
+            của một bài đã có ở trang Giảng dạy.
+          </p>
+          <CreateLessonForm
+            // Lesson IDs are shared by every teacher, so the suggestion carries a random suffix.
+            suggestedId={`lesson-${String(nextOrder).padStart(2, "0")}-${randomUUID().slice(0, 6)}`}
+            suggestedOrder={nextOrder}
+          />
+        </section>
+        <section className="section-block" aria-labelledby="template-lesson-title">
+          <h2 id="template-lesson-title">Soạn bài tiếng Trung theo mẫu</h2>
+          <p className="small muted">
+            Bắt đầu từ một mục tiêu nhỏ; hệ thống dẫn từng bước và dựng slide từ nội dung bạn nhập.
+          </p>
+          <CreateTeachingLessonForm requestId={randomUUID()} suggestedOrder={nextOrder} />
+        </section>
+      </div>
+    </>
   );
 }

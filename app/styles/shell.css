@@ -118,31 +118,65 @@
     font-weight: 600;
   }
 }
-.theme-selector {
+/* Theme: three icon buttons in a pill next to the links; the pressed one is filled. */
+.theme-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  white-space: nowrap;
+  align-self: center;
+  gap: 10px;
+  margin-left: 6px;
 }
-.theme-selector select {
-  min-height: 44px;
-  max-width: 135px;
+.theme-toggle-label {
+  display: none;
+}
+.theme-toggle-options {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 6px 8px;
-  background: var(--surface);
+  border-radius: 999px;
+  background: var(--background);
+}
+.theme-toggle-options button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle-options button:hover {
   color: var(--foreground);
 }
-.theme-selector select:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 2px;
+.theme-toggle-options button[aria-pressed="true"] {
+  background: var(--primary-soft);
+  color: var(--primary);
 }
-/* On phones the selector sits in the open menu, where there is room to keep its label. */
+.theme-toggle-options button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+/* In the phone menu the control is a row of its own, labelled, with finger-sized buttons. */
 @media (max-width: 600px) {
-  .theme-selector {
-    margin-left: auto;
+  .theme-toggle {
+    align-self: stretch;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 0 4px;
+    border-top: 1px solid var(--border);
+  }
+  .theme-toggle-label {
+    display: inline;
+    font-size: 16px;
+    color: var(--muted);
+  }
+  .theme-toggle-options button {
+    width: 44px;
+    height: 40px;
   }
 }
 .page-container {

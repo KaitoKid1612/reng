@@ -98,6 +98,10 @@ Người dùng bảo làm tiếp; làm theo phương án đã đề xuất (đ�
 - Sinh 20 file (39 lượt, 880 ký tự) bằng khóa Unreal Speech trên máy người dùng. Giải mã cả 20 file trong Chromium: dài 2,4–15,3 giây, cao độ từng nửa khớp người nói. Người dùng đã nghe và duyệt audio cùng ngày.
 - Test: `tests/listening-dialogue.test.ts` (tách lượt, hash theo giọng, nhãn thiếu giọng, đọc từng lượt rồi nối), `tests/audio-mp3.test.ts` (frame sau thẻ ID3, bỏ frame Info, từ chối file hỏng hoặc khác định dạng), `tests/listening-sets.test.ts` (mọi bộ đề: audio khớp lời nghe, file MP3 dài 1–60 giây).
 
+## Làm đẹp giao diện trên PC
+
+Người dùng thấy ô chọn giao diện và trang Tài khoản xấu trên PC. Đã sửa: ô chọn giao diện thành ba nút biểu tượng; Tài khoản và Email nhắc học có tab chung, thẻ cạnh nhau và lối tắt; 16 trang một cột (đăng nhập, ôn tập, flashcard…) nằm giữa màn hình thay vì dồn trái; Tạo bài mới có lưới bài mẫu; Bài được chia sẻ và Chia sẻ bài dùng bố cục rộng. Kiểm tra: `npm run check`, build, E2E 34/34 và 39/39.
+
 ## Kết quả
 
 Lượt 1 (rà soát quy ước, tài liệu, trang Hướng dẫn):

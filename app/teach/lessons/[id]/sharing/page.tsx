@@ -38,53 +38,64 @@ export default async function LessonSharingPage({ params }: LessonSharingPagePro
     );
   }
   return (
-    <div className="narrow-page">
-      <h1>Chia sẻ: {overview.title}</h1>
-      <p className="muted">
-        <Link href="/teach">Giảng dạy</Link> ·{" "}
-        <Link href={`/teach/lessons/${overview.lessonId}/edit`}>Soạn bài</Link>
-      </p>
-      {shareForm}
-      <section className="section-block" aria-labelledby="active-shares">
-        <h2 id="active-shares">Đang chia sẻ</h2>
-        {active.length ? (
-          <ul className="item-list">
-            {active.map((share) => (
-              <li key={share.id}>
-                <div>
-                  <h3>{share.recipientName || share.recipientEmail}</h3>
-                  <p className="item-meta">
-                    {share.recipientEmail} · phiên bản {share.versionNo} ·{" "}
-                    {PERMISSION_LABELS[share.permission]} · từ{" "}
-                    {formatStudyDateTime(share.grantedAt)}
-                  </p>
-                </div>
-                <ShareRevokeForm shareId={share.id} recipientLabel={share.recipientEmail} />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="muted">Chưa chia sẻ bài này cho ai.</p>
-        )}
-      </section>
-      {revoked.length > 0 && (
-        <section className="section-block" aria-labelledby="revoked-shares">
-          <h2 id="revoked-shares">Đã thu hồi</h2>
-          <ul className="item-list">
-            {revoked.map((share) => (
-              <li key={share.id}>
-                <div>
-                  <h3>{share.recipientName || share.recipientEmail}</h3>
-                  <p className="item-meta">
-                    Phiên bản {share.versionNo} · {PERMISSION_LABELS[share.permission]} · thu hồi{" "}
-                    {share.revokedAt ? formatStudyDateTime(share.revokedAt) : ""}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+    <>
+      <div className="page-heading">
+        <div>
+          <h1>Chia sẻ: {overview.title}</h1>
+          <p className="muted">
+            <Link href="/teach">Giảng dạy</Link> ·{" "}
+            <Link href={`/teach/lessons/${overview.lessonId}/edit`}>Soạn bài</Link>
+          </p>
+        </div>
+      </div>
+      <div className="sharing-layout">
+        <section aria-labelledby="new-share">
+          <h2 id="new-share">Chia sẻ cho giáo viên khác</h2>
+          {shareForm}
         </section>
-      )}
-    </div>
+        <div>
+          <section className="section-block" aria-labelledby="active-shares">
+            <h2 id="active-shares">Đang chia sẻ</h2>
+            {active.length ? (
+              <ul className="item-list">
+                {active.map((share) => (
+                  <li key={share.id}>
+                    <div>
+                      <h3>{share.recipientName || share.recipientEmail}</h3>
+                      <p className="item-meta">
+                        {share.recipientEmail} · phiên bản {share.versionNo} ·{" "}
+                        {PERMISSION_LABELS[share.permission]} · từ{" "}
+                        {formatStudyDateTime(share.grantedAt)}
+                      </p>
+                    </div>
+                    <ShareRevokeForm shareId={share.id} recipientLabel={share.recipientEmail} />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="muted">Chưa chia sẻ bài này cho ai.</p>
+            )}
+          </section>
+          {revoked.length > 0 && (
+            <section className="section-block" aria-labelledby="revoked-shares">
+              <h2 id="revoked-shares">Đã thu hồi</h2>
+              <ul className="item-list">
+                {revoked.map((share) => (
+                  <li key={share.id}>
+                    <div>
+                      <h3>{share.recipientName || share.recipientEmail}</h3>
+                      <p className="item-meta">
+                        Phiên bản {share.versionNo} · {PERMISSION_LABELS[share.permission]} · thu
+                        hồi {share.revokedAt ? formatStudyDateTime(share.revokedAt) : ""}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,24 +1,29 @@
 "use client";
 
+import { Monitor, Moon, Sun } from "lucide-react";
 import { useEffect, useSyncExternalStore } from "react";
 
 import {
   applyTheme,
-  isThemePreference,
   readThemePreference,
   saveThemePreference,
   THEME_CHANGE_EVENT,
-  THEME_PREFERENCES,
 } from "@/lib/theme";
 
 import type { ThemePreference } from "@/lib/theme";
-import type { ChangeEvent } from "react";
+import type { LucideIcon } from "lucide-react";
 
-const THEME_LABELS: Record<ThemePreference, string> = {
-  system: "Theo máy",
-  light: "Sáng",
-  dark: "Tối",
-};
+interface ThemeOption {
+  value: ThemePreference;
+  label: string;
+  Icon: LucideIcon;
+}
+
+const THEME_OPTIONS: readonly ThemeOption[] = [
+  { value: "system", label: "Theo máy", Icon: Monitor },
+  { value: "light", label: "Sáng", Icon: Sun },
+  { value: "dark", label: "Tối", Icon: Moon },
+];
 
 function subscribe(onChange: () => void) {
   window.addEventListener("storage", onChange);
@@ -34,7 +39,7 @@ function getServerPreference(): ThemePreference {
   return "system";
 }
 
-/** Light, dark or the device's setting, remembered in this browser. */
+/** Three small buttons in the header: the device's setting, light or dark, remembered here. */
 export function ThemeToggle() {
   const preference = useSyncExternalStore(subscribe, readThemePreference, getServerPreference);
 
@@ -51,23 +56,26 @@ export function ThemeToggle() {
     return () => media.removeEventListener("change", handleSystemChange);
   }, [preference]);
 
-  function handleChange(event: ChangeEvent<HTMLSelectElement>) {
-    const next = event.target.value;
-    if (isThemePreference(next)) {
-      saveThemePreference(next);
-    }
-  }
-
   return (
-    <label className="theme-selector">
-      <span>Giao diện</span>
-      <select value={preference} onChange={handleChange}>
-        {THEME_PREFERENCES.map((option) => (
-          <option key={option} value={option}>
-            {THEME_LABELS[option]}
-          </option>
+    <div className="theme-toggle">
+      {/* Shown in the phone menu; on wide screens the icons and their tooltips are enough. */}
+      <span id="theme-toggle-label" className="theme-toggle-label">
+        Giao diện
+      </span>
+      <div className="theme-toggle-options" role="group" aria-labelledby="theme-toggle-label">
+        {THEME_OPTIONS.map(({ value, label, Icon }) => (
+          <button
+            key={value}
+            type="button"
+            aria-pressed={preference === value}
+            aria-label={label}
+            title={label}
+            onClick={() => saveThemePreference(value)}
+          >
+            <Icon aria-hidden="true" size={16} strokeWidth={2} />
+          </button>
         ))}
-      </select>
-    </label>
+      </div>
+    </div>
   );
 }
