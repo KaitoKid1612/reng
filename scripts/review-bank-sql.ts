@@ -3,12 +3,14 @@ import { resolve } from "node:path";
 import { parseArgs } from "node:util";
 
 import { parseAssignableQuestion } from "../lib/assignment";
+import { BUNDLED_LISTENING_AUDIO } from "../lib/bundled-listening";
 import { findFuriganaProblems } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 import { BANK_LANGUAGES, findBankLanguageProblems } from "../lib/review-bank";
 
 // Writes one SQL transaction that publishes a review bank as the next version of its existing
-// lesson and moves the owner's classes that use the bank to that version. Nothing is sent to a
+// lesson and moves the owner's classes that use the bank to that version. Audio of questions taken
+// from a bundled listening set is registered in the same transaction. Nothing is sent to a
 // database here. Without --commit the file ends in ROLLBACK, so running it is a dry run.
 // Rerunning after a commit publishes nothing new: the newest version already has the content.
 const DOLLAR_TAG = "$reng_bank$";
@@ -60,10 +62,33 @@ async function main() {
   if (!/^[a-z0-9][a-z0-9-]*$/.test(lessonId)) {
     throw new Error("--lesson must be a lesson ID such as n4-comprehensive-review-bank.");
   }
+  // The editor refuses to publish a later version while any audio hash is unregistered.
+  const audioHashes = [
+    ...new Set(
+      bank.content.questions.flatMap((question) =>
+        (question.type === "listen" || question.type === "dictation") && question.audio
+          ? [question.audio]
+          : [],
+      ),
+    ),
+  ];
+  const bundledAudio = audioHashes.flatMap((hash) => BUNDLED_LISTENING_AUDIO.get(hash) ?? []);
+  const otherAudio = audioHashes.length - bundledAudio.length;
+  const registerAudio = bundledAudio.length
+    ? `insert into public.audio_assets(hash, text, voice, url, config) values
+${bundledAudio
+  .map(
+    (row) =>
+      `  (${quote(row.hash)}, ${quote(row.text)}, ${quote(row.voice)}, ${quote(row.url)}, ${quote(JSON.stringify(row.config))}::jsonb)`,
+  )
+  .join(",\n")}
+on conflict (hash) do nothing;
+`
+    : "";
   const content = JSON.stringify(bank.content);
   const sql = `-- ${lessonId}: publish ${bank.content.questions.length} questions and move the owner's classes.
 begin;
-do $publish$
+${registerAudio}do $publish$
 declare
   bank public.lessons%rowtype;
   new_content jsonb := ${quote(content)}::jsonb;
@@ -111,8 +136,13 @@ ${values.commit ? "commit;" : "rollback;"}
 `;
   await writeFile(resolve(values.out), sql);
   console.log(
-    `Wrote ${values.out} (${values.commit ? "COMMIT" : "dry run, ends in ROLLBACK"}) for ${lessonId}: ${bank.content.questions.length} questions.`,
+    `Wrote ${values.out} (${values.commit ? "COMMIT" : "dry run, ends in ROLLBACK"}) for ${lessonId}: ${bank.content.questions.length} questions, ${bundledAudio.length} bundled audio registered.`,
   );
+  if (otherAudio) {
+    console.warn(
+      `${otherAudio} audio hash(es) are not from a bundled listening set; register them with npm run audio:generate first.`,
+    );
+  }
 }
 
 main().catch((error: unknown) => {

@@ -2,7 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
-import minnaListening from "@/content/listening/minna-1-15.json";
+import { BUNDLED_LISTENING_AUDIO } from "@/lib/bundled-listening";
 import {
   createItemId,
   draftContentSchema,
@@ -19,7 +19,6 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
-import { listeningAudioRegistry, parseListeningSet } from "@/lib/listening-set";
 import { findStarterForLesson, summarizeLessonContent } from "@/lib/starter-lessons";
 import { parseVocabularyCsv } from "@/lib/vocab-csv";
 
@@ -27,9 +26,6 @@ import type { LessonDraftState, PublishProblem } from "@/lib/lesson-draft";
 import type { StarterLesson } from "@/lib/starter-lessons";
 
 const timestamp = z.iso.datetime({ offset: true });
-
-// Audio of the bundled listening sets (public/audio/lessons), registered on first publish.
-const BUNDLED_LISTENING_AUDIO = listeningAudioRegistry([parseListeningSet(minnaListening)]);
 
 const lessonRowSchema = z.object({
   id: z.string(),
