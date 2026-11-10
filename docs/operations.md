@@ -7,12 +7,28 @@ Tài liệu cho người phát triển và người vận hành: môi trường,
 | Môi trường | Web | Database và đăng nhập | Dùng khi |
 |---|---|---|---|
 | Local, không cloud | `npm run dev` (http://127.0.0.1:3000) | Không có. `LESSON_SOURCE=local` đọc 5 bài mẫu trong `content/` | Sửa kana, bài mẫu, trang công khai. Trang lớp báo chưa kích hoạt, không có phiên giả |
-| Local + Supabase local | `npm run dev` với `.env.local` trỏ `http://127.0.0.1:54321` | `npx supabase start` (Docker hoặc Podman), Mailpit ở http://127.0.0.1:54324 | Mọi luồng lớp học, soạn bài, email. Tạo tài khoản bằng `npm run seed:local` và `npm run seed:demo` ([README](../README.md#lớp-học-trên-supabase-local)) |
+| Local + Supabase local | `npm run dev` với `.env.local` trỏ `http://127.0.0.1:54321` | `npx supabase start` (Docker hoặc Podman), Mailpit ở http://127.0.0.1:54324 | Mọi luồng lớp học, soạn bài, email. Tạo tài khoản bằng `npm run seed:local` và `npm run seed:demo` ([cách chạy](#chạy-với-supabase-local)) |
 | E2E không dịch vụ | Playwright tự chạy dev server ở cổng 3217 | Không có | `npm run test:e2e` |
 | E2E Supabase local | Playwright tự chạy dev server ở cổng 3218 | Supabase local, khóa đọc từ `supabase status`, từ chối URL không phải local | `npm run test:e2e:supabase` |
 | Production | Vercel project `reng`, gói Hobby, hàm ở `sin1`; mỗi lần push `main` tự deploy | Supabase project `reng` (Singapore, gói Free) | https://reng-class.vercel.app |
 
 Next không cho hai tiến trình dùng chung thư mục `.next`: dừng `npm run dev` trước khi chạy E2E hoặc `npm run build`.
+
+### Chạy với Supabase local
+
+Cần Docker hoặc Podman; Supabase CLI đã có trong devDependencies.
+
+```bash
+npx supabase start            # Podman: export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
+npx supabase status -o env    # API_URL, PUBLISHABLE_KEY, SECRET_KEY
+```
+
+Tạo `.env.local` với `LESSON_SOURCE=supabase`, `SUPABASE_URL` (API_URL), `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`, rồi:
+
+- `npm run seed:local -- --password <mật khẩu>`: tạo `teacher@reng.local` có quyền dạy và xuất bản 5 bài mẫu công khai. Thêm `--email <email> --name "<Họ tên>"` để tạo giáo viên khác.
+- `npm run seed:demo` (cùng mật khẩu `SEED_TEACHER_PASSWORD`): `admin@reng.local` (quản trị), `co.lan@reng.local` (giáo viên tiếng Trung có lớp), `thay.minh@reng.local` (đang chờ duyệt), `hoc.vien@reng.local` (học viên).
+- Hai script chỉ ghi vào Supabase trên máy này. Thư xác nhận và đặt lại mật khẩu xem ở Mailpit http://127.0.0.1:54324; link chỉ quay về các cổng trong `additional_redirect_urls` của `supabase/config.toml` (3000, 3017, 3218).
+- Thử email nhắc bài: đặt `EMAIL_PROVIDER=mailpit`, `MAILPIT_URL`, `EMAIL_FROM`, `CRON_SECRET`, `EMAIL_LINK_SECRET`, bật nhắc ở `/settings/notifications` rồi gọi `curl -H "Authorization: Bearer $CRON_SECRET" http://127.0.0.1:3000/api/cron/student-reminders`.
 
 ## Biến môi trường
 

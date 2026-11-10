@@ -33,6 +33,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | `12-ui-design.md` | Hệ màu, typography, ngày giờ và số, nguyên tắc giao diện | Trước khi viết component |
 | `coding-standards.md` | Quy ước đặt tên, cấu trúc, TypeScript, React, kiểm tra và git | Trước khi sửa mã nguồn |
 | `operations.md` | Môi trường, biến môi trường, cron, migration, phát hành, lỗi hay gặp | Trước khi deploy hoặc áp migration |
+| [`changelog.md`](changelog.md) | Nhật ký thay đổi theo ngày | Muốn biết gần đây có gì mới |
 | `poc-setup.md` | Công cụ, chi phí, các bước dựng POC 10 giáo viên, trạng thái production thử, Google sign-in, SEO | Trước khi đăng ký hoặc đổi dịch vụ cloud |
 | `staging-setup.md` | Checklist dựng staging và nghiệm thu dịch vụ | Khi dựng môi trường mới |
 | `content-authoring.md` | Soạn bài Nhật/Trung, bài mẫu Minna, bài nghe, nâng cấp bài cho lớp | Khi soạn hoặc nạp nội dung |
