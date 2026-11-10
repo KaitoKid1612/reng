@@ -26,8 +26,8 @@
     "questions": [
       {
         "id": "n4-mock-01",
-        "prompt": "課題理解｜Người phụ nữ sẽ làm gì trước? (Nghe rồi chọn một đáp án.)",
-        "explain": "先にメールを送ってからコピーする。",
+        "prompt": "課題理解｜Người đàn ông sẽ làm gì trước? (Nghe rồi chọn một đáp án.)",
+        "explain": "Người đàn ông nói 先に部長にメールを送ってからコピーします: gửi email cho trưởng phòng trước, rồi mới photocopy.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "1145f475427e464d8f6618d48d47f9d7",
