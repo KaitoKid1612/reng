@@ -734,7 +734,7 @@ select {
 select,
 input[type="text"],
 input[name="romaji"] {
-  border: 1px solid #a8a49d;
+  border: 1px solid var(--muted);
   border-radius: 6px;
   padding: 10px 12px;
   min-height: 46px;
@@ -1689,7 +1689,7 @@ rt {
 .question-fix-form input:not([type="hidden"]),
 .question-fix-form textarea {
   width: 100%;
-  border: 1px solid #a8a49d;
+  border: 1px solid var(--muted);
   border-radius: 6px;
   padding: 10px 12px;
   min-height: 46px;
@@ -2525,7 +2525,7 @@ rt {
 }
 .copy-message-text {
   width: 100%;
-  border: 1px solid #a8a49d;
+  border: 1px solid var(--muted);
   border-radius: 6px;
   padding: 10px 12px;
   background: var(--surface);
@@ -2831,7 +2831,7 @@ rt {
 .editor-section textarea,
 .add-slide select {
   width: 100%;
-  border: 1px solid #a8a49d;
+  border: 1px solid var(--muted);
   border-radius: 6px;
   padding: 8px 10px;
   min-height: 42px;
@@ -3707,4 +3707,40 @@ a:has(> .link-pending) {
 }
 .mistake-group > .result-row:first-of-type {
   margin-top: 12px;
+}
+
+/* Exam navigation: touch-friendly targets and visible state in both themes. */
+.question-map-grid button {
+  min-height: 44px;
+}
+.question-map-grid button[data-state="answered"] {
+  background: var(--primary-soft);
+  font-weight: 600;
+}
+.question-map-grid button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+.choice-option {
+  background: var(--surface);
+  color: var(--foreground);
+  cursor: pointer;
+}
+.choice-option:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .attempt-toolbar {
+    bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  }
+  .question-map-grid {
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    gap: 8px;
+  }
+  .choice-option {
+    padding: 12px;
+    font-size: 19px;
+  }
 }
