@@ -25,6 +25,63 @@
   --font-zh-hant:
     "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 }
+
+/* Shared semantic colours: the exam room and the rest of Reng use the same palette. */
+:root[data-theme="dark"] {
+  --background: #151a22;
+  --surface: #202936;
+  --foreground: #f4f1e9;
+  --primary: #a8c9f0;
+  --primary-soft: #304766;
+  --brand-bell: #e8c47a;
+  --muted: #b8c4d2;
+  --border: #3a4553;
+  --grid: #536274;
+  --correct: #83d7a4;
+  --wrong: #ff9a91;
+  --attention: #e8c47a;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+.theme-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.theme-selector select {
+  min-height: 44px;
+  max-width: 135px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.theme-selector select:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .theme-selector {
+    margin-left: auto;
+  }
+  .theme-selector span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
