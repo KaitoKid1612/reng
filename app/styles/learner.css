@@ -73,7 +73,8 @@
   .data-table,
   .data-table tbody,
   .data-table tr,
-  .data-table td {
+  .data-table td,
+  .data-table tbody th {
     display: block;
     width: 100%;
   }
@@ -81,7 +82,9 @@
     border-bottom: 1px solid var(--border);
     padding: 8px 0;
   }
-  .data-table td {
+  /* A row header (the JLPT section name) stacks like the cells; only the row keeps a rule. */
+  .data-table td,
+  .data-table tbody th {
     border: 0;
     padding: 4px 12px;
   }
