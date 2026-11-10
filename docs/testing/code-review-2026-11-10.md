@@ -55,5 +55,7 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 | Kiểm tra | Kết quả |
 |---|---|
 | `npm run check` | Đạt: Prettier, ESLint, TypeScript; 313/313 unit test (thêm 2 test cho câu nháp JLPT) |
-| `npm run build` | Chưa chạy trong đợt này |
-| E2E | Chưa chạy trong đợt này |
+| `npm run build` | Đạt, 75 route |
+| `npm run test:e2e` | 34/34 đạt, gồm trang Hướng dẫn ở 360px và trang Cho giáo viên |
+| `npm run test:e2e:supabase` | 39/39 đạt trên Supabase local (đủ 30 migration). Cảnh báo dev "Encountered a script tag" (JSON-LD) đã ghi nhận ngày 06/11 |
+| Trình duyệt, Supabase local | Trang lớp của giáo viên (sau khi tách): đủ 7 mục, bảng học viên, bài đã giao, nội dung lớp, 4 ô thống kê. Trang sửa lỗi hiển thị của một đề thi thử 65 câu (chưa có E2E nào phủ): mở Sửa thì ô Đề bài nhận focus, có 14 ô cách đọc và phần xem trước; Lưu sửa hiện thông báo và nhãn "Đã sửa"; lọc Đã sửa còn 1 dòng; 390px không tràn ngang; không lỗi trang hay console. Đề sửa thử đã được trả lại như cũ |
