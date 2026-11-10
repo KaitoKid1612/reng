@@ -2,7 +2,9 @@ import { z } from "zod";
 
 import { parseAssignableQuestion } from "@/lib/assignment";
 import { JLPT_LEVELS, jlptSectionOf } from "@/lib/jlpt";
+import { findFuriganaProblems } from "@/lib/lesson-draft";
 import { lessonContentSchema } from "@/lib/lesson-schema";
+import { formatStudyDay } from "@/lib/study-days";
 
 import type { JlptLevel } from "@/lib/jlpt";
 import type { LessonContent } from "@/lib/lesson-schema";
@@ -39,11 +41,20 @@ export const jlptQuestionDraftSchema = z
     status: z.literal("draft"),
     origin: z.literal("original"),
     rights: text,
-    reviewStatus: text,
+    // A person who reads Japanese checks wording, the single right answer and the level.
+    reviewStatus: z.enum(["needs-japanese-review", "reviewed"]),
+    reviewedAt: z.iso.date().optional(),
     questions: z.array(draftQuestionSchema).min(1),
   })
   .strict()
   .superRefine((draft, context) => {
+    if ((draft.reviewStatus === "reviewed") !== Boolean(draft.reviewedAt)) {
+      context.addIssue({
+        code: "custom",
+        path: ["reviewedAt"],
+        message: "A reviewed draft records its review date (reviewedAt), and only a reviewed one.",
+      });
+    }
     const prefix = `jlpt-${draft.level.toLowerCase()}-`;
     const seenIds = new Set<string>();
     draft.questions.forEach((question, index) => {
@@ -91,9 +102,16 @@ export function jlptDraftFileNames(level: JlptLevel) {
   };
 }
 
+function describeReview(draft: JlptQuestionDraft) {
+  return draft.reviewedAt
+    ? `Bộ câu hỏi gốc của Reng theo dạng đề JLPT ${draft.level}, đã duyệt tiếng Nhật ngày ${formatStudyDay(draft.reviewedAt)}.`
+    : "Bộ câu hỏi gốc đang chờ kiểm duyệt. Không xuất bản cho học viên trước khi kiểm tra nội dung.";
+}
+
 /**
- * Lesson content for a draft: a note slide saying it still awaits review, then the questions as
- * written. Throws when the result would not pass the lesson schema or could not be assigned.
+ * Lesson content for a draft: a note slide saying whether it has been reviewed, then the
+ * questions as written. Throws when the result would not pass the lesson schema, would be refused
+ * for its furigana when published as a review bank, or could not be assigned.
  */
 export function buildJlptDraftLesson(draft: JlptQuestionDraft): LessonContent {
   const level = draft.level.toLowerCase();
@@ -106,13 +124,17 @@ export function buildJlptDraftLesson(draft: JlptQuestionDraft): LessonContent {
         id: `jlpt-${level}-intro`,
         type: "note",
         title: `JLPT ${draft.level} – Bài luyện tập nháp`,
-        body: "Bộ câu hỏi gốc đang chờ kiểm duyệt. Không xuất bản cho học viên trước khi kiểm tra nội dung.",
+        body: describeReview(draft),
       },
     ],
     questions: draft.questions,
   };
   // The parsed copy would reorder keys, so the file keeps the draft's own order.
   lessonContentSchema.parse(content);
+  const furiganaProblems = findFuriganaProblems(content.questions);
+  if (furiganaProblems.length) {
+    throw new Error(furiganaProblems.map((problem) => problem.message).join("\n"));
+  }
   content.questions.forEach((question) => parseAssignableQuestion(question));
   return content;
 }

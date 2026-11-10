@@ -60,18 +60,33 @@ test("JLPT drafts accept only original single-answer questions that fit an exam 
     draftWith([{ ...validQuestion, tags: ["kanji", "reading"] }]),
     draftWith([{ ...validQuestion, explain: " " }]),
     draftWith([{ ...validQuestion, audio: null }]),
+    draftWith([validQuestion], { reviewStatus: "reviewed" }),
+    draftWith([validQuestion], { reviewedAt: "2026-11-10" }),
+    draftWith([validQuestion], { reviewStatus: "approved", reviewedAt: "2026-11-10" }),
   ];
   for (const draft of invalidDrafts) {
     assert.equal(jlptQuestionDraftSchema.safeParse(draft).success, false, JSON.stringify(draft));
   }
 });
 
-test("a generated JLPT draft lesson is assignable and says it awaits review", () => {
-  const draft = jlptQuestionDraftSchema.parse(draftWith([validQuestion]));
-  const lesson = buildJlptDraftLesson(draft);
-  assert.deepEqual(
-    lesson.slides.map((slide) => slide.id),
-    ["jlpt-n5-intro"],
+test("a generated JLPT draft lesson is assignable and says whether it was reviewed", () => {
+  const waiting = buildJlptDraftLesson(jlptQuestionDraftSchema.parse(draftWith([validQuestion])));
+  assert.deepEqual(waiting.questions, [validQuestion]);
+  const [note] = waiting.slides;
+  assert.ok(note.type === "note" && note.body.includes("chờ kiểm duyệt"));
+  const reviewed = buildJlptDraftLesson(
+    jlptQuestionDraftSchema.parse(
+      draftWith([validQuestion], { reviewStatus: "reviewed", reviewedAt: "2026-11-10" }),
+    ),
   );
-  assert.deepEqual(lesson.questions, [validQuestion]);
+  const [reviewedNote] = reviewed.slides;
+  assert.ok(reviewedNote.type === "note" && reviewedNote.body.includes("đã duyệt"));
+  assert.ok(reviewedNote.type === "note" && reviewedNote.body.includes("10/11/2026"));
+});
+
+test("a JLPT draft is refused where a review bank would be: furigana that shows the reading", () => {
+  const draft = jlptQuestionDraftSchema.parse(
+    draftWith([{ ...validQuestion, prompt: "「{学校|がっこう}」の読み方を選んでください。" }]),
+  );
+  assert.throws(() => buildJlptDraftLesson(draft), /furigana/);
 });

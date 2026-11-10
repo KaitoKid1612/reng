@@ -248,14 +248,14 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 | `official-audio-manifest.json` | 16 link MP3 nghe hiểu chính thức N4/N5; chưa tải, chưa nghe, chưa có quyền dùng lại |
 | `external-source-catalog.json` | 10 nguồn khác ở Việt Nam và nước ngoài để tham khảo dạng câu, cùng các điều kiện trước khi công bố (`publicationGates`) |
 | `source-audit-2026-11-09.json` | Kết quả rà soát ngày 09/11: việc đã kiểm, chỗ bị chặn, bước tiếp theo |
-| `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`, `reviewStatus: needs-japanese-review` |
+| `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`; `reviewStatus: reviewed` và `reviewedAt` khi đã duyệt (cả hai file duyệt ngày 10/11/2026) |
 | `generated/` | Nội dung bài sinh từ hai file trên bằng `npm run jlpt:drafts`; không sửa tay |
 
 Quy trình:
 
 1. **Viết câu** trong file nháp của cấp. Mỗi câu là câu chọn một đáp án (`answer` một chỉ số, `multiple: false`), mã bắt đầu bằng `jlpt-n5-` hoặc `jlpt-n4-`, có giải thích tiếng Việt và đúng một tag phần (`kanji`, `vocabulary`, `grammar`, `particles`, `sentence-order`, `reading`) để câu vào đúng phần của đề thi thử. Schema ở `lib/jlpt-question-draft.ts`.
 2. **Chạy `npm run jlpt:drafts`** để kiểm tra và viết lại `generated/`, rồi `npm run check`: test báo lỗi khi file nháp đổi mà chưa sinh lại.
-3. **Duyệt trước khi dùng với lớp:** một người đọc được tiếng Nhật kiểm tra câu và đáp án duy nhất, độ khó đúng cấp, không trùng câu đã có. Chưa có ai được giao việc duyệt, và chưa có trường ghi nguồn hay giấy phép cho từng câu (danh sách `questionFields` trong catalog là đề xuất, khác với schema đang kiểm tra).
+3. **Duyệt trước khi dùng với lớp:** một người đọc được tiếng Nhật kiểm tra câu và đáp án duy nhất, độ khó đúng cấp (chữ Hán được hỏi cách đọc nằm trong danh sách chữ của cấp đó), không trùng câu đã có; chữ Hán trên cấp ở câu không hỏi kanji được thêm furigana `{漢字|かんじ}`. Xong thì đặt `reviewStatus: reviewed` và `reviewedAt` (ngày duyệt), rồi chạy lại bước 2. Ngày 10/11/2026, 12 câu được duyệt theo yêu cầu người dùng; ghi chú từng câu ở [báo cáo](testing/code-review-2026-11-10.md#duyệt-12-câu-jlpt-tự-biên-soạn). Chưa có trường ghi nguồn hay giấy phép cho từng câu (danh sách `questionFields` trong catalog là đề xuất, khác với schema đang kiểm tra).
 4. **Đưa vào ngân hàng ôn:** file trong `generated/` chỉ có phần nội dung (`content`), chưa có mã bài, tên và thứ tự, nên `bank:sql` và `lesson:import` chưa nhận trực tiếp. Hiện phải chép các câu đã duyệt vào một ngân hàng ôn như `review-banks/n4-comprehensive.json` rồi nạp như mục trên.
 
 Audio chính thức: `npm run audit:jlpt-audio` (cần mạng) chỉ kiểm tra link còn tải được và ghi mã băm, không lưu file. Chỉ dùng audio chính thức khi đã có quyền.

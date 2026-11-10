@@ -117,7 +117,7 @@ Mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ theo n
 ### 10/11/2026
 
 - Rà soát quy ước mã nguồn và tài liệu: ba script Python của đợt JLPT 09/11 viết lại bằng TypeScript (`npm run jlpt:drafts`, `npm run audit:jlpt-audio`) và bộ câu nháp nay được kiểm tra trong `npm run check`; tách trang lớp của giáo viên và bảng sửa lỗi hiển thị thành component theo từng phần; [quy ước code](docs/coding-standards.md) mô tả đủ cấu trúc thư mục, cách viết script, CSS, test và commit. Xem [báo cáo](docs/testing/code-review-2026-11-10.md).
-- Tài liệu nguồn đề JLPT N4/N5 (đợt 09/11): danh mục nguồn chính thức chỉ lưu link, chờ duyệt bản quyền; 6 câu N5 và 6 câu N4 tự biên soạn đang chờ duyệt tiếng Nhật; bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`) chưa có audio. Xem [hướng dẫn nội dung](docs/content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn).
+- Tài liệu nguồn đề JLPT N4/N5 (đợt 09/11): danh mục nguồn chính thức chỉ lưu link, chờ duyệt bản quyền; 6 câu N5 và 6 câu N4 tự biên soạn, đã duyệt tiếng Nhật ngày 10/11 (sửa 4 câu, thay 2 câu kanji vượt cấp N4); bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.json`) chưa có audio. Xem [hướng dẫn nội dung](docs/content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn).
 
 ### 09/11/2026
 

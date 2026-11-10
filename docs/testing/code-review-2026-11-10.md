@@ -47,8 +47,26 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 ## Cần người dùng quyết định
 
 1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): đã ghi mã audio nhưng chưa có file MP3 nào trong `public/audio/lessons`; 18/20 lời nghe là hội thoại `男：…女：…` mà máy đọc bằng một giọng, kể cả nhãn người nói. Viết lại thành lời một người, hoặc chờ cách đọc nhiều giọng, trước khi sinh audio.
-2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): chưa có người duyệt tiếng Nhật; file trong `content/jlpt/generated/` chưa có mã bài và tên nên `bank:sql`/`lesson:import` chưa nhận trực tiếp.
+2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): đã duyệt cùng ngày theo yêu cầu người dùng (mục dưới). File trong `content/jlpt/generated/` chưa có mã bài và tên nên `bank:sql`/`lesson:import` chưa nhận trực tiếp; muốn dùng thì chép vào ngân hàng ôn N5/N4.
 3. **Email trên production**: khi bật, thêm lại email nhắc bài vào trang Cho giáo viên và trang Hướng dẫn.
+
+## Duyệt 12 câu JLPT tự biên soạn
+
+Người dùng nhờ duyệt sau khi đọc báo cáo. Tiêu chí: tiếng Nhật tự nhiên, đúng một đáp án, chữ Hán được hỏi nằm trong danh sách chữ của cấp, mỗi câu vào đúng phần của đề thi thử, giải thích tiếng Việt đủ để tự học. Câu không hỏi kanji có thêm furigana cho chữ trên cấp (毎朝, 起きます, 映画, 自転車, 降る, 遅れる, 会議, 閉まる…). `buildJlptDraftLesson` nay chạy cùng kiểm tra furigana với `bank:sql`.
+
+| Câu | Kết luận |
+|---|---|
+| N5-001 学校, N5-005 水 | Giữ; giải thích thêm âm ngắt, trường âm và chữ của các lựa chọn sai |
+| N5-002 あした | Sửa đề thành 「あした」は 漢字で どう 書きますか (đề cũ hỏi "chữ Hán cùng nghĩa"); tag `kanji` thay `vocabulary`; giải thích cả bốn lựa chọn |
+| N5-003 に, N5-004 見ました | Giữ; thêm furigana và giải thích |
+| N5-006 đọc hiểu | Giữ; thêm furigana 田中, 自転車, 何(なん)で, 歩いて |
+| N4-001 約束, N4-005 準備 | **Thay** bằng 試験 (しけん) và 運転 (うんてん): chữ 約, 束, 準, 備 không thuộc danh sách chữ N4, nên câu hỏi cách đọc vượt cấp. Lựa chọn sai giữ kiểu đề (âm đục, âm ngắt, ん) |
+| N4-002 のに | **Sửa**: 「雨が降っているのに、出かけます」 không tự nhiên vì sau のに không đi với ý định của người nói. Đề mới: 雨が 降っている（のに）、弟は かさを 持たないで 出かけました |
+| N4-003 し | **Sửa**: với 品物も いい, đáp án のに cũng có thể hiểu (rẻ mà hàng tốt). Đề mới: この店は 安い（し）、店の人も 親切です |
+| N4-004 間に合いませんでした | Giữ; thêm furigana 遅れる, 会議 |
+| N4-006 đọc hiểu | **Sửa**: đề cũ không cho thời gian đi đường nên không chắc còn kịp, và 「今日は 午後5時半です」 sai (phải là 今). Đề mới thêm 歩いて 15分 |
+
+Duyệt bởi Claude theo yêu cầu người dùng. Trước khi dùng cho một kỳ thi có điểm thật, nên nhờ giáo viên tiếng Nhật xem lại một lượt.
 
 ## Kết quả
 

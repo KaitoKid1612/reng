@@ -11,8 +11,8 @@ import {
 } from "../lib/jlpt-question-draft";
 
 // Checks Reng's original JLPT question drafts and writes each one as lesson content to
-// content/jlpt/generated/ for review. It never publishes a lesson, creates an assignment or
-// touches a database; the Japanese still needs a reviewer before a teacher publishes it.
+// content/jlpt/generated/. It never publishes a lesson, creates an assignment or touches a
+// database; a draft reaches learners only through a review bank a teacher publishes.
 async function main() {
   for (const level of JLPT_LEVELS) {
     const files = jlptDraftFileNames(level);
@@ -27,9 +27,10 @@ async function main() {
     });
     await mkdir(dirname(outputPath), { recursive: true });
     await writeFile(outputPath, formatted);
-    console.log(`${level}: ${draft.questions.length} questions -> ${files.generated}`);
+    const review = draft.reviewedAt ? `reviewed ${draft.reviewedAt}` : "needs Japanese review";
+    console.log(`${level}: ${draft.questions.length} questions (${review}) -> ${files.generated}`);
   }
-  console.log("Generated drafts only. Review the Japanese before publishing.");
+  console.log("Nothing was published; add reviewed questions to a review bank to use them.");
 }
 
 main().catch((error: unknown) => {

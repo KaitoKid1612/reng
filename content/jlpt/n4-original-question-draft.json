@@ -4,73 +4,74 @@
   "status": "draft",
   "origin": "original",
   "rights": "Reng original practice questions",
-  "reviewStatus": "needs-japanese-review",
+  "reviewStatus": "reviewed",
+  "reviewedAt": "2026-11-10",
   "questions": [
     {
       "id": "jlpt-n4-001",
       "type": "choice",
-      "prompt": "「約束」の読み方を選んでください。",
-      "options": ["やくそく", "やっそく", "やくぞく", "やくしょう"],
+      "prompt": "「試験」の読み方を選んでください。",
+      "options": ["しけん", "しげん", "しっけん", "じけん"],
       "answer": [0],
       "multiple": false,
       "points": 1,
       "tags": ["kanji"],
-      "explain": "約束（やくそく）: lời hứa, cuộc hẹn."
+      "explain": "試験（しけん）: kỳ thi, bài thi. しげん (資源) và じけん (事件) là từ khác."
     },
     {
       "id": "jlpt-n4-002",
       "type": "choice",
-      "prompt": "雨が 降っている（　）、出かけます。",
+      "prompt": "雨が {降|ふ}っている（　）、弟は かさを 持たないで 出かけました。",
       "options": ["ので", "のに", "から", "ため"],
       "answer": [1],
       "multiple": false,
       "points": 1,
       "tags": ["grammar"],
-      "explain": "のに biểu thị sự tương phản: dù trời đang mưa nhưng vẫn ra ngoài."
+      "explain": "のに: dù… mà vẫn (kết quả trái với điều người nói nghĩ). Trời đang mưa mà em trai vẫn ra ngoài không mang ô. ので, から, ため chỉ lý do nên không hợp nghĩa."
     },
     {
       "id": "jlpt-n4-003",
       "type": "choice",
-      "prompt": "この店は 安い（　）、品物も いいです。",
+      "prompt": "この店は 安い（　）、店の人も 親切です。",
       "options": ["し", "のに", "なら", "まで"],
       "answer": [0],
       "multiple": false,
       "points": 1,
       "tags": ["grammar"],
-      "explain": "し nối các lý do hoặc đặc điểm cùng hướng."
+      "explain": "〜し、〜も: kể nhiều điểm cùng chiều (rẻ, nhân viên cũng tử tế). のに chỉ sự trái ngược nên không hợp với も."
     },
     {
       "id": "jlpt-n4-004",
       "type": "choice",
-      "prompt": "電車が 遅れたので、会議に（　）。",
+      "prompt": "電車が {遅|おく}れたので、{会議|かいぎ}に（　）。",
       "options": ["間に合いました", "間に合いませんでした", "間に合わせます", "間に合います"],
       "answer": [1],
       "multiple": false,
       "points": 1,
       "tags": ["vocabulary"],
-      "explain": "Vì tàu trễ nên đã không kịp giờ họp."
+      "explain": "Tàu đến muộn nên đã không kịp cuộc họp: 間に合いませんでした là quá khứ phủ định của 間に合う (kịp giờ)."
     },
     {
       "id": "jlpt-n4-005",
       "type": "choice",
-      "prompt": "「準備」の読み方を選んでください。",
-      "options": ["じゅび", "じゅんび", "しゅんび", "じゅんぴ"],
+      "prompt": "「運転」の読み方を選んでください。",
+      "options": ["うんでん", "うんてん", "うんて", "うでん"],
       "answer": [1],
       "multiple": false,
       "points": 1,
       "tags": ["kanji"],
-      "explain": "準備（じゅんび）: chuẩn bị."
+      "explain": "運転（うんてん）: lái xe. Âm てん không đục và có ん ở cả hai chữ."
     },
     {
       "id": "jlpt-n4-006",
       "type": "choice",
-      "prompt": "図書館は 午後6時に 閉まります。今日は 午後5時半です。今から 図書館へ 行けば、まだ 開いていますか。",
+      "prompt": "図書館は 午後6時に {閉|し}まります。今、午後5時半です。家から 図書館まで 歩いて 15分 かかります。今から 歩いて 行けば、図書館は まだ 開いていますか。",
       "options": ["はい、開いています", "いいえ、閉まっています", "明日 開きます", "分かりません"],
       "answer": [0],
       "multiple": false,
       "points": 1,
       "tags": ["reading"],
-      "explain": "5 giờ 30 trước giờ đóng cửa 6 giờ nên thư viện vẫn mở, theo thông tin trong câu."
+      "explain": "Đi bộ 15 phút từ 5 giờ 30 thì đến lúc 5 giờ 45, trước giờ đóng cửa 6 giờ, nên thư viện vẫn mở."
     }
   ]
 }
