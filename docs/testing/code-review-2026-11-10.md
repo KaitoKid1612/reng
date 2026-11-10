@@ -46,7 +46,7 @@ Người dùng yêu cầu: mã nguồn đã lớn, kiểm tra định dạng và
 
 ## Cần người dùng quyết định
 
-1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): đã ghi mã audio nhưng chưa có file MP3 nào trong `public/audio/lessons`; 18/20 lời nghe là hội thoại `男：…女：…` mà máy đọc bằng một giọng, kể cả nhãn người nói. Viết lại thành lời một người, hoặc chờ cách đọc nhiều giọng, trước khi sinh audio.
+1. **Bộ 20 câu nghe thi thử N4** (`content/listening/n4-viet-listening-mock-20.json`): chưa có file MP3 nào vì công cụ tạo bộ này ngày 09/11 chỉ tính mã audio, không gọi được dịch vụ đọc. Đọc database production (chỉ đọc, người dùng cho phép): bộ này chưa nằm trong bài, chưa có audio đăng ký, chưa giao cho ai; bài đang dùng là "Tổng ôn N4 — Minna 1–50" với 20 câu nghe ngày 07/11, đủ 20 file MP3. 18/20 lời nghe là hội thoại `男：…女：…` mà máy đọc bằng một giọng, kể cả nhãn người nói; câu 1 hỏi nhầm người (đã sửa). Cần chọn: đọc hai giọng (nam/nữ) hay viết lại thành lời một người, trước khi sinh audio.
 2. **Câu JLPT tự biên soạn** (6 câu N5, 6 câu N4): đã duyệt cùng ngày theo yêu cầu người dùng (mục dưới). File trong `content/jlpt/generated/` chưa có mã bài và tên nên `bank:sql`/`lesson:import` chưa nhận trực tiếp; muốn dùng thì chép vào ngân hàng ôn N5/N4.
 3. **Email trên production**: khi bật, thêm lại email nhắc bài vào trang Cho giáo viên và trang Hướng dẫn.
 
