@@ -46,6 +46,7 @@ Mẫu đầy đủ ở `.env.example`. Không đưa secret vào biến `NEXT_PUB
 | `CRON_SECRET` | Có cron | Vercel gửi `Authorization: Bearer <CRON_SECRET>`; thiếu thì mọi job trả 503 |
 | `EMAIL_PROVIDER`, `EMAIL_FROM`, `RESEND_API_KEY` | Gửi email nhắc bài | `resend` trên cloud, `mailpit` ở local (kèm `MAILPIT_URL`). Production chưa đặt nên ba job email trả 503 mỗi ngày, đúng như thiết kế |
 | `EMAIL_LINK_SECRET` | Gửi email nhắc bài | Ký link hủy nhận thư; thiếu thì email coi như chưa cấu hình |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Nhắc học bằng thông báo trình duyệt | Cặp khóa tạo một lần bằng `node -e 'console.log(require("web-push").generateVAPIDKeys())'`; mỗi môi trường một cặp, khóa riêng chỉ đặt trên server. `VAPID_SUBJECT` là URL `https:` của site (mặc định `SITE_URL`). Thiếu hai khóa thì trang Nhắc học không có mục thông báo và job tối chỉ gửi email. Đổi cặp khóa làm mọi thiết bị đã bật phải bật lại |
 | `RESEND_WEBHOOK_SECRET` | Theo dõi giao/mở thư | Secret `whsec_…` của webhook Resend trỏ tới `/api/webhooks/email` |
 | `NEXT_PUBLIC_AUDIO_BASE_URL` | Audio kana đặt ở R2 | Trống thì dùng `/audio/kana` trong bản web. Đổi giá trị phải build lại |
 | `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` | Audio bài học đặt ở R2 | Trống thì dùng `/audio/lessons` trong bản web (bộ đề nghe Minna 1–15 đi kèm bản web). Đổi giá trị phải build lại |
@@ -64,12 +65,12 @@ Các biến `E2E_*` do `playwright.supabase.config.ts` tự đặt (khóa từ `
 
 ## Lịch cron
 
-Lịch nằm trong `vercel.json` theo giờ UTC. Gói Hobby chạy mỗi job tối đa một lần mỗi ngày và có thể lệch trong vòng một giờ. Mọi job cần `CRON_SECRET` và Supabase; ba job email cần thêm email đã cấu hình.
+Lịch nằm trong `vercel.json` theo giờ UTC. Gói Hobby chạy mỗi job tối đa một lần mỗi ngày và có thể lệch trong vòng một giờ. Mọi job cần `CRON_SECRET` và Supabase; ba job email cần thêm email đã cấu hình, riêng job nhắc học buổi tối chạy được khi có email hoặc khóa VAPID.
 
 | Đường dẫn | Lịch UTC | Giờ Việt Nam | Việc | Khi chưa cấu hình |
 |---|---|---|---|---|
 | `/api/cron/daily-practice` | `0 23 * * *` | 6:00 mỗi sáng | Giao bài luyện tập hằng ngày cho các lớp đã bật; trả `{ created, exists, skipped, failed }`. Lớp lỗi ghi log riêng, không chặn lớp khác. Chạy lại cùng ngày không giao trùng. Sau đó tự nộp các lượt bỏ dở đã quá hạn của bài không cho nộp muộn và lượt thi thử JLPT đã hết giờ (từ migration `20261109032029`), trả thêm `expiredAttempts: { submitted, skipped, failed, left }`; thiếu migration `20261105012503` thì phần này chỉ ghi log `Expired attempts job failed` ([DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026)) | 503 `not_configured` |
-| `/api/cron/student-reminders` | `0 13 * * *` | 20:00 mỗi tối | Email nhắc bài cho học viên đã bật nhắc | 503 khi chưa có email |
+| `/api/cron/student-reminders` | `0 13 * * *` | 20:00 mỗi tối | Nhắc bài cho học viên đã bật nhắc: thông báo trình duyệt (mỗi người tối đa một lần mỗi ngày, trả `push: { people, sent }`) rồi email | 503 khi chưa có cả email lẫn khóa VAPID |
 | `/api/cron/teacher-digest` | `0 23 * * *` | 6:00 mỗi sáng | Email tóm tắt lớp cho giáo viên | 503 khi chưa có email |
 | `/api/cron/weekly-summary` | `0 12 * * 0` | 19:00 Chủ nhật | Email tổng kết tuần cho học viên | 503 khi chưa có email |
 

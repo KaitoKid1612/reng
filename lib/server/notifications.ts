@@ -246,7 +246,7 @@ interface ReminderWork {
 }
 
 // "Nothing to say, send nothing": the same check runs when planning and right before sending.
-async function describeReminderWork(
+export async function describeReminderWork(
   userId: string,
   frequency: ReminderFrequency,
   now: Date,

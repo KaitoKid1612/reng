@@ -34,7 +34,7 @@ export function NotificationPreferencesForm({
       )}
       <div className="notification-groups">
         <fieldset>
-          <legend>Nhắc học qua email</legend>
+          <legend>Nhắc học (thông báo và email)</legend>
           {FREQUENCY_OPTIONS.map((option) => (
             <label key={option.value} className="choice-label">
               <input
@@ -70,7 +70,7 @@ export function NotificationPreferencesForm({
         </fieldset>
       </div>
       <p className="small muted">
-        Email chỉ gửi khi có việc cần làm. Mọi thư đều có link hủy một chạm.
+        Nhắc học chỉ gửi khi có việc cần làm. Mọi email đều có link hủy một chạm.
       </p>
       {state.error && (
         <p role="alert" className="error-text">

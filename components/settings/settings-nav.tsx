@@ -8,7 +8,7 @@ interface SettingsNavProps {
 export function SettingsNav({ current }: SettingsNavProps) {
   const tabs = [
     { key: "account", href: "/settings/account", label: "Tài khoản" },
-    { key: "notifications", href: "/settings/notifications", label: "Email nhắc học" },
+    { key: "notifications", href: "/settings/notifications", label: "Nhắc học" },
   ] as const;
   return (
     <nav className="settings-tabs" aria-label="Cài đặt">

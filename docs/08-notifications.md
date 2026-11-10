@@ -4,7 +4,7 @@ Rà soát dịch vụ Việt–Trung ngày 29/10/2026. Email local có bằng ch
 
 ## Chọn kênh
 
-MVP dùng email opt-in và mục việc cần làm trong website. Web Push là mở rộng chưa triển khai, Zalo OA ngoài phạm vi. Hiệu quả nhắc học cần đo trên lớp thử, không suy ra từ tỷ lệ mở email ước lượng. Không cam kết kênh miễn phí khi số giáo viên/lớp tăng.
+MVP dùng email opt-in và mục việc cần làm trong website. Từ 10/11/2026 có thêm Web Push (thông báo trình duyệt, mục bên dưới) vì production chưa gửi được email; Zalo OA ngoài phạm vi. Hiệu quả nhắc học cần đo trên lớp thử, không suy ra từ tỷ lệ mở email ước lượng. Không cam kết kênh miễn phí khi số giáo viên/lớp tăng.
 
 ## Dịch vụ gửi email
 
@@ -98,13 +98,16 @@ Vercel Cron chạy theo UTC. Việt Nam là UTC+7, không có giờ mùa hè nê
 
 ## Web Push
 
-Web Push ngoài MVP; quyền trình duyệt, hỗ trợ thiết bị và ngân sách gửi cần kiểm chứng nếu triển khai. Không xin quyền khi chưa có tính năng thực tế.
+**Đã làm 10/11/2026** theo lựa chọn của người dùng (nhắc học bằng thông báo trình duyệt trước, email sau).
 
-Giai đoạn 6 mới triển khai. Lưu subscription từng thiết bị tại push_subscriptions, chỉ user sở hữu được đăng ký/hủy qua API. Endpoint và khóa không được lộ trong báo cáo. Vô hiệu hóa subscription khi dịch vụ báo hết hiệu lực; retry giới hạn với lỗi tạm thời. Chỉ gửi khi push_enabled và bài vẫn cần nhắc. Dùng Web Push API chuẩn; khóa gửi phía server.
+- **Bật:** trang Cài đặt › **Nhắc học**, mục **Thông báo trên thiết bị này**, chỉ hiện khi server có khóa VAPID. Trình duyệt chỉ hỏi quyền khi người dùng bấm **Bật thông báo trên thiết bị này**, không hỏi lúc mở trang. Trang báo riêng các trường hợp: trình duyệt không hỗ trợ; iPhone, iPad chưa thêm Reng vào màn hình chính (`app/manifest.ts`, chế độ `standalone`, biểu tượng 192/512); quyền đã bị chặn. Bật xong có **Gửi thử** và **Tắt trên thiết bị này**. Nếu tần suất nhắc đang là Không nhắc, bật thông báo đổi nó thành hằng ngày.
+- **Lưu:** `push_subscriptions` (endpoint `https`, khóa `p256dh`/`auth`, user agent, số lần lỗi) và `push_log` (mỗi người, mỗi loại, mỗi ngày một dòng), migration `20261110112415_web_push.sql`; chỉ `service_role` đọc ghi. Một trình duyệt có một endpoint: người khác đăng nhập và bật trên trình duyệt đó thì thiết bị chuyển sang người đó. Đăng xuất hủy đăng ký trong trình duyệt (`SignOutButton`); dòng trên server tự xóa lần gửi sau khi dịch vụ push trả 404/410. Xóa tài khoản xóa cả hai bảng của người đó.
+- **Gửi:** job `student-reminders` lúc 20:00 (`sendPushReminders`, `lib/server/push.ts`) chạy cả khi chưa có email: với mỗi người có thiết bị và tần suất nhắc khác Không nhắc, dùng chung `describeReminderWork` với email ("không có việc thì không gửi"), giành chỗ trong `push_log` trước rồi mới gửi, nên chạy lại cùng tối không gửi trùng. Nội dung một dòng (`describeReminderPush`): số bài cần làm kèm bài đầu tiên và hạn, số thẻ cần ôn; bấm vào mở Lớp của tôi. Thư viện `web-push` 3.6.7 mã hóa `aes128gcm`, ký VAPID, TTL 12 giờ. Thiết bị lỗi 5 lần liên tiếp (lỗi khác 404/410) bị gỡ.
+- **Service worker** `public/sw.js` chỉ hiện thông báo và mở trang khi bấm (chỉ đường dẫn trong site), không cache gì.
+- **Kiểm chứng local:** `tests/push-message.test.ts`, `tests/web-push-migration.test.ts`; chạy job hai lần với một dịch vụ push giả qua HTTPS (một thiết bị nhận, một thiết bị trả 410): lần đầu gửi một thông báo và gỡ thiết bị hỏng, lần sau không gửi; luồng Bật, Gửi thử, Tắt trên trang cài đặt với trình duyệt giả lập quyền (Chromium headless luôn báo quyền bị chặn và không có dịch vụ push). Chưa thử trên thiết bị thật: cần khóa VAPID trên production.
+- Chưa làm: nhắc bằng push cho tóm tắt lớp của giáo viên và tổng kết tuần; tin gấp kiểu "bài hết hạn trong 2 giờ" (Hobby chỉ cho cron mỗi ngày một lần).
 
-Lưu ý: iOS chỉ hỗ trợ web push khi người dùng đã thêm trang vào màn hình chính. Cần một hướng dẫn nhỏ cho học viên dùng iPhone.
-
-Push dùng cho tin ngắn và gấp: "Bài tập bài 5 hết hạn trong 2 giờ". Nội dung dài để cho email.
+Lưu ý: iOS chỉ hỗ trợ web push khi người dùng đã thêm trang vào màn hình chính; trang cài đặt và trang Hướng dẫn có các bước.
 
 ## Thời điểm xin quyền
 

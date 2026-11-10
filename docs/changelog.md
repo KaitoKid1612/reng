@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 10/11/2026
 
+- Nhắc học bằng thông báo trình duyệt: trang Cài đặt › Nhắc học có mục bật thông báo trên từng thiết bị (Gửi thử, Tắt); job 20:00 gửi một thông báo khi có bài cần làm hoặc thẻ cần ôn, chạy cả khi chưa có email; cài được Reng lên màn hình chính (bắt buộc với iPhone). Cần khóa VAPID trên Vercel và migration `20261110112415_web_push`. Xem [thông báo](08-notifications.md#web-push).
 - Học viên tự xóa tài khoản ở trang Tài khoản (gõ XÓA để xác nhận): xóa họ tên, email, đăng nhập, nhắc học; bài đã nộp và lịch sử học ở lại trong thống kê lớp dưới tên "Học viên đã xóa". Tài khoản giáo viên và quản trị viên vẫn cần quản trị viên xử lý. Cần áp migration `20261110111047_learner_account_deletion`. Xem [thiết kế](basic-design/teaching-service.md#học-viên-tự-xóa-tài-khoản--10112026).
 - Thi thử JLPT có giờ gợi ý từng phần như đề thật (N4 25/55/35 phút, N5 20/40/30 phút): dưới đồng hồ hiện phần đang đến giờ làm, thời gian còn lại của phần và nút Đến câu … để sang phần sau. Chỉ gợi ý, không khóa phần đã qua. Xem [thiết kế](detail-design/phase-3.md#thi-thử-jlpt--09112026).
 - Thêm 40 câu nghe N4 theo bốn phần của đề thật (`content/listening/n4-viet-listening-mock-21-60.json`): người dẫn đọc câu hỏi tiếng Nhật; phần 発話表現 và 即時応答 đọc ba câu đáp trong audio, đề chỉ in 1, 2, 3. Gộp vào ngân hàng N4 (390 câu, 80 câu nghe). Chờ người dùng nghe duyệt trước khi push và nạp lên production. Xem [hướng dẫn nội dung](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn).

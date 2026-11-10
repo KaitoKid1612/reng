@@ -212,6 +212,7 @@ Tra cứu nhanh, cập nhật tới 09/11/2026; chi tiết ở dòng chú thích
 | `20261109032029_jlpt_mock_exams` | `assignment_exams` (cấp N5/N4, số phút mỗi lượt; chỉ chèn khi bài còn nháp), `publish_jlpt_mock_exam`; `check_open_attempt`, `list_expired_attempts`, `submit_expired_attempt` tính giới hạn thời gian theo lượt ([DD](detail-design/phase-3.md#thi-thử-jlpt--09112026)) |
 | `20261110085351_lessons_server_writes_only` | Thu hồi quyền INSERT/UPDATE/DELETE trực tiếp trên `lessons` của `authenticated`/`anon` và bỏ hai policy ghi; giáo viên vẫn đọc bài của mình, mọi thao tác ghi đi qua server (service role, RPC). Trước đó giáo viên gọi thẳng Data API được để công khai bản sao bài được chia sẻ, bỏ lưu trữ hoặc ghi nháp mà trình soạn không nhận |
 | `20261110111047_learner_account_deletion` | `profiles.deleted_at`; `anonymize_learner(user)` (chỉ `service_role`): học viên tự xóa tài khoản bằng ẩn danh hóa, giữ bài nộp, câu trả lời, lịch sử ôn, điểm danh; xóa nhắc học, nhật ký email, lượt thử mã lớp, lịch sử nhập, lời mời chia sẻ, hồ sơ đăng ký dạy chưa duyệt; từ chối tài khoản giáo viên, quản trị viên hoặc còn bài, lớp. `class_roster` không trả email của người đã xóa ([BD](basic-design/teaching-service.md#học-viên-tự-xóa-tài-khoản--10112026)) |
+| `20261110112415_web_push` | `push_subscriptions` (thiết bị nhận thông báo, endpoint duy nhất), `push_log` (mỗi người, mỗi loại, mỗi ngày một lần gửi); chỉ `service_role`. `anonymize_learner` xóa thêm hai bảng này ([thông báo](08-notifications.md#web-push)) |
 
 ## Mở rộng dữ liệu dịch vụ
 
