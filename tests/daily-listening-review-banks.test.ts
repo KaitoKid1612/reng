@@ -11,8 +11,8 @@ import { lessonDraftSchema } from "../lib/lesson-schema";
 const banks = [
   {
     file: "content/review-banks/n4-daily-with-listening.json",
-    expectedTotal: 350,
-    expectedListening: 40,
+    expectedTotal: 390,
+    expectedListening: 80,
     expectedOriginals: 6,
     dailySize: 70,
     dailyListening: 10,
