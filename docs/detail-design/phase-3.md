@@ -252,3 +252,12 @@ Người dùng chọn: giọng máy đọc nguyên văn script chính thức kè
   - Không `--commit` thì kết thúc bằng ROLLBACK.
 - **Kiểm chứng:** `tests/jlpt-official-exams-migration.test.ts` (PGlite: đề 98 câu đúng thứ tự, 100 được, 101 và 0 bị từ chối; đề thi thử bắt đầu được khi bài nguồn còn đóng, bài kiểm tra thường của bài đó vẫn `not_available`) và `tests/jlpt-official-tests.test.ts` (bốn đề N5/N4 của 2012 và 2018 khớp 正答表, số câu từng phần, nguồn, hình, audio, lời nghe không còn chữ Hán thiếu cách đọc, ghép đề đủ câu đúng thứ tự).
 
+## Lịch sử thi thử JLPT — 11/11/2026
+
+Trước đây điểm từng đề chỉ có ở trang kết quả của đề đó. Ba tuần trước kỳ thi 06/12/2026, học viên và giáo viên cần thấy điểm ước tính có tiến về mức đỗ không.
+
+- **Tính điểm** (`lib/jlpt-history.ts`): `summarizeJlptHistory` chấm mỗi đề như trang kết quả (`scoreJlptSections` rồi `estimateJlptScore` trên các câu của lượt nộp mới nhất), xếp mới nhất trước. `change` so tổng với đề ước tính được ngay trước đó cùng cấp, nên chuyển từ N5 sang N4 không bị đọc là tụt điểm. `describeJlptOutcome` ghi "Ước tính đỗ" hoặc "Chưa đỗ:" kèm lý do theo thứ tự điểm sàn ngôn ngữ, điểm sàn nghe, tổng.
+- **Học viên:** `listLearnerJlptHistory` (`lib/server/jlpt-history.ts`) lấy bài giao có dòng `assignment_exams` ở các lớp đang học, lượt nộp mới nhất của từng đề, và chỉ đề đã qua lúc công bố điểm (`isFeedbackAvailable`). Câu lấy bằng `loadAttemptResultItems` như trang kết quả nên hai nơi cùng số. Trang Tiến độ hiện `JlptHistory` (`components/classroom/jlpt-history.tsx`) khi có ít nhất một đề; tên đề dẫn tới trang kết quả.
+- **Giáo viên:** trang chi tiết học viên dùng lại các dòng của `getStudentDetail` (bài thi thử đã có lượt nộp và câu), không đọc thêm database. Tên đề dẫn tới bài đó trong mục Bài đã giao và câu trả lời bên dưới. Giáo viên thấy điểm ngay sau khi nộp, như danh sách câu trả lời.
+- Lượt đã hết giờ nhưng chưa được nộp (học viên đóng trang) chỉ vào bảng sau khi Reng nộp nó: khi học viên mở lại đề hoặc lúc cron 6:00.
+- Không migration, không đổi dữ liệu. Kiểm chứng: `tests/jlpt-history.test.ts` (thứ tự, so với lần trước cùng cấp, đề không ước tính được, đỗ tổng nhưng trượt điểm sàn), `e2e-supabase/jlpt-mock-exam.spec.ts` (bảng ở trang Tiến độ khớp điểm của trang kết quả).

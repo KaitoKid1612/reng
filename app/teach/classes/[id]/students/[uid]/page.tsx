@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { JlptHistory } from "@/components/classroom/jlpt-history";
 import { DailyDayChips } from "@/components/daily-history/daily-day-chips";
 import { DailyScoreChart } from "@/components/daily-history/daily-score-chart";
 import { DailyStatTiles } from "@/components/daily-history/daily-stat-tiles";
@@ -21,6 +22,7 @@ import { isTypedQuestion } from "@/lib/answer-variants";
 import { answerLang, isHandedInAtDeadline } from "@/lib/assignment";
 import { LEARNER_LABELS } from "@/lib/class-report";
 import { formatDecimal, formatPercent } from "@/lib/grading/grade";
+import { summarizeJlptHistory } from "@/lib/jlpt-history";
 import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getStudentDetail } from "@/lib/server/reports";
@@ -80,6 +82,22 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
     : detail.rows.findIndex((row) => row.items.length > 0);
   // A day opens its assignment below, where the answers already are.
   const hrefForDay = (day: DailyDay) => `${path}?day=${day.date}#assignment-${day.assignmentId}`;
+  // The teacher sees each handed-in mock exam at once, like the answers below.
+  const jlptHistory = summarizeJlptHistory(
+    detail.rows.flatMap(({ assignment, latest, items }) =>
+      assignment.exam && latest?.submittedAt && items.length
+        ? [
+            {
+              assignmentId: assignment.id,
+              title: assignment.title,
+              level: assignment.exam.level,
+              submittedAt: latest.submittedAt,
+              items,
+            },
+          ]
+        : [],
+    ),
+  );
   return (
     <>
       <div className="page-heading">
@@ -120,6 +138,13 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
             monthHeadingLevel={3}
           />
         </section>
+      )}
+      {jlptHistory.length > 0 && (
+        <JlptHistory
+          entries={jlptHistory}
+          hrefFor={(entry) => `#assignment-${entry.assignmentId}`}
+          now={now}
+        />
       )}
       <section className="section-block" aria-labelledby="student-answers">
         <h2 id="student-answers">Bài đã giao và câu trả lời</h2>

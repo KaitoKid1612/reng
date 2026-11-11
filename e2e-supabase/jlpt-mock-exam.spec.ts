@@ -126,9 +126,32 @@ test("a teacher gives a timed N5 mock exam and a learner sees section results", 
   }
   await expect(results).toContainText("/ 180 điểm (ước tính)");
   await expect(results).toContainText("Đỗ N5 cần tổng từ 80/180");
+  const total = ((await results.locator(".result-score").textContent()) ?? "").split("/")[0];
   // The single attempt is used: the exam page offers the results, not a new attempt.
   await learnerPage.goto(`/assignments/${examId}`);
   await expect(learnerPage.getByRole("button", { name: "Bắt đầu thi" })).toHaveCount(0);
   await expect(learnerPage.getByText("Bạn đã dùng hết số lượt làm bài.")).toBeVisible();
+
+  // Progress and the teacher's learner page list the exam with the result page's estimate.
+  const historyOf = (target: typeof page) =>
+    target.locator("section", {
+      has: target.getByRole("heading", { name: "Thi thử JLPT", exact: true }),
+    });
+  await learnerPage.goto("/progress");
+  const learnerRow = historyOf(learnerPage).locator("tbody tr");
+  await expect(learnerRow).toHaveCount(1);
+  await expect(learnerRow.locator('[data-label="Tổng"]')).toHaveText(`${total.trim()}/180`);
+  await expect(learnerRow.locator('[data-label="Kết quả"]')).toContainText("Chưa đỗ");
+  await learnerRow.getByRole("link").click();
+  await learnerPage.waitForURL(`**/assignments/${examId}/results`);
   await context.close();
+
+  await page.goto(`/teach/classes/${classId}`);
+  await page
+    .getByRole("row", { name: new RegExp(learner.name) })
+    .getByRole("link", { name: learner.name })
+    .click();
+  await expect(historyOf(page).locator('tbody [data-label="Tổng"]')).toHaveText(
+    `${total.trim()}/180`,
+  );
 });

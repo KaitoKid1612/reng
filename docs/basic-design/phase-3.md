@@ -123,4 +123,5 @@ Mục tiêu: học viên lớp tiếng Nhật làm đề N5/N4 có cấu trúc v
   - Câu hỏi có hình (tranh lựa chọn, tờ thông tin), từ được hỏi có gạch chân như sách, mỗi trang ghi nguồn jlpt.jp.
   - Phần nghe đọc lại nguyên văn script chính thức bằng giọng máy, trang kết quả có link tới bản ghi âm gốc trên jlpt.jp.
   - Lời giải thích tiếng Việt do Reng viết. Nguồn và quyền dùng ở [báo cáo](../testing/jlpt-official-sources-2026-11-11.md).
+- **Lịch sử thi thử** (11/11/2026): trang **Tiến độ** của học viên và trang chi tiết học viên của giáo viên có bảng **Thi thử JLPT**, mỗi đề đã nộp một dòng, mới nhất ở trên: ngôn ngữ và đọc hiểu /120, nghe hiểu /60, tổng /180 kèm thay đổi so với lần trước cùng cấp, và "Ước tính đỗ" hoặc lý do chưa đỗ (phần nào dưới điểm sàn, tổng dưới mức đỗ). Học viên chỉ thấy đề đã tới lúc công bố điểm; giáo viên thấy ngay sau khi nộp. Không có đề thi thử nào thì không hiện bảng. Chi tiết ở [DD](../detail-design/phase-3.md#lịch-sử-thi-thử-jlpt--11112026).
 - Chi tiết dữ liệu, quyền và cách chọn câu ở [DD](../detail-design/phase-3.md#thi-thử-jlpt--09112026).

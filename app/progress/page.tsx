@@ -2,10 +2,12 @@ import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { AssignmentStatusBadge } from "@/components/classroom/assignment-labels";
+import { JlptHistory } from "@/components/classroom/jlpt-history";
 import { WeeklyScoreChart } from "@/components/progress/weekly-score-chart";
 import { buttonVariants } from "@/components/ui/button";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
+import { listLearnerJlptHistory } from "@/lib/server/jlpt-history";
 import { getProgressSummary, getQuestionKindStats } from "@/lib/server/learner";
 import { weakestKind } from "@/lib/question-kinds";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -49,9 +51,10 @@ function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
   const now = new Date();
-  const [summary, kindStats] = await Promise.all([
+  const [summary, kindStats, jlptHistory] = await Promise.all([
     getProgressSummary(account.id, now),
     getQuestionKindStats(account.id, now),
+    listLearnerJlptHistory(account.id, now),
   ]);
   const weakest = weakestKind(kindStats);
   const weeks = weeklyScores(
@@ -96,6 +99,13 @@ export default async function ProgressPage() {
           <span>thẻ đang cần ôn</span>
         </div>
       </div>
+      {jlptHistory.length > 0 && (
+        <JlptHistory
+          entries={jlptHistory}
+          hrefFor={(entry) => `/assignments/${entry.assignmentId}/results`}
+          now={now}
+        />
+      )}
       <section className="section-block" aria-labelledby="reading-progress">
         <h2 id="reading-progress">Đọc bài</h2>
         {summary.reading.length ? (
