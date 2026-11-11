@@ -77,3 +77,62 @@
   font-size: 15px;
   color: var(--muted);
 }
+/* Signed-in start page (components/classroom/home-welcome.tsx): greeting, today's plan and
+   shortcuts. A browser that was signed in hides the visitor sections before the first paint. */
+html[data-account="member"] .home-guest {
+  display: none;
+}
+.member-home-placeholder {
+  display: none;
+}
+html[data-account="member"] .member-home-placeholder {
+  display: block;
+  min-height: 60vh;
+}
+.member-home {
+  animation: member-home-in 300ms ease-out;
+}
+@keyframes member-home-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.member-greeting {
+  margin-bottom: 28px;
+}
+.member-greeting h1 {
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+.member-greeting p {
+  margin: 0;
+}
+.member-greeting p::first-letter {
+  text-transform: uppercase;
+}
+.member-shortcuts-title {
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+/* Five shortcuts fit one row on a desktop rather than leaving one card alone below. */
+.link-cards.member-shortcuts {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.member-shortcuts .link-card {
+  gap: 6px;
+}
+.shortcut-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.link-card:hover .shortcut-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
