@@ -228,7 +228,7 @@ Câu trong bài giao là snapshot chép từ bài nguồn lúc giao, và trigger
 
 ## Đề chính thức JLPT — 11/11/2026
 
-Người dùng chọn: giọng máy đọc nguyên văn script chính thức kèm link bản ghi âm gốc ở trang kết quả, một đề đủ câu thay vì tách hai đề. Nguồn và quyền dùng ở [báo cáo](../testing/jlpt-official-sources-2026-11-11.md); cách chép và nạp ở [soạn nội dung](../content-authoring.md#đề-chính-thức-jlpt-公式問題集-第二集-2018).
+Người dùng chọn: giọng máy đọc nguyên văn script chính thức kèm link bản ghi âm gốc ở trang kết quả, một đề đủ câu thay vì tách hai đề. Nguồn và quyền dùng ở [báo cáo](../testing/jlpt-official-sources-2026-11-11.md); cách chép và nạp ở [soạn nội dung](../content-authoring.md#đề-chính-thức-jlpt-公式問題集-2012-và-2018).
 
 - **Dữ liệu câu** (`lib/lesson-schema.ts`): thêm `instruction` (tiêu đề もんだい), `image` (đường dẫn `public/` hoặc HTTPS) và `source` ({`credit`, `url`, `audioUrl`}).
   - `toQuestionView` gửi `instruction`, `image` và `credit`. `ResultItem.source` mang `url`/`audioUrl` sau khi được xem kết quả.
@@ -250,5 +250,5 @@ Người dùng chọn: giọng máy đọc nguyên văn script chính thức kè
   - `publish_lesson` khi nội dung đổi;
   - `upsert_class_lesson` vào lớp theo tên, giữ thứ tự nếu đã có, mở từ `--opens-at` (mặc định 07/12/2026 0:00 giờ Việt Nam).
   - Không `--commit` thì kết thúc bằng ROLLBACK.
-- **Kiểm chứng:** `tests/jlpt-official-exams-migration.test.ts` (PGlite: đề 98 câu đúng thứ tự, 100 được, 101 và 0 bị từ chối; đề thi thử bắt đầu được khi bài nguồn còn đóng, bài kiểm tra thường của bài đó vẫn `not_available`) và `tests/jlpt-official-tests.test.ts` (đề N5/N4 khớp 正答表, số câu từng phần, nguồn, hình, audio, lời nghe không còn chữ Hán thiếu cách đọc, ghép đề đủ câu đúng thứ tự).
+- **Kiểm chứng:** `tests/jlpt-official-exams-migration.test.ts` (PGlite: đề 98 câu đúng thứ tự, 100 được, 101 và 0 bị từ chối; đề thi thử bắt đầu được khi bài nguồn còn đóng, bài kiểm tra thường của bài đó vẫn `not_available`) và `tests/jlpt-official-tests.test.ts` (bốn đề N5/N4 của 2012 và 2018 khớp 正答表, số câu từng phần, nguồn, hình, audio, lời nghe không còn chữ Hán thiếu cách đọc, ghép đề đủ câu đúng thứ tự).
 

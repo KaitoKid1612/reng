@@ -6,7 +6,7 @@ Yêu cầu của người dùng: đề thi thử cho Việt (N4) và Nguyên (N5
 
 - **Không có nguồn nào vừa là đề thật, vừa ghi đúng tháng/năm, vừa được phép crawl.** Điều này đúng với dạng đề hiện hành (từ 2010).
 - **Đề thật hợp pháp chỉ có hai tập sách đề chính thức**, đăng miễn phí trên jlpt.jp, mỗi tập một đề cho mỗi cấp. Câu hỏi đã ra trong các kỳ thi thật từ 2010, nhưng sách không ghi kỳ nào.
-- **Quyết định:** nhập bộ 2018 cho N5 và N4, ghi nguồn đúng chính sách. Tên đề ghi "tập 2018", không gắn tháng/năm. Không dùng các bản chép lại.
+- **Quyết định:** nhập bộ 2018, rồi bộ 2012 cùng ngày, cho N5 và N4, ghi nguồn đúng chính sách. Tên đề ghi "tập 2018"/"tập 2012", không gắn tháng/năm. Không dùng các bản chép lại.
 
 ## Nguồn chính thức (đã kiểm bằng cách mở trang và tải file)
 
@@ -46,9 +46,9 @@ Yêu cầu của người dùng: đề thi thử cho Việt (N4) và Nguyên (N5
 
 **Đã kiểm chứng:** bộ "N4 真题 2018年07月" trên jlptzhen trùng từng câu với 第二集 N4 (今日は とても 楽しかったですね, この あたりは ちょっと 不便ですね…). Bộ "N5 2018年07月" trùng 第二集 N5 nhưng đảo thứ tự lựa chọn: câu 1 gốc là ゆき/はれ/くもり/あめ đáp án 4, trên trang thành ゆき/あめ/くもり/はれ đáp án 2. Nhãn tháng/năm trên các trang này vì vậy không đáng tin.
 
-## Cách Reng dùng bộ 2018
+## Cách Reng dùng hai bộ đề
 
-Xem [soạn nội dung](../content-authoring.md#đề-chính-thức-jlpt-公式問題集-第二集-2018) và [DD giai đoạn 3](../detail-design/phase-3.md#đề-chính-thức-jlpt--11112026):
+Xem [soạn nội dung](../content-authoring.md#đề-chính-thức-jlpt-公式問題集-2012-và-2018) và [DD giai đoạn 3](../detail-design/phase-3.md#đề-chính-thức-jlpt--11112026):
 - **Văn bản và hình:** chép nguyên văn câu hỏi, cắt hình từ PDF, ghi nguồn một lần mỗi trang.
 - **Phần nghe:** đọc lại nguyên văn script bằng giọng máy, trang kết quả có link bản ghi âm gốc trên jlpt.jp.
 - **Thi:** mỗi đề lấy đủ mọi câu theo thứ tự sách. Bài nguồn đóng với học viên đến 07/12/2026.

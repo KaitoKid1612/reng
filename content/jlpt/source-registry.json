@@ -22,7 +22,7 @@
       "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
       "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
       "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material, credit 出典 日本語能力試験公式ウェブサイト; listening audio contains third-party works (link only)",
-      "importPolicy": "allowed-not-imported: scanned PDFs need retyping",
+      "importPolicy": "imported-2026-11-11: N5/N4 question text (read from the scanned pages) and images (content/jlpt/official), listening re-recorded from the official script; original MP3 linked",
       "official": true
     },
     {

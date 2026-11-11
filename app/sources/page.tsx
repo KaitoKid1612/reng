@@ -59,9 +59,9 @@ export default function SourcesPage() {
       </p>
       <h2>Đề chính thức JLPT</h2>
       <p>
-        Đề thi thử &quot;Đề chính thức JLPT N5/N4 (tập 2018)&quot; lấy câu hỏi, hình và lời nghe từ{" "}
-        <span lang="ja">日本語能力試験 公式問題集 第二集</span> đăng miễn phí trên trang chính thức
-        của kỳ thi:{" "}
+        Các đề thi thử &quot;Đề chính thức JLPT N5/N4&quot; (tập 2012 và tập 2018) lấy câu hỏi, hình
+        và lời nghe từ <span lang="ja">日本語能力試験 公式問題集</span> và{" "}
+        <span lang="ja">公式問題集 第二集</span> đăng miễn phí trên trang chính thức của kỳ thi:{" "}
         <span lang="ja">
           出典　日本語能力試験公式ウェブサイト（
           <a href="https://www.jlpt.jp/samples/sampleindex.html" rel="noopener">

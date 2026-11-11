@@ -240,7 +240,7 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 
 ## Nguồn đề JLPT và câu tự biên soạn
 
-Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề. Ngày 11/11/2026 đã đọc chính sách của jlpt.jp: sách đề chính thức đăng trên trang được dùng làm tài liệu dạy miễn phí khi ghi nguồn, nên bộ 2018 đã vào Reng ([mục dưới](#đề-chính-thức-jlpt-公式問題集-第二集-2018)); file nghe gốc vẫn chỉ đặt link.
+Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề. Ngày 11/11/2026 đã đọc chính sách của jlpt.jp: sách đề chính thức đăng trên trang được dùng làm tài liệu dạy miễn phí khi ghi nguồn, nên bộ 2018 và bộ 2012 đã vào Reng ([mục dưới](#đề-chính-thức-jlpt-公式問題集-2012-và-2018)); file nghe gốc vẫn chỉ đặt link.
 
 | File trong `content/jlpt/` | Nội dung |
 |---|---|
@@ -266,7 +266,7 @@ Bộ thứ hai `content/listening/n4-viet-listening-mock-21-60.json` (10/11/2026
 
 Bộ N5 `content/listening/n5-viet-listening-mock-40.json` (11/11/2026, 40 câu; người dùng duyệt cùng ngày mà không nghe, một agent độc lập soát lời thoại, đáp án và furigana: sửa cách đọc 出す, viết lại 10 lời thoại cho tự nhiên và đúng cấp, rồi sinh lại 10 file audio) theo tỉ lệ đề N5 (7/6/5/6) quy về 40 câu: 課題理解 12, ポイント理解 10, 発話表現 8, 即時応答 10; cách đọc và giọng như bộ N4, giáo viên và nhân viên cửa hàng dùng giọng Rina. Từ và mẫu câu trong Minna 1–25 (có 〜なくても いいです, 〜ないで ください, 〜まえに, thể thường, 〜でしょう), nên có thể đi trước bài Minna học viên đang học. Lời nghe viết cách giữa các cụm như sách N5, mọi chữ Hán có furigana `{漢字|かんじ}` để học viên đọc được và máy đọc đúng âm (số đếm như `{8時半|はちじはん}`, `{4月4日|しがつよっか}`). Bộ này gộp vào ngân hàng N5 (184 câu, 118 câu nghe); đề thi thử N5 chỉ lấy 40 câu này, đủ hai đề không lặp.
 
-## Đề chính thức JLPT (公式問題集 第二集, 2018)
+## Đề chính thức JLPT (公式問題集 2012 và 2018)
 
 Ngày 11/11/2026 người dùng muốn đề thi thử lấy từ đề JLPT thật, ghi tháng và năm của kỳ thi, không tự bịa. Rà soát nguồn cùng ngày ([báo cáo](testing/jlpt-official-sources-2026-11-11.md)):
 
@@ -282,8 +282,9 @@ Files:
 |---|---|
 | `content/jlpt/official/n5-2018.json` | Bài "Đề chính thức JLPT N5 (tập 2018)": 91 câu theo thứ tự sách (35 文字・語彙, 32 文法・読解, 24 聴解) |
 | `content/jlpt/official/n4-2018.json` | N4: 98 câu (35, 35, 28) |
-| `content/listening/jlpt-official-n5-2018.json`, `…-n4-2018.json` | Phần nghe làm bộ nghe để sinh audio: người dẫn Yuki, nữ Sakura, nam Haruto; nằm trong `lib/bundled-listening.ts` để đăng ký audio khi nạp |
-| `public/images/jlpt/2018/n5/`, `…/n4/` | Hình cắt từ PDF: tranh lựa chọn của câu nghe, bảng/tờ thông tin của câu đọc |
+| `content/jlpt/official/n5-2012.json`, `n4-2012.json` | Bộ 2012: N5 89 câu (33 文字・語彙, 32 文法・読解, 24 聴解), N4 97 câu (34, 35, 28) |
+| `content/listening/jlpt-official-n5-2018.json`, `…-n4-2018.json`, `…-n5-2012.json`, `…-n4-2012.json` | Phần nghe làm bộ nghe để sinh audio: người dẫn Yuki, nữ Sakura, nam Haruto; nằm trong `lib/bundled-listening.ts` để đăng ký audio khi nạp |
+| `public/images/jlpt/2018/…`, `public/images/jlpt/2012/…` | Hình cắt từ PDF: tranh lựa chọn của câu nghe, bảng/tờ thông tin của câu đọc; ở bộ 2012 thêm ảnh lựa chọn của vài câu viết chữ Hán có chữ "giả" mà bản scan không gõ lại chính xác được |
 | `lib/jlpt-official.ts` | Dòng ghi nguồn, trang gốc, link MP3 gốc từng phần nghe, ngày bài mở cho học viên |
 
 Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng trang):
@@ -299,7 +300,7 @@ Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng tr
 2. Chạy thử bằng `npm run official:sql -- --file content/jlpt/official/n5-2018.json --owner <email giáo viên> --class "<tên lớp>" --out /tmp/n5-official.sql`, thêm `--commit` để ghi thật. Lệnh tạo bài cho giáo viên (một lần, có ghi nguồn), xuất bản rồi gắn vào lớp. Bài mở cho học viên từ 07/12/2026 (`--opens-at` để đổi), nên học viên chỉ gặp câu hỏi trong đề thi thử.
 3. Giáo viên vào **Giao bài → Thi thử JLPT** và chọn bài đề chính thức. Đề lấy đủ mọi câu theo đúng thứ tự trong sách; cấp, số phút và tên đề tự theo bài. Chọn sai cấp thì bị từ chối.
 
-Bộ 2012 chưa làm: PDF là ảnh scan, cần gõ lại.
+**Bộ 2012** (cùng ngày, người dùng chọn làm gọn để tiết kiệm token): PDF đề là ảnh scan, còn 正答表 và script nghe có lớp chữ. Ba agent đọc ảnh mỗi trang một lần; đáp án được đối chiếu tự động với 正答表; lời nghe khớp script. Số điện thoại trong lời nghe có cách đọc từng chữ số (`{512-7734|ごーいちにーのななななさんよん}`) để giọng máy đọc như đề thật. Mã câu `n5-2012-…`, tag `official:jlpt-2012`.
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
