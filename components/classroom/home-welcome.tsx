@@ -13,7 +13,9 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import { HomeAgenda } from "@/components/classroom/home-agenda";
+import { HomeAgenda, useHomeAgenda } from "@/components/classroom/home-agenda";
+import { StreakCard } from "@/components/progress/streak-card";
+import { TeacherTodayPanel } from "@/components/teach/teacher-today";
 import { useAccountSummary } from "@/components/use-account-summary";
 
 import type { AccountSummary } from "@/components/use-account-summary";
@@ -111,6 +113,7 @@ function MemberHome({ account }: MemberHomeProps) {
   // Mounted only in the browser once the account has loaded, so the clock never differs from a
   // server render.
   const [now] = useState(() => new Date());
+  const home = useHomeAgenda();
   const shortcuts = [
     ...(account.role === "teacher" ? TEACHER_SHORTCUTS : LEARNER_SHORTCUTS),
     SELF_STUDY_SHORTCUT,
@@ -118,13 +121,17 @@ function MemberHome({ account }: MemberHomeProps) {
 
   return (
     <div className="member-home">
-      <div className="member-greeting">
-        <h1>
-          {greetingFor(Number(HOUR_FORMAT.format(now)))}, {account.name}
-        </h1>
-        <p className="muted">{DATE_FORMAT.format(now)}</p>
+      <div className="member-top">
+        <div className="member-greeting">
+          <h1>
+            {greetingFor(Number(HOUR_FORMAT.format(now)))}, {account.name}
+          </h1>
+          <p className="muted">{DATE_FORMAT.format(now)}</p>
+        </div>
+        {home?.streak && <StreakCard streak={home.streak} />}
       </div>
-      <HomeAgenda />
+      {home?.teaching && <TeacherTodayPanel today={home.teaching} isOnHome />}
+      <HomeAgenda agenda={home?.agenda ?? null} />
       <section aria-labelledby="shortcuts-title">
         <h2 id="shortcuts-title" className="member-shortcuts-title">
           Đi nhanh tới

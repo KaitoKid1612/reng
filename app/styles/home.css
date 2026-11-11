@@ -98,8 +98,18 @@ html[data-account="member"] .member-home-placeholder {
     transform: translateY(8px);
   }
 }
-.member-greeting {
+.member-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  align-items: center;
+  gap: 24px;
   margin-bottom: 28px;
+}
+@media (max-width: 820px) {
+  .member-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
 }
 .member-greeting h1 {
   margin-bottom: 0;

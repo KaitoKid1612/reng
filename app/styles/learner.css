@@ -330,3 +330,90 @@
     font-size: 19px;
   }
 }
+/* Study streak with today's status and the next milestone (components/progress/streak-card.tsx).
+   The flame is lit once the learner studied today. */
+.streak-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.streak-flame {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--muted);
+}
+.streak-card[data-today="done"] .streak-flame {
+  background: color-mix(in srgb, var(--brand-bell) 24%, var(--surface));
+  color: var(--attention);
+}
+.streak-card[data-today="done"] .streak-flame svg {
+  transform-origin: 50% 90%;
+  animation: flame-flicker 2.4s ease-in-out infinite;
+}
+@keyframes flame-flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.06, 0.97) rotate(-3deg);
+  }
+  60% {
+    transform: scale(0.97, 1.05) rotate(2deg);
+  }
+}
+.streak-card > div {
+  flex: 1;
+  min-width: 0;
+}
+.streak-days {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.streak-days strong {
+  font-size: 28px;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.streak-today {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--attention);
+}
+.streak-card[data-today="done"] .streak-today {
+  color: var(--correct);
+}
+.streak-card progress {
+  height: 8px;
+  margin: 0 0 4px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.streak-card progress::-webkit-progress-bar {
+  border-radius: 999px;
+}
+.streak-card progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--brand-bell);
+}
+.streak-card progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--brand-bell);
+}
+.streak-card p:last-child {
+  margin: 0;
+}

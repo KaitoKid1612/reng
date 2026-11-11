@@ -17,7 +17,7 @@ import { listClassSchedules } from "@/lib/server/class-schedule";
 import { getClassProgressFlags, listArchivedLessons } from "@/lib/server/lesson-usage";
 import { buildStartSteps, showsStartSteps } from "@/lib/teaching-start";
 import { buildTeacherToday } from "@/lib/teacher-today";
-import { loadTeacherTodayActivity } from "@/lib/server/teacher-today";
+import { loadTeacherTodayActivity, toTeacherTodayClasses } from "@/lib/server/teacher-today";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
 
 import type { Metadata } from "next";
@@ -51,14 +51,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
     ),
   ]);
   const teacherToday = buildTeacherToday(
-    {
-      classes: teachingClasses.map((item) => ({
-        id: item.id,
-        name: item.name,
-        slots: schedules.get(item.id)?.slots ?? [],
-      })),
-      ...activity,
-    },
+    { classes: toTeacherTodayClasses(teachingClasses, schedules), ...activity },
     now,
   );
   const firstClass = teachingClasses[0];
