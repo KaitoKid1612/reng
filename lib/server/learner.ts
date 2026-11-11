@@ -30,7 +30,7 @@ import {
   selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
-import { countStudyStreak, isStreakSettled } from "@/lib/study-days";
+import { countStudyStreak, isStreakSettled, toStudyDay } from "@/lib/study-days";
 
 import type { Assignment, Attempt } from "@/lib/server/assignments";
 import type { ClassLesson } from "@/lib/server/classes";
@@ -217,7 +217,12 @@ export async function getLearnerAgenda(userId: string, now: Date) {
 const ACTIVITY_PAGE_SIZE = 1000;
 const MAX_ACTIVITY_PAGES = 10;
 
-export async function getStudyActivity(userId: string, now: Date = new Date()) {
+// coverSince: also read every review after this instant, for a calendar of recent weeks.
+export async function getStudyActivity(
+  userId: string,
+  now: Date = new Date(),
+  coverSince: Date | null = null,
+) {
   const service = createServiceClient();
   // Submissions come one or two a day, so the newest 400 cover more than a year.
   const submissions = await selectRows(
@@ -243,18 +248,25 @@ export async function getStudyActivity(userId: string, now: Date = new Date()) {
     );
     activity.push(...reviews.map((row) => row.reviewed_at));
     const oldest = reviews.at(-1)?.reviewed_at;
-    if (reviews.length < ACTIVITY_PAGE_SIZE || !oldest || isStreakSettled(activity, oldest, now)) {
+    const isCovered =
+      !coverSince || (oldest !== undefined && Date.parse(oldest) < coverSince.getTime());
+    if (
+      reviews.length < ACTIVITY_PAGE_SIZE ||
+      !oldest ||
+      (isCovered && isStreakSettled(activity, oldest, now))
+    ) {
       break;
     }
   }
   return activity;
 }
 
-export async function getProgressSummary(userId: string, now: Date) {
+// calendarSince: the first day of the study calendar, whose activity is read in full.
+export async function getProgressSummary(userId: string, now: Date, calendarSince: Date) {
   const service = createServiceClient();
   const [{ classes, assignments }, activity, reading, cards] = await Promise.all([
     listLearnerAssignments(userId, now),
-    getStudyActivity(userId, now),
+    getStudyActivity(userId, now, calendarSince),
     selectRows(
       service
         .from("lesson_progress")
@@ -288,9 +300,12 @@ export async function getProgressSummary(userId: string, now: Date) {
   const scored = assignments.filter((item) => item.latestPercent !== null);
   const vocabCards = cards.filter((card) => card.item_type === "vocab");
   const mistakes = cards.filter((card) => card.item_type === "mistake");
+  const today = toStudyDay(now);
   return {
     classes,
+    activity,
     streak: countStudyStreak(activity, now),
+    hasStudiedToday: activity.some((instant) => toStudyDay(instant) === today),
     reading: reading.map((row) => ({
       lessonId: row.lesson_id,
       title: titles.find((title) => title.id === row.lesson_version_id)?.title ?? row.lesson_id,

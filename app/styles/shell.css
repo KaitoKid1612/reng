@@ -295,6 +295,7 @@
    own look. */
 .page-heading p a,
 .subject-nav p a,
+.inline-links a,
 :where(p.small, p.muted) a {
   text-decoration: underline;
 }

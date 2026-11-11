@@ -3,22 +3,31 @@ import Link from "next/link";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { AssignmentStatusBadge } from "@/components/classroom/assignment-labels";
 import { JlptHistory } from "@/components/classroom/jlpt-history";
+import { StreakCard } from "@/components/progress/streak-card";
+import { StudyCalendarGrid } from "@/components/progress/study-calendar";
 import { WeeklyScoreChart } from "@/components/progress/weekly-score-chart";
 import { buttonVariants } from "@/components/ui/button";
+import { scoreBand } from "@/lib/daily-history";
 import { formatPercent } from "@/lib/grading/grade";
 import { requireStudent } from "@/lib/server/account";
 import { listLearnerJlptHistory } from "@/lib/server/jlpt-history";
 import { getProgressSummary, getQuestionKindStats } from "@/lib/server/learner";
 import { weakestKind } from "@/lib/question-kinds";
+import { buildStudyCalendar } from "@/lib/study-calendar";
 import { formatStudyDateTime } from "@/lib/study-days";
+import { describeStreak, STREAK_MILESTONES } from "@/lib/study-streak";
 import { weeklyScores } from "@/lib/weekly-scores";
 
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Tiến độ của tôi" };
 
 // Eight weeks show about two months of class work without crowding a phone screen.
 const PROGRESS_WEEKS = 8;
+// About three months of study days still fit a 360px screen as a calendar.
+const CALENDAR_WEEKS = 12;
+const DAY_MS = 24 * 60 * 60 * 1000;
 // Daily sets add one assignment a day; older ones fold away like on the class pages.
 const RECENT_ASSIGNMENTS = 5;
 
@@ -51,8 +60,9 @@ function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
 export default async function ProgressPage() {
   const account = await requireStudent("/progress");
   const now = new Date();
+  const calendarSince = new Date(now.getTime() - CALENDAR_WEEKS * 7 * DAY_MS);
   const [summary, kindStats, jlptHistory] = await Promise.all([
-    getProgressSummary(account.id, now),
+    getProgressSummary(account.id, now, calendarSince),
     getQuestionKindStats(account.id, now),
     listLearnerJlptHistory(account.id, now),
   ]);
@@ -65,6 +75,7 @@ export default async function ProgressPage() {
     now,
     PROGRESS_WEEKS,
   );
+  const calendar = buildStudyCalendar(summary.activity, now, CALENDAR_WEEKS);
   return (
     <>
       <div className="page-heading">
@@ -81,8 +92,8 @@ export default async function ProgressPage() {
       </div>
       <div className="stat-tiles">
         <div className="stat-tile">
-          <strong>{summary.streak}</strong>
-          <span>ngày học liên tiếp</span>
+          <strong>{calendar.activeDays}</strong>
+          <span>ngày có học trong {CALENDAR_WEEKS} tuần</span>
         </div>
         <div className="stat-tile">
           <strong>{summary.reading.length}</strong>
@@ -99,6 +110,28 @@ export default async function ProgressPage() {
           <span>thẻ đang cần ôn</span>
         </div>
       </div>
+      <section className="section-block" aria-labelledby="streak-progress">
+        <h2 id="streak-progress">Chuỗi ngày học</h2>
+        <div className="streak-section">
+          <div>
+            <StreakCard
+              streak={describeStreak(summary.streak, summary.hasStudiedToday)}
+              headingLevel="h3"
+            />
+            <ul className="milestone-list" aria-label="Mốc của chuỗi hiện tại">
+              {STREAK_MILESTONES.map((milestone) => (
+                <li key={milestone} data-reached={summary.streak >= milestone}>
+                  {milestone} ngày
+                  <span className="visually-hidden">
+                    {summary.streak >= milestone ? ", đã đạt" : ", chưa đạt"}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <StudyCalendarGrid calendar={calendar} />
+        </div>
+      </section>
       {jlptHistory.length > 0 && (
         <JlptHistory
           entries={jlptHistory}
@@ -161,7 +194,7 @@ export default async function ProgressPage() {
         {kindStats.length ? (
           <>
             {weakest && (
-              <p>
+              <p className="inline-links">
                 Dạng bạn hay sai nhất: <strong>{weakest.label}</strong> ({weakest.percent}% đúng).
                 Ôn lại các câu sai trong <Link href="/mistakes">Sổ lỗi</Link>.
               </p>
@@ -192,6 +225,14 @@ export default async function ProgressPage() {
                       {stat.correct}
                     </td>
                     <td className="numeric" data-label="Tỉ lệ đúng">
+                      <span
+                        className="kind-bar"
+                        data-band={scoreBand(stat.percent)}
+                        style={{ "--percent": stat.percent } as CSSProperties}
+                        aria-hidden="true"
+                      >
+                        <span />
+                      </span>
                       {stat.percent}%
                     </td>
                   </tr>

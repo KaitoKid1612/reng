@@ -29,6 +29,8 @@ interface QuestionFieldProps {
   // The right options, once a practice answer has been checked; the list then marks them and a
   // wrong pick on the options themselves.
   revealedChoices?: readonly number[] | null;
+  // Review shows its own card count above, so it hides "Câu x / y" and the points.
+  showMeta?: boolean;
 }
 
 function toggleIndex(selection: readonly number[], index: number, isMultiple: boolean) {
@@ -71,10 +73,11 @@ export function QuestionField({
   isSinglePassListening = false,
   onEnter,
   revealedChoices,
+  showMeta = true,
 }: QuestionFieldProps) {
   const [localListens, setLocalListens] = useState(0);
   const fieldId = `question-${view.id}`;
-  const meta = (
+  const meta = showMeta && (
     <div className="question-meta">
       <span>
         Câu {position} / {total}

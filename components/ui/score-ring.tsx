@@ -42,8 +42,9 @@ export function ScoreRing({ percent, label }: ScoreRingProps) {
 
 const CONFETTI_PIECES = 14;
 
-// Paper pieces burst once from the ring's centre; purely decorative and off with reduced motion.
-function Celebration() {
+// Paper pieces burst once from the centre of the positioned element around it; purely decorative
+// and off with reduced motion.
+export function Celebration() {
   return (
     <div className="celebration" aria-hidden="true">
       {Array.from({ length: CONFETTI_PIECES }, (_, index) => (

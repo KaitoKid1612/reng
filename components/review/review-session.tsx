@@ -5,12 +5,15 @@ import { useEffect, useRef, useState } from "react";
 
 import { AnswerFeedback } from "@/components/classroom/answer-feedback";
 import { QuestionField } from "@/components/classroom/question-field";
+import { StreakCard } from "@/components/progress/streak-card";
 import { RatingButtons } from "@/components/review/rating-buttons";
 import { REVIEW_FAILURES, sendReview } from "@/components/review/review-request";
 import { VocabCardFace } from "@/components/review/vocab-card-face";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Celebration } from "@/components/ui/score-ring";
 import { answerLang } from "@/lib/assignment";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
+import { describeStreak, STREAK_MILESTONES } from "@/lib/study-streak";
 
 import type { ReviewRequest } from "@/components/review/review-request";
 import type { RawAnswer } from "@/lib/grading/raw-answer";
@@ -65,6 +68,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   const [message, setMessage] = useState("");
   const [reviewedCount, setReviewedCount] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
+  const [answeredMistakeCount, setAnsweredMistakeCount] = useState(0);
   const requestIdRef = useRef<string | null>(null);
   // Enter finishes a pending romaji "n" right before answering, so the answer sent is read from
   // here rather than from state that has not re-rendered yet.
@@ -154,6 +158,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
     const parsed = data ? parseMistakeOutcome(data) : null;
     if (parsed) {
       setOutcome(parsed);
+      setAnsweredMistakeCount((value) => value + 1);
       if (parsed.isCorrect) {
         setCorrectCount((value) => value + 1);
       }
@@ -166,19 +171,51 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
   }
 
   if (!card) {
-    const finalStreak = reviewedCount > 0 && !hasStudiedToday ? streak + 1 : streak;
+    // The first study of the day adds today to the streak, which may reach a milestone.
+    const extendsStreak = reviewedCount > 0 && !hasStudiedToday;
+    const finalStreak = extendsStreak ? streak + 1 : streak;
+    const reachedMilestone =
+      extendsStreak && STREAK_MILESTONES.some((milestone) => milestone === finalStreak);
     return (
-      <div className="form-card" role="status">
+      <div className="form-card review-done" role="status">
         <h2>Xong phiên ôn hôm nay</h2>
         <p>
           Bạn đã ôn {reviewedCount} thẻ
           {correctCount > 0 ? `, trả lời đúng ${correctCount} câu trong sổ lỗi` : ""}.
         </p>
-        <p className="result-score">
-          {finalStreak}
-          <span> ngày học liên tiếp</span>
-        </p>
-        <Link href="/classes">Về lớp của tôi</Link>
+        <div className="stat-tiles review-done-tiles">
+          <div className="stat-tile">
+            <strong>{reviewedCount}</strong>
+            <span>thẻ đã ôn</span>
+          </div>
+          {answeredMistakeCount > 0 && (
+            <div className="stat-tile">
+              <strong>
+                {correctCount}
+                <small>/{answeredMistakeCount}</small>
+              </strong>
+              <span>câu sổ lỗi trả lời đúng</span>
+            </div>
+          )}
+        </div>
+        {reachedMilestone && (
+          <p className="milestone-banner">
+            <Celebration />
+            Mốc mới: {finalStreak} ngày học liên tiếp!
+          </p>
+        )}
+        <StreakCard
+          streak={describeStreak(finalStreak, reviewedCount > 0 || hasStudiedToday)}
+          headingLevel="h3"
+        />
+        <div className="button-row">
+          <Link href="/classes" className={buttonVariants()}>
+            Về lớp của tôi
+          </Link>
+          <Link href="/progress" className={buttonVariants({ variant: "outline" })}>
+            Xem tiến độ
+          </Link>
+        </div>
       </div>
     );
   }
@@ -200,6 +237,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
             : `Sổ lỗi: ${card.assignmentTitle}`}
         </span>
       </p>
+      <progress className="review-progress" value={index} max={cards.length} aria-hidden="true" />
       {card.kind === "vocab" ? (
         <>
           <VocabCardFace lessonId={card.lessonId} vocab={card.vocab} isFlipped={isFlipped} />
@@ -222,6 +260,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
             isLocked={outcome !== null || isSending || isAnswerSent}
             onAnswerChange={handleAnswerChange}
             onEnter={() => void handleAnswer()}
+            showMeta={false}
           />
           {outcome ? (
             <>
