@@ -95,7 +95,7 @@ export function selectLatestSubmissions(submissions: readonly ReportSubmission[]
 
 // After leaving and rejoining, only work published since the current join counts as assigned;
 // earlier work still counts when the learner chose to submit it.
-export function getAssignedWork(
+function getAssignedWork(
   assignments: readonly ReportAssignment[],
   member: ReportMember,
   hasSubmission: (assignmentId: string) => boolean,
@@ -107,7 +107,7 @@ export function getAssignedWork(
   );
 }
 
-export function isAbandoned(
+function isAbandoned(
   assigned: readonly ReportAssignment[],
   hasSubmission: (assignmentId: string) => boolean,
   now: Date,
@@ -290,7 +290,7 @@ export function summarizeWeekSubmissions(
   };
 }
 
-export function formatPercentValue(value: number | null) {
+function formatPercentValue(value: number | null) {
   return value === null ? "" : String(Math.round(value * 10) / 10);
 }
 
@@ -300,7 +300,7 @@ export function escapeCsvCell(value: string) {
   return `"${guarded.replaceAll('"', '""')}"`;
 }
 
-export function toCsv(rows: readonly (readonly string[])[]) {
+function toCsv(rows: readonly (readonly string[])[]) {
   // The byte order mark lets spreadsheet software detect UTF-8 diacritics.
   return `﻿${rows.map((row) => row.map(escapeCsvCell).join(",")).join("\r\n")}\r\n`;
 }

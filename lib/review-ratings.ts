@@ -9,7 +9,3 @@ export const REVIEW_RATING_LABELS: Record<ReviewRating, string> = {
   3: "Được",
   4: "Dễ",
 };
-
-export function isReviewRating(value: unknown): value is ReviewRating {
-  return REVIEW_RATINGS.some((rating) => rating === value);
-}

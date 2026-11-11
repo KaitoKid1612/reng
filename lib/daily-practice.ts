@@ -2,7 +2,7 @@
 const VIETNAM_OFFSET_MS = 7 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 20, 30, 40, 60, 70] as const;
+const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 20, 30, 40, 60, 70] as const;
 // The database accepts any size in this range, for example a size set while importing a bank.
 export const MIN_DAILY_PRACTICE_SIZE = 3;
 export const MAX_DAILY_PRACTICE_SIZE = 70;
@@ -60,9 +60,12 @@ export function orderDailySourceLessons(
   return [openPinnedLessonId, ...newestFirst.filter((id) => id !== openPinnedLessonId)];
 }
 
-export type DailySourceState = "automatic" | "pinned" | "fallback";
+type DailySourceState = "automatic" | "pinned" | "fallback";
 
-export function dailySourceState(pinnedLessonId: string | null, sourceLessonId: string | null) {
+export function dailySourceState(
+  pinnedLessonId: string | null,
+  sourceLessonId: string | null,
+): DailySourceState {
   if (!pinnedLessonId) {
     return "automatic";
   }
@@ -77,13 +80,7 @@ export function repeatsEveryDay(questionCount: number, size: number | null) {
 
 // A listening question can only be published with reviewed audio, so a lesson that has some
 // (such as the Minna listening sets) puts them in its daily sets as their own kinds.
-export const DAILY_QUESTION_TYPES: readonly string[] = [
-  "choice",
-  "fill",
-  "order",
-  "listen",
-  "dictation",
-];
+const DAILY_QUESTION_TYPES: readonly string[] = ["choice", "fill", "order", "listen", "dictation"];
 
 export function isDailyQuestionType(type: string) {
   return DAILY_QUESTION_TYPES.includes(type);

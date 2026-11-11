@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // Answer lists of a graded attempt can be narrowed to the wrong or the right answers.
-export const answerOutcomeSchema = z.enum(["wrong", "correct"]);
+const answerOutcomeSchema = z.enum(["wrong", "correct"]);
 
 export type AnswerOutcome = z.infer<typeof answerOutcomeSchema>;
 

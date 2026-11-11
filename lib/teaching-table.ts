@@ -3,8 +3,8 @@ import { detectDelimiter, parseDelimited } from "@/lib/vocab-csv";
 
 import type { TeachingVocab } from "@/lib/teaching-content";
 
-export const MAX_PASTED_ROWS = 100;
-export const MAX_PASTE_CHARACTERS = 50_000;
+const MAX_PASTED_ROWS = 100;
+const MAX_PASTE_CHARACTERS = 50_000;
 
 // Columns in the order teachers usually keep them in a spreadsheet.
 export const TABLE_COLUMNS = [

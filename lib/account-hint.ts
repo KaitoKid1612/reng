@@ -2,8 +2,8 @@
 // shows the guest menu first. This browser remembers that someone signed in here before; a tiny
 // script in the root layout marks <html> with it before the first paint, and the header CSS hides
 // the guest-only links until the real answer arrives.
-export const ACCOUNT_HINT_KEY = "reng-signed-in";
-export const ACCOUNT_HINT_ATTRIBUTE = "account";
+const ACCOUNT_HINT_KEY = "reng-signed-in";
+const ACCOUNT_HINT_ATTRIBUTE = "account";
 
 export const ACCOUNT_HINT_SCRIPT = `try{if(localStorage.getItem(${JSON.stringify(ACCOUNT_HINT_KEY)})==="1"){document.documentElement.dataset.${ACCOUNT_HINT_ATTRIBUTE}="member"}}catch(e){}`;
 

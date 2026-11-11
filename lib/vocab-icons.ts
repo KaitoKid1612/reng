@@ -1,6 +1,6 @@
 // Picture icons for vocabulary, from Microsoft Fluent Emoji (Flat, MIT licence). The SVG files
 // live in public/icons/vocab and are extracted by scripts/extract-vocab-icons.ts.
-export const VOCAB_ICON_DIRECTORY = "/icons/vocab";
+const VOCAB_ICON_DIRECTORY = "/icons/vocab";
 
 export interface VocabIcon {
   name: string;

@@ -10,10 +10,6 @@ export const SESSION_COOKIE_OPTIONS: CookieOptionsWithName = {
   path: "/",
 };
 
-export function isAuthConfigured() {
-  return Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_PUBLISHABLE_KEY);
-}
-
 export async function createSessionClient() {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_PUBLISHABLE_KEY;

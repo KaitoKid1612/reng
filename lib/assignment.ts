@@ -21,7 +21,7 @@ import type { LessonQuestion } from "@/lib/lesson-schema";
 
 export const MAX_ASSIGNMENT_QUESTIONS = 70;
 export const MAX_ATTEMPTS = 10;
-export const MAX_DRAFT_BYTES = 32 * 1024;
+const MAX_DRAFT_BYTES = 32 * 1024;
 
 export const ASSIGNMENT_MODES = ["practice", "test"] as const;
 export const FEEDBACK_POLICIES = ["after_submit", "after_due"] as const;
@@ -84,7 +84,7 @@ function isTokenPermutation(tokens: readonly { id: string }[], answer: readonly 
   );
 }
 
-export const assignableQuestionSchema = questionSchema.superRefine((question, context) => {
+const assignableQuestionSchema = questionSchema.superRefine((question, context) => {
   if (!isAssignableQuestion(question)) {
     context.addIssue({
       code: "custom",
@@ -265,7 +265,7 @@ interface ListeningFields {
 // language and let the browser pick a Chinese font; Japanese questions stay lang="ja".
 export type QuestionLang = "ja" | "vi";
 
-export function questionLang(question: LessonQuestion): QuestionLang {
+function questionLang(question: LessonQuestion): QuestionLang {
   return question.gradingProfile === "zh-exact-v1" ? "vi" : "ja";
 }
 
@@ -343,7 +343,7 @@ const SECTION_LABELS: Record<string, string> = {
 };
 const SECTION_NAMES = new Set(Object.values(SECTION_LABELS));
 
-export function questionSection(tags: readonly string[]) {
+function questionSection(tags: readonly string[]) {
   for (const tag of tags) {
     const label = SECTION_LABELS[tag] ?? (SECTION_NAMES.has(tag) ? tag : undefined);
     if (label) {
@@ -687,8 +687,8 @@ export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer |
 // The last hour before a deadline shows a countdown on the submit bar; the last ten minutes
 // stand out. When late work is refused the attempt submits itself a minute early, because the
 // server rejects anything that arrives after the deadline.
-export const COUNTDOWN_WINDOW_MS = 60 * 60 * 1000;
-export const COUNTDOWN_URGENT_MS = 10 * 60 * 1000;
+const COUNTDOWN_WINDOW_MS = 60 * 60 * 1000;
+const COUNTDOWN_URGENT_MS = 10 * 60 * 1000;
 export const AUTO_SUBMIT_LEAD_MS = 60 * 1000;
 
 export function describeTimeLeft(dueAt: string | null, allowLate: boolean, now: number) {

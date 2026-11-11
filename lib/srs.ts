@@ -6,12 +6,12 @@ import type { Card, Grade } from "ts-fsrs";
 
 // Stored with every card; a different value must be migrated explicitly, never guessed.
 export const SCHEDULER_VERSION = "ts-fsrs-5.4.2";
-export const MISTAKE_RESOLVE_STREAK = 3;
+const MISTAKE_RESOLVE_STREAK = 3;
 
 const scheduler = fsrs(generatorParameters({ enable_fuzz: false }));
 const timestamp = z.iso.datetime({ offset: true });
 
-export const schedulerStateSchema = z
+const schedulerStateSchema = z
   .object({
     due: timestamp,
     stability: z.number().nonnegative(),

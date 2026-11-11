@@ -3,7 +3,7 @@ import { z } from "zod";
 // Auth versions name an email link differently: otp, email, recovery, magiclink, email/signup.
 const EMAIL_LINK_METHODS = new Set(["otp", "email", "recovery", "magiclink", "email/signup"]);
 // Recovery links are valid for an hour, so a new password can be set within an hour of opening one.
-export const EMAIL_LINK_WINDOW_MS = 60 * 60 * 1000;
+const EMAIL_LINK_WINDOW_MS = 60 * 60 * 1000;
 
 const amrSchema = z.array(z.object({ method: z.string(), timestamp: z.number() }).loose());
 

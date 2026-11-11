@@ -20,7 +20,7 @@ export const WEEKDAY_LABELS: Record<number, string> = {
   7: "Chủ nhật",
 };
 
-export const scheduleSlotSchema = z
+const scheduleSlotSchema = z
   .object({
     weekday: z.number().int().min(1).max(7),
     start: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),

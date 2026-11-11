@@ -3,7 +3,6 @@
 // next to it. The listening recordings contain third-party works, so Reng re-records the official
 // script with synthetic voices and links the original recording instead of copying it.
 export const JLPT_OFFICIAL_CREDIT = "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）";
-export const JLPT_OFFICIAL_SOURCE_PAGE = "https://www.jlpt.jp/samples/sampleindex.html";
 
 export type JlptWorkbookYear = 2012 | 2018;
 

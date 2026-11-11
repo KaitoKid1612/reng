@@ -1,7 +1,7 @@
 // The colour theme a visitor picks in the header: the device's setting, light or dark. The choice
 // is kept in this browser only. A tiny script in the root layout applies it to <html> before the
 // first paint, so a dark page does not flash light while React loads; CSS reads data-theme.
-export const THEME_PREFERENCES = ["system", "light", "dark"] as const;
+const THEME_PREFERENCES = ["system", "light", "dark"] as const;
 export type ThemePreference = (typeof THEME_PREFERENCES)[number];
 
 export const THEME_STORAGE_KEY = "reng-theme";

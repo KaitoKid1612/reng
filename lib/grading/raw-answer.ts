@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
-export const MAX_TEXT_ANSWER_LENGTH = 200;
+const MAX_TEXT_ANSWER_LENGTH = 200;
 
 const index = z.number().int().nonnegative();
 const textAnswer = z.string().max(MAX_TEXT_ANSWER_LENGTH);

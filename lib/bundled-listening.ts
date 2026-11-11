@@ -12,7 +12,7 @@ import { listeningAudioRegistry, parseListeningSet } from "@/lib/listening-set";
 
 // Listening sets whose MP3s ship with the web (public/audio/lessons). A lesson or review bank
 // that takes their questions registers the audio from here, so nobody runs an audio script.
-export const BUNDLED_LISTENING_SETS = [
+const BUNDLED_LISTENING_SETS = [
   minnaListening,
   n4DailyListening,
   n4MockListening,

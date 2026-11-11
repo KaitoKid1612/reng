@@ -3,7 +3,7 @@ import { gradeQuestion } from "@/lib/grading/grade";
 
 import type { AssignableQuestion } from "@/lib/assignment";
 
-export const MAX_VARIANT_LENGTH = 200;
+const MAX_VARIANT_LENGTH = 200;
 
 // Only a typed answer can be accepted afterwards; choices and sentence order have no free text.
 export function isTypedQuestion(question: { type: string; responseType?: string }) {
@@ -26,7 +26,7 @@ export function toAcceptedVariant(raw: unknown) {
 
 // The question with the accepted answer added. It throws when the question cannot take it,
 // such as a kanji-strict question and an answer without kanji.
-export function withAcceptedAnswer(question: AssignableQuestion, variant: string) {
+function withAcceptedAnswer(question: AssignableQuestion, variant: string) {
   if (!isTypedQuestion(question) || question.type === "choice" || question.type === "order") {
     throw new Error("Only typed answers can be accepted.");
   }

@@ -25,8 +25,8 @@ import {
 
 import type { LessonContent } from "@/lib/lesson-schema";
 
-export const MAX_DRAFT_BYTES = 512 * 1024;
-export const MAX_VOCAB_ITEMS = 300;
+const MAX_DRAFT_BYTES = 512 * 1024;
+const MAX_VOCAB_ITEMS = 300;
 // Review banks hold several hundred questions; MAX_DRAFT_BYTES still bounds their size.
 export const MAX_QUESTIONS = 400;
 
@@ -283,7 +283,7 @@ export interface LessonDraftState {
   content: DraftContent;
 }
 
-export const lessonDraftStateSchema = z
+const lessonDraftStateSchema = z
   .object({ metadata: draftMetadataSchema, content: draftContentSchema })
   .strict();
 

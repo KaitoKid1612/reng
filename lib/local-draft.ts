@@ -85,7 +85,7 @@ function stableJson(value: unknown): string {
   return JSON.stringify(value);
 }
 
-export function isSameEditorDraft(first: unknown, second: unknown) {
+function isSameEditorDraft(first: unknown, second: unknown) {
   return stableJson(first) === stableJson(second);
 }
 

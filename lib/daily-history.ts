@@ -8,7 +8,7 @@ export type ScoreBand = "good" | "fair" | "low" | "none";
 export const SCORE_TARGET_PERCENT = 80;
 const SCORE_FAIR_PERCENT = 60;
 // The newest scored day is compared with the mean of at most this many scored days before it.
-export const BASELINE_DAYS = 5;
+const BASELINE_DAYS = 5;
 // Thirty columns still leave a visible bar per day at 360px; the day list keeps every date.
 export const CHART_DAYS = 30;
 

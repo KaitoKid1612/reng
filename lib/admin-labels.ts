@@ -1,4 +1,4 @@
-export const TEACHER_STATUS_LABELS = {
+const TEACHER_STATUS_LABELS = {
   pending: "Chờ duyệt",
   active: "Đang dạy",
   suspended: "Tạm dừng",

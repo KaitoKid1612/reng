@@ -2,7 +2,7 @@
 
 export type QuestionKind = "choice" | "fill" | "order" | "match" | "listening" | "reading";
 
-export const QUESTION_KIND_LABELS: Record<QuestionKind, string> = {
+const QUESTION_KIND_LABELS: Record<QuestionKind, string> = {
   choice: "Trắc nghiệm",
   fill: "Điền từ",
   order: "Sắp xếp câu",
@@ -21,7 +21,7 @@ const KIND_ORDER: readonly QuestionKind[] = [
 ];
 
 // Fewer answers than this say little about a weak spot.
-export const MIN_KIND_ANSWERS = 5;
+const MIN_KIND_ANSWERS = 5;
 
 // A question about a reading passage counts as reading whatever its form; dictation is listening.
 export function questionKind(type: string, hasPassage: boolean): QuestionKind | null {

@@ -42,7 +42,7 @@ const editSchema = z.object({
 
 // The form carries this instead of the whole snapshot; a different hash means someone else
 // saved the question since the page was drawn.
-export function snapshotHash(snapshot: Record<string, unknown>) {
+function snapshotHash(snapshot: Record<string, unknown>) {
   return createHash("sha256")
     .update(JSON.stringify(canonical(snapshot)))
     .digest("base64url");

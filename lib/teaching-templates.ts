@@ -57,7 +57,7 @@ function planSectionSlides(
 }
 
 // Deterministic: the same draft always yields the same slides and IDs, without AI.
-export function planTemplateSlides(draft: TeachingDraft): TeachingSlide[] {
+function planTemplateSlides(draft: TeachingDraft): TeachingSlide[] {
   const { content } = draft;
   const plan = TEMPLATE_PLANS[draft.authoring.templateId];
   const objectives = content.objectives.filter(Boolean);

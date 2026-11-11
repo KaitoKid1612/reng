@@ -113,10 +113,7 @@ export async function findDailyPracticeSource(
 }
 
 // Shared by the morning job and the teacher's "today" button; the RPC makes both idempotent.
-export async function createDailyPractice(
-  classId: string,
-  now: Date,
-): Promise<DailyPracticeOutcome> {
+async function createDailyPractice(classId: string, now: Date): Promise<DailyPracticeOutcome> {
   const service = createServiceClient();
   const practiceDate = toVietnamDate(now);
   const classRow = await selectOptional(

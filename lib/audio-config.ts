@@ -98,7 +98,7 @@ export function audioHash(config: AudioConfig): string {
   };
   return createHash("sha256").update(JSON.stringify(canonical)).digest("hex").slice(0, 32);
 }
-export function escapeXml(text: string) {
+function escapeXml(text: string) {
   return text.replace(
     /[<>&"']/g,
     (character) =>

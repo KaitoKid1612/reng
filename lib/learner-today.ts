@@ -10,7 +10,7 @@ import {
 import type { ScheduleSlot } from "@/lib/class-schedule";
 
 // A lesson a teacher opened stays "new" for a week, then lives on the class page only.
-export const NEW_LESSON_DAYS = 7;
+const NEW_LESSON_DAYS = 7;
 // "Hôm nay học gì" stays short; the full lists follow on the page.
 export const MAX_TODAY_ASSIGNMENTS = 3;
 export const MAX_TODAY_LESSONS = 3;

@@ -1,7 +1,7 @@
 export const MAX_CSV_ROWS = 300;
 export const MAX_CSV_BYTES = 200 * 1024;
 
-export const VOCAB_COLUMNS = ["jp", "kanji", "romaji", "vi", "note"] as const;
+const VOCAB_COLUMNS = ["jp", "kanji", "romaji", "vi", "note"] as const;
 
 type VocabColumn = (typeof VOCAB_COLUMNS)[number];
 

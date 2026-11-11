@@ -2,7 +2,7 @@
 const VIETNAM_OFFSET_MS = 7 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export const STUDY_TIME_ZONE = "Asia/Ho_Chi_Minh";
+const STUDY_TIME_ZONE = "Asia/Ho_Chi_Minh";
 
 export function toStudyDay(instant: Date | string) {
   const time = typeof instant === "string" ? Date.parse(instant) : instant.getTime();

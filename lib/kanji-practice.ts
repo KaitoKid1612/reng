@@ -27,7 +27,7 @@ export const KANJI_KIND_LABELS: Record<KanjiQuestionKind, string> = {
   meaning: "Hiểu nghĩa: chọn nghĩa tiếng Việt",
 };
 
-export const KANJI_TAG = "kanji";
+const KANJI_TAG = "kanji";
 // Marks the vocabulary item a generated question came from, so it is not generated twice.
 const SOURCE_TAG_PREFIX = "kanji:";
 const MAX_OPTIONS = 4;
@@ -78,7 +78,7 @@ export function extractHanziWords(
 
 // Spaces, the "〜" of counters/suffixes and a final 。 are ignored, and katakana counts as
 // its hiragana, so "〜にん" matches "にん" and "いい てんきですね" matches "いいてんきですね".
-export function normalizeReading(value: string) {
+function normalizeReading(value: string) {
   return toHiragana(
     value.normalize("NFKC").replace(AFFIX_MARKS, "").replace(/\s+/gu, "").replace(/。$/u, ""),
   );
@@ -86,7 +86,7 @@ export function normalizeReading(value: string) {
 
 // Practice is not graded, so pinyin ignores letter case, spaces between syllables and a final
 // full stop; tone marks still count (a tone number typed in the field becomes its mark).
-export function normalizePinyin(value: string) {
+function normalizePinyin(value: string) {
   return value
     .normalize("NFC")
     .toLowerCase()

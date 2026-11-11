@@ -1,6 +1,6 @@
 # Thiết kế nhập lịch sử học tập
 
-> **Đã gỡ khỏi Reng ngày 04/11/2026.** Trang `/history`, nút và link tới trang, script `npm run history:import` cùng code đọc và hiển thị bản lưu đã bị xóa. Lý do: tính năng này chỉ phục vụ việc xem lại kết quả cũ của hai học viên trước khi chuyển sang dạy online trên Reng; trang Tiến độ nay có điểm theo tuần, sổ lỗi và tỉ lệ đúng theo dạng câu cho bài làm trên Reng. Link `/history` cũ chuyển về `/progress`. Bảng `learning_history_archives`, dữ liệu đã nhập và migration `202610300001` vẫn giữ nguyên; xóa dữ liệu là việc riêng, chỉ làm khi người vận hành đồng ý. Nội dung dưới đây giữ lại làm lịch sử thiết kế.
+> **Đã gỡ khỏi Reng ngày 04/11/2026.** Trang `/history`, nút và link tới trang, script `npm run history:import` cùng code đọc và hiển thị bản lưu đã bị xóa. Lý do: tính năng này chỉ phục vụ việc xem lại kết quả cũ của hai học viên trước khi chuyển sang dạy online trên Reng; trang Tiến độ nay có điểm theo tuần, sổ lỗi và tỉ lệ đúng theo dạng câu cho bài làm trên Reng. Link `/history` cũ chuyển về `/progress`. Bảng `learning_history_archives`, dữ liệu đã nhập và migration `202610300001` vẫn giữ nguyên; xóa dữ liệu là việc riêng, chỉ làm khi người vận hành đồng ý. Schema còn sót `lib/learning-history.ts` (không còn file nào dùng) bị xóa ngày 11/11/2026. Nội dung dưới đây giữ lại làm lịch sử thiết kế.
 
 ## Dữ liệu và truy cập
 

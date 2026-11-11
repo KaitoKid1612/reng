@@ -50,7 +50,7 @@ export const LANGUAGE_LABELS: Record<ChineseLanguageTag, string> = {
   "zh-Hant": "Tiếng Trung phồn thể",
 };
 
-export const teachingContextSchema = z
+const teachingContextSchema = z
   .object({
     subject: z.literal("chinese"),
     languageTag: z.enum(LANGUAGE_TAGS),
@@ -151,7 +151,7 @@ const draftQuestionSchema = z.discriminatedUnion("type", [
 ]);
 
 const slideBase = { id: identifier, teacherNotes: draftText(2000).optional() };
-export const teachingSlideSchema = z.discriminatedUnion("type", [
+const teachingSlideSchema = z.discriminatedUnion("type", [
   z.object({ ...slideBase, type: z.literal("title"), text: draftText(200) }).strict(),
   z
     .object({ ...slideBase, type: z.literal("note"), title: draftText(100), body: draftText(1000) })
@@ -188,7 +188,7 @@ export const teachingDraftContentSchema = z
   .object({ ...contentShape, questions: z.array(draftQuestionSchema).max(100) })
   .strict();
 
-export const authoringStateSchema = z
+const authoringStateSchema = z
   .object({
     templateId: z.enum(TEMPLATE_IDS),
     templateVersion: z.literal(1),
@@ -394,8 +394,6 @@ export const teachingPublishedContentSchema = z
     questions: z.array(questionSchema).max(100),
   })
   .strict();
-
-export type TeachingContent = z.infer<typeof teachingPublishedContentSchema>;
 
 export const teachingVersionSchema = z
   .object({

@@ -49,7 +49,7 @@ export const MIN_EXAM_MINUTES = 5;
 export const MAX_EXAM_MINUTES = 240;
 // The server accepts saves and the hand-in for one more minute after the time limit (migration
 // 20261109032029); the page hands in at the limit itself.
-export const EXAM_CLOSE_GRACE_MS = 60 * 1000;
+const EXAM_CLOSE_GRACE_MS = 60 * 1000;
 
 const VOCABULARY_TAGS = new Set([
   "文字・語彙",
@@ -94,7 +94,7 @@ export function jlptSectionOf(question: JlptQuestionShape): JlptSection | null {
   return null;
 }
 
-export function emptySectionCounts(): Record<JlptSection, number> {
+function emptySectionCounts(): Record<JlptSection, number> {
   return { vocabulary: 0, grammarReading: 0, listening: 0 };
 }
 
@@ -341,7 +341,7 @@ export function estimateJlptScore(
 
 // The JLPT is held on the first Sunday of July and December. Later sessions are marked expected
 // until the Japan Foundation publishes them; add each new session here.
-export const JLPT_SESSIONS = [
+const JLPT_SESSIONS = [
   { date: "2026-12-06", isConfirmed: true },
   { date: "2027-07-04", isConfirmed: false },
   { date: "2027-12-05", isConfirmed: false },
@@ -403,7 +403,7 @@ export function isHandedInAtTimeLimit(
 }
 
 // The real test's minutes for each section since 2020: N5 90 and N4 115 in all.
-export const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>> = {
+const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>> = {
   N5: { vocabulary: 20, grammarReading: 40, listening: 30 },
   N4: { vocabulary: 25, grammarReading: 55, listening: 35 },
 };

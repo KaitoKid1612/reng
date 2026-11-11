@@ -185,7 +185,7 @@ export const MAX_TABLE_COLUMNS = 6;
 export const MAX_TABLE_ROWS = 12;
 
 const slideBase = { id: identifier, teacherNotes: z.string().optional() };
-export const slideSchema = z.discriminatedUnion("type", [
+const slideSchema = z.discriminatedUnion("type", [
   z
     .object({ ...slideBase, type: z.literal("title"), jp: text, vi: text, image: media.optional() })
     .strict(),

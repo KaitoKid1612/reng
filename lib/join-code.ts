@@ -1,7 +1,7 @@
 // Excludes look-alike characters (0/O, 1/I/L) so codes can be read aloud or copied from a board.
-export const JOIN_CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
-export const JOIN_CODE_LENGTH = 8;
-export const JOIN_CODE_PATTERN = /^[A-HJKMNP-Z2-9]{8}$/;
+const JOIN_CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+const JOIN_CODE_LENGTH = 8;
+const JOIN_CODE_PATTERN = /^[A-HJKMNP-Z2-9]{8}$/;
 
 export function createJoinCode(randomIndex: (size: number) => number) {
   let code = "";

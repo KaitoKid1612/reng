@@ -355,18 +355,6 @@ export async function publishAssignment(teacherId: string, input: PublishAssignm
   );
 }
 
-export async function countOpenAttempts(assignmentId: string) {
-  const rows = await selectRows(
-    createServiceClient()
-      .from("submissions")
-      .select("id")
-      .eq("assignment_id", assignmentId)
-      .eq("status", "in_progress"),
-    z.object({ id: z.uuid() }),
-  );
-  return rows.length;
-}
-
 export async function closeAssignment(teacherId: string, assignmentId: string) {
   await callRpc(
     "close_assignment",
