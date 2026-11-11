@@ -12,6 +12,7 @@ import "./lesson-visuals.css";
 import "./charts.css";
 import { SiteHeader } from "@/components/site-header";
 import { AudioProvider } from "@/components/audio-provider";
+import { HeadScript } from "@/components/head-script";
 import { ACCOUNT_HINT_SCRIPT } from "@/lib/account-hint";
 import { audioManifest } from "@/lib/data";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
@@ -44,8 +45,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="vi" suppressHydrationWarning>
       <head>
         {/* Inline so it runs while the HTML is parsed, before the first paint. */}
-        <script dangerouslySetInnerHTML={{ __html: ACCOUNT_HINT_SCRIPT }} />
-        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <HeadScript code={ACCOUNT_HINT_SCRIPT} />
+        <HeadScript code={THEME_SCRIPT} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
