@@ -1,6 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn, TEACHER } from "./support";
+import {
+  adminClient,
+  createConfirmedStudent,
+  findUserId,
+  RUN_ID,
+  signIn,
+  TEACHER,
+} from "./support";
 
 test("a learner deletes their account: signed out for good, the class keeps a nameless trace", async ({
   page,
@@ -58,8 +65,7 @@ test("a learner deletes their account: signed out for good, the class keeps a na
   await page.goto(classUrl);
   await expect(page.getByText(learner.name)).toHaveCount(0);
   const admin = adminClient();
-  const { data: users } = await admin.auth.admin.listUsers({ perPage: 1000 });
-  expect(users.users.some((user) => user.email === learner.email)).toBe(false);
+  expect(await findUserId(learner.email)).toBeUndefined();
   const { data: profiles } = await admin
     .from("profiles")
     .select("full_name, deleted_at")

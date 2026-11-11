@@ -3,6 +3,7 @@ import "server-only";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 
+import { listAllAuthUsers } from "@/lib/auth-users";
 import { requireAccount } from "@/lib/server/account";
 import {
   callRpc,
@@ -80,13 +81,12 @@ export interface TeacherEntry {
   lessonCount: number;
 }
 
-// Pilot scale (tens of accounts): one page of Auth users is enough to show emails to operators.
+// Operators see each account's email; Auth hands users out a page at a time.
 async function loadEmails() {
-  const { data, error } = await createServiceClient().auth.admin.listUsers({ perPage: 1000 });
-  if (error) {
+  const users = await listAllAuthUsers(createServiceClient().auth.admin).catch(() => {
     throw new ServiceError("database_error");
-  }
-  return new Map(data.users.map((user) => [user.id, user.email ?? ""]));
+  });
+  return new Map(users.map((user) => [user.id, user.email ?? ""]));
 }
 
 export async function listTeacherAccounts(): Promise<TeacherEntry[]> {

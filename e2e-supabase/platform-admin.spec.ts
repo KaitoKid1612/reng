@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn } from "./support";
+import { adminClient, createConfirmedStudent, findUserId, RUN_ID, signIn } from "./support";
 
 import type { Browser, Page } from "@playwright/test";
 
@@ -11,8 +11,7 @@ async function newAccount(browser: Browser, suffix: string, fullName: string) {
   await createConfirmedStudent(email, PASSWORD, fullName);
   const page = await (await browser.newContext()).newPage();
   await signIn(page, email, PASSWORD);
-  const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
-  const id = data.users.find((user) => user.email === email)?.id ?? "";
+  const id = (await findUserId(email)) ?? "";
   return { page, email, id };
 }
 

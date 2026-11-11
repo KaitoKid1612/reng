@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 
 import { createClient } from "@supabase/supabase-js";
 
+import { findAuthUserByEmail } from "../lib/auth-users";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 
 const SAMPLE_LESSONS = [1, 2, 3, 4, 5].map((number) => `content/lessons/lesson-0${number}.json`);
@@ -33,11 +34,10 @@ async function main() {
   const client = createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  const { data: listed, error: listError } = await client.auth.admin.listUsers({ perPage: 1000 });
-  if (listError) {
+  const existing = await findAuthUserByEmail(client.auth.admin, values.email).catch(() => {
     throw new Error("Unable to list local users. Check that the local stack is running.");
-  }
-  let teacherId = listed.users.find((user) => user.email === values.email)?.id;
+  });
+  let teacherId = existing?.id;
   if (teacherId) {
     const { error } = await client.auth.admin.updateUserById(teacherId, { password });
     if (error) {

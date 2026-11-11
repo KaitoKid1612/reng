@@ -9,6 +9,7 @@ import { createUnsubscribeToken } from "../lib/notifications/unsubscribe";
 import {
   adminClient,
   createConfirmedStudent,
+  findUserId,
   listEmails,
   readEmail,
   RUN_ID,
@@ -28,8 +29,7 @@ const ASSIGNMENT_TITLE = `Luyện tối nay ${RUN_ID}`;
 const state = { teacherId: "", learnerId: "", quietId: "", assignmentId: "" };
 
 async function userIdByEmail(email: string) {
-  const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
-  const id = data.users.find((user) => user.email === email)?.id;
+  const id = await findUserId(email);
   if (!id) {
     throw new Error(`Missing ${email}`);
   }

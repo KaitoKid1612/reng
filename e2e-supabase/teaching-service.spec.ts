@@ -2,7 +2,14 @@ import { readFile } from "node:fs/promises";
 
 import { expect, test } from "@playwright/test";
 
-import { adminClient, becomeTeacher, createConfirmedStudent, RUN_ID, signIn } from "./support";
+import {
+  adminClient,
+  becomeTeacher,
+  createConfirmedStudent,
+  findUserId,
+  RUN_ID,
+  signIn,
+} from "./support";
 
 import type { Browser } from "@playwright/test";
 
@@ -15,8 +22,7 @@ async function newAccount(browser: Browser, suffix: string, teacher: boolean) {
   if (teacher) {
     await becomeTeacher(page, email);
   }
-  const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
-  const id = data.users.find((user) => user.email === email)?.id;
+  const id = await findUserId(email);
   if (!id) {
     throw new Error("Missing fixture account.");
   }

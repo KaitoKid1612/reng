@@ -2,6 +2,8 @@ import { parseArgs } from "node:util";
 
 import { createClient } from "@supabase/supabase-js";
 
+import { findAuthUserByEmail } from "../lib/auth-users";
+
 // Development only: makes an existing local account a platform admin. Cloud projects grant
 // admins with the SQL in docs/poc-setup.md so the action is deliberate and audited there.
 async function main() {
@@ -20,11 +22,9 @@ async function main() {
   const client = createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  const { data, error } = await client.auth.admin.listUsers({ perPage: 1000 });
-  if (error) {
+  const user = await findAuthUserByEmail(client.auth.admin, values.email).catch(() => {
     throw new Error("Unable to list local users. Check that the local stack is running.");
-  }
-  const user = data.users.find((item) => item.email === values.email);
+  });
   if (!user) {
     throw new Error(`No local account uses ${values.email}. Sign up first.`);
   }

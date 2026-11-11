@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
+import { findAuthUserByEmail } from "../lib/auth-users";
 import { createJoinCode } from "../lib/join-code";
 import { createTeachingDraft } from "../lib/teaching-content";
 import { buildVocabularyQuestion, teachingReducer } from "../lib/teaching-draft";
@@ -109,11 +110,9 @@ async function ensureAccount(
   name: string,
   password: string,
 ) {
-  const { data, error } = await client.auth.admin.listUsers({ perPage: 1000 });
-  if (error) {
+  const existing = await findAuthUserByEmail(client.auth.admin, email).catch(() => {
     throw new Error("Unable to list local users. Check that the local stack is running.");
-  }
-  const existing = data.users.find((user) => user.email === email);
+  });
   if (existing) {
     await client.auth.admin.updateUserById(existing.id, { password });
     return existing.id;

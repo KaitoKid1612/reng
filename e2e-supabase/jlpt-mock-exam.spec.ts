@@ -2,7 +2,14 @@ import { readFile } from "node:fs/promises";
 
 import { expect, test } from "@playwright/test";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn, TEACHER } from "./support";
+import {
+  adminClient,
+  createConfirmedStudent,
+  findUserId,
+  RUN_ID,
+  signIn,
+  TEACHER,
+} from "./support";
 
 const BANK_ID = `jlpt-n5-${RUN_ID}`;
 const BANK_TITLE = `Ngân hàng N5 thi thử ${RUN_ID}`;
@@ -16,11 +23,7 @@ const learner = {
 // lesson of the E2E teacher, published through the same database function as the editor.
 async function publishBank() {
   const admin = adminClient();
-  const { data, error } = await admin.auth.admin.listUsers({ perPage: 1000 });
-  if (error) {
-    throw error;
-  }
-  const teacherId = data.users.find((user) => user.email === TEACHER.email)?.id;
+  const teacherId = await findUserId(TEACHER.email);
   if (!teacherId) {
     throw new Error("The E2E teacher is missing.");
   }

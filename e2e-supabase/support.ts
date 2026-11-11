@@ -1,5 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
+import { findAuthUserByEmail } from "../lib/auth-users";
+
 import type { Page } from "@playwright/test";
 
 export const TEACHER = {
@@ -16,6 +18,11 @@ export function adminClient() {
       auth: { persistSession: false, autoRefreshToken: false },
     },
   );
+}
+
+// Many E2E runs leave more than one page of local users, so the lookup reads every page.
+export async function findUserId(email: string) {
+  return (await findAuthUserByEmail(adminClient().auth.admin, email))?.id;
 }
 
 export async function createConfirmedStudent(email: string, password: string, fullName: string) {
@@ -97,8 +104,7 @@ export async function becomeTeacher(page: Page, email: string) {
   if (new URL(page.url()).pathname === "/teach") {
     return;
   }
-  const { data } = await adminClient().auth.admin.listUsers({ perPage: 1000 });
-  const id = data.users.find((user) => user.email === email)?.id;
+  const id = await findUserId(email);
   const { error } = await adminClient()
     .from("teacher_accounts")
     .update({ status: "active", activated_at: new Date().toISOString() })
