@@ -4,6 +4,7 @@ import { Check, X } from "lucide-react";
 import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
+import { MatchField } from "@/components/classroom/match-field";
 import { OrderField } from "@/components/classroom/order-field";
 import { QuestionImage } from "@/components/classroom/question-image";
 import { FuriganaText } from "@/components/lessons/japanese-text";
@@ -125,6 +126,34 @@ export function QuestionField({
             value={
               Array.isArray(value)
                 ? value.filter((item): item is string => typeof item === "string")
+                : []
+            }
+            lang={view.lang}
+            isDisabled={isLocked}
+            onValueChange={onAnswerChange}
+          />
+        </fieldset>
+      </div>
+    );
+  }
+
+  if (view.type === "match") {
+    return (
+      <div className="question-field">
+        {meta}
+        {passage}
+        <fieldset>
+          <legend lang={view.lang}>
+            <FuriganaText text={view.prompt} />
+          </legend>
+          {image}
+          <MatchField
+            id={fieldId}
+            left={view.left}
+            right={view.right}
+            value={
+              Array.isArray(value)
+                ? value.filter((pair): pair is [number, number] => Array.isArray(pair))
                 : []
             }
             lang={view.lang}

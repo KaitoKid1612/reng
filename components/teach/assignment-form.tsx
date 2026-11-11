@@ -393,6 +393,9 @@ export function AssignmentForm({
             <Button variant="outline" onClick={() => handleAddQuestion("order")}>
               Thêm câu sắp xếp
             </Button>
+            <Button variant="outline" onClick={() => handleAddQuestion("match")}>
+              Thêm câu ghép đôi
+            </Button>
           </div>
         </section>
       )}

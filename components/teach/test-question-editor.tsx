@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { MatchPairsField } from "@/components/teach/match-pairs-field";
 import { OrderPiecesField } from "@/components/teach/order-pieces-field";
 import { Button } from "@/components/ui/button";
 import { INPUT_MODES } from "@/lib/assignment";
@@ -233,6 +234,15 @@ export function TestQuestionEditor({
           pieces={draft.pieces}
           lang={piecesLang}
           onChange={(pieces) => onChange({ ...draft, pieces })}
+        />
+      )}
+      {draft.type === "match" && (
+        <MatchPairsField
+          id={id}
+          leftText={draft.leftText}
+          rightText={draft.rightText}
+          lang={piecesLang}
+          onChange={(columns) => onChange({ ...draft, ...columns })}
         />
       )}
       <div className="form-grid">

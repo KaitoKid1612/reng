@@ -176,11 +176,11 @@ test("a reading passage's questions are taken together and shown in lesson order
   assert.equal((positions.at(-1) ?? 0) - positions[0] + 1, positions.length, partial.join(","));
 });
 
-test("order and listening questions join the daily set as their own kinds", () => {
+test("order, matching and listening questions join the daily set as their own kinds", () => {
   assert.equal(isDailyQuestionType("order"), true);
+  assert.equal(isDailyQuestionType("match"), true);
   assert.equal(isDailyQuestionType("listen"), true);
   assert.equal(isDailyQuestionType("dictation"), true);
-  assert.equal(isDailyQuestionType("match"), false);
 });
 
 test("70-question daily selection keeps unique IDs and respects the requested size", () => {

@@ -130,7 +130,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 |---|---|---|
 | Thi đấu trực tiếp trong lớp | Rất cao, đổi hẳn không khí buổi học | Thấp, Supabase Realtime |
 | Bổ sung sâu nội dung "người Việt hay nhầm" | Có trường từ giai đoạn 2; tiếp tục biên soạn theo lỗi thực tế | Nội dung |
-| Ghép đôi | Schema/chấm đã định nghĩa; còn thiếu UI và kiểm chứng cả bàn phím/điện thoại (câu sắp xếp đã có UI từ 03/11/2026) | Trung bình |
+| Ghép đôi — **đã làm 11/11/2026**: soạn trên trình soạn tiếng Nhật và câu kiểm tra riêng, làm bài bằng ô chọn (bàn phím, điện thoại), giao lớp và bài hằng ngày ([kiểm chứng](testing/cleanup-2026-11-11.md#câu-ghép-đôi)); trình soạn tiếng Trung chưa có | Schema/chấm đã định nghĩa từ giai đoạn 3 | Trung bình |
 | Mã QR trên slide | Cao | Rất thấp |
 | Đếm ngược ngày thi JLPT — **đã làm 09/11/2026** cùng đề thi thử | Trung bình | Rất thấp |
 | Đề thi thử có đếm giờ — **đã làm 09/11/2026** cho N5/N4 (ý tưởng #1 bên dưới) | Cao | Trung bình |

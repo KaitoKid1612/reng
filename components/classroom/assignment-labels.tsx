@@ -26,6 +26,7 @@ export const QUESTION_TYPE_LABELS: Record<AssignableQuestion["type"], string> = 
   listen: "nghe",
   dictation: "chính tả",
   order: "sắp xếp câu",
+  match: "ghép đôi",
 };
 
 const STATUS_LABELS: Record<AssignmentStatus, { label: string; tone: string }> = {

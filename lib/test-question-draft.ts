@@ -1,4 +1,5 @@
 import { testQuestionInputSchema, toTestQuestions } from "@/lib/assignment";
+import { describeMatchProblem, filledMatchRows } from "@/lib/match-pairs";
 import {
   describeOrderPiecesProblem,
   describePassageProblem,
@@ -32,7 +33,9 @@ export type TestQuestionDraft =
       kanjiStrict: boolean;
     })
   // Pieces in sentence order, one per line; learners get them shuffled.
-  | (DraftBase & { type: "order"; pieces: string });
+  | (DraftBase & { type: "order"; pieces: string })
+  // Two columns, one item per line: line n on the left pairs with line n on the right.
+  | (DraftBase & { type: "match"; leftText: string; rightText: string });
 
 export type TestQuestionType = TestQuestionDraft["type"];
 
@@ -40,6 +43,7 @@ export const TEST_QUESTION_TYPE_LABELS: Record<TestQuestionType, string> = {
   choice: "trắc nghiệm",
   fill: "điền từ",
   order: "sắp xếp câu",
+  match: "ghép đôi",
 };
 
 export function createQuestionDraft(
@@ -62,6 +66,8 @@ export function createQuestionDraft(
       };
     case "order":
       return { ...base, type, pieces: "" };
+    case "match":
+      return { ...base, type, leftText: "", rightText: "" };
   }
 }
 
@@ -100,6 +106,15 @@ export function toTestQuestionInput(draft: TestQuestionDraft): TestQuestionInput
         ...shared,
         ...toOrderTokens(filledPieces(draft.pieces.split("\n"))),
       };
+    case "match": {
+      const rows = filledMatchRows(draft.leftText.split("\n"), draft.rightText.split("\n"));
+      return {
+        type: "match",
+        ...shared,
+        left: rows.map((row) => row.left),
+        right: rows.map((row) => row.right),
+      };
+    }
   }
 }
 
@@ -143,10 +158,18 @@ export function describeQuestionProblem(draft: TestQuestionDraft) {
     if (input.kanjiStrict && !input.answer.every((answer) => /\p{Script=Han}/u.test(answer))) {
       return "Đã bật kanji bắt buộc nên mọi đáp án phải chứa kanji.";
     }
-  } else {
+  } else if (input.type === "order") {
     const piecesProblem = describeOrderPiecesProblem(input.tokens.map((token) => token.text));
     if (piecesProblem) {
       return toSentence(piecesProblem);
+    }
+  } else if (draft.type === "match") {
+    const matchProblem = describeMatchProblem(
+      draft.leftText.split("\n"),
+      draft.rightText.split("\n"),
+    );
+    if (matchProblem) {
+      return toSentence(matchProblem);
     }
   }
   if (!testQuestionInputSchema.safeParse(input).success) {

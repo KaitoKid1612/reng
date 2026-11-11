@@ -4,17 +4,26 @@ import { typedAnswerKey } from "@/lib/grading/grade";
 import {
   isBlankAnswer,
   parseChoiceSelection,
+  parseMatchPairs,
   parseTextAnswer,
   parseTokenOrder,
 } from "@/lib/grading/raw-answer";
 import { containsKanji } from "@/lib/japanese-text";
 import { questionSchema } from "@/lib/lesson-schema";
 import {
+  describeMatchPairs,
+  MAX_MATCH_ITEM_LENGTH,
+  MAX_MATCH_PAIRS,
+  MIN_MATCH_PAIRS,
+  toMatchQuestion,
+} from "@/lib/match-pairs";
+import {
   MAX_ORDER_PIECE_LENGTH,
   MAX_ORDER_PIECES,
   MAX_PASSAGE_LENGTH,
   MIN_ORDER_PIECES,
 } from "@/lib/order-pieces";
+import { hashText } from "@/lib/stable-hash";
 
 import type { RawAnswer } from "@/lib/grading/raw-answer";
 import type { LessonQuestion } from "@/lib/lesson-schema";
@@ -39,7 +48,7 @@ export type FeedbackPolicy = (typeof FEEDBACK_POLICIES)[number];
 export type InputMode = (typeof INPUT_MODES)[number];
 export type AssignableQuestion = Extract<
   LessonQuestion,
-  { type: "choice" | "fill" | "listen" | "dictation" | "order" }
+  { type: "choice" | "fill" | "listen" | "dictation" | "order" | "match" }
 >;
 
 const ASSIGNABLE_TYPES: readonly LessonQuestion["type"][] = [
@@ -48,10 +57,10 @@ const ASSIGNABLE_TYPES: readonly LessonQuestion["type"][] = [
   "listen",
   "dictation",
   "order",
+  "match",
 ];
 export const MAX_RECORDED_LISTENS = 100;
 
-// Matching stays gradable but has no learner screen yet, so it cannot be assigned.
 export function isAssignableQuestion(question: LessonQuestion): question is AssignableQuestion {
   return ASSIGNABLE_TYPES.includes(question.type);
 }
@@ -88,7 +97,7 @@ const assignableQuestionSchema = questionSchema.superRefine((question, context) 
   if (!isAssignableQuestion(question)) {
     context.addIssue({
       code: "custom",
-      message: "Only choice, fill, listen, dictation and order questions can be assigned.",
+      message: "Only choice, fill, listen, dictation, order and match questions can be assigned.",
     });
     return;
   }
@@ -169,6 +178,7 @@ const promptText = z.string().trim().min(1).max(500);
 const optionText = z.string().trim().min(1).max(120);
 const points = z.number().int().min(1).max(100);
 const passageText = z.string().trim().min(1).max(MAX_PASSAGE_LENGTH).optional();
+const matchItemText = z.string().trim().min(1).max(MAX_MATCH_ITEM_LENGTH);
 const pieceId = z
   .string()
   .regex(/^[a-z0-9][a-z0-9-]*$/)
@@ -224,6 +234,25 @@ export const testQuestionInputSchema = z.discriminatedUnion("type", [
       points,
     })
     .strict(),
+  // The two columns in pair order: row n on the left pairs with row n on the right.
+  z
+    .object({
+      type: z.literal("match"),
+      passage: passageText,
+      prompt: promptText,
+      left: z.array(matchItemText).min(MIN_MATCH_PAIRS).max(MAX_MATCH_PAIRS),
+      right: z.array(matchItemText).min(MIN_MATCH_PAIRS).max(MAX_MATCH_PAIRS),
+      explain: promptText,
+      points,
+    })
+    .strict()
+    .refine((input) => input.left.length === input.right.length, "Each row needs both sides.")
+    .refine(
+      (input) =>
+        new Set(input.left).size === input.left.length &&
+        new Set(input.right).size === input.right.length,
+      "Matching items must differ within a column.",
+    ),
 ]);
 
 export type TestQuestionInput = z.infer<typeof testQuestionInputSchema>;
@@ -247,8 +276,17 @@ export function toTestQuestions(
             input.inputMode === "pinyin" ||
             (input.inputMode === "text" && languageTag !== "ja-JP")
           : languageTag !== "ja-JP";
+      const content =
+        input.type === "match"
+          ? {
+              ...input,
+              ...toMatchQuestion(
+                input.left.map((left, row) => ({ left, right: input.right[row] ?? "" })),
+              ),
+            }
+          : input;
       return parseAssignableQuestion({
-        ...input,
+        ...content,
         id: `t${index + 1}`,
         tags: [],
         ...(isChinese ? { gradingProfile: "zh-exact-v1" } : {}),
@@ -311,6 +349,12 @@ export interface OrderToken {
   text: string;
 }
 
+// A right-hand item with the index the learner's answer refers to.
+export interface MatchOption {
+  index: number;
+  text: string;
+}
+
 export type QuestionView = QuestionViewBase &
   (
     | { type: "choice"; options: string[]; multiple: boolean }
@@ -319,6 +363,7 @@ export type QuestionView = QuestionViewBase &
         ({ responseType: "choice"; options: string[] } | { responseType: "fill" }))
     | ({ type: "dictation"; inputMode: InputMode } & ListeningFields)
     | { type: "order"; tokens: OrderToken[] }
+    | { type: "match"; left: string[]; right: MatchOption[] }
   );
 
 // Bank tags that name a kind of exercise, for Japanese and Chinese alike. Tags that already are
@@ -353,14 +398,6 @@ function questionSection(tags: readonly string[]) {
   return undefined;
 }
 
-function hashText(value: string) {
-  let hash = 2166136261;
-  for (const char of value) {
-    hash = Math.imul(hash ^ (char.codePointAt(0) ?? 0), 16777619) >>> 0;
-  }
-  return hash;
-}
-
 // Authors often list tokens in sentence order, so learners get them in a fixed shuffle that is
 // never the answer itself.
 export function shuffleOrderTokens(
@@ -374,6 +411,26 @@ export function shuffleOrderTokens(
   );
   const isAnswerOrder = shuffled.every((token, index) => token.id === answer[index]);
   return isAnswerOrder && shuffled.length > 1 ? [...shuffled.slice(1), shuffled[0]] : shuffled;
+}
+
+// The right column in a fixed shuffle that never lines each item up with its partner on the left,
+// which a question written row by row (imported, not saved by the editors) would otherwise do.
+export function shuffleMatchOptions(
+  questionId: string,
+  right: readonly string[],
+  answer: readonly (readonly [number, number])[],
+): MatchOption[] {
+  const options = right
+    .map((text, index) => ({ index, text }))
+    .sort(
+      (first, second) =>
+        hashText(`${questionId}:${first.index}:${first.text}`) -
+        hashText(`${questionId}:${second.index}:${second.text}`),
+    );
+  const partnerOf = new Map(answer.map(([left, partner]) => [left, partner]));
+  const isAligned = options.every((option, row) => partnerOf.get(row) === option.index);
+  const [first, ...rest] = options;
+  return isAligned && first && rest.length ? [...rest, first] : options;
 }
 
 // Japanese and Chinese sentences join without spaces; Latin-script tokens keep them.
@@ -432,6 +489,13 @@ export function toQuestionView(question: AssignableQuestion): QuestionView {
         ...base,
         type: "order",
         tokens: shuffleOrderTokens(question.id, question.tokens, question.answer),
+      };
+    case "match":
+      return {
+        ...base,
+        type: "match",
+        left: question.left,
+        right: shuffleMatchOptions(question.id, question.right, question.answer),
       };
   }
 }
@@ -547,6 +611,9 @@ export function parseViewAnswer(view: QuestionView, value: unknown): RawAnswer {
       value,
     );
   }
+  if (view.type === "match") {
+    return parseMatchPairs(view.left.length, view.right.length, value);
+  }
   return parseTextAnswer(value);
 }
 
@@ -630,6 +697,9 @@ export function describeCorrectAnswer(question: AssignableQuestion) {
   if (question.type === "order") {
     return joinOrderTokens(orderTokenTexts(question.tokens, question.answer));
   }
+  if (question.type === "match") {
+    return describeMatchPairs(question, question.answer);
+  }
   // "わたしはがくせいです。" and "わたしはがくせいです" grade the same, so only the first is shown.
   const shown = new Set<string>();
   return question.answer
@@ -657,6 +727,18 @@ export function toStoredRawAnswer(value: unknown): RawAnswer | null {
   if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
     return value;
   }
+  // A matching answer is a list of [left, right] index pairs.
+  if (
+    Array.isArray(value) &&
+    value.every(
+      (item) =>
+        Array.isArray(item) &&
+        item.length === 2 &&
+        item.every((index) => Number.isInteger(index) && index >= 0),
+    )
+  ) {
+    return value as [number, number][];
+  }
   return null;
 }
 
@@ -667,6 +749,12 @@ export function describeRawAnswer(question: AssignableQuestion, raw: RawAnswer |
   if (question.type === "order") {
     const ids = Array.isArray(raw) ? raw.filter((id): id is string => typeof id === "string") : [];
     return joinOrderTokens(orderTokenTexts(question.tokens, ids));
+  }
+  if (question.type === "match") {
+    const pairs = Array.isArray(raw)
+      ? raw.filter((pair): pair is [number, number] => Array.isArray(pair))
+      : [];
+    return describeMatchPairs(question, pairs);
   }
   const isChoice =
     question.type === "choice" ||

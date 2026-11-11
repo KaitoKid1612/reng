@@ -80,7 +80,14 @@ export function repeatsEveryDay(questionCount: number, size: number | null) {
 
 // A listening question can only be published with reviewed audio, so a lesson that has some
 // (such as the Minna listening sets) puts them in its daily sets as their own kinds.
-const DAILY_QUESTION_TYPES: readonly string[] = ["choice", "fill", "order", "listen", "dictation"];
+const DAILY_QUESTION_TYPES: readonly string[] = [
+  "choice",
+  "fill",
+  "order",
+  "match",
+  "listen",
+  "dictation",
+];
 
 export function isDailyQuestionType(type: string) {
   return DAILY_QUESTION_TYPES.includes(type);

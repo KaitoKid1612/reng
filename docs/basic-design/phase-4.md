@@ -8,7 +8,7 @@ Baseline 28/10/2026. Giai đoạn 1–3 mới nghiệm thu local; thiết kế n
 
 Giảng viên tạo bài mới, soạn từ vựng/ngữ pháp/câu luyện/slide trên web, xem trước slide ngay khi gõ, kéo thả thứ tự slide, lưu nháp và xuất bản phiên bản mới mà không mở editor code. Từ vựng nhập hàng loạt từ CSV hoặc dán bảng từ Excel, báo lỗi từng dòng. Học viên/giảng viên chọn nhận email; hệ thống gửi nhắc học tối, tổng kết tuần và tóm tắt lớp buổi sáng chỉ khi có việc, có link hủy một chạm.
 
-Ngoài phạm vi: sinh audio từ web (vẫn chạy script ADMIN-04), tải ảnh lên Storage (slide ảnh nhận đường dẫn local/HTTPS), sửa câu luyện dạng ghép đôi/sắp xếp/nghe (giữ nguyên nếu có), nhân bản bài, web push, xóa cứng bài.
+Ngoài phạm vi: sinh audio từ web (vẫn chạy script ADMIN-04), tải ảnh lên Storage (slide ảnh nhận đường dẫn local/HTTPS), sửa câu luyện dạng ghép đôi/sắp xếp/nghe (giữ nguyên nếu có; sắp xếp và nghe sửa được từ 03–04/11/2026, ghép đôi từ 11/11/2026), nhân bản bài, web push, xóa cứng bài.
 
 ## Màn hình
 

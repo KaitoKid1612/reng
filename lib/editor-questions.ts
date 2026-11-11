@@ -1,8 +1,10 @@
+import { fromMatchColumns, toMatchColumns } from "@/lib/match-pairs";
 import { toOrderPieces, toOrderTokens } from "@/lib/order-pieces";
 
 import type {
   DraftChoiceQuestion,
   DraftFillQuestion,
+  DraftMatchQuestion,
   DraftOrderQuestion,
   DraftQuestion,
 } from "@/lib/lesson-draft";
@@ -10,19 +12,26 @@ import type { TeachingLanguageTag } from "@/lib/teaching-language";
 import type { TestQuestionDraft } from "@/lib/test-question-draft";
 
 // Practice questions of the web editor that use the shared test question editor.
-export type TextQuestion = DraftChoiceQuestion | DraftFillQuestion | DraftOrderQuestion;
-export type NewQuestionType = "choice" | "fill" | "order" | "listen" | "dictation";
+export type TextQuestion =
+  DraftChoiceQuestion | DraftFillQuestion | DraftOrderQuestion | DraftMatchQuestion;
+export type NewQuestionType = "choice" | "fill" | "order" | "match" | "listen" | "dictation";
 
 export const ADD_QUESTION_LABELS: Record<NewQuestionType, string> = {
   choice: "Thêm câu trắc nghiệm",
   fill: "Thêm câu điền từ",
   order: "Thêm câu sắp xếp",
+  match: "Thêm câu ghép đôi",
   listen: "Thêm câu nghe",
   dictation: "Thêm câu chính tả",
 };
 
 export function isTextQuestion(question: DraftQuestion): question is TextQuestion {
-  return question.type === "choice" || question.type === "fill" || question.type === "order";
+  return (
+    question.type === "choice" ||
+    question.type === "fill" ||
+    question.type === "order" ||
+    question.type === "match"
+  );
 }
 
 // A bank question for a Chinese class carries zh-exact-v1; nothing else marks its language.
@@ -57,6 +66,15 @@ export function toQuestionDraft(question: TextQuestion, key: number): TestQuesti
       };
     case "order":
       return { ...base, type: "order", pieces: toOrderPieces(question).join("\n") };
+    case "match": {
+      const columns = toMatchColumns(question);
+      return {
+        ...base,
+        type: "match",
+        leftText: columns.left.join("\n"),
+        rightText: columns.right.join("\n"),
+      };
+    }
   }
 }
 
@@ -106,6 +124,12 @@ export function fromQuestionDraft(draft: TestQuestionDraft, original: TextQuesti
       };
     case "order":
       return { ...shared, type: "order", ...toOrderTokens(draft.pieces.split("\n")) };
+    case "match":
+      return {
+        ...shared,
+        type: "match",
+        ...fromMatchColumns(draft.leftText.split("\n"), draft.rightText.split("\n")),
+      };
   }
 }
 
@@ -133,6 +157,8 @@ export function createQuestion(
       return { ...shared, type, answer: [""], inputMode: "hiragana", kanjiStrict: false };
     case "order":
       return { ...shared, type, tokens: [], answer: [] };
+    case "match":
+      return { ...shared, type, left: [], right: [], answer: [] };
     case "listen":
       return {
         ...shared,

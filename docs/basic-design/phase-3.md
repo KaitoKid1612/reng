@@ -10,7 +10,7 @@ Baseline 28/10/2026. Giai đoạn 1–2 vẫn chờ cloud/thiết bị/giảng v
 
 Học viên tự đăng ký, xác nhận email, vào lớp bằng mã, làm bài luyện/kiểm tra dạng trắc nghiệm và điền từ, xem kết quả theo chính sách phản hồi, ôn từ vựng/sổ lỗi bằng FSRS và xem tiến độ. Giảng viên (role do người vận hành cấp) tạo lớp, chọn bài/phiên bản/lịch mở, giao bài, đóng bài, xem bảng theo dõi, câu sai nhiều và xuất CSV.
 
-Ngoài phạm vi: ghép đôi/sắp xếp/nghe trên UI làm bài (schema và hàm chấm đã có, UI ở giai đoạn 5–6), editor bài học, email nhắc, lưu nháp bài giao trước khi xuất bản, xóa tài khoản tự phục vụ, chia sẻ bài giữa giảng viên.
+Ngoài phạm vi: ghép đôi/sắp xếp/nghe trên UI làm bài (schema và hàm chấm đã có, UI ở giai đoạn 5–6; sắp xếp có UI từ 03/11/2026, ghép đôi từ 11/11/2026), editor bài học, email nhắc, lưu nháp bài giao trước khi xuất bản, xóa tài khoản tự phục vụ, chia sẻ bài giữa giảng viên.
 
 Tính năng lớp cần SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY và SUPABASE_SECRET_KEY. Thiếu cấu hình thì kana/bài học công khai vẫn chạy; các trang tài khoản/lớp báo "chưa được kích hoạt", không có phiên giả. Lớp luôn đọc bài/phiên bản từ database, độc lập với LESSON_SOURCE của danh mục công khai.
 

@@ -8,7 +8,7 @@ Hợp đồng đi cùng schema ở 03. Nền grading/classroom Nhật đã có m
 |---|---|---|
 | choice | Chọn một hoặc nhiều lựa chọn | Tập chỉ số trùng hoàn toàn với đáp án; không tính thứ tự chọn |
 | fill | Gõ theo `inputMode`: hiragana/katakana/tiếng Nhật (romaji tự đổi kana, nhận IME), chữ Hán (IME tiếng Trung), pinyin (số thanh tự đổi dấu: `ni3` → `nǐ`), tiếng Việt | Chuỗi chuẩn hóa theo profile (`ja-default-v1` hoặc `zh-exact-v1`) trùng một đáp án được khai báo; ô tiếng Việt bỏ qua hoa/thường, khoảng trắng, dấu câu |
-| match | Bấm chọn hai bên, có bàn phím (chưa có màn hình làm bài nên chưa giao được) | Tất cả cặp đúng, không tính thứ tự ghép |
+| match | Từ 11/11/2026: cột phải hiện thành danh sách có chữ cái (giữ furigana), mỗi mục cột trái có một ô chọn chữ cái; chọn mục đã dùng ở dòng khác thì mục chuyển sang dòng mới. Dùng được bằng bàn phím, trình đọc màn hình và điện thoại, không kéo thả. Giáo viên soạn hai cột, mỗi dòng một cặp, 2–8 cặp, mỗi vế tối đa 60 ký tự, không trùng trong một cột | Tất cả cặp đúng, không tính thứ tự ghép; thiếu một cặp là sai. Cột phải được lưu theo thứ tự xáo cố định khi xuất bản, nên chỉ số trong trang học viên không trùng dòng của cặp |
 | order | Bấm từng mảnh theo thứ tự, bấm mảnh đã xếp để bỏ (từ 03/11/2026, không kéo thả). Giáo viên soạn trên trình soạn: mỗi dòng một mảnh, 2–10 mảnh không trùng nhau | Đúng toàn bộ thứ tự ID token; mảnh hiện theo thứ tự xáo cố định, không bao giờ trùng đáp án. Mã mảnh ngẫu nhiên để trang học viên không lộ thứ tự |
 | listen | Player và choice/fill; ô điền theo ngôn ngữ câu (tiếng Nhật đổi romaji, tiếng Trung gõ bằng IME) | Theo responseType; áp dụng giới hạn nghe nếu có |
 | dictation | Player và gõ theo `inputMode` như fill | Như fill |

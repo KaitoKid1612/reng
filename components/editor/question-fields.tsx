@@ -12,7 +12,7 @@ import {
   isTextQuestion,
   toQuestionDraft,
 } from "@/lib/editor-questions";
-import { findReferencingSlides, isEditableQuestion, isListeningDraft } from "@/lib/lesson-draft";
+import { findReferencingSlides, isListeningDraft } from "@/lib/lesson-draft";
 
 import type { DraftContent } from "@/lib/lesson-draft";
 import type { EditorAction } from "@/lib/lesson-editor";
@@ -23,7 +23,7 @@ interface QuestionFieldsProps {
   createId: () => string;
 }
 
-const NEW_QUESTION_TYPES = ["choice", "fill", "order", "listen", "dictation"] as const;
+const NEW_QUESTION_TYPES = ["choice", "fill", "order", "match", "listen", "dictation"] as const;
 
 export function QuestionFields({ content, dispatch, createId }: QuestionFieldsProps) {
   return (
@@ -38,13 +38,6 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
         const usage = slides.length
           ? `Đang dùng ở slide ${slides.map((slide) => content.slides.indexOf(slide) + 1).join(", ")}; đổi slide trước khi xóa.`
           : undefined;
-        if (!isEditableQuestion(question)) {
-          return (
-            <p key={question.id} className="notice-panel">
-              Câu {index + 1} ({question.type}) chưa sửa được trên web; nội dung được giữ nguyên.
-            </p>
-          );
-        }
         if (isListeningDraft(question)) {
           return (
             <ListeningQuestionEditor

@@ -28,7 +28,8 @@ export function parseChoiceSelection(optionCount: number, isMultiple: boolean, v
   return [...selection].sort((first, second) => first - second);
 }
 
-function parseMatch(leftCount: number, rightCount: number, value: unknown) {
+// Pairs of [left index, right index]; a learner may leave rows unpaired while working.
+export function parseMatchPairs(leftCount: number, rightCount: number, value: unknown) {
   const pairs = z
     .array(z.tuple([index, index]))
     .max(leftCount)
@@ -62,7 +63,7 @@ export function parseRawAnswer(question: LessonQuestion, value: unknown): RawAns
     case "dictation":
       return textAnswer.parse(value);
     case "match":
-      return parseMatch(question.left.length, question.right.length, value);
+      return parseMatchPairs(question.left.length, question.right.length, value);
     case "order":
       return parseTokenOrder(
         question.tokens.map((token) => token.id),

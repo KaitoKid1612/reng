@@ -10,6 +10,12 @@ import {
 } from "@/lib/japanese-text";
 import { GRADING_PROFILES } from "@/lib/language-profile";
 import {
+  describeMatchProblem,
+  filledMatchRows,
+  toMatchColumns,
+  toMatchQuestion,
+} from "@/lib/match-pairs";
+import {
   lessonContentSchema,
   MAX_DIALOGUE_LINES,
   MAX_TABLE_COLUMNS,
@@ -234,6 +240,20 @@ const draftOrderSchema = z
   })
   .strict();
 
+// The columns stay as typed while editing, row n paired with row n (a column may be longer for a
+// moment); publishing drops blank rows and stores the right column in a fixed shuffle.
+const draftMatchSchema = z
+  .object({
+    ...questionFields,
+    type: z.literal("match"),
+    left: z.array(draftText(200)).max(30),
+    right: z.array(draftText(200)).max(30),
+    answer: z
+      .array(z.tuple([z.number().int().nonnegative(), z.number().int().nonnegative()]))
+      .max(30),
+  })
+  .strict();
+
 // Other question types are kept exactly as authored; the web editor shows them read-only.
 const draftQuestionSchema = z.union([
   draftChoiceSchema,
@@ -241,6 +261,7 @@ const draftQuestionSchema = z.union([
   draftListenSchema,
   draftDictationSchema,
   draftOrderSchema,
+  draftMatchSchema,
   questionSchema,
 ]);
 
@@ -361,13 +382,18 @@ export function findReferencingSlides(content: DraftContent, itemId: string) {
 export type DraftChoiceQuestion = z.infer<typeof draftChoiceSchema>;
 export type DraftFillQuestion = z.infer<typeof draftFillSchema>;
 export type DraftOrderQuestion = z.infer<typeof draftOrderSchema>;
+export type DraftMatchQuestion = z.infer<typeof draftMatchSchema>;
 export type DraftListeningQuestion =
   z.infer<typeof draftListenSchema> | z.infer<typeof draftDictationSchema>;
 export type EditableDraftQuestion =
-  DraftChoiceQuestion | DraftFillQuestion | DraftOrderQuestion | DraftListeningQuestion;
+  | DraftChoiceQuestion
+  | DraftFillQuestion
+  | DraftOrderQuestion
+  | DraftMatchQuestion
+  | DraftListeningQuestion;
 
 export function isEditableQuestion(question: DraftQuestion): question is EditableDraftQuestion {
-  return ["choice", "fill", "order", "listen", "dictation"].includes(question.type);
+  return ["choice", "fill", "order", "match", "listen", "dictation"].includes(question.type);
 }
 
 // Slides show quizzes without audio, so only choice and fill questions can be referenced.
@@ -578,6 +604,9 @@ function textsShownWhileAnswering(question: EditableDraftQuestion) {
   if (question.type === "order") {
     texts.push(...question.tokens.map((token) => token.text));
   }
+  if (question.type === "match") {
+    texts.push(...question.left, ...question.right);
+  }
   return texts;
 }
 
@@ -711,6 +740,10 @@ function describeAnswerProblem(question: EditableDraftQuestion) {
         return "mỗi mảnh phải có trong đáp án đúng một lần; nhập lại các mảnh theo thứ tự câu.";
       }
       return describeOrderPiecesProblem(pieces);
+    }
+    case "match": {
+      const columns = toMatchColumns(question);
+      return describeMatchProblem(columns.left, columns.right);
     }
     case "choice": {
       const choiceProblem = describeChoiceProblem(question.options, question.answer);
@@ -871,6 +904,10 @@ function withPublishableAnswer(question: DraftQuestion) {
         .map((token) => ({ ...token, text: token.text.trim() }));
       const kept = new Set(tokens.map((token) => token.id));
       return { ...question, tokens, answer: question.answer.filter((id) => kept.has(id)) };
+    }
+    case "match": {
+      const columns = toMatchColumns(question);
+      return { ...question, ...toMatchQuestion(filledMatchRows(columns.left, columns.right)) };
     }
     default:
       return question;

@@ -129,6 +129,48 @@
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+/* Matching: the lettered right column, then one menu per item on the left. */
+.match-options,
+.match-rows {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.match-options {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.match-options li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 18px;
+}
+.match-letter {
+  min-width: 1.5em;
+  font-weight: 600;
+  color: var(--primary);
+}
+/* The item and its menu stay side by side and close, so the eye does not cross a wide card. */
+.match-rows li {
+  display: grid;
+  grid-template-columns: minmax(6em, 14em) minmax(0, 22em);
+  align-items: center;
+  gap: 8px 16px;
+}
+.match-rows label {
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .match-rows li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .question-meta {
   display: flex;
   justify-content: space-between;

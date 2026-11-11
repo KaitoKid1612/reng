@@ -198,17 +198,28 @@ test("assignment questions are limited to supported types with valid kanji-stric
       },
     ]),
   );
-  // Matching is gradable but has no learner screen yet.
+  // Matching is assignable when every item on each side pairs exactly once.
+  const match = {
+    id: "m1",
+    type: "match",
+    prompt: "Nối",
+    left: ["いぬ", "ねこ"],
+    right: ["mèo", "chó"],
+    answer: [
+      [0, 1],
+      [1, 0],
+    ],
+    explain: "いぬ là chó.",
+    points: 1,
+  };
+  assert.equal(parseAssignableQuestion(match).type, "match");
   assert.throws(() =>
     parseAssignableQuestion({
-      id: "m1",
-      type: "match",
-      prompt: "Nối",
-      left: ["いぬ"],
-      right: ["chó"],
-      answer: [[0, 0]],
-      explain: "Chưa có UI.",
-      points: 1,
+      ...match,
+      answer: [
+        [0, 1],
+        [1, 1],
+      ],
     }),
   );
 });
