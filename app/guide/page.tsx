@@ -31,7 +31,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Nếu hệ thống yêu cầu duyệt, đợi quản trị viên mở quyền; nếu không, bạn có thể bắt đầu ngay. Mục Giảng dạy hiện trên thanh đầu trang. Một tài khoản vừa dạy vừa học được ở lớp khác.",
       "Đổi họ tên hiển thị với học viên hoặc mật khẩu ở nút Tài khoản cuối trang Giảng dạy.",
       "Mới bắt đầu, trang Giảng dạy có danh sách Các bước bắt đầu dạy (tạo lớp, tạo và xuất bản bài, đưa bài vào lớp, mời học viên, đặt lịch, giao bài tập); danh sách tự ẩn khi lớp đã có học viên và bài tập.",
-      "Mục Hôm nay dạy gì ở đầu trang Giảng dạy gom buổi dạy hôm nay theo lịch lớp, bài tập hạn hôm nay và lớp có bài nộp mới trong 24 giờ; bấm từng dòng để mở đúng lớp.",
+      "Mục Hôm nay dạy gì ở đầu trang Giảng dạy gom buổi dạy hôm nay theo lịch lớp, bài tập hạn hôm nay và lớp có bài nộp mới trong 24 giờ; bấm từng dòng để mở đúng lớp. Trang chủ cũng hiện mục này khi bạn đăng nhập.",
     ],
   },
   {
@@ -168,7 +168,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-study",
     title: "Học bài",
     steps: [
-      "Mở Lớp của tôi (hoặc trang chủ khi đã đăng nhập) để xem Hôm nay học gì: buổi học hôm nay, bài đang làm dở, bài đến hạn hôm nay, bài mới mở trong tuần và thẻ đến hạn ôn. Bấm nút ở từng dòng để làm ngay; xong việc nào thì việc đó rời danh sách. Bài mới mở rời danh sách khi bạn bấm Đánh dấu đã đọc xong ở cuối bài hoặc ở slide cuối.",
+      "Mở Lớp của tôi (hoặc trang chủ khi đã đăng nhập) để xem Hôm nay học gì: buổi học hôm nay, bài đang làm dở, bài đến hạn hôm nay, bài mới mở trong tuần và thẻ đến hạn ôn. Bấm nút ở từng dòng để làm ngay; xong việc nào thì việc đó rời danh sách. Bài mới mở rời danh sách khi bạn bấm Đánh dấu đã đọc xong ở cuối bài hoặc ở slide cuối. Trang chủ còn có chuỗi ngày học: chỉ cần ôn một thẻ hoặc nộp một bài mỗi ngày là giữ được chuỗi; Lớp của tôi cho biết mỗi lớp bạn đã nộp bao nhiêu bài.",
       "Lớp của tôi và trang lớp hiện buổi học tới theo lịch giáo viên đặt; tới giờ thì bấm Vào Google Meet ở trang lớp.",
       "Vào Lớp của tôi → chọn lớp → Đọc bài: từ vựng có nút Nghe, mẫu câu có furigana, hội thoại và bảng luyện tập (bấm Xem câu mẫu để kiểm tra mình).",
       "Cuối trang bài học có Flashcard từ vựng, Luyện nghe và Luyện kanji (lớp tiếng Trung: Luyện chữ Hán) khi bài có từ và câu nghe; trang lớp có các nút này cạnh từng bài. Ở Flashcard, chấm Quên, Khó, Được hoặc Dễ để Reng hẹn ngày ôn ở mục Ôn tập.",
@@ -183,7 +183,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Câu điền tiếng Nhật: gõ chữ Latinh (romaji), hệ thống đổi thành hiragana, ví dụ ko → こ. Chữ ん ở giữa từ gõ nn (さんにん: sannnin); ん ở cuối từ tự hoàn tất khi bạn rời ô. Trợ từ は, へ, を gõ ha, he, wo.",
       "Bài tiếng Trung: nhập chữ Hán bằng bàn phím tiếng Trung hoặc pinyin có dấu theo yêu cầu câu hỏi; không có dấu trên bàn phím thì gõ số thanh sau mỗi âm (ni3 hao3 → nǐ hǎo, v thay cho ü). Hệ thống không đổi romaji thành kana trong ô chữ Hán/pinyin.",
       "Câu sắp xếp: bấm các mảnh theo đúng thứ tự câu; bấm một mảnh đã xếp để bỏ ra, hoặc Xếp lại từ đầu. Câu ghép đôi: các mục để ghép có chữ cái A, B, C…; với mỗi mục bên trái, chọn chữ cái của mục hợp với nó (chọn một mục đã dùng ở dòng khác thì nó chuyển sang dòng này). Câu đọc hiểu có đoạn văn ngay trên đề; các câu cùng đoạn văn nằm liền nhau.",
-      "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Trên điện thoại, sau khi kiểm tra có nút Câu sau ngay dưới câu. Bài dài có Danh sách câu (✓ đúng, ✗ chưa đúng) để nhảy tới câu bất kỳ; thanh Nộp bài ở cuối màn hình luôn cho biết đã trả lời bao nhiêu câu. Khi nộp mà còn câu trống, bấm Đến câu chưa làm.",
+      "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Trên điện thoại, sau khi kiểm tra có nút Câu sau ngay dưới câu. Bài nhiều câu hiện từng câu, có Câu trước và Câu sau; trên máy tính bấm Cả bài để xem mọi câu một lượt (máy nhớ lựa chọn). Bài dài có Danh sách câu (✓ đúng, ✗ chưa đúng) để nhảy tới câu bất kỳ; thanh Nộp bài ở cuối màn hình luôn cho biết đã trả lời bao nhiêu câu. Khi nộp mà còn câu trống, bấm Đến câu chưa làm. Trả lời đúng hay sai có tiếng báo ngắn; bấm nút loa để tắt.",
       "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lại lượt mới; điểm của lượt mới sẽ thay điểm cũ. Mở lại bài đã nộp thì nút chính là Xem kết quả.",
       "Bài có hạn và không cho nộp muộn: trong giờ cuối có đồng hồ đếm ngược và bài tự nộp khi còn 1 phút. Nếu bạn đã đóng trang trước đó, Reng tự nộp các câu đã lưu vào khoảng 6 giờ sáng sau hạn. Lượt làm lại khi đã có lượt nộp trước thì không bị nộp, để giữ điểm cũ.",
       "Lớp có luyện tập hằng ngày: bấm Điểm luyện tập hằng ngày ở đầu trang lớp để xem điểm từng ngày, bấm một ngày để xem lại từng câu.",
@@ -215,7 +215,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-review",
     title: "Ôn tập và tiến độ",
     steps: [
-      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn. Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được đánh dấu đã giải quyết. Tiến độ của tôi cho thấy bài đã đọc, kết quả bài tập, chuỗi ngày học, tỉ lệ đúng theo dạng câu và thẻ ôn tập. Ba nút này nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Đi nhanh tới trên trang chủ.",
+      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn. Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được đánh dấu đã giải quyết. Tiến độ của tôi cho thấy chuỗi ngày học với các mốc và lịch 12 tuần, bài đã đọc, kết quả bài tập, tỉ lệ đúng theo dạng câu và thẻ ôn tập. Ba nút này nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Đi nhanh tới trên trang chủ.",
     ],
   },
 ];

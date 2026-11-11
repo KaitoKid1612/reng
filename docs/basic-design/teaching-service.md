@@ -320,6 +320,17 @@ Người dùng nhờ rà soát chỗ bất hợp lý, khó dùng và làm giao d
 
 Mọi chuyển động tắt khi thiết bị bật giảm chuyển động (`prefers-reduced-motion`); pháo giấy ẩn hẳn. Màu chỉ dùng token, kiểm tra axe ở cả giao diện sáng và tối.
 
+## Làm tiếp các đề xuất giao diện — 11/11/2026 (chiều)
+
+Người dùng đồng ý làm cả sáu đề xuất ở cuối [báo cáo rà soát](../testing/ui-polish-2026-11-11.md#đề-xuất-tiếp-theo-đã-làm-cùng-ngày).
+
+1. **Trang chủ giáo viên** có mục **Hôm nay dạy gì** (buổi dạy hôm nay, bài hạn hôm nay, lớp có bài nộp mới, như ở trang Giảng dạy) đứng trước Hôm nay học gì; cuối mục là link "Xem thêm N mục ở trang Giảng dạy".
+2. **Lớp của tôi**: mỗi lớp có "Đã nộp x/y bài" và thanh tiến độ (xanh khi nộp đủ). y là mọi bài đã giao trừ bài của bài học chưa mở; bài quá hạn chưa nộp vẫn tính vào y. Bài luyện hằng ngày cũ chưa làm vốn đã gộp thành một dòng "Luyện tập hằng ngày đã lỡ"; các dòng trùng thấy lúc rà soát là dữ liệu thử tạo tay.
+3. **Làm bài trên PC theo từng câu.** Bài nhiều câu mặc định hiện từng câu như trên điện thoại, có Câu trước, Câu sau và số câu. Nút **Từng câu / Cả bài** ở trên danh sách câu đổi cách hiện; trình duyệt nhớ lựa chọn. Điện thoại luôn hiện từng câu.
+4. **Ôn tập**: chỉ còn một bộ đếm "Thẻ x / y" kèm thanh tiến độ (câu trong sổ lỗi không còn ghi "Câu x / y" và điểm). Màn kết thúc có số thẻ đã ôn, số câu sổ lỗi trả lời đúng, thẻ chuỗi ngày, nút Về lớp của tôi và Xem tiến độ; phiên đầu tiên trong ngày đưa chuỗi tới một mốc thì có lời chúc và pháo giấy.
+5. **Tiến độ**: mục **Chuỗi ngày học** gồm thẻ chuỗi ngày, các mốc (3, 7, 14, 30, 60, 100, 180, 365 ngày; mốc đã đạt tô màu) và lịch 12 tuần: mỗi ô một ngày, càng học nhiều càng đậm, rê chuột thấy số lượt học. Ô đầu bảng nay là số ngày có học trong 12 tuần. Bảng Theo dạng câu có thanh phần trăm theo màu mức điểm.
+6. **Mục tiêu mỗi ngày là giữ chuỗi.** Trang chủ có thẻ chuỗi ngày: số ngày liên tiếp, "Đã giữ chuỗi hôm nay" (ngọn lửa sáng) hoặc "Học một việc hôm nay để giữ chuỗi", và thanh tới mốc tiếp theo. Một lượt ôn thẻ hoặc một bài nộp là đã học trong ngày, như cách tính chuỗi sẵn có. Không cần bảng hay cột mới. **Âm thanh**: trả lời đúng/sai phát một tiếng ngắn (luyện kana, kanji, pinyin, kiểm tra câu của bài luyện tập, ôn sổ lỗi); đúng hết phiên luyện có đoạn nhạc ngắn. Nút loa cạnh các màn đó bật/tắt, trình duyệt nhớ lựa chọn; mặc định bật. Bài kiểm tra không phát âm thanh vì không chấm từng câu.
+
 ## Phiên bản cũ gọn hơn — 11/11/2026
 
 Người dùng thấy bài có "phiên bản 1, 2, 3" và muốn xóa bớt. Mỗi lần **Xuất bản** tạo một phiên bản bất biến; lớp, bài đã giao, bài nộp, chia sẻ, bản sao và nhật ký buổi dạy trỏ tới phiên bản, và database chặn sửa/xóa (`immutable_lesson_version`). Người dùng đồng ý **ẩn bớt trên giao diện, không xóa**:
