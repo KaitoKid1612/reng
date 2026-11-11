@@ -13,6 +13,7 @@ import {
   normalizeRomaji,
   practiceReducer,
 } from "@/lib/kana";
+import { countPracticeStreak } from "@/lib/practice-streak";
 
 import type { PracticeConfiguration } from "@/components/kana/practice-setup";
 import type { FormEvent } from "react";
@@ -37,6 +38,7 @@ export function KanaPractice({ items, initialScript }: KanaPracticeProps) {
   const availableItems = items.filter(
     (item) => item.script === configuration.script && configuration.groups.includes(item.group),
   );
+  const streak = countPracticeStreak(state.records.map((record) => record.correct));
 
   function startSession(sessionItems: KanaItem[], questionCount: number) {
     audio.reset();
@@ -105,6 +107,7 @@ export function KanaPractice({ items, initialScript }: KanaPracticeProps) {
       <PracticeResult
         mistakes={mistakes}
         totalCount={state.records.length}
+        bestStreak={streak.best}
         onRetryMistakes={handleRetryMistakes}
         onReset={handleReset}
       />
@@ -123,6 +126,7 @@ export function KanaPractice({ items, initialScript }: KanaPracticeProps) {
       item={currentItem}
       questionIndex={state.index}
       totalCount={state.items.length}
+      streak={streak.current}
       feedback={state.phase === "feedback" ? state.records[state.index] : undefined}
       answer={answer}
       inputError={inputError}

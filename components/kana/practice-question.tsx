@@ -1,4 +1,4 @@
-import { Check, Volume2, X } from "lucide-react";
+import { Check, Flame, Volume2, X } from "lucide-react";
 
 import { AudioStatus, useAudio } from "@/components/audio-provider";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,8 @@ interface PracticeQuestionProps {
   item: KanaItem;
   questionIndex: number;
   totalCount: number;
+  // Right answers in a row so far; shown from two.
+  streak: number;
   feedback: PracticeRecord | undefined;
   answer: string;
   inputError: string;
@@ -24,6 +26,7 @@ export function PracticeQuestion({
   item,
   questionIndex,
   totalCount,
+  streak,
   feedback,
   answer,
   inputError,
@@ -33,17 +36,28 @@ export function PracticeQuestion({
 }: PracticeQuestionProps) {
   const audio = useAudio();
   let submitLabel = "Kiểm tra";
+  let squareResult: "correct" | "wrong" | undefined;
 
   if (feedback) {
     submitLabel = questionIndex + 1 === totalCount ? "Xem kết quả" : "Câu tiếp theo";
+    squareResult = feedback.correct ? "correct" : "wrong";
   }
 
   return (
     <div className="practice-session">
       <div className="practice-top">
         <p>{script === "hiragana" ? "Hiragana" : "Katakana"}</p>
-        <span>
-          Câu {questionIndex + 1} / {totalCount}
+        <span className="practice-top-end">
+          {streak >= 2 && (
+            // The key restarts the pop each time the run grows.
+            <span key={streak} className="streak-chip">
+              <Flame size={15} aria-hidden="true" />
+              {streak} câu đúng liên tiếp
+            </span>
+          )}
+          <span>
+            Câu {questionIndex + 1} / {totalCount}
+          </span>
         </span>
       </div>
       <progress
@@ -52,7 +66,7 @@ export function PracticeQuestion({
         aria-label="Tiến độ phiên luyện"
       />
       <h1 className="practice-title">Chữ này đọc thế nào?</h1>
-      <div className="writing-square question-square">
+      <div className="writing-square question-square" data-result={squareResult}>
         <span lang="ja" className="kana-font" data-testid="question-kana">
           {item.kana}
         </span>

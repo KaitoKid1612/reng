@@ -6,7 +6,9 @@ import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PracticeScore } from "@/components/ui/score-ring";
 import { isPinyinCorrect, pickPinyinSession, PINYIN_SESSION_SIZE } from "@/lib/pinyin-study";
+import { countPracticeStreak } from "@/lib/practice-streak";
 
 import type { PinyinWord } from "@/lib/pinyin-study";
 
@@ -77,10 +79,12 @@ export function PinyinPractice({ words }: PinyinPracticeProps) {
     return (
       <div className="practice-result">
         <h1>Bạn đã hoàn thành phiên luyện</h1>
-        <p className="result-score">
-          {attempts.length - mistakes.length}
-          <span> / {attempts.length} từ đúng</span>
-        </p>
+        <PracticeScore
+          correctCount={attempts.length - mistakes.length}
+          totalCount={attempts.length}
+          unit="từ đúng"
+          bestStreak={countPracticeStreak(attempts.map((attempt) => attempt.isCorrect)).best}
+        />
         <p>
           {mistakes.length
             ? "Ôn lại những từ dưới đây, chú ý dấu thanh."

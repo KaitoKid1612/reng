@@ -202,3 +202,126 @@
   margin-bottom: 4px;
   font-weight: 600;
 }
+/* A score as a ring that fills up to the result once (components/ui/score-ring.tsx). The fill is
+   a registered number so it can be animated; reduced motion shows the final ring at once. */
+@property --ring-fill {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+.score-ring {
+  --ring-colour: var(--primary);
+  --ring-fill: var(--score);
+  position: relative;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 112px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(var(--ring-colour) calc(var(--ring-fill) * 1%), var(--border) 0);
+  animation: ring-fill 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.score-ring[data-band="perfect"] {
+  --ring-colour: var(--correct);
+}
+.score-ring[data-band="low"] {
+  --ring-colour: var(--attention);
+}
+.score-ring::before {
+  content: "";
+  grid-area: 1 / 1;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--surface);
+}
+.score-ring > span {
+  grid-area: 1 / 1;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+}
+@keyframes ring-fill {
+  from {
+    --ring-fill: 0;
+  }
+}
+.practice-score,
+.result-summary {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 28px 0 20px;
+}
+.practice-score .result-score,
+.result-summary .result-score {
+  margin: 0;
+}
+.result-summary {
+  margin: 0 0 24px;
+}
+.result-summary p:last-child {
+  margin-bottom: 0;
+}
+.score-praise {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+/* Paper pieces fly out from the ring's centre and fall away. */
+.celebration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+}
+.celebration span {
+  --angle: calc(var(--piece) * 25.7deg);
+  --travel: -100px;
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--brand-bell);
+  opacity: 0;
+  animation: confetti-burst 1100ms cubic-bezier(0.2, 0.8, 0.3, 1) 250ms forwards;
+}
+.celebration span:nth-child(odd) {
+  --travel: -132px;
+}
+.celebration span:nth-child(3n + 1) {
+  background: var(--primary);
+}
+.celebration span:nth-child(3n + 2) {
+  background: var(--correct);
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+}
+@keyframes confetti-burst {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateY(0) rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(var(--travel)) rotate(240deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .celebration {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .practice-score {
+    gap: 20px;
+  }
+  .score-ring {
+    width: 96px;
+  }
+}

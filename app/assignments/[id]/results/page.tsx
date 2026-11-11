@@ -7,6 +7,7 @@ import { QuestionCredits } from "@/components/classroom/question-credits";
 import { ResultRow } from "@/components/classroom/result-row";
 import { buttonVariants } from "@/components/ui/button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
+import { ScoreRing } from "@/components/ui/score-ring";
 import {
   countOutcomes,
   matchesOutcome,
@@ -134,28 +135,34 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
       )}
       {attempt && view.isFeedbackAvailable && attempt.score !== null && attempt.maxScore && (
         <>
-          <div className="form-card">
-            <p className="result-score">
-              {formatPercent(toPercent(attempt.score, attempt.maxScore))}
-              <span>
-                {" "}
-                ({attempt.score}/{attempt.maxScore} điểm)
-              </span>
-            </p>
-            <p>
-              {/* A mock exam is judged by its JLPT estimate below, with the section minimums. */}
-              {!exam &&
-                (attempt.passed ? (
-                  <span className="status-badge status-correct">Đạt</span>
-                ) : (
-                  <span className="status-badge status-wrong">Chưa đạt</span>
-                ))}{" "}
-              Lượt {attempt.attemptNo},{" "}
-              {handedInAtDeadline ? `Reng tự nộp lúc ${handInEnd}` : "nộp lúc"}{" "}
-              {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
-              {attempt.isLate ? " (nộp muộn)" : ""}
-              {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
-            </p>
+          <div className="form-card result-summary">
+            <ScoreRing
+              percent={toPercent(attempt.score, attempt.maxScore)}
+              label={`${attempt.score} trên ${attempt.maxScore} điểm`}
+            />
+            <div>
+              <p className="result-score">
+                {formatPercent(toPercent(attempt.score, attempt.maxScore))}
+                <span>
+                  {" "}
+                  ({attempt.score}/{attempt.maxScore} điểm)
+                </span>
+              </p>
+              <p>
+                {/* A mock exam is judged by its JLPT estimate below, with the section minimums. */}
+                {!exam &&
+                  (attempt.passed ? (
+                    <span className="status-badge status-correct">Đạt</span>
+                  ) : (
+                    <span className="status-badge status-wrong">Chưa đạt</span>
+                  ))}{" "}
+                Lượt {attempt.attemptNo},{" "}
+                {handedInAtDeadline ? `Reng tự nộp lúc ${handInEnd}` : "nộp lúc"}{" "}
+                {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
+                {attempt.isLate ? " (nộp muộn)" : ""}
+                {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
+              </p>
+            </div>
           </div>
           {exam && <JlptResult level={exam.level} items={view.items} now={now} />}
           {/* The next step sits above a long answer list, not after it. */}

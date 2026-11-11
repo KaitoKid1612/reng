@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PracticeScore } from "@/components/ui/score-ring";
 
 import type { PracticeMistake } from "@/lib/kana";
 
 interface PracticeResultProps {
   mistakes: PracticeMistake[];
   totalCount: number;
+  bestStreak: number;
   onRetryMistakes: () => void;
   onReset: () => void;
 }
@@ -14,33 +16,34 @@ interface PracticeResultProps {
 export function PracticeResult({
   mistakes,
   totalCount,
+  bestStreak,
   onRetryMistakes,
   onReset,
 }: PracticeResultProps) {
   return (
     <div className="practice-result">
       <h1>Bạn đã hoàn thành phiên luyện</h1>
-      <p className="result-score">
-        {totalCount - mistakes.length}
-        <span> / {totalCount} câu đúng</span>
-      </p>
+      <PracticeScore
+        correctCount={totalCount - mistakes.length}
+        totalCount={totalCount}
+        unit="câu đúng"
+        bestStreak={bestStreak}
+      />
       <p>
         {mistakes.length > 0
           ? "Ôn lại những chữ dưới đây để nhớ chắc hơn."
           : "Bạn đã đọc đúng tất cả các chữ trong phiên này."}
       </p>
       {mistakes.length > 0 && (
-        <ul className="mistake-list">
+        // One tile per character, like a page of flashcards to look over before the retry.
+        <ul className="mistake-list mistake-tiles">
           {mistakes.map(({ item, raw }) => (
             <li key={item.id}>
               <span lang="ja" className="kana-font">
                 {item.kana}
               </span>
-              <span>
-                <span className="muted">Bạn nhập: {raw}</span>
-                <br />
-                Cách đọc: {item.acceptedRomaji.join(" / ")}
-              </span>
+              <strong>{item.acceptedRomaji.join(" / ")}</strong>
+              <span className="small muted">Bạn nhập: {raw}</span>
             </li>
           ))}
         </ul>

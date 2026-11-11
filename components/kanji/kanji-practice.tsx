@@ -5,6 +5,7 @@ import { useReducer, useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
 import { Button } from "@/components/ui/button";
+import { PracticeScore } from "@/components/ui/score-ring";
 import {
   createKanjiSession,
   describeKanjiAnswer,
@@ -14,6 +15,7 @@ import {
   KANJI_QUESTION_KINDS,
   kanjiPracticeReducer,
 } from "@/lib/kanji-practice";
+import { countPracticeStreak } from "@/lib/practice-streak";
 
 import type { InputMode } from "@/lib/assignment";
 import type {
@@ -176,10 +178,12 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
     return (
       <div className="practice-result">
         <h2>Bạn đã hoàn thành phiên luyện</h2>
-        <p className="result-score">
-          {state.records.length - mistakes.length}
-          <span> / {state.records.length} câu đúng</span>
-        </p>
+        <PracticeScore
+          correctCount={state.records.length - mistakes.length}
+          totalCount={state.records.length}
+          unit="câu đúng"
+          bestStreak={countPracticeStreak(state.records.map((record) => record.correct)).best}
+        />
         <p>
           {mistakes.length
             ? "Ôn lại những từ dưới đây rồi luyện lại câu sai."
