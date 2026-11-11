@@ -43,7 +43,21 @@ export default defineConfig({
   retries: 0,
   timeout: 120_000,
   globalSetup: "./e2e-supabase/global-setup.ts",
-  use: { baseURL: `http://127.0.0.1:${PORT}`, trace: "retain-on-failure" },
+  use: {
+    baseURL: `http://127.0.0.1:${PORT}`,
+    trace: "retain-on-failure",
+    // Most flows answer several questions in one view, so wide screens start with the whole set.
+    // minna-teaching.spec.ts clears this to cover the default of one question at a time.
+    storageState: {
+      cookies: [],
+      origins: [
+        {
+          origin: `http://127.0.0.1:${PORT}`,
+          localStorage: [{ name: "reng-attempt-view", value: "all" }],
+        },
+      ],
+    },
+  },
   webServer: {
     command: `npm run dev -- --port ${PORT}`,
     url: `http://127.0.0.1:${PORT}`,

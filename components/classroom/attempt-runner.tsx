@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 
 import { AnswerFeedback } from "@/components/classroom/answer-feedback";
+import { readAttemptView, saveAttemptView } from "@/components/classroom/attempt-view";
 import { QuestionField } from "@/components/classroom/question-field";
 import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
@@ -27,6 +28,7 @@ import { isBlankAnswer } from "@/lib/grading/raw-answer";
 import { formatStudyDateTime } from "@/lib/study-days";
 
 import type { ExamPacingStep } from "@/lib/jlpt";
+import type { AttemptView } from "@/components/classroom/attempt-view";
 import type { QuestionMapItem } from "@/components/classroom/question-map";
 import type { SyncStatus } from "@/components/classroom/use-draft-sync";
 import type { AssignmentMode, AttemptDraft, AttemptItem } from "@/lib/assignment";
@@ -69,6 +71,14 @@ const QUESTION_MAP_MIN = 6;
 
 type FocusTarget = "card" | "field";
 
+// A card counts as the one being read once its bottom is this far below the top of the window.
+const READING_TOP = 120;
+
+const VIEW_OPTIONS: readonly { value: AttemptView; label: string }[] = [
+  { value: "single", label: "Từng câu" },
+  { value: "all", label: "Cả bài" },
+];
+
 export function AttemptRunner({
   userId,
   assignmentId,
@@ -93,6 +103,8 @@ export function AttemptRunner({
     initialSavedAt,
   });
   const [currentIndex, setCurrentIndex] = useState(0);
+  // Rendered only in the browser (attempt-runner-loader.tsx), so storage can be read here.
+  const [view, setView] = useState<AttemptView>(readAttemptView);
   const [isConfirming, setIsConfirming] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
@@ -206,6 +218,27 @@ export function AttemptRunner({
     }
   }
 
+  // Switching to one question keeps the learner where they were reading; switching back to the
+  // whole set scrolls to the question they were on.
+  function handleViewChange(next: AttemptView) {
+    if (next === view) {
+      return;
+    }
+    if (next === "single") {
+      const cards = Array.from(listRef.current?.children ?? []);
+      const reading = cards.findIndex((card) => card.getBoundingClientRect().bottom > READING_TOP);
+      if (reading >= 0) {
+        flushSync(() => setCurrentIndex(reading));
+      }
+    }
+    flushSync(() => setView(next));
+    saveAttemptView(next);
+    const card = listRef.current?.children[currentIndex];
+    if (next === "all" && card instanceof HTMLElement) {
+      card.scrollIntoView({ block: "start" });
+    }
+  }
+
   function handleReload() {
     sync.discardLocalCopy();
     router.refresh();
@@ -238,7 +271,7 @@ export function AttemptRunner({
   }
 
   return (
-    <div className="attempt-runner">
+    <div className="attempt-runner" data-view={view}>
       {sync.notice && <p className="notice-panel">{sync.notice}</p>}
       {sync.status === "conflict" && (
         <div className="notice-panel" role="alert">
@@ -260,13 +293,31 @@ export function AttemptRunner({
           lưu tiếp; câu trả lời vẫn ở trên máy này.
         </p>
       )}
-      {items.length >= QUESTION_MAP_MIN && (
-        <QuestionMap
-          items={items.map(describeMapItem)}
-          currentIndex={currentIndex}
-          onSelect={(index) => handleMove(index, "card")}
-        />
-      )}
+      <div className="attempt-head">
+        {items.length >= QUESTION_MAP_MIN && (
+          <QuestionMap
+            items={items.map(describeMapItem)}
+            currentIndex={currentIndex}
+            onSelect={(index) => handleMove(index, "card")}
+          />
+        )}
+        <div className="attempt-head-tools">
+          {items.length > 1 && (
+            <div className="attempt-view-toggle" role="group" aria-label="Cách hiện câu hỏi">
+              {VIEW_OPTIONS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  aria-pressed={view === option.value}
+                  onClick={() => handleViewChange(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
       <ol ref={listRef} className="attempt-questions" aria-label="Câu hỏi">
         {items.map((item, index) => {
           const raw = sync.draft.answers[item.view.id];
@@ -279,6 +330,8 @@ export function AttemptRunner({
               data-current={index === currentIndex}
               tabIndex={-1}
               onKeyDown={(event) => handleCardKeyDown(event, index)}
+              // With the whole set shown, the question being answered is the current one.
+              onFocus={() => setCurrentIndex(index)}
             >
               <QuestionField
                 view={item.view}
@@ -319,7 +372,7 @@ export function AttemptRunner({
               {/* On a phone the next step takes the check button's place, so a long daily set
                   needs no scrolling down to Câu sau and back up to the next prompt. */}
               {mode === "practice" && answerKey && isChecked && (
-                <div className="question-next">
+                <div className="question-next" data-last={index === items.length - 1}>
                   {index < items.length - 1 ? (
                     <Button onClick={() => handleMove(index + 1, "card")}>Câu sau ›</Button>
                   ) : (

@@ -4,7 +4,7 @@ import { toVietnamDate } from "../lib/daily-practice";
 
 import { becomeTeacher, createConfirmedStudent, readEmailLink, RUN_ID, signIn } from "./support";
 
-import type { Browser, Page } from "@playwright/test";
+import type { Browser, Locator, Page } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
 
@@ -42,6 +42,20 @@ async function openSlide(page: Page, position: number) {
   await page.goto(`/lessons/${state.lessonId}/slide#${position}`);
   await expect(page.getByTestId("slide-counter")).toHaveText(`${position} / 38`);
   return page.locator(".reveal section.present");
+}
+
+// One question shows at a time: step back to the first question, then forward until the field
+// is on screen.
+async function showQuestion(page: Page, field: Locator) {
+  const nav = page.locator(".question-nav");
+  const previous = nav.getByRole("button", { name: "Câu trước", exact: true });
+  while (await previous.isEnabled()) {
+    await previous.click();
+  }
+  for (let step = 0; step < 10 && !(await field.isVisible()); step += 1) {
+    await nav.getByRole("button", { name: "Câu sau", exact: true }).click();
+  }
+  await expect(field).toBeVisible();
 }
 
 test("a teacher starts Minna lesson 11 from the starter, publishes and presents it", async ({
@@ -176,18 +190,40 @@ test("a learner signs up, confirms the email, joins and completes the lesson 11 
   expect(fits, "the reader with wide tables fits a 360px screen").toBe(true);
   await page.setViewportSize({ width: 1280, height: 720 });
 
+  // A wide screen opens the set one question at a time unless the learner chose the whole set.
+  await page.evaluate(() => localStorage.removeItem("reng-attempt-view"));
   await page.goto(`/classes/${state.classId}`);
   await page.getByRole("link", { name: ASSIGNMENT_TITLE, exact: true }).click();
   await page.getByRole("button", { name: "Bắt đầu làm bài", exact: true }).click();
-  await page.getByRole("radio", { name: "つ", exact: true }).check();
+  const viewSwitch = page.getByRole("group", { name: "Cách hiện câu hỏi" });
+  await expect(viewSwitch.getByRole("button", { name: "Từng câu" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.locator(".question-card:visible")).toHaveCount(1);
+  const choice = page.getByRole("radio", { name: "つ", exact: true });
   const reading = page.getByLabel(FILL_PROMPT);
+  const finalN = page.getByLabel(FINAL_N_PROMPT);
+  await showQuestion(page, choice);
+  await choice.check();
+  await showQuestion(page, reading);
   await reading.pressSequentially("futari");
   await expect(reading).toHaveValue("ふたり");
-  const finalN = page.getByLabel(FINAL_N_PROMPT);
+  await showQuestion(page, finalN);
   await finalN.pressSequentially("yonin");
   await expect(finalN).toHaveValue("よにn");
-  await reading.focus();
+  // Leaving the question finishes the pending "n".
+  await showQuestion(page, reading);
   await expect(finalN).toHaveValue("よにん");
+  // The whole set is one click away, and the browser remembers the choice.
+  await viewSwitch.getByRole("button", { name: "Cả bài" }).click();
+  await expect(page.locator(".question-card:visible")).toHaveCount(3);
+  await page.reload();
+  await expect(viewSwitch.getByRole("button", { name: "Cả bài" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(reading).toHaveValue("ふたり");
   // Enter checks a typed practice answer, finishing romaji first.
   await reading.press("Enter");
   await expect(

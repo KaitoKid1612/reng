@@ -165,6 +165,38 @@
 .question-next {
   display: none;
 }
+/* One question at a time: always on a phone, and on a wider screen unless the learner chose to see
+   the whole set (components/classroom/attempt-view.ts). */
+.attempt-runner[data-view="single"] .question-next {
+  display: flex;
+  margin-top: 16px;
+}
+/* On a wide screen the submit bar is in sight below the last question, so it keeps the only
+   Nộp bài; a phone repeats it under the question to save scrolling. */
+@media (min-width: 601px) {
+  .attempt-runner[data-view="single"] .question-next[data-last="true"] {
+    display: none;
+  }
+}
+.attempt-runner[data-view="single"] .attempt-questions .question-card[data-current="false"] {
+  display: none;
+}
+.attempt-runner[data-view="single"] .attempt-questions .question-card[data-current="true"] {
+  animation: question-in 220ms ease-out;
+}
+@keyframes question-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+.attempt-runner[data-view="single"] .question-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
 @media (max-width: 600px) {
   .question-next {
     display: flex;
@@ -180,6 +212,53 @@
     gap: 12px;
     margin-bottom: 20px;
   }
+  .attempt-view-toggle {
+    display: none;
+  }
+}
+.attempt-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.attempt-head .question-map {
+  flex: 1 1 320px;
+}
+.attempt-head-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px auto;
+}
+.attempt-view-toggle {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.attempt-view-toggle button {
+  min-height: 36px;
+  padding: 4px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+.attempt-view-toggle button[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--surface);
+  font-weight: 600;
+}
+.attempt-view-toggle button:focus-visible {
+  outline-offset: 2px;
 }
 .full-width {
   width: 100%;
