@@ -62,6 +62,12 @@ input[type="radio"] {
   font-size: 15px;
   margin-bottom: 8px;
 }
+/* An option under a select (such as "show older versions") belongs to that select, not a label. */
+.field select + .choice-label {
+  display: flex;
+  font-weight: 400;
+  margin: 6px 0 0;
+}
 /* A select is as wide as its longest option unless limited, so long labels such as the question
    input modes would widen the page on a 360px phone. */
 select {
