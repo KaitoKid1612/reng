@@ -2,6 +2,8 @@ export interface SelfStudyTool {
   href: string;
   label: string;
   description: string;
+  // A character that pictures the tool on its card, in the language it is written in.
+  glyph: { text: string; lang: string };
 }
 
 export type SelfStudySubjectId = "japanese" | "chinese";
@@ -25,17 +27,20 @@ export const SELF_STUDY_SUBJECTS: readonly SelfStudySubject[] = [
         href: "/kana",
         label: "Bảng chữ cái",
         description: "Hiragana và Katakana đầy đủ; bấm từng chữ để nghe cách đọc.",
+        glyph: { text: "あ", lang: "ja" },
       },
       {
         // "Luyện tập" names class practice sets, so the drill names its script instead.
         href: "/kana/practice",
         label: "Luyện kana",
         description: "Nhìn chữ, gõ cách đọc bằng romaji, luyện lại những chữ còn nhầm.",
+        glyph: { text: "ア", lang: "ja" },
       },
       {
         href: "/grammar",
         label: "Tra ngữ pháp",
         description: "Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt, kèm ví dụ.",
+        glyph: { text: "文", lang: "ja" },
       },
     ],
   },
@@ -48,11 +53,13 @@ export const SELF_STUDY_SUBJECTS: readonly SelfStudySubject[] = [
         href: "/pinyin",
         label: "Bảng pinyin",
         description: "Bốn thanh điệu và thanh nhẹ, thanh mẫu, vận mẫu, cách đặt dấu thanh.",
+        glyph: { text: "ā", lang: "zh-Latn-pinyin" },
       },
       {
         href: "/pinyin/practice",
         label: "Luyện gõ pinyin",
         description: "Nhìn chữ Hán và nghĩa, gõ pinyin có dấu (gõ được số thanh: ni3 → nǐ).",
+        glyph: { text: "你", lang: "zh-Hans" },
       },
     ],
   },

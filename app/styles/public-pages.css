@@ -220,3 +220,28 @@
   font-size: 20px;
   margin: 8px 0 16px;
 }
+/* Self-study tools as cards, each pictured by a character of its subject. */
+.tool-cards {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.tool-cards .link-card {
+  height: 100%;
+}
+.tool-glyph {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 34px;
+  line-height: 1;
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.link-card:hover .tool-glyph {
+  transform: scale(1.08) rotate(-4deg);
+}

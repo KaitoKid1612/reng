@@ -172,9 +172,15 @@
   background: var(--surface);
   color: var(--foreground);
   text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
 }
 .link-card:hover {
   border-color: var(--primary);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--foreground) 10%, transparent);
+  transform: translateY(-2px);
 }
 .link-card:focus-visible {
   outline: 2px solid var(--primary);

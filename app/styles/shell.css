@@ -217,22 +217,38 @@
   font-weight: 600;
   text-decoration: none;
   line-height: 1.6;
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 100ms ease;
+}
+/* A press sinks the button a pixel, so a tap feels answered before the page changes. */
+.button:active:not(:disabled, [aria-disabled="true"]) {
+  transform: translateY(1px);
 }
 .button-primary {
   background: var(--primary);
   color: var(--surface);
 }
-.button-primary:hover {
+.button-primary:hover:not(:disabled) {
   filter: brightness(0.94);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 .button-outline {
   border-color: var(--primary);
   background: var(--surface);
   color: var(--primary);
 }
+.button-outline:hover:not(:disabled) {
+  background: var(--primary-soft);
+}
 .button-ghost {
   color: var(--primary);
   background: transparent;
+}
+.button-ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--primary-soft) 60%, transparent);
 }
 .button-row {
   display: flex;

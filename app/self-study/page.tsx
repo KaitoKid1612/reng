@@ -48,16 +48,32 @@ export default function SelfStudyPage() {
         >
           <h2 id={`subject-${subject.id}`}>{subject.name}</h2>
           <p>{subject.summary}</p>
-          <div className="landing-features">
-            {subject.tools.map((tool) => (
-              <article key={tool.href}>
-                <h3>
-                  <Link href={tool.href}>{tool.label}</Link>
-                </h3>
-                <p>{tool.description}</p>
-              </article>
-            ))}
-          </div>
+          <ul className="link-cards tool-cards">
+            {subject.tools.map((tool, index) => {
+              // The card is one link named by its title; the line of help is its description.
+              const id = `${subject.id}-tool-${index}`;
+              return (
+                <li key={tool.href}>
+                  <Link
+                    href={tool.href}
+                    className="link-card"
+                    aria-labelledby={`${id}-title`}
+                    aria-describedby={`${id}-description`}
+                  >
+                    <span className="tool-glyph" lang={tool.glyph.lang} aria-hidden="true">
+                      {tool.glyph.text}
+                    </span>
+                    <span id={`${id}-title`} className="link-card-title">
+                      {tool.label}
+                    </span>
+                    <span id={`${id}-description`} className="small muted">
+                      {tool.description}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </section>
       ))}
     </>
