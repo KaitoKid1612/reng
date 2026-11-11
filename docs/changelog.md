@@ -4,7 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 11/11/2026
 
-- Thêm 40 câu nghe N5 theo bốn phần của đề thật (`content/listening/n5-viet-listening-mock-40.json`: 課題理解 12, ポイント理解 10, 発話表現 8, 即時応答 10), từ và mẫu câu Minna 1–25, mọi chữ Hán có furigana; gộp vào ngân hàng N5 (184 câu, 118 câu nghe). Chờ người dùng nghe duyệt trước khi nạp lên production.
+- Thêm 40 câu nghe N5 theo bốn phần của đề thật (`content/listening/n5-viet-listening-mock-40.json`: 課題理解 12, ポイント理解 10, 発話表現 8, 即時応答 10), từ và mẫu câu Minna 1–25, mọi chữ Hán có furigana; gộp vào ngân hàng N5 (184 câu, 118 câu nghe). Người dùng duyệt không nghe; agent soát cả 40 câu (đáp án đều đúng), sửa furigana 出す và 10 lời thoại, sinh lại 10 file audio; tốc độ đọc 40 file đều nhau.
 - Đề thi thử JLPT chỉ lấy câu nghe viết theo dạng đề (nhãn `jlpt:n5`, `jlpt:n4`) khi ngân hàng có đủ một phần nghe, và xếp theo thứ tự bốn phần như đề thật; câu nghe rồi gõ của bài hằng ngày không vào đề nữa.
 - Production: áp migration xóa tài khoản và Web Push, thêm khóa VAPID, deploy `31f13dd`; người dùng đã duyệt 40 câu nghe N4 mới.
 
