@@ -102,7 +102,7 @@ Các bảng có ID UUID mặc định sinh phía database nếu không ghi khác
 
 | Bảng | Cột và ràng buộc chính |
 |---|---|
-| `profiles` | `id` FK auth.users, `full_name`, `role` CHECK student/teacher, `created_at`. Chỉ quản trị server được đổi role. |
+| `profiles` | `id` FK auth.users, `full_name` (tối đa 200 ký tự từ 11/11/2026, ràng buộc `profiles_full_name_length`; app giới hạn 80, đăng ký cắt ở 200), `role` CHECK student/teacher, `created_at`. Chỉ quản trị server được đổi role. |
 | `lessons` | `id text PK`, `owner_id` FK profiles, `course_id`, `order_no`, `title`, `draft_content jsonb`, `draft_revision int`, `published_version_id`, `visibility` CHECK public/class, `archived_at`, timestamps. |
 | `lesson_versions` | `id`, `lesson_id` FK lessons, `version_no`, `title`, `content jsonb`, `published_at`; UNIQUE lesson_id/version_no. Bất biến sau xuất bản. Con trỏ published_version_id phải thuộc đúng bài. |
 | `class_lessons` | `class_id`, `lesson_id`, `lesson_version_id`, `order_no`, `available_at` (bắt buộc); PK class_id/lesson_id, UNIQUE class_id/order_no. Phiên bản phải thuộc bài đã chọn; giáo viên lớp sở hữu bài. |
