@@ -141,9 +141,25 @@ function keepPassagesTogether(ids: readonly string[], passageOf: ReadonlyMap<str
   return ordered;
 }
 
+const LISTENING_PART = /^section:([1-4])$/;
+
+// The part of the real listening test a question was written for (section:1 課題理解 to
+// section:4 即時応答), or 5 for a question written for daily practice.
+function listeningPartOf(tags: readonly string[]) {
+  for (const tag of tags) {
+    const part = LISTENING_PART.exec(tag.trim().toLowerCase());
+    if (part) {
+      return Number(part[1]);
+    }
+  }
+  return 5;
+}
+
 /**
  * Picks an exam from a bank: each section takes its quota, preferring questions not used in the
  * class's earlier exams and keeping a passage's questions together, in the exam's section order.
+ * Listening takes only questions written in the test's format (tagged jlpt:n5 or jlpt:n4) when
+ * the bank has a full section of them, and plays them in the test's part order.
  */
 export function composeJlptExam(
   candidates: readonly JlptExamCandidate[],
@@ -163,6 +179,13 @@ export function composeJlptExam(
       seen.add(candidate.id);
       bySection[section].push(candidate);
     }
+  }
+  const formatTag = `jlpt:${level.toLowerCase()}`;
+  const testFormat = bySection.listening.filter((question) =>
+    question.tags.some((tag) => tag.trim().toLowerCase() === formatTag),
+  );
+  if (testFormat.length >= JLPT_PRESETS[level].quotas.listening) {
+    bySection.listening = testFormat;
   }
   const planned = planJlptExam(level, {
     vocabulary: bySection.vocabulary.length,
@@ -189,6 +212,13 @@ export function composeJlptExam(
       planned[section],
       `${seed}:${section}`,
     );
+    if (section === "listening") {
+      const partOf = new Map(
+        bySection.listening.map((question) => [question.id, listeningPartOf(question.tags)]),
+      );
+      // A stable sort keeps the selector's order within a part.
+      picked.sort((a, b) => (partOf.get(a) ?? 5) - (partOf.get(b) ?? 5));
+    }
     questionIds.push(...keepPassagesTogether(picked, passageOf));
     counts[section] = picked.length;
   }

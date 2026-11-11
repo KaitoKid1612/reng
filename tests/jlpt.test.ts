@@ -94,7 +94,62 @@ test("an N5 exam takes each section's share in the exam order and rotates questi
     ).length;
   // 43 vocabulary questions: 18 never used come first, so only 7 come back.
   assert.equal(reused("vocabulary"), 7);
-  assert.equal(reused("listening"), 0, "65 listening questions cover two exams");
+  assert.equal(
+    reused("listening"),
+    0,
+    "40 listening questions in the test's format cover two exams",
+  );
+});
+
+for (const [file, level] of [
+  ["n5-daily-with-listening.json", "N5"],
+  ["n4-daily-with-listening.json", "N4"],
+] as const) {
+  test(`an ${level} exam plays listening in the test's format and part order`, async () => {
+    const bank = await loadBank(file);
+    const tagsOf = new Map(bank.map((question) => [question.id, question.tags]));
+    const exam = composeJlptExam(bank, [], level, `class:${level}:parts`);
+    const sectionOf = new Map(bank.map((question) => [question.id, jlptSectionOf(question)]));
+    const listening = exam.questionIds.filter((id) => sectionOf.get(id) === "listening");
+    assert.equal(listening.length, 20);
+    const formatTag = `jlpt:${level.toLowerCase()}`;
+    assert.ok(
+      listening.every((id) => tagsOf.get(id)?.includes(formatTag)),
+      "no daily-practice clips",
+    );
+    const parts = listening.map((id) =>
+      Number(
+        tagsOf
+          .get(id)
+          ?.find((tag) => tag.startsWith("section:"))
+          ?.slice("section:".length),
+      ),
+    );
+    assert.deepEqual(
+      parts,
+      [...parts].sort((a, b) => a - b),
+      "part 1 to part 4",
+    );
+    assert.ok(new Set(parts).size >= 3, "the exam mixes the parts");
+  });
+}
+
+test("an exam takes any listening question when the test's format cannot fill the section", () => {
+  const listen = (id: string, tags: string[]) => ({ id, type: "listen", tags, passage: null });
+  const bank = [
+    ...Array.from({ length: 5 }, (_, index) =>
+      listen(`format-${index}`, ["listening", "jlpt:n5", "section:2"]),
+    ),
+    ...Array.from({ length: 20 }, (_, index) => listen(`daily-${index}`, ["listening", "minna:3"])),
+  ];
+  const exam = composeJlptExam(bank, [], "N5", "class:fallback");
+  assert.equal(exam.counts.listening, 20);
+  assert.ok(exam.questionIds.some((id) => id.startsWith("daily-")));
+  const firstDaily = exam.questionIds.findIndex((id) => id.startsWith("daily-"));
+  assert.ok(
+    exam.questionIds.slice(firstDaily).every((id) => id.startsWith("daily-")),
+    "questions written for a part come before daily-practice clips",
+  );
 });
 
 test("an N4 exam keeps a reading passage's questions together", async () => {

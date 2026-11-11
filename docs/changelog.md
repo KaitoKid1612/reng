@@ -2,6 +2,12 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 11/11/2026
+
+- Thêm 40 câu nghe N5 theo bốn phần của đề thật (`content/listening/n5-viet-listening-mock-40.json`: 課題理解 12, ポイント理解 10, 発話表現 8, 即時応答 10), từ và mẫu câu Minna 1–25, mọi chữ Hán có furigana; gộp vào ngân hàng N5 (184 câu, 118 câu nghe). Chờ người dùng nghe duyệt trước khi nạp lên production.
+- Đề thi thử JLPT chỉ lấy câu nghe viết theo dạng đề (nhãn `jlpt:n5`, `jlpt:n4`) khi ngân hàng có đủ một phần nghe, và xếp theo thứ tự bốn phần như đề thật; câu nghe rồi gõ của bài hằng ngày không vào đề nữa.
+- Production: áp migration xóa tài khoản và Web Push, thêm khóa VAPID, deploy `31f13dd`; người dùng đã duyệt 40 câu nghe N4 mới.
+
 ### 10/11/2026
 
 - Nhắc học bằng thông báo trình duyệt: trang Cài đặt › Nhắc học có mục bật thông báo trên từng thiết bị (Gửi thử, Tắt); job 20:00 gửi một thông báo khi có bài cần làm hoặc thẻ cần ôn, chạy cả khi chưa có email; cài được Reng lên màn hình chính (bắt buộc với iPhone). Cần khóa VAPID trên Vercel và migration `20261110112415_web_push`. Xem [thông báo](08-notifications.md#web-push).
