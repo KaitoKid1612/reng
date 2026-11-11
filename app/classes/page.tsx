@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
+import { ClassWorkMeter } from "@/components/classroom/class-work-meter";
 import { JoinClassForm } from "@/components/classroom/join-class-form";
 import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
@@ -143,6 +144,7 @@ export default async function ClassesPage() {
                   </p>
                   <UpcomingSession slots={schedules.get(item.id)?.slots ?? []} now={now} />
                 </div>
+                <ClassWorkMeter progress={agenda.classProgress.get(item.id)} />
               </li>
             ))}
           </ul>

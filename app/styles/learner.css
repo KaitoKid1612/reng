@@ -417,3 +417,39 @@
 .streak-card p:last-child {
   margin: 0;
 }
+/* Lớp của tôi: handed-in work per class (components/classroom/class-work-meter.tsx). */
+.class-work-meter {
+  flex-shrink: 0;
+  width: 180px;
+  margin: 0;
+  text-align: right;
+}
+.class-work-meter p {
+  margin: 0 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+.class-work-meter progress {
+  height: 8px;
+  margin: 0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.class-work-meter progress::-webkit-progress-bar {
+  border-radius: 999px;
+}
+.class-work-meter progress::-webkit-progress-value {
+  border-radius: 999px;
+}
+.class-work-meter[data-complete="true"] progress::-webkit-progress-value {
+  background: var(--correct);
+}
+.class-work-meter progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--primary);
+}
+@media (max-width: 600px) {
+  .class-work-meter {
+    width: 100%;
+    text-align: left;
+  }
+}

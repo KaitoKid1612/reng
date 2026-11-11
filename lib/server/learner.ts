@@ -9,6 +9,7 @@ import {
   isFeedbackAvailable,
 } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
+import { countClassWork } from "@/lib/learner-class-progress";
 import { questionKind, summarizeQuestionKinds } from "@/lib/question-kinds";
 import { listClassAssignments, listUserAttempts } from "@/lib/server/assignments";
 import {
@@ -197,6 +198,9 @@ export async function getLearnerAgenda(userId: string, now: Date) {
   ]);
   return {
     classes,
+    classProgress: countClassWork(
+      assignments.map((item) => ({ classId: item.assignment.classId, status: item.status })),
+    ),
     openLessons,
     readLessonIds,
     dailyAssignmentIds,
