@@ -115,6 +115,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Chọn cấp N5 hoặc N4 và bài ở ô Lấy câu từ. Reng ghi trước đề sẽ có bao nhiêu câu mỗi phần (chữ Hán – từ vựng, ngữ pháp – đọc hiểu, nghe hiểu) và báo khi bài có ít câu hơn đề thật; đề sau ưu tiên câu chưa ra ở các đề trước của lớp.",
       "Thời gian làm bài mặc định như đề thật (N5 90 phút, N4 115 phút) và tính riêng cho từng học viên từ lúc bấm Bắt đầu thi. Ô Mở đến là hạn bắt đầu thi; Công bố điểm chọn ngay sau khi nộp hoặc sau hạn để cả lớp xem cùng lúc. Bấm Giao đề thi thử.",
       "Đề là bài kiểm tra một lượt, không nộp muộn. Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm. Kết quả của học viên có điểm từng phần và điểm ước tính trên thang 180.",
+      "Bấm tên học viên trong trang lớp: bảng Thi thử JLPT liệt kê mọi đề người đó đã nộp, mới nhất ở trên, với điểm ngôn ngữ và đọc hiểu, nghe hiểu, tổng (kèm tăng giảm so với lần trước cùng cấp) và ước tính đỗ hoặc phần còn thiếu.",
     ],
     note: "Điểm thang 180 là ước tính từ tỉ lệ đúng; điểm JLPT thật tính theo độ khó từng câu nên có thể khác.",
   },
@@ -198,6 +199,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Dưới đồng hồ có giờ gợi ý cho từng phần như đề thật (N4: chữ Hán – từ vựng 25 phút, ngữ pháp – đọc hiểu 55 phút, nghe hiểu 35 phút; N5: 20, 40, 30 phút). Hết giờ gợi ý của một phần, bấm Đến câu … để sang phần sau; đây chỉ là gợi ý, đồng hồ chung mới quyết định lúc nộp.",
       "Hết giờ, trang tự nộp. Nếu bạn đã đóng trang, Reng nộp các câu đã lưu khi bạn mở lại đề hoặc vào khoảng 6 giờ sáng hôm sau.",
       "Trang kết quả có số câu đúng từng phần và điểm ước tính trên thang 180: đỗ cần tổng từ 80 (N5) hoặc 90 (N4), phần ngôn ngữ và đọc hiểu từ 38/120, nghe hiểu từ 19/60.",
+      "Tiến độ của tôi có bảng Thi thử JLPT gom mọi đề đã công bố điểm, mới nhất ở trên, kèm điểm tăng giảm so với lần trước cùng cấp, để bạn thấy mình còn cách mức đỗ bao xa.",
     ],
   },
   {

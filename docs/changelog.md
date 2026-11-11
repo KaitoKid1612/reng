@@ -4,6 +4,10 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 11/11/2026
 
+- Thi thử JLPT: trang Tiến độ của học viên và trang chi tiết học viên của giáo viên có bảng mọi đề thi thử đã nộp, mới nhất ở trên: ngôn ngữ và đọc hiểu /120, nghe hiểu /60, tổng /180 kèm tăng giảm so với lần trước cùng cấp, và ước tính đỗ hoặc phần còn thiếu. Học viên chỉ thấy đề đã công bố điểm. Xem [thiết kế](detail-design/phase-3.md#lịch-sử-thi-thử-jlpt--11112026).
+- Phiên bản bài gọn hơn: ô chọn phiên bản cho lớp và cho chia sẻ chỉ hiện bản mới nhất và bản đang dùng, bản cũ hiện khi đánh dấu Hiện N phiên bản cũ. Phiên bản không xóa được vì bài giao và bài nộp vẫn trỏ tới. Trình soạn ghi "Đã xuất bản N lần; mỗi lần là một phiên bản."
+- Cập nhật từ mẫu: link chỉ hiện ở đầu trình soạn khi bản nháp khác bài mẫu mới nhất; trang so sánh ghi từng phần (từ vựng, mẫu câu, slide, câu luyện, hình) giống hay khác mẫu.
+- Dọn mã: xóa `lib/learning-history.ts` còn sót và 4 hàm không ai gọi, bỏ `export` của 56 hằng/hàm chỉ dùng trong file, `@aws-sdk/client-s3` thành devDependency. Không có file backup hay TODO bỏ dở. Xem [báo cáo](testing/cleanup-2026-11-11.md).
 - Đề chính thức JLPT: nhập đề N5 (91 câu) và N4 (98 câu) của 公式問題集 第二集 (2018) đăng miễn phí trên jlpt.jp, làm bài nguồn của đề thi thử. Đáp án khớp 正答表, có ghi nguồn theo chính sách trang, không gắn tháng/năm vì sách không ghi kỳ thi. Rà soát khoảng 40 nguồn "đề tháng/năm" trên mạng: đều là bản chép lại không chính thức, không dùng ([báo cáo](testing/jlpt-official-sources-2026-11-11.md)).
 - Thêm bộ đề chính thức 2012 (公式問題集): N5 89 câu, N4 97 câu, cùng cách làm như bộ 2018. Đề scan được đọc theo ảnh từng trang; đáp án khớp 正答表; số điện thoại trong lời nghe đọc từng chữ số.
 - Câu hỏi có tiêu đề nhóm (もんだい), hình (tranh lựa chọn của câu nghe, tờ thông tin), chữ gạch chân `[[…]]` và dòng ghi nguồn. Lời nghe ở trang kết quả tách theo từng người nói. Trang kết quả có link bản ghi âm gốc trên jlpt.jp; phần nghe trong đề đọc lại nguyên văn script bằng giọng máy.

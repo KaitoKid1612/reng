@@ -62,6 +62,8 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | Điểm danh trong nhật ký buổi dạy (06/11/2026) | [BD](basic-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026) | [DD](detail-design/teaching-service.md#điểm-danh-trong-nhật-ký-buổi-dạy--06112026) | [rà soát](testing/project-audit-2026-11-06.md) |
 | Số câu nghe mỗi ngày, bài 70 câu, mở lại slide (07/11/2026) | [BD](basic-design/teaching-service.md#số-câu-nghe-mỗi-ngày-bài-70-câu-và-mở-lại-slide--07112026) | [DD](detail-design/teaching-service.md#số-câu-nghe-mỗi-ngày-bài-70-câu-và-mở-lại-slide--0711-và-09112026) | [rà soát](testing/review-2026-11-09.md) |
 | Thi thử JLPT N5/N4 (09/11/2026) | [BD](basic-design/phase-3.md#thi-thử-jlpt--09112026) | [DD](detail-design/phase-3.md#thi-thử-jlpt--09112026) | [kiểm chứng](testing/jlpt-mock-exam-2026-11-09.md) |
+| Lịch sử thi thử JLPT trên trang Tiến độ và trang học viên (11/11/2026) | [BD](basic-design/phase-3.md#thi-thử-jlpt--09112026) | [DD](detail-design/phase-3.md#lịch-sử-thi-thử-jlpt--11112026) | [kiểm chứng](testing/cleanup-2026-11-11.md) |
+| Phiên bản cũ gọn hơn (11/11/2026) | [BD](basic-design/teaching-service.md#phiên-bản-cũ-gọn-hơn--11112026) | — | [kiểm chứng](testing/cleanup-2026-11-11.md) |
 | Giao diện sáng và tối (10/11/2026) | — | [DD](detail-design/teaching-service.md#giao-diện-sáng-và-tối--10112026) | [rà soát](testing/code-review-2026-11-10.md#gộp-giao-diện-sáng-và-tối) |
 | Nguồn đề JLPT và câu tự biên soạn (09–10/11/2026) | [biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn) | — | `tests/jlpt-original-drafts.test.ts` |
 | Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ) | [BD](basic-design/learning-history.md) | [DD](detail-design/learning-history.md) | [kiểm chứng cũ](testing/learning-history.md) |
@@ -72,6 +74,11 @@ Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt �
 ## Báo cáo kiểm thử và rà soát
 
 Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "còn lại" của báo cáo cũ có thể đã được làm ở báo cáo sau.
+
+### 11/11/2026
+
+- Dọn mã và gọn giao diện: [mã thừa đã xóa, phiên bản cũ gập lại, Cập nhật từ mẫu chỉ khi khác mẫu, lịch sử thi thử JLPT, E2E cả đợt](testing/cleanup-2026-11-11.md).
+- Nguồn đề JLPT thật: [rà soát khoảng 40 nguồn, chỉ hai tập đề chính thức trên jlpt.jp dùng được](testing/jlpt-official-sources-2026-11-11.md).
 
 ### 10/11/2026
 
