@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { startTransition, useActionState, useState } from "react";
 
 import { publishJlptExamAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
@@ -17,6 +17,7 @@ import {
 } from "@/lib/jlpt";
 
 import type { JlptLevel, JlptSection } from "@/lib/jlpt";
+import type { FormEvent } from "react";
 
 export interface JlptExamLessonOption {
   lessonId: string;
@@ -100,6 +101,15 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
     setLevel(nextLevel);
   }
 
+  // A form action resets the form when it returns: the lesson select and level radios fell back
+  // to their first values while the state kept the teacher's choice, so a second try after an
+  // error sent another lesson than the form showed. A transition leaves the fields as they are.
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    startTransition(() => action(formData));
+  }
+
   if (!lessons.length) {
     return (
       <p className="notice-panel">
@@ -110,7 +120,7 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
   }
 
   return (
-    <form action={action} className="form-card">
+    <form onSubmit={handleSubmit} className="form-card">
       <input type="hidden" name="classId" value={classId} />
       <fieldset>
         <legend>Cấp độ</legend>
