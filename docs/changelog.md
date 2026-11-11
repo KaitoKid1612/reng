@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 11/11/2026
 
+- Trang soạn bài: mục Dùng bài trong lớp gập thành một dòng khi mọi lớp đã dùng bản mới nhất, mở lại sau khi xuất bản; tiêu đề bỏ mã bài; ô quyền đọc chuyển xuống dưới phần xem trước; trang đọc dữ liệu song song (khoảng 3 lượt gọi database thay vì 6). Tra tài khoản Auth đọc mọi trang (trước chỉ 1000 người đầu), sửa E2E local và trang quản trị. Xem [báo cáo](testing/cleanup-2026-11-11.md#trang-soạn-bài-cùng-ngày-sau-khi-người-dùng-xem-lại).
 - Thi thử JLPT: trang Tiến độ của học viên và trang chi tiết học viên của giáo viên có bảng mọi đề thi thử đã nộp, mới nhất ở trên: ngôn ngữ và đọc hiểu /120, nghe hiểu /60, tổng /180 kèm tăng giảm so với lần trước cùng cấp, và ước tính đỗ hoặc phần còn thiếu. Học viên chỉ thấy đề đã công bố điểm. Xem [thiết kế](detail-design/phase-3.md#lịch-sử-thi-thử-jlpt--11112026).
 - Phiên bản bài gọn hơn: ô chọn phiên bản cho lớp và cho chia sẻ chỉ hiện bản mới nhất và bản đang dùng, bản cũ hiện khi đánh dấu Hiện N phiên bản cũ. Phiên bản không xóa được vì bài giao và bài nộp vẫn trỏ tới. Trình soạn ghi "Đã xuất bản N lần; mỗi lần là một phiên bản."
 - Cập nhật từ mẫu: link chỉ hiện ở đầu trình soạn khi bản nháp khác bài mẫu mới nhất; trang so sánh ghi từng phần (từ vựng, mẫu câu, slide, câu luyện, hình) giống hay khác mẫu.

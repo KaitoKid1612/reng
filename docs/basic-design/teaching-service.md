@@ -225,7 +225,7 @@ Trước đây học viên phải tự ghép buổi học, bài tập, bài mớ
 
 Trước đây xuất bản bài và đưa bài vào lớp nằm ở hai trang khác nhau. Giáo viên mới không biết thứ tự các bước, và xuất bản lại không tự cập nhật lớp.
 
-- **Dùng bài trong lớp** (đầu trang trình soạn, cả bài tiếng Nhật và tiếng Trung): liệt kê các lớp đang hoạt động của giáo viên với bước còn thiếu. Lớp đang dùng bản cũ có nút "Cập nhật lên phiên bản N", giữ nguyên thứ tự và giờ mở. Lớp chưa có bài có nút "Đưa vào lớp": bài mở ngay và xếp cuối. Lớp cần làm gì xếp trước; hiện 8 lớp, phần còn lại trong "Xem thêm". Kết quả báo kèm tên lớp. Muốn chọn thứ tự hoặc hẹn giờ mở vẫn dùng trang Giao bài.
+- **Dùng bài trong lớp** (đầu trang trình soạn, cả bài tiếng Nhật và tiếng Trung): liệt kê các lớp đang hoạt động của giáo viên với bước còn thiếu. Lớp đang dùng bản cũ có nút "Cập nhật lên phiên bản N", giữ nguyên thứ tự và giờ mở. Lớp chưa có bài có nút "Đưa vào lớp": bài mở ngay và xếp cuối. Lớp cần làm gì xếp trước; hiện 5 lớp (8 lớp trước 11/11/2026), phần còn lại trong "Xem thêm". Kết quả báo kèm tên lớp. Muốn chọn thứ tự hoặc hẹn giờ mở vẫn dùng trang Giao bài. Từ 11/11/2026 mục này gập thành một dòng (ví dụ "2 lớp dùng phiên bản 5 mới nhất · 1 lớp chưa có bài") khi mọi lớp có bài đều dùng bản mới nhất, để trình soạn bắt đầu gần đầu trang; mục mở khi có lớp dùng bản cũ, khi bài chưa ở lớp nào, hoặc khi giáo viên bấm vào dòng đó.
 - **Các bước bắt đầu dạy** (trang Giảng dạy): 7 bước theo thứ tự (tạo lớp, tạo bài, xuất bản, đưa bài vào lớp, mời học viên, đặt lịch học, giao bài tập), mỗi bước có link tới đúng chỗ làm và dấu đã xong. Danh sách ẩn khi đã xong hết, hoặc khi lớp dạy đã có học viên và bài tập. Lớp tự học không tính.
 
 ## Lịch học hằng tuần — 03/11/2026

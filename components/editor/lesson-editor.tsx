@@ -436,7 +436,6 @@ export function LessonEditor({
         </section>
       </div>
       <aside className="editor-preview" aria-label="Xem trước">
-        <LessonVisibilityForm lessonId={lessonId} visibility={visibility} />
         <SlidePreview lessonId={lessonId} draft={draft} slideId={state.selectedSlideId} />
         <p className="small muted">
           {versionCount
@@ -451,6 +450,8 @@ export function LessonEditor({
             </Link>
           )}
         </p>
+        {/* Set once per lesson, so it sits under the preview the teacher works with. */}
+        <LessonVisibilityForm lessonId={lessonId} visibility={visibility} />
       </aside>
     </div>
   );

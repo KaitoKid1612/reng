@@ -249,6 +249,21 @@
   font-size: 19px;
   margin: 0 0 8px;
 }
+/* Folds to one line while no class needs a step, so the editor starts near the top. */
+.lesson-usage-details > summary {
+  width: fit-content;
+  padding: 2px 0 10px;
+  color: var(--primary);
+  font-size: 15px;
+  cursor: pointer;
+}
+.lesson-usage-details > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.lesson-usage-details:not([open]) > summary {
+  padding-bottom: 0;
+}
 .lesson-usage-list {
   list-style: none;
   margin: 0 0 12px;
@@ -315,4 +330,16 @@
   .create-lesson-columns {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+/* The editor's read access: one line naming the saved choice, the form on demand. */
+.visibility-details > summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+.visibility-details > summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.visibility-details[open] > summary {
+  margin-bottom: 16px;
 }

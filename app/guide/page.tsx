@@ -148,7 +148,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Ở trang Giảng dạy, bấm Chia sẻ cạnh một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép. Người nhận phải là giáo viên đã được mở quyền; ghi chú riêng và dữ liệu lớp không đi kèm.",
       "Bài người khác chia sẻ cho bạn nằm ở Giảng dạy → Bài được chia sẻ với tôi: mở để xem, hoặc bấm Sao chép thành bài của tôi để có bản nháp riêng.",
-      "Muốn người chưa có tài khoản cũng đọc được bài (ở trang Bài học công khai), trong trình soạn chọn Ai có thể đọc bản đã xuất bản? → Công khai trên website rồi bấm Lưu quyền đọc.",
+      "Muốn người chưa có tài khoản cũng đọc được bài (ở trang Bài học công khai), trong trình soạn bấm dòng Quyền đọc (dưới phần xem trước, hoặc cuối bước Slide & xuất bản của bài tiếng Trung), chọn Công khai trên website rồi bấm Lưu quyền đọc.",
       "Bài không dùng nữa: bấm Lưu trữ ở trang Giảng dạy; bài chuyển xuống Bài đã lưu trữ, bấm Đưa trở lại khi cần. Gỡ khỏi lớp ở mục Nội dung lớp chỉ đóng bài với lớp đó, bài vẫn còn trong danh sách của bạn.",
     ],
   },

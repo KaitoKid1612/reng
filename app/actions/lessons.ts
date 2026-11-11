@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { refresh, revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
@@ -303,5 +303,7 @@ export async function setLessonVisibilityAction(
   revalidatePath("/lessons");
   revalidatePath("/grammar");
   revalidatePath("/for-teachers");
+  // The editor's read access line names the saved choice.
+  refresh();
   return { notice: "Đã cập nhật quyền đọc. Lưu nháp hoặc xuất bản sẽ không tự đổi quyền này." };
 }

@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 import { PinVersionButton } from "@/components/teach/pin-version-button";
+import { UsageDisclosure } from "@/components/teach/usage-disclosure";
 import { UsageNoticeArea } from "@/components/teach/usage-notice";
-import { classLessonState } from "@/lib/teaching-start";
+import { classLessonState, summarizeLessonUsage } from "@/lib/teaching-start";
 
 import type { ClassUsage, LessonUsage } from "@/lib/server/lesson-usage";
 import type { ClassLessonState } from "@/lib/teaching-start";
@@ -21,7 +22,7 @@ interface UsageItemProps {
 
 // Classes that need a step come first; a teacher with many classes sees the first few.
 const STATE_ORDER: Record<ClassLessonState, number> = { older: 0, missing: 1, latest: 2 };
-const VISIBLE_CLASSES = 8;
+const VISIBLE_CLASSES = 5;
 
 function UsageItem({ lessonId, item, state, publishedVersionNo }: UsageItemProps) {
   return (
@@ -57,6 +58,12 @@ export function LessonClassUsage({ lessonId, usage }: LessonClassUsageProps) {
         .map((item) => ({ item, state: classLessonState(item.usedVersionNo, published.versionNo) }))
         .sort((first, second) => STATE_ORDER[first.state] - STATE_ORDER[second.state])
     : [];
+  const overview =
+    published &&
+    summarizeLessonUsage(
+      ranked.map(({ state }) => state),
+      published.versionNo,
+    );
   return (
     <section className="lesson-usage" aria-labelledby="lesson-usage-title">
       <h2 id="lesson-usage-title">Dùng bài trong lớp</h2>
@@ -71,39 +78,41 @@ export function LessonClassUsage({ lessonId, usage }: LessonClassUsageProps) {
           vào lớp.
         </p>
       )}
-      {published && usage.classes.length > 0 && (
+      {published && overview && usage.classes.length > 0 && (
         <UsageNoticeArea>
-          <ul className="lesson-usage-list">
-            {ranked.slice(0, VISIBLE_CLASSES).map(({ item, state }) => (
-              <UsageItem
-                key={item.classId}
-                lessonId={lessonId}
-                item={item}
-                state={state}
-                publishedVersionNo={published.versionNo}
-              />
-            ))}
-          </ul>
-          {ranked.length > VISIBLE_CLASSES && (
-            <details className="hard-question-more lesson-usage-more">
-              <summary>Xem thêm {ranked.length - VISIBLE_CLASSES} lớp</summary>
-              <ul className="lesson-usage-list">
-                {ranked.slice(VISIBLE_CLASSES).map(({ item, state }) => (
-                  <UsageItem
-                    key={item.classId}
-                    lessonId={lessonId}
-                    item={item}
-                    state={state}
-                    publishedVersionNo={published.versionNo}
-                  />
-                ))}
-              </ul>
-            </details>
-          )}
-          <p className="small muted">
-            Đưa vào lớp: bài mở ngay và xếp cuối danh sách bài của lớp. Cập nhật phiên bản giữ
-            nguyên thứ tự và giờ mở. Muốn chọn thứ tự hoặc hẹn giờ mở, vào trang Giao bài của lớp.
-          </p>
+          <UsageDisclosure summary={overview.summary} needsStep={overview.needsStep}>
+            <ul className="lesson-usage-list">
+              {ranked.slice(0, VISIBLE_CLASSES).map(({ item, state }) => (
+                <UsageItem
+                  key={item.classId}
+                  lessonId={lessonId}
+                  item={item}
+                  state={state}
+                  publishedVersionNo={published.versionNo}
+                />
+              ))}
+            </ul>
+            {ranked.length > VISIBLE_CLASSES && (
+              <details className="hard-question-more lesson-usage-more">
+                <summary>Xem thêm {ranked.length - VISIBLE_CLASSES} lớp</summary>
+                <ul className="lesson-usage-list">
+                  {ranked.slice(VISIBLE_CLASSES).map(({ item, state }) => (
+                    <UsageItem
+                      key={item.classId}
+                      lessonId={lessonId}
+                      item={item}
+                      state={state}
+                      publishedVersionNo={published.versionNo}
+                    />
+                  ))}
+                </ul>
+              </details>
+            )}
+            <p className="small muted">
+              Đưa vào lớp: bài mở ngay và xếp cuối danh sách bài của lớp. Cập nhật phiên bản giữ
+              nguyên thứ tự và giờ mở. Muốn chọn thứ tự hoặc hẹn giờ mở, vào trang Giao bài của lớp.
+            </p>
+          </UsageDisclosure>
         </UsageNoticeArea>
       )}
     </section>

@@ -15,3 +15,10 @@ export async function loadOrNotFound<T>(load: Promise<T>) {
     throw error;
   }
 }
+
+// Starts a read the page may not end up using, so it runs alongside the others. A failure
+// surfaces only where the page awaits it; an unused one is dropped, not an unhandled rejection.
+export function startRead<T>(load: Promise<T>) {
+  load.catch(() => undefined);
+  return load;
+}

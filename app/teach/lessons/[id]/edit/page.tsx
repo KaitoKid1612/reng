@@ -5,7 +5,7 @@ import { LessonClassUsage } from "@/components/teach/lesson-class-usage";
 import { requireTeacher } from "@/lib/server/account";
 import { getLessonUsage } from "@/lib/server/lesson-usage";
 import { loadLessonEditor } from "@/lib/server/lessons";
-import { loadOrNotFound } from "@/lib/server/pages";
+import { loadOrNotFound, startRead } from "@/lib/server/pages";
 import { loadTeachingEditor, toTeachingDraft } from "@/lib/server/teaching-lessons";
 
 import type { Metadata } from "next";
@@ -19,6 +19,11 @@ interface EditLessonPageProps {
 export default async function EditLessonPage({ params }: EditLessonPageProps) {
   const { id } = await params;
   const account = await requireTeacher(`/teach/lessons/${id}/edit`);
+  // The class usage and the v1 editor are read alongside the guided editor instead of after it.
+  // A guided (v2) draft makes the v1 read fail, and a missing lesson fails both; each failure only
+  // counts where it is awaited, after the editor that answers a missing lesson with a 404.
+  const usage = startRead(getLessonUsage(account.id, id));
+  const legacy = startRead(loadLessonEditor(account.id, id));
   // Schema v2 drafts open the guided editor; everything else keeps the v1 editor.
   const teaching = await loadTeachingEditor(account.id, id);
   if (teaching) {
@@ -32,10 +37,7 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
             </p>
           </div>
         </div>
-        <LessonClassUsage
-          lessonId={teaching.lessonId}
-          usage={await getLessonUsage(account.id, teaching.lessonId)}
-        />
+        <LessonClassUsage lessonId={teaching.lessonId} usage={await usage} />
         <TeachingEditorLoader
           lessonId={teaching.lessonId}
           initialDraft={toTeachingDraft(teaching)}
@@ -49,14 +51,14 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
       </>
     );
   }
-  const editor = await loadOrNotFound(loadLessonEditor(account.id, id));
+  const editor = await loadOrNotFound(legacy);
   return (
     <>
       <div className="page-heading">
         <div>
-          <h1>Soạn bài: {editor.draft.metadata.title || editor.lessonId}</h1>
+          <h1>Soạn bài: {editor.draft.metadata.title || "Bài chưa đặt tên"}</h1>
           <p>
-            <Link href="/teach">Giảng dạy</Link>, mã bài {editor.lessonId}
+            <Link href="/teach">Giảng dạy</Link>
             {editor.differsFromStarter && (
               <>
                 . Bản nháp khác bài mẫu mới nhất:{" "}
@@ -68,10 +70,7 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
           </p>
         </div>
       </div>
-      <LessonClassUsage
-        lessonId={editor.lessonId}
-        usage={await getLessonUsage(account.id, editor.lessonId)}
-      />
+      <LessonClassUsage lessonId={editor.lessonId} usage={await usage} />
       <LessonEditorLoader
         lessonId={editor.lessonId}
         visibility={editor.visibility}

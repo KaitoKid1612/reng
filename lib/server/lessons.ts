@@ -77,15 +77,19 @@ function toDraftState(row: z.infer<typeof lessonRowSchema>): LessonDraftState {
 }
 
 export async function loadLessonEditor(teacherId: string, lessonId: string) {
-  const row = await loadOwnedRow(teacherId, lessonId);
-  const versions = await selectRows(
-    createServiceClient()
-      .from("lesson_versions")
-      .select("id, version_no, published_at")
-      .eq("lesson_id", lessonId)
-      .order("version_no", { ascending: false }),
-    z.object({ id: z.uuid(), version_no: z.number().int(), published_at: timestamp }),
-  );
+  // The versions are read alongside the owner check and dropped with it when the lesson is not
+  // the teacher's.
+  const [row, versions] = await Promise.all([
+    loadOwnedRow(teacherId, lessonId),
+    selectRows(
+      createServiceClient()
+        .from("lesson_versions")
+        .select("id, version_no, published_at")
+        .eq("lesson_id", lessonId)
+        .order("version_no", { ascending: false }),
+      z.object({ id: z.uuid(), version_no: z.number().int(), published_at: timestamp }),
+    ),
+  ]);
   let draft: LessonDraftState;
   try {
     draft = toDraftState(row);

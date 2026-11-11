@@ -232,3 +232,24 @@ test("the teacher sees the learner's result in the class report", async ({ brows
   await expect(page.locator(".student-assignment .result-row")).toHaveCount(0);
   await page.context().close();
 });
+
+test("the editor folds the class panel until a new version needs a step", async ({ browser }) => {
+  const page = await teacherPage(browser);
+  await page.goto(`/teach/lessons/${state.lessonId}/edit`);
+  const usage = page.locator(".lesson-usage-details");
+  await expect(usage.locator("summary")).toHaveText("1 lớp dùng phiên bản 1 mới nhất");
+  await expect(usage).not.toHaveAttribute("open");
+  await expect(usage.getByRole("link", { name: CLASS_NAME })).toBeHidden();
+
+  await page.getByLabel("Tóm tắt", { exact: true }).fill(`Ôn đếm số lượng ${RUN_ID}`);
+  await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
+  await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
+  await expect(usage.locator("summary")).toHaveText("1 lớp dùng bản cũ");
+  await expect(usage).toHaveAttribute("open", "");
+  await usage.getByRole("button", { name: "Cập nhật lên phiên bản 2", exact: true }).click();
+  await expect(page.getByText(`${CLASS_NAME}: đã cập nhật lên phiên bản 2.`)).toBeVisible();
+  await expect(usage.locator("summary")).toHaveText("1 lớp dùng phiên bản 2 mới nhất");
+  await expect(usage, "a step taken inside never folds the panel").toHaveAttribute("open", "");
+  await expect(usage.getByText("Đang dùng phiên bản 2, mới nhất.")).toBeVisible();
+  await page.context().close();
+});

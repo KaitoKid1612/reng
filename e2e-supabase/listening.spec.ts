@@ -185,10 +185,12 @@ test("teacher authors listening questions, generates audio for the saved draft a
   ]);
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
+  await page.getByText(/^Quyền đọc: /).click();
   await page.getByLabel("Ai có thể đọc bản đã xuất bản?").selectOption("public");
   await page.getByLabel(/Nếu chọn công khai/).check();
   await page.getByRole("button", { name: "Lưu quyền đọc", exact: true }).click();
   await expect(page.getByText(/Đã cập nhật quyền đọc/)).toBeVisible();
+  await expect(page.getByText("Quyền đọc: Công khai trên website")).toBeVisible();
   await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
 });
 

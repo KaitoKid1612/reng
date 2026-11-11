@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { buildStartSteps, classLessonState, showsStartSteps } from "../lib/teaching-start";
+import {
+  buildStartSteps,
+  classLessonState,
+  showsStartSteps,
+  summarizeLessonUsage,
+} from "../lib/teaching-start";
 
 const LINKS = {
   newClass: "/teach/classes",
@@ -66,4 +71,20 @@ test("the steps hide once the teacher is teaching, even without a timetable", ()
   assert.equal(showsStartSteps(started, buildStartSteps(started, LINKS)), true);
   const teaching = { ...started, hasClassLesson: true, hasLearner: true, hasAssignment: true };
   assert.equal(showsStartSteps(teaching, buildStartSteps(teaching, LINKS)), false);
+});
+
+test("the class panel folds only while every class with the lesson uses the newest version", () => {
+  assert.deepEqual(summarizeLessonUsage(["latest", "latest", "missing"], 5), {
+    summary: "2 lớp dùng phiên bản 5 mới nhất · 1 lớp chưa có bài",
+    needsStep: false,
+  });
+  assert.deepEqual(summarizeLessonUsage(["older", "latest"], 5), {
+    summary: "1 lớp dùng bản cũ · 1 lớp dùng phiên bản 5 mới nhất",
+    needsStep: true,
+  });
+  assert.deepEqual(
+    summarizeLessonUsage(["missing", "missing"], 1),
+    { summary: "2 lớp chưa có bài", needsStep: true },
+    "a lesson in no class yet keeps its next step in view",
+  );
 });
