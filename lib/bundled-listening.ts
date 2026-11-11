@@ -1,3 +1,5 @@
+import officialN4Listening from "@/content/listening/jlpt-official-n4-2018.json";
+import officialN5Listening from "@/content/listening/jlpt-official-n5-2018.json";
 import minnaListening from "@/content/listening/minna-1-15.json";
 import n4DailyListening from "@/content/listening/n4-daily.json";
 import n4MockListening from "@/content/listening/n4-viet-listening-mock-20.json";
@@ -15,6 +17,8 @@ export const BUNDLED_LISTENING_SETS = [
   n4MockMoreListening,
   n5DailyListening,
   n5MockListening,
+  officialN5Listening,
+  officialN4Listening,
 ].map((set) => parseListeningSet(set));
 
 export const BUNDLED_LISTENING_AUDIO = listeningAudioRegistry(BUNDLED_LISTENING_SETS);

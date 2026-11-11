@@ -49,13 +49,34 @@ export default function SourcesPage() {
       <h2>Giọng đọc bài nghe</h2>
       {/* Unreal Speech's free plan asks for a link to unrealspeech.com wherever its audio is used. */}
       <p>
-        Audio của các câu nghe Reng tự biên soạn (bộ đề nghe Minna no Nihongo 1–15 và câu nghe N4
-        trong ngân hàng ôn) được tạo bằng{" "}
+        Audio của các câu nghe Reng tự biên soạn (bộ đề nghe Minna no Nihongo 1–15, câu nghe N5 và
+        N4 trong ngân hàng ôn) và phần nghe của đề chính thức JLPT bên dưới được tạo bằng{" "}
         <a href="https://unrealspeech.com" rel="noopener">
           Unreal Speech
         </a>{" "}
-        (giọng Sakura). Lời nghe và câu hỏi do Reng viết; giáo viên nghe duyệt trước khi giao cho
-        lớp.
+        (giọng Sakura, Rina, Yuki, Haruto). Lời nghe và câu hỏi tự biên soạn do Reng viết; giáo viên
+        nghe duyệt trước khi giao cho lớp.
+      </p>
+      <h2>Đề chính thức JLPT</h2>
+      <p>
+        Đề thi thử &quot;Đề chính thức JLPT N5/N4 (tập 2018)&quot; lấy câu hỏi, hình và lời nghe từ{" "}
+        <span lang="ja">日本語能力試験 公式問題集 第二集</span> đăng miễn phí trên trang chính thức
+        của kỳ thi:{" "}
+        <span lang="ja">
+          出典　日本語能力試験公式ウェブサイト（
+          <a href="https://www.jlpt.jp/samples/sampleindex.html" rel="noopener">
+            https://www.jlpt.jp/
+          </a>
+          ）
+        </span>
+        . Reng dùng làm tài liệu dạy tiếng Nhật không thu phí theo{" "}
+        <a href="https://www.jlpt.jp/policy.html" rel="noopener">
+          chính sách của trang
+        </a>
+        . Bản ghi âm gốc có tác phẩm của bên thứ ba nên Reng không chép: phần nghe được đọc lại
+        nguyên văn lời nghe chính thức bằng giọng máy, và trang kết quả có link tới bản ghi âm gốc.
+        Lời giải thích tiếng Việt do Reng biên soạn. Reng không dùng các bản &quot;đề thi
+        tháng/năm&quot; chép lại lưu hành trên mạng.
       </p>
     </article>
   );

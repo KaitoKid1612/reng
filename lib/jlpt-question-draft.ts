@@ -10,9 +10,9 @@ import type { JlptLevel } from "@/lib/jlpt";
 import type { LessonContent } from "@/lib/lesson-schema";
 
 // Reng's own JLPT practice questions (content/jlpt/<level>-original-question-draft.json), kept
-// as drafts until someone reviews the Japanese. Official exam questions and audio never go into
-// these files: content/jlpt/source-registry.json lists that material as links until its rights
-// are cleared. `npm run jlpt:drafts` turns each draft into lesson content in
+// as drafts until someone reviews the Japanese. Official exam questions never go into these
+// files: the JLPT official workbook tests live in content/jlpt/official, under the rights noted in
+// content/jlpt/source-registry.json. `npm run jlpt:drafts` turns each draft into lesson content in
 // content/jlpt/generated/; nothing reaches learners before a teacher publishes it.
 
 const text = z.string().trim().min(1);

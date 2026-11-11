@@ -1,0 +1,636 @@
+{
+  "title": "Nghe hiểu – Đề chính thức JLPT N4 (tập 2018)",
+  "titleJa": "日本語能力試験 公式問題集 第二集 N4 聴解",
+  "summary": "Phần nghe của đề chính thức JLPT N4 trong 公式問題集 第二集 (jlpt.jp), đọc lại nguyên văn script chính thức bằng giọng máy. Bản ghi âm gốc: trang chính thức JLPT.",
+  "order": 131,
+  "courseId": "n4",
+  "id": "jlpt-official-n4-2018-listening",
+  "audioVoice": "ja-JP-NanamiNeural",
+  "speakerVoices": {
+    "ナレーター": "unreal:Yuki",
+    "女": "unreal:Sakura",
+    "男": "unreal:Haruto"
+  },
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "intro",
+        "type": "title",
+        "jp": "N4 聴解（公式問題集 第二集）",
+        "vi": "Nghe hiểu N4 – đề chính thức"
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4-2018-l-1-1",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　１ばん",
+        "image": "/images/jlpt/2018/n4/l-1-1.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Khách chọn giấy gói hình con thuyền (船の絵がいいです → ア) và ruy băng loại mảnh (細いのにします → ウ). Giấy hình hoa (イ) và ruy băng to (エ) chỉ là những lựa chọn nhân viên đưa ra.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "0e6d0c671486107f53ead0f768558ba8",
+        "transcript": "ナレーター：{本屋|ほんや}で{店|みせ}の{人|ひと}と{女|おんな}の{人|ひと}が{話|はな}しています。{店|みせ}の{人|ひと}は{何|なに}を{使|つか}って{絵本|えほん}を{包|つつ}みますか。男：いらっしゃいませ。女：この{絵本|えほん}を{下|くだ}さい。{贈|おく}り{物|もの}なので、きれいに{包|つつ}んでくれませんか。男：はい。{包|つつ}む{紙|かみ}は{2種類|にしゅるい}あります。こちらの{船|ふね}の{絵|え}と{花|はな}の{絵|え}とどちらがいいでしょうか。女：{船|ふね}の{絵|え}がいいです。リボンもつけてください。男：はい。{細|ほそ}いのと{太|ふと}いのがありますが、どちらにしますか。女：そうですね。{細|ほそ}いのにします。男：{分|わ}かりました。では、{少|すこ}しお{待|ま}ちください。ナレーター：{店|みせ}の{人|ひと}は{何|なに}を{使|つか}って{絵本|えほん}を{包|つつ}みますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["ア ウ", "ア エ", "イ ウ", "イ エ"],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-1-2",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　２ばん",
+        "image": "/images/jlpt/2018/n4/l-1-2.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Hôm nay là ngày 7, cô giáo cần sách cho giờ học ngày 23 (thứ Sáu). Lúc đầu cô bảo trả trước ngày học một ngày (thứ Năm 22) nhưng rồi sửa lại là trước ngày đó nữa vì thứ Năm cô không đến trường, nên hạn chót là ngày 21 (thứ Tư).",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "944b15278d36eb524f908cb76f894877",
+        "transcript": "ナレーター：{先生|せんせい}の{部屋|へや}で{男|おとこ}の{学生|がくせい}と{先生|せんせい}が{話|はな}しています。{男|おとこ}の{学生|がくせい}はいつまでに{本|ほん}を{返|かえ}さなければなりませんか。男：{先生|せんせい}、この{本|ほん}を{借|か}りてもいいですか。女：いいですよ。男：いつまでに{返|かえ}さなければなりませんか。女：ええと、{今日|きょう}は{七日|なのか}ですね、{再来週|さらいしゅう}の{金曜日|きんようび}、えっと、{23日|にじゅうさんにち}に{授業|じゅぎょう}で{使|つか}いたいですから、{授業|じゅぎょう}の{前|まえ}の{日|ひ}までに{返|かえ}してください。男：はい。{木曜日|もくようび}ですね。女：あ、すみません、その{前|まえ}の{日|ひ}までにお{願|ねが}いします。{再来週|さらいしゅう}の{木曜日|もくようび}は、{学校|がっこう}に{来|き}ません。男：はい。{分|わ}かりました。ナレーター：{男|おとこ}の{学生|がくせい}はいつまでに{本|ほん}を{返|かえ}さなければなりませんか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3", "4"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-1-3",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　３ばん",
+        "image": "/images/jlpt/2018/n4/l-1-3.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Phải mang ảnh để giới thiệu về nước mình (写真を忘れないように) và dép đi trong nhà (スリッパを持っていって). Giấy gấp origami trường tiểu học có sẵn, cơm trưa trường cũng chuẩn bị nên không cần mang.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "fd7c217b5ec069138a4b9f0fa996ab91",
+        "transcript": "ナレーター：{日本語学校|にほんごがっこう}で{先生|せんせい}が{話|はな}しています。{留学生|りゅうがくせい}は{小学校|しょうがっこう}に{何|なに}を{持|も}っていかなければなりませんか。男：えー、{来週|らいしゅう}、みなみ{小学校|しょうがっこう}へ{行|い}って、{折|お}り{紙|がみ}を{子供|こども}たちに{習|なら}いますね。{皆|みな}さんは、{自分|じぶん}の{国|くに}について{写真|しゃしん}を{見|み}せながら{話|はな}しますね。{写真|しゃしん}を{忘|わす}れないようにしてください。あ、{折|お}り{紙|がみ}は{小学校|しょうがっこう}にあるものを{使|つか}います。それから、{小学校|しょうがっこう}の{建物|たてもの}に{入|はい}るときには、{靴|くつ}を{脱|ぬ}がなければなりませんから、スリッパを{持|も}っていってください。お{昼|ひる}ごはんは{必要|ひつよう}ありません。{小学校|しょうがっこう}が{準備|じゅんび}してくれます。ナレーター：{留学生|りゅうがくせい}は{小学校|しょうがっこう}に{何|なに}を{持|も}っていかなければなりませんか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3", "4"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-1-4",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　４ばん",
+        "image": "/images/jlpt/2018/n4/l-1-4.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Chỉ viết tên (イ) và địa chỉ mới (ウ). Số điện thoại không đổi nên không cần viết (電話番号はいいです), còn lớp tuần sau sẽ đổi nên được dặn đừng viết (クラスは書かないでください).",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "4dd0c3eadea42a4db0564ed247cd54e5",
+        "transcript": "ナレーター：{日本語学校|にほんごがっこう}で{事務所|じむしょ}の{人|ひと}と{男|おとこ}の{学生|がくせい}が{話|はな}しています。{男|おとこ}の{学生|がくせい}は{何|なに}を{書|か}きますか。女：キムさん、こんにちは。どうしましたか。男：あの、{先週|せんしゅう}{引|ひ}っ{越|こ}しをしたんですが。女：そうですか。じゃ、この{紙|かみ}に{名前|なまえ}と{新|あたら}しい{住所|じゅうしょ}と{電話番号|でんわばんごう}を{書|か}いてください。男：はい。あのう、{電話番号|でんわばんごう}も{書|か}かなければなりませんか。{変|か}わったのは{住所|じゅうしょ}だけです。女：じゃ、{電話番号|でんわばんごう}はいいです。それから、クラスは、{来週|らいしゅう}{新|あたら}しいクラスに{変|か}わりますから、{書|か}かないでください。男：はい。ナレーター：{男|おとこ}の{学生|がくせい}は{何|なに}を{書|か}きますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["ア イ ウ エ", "ア イ ウ", "イ ウ エ", "イ ウ"],
+        "answer": [3]
+      },
+      {
+        "id": "n4-2018-l-1-5",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　５ばん",
+        "image": "/images/jlpt/2018/n4/l-1-5.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Lúc đầu anh Kimura nói ngăn thứ hai từ dưới lên (下から2番目, tức ngăn 4) nhưng rồi sửa lại là cao hơn một ngăn (そのもう一つ上), tức ngăn thứ ba từ dưới lên: ngăn 3.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "56904418633b91e83785392da4c2d802",
+        "transcript": "ナレーター：{会社|かいしゃ}で{女|おんな}の{人|ひと}と{男|おとこ}の{人|ひと}が{電話|でんわ}で{話|はな}しています。{女|おんな}の{人|ひと}はどこから{資料|しりょう}を{持|も}っていきますか。女：はい、{鈴木|すずき}です。男：あ、もしもし。{木村|きむら}だけど、ごめん、{急|いそ}いで{会議室|かいぎしつ}まで{資料|しりょう}を{持|も}ってきてもらえる？女：はい。男：{僕|ぼく}の{机|つくえ}の{引|ひ}き{出|だ}しに{入|はい}っているんだ。女：はい。男：ええと、{多分|たぶん}、{引|ひ}き{出|だ}しの{下|した}から{2番目|にばんめ}に{入|はい}っていると{思|おも}う。{茶色|ちゃいろ}い{封筒|ふうとう}に{入|はい}っているからすぐ{分|わ}かると{思|おも}うよ。女：はい、{分|わ}かりました。{下|した}から{2番目|にばんめ}ですね。男：あ、ごめん。そのもう{一|ひと}つ{上|うえ}だ。女：はい、{急|いそ}いで{持|も}っていきます。ナレーター：{女|おんな}の{人|ひと}はどこから{資料|しりょう}を{持|も}っていきますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3", "4"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-1-6",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　６ばん",
+        "image": "/images/jlpt/2018/n4/l-1-6.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Việc cô còn phải làm là mang rác trong thùng ra phía sau cửa hàng (ごみを店の裏に持っていって). Bên trong và trước cửa hàng đã dọn xong, còn lau cửa sổ thì anh nhân viên nói để anh làm (僕がやるからいいよ).",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "1b66e84b434d87033e526ec151c4d9dc",
+        "transcript": "ナレーター：コンビニで{男|おとこ}の{店員|てんいん}と{女|おんな}の{店員|てんいん}が{話|はな}しています。{女|おんな}の{店員|てんいん}はこれから{何|なに}をしなければなりませんか。男：{田中|たなか}さん、ごくろうさま。{田中|たなか}さんの{仕事|しごと}は{3時|さんじ}までだから、そろそろ{終|お}わりだね。{店|みせ}の{中|なか}の{掃除|そうじ}は{終|お}わった？女：はい。男：{店|みせ}の{前|まえ}は{昼|ひる}に{掃除|そうじ}したからまだきれいだね。じゃ、{最後|さいご}にごみ{箱|ばこ}のごみを{店|みせ}の{裏|うら}に{持|も}っていって。ごみを{置|お}いておくところは{分|わ}かる？女：はい。あのう、すみません、まだ、{窓|まど}の{掃除|そうじ}が{終|お}わっていないんです。男：それは、{僕|ぼく}がやるからいいよ。じゃ、{今|いま}{頼|たの}んだことをやってから{帰|かえ}ってね。女：はい。ナレーター：{女|おんな}の{店員|てんいん}はこれから{何|なに}をしなければなりませんか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3", "4"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-1-7",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　７ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Thầy đặt sách hộ cả lớp; tuần sau, trước giờ học, sinh viên trả tiền và nhận sách ở văn phòng (事務所でお金を払って、テキストをもらって). Hiệu sách trước ga và trong trường không bán, còn sách bán trước nhà ăn là loại khác có tên giống.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "fcf7bdb6d05d5257bc6f6b5e0dabdbd3",
+        "transcript": "ナレーター：{大学|だいがく}で{先生|せんせい}が{話|はな}しています。このクラスの{留学生|りゅうがくせい}はどこでテキストを{買|か}いますか。男：この{授業|じゅぎょう}では「{日本語|にほんご}1」というテキストを{使|つか}います。{駅前|えきまえ}の{本屋|ほんや}や{大学|だいがく}の{中|なか}の{本屋|ほんや}などには{売|う}っていませんから、{私|わたし}が{皆|みな}さんのテキストを{頼|たの}んでおきます。{来週|らいしゅう}の{授業|じゅぎょう}の{前|まえ}に、{事務所|じむしょ}でお{金|かね}を{払|はら}って、テキストをもらってください。{今|いま}、{食堂|しょくどう}の{前|まえ}でも{日本語|にほんご}のテキストを{売|う}っていますけれど、この{授業|じゅぎょう}で{使|つか}うものはありません。{似|に}ている{名前|なまえ}のテキストがありますから、{間違|まちが}えないようにしてください。ナレーター：このクラスの{留学生|りゅうがくせい}はどこでテキストを{買|か}いますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "えき{前|まえ}の　ほんや",
+          "{大学|だいがく}の　{中|なか}の　ほんや",
+          "じむしょ",
+          "しょくどうの　{前|まえ}"
+        ],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-1-8",
+        "instruction": "もんだい１では、まず　しつもんを　{聞|き}いて　ください。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい１　８ばん",
+        "image": "/images/jlpt/2018/n4/l-1-8.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3"
+        },
+        "explain": "Tiền thuê trả vào lúc sử dụng (利用するとき) nên phải mang tiền (ア), và cần giày để đi trong nhà thể thao (体育館で履く靴が必要です → イ). Dụng cụ bóng bàn có sẵn ở đó (道具はこちらにあります) nên không cần mang (ウ).",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:1", "official:jlpt-2018"],
+        "audio": "87843289a53381c4be4d4ed2ecef5c36",
+        "transcript": "ナレーター：{町|まち}の{体育館|たいいくかん}で{男|おとこ}の{人|ひと}と{受付|うけつけ}の{人|ひと}が{話|はな}しています。{男|おとこ}の{人|ひと}は、{来週|らいしゅう}の{日曜日|にちようび}{体育館|たいいくかん}に{何|なに}を{持|も}ってこなければなりませんか。男：すみません。{来週|らいしゅう}の{日曜日|にちようび}、{体育館|たいいくかん}で{卓球|たっきゅう}がしたいんですが。女：はい。{卓球|たっきゅう}は、{一人|ひとり}{２時間|にじかん}、{300円|さんびゃくえん}ですが、{何時間|なんじかん}しますか。男：{2時間|にじかん}です。女：では、こちらに{名前|なまえ}と、{利用時間|りようじかん}のところに{2時間|にじかん}と{書|か}いてください。男：あのう、お{金|かね}は{今日|きょう}{払|はら}いますか。女：あ、{利用|りよう}するとき、お{願|ねが}いします。男：はい。女：それから、{卓球|たっきゅう}をするとき、{体育館|たいいくかん}で{履|は}く{靴|くつ}が{必要|ひつよう}です。{卓球|たっきゅう}の{道具|どうぐ}はこちらにありますので、{自由|じゆう}に{使|つか}ってください。男：はい。ありがとうございます。ナレーター：{男|おとこ}の{人|ひと}は、{来週|らいしゅう}の{日曜日|にちようび}{体育館|たいいくかん}に{何|なに}を{持|も}ってこなければなりませんか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["ア イ", "ア ウ", "イ ウ", "イ"],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-2-1",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　１ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Hôm qua cô ấy cùng bạn đến một quán gần biển để ăn (海の近くの店に行って、食事をしました). Leo núi là việc hai người hẹn lần sau mới làm; bơi và đi dạo bờ biển là điều cô muốn làm nhưng không làm được vì bạn có việc phải về.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "e5194f88c1a01cdea42a9a4247e07af5",
+        "transcript": "ナレーター：{男|おとこ}の{人|ひと}と{女|おんな}の{人|ひと}が{話|はな}しています。{女|おんな}の{人|ひと}は、{昨日|きのう}{友達|ともだち}と{一緒|いっしょ}に{何|なに}をしたと{言|い}っていますか。男：{昨日|きのう}はいい{天気|てんき}でしたね。どこかに{出掛|でか}けましたか。女：ええ、{友達|ともだち}と{海|うみ}の{近|ちか}くの{店|みせ}に{行|い}って、{食事|しょくじ}をしました。{学生|がくせい}のとき、よく{一緒|いっしょ}に{山|やま}に{登|のぼ}っていた{友達|ともだち}なんですが、{久|ひさ}しぶりに{会|あ}ったんです。男：じゃ、{話|はな}すことがたくさんあったでしょう。女：ええ。{今度|こんど}また{二人|ふたり}で{山|やま}に{登|のぼ}ることにしました。男：そうですか。{昨日|きのう}は{暑|あつ}かったから、{海|うみ}で{泳|およ}いだんですか。女：いえ。{泳|およ}いだり、{海岸|かいがん}を{散歩|さんぽ}したりしたかったんですけど、{友達|ともだち}に{用事|ようじ}ができてしまって、{食事|しょくじ}のあと、すぐに{帰|かえ}りました。{残念|ざんねん}です。ナレーター：{女|おんな}の{人|ひと}は、{昨日|きのう}{友達|ともだち}と{一緒|いっしょ}に{何|なに}をしたと{言|い}っていますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "うみの　ちかくで　しょくじした",
+          "{山|やま}に　のぼった",
+          "うみで　およいだ",
+          "かいがんを　さんぽした"
+        ],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-2-2",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　２ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Thầy muốn cho xem lúc làm nước ép nhưng tuần sau nhà máy không làm nước ép, nên cả lớp sẽ xem làm kem (アイスクリームを見ることになりました). Bánh quy chỉ là quà được nhận sau buổi tham quan.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "e58c14df6329a0c9ee90da3c1400c398",
+        "transcript": "ナレーター：{教室|きょうしつ}で{先生|せんせい}が{学生|がくせい}に{話|はな}しています。{学生|がくせい}は、{工場|こうじょう}で{何|なに}を{作|つく}っているときに、{見学|けんがく}をしますか。男：{来週|らいしゅう}はクラスで{工場|こうじょう}の{見学|けんがく}に{行|い}きます。ジュースで{有名|ゆうめい}な{会社|かいしゃ}の{工場|こうじょう}ですが、アイスクリームやキャンディー、それからクッキーも{作|つく}っているんですよ。{本当|ほんとう}はジュースを{作|つく}るときに、{見学|けんがく}したかったんですが、{来週|らいしゅう}はジュースは{作|つく}られていないそうなので、{皆|みな}さんはアイスクリームを{見|み}ることになりました。{見学|けんがく}のあと、クッキーのお{土産|みやげ}がもらえるそうです。ナレーター：{学生|がくせい}は、{工場|こうじょう}で{何|なに}を{作|つく}っているときに、{見学|けんがく}をしますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["ジュース", "アイスクリーム", "キャンディー", "クッキー"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-2-3",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　３ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Bạn nữ gợi ý đưa thư lúc Yamamoto ra khỏi thư viện (出てきたときはどう？), và cậu quyết định đợi bên ngoài rồi tự đưa (外で待って、自分で渡すよ). Trong lớp và lúc Yamamoto rời lớp cậu đã không đưa được, còn trong thư viện thì đông người nên cậu ngại.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "0fd13dace474764ee350d740d05b9b7f",
+        "transcript": "ナレーター：{授業|じゅぎょう}のあとで、{男|おとこ}の{学生|がくせい}と{女|おんな}の{学生|がくせい}が{廊下|ろうか}で{話|はな}しています。{男|おとこ}の{学生|がくせい}は、いつ{山本|やまもと}さんに{手紙|てがみ}を{渡|わた}しますか。男：{森|もり}さん、この{手紙|てがみ}を{山本|やまもと}さんに{渡|わた}してくれない？女：え、{何|なに}？男：あのう、{僕|ぼく}、{山本|やまもと}さんのことが{好|す}きで、{僕|ぼく}の{気持|きも}ちを{手紙|てがみ}に{書|か}いたんだけど、なかなか{渡|わた}せないんだ。{朝|あさ}、{教室|きょうしつ}で{渡|わた}そうと{思|おも}ったんだけど、{恥|は}ずかしくてだめで、{今|いま}、{山本|やまもと}さんが{教室|きょうしつ}を{出|で}たときもやっぱり{渡|わた}せなかったんだ。女：{自分|じぶん}で{渡|わた}したほうがいいよ。{山本|やまもと}さんなら{授業|じゅぎょう}のあと、いつも{30分|さんじゅっぷん}ぐらい{図書館|としょかん}にいるよ。男：{図書館|としょかん}は{人|ひと}が{多|おお}いから、{恥|は}ずかしいよ。女：じゃ、{出|で}てきたときはどう？男：うーん。女：がんばって。男：うん、{行|い}ってみる。{外|そと}で{待|ま}って、{自分|じぶん}で{渡|わた}すよ。ナレーター：{男|おとこ}の{学生|がくせい}は、いつ{山本|やまもと}さんに{手紙|てがみ}を{渡|わた}しますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "{山本|やまもと}さんが　きょうしつに　いるとき",
+          "{山本|やまもと}さんが　きょうしつを　{出|で}たとき",
+          "{山本|やまもと}さんが　としょかんに　いるとき",
+          "{山本|やまもと}さんが　としょかんを　{出|で}たとき"
+        ],
+        "answer": [3]
+      },
+      {
+        "id": "n4-2018-l-2-4",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　４ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Bình thường sở thú mở từ 10 giờ đến 5 giờ chiều, riêng ngày khai trương mở cửa đến 8 giờ tối (午後8時まで開いている), tức là đóng cửa muộn hơn. Học sinh cấp hai vẫn trả 500 yên (chỉ từ tiểu học trở xuống mới miễn phí), còn vé rẻ là vào thứ Bảy đầu mỗi tháng.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "fb6dc25eb7cf1ecca0734d0b7b0c2f67",
+        "transcript": "ナレーター：ラジオを{聞|き}いています。さくら{動物園|どうぶつえん}はオープンの{日|ひ}にどうなりますか。オープンの{日|ひ}です。女：{今月|こんげつ}{二十日|はつか}{金曜日|きんようび}に、さくら{公園|こうえん}の{隣|となり}にさくら{動物園|どうぶつえん}がオープンします。{動物園|どうぶつえん}は{毎日|まいにち}{10時|じゅうじ}から{夕方|ゆうがた}{5時|ごじ}までですが、オープンの{日|ひ}は{午後|ごご}{8時|はちじ}まで{開|あ}いているそうです。お{仕事|しごと}のあとにお{子|こ}さんと{一緒|いっしょ}にいかがでしょうか。{休|やす}みは{毎週|まいしゅう}{木曜|もくよう}です。チケットは{600円|ろっぴゃくえん}で、{中学生|ちゅうがくせい}は{500円|ごひゃくえん}、{小学生|しょうがくせい}{以下|いか}のお{子|こ}さんはただです。{毎月|まいつき}{初|はじ}めの{土曜日|どようび}には、チケットが{安|やす}くなって、{300円|さんびゃくえん}で{入|はい}れます。ぜひ、{行|い}ってみてください。ナレーター：さくら{動物園|どうぶつえん}はオープンの{日|ひ}にどうなりますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "あく　{時間|じかん}が　はやく　なる",
+          "しまる　{時間|じかん}が　おそく　なる",
+          "{中学生|ちゅうがくせい}いかは　ただに　なる",
+          "チケットが　{安|やす}く　なる"
+        ],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-2-5",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　５ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Cô nói điều làm mình ngạc nhiên là chủng loại hàng (私が驚いたのは種類だよ), vì ở nước cô máy bán tự động hầu như chỉ bán đồ uống. Chuyện máy có ở khắp nơi và máy biết nói là ý của bạn nam, còn chuyện tiền không bị trộm chỉ là cô đoán lý do có nhiều máy.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "f30cf88968962749f701059c523fe9e9",
+        "transcript": "ナレーター：{女|おんな}の{留学生|りゅうがくせい}と{男|おとこ}の{留学生|りゅうがくせい}が{話|はな}しています。{女|おんな}の{留学生|りゅうがくせい}は、{日本|にほん}の{自動販売機|じどうはんばいき}について、どんなことに{驚|おどろ}いたと{言|い}っていますか。{女|おんな}の{留学生|りゅうがくせい}です。女：ねえ、{日本|にほん}に{来|き}て、{日本|にほん}の{自動販売機|じどうはんばいき}に{驚|おどろ}かなかった？男：{驚|おどろ}いた。{公園|こうえん}、{病院|びょういん}、{海|うみ}、どこに{行|い}ってもあるから、すごいよ。女：{私|わたし}が{驚|おどろ}いたのは{種類|しゅるい}だよ。{私|わたし}の{国|くに}では、{売|う}っているのは{飲|の}み{物|もの}がほとんどだよ。男：{日本|にほん}ではバナナや{花|はな}、{服|ふく}も{見|み}たことがある。女：うん。男：{言葉|ことば}を{話|はな}す{自動販売機|じどうはんばいき}もあって、{東京|とうきょう}では{東京|とうきょう}の{言葉|ことば}を、{大阪|おおさか}では{大阪|おおさか}の{言葉|ことば}を{話|はな}すんだよ。女：{店員|てんいん}みたいだね。{日本|にほん}では{外|そと}に{置|お}いてあっても、{中|なか}のお{金|かね}が{盗|ぬす}まれたりしないから、{自動販売機|じどうはんばいき}がたくさんあるのかもしれないね。ナレーター：{女|おんな}の{留学生|りゅうがくせい}は、{日本|にほん}の{自動販売機|じどうはんばいき}について、どんなことに{驚|おどろ}いたと{言|い}っていますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "いろいろな　ばしょに　おいて　あること",
+          "うって　いる　ものの　しゅるいが　{多|おお}いこと",
+          "ことばを　{話|はな}すこと",
+          "お{金|かね}が　ぬすまれないこと"
+        ],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-2-6",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　６ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Bây giờ đúng 5 giờ và còn 30 phút nữa mới bắt đầu, nên giảm giá bắt đầu lúc 5 giờ rưỡi. Chương trình chỉ kéo dài 1 tiếng (夕方の1時間だけ) nên kết thúc lúc 6 giờ rưỡi.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "ffc1d7cf54fc0f015352160c8b20a8ba",
+        "transcript": "ナレーター：スーパーで{客|きゃく}と{店|みせ}の{人|ひと}が{話|はな}しています。{卵|たまご}が{安|やす}くなる{時間|じかん}は、{何時|なんじ}から{何時|なんじ}までですか。女：すみません、こちらのお{店|みせ}のホームページに、{今日|きょう}は「{卵|たまご}が{安|やす}い」と{書|か}いてあったんですが、{売|う}り{場|ば}はどこですか。男：あそこですが、すみません、お{客様|きゃくさま}。{卵|たまご}が{安|やす}くなるサービスは、{夕方|ゆうがた}の{1時間|いちじかん}だけなんです。女：えっ、{何時|なんじ}からですか。もう{終|お}わってしまいましたか。男：いえ、まだです。{今|いま}、ちょうど{5時|ごじ}ですから、{始|はじ}まるまで{30分|さんじゅっぷん}あります。女：{分|わ}かりました。ナレーター：{卵|たまご}が{安|やす}くなる{時間|じかん}は、{何時|なんじ}から{何時|なんじ}までですか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "{5時|ごじ}から　{5時半|ごじはん}まで",
+          "{5時|ごじ}から　{6時|ろくじ}まで",
+          "{5時半|ごじはん}から　{6時|ろくじ}まで",
+          "{5時半|ごじはん}から　{6時半|ろくじはん}まで"
+        ],
+        "answer": [3]
+      },
+      {
+        "id": "n4-2018-l-2-7",
+        "instruction": "もんだい２では、まず　しつもんを　{聞|き}いて　ください。そのあと、もんだいようしを　{見|み}て　ください。{読|よ}む　{時間|じかん}が　あります。それから　{話|はなし}を　{聞|き}いて、もんだいようしの　１から４の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい２　７ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3"
+        },
+        "explain": "Anh ấy nói công viên Higashi có hồ, có thể ngồi thuyền ngắm hoa anh đào nên vui (舟に乗って桜が見られるから楽しいよ). Nhiều quán ăn và đông như lễ hội là chuyện ở công viên Kita, còn từ công ty không đi bộ được (歩くのは無理) mà phải đi xe buýt.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:2", "official:jlpt-2018"],
+        "audio": "dfc93229e5f96da4f5c759f9a2a5cebf",
+        "transcript": "ナレーター：{会社|かいしゃ}で{女|おんな}の{人|ひと}と{男|おとこ}の{人|ひと}が{花見|はなみ}の{場所|ばしょ}について{話|はな}しています。{男|おとこ}の{人|ひと}は、どうして{東公園|ひがしこうえん}がいいと{言|い}っていますか。女：{土曜日|どようび}、{仕事|しごと}の{帰|かえ}りに{花見|はなみ}に{行|い}かない？男：いいね。女：どこがいい？男：{東公園|ひがしこうえん}がいいよ。{桜|さくら}は{東公園|ひがしこうえん}と{北公園|きたこうえん}が{有名|ゆうめい}だけど、{北公園|きたこうえん}は{毎年|まいとし}すごく{込|こ}むんだよ。{公園|こうえん}の{中|なか}に{食|た}べ{物|もの}の{店|みせ}がたくさん{出|で}ていて、{歩|ある}いていても、なかなか{前|まえ}に{進|すす}めないんだ。女：お{祭|まつ}りみたいで、にぎやかで{楽|たの}しそうだけど、ちょっと{疲|つか}れるね。男：{東公園|ひがしこうえん}も{人|ひと}は{多|おお}いんだけど、{池|いけ}があって、{舟|ふね}に{乗|の}って{桜|さくら}が{見|み}られるから{楽|たの}しいよ。女：{面白|おもしろ}そう。{東公園|ひがしこうえん}は{会社|かいしゃ}からは{歩|ある}いて{行|い}ける？男：えっと、{歩|ある}くのは{無理|むり}だけど、バスなら{15分|じゅうごふん}で{着|つ}くよ。女：じゃ、{東公園|ひがしこうえん}に{行|い}こう。ナレーター：{男|おとこ}の{人|ひと}は、どうして{東公園|ひがしこうえん}がいいと{言|い}っていますか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": [
+          "{食|た}べものの　{店|みせ}が　たくさん　あるから",
+          "まつりが　あって　にぎやかだから",
+          "ふねの　{上|うえ}で　さくらが　{見|み}られるから",
+          "{会社|かいしゃ}から　あるいて　{行|い}けるから"
+        ],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-3-1",
+        "instruction": "もんだい３では、えを　{見|み}ながら　しつもんを　{聞|き}いて　ください。➡（やじるし）の　{人|ひと}は　{何|なん}と　{言|い}いますか。１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい３　１ばん",
+        "image": "/images/jlpt/2018/n4/l-3-1.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3"
+        },
+        "explain": "Muốn biết bạn đã mua vòng cổ ở cửa hàng nào thì hỏi: それはどこで買ったんですか。 Câu 1 hỏi về dự định mua (買うつもり), câu 3 hỏi bạn có mua hay không.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:3", "official:jlpt-2018"],
+        "audio": "1cc76b4b90072ff2eacc1a1e85ecd98b",
+        "transcript": "ナレーター：{友達|ともだち}がかわいいネックレスをしています。{買|か}った{店|みせ}が{知|し}りたいです。{何|なん}と{言|い}いますか。女：１、どの{店|みせ}で{買|か}うつもりですか。２、それはどこで{買|か}ったんですか。３、{買|か}ったかどうか{教|おし}えてください。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-3-2",
+        "instruction": "もんだい３では、えを　{見|み}ながら　しつもんを　{聞|き}いて　ください。➡（やじるし）の　{人|ひと}は　{何|なん}と　{言|い}いますか。１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい３　２ばん",
+        "image": "/images/jlpt/2018/n4/l-3-2.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3"
+        },
+        "explain": "Nhờ bạn nhặt hộ cục tẩy của mình thì dùng ～てくれる？: 消しゴムを拾ってくれる？ Câu 1 là ngỏ ý nhặt giúp người khác (～てあげようか), câu 3 chỉ là truyền đạt điều nghe được (～そうだ).",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:3", "official:jlpt-2018"],
+        "audio": "e2c8d787648b2891e686c147ffbc2096",
+        "transcript": "ナレーター：{机|つくえ}の{下|した}に{自分|じぶん}の{消|け}しゴムが{落|お}ちました。{友達|ともだち}に{取|と}ってもらいたいです。{何|なん}と{言|い}いますか。男：１、あ、{消|け}しゴムを{取|と}ってあげようか。２、ごめん、{消|け}しゴムを{拾|ひろ}ってくれる？３、ねえ、{消|け}しゴムが{落|お}ちたそうだよ。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-3-3",
+        "instruction": "もんだい３では、えを　{見|み}ながら　しつもんを　{聞|き}いて　ください。➡（やじるし）の　{人|ひと}は　{何|なん}と　{言|い}いますか。１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい３　３ばん",
+        "image": "/images/jlpt/2018/n4/l-3-3.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3"
+        },
+        "explain": "Muốn để người khác ra khỏi thang máy trước mình thì nhường: どうぞお先に。 Câu 2 ({前|まえ}へ{行|い}きます) nghĩa là “tôi sẽ tiến lên phía trước”, không phải lời nhường; câu 3 là nhờ ai đó làm việc gì sau.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:3", "official:jlpt-2018"],
+        "audio": "abebfc2e6ae7f1425d9086c2616753b3",
+        "transcript": "ナレーター：エレベーターの{中|なか}です。ほかの{人|ひと}が{降|お}りたあとで{降|お}ります。{何|なん}と{言|い}いますか。男：１、どうぞお{先|さき}に。２、{前|まえ}へ{行|い}きます。３、あとでお{願|ねが}いします。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-3-4",
+        "instruction": "もんだい３では、えを　{見|み}ながら　しつもんを　{聞|き}いて　ください。➡（やじるし）の　{人|ひと}は　{何|なん}と　{言|い}いますか。１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい３　４ばん",
+        "image": "/images/jlpt/2018/n4/l-3-4.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3"
+        },
+        "explain": "Bạn quên đóng cặp nên ta nhắc là cặp đang mở: かばんが開いているよ。 Câu 1 là nhờ bạn để cặp mở, câu 2 lại nói cặp vẫn đang đóng, ngược với tình huống.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:3", "official:jlpt-2018"],
+        "audio": "493af95e5f8026357926ffc748337f83",
+        "transcript": "ナレーター：{友達|ともだち}がかばんを{閉|し}めるのを{忘|わす}れています。{何|なん}と{言|い}いますか。女：１、かばんを{開|あ}けておいてね。２、かばんが{閉|し}まったままだよ。３、かばんが{開|あ}いているよ。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-3-5",
+        "instruction": "もんだい３では、えを　{見|み}ながら　しつもんを　{聞|き}いて　ください。➡（やじるし）の　{人|ひと}は　{何|なん}と　{言|い}いますか。１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい３　５ばん",
+        "image": "/images/jlpt/2018/n4/l-3-5.png",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3"
+        },
+        "explain": "Muốn biết cách đọc chữ trên bức thư pháp thì hỏi trên đó viết gì: 何と書いてあるんですか。 Câu 1 hỏi cách viết ra chữ đó, câu 3 là ngỏ ý viết sẵn điều gì đó.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:3", "official:jlpt-2018"],
+        "audio": "3e3a8f21c71239051372d0e9ae96f5a2",
+        "transcript": "ナレーター：{読|よ}み{方|かた}が{知|し}りたいです。{何|なん}と{言|い}いますか。男：１、どうやって{書|か}いたんですか。２、{何|なん}と{書|か}いてあるんですか。３、{何|なに}を{書|か}いておきましょうか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-4-1",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　１ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Được mời thêm một chén trà thì nhận lời: すみません。いただきます。 Câu 2 là lời của người mời, câu 3 dùng để đáp lại lời cảm ơn.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "ecf8128ea60815d651d25360b53fb196",
+        "transcript": "男：よかったら、お{茶|ちゃ}をもう{一杯|いっぱい}いかがですか。女：１、すみません。いただきます。２、もう{一杯|いっぱい}どうぞ。３、いえ、どういたしまして。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-4-2",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　２ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Được hỏi bây giờ nói chuyện một chút được không (今ちょっと話せる？) thì đồng ý và hỏi có chuyện gì: はい。何ですか。 Câu 1 hiểu nhầm thành đang nói chuyện, câu 2 nói về việc giúp đỡ không liên quan.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "8769c67877e38e6e8941b08c41ff41da",
+        "transcript": "男：{山本|やまもと}さん、{忙|いそが}しそうだけど、{今|いま}ちょっと{話|はな}せる？女：１、{話|はな}していませんよ。２、あ、{今|いま}は、{手伝|てつだ}えないんですね。３、はい。{何|なん}ですか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-4-3",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　３ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Bạn hỏi nên chọn quà gì cho sinh nhật Mori (何にしようか), nên đáp bằng một gợi ý cụ thể: Ｔシャツはどう？ Câu 1 đồng ý với một đề xuất chưa hề có, câu 2 không nói tặng gì.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "b330c7aca0e0564f9a91f4a6a20a40a0",
+        "transcript": "男：リンさん、もうすぐ{森|もり}さんの{誕生日|たんじょうび}だね。プレゼントは、{何|なに}にしようか。女：１、それがいいね。２、プレゼントをあげようよ。３、んー、Ｔシャツはどう？",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-4-4",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　４ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Người kia còn dùng tài liệu nên bảo chưa cần dọn, vì vậy trả lời sẽ để lại chỗ này: じゃ、ここに置いておきます。 Câu 3 lại đề nghị dọn ngay, câu 2 nói chuyện mình không dùng nữa, không khớp.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "dd105d2730b1b959308352be42b0cdb0",
+        "transcript": "女：あ、その{資料|しりょう}、あとで{使|つか}うから、まだ{片付|かたづ}けなくてもいいですよ。男：１、じゃ、ここに{置|お}いておきます。２、いえ、{僕|ぼく}はもう{使|つか}いませんよ。３、すぐ{片付|かたづ}けましょうか。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [0]
+      },
+      {
+        "id": "n4-2018-l-4-5",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　５ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Đàn em nhờ chỉ cách chọn môn học ở đại học (教えてもらえませんか), nên đàn anh nhận lời: うん、何でも聞いて。 Câu 1 nói về việc cho đồ vật, câu 3 là cách nói của người đi nhờ chứ không phải người được nhờ.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "c9075f712bf79f69709816ec37770a90",
+        "transcript": "女：{先輩|せんぱい}、あの、{大学|だいがく}の{授業|じゅぎょう}の{選|えら}び{方|かた}について{教|おし}えてもらえませんか。男：１、それは、あげられないよ。２、うん、{何|なん}でも{聞|き}いて。３、ぜひ、お{願|ねが}いするよ。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-4-6",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　６ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Được hỏi vết thương đã khỏi chưa thì trả lời đã khỏi hẳn: すっかり治りました。 Câu 2 là lời người hỏi nói khi nghe tin vui, câu 1 không khớp với câu hỏi.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "f478e5e9fe2676e4fe695432ad0d1184",
+        "transcript": "女：あ、{山田|やまだ}さん。けがはもうよくなりましたか。男：１、あまりしませんでした。２、それはよかったです。３、すっかり{治|なお}りました。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [2]
+      },
+      {
+        "id": "n4-2018-l-4-7",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　７ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Được hỏi đã quyết định làm gì sau khi tốt nghiệp chưa, nên trả lời dự định: 国に帰って、貿易の仕事をします。 Câu 1 chỉ nói sẽ tốt nghiệp được, câu 3 nói về kinh nghiệm đã có.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "aeee92ccff5463f8f6cf746300d3870d",
+        "transcript": "男：リーさん、{大学|だいがく}を{卒業|そつぎょう}したら、どうするか{決|き}まりましたか。女：１、{卒業|そつぎょう}できることになりました。２、{国|くに}に{帰|かえ}って、{貿易|ぼうえき}の{仕事|しごと}をします。３、{銀行|ぎんこう}で{働|はたら}いたことがあります。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [1]
+      },
+      {
+        "id": "n4-2018-l-4-8",
+        "instruction": "もんだい４では、えなどが　ありません。まず　ぶんを　{聞|き}いて　ください。それから、そのへんじを　{聞|き}いて、１から３の　{中|なか}から、いちばん　いい　ものを　{一|ひと}つ　えらんで　ください。",
+        "prompt": "もんだい４　８ばん",
+        "source": {
+          "credit": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "audioUrl": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3"
+        },
+        "explain": "Được hỏi có biết tài liệu họp để ở đây đâu không, người nghe ngạc nhiên hỏi lại: え、ないんですか。 Câu 2 là nhờ người kia chỉ cho mình, câu 3 (đã không hiểu) không khớp với câu hỏi.",
+        "points": 1,
+        "tags": ["listening", "jlpt:n4", "section:4", "official:jlpt-2018"],
+        "audio": "91b286d4edceb628cd5ba3629664f4df",
+        "transcript": "女：ねえ、ここにあった{会議|かいぎ}の{資料|しりょう}を{知|し}らない？男：１、え、ないんですか。２、じゃ、{教|おし}えてください。３、{分|わ}かりませんでした。",
+        "maxListens": null,
+        "type": "listen",
+        "responseType": "choice",
+        "options": ["1", "2", "3"],
+        "answer": [0]
+      }
+    ]
+  }
+}

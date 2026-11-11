@@ -24,7 +24,8 @@ for (const file of readdirSync(SET_FOLDER).filter((name) => name.endsWith(".json
       );
       // A listening question is a sentence or a short conversation, not a click or a lecture.
       const seconds = mp3DurationMs(bytes) / 1000;
-      assert.ok(seconds > 1 && seconds < 60, `${asset.itemId} lasts ${seconds} s`);
+      // A JLPT N4 official dialogue runs to about 70 s; longer than 2 minutes means broken audio.
+      assert.ok(seconds > 1 && seconds < 120, `${asset.itemId} lasts ${seconds} s`);
     }
   });
 }

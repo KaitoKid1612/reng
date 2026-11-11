@@ -240,7 +240,7 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 
 ## Nguồn đề JLPT và câu tự biên soạn
 
-Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề.
+Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề. Ngày 11/11/2026 đã đọc chính sách của jlpt.jp: sách đề chính thức đăng trên trang được dùng làm tài liệu dạy miễn phí khi ghi nguồn, nên bộ 2018 đã vào Reng ([mục dưới](#đề-chính-thức-jlpt-公式問題集-第二集-2018)); file nghe gốc vẫn chỉ đặt link.
 
 | File trong `content/jlpt/` | Nội dung |
 |---|---|
@@ -265,6 +265,41 @@ Bộ 20 câu nghe thi thử N4 (`content/listening/n4-viet-listening-mock-20.jso
 Bộ thứ hai `content/listening/n4-viet-listening-mock-21-60.json` (10/11/2026, 40 câu, người dùng nghe duyệt ngày 11/11/2026) theo tỉ lệ bốn phần của đề thật: 課題理解 11, ポイント理解 10, 発話表現 7, 即時応答 12. Phần 1–2: người dẫn (nhãn `ナレーター`, giọng Yuki) đọc bối cảnh và câu hỏi tiếng Nhật trước hội thoại rồi nhắc lại câu hỏi ở cuối; đề in câu hỏi và bốn lựa chọn tiếng Nhật, vị trí đáp án đúng được rải đều (trừ danh sách có thứ tự tự nhiên như thứ, giờ, số lượng). Phần 3–4: ba câu đáp được đọc trong audio theo dạng `男：１、…２、…３、…`, đề chỉ in 1, 2, 3. Nhân viên, giáo viên, lễ tân dùng giọng Rina. Audio dài 10–45 giây, tổng khoảng 17 phút. Bộ này đã gộp vào ngân hàng N4; từ 11/11/2026 đề thi thử chỉ lấy 60 câu nghe theo dạng đề (nhãn `jlpt:n4`), đủ ba đề không lặp câu nào.
 
 Bộ N5 `content/listening/n5-viet-listening-mock-40.json` (11/11/2026, 40 câu; người dùng duyệt cùng ngày mà không nghe, một agent độc lập soát lời thoại, đáp án và furigana: sửa cách đọc 出す, viết lại 10 lời thoại cho tự nhiên và đúng cấp, rồi sinh lại 10 file audio) theo tỉ lệ đề N5 (7/6/5/6) quy về 40 câu: 課題理解 12, ポイント理解 10, 発話表現 8, 即時応答 10; cách đọc và giọng như bộ N4, giáo viên và nhân viên cửa hàng dùng giọng Rina. Từ và mẫu câu trong Minna 1–25 (có 〜なくても いいです, 〜ないで ください, 〜まえに, thể thường, 〜でしょう), nên có thể đi trước bài Minna học viên đang học. Lời nghe viết cách giữa các cụm như sách N5, mọi chữ Hán có furigana `{漢字|かんじ}` để học viên đọc được và máy đọc đúng âm (số đếm như `{8時半|はちじはん}`, `{4月4日|しがつよっか}`). Bộ này gộp vào ngân hàng N5 (184 câu, 118 câu nghe); đề thi thử N5 chỉ lấy 40 câu này, đủ hai đề không lặp.
+
+## Đề chính thức JLPT (公式問題集 第二集, 2018)
+
+Ngày 11/11/2026 người dùng muốn đề thi thử lấy từ đề JLPT thật, ghi tháng và năm của kỳ thi, không tự bịa. Rà soát nguồn cùng ngày ([báo cáo](testing/jlpt-official-sources-2026-11-11.md)):
+
+- **JLPT không công bố đề theo kỳ.** jlpt.jp đăng miễn phí trọn hai tập sách đề chính thức, 公式問題集 (2012) và 第二集 (2018). Mỗi cấp có PDF đề, đáp án (正答表), script nghe và MP3. Câu hỏi đã ra trong các kỳ thi thật từ 2010, nhưng sách không ghi kỳ nào, nên đề trong Reng không gắn tháng/năm.
+- **Đề "tháng/năm" trên mạng là bản chép lại không chính thức.** Ít nhất hai bộ "7/2018" đã kiểm thực ra là bộ 2018 bị gắn nhãn. Điều khoản các trang đó cấm crawl, và thông báo của JLPT ngày 19/01/2024 cảnh báo người dùng đề bị lộ có thể bị hủy kết quả. Reng không dùng các bản này.
+- **Quyền dùng:** [chính sách jlpt.jp](https://www.jlpt.jp/policy.html) mục 1(4) cho phép sao chép làm tài liệu dạy tiếng Nhật không thu phí, ghi 「出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）」 gần tài liệu.
+  - File nghe N1–N5 có tác phẩm bên thứ ba nên không chép. Reng đọc lại nguyên văn script bằng giọng máy (ghi âm việc đọc văn bản là sao chép văn bản), và trang kết quả đặt link tới bản ghi âm gốc (mục 2: được đặt link, không nhúng).
+  - Nếu sau này Reng thu phí tài liệu thì phải xin phép theo mục 1(5).
+
+Files:
+
+| File | Nội dung |
+|---|---|
+| `content/jlpt/official/n5-2018.json` | Bài "Đề chính thức JLPT N5 (tập 2018)": 91 câu theo thứ tự sách (35 文字・語彙, 32 文法・読解, 24 聴解) |
+| `content/jlpt/official/n4-2018.json` | N4: 98 câu (35, 35, 28) |
+| `content/listening/jlpt-official-n5-2018.json`, `…-n4-2018.json` | Phần nghe làm bộ nghe để sinh audio: người dẫn Yuki, nữ Sakura, nam Haruto; nằm trong `lib/bundled-listening.ts` để đăng ký audio khi nạp |
+| `public/images/jlpt/2018/n5/`, `…/n4/` | Hình cắt từ PDF: tranh lựa chọn của câu nghe, bảng/tờ thông tin của câu đọc |
+| `lib/jlpt-official.ts` | Dòng ghi nguồn, trang gốc, link MP3 gốc từng phần nghe, ngày bài mở cho học viên |
+
+Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng trang):
+- **Văn bản:** chép nguyên văn, giữ dấu cách giữa các cụm như sách. Chữ gạch chân viết `[[…]]`, furigana như sách in `{漢字|かな}`, chỗ trống của câu ★ viết `＿＿＿＿`/`＿★＿`, chỗ trống trong đoạn văn `［ 18 ］`.
+- **Tiêu đề và đoạn văn:** tiêu đề もんだい ở `instruction`, đoạn văn dùng chung ở `passage`.
+- **Phần nghe:** script có nhãn ナレーター/女/男, mọi chữ Hán có furigana để giọng máy đọc đúng âm. Câu đáp phần 3–4 viết `１、…２、…３、…`.
+- **Tag:** `文字・語彙`/`文法`/`読解` và `mondai:N`; câu nghe có `listening`, `jlpt:n5|n4`, `section:N`; mọi câu có `official:jlpt-2018`.
+- **Nguồn và đáp án:** `source` ghi nguồn, câu nghe có thêm link MP3 gốc. Đáp án được test so với 正答表 chính thức. Lời giải thích tiếng Việt do Reng viết.
+
+Đưa lên production:
+
+1. Áp migration `20261111042428_jlpt_official_exams` (`npx supabase db push --linked`). Đề thi thử nhận tới 100 câu, và mở ngay khi giao dù bài nguồn chưa mở.
+2. Chạy thử bằng `npm run official:sql -- --file content/jlpt/official/n5-2018.json --owner <email giáo viên> --class "<tên lớp>" --out /tmp/n5-official.sql`, thêm `--commit` để ghi thật. Lệnh tạo bài cho giáo viên (một lần, có ghi nguồn), xuất bản rồi gắn vào lớp. Bài mở cho học viên từ 07/12/2026 (`--opens-at` để đổi), nên học viên chỉ gặp câu hỏi trong đề thi thử.
+3. Giáo viên vào **Giao bài → Thi thử JLPT** và chọn bài đề chính thức. Đề lấy đủ mọi câu theo đúng thứ tự trong sách; cấp, số phút và tên đề tự theo bài. Chọn sai cấp thì bị từ chối.
+
+Bộ 2012 chưa làm: PDF là ảnh scan, cần gõ lại.
 
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "purpose": "JLPT N4/N5 source discovery and rights review; links only, no exam questions or audio mirrored",
-  "updatedAt": "2026-11-09",
+  "purpose": "JLPT N4/N5 source discovery and rights review. Official workbooks on jlpt.jp may be copied as free teaching material with credit (site policy 1(4)); their listening audio is linked, never copied.",
+  "updatedAt": "2026-11-11",
   "sources": [
     {
       "id": "jlpt-official-workbook-2018",
@@ -10,8 +10,8 @@
       "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
       "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
-      "rights": "review-required",
-      "importPolicy": "metadata-only-until-rights-cleared",
+      "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material, credit 出典 日本語能力試験公式ウェブサイト; listening audio contains third-party works (link only)",
+      "importPolicy": "imported-2026-11-11: N5/N4 question text and images (content/jlpt/official), listening re-recorded from the official script; original MP3 linked",
       "official": true
     },
     {
@@ -21,8 +21,8 @@
       "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
       "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
-      "rights": "review-required",
-      "importPolicy": "metadata-only-until-rights-cleared",
+      "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material, credit 出典 日本語能力試験公式ウェブサイト; listening audio contains third-party works (link only)",
+      "importPolicy": "allowed-not-imported: scanned PDFs need retyping",
       "official": true
     },
     {
@@ -32,8 +32,8 @@
       "levels": ["N4", "N5"],
       "url": "https://samplequestions.jlpt.jp/e/samples/sample09.html",
       "materials": ["question PDFs", "answers", "audio samples"],
-      "rights": "review-required",
-      "importPolicy": "metadata-only-until-rights-cleared",
+      "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material with credit; sample questions, not real tests",
+      "importPolicy": "not-imported",
       "official": true
     }
   ],
@@ -43,9 +43,10 @@
     "rule": "Do not label third-party compilations as authentic past JLPT exams without provenance"
   },
   "rightsNotes": [
-    "JLPT organizers do not release each full past test",
-    "Official sample questions and listening audio may contain third-party copyrighted works",
-    "Store references and provenance first; import or publish only when licensing and permissions are established"
+    "JLPT organizers do not release each full past test; the official workbooks hold real questions without naming their session",
+    "jlpt.jp site policy 1(4) pre-grants copying for free Japanese teaching material when the source is credited next to it; 1(5) asks for permission otherwise",
+    "Listening audio of N1–N5 and some N1/N2 reading passages contain third-party works: no copying without separate permission; links are welcome, embedding is not",
+    "Month/year-labelled papers on other sites are unofficial reconstructions; their terms forbid scraping and the JLPT notice of 2024-01-19 warns against using leaked questions (docs/testing/jlpt-official-sources-2026-11-11.md)"
   ],
   "audit": {
     "checkedAt": "2026-11-09",

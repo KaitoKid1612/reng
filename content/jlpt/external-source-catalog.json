@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-11",
   "purpose": "N4/N5 JLPT exam authoring research. Metadata only; no third-party questions/audio copied.",
   "sources": [
     {
@@ -9,8 +9,8 @@
       "language": "ja,en",
       "levels": ["N4", "N5"],
       "material": ["PDF", "MP3", "answers", "listening scripts"],
-      "rights": "copyrighted; permission required for republication",
-      "use": "format reference"
+      "rights": "free teaching use with credit (jlpt.jp site policy 1(4)); audio third-party, link only",
+      "use": "2018 N5/N4 imported as official mock tests (content/jlpt/official)"
     },
     {
       "name": "Kanji.vn",
