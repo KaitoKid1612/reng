@@ -1,5 +1,6 @@
 import { cache } from "react";
 import Link from "next/link";
+import { CalendarClock, Eye, ListChecks, Repeat, Timer } from "lucide-react";
 
 import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
@@ -100,15 +101,32 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
       </div>
       <ul className="item-meta assignment-facts">
         <li>
-          {describeAssignmentKind(assignment)}: {view.questionCount} câu, {view.totalPoints} điểm
-          {exam ? ", tính giờ từ lúc bắt đầu" : `, đạt từ ${assignment.passScore}%`}
+          <ListChecks size={18} aria-hidden="true" />
+          <span>
+            {describeAssignmentKind(assignment)}: {view.questionCount} câu, {view.totalPoints} điểm
+            {exam ? ", tính giờ từ lúc bắt đầu" : `, đạt từ ${assignment.passScore}%`}
+          </span>
         </li>
-        <li>{describeDue(assignment.dueAt)}</li>
-        {exam && describeJlptCountdown(now) && <li>{describeJlptCountdown(now)}</li>}
         <li>
-          Lượt làm: {view.attempts.length} / {assignment.maxAttempts}
+          <CalendarClock size={18} aria-hidden="true" />
+          <span>{describeDue(assignment.dueAt)}</span>
         </li>
-        <li>{describeFeedback(view)}</li>
+        {exam && describeJlptCountdown(now) && (
+          <li>
+            <Timer size={18} aria-hidden="true" />
+            <span>{describeJlptCountdown(now)}</span>
+          </li>
+        )}
+        <li>
+          <Repeat size={18} aria-hidden="true" />
+          <span>
+            Lượt làm: {view.attempts.length} / {assignment.maxAttempts}
+          </span>
+        </li>
+        <li>
+          <Eye size={18} aria-hidden="true" />
+          <span>{describeFeedback(view)}</span>
+        </li>
       </ul>
       {isLate && (
         <p className="notice-panel">Đã quá hạn. Bài vẫn nhận nộp nhưng sẽ ghi là nộp muộn.</p>

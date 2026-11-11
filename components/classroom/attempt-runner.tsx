@@ -99,6 +99,7 @@ export function AttemptRunner({
   const listRef = useRef<HTMLOListElement>(null);
   const isReadOnly = READ_ONLY_STATUSES.includes(sync.status) || isSubmitting;
   const blankCount = countBlankAnswers(views, sync.draft);
+  const answeredCount = items.length - blankCount;
   const assignmentPath = `/assignments/${assignmentId}`;
 
   function isAnswerCorrect(item: AttemptItem) {
@@ -392,6 +393,13 @@ export function AttemptRunner({
         ) : (
           <DeadlineCountdown dueAt={dueAt} allowLate={allowLate} onAutoSubmit={handleAutoSubmit} />
         )}
+        {/* A long set scrolls far from the question map; the bar keeps the count in sight. */}
+        <div className="attempt-progress">
+          <span className="small">
+            Đã trả lời <strong>{answeredCount}</strong>/{items.length}
+          </span>
+          <progress value={answeredCount} max={items.length} aria-label="Số câu đã trả lời" />
+        </div>
         <p className="save-status" data-state={sync.status} role="status" aria-live="polite">
           {exam && sync.status === "past_due" ? "Đã hết giờ làm bài." : STATUS_TEXT[sync.status]}
           {sync.status === "saved" && ` lúc ${formatStudyDateTime(sync.savedAt)}`}

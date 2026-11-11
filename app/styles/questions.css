@@ -339,3 +339,32 @@
 .filter-pills a[aria-current="true"] .filter-pill-count {
   color: inherit;
 }
+.attempt-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 200px;
+  max-width: 320px;
+}
+.attempt-progress > span {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.attempt-progress progress {
+  flex: 1;
+  height: 8px;
+  margin: 0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.attempt-progress progress::-webkit-progress-bar {
+  border-radius: 999px;
+}
+.attempt-progress progress::-webkit-progress-value {
+  border-radius: 999px;
+  transition: width 250ms ease;
+}
+.attempt-progress progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--primary);
+}

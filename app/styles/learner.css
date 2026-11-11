@@ -191,12 +191,29 @@
   gap: 12px;
   margin: 20px 0 16px;
 }
+/* What to know before starting, as a row of chips with an icon each. */
 .assignment-facts {
   list-style: none;
   padding: 0;
   margin: 0 0 24px;
-  display: grid;
-  gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.assignment-facts li {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.assignment-facts svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--primary);
 }
 .lesson-progress {
   margin: 32px 0 20px;
