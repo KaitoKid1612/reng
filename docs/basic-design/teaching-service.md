@@ -133,7 +133,7 @@ Bối cảnh pilot: một giáo viên vừa dạy học viên N5 theo Minna, v�
 2. **Không tự vào lớp mình dạy (CR-20).** Nhập mã lớp mình đang dạy trả thông báo hướng dẫn tạo lớp tự học. Lớp mà chủ lớp đã tự vào trước khi có kiểm tra này và không có học viên nào khác được chuyển thành lớp tự học khi nâng cấp. Lớp có học viên khác thì chủ lớp vẫn giữ lượt làm cũ, nhưng không được tính trong danh sách học viên, sức chứa, điểm, CSV hay câu sai nhiều.
 3. **Nguồn bài luyện hằng ngày** cố định theo lựa chọn của giáo viên (xem Luồng 6 bước 5), để dạy bài mới không làm mất bộ ôn tập.
 4. **Nhật ký buổi dạy** ở trang theo dõi lớp dạy: ngày dạy (không sau hôm nay), bài trong lớp, dạy đến slide số, ghi chú riêng tối đa 2.000 ký tự. Nhật ký giữ đúng phiên bản bài lớp đang dùng lúc ghi, nên "Mở slide N" mở lại đúng slide kể cả khi lớp đã chuyển phiên bản. Từ 02/11/2026 khối "Buổi dạy online" ở đầu trang lớp hiện buổi gần nhất, nút Mở Google Meet và "Trình chiếu tiếp từ slide N"; slide mở từ trang lớp có "Ghi buổi dạy (slide N)" để quay về nhật ký với bài và slide điền sẵn (xem [rà soát 02/11](../testing/user-flow-review-2026-11-02.md)). Học viên không thấy nhật ký; lớp tự học không có mục này. Hiện 12 buổi gần nhất, xóa được từng buổi ghi nhầm.
-5. **Cập nhật bài từ mẫu.** Bài tạo từ mẫu Minna có link "Cập nhật từ mẫu" ở trang Giảng dạy và editor. Trang này so sánh số slide, câu hỏi và hình của bản nháp với mẫu mới nhất. Sau khi giáo viên xác nhận, nội dung nháp được thay bằng mẫu; tên, thứ tự và khóa học giữ nguyên. Chỉnh sửa riêng trong nháp sẽ mất; phiên bản đã xuất bản, lớp đang dùng và bài đã giao không đổi. Muốn học viên thấy bản mới, giáo viên xuất bản rồi chọn phiên bản mới cho lớp.
+5. **Cập nhật bài từ mẫu.** Bài tạo từ mẫu Minna có link "so sánh và cập nhật từ mẫu" ở đầu editor, chỉ khi bản nháp khác mẫu mới nhất (từ 11/11/2026; trước đó link hiện mãi, cả ở trang Giảng dạy). Trang này so sánh từng phần của bản nháp với mẫu mới nhất: từ vựng, mẫu câu, slide, câu luyện và hình minh họa, mỗi phần có số mục hai bên và Giống mẫu/Khác mẫu. Bản nháp đã giống mẫu thì trang báo không có gì để cập nhật và không có nút thay. Sau khi giáo viên xác nhận, nội dung nháp được thay bằng mẫu; tên, thứ tự và khóa học giữ nguyên. Chỉnh sửa riêng trong nháp sẽ mất; phiên bản đã xuất bản, lớp đang dùng và bài đã giao không đổi. Muốn học viên thấy bản mới, giáo viên xuất bản rồi chọn phiên bản mới cho lớp.
 
 Nhịp làm việc gợi ý cho giáo viên vừa dạy vừa học: làm bài ôn của mình trong lớp tự học; xem trang lớp dạy (tỉ lệ nộp, câu sai nhiều) trước buổi dạy; sau buổi ghi nhật ký; đổi phiên bản bài cho lớp khi đã xuất bản bản mới.
 
@@ -307,6 +307,14 @@ Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
 3. **Làm bài dài.** Từ 6 câu có danh sách câu để nhảy; Enter kiểm tra câu luyện tập rồi sang câu sau; hộp nộp bài có "Đến câu chưa làm". Nộp bài luyện tập có câu sai mở thẳng các câu sai; bài kiểm tra giữ nguyên để không lộ kết quả trước giờ công bố.
 4. **Tiếng Trung.** Đề, đáp án và câu trả lời mang thẻ ngôn ngữ đúng (không còn `ja`); ô pinyin nhận số thanh (`ni3 hao3` → `nǐ hǎo`, `v` → `ü`). Chấm điểm không đổi.
 5. **Buổi dạy online.** Đầu trang lớp có khối Buổi dạy online; Nội dung lớp có Trình chiếu/Đọc bài theo phiên bản lớp; slide mở từ lớp ghi được buổi dạy ngay trên thanh trình chiếu.
+
+## Phiên bản cũ gọn hơn — 11/11/2026
+
+Người dùng thấy bài có "phiên bản 1, 2, 3" và muốn xóa bớt. Mỗi lần **Xuất bản** tạo một phiên bản bất biến; lớp, bài đã giao, bài nộp, chia sẻ, bản sao và nhật ký buổi dạy trỏ tới phiên bản, và database chặn sửa/xóa (`immutable_lesson_version`). Người dùng đồng ý **ẩn bớt trên giao diện, không xóa**:
+
+- Ô **Phiên bản dùng cho lớp** (Nội dung lớp) chỉ hiện bản mới nhất, bản lớp đang dùng và bản đang xuất bản, ghi "(mới nhất)", "(lớp đang dùng)". Ô **Phiên bản chia sẻ** chỉ hiện bản mới nhất. Bản cũ hơn hiện khi đánh dấu **Hiện N phiên bản cũ**.
+- Trình soạn ghi "Đã xuất bản N lần; mỗi lần là một phiên bản." thay cho "N phiên bản đã xuất bản."; trang Giảng dạy ghi "Đã xuất bản, phiên bản mới nhất N" thay cho số phiên bản.
+- Không có chức năng xóa phiên bản. Chi tiết: `lib/lesson-versions.ts` (`versionChoices`), kiểm chứng `tests/lesson-versions.test.ts`.
 
 ## Học viên tự xóa tài khoản — 10/11/2026
 

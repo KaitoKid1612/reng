@@ -57,10 +57,12 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
           <h1>Soạn bài: {editor.draft.metadata.title || editor.lessonId}</h1>
           <p>
             <Link href="/teach">Giảng dạy</Link>, mã bài {editor.lessonId}
-            {editor.hasStarter && (
+            {editor.differsFromStarter && (
               <>
-                ,{" "}
-                <Link href={`/teach/lessons/${editor.lessonId}/starter`}>cập nhật từ bài mẫu</Link>
+                . Bản nháp khác bài mẫu mới nhất:{" "}
+                <Link href={`/teach/lessons/${editor.lessonId}/starter`}>
+                  so sánh và cập nhật từ mẫu
+                </Link>
               </>
             )}
           </p>

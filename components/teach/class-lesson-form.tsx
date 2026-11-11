@@ -7,6 +7,7 @@ import { setClassLessonAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { DateTimeField } from "@/components/teach/date-time-field";
 import { Button } from "@/components/ui/button";
+import { versionChoices } from "@/lib/lesson-versions";
 import { lessonLanguage, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -53,6 +54,12 @@ export function ClassLessonForm({
   const current = classLessons.find((row) => row.lessonId === lesson?.id);
   // Remounts the fields when another lesson is chosen or a save changes the class's values.
   const fieldsKey = `${lesson?.id}:${current?.versionId}:${current?.orderNo}:${current?.availableAt}`;
+  const [showOlderVersions, setShowOlderVersions] = useState(false);
+  const versions = versionChoices(
+    lesson?.versions ?? [],
+    [current?.versionId, lesson?.publishedVersionId],
+    showOlderVersions,
+  );
   if (!lessons.length) {
     return (
       <p className="notice-panel">
@@ -100,16 +107,31 @@ export function ClassLessonForm({
             name="versionId"
             defaultValue={current?.versionId ?? lesson?.publishedVersionId ?? undefined}
           >
-            {lesson?.versions.map((version) => (
-              <option key={version.id} value={version.id}>
-                Phiên bản {version.version_no} —{" "}
-                {teachingLanguageLabel(
-                  lessonLanguage(version.schema_version, version.language_tag),
-                )}
-                , xuất bản {formatStudyDateTime(version.published_at)}
-              </option>
-            ))}
+            {versions.offered.map((version) => {
+              const marks = [
+                version.id === versions.newestId && "mới nhất",
+                version.id === current?.versionId && "lớp đang dùng",
+              ].filter(Boolean);
+              const language = teachingLanguageLabel(
+                lessonLanguage(version.schema_version, version.language_tag),
+              );
+              return (
+                <option key={version.id} value={version.id}>
+                  {`Phiên bản ${version.version_no}${marks.length ? ` (${marks.join(", ")})` : ""} — ${language}, xuất bản ${formatStudyDateTime(version.published_at)}`}
+                </option>
+              );
+            })}
           </select>
+          {versions.olderCount > 0 && (
+            <label className="choice-label">
+              <input
+                type="checkbox"
+                checked={showOlderVersions}
+                onChange={(event) => setShowOlderVersions(event.target.checked)}
+              />
+              Hiện {versions.olderCount} phiên bản cũ
+            </label>
+          )}
         </div>
         <div className="field">
           <label htmlFor="class-lesson-order">Thứ tự trong lớp</label>

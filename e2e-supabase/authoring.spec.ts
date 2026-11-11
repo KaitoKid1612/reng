@@ -83,7 +83,7 @@ test("teacher builds a lesson from scratch and learners can read the published v
   await expect(page.locator(".editor-status")).toContainText("Đã lưu nháp lúc");
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
-  await expect(page.getByText("1 phiên bản đã xuất bản.")).toBeVisible();
+  await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
   await page.screenshot({
     path: "test-results/editor-desktop.png",
     fullPage: true,

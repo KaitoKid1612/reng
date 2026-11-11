@@ -439,7 +439,9 @@ export function LessonEditor({
         <LessonVisibilityForm lessonId={lessonId} visibility={visibility} />
         <SlidePreview lessonId={lessonId} draft={draft} slideId={state.selectedSlideId} />
         <p className="small muted">
-          {versionCount ? `${versionCount} phiên bản đã xuất bản.` : "Chưa xuất bản phiên bản nào."}{" "}
+          {versionCount
+            ? `Đã xuất bản ${versionCount} lần; mỗi lần là một phiên bản.`
+            : "Chưa xuất bản phiên bản nào."}{" "}
           {publishedVersionId && (
             <Link
               href={`/lessons/${lessonId}?version=${publishedVersionId}`}

@@ -19,7 +19,7 @@ import {
   selectRows,
   ServiceError,
 } from "@/lib/server/supabase";
-import { findStarterForLesson, summarizeLessonContent } from "@/lib/starter-lessons";
+import { compareWithStarter, findStarterForLesson } from "@/lib/starter-lessons";
 import { parseVocabularyCsv } from "@/lib/vocab-csv";
 
 import type { LessonDraftState, PublishProblem } from "@/lib/lesson-draft";
@@ -100,7 +100,8 @@ export async function loadLessonEditor(teacherId: string, lessonId: string) {
     savedAt: row.updated_at,
     publishedVersionId: row.published_version_id,
     versions,
-    hasStarter: findStarterForLesson(row.creation_fingerprint) !== undefined,
+    // The editor offers a starter refresh only when it would change something.
+    differsFromStarter: differsFromStarter(row, draft),
   };
 }
 
@@ -122,22 +123,43 @@ function requireStarter(row: z.infer<typeof lessonRowSchema>) {
   return starter;
 }
 
+// The latest starter as this lesson's draft would hold it, read through the same schema as the
+// draft so both sides compare equal when nothing changed.
+function starterDraftFor(row: z.infer<typeof lessonRowSchema>, starter: StarterLesson) {
+  return parseIncomingDraft({ metadata: metadataOf(row), content: starter.draft.content });
+}
+
+function differsFromStarter(row: z.infer<typeof lessonRowSchema>, draft: LessonDraftState) {
+  const starter = findStarterForLesson(row.creation_fingerprint);
+  if (!starter) {
+    return false;
+  }
+  try {
+    const latest = starterDraftFor(row, starter).content;
+    return compareWithStarter(draft.content, latest).some((section) => !section.isSame);
+  } catch {
+    // A starter the draft schema refuses cannot be offered; the editor still opens.
+    return false;
+  }
+}
+
 export async function loadStarterRefresh(teacherId: string, lessonId: string) {
   const row = await loadOwnedRow(teacherId, lessonId);
   const starter = requireStarter(row);
-  let current: ReturnType<typeof summarizeLessonContent> | null = null;
+  const latest = starterDraftFor(row, starter).content;
+  let sections: ReturnType<typeof compareWithStarter> | null = null;
   try {
-    current = summarizeLessonContent(toDraftState(row).content);
+    sections = compareWithStarter(toDraftState(row).content, latest);
   } catch {
-    // An unreadable draft is exactly what a refresh replaces; there is just nothing to count.
+    // An unreadable draft is exactly what a refresh replaces; there is just nothing to compare.
   }
   return {
     lessonId: row.id,
     title: row.title,
     revision: row.draft_revision,
     starter,
-    current,
-    latest: summarizeLessonContent(starter.draft.content),
+    sections,
+    isUpToDate: sections?.every((section) => section.isSame) ?? false,
   };
 }
 
@@ -149,8 +171,7 @@ export async function replaceDraftWithStarter(
   expectedRevision: number,
 ) {
   const row = await loadOwnedRow(teacherId, lessonId);
-  const starter = requireStarter(row);
-  const draft = parseIncomingDraft({ metadata: metadataOf(row), content: starter.draft.content });
+  const draft = starterDraftFor(row, requireStarter(row));
   return writeDraft(teacherId, lessonId, expectedRevision, draft);
 }
 

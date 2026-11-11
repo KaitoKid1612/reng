@@ -29,7 +29,7 @@ async function createFromStarter(page: Page, label: string) {
   await page.waitForURL(/\/teach\/lessons\/lesson-[0-9a-f]{32}\/edit$/);
   const lessonId = page.url().split("/").at(-2) ?? "";
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
-  await expect(page.getByText("1 phiên bản đã xuất bản.")).toBeVisible();
+  await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
   return lessonId;
 }
 
@@ -202,24 +202,28 @@ test("a lesson made from a starter is refreshed with the latest starter content"
     throw new Error(updateError.message);
   }
 
-  await page.goto("/teach");
-  await page
-    .locator(".item-list li")
-    .filter({ hasText: LESSON_12 })
-    .getByRole("link", { name: "Cập nhật từ mẫu" })
-    .click();
+  // The editor offers the refresh only while the draft differs from the latest starter.
+  await page.goto(`/teach/lessons/${state.lesson12}/edit`);
+  await page.getByRole("link", { name: "so sánh và cập nhật từ mẫu" }).click();
   await page.waitForURL(`**/teach/lessons/${state.lesson12}/starter`);
-  const current = page.locator(".item-list li").filter({ hasText: "Bản nháp của bạn" });
-  const latest = page.locator(".item-list li").filter({ hasText: "Mẫu mới nhất" });
-  await expect(latest).toContainText("41 slide, 50 câu hỏi");
-  const latestText = (await latest.locator(".item-meta").textContent()) ?? "";
-  await expect(current.locator(".item-meta")).not.toHaveText(latestText);
+  const row = (label: string) => page.locator(".data-table tbody tr").filter({ hasText: label });
+  await expect(row("Từ vựng")).toContainText("Khác mẫu");
+  await expect(row("Mẫu câu")).toContainText("Giống mẫu");
+  await expect(row("Hình minh họa")).toContainText("Khác mẫu");
+  await expect(row("Slide").locator('[data-label="Mẫu mới nhất"]')).toHaveText("41");
+  await expect(row("Câu luyện").locator('[data-label="Mẫu mới nhất"]')).toHaveText("50");
 
   await page.getByLabel(/Tôi hiểu bản nháp hiện tại/).check();
   await page.getByRole("button", { name: "Thay bản nháp bằng mẫu mới nhất", exact: true }).click();
   await page.waitForURL(`**/teach/lessons/${state.lesson12}/edit`);
-  await expect(page.getByText("1 phiên bản đã xuất bản.")).toBeVisible();
+  await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
+  await expect(page.getByRole("link", { name: "so sánh và cập nhật từ mẫu" })).toHaveCount(0);
   await page.goto(`/teach/lessons/${state.lesson12}/starter`);
-  await expect(current.locator(".item-meta")).toHaveText(latestText);
+  await expect(page.getByRole("heading", { name: "Không có gì để cập nhật" })).toBeVisible();
+  await expect(page.locator(".data-table tbody tr")).toHaveCount(5);
+  await expect(page.getByText("Khác mẫu")).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Thay bản nháp bằng mẫu mới nhất", exact: true }),
+  ).toHaveCount(0);
   await page.context().close();
 });

@@ -19,7 +19,6 @@ import { buildStartSteps, showsStartSteps } from "@/lib/teaching-start";
 import { buildTeacherToday } from "@/lib/teacher-today";
 import { loadTeacherTodayActivity } from "@/lib/server/teacher-today";
 import { listOwnedLessons, listTeacherClasses } from "@/lib/server/classes";
-import { findStarterForLesson } from "@/lib/starter-lessons";
 
 import type { Metadata } from "next";
 
@@ -217,9 +216,9 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                   <h3>{lesson.title}</h3>
                   <p className="item-meta">
                     Bản soạn: {teachingLanguageLabel(lesson.languageTag)} ·{" "}
-                    {lesson.publishedVersionId ? "Đã có bản xuất bản" : "Chỉ có bản nháp"} ·{" "}
-                    {lesson.versions.length} phiên bản, mới nhất số{" "}
-                    {lesson.versions[0]?.version_no ?? "—"}
+                    {lesson.publishedVersionId && lesson.versions[0]
+                      ? `Đã xuất bản, phiên bản mới nhất ${lesson.versions[0].version_no}`
+                      : "Chỉ có bản nháp"}
                   </p>
                   {lesson.copyAttribution && <p className="item-meta">{lesson.copyAttribution}</p>}
                 </div>
@@ -234,9 +233,6 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                   )}
                   {!lesson.copyAttribution && (
                     <Link href={`/teach/lessons/${lesson.id}/sharing`}>Chia sẻ</Link>
-                  )}
-                  {findStarterForLesson(lesson.creationFingerprint) && (
-                    <Link href={`/teach/lessons/${lesson.id}/starter`}>Cập nhật từ mẫu</Link>
                   )}
                   <LessonCopyForm
                     source={{ kind: "own", lessonId: lesson.id }}

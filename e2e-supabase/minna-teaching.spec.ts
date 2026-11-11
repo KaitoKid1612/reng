@@ -78,7 +78,7 @@ test("a teacher starts Minna lesson 11 from the starter, publishes and presents 
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
   // The editor refreshes after publishing; leaving mid-refresh aborts its request.
-  await expect(page.getByText("1 phiên bản đã xuất bản.")).toBeVisible();
+  await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
 
   const table = await openSlide(page, 12);
   await expect(table.locator(".slide-table tbody tr")).toHaveCount(11);

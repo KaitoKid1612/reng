@@ -5,6 +5,7 @@ import { useActionState, useState } from "react";
 import { shareLessonAction } from "@/app/actions/lesson-sharing";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
+import { versionChoices } from "@/lib/lesson-versions";
 
 interface LessonShareFormProps {
   lessonId: string;
@@ -14,7 +15,9 @@ interface LessonShareFormProps {
 export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
   const [state, action, isPending] = useActionState(shareLessonAction, {});
   const [permission, setPermission] = useState<"view" | "copy">("view");
+  const [showOlderVersions, setShowOlderVersions] = useState(false);
   const typed = state.values;
+  const choices = versionChoices(versions, [typed?.versionId], showOlderVersions);
   return (
     // React resets the form after each action; remounting with the typed values keeps them.
     <form key={typed ? JSON.stringify(typed) : "new"} action={action} className="form-card">
@@ -27,12 +30,22 @@ export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
             name="versionId"
             defaultValue={typed?.versionId ?? versions[0]?.id}
           >
-            {versions.map((version) => (
+            {choices.offered.map((version) => (
               <option key={version.id} value={version.id}>
-                Phiên bản {version.versionNo}
+                {`Phiên bản ${version.versionNo}${version.id === choices.newestId ? " (mới nhất)" : ""}`}
               </option>
             ))}
           </select>
+          {choices.olderCount > 0 && (
+            <label className="choice-label">
+              <input
+                type="checkbox"
+                checked={showOlderVersions}
+                onChange={(event) => setShowOlderVersions(event.target.checked)}
+              />
+              Hiện {choices.olderCount} phiên bản cũ
+            </label>
+          )}
         </div>
         <div className="field">
           <label htmlFor="share-email">Email giáo viên nhận</label>

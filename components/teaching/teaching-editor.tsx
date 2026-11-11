@@ -358,7 +358,7 @@ export function TeachingEditor({
             </Button>
             <p className="small">
               {published.count
-                ? `${published.count} phiên bản đã xuất bản.`
+                ? `Đã xuất bản ${published.count} lần; mỗi lần là một phiên bản.`
                 : "Chưa xuất bản phiên bản nào."}{" "}
               {published.versionId && (
                 <>

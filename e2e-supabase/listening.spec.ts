@@ -189,7 +189,7 @@ test("teacher authors listening questions, generates audio for the saved draft a
   await page.getByLabel(/Nếu chọn công khai/).check();
   await page.getByRole("button", { name: "Lưu quyền đọc", exact: true }).click();
   await expect(page.getByText(/Đã cập nhật quyền đọc/)).toBeVisible();
-  await expect(page.getByText("1 phiên bản đã xuất bản.")).toBeVisible();
+  await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
 });
 
 test("learners practise listening with counted plays, rewind, slow speed and a locked transcript", async ({

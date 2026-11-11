@@ -133,29 +133,74 @@ export function findStarterForLesson(creationFingerprint: string | null) {
   return findStarterLesson(creationFingerprint.slice(STARTER_FINGERPRINT.length));
 }
 
-interface LessonContentShape {
+interface ComparableContent {
   vocab: readonly { image?: string }[];
+  grammar: readonly unknown[];
   slides: readonly { type: string }[];
   questions: readonly unknown[];
 }
 
-export interface LessonContentSummary {
-  slides: number;
-  questions: number;
-  pictures: number;
+const COMPARED_SECTIONS = [
+  ["vocab", "Từ vựng"],
+  ["grammar", "Mẫu câu"],
+  ["slides", "Slide"],
+  ["questions", "Câu luyện"],
+] as const;
+
+export interface SectionComparison {
+  label: string;
+  draftCount: number;
+  starterCount: number;
+  isSame: boolean;
 }
 
-// Counts what a teacher compares before replacing a draft with the latest starter: pictures are
-// vocabulary pictures, title pictures and picture slides.
-export function summarizeLessonContent(content: LessonContentShape): LessonContentSummary {
-  const pictureSlides = content.slides.filter(
-    (slide) =>
-      slide.type === "image" ||
-      (slide.type === "title" && "image" in slide && Boolean(slide.image)),
-  ).length;
+// Postgres jsonb keeps object keys in its own order, so content is compared by value, not text.
+export function canonicalJson(value: unknown): string {
+  if (Array.isArray(value)) {
+    return `[${value.map(canonicalJson).join(",")}]`;
+  }
+  if (value !== null && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    // Default sort compares UTF-16 code units: one fixed order on both sides is all that matters.
+    const fields = Object.keys(record)
+      .sort()
+      .filter((key) => record[key] !== undefined)
+      .map((key) => `${JSON.stringify(key)}:${canonicalJson(record[key])}`);
+    return `{${fields.join(",")}}`;
+  }
+  return JSON.stringify(value) ?? "null";
+}
+
+// Starters gained pictures after teachers had copied them: vocabulary pictures, title pictures and
+// picture slides.
+function pictures(content: ComparableContent) {
+  return [
+    ...content.vocab.flatMap((item) => (item.image ? [item.image] : [])),
+    ...content.slides.filter(
+      (slide) =>
+        slide.type === "image" ||
+        (slide.type === "title" && "image" in slide && Boolean(slide.image)),
+    ),
+  ];
+}
+
+function compareSection(label: string, draft: readonly unknown[], starter: readonly unknown[]) {
   return {
-    slides: content.slides.length,
-    questions: content.questions.length,
-    pictures: content.vocab.filter((item) => Boolean(item.image)).length + pictureSlides,
+    label,
+    draftCount: draft.length,
+    starterCount: starter.length,
+    isSame: canonicalJson(draft) === canonicalJson(starter),
   };
+}
+
+// What a teacher reads before replacing a draft with the latest starter: each part of the lesson,
+// its size on both sides and whether it already matches.
+export function compareWithStarter(
+  draft: ComparableContent,
+  starter: ComparableContent,
+): SectionComparison[] {
+  return [
+    ...COMPARED_SECTIONS.map(([key, label]) => compareSection(label, draft[key], starter[key])),
+    compareSection("Hình minh họa", pictures(draft), pictures(starter)),
+  ];
 }
