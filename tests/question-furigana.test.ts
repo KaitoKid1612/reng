@@ -7,7 +7,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import rawDraft from "../content/lessons/lesson-01.json";
 import { FuriganaText } from "../components/lessons/japanese-text";
 import { audioHash, canonicalAudio } from "../lib/audio-config";
-import { hasBrokenFurigana, listFuriganaMarks } from "../lib/japanese-text";
+import {
+  hasBrokenFurigana,
+  listFuriganaMarks,
+  splitUnderlines,
+  toPlainJapanese,
+  toSpeechText,
+} from "../lib/japanese-text";
 import { planContentAudio } from "../lib/lesson-audio";
 import {
   findFuriganaProblems,
@@ -71,6 +77,31 @@ test("exercise text draws furigana as ruby and leaves other text as written", ()
   );
   // Chinese questions never carry the mark and must not be marked as Japanese.
   assert.equal(renderToStaticMarkup(createElement(FuriganaText, { text: "你好吗？" })), "你好吗？");
+});
+
+test("an exam's underlined word keeps its underline and furigana, and is read without marks", () => {
+  assert.deepEqual(splitUnderlines("あしたは [[雨]]ですか。"), [
+    { text: "あしたは ", underline: false },
+    { text: "雨", underline: true },
+    { text: "ですか。", underline: false },
+  ]);
+  assert.deepEqual(splitUnderlines("[[ ]] なし"), [
+    { text: " ", underline: true },
+    { text: " なし", underline: false },
+  ]);
+  assert.equal(
+    renderToStaticMarkup(
+      createElement(FuriganaText, { text: "[[{今日|きょう}]]は いい 天気です。" }),
+    ),
+    '<u class="exam-underline"><ruby lang="ja">今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby></u>は いい 天気です。',
+  );
+  assert.equal(toPlainJapanese("この [[{不便|ふべん}]]な 町"), "この 不便な 町");
+  assert.equal(toSpeechText("この [[{不便|ふべん}]]な 町"), "この ふべんな 町");
+  // A lone bracket is ordinary text.
+  assert.equal(
+    renderToStaticMarkup(createElement(FuriganaText, { text: "[1] と [[2]" })),
+    "[1] と [[2]",
+  );
 });
 
 test("furigana in exercises publishes when it helps and is refused when it breaks or shows the answer", () => {

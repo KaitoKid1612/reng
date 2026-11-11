@@ -747,6 +747,8 @@ export interface ResultItem {
   points: number;
   // The JLPT section of the question, used by mock exam results; null when it fits none.
   section: JlptSection | null;
+  // Where reused material came from, with the original recording of a listening question.
+  source: { url: string; audioUrl: string | null } | null;
 }
 
 const answerRowSchema = z.object({
@@ -782,6 +784,9 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
       listenCount: isListeningQuestion(question) ? (answer?.listen_count ?? 0) : null,
       points: question.points,
       section: jlptSectionOf(question),
+      source: question.source
+        ? { url: question.source.url, audioUrl: question.source.audioUrl ?? null }
+        : null,
     };
   });
 }

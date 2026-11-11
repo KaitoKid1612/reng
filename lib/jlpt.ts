@@ -141,6 +141,33 @@ function keepPassagesTogether(ids: readonly string[], passageOf: ReadonlyMap<str
   return ordered;
 }
 
+const OFFICIAL_TAG = /^official:/;
+const LEVEL_TAG = /^jlpt:(n[45])$/;
+
+// Each question of a test reused whole, such as a JLPT official workbook, carries an
+// official:… tag (official:jlpt-2018).
+export function isOfficialTest(questions: readonly JlptQuestionShape[]) {
+  return (
+    questions.length > 0 &&
+    questions.every((question) =>
+      question.tags.some((tag) => OFFICIAL_TAG.test(tag.trim().toLowerCase())),
+    )
+  );
+}
+
+// The level an official test was written for, from its jlpt:n5 / jlpt:n4 tags.
+export function officialTestLevel(questions: readonly JlptQuestionShape[]): JlptLevel | null {
+  for (const question of questions) {
+    for (const tag of question.tags) {
+      const level = LEVEL_TAG.exec(tag.trim().toLowerCase());
+      if (level) {
+        return level[1].toUpperCase() as JlptLevel;
+      }
+    }
+  }
+  return null;
+}
+
 const LISTENING_PART = /^section:([1-4])$/;
 
 // The part of the real listening test a question was written for (section:1 課題理解 to
@@ -159,7 +186,8 @@ function listeningPartOf(tags: readonly string[]) {
  * Picks an exam from a bank: each section takes its quota, preferring questions not used in the
  * class's earlier exams and keeping a passage's questions together, in the exam's section order.
  * Listening takes only questions written in the test's format (tagged jlpt:n5 or jlpt:n4) when
- * the bank has a full section of them, and plays them in the test's part order.
+ * the bank has a full section of them, and plays them in the test's part order. An official test
+ * is taken whole, in its booklet's order: no quotas and no rotation.
  */
 export function composeJlptExam(
   candidates: readonly JlptExamCandidate[],
@@ -167,6 +195,18 @@ export function composeJlptExam(
   level: JlptLevel,
   seed: string,
 ) {
+  if (isOfficialTest(candidates)) {
+    const counts = emptySectionCounts();
+    const questionIds: string[] = [];
+    for (const candidate of candidates) {
+      const section = jlptSectionOf(candidate);
+      if (section && !questionIds.includes(candidate.id)) {
+        questionIds.push(candidate.id);
+        counts[section] += 1;
+      }
+    }
+    return { questionIds, counts };
+  }
   const bySection: Record<JlptSection, JlptExamCandidate[]> = {
     vocabulary: [],
     grammarReading: [],

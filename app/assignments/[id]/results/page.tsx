@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { describeAssignmentKind } from "@/components/classroom/assignment-labels";
 import { JlptResult } from "@/components/classroom/jlpt-result";
+import { QuestionCredits } from "@/components/classroom/question-credits";
 import { ResultRow } from "@/components/classroom/result-row";
 import { buttonVariants } from "@/components/ui/button";
 import { OutcomeFilter } from "@/components/ui/outcome-filter";
@@ -172,6 +173,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
             {visibleItems.map(({ item, number }) => (
               <ResultRow key={item.view.id} item={item} number={number} />
             ))}
+            <QuestionCredits credits={view.items.map((item) => item.view.credit)} />
           </section>
         </>
       )}

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
 import { OrderField } from "@/components/classroom/order-field";
+import { QuestionImage } from "@/components/classroom/question-image";
 import { FuriganaText } from "@/components/lessons/japanese-text";
 import { ListeningPlayer } from "@/components/listening/listening-player";
 
@@ -82,11 +83,21 @@ export function QuestionField({
     </div>
   );
   // Outside the fieldset too: a passage there would push the legend off the top border.
-  const passage = view.passage ? (
-    <blockquote className="question-passage" lang={view.lang}>
-      <FuriganaText text={view.passage} />
-    </blockquote>
-  ) : null;
+  const passage = (
+    <>
+      {view.instruction && (
+        <p className="question-instruction" lang={view.lang}>
+          <FuriganaText text={view.instruction} />
+        </p>
+      )}
+      {view.passage && (
+        <blockquote className="question-passage" lang={view.lang}>
+          <FuriganaText text={view.passage} />
+        </blockquote>
+      )}
+    </>
+  );
+  const image = view.image ? <QuestionImage src={view.image} position={position} /> : null;
   const player =
     view.type === "listen" || view.type === "dictation" ? (
       <ListeningPlayer
@@ -108,6 +119,7 @@ export function QuestionField({
           <legend lang={view.lang}>
             <FuriganaText text={view.prompt} />
           </legend>
+          {image}
           <OrderField
             tokens={view.tokens}
             value={
@@ -133,6 +145,7 @@ export function QuestionField({
           <FuriganaText text={view.prompt} />
         </label>
         {player}
+        {image}
         <AnswerInput
           id={fieldId}
           value={typeof value === "string" ? value : ""}
@@ -159,6 +172,7 @@ export function QuestionField({
           <FuriganaText text={view.prompt} />
         </legend>
         {player}
+        {image}
         {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
         <div className="choice-list">
           {choices.options.map((option, index) => {

@@ -298,6 +298,12 @@ interface QuestionViewBase {
   passage?: string;
   // The kind of exercise from the question's tags, such as "Đọc hiểu".
   section?: string;
+  // The exam heading of the question's group (もんだい１ …), shown above the prompt.
+  instruction?: string;
+  // A picture or printed table the question depends on (a public path or HTTPS URL).
+  image?: string;
+  // Credit for material reused under its owner's terms, shown once per page.
+  credit?: string;
 }
 
 export interface OrderToken {
@@ -392,6 +398,9 @@ export function toQuestionView(question: AssignableQuestion): QuestionView {
     lang: questionLang(question),
     ...(question.passage ? { passage: question.passage } : {}),
     ...(section ? { section } : {}),
+    ...(question.instruction ? { instruction: question.instruction } : {}),
+    ...(question.image ? { image: question.image } : {}),
+    ...(question.source ? { credit: question.source.credit } : {}),
   };
   switch (question.type) {
     case "choice":

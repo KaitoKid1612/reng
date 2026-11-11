@@ -71,7 +71,9 @@ Mọi slide có `id`, `type`; `teacherNotes` tùy chọn chỉ có trong payload
 
 Mọi câu có `id`, `type`, `prompt`, `points` là số nguyên dương, `tags`, `answer` là mảng và `explain`. Trường phục vụ nghe gồm `audio`, `transcript`, `maxListens` (null nghĩa là không giới hạn). Transcript cũng phải ẩn trước thời điểm được xem.
 
-Văn bản hiển thị của câu tiếng Nhật (`prompt`, `passage`, `options`, `tokens[].text`, `explain`, `transcript`) có thể chứa furigana `{漢字|かんじ}`, cùng cú pháp với nội dung bài học; không có trường furigana riêng. Đáp án học viên gõ (`answer` của `fill`, `dictation`, `listen` dạng điền) không chứa furigana (05/11/2026, [DD](detail-design/phase-3.md#furigana-trong-bài-tập--05112026)).
+Văn bản hiển thị của câu tiếng Nhật (`prompt`, `passage`, `options`, `tokens[].text`, `explain`, `transcript`) có thể chứa furigana `{漢字|かんじ}`, cùng cú pháp với nội dung bài học; không có trường furigana riêng. Chữ gạch chân của đề thi (từ được hỏi) viết `[[雨]]`; renderer hiện gạch chân, giọng đọc và nhãn thuần bỏ dấu này (11/11/2026).
+
+Từ 11/11/2026 mọi câu có thêm ba trường không bắt buộc, dùng cho đề chính thức JLPT ([soạn đề](content-authoring.md#đề-chính-thức-jlpt-公式問題集-第二集-2018)): `instruction` (tiêu đề nhóm câu như sách in, ví dụ もんだい１ …, hiện trên đề), `image` (hình câu hỏi: đường dẫn trong `public/` hoặc HTTPS, như tranh 4 lựa chọn của câu nghe) và `source` (`credit` ghi nguồn hiện một lần mỗi trang, `url` trang gốc, `audioUrl` bản ghi âm gốc của câu nghe, chỉ đặt link ở trang kết quả). Database không kiểm tra các trường này; app kiểm tra bằng `lib/lesson-schema.ts`. Đáp án học viên gõ (`answer` của `fill`, `dictation`, `listen` dạng điền) không chứa furigana (05/11/2026, [DD](detail-design/phase-3.md#furigana-trong-bài-tập--05112026)).
 
 | Type | Dữ liệu | Kiểu answer |
 |---|---|---|
@@ -213,6 +215,7 @@ Tra cứu nhanh, cập nhật tới 09/11/2026; chi tiết ở dòng chú thích
 | `20261110085351_lessons_server_writes_only` | Thu hồi quyền INSERT/UPDATE/DELETE trực tiếp trên `lessons` của `authenticated`/`anon` và bỏ hai policy ghi; giáo viên vẫn đọc bài của mình, mọi thao tác ghi đi qua server (service role, RPC). Trước đó giáo viên gọi thẳng Data API được để công khai bản sao bài được chia sẻ, bỏ lưu trữ hoặc ghi nháp mà trình soạn không nhận |
 | `20261110111047_learner_account_deletion` | `profiles.deleted_at`; `anonymize_learner(user)` (chỉ `service_role`): học viên tự xóa tài khoản bằng ẩn danh hóa, giữ bài nộp, câu trả lời, lịch sử ôn, điểm danh; xóa nhắc học, nhật ký email, lượt thử mã lớp, lịch sử nhập, lời mời chia sẻ, hồ sơ đăng ký dạy chưa duyệt; từ chối tài khoản giáo viên, quản trị viên hoặc còn bài, lớp. `class_roster` không trả email của người đã xóa ([BD](basic-design/teaching-service.md#học-viên-tự-xóa-tài-khoản--10112026)) |
 | `20261110112415_web_push` | `push_subscriptions` (thiết bị nhận thông báo, endpoint duy nhất), `push_log` (mỗi người, mỗi loại, mỗi ngày một lần gửi); chỉ `service_role`. `anonymize_learner` xóa thêm hai bảng này ([thông báo](08-notifications.md#web-push)) |
+| `20261111042428_jlpt_official_exams` | `publish_jlpt_mock_exam` nhận 1–100 câu (đề chính thức N5 91, N4 98 câu; bài giao thường vẫn 70); `start_attempt` mở đề thi thử ngay khi giao dù bài nguồn chưa mở với học viên (giữ kín đề), bài giao khác vẫn chờ bài mở |
 
 ## Mở rộng dữ liệu dịch vụ
 

@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 
-import { parseFurigana, splitJapaneseRuns } from "@/lib/japanese-text";
+import { parseFurigana, splitJapaneseRuns, splitUnderlines } from "@/lib/japanese-text";
 
 import type { JapaneseSegment } from "@/lib/japanese-text";
+import type { ReactNode } from "react";
 
 interface JapaneseTextProps {
   text: string;
@@ -28,9 +29,24 @@ function hasReading(segment: JapaneseSegment): segment is Required<JapaneseSegme
   return segment.reading !== undefined;
 }
 
-// Renders {漢字|かんじ} as ruby and marks Japanese runs inside Vietnamese text as lang="ja", so
-// they use the Japanese font.
-export function JapaneseText({ text }: JapaneseTextProps) {
+// An exam's underlined word ([[雨]]) keeps its underline wherever the text is shown.
+function Underlined({ text, render }: { text: string; render: (text: string) => ReactNode }) {
+  return (
+    <>
+      {splitUnderlines(text).map((segment, index) =>
+        segment.underline ? (
+          <u key={index} className="exam-underline">
+            {render(segment.text)}
+          </u>
+        ) : (
+          <Fragment key={index}>{render(segment.text)}</Fragment>
+        ),
+      )}
+    </>
+  );
+}
+
+function japaneseRuns(text: string) {
   return (
     <>
       {parseFurigana(text).map((segment, index) =>
@@ -54,9 +70,7 @@ export function JapaneseText({ text }: JapaneseTextProps) {
   );
 }
 
-// Exercise text: only {漢字|かんじ} becomes ruby and everything else stays as written, because the
-// container already sets the language and Chinese questions must not be marked as Japanese.
-export function FuriganaText({ text }: JapaneseTextProps) {
+function furiganaOnly(text: string) {
   return (
     <>
       {parseFurigana(text).map((segment, index) =>
@@ -68,4 +82,16 @@ export function FuriganaText({ text }: JapaneseTextProps) {
       )}
     </>
   );
+}
+
+// Renders {漢字|かんじ} as ruby and marks Japanese runs inside Vietnamese text as lang="ja", so
+// they use the Japanese font.
+export function JapaneseText({ text }: JapaneseTextProps) {
+  return <Underlined text={text} render={japaneseRuns} />;
+}
+
+// Exercise text: only {漢字|かんじ} becomes ruby and everything else stays as written, because the
+// container already sets the language and Chinese questions must not be marked as Japanese.
+export function FuriganaText({ text }: JapaneseTextProps) {
+  return <Underlined text={text} render={furiganaOnly} />;
 }

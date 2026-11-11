@@ -4,7 +4,7 @@ import { AssignmentForm } from "@/components/teach/assignment-form";
 import { ClassLessonForm } from "@/components/teach/class-lesson-form";
 import { JlptExamForm } from "@/components/teach/jlpt-exam-form";
 import { PinVersionButton } from "@/components/teach/pin-version-button";
-import { countJlptSections, examTitle } from "@/lib/jlpt";
+import { countJlptSections, examTitle, isOfficialTest, officialTestLevel } from "@/lib/jlpt";
 import { requireTeacher } from "@/lib/server/account";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass, listClassLessons, listOwnedLessons } from "@/lib/server/classes";
@@ -55,6 +55,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
           points: question.points,
         })),
         jlptSections: countJlptSections(questions),
+        officialLevel: isOfficialTest(questions) ? (officialTestLevel(questions) ?? "N5") : null,
       };
     }),
   );
@@ -141,6 +142,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
                 lessonId: lesson.lessonId,
                 title: lesson.title,
                 sections: lesson.jlptSections,
+                officialLevel: lesson.officialLevel,
               }))}
             defaultDueAt={examDueAt}
             defaultTitles={{ N5: examTitle("N5", now), N4: examTitle("N4", now) }}

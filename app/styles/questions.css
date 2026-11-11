@@ -23,6 +23,52 @@
   white-space: pre-line;
   overflow-wrap: anywhere;
 }
+/* Exam booklets: the heading of a group of questions (もんだい１ …), the word a question asks
+   about, the picture panel it chooses from and the credit for the material. */
+.question-instruction {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.exam-underline {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+/* Booklet pictures are black lines on white, so they keep a white sheet in dark mode too. */
+.question-image {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin: 0 0 16px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.question-credit {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+/* A labelled transcript reads as a dialogue: one line per turn, the speaker in front. */
+.transcript-turn {
+  display: block;
+}
+.transcript-speaker {
+  color: var(--muted);
+}
+.inline-icon {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: -2px;
+}
 .result-passage {
   margin: 0 0 8px;
 }

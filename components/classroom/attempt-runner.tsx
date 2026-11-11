@@ -11,6 +11,7 @@ import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
 import { DeadlineCountdown } from "@/components/classroom/deadline-countdown";
 import { ExamTimer } from "@/components/classroom/exam-timer";
+import { QuestionCredits } from "@/components/classroom/question-credits";
 import { Button } from "@/components/ui/button";
 import {
   answerLang,
@@ -348,6 +349,7 @@ export function AttemptRunner({
           Câu sau
         </Button>
       </div>
+      <QuestionCredits credits={views.map((view) => view.credit)} />
       <div className="attempt-toolbar">
         {isConfirming && (
           <section className="submit-confirm" aria-labelledby="confirm-title">

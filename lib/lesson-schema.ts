@@ -18,12 +18,37 @@ const media = z.string().refine((value) => {
   }
 }, "Media must use a local absolute path or HTTPS URL.");
 
+const httpsUrl = z.string().refine((value) => {
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
+}, "Links must use HTTPS.");
+
+// Material reused under its owner's terms, such as the JLPT official workbooks (jlpt.jp site
+// policy §1(4): free teaching material, source credited next to it).
+const questionSource = z
+  .object({
+    credit: text,
+    url: httpsUrl,
+    // The original recording of a listening question: linked from the results, never embedded.
+    audioUrl: httpsUrl.optional(),
+  })
+  .strict();
+
 const questionBase = {
   id: identifier,
+  // The heading an exam prints once above a group of questions (もんだい１ …); shown above
+  // each of them, since a learner may meet any one alone.
+  instruction: text.optional(),
   // Questions about one reading passage share it here instead of repeating it in each prompt;
   // it is shown above the question and keeps those questions together in a daily set.
   passage: text.optional(),
   prompt: text,
+  // A picture or printed table the question depends on, such as a JLPT listening panel.
+  image: media.optional(),
+  source: questionSource.optional(),
   points: z.number().int().positive(),
   tags: z.array(text).default([]),
   explain: text,

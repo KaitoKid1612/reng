@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 
+import { TranscriptText } from "@/components/classroom/transcript-text";
 import { FuriganaText } from "@/components/lessons/japanese-text";
 
 interface AnswerFeedbackProps {
@@ -41,7 +42,7 @@ export function AnswerFeedback({
           <p className="transcript">
             Lời nghe:{" "}
             <span lang={transcriptLang}>
-              <FuriganaText text={transcript} />
+              <TranscriptText text={transcript} />
             </span>
           </p>
         )}

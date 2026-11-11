@@ -5,6 +5,9 @@ const JAPANESE_RUN =
   /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}\u3000-\u303f\u30fb\u30fc\uff01-\uff5e]+/gu;
 // 〜 marks where a word attaches (〜にん); it is never read aloud.
 const PLACEHOLDER = /[〜～]/g;
+// Exam text underlines the word a question asks about, written [[雨]] (JLPT 文字・語彙: how is
+// the underlined word read?). Furigana marks may sit inside.
+const UNDERLINE = /\[\[([^[\]]+)\]\]/g;
 
 export const containsKanji = (value: string) => /\p{Script=Han}/u.test(value);
 
@@ -29,9 +32,32 @@ export function parseFurigana(value: string): JapaneseSegment[] {
   return segments;
 }
 
+export interface UnderlineSegment {
+  text: string;
+  underline: boolean;
+}
+
+// Splits text at [[…]] marks; text without marks comes back as one plain segment.
+export function splitUnderlines(value: string): UnderlineSegment[] {
+  const segments: UnderlineSegment[] = [];
+  let position = 0;
+  for (const match of value.matchAll(UNDERLINE)) {
+    if (match.index > position) {
+      segments.push({ text: value.slice(position, match.index), underline: false });
+    }
+    segments.push({ text: match[1], underline: true });
+    position = match.index + match[0].length;
+  }
+  if (position < value.length) {
+    segments.push({ text: value.slice(position), underline: false });
+  }
+  return segments;
+}
+
 // Speech uses the reading so device voices and generated audio do not guess kanji readings.
 export function toSpeechText(value: string) {
   return value
+    .replace(UNDERLINE, (_match, inner: string) => inner)
     .replace(FURIGANA, (_match, _base: string, reading: string) => reading.trim())
     .replace(PLACEHOLDER, "")
     .trim();
@@ -39,7 +65,9 @@ export function toSpeechText(value: string) {
 
 // Labels, summaries and search descriptions keep the written form only.
 export function toPlainJapanese(value: string) {
-  return value.replace(FURIGANA, (_match, base: string) => base.trim());
+  return value
+    .replace(UNDERLINE, (_match, inner: string) => inner)
+    .replace(FURIGANA, (_match, base: string) => base.trim());
 }
 
 // The written form and reading of every {漢字|かんじ} mark, in order.

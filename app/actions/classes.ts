@@ -525,6 +525,11 @@ const JLPT_EXAM_ERRORS: Record<string, string> = {
   no_exam_questions:
     "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, reading hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
   invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",
+  official_level:
+    "Đề chính thức chỉ giao đúng cấp của sách. Chọn lại cấp N5 hoặc N4 cho khớp với đề.",
+  // Production before migration 20261111042428 (jlpt_official_exams): an exam holds at most 70 questions.
+  invalid_items:
+    "Đề có nhiều câu hơn giới hạn của database (70 câu). Cần cập nhật database của Reng trước khi giao đề chính thức.",
   // Production before migration 20261109032029: the function does not exist yet.
   database_error: "Chưa tạo được đề thi thử. Nếu lỗi lặp lại, cần cập nhật database của Reng.",
 };

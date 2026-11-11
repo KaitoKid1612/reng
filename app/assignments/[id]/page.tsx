@@ -47,7 +47,8 @@ function describeBlocker(view: StudentAssignmentView, now: Date) {
   if (assignment.status === "closed" || !view.isClassActive) {
     return "Bài này đã đóng, không bắt đầu lượt mới được.";
   }
-  if (Date.parse(view.availableAt) > now.getTime()) {
+  // A mock exam opens when it is given; its source lesson may stay closed to keep the test unseen.
+  if (!assignment.exam && Date.parse(view.availableAt) > now.getTime()) {
     return `Bài sẽ mở lúc ${formatStudyDateTime(view.availableAt)}.`;
   }
   if (getDeadlineState(assignment.dueAt, assignment.allowLate, now) === "past_due") {

@@ -71,14 +71,17 @@ function profileAfterEdit(draft: TestQuestionDraft, original: TextQuestion) {
   return original.gradingProfile;
 }
 
-// Keeps ID, tags and passage. Blank answer lines and pieces stay while typing and are dropped
-// on publish.
+// Keeps ID, tags, passage and the exam material the editor does not show (heading, picture,
+// credit). Blank answer lines and pieces stay while typing and are dropped on publish.
 export function fromQuestionDraft(draft: TestQuestionDraft, original: TextQuestion): DraftQuestion {
   const gradingProfile = profileAfterEdit(draft, original);
   const shared = {
     id: original.id,
     tags: original.tags,
+    ...(original.instruction ? { instruction: original.instruction } : {}),
     ...(draft.passage ? { passage: draft.passage } : {}),
+    ...(original.image ? { image: original.image } : {}),
+    ...(original.source ? { source: original.source } : {}),
     prompt: draft.prompt,
     explain: draft.explain,
     points: Number.isInteger(draft.points) ? Math.max(0, Math.min(100, draft.points)) : 0,

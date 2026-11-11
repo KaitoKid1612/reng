@@ -1,4 +1,8 @@
+import { ExternalLink } from "lucide-react";
+
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { QuestionImage } from "@/components/classroom/question-image";
+import { TranscriptText } from "@/components/classroom/transcript-text";
 import { FuriganaText } from "@/components/lessons/japanese-text";
 import { answerLang } from "@/lib/assignment";
 
@@ -24,6 +28,7 @@ export function ResultRow({ item, number }: ResultRowProps) {
       <p lang={item.view.lang} className="question-prompt">
         <FuriganaText text={item.view.prompt} />
       </p>
+      {item.view.image && <QuestionImage src={item.view.image} position={number} />}
       <p>
         Bạn trả lời:{" "}
         <strong lang={answerLang(item.view)}>
@@ -42,9 +47,17 @@ export function ResultRow({ item, number }: ResultRowProps) {
         <p className="transcript">
           Lời nghe:{" "}
           <span lang={item.view.lang}>
-            <FuriganaText text={item.transcript} />
+            <TranscriptText text={item.transcript} />
           </span>{" "}
           (bạn đã nghe {item.listenCount} lần)
+        </p>
+      )}
+      {item.source?.audioUrl && (
+        <p className="small">
+          <a href={item.source.audioUrl} target="_blank" rel="noopener noreferrer">
+            Nghe bản ghi âm gốc của phần này trên trang chính thức JLPT (jlpt.jp)
+            <ExternalLink size={14} aria-hidden="true" className="inline-icon" />
+          </a>
         </p>
       )}
       <p className="muted">

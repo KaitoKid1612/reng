@@ -5,6 +5,7 @@ import { test } from "node:test";
 import { parseAssignableQuestion, toAttemptItems } from "@/lib/assignment";
 import {
   composeJlptExam,
+  isOfficialTest,
   countJlptSections,
   currentPacingStep,
   describeJlptCountdown,
@@ -15,6 +16,7 @@ import {
   isExamTimeUp,
   isHandedInAtTimeLimit,
   JLPT_EXAM_MAX_LISTENS,
+  officialTestLevel,
   jlptSectionOf,
   planExamPacing,
   planJlptExam,
@@ -133,6 +135,32 @@ for (const [file, level] of [
     assert.ok(new Set(parts).size >= 3, "the exam mixes the parts");
   });
 }
+
+test("an official test is taken whole, in its order, at its own level", () => {
+  const official = (id: string, type: string, tags: string[]) => ({
+    id,
+    type,
+    tags: [...tags, "official:jlpt-2018"],
+    passage: null,
+  });
+  const bank = [
+    official("v1", "choice", ["文字・語彙"]),
+    official("g1", "choice", ["文法"]),
+    official("r1", "choice", ["読解"]),
+    official("l1", "listen", ["listening", "jlpt:n4", "section:1"]),
+    official("l2", "listen", ["listening", "jlpt:n4", "section:4"]),
+  ];
+  assert.ok(isOfficialTest(bank));
+  assert.equal(officialTestLevel(bank), "N4");
+  const uses = [{ questionId: "v1", practiceDate: "2026-11-09" }];
+  const exam = composeJlptExam(bank, uses, "N4", "class:official");
+  assert.deepEqual(exam.questionIds, ["v1", "g1", "r1", "l1", "l2"], "no rotation, no quotas");
+  assert.deepEqual(exam.counts, { vocabulary: 1, grammarReading: 2, listening: 2 });
+  // One question without the tag makes it an ordinary bank again.
+  const mixed = [...bank, { id: "x", type: "choice", tags: ["文法"], passage: null }];
+  assert.equal(isOfficialTest(mixed), false);
+  assert.equal(officialTestLevel([official("v1", "choice", ["文字・語彙"])]), null);
+});
 
 test("an exam takes any listening question when the test's format cannot fill the section", () => {
   const listen = (id: string, tags: string[]) => ({ id, type: "listen", tags, passage: null });

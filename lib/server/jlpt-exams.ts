@@ -4,7 +4,14 @@ import { z } from "zod";
 
 import { FEEDBACK_POLICIES } from "@/lib/assignment";
 import { toVietnamDate } from "@/lib/daily-practice";
-import { composeJlptExam, JLPT_LEVELS, MAX_EXAM_MINUTES, MIN_EXAM_MINUTES } from "@/lib/jlpt";
+import {
+  composeJlptExam,
+  isOfficialTest,
+  JLPT_LEVELS,
+  MAX_EXAM_MINUTES,
+  MIN_EXAM_MINUTES,
+  officialTestLevel,
+} from "@/lib/jlpt";
 import { listAssignmentExams } from "@/lib/server/assignment-exams";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass } from "@/lib/server/classes";
@@ -80,6 +87,10 @@ export async function publishJlptExam(teacherId: string, input: PublishJlptExamI
     listAssignablePracticeQuestions(input.classId, input.lessonId),
     listRecentExamUses(input.classId),
   ]);
+  // An official workbook test keeps the level it was written for: its time and pass mark.
+  if (isOfficialTest(questions) && officialTestLevel(questions) !== input.level) {
+    throw new ServiceError("official_level");
+  }
   const composition = composeJlptExam(
     questions.map((question) => ({
       id: question.id,

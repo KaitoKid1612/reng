@@ -73,7 +73,8 @@ function describeLearnerAssignment(
     status = "in_progress";
   } else if (latest) {
     status = "submitted";
-  } else if (!lesson || Date.parse(lesson.availableAt) > now.getTime()) {
+  } else if (!lesson || (!assignment.exam && Date.parse(lesson.availableAt) > now.getTime())) {
+    // A mock exam opens when it is given; its source may stay closed so the test is unseen.
     status = "not_available";
   }
   return {

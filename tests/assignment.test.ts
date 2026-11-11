@@ -71,6 +71,41 @@ test("test payloads expose only the question allowlist before feedback", () => {
   assert.equal(describeCorrectAnswer(questions[0]), "は");
 });
 
+test("an official exam question shows its heading, picture and credit but no answer or links", () => {
+  const official = parseAssignableQuestion({
+    id: "n5-2018-l-1-1",
+    type: "listen",
+    responseType: "choice",
+    instruction: "もんだい１ …",
+    prompt: "もんだい１　１ばん",
+    image: "/images/jlpt/2018/n5/l-1-1.png",
+    options: ["1", "2", "3", "4"],
+    answer: [2],
+    audio: "0123456789abcdef0123456789abcdef",
+    transcript: "ナレーター：…女：…",
+    explain: "Giải thích.",
+    points: 1,
+    tags: ["listening", "official:jlpt-2018"],
+    source: {
+      credit: "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+      url: "https://www.jlpt.jp/samples/sampleindex.html",
+      audioUrl: "https://www.jlpt.jp/samples/sample2018/mp3/N5Q1.mp3",
+    },
+  });
+  const [item] = toAttemptItems([official], "test");
+  assert.equal(item.view.instruction, "もんだい１ …");
+  assert.equal(item.view.image, "/images/jlpt/2018/n5/l-1-1.png");
+  assert.equal(item.view.credit, "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）");
+  const serialized = JSON.stringify(item);
+  for (const field of ['"answer"', '"transcript"', "sample2018/mp3", '"explain"']) {
+    assert.equal(serialized.includes(field), false, `${field} leaked into an exam payload`);
+  }
+  assert.throws(() => parseAssignableQuestion({ ...official, image: "//evil.example/x.png" }));
+  assert.throws(() =>
+    parseAssignableQuestion({ ...official, source: { ...official.source, url: "http://jlpt.jp" } }),
+  );
+});
+
 test("a kana answer accepted before a question became kanji-strict is left out, not fatal", () => {
   const snapshot = {
     id: "k1",

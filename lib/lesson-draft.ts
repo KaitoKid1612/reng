@@ -150,8 +150,20 @@ const draftSlideSchema = z.discriminatedUnion("type", [
 // question would lose its text and a Chinese question would fall back to the Japanese rules.
 const questionFields = {
   id: identifier,
+  // Exam material (JLPT official workbooks): the もんだい heading, a booklet picture and the
+  // credit; checked strictly when the lesson is published.
+  instruction: draftText(500).optional(),
   passage: draftText(MAX_PASSAGE_LENGTH).optional(),
   prompt: draftText(500),
+  image: draftText(500).optional(),
+  source: z
+    .object({
+      credit: draftText(200),
+      url: draftText(500),
+      audioUrl: draftText(500).optional(),
+    })
+    .strict()
+    .optional(),
   explain: draftText(1000),
   points: z.number().int().min(0).max(100),
   tags: z.array(z.string().max(40)).max(10).default([]),
@@ -180,7 +192,9 @@ const draftFillSchema = z
 
 const listeningFields = {
   audio,
-  transcript: draftText(500),
+  // A JLPT N4 official script with furigana on every kanji runs to about 730 characters; the
+  // editor's own field still stops typing at 500.
+  transcript: draftText(1000),
   maxListens: z.number().int().min(1).max(MAX_RECORDED_LISTENS).nullable().default(null),
 };
 
@@ -609,6 +623,11 @@ function describeFuriganaProblem(question: EditableDraftQuestion) {
   }
   if (typedAnswers(question).some((answer) => /[{}]/.test(answer))) {
     return "đáp án học viên gõ không dùng furigana; chỉ ghi chữ cần gõ.";
+  }
+  // An official exam (tag official:…) prints its furigana as the booklet does; the guesses below
+  // misfire on its long passages (はい of 入 against 2はい, の of 飲 against the particle の).
+  if (question.tags.some((tag) => tag.startsWith("official:"))) {
+    return null;
   }
   // Reading questions ask exactly what furigana would show.
   if (question.tags.includes("kanji") && shown.some((text) => listFuriganaMarks(text).length)) {

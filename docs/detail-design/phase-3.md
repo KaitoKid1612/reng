@@ -225,3 +225,30 @@ Câu trong bài giao là snapshot chép từ bài nguồn lúc giao, và trigger
 - **Câu nghe theo dạng đề thật (11/11/2026):** khi ngân hàng có ít nhất số câu nghe của cấp (20) mang nhãn `jlpt:n5` hoặc `jlpt:n4`, `composeJlptExam` chỉ lấy các câu này; câu nghe viết cho bài hằng ngày (nghe rồi gõ, câu theo bài Minna) không vào đề. Thiếu thì lấy mọi câu nghe như trước. Câu nghe được xếp theo phần của đề thật theo nhãn `section:1`–`section:4` (課題理解, ポイント理解, 発話表現, 即時応答), câu không có nhãn phần đứng sau; trong một phần giữ thứ tự của bộ chọn. Ngân hàng N5 có 40 câu, N4 có 60 câu như vậy, đủ hai và ba đề không lặp. Kiểm chứng: `tests/jlpt.test.ts` (đề N5, N4 từ ngân hàng thật chỉ có câu đúng nhãn, đúng thứ tự phần; ngân hàng thiếu câu thì lấy thêm câu khác, câu có phần đứng trước).
 - **Giờ gợi ý từng phần (10/11/2026):** `JLPT_SECTION_MINUTES` (N5 20/40/30, N4 25/55/35). `getStudentAssignment` gửi kèm lượt đang làm `sections` (phần JLPT của từng câu theo `jlptSectionOf`, chỉ với đề thi thử); trang đề gọi `planExamPacing(level, phút, sections, startedAt)`: các phần liên tiếp theo thứ tự trong đề, mỗi phần lấy phần thời gian theo tỉ lệ đề thật (làm tròn phút, phần cuối lấy phần còn lại), `endsAt` tính từ lúc bắt đầu lượt. Đề có một phần hoặc phần quay lại sau phần khác thì không có gợi ý. `ExamTimer` hiện `currentPacingStep` (phần đầu tiên chưa hết giờ) dưới dòng đồng hồ, thời gian còn lại của phần (không quá thời gian chung) và nút **Đến câu n** từ phần thứ hai; một vùng `aria-live` chỉ đổi chữ khi sang phần mới. Trang trước khi bắt đầu ghi cách chia (`describeExamPacing`). Không khóa phần đã qua, không thêm cột hay migration. Kiểm chứng: `tests/jlpt.test.ts`, `e2e-supabase/jlpt-mock-exam.spec.ts` (dòng gợi ý của N5 lúc bắt đầu) và ảnh chụp local khi lùi giờ bắt đầu 30 phút (sang phần 2, nút Đến câu 26 nhảy đúng câu).
 - Kiểm chứng: `tests/jlpt.test.ts` (phân phần với ngân hàng N5/N4 thật, ghép đề, xoay câu, đoạn văn, ước tính, lịch, đồng hồ), `tests/jlpt-exam-migration.test.ts` (PGlite: quyền và đầu vào khi tạo đề, bảng không sửa được sau khi giao, phút thêm sau giới hạn, cron nộp đúng lúc hết giờ, thẻ lỗi chờ hạn, bài thường không bị ảnh hưởng), `tests/assignment-message.test.ts`; trình duyệt trên Supabase local ([báo cáo](../testing/jlpt-mock-exam-2026-11-09.md)).
+
+## Đề chính thức JLPT — 11/11/2026
+
+Người dùng chọn: giọng máy đọc nguyên văn script chính thức kèm link bản ghi âm gốc ở trang kết quả, một đề đủ câu thay vì tách hai đề. Nguồn và quyền dùng ở [báo cáo](../testing/jlpt-official-sources-2026-11-11.md); cách chép và nạp ở [soạn nội dung](../content-authoring.md#đề-chính-thức-jlpt-公式問題集-第二集-2018).
+
+- **Dữ liệu câu** (`lib/lesson-schema.ts`): thêm `instruction` (tiêu đề もんだい), `image` (đường dẫn `public/` hoặc HTTPS) và `source` ({`credit`, `url`, `audioUrl`}).
+  - `toQuestionView` gửi `instruction`, `image` và `credit`. `ResultItem.source` mang `url`/`audioUrl` sau khi được xem kết quả.
+  - `QuestionField` hiện tiêu đề nhóm câu, đoạn văn, đề, trình phát, hình (`QuestionImage`, `next/image` không tối ưu, nền trắng cả khi giao diện tối), rồi các lựa chọn.
+  - `QuestionCredits` ghi nguồn một lần dưới danh sách câu ở trang làm bài và trang kết quả.
+  - `ResultRow` hiện hình, lời nghe tách theo lượt nói (`TranscriptText`, dùng chung với phản hồi luyện tập) và link bản ghi âm gốc mở tab mới.
+- **Gạch chân:** `[[…]]` (`splitUnderlines` trong `lib/japanese-text.ts`) thành `<u class="exam-underline">` ở `FuriganaText`/`JapaneseText`. `toSpeechText` và `toPlainJapanese` bỏ dấu. Database (`strip_furigana`) không cần biết, vì sửa đề vẫn so cả dấu.
+- **Ghép đề** (`lib/jlpt.ts`): `isOfficialTest` khi mọi câu có tag `official:…`, `officialTestLevel` từ tag `jlpt:n5`/`jlpt:n4`. `composeJlptExam` lấy mọi câu xếp được vào phần thi theo thứ tự bài, không chia số câu từng phần, không xoay vòng.
+  - Form Thi thử JLPT hiện đủ số câu, đặt cấp, số phút và tên theo bài khi chọn đề chính thức.
+  - `publishJlptExam` từ chối cấp khác cấp của đề (`official_level`).
+- **Migration `20261111042428_jlpt_official_exams`:**
+  - `publish_jlpt_mock_exam` nhận 1–100 câu. `MAX_ASSIGNMENT_QUESTIONS` (70) của bài giao thường không đổi.
+  - `start_attempt` bỏ điều kiện bài nguồn đã mở khi bài giao là đề thi thử (có dòng `assignment_exams`). `describeLearnerAssignment` và trang đề (`describeBlocker`) cũng bỏ qua lịch mở với đề thi thử.
+  - Nhờ vậy bài nguồn đặt `available_at` sau kỳ thi: học viên không đọc trước câu hỏi ở trang bài, mục Luyện nghe hay bài hằng ngày. Các bài giao khác của bài đó vẫn chờ bài mở.
+  - Trước migration, đề quá 70 câu báo lỗi `invalid_items` có lời nhắn riêng.
+- **Nạp production:** `npm run official:sql` (`scripts/official-test-sql.ts`) kiểm tra schema, tag chính thức, nguồn, furigana, hình và audio, rồi viết một transaction:
+  - đăng ký audio;
+  - `insert_lesson_copy` theo fingerprint cho giáo viên, với `copy_attribution` là dòng nguồn;
+  - `publish_lesson` khi nội dung đổi;
+  - `upsert_class_lesson` vào lớp theo tên, giữ thứ tự nếu đã có, mở từ `--opens-at` (mặc định 07/12/2026 0:00 giờ Việt Nam).
+  - Không `--commit` thì kết thúc bằng ROLLBACK.
+- **Kiểm chứng:** `tests/jlpt-official-exams-migration.test.ts` (PGlite: đề 98 câu đúng thứ tự, 100 được, 101 và 0 bị từ chối; đề thi thử bắt đầu được khi bài nguồn còn đóng, bài kiểm tra thường của bài đó vẫn `not_available`) và `tests/jlpt-official-tests.test.ts` (đề N5/N4 khớp 正答表, số câu từng phần, nguồn, hình, audio, lời nghe không còn chữ Hán thiếu cách đọc, ghép đề đủ câu đúng thứ tự).
+

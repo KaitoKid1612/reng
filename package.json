@@ -26,6 +26,7 @@
     "lesson:import": "node --env-file-if-exists=.env.local --import tsx scripts/import-lesson.ts",
     "daily:import": "node --import tsx scripts/import-daily-sheet.ts",
     "bank:sql": "node --import tsx scripts/review-bank-sql.ts",
+    "official:sql": "node --import tsx scripts/official-test-sql.ts",
     "furigana:sql": "node --import tsx scripts/furigana-snapshot-sql.ts",
     "listening:sql": "node --env-file-if-exists=.env.local --import tsx scripts/listening-draft-sql.ts",
     "listening:merge": "node --import tsx scripts/merge-daily-listening.ts",

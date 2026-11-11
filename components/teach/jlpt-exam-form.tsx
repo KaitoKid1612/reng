@@ -22,6 +22,8 @@ export interface JlptExamLessonOption {
   lessonId: string;
   title: string;
   sections: Record<JlptSection, number>;
+  // An official test (JLPT workbook) is given whole, at the level it was written for.
+  officialLevel: JlptLevel | null;
 }
 
 interface JlptExamFormProps {
@@ -59,7 +61,11 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
   // not in the list any more, or none yet, falls back to the best bank.
   const lesson = lessons.find((item) => item.lessonId === chosenLessonId) ?? bestLesson;
   const lessonId = lesson?.lessonId ?? "";
-  const planned = lesson ? planJlptExam(level, lesson.sections) : null;
+  const isOfficial = Boolean(lesson?.officialLevel);
+  let planned: Record<JlptSection, number> | null = null;
+  if (lesson) {
+    planned = isOfficial ? lesson.sections : planJlptExam(level, lesson.sections);
+  }
   const plannedTotal = planned
     ? JLPT_SECTIONS.reduce((total, section) => total + planned[section], 0)
     : 0;
@@ -73,6 +79,25 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
       setTitle(defaultTitles[next]);
     }
     setLevel(next);
+  }
+
+  // An official test sets its own level and, unless the teacher typed a title, its own name.
+  function handleLessonChange(nextId: string) {
+    const next = lessons.find((item) => item.lessonId === nextId);
+    const isDefaultTitle =
+      title === defaultTitles[level] || lessons.some((item) => item.title === title);
+    setLessonId(nextId);
+    if (!next) {
+      return;
+    }
+    const nextLevel = next.officialLevel ?? level;
+    if (minutes === String(JLPT_PRESETS[level].minutes)) {
+      setMinutes(String(JLPT_PRESETS[nextLevel].minutes));
+    }
+    if (isDefaultTitle) {
+      setTitle(next.officialLevel ? next.title : defaultTitles[nextLevel]);
+    }
+    setLevel(nextLevel);
   }
 
   if (!lessons.length) {
@@ -111,7 +136,7 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
             id="jlpt-lesson"
             name="lessonId"
             value={lessonId}
-            onChange={(event) => setLessonId(event.target.value)}
+            onChange={(event) => handleLessonChange(event.target.value)}
             required
           >
             {lessons.map((item) => (
@@ -176,13 +201,15 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
             {plannedTotal > 0
               ? `Đề gồm ${JLPT_SECTIONS.filter((section) => planned[section] > 0)
                   .map((section) => `${planned[section]} câu ${SHORT_LABELS[section]}`)
-                  .join(
-                    ", ",
-                  )}: ${plannedTotal} câu, một lượt làm. Câu đã ra ở các đề trước của lớp được dùng sau cùng.`
+                  .join(", ")}: ${plannedTotal} câu, một lượt làm. ${
+                  isOfficial
+                    ? "Đề chính thức: lấy đủ mọi câu, đúng thứ tự trong sách."
+                    : "Câu đã ra ở các đề trước của lớp được dùng sau cùng."
+                }`
               : "Bài này chưa có câu nào xếp được vào phần thi JLPT. Chọn ngân hàng ôn N5 hoặc N4."}
           </p>
           {JLPT_SECTIONS.filter(
-            (section) => planned[section] < JLPT_PRESETS[level].quotas[section],
+            (section) => !isOfficial && planned[section] < JLPT_PRESETS[level].quotas[section],
           ).map((section) => (
             <p key={section} className="small">
               {JLPT_SECTION_LABELS[section]}: bài chỉ có {lesson.sections[section]} câu, ít hơn{" "}
