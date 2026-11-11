@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ClassAssignmentList } from "@/components/teach/class-assignment-list";
 import { ClassLessonList } from "@/components/teach/class-lesson-list";
 import { ClassScheduleForm } from "@/components/teach/class-schedule-form";
+import { ClassSectionNav } from "@/components/teach/class-section-nav";
 import { ClassSessionForm } from "@/components/teach/class-session-form";
 import { ClassSessionList } from "@/components/teach/class-session-list";
 import { ClassSettingsForm } from "@/components/teach/class-settings-form";
@@ -55,6 +56,29 @@ interface ClassReportPageProps {
   params: Promise<{ id: string }>;
   // Set by the "Ghi buổi dạy" link on the slides.
   searchParams: Promise<{ lesson?: string; slide?: string; assigned?: string }>;
+}
+
+interface ClassSectionOptions {
+  hasJoinCode: boolean;
+  hasLearners: boolean;
+  isSelfStudy: boolean;
+}
+
+// The sections in page order; the join code sits at the top until the first learner joins.
+function listClassSections({ hasJoinCode, hasLearners, isSelfStudy }: ClassSectionOptions) {
+  const joinCode = { id: "join-code", label: "Mã lớp" };
+  return [
+    ...(hasJoinCode && !hasLearners ? [joinCode] : []),
+    { id: "students-title", label: "Học viên" },
+    { id: "hard-questions", label: "Câu sai nhiều" },
+    { id: "daily-practice-title", label: "Luyện hằng ngày" },
+    { id: "assignments-title", label: "Bài đã giao" },
+    { id: "class-schedule", label: "Lịch học" },
+    ...(isSelfStudy ? [] : [{ id: "class-sessions", label: "Nhật ký buổi dạy" }]),
+    { id: "class-content", label: "Nội dung lớp" },
+    ...(hasJoinCode && hasLearners ? [joinCode] : []),
+    { id: "class-settings", label: "Cài đặt lớp" },
+  ];
 }
 
 export default async function ClassReportPage({ params, searchParams }: ClassReportPageProps) {
@@ -185,6 +209,13 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           )}
         </div>
       </div>
+      <ClassSectionNav
+        sections={listClassSections({
+          hasJoinCode: joinCodeControls !== null,
+          hasLearners,
+          isSelfStudy: classRow.self_study,
+        })}
+      />
       {showsSetup && <StartChecklist steps={setupSteps} title="Các bước tiếp theo cho lớp" />}
       {!hasLearners && joinCodeControls}
       {!classRow.self_study && (
