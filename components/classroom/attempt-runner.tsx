@@ -7,6 +7,8 @@ import { flushSync } from "react-dom";
 
 import { AnswerFeedback } from "@/components/classroom/answer-feedback";
 import { readAttemptView, saveAttemptView } from "@/components/classroom/attempt-view";
+import { playFeedbackSound } from "@/components/feedback-sound";
+import { SoundToggle } from "@/components/sound-toggle";
 import { QuestionField } from "@/components/classroom/question-field";
 import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
@@ -138,6 +140,10 @@ export function AttemptRunner({
   }
 
   function handleCheck(questionId: string) {
+    const item = items.find((candidate) => candidate.view.id === questionId);
+    if (item?.answerKey) {
+      playFeedbackSound(isAnswerCorrect(item) ? "correct" : "wrong");
+    }
     sync.updateDraft((current) => ({ ...current, checked: [...current.checked, questionId] }));
   }
 
@@ -302,6 +308,7 @@ export function AttemptRunner({
           />
         )}
         <div className="attempt-head-tools">
+          {mode === "practice" && <SoundToggle />}
           {items.length > 1 && (
             <div className="attempt-view-toggle" role="group" aria-label="Cách hiện câu hỏi">
               {VIEW_OPTIONS.map((option) => (

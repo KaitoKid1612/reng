@@ -5,6 +5,8 @@ import { Check, X } from "lucide-react";
 import { useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
+import { playFeedbackSound } from "@/components/feedback-sound";
+import { SoundToggle } from "@/components/sound-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { PracticeScore } from "@/components/ui/score-ring";
 import { isPinyinCorrect, pickPinyinSession, PINYIN_SESSION_SIZE } from "@/lib/pinyin-study";
@@ -55,6 +57,7 @@ export function PinyinPractice({ words }: PinyinPracticeProps) {
     }
     const word = queue[index];
     const attempt = { word, answer, isCorrect: isPinyinCorrect(answer, word) };
+    playFeedbackSound(attempt.isCorrect ? "correct" : "wrong");
     setError("");
     setChecked(attempt);
     setAttempts((current) => [...current, attempt]);
@@ -135,8 +138,11 @@ export function PinyinPractice({ words }: PinyinPracticeProps) {
     <div className="practice-session">
       <div className="practice-top">
         <p>Pinyin</p>
-        <span>
-          Từ {index + 1} / {queue.length}
+        <span className="practice-top-end">
+          <span>
+            Từ {index + 1} / {queue.length}
+          </span>
+          <SoundToggle />
         </span>
       </div>
       <progress

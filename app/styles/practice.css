@@ -94,6 +94,7 @@ input[name="romaji"] {
 .practice-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: var(--muted);
   font-size: 14px;
 }
@@ -102,8 +103,13 @@ input[name="romaji"] {
 }
 .practice-top-end {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
+  margin-bottom: 12px;
+}
+.practice-top-end .sound-toggle {
+  width: 28px;
+  height: 28px;
 }
 /* The run of right answers: a warm chip that pops each time it grows. */
 .streak-chip {

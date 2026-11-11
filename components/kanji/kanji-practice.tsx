@@ -4,6 +4,8 @@ import { Check, X } from "lucide-react";
 import { useReducer, useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
+import { playFeedbackSound } from "@/components/feedback-sound";
+import { SoundToggle } from "@/components/sound-toggle";
 import { Button } from "@/components/ui/button";
 import { PracticeScore } from "@/components/ui/score-ring";
 import {
@@ -11,6 +13,7 @@ import {
   describeKanjiAnswer,
   getKanjiMistakes,
   initialKanjiPractice,
+  isCorrectKanjiAnswer,
   KANJI_KIND_LABELS,
   KANJI_QUESTION_KINDS,
   kanjiPracticeReducer,
@@ -119,6 +122,8 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
       return;
     }
     setInputError("");
+    const question = state.questions[state.index];
+    playFeedbackSound(question && isCorrectKanjiAnswer(question, answer) ? "correct" : "wrong");
     dispatch({ type: "submit", answer });
   }
 
@@ -233,8 +238,11 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
     <div className="practice-session">
       <div className="practice-top">
         <p>{settings.title}</p>
-        <span>
-          Câu {state.index + 1} / {state.questions.length}
+        <span className="practice-top-end">
+          <span>
+            Câu {state.index + 1} / {state.questions.length}
+          </span>
+          <SoundToggle />
         </span>
       </div>
       <progress

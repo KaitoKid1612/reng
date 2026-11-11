@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { AnswerFeedback } from "@/components/classroom/answer-feedback";
+import { playFeedbackSound } from "@/components/feedback-sound";
+import { SoundToggle } from "@/components/sound-toggle";
 import { QuestionField } from "@/components/classroom/question-field";
 import { StreakCard } from "@/components/progress/streak-card";
 import { RatingButtons } from "@/components/review/rating-buttons";
@@ -157,6 +159,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
     });
     const parsed = data ? parseMistakeOutcome(data) : null;
     if (parsed) {
+      playFeedbackSound(parsed.isCorrect ? "correct" : "wrong");
       setOutcome(parsed);
       setAnsweredMistakeCount((value) => value + 1);
       if (parsed.isCorrect) {
@@ -231,10 +234,13 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
         <span>
           Thẻ {index + 1} / {cards.length}
         </span>
-        <span>
-          {card.kind === "vocab"
-            ? `Từ vựng: ${card.lessonTitle}`
-            : `Sổ lỗi: ${card.assignmentTitle}`}
+        <span className="practice-top-end">
+          <span>
+            {card.kind === "vocab"
+              ? `Từ vựng: ${card.lessonTitle}`
+              : `Sổ lỗi: ${card.assignmentTitle}`}
+          </span>
+          <SoundToggle />
         </span>
       </p>
       <progress className="review-progress" value={index} max={cards.length} aria-hidden="true" />

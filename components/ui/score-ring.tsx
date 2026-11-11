@@ -1,3 +1,9 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { playFeedbackSound } from "@/components/feedback-sound";
+
 import type { CSSProperties } from "react";
 
 interface ScoreRingProps {
@@ -84,6 +90,12 @@ export function PracticeScore({
   bestStreak = 0,
 }: PracticeScoreProps) {
   const percent = totalCount ? (correctCount / totalCount) * 100 : 0;
+  // A perfect session ends with a short tune; the session's last answer just played its own.
+  useEffect(() => {
+    if (percent >= 100) {
+      playFeedbackSound("complete");
+    }
+  }, [percent]);
   return (
     <div className="practice-score">
       <ScoreRing percent={percent} label={`${correctCount} trên ${totalCount} ${unit}`} />

@@ -1,6 +1,7 @@
 import { Check, Flame, Volume2, X } from "lucide-react";
 
 import { AudioStatus, useAudio } from "@/components/audio-provider";
+import { SoundToggle } from "@/components/sound-toggle";
 import { Button } from "@/components/ui/button";
 
 import type { KanaItem, KanaScript, PracticeRecord } from "@/lib/kana";
@@ -58,6 +59,7 @@ export function PracticeQuestion({
           <span>
             Câu {questionIndex + 1} / {totalCount}
           </span>
+          <SoundToggle />
         </span>
       </div>
       <progress

@@ -3,6 +3,7 @@
 import { useReducer, useRef, useState } from "react";
 
 import { useAudio } from "@/components/audio-provider";
+import { playFeedbackSound } from "@/components/feedback-sound";
 import { PracticeQuestion } from "@/components/kana/practice-question";
 import { PracticeResult } from "@/components/kana/practice-result";
 import { PracticeSetup } from "@/components/kana/practice-setup";
@@ -10,6 +11,7 @@ import {
   createSession,
   getPracticeMistakes,
   initialPractice,
+  isCorrect,
   normalizeRomaji,
   practiceReducer,
 } from "@/lib/kana";
@@ -74,6 +76,8 @@ export function KanaPractice({ items, initialScript }: KanaPracticeProps) {
     }
 
     setInputError("");
+    const item = state.items[state.index];
+    playFeedbackSound(item && isCorrect(item, answer) ? "correct" : "wrong");
     dispatch({ type: "submit", raw: answer });
   }
 
