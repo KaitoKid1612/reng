@@ -23,7 +23,7 @@ app/styles/                 One stylesheet per area: tokens, base, shell, home, 
                             responsive, lessons, slides, components, settings, assignment-fixes, questions,
                             teach, learner, editor, chinese-lessons, admin, public-pages
 components/
-  ui/                       Shared primitives: button variants, pending link, outcome filter
+  ui/                       Shared primitives: button variants, pending link, outcome filter, score ring
   auth/ settings/ admin/    Sign-in and sign-up, account and email settings, platform admin
   lessons/ slides/          Reading a lesson, furigana text, slide deck and presenter
   editor/                   Japanese lesson editor (/teach/lessons/[id]/edit)

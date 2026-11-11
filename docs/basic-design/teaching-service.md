@@ -211,7 +211,7 @@ Mỗi nhóm hiện tối đa 5 dòng; phần còn lại được đếm và tr�
 
 ## Hôm nay học gì — 03/11/2026
 
-Trước đây học viên phải tự ghép buổi học, bài tập, bài mới và thẻ ôn từ nhiều mục. Giờ **Lớp của tôi** mở đầu bằng mục **Hôm nay học gì**. **Trang chủ** (đã đăng nhập) hiện 4 dòng đầu của mục này, kèm link "Xem thêm N việc ở Lớp của tôi".
+Trước đây học viên phải tự ghép buổi học, bài tập, bài mới và thẻ ôn từ nhiều mục. Giờ **Lớp của tôi** mở đầu bằng mục **Hôm nay học gì**. **Trang chủ** (đã đăng nhập) hiện 4 dòng đầu của mục này, kèm link "Xem thêm N việc ở Lớp của tôi". Từ 11/11/2026 mục này nằm giữa lời chào và các thẻ Đi nhanh tới, phần giới thiệu cho khách không còn hiện ([chi tiết](#giao-diện-dễ-dùng-và-sinh-động-hơn--11112026)).
 
 - Thứ tự: buổi học hôm nay theo lịch lớp (đang diễn ra thì nút Vào lớp) → bài tập → bài mới mở → thẻ ôn đến hạn.
 - Dòng ôn tập gọi đúng loại thẻ (04/11/2026): chỉ có từ vựng thì "Thẻ từ vựng đến hạn · N thẻ"; chỉ có câu sai từ bài tập thì "Câu sai cần ôn lại · N câu"; có cả hai thì "Thẻ ôn tập đến hạn · X từ vựng, Y câu sai" (quá 50 thẻ ghi "50+ thẻ, gồm từ vựng và câu sai").
@@ -307,6 +307,18 @@ Theo phản hồi của giáo viên pilot (chữ sát nhau, khó tìm câu sai):
 3. **Làm bài dài.** Từ 6 câu có danh sách câu để nhảy; Enter kiểm tra câu luyện tập rồi sang câu sau; hộp nộp bài có "Đến câu chưa làm". Nộp bài luyện tập có câu sai mở thẳng các câu sai; bài kiểm tra giữ nguyên để không lộ kết quả trước giờ công bố.
 4. **Tiếng Trung.** Đề, đáp án và câu trả lời mang thẻ ngôn ngữ đúng (không còn `ja`); ô pinyin nhận số thanh (`ni3 hao3` → `nǐ hǎo`, `v` → `ü`). Chấm điểm không đổi.
 5. **Buổi dạy online.** Đầu trang lớp có khối Buổi dạy online; Nội dung lớp có Trình chiếu/Đọc bài theo phiên bản lớp; slide mở từ lớp ghi được buổi dạy ngay trên thanh trình chiếu.
+
+## Giao diện dễ dùng và sinh động hơn — 11/11/2026
+
+Người dùng nhờ rà soát chỗ bất hợp lý, khó dùng và làm giao diện bớt "khô". Rà soát ở 1440px rồi 390px với tài khoản thử trên Supabase local ([báo cáo](../testing/ui-polish-2026-11-11.md)).
+
+1. **Trang chủ của người đã đăng nhập.** Trước đây học viên đăng nhập vẫn thấy toàn bộ phần giới thiệu cho khách (Tôi muốn giảng dạy, Đăng ký giáo viên…) dưới mục Hôm nay học gì. Nay người đã đăng nhập thấy lời chào theo buổi và thứ, ngày; mục Hôm nay học gì như trước; và các thẻ **Đi nhanh tới**. Học viên có Lớp của tôi, Ôn tập, Sổ lỗi, Tiến độ, Tự học; giáo viên có Giảng dạy, Soạn bài mới, Lớp đang học, Tự học. Phần giới thiệu chỉ còn cho khách. Trang chủ vẫn là trang tĩnh: trình duyệt đã từng đăng nhập ẩn phần giới thiệu từ lần vẽ đầu nên không nháy.
+2. **Trang lớp của giáo viên có mục lục.** Trang dài khoảng 6.000px với 9–10 mục một cột. Thanh mục lục dính ở đầu cửa sổ: Học viên, Câu sai nhiều, Luyện hằng ngày, Bài đã giao, Lịch học, Nhật ký buổi dạy, Nội dung lớp, Mã lớp, Cài đặt lớp. Bấm là nhảy tới mục; mục đang đọc được tô đậm. Trên điện thoại thanh cuộn ngang.
+3. **Làm bài dài biết đã làm bao nhiêu.** Thanh nộp bài ở đáy có "Đã trả lời x/y" và thanh tiến độ, vì bài 40–70 câu cuộn rất xa danh sách câu ở đầu trang. Trang bắt đầu làm bài ghi số câu, hạn, lượt làm và cách xem điểm thành các ô có biểu tượng.
+4. **Luyện tập có phản hồi.** Trả lời đúng thì khung phản hồi bật nhẹ, sai thì rung một lần (mọi dạng: kana, kanji, pinyin, bài tập, ôn tập). Luyện kana có ô **N câu đúng liên tiếp** từ câu đúng thứ hai và ô chữ viền xanh/đỏ theo kết quả. Kết thúc phiên luyện (kana, kanji, pinyin) có vòng điểm phần trăm, một câu động viên theo mức điểm, chuỗi đúng dài nhất; đúng hết thì có pháo giấy. Chữ kana sai xếp thành thẻ nhỏ (chữ, cách đọc, chữ đã gõ). Trang kết quả bài tập cũng có vòng điểm.
+5. **Trang Tự học** đổi các link chữ thành thẻ có chữ minh họa (あ, ア, 文, ā, 你). Nút và thẻ có phản hồi khi rê chuột và khi bấm.
+
+Mọi chuyển động tắt khi thiết bị bật giảm chuyển động (`prefers-reduced-motion`); pháo giấy ẩn hẳn. Màu chỉ dùng token, kiểm tra axe ở cả giao diện sáng và tối.
 
 ## Phiên bản cũ gọn hơn — 11/11/2026
 

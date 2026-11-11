@@ -69,7 +69,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Hủy nhận email (link một chạm trong thư) | `/unsubscribe/[token]` | 4 |
 | Quản trị: tổng quan, giáo viên, nhật ký hoạt động | `/admin`, `/admin/teachers`, `/admin/activity` | Dịch vụ |
 
-Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung; S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình-dự-kiến)).
+Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung (từ 11/11/2026 phần giới thiệu chỉ cho khách; người đã đăng nhập thấy lời chào, Hôm nay học gì và thẻ Đi nhanh tới); S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình-dự-kiến)).
 
 ## Chi tiết các màn hình chính
 

@@ -66,6 +66,15 @@ Giao diện tối (từ 10/11/2026): cùng tên token, giá trị tối khai bá
 
 Khoảng cách theo bội 4 px; nút/input bo khoảng 6 px, thẻ 10 px, nhãn trạng thái 4 px; dùng token thay hex/radius rải trong component. Bóng dành cho menu/hộp thoại/thanh nổi, nội dung trong luồng dùng viền. Không đổi theme chỉ để khác với mẫu công cụ sinh UI.
 
+## Chuyển động và phản hồi
+
+Từ 11/11/2026 ([báo cáo](testing/ui-polish-2026-11-11.md)): chuyển động ngắn (100–400ms), chỉ để báo một việc vừa xảy ra, không trang trí liên tục.
+
+- Nút: transition màu/bóng, nhấn lún 1px; nút viền và nút chữ có nền `--primary-soft` khi rê. Thẻ link (`.link-card`) nổi 2px và có bóng khi rê.
+- Phản hồi câu trả lời: đúng bật nhẹ (`feedback-pop`), sai rung một lần (`feedback-shake`); luôn kèm chữ và biểu tượng, không chỉ dựa vào chuyển động hay màu.
+- Kết quả: vòng điểm lấp đầy một lần; pháo giấy chỉ khi đúng 100%. Chuỗi câu đúng là ô màu chuông `--brand-bell`, bật lên mỗi khi tăng.
+- `prefers-reduced-motion: reduce` tắt mọi animation và transition (`app/styles/responsive.css`); phần chỉ để trang trí (pháo giấy) ẩn hẳn.
+
 ## Ngày giờ và số
 
 Giờ luôn theo giờ Việt Nam (`Asia/Ho_Chi_Minh`), không theo múi giờ của thiết bị, và chỉ viết bằng các hàm trong `lib/study-days.ts`:

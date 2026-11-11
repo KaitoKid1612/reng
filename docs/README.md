@@ -64,6 +64,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | Thi thử JLPT N5/N4 (09/11/2026) | [BD](basic-design/phase-3.md#thi-thử-jlpt--09112026) | [DD](detail-design/phase-3.md#thi-thử-jlpt--09112026) | [kiểm chứng](testing/jlpt-mock-exam-2026-11-09.md) |
 | Lịch sử thi thử JLPT trên trang Tiến độ và trang học viên (11/11/2026) | [BD](basic-design/phase-3.md#thi-thử-jlpt--09112026) | [DD](detail-design/phase-3.md#lịch-sử-thi-thử-jlpt--11112026) | [kiểm chứng](testing/cleanup-2026-11-11.md) |
 | Phiên bản cũ gọn hơn (11/11/2026) | [BD](basic-design/teaching-service.md#phiên-bản-cũ-gọn-hơn--11112026) | — | [kiểm chứng](testing/cleanup-2026-11-11.md) |
+| Giao diện dễ dùng và sinh động hơn: trang chủ thành viên, mục lục trang lớp, tiến độ làm bài, hiệu ứng luyện tập (11/11/2026) | [BD](basic-design/teaching-service.md#giao-diện-dễ-dùng-và-sinh-động-hơn--11112026) | [DD](detail-design/teaching-service.md#giao-diện-dễ-dùng-và-sinh-động-hơn--11112026) | [rà soát](testing/ui-polish-2026-11-11.md) |
 | Giao diện sáng và tối (10/11/2026) | — | [DD](detail-design/teaching-service.md#giao-diện-sáng-và-tối--10112026) | [rà soát](testing/code-review-2026-11-10.md#gộp-giao-diện-sáng-và-tối) |
 | Nguồn đề JLPT và câu tự biên soạn (09–10/11/2026) | [biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn) | — | `tests/jlpt-original-drafts.test.ts` |
 | Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ) | [BD](basic-design/learning-history.md) | [DD](detail-design/learning-history.md) | [kiểm chứng cũ](testing/learning-history.md) |
@@ -77,6 +78,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 11/11/2026
 
+- Giao diện dễ dùng và sinh động hơn: [8 chỗ chưa hợp lý đã sửa, kiểm chứng trình duyệt và axe hai giao diện, đề xuất tiếp theo](testing/ui-polish-2026-11-11.md).
 - Dọn mã và gọn giao diện: [mã thừa đã xóa, phiên bản cũ gập lại, Cập nhật từ mẫu chỉ khi khác mẫu, lịch sử thi thử JLPT, E2E cả đợt](testing/cleanup-2026-11-11.md).
 - Nguồn đề JLPT thật: [rà soát khoảng 40 nguồn, chỉ hai tập đề chính thức trên jlpt.jp dùng được](testing/jlpt-official-sources-2026-11-11.md).
 
