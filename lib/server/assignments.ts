@@ -28,6 +28,7 @@ import {
   callRpc,
   createServiceClient,
   describeServiceFailure,
+  selectEveryPageIn,
   selectOptional,
   selectRows,
   selectRowsIn,
@@ -188,20 +189,32 @@ export async function loadAssignment(assignmentId: string) {
   return assignment;
 }
 
+// A teacher's start page asks for every class at once: the ids go in chunks (one long filter
+// overflowed the request) and each chunk a page at a time, so years of daily sets are not cut at
+// the 1000-row cap.
 export async function listClassAssignments(classIds: readonly string[]) {
   if (!classIds.length) {
     return [];
   }
-  const rows = await selectRows(
-    createServiceClient()
-      .from("assignments")
-      .select(ASSIGNMENT_COLUMNS)
-      .in("class_id", [...classIds])
-      .neq("status", "draft")
-      .order("published_at", { ascending: false }),
+  const rows = await selectEveryPageIn(
+    classIds,
+    (chunk, from, to) =>
+      createServiceClient()
+        .from("assignments")
+        .select(ASSIGNMENT_COLUMNS)
+        .in("class_id", chunk)
+        .neq("status", "draft")
+        .order("published_at", { ascending: false })
+        .order("id")
+        .range(from, to),
     assignmentRowSchema,
   );
-  return toAssignments(rows);
+  // Chunks come back one after another; newest first across all of them.
+  const publishedTime = (row: (typeof rows)[number]) => Date.parse(row.published_at ?? "") || 0;
+  const newestFirst = rows.toSorted(
+    (first, second) => publishedTime(second) - publishedTime(first),
+  );
+  return toAssignments(newestFirst);
 }
 
 // Published or closed assignments by ID, in chunks so a long daily history stays one URL each.

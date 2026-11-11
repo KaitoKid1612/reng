@@ -10,6 +10,7 @@ import {
   callRpc,
   createServiceClient,
   runMutation,
+  selectEveryPageIn,
   selectOptional,
   selectRows,
   ServiceError,
@@ -58,15 +59,19 @@ export async function listTeacherClasses(teacherId: string) {
   if (!classes.length) {
     return [];
   }
-  const members = await selectRows(
-    service
-      .from("enrollments")
-      .select("class_id, user_id")
-      .in(
-        "class_id",
-        classes.map((item) => item.id),
-      )
-      .is("left_at", null),
+  // Chunked and paged: a long id filter overflows the request, and 30 classes of 40 learners pass
+  // the 1000-row cap, which would undercount members without an error.
+  const members = await selectEveryPageIn(
+    classes.map((item) => item.id),
+    (chunk, from, to) =>
+      service
+        .from("enrollments")
+        .select("class_id, user_id")
+        .in("class_id", chunk)
+        .is("left_at", null)
+        .order("class_id")
+        .order("user_id")
+        .range(from, to),
     z.object({ class_id: z.uuid(), user_id: z.uuid() }),
   );
   return classes.map((item) => ({
