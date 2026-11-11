@@ -19,8 +19,8 @@ const banks = [
   },
   {
     file: "content/review-banks/n5-daily-with-listening.json",
-    expectedTotal: 144,
-    expectedListening: 78,
+    expectedTotal: 184,
+    expectedListening: 118,
     expectedOriginals: 6,
     dailySize: 60,
     dailyListening: 8,
