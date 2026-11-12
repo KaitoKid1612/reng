@@ -15,12 +15,14 @@ export interface GuideTocGroup {
 
 interface GuideTocProps {
   groups: readonly GuideTocGroup[];
+  // The landmark name; the privacy policy and terms reuse this contents with their own.
+  label?: string;
 }
 
 // The guide's table of contents. On a wide screen it is a column that stays beside the text and
 // marks the section being read; on a phone it is a bar at the top of the window that names that
 // section and opens the full list.
-export function GuideToc({ groups }: GuideTocProps) {
+export function GuideToc({ groups, label = "Mục lục hướng dẫn" }: GuideTocProps) {
   const items = groups.flatMap((group) => group.items);
   const currentId = useCurrentSection(items.map((item) => item.id));
   const current = items.find((item) => item.id === currentId);
@@ -63,12 +65,7 @@ export function GuideToc({ groups }: GuideTocProps) {
   }
 
   return (
-    <nav
-      className="guide-toc"
-      aria-label="Mục lục hướng dẫn"
-      data-open={isOpen}
-      onKeyDown={handleKeyDown}
-    >
+    <nav className="guide-toc" aria-label={label} data-open={isOpen} onKeyDown={handleKeyDown}>
       <button
         type="button"
         className="guide-toc-toggle"

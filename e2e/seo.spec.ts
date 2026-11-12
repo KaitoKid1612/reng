@@ -47,8 +47,23 @@ test("the privacy policy and terms are linked from every page and name who to co
   }
   // No placeholder from the draft is left on either page.
   await expect(page.locator("main")).not.toContainText("[");
-  await page.goto("/privacy");
+  // A switch at the top moves between the two documents; the contents mark the section read.
+  await page
+    .getByRole("navigation", { name: "Văn bản pháp lý" })
+    .getByRole("link", { name: "Quyền riêng tư" })
+    .click();
+  await expect(page).toHaveURL(/\/privacy$/);
+  await expect(
+    page
+      .getByRole("navigation", { name: "Văn bản pháp lý" })
+      .getByRole("link", { name: "Quyền riêng tư" }),
+  ).toHaveAttribute("aria-current", "page");
   await expect(page.locator("main")).not.toContainText("[");
+  const contents = page.getByRole("navigation", { name: "Mục lục chính sách quyền riêng tư" });
+  const rights = contents.getByRole("link", { name: "6. Quyền của bạn" });
+  await rights.click();
+  await expect(page).toHaveURL(/#your-rights$/);
+  await expect(rights).toHaveAttribute("aria-current", "location");
   await page.setViewportSize({ width: 360, height: 780 });
   const fits = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
   expect(fits).toBe(true);

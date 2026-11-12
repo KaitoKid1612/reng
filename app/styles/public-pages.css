@@ -532,6 +532,147 @@
   }
 }
 
+/* Privacy policy and terms (components/legal/legal-document.tsx): the guide's contents and
+   section cards, plus a switch between the two documents, a summary and a contact box. */
+.legal-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.legal-switch a {
+  padding: 6px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.legal-switch a:hover {
+  color: var(--foreground);
+}
+.legal-switch a[aria-current="page"] {
+  background: var(--primary);
+  color: var(--surface);
+}
+.legal-switch a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.legal-hero h1 {
+  margin-bottom: 6px;
+}
+.legal-effective {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.legal-summary {
+  margin-top: 8px;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.legal-summary h2 {
+  margin: 0 0 14px;
+  font-size: 19px;
+}
+/* Four points: two by two on a wide screen, one column below 760px. */
+.legal-summary ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+.legal-summary li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.legal-summary .guide-section-icon {
+  width: 36px;
+  height: 36px;
+}
+.legal-summary p {
+  margin: 0;
+}
+.legal-body {
+  font-size: 16px;
+  line-height: 1.65;
+}
+.legal-body > :first-child {
+  margin-top: 0;
+}
+.legal-body > :last-child {
+  margin-bottom: 0;
+}
+.legal-body p {
+  margin: 0 0 10px;
+}
+.legal-body ul {
+  margin: 0 0 10px;
+  padding-left: 22px;
+  list-style: disc;
+}
+.legal-body li + li {
+  margin-top: 8px;
+}
+.legal-body li::marker {
+  color: var(--primary);
+}
+.legal-body a {
+  text-decoration: underline;
+}
+.legal-contact {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+}
+.legal-contact h2 {
+  margin: 0 0 4px;
+  font-size: 19px;
+}
+.legal-contact p {
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .legal-summary ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .legal-switch {
+    display: flex;
+  }
+  .legal-switch a {
+    flex: 1;
+    text-align: center;
+  }
+  .legal-summary,
+  .legal-contact {
+    padding: 16px;
+  }
+  .legal-contact {
+    align-items: flex-start;
+  }
+}
+
 /* Google sign-in above the email form. */
 .oauth-options {
   margin: 24px 0 4px;

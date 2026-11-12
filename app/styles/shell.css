@@ -345,18 +345,6 @@
 .prose-page h2 {
   margin-top: 32px;
 }
-/* Privacy policy and terms: plain bulleted lists, as the clauses are read one by one. */
-.legal-page ul {
-  margin: 8px 0 16px;
-  padding-left: 22px;
-  list-style: disc;
-}
-.legal-page li + li {
-  margin-top: 8px;
-}
-.legal-page a {
-  text-decoration: underline;
-}
 /* Before /api/me answers, a browser that was signed in hides the visitor-only header links. */
 html[data-account="member"] .site-header [data-guest-only] {
   display: none;
