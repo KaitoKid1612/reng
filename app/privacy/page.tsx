@@ -210,6 +210,9 @@ const SECTIONS: LegalSection[] = [
             Sửa họ tên và mật khẩu: <Link href="/settings/account">trang Tài khoản</Link>.
           </li>
           <li>
+            Xem và tải dữ liệu của bạn: trang Tài khoản, mục Tải dữ liệu của tôi (một tệp JSON).
+          </li>
+          <li>
             Tắt nhắc học: <Link href="/settings/notifications">mục Nhắc học</Link> của trang Tài
             khoản, hoặc link cuối mỗi email nhắc học, bất kỳ lúc nào.
           </li>

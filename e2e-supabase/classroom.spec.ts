@@ -236,6 +236,39 @@ test("test answers and results stay private until the feedback time", async ({ p
     page.getByText(`1 câu sai trong “Kiểm tra nhanh ${RUN_ID}” sẽ hiện sau`),
   ).toBeVisible();
   await expect(page.getByText(TEST_PROMPT)).toHaveCount(0);
+
+  // The learner's own data file follows the same rule: the graded practice comes with its answers,
+  // the test only with its receipt until the feedback time, and no internal field is in it.
+  await page.goto("/settings/account");
+  const exportLink = page.getByRole("link", { name: "Tải tệp dữ liệu (JSON)" });
+  await expect(exportLink).toHaveAttribute("href", "/api/me/export");
+  const exported = await page.request.get("/api/me/export");
+  expect(exported.status()).toBe(200);
+  expect(exported.headers()["content-disposition"]).toMatch(
+    /^attachment; filename="reng-du-lieu-\d{4}-\d{2}-\d{2}\.json"$/,
+  );
+  expect(exported.headers()["cache-control"]).toContain("no-store");
+  const text = await exported.text();
+  const data = JSON.parse(text) as {
+    account: { email: string };
+    classes: { class: string }[];
+    attempts: { assignment: string; status: string; results: { answers: unknown[] } | null }[];
+  };
+  expect(data.account.email).toBe(studentA.email);
+  expect(data.classes.map((item) => item.class)).toContain(`Lớp A ${RUN_ID}`);
+  const testAttempts = data.attempts.filter(
+    (item) => item.assignment === `Kiểm tra nhanh ${RUN_ID}`,
+  );
+  expect(testAttempts.length).toBeGreaterThan(0);
+  expect(testAttempts.every((item) => item.results === null)).toBe(true);
+  const practice = data.attempts.find(
+    (item) => item.assignment === `Luyện です ${RUN_ID}` && item.results !== null,
+  );
+  expect(practice?.results?.answers.length).toBeGreaterThan(0);
+  expect(text).toContain(PRACTICE_PROMPT);
+  for (const secret of [TEST_PROMPT, "あなた", PRIVATE_EXPLANATION, "p256dh", "admin_note"]) {
+    expect(text).not.toContain(secret);
+  }
 });
 
 test("learners outside the class and anonymous callers are refused", async ({
@@ -277,6 +310,7 @@ test("learners outside the class and anonymous callers are refused", async ({
     ).status(),
   ).toBe(401);
   expect((await anonymous.get(`/api/teach/classes/${state.classA}/report`)).status()).toBe(401);
+  expect((await anonymous.get("/api/me/export")).status()).toBe(401);
   expect(
     (
       await anonymous.post(`/api/assignments/${state.practiceId}/attempts`, {

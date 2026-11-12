@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import Link from "next/link";
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
@@ -7,6 +8,7 @@ import {
   PasswordChangeForm,
 } from "@/components/settings/account-forms";
 import { SettingsNav } from "@/components/settings/settings-nav";
+import { buttonVariants } from "@/components/ui/button";
 import { requireAccount } from "@/lib/server/account";
 
 import type { Metadata } from "next";
@@ -45,6 +47,19 @@ export default async function AccountSettingsPage() {
             <span className="small muted">Câu đã làm sai, ôn lại tới khi đúng 3 lần liên tiếp</span>
           </Link>
         </div>
+      </section>
+      <section className="section-block" aria-labelledby="export-title">
+        <h2 id="export-title">Tải dữ liệu của tôi</h2>
+        <p className="small muted">
+          Một tệp JSON gồm thông tin tài khoản, lớp đã vào, bài đã làm, bài đã đọc, ôn tập, điểm
+          danh và cài đặt nhắc học. Bài kiểm tra chưa tới giờ giáo viên công bố kết quả chỉ có thời
+          điểm nộp. Xem thêm ở <Link href="/privacy">Chính sách quyền riêng tư</Link>.
+        </p>
+        {/* A plain link: the browser saves the file and the page stays where it is. */}
+        <a href="/api/me/export" download className={buttonVariants({ variant: "outline" })}>
+          <Download size={16} aria-hidden="true" />
+          Tải tệp dữ liệu (JSON)
+        </a>
       </section>
       {account.role === "teacher" ? (
         <section className="section-block" aria-labelledby="delete-account-title">

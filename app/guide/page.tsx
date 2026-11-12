@@ -238,7 +238,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-account",
     title: "Tài khoản",
     steps: [
-      "Bấm Tài khoản trên thanh đầu trang (hoặc cuối trang Lớp của tôi) để đổi họ tên hiển thị hoặc đặt mật khẩu mới. Đổi mật khẩu sẽ đăng xuất các thiết bị khác.",
+      "Bấm Tài khoản trên thanh đầu trang (hoặc cuối trang Lớp của tôi) để đổi họ tên hiển thị hoặc đặt mật khẩu mới. Đổi mật khẩu sẽ đăng xuất các thiết bị khác. Mục Tải dữ liệu của tôi tải về một tệp chứa mọi dữ liệu Reng lưu về bạn.",
       "Nhắc học: ở tab Nhắc học của trang Tài khoản, bấm Bật thông báo trên thiết bị này và cho phép thông báo. Reng nhắc lúc 20:00 khi bạn có bài cần làm hoặc thẻ cần ôn; bấm Gửi thử để kiểm tra. Mỗi máy, mỗi trình duyệt bật riêng; đăng xuất sẽ tắt thông báo trên máy đó. Trên iPhone, iPad: mở Reng bằng Safari, bấm Chia sẻ rồi Thêm vào MH chính, mở Reng từ biểu tượng mới rồi mới bật được.",
       "Muốn ngừng dùng Reng, kéo xuống mục Xóa tài khoản và gõ XÓA để xác nhận. Họ tên, email và cách đăng nhập bị xóa, bạn rời mọi lớp; bài đã nộp vẫn ở lại trong thống kê của lớp dưới tên Học viên đã xóa. Không khôi phục được.",
     ],
