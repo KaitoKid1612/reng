@@ -288,6 +288,28 @@ body:has(.slide-shell) .site-footer {
   border: 2px solid var(--border);
   border-radius: var(--radius);
 }
+/* A matching question on a slide: the left column numbered, the right one lettered, side by side;
+   the class says pairs aloud ("1–C") before the answer is shown. */
+.slide-match {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 64px;
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+.slide-match ol {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 56px;
+  list-style: decimal;
+}
+.slide-match ol[type="A"] {
+  list-style-type: upper-alpha;
+}
+.slide-match li::marker {
+  color: var(--muted);
+}
 .slide-quiz h2 {
   margin-bottom: 24px;
 }

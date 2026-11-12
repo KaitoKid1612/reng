@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 
+import { MatchPairsField } from "@/components/teach/match-pairs-field";
 import { OrderPiecesField } from "@/components/teach/order-pieces-field";
 import { Button } from "@/components/ui/button";
+import { toMatchColumns, toPublishableMatch } from "@/lib/match-pairs";
 import { filledPieces, toOrderPieces, toOrderTokens } from "@/lib/order-pieces";
 import {
   buildVocabularyQuestion,
@@ -28,9 +30,11 @@ const ADD_LABELS: Record<BlankQuestionType, string> = {
   choice: "Thêm câu trắc nghiệm",
   fill: "Thêm câu điền",
   order: "Thêm câu sắp xếp",
+  match: "Thêm câu ghép đôi",
 };
 
 type OrderQuestion = Extract<TeachingDraftQuestion, { type: "order" }>;
+type MatchQuestion = Extract<TeachingDraftQuestion, { type: "match" }>;
 
 interface OrderQuestionPiecesProps {
   question: OrderQuestion;
@@ -56,6 +60,51 @@ function OrderQuestionPieces({ question, label, lang, onChange }: OrderQuestionP
       onChange={(value) => {
         setText(value);
         onChange({ ...question, ...toOrderTokens(filledPieces(value.split("\n"))) });
+      }}
+    />
+  );
+}
+
+interface MatchQuestionColumnsProps {
+  question: MatchQuestion;
+  lang: string;
+  onChange: (question: TeachingDraftQuestion) => void;
+}
+
+function sameMatch(
+  first: Pick<MatchQuestion, "left" | "right" | "answer">,
+  second: Pick<MatchQuestion, "left" | "right" | "answer">,
+) {
+  return (
+    JSON.stringify([first.left, first.right, first.answer]) ===
+    JSON.stringify([second.left, second.right, second.answer])
+  );
+}
+
+// A Chinese lesson publishes its saved draft, so the draft holds the question as it will be
+// published (toPublishableMatch) while the boxes keep the lines being typed, blank ones included.
+// They show the draft again when it changed elsewhere.
+function MatchQuestionColumns({ question, lang, onChange }: MatchQuestionColumnsProps) {
+  const columns = toMatchColumns(question);
+  const draftText = { leftText: columns.left.join("\n"), rightText: columns.right.join("\n") };
+  const [typed, setTyped] = useState(draftText);
+  const isCurrent = sameMatch(
+    toPublishableMatch(typed.leftText.split("\n"), typed.rightText.split("\n")),
+    question,
+  );
+  const shown = isCurrent ? typed : draftText;
+  return (
+    <MatchPairsField
+      id={question.id}
+      leftText={shown.leftText}
+      rightText={shown.rightText}
+      lang={lang}
+      onChange={(next) => {
+        setTyped(next);
+        onChange({
+          ...question,
+          ...toPublishableMatch(next.leftText.split("\n"), next.rightText.split("\n")),
+        });
       }}
     />
   );
@@ -129,6 +178,9 @@ function QuestionEditor({
       </div>
       {question.type === "order" && (
         <OrderQuestionPieces question={question} label={label} lang={lang} onChange={onChange} />
+      )}
+      {question.type === "match" && (
+        <MatchQuestionColumns question={question} lang={lang} onChange={onChange} />
       )}
       {question.type === "choice" && (
         <fieldset className="teaching-fieldset">
@@ -407,7 +459,7 @@ export function QuestionStep({ draft, dispatch, reviewed, isBusy, onConfirm }: Q
         })}
       </ol>
       <div className="button-row">
-        {(["choice", "fill", "order"] as const).map((type) => (
+        {(["choice", "fill", "order", "match"] as const).map((type) => (
           <Button
             key={type}
             type="button"

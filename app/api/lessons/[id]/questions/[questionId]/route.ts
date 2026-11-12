@@ -3,6 +3,9 @@ import { NextResponse } from "next/server";
 import { describeCorrectAnswer } from "@/lib/assignment";
 import { loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 
+// Slides show choice, fill, sentence-order and matching questions; listening needs its own page.
+const SLIDE_TYPES: readonly string[] = ["choice", "fill", "order", "match"];
+
 interface QuestionRouteContext {
   params: Promise<{ id: string; questionId: string }>;
 }
@@ -14,11 +17,7 @@ export async function GET(request: Request, { params }: QuestionRouteContext) {
     new URL(request.url).searchParams.get("version") || undefined,
   );
   const question = version?.content.questions.find((item) => item.id === questionId);
-  // Slides show choice, fill and sentence-order questions; listening needs its own page.
-  if (
-    !question ||
-    (question.type !== "choice" && question.type !== "fill" && question.type !== "order")
-  ) {
+  if (!question || !SLIDE_TYPES.includes(question.type)) {
     return NextResponse.json({ error: "Practice question not found." }, { status: 404 });
   }
   return NextResponse.json(

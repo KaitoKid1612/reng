@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 import { becomeTeacher, createConfirmedStudent, RUN_ID, signIn } from "./support";
 
-import type { Browser, Page } from "@playwright/test";
+import type { Browser, Locator, Page } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
 
@@ -18,10 +18,18 @@ const PASTED_TABLE = [
   "nǐ hǎo\t你好\txin chào",
 ].join("\n");
 
+const MATCH_PROMPT = `Ghép từ với nghĩa ${RUN_ID}`;
+const MATCH_PAIRS = [
+  ["你好", "xin chào"],
+  ["谢谢", "cảm ơn"],
+  ["老师", "giáo viên"],
+] as const;
+const MATCH_ANSWER = "你好 → xin chào · 谢谢 → cảm ơn · 老师 → giáo viên";
+
 const state = { lessonId: "", classId: "", code: "" };
 
-async function newAccount(browser: Browser, role: "teacher" | "learner") {
-  const email = `authoring-${role}-${RUN_ID}@example.test`;
+async function newAccount(browser: Browser, role: "teacher" | "learner", name: string = role) {
+  const email = `authoring-${name}-${RUN_ID}@example.test`;
   const password = `authoring-pass-${RUN_ID}`;
   await createConfirmedStudent(email, password, `Soạn bài ${role}`);
   const page = await (await browser.newContext()).newPage();
@@ -34,6 +42,16 @@ async function newAccount(browser: Browser, role: "teacher" | "learner") {
 
 async function goToStep(page: Page, label: string) {
   await page.getByRole("button", { name: label, exact: true }).click();
+}
+
+// Each item on the left has a menu of lettered items ("B. cảm ơn"); the letters follow the shuffle.
+async function pick(card: Locator, left: string, right: string) {
+  const menu = card.getByLabel(left, { exact: true });
+  const value = await menu
+    .locator("option")
+    .filter({ hasText: new RegExp(`^[A-H]\\. ${right}$`) })
+    .getAttribute("value");
+  await menu.selectOption(value ?? "");
 }
 
 async function expectSaved(page: Page) {
@@ -200,6 +218,125 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await page.waitForURL(/\/results$/);
   await expect(page.locator(".result-score")).toContainText("100%");
   await page.context().close();
+});
+
+test("a Chinese teacher writes a matching question, shows it on a slide and a learner pairs it", async ({
+  browser,
+}) => {
+  const page = await newAccount(browser, "teacher", "match-teacher");
+  await page.goto("/teach/lessons/new");
+  await page.getByRole("radio", { name: /Dạy từ mới/ }).check();
+  await page.getByLabel("Tên bài", { exact: true }).fill(`Ghép đôi tiếng Trung ${RUN_ID}`);
+  await page.getByLabel("Mục tiêu nhỏ đầu tiên", { exact: true }).fill("Nhớ nghĩa từ mới");
+  await page.getByRole("button", { name: "Tạo bài và bắt đầu soạn", exact: true }).click();
+  await page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+  const lessonId = page.url().split("/").at(-2) ?? "";
+  await page.getByRole("button", { name: "Bước tiếp", exact: true }).click();
+  await page.getByText("Dán bảng từ Excel hoặc Google Sheets").click();
+  await page.getByLabel("Nội dung dán", { exact: true }).fill(PASTED_TABLE);
+  await page.getByRole("button", { name: "Xem trước bảng", exact: true }).click();
+  await page.getByRole("button", { name: "Thêm 2 từ hợp lệ", exact: true }).click();
+
+  await goToStep(page, "4. Câu luyện");
+  await page.getByRole("button", { name: "Thêm câu ghép đôi", exact: true }).click();
+  await page.getByLabel("Đề bài câu 1", { exact: true }).fill(MATCH_PROMPT);
+  await page.getByLabel(/Cột trái/).fill(MATCH_PAIRS.map(([left]) => left).join("\n"));
+  // One partner short: publishing names the problem of that question.
+  await page.getByLabel(/Cột phải/).fill(
+    MATCH_PAIRS.slice(0, 2)
+      .map(([, right]) => right)
+      .join("\n"),
+  );
+  await page.getByLabel("Giải thích câu 1", { exact: true }).fill("Từ của bài chào hỏi.");
+  await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
+  await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(1);
+  await goToStep(page, "5. Slide & xuất bản");
+  await page.getByRole("button", { name: "Dựng slide từ nội dung", exact: true }).click();
+  await page.getByRole("button", { name: "Áp dụng thay đổi slide", exact: true }).click();
+  await page.getByRole("button", { name: "Lưu và xuất bản", exact: true }).click();
+  await expect(
+    page.getByRole("region", { name: "Xem trước và xuất bản" }).getByRole("alert"),
+  ).toContainText("Câu luyện 1: mỗi dòng bên trái cần đúng một dòng bên phải");
+
+  await goToStep(page, "4. Câu luyện");
+  await page.getByLabel(/Cột phải/).fill(MATCH_PAIRS.map(([, right]) => right).join("\n"));
+  await expect(page.getByText(`Các cặp đúng: ${MATCH_ANSWER}`)).toBeVisible();
+  await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
+  await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(1);
+  await goToStep(page, "5. Slide & xuất bản");
+  // The quiz slide shows both columns, the right one lettered and shuffled.
+  await page
+    .locator(".slide-list-item")
+    .filter({ hasText: "Câu luyện" })
+    .getByRole("button", { name: /^Chọn slide/ })
+    .click();
+  const slideMatch = page.locator(".slide-preview .slide-match");
+  await expect(slideMatch.getByRole("list", { name: "Cột trái" }).locator("li")).toHaveText(
+    MATCH_PAIRS.map(([left]) => left),
+  );
+  const shown = await slideMatch
+    .getByRole("list", { name: "Cột phải" })
+    .locator("li")
+    .allTextContents();
+  expect([...shown].sort()).toEqual(MATCH_PAIRS.map(([, right]) => right).sort());
+  expect(shown, "the right column is not in pair order").not.toEqual(
+    MATCH_PAIRS.map(([, right]) => right),
+  );
+  await page.getByRole("button", { name: "Lưu và xuất bản", exact: true }).click();
+  await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
+
+  await page.goto("/teach/classes");
+  await page.getByLabel("Tên lớp", { exact: true }).fill(`Lớp ghép đôi tiếng Trung ${RUN_ID}`);
+  await page.getByLabel("Môn học", { exact: true }).selectOption("zh-Hans");
+  await page.getByRole("button", { name: "Tạo lớp", exact: true }).click();
+  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}$/);
+  const classId = page.url().split("/").at(-1) ?? "";
+  const code = ((await page.locator(".join-code").textContent()) ?? "").replace("-", "");
+  await page.goto(`/teach/classes/${classId}/assign`);
+  await page.locator("#class-lesson").selectOption(lessonId);
+  await page.getByRole("button", { name: "Lưu vào lớp", exact: true }).click();
+  await expect(page.getByText("Đã cập nhật nội dung lớp.")).toBeVisible();
+  const assignmentTitle = `Ghép đôi ${RUN_ID}`;
+  await page.getByLabel("Tiêu đề", { exact: true }).fill(assignmentTitle);
+  await page.getByRole("checkbox", { name: MATCH_PROMPT }).check();
+  await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
+  await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
+  await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
+  await page.context().close();
+
+  const learner = await newAccount(browser, "learner", "match-learner");
+  try {
+    await learner.goto("/join-class");
+    await learner.getByLabel("Mã lớp", { exact: true }).fill(code);
+    await learner.getByRole("button", { name: "Vào lớp", exact: true }).click();
+    await learner.waitForURL(`**/classes/${classId}`);
+    await learner.getByRole("link", { name: assignmentTitle, exact: true }).click();
+    await learner.getByRole("button", { name: "Bắt đầu làm bài", exact: true }).click();
+    const card = learner.locator(".question-card").filter({ hasText: MATCH_PROMPT });
+    for (const [left, right] of MATCH_PAIRS) {
+      await pick(card, left, right);
+    }
+    await expect(learner.locator(".save-status")).toContainText("Đã lưu", { timeout: 10_000 });
+    await card.getByRole("button", { name: "Kiểm tra câu này", exact: true }).click();
+    await expect(card.getByText("Đúng rồi!")).toBeVisible();
+    await learner.getByRole("button", { name: "Nộp bài", exact: true }).last().click();
+    await learner.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();
+    await learner.waitForURL(/\/results$/);
+    await expect(learner.locator(".result-score")).toContainText("100%");
+    await expect(learner.getByText(MATCH_ANSWER).first()).toBeVisible();
+
+    // On the class slideshow the matching slide reveals the pairs.
+    await learner.goto(`/lessons/${lessonId}/slide`);
+    await expect(learner.locator(".reveal")).toBeVisible();
+    const quiz = learner.locator(".slide-quiz").filter({ hasText: MATCH_PROMPT });
+    for (let step = 0; step < 20 && !(await quiz.isVisible()); step += 1) {
+      await learner.keyboard.press("ArrowRight");
+    }
+    await quiz.getByRole("button", { name: "Hiện đáp án", exact: true }).click();
+    await expect(quiz.getByRole("status")).toContainText(MATCH_ANSWER);
+  } finally {
+    await learner.context().close();
+  }
 });
 
 test("the new authoring, reading and sharing pages fit a 360px screen", async ({ browser }) => {

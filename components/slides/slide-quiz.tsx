@@ -74,6 +74,24 @@ export function SlideQuiz({ lesson, questionId, staticMode, lang = "ja" }: Slide
           ))}
         </ul>
       )}
+      {question.matchLeft && question.matchRight && (
+        <div className="slide-match">
+          <ol aria-label="Cột trái">
+            {question.matchLeft.map((item, index) => (
+              <li key={index} lang={lang}>
+                <FuriganaText text={item} />
+              </li>
+            ))}
+          </ol>
+          <ol type="A" aria-label="Cột phải">
+            {question.matchRight.map((item, index) => (
+              <li key={index} lang={lang}>
+                <FuriganaText text={item} />
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
       {question.options && (
         <ol className="slide-options">
           {question.options.map((option, index) => (

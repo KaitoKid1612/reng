@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { shuffleOrderTokens } from "@/lib/assignment";
 import { questionSchema, toPublicLesson } from "@/lib/lesson-schema";
+import { describeMatchProblem, isInPairOrder, toMatchColumns } from "@/lib/match-pairs";
 import {
   describeOrderPiecesProblem,
   describePassageProblem,
@@ -146,6 +147,19 @@ const draftQuestionSchema = z.discriminatedUnion("type", [
       type: z.literal("order"),
       tokens: z.array(z.object({ id: identifier, text: draftText(200) }).strict()).max(30),
       answer: z.array(identifier).max(30),
+    })
+    .strict(),
+  // Stored by toPublishableMatch: as published once every row has both sides (right column in a
+  // fixed shuffle), as typed until then. A Chinese lesson publishes its saved draft unchanged.
+  z
+    .object({
+      ...draftQuestionBase,
+      type: z.literal("match"),
+      left: z.array(draftText(200)).max(30),
+      right: z.array(draftText(200)).max(30),
+      answer: z
+        .array(z.tuple([z.number().int().nonnegative(), z.number().int().nonnegative()]))
+        .max(30),
     })
     .strict(),
 ]);
@@ -340,6 +354,15 @@ export function reviewTeachingDraft(draft: TeachingDraft): TeachingReport {
       if (piecesProblem) {
         problems.push(`${label}: ${piecesProblem}`);
       }
+    } else if (question.type === "match") {
+      const columns = toMatchColumns(question);
+      const matchProblem =
+        describeMatchProblem(columns.left, columns.right) ??
+        // Pairs still in row order would put the answer in the learner's page.
+        (isInPairOrder(question) ? "sửa lại một cặp để câu được lưu ở dạng xuất bản." : null);
+      if (matchProblem) {
+        problems.push(`${label}: ${matchProblem}`);
+      }
     } else if (question.type === "choice") {
       if (
         question.options.some((option) => !option) ||
@@ -442,6 +465,9 @@ export interface PublicQuestion {
   options?: string[];
   // Sentence pieces in the fixed shuffle learners get, never in answer order.
   pieces?: string[];
+  // A matching question's columns; the right one in its stored shuffle, never in pair order.
+  matchLeft?: string[];
+  matchRight?: string[];
 }
 
 export function toPublicQuestion(question: LessonQuestion): PublicQuestion {
@@ -459,6 +485,8 @@ export function toPublicQuestion(question: LessonQuestion): PublicQuestion {
             (token) => token.text,
           )
         : undefined,
+    matchLeft: question.type === "match" ? question.left : undefined,
+    matchRight: question.type === "match" ? question.right : undefined,
   };
 }
 

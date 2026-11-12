@@ -93,7 +93,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Ở Tạo bài mới, chọn Soạn bài tiếng Trung. Chọn giản thể hoặc phồn thể, mẫu bài và mục tiêu nhỏ đầu tiên.",
       "Đi qua năm bước: mục tiêu, từ vựng, mẫu câu và hội thoại, câu luyện, slide và xuất bản. Bước Từ vựng cho dán bảng chữ Hán – pinyin – nghĩa Việt từ Excel; CSV tiếng Nhật là công cụ riêng.",
       "Duyệt từng đáp án trước khi xuất bản. Pinyin cần đúng dấu thanh và khoảng trắng; giản thể và phồn thể không tự đổi cho nhau.",
-      "Ngoài câu tạo từ từ vựng, bấm Thêm câu sắp xếp để học viên xếp các mảnh thành câu, hoặc thêm đoạn văn cho một câu để luyện đọc hiểu.",
+      "Ngoài câu tạo từ từ vựng, bấm Thêm câu sắp xếp để học viên xếp các mảnh thành câu, Thêm câu ghép đôi để học viên ghép từng mục cột trái với mục cột phải (gõ hai cột, cùng dòng là một cặp), hoặc thêm đoạn văn cho một câu để luyện đọc hiểu.",
     ],
   },
   {

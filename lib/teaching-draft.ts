@@ -318,7 +318,7 @@ export function teachingReducer(draft: TeachingDraft, action: TeachingAction): T
   }
 }
 
-export type BlankQuestionType = "choice" | "fill" | "order";
+export type BlankQuestionType = "choice" | "fill" | "order" | "match";
 
 // A question added for the same passage shares its text exactly, so a daily set keeps them together.
 export function createBlankQuestion(
@@ -342,6 +342,8 @@ export function createBlankQuestion(
       return { ...base, type, inputMode: "chinese", kanjiStrict: false, answer: [""] };
     case "order":
       return { ...base, type, tokens: [], answer: [] };
+    case "match":
+      return { ...base, type, left: [], right: [], answer: [] };
   }
 }
 
@@ -475,7 +477,8 @@ export function toPreviewLesson(draft: TeachingDraft, lessonId: string): PublicT
         void teacherNotes;
         return slide;
       }),
-      // The same learner view as the published lesson: passage, options and shuffled pieces.
+      // The same learner view as the published lesson: passage, options, shuffled pieces and the
+      // matching columns as stored (shuffled once every row has both sides).
       questions: content.questions.map(toPublicQuestion),
     },
   };

@@ -81,6 +81,26 @@ export function fromMatchColumns(left: readonly string[], right: readonly string
   };
 }
 
+/**
+ * The draft of two typed columns for an editor whose saved draft is published as it is (the Chinese
+ * editor: publish_lesson requires the published content to be the reviewed draft). Once every
+ * filled row has both sides, the question is stored as it will be published, blank rows dropped
+ * and the right column in its fixed shuffle; until then the columns stay as typed, so the editor
+ * can show them and say what is missing.
+ */
+export function toPublishableMatch(left: readonly string[], right: readonly string[]) {
+  const rows = filledMatchRows(left, right);
+  if (rows.length > 0 && rows.every((row) => row.left && row.right)) {
+    return toMatchQuestion(rows);
+  }
+  return fromMatchColumns(left, right);
+}
+
+// True when the pairs still line up row by row, as typed; such a question must not be published.
+export function isInPairOrder(question: Pick<MatchShape, "answer">) {
+  return question.answer.length > 1 && question.answer.every(([left, right]) => left === right);
+}
+
 // A sentence fragment for the editors about the first problem, or null.
 export function describeMatchProblem(left: readonly string[], right: readonly string[]) {
   const rows = filledMatchRows(left, right);

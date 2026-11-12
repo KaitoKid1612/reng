@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { describeCorrectAnswer } from "../lib/assignment";
+import { gradeQuestion } from "../lib/grading/grade";
 import { parseDatabaseVersion } from "../lib/lesson-repository";
+import { fromMatchColumns, toMatchColumns, toPublishableMatch } from "../lib/match-pairs";
 import {
   createTeachingDraft,
   isTeachingVersion,
@@ -12,10 +15,12 @@ import {
 } from "../lib/teaching-content";
 import {
   buildVocabularyQuestion,
+  createBlankQuestion,
   createReviewedQuestions,
   createTeachingId,
   isQuestionReviewed,
   teachingReducer,
+  toPreviewLesson,
 } from "../lib/teaching-draft";
 import { parseVocabularyTable } from "../lib/teaching-table";
 import { generateTeachingSlides } from "../lib/teaching-templates";
@@ -252,4 +257,76 @@ test("a deleted word's ID never comes back for a new word, so review cards stay 
   const fresh = createTeachingId("vocab", withTaken, () => picks.shift() ?? 0.5);
   assert.notEqual(fresh, taken);
   assert.match(fresh, /^vocab-[a-z0-9]{6}$/);
+});
+
+test("Chinese matching drafts are stored as published once every row is paired", () => {
+  let draft = buildDraft();
+  draft = teachingReducer(draft, {
+    type: "applySlides",
+    generation: generateTeachingSlides(draft),
+  });
+  const blank = createBlankQuestion(draft.content, "match");
+  assert.equal(blank.type, "match");
+  const left = ["你好", "谢谢", "老师", ""];
+  const right = ["xin chào", "cảm ơn", "giáo viên", ""];
+  const base = { ...blank, prompt: "Ghép từ với nghĩa", explain: "Từ của bài 1." };
+
+  // Columns that do not pair up yet stay as typed, and publishing names the problem.
+  const uneven = { ...base, ...toPublishableMatch(left, ["xin chào", "cảm ơn"]) };
+  assert.deepEqual(uneven.right, ["xin chào", "cảm ơn"]);
+  const unevenDraft = teachingReducer(draft, { type: "addQuestion", question: uneven });
+  assert.ok(teachingDraftSchema.safeParse(unevenDraft).success);
+  assert.ok(
+    reviewTeachingDraft(unevenDraft).problems.some((problem) =>
+      problem.startsWith("Câu luyện 2: mỗi dòng bên trái cần đúng một dòng bên phải"),
+    ),
+  );
+
+  // Every row paired: blank rows dropped and the right column in a fixed shuffle, as published.
+  const question = { ...base, ...toPublishableMatch(left, right) };
+  assert.deepEqual(question.left, ["你好", "谢谢", "老师"]);
+  assert.notDeepEqual(question.right, ["xin chào", "cảm ơn", "giáo viên"]);
+  assert.deepEqual(toPublishableMatch(left, right), toPublishableMatch(left, right));
+  for (const [row, partner] of question.answer) {
+    assert.equal(question.right[partner], right[row]);
+  }
+  // The editor shows the columns back in pair order.
+  assert.deepEqual(toMatchColumns(question), {
+    left: ["你好", "谢谢", "老师"],
+    right: ["xin chào", "cảm ơn", "giáo viên"],
+  });
+  draft = teachingReducer(draft, { type: "addQuestion", question });
+  assert.deepEqual(reviewTeachingDraft(draft).problems, []);
+
+  // The saved draft is what publish_lesson stores; it must parse as a published lesson.
+  const published = teachingPublishedContentSchema.parse(draft.content).questions[1];
+  assert.ok(published.type === "match");
+  const correct = published.answer.map(([row, partner]): [number, number] => [row, partner]);
+  assert.equal(gradeQuestion(published, correct).isCorrect, true);
+  assert.equal(
+    describeCorrectAnswer(published),
+    "你好 → xin chào · 谢谢 → cảm ơn · 老师 → giáo viên",
+  );
+
+  // A complete question left in row order would show the answer in the page: it cannot publish.
+  const inRowOrder = teachingReducer(draft, {
+    type: "updateQuestion",
+    question: {
+      ...question,
+      ...fromMatchColumns(question.left, ["xin chào", "cảm ơn", "giáo viên"]),
+    },
+  });
+  assert.ok(
+    reviewTeachingDraft(inRowOrder).problems.some((problem) =>
+      problem.startsWith("Câu luyện 2: sửa lại một cặp"),
+    ),
+  );
+
+  // Learners and the editor preview get both columns in the stored shuffle, never the pairs.
+  const preview = toPreviewLesson(draft, "chao-hoi").content.questions[1];
+  assert.deepEqual(
+    { left: preview.matchLeft, right: preview.matchRight },
+    { left: question.left, right: question.right },
+  );
+  assert.doesNotMatch(JSON.stringify(preview), /"answer"/);
 });
