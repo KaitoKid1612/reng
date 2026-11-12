@@ -104,7 +104,10 @@ test("the user guide is linked from every page, covers both roles and fits a 360
   // On a phone they fold into a bar that names the section being read and opens the list.
   const toggle = contents.getByRole("button", { name: /^Mục lục/ });
   await expect(contents.getByRole("link", { name: "Làm bài tập" })).toBeHidden();
+  // From the top of the page the bar sits low on the screen; the list must still open in view.
+  await page.evaluate(() => window.scrollTo(0, 0));
   await toggle.click();
+  await expect(page.locator("#guide-toc-list")).toBeInViewport({ ratio: 1 });
   await contents.getByRole("link", { name: "Làm bài tập" }).click();
   await expect(page).toHaveURL(/#learner-practice$/);
   await expect(toggle).toHaveAttribute("aria-expanded", "false");

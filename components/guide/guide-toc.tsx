@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { useCurrentSection } from "@/components/use-current-section";
 
-import type { KeyboardEvent } from "react";
+import type { KeyboardEvent, MouseEvent } from "react";
 
 export interface GuideTocGroup {
   id: string;
@@ -44,6 +44,17 @@ export function GuideToc({ groups }: GuideTocProps) {
     };
   }, [isOpen]);
 
+  // At the top of the page the bar sits low on the first screen and the list would open below the
+  // edge of the window, so opening first brings the bar to the top, where it stays.
+  function handleToggle(event: MouseEvent<HTMLButtonElement>) {
+    const nav = event.currentTarget.closest("nav");
+    const top = nav?.getBoundingClientRect().top ?? 0;
+    if (!isOpen && top > 0) {
+      window.scrollBy({ top, behavior: "instant" });
+    }
+    setIsOpen((value) => !value);
+  }
+
   function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
     if (event.key === "Escape" && isOpen) {
       setIsOpen(false);
@@ -63,7 +74,7 @@ export function GuideToc({ groups }: GuideTocProps) {
         className="guide-toc-toggle"
         aria-expanded={isOpen}
         aria-controls="guide-toc-list"
-        onClick={() => setIsOpen((value) => !value)}
+        onClick={handleToggle}
       >
         <ListTree size={18} aria-hidden="true" />
         <span className="guide-toc-toggle-label">Mục lục</span>
