@@ -157,6 +157,7 @@ Từ 03/11/2026 hai dạng này soạn được ngay trên trình soạn tiếng
   - Chỉ có một thứ tự đúng với nghĩa ghi trong đề. Tránh hai cụm đổi chỗ cho nhau mà câu vẫn đúng.
 - **Đọc hiểu:** bấm **Thêm đoạn văn đọc hiểu** (trình soạn tiếng Trung: **Thêm đoạn văn cho câu N**), dán đoạn văn, rồi ghi đề chỉ là câu hỏi. Bấm **Thêm câu hỏi cho đoạn văn này** để thêm câu trắc nghiệm mới ngay sau, dùng đúng đoạn văn đó. Các câu cùng đoạn văn được giao liền nhau trong bài hằng ngày. Đoạn văn tối đa 2.000 ký tự; xóa hết chữ để bỏ đoạn văn.
 - Câu sắp xếp hiện được trên slide câu luyện của bài tiếng Trung: slide hiện đoạn văn và các mảnh đã xáo, nút "Hiện đáp án" cho câu đúng. Slide của bài tiếng Nhật vẫn chỉ chọn câu trắc nghiệm và điền.
+- **Ghép đôi trên trình soạn tiếng Trung** (từ 12/11/2026): bấm **Thêm câu ghép đôi**, gõ cột trái và cột phải, cùng dòng là một cặp (2–8 cặp, mỗi vế tối đa 60 ký tự, trong một cột không có hai mục giống nhau). Dòng "Các cặp đúng" cho xem lại. Slide câu luyện hiện cột trái đánh số và cột phải đánh chữ cái, đã xáo; nút "Hiện đáp án" cho các cặp đúng. Học viên làm như câu ghép đôi tiếng Nhật.
 - Sửa câu của ngân hàng ôn trên trình soạn tiếng Nhật giữ nguyên đoạn văn và ngôn ngữ của câu (`zh-exact-v1`). Đổi ô nhập của câu điền sang chữ Hán/pinyin thì câu chấm theo luật tiếng Trung, sang ô tiếng Nhật thì theo luật tiếng Nhật.
 
 ## Làm bài nghe
