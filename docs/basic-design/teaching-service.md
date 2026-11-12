@@ -320,6 +320,15 @@ Người dùng nhờ rà soát chỗ bất hợp lý, khó dùng và làm giao d
 
 Mọi chuyển động tắt khi thiết bị bật giảm chuyển động (`prefers-reduced-motion`); pháo giấy ẩn hẳn. Màu chỉ dùng token, kiểm tra axe ở cả giao diện sáng và tối.
 
+## Trang Hướng dẫn dễ đọc hơn — 12/11/2026
+
+Người dùng thấy trang `/guide` chưa ổn. Trước đó trang mở đầu bằng một đoạn văn dài, mục lục là khung link trơn (trên điện thoại chiếm gần hai màn hình và không theo khi cuộn), cả trang là một cột hẹp 820px, phần giáo viên và học viên giống hệt nhau, ghi chú chữ nhỏ.
+
+- **Đầu trang**: một câu giới thiệu, ba thẻ chọn phần (Dành cho giáo viên 12 mục, Dành cho học viên 6 mục, Câu hỏi thường gặp 5 câu) và bốn mẹo có biểu tượng thay cho đoạn văn mở đầu (dùng trên điện thoại hay máy tính, nút Menu, Tự học không cần tài khoản, nền sáng/tối). Trên điện thoại ba thẻ thành ba dòng gọn.
+- **Mục lục**: trên màn hình rộng là cột bên trái luôn ở trong tầm nhìn khi cuộn và đánh dấu mục đang đọc. Từ 960px trở xuống là thanh dính đầu cửa sổ ghi "Mục lục · tên mục đang đọc"; bấm vào mở danh sách, chọn mục thì danh sách đóng và trang nhảy tới mục đó. Esc hoặc cuộn trang cũng đóng danh sách.
+- **Nội dung**: mỗi phần (giáo viên, học viên, quản trị viên, câu hỏi) có tiêu đề kèm biểu tượng; mỗi mục là một thẻ có biểu tượng riêng, các bước là vòng số nối bằng đường mảnh, ghi chú (đăng nhập Google, điểm JLPT ước tính) là ô có biểu tượng thông tin. Câu hỏi thường gặp là các thẻ mở từng câu.
+- Nội dung chữ giữ nguyên; mục Ôn tập và tiến độ trước chỉ có một bước dài nay tách thành bốn bước. Các liên kết `/guide#teacher-title`, `/guide#learner-title` và `#<mã mục>` vẫn dùng được.
+
 ## Làm tiếp các đề xuất giao diện — 11/11/2026 (chiều)
 
 Người dùng đồng ý làm cả sáu đề xuất ở cuối [báo cáo rà soát](../testing/ui-polish-2026-11-11.md#đề-xuất-tiếp-theo-đã-làm-cùng-ngày).

@@ -1,8 +1,40 @@
+import {
+  ArrowLeftRight,
+  Award,
+  BookOpen,
+  CalendarClock,
+  ChartColumn,
+  ChevronDown,
+  CircleHelp,
+  ClipboardList,
+  Compass,
+  FileText,
+  GraduationCap,
+  Info,
+  KeyRound,
+  Languages,
+  Menu,
+  PencilLine,
+  Presentation,
+  RotateCcw,
+  Share2,
+  ShieldCheck,
+  Smartphone,
+  SunMoon,
+  UserCog,
+  UserPlus,
+  Users,
+  Video,
+} from "lucide-react";
 import Link from "next/link";
 
+import { GuideToc } from "@/components/guide/guide-toc";
 import { isGoogleAuthEnabled } from "@/lib/server/supabase";
 
+import type { GuideTocGroup } from "@/components/guide/guide-toc";
+import type { LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 const DESCRIPTION =
   "Hướng dẫn dùng Reng cho giáo viên và học viên: tạo bài từ mẫu, mở lớp, dạy qua Google Meet, giao bài, bài luyện hằng ngày và đề thi thử JLPT, vào lớp bằng mã, làm bài, ôn tập và tự học.";
@@ -215,7 +247,10 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-review",
     title: "Ôn tập và tiến độ",
     steps: [
-      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn. Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được đánh dấu đã giải quyết. Tiến độ của tôi cho thấy chuỗi ngày học với các mốc và lịch 12 tuần, bài đã đọc, kết quả bài tập, tỉ lệ đúng theo dạng câu và thẻ ôn tập. Ba nút này nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Đi nhanh tới trên trang chủ.",
+      "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn.",
+      "Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được đánh dấu đã giải quyết.",
+      "Tiến độ của tôi cho thấy chuỗi ngày học với các mốc và lịch 12 tuần, bài đã đọc, kết quả bài tập, tỉ lệ đúng theo dạng câu và thẻ ôn tập.",
+      "Ba nút Ôn tập, Sổ lỗi và Tiến độ của tôi nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Đi nhanh tới trên trang chủ.",
     ],
   },
 ];
@@ -262,103 +297,245 @@ function withGoogleNote(sections: GuideSection[]) {
   );
 }
 
-interface SectionListProps {
-  sections: GuideSection[];
+// One picture per section, so a long page can be scanned by eye as well as by title.
+const SECTION_ICONS: Record<string, LucideIcon> = {
+  "teacher-sign-up": UserPlus,
+  "teacher-self-study": ArrowLeftRight,
+  "teacher-lesson": FileText,
+  "teacher-chinese": Languages,
+  "teacher-editor": Presentation,
+  "teacher-class": Users,
+  "teacher-assign": ClipboardList,
+  "teacher-daily": CalendarClock,
+  "teacher-jlpt": Award,
+  "teacher-meet": Video,
+  "teacher-report": ChartColumn,
+  "teacher-share": Share2,
+  "learner-join": KeyRound,
+  "learner-study": BookOpen,
+  "learner-practice": PencilLine,
+  "learner-jlpt": Award,
+  "learner-account": UserCog,
+  "learner-review": RotateCcw,
+};
+
+const TOC_GROUPS: GuideTocGroup[] = [
+  { id: "teacher", title: "Giáo viên", items: TEACHER_SECTIONS },
+  { id: "learner", title: "Học viên", items: LEARNER_SECTIONS },
+  {
+    id: "common",
+    title: "Chung",
+    items: [
+      { id: "admin-title", title: "Dành cho quản trị viên" },
+      { id: "faq", title: "Câu hỏi thường gặp" },
+    ],
+  },
+];
+
+interface RoleCard {
+  href: string;
+  title: string;
+  description: string;
+  count: string;
+  Icon: LucideIcon;
 }
 
-function SectionList({ sections }: SectionListProps) {
-  return sections.map((section) => (
-    <section key={section.id} id={section.id} className="guide-section">
-      <h3>{section.title}</h3>
-      <ol>
+const ROLE_CARDS: RoleCard[] = [
+  {
+    href: "#teacher-title",
+    title: "Dành cho giáo viên",
+    description: "Đăng ký, soạn bài, mở lớp, dạy qua Google Meet, giao bài và theo dõi lớp.",
+    count: `${TEACHER_SECTIONS.length} mục`,
+    Icon: Presentation,
+  },
+  {
+    href: "#learner-title",
+    title: "Dành cho học viên",
+    description: "Vào lớp bằng mã, học bài, làm bài tập, thi thử JLPT, ôn tập và xem tiến độ.",
+    count: `${LEARNER_SECTIONS.length} mục`,
+    Icon: GraduationCap,
+  },
+  {
+    href: "#faq",
+    title: "Câu hỏi thường gặp",
+    description: "Quên mật khẩu, không vào được lớp, nút Nghe không có tiếng…",
+    count: `${QUESTIONS.length} câu`,
+    Icon: CircleHelp,
+  },
+];
+
+interface GuideSectionCardProps {
+  section: GuideSection;
+}
+
+function GuideSectionCard({ section }: GuideSectionCardProps) {
+  const Icon = SECTION_ICONS[section.id] ?? Info;
+  return (
+    <section id={section.id} className="guide-section" aria-labelledby={`${section.id}-heading`}>
+      <div className="guide-section-head">
+        <span className="guide-section-icon" aria-hidden="true">
+          <Icon size={20} />
+        </span>
+        <h3 id={`${section.id}-heading`}>{section.title}</h3>
+      </div>
+      <ol className="guide-steps">
         {section.steps.map((step) => (
           <li key={step}>{step}</li>
         ))}
       </ol>
-      {section.note && <p className="small muted">{section.note}</p>}
+      {section.note && (
+        <p className="guide-note">
+          <Info size={16} aria-hidden="true" />
+          <span>{section.note}</span>
+        </p>
+      )}
     </section>
-  ));
+  );
+}
+
+interface RoleHeaderProps {
+  id: string;
+  title: string;
+  Icon: LucideIcon;
+  children: ReactNode;
+}
+
+function RoleHeader({ id, title, Icon, children }: RoleHeaderProps) {
+  return (
+    <div className="guide-role-head">
+      <span className="guide-role-icon" aria-hidden="true">
+        <Icon size={26} />
+      </span>
+      <div>
+        <h2 id={id}>{title}</h2>
+        <p className="inline-links">{children}</p>
+      </div>
+    </div>
+  );
 }
 
 export default function GuidePage() {
   return (
     <article className="guide-page">
-      <h1>Hướng dẫn sử dụng</h1>
-      <p>
-        Reng là nơi giáo viên soạn slide, mở lớp, giao bài và theo dõi học viên; buổi học video vẫn
-        diễn ra trên Google Meet. Học viên chỉ cần trình duyệt trên điện thoại hoặc máy tính. Trên
-        điện thoại, các mục nằm trong nút Menu ở góc trên; Lớp của tôi (giáo viên: Giảng dạy) luôn ở
-        ngay cạnh nút đó. Mục <Link href="/self-study">Tự học</Link> có bài học công khai và công cụ
-        luyện tập của từng môn, không cần tài khoản. Ba nút Giao diện ở góc phải thanh đầu trang
-        (màn hình, mặt trời, mặt trăng) đổi nền theo máy, sáng hoặc tối; slide luôn giữ nền sáng.
-      </p>
-      <nav className="guide-toc" aria-label="Mục lục hướng dẫn">
-        <div>
-          <h2>Giáo viên</h2>
-          <ul>
-            {TEACHER_SECTIONS.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`}>{section.title}</a>
-              </li>
+      <header className="guide-hero">
+        <h1>Hướng dẫn sử dụng</h1>
+        <p className="guide-lead">
+          Reng là nơi giáo viên soạn slide, mở lớp, giao bài và theo dõi học viên. Chọn phần của bạn
+          để xem từng bước.
+        </p>
+        <div className="link-cards guide-roles">
+          {ROLE_CARDS.map(({ href, title, description, count, Icon }, index) => (
+            <a
+              key={href}
+              href={href}
+              className="link-card"
+              aria-labelledby={`role-${index}-title`}
+              aria-describedby={`role-${index}-description`}
+            >
+              <span className="shortcut-icon" aria-hidden="true">
+                <Icon size={22} />
+              </span>
+              <span id={`role-${index}-title`} className="link-card-title">
+                {title}
+              </span>
+              <span id={`role-${index}-description`} className="small muted">
+                {description}
+              </span>
+              <span className="guide-role-count">{count}</span>
+            </a>
+          ))}
+        </div>
+        <ul className="guide-tips" aria-label="Mẹo dùng Reng">
+          <li>
+            <Smartphone size={20} aria-hidden="true" />
+            <span>
+              <strong>Điện thoại hay máy tính đều được.</strong> Học viên chỉ cần trình duyệt; buổi
+              học video vẫn diễn ra trên Google Meet.
+            </span>
+          </li>
+          <li>
+            <Menu size={20} aria-hidden="true" />
+            <span>
+              <strong>Trên điện thoại</strong>, các mục nằm trong nút Menu ở góc trên; Lớp của tôi
+              (giáo viên: Giảng dạy) luôn ở ngay cạnh nút đó.
+            </span>
+          </li>
+          <li>
+            <Compass size={20} aria-hidden="true" />
+            <span className="inline-links">
+              <strong>Không cần tài khoản</strong> để vào <Link href="/self-study">Tự học</Link>:
+              bài học công khai và công cụ luyện tập của từng môn.
+            </span>
+          </li>
+          <li>
+            <SunMoon size={20} aria-hidden="true" />
+            <span>
+              <strong>Nền sáng hoặc tối:</strong> ba nút Giao diện ở góc phải thanh đầu trang (màn
+              hình, mặt trời, mặt trăng); slide luôn giữ nền sáng.
+            </span>
+          </li>
+        </ul>
+      </header>
+      <div className="guide-layout">
+        <GuideToc groups={TOC_GROUPS} />
+        <div className="guide-content">
+          <section className="guide-role" aria-labelledby="teacher-title">
+            <RoleHeader id="teacher-title" title="Dành cho giáo viên" Icon={Presentation}>
+              Bắt đầu ở <Link href="/sign-up/teacher">Đăng ký giáo viên</Link>; nếu đã có tài khoản,
+              vào <Link href="/teach">Giảng dạy</Link>.
+            </RoleHeader>
+            {withGoogleNote(TEACHER_SECTIONS).map((section) => (
+              <GuideSectionCard key={section.id} section={section} />
             ))}
-          </ul>
-        </div>
-        <div>
-          <h2>Học viên</h2>
-          <ul>
-            {LEARNER_SECTIONS.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`}>{section.title}</a>
-              </li>
+          </section>
+          <section className="guide-role" aria-labelledby="learner-title">
+            <RoleHeader id="learner-title" title="Dành cho học viên" Icon={GraduationCap}>
+              Bắt đầu ở <Link href="/join-class">Vào lớp</Link> với mã giáo viên gửi.
+            </RoleHeader>
+            {withGoogleNote(LEARNER_SECTIONS).map((section) => (
+              <GuideSectionCard key={section.id} section={section} />
             ))}
-          </ul>
+          </section>
+          <section id="admin-title" className="guide-role" aria-labelledby="admin-heading">
+            <div className="guide-section guide-admin">
+              <div className="guide-section-head">
+                <span className="guide-section-icon" aria-hidden="true">
+                  <ShieldCheck size={20} />
+                </span>
+                <h2 id="admin-heading">Dành cho quản trị viên</h2>
+              </div>
+              <p>
+                Tài khoản quản trị thấy mục Quản trị trên thanh đầu trang: bật hoặc tắt Duyệt giáo
+                viên mới trước khi cho dạy; duyệt, tạm dừng hoặc từ chối giáo viên; ghi hạn thuê và
+                xem nhật ký thao tác. Hết hạn thuê không tự khóa giáo viên: trang Quản trị đếm số
+                giáo viên quá hạn để bạn xử lý. Quyền quản trị do người vận hành cấp trong database,
+                không đăng ký được trên trang.
+              </p>
+            </div>
+          </section>
+          <section id="faq" className="guide-role" aria-labelledby="faq-title">
+            <div className="guide-role-head">
+              <span className="guide-role-icon" aria-hidden="true">
+                <CircleHelp size={26} />
+              </span>
+              <div>
+                <h2 id="faq-title">Câu hỏi thường gặp</h2>
+              </div>
+            </div>
+            <div className="guide-questions">
+              {QUESTIONS.map((item) => (
+                <details key={item.question} className="guide-question">
+                  <summary>
+                    <span>{item.question}</span>
+                    <ChevronDown size={18} aria-hidden="true" />
+                  </summary>
+                  <p>{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
         </div>
-        <div>
-          <h2>Chung</h2>
-          <ul>
-            <li>
-              <a href="#admin-title">Dành cho quản trị viên</a>
-            </li>
-            <li>
-              <a href="#faq">Câu hỏi thường gặp</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <section aria-labelledby="teacher-title">
-        <h2 id="teacher-title">Dành cho giáo viên</h2>
-        <p>
-          Bắt đầu ở <Link href="/sign-up/teacher">Đăng ký giáo viên</Link>; nếu đã có tài khoản, vào{" "}
-          <Link href="/teach">Giảng dạy</Link>.
-        </p>
-        <SectionList sections={withGoogleNote(TEACHER_SECTIONS)} />
-      </section>
-      <section aria-labelledby="learner-title">
-        <h2 id="learner-title">Dành cho học viên</h2>
-        <p>
-          Bắt đầu ở <Link href="/join-class">Vào lớp</Link> với mã giáo viên gửi.
-        </p>
-        <SectionList sections={withGoogleNote(LEARNER_SECTIONS)} />
-      </section>
-      <section aria-labelledby="admin-title" className="guide-section">
-        <h2 id="admin-title">Dành cho quản trị viên</h2>
-        <p>
-          Tài khoản quản trị thấy mục Quản trị trên thanh đầu trang: bật hoặc tắt Duyệt giáo viên
-          mới trước khi cho dạy; duyệt, tạm dừng hoặc từ chối giáo viên; ghi hạn thuê và xem nhật ký
-          thao tác. Hết hạn thuê không tự khóa giáo viên: trang Quản trị đếm số giáo viên quá hạn để
-          bạn xử lý. Quyền quản trị do người vận hành cấp trong database, không đăng ký được trên
-          trang.
-        </p>
-      </section>
-      <section id="faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Câu hỏi thường gặp</h2>
-        {QUESTIONS.map((item) => (
-          <details key={item.question} className="guide-question">
-            <summary>{item.question}</summary>
-            <p>{item.answer}</p>
-          </details>
-        ))}
-      </section>
+      </div>
     </article>
   );
 }

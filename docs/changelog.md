@@ -2,6 +2,10 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 12/11/2026
+
+- Trang Hướng dẫn dễ đọc hơn: ba thẻ chọn phần và bốn mẹo thay cho đoạn mở đầu dài; mục lục thành cột luôn trong tầm nhìn và đánh dấu mục đang đọc (trên điện thoại là thanh dính đầu cửa sổ ghi mục đang đọc, bấm để mở danh sách); mỗi mục là một thẻ có biểu tượng, các bước có vòng số, ghi chú thành ô nổi bật, câu hỏi thường gặp thành thẻ mở từng câu. Nội dung giữ nguyên. Xem [thiết kế](basic-design/teaching-service.md#trang-hướng-dẫn-dễ-đọc-hơn--12112026).
+
 ### 11/11/2026
 
 - Làm tiếp sáu đề xuất giao diện: trang chủ giáo viên có Hôm nay dạy gì; Lớp của tôi hiện số bài đã nộp của từng lớp; làm bài trên PC mặc định từng câu, có nút Từng câu / Cả bài; Ôn tập một bộ đếm có thanh tiến độ và màn kết thúc mới; Tiến độ có chuỗi ngày, mốc và lịch 12 tuần, thanh phần trăm theo dạng câu; trang chủ có thẻ chuỗi ngày (mục tiêu mỗi ngày là giữ chuỗi); âm thanh đúng/sai có nút tắt. Không cần migration. Xem [thiết kế](basic-design/teaching-service.md#làm-tiếp-các-đề-xuất-giao-diện--11112026-chiều).

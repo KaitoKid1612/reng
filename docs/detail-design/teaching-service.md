@@ -476,3 +476,12 @@ Hành vi ở [BD](../basic-design/teaching-service.md#làm-tiếp-các-đề-xu�
 - **Nhiều lớp.** `listClassAssignments` (`lib/server/assignments.ts`) và phần ghi danh của `listTeacherClasses` (`lib/server/classes.ts`) đọc bằng `selectEveryPageIn` (nhóm 100 mã lớp, từng trang 1000 dòng, có thứ tự cố định); kết quả bài giao xếp lại mới nhất trước sau khi gộp các nhóm. Trước đó giáo viên có khoảng 200 lớp làm `/teach` lỗi.
 - **E2E.** `playwright.supabase.config.ts` đặt `storageState` với `reng-attempt-view = all` cho mọi ngữ cảnh; `e2e-supabase/minna-teaching.spec.ts` xóa nó để thử chế độ Từng câu (`showQuestion` lùi về câu đầu rồi tiến tới câu cần).
 
+## Trang Hướng dẫn dễ đọc hơn — 12/11/2026
+
+Hành vi ở [BD](../basic-design/teaching-service.md#trang-hướng-dẫn-dễ-đọc-hơn--12112026).
+
+- `app/guide/page.tsx` vẫn là server component với dữ liệu `TEACHER_SECTIONS`, `LEARNER_SECTIONS`, `QUESTIONS`. Thêm `SECTION_ICONS` (mã mục → icon lucide), `TOC_GROUPS`, `ROLE_CARDS` (dùng lại `.link-cards`, `.link-card`, `.shortcut-icon` của trang chủ thành viên), `GuideSectionCard` và `RoleHeader`. Mỗi mục là `<section id aria-labelledby>` với `<h3 id="<mã>-heading">`; quản trị viên và câu hỏi vẫn có `#admin-title`, `#faq`.
+- `components/guide/guide-toc.tsx` (client): một `<nav aria-label="Mục lục hướng dẫn">` cho mọi độ rộng. Nút `.guide-toc-toggle` (`aria-expanded`, `aria-controls="guide-toc-list"`) chỉ hiện ở ≤ 960px; danh sách hiện sẵn ở màn hình rộng và chỉ hiện khi `data-open="true"` ở màn hình hẹp. Link mục đang đọc có `aria-current="location"`. Danh sách đóng khi bấm link, Esc hoặc cuộn trang (sau 300ms để cú nhảy của chính link không đóng nhầm).
+- `components/use-current-section.ts`: hook `useCurrentSection(ids)` tách từ `ClassSectionNav` (mục cuối cùng có đỉnh đã qua mốc 120px, hoặc mục cuối khi cuộn tới đáy trang; tính lại theo `requestAnimationFrame` khi cuộn và đổi cỡ cửa sổ). `components/teach/class-section-nav.tsx` dùng lại hook này.
+- CSS ở `app/styles/public-pages.css` (khối "User guide"): `.guide-layout` lưới `230px | 1fr` (cột nội dung tối đa 860px), `.guide-toc` `position: sticky`; `.guide-steps` đánh số bằng CSS counter, đường nối bằng `li::after`; `--guide-gutter` (32/24/16px theo `.page-container`) để thanh mục lục trên điện thoại chạm hai mép. `scroll-margin-top` 76px ở màn hình hẹp để tiêu đề mục không bị thanh che.
+

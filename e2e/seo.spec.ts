@@ -92,12 +92,22 @@ test("the user guide is linked from every page, covers both roles and fits a 360
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `${ORIGIN}/guide`);
   await expect(page.getByRole("heading", { name: "Dành cho giáo viên" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Dành cho học viên" })).toBeVisible();
-  await page
-    .getByRole("navigation", { name: "Mục lục hướng dẫn" })
-    .getByRole("link", { name: "Bài luyện hằng ngày" })
-    .click();
+  // On a wide screen the contents stay beside the text and mark the section being read.
+  const contents = page.getByRole("navigation", { name: "Mục lục hướng dẫn" });
+  const daily = contents.getByRole("link", { name: "Bài luyện hằng ngày" });
+  await daily.click();
   await expect(page).toHaveURL(/#teacher-daily$/);
+  await expect(daily).toHaveAttribute("aria-current", "location");
   await page.setViewportSize({ width: 360, height: 780 });
   const fits = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
   expect(fits).toBe(true);
+  // On a phone they fold into a bar that names the section being read and opens the list.
+  const toggle = contents.getByRole("button", { name: /^Mục lục/ });
+  await expect(contents.getByRole("link", { name: "Làm bài tập" })).toBeHidden();
+  await toggle.click();
+  await contents.getByRole("link", { name: "Làm bài tập" }).click();
+  await expect(page).toHaveURL(/#learner-practice$/);
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await expect(toggle).toContainText("Làm bài tập");
+  await expect(page.getByRole("heading", { name: "Làm bài tập" })).toBeInViewport();
 });
