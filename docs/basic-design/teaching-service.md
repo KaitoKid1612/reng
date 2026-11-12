@@ -321,6 +321,16 @@ Người dùng nhờ rà soát chỗ bất hợp lý, khó dùng và làm giao d
 
 Mọi chuyển động tắt khi thiết bị bật giảm chuyển động (`prefers-reduced-motion`); pháo giấy ẩn hẳn. Màu chỉ dùng token, kiểm tra axe ở cả giao diện sáng và tối.
 
+## Tải dữ liệu của tôi — 12/11/2026
+
+Chính sách quyền riêng tư vừa công bố hứa quyền được xem dữ liệu của mình, và lộ trình (ý tưởng 10 ngày 06/11) còn ghi "tự xuất dữ liệu chưa làm".
+
+- **Chỗ bấm**: trang Tài khoản, mục **Tải dữ liệu của tôi**, nút "Tải tệp dữ liệu (JSON)". Trình duyệt lưu tệp `reng-du-lieu-<ngày>.json`, trang không đổi. Mọi tài khoản đều có, kể cả giáo viên.
+- **Trong tệp**: tài khoản (email, họ tên, vai trò, ngày tạo, lần đăng nhập gần nhất, cách đăng nhập), yêu cầu giảng dạy, các lớp đã vào (tên lớp, giáo viên, ngày vào và rời), từng lượt làm bài, tiến độ đọc bài, thẻ ôn và lịch sử ôn, điểm danh, lịch sử nhập từ Sheet, cài đặt nhắc học, thiết bị nhận thông báo (tên trình duyệt, ngày bật, lần gửi cuối), nhật ký nhắc và email đã gửi, các lần nhập mã lớp, bài được chia sẻ cho mình, và với giáo viên: danh sách bài, lớp và nhật ký buổi dạy của mình, các thao tác tài khoản đã làm.
+- **Theo đúng quy tắc của trang kết quả**: lượt làm bài đã tới giờ xem kết quả có từng câu (đề, câu trả lời của bạn, đáp án, đúng sai, điểm) và điểm cả lượt; bài kiểm tra chưa tới giờ giáo viên công bố chỉ có thời điểm làm và nộp kèm lời nhắc tải lại sau; lượt đang làm dở chỉ ghi là chưa nộp.
+- **Không có trong tệp**: ghi chú nội bộ của quản trị viên về giáo viên, địa chỉ và khóa thông báo của thiết bị (bí mật của trình duyệt, không phải thông tin về người dùng), trạng thái nội bộ của lịch ôn, mã lớp, nội dung bài học và câu hỏi giáo viên soạn (trừ đề của câu mình đã làm), dữ liệu của học viên khác. Người khác chỉ hiện bằng tên đã thấy trên trang (giáo viên của lớp, người chia sẻ bài).
+- Chính sách quyền riêng tư (mục 6) và Hướng dẫn (mục Tài khoản) ghi thêm cách tải.
+
 ## Chính sách quyền riêng tư và điều khoản — 12/11/2026
 
 Người dùng muốn đăng ngay hai bản nháp ngày 03/11/2026 ([ghi chú](../legal/privacy-policy-draft.md)), chưa cần rà soát pháp lý vì dự án mới có ít người dùng.

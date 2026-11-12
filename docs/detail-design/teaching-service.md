@@ -494,3 +494,21 @@ Hành vi ở [BD](../basic-design/teaching-service.md#chính-sách-quyền-riên
 - Xóa tài khoản học viên không đổi: `anonymize_learner` (bản trong migration `20261110112415`) đã xóa `push_subscriptions` và `push_log`. `e2e-supabase/account-deletion.spec.ts` thêm một thiết bị và một dòng nhật ký cho học viên trước khi xóa và kiểm cả hai đã mất.
 - `e2e/seo.spec.ts`: sitemap có hai trang; link ở chân trang mở đúng trang, `canonical` đúng, có ngày hiệu lực, tên Beto và link `mailto:`; không còn dấu `[` của chỗ trống trong bản nháp; nút chuyển văn bản đánh dấu trang hiện tại; mục lục nhảy tới "6. Quyền của bạn" và đánh dấu mục đó; vừa khổ 360px.
 
+## Tải dữ liệu của tôi — 12/11/2026
+
+Hành vi ở [BD](../basic-design/teaching-service.md#tải-dữ-liệu-của-tôi--12112026).
+
+- `GET /api/me/export` (`app/api/me/export/route.ts`): `authorizeRead` (401 khi chưa đăng nhập), trả JSON thụt 2 dấu cách với `Content-Disposition: attachment; filename="reng-du-lieu-<ngày giờ Việt Nam>.json"`, `Cache-Control: no-store`, `X-Content-Type-Options: nosniff`. Chỉ đọc nên không cần kiểm tra Origin: trang khác có thể khiến trình duyệt gửi yêu cầu nhưng không đọc được kết quả.
+- `lib/server/data-export.ts` `buildDataExport(account, now)`: mỗi bảng lọc theo đúng `user_id`/`learner_id`/`recipient_id`/`owner_id`/`teacher_id`/`actor_id` của người đó, chọn cột cụ thể (không `*`), đọc từng trang bằng `selectEveryPage`/`selectEveryPageIn` có thứ tự cố định. Đề câu hỏi đọc theo nhóm `assignment_id` từ `assignment_items` (không gọi từng bài); câu trả lời theo nhóm `submission_id` và chỉ cho lượt được hiện kết quả. Tên lớp, giáo viên, tiêu đề bài đọc sau cùng bằng `selectRowsIn`. Cách đăng nhập lấy từ `auth.admin.getUserById` (`app_metadata.providers`).
+- `lib/data-export.ts` (thuần, test ở `tests/data-export.test.ts`): `canExportResults` dùng `isFeedbackAvailable` như `getStudentResults`; `exportAttempt` dựng một lượt bằng `describeRawAnswer`/`describeCorrectAnswer` như trang kết quả, hoặc chỉ biên nhận kèm `note`.
+- Đo trên local: học viên mẫu (33 lượt, 649 thẻ ôn) 411KB trong khoảng 0,1 giây; giáo viên mẫu (219 lớp, 155 bài) 716KB trong khoảng 0,1 giây.
+- `app/settings/account/page.tsx`: mục `#export-title` là thẻ `<a href="/api/me/export" download>` (không qua JavaScript).
+- E2E `e2e-supabase/classroom.spec.ts`: sau khi nộp bài kiểm tra chưa công bố, tệp tải về có email và lớp của học viên, mọi lượt của bài kiểm tra có `results: null`, bài luyện tập đã chấm có câu trả lời; không chứa đề và đáp án bài kiểm tra, lời giải riêng, `p256dh`, `admin_note`. Người chưa đăng nhập nhận 401.
+
+## Sửa bài E2E âm thanh chập chờn — 12/11/2026
+
+`e2e/audio.spec.ts` "returning to the chart resets feedback…" hỏng khoảng 1/40 lần khi chạy song song. Log trong lần hỏng: `play` chạy lúc 1486ms (cú bấm được React phát lại khi hydrate, trước effect), effect gắn lúc 1494ms, Strict Mode dọn lúc 1501ms (`dispose` trình phát vừa tạo) rồi gắn lại lúc 1509ms với `playerRef` vẫn trỏ trình phát đã dọn. Trạng thái kẹt "Đang chuẩn bị âm a…" và mọi lần bấm sau bị bỏ qua. Chỉ xảy ra ở bản dev (production không chạy effect hai lần).
+
+- `components/audio-provider.tsx`: cleanup của effect gọi `dispose()`, đặt `playerRef.current = null` và đưa trạng thái về `INITIAL_AUDIO_STATE`, nên lần bấm sau tạo trình phát mới.
+- Bài test bấm trong `expect(...).toPass()` (mỗi lần chờ trạng thái tối đa 3 giây, tổng 15 giây). Sau khi sửa: 120/120 lần đạt (3 vòng × 40 lần, 6 tiến trình).
+
