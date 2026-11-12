@@ -168,8 +168,12 @@ test("returning to the chart resets feedback from the previous route", async ({ 
     });
   });
   await page.goto("/kana");
-  await page.getByRole("button", { name: "あ, a", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("chưa có giọng Nhật");
+  // A click replayed while the page hydrates can be dropped in development (Strict Mode mounts
+  // the audio provider twice), so the click repeats until the status answers.
+  await expect(async () => {
+    await page.getByRole("button", { name: "あ, a", exact: true }).click();
+    await expect(page.getByRole("status")).toContainText("chưa có giọng Nhật", { timeout: 3000 });
+  }).toPass({ timeout: 15_000 });
   await page.getByRole("link", { name: "Luyện kana", exact: true }).click();
   await expect(page).toHaveURL(/\/kana\/practice$/);
   await page.getByRole("link", { name: "Bảng chữ cái", exact: true }).click();

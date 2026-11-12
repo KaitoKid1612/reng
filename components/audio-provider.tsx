@@ -35,7 +35,17 @@ function AudioSession({ assets, children }: AudioProviderProps) {
   const [state, setState] = useState<AudioPlayerState>(INITIAL_AUDIO_STATE);
   const playerRef = useRef<AudioPlayer | null>(null);
 
-  useEffect(() => () => playerRef.current?.dispose(), []);
+  // In development, Strict Mode unmounts and remounts once, and a click replayed while the page
+  // hydrates can create the player before that. Dropping the disposed player and its "preparing"
+  // state lets the next click start a fresh one instead of reaching a player that ignores it.
+  useEffect(
+    () => () => {
+      playerRef.current?.dispose();
+      playerRef.current = null;
+      setState(INITIAL_AUDIO_STATE);
+    },
+    [],
+  );
 
   function handlePlay(item: AudioPlayable) {
     if (!playerRef.current) {
