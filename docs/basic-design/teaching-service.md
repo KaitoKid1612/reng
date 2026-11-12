@@ -69,6 +69,7 @@ Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác 
 | SV10 | `/guide` | Hướng dẫn sử dụng công khai cho giáo viên, học viên và quản trị viên; link ở thanh đầu trang, chân trang, trang Giảng dạy và Lớp của tôi |
 | SV11 | `/teach/lessons/[id]/starter` | So sánh bản nháp với bài mẫu mới nhất và thay nội dung nháp bằng mẫu |
 | SV12 | `/self-study` | Tự học: bài học công khai và công cụ luyện tập theo từng môn, không cần tài khoản |
+| SV13 | `/privacy`, `/terms` | Chính sách quyền riêng tư và Điều khoản sử dụng, công khai; link ở chân mọi trang và dưới form đăng ký |
 | SV13 | `/pinyin`, `/pinyin/practice` | Tự học tiếng Trung: bảng pinyin (thanh điệu, thanh mẫu, vận mẫu, đặt dấu) và luyện gõ pinyin có dấu, gõ được số thanh |
 
 SV01–SV05, SV08–SV13 đã có; kích hoạt giảng dạy cho tài khoản đang đăng nhập ở `/teach/start`, thư viện chia sẻ ở `/teach/library`, cấp/thu hồi quyền ở `/teach/lessons/[id]/sharing`. SV06 (scan) là route đề xuất, chưa tồn tại. UI 360px; review scan trên desktop có hai cột, mobile chuyển tab ảnh/câu. Bảo toàn sửa tay khi retry nhận dạng.
@@ -319,6 +320,17 @@ Người dùng nhờ rà soát chỗ bất hợp lý, khó dùng và làm giao d
 5. **Trang Tự học** đổi các link chữ thành thẻ có chữ minh họa (あ, ア, 文, ā, 你). Nút và thẻ có phản hồi khi rê chuột và khi bấm.
 
 Mọi chuyển động tắt khi thiết bị bật giảm chuyển động (`prefers-reduced-motion`); pháo giấy ẩn hẳn. Màu chỉ dùng token, kiểm tra axe ở cả giao diện sáng và tối.
+
+## Chính sách quyền riêng tư và điều khoản — 12/11/2026
+
+Người dùng muốn đăng ngay hai bản nháp ngày 03/11/2026 ([ghi chú](../legal/privacy-policy-draft.md)), chưa cần rà soát pháp lý vì dự án mới có ít người dùng.
+
+- **Trang**: `/privacy` (Chính sách quyền riêng tư) và `/terms` (Điều khoản sử dụng), công khai, có trong sitemap. Đầu trang ghi "Có hiệu lực từ 12/11/2026". Người vận hành: Beto (chưa có đơn vị vận hành); liên hệ: leviet1612@gmail.com, là link gửi thư.
+- **Quyết định của người dùng**: trả lời yêu cầu về dữ liệu trong 30 ngày kể từ khi nhận thư; không đặt giới hạn tuổi, chỉ khuyên người chưa đủ 16 tuổi dùng khi cha mẹ biết và đồng ý; không giữ bản sao lưu dữ liệu production (8 file sao lưu cũ ngày 02–03/11 trên máy người vận hành đã xóa cùng ngày; quy trình migration bỏ bước `db dump`, xem [vận hành](../operations.md)).
+- **Đối chiếu với mã**: bản nháp được sửa cho đúng với hiện tại: thông báo trên trình duyệt (địa chỉ nhận, khóa, tên trình duyệt, ngày đã gửi), điểm danh, đề thi thử JLPT, lựa chọn hiển thị lưu trong trình duyệt, nhà cung cấp giọng đọc Unreal Speech, máy chủ Supabase và Vercel ở Singapore, không có công cụ phân tích truy cập. Điều khoản bỏ câu hứa sao lưu dữ liệu.
+- **Xóa tài khoản học viên**: chính sách ghi thiết bị nhận thông báo và nhật ký nhắc đã gửi bị xóa ngay. Điều này đã đúng từ khi có thông báo trình duyệt: migration `20261110112415` định nghĩa lại `anonymize_learner` để xóa `push_subscriptions` và `push_log`. E2E xóa tài khoản nay kiểm thêm hai thứ này.
+- **Chỗ hiện link**: chân mọi trang ("Điều khoản", "Quyền riêng tư"); dưới form đăng ký học viên và giáo viên: "Khi tạo tài khoản, kể cả bằng Google, bạn đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư của Reng."
+- **Giữ cho đúng**: tính năng nào thu thập, lưu hoặc gửi dữ liệu cá nhân theo cách mới (bật email, thêm thanh toán, chuyển Supabase Pro có sao lưu tự động, thêm nhà cung cấp) phải sửa `/privacy` trong cùng thay đổi và đổi ngày có hiệu lực.
 
 ## Trang Hướng dẫn dễ đọc hơn — 12/11/2026
 

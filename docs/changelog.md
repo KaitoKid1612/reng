@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 12/11/2026
 
+- Công bố Chính sách quyền riêng tư (`/privacy`) và Điều khoản sử dụng (`/terms`): người vận hành Beto, liên hệ leviet1612@gmail.com, trả lời yêu cầu về dữ liệu trong 30 ngày, không giới hạn tuổi, không giữ bản sao lưu riêng. Link ở chân mọi trang, trong sitemap và dưới form đăng ký. Nội dung đối chiếu lại với mã hiện tại (thêm thông báo trình duyệt, điểm danh, thi thử JLPT, Unreal Speech). E2E xóa tài khoản nay kiểm thêm thiết bị nhận thông báo và nhật ký nhắc đã gửi cũng bị xóa. Người dùng quyết định không sao lưu dữ liệu production; 8 file sao lưu cũ ngày 02–03/11 trên máy người vận hành đã xóa. Không cần migration. Xem [thiết kế](basic-design/teaching-service.md#chính-sách-quyền-riêng-tư-và-điều-khoản--12112026).
 - Trang Hướng dẫn dễ đọc hơn: ba thẻ chọn phần và bốn mẹo thay cho đoạn mở đầu dài; mục lục thành cột luôn trong tầm nhìn và đánh dấu mục đang đọc (trên điện thoại là thanh dính đầu cửa sổ ghi mục đang đọc, bấm để mở danh sách); mỗi mục là một thẻ có biểu tượng, các bước có vòng số, ghi chú thành ô nổi bật, câu hỏi thường gặp thành thẻ mở từng câu. Nội dung giữ nguyên. Xem [thiết kế](basic-design/teaching-service.md#trang-hướng-dẫn-dễ-đọc-hơn--12112026).
 
 ### 11/11/2026

@@ -485,3 +485,12 @@ Hành vi ở [BD](../basic-design/teaching-service.md#trang-hướng-dẫn-dễ-
 - `components/use-current-section.ts`: hook `useCurrentSection(ids)` tách từ `ClassSectionNav` (mục cuối cùng có đỉnh đã qua mốc 120px, hoặc mục cuối khi cuộn tới đáy trang; tính lại theo `requestAnimationFrame` khi cuộn và đổi cỡ cửa sổ). `components/teach/class-section-nav.tsx` dùng lại hook này.
 - CSS ở `app/styles/public-pages.css` (khối "User guide"): `.guide-layout` lưới `230px | 1fr` (cột nội dung tối đa 860px), `.guide-toc` `position: sticky`; `.guide-steps` đánh số bằng CSS counter, đường nối bằng `li::after`; `--guide-gutter` (32/24/16px theo `.page-container`) để thanh mục lục trên điện thoại chạm hai mép. `scroll-margin-top` 76px ở màn hình hẹp để tiêu đề mục không bị thanh che.
 
+## Chính sách quyền riêng tư và điều khoản — 12/11/2026
+
+Hành vi ở [BD](../basic-design/teaching-service.md#chính-sách-quyền-riêng-tư-và-điều-khoản--12112026).
+
+- `app/privacy/page.tsx`, `app/terms/page.tsx`: server component tĩnh, `metadata` có `canonical` và Open Graph; khung `.prose-page.legal-page` (danh sách có dấu chấm, link gạch chân; `app/styles/shell.css`). Người vận hành, email, ngày có hiệu lực và số ngày trả lời yêu cầu ở `lib/legal.ts`; `components/legal/contact-email.tsx` vẽ link `mailto:`.
+- `lib/seo-routes.ts`: thêm `/terms`, `/privacy` (ưu tiên 0.2, `yearly`) vào `PUBLIC_PAGES` cho sitemap. Chân trang ở `app/layout.tsx`. `components/auth/legal-consent.tsx` đặt dưới `SignUpForm` ở `/sign-up` và `/sign-up/teacher`.
+- Xóa tài khoản học viên không đổi: `anonymize_learner` (bản trong migration `20261110112415`) đã xóa `push_subscriptions` và `push_log`. `e2e-supabase/account-deletion.spec.ts` thêm một thiết bị và một dòng nhật ký cho học viên trước khi xóa và kiểm cả hai đã mất.
+- `e2e/seo.spec.ts`: sitemap có hai trang; link ở chân trang mở đúng trang, `canonical` đúng, có ngày hiệu lực, tên Beto và link `mailto:`; không còn dấu `[` của chỗ trống trong bản nháp; vừa khổ 360px.
+

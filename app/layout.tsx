@@ -66,6 +66,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <nav className="footer-links" aria-label="Liên kết cuối trang">
               <Link href="/guide">Hướng dẫn sử dụng</Link>
               <Link href="/sources">Nguồn dữ liệu</Link>
+              <Link href="/terms">Điều khoản</Link>
+              <Link href="/privacy">Quyền riêng tư</Link>
             </nav>
           </div>
         </footer>

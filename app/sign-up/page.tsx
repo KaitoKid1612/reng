@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { GoogleSignIn } from "@/components/auth/google-sign-in";
+import { LegalConsent } from "@/components/auth/legal-consent";
 import { SignUpForm } from "@/components/auth/sign-up-form";
 import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
 import { getCurrentAccount } from "@/lib/server/account";
@@ -37,7 +38,8 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
             <GoogleSignIn nextPath={nextPath} label="Đăng ký bằng Google" />
           )}
           <SignUpForm nextPath={nextPath} />
-          <p>
+          <LegalConsent />
+          <p className="inline-links">
             Đã có tài khoản?{" "}
             <Link href={`/sign-in?next=${encodeURIComponent(nextPath)}`}>Đăng nhập</Link>
           </p>

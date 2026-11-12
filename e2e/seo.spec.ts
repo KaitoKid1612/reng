@@ -19,7 +19,39 @@ test("robots and sitemap expose public pages and keep private areas out", async 
   expect(sitemap).toContain(`<loc>${ORIGIN}/for-teachers</loc>`);
   expect(sitemap).toContain(`<loc>${ORIGIN}/lessons/lesson-01</loc>`);
   expect(sitemap).toContain(`<loc>${ORIGIN}/guide</loc>`);
+  expect(sitemap).toContain(`<loc>${ORIGIN}/privacy</loc>`);
+  expect(sitemap).toContain(`<loc>${ORIGIN}/terms</loc>`);
   expect(sitemap).not.toContain("?version=");
+});
+
+test("the privacy policy and terms are linked from every page and name who to contact", async ({
+  page,
+}) => {
+  const pages = [
+    { link: "Quyền riêng tư", path: "/privacy", heading: "Chính sách quyền riêng tư" },
+    { link: "Điều khoản", path: "/terms", heading: "Điều khoản sử dụng" },
+  ];
+  for (const { link, path, heading } of pages) {
+    await page.goto("/self-study");
+    await page.getByRole("contentinfo").getByRole("link", { name: link, exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`${path}$`));
+    await page.reload();
+    await expect(page.getByRole("heading", { level: 1, name: heading })).toBeVisible();
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `${ORIGIN}${path}`);
+    await expect(page.getByText("Có hiệu lực từ 12/11/2026.")).toBeVisible();
+    await expect(page.getByText(/do Beto vận hành/)).toBeVisible();
+    await expect(page.getByRole("link", { name: "leviet1612@gmail.com" }).first()).toHaveAttribute(
+      "href",
+      "mailto:leviet1612@gmail.com",
+    );
+  }
+  // No placeholder from the draft is left on either page.
+  await expect(page.locator("main")).not.toContainText("[");
+  await page.goto("/privacy");
+  await expect(page.locator("main")).not.toContainText("[");
+  await page.setViewportSize({ width: 360, height: 780 });
+  const fits = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
+  expect(fits).toBe(true);
 });
 
 // Crawlers load every URL directly. A click made before hydration finishes can leave the previous

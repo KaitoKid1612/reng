@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { GoogleSignIn } from "@/components/auth/google-sign-in";
+import { LegalConsent } from "@/components/auth/legal-consent";
 import { SignUpForm } from "@/components/auth/sign-up-form";
 import { getCurrentAccount } from "@/lib/server/account";
 import { isClassroomConfigured, isGoogleAuthEnabled } from "@/lib/server/supabase";
@@ -32,11 +33,12 @@ export default async function TeacherSignUpPage() {
             <GoogleSignIn nextPath="/teach/start" label="Đăng ký bằng Google" />
           )}
           <SignUpForm nextPath="/teach/start" />
+          <LegalConsent />
         </>
       ) : (
         <p className="sample-notice">Đăng ký chưa được kích hoạt trên hệ thống này.</p>
       )}
-      <p>
+      <p className="inline-links">
         Đã có tài khoản? <Link href="/sign-in?next=/teach/start">Đăng nhập</Link>
       </p>
     </div>

@@ -40,6 +40,25 @@ test("a learner deletes their account: signed out for good, the class keeps a na
   await page.goto(classUrl);
   await expect(page.getByText(learner.name)).toBeVisible();
 
+  // A device that receives reminders, and a reminder already sent, belong to the person too.
+  const learnerId = (await findUserId(learner.email)) ?? "";
+  const admin = adminClient();
+  const pushRows = await Promise.all([
+    admin.from("push_subscriptions").insert({
+      user_id: learnerId,
+      endpoint: `https://push.example.test/${learnerId}`,
+      p256dh: "test-key",
+      auth: "test-auth",
+    }),
+    admin.from("push_log").insert({
+      user_id: learnerId,
+      kind: "daily_reminder",
+      for_date: "2026-11-12",
+      sent_count: 1,
+    }),
+  ]);
+  expect(pushRows.map((row) => row.error)).toEqual([null, null]);
+
   await learnerPage.goto("/settings/account");
   const form = learnerPage.locator("form", {
     has: learnerPage.getByRole("heading", { name: "Xóa tài khoản" }),
@@ -64,8 +83,12 @@ test("a learner deletes their account: signed out for good, the class keeps a na
   // The class roster lists the learner no more; the profile keeps only the placeholder name.
   await page.goto(classUrl);
   await expect(page.getByText(learner.name)).toHaveCount(0);
-  const admin = adminClient();
   expect(await findUserId(learner.email)).toBeUndefined();
+  const [devices, sent] = await Promise.all([
+    admin.from("push_subscriptions").select("id").eq("user_id", learnerId),
+    admin.from("push_log").select("user_id").eq("user_id", learnerId),
+  ]);
+  expect([devices.data, sent.data]).toEqual([[], []]);
   const { data: profiles } = await admin
     .from("profiles")
     .select("full_name, deleted_at")

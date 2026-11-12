@@ -65,6 +65,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Email nhắc học (cài đặt thông báo) | `/settings/notifications` | 4; thêm push ở 6 |
 | Tài khoản: họ tên, mật khẩu; tab chung với Email nhắc học (10/11/2026) | `/settings/account` | 03/11/2026 |
 | Hướng dẫn sử dụng cho giáo viên, học viên, quản trị viên | `/guide` | Dịch vụ |
+| Chính sách quyền riêng tư, Điều khoản sử dụng | `/privacy`, `/terms` | Dịch vụ |
 | Giới thiệu cho giáo viên, đăng ký giáo viên | `/for-teachers`, `/sign-up/teacher` | Dịch vụ |
 | Hủy nhận email (link một chạm trong thư) | `/unsubscribe/[token]` | 4 |
 | Quản trị: tổng quan, giáo viên, nhật ký hoạt động | `/admin`, `/admin/teachers`, `/admin/activity` | Dịch vụ |

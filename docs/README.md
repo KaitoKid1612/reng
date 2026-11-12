@@ -40,7 +40,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | `illustrations.md` | Icon từ vựng, hội thoại bong bóng, hướng dẫn tạo ảnh AI | Khi làm hình cho bài Nhật |
 | `source-alignment.md` | Mức đáp ứng 22 yêu cầu dịch vụ theo lát (23% lúc audit, khoảng 70% sau các lát đã triển khai; không phải test coverage) | Khi lập kế hoạch tiếp |
 | `documentation-review.md` | Rà soát toàn bộ docs ngày 29/10/2026: phạm vi, truy vết và quyết định còn mở lúc đó; các đợt sau ở mục Báo cáo kiểm thử và rà soát | Khi cần lịch sử quyết định |
-| [`legal/privacy-policy-draft.md`](legal/privacy-policy-draft.md), [`legal/terms-of-use-draft.md`](legal/terms-of-use-draft.md) | Chính sách quyền riêng tư và điều khoản sử dụng: bản nháp 03/11/2026, chưa công bố, cần điền người vận hành và rà soát pháp lý | Trước khi nhận học viên thật |
+| [`legal/privacy-policy-draft.md`](legal/privacy-policy-draft.md), [`legal/terms-of-use-draft.md`](legal/terms-of-use-draft.md) | Chính sách quyền riêng tư và điều khoản sử dụng: đã công bố 12/11/2026 tại `/privacy`, `/terms`; hai file ghi chỗ đặt bản chính và khác biệt so với bản nháp | Khi thêm tính năng thu thập, lưu hoặc gửi dữ liệu cá nhân theo cách mới |
 
 ## Thiết kế theo tính năng
 

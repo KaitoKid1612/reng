@@ -37,4 +37,6 @@ export const PUBLIC_PAGES = [
   { path: "/sign-up/teacher", priority: 0.5, changeFrequency: "yearly" },
   { path: "/guide", priority: 0.5, changeFrequency: "monthly" },
   { path: "/sources", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
+  { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
 ] as const;
