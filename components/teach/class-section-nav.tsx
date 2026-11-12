@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+
+import { useCurrentSection } from "@/components/use-current-section";
 
 import type { MouseEvent } from "react";
 
@@ -14,47 +16,11 @@ interface ClassSectionNavProps {
   sections: readonly ClassSection[];
 }
 
-// A heading counts as the one being read once it passes this far below the top of the window,
-// just under the sticky bar.
-const READING_LINE = 120;
-
 // The class page holds about ten sections in one column; this bar stays at the top of the window
 // so the teacher jumps between them and sees which one they are in.
 export function ClassSectionNav({ sections }: ClassSectionNavProps) {
   const navRef = useRef<HTMLElement>(null);
-  const [currentId, setCurrentId] = useState<string | null>(null);
-
-  useEffect(() => {
-    let frame = 0;
-    function findCurrent() {
-      frame = 0;
-      let current: string | null = null;
-      for (const section of sections) {
-        const target = document.getElementById(section.id);
-        if (target && target.getBoundingClientRect().top <= READING_LINE) {
-          current = section.id;
-        }
-      }
-      // A short last section never reaches the line; at the bottom of the page it is the one read.
-      const isAtBottom =
-        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-      if (isAtBottom && sections.length) {
-        current = sections[sections.length - 1].id;
-      }
-      setCurrentId(current);
-    }
-    function handleScroll() {
-      if (!frame) {
-        frame = requestAnimationFrame(findCurrent);
-      }
-    }
-    findCurrent();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(frame);
-    };
-  }, [sections]);
+  const currentId = useCurrentSection(sections.map((section) => section.id));
 
   // On a narrow screen the bar scrolls sideways; keep the current section's link in view.
   useEffect(() => {
