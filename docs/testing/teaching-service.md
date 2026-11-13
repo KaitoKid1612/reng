@@ -135,6 +135,8 @@ Thêm `content/starters/minna-1-16.json` và đăng ký sau bài 15: 40 từ, 5 
 
 - PASS local: `npm run lesson:import -- --file content/starters/minna-1-16.json` và `findPublishProblems` trả về danh sách rỗng.
 - PASS local: `tests/japanese-lessons.test.ts` và `tests/lesson-visuals.test.ts`; đo bản HTML của 34 slide trong Chromium ở khung 1280×720, không có slide tràn ngang hoặc dọc.
+- PASS local: 8/8 ca Playwright trong `e2e/lessons.spec.ts`; `npm run check` đạt Prettier, ESLint, TypeScript và 99/100 test, còn `tests/pipeline.test.ts` lỗi sẵn ở bước audio dry-run (không liên quan Bài 16).
+- PASS production database: xuất bản `minna-1-viet-lesson-16` phiên bản 1 (`6cce0f3b-0a21-42be-8e69-369709a33c28`), gắn vào lớp ở thứ tự 16. Nội dung JSONB trùng hoàn toàn file nguồn; giáo viên và hai học viên trong lớp đọc được 34 slide qua `read_lesson_version`. Chưa kiểm tra trực tiếp giao diện production trong trình duyệt.
 
 ## Bài mẫu Minna 15 — 04/11/2026
 
