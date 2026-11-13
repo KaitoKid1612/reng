@@ -82,6 +82,21 @@ export function SlideDeck({
     let deck: RevealApi | null = null;
     let channel: BroadcastChannel | null = null;
     let saveTimer: ReturnType<typeof setTimeout> | null = null;
+    let layoutObserver: MutationObserver | null = null;
+    let fitFrame = 0;
+
+    function fitCurrentSlide() {
+      if (!deck || cancelled) {
+        return;
+      }
+      fitSlide(deck.getCurrentSlide());
+      deck.layout();
+    }
+
+    function scheduleSlideFit() {
+      cancelAnimationFrame(fitFrame);
+      fitFrame = requestAnimationFrame(fitCurrentSlide);
+    }
 
     function publishPosition() {
       if (!deck || cancelled) {
@@ -159,14 +174,7 @@ export function SlideDeck({
           return;
         }
         deckRef.current = deck;
-        const fitCurrentSlide = () => {
-          if (!deck) {
-            return;
-          }
-          fitSlide(deck.getCurrentSlide());
-          deck.layout();
-        };
-        deck.on("slidechanged", fitCurrentSlide);
+        deck.on("slidechanged", scheduleSlideFit);
         deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
           const popup = window.open(
             `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}${classQuery}`,
@@ -180,6 +188,16 @@ export function SlideDeck({
         deck.on("slidechanged", publishPosition);
         deck.on("fragmentshown", publishPosition);
         deck.on("fragmenthidden", publishPosition);
+        deck.on("fragmentshown", scheduleSlideFit);
+        deck.on("fragmenthidden", scheduleSlideFit);
+        // Quiz feedback and other React content can grow after the slide has opened.
+        layoutObserver = new MutationObserver(scheduleSlideFit);
+        layoutObserver.observe(root.querySelector(".slides") ?? root, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+        });
+        window.addEventListener("resize", scheduleSlideFit);
         if ("BroadcastChannel" in window) {
           channel = new BroadcastChannel(slideChannelName(lesson.lessonId, lesson.id));
           channel.onmessage = (event: MessageEvent<unknown>) => {
@@ -212,6 +230,9 @@ export function SlideDeck({
         clearTimeout(saveTimer);
       }
       window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("resize", scheduleSlideFit);
+      layoutObserver?.disconnect();
+      cancelAnimationFrame(fitFrame);
       channel?.close();
       if (deck?.isReady()) {
         deck.destroy();

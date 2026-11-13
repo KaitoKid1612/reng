@@ -145,3 +145,22 @@ test("vocabulary and revealed quizzes stay within the presentation viewport", as
   }
   await page.screenshot({ path: "test-results/lesson-slide-desktop.png" });
 });
+
+test("presentation refits when the current slide gains content", async ({ page }) => {
+  await page.goto("/lessons/lesson-01/slide#8");
+  await expect(page.locator(".reveal")).toHaveAttribute("data-ready", "true");
+  await page.evaluate(() => {
+    const content = document.querySelector("section.present > div");
+    if (!content) {
+      throw new Error("Current slide content is unavailable.");
+    }
+    const addedContent = document.createElement("p");
+    addedContent.textContent = "追加の説明。".repeat(90);
+    content.append(addedContent);
+  });
+  await expect
+    .poll(() =>
+      page.locator("section.present > div").evaluate((content) => Number(content.style.zoom || 1)),
+    )
+    .toBeLessThan(1);
+});

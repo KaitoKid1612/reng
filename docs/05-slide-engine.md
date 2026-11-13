@@ -41,6 +41,8 @@ Mỗi type có component render; thêm type cần cập nhật schema/validator/
 
 **Đừng để chữ tự xuống dòng theo bề rộng màn hình.** Thiết kế slide trên khung cố định 1280×720 rồi `transform: scale()` cho vừa viewport. Như vậy slide trên laptop và trên máy chiếu phòng học giống hệt nhau — cái bạn nhìn thấy khi soạn chính là cái học viên thấy.
 
+Trình chiếu đo lại slide hiện tại khi chuyển slide, hiện hoặc ẩn fragment, nội dung React thay đổi (ví dụ hiện đáp án) và khi đổi kích thước cửa sổ. Nội dung vượt chiều cao khung được thu nhỏ để tránh bị cắt.
+
 reveal.js làm sẵn việc này qua cấu hình `width`, `height`, `margin`.
 
 ### Bố cục dày cho nội dung dài (bài Nhật)
