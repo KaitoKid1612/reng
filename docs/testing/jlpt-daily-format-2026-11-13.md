@@ -48,4 +48,4 @@ Giáo viên vẫn nên đọc lại trước khi nạp lên production.
 - `tests/jlpt-daily-practice.test.ts`: 6/6 test đạt.
 - `tests/daily-practice-migration.test.ts`: migration chạy trên PGlite cùng mọi migration trước. Cột mặc định `balanced`, lưu được `jlpt-n4`, gọi 5 tham số giữ nguyên cách chia, `jlpt-n3` bị từ chối.
 - E2E chưa chạy: theo thỏa thuận, đợt tính năng này hoãn E2E. Bước mới trong `e2e-supabase/teach-and-learn.spec.ts` đã viết nhưng chưa chạy.
-- Người dùng đã áp migration `20261113032756_daily_practice_format` lên production ngày 13/11/2026; `migration list --linked` xác nhận. Ngân hàng chưa được nạp lên production.
+- Người dùng đã áp migration `20261113032756_daily_practice_format` lên production ngày 13/11/2026; `migration list --linked` xác nhận. Cùng ngày người dùng nạp ngân hàng vào bài `n4-viet-review-bank` bằng `bank:sql --lesson n4-viet-review-bank --commit`. Đọc lại production: phiên bản 8 có 479 câu, lớp Ôn JLPT N4 – Việt dùng phiên bản mới nhất và vẫn lấy câu hằng ngày từ bài này. Lúc kiểm tra, lớp vẫn đặt "Theo tỉ lệ", 70 câu, 10 câu nghe; giáo viên cần đổi sang "Theo cấu trúc đề JLPT N4" và 67 câu ở trang lớp.
