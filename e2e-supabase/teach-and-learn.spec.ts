@@ -72,6 +72,17 @@ test("a pinned daily source stays when the next lesson opens in the class", asyn
   ).toBeVisible();
   // Fifty questions for a sixty-question day: every question comes back daily.
   await expect(page.getByText("ít hơn 60 câu mỗi ngày")).toBeVisible();
+  // The JLPT layout lists the test's parts; lesson 11 has no question tagged with a part.
+  await page.getByLabel("Cách chia câu").selectOption("jlpt-n4");
+  await page.getByLabel("Mỗi ngày tự giao").selectOption("67");
+  await page.getByRole("button", { name: "Lưu", exact: true }).click();
+  await expect(page.getByText("Mỗi ngày 67 câu theo cấu trúc đề JLPT N4")).toBeVisible();
+  await expect(page.getByRole("rowheader", { name: "文脈規定" })).toBeVisible();
+  await expect(page.getByText("Bài nguồn chưa đủ câu cho 漢字読み")).toBeVisible();
+  await page.getByLabel("Cách chia câu").selectOption("balanced");
+  await page.getByLabel("Mỗi ngày tự giao").selectOption("60");
+  await page.getByRole("button", { name: "Lưu", exact: true }).click();
+  await expect(page.getByRole("rowheader", { name: "文脈規定" })).toHaveCount(0);
 
   await addToClass(page, state.classId, state.lesson12);
   await page.goto(`/teach/classes/${state.classId}`);

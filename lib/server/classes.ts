@@ -5,6 +5,7 @@ import { randomInt } from "node:crypto";
 import { z } from "zod";
 
 import { subjectForLanguage } from "@/lib/class-settings";
+import { DAILY_FORMATS } from "@/lib/jlpt-parts";
 import { createJoinCode } from "@/lib/join-code";
 import {
   callRpc,
@@ -37,6 +38,7 @@ const classRowSchema = z.object({
   daily_practice_size: z.number().int().nullable(),
   daily_listening_count: z.number().int().nullable(),
   daily_practice_lesson_id: z.string().nullable(),
+  daily_practice_format: z.enum(DAILY_FORMATS),
   self_study: z.boolean(),
   created_at: timestamp,
 });
@@ -44,7 +46,7 @@ const classRowSchema = z.object({
 export type ClassRow = z.infer<typeof classRowSchema>;
 
 const CLASS_COLUMNS =
-  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, daily_practice_size, daily_listening_count, daily_practice_lesson_id, self_study, created_at";
+  "id, teacher_id, name, join_code, join_enabled, active, pass_score, capacity, meeting_url, subject, language_tag, revision, daily_practice_size, daily_listening_count, daily_practice_lesson_id, daily_practice_format, self_study, created_at";
 
 export async function listTeacherClasses(teacherId: string) {
   const service = createServiceClient();

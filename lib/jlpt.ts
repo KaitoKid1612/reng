@@ -1,5 +1,6 @@
 import { AUTO_SUBMIT_LEAD_MS } from "@/lib/assignment";
 import { selectBalancedDailyQuestions } from "@/lib/daily-practice";
+import { jlptPartOf } from "@/lib/jlpt-parts";
 import { formatStudyDay, toStudyDay } from "@/lib/study-days";
 
 import type { DailyQuestionUse } from "@/lib/daily-practice";
@@ -80,6 +81,10 @@ export function jlptSectionOf(question: JlptQuestionShape): JlptSection | null {
   }
   if (question.type === "dictation") {
     return null;
+  }
+  const part = jlptPartOf(question);
+  if (part) {
+    return part.section;
   }
   const tags = question.tags.map((tag) => tag.trim().toLowerCase());
   if (question.passage || tags.some((tag) => READING_TAGS.has(tag))) {

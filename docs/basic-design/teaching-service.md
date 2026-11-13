@@ -117,7 +117,7 @@ Cập nhật 29/10/2026 theo yêu cầu người dùng: pilot ưu tiên dạy ti
 2. Ở `/teach/lessons/new`, giáo viên chọn một bài từ 1 đến 15 trong bộ bài mẫu tự biên soạn, kiểm tra/sửa trong editor rồi xuất bản; bài vẫn riêng tư cho lớp. Bài sau dùng bản sao hoặc soạn mới.
 3. Tạo lớp (mặc định tiếng Nhật), gắn phiên bản bài, giao luyện tập. Trong buổi Meet, giáo viên chiếu slide theo nhịp Minna: từ vựng → bảng đếm → mẫu câu → ví dụ → luyện thay thế (ẩn câu mẫu, bấm hiện từng hàng) → câu hỏi → hội thoại (ẩn nghĩa từng lượt); presenter giữ ghi chú riêng.
 4. Học viên tự đăng ký, xác minh email, vào lớp bằng mã; đọc bài có furigana, hội thoại, bảng; ôn bằng slide/flashcard; làm bài, xem điểm và giải thích; giáo viên xem báo cáo lớp.
-5. Bài luyện hằng ngày (tùy chọn theo lớp): giáo viên chọn 5/7/10/15/20/30/40/60/70 câu (60–70 câu cho lớp ôn theo ngân hàng nhập từ Google Sheet; số câu khác trong khoảng 3–70 đặt khi nhập ngân hàng vẫn hiện đúng trong ô chọn), số câu nghe mỗi ngày (theo tỉ lệ của bài, 0 hoặc 1–10, từ 07/11/2026) và bài nguồn ở ô "Lấy câu từ". Mỗi sáng từ 6:00 giờ Việt Nam (cron Hobby có thể lệch trong vòng 1 giờ) Reng tự giao một bài luyện tập lấy câu từ bài nguồn đã chọn, ví dụ ngân hàng ôn; thêm bài mới vào lớp không đổi nguồn này. Để "Tự động" thì lấy bài mới nhất đã mở có câu chọn/điền/sắp xếp (bài mới chỉ có slide thì lấy bài trước đó); bài đã chọn chưa mở hoặc không có câu chọn/điền/sắp xếp thì tạm dùng quy tắc tự động và trang lớp báo rõ. Trang lớp hiện bài đang dùng và số câu, cảnh báo khi bài nguồn có ít câu hơn số câu mỗi ngày (khi đó ngày nào học viên cũng gặp lại toàn bộ câu). Hạn 23:59 cùng ngày, nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện trong 14 ngày gần nhất; câu sai vào sổ lỗi và lịch ôn tập như bài thường. Nút "Giao bài hôm nay ngay" tạo bài của ngày khi cần; mỗi lớp chỉ có một bài cho mỗi ngày. Báo cáo chỉ tính bài được giao sau khi học viên vào lớp. Từ 03/11/2026 câu sắp xếp (bấm mảnh theo thứ tự) cũng được giao; câu đọc hiểu có đoạn văn riêng được chọn và hiện liền nhau, mỗi câu có nhãn phần (Kanji, Chữ Hán, Pinyin, Ngữ pháp, Đọc hiểu…). Các tính năng làm bài dùng chung cho lớp tiếng Nhật và tiếng Trung; lớp tiếng Trung có thêm "Luyện chữ Hán" (pinyin, nhận mặt chữ, nghĩa) tương ứng "Luyện kanji".
+5. Bài luyện hằng ngày (tùy chọn theo lớp): giáo viên chọn 5/7/10/15/20/30/40/60/70 câu (60–70 câu cho lớp ôn theo ngân hàng nhập từ Google Sheet; số câu khác trong khoảng 3–70 đặt khi nhập ngân hàng vẫn hiện đúng trong ô chọn), số câu nghe mỗi ngày (theo tỉ lệ của bài, 0 hoặc 1–10, từ 07/11/2026) và bài nguồn ở ô "Lấy câu từ". Mỗi sáng từ 6:00 giờ Việt Nam (cron Hobby có thể lệch trong vòng 1 giờ) Reng tự giao một bài luyện tập lấy câu từ bài nguồn đã chọn, ví dụ ngân hàng ôn; thêm bài mới vào lớp không đổi nguồn này. Để "Tự động" thì lấy bài mới nhất đã mở có câu chọn/điền/sắp xếp (bài mới chỉ có slide thì lấy bài trước đó); bài đã chọn chưa mở hoặc không có câu chọn/điền/sắp xếp thì tạm dùng quy tắc tự động và trang lớp báo rõ. Trang lớp hiện bài đang dùng và số câu, cảnh báo khi bài nguồn có ít câu hơn số câu mỗi ngày (khi đó ngày nào học viên cũng gặp lại toàn bộ câu). Hạn 23:59 cùng ngày, nộp muộn vẫn được, tối đa 3 lượt, xem giải thích ngay. Câu đổi mỗi ngày, ưu tiên câu chưa xuất hiện trong 14 ngày gần nhất; câu sai vào sổ lỗi và lịch ôn tập như bài thường. Nút "Giao bài hôm nay ngay" tạo bài của ngày khi cần; mỗi lớp chỉ có một bài cho mỗi ngày. Báo cáo chỉ tính bài được giao sau khi học viên vào lớp. Từ 03/11/2026 câu sắp xếp (bấm mảnh theo thứ tự) cũng được giao; câu đọc hiểu có đoạn văn riêng được chọn và hiện liền nhau, mỗi câu có nhãn phần (Kanji, Chữ Hán, Pinyin, Ngữ pháp, Đọc hiểu…). Các tính năng làm bài dùng chung cho lớp tiếng Nhật và tiếng Trung; lớp tiếng Trung có thêm "Luyện chữ Hán" (pinyin, nhận mặt chữ, nghĩa) tương ứng "Luyện kanji". Từ 13/11/2026 ô **Cách chia câu** cho lấy câu theo cấu trúc đề JLPT N4/N5 ([chi tiết](#bài-hằng-ngày-theo-cấu-trúc-đề-jlpt--13112026)).
 
 Nội dung mẫu không sao chép văn bản, tranh hay audio của sách; chỉ đi theo chủ điểm và trình tự bài. Chi tiết thao tác ở [biên soạn](../content-authoring.md), kết quả kiểm thử ở [nghiệm thu](../testing/teaching-service.md).
 
@@ -351,6 +351,34 @@ Người dùng thấy trang `/guide` chưa ổn. Trước đó trang mở đầu
 - **Mục lục**: trên màn hình rộng là cột bên trái luôn ở trong tầm nhìn khi cuộn và đánh dấu mục đang đọc. Từ 960px trở xuống là thanh dính đầu cửa sổ ghi "Mục lục · tên mục đang đọc"; bấm vào mở danh sách, chọn mục thì danh sách đóng và trang nhảy tới mục đó. Esc hoặc cuộn trang cũng đóng danh sách.
 - **Nội dung**: mỗi phần (giáo viên, học viên, quản trị viên, câu hỏi) có tiêu đề kèm biểu tượng; mỗi mục là một thẻ có biểu tượng riêng, các bước là vòng số nối bằng đường mảnh, ghi chú (đăng nhập Google, điểm JLPT ước tính) là ô có biểu tượng thông tin. Câu hỏi thường gặp là các thẻ mở từng câu.
 - Nội dung chữ giữ nguyên; mục Ôn tập và tiến độ trước chỉ có một bước dài nay tách thành bốn bước. Các liên kết `/guide#teacher-title`, `/guide#learner-title` và `#<mã mục>` vẫn dùng được.
+
+## Bài hằng ngày theo cấu trúc đề JLPT — 13/11/2026
+
+Lớp ôn thi (Việt, thi N4 ngày 06/12/2026) cần bài hằng ngày giống đề thật. Lớp học theo bài (Nguyên) vẫn giữ cách chia cũ.
+
+- **Ô Cách chia câu** trong mục Bài luyện hằng ngày của trang lớp, ba lựa chọn:
+  - **Theo tỉ lệ các dạng câu trong bài nguồn**: mặc định, giữ nguyên cách chia trước đây.
+  - **Theo cấu trúc đề JLPT N4.**
+  - **Theo cấu trúc đề JLPT N5.**
+- **Theo cấu trúc đề:**
+  - Mỗi もんだい lấy số câu như đề thật và xếp theo thứ tự đề: chữ và từ vựng, rồi ngữ pháp và đọc hiểu, phần nghe ở cuối.
+  - Số câu nghe theo ô Số câu nghe mỗi ngày, chia cho bốn phần nghe theo tỉ lệ của đề. Để "Theo tỉ lệ" thì phần nghe chiếm đúng tỉ lệ trong đề. Chọn 0 thì bỏ phần nghe.
+  - Ô số câu có thêm hai mức: **67 câu** là đủ phần chữ, ngữ pháp và đọc của một đề N4 cùng 10 câu nghe; **53 câu** là mức tương ứng cho N5.
+  - Trong từng もんだい, câu vẫn xoay vòng như trước: ưu tiên câu chưa giao trong 14 ngày. Các câu của cùng một đoạn văn đi liền nhau.
+  - もんだい nào thiếu câu thì Reng bù bằng câu của もんだい khác trong cùng phần thi, rồi bằng câu chưa gắn nhãn もんだい.
+- **Bảng trên trang lớp.** Khi chọn cấu trúc đề, trang lớp hiện bảng gồm các cột: もんだい, phần thi, số câu mỗi ngày, số câu có trong bài nguồn và số ngày trước khi câu quay lại. Phần nào thiếu câu thì trang có cảnh báo.
+- **Bài 67 câu của N4 gồm:**
+
+| Phần thi | もんだい và số câu |
+|---|---|
+| Chữ và từ vựng (28) | 漢字読み 7, 表記 5, 文脈規定 8, 言い換え類義 4, 用法 4 |
+| Ngữ pháp (21) | 文法形式の判断 13, 文の組み立て 4, 文章の文法 4 |
+| Đọc hiểu (8) | 内容理解（短文）3, 内容理解（中文）3, 情報検索 2 |
+| Nghe (10) | 課題理解 3, ポイント理解 2, 発話表現 2, 即時応答 3 |
+
+- **Nguồn số câu.** Trang chính thức jlpt.jp (bảng "大問のねらい" N4/N5, bản sửa năm 2022) liệt kê các もんだい và độ dài bài đọc nhưng không in số câu. Reng dùng số câu phổ biến của đề N4/N5 từ kỳ 12/2020, khi thời gian thi được rút ngắn. Sách đề chính thức tập 2018 còn theo số câu cũ, nhiều hơn.
+- **Ngân hàng ôn N4 theo dạng đề.** Ngân hàng của lớp Việt được viết lại thành câu trắc nghiệm theo đúng 15 もんだい, đủ cho khoảng 7 ngày không lặp mỗi phần. Chi tiết ở [hướng dẫn nội dung](../content-authoring.md#ngân-hàng-n4-theo-cấu-trúc-đề--13112026).
+- **Trần câu mỗi bài** tăng từ 400 lên 500 để chứa ngân hàng theo dạng đề.
 
 ## Làm tiếp các đề xuất giao diện — 11/11/2026 (chiều)
 

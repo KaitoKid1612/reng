@@ -525,3 +525,30 @@ Câu ghép đôi có ở trình soạn tiếng Nhật từ 11/11/2026 ([kiểm c
 - Slide: `components/slides/slide-quiz.tsx` vẽ `.slide-match` (cột trái `ol` số, cột phải `ol type="A"`; CSS ở `app/styles/slides.css`). `GET /api/lessons/[id]/questions/[questionId]` nhận thêm `match` và trả `describeCorrectAnswer` ("你好 → xin chào · …").
 - Kiểm chứng: `tests/teaching-content.test.ts` (lệch dòng giữ như gõ và bị báo; đủ cặp thì bỏ dòng trống, xáo cố định, tải lại về đúng thứ tự cặp; bản nháp parse được bằng `teachingPublishedContentSchema`; chấm đúng; câu theo thứ tự dòng bị chặn; xem trước không có `answer`). `e2e-supabase/teaching-authoring.spec.ts` "a Chinese teacher writes a matching question…": xuất bản khi lệch dòng báo "Câu luyện 1: mỗi dòng bên trái…", sửa rồi xuất bản; slide xem trước có cột phải xáo; giao bài; học viên ghép đúng, Kiểm tra câu này báo đúng, nộp được 100% và thấy các cặp; trên slide lớp bấm Hiện đáp án thấy các cặp. Trình duyệt 1440px và 390px: axe không lỗi, không tràn ngang.
 
+## Bài hằng ngày theo cấu trúc đề JLPT — 13/11/2026
+
+Thiết kế cơ bản: [BD](../basic-design/teaching-service.md#bài-hằng-ngày-theo-cấu-trúc-đề-jlpt--13112026). Kiểm chứng: [báo cáo](../testing/jlpt-daily-format-2026-11-13.md).
+
+- **Migration `20261113032756_daily_practice_format.sql`** thêm cột `classes.daily_practice_format`: kiểu text, không null, mặc định `balanced`, chỉ nhận `balanced`, `jlpt-n4` hoặc `jlpt-n5`. `set_daily_practice` có thêm tham số thứ sáu `p_format`, mặc định null. Null giữ nguyên cách chia của lớp, nên bản web cũ và lệnh nhập từ Sheet (gọi 5 tham số) không đổi cách chia. Giá trị lạ báo `reng:invalid_input`. Cần áp migration trước khi deploy, vì trang lớp và job sáng đọc cột này.
+- **`lib/jlpt-parts.ts`**:
+  - `JLPT_PARTS` liệt kê 15 もんだい theo thứ tự đề, mỗi phần có tag, nhãn tiếng Nhật và phần thi. Số câu từng phần của N4 và N5 nằm trong `PART_COUNTS`; N5 có 0 câu 用法.
+  - `jlptPartOf(question)` tìm phần của câu: câu `listen` theo tag `section:1`–`section:4` của bộ đề nghe, câu khác theo tag phần (`kanji-reading`, `usage`…). Tag phần nghe trên câu không phải `listen` bị bỏ qua.
+  - `planJlptDailyParts(level, size, listeningCount)` chia số câu: phần nghe lấy `listeningCount`, hoặc tỉ lệ nghe của đề khi null; phần còn lại chia cho các もんだい chữ, ngữ pháp, đọc theo tỉ lệ đề bằng phương pháp phần dư lớn nhất. Hòa thì もんだい đứng trước được thêm câu.
+  - `jlptFullDailySize(level)` cho 67 (N4) và 53 (N5). `describeJlptDailyCoverage` trả số câu mỗi ngày và số câu có trong bài nguồn của từng phần, cho bảng ở trang lớp.
+  - `DAILY_FORMATS`, `DAILY_FORMAT_LABELS`, `dailyFormatLevel`.
+- **`selectJlptDailyQuestions`** (`lib/daily-practice.ts`):
+  - Mỗi phần chọn bằng `selectDailyQuestions` (câu dùng lâu nhất trước, hash theo lớp và ngày, nhóm đoạn văn đi liền).
+  - Phần thiếu câu được bù theo thứ tự: câu của phần khác cùng phần thi, câu không gắn phần cùng loại (nghe hoặc không nghe), rồi câu không nghe bất kỳ. Số câu nghe 0 thì không bù bằng câu nghe.
+  - Kết quả xếp theo thứ tự phần. Câu không gắn phần đứng cuối khối chữ, ngữ pháp, đọc hoặc cuối khối nghe.
+- **`lib/server/daily-practice.ts`**: `createDailyPractice` đọc `daily_practice_format`. `dailyFormatLevel` khác null thì dùng `selectJlptDailyQuestions`, ngược lại vẫn dùng `selectDailyQuestionsWithListeningQuota`. `setDailyPractice` nhận thêm `format`.
+- **Màn hình và action:**
+  - `dailyPracticeAction` (`app/actions/classes.ts`) đọc ô `format` bằng `z.enum(DAILY_FORMATS)` ở cả nút Lưu lẫn Giao bài hôm nay ngay.
+  - `components/teach/daily-practice-form.tsx` có ô Cách chia câu. Ô số câu thêm `JLPT_FULL_DAILY_SIZES` (53, 67), mỗi mức có ghi chú "đủ đề N4/N5 + 10 câu nghe".
+  - `components/teach/daily-jlpt-coverage.tsx` vẽ bảng `.data-table` (trên điện thoại xếp dọc theo `data-label`). Cột "Đủ cho" là `floor(số câu có / số câu mỗi ngày)` ngày, hoặc "Thiếu câu".
+- **`jlptSectionOf`** (`lib/jlpt.ts`) xét tag phần trước các tag cũ, nên đề thi thử lấy đúng câu 用法 (`usage`) và các phần mới.
+- **`MAX_QUESTIONS`** (`lib/lesson-draft.ts`) tăng từ 400 lên 500. Database không giới hạn số câu của một phiên bản bài.
+- **Test:**
+  - `tests/jlpt-daily-practice.test.ts`: số câu từng phần của bài 67 câu N4 và 53 câu N5, tỉ lệ khi để null, cách nhận phần, thứ tự đề, đoạn văn đi liền, 7 ngày không lặp phần chữ, ngữ pháp, đọc, bù câu khi thiếu phần, nghe 0.
+  - `tests/daily-practice-migration.test.ts`: mặc định `balanced`, lưu `jlpt-n4`, gọi 5 tham số giữ nguyên, giá trị lạ bị từ chối.
+  - `e2e-supabase/teach-and-learn.spec.ts`: chọn cấu trúc N4 với 67 câu thì thấy bảng もんだい và cảnh báo thiếu câu, đổi lại theo tỉ lệ thì bảng biến mất.
+

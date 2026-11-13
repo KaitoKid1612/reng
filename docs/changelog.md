@@ -2,6 +2,10 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 13/11/2026
+
+- Bài hằng ngày theo cấu trúc đề JLPT: ô **Cách chia câu** ở trang lớp cho lấy mỗi もんだい đúng số câu và thứ tự của đề N4 hoặc N5, phần nghe ở cuối. Ô số câu thêm 67 câu (đủ đề N4 cùng 10 câu nghe) và 53 câu (N5). Trang lớp có bảng số câu từng もんだい và số ngày trước khi câu quay lại. Trần câu mỗi bài tăng lên 500. Cần áp migration `20261113032756_daily_practice_format` trước khi deploy. Xem [thiết kế](basic-design/teaching-service.md#bài-hằng-ngày-theo-cấu-trúc-đề-jlpt--13112026).
+
 ### 12/11/2026
 
 - Câu ghép đôi trên trình soạn tiếng Trung: nút **Thêm câu ghép đôi** ở bước Câu luyện, gõ hai cột như trình soạn tiếng Nhật; slide câu luyện hiện hai cột (trái đánh số, phải đánh chữ cái, đã xáo) và nút Hiện đáp án cho các cặp; giao được trong bài luyện, bài kiểm tra và bài hằng ngày. Không cần migration. Xem [thiết kế](detail-design/teaching-service.md#câu-ghép-đôi-trên-trình-soạn-tiếng-trung--12112026).

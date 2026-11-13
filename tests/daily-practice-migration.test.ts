@@ -116,6 +116,32 @@ test("daily practice publishes one assignment per class and Vietnam day, only wh
       [classRow.id],
     );
     assert.equal(reset.daily_listening_count, null);
+    // The layout of the set: balanced by default, a JLPT level when chosen, kept by a caller
+    // that does not pass it (the web before this change, the sheet import).
+    const format = () =>
+      one<{ daily_practice_format: string }>(
+        "select daily_practice_format from public.classes where id = $1",
+        [classRow.id],
+      );
+    assert.equal((await format()).daily_practice_format, "balanced");
+    await db.query("select public.set_daily_practice($1, $2, 67, null, 10, 'jlpt-n4')", [
+      TEACHER,
+      classRow.id,
+    ]);
+    assert.equal((await format()).daily_practice_format, "jlpt-n4");
+    await db.query("select public.set_daily_practice($1, $2, 5, null, 10)", [TEACHER, classRow.id]);
+    assert.equal((await format()).daily_practice_format, "jlpt-n4");
+    await assert.rejects(
+      db.query("select public.set_daily_practice($1, $2, 5, null, 10, 'jlpt-n3')", [
+        TEACHER,
+        classRow.id,
+      ]),
+      /reng:invalid_input/,
+    );
+    await db.query("select public.set_daily_practice($1, $2, 5, null, null, 'balanced')", [
+      TEACHER,
+      classRow.id,
+    ]);
 
     const first = await publish(tomorrow, ["q2", "q1"]);
     const assignment = await one<{

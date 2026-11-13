@@ -9,8 +9,10 @@ import {
   isDailyQuestionType,
   orderDailySourceLessons,
   selectDailyQuestionsWithListeningQuota,
+  selectJlptDailyQuestions,
   toVietnamDate,
 } from "@/lib/daily-practice";
+import { DAILY_FORMATS, dailyFormatLevel } from "@/lib/jlpt-parts";
 import { listAssignablePracticeQuestions } from "@/lib/server/assignments";
 import { getTeacherClass } from "@/lib/server/classes";
 import {
@@ -22,6 +24,7 @@ import {
 } from "@/lib/server/supabase";
 
 import type { AssignableQuestion } from "@/lib/assignment";
+import type { DailyFormat } from "@/lib/jlpt-parts";
 
 // How far back the morning job looks for an open lesson that has choice or fill questions.
 const MAX_SOURCE_LESSONS = 20;
@@ -40,6 +43,7 @@ const classSchema = z.object({
   daily_practice_size: z.number().int().nullable(),
   daily_listening_count: z.number().int().min(0).max(10).nullable(),
   daily_practice_lesson_id: z.string().nullable(),
+  daily_practice_format: z.enum(DAILY_FORMATS),
 });
 
 const lessonIdRowSchema = z.object({ lesson_id: z.string() });
@@ -50,6 +54,7 @@ export async function setDailyPractice(
   size: number | null,
   lessonId: string | null,
   listeningCount: number | null = null,
+  format: DailyFormat | null = null,
 ) {
   await callRpc(
     "set_daily_practice",
@@ -59,6 +64,7 @@ export async function setDailyPractice(
       p_size: size,
       p_lesson_id: lessonId,
       p_listening_count: listeningCount,
+      p_format: format,
     },
     z.unknown(),
   );
@@ -119,7 +125,9 @@ async function createDailyPractice(classId: string, now: Date): Promise<DailyPra
   const classRow = await selectOptional(
     service
       .from("classes")
-      .select("id, active, daily_practice_size, daily_practice_lesson_id, daily_listening_count")
+      .select(
+        "id, active, daily_practice_size, daily_practice_lesson_id, daily_listening_count, daily_practice_format",
+      )
       .eq("id", classId)
       .maybeSingle(),
     classSchema,
@@ -188,19 +196,32 @@ async function createDailyPractice(classId: string, now: Date): Promise<DailyPra
     questionId: item.question_id,
     practiceDate: publishedDays.get(item.assignment_id) ?? "",
   }));
-  // Kinds (the sheet's "Dạng bài", kanji, choice or fill) keep their share of each day's set.
-  const questionIds = selectDailyQuestionsWithListeningQuota(
-    questions.map((question) => ({
-      id: question.id,
-      type: question.type,
-      tags: question.tags,
-      group: question.passage,
-    })),
-    uses,
-    classRow.daily_practice_size,
-    `${classId}:${practiceDate}`,
-    classRow.daily_listening_count,
-  );
+  const candidates = questions.map((question) => ({
+    id: question.id,
+    type: question.type,
+    tags: question.tags,
+    group: question.passage,
+  }));
+  const seed = `${classId}:${practiceDate}`;
+  const level = dailyFormatLevel(classRow.daily_practice_format);
+  // A JLPT class gets the test's parts in order; otherwise kinds (the sheet's "Dạng bài", kanji,
+  // choice or fill) keep their share of each day's set.
+  const questionIds = level
+    ? selectJlptDailyQuestions(
+        candidates,
+        uses,
+        classRow.daily_practice_size,
+        seed,
+        level,
+        classRow.daily_listening_count,
+      )
+    : selectDailyQuestionsWithListeningQuota(
+        candidates,
+        uses,
+        classRow.daily_practice_size,
+        seed,
+        classRow.daily_listening_count,
+      );
   const assignmentId = await callRpc(
     "publish_daily_practice",
     {

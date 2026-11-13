@@ -1,3 +1,7 @@
+import { JLPT_PARTS, jlptFullDailySize, jlptPartOf, planJlptDailyParts } from "@/lib/jlpt-parts";
+
+import type { JlptLevel, JlptSection } from "@/lib/jlpt";
+
 // Daily practice runs on Vietnam calendar days (UTC+7, no daylight saving).
 const VIETNAM_OFFSET_MS = 7 * 60 * 60 * 1000;
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -7,10 +11,13 @@ const DAILY_PRACTICE_SIZES = [5, 7, 10, 15, 20, 30, 40, 60, 70] as const;
 export const MIN_DAILY_PRACTICE_SIZE = 3;
 export const MAX_DAILY_PRACTICE_SIZE = 70;
 
+// A JLPT-format class may take every language and reading question of one test each day.
+export const JLPT_FULL_DAILY_SIZES = [jlptFullDailySize("N5"), jlptFullDailySize("N4")];
+
 // The usual sizes plus the class's current one, so the menu never shows a different value
 // from the one in use, and saving it unchanged keeps it.
 export function dailyPracticeSizeOptions(current: number | null) {
-  const sizes = new Set<number>(DAILY_PRACTICE_SIZES);
+  const sizes = new Set<number>([...DAILY_PRACTICE_SIZES, ...JLPT_FULL_DAILY_SIZES]);
   if (current !== null) {
     sizes.add(current);
   }
@@ -206,6 +213,103 @@ export function selectDailyQuestionsWithListeningQuota(
         )
       : [];
   return [...selectedListening, ...selectedOthers, ...extraListening];
+}
+
+/**
+ * A daily set laid out like the JLPT test: each part (もんだい) takes its count in test order,
+ * listening last, with the usual rotation inside each part. A part short of questions is made up
+ * from the other parts of its section, then from the source's questions in no exam format, then
+ * from any language question; the listening count 0 keeps listening out.
+ */
+export function selectJlptDailyQuestions(
+  candidates: readonly DailyCandidate[],
+  recentUses: readonly DailyQuestionUse[],
+  size: number,
+  seed: string,
+  level: JlptLevel,
+  listeningCount: number | null,
+) {
+  const unique = [...new Map(candidates.map((candidate) => [candidate.id, candidate])).values()];
+  const groups = new Map<string, string>();
+  const partIndex = new Map<string, number>();
+  for (const candidate of unique) {
+    if (candidate.group) {
+      groups.set(candidate.id, candidate.group);
+    }
+    const part = jlptPartOf(candidate);
+    if (part) {
+      partIndex.set(candidate.id, JLPT_PARTS.indexOf(part));
+    }
+  }
+  const sectionOf = (candidate: DailyCandidate) => {
+    const index = partIndex.get(candidate.id);
+    return index === undefined ? null : JLPT_PARTS[index].section;
+  };
+  const isListening = (candidate: DailyCandidate) =>
+    candidate.type === "listen" || candidate.type === "dictation";
+  const plan = planJlptDailyParts(level, Math.min(size, unique.length), listeningCount);
+  const target = plan.reduce((total, item) => total + item.count, 0);
+  const chosen: string[] = [];
+  const pick = (pool: readonly DailyCandidate[], count: number) => {
+    if (count <= 0) {
+      return 0;
+    }
+    const ids = selectDailyQuestions(
+      pool.filter((candidate) => !chosen.includes(candidate.id)).map((candidate) => candidate.id),
+      recentUses,
+      count,
+      seed,
+      groups,
+    );
+    chosen.push(...ids);
+    return ids.length;
+  };
+  const missing = new Map<JlptSection, number>();
+  for (const { part, count } of plan) {
+    const index = JLPT_PARTS.indexOf(part);
+    const taken = pick(
+      unique.filter((candidate) => partIndex.get(candidate.id) === index),
+      count,
+    );
+    missing.set(part.section, (missing.get(part.section) ?? 0) + count - taken);
+  }
+  for (const [section, count] of missing) {
+    const left =
+      count -
+      pick(
+        unique.filter((candidate) => sectionOf(candidate) === section),
+        count,
+      );
+    pick(
+      unique.filter(
+        (candidate) =>
+          !partIndex.has(candidate.id) && (section === "listening") === isListening(candidate),
+      ),
+      left,
+    );
+  }
+  pick(
+    unique.filter((candidate) => !isListening(candidate)),
+    target - chosen.length,
+  );
+  if (listeningCount !== 0) {
+    pick(unique, target - chosen.length);
+  }
+  // Test order; a question in no exam format closes its block (language or listening).
+  const firstListening = JLPT_PARTS.findIndex((part) => part.section === "listening");
+  const byId = new Map(unique.map((candidate) => [candidate.id, candidate]));
+  const position = (id: string) => {
+    const index = partIndex.get(id);
+    if (index !== undefined) {
+      return index;
+    }
+    const candidate = byId.get(id);
+    return candidate && isListening(candidate) ? JLPT_PARTS.length : firstListening - 0.5;
+  };
+  return chosen
+    .map((id, order) => ({ id, order }))
+    .sort((first, second) => position(first.id) - position(second.id) || first.order - second.order)
+    .map((item) => item.id);
 }
 
 // Least recently used first, never-used questions before anything else; ties break by a hash

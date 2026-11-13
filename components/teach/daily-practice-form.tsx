@@ -6,6 +6,14 @@ import { dailyPracticeAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 import { dailyPracticeSizeOptions } from "@/lib/daily-practice";
+import {
+  DAILY_FORMAT_LABELS,
+  DAILY_FORMATS,
+  JLPT_DAILY_LISTENING,
+  jlptFullDailySize,
+} from "@/lib/jlpt-parts";
+
+import type { DailyFormat } from "@/lib/jlpt-parts";
 
 interface DailyPracticeLessonOption {
   lessonId: string;
@@ -16,6 +24,7 @@ interface DailyPracticeLessonOption {
 interface DailyPracticeFormProps {
   classId: string;
   size: number | null;
+  format: DailyFormat;
   listeningCount: number | null;
   availableListeningCount: number | null;
   lessonId: string | null;
@@ -25,6 +34,7 @@ interface DailyPracticeFormProps {
 export function DailyPracticeForm({
   classId,
   size,
+  format,
   listeningCount,
   availableListeningCount,
   lessonId,
@@ -48,10 +58,24 @@ export function DailyPracticeForm({
             <option value="">Tắt</option>
             {dailyPracticeSizeOptions(size).map((count) => (
               <option key={count} value={count}>
-                {count} câu
+                {count} câu{fullTestNote(count)}
               </option>
             ))}
           </select>
+        </div>
+        <div className="field">
+          <label htmlFor="daily-practice-format">Cách chia câu</label>
+          <select key={format} id="daily-practice-format" name="format" defaultValue={format}>
+            {DAILY_FORMATS.map((value) => (
+              <option key={value} value={value}>
+                {DAILY_FORMAT_LABELS[value]}
+              </option>
+            ))}
+          </select>
+          <p className="muted">
+            Theo cấu trúc đề: mỗi ngày đủ các もんだい theo thứ tự của đề thật, phần nghe ở cuối.
+            Ngân hàng cần câu gắn nhãn もんだい.
+          </p>
         </div>
         <div className="field">
           <label htmlFor="daily-listening-count">Số câu nghe mỗi ngày</label>
@@ -117,4 +141,12 @@ export function DailyPracticeForm({
       <ActionFeedback state={state} />
     </form>
   );
+}
+
+// The full sizes say what they hold, since 53 and 67 look arbitrary beside 60 and 70.
+function fullTestNote(count: number) {
+  if (count === jlptFullDailySize("N4")) {
+    return ` (đủ đề N4 + ${JLPT_DAILY_LISTENING} câu nghe)`;
+  }
+  return count === jlptFullDailySize("N5") ? ` (đủ đề N5 + ${JLPT_DAILY_LISTENING} câu nghe)` : "";
 }

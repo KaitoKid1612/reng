@@ -11,6 +11,7 @@ import { ClassSettingsForm } from "@/components/teach/class-settings-form";
 import { ClassStatTiles } from "@/components/teach/class-stat-tiles";
 import { ClassStudentTable } from "@/components/teach/class-student-table";
 import { CopyMessageButton } from "@/components/teach/copy-message-button";
+import { DailyJlptCoverage } from "@/components/teach/daily-jlpt-coverage";
 import { DailyPracticeForm } from "@/components/teach/daily-practice-form";
 import { DailyPracticeStatus } from "@/components/teach/daily-practice-status";
 import { HardQuestionList } from "@/components/teach/hard-question-list";
@@ -23,6 +24,7 @@ import { buildAssignmentMessage } from "@/lib/assignment-message";
 import { describeUpcomingSession } from "@/lib/class-schedule";
 import { parseSessionPrefill } from "@/lib/class-sessions";
 import { toVietnamDate } from "@/lib/daily-practice";
+import { dailyFormatLevel, describeJlptDailyCoverage } from "@/lib/jlpt-parts";
 import { getCurrentAccount, requireTeacher } from "@/lib/server/account";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { listClassSessions } from "@/lib/server/class-sessions";
@@ -119,6 +121,16 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
     getClassSchedule(classRow.id),
   ]);
   const nextSessionText = describeUpcomingSession(schedule.slots, now);
+  const dailyLevel = dailyFormatLevel(classRow.daily_practice_format);
+  const jlptCoverage =
+    dailyLevel && classRow.daily_practice_size && dailySource?.status === "found"
+      ? describeJlptDailyCoverage(
+          dailyLevel,
+          classRow.daily_practice_size,
+          classRow.daily_listening_count,
+          dailySource.questions,
+        )
+      : null;
   const lessonTitle = (lessonId: string) =>
     report.lessons.find((lesson) => lesson.lessonId === lessonId)?.title ?? null;
   const openLessons = report.lessons
@@ -286,11 +298,15 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
                   : null
               }
             />
+            {dailyLevel && jlptCoverage && (
+              <DailyJlptCoverage level={dailyLevel} rows={jlptCoverage} />
+            )}
           </div>
         )}
         <DailyPracticeForm
           classId={classRow.id}
           size={classRow.daily_practice_size}
+          format={classRow.daily_practice_format}
           listeningCount={classRow.daily_listening_count}
           availableListeningCount={
             dailySource?.status === "found"
@@ -319,6 +335,11 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
             <li>
               Mỗi dạng câu giữ tỉ lệ như trong bài: theo tag của câu (ví dụ ngữ pháp, từ vựng, chữ
               Hán) và loại câu (chọn, điền, sắp xếp).
+            </li>
+            <li>
+              Chọn “Theo cấu trúc đề JLPT” thì mỗi もんだい lấy đúng số câu của đề thật theo thứ tự
+              đề, phần nghe ở cuối. Chọn 67 câu (N4) hoặc 53 câu (N5) để có đủ phần chữ, ngữ pháp,
+              đọc của một đề cùng 10 câu nghe.
             </li>
             <li>Nộp muộn vẫn được, tối đa 3 lượt; học viên xem giải thích ngay sau khi nộp.</li>
             <li>Câu sai vào sổ lỗi và lịch ôn tập của học viên.</li>

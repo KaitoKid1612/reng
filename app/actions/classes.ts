@@ -17,6 +17,7 @@ import {
   toVietnamDate,
 } from "@/lib/daily-practice";
 import { signInPath } from "@/lib/auth-paths";
+import { DAILY_FORMATS } from "@/lib/jlpt-parts";
 import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
@@ -405,6 +406,8 @@ const dailyLessonSchema = z
   .max(100)
   .transform((value) => value || null);
 
+const dailyFormatSchema = z.enum(DAILY_FORMATS);
+
 const TODAY_ERRORS = {
   disabled: "Chọn số câu và bấm Lưu trước khi giao bài hôm nay.",
   no_lesson: "Lớp chưa có bài học nào đang mở. Thêm bài vào lớp trước.",
@@ -428,7 +431,8 @@ export async function dailyPracticeAction(
       if (size) {
         const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
         const listeningCount = dailyListeningSchema.parse(readField(formData, "listeningCount"));
-        await setDailyPractice(account.id, classId, size, lessonId, listeningCount);
+        const format = dailyFormatSchema.parse(readField(formData, "format"));
+        await setDailyPractice(account.id, classId, size, lessonId, listeningCount, format);
       }
       const outcome = await createTodayPractice(account.id, classId, new Date());
       if (outcome.status !== "created" && outcome.status !== "exists") {
@@ -450,7 +454,8 @@ export async function dailyPracticeAction(
     size = dailySizeSchema.parse(readField(formData, "size"));
     const lessonId = dailyLessonSchema.parse(readField(formData, "lessonId"));
     const listeningCount = dailyListeningSchema.parse(readField(formData, "listeningCount"));
-    await setDailyPractice(account.id, classId, size, lessonId, listeningCount);
+    const format = dailyFormatSchema.parse(readField(formData, "format"));
+    await setDailyPractice(account.id, classId, size, lessonId, listeningCount, format);
   } catch (error) {
     return { error: describeError(error) };
   }

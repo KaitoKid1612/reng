@@ -78,6 +78,10 @@ Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt �
 
 Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "còn lại" của báo cáo cũ có thể đã được làm ở báo cáo sau.
 
+### 13/11/2026
+
+- Bài hằng ngày theo cấu trúc đề JLPT: [phân tích độ lặp, nguồn số câu từng もんだい, kiểm chứng bộ chọn câu và ngân hàng N4 theo dạng đề](testing/jlpt-daily-format-2026-11-13.md).
+
 ### 11/11/2026
 
 - Giao diện dễ dùng và sinh động hơn: [8 chỗ chưa hợp lý đã sửa, kiểm chứng trình duyệt và axe hai giao diện, đề xuất tiếp theo](testing/ui-polish-2026-11-11.md).

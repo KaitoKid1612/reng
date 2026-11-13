@@ -96,6 +96,13 @@
 .daily-practice-status > p {
   margin: 0;
 }
+.daily-jlpt-coverage {
+  display: grid;
+  gap: 8px;
+}
+.daily-jlpt-coverage > p {
+  margin: 0;
+}
 .help-disclosure {
   margin-top: 16px;
 }

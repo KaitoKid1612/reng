@@ -34,7 +34,7 @@ import type { LessonContent } from "@/lib/lesson-schema";
 const MAX_DRAFT_BYTES = 512 * 1024;
 const MAX_VOCAB_ITEMS = 300;
 // Review banks hold several hundred questions; MAX_DRAFT_BYTES still bounds their size.
-export const MAX_QUESTIONS = 400;
+export const MAX_QUESTIONS = 500;
 
 const identifier = z
   .string()
