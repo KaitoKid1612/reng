@@ -237,9 +237,39 @@ Ngân hàng ôn là một bài chỉ có câu hỏi (vài slide giới thiệu),
 - **Sắp xếp câu:** `tokens` theo thứ tự đúng và `answer` là danh sách mã mảnh; mỗi mảnh dùng đúng một lần, chỉ có một thứ tự đúng với nghĩa ghi trong đề (tránh hai cụm có thể đổi chỗ mà vẫn đúng). Đặt mã mảnh ngẫu nhiên (`p27`, `p05`…), không theo thứ tự câu.
 - **Tiếng Trung:** mỗi câu khai báo `"gradingProfile": "zh-exact-v1"`; ô điền dùng `inputMode` `chinese` hoặc `pinyin` (hoặc `text` khi trả lời bằng tiếng Việt); `vocab` để trống vì từ vựng có chữ Hán/pinyin nằm trong bài soạn bằng trình soạn tiếng Trung (flashcard, luyện chữ Hán lấy từ đó). Bài kiểm thử `tests/review-bank.test.ts` có một ngân hàng Trung mẫu.
 - **Tiếng Nhật:** không dùng profile hoặc ô nhập tiếng Trung; đáp án kana/kanji tương đương phải khai báo đủ.
-- **Câu nghe mỗi ngày:** mặc định bài hằng ngày lấy câu nghe theo tỉ lệ trong ngân hàng. Giáo viên đổi ở ô **Số câu nghe mỗi ngày** của lớp: `0` bỏ câu nghe, `1–10` lấy tối đa chừng ấy câu nghe trong tổng số câu; ngân hàng thiếu câu nghe thì Reng bù câu thường. Ngân hàng N4/N5 có câu nghe (07/11/2026, bổ sung 10/11/2026): `review-banks/n4-daily-with-listening.json` (390 câu: 80 câu nghe từ `listening/n4-daily.json`, `listening/n4-viet-listening-mock-20.json` và `listening/n4-viet-listening-mock-21-60.json`, 6 câu JLPT tự biên soạn) và `review-banks/n5-daily-with-listening.json` (144 câu: 78 câu nghe từ `listening/n5-daily-1-13.json`, 6 câu JLPT tự biên soạn); test `tests/daily-listening-review-banks.test.ts` kiểm tra số câu, audio và cách chọn câu.
+- **Câu nghe mỗi ngày:** mặc định bài hằng ngày lấy câu nghe theo tỉ lệ trong ngân hàng. Giáo viên đổi ở ô **Số câu nghe mỗi ngày** của lớp: `0` bỏ câu nghe, `1–10` lấy tối đa chừng ấy câu nghe trong tổng số câu; ngân hàng thiếu câu nghe thì Reng bù câu thường. Ngân hàng N4/N5 có câu nghe (07/11/2026, bổ sung 10/11/2026): `review-banks/n4-daily-with-listening.json` (390 câu: 80 câu nghe từ `listening/n4-daily.json`, `listening/n4-viet-listening-mock-20.json` và `listening/n4-viet-listening-mock-21-60.json`, 6 câu JLPT tự biên soạn) (từ 13/11/2026 viết lại theo cấu trúc đề, 479 câu, xem [mục dưới](#ngân-hàng-n4-theo-cấu-trúc-đề--13112026)) và `review-banks/n5-daily-with-listening.json` (144 câu: 78 câu nghe từ `listening/n5-daily-1-13.json`, 6 câu JLPT tự biên soạn); test `tests/daily-listening-review-banks.test.ts` kiểm tra số câu, audio và cách chọn câu.
 - **Thêm câu nghe vào ngân hàng:** `npm run listening:merge -- --bank <bank.json> --listening <bộ đề nghe.json> --out <bank mới.json>` ghi một file mới có thêm các câu nghe chưa có trong ngân hàng. Lệnh dừng nếu bộ đề thiếu audio hoặc audio không khớp lời nghe, và không sửa hai file nguồn.
 - **Đưa lên phiên bản mới:** `npm run bank:sql -- --file <bank.json> --language ja-JP|zh-Hans|zh-Hant [--lesson <mã bài>] --out <file.sql> [--commit]` kiểm tra ngôn ngữ và dạng bài rồi viết transaction; câu nghe lấy từ bộ đề đi kèm web (`lib/bundled-listening.ts`) được đăng ký audio trong cùng transaction. `--lesson` dùng khi bài trên server có mã khác `id` trong file (chi tiết ở [DD](detail-design/teaching-service.md#đa-dạng-dạng-bài-và-đoạn-văn-đọc-hiểu--03112026)).
+
+## Ngân hàng N4 theo cấu trúc đề — 13/11/2026
+
+`review-banks/n4-daily-with-listening.json` (bài `n4-comprehensive-review-bank`, lớp Ôn JLPT N4 – Việt) được viết lại theo đề thật cho lớp chọn **Cách chia câu: Theo cấu trúc đề JLPT N4**, 67 câu mỗi ngày với 10 câu nghe. Ngân hàng có 479 câu, đều là câu trắc nghiệm như đề.
+
+| もんだい | Tag | Câu | Mỗi ngày | Nguồn |
+|---|---|---|---|---|
+| 漢字読み | `kanji-reading` | 56 | 7 | Một phần từ câu chọn và câu gõ cũ, còn lại từ mới; mỗi từ đặt trong một câu |
+| 表記 | `orthography` | 35 | 5 | Một phần từ câu cũ, còn lại mới |
+| 文脈規定 | `contextual` | 56 | 8 | 19 câu cũ, 37 câu mới |
+| 言い換え類義 | `paraphrase` | 28 | 4 | 14 câu cũ, 14 câu mới |
+| 用法 | `usage` | 28 | 4 | Mới |
+| 文法形式の判断 | `grammar-form` | 104 | 13 | Câu chọn cũ, 16 câu trợ từ và câu biến đổi từ chuyển thành câu chọn, cùng một số câu mới; có câu riêng cho Minna 26–28 |
+| 文の組み立て | `composition` | 28 | 4 | Một phần từ câu sắp xếp cũ chuyển sang dạng ★, phần lớn là câu mới |
+| 文章の文法 | `text-grammar` | 28 | 4 | Mới: 7 đoạn, mỗi đoạn 4 chỗ trống |
+| 内容理解（短文） | `short-reading` | 21 | 3 | 6 đoạn cũ viết lại, 15 đoạn mới; mỗi đoạn 100–200 chữ, 1 câu hỏi |
+| 内容理解（中文） | `mid-reading` | 21 | 3 | Mới: 7 đoạn khoảng 450–500 chữ, mỗi đoạn 3 câu |
+| 情報検索 | `info-search` | 14 | 2 | Mới: 7 tờ thông báo hoặc bảng giá khoảng 400 chữ, mỗi tờ 2 câu |
+| Nghe 4 phần | `section:1`–`section:4` | 60 | 3/2/2/3 | 60 câu nghe theo dạng đề đã có; bỏ 20 câu nghe hằng ngày có câu hỏi tiếng Việt |
+
+Quy ước khi thêm câu:
+
+- **Tag:** mỗi câu có `n4`, tag phần thi cũ (`kanji`, `writing`, `vocabulary`, `paraphrase`, `usage`, `grammar`, `sentence-order`, `reading`) và tag もんだい ở bảng trên. Câu nghe giữ `section:N`. Câu không có tag もんだい chỉ được dùng để bù khi một phần thiếu câu.
+- **Hình thức:** mỗi phần có một lời dẫn `instruction` (もんだい１…) giống nhau cho mọi câu. Chữ được hỏi gạch chân bằng `[[…]]`; chỗ trống viết `（　　）`, `＿★＿` hoặc `［ 1 ］`. Văn bản viết cách giữa các cụm như sách đề N4. Furigana chỉ đặt trên chữ Hán trên N4, không đặt trên chữ được hỏi.
+- **Đáp án:** một đáp án trong bốn lựa chọn, vị trí đáp án chia đều trong từng phần. Giải thích bằng tiếng Việt.
+- **Số lượng:** mỗi phần nên có khoảng 7 lần số câu mỗi ngày, để một tuần không lặp. Trang lớp cho biết mỗi phần đủ bao nhiêu ngày.
+
+Nội dung tự biên soạn bằng AI theo phạm vi Minna 1–50, không chép đề chính thức hay sách. Ba agent độc lập đã soát lại đáp án, lựa chọn sai, độ tự nhiên, furigana và giải thích. Giáo viên vẫn nên đọc lại trước khi nạp lên production. `tests/n4-jlpt-bank.test.ts` kiểm tra mỗi câu có một もんだい, đúng dạng trắc nghiệm, vị trí đáp án chia đều, số câu mỗi đoạn văn, và 7 ngày liền mỗi ngày đúng số câu từng もんだい mà không lặp câu.
+
+Nạp lên production: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --out n4.sql`, đọc lại file, thêm `--commit` rồi chạy. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
 
 ## Nguồn đề JLPT và câu tự biên soạn
 

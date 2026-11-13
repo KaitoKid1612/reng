@@ -11,10 +11,12 @@ import { lessonDraftSchema } from "../lib/lesson-schema";
 const banks = [
   {
     file: "content/review-banks/n4-daily-with-listening.json",
-    expectedTotal: 390,
-    expectedListening: 80,
-    expectedOriginals: 6,
-    dailySize: 70,
+    // Rewritten in the JLPT test's format on 13/11/2026: the six reviewed originals became
+    // exam-format questions with n4-jlpt- ids, and only the 60 exam-format clips stayed.
+    expectedTotal: 479,
+    expectedListening: 60,
+    expectedOriginals: 0,
+    dailySize: 67,
     dailyListening: 10,
   },
   {

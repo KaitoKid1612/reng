@@ -5,6 +5,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 ### 13/11/2026
 
 - Bài hằng ngày theo cấu trúc đề JLPT: ô **Cách chia câu** ở trang lớp cho lấy mỗi もんだい đúng số câu và thứ tự của đề N4 hoặc N5, phần nghe ở cuối. Ô số câu thêm 67 câu (đủ đề N4 cùng 10 câu nghe) và 53 câu (N5). Trang lớp có bảng số câu từng もんだい và số ngày trước khi câu quay lại. Trần câu mỗi bài tăng lên 500. Cần áp migration `20261113032756_daily_practice_format` trước khi deploy. Xem [thiết kế](basic-design/teaching-service.md#bài-hằng-ngày-theo-cấu-trúc-đề-jlpt--13112026).
+- Ngân hàng ôn N4 của lớp Việt viết lại theo cấu trúc đề: 479 câu trắc nghiệm theo 15 もんだい, thêm 用法, 文章の文法, 情報検索 và đoạn đọc hiểu dài khoảng 450 chữ. Câu gõ đáp án chuyển thành câu chọn, mỗi phần đủ khoảng 7 ngày không lặp. Ba agent độc lập soát và sửa 69 câu. Cần nạp bằng `npm run bank:sql` rồi đặt lớp sang "Theo cấu trúc đề JLPT N4", 67 câu. Xem [hướng dẫn nội dung](content-authoring.md#ngân-hàng-n4-theo-cấu-trúc-đề--13112026).
 
 ### 12/11/2026
 
