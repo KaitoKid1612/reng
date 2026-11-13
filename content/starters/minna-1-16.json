@@ -1,0 +1,1449 @@
+{
+  "id": "minna-1-16",
+  "title": "Bài 16 – Trình tự hành động và miêu tả đặc điểm",
+  "titleJa": "第16課　してから、つぎの ことを します",
+  "summary": "Theo trình tự bài 16 Minna no Nihongo Sơ cấp I: nối hành động bằng thể て, Vてから, mô tả N1はN2がA, nối tính từ đuôi い bằng くて và tính từ đuôi な hoặc danh từ bằng で. Ví dụ, hội thoại và bài tập đều là nội dung gốc.",
+  "order": 16,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1601",
+        "jp": "のります",
+        "kanji": "乗ります",
+        "romaji": "norimasu",
+        "vi": "lên (xe, tàu)",
+        "audio": null
+      },
+      {
+        "id": "v1602",
+        "jp": "おります",
+        "kanji": "降ります",
+        "romaji": "orimasu",
+        "vi": "xuống (xe, tàu)",
+        "audio": null
+      },
+      {
+        "id": "v1603",
+        "jp": "のりかえます",
+        "kanji": "乗り換えます",
+        "romaji": "norikaemasu",
+        "vi": "chuyển tuyến, đổi xe",
+        "audio": null
+      },
+      {
+        "id": "v1604",
+        "jp": "あびます",
+        "kanji": "浴びます",
+        "romaji": "abimasu",
+        "vi": "tắm (vòi sen)",
+        "audio": null
+      },
+      {
+        "id": "v1605",
+        "jp": "いれます",
+        "kanji": "入れます",
+        "romaji": "iremasu",
+        "vi": "cho vào",
+        "audio": null
+      },
+      {
+        "id": "v1606",
+        "jp": "だします",
+        "kanji": "出します",
+        "romaji": "dashimasu",
+        "vi": "lấy ra; nộp",
+        "audio": null
+      },
+      {
+        "id": "v1607",
+        "jp": "おします",
+        "kanji": "押します",
+        "romaji": "oshimasu",
+        "vi": "ấn, đẩy",
+        "audio": null
+      },
+      {
+        "id": "v1608",
+        "jp": "ひきます",
+        "kanji": "引きます",
+        "romaji": "hikimasu",
+        "vi": "kéo",
+        "audio": null
+      },
+      {
+        "id": "v1609",
+        "jp": "まわします",
+        "kanji": "回します",
+        "romaji": "mawashimasu",
+        "vi": "xoay, vặn",
+        "audio": null
+      },
+      {
+        "id": "v1610",
+        "jp": "さわります",
+        "kanji": "触ります",
+        "romaji": "sawarimasu",
+        "vi": "chạm vào",
+        "audio": null
+      },
+      {
+        "id": "v1611",
+        "jp": "あるきます",
+        "kanji": "歩きます",
+        "romaji": "arukimasu",
+        "vi": "đi bộ",
+        "audio": null,
+        "image": "/icons/vocab/person-walking.svg"
+      },
+      {
+        "id": "v1612",
+        "jp": "わたります",
+        "kanji": "渡ります",
+        "romaji": "watarimasu",
+        "vi": "băng qua",
+        "audio": null
+      },
+      {
+        "id": "v1613",
+        "jp": "まがります",
+        "kanji": "曲がります",
+        "romaji": "magarimasu",
+        "vi": "rẽ",
+        "audio": null
+      },
+      {
+        "id": "v1614",
+        "jp": "あらいます",
+        "kanji": "洗います",
+        "romaji": "araimasu",
+        "vi": "rửa, giặt",
+        "audio": null
+      },
+      {
+        "id": "v1615",
+        "jp": "おわります",
+        "kanji": "終わります",
+        "romaji": "owarimasu",
+        "vi": "kết thúc",
+        "audio": null
+      },
+      {
+        "id": "v1616",
+        "jp": "はじめます",
+        "kanji": "始めます",
+        "romaji": "hajimemasu",
+        "vi": "bắt đầu",
+        "audio": null
+      },
+      {
+        "id": "v1617",
+        "jp": "えき",
+        "kanji": "駅",
+        "romaji": "eki",
+        "vi": "nhà ga",
+        "audio": null
+      },
+      {
+        "id": "v1618",
+        "jp": "でんしゃ",
+        "kanji": "電車",
+        "romaji": "densha",
+        "vi": "tàu điện",
+        "audio": null,
+        "image": "/icons/vocab/train.svg"
+      },
+      {
+        "id": "v1619",
+        "jp": "きっぷ",
+        "kanji": "切符",
+        "romaji": "kippu",
+        "vi": "vé tàu, vé xe",
+        "audio": null,
+        "image": "/icons/vocab/ticket.svg"
+      },
+      {
+        "id": "v1620",
+        "jp": "かいさつ",
+        "kanji": "改札",
+        "romaji": "kaisatsu",
+        "vi": "cổng soát vé",
+        "audio": null
+      },
+      {
+        "id": "v1621",
+        "jp": "でぐち",
+        "kanji": "出口",
+        "romaji": "deguchi",
+        "vi": "lối ra",
+        "audio": null,
+        "image": "/icons/vocab/door.svg"
+      },
+      {
+        "id": "v1622",
+        "jp": "こうさてん",
+        "kanji": "交差点",
+        "romaji": "kousaten",
+        "vi": "ngã tư",
+        "audio": null
+      },
+      {
+        "id": "v1623",
+        "jp": "はし",
+        "kanji": "橋",
+        "romaji": "hashi",
+        "vi": "cây cầu",
+        "audio": null
+      },
+      {
+        "id": "v1624",
+        "jp": "みち",
+        "kanji": "道",
+        "romaji": "michi",
+        "vi": "con đường",
+        "audio": null
+      },
+      {
+        "id": "v1625",
+        "jp": "かみ",
+        "kanji": "髪",
+        "romaji": "kami",
+        "vi": "tóc",
+        "audio": null
+      },
+      {
+        "id": "v1626",
+        "jp": "せ",
+        "kanji": "背",
+        "romaji": "se",
+        "vi": "chiều cao, vóc dáng",
+        "audio": null
+      },
+      {
+        "id": "v1627",
+        "jp": "かお",
+        "kanji": "顔",
+        "romaji": "kao",
+        "vi": "khuôn mặt",
+        "audio": null
+      },
+      {
+        "id": "v1628",
+        "jp": "こえ",
+        "kanji": "声",
+        "romaji": "koe",
+        "vi": "giọng nói",
+        "audio": null,
+        "image": "/icons/vocab/speaking-head.svg"
+      },
+      {
+        "id": "v1629",
+        "jp": "まち",
+        "kanji": "町",
+        "romaji": "machi",
+        "vi": "thị trấn, khu phố",
+        "audio": null
+      },
+      {
+        "id": "v1630",
+        "jp": "こうえん",
+        "kanji": "公園",
+        "romaji": "kouen",
+        "vi": "công viên",
+        "audio": null
+      },
+      {
+        "id": "v1631",
+        "jp": "へや",
+        "kanji": "部屋",
+        "romaji": "heya",
+        "vi": "căn phòng",
+        "audio": null
+      },
+      {
+        "id": "v1632",
+        "jp": "かばん",
+        "kanji": "鞄",
+        "romaji": "kaban",
+        "vi": "cặp, túi xách",
+        "audio": null,
+        "image": "/icons/vocab/handbag.svg"
+      },
+      {
+        "id": "v1633",
+        "jp": "たかい",
+        "kanji": "高い",
+        "romaji": "takai",
+        "vi": "cao; đắt",
+        "audio": null
+      },
+      {
+        "id": "v1634",
+        "jp": "ながい",
+        "kanji": "長い",
+        "romaji": "nagai",
+        "vi": "dài",
+        "audio": null
+      },
+      {
+        "id": "v1635",
+        "jp": "みじかい",
+        "kanji": "短い",
+        "romaji": "mijikai",
+        "vi": "ngắn",
+        "audio": null
+      },
+      {
+        "id": "v1636",
+        "jp": "わかい",
+        "kanji": "若い",
+        "romaji": "wakai",
+        "vi": "trẻ",
+        "audio": null
+      },
+      {
+        "id": "v1637",
+        "jp": "あかるい",
+        "kanji": "明るい",
+        "romaji": "akarui",
+        "vi": "sáng sủa",
+        "audio": null
+      },
+      {
+        "id": "v1638",
+        "jp": "ひろい",
+        "kanji": "広い",
+        "romaji": "hiroi",
+        "vi": "rộng",
+        "audio": null
+      },
+      {
+        "id": "v1639",
+        "jp": "しずか",
+        "kanji": "静か",
+        "romaji": "shizuka",
+        "vi": "yên tĩnh",
+        "audio": null
+      },
+      {
+        "id": "v1640",
+        "jp": "べんり",
+        "kanji": "便利",
+        "romaji": "benri",
+        "vi": "tiện lợi",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1601",
+        "pattern": "V1 て、V2 て、V3 ます",
+        "vi": "Làm việc 1, rồi việc 2, rồi việc 3",
+        "explain": "Nối các hành động theo thứ tự. Những động từ trước dùng thể て; động từ cuối quyết định thì và mức độ lịch sự của cả câu.",
+        "viMistake": "Không thêm ます sau mỗi động từ ở giữa chuỗi.",
+        "examples": [
+          {
+            "jp": "けさ {洗濯|せんたく}して、コーヒーを {飲|の}んで、{学校|がっこう}へ {行|い}きました。",
+            "vi": "Sáng nay tôi giặt đồ, uống cà phê rồi đến trường.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}で {切符|きっぷ}を {買|か}って、{電車|でんしゃ}に {乗|の}ります。",
+            "vi": "Tôi mua vé ở ga rồi lên tàu.",
+            "audio": null
+          },
+          {
+            "jp": "{公園|こうえん}を {歩|ある}いて、{写真|しゃしん}を {撮|と}って、うちへ {帰|かえ}りました。",
+            "vi": "Tôi đi dạo trong công viên, chụp ảnh rồi về nhà.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1602",
+        "pattern": "V1 てから、V2 ます",
+        "vi": "Sau khi làm V1 xong thì làm V2",
+        "explain": "Nhấn mạnh V1 hoàn tất trước khi V2 bắt đầu. V1 dùng thể て + から; vế cuối mang thì của câu.",
+        "viMistake": "Không dùng V1 ますから để diễn đạt 'sau khi'; ますから thường được hiểu là lý do.",
+        "examples": [
+          {
+            "jp": "アルバイトが {終|お}わってから、{日本語|にほんご}を {勉強|べんきょう}します。",
+            "vi": "Sau khi làm thêm xong, tôi học tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{手|て}を {洗|あら}ってから、ばんごはんを {食|た}べます。",
+            "vi": "Tôi rửa tay rồi mới ăn tối.",
+            "audio": null
+          },
+          {
+            "jp": "{切符|きっぷ}を {買|か}ってから、{改札|かいさつ}へ {行|い}って ください。",
+            "vi": "Hãy mua vé xong rồi đến cổng soát vé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1603",
+        "pattern": "N1 は N2 が A です",
+        "vi": "N1 có N2 mang đặc điểm A",
+        "explain": "N1 là chủ đề; N2 là bộ phận hoặc khía cạnh được miêu tả bằng tính từ A. Ví dụ mô tả tóc, giọng nói, phòng hoặc công viên.",
+        "viMistake": "Không đổi が thành を khi N2 là đối tượng được miêu tả bởi tính từ.",
+        "examples": [
+          {
+            "jp": "リンさんは {髪|かみ}が {長|なが}いです。",
+            "vi": "Linh có mái tóc dài.",
+            "audio": null
+          },
+          {
+            "jp": "この {町|まち}は {公園|こうえん}が {多|おお}いです。",
+            "vi": "Khu phố này có nhiều công viên.",
+            "audio": null
+          },
+          {
+            "jp": "あの {先生|せんせい}は {声|こえ}が {大|おお}きいです。",
+            "vi": "Thầy giáo kia có giọng nói lớn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1604",
+        "pattern": "い形容詞（い → くて）、〜",
+        "vi": "Nối hai đặc điểm bằng tính từ đuôi い",
+        "explain": "Bỏ い ở cuối tính từ thứ nhất rồi thêm くて. Riêng いい → よくて. Tính từ cuối giữ dạng lịch sự và thì của câu.",
+        "viMistake": "Không nói たかいで hoặc たかいて; phải là たかくて.",
+        "examples": [
+          {
+            "jp": "この {部屋|へや}は {明|あか}るくて、{広|ひろ}いです。",
+            "vi": "Phòng này sáng sủa và rộng.",
+            "audio": null
+          },
+          {
+            "jp": "この {道|みち}は {長|なが}くて、{静|しず}かです。",
+            "vi": "Con đường này dài và yên tĩnh.",
+            "audio": null
+          },
+          {
+            "jp": "この かばんは {軽|かる}くて、いいです。",
+            "vi": "Chiếc túi này nhẹ và tốt.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1605",
+        "pattern": "な形容詞／名詞 + で、〜",
+        "vi": "Nối đặc điểm hoặc thông tin bằng で",
+        "explain": "Tính từ đuôi な bỏ な rồi thêm で. Danh từ cũng thêm で để nối với thông tin tiếp theo về cùng một chủ đề.",
+        "viMistake": "Không nói しずかなで hoặc せんせいですで; dùng しずかで, せんせいで.",
+        "examples": [
+          {
+            "jp": "この {町|まち}は {静|しず}かで、{便利|べんり}です。",
+            "vi": "Khu phố này yên tĩnh và tiện lợi.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんは {学生|がくせい}で、ハノイに {住|す}んで います。",
+            "vi": "Linh là sinh viên và đang sống ở Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "この {駅|えき}は きれいで、{便利|べんり}です。",
+            "vi": "Ga này sạch và tiện lợi.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1601",
+        "type": "title",
+        "jp": "{第|だい}16{課|か}",
+        "vi": "Kể theo trình tự và miêu tả người, vật, nơi chốn"
+      },
+      {
+        "id": "s1602",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Kể 2–3 hành động theo thứ tự bằng thể て.\n2. Nói 'sau khi làm xong' với Vてから.\n3. Miêu tả đặc điểm bằng N1はN2がAです.\n4. Nối tính từ い bằng くて, tính từ な và danh từ bằng で."
+      },
+      {
+        "id": "s1603",
+        "type": "vocab",
+        "refs": ["v1601", "v1602", "v1603", "v1604", "v1605", "v1606", "v1607", "v1608"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1604",
+        "type": "vocab",
+        "refs": ["v1609", "v1610", "v1611", "v1612", "v1613", "v1614", "v1615", "v1616"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1605",
+        "type": "vocab",
+        "refs": ["v1617", "v1618", "v1619", "v1620", "v1621", "v1622", "v1623", "v1624"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1606",
+        "type": "vocab",
+        "refs": ["v1625", "v1626", "v1627", "v1628", "v1629", "v1630", "v1631", "v1632"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1607",
+        "type": "vocab",
+        "refs": ["v1633", "v1634", "v1635", "v1636", "v1637", "v1638", "v1639", "v1640"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1608",
+        "type": "grammar",
+        "ref": "g1601",
+        "teacherNotes": "Ôn thể て ở bài 14; nhấn mạnh thì do động từ cuối quyết định."
+      },
+      {
+        "id": "s1609",
+        "type": "example",
+        "ref": "g1601",
+        "reveal": true
+      },
+      {
+        "id": "s1610",
+        "type": "table",
+        "title": "Trình tự một ngày",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{起|お}きます → {顔|かお}を {洗|あら}います",
+            "{起|お}きて、{顔|かお}を {洗|あら}います。"
+          ],
+          [
+            "{切符|きっぷ}を {買|か}います → {電車|でんしゃ}に {乗|の}ります",
+            "{切符|きっぷ}を {買|か}って、{電車|でんしゃ}に {乗|の}ります。"
+          ],
+          [
+            "{駅|えき}で {降|お}ります → {歩|ある}きます",
+            "{駅|えき}で {降|お}りて、{歩|ある}きます。"
+          ],
+          ["{本|ほん}を {読|よ}みます → {寝|ね}ます", "{本|ほん}を {読|よ}んで、{寝|ね}ます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1611",
+        "type": "table",
+        "title": "Luyện tập 1: kể việc hôm qua",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{公園|こうえん}へ {行|い}きます → {歩|ある}きます → {帰|かえ}ります",
+            "{公園|こうえん}へ {行|い}って、{歩|ある}いて、{帰|かえ}りました。"
+          ],
+          [
+            "{友達|ともだち}に {会|あ}います → お{茶|ちゃ}を {飲|の}みます",
+            "{友達|ともだち}に {会|あ}って、お{茶|ちゃ}を {飲|の}みました。"
+          ],
+          [
+            "{切符|きっぷ}を {買|か}います → {電車|でんしゃ}に {乗|の}ります",
+            "{切符|きっぷ}を {買|か}って、{電車|でんしゃ}に {乗|の}りました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1612",
+        "type": "quiz",
+        "ref": "q1601"
+      },
+      {
+        "id": "s1613",
+        "type": "grammar",
+        "ref": "g1602",
+        "teacherNotes": "So sánh て、 với てから: mẫu sau nhấn mạnh hoàn tất việc trước."
+      },
+      {
+        "id": "s1614",
+        "type": "example",
+        "ref": "g1602",
+        "reveal": true
+      },
+      {
+        "id": "s1615",
+        "type": "table",
+        "title": "Luyện tập 2: sau khi làm xong",
+        "columns": ["Việc trước", "Việc sau", "Câu mẫu"],
+        "rows": [
+          [
+            "{手|て}を {洗|あら}います",
+            "{食|た}べます",
+            "{手|て}を {洗|あら}ってから、{食|た}べます。"
+          ],
+          [
+            "{切符|きっぷ}を {買|か}います",
+            "{改札|かいさつ}へ {行|い}きます",
+            "{切符|きっぷ}を {買|か}ってから、{改札|かいさつ}へ {行|い}きます。"
+          ],
+          [
+            "{宿題|しゅくだい}を します",
+            "テレビを {見|み}ます",
+            "{宿題|しゅくだい}を してから、テレビを {見|み}ます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1616",
+        "type": "quiz",
+        "ref": "q1602"
+      },
+      {
+        "id": "s1617",
+        "type": "grammar",
+        "ref": "g1603"
+      },
+      {
+        "id": "s1618",
+        "type": "example",
+        "ref": "g1603",
+        "reveal": true
+      },
+      {
+        "id": "s1619",
+        "type": "table",
+        "title": "Luyện tập 3: người và nơi chốn",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["リンさん・{髪|かみ}・{長|なが}い", "リンさんは {髪|かみ}が {長|なが}いです。"],
+          [
+            "この {町|まち}・{公園|こうえん}・{多|おお}い",
+            "この {町|まち}は {公園|こうえん}が {多|おお}いです。"
+          ],
+          [
+            "あの {人|ひと}・{声|こえ}・{大|おお}きい",
+            "あの {人|ひと}は {声|こえ}が {大|おお}きいです。"
+          ],
+          [
+            "この {駅|えき}・{出口|でぐち}・{広|ひろ}い",
+            "この {駅|えき}は {出口|でぐち}が {広|ひろ}いです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1620",
+        "type": "quiz",
+        "ref": "q1603"
+      },
+      {
+        "id": "s1621",
+        "type": "grammar",
+        "ref": "g1604"
+      },
+      {
+        "id": "s1622",
+        "type": "example",
+        "ref": "g1604",
+        "reveal": true
+      },
+      {
+        "id": "s1623",
+        "type": "table",
+        "title": "Luyện tập 4: tính từ đuôi い",
+        "columns": ["Tính từ", "Dạng nối"],
+        "rows": [
+          ["{明|あか}るい", "{明|あか}るくて"],
+          ["{長|なが}い", "{長|なが}くて"],
+          ["{若|わか}い", "{若|わか}くて"],
+          ["いい", "よくて"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1624",
+        "type": "quiz",
+        "ref": "q1604"
+      },
+      {
+        "id": "s1625",
+        "type": "grammar",
+        "ref": "g1605"
+      },
+      {
+        "id": "s1626",
+        "type": "example",
+        "ref": "g1605",
+        "reveal": true
+      },
+      {
+        "id": "s1627",
+        "type": "table",
+        "title": "Luyện tập 5: tính từ な và danh từ",
+        "columns": ["Gợi ý", "Dạng nối", "Câu mẫu"],
+        "rows": [
+          ["{静|しず}か", "{静|しず}かで", "この {町|まち}は {静|しず}かで、{便利|べんり}です。"],
+          ["{便利|べんり}", "{便利|べんり}で", "この {駅|えき}は {便利|べんり}で、きれいです。"],
+          [
+            "{学生|がくせい}",
+            "{学生|がくせい}で",
+            "リンさんは {学生|がくせい}で、ハノイに {住|す}んで います。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1628",
+        "type": "quiz",
+        "ref": "q1605"
+      },
+      {
+        "id": "s1629",
+        "type": "dialogue",
+        "title": "Hội thoại 1: đi đến thư viện",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "{図書館|としょかん}へ どう {行|い}きますか。",
+            "vi": "Đến thư viện thì đi thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{駅|えき}で {電車|でんしゃ}に {乗|の}って、{二|ふた}つ{目|め}の {駅|えき}で {降|お}ります。",
+            "vi": "Lên tàu ở ga, xuống ở ga thứ hai."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{降|お}りてから、{橋|はし}を {渡|わた}って ください。",
+            "vi": "Sau khi xuống tàu, hãy đi qua cầu."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1630",
+        "type": "dialogue",
+        "title": "Hội thoại 2: một buổi sáng",
+        "lines": [
+          {
+            "speaker": "リン",
+            "jp": "{朝|あさ}、まず {何|なに}を しますか。",
+            "vi": "Buổi sáng bạn làm gì đầu tiên?"
+          },
+          {
+            "speaker": "ハー",
+            "jp": "{顔|かお}を {洗|あら}って、パンを {食|た}べて、{学校|がっこう}へ {行|い}きます。",
+            "vi": "Tôi rửa mặt, ăn bánh mì rồi đến trường."
+          },
+          {
+            "speaker": "リン",
+            "jp": "{学校|がっこう}に {着|つ}いてから、{日本語|にほんご}を {勉強|べんきょう}しますか。",
+            "vi": "Sau khi đến trường, bạn học tiếng Nhật à?"
+          },
+          {
+            "speaker": "ハー",
+            "jp": "はい、そうです。",
+            "vi": "Vâng, đúng vậy."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1631",
+        "type": "dialogue",
+        "title": "Hội thoại 3: nói về khu phố",
+        "lines": [
+          {
+            "speaker": "ミン",
+            "jp": "リンさんの {町|まち}は どんな ところですか。",
+            "vi": "Khu phố của Linh như thế nào?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{公園|こうえん}が {多|おお}くて、{静|しず}かです。",
+            "vi": "Có nhiều công viên và yên tĩnh."
+          },
+          {
+            "speaker": "ミン",
+            "jp": "{駅|えき}は {近|ちか}いですか。",
+            "vi": "Ga có gần không?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "はい。{駅|えき}は {小|ちい}さいですが、{便利|べんり}です。",
+            "vi": "Có. Ga nhỏ nhưng tiện lợi."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1632",
+        "type": "table",
+        "title": "Luyện tập 6: ghép thành câu",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{手|て}を {洗|あら}います → {食|た}べます",
+            "{手|て}を {洗|あら}ってから、{食|た}べます。"
+          ],
+          [
+            "この {部屋|へや}・{明|あか}るい・{広|ひろ}い",
+            "この {部屋|へや}は {明|あか}るくて、{広|ひろ}いです。"
+          ],
+          [
+            "この {町|まち}・{静|しず}か・{便利|べんり}",
+            "この {町|まち}は {静|しず}かで、{便利|べんり}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1633",
+        "type": "quiz",
+        "ref": "q1606"
+      },
+      {
+        "id": "s1634",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "Vて、Vて、Vます: kể các hành động theo thứ tự.\nVてから、Vます: xong việc trước rồi làm việc sau.\nN1はN2がAです: mô tả một bộ phận hoặc đặc điểm.\nい形容詞 → くて; な形容詞／名詞 → で."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1601",
+        "prompt": "Chọn câu đúng: Tôi mua vé rồi lên tàu.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Nối hai hành động bằng て; phương tiện đi lên dùng に.",
+        "type": "choice",
+        "options": [
+          "きっぷを かって、でんしゃに のります。",
+          "きっぷを かいます、でんしゃに のります。",
+          "きっぷを かって、でんしゃを のります。",
+          "きっぷを かいで、でんしゃに のります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1602",
+        "prompt": "Chọn câu đúng: Sau khi rửa tay xong, tôi ăn tối.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "あらいます → あらってから.",
+        "type": "choice",
+        "options": [
+          "てを あらいますから、ばんごはんを たべます。",
+          "てを あらってから、ばんごはんを たべます。",
+          "てを あらいてから、ばんごはんを たべます。",
+          "てを あらって、ばんごはんを たべてから。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1603",
+        "prompt": "リンさんは かみ（　）ながいです。",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Bộ phận được miêu tả bằng tính từ dùng が.",
+        "type": "choice",
+        "options": ["を", "に", "が", "で"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1604",
+        "prompt": "Chọn dạng nối đúng của あかるい.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Tính từ đuôi い: bỏ い và thêm くて.",
+        "type": "choice",
+        "options": ["あかるいで", "あかるくて", "あかるいて", "あかるで"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1605",
+        "prompt": "Chọn dạng nối đúng của しずか.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Tính từ đuôi な: thêm で, không giữ な.",
+        "type": "choice",
+        "options": ["しずかなで", "しずかくて", "しずかで", "しずかて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1606",
+        "prompt": "Chọn câu đúng: Cô ấy là sinh viên và sống ở Hà Nội.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Danh từ nối bằng で; nơi cư trú dùng に.",
+        "type": "choice",
+        "options": [
+          "かのじょは がくせいで、ハノイに すんで います。",
+          "かのじょは がくせいくて、ハノイに すんで います。",
+          "かのじょは がくせいですで、ハノイに すんで います。",
+          "かのじょは がくせいで、ハノイで すんで います。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1607",
+        "prompt": "V1 てから、V2 nhấn mạnh điều gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "てから biểu thị việc trước đã hoàn tất.",
+        "type": "choice",
+        "options": [
+          "V1 và V2 xảy ra cùng lúc",
+          "V2 xảy ra trước V1",
+          "V1 hoàn tất rồi mới bắt đầu V2",
+          "V1 là lý do của V2"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1608",
+        "prompt": "Trong câu nối ba hành động, động từ nào quyết định thì của cả câu?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Động từ cuối mang thì của câu.",
+        "type": "choice",
+        "options": [
+          "Động từ thứ nhất",
+          "Động từ cuối",
+          "Mọi động từ đều chia quá khứ",
+          "Không động từ nào"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1609",
+        "prompt": "Chọn câu đúng: Ga này có lối ra rộng.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "N1 は N2 が A です.",
+        "type": "choice",
+        "options": [
+          "この えきは でぐちを ひろいです。",
+          "この えきが でぐちは ひろいです。",
+          "この えきは でぐちが ひろいです。",
+          "この えきを でぐちが ひろいです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1610",
+        "prompt": "Chọn dạng nối đúng của いい.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "いい có dạng nối đặc biệt: よくて.",
+        "type": "choice",
+        "options": ["いくて", "いいくて", "よくて", "いいで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1611",
+        "prompt": "Chọn câu đúng: Căn phòng sáng và rộng.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "あかるい → あかるくて; tính từ cuối giữ です.",
+        "type": "choice",
+        "options": [
+          "へやは あかるいで、ひろいです。",
+          "へやは あかるくて、ひろいです。",
+          "へやは あかるいて、ひろいです。",
+          "へやは あかるくて、ひろくてです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1612",
+        "prompt": "Chọn câu đúng: Khu phố yên tĩnh và tiện lợi.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "しずか là tính từ đuôi な, nối bằng で.",
+        "type": "choice",
+        "options": [
+          "まちは しずかで、べんりです。",
+          "まちは しずかくて、べんりです。",
+          "まちは しずかなで、べんりです。",
+          "まちは しずかですで、べんりです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1613",
+        "prompt": "Chọn thể て của のります.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "のります → のって.",
+        "type": "choice",
+        "options": ["のりて", "のって", "のんで", "のいて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1614",
+        "prompt": "Chọn thể て của おります (xuống xe).",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "おります là động từ nhóm II: おりて.",
+        "type": "choice",
+        "options": ["おって", "おりて", "おんで", "おいて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1615",
+        "prompt": "Chọn thể て của あらいます.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "あらいます → あらって.",
+        "type": "choice",
+        "options": ["あらいて", "あらんで", "あらって", "あらして"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1616",
+        "prompt": "Chọn câu đúng: Tôi xuống tàu và đi bộ về nhà.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Phương tiện rời khỏi dùng を; おります → おりて.",
+        "type": "choice",
+        "options": [
+          "でんしゃに おりて、うちへ あるきます。",
+          "でんしゃを おりて、うちへ あるきます。",
+          "でんしゃを おって、うちへ あるきます。",
+          "でんしゃを おりますて、うちへ あるきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1617",
+        "prompt": "Chọn câu đúng: Sau khi làm xong, tôi gọi điện.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "おわります → おわってから.",
+        "type": "choice",
+        "options": [
+          "しごとが おわってから、でんわを かけます。",
+          "しごとが おわりますから、でんわを かけます。",
+          "しごとが おわりてから、でんわを かけます。",
+          "しごとが おわってから、でんわを かけて。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1618",
+        "prompt": "Chọn câu đúng: Anh ấy có giọng nói lớn.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Bộ phận/đặc điểm dùng が.",
+        "type": "choice",
+        "options": [
+          "かれは こえを おおきいです。",
+          "かれが こえは おおきいです。",
+          "かれは こえが おおきいです。",
+          "かれは こえに おおきいです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1619",
+        "prompt": "Dạng nối của べんり là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "べんり là tính từ đuôi な: べんりで.",
+        "type": "choice",
+        "options": ["べんりくて", "べんりなで", "べんりで", "べんりいて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1620",
+        "prompt": "Dạng nối của わかい là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "わかい là tính từ đuôi い: わかくて.",
+        "type": "choice",
+        "options": ["わかくて", "わかいで", "わかいて", "わかで"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1621",
+        "prompt": "Câu nào nói 'Tôi đi bộ qua cầu rồi rẽ phải'?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "わたります → わたって; rẽ về hướng phải dùng へ.",
+        "type": "choice",
+        "options": [
+          "はしを わたって、みぎへ まがります。",
+          "はしに わたって、みぎを まがります。",
+          "はしを わたりて、みぎへ まがります。",
+          "はしを わたって、みぎが まがります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1622",
+        "prompt": "Chọn câu đúng: Tôi học xong rồi mới đi chơi.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "べんきょうします → べんきょうしてから.",
+        "type": "choice",
+        "options": [
+          "べんきょうしてから、あそびに いきます。",
+          "べんきょうしますから、あそびに いきます。",
+          "べんきょうしってから、あそびに いきます。",
+          "べんきょうして、あそびに いってから。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1623",
+        "prompt": "Chọn câu đúng: Người này tóc ngắn và trẻ.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "かみが; みじかい → みじかくて.",
+        "type": "choice",
+        "options": [
+          "この ひとは かみが みじかいで、わかいです。",
+          "この ひとは かみが みじかくて、わかいです。",
+          "この ひとは かみを みじかくて、わかいです。",
+          "この ひとは かみが みじかいて、わかいです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1624",
+        "prompt": "Chọn câu đúng: Tôi mua vé, lên tàu, rồi xuống ở ga kế tiếp.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Các động từ giữa chuỗi dùng thể て.",
+        "type": "choice",
+        "options": [
+          "きっぷを かって、でんしゃに のって、つぎの えきで おります。",
+          "きっぷを かって、でんしゃを のって、つぎの えきで おります。",
+          "きっぷを かいで、でんしゃに のって、つぎの えきで おります。",
+          "きっぷを かって、でんしゃに のりますて、つぎの えきで おります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1625",
+        "prompt": "Chọn câu đúng: Tôi là giáo viên và sống ở Đà Nẵng.",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Danh từ nối bằng で, nơi cư trú dùng に.",
+        "type": "choice",
+        "options": [
+          "わたしは せんせいくて、ダナンに すんで います。",
+          "わたしは せんせいですで、ダナンに すんで います。",
+          "わたしは せんせいで、ダナンに すんで います。",
+          "わたしは せんせいで、ダナンで すんで います。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1626",
+        "prompt": "のりかえます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "のりかえます: chuyển tuyến, đổi xe.",
+        "type": "choice",
+        "options": ["lên xe", "chuyển tuyến, đổi xe", "xuống xe", "đi bộ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1627",
+        "prompt": "かいさつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "かいさつ: cổng soát vé.",
+        "type": "choice",
+        "options": ["nhà ga", "cổng soát vé", "lối ra", "cây cầu"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1628",
+        "prompt": "でぐち nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "でぐち: lối ra.",
+        "type": "choice",
+        "options": ["cổng soát vé", "lối ra", "ngã tư", "vé tàu"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1629",
+        "prompt": "こうさてん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "こうさてん: ngã tư.",
+        "type": "choice",
+        "options": ["con đường", "ngã tư", "nhà ga", "công viên"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1630",
+        "prompt": "まわします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "まわします: xoay, vặn.",
+        "type": "choice",
+        "options": ["ấn", "xoay, vặn", "kéo", "chạm vào"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1631",
+        "prompt": "ひきます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "ひきます: kéo.",
+        "type": "choice",
+        "options": ["xoay", "kéo", "ấn", "rẽ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1632",
+        "prompt": "おします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "おします: ấn, đẩy.",
+        "type": "choice",
+        "options": ["kéo", "ấn, đẩy", "chạm vào", "lấy ra"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1633",
+        "prompt": "さわります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "さわります: chạm vào.",
+        "type": "choice",
+        "options": ["băng qua", "chạm vào", "rẽ", "đi bộ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1634",
+        "prompt": "わたります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "わたります: băng qua.",
+        "type": "choice",
+        "options": ["rẽ", "băng qua", "đi bộ", "lên xe"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1635",
+        "prompt": "まがります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "まがります: rẽ.",
+        "type": "choice",
+        "options": ["băng qua", "rẽ", "chuyển tuyến", "xuống xe"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1636",
+        "prompt": "あびます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "あびます: tắm (vòi sen).",
+        "type": "choice",
+        "options": ["rửa tay", "tắm (vòi sen)", "giặt đồ", "đi bộ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1637",
+        "prompt": "だします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "だします: lấy ra; nộp.",
+        "type": "choice",
+        "options": ["cho vào", "lấy ra; nộp", "xoay", "ấn"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1638",
+        "prompt": "せ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "せ: chiều cao, vóc dáng.",
+        "type": "choice",
+        "options": ["tóc", "chiều cao, vóc dáng", "giọng nói", "khuôn mặt"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1639",
+        "prompt": "こえ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "こえ: giọng nói.",
+        "type": "choice",
+        "options": ["tóc", "giọng nói", "chiều cao", "khuôn mặt"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1640",
+        "prompt": "みじかい nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "みじかい: ngắn.",
+        "type": "choice",
+        "options": ["dài", "ngắn", "rộng", "sáng sủa"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1641",
+        "prompt": "Điền: てを あらって（　　）、ばんごはんを たべます。",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Vてから: sau khi làm xong.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["から"]
+      },
+      {
+        "id": "q1642",
+        "prompt": "Điền trợ từ: リンさんは かみ（　　）ながいです。",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Bộ phận được miêu tả dùng が.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["が"]
+      },
+      {
+        "id": "q1643",
+        "prompt": "Điền dạng nối: あかるい → あかる（　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Bỏ い, thêm くて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くて"]
+      },
+      {
+        "id": "q1644",
+        "prompt": "Điền dạng nối: しずか → しずか（　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Tính từ đuôi な nối bằng で.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["で"]
+      },
+      {
+        "id": "q1645",
+        "prompt": "Điền dạng nối: いい → （　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "いい là ngoại lệ: よくて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よくて"]
+      },
+      {
+        "id": "q1646",
+        "prompt": "Điền thể て: のります → （　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "のります → のって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のって"]
+      },
+      {
+        "id": "q1647",
+        "prompt": "Điền thể て: おります → （　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "おります là nhóm II: おりて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おりて"]
+      },
+      {
+        "id": "q1648",
+        "prompt": "Điền thể て: わたります → （　　）",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "わたります → わたって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わたって"]
+      },
+      {
+        "id": "q1649",
+        "prompt": "Điền: わたしは がくせい（　　）、ハノイに すんで います。",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Danh từ nối với thông tin tiếp theo bằng で.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["で"]
+      },
+      {
+        "id": "q1650",
+        "prompt": "Điền: きっぷを かって、でんしゃに （　　）ます。",
+        "points": 1,
+        "tags": ["minna-16"],
+        "explain": "Động từ cuối giữ thể ます: のります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のり"]
+      }
+    ]
+  }
+}

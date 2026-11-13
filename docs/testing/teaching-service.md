@@ -129,6 +129,13 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Bài mẫu Minna 16 — 13/11/2026
+
+Thêm `content/starters/minna-1-16.json` và đăng ký sau bài 15: 40 từ, 5 mục ngữ pháp đúng trình tự bài 16, 34 slide (6 bảng, 3 hội thoại), 50 câu luyện (40 choice, 10 fill hiragana). Ví dụ và hội thoại tự biên soạn; đối chiếu chủ điểm với đề cương của nhà xuất bản, không chép nội dung giáo trình.
+
+- PASS local: `npm run lesson:import -- --file content/starters/minna-1-16.json` và `findPublishProblems` trả về danh sách rỗng.
+- PASS local: `tests/japanese-lessons.test.ts` và `tests/lesson-visuals.test.ts`; đo bản HTML của 34 slide trong Chromium ở khung 1280×720, không có slide tràn ngang hoặc dọc.
+
 ## Bài mẫu Minna 15 — 04/11/2026
 
 Thêm `content/starters/minna-1-15.json` và đăng ký sau bài 14: 40 từ (12 từ có icon), 5 mục ngữ pháp, 34 slide (6 bảng, 3 hội thoại), 50 câu luyện (36 choice chia đều 9/9/9/9 vị trí, 14 fill hiragana).

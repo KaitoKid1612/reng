@@ -13,6 +13,7 @@ import minnaLesson12 from "@/content/starters/minna-1-12.json";
 import minnaLesson13 from "@/content/starters/minna-1-13.json";
 import minnaLesson14 from "@/content/starters/minna-1-14.json";
 import minnaLesson15 from "@/content/starters/minna-1-15.json";
+import minnaLesson16 from "@/content/starters/minna-1-16.json";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
 
 import type { LessonDraft } from "@/lib/lesson-schema";
@@ -116,6 +117,12 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     course: "Minna no Nihongo Sơ cấp I",
     buttonLabel: "Tạo bài 15 từ mẫu",
     draft: lessonDraftSchema.parse(minnaLesson15),
+  },
+  {
+    id: "minna-1-16",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 16 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson16),
   },
 ];
 
