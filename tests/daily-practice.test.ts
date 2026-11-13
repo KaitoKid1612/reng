@@ -75,8 +75,9 @@ test("daily sets keep each kind's share of the bank and skip the questions used 
   const today = selectBalancedDailyQuestions(candidates, yesterday, 60, "class:2026-10-31");
   assert.equal(today.length, 60);
   assert.equal(new Set(today).size, 60);
-  // 85/45/30/40 of 200 → 25.5/13.5/9/12; the extra question goes to the first kind in the lesson.
-  assert.deepEqual(countByPrefix(today), { grammar: 26, vocab: 13, kanji: 9, mixed: 12 });
+  // 85/45/30/40 of 200 → 25.5/13.5/9/12. Yesterday mixed had 10 against its share of 12, so it
+  // is furthest behind and takes the extra question.
+  assert.deepEqual(countByPrefix(today), { grammar: 25, vocab: 13, kanji: 9, mixed: 13 });
   const usedYesterday = new Set(yesterday.map((use) => use.questionId));
   assert.ok(
     today.every((id) => !usedYesterday.has(id)),
@@ -87,6 +88,35 @@ test("daily sets keep each kind's share of the bank and skip the questions used 
     today,
     "the same day gives the same set",
   );
+});
+
+test("kinds too small for a whole seat still take turns, so no question is left out", () => {
+  // Sixteen lessons of 28 questions and two matching questions each, 60 questions a day: a
+  // matching kind is worth 0.27 of a seat and must win the leftover seats on some days.
+  const candidates = Array.from({ length: 16 }, (_, lesson) => [
+    ...Array.from({ length: 28 }, (_, index) => ({
+      id: `choice-${lesson}-${index}`,
+      type: "choice",
+      tags: [`minna-${lesson + 1}`],
+    })),
+    ...Array.from({ length: 2 }, (_, index) => ({
+      id: `match-${lesson}-${index}`,
+      type: "match",
+      tags: [`minna-${lesson + 1}`],
+    })),
+  ]).flat();
+  const uses: { questionId: string; practiceDate: string }[] = [];
+  for (let day = 1; day <= 8; day += 1) {
+    const practiceDate = `2026-11-${String(day).padStart(2, "0")}`;
+    const ids = selectBalancedDailyQuestions(candidates, uses, 60, `class:${practiceDate}`);
+    assert.equal(ids.length, 60);
+    assert.ok(
+      ids.every((id) => !uses.some((use) => use.questionId === id)),
+      `${practiceDate} repeats a question before the bank is used up`,
+    );
+    uses.push(...ids.map((questionId) => ({ questionId, practiceDate })));
+  }
+  assert.equal(new Set(uses.map((use) => use.questionId)).size, candidates.length);
 });
 
 test("a Minna lesson mixes choice, fill and kanji reading; one kind keeps the old rotation", () => {

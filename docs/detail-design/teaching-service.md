@@ -552,3 +552,18 @@ Thiết kế cơ bản: [BD](../basic-design/teaching-service.md#bài-hằng-ng�
   - `tests/daily-practice-migration.test.ts`: mặc định `balanced`, lưu `jlpt-n4`, gọi 5 tham số giữ nguyên, giá trị lạ bị từ chối.
   - `e2e-supabase/teach-and-learn.spec.ts`: chọn cấu trúc N4 với 67 câu thì thấy bảng もんだい và cảnh báo thiếu câu, đổi lại theo tỉ lệ thì bảng biến mất.
 
+## Chia phần dư theo lượt và tạo ngân hàng mới bằng bank:sql — 13/11/2026
+
+- **Lỗi đã sửa.** Mô phỏng ngân hàng Minna 1–16 của lớp Nguyên (16 bài, mỗi bài 2 câu ghép đôi, 60 câu mỗi ngày) cho thấy `allocateQuotas` chia ghế dư theo phần dư lớn nhất. Phần dư không đổi giữa các ngày, nên dạng nhỏ hơn một ghế (2 câu ghép đôi trong 500 câu, tức 0,24 ghế) thua cùng các dạng mỗi ngày và không bao giờ được hỏi. Kho thực dùng nhỏ lại, và câu lặp từ ngày thứ 4.
+- **Cách chia mới** (`lib/daily-practice.ts`): mỗi dạng vẫn nhận phần nguyên của tỉ lệ. Ghế dư xếp theo `phần dư + tỉ lệ × số lượt dùng trong 14 ngày − số lượt dạng đó đã dùng`, tức dạng nào thiếu lượt nhất so với tỉ lệ thì được trước. Ngày đầu chưa có lượt dùng nên kết quả như cũ. Mỗi dạng mỗi ngày nhận phần nguyên hoặc thêm 1 ghế. `selectBalancedDailyQuestions` đếm lượt dùng của từng dạng từ `recentUses`. Cách chia theo cấu trúc đề JLPT không bị ảnh hưởng, vì mỗi もんだい có số câu nguyên.
+- **Kết quả mô phỏng** với ngân hàng 452 câu: 7 ngày đầu không lặp câu nào, mọi câu đều được dùng. Trước khi sửa, 32 câu ghép đôi chưa bao giờ xuất hiện.
+- **`lib/review-bank-sql.ts`** chứa `buildBankPublishSql`, được `scripts/review-bank-sql.ts` gọi:
+  - Với `classId`, ngân hàng chưa có trên server được tạo bằng `publish_lesson` với chủ là giáo viên của lớp, revision 0, rồi thêm vào lớp ở thứ tự cuối với `available_at = now()`.
+  - Lớp không thuộc chủ ngân hàng thì báo lỗi.
+  - `dailySource` gọi `set_daily_practice` với số câu, số câu nghe và cách chia hiện có của lớp, chỉ đổi bài nguồn. Lớp chưa bật bài hằng ngày thì báo lỗi.
+  - Tag dollar-quote tự đổi khi nội dung chứa tag mặc định.
+- **Test:**
+  - `tests/review-bank-sql.test.ts` chạy SQL trên PGlite cùng mọi migration: thiếu lớp thì bị từ chối; có lớp thì tạo bài, thêm vào lớp, đặt nguồn bài hằng ngày; chạy lại không tạo phiên bản mới; lớp của giáo viên khác bị từ chối.
+  - `tests/daily-practice.test.ts` có thêm trường hợp dạng nhỏ (16 bài × 30 câu, 60 câu mỗi ngày, 8 ngày không lặp và dùng hết kho).
+  - `tests/n4-comprehensive.test.ts` nay kiểm tra mỗi dạng nhận phần nguyên hoặc thêm 1.
+

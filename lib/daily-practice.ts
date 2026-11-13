@@ -117,16 +117,33 @@ export function dailyQuestionKind(candidate: DailyCandidate, sharedTags: Readonl
 }
 
 // Largest remainder: every kind gets a share of the set in proportion to its size in the lesson.
-function allocateQuotas(kinds: readonly { key: string; count: number }[], size: number) {
+// The seats left after the whole shares go to the kinds furthest behind their share of the recent
+// sets, then to the largest remainders. Without that, a kind too small for a whole seat (two
+// matching questions among 500) would lose to the same remainders every day and never be asked.
+function allocateQuotas(
+  kinds: readonly { key: string; count: number; recentUses: number }[],
+  size: number,
+) {
   const total = kinds.reduce((sum, kind) => sum + kind.count, 0);
   const target = Math.min(size, total);
+  const recentTotal = kinds.reduce((sum, kind) => sum + kind.recentUses, 0);
   const quotas = kinds.map((kind) => {
-    const exact = total ? (kind.count / total) * target : 0;
-    return { key: kind.key, count: kind.count, quota: Math.floor(exact), rest: exact % 1 };
+    const share = total ? kind.count / total : 0;
+    const exact = share * target;
+    const rest = exact % 1;
+    return {
+      key: kind.key,
+      count: kind.count,
+      quota: Math.floor(exact),
+      rest,
+      priority: rest + share * recentTotal - kind.recentUses,
+    };
   });
   let left = target - quotas.reduce((sum, item) => sum + item.quota, 0);
-  // A stable sort keeps lesson order between equal remainders.
-  for (const item of [...quotas].sort((first, second) => second.rest - first.rest)) {
+  // A stable sort keeps lesson order between equal priorities.
+  for (const item of [...quotas].sort(
+    (first, second) => second.priority - first.priority || second.rest - first.rest,
+  )) {
     if (left > 0 && item.quota < item.count) {
       item.quota += 1;
       left -= 1;
@@ -162,8 +179,16 @@ export function selectBalancedDailyQuestions(
       groups.set(candidate.id, candidate.group);
     }
   }
+  const usesById = new Map<string, number>();
+  for (const use of recentUses) {
+    usesById.set(use.questionId, (usesById.get(use.questionId) ?? 0) + 1);
+  }
   const quotas = allocateQuotas(
-    [...kinds].map(([key, ids]) => ({ key, count: ids.length })),
+    [...kinds].map(([key, ids]) => ({
+      key,
+      count: ids.length,
+      recentUses: ids.reduce((sum, id) => sum + (usesById.get(id) ?? 0), 0),
+    })),
     size,
   );
   return [...kinds].flatMap(([key, ids]) =>

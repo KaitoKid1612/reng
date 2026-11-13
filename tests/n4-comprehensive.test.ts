@@ -24,6 +24,8 @@ const kindOf = (id: string) => {
   return dailyQuestionKind(candidate, new Set(["n4"]));
 };
 
+// A kind's share of a 40-question day is its whole seats or one more: the leftover seats go
+// to the kinds furthest behind their share of the recent sets, so they move from day to day.
 const DAILY_KIND_COUNTS: Record<string, number> = {
   "fill|kanji": 7,
   "choice|kanji": 2,
@@ -115,8 +117,13 @@ test("each day mixes all ten formats in a fixed order and keeps passages togethe
       practiceDate,
     );
     const kinds = ids.map(kindOf);
-    for (const [kind, count] of Object.entries(DAILY_KIND_COUNTS)) {
-      assert.equal(kinds.filter((item) => item === kind).length, count, `${practiceDate} ${kind}`);
+    for (const kind of Object.keys(DAILY_KIND_COUNTS)) {
+      const exact = (candidates.filter((item) => kindOf(item.id) === kind).length / 304) * 40;
+      const count = kinds.filter((item) => item === kind).length;
+      assert.ok(
+        count === Math.floor(exact) || count === Math.ceil(exact),
+        `${practiceDate} ${kind}: ${count}`,
+      );
     }
     // Vocabulary and kanji first, grammar next, reading last, as in the bank.
     assert.deepEqual([...new Set(kinds)], kindOrder);
