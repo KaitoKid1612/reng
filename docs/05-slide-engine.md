@@ -43,6 +43,8 @@ Mỗi type có component render; thêm type cần cập nhật schema/validator/
 
 Trình chiếu đo lại slide hiện tại khi chuyển slide, hiện hoặc ẩn fragment, nội dung React thay đổi (ví dụ hiện đáp án) và khi đổi kích thước cửa sổ. Nội dung vượt chiều cao khung được thu nhỏ để tránh bị cắt.
 
+Slide ghi chú của bài Nhật hiển thị ký tự `\\n` từ dữ liệu cũ thành xuống dòng thực tế; phiên bản đã xuất bản vẫn giữ nguyên nội dung lưu trong database.
+
 reveal.js làm sẵn việc này qua cấu hình `width`, `height`, `margin`.
 
 ### Bố cục dày cho nội dung dài (bài Nhật)

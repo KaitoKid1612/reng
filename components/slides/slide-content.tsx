@@ -305,7 +305,7 @@ function NoteSlide({ slide }: SlideContentProps) {
         <JapaneseText text={slide.title} />
       </h2>
       <p className="slide-explanation slide-note-body">
-        <JapaneseText text={slide.body} />
+        <JapaneseText text={slide.body.replaceAll("\\n", "\n")} />
       </p>
     </div>
   ) : null;
