@@ -269,7 +269,7 @@ Quy ước khi thêm câu:
 
 Nội dung tự biên soạn bằng AI theo phạm vi Minna 1–50, không chép đề chính thức hay sách. Ba agent độc lập đã soát lại đáp án, lựa chọn sai, độ tự nhiên, furigana và giải thích. Giáo viên vẫn nên đọc lại trước khi nạp lên production. `tests/n4-jlpt-bank.test.ts` kiểm tra mỗi câu có một もんだい, đúng dạng trắc nghiệm, vị trí đáp án chia đều, số câu mỗi đoạn văn, và 7 ngày liền mỗi ngày đúng số câu từng もんだい mà không lặp câu.
 
-Nạp lên production: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --out n4.sql`, đọc lại file, thêm `--commit` rồi chạy. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
+Nạp lên production: bài trên server có mã `n4-viet-review-bank`, khác `id` trong file, nên phải truyền `--lesson`: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --lesson n4-viet-review-bank --out n4.sql`. Đọc lại file, thêm `--commit` rồi chạy. Thiếu `--lesson` thì transaction dừng ở "Lesson … does not exist" và không thay đổi gì. Production còn bài `n4-comprehensive-review-bank-ac4b473b` cùng tên (304 câu, phiên bản cũ), không phải nguồn bài hằng ngày. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
 
 ## Nguồn đề JLPT và câu tự biên soạn
 
