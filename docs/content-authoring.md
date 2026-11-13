@@ -271,7 +271,26 @@ Nội dung tự biên soạn bằng AI theo phạm vi Minna 1–50, không chép
 
 Nạp lên production: bài trên server có mã `n4-viet-review-bank`, khác `id` trong file, nên phải truyền `--lesson`: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --lesson n4-viet-review-bank --out n4.sql`. Đọc lại file, thêm `--commit` rồi chạy. Thiếu `--lesson` thì transaction dừng ở "Lesson … does not exist" và không thay đổi gì. Production còn bài `n4-comprehensive-review-bank-ac4b473b` cùng tên (304 câu, phiên bản cũ), không phải nguồn bài hằng ngày. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
 
-## Nguồn đề JLPT và câu tự biên soạn
+## Ngân hàng Minna 1–16 cho lớp đang học theo bài — 13/11/2026
+
+`review-banks/n5-minna-1-16.json` (bài `n5-minna-review-bank`) là nguồn bài hằng ngày mới của lớp Tiếng Nhật Minna – Lớp 1 (Nguyên). Trước đó lớp lấy 60 câu mỗi ngày từ "Ngân hàng ôn Minna N5 – Nguyên", nhưng ngân hàng này chỉ có 84 câu thường (118 câu nghe đang tắt), nên ngày nào Nguyên cũng gặp lại phần lớn câu của hôm trước. Ngân hàng cũ giữ nguyên trong lớp cho câu nghe và đề thi thử.
+
+| Phần | Số câu | Nguồn |
+|---|---|---|
+| Câu luyện của bài | 420 | Bài mẫu Minna 1–16 đã duyệt: 24 câu mỗi bài 1–10, 30 câu mỗi bài 11–16, chọn đều theo thứ tự trong bài nên đủ các điểm ngữ pháp và tỉ lệ câu chọn/câu điền |
+| Ghép từ với nghĩa | 32 | Tự tạo từ danh sách từ của mỗi bài, 2 câu mỗi bài, 5 cặp mỗi câu, các nghĩa không trùng nhau |
+| Sắp xếp câu | 32 | Mới, 2 câu mỗi bài; chỉ một thứ tự mảnh đúng |
+| Đọc đoạn ngắn | 16 | Mới, 8 đoạn 80–115 chữ ở các bài 4–16, mỗi đoạn 2 câu |
+
+- **Tag:** mỗi câu có tag bài `minna-N`, câu đọc thêm `reading`. Bài hằng ngày chia câu theo từng bài và từng dạng, nên bài 11–16 chiếm phần lớn hơn.
+- **Tạo lên production lần đầu:**
+  ```
+  npm run bank:sql -- --file content/review-banks/n5-minna-1-16.json --language ja-JP --class <mã lớp> --daily-source --out n5.sql
+  ```
+  Lệnh này tạo bài cho giáo viên của lớp, thêm bài vào lớp và đặt làm nguồn bài hằng ngày. Số câu (60), số câu nghe (0) và cách chia của lớp giữ nguyên.
+- **Thêm bài mới (17, 18…):** thêm câu của bài đó và bớt câu của các bài cũ để không vượt 500 câu, rồi chạy `bank:sql` không cần `--class`.
+
+
 
 Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề. Ngày 11/11/2026 đã đọc chính sách của jlpt.jp: sách đề chính thức đăng trên trang được dùng làm tài liệu dạy miễn phí khi ghi nguồn, nên bộ 2018 và bộ 2012 đã vào Reng ([mục dưới](#đề-chính-thức-jlpt-公式問題集-2012-và-2018)); file nghe gốc vẫn chỉ đặt link.
 

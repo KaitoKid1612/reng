@@ -49,3 +49,15 @@ Giáo viên vẫn nên đọc lại trước khi nạp lên production.
 - `tests/daily-practice-migration.test.ts`: migration chạy trên PGlite cùng mọi migration trước. Cột mặc định `balanced`, lưu được `jlpt-n4`, gọi 5 tham số giữ nguyên cách chia, `jlpt-n3` bị từ chối.
 - E2E chưa chạy: theo thỏa thuận, đợt tính năng này hoãn E2E. Bước mới trong `e2e-supabase/teach-and-learn.spec.ts` đã viết nhưng chưa chạy.
 - Người dùng đã áp migration `20261113032756_daily_practice_format` lên production ngày 13/11/2026; `migration list --linked` xác nhận. Cùng ngày người dùng nạp ngân hàng vào bài `n4-viet-review-bank` bằng `bank:sql --lesson n4-viet-review-bank --commit`. Đọc lại production: phiên bản 8 có 479 câu, lớp Ôn JLPT N4 – Việt dùng phiên bản mới nhất và vẫn lấy câu hằng ngày từ bài này. Lúc kiểm tra, lớp vẫn đặt "Theo tỉ lệ", 70 câu, 10 câu nghe; giáo viên cần đổi sang "Theo cấu trúc đề JLPT N4" và 67 câu ở trang lớp.
+
+## Ngân hàng Minna 1–16 cho lớp Nguyên
+
+Đọc production (chỉ đọc): lớp Tiếng Nhật Minna – Lớp 1 lấy 60 câu mỗi ngày, 0 câu nghe, từ "Ngân hàng ôn Minna N5 – Nguyên" (phiên bản 8: 84 câu thường, 118 câu nghe). 16 bài Minna của lớp có khoảng 520 câu luyện nhưng bài hằng ngày không dùng.
+
+- **Dung lượng:** database production 19 MB. Phiên bản bài lớn nhất 122 kB sau nén. Mỗi bài giao khoảng 40 kB. Ngân hàng 500 câu thêm khoảng 0,1 MB mỗi lần xuất bản. Trần 500 câu được giữ vì trình soạn lưu nháp qua server action giới hạn 1 MB; ngân hàng 479 câu của Việt đã khoảng 450 kB.
+- **Lỗi bộ chọn câu phát hiện khi mô phỏng:** ghế dư luôn về cùng các dạng, nên 32 câu ghép đôi không bao giờ được chọn và câu lặp từ ngày thứ 4. Sau khi sửa: 8 ngày đầu không lặp, mọi câu đều được dùng ([DD](../detail-design/teaching-service.md#chia-phần-dư-theo-lượt-và-tạo-ngân-hàng-mới-bằng-banksql--13112026)).
+- **Nội dung mới:** 32 câu sắp xếp và 16 câu đọc do một agent soạn, một agent khác soát; 32 câu ghép đôi tạo tự động từ danh sách từ đã duyệt và cũng được soát. 420 câu còn lại lấy nguyên từ bài mẫu đã duyệt.
+- **Test:**
+  - `tests/n5-minna-bank.test.ts`: 500 câu, đủ 16 bài (bài 11–16 nhiều hơn), 4 dạng câu, mọi đáp án chấm đúng, cột phải câu ghép đôi đã xáo, 8 ngày 60 câu không lặp và dùng hết kho.
+  - `tests/review-bank-sql.test.ts`: tạo bài cho lớp, đặt nguồn bài hằng ngày.
+
