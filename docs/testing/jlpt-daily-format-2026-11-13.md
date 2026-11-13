@@ -48,4 +48,4 @@ Giáo viên vẫn nên đọc lại trước khi nạp lên production.
 - `tests/jlpt-daily-practice.test.ts`: 6/6 test đạt.
 - `tests/daily-practice-migration.test.ts`: migration chạy trên PGlite cùng mọi migration trước. Cột mặc định `balanced`, lưu được `jlpt-n4`, gọi 5 tham số giữ nguyên cách chia, `jlpt-n3` bị từ chối.
 - E2E chưa chạy: theo thỏa thuận, đợt tính năng này hoãn E2E. Bước mới trong `e2e-supabase/teach-and-learn.spec.ts` đã viết nhưng chưa chạy.
-- Chưa áp migration và chưa nạp ngân hàng lên production.
+- Người dùng đã áp migration `20261113032756_daily_practice_format` lên production ngày 13/11/2026; `migration list --linked` xác nhận. Ngân hàng chưa được nạp lên production.
