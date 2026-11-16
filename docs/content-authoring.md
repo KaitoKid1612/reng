@@ -288,6 +288,7 @@ Nạp lên production: bài trên server có mã `n4-viet-review-bank`, khác `i
   npm run bank:sql -- --file content/review-banks/n5-minna-1-16.json --language ja-JP --class <mã lớp> --daily-source --out n5.sql
   ```
   Lệnh này tạo bài cho giáo viên của lớp, thêm bài vào lớp và đặt làm nguồn bài hằng ngày. Số câu (60), số câu nghe (0) và cách chia của lớp giữ nguyên.
+  Đã nạp lên production ngày 16/11/2026 cho lớp Tiếng Nhật Minna – Lớp 1. Thêm `--commit` vào lệnh trên rồi chạy file bằng `npx supabase db query --linked --file n5.sql`.
 - **Thêm bài mới (17, 18…):** thêm câu của bài đó và bớt câu của các bài cũ để không vượt 500 câu, rồi chạy `bank:sql` không cần `--class`.
 
 

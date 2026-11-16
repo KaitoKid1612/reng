@@ -60,4 +60,5 @@ Giáo viên vẫn nên đọc lại trước khi nạp lên production.
 - **Test:**
   - `tests/n5-minna-bank.test.ts`: 500 câu, đủ 16 bài (bài 11–16 nhiều hơn), 4 dạng câu, mọi đáp án chấm đúng, cột phải câu ghép đôi đã xáo, 8 ngày 60 câu không lặp và dùng hết kho.
   - `tests/review-bank-sql.test.ts`: tạo bài cho lớp, đặt nguồn bài hằng ngày.
+- **Nạp lên production (16/11/2026):** người dùng chạy thử `bank:sql --class <mã lớp Nguyên> --daily-source` (kết thúc bằng ROLLBACK), rồi chạy bản `--commit` bằng `npx supabase db query --linked`. Đọc lại production: lớp Tiếng Nhật Minna – Lớp 1 lấy bài hằng ngày từ `n5-minna-review-bank` (500 câu), vẫn 60 câu mỗi ngày, 0 câu nghe. Ngân hàng cũ vẫn ở trong lớp.
 
