@@ -89,7 +89,9 @@ function ReaderDialogue({ slide, lessonId }: ReaderDialogueProps) {
             <p lang="ja" className="japanese-text">
               <JapaneseText text={line.jp} />
             </p>
-            <p>{line.vi}</p>
+            <p>
+              <JapaneseText text={line.vi} />
+            </p>
           </div>
           <PronunciationButton
             id={`${lessonId}:${slide.id}:${index}`}
@@ -118,8 +120,12 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           <p lang="ja" className="lesson-japanese-title">
             {lesson.titleJa}
           </p>
-          <h1>{lesson.title}</h1>
-          <p>{lesson.summary}</p>
+          <h1>
+            <JapaneseText text={lesson.title} />
+          </h1>
+          <p>
+            <JapaneseText text={lesson.summary} />
+          </p>
         </div>
         <Link
           href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}`}
@@ -156,7 +162,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
                 <span className="small muted">{item.romaji}</span>
               </div>
               <span>
-                {item.vi}
+                <JapaneseText text={item.vi} />
                 {item.note && (
                   <span className="vocab-note small muted">
                     <JapaneseText text={item.note} />
@@ -181,7 +187,9 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
               <JapaneseText text={grammar.pattern} />
             </h3>
             <p>
-              <strong>{grammar.vi}</strong>
+              <strong>
+                <JapaneseText text={grammar.vi} />
+              </strong>
             </p>
             <p>
               <JapaneseText text={grammar.explain} />
@@ -191,7 +199,9 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
                 <p lang="ja" className="japanese-text">
                   <JapaneseText text={example.jp} />
                 </p>
-                <p>{example.vi}</p>
+                <p>
+                  <JapaneseText text={example.vi} />
+                </p>
                 <PronunciationButton
                   id={`${lesson.lessonId}:${grammar.id}:${index}`}
                   text={toSpeechText(example.jp)}

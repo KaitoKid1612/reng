@@ -57,7 +57,9 @@ export function GrammarSearch({ lessons }: GrammarSearchProps) {
             <h2 lang="ja" className="japanese-text">
               <JapaneseText text={grammar.pattern} />
             </h2>
-            <p>{grammar.vi}</p>
+            <p>
+              <JapaneseText text={grammar.vi} />
+            </p>
             <p>
               <JapaneseText text={grammar.explain} />
             </p>

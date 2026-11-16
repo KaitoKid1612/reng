@@ -60,7 +60,9 @@ function TitleSlide({ slide }: SlideContentProps) {
       <p lang="ja" className="slide-japanese">
         <JapaneseText text={slide.jp} />
       </p>
-      <h1>{slide.vi}</h1>
+      <h1>
+        <JapaneseText text={slide.vi} />
+      </h1>
       <p>Nhìn, nghe và cùng nói một câu.</p>
     </div>
   );
@@ -103,7 +105,9 @@ function VocabularySlide({ slide, lesson }: SlideContentProps) {
                   </span>
                 )}
               </div>
-              <span>{item.vi}</span>
+              <span>
+                <JapaneseText text={item.vi} />
+              </span>
               <PronunciationButton
                 id={`${lesson.lessonId}:${id}`}
                 text={toSpeechText(item.jp)}
@@ -135,7 +139,9 @@ function GrammarSlide({ slide, lesson }: SlideContentProps) {
       <p lang="ja" className="slide-japanese">
         <JapaneseText text={grammar.pattern} />
       </p>
-      <p className="slide-translation">{grammar.vi}</p>
+      <p className="slide-translation">
+        <JapaneseText text={grammar.vi} />
+      </p>
       <p className="slide-explanation">
         <JapaneseText text={grammar.explain} />
       </p>
@@ -178,7 +184,7 @@ function ExampleSlide({ slide, lesson, staticMode }: SlideContentProps) {
                   slide.reveal && !staticMode ? "fragment slide-translation" : "slide-translation"
                 }
               >
-                {example.vi}
+                <JapaneseText text={example.vi} />
               </p>
               <PronunciationButton
                 id={`${lesson.lessonId}:${grammar.id}:${index}`}
@@ -237,7 +243,7 @@ function DialogueSlide({ slide, lesson, staticMode }: SlideContentProps) {
                   slide.reveal && !staticMode ? "fragment slide-translation" : "slide-translation"
                 }
               >
-                {line.vi}
+                <JapaneseText text={line.vi} />
               </p>
             </div>
             <PronunciationButton
