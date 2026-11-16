@@ -1,0 +1,1220 @@
+{
+  "id": "n4-grammar-6",
+  "title": "Tổng ôn N4 · 6 – Bị động và sai khiến",
+  "titleJa": "受身と 使役",
+  "summary": "Ôn theo chủ đề cho JLPT N4: thể bị động (cách chia, bị động trực tiếp, bị động làm phiền, vật làm chủ ngữ với に よって／から／で), thể sai khiến (cách chia, を và に, động từ cảm xúc), xin phép bằng 〜させて いただけませんか／〜させて ください và sai khiến bị động 〜させられる／〜される. Mọi ví dụ, hội thoại và 40 câu luyện kiểu đề N4 đều là nội dung gốc.",
+  "order": 7,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-ukemi-form",
+        "pattern": "V（ら）れる",
+        "vi": "Thể bị động: cách chia",
+        "explain": "Nhóm I: đổi đuôi う sang hàng あ rồi thêm れる: かく → かかれる, よむ → よまれる, よぶ → よばれる, いう → いわれる (う → わ). Nhóm II: bỏ る thêm られる: たべる → たべられる, みる → みられる. Nhóm III: する → される, くる → こられる. Thể bị động chia tiếp như động từ nhóm II: しかられます, しかられた, しかられて, しかられない. Minna bài 37.",
+        "viMistake": "Nhóm II, thể bị động たべられる trùng hình với thể khả năng たべられる; nhìn trợ từ để phân biệt: người làm + に → bị động, vật + が／を mà nghĩa “được, có thể” → khả năng. Nhóm I thì khác hẳn: かける (viết được) ≠ かかれる (bị viết). Hay chia sai いう → いられる (đúng: いわれる) và くる → きられる (đúng: こられる).",
+        "examples": [
+          {
+            "jp": "{母|はは}に 「{早|はや}く {寝|ね}なさい」と {言|い}われました。",
+            "vi": "Tôi bị mẹ bảo “ngủ sớm đi” (いう → いわれる).",
+            "audio": null
+          },
+          {
+            "jp": "この {部屋|へや}は {毎日|まいにち} {掃除|そうじ}されて います。",
+            "vi": "Căn phòng này được dọn mỗi ngày (する → される).",
+            "audio": null
+          },
+          {
+            "jp": "{夜中|よなか}に {友|とも}だちに {来|こ}られて、{困|こま}りました。",
+            "vi": "Nửa đêm bạn kéo đến, tôi khổ sở (くる → こられる).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ukemi-direct",
+        "pattern": "N1は N2に Vられる",
+        "vi": "Được / bị (ai đó) làm gì — bị động trực tiếp",
+        "explain": "Câu chủ động N2が N1を Vる (người khác tác động trực tiếp lên mình) đổi thành N1は N2に Vられる: người chịu tác động làm chủ ngữ, người làm đi với に. Hay gặp với ほめる, しかる, ちゅういする, しょうたいする, たのむ, いう, よぶ, きく (hỏi). Tiếng Việt nói “được” khi việc tốt (ほめられる: được khen), “bị” khi việc xấu (しかられる: bị mắng); tiếng Nhật chỉ có một dạng. Minna bài 37.",
+        "viMistake": "Đổi chủ ngữ nhưng quên đổi trợ từ: viết わたしは 先生が ほめられました hoặc 先生を ほめられました. Người làm hành động luôn đi với に. Ngược lại, câu đã có わたしは … 先生に thì động từ phải ở thể bị động: わたしは 先生に ほめました là sai.",
+        "examples": [
+          {
+            "jp": "{試験|しけん}に {合格|ごうかく}して、{先生|せんせい}に ほめられました。",
+            "vi": "Tôi đỗ kỳ thi và được thầy khen.",
+            "audio": null
+          },
+          {
+            "jp": "{弟|おとうと}は {授業中|じゅぎょうちゅう}に {寝|ね}て いて、{先生|せんせい}に {注意|ちゅうい}されました。",
+            "vi": "Em trai tôi ngủ trong giờ học và bị thầy nhắc nhở.",
+            "audio": null
+          },
+          {
+            "jp": "{私|わたし}は {外国人|がいこくじん}に よく {道|みち}を {聞|き}かれます。",
+            "vi": "Tôi hay được người nước ngoài hỏi đường.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ukemi-meiwaku",
+        "pattern": "Nに Nを Vられる",
+        "vi": "Bị ai làm gì đến đồ vật, bộ phận của mình — bị động làm phiền",
+        "explain": "Khi người khác tác động lên đồ vật, bộ phận cơ thể của mình và mình thấy phiền: (わたしは) + người làm + に + đồ vật + を + V bị động. Đồ vật giữ nguyên を, chủ ngữ là người chịu phiền (thường lược わたしは): 足を ふまれました, 弟に カメラを こわされました. Tự động từ cũng có kiểu than phiền này: 雨に ふられる (bị mắc mưa), 子どもに なかれる (con khóc làm mình khổ). Kiểu đồ vật có ở Minna bài 37; 雨に ふられる hay gặp trong đề N4.",
+        "viMistake": "Lấy đồ vật làm chủ ngữ như tiếng Việt: わたしの 足が ふまれました. Người chịu phiền mới là chủ ngữ, đồ vật giữ を: (わたしは) 足を ふまれました. Và việc có lợi cho mình thì không dùng bị động mà dùng 〜て もらう: 友だちに しゅくだいを 手伝って もらいました (không nói 手伝われました).",
+        "examples": [
+          {
+            "jp": "バスの {中|なか}で {隣|となり}の {人|ひと}に {足|あし}を {踏|ふ}まれました。",
+            "vi": "Trên xe buýt tôi bị người bên cạnh giẫm vào chân.",
+            "audio": null
+          },
+          {
+            "jp": "{妹|いもうと}に {大事|だいじ}な {服|ふく}を {汚|よご}されて、{悲|かな}しかったです。",
+            "vi": "Tôi bị em gái làm bẩn bộ quần áo quý, buồn lắm.",
+            "audio": null
+          },
+          {
+            "jp": "{帰|かえ}り{道|みち}で {雨|あめ}に {降|ふ}られて、{全部|ぜんぶ} ぬれて しまいました。",
+            "vi": "Trên đường về tôi bị mắc mưa, ướt hết cả.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ukemi-mono",
+        "pattern": "Nが Vられる（vật）",
+        "vi": "Vật, sự kiện được làm (không cần nói ai làm)",
+        "explain": "Khi nói về vật, sự kiện mà người làm không rõ, là “mọi người” hoặc không quan trọng, lấy vật làm chủ ngữ: Nが／Nは Vられます. Hay gặp: ひらかれる, おこなわれる (được tổ chức), たてられる (được xây), つかわれる, うられる, はなされる, ゆしゅつされる. Nơi chốn dùng で: ハノイで 会議が ひらかれます. Việc được làm rộng rãi đến nay: Vられて います (世界中で 読まれて います). Minna bài 37.",
+        "viMistake": "Tiếng Việt nói “Hội nghị tổ chức ở Hà Nội” nên hay viết 会議が ひらきます／おこないます. Vật làm chủ ngữ của tha động từ thì động từ phải ở thể bị động: 会議が ひらかれます. Cũng đừng nhầm với tự động từ: まどが しまりました (cửa sổ đóng — chỉ kết quả), まどが しめられました (có người đã đóng).",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ}、この ホテルで {国際会議|こくさいかいぎ}が {開|ひら}かれます。",
+            "vi": "Tháng sau, hội nghị quốc tế sẽ được tổ chức ở khách sạn này.",
+            "audio": null
+          },
+          {
+            "jp": "フォーは {今|いま}、{世界中|せかいじゅう}で {食|た}べられて います。",
+            "vi": "Phở giờ được ăn ở khắp thế giới.",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}の {車|くるま}は いろいろな {国|くに}へ {輸出|ゆしゅつ}されて います。",
+            "vi": "Xe hơi Nhật được xuất khẩu sang nhiều nước.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ukemi-niyotte",
+        "pattern": "Nに よって Vられる",
+        "vi": "Do (ai) sáng tác, phát minh, xây dựng — nêu người tạo ra",
+        "explain": "Vật làm chủ ngữ và muốn nêu người tạo ra nó (tác giả, người phát minh, người phát hiện, người xây) thì dùng Nに よって, không dùng に. Hay đi với かく (viết, vẽ), つくる, たてる, はつめいする, はっけんする, せっけいする. Văn phong viết, hay gặp trong bài đọc. Minna bài 37.",
+        "viMistake": "Dùng に như bị động thường: この 絵は ピカソに かかれました — với động từ tạo ra vật, người tạo ra đi với に よって. Ngược lại, bị động trực tiếp với người (ほめられる, しかられる) dùng に. Đừng nhầm với 〜に よると (theo … thì — nguồn tin).",
+        "examples": [
+          {
+            "jp": "『キエウ』は グエン・ズーに よって {書|か}かれました。",
+            "vi": "Truyện Kiều do Nguyễn Du viết.",
+            "audio": null
+          },
+          {
+            "jp": "ロンビエン{橋|ばし}は フランスの {会社|かいしゃ}に よって {造|つく}られました。",
+            "vi": "Cầu Long Biên do một công ty Pháp xây dựng.",
+            "audio": null
+          },
+          {
+            "jp": "ペニシリンは フレミングに よって {発見|はっけん}されました。",
+            "vi": "Penicillin được Fleming phát hiện.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ukemi-kara-de",
+        "pattern": "Nから／Nで 作られる",
+        "vi": "Được làm từ / bằng (nguyên liệu)",
+        "explain": "Nói nguyên liệu: Nで つくられる khi nhìn thành phẩm vẫn thấy nguyên liệu (木で つくられた いす — ghế làm bằng gỗ), Nから つくられる khi nguyên liệu đã biến đổi, không còn nhận ra (ワインは ぶどうから つくられます). Dạng chủ động: 木で いすを つくります, ぶどうから ワインを つくります. Minna bài 37.",
+        "viMistake": "Tiếng Việt chỉ có “làm từ / bằng” nên hay lẫn で và から. Mẹo: nhìn thành phẩm có thấy nguyên liệu không — thấy (gỗ, giấy, vải, lá) → で; không thấy (rượu từ nho, giấy từ gỗ, nước mắm từ cá) → から. Không dùng に よって cho nguyên liệu (に よって là người làm).",
+        "examples": [
+          {
+            "jp": "ヌックマムは {魚|さかな}と {塩|しお}から {作|つく}られます。",
+            "vi": "Nước mắm được làm từ cá và muối.",
+            "audio": null
+          },
+          {
+            "jp": "ベトナムの ノンラーは {葉|は}で {作|つく}られて います。",
+            "vi": "Nón lá Việt Nam được làm bằng lá.",
+            "audio": null
+          },
+          {
+            "jp": "{紙|かみ}は {木|き}から {作|つく}られます。",
+            "vi": "Giấy được làm từ gỗ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-form",
+        "pattern": "V（さ）せる",
+        "vi": "Thể sai khiến: cách chia",
+        "explain": "Nhóm I: đổi đuôi う sang hàng あ rồi thêm せる: いく → いかせる, まつ → またせる, かう → かわせる (う → わ). Nhóm II: bỏ る thêm させる: たべる → たべさせる, しらべる → しらべさせる. Nhóm III: する → させる, くる → こさせる. Thể sai khiến chia tiếp như động từ nhóm II: いかせます, いかせて, いかせた. Nghĩa: bắt (ép) ai làm, hoặc cho phép, để ai làm. Minna bài 48.",
+        "viMistake": "Lẫn với thể bị động vì cùng gốc hàng あ: かかせる (bắt viết) ≠ かかれる (bị viết). Nhớ: sai khiến có せ, bị động có れ. Hay chia sai くる → きさせる (đúng: こさせる) và かう → かあせる (đúng: かわせる). Nhóm II không thêm せる trực tiếp: たべせる là sai, đúng là たべさせる.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}は {学生|がくせい}に {作文|さくぶん}を {書|か}かせました。",
+            "vi": "Thầy bắt học sinh viết bài văn (かく → かかせる).",
+            "audio": null
+          },
+          {
+            "jp": "{部長|ぶちょう}は {新|あたら}しい {社員|しゃいん}に {会議|かいぎ}の {準備|じゅんび}を させました。",
+            "vi": "Trưởng phòng bắt nhân viên mới chuẩn bị cuộc họp (する → させる).",
+            "audio": null
+          },
+          {
+            "jp": "{店長|てんちょう}は アルバイトを {朝|あさ} {7時|しちじ}に {来|こ}させます。",
+            "vi": "Cửa hàng trưởng bắt nhân viên làm thêm đến lúc 7 giờ sáng (くる → こさせる).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-wo",
+        "pattern": "人を V（さ）せる",
+        "vi": "Bắt / cho ai làm (động từ không có tân ngữ)",
+        "explain": "Với tự động từ, không có tân ngữ を (いく, かえる, はしる, あそぶ, まつ, やすむ…), người bị sai khiến đi với を: 先生は 学生を うちへ かえらせました. Có thể là bắt (bắt chạy, bắt đợi) hoặc cho phép (cho con đi chơi) — đoán theo ngữ cảnh. Minna bài 48. Khi muốn nhấn là để người kia làm theo ý họ, đôi khi dùng に (むすめに りゅうがくさせる); trong đề N4 cứ nhớ quy tắc gốc: câu không có を nào khác thì người đi với を.",
+        "viMistake": "Theo thói quen “bắt ai làm” → luôn dùng に. Câu không có tân ngữ khác thì người đi với を: 子どもを 公園で あそばせます. Câu đã có 〜を (本を, へやを) thì người phải chuyển sang に (xem mẫu tiếp theo).",
+        "examples": [
+          {
+            "jp": "{雨|あめ}が {降|ふ}って きたので、{子|こ}どもを {早|はや}く {家|いえ}に {帰|かえ}らせました。",
+            "vi": "Trời đổ mưa nên tôi cho bọn trẻ về nhà sớm.",
+            "audio": null
+          },
+          {
+            "jp": "コーチは {選手|せんしゅ}を {毎朝|まいあさ} {公園|こうえん}で {走|はし}らせます。",
+            "vi": "Huấn luyện viên bắt các cầu thủ chạy ở công viên mỗi sáng.",
+            "audio": null
+          },
+          {
+            "jp": "{寝坊|ねぼう}して、{友|とも}だちを {30分|さんじゅっぷん}も {待|ま}たせて しまいました。",
+            "vi": "Tôi ngủ quên, bắt bạn đợi tận 30 phút.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-ni",
+        "pattern": "人に Nを V（さ）せる",
+        "vi": "Bắt / cho ai làm việc gì (động từ có tân ngữ)",
+        "explain": "Với tha động từ đã có tân ngữ を (よむ, かく, たべる, あらう, そうじする, コピーする…), người bị sai khiến đi với に để câu không có hai を: 母は 弟に へやを そうじさせました. Nghĩa bắt hay cho phép tùy ngữ cảnh: 父は わたしに すきな 大学を えらばせて くれました (bố cho tôi chọn). Minna bài 48.",
+        "viMistake": "Giữ を cho cả người và vật: 弟を へやを そうじさせる — sai vì một câu không có hai を. Cũng hay đảo vai: người ra lệnh là chủ ngữ (は／が), người làm việc đi với に; 弟は 母に へやを そうじさせました nghĩa ngược hẳn (em bắt mẹ dọn).",
+        "examples": [
+          {
+            "jp": "{母|はは}は {毎晩|まいばん} {弟|おとうと}に {皿|さら}を {洗|あら}わせます。",
+            "vi": "Tối nào mẹ cũng bắt em trai rửa bát.",
+            "audio": null
+          },
+          {
+            "jp": "{父|ちち}は {私|わたし}に {好|す}きな {大学|だいがく}を {選|えら}ばせて くれました。",
+            "vi": "Bố đã cho tôi chọn trường đại học mình thích.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-kanjou",
+        "pattern": "人を 喜ばせる／心配させる",
+        "vi": "Làm cho ai vui, lo, ngạc nhiên… (sai khiến với động từ cảm xúc)",
+        "explain": "Động từ chỉ cảm xúc (よろこぶ, しんぱいする, びっくりする, がっかりする, あんしんする, こまる, おこる, なく, わらう) ở thể sai khiến nghĩa là “làm cho ai cảm thấy …”; người có cảm xúc luôn đi với を: 母を よろこばせたい, みんなを わらわせる, 親を しんぱいさせないで. Đây không phải “bắt” mà là gây ra cảm xúc. Rất hay gặp trong đề N4.",
+        "viMistake": "Viết 母が しんぱいしました hoặc 母に しんぱいさせました khi ý là “tôi làm mẹ lo”. Người gây ra là chủ ngữ, người có cảm xúc đi với を: (わたしは) 母を しんぱいさせました. Cũng không dùng bị động: 母を しんぱいされました là sai.",
+        "examples": [
+          {
+            "jp": "{一人|ひとり}で {旅行|りょこう}に {行|い}って、{両親|りょうしん}を {心配|しんぱい}させて しまいました。",
+            "vi": "Tôi đi du lịch một mình nên đã làm bố mẹ lo.",
+            "audio": null
+          },
+          {
+            "jp": "{試験|しけん}に {合格|ごうかく}して、{母|はは}を {喜|よろこ}ばせたいです。",
+            "vi": "Tôi muốn đỗ kỳ thi để mẹ vui.",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは いつも おもしろい {話|はなし}を して、みんなを {笑|わら}わせます。",
+            "vi": "Nam lúc nào cũng kể chuyện vui làm mọi người cười.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sasete-itadakemasenka",
+        "pattern": "Vさせて いただけませんか",
+        "vi": "Xin cho phép tôi … được không ạ (xin phép lịch sự)",
+        "explain": "Thể て của thể sai khiến + いただけませんか: xin người trên cho phép chính mình làm gì. Người làm hành động là người nói. Dùng với cấp trên, thầy cô, khách: lý do thường đặt trước bằng 〜ので／〜んですが. Minna bài 48.",
+        "viMistake": "Nhầm với 〜て いただけませんか (nhờ người khác làm): コピーして いただけませんか là nhờ người nghe photo giúp, còn コピーさせて いただけませんか là xin cho mình photo. Hỏi lại: ai làm? Mình làm → させて.",
+        "examples": [
+          {
+            "jp": "この {資料|しりょう}を ちょっと コピーさせて いただけませんか。",
+            "vi": "Cho phép tôi photo tài liệu này một chút được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{来週|らいしゅう}の {会議|かいぎ}で {私|わたし}に {発表|はっぴょう}させて いただけませんか。",
+            "vi": "Xin cho tôi được thuyết trình ở cuộc họp tuần sau ạ.",
+            "audio": null
+          },
+          {
+            "jp": "{兄|あに}の {結婚式|けっこんしき}が あるので、{金曜日|きんようび} {休|やす}ませて いただけませんか。",
+            "vi": "Anh trai tôi cưới nên xin cho tôi nghỉ thứ Sáu được không ạ?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sasete-kudasai",
+        "pattern": "Vさせて ください",
+        "vi": "Hãy để tôi … / Cho tôi … (xin được làm)",
+        "explain": "Thể て của thể sai khiến + ください: xin được làm gì, thường là tự nguyện nhận việc hoặc xin phép một cách thẳng: その しごとは わたしに やらせて ください. Kém trang trọng hơn 〜させて いただけませんか; xin cấp trên việc lớn (nghỉ, về sớm) nên dùng いただけませんか.",
+        "viMistake": "Thiếu させ thì người làm thành người nghe: かんがえて ください là bảo người khác suy nghĩ, còn かんがえさせて ください là “để tôi suy nghĩ”. Người được làm (tôi) đi với に: わたしに やらせて ください.",
+        "examples": [
+          {
+            "jp": "{少|すこ}し {考|かんが}えさせて ください。",
+            "vi": "Cho tôi suy nghĩ một chút.",
+            "audio": null
+          },
+          {
+            "jp": "{次|つぎ}の {会議|かいぎ}の {司会|しかい}は {私|わたし}に やらせて ください。",
+            "vi": "Lần họp tới hãy để tôi làm người dẫn chương trình.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-ukemi-form",
+        "pattern": "V（さ）せられる／Vされる",
+        "vi": "Thể sai khiến bị động: cách chia",
+        "explain": "Lấy thể sai khiến rồi chia bị động: いかせる → いかせられる, たべさせる → たべさせられる, させる → させられる, こさせる → こさせられる. Nhóm I còn có dạng ngắn hay dùng hơn: hàng あ + される: いかされる, のまされる, またされる, いわされる. Động từ đuôi す không có dạng ngắn: はなす → はなさせられる (không nói はなさされる). Minna 1–50 không dạy mẫu này (Minna bài 48 chỉ dạy thể sai khiến) nhưng nó có trong danh sách ngữ pháp N4.",
+        "viMistake": "Lẫn ba dạng: のまれる (bị uống mất — bị động), のませる (bắt uống — sai khiến), のまされる／のませられる (bị bắt uống — sai khiến bị động). Mẹo: có せ hoặc さ ở giữa và れる ở cuối → bị bắt làm. Nhóm II và III không có dạng ngắn: たべさせられる, không nói たべさされる.",
+        "examples": [
+          {
+            "jp": "{子|こ}どもの とき、{毎日|まいにち} {牛乳|ぎゅうにゅう}を {飲|の}まされました。",
+            "vi": "Hồi nhỏ ngày nào tôi cũng bị bắt uống sữa (のむ → のまされる).",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}で {急|きゅう}に {意見|いけん}を {言|い}わされて、{困|こま}りました。",
+            "vi": "Trong cuộc họp tôi bị bắt nêu ý kiến đột ngột, thật khó xử (いう → いわされる).",
+            "audio": null
+          },
+          {
+            "jp": "{一人|ひとり}で {部屋|へや}を {全部|ぜんぶ} {掃除|そうじ}させられました。",
+            "vi": "Tôi bị bắt dọn hết các phòng một mình (する → させられる).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shieki-ukemi",
+        "pattern": "人に Vさせられる",
+        "vi": "Bị (ai) bắt làm gì — không muốn mà phải làm",
+        "explain": "(わたしは) + người bắt + に + V sai khiến bị động: người phải làm việc là chủ ngữ, người bắt đi với に. Diễn tả việc mình không muốn mà bị ép làm, thường kèm cảm giác mệt, khó chịu. So với câu sai khiến: 母は わたしに やさいを たべさせた (mẹ bắt tôi ăn) ⇔ わたしは 母に やさいを たべさせられた (tôi bị mẹ bắt ăn). Không nêu người bắt cũng được: 長い 話を 聞かされた (bị bắt nghe).",
+        "viMistake": "Chủ ngữ là わたし mà chọn thể sai khiến: わたしは 先生に 作文を 書かせました nghĩa là “tôi bắt thầy viết”. Khi chủ ngữ là người phải làm, có ý “bị bắt”, dùng させられる／される. Chọn bị động thường 書かれました lại thành “bị thầy viết (lên đồ của mình)”.",
+        "examples": [
+          {
+            "jp": "{弟|おとうと}は {先生|せんせい}に {作文|さくぶん}を {書|か}き{直|なお}させられました。",
+            "vi": "Em trai tôi bị thầy bắt viết lại bài văn.",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}の {中|なか}、コーチに グラウンドを {走|はし}らされました。",
+            "vi": "Tôi bị huấn luyện viên bắt chạy quanh sân dưới mưa.",
+            "audio": null
+          },
+          {
+            "jp": "{社長|しゃちょう}の {長|なが}い {話|はなし}を {1時間|いちじかん}も {聞|き}かされました。",
+            "vi": "Tôi bị bắt nghe giám đốc nói dài tận một tiếng.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g6-s01",
+        "type": "title",
+        "jp": "{受身|うけみ}と {使役|しえき}",
+        "vi": "Tổng ôn N4 · 6 – Bị động và sai khiến"
+      },
+      {
+        "id": "n4g6-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "Bộ này ôn các mẫu bị động và sai khiến hay gặp trong phần 文法 của JLPT N4, xếp cạnh nhau để dễ phân biệt.\n1. Chia đúng ba thể: bị động (〜れる), sai khiến (〜せる), sai khiến bị động (〜させられる／〜される).\n2. Nhìn trợ từ に／を／に よって／で／から để biết ai làm, ai chịu.\n3. Xin phép bằng 〜させて いただけませんか／〜させて ください.\nCách dùng: quên mẫu nào khi làm đề thì mở đúng slide mẫu đó; cuối bộ có 40 câu kiểu もんだい１ và もんだい２."
+      },
+      {
+        "id": "n4g6-s03",
+        "teacherNotes": "Nhắc: bị động có れ, sai khiến có せ.",
+        "type": "grammar",
+        "ref": "n4g-ukemi-form"
+      },
+      {
+        "id": "n4g6-s04",
+        "type": "table",
+        "title": "Cách chia thể bị động",
+        "columns": ["Nhóm", "Từ điển", "Bị động"],
+        "rows": [
+          ["I", "{書|か}く", "{書|か}かれる"],
+          ["I", "{読|よ}む", "{読|よ}まれる"],
+          ["I", "{言|い}う", "{言|い}われる"],
+          ["I", "{呼|よ}ぶ", "{呼|よ}ばれる"],
+          ["I", "{取|と}る", "{取|と}られる"],
+          ["II", "{食|た}べる", "{食|た}べられる"],
+          ["II", "{見|み}る", "{見|み}られる"],
+          ["III", "する", "される"],
+          ["III", "{来|く}る", "{来|こ}られる"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g6-s05",
+        "type": "example",
+        "ref": "n4g-ukemi-form",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s06",
+        "type": "grammar",
+        "ref": "n4g-ukemi-direct"
+      },
+      {
+        "id": "n4g6-s07",
+        "type": "example",
+        "ref": "n4g-ukemi-direct",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s08",
+        "type": "quiz",
+        "ref": "n4g6-q04"
+      },
+      {
+        "id": "n4g6-s09",
+        "type": "grammar",
+        "ref": "n4g-ukemi-meiwaku"
+      },
+      {
+        "id": "n4g6-s10",
+        "type": "example",
+        "ref": "n4g-ukemi-meiwaku",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s11",
+        "type": "table",
+        "title": "Phân biệt: bị động trực tiếp và làm phiền",
+        "columns": ["Kiểu", "Chủ động", "Bị động"],
+        "rows": [
+          [
+            "Trực tiếp",
+            "{先生|せんせい}が {私|わたし}を しかる",
+            "{私|わたし}は {先生|せんせい}に しかられる"
+          ],
+          [
+            "Đồ vật",
+            "{弟|おとうと}が {私|わたし}の {本|ほん}を {汚|よご}す",
+            "{私|わたし}は {弟|おとうと}に {本|ほん}を {汚|よご}される"
+          ],
+          [
+            "Bộ phận",
+            "{誰|だれ}かが {私|わたし}の {足|あし}を {踏|ふ}む",
+            "{私|わたし}は {足|あし}を {踏|ふ}まれる"
+          ],
+          ["Tự động từ", "{雨|あめ}が {降|ふ}る", "{私|わたし}は {雨|あめ}に {降|ふ}られる"],
+          ["Có lợi", "{友|とも}だちが {手伝|てつだ}う", "{友|とも}だちに {手伝|てつだ}って もらう"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s12",
+        "type": "quiz",
+        "ref": "n4g6-q07"
+      },
+      {
+        "id": "n4g6-s13",
+        "type": "grammar",
+        "ref": "n4g-ukemi-mono"
+      },
+      {
+        "id": "n4g6-s14",
+        "type": "example",
+        "ref": "n4g-ukemi-mono",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s15",
+        "type": "grammar",
+        "ref": "n4g-ukemi-niyotte"
+      },
+      {
+        "id": "n4g6-s16",
+        "type": "example",
+        "ref": "n4g-ukemi-niyotte",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s17",
+        "type": "grammar",
+        "ref": "n4g-ukemi-kara-de"
+      },
+      {
+        "id": "n4g6-s18",
+        "type": "example",
+        "ref": "n4g-ukemi-kara-de",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s19",
+        "type": "table",
+        "title": "Phân biệt に／に よって／で／から",
+        "columns": ["Trợ từ", "Chỉ cái gì", "Ví dụ"],
+        "rows": [
+          ["に", "người làm (người)", "{先生|せんせい}に ほめられる"],
+          ["に よって", "tác giả, người tạo ra", "{作家|さっか}に よって {書|か}かれた"],
+          ["で (nơi)", "nơi diễn ra", "ホテルで {開|ひら}かれる"],
+          ["で (liệu)", "nguyên liệu còn thấy", "{木|き}で {作|つく}られる"],
+          ["から", "nguyên liệu đã biến đổi", "{米|こめ}から {作|つく}られる"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s20",
+        "type": "grammar",
+        "ref": "n4g-shieki-form"
+      },
+      {
+        "id": "n4g6-s21",
+        "type": "table",
+        "title": "Cách chia thể sai khiến",
+        "columns": ["Nhóm", "Từ điển", "Sai khiến"],
+        "rows": [
+          ["I", "{書|か}く", "{書|か}かせる"],
+          ["I", "{待|ま}つ", "{待|ま}たせる"],
+          ["I", "{買|か}う", "{買|か}わせる"],
+          ["I", "{帰|かえ}る", "{帰|かえ}らせる"],
+          ["II", "{食|た}べる", "{食|た}べさせる"],
+          ["II", "{調|しら}べる", "{調|しら}べさせる"],
+          ["III", "する", "させる"],
+          ["III", "{来|く}る", "{来|こ}させる"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g6-s22",
+        "type": "example",
+        "ref": "n4g-shieki-form",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s23",
+        "type": "grammar",
+        "ref": "n4g-shieki-wo"
+      },
+      {
+        "id": "n4g6-s24",
+        "type": "example",
+        "ref": "n4g-shieki-wo",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s25",
+        "type": "grammar",
+        "ref": "n4g-shieki-ni"
+      },
+      {
+        "id": "n4g6-s26",
+        "type": "example",
+        "ref": "n4g-shieki-ni",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s27",
+        "type": "table",
+        "title": "Phân biệt を và に trong câu sai khiến",
+        "columns": ["Động từ", "Người đi với", "Ví dụ"],
+        "rows": [
+          ["Tự động từ", "を", "{子|こ}どもを {遊|あそ}ばせる"],
+          ["Có tân ngữ を", "に", "{子|こ}どもに {本|ほん}を {読|よ}ませる"],
+          ["Cảm xúc", "を", "{母|はは}を {心配|しんぱい}させる"],
+          ["Mình xin làm", "に (người nói)", "{私|わたし}に やらせて ください"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s28",
+        "type": "quiz",
+        "ref": "n4g6-q21"
+      },
+      {
+        "id": "n4g6-s29",
+        "type": "grammar",
+        "ref": "n4g-shieki-kanjou"
+      },
+      {
+        "id": "n4g6-s30",
+        "type": "example",
+        "ref": "n4g-shieki-kanjou",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s31",
+        "type": "grammar",
+        "ref": "n4g-sasete-itadakemasenka"
+      },
+      {
+        "id": "n4g6-s32",
+        "type": "example",
+        "ref": "n4g-sasete-itadakemasenka",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s33",
+        "type": "grammar",
+        "ref": "n4g-sasete-kudasai"
+      },
+      {
+        "id": "n4g6-s34",
+        "type": "example",
+        "ref": "n4g-sasete-kudasai",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s35",
+        "type": "table",
+        "title": "Phân biệt: Vて và Vさせて",
+        "columns": ["Câu", "Ai làm?", "Nghĩa"],
+        "rows": [
+          ["{待|ま}って ください", "người nghe", "Anh hãy đợi"],
+          ["{帰|かえ}らせて ください", "tôi", "Cho tôi về"],
+          ["{話|はな}して いただけませんか", "người nghe", "Anh nói giúp được không ạ"],
+          ["{話|はな}させて いただけませんか", "tôi", "Cho tôi nói được không ạ"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s36",
+        "type": "quiz",
+        "ref": "n4g6-q25"
+      },
+      {
+        "id": "n4g6-s37",
+        "type": "grammar",
+        "ref": "n4g-shieki-ukemi-form"
+      },
+      {
+        "id": "n4g6-s38",
+        "type": "table",
+        "title": "Cách chia sai khiến bị động",
+        "columns": ["Từ điển", "Sai khiến", "SK bị động", "Dạng ngắn"],
+        "rows": [
+          ["{飲|の}む", "{飲|の}ませる", "{飲|の}ませられる", "{飲|の}まされる"],
+          ["{待|ま}つ", "{待|ま}たせる", "{待|ま}たせられる", "{待|ま}たされる"],
+          ["{言|い}う", "{言|い}わせる", "{言|い}わせられる", "{言|い}わされる"],
+          ["{話|はな}す", "{話|はな}させる", "{話|はな}させられる", "— (không có)"],
+          ["{食|た}べる", "{食|た}べさせる", "{食|た}べさせられる", "—"],
+          ["する", "させる", "させられる", "—"],
+          ["{来|く}る", "{来|こ}させる", "{来|こ}させられる", "—"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s39",
+        "type": "example",
+        "ref": "n4g-shieki-ukemi-form",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s40",
+        "type": "grammar",
+        "ref": "n4g-shieki-ukemi"
+      },
+      {
+        "id": "n4g6-s41",
+        "type": "example",
+        "ref": "n4g-shieki-ukemi",
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s42",
+        "type": "table",
+        "title": "Phân biệt các thể của 読む",
+        "columns": ["Thể", "Câu", "Nghĩa"],
+        "rows": [
+          ["Chủ động", "{学生|がくせい}が {本|ほん}を {読|よ}む", "Học sinh đọc sách"],
+          ["Bị động", "{手紙|てがみ}を {母|はは}に {読|よ}まれる", "Bị mẹ đọc thư"],
+          [
+            "Sai khiến",
+            "{先生|せんせい}が {学生|がくせい}に {読|よ}ませる",
+            "Thầy bắt học sinh đọc"
+          ],
+          [
+            "SK bị động",
+            "{学生|がくせい}が {先生|せんせい}に {読|よ}まされる",
+            "Học sinh bị thầy bắt đọc"
+          ],
+          ["Xin phép", "{私|わたし}に {読|よ}ませて ください", "Cho tôi đọc"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g6-s43",
+        "type": "quiz",
+        "ref": "n4g6-q31"
+      },
+      {
+        "id": "n4g6-s44",
+        "type": "dialogue",
+        "title": "Hội thoại: một ngày mệt ở công ty",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "ナムさん、{疲|つか}れた {顔|かお}を して いますね。",
+            "vi": "Anh Nam, trông anh mệt quá."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{昨日|きのう}、{部長|ぶちょう}に {遅|おそ}くまで {残業|ざんぎょう}させられたんです。",
+            "vi": "Hôm qua tôi bị trưởng phòng bắt làm thêm đến khuya."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{大変|たいへん}でしたね。{何|なに}か あったんですか。",
+            "vi": "Vất vả quá. Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "お{客|きゃく}さんを {待|ま}たせて、しかられたんです。",
+            "vi": "Tôi để khách phải chờ nên bị mắng."
+          },
+          {
+            "speaker": "アン",
+            "jp": "じゃ、{今日|きょう}の {資料|しりょう}は {私|わたし}に {手伝|てつだ}わせて ください。",
+            "vi": "Vậy tài liệu hôm nay để tôi giúp nhé."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ありがとうございます。{本当|ほんとう}に {助|たす}かります。",
+            "vi": "Cảm ơn chị. Thật đỡ cho tôi quá."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g6-s45",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "Chủ ngữ là người chịu + người làm đi với に → bị động 〜れる／〜られる.\nNgười + に + đồ vật + を, thấy phiền → bị động làm phiền; việc có lợi → 〜て もらう.\nVật làm chủ ngữ → Vられる; tác giả → に よって; nguyên liệu thấy được → で, đã biến đổi → から.\nNgười ra lệnh là chủ ngữ → 〜せる／〜させる: câu không có を khác → người + を; đã có 〜を → người + に.\nĐộng từ cảm xúc (よろこぶ, しんぱいする, わらう, がっかりする) → người + を + 〜させる.\nMình là người làm + いただけませんか／ください → 〜させて.\nわたしは + người bắt + に + việc không muốn → 〜させられる／〜される (đuôi す: 〜させられる).\nもんだい２: ghép trợ từ với danh từ trước, đặt động từ cuối cùng, rồi mới tìm ô ★."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g6-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{毎晩|まいばん} {父|ちち}に 「テレビを {消|け}して、{宿題|しゅくだい}を しなさい」と （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-form"],
+        "explain": "Tối nào tôi cũng bị bố bảo “tắt TV đi rồi làm bài tập”. 〜なさい là lời bố nói với tôi, người nói đi với に → bị động: いう (nhóm I, う → わ) → いわれる → いわれました. いわせました (sai khiến) là “tôi bắt bố nói”, いわされました (sai khiến bị động) là “tôi bị bố bắt nói câu đó” — đều vô lý vì đây là câu bố ra lệnh cho tôi. いいられました là cách chia sai.",
+        "type": "choice",
+        "options": ["いわせました", "いわれました", "いわされました", "いいられました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{夜|よる} {遅|おそ}く {友|とも}だちに （　　）、{勉強|べんきょう}が できませんでした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-form"],
+        "explain": "Đêm khuya bạn kéo đến nên tôi không học được (bị động làm phiền với tự động từ). くる → bị động こられる → こられて. きられて là bị động của きる (cắt／mặc), これて là thể khả năng (これる), きて là chủ động — phải nói 友だちが きて, không đi với 友だちに.",
+        "type": "choice",
+        "options": ["きられて", "これて", "きて", "こられて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q03",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{知|し}らない {人|ひと}に {名前|なまえ}を （　　）、びっくりしました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-form"],
+        "explain": "Tôi bị một người lạ gọi tên nên giật mình. Người làm đi với に → động từ ở thể bị động: よぶ → よばれる → よばれて. よんで là chủ động (phải là 知らない人が よんで), よべて là thể khả năng, よばせて là sai khiến (“tôi bắt người lạ gọi tên”) — vô lý.",
+        "type": "choice",
+        "options": ["よばれて", "よべて", "よんで", "よばせて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{私|わたし}は {電車|でんしゃ}の {中|なか}で {電話|でんわ}を して いて、{知|し}らない {人|ひと}（　　） {注意|ちゅうい}されました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-direct"],
+        "explain": "Tôi gọi điện trên tàu và bị một người lạ nhắc nhở. Câu bị động trực tiếp: người làm hành động đi với に (知らない人に 注意される). を là tân ngữ, で là nơi chốn／phương tiện, や là liệt kê — đều không chỉ người làm.",
+        "type": "choice",
+        "options": ["を", "で", "に", "や"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}は いたずらを して、{父|ちち}に （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-direct"],
+        "explain": "Em trai tôi nghịch ngợm và bị bố mắng. 弟は + 父に → bị động しかられました. しかりました cần 父が (bố mắng); しからせました nghĩa là em “bắt bố mắng”, vô lý; しかって あげました (mắng giúp) cũng không hợp với 父に.",
+        "type": "choice",
+        "options": ["しかりました", "しからせました", "しかられました", "しかって あげました"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q06",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{私|わたし}は {友|とも}だちの {結婚式|けっこんしき}に （　　）、{来週|らいしゅう} ダナンへ {行|い}きます。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-direct"],
+        "explain": "Tôi được mời dự đám cưới của bạn nên tuần sau sẽ đi Đà Nẵng. Mình là người được mời → bị động しょうたいされて. しょうたいして (tôi mời), しょうたいさせて (bắt ai mời), しょうたいできて (mời được) đều sai nghĩa vì đám cưới là của bạn.",
+        "type": "choice",
+        "options": ["しょうたいされて", "しょうたいして", "しょうたいさせて", "しょうたいできて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{電車|でんしゃ}の {中|なか}で {隣|となり}の {人|ひと}に {足|あし}を （　　）、とても {痛|いた}かったです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-meiwaku"],
+        "explain": "Trên tàu tôi bị người bên cạnh giẫm vào chân, rất đau. Bị động làm phiền: 人に 足を ふまれる. ふんで là chủ động (cần 隣の人が); ふませて (bắt người ta giẫm) và ふまされて (bị bắt giẫm) đều vô lý.",
+        "type": "choice",
+        "options": ["ふんで", "ふませて", "ふまされて", "ふまれて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}に {大切|たいせつ}な カメラを （　　）、{困|こま}って います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-meiwaku"],
+        "explain": "Tôi bị em trai làm hỏng chiếc máy ảnh quý nên đang khổ. Đồ vật giữ を, người làm đi với に → こわされて. こわれて là tự động từ (không đi với を), こわして là chủ động (tôi làm hỏng), こわさせて là “bắt em làm hỏng”, vô lý.",
+        "type": "choice",
+        "options": ["こわれて", "こわされて", "こわして", "こわさせて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q09",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅|えき}から {家|いえ}まで {歩|ある}いて いる とき、{雨|あめ}（　　） {降|ふ}られて、{服|ふく}が ぬれて しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-meiwaku"],
+        "explain": "Đang đi bộ từ ga về nhà thì tôi bị mắc mưa, ướt hết quần áo. 雨に ふられる: bị động làm phiền với tự động từ, “người làm” (mưa) đi với に. 雨が ふりました thì đúng nhưng 雨が ふられて là sai; を, で không dùng ở đây.",
+        "type": "choice",
+        "options": ["が", "を", "で", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q10",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ベトナムの コーヒーは {今|いま}、{世界|せかい}の いろいろな {国|くに}で （　　） います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-mono"],
+        "explain": "Cà phê Việt Nam giờ được uống ở nhiều nước trên thế giới. Vật làm chủ ngữ → bị động + ています (được làm rộng rãi): のまれて います. のまされて (bị bắt uống), のませて (bắt uống) cần người làm chủ ngữ, cà phê không thể “bị bắt uống” hay “bắt ai uống”; のめて là thể khả năng, không dùng với vật làm chủ ngữ như thế này.",
+        "type": "choice",
+        "options": ["のまれて", "のまされて", "のませて", "のめて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q11",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来年|らいねん}の {夏|なつ}、この {町|まち}で {大|おお}きな スポーツ{大会|たいかい}が （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-mono"],
+        "explain": "Mùa hè năm sau, một đại hội thể thao lớn sẽ được tổ chức ở thị trấn này. 大会が là vật làm chủ ngữ của tha động từ おこなう → bị động おこなわれます. おこないます và おこなって います cần người tổ chức làm chủ ngữ (〜が 大会を おこないます); おこなわせます là sai khiến (đại hội “bắt ai tổ chức”), vô lý.",
+        "type": "choice",
+        "options": ["おこないます", "おこなわれます", "おこなって います", "おこなわせます"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q12",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ハノイの オペラハウスは {100年|ひゃくねん}{以上|いじょう} {前|まえ}に フランス{人|じん}（　　） {建|た}てられました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-niyotte"],
+        "explain": "Nhà hát lớn Hà Nội được người Pháp xây hơn 100 năm trước. Người tạo ra công trình đi với に よって. に よると là “theo (nguồn tin)”, に ついて là “về”, から không dùng cho người xây trong câu bị động.",
+        "type": "choice",
+        "options": ["に よると", "に ついて", "に よって", "から"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q13",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {紙|かみ}は {古|ふる}い {新聞|しんぶん}から （　　） います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-kara-de"],
+        "explain": "Loại giấy này được làm từ báo cũ. Vật (紙) làm chủ ngữ, nguyên liệu đã biến đổi đi với から → bị động 作られて います. 作らされて (bị bắt làm) và 作らせて (bắt làm) chỉ dùng khi chủ ngữ là người; 作れて là thể khả năng, không đi với 〜から 〜て います ở đây.",
+        "type": "choice",
+        "options": ["{作|つく}られて", "{作|つく}らされて", "{作|つく}らせて", "{作|つく}れて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q14",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この かわいい {人形|にんぎょう}は {紙|かみ}（　　） {作|つく}られて います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-kara-de"],
+        "explain": "Con búp bê dễ thương này được làm bằng giấy. Nhìn búp bê vẫn thấy giấy (nguyên liệu không biến đổi) → で. に, を, が không chỉ nguyên liệu.",
+        "type": "choice",
+        "options": ["に", "を", "が", "で"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q15",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{店長|てんちょう}は {新|あたら}しい アルバイトに お{皿|さら}を （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-form"],
+        "explain": "Cửa hàng trưởng bắt nhân viên làm thêm mới rửa bát. あらう là nhóm I đuôi う → đổi thành わ rồi thêm せる: あらわせる → あらわせました. あらわれました là bị động (“cửa hàng trưởng bị nhân viên rửa bát” — vô lý), あらえました là thể khả năng, không đi với アルバイトに; あらいさせました là cách chia sai (không thêm させる vào thể ます).",
+        "type": "choice",
+        "options": ["あらいさせました", "あらわせました", "あらわれました", "あらえました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は {遅刻|ちこく}が {多|おお}い {学生|がくせい}を {毎朝|まいあさ} {7時|しちじ}に {学校|がっこう}へ （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-form"],
+        "explain": "Thầy bắt học sinh hay đi muộn đến trường lúc 7 giờ mỗi sáng. 先生は + 学生を → sai khiến: くる → こさせる → こさせました. こられました là bị động, こさせられました là sai khiến bị động (thầy “bị bắt đến”) — đều không đi với 先生は … 学生を; きさせました là cách chia sai (くる → こさせる, không phải きさせる).",
+        "type": "choice",
+        "options": ["きさせました", "こさせました", "こられました", "こさせられました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q17",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{姉|あね}は いやがる {弟|おとうと}に {毎晩|まいばん} {日本語|にほんご}の {勉強|べんきょう}を （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-form"],
+        "explain": "Chị tôi bắt cậu em (dù em không muốn) học tiếng Nhật mỗi tối. 姉は (người ra lệnh) + 弟に + 勉強を → sai khiến: する → させる → させます. されます là bị động (chị bị em học — vô lý), させられます là sai khiến bị động (chị bị em bắt học — ngược vai, mà người không muốn là em); しせます là cách chia sai.",
+        "type": "choice",
+        "options": ["されます", "させられます", "させます", "しせます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q18",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は {子|こ}どもたち（　　） {公園|こうえん}で {自由|じゆう}に {遊|あそ}ばせました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-wo"],
+        "explain": "Cô giáo cho bọn trẻ chơi tự do ở công viên. あそぶ là tự động từ, câu không có を khác → người được sai khiến đi với を. が sẽ thành hai chủ ngữ, で là nơi chốn, の không đứng trước động từ.",
+        "type": "choice",
+        "options": ["が", "で", "の", "を"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q19",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}が {強|つよ}く なったので、{先生|せんせい}は {生徒|せいと}を {早|はや}く うちへ （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-wo"],
+        "explain": "Mưa to lên nên thầy cho học sinh về nhà sớm. 先生は + 生徒を + sai khiến かえらせました. かえられました là bị động, かえりました là thầy tự về, không đi với 生徒を; かえって もらいました cần 生徒に.",
+        "type": "choice",
+        "options": ["かえらせました", "かえられました", "かえりました", "かえって もらいました"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q20",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{道|みち}が {込|こ}んで いて、{友|とも}だちを {1時間|いちじかん}も （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-wo"],
+        "explain": "Đường tắc nên tôi lỡ để bạn đợi tận một tiếng. Tôi là người gây ra việc bạn phải đợi → sai khiến: まつ → またせる; người đợi đi với を (友だちを またせる). またれて (bị động) và またされて (bị bắt đợi) cần người làm đi với に, không đi với 友だちを; まちさせて là cách chia sai.",
+        "type": "choice",
+        "options": [
+          "またれて しまいました",
+          "またされて しまいました",
+          "またせて しまいました",
+          "まちさせて しまいました"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q21",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}は {新|あたら}しい {社員|しゃいん}（　　） {会議|かいぎ}の {資料|しりょう}を コピーさせました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ni"],
+        "explain": "Trưởng phòng bắt nhân viên mới photo tài liệu họp. Câu đã có 資料を nên người làm việc đi với に (không có hai を). が thành hai chủ ngữ, で là nơi chốn／phương tiện.",
+        "type": "choice",
+        "options": ["を", "が", "で", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q22",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}は {私|わたし}に {毎日|まいにち} {自分|じぶん}の {部屋|へや}を （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ni"],
+        "explain": "Mẹ bắt tôi dọn phòng mình mỗi ngày. 母は + 私に + 部屋を → sai khiến そうじさせます. そうじします (mẹ dọn) không đi với 私に, そうじできます là khả năng, そうじさせられます nghĩa là mẹ bị tôi bắt dọn — ngược vai.",
+        "type": "choice",
+        "options": ["そうじさせます", "そうじします", "そうじできます", "そうじさせられます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q23",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{留学|りゅうがく}して いた とき、あまり {連絡|れんらく}しなかったので、{両親|りょうしん}（　　） {心配|しんぱい}させて しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-kanjou"],
+        "explain": "Khi du học tôi ít liên lạc nên đã làm bố mẹ lo. Động từ cảm xúc ở thể sai khiến: người có cảm xúc đi với を (両親を しんぱいさせる). が, で, と không dùng ở vị trí này.",
+        "type": "choice",
+        "options": ["が", "で", "を", "と"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q24",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{父|ちち}の {誕生日|たんじょうび}に {手紙|てがみ}を {書|か}いて、{父|ちち}を （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-kanjou"],
+        "explain": "Tôi viết thư vào sinh nhật bố và làm bố vui. 父を + sai khiến của động từ cảm xúc → よろこばせました. よろこびました (tôi vui) không đi với 父を; よろこばれました là bị động; よろこんで もらいました cần 父に.",
+        "type": "choice",
+        "options": [
+          "よろこびました",
+          "よろこばせました",
+          "よろこばれました",
+          "よろこんで もらいました"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q25",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "メールを {確認|かくにん}したいので、この パソコンを ちょっと （　　） いただけませんか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sasete-itadakemasenka"],
+        "explain": "Tôi muốn kiểm tra email, cho tôi dùng máy tính này một chút được không ạ? Người dùng là tôi → xin phép bằng 使わせて いただけませんか. 使って いただけませんか là nhờ người nghe dùng, sai ý; 使われて, 使えて không đi với いただけませんか.",
+        "type": "choice",
+        "options": ["{使|つか}わせて", "{使|つか}って", "{使|つか}われて", "{使|つか}えて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q26",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}、この {計画|けいかく}に ついて、{私|わたし}から {少|すこ}し （　　） いただけませんか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sasete-itadakemasenka"],
+        "explain": "Thưa trưởng phòng, xin cho tôi giải thích một chút về kế hoạch này. 私から: người giải thích là tôi → 説明させて いただけませんか. 説明して いただけませんか là nhờ trưởng phòng giải thích; 説明されて, 説明できて không đi với いただけませんか.",
+        "type": "choice",
+        "options": [
+          "{説明|せつめい}して",
+          "{説明|せつめい}されて",
+          "{説明|せつめい}できて",
+          "{説明|せつめい}させて"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q27",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{重|おも}そうですね。その {荷物|にもつ}、{私|わたし}に （　　） ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sasete-kudasai"],
+        "explain": "Trông nặng quá. Để tôi xách đồ đó cho. Người xách là tôi (私に) → 持たせて ください. 持って ください là bảo người nghe cầm, không đi với 私に; 持たれて, 持てて không đi với ください.",
+        "type": "choice",
+        "options": ["{持|も}たれて", "{持|も}てて", "{持|も}って", "{持|も}たせて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q28",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "「ごちそうさまでした。ここは {私|わたし}に （　　） ください。」「いいえ、{今日|きょう}は {私|わたし}が {出|だ}します。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sasete-kudasai"],
+        "explain": "“Cảm ơn vì bữa ăn. Lần này để tôi trả.” “Không, hôm nay tôi trả.” Người nói xin được trả → 払わせて ください. 払われて (bị động), 払えて (khả năng), 払わされて (bị bắt trả) không đi với ください.",
+        "type": "choice",
+        "options": ["{払|はら}われて", "{払|はら}わせて", "{払|はら}えて", "{払|はら}わされて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q29",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{熱|ねつ}が あって {病院|びょういん}へ {行|い}きましたが、{人|ひと}が {多|おお}くて {1時間|いちじかん}も （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ukemi-form"],
+        "explain": "Tôi bị sốt nên đến bệnh viện, nhưng đông người quá, tôi bị bắt chờ tận một tiếng. Người phải chờ (không muốn) là tôi → sai khiến bị động: まつ → またせられる, dạng ngắn またされる → またされました. またせました là “tôi bắt người khác chờ”, またれました là bị động “bị (ai) chờ” — đều sai nghĩa; またさせられました là cách chia sai.",
+        "type": "choice",
+        "options": ["またさせられました", "またせました", "またされました", "またれました"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q30",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{授業|じゅぎょう}で {先生|せんせい}に みんなの {前|まえ}で {日本語|にほんご}で （　　）、{恥|は}ずかしかったです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ukemi-form"],
+        "explain": "Trong giờ học tôi bị thầy bắt nói tiếng Nhật trước mọi người, xấu hổ quá. Tôi + 先生に + bị bắt làm → sai khiến bị động. はなす đuôi す không có dạng ngắn: はなさせる → はなさせられる → はなさせられて; はなさされて là lỗi chia hay gặp. はなさせて là sai khiến (“tôi bắt thầy nói”), はなせて là thể khả năng — đều không hợp với 先生に và 恥ずかしかった.",
+        "type": "choice",
+        "options": ["はなさせられて", "はなさされて", "はなさせて", "はなせて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q31",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{私|わたし}は {小学生|しょうがくせい}の とき、{毎週|まいしゅう} {父|ちち}に {書道|しょどう}を （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ukemi"],
+        "explain": "Hồi tiểu học tuần nào tôi cũng bị bố bắt học thư pháp. 私は + 父に + bị bắt học → ならわされました (dạng ngắn của ならわせられました). ならわせました là “tôi bắt bố học”, ngược vai; ならわれました là bị động thường (“bị bố học”), sai nghĩa; ならわさせました chia sai.",
+        "type": "choice",
+        "options": ["ならわせました", "ならわれました", "ならわされました", "ならわさせました"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q32",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{昨日|きのう}は {先輩|せんぱい}（　　） {遅|おそ}くまで お{酒|さけ}を {飲|の}まされました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ukemi"],
+        "explain": "Hôm qua tôi bị đàn anh bắt uống rượu đến khuya. Câu sai khiến bị động: người bắt đi với に (先輩に 飲まされる). を, で, へ không chỉ người bắt.",
+        "type": "choice",
+        "options": ["を", "に", "で", "へ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q33",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}で {隣|となり}に ＿＿　＿★＿　＿＿　＿＿ {何|なに}も {答|こた}えられませんでした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-direct"],
+        "explain": "Thứ tự: (隣に) すわって いた 人に 意見を 聞かれましたが (trong cuộc họp tôi bị người ngồi cạnh hỏi ý kiến nhưng không trả lời được gì). 隣に すわって いた bổ nghĩa cho 人; người hỏi đi với に, 意見を 聞く → bị động 意見を 聞かれる. ★ là 人に.",
+        "type": "choice",
+        "options": ["{意見|いけん}を", "すわって いた", "{聞|き}かれましたが", "{人|ひと}に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q34",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{旅行|りょこう}の とき、＿＿　＿＿　＿★＿　＿＿ {困|こま}りました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-meiwaku"],
+        "explain": "Thứ tự: 写真が 入った カメラを 取られて しまって 困りました (lúc đi du lịch tôi bị lấy mất chiếc máy ảnh có ảnh, khổ quá). 写真が 入った bổ nghĩa cho カメラ; đồ vật giữ を + bị động làm phiền 取られて + しまって. ★ là 取られて.",
+        "type": "choice",
+        "options": ["{取|と}られて", "カメラを", "しまって", "{写真|しゃしん}が {入|はい}った"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q35",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日本|にほん}の アニメは ＿★＿　＿＿　＿＿　＿＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-mono"],
+        "explain": "Thứ tự: 世界中の 子どもたちに 見られて います (anime Nhật được trẻ em khắp thế giới xem). 世界中の phải đứng ngay trước danh từ 子どもたち; vật làm chủ ngữ + Vられて います: được làm rộng rãi đến nay. ★ là 世界中の.",
+        "type": "choice",
+        "options": ["{子|こ}どもたちに", "{世界中|せかいじゅう}の", "{見|み}られて", "います"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q36",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {絵|え}は ＿＿　＿＿　＿★＿　＿＿ そうです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ukemi-niyotte"],
+        "explain": "Thứ tự: 有名な 画家 に よって かかれた そうです (nghe nói bức tranh này do một họa sĩ nổi tiếng vẽ). Người tạo ra tác phẩm đi với に よって, ★ là に よって.",
+        "type": "choice",
+        "options": ["{有名|ゆうめい}な", "{画家|がか}", "に よって", "かかれた"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g6-q37",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}は ＿＿　＿＿　＿＿　＿★＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ni"],
+        "explain": "Thứ tự: サッカーから 帰って きた 弟に くつを 洗わせました (mẹ bắt em trai vừa đá bóng về giặt giày). サッカーから 帰って きた bổ nghĩa cho 弟; câu có くつを nên người làm việc đi với に; あらう → あらわせる. ★ là くつを 洗わせました.",
+        "type": "choice",
+        "options": [
+          "くつを {洗|あら}わせました",
+          "サッカーから",
+          "{帰|かえ}って きた",
+          "{弟|おとうと}に"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g6-q38",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "テストで {悪|わる}い {点|てん}を ＿＿　＿★＿　＿＿　＿＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-kanjou"],
+        "explain": "Thứ tự: 取って 母を がっかり させて しまいました (tôi bị điểm kém và làm mẹ thất vọng). 点を 取って nối liền; động từ cảm xúc がっかりする → がっかりさせる, người có cảm xúc đi với を. ★ là 母を.",
+        "type": "choice",
+        "options": ["{取|と}って", "がっかり", "させて しまいました", "{母|はは}を"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g6-q39",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "すみません、{病院|びょういん}へ {行|い}きたいので、＿＿　＿＿　＿★＿　＿＿ か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sasete-itadakemasenka"],
+        "explain": "Thứ tự: 明日の 午前だけ 休ませて いただけません か (xin lỗi, tôi muốn đi bệnh viện, cho tôi nghỉ riêng buổi sáng mai được không ạ). Xin phép cho mình làm: Vさせて いただけませんか (やすむ → やすませる). ★ là 休ませて.",
+        "type": "choice",
+        "options": ["{明日|あした}の", "{休|やす}ませて", "{午前|ごぜん}だけ", "いただけません"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g6-q40",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{中学生|ちゅうがくせい}の とき、{私|わたし}は {毎日|まいにち} {母|はは}に ＿＿　＿＿　＿＿　＿★＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shieki-ukemi"],
+        "explain": "Thứ tự: きらいな ピアノの 練習を させられました (hồi cấp hai ngày nào tôi cũng bị mẹ bắt tập piano mà tôi ghét). きらいな ピアノの 練習 là cụm danh từ; 練習を する → sai khiến bị động 練習を させられる. ★ là させられました.",
+        "type": "choice",
+        "options": ["ピアノの", "きらいな", "させられました", "{練習|れんしゅう}を"],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

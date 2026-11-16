@@ -129,6 +129,30 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Tổng ôn ngữ pháp N4 — 16/11/2026
+
+Thêm 9 bài mẫu khóa `n4-grammar` (bản đồ + 8 bài chủ đề, 111 mẫu, 320 câu luyện), link Tra ngữ pháp của lớp và link Ôn lại mẫu. Thiết kế ở [DD](../detail-design/teaching-service.md), nội dung ở [hướng dẫn nội dung](../content-authoring.md#tổng-ôn-ngữ-pháp-n4).
+
+- **PASS local:**
+  - Mỗi bài: `findPublishProblems` và `findFuriganaProblems` rỗng, xuất bản giữ nguyên nội dung, 40 câu với đáp án 10/10/10/10, mỗi mẫu có ít nhất 2 câu, mỗi câu có thẻ mẫu của chính bài.
+  - `tests/japanese-lessons.test.ts`: thứ tự đăng ký; bài chủ đề có đủ loại slide (trừ từ vựng); bản đồ có mọi mẫu; mã mẫu không trùng giữa các bài; mọi thẻ `grammar:` của ngân hàng N4 hằng ngày trỏ tới một mẫu có thật.
+  - `tests/grammar-links.test.ts`: đọc thẻ, bài đầu tiên thắng, link giữ phiên bản và lớp.
+  - `npm run check`.
+- **PASS Supabase local, đo slide** (spec Playwright tạm, đã xóa): tạo và xuất bản cả 9 bài từ mẫu, đo 365 slide ở 1280×720 theo cùng tiêu chí với bài Minna 18–25.
+  - Lần đo đầu bắt được ký hiệu ✗／✕ không font nào của trang phủ (3 bảng) và 3 câu ví dụ để lẻ 「す。」 ở dòng cuối. Đã đổi sang ×, rút ngắn câu rồi đo lại sạch.
+  - Ảnh ghép slide của bản đồ và bài 5 đã xem bằng mắt.
+- **PASS Supabase local, `e2e-supabase/n4-grammar-review.spec.ts`:**
+  - Giáo viên tạo **Tổng ôn N4 · 4** từ mẫu, xuất bản, thêm vào lớp và giao một câu luyện có thẻ 〜ば.
+  - Học viên thấy link tra cứu ở trang lớp và trang làm bài (tab mới). Trang `/grammar?class=…` có 14 mẫu, tìm "càng" ra 〜ば〜ほど, link giữ phiên bản và lớp, trang vừa 360px.
+  - Kiểm tra câu và trang kết quả đều có link **Ôn lại mẫu** tới `#n4g-ba-form`.
+  - Người không phải thành viên mở `/grammar?class=…` nhận 404.
+  - Ảnh màn làm bài, lời giải và trang tra cứu đã xem ở 1280px và 360px.
+- **PASS E2E đầy đủ:** `npm run test:e2e:supabase` 46/46 (gồm spec mới) và `npm run test:e2e` 36/36.
+- **Ngân hàng N4 hằng ngày:** 105/160 câu ngữ pháp được gắn thẻ mẫu; nội dung câu không đổi (bỏ thẻ thì trùng với bản trong git). 55 câu không gắn vì hỏi trợ từ, từ nối hoặc mẫu N5 không có trong bộ.
+- **Chưa làm (production):**
+  - Nạp lại ngân hàng N4 (thẻ mới chỉ có trong file).
+  - Tạo 9 bài từ mẫu và thêm vào lớp "Ôn JLPT N4 – Việt".
+
 ## Bài mẫu Minna 18–25 — 16/11/2026
 
 Thêm `content/starters/minna-1-18.json` … `minna-1-25.json` và đăng ký theo thứ tự bài. Số từ, mẫu câu và slide ở [hướng dẫn nội dung](../content-authoring.md). Mỗi bài có 50 câu luyện: 40 câu chọn chia đều 10/10/10/10 vị trí đáp án và 10 câu điền hiragana.

@@ -23,6 +23,15 @@ import minnaLesson22 from "@/content/starters/minna-1-22.json";
 import minnaLesson23 from "@/content/starters/minna-1-23.json";
 import minnaLesson24 from "@/content/starters/minna-1-24.json";
 import minnaLesson25 from "@/content/starters/minna-1-25.json";
+import n4GrammarMap from "@/content/starters/n4-grammar-map.json";
+import n4Grammar1 from "@/content/starters/n4-grammar-1.json";
+import n4Grammar2 from "@/content/starters/n4-grammar-2.json";
+import n4Grammar3 from "@/content/starters/n4-grammar-3.json";
+import n4Grammar4 from "@/content/starters/n4-grammar-4.json";
+import n4Grammar5 from "@/content/starters/n4-grammar-5.json";
+import n4Grammar6 from "@/content/starters/n4-grammar-6.json";
+import n4Grammar7 from "@/content/starters/n4-grammar-7.json";
+import n4Grammar8 from "@/content/starters/n4-grammar-8.json";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
 
 import type { LessonDraft } from "@/lib/lesson-schema";
@@ -187,7 +196,69 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     buttonLabel: "Tạo bài 25 từ mẫu",
     draft: lessonDraftSchema.parse(minnaLesson25),
   },
+  {
+    id: "n4-grammar-map",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo bản đồ ngữ pháp N4",
+    draft: lessonDraftSchema.parse(n4GrammarMap),
+  },
+  {
+    id: "n4-grammar-1",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 1",
+    draft: lessonDraftSchema.parse(n4Grammar1),
+  },
+  {
+    id: "n4-grammar-2",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 2",
+    draft: lessonDraftSchema.parse(n4Grammar2),
+  },
+  {
+    id: "n4-grammar-3",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 3",
+    draft: lessonDraftSchema.parse(n4Grammar3),
+  },
+  {
+    id: "n4-grammar-4",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 4",
+    draft: lessonDraftSchema.parse(n4Grammar4),
+  },
+  {
+    id: "n4-grammar-5",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 5",
+    draft: lessonDraftSchema.parse(n4Grammar5),
+  },
+  {
+    id: "n4-grammar-6",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 6",
+    draft: lessonDraftSchema.parse(n4Grammar6),
+  },
+  {
+    id: "n4-grammar-7",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 7",
+    draft: lessonDraftSchema.parse(n4Grammar7),
+  },
+  {
+    id: "n4-grammar-8",
+    course: "Tổng ôn ngữ pháp N4",
+    buttonLabel: "Tạo tổng ôn N4 · 8",
+    draft: lessonDraftSchema.parse(n4Grammar8),
+  },
 ];
+
+// The new-lesson page lists each course in its own section.
+export const MINNA_STARTERS = STARTER_LESSONS.filter(
+  (starter) => starter.draft.courseId === "minna-1",
+);
+export const N4_REVIEW_STARTERS = STARTER_LESSONS.filter(
+  (starter) => starter.draft.courseId === "n4-grammar",
+);
 
 export function findStarterLesson(id: string) {
   return STARTER_LESSONS.find((starter) => starter.id === id);

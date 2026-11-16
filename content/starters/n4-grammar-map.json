@@ -1,0 +1,312 @@
+{
+  "id": "n4-grammar-map",
+  "title": "Tổng ôn N4 · Bản đồ ngữ pháp N4",
+  "titleJa": "N4文法マップ",
+  "summary": "Bìa của bộ tổng ôn ngữ pháp JLPT N4: 111 mẫu của 8 bài theo chủ đề trên một bản đồ, cùng bảng tra theo dạng đứng trước chỗ trống để biết mẫu nằm ở bài nào khi làm đề. Bảng do Reng tự biên soạn.",
+  "order": 1,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4g0-s01",
+        "type": "title",
+        "jp": "N4 {文法|ぶんぽう}マップ",
+        "vi": "Bản đồ ngữ pháp N4"
+      },
+      {
+        "id": "n4g0-s02",
+        "type": "note",
+        "title": "Dùng bản đồ khi làm đề",
+        "body": "1. Quên mẫu ở một câu: nhìn chữ ngay trước chỗ trống, tra bảng \"Tra theo dạng\" để biết mẫu nằm ở bài nào.\n2. Nhớ nghĩa mà quên mẫu: tìm nghĩa trong bảng của từng bài.\n3. Mở bài đó (hoặc trang Tra ngữ pháp của lớp) để xem cách chia, ví dụ và chỗ hay nhầm.\n4. Sau khi nộp, mỗi câu sai có link Ôn lại mẫu dẫn thẳng tới mẫu đó."
+      },
+      {
+        "id": "n4g0-s03",
+        "type": "table",
+        "title": "8 bài tổng ôn",
+        "columns": ["Bài", "Chủ đề", "Số mẫu"],
+        "rows": [
+          ["1", "Nối câu: lý do, trái ý, đồng thời, cách thức", "12"],
+          ["2", "Ý chí, dự định, mục đích, quyết định, thay đổi", "15"],
+          ["3", "Thể khả năng, trạng thái, hoàn thành", "12"],
+          ["4", "Điều kiện và thời gian", "14"],
+          ["5", "Suy đoán và truyền đạt", "14"],
+          ["6", "Bị động và sai khiến", "14"],
+          ["7", "Cho nhận và kính ngữ", "14"],
+          ["8", "Trợ từ, mẫu ngắn, danh từ hóa", "16"]
+        ]
+      },
+      {
+        "id": "n4g0-s04",
+        "type": "table",
+        "title": "Tra theo dạng đứng trước chỗ trống",
+        "columns": ["Trước （　）", "Mẫu hay gặp", "Bài"],
+        "rows": [
+          ["Vます bỏ ます", "ながら・そう・やすい・すぎる・かた", "1, 5, 8"],
+          ["Vて", "しまう・おく・ある・みる・ほしい", "2, 3"],
+          ["Vて (cho nhận)", "あげる・くれる・もらう・いただく", "7"],
+          ["Vる", "つもり・ために・ように・ことに する", "2"],
+          ["Vる (thời điểm)", "ところ・とき・まで・までに", "3, 4"],
+          ["Vた", "ばかり・ところ・とき・ら", "3, 4"],
+          ["Vない", "で・ずに・ように・ければ", "1, 2, 4"],
+          ["Vない bỏ い", "くても いい・ければ ならない", "4"],
+          ["V ý chí (よう)", "と 思って います", "2"],
+          ["Thể thường", "そうです・ようです・らしい・はず", "5"],
+          ["Thể thường", "ので・のに・し・かもしれない", "1, 5"],
+          ["Danh từ", "の ために・の ような・しか・ばかり", "2, 5, 8"]
+        ]
+      },
+      {
+        "id": "n4g0-s05",
+        "type": "table",
+        "title": "Tra theo dạng động từ trong câu",
+        "columns": ["Gặp dạng", "Là", "Bài"],
+        "rows": [
+          ["Vれる／Vられる", "khả năng hay bị động hay tôn kính", "3, 6, 7"],
+          ["Vせる／Vさせる", "sai khiến", "6"],
+          ["Vせられる／Vされる", "sai khiến bị động (bị bắt)", "6"],
+          ["Vえば／Vければ", "điều kiện ば", "4"],
+          ["いらっしゃる・おっしゃる", "tôn kính (người trên)", "7"],
+          ["まいる・もうす・おる", "khiêm nhường (bản thân)", "7"],
+          ["お V に なる", "tôn kính", "7"],
+          ["お V する", "khiêm nhường", "7"],
+          ["見える・聞こえる", "tự thấy, tự nghe", "3"],
+          ["Vが Vて いる／ある", "trạng thái", "3"]
+        ]
+      },
+      {
+        "id": "n4g0-s06",
+        "type": "table",
+        "title": "Bài 1 · Nối câu: lý do, trái ý, đồng thời, cách thức",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["〜んです／〜んですか", "giải thích, hỏi lý do"],
+          ["〜んですが、〜", "nêu hoàn cảnh rồi nhờ"],
+          ["〜し、〜し", "vừa … vừa (liệt kê lý do)"],
+          ["〜ので", "vì … nên (khách quan)"],
+          ["〜のに", "vậy mà (trái mong đợi)"],
+          ["V(ます)ながら", "vừa làm A vừa làm B"],
+          ["Vて／Vないで ＋ V2", "làm B trong trạng thái A"],
+          ["V1ないで、V2", "không làm A mà làm B"],
+          ["Vずに", "= ないで (văn viết)"],
+          ["〜て・〜くて・〜で", "vì … nên (cảm xúc)"],
+          ["Vなくて、〜", "vì không … nên"],
+          ["〜たり〜たり する", "nào là … nào là"]
+        ]
+      },
+      {
+        "id": "n4g0-s07",
+        "type": "table",
+        "title": "Bài 2 · Ý chí, dự định, mục đích, quyết định, thay đổi (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["〜(よ)う（意向形）", "thể ý chí: … nhé, … thôi"],
+          ["〜(よ)うと 思って います", "đang định …"],
+          ["Vる／Vない つもりです", "định (không) …"],
+          ["Vる／Nの 予定です", "dự kiến, theo lịch"],
+          ["Vる／Nの ために", "để (chủ ý); vì N"],
+          ["Vる／Vない ように", "để (đạt trạng thái)"],
+          ["Vる のに 使う／便利", "dùng để, cho việc …"],
+          ["Vる ように なる", "trở nên (có thể) …"]
+        ]
+      },
+      {
+        "id": "n4g0-s08",
+        "type": "table",
+        "title": "Bài 2 · Ý chí, dự định, mục đích, quyết định, thay đổi (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Vる／Vない ように する", "cố gắng (không) …"],
+          ["Vる／Vない ことに する", "(tôi) quyết định …"],
+          ["Vる ことに なる", "được quyết định là …"],
+          ["〜ように 言う／頼む", "bảo, nhờ ai làm …"],
+          ["Vます + なさい", "hãy … (người trên)"],
+          ["Nに Vて ほしい", "muốn ai làm …"],
+          ["〜たがる／ほしがる", "(người khác) muốn …"]
+        ]
+      },
+      {
+        "id": "n4g0-s09",
+        "type": "table",
+        "title": "Bài 3 · Thể khả năng, trạng thái, hoàn thành",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Vえる／Vられる／できる", "có thể …"],
+          ["Nが {見|み}える／{聞|き}こえる", "nhìn thấy, nghe thấy"],
+          ["Nが {見|み}られる／{聞|き}ける", "xem được, nghe được"],
+          ["Nが {開|あ}く／Nを {開|あ}ける", "tự động từ / tha động từ"],
+          ["Nが {自動詞|じどうし}＋て います", "đang ở trạng thái …"],
+          ["まだ Vて いません", "vẫn chưa …"],
+          ["Nが {他動詞|たどうし}＋て あります", "đã được làm sẵn"],
+          ["Vて おきます", "làm sẵn, làm trước"],
+          ["Vて しまいます／〜ちゃう", "làm xong; lỡ … mất"],
+          ["Vて みます", "thử làm"],
+          ["Vる・Vている・Vた ところ", "sắp / đang / vừa …"],
+          ["Vた ばかりです", "vừa mới … (cảm nhận)"]
+        ]
+      },
+      {
+        "id": "n4g0-s10",
+        "type": "table",
+        "title": "Bài 4 · Điều kiện và thời gian (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["〜ば／〜ければ", "nếu … thì (điều kiện)"],
+          ["〜ば 〜ほど", "càng … càng …"],
+          ["Vる と、〜", "hễ … là (tự nhiên)"],
+          ["もし 〜たら", "nếu … thì (giả định)"],
+          ["Vたら、〜", "sau khi … thì"],
+          ["〜なら", "nếu (là chuyện) … thì"],
+          ["〜ても／〜くても／〜でも", "dù … cũng"]
+        ]
+      },
+      {
+        "id": "n4g0-s11",
+        "type": "table",
+        "title": "Bài 4 · Điều kiện và thời gian (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Vる／Vた とき", "khi …"],
+          ["〜あいだ、〜", "suốt lúc …"],
+          ["〜あいだに、〜", "trong lúc … (một việc)"],
+          ["〜まで", "đến (tận) …"],
+          ["〜までに", "trước, chậm nhất là …"],
+          ["〜なければ／〜ないと", "phải …"],
+          ["〜なくても いい", "không cần … cũng được"]
+        ]
+      },
+      {
+        "id": "n4g0-s12",
+        "type": "table",
+        "title": "Bài 5 · Suy đoán và truyền đạt (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Vます／A＋そうです", "trông có vẻ, sắp …"],
+          ["〜そうな N／〜そうに V", "そう trước danh từ, động từ"],
+          ["普通形＋そうです", "nghe nói …"],
+          ["Nに よると、〜そうです", "theo (nguồn tin) …"],
+          ["普通形＋ようです", "hình như (tự suy ra)"],
+          ["普通形＋みたいです", "hình như (văn nói)"],
+          ["普通形＋らしいです", "nghe đâu; đúng chất N"]
+        ]
+      },
+      {
+        "id": "n4g0-s13",
+        "type": "table",
+        "title": "Bài 5 · Suy đoán và truyền đạt (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["普通形＋はずです", "chắc chắn, lẽ ra …"],
+          ["〜はずが ありません", "không thể nào …"],
+          ["普通形＋かもしれません", "có lẽ, có thể …"],
+          ["〜でしょう／〜だろう", "chắc là …"],
+          ["〜と 言って いました", "(ai đó) đã nói là …"],
+          ["〜と 伝えて いただけませんか", "nhờ nhắn lại rằng …"],
+          ["Nの ような／みたいな N", "giống như N"]
+        ]
+      },
+      {
+        "id": "n4g0-s14",
+        "type": "table",
+        "title": "Bài 6 · Bị động và sai khiến (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["V（ら）れる", "thể bị động: cách chia"],
+          ["N1は N2に Vられる", "được / bị ai làm"],
+          ["Nに Nを Vられる", "bị làm phiền"],
+          ["Nが Vられる（vật）", "vật được làm"],
+          ["Nに よって Vられる", "do (ai) tạo ra"],
+          ["Nから／Nで 作られる", "làm từ / bằng …"],
+          ["V（さ）せる", "thể sai khiến: cách chia"]
+        ]
+      },
+      {
+        "id": "n4g0-s15",
+        "type": "table",
+        "title": "Bài 6 · Bị động và sai khiến (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["人を V（さ）せる", "bắt, cho ai (tự động từ)"],
+          ["人に Nを V（さ）せる", "bắt, cho ai làm N"],
+          ["人を 喜ばせる／心配させる", "làm ai vui, lo …"],
+          ["Vさせて いただけませんか", "xin phép cho tôi …"],
+          ["Vさせて ください", "hãy để tôi …"],
+          ["V（さ）せられる／Vされる", "sai khiến bị động: chia"],
+          ["人に Vさせられる", "bị bắt làm"]
+        ]
+      },
+      {
+        "id": "n4g0-s16",
+        "type": "table",
+        "title": "Bài 7 · Cho nhận và kính ngữ (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Vて あげる", "làm cho người khác"],
+          ["Vて くれる", "ai đó làm cho tôi"],
+          ["Vて もらう", "được ai làm cho"],
+          ["Vて やる", "làm cho người dưới"],
+          ["Vて いただく", "được người trên làm cho"],
+          ["Vて くださる", "người trên làm cho tôi"],
+          ["〜て いただけませんか", "nhờ lịch sự"]
+        ]
+      },
+      {
+        "id": "n4g0-s17",
+        "type": "table",
+        "title": "Bài 7 · Cho nhận và kính ngữ (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["お〜に なる", "tôn kính: người trên làm"],
+          ["V(ら)れる", "tôn kính dạng (ら)れる"],
+          ["いらっしゃる／おっしゃる", "động từ tôn kính riêng"],
+          ["お〜ください／ご〜ください", "xin mời quý khách …"],
+          ["お〜する／ご〜する", "khiêm nhường: tôi làm"],
+          ["まいる／もうす／おる", "động từ khiêm nhường riêng"],
+          ["で ございます／ございます", "là / có (trang trọng)"]
+        ]
+      },
+      {
+        "id": "n4g0-s18",
+        "type": "table",
+        "title": "Bài 8 · Trợ từ, mẫu ngắn, danh từ hóa (1/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["N しか 〜ない／N だけ", "chỉ … (しか + phủ định)"],
+          ["N ばかり／Vて ばかり いる", "toàn là …"],
+          ["số lượng + ずつ", "mỗi …, từng … một"],
+          ["số lượng + も", "những, tới (nhấn nhiều)"],
+          ["N でも 〜ませんか", "… hay gì đó (gợi ý)"],
+          ["〜とか 〜とか", "nào là … chẳng hạn"],
+          ["〜くらい／〜ぐらい", "khoảng; ít nhất; đến mức"],
+          ["A は B ほど 〜ない", "A không … bằng B"],
+          ["〜すぎる", "quá …"],
+          ["Vます＋やすい／にくい", "dễ … / khó …"],
+          ["Vます＋かた", "cách làm …"],
+          ["〜はじめる／おわる／つづける", "bắt đầu / xong / tiếp tục"]
+        ]
+      },
+      {
+        "id": "n4g0-s19",
+        "type": "table",
+        "title": "Bài 8 · Trợ từ, mẫu ngắn, danh từ hóa (2/2)",
+        "columns": ["Mẫu", "Nghĩa"],
+        "rows": [
+          ["Aい／Aな＋さ", "độ …, sự …"],
+          ["V（thể thường）＋の／こと", "danh từ hóa: việc …"],
+          ["N1 と いう N2", "N2 tên là N1"],
+          ["〜か／〜かどうか", "câu hỏi lồng; có … không"]
+        ]
+      },
+      {
+        "id": "n4g0-s20",
+        "type": "note",
+        "title": "Ôn thế nào cho kịp thi",
+        "body": "Mỗi ngày làm bài luyện hằng ngày, xem lại câu sai qua link Ôn lại mẫu. Cuối tuần mở lại bài có nhiều câu sai nhất và làm phần câu luyện của bài đó. Các cặp dễ nhầm nhất: ために／ように, ようになる／ようにする, ことにする／ことになる, そう／よう／らしい, ば／と／たら／なら, あげる／くれる／もらう, tôn kính／khiêm nhường."
+      }
+    ],
+    "questions": []
+  }
+}

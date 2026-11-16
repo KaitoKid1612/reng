@@ -1,0 +1,1158 @@
+{
+  "id": "n4-grammar-3",
+  "title": "Tổng ôn N4 · 3 – Thể khả năng, trạng thái, hoàn thành",
+  "titleJa": "N4 文法まとめ 3　可能・状態・完了",
+  "summary": "Bộ ôn ngữ pháp theo chủ đề cho JLPT N4: thể khả năng (bảng chia 3 nhóm), 見える／聞こえる và 見られる／聞ける, cặp tự động từ – tha động từ, 〜て いる (trạng thái), まだ 〜て いない, 〜て ある, 〜て おく, 〜て しまう, 〜て みる, 〜ところ và 〜た ばかり. Các mẫu dễ nhầm được đặt cạnh nhau trong bảng phân biệt; 40 câu luyện theo dạng もんだい１ và もんだい２ (★). Mọi ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 4,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-kanoukei",
+        "pattern": "Vえる／Vられる／できる",
+        "vi": "Có thể … / không thể … (thể khả năng)",
+        "explain": "Nhóm I: đổi âm cuối u → e rồi thêm る: {書|か}く → {書|か}ける, {話|はな}す → {話|はな}せる, {泳|およ}ぐ → {泳|およ}げる, {買|か}う → {買|か}える. Nhóm II: bỏ る, thêm られる: {食|た}べる → {食|た}べられる, {起|お}きる → {起|お}きられる. Nhóm III: する → できる, {来|く}る → {来|こ}られる. Thể khả năng chia tiếp như động từ nhóm II: {書|か}けます, {書|か}けない, {書|か}けた. Tân ngữ thường đổi を → が: {日本語|にほんご}が {話|はな}せます. Nghĩa giống V thể từ điển + ことが できる (Minna bài 18) nhưng ngắn, tự nhiên hơn; thể khả năng học ở Minna bài 27.",
+        "viMistake": "Lẫn nhóm I với nhóm II: {書|か}く thành {書|か}かれる (đó là bị động/tôn kính), {行|い}く thành {行|い}きられる. Chia thừa một lần: {書|か}けられる, {運|はこ}べられる là sai. {帰|かえ}る, {入|はい}る, {走|はし}る, {知|し}る trông như nhóm II nhưng là nhóm I: {帰|かえ}れる, không phải {帰|かえ}られる. {来|こ}られる đọc là こられる, không phải くられる. Đề N4 hay dùng が làm dấu hiệu: thấy 「Nが （　　）」 với động từ vốn cần を thì nghĩ ngay đến thể khả năng. Dạng {見|み}れる, {食|た}べれる là văn nói, trong bài thi chọn {見|み}られる, {食|た}べられる.",
+        "examples": [
+          {
+            "jp": "ランさんは {日本語|にほんご}の {新聞|しんぶん}が {読|よ}めます。",
+            "vi": "Lan đọc được báo tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{仕事|しごと}が {忙|いそが}しくて、{今週|こんしゅう}は ジムに {行|い}けません。",
+            "vi": "Công việc bận nên tuần này tôi không đi tập gym được.",
+            "audio": null
+          },
+          {
+            "jp": "あしたの パーティーに {来|こ}られますか。",
+            "vi": "Ngày mai bạn đến dự tiệc được không? ({来|く}る → {来|こ}られる)",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-mieru-kikoeru",
+        "pattern": "Nが {見|み}える／{聞|き}こえる",
+        "vi": "Nhìn thấy / nghe thấy (cảnh, âm thanh tự lọt vào mắt, tai)",
+        "explain": "{見|み}える, {聞|き}こえる là động từ riêng, không phải thể khả năng của {見|み}る, {聞|き}く. Dùng khi cảnh vật, âm thanh tự đến mắt, tai mà không cần chủ ý; vật được thấy/nghe đi với が. Hay đi với 〜から (từ đâu), よく, はっきり. Phủ định {見|み}えない／{聞|き}こえない: không thấy, không nghe rõ vì xa, tối, ồn, mắt kém. Minna bài 27.",
+        "viMistake": "Tiếng Việt nói “nhìn thấy được” nên hay chọn {見|み}られる. Cảnh tự hiện ra trước mắt thì cách nói tự nhiên là {見|み}えます: {窓|まど}から {海|うみ}が {見|み}えます; {見|み}られる nhấn vào việc có dịp, có điều kiện để xem. Cũng sai trợ từ: {音|おと}を {聞|き}こえる → phải là {音|おと}が {聞|き}こえる.",
+        "examples": [
+          {
+            "jp": "{晴|は}れた {日|ひ}は、{部屋|へや}の {窓|まど}から {海|うみ}が {見|み}えます。",
+            "vi": "Ngày nắng, từ cửa sổ phòng nhìn thấy biển.",
+            "audio": null
+          },
+          {
+            "jp": "{夜|よる}に なると、{遠|とお}くから {電車|でんしゃ}の {音|おと}が {聞|き}こえます。",
+            "vi": "Về đêm, nghe thấy tiếng tàu điện từ xa vọng lại.",
+            "audio": null
+          },
+          {
+            "jp": "{前|まえ}の {人|ひと}の {頭|あたま}で、スクリーンが よく {見|み}えません。",
+            "vi": "Bị đầu người ngồi trước che nên không nhìn rõ màn hình.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-mirareru-kikeru",
+        "pattern": "Nが {見|み}られる／{聞|き}ける",
+        "vi": "Có thể xem / có thể nghe (nhờ có dịp, phương tiện, điều kiện)",
+        "explain": "Đây là thể khả năng bình thường của {見|み}る, {聞|き}く: người muốn xem/nghe, và nhờ có nơi chốn, thiết bị, cơ hội nên làm được. Ví dụ: ở {動物園|どうぶつえん} này có thể xem gấu trúc, dùng ứng dụng này có thể nghe radio. Minna bài 27 (đặt cạnh {見|み}える／{聞|き}こえる).",
+        "viMistake": "Ngược lại với mục trên: “trên mạng có thể xem phim Nhật” dùng {見|み}られます, không dùng {見|み}えます. Mẹo: có chủ ý + có phương tiện, cơ hội → {見|み}られる／{聞|き}ける; không chủ ý, cảnh/âm thanh tự đến → {見|み}える／{聞|き}こえる. {声|こえ}, {音|おと} lọt vào tai luôn là {聞|き}こえる.",
+        "examples": [
+          {
+            "jp": "{駅前|えきまえ}の カフェでは {毎週|まいしゅう} {金曜日|きんようび}に ジャズが {聞|き}けます。",
+            "vi": "Ở quán cà phê trước ga, thứ Sáu hằng tuần có thể nghe nhạc jazz.",
+            "audio": null
+          },
+          {
+            "jp": "この {動物園|どうぶつえん}では パンダが {見|み}られます。",
+            "vi": "Ở sở thú này có thể xem gấu trúc.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-jidoushi-tadoushi",
+        "pattern": "Nが {開|あ}く／Nを {開|あ}ける",
+        "vi": "Cặp tự động từ (が) – tha động từ (を)",
+        "explain": "Tự động từ: vật tự thay đổi, chủ ngữ là vật, đi với が: ドアが {開|あ}く. Tha động từ: người tác động vào vật, đi với を: ドアを {開|あ}ける. Cặp hay gặp ở N4: {開|あ}く・{開|あ}ける, {閉|し}まる・{閉|し}める, つく・つける, {消|き}える・{消|け}す, {始|はじ}まる・{始|はじ}める, {止|と}まる・{止|と}める, {壊|こわ}れる・{壊|こわ}す, {落|お}ちる・{落|お}とす, {割|わ}れる・{割|わ}る, {入|はい}る・{入|い}れる, {出|で}る・{出|だ}す, {並|なら}ぶ・{並|なら}べる. Minna bài 29–30 dùng các cặp này với 〜て います và 〜て あります.",
+        "viMistake": "Tiếng Việt “mở cửa” và “cửa mở” dùng cùng một động từ, nên người Việt hay ghép sai: {電気|でんき}が {消|け}します, ドアを {閉|し}まります. Mẹo: nhìn trợ từ trước chỗ trống — が thì chọn tự động từ, を thì chọn tha động từ.",
+        "examples": [
+          {
+            "jp": "{風|かぜ}で ドアが {閉|し}まりました。",
+            "vi": "Cửa đóng lại vì gió (tự động từ {閉|し}まる).",
+            "audio": null
+          },
+          {
+            "jp": "{寒|さむ}いので、{窓|まど}を {閉|し}めて ください。",
+            "vi": "Lạnh quá, bạn đóng cửa sổ giúp (tha động từ {閉|し}める).",
+            "audio": null
+          },
+          {
+            "jp": "{地震|じしん}で {棚|たな}から {本|ほん}が {落|お}ちました。",
+            "vi": "Do động đất, sách rơi từ trên kệ xuống.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-iru-joutai",
+        "pattern": "Nが {自動詞|じどうし}＋て います",
+        "vi": "(Vật) đang ở trạng thái … (kết quả còn lại của một thay đổi)",
+        "explain": "Tự động từ thể て + います diễn tả trạng thái còn lại sau khi thay đổi đã xảy ra: {電気|でんき}が ついて います (đèn đang bật), {車|くるま}が {止|と}まって います (xe đang đỗ), {財布|さいふ}が {落|お}ちて います (ví nằm rơi ở đó). Cách dùng với cặp tự/tha động từ học ở Minna bài 29. Động từ như {結婚|けっこん}する, {住|す}む, {知|し}る cũng dùng ている để nói trạng thái (bài 15). Ngoài ra Vて います còn nghĩa “đang làm” (bài 14), nghề nghiệp ({銀行|ぎんこう}で {働|はたら}いて います – bài 15) và thói quen ({毎週|まいしゅう} {通|かよ}って います – bài 28).",
+        "viMistake": "Dịch “đang” nên tưởng sự việc đang diễn ra: {窓|まど}が {開|あ}いて います không phải “cửa sổ đang mở ra” mà là “cửa sổ đang để mở”. Hay dùng nhầm tha động từ: {窓|まど}が {開|あ}けて います là sai ({開|あ}けて います cần を và người làm).",
+        "examples": [
+          {
+            "jp": "{駐車場|ちゅうしゃじょう}に {知|し}らない {車|くるま}が {止|と}まって います。",
+            "vi": "Trong bãi đỗ có một chiếc xe lạ đang đỗ.",
+            "audio": null
+          },
+          {
+            "jp": "エレベーターが {壊|こわ}れて いるので、{階段|かいだん}を {使|つか}いましょう。",
+            "vi": "Thang máy đang hỏng nên mình đi cầu thang bộ nhé.",
+            "audio": null
+          },
+          {
+            "jp": "{姉|あね}は {結婚|けっこん}して、ダナンに {住|す}んで います。",
+            "vi": "Chị tôi đã kết hôn và đang sống ở Đà Nẵng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-mada-te-inai",
+        "pattern": "まだ Vて いません",
+        "vi": "Vẫn chưa … (việc dự kiến sẽ làm nhưng chưa làm)",
+        "explain": "Trả lời câu hỏi もう Vましたか: はい、もう Vました／いいえ、まだ Vて いません (hoặc ngắn: まだです). Vて いません diễn tả trạng thái “chưa hoàn thành” tính đến bây giờ. Thể thường: まだ Vて いない. Minna bài 31.",
+        "viMistake": "Dịch máy móc “chưa ăn” thành まだ {食|た}べませんでした (sai) hoặc まだ {食|た}べません (nghĩa là “bây giờ chưa ăn, để sau”). Câu hỏi もう 〜ましたか thì câu trả lời phủ định luôn là まだ 〜て いません.",
+        "examples": [
+          {
+            "jp": "A「レポートは もう {出|だ}しましたか。」B「いいえ、まだ {出|だ}して いません。」",
+            "vi": "A: Nộp báo cáo chưa? B: Chưa, tôi vẫn chưa nộp.",
+            "audio": null
+          },
+          {
+            "jp": "{注文|ちゅうもん}した {本|ほん}が まだ {届|とど}いて いません。",
+            "vi": "Cuốn sách tôi đặt vẫn chưa được giao tới.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-aru",
+        "pattern": "Nが {他動詞|たどうし}＋て あります",
+        "vi": "(Vật) đã được ai đó làm sẵn và đang ở trạng thái đó (có mục đích)",
+        "explain": "Tha động từ thể て + あります. Vật đi với が (không dùng を). Diễn tả trạng thái do có người đã cố ý làm, thường để chuẩn bị: {机|つくえ}に {資料|しりょう}が {置|お}いて あります. Không nói ai làm. Minna bài 30.",
+        "viMistake": "Lẫn với tự động từ + ています: {窓|まど}が {開|あ}いて います chỉ tả cửa đang mở; {窓|まど}が {開|あ}けて あります là có người đã mở sẵn (ví dụ để phòng thoáng). Sai hay gặp: ghép tự động từ với てある ({開|あ}いて あります ×) hoặc tha động từ với ている mà giữ が ({開|あ}けて います ×).",
+        "examples": [
+          {
+            "jp": "{玄関|げんかん}に {花|はな}が {飾|かざ}って あります。",
+            "vi": "Ở lối vào có cắm sẵn hoa trang trí.",
+            "audio": null
+          },
+          {
+            "jp": "{袋|ふくろ}に {名前|なまえ}が {書|か}いて あるから、すぐ {分|わ}かります。",
+            "vi": "Túi có ghi sẵn tên nên nhận ra ngay.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}までの {地図|ちず}は {机|つくえ}の {上|うえ}に {置|お}いて あります。",
+            "vi": "Bản đồ đường ra ga đã để sẵn trên bàn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-oku",
+        "pattern": "Vて おきます",
+        "vi": "Làm sẵn, làm trước (chuẩn bị); để nguyên như thế",
+        "explain": "Vて + おく. (1) Làm trước để chuẩn bị cho việc sau: {旅行|りょこう}の {前|まえ}に ホテルを {予約|よやく}して おく. (2) Làm xong một việc để thuận tiện về sau: {使|つか}ったら {片付|かたづ}けて おく. (3) Để nguyên trạng thái: {窓|まど}を {開|あ}けて おいて ください (cứ để cửa mở). Văn nói: 〜とく ({買|か}っとく, {読|よ}んどく). Minna bài 30.",
+        "viMistake": "Lẫn với てあります: 〜て おきます nói hành động của người làm, đi với を ({資料|しりょう}を コピーして おきます); 〜て あります tả trạng thái của vật, đi với が ({資料|しりょう}が コピーして あります). Lẫn với てしまう: おく là chuẩn bị có kế hoạch, しまう là xong hẳn hoặc lỡ làm.",
+        "examples": [
+          {
+            "jp": "テトの {前|まえ}に、{飛行機|ひこうき}の チケットを {買|か}って おきます。",
+            "vi": "Trước Tết, tôi mua sẵn vé máy bay.",
+            "audio": null
+          },
+          {
+            "jp": "{授業|じゅぎょう}の {前|まえ}に、{新|あたら}しい ことばを {調|しら}べて おいて ください。",
+            "vi": "Trước giờ học, các bạn tra trước từ mới nhé.",
+            "audio": null
+          },
+          {
+            "jp": "まだ {使|つか}いますから、パソコンは つけて おいて ください。",
+            "vi": "Tôi còn dùng nên cứ để máy tính bật nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-shimau",
+        "pattern": "Vて しまいます／〜ちゃう",
+        "vi": "(1) Làm xong hết; (2) lỡ làm mất rồi (tiếc nuối)",
+        "explain": "Vて + しまう. (1) Hoàn thành trọn vẹn: {宿題|しゅくだい}は もう やって しまいました. (2) Việc không mong muốn đã xảy ra, người nói tiếc hoặc ngại: {財布|さいふ}を なくして しまいました. Văn nói: 〜て しまう → 〜ちゃう, 〜で しまう → 〜じゃう ({食|た}べちゃった, {飲|の}んじゃった). Minna bài 29.",
+        "viMistake": "Lẫn với ておく: lỡ quên, lỡ làm hỏng dùng しまいました; chuẩn bị trước dùng おきます. Không nhận ra 〜ちゃった／〜じゃった chính là 〜て しまった trong hội thoại thể thường.",
+        "examples": [
+          {
+            "jp": "{母|はは}が {大切|たいせつ}に して いた お{皿|さら}を {割|わ}って しまいました。",
+            "vi": "Tôi lỡ làm vỡ cái đĩa mẹ rất quý.",
+            "audio": null
+          },
+          {
+            "jp": "この {本|ほん}は おもしろくて、{一晩|ひとばん}で {読|よ}んで しまいました。",
+            "vi": "Cuốn sách hay quá, tôi đọc hết trong một đêm.",
+            "audio": null
+          },
+          {
+            "jp": "{宿題|しゅくだい}は もう {全部|ぜんぶ} やっちゃった。",
+            "vi": "Bài tập thì mình làm xong hết rồi (やって しまった).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-miru",
+        "pattern": "Vて みます",
+        "vi": "Thử làm (để xem thế nào)",
+        "explain": "Vて + みる: làm thử một việc để biết kết quả, cảm giác. Hay gặp: Vて みたいです (muốn thử), Vて みても いいですか (xin làm thử), Vて みて ください (hãy thử). みる viết bằng hiragana. Minna bài 40.",
+        "viMistake": "Quên chia thể て: {食|た}べみます, {食|た}べるみます là sai. Lẫn với Vた ことが あります: {食|た}べて みました = (lần này) đã ăn thử; {食|た}べた ことが あります = có kinh nghiệm đã từng ăn.",
+        "examples": [
+          {
+            "jp": "{日本|にほん}に {行|い}ったら、{新幹線|しんかんせん}に {乗|の}って みたいです。",
+            "vi": "Nếu sang Nhật, tôi muốn đi thử tàu Shinkansen.",
+            "audio": null
+          },
+          {
+            "jp": "{分|わ}からない ことばは、まず {辞書|じしょ}で {調|しら}べて みて ください。",
+            "vi": "Từ nào không hiểu thì trước hết thử tra từ điển xem.",
+            "audio": null
+          },
+          {
+            "jp": "この ペン、{書|か}きやすいですよ。ちょっと {使|つか}って みて ください。",
+            "vi": "Cây bút này dễ viết lắm, bạn dùng thử xem.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-tokoro",
+        "pattern": "Vる・Vている・Vた ところ",
+        "vi": "Sắp … / đang … / vừa mới … (đúng thời điểm đó)",
+        "explain": "ところ chỉ “thời điểm” của hành động. Vる ところです: sắp làm (đi với これから, {今|いま}から). Vて いる ところです: đang làm dở (đi với {今|いま}). Vた ところです: vừa làm xong, ngay trước lúc nói (đi với たった{今|いま}, {今|いま}, ちょうど). Hay dùng để giải thích tình hình khi có người hỏi, gọi điện. Minna bài 46.",
+        "viMistake": "Chỉ nhìn chữ {今|いま} để chọn thể: {今|いま} đi được với cả ba, phải xem cả câu — これから → Vる; còn đang dở, “chờ chút” → Vている; たった{今|いま}, vừa xong → Vた. Lẫn Vた ところ với Vた ばかり (xem mục sau).",
+        "examples": [
+          {
+            "jp": "{映画|えいが}は {今|いま}から {始|はじ}まる ところです。",
+            "vi": "Phim sắp bắt đầu ngay bây giờ.",
+            "audio": null
+          },
+          {
+            "jp": "A「{今|いま} {話|はな}せる？」B「ごめん、{運転|うんてん}して いる ところ。」",
+            "vi": "A: Giờ nói chuyện được không? B: Xin lỗi, mình đang lái xe.",
+            "audio": null
+          },
+          {
+            "jp": "たった{今|いま} {空港|くうこう}に {着|つ}いた ところです。",
+            "vi": "Tôi vừa mới đến sân bay xong.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ta-bakari",
+        "pattern": "Vた ばかりです",
+        "vi": "Vừa mới … (theo cảm nhận của người nói, có thể đã vài ngày, vài tháng)",
+        "explain": "Vた + ばかり. Diễn tả việc mới xảy ra chưa lâu theo cảm nhận người nói: có thể vài phút, cũng có thể vài tháng ({先月|せんげつ} {来|き}た ばかりです). Hay đi kèm lý do hoặc ý trái ngược: 〜た ばかりなので, 〜た ばかりなのに; nối danh từ: {買|か}った ばかりの {靴|くつ}. Minna bài 46.",
+        "viMistake": "Lẫn với Vた ところ: ところ chỉ đúng khoảnh khắc ngay sau khi xong, nên không dùng với {先月|せんげつ}, {去年|きょねん}: {先月|せんげつ} {来|き}た ところです × → {来|き}た ばかりです. Khác hẳn Vて ばかり (chỉ toàn làm … – bộ 8).",
+        "examples": [
+          {
+            "jp": "{入社|にゅうしゃ}した ばかりなので、まだ {仕事|しごと}に {慣|な}れて いません。",
+            "vi": "Tôi mới vào công ty nên chưa quen việc.",
+            "audio": null
+          },
+          {
+            "jp": "{覚|おぼ}えた ばかりの ことばを もう {忘|わす}れて しまいました。",
+            "vi": "Từ vừa mới học thuộc mà tôi đã quên mất rồi.",
+            "audio": null
+          },
+          {
+            "jp": "{起|お}きた ばかりで、まだ {頭|あたま}が ぼんやりして います。",
+            "vi": "Vừa mới ngủ dậy nên đầu óc còn lơ mơ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g3-s01",
+        "type": "title",
+        "jp": "N4 {文法|ぶんぽう}まとめ 3",
+        "vi": "Thể khả năng, trạng thái, hoàn thành"
+      },
+      {
+        "id": "n4g3-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "Ôn theo chủ đề cho JLPT N4: các mẫu dễ nhầm được đặt cạnh nhau.\n1. Chia thể khả năng; phân biệt 見える／聞こえる với 見られる／聞ける.\n2. Tự động từ – tha động từ; trạng thái: 〜て いる, 〜て ある, まだ 〜て いない.\n3. Hành động và hoàn thành: 〜て おく, 〜て しまう, 〜て みる, 〜ところ, 〜た ばかり.\nCách dùng: xem slide mẫu → ví dụ → làm câu luyện. Đang làm đề mà quên mẫu nào thì mở đúng mục đó."
+      },
+      {
+        "id": "n4g3-s03",
+        "type": "grammar",
+        "ref": "n4g-kanoukei"
+      },
+      {
+        "id": "n4g3-s04",
+        "type": "example",
+        "ref": "n4g-kanoukei",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s05",
+        "type": "table",
+        "title": "Cách chia thể khả năng",
+        "columns": ["Nhóm", "Thể từ điển", "Thể khả năng", "Thể ます"],
+        "rows": [
+          ["I", "{書|か}く", "{書|か}ける", "{書|か}けます"],
+          ["I", "{話|はな}す", "{話|はな}せる", "{話|はな}せます"],
+          ["I", "{待|ま}つ", "{待|ま}てる", "{待|ま}てます"],
+          ["I", "{買|か}う", "{買|か}える", "{買|か}えます"],
+          ["I", "{泳|およ}ぐ", "{泳|およ}げる", "{泳|およ}げます"],
+          ["I", "{読|よ}む", "{読|よ}める", "{読|よ}めます"],
+          ["II", "{食|た}べる", "{食|た}べられる", "{食|た}べられます"],
+          ["II", "{起|お}きる", "{起|お}きられる", "{起|お}きられます"],
+          ["III", "する", "できる", "できます"],
+          ["III", "{来|く}る", "{来|こ}られる", "{来|こ}られます"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột cuối; nhắc: tân ngữ đổi を → が."
+      },
+      {
+        "id": "n4g3-s06",
+        "type": "quiz",
+        "ref": "n4g3-q01"
+      },
+      {
+        "id": "n4g3-s07",
+        "type": "grammar",
+        "ref": "n4g-mieru-kikoeru"
+      },
+      {
+        "id": "n4g3-s08",
+        "type": "example",
+        "ref": "n4g-mieru-kikoeru",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s09",
+        "type": "grammar",
+        "ref": "n4g-mirareru-kikeru"
+      },
+      {
+        "id": "n4g3-s10",
+        "type": "example",
+        "ref": "n4g-mirareru-kikeru",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s11",
+        "type": "table",
+        "title": "Phân biệt 見える／見られる・聞こえる／聞ける",
+        "columns": ["Câu", "Lý do", "Chọn"],
+        "rows": [
+          ["{窓|まど}から {海|うみ}が ＿", "cảnh tự lọt vào mắt", "{見|み}えます"],
+          ["アプリで {映画|えいが}が ＿", "có phương tiện, chủ ý", "{見|み}られます"],
+          ["{隣|となり}から {声|こえ}が ＿", "âm thanh tự đến tai", "{聞|き}こえます"],
+          ["ラジオで ニュースが ＿", "có cách để nghe", "{聞|き}けます"],
+          ["{暗|くら}くて {字|じ}が ＿", "mắt không thấy rõ", "{見|み}えません"],
+          ["{忙|いそが}しくて {試合|しあい}が ＿", "không có dịp xem", "{見|み}られません"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g3-s12",
+        "type": "quiz",
+        "ref": "n4g3-q05"
+      },
+      {
+        "id": "n4g3-s13",
+        "type": "grammar",
+        "ref": "n4g-jidoushi-tadoushi"
+      },
+      {
+        "id": "n4g3-s14",
+        "type": "example",
+        "ref": "n4g-jidoushi-tadoushi",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s15",
+        "type": "table",
+        "title": "Cặp tự động từ – tha động từ",
+        "columns": ["Tự (Nが)", "Tha (Nを)", "Nghĩa"],
+        "rows": [
+          ["{開|あ}く", "{開|あ}ける", "mở"],
+          ["{閉|し}まる", "{閉|し}める", "đóng"],
+          ["つく", "つける", "bật (đèn, máy)"],
+          ["{消|き}える", "{消|け}す", "tắt"],
+          ["{始|はじ}まる", "{始|はじ}める", "bắt đầu"],
+          ["{止|と}まる", "{止|と}める", "dừng, đỗ"],
+          ["{壊|こわ}れる", "{壊|こわ}す", "hỏng / làm hỏng"],
+          ["{落|お}ちる", "{落|お}とす", "rơi / đánh rơi"],
+          ["{割|わ}れる", "{割|わ}る", "vỡ / làm vỡ"],
+          ["{入|はい}る", "{入|い}れる", "vào / cho vào"],
+          ["{出|で}る", "{出|だ}す", "ra / lấy ra"],
+          ["{並|なら}ぶ", "{並|なら}べる", "xếp hàng / xếp"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che một cột, cho học viên nói cặp còn lại."
+      },
+      {
+        "id": "n4g3-s16",
+        "type": "quiz",
+        "ref": "n4g3-q29"
+      },
+      {
+        "id": "n4g3-s17",
+        "type": "grammar",
+        "ref": "n4g-te-iru-joutai"
+      },
+      {
+        "id": "n4g3-s18",
+        "type": "example",
+        "ref": "n4g-te-iru-joutai",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s19",
+        "type": "table",
+        "title": "Các nghĩa của Vて います",
+        "columns": ["Nghĩa", "Ví dụ"],
+        "rows": [
+          ["Đang làm", "{今|いま} {本|ほん}を {読|よ}んで います"],
+          ["Trạng thái kết quả", "{窓|まど}が {開|あ}いて います"],
+          ["Thói quen", "{毎朝|まいあさ} {走|はし}って います"],
+          ["Nghề, nơi làm", "{銀行|ぎんこう}で {働|はたら}いて います"],
+          ["Trạng thái lâu dài", "{結婚|けっこん}して います"],
+          ["Chưa làm", "まだ {食|た}べて いません"]
+        ]
+      },
+      {
+        "id": "n4g3-s20",
+        "type": "grammar",
+        "ref": "n4g-mada-te-inai"
+      },
+      {
+        "id": "n4g3-s21",
+        "type": "example",
+        "ref": "n4g-mada-te-inai",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s22",
+        "type": "grammar",
+        "ref": "n4g-te-aru"
+      },
+      {
+        "id": "n4g3-s23",
+        "type": "example",
+        "ref": "n4g-te-aru",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s24",
+        "type": "table",
+        "title": "Phân biệt ている／てある／ておく",
+        "columns": ["Câu", "Trợ từ + động từ", "Ý nghĩa"],
+        "rows": [
+          ["{窓|まど}が {開|あ}いて いる", "が + tự ĐT", "cửa đang để mở (tả)"],
+          ["{窓|まど}が {開|あ}けて ある", "が + tha ĐT", "ai đó đã mở sẵn"],
+          ["{窓|まど}を {開|あ}けて おく", "を + tha ĐT", "(tôi) mở sẵn, để mở"],
+          ["{窓|まど}を {開|あ}けて いる", "を + tha ĐT", "đang mở ra (hành động)"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g3-s25",
+        "type": "quiz",
+        "ref": "n4g3-q15"
+      },
+      {
+        "id": "n4g3-s26",
+        "type": "grammar",
+        "ref": "n4g-te-oku"
+      },
+      {
+        "id": "n4g3-s27",
+        "type": "example",
+        "ref": "n4g-te-oku",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s28",
+        "type": "grammar",
+        "ref": "n4g-te-shimau"
+      },
+      {
+        "id": "n4g3-s29",
+        "type": "example",
+        "ref": "n4g-te-shimau",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s30",
+        "type": "quiz",
+        "ref": "n4g3-q21"
+      },
+      {
+        "id": "n4g3-s31",
+        "type": "grammar",
+        "ref": "n4g-te-miru"
+      },
+      {
+        "id": "n4g3-s32",
+        "type": "example",
+        "ref": "n4g-te-miru",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s33",
+        "type": "grammar",
+        "ref": "n4g-tokoro"
+      },
+      {
+        "id": "n4g3-s34",
+        "type": "example",
+        "ref": "n4g-tokoro",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s35",
+        "type": "table",
+        "title": "Vる／Vている／Vた ところ",
+        "columns": ["Thời điểm", "Mẫu", "Từ đi kèm"],
+        "rows": [
+          ["sắp làm", "{食|た}べる ところ", "これから・{今|いま}から"],
+          ["đang làm dở", "{食|た}べて いる ところ", "{今|いま}・ちょっと {待|ま}って"],
+          ["vừa xong", "{食|た}べた ところ", "たった{今|いま}・ちょうど"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g3-s36",
+        "type": "grammar",
+        "ref": "n4g-ta-bakari"
+      },
+      {
+        "id": "n4g3-s37",
+        "type": "example",
+        "ref": "n4g-ta-bakari",
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s38",
+        "type": "table",
+        "title": "Phân biệt Vた ところ／Vた ばかり",
+        "columns": ["Câu", "ところ", "ばかり"],
+        "rows": [
+          ["たった{今|いま} {着|つ}いた ＿", "○", "○"],
+          ["{先月|せんげつ} {来|き}た ＿", "×", "○"],
+          ["{買|か}った ＿の {靴|くつ}", "×", "○"],
+          ["Cảm giác", "đúng lúc vừa xong", "thấy còn mới"]
+        ]
+      },
+      {
+        "id": "n4g3-s39",
+        "type": "quiz",
+        "ref": "n4g3-q27"
+      },
+      {
+        "id": "n4g3-s40",
+        "type": "dialogue",
+        "title": "Hội thoại: nhà mới của Nam",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "{引|ひ}っ{越|こ}し、{終|お}わった？",
+            "vi": "Chuyển nhà xong chưa?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{来|き}た ばかりで、まだ {片付|かたづ}けて いる ところ。",
+            "vi": "Mới đến thôi, mình vẫn đang dọn dở."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "わあ、{窓|まど}から {川|かわ}が {見|み}えるね。",
+            "vi": "Ồ, từ cửa sổ nhìn thấy sông nhỉ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "うん。{夏|なつ}は {花火|はなび}も {見|み}られるよ。",
+            "vi": "Ừ. Mùa hè còn xem được pháo hoa nữa."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "あ、ビールが {冷|ひ}やして ある。",
+            "vi": "A, có bia ướp lạnh sẵn kìa."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ハナさんが {来|く}るから、{買|か}って おいたんだ。",
+            "vi": "Vì Hana đến nên mình mua sẵn đấy."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g3-s41",
+        "type": "quiz",
+        "ref": "n4g3-q38"
+      },
+      {
+        "id": "n4g3-s42",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "「Nが （　　）」 với động từ vốn cần を → thể khả năng ({書|か}けます, できます).\nCảnh, âm thanh tự đến → {見|み}える／{聞|き}こえる; có dịp, có phương tiện → {見|み}られる／{聞|き}ける.\nTrước chỗ trống là が → tự động từ; là を → tha động từ.\nNが + tự ĐT → 〜て いる; Nが + tha ĐT → 〜て ある; Nを + tha ĐT → 〜て おく (chuẩn bị).\nもう 〜ましたか → いいえ、まだ 〜て いません.\nĐáng tiếc, lỡ, hoặc xong hết → 〜て しまう (〜ちゃった); làm thử → 〜て みる.\nこれから → Vる ところ; đang dở → Vて いる ところ; たった今 → Vた ところ.\nMốc xa như 先月, 去年 mà vẫn “mới” → Vた ばかり, không dùng ところ."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g3-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日本語|にほんご}を {勉強|べんきょう}して 1{年|ねん}に なります。{今|いま}は {簡単|かんたん}な {漢字|かんじ}が （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kanoukei"],
+        "explain": "Học tiếng Nhật được 1 năm, giờ tôi viết được chữ Hán đơn giản. 漢字が + chỗ trống → cần thể khả năng: {書|か}く (nhóm I) → {書|か}ける → {書|か}けます. {書|か}きます cần を, không đi với が. {書|か}きられます là chia nhầm theo nhóm II; {書|か}けられます là chia khả năng hai lần.",
+        "type": "choice",
+        "options": ["{書|か}きます", "{書|か}けます", "{書|か}きられます", "{書|か}けられます"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日本|にほん}に {来|き}た ときは {納豆|なっとう}が （　　） が、{今|いま}は {大好|だいす}きです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kanoukei"],
+        "explain": "Lúc mới sang Nhật tôi không ăn được natto, giờ thì rất thích. 納豆が → thể khả năng; {食|た}べる (nhóm II) → {食|た}べられる. {食|た}べませんでした, {食|た}べて みませんでした cần を; {食|た}べさせる là sai khiến (bắt ai ăn), không hợp が và nghĩa câu.",
+        "type": "choice",
+        "options": [
+          "{食|た}べませんでした",
+          "{食|た}べさせませんでした",
+          "{食|た}べて みませんでした",
+          "{食|た}べられませんでした"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q03",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {公園|こうえん}では {夜|よる} 9{時|じ}まで サッカーが （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kanoukei"],
+        "explain": "Ở công viên này có thể chơi bóng đá đến 9 giờ tối. Thể khả năng của する là できる, và サッカーが đi với できます. します cần を; しられます không có; させます là sai khiến, cần を và người bị bắt làm.",
+        "type": "choice",
+        "options": ["できます", "します", "しられます", "させます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{台風|たいふう}で {電車|でんしゃ}が {止|と}まって、{今夜|こんや}は {家|いえ}に （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kanoukei"],
+        "explain": "Vì bão nên tàu điện dừng chạy, tối nay tôi không về nhà được. {帰|かえ}る trông như nhóm II nhưng là nhóm I: る → れ + る → {帰|かえ}れる → {帰|かえ}れません. {帰|かえ}られません là dạng bị động/tôn kính, không dùng cho chính mình; {帰|かえ}りられません là chia nhầm theo nhóm II từ thể ます; {帰|かえ}れられません là chia khả năng hai lần.",
+        "type": "choice",
+        "options": [
+          "{帰|かえ}られません",
+          "{帰|かえ}りられません",
+          "{帰|かえ}れません",
+          "{帰|かえ}れられません"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "めがねを {忘|わす}れたので、{黒板|こくばん}の {字|じ}が よく （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mieru-kikoeru"],
+        "explain": "Quên kính nên không nhìn rõ chữ trên bảng. Mắt không thấy rõ (không phải thiếu dịp xem) → {見|み}えません. {見|み}られません là không có cơ hội, điều kiện để xem; {見|み}せません là “không cho xem”; {見|み}ません cần を.",
+        "type": "choice",
+        "options": ["{見|み}られません", "{見|み}せません", "{見|み}えません", "{見|み}ません"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q06",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "もしもし、{電波|でんぱ}が {悪|わる}くて、{声|こえ}が よく （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mieru-kikoeru"],
+        "explain": "Alo, sóng yếu nên không nghe rõ tiếng. Âm thanh không lọt tới tai → {聞|き}こえません. {聞|き}けません là không có dịp, điều kiện để nghe; {聞|き}かせません là “không cho nghe”; {聞|き}きません cần を và là việc cố ý.",
+        "type": "choice",
+        "options": ["{聞|き}こえません", "{聞|き}けません", "{聞|き}かせません", "{聞|き}きません"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{飛行機|ひこうき}の {窓|まど}から {下|した}を {見|み}ると、{町|まち}が とても {小|ちい}さく （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mieru-kikoeru"],
+        "explain": "Nhìn xuống từ cửa sổ máy bay, thành phố trông rất nhỏ. Cảnh tự hiện ra trước mắt, 町が làm chủ ngữ → {見|み}えました (小さく {見|み}える: trông nhỏ). {見|み}せました, {見|み}させました cần người làm và を; {見|み}ました thì thành phố không thể là chủ ngữ.",
+        "type": "choice",
+        "options": ["{見|み}せました", "{見|み}ました", "{見|み}させました", "{見|み}えました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この アプリを {使|つか}えば、{日本|にほん}の ラジオが どこでも （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mirareru-kikeru"],
+        "explain": "Dùng ứng dụng này thì nghe được đài Nhật ở bất cứ đâu. Có phương tiện, có chủ ý nghe → thể khả năng {聞|き}けます. {聞|き}こえます là âm thanh tự lọt vào tai, không hợp với “dùng app để nghe”; {聞|き}かせます là sai khiến (cho ai nghe), cần người làm và を; {聞|き}きます cần を.",
+        "type": "choice",
+        "options": ["{聞|き}こえます", "{聞|き}けます", "{聞|き}かせます", "{聞|き}きます"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q09",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来月|らいげつ} {北海道|ほっかいどう}へ {行|い}けば、{有名|ゆうめい}な {雪|ゆき}まつりが （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mirareru-kikeru"],
+        "explain": "Tháng sau đi Hokkaido thì có thể xem lễ hội tuyết nổi tiếng. Có dịp, có chủ ý đi xem → {見|み}られます. {見|み}えます là cảnh tự hiện ra trước mắt, không hợp với “đi đến đó thì xem được”; {見|み}せます, {見|み}させます cần người làm và を.",
+        "type": "choice",
+        "options": ["{見|み}られます", "{見|み}えます", "{見|み}せます", "{見|み}させます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q10",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議室|かいぎしつ}の {電気|でんき}が まだ （　　） よ。だれか いるんですか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-iru-joutai"],
+        "explain": "Đèn phòng họp vẫn đang bật đấy. Có ai trong đó à? 電気が + trạng thái → tự động từ つく + ています. つけて います cần を (ai đó đang bật); tự động từ không đi với あります; つけて おきます cần を và là hành động chuẩn bị.",
+        "type": "choice",
+        "options": ["つけて います", "ついて あります", "つけて おきます", "ついて います"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q11",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{道|みち}に {財布|さいふ}が （　　） いたので、{交番|こうばん}に {届|とど}けました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-iru-joutai"],
+        "explain": "Thấy cái ví rơi trên đường nên tôi mang đến đồn cảnh sát. 財布が + trạng thái → {落|お}ちて いました (tự động từ + ている). {落|お}として cần を; {落|お}ちる, {落|お}とした không nối được với いる.",
+        "type": "choice",
+        "options": ["{落|お}として", "{落|お}ちて", "{落|お}ちる", "{落|お}とした"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q12",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あの {店|みせ}は {今日|きょう}は {休|やす}みですね。シャッターが （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-iru-joutai"],
+        "explain": "Hôm nay quán kia nghỉ nhỉ. Cửa cuốn đang đóng. Tả trạng thái, シャッターが → tự động từ {閉|し}まる + ています. {閉|し}めて います, {閉|し}めて しまいます cần を; tự động từ không đi với あります.",
+        "type": "choice",
+        "options": [
+          "{閉|し}めて います",
+          "{閉|し}まって あります",
+          "{閉|し}まって います",
+          "{閉|し}めて しまいます"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q13",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{新|あたら}しい {映画|えいが}、もう {見|み}ましたか。」B「いいえ、まだ （　　）。{今週末|こんしゅうまつ} {見|み}に {行|い}く つもりです。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mada-te-inai"],
+        "explain": "A: Phim mới bạn xem chưa? B: Chưa, tôi vẫn chưa xem. Cuối tuần này định đi xem. Trả lời もう 〜ましたか bằng phủ định → まだ {見|み}て いません. まだ {見|み}ませんでした là lỗi dịch từ tiếng Việt; {見|み}て いました, {見|み}ました là khẳng định, trái với いいえ.",
+        "type": "choice",
+        "options": [
+          "{見|み}て いません",
+          "{見|み}ませんでした",
+          "{見|み}て いました",
+          "{見|み}ました"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q14",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先週|せんしゅう} {送|おく}った メールの {返事|へんじ}が まだ （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mada-te-inai"],
+        "explain": "Thư gửi tuần trước vẫn chưa có hồi âm. まだ + trạng thái chưa xảy ra đến bây giờ → {来|き}て いません. {来|き}ませんでした là quá khứ đã kết thúc, không đi với まだ; {来|き}て いました, {来|き}て しまいました là khẳng định (đã đến), mâu thuẫn với まだ.",
+        "type": "choice",
+        "options": [
+          "{来|き}ませんでした",
+          "{来|き}て いました",
+          "{来|き}て しまいました",
+          "{来|き}て いません"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q15",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {部屋|へや}は {窓|まど}が {開|あ}けて （　　） から、{涼|すず}しいですよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-aru"],
+        "explain": "Phòng này cửa sổ được mở sẵn nên mát lắm. 窓が + tha động từ {開|あ}ける → {開|あ}けて あります (ai đó đã mở sẵn). {開|あ}けて います cần を (đang mở ra); おきます, みます là hành động của người làm, cũng cần を chứ không đi với が.",
+        "type": "choice",
+        "options": ["います", "あります", "おきます", "みます"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{冷蔵庫|れいぞうこ}に ジュースが （　　） ありますから、{自由|じゆう}に {飲|の}んで ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-aru"],
+        "explain": "Trong tủ lạnh có nước trái cây đã ướp lạnh sẵn, cứ tự nhiên uống. てあります đi với tha động từ: {冷|ひ}やす → {冷|ひ}やして あります. {冷|ひ}える là tự động từ, không đi với あります; {冷|ひ}やす, {冷|ひ}えた không phải thể て.",
+        "type": "choice",
+        "options": ["{冷|ひ}えて", "{冷|ひ}やして", "{冷|ひ}やす", "{冷|ひ}えた"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q17",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{会場|かいじょう}の {準備|じゅんび}は {大丈夫|だいじょうぶ}ですか。」B「はい、いすは もう （　　）。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-aru"],
+        "explain": "A: Hội trường chuẩn bị ổn chưa? B: Rồi, ghế đã được xếp sẵn. Ghế được người xếp sẵn → tha động từ {並|なら}べる + てあります. {並|なら}ぶ là tự động từ (tự xếp hàng), không đi với あります, おきます hay みました ở đây.",
+        "type": "choice",
+        "options": [
+          "{並|なら}んで あります",
+          "{並|なら}んで おきます",
+          "{並|なら}べて あります",
+          "{並|なら}んで みました"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q18",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この はさみ、{使|つか}ったら {引|ひ}き{出|だ}しに {戻|もど}して （　　） ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-oku"],
+        "explain": "Cây kéo này dùng xong thì cất lại vào ngăn kéo giúp nhé. Nhờ ai làm sẵn cho lần sau → Vて おいて ください. てある tả trạng thái, không dùng trong lời nhờ (あって ください ×); おいた, おく không nối được với ください.",
+        "type": "choice",
+        "options": ["おいて", "あって", "おいた", "おく"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q19",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{試験|しけん}の {前|まえ}に、{去年|きょねん}の {問題|もんだい}で （　　） ほうが いいですよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-oku"],
+        "explain": "Trước kỳ thi nên luyện trước bằng đề năm ngoái. Lời khuyên chuẩn bị trước → Vて おいた ほうが いい (động từ trước ほうが いい ở thể た). {練習|れんしゅう}して おいて, {練習|れんしゅう}して しまって là thể て, không đứng trước ほうが いい; ところの không nối với ほうが いい.",
+        "type": "choice",
+        "options": [
+          "{練習|れんしゅう}して おいて",
+          "{練習|れんしゅう}して いる ところの",
+          "{練習|れんしゅう}して しまって",
+          "{練習|れんしゅう}して おいた"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q20",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{朝|あさ} {起|お}きられなくて、{会社|かいしゃ}に 30{分|ぷん}も {遅|おく}れて （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-shimau"],
+        "explain": "Sáng không dậy nổi nên tôi lỡ đến công ty muộn tận 30 phút. Việc đáng tiếc, ngoài ý muốn → Vて しまいました. おきました (cố ý làm trước để chuẩn bị) và みました (cố ý làm thử) đều là hành động có chủ ý, mâu thuẫn với lý do “không dậy nổi” ở đầu câu; {遅|おく}れる là tự động từ nên không dùng てありました.",
+        "type": "choice",
+        "options": ["しまいました", "おきました", "ありました", "みました"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q21",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「あれ？ {冷蔵庫|れいぞうこ}の アイス、ないよ。」B「ごめん、きのう {食|た}べ（　　）。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-shimau"],
+        "explain": "A: Ơ, kem trong tủ lạnh đâu rồi? B: Xin lỗi, hôm qua mình lỡ ăn mất rồi. {食|た}べちゃった = {食|た}べて しまった (văn nói), vừa “hết rồi” vừa tiếc. ちゃう và て おく là thể không quá khứ, không hợp với きのう; て あった tả trạng thái của vật (cần vật + が), không dùng để kể việc mình đã làm.",
+        "type": "choice",
+        "options": ["ちゃう", "て おく", "ちゃった", "て あった"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q22",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{一度|いちど} {着物|きもの}を {着|き}て （　　） です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-miru"],
+        "explain": "Tôi muốn mặc thử kimono một lần. Vて みたいです = muốn thử làm. ありたい không đi sau thể て; みる です, みて です không đúng ngữ pháp.",
+        "type": "choice",
+        "options": ["ありたい", "みる", "みて", "みたい"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q23",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{初|はじ}めて ベトナムの コーヒーを {飲|の}んで （　　） が、とても {甘|あま}くて おいしかったです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-miru"],
+        "explain": "Lần đầu uống thử cà phê Việt Nam, thấy rất ngọt và ngon. Làm thử để biết cảm giác → Vて みました. てありました cần vật làm chủ ngữ với が; おきました là chuẩn bị trước, không hợp “lần đầu … thấy ngon”; いました (đang uống) không hợp với {初|はじ}めて.",
+        "type": "choice",
+        "options": ["ありました", "みました", "おきました", "いました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q24",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "これから {家|いえ}を （　　） ところですから、{駅|えき}で {会|あ}いましょう。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tokoro"],
+        "explain": "Giờ tôi sắp ra khỏi nhà, mình gặp nhau ở ga nhé. これから → sắp làm → V thể từ điển + ところ. {出|で}た ところ là vừa ra, {出|で}て いる ところ là đang ra, đều mâu thuẫn với これから; {出|で}よう không đứng trước ところ.",
+        "type": "choice",
+        "options": ["{出|で}る", "{出|で}た", "{出|で}て いる", "{出|で}よう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q25",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「レポート、{終|お}わった？」B「ううん、{今|いま} （　　） ところ。もう {半分|はんぶん} {書|か}いたよ。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tokoro"],
+        "explain": "A: Báo cáo xong chưa? B: Chưa, giờ đang viết dở. Viết được một nửa rồi. Việc đang làm giữa chừng → Vて いる ところ. {書|か}く ところ là sắp bắt đầu, nhưng đã viết một nửa; {書|か}いた ところ là vừa viết xong, trái với ううん; {書|か}こう không đứng trước ところ.",
+        "type": "choice",
+        "options": ["{書|か}く", "{書|か}いた", "{書|か}いて いる", "{書|か}こう"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q26",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{荷物|にもつ}は もう {届|とど}きましたか。」B「ええ、たった{今|いま} （　　） ところです。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tokoro"],
+        "explain": "A: Hàng đến chưa? B: Rồi, vừa mới đến xong. たった{今|いま} + đã xảy ra → Vた ところ. {届|とど}く ところ là sắp đến, trái với ええ; {届|とど}いて いる ところ không dùng được vì {届|とど}く là việc xảy ra trong khoảnh khắc, không có “đang dở”; {届|とど}かなかった là phủ định, trái với ええ và không đứng trước ところです như vậy.",
+        "type": "choice",
+        "options": ["{届|とど}く", "{届|とど}いて いる", "{届|とど}かなかった", "{届|とど}いた"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q27",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先月|せんげつ} この {町|まち}に {引|ひ}っ{越|こ}して （　　） なので、まだ {近所|きんじょ}の ことが よく {分|わ}かりません。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ta-bakari"],
+        "explain": "Tháng trước tôi mới chuyển đến thị trấn này nên chưa rõ khu xung quanh. Mốc {先月|せんげつ} cách đây cả tháng nhưng người nói thấy “mới” → Vた ばかり. Vた ところ chỉ khoảnh khắc ngay sau khi xong, không dùng với {先月|せんげつ}; くる ところ, きて いる ところ sai thời điểm.",
+        "type": "choice",
+        "options": ["きた ところ", "くる ところ", "きて いる ところ", "きた ばかり"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q28",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {靴|くつ}は {先週|せんしゅう} {買|か}った （　　） なのに、もう {壊|こわ}れて しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ta-bakari"],
+        "explain": "Đôi giày này mới mua tuần trước mà đã hỏng rồi. {先週|せんしゅう} + “vừa mới” theo cảm nhận → Vた ばかりなのに. ところ không dùng với mốc {先週|せんしゅう}; しか, ずつ không đứng sau Vた như vậy.",
+        "type": "choice",
+        "options": ["ところ", "ばかり", "しか", "ずつ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q29",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{風|かぜ}が {強|つよ}くて、{窓|まど}の ガラスが （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-jidoushi-tadoushi"],
+        "explain": "Gió mạnh làm kính cửa sổ vỡ. ガラスが + vật tự thay đổi → tự động từ {割|わ}れる → {割|わ}れました. {割|わ}る là tha động từ (người làm vỡ, cần を); {割|わ}って いました, {割|わ}らせました cũng cần người làm và を.",
+        "type": "choice",
+        "options": [
+          "{割|わ}りました",
+          "{割|わ}って いました",
+          "{割|わ}れました",
+          "{割|わ}らせました"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q30",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部屋|へや}を {出|で}る ときは、エアコンを （　　） ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-jidoushi-tadoushi"],
+        "explain": "Khi ra khỏi phòng hãy tắt điều hòa. エアコンを → tha động từ {消|け}す → {消|け}して ください. {消|き}える là tự động từ, không đi với を; てあって ください không dùng trong lời nhờ.",
+        "type": "choice",
+        "options": ["{消|き}えて", "{消|け}して あって", "{消|け}して", "{消|き}えて おいて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q31",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{毎朝|まいあさ} 9{時|じ}に {授業|じゅぎょう}が （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-jidoushi-tadoushi"],
+        "explain": "Mỗi sáng lớp học bắt đầu lúc 9 giờ. 授業が → tự động từ {始|はじ}まる. {始|はじ}める là tha động từ, cần を (先生が 授業を {始|はじ}めます); tự động từ không đi với あります; {始|はじ}めさせます là sai khiến.",
+        "type": "choice",
+        "options": [
+          "{始|はじ}めます",
+          "{始|はじ}まります",
+          "{始|はじ}まって あります",
+          "{始|はじ}めさせます"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q32",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}が わたしの カメラを （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-jidoushi-tadoushi"],
+        "explain": "Em trai tôi làm hỏng máy ảnh của tôi. カメラを + người làm là {弟|おとうと} → tha động từ {壊|こわ}す → {壊|こわ}しました. Ba lựa chọn còn lại đều dùng tự động từ {壊|こわ}れる, không đi với を.",
+        "type": "choice",
+        "options": [
+          "{壊|こわ}しました",
+          "{壊|こわ}れました",
+          "{壊|こわ}れて いました",
+          "{壊|こわ}れて しまいました"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q33",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あれ？ ＿＿　＿★＿　＿＿　＿＿。だれか {来|き}たのかな。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-iru-joutai"],
+        "explain": "Câu đúng: あれ？ ドアの かぎが {開|あ}いて います。だれか {来|き}たのかな。(Ơ, khóa cửa đang mở. Có ai đến chăng?) Thứ tự: ドアの → かぎが → {開|あ}いて → います; ô ★ là かぎが. Tự động từ {開|あ}く + ています tả trạng thái khóa đang mở.",
+        "type": "choice",
+        "options": ["ドアの", "{開|あ}いて", "います", "かぎが"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q34",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{教室|きょうしつ}の ホワイトボードに ＿＿　＿＿　＿＿　＿★＿ あります。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-aru"],
+        "explain": "Câu đúng: {教室|きょうしつ}の ホワイトボードに あしたの {会議|かいぎ}の {予定|よてい}が {書|か}いて あります。(Trên bảng trắng lớp học có ghi sẵn lịch họp ngày mai.) Thứ tự: あしたの → {会議|かいぎ}の → {予定|よてい}が → {書|か}いて; ô ★ là {書|か}いて.",
+        "type": "choice",
+        "options": ["あしたの", "{会議|かいぎ}の", "{書|か}いて", "{予定|よてい}が"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q35",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{友|とも}だちが {来|く}る {前|まえ}に、＿★＿　＿＿　＿＿　＿＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-oku"],
+        "explain": "Câu đúng: {友|とも}だちが {来|く}る {前|まえ}に、{冷|つめ}たい {飲|の}み{物|もの}を {買|か}って おきます。(Trước khi bạn đến, tôi mua sẵn đồ uống lạnh.) Thứ tự: {冷|つめ}たい → {飲|の}み{物|もの}を → {買|か}って → おきます; ô ★ là {冷|つめ}たい (tính từ đứng trước danh từ nó bổ nghĩa; Vて + おきます: làm sẵn).",
+        "type": "choice",
+        "options": ["{冷|つめ}たい", "おきます", "{買|か}って", "{飲|の}み{物|もの}を"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g3-q36",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{急|いそ}いで いたので、＿＿　＿＿　＿＿　＿★＿ しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-shimau"],
+        "explain": "Câu đúng: {急|いそ}いで いたので、{一|ひと}つ {前|まえ}の {駅|えき}で {降|お}りて しまいました。(Vì vội nên tôi lỡ xuống sớm một ga.) Thứ tự: {一|ひと}つ → {前|まえ}の → {駅|えき}で → {降|お}りて; ô ★ là {降|お}りて (Vて + しまいました: lỡ làm).",
+        "type": "choice",
+        "options": ["{一|ひと}つ", "{降|お}りて", "{駅|えき}で", "{前|まえ}の"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q37",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "パソコンが {動|うご}かない ときは、＿＿　＿＿　＿★＿　＿＿ ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-miru"],
+        "explain": "Câu đúng: パソコンが {動|うご}かない ときは、{横|よこ}の ボタンを {押|お}して みて ください。(Khi máy tính không chạy, hãy thử bấm nút ở bên cạnh.) Thứ tự: {横|よこ}の → ボタンを → {押|お}して → みて; ô ★ là {押|お}して (Vて + みて ください: hãy thử làm).",
+        "type": "choice",
+        "options": ["{横|よこ}の", "ボタンを", "みて", "{押|お}して"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g3-q38",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{田中|たなか}さん、いますか。」B「{今|いま} ＿★＿　＿＿　＿＿　＿＿ ですよ。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tokoro"],
+        "explain": "Câu đúng: {今|いま} {昼|ひる}ごはんを {食|た}べに {行|い}った ところですよ。(Anh ấy vừa mới đi ăn trưa.) Thứ tự: {昼|ひる}ごはんを → {食|た}べに → {行|い}った → ところ; ô ★ là {昼|ひる}ごはんを. {食|た}べに {行|い}く: đi để ăn; Vた ところ: vừa làm xong.",
+        "type": "choice",
+        "options": ["{行|い}った", "{食|た}べに", "{昼|ひる}ごはんを", "ところ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g3-q39",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{箱|はこ}の {中|なか}で ＿＿　＿★＿　＿＿　＿＿ います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ta-bakari"],
+        "explain": "Câu đúng: {箱|はこ}の {中|なか}で {生|う}まれた ばかりの {子|こ}ねこが {寝|ね}て います。(Trong hộp, chú mèo con mới sinh đang ngủ.) Thứ tự: {生|う}まれた → ばかりの → {子|こ}ねこが → {寝|ね}て; ô ★ là ばかりの (Vた ばかりの + N: N vừa mới …).",
+        "type": "choice",
+        "options": ["{生|う}まれた", "ばかりの", "{寝|ね}て", "{子|こ}ねこが"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g3-q40",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅前|えきまえ}の {新|あたら}しい {店|みせ}で ＿＿　＿★＿　＿＿　＿＿ {知|し}って いますか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kanoukei"],
+        "explain": "Câu đúng: {駅前|えきまえ}の {新|あたら}しい {店|みせ}で ベトナムの フォーが {食|た}べられる のを {知|し}って いますか。(Bạn có biết ở quán mới trước ga có thể ăn phở Việt Nam không?) Thứ tự: ベトナムの → フォーが → {食|た}べられる → のを; ô ★ là フォーが (tân ngữ của thể khả năng đi với が).",
+        "type": "choice",
+        "options": ["フォーが", "ベトナムの", "{食|た}べられる", "のを"],
+        "multiple": false,
+        "answer": [0]
+      }
+    ]
+  }
+}

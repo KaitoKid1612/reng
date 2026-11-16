@@ -4,7 +4,9 @@ import { test } from "node:test";
 import rawStarter from "../content/starters/minna-1-11.json";
 import rawStarter12 from "../content/starters/minna-1-12.json";
 import rawDraft from "../content/lessons/lesson-01.json";
+import n4DailyBank from "../content/review-banks/n4-daily-with-listening.json";
 import { audioHash, canonicalAudio } from "../lib/audio-config";
+import { grammarRefs } from "../lib/grammar-links";
 import {
   parseFurigana,
   splitJapaneseRuns,
@@ -171,6 +173,15 @@ test("the Minna starters are registered in lesson order", () => {
       ["minna-1-23", "minna-1", 23],
       ["minna-1-24", "minna-1", 24],
       ["minna-1-25", "minna-1", 25],
+      ["n4-grammar-map", "n4-grammar", 1],
+      ["n4-grammar-1", "n4-grammar", 2],
+      ["n4-grammar-2", "n4-grammar", 3],
+      ["n4-grammar-3", "n4-grammar", 4],
+      ["n4-grammar-4", "n4-grammar", 5],
+      ["n4-grammar-5", "n4-grammar", 6],
+      ["n4-grammar-6", "n4-grammar", 7],
+      ["n4-grammar-7", "n4-grammar", 8],
+      ["n4-grammar-8", "n4-grammar", 9],
     ],
   );
   assert.deepEqual(findStarterLesson("minna-1-11")?.draft, lessonDraftSchema.parse(rawStarter));
@@ -183,7 +194,14 @@ for (const starter of STARTER_LESSONS) {
     const draft = toDraftState(starter.draft);
     assert.deepEqual(findPublishProblems(draft), []);
     assert.deepEqual(toPublishableContent(draft.content), content);
-    for (const type of ["vocab", "table", "grammar", "example", "dialogue", "quiz", "note"]) {
+    // A Minna lesson has every kind of slide; an N4 review deck has no words, and its map is
+    // tables of every pattern with no questions of its own.
+    const isMap = starter.id === "n4-grammar-map";
+    let required = ["vocab", "table", "grammar", "example", "dialogue", "quiz", "note"];
+    if (starter.draft.courseId === "n4-grammar") {
+      required = isMap ? ["title", "note", "table"] : required.slice(1);
+    }
+    for (const type of required) {
       assert.ok(
         content.slides.some((slide) => slide.type === type),
         `missing a ${type} slide`,
@@ -198,6 +216,7 @@ for (const starter of STARTER_LESSONS) {
       }
     }
     const keys = positions.reduce((sum, count) => sum + count, 0);
+    assert.ok(keys > 0 || isMap, "a lesson starter needs choice questions");
     assert.ok(
       positions.every((count) => count >= keys * 0.18 && count <= keys * 0.32),
       `answer positions ${positions.join("/")}`,
@@ -221,3 +240,39 @@ for (const starter of STARTER_LESSONS) {
     assert.equal(serialized.includes('"answer"'), false);
   });
 }
+
+test("the N4 review decks tag every question with a point they explain, and the map lists all", () => {
+  const decks = STARTER_LESSONS.filter(
+    (starter) => starter.draft.courseId === "n4-grammar" && starter.id !== "n4-grammar-map",
+  );
+  const map = findStarterLesson("n4-grammar-map")?.draft.content;
+  assert.ok(map);
+  const mapped = new Set(
+    map.slides.flatMap((slide) => (slide.type === "table" ? slide.rows.map((row) => row[0]) : [])),
+  );
+  const seen = new Set<string>();
+  for (const deck of decks) {
+    const { grammar, questions } = deck.draft.content;
+    for (const point of grammar) {
+      assert.equal(seen.has(point.id), false, `${point.id} is in two decks`);
+      seen.add(point.id);
+      assert.ok(mapped.has(point.pattern), `the map misses ${point.pattern}`);
+    }
+    for (const question of questions) {
+      const refs = grammarRefs(question.tags);
+      assert.ok(refs.length > 0, `${question.id} names no grammar point`);
+      assert.ok(
+        refs.every((ref) => grammar.some((point) => point.id === ref)),
+        `${question.id} names a point outside ${deck.id}`,
+      );
+    }
+  }
+  assert.equal(decks.length, 8);
+  // Việt's daily N4 bank links its grammar questions to these points after an answer.
+  const bankRefs = n4DailyBank.content.questions.flatMap((question) => grammarRefs(question.tags));
+  assert.ok(bankRefs.length >= 100);
+  assert.deepEqual(
+    bankRefs.filter((ref) => !seen.has(ref)),
+    [],
+  );
+});

@@ -1,0 +1,1089 @@
+{
+  "id": "n4-grammar-1",
+  "title": "Tổng ôn N4 · 1 – Nối câu: lý do, trái ý, đồng thời, cách thức",
+  "titleJa": "N4文法まとめ１　理由・逆接・同時・方法",
+  "summary": "Bộ tổng ôn ngữ pháp JLPT N4 theo chủ đề: các mẫu nối câu chỉ lý do (〜んです, 〜し, 〜ので, 〜て・〜くて・〜で, 〜なくて), trái ý (〜のに), đồng thời và liệt kê (〜ながら, 〜たり〜たり), cách thức và “thay vì” (Vて／Vないで, 〜ずに). Có bảng cách nối, bảng phân biệt các mẫu dễ nhầm và 40 câu luyện theo dạng đề N4 (もんだい１, もんだい２). Mọi ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 2,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-ndesu",
+        "pattern": "〜んです／〜んですか",
+        "vi": "Giải thích lý do, hoàn cảnh; hỏi thêm vì quan tâm điều mình thấy",
+        "explain": "Thể thường + んです (văn viết: のです). Danh từ và tính từ な ở hiện tại đổi だ → な: 学生なんです, 暇なんです. Dùng khi: (1) hỏi thêm về điều mình thấy, nghe được (どう したんですか, どこで 買ったんですか); (2) trả lời câu hỏi どうして, nêu lý do ở cuối câu (〜んです thay cho 〜からです); (3) trình bày hoàn cảnh trước khi nói tiếp. Minna bài 26.",
+        "viMistake": "Quên đổi だ → な: 雨だんです là sai, phải là 雨なんです. Gắn んです vào thể lịch sự (行きますんです) cũng sai: chỉ gắn vào thể thường. Không dùng んです cho câu chỉ báo tin đơn thuần như giới thiệu tên; hỏi người trên bằng 〜んですか khi không có gì để thắc mắc dễ nghe như tra hỏi.",
+        "examples": [
+          {
+            "jp": "A：{昨日|きのう}、どうしたんですか。 B：{熱|ねつ}が あったんです。",
+            "vi": "A: Hôm qua anh bị làm sao vậy? B: Tôi bị sốt.",
+            "audio": null
+          },
+          {
+            "jp": "いい {時計|とけい}ですね。だれに もらったんですか。",
+            "vi": "Đồng hồ đẹp nhỉ. Ai tặng bạn thế? (hỏi vì thấy và quan tâm)",
+            "audio": null
+          },
+          {
+            "jp": "{私|わたし}、{辛|から}い {物|もの}が {苦手|にがて}なんです。",
+            "vi": "Tôi không ăn được đồ cay (nên …) – tính từ な: だ → な.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ndesuga",
+        "pattern": "〜んですが、〜",
+        "vi": "Nêu hoàn cảnh rồi nhờ vả (〜て いただけませんか) hoặc xin lời khuyên (〜たら いいですか) một cách lịch sự",
+        "explain": "Thể thường + んですが để mở lời, nêu hoàn cảnh của mình; vế sau là lời nhờ Vて いただけませんか (lịch sự hơn Vて ください), lời xin khuyên Vたら いいですか, hoặc bỏ lửng (〜んですが……) để người nghe tự hiểu. Minna bài 26.",
+        "viMistake": "Chọn のに ở chỗ này: のに là “vậy mà”, không mở lời nhờ được. 〜ので、〜て いただけませんか cũng đúng ngữ pháp, nhưng んですが mềm và tự nhiên hơn khi bắt chuyện. Hay viết sai いただけませんか thành いただきませんか (sai nghĩa: không phải lời nhờ) hoặc quên thể て: 見る いただけませんか là sai.",
+        "examples": [
+          {
+            "jp": "この {漢字|かんじ}が {読|よ}めないんですが、{教|おし}えて いただけませんか。",
+            "vi": "Tôi không đọc được chữ Hán này, anh chỉ giúp tôi được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}へ {行|い}きたいんですが、どの バスに {乗|の}ったら いいですか。",
+            "vi": "Tôi muốn ra ga, nên đi xe buýt nào thì được ạ?",
+            "audio": null
+          },
+          {
+            "jp": "すみません、ここで {写真|しゃしん}を {撮|と}りたいんですが……。",
+            "vi": "Xin lỗi, tôi muốn chụp ảnh ở đây ạ… (bỏ lửng, ngụ ý xin phép).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-shi",
+        "pattern": "〜し、〜し",
+        "vi": "Vừa … vừa …; liệt kê nhiều lý do, đặc điểm",
+        "explain": "Thể thường + し; tính từ な và danh từ giữ だ: 静かだし, 学生だし. Liệt kê nhiều đặc điểm hoặc nhiều lý do, ngụ ý “còn nữa”. Hay đi với も: 〜も〜し、〜も〜. Có thể nêu một hai lý do rồi kết luận: 〜し、〜から／〜ので …. Minna bài 28.",
+        "viMistake": "Bỏ だ: 静かし, 雨し là sai (静かだし, 雨だし); ngược với ので／のに/んです phải đổi だ → な. Dùng し để nối hai hành động theo trình tự (起きて、食べて) là sai: し là liệt kê lý do, đặc điểm. Lẫn với 〜たり: たり liệt kê hành động tiêu biểu và kết thúc bằng する.",
+        "examples": [
+          {
+            "jp": "この {店|みせ}は {安|やす}いし、{店員|てんいん}も {親切|しんせつ}だし、よく {来|き}ます。",
+            "vi": "Quán này vừa rẻ, nhân viên lại tử tế, nên tôi hay đến.",
+            "audio": null
+          },
+          {
+            "jp": "{今日|きょう}は {雨|あめ}だし、{疲|つか}れて いるし、うちに いましょう。",
+            "vi": "Hôm nay trời mưa, lại mệt nữa, mình ở nhà thôi.",
+            "audio": null
+          },
+          {
+            "jp": "ダナンは {海|うみ}も きれいだし、{食|た}べ{物|もの}も おいしいです。",
+            "vi": "Đà Nẵng biển đã đẹp, đồ ăn cũng ngon.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-node",
+        "pattern": "〜ので",
+        "vi": "Vì … nên … (khách quan, lịch sự)",
+        "explain": "Thể thường + ので; tính từ な và danh từ đổi だ → な: 雨なので, 静かなので. Trong lời rất lịch sự có thể dùng 〜ますので. Nêu lý do một cách khách quan, nhẹ nhàng – hợp khi xin phép, xin lỗi, giải thích với người trên. Minna bài 39.",
+        "viMistake": "Coi ので và から như nhau hoàn toàn: から chủ quan hơn, đứng được ở cuối câu (〜からです) và đi với mệnh lệnh mạnh; ので không đứng cuối câu kiểu 〜のでです. Lỗi chia hay gặp: 雨だので (đúng: 雨なので). Lẫn với のに vì cùng có の: vế sau là kết quả hợp lý → ので, trái mong đợi → のに.",
+        "examples": [
+          {
+            "jp": "{電車|でんしゃ}が {遅|おく}れたので、{授業|じゅぎょう}に {間|ま}に{合|あ}いませんでした。",
+            "vi": "Vì tàu đến muộn nên tôi không kịp giờ học.",
+            "audio": null
+          },
+          {
+            "jp": "{歯医者|はいしゃ}に {行|い}くので、{午後|ごご}は {休|やす}んでも いいですか。",
+            "vi": "Tôi phải đi nha sĩ, chiều nay tôi nghỉ được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{明日|あした}は {日曜日|にちようび}なので、{銀行|ぎんこう}は {休|やす}みです。",
+            "vi": "Mai là chủ nhật nên ngân hàng nghỉ (danh từ: だ → な).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-noni",
+        "pattern": "〜のに",
+        "vi": "Vậy mà, thế mà (kết quả trái mong đợi)",
+        "explain": "Thể thường + のに; tính từ な và danh từ đổi だ → な: 日曜日なのに, 元気なのに. Vế trước là sự thật, vế sau là kết quả trái với điều đương nhiên, thường kèm cảm giác bất mãn, tiếc nuối, ngạc nhiên. Vế sau là chuyện đã/đang xảy ra, không dùng ý chí, mệnh lệnh, nhờ vả, mời rủ. Minna bài 45.",
+        "viMistake": "Lẫn với 〜ても: ても là “dù (giả định) … cũng”, vế sau có thể là ý chí (雨が 降っても 行きます); のに nói chuyện có thật, trái mong đợi. Lẫn với ので: đọc vế sau – hợp lý thì ので, trái ý thì のに. Đừng nhầm với のに “để” (〜のに 使う／便利) ở tổng ôn bài 2.",
+        "examples": [
+          {
+            "jp": "{一生懸命|いっしょうけんめい} {勉強|べんきょう}したのに、{試験|しけん}に {落|お}ちました。",
+            "vi": "Đã học rất chăm vậy mà vẫn trượt kỳ thi.",
+            "audio": null
+          },
+          {
+            "jp": "{夏|なつ}なのに、{今日|きょう}は {寒|さむ}いですね。",
+            "vi": "Mùa hè vậy mà hôm nay lạnh nhỉ (danh từ: だ → な).",
+            "audio": null
+          },
+          {
+            "jp": "{何度|なんど}も {電話|でんわ}したのに、だれも {出|で}ません。",
+            "vi": "Gọi mấy lần rồi mà chẳng ai nghe máy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-nagara",
+        "pattern": "V(ます)ながら",
+        "vi": "Vừa … vừa … (một người làm hai việc cùng lúc)",
+        "explain": "Gốc ます + ながら: 聞きます → 聞きながら, 歩きます → 歩きながら, します → しながら. Một người làm hai việc song song; việc chính đặt ở vế sau. Cũng dùng cho hai việc kéo dài trong một giai đoạn: 働きながら 日本語を 習う. Minna bài 28.",
+        "viMistake": "Dùng thể từ điển hoặc thể て: 聞くながら, 聞いてながら là sai. Không dùng khi hai người khác nhau làm hai việc. Lẫn với 〜し (liệt kê lý do) và 〜たり (liệt kê việc, không cùng lúc).",
+        "examples": [
+          {
+            "jp": "{父|ちち}は いつも ニュースを {見|み}ながら {朝|あさ}ご{飯|はん}を {食|た}べます。",
+            "vi": "Bố tôi lúc nào cũng vừa xem thời sự vừa ăn sáng.",
+            "audio": null
+          },
+          {
+            "jp": "{運転|うんてん}しながら {電話|でんわ}を しないで ください。",
+            "vi": "Đừng vừa lái xe vừa gọi điện (する → しながら).",
+            "audio": null
+          },
+          {
+            "jp": "{姉|あね}は {銀行|ぎんこう}で {働|はたら}きながら、{夜|よる}は {料理|りょうり}{教室|きょうしつ}に {通|かよ}って います。",
+            "vi": "Chị tôi vừa làm ở ngân hàng vừa theo học lớp nấu ăn buổi tối.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-naide-houhou",
+        "pattern": "Vて／Vないで ＋ V2",
+        "vi": "Làm V2 trong trạng thái (không) làm V1 – cách thức",
+        "explain": "V1て V2: làm V2 trong trạng thái đã làm V1 (傘を 持って 出かける – mang ô đi ra ngoài). V1ないで V2: làm V2 mà không làm V1 (傘を 持たないで 出かける – ra ngoài mà không mang ô). Cùng một người; vế trước nói cách thức, trạng thái kèm theo. Minna bài 34.",
+        "viMistake": "Dùng Vなくて ở đây là sai: 名前を 書かなくて 出しました → 書かないで 出しました. なくて là nguyên nhân (vì không … nên), ないで là cách thức. Cũng đừng nhầm với ないで ください (xin đừng).",
+        "examples": [
+          {
+            "jp": "テストに {名前|なまえ}を {書|か}かないで {出|だ}して しまいました。",
+            "vi": "Tôi lỡ nộp bài kiểm tra mà không viết tên.",
+            "audio": null
+          },
+          {
+            "jp": "{今日|きょう}は {地図|ちず}を {見|み}ないで {友|とも}だちの うちまで {行|い}けました。",
+            "vi": "Hôm nay tôi đến được nhà bạn mà không cần xem bản đồ.",
+            "audio": null
+          },
+          {
+            "jp": "{寒|さむ}いから、{手袋|てぶくろ}を して {出|で}かけましょう。",
+            "vi": "Trời lạnh, mình đeo găng tay rồi hãy ra ngoài.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-naide-kawari",
+        "pattern": "V1ないで、V2",
+        "vi": "Không làm V1 mà làm V2 (thay vì)",
+        "explain": "V1 thể ない + で, V2: không làm việc thường làm / dự định làm (V1) mà làm việc khác (V2). Cùng chủ thể, thường là chọn một trong hai việc: 週末は 遊ばないで、アルバイトを します. Minna bài 34.",
+        "viMistake": "Dùng なくて: 出かけなくて、休みます là sai (なくて chỉ nguyên nhân). 何も／どこへも + phủ định rồi nối vế sau thì vẫn dùng ないで: 何も 買わないで、店を 出ました. Nghĩa giống 〜ずに, nhưng ずに cứng hơn.",
+        "examples": [
+          {
+            "jp": "{今日|きょう}は バスに {乗|の}らないで、{駅|えき}まで {歩|ある}きました。",
+            "vi": "Hôm nay tôi không đi xe buýt mà đi bộ ra ga.",
+            "audio": null
+          },
+          {
+            "jp": "{夏休|なつやす}みは {国|くに}へ {帰|かえ}らないで、{日本|にほん}で アルバイトを します。",
+            "vi": "Nghỉ hè tôi không về nước mà ở Nhật làm thêm.",
+            "audio": null
+          },
+          {
+            "jp": "{夜|よる}は {外|そと}で {食|た}べないで、うちで {料理|りょうり}を {作|つく}ります。",
+            "vi": "Buổi tối tôi không ăn ngoài mà nấu ăn ở nhà.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-zuni",
+        "pattern": "Vずに",
+        "vi": "Không … mà … (= Vないで, cứng hơn, văn viết)",
+        "explain": "Bỏ ない của thể ない rồi thêm ずに: 食べない → 食べずに, 言わない → 言わずに, 来ない → 来ずに (こずに); ngoại lệ する → せずに (勉強せずに). Nghĩa như Vないで (cách thức, thay vì) nhưng cứng hơn, hay gặp trong văn viết, tin tức và đề thi. Minna không dạy thành bài riêng; JLPT Sensei và Bunpro xếp mẫu này ở N3, nhưng nhiều tài liệu N4 có đưa vào vì nó hay xuất hiện cạnh ないで.",
+        "viMistake": "Chia sai する thành しずに – đúng là せずに. Không đổi ないで ください thành ずに ください. ずに đi sau gốc thể ない (食べ・言わ…), không đi sau gốc ます (言いずに là sai).",
+        "examples": [
+          {
+            "jp": "{兄|あに}は {朝|あさ}ご{飯|はん}を {食|た}べずに {会社|かいしゃ}へ {行|い}きました。",
+            "vi": "Anh tôi đi làm mà không ăn sáng.",
+            "audio": null
+          },
+          {
+            "jp": "{辞書|じしょ}を {使|つか}わずに この {本|ほん}を {読|よ}みました。",
+            "vi": "Tôi đã đọc cuốn sách này mà không dùng từ điển.",
+            "audio": null
+          },
+          {
+            "jp": "{昨日|きのう}は {勉強|べんきょう}せずに {寝|ね}て しまいました。",
+            "vi": "Hôm qua tôi lỡ ngủ mất mà không học (する → せずに).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-riyuu",
+        "pattern": "〜て・〜くて・〜で",
+        "vi": "Vì … nên … (nguyên nhân dẫn đến cảm xúc, trạng thái)",
+        "explain": "Động từ thể て, tính từ い bỏ い + くて, tính từ な / danh từ + で: 手紙を 読んで、泣いて しまいました; 問題が 難しくて、わかりません; 台風で 店が 閉まりました. Vế sau thường là cảm xúc (うれしい, 困る, びっくりする, 安心する), khả năng (〜られない, わからない) hoặc tình trạng ngoài ý muốn. Minna bài 39.",
+        "viMistake": "Vế sau không được là ý chí, mệnh lệnh, lời mời, lời nhờ: 雨が 降って、傘を 持って 行きましょう là sai → 雨が 降って いるから／いるので、…. Gặp vế sau là 〜ましょう, 〜て ください, 〜たいです, 〜ます (ý định) thì chọn ので／から, không chọn thể て. Danh từ chỉ nguyên nhân dùng で: 雨で, 病気で.",
+        "examples": [
+          {
+            "jp": "{試験|しけん}に {合格|ごうかく}して、{安心|あんしん}しました。",
+            "vi": "Đỗ kỳ thi rồi nên tôi yên tâm.",
+            "audio": null
+          },
+          {
+            "jp": "この {問題|もんだい}は {難|むずか}しくて、わかりません。",
+            "vi": "Bài này khó quá, tôi không hiểu.",
+            "audio": null
+          },
+          {
+            "jp": "{台風|たいふう}で {飛行機|ひこうき}が {飛|と}びませんでした。",
+            "vi": "Vì bão nên máy bay không cất cánh.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-nakute-riyuu",
+        "pattern": "Vなくて、〜",
+        "vi": "Vì không … nên … (cảm xúc, khó khăn)",
+        "explain": "Thể ない bỏ い + くて: わからない → わからなくて, 来ない → 来なくて, 読めない → 読めなくて. Chỉ nguyên nhân phủ định; vế sau giống 〜て lý do: cảm xúc (困りました, 心配しました, 残念です) hoặc kết quả ngoài ý muốn. Minna bài 39.",
+        "viMistake": "Cặp bẫy kinh điển: ないで = không làm mà làm (cách thức, thay vì), chủ thể tự chọn; なくて = vì không … nên, vế sau là cảm xúc / tình trạng. Mẹo: vế sau là 困った, 心配した, 残念だ, 〜できなかった → なくて; vế sau là hành động có chủ ý của chính người đó → ないで.",
+        "examples": [
+          {
+            "jp": "{駅|えき}の {名前|なまえ}が {読|よ}めなくて、{困|こま}りました。",
+            "vi": "Tôi không đọc được tên ga nên rất khổ sở.",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}が {降|ふ}らなくて、{野菜|やさい}が よく {育|そだ}ちません。",
+            "vi": "Trời không mưa nên rau không lớn được.",
+            "audio": null
+          },
+          {
+            "jp": "{友|とも}だちに {会|あ}えなくて、{残念|ざんねん}でした。",
+            "vi": "Không gặp được bạn, tiếc thật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-tari",
+        "pattern": "〜たり〜たり する",
+        "vi": "Nào là … nào là …; lúc thì … lúc thì … (liệt kê, lặp lại)",
+        "explain": "Thể た + り: 読んだり, 見たり; tính từ: 暑かったり 寒かったり; danh từ / tính từ な: 雨だったり 晴れだったり. Kết thúc bằng する (します, しました, して います …). Hai cách dùng: (1) liệt kê vài hành động tiêu biểu, không theo thứ tự; (2) hành động / trạng thái lặp đi lặp lại, thay đổi qua lại: 行ったり 来たり, 降ったり やんだり. Minna bài 19 (cách dùng lặp lại hay gặp ở N4).",
+        "viMistake": "Quên する ở cuối: 読んだり、見たりです là sai. Chia sai thể た: 書きたり → 書いたり, 行きたり → 行ったり. Lẫn với ながら: たり không phải hai việc cùng lúc.",
+        "examples": [
+          {
+            "jp": "{週末|しゅうまつ}は {洗濯|せんたく}したり、{買|か}い{物|もの}に {行|い}ったり します。",
+            "vi": "Cuối tuần tôi giặt giũ, đi mua sắm, v.v.",
+            "audio": null
+          },
+          {
+            "jp": "この {電気|でんき}は ついたり {消|き}えたり して います。",
+            "vi": "Cái đèn này cứ lúc bật lúc tắt.",
+            "audio": null
+          },
+          {
+            "jp": "{弟|おとうと}は {心配|しんぱい}で、{部屋|へや}の {中|なか}を {行|い}ったり {来|き}たり して います。",
+            "vi": "Em trai tôi lo lắng nên cứ đi tới đi lui trong phòng.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g1-s01",
+        "type": "title",
+        "jp": "{文|ぶん}を つなぐ：{理由|りゆう}・{逆接|ぎゃくせつ}・{同時|どうじ}・{方法|ほうほう}",
+        "vi": "Tổng ôn N4 · 1 – Nối câu: lý do, trái ý, đồng thời, cách thức"
+      },
+      {
+        "id": "n4g1-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "Bộ này gom các mẫu NỐI HAI VẾ CÂU của N4 để các mẫu dễ nhầm nằm cạnh nhau:\n1. Lý do: 〜んです, 〜し, 〜ので, 〜て・〜くて・〜で, 〜なくて.\n2. Trái ý: 〜のに.\n3. Đồng thời, liệt kê: 〜ながら, 〜たり〜たり.\n4. Cách thức, “thay vì”: Vて／Vないで, 〜ずに.\nCách dùng: khi làm đề quên mẫu nào, mở slide mẫu đó; xem bảng phân biệt; làm câu luyện ở cuối (dạng もんだい１, もんだい２)."
+      },
+      {
+        "id": "n4g1-s03",
+        "type": "table",
+        "title": "Nối vào thể thường: だ → な hay giữ だ?",
+        "columns": ["Loại", "んです", "ので", "のに", "し"],
+        "rows": [
+          ["V", "{行|い}くんです", "{行|い}くので", "{行|い}くのに", "{行|い}くし"],
+          ["Vた", "{行|い}ったんです", "{行|い}ったので", "{行|い}ったのに", "{行|い}ったし"],
+          ["Aい", "{高|たか}いんです", "{高|たか}いので", "{高|たか}いのに", "{高|たか}いし"],
+          ["Aな", "{暇|ひま}なんです", "{暇|ひま}なので", "{暇|ひま}なのに", "{暇|ひま}だし"],
+          ["N", "{雨|あめ}なんです", "{雨|あめ}なので", "{雨|あめ}なのに", "{雨|あめ}だし"],
+          [
+            "N quá khứ",
+            "{雨|あめ}だったんです",
+            "{雨|あめ}だったので",
+            "{雨|あめ}だったのに",
+            "{雨|あめ}だったし"
+          ]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hiện tại của N／Aな: んです・ので・のに đổi だ → な; riêng し giữ だ."
+      },
+      {
+        "id": "n4g1-s04",
+        "type": "grammar",
+        "ref": "n4g-ndesu"
+      },
+      {
+        "id": "n4g1-s05",
+        "type": "example",
+        "ref": "n4g-ndesu",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s06",
+        "type": "grammar",
+        "ref": "n4g-ndesuga"
+      },
+      {
+        "id": "n4g1-s07",
+        "type": "example",
+        "ref": "n4g-ndesuga",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s08",
+        "type": "quiz",
+        "ref": "n4g1-q05"
+      },
+      {
+        "id": "n4g1-s09",
+        "type": "grammar",
+        "ref": "n4g-node"
+      },
+      {
+        "id": "n4g1-s10",
+        "type": "example",
+        "ref": "n4g-node",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s11",
+        "type": "grammar",
+        "ref": "n4g-noni"
+      },
+      {
+        "id": "n4g1-s12",
+        "type": "example",
+        "ref": "n4g-noni",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s13",
+        "type": "table",
+        "title": "Phân biệt ので・から・のに",
+        "columns": ["Tiêu chí", "ので", "から", "のに"],
+        "rows": [
+          ["Nghĩa", "vì … nên", "vì … nên", "vậy mà"],
+          ["Sắc thái", "khách quan, lịch sự", "chủ quan, thân mật", "bất mãn, tiếc"],
+          ["Vế sau", "kết quả hợp lý", "kết quả hợp lý", "trái mong đợi"],
+          ["Cuối câu + です", "× (のでです)", "〜からです ✓", "×"],
+          ["Vế sau nhờ, rủ", "✓ (lịch sự)", "✓", "×"],
+          ["N／Aな", "{雨|あめ}なので", "{雨|あめ}だから", "{雨|あめ}なのに"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g1-s14",
+        "type": "quiz",
+        "ref": "n4g1-q14"
+      },
+      {
+        "id": "n4g1-s15",
+        "type": "grammar",
+        "ref": "n4g-shi"
+      },
+      {
+        "id": "n4g1-s16",
+        "type": "example",
+        "ref": "n4g-shi",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s17",
+        "type": "grammar",
+        "ref": "n4g-tari"
+      },
+      {
+        "id": "n4g1-s18",
+        "type": "example",
+        "ref": "n4g-tari",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s19",
+        "type": "table",
+        "title": "Phân biệt し・たり・ながら",
+        "columns": ["Mẫu", "Nối với", "Dùng khi", "Ví dụ"],
+        "rows": [
+          ["〜し", "thể thường", "liệt kê lý do", "{安|やす}いし、{近|ちか}い"],
+          [
+            "〜たり〜たり する",
+            "thể た + り",
+            "liệt kê việc; lặp lại",
+            "{見|み}たり {読|よ}んだり"
+          ],
+          ["〜ながら", "gốc ます", "1 người, 2 việc cùng lúc", "{聞|き}きながら"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4g1-s20",
+        "type": "quiz",
+        "ref": "n4g1-q07"
+      },
+      {
+        "id": "n4g1-s21",
+        "type": "grammar",
+        "ref": "n4g-nagara"
+      },
+      {
+        "id": "n4g1-s22",
+        "type": "example",
+        "ref": "n4g-nagara",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s23",
+        "type": "quiz",
+        "ref": "n4g1-q19"
+      },
+      {
+        "id": "n4g1-s24",
+        "type": "grammar",
+        "ref": "n4g-te-naide-houhou"
+      },
+      {
+        "id": "n4g1-s25",
+        "type": "example",
+        "ref": "n4g-te-naide-houhou",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s26",
+        "type": "grammar",
+        "ref": "n4g-naide-kawari"
+      },
+      {
+        "id": "n4g1-s27",
+        "type": "example",
+        "ref": "n4g-naide-kawari",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s28",
+        "type": "grammar",
+        "ref": "n4g-zuni"
+      },
+      {
+        "id": "n4g1-s29",
+        "type": "example",
+        "ref": "n4g-zuni",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s30",
+        "type": "table",
+        "title": "Phân biệt ないで・ずに・なくて",
+        "columns": ["Mẫu", "Cách nối", "Nghĩa", "Ví dụ"],
+        "rows": [
+          ["Vないで V2", "thể ない + で", "không làm mà …", "{見|み}ないで {書|か}く"],
+          ["Vずに V2", "bỏ ない + ずに", "= ないで, văn viết", "{見|み}ずに {書|か}く"],
+          ["する → せずに", "ngoại lệ", "= しないで", "{勉強|べんきょう}せずに"],
+          ["Vなくて、〜", "bỏ い + くて", "vì không … nên", "{読|よ}めなくて {困|こま}る"],
+          ["Vないで ください", "thể ない + で", "xin đừng", "{触|さわ}らないで"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Vế sau là cảm xúc, tình trạng → なくて; vế sau là việc chủ ý của chính người đó → ないで／ずに."
+      },
+      {
+        "id": "n4g1-s31",
+        "type": "quiz",
+        "ref": "n4g1-q22"
+      },
+      {
+        "id": "n4g1-s32",
+        "type": "grammar",
+        "ref": "n4g-te-riyuu"
+      },
+      {
+        "id": "n4g1-s33",
+        "type": "example",
+        "ref": "n4g-te-riyuu",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s34",
+        "type": "grammar",
+        "ref": "n4g-nakute-riyuu"
+      },
+      {
+        "id": "n4g1-s35",
+        "type": "example",
+        "ref": "n4g-nakute-riyuu",
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s36",
+        "type": "table",
+        "title": "〜て (lý do): vế sau nào được?",
+        "columns": ["Vế sau", "Ví dụ", "Được?"],
+        "rows": [
+          ["Cảm xúc", "{会|あ}えて、うれしい", "✓"],
+          ["Khả năng", "{高|たか}くて、{買|か}えない", "✓"],
+          ["Ngoài ý muốn", "{雨|あめ}で、{遅|おく}れた", "✓"],
+          ["Ý định 〜ます", "{寒|さむ}くて、{帰|かえ}ります", "× → ので"],
+          ["Nhờ 〜て ください", "{暑|あつ}くて、{開|あ}けて", "× → から"],
+          ["Rủ 〜ましょう", "{遅|おそ}くて、{急|いそ}ごう", "× → から"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g1-s37",
+        "type": "quiz",
+        "ref": "n4g1-q34"
+      },
+      {
+        "id": "n4g1-s38",
+        "type": "dialogue",
+        "title": "Ở văn phòng: nhờ đồng nghiệp",
+        "lines": [
+          {
+            "speaker": "ビエット",
+            "jp": "すみません、お{願|ねが}いが あるんですが……。",
+            "vi": "Xin lỗi, tôi có việc muốn nhờ anh…"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "どう したんですか。",
+            "vi": "Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "ビエット",
+            "jp": "{説明書|せつめいしょ}を {読|よ}んだのに、わからないんです。",
+            "vi": "Tôi đã đọc hướng dẫn rồi mà vẫn không hiểu."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{今|いま} {忙|いそが}しいので、{後|あと}でも いいですか。",
+            "vi": "Giờ tôi đang bận, để lát nữa được không?"
+          },
+          {
+            "speaker": "ビエット",
+            "jp": "はい。じゃ、{辞書|じしょ}を {見|み}ながら {待|ま}って います。",
+            "vi": "Vâng. Vậy tôi vừa tra từ điển vừa chờ anh."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{待|ま}たないで、{先|さき}に {昼|ひる}ご{飯|はん}を {食|た}べて ください。",
+            "vi": "Anh đừng chờ, cứ đi ăn trưa trước đi."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g1-s39",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "• Câu hỏi / giải thích, B trả lời どうして → 〜んです; mở lời nhờ → 〜んですが、〜て いただけませんか.\n• Trước chỗ trống là N／Aな: ので, のに, んです → な; し → だ.\n• Vế sau hợp lý → ので; vế sau trái mong đợi, bất mãn → のに.\n• Có 〜も〜し、〜も → し; có 〜たり … する → たり.\n• Trước chỗ trống là gốc ます (聞き, 歩き) → ながら.\n• Không làm A mà làm B (chủ ý) → ないで／ずに; する → せずに.\n• Vế sau là cảm xúc / không thể / ngoài ý muốn → 〜て, 〜くて, 〜で, 〜なくて.\n• Vế sau là ましょう, て ください, ý định → không dùng thể て, chọn から／ので.\n• もんだい２: ghép cặp chắc trước (V + ので／のに, 聞き + ながら), rồi mới đặt ★."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g1-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「あれ、{髪|かみ}を {切|き}った （　　）。」 B「ええ、{昨日|きのう} {切|き}りました。{暑|あつ}く なりましたから。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesu"],
+        "explain": "A thấy bạn khác đi nên hỏi thêm: “Ơ, bạn cắt tóc à?”. Hỏi vì quan tâm điều mình thấy → thể thường + んですか. 切ったですか sai vì です không gắn trực tiếp sau động từ. 切ったので／切ったのに là vế lý do / trái ý, không kết thúc câu hỏi được.",
+        "type": "choice",
+        "options": ["ですか", "ので", "んですか", "のに"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{明日|あした}は {母|はは}の {誕生日|たんじょうび} （　　） んです。だから {今日|きょう}は {早|はや}く {帰|かえ}ります。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesu"],
+        "explain": "“Mai là sinh nhật mẹ tôi, nên hôm nay tôi về sớm.” Danh từ (và tính từ な) + んです phải đổi だ → な: 誕生日なんです. 誕生日だんです, 誕生日のんです, 誕生日にんです đều sai cách nối.",
+        "type": "choice",
+        "options": ["だ", "の", "に", "な"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q03",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{昨日|きのう}は パーティーに {来|き}ませんでしたね。」 B「ええ、{急|きゅう}に ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ ＿★＿。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesu"],
+        "explain": "Câu đúng: 急に 熱が 出て しまった んです。(Tự dưng tôi bị sốt.) Giải thích lý do vắng mặt bằng thể thường + んです. Thứ tự: 熱が → 出て → しまった → んです; ô ★ (ô cuối) là んです.",
+        "type": "choice",
+        "options": ["しまった", "んです", "{熱|ねつ}が", "{出|で}て"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "すみませんが、この {書類|しょるい}の {書|か}き{方|かた}を {教|おし}えて （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesuga"],
+        "explain": "“Xin lỗi, anh chỉ giúp tôi cách điền giấy tờ này được không ạ?” Nhờ lịch sự: Vて いただけませんか (thể khả năng phủ định của いただく). いただきませんか không phải lời nhờ; さしあげませんか là mình làm cho người khác, sai hướng; くれましょうか sai (くれる không dùng thể ましょう để nhờ).",
+        "type": "choice",
+        "options": ["いただきませんか", "いただけませんか", "さしあげませんか", "くれましょうか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来週|らいしゅう} {国|くに}へ {帰|かえ}る （　　）、お{土産|みやげ}は {何|なに}が いいと {思|おも}いますか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesuga"],
+        "explain": "“Tuần sau tôi về nước, theo anh nên mua quà gì thì được?” Nêu hoàn cảnh của mình trước rồi hỏi ý kiến → 〜んですが. のに là “vậy mà”, không mở lời được; ながら cần gốc ます và hai hành động cùng lúc; たり phải là thể た + り và có する.",
+        "type": "choice",
+        "options": ["のに", "ながら", "んですが", "たり"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q06",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日本語|にほんご}の {先生|せんせい}を ＿＿＿＿ ＿＿＿＿ ＿★＿ ＿＿＿＿ {知|し}りませんか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ndesuga"],
+        "explain": "Câu đúng: 日本語の 先生を さがして いる んですが、だれか 知りませんか。(Tôi đang tìm giáo viên tiếng Nhật, anh có biết ai không?) Nêu hoàn cảnh bằng 〜んですが rồi hỏi. Thứ tự: さがして → いる → んですが、→ だれか; ô ★ là んですが、.",
+        "type": "choice",
+        "options": ["だれか", "いる", "んですが、", "さがして"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今日|きょう}は {天気|てんき}も いい （　　）、{時間|じかん}も あるから、{公園|こうえん}を {散歩|さんぽ}しましょう。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shi"],
+        "explain": "“Hôm nay trời đẹp, lại có thời gian, mình đi dạo công viên nhé.” Nêu lý do song song: 〜も〜し、〜も〜から → し. のに (vậy mà) trái nghĩa; ながら phải đi sau gốc ます; いいても sai cách chia (đúng là よくても) và nghĩa “dù” cũng không hợp.",
+        "type": "choice",
+        "options": ["し", "のに", "ながら", "ても"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{妹|いもうと}は まだ {子|こ}ども （　　） し、{一人|ひとり}で {外国|がいこく}へ {行|い}くのは {無理|むり}です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shi"],
+        "explain": "“Em gái tôi vẫn còn là trẻ con, nên đi nước ngoài một mình là không thể.” 〜し nối sau thể thường; danh từ giữ だ: 子どもだし. Khác với ので／のに／んです (đổi だ → な), し không dùng な. 子どもなし, 子どものし, 子どもでし đều sai.",
+        "type": "choice",
+        "options": ["な", "の", "で", "だ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q09",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {店|みせ}は {料理|りょうり}も ＿＿＿＿ ＿★＿ ＿＿＿＿ ＿＿＿＿ いつも {込|こ}んで います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shi"],
+        "explain": "Câu đúng: 料理も おいしい し、値段も 安いので いつも 込んで います。(Quán này đồ ăn đã ngon, giá lại rẻ nên lúc nào cũng đông.) Mẫu 〜も〜し、〜も〜. Thứ tự: おいしい → し、→ 値段も → 安いので; ô ★ (ô thứ hai) là し、.",
+        "type": "choice",
+        "options": ["し、", "{安|やす}いので", "おいしい", "{値段|ねだん}も"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q10",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{道|みち}が {込|こ}んで いた （　　）、{約束|やくそく}の {時間|じかん}に {遅|おく}れて しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-node"],
+        "explain": "“Vì đường đông nên tôi đã lỡ đến muộn giờ hẹn.” Đường đông → đến muộn là kết quả hợp lý → ので. のに là kết quả trái mong đợi; ながら cần gốc ます; ても (dù … cũng) không hợp nghĩa.",
+        "type": "choice",
+        "options": ["ので", "のに", "ながら", "ても"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q11",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この アパートは {駅|えき}の {近|ちか}く （　　） ので、{便利|べんり}です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-node"],
+        "explain": "“Căn hộ này ở gần ga nên tiện.” Danh từ (近く) + ので phải đổi だ → な: 近くなので. 近くだので là lỗi rất hay gặp; 近くので, 近くでので đều sai cách nối.",
+        "type": "choice",
+        "options": ["だ", "の", "で", "な"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q12",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{赤|あか}ちゃんが {寝|ね}て いる （　　）、{少|すこ}し {静|しず}かに して ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-node"],
+        "explain": "“Em bé đang ngủ nên anh giữ yên lặng một chút nhé.” Nêu lý do nhẹ nhàng trước lời nhờ → ので. のに không đi với lời nhờ; 寝ているながら sai cách nối (ながら đi sau gốc ます); 寝ているても sai cách chia (đúng là 寝ていても) và nghĩa “dù” cũng không hợp.",
+        "type": "choice",
+        "options": ["ので", "のに", "ながら", "ても"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q13",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}が ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ ＿★＿ {中止|ちゅうし}に なりました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-node"],
+        "explain": "Câu đúng: 雨が 強かった ので 今日の 試合は 中止に なりました。(Vì mưa to nên trận đấu hôm nay bị hủy.) Thứ tự: 強かった → ので → 今日の → 試合は; ô ★ (ô cuối) là 試合は.",
+        "type": "choice",
+        "options": ["ので", "{強|つよ}かった", "{試合|しあい}は", "{今日|きょう}の"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q14",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{薬|くすり}を {飲|の}んで {早|はや}く {寝|ね}た （　　）、まだ {頭|あたま}が {痛|いた}いです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni"],
+        "explain": "“Đã uống thuốc và ngủ sớm vậy mà vẫn còn đau đầu.” Kết quả trái mong đợi → のに. ので (vì ngủ sớm nên đau đầu) vô lý; ながら cần gốc ます; 寝たたり sai cách chia (đúng là 寝たり) và thiếu する.",
+        "type": "choice",
+        "options": ["ので", "ながら", "のに", "たり"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q15",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {傘|かさ}は {先週|せんしゅう} {買|か}った （　　）、もう {壊|こわ}れて しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni"],
+        "explain": "“Cái ô này mới mua tuần trước vậy mà đã hỏng rồi.” Sự thật trái mong đợi, kèm tiếc nuối → のに. ので: mua tuần trước nên hỏng – vô lý. ても nói giả định “dù”, không gắn sau thể た (買ったても sai). し liệt kê lý do, không hợp nghĩa.",
+        "type": "choice",
+        "options": ["ので", "ても", "し", "のに"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{休|やす}みの {日|ひ} （　　） のに、{父|ちち}は {朝|あさ}から {会社|かいしゃ}へ {行|い}きました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni"],
+        "explain": "“Ngày nghỉ vậy mà bố tôi đi làm từ sáng.” Danh từ + のに đổi だ → な: 休みの日なのに. 休みの日だのに, 休みの日でのに, 休みの日ののに đều sai cách nối.",
+        "type": "choice",
+        "options": ["な", "だ", "で", "の"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q17",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{毎日|まいにち} ＿★＿ ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni"],
+        "explain": "Câu đúng: 毎日 練習した のに、試合に 負けて しまいました。(Ngày nào cũng luyện tập vậy mà vẫn thua trận.) Thứ tự: 練習した → のに、→ 試合に → 負けて; ô ★ (ô đầu) là 練習した.",
+        "type": "choice",
+        "options": ["のに、", "{負|ま}けて", "{練習|れんしゅう}した", "{試合|しあい}に"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q18",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}は {歌|うた}を （　　） ながら {料理|りょうり}を {作|つく}って います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nagara"],
+        "explain": "“Mẹ tôi vừa hát vừa nấu ăn.” ながら đi sau gốc ます: 歌います → 歌いながら. Thể từ điển (歌う), thể て (歌って), thể た (歌った) đều không nối với ながら.",
+        "type": "choice",
+        "options": ["歌う", "歌い", "歌って", "歌った"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q19",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{田中|たなか}さんは どこですか。」 B「あそこで コーヒーを （　　） {新聞|しんぶん}を {読|よ}んで いますよ。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nagara"],
+        "explain": "“Anh Tanaka đang vừa uống cà phê vừa đọc báo ở đằng kia.” Một người làm hai việc cùng lúc → 飲みながら. 飲んだり phải có cặp 〜たり〜たり する; 飲むので (vì uống nên đọc báo) và 飲むし (liệt kê lý do) đều không hợp nghĩa.",
+        "type": "choice",
+        "options": ["飲んだり", "飲みながら", "飲むので", "飲むし"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q20",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{歩|ある}き （　　） たばこを {吸|す}うのは やめて ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nagara"],
+        "explain": "“Xin đừng vừa đi vừa hút thuốc.” Sau gốc ます 歩き chỉ nối được ながら. ないで và ずに phải đi sau gốc thể ない (歩かないで, 歩かずに); たり phải đi sau thể た (歩いたり).",
+        "type": "choice",
+        "options": ["ながら", "ないで", "ずに", "たり"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q21",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{私|わたし}は ＿＿＿＿ ＿★＿ ＿＿＿＿ ＿＿＿＿ のが {好|す}きです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nagara"],
+        "explain": "Câu đúng: 私は ラジオを 聞き ながら 料理する のが 好きです。(Tôi thích vừa nghe radio vừa nấu ăn.) Thứ tự: ラジオを → 聞き → ながら → 料理する; ô ★ (ô thứ hai) là 聞き (gốc ます đứng trước ながら).",
+        "type": "choice",
+        "options": ["{料理|りょうり}する", "ながら", "ラジオを", "聞き"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q22",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今朝|けさ}は {寝坊|ねぼう}して、{顔|かお}も （　　） {家|いえ}を {出|で}ました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-naide-houhou"],
+        "explain": "“Sáng nay ngủ quên, tôi ra khỏi nhà mà chẳng kịp rửa mặt.” Cách thức “không làm V1 mà làm V2” → Vないで. 洗わなくて chỉ nguyên nhân, không chỉ cách thức; 洗ったら là điều kiện, không nối được với việc đã xảy ra; 洗いながら (vừa rửa mặt vừa ra khỏi nhà) vô lý.",
+        "type": "choice",
+        "options": ["洗わないで", "洗わなくて", "洗ったら", "洗いながら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q23",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{外|そと}は {寒|さむ}いですから、コートを （　　） {出|で}かけた ほうが いいですよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-naide-houhou"],
+        "explain": "“Ngoài trời lạnh, bạn nên mặc áo khoác rồi hãy ra ngoài.” Làm V2 trong trạng thái đã làm V1 → Vて. 着ないで (không mặc áo mà ra ngoài) trái với “trời lạnh”; 着なくて là nguyên nhân; 着たり thiếu cặp và する.",
+        "type": "choice",
+        "options": ["着ないで", "着なくて", "着たり", "着て"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q24",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{辞書|じしょ}を （　　） この {手紙|てがみ}が {読|よ}めるように なりたいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-naide-houhou"],
+        "explain": "“Tôi muốn đọc được lá thư này mà không cần tra từ điển.” Cách thức “không làm V1” → Vないで. 引かなくて chỉ nguyên nhân; 引いたり thiếu cặp và する; 引けば (nếu tra) + なりたい không thành câu tự nhiên.",
+        "type": "choice",
+        "options": ["引かないで", "引かなくて", "引いたり", "引けば"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q25",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今日|きょう}は {疲|つか}れたので、{料理|りょうり}を （　　）、コンビニで お{弁当|べんとう}を {買|か}います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-naide-kawari"],
+        "explain": "“Hôm nay mệt nên tôi không nấu mà mua cơm hộp ở cửa hàng tiện lợi.” Thay vì làm V1 thì làm V2 → Vないで. 作らなくて là nguyên nhân (vì không nấu nên …), không hợp; 作りながら (vừa nấu vừa mua) vô lý; 作ったり thiếu cặp và する.",
+        "type": "choice",
+        "options": ["作らなくて", "作りながら", "作らないで", "作ったり"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q26",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今日|きょう}は エレベーターに （　　）、{階段|かいだん}で {5階|ごかい}まで {上|あ}がりました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-naide-kawari"],
+        "explain": "“Hôm nay tôi không đi thang máy mà leo cầu thang lên tầng 5.” Chủ thể tự chọn không làm V1 mà làm V2 → 乗らないで. 乗らなくて là nguyên nhân (vì không … nên), không phải “thay vì”; 乗ったり thiếu cặp và する; 乗りながら (vừa đi thang máy vừa leo cầu thang) vô lý.",
+        "type": "choice",
+        "options": ["乗らなくて", "乗ったり", "乗らないで", "乗りながら"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q27",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日曜日|にちようび}は どこへも ＿★＿ ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ しました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-naide-kawari"],
+        "explain": "Câu đúng: 日曜日は どこへも 出かけないで 部屋の そうじや 洗濯を しました。(Chủ nhật tôi không đi đâu mà dọn phòng, giặt giũ.) どこへも cần phủ định ngay sau → 出かけないで; rồi 部屋の → そうじや → 洗濯を しました. Ô ★ (ô đầu) là 出かけないで.",
+        "type": "choice",
+        "options": ["{部屋|へや}の", "{出|で}かけないで", "{洗濯|せんたく}を", "そうじや"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q28",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}は {歯|は}みがきを （　　） {寝|ね}て しまいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-zuni"],
+        "explain": "“Em trai tôi lỡ đi ngủ mà không đánh răng.” 歯みがきを する → せずに (ngoại lệ). しずに, さずに, すずに đều là cách chia sai.",
+        "type": "choice",
+        "options": ["しずに", "さずに", "せずに", "すずに"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q29",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {料理|りょうり}は {火|ひ}を {使|つか}わ （　　） {作|つく}れます。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-zuni"],
+        "explain": "“Món này làm được mà không cần dùng lửa.” Cách thức “không làm mà làm” → 使わずに (= 使わないで). 使わなくて chỉ nguyên nhân; 使わないと (nếu không dùng thì …) cần vế sau phủ định kiểu 作れません; 使わては sai cách chia.",
+        "type": "choice",
+        "options": ["なくて", "ずに", "ないと", "ては"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q30",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}は {何|なに}も （　　） {部屋|へや}を {出|で}て {行|い}きました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-zuni"],
+        "explain": "“Anh tôi đi ra khỏi phòng mà không nói gì.” 何も + phủ định, cách thức → 言わずに (gốc thể ない 言わ + ずに). 言わなくて là nguyên nhân; 言いずに, 言ってずに sai cách chia.",
+        "type": "choice",
+        "options": ["言わなくて", "言いずに", "言ってずに", "言わずに"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q31",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{国|くに}の {友|とも}だちから {電話|でんわ}が （　　）、とても うれしかったです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-riyuu"],
+        "explain": "“Có điện thoại của bạn ở quê gọi đến, tôi rất vui.” Nguyên nhân dẫn đến cảm xúc (うれしい) → thể て. あったら là giả định, không hợp với vế sau đã xảy ra; あるのに (vậy mà) và あっても (dù) trái nghĩa.",
+        "type": "choice",
+        "options": ["あったら", "あって", "あるのに", "あっても"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q32",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {部屋|へや}は （　　）、{本|ほん}が {読|よ}みにくいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-riyuu"],
+        "explain": "“Phòng này tối nên khó đọc sách.” Tính từ い chỉ nguyên nhân: bỏ い + くて → 暗くて. 暗いで, 暗かって, 暗くで đều sai cách chia.",
+        "type": "choice",
+        "options": ["暗いで", "暗くて", "暗かって", "暗くで"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q33",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{大雪|おおゆき} （　　） {学校|がっこう}が {休|やす}みに なりました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-riyuu"],
+        "explain": "“Vì tuyết rơi dày nên trường được nghỉ.” Danh từ chỉ nguyên nhân (thiên tai, bệnh, sự cố) + で. を, に, へ không chỉ nguyên nhân.",
+        "type": "choice",
+        "options": ["で", "を", "に", "へ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q34",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{時間|じかん}が （　　）、タクシーで {行|い}きましょう。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-riyuu"],
+        "explain": "“Không có thời gian, mình đi taxi đi.” Vế sau là lời rủ (〜ましょう) nên lý do phải dùng から／ので, không dùng thể て: 時間が なくて、行きましょう là sai. ないで chỉ cách thức của hành động có chủ ý, không đi với ある; なくても (dù không có) trái nghĩa.",
+        "type": "choice",
+        "options": ["なくて", "ないから", "ないで", "なくても"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q35",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{財布|さいふ}が {見|み}つから （　　）、{困|こま}りました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nakute-riyuu"],
+        "explain": "“Không tìm thấy ví nên tôi rất khổ sở.” Nguyên nhân phủ định dẫn đến cảm xúc (困る) → なくて. なければ (nếu không) không hợp với vế sau đã xảy ra; なくても (dù không) và ないのに (vậy mà) trái nghĩa.",
+        "type": "choice",
+        "options": ["なければ", "なくても", "ないのに", "なくて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q36",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{子|こ}どもが {夜|よる} {10時|じゅうじ}に なっても {帰|かえ}って （　　）、とても {心配|しんぱい}しました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nakute-riyuu"],
+        "explain": "“Đã 10 giờ đêm mà con vẫn chưa về nên tôi rất lo.” Vì không … nên lo → 帰って こなくて. きながら vô lý; こなかったら là giả định, không hợp với 心配しました đã xảy ra; きても (dù về) trái nghĩa.",
+        "type": "choice",
+        "options": ["きながら", "こなくて", "こなかったら", "きても"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g1-q37",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{仕事|しごと}が なかなか {終|お}わら （　　）、パーティーに {行|い}けませんでした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nakute-riyuu"],
+        "explain": "“Công việc mãi không xong nên tôi không đi dự tiệc được.” Nguyên nhân phủ định, vế sau là khả năng (行けなかった) → なくて. なければ không hợp với kết quả đã xảy ra; ないのに (vậy mà) trái nghĩa; 終わらながら sai cách nối.",
+        "type": "choice",
+        "options": ["なければ", "ないのに", "ながら", "なくて"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g1-q38",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{最近|さいきん}は {暑|あつ}かったり、（　　） して、{着|き}る {服|ふく}を {選|えら}ぶのが {大変|たいへん}です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tari"],
+        "explain": "“Dạo này lúc nóng lúc lạnh nên chọn quần áo mặc thật vất vả.” Trạng thái thay đổi qua lại: 〜たり〜たり する → 寒かったり. Có 暑かったり ở trước và する ở sau nên chỉ thể たり hợp; 寒くて, 寒いし, 寒かったら không nối được với する.",
+        "type": "choice",
+        "options": ["寒かったり", "寒くて", "寒いし", "寒かったら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g1-q39",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}が {降|ふ}ったり （　　） して いますから、{傘|かさ}を {持|も}って {行|い}きましょう。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tari"],
+        "explain": "“Mưa cứ lúc rơi lúc tạnh, nên mình mang ô theo nhé.” Lặp lại hai trạng thái: 降ったり やんだり する. やんで, やみながら, やまないで không ghép cặp với 降ったり.",
+        "type": "choice",
+        "options": ["やんで", "やみながら", "やんだり", "やまないで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g1-q40",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{夏休|なつやす}みは {海|うみ}で ＿＿＿＿ ＿＿＿＿ ＿★＿ ＿＿＿＿ つもりです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tari"],
+        "explain": "Câu đúng: 夏休みは 海で 泳いだり 山に 登ったり する つもりです。(Nghỉ hè tôi định đi bơi ở biển, leo núi, v.v.) Mẫu 〜たり〜たり する. Thứ tự: 泳いだり → 山に → 登ったり → する; ô ★ là 登ったり.",
+        "type": "choice",
+        "options": ["{山|やま}に", "する", "{泳|およ}いだり", "{登|のぼ}ったり"],
+        "multiple": false,
+        "answer": [3]
+      }
+    ]
+  }
+}

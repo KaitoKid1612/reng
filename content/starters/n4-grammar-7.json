@@ -1,0 +1,1212 @@
+{
+  "id": "n4-grammar-7",
+  "title": "Tổng ôn N4 · 7 – Cho nhận và kính ngữ",
+  "titleJa": "あげる・くれる・もらうと 敬語",
+  "summary": "Bộ tổng ôn ngữ pháp JLPT N4 theo chủ đề cho nhận và kính ngữ: Vて あげる／くれる／もらう／やる, Vて いただく／くださる, nhờ lịch sự 〜て いただけませんか, tôn kính ngữ (お〜に なる, 〜(ら)れる, động từ đặc biệt), khiêm nhường ngữ (お〜する, まいる, おる, もうす…), で ございます và お〜ください, kèm bảng phân biệt và 40 câu luyện theo dạng đề N4. Mọi ví dụ, hội thoại và câu hỏi đều là nội dung tự biên soạn.",
+  "order": 8,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-te-ageru",
+        "pattern": "Vて あげる",
+        "vi": "Làm (việc gì) cho người khác",
+        "explain": "Thể て + あげる (あげます). Người làm là chủ ngữ, thường là わたし hoặc người phía mình; người được nhận đi với に (おしえる, かす, みせる, おくる…) hoặc dùng の với đồ vật của người đó (ともだちの しゅくだいを てつだって あげる). Minna bài 24. Với người trên, nói thẳng 〜て あげましょうか nghe như ban ơn; khi đó dùng お〜しましょうか.",
+        "viMistake": "Người Việt hay dùng あげる cho mọi câu “làm cho”, kể cả khi người khác làm cho mình: ともだちが てつだって あげました (khi người được giúp là tôi) là sai, phải là てつだって くれました. あげる không bao giờ hướng về わたし.",
+        "examples": [
+          {
+            "jp": "わたしは {妹|いもうと}に ギターを {教|おし}えて あげました。",
+            "vi": "Tôi đã dạy em gái chơi ghi-ta.",
+            "audio": null
+          },
+          {
+            "jp": "{友|とも}だちが {道|みち}が わからなかったので、{地図|ちず}を かいて あげました。",
+            "vi": "Bạn không biết đường nên tôi vẽ bản đồ cho bạn.",
+            "audio": null
+          },
+          {
+            "jp": "ルームメイトの {誕生日|たんじょうび}に ケーキを {焼|や}いて あげます。",
+            "vi": "Tôi sẽ nướng bánh kem tặng bạn cùng phòng vào ngày sinh nhật bạn ấy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-kureru",
+        "pattern": "Vて くれる",
+        "vi": "(Người khác) làm cho tôi / cho người phía tôi",
+        "explain": "Thể て + くれる (くれます). Chủ ngữ là người làm (đi với が／は); người nhận là わたし hoặc người trong nhà, trong nhóm của mình, thường được lược đi. Câu mang cảm giác biết ơn. Minna bài 24.",
+        "viMistake": "Dịch “bạn làm cho tôi” thành あげる (sai hướng) hoặc đặt わたし làm chủ ngữ: わたしは 〜て くれました là sai. Khi chủ ngữ là わたし (người nhận) thì phải đổi sang 〜に 〜て もらいました.",
+        "examples": [
+          {
+            "jp": "{隣|となり}の {人|ひと}が {重|おも}い {荷物|にもつ}を {運|はこ}んで くれました。",
+            "vi": "Người hàng xóm đã khiêng đồ nặng giúp tôi.",
+            "audio": null
+          },
+          {
+            "jp": "{姉|あね}が {駅|えき}まで {車|くるま}で {送|おく}って くれました。",
+            "vi": "Chị gái đã chở tôi bằng ô tô ra ga.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんが {写真|しゃしん}を {撮|と}って くれました。",
+            "vi": "Anh Tanaka đã chụp ảnh cho tôi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-morau",
+        "pattern": "Vて もらう",
+        "vi": "(Tôi) được ai đó làm cho; nhờ ai làm",
+        "explain": "Thể て + もらう (もらいます). Chủ ngữ là người nhận (わたしは, thường lược đi), người làm đi với に. Cùng một việc có thể nói hai cách: たなかさんが てつだって くれました = (わたしは) たなかさんに てつだって もらいました. Minna bài 24.",
+        "viMistake": "Đổi chỗ vai: たなかさんが わたしに てつだって もらいました là sai. Mẹo: thấy 〜に (người làm) thì động từ cuối là もらう／いただく; thấy 〜が (người làm) thì là くれる／くださる.",
+        "examples": [
+          {
+            "jp": "わたしは {友|とも}だちに {引|ひ}っ{越|こ}しを {手伝|てつだ}って もらいました。",
+            "vi": "Tôi được bạn giúp chuyển nhà.",
+            "audio": null
+          },
+          {
+            "jp": "{父|ちち}に {自転車|じてんしゃ}を {直|なお}して もらいました。",
+            "vi": "Tôi được bố sửa xe đạp cho.",
+            "audio": null
+          },
+          {
+            "jp": "{会社|かいしゃ}の {先輩|せんぱい}に メールを チェックして もらいました。",
+            "vi": "Tôi nhờ anh đồng nghiệp đi trước kiểm tra giúp email.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-yaru",
+        "pattern": "Vて やる",
+        "vi": "Làm cho người dưới (em, con), con vật, cây cối",
+        "explain": "Thể て + やる (やります): cùng hướng với 〜て あげる nhưng dùng khi người nhận là em nhỏ, con cái, con vật, cây cối. Chủ ngữ là người làm. Minna bài 41.",
+        "viMistake": "Dùng やる cho bạn bè, người ngang hàng hoặc người trên là thô lỗ. Ngược lại, khi đề có 〜に là em nhỏ, con, chó mèo, đừng chọn さしあげる (dành cho người trên) hay くれる／くださる (hướng về mình).",
+        "examples": [
+          {
+            "jp": "{毎朝|まいあさ}、{犬|いぬ}を {公園|こうえん}へ {連|つ}れて {行|い}って やります。",
+            "vi": "Sáng nào tôi cũng dắt chó ra công viên.",
+            "audio": null
+          },
+          {
+            "jp": "{寝|ね}る {前|まえ}に、{息子|むすこ}に {絵本|えほん}を {読|よ}んで やりました。",
+            "vi": "Trước khi ngủ, tôi đọc truyện tranh cho con trai.",
+            "audio": null
+          },
+          {
+            "jp": "{弟|おとうと}の {宿題|しゅくだい}を {見|み}て やりました。",
+            "vi": "Tôi đã xem bài tập cho em trai.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-itadaku",
+        "pattern": "Vて いただく",
+        "vi": "(Tôi) được người trên làm cho (khiêm nhường của 〜て もらう)",
+        "explain": "Thể て + いただく (いただきます): như 〜て もらう nhưng người làm là người trên (thầy cô, sếp, khách). Chủ ngữ là わたし (người nhận), người trên đi với に: わたしは せんせいに 〜て いただきました. Minna bài 41.",
+        "viMistake": "Nhầm với くださる vì cùng dịch “thầy làm cho tôi”. Nhìn trợ từ: せんせいに → いただく; せんせいが／は → くださる. せんせいが 〜て いただきました là sai.",
+        "examples": [
+          {
+            "jp": "わたしは {部長|ぶちょう}に {仕事|しごと}の やり{方|かた}を {教|おし}えて いただきました。",
+            "vi": "Tôi được trưởng phòng chỉ cho cách làm việc.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}に {発音|はつおん}を {直|なお}して いただきました。",
+            "vi": "Tôi được thầy sửa phát âm cho.",
+            "audio": null
+          },
+          {
+            "jp": "{社長|しゃちょう}に {昼|ひる}ごはんを ごちそうして いただきました。",
+            "vi": "Tôi được giám đốc mời bữa trưa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-kudasaru",
+        "pattern": "Vて くださる",
+        "vi": "(Người trên) làm cho tôi (kính ngữ của 〜て くれる)",
+        "explain": "Thể て + くださる. Thể ます là くださいます (không phải くださります), quá khứ くださいました, thể た くださった. Chủ ngữ là người trên (が／は), người nhận là mình. Minna bài 41.",
+        "viMistake": "Chia sai thành くださります, hoặc lẫn với 〜て ください (lời nhờ). せんせいが おしえて くださいました là kể lại việc thầy đã dạy; おしえて ください là nhờ người nghe dạy. Nói về bố mẹ mình với người ngoài thì dùng くれる, không dùng くださる.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}が {作文|さくぶん}に コメントを {書|か}いて くださいました。",
+            "vi": "Thầy đã viết nhận xét vào bài văn cho tôi.",
+            "audio": null
+          },
+          {
+            "jp": "{課長|かちょう}が {傘|かさ}を {貸|か}して くださいました。",
+            "vi": "Trưởng nhóm đã cho tôi mượn ô.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}は いつも ゆっくり {話|はな}して くださいます。",
+            "vi": "Thầy lúc nào cũng nói chậm cho chúng tôi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-teinei-irai",
+        "pattern": "〜て いただけませんか",
+        "vi": "… giúp tôi được không ạ? (nhờ lịch sự; cũng nói 〜て くださいませんか)",
+        "explain": "Thể て + いただけませんか (いただく → thể khả năng いただける → phủ định nghi vấn) hoặc thể て + くださいませんか. Lịch sự hơn 〜て ください và 〜て くれませんか; dùng khi nhờ người trên, người lạ. Người làm là người nghe. Minna bài 26 (いただけませんか) và bài 41 (くださいませんか).",
+        "viMistake": "Chọn nhầm いただきませんか (không có nghĩa nhờ) hoặc くださりませんか (chia sai). Đừng lẫn với 〜させて いただけませんか (xin phép để mình làm) và 〜ませんか (rủ rê).",
+        "examples": [
+          {
+            "jp": "すみません、もう {少|すこ}し ゆっくり {話|はな}して いただけませんか。",
+            "vi": "Xin lỗi, anh có thể nói chậm hơn một chút được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "この {漢字|かんじ}の {読|よ}み{方|かた}を {教|おし}えて くださいませんか。",
+            "vi": "Thầy có thể chỉ giúp em cách đọc chữ Hán này không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}までの {地図|ちず}を {書|か}いて いただけませんか。",
+            "vi": "Chị có thể vẽ giúp tôi bản đồ đến ga không ạ?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-o-ni-naru",
+        "pattern": "お〜に なる",
+        "vi": "Tôn kính ngữ: (người trên) làm …",
+        "explain": "お + gốc ます + に なります: よみます → およみに なります, かえります → おかえりに なります. Dùng cho hành động của người trên hoặc khách. Không dùng với động từ có gốc một âm tiết (みます, ねます, います) hay động từ đã có dạng tôn kính riêng (いく → いらっしゃる, たべる → めしあがる). Minna bài 49.",
+        "viMistake": "Lẫn với お〜します (khiêm nhường, cho việc của mình): しゃちょうは おかえりしました là sai, phải là おかえりに なりました. Cũng hay quên に: おかえり なりました.",
+        "examples": [
+          {
+            "jp": "{社長|しゃちょう}は もう お{帰|かえ}りに なりました。",
+            "vi": "Giám đốc đã về rồi ạ.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}は どんな {本|ほん}を お{書|か}きに なりましたか。",
+            "vi": "Thầy đã viết những cuốn sách nào ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{部長|ぶちょう}は {毎朝|まいあさ} {何時|なんじ}に お{出|で}かけに なりますか。",
+            "vi": "Sáng nào trưởng phòng cũng ra khỏi nhà lúc mấy giờ ạ?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sonkei-rareru",
+        "pattern": "V(ら)れる",
+        "vi": "Tôn kính ngữ dạng bị động (mức kính nhẹ hơn お〜に なる)",
+        "explain": "Chia giống thể bị động: nhóm I đổi đuôi sang cột あ + れる (かく → かかれる, よむ → よまれる, いく → いかれる); nhóm II + られる (でかける → でかけられる); する → される, くる → こられる. Chủ ngữ là người trên. Minna bài 49.",
+        "viMistake": "Thấy れる／られる là nghĩ ngay bị động hoặc khả năng. Xem chủ ngữ: chủ ngữ là người trên và không có “bị ai làm” (〜に) thì là tôn kính: せんせいが かかれた ほん = cuốn sách thầy viết. Với する thì される, không nói しられる.",
+        "examples": [
+          {
+            "jp": "{部長|ぶちょう}は {来月|らいげつ} アメリカへ {行|い}かれます。",
+            "vi": "Tháng sau trưởng phòng sẽ đi Mỹ.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}は {何時|なんじ}ごろ {大学|だいがく}に {来|こ}られますか。",
+            "vi": "Khoảng mấy giờ thầy đến trường ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{社長|しゃちょう}は {毎朝|まいあさ} {新聞|しんぶん}を {読|よ}まれます。",
+            "vi": "Sáng nào giám đốc cũng đọc báo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sonkei-tokubetsu",
+        "pattern": "いらっしゃる／おっしゃる",
+        "vi": "Động từ tôn kính đặc biệt",
+        "explain": "Một số động từ có dạng tôn kính riêng: いく・くる・いる → いらっしゃる; たべる・のむ → めしあがる; いう → おっしゃる; みる → ごらんに なる; する → なさる; くれる → くださる; しって いる → ごぞんじだ. Thể ます: いらっしゃいます, おっしゃいます, なさいます, くださいます (đổi る thành い). Minna bài 49.",
+        "viMistake": "Lẫn với động từ khiêm nhường cùng nghĩa: いらっしゃる ↔ まいる, めしあがる ↔ いただく, おっしゃる ↔ もうす, ごらんに なる ↔ はいけんする. Tôn kính dùng cho việc của người trên, không bao giờ cho việc của mình: わたしは ベトナムから いらっしゃいました là sai.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}、{何|なに}を めしあがりますか。",
+            "vi": "Thầy dùng món gì ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{部長|ぶちょう}は あした ハノイに いらっしゃいます。",
+            "vi": "Ngày mai trưởng phòng sẽ đến Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}が おっしゃった ことを メモしました。",
+            "vi": "Tôi đã ghi lại những điều thầy nói.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-o-kudasai",
+        "pattern": "お〜ください／ご〜ください",
+        "vi": "Xin mời (quý khách) …; xin vui lòng …",
+        "explain": "お + gốc ます + ください (おまち ください, おかけ ください); với danh từ Hán chỉ hành động: ご + N + ください (ごちゅうい ください, ごりよう ください). Lịch sự hơn 〜て ください, hay gặp ở nhà ga, cửa hàng, thông báo. Động từ tôn kính đặc biệt thì dùng thể て: めしあがって ください, いらっしゃって ください. Minna bài 49.",
+        "viMistake": "Gắn お vào thể て (おまって ください) hoặc thêm して (ごりようして ください) — đều sai. Cũng đừng lẫn với お〜します: おまちします là “tôi sẽ đợi”, おまち ください là “xin hãy đợi”.",
+        "examples": [
+          {
+            "jp": "{少々|しょうしょう} お{待|ま}ち ください。",
+            "vi": "Xin quý khách vui lòng đợi một chút.",
+            "audio": null
+          },
+          {
+            "jp": "こちらの {紙|かみ}に お{名前|なまえ}と {住所|じゅうしょ}を お{書|か}き ください。",
+            "vi": "Xin hãy viết tên và địa chỉ vào tờ giấy này.",
+            "audio": null
+          },
+          {
+            "jp": "スープが {熱|あつ}いので、ご{注意|ちゅうい} ください。",
+            "vi": "Súp nóng, xin quý khách cẩn thận.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-o-suru",
+        "pattern": "お〜する／ご〜する",
+        "vi": "Khiêm nhường ngữ: (tôi) xin làm … cho người trên",
+        "explain": "お + gốc ます + します (おもちします, おしらせします); danh từ Hán: ご + N + します (ごあんないします, ごそうだんします; riêng でんわ → おでんわします). Nói いたします thay します thì khiêm nhường hơn. Dùng cho hành động của mình có liên quan đến người trên, người nghe. Minna bài 50.",
+        "viMistake": "Dùng cho việc của người trên (せんせいが おまちしました là sai → おまちに なりました), hoặc cho việc chẳng liên quan ai (まいあさ おおきします là sai). Với thầy cô, nói もって あげましょうか là thất lễ; nói おもちしましょうか.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}、{傘|かさ}を お{貸|か}ししましょうか。",
+            "vi": "Thưa thầy, em cho thầy mượn ô nhé?",
+            "audio": null
+          },
+          {
+            "jp": "{新|あたら}しい {先生|せんせい}を ご{紹介|しょうかい}します。",
+            "vi": "Tôi xin giới thiệu thầy giáo mới.",
+            "audio": null
+          },
+          {
+            "jp": "{結果|けっか}は あした メールで お{知|し}らせします。",
+            "vi": "Kết quả tôi xin báo qua email vào ngày mai.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-kenjou-tokubetsu",
+        "pattern": "まいる／もうす／おる",
+        "vi": "Động từ khiêm nhường đặc biệt",
+        "explain": "Dùng cho việc của mình (hoặc người trong nhà, trong công ty mình khi nói với người ngoài): いく・くる → まいります; いる → おります; たべる・のむ・もらう → いただきます; いう → もうします; する → いたします; みる → はいけんします; きく・たずねる (đến thăm) → うかがいます; しる・おもう → ぞんじます (しって いる → ぞんじて おります, しらない → ぞんじません). Minna bài 50.",
+        "viMistake": "Dùng khiêm nhường cho người trên: せんせいは あした まいりますか là sai → いらっしゃいますか. Ngược lại, nói về bố mẹ, sếp của mình với khách thì dùng おります, không dùng いらっしゃいます. “Không biết” là ぞんじません, không phải ごぞんじません.",
+        "examples": [
+          {
+            "jp": "あしたの {午後|ごご} {三時|さんじ}に そちらへ まいります。",
+            "vi": "Chiều mai lúc 3 giờ tôi xin đến chỗ anh.",
+            "audio": null
+          },
+          {
+            "jp": "{毎日|まいにち} {六時|ろくじ}まで {会社|かいしゃ}に おります。",
+            "vi": "Ngày nào tôi cũng ở công ty đến 6 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "グエンと もうします。{銀行|ぎんこう}で {働|はたら}いて おります。",
+            "vi": "Tôi tên là Nguyễn. Tôi đang làm việc ở ngân hàng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-gozaimasu",
+        "pattern": "で ございます／ございます",
+        "vi": "Là / có (lịch sự trang trọng, thay です／あります)",
+        "explain": "Từ lịch sự (丁寧語): です → で ございます, あります → ございます, ありません → ございません. Hay gặp khi nhân viên nói với khách, nghe điện thoại, thông báo. Minna bài 50.",
+        "viMistake": "ございます chỉ thay あります (đồ vật, sự việc), không thay います cho người: しゃちょうは かいぎしつに ございます là sai → いらっしゃいます (tôn kính) hoặc おります (người công ty mình, nói với khách).",
+        "examples": [
+          {
+            "jp": "はい、さくら{旅行社|りょこうしゃ}で ございます。",
+            "vi": "Vâng, công ty du lịch Sakura xin nghe.",
+            "audio": null
+          },
+          {
+            "jp": "{大|おお}きい サイズも ございます。",
+            "vi": "Chúng tôi có cả cỡ lớn ạ.",
+            "audio": null
+          },
+          {
+            "jp": "{申|もう}し{訳|わけ} ございません。その {色|いろ}は {今|いま} ございません。",
+            "vi": "Thành thật xin lỗi. Màu đó hiện không có ạ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g7-s01",
+        "type": "title",
+        "jp": "{授受|じゅじゅ}{表現|ひょうげん}と {敬語|けいご}",
+        "vi": "Tổng ôn N4 · 7: cho nhận và kính ngữ"
+      },
+      {
+        "id": "n4g7-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "1. Chọn đúng あげる／くれる／もらう／やる và dạng kính ngữ いただく／くださる theo hướng “ai làm cho ai”.\n2. Nhờ lịch sự bằng 〜て いただけませんか／くださいませんか.\n3. Phân biệt tôn kính ngữ (việc người trên làm) và khiêm nhường ngữ (việc mình làm), kể cả các động từ đặc biệt.\n4. Nhận ra で ございます／ございます và お〜ください.\nKhi làm đề bị quên mẫu nào, mở slide của mẫu đó, xem ví dụ rồi làm câu luyện. Mọi ví dụ và câu hỏi đều tự biên soạn."
+      },
+      {
+        "id": "n4g7-s03",
+        "type": "table",
+        "title": "Cho nhận: ai làm cho ai?",
+        "columns": ["Hướng", "Thường", "Với người trên", "Chủ ngữ"],
+        "rows": [
+          ["Tôi → người khác", "Vて あげる", "(Vて さしあげる)", "người làm"],
+          ["Tôi → em, con, vật", "Vて やる", "—", "người làm"],
+          ["Người khác → tôi", "Vて くれる", "Vて くださる", "người làm"],
+          ["Tôi nhận từ ai", "Vて もらう", "Vて いただく", "người nhận"]
+        ],
+        "teacherNotes": "Vẽ mũi tên lên bảng: あげる đi ra khỏi tôi, くれる đi về phía tôi, もらう thì tôi là chủ ngữ."
+      },
+      {
+        "id": "n4g7-s04",
+        "type": "grammar",
+        "ref": "n4g-te-ageru"
+      },
+      {
+        "id": "n4g7-s05",
+        "type": "example",
+        "ref": "n4g-te-ageru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s06",
+        "type": "grammar",
+        "ref": "n4g-te-kureru"
+      },
+      {
+        "id": "n4g7-s07",
+        "type": "example",
+        "ref": "n4g-te-kureru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s08",
+        "type": "grammar",
+        "ref": "n4g-te-morau",
+        "teacherNotes": "Cho học viên đổi các câu くれる ở slide trước sang もらう: が → に."
+      },
+      {
+        "id": "n4g7-s09",
+        "type": "example",
+        "ref": "n4g-te-morau",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s10",
+        "type": "quiz",
+        "ref": "n4g7-q07"
+      },
+      {
+        "id": "n4g7-s11",
+        "type": "grammar",
+        "ref": "n4g-te-yaru"
+      },
+      {
+        "id": "n4g7-s12",
+        "type": "example",
+        "ref": "n4g-te-yaru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s13",
+        "type": "grammar",
+        "ref": "n4g-te-itadaku"
+      },
+      {
+        "id": "n4g7-s14",
+        "type": "example",
+        "ref": "n4g-te-itadaku",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s15",
+        "type": "grammar",
+        "ref": "n4g-te-kudasaru"
+      },
+      {
+        "id": "n4g7-s16",
+        "type": "example",
+        "ref": "n4g-te-kudasaru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s17",
+        "type": "table",
+        "title": "Phân biệt: cùng là “dạy”",
+        "columns": ["Câu", "Ai làm?", "Ai được?"],
+        "rows": [
+          ["{兄|あに}が {教|おし}えて くれた", "anh trai", "tôi"],
+          ["{兄|あに}に {教|おし}えて もらった", "anh trai", "tôi"],
+          ["{兄|あに}に {教|おし}えて あげた", "tôi", "anh trai"],
+          ["{弟|おとうと}に {教|おし}えて やった", "tôi", "em trai"],
+          ["{先生|せんせい}が {教|おし}えて くださった", "thầy", "tôi"],
+          ["{先生|せんせい}に {教|おし}えて いただいた", "thầy", "tôi"]
+        ],
+        "teacherNotes": "Che hai cột sau, hỏi học viên ai làm, ai được; nhấn mạnh trợ từ が／に."
+      },
+      {
+        "id": "n4g7-s18",
+        "type": "quiz",
+        "ref": "n4g7-q12"
+      },
+      {
+        "id": "n4g7-s19",
+        "type": "grammar",
+        "ref": "n4g-teinei-irai"
+      },
+      {
+        "id": "n4g7-s20",
+        "type": "example",
+        "ref": "n4g-teinei-irai",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s21",
+        "type": "quiz",
+        "ref": "n4g7-q15"
+      },
+      {
+        "id": "n4g7-s22",
+        "type": "table",
+        "title": "Ba loại kính ngữ",
+        "columns": ["Loại", "Dùng cho", "Ví dụ"],
+        "rows": [
+          ["{尊敬語|そんけいご} (tôn kính)", "việc người trên làm", "お{読|よ}みに なる"],
+          ["{謙譲語|けんじょうご} (khiêm nhường)", "việc mình làm", "お{持|も}ちする"],
+          ["{丁寧語|ていねいご} (lịch sự)", "lời nói với người nghe", "で ございます"]
+        ]
+      },
+      {
+        "id": "n4g7-s23",
+        "type": "grammar",
+        "ref": "n4g-o-ni-naru"
+      },
+      {
+        "id": "n4g7-s24",
+        "type": "example",
+        "ref": "n4g-o-ni-naru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s25",
+        "type": "grammar",
+        "ref": "n4g-sonkei-rareru"
+      },
+      {
+        "id": "n4g7-s26",
+        "type": "example",
+        "ref": "n4g-sonkei-rareru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s27",
+        "type": "table",
+        "title": "Tạo 〜(ら)れる tôn kính",
+        "columns": ["Nhóm", "Thể từ điển", "Tôn kính"],
+        "rows": [
+          ["I", "{書|か}く", "{書|か}かれる"],
+          ["I", "{読|よ}む", "{読|よ}まれる"],
+          ["I", "{帰|かえ}る", "{帰|かえ}られる"],
+          ["II", "{出|で}かける", "{出|で}かけられる"],
+          ["III", "する", "される"],
+          ["III", "{来|く}る", "{来|こ}られる"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Giống hệt thể bị động; nhắc học viên nhìn chủ ngữ để biết là tôn kính."
+      },
+      {
+        "id": "n4g7-s28",
+        "type": "quiz",
+        "ref": "n4g7-q19"
+      },
+      {
+        "id": "n4g7-s29",
+        "type": "grammar",
+        "ref": "n4g-sonkei-tokubetsu"
+      },
+      {
+        "id": "n4g7-s30",
+        "type": "example",
+        "ref": "n4g-sonkei-tokubetsu",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s31",
+        "type": "grammar",
+        "ref": "n4g-o-kudasai"
+      },
+      {
+        "id": "n4g7-s32",
+        "type": "example",
+        "ref": "n4g-o-kudasai",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s33",
+        "type": "grammar",
+        "ref": "n4g-o-suru"
+      },
+      {
+        "id": "n4g7-s34",
+        "type": "example",
+        "ref": "n4g-o-suru",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s35",
+        "type": "table",
+        "title": "Ba mẫu お〜: ai làm?",
+        "columns": ["Mẫu", "Ai làm?", "Ví dụ"],
+        "rows": [
+          ["お〜に なる", "người trên", "お{待|ま}ちに なる"],
+          ["お〜する／いたす", "tôi", "お{待|ま}ちする"],
+          ["お〜ください", "người nghe (lời mời)", "お{待|ま}ち ください"]
+        ]
+      },
+      {
+        "id": "n4g7-s36",
+        "type": "grammar",
+        "ref": "n4g-kenjou-tokubetsu"
+      },
+      {
+        "id": "n4g7-s37",
+        "type": "example",
+        "ref": "n4g-kenjou-tokubetsu",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s38",
+        "type": "table",
+        "title": "Động từ đặc biệt",
+        "columns": ["Thường", "Tôn kính", "Khiêm nhường"],
+        "rows": [
+          ["{行|い}く・{来|く}る", "いらっしゃる", "まいる"],
+          ["いる", "いらっしゃる", "おる"],
+          ["{食|た}べる・{飲|の}む", "めしあがる", "いただく"],
+          ["{言|い}う", "おっしゃる", "もうす"],
+          ["する", "なさる", "いたす"],
+          ["{見|み}る", "ごらんに なる", "はいけんする"],
+          ["{聞|き}く・{訪|たず}ねる", "—", "うかがう"],
+          ["{知|し}って いる", "ごぞんじだ", "ぞんじて おる"],
+          ["くれる／もらう", "くださる", "いただく"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột khiêm nhường, đọc to từng cặp; thể ます: いらっしゃいます, おっしゃいます, なさいます."
+      },
+      {
+        "id": "n4g7-s39",
+        "type": "quiz",
+        "ref": "n4g7-q31"
+      },
+      {
+        "id": "n4g7-s40",
+        "type": "grammar",
+        "ref": "n4g-gozaimasu"
+      },
+      {
+        "id": "n4g7-s41",
+        "type": "example",
+        "ref": "n4g-gozaimasu",
+        "reveal": true
+      },
+      {
+        "id": "n4g7-s42",
+        "type": "quiz",
+        "ref": "n4g7-q32"
+      },
+      {
+        "id": "n4g7-s43",
+        "type": "dialogue",
+        "title": "Đến gặp trưởng phòng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{山田|やまだ}{部長|ぶちょう}は いらっしゃいますか。",
+            "vi": "Trưởng phòng Yamada có ở đây không ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "{会議室|かいぎしつ}に おります。{呼|よ}んで まいります。",
+            "vi": "Trưởng phòng đang ở phòng họp. Tôi xin đi gọi ạ."
+          },
+          {
+            "speaker": "{部長|ぶちょう}",
+            "jp": "ナムさん、コーヒーを めしあがりますか。",
+            "vi": "Anh Nam dùng cà phê nhé?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いただきます。{資料|しりょう}を {見|み}て いただけませんか。",
+            "vi": "Vâng, tôi xin. Anh xem giúp tôi tài liệu này được không ạ?"
+          },
+          {
+            "speaker": "{部長|ぶちょう}",
+            "jp": "いいですよ。あした メールで お{返事|へんじ}します。",
+            "vi": "Được thôi. Ngày mai tôi sẽ trả lời qua email."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "よろしく おねがい いたします。",
+            "vi": "Mong anh giúp đỡ ạ."
+          }
+        ],
+        "teacherNotes": "Lễ tân nói về trưởng phòng công ty mình với khách nên dùng おります, không dùng いらっしゃいます."
+      },
+      {
+        "id": "n4g7-s44",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "Cho nhận: tìm người làm. 〜が + くれる／くださる; 〜に + もらう／いただく; わたしは + あげる／やる.\nNgười trên làm cho mình → くださる (が) hoặc いただく (に); người dưới, con vật → やる.\nNhờ lịch sự: 〜て いただけませんか／くださいませんか (không phải いただきませんか, くださりませんか).\nChủ ngữ là người trên → tôn kính: お〜に なる, 〜(ら)れる, いらっしゃる, めしあがる, おっしゃる, ごらんに なる, なさる.\nChủ ngữ là mình (hoặc người nhà nói với người ngoài) → khiêm nhường: お〜する, まいる, おる, もうす, いたす, はいけんする, うかがう, ぞんじる.\nLời mời, biển báo → お〜ください／ご〜ください. Đồ vật, nơi chốn với khách → ございます."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g7-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {空港|くうこう}へ {行|い}く {友|とも}だちを {車|くるま}で {送|おく}って （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-ageru"],
+        "explain": "Tôi đã chở người bạn đi sân bay bằng ô tô. Chủ ngữ わたしは là người làm, bạn là người được giúp → Vて あげました. くれました／くださいました dùng khi người khác làm cho mình, không đi với わたしは làm chủ ngữ. ください là lời nhờ, không đứng sau わたしは kể việc mình làm.",
+        "type": "choice",
+        "options": ["くれました", "くださいました", "あげました", "ください"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {新|あたら}しい {社員|しゃいん}（　　） {会社|かいしゃ}の {中|なか}を {案内|あんない}して あげました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-ageru"],
+        "explain": "Tôi đã dẫn nhân viên mới đi xem bên trong công ty. Với あんないする, người được dẫn đi với に, nơi được dẫn đi xem đi với を → あたらしい しゃいんに. が sai vì chủ ngữ đã là わたしは; を sẽ tạo hai を trong một câu (しゃいんを かいしゃの なかを) là sai; で chỉ nơi chốn hay phương tiện, không chỉ người nhận.",
+        "type": "choice",
+        "options": ["に", "が", "を", "で"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q03",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{山田|やまだ}さんの {傘|かさ}が {壊|こわ}れて いたので、わたしの {傘|かさ}を {貸|か}して （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-ageru"],
+        "explain": "Ô của anh Yamada bị hỏng nên tôi cho anh ấy mượn ô của tôi. Ô là của わたし, người cho mượn là tôi → かして あげました. くれました／くださいました nghĩa là người khác cho tôi mượn; もらいました nghĩa là tôi được mượn — đều vô lý vì ô là của tôi.",
+        "type": "choice",
+        "options": ["くれました", "もらいました", "くださいました", "あげました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}が {急|きゅう}に {降|ふ}って きた とき、{知|し}らない {人|ひと}が わたしを {傘|かさ}に {入|い}れて （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kureru"],
+        "explain": "Khi trời đột nhiên đổ mưa, một người lạ đã cho tôi đứng chung ô. Người làm là しらない ひとが, người được giúp là わたし → くれました. あげました／さしあげました／やりました đều là việc làm cho người khác, không bao giờ hướng về わたし.",
+        "type": "choice",
+        "options": ["あげました", "くれました", "さしあげました", "やりました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{国|くに}の {母|はは}が わたしに ベトナムの お{菓子|かし}を {送|おく}って （　　）ので、{会社|かいしゃ}の {人|ひと}に {配|くば}りました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kureru"],
+        "explain": "Mẹ ở quê đã gửi bánh kẹo Việt Nam cho tôi nên tôi đem chia cho người trong công ty. Người làm là はは が, người nhận là わたし (わたしに) → 〜て くれた. あげた／やった là việc làm cho người khác, không bao giờ hướng về わたし; ください là lời nhờ, không đứng trước ので.",
+        "type": "choice",
+        "options": ["あげた", "くれた", "やった", "ください"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q06",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {日本人|にほんじん}の {友|とも}だち（　　） レポートの {日本語|にほんご}を チェックして もらいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-morau"],
+        "explain": "Tôi được người bạn Nhật kiểm tra giúp tiếng Nhật trong bài báo cáo. Với 〜て もらう, người làm đi với に. が sai vì chủ ngữ đã là わたしは; を đã dùng cho にほんご; で không chỉ người làm.",
+        "type": "choice",
+        "options": ["が", "を", "で", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{家族|かぞく} みんなで {写真|しゃしん}を {撮|と}りたかったので、{近|ちか}くに いた {人|ひと}に {撮|と}って （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-morau"],
+        "explain": "Cả nhà muốn chụp chung một tấm ảnh nên tôi đã nhờ người đứng gần đó chụp giúp. Người làm đi với に (ちかくに いた ひとに) → 〜て もらいました. くれました cần người làm đi với が; あげました／やりました là tôi chụp cho người kia, trái với ý cả nhà muốn có ảnh chung.",
+        "type": "choice",
+        "options": ["もらいました", "くれました", "あげました", "やりました"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {毎晩|まいばん}、{寝|ね}る {前|まえ}に {五歳|ごさい}の {娘|むすめ}に {本|ほん}を {読|よ}んで （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-yaru"],
+        "explain": "Tối nào trước khi ngủ tôi cũng đọc sách cho con gái 5 tuổi. Người làm là わたし, người nhận là con nhỏ của mình → 〜て やります. くれます／くださいます là người khác làm cho mình, không đi với わたしは; さしあげます chỉ dùng khi người nhận là người trên (thầy cô, khách), không bao giờ dùng cho con mình.",
+        "type": "choice",
+        "options": ["くれます", "くださいます", "やります", "さしあげます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q09",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{妹|いもうと}が {泣|な}いて いたので、わたしが アイスクリームを {買|か}って （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-yaru"],
+        "explain": "Em gái khóc nên tôi đã mua kem cho em. Người làm là わたしが, người nhận là em gái (người dưới) → 〜て やりました. くれました／くださいました là người khác làm cho tôi, không đi với わたしが; ください là lời nhờ, không hợp với câu kể việc đã làm.",
+        "type": "choice",
+        "options": ["くれました", "くださいました", "ください", "やりました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q10",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {先生|せんせい}に {日本|にほん}の {大学|だいがく}を {紹介|しょうかい}して （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-itadaku"],
+        "explain": "Tôi được thầy giới thiệu cho một trường đại học ở Nhật. わたしは + せんせいに → 〜て いただきました. くださいました／くれました cần chủ ngữ là người làm (せんせいが); やりました dùng cho người dưới, con vật, sai với thầy.",
+        "type": "choice",
+        "options": ["いただきました", "くださいました", "くれました", "やりました"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q11",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}に {仕事|しごと}を {手伝|てつだ}って （　　）、{早|はや}く {終|お}わりました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-itadaku"],
+        "explain": "Được trưởng phòng giúp việc nên tôi xong sớm. ぶちょうに (người làm đi với に) → 〜て いただいて. くださって／くれて cần người làm đi với が (ぶちょうが); ください là lời nhờ, không dùng để nối hai vế câu.",
+        "type": "choice",
+        "options": ["くださって", "くれて", "いただいて", "ください"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q12",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{社長|しゃちょう}が わたしの {結婚式|けっこんしき}に {来|き}て （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kudasaru"],
+        "explain": "Giám đốc đã đến dự đám cưới của tôi. Chủ ngữ しゃちょうが là người trên làm cho mình → 〜て くださいました. いただきました／もらいました cần chủ ngữ là わたし và người làm đi với に; さしあげました là mình làm cho người trên.",
+        "type": "choice",
+        "options": ["いただきました", "くださいました", "さしあげました", "もらいました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q13",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は いつも わたしたちの {質問|しつもん}に ていねいに {答|こた}えて （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kudasaru"],
+        "explain": "Thầy lúc nào cũng trả lời câu hỏi của chúng tôi rất cẩn thận. せんせいは là người làm cho mình → 〜て くださいます. くださります là chia sai (くださる → くださいます). いただきます cần chủ ngữ là người nhận; さしあげます là làm cho người trên, sai hướng.",
+        "type": "choice",
+        "options": ["くださいます", "くださります", "いただきます", "さしあげます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q14",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}が {駅|えき}まで {迎|むか}えに {来|き}て （　　）ので、{道|みち}に {迷|まよ}いませんでした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kudasaru"],
+        "explain": "Vì thầy ra ga đón nên tôi không bị lạc đường. せんせいが là người làm cho mình → 〜て くださった. いただいた cần người làm đi với に; さしあげた là mình làm cho người trên; ください là lời nhờ, không đứng trước ので.",
+        "type": "choice",
+        "options": ["いただいた", "さしあげた", "ください", "くださった"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q15",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "すみません、この {荷物|にもつ}を {三階|さんがい}まで （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-teinei-irai"],
+        "explain": "Xin lỗi, anh có thể mang giúp kiện hàng này lên tầng 3 không ạ? Nhờ lịch sự: thể て + いただけませんか (いただく → thể khả năng いただける). いただきませんか không phải lời nhờ; はこび いただけませんか sai vì いただけませんか phải đứng sau thể て; くださりませんか chia sai (đúng là くださいませんか).",
+        "type": "choice",
+        "options": [
+          "{運|はこ}んで いただきませんか",
+          "{運|はこ}んで いただけませんか",
+          "{運|はこ}び いただけませんか",
+          "{運|はこ}んで くださりませんか"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}、この {文|ぶん}の {意味|いみ}を もう {一度|いちど} {説明|せつめい}して （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-teinei-irai"],
+        "explain": "Thầy ơi, thầy có thể giải thích lại nghĩa câu này một lần nữa được không ạ? Nhờ người trên: 〜て くださいませんか. くださりませんか và くださるませんか đều chia sai (くださる → くださいます → くださいませんか); いただきませんか không phải lời nhờ (phải là いただけませんか).",
+        "type": "choice",
+        "options": ["くださりませんか", "いただきませんか", "くださいませんか", "くださるませんか"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q17",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "（　　）は {今|いま} {電話|でんわ}で お{話|はな}しに なって います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-ni-naru"],
+        "explain": "Thầy Tanaka đang nói chuyện điện thoại. お〜に なる là tôn kính ngữ, chỉ dùng cho việc của người trên, người mình kính trọng → たなかせんせい. Không dùng tôn kính cho chính mình (わたし) hay cho người nhà mình (わたしの はは, わたしの おとうと).",
+        "type": "choice",
+        "options": [
+          "わたし",
+          "わたしの {母|はは}",
+          "{田中|たなか}{先生|せんせい}",
+          "わたしの {弟|おとうと}"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q18",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は {何時|なんじ}に {駅|えき}に （　　）か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-ni-naru"],
+        "explain": "Thầy đã đến ga lúc mấy giờ ạ? お + gốc ます + に なる: つきます → gốc つき → おつきに なりました. おつくに dùng thể từ điển, おついに lấy theo thể て, đều sai; おつきに されました trộn お〜に なる với される.",
+        "type": "choice",
+        "options": [
+          "お{着|つ}きに なりました",
+          "お{着|つ}くに なりました",
+          "お{着|つ}いに なりました",
+          "お{着|つ}きに されました"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q19",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}は {毎朝|まいあさ} {七時|しちじ}に {会社|かいしゃ}へ （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-rareru"],
+        "explain": "Sáng nào trưởng phòng cũng đến công ty lúc 7 giờ. くる → こられる (tôn kính, chia giống bị động) → こられます. きられます, くられます chia sai gốc; くる có gốc ます một âm tiết (きます) nên không dùng お〜に なる.",
+        "type": "choice",
+        "options": ["きられます", "くられます", "お{来|き}に なります", "こられます"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q20",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}は きのう {会議|かいぎ}で {何|なに}を {説明|せつめい}（　　）か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-rareru"],
+        "explain": "Hôm qua ở cuộc họp trưởng phòng đã giải thích điều gì ạ? する → される (tôn kính) → せつめい されました. しられました chia sai; いたしました là khiêm nhường, dùng cho việc của mình; する không có dạng お〜に なる (tôn kính của する là なさる).",
+        "type": "choice",
+        "options": ["しられました", "されました", "いたしました", "おしに なりました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q21",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}が （　　） ことを ノートに {書|か}きました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-tokubetsu"],
+        "explain": "Tôi đã ghi vào vở những điều thầy nói. Việc của thầy → tôn kính của いう là おっしゃる → おっしゃった. もうした／もうしあげた là khiêm nhường, dùng cho việc mình nói; いう không có dạng お〜に なる.",
+        "type": "choice",
+        "options": ["おっしゃった", "もうした", "もうしあげた", "おいいに なった"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q22",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{部長|ぶちょう}、きのうの サッカーの {試合|しあい}を （　　）か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-tokubetsu"],
+        "explain": "Trưởng phòng ơi, anh đã xem trận bóng hôm qua chưa ạ? Tôn kính của みる là ごらんに なる → ごらんに なりました. はいけんしました là khiêm nhường (việc mình xem); ごらんしました chia sai; みる có gốc một âm tiết nên không dùng お〜に なる.",
+        "type": "choice",
+        "options": [
+          "はいけんしました",
+          "ごらんしました",
+          "おみに なりました",
+          "ごらんに なりました"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q23",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は この {近|ちか}くの {病院|びょういん}を （　　）か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-tokubetsu"],
+        "explain": "Thầy có biết bệnh viện gần đây không ạ? Tôn kính của しって いる là ごぞんじだ → ごぞんじですか. ぞんじて おります là khiêm nhường (mình biết); ごぞんじます chia sai; もうして おります là khiêm nhường của いう, sai nghĩa.",
+        "type": "choice",
+        "options": ["ぞんじて おります", "ごぞんじます", "ごぞんじです", "もうして おります"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q24",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅員|えきいん}「{電車|でんしゃ}が {来|き}ます。{白|しろ}い {線|せん}の {後|うし}ろで （　　）。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-kudasai"],
+        "explain": "Nhân viên nhà ga: “Tàu sắp đến. Xin quý khách đợi phía sau vạch trắng.” Lời yêu cầu lịch sự: お + gốc ます + ください → おまち ください. Thêm して là sai; お không gắn với thể て (おまって); ご chỉ đi với danh từ Hán (ごちゅうい, ごりよう).",
+        "type": "choice",
+        "options": [
+          "お{待|ま}ちして ください",
+          "お{待|ま}ち ください",
+          "お{待|ま}って ください",
+          "ご{待|ま}ち ください"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q25",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}で {階段|かいだん}が すべりやすく なって います。（　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-kudasai"],
+        "explain": "Trời mưa nên cầu thang trơn. Xin hãy cẩn thận. ちゅうい là danh từ Hán → ご + N + ください. お注意 sai tiền tố; ご注意して ください thêm して là sai; ご注意に ください không có mẫu này.",
+        "type": "choice",
+        "options": [
+          "お{注意|ちゅうい} ください",
+          "ご{注意|ちゅうい}して ください",
+          "ご{注意|ちゅうい}に ください",
+          "ご{注意|ちゅうい} ください"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q26",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}、その かばん、{重|おも}そうですね。わたしが （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-suru"],
+        "explain": "Thầy ơi, cái cặp đó trông nặng quá. Để em xách giúp nhé? Việc của mình làm cho thầy → khiêm nhường お + gốc ます + します: おもちしましょうか. お持ちに なりましょうか là tôn kính (việc của thầy), sai với わたしが; お持ち ください là mời thầy xách; 持って いただきましょうか nghĩa là nhờ người khác xách, không hợp với わたしが.",
+        "type": "choice",
+        "options": [
+          "お{持|も}ちしましょうか",
+          "お{持|も}ちに なりましょうか",
+          "お{持|も}ち ください",
+          "{持|も}って いただきましょうか"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q27",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}の {時間|じかん}が {決|き}まったら、わたしから すぐ （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-suru"],
+        "explain": "Khi giờ họp được quyết định, tôi sẽ liên lạc ngay. Việc của mình (わたしから) → khiêm nhường ご + danh từ Hán + します: ごれんらくします. お連絡 sai tiền tố (れんらく là từ Hán → ご); ご連絡に なります là tôn kính, không dùng cho mình; ご連絡 ください là nhờ người nghe liên lạc, trái với わたしから.",
+        "type": "choice",
+        "options": [
+          "お{連絡|れんらく}します",
+          "ご{連絡|れんらく}します",
+          "ご{連絡|れんらく}に なります",
+          "ご{連絡|れんらく} ください"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q28",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}、あしたの {午後|ごご}、{研究室|けんきゅうしつ}に （　　）も よろしいでしょうか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kenjou-tokubetsu"],
+        "explain": "Thưa thầy, chiều mai em đến phòng nghiên cứu của thầy có được không ạ? Việc mình đến thăm người trên → khiêm nhường うかがう: うかがっても よろしいでしょうか. いらっしゃって là tôn kính, dùng cho việc của thầy; ごらんに なって (xem) và めしあがって (ăn) sai nghĩa.",
+        "type": "choice",
+        "options": ["いらっしゃって", "ごらんに なって", "うかがって", "めしあがって"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q29",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "（{電話|でんわ}で）「すみません、{父|ちち}は {今|いま} {出|で}かけて （　　）が、{夕方|ゆうがた}には {帰|かえ}ります。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kenjou-tokubetsu"],
+        "explain": "(Nói qua điện thoại với người ngoài) Xin lỗi, bố tôi hiện đang đi vắng, chiều tối sẽ về. Từ ちち (không phải おとうさん) cho thấy đang nói với người ngoài về người nhà mình → khiêm nhường 〜て おります (của いる). いらっしゃいます là tôn kính, không bao giờ dùng cho ちち của mình; ございます chỉ thay あります, không dùng cho người; なさいます là tôn kính của する, sai nghĩa.",
+        "type": "choice",
+        "options": ["おります", "いらっしゃいます", "ございます", "なさいます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q30",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}からの お{手紙|てがみ}、うれしく （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kenjou-tokubetsu"],
+        "explain": "Em đã đọc thư của thầy với niềm vui. Việc mình xem/đọc thư của người trên → khiêm nhường はいけんする: はいけんしました. ごらんに なりました và みられました là tôn kính (việc thầy xem); おみえに なりました nghĩa là “thầy đến”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "ごらんに なりました",
+          "おみえに なりました",
+          "みられました",
+          "はいけんしました"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q31",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{山田|やまだ}さんの {電話|でんわ}{番号|ばんごう}を {知|し}って いますか。」 B「すみません、わたしは （　　）。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kenjou-tokubetsu"],
+        "explain": "A: Anh có biết số điện thoại của anh Yamada không? B: Xin lỗi, tôi không biết ạ. Khiêm nhường của しらない là ぞんじません. ごぞんじ là tôn kính (người khác biết) và không chia thành ごぞんじません; ぞんじて いらっしゃいません trộn khiêm nhường với tôn kính; もうしません là “không nói”.",
+        "type": "choice",
+        "options": [
+          "ごぞんじません",
+          "ぞんじません",
+          "ぞんじて いらっしゃいません",
+          "もうしません"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q32",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{店員|てんいん}「お{手洗|てあら}いは {二階|にかい}に （　　）。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-gozaimasu"],
+        "explain": "Nhân viên: “Nhà vệ sinh ở tầng hai ạ.” Nói lịch sự với khách, thay あります cho nơi chốn/đồ vật → ございます. いらっしゃいます／おります dùng cho người; で ございます thay です, không đứng sau に.",
+        "type": "choice",
+        "options": ["いらっしゃいます", "おります", "ございます", "で ございます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q33",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{熱|ねつ}を {出|だ}した とき、{同|おな}じ クラスの ＿＿　＿＿　＿★＿　＿＿　くれました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-kureru"],
+        "explain": "Câu đúng: ねつを だした とき、おなじ クラスの ともだちが くすりを かって きて くれました。(Khi tôi bị sốt, bạn cùng lớp đã mua thuốc mang đến cho tôi.) おなじ クラスの phải đứng ngay trước ともだちが; かって きて くれました = mua rồi mang đến cho tôi. Thứ tự: ともだちが → くすりを → かって (★) → きて.",
+        "type": "choice",
+        "options": ["{来|き}て", "{友|とも}だちが", "{薬|くすり}を", "{買|か}って"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q34",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{日本|にほん}に {来|き}た とき、{先輩|せんぱい}に ＿★＿　＿＿　＿＿　＿＿　もらいました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-morau"],
+        "explain": "Câu đúng: にほんに きた とき、せんぱいに わたしが すむ へやを さがして もらいました。(Lúc mới sang Nhật, tôi được anh khóa trên tìm giúp căn phòng để ở.) わたしが すむ bổ nghĩa cho へや; người làm (せんぱい) đi với に + 〜て もらう. Thứ tự: わたしが (★) → すむ → へやを → さがして.",
+        "type": "choice",
+        "options": ["わたしが", "{探|さが}して", "{部屋|へや}を", "{住|す}む"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q35",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}に ＿＿　＿★＿　＿＿　＿＿　いただきました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-itadaku"],
+        "explain": "Câu đúng: せんせいに だいがくへ だす しょるいを チェックして いただきました。(Tôi được thầy kiểm tra giúp giấy tờ nộp cho trường đại học.) だいがくへ だす bổ nghĩa cho しょるい, rồi 〜て いただきました (người làm là thầy, đi với に). Thứ tự: だいがくへ → だす (★) → しょるいを → チェックして.",
+        "type": "choice",
+        "options": ["チェックして", "{大学|だいがく}へ", "{出|だ}す", "{書類|しょるい}を"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g7-q36",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{田中|たなか}さん、この ＿＿　＿＿　＿★＿　＿＿　くれませんか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-teinei-irai"],
+        "explain": "Câu đúng: たなかさん、この ことばの いみが わからないので、おしえて くれませんか。(Anh Tanaka, tôi không hiểu nghĩa của từ này, anh chỉ giúp tôi được không?) Nêu lý do bằng 〜ので rồi nhờ bằng 〜て くれませんか (với người trên thì lịch sự hơn: 〜て いただけませんか／くださいませんか). Thứ tự: ことばの → いみが → わからないので (★) → おしえて.",
+        "type": "choice",
+        "options": ["{教|おし}えて", "わからないので", "{言葉|ことば}の", "{意味|いみ}が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q37",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}、きのう ＿＿　＿＿　＿＿　＿★＿　か。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-tokubetsu"],
+        "explain": "Câu đúng: せんせい、きのう ははが つくった ケーキを めしあがりましたか。(Thưa thầy, hôm qua thầy đã dùng bánh mẹ em làm chưa ạ?) ははが つくった bổ nghĩa cho ケーキ; việc ăn của thầy dùng tôn kính めしあがる (không dùng いただく). Thứ tự: ははが → つくった → ケーキを → めしあがりました (★).",
+        "type": "choice",
+        "options": ["めしあがりました", "{作|つく}った", "ケーキを", "{母|はは}が"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g7-q38",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{社長|しゃちょう}が ＿＿　＿★＿　＿＿　＿＿　ですか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sonkei-tokubetsu"],
+        "explain": "Câu đúng: しゃちょうが おおさかへ いらっしゃる ひは いつですか。(Ngày giám đốc đi Osaka là ngày nào ạ?) しゃちょうが おおさかへ いらっしゃる bổ nghĩa cho ひ; いらっしゃる là tôn kính của いく. Thứ tự: おおさかへ → いらっしゃる (★) → ひは → いつ.",
+        "type": "choice",
+        "options": ["{日|ひ}は", "いつ", "{大阪|おおさか}へ", "いらっしゃる"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g7-q39",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "お{客|きゃく}さまを ＿＿　＿＿　＿＿　＿★＿　します。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-o-suru"],
+        "explain": "Câu đúng: おきゃくさまを にかいの かいぎしつ まで ごあんない します。(Tôi xin dẫn quý khách lên phòng họp tầng hai.) Khiêm nhường ご + danh từ Hán + します: ごあんない します. Thứ tự: にかいの → かいぎしつ → まで → ごあんない (★).",
+        "type": "choice",
+        "options": ["ご{案内|あんない}", "まで", "{二階|にかい}の", "{会議室|かいぎしつ}"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g7-q40",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{店員|てんいん}「こちらは {今|いま} ＿★＿　＿＿　＿＿　＿＿　で ございます。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-gozaimasu"],
+        "explain": "Câu đúng: こちらは いま いちばん にんきの ある カメラで ございます。(Đây là chiếc máy ảnh được ưa chuộng nhất hiện nay ạ.) いちばん にんきの ある bổ nghĩa cho カメラ; で ございます là cách nói lịch sự của です. Thứ tự: いちばん (★) → にんきの → ある → カメラ.",
+        "type": "choice",
+        "options": ["{人気|にんき}の", "カメラ", "いちばん", "ある"],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

@@ -167,6 +167,18 @@ Bài mẫu `minna-1-17` đăng ký sau bài 16 (16/11/2026), cùng schema v1 và
 
 `minna-1-18` … `minna-1-25` đăng ký tiếp theo thứ tự bài (16/11/2026). Schema v1, luồng tạo bài từ mẫu, RPC và database giữ nguyên.
 
+Tổng ôn ngữ pháp N4 (16/11/2026):
+- **Đăng ký:** `n4-grammar-map` và `n4-grammar-1` … `n4-grammar-8` đăng ký sau Minna 25 với `courseId` `n4-grammar` (thứ tự 1–9). `MINNA_STARTERS` và `N4_REVIEW_STARTERS` (`lib/starter-lessons.ts`) chia danh sách theo khóa cho hai mục của `app/teach/lessons/new/page.tsx`. Bài chủ đề không có từ vựng; bản đồ chỉ có slide tiêu đề, ghi chú và bảng, không có câu luyện.
+- **Thẻ mẫu:** câu luyện ghi mẫu nó hỏi bằng thẻ `grammar:<id mẫu>`. `lib/grammar-links.ts` đọc thẻ (`grammarRefs`), dựng bảng id → link tới `/lessons/<id>?version=<phiên bản>&class=<lớp>#<id mẫu>` (`buildGrammarLinks`, bài đầu tiên theo thứ tự lớp thắng) và tra link (`findGrammarLinks`).
+- **Đọc ngữ pháp của lớp:** `lib/server/class-grammar.ts` kiểm tra thành viên (`requireMembership`) và chỉ lấy bài lớp đã mở. `listClassGrammarLessons` chỉ đọc `content->grammar->0`, nên ngân hàng câu hỏi không bị tải. `loadClassGrammar` đọc nội dung qua `loadAccessibleLessonVersion` như trang đọc bài. `hasClassGrammar` và `findClassGrammarLinks` trả `false` hoặc `{}` khi đọc lỗi, để trang làm bài và trang kết quả không hỏng; lỗi khác `not_found` được ghi log.
+- **Hiển thị:**
+  - `/grammar?class=<id>` hiện ngữ pháp các bài của lớp (thành viên, nếu không thì 404) bằng cùng `GrammarSearch`; link giữ `class` để mở đúng phiên bản lớp ghim.
+  - Trang lớp có link tới đó khi lớp có bài ngữ pháp.
+  - Trang làm bài có link (tab mới) khi không phải bài thi thử tính giờ.
+  - Link **Ôn lại mẫu** (`GrammarLinkList`) hiện trong `AnswerFeedback` sau khi kiểm tra câu luyện; thẻ đọc từ `answerKey`, vốn chỉ gửi cho bài luyện tập.
+  - Link cũng hiện trong `ResultRow` ở trang kết quả và trang luyện tập hằng ngày. `ResultItem.grammarRefs` chỉ có sau cổng phản hồi.
+  - `QuestionView` gửi trước khi trả lời không có thẻ, nên câu chưa làm không lộ mẫu đang hỏi.
+
 Chữ Nhật lẫn trong câu tiếng Việt (16/11/2026): nghĩa từ vựng, nghĩa mẫu câu, câu dịch ví dụ và hội thoại, tiêu đề slide, tiêu đề và tóm tắt bài ở trang đọc, nghĩa mẫu câu ở trang tra ngữ pháp nay đi qua `JapaneseText`. Đoạn chữ Nhật trong đó được gắn `lang="ja"` nên dùng Noto Sans JP. Trước đây các trường này in thẳng nên kana và kanji hiển thị bằng Be Vietnam Pro, vốn không có chữ Nhật, và trình duyệt mượn font hệ thống. Ví dụ: "uống (thuốc): くすりを のみます", "Thể ない: …". `SlideContent` chỉ dùng cho bài tiếng Nhật; bài tiếng Trung có component riêng nên không bị đổi.
 
 Bổ sung 02/11/2026: `minna-1-13` đăng ký sau bài 12 trong `STARTER_LESSONS`, dùng nguyên luồng sao chép nháp và cập nhật từ mẫu. JSON schema v1 gồm 46 từ, 5 ngữ pháp, 41 slide, 50 câu choice/fill; không đổi RPC, schema hoặc bản bài đã tạo.

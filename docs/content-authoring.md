@@ -75,6 +75,31 @@ Furigana viết `{漢字|かんじ}` trong dòng tiêu đề Nhật, mẫu câu,
 
 **Luyện kanji (30/10/2026):** cột kanji của từ vựng là nguồn luyện chữ Hán. Học viên mở "Luyện kanji" ở trang đọc bài hoặc trang lớp để luyện đọc chữ, nhận mặt chữ và hiểu nghĩa; cách đọc đúng là cột kana giáo viên ghi. Trong trình soạn, mục Câu luyện có nút **Tạo câu kanji cho N từ**: mỗi từ có chữ Hán được thêm một câu điền cách đọc (Hiragana) và một câu chọn mặt chữ, gắn thẻ `kanji`; xem lại, sửa hoặc xóa rồi lưu nháp và xuất bản. Câu này dùng như câu luyện thường khi giao bài và trong bài luyện hằng ngày. Giữ cột kana đúng cách đọc trong bài (ví dụ `〜人` ghi `〜にん`) vì đó là đáp án duy nhất được chấp nhận. Thiết kế: [luyện kanji](basic-design/kanji-practice.md).
 
+## Tổng ôn ngữ pháp N4
+
+Ngày 16/11/2026 có bộ bài mẫu ôn ngữ pháp JLPT N4 theo chủ đề (không theo thứ tự bài Minna 26–50), để người ôn thi tra nhanh khi quên mẫu và so các mẫu dễ nhầm cạnh nhau. Trang Tạo bài mới có mục riêng **Tổng ôn ngữ pháp JLPT N4** (khóa `n4-grammar`):
+
+| Nút | File | Nội dung | Mẫu | Slide |
+|---|---|---|---|---|
+| Tạo bản đồ ngữ pháp N4 | `n4-grammar-map.json` | Bìa: 8 bài, tra theo dạng đứng trước chỗ trống, tra theo dạng động từ, bảng mẫu của từng bài | 111 | 20 |
+| Tạo tổng ôn N4 · 1 | `n4-grammar-1.json` | Nối câu: んです, し, ので, のに, ながら, ないで／ずに／なくて, て (lý do), たり | 12 | 39 |
+| Tạo tổng ôn N4 · 2 | `n4-grammar-2.json` | Ý chí, dự định, mục đích, quyết định, thay đổi | 15 | 45 |
+| Tạo tổng ôn N4 · 3 | `n4-grammar-3.json` | Thể khả năng, 見える／聞こえる, tự／tha động từ, ている／てある／ておく／てしまう／てみる, ところ, たばかり | 12 | 42 |
+| Tạo tổng ôn N4 · 4 | `n4-grammar-4.json` | Điều kiện và thời gian: ば, と, たら, なら, ても, とき, あいだ, までに, なければ | 14 | 44 |
+| Tạo tổng ôn N4 · 5 | `n4-grammar-5.json` | Suy đoán và truyền đạt: そう (hai loại), よう, みたい, らしい, はず, かもしれない, でしょう | 14 | 43 |
+| Tạo tổng ôn N4 · 6 | `n4-grammar-6.json` | Bị động, sai khiến, sai khiến bị động | 14 | 45 |
+| Tạo tổng ôn N4 · 7 | `n4-grammar-7.json` | Cho nhận và kính ngữ | 14 | 44 |
+| Tạo tổng ôn N4 · 8 | `n4-grammar-8.json` | Trợ từ, mẫu ngắn, danh từ hóa | 16 | 43 |
+
+- **Cấu trúc bài chủ đề:** không có từ vựng. Mỗi mẫu có slide mẫu câu và slide ví dụ (hiện dần), kèm bảng chia và bảng phân biệt, một hội thoại, slide "Mẹo làm bài" và 40 câu luyện: 32 câu もんだい１ và 8 câu もんだい２ (★, vị trí ★ thay đổi). Đáp án chia đều 10/10/10/10.
+- **Mã mẫu:** mã `n4g-<tên>` là duy nhất trong cả bộ. Mỗi câu luyện có thẻ `grammar:<mã>` trỏ tới mẫu nó hỏi. Câu trong ngân hàng hằng ngày dùng cùng thẻ này, nên lời giải dẫn được về đúng mẫu.
+- **Bản đồ:** sinh từ 8 bài bằng script (cột Mẫu lấy đúng `pattern`, cột Nghĩa là nghĩa rút gọn). Sửa mẫu ở bài chủ đề thì sinh lại bản đồ; test kiểm tra bản đồ có đủ mọi mẫu.
+- **Quy trình:**
+  1. Mỗi bài do một agent soạn, đối chiếu phạm vi N4 trên các danh sách công khai (JLPT Sensei, Bunpro, tuhoconline).
+  2. Một agent khác soát và sửa 22–45 chỗ mỗi bài: lựa chọn sai mà vẫn đúng ngữ pháp, câu ★ xếp được hai cách, câu gần với sách hoặc với ngân hàng của lớp, ví dụ lộ đáp án câu luyện, số bài Minna ghi sai.
+  3. Đo từng slide (xem [kiểm chứng](testing/teaching-service.md#tổng-ôn-ngữ-pháp-n4--16112026)).
+- **Gợi ý dùng:** thêm bản đồ và 8 bài vào lớp ôn N4. Trang **Tra ngữ pháp của lớp** và link **Ôn lại mẫu** trong lời giải chỉ hoạt động với các bài lớp đã mở.
+
 ## Kiểm tra và xuất bản local
 
 ```bash

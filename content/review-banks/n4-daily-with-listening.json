@@ -3407,7 +3407,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-shika-nai"],
         "explain": "Ví tôi chỉ có 100 yên. しか luôn đi với thể phủ định (しか ありません = chỉ có). だけ đi với thể khẳng định; ごろ, まで không hợp nghĩa."
       },
       {
@@ -3419,7 +3419,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-nagara"],
         "explain": "ながら nối vào gốc ます: 聞きます → 聞きながら (vừa nghe nhạc vừa dọn phòng). Thể từ điển, thể て, thể た không đi với ながら."
       },
       {
@@ -3431,7 +3431,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-shi"],
         "explain": "〜し dùng sau thể thường; tính từ な ở thể thường là しずかだ → しずかだし (thị trấn vừa yên tĩnh, vừa nhiều cửa hàng nên tiện). な, に, で không đứng trước し."
       },
       {
@@ -3472,7 +3472,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-nakutemo-ii"],
         "explain": "Vなくても いいです: không cần làm. Ngày mai nghỉ nên không cần dậy sớm. 起きては đi với いけません; 起きなく thiếu て."
       },
       {
@@ -3484,7 +3484,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kanoukei"],
         "explain": "V thể từ điển + ことが できます: có thể làm. Nam có thể viết tên mình bằng tiếng Nhật."
       },
       {
@@ -3496,7 +3496,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tara-katei"],
         "explain": "Vたら: nếu (điều kiện). Nếu mai mưa thì không leo núi mà ở nhà đọc sách. のに là trái kỳ vọng, ながら là vừa… vừa…, ふったり phải đi với 〜たり します."
       },
       {
@@ -3508,7 +3508,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-kureru"],
         "explain": "Vて くれる: người khác làm cho mình. Đây là cái túi mẹ đã mua cho tôi vào sinh nhật. Trước くれる phải là thể て."
       },
       {
@@ -3532,7 +3532,13 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": [
+          "n4",
+          "grammar",
+          "grammar-form",
+          "grammar:n4g-te-iru-joutai",
+          "grammar:n4g-jidoushi-tadoushi"
+        ],
         "explain": "Tự động từ + ています diễn tả trạng thái: まどが 開いて います (cửa sổ đang mở). 開けて います là tha động từ, cần を và người làm."
       },
       {
@@ -3544,7 +3550,13 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": [
+          "n4",
+          "grammar",
+          "grammar-form",
+          "grammar:n4g-te-aru",
+          "grammar:n4g-jidoushi-tadoushi"
+        ],
         "explain": "Tha động từ thể て + あります: trạng thái do ai đó đã làm sẵn (sách đã được xếp ngay ngắn trên bàn). ならんで (ならぶ) là tự động từ nên không đi với てあります; ならぶ, ならべた sai dạng."
       },
       {
@@ -3556,7 +3568,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-oku"],
         "explain": "Vて おく: làm trước để chuẩn bị. Mai bạn đến nên tối nay tôi định dọn phòng trước. てある chỉ trạng thái (đi với が), てくれる là người khác làm cho mình, ている つもり không hợp nghĩa chuẩn bị."
       },
       {
@@ -3568,7 +3580,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-to-omotte-iru"],
         "explain": "V ý chí + と 思って います: đang có dự định. Tôi đang định sang năm đi du học Nhật. Trước います phải là thể て."
       },
       {
@@ -3580,7 +3592,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tsumori"],
         "explain": "V thể từ điển + つもりです: định làm. Tháng sau tôi định chuyển nhà sang thị trấn bên cạnh. ように, そうに, ところに không đứng trước です như vậy."
       },
       {
@@ -3604,7 +3616,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kamoshirenai"],
         "explain": "〜かもしれません: có lẽ, có thể. Chiều nay có thể mưa nên mang ô. つもり, ことに します dùng cho ý định của người, không dùng cho mưa."
       },
       {
@@ -3652,7 +3664,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-naide-houhou"],
         "explain": "Vないで: làm việc gì mà không làm việc kia. Bố đọc báo chữ nhỏ mà không đeo kính. Chỉ thể ない mới đi với で theo nghĩa này."
       },
       {
@@ -3664,7 +3676,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ba-form"],
         "explain": "〜ば: nếu. Nếu có thời gian thì giúp tôi một chút. 〜と không đi với câu nhờ vả ở vế sau; あっても (dù có) và あるのに (vậy mà) sai nghĩa."
       },
       {
@@ -3676,7 +3688,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-nara"],
         "explain": "〜なら: nếu (là chuyện) đó thì… dùng để khuyên dựa trên điều đối phương vừa nói. Nếu đi Hokkaido thì tháng 2 là tốt."
       },
       {
@@ -3688,7 +3700,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-ni-mokuteki"],
         "explain": "〜ように: để (mục tiêu) đi với động từ không chủ ý hoặc thể khả năng như 聞こえる. ために chỉ đi với động từ có chủ ý nên sai ở đây."
       },
       {
@@ -3700,7 +3712,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-ni-naru"],
         "explain": "V khả năng + ように なりました: đã trở nên có thể. Luyện tập mỗi ngày nên đã đi được xe đạp."
       },
       {
@@ -3712,7 +3724,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ukemi-direct"],
         "explain": "Bị động: わたしは 母に しかられました (tôi bị mẹ mắng). Chủ ngữ là わたし và người làm hành động đánh dấu bằng に nên phải dùng bị động."
       },
       {
@@ -3724,7 +3736,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ukemi-mono"],
         "explain": "Bị động + ています: bài hát này được mọi người trên thế giới hát. Chủ ngữ là bài hát, người hát đi với に nên dùng 歌われて います."
       },
       {
@@ -3736,7 +3748,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-no-koto"],
         "explain": "V thể thường + の biến động từ thành danh từ: 勉強するのは 楽しいです (việc học thì vui). よう, ため, そう không làm chủ đề câu như vậy."
       },
       {
@@ -3748,7 +3760,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-no-koto"],
         "explain": "V thể từ điển + のを わすれました: quên làm việc gì. Tôi quên mang bài tập đến."
       },
       {
@@ -3760,7 +3772,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-node"],
         "explain": "〜ので nêu lý do: vì đau đầu nên nghỉ làm. のに là trái kỳ vọng, không hợp nghĩa."
       },
       {
@@ -3777,7 +3789,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-riyuu"],
         "explain": "〜て chỉ nguyên nhân, vế sau là kết quả đã xảy ra, không chứa ý chí: tàu trễ vì tai nạn nên tôi không kịp họp. Vế sau không dùng nhờ vả, rủ rê hay mong muốn."
       },
       {
@@ -3789,7 +3801,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ka-kadouka"],
         "explain": "Câu hỏi có từ nghi vấn (何時) lồng trong câu dùng か: 何時に 始まるか 調べて ください (hãy tìm hiểu xem mấy giờ bắt đầu)."
       },
       {
@@ -3801,7 +3813,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ka-kadouka"],
         "explain": "Câu hỏi không có từ nghi vấn lồng trong câu dùng 〜かどうか: chưa biết mai có nghỉ làm được hay không."
       },
       {
@@ -3813,7 +3825,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-miru"],
         "explain": "Vて みる: thử làm. Tôi đi thử đôi giày này được không? Trước みる phải là thể て."
       },
       {
@@ -3825,7 +3837,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-kudasaru"],
         "explain": "Chủ ngữ là 先生, người nhận là わたし: dùng Vて くださいました (thầy đã dạy cho tôi). いただきました cần chủ ngữ là わたし (わたしは 先生に〜)."
       },
       {
@@ -3837,7 +3849,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-itadaku"],
         "explain": "わたしは + 先生に + Vて いただきました: tôi được thầy xem giúp bài văn. くださいました, くれました cần chủ ngữ là người làm (先生は)."
       },
       {
@@ -3849,7 +3861,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tame-ni"],
         "explain": "V thể từ điển + ために: để (mục đích có chủ ý). Tôi đang để dành tiền để mua nhà. 買う là động từ chủ ý nên không dùng ように."
       },
       {
@@ -3861,7 +3873,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-noni-tsukau"],
         "explain": "V thể từ điển + のに 使います: dùng để làm gì. Cái kéo này dùng để cắt giấy."
       },
       {
@@ -3873,7 +3885,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sou-yotai"],
         "explain": "Gốc ます + そうです: trông có vẻ sắp (phán đoán từ điều nhìn thấy). ふるそうです là truyền đạt điều nghe được, không hợp với 見て ください."
       },
       {
@@ -3885,7 +3897,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-yasui-nikui"],
         "explain": "Gốc ます + やすい: dễ làm. Sách này chữ to nên dễ đọc."
       },
       {
@@ -3897,7 +3909,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sugiru"],
         "explain": "Gốc ます + すぎる: làm quá mức. Uống cà phê quá nhiều nên đêm không ngủ được."
       },
       {
@@ -3921,7 +3933,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-noni"],
         "explain": "〜のに: vậy mà (kết quả trái kỳ vọng). Đã hứa rồi vậy mà bạn không đến. ので, から, ために chỉ lý do, mục đích."
       },
       {
@@ -3933,7 +3945,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tokoro"],
         "explain": "今から + V thể từ điển + ところです: sắp sửa làm. 作って いる ところ là đang làm, 作った ところ là vừa làm xong, không hợp với 今から."
       },
       {
@@ -3945,7 +3957,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ta-bakari"],
         "explain": "Vた ばかりです: vừa mới làm xong. Vừa ăn trưa xong nên no bụng."
       },
       {
@@ -3957,7 +3969,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-hazu-desu"],
         "explain": "〜はずです: chắc chắn là (suy đoán có căn cứ). Anh Tanaka ngày nào cũng đi qua đường này nên chắc chắn biết cửa hàng này."
       },
       {
@@ -3969,7 +3981,13 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": [
+          "n4",
+          "grammar",
+          "grammar-form",
+          "grammar:n4g-sou-denbun",
+          "grammar:n4g-ni-yoru-to"
+        ],
         "explain": "〜に よると + thể thường + そうです: nghe nói (truyền đạt). Theo dự báo, mai trời mưa. ふりそう là vẻ bề ngoài, không đi với に よると."
       },
       {
@@ -3981,7 +3999,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-desu"],
         "explain": "Thể thường + ようです: hình như (suy đoán từ tình hình). Phòng bên cạnh yên tĩnh, hình như không có ai. ようです không đi sau thể ます."
       },
       {
@@ -3993,7 +4011,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-shieki-ni"],
         "explain": "Sai khiến: 母は 子どもに 野菜を 食べさせます (mẹ bắt con ăn rau). Mẹ là người khiến, con là người làm (に). 食べます, 食べて います, 食べたいです không đi với 子どもに."
       },
       {
@@ -4005,7 +4023,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ndesu"],
         "explain": "Thể thường + んですか: hỏi lý do, tình huống. Sao bạn đến muộn vậy? Trả lời cũng dùng 〜んです."
       },
       {
@@ -4017,7 +4035,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tagaru"],
         "explain": "Nói về mong muốn của người thứ ba dùng 〜がって います: 弟は ゲームを ほしがって います (em trai đang muốn có trò chơi mới). ほしい, ほしくて, ほしそうに không đứng trước います như vậy."
       },
       {
@@ -4029,7 +4047,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tari"],
         "explain": "〜たり 〜たり します: liệt kê vài việc tiêu biểu. Ngày nghỉ tôi đọc sách, xem tivi... Vế sau có 見たり nên vế trước cũng phải là 読んだり; のに (vậy mà), thể ý chí, thể ない không hợp."
       },
       {
@@ -4233,7 +4251,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ndesu"],
         "explain": "どう したんですか: có chuyện gì vậy? (hỏi khi thấy tình trạng khác thường). 〜んです đi sau thể thường; して, しよう, しろ không đứng trước んです như vậy."
       },
       {
@@ -4245,7 +4263,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ndesu"],
         "explain": "〜んですか dùng khi hỏi thêm vì quan tâm đến điều mình thấy: cái ô đẹp thế, bạn mua ở đâu vậy?"
       },
       {
@@ -4257,7 +4275,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ndesuga"],
         "explain": "〜んですが、〜て いただけませんか: nêu hoàn cảnh rồi nhờ lịch sự. Tôi đã viết thư bằng tiếng Nhật, thầy xem giúp được không ạ?"
       },
       {
@@ -4269,7 +4287,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-tara-katei"],
         "explain": "Vたら いいですか: nên làm thế nào/ai thì được (xin lời khuyên). Giấy tờ này nộp cho ai thì được ạ?"
       },
       {
@@ -4281,7 +4299,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-nagara"],
         "explain": "〜ながら: vừa… vừa… (hai việc song song trong thời gian dài). Vì không có tiền nên vừa làm thêm vừa đi học đại học. しないで ngược ý với お金が ない."
       },
       {
@@ -4293,7 +4311,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-shi"],
         "explain": "〜し、〜も〜から: liệt kê các lý do. Căn hộ này vừa xa ga, phòng cũng chật nên tôi tìm căn khác."
       },
       {
@@ -4305,7 +4323,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kanoukei"],
         "explain": "Thể khả năng đi với が: 何語が 話せますか (bạn nói được tiếng gì?). 話します, 話しましょう đi với を; 話させます là sai khiến, không hợp nghĩa."
       },
       {
@@ -4317,7 +4335,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-mieru-kikoeru"],
         "explain": "聞こえます: (âm thanh) tự vọng đến tai, chủ ngữ là âm thanh với が: ピアノの 音が 聞こえます (nghe thấy tiếng đàn piano từ phòng bên). 聞きます, 聞いて います cần người nghe làm chủ ngữ và đi với を; 聞かせます là cho nghe."
       },
       {
@@ -4329,7 +4347,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kanoukei"],
         "explain": "Thể khả năng đi với が: けいたい電話が 使えません (không dùng được điện thoại). 使いません, 使って いません cần を."
       },
       {
@@ -4346,7 +4364,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kanoukei"],
         "explain": "Thể khả năng quá khứ phủ định: hồi nhỏ hoàn toàn không bơi được, nhưng giờ bơi được 1 km. ぜんぜん đi với phủ định nên およげました sai."
       },
       {
@@ -4358,7 +4376,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-shimau"],
         "explain": "Vて しまいました: lỡ làm (tiếc nuối). Tôi lỡ để quên ô trên tàu. おきました là làm sẵn, みました là làm thử, không hợp với わすれる."
       },
       {
@@ -4370,7 +4388,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-mada-te-inai"],
         "explain": "Trả lời もう〜ましたか bằng phủ định: いいえ、まだ 〜て いません (chưa làm). 食べませんでした là đã không ăn (việc đã xong), không đi với まだ."
       },
       {
@@ -4382,7 +4400,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ikoukei"],
         "explain": "Thể ý chí (行こう) trong văn nói thân mật dùng để rủ: nếu mai trời đẹp thì đi biển đi. アン trả lời いいね nên là lời rủ."
       },
       {
@@ -4394,7 +4412,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-to-omotte-iru"],
         "explain": "V ý chí + と 思って います: định làm. Tôi định dậy lúc 6 giờ mỗi sáng nhưng mãi không dậy được. 起きろ là mệnh lệnh."
       },
       {
@@ -4418,7 +4436,13 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": [
+          "n4",
+          "grammar",
+          "grammar-form",
+          "grammar:n4g-to-tsutaete",
+          "grammar:n4g-teinei-irai"
+        ],
         "explain": "Vて いただけませんか: nhờ lịch sự (anh có thể nhắn giúp… không ạ?). いただきませんか sai dạng; あげませんか là đề nghị làm cho người khác."
       },
       {
@@ -4430,7 +4454,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ba-hodo"],
         "explain": "〜ば 〜ほど: càng… càng…. Sách này càng đọc càng thấy hay. Mẫu này chỉ dùng thể ば."
       },
       {
@@ -4442,7 +4466,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ba-form"],
         "explain": "Tính từ い bỏ い + ければ: nếu. Cái túi đó nếu rẻ hơn chút thì tôi mua (nhưng…). 安くても là dù rẻ, sai nghĩa."
       },
       {
@@ -4454,7 +4478,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-to-shizen"],
         "explain": "V thể từ điển + と: hễ/khi… thì (chỉ đường, kết quả tất yếu). Rẽ phải ở góc thứ hai thì có ngân hàng."
       },
       {
@@ -4466,7 +4490,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-temo"],
         "explain": "Vても: dù… vẫn. Mai dù mưa vẫn thi đấu bóng đá. ふったら, ふれば, ふるなら là điều kiện, không hợp với việc vẫn làm."
       },
       {
@@ -4478,7 +4502,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-you-ni-suru"],
         "explain": "V thể từ điển + ように して います: cố gắng duy trì thói quen. Mỗi tối trước khi ngủ tôi cố gắng nhớ 10 từ mới."
       },
       {
@@ -4490,7 +4514,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-ukemi-meiwaku"],
         "explain": "Bị động gây phiền: 妹に 日記を 読まれる (bị em gái đọc nhật ký), nên rất xấu hổ. Người đọc là em gái (に), chủ ngữ là わたし nên phải dùng bị động; 読めて, 読みに, 読みたくて sai nghĩa."
       },
       {
@@ -4514,7 +4538,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-no-koto"],
         "explain": "V thể thường + のが 上手です: giỏi làm việc gì. Em gái tôi vẽ tranh giỏi. 上手, 好き, 下手 đi với が nên dùng のが."
       },
       {
@@ -4526,7 +4550,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-te-yaru"],
         "explain": "Vて やります: làm cho người dưới (em, con, động vật). Tôi làm đồ chơi cho em trai. くれました cần người nhận là mình; さしあげました dùng cho người trên."
       },
       {
@@ -4538,7 +4562,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sugiru"],
         "explain": "Tính từ い bỏ い + すぎる: quá. 高い → 高すぎて (đắt quá nên không mua được)."
       },
       {
@@ -4550,7 +4574,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-yasui-nikui"],
         "explain": "Gốc ます + にくい: khó làm. Va li này nặng nên khó mang. 運びやすい là dễ mang, ngược nghĩa với 重くて."
       },
       {
@@ -4574,7 +4598,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sou-yotai"],
         "explain": "Tính từ い bỏ い + そうです: trông có vẻ (phán đoán khi nhìn). Ồ, bánh này trông ngon quá. Không thêm な hay く trước そう; trước です dùng おいしそう, không dùng おいしそうな."
       },
       {
@@ -4586,7 +4610,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sou-yotai"],
         "explain": "Tính từ な + そうです: trông có vẻ. Lâu rồi mới gặp, Minh trông rất khỏe. Dạng nghe nói (元気だそう) không chia quá khứ でした."
       },
       {
@@ -4598,7 +4622,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sou-denbun"],
         "explain": "Thể thường + そうです: nghe nói (truyền đạt lại thông tin). Nghe nói anh Tanaka bị cảm, trưởng phòng vừa nói vậy. つもり là ý định của người nói, ほうが いい là lời khuyên, ように します là cố gắng làm."
       },
       {
@@ -4610,7 +4634,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sasete-itadakemasenka"],
         "explain": "Vさせて いただけませんか: xin phép được làm. Tôi bị sốt, cho tôi về sớm được không ạ? 帰られて, 帰れて, 帰ったら không đi với いただけませんか."
       },
       {
@@ -4622,7 +4646,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sonkei-tokubetsu"],
         "explain": "いらっしゃいます là tôn kính ngữ của いる/行く/来る, dùng khi học sinh nói về thầy cô. まいります, おります, いたします là khiêm nhường ngữ, chỉ dùng cho hành động của mình."
       },
       {
@@ -4634,7 +4658,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kenjou-tokubetsu"],
         "explain": "もうします là khiêm nhường ngữ của いう, dùng khi tự giới thiệu tên. おっしゃいます là tôn kính ngữ, không dùng cho mình."
       },
       {
@@ -4646,7 +4670,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-sonkei-tokubetsu"],
         "explain": "めしあがります là tôn kính ngữ của 食べる/飲む: mời thầy dùng bánh. いただく là khiêm nhường ngữ (dùng cho mình), おたべして sai dạng, まいって là khiêm nhường ngữ của 行く/来る."
       },
       {
@@ -4658,7 +4682,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "grammar-form"],
+        "tags": ["n4", "grammar", "grammar-form", "grammar:n4g-kenjou-tokubetsu"],
         "explain": "Nói về hành động của mình dùng khiêm nhường ngữ: まいります (đi/đến). いらっしゃいます, おいでに なります là tôn kính ngữ cho người khác."
       },
       {
@@ -4694,7 +4718,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-hodo-nai"],
         "explain": "Câu đúng: 今年の 夏は 去年 ほど 暑く ありません。（Mùa hè năm nay không nóng bằng năm ngoái.） Thứ tự: 去年 → ほど → 暑く → ありません; ô ★ là ほど."
       },
       {
@@ -4718,7 +4742,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-to-itte-imashita"],
         "explain": "Câu đúng: 田中さんは あしたの パーティーに 来ないと 言って いました。（Anh Tanaka nói là sẽ không đến bữa tiệc ngày mai.） Thứ tự: あしたの → パーティーに → 来ないと → 言って; ô ★ là 来ないと."
       },
       {
@@ -4754,7 +4778,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-nakereba"],
         "explain": "Câu đúng: あしたまでに 日本語の 作文を 出さ なければ なりません。（Tôi phải nộp bài văn tiếng Nhật trước ngày mai.） Thứ tự: 日本語の → 作文を → 出さ → なければ; ô ★ là 作文を."
       },
       {
@@ -4766,7 +4790,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-yotei"],
         "explain": "Câu đúng: 来週 大阪の 工場へ 出張する 予定 です。（Tuần sau tôi dự định đi công tác ở nhà máy tại Osaka.） Thứ tự: 大阪の → 工場へ → 出張する → 予定; ô ★ là 大阪の."
       },
       {
@@ -4778,7 +4802,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-tara-ato"],
         "explain": "Câu đúng: さくら駅の 北口に 着いたら 電話して ください。（Khi đến cửa Bắc ga Sakura thì hãy gọi điện cho tôi.） Thứ tự: さくら駅の → 北口に → 着いたら → 電話して; ô ★ là 電話して."
       },
       {
@@ -4790,7 +4814,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-to-iu"],
         "explain": "Câu đúng: 駅の 前に 「さくら」と いう 名前の 店が できました。（Trước ga đã mở một cửa hàng tên là “Sakura”.） Thứ tự: 「さくら」と → いう → 名前の → 店が; ô ★ là 名前の."
       },
       {
@@ -4802,7 +4826,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-toki"],
         "explain": "Câu đúng: これは 日本へ 来た とき とった 写真です。（Đây là bức ảnh tôi chụp khi đến Nhật.） Thứ tự: 日本へ → 来た → とき → とった; ô ★ là 来た."
       },
       {
@@ -4826,7 +4850,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-o-ni-naru"],
         "explain": "Câu đúng: 先生、 この 本を お読みに なりましたか。（Thầy ơi, thầy đã đọc cuốn sách này chưa ạ?） Thứ tự: この → 本を → お読みに → なりましたか; ô ★ là この."
       },
       {
@@ -4838,7 +4862,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-o-suru"],
         "explain": "Câu đúng: 重そうですね。 その 荷物を お持ち しましょうか。（Trông nặng quá. Để tôi mang hành lý đó giúp nhé?） Thứ tự: その → 荷物を → お持ち → しましょうか; ô ★ là お持ち."
       },
       {
@@ -4874,7 +4898,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-te-aru"],
         "explain": "Câu đúng: かべに きれいな 絵が かけて あります。（Trên tường có treo sẵn một bức tranh đẹp.） Thứ tự: きれいな → 絵が → かけて → あります; ô ★ là あります."
       },
       {
@@ -4886,7 +4910,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-koto-ni-suru"],
         "explain": "Câu đúng: 体の ために、 たばこを やめる ことに しました。（Vì sức khỏe, tôi đã quyết định bỏ thuốc lá.） Thứ tự: たばこを → やめる → ことに → しました; ô ★ là たばこを."
       },
       {
@@ -4910,7 +4934,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-kata"],
         "explain": "Câu đúng: この 機械の 使い 方を 教えて ください。（Hãy chỉ cho tôi cách dùng cái máy này.） Thứ tự: この → 機械の → 使い → 方を; ô ★ là 使い."
       },
       {
@@ -4946,7 +4970,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-made-ni"],
         "explain": "Câu đúng: この 本は 来週の 金曜日 まで に 返して ください。（Hãy trả cuốn sách này trước thứ Sáu tuần sau.） Thứ tự: 来週の → 金曜日 → まで → に; ô ★ là まで."
       },
       {
@@ -4982,7 +5006,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "sentence-order", "composition"],
+        "tags": ["n4", "sentence-order", "composition", "grammar:n4g-o-ni-naru"],
         "explain": "Câu đúng: わたしは 先生が お書きに なった 本を 読みました。（Tôi đã đọc cuốn sách thầy viết.） Thứ tự: 先生が → お書きに → なった → 本を; ô ★ là 本を."
       },
       {
@@ -5007,7 +5031,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-te-kureru"],
         "explain": "Mẹ (母が) làm cho mình nên dùng 〜て くれた: 「国では いつも 母が 作って くれた からです」 = vì ở nhà lúc nào mẹ cũng nấu cho. あげた là mình làm cho người khác, もらった cần 母に, しまった (lỡ/xong mất) không hợp nghĩa."
       },
       {
@@ -5038,7 +5062,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-you-ni-naru"],
         "explain": "少しずつ + 〜ように なりました: dần dần đã có thể nấu được món ngon (thay đổi khả năng). 〜ように しました là cố gắng tạo thói quen, 〜ことに なりました là việc được quyết định, 作って みました không đi với 料理が."
       },
       {
@@ -5051,7 +5075,13 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": [
+          "n4",
+          "grammar",
+          "text-grammar",
+          "grammar:n4g-te-ageru",
+          "grammar:n4g-you-to-omotte-iru"
+        ],
         "explain": "Người viết muốn nấu món Nhật cho mẹ: 母に 〜て あげよう と 思って います (định làm cho mẹ). 作って もらおう là nhờ mẹ nấu, trái ý; 〜て くれよう sai ngữ pháp; 作って あげて không đi với と 思って います."
       },
       {
@@ -5077,7 +5107,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-te-itadaku"],
         "explain": "お父さんには … つれて 行って いただきました: được bố đưa đi (người làm hành động đi với に). くださいました cần お父さんが; さしあげました là mình làm cho người trên; いらっしゃいました không hợp."
       },
       {
@@ -5121,7 +5151,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-nakute-riyuu"],
         "explain": "〜なくて chỉ nguyên nhân: lúc đầu vì không hiểu rõ kính ngữ nên hay nhầm trước mặt khách. 分からないのに (dù không hiểu… vậy mà) không hợp nghĩa; 分かったら (nếu/khi hiểu) và 分かるので (vì hiểu rõ) trái với việc anh Kimura phải luyện kính ngữ cho mình."
       },
       {
@@ -5147,7 +5177,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-ukemi-direct"],
         "explain": "お客さんに 〜と 言われて = được khách khen là ~ (bị động). 言って thì chủ ngữ là mình nói; 言わせて là bắt khách nói; 言いたくて (vì muốn nói) sai nghĩa."
       },
       {
@@ -5160,7 +5190,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-tsumori"],
         "explain": "これからも 〜つもりです: dự định từ nay về sau vẫn tiếp tục → dạng từ điển つづける. つづけた sai thì, つづけない trái với これからも, つづけて không đi với つもり."
       },
       {
@@ -5173,7 +5203,7 @@
         "answer": [3],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-ukemi-mono"],
         "explain": "Chủ ngữ là その お寺 (ngôi chùa) nên dùng bị động 建てられた: chùa được xây 1000 năm trước, kèm 〜そうです (nghe nói). 建てた / 建てさせた cần chủ ngữ là người; 建って いる không hợp với 千年 前に."
       },
       {
@@ -5191,7 +5221,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-nakereba"],
         "explain": "Trước quán có nhiều người xếp hàng nên phải đợi tới 30 phút: 〜なければ なりませんでした. 待たなくても よかった (không cần đợi) trái nghĩa; 待って みました (thử đợi) và 待つ ことが できませんでした không hợp với 三十分も."
       },
       {
@@ -5209,7 +5239,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-te-kureru"],
         "explain": "おばあさんが (bà là chủ ngữ) cho mình mượn ô → 貸して くれました. 貸して もらいました cần おばあさんに; 貸して あげました là mình cho mượn; 借りて くれました là bà đi mượn giúp, sai nghĩa."
       },
       {
@@ -5266,7 +5296,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-ba-form"],
         "explain": "そう すれば = nếu làm như thế (không dùng tiếng nước mình) thì tiếng Nhật sẽ giỏi nhanh. そう しても (dù làm vậy) và そう しなければ (nếu không làm vậy) ngược nghĩa; そう する ために không hợp với 上手に なる."
       },
       {
@@ -5336,7 +5366,7 @@
         "answer": [1],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-tara-ato"],
         "explain": "国に 帰ったら = khi về nước thì muốn kể cho gia đình. 〜と không dùng khi vế sau là mong muốn (〜たい); 帰らないと (nếu không về) sai nghĩa; 帰るし là liệt kê lý do."
       },
       {
@@ -5349,7 +5379,7 @@
         "answer": [0],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-noni"],
         "explain": "Đã chuẩn bị chăm chỉ vậy mà bọn trẻ vẫn không chịu nghe → 〜のに (vậy mà). したので / したから là nguyên nhân, không hợp; する ために là mục đích."
       },
       {
@@ -5388,7 +5418,7 @@
         "answer": [2],
         "multiple": false,
         "points": 1,
-        "tags": ["n4", "grammar", "text-grammar"],
+        "tags": ["n4", "grammar", "text-grammar", "grammar:n4g-you-ni-mokuteki"],
         "explain": "〜ように = để (trạng thái) bọn trẻ có thể học vui; ように đi với động từ khả năng. ために không đi với dạng khả năng できる; しないように trái nghĩa; するのに không hợp."
       },
       {

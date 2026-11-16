@@ -8,8 +8,9 @@ import { CreateTeachingLessonForm } from "@/components/teaching/create-teaching-
 import { buttonVariants } from "@/components/ui/button";
 import { requireTeacher } from "@/lib/server/account";
 import { listOwnedLessons } from "@/lib/server/classes";
-import { findStarterForLesson, STARTER_LESSONS } from "@/lib/starter-lessons";
+import { findStarterForLesson, MINNA_STARTERS, N4_REVIEW_STARTERS } from "@/lib/starter-lessons";
 
+import type { StarterLesson } from "@/lib/starter-lessons";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Tạo bài mới" };
@@ -24,6 +25,43 @@ export default async function NewLessonPage() {
       const starter = findStarterForLesson(lesson.creationFingerprint);
       return starter ? [[starter.id, lesson] as const] : [];
     }),
+  );
+  const renderStarters = (starters: readonly StarterLesson[]) => (
+    <ul className="starter-grid">
+      {starters.map((starter) => {
+        const { content } = starter.draft;
+        const existing = lessonFromStarter.get(starter.id);
+        return (
+          <li key={starter.id} className="starter-card">
+            <div>
+              <h3>{starter.draft.title}</h3>
+              <p className="item-meta">
+                {starter.course}
+                {content.vocab.length > 0 && ` · ${content.vocab.length} từ vựng`} ·{" "}
+                {content.grammar.length} mẫu câu · {content.slides.length} slide ·{" "}
+                {content.questions.length} câu luyện
+                {existing && ` · bạn đã tạo «${existing.title}»`}
+              </p>
+            </div>
+            <div className="button-row">
+              {existing && (
+                <Link
+                  href={`/teach/lessons/${existing.id}/edit`}
+                  className={buttonVariants({ variant: "outline" })}
+                >
+                  Mở bài đã tạo
+                </Link>
+              )}
+              <StarterLessonForm
+                starterId={starter.id}
+                requestId={randomUUID()}
+                label={starter.buttonLabel}
+              />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   );
   return (
     <>
@@ -41,7 +79,13 @@ export default async function NewLessonPage() {
         <Link href="#starter-lesson-title" className="link-card">
           <span className="link-card-title">Dùng bài mẫu Minna</span>
           <span className="small muted">
-            Bài 1–15 có sẵn từ vựng, mẫu câu, hội thoại và câu luyện; sửa theo lớp rồi xuất bản.
+            Bài 1–25 có sẵn từ vựng, mẫu câu, hội thoại và câu luyện; sửa theo lớp rồi xuất bản.
+          </span>
+        </Link>
+        <Link href="#n4-review-title" className="link-card">
+          <span className="link-card-title">Tổng ôn ngữ pháp N4</span>
+          <span className="small muted">
+            Bản đồ và 8 bài theo chủ đề, gom các mẫu dễ nhầm, kèm câu luyện kiểu đề JLPT.
           </span>
         </Link>
         <Link href="#detailed-lesson-title" className="link-card">
@@ -64,39 +108,16 @@ export default async function NewLessonPage() {
           câu, hội thoại, luyện tập, câu hỏi), không chép nguyên văn sách. Bạn nhận một bản nháp
           riêng để kiểm tra, sửa rồi xuất bản; học viên dùng sách của mình để đối chiếu.
         </p>
-        <ul className="starter-grid">
-          {STARTER_LESSONS.map((starter) => {
-            const { content } = starter.draft;
-            const existing = lessonFromStarter.get(starter.id);
-            return (
-              <li key={starter.id} className="starter-card">
-                <div>
-                  <h3>{starter.draft.title}</h3>
-                  <p className="item-meta">
-                    {starter.course} · {content.vocab.length} từ vựng · {content.grammar.length} mẫu
-                    câu · {content.slides.length} slide · {content.questions.length} câu luyện
-                    {existing && ` · bạn đã tạo «${existing.title}»`}
-                  </p>
-                </div>
-                <div className="button-row">
-                  {existing && (
-                    <Link
-                      href={`/teach/lessons/${existing.id}/edit`}
-                      className={buttonVariants({ variant: "outline" })}
-                    >
-                      Mở bài đã tạo
-                    </Link>
-                  )}
-                  <StarterLessonForm
-                    starterId={starter.id}
-                    requestId={randomUUID()}
-                    label={starter.buttonLabel}
-                  />
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        {renderStarters(MINNA_STARTERS)}
+      </section>
+      <section className="section-block" aria-labelledby="n4-review-title">
+        <h2 id="n4-review-title">Tổng ôn ngữ pháp JLPT N4</h2>
+        <p className="small muted">
+          Gom ngữ pháp N4 theo chủ đề để ôn và tra khi làm đề: bài 0 là bản đồ mọi mẫu, bài 1–8 giải
+          thích từng nhóm mẫu dễ nhầm, kèm ví dụ và câu luyện kiểu đề JLPT tự biên soạn. Thêm các
+          bài vào lớp ôn N4 để học viên mở được trang Tra ngữ pháp của lớp khi làm bài.
+        </p>
+        {renderStarters(N4_REVIEW_STARTERS)}
       </section>
       <div className="create-lesson-columns">
         <section className="section-block" aria-labelledby="detailed-lesson-title">

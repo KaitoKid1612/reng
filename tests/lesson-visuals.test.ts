@@ -20,7 +20,8 @@ test("starter lessons only point at pictures that exist", () => {
   for (const starter of STARTER_LESSONS) {
     const { vocab, slides } = starter.draft.content;
     const pictures = vocab.flatMap((item) => (item.image ? [item.image] : []));
-    assert.ok(pictures.length > 0, `${starter.id} has no pictures`);
+    // Grammar review decks have no words to picture.
+    assert.ok(pictures.length > 0 || vocab.length === 0, `${starter.id} has no pictures`);
     for (const slide of slides) {
       if (slide.type === "title" && slide.image) {
         pictures.push(slide.image);

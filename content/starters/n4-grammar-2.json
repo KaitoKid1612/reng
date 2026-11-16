@@ -1,0 +1,1159 @@
+{
+  "id": "n4-grammar-2",
+  "title": "Tổng ôn N4 · 2 – Ý chí, dự định, mục đích, quyết định, thay đổi",
+  "titleJa": "N4文法 2　意志・目的・決定・変化",
+  "summary": "Bộ tổng ôn ngữ pháp JLPT N4 theo chủ đề: thể ý chí, 〜(よ)うと おもって います, つもり, よてい, ために, ように (mục đích), のに (dùng để), ように なる／する, ことに する／なる, ように いう／たのむ, なさい, て ほしい, たがる. Các mẫu dễ nhầm đặt cạnh nhau với bảng phân biệt, kèm 40 câu theo dạng もんだい１ và もんだい２ (★) của đề thi. Mọi ví dụ và câu hỏi đều là nội dung tự biên soạn.",
+  "order": 3,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-ikoukei",
+        "pattern": "〜(よ)う（意向形）",
+        "vi": "Thể ý chí: rủ rê thân mật (“… nhé”, “… thôi”), đề nghị giúp, tự nhủ",
+        "explain": "Nhóm I: đổi đuôi う sang hàng お rồi thêm う (いく → いこう, のむ → のもう, まつ → まとう, かえる → かえろう). Nhóm II: bỏ る, thêm よう (たべる → たべよう, おきる → おきよう). Nhóm III: する → しよう, くる → こよう. Đây là thể thường của 〜ましょう: dùng để rủ bạn bè (いこうよ), đề nghị giúp (もとうか), hoặc tự nhủ. Minna bài 31.",
+        "viMistake": "Chia nhóm II như nhóm I (× たべろう → たべよう) và quên くる → こよう (không phải きよう, くよう). Thể ý chí đứng một mình chỉ là lời rủ hoặc tự nhủ; muốn nói với người khác “tôi định …” phải thêm と おもって います.",
+        "examples": [
+          {
+            "jp": "もう {遅|おそ}いから、そろそろ {帰|かえ}ろう。",
+            "vi": "Muộn rồi, mình về thôi.",
+            "audio": null
+          },
+          {
+            "jp": "{重|おも}そうだね。{半分|はんぶん} {持|も}とうか。",
+            "vi": "Trông nặng nhỉ. Để mình xách giúp một nửa nhé?",
+            "audio": null
+          },
+          {
+            "jp": "{週末|しゅうまつ}、いっしょに フォーを {作|つく}ろうよ。",
+            "vi": "Cuối tuần mình cùng nấu phở nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-to-omotte-iru",
+        "pattern": "〜(よ)うと 思って います",
+        "vi": "Đang định …, đang có ý định …",
+        "explain": "Thể ý chí + と おもって います: ý định đã có từ trước và vẫn đang giữ. と おもいます chỉ dùng cho ý nghĩ của chính người nói ngay lúc nói; nói về ý định của người khác (あに, かれ …) phải dùng と おもって います. Minna bài 31.",
+        "viMistake": "Ghép thể từ điển hoặc ましょう vào trước と: × いくと おもって います (thành “tôi nghĩ là sẽ đi”), × いきましょうと おもいます. Đúng: いこうと おもって います. Nói ý định của ngôi thứ ba mà dùng おもいます cũng sai.",
+        "examples": [
+          {
+            "jp": "{将来|しょうらい}、{日本語|にほんご}の {先生|せんせい}に なろうと {思|おも}って います。",
+            "vi": "Tôi đang định sau này trở thành giáo viên tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{兄|あに}は {新|あたら}しい {車|くるま}を {買|か}おうと {思|おも}って います。",
+            "vi": "Anh trai tôi đang định mua ô tô mới.",
+            "audio": null
+          },
+          {
+            "jp": "{今晩|こんばん}は {早|はや}く {寝|ね}ようと {思|おも}います。",
+            "vi": "Tối nay tôi nghĩ mình sẽ đi ngủ sớm (ý vừa nảy ra lúc nói).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-tsumori",
+        "pattern": "Vる／Vない つもりです",
+        "vi": "Định (không) …, có ý định …",
+        "explain": "Động từ thể từ điển hoặc thể ない + つもりです. Ý định đã quyết trong lòng, chắc chắn hơn 〜(よ)うと おもって います. Vる つもりは ありません là phủ nhận mạnh: “hoàn toàn không có ý định”. Minna bài 31.",
+        "viMistake": "Ghép thể ます hoặc thể て: × いきつもり, × いって つもり. つもり là ý định của người; lịch của sự việc, tàu xe, cuộc họp dùng よてい (× かいぎは 3じに おわる つもりです).",
+        "examples": [
+          {
+            "jp": "{夏休|なつやす}みは ダナンの {海|うみ}へ {行|い}く つもりです。",
+            "vi": "Kỳ nghỉ hè tôi định đi biển Đà Nẵng.",
+            "audio": null
+          },
+          {
+            "jp": "もう {甘|あま}い ものは {食|た}べない つもりです。",
+            "vi": "Tôi định không ăn đồ ngọt nữa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-yotei",
+        "pattern": "Vる／Nの 予定です",
+        "vi": "Dự kiến …, theo lịch thì …",
+        "explain": "Động từ thể từ điển, hoặc danh từ + の, + よていです. Nói về kế hoạch, lịch trình đã sắp xếp (thường không do một mình người nói quyết), kể cả lịch của sự việc như cuộc họp, chuyến bay. Minna bài 31.",
+        "viMistake": "Dùng つもり cho sự việc không có ý chí (cuộc họp, máy bay). Quên の sau danh từ: × しゅっちょう よていです → しゅっちょうの よていです.",
+        "examples": [
+          {
+            "jp": "{飛行機|ひこうき}は {午後|ごご} {3時|さんじ}に {着|つ}く {予定|よてい}です。",
+            "vi": "Máy bay dự kiến đến lúc 3 giờ chiều.",
+            "audio": null
+          },
+          {
+            "jp": "{来週|らいしゅう}の {月曜日|げつようび}は {出張|しゅっちょう}の {予定|よてい}です。",
+            "vi": "Thứ hai tuần sau tôi có lịch đi công tác.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-tame-ni",
+        "pattern": "Vる／Nの ために",
+        "vi": "Để … (mục đích có chủ ý); vì (lợi ích của) …",
+        "explain": "Động từ có chủ ý ở thể từ điển + ために, hoặc danh từ + の + ために. Vế trước là mục tiêu người làm chủ động hướng tới, hai vế cùng chủ ngữ. Nの ために còn nghĩa “vì lợi ích của”: かぞくの ために, けんこうの ために. Minna bài 42.",
+        "viMistake": "Dùng ために sau động từ khả năng hay động từ không chủ ý (わかる, みえる, きこえる): × よめる ために → よめる ように. Với thể ない, N4 thường dùng ように (わすれない ように). Quên の sau danh từ: × かぞく ために.",
+        "examples": [
+          {
+            "jp": "{日本|にほん}で {働|はたら}く ために、{日本語|にほんご}を {勉強|べんきょう}して います。",
+            "vi": "Tôi học tiếng Nhật để làm việc ở Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもの ために、{毎朝|まいあさ} お{弁当|べんとう}を {作|つく}ります。",
+            "vi": "Vì con, sáng nào tôi cũng làm cơm hộp.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-ni-mokuteki",
+        "pattern": "Vる／Vない ように",
+        "vi": "Để (đạt được trạng thái) …, để không …",
+        "explain": "Động từ thể từ điển (thường là động từ khả năng hoặc không chủ ý: わかる, みえる, きこえる, なおる) hoặc thể ない + ように. Vế trước là trạng thái mong muốn mà người làm không trực tiếp điều khiển; chủ ngữ hai vế có thể khác nhau. Minna bài 36.",
+        "viMistake": "Cứ thấy “để” là dùng ために. Mẹo: trước chỗ trống là động từ khả năng (〜える, 〜られる), わかる, みえる hoặc thể ない → ように; động từ có chủ ý (かう, いく, べんきょうする) hoặc danh từ + の → ために.",
+        "examples": [
+          {
+            "jp": "{祖母|そぼ}も {読|よ}める ように、{字|じ}を {大|おお}きく {書|か}きました。",
+            "vi": "Tôi viết chữ to để bà cũng đọc được.",
+            "audio": null
+          },
+          {
+            "jp": "{電車|でんしゃ}に {遅|おく}れない ように、{早|はや}く {家|いえ}を {出|で}ます。",
+            "vi": "Tôi ra khỏi nhà sớm để không trễ tàu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-noni-tsukau",
+        "pattern": "Vる のに 使う／便利",
+        "vi": "Dùng để …; (tiện, cần, mất …) cho việc …",
+        "explain": "Động từ thể từ điển + のに, ngay sau là つかう, べんりだ, いい, ひつようだ, (じかん・おかねが) かかる. Với danh từ dùng Nに: りょうりに つかう. Minna bài 42.",
+        "viMistake": "Nhầm với のに “vậy mà” (bộ 1): のに “dùng để” luôn có つかう, べんり, ひつよう, かかる theo sau. Dùng ために trước べんり, いい, かかる (× しらべる ために べんりです) là không tự nhiên.",
+        "examples": [
+          {
+            "jp": "この なべは フォーの スープを {作|つく}る のに {使|つか}います。",
+            "vi": "Cái nồi này dùng để nấu nước dùng phở.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}から {近|ちか}いので、{通勤|つうきん}する のに {便利|べんり}です。",
+            "vi": "Gần ga nên tiện cho việc đi làm.",
+            "audio": null
+          },
+          {
+            "jp": "{家|いえ}を {建|た}てる のに {3年|さんねん} かかりました。",
+            "vi": "Mất 3 năm để xây nhà.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-ni-naru",
+        "pattern": "Vる ように なる",
+        "vi": "Trở nên (có thể) …, bắt đầu (có thói quen) …",
+        "explain": "Động từ thể từ điển (thường là thể khả năng) + ように なる: thay đổi dần về khả năng hoặc thói quen theo thời gian. Phủ định thường dùng Vなく なる: よめなく なりました, たべなく なりました. Minna bài 36.",
+        "viMistake": "Dùng ように なる khi chính mình chủ động cố gắng — đó là ように する. Dấu hiệu “luyện mãi, cuối cùng đã …”, “dạo này đã …” → ように なりました. Phủ định nên dùng Vなく なりました.",
+        "examples": [
+          {
+            "jp": "{何度|なんど}も {練習|れんしゅう}して、はしで {豆|まめ}が つかめる ように なりました。",
+            "vi": "Luyện đi luyện lại nên tôi đã gắp được hạt đậu bằng đũa.",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}に {来|き}てから、{納豆|なっとう}を {食|た}べる ように なりました。",
+            "vi": "Từ khi sang Nhật, tôi đã bắt đầu ăn natto.",
+            "audio": null
+          },
+          {
+            "jp": "{目|め}が {悪|わる}く なって、{小|ちい}さい {字|じ}が {読|よ}めなく なりました。",
+            "vi": "Mắt kém đi nên tôi không còn đọc được chữ nhỏ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-ni-suru",
+        "pattern": "Vる／Vない ように する",
+        "vi": "Cố gắng (làm / không làm) …, chú ý …",
+        "explain": "Động từ thể từ điển hoặc thể ない + ように する: chủ động cố gắng làm hoặc tránh làm. ように して います: đang duy trì thành thói quen; ように して ください: nhờ người khác chú ý làm hoặc tránh làm. Minna bài 36.",
+        "viMistake": "Nhầm với ように なる: する là mình cố gắng (có ý chí), なる là kết quả tự thay đổi. Dấu hiệu なるべく, できるだけ, “cố gắng” → ように して います. Nhầm với ことに する: ことに する là quyết định một lần, ように する là nỗ lực đều đặn.",
+        "examples": [
+          {
+            "jp": "{毎日|まいにち} {野菜|やさい}を {食|た}べる ように して います。",
+            "vi": "Tôi cố gắng ăn rau mỗi ngày.",
+            "audio": null
+          },
+          {
+            "jp": "{寝|ね}る {前|まえ}は スマホを {見|み}ない ように して います。",
+            "vi": "Trước khi ngủ tôi cố không xem điện thoại.",
+            "audio": null
+          },
+          {
+            "jp": "{約束|やくそく}の {時間|じかん}を {忘|わす}れない ように して ください。",
+            "vi": "Bạn chú ý đừng quên giờ hẹn nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-koto-ni-suru",
+        "pattern": "Vる／Vない ことに する",
+        "vi": "Quyết định (làm / không làm) …",
+        "explain": "Động từ thể từ điển hoặc thể ない + ことに する: người nói tự quyết định. ことに しました: đã quyết định; ことに して います: tự đặt thành quy tắc, thói quen của mình.",
+        "viMistake": "Nhầm với ことに なる: する là mình tự quyết, なる là việc được quyết định (bởi công ty, trường, hoàn cảnh). Quên trợ từ に: × ことを しました, × ことが しました.",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ}から {毎朝|まいあさ} ジョギングする ことに しました。",
+            "vi": "Tôi đã quyết định từ tháng sau chạy bộ mỗi sáng.",
+            "audio": null
+          },
+          {
+            "jp": "{今年|ことし}は {新|あたら}しい {服|ふく}を {買|か}わない ことに しました。",
+            "vi": "Năm nay tôi quyết định không mua quần áo mới.",
+            "audio": null
+          },
+          {
+            "jp": "{寝|ね}る {前|まえ}に {日記|にっき}を {書|か}く ことに して います。",
+            "vi": "Tôi tự đặt lệ viết nhật ký trước khi ngủ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-koto-ni-naru",
+        "pattern": "Vる ことに なる",
+        "vi": "Được quyết định là …, (rốt cuộc) sẽ …",
+        "explain": "Động từ thể từ điển hoặc thể ない + ことに なる: việc được quyết định không phải do một mình người nói (công ty, trường, cuộc họp, hoàn cảnh). ことに なりました: thông báo một quyết định; ことに なって います: quy định, nội quy đang có hiệu lực.",
+        "viMistake": "Dùng ことに する cho việc do công ty, nhà trường, cấp trên quyết. Dấu hiệu “công ty / trưởng phòng quyết”, “vì hoàn cảnh” → ことに なりました; “tự mình quyết” → ことに しました. Hiểu ことに なって います thành “đang trở nên”: thật ra đó là quy định đang áp dụng.",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ}から ハノイの {支店|してん}で {働|はたら}く ことに なりました。",
+            "vi": "Từ tháng sau tôi sẽ (được cử) làm việc ở chi nhánh Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "{休|やす}む ときは {前|まえ}の {日|ひ}までに {連絡|れんらく}する ことに なって います。",
+            "vi": "Quy định là khi nghỉ phải báo chậm nhất trước một ngày.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-ni-iu",
+        "pattern": "〜ように 言う／頼む",
+        "vi": "Bảo / nhờ / nhắc ai (làm / không làm) …",
+        "explain": "Người + に + Vる／Vない + ように + いう, たのむ, ちゅういする, つたえる: thuật lại gián tiếp lời bảo, lời nhờ, lời nhắc. Câu trực tiếp tương ứng: 「〜て ください」と いう. Dạng bị động: 〜ように いわれる, たのまれる (bị bảo, được nhờ).",
+        "viMistake": "Dùng thể て trước ように: × まって ように いいました → まつ ように. Nhầm với ために. Quên rằng người nhận lời bảo đi với に (がくせいに).",
+        "examples": [
+          {
+            "jp": "{医者|いしゃ}は {父|ちち}に お{酒|さけ}を {飲|の}まない ように {言|い}いました。",
+            "vi": "Bác sĩ bảo bố tôi đừng uống rượu.",
+            "audio": null
+          },
+          {
+            "jp": "{友|とも}だちに {写真|しゃしん}を {送|おく}って くれる ように {頼|たの}みました。",
+            "vi": "Tôi nhờ bạn gửi ảnh cho tôi.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}に {字|じ}を ていねいに {書|か}く ように {注意|ちゅうい}されました。",
+            "vi": "Tôi bị thầy nhắc phải viết chữ cẩn thận.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-nasai",
+        "pattern": "Vます + なさい",
+        "vi": "Hãy … (mệnh lệnh nhẹ của người trên, đề bài)",
+        "explain": "Bỏ ます, thêm なさい: のみます → のみなさい, ねます → ねなさい, します → しなさい, きます → きなさい. Dùng khi cha mẹ nói với con, giáo viên nói với học sinh, và trong đề thi (えらびなさい, こたえなさい).",
+        "viMistake": "Ghép thể từ điển: × ねるなさい, × よむなさい. Dùng なさい với người trên là thất lễ; khi đó dùng 〜て ください.",
+        "examples": [
+          {
+            "jp": "もう {10時|じゅうじ}よ。{早|はや}く {寝|ね}なさい。",
+            "vi": "10 giờ rồi đấy. Đi ngủ sớm đi con.",
+            "audio": null
+          },
+          {
+            "jp": "つぎの {文|ぶん}を {読|よ}んで、{質問|しつもん}に {答|こた}えなさい。",
+            "vi": "Đọc đoạn văn sau và trả lời câu hỏi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-te-hoshii",
+        "pattern": "Nに Vて ほしい",
+        "vi": "Muốn (ai đó) làm … ; mong ai đừng …",
+        "explain": "Người + に + Vて ほしい: mong người khác làm; phủ định Vないで ほしい: mong ai đừng làm. Khác 〜たい (chính mình muốn làm). Với người trên, nói mềm hơn bằng 〜て いただけませんか.",
+        "viMistake": "Dùng 〜たい cho hành động của người khác: × ちちに たばこを やめたいです → やめて ほしいです. Quên に trước người được mong (ちちに).",
+        "examples": [
+          {
+            "jp": "{弟|おとうと}に もっと {勉強|べんきょう}して ほしいです。",
+            "vi": "Tôi muốn em trai học chăm hơn.",
+            "audio": null
+          },
+          {
+            "jp": "ここで たばこを {吸|す}わないで ほしいです。",
+            "vi": "Mong bạn đừng hút thuốc ở đây.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-tagaru",
+        "pattern": "〜たがる／ほしがる",
+        "vi": "(Người khác) muốn …, tỏ ra muốn …",
+        "explain": "Bỏ ます, thêm たがる (いきます → いきたがる); tính từ ほしい → ほしがる. Chia như động từ nhóm I: たがって いる (đang muốn), たがらない (không chịu). Dùng để nói mong muốn của ngôi thứ ba nhìn từ bên ngoài; đối tượng thường đi với を.",
+        "viMistake": "Dùng たい, ほしい cho người khác: × むすこは あたらしい くつが ほしいです → くつを ほしがって います. Không dùng たがる cho chính mình. Chia sai phủ định: × いきたくがらない → いきたがらない.",
+        "examples": [
+          {
+            "jp": "{娘|むすめ}は {新|あたら}しい {自転車|じてんしゃ}を ほしがって います。",
+            "vi": "Con gái tôi đang muốn có xe đạp mới.",
+            "audio": null
+          },
+          {
+            "jp": "{息子|むすこ}は {野菜|やさい}を {食|た}べたがりません。",
+            "vi": "Con trai tôi không chịu ăn rau.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g2-s01",
+        "type": "title",
+        "jp": "{意志|いし}・{目的|もくてき}・{決定|けってい}・{変化|へんか}",
+        "vi": "Tổng ôn N4 · 2 – Ý chí, dự định, mục đích, quyết định, thay đổi"
+      },
+      {
+        "id": "n4g2-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "Bộ tổng ôn theo chủ đề cho JLPT N4: các mẫu nói ý định, mục đích, quyết định và thay đổi đặt cạnh nhau để dễ phân biệt.\n1. Chia thể ý chí; phân biệt 〜(よ)うと おもって います, つもり, よてい.\n2. Phân biệt ために, ように (mục đích) và のに (dùng để).\n3. Phân biệt ように なる, ように する, ことに する, ことに なる.\n4. Truyền lời bảo và mong muốn: ように いう, なさい, て ほしい, たがる.\nCách dùng: xem mẫu → ví dụ → bảng phân biệt → làm câu hỏi. Quên mẫu giữa bài thi thì mở slide “Mẹo làm bài” ở cuối bộ."
+      },
+      {
+        "id": "n4g2-s03",
+        "type": "table",
+        "title": "Cách tạo thể ý chí",
+        "columns": ["Nhóm", "Thể ます", "Thể ý chí"],
+        "rows": [
+          ["I", "{行|い}きます", "{行|い}こう"],
+          ["I", "{飲|の}みます", "{飲|の}もう"],
+          ["I", "{待|ま}ちます", "{待|ま}とう"],
+          ["I", "{帰|かえ}ります", "{帰|かえ}ろう"],
+          ["II", "{食|た}べます", "{食|た}べよう"],
+          ["II", "{起|お}きます", "{起|お}きよう"],
+          ["III", "します", "しよう"],
+          ["III", "{来|き}ます", "{来|こ}よう"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g2-s04",
+        "type": "grammar",
+        "ref": "n4g-ikoukei"
+      },
+      {
+        "id": "n4g2-s05",
+        "type": "example",
+        "ref": "n4g-ikoukei",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s06",
+        "type": "quiz",
+        "ref": "n4g2-q01"
+      },
+      {
+        "id": "n4g2-s07",
+        "type": "grammar",
+        "ref": "n4g-you-to-omotte-iru"
+      },
+      {
+        "id": "n4g2-s08",
+        "type": "example",
+        "ref": "n4g-you-to-omotte-iru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s09",
+        "type": "grammar",
+        "ref": "n4g-tsumori"
+      },
+      {
+        "id": "n4g2-s10",
+        "type": "example",
+        "ref": "n4g-tsumori",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s11",
+        "type": "grammar",
+        "ref": "n4g-yotei"
+      },
+      {
+        "id": "n4g2-s12",
+        "type": "example",
+        "ref": "n4g-yotei",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s13",
+        "type": "table",
+        "title": "Phân biệt: (よ)うと 思う・つもり・予定",
+        "columns": ["Mẫu", "Nối với", "Sắc thái"],
+        "rows": [
+          ["{行|い}きたいです", "Vます bỏ ます", "Chỉ là mong muốn"],
+          ["{行|い}こうと {思|おも}って います", "Thể ý chí", "Đang định, còn có thể đổi"],
+          ["{行|い}く つもりです", "Vる／Vない", "Ý định đã quyết"],
+          ["{行|い}く {予定|よてい}です", "Vる／Nの", "Lịch đã sắp xếp"],
+          ["{会議|かいぎ}の {予定|よてい}", "Nの", "Sự việc: chỉ dùng {予定|よてい}"]
+        ]
+      },
+      {
+        "id": "n4g2-s14",
+        "type": "quiz",
+        "ref": "n4g2-q10"
+      },
+      {
+        "id": "n4g2-s15",
+        "type": "grammar",
+        "ref": "n4g-tame-ni"
+      },
+      {
+        "id": "n4g2-s16",
+        "type": "example",
+        "ref": "n4g-tame-ni",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s17",
+        "type": "grammar",
+        "ref": "n4g-you-ni-mokuteki"
+      },
+      {
+        "id": "n4g2-s18",
+        "type": "example",
+        "ref": "n4g-you-ni-mokuteki",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s19",
+        "type": "grammar",
+        "ref": "n4g-noni-tsukau"
+      },
+      {
+        "id": "n4g2-s20",
+        "type": "example",
+        "ref": "n4g-noni-tsukau",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s21",
+        "type": "table",
+        "title": "Phân biệt: ために・ように・のに",
+        "columns": ["Mẫu", "Đứng sau", "Ví dụ"],
+        "rows": [
+          ["ために", "V có chủ ý, Nの", "{買|か}う ために"],
+          ["ように", "V khả năng, Vない", "{読|よ}める ように"],
+          ["ように", "わかる・{見|み}える…", "{見|み}える ように"],
+          ["のに", "Vる + {使|つか}う／{便利|べんり}", "{切|き}る のに {使|つか}う"]
+        ]
+      },
+      {
+        "id": "n4g2-s22",
+        "type": "quiz",
+        "ref": "n4g2-q12"
+      },
+      {
+        "id": "n4g2-s23",
+        "type": "quiz",
+        "ref": "n4g2-q18"
+      },
+      {
+        "id": "n4g2-s24",
+        "type": "grammar",
+        "ref": "n4g-you-ni-naru"
+      },
+      {
+        "id": "n4g2-s25",
+        "type": "example",
+        "ref": "n4g-you-ni-naru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s26",
+        "type": "grammar",
+        "ref": "n4g-you-ni-suru"
+      },
+      {
+        "id": "n4g2-s27",
+        "type": "example",
+        "ref": "n4g-you-ni-suru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s28",
+        "type": "grammar",
+        "ref": "n4g-koto-ni-suru"
+      },
+      {
+        "id": "n4g2-s29",
+        "type": "example",
+        "ref": "n4g-koto-ni-suru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s30",
+        "type": "grammar",
+        "ref": "n4g-koto-ni-naru"
+      },
+      {
+        "id": "n4g2-s31",
+        "type": "example",
+        "ref": "n4g-koto-ni-naru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s32",
+        "type": "table",
+        "title": "Phân biệt: ように なる／する・ことに する／なる",
+        "columns": ["Mẫu", "Ai làm nên?", "Nghĩa"],
+        "rows": [
+          ["ように なる", "Tự thay đổi dần", "Đã có thể, bắt đầu"],
+          ["ように する", "Mình cố gắng", "Cố gắng, chú ý"],
+          ["ことに する", "Mình quyết định", "Quyết định làm"],
+          ["ことに なる", "Công ty, hoàn cảnh", "Được quyết định"],
+          ["ことに して いる", "Mình tự đặt lệ", "Quy tắc riêng"],
+          ["ことに なって いる", "Tổ chức, nội quy", "Quy định chung"]
+        ]
+      },
+      {
+        "id": "n4g2-s33",
+        "type": "quiz",
+        "ref": "n4g2-q31"
+      },
+      {
+        "id": "n4g2-s34",
+        "type": "grammar",
+        "ref": "n4g-you-ni-iu"
+      },
+      {
+        "id": "n4g2-s35",
+        "type": "example",
+        "ref": "n4g-you-ni-iu",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s36",
+        "type": "grammar",
+        "ref": "n4g-nasai"
+      },
+      {
+        "id": "n4g2-s37",
+        "type": "example",
+        "ref": "n4g-nasai",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s38",
+        "type": "grammar",
+        "ref": "n4g-te-hoshii"
+      },
+      {
+        "id": "n4g2-s39",
+        "type": "example",
+        "ref": "n4g-te-hoshii",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s40",
+        "type": "grammar",
+        "ref": "n4g-tagaru"
+      },
+      {
+        "id": "n4g2-s41",
+        "type": "example",
+        "ref": "n4g-tagaru",
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s42",
+        "type": "table",
+        "title": "Phân biệt: たい・たがる・て ほしい・なさい",
+        "columns": ["Mẫu", "Ai muốn, ai bảo", "Ai làm"],
+        "rows": [
+          ["{行|い}きたい", "Tôi muốn", "Tôi"],
+          ["{行|い}きたがる", "Người khác muốn", "Người đó"],
+          ["{行|い}って ほしい", "Tôi muốn", "Người khác"],
+          ["{行|い}きなさい", "Người trên bảo", "Người dưới"],
+          ["{行|い}く ように {言|い}う", "Thuật lại lời bảo", "Người được bảo"]
+        ]
+      },
+      {
+        "id": "n4g2-s43",
+        "type": "quiz",
+        "ref": "n4g2-q36"
+      },
+      {
+        "id": "n4g2-s44",
+        "type": "dialogue",
+        "title": "Hội thoại: kế hoạch sau kỳ thi",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{試験|しけん}が {終|お}わったら、{何|なに}を する？",
+            "vi": "Thi xong cậu định làm gì?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{京都|きょうと}へ {行|い}こうと {思|おも}って いるの。",
+            "vi": "Mình đang định đi Kyoto."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいね。{僕|ぼく}は {日本|にほん}で {働|はたら}く ことに なったよ。",
+            "vi": "Hay đấy. Còn mình thì đã chắc chắn sẽ làm việc ở Nhật rồi."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "すごい！ {敬語|けいご}も {勉強|べんきょう}する つもり？",
+            "vi": "Giỏi quá! Cậu định học cả kính ngữ à?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "うん。{話|はな}せる ように、{毎日|まいにち} {練習|れんしゅう}して いる。",
+            "vi": "Ừ. Mình luyện mỗi ngày để nói được."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{母|はは}は わたしに {国|くに}へ {帰|かえ}って ほしいって。",
+            "vi": "Mẹ mình thì muốn mình về nước."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g2-s45",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "Thể ý chí (〜おう／〜よう) trước と → おもって います; ý định của người khác cũng dùng おもって います.\nVる／Vない + （　）+ です: ý định của người → つもり; lịch, sự việc → よてい; danh từ → Nの よてい.\n“Để …”: V có chủ ý, Nの → ために; V khả năng, わかる, みえる, Vない → ように.\nSau chỗ trống có つかう, べんり, ひつよう, かかる → のに.\n“Luyện mãi đã …”, “dạo này đã …” → ように なりました; không còn làm nữa → Vなく なりました.\n“Cố gắng, chú ý”, なるべく, できるだけ → ように して います／して ください.\nMình quyết (じぶんで) → ことに しました; công ty, cấp trên, hoàn cảnh quyết → ことに なりました; nội quy → ことに なって います.\nNgười + に + いう／たのむ／ちゅういする → Vる／Vない ように.\nCha mẹ, thầy cô ra lệnh, đề bài → Vます bỏ ます + なさい.\nMình muốn người khác làm → Vて ほしい; người khác muốn → 〜たがって います／ほしがって います."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g2-q01",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ナム「{疲|つか}れたね。あの {喫茶店|きっさてん}で ちょっと （　　）。」 ハナ「うん、そう しよう。」",
+        "options": [
+          "{休|やす}みようか",
+          "{休|やす}むようか",
+          "{休|やす}もうか",
+          "{休|やす}みろうか"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ikoukei"],
+        "explain": "Câu: “Mệt nhỉ. Mình nghỉ một chút ở quán cà phê kia nhé?” — “Ừ, nghỉ thôi.” やすむ là nhóm I: đổi む thành も rồi thêm う → やすもう; thêm か thành lời rủ nhẹ. やすみよう, やすむよう, やすみろう đều là cách chia sai."
+      },
+      {
+        "id": "n4g2-q02",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来週|らいしゅう}の {日曜日|にちようび}、みんなで バーベキューを （　　）よ。",
+        "options": ["しよう", "すろう", "しろう", "さよう"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ikoukei"],
+        "explain": "Câu: “Chủ nhật tuần sau cả nhóm cùng nướng BBQ nhé.” する là động từ bất quy tắc: する → しよう. すろう, しろう, さよう không phải là thể ý chí."
+      },
+      {
+        "id": "n4g2-q03",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{楽|たの}しかったね。{来年|らいねん}も この お{祭|まつ}りに また （　　）ね。",
+        "options": ["{来|き}よう", "{来|く}よう", "{来|く}ろう", "{来|こ}よう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ikoukei"],
+        "explain": "Câu: “Vui quá nhỉ. Năm sau mình lại đến lễ hội này nữa nhé.” くる → こよう (đọc là こよう). きよう, くよう, くろう đều chia sai."
+      },
+      {
+        "id": "n4g2-q04",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今年|ことし}の {夏休|なつやす}みは {国|くに}へ {帰|かえ}って、{家族|かぞく}と （　　） と {思|おも}って います。",
+        "options": [
+          "{旅行|りょこう}しろう",
+          "{旅行|りょこう}しよう",
+          "{旅行|りょこう}するよう",
+          "{旅行|りょこう}しましょう"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-to-omotte-iru"],
+        "explain": "Câu: “Hè năm nay tôi đang định về nước và đi du lịch cùng gia đình.” Trước と おもって います dùng thể ý chí dạng thường: りょこうする → りょこうしよう. しましょう là dạng lịch sự, không đặt trước と おもう; しろう, するよう là chia sai."
+      },
+      {
+        "id": "n4g2-q05",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}は {来年|らいねん}、{自分|じぶん}の {店|みせ}を （　　） と {思|おも}って います。",
+        "options": ["{開|ひら}きよう", "{開|ひら}くよう", "{開|ひら}いて", "{開|ひら}こう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-to-omotte-iru"],
+        "explain": "Câu: “Anh trai tôi đang định sang năm mở cửa hàng riêng.” ひらく là nhóm I: く → こ + う = ひらこう. Ý định của người khác (あに) nói bằng と おもって います, không dùng と おもいます. ひらきよう, ひらくよう là chia sai; thể て không đứng trước と おもう."
+      },
+      {
+        "id": "n4g2-q06",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {来年|らいねん} N3の ＿★＿ ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ います。",
+        "options": ["{試験|しけん}を", "と", "{思|おも}って", "{受|う}けよう"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-to-omotte-iru"],
+        "explain": "Câu đúng: わたしは {来年|らいねん} N3の {試験|しけん}を {受|う}けようと {思|おも}って います。（Tôi đang định sang năm thi N3.） N3の phải đi ngay với {試験|しけん}を; thể ý chí {受|う}けよう + と + {思|おも}って います. Thứ tự: {試験|しけん}を → {受|う}けよう → と → {思|おも}って; ô ★ là {試験|しけん}を."
+      },
+      {
+        "id": "n4g2-q07",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたは {雨|あめ}なので、どこへも （　　） つもりです。",
+        "options": ["{出|で}かけず", "{出|で}かけないで", "{出|で}かけない", "{出|で}かけなくて"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tsumori"],
+        "explain": "Câu: “Mai trời mưa nên tôi định không đi đâu cả.” つもり là danh từ, đứng sau thể từ điển hoặc thể ない: でかけない つもり. でかけず, でかけないで, でかけなくて không bổ nghĩa cho danh từ."
+      },
+      {
+        "id": "n4g2-q08",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{大学|だいがく}を {卒業|そつぎょう}したら、{日本|にほん}の {会社|かいしゃ}で （　　）。",
+        "options": [
+          "{働|はたら}き つもりです",
+          "{働|はたら}く つもりです",
+          "{働|はたら}いて つもりです",
+          "{働|はたら}くの つもりです"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tsumori"],
+        "explain": "Câu: “Tốt nghiệp đại học xong, tôi định làm việc ở công ty Nhật.” Động từ thể từ điển + つもりです: はたらく つもりです. Thể ます (はたらき), thể て (はたらいて) không đứng trước つもり; cũng không chen の vào giữa."
+      },
+      {
+        "id": "n4g2-q09",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{今度|こんど}の {旅行|りょこう}は {車|くるま}で {行|い}くんですか。」 B「いいえ、{運転|うんてん}が {苦手|にがて}なので、{電車|でんしゃ}で {行|い}く （　　） です。」",
+        "options": ["つもり", "ところ", "ながら", "ように"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tsumori"],
+        "explain": "Câu: “Chuyến đi lần tới anh đi bằng ô tô à?” — “Không, tôi lái xe kém nên định đi tàu.” Nói ý định của mình: Vる つもりです. Vる ところです là “sắp sửa làm ngay”, không hợp với chuyến đi lần tới; ながら và ように không đứng trước です như vậy."
+      },
+      {
+        "id": "n4g2-q10",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}は {3時|さんじ}に {終|お}わる （　　） ですが、{少|すこ}し {遅|おく}れるかもしれません。",
+        "options": ["つもり", "ため", "まま", "{予定|よてい}"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-yotei"],
+        "explain": "Câu: “Cuộc họp dự kiến kết thúc lúc 3 giờ, nhưng có thể muộn một chút.” Lịch của sự việc dùng よてい. つもり là ý định của người, cuộc họp không có ý chí; ため (để, vì) và まま (giữ nguyên) không hợp nghĩa."
+      },
+      {
+        "id": "n4g2-q11",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来週|らいしゅう}の {金曜日|きんようび}は {友|とも}だちの {結婚式|けっこんしき} （　　） {予定|よてい}です。",
+        "options": ["に", "を", "の", "が"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-yotei"],
+        "explain": "Câu: “Thứ sáu tuần sau tôi có lịch dự đám cưới bạn.” Danh từ nối với よてい bằng の: けっこんしきの よてい. に, を, が không nối danh từ với よてい."
+      },
+      {
+        "id": "n4g2-q12",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{車|くるま}の {免許|めんきょ}を {取|と}る （　　）、{自動車学校|じどうしゃがっこう}に {通|かよ}って います。",
+        "options": ["ように", "ために", "ことに", "ところに"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tame-ni"],
+        "explain": "Câu: “Tôi đang theo học trường dạy lái xe để lấy bằng lái ô tô.” とる (lấy bằng) là động từ có chủ ý, cùng chủ ngữ với vế sau → ために. ように đi với động từ khả năng (とれる), động từ không chủ ý hoặc thể ない; ことに, ところに không mang nghĩa mục đích."
+      },
+      {
+        "id": "n4g2-q13",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{家族|かぞく} （　　） ために、{毎日|まいにち} {遅|おそ}くまで {働|はたら}いて います。",
+        "options": ["に", "が", "を", "の"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tame-ni"],
+        "explain": "Câu: “Vì gia đình, ngày nào tôi cũng làm việc đến khuya.” Danh từ + の + ために: かぞくの ために (vì lợi ích của gia đình). に, が, を không nối danh từ với ために."
+      },
+      {
+        "id": "n4g2-q14",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来月|らいげつ}の ＿＿＿＿ ＿★＿ ＿＿＿＿ ＿＿＿＿ {走|はし}って います。",
+        "options": ["{出|で}る", "マラソン{大会|たいかい}に", "ために", "{毎朝|まいあさ}"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tame-ni"],
+        "explain": "Câu đúng: {来月|らいげつ}の マラソン{大会|たいかい}に {出|で}る ために {毎朝|まいあさ} {走|はし}って います。（Để chạy giải marathon tháng sau, sáng nào tôi cũng chạy bộ.） Thứ tự: マラソン{大会|たいかい}に → {出|で}る → ために → {毎朝|まいあさ}; ô ★ là {出|で}る."
+      },
+      {
+        "id": "n4g2-q15",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "かぜを （　　） ように、{毎日|まいにち} {手|て}を よく {洗|あら}って います。",
+        "options": ["ひかなくて", "ひかない", "ひかないで", "ひかず"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-mokuteki"],
+        "explain": "Câu: “Để không bị cảm, ngày nào tôi cũng rửa tay kỹ.” “Để không …” = Vない ように: ひかない ように. ひかなくて, ひかないで, ひかず không đứng trước ように."
+      },
+      {
+        "id": "n4g2-q16",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{子|こ}どもでも {読|よ}める （　　）、ひらがなで {書|か}きました。",
+        "options": ["ために", "ことに", "ように", "までに"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-mokuteki"],
+        "explain": "Câu: “Tôi đã viết bằng hiragana để trẻ con cũng đọc được.” よめる là động từ khả năng (không chủ ý) → dùng ように. ために chỉ đi với động từ có chủ ý; ことに, までに không mang nghĩa “để”."
+      },
+      {
+        "id": "n4g2-q17",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{大切|たいせつ}な ことを ＿★＿ ＿＿＿＿ ＿＿＿＿ ＿＿＿＿。",
+        "options": ["メモを", "ように", "して おきます", "{忘|わす}れない"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-mokuteki"],
+        "explain": "Câu đúng: {大切|たいせつ}な ことを {忘|わす}れない ように メモを して おきます。（Tôi ghi chú sẵn để không quên việc quan trọng.） ことを là tân ngữ của {忘|わす}れない; “để không …” = Vない ように. Thứ tự: {忘|わす}れない → ように → メモを → して おきます; ô ★ là {忘|わす}れない."
+      },
+      {
+        "id": "n4g2-q18",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この アプリは {漢字|かんじ}の {意味|いみ}を {調|しら}べる （　　） {便利|べんり}です。",
+        "options": ["のに", "ように", "ことに", "までに"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni-tsukau"],
+        "explain": "Câu: “Ứng dụng này tiện cho việc tra nghĩa chữ Hán.” Vる + のに + べんりです: tiện để làm gì. ように, ことに, までに không đi với べんり theo nghĩa này."
+      },
+      {
+        "id": "n4g2-q19",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「ノートパソコンは {何|なに}に {使|つか}いますか。」 B「レポートを {書|か}く （　　） {使|つか}います。」",
+        "options": ["のが", "のを", "のに", "のは"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni-tsukau"],
+        "explain": "Câu: “Anh dùng máy tính xách tay vào việc gì?” — “Tôi dùng để viết báo cáo.” Vる + のに + つかいます: dùng để làm gì. のが, のを, のは không nối với つかいます theo nghĩa mục đích."
+      },
+      {
+        "id": "n4g2-q20",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ここから ＿＿＿＿ ＿＿＿＿ ＿★＿ ＿＿＿＿ かかります。",
+        "options": ["{空港|くうこう}まで", "のに", "{行|い}く", "{1時間|いちじかん}ぐらい"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-noni-tsukau"],
+        "explain": "Câu đúng: ここから {空港|くうこう}まで {行|い}く のに {1時間|いちじかん}ぐらい かかります。（Từ đây đi đến sân bay mất khoảng 1 tiếng.） Thứ tự: {空港|くうこう}まで → {行|い}く → のに → {1時間|いちじかん}ぐらい; ô ★ là のに."
+      },
+      {
+        "id": "n4g2-q21",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{去年|きょねん}までは {全然|ぜんぜん} {泳|およ}げませんでしたが、{今|いま}は 100メートル {泳|およ}げる （　　）。",
+        "options": ["ことに しました", "ように しました", "ことに なりました", "ように なりました"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-naru"],
+        "explain": "Câu: “Đến năm ngoái tôi hoàn toàn không bơi được, nhưng giờ đã bơi được 100 mét.” Khả năng thay đổi theo thời gian (trước không → giờ có thể), trước chỗ trống là động từ khả năng およげる → ように なりました. ように しました là chủ động cố gắng, không đi với thay đổi khả năng như thế này; ことに しました／ことに なりました là quyết định, không đứng sau động từ khả năng."
+      },
+      {
+        "id": "n4g2-q22",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "スマホを {買|か}ってから、{弟|おとうと}は {本|ほん}を あまり （　　） なりました。",
+        "options": ["{読|よ}まなく", "{読|よ}まないで", "{読|よ}まずに", "{読|よ}まなくて"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-naru"],
+        "explain": "Câu: “Từ khi mua điện thoại, em trai tôi không mấy khi đọc sách nữa.” Thay đổi sang “không còn làm” dùng Vなく なる: よまなく なりました. よまないで, よまずに, よまなくて không đi với なる."
+      },
+      {
+        "id": "n4g2-q23",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{3年|さんねん} ピアノを {習|なら}ったので、{妹|いもうと}は ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ ＿★＿ なりました。",
+        "options": ["むずかしい", "{曲|きょく}も", "ように", "{弾|ひ}ける"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-naru"],
+        "explain": "Câu đúng: {3年|さんねん} ピアノを {習|なら}ったので、{妹|いもうと}は むずかしい {曲|きょく}も {弾|ひ}ける ように なりました。（Học piano 3 năm nên em gái tôi đã chơi được cả những bản khó.） Thứ tự: むずかしい → {曲|きょく}も → {弾|ひ}ける → ように; ô ★ là ように (V khả năng + ように なりました)."
+      },
+      {
+        "id": "n4g2-q24",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{健康|けんこう}の ために、なるべく {階段|かいだん}を {使|つか}う （　　） います。",
+        "options": ["ように なって", "ように して", "ために して", "ために なって"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-suru"],
+        "explain": "Câu: “Vì sức khỏe, tôi cố gắng đi cầu thang bộ nhiều nhất có thể.” なるべく (cố hết mức có thể) cho thấy nỗ lực có chủ ý → ように して います. ように なって います không dùng cho việc mình cố gắng (thay đổi tự nhiên thì nói ように なりました, và không đi với なるべく); ために して, ために なって sai cấu trúc."
+      },
+      {
+        "id": "n4g2-q25",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたは {大事|だいじ}な {試験|しけん}ですから、（　　） ように して ください。",
+        "options": ["{遅|おく}れない", "{遅|おく}れなくて", "{遅|おく}れないで", "{遅|おく}れず"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-suru"],
+        "explain": "Câu: “Mai là kỳ thi quan trọng nên các bạn chú ý đừng đến muộn.” Chú ý tránh làm gì: Vない ように して ください → おくれない. おくれなくて, おくれないで, おくれず không đứng trước ように."
+      },
+      {
+        "id": "n4g2-q26",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "いろいろ {考|かんが}えましたが、{今年|ことし}の テトは {国|くに}へ {帰|かえ}らない （　　）。",
+        "options": ["ことが しました", "ことを しました", "ことで しました", "ことに しました"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-suru"],
+        "explain": "Câu: “Tôi đã suy nghĩ nhiều, và quyết định Tết năm nay không về nước.” Tự quyết định: Vない ことに しました. Trợ từ đi với する trong mẫu này luôn là に; が, を, で đều sai."
+      },
+      {
+        "id": "n4g2-q27",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{留学|りゅうがく}は {親|おや}が {決|き}めたのでは ありません。わたしが {自分|じぶん}で {行|い}く （　　）。",
+        "options": ["ように しました", "ことに なりました", "ことに しました", "ように なりました"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-suru"],
+        "explain": "Câu: “Việc du học không phải bố mẹ quyết. Chính tôi tự quyết định đi.” Người nói tự quyết → ことに しました. ことに なりました là việc được quyết bởi người khác, hoàn cảnh — trái với “không phải bố mẹ quyết, tự tôi”; ように しました (cố gắng đều đặn) và ように なりました (thay đổi dần) không dùng cho một quyết định đi du học."
+      },
+      {
+        "id": "n4g2-q28",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来月|らいげつ}から {会社|かいしゃ}へは {電車|でんしゃ}を ＿＿＿＿ ＿＿＿＿ ＿＿＿＿ ＿★＿ しました。",
+        "options": ["{自転車|じてんしゃ}で", "ことに", "{行|い}く", "やめて"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-suru"],
+        "explain": "Câu đúng: {来月|らいげつ}から {会社|かいしゃ}へは {電車|でんしゃ}を やめて {自転車|じてんしゃ}で {行|い}く ことに しました。（Từ tháng sau tôi quyết định bỏ đi tàu, đi làm bằng xe đạp.） Thứ tự: やめて → {自転車|じてんしゃ}で → {行|い}く → ことに; ô ★ là ことに (Vる ことに しました)."
+      },
+      {
+        "id": "n4g2-q29",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{父|ちち}の {仕事|しごと}で、{家族|かぞく} みんなで アメリカに （　　） ことに なりました。",
+        "options": ["{住|す}む", "{住|す}んで", "{住|す}み", "{住|す}もう"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-naru"],
+        "explain": "Câu: “Vì công việc của bố, cả nhà sẽ sang sống ở Mỹ.” ことに なる đi sau động từ thể từ điển: すむ ことに なりました (việc được quyết vì hoàn cảnh). Thể て, thể ます bỏ ます, thể ý chí không đứng trước こと."
+      },
+      {
+        "id": "n4g2-q30",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {寮|りょう}では、{夜|よる} {11時|じゅういちじ}までに {帰|かえ}る （　　） います。",
+        "options": ["ことが なって", "ことを して", "ことに なって", "ことで なって"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-naru"],
+        "explain": "Câu: “Ở ký túc xá này, quy định là phải về trước 11 giờ đêm.” Nội quy đang áp dụng: Vる ことに なって います. Trợ từ trong mẫu này là に; ことが なって, ことを して, ことで なって đều sai."
+      },
+      {
+        "id": "n4g2-q31",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{出張|しゅっちょう}に {行|い}く {人|ひと}は {部長|ぶちょう}が {決|き}めます。{今回|こんかい}は わたしが {行|い}く （　　）。",
+        "options": ["ことに しました", "ことに なりました", "ように しました", "ように なりました"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-koto-ni-naru"],
+        "explain": "Câu: “Người đi công tác là do trưởng phòng quyết. Lần này tôi sẽ là người đi.” Việc do người khác (trưởng phòng) quyết → ことに なりました. ことに しました là tự mình quyết, mâu thuẫn với câu trước; ように しました (cố gắng) và ように なりました (thay đổi dần) không nói về một quyết định."
+      },
+      {
+        "id": "n4g2-q32",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は {学生|がくせい}に、{教室|きょうしつ}で ジュースを {飲|の}まない （　　） {言|い}いました。",
+        "options": ["ことに", "のに", "ほど", "ように"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-iu"],
+        "explain": "Câu: “Thầy bảo học sinh đừng uống nước ngọt trong lớp.” Thuật lại lời bảo: Vない ように いいました. ことに, のに, ほど không dùng để thuật lại lời bảo."
+      },
+      {
+        "id": "n4g2-q33",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}に {帰|かえ}りに ＿＿＿＿ ＿★＿ ＿＿＿＿ ＿＿＿＿ {頼|たの}まれました。",
+        "options": ["{買|か}って", "ように", "{牛乳|ぎゅうにゅう}を", "くる"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-ni-iu"],
+        "explain": "Câu đúng: {母|はは}に {帰|かえ}りに {牛乳|ぎゅうにゅう}を {買|か}って くる ように {頼|たの}まれました。（Tôi được mẹ nhờ trên đường về mua sữa mang về.） Vて くる (đi mua rồi mang về) + ように + {頼|たの}まれる (được nhờ). Thứ tự: {牛乳|ぎゅうにゅう}を → {買|か}って → くる → ように; ô ★ là {買|か}って."
+      },
+      {
+        "id": "n4g2-q34",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}「ゲームばかり して いないで、{早|はや}く {宿題|しゅくだい}を （　　）。」",
+        "options": ["したがる", "しなさい", "して ほしがる", "する つもりだ"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nasai"],
+        "explain": "Câu: Mẹ nói: “Đừng chỉ chơi game nữa, mau làm bài tập đi.” Cha mẹ ra lệnh cho con: Vます bỏ ます + なさい → しなさい. したがる (người khác muốn), して ほしがる (không phải mệnh lệnh), する つもりだ (ý định của người nói) không hợp lời mẹ bảo con."
+      },
+      {
+        "id": "n4g2-q35",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "（テストで）{正|ただ}しい ものを {一|ひと}つ （　　）。",
+        "options": ["えらぶなさい", "えらんなさい", "えらばなさい", "えらびなさい"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-nasai"],
+        "explain": "Câu (lời đề thi): “Hãy chọn một đáp án đúng.” えらびます → bỏ ます → えらびなさい. なさい không ghép với thể từ điển (えらぶ), thể ない (えらば) hay âm biến (えらん)."
+      },
+      {
+        "id": "n4g2-q36",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは {母|はは}に もっと ゆっくり {休|やす}んで （　　）。",
+        "options": ["たいです", "ほしがります", "ほしいです", "なさいです"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-hoshii"],
+        "explain": "Câu: “Tôi muốn mẹ nghỉ ngơi thong thả hơn.” Mong người khác làm: Nに Vて ほしいです. たい chỉ dùng cho việc mình làm và không ghép sau thể て; ほしがります là mong muốn của ngôi thứ ba, không dùng với わたしは; なさいです không tồn tại."
+      },
+      {
+        "id": "n4g2-q37",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{図書館|としょかん}では {大|おお}きい {声|こえ}で （　　） ほしいです。",
+        "options": ["{話|はな}さないで", "{話|はな}さなくて", "{話|はな}さず", "{話|はな}さない"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-hoshii"],
+        "explain": "Câu: “Ở thư viện, mong mọi người đừng nói to.” Mong ai đừng làm: Vないで ほしい → はなさないで ほしいです. はなさなくて, はなさず, はなさない không đứng trước ほしい."
+      },
+      {
+        "id": "n4g2-q38",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来週|らいしゅう}の {土曜日|どようび}、＿＿＿＿ ＿＿＿＿ ＿★＿ ＿＿＿＿ ほしいです。",
+        "options": ["{友|とも}だちに", "{引|ひ}っ{越|こ}しを", "{来|き}て", "{手伝|てつだ}いに"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-te-hoshii"],
+        "explain": "Câu đúng: {来週|らいしゅう}の {土曜日|どようび}、{友|とも}だちに {引|ひ}っ{越|こ}しを {手伝|てつだ}いに {来|き}て ほしいです。（Thứ bảy tuần sau, tôi muốn bạn đến giúp chuyển nhà.） Thứ tự: {友|とも}だちに → {引|ひ}っ{越|こ}しを → {手伝|てつだ}いに → {来|き}て; ô ★ là {手伝|てつだ}いに."
+      },
+      {
+        "id": "n4g2-q39",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{犬|いぬ}が {大好|だいす}きな {妹|いもうと}は、{犬|いぬ}を （　　） います。",
+        "options": ["{飼|か}いたくて", "{飼|か}いたいで", "{飼|か}いたがって", "{飼|か}いたがり"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tagaru"],
+        "explain": "Câu: “Em gái tôi rất thích chó nên đang muốn nuôi chó.” Mong muốn của ngôi thứ ba: かいたい → かいたがって います (đối tượng đi với を). かいたくて, かいたいで, かいたがり không ghép với います."
+      },
+      {
+        "id": "n4g2-q40",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "うちの {子|こ}は {歯医者|はいしゃ}へ （　　） ので、{困|こま}って います。",
+        "options": [
+          "{行|い}きたがりない",
+          "{行|い}きたがらない",
+          "{行|い}きたくがらない",
+          "{行|い}きたがない"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-tagaru"],
+        "explain": "Câu: “Con tôi không chịu đi nha sĩ nên tôi rất khổ sở.” たがる chia như động từ nhóm I: いきたがる → phủ định いきたがらない. Ba lựa chọn còn lại chia sai."
+      }
+    ]
+  }
+}

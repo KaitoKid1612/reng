@@ -1,0 +1,1194 @@
+{
+  "id": "n4-grammar-8",
+  "title": "Tổng ôn N4 · 8 – Trợ từ, mẫu ngắn, danh từ hóa",
+  "titleJa": "N4文法まとめ 8　助詞と名詞化",
+  "summary": "Bộ tổng ôn ngữ pháp JLPT N4 theo chủ đề: trợ từ chỉ số lượng, mức độ (しか〜ない／だけ, ばかり, ずつ, số lượng + も, でも, とか, くらい, ほど〜ない), các mẫu ghép với gốc ます (すぎる, やすい／にくい, かた, はじめる／おわる／つづける), danh từ hóa (〜さ, 〜の／〜こと), 〜と いう N và câu hỏi lồng 〜か／〜かどうか. Mỗi mẫu có cách chia, lỗi hay gặp, bảng phân biệt và 40 câu luyện kiểu đề JLPT; toàn bộ ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 9,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-shika-nai",
+        "pattern": "N しか 〜ない／N だけ",
+        "vi": "Chỉ … (しか: thấy ít, luôn đi với phủ định; だけ: trung tính)",
+        "explain": "しか đứng sau danh từ, từ chỉ số lượng (thay cho が／を; các trợ từ khác giữ lại: 日本でしか) và động từ cuối câu LUÔN ở thể phủ định: 500円しか ありません (chỉ có 500 yên — ít quá). だけ đi với thể khẳng định, nói giới hạn một cách trung tính: 500円だけ あります. Minna bài 27 (しか), bài 11 (だけ).",
+        "viMistake": "Dịch chữ “chỉ” nên ghép しか với động từ khẳng định: 日本語しか 話せます là sai, phải là 話せません. Ngược lại だけ + phủ định không phải “chỉ có”: 5人だけ 来ませんでした là “chỉ 5 người KHÔNG đến”. Mẹo: chỗ trống mà sau đó là 〜ない／〜ません và nghĩa là “chỉ” → しか.",
+        "examples": [
+          {
+            "jp": "{冷蔵庫|れいぞうこ}に {卵|たまご}が {2つ|ふたつ}しか ありません。",
+            "vi": "Tủ lạnh chỉ còn có 2 quả trứng (ít quá).",
+            "audio": null
+          },
+          {
+            "jp": "この {店|みせ}は {現金|げんきん}しか {使|つか}えません。",
+            "vi": "Quán này chỉ dùng được tiền mặt.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}には {部長|ぶちょう}だけ {来|き}ました。",
+            "vi": "Cuộc họp chỉ có trưởng phòng đến (だけ + khẳng định).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-bakari",
+        "pattern": "N ばかり／Vて ばかり いる",
+        "vi": "Toàn là …, chỉ toàn … (lặp đi lặp lại, thường có ý chê)",
+        "explain": "N + ばかり: toàn là N, nhiều đến mức lệch (あまい ものばかり 食べる). Vて + ばかり いる: suốt ngày chỉ làm V (ゲームを して ばかり いる). Thường mang ý không hài lòng của người nói. Khác hẳn Vた ばかり (vừa mới làm xong, bộ 3).",
+        "viMistake": "Lẫn với Vた ばかり: ゲームを した ばかりです là “vừa chơi xong”, còn ゲームを して ばかり います là “suốt ngày chơi game”. Cũng lẫn với だけ: だけ chỉ giới hạn trung tính (“chỉ”), ばかり nhấn mạnh “toàn là, nhiều quá”. Ở N4 nhớ dạng して ばかり いる; Vる ばかり (増えるばかり — “cứ ngày càng”) là mẫu khác, trình độ cao hơn.",
+        "examples": [
+          {
+            "jp": "{弟|おとうと}は {毎日|まいにち} ゲームを して ばかり います。",
+            "vi": "Em trai tôi ngày nào cũng chỉ toàn chơi game.",
+            "audio": null
+          },
+          {
+            "jp": "この クラスは {女|おんな}の {人|ひと}ばかりですね。",
+            "vi": "Lớp này toàn là nữ nhỉ.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもが あまい ものばかり {食|た}べて、{困|こま}って います。",
+            "vi": "Con tôi toàn ăn đồ ngọt, tôi đang đau đầu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-zutsu",
+        "pattern": "số lượng + ずつ",
+        "vi": "Mỗi … (chia đều), từng … một",
+        "explain": "Đứng sau từ chỉ số lượng hoặc 少し: 1つずつ, 2人ずつ, 少しずつ. Nghĩa là chia đều cho mỗi người, mỗi lần (mỗi người 2 cái), hoặc tiến từng chút một (少しずつ 上手に なる).",
+        "viMistake": "Bỏ ずつ khi muốn nói chia đều: みんなに 2つ あげました là “cho cả nhóm 2 cái”, 2つずつ mới là “mỗi người 2 cái”. Cũng đừng nhầm với số lượng + も: 1つも 〜ない là “không một cái nào”, 1つずつ là “mỗi lần một cái”.",
+        "examples": [
+          {
+            "jp": "{子|こ}どもたちに あめを {3つ|みっつ}ずつ あげました。",
+            "vi": "Tôi cho bọn trẻ mỗi đứa 3 cái kẹo.",
+            "audio": null
+          },
+          {
+            "jp": "{毎日|まいにち} {漢字|かんじ}を {5つ|いつつ}ずつ {覚|おぼ}えて います。",
+            "vi": "Mỗi ngày tôi nhớ 5 chữ kanji.",
+            "audio": null
+          },
+          {
+            "jp": "{日本語|にほんご}が {少|すこ}しずつ わかるように なりました。",
+            "vi": "Tôi đã dần dần hiểu được tiếng Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-suuryou-mo",
+        "pattern": "số lượng + も",
+        "vi": "Những …, tới … (nhấn mạnh là nhiều)",
+        "explain": "Số lượng + も, động từ khẳng định: người nói thấy con số đó nhiều, ngạc nhiên: 3時間も 待ちました (chờ tới 3 tiếng). Khi đi với số 1 và động từ phủ định (1人も, 一度も, 1つも 〜ない) thì nghĩa là “không … một … nào”.",
+        "viMistake": "Ngược nghĩa với しか: 3時間しか 待ちませんでした là “chỉ chờ 3 tiếng” (thấy ít), 3時間も 待ちました là “chờ tới 3 tiếng” (thấy nhiều). Người Việt hay dịch “những” rồi chọn しか vì cùng đứng sau số. Nhìn vế sau: khẳng định + ngạc nhiên → も; phủ định + “chỉ” → しか.",
+        "examples": [
+          {
+            "jp": "{雨|あめ}で {電車|でんしゃ}が {2時間|にじかん}も {遅|おく}れました。",
+            "vi": "Vì mưa, tàu điện trễ tới 2 tiếng.",
+            "audio": null
+          },
+          {
+            "jp": "{兄|あに}は ビールを {5本|ごほん}も {飲|の}みました。",
+            "vi": "Anh tôi uống tới 5 chai bia.",
+            "audio": null
+          },
+          {
+            "jp": "{今日|きょう}は お{客|きゃく}さんが {1人|ひとり}も {来|き}ませんでした。",
+            "vi": "Hôm nay không có lấy một vị khách.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-demo-teian",
+        "pattern": "N でも 〜ませんか",
+        "vi": "… hay gì đó (gợi ý, mời một cách nhẹ nhàng)",
+        "explain": "N + でも nêu một ví dụ để mời, gợi ý mềm mỏng, không nhất thiết đúng món đó: お茶でも 飲みませんか (uống trà hay gì đó nhé). Hay đi với 〜ませんか, 〜いかがですか, 〜ましょう, 〜たい, 〜たら どうですか. でも thay cho が／を; các trợ từ khác giữ lại: 公園へでも.",
+        "viMistake": "Hiểu でも là “nhưng” (đầu câu) hoặc “dù … cũng” (〜ても／〜でも, bộ 4) nên dịch sai: お茶でも 飲みませんか không phải “dù là trà cũng uống”. Cũng không thêm を trước でも: お茶をでも là sai.",
+        "examples": [
+          {
+            "jp": "{疲|つか}れましたね。コーヒーでも {飲|の}みませんか。",
+            "vi": "Mệt nhỉ. Mình uống cà phê hay gì đó nhé?",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}、{映画|えいが}でも {見|み}に {行|い}きましょうか。",
+            "vi": "Chủ nhật mình đi xem phim hay gì đó nhé?",
+            "audio": null
+          },
+          {
+            "jp": "{暇|ひま}なら、{本|ほん}でも {読|よ}んだら どうですか。",
+            "vi": "Nếu rảnh thì đọc sách chẳng hạn xem sao?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-toka",
+        "pattern": "〜とか 〜とか",
+        "vi": "Nào là … nào là …, … chẳng hạn (liệt kê ví dụ, văn nói)",
+        "explain": "Liệt kê vài ví dụ tiêu biểu trong nhiều thứ, giống 〜や〜など nhưng dùng trong văn nói. Đi sau danh từ và cả động từ thể thường: 早く 寝るとか、薬を 飲むとか. Có thể bỏ とか ở mục cuối.",
+        "viMistake": "Dùng と (liệt kê đủ, hết) thay cho とか: パンと 牛乳を 買いました là chỉ có hai thứ đó; パンとか 牛乳とか là “nào bánh mì, nào sữa” (còn thứ khác). Với động từ, phải dùng thể thường (寝るとか), không dùng thể て hay thể ます.",
+        "examples": [
+          {
+            "jp": "{休|やす}みの {日|ひ}は {掃除|そうじ}とか {洗濯|せんたく}とかを します。",
+            "vi": "Ngày nghỉ tôi làm những việc như dọn dẹp, giặt giũ.",
+            "audio": null
+          },
+          {
+            "jp": "フォーとか バインミーとか、ベトナムの {料理|りょうり}が {好|す}きです。",
+            "vi": "Tôi thích món Việt, như phở, bánh mì chẳng hạn.",
+            "audio": null
+          },
+          {
+            "jp": "{暇|ひま}な ときは、{本|ほん}を {読|よ}むとか、{歌|うた}を {歌|うた}うとか します。",
+            "vi": "Lúc rảnh tôi đọc sách, hát hò chẳng hạn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-kurai",
+        "pattern": "〜くらい／〜ぐらい",
+        "vi": "Khoảng …; ít nhất (cũng) …; đến mức …",
+        "explain": "1) Sau số lượng, thời lượng: khoảng (20分ぐらい, 3人ぐらい); thời điểm cụ thể thì dùng ごろ (3時ごろ). 2) Sau danh từ: mức tối thiểu “ít nhất thì … cũng”: 電話ぐらい して ください. 3) Sau thể thường: mức độ “đến mức”: 歩けない くらい 疲れた. くらい và ぐらい dùng như nhau. Minna bài 11 (khoảng).",
+        "viMistake": "Lẫn ぐらい với ごろ: “khoảng 3 tiếng” (thời lượng) là 3時間ぐらい, “khoảng 3 giờ” (thời điểm) là 3時ごろ. Nghĩa “ít nhất cũng” (名前ぐらい 書けます) hay bị bỏ qua vì tiếng Việt không dùng chữ “khoảng” ở đây.",
+        "examples": [
+          {
+            "jp": "{家|いえ}から {会社|かいしゃ}まで {自転車|じてんしゃ}で {20分|にじゅっぷん}ぐらい かかります。",
+            "vi": "Từ nhà đến công ty đi xe đạp mất khoảng 20 phút.",
+            "audio": null
+          },
+          {
+            "jp": "{忙|いそが}しくても、メールの {返事|へんじ}ぐらい ください。",
+            "vi": "Dù bận thì ít nhất cũng trả lời email chứ.",
+            "audio": null
+          },
+          {
+            "jp": "{足|あし}が {痛|いた}くて {歩|ある}けない くらい {疲|つか}れました。",
+            "vi": "Tôi mệt đến mức đau chân không đi nổi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-hodo-nai",
+        "pattern": "A は B ほど 〜ない",
+        "vi": "A không … bằng B",
+        "explain": "So sánh phủ định: B là mốc, A không đạt tới mức đó: この 町は ハノイほど にぎやかじゃ ありません. Vị ngữ luôn ở thể phủ định. Câu khẳng định thì dùng より (ハノイは この 町より にぎやかです). Còn có Vた ほど 〜ない (không … như đã nghĩ) và N ほど 〜は ない (không có gì … bằng N).",
+        "viMistake": "Đặt nhầm ほど sau A: “Hà Nội không nóng bằng Sài Gòn” là ハノイは ホーチミンほど 暑くない — ほど đứng sau cái được lấy làm mốc. Cũng hay dùng ほど với vị ngữ khẳng định (ほど 暑いです) — sai, khẳng định phải dùng より.",
+        "examples": [
+          {
+            "jp": "この {町|まち}は ハノイほど {人|ひと}が {多|おお}く ありません。",
+            "vi": "Thị trấn này không đông người bằng Hà Nội.",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}の {冬|ふゆ}は {思|おも}ったほど {寒|さむ}く なかったです。",
+            "vi": "Mùa đông Nhật không lạnh như tôi tưởng.",
+            "audio": null
+          },
+          {
+            "jp": "{母|はは}の {料理|りょうり}ほど おいしい ものは ありません。",
+            "vi": "Không có gì ngon bằng món mẹ nấu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sugiru",
+        "pattern": "〜すぎる",
+        "vi": "Quá …, … quá mức (thường gây hậu quả không tốt)",
+        "explain": "Vます bỏ ます + すぎる (食べすぎる); tính từ い bỏ い + すぎる (高すぎる); tính từ な bỏ な + すぎる (静かすぎる). Riêng いい → よすぎる. Cả cụm chia như động từ nhóm II: すぎて, すぎました. Hay đi với vế sau nói hậu quả: 食べすぎて、おなかが 痛い. Minna bài 44.",
+        "viMistake": "Giữ nguyên い hoặc な trước すぎる (高いすぎる, 静かなすぎる) hoặc ghép thể て (食べてすぎる) — đều sai. Cũng đừng dùng すぎる thay とても khi câu chỉ khen “rất”: trong đề thi すぎる gần như luôn có nghĩa “quá mức → có vấn đề”.",
+        "examples": [
+          {
+            "jp": "ゆうべ {飲|の}みすぎて、{頭|あたま}が {痛|いた}いです。",
+            "vi": "Tối qua uống quá nhiều nên giờ đau đầu.",
+            "audio": null
+          },
+          {
+            "jp": "この {問題|もんだい}は {難|むずか}しすぎて、だれも できませんでした。",
+            "vi": "Bài này khó quá nên không ai làm được.",
+            "audio": null
+          },
+          {
+            "jp": "{部屋|へや}が {静|しず}かすぎて、ちょっと さびしいです。",
+            "vi": "Căn phòng yên tĩnh quá, hơi buồn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-yasui-nikui",
+        "pattern": "Vます＋やすい／にくい",
+        "vi": "Dễ … / khó …",
+        "explain": "Vます bỏ ます + やすい (dễ làm) hoặc + にくい (khó làm). Chia như tính từ い: 読みやすくて, 使いにくかった. Nói tính chất của đồ vật, việc (dễ dùng, khó đọc) hoặc khuynh hướng (かぜを ひきやすい: dễ bị cảm). Minna bài 44.",
+        "viMistake": "Ghép với thể từ điển (読むやすい) hoặc nhầm với 安い (rẻ). “Khó đọc” là 読みにくい, không nói 読みむずかしい. Chú ý nghĩa ngược nhau: đọc kỹ vế trước (軽くて → やすい, 重くて → にくい) rồi mới chọn.",
+        "examples": [
+          {
+            "jp": "この ペンは {軽|かる}くて {書|か}きやすいです。",
+            "vi": "Cây bút này nhẹ, dễ viết.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}の {字|じ}は {小|ちい}さくて {読|よ}みにくいです。",
+            "vi": "Chữ của thầy nhỏ nên khó đọc.",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}の {日|ひ}は {道|みち}が すべりやすいので、{気|き}を つけて ください。",
+            "vi": "Ngày mưa đường dễ trơn, hãy cẩn thận.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-kata",
+        "pattern": "Vます＋かた",
+        "vi": "Cách làm …",
+        "explain": "Vます bỏ ます + かた (方) tạo danh từ “cách …”: 読みかた, 使いかた, 行きかた. Vì cả cụm là danh từ nên tân ngữ を đổi thành の: 機械を 使う → 機械の 使いかた. Động từ する: 勉強の しかた.",
+        "viMistake": "Giữ trợ từ を (機械を 使いかた) hoặc ghép thể từ điển (使うかた) — đều sai. “Cách học” là 勉強の しかた, không phải 勉強するかた (かた sau thể từ điển là “vị, người” — kính ngữ).",
+        "examples": [
+          {
+            "jp": "この {漢字|かんじ}の {読|よ}みかたを {教|おし}えて ください。",
+            "vi": "Hãy chỉ tôi cách đọc chữ kanji này.",
+            "audio": null
+          },
+          {
+            "jp": "{空港|くうこう}への {行|い}きかたが わかりません。",
+            "vi": "Tôi không biết cách đi đến sân bay.",
+            "audio": null
+          },
+          {
+            "jp": "{日本語|にほんご}の {勉強|べんきょう}の しかたを {先輩|せんぱい}に {聞|き}きました。",
+            "vi": "Tôi đã hỏi đàn anh cách học tiếng Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-hajimeru-owaru",
+        "pattern": "〜はじめる／おわる／つづける",
+        "vi": "Bắt đầu … / … xong / tiếp tục …, … mãi",
+        "explain": "Gốc ます + はじめる (bắt đầu làm), + おわる (làm xong), + つづける (làm liên tục). Cả cụm chia như một động từ: 読みはじめました, 書きおわったら, 歩きつづけて. Dùng cả với hiện tượng tự nhiên: 雨が ふりはじめました.",
+        "viMistake": "Dùng thể て (読んで はじめる) hoặc thể từ điển (読むおわる). “Bắt đầu mưa” là ふりはじめる, không phải ふりはじまる; “làm tiếp” là 〜つづける, không phải 〜つづく. Cũng đừng lẫn 〜おわる (xong việc) với 〜て しまう (lỡ, hoàn tất, bộ 3).",
+        "examples": [
+          {
+            "jp": "{8歳|はっさい}の とき、ピアノを {習|なら}いはじめました。",
+            "vi": "Năm 8 tuổi tôi bắt đầu học piano.",
+            "audio": null
+          },
+          {
+            "jp": "{晩|ばん}ごはんを {食|た}べおわったら、{少|すこ}し {散歩|さんぽ}しましょう。",
+            "vi": "Ăn tối xong thì mình đi dạo một chút nhé.",
+            "audio": null
+          },
+          {
+            "jp": "{父|ちち}は {30年|さんじゅうねん} {同|おな}じ {会社|かいしゃ}で {働|はたら}きつづけて います。",
+            "vi": "Bố tôi làm việc liên tục 30 năm ở cùng một công ty.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sa",
+        "pattern": "Aい／Aな＋さ",
+        "vi": "Độ …, sự … (danh từ hóa tính từ: chiều cao, độ nặng)",
+        "explain": "Tính từ い bỏ い + さ: 高い → 高さ, 重い → 重さ, 長い → 長さ; riêng いい → よさ. Tính từ な bỏ な + さ: 便利 → 便利さ, 大切 → 大切さ. Tạo danh từ chỉ mức độ, hay đi với の phía trước và với đo, so sánh, hiểu ra: ビルの 高さ, 健康の 大切さ.",
+        "viMistake": "Giữ い (高いさ) hoặc dùng cụm 〜こと: “độ cao” là 高さ, không phải 高いこと. Vì là danh từ nên trước nó dùng の (荷物の 重さ) và sau nó là trợ từ (が, を, は), không phải です trực tiếp như tính từ.",
+        "examples": [
+          {
+            "jp": "この {部屋|へや}の {広|ひろ}さは どのくらいですか。",
+            "vi": "Căn phòng này rộng bao nhiêu?",
+            "audio": null
+          },
+          {
+            "jp": "この {荷物|にもつ}の {重|おも}さを {量|はか}って ください。",
+            "vi": "Hãy cân xem hành lý này nặng bao nhiêu.",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}の {電車|でんしゃ}の {便利|べんり}さに おどろきました。",
+            "vi": "Tôi ngạc nhiên vì tàu điện Nhật tiện lợi quá.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-no-koto",
+        "pattern": "V（thể thường）＋の／こと",
+        "vi": "Danh từ hóa: việc … (〜のが 好き, 〜のを 忘れる, 〜のは 〜です)",
+        "explain": "Thể thường + の／こと biến cả cụm thành danh từ: 〜のが 好き／上手／きらい, 〜のを 忘れる／楽しみに する, 〜のは 楽しい, 〜のは N です (nhấn mạnh: 生まれたのは フエです). Minna bài 38. Phần lớn の và こと thay được cho nhau, nhưng: với 見える・聞こえる・見る・待つ (cảm nhận trực tiếp) và 〜のは N です chỉ dùng の; trong 〜ことが できる, しゅみは 〜ことです, Vた ことが ある chỉ dùng こと.",
+        "viMistake": "Tiếng Việt không cần chữ “việc” nên hay ghép thẳng động từ với trợ từ: 歌を 歌うが 好きです, 薬を 飲むを 忘れました là sai — phải chen の vào. Cũng hay dùng の ở chỗ bắt buộc こと: しゅみは 本を 読むのです (sai) → 読むことです.",
+        "examples": [
+          {
+            "jp": "{父|ちち}は {料理|りょうり}を {作|つく}るのが {大好|だいす}きです。",
+            "vi": "Bố tôi rất thích nấu ăn.",
+            "audio": null
+          },
+          {
+            "jp": "{出|で}かける {前|まえ}に、{電気|でんき}を {消|け}すのを {忘|わす}れました。",
+            "vi": "Trước khi ra ngoài, tôi quên tắt đèn.",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}で {一番|いちばん} {楽|たの}しかったのは {北海道|ほっかいどう}{旅行|りょこう}です。",
+            "vi": "Điều vui nhất ở Nhật là chuyến du lịch Hokkaido.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-to-iu",
+        "pattern": "N1 と いう N2",
+        "vi": "N2 tên là / gọi là N1",
+        "explain": "Giới thiệu tên của người, nơi, vật mà người nghe có thể chưa biết: 「ハナ」と いう 店, 山田さんと いう 人. Văn nói: っていう. Cũng dùng trong 〜と いう 意味です (có nghĩa là …) — Minna bài 33.",
+        "viMistake": "Bỏ という, nối thẳng tên với danh từ (ハナ 店), hoặc dùng と 言った (đã nói): 山田と 言った 人 là “người đã nói ‘Yamada’”. Khi nghe tên lạ thì dùng と いう, không dùng の: 「ハナ」の 店 là “cửa hàng của Hana”.",
+        "examples": [
+          {
+            "jp": "「ハナ」と いう {店|みせ}で {昼|ひる}ごはんを {食|た}べました。",
+            "vi": "Tôi đã ăn trưa ở quán tên là “Hana”.",
+            "audio": null
+          },
+          {
+            "jp": "{私|わたし}の {町|まち}には「ホアンキエム」と いう {湖|みずうみ}が あります。",
+            "vi": "Ở thành phố tôi có hồ tên là Hoàn Kiếm.",
+            "audio": null
+          },
+          {
+            "jp": "「バインミー」は ベトナム{語|ご}で「パン」と いう {意味|いみ}です。",
+            "vi": "“Bánh mì” trong tiếng Việt có nghĩa là “bánh mì” (パン).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ka-kadouka",
+        "pattern": "〜か／〜かどうか",
+        "vi": "Câu hỏi lồng trong câu: … (gì, ở đâu…) / có … hay không",
+        "explain": "Đưa một câu hỏi vào câu lớn, trước わかりません, 教えて ください, 調べます, 覚えて いません… Có từ để hỏi (何, いつ, どこ, だれ, 何人…): thể thường + か (何人 来るか). Không có từ để hỏi: thể thường + かどうか (来るかどうか), cũng nói 来るか 来ないか. Tính từ な và danh từ bỏ だ: 本当かどうか, どこか. Minna bài 40.",
+        "viMistake": "Dùng かどうか khi câu đã có từ để hỏi (いつ 来るかどうか — sai). Giữ だ trước か (本当だかどうか — sai). Cũng nhớ dùng thể thường: 来ますかどうか là sai.",
+        "examples": [
+          {
+            "jp": "{試験|しけん}の {結果|けっか}が いつ わかるか、{先生|せんせい}に {聞|き}いて みます。",
+            "vi": "Tôi sẽ thử hỏi thầy khi nào biết kết quả thi.",
+            "audio": null
+          },
+          {
+            "jp": "この {答|こた}えが {正|ただ}しいかどうか、もう {一度|いちど} {確|たし}かめます。",
+            "vi": "Tôi kiểm tra lại một lần nữa xem câu trả lời này có đúng không.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}の パーティーに {来|く}るかどうか、{返事|へんじ}を ください。",
+            "vi": "Hãy trả lời xem bạn có đến bữa tiệc chủ nhật hay không.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g8-s01",
+        "type": "title",
+        "jp": "N4 {文法|ぶんぽう}まとめ 8：{助詞|じょし}と {名詞化|めいしか}",
+        "vi": "Tổng ôn N4 · 8 – Trợ từ, mẫu ngắn, danh từ hóa"
+      },
+      {
+        "id": "n4g8-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "1. Phân biệt các trợ từ chỉ số lượng, mức độ: しか〜ない／だけ, ばかり, ずつ, số lượng + も, でも, とか, くらい, ほど〜ない.\n2. Nắm nhóm mẫu ghép với gốc ます: すぎる, やすい／にくい, かた, はじめる／おわる／つづける.\n3. Danh từ hóa: 〜さ, 〜の／〜こと, 〜と いう N, câu hỏi lồng 〜か／〜かどうか.\nCách dùng: đang làm đề mà quên mẫu nào thì mở đúng slide mẫu đó; mỗi mẫu có cách chia, lỗi hay gặp và ví dụ. Các bảng “phân biệt” đặt cạnh nhau những mẫu dễ lẫn. Cuối bộ có 40 câu luyện kiểu đề JLPT (もんだい１, もんだい２)."
+      },
+      {
+        "id": "n4g8-s03",
+        "type": "grammar",
+        "ref": "n4g-shika-nai",
+        "teacherNotes": "Hỏi học viên: 5人しか 来なかった và 5人だけ 来なかった khác nhau thế nào?"
+      },
+      {
+        "id": "n4g8-s04",
+        "type": "example",
+        "ref": "n4g-shika-nai",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s05",
+        "type": "grammar",
+        "ref": "n4g-bakari"
+      },
+      {
+        "id": "n4g8-s06",
+        "type": "example",
+        "ref": "n4g-bakari",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s07",
+        "type": "grammar",
+        "ref": "n4g-zutsu"
+      },
+      {
+        "id": "n4g8-s08",
+        "type": "example",
+        "ref": "n4g-zutsu",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s09",
+        "type": "grammar",
+        "ref": "n4g-suuryou-mo"
+      },
+      {
+        "id": "n4g8-s10",
+        "type": "example",
+        "ref": "n4g-suuryou-mo",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s11",
+        "type": "table",
+        "title": "Phân biệt: chỉ, toàn, những, mỗi",
+        "columns": ["Mẫu", "Ví dụ", "Ý nghĩa"],
+        "rows": [
+          ["しか〜ない", "{水|みず}しか {飲|の}まない", "chỉ (thấy ít)"],
+          ["だけ", "{水|みず}だけ {飲|の}む", "chỉ (trung tính)"],
+          ["ばかり", "{水|みず}ばかり {飲|の}む", "toàn là (quá nhiều)"],
+          ["số + も", "{5本|ごほん}も {飲|の}んだ", "tới 5 chai (nhiều)"],
+          ["số + ずつ", "{1本|いっぽん}ずつ {飲|の}む", "mỗi lần 1 chai"],
+          ["1 + も〜ない", "{1本|いっぽん}も {飲|の}まない", "không một chai nào"]
+        ]
+      },
+      {
+        "id": "n4g8-s12",
+        "type": "quiz",
+        "ref": "n4g8-q01"
+      },
+      {
+        "id": "n4g8-s13",
+        "type": "grammar",
+        "ref": "n4g-demo-teian"
+      },
+      {
+        "id": "n4g8-s14",
+        "type": "example",
+        "ref": "n4g-demo-teian",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s15",
+        "type": "grammar",
+        "ref": "n4g-toka"
+      },
+      {
+        "id": "n4g8-s16",
+        "type": "example",
+        "ref": "n4g-toka",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s17",
+        "type": "grammar",
+        "ref": "n4g-kurai",
+        "teacherNotes": "So sánh 3時ごろ (thời điểm) với 3時間ぐらい (thời lượng)."
+      },
+      {
+        "id": "n4g8-s18",
+        "type": "example",
+        "ref": "n4g-kurai",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s19",
+        "type": "grammar",
+        "ref": "n4g-hodo-nai"
+      },
+      {
+        "id": "n4g8-s20",
+        "type": "example",
+        "ref": "n4g-hodo-nai",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s21",
+        "type": "quiz",
+        "ref": "n4g8-q15"
+      },
+      {
+        "id": "n4g8-s22",
+        "type": "grammar",
+        "ref": "n4g-sugiru"
+      },
+      {
+        "id": "n4g8-s23",
+        "type": "example",
+        "ref": "n4g-sugiru",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s24",
+        "type": "grammar",
+        "ref": "n4g-yasui-nikui"
+      },
+      {
+        "id": "n4g8-s25",
+        "type": "example",
+        "ref": "n4g-yasui-nikui",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s26",
+        "type": "grammar",
+        "ref": "n4g-kata"
+      },
+      {
+        "id": "n4g8-s27",
+        "type": "example",
+        "ref": "n4g-kata",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s28",
+        "type": "grammar",
+        "ref": "n4g-hajimeru-owaru"
+      },
+      {
+        "id": "n4g8-s29",
+        "type": "example",
+        "ref": "n4g-hajimeru-owaru",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s30",
+        "type": "table",
+        "title": "Gốc ます (và tính từ) + …",
+        "columns": ["Mẫu", "Ví dụ", "Nghĩa"],
+        "rows": [
+          ["Vます＋すぎる", "{書|か}きすぎる", "viết quá nhiều"],
+          ["Aい／Aな＋すぎる", "{高|たか}すぎる・{暇|ひま}すぎる", "quá đắt, quá rảnh"],
+          ["Vます＋やすい", "{書|か}きやすい", "dễ viết"],
+          ["Vます＋にくい", "{書|か}きにくい", "khó viết"],
+          ["Vます＋かた", "{書|か}きかた", "cách viết"],
+          ["Vます＋はじめる", "{書|か}きはじめる", "bắt đầu viết"],
+          ["Vます＋おわる", "{書|か}きおわる", "viết xong"],
+          ["Vます＋つづける", "{書|か}きつづける", "viết liên tục"],
+          ["Aい／Aな＋さ", "{高|たか}さ・{便利|べんり}さ", "độ cao, sự tiện lợi"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g8-s31",
+        "type": "quiz",
+        "ref": "n4g8-q19"
+      },
+      {
+        "id": "n4g8-s32",
+        "type": "grammar",
+        "ref": "n4g-sa"
+      },
+      {
+        "id": "n4g8-s33",
+        "type": "example",
+        "ref": "n4g-sa",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s34",
+        "type": "grammar",
+        "ref": "n4g-no-koto",
+        "teacherNotes": "Cho học viên tìm động từ đứng ngay trước が／を／は — chỗ đó cần の."
+      },
+      {
+        "id": "n4g8-s35",
+        "type": "example",
+        "ref": "n4g-no-koto",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s36",
+        "type": "table",
+        "title": "の hay こと?",
+        "columns": ["Trường hợp", "Dùng", "Ví dụ"],
+        "rows": [
+          [
+            "{好|す}き・{上手|じょうず}・きらい",
+            "の (こと cũng được)",
+            "{泳|およ}ぐのが {好|す}き"
+          ],
+          [
+            "{忘|わす}れる・{楽|たの}しみに する",
+            "の (thường dùng)",
+            "{送|おく}るのを {忘|わす}れた"
+          ],
+          ["{見|み}える・{聞|き}こえる", "chỉ の", "{歌|うた}うのが {聞|き}こえる"],
+          ["〜のは N です", "chỉ の", "{来|き}たのは {田中|たなか}さん"],
+          ["〜ことが できる", "chỉ こと", "{泳|およ}ぐことが できる"],
+          ["しゅみは 〜ことです", "chỉ こと", "{読|よ}むことです"],
+          ["Vた ことが ある", "chỉ こと", "{行|い}った ことが ある"]
+        ]
+      },
+      {
+        "id": "n4g8-s37",
+        "type": "grammar",
+        "ref": "n4g-to-iu"
+      },
+      {
+        "id": "n4g8-s38",
+        "type": "example",
+        "ref": "n4g-to-iu",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s39",
+        "type": "grammar",
+        "ref": "n4g-ka-kadouka",
+        "teacherNotes": "Gạch chân từ để hỏi: có → か; không có → かどうか."
+      },
+      {
+        "id": "n4g8-s40",
+        "type": "example",
+        "ref": "n4g-ka-kadouka",
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s41",
+        "type": "quiz",
+        "ref": "n4g8-q31"
+      },
+      {
+        "id": "n4g8-s42",
+        "type": "dialogue",
+        "title": "Hội thoại: sở thích mới",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "{最近|さいきん}、{何|なに}か {始|はじ}めましたか。",
+            "vi": "Dạo này bạn có bắt đầu làm gì mới không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ギターを {習|なら}いはじめました。",
+            "vi": "Mình bắt đầu học guitar."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{弾|ひ}きかたは {難|むずか}しいですか。",
+            "vi": "Cách chơi có khó không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{思|おも}ったほど {難|むずか}しく ないです。",
+            "vi": "Không khó như mình tưởng."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{毎日|まいにち} どのくらい {弾|ひ}きますか。",
+            "vi": "Mỗi ngày bạn chơi khoảng bao lâu?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{30分|さんじゅっぷん}しか できませんが、{弾|ひ}くのが {楽|たの}しいです。",
+            "vi": "Chỉ được 30 phút thôi, nhưng chơi đàn vui lắm."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g8-s43",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "• Nghĩa “chỉ” mà cuối câu là 〜ない／〜ません → しか; khẳng định → だけ.\n• “Toàn là”, ý chê → ばかり; Vて ばかり いる (suốt ngày) ≠ Vた ばかり (vừa mới).\n• Số + も: thấy nhiều, ngạc nhiên; số + ずつ: chia đều mỗi …; thời điểm → ごろ, thời lượng → ぐらい.\n• Danh từ + chỗ trống + 〜ませんか／〜ましょう → でも. Liệt kê ví dụ trong văn nói → とか.\n• A は B ほど + phủ định; khẳng định thì dùng より.\n• Trước すぎる／やすい／にくい／かた／はじめる／おわる／つづける luôn là gốc ます; tính từ bỏ い／な trước すぎる và さ.\n• Động từ đứng ngay trước が／を／は → cần の (hoặc こと); しゅみは〜, 〜ことが できる → こと.\n• Tên riêng + chỗ trống + danh từ → という.\n• Câu hỏi lồng: có từ để hỏi → か; không có → かどうか; bỏ だ trước か."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g8-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "パーティーに 30人 よびましたが、5人 （　　） 来ませんでした。さびしい パーティーでした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shika-nai"],
+        "explain": "Mời 30 người nhưng chỉ có 5 người đến, bữa tiệc vắng vẻ. しか + 来ませんでした = chỉ có … đến (thấy ít). だけ 来ませんでした lại là “chỉ 5 người KHÔNG đến” (25 người đến), không hợp với “bữa tiệc vắng”. ごろ chỉ dùng cho thời điểm (3時ごろ), không đứng sau 5人; ずつ (mỗi) không hợp nghĩa.",
+        "type": "choice",
+        "options": ["だけ", "ごろ", "しか", "ずつ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "日本に 来た とき、わたしは ひらがなしか （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shika-nai"],
+        "explain": "Lúc mới sang Nhật, tôi chỉ đọc được hiragana. しか luôn đi với thể phủ định, nên chỉ 読めませんでした đúng. 読めました, 読みました là khẳng định; 読めるでしょう vừa khẳng định vừa sai thì (chuyện quá khứ).",
+        "type": "choice",
+        "options": ["読めませんでした", "読めました", "読みました", "読めるでしょう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q03",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "兄は 休みの 日は 昼まで 寝て （　　） います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-bakari"],
+        "explain": "Ngày nghỉ anh tôi chỉ toàn ngủ đến trưa. Vて ばかり いる = suốt ngày chỉ làm một việc. 寝て だけ います không có; しか cần động từ phủ định (寝て しか いません); ずつ chỉ đi sau số lượng.",
+        "type": "choice",
+        "options": ["だけ", "しか", "ずつ", "ばかり"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 店の {客|きゃく}は {若|わか}い 女の人 （　　） ですね。男の人は ぜんぜん いません。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-bakari"],
+        "explain": "Khách quán này toàn là phụ nữ trẻ nhỉ, không có đàn ông. N ばかり です = toàn là N. しか phải đi với phủ định (しか いません), không đứng trước です; ずつ cần số lượng; ほど です không có nghĩa ở đây.",
+        "type": "choice",
+        "options": ["しか", "ばかり", "ずつ", "ほど"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "先生は 学生たちに クッキーを 2まい （　　） {配|くば}りました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-zutsu"],
+        "explain": "Thầy chia cho mỗi sinh viên 2 cái bánh quy. Số lượng + ずつ = mỗi người (chia đều). しか cần động từ phủ định; ごろ chỉ thời điểm (3時ごろ); 2まいの 配りました sai ngữ pháp.",
+        "type": "choice",
+        "options": ["しか", "ずつ", "ごろ", "の"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q06",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 薬は 朝と 夜に 1つ （　　） 飲んで ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-zutsu"],
+        "explain": "Thuốc này sáng và tối mỗi lần uống 1 viên. 1つずつ = mỗi lần một viên. 1つしか, 1つも phải đi với phủ định (1つも 飲まない = không uống viên nào), không đi với 飲んで ください; ごろ dùng cho thời điểm.",
+        "type": "choice",
+        "options": ["しか", "も", "ごろ", "ずつ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "バスが なかなか 来なくて、1時間 （　　） 待ちました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-suuryou-mo"],
+        "explain": "Xe buýt mãi không đến, tôi phải chờ tới 1 tiếng. Số lượng + も + khẳng định = nhấn mạnh là nhiều. しか cần phủ định (しか 待ちませんでした = chỉ chờ…); ずつ là “mỗi”; ごろ chỉ thời điểm, không đi với thời lượng 1時間.",
+        "type": "choice",
+        "options": ["も", "しか", "ずつ", "ごろ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "テストは とても むずかしくて、答えが 1つ （　　） わかりませんでした。0点でした。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-suuryou-mo"],
+        "explain": "Bài thi khó quá, tôi không biết lấy một câu trả lời nào, được 0 điểm. 1つ + も + phủ định = không … một … nào. 1つしか わかりませんでした (chỉ biết 1 câu) mâu thuẫn với 0点; 1つぐらい (khoảng 1 câu) cũng mâu thuẫn; ずつ (mỗi) không hợp nghĩa.",
+        "type": "choice",
+        "options": ["しか", "ずつ", "も", "ぐらい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q09",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "少し 休みましょう。お茶 （　　） いかがですか。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-demo-teian"],
+        "explain": "Nghỉ một chút đi. Anh/chị uống trà hay gì đó nhé? N でも + いかがですか／〜ませんか = gợi ý, mời nhẹ nhàng. しか cần phủ định với nghĩa “chỉ”; ずつ cần số lượng; ほど dùng để so sánh mức độ.",
+        "type": "choice",
+        "options": ["しか", "ずつ", "ほど", "でも"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q10",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは 日本の アニメ （　　） まんがとかが 好きです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-toka"],
+        "explain": "Tôi thích những thứ như anime, manga của Nhật. 〜とか 〜とか = nào là … nào là … (liệt kê ví dụ, văn nói). しか cần phủ định; ほど dùng so sánh; ずつ đi sau số lượng.",
+        "type": "choice",
+        "options": ["しか", "ほど", "とか", "ずつ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q11",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "かぜを ひいた ときは、早く （　　） とか、あたたかい ものを 飲むとか した ほうが いいですよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-toka"],
+        "explain": "Khi bị cảm, nên ngủ sớm hoặc uống đồ ấm chẳng hạn. Động từ trước とか dùng thể thường, ở đây là lời khuyên nên 寝る (giống 飲むとか phía sau). 寝て とか sai ngữ pháp; 寝た là việc đã xong, không hợp lời khuyên; 寝ない (không ngủ) ngược nghĩa.",
+        "type": "choice",
+        "options": ["寝る", "寝て", "寝た", "寝ない"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q12",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "うちから 学校まで 歩いて 15分 （　　） です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kurai"],
+        "explain": "Từ nhà đến trường đi bộ khoảng 15 phút. Thời lượng + ぐらい = khoảng. ごろ chỉ dùng cho thời điểm (8時ごろ), không dùng cho 15分 (thời lượng); ずつ là “mỗi”; しか phải đi với phủ định.",
+        "type": "choice",
+        "options": ["ごろ", "ぐらい", "ずつ", "しか"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q13",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "国の 母に、たまには 電話 （　　） かけて あげて ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kurai"],
+        "explain": "Thỉnh thoảng ít nhất cũng gọi điện cho mẹ ở quê nhé. N ぐらい = mức tối thiểu “ít nhất thì …”. ずつ cần số lượng; ごろ chỉ thời điểm; 電話ほど không có nghĩa ở đây (ほど dùng so sánh với phủ định).",
+        "type": "choice",
+        "options": ["ずつ", "ごろ", "ぐらい", "ほど"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q14",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "バスは 電車 （　　） 速く ありません。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hodo-nai"],
+        "explain": "Xe buýt không nhanh bằng tàu điện. A は B ほど 〜ない = A không … bằng B. ずつ, ごろ không dùng để so sánh; 電車ばかり 速く ありません không thành nghĩa.",
+        "type": "choice",
+        "options": ["ずつ", "ごろ", "ばかり", "ほど"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q15",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この アパートは 前の アパートほど （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hodo-nai"],
+        "explain": "Căn hộ này không rộng bằng căn hộ trước. Sau B ほど vị ngữ phải ở thể phủ định. 広いです, 広かったです là khẳng định (khẳng định thì dùng より); 広い ほうです cũng khẳng định.",
+        "type": "choice",
+        "options": ["広く ありません", "広いです", "広かったです", "広い ほうです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ゆうべ カラオケで 歌い （　　）、のどが いたいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sugiru"],
+        "explain": "Tối qua hát karaoke quá nhiều nên giờ đau họng. 歌い + すぎて = hát quá mức, dẫn tới hậu quả đau họng. 歌いやすくて (dễ hát), 歌いにくくて (khó hát), 歌いはじめて (bắt đầu hát) đều không giải thích được việc đau họng.",
+        "type": "choice",
+        "options": ["すぎて", "やすくて", "にくくて", "はじめて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q17",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この ゲームは （　　） すぎて、すぐ あきて しまいます。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sugiru"],
+        "explain": "Trò chơi này dễ quá nên chơi chán ngay. Tính từ な bỏ な rồi thêm すぎる: かんたん + すぎて. かんたんな, かんたんに, かんたんだ đều không ghép với すぎる.",
+        "type": "choice",
+        "options": ["かんたんな", "かんたん", "かんたんに", "かんたんだ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q18",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この かばんは 軽くて、ポケットも 多いので、（　　） やすいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-yasui-nikui"],
+        "explain": "Cái túi này nhẹ, lại nhiều ngăn nên dễ dùng. やすい nối vào gốc ます: 使います → 使いやすい. Thể từ điển, thể て, thể た không đi với やすい.",
+        "type": "choice",
+        "options": ["使う", "使って", "使った", "使い"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q19",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 薬は にがくて （　　）。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-yasui-nikui"],
+        "explain": "Thuốc này đắng nên khó uống. にがくて (đắng) dẫn tới “khó uống” = 飲みにくい. 飲みやすい (dễ uống) ngược nghĩa; 飲みすぎます (uống quá nhiều) không phải hệ quả của vị đắng; 飲みかたです (là cách uống) không thành câu.",
+        "type": "choice",
+        "options": ["飲みやすいです", "飲みすぎます", "飲みにくいです", "飲みかたです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q20",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "テストの 答えを 書き （　　） 人から、帰っても いいですよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hajimeru-owaru"],
+        "explain": "Ai viết xong bài thi thì có thể về trước. Gốc ます + おわる = làm xong: 書きおわった 人から = người nào viết xong trước thì …. 書きはじめた (bắt đầu viết), 書きつづけた (viết liên tục), 書きすぎた (viết quá nhiều) đều không phải lý do để được về.",
+        "type": "choice",
+        "options": ["はじめた", "おわった", "つづけた", "すぎた"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q21",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "母に ベトナム料理の （　　） を 習って います。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kata"],
+        "explain": "Tôi đang học mẹ cách nấu món Việt. Gốc ます + かた = cách làm: 作ります → 作りかた; trước đó dùng の (料理の). 作るかた, 作ったかた ghép sai thể; 作りの không có nghĩa “cách nấu”.",
+        "type": "choice",
+        "options": ["作るかた", "作ったかた", "作りの", "作りかた"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q22",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{桜|さくら}が （　　） はじめましたね。もうすぐ 春です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hajimeru-owaru"],
+        "explain": "Hoa anh đào bắt đầu nở rồi nhỉ, sắp sang xuân. はじめる nối vào gốc ます: さきます → さきはじめる. Thể て, thể từ điển, thể た không đứng trước はじめる.",
+        "type": "choice",
+        "options": ["さき", "さいて", "さく", "さいた"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q23",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ナムさんは 3時間 休まないで 歩き （　　）、とても つかれました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hajimeru-owaru"],
+        "explain": "Nam đi bộ liền 3 tiếng không nghỉ nên rất mệt. 歩き + つづける = đi bộ liên tục. 歩きはじめて (bắt đầu đi) không hợp với “3 tiếng không nghỉ”; 歩きやすくて (dễ đi) không làm mệt; 歩きかたで (bằng cách đi) không thành câu.",
+        "type": "choice",
+        "options": ["はじめて", "やすくて", "つづけて", "かたで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q24",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 山の （　　） は 2000メートルぐらいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sa"],
+        "explain": "Ngọn núi này cao khoảng 2000 mét. Cần danh từ trước は: 高い → bỏ い + さ = 高さ (độ cao). 高い, 高く, 高くて là dạng tính từ, không đứng trước は sau の.",
+        "type": "choice",
+        "options": ["高い", "高さ", "高く", "高くて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q25",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "外国に 住んで みて、家族の （　　） が よく わかりました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sa"],
+        "explain": "Sống ở nước ngoài rồi tôi mới hiểu rõ gia đình quý giá thế nào. Tính từ な bỏ な + さ thành danh từ: 大切さ (sự quý giá), đứng sau の và trước が. 大切な, 大切に, 大切だ không làm danh từ được.",
+        "type": "choice",
+        "options": ["大切さ", "大切な", "大切に", "大切だ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q26",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは 朝 早く 公園を （　　） が 好きです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-no-koto"],
+        "explain": "Tôi thích chạy ở công viên vào sáng sớm. Động từ phải được danh từ hóa bằng の trước が 好きです: 走るのが 好き. 走るが, 走ってが, 走ったが đều sai vì が không đứng ngay sau động từ.",
+        "type": "choice",
+        "options": ["走る", "走って", "走った", "走るの"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q27",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "出かける 前に、まどを （　　） のを わすれました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-no-koto"],
+        "explain": "Trước khi ra ngoài, tôi quên đóng cửa sổ. 〜のを わすれる: quên làm việc gì, trước の dùng thể thường (thể từ điển): しめるのを. しめてのを, しめのを sai; しめないのを わすれました (quên việc không đóng) vô nghĩa.",
+        "type": "choice",
+        "options": ["しめて", "しめ", "しめる", "しめない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q28",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしの しゅみは 古い カメラを 集める （　　） です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-no-koto"],
+        "explain": "Sở thích của tôi là sưu tầm máy ảnh cũ. しゅみは 〜ことです chỉ dùng こと, không dùng の. 集めるものです (là đồ để sưu tầm) và 集めるところです (sắp sưu tầm) không hợp với しゅみは.",
+        "type": "choice",
+        "options": ["の", "こと", "もの", "ところ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q29",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは ベトナムの 「フエ」 （　　） 町から 来ました。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-iu"],
+        "explain": "Tôi đến từ thành phố tên là “Huế” ở Việt Nam. Tên + という + danh từ = N tên là …. 「フエ」と 町, が 町, を 町 đều không nối được tên với danh từ.",
+        "type": "choice",
+        "options": ["と", "という", "が", "を"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q30",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "旅行に 何を （　　） か、まだ {決|き}めて いません。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ka-kadouka"],
+        "explain": "Tôi vẫn chưa quyết định mang gì đi du lịch. Câu có từ để hỏi (何) lồng vào câu dùng thể thường + か: 持って いくか. Thể て, gốc ます, thể mệnh lệnh không đứng trước か.",
+        "type": "choice",
+        "options": ["持って いく", "持って いって", "持って いき", "持って いけ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q31",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 店が 日曜日も 開いて いる （　　）、電話で 聞いて みます。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ka-kadouka"],
+        "explain": "Tôi sẽ gọi điện hỏi xem quán này chủ nhật có mở cửa không. Câu hỏi không có từ để hỏi lồng vào trước 聞いて みます dùng 〜かどうか. のに (vậy mà) làm câu vô nghĩa; とか là liệt kê; ほど dùng so sánh.",
+        "type": "choice",
+        "options": ["のに", "とか", "ほど", "かどうか"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q32",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}が どこで ある （　　）、山田さんに 聞いて ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ka-kadouka"],
+        "explain": "Hãy hỏi anh Yamada xem cuộc họp diễn ra ở đâu. Câu có từ để hỏi (どこ) dùng か, không dùng かどうか. ので (vì) và と không nối được câu hỏi với 聞いて ください.",
+        "type": "choice",
+        "options": ["かどうか", "ので", "か", "と"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q33",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは 日本の 映画を ＿＿　＿＿　＿★＿　＿＿ ありません。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-shika-nai"],
+        "explain": "Câu đúng: わたしは 日本の 映画を 2本 しか 見た ことが ありません。(Phim Nhật thì tôi mới chỉ xem 2 bộ.) Thứ tự: 2本 → しか → 見た → ことが; ô ★ là 見た. しか đi với phủ định ありません ở cuối câu.",
+        "type": "choice",
+        "options": ["見た", "2本", "しか", "ことが"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q34",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「あしたは 休みですね。」 B「ええ。じゃ、＿＿　＿★＿　＿＿　＿＿か。」",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-demo-teian"],
+        "explain": "Câu đúng: じゃ、映画 でも 見に 行きませんか。(Vậy mình đi xem phim hay gì đó nhé?) Thứ tự: 映画 → でも → 見に → 行きません; ô ★ là でも. N でも + lời mời 〜ませんか.",
+        "type": "choice",
+        "options": ["映画", "見に", "でも", "行きません"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4g8-q35",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "日本の 生活は ＿＿　＿★＿　＿＿　＿＿ です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hodo-nai"],
+        "explain": "Câu đúng: 日本の 生活は 思った ほど 大変では なかった です。(Cuộc sống ở Nhật không vất vả như tôi tưởng.) Thứ tự: 思った → ほど → 大変では → なかった; ô ★ là ほど. Vた ほど + phủ định = không … như đã nghĩ.",
+        "type": "choice",
+        "options": ["思った", "大変では", "なかった", "ほど"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q36",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "きのう ＿★＿　＿＿　＿＿　＿＿、今日は {歯|は}が いたいです。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sugiru"],
+        "explain": "Câu đúng: きのう あまい ものを 食べ すぎて、今日は 歯が いたいです。(Hôm qua ăn đồ ngọt quá nhiều nên hôm nay đau răng.) Thứ tự: あまい → ものを → 食べ → すぎて; ô ★ là あまい. Gốc ます 食べ + すぎて nêu nguyên nhân.",
+        "type": "choice",
+        "options": ["ものを", "あまい", "食べ", "すぎて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q37",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "すみません、＿＿　＿＿　＿★＿　＿＿ 教えて ください。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kata"],
+        "explain": "Câu đúng: すみません、駅 までの 行き かたを 教えて ください。(Xin lỗi, chỉ giúp tôi cách đi đến ga.) Thứ tự: 駅 → までの → 行き → かたを; ô ★ là 行き. Gốc ます + かた = cách làm; trước nó là danh từ + の (駅までの).",
+        "type": "choice",
+        "options": ["行き", "駅", "かたを", "までの"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4g8-q38",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしが ＿＿　＿＿　＿★＿　＿＿ です。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-no-koto"],
+        "explain": "Câu đúng: わたしが 日本で 行きたい のは 京都 です。(Nơi tôi muốn đến ở Nhật là Kyoto.) Thứ tự: 日本で → 行きたい → のは → 京都; ô ★ là のは. 〜のは N です nhấn mạnh phần N.",
+        "type": "choice",
+        "options": ["日本で", "行きたい", "京都", "のは"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4g8-q39",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "さっき ＿＿　＿＿　＿★＿　＿＿ 電話が ありましたよ。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-iu"],
+        "explain": "Câu đúng: さっき 「みどり旅行」 という 会社の 人から 電話が ありましたよ。(Lúc nãy có người của công ty tên là “Midori Travel” gọi điện đấy.) Thứ tự: 「みどり旅行」 → という → 会社の → 人から; ô ★ là 会社の. Tên + という + danh từ.",
+        "type": "choice",
+        "options": ["という", "会社の", "人から", "「みどり旅行」"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4g8-q40",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたの パーティーに ＿＿　＿★＿　＿＿　＿＿。",
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ka-kadouka"],
+        "explain": "Câu đúng: あしたの パーティーに 何人 来るか 教えて ください。(Hãy cho tôi biết ngày mai có bao nhiêu người đến bữa tiệc.) Thứ tự: 何人 → 来るか → 教えて → ください; ô ★ là 来るか. Có từ để hỏi (何人) nên dùng thể thường + か.",
+        "type": "choice",
+        "options": ["何人", "教えて", "来るか", "ください"],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

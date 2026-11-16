@@ -1,0 +1,1165 @@
+{
+  "id": "n4-grammar-5",
+  "title": "Tổng ôn N4 · 5 – Suy đoán và truyền đạt",
+  "titleJa": "推量と 伝聞",
+  "summary": "Bộ tổng ôn ngữ pháp JLPT N4 theo chủ đề suy đoán và truyền đạt: hai loại そう (dáng vẻ và nghe nói), ようです, みたいです, らしいです, はずです／はずが ありません, かもしれません, でしょう／だろう, 〜と 言って いました, 〜と 伝えて いただけませんか, 〜に よると và ví von ような／みたいな, kèm bảng phân biệt そう／よう／らしい và 40 câu luyện kiểu もんだい１・２. Mọi ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 6,
+  "courseId": "n4-grammar",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [
+      {
+        "id": "n4g-sou-yotai",
+        "pattern": "Vます／A＋そうです",
+        "vi": "Trông có vẻ …; (động từ) sắp …, có vẻ sắp … — dáng vẻ, đoán bằng mắt",
+        "explain": "Động từ bỏ ます thêm そう: ふります → ふりそうです (sắp mưa), おちます → おちそうです. Tính từ い bỏ い: おいしい → おいしそう; tính từ な bỏ な: げんきな → げんきそう. Ngoại lệ: いい → よさそう, ない → なさそう (おもしろくない → おもしろくなさそう). Dùng khi người nói nhìn bề ngoài rồi đoán, chưa chắc chắn. Không dùng với danh từ, và không dùng cho điều nhìn là thấy ngay (người đẹp trước mặt nói きれいです, không nói きれいそう). Phủ định của động từ: ふりそうに ありません. Minna bài 43.",
+        "viMistake": "Nhầm với そうです nghe nói: ふりそうです (nhìn trời, thấy sắp mưa) khác ふるそうです (nghe dự báo nói sẽ mưa); おいしそうです (trông ngon) khác おいしいそうです (nghe nói ngon). Hay quên ngoại lệ: không nói いいそう／ないそう khi muốn nói “trông có vẻ”, phải là よさそう／なさそう.",
+        "examples": [
+          {
+            "jp": "{風|かぜ}が {強|つよ}くて、{木|き}が {倒|たお}れそうです。",
+            "vi": "Gió mạnh quá, cái cây trông như sắp đổ.",
+            "audio": null
+          },
+          {
+            "jp": "この フォー、とても おいしそうですね。",
+            "vi": "Bát phở này trông ngon quá nhỉ.",
+            "audio": null
+          },
+          {
+            "jp": "この アパートは {駅|えき}に {近|ちか}くて、よさそうですね。",
+            "vi": "Căn hộ này gần ga, trông có vẻ tốt nhỉ (いい → よさそう).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sou-na",
+        "pattern": "〜そうな N／〜そうに V",
+        "vi": "(Trông có vẻ …) dùng bổ nghĩa cho danh từ hoặc động từ",
+        "explain": "そう (dáng vẻ) chia giống tính từ な: trước danh từ thêm な (おいしそうな ケーキ, こわれそうな いす), trước động từ hoặc tính từ thêm に (たのしそうに はなす, ねむそうに あくびを する). Ngoại lệ vẫn giữ: よさそうな, なさそうな. Minna bài 43.",
+        "viMistake": "Viết おいしそうの ケーキ, hoặc dùng そうな trước động từ (たのしそうな あそびます). Nhớ: trước N → そうな, trước V → そうに. そう nghe nói không có dạng そうな／そうに.",
+        "examples": [
+          {
+            "jp": "{妹|いもうと}は {店|みせ}で おいしそうな ケーキを {買|か}って きました。",
+            "vi": "Em gái tôi mua về một chiếc bánh trông rất ngon.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもたちが {公園|こうえん}で {楽|たの}しそうに {遊|あそ}んで います。",
+            "vi": "Bọn trẻ đang chơi ở công viên, trông rất vui.",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}が {降|ふ}りそうな {空|そら}ですね。",
+            "vi": "Bầu trời trông như sắp mưa nhỉ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-sou-denbun",
+        "pattern": "普通形＋そうです",
+        "vi": "Nghe nói … (truyền đạt lại thông tin nghe, đọc được)",
+        "explain": "Thể thường + そうです: ふるそうです, ふらないそうです, ふったそうです; おいしいそうです; tính từ な và danh từ phải có だ: しずかだそうです, あめだそうです. Thông tin không phải của mình mà nghe từ người khác, đọc báo, xem TV; thường đi với 〜に よると. そう nghe nói không chia quá khứ (không nói そうでした) và không có dạng そうな／そうに. Minna bài 47.",
+        "viMistake": "Nối nhầm sang dạng dáng vẻ: ふりそうです (trông sắp mưa) ≠ ふるそうです (nghe nói sẽ mưa). Tính từ な và danh từ quên だ: muốn nói “nghe nói yên tĩnh” phải là しずかだそうです, còn しずかそうです là “trông có vẻ yên tĩnh”.",
+        "examples": [
+          {
+            "jp": "{天気予報|てんきよほう}で {見|み}ましたが、{北|きた}の {方|ほう}は {雪|ゆき}だそうです。",
+            "vi": "Tôi xem dự báo thời tiết, nghe nói phía bắc có tuyết.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんの お{母|かあ}さんは {料理|りょうり}が {上手|じょうず}だそうです。",
+            "vi": "Nghe nói mẹ anh Tanaka nấu ăn rất giỏi.",
+            "audio": null
+          },
+          {
+            "jp": "ダナンの {海|うみ}は とても きれいだそうです。",
+            "vi": "Nghe nói biển Đà Nẵng rất đẹp.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-ni-yoru-to",
+        "pattern": "Nに よると、〜そうです",
+        "vi": "Theo (nguồn tin) N thì nghe nói …",
+        "explain": "N là nguồn thông tin: ニュース, てんきよほう, しんぶん, ともだちの はなし. Vế sau kết thúc bằng 〜そうです (nghe nói), cũng có thể là 〜らしいです. Cách nói gần nghĩa: Nの はなしでは、〜そうです. Minna bài 47.",
+        "viMistake": "Dịch “theo” thành 〜に よって (do, bởi) hoặc 〜に ついて (về). Hay quên đuôi: sau 〜に よると phải là 〜そうです／〜らしいです; không dùng そう dáng vẻ (〜に よると、あめが ふりそうです là sai).",
+        "examples": [
+          {
+            "jp": "ニュースに よると、{来週|らいしゅう} {台風|たいふう}が {来|く}るそうです。",
+            "vi": "Theo tin tức, tuần sau bão sẽ đến.",
+            "audio": null
+          },
+          {
+            "jp": "{姉|あね}の {話|はなし}に よると、あの {店|みせ}は {安|やす}くて おいしいそうです。",
+            "vi": "Theo lời chị tôi, quán đó rẻ mà ngon.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-desu",
+        "pattern": "普通形＋ようです",
+        "vi": "Hình như …, có vẻ như … (tự suy ra từ dấu hiệu mình thấy, nghe, cảm nhận)",
+        "explain": "Thể thường + ようです; tính từ な giữ な (しずかな ようです), danh từ thêm の (かぜの ようです). Người nói tự quan sát dấu hiệu (âm thanh, mùi, tình trạng) rồi đưa ra phán đoán. Trang trọng hơn みたいです, dùng được trong văn viết. Minna bài 47.",
+        "viMistake": "Viết しずかだ ようです, かぜだ ようです (phải là しずかな ようです, かぜの ようです). Nhầm với そう dáng vẻ: そう là nhìn bề ngoài trước mắt (おいしそう), よう là suy ra từ dấu hiệu (だれも いない ようです).",
+        "examples": [
+          {
+            "jp": "{電気|でんき}が {消|き}えて います。{田中|たなか}さんは もう {帰|かえ}った ようです。",
+            "vi": "Đèn tắt rồi. Hình như anh Tanaka đã về.",
+            "audio": null
+          },
+          {
+            "jp": "{熱|ねつ}が あって、{頭|あたま}も {痛|いた}いです。かぜの ようです。",
+            "vi": "Tôi bị sốt, đầu cũng đau. Hình như bị cảm.",
+            "audio": null
+          },
+          {
+            "jp": "{外|そと}が にぎやかですね。お{祭|まつ}りが ある ようです。",
+            "vi": "Bên ngoài náo nhiệt nhỉ. Hình như có lễ hội.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-mitai-desu",
+        "pattern": "普通形＋みたいです",
+        "vi": "Hình như … (văn nói, thân mật của ようです)",
+        "explain": "Thể thường + みたいです; tính từ な và danh từ bỏ だ và KHÔNG thêm な／の: しずかみたい, かぜみたい. Nghĩa giống ようです nhưng dùng trong hội thoại. Bạn bè nói chuyện thì bỏ です: 〜みたい／〜みたいだ.",
+        "viMistake": "Chép cách nối của ようです: かぜの みたいです, しずかな みたいです là sai. Nhớ: よう cần な／の, みたい thì nối thẳng.",
+        "examples": [
+          {
+            "jp": "あれ、かぎが ない。どこかで {落|お}とした みたい。",
+            "vi": "Ơ, không thấy chìa khóa. Hình như mình đánh rơi ở đâu rồi.",
+            "audio": null
+          },
+          {
+            "jp": "{山田|やまだ}さんは きょう {休|やす}みみたいですよ。",
+            "vi": "Hình như hôm nay chị Yamada nghỉ đấy (N + みたい, không có の).",
+            "audio": null
+          },
+          {
+            "jp": "この パソコン、{壊|こわ}れて いる みたいです。",
+            "vi": "Cái máy tính này hình như hỏng rồi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-rashii",
+        "pattern": "普通形＋らしいです",
+        "vi": "Nghe đâu …, có vẻ như … (dựa trên tin nghe được); N らしい N: đúng chất N",
+        "explain": "Thể thường + らしいです; tính từ な và danh từ bỏ だ (しずからしい, びょうきらしい). Người nói dựa vào thông tin bên ngoài (nghe người khác nói, tin đồn), nên nghĩa gần “nghe nói” nhưng kém chắc chắn hơn そうです. Nghĩa thứ hai: N + らしい + N = đúng chất, ra dáng N: はるらしい てんき, がくせいらしい ふく.",
+        "viMistake": "Nhầm らしい với ようです: ようです là mình tự quan sát, らしい thường là nghe lại từ người khác. Nối sai: びょうきだらしい (đúng là びょうきらしい). Nhầm たかいらしい (nghe đâu đắt) với たかそう (trông có vẻ đắt).",
+        "examples": [
+          {
+            "jp": "{駅前|えきまえ}に {新|あたら}しい スーパーが できるらしいですよ。",
+            "vi": "Nghe đâu trước ga sắp mở một siêu thị mới đấy.",
+            "audio": null
+          },
+          {
+            "jp": "みんなの {話|はなし}では、{部長|ぶちょう}は {来月|らいげつ} {会社|かいしゃ}を やめるらしいです。",
+            "vi": "Nghe mọi người nói, tháng sau trưởng phòng nghỉ việc.",
+            "audio": null
+          },
+          {
+            "jp": "きょうは {暖|あたた}かくて、{春|はる}らしい {天気|てんき}ですね。",
+            "vi": "Hôm nay ấm áp, đúng là thời tiết mùa xuân nhỉ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-hazu-desu",
+        "pattern": "普通形＋はずです",
+        "vi": "Chắc chắn là …, lẽ ra là … (suy luận có căn cứ)",
+        "explain": "Thể thường + はずです; tính từ な giữ な (ひまな はず), danh từ thêm の (やすみの はず). Người nói có lý do rõ ràng (lịch, thói quen, quy định, việc đã làm) nên tin chắc. Khi thực tế khác với điều đã tin: 〜はずでした (lẽ ra là …). Minna bài 46.",
+        "viMistake": "Dùng はず cho ý định của chính mình: muốn nói “tôi định đi” thì dùng いく つもりです, không phải いく はずです. Nhầm mức độ với かもしれません (chỉ là có thể) và でしょう (chắc là, đoán).",
+        "examples": [
+          {
+            "jp": "{荷物|にもつ}は きのう {送|おく}りましたから、あした {着|つ}く はずです。",
+            "vi": "Hàng gửi hôm qua rồi nên chắc chắn mai sẽ đến.",
+            "audio": null
+          },
+          {
+            "jp": "{兄|あに}は きょう {休|やす}みだから、{暇|ひま}な はずです。",
+            "vi": "Hôm nay anh tôi được nghỉ nên chắc chắn rảnh (Aな giữ な).",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}は 3{時|じ}に {終|お}わる はずでしたが、まだ {続|つづ}いて います。",
+            "vi": "Cuộc họp lẽ ra kết thúc lúc 3 giờ nhưng vẫn còn đang tiếp tục.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-hazu-ga-nai",
+        "pattern": "〜はずが ありません",
+        "vi": "Không thể nào … (người nói chắc chắn điều đó không xảy ra)",
+        "explain": "Thể thường + はずが ありません (thân mật: はずが ない). Người nói có lý do để khẳng định điều đó không thể xảy ra, thường dùng khi ngạc nhiên hoặc phản bác. Phủ định mạnh hơn 〜ない はずです (chắc là không …).",
+        "viMistake": "Đặt phủ định nhầm chỗ: muốn nói “không thể nào biết” thì dùng しって いる はずが ありません; しらない はずが ありません lại là “không thể nào không biết” (nghĩa ngược lại).",
+        "examples": [
+          {
+            "jp": "まじめな {林|はやし}さんが うそを つく はずが ありません。",
+            "vi": "Anh Hayashi nghiêm túc như thế không thể nào nói dối.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}ですから、{銀行|ぎんこう}が {開|あ}いて いる はずが ありません。",
+            "vi": "Hôm nay chủ nhật nên ngân hàng không thể nào mở cửa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-kamoshirenai",
+        "pattern": "普通形＋かもしれません",
+        "vi": "Có lẽ …, có thể … (khả năng khoảng một nửa)",
+        "explain": "Thể thường + かもしれません; tính từ な và danh từ bỏ だ (ひまかもしれません, あめかもしれません). Thân mật: かもしれない, かも. Mức chắc chắn thấp: có thể đúng, có thể không. Minna bài 32.",
+        "viMistake": "Viết ひまだかもしれません (thừa だ). Nhầm mức độ: はずです (chắc chắn, có căn cứ) > でしょう (chắc là) > かもしれません (có lẽ).",
+        "examples": [
+          {
+            "jp": "かばんが ありません。{電車|でんしゃ}に {忘|わす}れたかもしれません。",
+            "vi": "Không thấy cái cặp đâu. Có lẽ tôi để quên trên tàu.",
+            "audio": null
+          },
+          {
+            "jp": "{返事|へんじ}が ありませんね。{病気|びょうき}かもしれません。",
+            "vi": "Không thấy trả lời nhỉ. Có lẽ bị ốm (N + かもしれません, không có だ).",
+            "audio": null
+          },
+          {
+            "jp": "あしたは {雪|ゆき}かもしれませんから、{早|はや}く {出|で}かけましょう。",
+            "vi": "Mai có thể có tuyết nên mình đi sớm nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-deshou",
+        "pattern": "〜でしょう／〜だろう",
+        "vi": "Chắc là …, có lẽ … (đoán, khá chắc); だろう là dạng thường",
+        "explain": "Thể thường + でしょう; tính từ な và danh từ bỏ だ (ひまでしょう, あめでしょう). だろう là dạng thường, hay đi với と おもいます: 〜だろうと おもいます. Dự báo thời tiết hay dùng でしょう. でしょう? lên giọng cuối câu thì là hỏi xác nhận (… phải không?). Minna bài 32.",
+        "viMistake": "Viết あめだでしょう, ひまだだろう (thừa だ). Ghép でしょう với と おもいます: dạng chuẩn là だろうと おもいます (でしょうと おもいます không tự nhiên). Nhầm だろう với thể ý chí: いくだろう (chắc là sẽ đi) khác いこう (đi thôi).",
+        "examples": [
+          {
+            "jp": "あしたの {朝|あさ}は {寒|さむ}いでしょう。",
+            "vi": "Sáng mai chắc là trời lạnh.",
+            "audio": null
+          },
+          {
+            "jp": "{試験|しけん}は そんなに {難|むずか}しくないだろうと {思|おも}います。",
+            "vi": "Tôi nghĩ bài thi chắc không khó lắm.",
+            "audio": null
+          },
+          {
+            "jp": "この {時間|じかん}なら、{道|みち}は すいて いるでしょう。",
+            "vi": "Giờ này thì chắc đường vắng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-to-itte-imashita",
+        "pattern": "〜と 言って いました",
+        "vi": "(Người khác) đã nói là … (truyền lại lời người thứ ba)",
+        "explain": "Thể thường + と 言って いました: truyền lại lời người thứ ba cho người nghe. Người nói lời đó đặt trước は／が: たなかさんは 〜と 言って いました. Danh từ, tính từ な cần だ trước と: やすみだと. Minna bài 33.",
+        "viMistake": "Dùng 言いました khi truyền lời nhắn: 言いました chỉ kể lại việc “đã nói”, còn chuyển lời cho người khác nghe thì dùng 言って いました. Quên だ: やすみと 言って いました nên nói やすみだと 言って いました.",
+        "examples": [
+          {
+            "jp": "{田中|たなか}さんは {少|すこ}し {遅|おく}れると {言|い}って いました。",
+            "vi": "Anh Tanaka nói là sẽ đến muộn một chút.",
+            "audio": null
+          },
+          {
+            "jp": "{母|はは}が {晩|ばん}ごはんは すしだと {言|い}って いましたよ。",
+            "vi": "Mẹ bảo bữa tối nay ăn sushi đấy (N + だ + と).",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-to-tsutaete",
+        "pattern": "〜と 伝えて いただけませんか",
+        "vi": "Nhờ nhắn lại với ai đó rằng … (lịch sự)",
+        "explain": "Thể thường + と 伝えて いただけませんか (lịch sự) / と 伝えて ください (bình thường). Dùng khi nhờ người khác chuyển lời. Người nhận lời nhắn đi với に: やまださんに 〜と 伝えて いただけませんか. Minna bài 33.",
+        "viMistake": "Nhầm いただけませんか (nhờ được không ạ) với いただきませんか hoặc あげませんか. Quên と trước 伝えて, hoặc dùng を: 〜を 伝えて chỉ đi với danh từ (でんごんを 伝えて).",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}に あした {休|やす}むと {伝|つた}えて いただけませんか。",
+            "vi": "Bạn nhắn giúp cô giáo là mai tôi nghỉ được không?",
+            "audio": null
+          },
+          {
+            "jp": "{母|はは}に {今晩|こんばん}は {遅|おそ}く なると {伝|つた}えて ください。",
+            "vi": "Nhắn với mẹ là tối nay con về muộn nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "n4g-you-na-hiyu",
+        "pattern": "Nの ような／みたいな N",
+        "vi": "(Giống) như N — ví von hoặc nêu ví dụ",
+        "explain": "Ví von hoặc nêu ví dụ: Nの ような N, Nみたいな N (thân mật). Trước động từ, tính từ: Nの ように, Nみたいに. Ví dụ: はなの ような えがお (nụ cười như hoa), ねこみたいに ねる (ngủ như mèo), すしの ような にほんりょうり (món Nhật như sushi).",
+        "viMistake": "Nhầm cách nối: Nの ような nhưng N みたいな (không có の). Nhầm ような (đứng trước danh từ) với ように (đứng trước động từ, tính từ).",
+        "examples": [
+          {
+            "jp": "{林|はやし}さんは {魚|さかな}みたいに {上手|じょうず}に {泳|およ}ぎます。",
+            "vi": "Anh Hayashi bơi giỏi như cá.",
+            "audio": null
+          },
+          {
+            "jp": "ハロン{湾|わん}の ような きれいな ところへ {行|い}きたいです。",
+            "vi": "Tôi muốn đi đến nơi đẹp như vịnh Hạ Long.",
+            "audio": null
+          },
+          {
+            "jp": "{今日|きょう}は {夏|なつ}の ように {暑|あつ}いですね。",
+            "vi": "Hôm nay nóng như mùa hè nhỉ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "n4g5-s01",
+        "type": "title",
+        "jp": "{推量|すいりょう}と {伝聞|でんぶん}",
+        "vi": "Tổng ôn N4 · 5: Suy đoán và truyền đạt"
+      },
+      {
+        "id": "n4g5-s02",
+        "type": "note",
+        "title": "Mục tiêu / cách dùng bộ này",
+        "body": "1. Phân biệt hai loại そう: dáng vẻ (ふりそう, おいしそう) và nghe nói (ふるそう, おいしいそう).\n2. Chọn đúng mẫu đoán: ようです／みたいです (tự thấy), らしいです (nghe được), はずです (có căn cứ), かもしれません (có lẽ), でしょう／だろう (chắc là).\n3. Truyền lời: 〜と 言って いました, 〜と 伝えて いただけませんか, 〜に よると.\n4. Nhớ cách nối với tính từ な và danh từ — chỗ đề JLPT hay bẫy nhất.\nCách dùng: làm đề mà quên mẫu nào thì mở slide của mẫu đó, xem bảng phân biệt, rồi làm lại câu luyện."
+      },
+      {
+        "id": "n4g5-s03",
+        "type": "grammar",
+        "ref": "n4g-sou-yotai",
+        "teacherNotes": "Che cột cuối bảng tiếp theo, cho học viên tự chia; nhấn mạnh いい → よさそう, ない → なさそう."
+      },
+      {
+        "id": "n4g5-s04",
+        "type": "example",
+        "ref": "n4g-sou-yotai",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s05",
+        "type": "table",
+        "title": "Cách tạo そう (dáng vẻ)",
+        "columns": ["Loại", "Từ gốc", "そう (dáng vẻ)"],
+        "rows": [
+          ["V", "{降|ふ}ります", "{降|ふ}りそう"],
+          ["V phủ định", "{降|ふ}りません", "{降|ふ}りそうに ない"],
+          ["Tính từ い", "おいしい", "おいしそう"],
+          ["Tính từ な", "{元気|げんき}な", "{元気|げんき}そう"],
+          ["いい", "いい", "よさそう"],
+          ["ない", "ない", "なさそう"],
+          ["A い phủ định", "{高|たか}くない", "{高|たか}くなさそう"],
+          ["Danh từ", "{学生|がくせい}", "× (không dùng)"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4g5-s06",
+        "type": "quiz",
+        "ref": "n4g5-q02"
+      },
+      {
+        "id": "n4g5-s07",
+        "type": "grammar",
+        "ref": "n4g-sou-na"
+      },
+      {
+        "id": "n4g5-s08",
+        "type": "example",
+        "ref": "n4g-sou-na",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s09",
+        "type": "grammar",
+        "ref": "n4g-sou-denbun",
+        "teacherNotes": "Đặt cạnh slide そう dáng vẻ: cùng chữ そう nhưng nối khác nhau."
+      },
+      {
+        "id": "n4g5-s10",
+        "type": "example",
+        "ref": "n4g-sou-denbun",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s11",
+        "type": "table",
+        "title": "Phân biệt: そう dáng vẻ và そう nghe nói",
+        "columns": ["Từ gốc", "Dáng vẻ", "Nghe nói"],
+        "rows": [
+          ["{降|ふ}る", "{降|ふ}りそうです", "{降|ふ}るそうです"],
+          ["おいしい", "おいしそうです", "おいしいそうです"],
+          ["いい", "よさそうです", "いいそうです"],
+          ["ない", "なさそうです", "ないそうです"],
+          ["{元気|げんき}だ", "{元気|げんき}そうです", "{元気|げんき}だそうです"],
+          ["{雨|あめ}だ", "×", "{雨|あめ}だそうです"],
+          ["Căn cứ", "Mắt nhìn thấy", "Nghe, đọc được"],
+          ["Quá khứ", "そうでした", "× (không có)"]
+        ]
+      },
+      {
+        "id": "n4g5-s12",
+        "type": "quiz",
+        "ref": "n4g5-q09"
+      },
+      {
+        "id": "n4g5-s13",
+        "type": "grammar",
+        "ref": "n4g-ni-yoru-to"
+      },
+      {
+        "id": "n4g5-s14",
+        "type": "example",
+        "ref": "n4g-ni-yoru-to",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s15",
+        "type": "grammar",
+        "ref": "n4g-you-desu"
+      },
+      {
+        "id": "n4g5-s16",
+        "type": "example",
+        "ref": "n4g-you-desu",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s17",
+        "type": "grammar",
+        "ref": "n4g-mitai-desu",
+        "teacherNotes": "So sánh nhanh: かぜの ようです ↔ かぜみたいです."
+      },
+      {
+        "id": "n4g5-s18",
+        "type": "example",
+        "ref": "n4g-mitai-desu",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s19",
+        "type": "table",
+        "title": "Cách nối với tính từ な và danh từ",
+        "columns": ["Mẫu", "Aな (ひま)", "N (あめ)"],
+        "rows": [
+          ["ようです", "{暇|ひま}な ようです", "{雨|あめ}の ようです"],
+          ["みたいです", "{暇|ひま}みたいです", "{雨|あめ}みたいです"],
+          ["らしいです", "{暇|ひま}らしいです", "{雨|あめ}らしいです"],
+          ["はずです", "{暇|ひま}な はずです", "{雨|あめ}の はずです"],
+          ["かもしれない", "{暇|ひま}かもしれない", "{雨|あめ}かもしれない"],
+          ["でしょう", "{暇|ひま}でしょう", "{雨|あめ}でしょう"],
+          ["そう (nghe nói)", "{暇|ひま}だそうです", "{雨|あめ}だそうです"],
+          ["そう (dáng vẻ)", "{暇|ひま}そうです", "×"]
+        ]
+      },
+      {
+        "id": "n4g5-s20",
+        "type": "quiz",
+        "ref": "n4g5-q14"
+      },
+      {
+        "id": "n4g5-s21",
+        "type": "grammar",
+        "ref": "n4g-rashii"
+      },
+      {
+        "id": "n4g5-s22",
+        "type": "example",
+        "ref": "n4g-rashii",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s23",
+        "type": "table",
+        "title": "Phân biệt そう／よう／らしい",
+        "columns": ["Mẫu", "Căn cứ", "Ví dụ", "Nghĩa"],
+        "rows": [
+          ["そう (dáng vẻ)", "Nhìn bề ngoài", "おいしそう", "Trông ngon"],
+          ["そう (nghe nói)", "Nghe, đọc lại", "おいしいそう", "Nghe nói ngon"],
+          ["よう／みたい", "Tự thấy dấu hiệu", "おいしい よう", "Hình như ngon"],
+          ["らしい", "Tin nghe được", "おいしいらしい", "Nghe đâu ngon"],
+          ["N らしい N", "Đúng chất N", "{春|はる}らしい {日|ひ}", "Đúng kiểu xuân"]
+        ],
+        "teacherNotes": "Hỏi học viên: đứng trước quán, nhìn món ăn thì nói câu nào? Bạn kể lại thì nói câu nào?"
+      },
+      {
+        "id": "n4g5-s24",
+        "type": "quiz",
+        "ref": "n4g5-q21"
+      },
+      {
+        "id": "n4g5-s25",
+        "type": "grammar",
+        "ref": "n4g-hazu-desu"
+      },
+      {
+        "id": "n4g5-s26",
+        "type": "example",
+        "ref": "n4g-hazu-desu",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s27",
+        "type": "grammar",
+        "ref": "n4g-hazu-ga-nai",
+        "teacherNotes": "Viết lên bảng: 知って いる はずが ない ≠ 知らない はずが ない."
+      },
+      {
+        "id": "n4g5-s28",
+        "type": "example",
+        "ref": "n4g-hazu-ga-nai",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s29",
+        "type": "grammar",
+        "ref": "n4g-kamoshirenai"
+      },
+      {
+        "id": "n4g5-s30",
+        "type": "example",
+        "ref": "n4g-kamoshirenai",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s31",
+        "type": "grammar",
+        "ref": "n4g-deshou"
+      },
+      {
+        "id": "n4g5-s32",
+        "type": "example",
+        "ref": "n4g-deshou",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s33",
+        "type": "table",
+        "title": "Mức độ chắc chắn",
+        "columns": ["Mẫu", "Mức độ", "Ví dụ"],
+        "rows": [
+          ["はずです", "Rất chắc, có căn cứ", "{来|く}る はずです"],
+          ["でしょう／だろう", "Khá chắc (đoán)", "{来|く}るでしょう"],
+          ["ようです／みたい", "Suy từ dấu hiệu", "{来|く}る ようです"],
+          ["かもしれません", "Có lẽ (~50%)", "{来|く}るかもしれません"],
+          ["はずが ありません", "Chắc chắn không", "{来|く}る はずが ない"]
+        ]
+      },
+      {
+        "id": "n4g5-s34",
+        "type": "quiz",
+        "ref": "n4g5-q32"
+      },
+      {
+        "id": "n4g5-s35",
+        "type": "grammar",
+        "ref": "n4g-to-itte-imashita"
+      },
+      {
+        "id": "n4g5-s36",
+        "type": "example",
+        "ref": "n4g-to-itte-imashita",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s37",
+        "type": "grammar",
+        "ref": "n4g-to-tsutaete"
+      },
+      {
+        "id": "n4g5-s38",
+        "type": "example",
+        "ref": "n4g-to-tsutaete",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s39",
+        "type": "grammar",
+        "ref": "n4g-you-na-hiyu"
+      },
+      {
+        "id": "n4g5-s40",
+        "type": "example",
+        "ref": "n4g-you-na-hiyu",
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s41",
+        "type": "quiz",
+        "ref": "n4g5-q39"
+      },
+      {
+        "id": "n4g5-s42",
+        "type": "dialogue",
+        "title": "Hội thoại: chiều mưa ở văn phòng",
+        "lines": [
+          {
+            "speaker": "{佐藤|さとう}",
+            "jp": "{空|そら}が {暗|くら}いですね。{雨|あめ}が {降|ふ}りそうです。",
+            "vi": "Trời tối quá. Có vẻ sắp mưa."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{予報|よほう}に よると、{大雨|おおあめ}だそうです。",
+            "vi": "Theo dự báo thì nghe nói mưa to."
+          },
+          {
+            "speaker": "{佐藤|さとう}",
+            "jp": "{課長|かちょう}は もう {帰|かえ}った ようですね。",
+            "vi": "Hình như trưởng nhóm về rồi nhỉ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ええ、{会議|かいぎ}は {中止|ちゅうし}らしいですよ。",
+            "vi": "Vâng, nghe đâu cuộc họp bị hủy đấy."
+          },
+          {
+            "speaker": "{佐藤|さとう}",
+            "jp": "{田中|たなか}さんは {知|し}らないかもしれません。",
+            "vi": "Có lẽ anh Tanaka chưa biết."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、{中止|ちゅうし}だと {伝|つた}えて おきます。",
+            "vi": "Vậy để tôi nhắn anh ấy là cuộc họp bị hủy."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "n4g5-s43",
+        "type": "note",
+        "title": "Mẹo làm bài",
+        "body": "Gốc ます／tính từ bỏ い + そう → dáng vẻ (ふりそう, よさそう, なさそう); thể thường + そう → nghe nói (ふるそう, あめだそう).\nTrước N → そうな; trước V → そうに.\nThấy に よると／〜の 話では → cuối câu chọn そうです hoặc らしいです.\nよう và はず: Aな giữ な, N thêm の. みたい, らしい, かもしれない, でしょう: bỏ だ, không thêm gì.\nたぶん → でしょう; lý do chắc chắn → はずです; ngạc nhiên, phản bác → はずが ありません.\nTrước と 思います dùng だろう, không dùng でしょう.\nChuyển lời: 〜と 言って いました; nhờ nhắn: 〜と 伝えて いただけませんか.\nVí von: Nの ような／Nみたいな + N; Nの ように／Nみたいに + V."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4g5-q01",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "シャツの ボタンが （　　） ですよ。つけ{直|なお}して あげましょうか。",
+        "options": ["とれるそう", "とれりそう", "とれたそう", "とれそう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-yotai"],
+        "explain": "Câu: Cúc áo trông sắp tuột rồi kìa, để tôi đính lại cho nhé? Nhìn cái áo trước mắt mà đoán → gốc ます + そう: とれます → とれそう. とれるそう／とれたそう là “nghe nói”, vô lý khi đang nhìn áo của người nghe. とれりそう chia sai."
+      },
+      {
+        "id": "n4g5-q02",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "きのう {店|みせ}で {見|み}た かばんは、{軽|かる}くて （　　） でしたよ。",
+        "options": ["いさそう", "よさそう", "よそう", "いいさそう"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-yotai"],
+        "explain": "Câu: Cái túi hôm qua thấy ở cửa hàng nhẹ, trông có vẻ tốt lắm. いい là ngoại lệ: いい → よさそう. Ba lựa chọn còn lại đều là dạng chia sai."
+      },
+      {
+        "id": "n4g5-q03",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{田中|たなか}さんに {映画|えいが}の {話|はなし}を しましたが、あまり {興味|きょうみ}が （　　） でした。",
+        "options": ["なそう", "ないそう", "なくそう", "なさそう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-yotai"],
+        "explain": "Câu: Tôi kể chuyện phim cho anh Tanaka nhưng anh ấy trông không mấy hứng thú. ない là ngoại lệ: ない → なさそう. ないそう là “nghe nói không có” và そう nghe nói không chia quá khứ (không có ないそうでした). なそう, なくそう chia sai."
+      },
+      {
+        "id": "n4g5-q04",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ナムさんは ＿＿　＿＿　＿★＿　＿＿ です。",
+        "options": ["{泣|な}き", "{仕事|しごと}が", "そう", "{終|お}わらなくて"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-yotai"],
+        "explain": "Câu đúng: ナムさんは 仕事が 終わらなくて 泣き そう です。(Nam làm mãi không xong việc, trông như sắp khóc.) Gốc ます 泣き + そう (dáng vẻ, sắp …). Thứ tự: 仕事が → 終わらなくて → 泣き → そう; ô ★ (thứ ba) là 泣き."
+      },
+      {
+        "id": "n4g5-q05",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{妹|いもうと}は {誕生日|たんじょうび}の プレゼントを もらって、（　　） {笑|わら}いました。",
+        "options": ["うれしそうに", "うれしそうな", "うれしいそうに", "うれしそうの"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-na"],
+        "explain": "Câu: Em gái nhận quà sinh nhật, cười trông rất vui. Đứng trước động từ 笑いました → そうに. そうな chỉ đứng trước danh từ; うれしいそう là nghe nói và không có dạng そうに; そうの sai."
+      },
+      {
+        "id": "n4g5-q06",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}は {市場|いちば}で （　　） マンゴーを {買|か}って きました。",
+        "options": ["おいしそうに", "おいしいそうな", "おいしそうな", "おいしそうで"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-na"],
+        "explain": "Câu: Mẹ mua ở chợ về những quả xoài trông rất ngon. Đứng trước danh từ マンゴー → そうな. おいしそうに đi với động từ (nghĩa thành “mẹ mua một cách ngon lành”, vô lý); おいしいそう là nghe nói, không có dạng そうな; おいしそうで không nối thẳng vào danh từ."
+      },
+      {
+        "id": "n4g5-q07",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先輩|せんぱい}の {話|はなし}では、この {授業|じゅぎょう}の テストは あまり （　　）。",
+        "options": [
+          "{難|むずか}しくないそうです",
+          "{難|むずか}しくなさそうです",
+          "{難|むずか}しくないように します",
+          "{難|むずか}しくない つもりです"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-denbun"],
+        "explain": "Câu: Theo lời đàn anh, bài kiểm tra môn này không khó lắm. Có nguồn tin (〜の 話では, giống 〜に よると) thì kết thúc bằng thể thường + そうです (nghe nói). 難しくなさそうです là そう dáng vẻ — chính mình nhìn rồi đoán, không hợp với thông tin nghe lại; ように します (cố gắng làm cho) và つもりです (dự định) sai nghĩa."
+      },
+      {
+        "id": "n4g5-q08",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ニュースで {聞|き}きましたが、{北海道|ほっかいどう}は きのう {大雪|おおゆき}（　　） そうです。",
+        "options": ["の", "だった", "な", "で"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-denbun"],
+        "explain": "Câu: Tôi nghe trên tin tức, nghe nói hôm qua Hokkaido có tuyết lớn. Danh từ + thể thường quá khứ: 大雪だった + そうです. の, な, で không đứng trước そう nghe nói."
+      },
+      {
+        "id": "n4g5-q09",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}から メールが {来|き}ました。{来月|らいげつ} {結婚|けっこん}（　　）。",
+        "options": ["したそうです", "するそうでした", "するのそうです", "するそうです"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-denbun"],
+        "explain": "Câu: Anh trai gửi email đến. Nghe nói tháng sau anh ấy cưới. 来月 là tương lai nên dùng する + そうです. したそうです là “nghe nói đã cưới”, mâu thuẫn với 来月; そう nghe nói không chia quá khứ (そうでした sai); không chen の trước そう."
+      },
+      {
+        "id": "n4g5-q10",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{姉|あね}から {電話|でんわ}が ありました。＿＿　＿＿　＿＿　＿★＿ です。",
+        "options": ["そう", "{国|くに}へ", "{帰|かえ}る", "{来週|らいしゅう}"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-sou-denbun"],
+        "explain": "Câu đúng: 姉から 電話が ありました。来週 国へ 帰る そう です。(Chị gọi điện, nghe nói tuần sau chị về nước.) Thể từ điển 帰る + そうです = nghe nói. Dù đổi chỗ 来週 và 国へ, hai ô cuối luôn là 帰る → そう; ô ★ (thứ tư) là そう."
+      },
+      {
+        "id": "n4g5-q11",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{新聞|しんぶん}（　　）、{来年|らいねん}から バスの {料金|りょうきん}が {上|あ}がるそうです。",
+        "options": ["に よって", "に ついて", "に よると", "に とって"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ni-yoru-to"],
+        "explain": "Câu: Theo báo, từ năm sau giá vé xe buýt sẽ tăng. Nguồn tin + に よると, cuối câu là そうです. に よって = do, tùy theo; に ついて = về; に とって = đối với — đều không chỉ nguồn tin."
+      },
+      {
+        "id": "n4g5-q12",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{友|とも}だちの {手紙|てがみ}（　　）、ハノイは {今|いま} とても {寒|さむ}いそうです。",
+        "options": ["に とって", "の ために", "に ついて", "に よると"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-ni-yoru-to"],
+        "explain": "Câu: Theo thư của bạn tôi, Hà Nội bây giờ rất lạnh. Nguồn tin (thư) + に よると, cuối câu là そうです. に とって = đối với; の ために = vì, để; に ついて = về — đều không chỉ nguồn tin."
+      },
+      {
+        "id": "n4g5-q13",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{台所|だいどころ}から いい においが します。{母|はは}が カレーを {作|つく}って いる （　　）。",
+        "options": ["つもりです", "ようです", "そうです", "はずが ありません"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-desu"],
+        "explain": "Câu: Từ bếp có mùi thơm. Hình như mẹ đang nấu cà ri. Chính mình ngửi thấy dấu hiệu rồi suy ra → ようです. Thể thường + そうです là nghe người khác nói lại, không hợp khi tự ngửi thấy; はずが ありません (không thể nào) trái với dấu hiệu; つもりです là dự định của chính người nói, không dùng để đoán việc mẹ làm."
+      },
+      {
+        "id": "n4g5-q14",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}の {新|あたら}しい {仕事|しごと}は かなり （　　） ようです。{毎晩|まいばん} {遅|おそ}く {帰|かえ}って きます。",
+        "options": [
+          "{大変|たいへん}",
+          "{大変|たいへん}だ",
+          "{大変|たいへん}な",
+          "{大変|たいへん}の"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-desu"],
+        "explain": "Câu: Công việc mới của anh tôi hình như khá vất vả. Tối nào anh ấy cũng về muộn. Tính từ な + な + ようです: 大変な ようです. Bỏ な (dạng của みたい／らしい), thêm だ hay の đều sai."
+      },
+      {
+        "id": "n4g5-q15",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{道|みち}が ぬれて いますね。＿＿　＿＿　＿★＿　＿＿ です。",
+        "options": ["{雨|あめ}が", "よう", "{降|ふ}った", "{夜|よる}の あいだに"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-desu"],
+        "explain": "Câu đúng: 道が ぬれて いますね。夜の あいだに 雨が 降った よう です。(Đường ướt, hình như đêm qua trời mưa.) Thấy dấu hiệu rồi suy ra → thể thường 降った + ようです. Dù đổi chỗ 夜の あいだに và 雨が, ô ★ vẫn là 降った."
+      },
+      {
+        "id": "n4g5-q16",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この リモコン、{動|うご}かないね。{電池|でんち}が （　　） みたい。",
+        "options": ["{切|き}れた", "{切|き}れて", "{切|き}れたの", "{切|き}れたな"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mitai-desu"],
+        "explain": "Câu: Cái điều khiển này không chạy nhỉ. Hình như hết pin rồi. Thể thường quá khứ 切れた + みたい. Thể て, の, な đều không đứng trước みたい."
+      },
+      {
+        "id": "n4g5-q17",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅|えき}が {人|ひと}で いっぱいだ。きょうは お{祭|まつ}り（　　）。",
+        "options": ["のみたいだ", "なみたいだ", "みたいだ", "だみたいだ"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mitai-desu"],
+        "explain": "Câu: Ga đông nghịt người. Hôm nay hình như có lễ hội. Danh từ nối thẳng với みたい: お祭りみたいだ. Thêm の (cách nối của よう), な hay だ đều sai."
+      },
+      {
+        "id": "n4g5-q18",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{山田|やまだ}さんは {何|なに}も {食|た}べて いません。＿＿　＿★＿　＿＿　＿＿ です。",
+        "options": ["わるい", "みたい", "{体|からだ}の", "{調子|ちょうし}が"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-mitai-desu"],
+        "explain": "Câu đúng: 山田さんは 何も 食べて いません。体の 調子が わるい みたい です。(Anh Yamada không ăn gì cả, hình như không khỏe.) Thứ tự: 体の → 調子が → わるい → みたい; ô ★ (thứ hai) là 調子が."
+      },
+      {
+        "id": "n4g5-q19",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅前|えきまえ}の {本屋|ほんや}は {来月|らいげつ} （　　） らしいですよ。",
+        "options": ["なくなり", "なくなる", "なくなって", "なくなるの"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-rashii"],
+        "explain": "Câu: Nghe đâu tháng sau hiệu sách trước ga sẽ không còn nữa. らしい nối với thể thường: なくなる + らしい. Gốc ます, thể て hay thêm の đều sai."
+      },
+      {
+        "id": "n4g5-q20",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "クラスの みんなが {言|い}って いましたが、{新|あたら}しい {先生|せんせい}は とても （　　）。",
+        "options": [
+          "きびしそうです",
+          "きびしい つもりです",
+          "きびしいらしいです",
+          "きびしく しましょう"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-rashii"],
+        "explain": "Câu: Cả lớp đều nói, nghe đâu thầy giáo mới rất nghiêm. Thông tin nghe từ người khác (みんなが 言って いました) → らしいです. きびしそうです là そう dáng vẻ, đoán khi chính mình nhìn thấy; つもりです là dự định của người nói; きびしく しましょう (hãy nghiêm khắc) sai nghĩa."
+      },
+      {
+        "id": "n4g5-q21",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{今年|ことし}の {冬|ふゆ}は あまり {寒|さむ}くなくて、{冬|ふゆ}（　　） {日|ひ}が {少|すく}ないです。",
+        "options": ["そうな", "らしい", "らしいな", "だらしい"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-rashii"],
+        "explain": "Câu: Mùa đông năm nay không lạnh lắm, ít có ngày đúng chất mùa đông. N + らしい + N = đúng chất N: 冬らしい 日. そう dáng vẻ không đi với danh từ; らしい là tính từ い nên không thêm な; không chen だ."
+      },
+      {
+        "id": "n4g5-q22",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "リンさんは {日本|にほん}に 10{年|ねん} {住|す}んで いましたから、{漢字|かんじ}が よく {読|よ}める （　　）。",
+        "options": ["つもりです", "ところです", "はずです", "ばかりです"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hazu-desu"],
+        "explain": "Câu: Linh sống ở Nhật 10 năm nên chắc chắn đọc kanji tốt. Có căn cứ rõ (sống 10 năm) → はずです. つもり là ý định của chính người nói; ところです (đúng lúc) và ばかりです (vừa mới) không đi với thể khả năng ở đây."
+      },
+      {
+        "id": "n4g5-q23",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{大学|だいがく}の {図書館|としょかん}は {日曜日|にちようび}は （　　） はずです。",
+        "options": ["{休|やす}み", "{休|やす}みの", "{休|やす}みな", "{休|やす}みだ"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hazu-desu"],
+        "explain": "Câu: Thư viện trường chắc chắn nghỉ vào chủ nhật. Danh từ + の + はずです: 休みの はずです. Thiếu の, dùng な (của tính từ な) hay だ đều sai."
+      },
+      {
+        "id": "n4g5-q24",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{父|ちち}は 7{時|じ}の {電車|でんしゃ}に {乗|の}りました。＿＿　＿＿　＿＿　＿★＿ です。",
+        "options": ["はず", "{会社|かいしゃ}に", "{着|つ}いた", "もう"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hazu-desu"],
+        "explain": "Câu đúng: 父は 7時の 電車に 乗りました。もう 会社に 着いた はず です。(Bố đã lên chuyến tàu 7 giờ, chắc chắn đã đến công ty rồi.) Thể thường 着いた + はずです; dù đổi chỗ もう và 会社に, hai ô cuối luôn là 着いた → はず; ô ★ (thứ tư) là はず."
+      },
+      {
+        "id": "n4g5-q25",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「ミンさんが {試合|しあい}に {負|ま}けたと {聞|き}きましたよ。」B「えっ、あんなに {強|つよ}い ミンさんが {負|ま}ける （　　）。」",
+        "options": ["はずです", "ことに します", "ように します", "はずが ありません"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hazu-ga-nai"],
+        "explain": "Câu: A: Nghe nói Minh thua trận đấy. B: Hả, Minh giỏi thế không thể nào thua được. B ngạc nhiên, phản bác → はずが ありません. はずです (chắc chắn thua) trái với ý ngạc nhiên; ことに します (quyết định) và ように します (cố gắng) vô nghĩa ở đây."
+      },
+      {
+        "id": "n4g5-q26",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{鍵|かぎ}は {私|わたし}が {持|も}って いますから、{弟|おとうと}が {部屋|へや}に （　　）。",
+        "options": [
+          "{入|はい}れる はずが ありません",
+          "{入|はい}れない はずが ありません",
+          "{入|はい}れる はずです",
+          "{入|はい}れる かもしれません"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-hazu-ga-nai"],
+        "explain": "Câu: Chìa khóa tôi đang giữ nên em trai không thể nào vào phòng được. 入れる (vào được) + はずが ありません = không thể nào vào được. 入れない はずが ありません lại là “không thể nào không vào được” (ngược nghĩa); 入れる はずです (chắc chắn vào được) và 入れる かもしれません (có lẽ vào được) mâu thuẫn với lý do “chìa khóa tôi giữ”."
+      },
+      {
+        "id": "n4g5-q27",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あの {人|ひと}は {顔|かお}が よく {似|に}て いますから、{田中|たなか}さんの お{兄|にい}さん（　　）。",
+        "options": ["だかもしれません", "かもしれません", "のかもしれません", "なかもしれません"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kamoshirenai"],
+        "explain": "Câu: Người kia mặt rất giống nên có lẽ là anh trai của anh Tanaka. Danh từ nối thẳng với かもしれません (bỏ だ). Thêm だ, の, な đều sai."
+      },
+      {
+        "id": "n4g5-q28",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{道|みち}が {込|こ}んで いるので、{約束|やくそく}の {時間|じかん}に {少|すこ}し {遅|おく}れる （　　）。{先|さき}に {始|はじ}めて いて ください。",
+        "options": ["はずが ありません", "つもりです", "ことに します", "かもしれません"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kamoshirenai"],
+        "explain": "Câu: Đường đông nên có lẽ tôi sẽ đến muộn một chút so với giờ hẹn. Mọi người cứ bắt đầu trước nhé. Chưa chắc chắn → かもしれません. はずが ありません (không thể nào muộn) mâu thuẫn với lời dặn bắt đầu trước; không ai “định” hay “quyết định” đến muộn (つもりです, ことに します sai nghĩa)."
+      },
+      {
+        "id": "n4g5-q29",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{電話|でんわ}に {出|で}ませんね。{林|はやし}さんは ＿＿　＿★＿　＿＿　＿＿。",
+        "options": ["もう", "かもしれません", "いる", "{寝|ね}て"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-kamoshirenai"],
+        "explain": "Câu đúng: 電話に 出ませんね。林さんは もう 寝て いる かもしれません。(Không nghe máy nhỉ, có lẽ anh Hayashi ngủ rồi.) Thể thường 寝て いる + かもしれません. Thứ tự: もう → 寝て → いる → かもしれません; ô ★ (thứ hai) là 寝て."
+      },
+      {
+        "id": "n4g5-q30",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたは {北|きた}の ほうでは {雪|ゆき}（　　）。",
+        "options": ["だでしょう", "でしょう", "のでしょう", "なでしょう"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-deshou"],
+        "explain": "Câu: Ngày mai phía bắc chắc là có tuyết. Danh từ nối thẳng với でしょう (bỏ だ). Thêm だ, の, な đều sai."
+      },
+      {
+        "id": "n4g5-q31",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この {問題|もんだい}は {難|むずか}しいから、{答|こた}えられる {人|ひと}は {少|すく}ない （　　） {思|おも}います。",
+        "options": ["だろうと", "ようと", "だと", "らしく"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-deshou"],
+        "explain": "Câu: Câu này khó nên tôi nghĩ chắc là ít người trả lời được. Trước と 思います dùng dạng thường だろう: 少ないだろうと 思います. よう phải có だ mới đứng trước と (ようと 思います sai); tính từ い không thêm だ (少ないだと sai); らしく 思います không dùng."
+      },
+      {
+        "id": "n4g5-q32",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「リーさんは パーティーに {来|き}ますか。」B「{仕事|しごと}が {忙|いそが}しいので、たぶん {来|こ}ない （　　）。」",
+        "options": ["はずが ありません", "つもりです", "ことに します", "でしょう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-deshou"],
+        "explain": "Câu: A: Lee có đến bữa tiệc không? B: Công việc bận nên chắc là không đến. たぶん đi với でしょう (đoán). たぶん mâu thuẫn với はずが ありません (chắc chắn); つもりです chỉ ý định của chính người nói; ことに します là quyết định của mình."
+      },
+      {
+        "id": "n4g5-q33",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{山田|やまだ}さんは {今週|こんしゅう}は {忙|いそが}しくて、{飲|の}みに {行|い}けない （　　）。",
+        "options": [
+          "を {言|い}って いました",
+          "に {言|い}って いました",
+          "と {言|い}いに いきました",
+          "と {言|い}って いました"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-itte-imashita"],
+        "explain": "Câu: Anh Yamada nói là tuần này bận nên không đi nhậu được. Truyền lại lời người khác: thể thường + と 言って いました. を, に không dẫn nội dung lời nói; 言いに いきました là “đi để nói”, sai nghĩa."
+      },
+      {
+        "id": "n4g5-q34",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}は あしたの テストは {中止|ちゅうし}（　　） {言|い}って いました。",
+        "options": ["なと", "のと", "だと", "でと"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-itte-imashita"],
+        "explain": "Câu: Thầy nói là bài kiểm tra ngày mai bị hủy. Danh từ ở thể thường cần だ trước と: 中止だと 言って いました. なと, のと, でと đều sai."
+      },
+      {
+        "id": "n4g5-q35",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{店|みせ}の {人|ひと}は ＿＿　＿＿　＿＿　＿★＿ いました。",
+        "options": ["もう", "この パソコンは", "{言|い}って", "{直|なお}らないと"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-itte-imashita"],
+        "explain": "Câu đúng: 店の 人は この パソコンは もう 直らないと 言って いました。(Nhân viên cửa hàng nói cái máy tính này không sửa được nữa.) Nội dung + と + 言って いました; dù đổi chỗ この パソコンは và もう, hai ô cuối luôn là 直らないと → 言って; ô ★ (thứ tư) là 言って."
+      },
+      {
+        "id": "n4g5-q36",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "すみませんが、{林|はやし}さんに {駅|えき}の {前|まえ}で {待|ま}って いる（　　） {伝|つた}えて ください。",
+        "options": ["と", "を", "に", "で"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-tsutaete"],
+        "explain": "Câu: Xin lỗi, nhắn giúp anh Hayashi là tôi đang đợi ở trước ga nhé. Nội dung lời nhắn (một câu) đi với と. を chỉ dùng khi lời nhắn là danh từ; に chỉ người nhận (đã có 林さんに); で sai."
+      },
+      {
+        "id": "n4g5-q37",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "A「{社長|しゃちょう}は {今|いま} {出|で}かけて います。」B「そうですか。では、お{電話|でんわ}を いただきたいと （　　）。」",
+        "options": [
+          "{伝|つた}えて いただけませんか",
+          "{伝|つた}えて いただきませんか",
+          "{伝|つた}えて あげませんか",
+          "{伝|つた}えて もらいませんか"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-to-tsutaete"],
+        "explain": "Câu: A: Giám đốc đang đi ra ngoài. B: Vậy à. Thế anh nhắn giúp là tôi mong giám đốc gọi lại được không ạ? Nhờ lịch sự: Vて いただけませんか (thể khả năng phủ định). いただきませんか, もらいませんか là rủ/đề nghị nhận, sai; あげませんか là rủ làm cho người khác, sai nghĩa."
+      },
+      {
+        "id": "n4g5-q38",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{姉|あね}は {歌|うた}が {上手|じょうず}で、{歌手|かしゅ}（　　） {声|こえ}を して います。",
+        "options": ["の ように", "の ような", "みたいに", "らしく"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-na-hiyu"],
+        "explain": "Câu: Chị tôi hát hay, có giọng như ca sĩ. Đứng trước danh từ 声 → Nの ような. の ように, みたいに đứng trước động từ/tính từ; らしく (ra dáng) không đi trước danh từ."
+      },
+      {
+        "id": "n4g5-q39",
+        "type": "choice",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{父|ちち}は {日曜日|にちようび}に なると、{子|こ}ども（　　） {一日中|いちにちじゅう} ゲームを して います。",
+        "options": ["みたいな", "の みたいに", "みたいに", "らしい"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-na-hiyu"],
+        "explain": "Câu: Cứ đến chủ nhật là bố tôi chơi game cả ngày như trẻ con. Bổ nghĩa cho động từ (ゲームを して います) → Nみたいに. みたいな đứng trước danh từ; みたい không cần の; らしい sai vị trí và sai nghĩa."
+      },
+      {
+        "id": "n4g5-q40",
+        "type": "choice",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}は いつも ＿★＿　＿＿　＿＿　＿＿ います。",
+        "options": ["ような", "{夢|ゆめ}の", "して", "{話|はなし}ばかり"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "grammar", "grammar:n4g-you-na-hiyu"],
+        "explain": "Câu đúng: 弟は いつも 夢の ような 話ばかり して います。(Em trai tôi lúc nào cũng toàn nói chuyện viển vông như mơ.) Nの ような + N: 夢の → ような → 話ばかり → して; ô ★ (thứ nhất) là 夢の."
+      }
+    ]
+  }
+}
