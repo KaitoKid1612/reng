@@ -1,0 +1,633 @@
+{
+  "id": "n4-tips-7",
+  "title": "Mẹo N4 · 7 – Ngày thi và lịch ôn 3 tuần",
+  "titleJa": "N4のコツ 7　試験の 日と 3週間の 計画",
+  "summary": "Lịch ôn 3 tuần đến ngày thi 06/12/2026 bằng bài luyện hằng ngày, Ôn lại mẫu, 8 bài tổng ôn ngữ pháp và đề Thi thử JLPT N4 mỗi Chủ nhật; 3 ngày cuối; checklist ngày thi (đồ mang theo, đến muộn, điện thoại, tô phiếu trả lời), điểm tùy nơi thi ghi “kiểm tra phiếu dự thi”. Mẹo tổng hợp từ trang chính thức jlpt.jp, Hướng dẫn dự thi (受験案内) và tài liệu ôn thi công khai; ví dụ và 20 câu tình huống là nội dung gốc.",
+  "order": 7,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t7-s01",
+        "type": "title",
+        "jp": "{試験|しけん}の {日|ひ}と 3{週間|しゅうかん}の {計画|けいかく}",
+        "vi": "Mẹo N4 · 7 – Ngày thi và lịch ôn 3 tuần"
+      },
+      {
+        "id": "n4t7-s02",
+        "type": "note",
+        "title": "3 tuần cuối: củng cố, không học mới",
+        "body": "1. Không mở giáo trình mới; dùng những gì đã có trong Reng.\n2. Mỗi ngày: bài luyện hằng ngày 67 câu (57 câu chữ – từ – ngữ pháp – đọc, 10 câu nghe).\n3. Câu ngữ pháp sai: bấm Ôn lại mẫu; câu sai tự vào sổ lỗi.\n4. Chủ nhật 22/11 và 29/11: một đề Thi thử JLPT N4 115 phút.\n5. Đo tiến bộ bằng điểm thi thử, không bằng cảm giác.",
+        "teacherNotes": "Hôm nay T2 16/11, thi CN 06/12: còn đúng 3 tuần. Thứ trong tuần dùng cho lịch: T2 = thứ Hai … CN = Chủ nhật."
+      },
+      {
+        "id": "n4t7-s03",
+        "type": "table",
+        "title": "Lịch 3 tuần đến 06/12",
+        "columns": ["Ngày", "Trọng tâm", "Bài trong Reng"],
+        "rows": [
+          ["T2 16 – T7 21/11", "Lấp lỗ ngữ pháp, kanji", "Tổng ôn N4 · 1–4"],
+          ["CN 22/11", "Thi thử lần 1", "Thi thử JLPT N4"],
+          ["T2 23 – T7 28/11", "Phần yếu nhất của đề 1", "Tổng ôn N4 · 5–8"],
+          ["CN 29/11", "Thi thử lần 2, so điểm", "Thi thử JLPT N4"],
+          ["T2 30/11 – T4 2/12", "Sổ lỗi, mẹo đọc – nghe", "Mẹo N4 · 1–6"],
+          ["T5 3 – T7 5/12", "Ôn nhẹ, ngủ đủ", "Sổ lỗi, Bản đồ ngữ pháp"],
+          ["CN 6/12", "Thi JLPT N4", "—"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Ngày nào cũng có bài luyện hằng ngày, trừ T7 5/12 và CN 6/12 nếu muốn nghỉ hẳn. Tuần 1: mỗi ngày một bộ Tổng ôn N4 · 1 → 4 (T2–T5), T6–T7 ôn lại bộ sai nhiều nhất; tuần 2 làm tương tự với bộ 5 → 8. Đề thi thử tạo ở Giao bài → Tạo đề thi thử JLPT, cấp N4; đề sau ưu tiên câu chưa ra ở đề trước."
+      },
+      {
+        "id": "n4t7-s04",
+        "type": "table",
+        "title": "Một ngày ôn (tuần 1 và 2)",
+        "columns": ["Việc", "Phút", "Cách làm"],
+        "rows": [
+          ["57 câu ngôn ngữ – đọc", "80", "Bấm giờ như đề thật"],
+          ["10 câu nghe", "15", "Chỉ nghe một lần"],
+          ["Xem câu sai", "20", "Bấm Ôn lại mẫu"],
+          ["Một bài tổng ôn", "20", "Tổng ôn N4 · 1–8"],
+          ["Thẻ ôn tập, kanji sai", "10", "Trước khi ngủ"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "57 câu = phần chữ – từ, ngữ pháp, đọc của một đề; 80 phút = 25 phút chữ – từ + 55 phút ngữ pháp – đọc như đề thật. 10 câu nghe ≈ 13 phút theo nhịp đề thật (35 phút cho khoảng 28 câu), 15 phút là có thời gian đọc trước lựa chọn. Cả ngày khoảng 2 tiếng rưỡi; ngày bận: làm chữ – từ – ngữ pháp buổi sáng, đọc và nghe buổi tối; có thể bỏ bài tổng ôn nhưng không bỏ phần xem câu sai."
+      },
+      {
+        "id": "n4t7-s05",
+        "type": "note",
+        "title": "Xem câu sai đúng cách",
+        "body": "1. Đọc giải thích; câu ngữ pháp có link Ôn lại mẫu thì mở ngay.\n2. Tự hỏi: sai vì không biết, vì đọc ẩu, hay vì hết giờ?\n3. Không biết → học lại mẫu, từ; đọc ẩu → ghi một câu nhắc mình.\n4. Câu sai vào sổ lỗi và lịch ôn tập: làm lại khi đến hạn.\n5. Lỗi lặp lại 3 lần → đưa vào danh sách ôn 3 ngày cuối.",
+        "teacherNotes": "Ví dụ: sai câu 〜ために／〜ように vì quên điều kiện chủ ngữ và động từ → bấm Ôn lại mẫu (mở mẫu trong Tổng ôn N4 · 2), đọc mục Dễ nhầm."
+      },
+      {
+        "id": "n4t7-s06",
+        "type": "quiz",
+        "ref": "n4t7-q03"
+      },
+      {
+        "id": "n4t7-s07",
+        "type": "note",
+        "title": "Thi thử Chủ nhật như thi thật",
+        "body": "1. Làm cùng khung giờ thi thật (giờ ghi trên phiếu dự thi).\n2. Ngồi một mạch 115 phút, có tai nghe, điện thoại để phòng khác.\n3. Theo giờ gợi ý: {文字|もじ}・{語彙|ごい} 25, {文法|ぶんぽう}・{読解|どっかい} 55, {聴解|ちょうかい} 35 phút.\n4. Mỗi câu nghe chỉ phát một lần, như đề thật.\n5. Xem điểm hai phần ở bảng Thi thử JLPT trong Tiến độ của tôi.",
+        "teacherNotes": "Đề thi thử chỉ có một lượt và không có link tra cứu, nên làm ở nơi yên tĩnh. Điểm thang 180 là ước tính theo tỉ lệ đúng; điểm JLPT thật tính theo độ khó từng câu nên có thể khác."
+      },
+      {
+        "id": "n4t7-s08",
+        "type": "table",
+        "title": "Đọc kết quả thi thử",
+        "columns": ["Kết quả", "Nghĩa là", "Tuần sau làm gì"],
+        "rows": [
+          ["Ngôn ngữ – đọc < 38", "Dưới điểm sàn: trượt", "Từ vựng, kanji mỗi ngày"],
+          ["Nghe < 19", "Dưới điểm sàn: trượt", "Nghe thêm 20 phút/ngày"],
+          ["Tổng < 90", "Chưa đủ tổng", "Phần sai nhiều nhất"],
+          ["Đủ cả 3 mức", "Ước tính đỗ", "Giữ nhịp, giảm lỗi ẩu"],
+          ["Đủ nhưng sát mức", "Dễ trượt hôm thi", "Ôn phần sát mức trước"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Ngôn ngữ – đọc hiểu 0–120 (sàn 38), nghe 0–60 (sàn 19), tổng 0–180 (đỗ từ 90). Phải đạt cả tổng lẫn từng phần: nghe là 1/3 số điểm và có sàn riêng."
+      },
+      {
+        "id": "n4t7-s09",
+        "type": "quiz",
+        "ref": "n4t7-q01"
+      },
+      {
+        "id": "n4t7-s10",
+        "type": "note",
+        "title": "Tuần 3: ôn nhẹ, không thêm mẫu mới",
+        "body": "1. 30/11 – 2/12: vẫn làm bài hằng ngày, chỉ xem kỹ câu sai.\n2. Làm lại các câu trong sổ lỗi, nhất là lỗi lặp lại.\n3. Lướt Mẹo N4 · 1–6: mỗi ngày hai bộ.\n4. Không học mẫu mới, không làm đề N3 hay đề lạ.\n5. Ngủ đủ 7 tiếng: thức khuya làm phần nghe kém đi rõ rệt.",
+        "teacherNotes": "Ví dụ lịch lướt mẹo: T2 bộ 1–2, T3 bộ 3–4, T4 bộ 5–6."
+      },
+      {
+        "id": "n4t7-s11",
+        "type": "table",
+        "title": "3 ngày cuối và tối trước hôm thi",
+        "columns": ["Ngày", "Làm", "Tránh"],
+        "rows": [
+          ["T5 3/12", "Sổ lỗi, kanji hay sai", "Đề thi thử mới"],
+          ["T6 4/12", "Tóm tắt Mẹo N4, câu nghe", "Thức khuya"],
+          ["T7 5/12 ngày", "Lướt Bản đồ ngữ pháp N4", "Học dồn cả ngày"],
+          ["T7 5/12 tối", "Soạn túi, đặt báo thức", "Cà phê đặc, đồ ăn lạ"],
+          ["CN 6/12 sáng", "Ăn sáng, đi sớm", "Học cái mới"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Tối 5/12: xem lại giờ tập trung và địa chỉ trên phiếu dự thi, tính đường đi, đặt hai báo thức. Đến sau giờ tập trung là không được thi phần đầu. “Tóm tắt Mẹo N4” = slide Tóm tắt cuối mỗi bộ Mẹo N4 · 1–6."
+      },
+      {
+        "id": "n4t7-s12",
+        "type": "quiz",
+        "ref": "n4t7-q04"
+      },
+      {
+        "id": "n4t7-s13",
+        "type": "table",
+        "title": "Túi đi thi",
+        "columns": ["Mang", "Lưu ý"],
+        "rows": [
+          ["{受験票|じゅけんひょう} (phiếu dự thi)", "Bản in; kiểm tra tên, số báo danh"],
+          ["Giấy tờ tùy thân có ảnh", "Quên là không được thi"],
+          ["Bút chì đen HB, B, 2B", "2–3 cây, gọt sẵn"],
+          ["Tẩy nhựa", "Không dùng bút xóa"],
+          ["Bút chì kim", "Tùy điểm thi: kiểm tra phiếu dự thi"],
+          ["Ảnh thẻ", "Nếu yêu cầu: kiểm tra phiếu dự thi"],
+          ["Đồng hồ kim, không chuông", "Không dùng đồng hồ thông minh"],
+          ["Nước, đồ ăn nhẹ", "Dùng lúc nghỉ: kiểm tra phiếu dự thi"],
+          ["Áo khoác mỏng", "Phòng thi có thể lạnh"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hướng dẫn dự thi chính thức: chỉ mang phiếu dự thi, bút chì đen (No.2, HB, B hoặc 2B), tẩy nhựa và giấy tờ tùy thân có ảnh (hộ chiếu, căn cước… loại do đơn vị tổ chức quy định); quên giấy tờ có ảnh là không được thi. Đồng hồ thông minh không được dùng làm đồng hồ; thiết bị điện tử nên để ở nhà. Loại giấy tờ, bút chì kim, ảnh, đồ ăn uống: kiểm tra phiếu dự thi."
+      },
+      {
+        "id": "n4t7-s14",
+        "type": "table",
+        "title": "Chữ trên phiếu dự thi và đề",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{受験票|じゅけんひょう}", "phiếu dự thi"],
+          ["{受験番号|じゅけんばんごう}", "số báo danh"],
+          ["{身分証明書|みぶんしょうめいしょ}", "giấy tờ tùy thân"],
+          ["{問題用紙|もんだいようし}", "tập đề"],
+          ["{解答用紙|かいとうようし}", "phiếu trả lời"],
+          ["マークする", "tô ô đáp án"],
+          ["{試験監督|しけんかんとく}", "giám thị"],
+          ["{不正行為|ふせいこうい}", "hành vi vi phạm, gian lận"],
+          ["メモを とっても いいです", "được ghi chú vào đề"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Câu cuối in trên bìa tập đề phần nghe (この{問題用紙|もんだいようし}に メモを とっても いいです): được ghi chú vào tập đề, nhưng đáp án chỉ tính trên phiếu trả lời."
+      },
+      {
+        "id": "n4t7-s15",
+        "type": "note",
+        "title": "Điện thoại và đồng hồ thông minh",
+        "body": "1. Tắt nguồn hẳn điện thoại (không để rung), cất theo chỉ dẫn giám thị.\n2. Chuông, rung hay báo thức kêu trong giờ thi là {不正行為|ふせいこうい}: bị dừng thi.\n3. Giờ nghỉ cũng không bật, không chạm điện thoại, kể cả máy người khác.\n4. Đồng hồ thông minh không được dùng làm đồng hồ: để ở nhà.\n5. Đồng hồ kim: tắt báo thức trước khi vào phòng.",
+        "teacherNotes": "Hướng dẫn dự thi (từ kỳ 7/2025): từ giờ vào phòng đến hết phần nghe, cấm dùng điện thoại, đồng hồ thông minh và mọi thiết bị có camera hay liên lạc, kể cả giờ nghỉ. Bật nguồn trong giờ nghỉ, hay để chuông, rung, báo thức kêu trong giờ thi, đều là vi phạm. Cất điện thoại ở đâu: theo điểm thi, kiểm tra phiếu dự thi."
+      },
+      {
+        "id": "n4t7-s16",
+        "type": "quiz",
+        "ref": "n4t7-q11"
+      },
+      {
+        "id": "n4t7-s17",
+        "type": "note",
+        "title": "Đến sớm 30–45 phút",
+        "body": "1. Giờ tập trung, địa chỉ, phòng thi: kiểm tra phiếu dự thi; chưa biết đường thì đi thử trước.\n2. Đến sớm 30–45 phút: tìm phòng, đi vệ sinh, tắt điện thoại.\n3. Ăn no vừa phải trước khi đi; tránh món lạ bụng.\n4. Vào chỗ: để phiếu dự thi và giấy tờ trên bàn theo chỉ dẫn giám thị.\n5. Lúc chờ: lướt một trang sổ lỗi, không học cái mới.",
+        "teacherNotes": "Từ kỳ 7/2026, đến sau giờ tập trung là không được thi phần đầu. Hôm thi thường có nhiều cấp thi cùng một điểm, cổng và hành lang rất đông; đến sát giờ dễ mất 10–15 phút tìm phòng."
+      },
+      {
+        "id": "n4t7-s18",
+        "type": "table",
+        "title": "Đến muộn thì sao",
+        "columns": ["Tình huống", "Kết quả"],
+        "rows": [
+          ["Đến sau giờ tập trung", "Không được thi phần 1"],
+          ["Muộn giờ bắt đầu phần 2, 3", "Không được thi phần đó"],
+          ["Thiếu một phần thi", "Trượt cả kỳ thi"],
+          ["“Muộn dưới 10 phút”", "Quy định cũ, bỏ từ 7/2026"],
+          ["Giờ tập trung, giờ thi", "Kiểm tra phiếu dự thi"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Phần 1: {言語知識|げんごちしき}（{文字|もじ}・{語彙|ごい}）, phần 2: {言語知識|げんごちしき}（{文法|ぶんぽう}）・{読解|どっかい}, phần 3: {聴解|ちょうかい}. Hướng dẫn dự thi 2026: từ kỳ 7/2026, đến sau giờ tập trung hoặc sau giờ bắt đầu một phần thi thì không được thi phần đó; phiếu dự thi ghi: おくれたら へやに はいれません. Nhiều trang tiếng Việt vẫn ghi “muộn dưới 10 phút vẫn vào được”: đó là quy định cũ. Trang FAQ của JLPT: thiếu một phần thi bắt buộc thì bị tính là trượt."
+      },
+      {
+        "id": "n4t7-s19",
+        "type": "quiz",
+        "ref": "n4t7-q09"
+      },
+      {
+        "id": "n4t7-s20",
+        "type": "table",
+        "title": "Tô phiếu trả lời (マークシート)",
+        "columns": ["Quy tắc", "Vì sao"],
+        "rows": [
+          ["Chỉ bút chì đen HB, B, 2B", "Bút bi, bút mực: không được chấm"],
+          ["Tô kín, đậm cả ô", "Mờ hay lem: máy không đọc"],
+          ["Sửa: tẩy nhựa, xóa thật sạch", "Vết cũ làm máy đọc sai"],
+          ["Ghi, tô số báo danh, ngày sinh", "Khớp với phiếu dự thi"],
+          ["Đúng số câu, đúng dòng", "Lệch một dòng là sai cả loạt"],
+          ["Không bỏ trống", "Sai không bị trừ điểm"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Theo hướng dẫn tô phiếu chính thức: bút chì đen No.2, HB, B hoặc 2B, dùng bút bi hay bút mực thì không được chấm; tô kín sao cho không còn thấy số trong ô; sửa bằng tẩy (nên là tẩy nhựa), không dùng bút xóa; số báo danh trên phiếu trả lời phải giống phiếu dự thi. Ghi số báo danh khi giám thị hướng dẫn."
+      },
+      {
+        "id": "n4t7-s21",
+        "type": "note",
+        "title": "Tô phiếu ngay khi làm",
+        "body": "1. Xong một もんだい thì tô luôn cả もんだい đó, không dồn cuối giờ.\n2. Đầu mỗi もんだい: so số câu trên đề với số dòng trên phiếu.\n3. Câu chưa chắc: vẫn tô đáp án tốt nhất, khoanh số câu trên đề để quay lại.\n4. Còn 3 phút: tô mọi ô còn trống.\n5. {聴解|ちょうかい}: nghe xong câu nào tô ngay câu đó.",
+        "teacherNotes": "Cách đoán và chia giờ từng もんだい: xem Mẹo N4 · 1. Mẹo từng dạng nghe: Mẹo N4 · 6."
+      },
+      {
+        "id": "n4t7-s22",
+        "type": "quiz",
+        "ref": "n4t7-q15"
+      },
+      {
+        "id": "n4t7-s23",
+        "type": "dialogue",
+        "title": "Hội thoại: trước cửa phòng thi",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{受験票|じゅけんひょう}、{持|も}って きた？",
+            "vi": "Mang phiếu dự thi chưa?"
+          },
+          {
+            "speaker": "ミン",
+            "jp": "うん。パスポートも あるよ。",
+            "vi": "Rồi. Có cả hộ chiếu nữa."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{鉛筆|えんぴつ}と {消|け}しゴムは？",
+            "vi": "Bút chì với tẩy thì sao?"
+          },
+          {
+            "speaker": "ミン",
+            "jp": "HBを {三本|さんぼん} {持|も}って きたよ。",
+            "vi": "Mình mang ba cây HB."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "スマホの {電源|でんげん}、{切|き}った？",
+            "vi": "Tắt nguồn điện thoại chưa?"
+          },
+          {
+            "speaker": "ミン",
+            "jp": "あ、まだだ。{今|いま} {切|き}るね。",
+            "vi": "À, chưa. Mình tắt ngay đây."
+          }
+        ],
+        "reveal": false,
+        "teacherNotes": "Ba việc kiểm tra cuối: giấy tờ, bút chì – tẩy, điện thoại tắt hẳn. 電源を 切る = tắt nguồn; 電源が 入って いる = đang bật."
+      },
+      {
+        "id": "n4t7-s24",
+        "type": "note",
+        "title": "Giờ nghỉ giữa các phần",
+        "body": "1. Lịch nghỉ giữa các phần: kiểm tra phiếu dự thi.\n2. Đi vệ sinh, uống nước, ăn nhẹ theo quy định điểm thi; không bật điện thoại.\n3. Không bàn đáp án phần vừa thi: chỉ làm rối đầu.\n4. Phần trước làm kém? Quên đi: {聴解|ちょうかい} có 60 điểm riêng.\n5. Về chỗ trước giờ bắt đầu phần sau: muộn là không được thi.",
+        "teacherNotes": "Số lần nghỉ và độ dài giờ nghỉ do điểm thi sắp xếp, nên xem phiếu dự thi hoặc thông báo của đơn vị tổ chức. Giờ nghỉ chạm vào điện thoại, kể cả máy của người nhà, bạn bè, cũng bị coi là vi phạm."
+      },
+      {
+        "id": "n4t7-s25",
+        "type": "table",
+        "title": "Nhịp ngày thi",
+        "columns": ["Phần", "Phút", "Nhớ"],
+        "rows": [
+          ["{文字|もじ}・{語彙|ごい}", "25", "Không biết: đoán ngay"],
+          ["{文法|ぶんぽう}・{読解|どっかい}", "55", "Chừa đủ giờ cho bài đọc"],
+          ["{聴解|ちょうかい}", "35", "Đọc trước các lựa chọn"],
+          ["Cuối mỗi phần", "2–3", "Tô hết ô trống"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Thời gian nghe có thể chênh một chút theo băng. Kế hoạch phút cho 55 phút ngữ pháp – đọc: xem Mẹo N4 · 1."
+      },
+      {
+        "id": "n4t7-s26",
+        "type": "note",
+        "title": "Sự cố và sau khi thi",
+        "body": "1. Phiếu dự thi sai tên, ngày sinh: báo đơn vị tổ chức ngay, hôm thi báo giám thị.\n2. Loa phần nghe không rõ, thấy mệt: giơ tay báo giám thị, không tự ra ngoài.\n3. Không mang tập đề, phiếu trả lời ra khỏi phòng.\n4. Không chụp, chép hay đăng đề lên mạng, kể cả sau khi thi.\n5. Kết quả trực tuyến: khoảng cuối tháng 1/2027.",
+        "teacherNotes": "Hướng dẫn dự thi: kỳ tháng 12 có kết quả trực tuyến vào cuối tháng 1 năm sau; ngày cụ thể đơn vị tổ chức sẽ báo. Chia sẻ nội dung đề có thể bị hủy kết quả và cấm dự thi về sau."
+      },
+      {
+        "id": "n4t7-s27",
+        "type": "quiz",
+        "ref": "n4t7-q20"
+      },
+      {
+        "id": "n4t7-s28",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. Ôn: bài hằng ngày + câu sai mỗi ngày, Chủ nhật 22/11 và 29/11 thi thử.\n2. Tuần cuối: sổ lỗi, mẹo; không học mới, ngủ đủ.\n3. Mang: {受験票|じゅけんひょう}, giấy tờ có ảnh, bút chì HB, tẩy nhựa, đồng hồ kim.\n4. Điện thoại tắt đến hết buổi, cả giờ nghỉ; đến muộn là không được thi phần đó.\n5. Tô phiếu ngay, đúng dòng, không để trống."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t7-q01",
+        "prompt": "Thi thử JLPT N4 lần 1: ngôn ngữ – đọc hiểu 85/120, nghe hiểu 16/60, tổng 101/180. Kết quả ước tính là gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo đọc kết quả thi thử: phải đạt cả tổng (90) lẫn từng phần (ngôn ngữ – đọc 38, nghe 19). Tổng 101 đủ nhưng nghe 16 < 19 nên trượt. Tổng tối đa là 180 chứ không phải 120. Tuần sau phải nghe thêm mỗi ngày.",
+        "type": "choice",
+        "options": [
+          "Đỗ, vì tổng trên 90",
+          "Đỗ, vì ngôn ngữ – đọc trên 38",
+          "Trượt, vì nghe dưới 19",
+          "Trượt, vì tổng dưới 120"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t7-q02",
+        "prompt": "Thi thử lần 1: ngôn ngữ – đọc hiểu 70/120, nghe hiểu 35/60, tổng 105. Tuần 23–29/11 nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Đủ cả ba mức (38, 19, 90) → ước tính đỗ: giữ nhịp, xem kỹ câu sai, giảm lỗi ẩu. Bỏ nghe thì phần nghe dễ tụt dưới 19; học N3 là học mới, không đúng lúc; nghỉ ôn 2 tuần làm mất nhịp.",
+        "type": "choice",
+        "options": [
+          "Giữ nhịp, xem kỹ câu sai, giảm lỗi ẩu",
+          "Bỏ hẳn phần nghe vì đã qua 19",
+          "Chuyển sang học ngữ pháp N3",
+          "Nghỉ ôn đến ngày thi"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t7-q03",
+        "prompt": "Bài luyện hằng ngày: bạn sai một câu vì nhầm 〜ために và 〜ように. Việc đầu tiên nên làm là gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo xem câu sai: bấm link Ôn lại mẫu, đọc mục Dễ nhầm; câu sai tự vào sổ lỗi để làm lại khi đến hạn. Bỏ qua thì lỗi lặp lại; chép đáp án 10 lần không giúp hiểu vì sao sai; đề N3 là học ngoài phạm vi.",
+        "type": "choice",
+        "options": [
+          "Bỏ qua, mai làm bài mới",
+          "Chép đáp án đúng 10 lần",
+          "Tìm đề N3 về hai mẫu này",
+          "Bấm Ôn lại mẫu, đọc mục Dễ nhầm"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t7-q04",
+        "prompt": "Hôm nay là thứ Năm 03/12, ba ngày trước kỳ thi. Việc nào KHÔNG nên làm?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo 3 ngày cuối: ôn nhẹ (sổ lỗi, kanji hay sai) và ngủ đủ. Làm một đề mới 115 phút rồi thức khuya chữa vừa mệt vừa dễ mất tự tin, lại cắt giấc ngủ.",
+        "type": "choice",
+        "options": [
+          "Làm lại các câu trong sổ lỗi",
+          "Làm đề thi thử mới, thức khuya chữa",
+          "Ôn các kanji hay đọc sai",
+          "Ngủ đủ 7 tiếng"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t7-q05",
+        "prompt": "Theo Hướng dẫn dự thi chính thức, bạn chỉ mang theo những gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Hướng dẫn dự thi JLPT: chỉ mang phiếu dự thi (受験票), bút chì đen (No.2, HB, B hoặc 2B), tẩy nhựa và giấy tờ tùy thân có ảnh. Bút bi, bút mực, bút xóa không dùng được cho phiếu trả lời; từ điển, điện thoại không được dùng trong phòng thi.",
+        "type": "choice",
+        "options": [
+          "Phiếu dự thi, bút chì đen HB, tẩy nhựa, giấy tờ có ảnh",
+          "Phiếu dự thi, bút bi, từ điển điện tử",
+          "Điện thoại để xem giờ, bút chì, tẩy",
+          "Giấy tờ có ảnh, bút mực, bút xóa"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t7-q06",
+        "prompt": "Sáng 06/12 bạn mang phiếu dự thi nhưng để quên căn cước và hộ chiếu ở nhà. Theo Hướng dẫn dự thi chính thức thì sao?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Hướng dẫn dự thi ghi rõ: quên giấy tờ tùy thân có ảnh thì không được dự thi. Vì vậy mẹo là soạn túi và kiểm tra giấy tờ từ tối 5/12. Không có chuyện thi trước nộp sau hay chỉ thi phần nghe.",
+        "type": "choice",
+        "options": [
+          "Vẫn thi, vì phiếu dự thi đã đủ",
+          "Thi trước, nộp giấy tờ sau",
+          "Không được dự thi",
+          "Chỉ được thi phần nghe"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t7-q07",
+        "prompt": "Bạn quên bút chì, định tô {解答用紙|かいとうようし} bằng bút bi đen. Chuyện gì xảy ra?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Quy tắc tô phiếu chính thức: chỉ dùng bút chì đen (No.2, HB, B hoặc 2B); phiếu viết bằng bút bi hay bút mực không được chấm. Máy chấm, không có chuyện giám thị chấm tay hay trừ điểm nhẹ. Mang 2–3 cây bút chì để không gặp tình huống này.",
+        "type": "choice",
+        "options": [
+          "Vẫn được chấm, vì bút bi đậm hơn",
+          "Phần tô bằng bút bi không được chấm",
+          "Được chấm nhưng bị trừ 5 điểm",
+          "Giám thị sẽ chấm tay phiếu đó"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t7-q08",
+        "prompt": "Câu 12 bạn đã tô ô 2, giờ muốn đổi sang ô 4. Làm thế nào đúng?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Quy tắc tô phiếu: sửa bằng tẩy (nên là tẩy nhựa), xóa sạch dấu cũ rồi tô kín ô mới. Gạch chéo hay tô cả hai ô làm máy đọc thành hai đáp án; bút xóa không được dùng trên phiếu.",
+        "type": "choice",
+        "options": [
+          "Gạch chéo ô 2 rồi tô ô 4",
+          "Tô cả ô 2 và ô 4 cho chắc",
+          "Dùng bút xóa che ô 2",
+          "Tẩy sạch ô 2 rồi tô kín ô 4"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t7-q09",
+        "prompt": "Phần {言語知識|げんごちしき}（{文法|ぶんぽう}）・{読解|どっかい} đã bắt đầu được 5 phút thì bạn mới về đến phòng. Theo Hướng dẫn dự thi 2026?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Từ kỳ 7/2026, Hướng dẫn dự thi ghi: đến sau giờ bắt đầu một phần thi thì không được thi phần đó; “muộn dưới 10 phút vẫn vào” là quy định cũ. Không có bù giờ hay thi bù trong giờ nghỉ, và thiếu một phần bắt buộc là trượt. Vì vậy mẹo là đến sớm 30–45 phút và về chỗ sớm sau giờ nghỉ.",
+        "type": "choice",
+        "options": [
+          "Vào được và được bù 5 phút",
+          "Không được thi phần đó",
+          "Vào được vì muộn dưới 10 phút",
+          "Làm bù phần đó trong giờ nghỉ"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t7-q10",
+        "prompt": "Giờ nghỉ, bạn ra căng tin mua nước và quay lại khi băng phần {聴解|ちょうかい} đã bắt đầu. Điều gì xảy ra?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Hướng dẫn dự thi: vào phòng sau giờ bắt đầu một phần thi (ở đây là phần nghe) thì không được thi phần đó; không có nghe từ giữa chừng, nghe lại hay thi bù. Bỏ một phần bắt buộc là trượt cả kỳ thi. Mẹo giờ nghỉ: về chỗ trước giờ bắt đầu phần sau.",
+        "type": "choice",
+        "options": [
+          "Vào ngồi, nghe từ câu đang phát",
+          "Thi bù phần nghe sau buổi thi",
+          "Xin giám thị cho nghe lại từ đầu",
+          "Không được vào, nên trượt cả kỳ thi"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t7-q11",
+        "prompt": "Đang làm bài, điện thoại để chế độ rung trong túi của bạn rung lên vì có tin nhắn. Theo Hướng dẫn dự thi?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Hướng dẫn dự thi coi chuông điện thoại, kể cả rung, hoặc báo thức kêu trong giờ thi là vi phạm: giám thị cho dừng thi. Mẹo: tắt nguồn hẳn đến hết buổi thi, không chỉ để rung.",
+        "type": "choice",
+        "options": [
+          "Là vi phạm, có thể bị dừng thi",
+          "Không sao vì chỉ rung, không kêu",
+          "Không sao nếu không cầm lên xem",
+          "Chỉ bị nhắc nếu rung quá 3 lần"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t7-q12",
+        "prompt": "Bạn nên mang loại đồng hồ nào vào phòng thi?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo checklist: đồng hồ kim, không chuông, đã tắt báo thức. Báo thức kêu là vi phạm; Hướng dẫn dự thi không cho dùng đồng hồ thông minh làm đồng hồ; điện thoại phải tắt nên không dùng để xem giờ.",
+        "type": "choice",
+        "options": [
+          "Đồng hồ thông minh để xem nhịp tim",
+          "Đồng hồ điện tử báo giờ mỗi tiếng",
+          "Đồng hồ kim, đã tắt báo thức",
+          "Không cần, xem giờ trên điện thoại"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t7-q13",
+        "prompt": "Trong phần {文法|ぶんぽう}・{読解|どっかい}, bạn nên tô phiếu trả lời lúc nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo tô phiếu ngay khi làm: xong một もんだい thì tô luôn và so số câu với số dòng. Dồn cuối giờ dễ thiếu thời gian và tô lệch; bỏ câu chưa chắc là mất điểm vì sai không bị trừ; hết giờ phần này là phải dừng bút, không chờ đến sau phần nghe được.",
+        "type": "choice",
+        "options": [
+          "Dồn đến 5 phút cuối, tô một lượt",
+          "Chỉ tô những câu chắc chắn đúng",
+          "Tô sau khi thi xong phần nghe",
+          "Xong mỗi もんだい thì tô ngay"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t7-q14",
+        "prompt": "Còn 2 phút hết phần {文字|もじ}・{語彙|ごい}, bạn còn 3 câu chưa làm. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "JLPT không trừ điểm câu sai, nên mẹo không bỏ trống: tô mỗi câu một đáp án. Không có thêm giờ, và hết giờ là phải dừng bút, không tô bù vào giờ nghỉ.",
+        "type": "choice",
+        "options": [
+          "Để trống, vì sai sẽ bị trừ điểm",
+          "Tô mỗi câu một đáp án",
+          "Xin giám thị thêm 2 phút",
+          "Để giờ nghỉ tô sau"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t7-q15",
+        "prompt": "Còn 10 phút, bạn phát hiện từ câu 5 mình đã tô lệch xuống một dòng trên phiếu trả lời. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo tô đúng dòng: lệch một dòng là sai cả loạt, nên phải sửa ngay: tẩy sạch từ câu 5, tô lại đúng dòng rồi làm tiếp. Để vậy thì gần như mất hết các câu đó; tô thêm làm một câu có hai đáp án. Lần sau so số câu ở đầu mỗi もんだい.",
+        "type": "choice",
+        "options": [
+          "Để vậy vì sửa mất thời gian",
+          "Tô thêm đáp án đúng bên cạnh",
+          "Tẩy sạch từ câu 5, tô lại đúng dòng",
+          "Bỏ phiếu đó, làm câu còn lại"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t7-q16",
+        "prompt": "Giờ nghỉ sau phần {読解|どっかい}, nhóm bạn bàn đáp án bài đọc và bạn biết mình sai 2 câu. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo giờ nghỉ: không bàn đáp án, quên phần đã thi, chuẩn bị cho phần nghe (60 điểm riêng, sàn 19). Phiếu đã nộp không sửa được; bỏ về là thiếu một phần nên trượt; giờ nghỉ bật điện thoại là vi phạm.",
+        "type": "choice",
+        "options": [
+          "Thôi bàn, uống nước, chuẩn bị nghe",
+          "Xin giám thị sửa lại phiếu",
+          "Bỏ về vì chắc chắn trượt",
+          "Mở điện thoại tra đáp án"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t7-q17",
+        "passage": "ナム：「{受験票|じゅけんひょう}と パスポート、{持|も}って きた？」\nミン：「うん、{両方|りょうほう} あるよ。{鉛筆|えんぴつ}も {三本|さんぼん} {持|も}って きた。」\nナム：「スマホは？」\nミン：「あ、まだ {電源|でんげん}が {入|はい}って いる。」",
+        "prompt": "{試験|しけん}の {前|まえ}に、ミンさんは {何|なに}を しなければ なりませんか。",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "ミン đã có phiếu dự thi, hộ chiếu và ba cây bút chì; chỉ còn điện thoại 電源が 入って いる (đang bật) → phải tắt nguồn (電源を 切る). Mẹo checklist: giấy tờ, bút chì – tẩy, điện thoại tắt hẳn.",
+        "type": "choice",
+        "options": [
+          "{鉛筆|えんぴつ}を {買|か}いに {行|い}く",
+          "パスポートを {取|と}りに {帰|かえ}る",
+          "スマホの {電源|でんげん}を {切|き}る",
+          "{受験票|じゅけんひょう}を コピーする"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t7-q18",
+        "prompt": "Sáng 06/12, bạn đã tới điểm thi, còn 40 phút đến giờ tập trung. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Mẹo đến sớm: tìm phòng, đi vệ sinh, tắt điện thoại, lướt một trang sổ lỗi. Học mẫu mới hay làm bài đọc lạ sát giờ thi chỉ gây hoang mang; uống nhiều cà phê dễ phải đi vệ sinh giữa giờ.",
+        "type": "choice",
+        "options": [
+          "Làm thêm một bài đọc hiểu mới",
+          "Học 20 mẫu ngữ pháp chưa thuộc",
+          "Uống 3 ly cà phê cho tỉnh",
+          "Tìm phòng, đi vệ sinh, tắt điện thoại"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t7-q19",
+        "prompt": "Giờ tập trung và địa chỉ điểm thi của bạn được báo ở đâu?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Giờ tập trung do đơn vị tổ chức quy định và in trên phiếu dự thi (受験票), cùng tên và địa chỉ điểm thi. Giờ và nơi thi khác nhau theo điểm thi, nên mọi thứ “tùy điểm thi” đều phải kiểm tra phiếu dự thi.",
+        "type": "choice",
+        "options": [
+          "Trên phiếu dự thi ({受験票|じゅけんひょう})",
+          "Trên chứng chỉ JLPT năm trước",
+          "Ở trang đầu tập đề",
+          "Mọi điểm thi giống nhau, không cần xem"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t7-q20",
+        "prompt": "Thi xong, bạn muốn chép lại một câu phần nghe để đăng lên nhóm Facebook hỏi đáp án. Có được không?",
+        "points": 1,
+        "tags": ["n4", "tips", "test-day"],
+        "explain": "Hướng dẫn dự thi coi việc chép, chụp, ghi âm hay chia sẻ nội dung đề lên mạng là vi phạm, kể cả sau khi thi; có thể bị hủy kết quả và cấm dự thi về sau. Không ghi tên hay chỉ chép lại cũng vẫn là vi phạm.",
+        "type": "choice",
+        "options": [
+          "Được, vì kỳ thi đã kết thúc",
+          "Không: chia sẻ nội dung đề là vi phạm",
+          "Được, nếu không ghi tên mình",
+          "Chỉ cấm chụp ảnh, chép lại thì được"
+        ],
+        "multiple": false,
+        "answer": [1]
+      }
+    ]
+  }
+}

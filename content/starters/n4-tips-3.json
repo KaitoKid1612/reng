@@ -1,0 +1,596 @@
+{
+  "id": "n4-tips-3",
+  "title": "Mẹo N4 · 3 – Từ vựng",
+  "titleJa": "N4の コツ 3　語彙",
+  "summary": "Mẹo làm ba dạng từ vựng của đề JLPT N4: もんだい3 文脈規定 (cụm từ, trợ từ, đuôi câu), もんだい4 言い換え類義 (nghĩa lõi, bẫy phủ định và trái nghĩa), もんだい5 用法 (thử nghĩa trong từng câu); thêm katakana gốc tiếng Anh, cặp tự/tha động từ, trợ số từ và cách học từ theo cụm, theo chủ đề. Mẹo được tổng hợp từ trang chính thức JLPT và các tài liệu luyện thi công khai; mọi ví dụ và 20 câu luyện đều là nội dung gốc.",
+  "order": 3,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t3-s01",
+        "type": "title",
+        "jp": "{語彙|ごい}の コツ",
+        "vi": "Mẹo N4 · 3 – Từ vựng"
+      },
+      {
+        "id": "n4t3-s02",
+        "type": "note",
+        "title": "Từ vựng trong đề N4",
+        "body": "1. Phần 文字・語彙 làm trong 25 phút, gồm 5 dạng: もんだい1 đọc kanji, 2 viết kanji, 3 chọn từ hợp ngữ cảnh, 4 câu cùng nghĩa, 5 cách dùng từ.\n2. Bộ này tập trung vào もんだい3–5; mẹo kanji (もんだい1–2) ở bộ Mẹo N4 · 2.\n3. Từ vựng còn quyết định cả đọc hiểu và nghe, nên học từ là lợi cho cả bài.\n4. Mỗi mẹo có ví dụ; cuối bộ có 20 câu luyện để áp dụng ngay."
+      },
+      {
+        "id": "n4t3-s03",
+        "type": "table",
+        "title": "Ba dạng từ vựng: làm thế nào",
+        "columns": ["Dạng", "Tên", "Đề cho", "Cách làm nhanh"],
+        "rows": [
+          ["もんだい3", "{文脈規定|ぶんみゃくきてい}", "câu có （　　）", "đọc cả câu, tự đoán từ"],
+          [
+            "もんだい4",
+            "{言|い}い{換|か}え{類義|るいぎ}",
+            "câu có ＿＿＿",
+            "đổi ＿＿＿ ra nghĩa lõi"
+          ],
+          ["もんだい5", "{用法|ようほう}", "1 từ + 4 câu", "thử nghĩa trong từng câu"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Ba dạng này kiểm tra nghĩa và cách dùng, không kiểm tra mặt chữ: biết đọc từ vẫn có thể sai nếu không biết nó đi với gì."
+      },
+      {
+        "id": "n4t3-s04",
+        "type": "note",
+        "title": "もんだい3: đọc hết câu trước",
+        "body": "1. Che 4 lựa chọn, đọc cả câu rồi tự nghĩ từ cần điền (nghĩ bằng tiếng Việt cũng được).\n2. Sau đó mới xem lựa chọn và tìm từ khớp với nghĩa vừa nghĩ.\n3. 4 lựa chọn thường cùng loại từ (4 danh từ, 4 động từ), nên chỉ nghĩa và cụm từ mới giúp loại.\n4. Ví dụ: {誕生日|たんじょうび}に {友|とも}だちから {花|はな}を （　　）。→ “nhận” → もらいました."
+      },
+      {
+        "id": "n4t3-s05",
+        "type": "table",
+        "title": "Danh từ nào đi với động từ nào",
+        "columns": ["Danh từ", "Động từ", "Nghĩa"],
+        "rows": [
+          ["{電話|でんわ}を", "かける", "gọi điện"],
+          ["かさを", "さす", "che ô"],
+          ["めがねを", "かける", "đeo kính"],
+          ["ぼうしを", "かぶる", "đội mũ"],
+          ["くつ／ズボンを", "はく", "đi giày, mặc quần"],
+          ["シャツを", "{着|き}る", "mặc áo"],
+          ["ネクタイを", "しめる", "thắt cà vạt"],
+          ["シャワーを", "あびる", "tắm vòi sen"],
+          ["{写真|しゃしん}を", "とる", "chụp ảnh"],
+          ["かぜを", "ひく", "bị cảm"],
+          ["{薬|くすり}を", "{飲|の}む", "uống thuốc"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Tiếng Việt chỉ có “mặc/đeo/đội”, tiếng Nhật chia theo bộ phận cơ thể: 着る (thân trên), はく (chân), かぶる (đầu), かける (kính). Che cột 2 và hỏi nhanh."
+      },
+      {
+        "id": "n4t3-s06",
+        "type": "dialogue",
+        "title": "Cụm từ trong hội thoại: đi khám",
+        "lines": [
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "どう しましたか。",
+            "vi": "Anh bị làm sao?"
+          },
+          {
+            "speaker": "ミン",
+            "jp": "かぜを ひいて、{熱|ねつ}が あるんです。",
+            "vi": "Tôi bị cảm, đang sốt."
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "せきも {出|で}ますか。",
+            "vi": "Có ho không?"
+          },
+          {
+            "speaker": "ミン",
+            "jp": "はい、{夜|よる}も よく {寝|ね}られません。",
+            "vi": "Có, đêm cũng không ngủ ngon được."
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "この {薬|くすり}を {飲|の}んで、{休|やす}んで ください。",
+            "vi": "Anh uống thuốc này rồi nghỉ nhé."
+          },
+          {
+            "speaker": "ミン",
+            "jp": "おふろに {入|はい}っても いいですか。",
+            "vi": "Tôi tắm bồn có được không ạ?"
+          }
+        ],
+        "reveal": true,
+        "teacherNotes": "Cho học viên tìm 5 cụm: かぜを ひく, 熱が ある, せきが 出る, 薬を 飲む, おふろに 入る. Nhắc: thuốc thì 飲む, không 食べる."
+      },
+      {
+        "id": "n4t3-s07",
+        "type": "note",
+        "title": "Trợ từ và đuôi câu là manh mối",
+        "body": "1. Nhìn chữ ngay trước và ngay sau （　　）: trợ từ cho biết từ đi kèm.\n2. 〜が します đi với おと, こえ, におい, あじ: おと cho đồ vật, こえ cho người và con vật.\n3. Đuôi phủ định (〜ません) gọi なかなか, あまり, ぜんぜん; lời mời, lời nhờ (〜て ください) gọi ぜひ.\n4. Ví dụ: {台所|だいどころ}から カレーの （　　）が します。→ におい."
+      },
+      {
+        "id": "n4t3-s08",
+        "type": "quiz",
+        "ref": "n4t3-q01"
+      },
+      {
+        "id": "n4t3-s09",
+        "type": "quiz",
+        "ref": "n4t3-q03"
+      },
+      {
+        "id": "n4t3-s10",
+        "type": "note",
+        "title": "もんだい4: tìm nghĩa lõi",
+        "body": "1. Dịch phần gạch chân ra nghĩa đơn giản nhất: こんで いる → “nhiều người”.\n2. Tìm lựa chọn nói đúng nghĩa đó bằng từ dễ hơn: {人|ひと}が {多|おお}い.\n3. Phần còn lại của câu thường giống nhau ở cả 4 lựa chọn: chỉ so phần thay đổi.\n4. Bẫy: lựa chọn nói chuyện “có liên quan” nhưng không cùng nghĩa (đông người ≠ đắt, ≠ ngon)."
+      },
+      {
+        "id": "n4t3-s11",
+        "type": "table",
+        "title": "Cặp diễn đạt lại hay gặp",
+        "columns": ["Trong đề", "Lựa chọn đúng", "Nghĩa"],
+        "rows": [
+          ["しゅっぱつする", "{出|で}る／{出|で}かける", "xuất phát"],
+          ["るすだ", "{家|いえ}に いない", "vắng nhà"],
+          ["すいて いる", "{人|ひと}が {少|すく}ない", "vắng người"],
+          ["こんで いる", "{人|ひと}が {多|おお}い", "đông người"],
+          ["さっき", "{少|すこ}し {前|まえ}に", "vừa nãy"],
+          ["こしょうする", "{動|うご}かない", "bị hỏng (máy)"],
+          ["びっくりする", "おどろく", "giật mình"],
+          ["しかられる", "おこられる", "bị mắng"],
+          ["よういする", "じゅんびする", "chuẩn bị"],
+          ["れんらくする", "{知|し}らせる", "liên lạc, báo tin"],
+          ["たばこを やめる", "もう すわない", "bỏ thuốc lá"],
+          ["ほとんど 〜ない", "{少|すこ}ししか 〜ない", "hầu như không"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột 2, đọc cột 1 và cho học viên tự nói câu đồng nghĩa bằng từ dễ."
+      },
+      {
+        "id": "n4t3-s12",
+        "type": "note",
+        "title": "Bẫy phủ định và trái nghĩa",
+        "body": "1. Đề hay đổi thành “từ trái nghĩa + ない”: {暗|くら}い ＝ {明|あか}るく ない; {古|ふる}い ＝ {新|あたら}しく ない.\n2. 〜ないで ください có nghĩa là hãy làm điều ngược lại: {遅|おく}れないで ＝ {時間|じかん}どおりに {来|く}る.\n3. Lựa chọn có đúng từ trong đề nhưng thiếu hoặc thừa ない là bẫy: đọc kỹ đuôi câu.\n4. Lựa chọn trái nghĩa hẳn (こむ ↔ すく, {出|で}る ↔ {着|つ}く) cũng là bẫy hay gặp."
+      },
+      {
+        "id": "n4t3-s13",
+        "type": "quiz",
+        "ref": "n4t3-q08"
+      },
+      {
+        "id": "n4t3-s14",
+        "type": "note",
+        "title": "もんだい5: thử nghĩa trong từng câu",
+        "body": "1. Nói nghĩa của từ và nó đi với gì: よやく → “đặt trước” (ホテル, {店|みせ}).\n2. Đọc cả 4 câu, thay từ bằng nghĩa tiếng Việt: câu nào nghe vô lý thì gạch.\n3. Câu sai thường đặt từ vào chỗ của một từ khác cùng chủ đề (よやく vào chỗ của やくそく).\n4. Câu sai còn có thể sai trợ từ, sai 自他, hoặc ぜひ／なかなか sai đuôi câu.\n5. Còn 2 câu thì chọn câu tự nhiên hơn; không bỏ trống."
+      },
+      {
+        "id": "n4t3-s15",
+        "type": "table",
+        "title": "Từ dễ nhầm trong もんだい5",
+        "columns": ["Từ", "Nghĩa", "Dễ nhầm với", "Nghĩa từ kia"],
+        "rows": [
+          ["おみまい", "thăm người ốm", "おいわい", "chúc mừng"],
+          ["おれい", "cảm ơn (lời, quà)", "おわび", "xin lỗi"],
+          ["あんない", "dẫn đường, chỉ chỗ", "しょうかい", "giới thiệu (người)"],
+          ["よやく", "đặt trước", "やくそく", "hẹn, hứa"],
+          ["ちゅうい", "nhắc nhở, chú ý", "ちゅうもん", "gọi món, đặt hàng"],
+          ["しゅみ", "sở thích", "きょうみ", "sự quan tâm"],
+          ["しあい", "trận đấu", "しけん", "kỳ thi"],
+          ["さびしい", "buồn, cô đơn", "しずか", "yên tĩnh"],
+          ["にがい", "đắng", "にがて", "kém, không giỏi"],
+          ["ぜひ", "nhất định (mong muốn)", "きっと", "chắc chắn (đoán)"],
+          ["なかなか〜ない", "mãi không…", "ぜんぜん〜ない", "hoàn toàn không"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Những cặp này giống nhau về âm hoặc cùng chủ đề; câu sai ở もんだい5 thường là chỗ của từ ở cột 3."
+      },
+      {
+        "id": "n4t3-s16",
+        "type": "quiz",
+        "ref": "n4t3-q11"
+      },
+      {
+        "id": "n4t3-s17",
+        "type": "note",
+        "title": "Katakana: đọc to, đoán gốc",
+        "body": "1. Đọc to từ katakana và nghe xem giống từ tiếng Anh nào: パソコン ← personal computer.\n2. Nhiều từ bị rút gọn: エアコン, パソコン, コンビニ, スーパー.\n3. Có từ nghĩa khác tiếng Anh hoặc không có trong tiếng Anh: マンション (chung cư), アルバイト (gốc tiếng Đức), コンセント (ổ điện).\n4. Khi chọn cách viết, để ý trường âm ー và っ: コーヒー, ベッド, ノート."
+      },
+      {
+        "id": "n4t3-s18",
+        "type": "table",
+        "title": "Katakana: gốc và nghĩa ở Nhật",
+        "columns": ["Katakana", "Gốc", "Nghĩa ở Nhật"],
+        "rows": [
+          ["パソコン", "personal computer", "máy tính cá nhân"],
+          ["エアコン", "air conditioner", "máy điều hòa"],
+          ["コンビニ", "convenience store", "cửa hàng tiện lợi"],
+          ["スーパー", "supermarket", "siêu thị"],
+          ["マンション", "mansion", "chung cư (khá tốt)"],
+          ["アルバイト", "Arbeit (tiếng Đức)", "việc làm thêm"],
+          ["コンセント", "和製英語 (Anh: outlet)", "ổ cắm điện"],
+          ["ガソリンスタンド", "和製英語 (Anh: gas station)", "cây xăng"],
+          ["ストーブ", "stove", "lò sưởi"],
+          ["レジ", "register", "quầy thu ngân"],
+          ["スーツケース", "suitcase", "vali"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "マンション không phải biệt thự (mansion): là căn hộ trong tòa chung cư bê tông. Biệt thự thì nói 大きい 家. コンセント, ガソリンスタンド là 和製英語 (tiếng Anh do Nhật tự ghép): nói với người nước ngoài sẽ không hiểu."
+      },
+      {
+        "id": "n4t3-s19",
+        "type": "note",
+        "title": "Tự động từ – tha động từ (自他)",
+        "body": "1. 自動詞 đi với が: việc tự xảy ra. {窓|まど}が {開|あ}く.\n2. 他動詞 đi với を: có người làm. {窓|まど}を {開|あ}ける.\n3. Trước （　　） là が thì chọn 自; là を thì chọn 他.\n4. Trạng thái: 自 + て いる (ドアが {開|あ}いて いる); 他 + て ある (ドアが {開|あ}けて ある: có người đã mở).\n5. Học theo cặp, đọc to cả hai: {開|あ}く・{開|あ}ける."
+      },
+      {
+        "id": "n4t3-s20",
+        "type": "table",
+        "title": "Cặp 自他 hay gặp",
+        "columns": ["自動詞（が）", "他動詞（を）", "Nghĩa"],
+        "rows": [
+          ["{開|あ}く", "{開|あ}ける", "mở"],
+          ["{閉|し}まる", "{閉|し}める", "đóng"],
+          ["つく", "つける", "bật (đèn, máy)"],
+          ["{消|き}える", "{消|け}す", "tắt"],
+          ["{始|はじ}まる", "{始|はじ}める", "bắt đầu"],
+          ["{止|と}まる", "{止|と}める", "dừng"],
+          ["{落|お}ちる", "{落|お}とす", "rơi / đánh rơi"],
+          ["こわれる", "こわす", "hỏng / làm hỏng"],
+          ["{出|で}る", "{出|だ}す", "ra / lấy ra"],
+          ["{入|はい}る", "{入|い}れる", "vào / cho vào"],
+          ["{集|あつ}まる", "{集|あつ}める", "tụ tập / thu thập"],
+          ["{決|き}まる", "{決|き}める", "được định / quyết định"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Quy luật nhỏ: cặp 〜まる／〜める thì 〜まる là 自; cặp 〜れる／〜す thì 〜す là 他."
+      },
+      {
+        "id": "n4t3-s21",
+        "type": "quiz",
+        "ref": "n4t3-q16"
+      },
+      {
+        "id": "n4t3-s22",
+        "type": "note",
+        "title": "Trợ số từ: đếm theo hình dạng",
+        "body": "1. Vật dài 〜{本|ほん}, vật mỏng 〜{枚|まい}, máy và xe 〜{台|だい}, sách vở 〜{冊|さつ}, con vật nhỏ 〜{匹|ひき}.\n2. Biến âm với 1, 3, 6, 8, 10 và {何|なん}: いっぽん, さんぼん, ろっぽん, はっぽん, じゅっぽん, なんぼん.\n3. Đề hỏi cả chọn trợ số từ (もんだい3) lẫn cách đọc (もんだい1).\n4. Học bằng đồ thật quanh mình: đếm bút, áo, xe ngoài đường bằng tiếng Nhật."
+      },
+      {
+        "id": "n4t3-s23",
+        "type": "table",
+        "title": "Trợ số từ N4 và cách đọc",
+        "columns": ["Trợ số từ", "Dùng cho", "Ví dụ"],
+        "rows": [
+          ["〜{本|ほん}", "vật dài", "えんぴつ {6本|ろっぽん}"],
+          ["〜{枚|まい}", "vật mỏng", "きって {2枚|にまい}"],
+          ["〜{台|だい}", "máy, xe", "{車|くるま} {1台|いちだい}"],
+          ["〜{冊|さつ}", "sách, vở", "ノート {1冊|いっさつ}"],
+          ["〜{匹|ひき}", "con vật nhỏ", "ねこ {3匹|さんびき}"],
+          ["〜{杯|はい}", "cốc, bát", "コーヒー {1杯|いっぱい}"],
+          ["〜{足|そく}", "đôi giày, tất", "くつ {3足|さんぞく}"],
+          ["〜{階|かい}", "tầng", "{3階|さんがい}"],
+          ["〜{回|かい}", "lần", "{1回|いっかい}"],
+          ["〜{歳|さい}", "tuổi", "{20歳|はたち}"],
+          ["〜{番|ばん}", "số thứ tự", "{1番|いちばん}"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột 3, đọc to. 3階 đọc truyền thống là さんがい (何階 なんがい); ngày nay さんかい cũng được nghe nhiều, nhưng nên nhớ さんがい."
+      },
+      {
+        "id": "n4t3-s24",
+        "type": "quiz",
+        "ref": "n4t3-q19"
+      },
+      {
+        "id": "n4t3-s25",
+        "type": "note",
+        "title": "Học từ theo cụm và chủ đề",
+        "body": "1. Ghi cả cụm: かぜを ひく, {熱|ねつ}が ある, かさを さす; đừng ghi riêng ひく.\n2. Gom theo chủ đề: bệnh viện, nhà ga, cửa hàng, công việc, thời tiết.\n3. Mỗi từ mới tự đặt một câu về đời sống của mình.\n4. Học kèm cặp: trái nghĩa (こむ ↔ すく), gần nghĩa (しゅっぱつする ＝ {出|で}る), 自他 (つく・つける).\n5. Ôn lại sau 1, 3, 7 ngày; từ hay sai thì chép vào sổ riêng."
+      },
+      {
+        "id": "n4t3-s26",
+        "type": "note",
+        "title": "Ôn từ với bộ đề hằng ngày",
+        "body": "1. Làm bộ 67 câu mỗi ngày; câu từ vựng sai thì chép cả câu, không chỉ chép từ.\n2. Câu もんだい4 sai: viết thêm một câu đồng nghĩa của riêng mình.\n3. Câu もんだい5 sai: ghi nghĩa của từ đúng và từ bị nhầm (như おみまい／おいわい).\n4. Còn khoảng 3 tuần đến 06/12: ôn sổ từ sai trước khi học thêm từ mới.\n5. 文字・語彙 chỉ có 25 phút: câu không chắc thì chọn tạm, đánh dấu rồi đi tiếp."
+      },
+      {
+        "id": "n4t3-s27",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. もんだい3: đọc cả câu, tự đoán từ; dựa vào cụm từ, trợ từ và đuôi câu.\n2. もんだい4: rút phần gạch chân về nghĩa lõi; cẩn thận ない và từ trái nghĩa.\n3. もんだい5: thử nghĩa của từ trong cả 4 câu, gạch câu vô lý.\n4. Katakana: đọc to đoán gốc; 自他: が → 自, を → 他; trợ số từ theo hình dạng.\n5. Học theo cụm, theo chủ đề, ôn từ sai mỗi ngày; không bỏ trống câu nào."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t3-q01",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{外|そと}は {雨|あめ}なので、かさを （　　） {歩|ある}きましょう。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo cụm từ (もんだい3): かさを さす = che ô → さして 歩く. かける đi với 電話, めがね; はく với くつ, ズボン; かぶる với ぼうし.",
+        "type": "choice",
+        "options": ["かけて", "はいて", "さして", "かぶって"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t3-q02",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{雨|あめ}に ぬれて {帰|かえ}ったので、かぜを （　　） しまいました。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo cụm từ + trợ từ: かぜを ひく = bị cảm. Trước chỗ trống là を nên かかる (かぜに かかる) không hợp; とる, もらう không đi với かぜ.",
+        "type": "choice",
+        "options": ["ひいて", "とって", "もらって", "かかって"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t3-q03",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{毎晩|まいばん}、{電車|でんしゃ}が {通|とお}る （　　）が して、うるさいです。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo đuôi câu: 〜が します đi với おと, こえ, におい, あじ; rồi xét nghĩa: うるさい và tàu điện chạy qua → âm thanh của vật = おと. こえ chỉ dùng cho người, con vật; におい (mùi), あじ (vị) không gây ồn.",
+        "type": "choice",
+        "options": ["におい", "あじ", "こえ", "おと"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t3-q04",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{来週|らいしゅう}の {旅行|りょこう}の ホテルは、もう （　　）しましたか。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo đọc cả câu: ホテル + もう…しましたか → “đã đặt phòng chưa” → よやく (đặt trước). やくそく là hẹn với người, しょうかい là giới thiệu, ちゅうもん là gọi món, đặt hàng.",
+        "type": "choice",
+        "options": ["やくそく", "よやく", "しょうかい", "ちゅうもん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t3-q05",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{漢字|かんじ}を {何回|なんかい}も {書|か}いたのに、（　　） {覚|おぼ}えられません。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo đuôi câu: câu kết thúc bằng phủ định 〜られません → なかなか〜ない (mãi không…). かならず, ぜひ, もうすぐ không đi với ý “mãi không nhớ được”.",
+        "type": "choice",
+        "options": ["なかなか", "かならず", "ぜひ", "もうすぐ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t3-q06",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{田中|たなか}さんは [[さっき]] {出|で}かけました。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo nghĩa lõi (もんだい4): さっき = vừa nãy = 少し前に. きのう là hôm qua, もうすぐ là sắp (tương lai), 長い時間 nói độ dài chứ không nói thời điểm.",
+        "type": "choice",
+        "options": [
+          "{田中|たなか}さんは きのう {出|で}かけました。",
+          "{田中|たなか}さんは もうすぐ {出|で}かけます。",
+          "{田中|たなか}さんは {少|すこ}し {前|まえ}に {出|で}かけました。",
+          "{田中|たなか}さんは {長|なが}い {時間|じかん} {出|で}かけて いました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t3-q07",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{旅行|りょこう}の {日|ひ}は、{朝|あさ} 6{時|じ}に {家|いえ}を [[しゅっぱつします]]。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo nghĩa lõi: しゅっぱつする = xuất phát, rời đi = 出る (家を 出る). 家に 着く (về tới nhà) là bẫy trái nghĩa; 家に 帰る là quay về, 家で 休む là nghỉ ở nhà: đều không phải rời đi.",
+        "type": "choice",
+        "options": [
+          "{旅行|りょこう}の {日|ひ}は、{朝|あさ} 6{時|じ}に {家|いえ}に {帰|かえ}ります。",
+          "{旅行|りょこう}の {日|ひ}は、{朝|あさ} 6{時|じ}に {家|いえ}を {出|で}ます。",
+          "{旅行|りょこう}の {日|ひ}は、{朝|あさ} 6{時|じ}に {家|いえ}に {着|つ}きます。",
+          "{旅行|りょこう}の {日|ひ}は、{朝|あさ} 6{時|じ}に {家|いえ}で {休|やす}みます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t3-q08",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}は {料理|りょうり}が [[{下手|へた}です]]。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo “trái nghĩa + ない”: 下手です (kém) = 上手では ありません. Lựa chọn 上手です thiếu ない nên ngược nghĩa; 好きではない là không thích, よく作ります là hay nấu: đều khác với nấu kém.",
+        "type": "choice",
+        "options": [
+          "{兄|あに}は {料理|りょうり}が {好|す}きでは ありません。",
+          "{兄|あに}は {料理|りょうり}を よく {作|つく}ります。",
+          "{兄|あに}は {料理|りょうり}が {上手|じょうず}です。",
+          "{兄|あに}は {料理|りょうり}が {上手|じょうず}では ありません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t3-q09",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたは [[{辞書|じしょ}を {忘|わす}れないで ください]]。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo phủ định: 忘れないで ください (đừng quên) = hãy làm điều ngược lại = nhất định mang theo (かならず 持って きて). Hai lựa chọn “đừng mang”, “để ở nhà” là bẫy ngược nghĩa; 使わないで là chuyện khác.",
+        "type": "choice",
+        "options": [
+          "あしたは {辞書|じしょ}を かならず {持|も}って きて ください。",
+          "あしたは {辞書|じしょ}を {持|も}って こないで ください。",
+          "あしたは {辞書|じしょ}を {使|つか}わないで ください。",
+          "あしたは {辞書|じしょ}を {家|いえ}に おいて きて ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t3-q10",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "エレベーターが [[こしょうして います]]。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo nghĩa lõi: こしょうする = máy bị hỏng = 動かない. よく動きます là bẫy thiếu ない (ngược nghĩa); こんで います (đông), 新しく なりました (được thay mới) là chuyện có liên quan nhưng khác nghĩa.",
+        "type": "choice",
+        "options": [
+          "エレベーターが {新|あたら}しく なりました。",
+          "エレベーターが {動|うご}きません。",
+          "エレベーターが こんで います。",
+          "エレベーターが よく {動|うご}きます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t3-q11",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "おみまい",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo thử nghĩa trong từng câu (もんだい5): おみまい = đi thăm người ốm, bị thương. Đám cưới cần おいわい, đến muộn cần おわび, giới thiệu bạn với mẹ là しょうかい: ba câu kia là chỗ của từ khác.",
+        "type": "choice",
+        "options": [
+          "{友|とも}だちの {結婚式|けっこんしき}で [[おみまい]]を {言|い}いました。",
+          "おくれて しまったので、{先生|せんせい}に [[おみまい]]を しました。",
+          "{新|あたら}しい {友|とも}だちを {母|はは}に [[おみまい]]しました。",
+          "{足|あし}を けがした {祖父|そふ}の [[おみまい]]に、くだものを {持|も}って {行|い}きました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t3-q12",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "あんない",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo thử nghĩa: あんない = dẫn đường, đưa đi xem. 町を あんないする đúng. Gọi món là ちゅうもん, nghĩa của từ là いみ, lập kế hoạch là けいかくを 立てる.",
+        "type": "choice",
+        "options": [
+          "レストランで ステーキを [[あんない]]しました。",
+          "わからない ことばの [[あんない]]を {先生|せんせい}に {聞|き}きました。",
+          "{日本|にほん}から {来|き}た お{客|きゃく}さんに {町|まち}を [[あんない]]しました。",
+          "{夏休|なつやす}みの {旅行|りょこう}の [[あんない]]を {立|た}てました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t3-q13",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "ぜひ",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo đuôi câu: ぜひ đi với mong muốn, lời mời, lời nhờ (〜て ください, 〜たい). Mưa hôm qua, sách không hay, em hay đi muộn đều không phải mong muốn.",
+        "type": "choice",
+        "options": [
+          "{日本|にほん}へ {来|き}たら、[[ぜひ]] わたしの {家|いえ}に {来|き}て ください。",
+          "きのうは [[ぜひ]] {雨|あめ}が ふりました。",
+          "この {本|ほん}は [[ぜひ]] おもしろく なかったです。",
+          "{弟|おとうと}は [[ぜひ]] {学校|がっこう}に おくれます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t3-q14",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "さびしい",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo thử nghĩa: さびしい = buồn, cô đơn vì vắng người, thiếu bạn. Trong thư viện phải しずかに する, cà ri cay là からい, được 100 điểm là うれしい.",
+        "type": "choice",
+        "options": [
+          "{図書館|としょかん}では [[さびしく]] して ください。",
+          "この カレーは [[さびしくて]]、{水|みず}が ほしく なります。",
+          "テストが 100{点|てん}で、とても [[さびしい]]です。",
+          "{引|ひ}っ{越|こ}した ばかりで、{友|とも}だちが いないので、[[さびしい]]です。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t3-q15",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{寒|さむ}いので、{部屋|へや}の （　　）を つけました。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo katakana: ストーブ (stove) ở Nhật là lò sưởi, và “bật” là つける. スーツケース là vali, コンセント là ổ điện, レジ là quầy thu ngân.",
+        "type": "choice",
+        "options": ["スーツケース", "ストーブ", "コンセント", "レジ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t3-q16",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{風|かぜ}で ドアが （　　）。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo 自他: trước chỗ trống là が và do gió (không có người làm) → tự động từ しまる → しまりました. Ba lựa chọn kia đều là しめる (tha động từ), cần を và người làm.",
+        "type": "choice",
+        "options": ["しめました", "しめて ください", "しまりました", "しめましょう"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t3-q17",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{教室|きょうしつ}の {電気|でんき}が まだ （　　） います。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo 自他: が + て いる (trạng thái) → tự động từ: 電気が ついて いる = đèn vẫn đang bật. つけて いる cần を (ai đó đang bật); けして, つけさせて cũng là tha động từ.",
+        "type": "choice",
+        "options": ["つけて", "ついて", "けして", "つけさせて"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t3-q18",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{妹|いもうと}に シャツを 2（　　） {買|か}って あげました。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo trợ số từ theo hình dạng: áo sơ mi là vật mỏng → 〜枚 (まい). ほん cho vật dài, だい cho máy và xe, さつ cho sách.",
+        "type": "choice",
+        "options": ["まい", "ほん", "だい", "さつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t3-q19",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{玄関|げんかん}に かさが [[3本]] あります。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo biến âm trợ số từ: 〜本 sau 3 (và 何) đọc ぼん: さんぼん, なんぼん. ぽん chỉ sau 1, 6, 8, 10 (いっぽん, ろっぽん…); さんほん thiếu biến âm, さっぽん không có.",
+        "type": "choice",
+        "options": ["さんほん", "さんぽん", "さっぽん", "さんぼん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t3-q20",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅|えき}の {近|ちか}くの （　　）の 10{階|かい}に {住|す}んで います。",
+        "points": 1,
+        "tags": ["n4", "tips", "vocabulary"],
+        "explain": "Mẹo katakana nghĩa riêng: マンション ở Nhật là chung cư nhiều tầng, nên ở tầng 10 được. アルバイト là việc làm thêm, パソコン là máy tính, ガソリンスタンド là cây xăng.",
+        "type": "choice",
+        "options": ["アルバイト", "パソコン", "マンション", "ガソリンスタンド"],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

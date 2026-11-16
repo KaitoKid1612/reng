@@ -8,7 +8,12 @@ import { CreateTeachingLessonForm } from "@/components/teaching/create-teaching-
 import { buttonVariants } from "@/components/ui/button";
 import { requireTeacher } from "@/lib/server/account";
 import { listOwnedLessons } from "@/lib/server/classes";
-import { findStarterForLesson, MINNA_STARTERS, N4_REVIEW_STARTERS } from "@/lib/starter-lessons";
+import {
+  findStarterForLesson,
+  MINNA_STARTERS,
+  N4_REVIEW_STARTERS,
+  N4_TIPS_STARTERS,
+} from "@/lib/starter-lessons";
 
 import type { StarterLesson } from "@/lib/starter-lessons";
 import type { Metadata } from "next";
@@ -88,6 +93,12 @@ export default async function NewLessonPage() {
             Bản đồ và 8 bài theo chủ đề, gom các mẫu dễ nhầm, kèm câu luyện kiểu đề JLPT.
           </span>
         </Link>
+        <Link href="#n4-tips-title" className="link-card">
+          <span className="link-card-title">Mẹo học và thi N4</span>
+          <span className="small muted">
+            Cách làm đề, mẹo kanji, từ vựng, đọc, nghe và lịch ôn, có câu luyện áp dụng.
+          </span>
+        </Link>
         <Link href="#detailed-lesson-title" className="link-card">
           <span className="link-card-title">Soạn tiếng Nhật từ đầu</span>
           <span className="small muted">
@@ -118,6 +129,14 @@ export default async function NewLessonPage() {
           bài vào lớp ôn N4 để học viên mở được trang Tra ngữ pháp của lớp khi làm bài.
         </p>
         {renderStarters(N4_REVIEW_STARTERS)}
+      </section>
+      <section className="section-block" aria-labelledby="n4-tips-title">
+        <h2 id="n4-tips-title">Mẹo học và thi JLPT N4</h2>
+        <p className="small muted">
+          Cách làm đề, mẹo học kanji, từ vựng, ngữ pháp, đọc, nghe và lịch ôn trước ngày thi; mỗi
+          mẹo có ví dụ và câu luyện để áp dụng ngay. Số liệu đề thi theo trang chính thức JLPT.
+        </p>
+        {renderStarters(N4_TIPS_STARTERS)}
       </section>
       <div className="create-lesson-columns">
         <section className="section-block" aria-labelledby="detailed-lesson-title">

@@ -1,0 +1,589 @@
+{
+  "id": "n4-tips-5",
+  "title": "Mẹo N4 · 5 – Đọc hiểu",
+  "titleJa": "N4のコツ 5　読解",
+  "summary": "Mẹo làm phần đọc hiểu JLPT N4: đọc câu hỏi trước, gạch từ khóa, tìm đáp án sau でも／しかし và ở câu cuối, xác định この／その／それ, nhận ra đáp án được nói lại bằng từ khác và bẫy chép từ trong bài, cách làm 情報検索 (gạch điều kiện rồi lọc bảng, đọc ※), thời gian cho từng bài. Mẹo tổng hợp từ trang chính thức JLPT và các tài liệu ôn thi công khai; mọi bài đọc, ví dụ và 20 câu luyện đều là nội dung gốc.",
+  "order": 5,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t5-s01",
+        "type": "title",
+        "jp": "{読解|どっかい}の コツ",
+        "vi": "Mẹo N4 · 5 – Đọc hiểu"
+      },
+      {
+        "id": "n4t5-s02",
+        "type": "note",
+        "title": "Ba dạng đọc hiểu ở N4",
+        "body": "1. 内容理解（短文）: bài khoảng 100–200 chữ (email, ghi chú, thông báo ngắn, đoạn văn), hỏi một ý.\n2. 内容理解（中文）: bài khoảng 450 chữ, vài câu hỏi đi theo thứ tự bài.\n3. 情報検索: thông báo, bảng, tờ rơi khoảng 400 chữ; tìm đúng dòng theo điều kiện.\nCả ba nằm chung giờ thi 55 phút với ngữ pháp, nên phải tự giữ thời gian cho phần đọc."
+      },
+      {
+        "id": "n4t5-s03",
+        "type": "note",
+        "title": "Đọc câu hỏi trước",
+        "body": "1. Đọc câu hỏi (và lướt 4 lựa chọn) trước khi đọc bài.\n2. Biết mình cần tìm gì: lý do, thời gian, đồ vật hay ý kiến.\n3. Rồi mới đọc bài, gặp chỗ liên quan thì đọc chậm lại.\nVí dụ câu hỏi: 「マイさんは あした {何|なに}を {持|も}って いきますか。」 → trong bài chỉ cần tìm 「{持|も}って」 và 「あした」."
+      },
+      {
+        "id": "n4t5-s04",
+        "type": "table",
+        "title": "Câu hỏi hỏi gì → tìm gì trong bài",
+        "columns": ["Câu hỏi", "Tìm trong bài"],
+        "rows": [
+          ["なぜ／どうして", "〜から, 〜ので, 〜て (lý do)"],
+          ["いつ", "ngày, giờ, 〜とき, 〜まえに"],
+          ["{何|なに}を しますか", "hành động của đúng người đó"],
+          ["このあと {何|なに}を", "việc sẽ làm, quyết định cuối"],
+          ["どう {思|おも}って いますか", "〜と {思|おも}う, ý kiến hiện tại"],
+          ["いちばん {言|い}いたい こと", "sau でも／しかし, câu cuối"],
+          ["「それ」は {何|なん}ですか", "câu ngay trước「それ」"],
+          ["{合|あ}って いる ものは", "so từng lựa chọn với bài"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột phải, đọc từ để hỏi và cho học viên nói mình sẽ tìm gì."
+      },
+      {
+        "id": "n4t5-s05",
+        "type": "note",
+        "title": "Gạch chân từ khóa trong câu hỏi",
+        "body": "Gạch 3 thứ trong câu hỏi: AI, KHI NÀO, có PHỦ ĐỊNH không.\nVí dụ: 「{山田|やまだ}さんが {先週|せんしゅう} しなかった ことは どれですか。」\n1. {山田|やまだ}さん – không phải「わたし」.\n2. {先週|せんしゅう} – không phải hôm nay.\n3. しなかった – tìm việc KHÔNG làm; ba lựa chọn kia là việc đã làm."
+      },
+      {
+        "id": "n4t5-s06",
+        "type": "quiz",
+        "ref": "n4t5-q01"
+      },
+      {
+        "id": "n4t5-s07",
+        "type": "note",
+        "title": "Đáp án thường nằm ở đâu",
+        "body": "1. Sau でも／しかし／けれども／ところが: ý thật sự của người viết.\n2. Câu cuối bài: ý chính, lời nhờ, quyết định.\n3. Sau 〜ではなく: thông tin đúng (cái trước bị bỏ).\n4. Sau じつは: điều quan trọng người viết muốn nói.\nThư, email: lời nhờ (〜て ください, 〜て いただけませんか) thường ở cuối."
+      },
+      {
+        "id": "n4t5-s08",
+        "type": "table",
+        "title": "Từ nối báo hiệu ý chính",
+        "columns": ["Từ", "Nghĩa", "Ý ở sau nó"],
+        "rows": [
+          ["でも／しかし", "nhưng", "ý chính, đổi hướng"],
+          ["ところが", "thế nhưng (bất ngờ)", "điều khác dự đoán"],
+          ["それで／だから", "vì thế", "kết quả"],
+          ["じつは", "thật ra", "điều quan trọng"],
+          ["たとえば", "ví dụ", "chỉ là ví dụ phụ"],
+          ["それに", "hơn nữa", "thêm một lý do"],
+          ["{最初|さいしょ}は〜{今|いま}は", "lúc đầu… giờ thì", "thay đổi; chú ý「今」"],
+          ["〜ではなく", "không phải… mà", "thông tin đúng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t5-s09",
+        "type": "note",
+        "title": "Ví dụ: ý chính đứng sau でも",
+        "body": "「{日本|にほん}に {来|き}た ときは、{電車|でんしゃ}の {乗|の}り{方|かた}が わからなくて {困|こま}りました。でも、{今|いま}は {一人|ひとり}で どこへでも {行|い}けます。」\nCâu hỏi「{今|いま}は どうですか」: đáp án là câu sau でも (tự đi được), không phải「{困|こま}りました」.\nThấy {最初|さいしょ}／{前|まえ}は … でも {今|いま}は …: xem kỹ câu hỏi hỏi lúc trước hay bây giờ."
+      },
+      {
+        "id": "n4t5-s10",
+        "type": "quiz",
+        "ref": "n4t5-q04"
+      },
+      {
+        "id": "n4t5-s11",
+        "type": "note",
+        "title": "この／その／それ chỉ cái gì",
+        "body": "1. それ／そこ／その〜 thường chỉ thứ vừa nói ở câu ngay trước.\n2. Thử thay lựa chọn vào chỗ「それ」: câu đọc vẫn đúng nghĩa là đáp án.\n3. Lựa chọn nói việc xảy ra SAU「それ」thì loại.\nVí dụ: 「{学校|がっこう}の {裏|うら}に {小|ちい}さい {公園|こうえん}が あります。{昼|ひる}は そこで お{弁当|べんとう}を {食|た}べます。」→ そこ = {公園|こうえん}, không phải {学校|がっこう}."
+      },
+      {
+        "id": "n4t5-s12",
+        "type": "quiz",
+        "ref": "n4t5-q06"
+      },
+      {
+        "id": "n4t5-s13",
+        "type": "note",
+        "title": "Đáp án đúng hay nói lại bằng từ khác",
+        "body": "Đáp án đúng thường không chép nguyên câu trong bài mà nói lại bằng từ khác (言い換え):\n「{人|ひと}が いっぱいだった」→「{込|こ}んで いた」.\n「ときどき {行|い}きます」→「{行|い}く ことが あります」.\nNên: hiểu ý câu trong bài, rồi tìm lựa chọn có CÙNG Ý, không tìm lựa chọn có cùng chữ."
+      },
+      {
+        "id": "n4t5-s14",
+        "type": "table",
+        "title": "Cách nói lại hay gặp",
+        "columns": ["Trong bài", "Trong đáp án", "Ý"],
+        "rows": [
+          ["{人|ひと}が いっぱい", "{込|こ}んで いる", "đông người"],
+          ["ときどき〜", "〜ことが ある", "thỉnh thoảng"],
+          ["〜を {買|か}いたい", "〜が ほしい", "muốn có"],
+          ["{人|ひと}が {少|すく}ない", "すいて いる", "vắng"],
+          ["{始|はじ}まる {前|まえ}に", "〜までに", "trước thời điểm đó"],
+          ["どこへも {行|い}かない", "{家|いえ}に いる", "ở nhà"],
+          ["{座|すわ}れた", "{席|せき}が あった", "có chỗ ngồi"],
+          ["お{金|かね}は いらない", "{無料|むりょう}", "miễn phí"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột giữa, cho học viên tự nói lại câu ở cột trái."
+      },
+      {
+        "id": "n4t5-s15",
+        "type": "note",
+        "title": "Bẫy chép từ trong bài",
+        "body": "Lựa chọn sai thường dùng đúng chữ trong bài nhưng đổi một chỗ nhỏ:\n1. Đổi người: {兄|あに} → わたし.\n2. Đổi thời gian hay thì: {行|い}きたい → {行|い}きました.\n3. Bỏ hay thêm phủ định; đổi mức độ: ときどき → いつも.\nLựa chọn càng giống chữ trong bài càng phải kiểm tra kỹ."
+      },
+      {
+        "id": "n4t5-s16",
+        "type": "table",
+        "title": "Bẫy: giống chữ, khác nghĩa",
+        "columns": ["Trong bài", "Lựa chọn sai", "Đã đổi gì"],
+        "rows": [
+          ["{行|い}きたいです", "{行|い}きました", "muốn → đã làm"],
+          ["{兄|あに}が {作|つく}った", "わたしが {作|つく}った", "đổi người"],
+          ["{来週|らいしゅう} {行|い}く", "{今週|こんしゅう} {行|い}った", "đổi thời gian"],
+          ["{好|す}きでは ない", "{好|す}きだ", "bỏ phủ định"],
+          ["ときどき {飲|の}む", "いつも {飲|の}む", "đổi mức độ"],
+          ["{雨|あめ}かもしれない", "{雨|あめ}が {降|ふ}る", "chắc chắn hóa"],
+          ["{前|まえ}は {高|たか}かった", "{今|いま}も {高|たか}い", "đổi thời điểm"],
+          ["{半分|はんぶん} {読|よ}んだ", "{全部|ぜんぶ} {読|よ}んだ", "đổi số lượng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t5-s17",
+        "type": "quiz",
+        "ref": "n4t5-q14"
+      },
+      {
+        "id": "n4t5-s18",
+        "type": "note",
+        "title": "Bài trung bình: đọc theo từng đoạn",
+        "body": "Câu hỏi của bài 中文 thường đi theo thứ tự bài: câu 1 ở đầu, câu cuối hay hỏi ý của cả bài.\n1. Đọc câu hỏi 1, đọc bài đến khi gặp chỗ trả lời, chọn ngay.\n2. Đọc câu hỏi 2, đọc tiếp từ chỗ vừa dừng.\n3. Câu hỏi ý chính: đọc lại đoạn cuối.\nKhông đọc hết cả bài rồi mới xem câu hỏi: dễ quên và mất thời gian."
+      },
+      {
+        "id": "n4t5-s19",
+        "type": "note",
+        "title": "Chỗ gạch chân ①②",
+        "body": "Câu hỏi「①〜とあるが、なぜですか」: đáp án thường ở câu ngay trước hoặc ngay sau chỗ gạch chân.\n1. Đọc lại 1–2 câu trước ①.\n2. Tìm 〜から／〜ので／〜て gần đó.\n3. Lựa chọn nói chuyện ở đoạn khác của bài thường là bẫy."
+      },
+      {
+        "id": "n4t5-s20",
+        "type": "note",
+        "title": "情報検索: điều kiện trước, bảng sau",
+        "body": "1. Gạch MỌI điều kiện trong câu hỏi: ngày, giờ, giá, tuổi, số người, đồ mang theo.\n2. Không đọc thông báo từ đầu đến cuối; lấy từng điều kiện lọc từng dòng.\n3. Đọc dòng ※ ở cuối: tuổi, hạn đăng ký, phí thêm.\n4. Câu hỏi tính tiền: cộng đủ người lớn, trẻ em, phí thêm."
+      },
+      {
+        "id": "n4t5-s21",
+        "type": "table",
+        "title": "Từ hay gặp trong thông báo",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{料金|りょうきん}", "phí, giá vé"],
+          ["{無料|むりょう}", "miễn phí"],
+          ["{申|もう}し{込|こ}み", "đăng ký"],
+          ["{受付|うけつけ}", "quầy tiếp nhận; nhận đăng ký"],
+          ["{締|し}め{切|き}り", "hạn chót"],
+          ["{予約|よやく}", "đặt trước"],
+          ["{持|も}ち{物|もの}", "đồ cần mang"],
+          ["〜{以上|いじょう}", "từ … trở lên (gồm số đó)"],
+          ["〜{以下|いか}", "từ … trở xuống (gồm số đó)"],
+          ["{大人|おとな}／{子|こ}ども", "người lớn / trẻ em"],
+          ["{休|やす}み", "ngày nghỉ, không mở cửa"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "以上／以下 đều gồm cả con số: 6歳以上 là từ 6 tuổi trở lên, bé 6 tuổi vẫn được."
+      },
+      {
+        "id": "n4t5-s22",
+        "type": "table",
+        "title": "Lọc từng dòng: thứ Bảy, bé 8 tuổi, ≤ 1.000 yên",
+        "columns": ["Hoạt động", "Ngày", "Giá", "Tuổi", "Kết quả"],
+        "rows": [
+          [
+            "{料理|りょうり}{教室|きょうしつ}",
+            "{土|ど}",
+            "1,500{円|えん}",
+            "6{歳|さい}{以上|いじょう}",
+            "× giá"
+          ],
+          [
+            "{工場|こうじょう}{見学|けんがく}",
+            "{土|ど}",
+            "{無料|むりょう}",
+            "10{歳|さい}{以上|いじょう}",
+            "× tuổi"
+          ],
+          ["{絵|え}の {教室|きょうしつ}", "{日|にち}", "800{円|えん}", "だれでも", "× ngày"],
+          ["{星|ほし}を {見|み}る{会|かい}", "{土|ど}", "500{円|えん}", "だれでも", "✓"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho học viên tự lọc theo từng điều kiện rồi mới mở cột Kết quả."
+      },
+      {
+        "id": "n4t5-s23",
+        "type": "quiz",
+        "ref": "n4t5-q10"
+      },
+      {
+        "id": "n4t5-s24",
+        "type": "note",
+        "title": "Thời gian cho phần đọc",
+        "body": "Theo bảng chia 55 phút ở bộ Mẹo N4 · 1, xong ngữ pháp ở phút 20, rồi:\n1. Các bài ngắn (短文): xong trước phút 30.\n2. Bài trung bình (中文): xong trước phút 40; trễ thì làm 情報検索 trước.\n3. 情報検索: xong trước phút 48; điểm dễ lấy, đừng bỏ.\nĐọc xong bài mà phân vân quá 1 phút: chọn đáp án nghiêng hơn, đánh dấu ？ ở đề, làm tiếp."
+      },
+      {
+        "id": "n4t5-s25",
+        "type": "quiz",
+        "ref": "n4t5-q19"
+      },
+      {
+        "id": "n4t5-s26",
+        "type": "note",
+        "title": "Khi phân vân giữa hai đáp án",
+        "body": "1. Tìm câu trong bài chứng minh cho đáp án; không tìm được thì loại.\n2. Loại lựa chọn có thông tin bài không nói tới.\n3. Cẩn thận từ tuyệt đối: いつも, {全部|ぜんぶ}, かならず, ぜんぜん khi bài chỉ nói ときどき, {少|すこ}し.\n4. Vẫn phân vân: chọn câu nói lại ý bài, không chọn câu chép chữ. Không bao giờ để trống."
+      },
+      {
+        "id": "n4t5-s27",
+        "type": "note",
+        "title": "Luyện đọc mỗi ngày",
+        "body": "1. Làm các câu đọc trong bộ 67 câu hằng ngày, bấm giờ.\n2. Sau khi chấm, với mỗi câu tìm lại câu trong bài chứng minh đáp án.\n3. Câu sai: ghi lại mình bị bẫy kiểu gì (đổi người, đổi thời gian, phủ định…).\n4. Cuối tuần làm phần đọc trong「Thi thử JLPT N4」đúng giờ để quen tốc độ."
+      },
+      {
+        "id": "n4t5-s28",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. Đọc câu hỏi trước, gạch: ai, khi nào, phủ định.\n2. Ý chính: sau でも／しかし, sau ではなく, câu cuối.\n3. それ／そこ: câu ngay trước. Gạch chân ①: câu trước và sau nó.\n4. Đáp án đúng nói lại bằng từ khác; lựa chọn chép chữ thì kiểm tra người, thời gian, phủ định.\n5. 情報検索: gạch điều kiện, lọc từng dòng, đọc ※."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t5-q01",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "マイさんへ\nあしたの {会議|かいぎ}は 10{時|じ}からですが、{会議室|かいぎしつ}が {変|か}わりました。3{階|がい}ではなく、5{階|かい}の {部屋|へや}を {使|つか}います。{資料|しりょう}は わたしが コピーして おきますから、マイさんは パソコンを {持|も}って きて ください。\n{田中|たなか}",
+        "prompt": "マイさんは あした {何|なに}を {持|も}って いきますか。",
+        "options": [
+          "{資料|しりょう}の コピー",
+          "{会議室|かいぎしつ}の かぎ",
+          "パソコン",
+          "{新|あたら}しい {部屋|へや}の {地図|ちず}"
+        ],
+        "multiple": false,
+        "answer": [2],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo đọc câu hỏi trước: câu hỏi có 持って いきます → trong bài tìm 持って きて ください → パソコン. Bản sao tài liệu là bẫy chép từ: 資料は わたしが コピーして おきます, người làm là Tanaka, không phải Mai."
+      },
+      {
+        "id": "n4t5-q02",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "マイさんへ\nあしたの {会議|かいぎ}は 10{時|じ}からですが、{会議室|かいぎしつ}が {変|か}わりました。3{階|がい}ではなく、5{階|かい}の {部屋|へや}を {使|つか}います。{資料|しりょう}は わたしが コピーして おきますから、マイさんは パソコンを {持|も}って きて ください。\n{田中|たなか}",
+        "prompt": "あしたの {会議|かいぎ}は どこで ありますか。",
+        "options": [
+          "5{階|かい}の {部屋|へや}",
+          "3{階|がい}の {部屋|へや}",
+          "{田中|たなか}さんの {部屋|へや}",
+          "コピーの {部屋|へや}"
+        ],
+        "multiple": false,
+        "answer": [0],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo 〜ではなく: 3階ではなく、5階の 部屋を 使います → thông tin đúng nằm sau ではなく. Tầng 3 là phòng cũ đã đổi, đó là bẫy chép chữ trong bài."
+      },
+      {
+        "id": "n4t5-q03",
+        "type": "choice",
+        "prompt": "Câu hỏi 「この {文章|ぶんしょう}で いちばん {言|い}いたい ことは {何|なん}ですか」. Nên tìm đáp án ở đâu trước?",
+        "options": [
+          "Câu đầu tiên của bài",
+          "Đoạn có nhiều chữ Hán nhất",
+          "Lựa chọn giống chữ trong bài nhất",
+          "Sau でも／しかし và ở câu cuối bài"
+        ],
+        "multiple": false,
+        "answer": [3],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo “đáp án nằm ở đâu”: ý chính của người viết thường đứng sau でも／しかし (đổi hướng) và ở câu cuối bài. Câu đầu thường chỉ giới thiệu; lựa chọn giống chữ trong bài nhất lại hay là bẫy chép từ."
+      },
+      {
+        "id": "n4t5-q04",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "わたしは {子|こ}どもの ときから {料理|りょうり}が {好|す}きでは ありませんでした。{日本|にほん}に {来|き}てからも、{毎日|まいにち} コンビニで お{弁当|べんとう}を {買|か}って いました。でも、{去年|きょねん}から {友|とも}だちと いっしょに {料理|りょうり}を {作|つく}るように なって、{料理|りょうり}は {楽|たの}しいと {思|おも}うように なりました。{今|いま}は {休|やす}みの {日|ひ}に いろいろな {国|くに}の {料理|りょうり}を {作|つく}って います。",
+        "prompt": "この {人|ひと}は {今|いま}、{料理|りょうり}に ついて どう {思|おも}って いますか。",
+        "options": [
+          "{今|いま}も {料理|りょうり}は {好|す}きでは ない",
+          "{料理|りょうり}を {作|つく}るのは {楽|たの}しい",
+          "コンビニの お{弁当|べんとう}の ほうが いい",
+          "{一人|ひとり}で {作|つく}るのは {楽|たの}しくない"
+        ],
+        "multiple": false,
+        "answer": [1],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo ý chính sau でも: でも、… 料理は 楽しいと 思うように なりました. Câu hỏi hỏi 今, còn 好きでは ありませんでした là lúc nhỏ (bẫy đổi thời điểm). Bài không nói gì về nấu một mình."
+      },
+      {
+        "id": "n4t5-q05",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "わたしは {子|こ}どもの ときから {料理|りょうり}が {好|す}きでは ありませんでした。{日本|にほん}に {来|き}てからも、{毎日|まいにち} コンビニで お{弁当|べんとう}を {買|か}って いました。でも、{去年|きょねん}から {友|とも}だちと いっしょに {料理|りょうり}を {作|つく}るように なって、{料理|りょうり}は {楽|たの}しいと {思|おも}うように なりました。{今|いま}は {休|やす}みの {日|ひ}に いろいろな {国|くに}の {料理|りょうり}を {作|つく}って います。",
+        "prompt": "この {人|ひと}は {今|いま}、{休|やす}みの {日|ひ}に {何|なに}を して いますか。",
+        "options": [
+          "いろいろな {国|くに}の {料理|りょうり}を {作|つく}る",
+          "コンビニで お{弁当|べんとう}を {買|か}う",
+          "{料理|りょうり}の {学校|がっこう}に {通|かよ}う",
+          "{友|とも}だちの {家|いえ}で ごはんを {食|た}べる"
+        ],
+        "multiple": false,
+        "answer": [0],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo gạch từ khóa: 休みの 日 → tìm đúng cụm này trong bài: 休みの 日に いろいろな 国の 料理を 作って います. Mua cơm hộp ở コンビニ là chuyện trước đây (bẫy đổi thời gian); trường dạy nấu ăn và nhà bạn không có trong bài."
+      },
+      {
+        "id": "n4t5-q06",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "{先週|せんしゅう}、{駅|えき}の {前|まえ}に {新|あたら}しい パン{屋|や}が できました。{朝|あさ} 7{時|じ}から {開|あ}いて いるので、{会社|かいしゃ}へ {行|い}く {前|まえ}に {寄|よ}る {人|ひと}が {多|おお}いです。わたしも {昨日|きのう} [[それ]]を {知|し}って、けさ {初|はじ}めて {行|い}って みました。",
+        "prompt": "「それ」は {何|なん}ですか。",
+        "options": [
+          "{駅|えき}の {前|まえ}に {会社|かいしゃ}が あること",
+          "{会社|かいしゃ}の {人|ひと}が パンを {作|つく}って いること",
+          "{新|あたら}しい パン{屋|や}が {朝|あさ} {早|はや}く {開|あ}いて いること",
+          "わたしが けさ パン{屋|や}に {行|い}ったこと"
+        ],
+        "multiple": false,
+        "answer": [2],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo それ chỉ điều vừa nói ở câu trước: tiệm bánh mới mở từ 7 giờ sáng, nhiều người ghé trước khi đi làm. Thử thay vào: 昨日 新しい パン屋が 朝 早く 開いて いることを 知って → đúng. Việc sáng nay đi lần đầu xảy ra SAU それ nên loại."
+      },
+      {
+        "id": "n4t5-q07",
+        "type": "choice",
+        "passage": "{兄|あに}は {新|あたら}しい {車|くるま}を {買|か}いたいと {言|い}って います。",
+        "prompt": "この {文|ぶん}と {同|おな}じ {意味|いみ}の ものは どれですか。",
+        "options": [
+          "{兄|あに}は {新|あたら}しい {車|くるま}を {買|か}いました。",
+          "{兄|あに}は {新|あたら}しい {車|くるま}が ほしいと {言|い}って います。",
+          "わたしは {新|あたら}しい {車|くるま}を {買|か}いたいです。",
+          "{兄|あに}は {新|あたら}しい {車|くるま}を {持|も}って います。"
+        ],
+        "multiple": false,
+        "answer": [1],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo đáp án nói lại bằng từ khác: 〜を 買いたい → 〜が ほしい (muốn có). Ba lựa chọn kia chép chữ nhưng đổi một chỗ: 買いました (muốn → đã làm), わたしは (đổi người), 持って います (đã có)."
+      },
+      {
+        "id": "n4t5-q08",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "わたしは {去年|きょねん}の {春|はる}、{日本|にほん}の {会社|かいしゃ}に {入|はい}りました。{最初|さいしょ}の 1か{月|げつ}は、{毎朝|まいあさ} {会社|かいしゃ}に {行|い}くのが {大変|たいへん}でした。{家|いえ}から {会社|かいしゃ}まで {電車|でんしゃ}で 1{時間|じかん}も かかるし、{電車|でんしゃ}の {中|なか}は いつも {人|ひと}が いっぱいだったからです。\n　それで、{会社|かいしゃ}の {近|ちか}くに {引|ひ}っ{越|こ}そうと {思|おも}いました。でも、{近|ちか}くの アパートは {高|たか}くて、わたしには {無理|むり}でした。\n　{困|こま}って いた とき、{先輩|せんぱい}が「{朝|あさ}、{早|はや}い {電車|でんしゃ}に {乗|の}って みたら？」と {言|い}って くれました。{次|つぎ}の {日|ひ}から 6{時|じ}{半|はん}の {電車|でんしゃ}に {乗|の}って みると、{席|せき}に {座|すわ}る ことが できました。{今|いま}は {毎朝|まいあさ} {電車|でんしゃ}の {中|なか}で {日本語|にほんご}の {本|ほん}を {読|よ}んで います。①[[{電車|でんしゃ}の {時間|じかん}が {好|す}きに なりました]]。",
+        "prompt": "どうして {最初|さいしょ}の 1か{月|げつ}は {会社|かいしゃ}に {行|い}くのが {大変|たいへん}でしたか。",
+        "options": [
+          "{会社|かいしゃ}の {近|ちか}くの アパートが {高|たか}かったから",
+          "{毎朝|まいあさ} 6{時|じ}{半|はん}の {電車|でんしゃ}に {乗|の}って いたから",
+          "{会社|かいしゃ}の {仕事|しごと}が {多|おお}かったから",
+          "{電車|でんしゃ}で {時間|じかん}が かかって、{込|こ}んで いたから"
+        ],
+        "multiple": false,
+        "answer": [3],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo なぜ → tìm 〜から: 1時間も かかるし、… 人が いっぱいだったからです. Đáp án nói lại 人が いっぱい thành 込んで いた. Căn hộ đắt là lý do không chuyển nhà (đoạn khác); tàu 6 giờ rưỡi là chuyện về sau; bài không nói việc nhiều."
+      },
+      {
+        "id": "n4t5-q09",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "わたしは {去年|きょねん}の {春|はる}、{日本|にほん}の {会社|かいしゃ}に {入|はい}りました。{最初|さいしょ}の 1か{月|げつ}は、{毎朝|まいあさ} {会社|かいしゃ}に {行|い}くのが {大変|たいへん}でした。{家|いえ}から {会社|かいしゃ}まで {電車|でんしゃ}で 1{時間|じかん}も かかるし、{電車|でんしゃ}の {中|なか}は いつも {人|ひと}が いっぱいだったからです。\n　それで、{会社|かいしゃ}の {近|ちか}くに {引|ひ}っ{越|こ}そうと {思|おも}いました。でも、{近|ちか}くの アパートは {高|たか}くて、わたしには {無理|むり}でした。\n　{困|こま}って いた とき、{先輩|せんぱい}が「{朝|あさ}、{早|はや}い {電車|でんしゃ}に {乗|の}って みたら？」と {言|い}って くれました。{次|つぎ}の {日|ひ}から 6{時|じ}{半|はん}の {電車|でんしゃ}に {乗|の}って みると、{席|せき}に {座|すわ}る ことが できました。{今|いま}は {毎朝|まいあさ} {電車|でんしゃ}の {中|なか}で {日本語|にほんご}の {本|ほん}を {読|よ}んで います。①[[{電車|でんしゃ}の {時間|じかん}が {好|す}きに なりました]]。",
+        "prompt": "①「{電車|でんしゃ}の {時間|じかん}が {好|す}きに なりました」と ありますが、どうしてですか。",
+        "options": [
+          "{会社|かいしゃ}の {近|ちか}くに {引|ひ}っ{越|こ}したから",
+          "{座|すわ}って {本|ほん}を {読|よ}む {時間|じかん}に なったから",
+          "{先輩|せんぱい}と いっしょに {電車|でんしゃ}に {乗|の}るから",
+          "{電車|でんしゃ}が {前|まえ}より {速|はや}く なったから"
+        ],
+        "multiple": false,
+        "answer": [1],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo chỗ gạch chân: đọc câu ngay trước ①. Đi tàu sớm thì có chỗ ngồi (席に 座る ことが できました) và giờ mỗi sáng đọc sách tiếng Nhật trên tàu. Không chuyển nhà được (アパートは 高くて 無理), tiền bối chỉ khuyên chứ không đi cùng, bài không nói tàu nhanh hơn."
+      },
+      {
+        "id": "n4t5-q10",
+        "type": "choice",
+        "instruction": "つぎの お{知|し}らせを {見|み}て、しつもんに こたえて ください。",
+        "passage": "さくら{市|し} {国際|こくさい}センター　{日本語|にほんご}クラスの お{知|し}らせ\n\nA　はじめての{人|ひと}｜{月|げつ}・{水|すい}｜10:00〜11:30｜2,000{円|えん}\nB　はじめての{人|ひと}｜{土|ど}｜18:00〜20:00｜2,000{円|えん}\nC　N4じゅんび｜{火|か}・{木|もく}｜19:00〜20:30｜3,000{円|えん}\nD　N4じゅんび｜{日|にち}｜10:00〜12:00｜2,500{円|えん}\nE　{会話|かいわ}｜{金|きん}｜19:00〜20:30｜1,500{円|えん}\n（{料金|りょうきん}は 1か{月|げつ}）\n\n※ 16{歳|さい}{以上|いじょう}の {方|かた}が {入|はい}れます。\n※ {教科書|きょうかしょ}は {受付|うけつけ}で {買|か}って ください（1,200{円|えん}）。",
+        "prompt": "グエンさんは {平日|へいじつ} 18{時|じ}まで {働|はたら}いて います。N4の {試験|しけん}の ための クラスに {入|はい}りたいです。{日曜日|にちようび}は {家族|かぞく}と {出|で}かけるので、だめです。どの クラスが いいですか。",
+        "options": ["A", "B", "C", "D"],
+        "multiple": false,
+        "answer": [2],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo 情報検索: gạch ba điều kiện (lớp luyện N4, ngày thường sau 18 giờ, không Chủ nhật) rồi lọc từng dòng. A, B là lớp cho người mới; D học Chủ nhật; chỉ C (thứ Ba, thứ Năm, 19:00) đạt cả ba."
+      },
+      {
+        "id": "n4t5-q11",
+        "type": "choice",
+        "instruction": "つぎの お{知|し}らせを {見|み}て、しつもんに こたえて ください。",
+        "passage": "さくら{市|し} {国際|こくさい}センター　{日本語|にほんご}クラスの お{知|し}らせ\n\nA　はじめての{人|ひと}｜{月|げつ}・{水|すい}｜10:00〜11:30｜2,000{円|えん}\nB　はじめての{人|ひと}｜{土|ど}｜18:00〜20:00｜2,000{円|えん}\nC　N4じゅんび｜{火|か}・{木|もく}｜19:00〜20:30｜3,000{円|えん}\nD　N4じゅんび｜{日|にち}｜10:00〜12:00｜2,500{円|えん}\nE　{会話|かいわ}｜{金|きん}｜19:00〜20:30｜1,500{円|えん}\n（{料金|りょうきん}は 1か{月|げつ}）\n\n※ 16{歳|さい}{以上|いじょう}の {方|かた}が {入|はい}れます。\n※ {教科書|きょうかしょ}は {受付|うけつけ}で {買|か}って ください（1,200{円|えん}）。",
+        "prompt": "15{歳|さい}の リンさんは {土曜日|どようび}の クラスに {入|はい}りたいと {思|おも}って います。{正|ただ}しい ものは どれですか。",
+        "options": [
+          "Bクラスに {入|はい}れる。1か{月|げつ} 2,000{円|えん}だ。",
+          "Bクラスに {入|はい}れる。{教科書|きょうかしょ}は いらない。",
+          "{土曜日|どようび}は だめだが、Dクラスなら {入|はい}れる。",
+          "まだ どの クラスにも {入|はい}れない。"
+        ],
+        "multiple": false,
+        "answer": [3],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo đọc dòng ※: 16歳以上の 方が 入れます. Lin mới 15 tuổi nên hiện chưa vào được lớp nào. Ai chỉ nhìn bảng sẽ chọn B (thứ Bảy, 2.000 yên) và mất điểm."
+      },
+      {
+        "id": "n4t5-q12",
+        "type": "choice",
+        "instruction": "つぎの お{知|し}らせを {見|み}て、しつもんに こたえて ください。",
+        "passage": "さくら{市|し} {国際|こくさい}センター　{日本語|にほんご}クラスの お{知|し}らせ\n\nA　はじめての{人|ひと}｜{月|げつ}・{水|すい}｜10:00〜11:30｜2,000{円|えん}\nB　はじめての{人|ひと}｜{土|ど}｜18:00〜20:00｜2,000{円|えん}\nC　N4じゅんび｜{火|か}・{木|もく}｜19:00〜20:30｜3,000{円|えん}\nD　N4じゅんび｜{日|にち}｜10:00〜12:00｜2,500{円|えん}\nE　{会話|かいわ}｜{金|きん}｜19:00〜20:30｜1,500{円|えん}\n（{料金|りょうきん}は 1か{月|げつ}）\n\n※ 16{歳|さい}{以上|いじょう}の {方|かた}が {入|はい}れます。\n※ {教科書|きょうかしょ}は {受付|うけつけ}で {買|か}って ください（1,200{円|えん}）。",
+        "prompt": "マイさんは {来月|らいげつ}から Eクラスに {入|はい}ります。{教科書|きょうかしょ}も {買|か}います。{最初|さいしょ}の {月|つき}に ぜんぶで いくら {払|はら}いますか。",
+        "options": ["1,500{円|えん}", "2,700{円|えん}", "3,000{円|えん}", "1,200{円|えん}"],
+        "multiple": false,
+        "answer": [1],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo câu tính tiền: cộng đủ các khoản. Lớp E 1.500 yên một tháng + sách giáo khoa 1.200 yên (dòng ※) = 2.700 yên. 1.500 yên là chỉ nhìn bảng mà quên ※."
+      },
+      {
+        "id": "n4t5-q13",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "{山本|やまもと}{先生|せんせい}\n{来週|らいしゅう}の {作文|さくぶん}の ことで お{願|ねが}いが あります。{月曜日|げつようび}に {出|だ}す {約束|やくそく}でしたが、{今週|こんしゅう}は アルバイトが {忙|いそが}しくて、まだ {半分|はんぶん}しか {書|か}いて いません。{本当|ほんとう}に すみません。{水曜日|すいようび}まで {待|ま}って いただけませんか。\nアン",
+        "prompt": "アンさんが いちばん {言|い}いたい ことは {何|なん}ですか。",
+        "options": [
+          "アルバイトが {忙|いそが}しいこと",
+          "{作文|さくぶん}を {半分|はんぶん} {書|か}いたこと",
+          "{作文|さくぶん}を {出|だ}す {日|ひ}を {遅|おそ}く して ほしいこと",
+          "{月曜日|げつようび}の {授業|じゅぎょう}を {休|やす}みたいこと"
+        ],
+        "multiple": false,
+        "answer": [2],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo thư, email: lời nhờ ở cuối là ý chính: 水曜日まで 待って いただけませんか → xin nộp bài muộn hơn. Bận làm thêm và mới viết một nửa chỉ là lý do; bài không nói xin nghỉ học."
+      },
+      {
+        "id": "n4t5-q14",
+        "type": "choice",
+        "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
+        "passage": "{日曜日|にちようび}、{妹|いもうと}と {動物園|どうぶつえん}へ {行|い}く {予定|よてい}でした。でも、{朝|あさ}から {雨|あめ}が {降|ふ}って いたので、{行|い}くのを やめて、{家|いえ}で {映画|えいが}を {見|み}ました。{妹|いもうと}は パンダが {見|み}たかったと {言|い}って いました。{来週|らいしゅう}の {日曜日|にちようび}に もう{一度|いちど} {行|い}く つもりです。",
+        "prompt": "{文章|ぶんしょう}の {内容|ないよう}と {合|あ}って いる ものは どれですか。",
+        "options": [
+          "{日曜日|にちようび}は {家|いえ}で {映画|えいが}を {見|み}た。",
+          "{日曜日|にちようび}に {動物園|どうぶつえん}で パンダを {見|み}た。",
+          "{妹|いもうと}は {映画|えいが}が {見|み}たかった。",
+          "{雨|あめ}が {降|ふ}らなかったので、{動物園|どうぶつえん}へ {行|い}った。"
+        ],
+        "multiple": false,
+        "answer": [0],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo bẫy chép từ: cả bốn lựa chọn đều dùng chữ trong bài. Sau でも: không đi, xem phim ở nhà → đúng. Đi sở thú xem gấu trúc là kế hoạch bị hủy; người muốn xem là em gái và cái muốn xem là gấu trúc (đổi đối tượng); trời có mưa (bỏ phủ định)."
+      },
+      {
+        "id": "n4t5-q15",
+        "type": "choice",
+        "passage": "わたしは ときどき {図書館|としょかん}で {勉強|べんきょう}します。",
+        "prompt": "この {文|ぶん}と {同|おな}じ {意味|いみ}の ものは どれですか。",
+        "options": [
+          "わたしは いつも {図書館|としょかん}で {勉強|べんきょう}します。",
+          "わたしは {図書館|としょかん}で {勉強|べんきょう}する ことが あります。",
+          "わたしは {図書館|としょかん}で ぜんぜん {勉強|べんきょう}しません。",
+          "わたしは {毎日|まいにち} {図書館|としょかん}で {勉強|べんきょう}します。"
+        ],
+        "multiple": false,
+        "answer": [1],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo nói lại và từ tuyệt đối: ときどき 〜します = 〜する ことが あります (thỉnh thoảng có làm). いつも, 毎日, ぜんぜん đều đổi mức độ nên sai."
+      },
+      {
+        "id": "n4t5-q16",
+        "type": "choice",
+        "prompt": "Đề 情報検索 hỏi: 「{土曜日|どようび}に {行|い}けて、1,000{円|えん}{以下|いか}の ものは どれですか」. Việc đầu tiên nên làm là gì?",
+        "options": [
+          "Đọc kỹ toàn bộ thông báo từ trên xuống dưới",
+          "Đọc dòng ※ ở cuối rồi mới đọc câu hỏi",
+          "Chọn ngay dòng có giá rẻ nhất trong bảng",
+          "Gạch hai điều kiện (thứ Bảy, ≤ 1.000 yên) rồi lọc từng dòng"
+        ],
+        "multiple": false,
+        "answer": [3],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo 情報検索: điều kiện trước, bảng sau. Gạch mọi điều kiện trong câu hỏi rồi loại từng dòng không đạt; dòng ※ đọc sau, khi đã còn ít dòng. Dòng rẻ nhất có thể không mở thứ Bảy."
+      },
+      {
+        "id": "n4t5-q17",
+        "type": "choice",
+        "passage": "{動物園|どうぶつえん}の {入園料|にゅうえんりょう}\n{大人|おとな}　600{円|えん}\n{子|こ}ども（15{歳|さい}まで）　200{円|えん}\n※ 6{歳|さい}{以下|いか}は {無料|むりょう}です。",
+        "prompt": "6{歳|さい}の {子|こ}どもは いくらですか。",
+        "options": ["{無料|むりょう}", "200{円|えん}", "300{円|えん}", "600{円|えん}"],
+        "multiple": false,
+        "answer": [0],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo 以上／以下 gồm cả con số: 6歳以下 = từ 6 tuổi trở xuống, nên bé 6 tuổi được miễn phí (dòng ※ được ưu tiên hơn giá trẻ em). Ai nghĩ 以下 là “dưới 6” sẽ chọn nhầm 200 yên – giá đó chỉ cho trẻ 7–15 tuổi."
+      },
+      {
+        "id": "n4t5-q18",
+        "type": "choice",
+        "passage": "{駅|えき}の {近|ちか}くに {大|おお}きい {本屋|ほんや}が あります。わたしは よく [[そこ]]で {日本語|にほんご}の {雑誌|ざっし}を {買|か}います。",
+        "prompt": "「そこ」は どこですか。",
+        "options": [
+          "{駅|えき}",
+          "{日本|にほん}",
+          "わたしの {家|いえ}",
+          "{大|おお}きい {本屋|ほんや}"
+        ],
+        "multiple": false,
+        "answer": [3],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo そこ chỉ chỗ vừa nói ở câu trước, rồi thử thay vào: 大きい 本屋で 雑誌を 買います → hợp nghĩa. 駅 chỉ dùng để nói vị trí của tiệm sách; 日本 và nhà mình không được nhắc tới."
+      },
+      {
+        "id": "n4t5-q19",
+        "type": "choice",
+        "prompt": "Đọc xong bài, bạn đã nghĩ hơn 1 phút cho một câu mà vẫn phân vân giữa hai đáp án. Nên làm gì?",
+        "options": [
+          "Đọc lại cả bài từ đầu thêm hai lần cho chắc",
+          "Bỏ trống câu đó, cuối giờ quay lại nếu còn thời gian",
+          "Chọn đáp án tốt hơn, đánh dấu ở đề, làm câu tiếp; còn giờ thì quay lại",
+          "Chọn lựa chọn có nhiều chữ giống trong bài nhất"
+        ],
+        "multiple": false,
+        "answer": [2],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo thời gian (quy tắc 1 phút ở bộ Mẹo N4 · 1): phân vân quá 1 phút thì chọn đáp án tốt nhất, tô vào phiếu, đánh dấu ở đề rồi đi tiếp. Để trống dễ quên tô và mất điểm chắc chắn (sai không bị trừ điểm). Lựa chọn giống chữ nhất thường là bẫy chép từ."
+      },
+      {
+        "id": "n4t5-q20",
+        "type": "choice",
+        "prompt": "Câu hỏi bắt đầu bằng 「どうして」. Trong bài, nên tìm câu có cách nói nào?",
+        "options": ["〜から／〜ので", "〜とき／〜まえに", "〜ながら", "〜まで／〜までに"],
+        "multiple": false,
+        "answer": [0],
+        "points": 1,
+        "tags": ["n4", "tips", "reading"],
+        "explain": "Mẹo câu hỏi → tìm gì: なぜ／どうして hỏi lý do, nên tìm 〜から, 〜ので (hoặc 〜て chỉ lý do). 〜とき, 〜まえに, 〜まで là thời gian; 〜ながら là hai việc cùng lúc."
+      }
+    ]
+  }
+}

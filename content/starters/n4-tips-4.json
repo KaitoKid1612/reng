@@ -1,0 +1,500 @@
+{
+  "id": "n4-tips-4",
+  "title": "Mẹo N4 · 4 – Ngữ pháp và câu ★",
+  "titleJa": "N4のコツ 4　文法と ★",
+  "summary": "Mẹo làm ba dạng ngữ pháp của đề JLPT N4: chọn mẫu điền vào （　）, xếp câu ★ và điền chỗ trống trong đoạn văn (文章の文法). Nhìn chữ trước chỗ trống và đuôi câu, bắt đầu câu ★ từ ô cuối và ghép mảnh dính nhau, đọc từ nối, その／そこ và thì theo cả đoạn; mẫu ngữ pháp thì tra Bản đồ ngữ pháp N4 và 8 bài tổng ôn. Có 20 câu luyện áp dụng mẹo. Mẹo tổng hợp từ trang chính thức JLPT và các tài liệu ôn thi công khai; mọi ví dụ và câu hỏi là nội dung gốc.",
+  "order": 4,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t4-s01",
+        "type": "title",
+        "jp": "{文法|ぶんぽう}と ★の コツ",
+        "vi": "Mẹo N4 · 4 – Ngữ pháp và câu ★"
+      },
+      {
+        "id": "n4t4-s02",
+        "type": "note",
+        "title": "Ba dạng ngữ pháp trong đề N4",
+        "body": "1. もんだい１ {文法|ぶんぽう}{形式|けいしき}の{判断|はんだん}: chọn từ, mẫu điền vào （　）.\n2. もんだい２ {文|ぶん}の{組|く}み{立|た}て: xếp 4 mảnh, chọn mảnh ở ô ★.\n3. もんだい３ {文章|ぶんしょう}の{文法|ぶんぽう}: điền chỗ trống trong một đoạn văn.\n4. Cả ba ở giờ thi 55 phút (ngữ pháp + đọc hiểu), tính chung điểm 0–120 với chữ, từ vựng, đọc hiểu; sàn 38.\n5. Bộ này dạy cách làm; mẫu thì ôn ở Bản đồ ngữ pháp N4 và 8 bài tổng ôn."
+      },
+      {
+        "id": "n4t4-s03",
+        "type": "note",
+        "title": "Đọc hết câu, rồi nhìn chữ trước （　）",
+        "body": "1. Đọc cả câu trước khi đọc 4 lựa chọn; đoán nghĩa chỗ trống bằng tiếng Việt.\n2. Xem dạng ngay trước （　）: Vます bỏ ます, Vて, Vる, Vた, Vない hay danh từ.\n3. Loại ngay lựa chọn không nối được với dạng đó.\n4. Quên mẫu: tra bảng \"Tra theo dạng đứng trước chỗ trống\" ở Bản đồ ngữ pháp N4 để biết mẫu nằm ở bài nào."
+      },
+      {
+        "id": "n4t4-s04",
+        "type": "table",
+        "title": "Dạng trước （　） → mẫu nối được",
+        "columns": ["Ví dụ", "Trước （　）", "Mẫu nối được", "Bài"],
+        "rows": [
+          ["{雨|あめ}が {降|ふ}り（　）", "Vます bỏ ます", "そう・ながら・やすい", "1, 5, 8"],
+          ["{窓|まど}を {開|あ}けて（　）", "Vて", "おく・ある・しまう", "2, 3"],
+          ["{手紙|てがみ}を {書|か}いて（　）", "Vて (cho nhận)", "あげる・くれる・もらう", "7"],
+          ["{日本|にほん}へ {行|い}く（　）", "Vる", "つもり・ために・ように", "2"],
+          ["{食|た}べた（　）", "Vた", "ばかり・ところ・とき", "3, 4"],
+          ["{何|なに}も {言|い}わない（　）", "Vない", "で・ように・ことに する", "1, 2"],
+          [
+            "{行|い}かな（　）／{行|い}か（　）",
+            "Vない bỏ い / ない",
+            "くてもいい・ければ／ずに",
+            "1, 4"
+          ],
+          ["{明日|あした}は {晴|は}れる（　）", "Thể thường", "そうです・らしい・はず", "5"],
+          ["{家族|かぞく}の（　）", "Danh từ + の", "ために・ような", "2, 5"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s05",
+        "type": "note",
+        "title": "Nhìn đuôi câu và từ báo hiệu",
+        "body": "1. Đuôi câu phủ định (ない／ません) → nghĩ tới しか, ほど, あまり, なかなか.\n2. Đuôi là ください／ましょう／たい → loại と; ば chỉ an toàn khi vế trước là trạng thái (ある, tính từ…).\n3. Có いくら／どんなに → 〜ても.\n4. Có まだ + phủ định → 〜て いません.\n5. Gạch chân từ báo hiệu (まだ, いくら, もし, ぜひ…) trước khi chọn."
+      },
+      {
+        "id": "n4t4-s06",
+        "type": "table",
+        "title": "Từ báo hiệu → mẫu đi kèm",
+        "columns": ["Thấy", "Thường đi với", "Ví dụ"],
+        "rows": [
+          ["しか", "〜ない", "{千円|せんえん}しか ない"],
+          ["ほど", "〜ない (so sánh)", "{兄|あに}ほど {高|たか}くない"],
+          ["なかなか", "〜ない", "バスが なかなか {来|こ}ない"],
+          ["まだ", "〜て いません", "まだ {来|き}て いません"],
+          ["もし", "〜たら／〜ば", "もし {雨|あめ}だったら"],
+          ["いくら／どんなに", "〜ても", "いくら {呼|よ}んでも"],
+          ["ぜひ", "〜たい／〜て ください", "ぜひ {来|き}て ください"],
+          ["たぶん", "〜でしょう", "たぶん {晴|は}れるでしょう"],
+          ["{今|いま}にも", "Vます bỏ ます + そう", "{今|いま}にも {壊|こわ}れそう"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s07",
+        "type": "note",
+        "title": "Xem ai làm, ai nhận",
+        "body": "1. Người làm đi với に, tôi nhận → 〜て もらう: {友|とも}だちに {教|おし}えて もらった.\n2. Người khác (が) làm cho tôi → 〜て くれる: {友|とも}だちが {教|おし}えて くれた.\n3. Người trên làm → tôn kính: いらっしゃる, お〜に なる.\n4. Mình làm → khiêm nhường: まいる, おる, お〜する.\n5. Tôi chịu việc người khác (に) làm → bị động: {母|はは}に しかられた."
+      },
+      {
+        "id": "n4t4-s08",
+        "type": "quiz",
+        "ref": "n4t4-q04"
+      },
+      {
+        "id": "n4t4-s09",
+        "type": "quiz",
+        "ref": "n4t4-q07"
+      },
+      {
+        "id": "n4t4-s10",
+        "type": "note",
+        "title": "Phân vân giữa hai lựa chọn",
+        "body": "1. Loại lựa chọn chia sai: {来|く}る → {来|く}れば (không có {来|く}ば), いい → よければ.\n2. Loại lựa chọn không nối được với chữ trước và chữ sau chỗ trống.\n3. Còn hai: ghép từng cái vào câu, dịch sang tiếng Việt, chọn câu tự nhiên.\n4. Vẫn không chắc: chọn một, đánh dấu câu, đi tiếp. Sai không bị trừ điểm nên đừng để trống.\n5. Đừng sa lầy: phần đọc hiểu phía sau cần thời gian."
+      },
+      {
+        "id": "n4t4-s11",
+        "type": "quiz",
+        "ref": "n4t4-q02"
+      },
+      {
+        "id": "n4t4-s12",
+        "type": "note",
+        "title": "Câu ★ chấm điểm thế nào",
+        "body": "1. Có 4 ô ＿＿ và 4 mảnh; một ô mang dấu ★.\n2. Chỉ mảnh ở ô ★ được chấm, nhưng phải xếp đủ 4 mảnh mới chọn chắc.\n3. ★ có thể ở ô 1, 2, 3 hay 4.\n4. Đáp án là SỐ của mảnh (1–4 trong danh sách), không phải số thứ tự ô: tô phiếu theo số của mảnh."
+      },
+      {
+        "id": "n4t4-s13",
+        "type": "note",
+        "title": "Bốn bước xếp câu ★",
+        "body": "1. Đọc phần câu trước và sau 4 ô; chữ ngay sau ô 4 cho biết ô 4 là gì.\n2. Ghép trước các mảnh chắc chắn dính nhau (bổ nghĩa + danh từ, trợ từ + động từ, mẫu cố định).\n3. Viết số 1–4 nhỏ dưới từng ô trên đề.\n4. Đọc lại cả câu từ đầu, kiểm tra chuỗi trợ từ を／に／が và nghĩa; xong mới chọn mảnh ở ô ★."
+      },
+      {
+        "id": "n4t4-s14",
+        "type": "table",
+        "title": "Những mảnh luôn dính nhau",
+        "columns": ["Kiểu", "Mảnh A", "Mảnh B"],
+        "rows": [
+          ["Bổ nghĩa + danh từ", "{赤|あか}い", "{傘|かさ}"],
+          ["Câu bổ nghĩa + N", "{昨日|きのう} {買|か}った", "{本|ほん}"],
+          ["N の + N", "{友|とも}だちの", "{家|いえ}"],
+          ["Tân ngữ + động từ", "{手紙|てがみ}を", "{書|か}く"],
+          ["Vて + động từ phụ", "{書|か}いて", "おく・しまう・くれる"],
+          ["Thể ý chí + と思う", "{行|い}こう", "と {思|おも}って"],
+          ["Vた + こと", "{行|い}った", "ことが ある"],
+          ["Số lượng + しか", "{一|ひと}つしか", "ない"],
+          ["N と いう + N", "ハノイと いう", "{町|まち}"],
+          ["Vる／Vない + ように", "{忘|わす}れない", "ように"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s15",
+        "type": "note",
+        "title": "Bắt đầu từ ô cuối",
+        "body": "Chữ ngay sau ô 4 thường quyết định mảnh cuối; có ô 4 rồi lần ngược lên ô 3, 2, 1.\n1. Sau ô là います／いました → ô 4 là Vて.\n2. Sau ô là です／が／を／に → ô 4 thường là danh từ (hoặc の, こと).\n3. Sau ô là ください → ô 4 là Vて hoặc Vないで.\n4. Sau ô là あります → ô 4 thường là 〜ことが hoặc Vて."
+      },
+      {
+        "id": "n4t4-s16",
+        "type": "note",
+        "title": "Ví dụ: làm mẫu một câu ★",
+        "body": "{姉|あね}は ＿＿　＿＿　＿★＿　＿＿ います。\n1. パン{屋|や}で　2. {働|はたら}いて　3. {駅|えき}の　4. {前|まえ}の\nTự xếp thử trước khi sang slide sau."
+      },
+      {
+        "id": "n4t4-s17",
+        "type": "table",
+        "title": "Giải câu mẫu từng bước",
+        "columns": ["Thấy gì", "Suy ra", "Ô"],
+        "rows": [
+          ["Sau ô 4 là います", "ô 4 = {働|はたら}いて", "4"],
+          ["{働|はたら}く: nơi chốn + で", "パン{屋|や}で ngay trước", "3"],
+          ["N の + N", "{駅|えき}の {前|まえ}の パン{屋|や}", "1, 2"],
+          ["Đọc lại cả câu", "làm ở tiệm bánh trước ga", "✓"],
+          ["★ ở ô 3", "パン{屋|や}で = mảnh số 1", "★"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s18",
+        "type": "note",
+        "title": "Bẫy hay gặp ở câu ★",
+        "body": "1. Hai mảnh cùng trợ từ (hai cái を): dùng nghĩa để biết cái nào đi với động từ nào.\n2. Hai mảnh đổi chỗ được ({一度|いちど}, {明日|あした}…): đề chỉ có một đáp án, nên ô ★ thường không rơi vào đó.\n3. Chọn ô ★ khi mới xếp được hai mảnh → dễ sai.\n4. Tô số thứ tự ô thay vì số của mảnh (ví dụ trên: ô 3 nhưng tô 1).\n5. Chắc ba mảnh: mảnh còn lại vào ô còn trống."
+      },
+      {
+        "id": "n4t4-s19",
+        "type": "quiz",
+        "ref": "n4t4-q09"
+      },
+      {
+        "id": "n4t4-s20",
+        "type": "quiz",
+        "ref": "n4t4-q13"
+      },
+      {
+        "id": "n4t4-s21",
+        "type": "note",
+        "title": "文章の文法: đọc cả đoạn",
+        "body": "1. Đọc tiêu đề và đoạn từ đầu: ai viết, kể chuyện gì, chuyện đã qua hay dự định.\n2. Chỗ trống là từ nối: đọc câu trước VÀ câu sau, hỏi quan hệ hai câu.\n3. Chỗ trống có この／その／そこ: tìm thứ vừa được nhắc.\n4. Chỗ trống ở cuối câu: xem thì của cả bài và góc nhìn người viết (tôi làm, hay người khác làm cho tôi)."
+      },
+      {
+        "id": "n4t4-s22",
+        "type": "table",
+        "title": "Từ nối hay gặp ở N4",
+        "columns": ["Từ nối", "Quan hệ", "Ví dụ"],
+        "rows": [
+          ["それで", "vì vậy (kết quả)", "{熱|ねつ}が {出|で}た。それで {休|やす}んだ。"],
+          ["だから", "vì vậy (ý người nói)", "{雨|あめ}だ。だから {急|いそ}ごう。"],
+          ["でも／しかし", "nhưng (trái chiều)", "{高|たか}い。でも {買|か}った。"],
+          ["ところが", "nhưng (ngoài dự tính)", "{行|い}った。ところが {休|やす}みだった。"],
+          ["それに", "hơn nữa (cùng chiều)", "{安|やす}い。それに おいしい。"],
+          ["それから", "rồi, sau đó", "{食|た}べた。それから {寝|ね}た。"],
+          ["そして", "và (nối tiếp)", "{広|ひろ}い。そして {静|しず}かだ。"],
+          ["たとえば", "ví dụ", "たとえば りんごや みかん"],
+          ["じゃ／では", "vậy thì (tiếp lời)", "じゃ、また {明日|あした}。"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s23",
+        "type": "note",
+        "title": "それで／でも／ところが／それに",
+        "body": "1. Câu sau là kết quả của câu trước? → それで／だから. Sau それで không có lời nhờ, rủ, ý chí; cần thế thì dùng だから.\n2. Câu sau trái với điều câu trước khiến ta chờ đợi? → でも／しかし; chuyện bất ngờ đã xảy ra → ところが.\n3. Câu sau thêm ý cùng chiều (tốt thêm tốt, xấu thêm xấu)? → それに.\n4. Chỉ là việc tiếp theo → それから."
+      },
+      {
+        "id": "n4t4-s24",
+        "type": "table",
+        "title": "この／その／そこ／あの trong đoạn văn",
+        "columns": ["Từ", "Dùng khi", "Ví dụ"],
+        "rows": [
+          ["その／それ", "thứ vừa được nhắc", "{店|みせ}が ある。その {店|みせ}は…"],
+          ["そこ", "nơi vừa được nhắc", "{公園|こうえん}へ {行|い}った。そこで…"],
+          ["この／これ", "chủ đề đang bàn", "この {町|まち}が {好|す}きです。"],
+          ["あの", "cả hai cùng biết (nói)", "あの {店|みせ}、また {行|い}こう。"],
+          ["そんな／こんな", "kiểu như vừa nói", "そんな {時|とき}は…"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t4-s25",
+        "type": "note",
+        "title": "Thì và góc nhìn của cả bài",
+        "body": "1. Bài kể chuyện đã qua (〜ました) → chỗ trống giữa bài thường ở thì quá khứ.\n2. Câu cuối có これから／{今度|こんど}は → dự định: 〜ように します, 〜たいです, 〜と {思|おも}います.\n3. Người viết là わたし: người khác làm cho mình → 〜て くれました; mình được làm cho → 〜て もらいました.\n4. Mình chịu ảnh hưởng xấu → bị động: {雨|あめ}に {降|ふ}られました.\n5. Luyện: làm câu 16–20 (bài văn về xe đạp) ở phần câu luyện của bài."
+      },
+      {
+        "id": "n4t4-s28",
+        "type": "note",
+        "title": "Ôn mẫu ở đâu",
+        "body": "Bộ này không dạy lại mẫu. Khi sai:\n1. Bài hằng ngày: bấm Ôn lại mẫu ở câu sai.\n2. Quên mẫu khi luyện đề: Bản đồ ngữ pháp N4, bảng Tra theo dạng.\n3. Nhầm ば／と／たら／なら → Bài 4; そう／よう／らしい → Bài 5; あげる／くれる／もらう, kính ngữ → Bài 7.\n4. Cuối tuần: làm lại câu luyện của bài sai nhiều nhất."
+      },
+      {
+        "id": "n4t4-s29",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. （　）: đọc cả câu, nhìn chữ trước chỗ trống và đuôi câu, loại trước rồi mới chọn.\n2. ★: bắt đầu từ ô cuối, ghép mảnh dính nhau, đọc lại cả câu, rồi mới chọn mảnh ở ô ★.\n3. 文章の文法: đọc câu trước và sau; từ nối theo quan hệ, その／そこ chỉ thứ vừa nhắc, thì theo cả bài.\n4. Không để trống câu nào; quên mẫu thì tra Bản đồ ngữ pháp N4."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t4-q01",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あの {子|こ}は {今|いま}にも {泣|な}き（　　）な {顔|かお}を して います。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo nhìn dạng ngay trước （　）: 泣き là Vます bỏ ます, sau chỗ trống là な + danh từ → chỉ そう nối được: 泣きそうな 顔 (vẻ mặt như sắp khóc). 今にも cũng là từ báo hiệu của そう. ような, らしい, みたい không đứng sau Vます bỏ ます.",
+        "type": "choice",
+        "options": ["ような", "らしい", "そう", "みたい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t4-q02",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{時間|じかん}が {10分|じゅっぷん}（　　） ありませんから、タクシーで {行|い}きましょう。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo nhìn đuôi câu: đuôi phủ định ありません + ý \"chỉ còn ít\" (nên phải đi taxi) → しか 〜ない: Chỉ còn 10 phút nên đi taxi thôi. だけ đi với câu khẳng định (10分だけ あります); ばかり (toàn, khoảng), ずつ (mỗi) không hợp nghĩa.",
+        "type": "choice",
+        "options": ["しか", "だけ", "ばかり", "ずつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t4-q03",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{母|はは}の {誕生日|たんじょうび}の プレゼントは まだ {買|か}って（　　）。{今晩|こんばん} {買|か}いに {行|い}きます。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo từ báo hiệu: まだ + \"tối nay sẽ đi mua\" → chưa mua: まだ 買って いません. しまいました, みました là việc đã làm, mâu thuẫn với まだ; 買って あります là đã mua sẵn, trái với câu sau.",
+        "type": "choice",
+        "options": ["しまいました", "あります", "みました", "いません"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t4-q04",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{駅|えき}で {困|こま}って いた とき、{知|し}らない {人|ひと}に {助|たす}けて（　　）。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo xem ai làm, ai nhận: người làm (知らない人) đi với に, tôi là người nhận → 助けて もらいました (tôi được một người lạ giúp). くれました cần 知らない人が; あげました, やりました là tôi giúp người khác, khi đó phải nói 人を 助けて.",
+        "type": "choice",
+        "options": ["くれました", "もらいました", "あげました", "やりました"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t4-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "いくら {説明|せつめい}を（　　）、{祖母|そぼ}は スマホの {使|つか}い{方|かた}が わかりませんでした。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo từ báo hiệu: いくら → 〜ても (dù … bao nhiêu cũng): Dù nghe giải thích bao nhiêu, bà tôi vẫn không hiểu cách dùng điện thoại. ば, たら, と là điều kiện, không đi với いくら theo nghĩa này.",
+        "type": "choice",
+        "options": ["{聞|き}いても", "{聞|き}けば", "{聞|き}いたら", "{聞|き}くと"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t4-q06",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{試験|しけん}の {結果|けっか}が（　　）、すぐ {知|し}らせて ください。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo nhìn đuôi câu: đuôi là ください (lời nhờ) → loại と. Có kết quả rồi thì báo ngay → わかったら. わかっても (dù biết) và わかるのに (vậy mà) trái nghĩa với lời nhờ.",
+        "type": "choice",
+        "options": ["わかると", "わかっても", "わかったら", "わかるのに"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t4-q07",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}も {来週|らいしゅう}の {旅行|りょこう}に（　　）か。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo xem ai làm: người đi là 先生 (người trên) → tôn kính: いらっしゃいますか (= 行きますか). まいります là khiêm nhường của 行く, dùng cho việc của mình, không dùng để hỏi về thầy; おります (khiêm nhường của いる) và いたします (của する) còn sai cả nghĩa.",
+        "type": "choice",
+        "options": ["まいります", "いらっしゃいます", "おります", "いたします"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t4-q08",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ハノイの {冬|ふゆ}は {東京|とうきょう}（　　） {寒|さむ}くないです。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo nhìn đuôi câu: đuôi phủ định 寒くないです + so sánh hai nơi → A は B ほど 〜ない: Mùa đông Hà Nội không lạnh bằng Tokyo. しか, だけ, まで không tạo nghĩa so sánh.",
+        "type": "choice",
+        "options": ["しか", "だけ", "まで", "ほど"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t4-q09",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "これは ＿＿　＿＿　＿★＿　＿＿ です。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: これは 姉が 選んで くれた セーターです。(Đây là chiếc áo len chị tôi chọn cho tôi.) Mẹo bắt đầu từ ô cuối: sau ô 4 là です → ô 4 là danh từ セーター. Mảnh dính nhau: 選んで + くれた (Vて + くれる); cả cụm 姉が 選んで くれた bổ nghĩa cho セーター. Thứ tự: 姉が → 選んで → くれた → セーター; ô ★ (ô 3) là くれた.",
+        "type": "choice",
+        "options": ["セーター", "{姉|あね}が", "くれた", "{選|えら}んで"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t4-q10",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{冬休|ふゆやす}みに {家族|かぞく}と ＿＿　＿＿　＿＿　＿★＿ います。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: 冬休みに 家族と スキーに 行こう と 思って います。(Kỳ nghỉ đông tôi định đi trượt tuyết cùng gia đình.) Mẹo mảnh dính nhau: thể ý chí + と + 思って います là mẫu cố định; sau ô 4 là います → ô 4 là Vて: 思って. Thứ tự: スキーに → 行こう → と → 思って; ô ★ là 思って.",
+        "type": "choice",
+        "options": ["と", "{行|い}こう", "スキーに", "{思|おも}って"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t4-q11",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "わたしは ＿＿　＿＿　＿★＿　＿＿ あります。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: わたしは 馬に 一度 乗った ことが あります (tôi đã cưỡi ngựa một lần; 一度 馬に cũng được). Mẹo ô cuối: sau ô 4 là あります → ô 4 là ことが; Vた + ことが dính nhau → ô 3 là 乗った. 馬に và 一度 đổi chỗ được, nên đề đặt ★ ở ô chỉ có một đáp án: 乗った.",
+        "type": "choice",
+        "options": ["{乗|の}った", "ことが", "{一度|いちど}", "{馬|うま}に"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t4-q12",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}の {前|まえ}に、＿＿　＿＿　＿★＿　＿＿ ください。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: 会議の 前に、資料を 10部 コピーして おいて ください。(Trước cuộc họp, hãy phô tô sẵn 10 bản tài liệu.) Mẹo ô cuối: sau ô 4 là ください → ô 4 là Vて: おいて; Vて + おく dính nhau → ô 3 là コピーして. 資料を và 10部 đổi chỗ được nên không ảnh hưởng ô ★.",
+        "type": "choice",
+        "options": ["{資料|しりょう}を", "コピーして", "おいて", "{10部|じゅうぶ}"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t4-q13",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{先生|せんせい}に ＿＿　＿★＿　＿＿　＿＿ わかりません。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: 先生に 言われた ことの 意味が まだ わかりません。(Tôi vẫn chưa hiểu ý điều thầy đã nói với tôi.) Mẹo mảnh dính nhau: 先生に + 言われた (bị động, người nói đi với に); câu bổ nghĩa 言われた + ことの + 意味が; まだ đứng ngay trước わかりません. Thứ tự: 言われた → ことの → 意味が → まだ; ô ★ (ô 2) là ことの.",
+        "type": "choice",
+        "options": ["まだ", "{意味|いみ}が", "{言|い}われた", "ことの"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t4-q14",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{弟|おとうと}は ＿＿　＿★＿　＿＿　＿＿、{毎週|まいしゅう} {先生|せんせい}に {作文|さくぶん}を {見|み}て もらって います。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: 弟は 日本の 大学に 入る ために、毎週 先生に 作文を 見て もらって います。(Em trai tôi nhờ thầy xem bài viết mỗi tuần để vào đại học ở Nhật.) Mẹo mảnh dính nhau: 日本の + 大学 (N の + N); 大学に + 入る; Vる + ために (mục đích) đứng ngay trước dấu phẩy. Thứ tự: 日本の → 大学に → 入る → ために; ô ★ (ô 2) là 大学に.",
+        "type": "choice",
+        "options": ["{大学|だいがく}に", "ために", "{入|はい}る", "{日本|にほん}の"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t4-q15",
+        "instruction": "もんだい２　＿★＿に 入る ものは どれですか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{兄|あに}は ＿＿　＿＿　＿★＿　＿＿ が {好|す}きです。",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Câu đúng: 兄は 音楽を 聞きながら 走るのが 好きです。(Anh tôi thích vừa nghe nhạc vừa chạy.) Mẹo ô cuối: sau ô 4 là が → ô 4 là danh từ hoặc の: 走るのが 好き. 音楽を + 聞きながら dính nhau, ながら đứng trước việc chính 走る. Thứ tự: 音楽を → 聞きながら → 走る → の; ô ★ (ô 3) là 走る.",
+        "type": "choice",
+        "options": ["の", "{音楽|おんがく}を", "{走|はし}る", "{聞|き}きながら"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t4-q16",
+        "instruction": "もんだい３　［ 1 ］から ［ 5 ］に 何を 入れますか。{文章|ぶんしょう}の {意味|いみ}を {考|かんが}えて、１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "passage": "{下|した}の {文章|ぶんしょう}は、{留学生|りゅうがくせい}の {作文|さくぶん}です。\n\n{日本|にほん}の {自転車|じてんしゃ}\nグエン・ミン・アン\n　わたしは {去年|きょねん} {日本|にほん}に {来|き}ました。{来|き}て すぐ {自転車|じてんしゃ}を {買|か}いました。{日本|にほん}の {町|まち}は {道|みち}が きれいで、{自転車|じてんしゃ}で どこへでも {行|い}けます。［ 1 ］、{毎日|まいにち} {自転車|じてんしゃ}で {学校|がっこう}に {通|かよ}って います。\n　{先月|せんげつ}、{雨|あめ}の {日|ひ}に {自転車|じてんしゃ}で {駅|えき}まで {行|い}きました。{駅|えき}の {前|まえ}に {自転車|じてんしゃ}を とめて、{買|か}い{物|もの}を しました。［ 2 ］、{帰|かえ}る とき、{自転車|じてんしゃ}が ありませんでした。\n　{近|ちか}くの {交番|こうばん}で {聞|き}くと、［ 3 ］ {場所|ばしょ}は {自転車|じてんしゃ}を とめては いけない {所|ところ}だと {言|い}われました。{自転車|じてんしゃ}は {町|まち}の {自転車|じてんしゃ}{置|お}き{場|ば}に {運|はこ}ばれて いました。{2,000円|にせんえん} はらって、やっと {自転車|じてんしゃ}を ［ 4 ］。\n　{日本|にほん}では {自転車|じてんしゃ}を とめる {場所|ばしょ}にも ルールが あります。これからは {気|き}を つけて、{決|き}められた {場所|ばしょ}に ［ 5 ］。",
+        "prompt": "［ 1 ］",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo từ nối: đọc câu trước và câu sau. Trước: đường đẹp, đi xe đạp đâu cũng được; sau: ngày nào cũng đạp xe đi học. Câu sau là kết quả của câu trước → それで (vì vậy). でも, ところが là trái chiều; たとえば là nêu ví dụ.",
+        "type": "choice",
+        "options": ["でも", "それで", "たとえば", "ところが"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t4-q17",
+        "instruction": "もんだい３　［ 1 ］から ［ 5 ］に 何を 入れますか。{文章|ぶんしょう}の {意味|いみ}を {考|かんが}えて、１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "passage": "{下|した}の {文章|ぶんしょう}は、{留学生|りゅうがくせい}の {作文|さくぶん}です。\n\n{日本|にほん}の {自転車|じてんしゃ}\nグエン・ミン・アン\n　わたしは {去年|きょねん} {日本|にほん}に {来|き}ました。{来|き}て すぐ {自転車|じてんしゃ}を {買|か}いました。{日本|にほん}の {町|まち}は {道|みち}が きれいで、{自転車|じてんしゃ}で どこへでも {行|い}けます。［ 1 ］、{毎日|まいにち} {自転車|じてんしゃ}で {学校|がっこう}に {通|かよ}って います。\n　{先月|せんげつ}、{雨|あめ}の {日|ひ}に {自転車|じてんしゃ}で {駅|えき}まで {行|い}きました。{駅|えき}の {前|まえ}に {自転車|じてんしゃ}を とめて、{買|か}い{物|もの}を しました。［ 2 ］、{帰|かえ}る とき、{自転車|じてんしゃ}が ありませんでした。\n　{近|ちか}くの {交番|こうばん}で {聞|き}くと、［ 3 ］ {場所|ばしょ}は {自転車|じてんしゃ}を とめては いけない {所|ところ}だと {言|い}われました。{自転車|じてんしゃ}は {町|まち}の {自転車|じてんしゃ}{置|お}き{場|ば}に {運|はこ}ばれて いました。{2,000円|にせんえん} はらって、やっと {自転車|じてんしゃ}を ［ 4 ］。\n　{日本|にほん}では {自転車|じてんしゃ}を とめる {場所|ばしょ}にも ルールが あります。これからは {気|き}を つけて、{決|き}められた {場所|ばしょ}に ［ 5 ］。",
+        "prompt": "［ 2 ］",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo từ nối: dựng xe trước ga rồi đi mua sắm; lúc về thì xe không còn. Câu sau là chuyện ngoài dự tính đã xảy ra → ところが. それに (thêm ý cùng chiều), だから (kết quả), たとえば (ví dụ) không hợp quan hệ hai câu.",
+        "type": "choice",
+        "options": ["ところが", "それに", "だから", "たとえば"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t4-q18",
+        "instruction": "もんだい３　［ 1 ］から ［ 5 ］に 何を 入れますか。{文章|ぶんしょう}の {意味|いみ}を {考|かんが}えて、１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "passage": "{下|した}の {文章|ぶんしょう}は、{留学生|りゅうがくせい}の {作文|さくぶん}です。\n\n{日本|にほん}の {自転車|じてんしゃ}\nグエン・ミン・アン\n　わたしは {去年|きょねん} {日本|にほん}に {来|き}ました。{来|き}て すぐ {自転車|じてんしゃ}を {買|か}いました。{日本|にほん}の {町|まち}は {道|みち}が きれいで、{自転車|じてんしゃ}で どこへでも {行|い}けます。［ 1 ］、{毎日|まいにち} {自転車|じてんしゃ}で {学校|がっこう}に {通|かよ}って います。\n　{先月|せんげつ}、{雨|あめ}の {日|ひ}に {自転車|じてんしゃ}で {駅|えき}まで {行|い}きました。{駅|えき}の {前|まえ}に {自転車|じてんしゃ}を とめて、{買|か}い{物|もの}を しました。［ 2 ］、{帰|かえ}る とき、{自転車|じてんしゃ}が ありませんでした。\n　{近|ちか}くの {交番|こうばん}で {聞|き}くと、［ 3 ］ {場所|ばしょ}は {自転車|じてんしゃ}を とめては いけない {所|ところ}だと {言|い}われました。{自転車|じてんしゃ}は {町|まち}の {自転車|じてんしゃ}{置|お}き{場|ば}に {運|はこ}ばれて いました。{2,000円|にせんえん} はらって、やっと {自転車|じてんしゃ}を ［ 4 ］。\n　{日本|にほん}では {自転車|じてんしゃ}を とめる {場所|ばしょ}にも ルールが あります。これからは {気|き}を つけて、{決|き}められた {場所|ばしょ}に ［ 5 ］。",
+        "prompt": "［ 3 ］",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo この／その: chỗ trống chỉ nơi vừa được nhắc ở câu trước (trước ga, chỗ dựng xe) → その 場所. それ không đứng ngay trước danh từ (phải là その + N). Câu không phải câu hỏi nên loại các từ để hỏi どの, どんな.",
+        "type": "choice",
+        "options": ["どの", "それ", "どんな", "その"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t4-q19",
+        "instruction": "もんだい３　［ 1 ］から ［ 5 ］に 何を 入れますか。{文章|ぶんしょう}の {意味|いみ}を {考|かんが}えて、１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "passage": "{下|した}の {文章|ぶんしょう}は、{留学生|りゅうがくせい}の {作文|さくぶん}です。\n\n{日本|にほん}の {自転車|じてんしゃ}\nグエン・ミン・アン\n　わたしは {去年|きょねん} {日本|にほん}に {来|き}ました。{来|き}て すぐ {自転車|じてんしゃ}を {買|か}いました。{日本|にほん}の {町|まち}は {道|みち}が きれいで、{自転車|じてんしゃ}で どこへでも {行|い}けます。［ 1 ］、{毎日|まいにち} {自転車|じてんしゃ}で {学校|がっこう}に {通|かよ}って います。\n　{先月|せんげつ}、{雨|あめ}の {日|ひ}に {自転車|じてんしゃ}で {駅|えき}まで {行|い}きました。{駅|えき}の {前|まえ}に {自転車|じてんしゃ}を とめて、{買|か}い{物|もの}を しました。［ 2 ］、{帰|かえ}る とき、{自転車|じてんしゃ}が ありませんでした。\n　{近|ちか}くの {交番|こうばん}で {聞|き}くと、［ 3 ］ {場所|ばしょ}は {自転車|じてんしゃ}を とめては いけない {所|ところ}だと {言|い}われました。{自転車|じてんしゃ}は {町|まち}の {自転車|じてんしゃ}{置|お}き{場|ば}に {運|はこ}ばれて いました。{2,000円|にせんえん} はらって、やっと {自転車|じてんしゃ}を ［ 4 ］。\n　{日本|にほん}では {自転車|じてんしゃ}を とめる {場所|ばしょ}にも ルールが あります。これからは {気|き}を つけて、{決|き}められた {場所|ばしょ}に ［ 5 ］。",
+        "prompt": "［ 4 ］",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo góc nhìn người viết: chủ ngữ của cả câu là わたし (trả 2.000 yên), và tôi nhận lại xe từ người khác → 返して もらいました. 返して あげました là tôi trả cho người khác; 返させました là bắt ai trả; 返して おきました là trả sẵn — đều sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "{返|かえ}して あげました",
+          "{返|かえ}して もらいました",
+          "{返|かえ}させました",
+          "{返|かえ}して おきました"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t4-q20",
+        "instruction": "もんだい３　［ 1 ］から ［ 5 ］に 何を 入れますか。{文章|ぶんしょう}の {意味|いみ}を {考|かんが}えて、１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "passage": "{下|した}の {文章|ぶんしょう}は、{留学生|りゅうがくせい}の {作文|さくぶん}です。\n\n{日本|にほん}の {自転車|じてんしゃ}\nグエン・ミン・アン\n　わたしは {去年|きょねん} {日本|にほん}に {来|き}ました。{来|き}て すぐ {自転車|じてんしゃ}を {買|か}いました。{日本|にほん}の {町|まち}は {道|みち}が きれいで、{自転車|じてんしゃ}で どこへでも {行|い}けます。［ 1 ］、{毎日|まいにち} {自転車|じてんしゃ}で {学校|がっこう}に {通|かよ}って います。\n　{先月|せんげつ}、{雨|あめ}の {日|ひ}に {自転車|じてんしゃ}で {駅|えき}まで {行|い}きました。{駅|えき}の {前|まえ}に {自転車|じてんしゃ}を とめて、{買|か}い{物|もの}を しました。［ 2 ］、{帰|かえ}る とき、{自転車|じてんしゃ}が ありませんでした。\n　{近|ちか}くの {交番|こうばん}で {聞|き}くと、［ 3 ］ {場所|ばしょ}は {自転車|じてんしゃ}を とめては いけない {所|ところ}だと {言|い}われました。{自転車|じてんしゃ}は {町|まち}の {自転車|じてんしゃ}{置|お}き{場|ば}に {運|はこ}ばれて いました。{2,000円|にせんえん} はらって、やっと {自転車|じてんしゃ}を ［ 4 ］。\n　{日本|にほん}では {自転車|じてんしゃ}を とめる {場所|ばしょ}にも ルールが あります。これからは {気|き}を つけて、{決|き}められた {場所|ばしょ}に ［ 5 ］。",
+        "prompt": "［ 5 ］",
+        "points": 1,
+        "tags": ["n4", "tips", "grammar-tips"],
+        "explain": "Mẹo thì của cả bài: câu cuối có これからは (từ nay) → nói dự định, quyết tâm: とめる ように します (sẽ cố gắng dựng xe đúng chỗ). とめて しまいました, とめた ことが あります, とめて いました đều nói chuyện đã qua.",
+        "type": "choice",
+        "options": [
+          "とめて しまいました",
+          "とめた ことが あります",
+          "とめる ように します",
+          "とめて いました"
+        ],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

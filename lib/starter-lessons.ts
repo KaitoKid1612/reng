@@ -32,6 +32,13 @@ import n4Grammar5 from "@/content/starters/n4-grammar-5.json";
 import n4Grammar6 from "@/content/starters/n4-grammar-6.json";
 import n4Grammar7 from "@/content/starters/n4-grammar-7.json";
 import n4Grammar8 from "@/content/starters/n4-grammar-8.json";
+import n4Tips1 from "@/content/starters/n4-tips-1.json";
+import n4Tips2 from "@/content/starters/n4-tips-2.json";
+import n4Tips3 from "@/content/starters/n4-tips-3.json";
+import n4Tips4 from "@/content/starters/n4-tips-4.json";
+import n4Tips5 from "@/content/starters/n4-tips-5.json";
+import n4Tips6 from "@/content/starters/n4-tips-6.json";
+import n4Tips7 from "@/content/starters/n4-tips-7.json";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
 
 import type { LessonDraft } from "@/lib/lesson-schema";
@@ -250,6 +257,48 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     buttonLabel: "Tạo tổng ôn N4 · 8",
     draft: lessonDraftSchema.parse(n4Grammar8),
   },
+  {
+    id: "n4-tips-1",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 1",
+    draft: lessonDraftSchema.parse(n4Tips1),
+  },
+  {
+    id: "n4-tips-2",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 2",
+    draft: lessonDraftSchema.parse(n4Tips2),
+  },
+  {
+    id: "n4-tips-3",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 3",
+    draft: lessonDraftSchema.parse(n4Tips3),
+  },
+  {
+    id: "n4-tips-4",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 4",
+    draft: lessonDraftSchema.parse(n4Tips4),
+  },
+  {
+    id: "n4-tips-5",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 5",
+    draft: lessonDraftSchema.parse(n4Tips5),
+  },
+  {
+    id: "n4-tips-6",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 6",
+    draft: lessonDraftSchema.parse(n4Tips6),
+  },
+  {
+    id: "n4-tips-7",
+    course: "Mẹo học và thi JLPT N4",
+    buttonLabel: "Tạo mẹo N4 · 7",
+    draft: lessonDraftSchema.parse(n4Tips7),
+  },
 ];
 
 // The new-lesson page lists each course in its own section.
@@ -258,6 +307,9 @@ export const MINNA_STARTERS = STARTER_LESSONS.filter(
 );
 export const N4_REVIEW_STARTERS = STARTER_LESSONS.filter(
   (starter) => starter.draft.courseId === "n4-grammar",
+);
+export const N4_TIPS_STARTERS = STARTER_LESSONS.filter(
+  (starter) => starter.draft.courseId === "n4-tips",
 );
 
 export function findStarterLesson(id: string) {

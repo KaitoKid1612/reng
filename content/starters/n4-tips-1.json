@@ -1,0 +1,618 @@
+{
+  "id": "n4-tips-1",
+  "title": "Mẹo N4 · 1 – Cách làm đề N4",
+  "titleJa": "N4のコツ 1　試験の 受け方",
+  "summary": "Mẹo làm đề JLPT N4: ba phần thi và thời gian, thang điểm và điểm liệt (言語知識・読解 38/120, 聴解 19/60, tổng 90/180), các dạng もんだい, gợi ý chia phút cho phần 25 phút và khối 55 phút, thứ tự làm bài, không bỏ trống, tô phiếu ngay, đoán bằng loại trừ, xử lý khi bị kẹt và cách dùng lúc lặng ở phần nghe; 20 câu tình huống để tự kiểm tra. Thông tin về đề lấy từ trang chính thức JLPT (jlpt.jp), mẹo tổng hợp từ các hướng dẫn ôn thi công khai; mọi ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 1,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t1-s01",
+        "type": "title",
+        "jp": "{試験|しけん}の {受|う}け{方|かた}",
+        "vi": "Mẹo N4 · 1 – Cách làm đề N4"
+      },
+      {
+        "id": "n4t1-s02",
+        "type": "note",
+        "title": "Bộ này giúp gì",
+        "body": "1. Biết đề N4 có những phần, dạng bài nào và được chấm điểm ra sao.\n2. Có mốc phút cho từng phần, nhất là khối 55 phút {文法|ぶんぽう}・{読解|どっかい}.\n3. Biết làm gì khi bị kẹt, khi sắp hết giờ, khi lỡ một câu nghe.\n4. Cuối bộ: 20 câu tình huống để tự kiểm tra. Mẹo kanji, từ vựng, ngữ pháp, đọc, nghe nằm ở các bộ Mẹo N4 sau."
+      },
+      {
+        "id": "n4t1-s03",
+        "type": "table",
+        "title": "Ba phần thi N4",
+        "columns": ["Phần thi", "Thời gian", "Nội dung"],
+        "rows": [
+          ["{言語知識|げんごちしき}（{文字|もじ}・{語彙|ごい}）", "25 phút", "Chữ Hán, từ vựng"],
+          [
+            "{言語知識|げんごちしき}（{文法|ぶんぽう}）・{読解|どっかい}",
+            "55 phút",
+            "Ngữ pháp, đọc hiểu"
+          ],
+          ["{聴解|ちょうかい}", "35 phút", "Nghe hiểu"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Thời gian nghe có thể xê dịch nhẹ theo độ dài băng. Sách cũ ghi 30 và 60 phút là trước thay đổi năm 2020."
+      },
+      {
+        "id": "n4t1-s04",
+        "type": "table",
+        "title": "Thang điểm và điểm liệt",
+        "columns": ["Phần tính điểm", "Thang điểm", "Điểm liệt"],
+        "rows": [
+          ["{言語知識|げんごちしき}・{読解|どっかい}", "0–120", "38"],
+          ["{聴解|ちょうかい}", "0–60", "19"],
+          ["Tổng", "0–180", "90 (điểm đậu)"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hai phần thi đầu (25 + 55 phút) gộp thành một phần tính điểm 0–120."
+      },
+      {
+        "id": "n4t1-s05",
+        "type": "note",
+        "title": "Điểm liệt nghĩa là gì",
+        "body": "1. Hai phần thi đầu (25 + 55 phút) gộp chung một điểm 0–120, cần ít nhất 38.\n2. {聴解|ちょうかい} tính riêng 0–60, cần ít nhất 19. Không phải “mỗi phần 19” như vài trang viết.\n3. Đậu khi tổng ≥ 90 VÀ không phần nào dưới điểm liệt; vắng một phần thi là trượt.\n4. Điểm là điểm quy đổi ({尺度得点|しゃくどとくてん}), không phải đếm số câu đúng."
+      },
+      {
+        "id": "n4t1-s06",
+        "type": "table",
+        "title": "Bốn bảng điểm thử",
+        "columns": ["{言語|げんご}・{読解|どっかい}", "{聴解|ちょうかい}", "Tổng", "Kết quả"],
+        "rows": [
+          ["80", "18", "98", "Trượt: nghe dưới 19"],
+          ["36", "60", "96", "Trượt: dưới 38"],
+          ["55", "30", "85", "Trượt: tổng dưới 90"],
+          ["62", "28", "90", "Đậu"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột Kết quả, cho học viên tự kết luận từng dòng."
+      },
+      {
+        "id": "n4t1-s07",
+        "type": "quiz",
+        "ref": "n4t1-q01"
+      },
+      {
+        "id": "n4t1-s08",
+        "type": "note",
+        "title": "Nghe chiếm 1/3 số điểm",
+        "body": "1. 60 trên 180 điểm là phần {聴解|ちょうかい}, và phần này có điểm liệt riêng.\n2. Đọc giỏi mà nghe yếu vẫn trượt: 100 + 18 = 118 điểm vẫn là {不合格|ふごうかく}.\n3. Ôn nghe mỗi ngày một ít, đừng dồn vào tuần cuối.\n4. Câu nghe điển hình: 「{女|おんな}の {人|ひと}は このあと {何|なに}を しますか。」 Phải nghe đến câu cuối mới chọn."
+      },
+      {
+        "id": "n4t1-s09",
+        "type": "table",
+        "title": "Các もんだい: {文字|もじ}・{語彙|ごい} và {文法|ぶんぽう}",
+        "columns": ["Phần", "もんだい", "Dạng", "Hỏi gì"],
+        "rows": [
+          ["{文字|もじ}・{語彙|ごい}", "1", "{漢字|かんじ}{読|よ}み", "Chọn cách đọc chữ Hán"],
+          ["{文字|もじ}・{語彙|ごい}", "2", "{表記|ひょうき}", "Chọn chữ Hán đúng"],
+          [
+            "{文字|もじ}・{語彙|ごい}",
+            "3",
+            "{文脈|ぶんみゃく}{規定|きてい}",
+            "Chọn từ hợp với câu"
+          ],
+          [
+            "{文字|もじ}・{語彙|ごい}",
+            "4",
+            "{言|い}い{換|か}え{類義|るいぎ}",
+            "Chọn câu gần nghĩa nhất"
+          ],
+          ["{文字|もじ}・{語彙|ごい}", "5", "{用法|ようほう}", "Chọn câu dùng từ đúng"],
+          ["{文法|ぶんぽう}", "1", "{文|ぶん}の{文法|ぶんぽう}1", "Chọn mẫu điền （　）"],
+          ["{文法|ぶんぽう}", "2", "{文|ぶん}の{文法|ぶんぽう}2", "Xếp câu, chọn ô ★"],
+          ["{文法|ぶんぽう}", "3", "{文章|ぶんしょう}の{文法|ぶんぽう}", "Điền vào đoạn văn"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "文の文法1 là 文法形式の判断, 文の文法2 là 文の組み立て."
+      },
+      {
+        "id": "n4t1-s10",
+        "type": "table",
+        "title": "Các もんだい: {読解|どっかい} và {聴解|ちょうかい}",
+        "columns": ["Phần", "もんだい", "Dạng", "Hỏi gì"],
+        "rows": [
+          [
+            "{読解|どっかい}",
+            "4",
+            "{内容|ないよう}{理解|りかい}（{短文|たんぶん}）",
+            "Đọc đoạn ngắn"
+          ],
+          [
+            "{読解|どっかい}",
+            "5",
+            "{内容|ないよう}{理解|りかい}（{中文|ちゅうぶん}）",
+            "Đọc bài dài hơn"
+          ],
+          ["{読解|どっかい}", "6", "{情報|じょうほう}{検索|けんさく}", "Tìm thông tin trong bảng"],
+          ["{聴解|ちょうかい}", "1", "{課題|かだい}{理解|りかい}", "Người đó làm gì tiếp"],
+          ["{聴解|ちょうかい}", "2", "ポイント{理解|りかい}", "Nghe lý do, chi tiết"],
+          ["{聴解|ちょうかい}", "3", "{発話|はつわ}{表現|ひょうげん}", "Nhìn hình, chọn câu nói"],
+          ["{聴解|ちょうかい}", "4", "{即時|そくじ}{応答|おうとう}", "Đáp lại câu nói ngắn"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t1-s11",
+        "type": "quiz",
+        "ref": "n4t1-q14"
+      },
+      {
+        "id": "n4t1-s12",
+        "type": "table",
+        "title": "Gợi ý chia 25 phút {文字|もじ}・{語彙|ごい}",
+        "columns": ["もんだい", "Dạng", "Cách làm", "Xong lúc (gợi ý)"],
+        "rows": [
+          ["1–2", "{漢字|かんじ}{読|よ}み・{表記|ひょうき}", "Biết thì chọn ngay", "Phút 7"],
+          ["3", "{文脈|ぶんみゃく}{規定|きてい}", "Đọc cả câu", "Phút 12"],
+          ["4", "{言|い}い{換|か}え{類義|るいぎ}", "Tìm nghĩa lõi", "Phút 16"],
+          ["5", "{用法|ようほう}", "Đọc đủ 4 câu", "Phút 23"],
+          ["—", "Kiểm tra", "Câu đánh dấu, phiếu", "Phút 25"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Mốc phút là gợi ý của Reng, không phải quy định của đề: 7 + 5 + 4 + 7 + 2 = 25. Dạng 用法 phải đọc bốn câu nên để nhiều thời gian nhất."
+      },
+      {
+        "id": "n4t1-s13",
+        "type": "table",
+        "title": "Gợi ý chia 55 phút {文法|ぶんぽう}・{読解|どっかい}",
+        "columns": ["もんだい", "Dạng", "Cách làm", "Xong lúc (gợi ý)"],
+        "rows": [
+          ["1", "{文法|ぶんぽう}{形式|けいしき}", "Nhìn trước, sau （　）", "Phút 8"],
+          ["2", "★ xếp câu", "Ghép mảnh chắc trước", "Phút 15"],
+          ["3", "{文章|ぶんしょう}の{文法|ぶんぽう}", "Đọc cả đoạn", "Phút 20"],
+          ["4", "{短文|たんぶん}", "Đọc câu hỏi trước", "Phút 30"],
+          ["5", "{中文|ちゅうぶん}", "Đọc theo từng câu hỏi", "Phút 40"],
+          ["6", "{情報|じょうほう}{検索|けんさく}", "Gạch điều kiện, dò bảng", "Phút 48"],
+          ["—", "Kiểm tra", "Câu đánh dấu, phiếu", "Phút 55"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Gợi ý của Reng, không phải quy định: 20 phút ngữ pháp (8 + 7 + 5), 28 phút đọc (10 + 10 + 8), 7 phút kiểm tra = 55. Chỉnh theo kết quả thi thử."
+      },
+      {
+        "id": "n4t1-s14",
+        "type": "quiz",
+        "ref": "n4t1-q12"
+      },
+      {
+        "id": "n4t1-s15",
+        "type": "note",
+        "title": "Thứ tự làm bài",
+        "body": "1. Làm theo thứ tự もんだい, nhưng không để một câu giữ mình quá 1 phút.\n2. Khối 55 phút: xong {文法|ぶんぽう} trước phút 20, phần còn lại dành cho {読解|どっかい}.\n3. {読解|どっかい}: đọc câu hỏi trước, ví dụ 「{何|なに}を {持|も}って {行|い}きますか」, rồi mới đọc bài.\n4. Bài {中文|ちゅうぶん} quá mốc giờ: làm {情報|じょうほう}{検索|けんさく} trước rồi quay lại.\n5. Hết giờ phần nào thì phiếu phần đó bị thu, không quay lại được."
+      },
+      {
+        "id": "n4t1-s16",
+        "type": "note",
+        "title": "Không bao giờ để trống",
+        "body": "1. Câu sai không bị trừ điểm; để trống thì chắc chắn mất điểm câu đó.\n2. Đoán bừa có 1/4 cơ hội (nghe もんだい３, ４ chỉ 3 lựa chọn: 1/3); loại được 2 lựa chọn thì còn 1/2.\n3. Còn 2 phút: tô hết mọi câu còn trống trước, rồi mới xem lại.\n4. Câu chưa kịp đọc: tô cùng một số cho tất cả, đừng mất giờ suy nghĩ."
+      },
+      {
+        "id": "n4t1-s17",
+        "type": "note",
+        "title": "Tô phiếu ngay khi làm",
+        "body": "1. Phiếu tô (マークシート): bút chì đen (HB, B, 2B hoặc No.2); bút bi, bút mực không được chấm.\n2. Xong câu nào tô câu đó (hoặc mỗi trang một lượt), không dồn cuối giờ.\n3. Mỗi lần tô, xem số câu khớp hàng trên phiếu: lệch một hàng là sai cả loạt.\n4. Sửa: tẩy sạch ô cũ (không dùng bút xóa), rồi tô kín ô mới.\n5. {聴解|ちょうかい} chạy theo băng: chọn xong câu nào tô ngay câu đó."
+      },
+      {
+        "id": "n4t1-s18",
+        "type": "quiz",
+        "ref": "n4t1-q04"
+      },
+      {
+        "id": "n4t1-s19",
+        "type": "note",
+        "title": "Đoán bằng cách loại trừ",
+        "body": "1. Nhìn chữ ngay trước và sau （　）: 「{見|み}て （　）」 chỉ nhận lựa chọn nối được với thể て (みる, おく…).\n2. Xem nghĩa cả câu: vế trước là lý do hay trái ý với vế sau?\n3. Loại được lựa chọn nào thì bỏ hẳn, không quay lại cân nhắc nó.\n4. Còn 2 lựa chọn: chọn cái hợp với cả câu, đừng chọn vì “nghe quen”."
+      },
+      {
+        "id": "n4t1-s20",
+        "type": "table",
+        "title": "Loại trừ: {雨|あめ}が {降|ふ}って いる（　）、かさを {持|も}って {行|い}きます",
+        "columns": ["Lựa chọn", "Ghép vào câu", "Kết luận"],
+        "rows": [
+          ["から", "{降|ふ}って いるから", "Giữ: nêu lý do"],
+          ["のに", "{降|ふ}って いるのに", "Loại: trái ý"],
+          ["ても", "{降|ふ}って いるても", "Loại: sai dạng"],
+          ["ば", "{降|ふ}って いるば", "Loại: sai dạng"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hai lựa chọn bị loại vì dạng (いる không nối trực tiếp với ても, ば), một vì nghĩa. Còn lại から."
+      },
+      {
+        "id": "n4t1-s21",
+        "type": "quiz",
+        "ref": "n4t1-q16"
+      },
+      {
+        "id": "n4t1-s22",
+        "type": "note",
+        "title": "Khi bị kẹt",
+        "body": "1. Quá 1 phút chưa ra: tô đáp án nghiêng hơn, vẽ dấu ？ cạnh số câu trên đề, đi tiếp.\n2. Cuối phần, còn giờ thì quay lại các câu có dấu ？.\n3. Câu ★ rối: ghép trước hai mảnh chắc chắn dính nhau, ví dụ 「{行|い}った」＋「ことが」.\n4. Gặp từ lạ khi {読解|どっかい}: đoán nghĩa từ câu xung quanh, đọc tiếp."
+      },
+      {
+        "id": "n4t1-s23",
+        "type": "note",
+        "title": "Phần nghe: dùng khoảng lặng",
+        "body": "1. Tô xong một câu thì nhìn ngay hình, lựa chọn của câu sau.\n2. もんだい１, ２ đọc câu hỏi trước: nhớ từ hỏi (なぜ, いつ, {何|なに}); もんだい２ còn có giờ đọc lựa chọn.\n3. Nghe đến hết: 「じゃ、やっぱり…」 thường mở đầu quyết định cuối.\n4. Băng chỉ phát một lần: lỡ câu nào thì chọn bừa, dồn sức cho câu sau.\n5. Đề nghe cho phép ghi chú: ghi ký hiệu ngắn (giờ, số), không ghi cả câu."
+      },
+      {
+        "id": "n4t1-s24",
+        "type": "table",
+        "title": "Bốn dạng nghe N4",
+        "columns": ["もんだい", "Dạng", "Trên đề có", "Mẹo nhanh"],
+        "rows": [
+          ["1", "{課題|かだい}{理解|りかい}", "Hình/chữ, 4 lựa chọn", "Nghe quyết định cuối"],
+          ["2", "ポイント{理解|りかい}", "Chữ, có giờ đọc", "Nhớ なぜ・いつ・{何|なに}"],
+          ["3", "{発話|はつわ}{表現|ひょうげん}", "Hình có mũi tên ➡", "Người ➡ nói gì (3 câu)"],
+          ["4", "{即時|そくじ}{応答|おうとう}", "Không có gì", "Chọn ngay, 3 câu đáp"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Theo đề mẫu chính thức trên jlpt.jp. Mẹo chi tiết cho từng dạng ở bộ Mẹo N4 · 6 – Nghe hiểu."
+      },
+      {
+        "id": "n4t1-s25",
+        "type": "quiz",
+        "ref": "n4t1-q15"
+      },
+      {
+        "id": "n4t1-s26",
+        "type": "dialogue",
+        "title": "Hội thoại: hỏi thầy cách làm bài",
+        "lines": [
+          {
+            "speaker": "ヴィエット",
+            "jp": "わからない {問題|もんだい}は どう したら いいですか。",
+            "vi": "Câu không biết thì em nên làm sao ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "{一|ひと}つ {選|えら}んで、{次|つぎ}へ {行|い}きましょう。",
+            "vi": "Chọn một đáp án rồi sang câu tiếp theo."
+          },
+          {
+            "speaker": "ヴィエット",
+            "jp": "{何|なに}も マークしないのは だめですか。",
+            "vi": "Không tô gì thì không được ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "まちがえても、{減点|げんてん}は ありません。",
+            "vi": "Sai cũng không bị trừ điểm đâu."
+          },
+          {
+            "speaker": "ヴィエット",
+            "jp": "{聴解|ちょうかい}の {答|こた}えは いつ マークしますか。",
+            "vi": "Đáp án phần nghe thì khi nào em tô ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "{答|こた}えを {決|き}めたら、すぐ マークして ください。",
+            "vi": "Chọn xong câu nào thì tô ngay nhé."
+          }
+        ],
+        "reveal": true,
+        "teacherNotes": "Hai mẹo trong hội thoại: không bỏ trống (sai không bị trừ điểm) và tô phiếu ngay ở phần nghe vì giờ thi chạy theo băng."
+      },
+      {
+        "id": "n4t1-s27",
+        "type": "quiz",
+        "ref": "n4t1-q20"
+      },
+      {
+        "id": "n4t1-s28",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. Đậu = tổng ≥ 90, {言語知識|げんごちしき}・{読解|どっかい} ≥ 38, {聴解|ちょうかい} ≥ 19.\n2. Thời gian 25 + 55 + 35 phút; gợi ý 55 phút: {文法|ぶんぽう} 20 + {読解|どっかい} 28 + kiểm tra 7.\n3. Không bỏ trống; tô phiếu ngay bằng bút chì đen (HB, B, 2B), xem số câu khớp hàng.\n4. Kẹt quá 1 phút: chọn, đánh dấu ？, đi tiếp; loại trừ nhờ chữ trước, sau （　）.\n5. Nghe: xem trước hình, lựa chọn; nghe đến quyết định cuối; chọn xong tô ngay."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t1-q01",
+        "prompt": "Việt được {言語知識|げんごちしき}・{読解|どっかい} 82 điểm, {聴解|ちょうかい} 17 điểm. Kết quả thế nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo điểm liệt: tổng 99 ≥ 90 nhưng 聴解 17 < 19 nên vẫn trượt — phải đạt tổng VÀ từng điểm liệt. “Có điểm” chưa đủ, phải đạt mức liệt; 言語知識・読解 chỉ cần 38, không phải 90.",
+        "type": "choice",
+        "options": [
+          "Đậu, vì tổng 99 điểm lớn hơn 90",
+          "Đậu, vì phần nào cũng có điểm",
+          "Trượt, vì {聴解|ちょうかい} dưới điểm liệt 19",
+          "Trượt, vì {言語知識|げんごちしき}・{読解|どっかい} chưa tới 90"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t1-q02",
+        "prompt": "Trong đề N4, phần {聴解|ちょうかい} chiếm bao nhiêu phần tổng điểm?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo “nghe chiếm 1/3 số điểm”: 聴解 là 0–60 trên tổng 0–180. 45, 90, 30 không phải thang điểm nào của N4.",
+        "type": "choice",
+        "options": [
+          "Một phần ba (60/180)",
+          "Một phần tư (45/180)",
+          "Một nửa (90/180)",
+          "Một phần sáu (30/180)"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t1-q03",
+        "prompt": "Khối thi 55 phút gồm những phần nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Cấu trúc đề: 25 phút 文字・語彙, 55 phút 文法・読解, 35 phút 聴解. 文字・語彙 là phần 25 phút riêng; 聴解 là phần 35 phút riêng.",
+        "type": "choice",
+        "options": [
+          "{文字|もじ}・{語彙|ごい} và {文法|ぶんぽう}",
+          "{文法|ぶんぽう} và {聴解|ちょうかい}",
+          "{読解|どっかい} và {聴解|ちょうかい}",
+          "{文法|ぶんぽう} và {読解|どっかい}"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t1-q04",
+        "prompt": "Còn 1 phút trong phần {文字|もじ}・{語彙|ごい}, Việt còn 4 câu chưa làm. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo “không bao giờ để trống”: câu sai không bị trừ điểm, tô hết 4 câu vẫn còn cơ hội đúng. Để trống chắc chắn mất điểm; giám thị không cho thêm giờ; làm kỹ 1 câu thì bỏ phí 3 câu.",
+        "type": "choice",
+        "options": [
+          "Để trống để không bị trừ điểm",
+          "Tô ngay một đáp án cho cả 4 câu",
+          "Xin giám thị thêm thời gian",
+          "Làm kỹ 1 câu, bỏ trống 3 câu"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t1-q05",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "もう 10{時|じ}ですから、そろそろ （　　）ましょう。",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Đã 10 giờ rồi, mình về thôi. Mẹo loại trừ bằng chữ sau chỗ trống: ましょう đi với thể ます bỏ ます → 帰り. 帰る (từ điển), 帰った (quá khứ), 帰って (thể て) đều không nối với ましょう.",
+        "type": "choice",
+        "options": ["{帰|かえ}り", "{帰|かえ}る", "{帰|かえ}った", "{帰|かえ}って"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t1-q06",
+        "prompt": "Thang điểm 0–120 của N4 tính những phần nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bảng thang điểm: 言語知識（文字・語彙・文法）・読解 gộp chung 0–120, điểm liệt 38; 聴解 riêng 0–60. Chỉ 文字・語彙 hay chỉ 文法・読解 là thiếu; 聴解 không nằm trong 0–120.",
+        "type": "choice",
+        "options": [
+          "Chỉ {文字|もじ}・{語彙|ごい}",
+          "{文法|ぶんぽう} và {読解|どっかい}",
+          "{文字|もじ}・{語彙|ごい}, {文法|ぶんぽう} và {読解|どっかい}",
+          "{読解|どっかい} và {聴解|ちょうかい}"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t1-q07",
+        "prompt": "Đang làm {聴解|ちょうかい} もんだい１, Việt đã chọn được đáp án. Khi nào nên tô phiếu?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo tô phiếu ngay: phần nghe chạy theo băng, không nên trông chờ giờ chép đáp án lúc cuối. Đợi cuối bài hay chép từ nháp dễ thiếu giờ; giám thị không cho thêm 5 phút.",
+        "type": "choice",
+        "options": [
+          "Đợi hết bài nghe rồi tô một lượt",
+          "Tô ngay trong lúc lặng sau câu đó",
+          "Ghi ra nháp, cuối giờ chép lại",
+          "Tô khi giám thị cho thêm 5 phút"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t1-q08",
+        "prompt": "Bảng điểm: {言語知識|げんごちしき}・{読解|どっかい} 40, {聴解|ちょうかい} 48. Kết quả thế nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo điểm liệt: 40 ≥ 38 và 48 ≥ 19 đều qua, nhưng tổng 40 + 48 = 88 < 90 nên trượt. Qua điểm liệt thôi chưa đủ để đậu; 40 không dưới 38.",
+        "type": "choice",
+        "options": [
+          "Đậu, vì hai phần đều qua điểm liệt",
+          "Đậu, vì {聴解|ちょうかい} trên 19",
+          "Trượt, vì {言語知識|げんごちしき}・{読解|どっかい} dưới 38",
+          "Trượt, vì tổng 88 dưới 90"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t1-q09",
+        "prompt": "Câu nào nói đúng về điểm liệt N4?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bảng thang điểm (jlpt.jp): 38/120 và 19/60, tổng 90/180. “Mỗi phần 19” là thông tin sai; vẫn có điểm liệt; 60 và 30 là số bịa.",
+        "type": "choice",
+        "options": [
+          "Phần nào cũng cần ít nhất 19 điểm",
+          "{言語知識|げんごちしき}・{読解|どっかい} cần 38, {聴解|ちょうかい} cần 19",
+          "Chỉ cần tổng 90, không có điểm liệt",
+          "{言語知識|げんごちしき}・{読解|どっかい} cần 60, {聴解|ちょうかい} cần 30"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t1-q10",
+        "prompt": "Một câu ở phần {文法|ぶんぽう} đã nghĩ 1 phút mà vẫn phân vân giữa 2 đáp án. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo “khi bị kẹt” (quy tắc 1 phút): tô đáp án nghiêng hơn để không trống, đánh dấu để quay lại nếu còn giờ. Nghĩ tiếp thì mất giờ câu sau; bỏ trống dễ quên tô; bỏ cả phần 文法 là mất điểm dễ lấy.",
+        "type": "choice",
+        "options": [
+          "Ngồi nghĩ tiếp đến khi chắc chắn",
+          "Bỏ trống, cuối giờ mới tô",
+          "Bỏ cả phần {文法|ぶんぽう}, sang {読解|どっかい}",
+          "Tô đáp án nghiêng hơn, đánh dấu ？, đi tiếp"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t1-q11",
+        "prompt": "Phần {言語知識|げんごちしき}（{文字|もじ}・{語彙|ごい}）của N4 có bao nhiêu phút?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Cấu trúc đề: từ kỳ thi tháng 12/2020 phần này là 25 phút (sách cũ ghi 30 phút). 35 phút là 聴解, 55 phút là 文法・読解.",
+        "type": "choice",
+        "options": ["25 phút", "30 phút", "35 phút", "55 phút"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t1-q12",
+        "prompt": "Theo gợi ý chia giờ trong bộ này, khối 55 phút nên làm xong {文法|ぶんぽう} (もんだい１–３) vào khoảng phút thứ mấy?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bảng gợi ý chia 55 phút: khoảng 20 phút ngữ pháp, 28 phút đọc hiểu, 7 phút kiểm tra. Phút 5, 10 quá gấp cho ba もんだい ngữ pháp; phút 45 thì không đủ giờ đọc.",
+        "type": "choice",
+        "options": ["Phút thứ 5", "Phút thứ 10", "Phút thứ 20", "Phút thứ 45"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t1-q13",
+        "prompt": "Trên phiếu tô, muốn đổi đáp án thì làm thế nào là đúng?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo tô phiếu: sửa bằng tẩy cho sạch rồi tô kín ô mới; còn vết cũ máy có thể đọc thành hai đáp án. Bút bi không được chấm, bút xóa không được dùng.",
+        "type": "choice",
+        "options": [
+          "Gạch chéo ô cũ bằng bút bi",
+          "Dùng bút xóa che ô cũ",
+          "Tô thêm ô mới, giữ nguyên ô cũ",
+          "Tẩy sạch ô cũ rồi tô kín ô mới"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t1-q14",
+        "prompt": "Dạng {言|い}い{換|か}え{類義|るいぎ} (chọn câu gần nghĩa nhất) nằm ở phần thi nào?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bảng các もんだい: 文字・語彙 gồm 漢字読み, 表記, 文脈規定, 言い換え類義, 用法. 文法 có 文の文法 1, 2 và 文章の文法; 読解, 聴解 là các dạng khác.",
+        "type": "choice",
+        "options": [
+          "{聴解|ちょうかい}",
+          "{文字|もじ}・{語彙|ごい} (25 phút)",
+          "{読解|どっかい}",
+          "{文法|ぶんぽう} (khối 55 phút)"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t1-q15",
+        "prompt": "Dạng nghe nào không có hình hay chữ trên đề, chỉ nghe rồi chọn 1 trong 3?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bảng bốn dạng nghe: 即時応答 không in gì trên đề, nghe câu nói ngắn rồi chọn 1 trong 3 câu đáp. 課題理解, ポイント理解 có hình hoặc chữ và 4 lựa chọn; 発話表現 có hình với mũi tên.",
+        "type": "choice",
+        "options": [
+          "{課題|かだい}{理解|りかい}",
+          "ポイント{理解|りかい}",
+          "{即時|そくじ}{応答|おうとう}",
+          "{発話|はつわ}{表現|ひょうげん}"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t1-q16",
+        "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{熱|ねつ}が ある （　　）、{今日|きょう}は {会社|かいしゃ}を {休|やす}みます。",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Bị sốt nên hôm nay tôi nghỉ làm. Mẹo loại trừ: ある không nối thẳng với ても (phải là あっても) hay ながら (đi với thể ます); のに là trái ý, không hợp. Còn ので (lý do).",
+        "type": "choice",
+        "options": ["ので", "のに", "ても", "ながら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t1-q17",
+        "prompt": "Khối 55 phút: bài {中文|ちゅうぶん} quá dài, Việt đã trễ mốc giờ. Theo bộ này nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo thứ tự làm bài: 情報検索 chỉ cần dò bảng theo điều kiện nên nhanh hơn; tô tạm để không có câu trống. Đọc lại từ đầu càng trễ; bỏ trống mất điểm; quay lại 文法 bỏ phí phần đọc chưa làm.",
+        "type": "choice",
+        "options": [
+          "Đọc lại bài từ đầu cho chắc",
+          "Bỏ trống các câu của bài đó",
+          "Quay lại xem lại phần {文法|ぶんぽう}",
+          "Tô tạm, làm {情報|じょうほう}{検索|けんさく} trước rồi quay lại"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t1-q18",
+        "prompt": "Vì sao không nên bỏ ôn phần nghe dù thấy khó?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo nghe: 聴解 có điểm liệt riêng 19/60, đọc giỏi mà nghe dưới 19 vẫn trượt. 聴解 không nhân đôi, đề N4 có 聴解, và điểm 聴解 luôn được tính.",
+        "type": "choice",
+        "options": [
+          "{聴解|ちょうかい} có điểm liệt riêng, dưới 19 là trượt",
+          "{聴解|ちょうかい} được nhân đôi điểm",
+          "Đề N4 không có phần {聴解|ちょうかい}",
+          "{聴解|ちょうかい} chỉ tính khi tổng dưới 90"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t1-q19",
+        "prompt": "Câu nào đúng về điểm thi JLPT N4?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo điểm liệt: điểm JLPT là điểm quy đổi (尺度得点), không phải mỗi câu 1 điểm; câu sai không bị trừ, câu trống không được điểm.",
+        "type": "choice",
+        "options": [
+          "Mỗi câu đúng luôn được đúng 1 điểm",
+          "Là điểm quy đổi, không phải đếm số câu đúng",
+          "Mỗi câu sai bị trừ 1 điểm",
+          "Câu bỏ trống được nửa điểm"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t1-q20",
+        "prompt": "Đang thi {聴解|ちょうかい}, Việt lỡ mất câu 3 vì còn nghĩ câu 2. Nên làm gì?",
+        "points": 1,
+        "tags": ["n4", "tips", "exam-strategy"],
+        "explain": "Mẹo phần nghe: băng chỉ phát một lần, không xin nghe lại được; để trống thì mất điểm chắc; nghĩ tiếp câu 2 sẽ lỡ thêm câu 4. Tô bừa câu 3, dồn sức cho câu sau.",
+        "type": "choice",
+        "options": [
+          "Xin nghe lại câu 3",
+          "Để trống câu 3",
+          "Tô bừa câu 3, tập trung vào câu 4",
+          "Nghĩ tiếp câu 2 đến khi chắc chắn"
+        ],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

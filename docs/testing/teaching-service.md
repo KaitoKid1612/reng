@@ -129,6 +129,23 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Mẹo học và thi JLPT N4 — 16/11/2026
+
+Thêm 7 bài mẫu khóa `n4-tips` (195 slide, 140 câu luyện) và mục riêng ở trang Tạo bài mới. Nội dung ở [hướng dẫn nội dung](../content-authoring.md#mẹo-học-và-thi-jlpt-n4).
+
+- **PASS local:**
+  - Mỗi bài: `findPublishProblems` và `findFuriganaProblems` rỗng, xuất bản giữ nguyên nội dung, 20 câu với đáp án 5/5/5/5.
+  - `tests/japanese-lessons.test.ts`: thứ tự đăng ký, đủ loại slide của bài mẹo.
+  - `npm run check`: 415/415.
+- **PASS Supabase local, đo slide** (spec tạm, đã xóa): tạo và xuất bản 7 bài mẹo cùng bản đồ ngữ pháp đã sửa, đo 217 slide.
+  - Lần đầu bắt được ký hiệu ✗／✕ không có font (bài 5, 6), và 2 slide câu luyện bài 4 kèm bài văn 700 ký tự bị cắt.
+  - Đã đổi sang ×. Bỏ 2 slide đó và nhắc làm câu 16–20 ở phần câu luyện. Đo lại sạch.
+  - Ảnh ghép bài 2 và 7 đã xem bằng mắt.
+  - Bảng Hán Việt → 音読み, ngoại lệ, っ, 分／本, bẫy trường âm và bộ thủ của bài 2 đã được dò tay từng chữ.
+- **E2E:** `n4-grammar-review` và `minna-teaching` đạt 8/8 hai lần liên tiếp.
+  - Lần chạy đầu có một lỗi ngẫu nhiên ở bài Minna 11 (ô trả lời trống sau khi tải lại), trùng lúc server dev vừa khởi động ("WebServer aborted").
+  - Phần đó không đổi trong đợt này.
+
 ## Tổng ôn ngữ pháp N4 — 16/11/2026
 
 Thêm 9 bài mẫu khóa `n4-grammar` (bản đồ + 8 bài chủ đề, 111 mẫu, 320 câu luyện), link Tra ngữ pháp của lớp và link Ôn lại mẫu. Thiết kế ở [DD](../detail-design/teaching-service.md), nội dung ở [hướng dẫn nội dung](../content-authoring.md#tổng-ôn-ngữ-pháp-n4).

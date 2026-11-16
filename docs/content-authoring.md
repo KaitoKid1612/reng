@@ -100,6 +100,33 @@ Ngày 16/11/2026 có bộ bài mẫu ôn ngữ pháp JLPT N4 theo chủ đề (k
   3. Đo từng slide (xem [kiểm chứng](testing/teaching-service.md#tổng-ôn-ngữ-pháp-n4--16112026)).
 - **Gợi ý dùng:** thêm bản đồ và 8 bài vào lớp ôn N4. Trang **Tra ngữ pháp của lớp** và link **Ôn lại mẫu** trong lời giải chỉ hoạt động với các bài lớp đã mở.
 
+## Mẹo học và thi JLPT N4
+
+Ngày 16/11/2026 có thêm mục **Mẹo học và thi JLPT N4** (khóa `n4-tips`) ở trang Tạo bài mới, tách khỏi tổng ôn ngữ pháp. Tổng ôn trả lời câu hỏi "mẫu này là gì", còn bộ mẹo trả lời "học và làm đề thế nào":
+
+| Nút | File | Nội dung | Slide |
+|---|---|---|---|
+| Tạo mẹo N4 · 1 | `n4-tips-1.json` | Cấu trúc đề, điểm đậu và điểm liệt, gợi ý chia giờ, thứ tự làm bài, không bỏ trống, loại trừ | 28 |
+| Tạo mẹo N4 · 2 | `n4-tips-2.json` | Học kanji: tương ứng Hán Việt → 音読み (vần cuối, phụ âm đầu, ngoại lệ), 音／訓, っ, âm đục, bẫy trường âm, chữ giống nhau, bộ thủ | 31 |
+| Tạo mẹo N4 · 3 | `n4-tips-3.json` | Từ vựng: cụm từ, diễn đạt lại, cách dùng, katakana, tự／tha động từ, trợ số từ | 27 |
+| Tạo mẹo N4 · 4 | `n4-tips-4.json` | Ngữ pháp: nhìn chữ trước chỗ trống và đuôi câu, 4 bước câu ★, 文章の文法 | 27 |
+| Tạo mẹo N4 · 5 | `n4-tips-5.json` | Đọc hiểu: đọc câu hỏi trước, chỗ hay có đáp án, bẫy chép chữ, 情報検索 | 28 |
+| Tạo mẹo N4 · 6 | `n4-tips-6.json` | Nghe: 4 dạng, bẫy đổi ý, bẫy số, ghi chú, cặp câu 即時応答 | 26 |
+| Tạo mẹo N4 · 7 | `n4-tips-7.json` | Lịch ôn 3 tuần đến 06/12 dùng bài hằng ngày, Ôn lại mẫu, thi thử; túi đi thi, đến muộn, điện thoại, phiếu tô | 28 |
+
+- **Cấu trúc:** mỗi bài là slide ghi chú, bảng, hội thoại và 20 câu chọn áp dụng mẹo (đáp án 5/5/5/5). Bài không có từ vựng và mẫu câu.
+- **Câu nghe:** câu luyện nghe là lời thoại viết ra (trường `passage`) vì không có audio. Phần nghe thật thì luyện bằng bài hằng ngày và Thi thử JLPT.
+- **Số liệu:** lấy từ trang chính thức jlpt.jp:
+  - thời gian 25／55／35 phút;
+  - điểm đậu 90/180, điểm liệt 38/120 và 19/60;
+  - độ dài bài đọc 短文 khoảng 100–200 chữ, 中文 khoảng 450 chữ, 情報検索 khoảng 400 chữ;
+  - đề mẫu 2012 và 2018 trong `content/jlpt/official/`.
+- **Quy định ngày thi:** theo hướng dẫn dự thi 2026, ví dụ: từ kỳ 7/2026 đến muộn là không được vào thi phần đó; cấm điện thoại và đồng hồ thông minh kể cả giờ nghỉ; bút chì đen HB, B, 2B hoặc No.2. Điều gì tùy điểm thi thì ghi "kiểm tra phiếu dự thi".
+- **Mẹo kanji:** mẹo Hán Việt chỉ nêu là xu hướng, có bảng ngoại lệ, ví dụ 研 けん, 有 ゆう, 駅 えき, 立 りつ.
+- **Quy trình:**
+  1. Mỗi bài do một agent soạn có tra nguồn.
+  2. Một agent khác soát và sửa 13–38 chỗ mỗi bài. Lỗi chính: quy tắc sai (v → ば・ま bỏ sót あ行 như 運 うん), quy định thi đã cũ (cho muộn 10 phút), câu có hai đáp án, câu gần đề mẫu chính thức hoặc ngân hàng của lớp.
+
 ## Kiểm tra và xuất bản local
 
 ```bash

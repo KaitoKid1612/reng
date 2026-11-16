@@ -1,0 +1,673 @@
+{
+  "id": "n4-tips-6",
+  "title": "Mẹo N4 · 6 – Nghe hiểu",
+  "titleJa": "N4のコツ 6　聴解",
+  "summary": "Mẹo làm phần nghe (聴解) JLPT N4: bốn dạng 課題理解, ポイント理解, 発話表現, 即時応答 và chiến thuật cho từng dạng; bẫy đổi ý, bẫy số (giờ, ngày, giá), cách ghi chú bằng ký hiệu và các cặp câu hỏi–đáp hay gặp. Vì ở đây không có audio, hội thoại và 20 câu luyện được viết thành chữ để luyện bắt câu chốt. Mẹo được tổng hợp từ trang chính thức JLPT và các tài liệu ôn thi công khai; mọi ví dụ và câu hỏi đều là nội dung gốc.",
+  "order": 6,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t6-s01",
+        "type": "title",
+        "jp": "{聴解|ちょうかい}の コツ",
+        "vi": "Mẹo N4 · 6 – Nghe hiểu"
+      },
+      {
+        "id": "n4t6-s02",
+        "type": "note",
+        "title": "Mục tiêu và cách luyện bằng chữ",
+        "body": "1. 聴解 35 phút, 0–60 điểm, điểm sàn riêng 19: dưới 19 là trượt dù tổng điểm cao.\n2. Bộ này: chiến thuật cho 4 dạng nghe N4 và các bẫy hay gặp.\n3. Ở đây không có audio: hội thoại viết bằng chữ. Hãy đọc to, hoặc nhờ bạn đọc rồi che chữ mà trả lời.\n4. Nghe thật: dùng đề mẫu chính thức và “Thi thử JLPT N4” trong app."
+      },
+      {
+        "id": "n4t6-s03",
+        "type": "table",
+        "title": "4 dạng nghe N4",
+        "columns": ["Mondai", "Dạng", "Tập đề in gì", "Hỏi gì"],
+        "rows": [
+          [
+            "もんだい1",
+            "{課題理解|かだいりかい}",
+            "4 lựa chọn (chữ/tranh)",
+            "Sẽ làm gì, làm gì trước"
+          ],
+          [
+            "もんだい2",
+            "ポイント{理解|りかい}",
+            "4 lựa chọn, có giờ đọc",
+            "Lý do, lúc nào, cái gì"
+          ],
+          [
+            "もんだい3",
+            "{発話表現|はつわひょうげん}",
+            "Tranh có mũi tên ➡",
+            "Người ➡ nói gì (3 câu)"
+          ],
+          ["もんだい4", "{即時応答|そくじおうとう}", "Không in gì", "Đáp lại 1 câu (3 câu)"]
+        ],
+        "teacherNotes": "Đề mẫu chính thức N4 năm 2012 trên jlpt.jp có 8 / 7 / 5 / 8 câu cho bốn dạng; số câu ở kỳ thi thật có thể chênh một chút. Tập đề nghe được phép ghi chú (この問題用紙にメモをとってもいいです)."
+      },
+      {
+        "id": "n4t6-s04",
+        "type": "note",
+        "title": "Dùng khoảng lặng để đọc trước",
+        "body": "1. Chọn xong một câu là nhìn ngay lựa chọn hoặc tranh của câu sau.\n2. Tìm điểm khác nhau giữa chúng (đồ vật? giờ? địa điểm?) → biết phải nghe từ gì.\n3. もんだい2 có thời gian đọc riêng: gạch chân từ khác nhau trong 4 lựa chọn.\n4. Lỡ một câu thì chọn bừa ngay (không bị trừ điểm) và chuyển sang câu sau, đừng nghĩ lại."
+      },
+      {
+        "id": "n4t6-s05",
+        "type": "note",
+        "title": "課題理解: nghe kỹ câu hỏi đầu",
+        "body": "1. Câu hỏi được đọc trước hội thoại và nhắc lại ở cuối.\n2. Ghi ngay: ai (男／女) và hỏi gì: このあと, まず, 何を 持って いく…\n3. まず／はじめに = việc làm ĐẦU TIÊN, không phải việc quan trọng nhất.\n4. Đáp án thường là lời nhờ hoặc quyết định ở cuối, không phải việc nói đầu tiên."
+      },
+      {
+        "id": "n4t6-s06",
+        "type": "note",
+        "title": "Bẫy đổi ý: việc đầu tiên hay bị hủy",
+        "body": "1. Hội thoại thường nêu 2–3 phương án rồi gạt dần.\n2. Tín hiệu hủy: いや, でも, 〜は いい／いらない, 〜は もう 〜ました.\n3. Tín hiệu chốt: やっぱり 〜に します, じゃ、〜ことに します, そうします.\n4. Ghi mỗi phương án một chữ, nghe hủy thì gạch ×, chốt thì khoanh ○."
+      },
+      {
+        "id": "n4t6-s07",
+        "type": "table",
+        "title": "Câu báo hủy / câu báo chốt",
+        "columns": ["Câu nghe được", "Ý nghĩa", "Làm gì"],
+        "rows": [
+          ["やっぱり 〜に します", "Đổi ý, chốt lại", "Khoanh ○"],
+          ["じゃ、〜ことに します", "Quyết định", "Khoanh ○"],
+          ["じゃ、そうします", "Nghe theo lời khuyên", "Khoanh ○"],
+          ["〜の ほうが いいですよ", "Lời khuyên", "Chờ người kia đồng ý"],
+          ["〜は いいです／いらない", "Không cần", "Gạch ×"],
+          ["〜は もう 〜ました", "Đã làm rồi", "Gạch ×"],
+          ["〜なくても いいです", "Không phải làm", "Gạch ×"],
+          ["それは {明日|あした}で いい", "Để sau cũng được", "Gạch × hôm nay"],
+          ["{先|さき}に 〜て ください", "Làm việc này trước", "Đánh số 1"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4t6-s08",
+        "type": "dialogue",
+        "title": "Hội thoại: chốt ở câu cuối",
+        "lines": [
+          {
+            "speaker": "女",
+            "jp": "パーティーに ケーキを {買|か}って いく？",
+            "vi": "Mình mua bánh kem mang đến tiệc nhé?"
+          },
+          {
+            "speaker": "男",
+            "jp": "ケーキは {田中|たなか}さんが {持|も}って くるって。",
+            "vi": "Bánh thì anh Tanaka bảo sẽ mang đến."
+          },
+          {
+            "speaker": "女",
+            "jp": "そう。じゃ、{飲|の}み{物|もの}に しようか。",
+            "vi": "Vậy à. Thế mình mua đồ uống nhé?"
+          },
+          {
+            "speaker": "男",
+            "jp": "{飲|の}み{物|もの}は {店|みせ}に たくさん あるよ。",
+            "vi": "Đồ uống ở quán có nhiều rồi."
+          },
+          {
+            "speaker": "女",
+            "jp": "じゃ、くだものに しよう。",
+            "vi": "Thế thì mình mua hoa quả vậy."
+          },
+          {
+            "speaker": "男",
+            "jp": "うん、いいね。",
+            "vi": "Ừ, được đấy."
+          }
+        ],
+        "reveal": true,
+        "teacherNotes": "Câu hỏi: 女の人は 何を 買いますか → くだもの. Cho học viên ghi: ケーキ× 飲み物× くだもの○."
+      },
+      {
+        "id": "n4t6-s09",
+        "type": "quiz",
+        "ref": "n4t6-q01"
+      },
+      {
+        "id": "n4t6-s10",
+        "type": "quiz",
+        "ref": "n4t6-q04"
+      },
+      {
+        "id": "n4t6-s11",
+        "type": "note",
+        "title": "ポイント理解: nghe đúng điểm được hỏi",
+        "body": "1. Câu hỏi nói trước, sau đó có giờ đọc 4 lựa chọn: ghi từ hỏi lên lề (なぜ, いつ, どこ, 何が いちばん).\n2. Lựa chọn sai thường cũng được nhắc trong bài: đừng chọn vì “có nghe thấy từ đó”.\n3. Lời đoán của người kia hay bị phủ định bằng いいえ／いえ／それが….\n4. Đáp án thường đứng sau でも, 実は, いちばん."
+      },
+      {
+        "id": "n4t6-s12",
+        "type": "table",
+        "title": "Từ hỏi → câu chứa đáp án",
+        "columns": ["Câu hỏi", "Hỏi về", "Chờ nghe"],
+        "rows": [
+          ["どうして／なぜ", "Lý do", "〜から, 〜ので, 〜んです"],
+          ["いつ", "Thời gian", "〜{日|にち}, 〜{時|じ}, {曜日|ようび}"],
+          ["どこ", "Nơi chốn", "〜の {隣|となり}, 〜の {向|む}かい"],
+          ["{何|なに}が いちばん", "Điều nổi bật nhất", "いちばん, {何|なに}より"],
+          ["どう {思|おも}いますか", "Cảm nghĩ", "ちょっと… = chê nhẹ"],
+          ["だれと", "Người đi cùng", "〜と {一緒|いっしょ}に"]
+        ]
+      },
+      {
+        "id": "n4t6-s13",
+        "type": "dialogue",
+        "title": "Hội thoại: lý do thật ở cuối",
+        "lines": [
+          {
+            "speaker": "女",
+            "jp": "きのう、パーティーに {来|こ}なかったね。",
+            "vi": "Hôm qua cậu không đến tiệc nhỉ."
+          },
+          {
+            "speaker": "男",
+            "jp": "うん。",
+            "vi": "Ừ."
+          },
+          {
+            "speaker": "女",
+            "jp": "{仕事|しごと}が {忙|いそが}しかったの？",
+            "vi": "Công việc bận à?"
+          },
+          {
+            "speaker": "男",
+            "jp": "{仕事|しごと}は {早|はや}く {終|お}わったんだけど…",
+            "vi": "Việc thì xong sớm, nhưng mà…"
+          },
+          {
+            "speaker": "男",
+            "jp": "{実|じつ}は {母|はは}が {熱|ねつ}を {出|だ}したんだ。",
+            "vi": "Thật ra là mẹ mình bị sốt."
+          },
+          {
+            "speaker": "女",
+            "jp": "そうだったの。お{母|かあ}さん、お{大事|だいじ}に。",
+            "vi": "Ra vậy. Mong bác mau khỏe."
+          }
+        ],
+        "reveal": true,
+        "teacherNotes": "Câu hỏi: 男の人は どうして 来ませんでしたか → お母さんが 熱を 出したから. 仕事 là bẫy (nhắc tới nhưng bị phủ định bằng 〜けど)."
+      },
+      {
+        "id": "n4t6-s14",
+        "type": "quiz",
+        "ref": "n4t6-q07"
+      },
+      {
+        "id": "n4t6-s15",
+        "type": "note",
+        "title": "Bẫy số: giờ, ngày, giá",
+        "body": "1. 4時 = よじ, 7時 = しちじ, 9時 = くじ. Nghe “し…” đừng vội nghĩ là 4; しちじ còn dễ lẫn với いちじ (1時).\n2. よっか (4日, có っ) khác ようか (8日, âm dài); はつか = 20日, ふつか = 2日.\n3. Giá: さんびゃく 300, ろっぴゃく 600, はっぴゃく 800, さんぜん 3000.\n4. Số hay bị đổi: 〜分 遅れる, 〜前, 2つで 〜円. Ghi số ngay bằng chữ số rồi mới tính."
+      },
+      {
+        "id": "n4t6-s16",
+        "type": "table",
+        "title": "Cặp số dễ nghe nhầm",
+        "columns": ["Nghe", "Là", "Dễ nhầm với", "Là"],
+        "rows": [
+          ["よじ", "4 giờ", "しちじ", "7 giờ"],
+          ["いちじ", "1 giờ", "しちじ", "7 giờ"],
+          ["よっか", "ngày 4", "ようか", "ngày 8"],
+          ["ふつか", "ngày 2", "はつか", "ngày 20"],
+          ["じゅうよっか", "ngày 14", "よっか", "ngày 4"],
+          ["いっぷん", "1 phút", "ろっぷん", "6 phút"],
+          ["さんびゃく", "300", "さんぜん", "3000"],
+          ["ろっぴゃく", "600", "はっぴゃく", "800"]
+        ],
+        "teacherNotes": "Đọc to cột 1 và cột 3 xen kẽ, học viên viết số nghe được."
+      },
+      {
+        "id": "n4t6-s17",
+        "type": "quiz",
+        "ref": "n4t6-q12"
+      },
+      {
+        "id": "n4t6-s18",
+        "type": "note",
+        "title": "Ghi chú bằng ký hiệu ngắn",
+        "body": "1. Tập đề nghe được phép ghi chú: tận dụng lề giấy.\n2. Chia hai cột 男｜女 để không lẫn ai làm gì.\n3. Ký hiệu: × hủy, ○ chốt, → đổi, ? chưa rõ, số viết bằng chữ số.\n4. Ví dụ: ケーキ× 飲み物× くだもの○ ; 3時→3:30 ; 図書館×→教室.\n5. Chỉ ghi từ khóa, không chép câu: mắt luôn quay lại câu hỏi."
+      },
+      {
+        "id": "n4t6-s19",
+        "type": "note",
+        "title": "発話表現: ai nói với ai",
+        "body": "1. Nhìn tranh: mũi tên ➡ chỉ người nói; người nghe là ai (khách, cấp trên, bạn)?\n2. Đọc tình huống: nhờ, xin phép, mời, đề nghị giúp, chào?\n3. Bẫy hay gặp: câu đúng ngữ pháp nhưng là lời của người kia (どうぞ ↔ いただきます).\n4. Chỉ có 3 câu và không in ra: nghe xong câu 3 là chọn ngay."
+      },
+      {
+        "id": "n4t6-s20",
+        "type": "table",
+        "title": "Tình huống → mẫu câu",
+        "columns": ["Tình huống", "Câu nói"],
+        "rows": [
+          ["Nhờ người trên", "〜て いただけませんか"],
+          ["Nhờ bạn bè", "〜て くれない？"],
+          ["Xin phép mình làm", "〜ても いいですか"],
+          ["Đề nghị giúp", "〜ましょうか"],
+          ["Rủ cùng làm", "〜ませんか／〜ましょう"],
+          ["Tặng quà", "これ、どうぞ"],
+          ["Về trước đồng nghiệp", "お{先|さき}に {失礼|しつれい}します"],
+          ["Vào phòng giáo viên", "{失礼|しつれい}します"],
+          ["Thăm người ốm", "お{大事|だいじ}に"]
+        ]
+      },
+      {
+        "id": "n4t6-s21",
+        "type": "quiz",
+        "ref": "n4t6-q15"
+      },
+      {
+        "id": "n4t6-s22",
+        "type": "note",
+        "title": "即時応答: chọn ngay, đừng nghĩ lâu",
+        "body": "1. Không có gì in sẵn: nghe 1 câu, rồi 3 câu đáp; giữa các câu rất ngắn.\n2. Chọn ngay khi nghe xong, đánh dấu vào phiếu rồi chuẩn bị câu sau.\n3. Câu đáp lặp y từ của câu hỏi hay là bẫy: kiểm tra vai và nghĩa.\n4. Nghe thì (〜ましたか hỏi chuyện đã qua) và từ hỏi (どう, どこ, だれ).\n5. Học thuộc các cặp chào hỏi ở bảng sau."
+      },
+      {
+        "id": "n4t6-s23",
+        "type": "table",
+        "title": "Cặp câu hỏi – đáp hay gặp",
+        "columns": ["Nghe", "Đáp"],
+        "rows": [
+          ["お{先|さき}に {失礼|しつれい}します", "お{疲|つか}れさまでした"],
+          ["いってきます", "いってらっしゃい"],
+          ["ただいま", "おかえりなさい"],
+          ["{手伝|てつだ}いましょうか", "すみません、お{願|ねが}いします"],
+          ["この {席|せき}、{空|あ}いて いますか", "ええ、どうぞ"],
+          ["〜ても いいですか", "ええ、どうぞ／すみません、ちょっと…"],
+          ["ありがとうございました", "いいえ、どういたしまして"],
+          ["{遅|おく}れて すみません", "いいえ、{大丈夫|だいじょうぶ}ですよ"],
+          ["お{元気|げんき}ですか", "ええ、おかげさまで"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "n4t6-s24",
+        "type": "quiz",
+        "ref": "n4t6-q17"
+      },
+      {
+        "id": "n4t6-s25",
+        "type": "dialogue",
+        "title": "Luyện cuối: làm gì trước?",
+        "lines": [
+          {
+            "speaker": "男",
+            "jp": "{会議|かいぎ}の {前|まえ}に {資料|しりょう}を コピーして。",
+            "vi": "Trước cuộc họp, em photo tài liệu nhé."
+          },
+          {
+            "speaker": "女",
+            "jp": "はい。お{茶|ちゃ}も {用意|ようい}しますか。",
+            "vi": "Vâng. Em chuẩn bị trà nữa không ạ?"
+          },
+          {
+            "speaker": "男",
+            "jp": "お{茶|ちゃ}は いいよ。",
+            "vi": "Trà thì không cần."
+          },
+          {
+            "speaker": "男",
+            "jp": "あ、コピーの {前|まえ}に {鍵|かぎ}を {借|か}りて きて。",
+            "vi": "À, trước khi photo thì đi mượn chìa khóa phòng họp đã."
+          },
+          {
+            "speaker": "女",
+            "jp": "わかりました。",
+            "vi": "Em hiểu rồi."
+          }
+        ],
+        "reveal": true,
+        "teacherNotes": "Câu hỏi: 女の人は まず 何を しますか → 鍵を 借りに 行く. Trà bị gạch (〜は いいよ); コピーの 前に đẩy việc mượn chìa khóa lên trước việc photo."
+      },
+      {
+        "id": "n4t6-s26",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. Khoảng lặng: nhìn 4 lựa chọn/tranh, tìm điểm khác nhau.\n2. 課題理解: chờ câu chốt (やっぱり, 〜に します, そうします); việc đầu tiên hay bị hủy; まず = việc trước.\n3. ポイント理解: ghi từ hỏi; đáp án sau でも／実は／いちばん.\n4. Số: よじ/しちじ, よっか/ようか; ghi chữ số rồi tính.\n5. 発話表現 xem ai nói với ai; 即時応答 chọn ngay, cảnh giác câu lặp từ."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t6-q01",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "男：{山下|やました}さん、{明日|あした}の {会議|かいぎ}の {資料|しりょう}、コピーして くれる？\n女：はい。{何枚|なんまい} コピーしますか。\n男：10{枚|まい}… あ、やっぱり {資料|しりょう}は ぼくが メールで {送|おく}るよ。\n女：じゃ、コピーは しなくても いいですね。\n男：うん。それより、{会議室|かいぎしつ}の {予約|よやく}を お{願|ねが}い。\n女：わかりました。すぐ します。",
+        "prompt": "{女|おんな}の {人|ひと}は このあと {何|なに}を しますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “việc nói đầu tiên hay bị hủy”: photo 10 tờ bị hủy bằng やっぱり, người nam tự gửi mail (ぼくが), còn しなくても いいですね xác nhận không cần photo. Việc mới giao sau それより là đặt phòng họp → 会議室を 予約する.",
+        "type": "choice",
+        "options": [
+          "{資料|しりょう}を 10{枚|まい} コピーする",
+          "{資料|しりょう}を メールで {送|おく}る",
+          "{会議室|かいぎしつ}を {予約|よやく}する",
+          "お{茶|ちゃ}を {用意|ようい}する"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t6-q02",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：{今日|きょう}は {部屋|へや}の {掃除|そうじ}を して、{洗濯|せんたく}も しなきゃ。\n男：{午後|ごご}から {雨|あめ}だって。\n女：え、ほんと？じゃ、{洗濯|せんたく}を {先|さき}に しよう。\n男：{掃除|そうじ}は ぼくが やるよ。\n女：ありがとう。{買|か}い{物|もの}は {夜|よる}に {行|い}こうか。",
+        "prompt": "{女|おんな}の {人|ひと}は まず {何|なに}を しますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “まず = việc làm đầu tiên”: thứ tự lúc đầu (dọn phòng rồi giặt) bị đổi bằng 洗濯を 先に しよう vì chiều mưa. Dọn phòng là việc của người nam (ぼくが やる), đi chợ để buổi tối → 洗濯を する.",
+        "type": "choice",
+        "options": [
+          "{洗濯|せんたく}を する",
+          "{部屋|へや}の {掃除|そうじ}を する",
+          "{買|か}い{物|もの}に {行|い}く",
+          "{傘|かさ}を {買|か}いに {行|い}く"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t6-q03",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "男：{週末|しゅうまつ}の キャンプ、{何|なに}を {持|も}って いけば いい？\n女：{食|た}べ{物|もの}は {全部|ぜんぶ} {向|む}こうで {買|か}えるよ。\n男：じゃ、テントは？\n女：テントは {借|か}りられるから、いらない。\n女：でも、{夜|よる}は {寒|さむ}いから、セーターは {持|も}って きてね。\n男：わかった。",
+        "prompt": "{男|おとこ}の {人|ひと}は {何|なに}を {持|も}って いきますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “gạch bỏ khi nghe いらない／向こうで 買える”: đồ ăn mua ở đó, lều thuê được nên いらない. Sau でも là điều phải làm: 夜は 寒いから セーターは 持って きてね → chỉ mang áo len.",
+        "type": "choice",
+        "options": ["{食|た}べ{物|もの}", "テント", "テントと セーター", "セーター"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t6-q04",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：すみません、この {青|あお}い シャツ、Mは ありますか。\n男：すみません、{青|あお}は Lだけです。{白|しろ}なら Mも ありますよ。\n女：そうですか。うーん、{白|しろ}は すぐ {汚|よご}れるから…。\n男：こちらの {黒|くろ}も Mが ございます。\n女：あ、いいですね。じゃ、これに します。",
+        "prompt": "{女|おんな}の {人|ひと}は どの シャツを {買|か}いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “nghe câu chốt”: áo xanh cỡ M không có, áo trắng bị từ chối bằng うーん…汚れるから (ngập ngừng = không chọn). Câu chốt là これに します ngay sau khi người bán giới thiệu áo đen cỡ M → 黒の M.",
+        "type": "choice",
+        "options": ["{青|あお}の L", "{黒|くろ}の M", "{白|しろ}の M", "{青|あお}の M"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t6-q05",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：この {本|ほん}を {借|か}りたいんですが。\n男：カードは お{持|も}ちですか。\n女：いいえ、まだ {作|つく}って いません。\n男：では、まず この {紙|かみ}に {名前|なまえ}と {住所|じゅうしょ}を {書|か}いて ください。\n男：カードは そのあと すぐ {作|つく}ります。\n女：はい、わかりました。",
+        "prompt": "{女|おんな}の {人|ひと}は まず {何|なに}を しますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “まず = việc làm đầu tiên”: chị ấy chưa có thẻ nên không thể đưa thẻ; mượn sách là mục đích cuối cùng. Người thủ thư nói rõ まず この 紙に 名前と 住所を 書いて ください, thẻ làm そのあと → 紙に 書く.",
+        "type": "choice",
+        "options": [
+          "{紙|かみ}に {名前|なまえ}と {住所|じゅうしょ}を {書|か}く",
+          "カードを {見|み}せる",
+          "{本|ほん}を {借|か}りる",
+          "{本|ほん}を {返|かえ}す"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t6-q06",
+        "instruction": "もんだい１（{課題理解|かだいりかい}）　{会話|かいわ}を {読|よ}んで、しつもんに いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：{課長|かちょう}、{会議|かいぎ}の あと、{何|なに}を しましょうか。\n男：{報告書|ほうこくしょ}を {書|か}いて… いや、それは {明日|あした}で いいよ。\n女：はい。\n男：{今日|きょう}は お{客|きゃく}さんに {電話|でんわ}して くれる？\n女：わかりました。",
+        "prompt": "{女|おんな}の {人|ひと}は {会議|かいぎ}の あと、{何|なに}を しますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “việc nói đầu tiên hay bị hủy”: 報告書 bị lùi bằng いや、それは 明日で いいよ (〜で いい = để sau cũng được). Việc của hôm nay là お客さんに 電話して くれる？ và chị trả lời わかりました → お客さんに 電話する.",
+        "type": "choice",
+        "options": [
+          "{報告書|ほうこくしょ}を {書|か}く",
+          "{会議|かいぎ}に {出|で}る",
+          "お{客|きゃく}さんに {電話|でんわ}する",
+          "{課長|かちょう}に {電話|でんわ}する"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t6-q07",
+        "instruction": "もんだい２（ポイント{理解|りかい}）　まず しつもんを {読|よ}んで、それから {会話|かいわ}を {読|よ}んで ください。いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：{遅|おそ}かったですね。{電車|でんしゃ}が {止|と}まって いたんですか。\n男：いいえ、{電車|でんしゃ}は {大丈夫|だいじょうぶ}でした。\n女：じゃ、{寝坊|ねぼう}ですか。\n男：いえ、{駅|えき}で {財布|さいふ}を {落|お}として しまって、{交番|こうばん}に {行|い}って いたんです。\n女：それは {大変|たいへん}でしたね。",
+        "prompt": "{男|おとこ}の {人|ひと}は どうして {遅|おく}れましたか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “どうして → chờ câu 〜んです”: hai lý do người nữ đoán (tàu dừng, ngủ quên) đều bị phủ định bằng いいえ／いえ. Lý do thật nằm trong câu 〜て いたんです: 財布を 落として しまって → 財布を 落としたから.",
+        "type": "choice",
+        "options": [
+          "{電車|でんしゃ}が {止|と}まったから",
+          "{財布|さいふ}を {落|お}としたから",
+          "{朝|あさ} {寝坊|ねぼう}したから",
+          "{道|みち}が わからなかったから"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t6-q08",
+        "instruction": "もんだい２（ポイント{理解|りかい}）　まず しつもんを {読|よ}んで、それから {会話|かいわ}を {読|よ}んで ください。いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：{旅行|りょこう}は どうだった？\n男：{海|うみ}は きれいだったし、{料理|りょうり}も おいしかったよ。\n女：いいね。\n男：でも、いちばん よかったのは、{町|まち}の {人|ひと}が とても {親切|しんせつ}だった ことかな。",
+        "prompt": "{男|おとこ}の {人|ひと}は {旅行|りょこう}で {何|なに}が いちばん よかったと {言|い}って いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “ghi lại từ hỏi いちばん”: biển đẹp và đồ ăn ngon đều được nhắc (bẫy “nghe thấy từ đó”), nhưng câu trả lời nằm sau でも、いちばん よかったのは… → 町の 人が 親切だった こと.",
+        "type": "choice",
+        "options": [
+          "{海|うみ}が きれいだった こと",
+          "{料理|りょうり}が おいしかった こと",
+          "ホテルが {安|やす}かった こと",
+          "{町|まち}の {人|ひと}が {親切|しんせつ}だった こと"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t6-q09",
+        "instruction": "もんだい２（ポイント{理解|りかい}）　まず しつもんを {読|よ}んで、それから {会話|かいわ}を {読|よ}んで ください。いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "女：{明日|あした}の {勉強会|べんきょうかい}、3{時|じ}からだったよね。\n男：うん。でも {先生|せんせい}が {遅|おそ}く なるから、30{分|ぷん} {遅|おそ}く {始|はじ}めるって。\n女：じゃ、3{時|じ}{半|はん}ね。{場所|ばしょ}は {図書館|としょかん}？\n男：{図書館|としょかん}は {休|やす}みだから、{教室|きょうしつ}に なったよ。",
+        "prompt": "{勉強会|べんきょうかい}は いつ、どこで ありますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “câu hỏi có hai ý thì ghi cả hai”: いつ và どこ đều bị đổi. Giờ: 3時 + 30分 遅く 始める → 3時半. Chỗ: thư viện nghỉ (休み) → đổi sang 教室. Ghi chú kiểu “3時→3:30, 図書館×→教室” là ra ngay.",
+        "type": "choice",
+        "options": [
+          "3{時|じ}{半|はん}に {教室|きょうしつ}で",
+          "3{時|じ}に {図書館|としょかん}で",
+          "3{時|じ}{半|はん}に {図書館|としょかん}で",
+          "3{時|じ}に {教室|きょうしつ}で"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t6-q10",
+        "instruction": "もんだい２（ポイント{理解|りかい}）　まず しつもんを {読|よ}んで、それから {会話|かいわ}を {読|よ}んで ください。いちばん いい こたえを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}です）",
+        "passage": "男：すみません、{郵便局|ゆうびんきょく}は どこですか。\n女：この {道|みち}を まっすぐ {行|い}って、{銀行|ぎんこう}の {角|かど}を {右|みぎ}に {曲|ま}がって ください。\n男：{銀行|ぎんこう}の {隣|となり}ですか。\n女：いいえ、{銀行|ぎんこう}の {隣|となり}は {本屋|ほんや}です。{郵便局|ゆうびんきょく}は {本屋|ほんや}の {向|む}かいです。",
+        "prompt": "{郵便局|ゆうびんきょく}は どこに ありますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo “lời đoán bị phủ định”: người nam đoán 銀行の 隣 nhưng bị いいえ. Cạnh ngân hàng là hiệu sách, còn bưu điện ở 本屋の 向かい. Ghi chú “銀行× → 本屋の 向かい” để không lẫn 隣 và 向かい.",
+        "type": "choice",
+        "options": [
+          "{銀行|ぎんこう}の {隣|となり}",
+          "{本屋|ほんや}の {隣|となり}",
+          "{銀行|ぎんこう}の {向|む}かい",
+          "{本屋|ほんや}の {向|む}かい"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t6-q11",
+        "instruction": "{数字|すうじ}の {聞|き}き{取|と}り　{会話|かいわ}の {数字|すうじ}は {聞|き}こえた とおり かなで {書|か}いて あります。いちばん いい こたえを {一|ひと}つ えらんで ください。",
+        "passage": "男：{来月|らいげつ}の ようかに {引|ひ}っ{越|こ}す {予定|よてい}でした。\n男：でも、{会社|かいしゃ}の {都合|つごう}で よっかに なったんです。\n女：そうですか。じゃ、{手伝|てつだ}いに {行|い}きますね。",
+        "prompt": "{男|おとこ}の {人|ひと}は {来月|らいげつ}の {何日|なんにち}に {引|ひ}っ{越|こ}しますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo bẫy số: よっか = 4日 (âm ngắn, có っ), ようか = 8日 (âm dài). Ngày cũ ようか bị đổi bằng でも…に なったんです → ngày mới よっか = 4日. 14日 là じゅうよっか, 20日 là はつか.",
+        "type": "choice",
+        "options": ["8日", "14日", "4日", "20日"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t6-q12",
+        "instruction": "{数字|すうじ}の {聞|き}き{取|と}り　{会話|かいわ}の {数字|すうじ}は {聞|き}こえた とおり かなで {書|か}いて あります。いちばん いい こたえを {一|ひと}つ えらんで ください。",
+        "passage": "男：{打|う}ち{合|あ}わせは よじからでしたね。\n女：はい。でも、{部長|ぶちょう}の {帰|かえ}りが {遅|おそ}く なるので、いちじかん あとに なりました。\n男：わかりました。",
+        "prompt": "{打|う}ち{合|あ}わせは {何時|なんじ}からですか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo bẫy số và phép tính: よじ = 4時 (không phải しちじ = 7時). Sau でも là thay đổi: いちじかん あと = trễ 1 tiếng → 4時 + 1時間 = 5時. Nghe số nào ghi ngay bằng chữ số, rồi mới tính.",
+        "type": "choice",
+        "options": ["3時", "5時", "4時", "7時"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t6-q13",
+        "instruction": "{数字|すうじ}の {聞|き}き{取|と}り　{会話|かいわ}の {数字|すうじ}は {聞|き}こえた とおり かなで {書|か}いて あります。いちばん いい こたえを {一|ひと}つ えらんで ください。",
+        "passage": "男：この ケーキ、ひとつ さんびゃくえんですか。\n女：はい。でも、{今日|きょう}は ふたつ {買|か}うと ごひゃくえんです。\n男：じゃ、ふたつ ください。",
+        "prompt": "{男|おとこ}の {人|ひと}は ぜんぶで いくら {払|はら}いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo bẫy giá: さんびゃく = 300, ごひゃく = 500. Mua 2 cái thường là 600 nhưng hôm nay 2 cái chỉ ごひゃくえん, và anh ấy mua ふたつ → trả 500円. 600円 là bẫy cho người tự nhân mà không nghe điều kiện.",
+        "type": "choice",
+        "options": ["300円", "600円", "800円", "500円"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t6-q14",
+        "instruction": "もんだい３（{発話表現|はつわひょうげん}）　{場面|ばめん}を {読|よ}んで ください。この {人|ひと}は {何|なん}と {言|い}いますか。いちばん いい ものを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "{場面|ばめん}：{会社|かいしゃ}で、あなたは {仕事|しごと}が {終|お}わりました。まだ {仕事|しごと}を して いる {人|ひと}より {先|さき}に {帰|かえ}ります。",
+        "prompt": "{何|なん}と {言|い}いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 発話表現 “ai nói với ai”: người ra về trước nói お先に 失礼します. おかえりなさい là câu người ở nhà nói với người vừa về, いってらっしゃい là câu tiễn người đi; いただきます dùng trước khi ăn.",
+        "type": "choice",
+        "options": [
+          "お{帰|かえ}りなさい。",
+          "お{先|さき}に {失礼|しつれい}します。",
+          "いってらっしゃい。",
+          "いただきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t6-q15",
+        "instruction": "もんだい３（{発話表現|はつわひょうげん}）　{場面|ばめん}を {読|よ}んで ください。この {人|ひと}は {何|なん}と {言|い}いますか。いちばん いい ものを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "{場面|ばめん}：あなたは {先輩|せんぱい}に {作文|さくぶん}を {見|み}て ほしいです。",
+        "prompt": "{先輩|せんぱい}に {何|なん}と {言|い}いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 発話表現 “nhờ người trên → 〜て いただけませんか”. 見ましょうか là đề nghị mình xem giúp, 見ても いいですか là xin phép mình xem, 見せて あげます là mình cho người khác xem: đều sai vai.",
+        "type": "choice",
+        "options": [
+          "すみません、{作文|さくぶん}を {見|み}て いただけませんか。",
+          "{作文|さくぶん}を {見|み}ましょうか。",
+          "{作文|さくぶん}を {見|み}ても いいですか。",
+          "{作文|さくぶん}を {見|み}せて あげます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t6-q16",
+        "instruction": "もんだい３（{発話表現|はつわひょうげん}）　{場面|ばめん}を {読|よ}んで ください。この {人|ひと}は {何|なん}と {言|い}いますか。いちばん いい ものを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "{場面|ばめん}：{隣|となり}の {人|ひと}が {重|おも}い {荷物|にもつ}を {持|も}って います。あなたは {手伝|てつだ}いたいです。",
+        "prompt": "{何|なん}と {言|い}いますか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 発話表現 “đề nghị giúp → 〜ましょうか”. 持って くれませんか là nhờ người kia cầm giúp mình (ngược vai), 持たなくても いいです là “không cần cầm”, 持って きて ください là bảo mang tới.",
+        "type": "choice",
+        "options": [
+          "{持|も}って くれませんか。",
+          "{持|も}たなくても いいです。",
+          "{持|も}ちましょうか。",
+          "{持|も}って きて ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t6-q17",
+        "instruction": "もんだい４（{即時応答|そくじおうとう}）　{文|ぶん}を {読|よ}んで、いちばん いい へんじを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "男：{遅|おく}れて すみません。",
+        "prompt": "{女|おんな}の {人|ひと}の へんじは どれですか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 即時応答 “cặp câu cố định”: xin lỗi vì đến muộn → いいえ、大丈夫ですよ. どういたしまして là đáp lời cảm ơn; はい、遅れて すみません lặp y câu hỏi và sai vai (bẫy lặp từ); お疲れさまでした đáp お先に 失礼します hoặc lúc xong việc.",
+        "type": "choice",
+        "options": [
+          "いいえ、{大丈夫|だいじょうぶ}ですよ。",
+          "いいえ、どういたしまして。",
+          "はい、{遅|おく}れて すみません。",
+          "お{疲|つか}れさまでした。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t6-q18",
+        "instruction": "もんだい４（{即時応答|そくじおうとう}）　{文|ぶん}を {読|よ}んで、いちばん いい へんじを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "女：{手伝|てつだ}いましょうか。",
+        "prompt": "{男|おとこ}の {人|ひと}の へんじは どれですか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 即時応答 “đừng chọn câu lặp lại từ của câu hỏi”: được đề nghị giúp thì nhận bằng すみません、お願いします. Hai câu có 手伝い là vai người giúp, どういたしまして là đáp lời cảm ơn.",
+        "type": "choice",
+        "options": [
+          "はい、{手伝|てつだ}いましょう。",
+          "すみません、お{願|ねが}いします。",
+          "いいえ、どういたしまして。",
+          "はい、{手伝|てつだ}って あげます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t6-q19",
+        "instruction": "もんだい４（{即時応答|そくじおうとう}）　{文|ぶん}を {読|よ}んで、いちばん いい へんじを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "男：{昨日|きのう}の {試験|しけん}、どうでしたか。",
+        "prompt": "{女|おんな}の {人|ひと}の へんじは どれですか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 即時応答 “nghe thì và từ hỏi”: 昨日 và でしたか hỏi về chuyện đã qua, どう hỏi cảm nghĩ → 思ったより 簡単でした. Ba câu còn lại nói về tương lai hoặc trả lời はい cho câu hỏi どう.",
+        "type": "choice",
+        "options": [
+          "{明日|あした} がんばります。",
+          "はい、{受|う}けます。",
+          "{試験|しけん}は {来週|らいしゅう}です。",
+          "{思|おも}ったより {簡単|かんたん}でした。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t6-q20",
+        "instruction": "もんだい４（{即時応答|そくじおうとう}）　{文|ぶん}を {読|よ}んで、いちばん いい へんじを {一|ひと}つ えらんで ください。（{本番|ほんばん}は {音声|おんせい}で、えらぶ ものは 3つです）",
+        "passage": "女：すみません、この {席|せき}、{空|あ}いて いますか。",
+        "prompt": "{男|おとこ}の {人|ひと}の へんじは どれですか。",
+        "points": 1,
+        "tags": ["n4", "tips", "listening-tips"],
+        "explain": "Mẹo 即時応答 “cặp câu cố định” và “câu lặp từ hay là bẫy”: hỏi ghế còn trống không thì đáp ええ、どうぞ (mời ngồi). お願いします là nhận lời giúp đỡ; 空けて ください lặp từ 空く nhưng là bảo người kia dọn chỗ; 座りません không trả lời câu hỏi.",
+        "type": "choice",
+        "options": [
+          "ええ、お{願|ねが}いします。",
+          "ええ、{空|あ}けて ください。",
+          "ええ、どうぞ。",
+          "いいえ、{座|すわ}りません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      }
+    ]
+  }
+}

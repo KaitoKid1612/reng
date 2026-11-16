@@ -182,6 +182,13 @@ test("the Minna starters are registered in lesson order", () => {
       ["n4-grammar-6", "n4-grammar", 7],
       ["n4-grammar-7", "n4-grammar", 8],
       ["n4-grammar-8", "n4-grammar", 9],
+      ["n4-tips-1", "n4-tips", 1],
+      ["n4-tips-2", "n4-tips", 2],
+      ["n4-tips-3", "n4-tips", 3],
+      ["n4-tips-4", "n4-tips", 4],
+      ["n4-tips-5", "n4-tips", 5],
+      ["n4-tips-6", "n4-tips", 6],
+      ["n4-tips-7", "n4-tips", 7],
     ],
   );
   assert.deepEqual(findStarterLesson("minna-1-11")?.draft, lessonDraftSchema.parse(rawStarter));
@@ -200,6 +207,10 @@ for (const starter of STARTER_LESSONS) {
     let required = ["vocab", "table", "grammar", "example", "dialogue", "quiz", "note"];
     if (starter.draft.courseId === "n4-grammar") {
       required = isMap ? ["title", "note", "table"] : required.slice(1);
+    }
+    // A tips deck is notes and tables with questions that apply them.
+    if (starter.draft.courseId === "n4-tips") {
+      required = ["title", "note", "table", "quiz"];
     }
     for (const type of required) {
       assert.ok(

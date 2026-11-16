@@ -1,0 +1,580 @@
+{
+  "id": "n4-tips-2",
+  "title": "Mẹo N4 · 2 – Học kanji",
+  "titleJa": "N4のコツ 2　漢字",
+  "summary": "Mẹo học kanji cho kỳ thi JLPT N4: dùng âm Hán Việt để đoán 音読み (vần cuối, phụ âm đầu) kèm bảng ngoại lệ; 訓読み và 音読み; âm ngắt っ, âm đục khi ghép chữ, đếm ～分／～本; bẫy trường âm của もんだい１; chữ giống nhau, bộ thủ gợi nghĩa và lịch học mỗi ngày. Các mẹo được tổng hợp từ trang chính thức JLPT và các tài liệu tự học công khai; mọi ví dụ và 20 câu luyện là nội dung gốc.",
+  "order": 2,
+  "courseId": "n4-tips",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [],
+    "grammar": [],
+    "slides": [
+      {
+        "id": "n4t2-s01",
+        "type": "title",
+        "jp": "{漢字|かんじ}の {勉強|べんきょう}の コツ",
+        "vi": "Mẹo N4 · 2 – Học kanji"
+      },
+      {
+        "id": "n4t2-s02",
+        "type": "note",
+        "title": "Bộ này dùng thế nào",
+        "body": "1. Dùng âm Hán Việt để đoán 音読み và loại đáp án sai ở もんだい１, もんだい２.\n2. Nhận ra っ, âm đục và trường âm khi ghép chữ.\n3. Phân biệt chữ giống nhau, dùng bộ thủ để đoán nghĩa.\n4. Một lịch học kanji 15–20 phút mỗi ngày.\nMọi mẹo chỉ là xu hướng, có ngoại lệ; mỗi phần có câu luyện để áp dụng ngay."
+      },
+      {
+        "id": "n4t2-s03",
+        "type": "note",
+        "title": "Hán Việt là lợi thế",
+        "body": "1. Phần lớn từ ghép 2 chữ Hán ở N4 đọc theo 音読み (âm Hán).\n2. 音読み và âm Hán Việt cùng gốc tiếng Hán cổ nên thường giống nhau: 安心 an tâm あんしん, 注意 chú ý ちゅうい.\n3. Biết âm Hán Việt → đoán được đuôi, hàng phụ âm, có đục hay không.\n4. Mẹo giúp loại 2–3 đáp án; đáp án cuối vẫn phải nhớ theo từ."
+      },
+      {
+        "id": "n4t2-s04",
+        "type": "table",
+        "title": "Vần cuối Hán Việt → đuôi 音読み (xu hướng)",
+        "columns": ["Vần cuối HV", "Đuôi 音読み", "Ví dụ"],
+        "rows": [
+          ["-ng", "～う (trường âm)", "東 Đông とう, 工 Công こう"],
+          ["-nh", "～い／～う (dài)", "生 Sinh せい, 病 Bệnh びょう"],
+          ["-c", "～く", "学 Học がく, 国 Quốc こく"],
+          ["-ch", "～き (đôi khi ～く)", "石 Thạch せき, 駅 Dịch えき"],
+          ["-t", "～つ／～ち", "発 Phát はつ, 八 Bát はち"],
+          ["-p", "～う (chữ cổ: ～ふ)", "十 Thập じゅう, 急 Cấp きゅう"],
+          ["-m, -n", "～ん", "三 Tam さん, 南 Nam なん"],
+          ["-ao, -iêu", "～う (trường âm)", "高 Cao こう, 料 Liệu りょう"],
+          ["-ai, -ôi, -ơi", "～い", "海 Hải かい, 会 Hội かい"],
+          ["-a, -ư, -ơ, -ô", "ngắn, không đuôi", "家 Gia か, 書 Thư しょ"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột 3, đọc âm Hán Việt và cho học viên đoán đuôi trước khi mở. Nhấn mạnh: đây là xu hướng; vần -u (注 ちゅう nhưng 主 しゅ) không theo quy luật rõ."
+      },
+      {
+        "id": "n4t2-s05",
+        "type": "note",
+        "title": "Cách dùng khi làm もんだい１",
+        "body": "Ví dụ 運動 (Vận Động), 4 đáp án: うどう／うんどう／うんど／うんとう.\n1. Vận -n → ん: loại うどう.\n2. Động -ng → trường âm: loại うんど.\n3. đ → た hoặc だ; 動 trong mọi từ đều đọc どう (自動車, 運動) → うんどう.\n4. Cả 3 bước chỉ mất khoảng 20 giây; làm xong thì sang câu khác."
+      },
+      {
+        "id": "n4t2-s06",
+        "type": "quiz",
+        "ref": "n4t2-q03"
+      },
+      {
+        "id": "n4t2-s07",
+        "type": "table",
+        "title": "Phụ âm đầu Hán Việt → hàng kana (xu hướng)",
+        "columns": ["Đầu HV", "Hàng 音読み", "Ví dụ"],
+        "rows": [
+          ["h, k, kh, q, gi", "か・が行", "花 Hoa か, 口 Khẩu こう"],
+          ["ng", "が行 (đôi khi か)", "語 Ngữ ご, 外 Ngoại がい"],
+          ["đ", "た・だ行", "東 Đông とう, 電 Điện でん"],
+          ["t, x", "さ行", "三 Tam さん, 車 Xa しゃ"],
+          ["th", "さ行 hoặc た行", "書 Thư しょ, 体 Thể たい"],
+          ["ch, tr", "さ・た・ざ行", "主 Chủ しゅ, 中 Trung ちゅう"],
+          ["b, ph", "は・ば行", "八 Bát はち, 方 Phương ほう"],
+          ["v", "ば・ま行 hoặc あ行", "文 Văn ぶん, 運 Vận うん"],
+          ["m", "ま・ば行", "毎 Mỗi まい, 木 Mộc もく"],
+          ["d", "や行", "夜 Dạ や, 用 Dụng よう"],
+          ["l", "ら行", "来 Lai らい, 力 Lực りょく"],
+          ["nh", "な・ざ行", "日 Nhật にち／じつ"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Dòng đáng nhớ nhất: d → や, l → ら, đ → た, h → か. th và v đi hai đường: 書 しょ／体 たい, 文 ぶん／運 うん, nên chỉ dùng để loại đáp án. Hàng ng → が có ngoại lệ 研 けん, 験 けん."
+      },
+      {
+        "id": "n4t2-s08",
+        "type": "note",
+        "title": "Một chữ có thể có hai 音読み",
+        "body": "1. Nhiều chữ vào tiếng Nhật hai lần nên có hai âm Hán: 人 にん／じん (三人, 日本人).\n2. 日 にち／じつ: 毎日 まいにち, 休日 きゅうじつ.\n3. 生 せい／しょう: 学生 がくせい, 一生 いっしょう.\n4. Hán Việt cho biết “họ” của âm (đuôi, hàng); chọn âm nào thì phải nhớ theo từ.\nVì thế hãy học chữ trong từ, không học chữ đứng riêng."
+      },
+      {
+        "id": "n4t2-s09",
+        "type": "table",
+        "title": "Ngoại lệ hay gặp",
+        "columns": ["Chữ", "Hán Việt", "Mẹo đoán", "Thực tế"],
+        "rows": [
+          ["立", "Lập", "-p → ～う", "りつ: 国立 こくりつ"],
+          ["雑", "Tạp", "-p → ～う", "ざつ: 雑誌 ざっし"],
+          ["酒", "Tửu", "-ưu → dài", "しゅ: 日本酒"],
+          ["後", "Hậu", "-au → dài", "ご: 午後 ごご"],
+          ["客", "Khách", "-ch → ～き", "きゃく: お客さん"],
+          ["注", "Chú", "vần -u: khó đoán", "ちゅう: 注意"],
+          ["数", "Số", "-ô → ngắn", "すう: 数学"],
+          ["研", "Nghiên", "ng → が行", "けん: 研究"],
+          ["験", "Nghiệm", "ng → が行", "けん: 試験"],
+          ["有", "Hữu", "h → か行", "ゆう: 有名"],
+          ["駅", "Dịch", "d → や行", "えき: 駅前"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "駅 vẫn theo mẹo vần cuối (-ch → き) nhưng không theo phụ âm đầu (d → や). Cho học viên thấy một chữ có thể đúng một mẹo, sai mẹo kia."
+      },
+      {
+        "id": "n4t2-s10",
+        "type": "quiz",
+        "ref": "n4t2-q18"
+      },
+      {
+        "id": "n4t2-s11",
+        "type": "note",
+        "title": "表記: đọc ra Hán Việt rồi chọn chữ",
+        "body": "1. Tách từ theo âm: しんせつ → しん＋せつ.\n2. Nghĩ từ Hán Việt có nghĩa hợp: thân thiết → 親切.\n3. Loại chữ cùng âm nhưng không thành từ: 新 Tân, 説 Thuyết.\n4. Cẩn thận “bạn giả”: nghĩa Nhật có thể khác nghĩa Việt (親切 = tốt bụng)."
+      },
+      {
+        "id": "n4t2-s12",
+        "type": "table",
+        "title": "Từ N4 đọc được bằng Hán Việt",
+        "columns": ["Từ", "Cách đọc", "Hán Việt", "Nghĩa tiếng Nhật"],
+        "rows": [
+          ["準備", "じゅんび", "chuẩn bị", "chuẩn bị"],
+          ["経験", "けいけん", "kinh nghiệm", "trải nghiệm"],
+          ["説明", "せつめい", "thuyết minh", "giải thích"],
+          ["注意", "ちゅうい", "chú ý", "chú ý, nhắc nhở"],
+          ["世界", "せかい", "thế giới", "thế giới"],
+          ["文化", "ぶんか", "văn hóa", "văn hóa"],
+          ["安心", "あんしん", "an tâm", "yên tâm"],
+          ["特別", "とくべつ", "đặc biệt", "đặc biệt"],
+          ["研究", "けんきゅう", "nghiên cứu", "nghiên cứu"],
+          ["親切", "しんせつ", "thân thiết", "tốt bụng (≠ thân thiết)"],
+          ["勉強", "べんきょう", "miễn cưỡng", "học (≠ miễn cưỡng)"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hai dòng cuối là “bạn giả”: âm Hán Việt quen nhưng nghĩa tiếng Nhật khác."
+      },
+      {
+        "id": "n4t2-s13",
+        "type": "quiz",
+        "ref": "n4t2-q08"
+      },
+      {
+        "id": "n4t2-s14",
+        "type": "note",
+        "title": "Đứng một mình: 訓読み; ghép: 音読み",
+        "body": "1. Chữ Hán + okurigana (phần kana phía sau) → thường 訓読み: {重|おも}い, {急|いそ}ぐ.\n2. Hai chữ Hán ghép → thường 音読み: {体重|たいじゅう}, {急行|きゅうこう}.\n3. Ngoại lệ có: {番組|ばんぐみ} (音＋訓), {場所|ばしょ} (訓＋音), {台所|だいどころ}.\n4. Vài chữ đứng riêng đọc 音: {駅|えき}, {肉|にく}, {絵|え}."
+      },
+      {
+        "id": "n4t2-s15",
+        "type": "table",
+        "title": "Một chữ, hai kiểu đọc",
+        "columns": ["Chữ", "Đứng một mình (訓)", "Trong từ ghép (音)"],
+        "rows": [
+          ["生", "{生|う}まれる", "{学生|がくせい}"],
+          ["食", "{食|た}べる", "{食堂|しょくどう}"],
+          ["安", "{安|やす}い", "{安心|あんしん}"],
+          ["重", "{重|おも}い", "{体重|たいじゅう}"],
+          ["急", "{急|いそ}ぐ", "{急行|きゅうこう}"],
+          ["運", "{運|はこ}ぶ", "{運動|うんどう}"],
+          ["習", "{習|なら}う", "{練習|れんしゅう}"],
+          ["送", "{送|おく}る", "{放送|ほうそう}"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t2-s16",
+        "type": "quiz",
+        "ref": "n4t2-q12"
+      },
+      {
+        "id": "n4t2-s17",
+        "type": "note",
+        "title": "Ghép chữ: ngắt っ",
+        "body": "1. Đuôi く + chữ sau hàng か → hay ngắt: {学校|がっこう}, {特急|とっきゅう}.\n2. Đuôi つ／ち + hàng か・さ・た・は → hay ngắt; は thành ぱ: {出発|しゅっぱつ}, {一緒|いっしょ}.\n3. Đuôi く trước hàng さ, た → thường giữ く: {学生|がくせい}.\n4. Chữ sau hàng が・ば・や・ま… → không ngắt: {特別|とくべつ}, {日曜|にちよう}.\n5. Vẫn có ngoại lệ → học theo từ."
+      },
+      {
+        "id": "n4t2-s18",
+        "type": "table",
+        "title": "Luyện: ghép rồi đọc",
+        "columns": ["Ghép", "Đọc sai", "Đọc đúng"],
+        "rows": [
+          ["学＋校", "がくこう", "がっこう"],
+          ["結＋婚", "けつこん", "けっこん"],
+          ["出＋発", "しゅつはつ", "しゅっぱつ"],
+          ["一＋緒", "いちしょ", "いっしょ"],
+          ["特＋急", "とくきゅう", "とっきゅう"],
+          ["失＋敗", "しつはい", "しっぱい"],
+          ["発＋表", "はつひょう", "はっぴょう"],
+          ["雑＋誌", "ざつし", "ざっし"],
+          ["学＋生", "がっせい", "がくせい"],
+          ["特＋別", "とっべつ", "とくべつ"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Hai dòng cuối không ngắt: 学生 vì đuôi く chỉ hay ngắt trước hàng か (生 là せ); 特別 vì 別 bắt đầu bằng べ."
+      },
+      {
+        "id": "n4t2-s19",
+        "type": "table",
+        "title": "Đếm ～分 và ～本",
+        "columns": ["Số", "～分 (phút)", "～本 (cây, chai)"],
+        "rows": [
+          ["1", "いっぷん", "いっぽん"],
+          ["2", "にふん", "にほん"],
+          ["3", "さんぷん", "さんぼん"],
+          ["4", "よんぷん", "よんほん"],
+          ["5", "ごふん", "ごほん"],
+          ["6", "ろっぷん", "ろっぽん"],
+          ["7", "ななふん", "ななほん"],
+          ["8", "はっぷん／はちふん", "はっぽん／はちほん"],
+          ["9", "きゅうふん", "きゅうほん"],
+          ["10", "じゅっぷん／じっぷん", "じゅっぽん／じっぽん"],
+          ["何", "なんぷん", "なんぼん"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Quy luật: sau っ (1, 6, 8, 10) → ぷん／ぽん; sau 3 và 何 → ぷん／ぼん; 4 → よんぷん nhưng よんほん; còn lại ふん／ほん."
+      },
+      {
+        "id": "n4t2-s20",
+        "type": "quiz",
+        "ref": "n4t2-q07"
+      },
+      {
+        "id": "n4t2-s21",
+        "type": "note",
+        "title": "Âm đục ở chữ sau (連濁)",
+        "body": "1. Chữ thứ hai có thể đổi か→が, さ→ざ, た→だ, は→ば: {手紙|てがみ}, {番組|ばんぐみ}, {花火|はなび}, {旅人|たびびと}.\n2. Sau ん hay đục hoặc thành ぱ: {三階|さんがい}, {三千|さんぜん}, {心配|しんぱい}, {散歩|さんぽ}.\n3. Không có quy tắc chắc chắn: {会社|かいしゃ} không đục.\n4. Đề hay cho cặp てかみ／てがみ: nhớ từ, đừng đoán."
+      },
+      {
+        "id": "n4t2-s22",
+        "type": "note",
+        "title": "Bẫy trường âm và âm đục",
+        "body": "1. Hán Việt vần -ng, -nh, -ao, -iêu, -ưu → thường dài: {工場|こうじょう}, {紹介|しょうかい}.\n2. Vần -a, -ư, -ơ, -ô → thường ngắn: {旅行|りょこう} (lữ: りょ), {去年|きょねん} (khứ: きょ).\n3. Vần -u lẫn lộn: 注 ちゅう, 住 じゅう nhưng 主 しゅ, 授 じゅ → học theo từ.\n4. ょ nhỏ hay よ lớn: {病院|びょういん} (bệnh viện) ≠ {美容院|びよういん} (tiệm tóc)."
+      },
+      {
+        "id": "n4t2-s23",
+        "type": "table",
+        "title": "Cặp bẫy もんだい１",
+        "columns": ["Từ", "Đúng", "Bẫy", "Vì sao"],
+        "rows": [
+          ["紹介", "しょうかい", "しょかい", "紹 Thiệu: -iêu dài"],
+          ["図書館", "としょかん", "としょうかん", "書 Thư: -ư ngắn"],
+          ["教室", "きょうしつ", "きょしつ", "教 Giáo: -ao dài"],
+          ["去年", "きょねん", "きょうねん", "去 Khứ: -ư ngắn"],
+          ["旅行", "りょこう", "りょうこう", "旅 Lữ: -ư ngắn"],
+          ["工場", "こうじょう", "こうじょ", "場 Trường: -ng dài"],
+          ["交通", "こうつう", "こつう", "Giao, Thông: đều dài"],
+          ["住所", "じゅうしょ", "じゅしょ", "住 Trú: nhớ theo từ"],
+          ["授業", "じゅぎょう", "じゅうぎょう", "授 Thụ: nhớ theo từ"],
+          ["病院", "びょういん", "びよういん", "ょ nhỏ; よ lớn = 美容院"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Che cột 2–3, đọc Hán Việt và hỏi: dài hay ngắn?"
+      },
+      {
+        "id": "n4t2-s24",
+        "type": "quiz",
+        "ref": "n4t2-q04"
+      },
+      {
+        "id": "n4t2-s25",
+        "type": "table",
+        "title": "Chữ giống nhau dễ nhầm",
+        "columns": ["Chữ", "Hán Việt", "音読み", "Nghĩa, từ"],
+        "rows": [
+          ["待", "Đãi", "たい", "chờ: {待|ま}つ"],
+          ["持", "Trì", "じ", "cầm: {持|も}つ"],
+          ["特", "Đặc", "とく", "riêng: {特別|とくべつ}"],
+          ["未", "Vị", "み", "chưa: {未来|みらい}"],
+          ["末", "Mạt", "まつ", "cuối: {週末|しゅうまつ}"],
+          ["体", "Thể", "たい", "thân: {体|からだ}"],
+          ["休", "Hưu", "きゅう", "nghỉ: {休|やす}む"],
+          ["間", "Gian", "かん", "khoảng: {時間|じかん}"],
+          ["問", "Vấn", "もん", "hỏi: {問題|もんだい}"],
+          ["聞", "Văn", "ぶん", "nghe: {新聞|しんぶん}"],
+          ["開", "Khai", "かい", "mở: {開|あ}ける"],
+          ["閉", "Bế", "へい", "đóng: {閉|し}める"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "n4t2-s26",
+        "type": "note",
+        "title": "Nhớ chữ giống nhau bằng câu chuyện",
+        "body": "1. 休: người (亻) tựa gốc cây (木) → nghỉ; 体: người + 本 → thân thể.\n2. 未: nét ngang trên ngắn (cây chưa lớn) → chưa; 末: nét trên dài (ngọn) → cuối.\n3. Cùng phần 寺: 待 (彳 bước chân) chờ, 持 (扌 tay) cầm, 特 (牛 con bò) đặc biệt.\n4. Cùng 門: 口 → 問 hỏi, 耳 → 聞 nghe, 日 → 間 khoảng."
+      },
+      {
+        "id": "n4t2-s27",
+        "type": "quiz",
+        "ref": "n4t2-q10"
+      },
+      {
+        "id": "n4t2-s28",
+        "type": "table",
+        "title": "Bộ thủ gợi nghĩa",
+        "columns": ["Bộ", "Nghĩa", "Chữ N4"],
+        "rows": [
+          ["氵", "nước", "海 洗 泳 池"],
+          ["言", "lời nói", "話 語 説 試"],
+          ["糸", "sợi chỉ", "紙 線 終 約"],
+          ["亻", "người", "休 住 使 借"],
+          ["扌", "tay", "持 押 払"],
+          ["辶", "đi, đường", "近 遠 送 通"],
+          ["宀", "mái nhà", "家 室 安 客"],
+          ["艹", "cỏ cây", "花 茶 薬 菜"],
+          ["食 (飠)", "ăn", "飯 飲 館"],
+          ["門", "cửa", "開 閉 間"],
+          ["疒", "bệnh", "病 痛"],
+          ["心 (忄)", "lòng, tâm", "思 急 忘 忙"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Ở 表記, nếu nghĩa là “rửa”, “bơi” thì chọn chữ có 氵; “nói”, “đọc” thì có 言."
+      },
+      {
+        "id": "n4t2-s29",
+        "type": "quiz",
+        "ref": "n4t2-q19"
+      },
+      {
+        "id": "n4t2-s30",
+        "type": "note",
+        "title": "Lịch học kanji 15–20 phút mỗi ngày",
+        "body": "1. 5 phút: ôn chữ học hôm qua, 3 ngày trước và 1 tuần trước (ôn giãn cách).\n2. 8–10 chữ mới, học trong từ: viết {学校|がっこう}, {学生|がくせい}, không viết 学 một mình.\n3. Mỗi chữ ghi: Hán Việt + 1 từ N4 + 1 câu ngắn.\n4. Làm phần kanji trong bộ 67 câu mỗi ngày; chép chữ sai vào sổ.\n5. Trước khi ngủ đọc lại sổ chữ sai."
+      },
+      {
+        "id": "n4t2-s31",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "1. Hán Việt → đuôi và hàng 音読み: -ng dài, -c く, -t つ／ち, -m/-n ん, d や, l ら.\n2. Mẹo là xu hướng: nhớ bảng ngoại lệ (立, 酒, 後, 研, 験…).\n3. Okurigana → 訓; hai chữ ghép → 音.\n4. Ghép chữ: kiểm tra っ, ぱ, âm đục, trường âm, ょ nhỏ.\n5. Chữ giống nhau: nhìn bộ thủ; học chữ trong từ và ôn giãn cách."
+      }
+    ],
+    "questions": [
+      {
+        "id": "n4t2-q01",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "大学で 日本の 文化を [[研究]]して います。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "研究（けんきゅう）: nghiên cứu. Mẹo vần cuối: 究 “Cứu” vần -ưu → trường âm きゅう, nên loại けんきゅ; きょう là vần -ao/-iêu, không hợp với “Cứu”. 研 “Nghiên” đọc けん (không đục) – ngoại lệ của mẹo ng → が行, nên loại げんきゅう.",
+        "type": "choice",
+        "options": ["けんきゅ", "けんきゅう", "げんきゅう", "けんきょう"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t2-q02",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたの 朝 7時に [[出発]]します。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "出発（しゅっぱつ）: xuất phát. Mẹo っ: 出 “Xuất” vần -t → しゅつ; 発 “Phát” → はつ. Chữ đuôi つ đứng trước chữ hàng は thì つ thành っ và は thành ぱ: しゅつ＋はつ → しゅっぱつ. しゅっはつ quên đổi は→ぱ, しゅつはつ quên ngắt っ, しゅうぱつ nhầm っ thành trường âm (vần -t không cho đuôi う).",
+        "type": "choice",
+        "options": ["しゅうぱつ", "しゅっはつ", "しゅつはつ", "しゅっぱつ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t2-q03",
+        "prompt": "Chữ 薬 có âm Hán Việt là “Dược”. Theo mẹo Hán Việt → 音読み, cách đọc 音読み nào hợp nhất?",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "Hai mẹo cùng lúc: phụ âm đầu d → hàng や; vần cuối -c → đuôi く. Vậy “Dược” → やく (薬局 やっきょく: hiệu thuốc). Đuôi う hợp với vần -ng, ん với -m/-n, つ với -t, nên ba lựa chọn còn lại đều sai.",
+        "type": "choice",
+        "options": ["やく", "やう", "やん", "やつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t2-q04",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "友だちに 新しい 先生を [[紹介]]しました。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "紹介（しょうかい）: giới thiệu. Mẹo trường âm: 紹 “Thiệu” vần -iêu → しょう (dài), nên loại しょかい. 介 “Giới” đọc かい, không có dấu đục, nên loại しょうがい. Không có lý do ngắt っ, nên loại しょっかい.",
+        "type": "choice",
+        "options": ["しょかい", "しょうがい", "しょうかい", "しょっかい"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t2-q05",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "[[図書館]]で 本を 借りました。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "図書館（としょかん）: thư viện. Mẹo âm ngắn: 書 “Thư” vần -ư → しょ ngắn (giống 旅 “Lữ” りょ), nên loại としょうかん. 館 “Quán” đọc かん, không đục. 図 có hai âm ず／と; trong từ này là と, nên loại ずしょかん.",
+        "type": "choice",
+        "options": ["としょうかん", "ずしょかん", "としょがん", "としょかん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t2-q06",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "かぜを ひいたので、[[病院]]へ 行きました。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "病院（びょういん）: bệnh viện. 病 “Bệnh” vần -nh → trường âm びょう, với ょ nhỏ. びよういん (よ lớn) là 美容院: tiệm làm tóc. びょいん thiếu trường âm, ひょういん thiếu dấu đục.",
+        "type": "choice",
+        "options": ["びよういん", "びょういん", "びょいん", "ひょういん"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t2-q07",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あと [[六分]]で 電車が 来ます。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "六分（ろっぷん）: 6 phút. Mẹo đếm ～分: sau 1, 6, 8, 10 thì số ngắt っ và ふん thành ぷん: いっぷん, ろっぷん, はっぷん, じゅっぷん. ろくふん, ろくぷん, ろっふん đều sai một trong hai bước.",
+        "type": "choice",
+        "options": ["ろくふん", "ろくぷん", "ろっぷん", "ろっふん"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t2-q08",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あの 人は とても [[しんせつ]]です。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "しんせつ = 親切 (Hán Việt “thân thiết”), nghĩa tiếng Nhật là tốt bụng. Mẹo 表記: tách しん＋せつ, nghĩ ra từ Hán Việt rồi chọn chữ. 新 “Tân”, 接 “Tiếp”, 説 “Thuyết” cũng đọc しん／せつ nhưng ghép lại không thành từ có nghĩa.",
+        "type": "choice",
+        "options": ["親切", "新切", "親接", "新説"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t2-q09",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "毎朝 公園を [[さんぽ]]します。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "さんぽ = 散歩 (Hán Việt “tản bộ”): đi dạo. 歩 “Bộ” vốn đọc ほ; sau ん đổi thành ぽ. 少 trông giống phần dưới của 歩 nhưng là “ít”; 産 “Sản” và 走 “Tẩu” không tạo thành từ này.",
+        "type": "choice",
+        "options": ["散走", "散歩", "産歩", "散少"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t2-q10",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "駅の 前で 友だちを [[まって]] います。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "まつ = 待つ: chờ. Mẹo chữ giống nhau: bộ 彳 (bước chân) → đứng chờ. 持 có bộ 扌 (tay) là もつ: cầm; 特 (bộ 牛) là “Đặc”, 時 (bộ 日) là “Thời”; cả hai không đi với okurigana って.",
+        "type": "choice",
+        "options": ["持って", "特って", "時って", "待って"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t2-q11",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この かばんは とても [[重い]]です。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "重い（おもい）: nặng. Mẹo: chữ Hán đứng một mình kèm okurigana (い) → đọc 訓読み. じゅう／ちょう là 音読み “Trọng”, chỉ dùng khi ghép (体重 たいじゅう). かるい là 軽い: nhẹ.",
+        "type": "choice",
+        "options": ["おもい", "じゅうい", "ちょうい", "かるい"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t2-q12",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "毎朝 [[体重]]を はかります。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "体重（たいじゅう）: cân nặng. Mẹo: hai chữ Hán ghép → 音読み. 体 “Thể” → たい (th → た行, không đục, nên loại だいじゅう); 重 “Trọng” vần -ng → じゅう dài, nên loại たいじゅ. からだ là 訓読み của 体, không dùng trong từ ghép này.",
+        "type": "choice",
+        "options": ["たいじゅ", "からだじゅう", "たいじゅう", "だいじゅう"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t2-q13",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "きょうは わたしの [[特別]]な 日です。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "特別（とくべつ）: đặc biệt. Mẹo っ: chỉ hay ngắt khi chữ sau bắt đầu bằng hàng か・さ・た・は; 別 bắt đầu bằng べ nên 特 giữ とく, loại とっべつ. 特 “Đặc”: đ → と không đục, -c → く, nên loại どくべつ. 別 “Biệt” đọc べつ có dấu đục, nên loại とくへつ.",
+        "type": "choice",
+        "options": ["とくべつ", "とっべつ", "どくべつ", "とくへつ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t2-q14",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "姉は 来月 [[結婚]]します。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "結婚（けっこん）: kết hôn. 結 “Kết” vần -t → けつ; 婚 “Hôn” (h → か行, -n → ん) → こん. つ đứng trước chữ hàng か → っ: けっこん. けつこん quên ngắt っ; けいこん là đuôi của vần -nh, không hợp với “Kết”; 婚 không đục, nên loại けっごん.",
+        "type": "choice",
+        "options": ["けつこん", "けいこん", "けっごん", "けっこん"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t2-q15",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "時間が ないので、[[急行]]に 乗りましょう。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "急行（きゅうこう）: tàu tốc hành. 急 “Cấp” vần -p → đuôi う (chữ cổ viết きふ) → きゅう; 行 “Hành” vần -nh → こう. Từ này không ngắt っ, nên loại きゅっこう; きゅこう thiếu trường âm; きょうこう sai vần (きょう hợp với vần -ao/-iêu như 教 Giáo, không phải “Cấp”).",
+        "type": "choice",
+        "options": ["きゅこう", "きゅうこう", "きゅっこう", "きょうこう"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "n4t2-q16",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "夏休みに 家族と [[りょこう]]します。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "りょこう = 旅行 (Hán Việt “lữ hành”): du lịch. 族 “Tộc” trông giống 旅 nhưng đọc ぞく. 考 “Khảo” và 交 “Giao” cũng đọc こう nhưng không mang nghĩa “đi”.",
+        "type": "choice",
+        "options": ["旅考", "族行", "旅行", "旅交"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t2-q17",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "母の [[料理]]は おいしいです。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "料理（りょうり）: món ăn, nấu ăn. 料 “Liệu”: l → ら行, vần -iêu → りょう dài; 理 “Lý” vần -y → り ngắn. りょり thiếu trường âm, りゅうり sai vần (りゅう hợp với vần -ưu như 流 Lưu), りょっり ngắt っ vô lý vì り không thuộc hàng か・さ・た・は.",
+        "type": "choice",
+        "options": ["りょり", "りゅうり", "りょっり", "りょうり"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "n4t2-q18",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "これは [[国立]]の 大学です。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "国立（こくりつ）: quốc lập (của nhà nước). 立 “Lập” vần -p nhưng đọc りつ – ngoại lệ trong bảng ngoại lệ, nên loại こくりゅう, こくりゅ. 国 “Quốc” vần -c → こく. くに là 訓読み của 国, không dùng trong từ ghép này.",
+        "type": "choice",
+        "options": ["こくりつ", "こくりゅう", "くにりつ", "こくりゅ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "n4t2-q19",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ごはんの 前に 手を [[あらいましょう]]。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "あらう = 洗う: rửa. Mẹo bộ thủ: 氵 (nước) + 先 (gợi âm せん: 洗 “Tẩy” せん). 先 thiếu bộ nước; 汽 (hơi nước, 汽車) và 流 (chảy, ながれる) có 氵 nhưng nghĩa khác.",
+        "type": "choice",
+        "options": ["先いましょう", "汽いましょう", "洗いましょう", "流いましょう"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "n4t2-q20",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "ここに [[住所]]と 名前を 書いて ください。",
+        "points": 1,
+        "tags": ["n4", "tips", "kanji"],
+        "explain": "住所（じゅうしょ）: địa chỉ. 所 “Sở” vần -ơ → しょ ngắn, nên loại じゅうしょう, じゅしょう. 住 “Trú” → じゅう dài: vần -u là vần lẫn lộn (主 しゅ ngắn, 住 じゅう dài), nên phải nhớ theo từ.",
+        "type": "choice",
+        "options": ["じゅしょ", "じゅうしょ", "じゅうしょう", "じゅしょう"],
+        "multiple": false,
+        "answer": [1]
+      }
+    ]
+  }
+}
