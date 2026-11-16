@@ -129,6 +129,15 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Bài mẫu Minna 17 — 16/11/2026
+
+Thêm `content/starters/minna-1-17.json` và đăng ký sau bài 16: 40 từ, 6 mục ngữ pháp đúng trình tự bài 17, 37 slide (7 bảng, 3 hội thoại), 50 câu luyện (40 choice chia đều 10/10/10/10 vị trí đáp án, 10 fill hiragana). Ví dụ, hội thoại và bài tập tự biên soạn.
+
+- PASS local: `npm run lesson:import -- --file content/starters/minna-1-17.json`; `findPublishProblems` và `findFuriganaProblems` trả về danh sách rỗng.
+- PASS local: `tests/japanese-lessons.test.ts` (22/22) và `npm run check`.
+- PASS Supabase local: một spec Playwright tạm tạo bài 16 và 17 từ mẫu bằng tài khoản giáo viên thử, xuất bản rồi mở từng slide ở khung 1280×720 (hiện mọi fragment). Không slide nào tràn khỏi khung, không lỗi console; bài 16 cho cùng kết quả như lần đo 13/11. Xem ảnh các slide bảng và hội thoại; hai dòng bị xuống hàng (slide 23 và 35) được rút ngắn. Spec tạm đã xóa sau khi đo.
+- Chưa làm: xuất bản lên production và gắn vào lớp. Giáo viên tạo bài bằng **Tạo bài 17 từ mẫu** sau khi bản này deploy.
+
 ## Bài mẫu Minna 16 — 13/11/2026
 
 Thêm `content/starters/minna-1-16.json` và đăng ký sau bài 15: 40 từ, 5 mục ngữ pháp đúng trình tự bài 16, 34 slide (6 bảng, 3 hội thoại), 50 câu luyện (40 choice, 10 fill hiragana). Ví dụ và hội thoại tự biên soạn; đối chiếu chủ điểm với đề cương của nhà xuất bản, không chép nội dung giáo trình.

@@ -1,0 +1,1518 @@
+{
+  "id": "minna-1-17",
+  "title": "Bài 17 – Thể ない: đừng làm, phải làm, không cần làm",
+  "titleJa": "第17課　しんぱいしないで ください",
+  "summary": "Theo trình tự bài 17 Minna no Nihongo Sơ cấp I: thể ない của ba nhóm động từ, dặn đừng làm với Vないで ください, việc phải làm Vなければ なりません, việc không cần làm Vなくても いいです, đưa tân ngữ lên làm chủ đề bằng は và hạn chót までに so với まで. Ví dụ, hội thoại ở phòng khám và bài tập đều là nội dung gốc.",
+  "order": 17,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1701",
+        "jp": "おぼえます",
+        "kanji": "覚えます",
+        "romaji": "oboemasu",
+        "vi": "nhớ, ghi nhớ",
+        "audio": null,
+        "note": "nhóm II · おぼえない"
+      },
+      {
+        "id": "v1702",
+        "jp": "わすれます",
+        "kanji": "忘れます",
+        "romaji": "wasuremasu",
+        "vi": "quên",
+        "audio": null,
+        "note": "nhóm II · わすれない"
+      },
+      {
+        "id": "v1703",
+        "jp": "なくします",
+        "romaji": "nakushimasu",
+        "vi": "làm mất, đánh mất",
+        "audio": null,
+        "note": "nhóm I · なくさない"
+      },
+      {
+        "id": "v1704",
+        "jp": "はらいます",
+        "kanji": "払います",
+        "romaji": "haraimasu",
+        "vi": "trả (tiền)",
+        "audio": null,
+        "note": "nhóm I · はらわない",
+        "image": "/icons/vocab/yen-banknote.svg"
+      },
+      {
+        "id": "v1705",
+        "jp": "かえします",
+        "kanji": "返します",
+        "romaji": "kaeshimasu",
+        "vi": "trả lại (đồ đã mượn)",
+        "audio": null,
+        "note": "nhóm I · かえさない"
+      },
+      {
+        "id": "v1706",
+        "jp": "でかけます",
+        "kanji": "出かけます",
+        "romaji": "dekakemasu",
+        "vi": "ra ngoài, đi ra ngoài",
+        "audio": null,
+        "note": "nhóm II · でかけない"
+      },
+      {
+        "id": "v1707",
+        "jp": "ぬぎます",
+        "kanji": "脱ぎます",
+        "romaji": "nugimasu",
+        "vi": "cởi (quần áo, giày)",
+        "audio": null,
+        "note": "nhóm I · ぬがない"
+      },
+      {
+        "id": "v1708",
+        "jp": "もって いきます",
+        "kanji": "持って 行きます",
+        "romaji": "motte ikimasu",
+        "vi": "mang đi, mang theo",
+        "audio": null,
+        "note": "nhóm I · もって いかない"
+      },
+      {
+        "id": "v1709",
+        "jp": "もって きます",
+        "kanji": "持って 来ます",
+        "romaji": "motte kimasu",
+        "vi": "mang đến",
+        "audio": null,
+        "note": "nhóm III · もって こない"
+      },
+      {
+        "id": "v1710",
+        "jp": "しんぱいします",
+        "kanji": "心配します",
+        "romaji": "shinpai shimasu",
+        "vi": "lo lắng",
+        "audio": null,
+        "note": "nhóm III · しんぱいしない"
+      },
+      {
+        "id": "v1711",
+        "jp": "ざんぎょうします",
+        "kanji": "残業します",
+        "romaji": "zangyou shimasu",
+        "vi": "làm thêm giờ",
+        "audio": null,
+        "note": "nhóm III · ざんぎょうしない"
+      },
+      {
+        "id": "v1712",
+        "jp": "しゅっちょうします",
+        "kanji": "出張します",
+        "romaji": "shucchou shimasu",
+        "vi": "đi công tác",
+        "audio": null,
+        "note": "nhóm III · しゅっちょうしない",
+        "image": "/icons/vocab/briefcase.svg"
+      },
+      {
+        "id": "v1713",
+        "jp": "のみます",
+        "kanji": "飲みます",
+        "romaji": "nomimasu",
+        "vi": "uống (thuốc): くすりを のみます",
+        "audio": null,
+        "note": "nhóm I · のまない"
+      },
+      {
+        "id": "v1714",
+        "jp": "はいります",
+        "kanji": "入ります",
+        "romaji": "hairimasu",
+        "vi": "vào (bồn tắm): おふろに はいります",
+        "audio": null,
+        "note": "nhóm I · はいらない"
+      },
+      {
+        "id": "v1715",
+        "jp": "たいせつ",
+        "kanji": "大切",
+        "romaji": "taisetsu",
+        "vi": "quan trọng, quý giá (tính từ đuôi な)",
+        "audio": null
+      },
+      {
+        "id": "v1716",
+        "jp": "だいじょうぶ",
+        "kanji": "大丈夫",
+        "romaji": "daijoubu",
+        "vi": "không sao, ổn (tính từ đuôi な)",
+        "audio": null,
+        "image": "/icons/vocab/ok-hand.svg"
+      },
+      {
+        "id": "v1717",
+        "jp": "あぶない",
+        "kanji": "危ない",
+        "romaji": "abunai",
+        "vi": "nguy hiểm",
+        "audio": null
+      },
+      {
+        "id": "v1718",
+        "jp": "きんえん",
+        "kanji": "禁煙",
+        "romaji": "kin'en",
+        "vi": "cấm hút thuốc",
+        "audio": null
+      },
+      {
+        "id": "v1719",
+        "jp": "けんこうほけんしょう",
+        "kanji": "健康保険証",
+        "romaji": "kenkou hokenshou",
+        "vi": "thẻ bảo hiểm y tế (gọi tắt: ほけんしょう)",
+        "audio": null,
+        "image": "/icons/vocab/identification-card.svg"
+      },
+      {
+        "id": "v1720",
+        "jp": "ねつ",
+        "kanji": "熱",
+        "romaji": "netsu",
+        "vi": "sốt (ねつが あります: bị sốt)",
+        "audio": null
+      },
+      {
+        "id": "v1721",
+        "jp": "びょうき",
+        "kanji": "病気",
+        "romaji": "byouki",
+        "vi": "bệnh, ốm",
+        "audio": null
+      },
+      {
+        "id": "v1722",
+        "jp": "くすり",
+        "kanji": "薬",
+        "romaji": "kusuri",
+        "vi": "thuốc",
+        "audio": null
+      },
+      {
+        "id": "v1723",
+        "jp": "おふろ",
+        "kanji": "お風呂",
+        "romaji": "ofuro",
+        "vi": "bồn tắm; việc tắm bồn",
+        "audio": null
+      },
+      {
+        "id": "v1724",
+        "jp": "うわぎ",
+        "kanji": "上着",
+        "romaji": "uwagi",
+        "vi": "áo khoác",
+        "audio": null
+      },
+      {
+        "id": "v1725",
+        "jp": "したぎ",
+        "kanji": "下着",
+        "romaji": "shitagi",
+        "vi": "đồ lót",
+        "audio": null
+      },
+      {
+        "id": "v1726",
+        "jp": "もんだい",
+        "kanji": "問題",
+        "romaji": "mondai",
+        "vi": "vấn đề; câu hỏi (bài thi)",
+        "audio": null
+      },
+      {
+        "id": "v1727",
+        "jp": "こたえ",
+        "kanji": "答え",
+        "romaji": "kotae",
+        "vi": "câu trả lời, đáp án",
+        "audio": null
+      },
+      {
+        "id": "v1728",
+        "jp": "せんせい",
+        "kanji": "先生",
+        "romaji": "sensei",
+        "vi": "bác sĩ (từ dùng để gọi bác sĩ)",
+        "audio": null,
+        "image": "/icons/vocab/stethoscope.svg"
+      },
+      {
+        "id": "v1729",
+        "jp": "に、さんにち",
+        "kanji": "2、3日",
+        "romaji": "ni, sannichi",
+        "vi": "hai, ba ngày",
+        "audio": null
+      },
+      {
+        "id": "v1730",
+        "jp": "〜までに",
+        "romaji": "~madeni",
+        "vi": "trước (hạn chót) …",
+        "audio": null
+      },
+      {
+        "id": "v1731",
+        "jp": "ですから",
+        "romaji": "desukara",
+        "vi": "vì vậy, vì thế",
+        "audio": null
+      },
+      {
+        "id": "v1732",
+        "jp": "どう しましたか",
+        "romaji": "dou shimashita ka",
+        "vi": "Anh/chị bị làm sao?",
+        "audio": null
+      },
+      {
+        "id": "v1733",
+        "jp": "のど",
+        "kanji": "喉",
+        "romaji": "nodo",
+        "vi": "cổ họng",
+        "audio": null
+      },
+      {
+        "id": "v1734",
+        "jp": "あたま",
+        "kanji": "頭",
+        "romaji": "atama",
+        "vi": "đầu",
+        "audio": null
+      },
+      {
+        "id": "v1735",
+        "jp": "おなか",
+        "romaji": "onaka",
+        "vi": "bụng",
+        "audio": null
+      },
+      {
+        "id": "v1736",
+        "jp": "〜が いたいです",
+        "kanji": "〜が 痛いです",
+        "romaji": "~ga itai desu",
+        "vi": "bị đau …",
+        "audio": null
+      },
+      {
+        "id": "v1737",
+        "jp": "かぜ",
+        "kanji": "風邪",
+        "romaji": "kaze",
+        "vi": "cảm",
+        "audio": null
+      },
+      {
+        "id": "v1738",
+        "jp": "それから",
+        "romaji": "sorekara",
+        "vi": "ngoài ra, sau đó",
+        "audio": null
+      },
+      {
+        "id": "v1739",
+        "jp": "おだいじに",
+        "kanji": "お大事に",
+        "romaji": "odaijini",
+        "vi": "Chúc mau khỏe (nói với người ốm)",
+        "audio": null
+      },
+      {
+        "id": "v1740",
+        "jp": "〜なければ なりません",
+        "romaji": "~nakereba narimasen",
+        "vi": "phải …",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1701",
+        "pattern": "V ない（thể ない）",
+        "vi": "Thể ない: dạng phủ định ngắn của động từ",
+        "explain": "Nhóm I: đổi âm ngay trước ます từ cột い sang cột あ rồi thêm ない (かきます → かかない); riêng い đổi thành わ (かいます → かわない). Nhóm II: bỏ ます, thêm ない (たべます → たべない). Nhóm III: します → しない, きます → こない.",
+        "viMistake": "Hay nói かあない hoặc かいない cho かいます; đuôi い phải đổi thành わ: かわない. きます (đến) không thành きない mà là こない.",
+        "examples": [
+          {
+            "jp": "{行|い}きます、{行|い}かない。{買|か}います、{買|か}わない。",
+            "vi": "Nhóm I: đi → không đi; mua → không mua (い đổi thành わ).",
+            "audio": null
+          },
+          {
+            "jp": "{食|た}べます、{食|た}べない。{覚|おぼ}えます、{覚|おぼ}えない。",
+            "vi": "Nhóm II: ăn → không ăn; nhớ → không nhớ.",
+            "audio": null
+          },
+          {
+            "jp": "します、しない。{来|き}ます、{来|こ}ない。",
+            "vi": "Nhóm III: làm → không làm; đến → không đến.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1702",
+        "pattern": "V ないで ください",
+        "vi": "Xin đừng …, vui lòng không …",
+        "explain": "Thể ない + で ください dùng để nhờ hoặc dặn người nghe đừng làm việc gì. Có thể nêu lý do trước bằng 〜から.",
+        "viMistake": "Không nói V ませんで ください hay V なくて ください; mẫu đúng là V ないで ください.",
+        "examples": [
+          {
+            "jp": "{図書館|としょかん}で {電話|でんわ}を かけないで ください。",
+            "vi": "Xin đừng gọi điện thoại trong thư viện.",
+            "audio": null
+          },
+          {
+            "jp": "{今晩|こんばん}は お{酒|さけ}を {飲|の}まないで ください。",
+            "vi": "Tối nay xin đừng uống rượu.",
+            "audio": null
+          },
+          {
+            "jp": "{大丈夫|だいじょうぶ}ですから、{心配|しんぱい}しないで ください。",
+            "vi": "Không sao đâu, nên đừng lo lắng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1703",
+        "pattern": "V ない → V なければ なりません",
+        "vi": "Phải …",
+        "explain": "Bỏ い ở cuối thể ない rồi thêm ければ なりません. Mẫu này nói việc bắt buộc phải làm, dù người nói có muốn hay không.",
+        "viMistake": "Dễ quên bỏ い: không nói のまないければ; phải là のまなければ なりません. Câu có ない nhưng nghĩa là 'phải làm', không phải phủ định.",
+        "examples": [
+          {
+            "jp": "{毎日|まいにち} {薬|くすり}を {飲|の}まなければ なりません。",
+            "vi": "Tôi phải uống thuốc mỗi ngày.",
+            "audio": null
+          },
+          {
+            "jp": "{図書館|としょかん}の {本|ほん}を {返|かえ}さなければ なりません。",
+            "vi": "Tôi phải trả sách cho thư viện.",
+            "audio": null
+          },
+          {
+            "jp": "あしたは {試験|しけん}です。ですから、{今晩|こんばん} {勉強|べんきょう}しなければ なりません。",
+            "vi": "Ngày mai có bài thi. Vì vậy tối nay tôi phải học.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1704",
+        "pattern": "V ない → V なくても いいです",
+        "vi": "Không … cũng được, không cần …",
+        "explain": "Bỏ い ở cuối thể ない rồi thêm くても いいです. Dùng khi một việc không bắt buộc; hay dùng để trả lời câu hỏi 〜なければ なりませんか.",
+        "viMistake": "Không nhầm với V ないで ください (xin đừng làm). V なくても いいです chỉ nói 'không làm cũng được', không phải lời cấm.",
+        "examples": [
+          {
+            "jp": "あしたは {来|こ}なくても いいです。",
+            "vi": "Ngày mai bạn không cần đến cũng được.",
+            "audio": null
+          },
+          {
+            "jp": "{時間|じかん}が ありますから、{急|いそ}がなくても いいです。",
+            "vi": "Còn thời gian nên không cần vội.",
+            "audio": null
+          },
+          {
+            "jp": "{熱|ねつ}が ありませんから、{薬|くすり}を {飲|の}まなくても いいです。",
+            "vi": "Không bị sốt nên không cần uống thuốc.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1705",
+        "pattern": "N（tân ngữ）は V",
+        "vi": "Đưa tân ngữ lên làm chủ đề bằng は",
+        "explain": "Muốn nêu một đồ vật làm chủ đề, ta đưa nó lên đầu câu và thay を bằng は. Cách nói này hay đi với 〜ないで ください, 〜なければ なりません, 〜なくても いいです.",
+        "viMistake": "Không giữ cả hai trợ từ (うわぎをは); khi tân ngữ làm chủ đề, を được thay hẳn bằng は.",
+        "examples": [
+          {
+            "jp": "{上着|うわぎ}は {脱|ぬ}がなくても いいです。",
+            "vi": "Áo khoác thì không cần cởi.",
+            "audio": null
+          },
+          {
+            "jp": "{保険証|ほけんしょう}は {忘|わす}れないで ください。",
+            "vi": "Thẻ bảo hiểm thì xin đừng quên.",
+            "audio": null
+          },
+          {
+            "jp": "{傘|かさ}は {持|も}って {行|い}かなくても いいです。",
+            "vi": "Ô thì không cần mang theo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1706",
+        "pattern": "N（thời gian）までに V",
+        "vi": "Làm V trước (hạn chót) N",
+        "explain": "までに chỉ hạn chót: việc phải xong trước hoặc đúng lúc đó. まで (bài 4) chỉ hành động hay trạng thái kéo dài liên tục đến lúc đó.",
+        "viMistake": "Tiếng Việt đều có thể nói 'đến', nên dễ lẫn: ごじまで はたらきます (làm liên tục đến 5 giờ) khác ごじまでに かえります (về trước 5 giờ).",
+        "examples": [
+          {
+            "jp": "{水曜日|すいようび}までに この {本|ほん}を {読|よ}まなければ なりません。",
+            "vi": "Tôi phải đọc xong cuốn sách này trước thứ Tư.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}は {3時|さんじ}までに {終|お}わります。",
+            "vi": "Cuộc họp sẽ kết thúc trước 3 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{9時|くじ}までに {病院|びょういん}へ {来|き}て ください。",
+            "vi": "Hãy đến bệnh viện trước 9 giờ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1701",
+        "type": "title",
+        "jp": "{第|だい}17{課|か}",
+        "vi": "Nói “đừng làm”, “phải làm” và “không cần làm”"
+      },
+      {
+        "id": "s1702",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Đổi động từ sang thể ない theo ba nhóm.\n2. Dặn người khác đừng làm: Vないで ください.\n3. Nói việc phải làm và không cần làm: Vなければ なりません, Vなくても いいです.\n4. Đưa tân ngữ lên làm chủ đề bằng は; phân biệt まで và までに."
+      },
+      {
+        "id": "s1703",
+        "type": "vocab",
+        "refs": ["v1701", "v1702", "v1703", "v1704", "v1705", "v1706", "v1707", "v1708"],
+        "teacherNotes": "Đọc thể ない ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s1704",
+        "type": "vocab",
+        "refs": ["v1709", "v1710", "v1711", "v1712", "v1713", "v1714", "v1715", "v1716"],
+        "teacherNotes": "Đọc thể ない ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s1705",
+        "type": "vocab",
+        "refs": ["v1717", "v1718", "v1719", "v1720", "v1721", "v1722", "v1723", "v1724"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1706",
+        "type": "vocab",
+        "refs": ["v1725", "v1726", "v1727", "v1728", "v1729", "v1730", "v1731", "v1732"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1707",
+        "type": "vocab",
+        "refs": ["v1733", "v1734", "v1735", "v1736", "v1737", "v1738", "v1739", "v1740"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s1708",
+        "type": "grammar",
+        "ref": "g1701",
+        "teacherNotes": "Ôn ba nhóm động từ ở bài 14; nhóm I đổi âm cột い sang cột あ."
+      },
+      {
+        "id": "s1709",
+        "type": "example",
+        "ref": "g1701",
+        "reveal": true
+      },
+      {
+        "id": "s1710",
+        "type": "table",
+        "title": "Nhóm I: đổi đuôi sang ない",
+        "columns": ["Đuôi ます", "Ví dụ", "Thể ない"],
+        "rows": [
+          ["い → わ", "かいます・はらいます", "かわない・はらわない"],
+          ["き → か", "かきます・いきます", "かかない・いかない"],
+          ["ぎ → が", "ぬぎます", "ぬがない"],
+          ["し → さ", "なくします・かえします", "なくさない・かえさない"],
+          ["ち → た", "まちます", "またない"],
+          ["み・び → ま・ば", "のみます・あそびます", "のまない・あそばない"],
+          ["り → ら", "はいります", "はいらない"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đọc từng hàng; nhấn mạnh い → わ, không phải い → あ."
+      },
+      {
+        "id": "s1711",
+        "type": "table",
+        "title": "Nhóm II và III",
+        "columns": ["Động từ", "Nhóm", "Thể ない"],
+        "rows": [
+          ["たべます", "II", "たべない"],
+          ["みます", "II", "みない"],
+          ["おぼえます", "II", "おぼえない"],
+          ["でかけます", "II", "でかけない"],
+          ["します", "III", "しない"],
+          ["きます", "III", "こない"],
+          ["しんぱいします", "III", "しんぱいしない"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhóm II: bỏ ます thêm ない. Chú ý きます → こない."
+      },
+      {
+        "id": "s1712",
+        "type": "quiz",
+        "ref": "q1701"
+      },
+      {
+        "id": "s1713",
+        "type": "grammar",
+        "ref": "g1702",
+        "teacherNotes": "Cho học viên đóng vai bác sĩ dặn bệnh nhân đừng làm gì."
+      },
+      {
+        "id": "s1714",
+        "type": "example",
+        "ref": "g1702",
+        "reveal": true
+      },
+      {
+        "id": "s1715",
+        "type": "table",
+        "title": "Luyện tập 1: xin đừng …",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{薬|くすり}を {忘|わす}れます", "{薬|くすり}を {忘|わす}れないで ください。"],
+          ["ここで たばこを {吸|す}います", "ここで たばこを {吸|す}わないで ください。"],
+          ["{心配|しんぱい}します", "{心配|しんぱい}しないで ください。"],
+          [
+            "{危|あぶ}ない・{川|かわ}で {泳|およ}ぎます",
+            "{危|あぶ}ないですから、{川|かわ}で {泳|およ}がないで ください。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1716",
+        "type": "quiz",
+        "ref": "q1702"
+      },
+      {
+        "id": "s1717",
+        "type": "grammar",
+        "ref": "g1703",
+        "teacherNotes": "Viết lên bảng: のまない → のまな + ければ なりません."
+      },
+      {
+        "id": "s1718",
+        "type": "example",
+        "ref": "g1703",
+        "reveal": true
+      },
+      {
+        "id": "s1719",
+        "type": "table",
+        "title": "Luyện tập 2: phải làm",
+        "columns": ["Động từ", "Thể ない", "Câu mẫu"],
+        "rows": [
+          [
+            "{薬|くすり}を {飲|の}みます",
+            "{飲|の}まない",
+            "{薬|くすり}を {飲|の}まなければ なりません。"
+          ],
+          [
+            "{本|ほん}を {返|かえ}します",
+            "{返|かえ}さない",
+            "{本|ほん}を {返|かえ}さなければ なりません。"
+          ],
+          [
+            "{早|はや}く {起|お}きます",
+            "{起|お}きない",
+            "{早|はや}く {起|お}きなければ なりません。"
+          ],
+          [
+            "{残業|ざんぎょう}します",
+            "{残業|ざんぎょう}しない",
+            "{残業|ざんぎょう}しなければ なりません。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1720",
+        "type": "quiz",
+        "ref": "q1703"
+      },
+      {
+        "id": "s1721",
+        "type": "grammar",
+        "ref": "g1704",
+        "teacherNotes": "So sánh ba mẫu: ないで ください (đừng), なければ なりません (phải), なくても いいです (không cần)."
+      },
+      {
+        "id": "s1722",
+        "type": "example",
+        "ref": "g1704",
+        "reveal": true
+      },
+      {
+        "id": "s1723",
+        "type": "table",
+        "title": "Luyện tập 3: phải không? Không cần",
+        "columns": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["{靴|くつ}を {脱|ぬ}がなければ なりませんか。", "いいえ、{脱|ぬ}がなくても いいです。"],
+          ["あした {来|こ}なければ なりませんか。", "いいえ、{来|こ}なくても いいです。"],
+          [
+            "{名前|なまえ}を {書|か}かなければ なりませんか。",
+            "いいえ、{書|か}かなくても いいです。"
+          ],
+          [
+            "{今|いま} {払|はら}わなければ なりませんか。",
+            "いいえ、{今|いま} {払|はら}わなくても いいです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1724",
+        "type": "quiz",
+        "ref": "q1704"
+      },
+      {
+        "id": "s1725",
+        "type": "grammar",
+        "ref": "g1705",
+        "teacherNotes": "Đổi câu có を sang は: うわぎを → うわぎは."
+      },
+      {
+        "id": "s1726",
+        "type": "example",
+        "ref": "g1705",
+        "reveal": true
+      },
+      {
+        "id": "s1727",
+        "type": "quiz",
+        "ref": "q1705"
+      },
+      {
+        "id": "s1728",
+        "type": "grammar",
+        "ref": "g1706",
+        "teacherNotes": "Vẽ trục thời gian: まで là một đoạn kéo dài, までに là một mốc hạn chót."
+      },
+      {
+        "id": "s1729",
+        "type": "example",
+        "ref": "g1706",
+        "reveal": true
+      },
+      {
+        "id": "s1730",
+        "type": "table",
+        "title": "Luyện tập 4: まで hay までに",
+        "columns": ["Gợi ý", "Ý", "Câu mẫu"],
+        "rows": [
+          ["{5時|ごじ}・{働|はたら}きます", "liên tục", "{5時|ごじ}まで {働|はたら}きます。"],
+          ["{5時|ごじ}・{帰|かえ}ります", "hạn chót", "{5時|ごじ}までに {帰|かえ}ります。"],
+          ["あした・{待|ま}ちます", "liên tục", "あしたまで {待|ま}ちます。"],
+          [
+            "あした・{本|ほん}を {返|かえ}します",
+            "hạn chót",
+            "あしたまでに {本|ほん}を {返|かえ}します。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1731",
+        "type": "quiz",
+        "ref": "q1706"
+      },
+      {
+        "id": "s1732",
+        "type": "dialogue",
+        "title": "Hội thoại 1: ở quầy lễ tân phòng khám",
+        "lines": [
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "こんにちは。{保険証|ほけんしょう}は ありますか。",
+            "vi": "Xin chào. Chị có thẻ bảo hiểm không?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "はい、これです。",
+            "vi": "Vâng, đây ạ."
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "この {紙|かみ}に {名前|なまえ}と {住所|じゅうしょ}を {書|か}いて ください。",
+            "vi": "Chị hãy viết tên và địa chỉ vào tờ giấy này."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{靴|くつ}を {脱|ぬ}がなければ なりませんか。",
+            "vi": "Tôi có phải cởi giày không?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "いいえ、{脱|ぬ}がなくても いいです。あちらで {待|ま}って ください。",
+            "vi": "Không, chị không cần cởi. Chị đợi ở đằng kia nhé."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1733",
+        "type": "dialogue",
+        "title": "Hội thoại 2: khám bệnh",
+        "lines": [
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "どう しましたか。",
+            "vi": "Anh bị làm sao?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "けさから {頭|あたま}と おなかが {痛|いた}いです。かぜですか。",
+            "vi": "Từ sáng nay tôi bị đau đầu và đau bụng. Có phải tôi bị cảm không ạ?"
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "{熱|ねつ}は ありませんね。きのうの {晩|ばん}、お{酒|さけ}を {飲|の}みましたか。",
+            "vi": "Anh không bị sốt. Tối qua anh có uống rượu không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい、たくさん {飲|の}みました。",
+            "vi": "Có, tôi uống nhiều ạ."
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "かぜじゃ ありませんから、{心配|しんぱい}しないで ください。",
+            "vi": "Không phải cảm đâu, anh đừng lo."
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "でも、{今週|こんしゅう}は お{酒|さけ}を {飲|の}まないで ください。",
+            "vi": "Nhưng tuần này anh đừng uống rượu nhé."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1734",
+        "type": "dialogue",
+        "title": "Hội thoại 3: lời dặn của bác sĩ",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "あした {会社|かいしゃ}へ {行|い}っても いいですか。",
+            "vi": "Ngày mai tôi đi làm được không ạ?"
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "ええ。でも、あしたは {残業|ざんぎょう}しないで ください。",
+            "vi": "Được. Nhưng ngày mai anh đừng làm thêm giờ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{薬|くすり}は {毎日|まいにち} {飲|の}まなければ なりませんか。",
+            "vi": "Thuốc thì tôi có phải uống mỗi ngày không ạ?"
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "はい。それから、{金曜日|きんようび}までに もう {一度|いちど} {来|き}て ください。",
+            "vi": "Vâng. Ngoài ra, anh hãy đến khám lại trước thứ Sáu."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わかりました。ありがとう ございました。",
+            "vi": "Tôi hiểu rồi. Cảm ơn bác sĩ."
+          },
+          {
+            "speaker": "{医者|いしゃ}",
+            "jp": "お{大事|だいじ}に。",
+            "vi": "Chúc anh mau khỏe."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1735",
+        "type": "table",
+        "title": "Luyện tập 5: ghép thành câu",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{上着|うわぎ}・{脱|ぬ}ぎます・không cần",
+            "{上着|うわぎ}は {脱|ぬ}がなくても いいです。"
+          ],
+          ["{鍵|かぎ}・なくします・xin đừng", "{鍵|かぎ}は なくさないで ください。"],
+          [
+            "{3時|さんじ} (hạn chót)・{来|き}ます・phải",
+            "{3時|さんじ}までに {来|こ}なければ なりません。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1736",
+        "type": "quiz",
+        "ref": "q1707"
+      },
+      {
+        "id": "s1737",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "Thể ない: nhóm I đổi cột い sang あ (い → わ); nhóm II bỏ ます; しない, こない.\nVないで ください: xin đừng làm.\nVなければ なりません: phải làm; Vなくても いいです: không làm cũng được.\nN は V: đưa tân ngữ lên làm chủ đề (を → は).\nまでに: hạn chót; まで: kéo dài đến lúc đó."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1701",
+        "prompt": "Chọn thể ない của かいます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm I đuôi い đổi thành わ: かいます → かわない.",
+        "type": "choice",
+        "options": ["かあない", "かわない", "かいない", "かかない"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1702",
+        "prompt": "Chọn câu đúng: Xin đừng hút thuốc ở đây.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "すいます → すわない → すわないで ください.",
+        "type": "choice",
+        "options": [
+          "ここで たばこを すわないで ください。",
+          "ここで たばこを すいないで ください。",
+          "ここで たばこを すわなくて ください。",
+          "ここで たばこを すいませんで ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1703",
+        "prompt": "Chọn câu đúng: Tôi phải uống thuốc mỗi ngày.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "のまない → bỏ い → のまなければ なりません.",
+        "type": "choice",
+        "options": [
+          "まいにち くすりを のみなければ なりません。",
+          "まいにち くすりを のまないければ なりません。",
+          "まいにち くすりを のまなくても いいです。",
+          "まいにち くすりを のまなければ なりません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1704",
+        "prompt": "Chọn câu đúng: Không cần cởi giày cũng được.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ぬぎます → ぬがない → ぬがなくても いいです.",
+        "type": "choice",
+        "options": [
+          "くつを ぬがないで ください。",
+          "くつを ぬぎなくても いいです。",
+          "くつを ぬがなくても いいです。",
+          "くつを ぬがなければ なりません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1705",
+        "prompt": "Đưa うわぎ lên làm chủ đề: うわぎを ここに おかないで ください。",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Tân ngữ làm chủ đề: thay を bằng は.",
+        "type": "choice",
+        "options": [
+          "うわぎをは ここに おかないで ください。",
+          "うわぎは ここに おかないで ください。",
+          "うわぎが ここに おかないで ください。",
+          "うわぎに ここに おかないで ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1706",
+        "prompt": "この ほんは どようび（　）かえして ください。(hạn chót là thứ Bảy)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Hạn chót dùng までに; まで dùng cho việc kéo dài liên tục.",
+        "type": "choice",
+        "options": ["までに", "まで", "で", "を"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1707",
+        "prompt": "Chọn câu đúng: Ngày mai bạn không cần đến cũng được.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "きます (đến) → こない → こなくても いいです.",
+        "type": "choice",
+        "options": [
+          "あしたは きなくても いいです。",
+          "あしたは しなくても いいです。",
+          "あしたは こないで ください。",
+          "あしたは こなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1708",
+        "prompt": "Chọn thể ない của いきます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "き → か: いきます → いかない.",
+        "type": "choice",
+        "options": ["いきない", "いけない", "いかない", "いわない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1709",
+        "prompt": "Chọn thể ない của たべます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm II: bỏ ます, thêm ない.",
+        "type": "choice",
+        "options": ["たべらない", "たべない", "たばない", "たべかない"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1710",
+        "prompt": "Chọn thể ない của きます (đến).",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm III: きます → こない.",
+        "type": "choice",
+        "options": ["こない", "きない", "くない", "きらない"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1711",
+        "prompt": "Chọn thể ない của します.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm III: します → しない.",
+        "type": "choice",
+        "options": ["さない", "すない", "しらない", "しない"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1712",
+        "prompt": "Chọn thể ない của はらいます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Đuôi い đổi thành わ: はらわない.",
+        "type": "choice",
+        "options": ["はらあない", "はらいない", "はらわない", "はらかない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1713",
+        "prompt": "Chọn thể ない của ぬぎます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ぎ → が: ぬがない.",
+        "type": "choice",
+        "options": ["ぬぎない", "ぬがない", "ぬかない", "ぬがらない"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1714",
+        "prompt": "Chọn thể ない của かえします.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "し → さ: かえさない.",
+        "type": "choice",
+        "options": ["かえさない", "かえしない", "かえすない", "かえらない"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1715",
+        "prompt": "Chọn thể ない của おぼえます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "おぼえます là nhóm II: おぼえない.",
+        "type": "choice",
+        "options": ["おぼわない", "おぼえらない", "おぼさない", "おぼえない"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1716",
+        "prompt": "Chọn thể ない của もって きます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "きます → こない, nên もって こない.",
+        "type": "choice",
+        "options": ["もって きない", "もって くない", "もって こない", "もって きらない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1717",
+        "prompt": "Chọn câu đúng: Xin đừng lo lắng.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "しんぱいします → しんぱいしない → しんぱいしないで ください.",
+        "type": "choice",
+        "options": [
+          "しんぱいさないで ください。",
+          "しんぱいしないで ください。",
+          "しんぱいしなくて ください。",
+          "しんぱいしませんで ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1718",
+        "prompt": "Chọn câu đúng: Xin đừng quên thuốc.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "わすれます là nhóm II: わすれない → わすれないで ください.",
+        "type": "choice",
+        "options": [
+          "くすりを わすれないで ください。",
+          "くすりを わすらないで ください。",
+          "くすりに わすれないで ください。",
+          "くすりを わすれなくて ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1719",
+        "prompt": "Chọn câu đúng: Tuần sau tôi phải đi công tác.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "しゅっちょうします → しゅっちょうしない → しゅっちょうしなければ なりません.",
+        "type": "choice",
+        "options": [
+          "らいしゅう しゅっちょうしないければ なりません。",
+          "らいしゅう しゅっちょうさなければ なりません。",
+          "らいしゅう しゅっちょうしなくても いいです。",
+          "らいしゅう しゅっちょうしなければ なりません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1720",
+        "prompt": "Chọn câu đúng: Tôi phải trả lại cuốn sách.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "かえします → かえさない → かえさなければ なりません.",
+        "type": "choice",
+        "options": [
+          "ほんを かえしなければ なりません。",
+          "ほんを かえらなければ なりません。",
+          "ほんを かえさなければ なりません。",
+          "ほんを かえさないで ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1721",
+        "prompt": "Câu hỏi: きょう レポートを ださなければ なりませんか。Trả lời: 'Không, không cần nộp.'",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Trả lời không bắt buộc bằng 〜なくても いいです: だします → ださない → ださなくても いいです.",
+        "type": "choice",
+        "options": [
+          "いいえ、ださなければ なりません。",
+          "いいえ、ださなくても いいです。",
+          "いいえ、ださないで ください。",
+          "いいえ、だしなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1722",
+        "prompt": "Chọn câu đúng: Hôm nay không cần làm thêm giờ cũng được.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ざんぎょうします → ざんぎょうしない → ざんぎょうしなくても いいです.",
+        "type": "choice",
+        "options": [
+          "きょうは ざんぎょうしなくても いいです。",
+          "きょうは ざんぎょうさなくても いいです。",
+          "きょうは ざんぎょうしなければ なりません。",
+          "きょうは ざんぎょうしないで ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1723",
+        "prompt": "Chọn câu đúng: Thẻ bảo hiểm thì xin đừng quên.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Tân ngữ làm chủ đề: ほけんしょうを → ほけんしょうは.",
+        "type": "choice",
+        "options": [
+          "ほけんしょうをは わすれないで ください。",
+          "ほけんしょうが わすれないで ください。",
+          "ほけんしょうに わすれないで ください。",
+          "ほけんしょうは わすれないで ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1724",
+        "prompt": "Trong câu この てがみは あした おくって ください, は thay cho trợ từ nào?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Câu gốc: この てがみを あした おくって ください.",
+        "type": "choice",
+        "options": ["に", "が", "を", "で"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1725",
+        "prompt": "Chọn câu đúng: Tôi làm việc đến 6 giờ.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Làm liên tục đến một lúc dùng まで.",
+        "type": "choice",
+        "options": [
+          "ろくじまでに はたらきます。",
+          "ろくじまで はたらきます。",
+          "ろくじに まで はたらきます。",
+          "ろくじまでを はたらきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1726",
+        "prompt": "Chọn câu đúng: Hãy về nhà trước 10 giờ.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Hạn chót dùng までに.",
+        "type": "choice",
+        "options": [
+          "じゅうじまでに かえって ください。",
+          "じゅうじまで かえって ください。",
+          "じゅうじから かえって ください。",
+          "じゅうじまでを かえって ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1727",
+        "prompt": "Câu nào có nghĩa 'Hôm nay không cần trả tiền'?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "はらいます → はらわない → はらわなくても いいです.",
+        "type": "choice",
+        "options": [
+          "きょうは はらわないで ください。",
+          "きょうは はらわなければ なりません。",
+          "きょうは はらいなくても いいです。",
+          "きょうは はらわなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1728",
+        "prompt": "Bác sĩ hỏi 'Anh/chị bị làm sao?' thì nói thế nào?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "どう しましたか: câu bác sĩ hỏi người bệnh.",
+        "type": "choice",
+        "options": ["おだいじに。", "どういたしまして。", "どう しましたか。", "いただきます。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1729",
+        "prompt": "Khi chào người ốm lúc ra về, ta nói gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "おだいじに: chúc mau khỏe.",
+        "type": "choice",
+        "options": ["いただきます。", "おだいじに。", "ただいま。", "いらっしゃいませ。"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1730",
+        "prompt": "なくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "なくします: làm mất, đánh mất.",
+        "type": "choice",
+        "options": ["làm mất, đánh mất", "quên", "trả lại", "ghi nhớ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1731",
+        "prompt": "はらいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "はらいます: trả (tiền).",
+        "type": "choice",
+        "options": ["trả lại đồ đã mượn", "cởi", "ra ngoài", "trả (tiền)"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1732",
+        "prompt": "でかけます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "でかけます: ra ngoài.",
+        "type": "choice",
+        "options": ["mang đến", "về nhà", "ra ngoài", "đi công tác"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1733",
+        "prompt": "ざんぎょうします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ざんぎょうします: làm thêm giờ.",
+        "type": "choice",
+        "options": ["đi công tác", "làm thêm giờ", "lo lắng", "nghỉ ngơi"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1734",
+        "prompt": "しゅっちょうします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "しゅっちょうします: đi công tác.",
+        "type": "choice",
+        "options": ["đi công tác", "làm thêm giờ", "chuyển nhà", "ra ngoài"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1735",
+        "prompt": "たいせつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "たいせつ (な): quan trọng, quý giá.",
+        "type": "choice",
+        "options": ["nguy hiểm", "không sao", "tiện lợi", "quan trọng, quý giá"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1736",
+        "prompt": "あぶない nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "あぶない: nguy hiểm.",
+        "type": "choice",
+        "options": ["quan trọng", "bận rộn", "nguy hiểm", "yên tĩnh"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1737",
+        "prompt": "きんえん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "きんえん: cấm hút thuốc.",
+        "type": "choice",
+        "options": ["bãi đỗ xe", "cấm hút thuốc", "lối ra", "bệnh viện"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1738",
+        "prompt": "うわぎ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "うわぎ: áo khoác; したぎ: đồ lót.",
+        "type": "choice",
+        "options": ["áo khoác", "đồ lót", "giày", "túi xách"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1739",
+        "prompt": "ねつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ねつ: sốt.",
+        "type": "choice",
+        "options": ["thuốc", "cổ họng", "cảm", "sốt"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1740",
+        "prompt": "のど nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "のど: cổ họng.",
+        "type": "choice",
+        "options": ["đầu", "bụng", "cổ họng", "răng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1741",
+        "prompt": "Điền thể ない: つかいます → （　　）",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Đuôi い đổi thành わ: つかわない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["つかわない"]
+      },
+      {
+        "id": "q1742",
+        "prompt": "Điền thể ない: まちます → （　　）",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "ち → た: またない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["またない"]
+      },
+      {
+        "id": "q1743",
+        "prompt": "Điền thể ない: でかけます → （　　）",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm II: bỏ ます, thêm ない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["でかけない"]
+      },
+      {
+        "id": "q1744",
+        "prompt": "Điền thể ない: なくします → （　　）",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "し → さ: なくさない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なくさない"]
+      },
+      {
+        "id": "q1745",
+        "prompt": "Điền: この へやに はいら（　　） ください。(xin đừng vào)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "V ないで ください: はいらないで ください.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ないで"]
+      },
+      {
+        "id": "q1746",
+        "prompt": "Điền: にちようびも はたらかなければ （　　）。(phải làm việc)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "V なければ なりません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なりません", "いけません"]
+      },
+      {
+        "id": "q1747",
+        "prompt": "Điền: かさは もって いか（　　） いいです。(không cần mang theo)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "もって いかない → もって いかなくても いいです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なくても"]
+      },
+      {
+        "id": "q1748",
+        "prompt": "Điền まで hoặc までに: きのうは よる じゅういちじ（　　） べんきょうしました。(học liên tục đến 11 giờ)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Việc kéo dài liên tục đến một lúc dùng まで; までに chỉ hạn chót.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まで"]
+      },
+      {
+        "id": "q1749",
+        "prompt": "Điền: レポートを かか（　　） なりません。(phải viết)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "かかない → bỏ い → かかなければ なりません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なければ", "なくては"]
+      },
+      {
+        "id": "q1750",
+        "prompt": "Điền: （　　）ですから、しんぱいしないで ください。(không sao)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "だいじょうぶ: không sao, ổn.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["だいじょうぶ"]
+      }
+    ]
+  }
+}

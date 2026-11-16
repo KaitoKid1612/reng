@@ -2,6 +2,10 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 16/11/2026
+
+- Bài mẫu Minna bài 17 (thể ない): **Tạo bài 17 từ mẫu** ở trang Tạo bài mới cho 40 từ, 6 mẫu câu (Vないで ください, Vなければ なりません, Vなくても いいです, tân ngữ làm chủ đề, までに), 37 slide với ba hội thoại ở phòng khám và 50 câu luyện. Xem [hướng dẫn nội dung](content-authoring.md) và [kiểm chứng](testing/teaching-service.md#bài-mẫu-minna-17--16112026).
+
 ### 13/11/2026
 
 - Bài hằng ngày theo cấu trúc đề JLPT: ô **Cách chia câu** ở trang lớp cho lấy mỗi もんだい đúng số câu và thứ tự của đề N4 hoặc N5, phần nghe ở cuối. Ô số câu thêm 67 câu (đủ đề N4 cùng 10 câu nghe) và 53 câu (N5). Trang lớp có bảng số câu từng もんだい và số ngày trước khi câu quay lại. Trần câu mỗi bài tăng lên 500. Migration `20261113032756_daily_practice_format` đã áp trên production ngày 13/11/2026. Xem [thiết kế](basic-design/teaching-service.md#bài-hằng-ngày-theo-cấu-trúc-đề-jlpt--13112026).
