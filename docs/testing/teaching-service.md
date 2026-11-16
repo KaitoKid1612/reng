@@ -149,9 +149,9 @@ Thêm 9 bài mẫu khóa `n4-grammar` (bản đồ + 8 bài chủ đề, 111 m�
   - Ảnh màn làm bài, lời giải và trang tra cứu đã xem ở 1280px và 360px.
 - **PASS E2E đầy đủ:** `npm run test:e2e:supabase` 46/46 (gồm spec mới) và `npm run test:e2e` 36/36.
 - **Ngân hàng N4 hằng ngày:** 105/160 câu ngữ pháp được gắn thẻ mẫu; nội dung câu không đổi (bỏ thẻ thì trùng với bản trong git). 55 câu không gắn vì hỏi trợ từ, từ nối hoặc mẫu N5 không có trong bộ.
-- **Chưa làm (production):**
-  - Nạp lại ngân hàng N4 (thẻ mới chỉ có trong file).
-  - Tạo 9 bài từ mẫu và thêm vào lớp "Ôn JLPT N4 – Việt".
+- **Production 16/11/2026:**
+  - Ngân hàng N4 đã nạp lại bằng `bank:sql --lesson n4-viet-review-bank --commit`, thành phiên bản 9: 479 câu, 105 câu có thẻ mẫu. Lớp "Ôn JLPT N4 – Việt" vẫn lấy bài hằng ngày từ phiên bản mới nhất, 67 câu mỗi ngày.
+  - Chưa làm: tạo 9 bài từ mẫu và thêm vào lớp đó. Link Ôn lại mẫu chỉ hiện khi các bài đã có trong lớp.
 
 ## Bài mẫu Minna 18–25 — 16/11/2026
 
