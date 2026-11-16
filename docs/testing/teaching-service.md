@@ -129,6 +129,30 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Bài mẫu Minna 18–25 — 16/11/2026
+
+Thêm `content/starters/minna-1-18.json` … `minna-1-25.json` và đăng ký theo thứ tự bài. Số từ, mẫu câu và slide ở [hướng dẫn nội dung](../content-authoring.md). Mỗi bài có 50 câu luyện: 40 câu chọn chia đều 10/10/10/10 vị trí đáp án và 10 câu điền hiragana.
+
+- **PASS local:**
+  - `npm run lesson:import` cho từng file.
+  - `findPublishProblems` và `findFuriganaProblems` trả về rỗng.
+  - `tests/japanese-lessons.test.ts`, gồm kiểm tra mỗi vị trí đáp án chiếm 18–32%.
+  - `npm run check`.
+- **PASS Supabase local:** một spec Playwright tạm (đã xóa) dùng tài khoản giáo viên thử, tạo từng bài 16–25 từ mẫu, xuất bản rồi kiểm tra:
+  - Mỗi slide ở khung 1280×720, hiện mọi fragment: không phần tử nào tràn khung; không ô bảng, câu hội thoại hay dòng mẫu câu nào xuống dòng (đếm dòng bỏ qua furigana); câu ví dụ xuống dòng không để lại mẩu ≤ 4 ký tự ở dòng cuối.
+  - Mọi ký tự kana/kanji trên slide và trang đọc bài hiển thị bằng Noto Sans JP (hoặc Klee One); mọi ký tự có font face phủ.
+  - Trình soạn và trang đọc bài không cuộn ngang ở 360px; trang đọc không cuộn ngang ở 1280px.
+  - Console không có lỗi.
+- **Xem ảnh:** ảnh ghép mọi slide của từng bài được xem bằng mắt.
+- **Lỗi đã sửa nhờ đo:**
+  - Chữ Nhật trong câu tiếng Việt hiển thị sai font, có ở cả bài 16 và 17 cũ (xem DD).
+  - 14 mẫu câu bài 18, 21, 23, 24 dài nên ngắt dòng giữa từ trên slide; đã rút gọn và chuyển phần giải thích sang dòng nghĩa.
+  - Thẻ "みんなの アンケート" (tên riêng trong sách) bị bỏ khỏi bài 22.
+- **Chưa làm:**
+  - Xuất bản lên production và gắn vào lớp. Giáo viên tạo bài bằng **Tạo bài N từ mẫu** sau khi bản này deploy.
+  - E2E đầy đủ chưa chạy lại cho đợt này.
+  - Hai từ bài 18 (インターネット, とくに) có nguồn không thống nhất; giáo viên nên xem lại.
+
 ## Bài mẫu Minna 17 — 16/11/2026
 
 Thêm `content/starters/minna-1-17.json` và đăng ký sau bài 16: 40 từ, 6 mục ngữ pháp đúng trình tự bài 17, 37 slide (7 bảng, 3 hội thoại), 50 câu luyện (40 choice chia đều 10/10/10/10 vị trí đáp án, 10 fill hiragana). Ví dụ, hội thoại và bài tập tự biên soạn.

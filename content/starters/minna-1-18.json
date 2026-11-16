@@ -1,0 +1,1505 @@
+{
+  "id": "minna-1-18",
+  "title": "Bài 18 – Thể từ điển: có thể làm, sở thích, trước khi",
+  "titleJa": "第18課　ピアノを ひく ことが できます",
+  "summary": "Theo trình tự bài 18 Minna no Nihongo Sơ cấp I: thể từ điển của ba nhóm động từ, nói việc có thể làm bằng N／Vる ことが できます (do khả năng và do nơi chốn, hoàn cảnh cho phép), nói sở thích bằng しゅみは 〜 ことです, thứ tự việc làm với Vる／Nの／thời lượng まえに, cùng なかなか và ぜひ. Ví dụ, hội thoại ở hồ bơi, chuyện sở thích, chuyến đi Đà Lạt và bài tập đều là nội dung gốc.",
+  "order": 18,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v1801",
+        "jp": "できます",
+        "romaji": "dekimasu",
+        "vi": "có thể, làm được",
+        "audio": null,
+        "note": "nhóm II · できる"
+      },
+      {
+        "id": "v1802",
+        "jp": "あらいます",
+        "kanji": "洗います",
+        "romaji": "araimasu",
+        "vi": "rửa, giặt",
+        "audio": null,
+        "note": "nhóm I · あらう"
+      },
+      {
+        "id": "v1803",
+        "jp": "ひきます",
+        "kanji": "弾きます",
+        "romaji": "hikimasu",
+        "vi": "chơi (đàn piano, ghi-ta…)",
+        "audio": null,
+        "note": "nhóm I · ひく"
+      },
+      {
+        "id": "v1804",
+        "jp": "うたいます",
+        "kanji": "歌います",
+        "romaji": "utaimasu",
+        "vi": "hát",
+        "audio": null,
+        "note": "nhóm I · うたう"
+      },
+      {
+        "id": "v1805",
+        "jp": "あつめます",
+        "kanji": "集めます",
+        "romaji": "atsumemasu",
+        "vi": "sưu tầm, thu thập",
+        "audio": null,
+        "note": "nhóm II · あつめる"
+      },
+      {
+        "id": "v1806",
+        "jp": "すてます",
+        "kanji": "捨てます",
+        "romaji": "sutemasu",
+        "vi": "vứt, bỏ đi",
+        "audio": null,
+        "note": "nhóm II · すてる"
+      },
+      {
+        "id": "v1807",
+        "jp": "かえます",
+        "kanji": "換えます",
+        "romaji": "kaemasu",
+        "vi": "đổi (tiền, đồ)",
+        "audio": null,
+        "note": "nhóm II · かえる"
+      },
+      {
+        "id": "v1808",
+        "jp": "うんてんします",
+        "kanji": "運転します",
+        "romaji": "unten shimasu",
+        "vi": "lái (xe)",
+        "audio": null,
+        "note": "nhóm III · うんてんする",
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v1809",
+        "jp": "よやくします",
+        "kanji": "予約します",
+        "romaji": "yoyaku shimasu",
+        "vi": "đặt trước (chỗ, phòng, vé)",
+        "audio": null,
+        "note": "nhóm III · よやくする",
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v1810",
+        "jp": "けんがくします",
+        "kanji": "見学します",
+        "romaji": "kengaku shimasu",
+        "vi": "tham quan (để tìm hiểu, học hỏi)",
+        "audio": null,
+        "note": "nhóm III · けんがくする"
+      },
+      {
+        "id": "v1811",
+        "jp": "ピアノ",
+        "romaji": "piano",
+        "vi": "đàn piano",
+        "audio": null,
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v1812",
+        "jp": "〜メートル",
+        "romaji": "~meetoru",
+        "vi": "… mét",
+        "audio": null
+      },
+      {
+        "id": "v1813",
+        "jp": "こくさい〜",
+        "kanji": "国際〜",
+        "romaji": "kokusai~",
+        "vi": "quốc tế …",
+        "audio": null
+      },
+      {
+        "id": "v1814",
+        "jp": "げんきん",
+        "kanji": "現金",
+        "romaji": "genkin",
+        "vi": "tiền mặt",
+        "audio": null,
+        "image": "/icons/vocab/yen-banknote.svg"
+      },
+      {
+        "id": "v1815",
+        "jp": "しゅみ",
+        "kanji": "趣味",
+        "romaji": "shumi",
+        "vi": "sở thích",
+        "audio": null
+      },
+      {
+        "id": "v1816",
+        "jp": "にっき",
+        "kanji": "日記",
+        "romaji": "nikki",
+        "vi": "nhật ký",
+        "audio": null,
+        "image": "/icons/vocab/notebook.svg"
+      },
+      {
+        "id": "v1817",
+        "jp": "おいのり",
+        "kanji": "お祈り",
+        "romaji": "oinori",
+        "vi": "việc cầu nguyện (おいのりを します: cầu nguyện)",
+        "audio": null
+      },
+      {
+        "id": "v1818",
+        "jp": "かちょう",
+        "kanji": "課長",
+        "romaji": "kachou",
+        "vi": "trưởng phòng (課)",
+        "audio": null
+      },
+      {
+        "id": "v1819",
+        "jp": "ぶちょう",
+        "kanji": "部長",
+        "romaji": "buchou",
+        "vi": "trưởng bộ phận (部, lớn hơn 課)",
+        "audio": null
+      },
+      {
+        "id": "v1820",
+        "jp": "しゃちょう",
+        "kanji": "社長",
+        "romaji": "shachou",
+        "vi": "giám đốc (công ty)",
+        "audio": null
+      },
+      {
+        "id": "v1821",
+        "jp": "どうぶつ",
+        "kanji": "動物",
+        "romaji": "doubutsu",
+        "vi": "động vật, con vật",
+        "audio": null
+      },
+      {
+        "id": "v1822",
+        "jp": "うま",
+        "kanji": "馬",
+        "romaji": "uma",
+        "vi": "ngựa",
+        "audio": null
+      },
+      {
+        "id": "v1823",
+        "jp": "インターネット",
+        "romaji": "intaanetto",
+        "vi": "mạng Internet",
+        "audio": null
+      },
+      {
+        "id": "v1824",
+        "jp": "とくに",
+        "kanji": "特に",
+        "romaji": "tokuni",
+        "vi": "đặc biệt là",
+        "audio": null
+      },
+      {
+        "id": "v1825",
+        "jp": "へえ",
+        "romaji": "hee",
+        "vi": "Ồ, thế à (ngạc nhiên, thích thú)",
+        "audio": null
+      },
+      {
+        "id": "v1826",
+        "jp": "それは おもしろいですね",
+        "romaji": "sore wa omoshiroi desu ne",
+        "vi": "Thế thì thú vị nhỉ",
+        "audio": null
+      },
+      {
+        "id": "v1827",
+        "jp": "なかなか",
+        "romaji": "nakanaka",
+        "vi": "(+ phủ định) mãi mà không, khó mà",
+        "audio": null
+      },
+      {
+        "id": "v1828",
+        "jp": "ぼくじょう",
+        "kanji": "牧場",
+        "romaji": "bokujou",
+        "vi": "trang trại chăn nuôi",
+        "audio": null
+      },
+      {
+        "id": "v1829",
+        "jp": "ほんとうですか",
+        "kanji": "本当ですか",
+        "romaji": "hontou desu ka",
+        "vi": "Thật vậy sao?",
+        "audio": null
+      },
+      {
+        "id": "v1830",
+        "jp": "ぜひ",
+        "romaji": "zehi",
+        "vi": "nhất định, rất (muốn)",
+        "audio": null
+      },
+      {
+        "id": "v1831",
+        "jp": "〜ことが できます",
+        "romaji": "~koto ga dekimasu",
+        "vi": "có thể …",
+        "audio": null
+      },
+      {
+        "id": "v1832",
+        "jp": "〜まえに",
+        "kanji": "〜前に",
+        "romaji": "~mae ni",
+        "vi": "trước khi …, trước …",
+        "audio": null
+      },
+      {
+        "id": "v1833",
+        "jp": "およぎます",
+        "kanji": "泳ぎます",
+        "romaji": "oyogimasu",
+        "vi": "bơi (ôn bài 13)",
+        "audio": null,
+        "note": "nhóm I · およぐ"
+      },
+      {
+        "id": "v1834",
+        "jp": "はなします",
+        "kanji": "話します",
+        "romaji": "hanashimasu",
+        "vi": "nói chuyện (ôn bài 14)",
+        "audio": null,
+        "note": "nhóm I · はなす"
+      },
+      {
+        "id": "v1835",
+        "jp": "まちます",
+        "kanji": "待ちます",
+        "romaji": "machimasu",
+        "vi": "đợi (ôn bài 14)",
+        "audio": null,
+        "note": "nhóm I · まつ"
+      },
+      {
+        "id": "v1836",
+        "jp": "あそびます",
+        "kanji": "遊びます",
+        "romaji": "asobimasu",
+        "vi": "chơi (ôn bài 13)",
+        "audio": null,
+        "note": "nhóm I · あそぶ"
+      },
+      {
+        "id": "v1837",
+        "jp": "よみます",
+        "kanji": "読みます",
+        "romaji": "yomimasu",
+        "vi": "đọc (ôn bài 6)",
+        "audio": null,
+        "note": "nhóm I · よむ"
+      },
+      {
+        "id": "v1838",
+        "jp": "かえります",
+        "kanji": "帰ります",
+        "romaji": "kaerimasu",
+        "vi": "về (ôn bài 5)",
+        "audio": null,
+        "note": "nhóm I · かえる"
+      },
+      {
+        "id": "v1839",
+        "jp": "ねます",
+        "kanji": "寝ます",
+        "romaji": "nemasu",
+        "vi": "ngủ (ôn bài 4)",
+        "audio": null,
+        "note": "nhóm II · ねる"
+      },
+      {
+        "id": "v1840",
+        "jp": "きます",
+        "kanji": "来ます",
+        "romaji": "kimasu",
+        "vi": "đến (ôn bài 5)",
+        "audio": null,
+        "note": "nhóm III · くる"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g1801",
+        "pattern": "V る（thể từ điển）",
+        "vi": "Thể từ điển: dạng gốc của động từ",
+        "explain": "Nhóm I: đổi âm ngay trước ます từ cột い sang cột う (かきます → かく, かいます → かう, まちます → まつ). Nhóm II: bỏ ます, thêm る (たべます → たべる). Nhóm III: します → する, きます → くる. Đây là dạng ghi trong từ điển và là dạng đứng trước こと, まえに trong bài này.",
+        "viMistake": "Hay thêm る cho mọi động từ: のみる, まちる. Chỉ nhóm II thêm る; nhóm I đổi い → う: のむ, まつ. きます (đến) thành くる, không phải きる.",
+        "examples": [
+          {
+            "jp": "{泳|およ}ぎます、{泳|およ}ぐ。{話|はな}します、{話|はな}す。",
+            "vi": "Nhóm I: bơi; nói chuyện (cột い → cột う).",
+            "audio": null
+          },
+          {
+            "jp": "{寝|ね}ます、{寝|ね}る。{集|あつ}めます、{集|あつ}める。",
+            "vi": "Nhóm II: ngủ; sưu tầm (bỏ ます, thêm る).",
+            "audio": null
+          },
+          {
+            "jp": "します、する。{来|き}ます、{来|く}る。",
+            "vi": "Nhóm III: làm; đến.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1802",
+        "pattern": "N／V る ことが できます",
+        "vi": "Có thể …, biết … (năng lực của người nói hoặc người khác)",
+        "explain": "できます đứng sau danh từ chỉ kỹ năng (ベトナムご, ピアノ) hoặc sau thể từ điển + こと. こと biến cả cụm động từ thành danh từ nên trợ từ trước できます là が. Phủ định: できません.",
+        "viMistake": "Hay bỏ こと: ピアノを ひく できます ✗ → ピアノを ひく ことが できます. Cũng không dùng を trước できます: にほんごを できます ✗ → にほんごが できます.",
+        "examples": [
+          {
+            "jp": "{田中|たなか}さんは ベトナム{語|ご}が できます。",
+            "vi": "Anh Tanaka biết tiếng Việt.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは {車|くるま}を {運転|うんてん}する ことが できます。",
+            "vi": "Tôi biết lái ô tô.",
+            "audio": null
+          },
+          {
+            "jp": "アンさんは {日本|にほん}の {歌|うた}を {歌|うた}う ことが できます。",
+            "vi": "Chị An hát được bài hát Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1803",
+        "pattern": "ここで V る ことが できます",
+        "vi": "Ở nơi này có thể … (được phép, có điều kiện)",
+        "explain": "Cùng mẫu câu nhưng nói một việc có làm được hay không vì quy định, dịch vụ hay nơi chốn, không phải vì khả năng. Hay dùng để hỏi: ここで 〜 ことが できますか. Danh từ chỉ hoạt động đi thẳng với が できます: よやくが できます.",
+        "viMistake": "Nơi diễn ra hành động vẫn dùng で: この こうえんで あそぶ ことが できます, không dùng に. Tiếng Việt đặt 'được' ở cuối câu nên dễ quên こと: ここで およぐ できますか ✗.",
+        "examples": [
+          {
+            "jp": "この コンビニで {切手|きって}を {買|か}う ことが できます。",
+            "vi": "Ở cửa hàng tiện lợi này có thể mua tem.",
+            "audio": null
+          },
+          {
+            "jp": "{図書館|としょかん}では {日曜日|にちようび}も {本|ほん}を {借|か}りる ことが できます。",
+            "vi": "Ở thư viện, chủ nhật cũng mượn sách được.",
+            "audio": null
+          },
+          {
+            "jp": "この ホテルは インターネットで {予約|よやく}が できます。",
+            "vi": "Khách sạn này đặt phòng qua Internet được.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1804",
+        "pattern": "しゅみは N／V る ことです",
+        "vi": "Sở thích của tôi là …",
+        "explain": "Nói sở thích bằng danh từ (おんがく, りょこう) hoặc thể từ điển + こと. Dùng động từ thì nói được cụ thể hơn: không chỉ 'âm nhạc' mà là nghe hay hát nhạc gì.",
+        "viMistake": "Hay nói しゅみは りょうりを つくります ✗ như câu tiếng Việt 'sở thích là nấu ăn'. Sau は … です phải là danh từ: りょうりを つくる ことです.",
+        "examples": [
+          {
+            "jp": "わたしの {趣味|しゅみ}は カラオケです。",
+            "vi": "Sở thích của tôi là hát karaoke.",
+            "audio": null
+          },
+          {
+            "jp": "{父|ちち}の {趣味|しゅみ}は {料理|りょうり}を {作|つく}る ことです。",
+            "vi": "Sở thích của bố tôi là nấu ăn.",
+            "audio": null
+          },
+          {
+            "jp": "ハナさんの {趣味|しゅみ}は {海|うみ}で {泳|およ}ぐ ことです。",
+            "vi": "Sở thích của chị Hana là bơi ở biển.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1805",
+        "pattern": "V る／N の／thời lượng まえに、〜",
+        "vi": "Trước khi …; trước …; cách đây …",
+        "explain": "Động từ trước まえに luôn ở thể từ điển, kể cả khi cả câu nói về quá khứ. Danh từ thêm の: かいぎの まえに. Lượng thời gian đứng thẳng trước まえに, không có の: 2しゅうかん まえに (cách đây 2 tuần).",
+        "viMistake": "Câu quá khứ vẫn giữ thể từ điển: でかける まえに、でんわを かけました, không nói でかけた まえに hay でかけました まえに. Với thời lượng không thêm の: 3ねん まえに, không phải 3ねんの まえに.",
+        "examples": [
+          {
+            "jp": "{朝|あさ}ごはんを {食|た}べる まえに、{散歩|さんぽ}します。",
+            "vi": "Trước khi ăn sáng, tôi đi dạo.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}の まえに、{資料|しりょう}を コピーします。",
+            "vi": "Trước cuộc họp, tôi photo tài liệu.",
+            "audio": null
+          },
+          {
+            "jp": "{2週間|にしゅうかん} まえに、この {本|ほん}を {借|か}りました。",
+            "vi": "Tôi đã mượn cuốn sách này cách đây 2 tuần.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1806",
+        "pattern": "なかなか 〜ません／ぜひ 〜",
+        "vi": "Mãi mà không …／Nhất định, rất muốn …",
+        "explain": "なかなか đi với động từ phủ định: việc mong đợi khó xảy ra hoặc mãi không xảy ra. ぜひ đi với 〜たいです hoặc 〜て ください để nhấn mạnh mong muốn hay lời mời.",
+        "viMistake": "なかなか 〜ません khác あまり 〜ません: あまり là 'không … lắm' (mức độ), còn なかなか là 'mãi không, khó mà'. ぜひ không đi với câu phủ định hay câu kể quá khứ: ぜひ いきました ✗.",
+        "examples": [
+          {
+            "jp": "バスが なかなか {来|き}ません。",
+            "vi": "Xe buýt mãi mà không đến.",
+            "audio": null
+          },
+          {
+            "jp": "ぜひ ダナンの {海|うみ}を {見|み}たいです。",
+            "vi": "Tôi rất muốn được ngắm biển Đà Nẵng.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}、ぜひ {家|うち}へ {遊|あそ}びに {来|き}て ください。",
+            "vi": "Chủ nhật, nhất định đến nhà tôi chơi nhé.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s1801",
+        "type": "title",
+        "jp": "{第|だい}18{課|か}",
+        "vi": "Nói việc có thể làm, sở thích và “trước khi …”"
+      },
+      {
+        "id": "s1802",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Đổi động từ sang thể từ điển theo ba nhóm.\n2. Nói việc mình có thể làm: N／Vる ことが できます.\n3. Hỏi ở một nơi có thể làm gì; nói sở thích: しゅみは 〜 ことです.\n4. Nói thứ tự việc làm với まえに; dùng なかなか và ぜひ."
+      },
+      {
+        "id": "s1803",
+        "type": "vocab",
+        "refs": ["v1801", "v1802", "v1803", "v1804", "v1805", "v1806", "v1807", "v1808"],
+        "teacherNotes": "Đọc thể từ điển ghi ở mỗi thẻ động từ; chú ý かえます (đổi) cũng thành かえる."
+      },
+      {
+        "id": "s1804",
+        "type": "vocab",
+        "refs": ["v1809", "v1810", "v1811", "v1812", "v1813", "v1814", "v1815", "v1816"],
+        "teacherNotes": "Đọc thể từ điển ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s1805",
+        "type": "vocab",
+        "refs": ["v1817", "v1818", "v1819", "v1820", "v1821", "v1822", "v1823", "v1824"],
+        "teacherNotes": "Sắp xếp かちょう, ぶちょう, しゃちょう theo cấp bậc trong công ty."
+      },
+      {
+        "id": "s1806",
+        "type": "vocab",
+        "refs": ["v1825", "v1826", "v1827", "v1828", "v1829", "v1830", "v1831", "v1832"],
+        "teacherNotes": "Luyện cách phản ứng khi nghe chuyện thú vị: へえ, ほんとうですか, それは おもしろいですね."
+      },
+      {
+        "id": "s1807",
+        "type": "vocab",
+        "refs": ["v1833", "v1834", "v1835", "v1836", "v1837", "v1838", "v1839", "v1840"],
+        "teacherNotes": "Ôn động từ đã học; cho học viên tự nói thể từ điển trước khi lật thẻ."
+      },
+      {
+        "id": "s1808",
+        "type": "grammar",
+        "ref": "g1801",
+        "teacherNotes": "Ôn bảng chữ: nhóm I đổi âm cột い sang cột う; nhắc lại thể て, ない đã học."
+      },
+      {
+        "id": "s1809",
+        "type": "example",
+        "ref": "g1801",
+        "reveal": true
+      },
+      {
+        "id": "s1810",
+        "type": "table",
+        "title": "Nhóm I: đổi đuôi sang thể từ điển",
+        "columns": ["Đuôi ます", "Ví dụ", "Thể từ điển"],
+        "rows": [
+          ["い → う", "かいます・うたいます", "かう・うたう"],
+          ["き → く", "ひきます・かきます", "ひく・かく"],
+          ["ぎ → ぐ", "およぎます", "およぐ"],
+          ["し → す", "はなします", "はなす"],
+          ["ち → つ", "まちます", "まつ"],
+          ["み・び → む・ぶ", "よみます・あそびます", "よむ・あそぶ"],
+          ["り → る", "かえります", "かえる"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đọc từng hàng; nhấn mạnh nhóm I không thêm る mà đổi sang cột う."
+      },
+      {
+        "id": "s1811",
+        "type": "table",
+        "title": "Nhóm II và III",
+        "columns": ["Động từ", "Nhóm", "Thể từ điển"],
+        "rows": [
+          ["できます", "II", "できる"],
+          ["ねます", "II", "ねる"],
+          ["すてます", "II", "すてる"],
+          ["みます", "II", "みる"],
+          ["します", "III", "する"],
+          ["きます", "III", "くる"],
+          ["うんてんします", "III", "うんてんする"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhóm II: bỏ ます thêm る. Chú ý きます → くる."
+      },
+      {
+        "id": "s1812",
+        "type": "quiz",
+        "ref": "q1801"
+      },
+      {
+        "id": "s1813",
+        "type": "grammar",
+        "ref": "g1802",
+        "teacherNotes": "Cho học viên kể ba việc mình làm được và một việc chưa làm được."
+      },
+      {
+        "id": "s1814",
+        "type": "example",
+        "ref": "g1802",
+        "reveal": true
+      },
+      {
+        "id": "s1815",
+        "type": "table",
+        "title": "Luyện tập 1: tôi có thể …",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{日本語|にほんご}", "{日本語|にほんご}が できます。"],
+          [
+            "{車|くるま}を {運転|うんてん}します",
+            "{車|くるま}を {運転|うんてん}する ことが できます。"
+          ],
+          ["ピアノを {弾|ひ}きます", "ピアノを {弾|ひ}く ことが できます。"],
+          ["{歌|うた}を {歌|うた}います", "{歌|うた}を {歌|うた}う ことが できます。"],
+          ["バイクに {乗|の}ります", "バイクに {乗|の}る ことが できます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1816",
+        "type": "quiz",
+        "ref": "q1802"
+      },
+      {
+        "id": "s1817",
+        "type": "grammar",
+        "ref": "g1803",
+        "teacherNotes": "Đóng vai khách hỏi lễ tân khách sạn, thư viện, hồ bơi xem có thể làm gì."
+      },
+      {
+        "id": "s1818",
+        "type": "example",
+        "ref": "g1803",
+        "reveal": true
+      },
+      {
+        "id": "s1819",
+        "type": "table",
+        "title": "Luyện tập 2: ở đây có thể … không?",
+        "columns": ["Gợi ý", "Câu hỏi"],
+        "rows": [
+          ["ここ・{泳|およ}ぎます", "ここで {泳|およ}ぐ ことが できますか。"],
+          ["ここ・{予約|よやく}", "ここで {予約|よやく}が できますか。"],
+          ["{外|そと}・{食|た}べます", "{外|そと}で {食|た}べる ことが できますか。"],
+          ["{現金|げんきん}・{払|はら}います", "{現金|げんきん}で {払|はら}う ことが できますか。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Học viên khác trả lời はい、できます。／いいえ、できません。"
+      },
+      {
+        "id": "s1820",
+        "type": "quiz",
+        "ref": "q1803"
+      },
+      {
+        "id": "s1821",
+        "type": "grammar",
+        "ref": "g1804",
+        "teacherNotes": "Hỏi từng học viên: しゅみは なんですか。Gợi ý nói cụ thể bằng động từ."
+      },
+      {
+        "id": "s1822",
+        "type": "example",
+        "ref": "g1804",
+        "reveal": true
+      },
+      {
+        "id": "s1823",
+        "type": "table",
+        "title": "Luyện tập 3: sở thích",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{旅行|りょこう}", "わたしの {趣味|しゅみ}は {旅行|りょこう}です。"],
+          [
+            "{切手|きって}を {集|あつ}めます",
+            "{趣味|しゅみ}は {切手|きって}を {集|あつ}める ことです。"
+          ],
+          ["{絵|え}を かきます", "{趣味|しゅみ}は {絵|え}を かく ことです。"],
+          ["{本|ほん}を {読|よ}みます", "{趣味|しゅみ}は {本|ほん}を {読|よ}む ことです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1824",
+        "type": "quiz",
+        "ref": "q1804"
+      },
+      {
+        "id": "s1825",
+        "type": "grammar",
+        "ref": "g1805",
+        "teacherNotes": "Vẽ trục thời gian: việc sau まえに xảy ra trước. Nhắc: động từ trước まえに luôn ở thể từ điển."
+      },
+      {
+        "id": "s1826",
+        "type": "example",
+        "ref": "g1805",
+        "reveal": true
+      },
+      {
+        "id": "s1827",
+        "type": "table",
+        "title": "Luyện tập 4: trước khi …",
+        "columns": ["Gợi ý", "Vế まえに", "Câu mẫu"],
+        "rows": [
+          [
+            "{出|で}かけます",
+            "{出|で}かける まえに",
+            "{出|で}かける まえに、{窓|まど}を {閉|し}めます。"
+          ],
+          [
+            "{試験|しけん}",
+            "{試験|しけん}の まえに",
+            "{試験|しけん}の まえに、{勉強|べんきょう}します。"
+          ],
+          [
+            "{1時間|いちじかん}",
+            "{1時間|いちじかん} まえに",
+            "{1時間|いちじかん} まえに {家|うち}を {出|で}ました。"
+          ],
+          [
+            "{運転|うんてん}します",
+            "{運転|うんてん}する まえに",
+            "{運転|うんてん}する まえに、{地図|ちず}を {見|み}ます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1828",
+        "type": "quiz",
+        "ref": "q1805"
+      },
+      {
+        "id": "s1829",
+        "type": "grammar",
+        "ref": "g1806",
+        "teacherNotes": "So sánh: あまり きません (không đến mấy) và なかなか きません (mãi không đến)."
+      },
+      {
+        "id": "s1830",
+        "type": "example",
+        "ref": "g1806",
+        "reveal": true
+      },
+      {
+        "id": "s1831",
+        "type": "quiz",
+        "ref": "q1806"
+      },
+      {
+        "id": "s1832",
+        "type": "dialogue",
+        "title": "Hội thoại 1: ở quầy hồ bơi",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "すみません。{夜|よる}も {泳|およ}ぐ ことが できますか。",
+            "vi": "Xin lỗi. Buổi tối cũng bơi được chứ ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "はい、{9時|くじ}まで {泳|およ}ぐ ことが できます。",
+            "vi": "Vâng, chị bơi được đến 9 giờ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "ここで {飲|の}み{物|もの}を {買|か}う ことが できますか。",
+            "vi": "Ở đây mua đồ uống được không ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "いいえ。でも、となりに コンビニが あります。",
+            "vi": "Không ạ. Nhưng bên cạnh có cửa hàng tiện lợi."
+          },
+          {
+            "speaker": "アン",
+            "jp": "インターネットで {予約|よやく}が できますか。",
+            "vi": "Có thể đặt chỗ qua Internet không ạ?"
+          },
+          {
+            "speaker": "{受付|うけつけ}",
+            "jp": "はい。{来|く}る まえに、{予約|よやく}して ください。",
+            "vi": "Được ạ. Chị hãy đặt trước khi đến."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1833",
+        "type": "dialogue",
+        "title": "Hội thoại 2: nói về sở thích",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "リンさん、それは {何|なん}ですか。",
+            "vi": "Chị Lin, cái đó là gì vậy?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "{切手|きって}です。いろいろな {国|くに}の {切手|きって}を {集|あつ}めて います。",
+            "vi": "Tem ạ. Tôi đang sưu tầm tem của nhiều nước."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "へえ、それは おもしろいですね。",
+            "vi": "Ồ, thế thì thú vị nhỉ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "{田中|たなか}さんの {趣味|しゅみ}は {何|なん}ですか。",
+            "vi": "Sở thích của anh Tanaka là gì ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ピアノです。でも、なかなか {弾|ひ}く {時間|じかん}が ありません。",
+            "vi": "Là piano. Nhưng mãi mà không có thời gian chơi."
+          },
+          {
+            "speaker": "リン",
+            "jp": "そうですか。ぜひ {一度|いちど} {聞|き}きたいです。",
+            "vi": "Vậy à. Tôi rất muốn được nghe anh chơi một lần."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1834",
+        "type": "dialogue",
+        "title": "Hội thoại 3: trước chuyến đi Đà Lạt",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "{来月|らいげつ}、{家族|かぞく}と ダラットへ {行|い}きます。",
+            "vi": "Tháng sau tôi đi Đà Lạt với gia đình."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいですね。ホテルは もう {予約|よやく}しましたか。",
+            "vi": "Hay quá. Khách sạn thì chị đã đặt chưa?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "はい、{2週間|にしゅうかん} まえに {予約|よやく}しました。",
+            "vi": "Rồi, tôi đặt cách đây 2 tuần."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ダラットで {何|なに}が できますか。",
+            "vi": "Ở Đà Lạt có thể làm gì?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{湖|みずうみ}の {近|ちか}くで {自転車|じてんしゃ}に {乗|の}る ことが できます。",
+            "vi": "Có thể đạp xe gần hồ."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ほんとうですか。わたしも {乗|の}りたいです。",
+            "vi": "Thật sao? Tôi cũng muốn đạp xe."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s1835",
+        "type": "table",
+        "title": "Luyện tập 5: ghép thành câu",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{泳|およ}ぎます・không thể", "{泳|およ}ぐ ことが できません。"],
+          [
+            "{旅行|りょこう}・trước・{予約|よやく}します",
+            "{旅行|りょこう}の まえに、{予約|よやく}します。"
+          ],
+          [
+            "{2年|にねん}・trước・{車|くるま}を {買|か}いました",
+            "{2年|にねん} まえに {車|くるま}を {買|か}いました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s1836",
+        "type": "quiz",
+        "ref": "q1807"
+      },
+      {
+        "id": "s1837",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "Thể từ điển: nhóm I đổi cột い sang う (かいます → かう); nhóm II bỏ ます thêm る; する, くる.\nN／Vる ことが できます: có thể làm (do khả năng, hoặc do nơi chốn, hoàn cảnh cho phép).\nわたしの しゅみは N／Vる ことです.\nVる／Nの／thời lượng まえに: trước khi …; động từ trước まえに luôn ở thể từ điển.\nなかなか + phủ định: mãi mà không …; ぜひ + たいです／て ください."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1801",
+        "prompt": "Chọn thể từ điển của かいます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm I đổi い → う: かいます → かう.",
+        "type": "choice",
+        "options": ["かいる", "かう", "かわう", "かいく"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1802",
+        "prompt": "Chọn câu đúng: Anh Nam biết nấu món ăn Nhật.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Thể từ điển + ことが できます: つくります → つくる.",
+        "type": "choice",
+        "options": [
+          "ナムさんは にほんりょうりを つくる ことが できます。",
+          "ナムさんは にほんりょうりを つくり ことが できます。",
+          "ナムさんは にほんりょうりを つくるが できます。",
+          "ナムさんは にほんりょうりを つくる ことを できます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1803",
+        "prompt": "この ぎんこう（　）ドンを えんに かえる ことが できます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nơi diễn ra hành động dùng で.",
+        "type": "choice",
+        "options": ["に", "を", "で", "へ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1804",
+        "prompt": "Chọn câu đúng: Sở thích của tôi là chơi quần vợt.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Sau しゅみは … です cần danh từ: thể từ điển + こと.",
+        "type": "choice",
+        "options": [
+          "わたしの しゅみは テニスを します。",
+          "わたしの しゅみは テニスを して ことです。",
+          "わたしの しゅみは テニスを するです。",
+          "わたしの しゅみは テニスを する ことです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1805",
+        "prompt": "Chọn câu đúng: Trước khi ngủ, tôi tắm bồn.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Động từ trước まえに luôn ở thể từ điển: ねる まえに.",
+        "type": "choice",
+        "options": [
+          "ねた まえに、おふろに はいります。",
+          "ねる まえに、おふろに はいります。",
+          "ねます まえに、おふろに はいります。",
+          "ねるの まえに、おふろに はいります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1806",
+        "prompt": "Câu タクシーが なかなか きません nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "なかなか + phủ định: mãi mà không.",
+        "type": "choice",
+        "options": [
+          "Taxi không đến nữa.",
+          "Taxi đến khá nhanh.",
+          "Taxi nhất định sẽ đến.",
+          "Taxi mãi mà không đến."
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1807",
+        "prompt": "Câu nào có nghĩa 'Trước bữa tối, tôi làm bài tập'?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Danh từ + の + まえに: ばんごはんの まえに.",
+        "type": "choice",
+        "options": [
+          "ばんごはんが まえに、しゅくだいを します。",
+          "ばんごはんに まえに、しゅくだいを します。",
+          "ばんごはんの まえに、しゅくだいを します。",
+          "ばんごはんで まえに、しゅくだいを します。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1808",
+        "prompt": "Chọn thể từ điển của ひきます (chơi đàn).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "き → く: ひきます → ひく.",
+        "type": "choice",
+        "options": ["ひきる", "ひくる", "ひかう", "ひく"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1809",
+        "prompt": "Chọn thể từ điển của およぎます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "ぎ → ぐ: およぎます → およぐ.",
+        "type": "choice",
+        "options": ["およぐ", "およく", "およぎる", "およがう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1810",
+        "prompt": "Chọn thể từ điển của まちます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "ち → つ: まちます → まつ.",
+        "type": "choice",
+        "options": ["まちる", "まちう", "まつ", "まちく"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1811",
+        "prompt": "Chọn thể từ điển của あそびます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "び → ぶ: あそびます → あそぶ.",
+        "type": "choice",
+        "options": ["あそびる", "あそぶ", "あそむ", "あそう"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1812",
+        "prompt": "Chọn thể từ điển của かえります (về nhà).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "かえります là nhóm I; り → る: かえる.",
+        "type": "choice",
+        "options": ["かえりる", "かえう", "かえく", "かえる"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1813",
+        "prompt": "Chọn thể từ điển của おぼえます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "おぼえます là nhóm II: bỏ ます, thêm る.",
+        "type": "choice",
+        "options": ["おぼえる", "おぼう", "おぼえう", "おぼる"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1814",
+        "prompt": "Chọn thể từ điển của きます (đến).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm III: きます → くる.",
+        "type": "choice",
+        "options": ["くる", "きる", "こる", "きう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1815",
+        "prompt": "Chọn thể từ điển của あびます (シャワーを あびます).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "あびます thuộc nhóm II dù có đuôi び: あびる.",
+        "type": "choice",
+        "options": ["あぶ", "あびる", "あびう", "あばる"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1816",
+        "prompt": "Chọn thể từ điển của すてます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm II: すてます → すてる.",
+        "type": "choice",
+        "options": ["すてる", "すつ", "すてう", "すとる"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1817",
+        "prompt": "Chọn thể từ điển của うんてんします.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm III: します → する, nên うんてんする.",
+        "type": "choice",
+        "options": ["うんてんしる", "うんてんすう", "うんてんくる", "うんてんする"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1818",
+        "prompt": "Chọn thể từ điển của うたいます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Đuôi い đổi thành う: うたう.",
+        "type": "choice",
+        "options": ["うたる", "うたいる", "うたう", "うたく"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1819",
+        "prompt": "Động từ nào thuộc nhóm II?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "おしえます thuộc nhóm II (bỏ ます thêm る). Ba động từ còn lại thuộc nhóm I.",
+        "type": "choice",
+        "options": ["あらいます", "おしえます", "ひきます", "かえります"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1820",
+        "prompt": "リンさんは にほんご（　）できます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Danh từ chỉ kỹ năng + が できます.",
+        "type": "choice",
+        "options": ["を", "に", "へ", "が"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1821",
+        "prompt": "Chọn câu đúng: Tôi không uống được rượu.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "のみます → のむ → のむ ことが できません.",
+        "type": "choice",
+        "options": [
+          "おさけを のむ ことが できません。",
+          "おさけを のみ ことが できません。",
+          "おさけを のむ できません。",
+          "おさけを のんで ことが できません。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1822",
+        "prompt": "Hỏi lễ tân: Ở đây có đặt chỗ được không?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Danh từ chỉ hoạt động + が できます: よやくが できますか.",
+        "type": "choice",
+        "options": [
+          "ここで よやくに できますか。",
+          "ここで よやくして できますか。",
+          "ここで よやくが できますか。",
+          "ここで よやくの できますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1823",
+        "prompt": "この こうえんで いぬと（　）ことが できます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Trước こと dùng thể từ điển: さんぽします → さんぽする.",
+        "type": "choice",
+        "options": ["さんぽします", "さんぽする", "さんぽして", "さんぽし"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1824",
+        "prompt": "A: すみません、ここで たばこを すう ことが できますか。B: (Không, không được.)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Trả lời phủ định: いいえ、できません.",
+        "type": "choice",
+        "options": [
+          "はい、できません。",
+          "いいえ、できます。",
+          "いいえ、できません。",
+          "いいえ、すいます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1825",
+        "prompt": "Chọn câu đúng: Sở thích của anh Tanaka là vẽ tranh.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "しゅみは + thể từ điển + ことです: えを かく ことです.",
+        "type": "choice",
+        "options": [
+          "たなかさんの しゅみは えを かく ことです。",
+          "たなかさんの しゅみは えを かきます ことです。",
+          "たなかさんの しゅみは えを かいて ことです。",
+          "たなかさんの しゅみは えが かく ことです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1826",
+        "prompt": "わたしの しゅみ（　）りょこうです。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Chủ đề của câu dùng は.",
+        "type": "choice",
+        "options": ["を", "は", "に", "で"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1827",
+        "prompt": "Chọn câu đúng: Anh Tanaka đến Việt Nam cách đây 2 tháng.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Thời lượng + まえに, không có の.",
+        "type": "choice",
+        "options": [
+          "たなかさんは 2かげつの まえに ベトナムへ きました。",
+          "たなかさんは 2かげつを まえに ベトナムへ きました。",
+          "たなかさんは 2かげつ まえで ベトナムへ きました。",
+          "たなかさんは 2かげつ まえに ベトナムへ きました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1828",
+        "prompt": "Chọn câu đúng: Trước khi ra ngoài, tôi đã gọi điện thoại.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Câu quá khứ nhưng động từ trước まえに vẫn ở thể từ điển: でかける まえに.",
+        "type": "choice",
+        "options": [
+          "でかけた まえに、でんわを かけました。",
+          "でかけます まえに、でんわを かけました。",
+          "でかける まえに、でんわを かけました。",
+          "でかけて まえに、でんわを かけました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1829",
+        "prompt": "A: にちようび、うちへ あそびに きませんか。B: ありがとう ございます。（　）いきたいです。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "ぜひ + たいです: rất muốn, nhất định.",
+        "type": "choice",
+        "options": ["なかなか", "あまり", "ぜんぜん", "ぜひ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1830",
+        "prompt": "Nghe một chuyện thú vị, bạn muốn nói 'Ồ, thế thì thú vị nhỉ.'",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "へえ、それは おもしろいですね: phản ứng khi nghe chuyện thú vị.",
+        "type": "choice",
+        "options": [
+          "おだいじに。",
+          "へえ、それは おもしろいですね。",
+          "どういたしまして。",
+          "いってらっしゃい。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1831",
+        "prompt": "あつめます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "あつめます: sưu tầm, thu thập.",
+        "type": "choice",
+        "options": ["sưu tầm, thu thập", "vứt, bỏ đi", "rửa", "hát"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1832",
+        "prompt": "すてます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "すてます: vứt, bỏ đi.",
+        "type": "choice",
+        "options": ["đổi", "rửa", "vứt, bỏ đi", "sưu tầm"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1833",
+        "prompt": "あらいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "あらいます: rửa, giặt.",
+        "type": "choice",
+        "options": ["hát", "rửa, giặt", "lái xe", "vứt, bỏ đi"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1834",
+        "prompt": "けんがくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "けんがくします: tham quan (để tìm hiểu, học hỏi).",
+        "type": "choice",
+        "options": ["lái xe", "trả tiền", "đặt trước", "tham quan (để học hỏi)"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1835",
+        "prompt": "げんきん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "げんきん: tiền mặt.",
+        "type": "choice",
+        "options": ["tiền mặt", "tiền lẻ", "thẻ", "vé"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1836",
+        "prompt": "おいのり nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "おいのり: việc cầu nguyện (おいのりを します).",
+        "type": "choice",
+        "options": ["công việc", "nhật ký", "việc cầu nguyện", "kỳ nghỉ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1837",
+        "prompt": "かえます (おかねを かえます) nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "かえます: đổi (tiền, đồ).",
+        "type": "choice",
+        "options": ["về nhà", "trả lại", "mua", "đổi"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1838",
+        "prompt": "どうぶつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "どうぶつ: động vật, con vật.",
+        "type": "choice",
+        "options": ["đồ ăn", "động vật, con vật", "đồ chơi", "nhạc cụ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1839",
+        "prompt": "しゃちょう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "しゃちょう: giám đốc công ty.",
+        "type": "choice",
+        "options": ["giám đốc công ty", "trưởng phòng", "nhân viên", "bác sĩ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1840",
+        "prompt": "とくに nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "とくに: đặc biệt là.",
+        "type": "choice",
+        "options": ["nhất định", "mãi mà không", "đặc biệt là", "cùng nhau"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1841",
+        "prompt": "Điền thể từ điển: あらいます → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Đuôi い đổi thành う: あらう.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あらう"]
+      },
+      {
+        "id": "q1842",
+        "prompt": "Điền thể từ điển: はなします → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "し → す: はなす.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はなす"]
+      },
+      {
+        "id": "q1843",
+        "prompt": "Điền thể từ điển: よみます → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "み → む: よむ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よむ"]
+      },
+      {
+        "id": "q1844",
+        "prompt": "Điền thể từ điển: あつめます → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm II: bỏ ます, thêm る.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あつめる"]
+      },
+      {
+        "id": "q1845",
+        "prompt": "Điền thể từ điển: できます → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm II: できる.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["できる"]
+      },
+      {
+        "id": "q1846",
+        "prompt": "Điền: わたしの かいしゃの（　　）は たなかさんです。(trưởng phòng)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "かちょう: trưởng phòng (課).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かちょう"]
+      },
+      {
+        "id": "q1847",
+        "prompt": "Điền thể từ điển: でんしゃに（のります → 　）まえに、トイレへ いきます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Trước まえに dùng thể từ điển: のります → のる.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のる"]
+      },
+      {
+        "id": "q1848",
+        "prompt": "Điền: わたしは まいにち えいごで（　　）を かきます。(nhật ký)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "にっき: nhật ký.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["にっき"]
+      },
+      {
+        "id": "q1849",
+        "prompt": "Điền: この ぼくじょうで（　　）に のる ことが できます。(con ngựa)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "うま: ngựa.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["うま"]
+      },
+      {
+        "id": "q1850",
+        "prompt": "Điền thể từ điển: よやくします → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm III: します → する, nên よやくする.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よやくする"]
+      }
+    ]
+  }
+}

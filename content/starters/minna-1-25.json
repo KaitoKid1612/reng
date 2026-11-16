@@ -1,0 +1,1534 @@
+{
+  "id": "minna-1-25",
+  "title": "Bài 25 – Nếu … thì, dù … cũng: 〜たら và 〜ても",
+  "titleJa": "第25課　チャンスが あったら",
+  "summary": "Theo trình tự bài 25 Minna no Nihongo Sơ cấp I (bài cuối quyển I): điều kiện giả định 〜たら tạo từ thể quá khứ ngắn, Vたら cho việc chắc chắn sẽ xảy ra, 〜ても／〜くても／〜でも (dù … cũng), もし và いくら để nhấn mạnh, chủ ngữ が trong vế phụ. Ví dụ, ba hội thoại (hẹn chơi tennis, trước khi đi du học, khi về già) và bài tập đều là nội dung gốc.",
+  "order": 25,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2501",
+        "jp": "かんがえます",
+        "kanji": "考えます",
+        "romaji": "kangaemasu",
+        "vi": "suy nghĩ, cân nhắc",
+        "audio": null,
+        "note": "nhóm II · かんがえたら"
+      },
+      {
+        "id": "v2502",
+        "jp": "つきます",
+        "kanji": "着きます",
+        "romaji": "tsukimasu",
+        "vi": "đến nơi: えきに つきます",
+        "audio": null,
+        "note": "nhóm I · ついたら",
+        "image": "/icons/vocab/airplane-arrival.svg"
+      },
+      {
+        "id": "v2503",
+        "jp": "りゅうがくします",
+        "kanji": "留学します",
+        "romaji": "ryuugaku shimasu",
+        "vi": "du học",
+        "audio": null,
+        "note": "nhóm III · りゅうがくしたら"
+      },
+      {
+        "id": "v2504",
+        "jp": "としを とります",
+        "kanji": "年を 取ります",
+        "romaji": "toshi o torimasu",
+        "vi": "có tuổi, già đi",
+        "audio": null,
+        "note": "nhóm I · としを とったら",
+        "image": "/icons/vocab/old-man.svg"
+      },
+      {
+        "id": "v2505",
+        "jp": "いなか",
+        "kanji": "田舎",
+        "romaji": "inaka",
+        "vi": "quê, vùng nông thôn",
+        "audio": null,
+        "image": "/icons/vocab/house-with-garden.svg"
+      },
+      {
+        "id": "v2506",
+        "jp": "たいしかん",
+        "kanji": "大使館",
+        "romaji": "taishikan",
+        "vi": "đại sứ quán",
+        "audio": null,
+        "image": "/icons/vocab/classical-building.svg"
+      },
+      {
+        "id": "v2507",
+        "jp": "グループ",
+        "romaji": "guruupu",
+        "vi": "nhóm",
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
+      },
+      {
+        "id": "v2508",
+        "jp": "チャンス",
+        "romaji": "chansu",
+        "vi": "cơ hội",
+        "audio": null
+      },
+      {
+        "id": "v2509",
+        "jp": "おく",
+        "kanji": "億",
+        "romaji": "oku",
+        "vi": "trăm triệu (1おく = 100.000.000)",
+        "audio": null
+      },
+      {
+        "id": "v2510",
+        "jp": "もし",
+        "romaji": "moshi",
+        "vi": "nếu, giả sử (đi với 〜たら)",
+        "audio": null
+      },
+      {
+        "id": "v2511",
+        "jp": "いくら",
+        "romaji": "ikura",
+        "vi": "dù … đến mấy (đi với 〜ても); いくらですか: bao nhiêu tiền?",
+        "audio": null
+      },
+      {
+        "id": "v2512",
+        "jp": "てんきん",
+        "kanji": "転勤",
+        "romaji": "tenkin",
+        "vi": "chuyển công tác (てんきんします)",
+        "audio": null,
+        "image": "/icons/vocab/luggage.svg"
+      },
+      {
+        "id": "v2513",
+        "jp": "こと",
+        "romaji": "koto",
+        "vi": "chuyện, điều, việc (わからない こと: điều chưa hiểu)",
+        "audio": null
+      },
+      {
+        "id": "v2514",
+        "jp": "いっぱい のみましょう",
+        "kanji": "一杯 飲みましょう",
+        "romaji": "ippai nomimashou",
+        "vi": "cùng uống một ly nhé",
+        "audio": null,
+        "image": "/icons/vocab/beer-mug.svg"
+      },
+      {
+        "id": "v2515",
+        "jp": "いろいろ おせわに なりました",
+        "kanji": "いろいろ お世話に なりました",
+        "romaji": "iroiro osewa ni narimashita",
+        "vi": "cảm ơn anh/chị đã giúp đỡ tôi nhiều",
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
+      },
+      {
+        "id": "v2516",
+        "jp": "がんばります",
+        "kanji": "頑張ります",
+        "romaji": "ganbarimasu",
+        "vi": "cố gắng",
+        "audio": null,
+        "note": "nhóm I · がんばったら"
+      },
+      {
+        "id": "v2517",
+        "jp": "どうぞ おげんきで",
+        "kanji": "どうぞ お元気で",
+        "romaji": "douzo ogenki de",
+        "vi": "chúc anh/chị mạnh khỏe (khi chia tay lâu ngày)",
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
+      },
+      {
+        "id": "v2518",
+        "jp": "ふります",
+        "kanji": "降ります",
+        "romaji": "furimasu",
+        "vi": "(mưa, tuyết) rơi: あめが ふります",
+        "audio": null,
+        "note": "ôn · nhóm I · ふったら",
+        "image": "/icons/vocab/cloud-with-rain.svg"
+      },
+      {
+        "id": "v2519",
+        "jp": "おわります",
+        "kanji": "終わります",
+        "romaji": "owarimasu",
+        "vi": "kết thúc, xong",
+        "audio": null,
+        "note": "ôn · nhóm I · おわったら"
+      },
+      {
+        "id": "v2520",
+        "jp": "なります",
+        "romaji": "narimasu",
+        "vi": "trở nên, đến (lúc): 3じに なります",
+        "audio": null,
+        "note": "ôn · nhóm I · なったら"
+      },
+      {
+        "id": "v2521",
+        "jp": "でんわします",
+        "kanji": "電話します",
+        "romaji": "denwa shimasu",
+        "vi": "gọi điện thoại",
+        "audio": null,
+        "note": "ôn · nhóm III · でんわしたら",
+        "image": "/icons/vocab/telephone.svg"
+      },
+      {
+        "id": "v2522",
+        "jp": "わかります",
+        "romaji": "wakarimasu",
+        "vi": "hiểu, biết",
+        "audio": null,
+        "note": "ôn · nhóm I · わかったら"
+      },
+      {
+        "id": "v2523",
+        "jp": "しらべます",
+        "kanji": "調べます",
+        "romaji": "shirabemasu",
+        "vi": "tra cứu, tìm hiểu",
+        "audio": null,
+        "note": "ôn · nhóm II · しらべたら"
+      },
+      {
+        "id": "v2524",
+        "jp": "つかれます",
+        "kanji": "疲れます",
+        "romaji": "tsukaremasu",
+        "vi": "mệt",
+        "audio": null,
+        "note": "ôn · nhóm II · つかれたら",
+        "image": "/icons/vocab/tired-face.svg"
+      },
+      {
+        "id": "v2525",
+        "jp": "やすみます",
+        "kanji": "休みます",
+        "romaji": "yasumimasu",
+        "vi": "nghỉ, nghỉ ngơi",
+        "audio": null,
+        "note": "ôn · nhóm I · やすんだら",
+        "image": "/icons/vocab/bed.svg"
+      },
+      {
+        "id": "v2526",
+        "jp": "きます",
+        "kanji": "来ます",
+        "romaji": "kimasu",
+        "vi": "đến",
+        "audio": null,
+        "note": "ôn · nhóm III · きたら"
+      },
+      {
+        "id": "v2527",
+        "jp": "あめ",
+        "kanji": "雨",
+        "romaji": "ame",
+        "vi": "mưa",
+        "audio": null,
+        "note": "ôn · あめだったら・あめでも",
+        "image": "/icons/vocab/umbrella.svg"
+      },
+      {
+        "id": "v2528",
+        "jp": "ひま",
+        "kanji": "暇",
+        "romaji": "hima",
+        "vi": "rảnh (tính từ đuôi な)",
+        "audio": null,
+        "note": "ôn · ひまだったら・ひまでも"
+      },
+      {
+        "id": "v2529",
+        "jp": "いそがしい",
+        "kanji": "忙しい",
+        "romaji": "isogashii",
+        "vi": "bận",
+        "audio": null,
+        "note": "ôn · いそがしかったら・いそがしくても"
+      },
+      {
+        "id": "v2530",
+        "jp": "たかい",
+        "kanji": "高い",
+        "romaji": "takai",
+        "vi": "đắt; cao",
+        "audio": null,
+        "note": "ôn · たかかったら・たかくても"
+      },
+      {
+        "id": "v2531",
+        "jp": "やすい",
+        "kanji": "安い",
+        "romaji": "yasui",
+        "vi": "rẻ",
+        "audio": null,
+        "note": "ôn · やすかったら・やすくても"
+      },
+      {
+        "id": "v2532",
+        "jp": "さむい",
+        "kanji": "寒い",
+        "romaji": "samui",
+        "vi": "lạnh (thời tiết)",
+        "audio": null,
+        "note": "ôn · さむかったら・さむくても",
+        "image": "/icons/vocab/snowflake.svg"
+      },
+      {
+        "id": "v2533",
+        "jp": "いい",
+        "romaji": "ii",
+        "vi": "tốt, đẹp",
+        "audio": null,
+        "note": "ôn · よかったら・よくても (không nói いかったら)",
+        "image": "/icons/vocab/thumbs-up.svg"
+      },
+      {
+        "id": "v2534",
+        "jp": "べんり",
+        "kanji": "便利",
+        "romaji": "benri",
+        "vi": "tiện lợi (tính từ đuôi な)",
+        "audio": null,
+        "note": "ôn · べんりだったら・べんりでも"
+      },
+      {
+        "id": "v2535",
+        "jp": "ふべん",
+        "kanji": "不便",
+        "romaji": "fuben",
+        "vi": "bất tiện (tính từ đuôi な)",
+        "audio": null,
+        "note": "ôn · ふべんだったら・ふべんでも"
+      },
+      {
+        "id": "v2536",
+        "jp": "じかん",
+        "kanji": "時間",
+        "romaji": "jikan",
+        "vi": "thời gian",
+        "audio": null,
+        "note": "ôn",
+        "image": "/icons/vocab/watch.svg"
+      },
+      {
+        "id": "v2537",
+        "jp": "おかね",
+        "kanji": "お金",
+        "romaji": "okane",
+        "vi": "tiền",
+        "audio": null,
+        "note": "ôn",
+        "image": "/icons/vocab/yen-banknote.svg"
+      },
+      {
+        "id": "v2538",
+        "jp": "えき",
+        "kanji": "駅",
+        "romaji": "eki",
+        "vi": "nhà ga",
+        "audio": null,
+        "note": "ôn",
+        "image": "/icons/vocab/station.svg"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2501",
+        "pattern": "Thể quá khứ ngắn + ら → 〜たら",
+        "vi": "Nếu … thì … (giả định)",
+        "explain": "Lấy thể quá khứ ngắn (thể た) rồi thêm ら. Động từ: いった → いったら, いかなかった → いかなかったら. Tính từ い: たかかった → たかかったら; riêng いい → よかったら. Tính từ な và danh từ: ひまだった → ひまだったら, あめだった → あめだったら. Vế sau nói điều người nói sẽ làm, muốn làm, hoặc lời mời, lời nhờ khi điều kiện đó xảy ra.",
+        "viMistake": "Gặp chữ “nếu” là dùng と (bài 23). と chỉ hợp với kết quả tự nhiên, lần nào cũng vậy (chỉ đường, cách dùng máy); vế sau là ý định, lời mời, lời nhờ thì phải dùng たら: ひまだったら、あそびに きて ください (không nói ひまだと、あそびに きて ください). Cũng hay quên chia: không nói ひまたら, たかいたら.",
+        "examples": [
+          {
+            "jp": "あした {天気|てんき}が よかったら、{山|やま}に {登|のぼ}ります。",
+            "vi": "Nếu ngày mai trời đẹp, tôi sẽ leo núi (いい → よかったら).",
+            "audio": null
+          },
+          {
+            "jp": "{寒|さむ}かったら、エアコンを つけて ください。",
+            "vi": "Nếu lạnh thì bạn bật điều hòa lên nhé.",
+            "audio": null
+          },
+          {
+            "jp": "バスが {来|こ}なかったら、タクシーで {行|い}きましょう。",
+            "vi": "Nếu xe buýt không đến thì mình đi taxi nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2502",
+        "pattern": "V たら、〜（việc chắc chắn xảy ra）",
+        "vi": "Khi / sau khi … xong thì …",
+        "explain": "Khi việc ở vế trước chắc chắn sẽ xảy ra (đến giờ, đến nơi, làm xong một việc), V たら nghĩa là “khi … (xong) thì …”. Vế sau là việc sẽ làm ngay sau đó: dự định, lời mời hoặc lời nhờ.",
+        "viMistake": "Vì nghĩ たら lúc nào cũng là “nếu”, người Việt hay thêm もし: もし ごじに なったら、かえりましょう là sai, vì 5 giờ chắc chắn sẽ đến. Việc chắc chắn xảy ra thì hiểu là “khi … thì”, không dùng もし.",
+        "examples": [
+          {
+            "jp": "ハノイに {着|つ}いたら、メールを {送|おく}ります。",
+            "vi": "Khi đến Hà Nội, tôi sẽ gửi email.",
+            "audio": null
+          },
+          {
+            "jp": "{12時|じゅうにじ}に なったら、{昼|ひる}ごはんを {食|た}べましょう。",
+            "vi": "Đến 12 giờ thì mình ăn trưa nhé.",
+            "audio": null
+          },
+          {
+            "jp": "{大学|だいがく}を {出|で}たら、{日本|にほん}で {働|はたら}きたいです。",
+            "vi": "Tốt nghiệp đại học xong, tôi muốn làm việc ở Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2503",
+        "pattern": "V て／A くて／な・N で + も、〜",
+        "vi": "Dù … cũng …, cho dù … đi nữa",
+        "explain": "Động từ: thể て + も (よんで → よんでも, いかなくて → いかなくても). Tính từ い: bỏ い thêm くても (さむい → さむくても; いい → よくても). Tính từ な và danh từ: thêm でも (ひまでも, あめでも). Vế sau là điều trái với điều người ta thường nghĩ sẽ xảy ra.",
+        "viMistake": "Tiếng Việt chỉ cần thêm “dù” ở đầu câu nên hay giữ nguyên đuôi: さむいても, ひまくても là sai; đúng là さむくても, ひまでも. Cũng đừng lẫn với 〜ても いいです (bài 15): のんでも いいです là “uống cũng được”, còn のんでも、〜 là “dù uống thì vẫn …”.",
+        "examples": [
+          {
+            "jp": "{薬|くすり}を {飲|の}んでも、なかなか よく なりません。",
+            "vi": "Dù uống thuốc rồi mà mãi vẫn chưa khỏi.",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}でも、{毎朝|まいあさ} {散歩|さんぽ}します。",
+            "vi": "Dù trời mưa, sáng nào tôi cũng đi dạo.",
+            "audio": null
+          },
+          {
+            "jp": "{少|すこ}し {遠|とお}くても、{安|やす}い スーパーへ {行|い}きます。",
+            "vi": "Dù hơi xa một chút, tôi vẫn đi siêu thị bán rẻ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2504",
+        "pattern": "もし 〜たら、〜",
+        "vi": "Nếu, giả sử … thì …",
+        "explain": "もし đặt ở đầu vế điều kiện để báo trước rằng đây là giả định; câu vẫn phải có 〜たら. もし chỉ dùng cho việc có thể xảy ra hoặc không, không dùng cho việc chắc chắn sẽ đến.",
+        "viMistake": "Tiếng Việt chỉ cần “nếu” là đủ nên hay nói もし あめが ふります、… mà quên đổi đuôi. もし chỉ nhấn mạnh, phần điều kiện vẫn phải là 〜たら: もし あめが ふったら、…",
+        "examples": [
+          {
+            "jp": "もし わからなかったら、{先生|せんせい}に {聞|き}いて ください。",
+            "vi": "Nếu không hiểu thì hãy hỏi thầy cô.",
+            "audio": null
+          },
+          {
+            "jp": "もし {日本|にほん}へ {行|い}ったら、{富士山|ふじさん}に {登|のぼ}りたいです。",
+            "vi": "Nếu được đi Nhật, tôi muốn leo núi Phú Sĩ.",
+            "audio": null
+          },
+          {
+            "jp": "もし {病気|びょうき}に なったら、ひかり{病院|びょういん}へ {行|い}って ください。",
+            "vi": "Nếu bị ốm, hãy đến bệnh viện Hikari.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2505",
+        "pattern": "いくら 〜ても、〜",
+        "vi": "Dù … bao nhiêu, … đến mấy thì vẫn …",
+        "explain": "いくら đứng trước 〜ても để nhấn mạnh mức độ: dù làm nhiều đến đâu, dù đắt, bận đến mấy thì kết quả ở vế sau vẫn không đổi. いくら ở đây không hỏi giá tiền và chỉ đi với 〜ても, không đi với 〜たら.",
+        "viMistake": "Quen nghĩa “bao nhiêu tiền” (bài 3) nên hiểu いくら しらべても là “tra bao nhiêu tiền”; ở đây nghĩa là “dù tra đến mấy”. Cũng không nói いくら … たら: いくら たかかったら là sai, phải là いくら たかくても.",
+        "examples": [
+          {
+            "jp": "いくら {調|しら}べても、その {店|みせ}の {名前|なまえ}が わかりません。",
+            "vi": "Dù tìm hiểu bao nhiêu, tôi vẫn không biết tên cửa hàng đó.",
+            "audio": null
+          },
+          {
+            "jp": "いくら {忙|いそが}しくても、{毎日|まいにち} {家族|かぞく}に {電話|でんわ}します。",
+            "vi": "Dù bận đến mấy, ngày nào tôi cũng gọi điện cho gia đình.",
+            "audio": null
+          },
+          {
+            "jp": "いくら {高|たか}くても、この カメラが ほしいです。",
+            "vi": "Dù đắt đến mấy, tôi vẫn muốn có chiếc máy ảnh này.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2506",
+        "pattern": "N が 〜たら／〜ても（vế phụ）",
+        "vi": "Chủ ngữ trong vế たら／ても dùng が",
+        "explain": "Trong vế phụ như 〜たら, 〜ても (cũng như 〜とき, 〜まえに), chủ ngữ của riêng vế đó được đánh dấu bằng が. は dùng cho chủ đề của cả câu.",
+        "viMistake": "Dịch từng chữ “nếu anh trai cho mượn xe” thành あには くるまを かして くれたら; trong vế たら phải dùng が: あにが くるまを かして くれたら.",
+        "examples": [
+          {
+            "jp": "{兄|あに}が {車|くるま}を {貸|か}して くれたら、{家族|かぞく}で いなかへ {行|い}きます。",
+            "vi": "Nếu anh trai cho mượn xe, cả nhà tôi sẽ về quê.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんが {手伝|てつだ}って くれても、{今日|きょう}は {終|お}わりません。",
+            "vi": "Dù anh Tanaka giúp thì hôm nay cũng không xong.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもが {寝|ね}たら、{本|ほん}を {読|よ}みます。",
+            "vi": "Khi con ngủ rồi, tôi sẽ đọc sách.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2501",
+        "type": "title",
+        "jp": "{第|だい}25{課|か}",
+        "vi": "Nói “nếu … thì” và “dù … cũng”"
+      },
+      {
+        "id": "s2502",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Tạo thể たら từ thể quá khứ ngắn của động từ, tính từ và danh từ.\n2. Nói điều kiện giả định bằng 〜たら, nhấn mạnh bằng もし.\n3. Nói việc sẽ làm khi một việc chắc chắn xảy ra: Vたら.\n4. Nói “dù … cũng …” bằng 〜ても／〜くても／〜でも, nhấn mạnh bằng いくら; chủ ngữ trong vế phụ dùng が."
+      },
+      {
+        "id": "s2503",
+        "type": "vocab",
+        "refs": ["v2501", "v2502", "v2503", "v2504", "v2505", "v2506", "v2507", "v2508"],
+        "teacherNotes": "Đọc thể たら ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2504",
+        "type": "vocab",
+        "refs": ["v2509", "v2510", "v2511", "v2512", "v2513", "v2514", "v2515", "v2516"],
+        "teacherNotes": "Đọc thể たら ghi ở mỗi thẻ động từ; luyện câu chào khi chia tay."
+      },
+      {
+        "id": "s2505",
+        "type": "vocab",
+        "refs": ["v2517", "v2518", "v2519", "v2520", "v2521", "v2522", "v2523", "v2524"],
+        "teacherNotes": "Các từ ghi “ôn” là từ bài trước dùng trong ví dụ; đọc nhanh thể たら."
+      },
+      {
+        "id": "s2506",
+        "type": "vocab",
+        "refs": ["v2525", "v2526", "v2527", "v2528", "v2529", "v2530", "v2531", "v2532"],
+        "teacherNotes": "Đọc nhanh thể たら và ても ghi ở mỗi thẻ; chú ý いい → よかったら."
+      },
+      {
+        "id": "s2507",
+        "type": "vocab",
+        "refs": ["v2533", "v2534", "v2535", "v2536", "v2537", "v2538"],
+        "teacherNotes": "Các từ ôn dùng trong hội thoại và bài luyện."
+      },
+      {
+        "id": "s2508",
+        "type": "grammar",
+        "ref": "g2501",
+        "teacherNotes": "Ôn thể た (bài 19) và thể quá khứ ngắn (bài 20) trước; たら = thể た + ら."
+      },
+      {
+        "id": "s2509",
+        "type": "example",
+        "ref": "g2501",
+        "reveal": true
+      },
+      {
+        "id": "s2510",
+        "type": "table",
+        "title": "Cách tạo thể たら",
+        "columns": ["Loại", "Thể た", "Thể たら"],
+        "rows": [
+          ["V nhóm I", "{行|い}った", "{行|い}ったら"],
+          ["V nhóm II", "{食|た}べた", "{食|た}べたら"],
+          ["V nhóm III", "{来|き}た・した", "{来|き}たら・したら"],
+          ["V phủ định", "{行|い}かなかった", "{行|い}かなかったら"],
+          ["Tính từ い", "{高|たか}かった", "{高|たか}かったら"],
+          ["いい", "よかった", "よかったら"],
+          [
+            "な・danh từ",
+            "{暇|ひま}だった・{雨|あめ}だった",
+            "{暇|ひま}だったら・{雨|あめ}だったら"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột cuối, cho học viên tự thêm ら. Nhấn mạnh いい → よかったら."
+      },
+      {
+        "id": "s2511",
+        "type": "table",
+        "title": "Luyện tập 1: nếu … thì",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{時間|じかん}が あります・{手伝|てつだ}います",
+            "{時間|じかん}が あったら、{手伝|てつだ}います。"
+          ],
+          ["{安|やす}い・2つ {買|か}います", "{安|やす}かったら、2つ {買|か}います。"],
+          ["{暇|ひま}です・{来|き}て ください", "{暇|ひま}だったら、{来|き}て ください。"],
+          ["{雨|あめ}です・{行|い}きません", "{雨|あめ}だったら、{行|い}きません。"],
+          ["{疲|つか}れます・{休|やす}んで ください", "{疲|つか}れたら、{休|やす}んで ください。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2512",
+        "type": "quiz",
+        "ref": "q2501"
+      },
+      {
+        "id": "s2513",
+        "type": "grammar",
+        "ref": "g2502",
+        "teacherNotes": "So sánh: あめが ふったら (có thể mưa hoặc không) và 12じに なったら (chắc chắn đến)."
+      },
+      {
+        "id": "s2514",
+        "type": "example",
+        "ref": "g2502",
+        "reveal": true
+      },
+      {
+        "id": "s2515",
+        "type": "table",
+        "title": "Luyện tập 2: khi … xong thì",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ホテルに {着|つ}きます・{休|やす}みます", "ホテルに {着|つ}いたら、{休|やす}みます。"],
+          [
+            "{6時|ろくじ}に なります・{帰|かえ}ります",
+            "{6時|ろくじ}に なったら、{帰|かえ}ります。"
+          ],
+          [
+            "{宿題|しゅくだい}が {終|お}わります・{寝|ね}ます",
+            "{宿題|しゅくだい}が {終|お}わったら、{寝|ね}ます。"
+          ],
+          [
+            "{国|くに}へ {帰|かえ}ります・{結婚|けっこん}します",
+            "{国|くに}へ {帰|かえ}ったら、{結婚|けっこん}します。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2516",
+        "type": "quiz",
+        "ref": "q2502"
+      },
+      {
+        "id": "s2517",
+        "type": "grammar",
+        "ref": "g2503",
+        "teacherNotes": "Đặt cạnh bảng thể たら: たら ↔ ても, かったら ↔ くても, だったら ↔ でも."
+      },
+      {
+        "id": "s2518",
+        "type": "example",
+        "ref": "g2503",
+        "reveal": true
+      },
+      {
+        "id": "s2519",
+        "type": "table",
+        "title": "Cách tạo thể ても",
+        "columns": ["Loại", "Thể て", "Thể ても"],
+        "rows": [
+          ["V nhóm I", "{読|よ}んで", "{読|よ}んでも"],
+          ["V nhóm II", "{見|み}て", "{見|み}ても"],
+          ["V nhóm III", "{来|き}て・して", "{来|き}ても・しても"],
+          ["V phủ định", "{行|い}かなくて", "{行|い}かなくても"],
+          ["Tính từ い", "{寒|さむ}くて", "{寒|さむ}くても"],
+          ["いい", "よくて", "よくても"],
+          ["な・danh từ", "{暇|ひま}で・{雨|あめ}で", "{暇|ひま}でも・{雨|あめ}でも"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột cuối; học viên thêm も vào thể て."
+      },
+      {
+        "id": "s2520",
+        "type": "table",
+        "title": "Luyện tập 3: dù … cũng",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{雨|あめ}です・サッカーを します", "{雨|あめ}でも、サッカーを します。"],
+          ["{寒|さむ}い・{泳|およ}ぎます", "{寒|さむ}くても、{泳|およ}ぎます。"],
+          [
+            "{日曜日|にちようび}です・{働|はたら}きます",
+            "{日曜日|にちようび}でも、{働|はたら}きます。"
+          ],
+          [
+            "{説明|せつめい}を {聞|き}きます・わかりません",
+            "{説明|せつめい}を {聞|き}いても、わかりません。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2521",
+        "type": "quiz",
+        "ref": "q2503"
+      },
+      {
+        "id": "s2522",
+        "type": "grammar",
+        "ref": "g2504",
+        "teacherNotes": "Hỏi học viên: もし 12じに なったら có đúng không? Vì sao?"
+      },
+      {
+        "id": "s2523",
+        "type": "example",
+        "ref": "g2504",
+        "reveal": true
+      },
+      {
+        "id": "s2524",
+        "type": "quiz",
+        "ref": "q2504"
+      },
+      {
+        "id": "s2525",
+        "type": "grammar",
+        "ref": "g2505",
+        "teacherNotes": "Nhắc lại いくらですか (bài 3) để thấy nghĩa khác: いくら + ても = dù … đến mấy."
+      },
+      {
+        "id": "s2526",
+        "type": "example",
+        "ref": "g2505",
+        "reveal": true
+      },
+      {
+        "id": "s2527",
+        "type": "table",
+        "title": "Luyện tập 4: いくら 〜ても",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{呼|よ}びます・{来|き}ません", "いくら {呼|よ}んでも、{来|き}ません。"],
+          ["{教|おし}えます・{覚|おぼ}えません", "いくら {教|おし}えても、{覚|おぼ}えません。"],
+          ["{暑|あつ}い・{歩|ある}きます", "いくら {暑|あつ}くても、{歩|ある}きます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2528",
+        "type": "quiz",
+        "ref": "q2505"
+      },
+      {
+        "id": "s2529",
+        "type": "grammar",
+        "ref": "g2506",
+        "teacherNotes": "Gạch chân vế たら／ても trong câu ví dụ, chỉ ra chủ ngữ của vế đó đi với が."
+      },
+      {
+        "id": "s2530",
+        "type": "example",
+        "ref": "g2506",
+        "reveal": true
+      },
+      {
+        "id": "s2531",
+        "type": "quiz",
+        "ref": "q2506"
+      },
+      {
+        "id": "s2532",
+        "type": "dialogue",
+        "title": "Hội thoại 1: hẹn chơi tennis",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "ハナさん、{日曜日|にちようび}は {暇|ひま}ですか。",
+            "vi": "Hana ơi, chủ nhật bạn có rảnh không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{午前|ごぜん}は {用事|ようじ}が ありますが、{午後|ごご}は {暇|ひま}です。",
+            "vi": "Buổi sáng mình có việc, nhưng buổi chiều thì rảnh."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、{天気|てんき}が よかったら、テニスを しませんか。",
+            "vi": "Vậy nếu trời đẹp, mình chơi tennis nhé?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "いいですね。でも、{雨|あめ}だったら、どう しますか。",
+            "vi": "Hay đấy. Nhưng nếu trời mưa thì sao?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{雨|あめ}だったら、うちで {映画|えいが}を {見|み}ましょう。",
+            "vi": "Nếu mưa thì mình xem phim ở nhà."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "わかりました。{午前|ごぜん}の {用事|ようじ}が {終|お}わったら、{電話|でんわ}します。",
+            "vi": "Được. Xong việc buổi sáng mình sẽ gọi cho bạn."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2533",
+        "type": "dialogue",
+        "title": "Hội thoại 2: trước khi đi du học",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "アンさん、{来月|らいげつ} {日本|にほん}へ {留学|りゅうがく}しますね。",
+            "vi": "An, tháng sau em đi du học Nhật nhỉ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "はい。でも、{日本語|にほんご}が ちょっと {心配|しんぱい}です。",
+            "vi": "Vâng. Nhưng em hơi lo về tiếng Nhật."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "わからない ことが あったら、メールを ください。",
+            "vi": "Nếu có điều gì chưa hiểu thì em gửi email cho cô nhé."
+          },
+          {
+            "speaker": "アン",
+            "jp": "はい。{着|つ}いたら、すぐ メールを {送|おく}ります。",
+            "vi": "Vâng. Đến nơi em sẽ gửi email ngay."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "いくら {忙|いそが}しくても、よく {寝|ね}て くださいね。",
+            "vi": "Dù bận đến mấy em cũng phải ngủ đủ nhé."
+          },
+          {
+            "speaker": "アン",
+            "jp": "はい、がんばります。{夏休|なつやす}みに {帰|かえ}ったら、{会|あ}いに {来|き}ます。",
+            "vi": "Vâng, em sẽ cố gắng. Nghỉ hè về nước, em sẽ đến thăm cô."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2534",
+        "type": "dialogue",
+        "title": "Hội thoại 3: khi về già",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ナムさんは {年|とし}を {取|と}ったら、どこに {住|す}みたいですか。",
+            "vi": "Anh Nam, khi về già anh muốn sống ở đâu?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{国|くに}の いなかに {住|す}みたいです。",
+            "vi": "Tôi muốn sống ở vùng quê bên nước tôi."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "いなかは {不便|ふべん}じゃ ありませんか。",
+            "vi": "Ở quê không bất tiện à?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{不便|ふべん}でも、{静|しず}かな ところが いいです。",
+            "vi": "Dù bất tiện, tôi vẫn thích nơi yên tĩnh."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "もし チャンスが あったら、{遊|あそ}びに {行|い}きます。",
+            "vi": "Nếu có dịp, tôi sẽ đến chơi."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ええ、{来|き}て ください。{私|わたし}が {案内|あんない}しますよ。",
+            "vi": "Vâng, anh đến nhé. Tôi sẽ dẫn anh đi tham quan."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2535",
+        "type": "table",
+        "title": "Luyện tập 5: ghép thành câu",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "もし・{熱|ねつ}が あります・{休|やす}みます",
+            "もし {熱|ねつ}が あったら、{休|やす}みます。"
+          ],
+          ["いくら・{安|やす}い・{要|い}りません", "いくら {安|やす}くても、{要|い}りません。"],
+          [
+            "{手紙|てがみ}を {書|か}きます・{出|だ}します",
+            "{手紙|てがみ}を {書|か}いたら、{出|だ}します。"
+          ],
+          [
+            "{父|ちち}が {帰|かえ}ります・{出|で}かけます",
+            "{父|ちち}が {帰|かえ}ったら、{出|で}かけます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2536",
+        "type": "quiz",
+        "ref": "q2507"
+      },
+      {
+        "id": "s2537",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "〜たら: thể quá khứ ngắn + ら (いったら, たかかったら, よかったら, ひまだったら).\nNếu … thì: 〜たら, nhấn mạnh bằng もし.\nVたら với việc chắc chắn xảy ra: khi … xong thì …; không dùng もし.\n〜ても／〜くても／〜でも: dù … cũng …; nhấn mạnh bằng いくら.\nChủ ngữ trong vế たら／ても dùng が."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2501",
+        "prompt": "Chọn thể たら của いきます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いきます → いった → いったら (いきます là ngoại lệ: いった).",
+        "type": "choice",
+        "options": ["いったら", "いくたら", "いいたら", "いかたら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2502",
+        "prompt": "Chọn câu đúng: Ăn tối xong thì mình đi dạo nhé.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Việc chắc chắn xảy ra: おわった + ら → おわったら. 〜ても là “dù”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "ばんごはんが おわりたら、さんぽしましょう。",
+          "ばんごはんが おわるたら、さんぽしましょう。",
+          "ばんごはんが おわっても、さんぽしましょう。",
+          "ばんごはんが おわったら、さんぽしましょう。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2503",
+        "prompt": "Chọn câu đúng: Dù trời lạnh, sáng nào bố tôi cũng đi dạo.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: bỏ い thêm くても. さむかったら là “nếu lạnh”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "さむいても、ちちは まいあさ さんぽします。",
+          "さむでも、ちちは まいあさ さんぽします。",
+          "さむくても、ちちは まいあさ さんぽします。",
+          "さむかったら、ちちは まいあさ さんぽします。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2504",
+        "prompt": "Câu nào dùng もし đúng?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "もし chỉ báo trước giả định; vế điều kiện vẫn phải chia 〜たら: あった + ら → あったら. Giữ nguyên あります là sai.",
+        "type": "choice",
+        "options": [
+          "もし じかんが あるたら、てつだって ください。",
+          "もし じかんが ありたら、てつだって ください。",
+          "もし じかんが あったら、てつだって ください。",
+          "もし じかんが あります、てつだって ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2505",
+        "prompt": "Chọn câu đúng: Dù giải thích bao nhiêu lần, con tôi vẫn không hiểu.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いくら đi với 〜ても: せつめいして + も.",
+        "type": "choice",
+        "options": [
+          "いくら せつめいしたら、こどもは わかりません。",
+          "いくら せつめいして、こどもは わかりません。",
+          "いくら せつめいしても、こどもは わかりません。",
+          "いくら せつめいするでも、こどもは わかりません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2506",
+        "prompt": "ハナさん（　）てつだって くれたら、はやく おわります。",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Chủ ngữ trong vế たら dùng が.",
+        "type": "choice",
+        "options": ["を", "で", "に", "が"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2507",
+        "prompt": "Chọn câu đúng: Nếu có cơ hội, tôi muốn làm việc ở Nhật.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nếu … thì: あった + ら → あったら. 〜ても là “dù”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "チャンスが あったら、にほんで はたらきたいです。",
+          "チャンスが あっても、にほんで はたらきたいです。",
+          "チャンスが あるたら、にほんで はたらきたいです。",
+          "チャンスが あったでも、にほんで はたらきたいです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2508",
+        "prompt": "Chọn thể たら của みます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm II: みた → みたら.",
+        "type": "choice",
+        "options": ["みったら", "みるたら", "みたら", "みいたら"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2509",
+        "prompt": "Chọn thể たら của よみます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "み → んだ: よんだ → よんだら.",
+        "type": "choice",
+        "options": ["よむたら", "よんだら", "よんたら", "よまたら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2510",
+        "prompt": "Chọn thể たら của きます (đến).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm III: きた → きたら.",
+        "type": "choice",
+        "options": ["くたら", "きたら", "こたら", "きったら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2511",
+        "prompt": "Chọn thể たら của たかい.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: たかかった → たかかったら.",
+        "type": "choice",
+        "options": ["たかいたら", "たかかったら", "たかだったら", "たかくたら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2512",
+        "prompt": "Chọn thể たら của いい.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いい chia như よい: よかった → よかったら.",
+        "type": "choice",
+        "options": ["よかったら", "いいかったら", "いかったら", "いいだったら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2513",
+        "prompt": "Chọn thể たら của げんき (tính từ đuôi な).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ な: げんきだった → げんきだったら.",
+        "type": "choice",
+        "options": ["げんきだったら", "げんきかったら", "げんきなたら", "げんきでたら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2514",
+        "prompt": "Chọn thể ても của のみます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "のんで + も → のんでも.",
+        "type": "choice",
+        "options": ["のみても", "のんでも", "のまでも", "のんても"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2515",
+        "prompt": "Chọn thể ても của やすい.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: bỏ い thêm くても.",
+        "type": "choice",
+        "options": ["やすくても", "やすいでも", "やすでも", "やすかっても"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2516",
+        "prompt": "Chọn thể ても của べんり.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ な: thêm でも.",
+        "type": "choice",
+        "options": ["べんりくても", "べんりなでも", "べんりだても", "べんりでも"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2517",
+        "prompt": "Chọn thể ても của あめ (danh từ).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Danh từ: thêm でも.",
+        "type": "choice",
+        "options": ["あめくても", "あめだても", "あめなでも", "あめでも"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2518",
+        "prompt": "Chọn thể たら phủ định của いきます (nếu không đi).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いかない → いかなかった → いかなかったら.",
+        "type": "choice",
+        "options": ["いきなかったら", "いかなかったら", "いかないたら", "いかなくたら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2519",
+        "prompt": "Chọn thể たら của あそびます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "び → んだ: あそんだ → あそんだら.",
+        "type": "choice",
+        "options": ["あそびたら", "あそんだら", "あそったら", "あそいだら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2520",
+        "prompt": "Chọn thể ても của かんがえます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm II: かんがえて + も.",
+        "type": "choice",
+        "options": ["かんがえっても", "かんがいても", "かんがえても", "かんがえでも"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2521",
+        "prompt": "Chọn câu đúng: Nếu rảnh thì giúp tôi chuẩn bị nhé.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ な: ひまだった → ひまだったら. ひまでも là “dù rảnh”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "ひまかったら、じゅんびを てつだって ください。",
+          "ひまたら、じゅんびを てつだって ください。",
+          "ひまでも、じゅんびを てつだって ください。",
+          "ひまだったら、じゅんびを てつだって ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2522",
+        "prompt": "Câu nào có nghĩa “Dù là ngày nghỉ, anh Tanaka vẫn đến công ty”?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Danh từ + でも: dù là ngày nghỉ.",
+        "type": "choice",
+        "options": [
+          "たなかさんは やすみの ひだったら、かいしゃへ いきます。",
+          "たなかさんは やすみの ひでも、かいしゃへ いきます。",
+          "たなかさんは やすみの ひは、かいしゃへ いきません。",
+          "たなかさんは やすみの ひに なったら、かいしゃへ いきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2523",
+        "prompt": "Chọn câu đúng: Nếu khó thì tôi sẽ giúp.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: むずかしかった → むずかしかったら. 〜くても là “dù”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "むずかしいたら、てつだいます。",
+          "むずかしだったら、てつだいます。",
+          "むずかしかったら、てつだいます。",
+          "むずかしくても、てつだいます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2524",
+        "prompt": "Chọn câu đúng: Về đến nhà thì gửi email cho tôi nhé.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "かえります → かえった → かえったら.",
+        "type": "choice",
+        "options": [
+          "うちに かえっても、メールを ください。",
+          "うちに かえるたら、メールを ください。",
+          "うちに かえりたら、メールを ください。",
+          "うちに かえったら、メールを ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2525",
+        "prompt": "Câu nào có nghĩa “Dù ngủ bao nhiêu, tôi vẫn buồn ngủ”?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いくら + ても: dù … bao nhiêu vẫn …",
+        "type": "choice",
+        "options": [
+          "よく ねたら、ねむく なりません。",
+          "いくら ねても、ねむいです。",
+          "ねむかったら、ねて ください。",
+          "ねむい とき、コーヒーを のみます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2526",
+        "prompt": "Chọn câu đúng: Nếu ngày mai trời không mưa thì mình leo núi nhé.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "ふらない → ふらなかった → ふらなかったら.",
+        "type": "choice",
+        "options": [
+          "あした あめが ふりなかったら、やまに のぼりましょう。",
+          "あした あめが ふらないたら、やまに のぼりましょう。",
+          "あした あめが ふらなくても、やまに のぼりましょう。",
+          "あした あめが ふらなかったら、やまに のぼりましょう。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2527",
+        "prompt": "Chọn câu đúng: Nếu không có thời gian thì không cần làm cũng được.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "ない → なかった → なかったら.",
+        "type": "choice",
+        "options": [
+          "じかんが なかったら、しなくても いいです。",
+          "じかんが ないたら、しなくても いいです。",
+          "じかんが ありなかったら、しなくても いいです。",
+          "じかんが なくても、しなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2528",
+        "prompt": "Câu nào nói về việc CHẮC CHẮN sẽ xảy ra (たら = khi … xong thì)?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Ăn trưa là việc chắc chắn sẽ làm; ba câu còn lại là giả định.",
+        "type": "choice",
+        "options": [
+          "もし おかねが あったら、くるまを かいます。",
+          "さむかったら、まどを しめて ください。",
+          "あめだったら、うちに います。",
+          "ひるごはんを たべたら、くすりを のみます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2529",
+        "prompt": "Câu nào có nghĩa “Dù không hiểu cũng đừng lo”?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "わからない → わからなくて + も.",
+        "type": "choice",
+        "options": [
+          "わからなかったら、しんぱいしないで ください。",
+          "わかっても、しんぱいしないで ください。",
+          "わからないで、しんぱいしないで ください。",
+          "わからなくても、しんぱいしないで ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2530",
+        "prompt": "Chọn câu đúng: Nếu mệt thì nghỉ một chút đi.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm II: つかれた → つかれたら.",
+        "type": "choice",
+        "options": [
+          "つかれても、すこし やすんで ください。",
+          "つかれたら、すこし やすんで ください。",
+          "つかれるたら、すこし やすんで ください。",
+          "つかれったら、すこし やすんで ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2531",
+        "prompt": "かんがえます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "かんがえます: suy nghĩ, cân nhắc.",
+        "type": "choice",
+        "options": ["ghi nhớ", "quên", "suy nghĩ, cân nhắc", "hiểu"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2532",
+        "prompt": "つきます (えきに つきます) nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "えきに つきます: đến ga.",
+        "type": "choice",
+        "options": ["đến nơi", "xuất phát", "đổi tàu", "xuống xe"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2533",
+        "prompt": "たいしかん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "たいしかん: đại sứ quán.",
+        "type": "choice",
+        "options": ["bưu điện", "ủy ban thành phố", "đại sứ quán", "bảo tàng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2534",
+        "prompt": "グループ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "グループ: nhóm.",
+        "type": "choice",
+        "options": ["nhóm", "lớp học", "công ty", "gia đình"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2535",
+        "prompt": "りゅうがくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "りゅうがくします: du học.",
+        "type": "choice",
+        "options": ["tốt nghiệp", "chuyển nhà", "du học", "đi du lịch"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2536",
+        "prompt": "としを とります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "としを とります: có tuổi, già đi.",
+        "type": "choice",
+        "options": ["chụp ảnh", "nghỉ phép", "có tuổi, già đi", "mừng sinh nhật"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2537",
+        "prompt": "がんばります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "がんばります: cố gắng.",
+        "type": "choice",
+        "options": ["nghỉ ngơi", "lo lắng", "chờ đợi", "cố gắng"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2538",
+        "prompt": "1おく là bao nhiêu?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "1おく = một trăm triệu.",
+        "type": "choice",
+        "options": ["10.000", "100.000.000", "1.000.000", "10.000.000"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2539",
+        "prompt": "Khi chia tay người sắp đi xa lâu ngày, ta chúc gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "どうぞ おげんきで: chúc mạnh khỏe khi chia tay lâu ngày.",
+        "type": "choice",
+        "options": ["どうぞ おげんきで。", "おだいじに。", "いただきます。", "いらっしゃいませ。"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2540",
+        "prompt": "Khi chia tay, muốn cảm ơn người đã giúp mình suốt thời gian qua, ta nói gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いろいろ おせわに なりました: cảm ơn vì đã giúp đỡ nhiều.",
+        "type": "choice",
+        "options": [
+          "いろいろ おせわに なりました。",
+          "おじゃまします。",
+          "はじめまして。",
+          "いってきます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2541",
+        "prompt": "Điền thể たら: まちます → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "ち → った: まった → まったら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まったら"]
+      },
+      {
+        "id": "q2542",
+        "prompt": "Điền thể たら: およぎます → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "ぎ → いだ: およいだ → およいだら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["およいだら"]
+      },
+      {
+        "id": "q2543",
+        "prompt": "Điền thể ても: かきます → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "かいて + も → かいても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かいても"]
+      },
+      {
+        "id": "q2544",
+        "prompt": "Điền thể ても: わかい → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: bỏ い thêm くても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わかくても"]
+      },
+      {
+        "id": "q2545",
+        "prompt": "Điền thể たら: しずか → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ な: しずかだった → しずかだったら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しずかだったら"]
+      },
+      {
+        "id": "q2546",
+        "prompt": "Điền thể たら: けします → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "し → した: けした → けしたら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["けしたら"]
+      },
+      {
+        "id": "q2547",
+        "prompt": "Điền: いくら （　　）、しゅくだいを します。(dù buồn ngủ đến mấy; ねむい)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いくら + tính từ い bỏ い thêm くても: ねむくても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ねむくても"]
+      },
+      {
+        "id": "q2548",
+        "prompt": "Điền: こんばん いっぱい （　　）。(cùng uống một ly nhé)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いっぱい のみましょう: cùng uống một ly nhé.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のみましょう", "のみませんか"]
+      },
+      {
+        "id": "q2549",
+        "prompt": "Điền từ: らいげつ （　　）で おおさかへ いきます。(chuyển công tác)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "てんきん: chuyển công tác.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["てんきん"]
+      },
+      {
+        "id": "q2550",
+        "prompt": "Điền từ: ちちと ははは （　　）に すんで います。(vùng nông thôn)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いなか: quê, vùng nông thôn.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いなか"]
+      }
+    ]
+  }
+}

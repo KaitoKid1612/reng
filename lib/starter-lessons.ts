@@ -15,6 +15,14 @@ import minnaLesson14 from "@/content/starters/minna-1-14.json";
 import minnaLesson15 from "@/content/starters/minna-1-15.json";
 import minnaLesson16 from "@/content/starters/minna-1-16.json";
 import minnaLesson17 from "@/content/starters/minna-1-17.json";
+import minnaLesson18 from "@/content/starters/minna-1-18.json";
+import minnaLesson19 from "@/content/starters/minna-1-19.json";
+import minnaLesson20 from "@/content/starters/minna-1-20.json";
+import minnaLesson21 from "@/content/starters/minna-1-21.json";
+import minnaLesson22 from "@/content/starters/minna-1-22.json";
+import minnaLesson23 from "@/content/starters/minna-1-23.json";
+import minnaLesson24 from "@/content/starters/minna-1-24.json";
+import minnaLesson25 from "@/content/starters/minna-1-25.json";
 import { lessonDraftSchema } from "@/lib/lesson-schema";
 
 import type { LessonDraft } from "@/lib/lesson-schema";
@@ -130,6 +138,54 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     course: "Minna no Nihongo Sơ cấp I",
     buttonLabel: "Tạo bài 17 từ mẫu",
     draft: lessonDraftSchema.parse(minnaLesson17),
+  },
+  {
+    id: "minna-1-18",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 18 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson18),
+  },
+  {
+    id: "minna-1-19",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 19 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson19),
+  },
+  {
+    id: "minna-1-20",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 20 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson20),
+  },
+  {
+    id: "minna-1-21",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 21 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson21),
+  },
+  {
+    id: "minna-1-22",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 22 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson22),
+  },
+  {
+    id: "minna-1-23",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 23 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson23),
+  },
+  {
+    id: "minna-1-24",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 24 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson24),
+  },
+  {
+    id: "minna-1-25",
+    course: "Minna no Nihongo Sơ cấp I",
+    buttonLabel: "Tạo bài 25 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson25),
   },
 ];
 

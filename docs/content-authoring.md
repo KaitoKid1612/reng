@@ -42,6 +42,29 @@ Ngày 13/11/2026 bổ sung **Tạo bài 16 từ mẫu** (`content/starters/minna
 
 Ngày 16/11/2026 bổ sung **Tạo bài 17 từ mẫu** (`content/starters/minna-1-17.json`): 40 từ (động từ có ghi chú nhóm và thể ない, ví dụ "nhóm I · はらわない"; 5 thẻ có icon), 6 mẫu câu, 37 slide (7 bảng, 3 hội thoại) và 50 câu luyện. Trình tự ngữ pháp theo bài 17: thể ない theo nhóm; Vないで ください; Vなければ なりません; Vなくても いいです; tân ngữ đưa lên làm chủ đề bằng は; N までに. Ba hội thoại ở phòng khám (quầy lễ tân, khám bệnh, lời dặn của bác sĩ) do Reng viết mới và tránh nội dung hội thoại của sách. Một agent soạn, một agent khác soát như giáo viên và sửa 17 chỗ: câu gần giống ví dụ của sách, câu lộ đáp án của câu khác, từ vượt trình độ bài 17 và câu điền thiếu đáp án đúng khác.
 
+Cùng ngày bổ sung **Tạo bài 18 từ mẫu** đến **Tạo bài 25 từ mẫu** (`content/starters/minna-1-18.json` … `minna-1-25.json`), đủ Minna Sơ cấp I (phạm vi N5). Mỗi bài 50 câu luyện (40 câu chọn với đáp án chia đều 10/10/10/10 vị trí, 10 câu điền hiragana) và 3 hội thoại tự viết:
+
+| Bài | Chủ điểm | Từ | Mẫu câu | Slide |
+|---|---|---|---|---|
+| 18 | Thể từ điển, ことが できます, しゅみは 〜ことです, まえに | 40 | 6 | 37 |
+| 19 | Thể た, 〜た ことが あります, 〜たり 〜たり, 〜く／〜に なります | 40 | 5 | 35 |
+| 20 | Thể lịch sự và thể thường, hội thoại thân mật, 〜けど | 40 | 6 | 38 |
+| 21 | 〜と おもいます, 〜と いいます, 〜でしょう？, N1で N2が あります | 40 | 6 | 36 |
+| 22 | Mệnh đề bổ nghĩa cho danh từ, Vる じかん／やくそく／ようじ | 39 | 6 | 37 |
+| 23 | 〜とき, Vる と, N を + động từ di chuyển | 32 | 6 | 36 |
+| 24 | くれます, 〜て あげます／もらいます／くれます | 40 | 6 | 36 |
+| 25 | 〜たら, 〜ても, もし, いくら | 38 | 6 | 37 |
+
+Quy trình mỗi bài:
+
+1. **Soạn:** một agent soạn bài. Trình tự ngữ pháp và phạm vi từ vựng đối chiếu [đề cương Sơ cấp I của nhà xuất bản](https://www.3anet.co.jp/np/secure/0-0001-03-240000/0-0001-03-240000-1.pdf) và các bảng tóm tắt công khai (tuhoconline, jpdb). Từ vựng theo bản 2.
+2. **Soát:** một agent khác soát như giáo viên khó tính và sửa 12–23 chỗ mỗi bài. Lỗi chính: câu quá gần ví dụ hoặc hội thoại của sách, câu lộ đáp án của câu khác, lựa chọn sai vẫn đúng ngữ pháp, từ vượt trình độ hoặc từ của bản 1 (bài 23 bỏ 8 từ, còn 32 từ).
+3. **Đo slide:** đo slide ở khung 1280×720 (xem [kiểm chứng](testing/teaching-service.md#bài-mẫu-minna-1825--16112026)).
+
+Câu ví dụ, hội thoại và bài tập do Reng viết mới.
+
+Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.
+
 Nội dung do Reng tự biên soạn theo chủ điểm bài 11 (đếm 〜つ・〜人・〜台・〜枚・〜回, khoảng thời gian, tần suất, だけ); câu ví dụ, hội thoại và bài luyện là bản viết mới, không chép nguyên văn sách, tranh hay đĩa nghe. Giáo viên duyệt và sửa trước khi xuất bản; học viên dùng sách có bản quyền của mình để đối chiếu. Bài tiếp theo: dùng **Tạo bản sao** từ bài 11 rồi sửa, hoặc soạn mới trong editor. Thêm bài mẫu mới = thêm JSON vào `content/starters/` và đăng ký trong `lib/starter-lessons.ts`; test yêu cầu bài mẫu xuất bản được ngay và đáp án trắc nghiệm không nằm cùng một vị trí (lựa chọn hiển thị đúng thứ tự soạn).
 
 Slide bài Nhật có thêm hai loại: **Hội thoại** (`dialogue`: tiêu đề, tối đa 8 lượt người nói/câu Nhật/nghĩa Việt, mặc định ẩn nghĩa và hiện từng lượt) và **Bảng / luyện thay thế** (`table`: tối đa 6 cột × 12 hàng, dán từ Excel/Google Sheets hoặc gõ các ô cách nhau bằng `|`; bật luyện thay thế để ẩn cột cuối và hiện câu mẫu từng hàng). Trang đọc của học viên hiện hội thoại và bảng; câu mẫu của bảng luyện được gấp trong "Xem câu mẫu".

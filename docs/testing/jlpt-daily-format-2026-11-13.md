@@ -77,5 +77,5 @@ Câu chọn hiện phương án theo đúng thứ tự soạn, nên vị trí đ
 Các bài mẫu khác đã đều. Ngân hàng bị lệch cả ở những bài có bài mẫu đều, vì cách chọn đều theo thứ tự lấy trúng chu kỳ vị trí của bài mẫu. Script tạm (ngoài repo) giữ câu có đáp án ở vị trí còn thiếu; với câu thừa, đáp án đúng đổi chỗ với phương án ở vị trí thiếu nhất. Mã câu, đề, lời giải và nội dung phương án giữ nguyên. Riêng lời giải `q1311` (ngân hàng và bài mẫu 13) viết lại vì nói "lựa chọn cuối".
 
 - `tests/japanese-lessons.test.ts` và `tests/n5-minna-bank.test.ts`: mỗi vị trí chiếm 18–32% số câu chọn của một bài mẫu hoặc một bài trong ngân hàng. Trên nội dung cũ 5 test hỏng (bài mẫu 1, 2, 12, 16 và ngân hàng); trên nội dung mới đạt.
-- Production chưa đổi. Ngân hàng cần nạp lại bằng `bank:sql` (không cần `--class`). Bài 16 đã xuất bản trong lớp Nguyên giữ thứ tự cũ cho tới khi giáo viên dùng **so sánh và cập nhật từ mẫu** rồi xuất bản.
+- 16/11/2026: ngân hàng đã nạp lại lên production bằng `bank:sql --commit` (không `--class`), thành phiên bản 2 với 500 câu; phương án B còn là đáp án đúng ở 75/312 câu chọn. Lớp của Nguyên dùng phiên bản mới nhất làm nguồn bài hằng ngày nên tự lấy bản 2. Bài 16 đã xuất bản trong lớp Nguyên giữ thứ tự cũ cho tới khi giáo viên dùng **so sánh và cập nhật từ mẫu** rồi xuất bản.
 

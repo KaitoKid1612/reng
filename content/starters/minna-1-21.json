@@ -1,0 +1,1521 @@
+{
+  "id": "minna-1-21",
+  "title": "Bài 21 – Tôi nghĩ là…, nói rằng…, … đúng không?",
+  "titleJa": "第21課　どう おもいますか",
+  "summary": "Theo trình tự bài 21 Minna no Nihongo Sơ cấp I: thể thông thường + と おもいます để đoán và nêu ý kiến, hỏi ý kiến bằng 〜に ついて どう おもいますか, trích và thuật lại lời nói với と いいます, hỏi xác nhận bằng でしょう？, sự kiện diễn ra ở đâu (N1で N2が あります) và dịp N で, rủ bằng Nでも và Vないと……. Ví dụ, hội thoại và bài tập đều là nội dung gốc.",
+  "order": 21,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2101",
+        "jp": "おもいます",
+        "kanji": "思います",
+        "romaji": "omoimasu",
+        "vi": "nghĩ, cho rằng",
+        "audio": null,
+        "note": "nhóm I · おもう"
+      },
+      {
+        "id": "v2102",
+        "jp": "いいます",
+        "kanji": "言います",
+        "romaji": "iimasu",
+        "vi": "nói",
+        "audio": null,
+        "note": "nhóm I · いう"
+      },
+      {
+        "id": "v2103",
+        "jp": "かちます",
+        "kanji": "勝ちます",
+        "romaji": "kachimasu",
+        "vi": "thắng",
+        "audio": null,
+        "note": "nhóm I · かつ"
+      },
+      {
+        "id": "v2104",
+        "jp": "まけます",
+        "kanji": "負けます",
+        "romaji": "makemasu",
+        "vi": "thua",
+        "audio": null,
+        "note": "nhóm II · まける"
+      },
+      {
+        "id": "v2105",
+        "jp": "あります",
+        "romaji": "arimasu",
+        "vi": "diễn ra, được tổ chức (lễ hội, trận đấu…)",
+        "audio": null,
+        "note": "nhóm I · ある"
+      },
+      {
+        "id": "v2106",
+        "jp": "やくに たちます",
+        "kanji": "役に 立ちます",
+        "romaji": "yaku ni tachimasu",
+        "vi": "có ích",
+        "audio": null,
+        "note": "nhóm I · やくに たつ"
+      },
+      {
+        "id": "v2107",
+        "jp": "うごきます",
+        "kanji": "動きます",
+        "romaji": "ugokimasu",
+        "vi": "chạy, hoạt động (máy móc); chuyển động",
+        "audio": null,
+        "note": "nhóm I · うごく"
+      },
+      {
+        "id": "v2108",
+        "jp": "やめます",
+        "romaji": "yamemasu",
+        "vi": "thôi, bỏ (việc); nghỉ (công ty): かいしゃを やめます",
+        "audio": null,
+        "note": "nhóm II · やめる"
+      },
+      {
+        "id": "v2109",
+        "jp": "きを つけます",
+        "kanji": "気を つけます",
+        "romaji": "ki o tsukemasu",
+        "vi": "chú ý, cẩn thận",
+        "audio": null,
+        "note": "nhóm II · きを つける"
+      },
+      {
+        "id": "v2110",
+        "jp": "りゅうがくします",
+        "kanji": "留学します",
+        "romaji": "ryuugaku shimasu",
+        "vi": "du học",
+        "audio": null,
+        "note": "nhóm III · りゅうがくする"
+      },
+      {
+        "id": "v2111",
+        "jp": "むだ",
+        "romaji": "muda",
+        "vi": "lãng phí, vô ích (tính từ đuôi な)",
+        "audio": null
+      },
+      {
+        "id": "v2112",
+        "jp": "ふべん",
+        "kanji": "不便",
+        "romaji": "fuben",
+        "vi": "bất tiện (tính từ đuôi な)",
+        "audio": null
+      },
+      {
+        "id": "v2113",
+        "jp": "すごい",
+        "romaji": "sugoi",
+        "vi": "giỏi quá, tuyệt quá; ghê quá (tỏ ý ngạc nhiên)",
+        "audio": null
+      },
+      {
+        "id": "v2114",
+        "jp": "ほんとう",
+        "kanji": "本当",
+        "romaji": "hontou",
+        "vi": "thật, sự thật",
+        "audio": null
+      },
+      {
+        "id": "v2115",
+        "jp": "うそ",
+        "romaji": "uso",
+        "vi": "lời nói dối, chuyện không thật",
+        "audio": null
+      },
+      {
+        "id": "v2116",
+        "jp": "じどうしゃ",
+        "kanji": "自動車",
+        "romaji": "jidousha",
+        "vi": "ô tô",
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v2117",
+        "jp": "こうつう",
+        "kanji": "交通",
+        "romaji": "koutsuu",
+        "vi": "giao thông",
+        "audio": null
+      },
+      {
+        "id": "v2118",
+        "jp": "ぶっか",
+        "kanji": "物価",
+        "romaji": "bukka",
+        "vi": "vật giá, giá cả",
+        "audio": null
+      },
+      {
+        "id": "v2119",
+        "jp": "ほうそう",
+        "kanji": "放送",
+        "romaji": "housou",
+        "vi": "thông báo (qua loa), phát sóng",
+        "audio": null
+      },
+      {
+        "id": "v2120",
+        "jp": "ニュース",
+        "romaji": "nyuusu",
+        "vi": "tin tức",
+        "audio": null,
+        "image": "/icons/vocab/newspaper.svg"
+      },
+      {
+        "id": "v2121",
+        "jp": "アニメ",
+        "romaji": "anime",
+        "vi": "phim hoạt hình Nhật (anime)",
+        "audio": null,
+        "image": "/icons/vocab/television.svg"
+      },
+      {
+        "id": "v2122",
+        "jp": "マンガ",
+        "romaji": "manga",
+        "vi": "truyện tranh",
+        "audio": null,
+        "image": "/icons/vocab/open-book.svg"
+      },
+      {
+        "id": "v2123",
+        "jp": "デザイン",
+        "romaji": "dezain",
+        "vi": "thiết kế",
+        "audio": null
+      },
+      {
+        "id": "v2124",
+        "jp": "ゆめ",
+        "kanji": "夢",
+        "romaji": "yume",
+        "vi": "giấc mơ, ước mơ",
+        "audio": null
+      },
+      {
+        "id": "v2125",
+        "jp": "てんさい",
+        "kanji": "天才",
+        "romaji": "tensai",
+        "vi": "thiên tài",
+        "audio": null
+      },
+      {
+        "id": "v2126",
+        "jp": "しあい",
+        "kanji": "試合",
+        "romaji": "shiai",
+        "vi": "trận đấu (しあいを します: thi đấu)",
+        "audio": null,
+        "image": "/icons/vocab/soccer-ball.svg"
+      },
+      {
+        "id": "v2127",
+        "jp": "いけん",
+        "kanji": "意見",
+        "romaji": "iken",
+        "vi": "ý kiến",
+        "audio": null
+      },
+      {
+        "id": "v2128",
+        "jp": "はなし",
+        "kanji": "話",
+        "romaji": "hanashi",
+        "vi": "câu chuyện, bài nói (はなしを します: nói chuyện)",
+        "audio": null
+      },
+      {
+        "id": "v2129",
+        "jp": "ちきゅう",
+        "kanji": "地球",
+        "romaji": "chikyuu",
+        "vi": "trái đất",
+        "audio": null,
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
+      },
+      {
+        "id": "v2130",
+        "jp": "つき",
+        "kanji": "月",
+        "romaji": "tsuki",
+        "vi": "mặt trăng",
+        "audio": null
+      },
+      {
+        "id": "v2131",
+        "jp": "さいきん",
+        "kanji": "最近",
+        "romaji": "saikin",
+        "vi": "gần đây, dạo này",
+        "audio": null
+      },
+      {
+        "id": "v2132",
+        "jp": "たぶん",
+        "romaji": "tabun",
+        "vi": "có lẽ, chắc là",
+        "audio": null
+      },
+      {
+        "id": "v2133",
+        "jp": "きっと",
+        "romaji": "kitto",
+        "vi": "chắc chắn, nhất định",
+        "audio": null
+      },
+      {
+        "id": "v2134",
+        "jp": "ほんとうに",
+        "kanji": "本当に",
+        "romaji": "hontou ni",
+        "vi": "thật sự, thật là",
+        "audio": null
+      },
+      {
+        "id": "v2135",
+        "jp": "そんなに",
+        "romaji": "sonna ni",
+        "vi": "(không) … đến thế, (không) … lắm (đi với phủ định)",
+        "audio": null
+      },
+      {
+        "id": "v2136",
+        "jp": "〜に ついて",
+        "romaji": "~ni tsuite",
+        "vi": "về …",
+        "audio": null
+      },
+      {
+        "id": "v2137",
+        "jp": "ひさしぶりですね",
+        "kanji": "久しぶりですね",
+        "romaji": "hisashiburi desu ne",
+        "vi": "Lâu rồi mới gặp nhỉ.",
+        "audio": null
+      },
+      {
+        "id": "v2138",
+        "jp": "〜でも のみませんか",
+        "kanji": "〜でも 飲みませんか",
+        "romaji": "~demo nomimasen ka",
+        "vi": "Uống … hay gì đó không?",
+        "audio": null
+      },
+      {
+        "id": "v2139",
+        "jp": "もちろん",
+        "romaji": "mochiron",
+        "vi": "tất nhiên",
+        "audio": null
+      },
+      {
+        "id": "v2140",
+        "jp": "もう かえらないと……",
+        "kanji": "もう 帰らないと……",
+        "romaji": "mou kaeranai to",
+        "vi": "Tôi phải về rồi…",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2101",
+        "pattern": "〜と おもいます（đoán）",
+        "vi": "Tôi nghĩ là … (phỏng đoán; trước と là thể thông thường)",
+        "explain": "Đặt thể thông thường (bài 20) trước と おもいます để nói điều mình đoán. Ý phủ định đặt ở vế trước: こないと おもいます (tôi nghĩ là không đến). Danh từ và tính từ đuôi な thêm だ: いしゃだと おもいます. Hay đi với たぶん (có lẽ) và きっと (chắc chắn).",
+        "viMistake": "Hay giữ thể lịch sự trước と như ふりますと おもいます hoặc きましたと おもいます; trước と おもいます phải dùng thể thông thường: ふると, きたと. 'Tôi không nghĩ là anh ấy đến' hay bị dịch thành くると おもいません; câu này kém tự nhiên, người Nhật thường phủ định ở vế trước: こないと おもいます.",
+        "examples": [
+          {
+            "jp": "{会議|かいぎ}は もう {終|お}わったと {思|おも}います。",
+            "vi": "Tôi nghĩ cuộc họp đã kết thúc rồi.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {今日|きょう}の パーティーに {来|こ}ないと {思|おも}います。",
+            "vi": "Tôi nghĩ anh Tanaka sẽ không đến bữa tiệc hôm nay.",
+            "audio": null
+          },
+          {
+            "jp": "あの {人|ひと}は ナムさんの お{兄|にい}さんだと {思|おも}います。",
+            "vi": "Tôi nghĩ người kia là anh trai của anh Nam.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2102",
+        "pattern": "N に ついて どう おもいますか",
+        "vi": "Hỏi ý kiến về N; trả lời bằng 〜と おもいます",
+        "explain": "Hỏi ý kiến về một chủ đề: N に ついて どう おもいますか. Trả lời bằng thể thông thường + と おもいます. Đồng ý: わたしも そう おもいます; không đồng ý nhẹ nhàng: わたしは そう おもいません.",
+        "viMistake": "Dịch từng chữ 'bạn nghĩ gì về …' thành なにを おもいますか là sai; hỏi ý kiến phải dùng どう. Với tính từ đuôi な đừng quên だ: ふべんだと おもいます, không nói ふべんと おもいます.",
+        "examples": [
+          {
+            "jp": "この {学校|がっこう}の {食堂|しょくどう}に ついて どう {思|おも}いますか。",
+            "vi": "Bạn thấy nhà ăn của trường này thế nào?",
+            "audio": null
+          },
+          {
+            "jp": "この {町|まち}は バスが {少|すく}ないですから、{不便|ふべん}だと {思|おも}います。",
+            "vi": "Thị trấn này ít xe buýt nên tôi thấy bất tiện.",
+            "audio": null
+          },
+          {
+            "jp": "アニメは {日本語|にほんご}の {勉強|べんきょう}に {役|やく}に {立|た}つと {思|おも}います。",
+            "vi": "Tôi nghĩ anime có ích cho việc học tiếng Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2103",
+        "pattern": "「…」／〜と いいます",
+        "vi": "Nói rằng …; trích và thuật lại lời nói (thể thông thường + と)",
+        "explain": "Trích nguyên văn: đặt lời nói trong 「」 rồi thêm と いいます. Thuật lại ý: thể thông thường + と いいました. Người nghe lời nói đánh dấu bằng に: ははに 〜と いいました. Hỏi một từ nói thế nào: 「…」は 〜ごで なんと いいますか.",
+        "viMistake": "Tiếng Việt 'nói với mẹ' dễ dịch thành ははと いいました ('nói cùng mẹ'); người nghe lời nói dùng に: ははに いいました. Thuật lại ý (không có 「」) thì dùng thể thông thường: いくと いいました, không nói いきますと いいました.",
+        "examples": [
+          {
+            "jp": "「Cảm ơn」は {日本語|にほんご}で {何|なん}と {言|い}いますか。",
+            "vi": "'Cảm ơn' tiếng Nhật nói thế nào?",
+            "audio": null
+          },
+          {
+            "jp": "ハナさんは あしたの パーティーに {行|い}かないと {言|い}いました。",
+            "vi": "Chị Hana nói là sẽ không đi bữa tiệc ngày mai.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}は 「{宿題|しゅくだい}を {忘|わす}れないで ください」と {言|い}いました。",
+            "vi": "Thầy nói: 'Các em đừng quên bài tập nhé.'",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2104",
+        "pattern": "〜でしょう？（lên giọng）",
+        "vi": "… đúng không? (hỏi để người nghe xác nhận)",
+        "explain": "Khi nghĩ người nghe biết hoặc sẽ đồng ý, nói thể thông thường + でしょう？ và lên giọng ở cuối câu. Danh từ và tính từ đuôi な bỏ だ: ひまでしょう？ Người nghe trả lời ええ／はい hoặc いいえ.",
+        "viMistake": "Không nói ひまだでしょう？ hay がくせいだでしょう？; trước でしょう bỏ だ. Phải lên giọng ở cuối, hạ giọng thì câu nghe như lời phỏng đoán.",
+        "examples": [
+          {
+            "jp": "{日曜日|にちようび}は {暇|ひま}でしょう？",
+            "vi": "Chủ nhật bạn rảnh đúng không?",
+            "audio": null
+          },
+          {
+            "jp": "ハノイは バイクが {多|おお}いでしょう？",
+            "vi": "Hà Nội nhiều xe máy đúng không?",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは もう {昼|ひる}ご{飯|はん}を {食|た}べたでしょう？",
+            "vi": "Anh Nam ăn trưa rồi đúng không?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2105",
+        "pattern": "N1 で N2 が あります",
+        "vi": "Ở N1 diễn ra N2 (sự kiện); trong dịp N: N で",
+        "explain": "Khi N2 là sự kiện như lễ hội, buổi hòa nhạc, trận đấu, cuộc họp, あります nghĩa là 'diễn ra, được tổ chức' và nơi chốn dùng で. N (dịp, buổi) + で chỉ dịp mà hành động xảy ra: かいぎで, パーティーで, しあいで.",
+        "viMistake": "Quen mẫu bài 10 (ở đâu có gì) nên hay nói こうえんに おまつりが あります; với sự kiện phải dùng で: こうえんで おまつりが あります.",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ} フエで お{祭|まつ}りが あります。",
+            "vi": "Tháng sau ở Huế có lễ hội.",
+            "audio": null
+          },
+          {
+            "jp": "{来週|らいしゅう} みどり{大学|だいがく}で テニスの {試合|しあい}が あります。",
+            "vi": "Tuần sau ở Đại học Midori có trận đấu quần vợt.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}で {新|あたら}しい デザインに ついて {話|はな}しました。",
+            "vi": "Trong cuộc họp, chúng tôi đã bàn về thiết kế mới.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2106",
+        "pattern": "N でも／V ないと……",
+        "vi": "… hay gì đó không? / Phải … mới được",
+        "explain": "N でも nêu một thứ làm ví dụ khi rủ hay gợi ý, không bó buộc đúng thứ đó: えいがでも みませんか. V ないと…… là cách nói tắt của 〜ないと いけません, nghĩa gần như 〜なければ なりません (bài 17); hay dùng khi xin phép đi về.",
+        "viMistake": "でも ở đây không có nghĩa 'nhưng' như でも đứng đầu câu. Thấy ない trong かえらないと…… nên hay hiểu nhầm là 'không về'; thật ra nghĩa là 'phải về'.",
+        "examples": [
+          {
+            "jp": "{日曜日|にちようび}に {映画|えいが}でも {見|み}ませんか。",
+            "vi": "Chủ nhật đi xem phim hay gì đó không?",
+            "audio": null
+          },
+          {
+            "jp": "あしたは {試験|しけん}ですから、{勉強|べんきょう}しないと……。",
+            "vi": "Mai thi rồi nên tôi phải học thôi…",
+            "audio": null
+          },
+          {
+            "jp": "{雨|あめ}ですね。タクシーでも {呼|よ}びましょうか。",
+            "vi": "Mưa rồi nhỉ. Tôi gọi taxi hay gì đó nhé?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2101",
+        "type": "title",
+        "jp": "{第|だい}21{課|か}",
+        "vi": "Nói ý kiến, thuật lời và hỏi xác nhận"
+      },
+      {
+        "id": "s2102",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Dùng thể thông thường + と おもいます để đoán và nêu ý kiến.\n2. Trích và thuật lại lời nói: 〜と いいます.\n3. Hỏi để người nghe xác nhận: 〜でしょう？\n4. Nói nơi diễn ra sự kiện (N1で N2が あります), dịp (N で); dùng Nでも và Vないと……."
+      },
+      {
+        "id": "s2103",
+        "type": "vocab",
+        "refs": ["v2101", "v2102", "v2103", "v2104", "v2105", "v2106", "v2107", "v2108"],
+        "teacherNotes": "Đọc thể từ điển ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2104",
+        "type": "vocab",
+        "refs": ["v2109", "v2110", "v2111", "v2112", "v2113", "v2114", "v2115", "v2116"],
+        "teacherNotes": "Đọc thể từ điển ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2105",
+        "type": "vocab",
+        "refs": ["v2117", "v2118", "v2119", "v2120", "v2121", "v2122", "v2123", "v2124"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s2106",
+        "type": "vocab",
+        "refs": ["v2125", "v2126", "v2127", "v2128", "v2129", "v2130", "v2131", "v2132"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s2107",
+        "type": "vocab",
+        "refs": ["v2133", "v2134", "v2135", "v2136", "v2137", "v2138", "v2139", "v2140"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s2108",
+        "type": "grammar",
+        "ref": "g2101",
+        "teacherNotes": "Ôn thể thông thường ở bài 20 trước khi ghép với と おもいます."
+      },
+      {
+        "id": "s2109",
+        "type": "example",
+        "ref": "g2101",
+        "reveal": true
+      },
+      {
+        "id": "s2110",
+        "type": "table",
+        "title": "Thể thông thường + と おもいます",
+        "columns": ["Loại", "Lịch sự", "＋ と おもいます"],
+        "rows": [
+          ["Động từ", "{行|い}きます", "{行|い}くと {思|おも}います"],
+          ["V phủ định", "{行|い}きません", "{行|い}かないと {思|おも}います"],
+          ["V quá khứ", "{行|い}きました", "{行|い}ったと {思|おも}います"],
+          ["Tính từ い", "{高|たか}いです", "{高|たか}いと {思|おも}います"],
+          ["Tính từ な", "{便利|べんり}です", "{便利|べんり}だと {思|おも}います"],
+          ["Danh từ", "{雨|あめ}です", "{雨|あめ}だと {思|おも}います"],
+          ["N phủ định", "{雨|あめ}じゃ ありません", "{雨|あめ}じゃ ないと {思|おも}います"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhấn mạnh: danh từ và tính từ đuôi な thêm だ trước と おもいます."
+      },
+      {
+        "id": "s2111",
+        "type": "quiz",
+        "ref": "q2101"
+      },
+      {
+        "id": "s2112",
+        "type": "grammar",
+        "ref": "g2102",
+        "teacherNotes": "Hỏi từng học viên: ベトナムの 〜に ついて どう おもいますか."
+      },
+      {
+        "id": "s2113",
+        "type": "example",
+        "ref": "g2102",
+        "reveal": true
+      },
+      {
+        "id": "s2114",
+        "type": "table",
+        "title": "Luyện tập 1: nêu ý kiến",
+        "columns": ["Chủ đề", "Ý kiến mẫu"],
+        "rows": [
+          ["この {町|まち}の バス", "{少|すく}なくて、{不便|ふべん}だと {思|おも}います。"],
+          ["{日本|にほん}の アニメ", "とても おもしろいと {思|おも}います。"],
+          ["ハノイの {物価|ぶっか}", "{少|すこ}し {高|たか}く なったと {思|おも}います。"],
+          ["{会議|かいぎ}の {時間|じかん}", "{少|すこ}し {長|なが}いと {思|おも}います。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2115",
+        "type": "quiz",
+        "ref": "q2102"
+      },
+      {
+        "id": "s2116",
+        "type": "grammar",
+        "ref": "g2103",
+        "teacherNotes": "Phân biệt trích nguyên văn (có 「」) và thuật lại ý (thể thông thường)."
+      },
+      {
+        "id": "s2117",
+        "type": "example",
+        "ref": "g2103",
+        "reveal": true
+      },
+      {
+        "id": "s2118",
+        "type": "table",
+        "title": "Luyện tập 2: thuật lại lời nói",
+        "columns": ["Lời nói", "Thuật lại"],
+        "rows": [
+          [
+            "ナム: {来週|らいしゅう} {休|やす}みます",
+            "{来週|らいしゅう} {休|やす}むと {言|い}いました。"
+          ],
+          ["アン: {熱|ねつ}が あります", "{熱|ねつ}が あると {言|い}いました。"],
+          [
+            "リン: {試験|しけん}は {簡単|かんたん}でした",
+            "{試験|しけん}は {簡単|かんたん}だったと {言|い}いました。"
+          ],
+          ["ハナ: {眠|ねむ}いです", "{眠|ねむ}いと {言|い}いました。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Thời của lời nói giữ nguyên: でした → だった."
+      },
+      {
+        "id": "s2119",
+        "type": "quiz",
+        "ref": "q2103"
+      },
+      {
+        "id": "s2120",
+        "type": "grammar",
+        "ref": "g2104",
+        "teacherNotes": "Đọc mẫu với giọng lên ở cuối; so với giọng xuống (lời đoán, bài 32)."
+      },
+      {
+        "id": "s2121",
+        "type": "example",
+        "ref": "g2104",
+        "reveal": true
+      },
+      {
+        "id": "s2122",
+        "type": "table",
+        "title": "Thể thông thường + でしょう？",
+        "columns": ["Loại", "Thể thường", "＋ でしょう？"],
+        "rows": [
+          ["Động từ", "{知|し}って いる", "{知|し}って いるでしょう？"],
+          ["V quá khứ", "{見|み}た", "{見|み}たでしょう？"],
+          ["Tính từ い", "{寒|さむ}い", "{寒|さむ}いでしょう？"],
+          ["Tính từ な", "{暇|ひま}だ", "{暇|ひま}でしょう？"],
+          ["Danh từ", "{休|やす}みだ", "{休|やす}みでしょう？"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Tính từ đuôi な và danh từ bỏ だ trước でしょう."
+      },
+      {
+        "id": "s2123",
+        "type": "quiz",
+        "ref": "q2104"
+      },
+      {
+        "id": "s2124",
+        "type": "grammar",
+        "ref": "g2105",
+        "teacherNotes": "So sánh với bài 10: こうえんに いけが あります (vật) và こうえんで おまつりが あります (sự kiện)."
+      },
+      {
+        "id": "s2125",
+        "type": "example",
+        "ref": "g2105",
+        "reveal": true
+      },
+      {
+        "id": "s2126",
+        "type": "table",
+        "title": "Luyện tập 3: ở đâu diễn ra gì",
+        "columns": ["Nơi", "Sự kiện", "Câu mẫu"],
+        "rows": [
+          ["ホイアン", "お{祭|まつ}り", "ホイアンで お{祭|まつ}りが あります。"],
+          ["{大学|だいがく}", "コンサート", "{大学|だいがく}で コンサートが あります。"],
+          [
+            "{会議室|かいぎしつ}",
+            "{会議|かいぎ}",
+            "{会議室|かいぎしつ}で {会議|かいぎ}が あります。"
+          ],
+          ["{公園|こうえん}", "{試合|しあい}", "{公園|こうえん}で {試合|しあい}が あります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2127",
+        "type": "quiz",
+        "ref": "q2105"
+      },
+      {
+        "id": "s2128",
+        "type": "grammar",
+        "ref": "g2106",
+        "teacherNotes": "Cho học viên rủ nhau bằng 〜でも 〜ませんか rồi từ chối bằng 〜ないと……."
+      },
+      {
+        "id": "s2129",
+        "type": "example",
+        "ref": "g2106",
+        "reveal": true
+      },
+      {
+        "id": "s2130",
+        "type": "quiz",
+        "ref": "q2106"
+      },
+      {
+        "id": "s2131",
+        "type": "dialogue",
+        "title": "Hội thoại 1: lễ hội cuối tuần",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{土曜日|どようび}に ホイアンで お{祭|まつ}りが ありますね。",
+            "vi": "Thứ Bảy này ở Hội An có lễ hội nhỉ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "ええ。ナムさんも {行|い}くでしょう？",
+            "vi": "Ừ. Anh Nam cũng đi đúng không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{行|い}きたいですが、{天気|てんき}が ちょっと {心配|しんぱい}です。",
+            "vi": "Tôi muốn đi nhưng hơi lo thời tiết."
+          },
+          {
+            "speaker": "リン",
+            "jp": "ニュースで {雨|あめ}は {降|ふ}らないと {言|い}って いましたよ。",
+            "vi": "Bản tin nói là trời không mưa đâu."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "そうですか。じゃ、いっしょに {行|い}きましょう。",
+            "vi": "Vậy à. Thế thì mình đi cùng nhau nhé."
+          },
+          {
+            "speaker": "リン",
+            "jp": "きっと {楽|たの}しいと {思|おも}います。",
+            "vi": "Chắc chắn sẽ vui lắm."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2132",
+        "type": "dialogue",
+        "title": "Hội thoại 2: lời dặn của thầy",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "きのう {先生|せんせい}は {何|なん}と {言|い}いましたか。",
+            "vi": "Hôm qua thầy đã nói gì vậy?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{金曜日|きんようび}に {漢字|かんじ}の {試験|しけん}が あると {言|い}いました。",
+            "vi": "Thầy nói là thứ Sáu có bài thi chữ Hán."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{試験|しけん}は {何時|なんじ}からですか。",
+            "vi": "Bài thi bắt đầu lúc mấy giờ?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "9{時|じ}からです。「{辞書|じしょ}は {要|い}りません」と {言|い}いました。",
+            "vi": "Từ 9 giờ. Thầy nói: 'Không cần từ điển.'"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "ありがとう。{今晩|こんばん} {勉強|べんきょう}しないと……。",
+            "vi": "Cảm ơn nhé. Tối nay mình phải học thôi…"
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2133",
+        "type": "dialogue",
+        "title": "Hội thoại 3: giao thông Hà Nội",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ハノイの {交通|こうつう}に ついて どう {思|おも}いますか。",
+            "vi": "Anh thấy giao thông ở Hà Nội thế nào?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "バイクが {多|おお}くて、ちょっと {危|あぶ}ないと {思|おも}います。",
+            "vi": "Xe máy nhiều nên tôi thấy hơi nguy hiểm."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "でも、バスは {安|やす}くて {便利|べんり}でしょう？",
+            "vi": "Nhưng xe buýt rẻ và tiện đúng không?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "ええ。でも、ちょっと {遅|おそ}いと {思|おも}います。",
+            "vi": "Vâng. Nhưng tôi thấy hơi chậm."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "そうですか。あ、もう 6{時|じ}ですね。{帰|かえ}らないと……。",
+            "vi": "Vậy à. Ôi, 6 giờ rồi. Tôi phải về thôi…"
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2134",
+        "type": "table",
+        "title": "Luyện tập 4: tổng hợp",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["たぶん・{雨|あめ}・đoán", "たぶん {雨|あめ}だと {思|おも}います。"],
+          ["あした {来|き}ます・thuật lại", "あした {来|く}ると {言|い}いました。"],
+          ["{今晩|こんばん}・{暇|ひま}・xác nhận", "{今晩|こんばん}は {暇|ひま}でしょう？"],
+          ["ホテル・パーティー", "ホテルで パーティーが あります。"],
+          ["お{茶|ちゃ}・{飲|の}みます・rủ", "お{茶|ちゃ}でも {飲|の}みませんか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2135",
+        "type": "quiz",
+        "ref": "q2107"
+      },
+      {
+        "id": "s2136",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "Thể thông thường + と おもいます: đoán, nêu ý kiến (N／tính từ な + だ).\nN に ついて どう おもいますか: hỏi ý kiến; わたしも そう おもいます.\n「câu」／thể thông thường + と いいます: trích, thuật lời nói.\nThể thông thường + でしょう？: hỏi xác nhận, lên giọng (N／tính từ な bỏ だ).\nN1で N2が あります: sự kiện diễn ra ở N1; N で: trong dịp N.\nNでも V ませんか: rủ nhẹ nhàng; Vないと……: phải … thôi."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2101",
+        "prompt": "Chọn câu đúng: Tôi nghĩ ngày mai anh Nam sẽ không đến.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Trước と おもいます dùng thể thông thường: きます → こない.",
+        "type": "choice",
+        "options": [
+          "ナムさんは あした きませんと おもいます。",
+          "ナムさんは あした こないと おもいます。",
+          "ナムさんは あした きないと おもいます。",
+          "ナムさんは あした こなかったと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2102",
+        "prompt": "Chọn câu hỏi đúng: Bạn thấy anime Nhật thế nào?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Hỏi ý kiến: N に ついて どう おもいますか (không dùng なにを).",
+        "type": "choice",
+        "options": [
+          "にほんの アニメに ついて なにを おもいますか。",
+          "にほんの アニメを ついて どう おもいますか。",
+          "にほんの アニメに ついて どう おもいますか。",
+          "にほんの アニメに ついて どうを おもいますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2103",
+        "prompt": "Chọn câu đúng: Chị An nói là ngày mai sẽ nghỉ.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Thuật lại lời nói: thể thông thường + と いいました; việc ngày mai dùng やすむ.",
+        "type": "choice",
+        "options": [
+          "アンさんは あした やすむと いいました。",
+          "アンさんは あした やすみますを いいました。",
+          "アンさんは あした やすむを いいました。",
+          "アンさんは あした やすんだと いいました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2104",
+        "prompt": "Hỏi để người nghe xác nhận: Phòng của anh Nam yên tĩnh đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Tính từ đuôi な bỏ だ trước でしょう: しずかでしょう？",
+        "type": "choice",
+        "options": [
+          "ナムさんの へやは しずかだでしょう？",
+          "ナムさんの へやは しずかなでしょう？",
+          "ナムさんの へやは しずかですでしょう？",
+          "ナムさんの へやは しずかでしょう？"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2105",
+        "prompt": "らいしゅう こうえん（　）コンサートが あります。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Sự kiện diễn ra ở đâu dùng で: こうえんで コンサートが あります.",
+        "type": "choice",
+        "options": ["に", "で", "を", "が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2106",
+        "prompt": "Rủ bạn: 'Uống cà phê hay gì đó không?'",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "N でも V ませんか: rủ nhẹ nhàng, nêu một thứ làm ví dụ.",
+        "type": "choice",
+        "options": [
+          "コーヒーが のみませんか。",
+          "コーヒーでもを のみませんか。",
+          "コーヒーでも のみませんか。",
+          "コーヒーでは のみませんか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2107",
+        "prompt": "Chọn câu đúng: Thầy nói rằng tiếng Nhật không khó.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Phủ định của tính từ đuôi い: むずかしい → むずかしくない, rồi + と いいました.",
+        "type": "choice",
+        "options": [
+          "せんせいは にほんごは むずかしくないと いいました。",
+          "せんせいは にほんごは むずかしくないを いいました。",
+          "せんせいは にほんごは むずかしいじゃないと いいました。",
+          "せんせいは にほんごは むずかしいくないと いいました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2108",
+        "prompt": "Chọn câu đúng: Tôi nghĩ anh Tanaka đã ra ngoài rồi.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Quá khứ thể thông thường: でかけました → でかけた, rồi + と おもいます.",
+        "type": "choice",
+        "options": [
+          "たなかさんは もう でかけますと おもいます。",
+          "たなかさんは もう でかけましたと おもいます。",
+          "たなかさんは もう でかけたを おもいます。",
+          "たなかさんは もう でかけたと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2109",
+        "prompt": "Chọn câu đúng: Tôi nghĩ người kia là bác sĩ.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Danh từ + だ + と おもいます.",
+        "type": "choice",
+        "options": [
+          "あの ひとは いしゃだと おもいます。",
+          "あの ひとは いしゃのと おもいます。",
+          "あの ひとは いしゃですと おもいます。",
+          "あの ひとは いしゃなと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2110",
+        "prompt": "Chọn câu đúng: Tôi nghĩ chỗ này bất tiện.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Tính từ đuôi な + だ + と おもいます: ふべんだと おもいます.",
+        "type": "choice",
+        "options": [
+          "ここは ふべんですだと おもいます。",
+          "ここは ふべんなと おもいます。",
+          "ここは ふべんだと おもいます。",
+          "ここは ふべんでと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2111",
+        "prompt": "Chọn câu đúng: Tôi nghĩ chiếc ô tô này đắt.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Tính từ đuôi い đứng ngay trước と, không thêm だ.",
+        "type": "choice",
+        "options": [
+          "この じどうしゃは たかいだと おもいます。",
+          "この じどうしゃは たかいと おもいます。",
+          "この じどうしゃは たかくと おもいます。",
+          "この じどうしゃは たかいですだと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2112",
+        "prompt": "Chọn câu đúng: Tôi nghĩ chị Hana không biết số điện thoại của tôi.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "しります → thể ない là しらない; trước と おもいます không dùng thể lịch sự.",
+        "type": "choice",
+        "options": [
+          "ハナさんは わたしの でんわばんごうを しりませんと おもいます。",
+          "ハナさんは わたしの でんわばんごうを しりないと おもいます。",
+          "ハナさんは わたしの でんわばんごうを しらなくと おもいます。",
+          "ハナさんは わたしの でんわばんごうを しらないと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2113",
+        "prompt": "さいきん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "さいきん: gần đây, dạo này.",
+        "type": "choice",
+        "options": ["gần đây, dạo này", "có lẽ", "chắc chắn", "thật sự"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2114",
+        "prompt": "Bạn bè nói: この みせの りょうりは おいしいと おもいます。Bạn đồng ý, bạn nói gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Đồng ý: わたしも そう おもいます; わたしは そう おもいません là không đồng ý.",
+        "type": "choice",
+        "options": [
+          "わたしも そうと おもいます。",
+          "わたしも どう おもいます。",
+          "わたしも そう おもいます。",
+          "わたしは そう おもいません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2115",
+        "prompt": "Trong cuộc họp, bạn nói: 'Tôi nghĩ việc này lãng phí thời gian.'",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "じかんの むだ là cụm danh từ nên trước と おもいます thêm だ: これは じかんの むだだと おもいます.",
+        "type": "choice",
+        "options": [
+          "これは じかんの むだなと おもいます。",
+          "これは じかんの むだだと おもいます。",
+          "これは じかんの むだいと おもいます。",
+          "これは じかんの むだですと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2116",
+        "prompt": "Câu もう かえらないと…… có nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "V ないと…… là cách nói tắt của V ないと いけません: phải ….",
+        "type": "choice",
+        "options": ["Tôi không về nữa.", "Tôi chưa muốn về.", "Nếu về thì…", "Tôi phải về rồi."],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2117",
+        "prompt": "Chọn câu hỏi đúng: 'Tạm biệt' tiếng Nhật nói thế nào?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Hỏi cách nói: 「…」は 〜ごで なんと いいますか.",
+        "type": "choice",
+        "options": [
+          "「tạm biệt」は にほんごで なんと いいますか。",
+          "「tạm biệt」は にほんごで なにを いいますか。",
+          "「tạm biệt」は にほんごで なんに いいますか。",
+          "「tạm biệt」は にほんごを なんと いいますか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2118",
+        "prompt": "Chọn câu đúng: Về đến nhà, tôi đã nói 'ただいま'.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Lời được trích đặt trong 「」 và đi với と: 「ただいま」と いいました.",
+        "type": "choice",
+        "options": [
+          "うちへ かえって、「ただいま」に いいました。",
+          "うちへ かえって、「ただいま」で いいました。",
+          "うちへ かえって、「ただいま」と いいました。",
+          "うちへ かえって、「ただいま」が いいました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2119",
+        "prompt": "Chọn câu đúng: Chị Linh nói là hôm qua đã gặp thầy.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Việc đã xảy ra dùng thể た: あった. Gặp ai dùng に.",
+        "type": "choice",
+        "options": [
+          "リンさんは きのう せんせいに あうと いいました。",
+          "リンさんは きのう せんせいに あったと いいました。",
+          "リンさんは きのう せんせいに あってと いいました。",
+          "リンさんは きのう せんせいを あったと いいました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2120",
+        "prompt": "わたしは はは（　）おそく かえると いいました。(nói với mẹ)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Người nghe lời nói đánh dấu bằng に: ははに 〜と いいました.",
+        "type": "choice",
+        "options": ["を", "で", "の", "に"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2121",
+        "prompt": "Hỏi xác nhận: Hôm nay thứ Bảy nên công ty nghỉ đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Danh từ bỏ だ trước でしょう: やすみでしょう？",
+        "type": "choice",
+        "options": [
+          "きょうは どようびですから、かいしゃは やすみでしょう？",
+          "きょうは どようびですから、かいしゃは やすみだでしょう？",
+          "きょうは どようびですから、かいしゃは やすみなでしょう？",
+          "きょうは どようびですから、かいしゃは やすみですでしょう？"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2122",
+        "prompt": "Hỏi xác nhận: Tối qua bạn đã xem tin tức đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "みます → thể た みた, rồi + でしょう？",
+        "type": "choice",
+        "options": [
+          "きのうの ばん、ニュースを みったでしょう？",
+          "きのうの ばん、ニュースを みるでしょう？",
+          "きのうの ばん、ニュースを みたでしょう？",
+          "きのうの ばん、ニュースを みたでしたでしょう？"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2123",
+        "prompt": "Câu リンさんも くるでしょう？ (lên giọng ở cuối) dùng để làm gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "でしょう？ lên giọng: người nói nghĩ là đúng và muốn người nghe xác nhận.",
+        "type": "choice",
+        "options": [
+          "Rủ người nghe đi cùng",
+          "Hỏi để người nghe xác nhận điều mình nghĩ",
+          "Ra lệnh cho người nghe",
+          "Kể việc mình đã làm"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2124",
+        "prompt": "Hỏi xác nhận: Thứ Sáu ở công ty có cuộc họp đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Sự kiện diễn ra ở đâu dùng で; ある là thể thông thường, đứng ngay trước でしょう？",
+        "type": "choice",
+        "options": [
+          "きんようびに かいしゃに かいぎが あるでしょう？",
+          "きんようびに かいしゃで かいぎを あるでしょう？",
+          "きんようびに かいしゃで かいぎが あるだでしょう？",
+          "きんようびに かいしゃで かいぎが あるでしょう？"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2125",
+        "prompt": "Chọn câu đúng: Tại bữa tiệc, tôi đã gặp anh Tanaka.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "N（dịp）で: パーティーで chỉ dịp xảy ra hành động.",
+        "type": "choice",
+        "options": [
+          "パーティーで たなかさんに あいました。",
+          "パーティーに たなかさんに あいました。",
+          "パーティーを たなかさんに あいました。",
+          "パーティーが たなかさんに あいました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2126",
+        "prompt": "Hỏi: Cuộc họp ngày mai diễn ra ở đâu?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Cuộc họp là sự kiện nên hỏi nơi diễn ra bằng どこで ありますか.",
+        "type": "choice",
+        "options": [
+          "あしたの かいぎは どこに ありますか。",
+          "あしたの かいぎは どこが ありますか。",
+          "あしたの かいぎは どこで ありますか。",
+          "あしたの かいぎは どこを ありますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2127",
+        "prompt": "Đã 10 giờ rồi, bạn nói: 'Tôi phải đi ngủ thôi…'",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ねます là nhóm II: ねない → ねないと…… (phải ngủ).",
+        "type": "choice",
+        "options": [
+          "もう じゅうじですね。ねるないと……。",
+          "もう じゅうじですね。ねないと……。",
+          "もう じゅうじですね。ねなくと……。",
+          "もう じゅうじですね。ねらないと……。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2128",
+        "prompt": "やくに たちます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "やくに たちます: có ích.",
+        "type": "choice",
+        "options": ["thắng", "cẩn thận", "thôi, bỏ", "có ích"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2129",
+        "prompt": "やめます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "やめます: thôi, bỏ; かいしゃを やめます: nghỉ việc ở công ty.",
+        "type": "choice",
+        "options": ["thôi, bỏ (việc)", "chạy, hoạt động", "chú ý", "du học"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2130",
+        "prompt": "りゅうがくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "りゅうがくします: du học.",
+        "type": "choice",
+        "options": ["đi công tác", "làm thêm giờ", "du học", "ra ngoài"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2131",
+        "prompt": "ふべん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ふべん (な): bất tiện; trái nghĩa với べんり.",
+        "type": "choice",
+        "options": ["tiện lợi", "bất tiện", "lãng phí", "nguy hiểm"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2132",
+        "prompt": "むだ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "むだ (な): lãng phí, vô ích.",
+        "type": "choice",
+        "options": ["thật", "tuyệt vời", "bất tiện", "lãng phí"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2133",
+        "prompt": "ほうそう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ほうそう: thông báo qua loa, phát sóng.",
+        "type": "choice",
+        "options": ["thông báo, phát sóng", "tin tức", "giao thông", "thiết kế"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2134",
+        "prompt": "こうつう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "こうつう: giao thông.",
+        "type": "choice",
+        "options": ["vật giá", "ô tô", "giao thông", "trái đất"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2135",
+        "prompt": "ちきゅう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ちきゅう: trái đất; つき: mặt trăng.",
+        "type": "choice",
+        "options": ["mặt trăng", "trái đất", "giấc mơ", "trận đấu"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2136",
+        "prompt": "Câu ひさしぶりですね dùng khi nào?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ひさしぶりですね: lâu rồi mới gặp nhỉ.",
+        "type": "choice",
+        "options": [
+          "Khi chào tạm biệt",
+          "Khi xin lỗi",
+          "Khi cảm ơn",
+          "Khi gặp lại người lâu rồi không gặp"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2137",
+        "prompt": "そんなに trong câu この みせは そんなに とおくないです nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "そんなに + phủ định: không … đến thế, không … lắm.",
+        "type": "choice",
+        "options": ["(không) … lắm", "rất", "chắc chắn", "gần đây"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2138",
+        "prompt": "もちろん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "もちろん: tất nhiên.",
+        "type": "choice",
+        "options": ["có lẽ", "gần đây", "tất nhiên", "thật sự"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2139",
+        "prompt": "Câu nào dùng あります với nghĩa 'diễn ra, được tổ chức'?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Sự kiện (しあい) + が あります, nơi chốn dùng で.",
+        "type": "choice",
+        "options": [
+          "つくえの うえに ほんが あります。",
+          "らいげつ ダナンで しあいが あります。",
+          "わたしは じかんが あります。",
+          "あそこに ぎんこうが あります。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2140",
+        "prompt": "Chọn câu đúng: Tôi nghĩ hôm nay không phải ngày nghỉ.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Phủ định của danh từ ở thể thông thường: やすみじゃ ない, rồi + と おもいます.",
+        "type": "choice",
+        "options": [
+          "きょうは やすみないと おもいます。",
+          "きょうは やすみだないと おもいます。",
+          "きょうは やすみじゃ ありませんだと おもいます。",
+          "きょうは やすみじゃ ないと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2141",
+        "prompt": "Đổi うごきません sang thể thông thường: この パソコンは もう （　　）と おもいます。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "うごきます → thể ない: うごかない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["うごかない"]
+      },
+      {
+        "id": "q2142",
+        "prompt": "Đổi かちます sang thể thông thường: あしたの しあいは ベトナムが （　　）と おもいます。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Thể từ điển của かちます là かつ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かつ"]
+      },
+      {
+        "id": "q2143",
+        "prompt": "Đổi かえりました sang thể thông thường: たなかさんは せんしゅう くにへ （　　）と いいました。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "かえります → thể た: かえった.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かえった"]
+      },
+      {
+        "id": "q2144",
+        "prompt": "Đổi まけました sang thể thông thường: リンさんは しあいに （　　）と いいました。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "まけます là nhóm II: thể た まけた.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まけた"]
+      },
+      {
+        "id": "q2145",
+        "prompt": "Điền: さむいですから、かぜに きを （　　） ください。(hãy cẩn thận)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "きを つけます → thể て: きを つけて ください.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["つけて"]
+      },
+      {
+        "id": "q2146",
+        "prompt": "Điền từ: （　　） ナムさんも パーティーに くると おもいます。(chắc chắn)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "きっと: chắc chắn; たぶん: có lẽ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きっと"]
+      },
+      {
+        "id": "q2147",
+        "prompt": "Điền từ: （　　） リンさんは いま うちに いると おもいます。(có lẽ)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "たぶん: có lẽ, chắc là.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たぶん"]
+      },
+      {
+        "id": "q2148",
+        "prompt": "Điền từ: かいぎで みんなの （　　）を ききました。(ý kiến)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "いけん: ý kiến.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いけん"]
+      },
+      {
+        "id": "q2149",
+        "prompt": "Điền từ: さいきん （　　）が たかく なりましたね。(vật giá)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ぶっか: vật giá, giá cả.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ぶっか"]
+      },
+      {
+        "id": "q2150",
+        "prompt": "Điền từ: この こどもは まだ 5さいですが、ピアノが とても じょうずです。（　　）だと おもいます。(thiên tài)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "てんさい: thiên tài.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["てんさい"]
+      }
+    ]
+  }
+}

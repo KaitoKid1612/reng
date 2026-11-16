@@ -1,0 +1,1402 @@
+{
+  "id": "minna-1-23",
+  "title": "Bài 23 – Khi … (とき), hễ … thì … (と) và chỉ đường",
+  "titleJa": "第23課　さびしい とき",
+  "summary": "Theo trình tự bài 23 Minna no Nihongo Sơ cấp I (bản 2): động từ thể từ điển／thể ない + とき, phân biệt V る とき và V た とき, tính từ và danh từ + とき, V る と cho kết quả tất yếu và cách dùng máy, chỉ đường bằng V る と、N が あります và N を với động từ di chuyển. Ví dụ, hội thoại và bài tập đều là nội dung gốc.",
+  "order": 23,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2301",
+        "jp": "ききます",
+        "kanji": "聞きます",
+        "romaji": "kikimasu",
+        "vi": "hỏi (thầy giáo): せんせいに ききます",
+        "audio": null,
+        "note": "nhóm I · きく"
+      },
+      {
+        "id": "v2302",
+        "jp": "まわします",
+        "kanji": "回します",
+        "romaji": "mawashimasu",
+        "vi": "vặn, xoay",
+        "audio": null,
+        "note": "nhóm I · まわす"
+      },
+      {
+        "id": "v2303",
+        "jp": "ひきます",
+        "kanji": "引きます",
+        "romaji": "hikimasu",
+        "vi": "kéo",
+        "audio": null,
+        "note": "nhóm I · ひく"
+      },
+      {
+        "id": "v2304",
+        "jp": "かえます",
+        "kanji": "変えます",
+        "romaji": "kaemasu",
+        "vi": "đổi, thay đổi",
+        "audio": null,
+        "note": "nhóm II · かえる"
+      },
+      {
+        "id": "v2305",
+        "jp": "さわります",
+        "kanji": "触ります",
+        "romaji": "sawarimasu",
+        "vi": "sờ, chạm (vào): ドアに さわります",
+        "audio": null,
+        "note": "nhóm I · さわる"
+      },
+      {
+        "id": "v2306",
+        "jp": "でます",
+        "kanji": "出ます",
+        "romaji": "demasu",
+        "vi": "ra, chảy ra (tiền thừa, nước): おつりが でます",
+        "audio": null,
+        "note": "nhóm II · でる"
+      },
+      {
+        "id": "v2307",
+        "jp": "あるきます",
+        "kanji": "歩きます",
+        "romaji": "arukimasu",
+        "vi": "đi bộ: みちを あるきます",
+        "audio": null,
+        "note": "nhóm I · あるく",
+        "image": "/icons/vocab/person-walking.svg"
+      },
+      {
+        "id": "v2308",
+        "jp": "わたります",
+        "kanji": "渡ります",
+        "romaji": "watarimasu",
+        "vi": "băng qua, đi qua (cầu, đường): はしを わたります",
+        "audio": null,
+        "note": "nhóm I · わたる"
+      },
+      {
+        "id": "v2309",
+        "jp": "まがります",
+        "kanji": "曲がります",
+        "romaji": "magarimasu",
+        "vi": "rẽ: みぎへ まがります",
+        "audio": null,
+        "note": "nhóm I · まがる"
+      },
+      {
+        "id": "v2310",
+        "jp": "さびしい",
+        "kanji": "寂しい",
+        "romaji": "sabishii",
+        "vi": "cô đơn, buồn (vì xa người thân)",
+        "audio": null
+      },
+      {
+        "id": "v2311",
+        "jp": "おゆ",
+        "kanji": "お湯",
+        "romaji": "oyu",
+        "vi": "nước nóng",
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v2312",
+        "jp": "おと",
+        "kanji": "音",
+        "romaji": "oto",
+        "vi": "âm thanh, tiếng",
+        "audio": null,
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v2313",
+        "jp": "サイズ",
+        "romaji": "saizu",
+        "vi": "cỡ, kích cỡ",
+        "audio": null
+      },
+      {
+        "id": "v2314",
+        "jp": "こしょう",
+        "kanji": "故障",
+        "romaji": "koshou",
+        "vi": "hỏng, trục trặc (こしょうします: bị hỏng)",
+        "audio": null
+      },
+      {
+        "id": "v2315",
+        "jp": "みち",
+        "kanji": "道",
+        "romaji": "michi",
+        "vi": "đường, con đường",
+        "audio": null
+      },
+      {
+        "id": "v2316",
+        "jp": "こうさてん",
+        "kanji": "交差点",
+        "romaji": "kousaten",
+        "vi": "ngã tư, giao lộ",
+        "audio": null
+      },
+      {
+        "id": "v2317",
+        "jp": "しんごう",
+        "kanji": "信号",
+        "romaji": "shingou",
+        "vi": "đèn giao thông",
+        "audio": null
+      },
+      {
+        "id": "v2318",
+        "jp": "かど",
+        "kanji": "角",
+        "romaji": "kado",
+        "vi": "góc (phố)",
+        "audio": null
+      },
+      {
+        "id": "v2319",
+        "jp": "はし",
+        "kanji": "橋",
+        "romaji": "hashi",
+        "vi": "cây cầu (khác はし: đôi đũa ở bài 7)",
+        "audio": null
+      },
+      {
+        "id": "v2320",
+        "jp": "ちゅうしゃじょう",
+        "kanji": "駐車場",
+        "romaji": "chuushajou",
+        "vi": "bãi đỗ xe",
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v2321",
+        "jp": "たてもの",
+        "kanji": "建物",
+        "romaji": "tatemono",
+        "vi": "tòa nhà, công trình",
+        "audio": null,
+        "image": "/icons/vocab/office-building.svg"
+      },
+      {
+        "id": "v2322",
+        "jp": "なんかいも",
+        "kanji": "何回も",
+        "romaji": "nankai mo",
+        "vi": "nhiều lần",
+        "audio": null
+      },
+      {
+        "id": "v2323",
+        "jp": "〜め",
+        "kanji": "〜目",
+        "romaji": "~me",
+        "vi": "thứ … (ふたつめ: thứ hai)",
+        "audio": null
+      },
+      {
+        "id": "v2324",
+        "jp": "〜とき",
+        "kanji": "〜時",
+        "romaji": "~toki",
+        "vi": "khi …, lúc …",
+        "audio": null
+      },
+      {
+        "id": "v2325",
+        "jp": "どんな とき",
+        "kanji": "どんな 時",
+        "romaji": "donna toki",
+        "vi": "khi nào, trong trường hợp nào",
+        "audio": null
+      },
+      {
+        "id": "v2326",
+        "jp": "〜と、〜",
+        "romaji": "~to, ~",
+        "vi": "hễ … thì …; … thì (kết quả tự nhiên)",
+        "audio": null
+      },
+      {
+        "id": "v2327",
+        "jp": "おします",
+        "kanji": "押します",
+        "romaji": "oshimasu",
+        "vi": "bấm, ấn, đẩy: ボタンを おします (ôn bài 16)",
+        "audio": null,
+        "note": "nhóm I · おす"
+      },
+      {
+        "id": "v2328",
+        "jp": "ボタン",
+        "romaji": "botan",
+        "vi": "nút bấm (ôn bài 16)",
+        "audio": null
+      },
+      {
+        "id": "v2329",
+        "jp": "うごきます",
+        "kanji": "動きます",
+        "romaji": "ugokimasu",
+        "vi": "chạy, chuyển động (máy móc, xe) (ôn bài 21)",
+        "audio": null,
+        "note": "nhóm I · うごく"
+      },
+      {
+        "id": "v2330",
+        "jp": "きを つけます",
+        "kanji": "気を つけます",
+        "romaji": "ki o tsukemasu",
+        "vi": "chú ý, cẩn thận (ôn bài 21)",
+        "audio": null,
+        "note": "nhóm II · きを つける"
+      },
+      {
+        "id": "v2331",
+        "jp": "まっすぐ",
+        "romaji": "massugu",
+        "vi": "thẳng (ôn bài 14)",
+        "audio": null
+      },
+      {
+        "id": "v2332",
+        "jp": "さんぽします",
+        "kanji": "散歩します",
+        "romaji": "sanpo shimasu",
+        "vi": "đi dạo (nơi đi dạo dùng を) (ôn bài 13)",
+        "audio": null,
+        "note": "nhóm III · さんぽする"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2301",
+        "pattern": "V（thể từ điển／thể ない）とき、〜",
+        "vi": "Khi …, lúc …",
+        "explain": "とき là danh từ 'lúc, khi', nên đứng trước nó là thể thường: thể từ điển hoặc thể ない. Vế trước とき nói thời điểm, vế sau là việc chính. Chủ ngữ của vế とき dùng が, không dùng は. Câu ở hiện tại hay quá khứ là do động từ cuối câu quyết định.",
+        "viMistake": "Hay giữ thể lịch sự trước とき: nói わかりません とき là sai, phải nói わからない とき. Cũng không thêm の sau động từ: いくの とき là sai.",
+        "examples": [
+          {
+            "jp": "{雨|あめ}が {降|ふ}らない とき、{歩|ある}いて {学校|がっこう}へ {行|い}きます。",
+            "vi": "Những hôm trời không mưa, tôi đi bộ đến trường.",
+            "audio": null
+          },
+          {
+            "jp": "{電車|でんしゃ}に {乗|の}る とき、この カードを {使|つか}います。",
+            "vi": "Khi lên tàu điện, tôi dùng thẻ này.",
+            "audio": null
+          },
+          {
+            "jp": "{母|はは}が {来|く}る とき、{部屋|へや}を {掃除|そうじ}します。",
+            "vi": "Trước khi mẹ đến chơi, tôi dọn phòng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2302",
+        "pattern": "V る とき／V た とき",
+        "vi": "Thứ tự hai hành động",
+        "explain": "Thể của động từ trước とき cho biết thứ tự, không phải thì của cả câu. V る とき: lúc làm vế sau, việc V chưa xảy ra hoặc chưa xong (vế sau làm trước, hoặc trên đường đi). V た とき: việc V đã xong rồi mới đến vế sau. Kể chuyện đã qua vẫn có thể dùng V る とき.",
+        "viMistake": "Người Việt hay nghĩ chuyện quá khứ thì trước とき phải là thể た. 'Lúc về nước, tôi mua quà ở sân bay Nhật' phải nói かえる とき (mua trước khi bay); かえった とき nghĩa là mua sau khi đã về tới nơi.",
+        "examples": [
+          {
+            "jp": "{国|くに}へ {帰|かえ}る とき、{空港|くうこう}で お{土産|みやげ}を {買|か}いました。",
+            "vi": "Lúc về nước, tôi mua quà ở sân bay (bên Nhật, trước khi bay).",
+            "audio": null
+          },
+          {
+            "jp": "{国|くに}へ {帰|かえ}った とき、{家族|かぞく}と フォーを {食|た}べました。",
+            "vi": "Khi đã về đến nhà ở quê, tôi ăn phở với gia đình.",
+            "audio": null
+          },
+          {
+            "jp": "タクシーを {降|お}りる とき、お{金|かね}を {払|はら}います。",
+            "vi": "Trước khi xuống taxi, tôi trả tiền.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2303",
+        "pattern": "A い／A な な／N の ＋ とき、〜",
+        "vi": "Khi (ở trạng thái) …",
+        "explain": "Tính từ đuôi い giữ nguyên い: さびしい とき. Tính từ đuôi な giữ な: ひまな とき. Danh từ thêm の: こどもの とき, びょうきの とき. Vế sau có thể là thói quen (hiện tại) hoặc chuyện đã qua (quá khứ).",
+        "viMistake": "Tiếng Việt chỉ cần 'khi rảnh', 'hồi nhỏ', nên hay bỏ な và の: ひま とき, こども とき là sai. Ngược lại, không thêm の sau tính từ đuôi い: さびしいの とき là sai.",
+        "examples": [
+          {
+            "jp": "{寂|さび}しい とき、{国|くに}の {家族|かぞく}に {電話|でんわ}を かけます。",
+            "vi": "Khi thấy cô đơn, tôi gọi điện cho gia đình ở quê.",
+            "audio": null
+          },
+          {
+            "jp": "{暇|ひま}な とき、{母|はは}に {手紙|てがみ}を {書|か}きます。",
+            "vi": "Khi rảnh, tôi viết thư cho mẹ.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもの とき、よく {川|かわ}で {泳|およ}ぎました。",
+            "vi": "Hồi nhỏ, tôi hay bơi ở sông.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2304",
+        "pattern": "V る と、〜",
+        "vi": "Hễ … thì …; … thì (kết quả tất yếu)",
+        "explain": "V る と、〜 nói rằng khi làm V thì vế sau chắc chắn, tự nhiên xảy ra: cách dùng máy móc, hiện tượng tự nhiên, chỉ đường. Chủ ngữ của vế sau dùng が: みずが でます, でんきが あかるく なります. Vế sau không phải lời nhờ, lời mời hay ý muốn (〜て ください, 〜ましょう, 〜たいです).",
+        "viMistake": "Tiếng Việt 'khi … thì …' dùng được cho mọi câu, nên hay nói ひまに なると、あそびに きて ください. Vế sau là lời nhờ thì không dùng と; nói ひまな とき、あそびに きて ください.",
+        "examples": [
+          {
+            "jp": "{右|みぎ}の ボタンを {押|お}すと、{水|みず}が {出|で}ます。",
+            "vi": "Bấm nút bên phải thì nước chảy ra.",
+            "audio": null
+          },
+          {
+            "jp": "{窓|まど}を {開|あ}けると、{部屋|へや}が {涼|すず}しく なります。",
+            "vi": "Mở cửa sổ thì phòng mát hơn.",
+            "audio": null
+          },
+          {
+            "jp": "{夜|よる}に なると、この {道|みち}は {暗|くら}く なります。",
+            "vi": "Cứ tối đến là con đường này tối om.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2305",
+        "pattern": "V る と、N が あります",
+        "vi": "Đi … thì sẽ thấy N (chỉ đường)",
+        "explain": "Khi chỉ đường, nói việc đi lại bằng V る と, rồi nói thứ người nghe sẽ thấy bằng N が あります. Nhiều bước nối bằng thể て: まっすぐ いって、はしを わたると、…. Chỗ thứ mấy dùng 〜め: ふたつめの かど.",
+        "viMistake": "Chỗ người nghe sắp thấy là thông tin mới nên dùng が: まがると、ぎんこうが あります. Hay bị nói thành ぎんこうは あります vì quen は.",
+        "examples": [
+          {
+            "jp": "この {道|みち}を まっすぐ {行|い}くと、{右|みぎ}に {銀行|ぎんこう}が あります。",
+            "vi": "Đi thẳng đường này thì bên phải có ngân hàng.",
+            "audio": null
+          },
+          {
+            "jp": "{二|ふた}つ{目|め}の {角|かど}を {左|ひだり}へ {曲|ま}がると、{駐車場|ちゅうしゃじょう}が あります。",
+            "vi": "Rẽ trái ở góc phố thứ hai thì có bãi đỗ xe.",
+            "audio": null
+          },
+          {
+            "jp": "{交差点|こうさてん}を {渡|わた}ると、{左|ひだり}に スーパーが あります。",
+            "vi": "Băng qua ngã tư thì bên trái có siêu thị.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2306",
+        "pattern": "N を ＋ động từ di chuyển",
+        "vi": "Đi qua, đi dọc theo, rời khỏi một nơi (N là nơi chốn)",
+        "explain": "Với động từ di chuyển như わたります, まがります, あるきます, さんぽします, でます, trợ từ を chỉ nơi người ta đi qua, đi dọc theo hoặc rời khỏi: はしを わたります, かどを まがります, みちを あるきます, へやを でます.",
+        "viMistake": "Tiếng Việt nói 'đi trên cầu', nên hay nói はしで わたります. Nơi đi qua dùng を: はしを わたります. を ở đây không chỉ đồ vật chịu tác động mà chỉ nơi đi qua.",
+        "examples": [
+          {
+            "jp": "この {橋|はし}を {渡|わた}って、{右|みぎ}へ {行|い}って ください。",
+            "vi": "Hãy đi qua cây cầu này rồi đi về bên phải.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}の {朝|あさ}、{川|かわ}の {近|ちか}くを {散歩|さんぽ}します。",
+            "vi": "Sáng chủ nhật, tôi đi dạo gần bờ sông.",
+            "audio": null
+          },
+          {
+            "jp": "{毎朝|まいあさ} {7時|しちじ}に {家|うち}を {出|で}ます。",
+            "vi": "Mỗi sáng tôi ra khỏi nhà lúc 7 giờ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2301",
+        "type": "title",
+        "jp": "{第|だい}23{課|か}",
+        "vi": "Nói “khi …”, “hễ … thì …” và chỉ đường"
+      },
+      {
+        "id": "s2302",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Nói 'khi …' bằng thể từ điển／thể ない + とき.\n2. Phân biệt V る とき và V た とき theo thứ tự hai việc.\n3. Nói 'khi …' bằng tính từ, danh từ + とき.\n4. Nói kết quả tất yếu, cách dùng máy bằng V る と; chỉ đường bằng V る と、N が あります và N を わたります・まがります."
+      },
+      {
+        "id": "s2303",
+        "type": "vocab",
+        "refs": ["v2301", "v2302", "v2303", "v2304", "v2305", "v2306", "v2307", "v2308"],
+        "teacherNotes": "Đọc thể từ điển ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2304",
+        "type": "vocab",
+        "refs": ["v2309", "v2310", "v2311", "v2312", "v2313", "v2314", "v2315", "v2316"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới, ví dụ パソコンが こしょうしました."
+      },
+      {
+        "id": "s2305",
+        "type": "vocab",
+        "refs": ["v2317", "v2318", "v2319", "v2320", "v2321", "v2322", "v2323", "v2324"],
+        "teacherNotes": "Phân biệt はし (cây cầu) với はし (đôi đũa, bài 7); 〜め: ふたつめの かど."
+      },
+      {
+        "id": "s2306",
+        "type": "vocab",
+        "refs": ["v2325", "v2326", "v2327", "v2328", "v2329", "v2330", "v2331", "v2332"],
+        "teacherNotes": "Hai thẻ đầu là mẫu câu của bài; sáu thẻ sau là từ ôn (bài 13, 14, 16, 21) dùng trong ví dụ và hội thoại."
+      },
+      {
+        "id": "s2307",
+        "type": "grammar",
+        "ref": "g2301",
+        "teacherNotes": "Ôn thể từ điển (bài 18) và thể ない (bài 17) trước khi ghép với とき."
+      },
+      {
+        "id": "s2308",
+        "type": "example",
+        "ref": "g2301",
+        "reveal": true
+      },
+      {
+        "id": "s2309",
+        "type": "table",
+        "title": "Luyện tập 1: V る／V ない とき",
+        "columns": ["Thể ます", "Thể thường", "Câu mẫu"],
+        "rows": [
+          ["{寝|ね}ます", "{寝|ね}る", "{寝|ね}る とき、{窓|まど}を {閉|し}めます。"],
+          [
+            "{運転|うんてん}します",
+            "{運転|うんてん}する",
+            "{運転|うんてん}する とき、{音楽|おんがく}を {聞|き}きます。"
+          ],
+          ["{使|つか}いません", "{使|つか}わない", "{使|つか}わない とき、{消|け}して ください。"],
+          ["{来|き}ません", "{来|こ}ない", "バスが {来|こ}ない とき、{歩|ある}きます。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Học viên đổi cột 1 sang thể thường rồi mới ghép với とき."
+      },
+      {
+        "id": "s2310",
+        "type": "quiz",
+        "ref": "q2301"
+      },
+      {
+        "id": "s2311",
+        "type": "grammar",
+        "ref": "g2302",
+        "teacherNotes": "Ôn thể た (bài 19). Vẽ trục thời gian: điểm V, rồi đặt vế sau ở trước (V る) hoặc ở sau (V た)."
+      },
+      {
+        "id": "s2312",
+        "type": "example",
+        "ref": "g2302",
+        "reveal": true
+      },
+      {
+        "id": "s2313",
+        "type": "table",
+        "title": "Luyện tập 2: V る とき hay V た とき",
+        "columns": ["Gợi ý", "Lúc đó V…", "Câu mẫu"],
+        "rows": [
+          ["{出|で}かけます", "chưa xong", "{出|で}かける とき、{電気|でんき}を {消|け}します。"],
+          [
+            "{家|うち}へ {帰|かえ}ります",
+            "đã xong",
+            "{帰|かえ}った とき、お{茶|ちゃ}を {飲|の}みます。"
+          ],
+          [
+            "{駅|えき}へ {行|い}きます",
+            "chưa xong",
+            "{駅|えき}へ {行|い}く とき、{水|みず}を {買|か}います。"
+          ],
+          ["{起|お}きます", "đã xong", "{朝|あさ} {起|お}きた とき、{雨|あめ}でした。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Hỏi: mua nước lúc nào? Trên đường ra ga, nên dùng いく とき."
+      },
+      {
+        "id": "s2314",
+        "type": "quiz",
+        "ref": "q2302"
+      },
+      {
+        "id": "s2315",
+        "type": "grammar",
+        "ref": "g2303",
+        "teacherNotes": "Viết lên bảng ba dòng: さびしい とき, ひまな とき, こどもの とき."
+      },
+      {
+        "id": "s2316",
+        "type": "example",
+        "ref": "g2303",
+        "reveal": true
+      },
+      {
+        "id": "s2317",
+        "type": "table",
+        "title": "Luyện tập 3: tính từ, danh từ + とき",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["{眠|ねむ}い", "{眠|ねむ}い とき、{顔|かお}を {洗|あら}います。"],
+          ["{天気|てんき}が いい", "{天気|てんき}が いい とき、{散歩|さんぽ}します。"],
+          ["{暇|ひま}", "{暇|ひま}な とき、{映画|えいが}を {見|み}ます。"],
+          ["{病気|びょうき}", "{病気|びょうき}の とき、{会社|かいしゃ}を {休|やす}みます。"],
+          ["{18歳|じゅうはっさい}", "{18歳|じゅうはっさい}の とき、{日本|にほん}へ {来|き}ました。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Hỏi tiếp: どんな とき、〜ますか。"
+      },
+      {
+        "id": "s2318",
+        "type": "quiz",
+        "ref": "q2303"
+      },
+      {
+        "id": "s2319",
+        "type": "grammar",
+        "ref": "g2304",
+        "teacherNotes": "Mang một cái quạt hoặc ấm điện vào lớp, vừa bấm vừa nói câu với と."
+      },
+      {
+        "id": "s2320",
+        "type": "example",
+        "ref": "g2304",
+        "reveal": true
+      },
+      {
+        "id": "s2321",
+        "type": "table",
+        "title": "Luyện tập 4: V る と (máy móc, tự nhiên)",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["ボタン・{押|お}します・お{湯|ゆ}", "ボタンを {押|お}すと、お{湯|ゆ}が {出|で}ます。"],
+          ["ロボット・{触|さわ}ります", "ロボットに {触|さわ}ると、{動|うご}きます。"],
+          ["{春|はる}・{暖|あたた}かい", "{春|はる}に なると、{暖|あたた}かく なります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2322",
+        "type": "quiz",
+        "ref": "q2304"
+      },
+      {
+        "id": "s2323",
+        "type": "grammar",
+        "ref": "g2305",
+        "teacherNotes": "Vẽ bản đồ đơn giản trên bảng: đường, cầu, ngã tư, đèn giao thông, góc phố."
+      },
+      {
+        "id": "s2324",
+        "type": "example",
+        "ref": "g2305",
+        "reveal": true
+      },
+      {
+        "id": "s2325",
+        "type": "table",
+        "title": "Luyện tập 5: chỉ đường",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["まっすぐ・{駅|えき}", "まっすぐ {行|い}くと、{駅|えき}が あります。"],
+          ["{橋|はし}・{公園|こうえん}", "{橋|はし}を {渡|わた}ると、{公園|こうえん}が あります。"],
+          [
+            "{角|かど}・{病院|びょういん}",
+            "{角|かど}を {曲|ま}がると、{病院|びょういん}が あります。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho học viên chỉ đường từ trường đến ga theo bản đồ trên bảng."
+      },
+      {
+        "id": "s2326",
+        "type": "quiz",
+        "ref": "q2305"
+      },
+      {
+        "id": "s2327",
+        "type": "grammar",
+        "ref": "g2306",
+        "teacherNotes": "So sánh: はしを わたります (đi qua) và こうえんで あそびます (hoạt động tại chỗ)."
+      },
+      {
+        "id": "s2328",
+        "type": "example",
+        "ref": "g2306",
+        "reveal": true
+      },
+      {
+        "id": "s2329",
+        "type": "table",
+        "title": "Luyện tập 6: N を + đi qua",
+        "columns": ["Nơi chốn", "Động từ", "Câu mẫu"],
+        "rows": [
+          ["{道|みち}", "{渡|わた}ります", "{信号|しんごう}が {青|あお}の とき、{渡|わた}ります。"],
+          ["{公園|こうえん}", "{歩|ある}きます", "{公園|こうえん}の {中|なか}を {歩|ある}きます。"],
+          ["{角|かど}", "{曲|ま}がります", "その {角|かど}を {右|みぎ}へ {曲|ま}がります。"],
+          ["{部屋|へや}", "{出|で}ます", "{8時|はちじ}に {部屋|へや}を {出|で}ます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2330",
+        "type": "quiz",
+        "ref": "q2306"
+      },
+      {
+        "id": "s2331",
+        "type": "dialogue",
+        "title": "Hội thoại 1: máy nước ở ký túc xá",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "すみません、これは どうやって {使|つか}いますか。",
+            "vi": "Xin lỗi, cái này dùng thế nào ạ?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{青|あお}い ボタンを {押|お}すと、{水|みず}が {出|で}ます。",
+            "vi": "Bấm nút xanh thì nước lạnh chảy ra."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{赤|あか}い ボタンを {押|お}すと、お{湯|ゆ}が {出|で}ます。",
+            "vi": "Bấm nút đỏ thì nước nóng chảy ra."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "お{茶|ちゃ}を {飲|の}む とき、{赤|あか}い ボタンですね。",
+            "vi": "Khi uống trà thì bấm nút đỏ nhỉ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ええ。{熱|あつ}いですから、{気|き}を つけて ください。",
+            "vi": "Đúng. Nước nóng lắm nên anh cẩn thận nhé."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わかりました。ありがとう ございます。",
+            "vi": "Tôi hiểu rồi. Cảm ơn anh."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2332",
+        "type": "dialogue",
+        "title": "Hội thoại 2: hỏi đường đến bệnh viện",
+        "lines": [
+          {
+            "speaker": "リン",
+            "jp": "すみません、ひかり{病院|びょういん}は どこですか。",
+            "vi": "Xin lỗi, bệnh viện Hikari ở đâu ạ?"
+          },
+          {
+            "speaker": "{男|おとこ}の {人|ひと}",
+            "jp": "この {道|みち}を まっすぐ {行|い}って、{橋|はし}を {渡|わた}って ください。",
+            "vi": "Chị đi thẳng đường này rồi qua cầu."
+          },
+          {
+            "speaker": "{男|おとこ}の {人|ひと}",
+            "jp": "{橋|はし}を {渡|わた}ると、{信号|しんごう}が あります。",
+            "vi": "Qua cầu thì có đèn giao thông."
+          },
+          {
+            "speaker": "リン",
+            "jp": "その {信号|しんごう}を {右|みぎ}へ {曲|ま}がりますか。",
+            "vi": "Đến đèn đó thì rẽ phải ạ?"
+          },
+          {
+            "speaker": "{男|おとこ}の {人|ひと}",
+            "jp": "いいえ、{左|ひだり}です。{曲|ま}がると、{白|しろ}い {建物|たてもの}が あります。",
+            "vi": "Không, rẽ trái. Rẽ xong là thấy một tòa nhà màu trắng."
+          },
+          {
+            "speaker": "リン",
+            "jp": "わかりました。どうも ありがとう ございました。",
+            "vi": "Tôi hiểu rồi. Cảm ơn anh nhiều."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2333",
+        "type": "dialogue",
+        "title": "Hội thoại 3: khi thấy cô đơn",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "アンさんは {寂|さび}しい とき、どう しますか。",
+            "vi": "Khi thấy cô đơn, chị An làm gì?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{好|す}きな {歌|うた}を {歌|うた}います。{元気|げんき}に なりますよ。",
+            "vi": "Tôi hát bài mình thích. Sẽ thấy vui lên đấy."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "{去年|きょねん} {国|くに}へ {帰|かえ}った とき、{何|なに}を しましたか。",
+            "vi": "Năm ngoái khi về nước, chị đã làm gì?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{家族|かぞく}と ダラットへ {行|い}きました。{涼|すず}しかったです。",
+            "vi": "Tôi đi Đà Lạt với gia đình. Trời mát lắm."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "アンさんが {国|くに}へ {帰|かえ}る とき、{私|わたし}も {行|い}きたいです。",
+            "vi": "Lần tới chị về nước, tôi cũng muốn đi cùng."
+          },
+          {
+            "speaker": "アン",
+            "jp": "ええ、ぜひ {一緒|いっしょ}に {行|い}きましょう。",
+            "vi": "Vâng, nhất định đi cùng nhau nhé."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2334",
+        "type": "table",
+        "title": "Luyện tập 7: ghép thành câu",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{道|みち}が わかりません・{聞|き}きます",
+            "{道|みち}が わからない とき、{聞|き}きます。"
+          ],
+          ["{休|やす}み・{旅行|りょこう}します", "{休|やす}みの とき、{旅行|りょこう}します。"],
+          ["ボタン・{押|お}します・{動|うご}きます", "ボタンを {押|お}すと、{動|うご}きます。"],
+          [
+            "{橋|はし}・{渡|わた}ります・{右|みぎ}",
+            "{橋|はし}を {渡|わた}って、{右|みぎ}へ {曲|ま}がります。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2335",
+        "type": "quiz",
+        "ref": "q2307"
+      },
+      {
+        "id": "s2336",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "V る／V ない とき: khi … (thể thường + とき).\nさびしい とき, ひまな とき, こどもの とき.\nV る とき: vế sau xảy ra trước; V た とき: V đã xong rồi.\nV る と、〜: hễ … thì … (máy móc, tự nhiên, chỉ đường); vế sau không nhờ, không mời.\nN を わたります・まがります・あるきます: nơi đi qua dùng を."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2301",
+        "prompt": "Chọn dạng đúng: （　）とき、せんせいに きいて ください。(khi không hiểu)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Trước とき dùng thể thường: わかりません → わからない.",
+        "type": "choice",
+        "options": ["わかりません", "わからない", "わからなくて", "わからないの"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2302",
+        "prompt": "ごはんを（　）とき、「いただきます」と いいます。(trước khi ăn)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Nói いただきます trước khi ăn, việc ăn chưa xảy ra: V る とき.",
+        "type": "choice",
+        "options": ["たべる", "たべた", "たべて", "たべます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2303",
+        "prompt": "Chọn dạng đúng: （　）とき、なにを しますか。(khi rảnh)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Tính từ đuôi な giữ な trước とき: ひまな とき.",
+        "type": "choice",
+        "options": ["ひま", "ひまい", "ひまだ", "ひまな"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2304",
+        "prompt": "この ボタンを（　）、きっぷが でます。(bấm nút này thì vé ra)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Kết quả tất yếu khi dùng máy: thể từ điển + と.",
+        "type": "choice",
+        "options": ["おしてと", "おしと", "おすと", "おしたと"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2305",
+        "prompt": "この みちを まっすぐ（　）、ひだりに ゆうびんきょくが あります。(đi thẳng thì bên trái có bưu điện)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Chỉ đường: V る と、N が あります.",
+        "type": "choice",
+        "options": ["いくの", "いったと", "いくと", "いきたいと"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2306",
+        "prompt": "Điền trợ từ: あの はし（　）わたって ください。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Nơi đi qua dùng を: はしを わたります.",
+        "type": "choice",
+        "options": ["を", "に", "が", "と"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2307",
+        "prompt": "Chọn câu đúng: Khi về đến nhà thì hãy gọi điện cho tôi.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Vế sau là lời nhờ (〜て ください) nên không dùng と; dùng V た とき.",
+        "type": "choice",
+        "options": [
+          "うちへ かえると、でんわして ください。",
+          "うちへ かえったと、でんわして ください。",
+          "うちへ かえって とき、でんわして ください。",
+          "うちへ かえった とき、でんわして ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2308",
+        "prompt": "Chọn câu đúng: Hồi còn là sinh viên, tôi sống ở Huế.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Danh từ + の + とき: がくせいの とき.",
+        "type": "choice",
+        "options": [
+          "がくせい とき、フエに すんで いました。",
+          "がくせいの とき、フエに すんで いました。",
+          "がくせいな とき、フエに すんで いました。",
+          "がくせいだ とき、フエに すんで いました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2309",
+        "prompt": "Chọn câu đúng: Khi trời nóng, tôi uống nước lạnh.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Tính từ đuôi い giữ nguyên trước とき: あつい とき.",
+        "type": "choice",
+        "options": [
+          "あつい とき、つめたい みずを のみます。",
+          "あついの とき、つめたい みずを のみます。",
+          "あつく とき、つめたい みずを のみます。",
+          "あつな とき、つめたい みずを のみます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2310",
+        "prompt": "Chọn câu đúng: Những lúc khỏe, tôi đi bộ đến công ty.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "げんき là tính từ đuôi な: げんきな とき.",
+        "type": "choice",
+        "options": [
+          "げんき とき、かいしゃまで あるいて いきます。",
+          "げんきだ とき、かいしゃまで あるいて いきます。",
+          "げんきな とき、かいしゃまで あるいて いきます。",
+          "げんきい とき、かいしゃまで あるいて いきます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2311",
+        "prompt": "Chọn câu đúng: Khi ra ngoài, tôi mang theo ô.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Trước とき dùng thể từ điển: でかけます → でかける.",
+        "type": "choice",
+        "options": [
+          "でかけます とき、かさを もって いきます。",
+          "でかける とき、かさを もって いきます。",
+          "でかけて とき、かさを もって いきます。",
+          "でかけるの とき、かさを もって いきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2312",
+        "prompt": "かぎを（　）とき、かいしゃに でんわしました。(sau khi đã làm mất chìa khóa)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Việc làm mất đã xảy ra rồi mới gọi điện: V た とき.",
+        "type": "choice",
+        "options": ["なくす", "なくして", "なくさない", "なくした"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2313",
+        "prompt": "（　）とき、でんきを けします。(trước khi ngủ)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Tắt điện trước khi ngủ: V る とき.",
+        "type": "choice",
+        "options": ["ねた", "ねて", "ねます", "ねる"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2314",
+        "prompt": "ダナンへ（　）とき、ハノイえきで ちずを かいました。(mua ở ga Hà Nội)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Mua ở Hà Nội, lúc chưa đến Đà Nẵng: V る とき.",
+        "type": "choice",
+        "options": ["いく", "いった", "いって", "いき"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2315",
+        "prompt": "ダナンへ（　）とき、うみで およぎました。(đã đến Đà Nẵng rồi mới bơi)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Đến Đà Nẵng rồi mới bơi: V た とき.",
+        "type": "choice",
+        "options": ["いく", "いって", "いった", "いかない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2316",
+        "prompt": "ここを みぎへ（　）、でんきが あかるく なります。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Cách dùng máy: thể từ điển + と.",
+        "type": "choice",
+        "options": ["まわしと", "まわすと", "まわしてと", "まわすで"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2317",
+        "prompt": "くるまを うんてん（　）とき、めがねを かけます。(lúc lái xe)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Đeo kính trong lúc lái xe, trước khi bắt đầu lái: V る とき; します → する.",
+        "type": "choice",
+        "options": ["する", "した", "して", "します"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2318",
+        "prompt": "Điền trợ từ: あの かど（　）みぎへ まがって ください。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Nơi rẽ qua dùng を: かどを まがります.",
+        "type": "choice",
+        "options": ["が", "を", "に", "と"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2319",
+        "prompt": "Chọn cách nói đúng: cây cầu thứ hai",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Thứ tự dùng 〜め: ふたつめの はし.",
+        "type": "choice",
+        "options": ["ふたつの はし", "ふたりめの はし", "にかいの はし", "ふたつめの はし"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2320",
+        "prompt": "なつに（　）、ハノイは とても あつく なります。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Hiện tượng tự nhiên: なる + と.",
+        "type": "choice",
+        "options": ["なるに", "なるで", "なると", "なったと"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2321",
+        "prompt": "じかんが（　）とき、コンビニで ひるごはんを かいます。(khi không có thời gian)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "あります → thể ない là ない: じかんが ない とき.",
+        "type": "choice",
+        "options": ["ありません", "なくて", "ない", "ないの"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2322",
+        "prompt": "Chọn câu trả lời phù hợp: どんな とき、この くすりを のみますか。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "どんな とき hỏi trường hợp, nên trả lời bằng 〜とき.",
+        "type": "choice",
+        "options": [
+          "びょういんで のみます。",
+          "みずで のみます。",
+          "みっつ のみます。",
+          "ねつが ある とき、のみます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2323",
+        "prompt": "Chọn câu đúng: Qua cầu thì có công viên.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Nơi đi qua dùng を; chỉ đường dùng thể từ điển + と: はしを わたると.",
+        "type": "choice",
+        "options": [
+          "はしを わたると、こうえんが あります。",
+          "はしで わたると、こうえんが あります。",
+          "はしを わたったと、こうえんが あります。",
+          "はしに わたると、こうえんが あります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2324",
+        "prompt": "Điền trợ từ: ともだち（　）あそびに くる とき、ケーキを つくります。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Chủ ngữ trong vế とき dùng が.",
+        "type": "choice",
+        "options": ["を", "が", "で", "に"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2325",
+        "prompt": "Câu ここに おかねを いれると、おちゃが でます có nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "V る と: bỏ tiền vào thì (chắc chắn) trà ra.",
+        "type": "choice",
+        "options": [
+          "Bỏ trà vào đây thì tiền sẽ ra.",
+          "Bỏ tiền vào đây thì trà sẽ ra.",
+          "Xin đừng bỏ tiền vào đây.",
+          "Khi uống trà, hãy trả tiền ở đây."
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2326",
+        "prompt": "まがります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "まがります: rẽ.",
+        "type": "choice",
+        "options": ["rẽ", "băng qua", "đi bộ", "dừng lại"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2327",
+        "prompt": "Trong câu せんせいに ききます, ききます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "ききます đi với người + に: hỏi.",
+        "type": "choice",
+        "options": ["nghe", "nói", "hỏi", "trả lời"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2328",
+        "prompt": "Trong câu ドアを ひいて ください, ひきます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "ひきます: kéo; おします: đẩy.",
+        "type": "choice",
+        "options": ["đẩy", "mở", "chạm", "kéo"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2329",
+        "prompt": "まわします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "まわします: vặn, xoay.",
+        "type": "choice",
+        "options": ["bấm", "kéo", "thay đổi", "vặn, xoay"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2330",
+        "prompt": "さわります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "さわります: sờ, chạm (vào).",
+        "type": "choice",
+        "options": ["đẩy", "cầm", "sờ, chạm", "rửa"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2331",
+        "prompt": "わたります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "わたります: băng qua (cầu, đường).",
+        "type": "choice",
+        "options": ["băng qua", "rẽ", "đi dạo", "dừng lại"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2332",
+        "prompt": "Trong câu じかんを かえます, かえます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "かえます (変えます): đổi, thay đổi. Khác かえります (về) và かえします (trả lại).",
+        "type": "choice",
+        "options": ["về nhà", "đổi, thay đổi", "trả lại", "mua"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2333",
+        "prompt": "さびしい nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "さびしい: cô đơn, buồn.",
+        "type": "choice",
+        "options": ["cô đơn, buồn", "buồn ngủ", "đau", "vui vẻ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2334",
+        "prompt": "Trong câu パソコンが こしょうしました, こしょうします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "こしょうします: bị hỏng, trục trặc.",
+        "type": "choice",
+        "options": ["được sửa", "bị mất", "tắt", "bị hỏng"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2335",
+        "prompt": "かど nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "かど: góc (phố).",
+        "type": "choice",
+        "options": ["cây cầu", "góc phố", "ngã tư", "đèn giao thông"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2336",
+        "prompt": "たてもの nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "たてもの: tòa nhà.",
+        "type": "choice",
+        "options": ["bãi đỗ xe", "con đường", "tòa nhà", "cửa hàng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2337",
+        "prompt": "おと nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "おと: âm thanh, tiếng.",
+        "type": "choice",
+        "options": ["nước nóng", "con đường", "kích cỡ", "âm thanh, tiếng"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2338",
+        "prompt": "サイズ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "サイズ: cỡ, kích cỡ.",
+        "type": "choice",
+        "options": ["màu sắc", "kích cỡ", "giá", "kiểu dáng"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2339",
+        "prompt": "Trong câu はしを わたります, はし nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "はし (橋) đi với わたります: cây cầu. はし (đôi đũa) ở bài 7 là từ khác.",
+        "type": "choice",
+        "options": ["cây cầu", "đôi đũa", "con sông", "góc phố"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2340",
+        "prompt": "こうさてん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "こうさてん: ngã tư, giao lộ.",
+        "type": "choice",
+        "options": ["góc phố", "cây cầu", "ngã tư", "tòa nhà"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2341",
+        "prompt": "Điền thể từ điển: あるきます → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "き → く: あるく.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あるく"]
+      },
+      {
+        "id": "q2342",
+        "prompt": "Điền thể ない: わたります → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "り → ら + ない: わたらない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わたらない"]
+      },
+      {
+        "id": "q2343",
+        "prompt": "Điền thể た: まがります → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "り → った: まがった.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まがった"]
+      },
+      {
+        "id": "q2344",
+        "prompt": "Điền thể ない: さわります → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "り → ら + ない: さわらない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さわらない"]
+      },
+      {
+        "id": "q2345",
+        "prompt": "Điền thể từ điển: ひきます (kéo) → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "き → く: ひく.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ひく"]
+      },
+      {
+        "id": "q2346",
+        "prompt": "Điền từ (đèn giao thông): （　　）が あおに なると、くるまが うごきます。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "しんごう: đèn giao thông.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しんごう"]
+      },
+      {
+        "id": "q2347",
+        "prompt": "Điền từ (nước nóng): ここに さわると、（　　）が でます。あついですから、きを つけて ください。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "おゆ: nước nóng.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おゆ", "ゆ"]
+      },
+      {
+        "id": "q2348",
+        "prompt": "Điền từ (bãi đỗ xe): ホテルの となりに（　　）が あります。くるまは そこに とめて ください。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "ちゅうしゃじょう: bãi đỗ xe.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ちゅうしゃじょう"]
+      },
+      {
+        "id": "q2349",
+        "prompt": "Điền từ (nhiều lần): あたらしい ことばは（　　） かいて おぼえます。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "なんかいも: nhiều lần (なんども cũng đúng).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なんかいも", "なんども"]
+      },
+      {
+        "id": "q2350",
+        "prompt": "Điền thể た: ききます (hỏi) → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "き → いた: きいた.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きいた"]
+      }
+    ]
+  }
+}

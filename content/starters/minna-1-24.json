@@ -1,0 +1,1486 @@
+{
+  "id": "minna-1-24",
+  "title": "Bài 24 – Cho và nhận: くれます, làm giúp và được giúp",
+  "titleJa": "第24課　ナムさんが なおして くれました",
+  "summary": "Theo trình tự bài 24 Minna no Nihongo Sơ cấp I: くれます khi người khác cho tôi, N（vật）は N（người）が くれました, được giúp với Vて もらいます, người khác làm cho tôi với Vて くれます, tôi làm cho người khác với Vて あげます và từ để hỏi làm chủ ngữ đi với が. Ví dụ, ba hội thoại (Ngày của Mẹ, dẫn ông bà đi chơi, sửa máy tính) và bài tập đều là nội dung gốc.",
+  "order": 24,
+  "courseId": "minna-1",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2401",
+        "jp": "くれます",
+        "romaji": "kuremasu",
+        "vi": "cho, tặng (người khác cho tôi hoặc người nhà tôi)",
+        "audio": null,
+        "note": "nhóm II · くれて",
+        "image": "/icons/vocab/wrapped-gift.svg"
+      },
+      {
+        "id": "v2402",
+        "jp": "なおします",
+        "kanji": "直します",
+        "romaji": "naoshimasu",
+        "vi": "sửa, chữa",
+        "audio": null,
+        "note": "nhóm I · なおして"
+      },
+      {
+        "id": "v2403",
+        "jp": "つれて いきます",
+        "kanji": "連れて 行きます",
+        "romaji": "tsurete ikimasu",
+        "vi": "dẫn (ai) đi",
+        "audio": null,
+        "note": "nhóm I · つれて いって"
+      },
+      {
+        "id": "v2404",
+        "jp": "つれて きます",
+        "kanji": "連れて 来ます",
+        "romaji": "tsurete kimasu",
+        "vi": "dẫn (ai) đến",
+        "audio": null,
+        "note": "nhóm III · つれて きて"
+      },
+      {
+        "id": "v2405",
+        "jp": "おくります",
+        "kanji": "送ります",
+        "romaji": "okurimasu",
+        "vi": "đưa, tiễn (ai): ひとを おくります",
+        "audio": null,
+        "note": "nhóm I · おくって"
+      },
+      {
+        "id": "v2406",
+        "jp": "しょうかいします",
+        "kanji": "紹介します",
+        "romaji": "shoukai shimasu",
+        "vi": "giới thiệu",
+        "audio": null,
+        "note": "nhóm III · しょうかいして"
+      },
+      {
+        "id": "v2407",
+        "jp": "あんないします",
+        "kanji": "案内します",
+        "romaji": "annai shimasu",
+        "vi": "hướng dẫn, dẫn đi tham quan",
+        "audio": null,
+        "note": "nhóm III · あんないして"
+      },
+      {
+        "id": "v2408",
+        "jp": "せつめいします",
+        "kanji": "説明します",
+        "romaji": "setsumei shimasu",
+        "vi": "giải thích",
+        "audio": null,
+        "note": "nhóm III · せつめいして"
+      },
+      {
+        "id": "v2409",
+        "jp": "いれます",
+        "romaji": "iremasu",
+        "vi": "pha (cà phê, trà): コーヒーを いれます",
+        "audio": null,
+        "note": "nhóm II · いれて",
+        "image": "/icons/vocab/hot-beverage.svg"
+      },
+      {
+        "id": "v2410",
+        "jp": "あげます",
+        "romaji": "agemasu",
+        "vi": "cho, tặng (tôi cho người khác) — ôn bài 7",
+        "audio": null,
+        "note": "nhóm II · あげて"
+      },
+      {
+        "id": "v2411",
+        "jp": "もらいます",
+        "romaji": "moraimasu",
+        "vi": "nhận — ôn bài 7",
+        "audio": null,
+        "note": "nhóm I · もらって"
+      },
+      {
+        "id": "v2412",
+        "jp": "てつだいます",
+        "kanji": "手伝います",
+        "romaji": "tetsudaimasu",
+        "vi": "giúp (việc)",
+        "audio": null,
+        "note": "nhóm I · てつだって"
+      },
+      {
+        "id": "v2413",
+        "jp": "かします",
+        "kanji": "貸します",
+        "romaji": "kashimasu",
+        "vi": "cho mượn",
+        "audio": null,
+        "note": "nhóm I · かして"
+      },
+      {
+        "id": "v2414",
+        "jp": "おしえます",
+        "kanji": "教えます",
+        "romaji": "oshiemasu",
+        "vi": "dạy; chỉ cho",
+        "audio": null,
+        "note": "nhóm II · おしえて"
+      },
+      {
+        "id": "v2415",
+        "jp": "みせます",
+        "kanji": "見せます",
+        "romaji": "misemasu",
+        "vi": "cho xem",
+        "audio": null,
+        "note": "nhóm II · みせて"
+      },
+      {
+        "id": "v2416",
+        "jp": "かいます",
+        "kanji": "買います",
+        "romaji": "kaimasu",
+        "vi": "mua",
+        "audio": null,
+        "note": "nhóm I · かって"
+      },
+      {
+        "id": "v2417",
+        "jp": "つくります",
+        "kanji": "作ります",
+        "romaji": "tsukurimasu",
+        "vi": "làm, nấu",
+        "audio": null,
+        "note": "nhóm I · つくって"
+      },
+      {
+        "id": "v2418",
+        "jp": "とります",
+        "kanji": "撮ります",
+        "romaji": "torimasu",
+        "vi": "chụp (ảnh)",
+        "audio": null,
+        "note": "nhóm I · とって"
+      },
+      {
+        "id": "v2419",
+        "jp": "もちます",
+        "kanji": "持ちます",
+        "romaji": "mochimasu",
+        "vi": "cầm, xách",
+        "audio": null,
+        "note": "nhóm I · もって"
+      },
+      {
+        "id": "v2420",
+        "jp": "よびます",
+        "kanji": "呼びます",
+        "romaji": "yobimasu",
+        "vi": "gọi (taxi, người)",
+        "audio": null,
+        "note": "nhóm I · よんで"
+      },
+      {
+        "id": "v2421",
+        "jp": "おじいさん",
+        "romaji": "ojiisan",
+        "vi": "ông; cụ ông (nói về ông của người khác)",
+        "audio": null,
+        "image": "/icons/vocab/old-man.svg"
+      },
+      {
+        "id": "v2422",
+        "jp": "おじいちゃん",
+        "romaji": "ojiichan",
+        "vi": "ông (cách gọi thân mật)",
+        "audio": null
+      },
+      {
+        "id": "v2423",
+        "jp": "おばあさん",
+        "romaji": "obaasan",
+        "vi": "bà; cụ bà (nói về bà của người khác)",
+        "audio": null,
+        "image": "/icons/vocab/old-woman.svg"
+      },
+      {
+        "id": "v2424",
+        "jp": "おばあちゃん",
+        "romaji": "obaachan",
+        "vi": "bà (cách gọi thân mật)",
+        "audio": null
+      },
+      {
+        "id": "v2425",
+        "jp": "じゅんび",
+        "kanji": "準備",
+        "romaji": "junbi",
+        "vi": "sự chuẩn bị (〜を じゅんびします: chuẩn bị)",
+        "audio": null
+      },
+      {
+        "id": "v2426",
+        "jp": "いみ",
+        "kanji": "意味",
+        "romaji": "imi",
+        "vi": "ý nghĩa",
+        "audio": null
+      },
+      {
+        "id": "v2427",
+        "jp": "おかし",
+        "kanji": "お菓子",
+        "romaji": "okashi",
+        "vi": "bánh kẹo",
+        "audio": null,
+        "image": "/icons/vocab/candy.svg"
+      },
+      {
+        "id": "v2428",
+        "jp": "おべんとう",
+        "kanji": "お弁当",
+        "romaji": "obentou",
+        "vi": "cơm hộp",
+        "audio": null,
+        "image": "/icons/vocab/bento-box.svg"
+      },
+      {
+        "id": "v2429",
+        "jp": "ワゴンしゃ",
+        "kanji": "ワゴン車",
+        "romaji": "wagonsha",
+        "vi": "xe van (chở được nhiều người và đồ)",
+        "audio": null
+      },
+      {
+        "id": "v2430",
+        "jp": "ひっこし",
+        "kanji": "引っ越し",
+        "romaji": "hikkoshi",
+        "vi": "việc chuyển nhà",
+        "audio": null
+      },
+      {
+        "id": "v2431",
+        "jp": "ホームステイ",
+        "romaji": "hoomusutei",
+        "vi": "homestay, ở cùng một gia đình bản xứ",
+        "audio": null
+      },
+      {
+        "id": "v2432",
+        "jp": "ははの ひ",
+        "kanji": "母の 日",
+        "romaji": "haha no hi",
+        "vi": "Ngày của Mẹ",
+        "audio": null
+      },
+      {
+        "id": "v2433",
+        "jp": "ぜんぶ",
+        "kanji": "全部",
+        "romaji": "zenbu",
+        "vi": "tất cả, toàn bộ",
+        "audio": null
+      },
+      {
+        "id": "v2434",
+        "jp": "じぶんで",
+        "kanji": "自分で",
+        "romaji": "jibun de",
+        "vi": "tự mình",
+        "audio": null
+      },
+      {
+        "id": "v2435",
+        "jp": "ほかに",
+        "romaji": "hoka ni",
+        "vi": "ngoài ra, còn … nữa",
+        "audio": null
+      },
+      {
+        "id": "v2436",
+        "jp": "にもつ",
+        "kanji": "荷物",
+        "romaji": "nimotsu",
+        "vi": "hành lý, đồ đạc",
+        "audio": null
+      },
+      {
+        "id": "v2437",
+        "jp": "〜て あげます",
+        "romaji": "~te agemasu",
+        "vi": "làm … cho (người khác)",
+        "audio": null
+      },
+      {
+        "id": "v2438",
+        "jp": "〜て もらいます",
+        "romaji": "~te moraimasu",
+        "vi": "được (ai) làm … cho",
+        "audio": null
+      },
+      {
+        "id": "v2439",
+        "jp": "〜て くれます",
+        "romaji": "~te kuremasu",
+        "vi": "(người khác) làm … cho tôi",
+        "audio": null
+      },
+      {
+        "id": "v2440",
+        "jp": "だれが",
+        "romaji": "dare ga",
+        "vi": "ai (hỏi người làm việc gì; đi với が)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2401",
+        "pattern": "N1 は わたしに N2 を くれます",
+        "vi": "(N1) cho, tặng tôi N2",
+        "explain": "くれます dùng khi người khác cho tôi hoặc cho người nhà tôi. Khi tôi (hoặc người nhà tôi) cho người khác thì dùng あげます, còn khi kể từ phía người nhận thì dùng もらいます (bài 7). Người nhận là tôi thì thường bỏ わたしに.",
+        "viMistake": "Tiếng Việt chỉ có một chữ “cho”, nên người Việt hay nói ハナさんは わたしに はなを あげました. Khi người nhận là tôi hoặc người nhà tôi, phải dùng くれました: ハナさんは わたしに はなを くれました.",
+        "examples": [
+          {
+            "jp": "ハナさんは わたしに お{菓子|かし}を くれました。",
+            "vi": "Chị Hana đã cho tôi bánh kẹo.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {弟|おとうと}に {古|ふる}い {自転車|じてんしゃ}を くれました。",
+            "vi": "Anh Tanaka đã cho em trai tôi chiếc xe đạp cũ.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは リンさんに ペンを あげました。リンさんは わたしに ノートを くれました。",
+            "vi": "Tôi tặng Lin cây bút. Lin tặng tôi quyển vở.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2402",
+        "pattern": "これは N が くれました",
+        "vi": "(Vật này) là (N) cho tôi",
+        "explain": "Khi đồ vật đã là chủ đề (đứng đầu câu với は), người cho đi với が. Muốn hỏi ai cho thì nói だれが くれましたか.",
+        "viMistake": "Hay nói この かさは ははは くれました (hai lần は) hoặc だれは くれましたか. Người cho phải đi với が: ははが くれました, だれが くれましたか.",
+        "examples": [
+          {
+            "jp": "この {傘|かさ}は おばあちゃんが くれました。",
+            "vi": "Chiếc ô này là bà tặng tôi.",
+            "audio": null
+          },
+          {
+            "jp": "すてきな {時計|とけい}ですね。…ありがとう。{兄|あに}が くれました。",
+            "vi": "Đồng hồ đẹp quá. …Cảm ơn. Anh trai tôi tặng đấy.",
+            "audio": null
+          },
+          {
+            "jp": "この {辞書|じしょ}は だれが くれましたか。…ナムさんが くれました。",
+            "vi": "Cuốn từ điển này ai tặng bạn vậy? …Anh Nam tặng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2403",
+        "pattern": "わたしは N に V て もらいます",
+        "vi": "Tôi được (N) làm V cho",
+        "explain": "Chủ ngữ là người nhận việc giúp (tôi); người làm việc đó đi với に. Động từ chia thể て (bài 14). Câu cho thấy người nói biết ơn.",
+        "viMistake": "Dịch từng chữ “tôi được anh Nam dạy” nên hay đặt が sau người làm: ナムさんが おしえて もらいました. Với もらいます, người làm việc giúp đi với に: ナムさんに おしえて もらいました.",
+        "examples": [
+          {
+            "jp": "わたしは ナムさんに {駅|えき}まで {送|おく}って もらいました。",
+            "vi": "Tôi được anh Nam đưa ra tận ga.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは {先生|せんせい}に {言葉|ことば}の {意味|いみ}を {説明|せつめい}して もらいました。",
+            "vi": "Tôi được thầy giải thích nghĩa của từ.",
+            "audio": null
+          },
+          {
+            "jp": "きのう {兄|あに}に パソコンを {直|なお}して もらいました。",
+            "vi": "Hôm qua tôi được anh trai sửa máy tính cho.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2404",
+        "pattern": "N（người）は／が V て くれます",
+        "vi": "(Ai đó) làm V cho tôi",
+        "explain": "Người làm việc giúp là chủ ngữ; người nhận là tôi hoặc người nhà tôi nên thường không cần nói わたしに. Cùng một việc có hai cách nói: ナムさんに 〜て もらいました (tôi là chủ ngữ) = ナムさんが 〜て くれました (Nam là chủ ngữ).",
+        "viMistake": "Tiếng Việt chỉ nói “làm cho”, nên hay dùng 〜て あげました cho việc người khác làm cho mình: ナムさんは わたしに おしえて あげました là sai. Phải nói ナムさんは わたしに おしえて くれました.",
+        "examples": [
+          {
+            "jp": "{父|ちち}は {日曜日|にちようび}に わたしを {海|うみ}へ {連|つ}れて {行|い}って くれました。",
+            "vi": "Chủ nhật bố đã đưa tôi đi biển.",
+            "audio": null
+          },
+          {
+            "jp": "ハナさんは {京都|きょうと}を {案内|あんない}して くれました。",
+            "vi": "Chị Hana đã dẫn tôi đi tham quan Kyoto.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {会社|かいしゃ}の {人|ひと}を {紹介|しょうかい}して くれました。",
+            "vi": "Anh Tanaka đã giới thiệu người trong công ty cho tôi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2405",
+        "pattern": "わたしは N に V て あげます",
+        "vi": "Tôi làm V cho (N)",
+        "explain": "Tôi (hoặc người phía tôi) làm việc gì đó vì người khác. Người nhận đi với に với các động từ như みせます, おしえます, かします, かいます. Khi người là tân ngữ của động từ (つれて いきます, あんないします, おくります) thì người đi với を. Khi việc làm hướng vào đồ vật hay việc của người đó thì dùng の: ははの しゃしんを とって あげました.",
+        "viMistake": "Nói thẳng với thầy cô hay người trên “せんせい、にもつを もって あげます” nghe như ban ơn, thiếu lịch sự. Khi muốn giúp người trên, dùng V ましょうか (bài 14): にもつを もちましょうか.",
+        "examples": [
+          {
+            "jp": "わたしは {妹|いもうと}に パソコンの {使|つか}い{方|かた}を {教|おし}えて あげました。",
+            "vi": "Tôi đã chỉ cho em gái cách dùng máy tính.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは おじいちゃんを {公園|こうえん}へ {連|つ}れて {行|い}って あげました。",
+            "vi": "Tôi đã dẫn ông đi công viên.",
+            "audio": null
+          },
+          {
+            "jp": "{友|とも}だちが {疲|つか}れて いましたから、コーヒーを いれて あげました。",
+            "vi": "Bạn tôi mệt nên tôi pha cà phê cho bạn ấy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2406",
+        "pattern": "だれが V か。— N が V",
+        "vi": "Hỏi ai làm việc gì; trả lời bằng が",
+        "explain": "Khi từ để hỏi như だれ, なに làm chủ ngữ, nó đi với が, không đi với は. Câu trả lời cũng giữ が: だれが 〜ましたか → ナムさんが 〜ました.",
+        "viMistake": "Quen dùng は cho chủ ngữ nên hay hỏi だれは 〜ましたか. Từ để hỏi không đi với は; câu trả lời cũng là ナムさんが 〜ました, không phải ナムさんは 〜ました.",
+        "examples": [
+          {
+            "jp": "だれが この {写真|しゃしん}を {撮|と}って くれましたか。…ナムさんが {撮|と}って くれました。",
+            "vi": "Ai đã chụp bức ảnh này cho bạn? …Anh Nam chụp cho tôi.",
+            "audio": null
+          },
+          {
+            "jp": "この ケーキは だれが {作|つく}りましたか。…{姉|あね}が {作|つく}りました。",
+            "vi": "Bánh này ai làm vậy? …Chị gái tôi làm.",
+            "audio": null
+          },
+          {
+            "jp": "だれが ハナさんを {駅|えき}まで {送|おく}りますか。…わたしが {送|おく}ります。",
+            "vi": "Ai sẽ đưa chị Hana ra ga? …Tôi sẽ đưa.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2401",
+        "type": "title",
+        "jp": "{第|だい}24{課|か}",
+        "vi": "Cho và nhận: đồ vật và việc giúp đỡ"
+      },
+      {
+        "id": "s2402",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Phân biệt あげます, くれます, もらいます theo người cho và người nhận.\n2. Nói ai đã tặng mình đồ vật: N は N が くれました.\n3. Kể việc được người khác giúp: Vて もらいます, Vて くれます.\n4. Kể việc mình làm cho người khác: Vて あげます; hỏi だれが 〜ましたか."
+      },
+      {
+        "id": "s2403",
+        "type": "vocab",
+        "refs": ["v2401", "v2402", "v2403", "v2404", "v2405", "v2406", "v2407", "v2408"],
+        "teacherNotes": "Đọc thể て ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2404",
+        "type": "vocab",
+        "refs": ["v2409", "v2410", "v2411", "v2412", "v2413", "v2414", "v2415", "v2416"],
+        "teacherNotes": "Đọc thể て ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2405",
+        "type": "vocab",
+        "refs": ["v2417", "v2418", "v2419", "v2420", "v2421", "v2422", "v2423", "v2424"],
+        "teacherNotes": "Đọc thể て ghi ở mỗi thẻ động từ; cho học viên đặt một câu ngắn bằng từ mới."
+      },
+      {
+        "id": "s2406",
+        "type": "vocab",
+        "refs": ["v2425", "v2426", "v2427", "v2428", "v2429", "v2430", "v2431", "v2432"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s2407",
+        "type": "vocab",
+        "refs": ["v2433", "v2434", "v2435", "v2436", "v2437", "v2438", "v2439", "v2440"],
+        "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s2408",
+        "type": "grammar",
+        "ref": "g2401",
+        "teacherNotes": "Vẽ mũi tên người cho → người nhận. Mũi tên chỉ về phía tôi (hoặc người nhà tôi) thì dùng くれます."
+      },
+      {
+        "id": "s2409",
+        "type": "example",
+        "ref": "g2401",
+        "reveal": true
+      },
+      {
+        "id": "s2410",
+        "type": "table",
+        "title": "Luyện tập 1: あげます hay くれます",
+        "columns": ["Người cho", "Người nhận", "Động từ"],
+        "rows": [
+          ["わたし", "アンさん", "あげます"],
+          ["アンさん", "わたし", "くれます"],
+          ["アンさん", "わたしの {母|はは}", "くれます"],
+          ["{父|ちち}", "わたし", "くれます"],
+          ["わたし", "{父|ちち}", "あげます"],
+          ["アンさん", "ナムさん", "あげます"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Ở các hàng người cho không phải là わたし, cho học viên nói lại từ phía người nhận bằng もらいます, ví dụ わたしは アンさんに もらいました. Không nói アンさんは わたしに もらいました."
+      },
+      {
+        "id": "s2411",
+        "type": "quiz",
+        "ref": "q2401"
+      },
+      {
+        "id": "s2412",
+        "type": "grammar",
+        "ref": "g2402",
+        "teacherNotes": "Cầm một đồ vật của học viên và hỏi: この 〜は だれが くれましたか."
+      },
+      {
+        "id": "s2413",
+        "type": "example",
+        "ref": "g2402",
+        "reveal": true
+      },
+      {
+        "id": "s2414",
+        "type": "table",
+        "title": "Luyện tập 2: だれが くれましたか",
+        "columns": ["Đồ vật", "Người tặng", "Trả lời"],
+        "rows": [
+          ["この {時計|とけい}", "{父|ちち}", "{父|ちち}が くれました。"],
+          ["この かばん", "{母|はは}", "{母|はは}が くれました。"],
+          ["この {辞書|じしょ}", "{田中|たなか}さん", "{田中|たなか}さんが くれました。"],
+          ["この お{菓子|かし}", "ハナさん", "ハナさんが くれました。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Giáo viên hỏi この 〜は だれが くれましたか; học viên trả lời bằng が."
+      },
+      {
+        "id": "s2415",
+        "type": "quiz",
+        "ref": "q2402"
+      },
+      {
+        "id": "s2416",
+        "type": "grammar",
+        "ref": "g2403",
+        "teacherNotes": "Nhấn mạnh: người làm việc giúp đi với に, chủ ngữ là tôi."
+      },
+      {
+        "id": "s2417",
+        "type": "example",
+        "ref": "g2403",
+        "reveal": true
+      },
+      {
+        "id": "s2418",
+        "type": "table",
+        "title": "Luyện tập 3: được … giúp",
+        "columns": ["Người giúp", "Việc", "Câu mẫu"],
+        "rows": [
+          ["ナムさん", "{直|なお}します", "ナムさんに {直|なお}して もらいました。"],
+          [
+            "{先生|せんせい}",
+            "{説明|せつめい}します",
+            "{先生|せんせい}に {説明|せつめい}して もらいました。"
+          ],
+          ["{父|ちち}", "{送|おく}ります", "{父|ちち}に {送|おく}って もらいました。"],
+          [
+            "{兄|あに}",
+            "{紹介|しょうかい}します",
+            "{兄|あに}に {紹介|しょうかい}して もらいました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2419",
+        "type": "quiz",
+        "ref": "q2403"
+      },
+      {
+        "id": "s2420",
+        "type": "grammar",
+        "ref": "g2404",
+        "teacherNotes": "So sánh hai câu cùng nghĩa: 〜に 〜て もらいました và 〜が 〜て くれました."
+      },
+      {
+        "id": "s2421",
+        "type": "example",
+        "ref": "g2404",
+        "reveal": true
+      },
+      {
+        "id": "s2422",
+        "type": "table",
+        "title": "Luyện tập 4: もらいました → くれました",
+        "columns": ["〜に 〜て もらいました", "〜が 〜て くれました"],
+        "rows": [
+          ["ナムさんに {教|おし}えて もらいました。", "ナムさんが {教|おし}えて くれました。"],
+          ["{母|はは}に {作|つく}って もらいました。", "{母|はは}が {作|つく}って くれました。"],
+          ["ハナさんに {送|おく}って もらいました。", "ハナさんが {送|おく}って くれました。"],
+          [
+            "{兄|あに}に {案内|あんない}して もらいました。",
+            "{兄|あに}が {案内|あんない}して くれました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2423",
+        "type": "quiz",
+        "ref": "q2404"
+      },
+      {
+        "id": "s2424",
+        "type": "grammar",
+        "ref": "g2405",
+        "teacherNotes": "Nhắc: không nói 〜て あげます trực tiếp với người trên; dùng 〜ましょうか."
+      },
+      {
+        "id": "s2425",
+        "type": "example",
+        "ref": "g2405",
+        "reveal": true
+      },
+      {
+        "id": "s2426",
+        "type": "table",
+        "title": "Luyện tập 5: làm cho người khác",
+        "columns": ["Động từ", "Thể て", "Câu mẫu"],
+        "rows": [
+          ["{見|み}せます", "{見|み}せて", "{妹|いもうと}に {絵|え}を {見|み}せて あげました。"],
+          [
+            "{教|おし}えます",
+            "{教|おし}えて",
+            "{弟|おとうと}に {英語|えいご}を {教|おし}えて あげました。"
+          ],
+          ["{買|か}います", "{買|か}って", "{妹|いもうと}に {本|ほん}を {買|か}って あげました。"],
+          ["{撮|と}ります", "{撮|と}って", "{母|はは}の {写真|しゃしん}を {撮|と}って あげました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2427",
+        "type": "quiz",
+        "ref": "q2405"
+      },
+      {
+        "id": "s2428",
+        "type": "grammar",
+        "ref": "g2406",
+        "teacherNotes": "Hỏi lần lượt học viên: だれが 〜ましたか; yêu cầu trả lời bằng 〜が."
+      },
+      {
+        "id": "s2429",
+        "type": "example",
+        "ref": "g2406",
+        "reveal": true
+      },
+      {
+        "id": "s2430",
+        "type": "quiz",
+        "ref": "q2406"
+      },
+      {
+        "id": "s2431",
+        "type": "dialogue",
+        "title": "Hội thoại 1: Ngày của Mẹ",
+        "lines": [
+          {
+            "speaker": "ハナ",
+            "jp": "きのうは {母|はは}の {日|ひ}でしたね。",
+            "vi": "Hôm qua là Ngày của Mẹ nhỉ."
+          },
+          {
+            "speaker": "リン",
+            "jp": "ええ。ハナさんは お{母|かあ}さんに {何|なに}か あげましたか。",
+            "vi": "Ừ. Hana có tặng gì cho mẹ không?"
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "はい、{花|はな}と お{菓子|かし}を あげました。",
+            "vi": "Có, mình tặng hoa và bánh kẹo."
+          },
+          {
+            "speaker": "リン",
+            "jp": "わたしは {晩|ばん}ご{飯|はん}を {作|つく}って あげました。",
+            "vi": "Mình thì nấu bữa tối cho mẹ."
+          },
+          {
+            "speaker": "ハナ",
+            "jp": "いいですね。{何|なに}を {作|つく}りましたか。",
+            "vi": "Hay quá. Bạn nấu món gì?"
+          },
+          {
+            "speaker": "リン",
+            "jp": "フォーです。{母|はは}は {全部|ぜんぶ} {食|た}べて くれました。",
+            "vi": "Phở. Mẹ mình đã ăn hết sạch."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2432",
+        "type": "dialogue",
+        "title": "Hội thoại 2: ai dẫn ông bà đi chơi?",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "{田中|たなか}さんの おじいさんと おばあさんが {来|き}ますね。",
+            "vi": "Ông bà của anh Tanaka sắp sang chơi nhỉ."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ええ。でも、{土曜日|どようび}は {仕事|しごと}が あります。",
+            "vi": "Vâng. Nhưng thứ Bảy tôi phải đi làm."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "じゃ、だれが {町|まち}を {案内|あんない}しますか。",
+            "vi": "Vậy ai sẽ dẫn ông bà đi tham quan thành phố?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{妹|いもうと}が {案内|あんない}します。でも、{車|くるま}が ありません。",
+            "vi": "Em gái tôi sẽ dẫn đi. Nhưng không có xe."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わたしの ワゴン{車|しゃ}で みんなを {連|つ}れて {行|い}きましょうか。",
+            "vi": "Để tôi chở mọi người đi bằng xe van của tôi nhé?"
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ありがとう ございます。じゃ、お{願|ねが}いします。",
+            "vi": "Cảm ơn anh. Vậy nhờ anh nhé."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2433",
+        "type": "dialogue",
+        "title": "Hội thoại 3: máy tính đã sửa xong",
+        "lines": [
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "アンさん、パソコンは もう だいじょうぶですか。",
+            "vi": "Ann, máy tính của em ổn rồi chứ?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "はい。きのう ナムさんが {直|なお}して くれました。",
+            "vi": "Vâng. Hôm qua anh Nam đã sửa giúp em."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "よかったですね。",
+            "vi": "Tốt quá nhỉ."
+          },
+          {
+            "speaker": "アン",
+            "jp": "{使|つか}い{方|かた}も {説明|せつめい}して もらいました。",
+            "vi": "Em còn được anh ấy giải thích cách dùng nữa."
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ナムさんは {親切|しんせつ}ですね。",
+            "vi": "Nam tốt bụng thật."
+          },
+          {
+            "speaker": "アン",
+            "jp": "ええ。けさ ナムさんに コーヒーを いれて あげました。",
+            "vi": "Vâng. Sáng nay em đã pha cà phê cho anh Nam để cảm ơn."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2434",
+        "type": "table",
+        "title": "Luyện tập 6: ai làm cho ai?",
+        "columns": ["Ai → ai", "Việc", "Câu mẫu"],
+        "rows": [
+          ["ナム → わたし", "{直|なお}します", "ナムさんが {直|なお}して くれました。"],
+          [
+            "わたし → {弟|おとうと}",
+            "{教|おし}えます",
+            "{弟|おとうと}に {教|おし}えて あげました。"
+          ],
+          [
+            "{先生|せんせい} → わたし",
+            "{説明|せつめい}します",
+            "{先生|せんせい}に {説明|せつめい}して もらいました。"
+          ],
+          [
+            "{兄|あに} → わたし",
+            "{連|つ}れて {行|い}きます",
+            "{兄|あに}が {連|つ}れて {行|い}って くれました。"
+          ],
+          ["ハナ → わたし", "{撮|と}ります", "ハナさんに {撮|と}って もらいました。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Hàng nào người khác làm cho tôi thì nói được cả hai cách: 〜が 〜て くれました và 〜に 〜て もらいました."
+      },
+      {
+        "id": "s2435",
+        "type": "quiz",
+        "ref": "q2407"
+      },
+      {
+        "id": "s2436",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "あげます: tôi cho người khác; くれます: người khác cho tôi (hoặc người nhà tôi); もらいます: tôi nhận.\nN（vật）は N（người）が くれました; hỏi: だれが くれましたか.\nわたしは N に Vて もらいます: được ai làm cho.\nN が Vて くれます: ai đó làm cho tôi.\nわたしは N に Vて あげます: tôi làm cho người khác (không nói thẳng với người trên).\nTừ để hỏi làm chủ ngữ đi với が: だれが 〜ましたか → 〜が 〜ました."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2401",
+        "prompt": "Chọn câu đúng: Anh Nam đã cho tôi cây bút bi.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác cho tôi: くれました. あげました dùng khi tôi cho người khác.",
+        "type": "choice",
+        "options": [
+          "ナムさんは わたしに ボールペンを あげました。",
+          "ナムさんは わたしに ボールペンを くれました。",
+          "ナムさんは わたしに ボールペンを もらいました。",
+          "わたしは ナムさんに ボールペンを くれました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2402",
+        "prompt": "Bạn được hỏi ai đã tặng bạn chiếc mũ (この ぼうし). Trả lời: “Bố tôi tặng.”",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người cho đi với が: ちちが くれました.",
+        "type": "choice",
+        "options": [
+          "ちちが くれました。",
+          "ちちは あげました。",
+          "ちちに くれました。",
+          "ちちが もらいました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2403",
+        "prompt": "Chọn câu đúng: Tôi được chị Hana chỉ đường cho.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Với もらいます, người làm việc giúp đi với に; động từ ở thể て.",
+        "type": "choice",
+        "options": [
+          "わたしは ハナさんが みちを おしえて もらいました。",
+          "わたしは ハナさんに みちを おしえて くれました。",
+          "わたしは ハナさんに みちを おしえます もらいました。",
+          "わたしは ハナさんに みちを おしえて もらいました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2404",
+        "prompt": "Chọn câu đúng: Chị Lin đã dẫn tôi đi tham quan Huế.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác làm cho tôi: 〜が 〜て くれました.",
+        "type": "choice",
+        "options": [
+          "リンさんが フエを あんないして あげました。",
+          "リンさんに フエを あんないして くれました。",
+          "リンさんが フエを あんないして くれました。",
+          "リンさんが フエを あんないして もらいました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2405",
+        "prompt": "Chọn câu đúng: Tôi đã mua bánh kẹo cho em gái.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Tôi làm cho người khác: 〜に 〜て あげました. かいます → かって.",
+        "type": "choice",
+        "options": [
+          "わたしは いもうとに おかしを かって くれました。",
+          "わたしは いもうとが おかしを かって あげました。",
+          "わたしは いもうとに おかしを かって あげました。",
+          "わたしは いもうとに おかしを かいて あげました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2406",
+        "prompt": "Hỏi ai đã giúp bạn: （　） てつだって くれましたか。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Từ để hỏi làm chủ ngữ đi với が: だれが.",
+        "type": "choice",
+        "options": ["だれが", "だれは", "だれに", "だれを"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2407",
+        "prompt": "Câu nào cùng nghĩa với: わたしは アンさんに しゃしんを とって もらいました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "〜に 〜て もらいました = 〜が 〜て くれました (cùng một việc, đổi chủ ngữ).",
+        "type": "choice",
+        "options": [
+          "アンさんは わたしに しゃしんを とって あげました。",
+          "アンさんが しゃしんを とって くれました。",
+          "わたしは アンさんの しゃしんを とって あげました。",
+          "アンさんは しゃしんを とって もらいました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2408",
+        "prompt": "ハナさんは わたしの むすこに おかしを （　）。(Hana cho con trai tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người nhận là người nhà tôi nên dùng くれました.",
+        "type": "choice",
+        "options": ["あげました", "もらいました", "かしました", "くれました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2409",
+        "prompt": "わたしは ともだちに はなを （　）。(bạn tặng hoa cho tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Tôi là chủ ngữ và là người nhận: もらいました.",
+        "type": "choice",
+        "options": ["くれました", "あげました", "かりました", "もらいました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2410",
+        "prompt": "Chọn thể て của なおします.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "し → して: なおして.",
+        "type": "choice",
+        "options": ["なおいて", "なおして", "なおって", "なおんで"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2411",
+        "prompt": "Chọn thể て của かします.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "し → して: かして.",
+        "type": "choice",
+        "options": ["かして", "かいて", "かって", "かさて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2412",
+        "prompt": "Chọn thể て của せつめいします.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Nhóm III: します → して.",
+        "type": "choice",
+        "options": ["せつめいしって", "せつめいすて", "せつめいして", "せつめいさて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2413",
+        "prompt": "Chọn thể て của おくります.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "り → って: おくって.",
+        "type": "choice",
+        "options": ["おくって", "おくりて", "おくいて", "おくんで"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2414",
+        "prompt": "Chọn thể て của みせます.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Nhóm II: bỏ ます, thêm て.",
+        "type": "choice",
+        "options": ["みせって", "みせいて", "みせて", "みさて"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2415",
+        "prompt": "Được hỏi ai sẽ dẫn khách đi tham quan, bạn trả lời: “Tôi sẽ dẫn.”",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người làm việc là thông tin được hỏi (trả lời cho だれが) nên đi với が: わたしが あんないします.",
+        "type": "choice",
+        "options": [
+          "わたしを あんないします。",
+          "わたしに あんないします。",
+          "わたしで あんないします。",
+          "わたしが あんないします。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2416",
+        "prompt": "この ほんは あに（　） もらいました。(anh trai tặng tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Với もらいます, người cho đi với に (cũng có thể nói から). が đi với くれました: あにが くれました.",
+        "type": "choice",
+        "options": ["が", "に", "を", "で"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2417",
+        "prompt": "Chọn câu đúng: Bố đã đưa tôi đến bệnh viện.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác làm cho tôi: 〜が 〜て くれました.",
+        "type": "choice",
+        "options": [
+          "ちちが びょういんへ つれて いって あげました。",
+          "ちちが びょういんへ つれて いって くれました。",
+          "ちちに びょういんへ つれて いって くれました。",
+          "ちちが びょういんへ つれて いって もらいました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2418",
+        "prompt": "Bạn muốn mở cửa sổ giúp thầy giáo. Câu nào lịch sự và đúng?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Đề nghị giúp người trên dùng V ましょうか; 〜て あげましょう nghe như ban ơn.",
+        "type": "choice",
+        "options": [
+          "せんせい、まどを あけて あげましょう。",
+          "せんせい、まどを あけて ください。",
+          "せんせい、まどを あけませんか。",
+          "せんせい、まどを あけましょうか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2419",
+        "prompt": "ナムさんが ひっこしを てつだって くれました。Ai là người được giúp?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "〜て くれました: người nhận là người nói (tôi) dù câu không nói わたしに.",
+        "type": "choice",
+        "options": ["Nam", "Bạn của Nam", "Người nói (tôi)", "Bố của Nam"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2420",
+        "prompt": "わたしは ナムさん（　） ひらがなを おしえて あげました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おしえます có người nhận đi với に.",
+        "type": "choice",
+        "options": ["に", "が", "を", "で"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2421",
+        "prompt": "わたしは おばあちゃん（　） くうこうまで おくりました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おくります (tiễn): người được tiễn là tân ngữ, đi với を.",
+        "type": "choice",
+        "options": ["に", "が", "を", "で"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2422",
+        "prompt": "あには ともだち（　） うちへ つれて きました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "つれて きます: người được dẫn đến là tân ngữ, đi với を.",
+        "type": "choice",
+        "options": ["に", "を", "が", "で"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2423",
+        "prompt": "リンさんは わたしの むすめに えを かいて （　）。(Lin vẽ cho con gái tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người nhận là người nhà tôi nên dùng 〜て くれました.",
+        "type": "choice",
+        "options": ["くれました", "あげました", "もらいました", "いきました"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2424",
+        "prompt": "Bạn muốn hỏi: “Bạn được ai dạy bài hát này?”",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Hỏi người làm việc giúp với もらいます: だれに 〜て もらいましたか.",
+        "type": "choice",
+        "options": [
+          "だれが この うたを おしえて もらいましたか。",
+          "だれを この うたを おしえて もらいましたか。",
+          "だれに この うたを おしえて くれましたか。",
+          "だれに この うたを おしえて もらいましたか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2425",
+        "prompt": "Câu nào cho biết “tôi” là người nhận?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "アンさんは わたしに 〜を くれました: Ann cho, tôi nhận.",
+        "type": "choice",
+        "options": [
+          "アンさんは わたしに てがみを くれました。",
+          "わたしは アンさんに てがみを かきました。",
+          "わたしは アンさんに てがみを あげました。",
+          "わたしは アンさんに てがみを おくりました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2426",
+        "prompt": "わたしは ははに とけいを （　）。(tôi tặng mẹ)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Tôi cho người khác: あげました.",
+        "type": "choice",
+        "options": ["もらいました", "くれました", "かりました", "あげました"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2427",
+        "prompt": "わたしは あにに じてんしゃを かって （　）。(anh trai mua cho tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Tôi là chủ ngữ, được anh mua cho: 〜に 〜て もらいました.",
+        "type": "choice",
+        "options": ["くれました", "もらいました", "あげました", "ください"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2428",
+        "prompt": "A: おいしい おちゃですね。B: (Mẹ tôi pha cho đấy.)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người làm việc giúp là chủ ngữ với が + 〜て くれました.",
+        "type": "choice",
+        "options": [
+          "ええ、ははに いれて くれました。",
+          "ええ、ははが いれて もらいました。",
+          "ええ、ははが いれて くれました。",
+          "ええ、ははを いれて くれました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2429",
+        "prompt": "わたしは リンさんに えを もらいました。Ai là người cho?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "もらいます: người cho đi với に (hoặc から), người nhận là chủ ngữ (わたし).",
+        "type": "choice",
+        "options": ["Tôi", "Bạn của Lin", "Không rõ", "Lin"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2430",
+        "prompt": "アンさんは ナムさんに おべんとうを つくって もらいました。Ai đã làm cơm hộp?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "〜に 〜て もらいました: người đi với に là người làm (Nam).",
+        "type": "choice",
+        "options": ["Ann", "Ann và Nam", "Nam", "Tôi"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2431",
+        "prompt": "ワゴンしゃ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ワゴンしゃ: xe van chở được nhiều người và đồ.",
+        "type": "choice",
+        "options": ["xe van", "xe đạp", "tàu điện", "xe buýt"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2432",
+        "prompt": "なおします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "なおします: sửa, chữa.",
+        "type": "choice",
+        "options": ["giải thích", "sửa, chữa", "chuẩn bị", "dọn dẹp"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2433",
+        "prompt": "つれて きます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "つれて きます: dẫn người đến; mang đồ đến là もって きます.",
+        "type": "choice",
+        "options": ["mang (đồ) đến", "dẫn (ai) đến", "dẫn (ai) đi", "đi đón"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2434",
+        "prompt": "えきまで おくりましょうか。おくります ở đây nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おくります với người (を) nghĩa là tiễn, đưa đi; với thư, hàng nghĩa là gửi.",
+        "type": "choice",
+        "options": ["tiễn, đưa (ai) đi", "gửi (thư, hàng)", "đón", "gọi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2435",
+        "prompt": "しょうかいします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "しょうかいします: giới thiệu (ví dụ ともだちを しょうかいします).",
+        "type": "choice",
+        "options": ["hướng dẫn, dẫn đi tham quan", "đón", "giới thiệu", "giúp đỡ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2436",
+        "prompt": "じぶんで nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "じぶんで: tự mình làm, không nhờ ai.",
+        "type": "choice",
+        "options": ["cùng nhau", "tất cả", "ngoài ra", "tự mình"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2437",
+        "prompt": "ほかに nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ほかに: ngoài ra, còn … nữa (ví dụ ほかに なにか ありますか).",
+        "type": "choice",
+        "options": ["tự mình", "luôn luôn", "ngoài ra, còn … nữa", "một chút"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2438",
+        "prompt": "おばあちゃん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おばあちゃん: bà (gọi thân mật); おじいちゃん: ông.",
+        "type": "choice",
+        "options": ["ông", "mẹ", "chị gái", "bà"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2439",
+        "prompt": "ははの ひ là ngày gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ははの ひ: Ngày của Mẹ.",
+        "type": "choice",
+        "options": ["sinh nhật mẹ", "Ngày của Mẹ", "Ngày Nhà giáo", "Tết"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2440",
+        "prompt": "ひっこし nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ひっこし: việc chuyển nhà.",
+        "type": "choice",
+        "options": ["việc chuyển nhà", "du lịch", "homestay", "sự chuẩn bị"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2441",
+        "prompt": "Điền thể て: しょうかいします → （　　）",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Nhóm III: します → して.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しょうかいして"]
+      },
+      {
+        "id": "q2442",
+        "prompt": "Điền thể て: よびます → （　　）",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "び → んで: よんで.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よんで"]
+      },
+      {
+        "id": "q2443",
+        "prompt": "Điền thể て: つれて きます → つれて （　　）",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "きます (đến) → きて.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きて"]
+      },
+      {
+        "id": "q2444",
+        "prompt": "Điền thể て: もちます → （　　）",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ち → って: もって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もって"]
+      },
+      {
+        "id": "q2445",
+        "prompt": "Điền: ははは まいあさ あさごはんを つくって （　　）。(mẹ làm cho tôi)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác làm cho tôi: 〜て くれます.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["くれます"]
+      },
+      {
+        "id": "q2446",
+        "prompt": "Điền: わたしは あした おとうとに にほんごを おしえて （　　）。(tôi làm cho em trai)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Tôi làm cho người khác: 〜て あげます (với em trong nhà cũng có thể nói やります).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あげます", "やります"]
+      },
+      {
+        "id": "q2447",
+        "prompt": "Điền: わたしは らいしゅう せんせいに レポートを みて （　　）。(được thầy xem cho)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Được người khác làm cho: 〜て もらいます (với thầy cô, cách khiêm nhường là いただきます).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もらいます", "いただきます"]
+      },
+      {
+        "id": "q2448",
+        "prompt": "Điền từ: この ことばの （　　）を おしえて ください。(ý nghĩa)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "いみ: ý nghĩa.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いみ"]
+      },
+      {
+        "id": "q2449",
+        "prompt": "Điền từ: りょこうの （　　）を しました。(sự chuẩn bị)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "じゅんび: sự chuẩn bị.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["じゅんび", "したく"]
+      },
+      {
+        "id": "q2450",
+        "prompt": "Điền từ: ケーキを （　　） たべました。(tất cả)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ぜんぶ: tất cả (cũng có thể nói みんな).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ぜんぶ", "みんな"]
+      }
+    ]
+  }
+}

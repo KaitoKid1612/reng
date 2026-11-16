@@ -409,8 +409,8 @@
             "audio": null
           },
           {
-            "jp": "あしたは {試験|しけん}です。ですから、{今晩|こんばん} {勉強|べんきょう}しなければ なりません。",
-            "vi": "Ngày mai có bài thi. Vì vậy tối nay tôi phải học.",
+            "jp": "あした {試験|しけん}ですから、{今晩|こんばん} {勉強|べんきょう}しなければ なりません。",
+            "vi": "Ngày mai có bài thi nên tối nay tôi phải học.",
             "audio": null
           }
         ]
