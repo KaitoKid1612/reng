@@ -368,3 +368,28 @@
   border-radius: 999px;
   background: var(--primary);
 }
+/* After an answer: links to the class lesson that explains the grammar point tested. */
+.grammar-links {
+  display: grid;
+  gap: 6px;
+  padding: 0;
+  margin: 4px 0 0;
+  list-style: none;
+}
+.grammar-links li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  line-height: 1.6;
+}
+.grammar-links a {
+  min-height: 24px;
+}
+.grammar-lookup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin-bottom: 16px;
+}

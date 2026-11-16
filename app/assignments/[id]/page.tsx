@@ -1,6 +1,6 @@
 import { cache } from "react";
 import Link from "next/link";
-import { CalendarClock, Eye, ListChecks, Repeat, Timer } from "lucide-react";
+import { BookOpen, CalendarClock, Eye, ListChecks, Repeat, Timer } from "lucide-react";
 
 import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
@@ -8,6 +8,7 @@ import { StartAttemptButton } from "@/components/classroom/start-attempt-button"
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
+import { grammarRefs } from "@/lib/grammar-links";
 import {
   describeExamPacing,
   describeJlptCountdown,
@@ -16,6 +17,7 @@ import {
 } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
+import { findClassGrammarLinks, hasClassGrammar } from "@/lib/server/class-grammar";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -84,6 +86,14 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
     : null;
   const isShortened =
     exam !== null && minutesToDue !== null && minutesToDue < exam.timeLimitMinutes;
+  // Outside a timed mock exam, a learner who forgets a pattern can look it up in the class's
+  // lessons; checked practice answers also link the point they test.
+  const hasGrammarLessons = !exam && (await hasClassGrammar(account.id, assignment.classId, now));
+  const grammarLinks =
+    hasGrammarLessons &&
+    openAttempt?.items.some((item) => item.answerKey && grammarRefs(item.answerKey.tags).length)
+      ? await findClassGrammarLinks(account.id, assignment.classId, now)
+      : undefined;
   let startLabel = hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài";
   if (exam) {
     startLabel = "Bắt đầu thi";
@@ -131,6 +141,16 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
       {isLate && (
         <p className="notice-panel">Đã quá hạn. Bài vẫn nhận nộp nhưng sẽ ghi là nộp muộn.</p>
       )}
+      {hasGrammarLessons && (
+        <p className="small grammar-lookup">
+          <BookOpen size={16} aria-hidden="true" />
+          Quên mẫu ngữ pháp?{" "}
+          <Link href={`/grammar?class=${assignment.classId}`} target="_blank" rel="noopener">
+            Tra ngữ pháp của lớp
+          </Link>{" "}
+          (mở tab mới, bài đang làm vẫn được lưu).
+        </p>
+      )}
       {openAttempt ? (
         <AttemptRunnerLoader
           key={`${openAttempt.submissionId}:${openAttempt.revision}`}
@@ -144,6 +164,7 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           initialSavedAt={openAttempt.savedAt}
           dueAt={assignment.dueAt}
           allowLate={assignment.allowLate}
+          grammarLinks={grammarLinks}
           exam={
             exam
               ? {

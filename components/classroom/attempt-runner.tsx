@@ -25,10 +25,12 @@ import {
   MAX_RECORDED_LISTENS,
 } from "@/lib/assignment";
 import { signInPath } from "@/lib/auth-paths";
+import { findGrammarLinks, grammarRefs } from "@/lib/grammar-links";
 import { gradeQuestion } from "@/lib/grading/grade";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
 import { formatStudyDateTime } from "@/lib/study-days";
 
+import type { GrammarLinks } from "@/lib/grammar-links";
 import type { ExamPacingStep } from "@/lib/jlpt";
 import type { AttemptView } from "@/components/classroom/attempt-view";
 import type { QuestionMapItem } from "@/components/classroom/question-map";
@@ -51,6 +53,8 @@ export interface AttemptRunnerProps {
   // A timed mock exam: when the page hands the attempt in, and the server's clock at render.
   // pacing: the real test's time split over the exam's sections, a guide shown under the clock.
   exam?: { handInAt: string; serverNow: string; pacing?: ExamPacingStep[] } | null;
+  // Class lessons by grammar id: a checked practice answer links the point it tests.
+  grammarLinks?: GrammarLinks;
 }
 
 const STATUS_TEXT: Record<SyncStatus, string> = {
@@ -93,6 +97,7 @@ export function AttemptRunner({
   dueAt = null,
   allowLate = true,
   exam = null,
+  grammarLinks,
 }: AttemptRunnerProps) {
   const router = useRouter();
   const views = items.map((item) => item.view);
@@ -365,6 +370,7 @@ export function AttemptRunner({
                   transcript={isListeningQuestion(answerKey) ? answerKey.transcript : undefined}
                   lang={answerLang(item.view)}
                   transcriptLang={item.view.lang}
+                  grammarLinks={findGrammarLinks(grammarRefs(answerKey.tags), grammarLinks)}
                 />
               )}
               {mode === "practice" && answerKey && !isChecked && (

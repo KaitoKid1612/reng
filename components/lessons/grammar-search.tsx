@@ -9,6 +9,11 @@ import type { PublicLesson } from "@/lib/lesson-schema";
 
 interface GrammarSearchProps {
   lessons: PublicLesson[];
+  // A class's own lessons: links keep the class so the reader opens the version it pins.
+  classId?: string;
+  heading?: string;
+  intro?: string;
+  backHref?: string;
 }
 
 function normalizeSearch(value: string) {
@@ -20,7 +25,13 @@ function normalizeSearch(value: string) {
     .toLowerCase();
 }
 
-export function GrammarSearch({ lessons }: GrammarSearchProps) {
+export function GrammarSearch({
+  lessons,
+  classId,
+  heading = "Tra cứu ngữ pháp tiếng Nhật",
+  intro = "Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt.",
+  backHref,
+}: GrammarSearchProps) {
   const [query, setQuery] = useState("");
   const results = lessons
     .flatMap((lesson) => lesson.content.grammar.map((grammar) => ({ grammar, lesson })))
@@ -33,8 +44,16 @@ export function GrammarSearch({ lessons }: GrammarSearchProps) {
     <>
       <div className="page-heading">
         <div>
-          <h1>Tra cứu ngữ pháp tiếng Nhật</h1>
-          <p>Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt.</p>
+          <h1>{heading}</h1>
+          <p>
+            {intro}
+            {backHref && (
+              <>
+                {" "}
+                <Link href={backHref}>Về trang lớp</Link>
+              </>
+            )}
+          </p>
         </div>
       </div>
       <div className="field grammar-search">
@@ -63,7 +82,9 @@ export function GrammarSearch({ lessons }: GrammarSearchProps) {
             <p>
               <JapaneseText text={grammar.explain} />
             </p>
-            <Link href={`/lessons/${lesson.lessonId}?version=${lesson.id}#${grammar.id}`}>
+            <Link
+              href={`/lessons/${lesson.lessonId}?version=${lesson.id}${classId ? `&class=${classId}` : ""}#${grammar.id}`}
+            >
               {lesson.title}
             </Link>
           </article>

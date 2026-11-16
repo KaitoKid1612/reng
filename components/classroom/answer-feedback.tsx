@@ -1,7 +1,10 @@
 import { Check, X } from "lucide-react";
 
+import { GrammarLinkList } from "@/components/classroom/grammar-link-list";
 import { TranscriptText } from "@/components/classroom/transcript-text";
 import { FuriganaText } from "@/components/lessons/japanese-text";
+
+import type { GrammarLink } from "@/lib/grammar-links";
 
 interface AnswerFeedbackProps {
   isCorrect: boolean;
@@ -12,6 +15,8 @@ interface AnswerFeedbackProps {
   lang?: string;
   // The language the audio speaks; by default the same as the answer.
   transcriptLang?: string;
+  // Class lessons that explain the grammar point the question tests.
+  grammarLinks?: readonly GrammarLink[];
 }
 
 export function AnswerFeedback({
@@ -21,6 +26,7 @@ export function AnswerFeedback({
   transcript,
   lang = "ja",
   transcriptLang = lang,
+  grammarLinks = [],
 }: AnswerFeedbackProps) {
   return (
     <div
@@ -46,6 +52,7 @@ export function AnswerFeedback({
             </span>
           </p>
         )}
+        <GrammarLinkList links={grammarLinks} />
       </div>
     </div>
   );

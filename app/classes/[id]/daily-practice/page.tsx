@@ -18,12 +18,14 @@ import { neighbourDays, pickDailyDay, scoreBand } from "@/lib/daily-history";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
+import { findClassGrammarLinks } from "@/lib/server/class-grammar";
 import { getLearnerDailyHistory } from "@/lib/server/daily-history";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { formatStudyDateTime, formatStudyDay } from "@/lib/study-days";
 
 import type { AnswerOutcome } from "@/lib/answer-outcome";
 import type { DailyDay } from "@/lib/daily-history";
+import type { GrammarLinks } from "@/lib/grammar-links";
 import type { StudentResultsView } from "@/lib/server/assignments";
 import type { Metadata } from "next";
 
@@ -61,6 +63,7 @@ interface DayStepsProps {
 interface DayResultProps {
   day: DailyDay;
   view: StudentResultsView;
+  grammarLinks: GrammarLinks | undefined;
   path: string;
   outcome: AnswerOutcome | undefined;
   now: Date;
@@ -92,7 +95,7 @@ function DaySteps({ days, day, hrefForDay }: DayStepsProps) {
   );
 }
 
-function DayResult({ day, view, path, outcome, now }: DayResultProps) {
+function DayResult({ day, view, grammarLinks, path, outcome, now }: DayResultProps) {
   const { assignment, attempt } = view;
   const isOpen =
     assignment.status === "published" &&
@@ -181,7 +184,7 @@ function DayResult({ day, view, path, outcome, now }: DayResultProps) {
         Hiển thị {visible.length} / {view.items.length} câu.
       </p>
       {visible.map(({ item, number }) => (
-        <ResultRow key={item.view.id} item={item} number={number} />
+        <ResultRow key={item.view.id} item={item} number={number} grammarLinks={grammarLinks} />
       ))}
     </>
   );
@@ -200,6 +203,9 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
   const view = day
     ? await loadOrNotFound(getStudentResults(account.id, day.assignmentId, now))
     : null;
+  const grammarLinks = view?.items.some((item) => item.grammarRefs.length)
+    ? await findClassGrammarLinks(account.id, id, now)
+    : undefined;
   const hrefForDay = (item: DailyDay) => `${path}?day=${item.date}#daily-day`;
   return (
     <>
@@ -248,7 +254,14 @@ export default async function DailyPracticePage({ params, searchParams }: DailyP
                 {day.title}
               </Link>
             </p>
-            <DayResult day={day} view={view} path={path} outcome={outcome} now={now} />
+            <DayResult
+              day={day}
+              view={view}
+              grammarLinks={grammarLinks}
+              path={path}
+              outcome={outcome}
+              now={now}
+            />
           </section>
         </>
       )}

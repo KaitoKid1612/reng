@@ -20,6 +20,7 @@ import {
   toTestQuestions,
 } from "@/lib/assignment";
 import { gradeAttempt } from "@/lib/grading/grade";
+import { grammarRefs } from "@/lib/grammar-links";
 import { isExamTimeUp, JLPT_EXAM_MAX_LISTENS, jlptSectionOf } from "@/lib/jlpt";
 import { questionSchema } from "@/lib/lesson-schema";
 import { listAssignmentExams } from "@/lib/server/assignment-exams";
@@ -750,6 +751,8 @@ export interface ResultItem {
   section: JlptSection | null;
   // Where reused material came from, with the original recording of a listening question.
   source: { url: string; audioUrl: string | null } | null;
+  // The grammar points the question tests (its "grammar:" tags), linked once feedback is shown.
+  grammarRefs: string[];
 }
 
 const answerRowSchema = z.object({
@@ -788,6 +791,7 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
       source: question.source
         ? { url: question.source.url, audioUrl: question.source.audioUrl ?? null }
         : null,
+      grammarRefs: grammarRefs(question.tags),
     };
   });
 }

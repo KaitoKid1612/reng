@@ -15,6 +15,7 @@ import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
 import { foldMissedDailySets } from "@/lib/learner-today";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
+import { hasClassGrammar } from "@/lib/server/class-grammar";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { hasDailyRuns } from "@/lib/server/daily-history";
 import { getStudentClassView } from "@/lib/server/learner";
@@ -99,6 +100,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const account = await requireStudent(`/classes/${id}`);
   const now = new Date();
   const view = await loadOrNotFound(loadClassView(account.id, id));
+  const hasGrammar = await hasClassGrammar(account.id, id, now);
   // Membership was checked above, so the timetable is read only for a member.
   const [schedule, hasDaily] = await Promise.all([
     getClassSchedule(view.classRow.id),
@@ -210,6 +212,11 @@ export default async function ClassPage({ params }: ClassPageProps) {
       </section>
       <section className="section-block" aria-labelledby="class-lessons">
         <h2 id="class-lessons">Bài học đã mở</h2>
+        {hasGrammar && (
+          <p className="small">
+            <Link href={`/grammar?class=${view.classRow.id}`}>Tra ngữ pháp các bài của lớp</Link>
+          </p>
+        )}
         {view.lessons.length ? (
           <ul className="item-list">
             {view.lessons.map((lesson) => (

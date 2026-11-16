@@ -19,6 +19,7 @@ import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { isHandedInAtTimeLimit } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
+import { findClassGrammarLinks } from "@/lib/server/class-grammar";
 import { findDailyRunDate } from "@/lib/server/daily-history";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -61,6 +62,10 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
     matchesOutcome(item.isCorrect, outcome),
   );
   const now = new Date();
+  // Questions tagged with a grammar point link to the class lesson that explains it.
+  const grammarLinks = view.items.some((item) => item.grammarRefs.length)
+    ? await findClassGrammarLinks(account.id, assignment.classId, now)
+    : undefined;
   // A closed or past-due assignment would only answer a retry with its blocker message.
   const isAccepting =
     assignment.status === "published" &&
@@ -178,7 +183,12 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               Hiển thị {visibleItems.length} / {view.items.length} câu.
             </p>
             {visibleItems.map(({ item, number }) => (
-              <ResultRow key={item.view.id} item={item} number={number} />
+              <ResultRow
+                key={item.view.id}
+                item={item}
+                number={number}
+                grammarLinks={grammarLinks}
+              />
             ))}
             <QuestionCredits credits={view.items.map((item) => item.view.credit)} />
           </section>

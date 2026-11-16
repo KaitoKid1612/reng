@@ -1,21 +1,26 @@
 import { ExternalLink } from "lucide-react";
 
 import { PassageDetails } from "@/components/classroom/passage-details";
+import { GrammarLinkList } from "@/components/classroom/grammar-link-list";
 import { QuestionImage } from "@/components/classroom/question-image";
 import { TranscriptText } from "@/components/classroom/transcript-text";
 import { FuriganaText } from "@/components/lessons/japanese-text";
 import { answerLang } from "@/lib/assignment";
+import { findGrammarLinks } from "@/lib/grammar-links";
 
+import type { GrammarLinks } from "@/lib/grammar-links";
 import type { ResultItem } from "@/lib/server/assignments";
 
 interface ResultRowProps {
   item: ResultItem;
   /** The question's number in the whole attempt, kept when a filter hides other answers. */
   number: number;
+  /** Class lessons by grammar id, for questions tagged with the point they test. */
+  grammarLinks?: GrammarLinks;
 }
 
 /** One graded answer as the learner reviews it: on the results page and in the daily history. */
-export function ResultRow({ item, number }: ResultRowProps) {
+export function ResultRow({ item, number, grammarLinks }: ResultRowProps) {
   return (
     <div className="result-row" data-correct={item.isCorrect}>
       <p className="result-row-meta">
@@ -63,6 +68,7 @@ export function ResultRow({ item, number }: ResultRowProps) {
       <p className="muted">
         <FuriganaText text={item.explain} />
       </p>
+      <GrammarLinkList links={findGrammarLinks(item.grammarRefs, grammarLinks)} />
     </div>
   );
 }
