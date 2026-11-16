@@ -1093,12 +1093,12 @@
         "type": "choice",
         "options": [
           "こちらは リンさんです。",
-          "どうぞ よろしく おねがいします。",
+          "おいくつですか。",
           "ちがいます。",
-          "おいくつですか。"
+          "どうぞ よろしく おねがいします。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0121",
@@ -1124,13 +1124,13 @@
         "explain": "〜から きました: (tôi) đến từ ….",
         "type": "choice",
         "options": [
-          "Tôi đi Việt Nam.",
           "Tôi đến từ Việt Nam.",
+          "Tôi đi Việt Nam.",
           "Tôi là tiếng Việt.",
           "Tôi không phải người Việt."
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0123",
@@ -1139,9 +1139,9 @@
         "tags": ["minna-1"],
         "explain": "〜さん để gọi người khác lịch sự; không gọi chính mình là 〜さん.",
         "type": "choice",
-        "options": ["người đang nghe", "bản thân mình", "thầy cô", "người kia"],
+        "options": ["người đang nghe", "người kia", "thầy cô", "bản thân mình"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0124",
@@ -1150,9 +1150,9 @@
         "tags": ["minna-1"],
         "explain": "Gọi thầy cô: せんせい; tự giới thiệu nghề: わたしは きょうしです.",
         "type": "choice",
-        "options": ["せんせい", "きょうし", "がくせい", "いしゃ"],
+        "options": ["きょうし", "せんせい", "がくせい", "いしゃ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0125",
@@ -1205,9 +1205,9 @@
         "tags": ["minna-1"],
         "explain": "Tiếng Anh là ngoại lệ: えいご.",
         "type": "choice",
-        "options": ["アメリカご", "えいご", "アメリカじん", "イギリスご"],
+        "options": ["アメリカご", "イギリスご", "アメリカじん", "えいご"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0130",
@@ -1354,13 +1354,13 @@
         "explain": "しつれいですが: xin lỗi, (cho hỏi) … trước khi hỏi điều riêng.",
         "type": "choice",
         "options": [
-          "cảm ơn",
           "xin phép hỏi điều riêng (tên, tuổi)",
+          "cảm ơn",
           "chào tạm biệt",
           "xin lỗi vì đến muộn"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0143",
@@ -1453,12 +1453,12 @@
         "type": "choice",
         "options": [
           "はい、いしゃじゃ ありません。",
-          "いいえ、いしゃじゃ ありません。がくせいです。",
+          "はい、ちがいます。",
           "いいえ、そうです。",
-          "はい、ちがいます。"
+          "いいえ、いしゃじゃ ありません。がくせいです。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       }
     ]
   }

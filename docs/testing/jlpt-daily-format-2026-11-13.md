@@ -62,3 +62,20 @@ Giáo viên vẫn nên đọc lại trước khi nạp lên production.
   - `tests/review-bank-sql.test.ts`: tạo bài cho lớp, đặt nguồn bài hằng ngày.
 - **Nạp lên production (16/11/2026):** người dùng chạy thử `bank:sql --class <mã lớp Nguyên> --daily-source` (kết thúc bằng ROLLBACK), rồi chạy bản `--commit` bằng `npx supabase db query --linked`. Đọc lại production: lớp Tiếng Nhật Minna – Lớp 1 lấy bài hằng ngày từ `n5-minna-review-bank` (500 câu), vẫn 60 câu mỗi ngày, 0 câu nghe. Ngân hàng cũ vẫn ở trong lớp.
 
+## Cân lại vị trí đáp án — 16/11/2026
+
+Câu chọn hiện phương án theo đúng thứ tự soạn, nên vị trí đáp án phải chia đều. Khi soát bài mẫu 17, agent soát thấy bài mẫu 16 có đáp án ở các vị trí 8/23/9/0. Đếm lại toàn bộ:
+
+| Nguồn | Trước | Sau | Câu đổi |
+|---|---|---|---|
+| Bài mẫu 1 | 6/15/8/5 | 9/8/8/9 | 7 |
+| Bài mẫu 2 | 8/16/7/5 | 9/9/9/9 | 7 |
+| Bài mẫu 12 | 6/11/9/4 | 8/7/7/8 | 6 |
+| Bài mẫu 16 | 8/23/9/0 | 10/10/10/10 | 13 |
+| Ngân hàng Minna 1–16 (cả kho) | 68/109/61/74 | cân theo từng bài | 57 |
+
+Các bài mẫu khác đã đều. Ngân hàng bị lệch cả ở những bài có bài mẫu đều, vì cách chọn đều theo thứ tự lấy trúng chu kỳ vị trí của bài mẫu. Script tạm (ngoài repo) giữ câu có đáp án ở vị trí còn thiếu; với câu thừa, đáp án đúng đổi chỗ với phương án ở vị trí thiếu nhất. Mã câu, đề, lời giải và nội dung phương án giữ nguyên. Riêng lời giải `q1311` (ngân hàng và bài mẫu 13) viết lại vì nói "lựa chọn cuối".
+
+- `tests/japanese-lessons.test.ts` và `tests/n5-minna-bank.test.ts`: mỗi vị trí chiếm 18–32% số câu chọn của một bài mẫu hoặc một bài trong ngân hàng. Trên nội dung cũ 5 test hỏng (bài mẫu 1, 2, 12, 16 và ngân hàng); trên nội dung mới đạt.
+- Production chưa đổi. Ngân hàng cần nạp lại bằng `bank:sql` (không cần `--class`). Bài 16 đã xuất bản trong lớp Nguyên giữ thứ tự cũ cho tới khi giáo viên dùng **so sánh và cập nhật từ mẫu** rồi xuất bản.
+

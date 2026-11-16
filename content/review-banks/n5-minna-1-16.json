@@ -124,9 +124,9 @@
         "tags": ["minna-1"],
         "explain": "どなた = だれ nhưng lịch sự hơn.",
         "type": "choice",
-        "options": ["なん", "だれ", "どこ", "いくつ"],
+        "options": ["なん", "いくつ", "どこ", "だれ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0117",
@@ -135,9 +135,9 @@
         "tags": ["minna-1"],
         "explain": "おいくつですか lịch sự hơn なんさいですか.",
         "type": "choice",
-        "options": ["なんさいですか。", "おいくつですか。", "だれですか。", "おなまえは。"],
+        "options": ["なんさいですか。", "おなまえは。", "だれですか。", "おいくつですか。"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0119",
@@ -173,9 +173,9 @@
         "tags": ["minna-1"],
         "explain": "〜さん để gọi người khác lịch sự; không gọi chính mình là 〜さん.",
         "type": "choice",
-        "options": ["người đang nghe", "bản thân mình", "thầy cô", "người kia"],
+        "options": ["người đang nghe", "người kia", "thầy cô", "bản thân mình"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0126",
@@ -273,13 +273,13 @@
         "explain": "しつれいですが: xin lỗi, (cho hỏi) … trước khi hỏi điều riêng.",
         "type": "choice",
         "options": [
-          "cảm ơn",
           "xin phép hỏi điều riêng (tên, tuổi)",
+          "cảm ơn",
           "chào tạm biệt",
           "xin lỗi vì đến muộn"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0144",
@@ -310,9 +310,9 @@
         "tags": ["minna-1"],
         "explain": "ちゅうごく: Trung Quốc; かんこく: Hàn Quốc.",
         "type": "choice",
-        "options": ["Hàn Quốc", "Nhật Bản", "Trung Quốc", "Thái Lan"],
+        "options": ["Hàn Quốc", "Nhật Bản", "Thái Lan", "Trung Quốc"],
         "multiple": false,
-        "answer": [2]
+        "answer": [3]
       },
       {
         "id": "n5-match-01-1",
@@ -359,9 +359,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Người kia không phải là giảng viên của Đại học Midori.”\nあの 人は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-mpy4q4", "text": "じゃ ありません" },
-          { "id": "p-qxwu4s", "text": "先生" },
-          { "id": "p-h4vb8c", "text": "みどり大学の" }
+          {
+            "id": "p-mpy4q4",
+            "text": "じゃ ありません"
+          },
+          {
+            "id": "p-qxwu4s",
+            "text": "先生"
+          },
+          {
+            "id": "p-h4vb8c",
+            "text": "みどり大学の"
+          }
         ],
         "answer": ["p-h4vb8c", "p-qxwu4s", "p-mpy4q4"],
         "points": 1,
@@ -373,10 +382,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Anh Sato cũng là bác sĩ của bệnh viện Sakura phải không?”\n{佐藤|さとう}さん ＿＿＿＿ か。",
         "tokens": [
-          { "id": "p-w5d95a", "text": "です" },
-          { "id": "p-qe32h5", "text": "{医者|いしゃ}" },
-          { "id": "p-48s56y", "text": "さくら{病院|びょういん}の" },
-          { "id": "p-qdmd9n", "text": "も" }
+          {
+            "id": "p-w5d95a",
+            "text": "です"
+          },
+          {
+            "id": "p-qe32h5",
+            "text": "{医者|いしゃ}"
+          },
+          {
+            "id": "p-48s56y",
+            "text": "さくら{病院|びょういん}の"
+          },
+          {
+            "id": "p-qdmd9n",
+            "text": "も"
+          }
         ],
         "answer": ["p-qdmd9n", "p-48s56y", "p-qe32h5", "p-w5d95a"],
         "points": 1,
@@ -477,9 +498,9 @@
         "tags": ["minna-2"],
         "explain": "の chỉ nội dung: くるまの ざっし là tạp chí về ô tô.",
         "type": "choice",
-        "options": ["tạp chí của chiếc xe", "tạp chí về ô tô", "xe của tạp chí", "báo bán xe"],
+        "options": ["tạp chí của chiếc xe", "báo bán xe", "xe của tạp chí", "tạp chí về ô tô"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0217",
@@ -488,9 +509,9 @@
         "tags": ["minna-2"],
         "explain": "かさ: ô, dù.",
         "type": "choice",
-        "options": ["cặp", "ô, dù", "chìa khóa", "đồng hồ"],
+        "options": ["ô, dù", "cặp", "chìa khóa", "đồng hồ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0219",
@@ -521,9 +542,9 @@
         "tags": ["minna-2"],
         "explain": "ほんとうですか: thật không?",
         "type": "choice",
-        "options": ["どうぞ", "ほんとうですか", "あのう", "そうです"],
+        "options": ["どうぞ", "あのう", "ほんとうですか", "そうです"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0226",
@@ -532,9 +553,9 @@
         "tags": ["minna-2"],
         "explain": "の chỉ nội dung: sách (bằng/về) tiếng Nhật.",
         "type": "choice",
-        "options": ["sách ở Nhật", "sách tiếng Nhật", "người Nhật", "tiếng Nhật"],
+        "options": ["sách ở Nhật", "tiếng Nhật", "người Nhật", "sách tiếng Nhật"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0228",
@@ -636,9 +657,9 @@
         "tags": ["minna-2"],
         "explain": "Bỏ danh từ sau の: ナムさんのです.",
         "type": "choice",
-        "options": ["ナムさん", "ナムさんの", "ナムさんは", "ナムさんも"],
+        "options": ["ナムさんの", "ナムさん", "ナムさんは", "ナムさんも"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0246",
@@ -647,9 +668,9 @@
         "tags": ["minna-2"],
         "explain": "テレビ: ti vi.",
         "type": "choice",
-        "options": ["radio", "ti vi", "máy ảnh", "máy tính"],
+        "options": ["radio", "máy ảnh", "ti vi", "máy tính"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0248",
@@ -660,12 +681,12 @@
         "type": "choice",
         "options": [
           "わたしの CDです。",
-          "えいごの CDです。",
+          "CDじゃ ありません。",
           "はい、そうです。",
-          "CDじゃ ありません。"
+          "えいごの CDです。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "n5-match-02-1",
@@ -712,9 +733,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Cái ô đó là của ai?”\n＿＿＿＿ ですか。",
         "tokens": [
-          { "id": "p-63t9wu", "text": "その" },
-          { "id": "p-uyhn2c", "text": "{傘|かさ}は" },
-          { "id": "p-thentj", "text": "だれの" }
+          {
+            "id": "p-63t9wu",
+            "text": "その"
+          },
+          {
+            "id": "p-uyhn2c",
+            "text": "{傘|かさ}は"
+          },
+          {
+            "id": "p-thentj",
+            "text": "だれの"
+          }
         ],
         "answer": ["p-63t9wu", "p-uyhn2c", "p-thentj"],
         "points": 1,
@@ -726,9 +756,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Kia là tạp chí về cái gì?”\n＿＿＿＿ ですか。",
         "tokens": [
-          { "id": "p-2nr9cx", "text": "何の" },
-          { "id": "p-r9gvth", "text": "{雑誌|ざっし}" },
-          { "id": "p-3f4pvm", "text": "あれは" }
+          {
+            "id": "p-2nr9cx",
+            "text": "何の"
+          },
+          {
+            "id": "p-r9gvth",
+            "text": "{雑誌|ざっし}"
+          },
+          {
+            "id": "p-3f4pvm",
+            "text": "あれは"
+          }
         ],
         "answer": ["p-3f4pvm", "p-2nr9cx", "p-r9gvth"],
         "points": 1,
@@ -840,9 +879,9 @@
         "tags": ["minna-3"],
         "explain": "10000: いちまん; まん không đứng một mình.",
         "type": "choice",
-        "options": ["まん", "いちまん", "じゅうせん", "ひゃくせん"],
+        "options": ["いちまん", "まん", "じゅうせん", "ひゃくせん"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0319",
@@ -854,11 +893,11 @@
         "options": [
           "あの とけいを ください。",
           "あの とけいは どこですか。",
-          "あれは とけいですか。",
-          "あの とけいを みせて ください。"
+          "あの とけいを みせて ください。",
+          "あれは とけいですか。"
         ],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0321",
@@ -867,9 +906,9 @@
         "tags": ["minna-3"],
         "explain": "Hỏi tầng: なんがい (何階).",
         "type": "choice",
-        "options": ["なんさい", "なんがい", "だれ", "いくら"],
+        "options": ["なんがい", "なんさい", "だれ", "いくら"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0323",
@@ -881,11 +920,11 @@
         "options": [
           "じむしょは 2かいですか。",
           "2かいは じむしょの です。",
-          "じむしょの 2かいです。",
-          "じむしょは 2かいです。"
+          "じむしょは 2かいです。",
+          "じむしょの 2かいです。"
         ],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0326",
@@ -1091,10 +1130,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Rượu vang này là rượu vang của nước nào?”\n＿＿＿＿ ですか。",
         "tokens": [
-          { "id": "p-jvsfc6", "text": "ワイン" },
-          { "id": "p-cuhe8z", "text": "どこの" },
-          { "id": "p-fu3p2n", "text": "この" },
-          { "id": "p-axwran", "text": "ワインは" }
+          {
+            "id": "p-jvsfc6",
+            "text": "ワイン"
+          },
+          {
+            "id": "p-cuhe8z",
+            "text": "どこの"
+          },
+          {
+            "id": "p-fu3p2n",
+            "text": "この"
+          },
+          {
+            "id": "p-axwran",
+            "text": "ワインは"
+          }
         ],
         "answer": ["p-fu3p2n", "p-axwran", "p-cuhe8z", "p-jvsfc6"],
         "points": 1,
@@ -1106,9 +1157,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Xin lỗi, cho tôi xem cái túi kia.”\nすみません。 ＿＿＿＿ ください。",
         "tokens": [
-          { "id": "p-pgr5fc", "text": "見せて" },
-          { "id": "p-75drzm", "text": "かばんを" },
-          { "id": "p-cbbgbk", "text": "あの" }
+          {
+            "id": "p-pgr5fc",
+            "text": "見せて"
+          },
+          {
+            "id": "p-75drzm",
+            "text": "かばんを"
+          },
+          {
+            "id": "p-cbbgbk",
+            "text": "あの"
+          }
         ],
         "answer": ["p-cbbgbk", "p-75drzm", "p-pgr5fc"],
         "points": 1,
@@ -1232,9 +1292,9 @@
         "tags": ["minna-4"],
         "explain": "べんきょうします: học.",
         "type": "choice",
-        "options": ["làm việc", "học", "nghỉ ngơi", "bắt đầu"],
+        "options": ["học", "làm việc", "nghỉ ngơi", "bắt đầu"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0423",
@@ -1243,9 +1303,9 @@
         "tags": ["minna-4"],
         "explain": "ごご: buổi chiều.",
         "type": "choice",
-        "options": ["3 giờ sáng", "3 giờ 30", "3 giờ đêm", "3 giờ chiều"],
+        "options": ["3 giờ chiều", "3 giờ 30", "3 giờ đêm", "3 giờ sáng"],
         "multiple": false,
-        "answer": [3]
+        "answer": [0]
       },
       {
         "id": "q0426",
@@ -1456,10 +1516,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Mỗi sáng tôi dậy lúc 6 giờ rưỡi.”\nわたしは {毎朝|まいあさ} ＿＿＿＿。",
         "tokens": [
-          { "id": "p-6fhjfj", "text": "6時" },
-          { "id": "p-dvw5r7", "text": "半" },
-          { "id": "p-tfpqsm", "text": "に" },
-          { "id": "p-ubnjbv", "text": "{起|お}きます" }
+          {
+            "id": "p-6fhjfj",
+            "text": "6時"
+          },
+          {
+            "id": "p-dvw5r7",
+            "text": "半"
+          },
+          {
+            "id": "p-tfpqsm",
+            "text": "に"
+          },
+          {
+            "id": "p-ubnjbv",
+            "text": "{起|お}きます"
+          }
         ],
         "answer": ["p-6fhjfj", "p-dvw5r7", "p-tfpqsm", "p-ubnjbv"],
         "points": 1,
@@ -1471,10 +1543,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Bưu điện mở đến mấy giờ chiều?”\n{郵便局|ゆうびんきょく}は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-u33p7z", "text": "ですか" },
-          { "id": "p-qtpf6v", "text": "まで" },
-          { "id": "p-t4mmzs", "text": "何時" },
-          { "id": "p-4bwz2v", "text": "午後" }
+          {
+            "id": "p-u33p7z",
+            "text": "ですか"
+          },
+          {
+            "id": "p-qtpf6v",
+            "text": "まで"
+          },
+          {
+            "id": "p-t4mmzs",
+            "text": "何時"
+          },
+          {
+            "id": "p-4bwz2v",
+            "text": "午後"
+          }
         ],
         "answer": ["p-4bwz2v", "p-t4mmzs", "p-qtpf6v", "p-u33p7z"],
         "points": 1,
@@ -1486,8 +1570,8 @@
         "type": "choice",
         "passage": "わたしは ナムです。{会社員|かいしゃいん}です。{毎朝|まいあさ} 6時に {起|お}きます。{会社|かいしゃ}は 午前 8時半から 午後 5時半までです。{昼休|ひるやす}みは 12時から 1時までです。{昨日|きのう}は 午後 9時まで {働|はたら}きました。{土曜日|どようび}と {日曜日|にちようび}は 休みです。",
         "prompt": "ナムさんの {会社|かいしゃ}は 何時に {終|お}わりますか。",
-        "options": ["5時", "5時半", "8時半", "9時"],
-        "answer": [1],
+        "options": ["5時", "8時半", "5時半", "9時"],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["minna-4", "reading"],
@@ -1625,9 +1709,9 @@
         "tags": ["minna-5"],
         "explain": "らいしゅう (来週): tuần sau.",
         "type": "choice",
-        "options": ["tuần trước", "tuần sau", "tuần này", "cuối tuần"],
+        "options": ["tuần sau", "tuần trước", "tuần này", "cuối tuần"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0519",
@@ -1636,9 +1720,9 @@
         "tags": ["minna-5"],
         "explain": "せんげつ (先月): tháng trước.",
         "type": "choice",
-        "options": ["tháng này", "tháng sau", "tuần trước", "tháng trước"],
+        "options": ["tháng này", "tháng sau", "tháng trước", "tuần trước"],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0521",
@@ -1647,9 +1731,9 @@
         "tags": ["minna-5"],
         "explain": "Tháng trước ngày sau; ngày 5: いつか.",
         "type": "choice",
-        "options": ["5がつ みっか", "3がつ いつか", "3がつ ごにち", "いつか 3がつ"],
+        "options": ["3がつ いつか", "5がつ みっか", "3がつ ごにち", "いつか 3がつ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0523",
@@ -1661,11 +1745,11 @@
         "options": [
           "しんかんせんと おおさかへ いきます。",
           "しんかんせんへ おおさかで いきます。",
-          "おおさかで しんかんせんへ いきます。",
-          "しんかんせんで おおさかへ いきます。"
+          "しんかんせんで おおさかへ いきます。",
+          "おおさかで しんかんせんへ いきます。"
         ],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0526",
@@ -1860,9 +1944,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Anh Nam đến trường bằng tàu điện ngầm.”\nナムさんは 学校へ ＿＿＿＿。",
         "tokens": [
-          { "id": "p-4wjdsu", "text": "で" },
-          { "id": "p-qfbq6q", "text": "{地下鉄|ちかてつ}" },
-          { "id": "p-x6773q", "text": "来ます" }
+          {
+            "id": "p-4wjdsu",
+            "text": "で"
+          },
+          {
+            "id": "p-qfbq6q",
+            "text": "{地下鉄|ちかてつ}"
+          },
+          {
+            "id": "p-x6773q",
+            "text": "来ます"
+          }
         ],
         "answer": ["p-qfbq6q", "p-4wjdsu", "p-x6773q"],
         "points": 1,
@@ -1874,10 +1967,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Hôm qua tôi không đi đâu cả.”\n{昨日|きのう}は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-2pvvv4", "text": "行きませんでした" },
-          { "id": "p-bjacjy", "text": "も" },
-          { "id": "p-nnvta3", "text": "へ" },
-          { "id": "p-hmjuus", "text": "どこ" }
+          {
+            "id": "p-2pvvv4",
+            "text": "行きませんでした"
+          },
+          {
+            "id": "p-bjacjy",
+            "text": "も"
+          },
+          {
+            "id": "p-nnvta3",
+            "text": "へ"
+          },
+          {
+            "id": "p-hmjuus",
+            "text": "どこ"
+          }
         ],
         "answer": ["p-hmjuus", "p-nnvta3", "p-bjacjy", "p-2pvvv4"],
         "points": 1,
@@ -2016,9 +2121,9 @@
         "tags": ["minna-6"],
         "explain": "いつも: luôn luôn.",
         "type": "choice",
-        "options": ["thỉnh thoảng", "luôn luôn", "không bao giờ", "một chút"],
+        "options": ["thỉnh thoảng", "không bao giờ", "luôn luôn", "một chút"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0623",
@@ -2027,9 +2132,9 @@
         "tags": ["minna-6"],
         "explain": "それから: sau đó.",
         "type": "choice",
-        "options": ["nhưng", "vì vậy", "cùng nhau", "sau đó"],
+        "options": ["sau đó", "vì vậy", "cùng nhau", "nhưng"],
         "multiple": false,
-        "answer": [3]
+        "answer": [0]
       },
       {
         "id": "q0626",
@@ -2224,10 +2329,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Chủ nhật cùng nhau xem phim Nhật không?”\n{日曜日|にちようび} いっしょに ＿＿＿＿。",
         "tokens": [
-          { "id": "p-ntmtwf", "text": "日本" },
-          { "id": "p-ssmpja", "text": "の" },
-          { "id": "p-c2w8jm", "text": "{映画|えいが}を" },
-          { "id": "p-gkvqc4", "text": "見ませんか" }
+          {
+            "id": "p-ntmtwf",
+            "text": "日本"
+          },
+          {
+            "id": "p-ssmpja",
+            "text": "の"
+          },
+          {
+            "id": "p-c2w8jm",
+            "text": "{映画|えいが}を"
+          },
+          {
+            "id": "p-gkvqc4",
+            "text": "見ませんか"
+          }
         ],
         "answer": ["p-ntmtwf", "p-ssmpja", "p-c2w8jm", "p-gkvqc4"],
         "points": 1,
@@ -2239,10 +2356,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Sáng nay tôi đã không ăn gì cả.”\n{今朝|けさ}は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-ud229h", "text": "食べません" },
-          { "id": "p-deub3j", "text": "でした" },
-          { "id": "p-pffcvp", "text": "何" },
-          { "id": "p-q92kr7", "text": "も" }
+          {
+            "id": "p-ud229h",
+            "text": "食べません"
+          },
+          {
+            "id": "p-deub3j",
+            "text": "でした"
+          },
+          {
+            "id": "p-pffcvp",
+            "text": "何"
+          },
+          {
+            "id": "p-q92kr7",
+            "text": "も"
+          }
         ],
         "answer": ["p-pffcvp", "p-q92kr7", "p-ud229h", "p-deub3j"],
         "points": 1,
@@ -2257,10 +2386,10 @@
         "options": [
           "さくら{駅|えき}",
           "さくら{駅|えき}の {店|みせ}",
-          "ハナさんの うち",
-          "{公園|こうえん}の 入口"
+          "{公園|こうえん}の 入口",
+          "ハナさんの うち"
         ],
-        "answer": [3],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["minna-6", "reading"],
@@ -2388,9 +2517,9 @@
         "tags": ["minna-7"],
         "explain": "ならいます: học (từ ai đó).",
         "type": "choice",
-        "options": ["dạy", "học (từ ai đó)", "đọc", "viết"],
+        "options": ["học (từ ai đó)", "dạy", "đọc", "viết"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0719",
@@ -2399,9 +2528,9 @@
         "tags": ["minna-7"],
         "explain": "はさみ: cái kéo.",
         "type": "choice",
-        "options": ["đôi đũa", "cái thìa", "con dao", "cái kéo"],
+        "options": ["đôi đũa", "cái thìa", "cái kéo", "con dao"],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0721",
@@ -2411,13 +2540,13 @@
         "explain": "Công cụ + で, đối tượng + を.",
         "type": "choice",
         "options": [
-          "はさみを かみで きります。",
           "はさみで かみを きります。",
+          "はさみを かみで きります。",
           "はさみに かみを きります。",
           "かみで はさみを きります。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0723",
@@ -2426,9 +2555,9 @@
         "tags": ["minna-7"],
         "explain": "Trước khi ăn: いただきます.",
         "type": "choice",
-        "options": ["ごちそうさまでした", "いらっしゃい", "しつれいします", "いただきます"],
+        "options": ["ごちそうさまでした", "いらっしゃい", "いただきます", "しつれいします"],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0726",
@@ -2617,9 +2746,18 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “\"Xin chào\" tiếng Nhật là gì?”\n「Xin chào」は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-8rfkvh", "text": "何" },
-          { "id": "p-cug4yp", "text": "日本語で" },
-          { "id": "p-9sk7jy", "text": "ですか" }
+          {
+            "id": "p-8rfkvh",
+            "text": "何"
+          },
+          {
+            "id": "p-cug4yp",
+            "text": "日本語で"
+          },
+          {
+            "id": "p-9sk7jy",
+            "text": "ですか"
+          }
         ],
         "answer": ["p-cug4yp", "p-8rfkvh", "p-9sk7jy"],
         "points": 1,
@@ -2631,10 +2769,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi đã tặng mẹ quà lưu niệm của Nhật.”\nわたしは 母に ＿＿＿＿。",
         "tokens": [
-          { "id": "p-4n2cwf", "text": "あげました" },
-          { "id": "p-gp5222", "text": "お{土産|みやげ}を" },
-          { "id": "p-6y75qh", "text": "の" },
-          { "id": "p-jvrh2p", "text": "日本" }
+          {
+            "id": "p-4n2cwf",
+            "text": "あげました"
+          },
+          {
+            "id": "p-gp5222",
+            "text": "お{土産|みやげ}を"
+          },
+          {
+            "id": "p-6y75qh",
+            "text": "の"
+          },
+          {
+            "id": "p-jvrh2p",
+            "text": "日本"
+          }
         ],
         "answer": ["p-jvrh2p", "p-6y75qh", "p-gp5222", "p-4n2cwf"],
         "points": 1,
@@ -2763,9 +2913,9 @@
         "tags": ["minna-8"],
         "explain": "ひま: rảnh rỗi.",
         "type": "choice",
-        "options": ["bận rộn", "rảnh rỗi", "khỏe mạnh", "tiện lợi"],
+        "options": ["bận rộn", "khỏe mạnh", "rảnh rỗi", "tiện lợi"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0823",
@@ -2774,9 +2924,9 @@
         "tags": ["minna-8"],
         "explain": "べんり: tiện lợi.",
         "type": "choice",
-        "options": ["nổi tiếng", "yên tĩnh", "đẹp", "tiện lợi"],
+        "options": ["tiện lợi", "yên tĩnh", "đẹp", "nổi tiếng"],
         "multiple": false,
-        "answer": [3]
+        "answer": [0]
       },
       {
         "id": "q0826",
@@ -2986,10 +3136,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Hội An là một thành phố rất đẹp.”\nホイアンは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-4rhfst", "text": "とても" },
-          { "id": "p-czwgpz", "text": "{町|まち}" },
-          { "id": "p-8as7xq", "text": "きれいな" },
-          { "id": "p-w3hbw3", "text": "です" }
+          {
+            "id": "p-4rhfst",
+            "text": "とても"
+          },
+          {
+            "id": "p-czwgpz",
+            "text": "{町|まち}"
+          },
+          {
+            "id": "p-8as7xq",
+            "text": "きれいな"
+          },
+          {
+            "id": "p-w3hbw3",
+            "text": "です"
+          }
         ],
         "answer": ["p-4rhfst", "p-8as7xq", "p-czwgpz", "p-w3hbw3"],
         "points": 1,
@@ -3001,10 +3163,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Cái túi này không mới lắm.”\nこの かばんは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-9s8rhy", "text": "あまり" },
-          { "id": "p-kxdn7r", "text": "新しく" },
-          { "id": "p-q4asqa", "text": "ない" },
-          { "id": "p-5w3feb", "text": "です" }
+          {
+            "id": "p-9s8rhy",
+            "text": "あまり"
+          },
+          {
+            "id": "p-kxdn7r",
+            "text": "新しく"
+          },
+          {
+            "id": "p-q4asqa",
+            "text": "ない"
+          },
+          {
+            "id": "p-5w3feb",
+            "text": "です"
+          }
         ],
         "answer": ["p-9s8rhy", "p-kxdn7r", "p-q4asqa", "p-5w3feb"],
         "points": 1,
@@ -3018,11 +3192,11 @@
         "prompt": "ホイアンは どんな {町|まち}ですか。",
         "options": [
           "新しい {町|まち}です",
-          "にぎやかな {町|まち}です",
           "{静|しず}かな {町|まち}です",
+          "にぎやかな {町|まち}です",
           "大きい {町|まち}です"
         ],
-        "answer": [1],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["minna-8", "reading"],
@@ -3145,9 +3319,9 @@
         "tags": ["minna-9"],
         "explain": "りょこう (旅行): du lịch.",
         "type": "choice",
-        "options": ["âm nhạc", "du lịch", "mua sắm", "thể thao"],
+        "options": ["du lịch", "âm nhạc", "mua sắm", "thể thao"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0919",
@@ -3156,9 +3330,9 @@
         "tags": ["minna-9"],
         "explain": "やくそく (約束): cuộc hẹn.",
         "type": "choice",
-        "options": ["việc làm thêm", "thời gian", "việc bận", "cuộc hẹn, lời hứa"],
+        "options": ["việc làm thêm", "thời gian", "cuộc hẹn, lời hứa", "việc bận"],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0921",
@@ -3167,9 +3341,9 @@
         "tags": ["minna-9"],
         "explain": "こまかい おかね: tiền lẻ.",
         "type": "choice",
-        "options": ["tiền nhiều", "tiền lẻ", "tiền Nhật", "thẻ ngân hàng"],
+        "options": ["tiền lẻ", "tiền nhiều", "tiền Nhật", "thẻ ngân hàng"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0923",
@@ -3178,9 +3352,9 @@
         "tags": ["minna-9"],
         "explain": "Chồng người khác: ごしゅじん; chồng mình: おっと.",
         "type": "choice",
-        "options": ["おっと", "つま", "こども", "ごしゅじん"],
+        "options": ["おっと", "つま", "ごしゅじん", "こども"],
         "multiple": false,
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "q0926",
@@ -3385,10 +3559,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Anh Nam thích loại nhạc như thế nào?”\nナムさんは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-hvph6h", "text": "どんな" },
-          { "id": "p-nrtcpb", "text": "{音楽|おんがく}" },
-          { "id": "p-xbw6st", "text": "が" },
-          { "id": "p-e6qqyu", "text": "{好|す}きですか" }
+          {
+            "id": "p-hvph6h",
+            "text": "どんな"
+          },
+          {
+            "id": "p-nrtcpb",
+            "text": "{音楽|おんがく}"
+          },
+          {
+            "id": "p-xbw6st",
+            "text": "が"
+          },
+          {
+            "id": "p-e6qqyu",
+            "text": "{好|す}きですか"
+          }
         ],
         "answer": ["p-hvph6h", "p-nrtcpb", "p-xbw6st", "p-e6qqyu"],
         "points": 1,
@@ -3400,10 +3586,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Xin lỗi, vì có việc bận nên tôi về đây.”\nすみません。 ＿＿＿＿。",
         "tokens": [
-          { "id": "p-uqb9tn", "text": "ありますから、" },
-          { "id": "p-g3g5dv", "text": "が" },
-          { "id": "p-8jxnhh", "text": "{用事|ようじ}" },
-          { "id": "p-xgqqd4", "text": "{帰|かえ}ります" }
+          {
+            "id": "p-uqb9tn",
+            "text": "ありますから、"
+          },
+          {
+            "id": "p-g3g5dv",
+            "text": "が"
+          },
+          {
+            "id": "p-8jxnhh",
+            "text": "{用事|ようじ}"
+          },
+          {
+            "id": "p-xgqqd4",
+            "text": "{帰|かえ}ります"
+          }
         ],
         "answer": ["p-8jxnhh", "p-g3g5dv", "p-uqb9tn", "p-xgqqd4"],
         "points": 1,
@@ -3537,9 +3735,9 @@
         "tags": ["minna-10"],
         "explain": "れいぞうこ (冷蔵庫): tủ lạnh.",
         "type": "choice",
-        "options": ["cái hộp", "tủ lạnh", "cái kệ", "cái giường"],
+        "options": ["tủ lạnh", "cái hộp", "cái kệ", "cái giường"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q1023",
@@ -3548,9 +3746,9 @@
         "tags": ["minna-10"],
         "explain": "おんなの こ: bé gái.",
         "type": "choice",
-        "options": ["người phụ nữ", "bé trai", "người đàn ông", "bé gái"],
+        "options": ["bé gái", "bé trai", "người đàn ông", "người phụ nữ"],
         "multiple": false,
-        "answer": [3]
+        "answer": [0]
       },
       {
         "id": "q1026",
@@ -3745,10 +3943,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Trong phòng có người đàn ông.”\n{部屋|へや}の 中に ＿＿＿＿。",
         "tokens": [
-          { "id": "p-dkmx6e", "text": "男の" },
-          { "id": "p-gdaawu", "text": "人" },
-          { "id": "p-qjxrdn", "text": "が" },
-          { "id": "p-tmg6f2", "text": "います" }
+          {
+            "id": "p-dkmx6e",
+            "text": "男の"
+          },
+          {
+            "id": "p-gdaawu",
+            "text": "人"
+          },
+          {
+            "id": "p-qjxrdn",
+            "text": "が"
+          },
+          {
+            "id": "p-tmg6f2",
+            "text": "います"
+          }
         ],
         "answer": ["p-dkmx6e", "p-gdaawu", "p-qjxrdn", "p-tmg6f2"],
         "points": 1,
@@ -3760,10 +3970,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Cửa hàng tiện lợi ở bên cạnh ga Sakura.”\nコンビニは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-4c8sg2", "text": "あります" },
-          { "id": "p-tjz5qr", "text": "に" },
-          { "id": "p-88562u", "text": "{隣|となり}" },
-          { "id": "p-emumed", "text": "さくら{駅|えき}の" }
+          {
+            "id": "p-4c8sg2",
+            "text": "あります"
+          },
+          {
+            "id": "p-tjz5qr",
+            "text": "に"
+          },
+          {
+            "id": "p-88562u",
+            "text": "{隣|となり}"
+          },
+          {
+            "id": "p-emumed",
+            "text": "さくら{駅|えき}の"
+          }
         ],
         "answer": ["p-emumed", "p-88562u", "p-tjz5qr", "p-4c8sg2"],
         "points": 1,
@@ -3775,8 +3997,8 @@
         "type": "choice",
         "passage": "わたしの うちは さくら{駅|えき}の {近|ちか}くに あります。うちの 前に {公園|こうえん}が あります。{公園|こうえん}に いつも {子|こ}どもや {犬|いぬ}が います。わたしの {部屋|へや}に ベッドと {机|つくえ}が あります。{机|つくえ}の 上に パソコンが あります。{猫|ねこ}は いつも ベッドの 下に います。　ハナ",
         "prompt": "ハナさんの うちの 前に 何が ありますか。",
-        "options": ["さくら{駅|えき}", "コンビニ", "{机|つくえ}", "{公園|こうえん}"],
-        "answer": [3],
+        "options": ["さくら{駅|えき}", "コンビニ", "{公園|こうえん}", "{机|つくえ}"],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["minna-10", "reading"],
@@ -4131,13 +4353,13 @@
         "explain": "Người dùng います và đếm bằng 〜にん: がくせいが 12にん います.",
         "type": "choice",
         "options": [
-          "わたしの クラスに がくせいが 12にん います。",
-          "わたしの クラスに がくせいが 12にん あります。",
           "わたしの クラスに がくせいが 12まい います。",
+          "わたしの クラスに がくせいが 12にん あります。",
+          "わたしの クラスに がくせいが 12にん います。",
           "わたしの クラスに がくせいを 12にん います。"
         ],
         "multiple": false,
-        "answer": [0]
+        "answer": [2]
       },
       {
         "id": "n5-match-11-1",
@@ -4178,10 +4400,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Xin lỗi, cho tôi 5 con tem loại 80 yên.”\nすみません。 ＿＿＿＿。",
         "tokens": [
-          { "id": "p-ybbm8a", "text": "{切手|きって}" },
-          { "id": "p-m439gn", "text": "80円の" },
-          { "id": "p-ezn764", "text": "5{枚|まい} ください" },
-          { "id": "p-5ug67x", "text": "を" }
+          {
+            "id": "p-ybbm8a",
+            "text": "{切手|きって}"
+          },
+          {
+            "id": "p-m439gn",
+            "text": "80円の"
+          },
+          {
+            "id": "p-ezn764",
+            "text": "5{枚|まい} ください"
+          },
+          {
+            "id": "p-5ug67x",
+            "text": "を"
+          }
         ],
         "answer": ["p-m439gn", "p-ybbm8a", "p-5ug67x", "p-ezn764"],
         "points": 1,
@@ -4193,10 +4427,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi học tiếng Nhật một tuần 2 lần.”\nわたしは 日本語を ＿＿＿＿。",
         "tokens": [
-          { "id": "p-y452bu", "text": "1週間" },
-          { "id": "p-htf7p8", "text": "に" },
-          { "id": "p-3uufyh", "text": "{勉強|べんきょう}します" },
-          { "id": "p-atk378", "text": "2{回|かい}" }
+          {
+            "id": "p-y452bu",
+            "text": "1週間"
+          },
+          {
+            "id": "p-htf7p8",
+            "text": "に"
+          },
+          {
+            "id": "p-3uufyh",
+            "text": "{勉強|べんきょう}します"
+          },
+          {
+            "id": "p-atk378",
+            "text": "2{回|かい}"
+          }
         ],
         "answer": ["p-y452bu", "p-htf7p8", "p-atk378", "p-3uufyh"],
         "points": 1,
@@ -4208,8 +4454,8 @@
         "type": "choice",
         "passage": "今日、{郵便局|ゆうびんきょく}へ 行きました。ベトナムの 母に {荷物|にもつ}を {送|おく}りました。{航空便|こうくうびん}は 高いですから、{船便|ふなびん}で {送|おく}りました。{船便|ふなびん}は 1か月ぐらい かかります。それから、80円の {切手|きって}を 5{枚|まい} 買いました。うちから {郵便局|ゆうびんきょく}まで {歩|ある}いて 10{分|ぷん}ぐらいです。",
         "prompt": "{荷物|にもつ}は ベトナムまで どのくらい かかりますか。",
-        "options": ["1か月ぐらい", "1週間ぐらい", "10{分|ぷん}ぐらい", "1年ぐらい"],
-        "answer": [0],
+        "options": ["1年ぐらい", "1週間ぐらい", "10{分|ぷん}ぐらい", "1か月ぐらい"],
+        "answer": [3],
         "multiple": false,
         "points": 1,
         "tags": ["minna-11", "reading"],
@@ -4524,9 +4770,9 @@
         "tags": ["minna-12"],
         "explain": "おおい (nhiều) ⇔ すくない (ít).",
         "type": "choice",
-        "options": ["おもい", "すくない", "とおい", "からい"],
+        "options": ["おもい", "とおい", "すくない", "からい"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1244",
@@ -4535,9 +4781,9 @@
         "tags": ["minna-12"],
         "explain": "Người về nhà nói ただいま; người ở nhà đáp おかえりなさい.",
         "type": "choice",
-        "options": ["おかえりなさい", "ただいま", "いってきます", "いらっしゃいませ"],
+        "options": ["おかえりなさい", "いってきます", "ただいま", "いらっしゃいませ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1246",
@@ -4569,13 +4815,13 @@
         "explain": "Ôn bài 8: phủ định tính từ đuôi い là bỏ い + くないです.",
         "type": "choice",
         "options": [
-          "てんぷらは からくないです。",
+          "てんぷらは からないです。",
           "てんぷらは からいじゃ ありません。",
           "てんぷらは からくじゃ ありません。",
-          "てんぷらは からないです。"
+          "てんぷらは からくないです。"
         ],
         "multiple": false,
-        "answer": [0]
+        "answer": [3]
       },
       {
         "id": "n5-match-12-1",
@@ -4628,10 +4874,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Hôm qua lạnh hơn hôm nay.”\n{昨日|きのう}は ＿＿＿＿。",
         "tokens": [
-          { "id": "p-y8g5ez", "text": "です" },
-          { "id": "p-gra2mj", "text": "{寒|さむ}かった" },
-          { "id": "p-aamxn4", "text": "より" },
-          { "id": "p-gjqms5", "text": "今日" }
+          {
+            "id": "p-y8g5ez",
+            "text": "です"
+          },
+          {
+            "id": "p-gra2mj",
+            "text": "{寒|さむ}かった"
+          },
+          {
+            "id": "p-aamxn4",
+            "text": "より"
+          },
+          {
+            "id": "p-gjqms5",
+            "text": "今日"
+          }
         ],
         "answer": ["p-gjqms5", "p-aamxn4", "p-gra2mj", "p-y8g5ez"],
         "points": 1,
@@ -4643,10 +4901,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Ở Hà Nội, trong một năm lúc nào nóng nhất?”\nハノイは 1年で ＿＿＿＿。",
         "tokens": [
-          { "id": "p-x7bqty", "text": "いつ" },
-          { "id": "p-rbsjhj", "text": "が" },
-          { "id": "p-42auwm", "text": "いちばん {暑|あつ}い" },
-          { "id": "p-7gacqr", "text": "ですか" }
+          {
+            "id": "p-x7bqty",
+            "text": "いつ"
+          },
+          {
+            "id": "p-rbsjhj",
+            "text": "が"
+          },
+          {
+            "id": "p-42auwm",
+            "text": "いちばん {暑|あつ}い"
+          },
+          {
+            "id": "p-7gacqr",
+            "text": "ですか"
+          }
         ],
         "answer": ["p-x7bqty", "p-rbsjhj", "p-42auwm", "p-7gacqr"],
         "points": 1,
@@ -4725,7 +4995,7 @@
         "prompt": "Không muốn nghỉ:（　）。",
         "points": 1,
         "tags": ["minna-13"],
-        "explain": "Phủ định hiện tại của たい: たくないです. Lựa chọn cuối là quá khứ.",
+        "explain": "Phủ định hiện tại của たい: たくないです. やすみたくありませんでした là quá khứ.",
         "options": [
           "やすみたいじゃ ありません",
           "やすみたいません",
@@ -5054,10 +5324,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi muốn có một chiếc máy ảnh mới.”\nわたしは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-z5g3fx", "text": "ほしいです" },
-          { "id": "p-8n9mk3", "text": "が" },
-          { "id": "p-98csr8", "text": "カメラ" },
-          { "id": "p-rbr85c", "text": "新しい" }
+          {
+            "id": "p-z5g3fx",
+            "text": "ほしいです"
+          },
+          {
+            "id": "p-8n9mk3",
+            "text": "が"
+          },
+          {
+            "id": "p-98csr8",
+            "text": "カメラ"
+          },
+          {
+            "id": "p-rbr85c",
+            "text": "新しい"
+          }
         ],
         "answer": ["p-rbr85c", "p-98csr8", "p-8n9mk3", "p-z5g3fx"],
         "points": 1,
@@ -5069,10 +5351,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Ngày mai tôi đến bảo tàng mỹ thuật để xem tranh Nhật.”\nあした {美術館|びじゅつかん}へ ＿＿＿＿。",
         "tokens": [
-          { "id": "p-vu8cmf", "text": "{絵|え}を" },
-          { "id": "p-9rnqyc", "text": "行きます" },
-          { "id": "p-cvkwk2", "text": "見に" },
-          { "id": "p-q5zqts", "text": "日本の" }
+          {
+            "id": "p-vu8cmf",
+            "text": "{絵|え}を"
+          },
+          {
+            "id": "p-9rnqyc",
+            "text": "行きます"
+          },
+          {
+            "id": "p-cvkwk2",
+            "text": "見に"
+          },
+          {
+            "id": "p-q5zqts",
+            "text": "日本の"
+          }
         ],
         "answer": ["p-q5zqts", "p-vu8cmf", "p-cvkwk2", "p-9rnqyc"],
         "points": 1,
@@ -5380,9 +5674,9 @@
         "tags": ["minna-14"],
         "explain": "Ngạc nhiên: あれ？",
         "type": "choice",
-        "options": ["あれ？", "さあ。", "どうぞ。", "すぐ。"],
+        "options": ["さあ。", "あれ？", "どうぞ。", "すぐ。"],
         "multiple": false,
-        "answer": [0]
+        "answer": [1]
       },
       {
         "id": "q1436",
@@ -5394,11 +5688,11 @@
         "options": [
           "パスポートを みて ください。",
           "パスポートを みせって ください。",
-          "パスポートを みせて ください。",
-          "パスポートに みせて ください。"
+          "パスポートに みせて ください。",
+          "パスポートを みせて ください。"
         ],
         "multiple": false,
-        "answer": [2]
+        "answer": [3]
       },
       {
         "id": "q1437",
@@ -5545,10 +5839,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Xin lỗi, xin hãy viết tên và địa chỉ vào đây.”\nすみませんが、 ここに ＿＿＿＿。",
         "tokens": [
-          { "id": "p-53bw74", "text": "名前" },
-          { "id": "p-42sddn", "text": "と" },
-          { "id": "p-nwzag8", "text": "書いて ください" },
-          { "id": "p-2rcrmn", "text": "{住所|じゅうしょ}を" }
+          {
+            "id": "p-53bw74",
+            "text": "名前"
+          },
+          {
+            "id": "p-42sddn",
+            "text": "と"
+          },
+          {
+            "id": "p-nwzag8",
+            "text": "書いて ください"
+          },
+          {
+            "id": "p-2rcrmn",
+            "text": "{住所|じゅうしょ}を"
+          }
         ],
         "answer": ["p-53bw74", "p-42sddn", "p-2rcrmn", "p-nwzag8"],
         "points": 1,
@@ -5560,10 +5866,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Nặng nhỉ. Để tôi cầm hành lý đó giúp nhé?”\n{重|おも}いですね。 ＿＿＿＿。",
         "tokens": [
-          { "id": "p-rwugn8", "text": "{持|も}ちましょうか" },
-          { "id": "p-wnvcp9", "text": "を" },
-          { "id": "p-swpnzq", "text": "{荷物|にもつ}" },
-          { "id": "p-qqtyb5", "text": "その" }
+          {
+            "id": "p-rwugn8",
+            "text": "{持|も}ちましょうか"
+          },
+          {
+            "id": "p-wnvcp9",
+            "text": "を"
+          },
+          {
+            "id": "p-swpnzq",
+            "text": "{荷物|にもつ}"
+          },
+          {
+            "id": "p-qqtyb5",
+            "text": "その"
+          }
         ],
         "answer": ["p-qqtyb5", "p-swpnzq", "p-wnvcp9", "p-rwugn8"],
         "points": 1,
@@ -6022,10 +6340,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Xin lỗi, tôi chụp ảnh ở đây có được không?”\nすみません、 ここで ＿＿＿＿。",
         "tokens": [
-          { "id": "p-k646ce", "text": "{写真|しゃしん}を" },
-          { "id": "p-zj2w7d", "text": "ですか" },
-          { "id": "p-4nxhf8", "text": "{撮|と}っても" },
-          { "id": "p-kx9ry5", "text": "いい" }
+          {
+            "id": "p-k646ce",
+            "text": "{写真|しゃしん}を"
+          },
+          {
+            "id": "p-zj2w7d",
+            "text": "ですか"
+          },
+          {
+            "id": "p-4nxhf8",
+            "text": "{撮|と}っても"
+          },
+          {
+            "id": "p-kx9ry5",
+            "text": "いい"
+          }
         ],
         "answer": ["p-k646ce", "p-4nxhf8", "p-kx9ry5", "p-zj2w7d"],
         "points": 1,
@@ -6037,10 +6367,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Bạn có biết số điện thoại của chị Hana không?”\n＿＿＿＿。",
         "tokens": [
-          { "id": "p-b227u7", "text": "{番号|ばんごう}を" },
-          { "id": "p-q37vsu", "text": "電話" },
-          { "id": "p-f7teg7", "text": "ハナさんの" },
-          { "id": "p-u74uxx", "text": "{知|し}っていますか" }
+          {
+            "id": "p-b227u7",
+            "text": "{番号|ばんごう}を"
+          },
+          {
+            "id": "p-q37vsu",
+            "text": "電話"
+          },
+          {
+            "id": "p-f7teg7",
+            "text": "ハナさんの"
+          },
+          {
+            "id": "p-u74uxx",
+            "text": "{知|し}っていますか"
+          }
         ],
         "answer": ["p-f7teg7", "p-q37vsu", "p-b227u7", "p-u74uxx"],
         "points": 1,
@@ -6053,12 +6395,12 @@
         "passage": "みどり大学の {図書館|としょかん}は 午前 9時から 午後 8時までです。{図書館|としょかん}で 本や {雑誌|ざっし}を 読んでも いいです。飲み{物|もの}は 飲んでも いいです。でも、中で 食べ{物|もの}を 食べては いけません。{写真|しゃしん}を {撮|と}っては いけません。電話で 話しては いけません。本は 2週間 {借|か}りても いいです。",
         "prompt": "{図書館|としょかん}の 中で 何を しても いいですか。",
         "options": [
-          "飲み{物|もの}を 飲みます",
+          "電話で 話します",
           "食べ{物|もの}を 食べます",
           "{写真|しゃしん}を {撮|と}ります",
-          "電話で 話します"
+          "飲み{物|もの}を 飲みます"
         ],
-        "answer": [0],
+        "answer": [3],
         "multiple": false,
         "points": 1,
         "tags": ["minna-15", "reading"],
@@ -6293,13 +6635,13 @@
         "explain": "Các động từ giữa chuỗi dùng thể て.",
         "type": "choice",
         "options": [
-          "きっぷを かって、でんしゃに のって、つぎの えきで おります。",
+          "きっぷを かって、でんしゃに のりますて、つぎの えきで おります。",
           "きっぷを かって、でんしゃを のって、つぎの えきで おります。",
           "きっぷを かいで、でんしゃに のって、つぎの えきで おります。",
-          "きっぷを かって、でんしゃに のりますて、つぎの えきで おります。"
+          "きっぷを かって、でんしゃに のって、つぎの えきで おります。"
         ],
         "multiple": false,
-        "answer": [0]
+        "answer": [3]
       },
       {
         "id": "q1626",
@@ -6319,9 +6661,9 @@
         "tags": ["minna-16"],
         "explain": "かいさつ: cổng soát vé.",
         "type": "choice",
-        "options": ["nhà ga", "cổng soát vé", "lối ra", "cây cầu"],
+        "options": ["nhà ga", "cây cầu", "lối ra", "cổng soát vé"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1629",
@@ -6330,9 +6672,9 @@
         "tags": ["minna-16"],
         "explain": "こうさてん: ngã tư.",
         "type": "choice",
-        "options": ["con đường", "ngã tư", "nhà ga", "công viên"],
+        "options": ["con đường", "công viên", "nhà ga", "ngã tư"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1631",
@@ -6341,9 +6683,9 @@
         "tags": ["minna-16"],
         "explain": "ひきます: kéo.",
         "type": "choice",
-        "options": ["xoay", "kéo", "ấn", "rẽ"],
+        "options": ["xoay", "ấn", "kéo", "rẽ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1632",
@@ -6352,9 +6694,9 @@
         "tags": ["minna-16"],
         "explain": "おします: ấn, đẩy.",
         "type": "choice",
-        "options": ["kéo", "ấn, đẩy", "chạm vào", "lấy ra"],
+        "options": ["kéo", "lấy ra", "chạm vào", "ấn, đẩy"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1634",
@@ -6363,9 +6705,9 @@
         "tags": ["minna-16"],
         "explain": "わたります: băng qua.",
         "type": "choice",
-        "options": ["rẽ", "băng qua", "đi bộ", "lên xe"],
+        "options": ["rẽ", "đi bộ", "băng qua", "lên xe"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1636",
@@ -6374,9 +6716,9 @@
         "tags": ["minna-16"],
         "explain": "あびます: tắm (vòi sen).",
         "type": "choice",
-        "options": ["rửa tay", "tắm (vòi sen)", "giặt đồ", "đi bộ"],
+        "options": ["rửa tay", "đi bộ", "giặt đồ", "tắm (vòi sen)"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1637",
@@ -6385,9 +6727,9 @@
         "tags": ["minna-16"],
         "explain": "だします: lấy ra; nộp.",
         "type": "choice",
-        "options": ["cho vào", "lấy ra; nộp", "xoay", "ấn"],
+        "options": ["cho vào", "xoay", "lấy ra; nộp", "ấn"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1639",
@@ -6396,9 +6738,9 @@
         "tags": ["minna-16"],
         "explain": "こえ: giọng nói.",
         "type": "choice",
-        "options": ["tóc", "giọng nói", "chiều cao", "khuôn mặt"],
+        "options": ["tóc", "khuôn mặt", "chiều cao", "giọng nói"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1641",
@@ -6517,10 +6859,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi rửa tay xong rồi mới ăn cơm.”\n＿＿＿＿。",
         "tokens": [
-          { "id": "p-d8hykg", "text": "手を" },
-          { "id": "p-gevd5y", "text": "{洗|あら}ってから、" },
-          { "id": "p-xuerw4", "text": "ご{飯|はん}を" },
-          { "id": "p-y9bwsn", "text": "食べます" }
+          {
+            "id": "p-d8hykg",
+            "text": "手を"
+          },
+          {
+            "id": "p-gevd5y",
+            "text": "{洗|あら}ってから、"
+          },
+          {
+            "id": "p-xuerw4",
+            "text": "ご{飯|はん}を"
+          },
+          {
+            "id": "p-y9bwsn",
+            "text": "食べます"
+          }
         ],
         "answer": ["p-d8hykg", "p-gevd5y", "p-xuerw4", "p-y9bwsn"],
         "points": 1,
@@ -6532,10 +6886,22 @@
         "type": "order",
         "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Anh Minh cao và tóc ngắn.”\nミンさんは ＿＿＿＿。",
         "tokens": [
-          { "id": "p-26rjhn", "text": "{短|みじか}いです" },
-          { "id": "p-fp7qpe", "text": "{髪|かみ}が" },
-          { "id": "p-qxa5tt", "text": "{背|せ}が" },
-          { "id": "p-x3s8ch", "text": "高くて、" }
+          {
+            "id": "p-26rjhn",
+            "text": "{短|みじか}いです"
+          },
+          {
+            "id": "p-fp7qpe",
+            "text": "{髪|かみ}が"
+          },
+          {
+            "id": "p-qxa5tt",
+            "text": "{背|せ}が"
+          },
+          {
+            "id": "p-x3s8ch",
+            "text": "高くて、"
+          }
         ],
         "answer": ["p-qxa5tt", "p-x3s8ch", "p-fp7qpe", "p-26rjhn"],
         "points": 1,

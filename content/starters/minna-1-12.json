@@ -1370,12 +1370,12 @@
         "type": "choice",
         "options": [
           "すしは いちばん すきです。",
-          "すしが いちばん すきです。",
+          "すしより すきです。",
           "すしの ほうが すきです。",
-          "すしより すきです。"
+          "すしが いちばん すきです。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1229",
@@ -1494,9 +1494,9 @@
         "tags": ["minna-12"],
         "explain": "からい: cay. あまい: ngọt.",
         "type": "choice",
-        "options": ["ngọt", "cay", "nặng", "mát"],
+        "options": ["ngọt", "mát", "nặng", "cay"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1240",
@@ -1527,9 +1527,9 @@
         "tags": ["minna-12"],
         "explain": "おおい (nhiều) ⇔ すくない (ít).",
         "type": "choice",
-        "options": ["おもい", "すくない", "とおい", "からい"],
+        "options": ["すくない", "おもい", "とおい", "からい"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q1243",
@@ -1549,9 +1549,9 @@
         "tags": ["minna-12"],
         "explain": "Người về nhà nói ただいま; người ở nhà đáp おかえりなさい.",
         "type": "choice",
-        "options": ["おかえりなさい", "ただいま", "いってきます", "いらっしゃいませ"],
+        "options": ["おかえりなさい", "いらっしゃいませ", "いってきます", "ただいま"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1245",
@@ -1560,9 +1560,9 @@
         "tags": ["minna-12"],
         "explain": "ただいま → おかえりなさい.",
         "type": "choice",
-        "options": ["おやすみなさい", "ただいま", "おかえりなさい", "いただきます"],
+        "options": ["おかえりなさい", "ただいま", "おやすみなさい", "いただきます"],
         "multiple": false,
-        "answer": [2]
+        "answer": [0]
       },
       {
         "id": "q1246",
@@ -1623,11 +1623,11 @@
         "options": [
           "いい てんきです。",
           "いい てんきかったです。",
-          "いい てんきでした。",
-          "いいでした。"
+          "いいでした。",
+          "いい てんきでした。"
         ],
         "multiple": false,
-        "answer": [2]
+        "answer": [3]
       }
     ]
   }

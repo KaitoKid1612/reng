@@ -44,6 +44,26 @@ test("the Minna 1–16 bank covers every lesson, newer lessons more, in four kin
   }
 });
 
+test("the keys of each lesson's choice questions spread over the four positions", async () => {
+  const bank = await loadBank();
+  const positions = new Map<number, number[]>();
+  for (const question of bank.content.questions) {
+    if (question.type === "choice" && question.answer.length === 1) {
+      const counts = positions.get(lessonOf(question.tags)) ?? [0, 0, 0, 0];
+      counts[question.answer[0]] += 1;
+      positions.set(lessonOf(question.tags), counts);
+    }
+  }
+  // Options keep their order on screen; the same rule as the N4 bank.
+  for (const [lesson, counts] of positions) {
+    const total = counts.reduce((sum, count) => sum + count, 0);
+    assert.ok(
+      counts.every((count) => count >= total * 0.18 && count <= total * 0.32),
+      `lesson ${lesson}: ${counts.join("/")}`,
+    );
+  }
+});
+
 test("every key of the Minna 1–16 bank is graded correct", async () => {
   const bank = await loadBank();
   for (const raw of bank.content.questions) {

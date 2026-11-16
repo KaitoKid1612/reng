@@ -1198,9 +1198,9 @@
         "tags": ["minna-16"],
         "explain": "でぐち: lối ra.",
         "type": "choice",
-        "options": ["cổng soát vé", "lối ra", "ngã tư", "vé tàu"],
+        "options": ["cổng soát vé", "vé tàu", "ngã tư", "lối ra"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1629",
@@ -1209,9 +1209,9 @@
         "tags": ["minna-16"],
         "explain": "こうさてん: ngã tư.",
         "type": "choice",
-        "options": ["con đường", "ngã tư", "nhà ga", "công viên"],
+        "options": ["con đường", "công viên", "nhà ga", "ngã tư"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1630",
@@ -1220,9 +1220,9 @@
         "tags": ["minna-16"],
         "explain": "まわします: xoay, vặn.",
         "type": "choice",
-        "options": ["ấn", "xoay, vặn", "kéo", "chạm vào"],
+        "options": ["ấn", "chạm vào", "kéo", "xoay, vặn"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1631",
@@ -1231,9 +1231,9 @@
         "tags": ["minna-16"],
         "explain": "ひきます: kéo.",
         "type": "choice",
-        "options": ["xoay", "kéo", "ấn", "rẽ"],
+        "options": ["xoay", "rẽ", "ấn", "kéo"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1632",
@@ -1242,9 +1242,9 @@
         "tags": ["minna-16"],
         "explain": "おします: ấn, đẩy.",
         "type": "choice",
-        "options": ["kéo", "ấn, đẩy", "chạm vào", "lấy ra"],
+        "options": ["kéo", "lấy ra", "chạm vào", "ấn, đẩy"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1633",
@@ -1253,9 +1253,9 @@
         "tags": ["minna-16"],
         "explain": "さわります: chạm vào.",
         "type": "choice",
-        "options": ["băng qua", "chạm vào", "rẽ", "đi bộ"],
+        "options": ["băng qua", "đi bộ", "rẽ", "chạm vào"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1634",
@@ -1264,9 +1264,9 @@
         "tags": ["minna-16"],
         "explain": "わたります: băng qua.",
         "type": "choice",
-        "options": ["rẽ", "băng qua", "đi bộ", "lên xe"],
+        "options": ["rẽ", "lên xe", "đi bộ", "băng qua"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1635",
@@ -1275,9 +1275,9 @@
         "tags": ["minna-16"],
         "explain": "まがります: rẽ.",
         "type": "choice",
-        "options": ["băng qua", "rẽ", "chuyển tuyến", "xuống xe"],
+        "options": ["băng qua", "xuống xe", "chuyển tuyến", "rẽ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1636",
@@ -1286,9 +1286,9 @@
         "tags": ["minna-16"],
         "explain": "あびます: tắm (vòi sen).",
         "type": "choice",
-        "options": ["rửa tay", "tắm (vòi sen)", "giặt đồ", "đi bộ"],
+        "options": ["tắm (vòi sen)", "rửa tay", "giặt đồ", "đi bộ"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q1637",
@@ -1297,9 +1297,9 @@
         "tags": ["minna-16"],
         "explain": "だします: lấy ra; nộp.",
         "type": "choice",
-        "options": ["cho vào", "lấy ra; nộp", "xoay", "ấn"],
+        "options": ["cho vào", "ấn", "xoay", "lấy ra; nộp"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1638",
@@ -1308,9 +1308,9 @@
         "tags": ["minna-16"],
         "explain": "せ: chiều cao, vóc dáng.",
         "type": "choice",
-        "options": ["tóc", "chiều cao, vóc dáng", "giọng nói", "khuôn mặt"],
+        "options": ["chiều cao, vóc dáng", "tóc", "giọng nói", "khuôn mặt"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q1639",
@@ -1319,9 +1319,9 @@
         "tags": ["minna-16"],
         "explain": "こえ: giọng nói.",
         "type": "choice",
-        "options": ["tóc", "giọng nói", "chiều cao", "khuôn mặt"],
+        "options": ["tóc", "chiều cao", "giọng nói", "khuôn mặt"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q1640",
@@ -1330,9 +1330,9 @@
         "tags": ["minna-16"],
         "explain": "みじかい: ngắn.",
         "type": "choice",
-        "options": ["dài", "ngắn", "rộng", "sáng sủa"],
+        "options": ["dài", "sáng sủa", "rộng", "ngắn"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q1641",

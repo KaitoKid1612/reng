@@ -997,7 +997,7 @@
         "prompt": "Không muốn nghỉ:（　）。",
         "points": 1,
         "tags": ["minna-13"],
-        "explain": "Phủ định hiện tại của たい: たくないです. Lựa chọn cuối là quá khứ.",
+        "explain": "Phủ định hiện tại của たい: たくないです. やすみたくありませんでした là quá khứ.",
         "options": [
           "やすみたいじゃ ありません",
           "やすみたいません",

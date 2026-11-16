@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 16/11/2026
 
+- Đáp án đúng không còn dồn vào một phương án: bài mẫu 1, 2, 12 và 16 (bài 16 có 23/40 câu chọn đúng ở phương án thứ hai và không câu nào ở phương án thứ tư) và ngân hàng "Ôn Minna 1–16 – Nguyên" (109/312 câu ở phương án thứ hai) được cân lại, mỗi vị trí khoảng một phần tư. Mỗi câu sửa chỉ đổi chỗ đáp án đúng với một phương án sai; nội dung câu giữ nguyên. Test bài mẫu và ngân hàng nay kiểm tra mỗi vị trí chiếm 18–32% như ngân hàng N4. Xem [kiểm chứng](testing/jlpt-daily-format-2026-11-13.md#cân-lại-vị-trí-đáp-án--16112026).
 - Bài mẫu Minna bài 17 (thể ない): **Tạo bài 17 từ mẫu** ở trang Tạo bài mới cho 40 từ, 6 mẫu câu (Vないで ください, Vなければ なりません, Vなくても いいです, tân ngữ làm chủ đề, までに), 37 slide với ba hội thoại ở phòng khám và 50 câu luyện. Xem [hướng dẫn nội dung](content-authoring.md) và [kiểm chứng](testing/teaching-service.md#bài-mẫu-minna-17--16112026).
 
 ### 13/11/2026

@@ -181,11 +181,19 @@ for (const starter of STARTER_LESSONS) {
         `missing a ${type} slide`,
       );
     }
-    // Options keep their authored order on screen, so answers must not sit in one position.
-    const positions = content.questions.flatMap((question) =>
-      question.type === "choice" ? question.answer : [],
+    // Options keep their authored order on screen, so each position holds about a quarter of
+    // the keys (the rule of the N4 bank): guessing one letter gives nothing away.
+    const positions = [0, 0, 0, 0];
+    for (const question of content.questions) {
+      if (question.type === "choice" && question.answer.length === 1) {
+        positions[question.answer[0]] += 1;
+      }
+    }
+    const keys = positions.reduce((sum, count) => sum + count, 0);
+    assert.ok(
+      positions.every((count) => count >= keys * 0.18 && count <= keys * 0.32),
+      `answer positions ${positions.join("/")}`,
     );
-    assert.ok(new Set(positions).size > 2);
     for (const question of content.questions) {
       if (question.type === "fill") {
         assert.equal(question.inputMode, "hiragana");

@@ -1113,9 +1113,9 @@
         "tags": ["minna-2"],
         "explain": "あのう: à, ừm.",
         "type": "choice",
-        "options": ["どうぞ", "あのう", "ほんとうですか", "そうです"],
+        "options": ["どうぞ", "そうです", "ほんとうですか", "あのう"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0226",
@@ -1124,9 +1124,9 @@
         "tags": ["minna-2"],
         "explain": "の chỉ nội dung: sách (bằng/về) tiếng Nhật.",
         "type": "choice",
-        "options": ["sách ở Nhật", "sách tiếng Nhật", "người Nhật", "tiếng Nhật"],
+        "options": ["sách ở Nhật", "tiếng Nhật", "người Nhật", "sách tiếng Nhật"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0227",
@@ -1267,9 +1267,9 @@
         "tags": ["minna-2"],
         "explain": "Hỏi người: だれ.",
         "type": "choice",
-        "options": ["なん", "だれ", "なんの", "だれの"],
+        "options": ["なん", "なんの", "だれ", "だれの"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0240",
@@ -1294,9 +1294,9 @@
         "tags": ["minna-2"],
         "explain": "そうじゃ ありません: không phải vậy.",
         "type": "choice",
-        "options": ["đúng vậy", "không phải vậy", "vậy à", "thật không"],
+        "options": ["đúng vậy", "thật không", "vậy à", "không phải vậy"],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0242",
@@ -1327,9 +1327,9 @@
         "tags": ["minna-2"],
         "explain": "Bỏ danh từ sau の: ナムさんのです.",
         "type": "choice",
-        "options": ["ナムさん", "ナムさんの", "ナムさんは", "ナムさんも"],
+        "options": ["ナムさんの", "ナムさん", "ナムさんは", "ナムさんも"],
         "multiple": false,
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "q0245",
@@ -1354,9 +1354,9 @@
         "tags": ["minna-2"],
         "explain": "テレビ: ti vi.",
         "type": "choice",
-        "options": ["radio", "ti vi", "máy ảnh", "máy tính"],
+        "options": ["radio", "máy ảnh", "ti vi", "máy tính"],
         "multiple": false,
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "q0247",
@@ -1378,12 +1378,12 @@
         "type": "choice",
         "options": [
           "わたしの CDです。",
-          "えいごの CDです。",
+          "CDじゃ ありません。",
           "はい、そうです。",
-          "CDじゃ ありません。"
+          "えいごの CDです。"
         ],
         "multiple": false,
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "q0249",
