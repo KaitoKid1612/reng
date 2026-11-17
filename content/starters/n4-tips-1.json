@@ -38,7 +38,7 @@
           ["{聴解|ちょうかい}", "35 phút", "Nghe hiểu"]
         ],
         "revealLastColumn": false,
-        "teacherNotes": "Thời gian nghe có thể xê dịch nhẹ theo độ dài băng. Sách cũ ghi 30 và 60 phút là trước thay đổi năm 2020."
+        "teacherNotes": "Thời gian nghe có thể xê dịch nhẹ theo độ dài băng. Sách cũ ghi 30 và 60 phút là trước kỳ thi 12/2020."
       },
       {
         "id": "n4t1-s04",
@@ -184,7 +184,7 @@
         "id": "n4t1-s15",
         "type": "note",
         "title": "Thứ tự làm bài",
-        "body": "1. Làm theo thứ tự もんだい, nhưng không để một câu giữ mình quá 1 phút.\n2. Khối 55 phút: xong {文法|ぶんぽう} trước phút 20, phần còn lại dành cho {読解|どっかい}.\n3. {読解|どっかい}: đọc câu hỏi trước, ví dụ 「{何|なに}を {持|も}って {行|い}きますか」, rồi mới đọc bài.\n4. Bài {中文|ちゅうぶん} quá mốc giờ: làm {情報|じょうほう}{検索|けんさく} trước rồi quay lại.\n5. Hết giờ phần nào thì phiếu phần đó bị thu, không quay lại được."
+        "body": "1. Làm theo thứ tự もんだい, nhưng không để một câu giữ chân mình quá 1 phút.\n2. Khối 55 phút: xong {文法|ぶんぽう} trước phút 20, phần còn lại dành cho {読解|どっかい}.\n3. {読解|どっかい}: đọc câu hỏi trước, ví dụ 「{何|なに}を {持|も}って {行|い}きますか」, rồi mới đọc bài.\n4. Bài {中文|ちゅうぶん} quá mốc giờ: làm {情報|じょうほう}{検索|けんさく} trước rồi quay lại.\n5. Hết giờ phần nào thì phiếu phần đó bị thu, không quay lại được."
       },
       {
         "id": "n4t1-s16",
@@ -196,7 +196,7 @@
         "id": "n4t1-s17",
         "type": "note",
         "title": "Tô phiếu ngay khi làm",
-        "body": "1. Phiếu tô (マークシート): bút chì đen (HB, B, 2B hoặc No.2); bút bi, bút mực không được chấm.\n2. Xong câu nào tô câu đó (hoặc mỗi trang một lượt), không dồn cuối giờ.\n3. Mỗi lần tô, xem số câu khớp hàng trên phiếu: lệch một hàng là sai cả loạt.\n4. Sửa: tẩy sạch ô cũ (không dùng bút xóa), rồi tô kín ô mới.\n5. {聴解|ちょうかい} chạy theo băng: chọn xong câu nào tô ngay câu đó."
+        "body": "1. Phiếu tô (マークシート): bút chì đen No.2, HB, B hoặc 2B; bút bi, bút mực máy không đọc.\n2. Xong câu nào tô câu đó (hoặc mỗi trang một lượt), đừng dồn.\n3. Mỗi lần tô, xem số câu khớp hàng trên phiếu: lệch một hàng là sai cả loạt.\n4. Sửa: tẩy sạch ô cũ (không dùng bút xóa), rồi tô kín ô mới.\n5. {聴解|ちょうかい} chạy theo băng: chọn xong câu nào tô ngay câu đó."
       },
       {
         "id": "n4t1-s18",
@@ -221,7 +221,7 @@
           ["ば", "{降|ふ}って いるば", "Loại: sai dạng"]
         ],
         "revealLastColumn": false,
-        "teacherNotes": "Hai lựa chọn bị loại vì dạng (いる không nối trực tiếp với ても, ば), một vì nghĩa. Còn lại から."
+        "teacherNotes": "Hai lựa chọn bị loại vì dạng (dạng đúng là いても, いれば), một vì nghĩa. Còn lại から."
       },
       {
         "id": "n4t1-s21",
@@ -238,7 +238,7 @@
         "id": "n4t1-s23",
         "type": "note",
         "title": "Phần nghe: dùng khoảng lặng",
-        "body": "1. Tô xong một câu thì nhìn ngay hình, lựa chọn của câu sau.\n2. もんだい１, ２ đọc câu hỏi trước: nhớ từ hỏi (なぜ, いつ, {何|なに}); もんだい２ còn có giờ đọc lựa chọn.\n3. Nghe đến hết: 「じゃ、やっぱり…」 thường mở đầu quyết định cuối.\n4. Băng chỉ phát một lần: lỡ câu nào thì chọn bừa, dồn sức cho câu sau.\n5. Đề nghe cho phép ghi chú: ghi ký hiệu ngắn (giờ, số), không ghi cả câu."
+        "body": "1. Tô xong một câu thì nhìn ngay hình, lựa chọn của câu sau.\n2. もんだい１, ２ nghe câu hỏi ở đầu bài: nhớ từ hỏi (なぜ, いつ, {何|なに}); もんだい２ còn có giờ đọc lựa chọn.\n3. Nghe đến hết: 「じゃ、やっぱり…」 thường mở đầu quyết định cuối.\n4. Băng chỉ phát một lần: lỡ câu nào thì chọn bừa, dồn sức cho câu sau.\n5. Đề nghe cho phép ghi chú: ghi ký hiệu ngắn (giờ, số), không ghi cả câu."
       },
       {
         "id": "n4t1-s24",
@@ -248,7 +248,7 @@
         "rows": [
           ["1", "{課題|かだい}{理解|りかい}", "Hình/chữ, 4 lựa chọn", "Nghe quyết định cuối"],
           ["2", "ポイント{理解|りかい}", "Chữ, có giờ đọc", "Nhớ なぜ・いつ・{何|なに}"],
-          ["3", "{発話|はつわ}{表現|ひょうげん}", "Hình có mũi tên ➡", "Người ➡ nói gì (3 câu)"],
+          ["3", "{発話|はつわ}{表現|ひょうげん}", "Hình có mũi tên →", "Người → nói gì (3 câu)"],
           ["4", "{即時|そくじ}{応答|おうとう}", "Không có gì", "Chọn ngay, 3 câu đáp"]
         ],
         "revealLastColumn": false,
@@ -307,7 +307,7 @@
         "id": "n4t1-s28",
         "type": "note",
         "title": "Tóm tắt",
-        "body": "1. Đậu = tổng ≥ 90, {言語知識|げんごちしき}・{読解|どっかい} ≥ 38, {聴解|ちょうかい} ≥ 19.\n2. Thời gian 25 + 55 + 35 phút; gợi ý 55 phút: {文法|ぶんぽう} 20 + {読解|どっかい} 28 + kiểm tra 7.\n3. Không bỏ trống; tô phiếu ngay bằng bút chì đen (HB, B, 2B), xem số câu khớp hàng.\n4. Kẹt quá 1 phút: chọn, đánh dấu ？, đi tiếp; loại trừ nhờ chữ trước, sau （　）.\n5. Nghe: xem trước hình, lựa chọn; nghe đến quyết định cuối; chọn xong tô ngay."
+        "body": "1. Đậu = tổng ≥ 90, {言語知識|げんごちしき}・{読解|どっかい} ≥ 38, {聴解|ちょうかい} ≥ 19.\n2. Thời gian 25 + 55 + 35 phút; gợi ý 55 phút: {文法|ぶんぽう} 20 + {読解|どっかい} 28 + kiểm tra 7.\n3. Không bỏ trống; tô phiếu ngay bằng bút chì đen HB/No.2, xem số câu khớp hàng.\n4. Kẹt quá 1 phút: chọn, đánh dấu ？, đi tiếp; loại trừ nhờ chữ trước, sau （　）.\n5. Nghe: xem trước hình, lựa chọn; nghe đến quyết định cuối; chọn xong tô ngay."
       }
     ],
     "questions": [
@@ -321,7 +321,7 @@
         "options": [
           "Đậu, vì tổng 99 điểm lớn hơn 90",
           "Đậu, vì phần nào cũng có điểm",
-          "Trượt, vì {聴解|ちょうかい} dưới điểm liệt 19",
+          "Trượt, vì {聴解|ちょうかい} chưa tới 19",
           "Trượt, vì {言語知識|げんごちしき}・{読解|どっかい} chưa tới 90"
         ],
         "multiple": false,

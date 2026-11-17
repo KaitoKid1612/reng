@@ -44,8 +44,8 @@
           [
             "もんだい3",
             "{発話表現|はつわひょうげん}",
-            "Tranh có mũi tên ➡",
-            "Người ➡ nói gì (3 câu)"
+            "Tranh có mũi tên →",
+            "Người → nói gì (3 câu)"
           ],
           ["もんだい4", "{即時応答|そくじおうとう}", "Không in gì", "Đáp lại 1 câu (3 câu)"]
         ],
@@ -149,7 +149,7 @@
         "columns": ["Câu hỏi", "Hỏi về", "Chờ nghe"],
         "rows": [
           ["どうして／なぜ", "Lý do", "〜から, 〜ので, 〜んです"],
-          ["いつ", "Thời gian", "〜{日|にち}, 〜{時|じ}, {曜日|ようび}"],
+          ["いつ", "Thời gian", "{日付|ひづけ}, 〜{時|じ}, {曜日|ようび}"],
           ["どこ", "Nơi chốn", "〜の {隣|となり}, 〜の {向|む}かい"],
           ["{何|なに}が いちばん", "Điều nổi bật nhất", "いちばん, {何|なに}より"],
           ["どう {思|おも}いますか", "Cảm nghĩ", "ちょっと… = chê nhẹ"],
@@ -232,13 +232,13 @@
         "id": "n4t6-s18",
         "type": "note",
         "title": "Ghi chú bằng ký hiệu ngắn",
-        "body": "1. Tập đề nghe được phép ghi chú: tận dụng lề giấy.\n2. Chia hai cột 男｜女 để không lẫn ai làm gì.\n3. Ký hiệu: × hủy, ○ chốt, → đổi, ? chưa rõ, số viết bằng chữ số.\n4. Ví dụ: ケーキ× 飲み物× くだもの○ ; 3時→3:30 ; 図書館×→教室.\n5. Chỉ ghi từ khóa, không chép câu: mắt luôn quay lại câu hỏi."
+        "body": "1. Tập đề nghe được phép ghi chú: tận dụng lề giấy.\n2. Chia hai cột 男｜女 để không lẫn ai làm gì.\n3. Ký hiệu: × hủy, ○ chốt, → đổi, ? chưa rõ, số viết bằng chữ số.\n4. Ví dụ: ケーキ× 飲み物× くだもの○ ; 2時→2:30 ; 駅×→公園.\n5. Chỉ ghi từ khóa, không chép câu: mắt luôn quay lại câu hỏi."
       },
       {
         "id": "n4t6-s19",
         "type": "note",
         "title": "発話表現: ai nói với ai",
-        "body": "1. Nhìn tranh: mũi tên ➡ chỉ người nói; người nghe là ai (khách, cấp trên, bạn)?\n2. Đọc tình huống: nhờ, xin phép, mời, đề nghị giúp, chào?\n3. Bẫy hay gặp: câu đúng ngữ pháp nhưng là lời của người kia (どうぞ ↔ いただきます).\n4. Chỉ có 3 câu và không in ra: nghe xong câu 3 là chọn ngay."
+        "body": "1. Nhìn tranh: mũi tên → chỉ người nói; người nghe là ai (khách, cấp trên, bạn)?\n2. Nghe câu mô tả tình huống: nhờ, xin phép, mời, đề nghị giúp, chào?\n3. Bẫy hay gặp: câu đúng ngữ pháp nhưng là lời của người kia (どうぞ ↔ いただきます).\n4. Chỉ có 3 câu và không in ra: nghe xong câu 3 là chọn ngay."
       },
       {
         "id": "n4t6-s20",
@@ -314,7 +314,7 @@
           {
             "speaker": "男",
             "jp": "あ、コピーの {前|まえ}に {鍵|かぎ}を {借|か}りて きて。",
-            "vi": "À, trước khi photo thì đi mượn chìa khóa phòng họp đã."
+            "vi": "À, trước khi photo thì đi mượn chìa khóa đã."
           },
           {
             "speaker": "女",

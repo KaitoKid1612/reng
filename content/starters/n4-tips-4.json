@@ -36,7 +36,7 @@
         "columns": ["Ví dụ", "Trước （　）", "Mẫu nối được", "Bài"],
         "rows": [
           ["{雨|あめ}が {降|ふ}り（　）", "Vます bỏ ます", "そう・ながら・やすい", "1, 5, 8"],
-          ["{窓|まど}を {開|あ}けて（　）", "Vて", "おく・ある・しまう", "2, 3"],
+          ["{窓|まど}を {開|あ}けて（　）", "Vて", "おく・しまう・ほしい", "2, 3"],
           ["{手紙|てがみ}を {書|か}いて（　）", "Vて (cho nhận)", "あげる・くれる・もらう", "7"],
           ["{日本|にほん}へ {行|い}く（　）", "Vる", "つもり・ために・ように", "2"],
           ["{食|た}べた（　）", "Vた", "ばかり・ところ・とき", "3, 4"],
@@ -144,7 +144,7 @@
         "id": "n4t4-s16",
         "type": "note",
         "title": "Ví dụ: làm mẫu một câu ★",
-        "body": "{姉|あね}は ＿＿　＿＿　＿★＿　＿＿ います。\n1. パン{屋|や}で　2. {働|はたら}いて　3. {駅|えき}の　4. {前|まえ}の\nTự xếp thử trước khi sang slide sau."
+        "body": "{姉|あね}は ＿＿　＿＿　＿★＿　＿＿ います。\n1. パン{屋|や}で　2. {働|はたら}いて　3. {駅|えき}の　4. {中|なか}の\nTự xếp thử trước khi sang slide sau."
       },
       {
         "id": "n4t4-s17",
@@ -154,8 +154,8 @@
         "rows": [
           ["Sau ô 4 là います", "ô 4 = {働|はたら}いて", "4"],
           ["{働|はたら}く: nơi chốn + で", "パン{屋|や}で ngay trước", "3"],
-          ["N の + N", "{駅|えき}の {前|まえ}の パン{屋|や}", "1, 2"],
-          ["Đọc lại cả câu", "làm ở tiệm bánh trước ga", "✓"],
+          ["N の + N", "{駅|えき}の {中|なか}の パン{屋|や}", "1, 2"],
+          ["Đọc lại cả câu", "làm ở tiệm bánh trong ga", "1–4"],
           ["★ ở ô 3", "パン{屋|や}で = mảnh số 1", "★"]
         ],
         "revealLastColumn": false
@@ -164,7 +164,7 @@
         "id": "n4t4-s18",
         "type": "note",
         "title": "Bẫy hay gặp ở câu ★",
-        "body": "1. Hai mảnh cùng trợ từ (hai cái を): dùng nghĩa để biết cái nào đi với động từ nào.\n2. Hai mảnh đổi chỗ được ({一度|いちど}, {明日|あした}…): đề chỉ có một đáp án, nên ô ★ thường không rơi vào đó.\n3. Chọn ô ★ khi mới xếp được hai mảnh → dễ sai.\n4. Tô số thứ tự ô thay vì số của mảnh (ví dụ trên: ô 3 nhưng tô 1).\n5. Chắc ba mảnh: mảnh còn lại vào ô còn trống."
+        "body": "1. Hai mảnh cùng trợ từ (hai cái を): dùng nghĩa để biết cái nào đi với động từ nào.\n2. Câu ★ chỉ có một thứ tự tự nhiên: thấy hai mảnh đổi chỗ được thì xem lại, có mảnh đang ghép sai.\n3. Chọn ô ★ khi mới xếp được hai mảnh → dễ sai.\n4. Tô số ô thay vì số mảnh (ví dụ trên: ★ ở ô 3, đáp án là 1).\n5. Chắc ba mảnh: mảnh còn lại vào ô còn trống."
       },
       {
         "id": "n4t4-s19",
@@ -191,7 +191,7 @@
           ["それで", "vì vậy (kết quả)", "{熱|ねつ}が {出|で}た。それで {休|やす}んだ。"],
           ["だから", "vì vậy (ý người nói)", "{雨|あめ}だ。だから {急|いそ}ごう。"],
           ["でも／しかし", "nhưng (trái chiều)", "{高|たか}い。でも {買|か}った。"],
-          ["ところが", "nhưng (ngoài dự tính)", "{行|い}った。ところが {休|やす}みだった。"],
+          ["ところが", "nhưng (ngoài dự tính)", "{急|いそ}いだ。ところが {遅|おく}れた。"],
           ["それに", "hơn nữa (cùng chiều)", "{安|やす}い。それに おいしい。"],
           ["それから", "rồi, sau đó", "{食|た}べた。それから {寝|ね}た。"],
           ["そして", "và (nối tiếp)", "{広|ひろ}い。そして {静|しず}かだ。"],
@@ -366,9 +366,9 @@
         "prompt": "わたしは ＿＿　＿＿　＿★＿　＿＿ あります。",
         "points": 1,
         "tags": ["n4", "tips", "grammar-tips"],
-        "explain": "Câu đúng: わたしは 馬に 一度 乗った ことが あります (tôi đã cưỡi ngựa một lần; 一度 馬に cũng được). Mẹo ô cuối: sau ô 4 là あります → ô 4 là ことが; Vた + ことが dính nhau → ô 3 là 乗った. 馬に và 一度 đổi chỗ được, nên đề đặt ★ ở ô chỉ có một đáp án: 乗った.",
+        "explain": "Câu đúng: わたしは 大きい 馬に 乗った ことが あります。(Tôi đã từng cưỡi một con ngựa to.) Mẹo bắt đầu từ ô cuối: sau ô 4 là あります → ô 4 là ことが; Vた + ことが dính nhau → ô 3 là 乗った. Mảnh dính nhau: 大きい + 馬に (bổ nghĩa + danh từ), 馬に + 乗った. Thứ tự: 大きい → 馬に → 乗った → ことが; ô ★ (ô 3) là 乗った.",
         "type": "choice",
-        "options": ["{乗|の}った", "ことが", "{一度|いちど}", "{馬|うま}に"],
+        "options": ["{乗|の}った", "ことが", "{大|おお}きい", "{馬|うま}に"],
         "multiple": false,
         "answer": [0]
       },
@@ -378,9 +378,9 @@
         "prompt": "{会議|かいぎ}の {前|まえ}に、＿＿　＿＿　＿★＿　＿＿ ください。",
         "points": 1,
         "tags": ["n4", "tips", "grammar-tips"],
-        "explain": "Câu đúng: 会議の 前に、資料を 10部 コピーして おいて ください。(Trước cuộc họp, hãy phô tô sẵn 10 bản tài liệu.) Mẹo ô cuối: sau ô 4 là ください → ô 4 là Vて: おいて; Vて + おく dính nhau → ô 3 là コピーして. 資料を và 10部 đổi chỗ được nên không ảnh hưởng ô ★.",
+        "explain": "Câu đúng: 会議の 前に、この 資料を コピーして おいて ください。(Trước cuộc họp, hãy phô tô sẵn tài liệu này.) Mẹo bắt đầu từ ô cuối: sau ô 4 là ください → ô 4 là Vて: おいて; Vて + おく dính nhau → ô 3 là コピーして. この + 資料を (bổ nghĩa + danh từ) đứng ở ô 1, 2. Thứ tự: この → 資料を → コピーして → おいて; ô ★ (ô 3) là コピーして.",
         "type": "choice",
-        "options": ["{資料|しりょう}を", "コピーして", "おいて", "{10部|じゅうぶ}"],
+        "options": ["{資料|しりょう}を", "コピーして", "おいて", "この"],
         "multiple": false,
         "answer": [1]
       },

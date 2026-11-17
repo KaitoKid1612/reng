@@ -66,7 +66,7 @@
           ["{薬|くすり}を", "{飲|の}む", "uống thuốc"]
         ],
         "revealLastColumn": false,
-        "teacherNotes": "Tiếng Việt chỉ có “mặc/đeo/đội”, tiếng Nhật chia theo bộ phận cơ thể: 着る (thân trên), はく (chân), かぶる (đầu), かける (kính). Che cột 2 và hỏi nhanh."
+        "teacherNotes": "Tiếng Việt chỉ có “mặc/đeo/đội”, tiếng Nhật chia theo bộ phận cơ thể: 着る (thân trên, cả người), はく (chân), かぶる (đầu), かける (kính). Che cột 2 và hỏi nhanh."
       },
       {
         "id": "n4t3-s06",
@@ -219,7 +219,7 @@
           ["スーツケース", "suitcase", "vali"]
         ],
         "revealLastColumn": false,
-        "teacherNotes": "マンション không phải biệt thự (mansion): là căn hộ trong tòa chung cư bê tông. Biệt thự thì nói 大きい 家. コンセント, ガソリンスタンド là 和製英語 (tiếng Anh do Nhật tự ghép): nói với người nước ngoài sẽ không hiểu."
+        "teacherNotes": "マンション không phải biệt thự (mansion): là căn hộ trong tòa chung cư bê tông. Biệt thự thì nói 大きい 家. コンセント, ガソリンスタンド là 和製英語 (tiếng Anh do Nhật tự ghép): nói với người nói tiếng Anh sẽ không hiểu."
       },
       {
         "id": "n4t3-s19",
@@ -324,9 +324,9 @@
         "prompt": "{雨|あめ}に ぬれて {帰|かえ}ったので、かぜを （　　） しまいました。",
         "points": 1,
         "tags": ["n4", "tips", "vocabulary"],
-        "explain": "Mẹo cụm từ + trợ từ: かぜを ひく = bị cảm. Trước chỗ trống là を nên かかる (かぜに かかる) không hợp; とる, もらう không đi với かぜ.",
+        "explain": "Mẹo cụm từ + trợ từ: かぜを ひく = bị cảm. Trước chỗ trống là を nên かかる (かぜに かかる) không hợp; とる không đi với かぜ, còn さす là của かさ (かさを さす).",
         "type": "choice",
-        "options": ["ひいて", "とって", "もらって", "かかって"],
+        "options": ["ひいて", "とって", "さして", "かかって"],
         "multiple": false,
         "answer": [0]
       },

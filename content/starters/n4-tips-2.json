@@ -53,7 +53,7 @@
         "id": "n4t2-s05",
         "type": "note",
         "title": "Cách dùng khi làm もんだい１",
-        "body": "Ví dụ 運動 (Vận Động), 4 đáp án: うどう／うんどう／うんど／うんとう.\n1. Vận -n → ん: loại うどう.\n2. Động -ng → trường âm: loại うんど.\n3. đ → た hoặc だ; 動 trong mọi từ đều đọc どう (自動車, 運動) → うんどう.\n4. Cả 3 bước chỉ mất khoảng 20 giây; làm xong thì sang câu khác."
+        "body": "Ví dụ 運動 (Vận Động), 4 đáp án: うどう／うんどう／うんど／うんとう.\n1. Vận -n → ん: loại うどう.\n2. Động -ng → trường âm: loại うんど.\n3. đ → た hoặc だ: mẹo không chọn được; nhớ 動 luôn đọc どう (動物, 自動車) → うんどう.\n4. Cả 3 bước chỉ mất khoảng 20 giây; làm xong thì sang câu khác."
       },
       {
         "id": "n4t2-s06",
@@ -94,7 +94,7 @@
         "title": "Ngoại lệ hay gặp",
         "columns": ["Chữ", "Hán Việt", "Mẹo đoán", "Thực tế"],
         "rows": [
-          ["立", "Lập", "-p → ～う", "りつ: 国立 こくりつ"],
+          ["立", "Lập", "-p → ～う", "りつ: 私立 しりつ"],
           ["雑", "Tạp", "-p → ～う", "ざつ: 雑誌 ざっし"],
           ["酒", "Tửu", "-ưu → dài", "しゅ: 日本酒"],
           ["後", "Hậu", "-au → dài", "ご: 午後 ごご"],
@@ -118,7 +118,7 @@
         "id": "n4t2-s11",
         "type": "note",
         "title": "表記: đọc ra Hán Việt rồi chọn chữ",
-        "body": "1. Tách từ theo âm: しんせつ → しん＋せつ.\n2. Nghĩ từ Hán Việt có nghĩa hợp: thân thiết → 親切.\n3. Loại chữ cùng âm nhưng không thành từ: 新 Tân, 説 Thuyết.\n4. Cẩn thận “bạn giả”: nghĩa Nhật có thể khác nghĩa Việt (親切 = tốt bụng)."
+        "body": "1. Tách từ theo âm: せつめい → せつ＋めい.\n2. Nghĩ từ Hán Việt có nghĩa hợp: thuyết minh → 説明.\n3. Loại chữ cùng âm nhưng không thành từ: 切 Thiết (せつ), 名 Danh (めい).\n4. Cẩn thận “bạn giả”: nghĩa Nhật có thể khác nghĩa Việt (勉強 = học, không phải “miễn cưỡng”)."
       },
       {
         "id": "n4t2-s12",
@@ -135,7 +135,7 @@
           ["安心", "あんしん", "an tâm", "yên tâm"],
           ["特別", "とくべつ", "đặc biệt", "đặc biệt"],
           ["研究", "けんきゅう", "nghiên cứu", "nghiên cứu"],
-          ["親切", "しんせつ", "thân thiết", "tốt bụng (≠ thân thiết)"],
+          ["大丈夫", "だいじょうぶ", "đại trượng phu", "không sao, ổn"],
           ["勉強", "べんきょう", "miễn cưỡng", "học (≠ miễn cưỡng)"]
         ],
         "revealLastColumn": false,
@@ -150,7 +150,7 @@
         "id": "n4t2-s14",
         "type": "note",
         "title": "Đứng một mình: 訓読み; ghép: 音読み",
-        "body": "1. Chữ Hán + okurigana (phần kana phía sau) → thường 訓読み: {重|おも}い, {急|いそ}ぐ.\n2. Hai chữ Hán ghép → thường 音読み: {体重|たいじゅう}, {急行|きゅうこう}.\n3. Ngoại lệ có: {番組|ばんぐみ} (音＋訓), {場所|ばしょ} (訓＋音), {台所|だいどころ}.\n4. Vài chữ đứng riêng đọc 音: {駅|えき}, {肉|にく}, {絵|え}."
+        "body": "1. Chữ Hán + okurigana (phần kana phía sau) → thường 訓読み: {高|たか}い, {話|はな}す.\n2. Hai chữ Hán ghép → thường 音読み: {高校|こうこう}, {会話|かいわ}.\n3. Ngoại lệ có: {番組|ばんぐみ} (音＋訓), {場所|ばしょ} (訓＋音), {台所|だいどころ}.\n4. Vài chữ đứng riêng đọc 音: {駅|えき}, {肉|にく}, {絵|え}."
       },
       {
         "id": "n4t2-s15",
@@ -161,8 +161,8 @@
           ["生", "{生|う}まれる", "{学生|がくせい}"],
           ["食", "{食|た}べる", "{食堂|しょくどう}"],
           ["安", "{安|やす}い", "{安心|あんしん}"],
-          ["重", "{重|おも}い", "{体重|たいじゅう}"],
-          ["急", "{急|いそ}ぐ", "{急行|きゅうこう}"],
+          ["高", "{高|たか}い", "{高校|こうこう}"],
+          ["話", "{話|はな}す", "{会話|かいわ}"],
           ["運", "{運|はこ}ぶ", "{運動|うんどう}"],
           ["習", "{習|なら}う", "{練習|れんしゅう}"],
           ["送", "{送|おく}る", "{放送|ほうそう}"]
@@ -219,7 +219,7 @@
           ["何", "なんぷん", "なんぼん"]
         ],
         "revealLastColumn": false,
-        "teacherNotes": "Quy luật: sau っ (1, 6, 8, 10) → ぷん／ぽん; sau 3 và 何 → ぷん／ぼん; 4 → よんぷん nhưng よんほん; còn lại ふん／ほん."
+        "teacherNotes": "Quy luật: sau っ (1, 6, 8, 10) → ぷん／ぽん; sau 3 và 何 → ぷん／ぼん; 4 → よんぷん nhưng よんほん; còn lại ふん／ほん. ～百 cùng quy luật: さんびゃく, ろっぴゃく, はっぴゃく."
       },
       {
         "id": "n4t2-s20",
@@ -230,7 +230,7 @@
         "id": "n4t2-s21",
         "type": "note",
         "title": "Âm đục ở chữ sau (連濁)",
-        "body": "1. Chữ thứ hai có thể đổi か→が, さ→ざ, た→だ, は→ば: {手紙|てがみ}, {番組|ばんぐみ}, {花火|はなび}, {旅人|たびびと}.\n2. Sau ん hay đục hoặc thành ぱ: {三階|さんがい}, {三千|さんぜん}, {心配|しんぱい}, {散歩|さんぽ}.\n3. Không có quy tắc chắc chắn: {会社|かいしゃ} không đục.\n4. Đề hay cho cặp てかみ／てがみ: nhớ từ, đừng đoán."
+        "body": "1. Chữ thứ hai có thể đổi か→が, さ→ざ, た→だ, は→ば: {手紙|てがみ}, {番組|ばんぐみ}, {花火|はなび}, {旅人|たびびと}.\n2. Sau ん hay đục hoặc thành ぱ: {三階|さんがい}, {三千|さんぜん}, {心配|しんぱい}, {散歩|さんぽ}.\n3. Không có quy tắc chắc chắn: {電車|でんしゃ} sau ん vẫn không đục.\n4. Đề hay cho cặp てかみ／てがみ: nhớ từ, đừng đoán."
       },
       {
         "id": "n4t2-s22",
@@ -261,7 +261,7 @@
       {
         "id": "n4t2-s24",
         "type": "quiz",
-        "ref": "n4t2-q04"
+        "ref": "n4t2-q17"
       },
       {
         "id": "n4t2-s25",
@@ -410,12 +410,12 @@
       {
         "id": "n4t2-q07",
         "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
-        "prompt": "あと [[六分]]で 電車が 来ます。",
+        "prompt": "この ノートは [[六百]]円です。",
         "points": 1,
         "tags": ["n4", "tips", "kanji"],
-        "explain": "六分（ろっぷん）: 6 phút. Mẹo đếm ～分: sau 1, 6, 8, 10 thì số ngắt っ và ふん thành ぷん: いっぷん, ろっぷん, はっぷん, じゅっぷん. ろくふん, ろくぷん, ろっふん đều sai một trong hai bước.",
+        "explain": "六百（ろっぴゃく）: 600. Mẹo đếm ～分／～本 áp dụng cho mọi chữ hàng は: sau 6 (và 1, 8, 10) số ngắt っ và は thành ぱ, nên ひゃく → ぴゃく (giống ろっぷん, ろっぽん). ろくひゃく quên cả hai bước; ろくぴゃく quên ngắt っ; ろっひゃく quên đổi ひ → ぴ.",
         "type": "choice",
-        "options": ["ろくふん", "ろくぷん", "ろっぷん", "ろっふん"],
+        "options": ["ろくひゃく", "ろくぴゃく", "ろっぴゃく", "ろっひゃく"],
         "multiple": false,
         "answer": [2]
       },
@@ -545,7 +545,7 @@
         "prompt": "これは [[国立]]の 大学です。",
         "points": 1,
         "tags": ["n4", "tips", "kanji"],
-        "explain": "国立（こくりつ）: quốc lập (của nhà nước). 立 “Lập” vần -p nhưng đọc りつ – ngoại lệ trong bảng ngoại lệ, nên loại こくりゅう, こくりゅ. 国 “Quốc” vần -c → こく. くに là 訓読み của 国, không dùng trong từ ghép này.",
+        "explain": "国立（こくりつ）: quốc lập (của nhà nước). 立 “Lập” vần -p nhưng đọc りつ – một chữ trong bảng ngoại lệ, nên loại こくりゅう, こくりゅ. 国 “Quốc” vần -c → こく. くに là 訓読み của 国, không dùng trong từ ghép này.",
         "type": "choice",
         "options": ["こくりつ", "こくりゅう", "くにりつ", "こくりゅ"],
         "multiple": false,

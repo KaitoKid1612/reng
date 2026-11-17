@@ -21,7 +21,7 @@
         "id": "n4t5-s02",
         "type": "note",
         "title": "Ba dạng đọc hiểu ở N4",
-        "body": "1. 内容理解（短文）: bài khoảng 100–200 chữ (email, ghi chú, thông báo ngắn, đoạn văn), hỏi một ý.\n2. 内容理解（中文）: bài khoảng 450 chữ, vài câu hỏi đi theo thứ tự bài.\n3. 情報検索: thông báo, bảng, tờ rơi khoảng 400 chữ; tìm đúng dòng theo điều kiện.\nCả ba nằm chung giờ thi 55 phút với ngữ pháp, nên phải tự giữ thời gian cho phần đọc."
+        "body": "1. 内容理解（短文）: bài khoảng 100–200 chữ (email, ghi chú, thông báo ngắn, đoạn văn), hỏi một ý.\n2. 内容理解（中文）: bài khoảng 450 chữ, vài câu hỏi, thường theo thứ tự bài.\n3. 情報検索: thông báo, bảng, tờ rơi khoảng 400 chữ; tìm đúng dòng theo điều kiện.\nCả ba nằm chung giờ thi 55 phút với ngữ pháp, nên phải tự giữ thời gian cho phần đọc."
       },
       {
         "id": "n4t5-s03",
@@ -165,7 +165,7 @@
         "id": "n4t5-s19",
         "type": "note",
         "title": "Chỗ gạch chân ①②",
-        "body": "Câu hỏi「①〜とあるが、なぜですか」: đáp án thường ở câu ngay trước hoặc ngay sau chỗ gạch chân.\n1. Đọc lại 1–2 câu trước ①.\n2. Tìm 〜から／〜ので／〜て gần đó.\n3. Lựa chọn nói chuyện ở đoạn khác của bài thường là bẫy."
+        "body": "Câu hỏi「①〜と ありますが、どうしてですか」: đáp án thường ở câu ngay trước hoặc ngay sau chỗ gạch chân.\n1. Đọc lại 1–2 câu trước ①.\n2. Tìm 〜から／〜ので／〜て gần đó.\n3. Lựa chọn nói chuyện ở đoạn khác của bài thường là bẫy."
       },
       {
         "id": "n4t5-s20",
@@ -240,7 +240,7 @@
         "id": "n4t5-s26",
         "type": "note",
         "title": "Khi phân vân giữa hai đáp án",
-        "body": "1. Tìm câu trong bài chứng minh cho đáp án; không tìm được thì loại.\n2. Loại lựa chọn có thông tin bài không nói tới.\n3. Cẩn thận từ tuyệt đối: いつも, {全部|ぜんぶ}, かならず, ぜんぜん khi bài chỉ nói ときどき, {少|すこ}し.\n4. Vẫn phân vân: chọn câu nói lại ý bài, không chọn câu chép chữ. Không bao giờ để trống."
+        "body": "1. Tìm câu trong bài chứng minh cho đáp án; không tìm được thì loại.\n2. Loại lựa chọn có thông tin bài không nói tới.\n3. Cẩn thận từ tuyệt đối: いつも, {全部|ぜんぶ}, かならず, ぜんぜん khi bài chỉ nói ときどき, {少|すこ}し.\n4. Vẫn phân vân: câu nói lại ý bài thường đáng tin hơn câu chép chữ. Không bao giờ để trống."
       },
       {
         "id": "n4t5-s27",
@@ -481,7 +481,7 @@
         "id": "n4t5-q14",
         "type": "choice",
         "instruction": "つぎの {文章|ぶんしょう}を {読|よ}んで、しつもんに こたえて ください。",
-        "passage": "{日曜日|にちようび}、{妹|いもうと}と {動物園|どうぶつえん}へ {行|い}く {予定|よてい}でした。でも、{朝|あさ}から {雨|あめ}が {降|ふ}って いたので、{行|い}くのを やめて、{家|いえ}で {映画|えいが}を {見|み}ました。{妹|いもうと}は パンダが {見|み}たかったと {言|い}って いました。{来週|らいしゅう}の {日曜日|にちようび}に もう{一度|いちど} {行|い}く つもりです。",
+        "passage": "{日曜日|にちようび}、{妹|いもうと}と {動物園|どうぶつえん}へ {行|い}く {予定|よてい}でした。でも、{朝|あさ}から {雨|あめ}が {降|ふ}って いたので、{行|い}くのを やめて、{家|いえ}で {映画|えいが}を {見|み}ました。{妹|いもうと}は パンダが {見|み}たかったと {言|い}って いました。{来週|らいしゅう}の {日曜日|にちようび}に {行|い}く つもりです。",
         "prompt": "{文章|ぶんしょう}の {内容|ないよう}と {合|あ}って いる ものは どれですか。",
         "options": [
           "{日曜日|にちようび}は {家|いえ}で {映画|えいが}を {見|み}た。",
