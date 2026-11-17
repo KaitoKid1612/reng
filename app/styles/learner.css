@@ -365,6 +365,13 @@
   min-height: 32px;
   padding: 4px 8px;
 }
+/* The study clock on a phone keeps one line (time and the hide button) so the submit bar does
+   not cover the question; the section guide shows on wider screens. */
+@media (max-width: 600px) {
+  .study-clock .exam-pacing + .exam-pacing {
+    display: none;
+  }
+}
 
 /* Mistake book: one collapsible group per assignment. */
 .mistake-group {

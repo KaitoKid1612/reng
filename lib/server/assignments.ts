@@ -21,7 +21,8 @@ import {
 } from "@/lib/assignment";
 import { gradeAttempt } from "@/lib/grading/grade";
 import { grammarRefs } from "@/lib/grammar-links";
-import { isExamTimeUp, JLPT_EXAM_MAX_LISTENS, jlptSectionOf } from "@/lib/jlpt";
+import { isExamTimeUp, JLPT_EXAM_MAX_LISTENS, jlptSectionOf, planStudyPacing } from "@/lib/jlpt";
+import { dailyFormatLevel } from "@/lib/jlpt-parts";
 import { questionSchema } from "@/lib/lesson-schema";
 import { listAssignmentExams } from "@/lib/server/assignment-exams";
 import { getTeacherClass, requireMembership } from "@/lib/server/classes";
@@ -46,7 +47,7 @@ import type {
   QuestionView,
   TestQuestionInput,
 } from "@/lib/assignment";
-import type { JlptSection } from "@/lib/jlpt";
+import type { JlptLevel, JlptSection } from "@/lib/jlpt";
 import type { AssignmentExam } from "@/lib/server/assignment-exams";
 
 const timestamp = z.iso.datetime({ offset: true });
@@ -385,8 +386,11 @@ export interface OpenAttemptView {
   savedAt: string;
   draft: AttemptDraft;
   items: AttemptItem[];
-  // A mock exam: the JLPT section of each item, in order, for the page's pacing guide.
+  // A mock exam, or practice in a JLPT-format class: the JLPT section of each item, in order,
+  // for the page's pacing guide.
   sections: (JlptSection | null)[] | null;
+  // Practice in a JLPT-format class: the level whose real test times the study clock.
+  studyLevel: JlptLevel | null;
 }
 
 export interface StudentAssignmentView {
@@ -447,6 +451,11 @@ export async function getStudentAssignment(
     attempts = await listUserAttempts(userId, [assignment.id]);
     open = attempts.find((attempt) => attempt.status === "in_progress");
   }
+  // Practice in a class that takes JLPT-format daily sets gets a study clock (no limit).
+  const studyLevel =
+    !assignment.exam && assignment.mode === "practice"
+      ? dailyFormatLevel(classRow.daily_practice_format)
+      : null;
   return {
     assignment,
     className: classRow.name,
@@ -467,7 +476,8 @@ export async function getStudentAssignment(
             assignment.mode,
             assignment.exam ? JLPT_EXAM_MAX_LISTENS : null,
           ),
-          sections: assignment.exam ? items.map((item) => jlptSectionOf(item)) : null,
+          sections: assignment.exam || studyLevel ? items.map((item) => jlptSectionOf(item)) : null,
+          studyLevel,
         }
       : null,
     questionCount: items.length,
@@ -804,6 +814,8 @@ export interface StudentResultsView {
   hasOpenAttempt: boolean;
   isFeedbackAvailable: boolean;
   items: ResultItem[];
+  // Practice in a JLPT-format class: the real test's minutes for the same questions.
+  studyMinutes: number | null;
 }
 
 export async function getStudentResults(
@@ -827,6 +839,18 @@ export async function getStudentResults(
     maxScore: canShow ? latest.maxScore : null,
     passed: canShow ? latest.passed : null,
   };
+  const items = latest && canShow ? await loadAttemptResultItems(latest.id, assignment.id) : [];
+  const studyLevel =
+    !assignment.exam && assignment.mode === "practice"
+      ? dailyFormatLevel(classRow.daily_practice_format)
+      : null;
+  const studyMinutes = studyLevel
+    ? planStudyPacing(
+        studyLevel,
+        items.map((item) => item.section),
+        new Date(0).toISOString(),
+      ).reduce((total, step) => total + step.minutes, 0)
+    : 0;
   return {
     assignment,
     className: classRow.name,
@@ -835,6 +859,7 @@ export async function getStudentResults(
     hasOpenAttempt: attempts.some((attempt) => attempt.status === "in_progress"),
     isFeedbackAvailable: canShow,
     // Nothing graded leaves the server before the feedback time.
-    items: latest && canShow ? await loadAttemptResultItems(latest.id, assignment.id) : [],
+    items,
+    studyMinutes: studyMinutes || null,
   };
 }

@@ -167,6 +167,12 @@ Bài mẫu `minna-1-17` đăng ký sau bài 16 (16/11/2026), cùng schema v1 và
 
 `minna-1-18` … `minna-1-25` đăng ký tiếp theo thứ tự bài (16/11/2026). Schema v1, luồng tạo bài từ mẫu, RPC và database giữ nguyên.
 
+Đồng hồ bài luyện theo cấu trúc đề (17/11/2026):
+- **Tính giờ:** `planStudyPacing` (`lib/jlpt.ts`) chia các câu theo phần như `planExamPacing`. Mỗi phần nhận số phút chính thức (N4: 25/55/35) nhân tỉ lệ số câu của bài so với một đề thật (`jlptSectionQuestionCount`, từ `PART_COUNTS`: N4 28/29/28), tối đa bằng giờ thật. Bài không theo thứ tự phần thì không có đồng hồ.
+- **Phía server:** `getStudentAssignment` trả `studyLevel` khi bài là luyện tập (không phải thi thử) ở lớp có `daily_practice_format` là JLPT, kèm `sections` của các câu.
+- **Hiển thị:** `StudyClock` (`components/classroom/study-clock.tsx`) đếm lên theo giờ server. Đồng hồ hiện phần đang ở theo giờ thật và nút đến câu đầu phần, không tự nộp. Ẩn hoặc hiện được, lựa chọn lưu ở `localStorage` (`reng-study-clock-hidden`).
+- **Sau khi nộp:** `describeAttemptTime` cho "X phút" hoặc "X giờ Y phút" từ `startedAt`/`submittedAt`, trả null khi quá 6 giờ. Trang kết quả và trang luyện tập hằng ngày không ghi thời gian với lượt Reng tự nộp. `StudentResultsView.studyMinutes` là tổng phút đề thật của các câu đã giao.
+
 Xuống dòng trên slide (17/11/2026): `app/styles/slides.css` cho `.slide-japanese`, `.slide-translation` và phương án câu luyện dùng `text-wrap: pretty`, nên trình duyệt chia dòng để không còn một mẩu lẻ ở cuối. Đề và phương án câu luyện còn dùng `word-break: keep-all` với `overflow-wrap: anywhere`: câu tiếng Nhật trong bài mẫu viết cách giữa các cụm, nên chỉ xuống dòng ở dấu cách, và cụm dài hơn một dòng vẫn được ngắt. Trình duyệt không hỗ trợ thì ngắt như cũ.
 
 Tổng ôn ngữ pháp N4 (16/11/2026):

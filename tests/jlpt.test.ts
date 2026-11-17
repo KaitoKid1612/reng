@@ -8,6 +8,7 @@ import {
   isOfficialTest,
   countJlptSections,
   currentPacingStep,
+  describeAttemptTime,
   describeJlptCountdown,
   estimateJlptScore,
   examHandInAt,
@@ -20,7 +21,9 @@ import {
   jlptSectionOf,
   planExamPacing,
   planJlptExam,
+  planStudyPacing,
 } from "@/lib/jlpt";
+import { jlptFullDailySize, jlptSectionQuestionCount } from "@/lib/jlpt-parts";
 
 import type { JlptExamCandidate, JlptSectionScore } from "@/lib/jlpt";
 
@@ -364,4 +367,47 @@ test("pacing splits the exam's time like the real test and follows the clock", (
   // No pacing for one section, or when a section comes back after another.
   assert.deepEqual(planExamPacing("N4", 115, n4.slice(0, 25), start), []);
   assert.deepEqual(planExamPacing("N4", 115, ["vocabulary", "listening", "vocabulary"], start), []);
+});
+
+test("a JLPT-format daily set is timed against the real test for the same questions", () => {
+  const start = "2026-11-17T12:00:00.000Z";
+  assert.equal(jlptSectionQuestionCount("N4", "vocabulary"), 28);
+  assert.equal(jlptSectionQuestionCount("N4", "grammarReading"), 29);
+  assert.equal(jlptSectionQuestionCount("N4", "listening"), 28);
+  // The full N4 daily set: every language and reading question of a test plus 10 listening.
+  const daily = [
+    ...Array<"vocabulary">(28).fill("vocabulary"),
+    ...Array<"grammarReading">(29).fill("grammarReading"),
+    ...Array<"listening">(10).fill("listening"),
+  ];
+  assert.equal(daily.length, jlptFullDailySize("N4"));
+  const steps = planStudyPacing("N4", daily, start);
+  assert.deepEqual(
+    steps.map((step) => [step.section, step.firstPosition, step.lastPosition, step.minutes]),
+    [
+      ["vocabulary", 1, 28, 25],
+      ["grammarReading", 29, 57, 55],
+      ["listening", 58, 67, 13],
+    ],
+  );
+  assert.equal(steps.at(-1)?.endsAt, "2026-11-17T13:33:00.000Z");
+  // A smaller set gets a smaller share; a set out of test order gets no clock.
+  assert.deepEqual(
+    planStudyPacing("N4", [...daily.slice(0, 14), ...daily.slice(28, 43)], start).map(
+      (step) => step.minutes,
+    ),
+    [13, 28],
+  );
+  assert.deepEqual(planStudyPacing("N4", ["vocabulary", "listening", "vocabulary"], start), []);
+});
+
+test("the time an attempt took reads in minutes and hours, within one sitting", () => {
+  const start = "2026-11-17T12:00:00.000Z";
+  assert.equal(describeAttemptTime(start, "2026-11-17T12:52:20.000Z"), "52 phút");
+  assert.equal(describeAttemptTime(start, "2026-11-17T13:05:00.000Z"), "1 giờ 5 phút");
+  assert.equal(describeAttemptTime(start, "2026-11-17T12:00:10.000Z"), "1 phút");
+  assert.equal(describeAttemptTime(start, null), null);
+  // Left open overnight, or a clock that went backwards: no figure at all.
+  assert.equal(describeAttemptTime(start, "2026-11-18T08:00:00.000Z"), null);
+  assert.equal(describeAttemptTime(start, "2026-11-17T11:00:00.000Z"), null);
 });

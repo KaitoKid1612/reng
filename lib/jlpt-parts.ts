@@ -36,6 +36,14 @@ const PART_COUNTS: Record<JlptLevel, readonly number[]> = {
   N5: [7, 5, 6, 3, 0, 9, 4, 4, 2, 2, 1, 7, 6, 5, 6],
 };
 
+/** Questions of one section in a real test (N4 vocabulary 28, grammar and reading 29). */
+export function jlptSectionQuestionCount(level: JlptLevel, section: JlptSection) {
+  return JLPT_PARTS.reduce(
+    (total, part, index) => total + (part.section === section ? PART_COUNTS[level][index] : 0),
+    0,
+  );
+}
+
 export const DAILY_FORMATS = ["balanced", "jlpt-n4", "jlpt-n5"] as const;
 export type DailyFormat = (typeof DAILY_FORMATS)[number];
 

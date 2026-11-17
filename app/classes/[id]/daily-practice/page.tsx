@@ -13,7 +13,8 @@ import {
   numberAnswers,
   parseAnswerOutcome,
 } from "@/lib/answer-outcome";
-import { getDeadlineState } from "@/lib/assignment";
+import { getDeadlineState, isHandedInAtDeadline } from "@/lib/assignment";
+import { describeAttemptTime } from "@/lib/jlpt";
 import { neighbourDays, pickDailyDay, scoreBand } from "@/lib/daily-history";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
@@ -133,6 +134,10 @@ function DayResult({ day, view, grammarLinks, path, outcome, now }: DayResultPro
     );
   }
   const percent = toPercent(attempt.score, attempt.maxScore);
+  // A set Reng handed in at the deadline says nothing about the learner's pace.
+  const took = isHandedInAtDeadline(attempt.submittedAt, assignment.dueAt)
+    ? null
+    : describeAttemptTime(attempt.startedAt, attempt.submittedAt);
   const counts = countOutcomes(view.items);
   const blank = view.items.filter((item) => !item.answerText).length;
   const visible = numberAnswers(view.items).filter(({ item }) =>
@@ -170,7 +175,9 @@ function DayResult({ day, view, grammarLinks, path, outcome, now }: DayResultPro
         </dl>
         <p className="small muted">
           Lượt {attempt.attemptNo}/{assignment.maxAttempts}, nộp lúc {submittedAt}
-          {attempt.isLate ? " (nộp muộn)" : ""}.
+          {attempt.isLate ? " (nộp muộn)" : ""}
+          {took ? `, làm trong ${took}` : ""}
+          {took && view.studyMinutes ? ` (đề thật khoảng ${view.studyMinutes} phút)` : ""}.
         </p>
         {canStart && (
           <Link href={workHref} className={buttonVariants({ variant: "outline" })}>

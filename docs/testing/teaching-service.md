@@ -129,6 +129,24 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Đồng hồ bài luyện theo cấu trúc đề JLPT — 17/11/2026
+
+Bài luyện ở lớp chia câu theo cấu trúc đề JLPT có đồng hồ đếm lên so với giờ đề thật, và trang kết quả ghi thời gian đã làm. Thiết kế ở [DD](../detail-design/teaching-service.md).
+
+- **PASS unit** (`tests/jlpt.test.ts`):
+  - Số câu mỗi phần của đề N4 là 28/29/28.
+  - Bài 67 câu N4 được 25/55/13 phút, hết lúc +93 phút.
+  - Bài nhỏ hơn được phần nhỏ hơn; bài không theo thứ tự phần thì không có đồng hồ.
+  - Thời gian làm ghi "52 phút" hoặc "1 giờ 5 phút"; quá 6 giờ hoặc giờ ngược thì không ghi.
+- **PASS Supabase local** (spec tạm, đã xóa):
+  - Tạo lớp tự học, nạp ngân hàng N4 bằng `bank:sql --class`, chọn "Theo cấu trúc đề JLPT N4", 67 câu, giao bài hôm nay.
+  - Lớp không đặt số câu nghe nên bài chia 22/23/22, đồng hồ ghi "đề thật khoảng 92 phút" và "phần 1/3, Chữ Hán – từ vựng (câu 1–22)".
+  - Ẩn đồng hồ thì tải lại vẫn ẩn; hiện lại được.
+  - Trang 360px không cuộn ngang. Trên điện thoại chỉ hiện một dòng đồng hồ, để thanh Nộp bài không che câu hỏi.
+  - Nộp xong, trang kết quả và trang luyện tập hằng ngày ghi "Làm trong 1 phút (đề thật khoảng 92 phút)". Ảnh 1280px và 360px đã xem.
+- **PASS:** `npm run check` 417/417; `npm run test:e2e:supabase` 46/46; `npm run test:e2e` 36/36.
+- **Production:** lớp "Ôn JLPT N4 – Việt" đặt 10 câu nghe, nên bài hằng ngày là 28/29/10 câu, khoảng 93 phút.
+
 ## Soát bộ mẹo N4 và xuống dòng ở slide câu luyện — 17/11/2026
 
 - **Soát độc lập 7 bài mẹo:** mỗi bài một agent soát (thông tin đề thi đối chiếu jlpt.jp và hướng dẫn dự thi 2026), sửa 3–18 chỗ mỗi bài. Lỗi chính:

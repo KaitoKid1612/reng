@@ -16,7 +16,7 @@ import {
 } from "@/lib/answer-outcome";
 import { getDeadlineState, isHandedInAtDeadline } from "@/lib/assignment";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
-import { isHandedInAtTimeLimit } from "@/lib/jlpt";
+import { describeAttemptTime, isHandedInAtTimeLimit } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentResults } from "@/lib/server/assignments";
 import { findClassGrammarLinks } from "@/lib/server/class-grammar";
@@ -79,6 +79,11 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
     (exam !== null &&
       attempt !== null &&
       isHandedInAtTimeLimit(attempt.submittedAt, attempt.startedAt, exam.timeLimitMinutes));
+  // A set Reng handed in, or one left open for hours, says nothing about the learner's pace.
+  const took =
+    attempt && !handedInAtDeadline
+      ? describeAttemptTime(attempt.startedAt, attempt.submittedAt)
+      : null;
   const handInEnd = exam ? "hết giờ" : "hết hạn";
   const actions = (
     <div className="button-row">
@@ -167,6 +172,12 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
                 {attempt.isLate ? " (nộp muộn)" : ""}
                 {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
               </p>
+              {took && (
+                <p className="small muted">
+                  Làm trong {took}
+                  {view.studyMinutes ? ` (đề thật khoảng ${view.studyMinutes} phút)` : ""}.
+                </p>
+              )}
             </div>
           </div>
           {exam && <JlptResult level={exam.level} items={view.items} now={now} />}

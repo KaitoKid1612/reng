@@ -1,6 +1,6 @@
 import { AUTO_SUBMIT_LEAD_MS } from "@/lib/assignment";
 import { selectBalancedDailyQuestions } from "@/lib/daily-practice";
-import { jlptPartOf } from "@/lib/jlpt-parts";
+import { jlptPartOf, jlptSectionQuestionCount } from "@/lib/jlpt-parts";
 import { formatStudyDay, toStudyDay } from "@/lib/study-days";
 
 import type { DailyQuestionUse } from "@/lib/daily-practice";
@@ -434,12 +434,9 @@ export interface ExamPacingStep {
  * attempt's time limit. It only guides; the attempt keeps its single limit, and an exam whose
  * questions do not come one section after another gets no pacing.
  */
-export function planExamPacing(
-  level: JlptLevel,
-  timeLimitMinutes: number,
-  sections: readonly (JlptSection | null)[],
-  startedAt: string,
-): ExamPacingStep[] {
+// The sections of a set in order, each as one run of questions; null when they interleave or a
+// set has a single section, since then there is no test order to pace.
+function sectionRuns(sections: readonly (JlptSection | null)[]) {
   const runs: { section: JlptSection; firstPosition: number; lastPosition: number }[] = [];
   sections.forEach((section, index) => {
     const last = runs.at(-1);
@@ -450,6 +447,19 @@ export function planExamPacing(
     }
   });
   if (runs.length < 2 || new Set(runs.map((run) => run.section)).size !== runs.length) {
+    return null;
+  }
+  return runs;
+}
+
+export function planExamPacing(
+  level: JlptLevel,
+  timeLimitMinutes: number,
+  sections: readonly (JlptSection | null)[],
+  startedAt: string,
+): ExamPacingStep[] {
+  const runs = sectionRuns(sections);
+  if (!runs) {
     return [];
   }
   const official = JLPT_SECTION_MINUTES[level];
@@ -466,6 +476,34 @@ export function planExamPacing(
   });
 }
 
+/**
+ * The real test's pace for a practice set in test order (a JLPT-format daily set): each section
+ * gets the official minutes in proportion to its questions here against one real test, so 10 of
+ * the 28 N4 listening questions get 13 of its 35 minutes. Empty when the set is not in test order.
+ */
+export function planStudyPacing(
+  level: JlptLevel,
+  sections: readonly (JlptSection | null)[],
+  startedAt: string,
+): ExamPacingStep[] {
+  const runs = sectionRuns(sections);
+  if (!runs) {
+    return [];
+  }
+  let used = 0;
+  return runs.map((run) => {
+    const count = run.lastPosition - run.firstPosition + 1;
+    const share = count / jlptSectionQuestionCount(level, run.section);
+    const minutes = Math.max(
+      1,
+      Math.round(JLPT_SECTION_MINUTES[level][run.section] * Math.min(1, share)),
+    );
+    used += minutes;
+    const endsAt = new Date(Date.parse(startedAt) + used * 60 * 1000).toISOString();
+    return { ...run, minutes, endsAt };
+  });
+}
+
 /** "Chữ Hán – từ vựng 25 phút, …": the guide's split of an exam with all three sections. */
 export function describeExamPacing(level: JlptLevel, timeLimitMinutes: number) {
   return planExamPacing(level, timeLimitMinutes, JLPT_SECTIONS, new Date(0).toISOString())
@@ -476,6 +514,23 @@ export function describeExamPacing(level: JlptLevel, timeLimitMinutes: number) {
 /** The step the clock is in: the first whose share has not run out, else the last one. */
 export function currentPacingStep(steps: readonly ExamPacingStep[], now: number) {
   return steps.find((step) => Date.parse(step.endsAt) > now) ?? steps.at(-1) ?? null;
+}
+
+// Longer than this the learner left and came back, so the time says nothing about their pace.
+const ONE_SITTING_MS = 6 * 60 * 60 * 1000;
+
+/** "52 phút", "1 giờ 5 phút": how long a submitted attempt took, or null past one sitting. */
+export function describeAttemptTime(startedAt: string, submittedAt: string | null) {
+  if (!submittedAt) {
+    return null;
+  }
+  const milliseconds = Date.parse(submittedAt) - Date.parse(startedAt);
+  if (!(milliseconds >= 0) || milliseconds > ONE_SITTING_MS) {
+    return null;
+  }
+  const minutes = Math.max(1, Math.round(milliseconds / 60_000));
+  const hours = Math.floor(minutes / 60);
+  return hours ? `${hours} giờ ${minutes % 60} phút` : `${minutes} phút`;
 }
 
 export function formatExamClock(milliseconds: number) {

@@ -14,6 +14,7 @@ import {
   describeJlptCountdown,
   examHandInAt,
   planExamPacing,
+  planStudyPacing,
 } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
@@ -94,6 +95,11 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
     openAttempt?.items.some((item) => item.answerKey && grammarRefs(item.answerKey.tags).length)
       ? await findClassGrammarLinks(account.id, assignment.classId, now)
       : undefined;
+  // Practice in a JLPT-format class, in test order: a study clock against the real test's time.
+  const studyPacing =
+    openAttempt?.studyLevel && openAttempt.sections
+      ? planStudyPacing(openAttempt.studyLevel, openAttempt.sections, openAttempt.startedAt)
+      : [];
   let startLabel = hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài";
   if (exam) {
     startLabel = "Bắt đầu thi";
@@ -165,6 +171,15 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           dueAt={assignment.dueAt}
           allowLate={assignment.allowLate}
           grammarLinks={grammarLinks}
+          study={
+            studyPacing.length
+              ? {
+                  startedAt: openAttempt.startedAt,
+                  serverNow: now.toISOString(),
+                  pacing: studyPacing,
+                }
+              : null
+          }
           exam={
             exam
               ? {

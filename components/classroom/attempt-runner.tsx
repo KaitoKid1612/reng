@@ -14,6 +14,7 @@ import { QuestionMap } from "@/components/classroom/question-map";
 import { useDraftSync } from "@/components/classroom/use-draft-sync";
 import { DeadlineCountdown } from "@/components/classroom/deadline-countdown";
 import { ExamTimer } from "@/components/classroom/exam-timer";
+import { StudyClock } from "@/components/classroom/study-clock";
 import { QuestionCredits } from "@/components/classroom/question-credits";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,6 +56,8 @@ export interface AttemptRunnerProps {
   exam?: { handInAt: string; serverNow: string; pacing?: ExamPacingStep[] } | null;
   // Class lessons by grammar id: a checked practice answer links the point it tests.
   grammarLinks?: GrammarLinks;
+  // Practice in test order: the real test's time for the same questions, shown counting up.
+  study?: { startedAt: string; serverNow: string; pacing: ExamPacingStep[] } | null;
 }
 
 const STATUS_TEXT: Record<SyncStatus, string> = {
@@ -98,6 +101,7 @@ export function AttemptRunner({
   allowLate = true,
   exam = null,
   grammarLinks,
+  study = null,
 }: AttemptRunnerProps) {
   const router = useRouter();
   const views = items.map((item) => item.view);
@@ -457,7 +461,21 @@ export function AttemptRunner({
             onAutoSubmit={handleAutoSubmit}
           />
         ) : (
-          <DeadlineCountdown dueAt={dueAt} allowLate={allowLate} onAutoSubmit={handleAutoSubmit} />
+          <>
+            {study && (
+              <StudyClock
+                startedAt={study.startedAt}
+                serverNow={study.serverNow}
+                pacing={study.pacing}
+                onJump={(position) => handleMove(position - 1, "card")}
+              />
+            )}
+            <DeadlineCountdown
+              dueAt={dueAt}
+              allowLate={allowLate}
+              onAutoSubmit={handleAutoSubmit}
+            />
+          </>
         )}
         {/* A long set scrolls far from the question map; the bar keeps the count in sight. */}
         <div className="attempt-progress">

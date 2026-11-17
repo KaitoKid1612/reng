@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 17/11/2026
 
+- **Đồng hồ cho bài luyện theo cấu trúc đề JLPT:** ở lớp chia câu "Theo cấu trúc đề JLPT N4/N5", bài luyện (kể cả bài hằng ngày) có đồng hồ đếm lên, so với giờ đề thật cho cùng số câu. Ví dụ bài 67 câu N4: từ vựng 25 phút, ngữ pháp – đọc 55 phút, 10 câu nghe 13 phút, tổng 93 phút. Đồng hồ cho biết đang ở phần nào theo giờ thật và báo khi quá giờ, nhưng không tự nộp; bấm **Ẩn đồng hồ** để tắt (máy nhớ lựa chọn). Trên điện thoại chỉ hiện một dòng. Trang kết quả và trang luyện tập hằng ngày ghi "làm trong X phút (đề thật khoảng Y phút)". Lượt quá 6 giờ hoặc do Reng tự nộp thì không ghi thời gian.
+
 - Bộ **Mẹo học và thi JLPT N4** được soát độc lập từng bài (sửa 3–18 chỗ mỗi bài):
   - Câu có phương án sai mà vẫn đúng (かぜを もらう).
   - Câu ★ xếp được hai cách.
