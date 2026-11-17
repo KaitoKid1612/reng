@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 
 import { useAccountSummary } from "@/components/use-account-summary";
 import { BrandMark } from "@/components/brand-mark";
+import { JlptCountdown } from "@/components/jlpt-countdown";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SELF_STUDY_PATHS } from "@/lib/self-study";
 
@@ -154,6 +155,7 @@ export function SiteHeader() {
           <ThemeToggle />
         </nav>
       </div>
+      <JlptCountdown />
     </header>
   );
 }

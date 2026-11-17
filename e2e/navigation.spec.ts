@@ -67,8 +67,12 @@ test("the phone header keeps the person's main page and folds the rest", async (
   const navigation = page.getByRole("navigation", { name: "Điều hướng chính" });
   await expect(header.locator(".header-shortcut")).toHaveText("Đăng nhập");
   await expect(navigation).toBeHidden();
-  // The folded header leaves the first screen to the page, not to a wall of links.
-  expect((await header.boundingBox())?.height ?? 0).toBeLessThan(90);
+  // The folded header leaves the first screen to the page, not to a wall of links; the JLPT
+  // countdown under it takes one short line.
+  expect((await header.locator(".header-inner").boundingBox())?.height ?? 0).toBeLessThan(90);
+  const countdown = header.locator(".jlpt-countdown");
+  await expect(countdown).toContainText(/Còn \d+ ngày|Hôm nay thi JLPT/);
+  expect((await countdown.boundingBox())?.height ?? 0).toBeLessThan(40);
   const toggle = page.getByRole("button", { name: "Menu", exact: true });
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
   await toggle.click();

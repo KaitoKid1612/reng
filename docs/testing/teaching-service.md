@@ -129,6 +129,16 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Đếm ngược kỳ thi JLPT trên mọi trang — 17/11/2026
+
+| Kiểm tra | Kết quả |
+| --- | --- |
+| `tests/jlpt.test.ts`: hôm thi theo giờ Việt Nam (16:59 UTC vẫn là ngày thi), hôm sau chuyển sang tháng 12, sau tháng 12 sang tháng 7 năm sau, các năm 2028–2031 tính đúng Chủ nhật đầu tháng | Đạt |
+| Server dev, Playwright: trang chủ 1280 và 1920, `/self-study`, `/guide` 390, trang chủ 360 hiện "Còn 19 ngày tới kỳ thi JLPT · Chủ nhật 06/12/2026", không tràn ngang, không lỗi console | Đạt |
+| Bấm **Ẩn** thì thanh mất và tải lại vẫn ẩn | Đạt |
+| Điện thoại 360: chữ gọn "Còn 19 ngày tới JLPT · 06/12", một dòng cao 34px dưới đầu trang 72px, kể cả câu dài nhất "Còn 209 ngày … 04/07 (dự kiến)"; 320 thì xuống hai dòng, không tràn. `e2e/navigation.spec.ts` kiểm tra đầu trang gập dưới 90px và thanh một dòng | Đạt |
+| Đặt giờ trình duyệt sang 07/12/2026 (giờ Việt Nam): "Còn 209 ngày … 04/07/2027 (dự kiến)"; ngày 06/12: "Hôm nay thi JLPT. Chúc bạn thi tốt!" | Đạt |
+
 ## Đồng hồ bài luyện theo cấu trúc đề JLPT — 17/11/2026
 
 Bài luyện ở lớp chia câu theo cấu trúc đề JLPT có đồng hồ đếm lên so với giờ đề thật, và trang kết quả ghi thời gian đã làm. Thiết kế ở [DD](../detail-design/teaching-service.md).

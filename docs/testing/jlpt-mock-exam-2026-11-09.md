@@ -23,5 +23,5 @@ Kịch bản E2E bắt được một lỗi trước khi commit: giáo viên m�
 - Điểm thang 180 chỉ là ước tính từ tỉ lệ đúng; JLPT thật chấm theo độ khó từng câu. Trang kết quả ghi rõ.
 - Một đồng hồ cho cả đề, chưa tách giờ từng phần như thi thật.
 - Giáo viên xem điểm từng học viên như bài kiểm tra khác; chưa có bảng trung bình lớp theo từng phần.
-- `JLPT_SESSIONS` cần thêm kỳ mới khi có lịch chính thức (04/07/2027 và 05/12/2027 đang ghi "dự kiến").
+- Từ 17/11/2026 lịch thi tự tính theo Chủ nhật đầu tháng 7 và 12; chỉ cần thêm ngày vào `CONFIRMED_JLPT_SESSIONS` khi có lịch chính thức để bỏ chữ "dự kiến".
 - Tab chạy nền làm đồng hồ chậm lại; trang cập nhật ngay khi quay lại tab, và phút thêm của server cùng việc tự nộp khi mở lại đề bù cho trường hợp đó.

@@ -284,6 +284,20 @@ test("the countdown names the next JLPT Sunday in Vietnam time", () => {
   );
 });
 
+test("the countdown keeps rolling to the next July or December first Sunday, year after year", () => {
+  const next = (instant: string) => findNextJlptSession(new Date(instant))?.date;
+  assert.equal(next("2027-07-04T16:59:00Z"), "2027-07-04", "still exam day in Vietnam");
+  assert.equal(next("2027-07-04T17:00:00Z"), "2027-12-05", "the next day counts to December");
+  assert.equal(next("2027-12-06T01:00:00Z"), "2028-07-02", "after December, July next year");
+  assert.equal(next("2028-08-01T01:00:00Z"), "2028-12-03");
+  assert.equal(next("2031-06-01T01:00:00Z"), "2031-07-06");
+  assert.deepEqual(findNextJlptSession(new Date("2029-12-02T01:00:00Z")), {
+    date: "2029-12-02",
+    isConfirmed: false,
+    daysLeft: 0,
+  });
+});
+
 test("a timed attempt is handed in at its limit, or a minute before an earlier deadline", () => {
   const started = "2026-11-09T02:00:00.000Z";
   assert.equal(examHandInAt(started, 90, null, false), "2026-11-09T03:30:00.000Z");

@@ -344,19 +344,35 @@ export function estimateJlptScore(
   };
 }
 
-// The JLPT is held on the first Sunday of July and December. Later sessions are marked expected
-// until the Japan Foundation publishes them; add each new session here.
-const JLPT_SESSIONS = [
-  { date: "2026-12-06", isConfirmed: true },
-  { date: "2027-07-04", isConfirmed: false },
-  { date: "2027-12-05", isConfirmed: false },
-] as const;
+// The JLPT is held on the first Sunday of July and December. Every session is worked out from
+// that rule and marked expected until the Japan Foundation publishes it; list each published date
+// here (a published date that is not the first Sunday replaces that month's expected one).
+const CONFIRMED_JLPT_SESSIONS: readonly string[] = ["2026-12-06"];
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+const JLPT_MONTHS = [7, 12] as const;
 
+function firstSunday(year: number, month: number) {
+  const first = new Date(Date.UTC(year, month - 1, 1));
+  first.setUTCDate(1 + ((7 - first.getUTCDay()) % 7));
+  return first.toISOString().slice(0, 10);
+}
+
+function listJlptSessions(year: number) {
+  return JLPT_MONTHS.map((month) => {
+    const prefix = `${year}-${String(month).padStart(2, "0")}-`;
+    const confirmed = CONFIRMED_JLPT_SESSIONS.find((date) => date.startsWith(prefix));
+    return { date: confirmed ?? firstSunday(year, month), isConfirmed: Boolean(confirmed) };
+  });
+}
+
+/** The session on or after today in Vietnam; the day after a test it moves on to the next one. */
 export function findNextJlptSession(now: Date) {
   const today = toStudyDay(now);
-  const session = JLPT_SESSIONS.find((item) => item.date >= today);
+  const year = Number(today.slice(0, 4));
+  const session = [...listJlptSessions(year), ...listJlptSessions(year + 1)].find(
+    (item) => item.date >= today,
+  );
   if (!session) {
     return null;
   }

@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 17/11/2026
 
+- **Đếm ngược kỳ thi JLPT trên mọi trang:** dưới đầu trang, mọi người (kể cả khách chưa đăng nhập) thấy "Còn N ngày tới kỳ thi JLPT · Chủ nhật dd/mm/yyyy". Ngày thi tính theo giờ Việt Nam. Hôm thi thanh ghi "Hôm nay thi JLPT. Chúc bạn thi tốt!", sang hôm sau thì tự đếm tới kỳ kế tiếp (sau kỳ tháng 12 là kỳ tháng 7 năm sau). Mỗi kỳ tự tính là Chủ nhật đầu tháng 7 hoặc tháng 12 và ghi "(dự kiến)" cho tới khi được đưa vào danh sách ngày đã công bố. Bấm **Ẩn** thì thanh ẩn tới hết kỳ đó, kỳ sau hiện lại. Thanh ẩn theo đầu trang khi trình chiếu slide hoặc in.
+
 - **Đồng hồ cho bài luyện theo cấu trúc đề JLPT:** ở lớp chia câu "Theo cấu trúc đề JLPT N4/N5", bài luyện (kể cả bài hằng ngày) có đồng hồ đếm lên, so với giờ đề thật cho cùng số câu. Ví dụ bài 67 câu N4: từ vựng 25 phút, ngữ pháp – đọc 55 phút, 10 câu nghe 13 phút, tổng 93 phút. Đồng hồ cho biết đang ở phần nào theo giờ thật và báo khi quá giờ, nhưng không tự nộp; bấm **Ẩn đồng hồ** để tắt (máy nhớ lựa chọn). Trên điện thoại chỉ hiện một dòng. Trang kết quả và trang luyện tập hằng ngày ghi "làm trong X phút (đề thật khoảng Y phút)". Lượt quá 6 giờ hoặc do Reng tự nộp thì không ghi thời gian.
 
 - Bộ **Mẹo học và thi JLPT N4** được soát độc lập từng bài (sửa 3–18 chỗ mỗi bài):

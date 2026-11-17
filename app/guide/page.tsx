@@ -229,7 +229,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-jlpt",
     title: "Thi thử JLPT",
     steps: [
-      "Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài. Trang đề cho biết còn bao nhiêu ngày tới kỳ thi JLPT tiếp theo.",
+      "Dưới đầu mọi trang có dòng đếm ngược tới kỳ thi JLPT tiếp theo (Chủ nhật đầu tháng 7 và tháng 12); bấm Ẩn để ẩn tới hết kỳ đó. Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài, trang đề cũng cho biết còn bao nhiêu ngày tới kỳ thi.",
       "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe. Mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm, nên đọc câu hỏi và các lựa chọn trước khi bấm Nghe.",
       "Dưới đồng hồ có giờ gợi ý cho từng phần như đề thật (N4: chữ Hán – từ vựng 25 phút, ngữ pháp – đọc hiểu 55 phút, nghe hiểu 35 phút; N5: 20, 40, 30 phút). Hết giờ gợi ý của một phần, bấm Đến câu … để sang phần sau; đây chỉ là gợi ý, đồng hồ chung mới quyết định lúc nộp.",
       "Hết giờ, trang tự nộp. Nếu bạn đã đóng trang, Reng nộp các câu đã lưu khi bạn mở lại đề hoặc vào khoảng 6 giờ sáng hôm sau.",
