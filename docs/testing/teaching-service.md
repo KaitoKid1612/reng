@@ -141,6 +141,11 @@ Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu v
   - Đo lại 271 slide câu luyện của 40 bài mẫu (Minna 1–25, ngữ pháp N4, mẹo N4): không còn chỗ ngắt giữa từ. 7 slide có dòng cuối ngắn nhưng là trọn một cụm (「います。」, 「（　）。」), đã xem ảnh.
   - Đo lại toàn bộ slide 7 bài mẹo sau khi soát: sạch.
 - **PASS:** `npm run check` 415/415; `npm run test:e2e:supabase` 46/46; `npm run test:e2e` 36/36.
+- **Production 17/11/2026:** theo yêu cầu, 16 bài được đưa vào lớp "Ôn JLPT N4 – Việt" bằng đúng các RPC app dùng (`insert_lesson_copy`, `publish_lesson`, `upsert_class_lesson`) cho tài khoản chủ lớp. Chạy thử có hoàn tác trước rồi mới chạy thật.
+  - 9 bài tổng ôn được tạo từ mẫu, ở phiên bản 1.
+  - 7 bài mẹo đã tạo trước đó: nháp trùng bản mẫu cũ (không có chỉnh sửa riêng), được cập nhật từ mẫu và xuất bản phiên bản mới.
+  - Vị trí trong lớp 2–17, mở ngay. 4 bài cũ của lớp giữ nguyên.
+  - Đọc lại sau khi chạy: nội dung 16 phiên bản khớp đúng bản mẫu; lớp có 111 mẫu ngữ pháp; 110 thẻ `grammar:` của ngân hàng N4 phiên bản 9 đều có bài giải thích trong lớp; chủ lớp đang là thành viên, nên link Tra ngữ pháp và Ôn lại mẫu hiện được.
 
 ## Mẹo học và thi JLPT N4 — 16/11/2026
 
