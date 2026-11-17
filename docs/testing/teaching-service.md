@@ -129,6 +129,19 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Soát bộ mẹo N4 và xuống dòng ở slide câu luyện — 17/11/2026
+
+- **Soát độc lập 7 bài mẹo:** mỗi bài một agent soát (thông tin đề thi đối chiếu jlpt.jp và hướng dẫn dự thi 2026), sửa 3–18 chỗ mỗi bài. Lỗi chính:
+  - Bài 3: câu q02 có phương án もらって cũng đúng (かぜを もらう), đã thay.
+  - Bài 4: hai câu ★ và ví dụ mẫu xếp được hai cách; một mẹo sai về ★.
+  - Bài 2 và 6: slide để lộ đáp án câu luyện ngay sau nó.
+  - Bài 1 và 7: quy định bút chì sửa theo hướng dẫn dự thi 2026 (No.2, HB, B hoặc 2B); giờ có mặt là 受付時間; lịch ôn dời sang 17/11.
+- **Xuống dòng:** bộ đo tạm thêm kiểm tra đề và phương án ở slide câu luyện. Lần đầu: 32 slide để mẩu lẻ ở dòng cuối, có chỗ ngắt giữa từ (「痛／いです」).
+  - `app/styles/slides.css`: chữ lớn trên slide dùng `text-wrap: pretty`. Đề và phương án câu luyện dùng `word-break: keep-all`, nên chỉ xuống dòng ở dấu cách; cụm quá dài vẫn được ngắt nhờ `overflow-wrap: anywhere`.
+  - Đo lại 271 slide câu luyện của 40 bài mẫu (Minna 1–25, ngữ pháp N4, mẹo N4): không còn chỗ ngắt giữa từ. 7 slide có dòng cuối ngắn nhưng là trọn một cụm (「います。」, 「（　）。」), đã xem ảnh.
+  - Đo lại toàn bộ slide 7 bài mẹo sau khi soát: sạch.
+- **PASS:** `npm run check` 415/415; `npm run test:e2e:supabase` 46/46; `npm run test:e2e` 36/36.
+
 ## Mẹo học và thi JLPT N4 — 16/11/2026
 
 Thêm 7 bài mẫu khóa `n4-tips` (195 slide, 140 câu luyện) và mục riêng ở trang Tạo bài mới. Nội dung ở [hướng dẫn nội dung](../content-authoring.md#mẹo-học-và-thi-jlpt-n4).

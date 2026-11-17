@@ -2,6 +2,17 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 17/11/2026
+
+- Bộ **Mẹo học và thi JLPT N4** được soát độc lập từng bài (sửa 3–18 chỗ mỗi bài):
+  - Câu có phương án sai mà vẫn đúng (かぜを もらう).
+  - Câu ★ xếp được hai cách.
+  - Slide để lộ đáp án câu luyện ngay sau nó.
+  - Quy định bút chì sửa theo hướng dẫn dự thi 2026 (No.2, HB, B hoặc 2B).
+  - Lịch ôn bắt đầu từ 17/11.
+  - Bài đã tạo từ mẫu cần **so sánh và cập nhật từ mẫu** để nhận bản sửa.
+- Slide câu luyện: đề và phương án tiếng Nhật chỉ xuống dòng ở dấu cách giữa các cụm từ, không ngắt giữa từ (trước đây có 「痛／いです」); chữ lớn trên slide tránh để một mẩu lẻ ở dòng cuối.
+
 ### 16/11/2026
 
 - Bộ **Mẹo học và thi JLPT N4** ở trang Tạo bài mới, tách khỏi tổng ôn ngữ pháp: 7 bài (cách làm đề, học kanji, từ vựng, ngữ pháp và câu ★, đọc hiểu, nghe hiểu, ngày thi và lịch ôn 3 tuần đến 06/12), mỗi bài 26–31 slide và 20 câu luyện áp dụng mẹo. Số liệu đề thi và quy định ngày thi đối chiếu trang chính thức JLPT và hướng dẫn dự thi 2026, ví dụ: từ kỳ 7/2026 đến muộn là không được vào thi phần đó. Xem [hướng dẫn nội dung](content-authoring.md#mẹo-học-và-thi-jlpt-n4) và [kiểm chứng](testing/teaching-service.md#mẹo-học-và-thi-jlpt-n4--16112026).

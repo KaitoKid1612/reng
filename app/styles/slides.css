@@ -103,6 +103,20 @@ body:has(.slide-shell) .site-footer {
   padding-left: 48px;
   font-size: 40px;
 }
+/* Large slide text that wraps keeps a real last line instead of a scrap like 「ん。」 or one
+   Vietnamese word; browsers without text-wrap simply break as before. */
+.slide-japanese,
+.slide-translation,
+.slide-options > li {
+  text-wrap: pretty;
+}
+/* Quiz sentences are written with a space between phrases, so they break there rather than
+   inside a word (痛／いです); a phrase too long for the line may still break anywhere. */
+.slide-quiz > .slide-japanese,
+.slide-options > li {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 .quiz-feedback {
   border-left: 3px solid var(--correct);
   padding: 12px 20px;

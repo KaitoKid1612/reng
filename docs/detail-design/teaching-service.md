@@ -167,6 +167,8 @@ Bài mẫu `minna-1-17` đăng ký sau bài 16 (16/11/2026), cùng schema v1 và
 
 `minna-1-18` … `minna-1-25` đăng ký tiếp theo thứ tự bài (16/11/2026). Schema v1, luồng tạo bài từ mẫu, RPC và database giữ nguyên.
 
+Xuống dòng trên slide (17/11/2026): `app/styles/slides.css` cho `.slide-japanese`, `.slide-translation` và phương án câu luyện dùng `text-wrap: pretty`, nên trình duyệt chia dòng để không còn một mẩu lẻ ở cuối. Đề và phương án câu luyện còn dùng `word-break: keep-all` với `overflow-wrap: anywhere`: câu tiếng Nhật trong bài mẫu viết cách giữa các cụm, nên chỉ xuống dòng ở dấu cách, và cụm dài hơn một dòng vẫn được ngắt. Trình duyệt không hỗ trợ thì ngắt như cũ.
+
 Tổng ôn ngữ pháp N4 (16/11/2026):
 - **Bộ mẹo:** `n4-tips-1` … `n4-tips-7` (khóa `n4-tips`, thứ tự 1–7) đăng ký sau bộ tổng ôn. `N4_TIPS_STARTERS` dùng cho mục thứ ba của trang Tạo bài mới. Bài mẹo không có từ vựng và mẫu câu; test chỉ đòi slide tiêu đề, ghi chú, bảng và câu hỏi (16/11/2026).
 - **Đăng ký:** `n4-grammar-map` và `n4-grammar-1` … `n4-grammar-8` đăng ký sau Minna 25 với `courseId` `n4-grammar` (thứ tự 1–9). `MINNA_STARTERS` và `N4_REVIEW_STARTERS` (`lib/starter-lessons.ts`) chia danh sách theo khóa cho hai mục của `app/teach/lessons/new/page.tsx`. Bài chủ đề không có từ vựng; bản đồ chỉ có slide tiêu đề, ghi chú và bảng, không có câu luyện.
