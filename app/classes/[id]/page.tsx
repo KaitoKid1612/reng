@@ -8,16 +8,19 @@ import {
   describeOpenDue,
 } from "@/components/classroom/assignment-labels";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
+import { JapaneseText } from "@/components/lessons/japanese-text";
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { compareDueUrgency } from "@/lib/assignment";
 import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
+import { summarizeGrammarWeakPoints, WEAK_GRAMMAR_DAYS } from "@/lib/grammar-weak-points";
 import { foldMissedDailySets } from "@/lib/learner-today";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
-import { hasClassGrammar } from "@/lib/server/class-grammar";
+import { findClassGrammarLinks, hasClassGrammar } from "@/lib/server/class-grammar";
 import { getClassSchedule } from "@/lib/server/class-schedule";
 import { hasDailyRuns } from "@/lib/server/daily-history";
+import { listClassGrammarAnswers } from "@/lib/server/grammar-weak-points";
 import { getStudentClassView } from "@/lib/server/learner";
 import { loadOrNotFound } from "@/lib/server/pages";
 
@@ -102,9 +105,10 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const view = await loadOrNotFound(loadClassView(account.id, id));
   const hasGrammar = await hasClassGrammar(account.id, id, now);
   // Membership was checked above, so the timetable is read only for a member.
-  const [schedule, hasDaily] = await Promise.all([
+  const [schedule, hasDaily, weakGrammar] = await Promise.all([
     getClassSchedule(view.classRow.id),
     hasDailyRuns(view.classRow.id),
+    hasGrammar ? loadWeakGrammar(account.id, view.classRow.id, now) : [],
   ]);
   const nextSession = describeUpcomingSession(schedule.slots, now);
   const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
@@ -210,6 +214,33 @@ export default async function ClassPage({ params }: ClassPageProps) {
           </p>
         )}
       </section>
+      {weakGrammar.length > 0 && (
+        <section className="section-block" aria-labelledby="weak-grammar">
+          <h2 id="weak-grammar">Mẫu ngữ pháp hay sai</h2>
+          <p className="small muted">
+            Từ bài đã làm trong {WEAK_GRAMMAR_DAYS} ngày qua (chỉ tính bài đã xem được kết quả). Mẫu
+            còn sai ở lần làm gần nhất đứng trước.
+          </p>
+          <ul className="item-list weak-grammar-list">
+            {weakGrammar.map((point) => (
+              <li key={point.id}>
+                <div>
+                  <h3>
+                    <JapaneseText text={point.link.pattern} />
+                  </h3>
+                  <p className="small muted">
+                    Sai {point.wrong}/{point.attempts} lần · lần gần nhất{" "}
+                    {point.isLastCorrect ? "đúng" : "sai"} · {point.link.lessonTitle}
+                  </p>
+                </div>
+                <div className="button-row">
+                  <Link href={point.link.href}>Ôn lại mẫu</Link>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <section className="section-block" aria-labelledby="class-lessons">
         <h2 id="class-lessons">Bài học đã mở</h2>
         {hasGrammar && (
@@ -285,4 +316,22 @@ export default async function ClassPage({ params }: ClassPageProps) {
       )}
     </>
   );
+}
+
+// The class's grammar points this learner got wrong lately, each with its place in a class lesson.
+// A failed read only leaves the section out.
+async function loadWeakGrammar(userId: string, classId: string, now: Date) {
+  try {
+    const [links, answers] = await Promise.all([
+      findClassGrammarLinks(userId, classId, now),
+      listClassGrammarAnswers(userId, classId, now),
+    ]);
+    return summarizeGrammarWeakPoints(answers, new Set(Object.keys(links))).map((point) => ({
+      ...point,
+      link: links[point.id],
+    }));
+  } catch (error) {
+    console.error("Weak grammar failed", classId, error instanceof Error ? error.name : "unknown");
+    return [];
+  }
 }

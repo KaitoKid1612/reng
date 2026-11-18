@@ -129,6 +129,14 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Mẫu ngữ pháp hay sai — 18/11/2026
+
+Thiết kế ở [DD](../detail-design/teaching-service.md) (mục Tổng ôn ngữ pháp N4). Môi trường: Supabase local (Podman), Chromium headless.
+
+- **E2E:** `e2e-supabase/n4-grammar-review.spec.ts` nay giao hai câu cùng mẫu 〜ば (n4g4-q01, n4g4-q02); học viên trả lời đúng câu đầu, sai câu sau, nộp bài. Trang lớp hiện mục **Mẫu ngữ pháp hay sai** với "Sai 1/2 lần · lần gần nhất … · Tổng ôn N4 · 4 – Điều kiện và thời gian" và link Ôn lại mẫu tới `#n4g-ba-form` của bài trong lớp. Spec 3/3 đạt.
+- **Giao diện:** mục ở 1280px và 390px không cuộn ngang; axe 0 lỗi; không lỗi console.
+- **Test:** `tests/grammar-weak-points.test.ts` (mẫu còn sai ở lần gần nhất đứng trước, theo tỉ lệ sai; mẫu luôn đúng và câu không thẻ bị bỏ; chỉ mẫu lớp mở được; tối đa 8). `npm run check` đạt.
+
 ## Thi đấu cả lớp — 18/11/2026
 
 Thiết kế ở [BD](../basic-design/teaching-service.md#thi-đấu-cả-lớp--18112026). Môi trường: Supabase local (Podman) đã áp `20261118040000_live_quizzes.sql`, `next dev` ở 127.0.0.1:3017, Chromium headless qua Playwright; giáo viên teacher@reng.local trình chiếu ở 1280px, hai học viên thử (tạo bằng admin API local) trên điện thoại 390px.

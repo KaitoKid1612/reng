@@ -19,8 +19,9 @@ const learner = {
 const DECK_TITLE = "Tổng ôn N4 · 4 – Điều kiện và thời gian";
 const CLASS_NAME = `Ôn N4 ${RUN_ID}`;
 const ASSIGNMENT_TITLE = `Luyện điều kiện ${RUN_ID}`;
-// n4g4-q01, tagged with the 〜ば point of the same deck.
+// n4g4-q01 and n4g4-q02, both tagged with the 〜ば point of the same deck.
 const PROMPT_PART = "わからないんですが、どう";
+const SECOND_PROMPT_PART = "しませんか";
 const state = { lessonId: "", classId: "", code: "" };
 
 async function teacherPage(browser: Browser) {
@@ -64,6 +65,11 @@ test("a teacher makes an N4 review deck from its starter and gives the class pra
     .filter({ hasText: PROMPT_PART })
     .getByRole("checkbox")
     .check();
+  await page
+    .locator("label.choice-option")
+    .filter({ hasText: SECOND_PROMPT_PART })
+    .getByRole("checkbox")
+    .check();
   await page.getByRole("button", { name: "Xem lại trước khi giao", exact: true }).click();
   await page.getByRole("button", { name: "Giao bài cho lớp", exact: true }).click();
   await page.waitForURL(/\/teach\/classes\/[0-9a-f-]{36}\?assigned=[0-9a-f-]{36}/);
@@ -105,20 +111,38 @@ test("a learner who forgets a pattern looks it up, then a checked answer links t
 
   await page.getByRole("button", { name: "Bắt đầu làm bài", exact: true }).click();
   await page.getByRole("radio", { name: "すれば", exact: true }).check();
-  await page.getByRole("button", { name: "Kiểm tra câu này", exact: true }).click();
+  // Both questions show at once; the first check button belongs to the first question.
+  await page.getByRole("button", { name: "Kiểm tra câu này", exact: true }).first().click();
   await expect(page.getByText("Đúng rồi!")).toBeVisible();
   const review = page.getByRole("link", { name: /Ôn lại mẫu/ });
   await expect(review).toHaveAttribute("href", new RegExp(`#n4g-ba-form$`));
+  // The second question on the same point is answered wrong.
+  await page.getByRole("radio", { name: "いければ", exact: true }).check();
 
   await expect(page.locator(".save-status")).toContainText("Đã lưu", { timeout: 10_000 });
   await page.getByRole("button", { name: "Nộp bài", exact: true }).click();
   await page.getByRole("button", { name: "Xác nhận nộp", exact: true }).click();
-  await page.waitForURL(/\/assignments\/[0-9a-f-]{36}\/results$/);
-  const resultLink = page.locator(".result-row").getByRole("link", { name: /Ôn lại mẫu/ });
+  // With a wrong answer the results open on the questions to review (a query is added).
+  await page.waitForURL(/\/assignments\/[0-9a-f-]{36}\/results(\?.*)?$/);
+  const resultLink = page
+    .locator(".result-row")
+    .getByRole("link", { name: /Ôn lại mẫu/ })
+    .first();
   await expect(resultLink).toHaveAttribute("href", new RegExp(`#n4g-ba-form$`));
   await resultLink.evaluate((link) => link.removeAttribute("target"));
   await resultLink.click();
   await expect(page.locator("#n4g-ba-form")).toBeInViewport();
+
+  // Back on the class page, the point answered wrong is listed with a way back to it.
+  await page.goto(`/classes/${state.classId}`);
+  const weak = page.getByRole("region", { name: "Mẫu ngữ pháp hay sai" });
+  await expect(weak.getByText(/^Sai 1\/2 lần · lần gần nhất (đúng|sai) · /)).toBeVisible();
+  await expect(weak.getByRole("link", { name: "Ôn lại mẫu", exact: true })).toHaveAttribute(
+    "href",
+    new RegExp(
+      `^/lessons/${state.lessonId}\\?version=[0-9a-f-]{36}&class=${state.classId}#n4g-ba-form$`,
+    ),
+  );
 });
 
 test("a member of another class cannot read this class's grammar", async ({ browser }) => {
