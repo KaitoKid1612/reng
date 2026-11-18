@@ -1,6 +1,6 @@
 import n4 from "@/content/kanji/n4.json";
 import n5 from "@/content/kanji/n5.json";
-import { parseKanjiLevel } from "@/lib/jlpt-kanji";
+import { lookalikeMapOf, parseKanjiLevel } from "@/lib/jlpt-kanji";
 
 import type { JlptKanjiLevelData, KanjiLevel } from "@/lib/jlpt-kanji";
 
@@ -17,3 +17,6 @@ export const KANJI_LEVEL_DATA: Record<KanjiLevel, JlptKanjiLevelData> = {
 export function lowerLevelKanji(level: KanjiLevel) {
   return level === "n4" ? new Set(n5Level.items.map((item) => item.kanji)) : new Set<string>();
 }
+
+/** Look-alikes of every N5 and N4 kanji, for exam-style "pick the kanji" options. */
+export const KANJI_LOOKALIKES = lookalikeMapOf([n5Level, n4Level]);

@@ -133,6 +133,8 @@ Dữ liệu trang `/jlpt-kanji/n5` và `/jlpt-kanji/n4` nằm trong `content/kan
 
 - Viết mẹo nhớ của riêng Reng, tối đa 220 ký tự. Gọi đúng tên bộ có thật trong chữ (bộ nhân đứng 亻, bộ thủy 氵, bộ ngôn 言…) và nối với âm Hán Việt, nghĩa. Không chép mẹo từ sách hoặc trang khác.
 - Từ ví dụ chỉ dùng kanji cùng cấp hoặc cấp dưới; phần còn lại viết kana. Thêm chữ mới phải đặt đúng nhóm, theo thứ tự nhóm.
+- `lookalikes`: chỉ ghi chữ thật sự trông giống (không ghi chữ chỉ giống nghĩa), tối đa 3. `note` bắt đầu bằng chính chữ đó, kèm âm Hán Việt, nghĩa và một nét phân biệt đúng với mặt chữ Nhật. Trang luyện dùng các chữ này làm phương án sai cho câu chọn mặt chữ.
+- Đổi âm Hán Việt hoặc âm On có thể làm đổi tỉ lệ trên trang `/jlpt-kanji/han-viet`; test báo lỗi nếu một quy luật tụt dưới 3/4.
 - Không sửa tay `paper`. Sau khi đổi danh sách chữ hoặc đề mẫu, chạy `npm run kanji:paper` rồi `npm run format`.
 - `npm test` báo lỗi khi từ dùng chữ cấp cao hơn, chữ trùng, chữ có trong đề mẫu bị thiếu khỏi danh sách, hoặc `paper` lệch với đề.
 

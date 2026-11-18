@@ -43,3 +43,72 @@ Dùng Playwright trên dev server local, khổ 1280, 1440, 1920 và 390 px, cả
 - Menu Tự học đánh dấu Kanji N5–N4.
 
 Chữ Nhật trong mẹo nhớ được đánh dấu `lang="ja"` và không bị ngắt giữa từ.
+
+## Quy luật Hán Việt, chữ dễ nhầm, bẫy cách đọc — 18/11/2026
+
+Thiết kế ở [BD luyện kanji](../basic-design/kanji-practice.md#học-kanji-dễ-hơn-quy-luật-hán-việt-chữ-dễ-nhầm-bẫy-cách-đọc--18112026).
+
+Căn cứ:
+- Tham khảo cách học của các chương trình kanji phổ biến: bộ phận chữ, mẹo nhớ, ôn lặp lại.
+- Đọc phần chữ Hán của 4 đề mẫu chính thức:
+  - もんだい2 dùng chữ trông giống hoặc chữ cùng chủ đề làm phương án sai.
+  - もんだい1 dùng cách đọc biến âm, hay xếp thành lưới 2×2 (ふべん/ぶべん/ふへん/ぶへん).
+
+Dữ liệu:
+
+| Quy luật (đếm trên 292 chữ) | Đúng |
+|---|---|
+| Âm cuối -c → く/き | 29/29 |
+| -t → つ/ち | 14/15 (不) |
+| -p → trường âm | 8/9 (立) |
+| -ng/-nh → trường âm | 39/39 |
+| -n/-m → ん | 68/68 |
+| nguyên âm + u/o → trường âm | 24/25 (母) |
+| nguyên âm + i/y → い | 21/27 |
+| một nguyên âm → không có đuôi ん/く/つ | 78/79 (借) |
+| Phụ âm đầu c/k/qu/kh/gi → hàng か/が | 37/38 |
+| h → hàng か/が | 20/23 |
+| ng → が | 11/13 |
+| nh → に/じ | 7/9 |
+| đ → た/だ | 30/30 |
+| t → さ/ざ | 30/31 |
+| th | 33/34 |
+| ch/tr | 21/22 |
+| s/x | 15/15 |
+| b/ph | 19/19 |
+| m | 10/10 |
+| l | 9/9 |
+
+- Chữ dễ nhầm: N5 có 88 chữ (156 cặp), N4 có 148 chữ (231 cặp). Có đủ mọi cặp phương án sai của đề mẫu, như 来/未/采, 学/宇, 校/枚, 見/貝, 貸/貨/資/質, 医/匠, 計/訂, 試/誡.
+- Một agent riêng soát toàn bộ 389 cặp, đối chiếu mặt chữ bằng font Noto Sans JP của trang.
+  - Không có lỗi âm Hán Việt.
+  - Đã sửa 11 ghi chú tả nét chưa đúng hoặc chưa đủ (魚/黒, 川/州, 今/令, 書/画, 社/仕, 声/売, 発/登, 漢/難) và 7 nghĩa chỉ lặp âm.
+  - Đã bỏ 3 cặp chỉ giống nhau ở bộ (物/特, 話/読).
+  - Đã thêm 式 cho 試. Vẫn giữ 誡 vì đề mẫu 2018 dùng nó làm phương án sai.
+
+Tự động:
+- `tests/han-viet-rules.test.ts`:
+  - Chuẩn hóa âm Hán Việt, giữ đ riêng.
+  - Mọi chữ có âm On đều có quy luật âm cuối.
+  - Mỗi quy luật đúng ít nhất 3/4.
+- `tests/reading-traps.test.ts`:
+  - Sinh lại đúng 4 phương án ふべん của đề N4 2018.
+  - Không sinh âm p sai chỗ, không thêm trường âm trước ん.
+  - Pinyin và katakana không có bẫy.
+  - Câu chọn mặt chữ ưu tiên dạng dễ nhầm.
+- `tests/jlpt-kanji.test.ts` thêm `lookalikeForms` (学校 → 宇校, 学枚, 宇枚).
+- `npm run check`: 440/440.
+- `e2e/jlpt-kanji.spec.ts` 3/3:
+  - Dạng chọn cách đọc chỉ có phương án hiragana.
+  - Trang quy luật có dòng -c, -ch kèm tỉ lệ.
+- Chạy kèm, đều đạt: `kanji`, `seo`, `navigation`, `kana`, tổng 22/22.
+- `npm run build`: `/jlpt-kanji/han-viet` là trang tĩnh.
+
+Trình duyệt (1280, 1440, 1920, 390 px):
+- Trang quy luật có 20 dòng, trên điện thoại mỗi quy luật thành một khối. Không tràn ngang; axe 0 lỗi; không lỗi console.
+- Ví dụ câu hỏi:
+  - 電気 → てんき / でんぎ / でんき / てんぎ.
+  - 日本語 → 目本語 / 日木語 / 白本語.
+  - 一本 → いっほん / いぽん / いほん.
+
+Giới hạn: một bẫy có thể trùng một từ có thật (てんき là 天気). Đề thật cũng dùng kiểu phương án này, nên chấp nhận.

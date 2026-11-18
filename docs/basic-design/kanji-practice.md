@@ -88,4 +88,25 @@ Dữ liệu và luật:
 | `group` không có | Luyện tất cả các nhóm của cấp |
 | Nhóm chỉ có một từ | Câu chọn chuyển thành câu đọc như K1 |
 
+## Học kanji dễ hơn: quy luật Hán Việt, chữ dễ nhầm, bẫy cách đọc — 18/11/2026
+
+Nguồn ý tưởng:
+- Các chương trình học kanji phổ biến (WaniKani, Remembering the Kanji) học theo bộ phận chữ kèm mẹo nhớ. Reng đã có mẹo nhớ theo bộ phận chữ.
+- Phân tích phần chữ Hán của 4 đề mẫu chính thức trong `content/jlpt/official`:
+  - もんだい2 lấy chữ trông giống làm phương án sai (来/采/木/未, 学校/宇校/学枚, 貸/貨/資/質) hoặc chữ cùng chủ đề (青/黒/赤/白).
+  - もんだい1 lấy cách đọc biến âm (ふべん/ぶべん/ふへん/ぶへん, ちいさい/ちさい).
+- Lợi thế riêng của người Việt: âm Hán Việt.
+
+| Phần | Hành vi |
+|---|---|
+| `/jlpt-kanji/han-viet` | Bảng quy luật âm cuối Hán Việt → đuôi âm On (-c → く/き, -t → つ/ち, -p → trường âm, -ng/-nh → trường âm, -n/-m → ん, nguyên âm + u/o → trường âm, nguyên âm + i/y → い, một nguyên âm → không có đuôi ん/く/つ). Bảng phụ âm đầu → hàng kana (c/k/qu/kh/gi và h → か/が, ng → が, nh → に/じ, đ → た/だ, t → さ/ざ, th, ch/tr, s/x, b/ph, m, l). Mỗi quy luật có tới 4 ví dụ, tỉ lệ đúng và toàn bộ ngoại lệ, đếm khi build trên dữ liệu N5+N4 (`lib/han-viet-rules.ts`). Có thêm mục âm biến khi ghép chữ (っ, ん + h → b/p) |
+| Thẻ chữ | Mục **Dễ nhầm với**: 1–3 chữ trông giống, mỗi chữ kèm âm Hán Việt, nghĩa và nét phân biệt (`lookalikes`, Reng tự viết) |
+| Trang luyện | Mặc định chọn hai dạng giống đề: **Chọn cách đọc** (phương án sai sinh bằng `lib/reading-traps.ts`: đục/trong, bỏ hoặc thêm trường âm, っ, ゅ/ゆ, ち/し; ưu tiên ghép hai lỗi thành lưới 2×2 như đề) và **Nhận mặt chữ** (phương án sai thay một rồi hai chữ của từ bằng chữ dễ nhầm, thiếu thì lấy từ khác cùng nhóm, giống phương án cùng chủ đề của đề) |
+
+Luật:
+
+- Quy luật chỉ được đưa lên trang khi đúng ít nhất 3/4 số chữ có âm On; test chặn nếu dữ liệu đổi làm tỉ lệ tụt. Phụ âm d, v, g, n, r không theo một hàng ổn định nên không có trong bảng. Trang nói rõ đục/trong (か hay が) không đoán được.
+- Bẫy cách đọc chỉ sinh từ hiragana. Âm p chỉ sinh sau っ hoặc ん; không thêm trường âm trước ん. Từ tiếng Trung (pinyin) và từ katakana không có bẫy: dạng Chọn cách đọc không hiện ở lớp tiếng Trung, và từ katakana lấy cách đọc của từ khác làm phương án.
+- Dạng Chọn cách đọc cũng có ở trang luyện kanji theo bài (K1), nhưng ở đó không được chọn sẵn.
+
 Kiểm chứng: `tests/kanji-practice.test.ts`, `e2e/kanji.spec.ts`; kết quả ở [rà soát 30/10](../testing/code-review-2026-10-30.md).

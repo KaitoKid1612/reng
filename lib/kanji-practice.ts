@@ -1,6 +1,7 @@
 import { toHiragana } from "wanakana";
 
 import { createItemId, MAX_QUESTIONS } from "@/lib/lesson-draft";
+import { buildReadingTraps } from "@/lib/reading-traps";
 
 import type { DraftContent, DraftQuestion } from "@/lib/lesson-draft";
 
@@ -16,13 +17,17 @@ export interface KanjiWord {
   reading: string;
   meaning: string;
   lang: CharacterLang;
+  // Wrong written forms that look like this one (学校 → 宇校, 学枚), offered before other words'
+  // forms when the learner picks the kanji, as the JLPT does.
+  writtenDistractors?: string[];
 }
 
-export const KANJI_QUESTION_KINDS = ["reading", "written", "meaning"] as const;
+export const KANJI_QUESTION_KINDS = ["reading", "readingChoice", "written", "meaning"] as const;
 export type KanjiQuestionKind = (typeof KANJI_QUESTION_KINDS)[number];
 
 export const KANJI_KIND_LABELS: Record<KanjiQuestionKind, string> = {
   reading: "Đọc chữ: nhìn chữ Hán, gõ cách đọc",
+  readingChoice: "Chọn cách đọc: bốn cách đọc gần giống nhau, như đề JLPT",
   written: "Nhận mặt chữ: chọn chữ Hán đúng",
   meaning: "Hiểu nghĩa: chọn nghĩa tiếng Việt",
 };
@@ -109,23 +114,46 @@ function shuffle<T>(items: readonly T[], random: () => number) {
   return result;
 }
 
-// The correct value plus up to three different values from other words of the lesson.
+// The correct value plus up to three wrong ones: the preferred ones first (look-alike forms,
+// reading traps), then values of other words of the lesson.
 function buildOptions(
   word: KanjiWord,
   words: readonly KanjiWord[],
-  field: "written" | "meaning",
+  field: "written" | "meaning" | "reading",
   random: () => number,
+  preferred: readonly string[] = [],
 ) {
-  const distractors = shuffle(
-    [...new Set(words.map((item) => item[field]))].filter((value) => value !== word[field]),
+  const others = shuffle(
+    [...new Set(words.map((item) => item[field]))].filter(
+      (value) => value !== word[field] && !preferred.includes(value),
+    ),
     random,
-  ).slice(0, MAX_OPTIONS - 1);
+  );
+  const distractors = [...new Set(preferred)]
+    .filter((value) => value !== word[field])
+    .concat(others)
+    .slice(0, MAX_OPTIONS - 1);
   if (!distractors.length) {
     return null;
   }
   const options = shuffle([word[field], ...distractors], random);
   return { options, answerIndex: options.indexOf(word[field]) };
 }
+
+function preferredOptions(word: KanjiWord, kind: KanjiQuestionKind, random: () => number) {
+  if (kind === "written") {
+    return shuffle(word.writtenDistractors ?? [], random);
+  }
+  if (kind === "readingChoice" && word.lang === "ja") {
+    return buildReadingTraps(word.reading, MAX_OPTIONS - 1, random);
+  }
+  return [];
+}
+
+const CHOICE_FIELD: Record<
+  Exclude<KanjiQuestionKind, "reading">,
+  "written" | "meaning" | "reading"
+> = { readingChoice: "reading", written: "written", meaning: "meaning" };
 
 export interface KanjiQuestion {
   id: string;
@@ -143,7 +171,13 @@ function buildQuestion(
   random: () => number,
 ): KanjiQuestion {
   if (kind !== "reading") {
-    const choice = buildOptions(word, words, kind, random);
+    const choice = buildOptions(
+      word,
+      words,
+      CHOICE_FIELD[kind],
+      random,
+      preferredOptions(word, kind, random),
+    );
     if (choice) {
       return { id: `${kind}:${word.id}`, kind, word, ...choice };
     }

@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { collectPaperKanji, kanjiIn, parseKanjiLevel, practiceWordsOf } from "@/lib/jlpt-kanji";
+import {
+  collectPaperKanji,
+  kanjiIn,
+  lookalikeForms,
+  parseKanjiLevel,
+  practiceWordsOf,
+} from "@/lib/jlpt-kanji";
 import { KANJI_LEVEL_DATA, lowerLevelKanji } from "@/lib/kanji-data";
 import { paperWordsOf } from "@/lib/kanji-paper";
 
@@ -120,4 +126,24 @@ test("practice lists each word once, for one group or the whole level", () => {
   assert.ok(body.length >= 4);
   assert.ok(body.every((word) => word.lang === "ja"));
   assert.ok(body.length < all.length);
+});
+
+test("look-alike forms swap one kanji, then two, like the exam's wrong options", () => {
+  const lookalikes = new Map([
+    ["学", ["宇"]],
+    ["校", ["枚"]],
+  ]);
+  assert.deepEqual(lookalikeForms("学校", lookalikes), ["宇校", "学枚", "宇枚"]);
+  assert.deepEqual(lookalikeForms("学校", lookalikes, 2), ["宇校", "学枚"]);
+  assert.deepEqual(lookalikeForms("本", lookalikes), []);
+  for (const name of LEVELS) {
+    for (const entry of KANJI_LEVEL_DATA[name].items) {
+      for (const lookalike of entry.lookalikes ?? []) {
+        assert.ok(
+          lookalike.note.startsWith(lookalike.kanji),
+          `${entry.kanji}: the note names ${lookalike.kanji} first`,
+        );
+      }
+    }
+  }
 });

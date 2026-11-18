@@ -4,7 +4,7 @@ import { KanjiPractice } from "@/components/kanji/kanji-practice";
 import { SubjectStudyNav } from "@/components/self-study/subject-study-nav";
 import { buttonVariants } from "@/components/ui/button";
 import { isKanjiLevel, KANJI_LEVEL_LABELS, KANJI_LEVELS, practiceWordsOf } from "@/lib/jlpt-kanji";
-import { KANJI_LEVEL_DATA } from "@/lib/kanji-data";
+import { KANJI_LEVEL_DATA, KANJI_LOOKALIKES } from "@/lib/kanji-data";
 
 import type { Metadata } from "next";
 
@@ -39,7 +39,7 @@ export default async function JlptKanjiPracticePage({ params, searchParams }: Pr
   const group = data.groups.find((item) => item.id === groupParam);
   const label = KANJI_LEVEL_LABELS[level];
   const base = `/jlpt-kanji/${level}/practice`;
-  const words = practiceWordsOf(data, group?.id);
+  const words = practiceWordsOf(data, group?.id, KANJI_LOOKALIKES);
   return (
     <>
       <SubjectStudyNav subjectId="japanese" currentHref="/jlpt-kanji/n5" />
@@ -49,9 +49,11 @@ export default async function JlptKanjiPracticePage({ params, searchParams }: Pr
             Luyện kanji {label}: {group ? group.title : "tất cả các nhóm"}
           </h1>
           <p>
-            Giống phần chữ Hán của đề JLPT: đọc chữ là nhìn từ viết bằng kanji rồi gõ cách đọc (
-            <span lang="ja">もんだい1</span>), nhận mặt chữ là chọn kanji đúng cho từ (
-            <span lang="ja">もんだい2</span>). {words.length} từ.
+            Mặc định là hai dạng giống phần chữ Hán của đề JLPT: chọn cách đọc trong bốn cách gần
+            giống nhau (<span lang="ja">もんだい1</span>: đục hay trong, có trường âm hay không, có{" "}
+            <span lang="ja">っ</span> hay không) và chọn mặt chữ trong các chữ trông giống nhau (
+            <span lang="ja">もんだい2</span>). Bật thêm Đọc chữ để tự gõ cách đọc. {words.length}{" "}
+            từ.
           </p>
         </div>
         <Link
@@ -80,7 +82,12 @@ export default async function JlptKanjiPracticePage({ params, searchParams }: Pr
           ))}
         </ul>
       </nav>
-      <KanjiPractice key={group?.id ?? "all"} words={words} lang="ja" />
+      <KanjiPractice
+        key={group?.id ?? "all"}
+        words={words}
+        lang="ja"
+        defaultKinds={["readingChoice", "written"]}
+      />
     </>
   );
 }

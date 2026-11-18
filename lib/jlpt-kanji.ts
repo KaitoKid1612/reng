@@ -41,6 +41,15 @@ const paperWordSchema = z
   })
   .strict();
 
+// A character that looks like this one, with how to tell them apart. The exam's "pick the kanji"
+// part offers such characters as wrong options (来 / 未 / 采 / 木), so the practice does too.
+const lookalikeSchema = z
+  .object({
+    kanji: z.string().regex(/^\p{Script=Han}$/u),
+    note: z.string().min(5).max(140),
+  })
+  .strict();
+
 const itemSchema = z
   .object({
     kanji: z.string().regex(/^\p{Script=Han}$/u),
@@ -51,6 +60,7 @@ const itemSchema = z
     kun: z.array(z.string().regex(KUN)).max(5),
     words: z.array(wordSchema).min(1).max(4),
     tip: z.string().min(10).max(220),
+    lookalikes: z.array(lookalikeSchema).min(1).max(3).optional(),
     paper: z.array(paperWordSchema).max(6).optional(),
   })
   .strict();
@@ -108,6 +118,10 @@ export function parseKanjiLevel(input: unknown, known: ReadonlySet<string> = new
               errors.push(`${word.written} uses ${character} from a higher level`);
             }
           }
+        }
+        const lookalikes = (item.lookalikes ?? []).map((lookalike) => lookalike.kanji);
+        if (lookalikes.includes(item.kanji) || new Set(lookalikes).size !== lookalikes.length) {
+          errors.push("A look-alike repeats the kanji or another look-alike");
         }
         if (new Set(item.words.map((word) => word.written)).size !== item.words.length) {
           errors.push("Duplicate word");
@@ -172,10 +186,64 @@ export function collectPaperKanji(questions: readonly PaperQuestion[], year: num
 }
 
 /**
- * The words to practise for a level or one of its groups, each word once (学校 is listed under
- * both 学 and 校), in the shape of the lesson kanji practice.
+ * Written forms that look like a word, made the way the exam makes its wrong options: one kanji
+ * swapped for a look-alike (学校 → 宇校, 学枚), then two at once (宇枚).
  */
-export function practiceWordsOf(data: JlptKanjiLevelData, groupId?: string) {
+export function lookalikeForms(
+  written: string,
+  lookalikes: ReadonlyMap<string, readonly string[]>,
+  limit = 3,
+) {
+  const chars = [...written];
+  const swaps = chars.flatMap((character, index) =>
+    (lookalikes.get(character) ?? []).map((other) => ({ index, other })),
+  );
+  const forms: string[] = [];
+  const add = (form: string) => {
+    if (form !== written && !forms.includes(form)) {
+      forms.push(form);
+    }
+  };
+  for (const swap of swaps) {
+    add(chars.map((character, index) => (index === swap.index ? swap.other : character)).join(""));
+  }
+  for (const [position, first] of swaps.entries()) {
+    for (const second of swaps.slice(position + 1)) {
+      if (second.index !== first.index) {
+        add(
+          chars
+            .map((character, index) => {
+              if (index === first.index) {
+                return first.other;
+              }
+              return index === second.index ? second.other : character;
+            })
+            .join(""),
+        );
+      }
+    }
+  }
+  return forms.slice(0, limit);
+}
+
+/** Each kanji's look-alikes, from every level, so N4 words also get N5 confusions. */
+export function lookalikeMapOf(levels: readonly JlptKanjiLevelData[]) {
+  return new Map(
+    levels.flatMap((data) =>
+      data.items.map((item) => [item.kanji, (item.lookalikes ?? []).map((other) => other.kanji)]),
+    ),
+  );
+}
+
+/**
+ * The words to practise for a level or one of its groups, each word once (学校 is listed under
+ * both 学 and 校), in the shape of the lesson kanji practice, with look-alike written forms.
+ */
+export function practiceWordsOf(
+  data: JlptKanjiLevelData,
+  groupId?: string,
+  lookalikes: ReadonlyMap<string, readonly string[]> = new Map(),
+) {
   const seen = new Set<string>();
   const words: KanjiWord[] = [];
   for (const item of data.items) {
@@ -187,7 +255,13 @@ export function practiceWordsOf(data: JlptKanjiLevelData, groupId?: string) {
         return;
       }
       seen.add(word.written);
-      words.push({ id: `${item.kanji}-${index}`, lang: "ja", ...word });
+      const writtenDistractors = lookalikeForms(word.written, lookalikes);
+      words.push({
+        id: `${item.kanji}-${index}`,
+        lang: "ja",
+        ...word,
+        ...(writtenDistractors.length ? { writtenDistractors } : {}),
+      });
     });
   }
   return words;

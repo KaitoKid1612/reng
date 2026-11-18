@@ -32,8 +32,13 @@ test("learners find the N5 kanji from self-study, read a card and practise one g
 
   await page.locator("#body").getByRole("link", { name: "Luyện nhóm này" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Luyện kanji N5: Cơ thể");
+  // The exam kinds start ticked; this run types the readings instead.
+  await expect(
+    page.getByLabel("Chọn cách đọc: bốn cách đọc gần giống nhau, như đề JLPT"),
+  ).toBeChecked();
+  await page.getByLabel("Chọn cách đọc: bốn cách đọc gần giống nhau, như đề JLPT").uncheck();
   await page.getByLabel("Nhận mặt chữ: chọn chữ Hán đúng").uncheck();
-  await page.getByLabel("Hiểu nghĩa: chọn nghĩa tiếng Việt").uncheck();
+  await page.getByLabel("Đọc chữ: nhìn chữ Hán, gõ cách đọc").check();
   await page.getByLabel("Số câu mỗi phiên").selectOption("all");
   await page.getByRole("button", { name: "Bắt đầu luyện" }).click();
   for (let index = 0; index < readings.size; index++) {
@@ -59,4 +64,24 @@ test("the kanji lists fit a phone and unknown levels are not found", async ({ pa
     ).toBe(true);
   }
   expect((await request.get("/jlpt-kanji/n3")).status()).toBe(404);
+});
+
+test("the exam kinds offer near-miss readings, and the Hán Việt rules are counted", async ({
+  page,
+}) => {
+  await page.goto("/jlpt-kanji/n5/practice?group=time");
+  await page.getByLabel("Nhận mặt chữ: chọn chữ Hán đúng").uncheck();
+  await page.getByRole("button", { name: "Bắt đầu luyện" }).click();
+  await expect(page.locator(".choice-option")).toHaveCount(4);
+  const options = await page.locator(".choice-option").allTextContents();
+  expect(options.every((option) => /^[ぁ-ゖ]+$/u.test(option.trim()))).toBe(true);
+
+  await page.goto("/jlpt-kanji/n5");
+  const rulesLink = page.getByRole("link", { name: "xem quy luật đoán âm On từ âm Hán Việt" });
+  await expect(rulesLink).toHaveAttribute("href", "/jlpt-kanji/han-viet");
+  await page.goto("/jlpt-kanji/han-viet");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đoán âm On từ âm Hán Việt");
+  const ending = page.getByRole("row", { name: /^-c, -ch/ });
+  await expect(ending).toContainText("く hoặc き");
+  await expect(ending.locator(".han-viet-rate")).toHaveText(/^\d+\/\d+$/);
 });

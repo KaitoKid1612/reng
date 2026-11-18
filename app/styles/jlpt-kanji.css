@@ -183,3 +183,113 @@
 .kanji-tip span[lang="ja"] {
   white-space: nowrap;
 }
+
+/* Hán Việt → on reading rules (app/jlpt-kanji/han-viet). */
+.han-viet-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+.han-viet-section > p {
+  max-width: 80ch;
+}
+.han-viet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.han-viet-table caption {
+  text-align: left;
+  color: var(--muted);
+  padding-bottom: 8px;
+}
+.han-viet-table th,
+.han-viet-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.han-viet-table tbody th {
+  white-space: nowrap;
+}
+.han-viet-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.han-viet-example {
+  white-space: nowrap;
+}
+.han-viet-example a {
+  font-size: 18px;
+  text-decoration: none;
+}
+.han-viet-syllable {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.han-viet-exceptions {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+.han-viet-rate {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.han-viet-joining {
+  display: grid;
+  gap: 8px;
+  max-width: 80ch;
+}
+.han-viet-table-wrap {
+  overflow-x: auto;
+}
+/* On a phone each rule becomes a block: the rule, then its examples and rate. */
+@media (max-width: 640px) {
+  .han-viet-table thead {
+    display: none;
+  }
+  .han-viet-table tr,
+  .han-viet-table tbody th,
+  .han-viet-table td {
+    display: block;
+  }
+  .han-viet-table tr {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .han-viet-table tbody th,
+  .han-viet-table td {
+    padding: 2px 0;
+    border: 0;
+  }
+  .han-viet-table td.han-viet-rate::before {
+    content: "Đúng: ";
+    font-weight: 400;
+    color: var(--muted);
+  }
+}
+
+.kanji-lookalikes {
+  font-size: 15px;
+}
+.kanji-lookalikes p {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.kanji-lookalikes ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kanji-lookalike-glyph {
+  font-family: var(--font-jp);
+  font-size: 20px;
+  color: var(--wrong);
+}

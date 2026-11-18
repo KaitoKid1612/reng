@@ -32,6 +32,8 @@ import type { FormEvent } from "react";
 interface KanjiPracticeProps {
   words: KanjiWord[];
   lang: CharacterLang;
+  // The kinds ticked at the start; the JLPT kanji pages start with the two exam kinds.
+  defaultKinds?: KanjiQuestionKind[];
 }
 
 interface ScriptSettings {
@@ -70,18 +72,35 @@ const SCRIPT_SETTINGS: Record<CharacterLang, ScriptSettings> = {
 
 const PROMPTS: Record<KanjiQuestionKind, string> = {
   reading: "Từ này đọc thế nào?",
+  readingChoice: "Từ này đọc thế nào?",
   written: "Chữ Hán nào đúng?",
   meaning: "Từ này nghĩa là gì?",
 };
+
+function optionLang(kind: KanjiQuestionKind, lang: CharacterLang, readingLang: string) {
+  if (kind === "written") {
+    return lang;
+  }
+  return kind === "readingChoice" ? readingLang : "vi";
+}
 
 function describeWord(question: KanjiQuestion) {
   const { word } = question;
   return `${word.written} đọc là ${word.reading}: ${word.meaning}.`;
 }
 
-export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
+// Reading traps (voicing, long vowels, っ) are built from kana, so pinyin lessons keep typing.
+function availableKinds(lang: CharacterLang) {
+  return KANJI_QUESTION_KINDS.filter((kind) => kind !== "readingChoice" || lang === "ja");
+}
+
+export function KanjiPractice({
+  words,
+  lang,
+  defaultKinds = ["reading", "written"],
+}: KanjiPracticeProps) {
   const settings = SCRIPT_SETTINGS[lang];
-  const [kinds, setKinds] = useState<KanjiQuestionKind[]>(["reading", "written"]);
+  const [kinds, setKinds] = useState<KanjiQuestionKind[]>(defaultKinds);
   const [questionCount, setQuestionCount] = useState(words.length > 10 ? "10" : "all");
   const [state, dispatch] = useReducer(kanjiPracticeReducer, initialKanjiPractice);
   const [answer, setAnswer] = useState("");
@@ -133,7 +152,7 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
         <fieldset>
           <legend>Dạng câu</legend>
           <div className="group-options">
-            {KANJI_QUESTION_KINDS.map((kind) => (
+            {availableKinds(lang).map((kind) => (
               <label className="choice-label" key={kind}>
                 <input
                   type="checkbox"
@@ -302,7 +321,7 @@ export function KanjiPractice({ words, lang }: KanjiPracticeProps) {
                     disabled={Boolean(feedback)}
                     onChange={() => setAnswer(String(index))}
                   />
-                  <span lang={question.kind === "written" ? lang : "vi"}>{option}</span>
+                  <span lang={optionLang(question.kind, lang, settings.readingLang)}>{option}</span>
                 </label>
               ))}
             </div>

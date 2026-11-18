@@ -9,6 +9,11 @@ interface JlptKanjiListProps {
   practiceHref: string;
 }
 
+// The note starts with the look-alike, which the card already shows large beside it.
+function withoutLeadingKanji(note: string, kanji: string) {
+  return note.startsWith(kanji) ? note.slice(kanji.length).trimStart() : note;
+}
+
 function KanjiCard({ item }: { item: JlptKanji }) {
   return (
     <li className="kanji-card" id={`kanji-${item.kanji}`}>
@@ -48,6 +53,21 @@ function KanjiCard({ item }: { item: JlptKanji }) {
       <p className="kanji-tip">
         <strong>Mẹo nhớ:</strong> <JapaneseText text={item.tip} />
       </p>
+      {item.lookalikes && (
+        <div className="kanji-lookalikes">
+          <p>Dễ nhầm với:</p>
+          <ul>
+            {item.lookalikes.map((lookalike) => (
+              <li key={lookalike.kanji}>
+                <span lang="ja" className="kanji-lookalike-glyph">
+                  {lookalike.kanji}
+                </span>{" "}
+                <JapaneseText text={withoutLeadingKanji(lookalike.note, lookalike.kanji)} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {item.paper && (
         <p className="kanji-paper">
           Đề mẫu chính thức đã hỏi:{" "}

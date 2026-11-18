@@ -89,4 +89,5 @@ export const SELF_STUDY_PATHS: readonly string[] = [
   "/jlpt-kanji/n4",
   "/jlpt-kanji/n5/practice",
   "/jlpt-kanji/n4/practice",
+  "/jlpt-kanji/han-viet",
 ];

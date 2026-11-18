@@ -4,6 +4,11 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 18/11/2026
 
+- **Học kanji dễ hơn:**
+  - Trang **Đoán âm On từ âm Hán Việt** có bảng quy luật âm cuối (-c → く/き 29/29, -ng/-nh → trường âm 39/39, -n/-m → ん 68/68…) và phụ âm đầu (đ → hàng た 30/30…), kèm tỉ lệ đúng và mọi ngoại lệ trên 292 chữ.
+  - Thẻ chữ có mục **Dễ nhầm với** (236 chữ, 387 cặp, có đủ các cặp đề mẫu từng dùng).
+  - Trang luyện mặc định chọn hai dạng giống đề: **Chọn cách đọc** với bẫy đục/trong, trường âm, っ (như ふべん/ぶべん/ふへん/ぶへん) và **Nhận mặt chữ** với chữ trông giống (学校/宇校/学枚).
+  - Xem [kiểm chứng](testing/jlpt-kanji-2026-11-18.md#quy-luật-hán-việt-chữ-dễ-nhầm-bẫy-cách-đọc--18112026).
 - **Kanji N5–N4** trong Tự học › Tiếng Nhật (không cần tài khoản): 105 chữ N5 và 187 chữ N4 chia theo nhóm. Mỗi chữ có âm Hán Việt, nghĩa, âm On/Kun, từ ví dụ chỉ dùng chữ đã học và mẹo nhớ Reng tự viết. Thẻ **Đã ra đề** đánh dấu các chữ mà phần chữ Hán của đề mẫu chính thức 2012 và 2018 đã hỏi, kèm từ và năm. **Luyện nhóm này** luyện đọc chữ và chọn mặt chữ giống もんだい1–2. Xem [thiết kế](basic-design/kanji-practice.md#kanji-n5n4-theo-cấp--18112026) và [kiểm chứng](testing/jlpt-kanji-2026-11-18.md).
 - **Mẫu ngữ pháp hay sai** ở trang lớp của học viên: tối đa 8 mẫu trả lời sai trong 30 ngày qua (chỉ bài đã xem được kết quả), mẫu còn sai ở lần làm gần nhất đứng đầu, kèm số lần sai và link **Ôn lại mẫu**. Dùng thẻ `grammar:` đã gắn trong ngân hàng N4, nên lớp Ôn JLPT N4 – Việt thấy ngay khi có bài tổng ôn ngữ pháp. Xem [kiểm chứng](testing/teaching-service.md#mẫu-ngữ-pháp-hay-sai--18112026).
 - **Thi đấu cả lớp:** khi trình chiếu từ trang lớp, nút **Thi đấu** mở một lượt 5–15 câu chọn của bài, 10–30 giây mỗi câu, ngay trên slide đang chia sẻ. Học viên quét mã vào phòng và trả lời bằng điện thoại; đúng và nhanh được nhiều điểm hơn (500–1000). Đáp án tự hiện khi hết giờ hoặc cả phòng đã trả lời, kèm số người chọn mỗi phương án và bảng xếp hạng. Giờ và điểm do database tính. Chính sách quyền riêng tư cập nhật (có hiệu lực 18/11/2026): tên người vào phòng và người dẫn đầu hiện cho cả lớp. Migration `20261118040000_live_quizzes.sql` đã áp production ngày 18/11/2026. Xem [thiết kế](basic-design/teaching-service.md#thi-đấu-cả-lớp--18112026) và [kiểm chứng](testing/teaching-service.md#thi-đấu-cả-lớp--18112026).

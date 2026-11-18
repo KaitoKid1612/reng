@@ -112,7 +112,13 @@
           "meaning": "giờ nghỉ trưa"
         }
       ],
-      "tip": "Phần trên giống chữ 尺, phần dưới là 日 đứng trên nét ngang 一: mặt trời đã lên cao khỏi mặt đất — TRÚ là ban ngày, buổi trưa."
+      "tip": "Phần trên giống chữ 尺, phần dưới là 日 đứng trên nét ngang 一: mặt trời đã lên cao khỏi mặt đất — TRÚ là ban ngày, buổi trưa.",
+      "lookalikes": [
+        {
+          "kanji": "書",
+          "note": "書 (Thư: viết): trên là 聿 có sổ thẳng xuyên qua các ngang; 昼 trên là 尺 (không có sổ thẳng)."
+        }
+      ]
     },
     {
       "kanji": "夕",
@@ -240,6 +246,16 @@
         }
       ],
       "tip": "Bộ hòa 禾 (cây lúa) bên cạnh 火 (lửa): lúa chín vàng rực như lửa, mùa gặt — THU.",
+      "lookalikes": [
+        {
+          "kanji": "私",
+          "note": "私 (Tư: tôi): bên phải là ム; 秋 bên phải là 火."
+        },
+        {
+          "kanji": "科",
+          "note": "科 (Khoa: khoa, 科学): bên phải là 斗; 秋 bên phải là 火."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -266,7 +282,13 @@
           "meaning": "kỳ nghỉ đông"
         }
       ],
-      "tip": "Trên là 夂 (bước chân chậm), dưới là hai chấm như hai hạt băng: bước rón rén trên băng giá — ĐÔNG, mùa đông."
+      "tip": "Trên là 夂 (bước chân chậm), dưới là hai chấm như hai hạt băng: bước rón rén trên băng giá — ĐÔNG, mùa đông.",
+      "lookalikes": [
+        {
+          "kanji": "各",
+          "note": "各 (Các: mỗi): dưới 夂 là chữ 口; 冬 dưới là hai chấm."
+        }
+      ]
     },
     {
       "kanji": "早",
@@ -287,7 +309,13 @@
           "meaning": "dậy sớm"
         }
       ],
-      "tip": "日 (mặt trời) nằm trên 十: mặt trời vừa nhô lên khỏi ngọn cây — sáng sớm, TẢO là sớm. Nhanh về tốc độ là 速い."
+      "tip": "日 (mặt trời) nằm trên 十: mặt trời vừa nhô lên khỏi ngọn cây — sáng sớm, TẢO là sớm. Nhanh về tốc độ là 速い.",
+      "lookalikes": [
+        {
+          "kanji": "草",
+          "note": "草 (Thảo: cỏ): có thêm bộ 艹 trên đầu; 早 không có."
+        }
+      ]
     },
     {
       "kanji": "去",
@@ -329,7 +357,13 @@
           "meaning": "mấy lần"
         }
       ],
-      "tip": "Bộ nghiễm 广 (mái nhà) che 廿 và 又 (bàn tay): dưới mái nhà, bàn tay đo đếm từng lần — ĐỘ (nhiệt độ, lần)."
+      "tip": "Bộ nghiễm 广 (mái nhà) che 廿 và 又 (bàn tay): dưới mái nhà, bàn tay đo đếm từng lần — ĐỘ (nhiệt độ, lần).",
+      "lookalikes": [
+        {
+          "kanji": "席",
+          "note": "席 (Tịch: chỗ ngồi, 出席): dưới cùng là 巾; 度 dưới cùng là 又."
+        }
+      ]
     },
     {
       "kanji": "回",
@@ -381,7 +415,17 @@
           "meaning": "sự thay thế"
         }
       ],
-      "tip": "亻 (người) đứng cạnh 弋 (cái cọc): người đứng vào thay chỗ cái cọc — ĐẠI là thay thế (đại diện), rồi thành đời, thời đại."
+      "tip": "亻 (người) đứng cạnh 弋 (cái cọc): người đứng vào thay chỗ cái cọc — ĐẠI là thay thế (đại diện), rồi thành đời, thời đại.",
+      "lookalikes": [
+        {
+          "kanji": "化",
+          "note": "化 (Hóa: biến đổi): bên phải là 匕 (nét cong hất lên); 代 bên phải là 弋 (nét móc xiên có chấm)."
+        },
+        {
+          "kanji": "式",
+          "note": "式 (Thức: nghi thức): không có bộ 亻, có chữ 工 dưới nét ngang của 弋; 代 có bộ 亻 bên trái."
+        }
+      ]
     },
     {
       "kanji": "家",
@@ -428,7 +472,13 @@
           "meaning": "thủy cung"
         }
       ],
-      "tip": "Bên trái là 方 với 𠂉 (lá cờ), dưới cờ là 矢 (mũi tên): những người cùng tụ dưới một lá cờ — TỘC (gia tộc, dân tộc)."
+      "tip": "Bên trái là 方 với 𠂉 (lá cờ), dưới cờ là 矢 (mũi tên): những người cùng tụ dưới một lá cờ — TỘC (gia tộc, dân tộc).",
+      "lookalikes": [
+        {
+          "kanji": "旅",
+          "note": "旅 (Lữ: chuyến đi): phần dưới bên phải giống đuôi chữ 衣; 族 phần dưới bên phải là 矢 (mũi tên)."
+        }
+      ]
     },
     {
       "kanji": "兄",
@@ -454,7 +504,13 @@
           "meaning": "anh chị em"
         }
       ],
-      "tip": "口 (cái miệng) to đặt trên 儿 (đôi chân): người hay lên tiếng dặn dò các em — HUYNH là anh."
+      "tip": "口 (cái miệng) to đặt trên 儿 (đôi chân): người hay lên tiếng dặn dò các em — HUYNH là anh.",
+      "lookalikes": [
+        {
+          "kanji": "元",
+          "note": "元 (Nguyên: gốc): phần trên là hai nét ngang; 兄 phần trên là chữ 口."
+        }
+      ]
     },
     {
       "kanji": "弟",
@@ -475,7 +531,13 @@
           "meaning": "anh chị em"
         }
       ],
-      "tip": "Trên có hai chấm 丷, dưới như sợi dây quấn quanh cái cọc từng vòng theo thứ tự: người đứng sau trong thứ tự — ĐỆ là em trai."
+      "tip": "Trên có hai chấm 丷, dưới như sợi dây quấn quanh cái cọc từng vòng theo thứ tự: người đứng sau trong thứ tự — ĐỆ là em trai.",
+      "lookalikes": [
+        {
+          "kanji": "第",
+          "note": "第 (Đệ: thứ tự, 第一): có bộ ⺮ (tre) trên đầu thay cho hai chấm của 弟."
+        }
+      ]
     },
     {
       "kanji": "姉",
@@ -496,7 +558,13 @@
           "meaning": "chị gái (người khác)"
         }
       ],
-      "tip": "Bộ nữ 女 + 市 (chợ): cô gái đã đủ lớn để tự đi chợ — TỶ là chị gái."
+      "tip": "Bộ nữ 女 + 市 (chợ): cô gái đã đủ lớn để tự đi chợ — TỶ là chị gái.",
+      "lookalikes": [
+        {
+          "kanji": "妹",
+          "note": "妹 (Muội: em gái): bên phải là 未; 姉 bên phải là 市."
+        }
+      ]
     },
     {
       "kanji": "妹",
@@ -517,7 +585,17 @@
           "meaning": "chị em gái"
         }
       ],
-      "tip": "Bộ nữ 女 + 未 (chưa): cô gái còn chưa lớn — MUỘI là em gái."
+      "tip": "Bộ nữ 女 + 未 (chưa): cô gái còn chưa lớn — MUỘI là em gái.",
+      "lookalikes": [
+        {
+          "kanji": "姉",
+          "note": "姉 (Tỷ: chị gái): bên phải là 市 (chấm, ngang, 巾); 妹 bên phải là 未."
+        },
+        {
+          "kanji": "味",
+          "note": "味 (Vị: mùi vị): bên trái là bộ 口; 妹 bên trái là bộ 女."
+        }
+      ]
     },
     {
       "kanji": "親",
@@ -543,7 +621,13 @@
           "meaning": "tử tế"
         }
       ],
-      "tip": "Bên trái là 立 trên 木, bên phải là 見 (nhìn): cái cây đứng cạnh nhà ngày nào cũng nhìn thấy, gần gũi nhất — THÂN: cha mẹ, thân thiết."
+      "tip": "Bên trái là 立 trên 木, bên phải là 見 (nhìn): cái cây đứng cạnh nhà ngày nào cũng nhìn thấy, gần gũi nhất — THÂN: cha mẹ, thân thiết.",
+      "lookalikes": [
+        {
+          "kanji": "新",
+          "note": "新 (Tân: mới): bên phải là 斤 (cái rìu); 親 bên phải là 見."
+        }
+      ]
     },
     {
       "kanji": "私",
@@ -564,7 +648,17 @@
           "meaning": "tư thục, tư lập"
         }
       ],
-      "tip": "Bộ hòa 禾 (lúa) + ム (của riêng): phần lúa giữ riêng cho mình — TƯ (tư nhân), nên dùng để nói \"tôi\"."
+      "tip": "Bộ hòa 禾 (lúa) + ム (của riêng): phần lúa giữ riêng cho mình — TƯ (tư nhân), nên dùng để nói \"tôi\".",
+      "lookalikes": [
+        {
+          "kanji": "払",
+          "note": "払 (Phất: trả tiền, 払う): bên trái là bộ 扌 (tay); 私 bên trái là bộ 禾."
+        },
+        {
+          "kanji": "秋",
+          "note": "秋 (Thu: mùa thu): bên phải là 火; 私 bên phải là ム."
+        }
+      ]
     },
     {
       "kanji": "主",
@@ -585,7 +679,21 @@
           "meaning": "chủ yếu"
         }
       ],
-      "tip": "Giống chữ 王 có thêm một chấm trên đầu, như ngọn lửa trên cây đèn: người giữ đèn trong nhà là CHỦ."
+      "tip": "Giống chữ 王 có thêm một chấm trên đầu, như ngọn lửa trên cây đèn: người giữ đèn trong nhà là CHỦ.",
+      "lookalikes": [
+        {
+          "kanji": "王",
+          "note": "王 (Vương: vua): không có chấm trên đầu; 主 = 丶 + 王."
+        },
+        {
+          "kanji": "玉",
+          "note": "玉 (Ngọc: ngọc): chấm nằm ở dưới bên phải; 主 chấm ở trên đầu."
+        },
+        {
+          "kanji": "生",
+          "note": "生 (Sinh: sống): trên đầu là nét phẩy xiên; 主 trên đầu là một chấm."
+        }
+      ]
     },
     {
       "kanji": "自",
@@ -606,7 +714,17 @@
           "meaning": "xe đạp"
         }
       ],
-      "tip": "自 vốn là hình cái mũi (như 目 thêm nét phẩy trên): người Nhật chỉ vào mũi khi nói về mình — TỰ là tự mình."
+      "tip": "自 vốn là hình cái mũi (như 目 thêm nét phẩy trên): người Nhật chỉ vào mũi khi nói về mình — TỰ là tự mình.",
+      "lookalikes": [
+        {
+          "kanji": "目",
+          "note": "目 (Mục: mắt): không có nét phẩy nhỏ trên đầu; 自 có."
+        },
+        {
+          "kanji": "白",
+          "note": "白 (Bạch: trắng): chỉ có một nét ngang bên trong; 自 có hai."
+        }
+      ]
     },
     {
       "kanji": "者",
@@ -628,6 +746,16 @@
         }
       ],
       "tip": "Trên là 土 có nét phẩy chéo, dưới là 日: người ngày ngày (日) làm lụng trên đất — GIẢ là \"người\", như 医者 (y giả).",
+      "lookalikes": [
+        {
+          "kanji": "老",
+          "note": "老 (Lão: già): dưới là chữ 匕; 者 dưới là chữ 日."
+        },
+        {
+          "kanji": "考",
+          "note": "考 (Khảo: suy nghĩ): dưới là nét gập 丂; 者 dưới là chữ 日."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -654,7 +782,13 @@
           "meaning": "đại khái, phần lớn"
         }
       ],
-      "tip": "亻 (người) + 本 (gốc): cái gốc của con người là thân thể — THỂ (thân thể)."
+      "tip": "亻 (người) + 本 (gốc): cái gốc của con người là thân thể — THỂ (thân thể).",
+      "lookalikes": [
+        {
+          "kanji": "休",
+          "note": "休 (Hưu: nghỉ): bên phải là 木 (không có ngang ở chân); 体 bên phải là 本."
+        }
+      ]
     },
     {
       "kanji": "頭",
@@ -675,7 +809,17 @@
           "meaning": "vị trí đầu tiên, dẫn đầu"
         }
       ],
-      "tip": "豆 (hạt đậu) + bộ hiệt 頁 (cái đầu): cái đầu tròn như hạt đậu — ĐẦU."
+      "tip": "豆 (hạt đậu) + bộ hiệt 頁 (cái đầu): cái đầu tròn như hạt đậu — ĐẦU.",
+      "lookalikes": [
+        {
+          "kanji": "題",
+          "note": "題 (Đề: đề bài): bên trái là 是; 頭 bên trái là 豆."
+        },
+        {
+          "kanji": "顔",
+          "note": "顔 (Nhan: khuôn mặt): bên trái là 彦 (có ba nét phẩy 彡); 頭 bên trái là 豆."
+        }
+      ]
     },
     {
       "kanji": "顔",
@@ -696,7 +840,17 @@
           "meaning": "sắc mặt"
         }
       ],
-      "tip": "Bên trái có 立, 厂 và ba nét 彡 (như râu tóc), bên phải là 頁 (cái đầu): phần trước của đầu — NHAN là mặt (hồng nhan)."
+      "tip": "Bên trái có 立, 厂 và ba nét 彡 (như râu tóc), bên phải là 頁 (cái đầu): phần trước của đầu — NHAN là mặt (hồng nhan).",
+      "lookalikes": [
+        {
+          "kanji": "頭",
+          "note": "頭 (Đầu: cái đầu): bên trái là 豆; 顔 bên trái là 彦 (có ba nét phẩy 彡)."
+        },
+        {
+          "kanji": "題",
+          "note": "題 (Đề: đề bài): bên trái là 是; 顔 bên trái là 彦."
+        }
+      ]
     },
     {
       "kanji": "首",
@@ -717,7 +871,17 @@
           "meaning": "thủ đô"
         }
       ],
-      "tip": "丷 (mái tóc) trên 自 (mũi, mặt): cái đầu — THỦ; tiếng Nhật dùng cho cái cổ, còn \"đứng đầu\" thì như thủ đô 首都."
+      "tip": "丷 (mái tóc) trên 自 (mũi, mặt): cái đầu — THỦ; tiếng Nhật dùng cho cái cổ, còn \"đứng đầu\" thì như thủ đô 首都.",
+      "lookalikes": [
+        {
+          "kanji": "道",
+          "note": "道 (Đạo: con đường): có thêm bộ 辶 bao bên dưới; 首 không có."
+        },
+        {
+          "kanji": "自",
+          "note": "自 (Tự: tự mình): không có hai chấm và nét ngang trên đầu; 首 có."
+        }
+      ]
     },
     {
       "kanji": "心",
@@ -738,7 +902,13 @@
           "meaning": "yên tâm"
         }
       ],
-      "tip": "心 là hình trái tim, các nét chấm như mạch máu quanh tim: TÂM là tim, tấm lòng (an tâm)."
+      "tip": "心 là hình trái tim, các nét chấm như mạch máu quanh tim: TÂM là tim, tấm lòng (an tâm).",
+      "lookalikes": [
+        {
+          "kanji": "必",
+          "note": "必 (Tất: nhất định, 必ず): có thêm nét phẩy xiên cắt qua nét móc; 心 không có."
+        }
+      ]
     },
     {
       "kanji": "力",
@@ -759,7 +929,17 @@
           "meaning": "thể lực"
         }
       ],
-      "tip": "力 là hình cánh tay gồng cơ (hoặc cái cày đâm xuống đất): LỰC là sức mạnh."
+      "tip": "力 là hình cánh tay gồng cơ (hoặc cái cày đâm xuống đất): LỰC là sức mạnh.",
+      "lookalikes": [
+        {
+          "kanji": "刀",
+          "note": "刀 (Đao: con dao): nét phẩy không nhô lên trên nét ngang; 力 có nét phẩy vắt qua nét ngang."
+        },
+        {
+          "kanji": "九",
+          "note": "九 (Cửu: chín): nét cuối cong sang phải rồi hất lên; 力 nét móc quay vào trong."
+        }
+      ]
     },
     {
       "kanji": "声",
@@ -780,7 +960,13 @@
           "meaning": "giọng to, tiếng nói lớn"
         }
       ],
-      "tip": "Trên là 士 (người), dưới gần giống chữ 戸 (cánh cửa): người đứng sau cánh cửa lên tiếng gọi — THANH là tiếng (thanh âm)."
+      "tip": "Trên là 士 (người), dưới gần giống chữ 戸 (cánh cửa): người đứng sau cánh cửa lên tiếng gọi — THANH là tiếng (thanh âm).",
+      "lookalikes": [
+        {
+          "kanji": "売",
+          "note": "売 (Mại: bán): dưới chữ 士 là mái 冖 và chân 儿; 声 dưới 士 là khung コ và nét phẩy dài (như 尸)."
+        }
+      ]
     },
     {
       "kanji": "病",
@@ -801,7 +987,17 @@
           "meaning": "bệnh viện"
         }
       ],
-      "tip": "Bộ nạch 疒 (giường bệnh có người dựa vào) bao lấy 丙: người nằm trên giường bệnh — BỆNH."
+      "tip": "Bộ nạch 疒 (giường bệnh có người dựa vào) bao lấy 丙: người nằm trên giường bệnh — BỆNH.",
+      "lookalikes": [
+        {
+          "kanji": "痛",
+          "note": "痛 (Thống: đau, 痛い): trong bộ 疒 là 甬; 病 trong bộ 疒 là 丙."
+        },
+        {
+          "kanji": "疲",
+          "note": "疲 (Bì: mệt, 疲れる): trong bộ 疒 là 皮; 病 trong bộ 疒 là 丙."
+        }
+      ]
     },
     {
       "kanji": "医",
@@ -823,6 +1019,16 @@
         }
       ],
       "tip": "Bộ phương 匚 (cái hộp) chứa 矢 (mũi tên): hộp đựng kim, dao mũi nhọn của thầy thuốc — Y (y học).",
+      "lookalikes": [
+        {
+          "kanji": "匠",
+          "note": "匠 (Tượng: thợ): trong khung 匚 là chữ 斤; 医 trong khung là 矢 (mũi tên)."
+        },
+        {
+          "kanji": "区",
+          "note": "区 (Khu: quận): trong khung 匚 là chữ メ; 医 trong khung là 矢."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -849,7 +1055,13 @@
           "meaning": "hiệu thuốc"
         }
       ],
-      "tip": "Bộ thảo 艹 (cỏ) + 楽 (vui): cỏ cây làm người bệnh khỏe lại, vui lên — DƯỢC là thuốc."
+      "tip": "Bộ thảo 艹 (cỏ) + 楽 (vui): cỏ cây làm người bệnh khỏe lại, vui lên — DƯỢC là thuốc.",
+      "lookalikes": [
+        {
+          "kanji": "楽",
+          "note": "楽 (Lạc: vui; nhạc): không có bộ 艹 trên đầu; 薬 = 艹 + 楽."
+        }
+      ]
     },
     {
       "kanji": "死",
@@ -912,7 +1124,13 @@
           "meaning": "phí, cước"
         }
       ],
-      "tip": "米 (gạo) + 斗 (cái đấu đong): đong gạo để tính toán — LIỆU (nguyên liệu, liệu lý = nấu ăn)."
+      "tip": "米 (gạo) + 斗 (cái đấu đong): đong gạo để tính toán — LIỆU (nguyên liệu, liệu lý = nấu ăn).",
+      "lookalikes": [
+        {
+          "kanji": "科",
+          "note": "科 (Khoa: khoa, 科学): bên trái là 禾 (có nét phẩy trên đầu); 料 bên trái là 米."
+        }
+      ]
     },
     {
       "kanji": "理",
@@ -933,7 +1151,13 @@
           "meaning": "địa lý"
         }
       ],
-      "tip": "Bộ ngọc 王 + 里 (làng): mài ngọc theo đúng đường vân — LÝ là lẽ phải, trật tự (lý do, liệu lý)."
+      "tip": "Bộ ngọc 王 + 里 (làng): mài ngọc theo đúng đường vân — LÝ là lẽ phải, trật tự (lý do, liệu lý).",
+      "lookalikes": [
+        {
+          "kanji": "現",
+          "note": "現 (Hiện: hiện tại): bên phải là 見; 理 bên phải là 里."
+        }
+      ]
     },
     {
       "kanji": "茶",
@@ -954,7 +1178,13 @@
           "meaning": "màu nâu"
         }
       ],
-      "tip": "Bộ thảo 艹 trên, giữa là 人, dưới giống 木: lá cây mà người hái về pha uống — TRÀ."
+      "tip": "Bộ thảo 艹 trên, giữa là 人, dưới giống 木: lá cây mà người hái về pha uống — TRÀ.",
+      "lookalikes": [
+        {
+          "kanji": "菜",
+          "note": "菜 (Thái: rau): dưới 艹 là 爫 và 木; 茶 dưới 艹 là mái 人."
+        }
+      ]
     },
     {
       "kanji": "飯",
@@ -975,7 +1205,17 @@
           "meaning": "bữa sáng"
         }
       ],
-      "tip": "Bộ thực 飠 (đồ ăn) + 反 (lật lại): món ăn được đảo đi đảo lại trên bếp mỗi ngày — PHẠN là cơm."
+      "tip": "Bộ thực 飠 (đồ ăn) + 反 (lật lại): món ăn được đảo đi đảo lại trên bếp mỗi ngày — PHẠN là cơm.",
+      "lookalikes": [
+        {
+          "kanji": "飲",
+          "note": "飲 (Ẩm: uống): bên phải là 欠; 飯 bên phải là 反."
+        },
+        {
+          "kanji": "館",
+          "note": "館 (Quán: tòa nhà): bên phải là 官; 飯 bên phải là 反."
+        }
+      ]
     },
     {
       "kanji": "肉",
@@ -996,7 +1236,13 @@
           "meaning": "thịt bò"
         }
       ],
-      "tip": "Khung 冂 bên ngoài, bên trong là hai chữ 人 như thớ thịt: NHỤC là thịt."
+      "tip": "Khung 冂 bên ngoài, bên trong là hai chữ 人 như thớ thịt: NHỤC là thịt.",
+      "lookalikes": [
+        {
+          "kanji": "内",
+          "note": "内 (Nội: bên trong): trong khung chỉ có một chữ 人; 肉 có hai chữ 人 chồng nhau."
+        }
+      ]
     },
     {
       "kanji": "菜",
@@ -1012,7 +1258,17 @@
           "meaning": "rau"
         }
       ],
-      "tip": "Bộ thảo 艹 + 采 (bàn tay 爫 hái trên cây 木): lá cây được hái bằng tay để ăn — THÁI là rau."
+      "tip": "Bộ thảo 艹 + 采 (bàn tay 爫 hái trên cây 木): lá cây được hái bằng tay để ăn — THÁI là rau.",
+      "lookalikes": [
+        {
+          "kanji": "茶",
+          "note": "茶 (Trà: trà): dưới 艹 là mái 人, không có 爫; 菜 dưới 艹 là 爫 và 木."
+        },
+        {
+          "kanji": "采",
+          "note": "采 (Thái: hái): không có bộ 艹 trên đầu; 菜 = 艹 + 采."
+        }
+      ]
     },
     {
       "kanji": "味",
@@ -1034,6 +1290,12 @@
         }
       ],
       "tip": "Bộ khẩu 口 (miệng) + 未 (chưa): miệng nếm thử món chưa biết — VỊ là mùi vị.",
+      "lookalikes": [
+        {
+          "kanji": "妹",
+          "note": "妹 (Muội: em gái): bên trái là bộ 女; 味 bên trái là bộ 口."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -1060,7 +1322,17 @@
           "meaning": "thịt bò"
         }
       ],
-      "tip": "Hình đầu bò nhìn thẳng, nét ngang là cặp sừng; khác 午 ở chỗ nét dọc thò lên trên như cái đầu — NGƯU là bò."
+      "tip": "Hình đầu bò nhìn thẳng, nét ngang là cặp sừng; khác 午 ở chỗ nét dọc thò lên trên như cái đầu — NGƯU là bò.",
+      "lookalikes": [
+        {
+          "kanji": "午",
+          "note": "午 (Ngọ: buổi trưa): sổ giữa không nhô lên trên nét ngang trên; 牛 có sổ nhô lên."
+        },
+        {
+          "kanji": "生",
+          "note": "生 (Sinh: sống): có ba nét ngang; 牛 chỉ có hai."
+        }
+      ]
     },
     {
       "kanji": "洋",
@@ -1086,7 +1358,13 @@
           "meaning": "món Âu"
         }
       ],
-      "tip": "Bộ thủy 氵 + 羊 (con dê): sóng nước trắng xóa như đàn dê — DƯƠNG là biển lớn; đồ Tây vượt biển tới nên 洋 là kiểu Tây."
+      "tip": "Bộ thủy 氵 + 羊 (con dê): sóng nước trắng xóa như đàn dê — DƯƠNG là biển lớn; đồ Tây vượt biển tới nên 洋 là kiểu Tây.",
+      "lookalikes": [
+        {
+          "kanji": "注",
+          "note": "注 (Chú: rót; chú ý): bên phải là 主 (chấm trên 王); 洋 bên phải là 羊 (hai chấm, sổ thò xuống)."
+        }
+      ]
     },
     {
       "kanji": "店",
@@ -1113,6 +1391,16 @@
         }
       ],
       "tip": "Bộ nghiễm 广 (mái hiên) + 占 (chiếm): chiếm một chỗ dưới mái hiên để bày hàng — ĐIẾM là cửa hàng.",
+      "lookalikes": [
+        {
+          "kanji": "点",
+          "note": "点 (Điểm: điểm số, dấu chấm): không có mái 广, bên dưới có bốn chấm 灬; 店 có mái 广."
+        },
+        {
+          "kanji": "広",
+          "note": "広 (Quảng: rộng): dưới mái 广 là ム; 店 dưới mái là 占."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -1144,7 +1432,13 @@
           "meaning": "quầy hàng"
         }
       ],
-      "tip": "Trên là 士, giữa là 冖, dưới là 儿 (đôi chân): người đội hàng trên đầu, đi khắp nơi rao bán — MẠI."
+      "tip": "Trên là 士, giữa là 冖, dưới là 儿 (đôi chân): người đội hàng trên đầu, đi khắp nơi rao bán — MẠI.",
+      "lookalikes": [
+        {
+          "kanji": "声",
+          "note": "声 (Thanh: giọng): dưới chữ 士 là khung コ và nét phẩy dài (như 尸); 売 dưới là 冖 và 儿."
+        }
+      ]
     },
     {
       "kanji": "品",
@@ -1243,7 +1537,13 @@
           "meaning": "kimono"
         }
       ],
-      "tip": "Trên là 羊 (con dê, nét phẩy kéo dài), dưới là 目: lông dê làm áo khoác lên người — TRƯỚC là mặc, rồi nghĩa đến nơi."
+      "tip": "Trên là 羊 (con dê, nét phẩy kéo dài), dưới là 目: lông dê làm áo khoác lên người — TRƯỚC là mặc, rồi nghĩa đến nơi.",
+      "lookalikes": [
+        {
+          "kanji": "差",
+          "note": "差 (Sai: chênh lệch): phần dưới là nét phẩy và chữ 工; 着 phần dưới là nét phẩy và chữ 目."
+        }
+      ]
     },
     {
       "kanji": "紙",
@@ -1264,7 +1564,13 @@
           "meaning": "lá thư"
         }
       ],
-      "tip": "Bộ mịch 糸 (sợi tơ) + 氏: giấy xưa được làm từ xơ sợi — CHỈ là giấy."
+      "tip": "Bộ mịch 糸 (sợi tơ) + 氏: giấy xưa được làm từ xơ sợi — CHỈ là giấy.",
+      "lookalikes": [
+        {
+          "kanji": "低",
+          "note": "低 (Đê: thấp): bên trái là bộ 亻, bên phải là 氐 (có chấm ở dưới); 紙 bên trái là 糸, bên phải là 氏."
+        }
+      ]
     },
     {
       "kanji": "色",
@@ -1338,6 +1644,12 @@
         }
       ],
       "tip": "Trên giống 生 (mọc lên), dưới là 月: cây non mọc lên một màu xanh — THANH (thanh niên).",
+      "lookalikes": [
+        {
+          "kanji": "責",
+          "note": "責 (Trách: trách nhiệm): dưới là chữ 貝; 青 dưới là chữ 月."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -1365,6 +1677,12 @@
         }
       ],
       "tip": "Trên giống 里, dưới là 灬 (lửa): khói lửa bám đen ống khói — HẮC là đen.",
+      "lookalikes": [
+        {
+          "kanji": "魚",
+          "note": "魚 (Ngư: cá): trên có ⺈ (như chữ ク), giữa là chữ 田 khép kín; 黒 không có ⺈, trong khung là hai chấm nhỏ và sổ giữa chạy xuống chữ 土."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -1396,7 +1714,13 @@
           "meaning": "sân thượng"
         }
       ],
-      "tip": "Bộ thi 尸 (mái che) + 至 (đến): nơi đi đến có mái che — ỐC là nhà; 〜屋 là cửa hiệu."
+      "tip": "Bộ thi 尸 (mái che) + 至 (đến): nơi đi đến có mái che — ỐC là nhà; 〜屋 là cửa hiệu.",
+      "lookalikes": [
+        {
+          "kanji": "室",
+          "note": "室 (Thất: căn phòng): trên là mái 宀; 屋 trên là bộ 尸."
+        }
+      ]
     },
     {
       "kanji": "室",
@@ -1417,7 +1741,13 @@
           "meaning": "phòng nghiên cứu"
         }
       ],
-      "tip": "Bộ miên 宀 (mái nhà) + 至 (đến): đi đến tận bên trong mái nhà là căn phòng — THẤT."
+      "tip": "Bộ miên 宀 (mái nhà) + 至 (đến): đi đến tận bên trong mái nhà là căn phòng — THẤT.",
+      "lookalikes": [
+        {
+          "kanji": "屋",
+          "note": "屋 (Ốc: nhà): trên là bộ 尸 (có nét phẩy dài bên trái); 室 trên là mái 宀."
+        }
+      ]
     },
     {
       "kanji": "堂",
@@ -1434,6 +1764,12 @@
         }
       ],
       "tip": "Trên là 尚 (mái cao có khói bay), dưới là 土 (nền đất): ngôi nhà lớn xây trên nền đất cao — ĐƯỜNG (thực đường = nhà ăn).",
+      "lookalikes": [
+        {
+          "kanji": "常",
+          "note": "常 (Thường: thường, 非常): dưới là chữ 巾; 堂 dưới là chữ 土."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -1465,7 +1801,17 @@
           "meaning": "nhà trọ kiểu Nhật"
         }
       ],
-      "tip": "Bộ thực 飠 + 官 (quan): nơi quan khách được mời ăn và nghỉ lại — QUÁN là tòa nhà lớn."
+      "tip": "Bộ thực 飠 + 官 (quan): nơi quan khách được mời ăn và nghỉ lại — QUÁN là tòa nhà lớn.",
+      "lookalikes": [
+        {
+          "kanji": "飯",
+          "note": "飯 (Phạn: cơm): bên phải là 反; 館 bên phải là 官."
+        },
+        {
+          "kanji": "管",
+          "note": "管 (Quản: ống; quản lý): trên có bộ ⺮, không có bộ 食 bên trái; 館 có bộ 食 bên trái."
+        }
+      ]
     },
     {
       "kanji": "門",
@@ -1486,7 +1832,13 @@
           "meaning": "nhập môn"
         }
       ],
-      "tip": "Hình hai cánh cổng mở ra: MÔN là cổng. 聞 và 間 cũng có cổng này."
+      "tip": "Hình hai cánh cổng mở ra: MÔN là cổng. 聞 và 間 cũng có cổng này.",
+      "lookalikes": [
+        {
+          "kanji": "問",
+          "note": "問 (Vấn: hỏi): trong cổng có chữ 口; 門 bên trong trống (dễ viết nhầm 専門 thành 専問)."
+        }
+      ]
     },
     {
       "kanji": "所",
@@ -1538,7 +1890,17 @@
           "meaning": "quầy bán"
         }
       ],
-      "tip": "Bộ thổ 土 + 昜 (mặt trời 日 tỏa nắng xuống): bãi đất trống đầy nắng — TRƯỜNG (quảng trường)."
+      "tip": "Bộ thổ 土 + 昜 (mặt trời 日 tỏa nắng xuống): bãi đất trống đầy nắng — TRƯỜNG (quảng trường).",
+      "lookalikes": [
+        {
+          "kanji": "湯",
+          "note": "湯 (Thang: nước nóng, お湯): bên trái là bộ 氵; 場 bên trái là bộ 土."
+        },
+        {
+          "kanji": "陽",
+          "note": "陽 (Dương: mặt trời, 太陽): bên trái là bộ 阝; 場 bên trái là bộ 土."
+        }
+      ]
     },
     {
       "kanji": "台",
@@ -1585,7 +1947,13 @@
           "meaning": "thư viện"
         }
       ],
-      "tip": "Khung vuông 囗 bao quanh các nét như đường vẽ: tờ giấy có hình vẽ — ĐỒ (bản đồ)."
+      "tip": "Khung vuông 囗 bao quanh các nét như đường vẽ: tờ giấy có hình vẽ — ĐỒ (bản đồ).",
+      "lookalikes": [
+        {
+          "kanji": "国",
+          "note": "国 (Quốc: đất nước): trong khung là 玉 (王 có chấm); 図 trong khung là nét chấm và nét chéo."
+        }
+      ]
     },
     {
       "kanji": "銀",
@@ -1606,7 +1974,17 @@
           "meaning": "màu bạc"
         }
       ],
-      "tip": "Bộ kim 金 (kim loại) + 艮: thứ kim loại sáng trắng — NGÂN là bạc (ngân hàng)."
+      "tip": "Bộ kim 金 (kim loại) + 艮: thứ kim loại sáng trắng — NGÂN là bạc (ngân hàng).",
+      "lookalikes": [
+        {
+          "kanji": "根",
+          "note": "根 (Căn: rễ): bên trái là bộ 木; 銀 bên trái là bộ 金."
+        },
+        {
+          "kanji": "限",
+          "note": "限 (Hạn: giới hạn): bên trái là bộ 阝; 銀 bên trái là bộ 金."
+        }
+      ]
     },
     {
       "kanji": "港",
@@ -1654,7 +2032,13 @@
           "meaning": "chợ"
         }
       ],
-      "tip": "亠 (nắp) + 巾 (tấm vải): nơi người ta căng vải bày hàng — THỊ là chợ, rồi thành thành phố."
+      "tip": "亠 (nắp) + 巾 (tấm vải): nơi người ta căng vải bày hàng — THỊ là chợ, rồi thành thành phố.",
+      "lookalikes": [
+        {
+          "kanji": "布",
+          "note": "布 (Bố: vải, 財布): trên là nét ngang và nét phẩy xiên (ナ); 市 trên là chấm và nét ngang."
+        }
+      ]
     },
     {
       "kanji": "区",
@@ -1675,7 +2059,13 @@
           "meaning": "khu vực"
         }
       ],
-      "tip": "Khung 匚 bao lấy chữ メ như dấu chia cắt: mảnh đất chia thành từng phần — KHU là khu vực, quận."
+      "tip": "Khung 匚 bao lấy chữ メ như dấu chia cắt: mảnh đất chia thành từng phần — KHU là khu vực, quận.",
+      "lookalikes": [
+        {
+          "kanji": "医",
+          "note": "医 (Y: y, chữa bệnh): trong khung 匚 là 矢 (mũi tên); 区 trong khung là メ."
+        }
+      ]
     },
     {
       "kanji": "町",
@@ -1717,7 +2107,17 @@
           "meaning": "dân làng"
         }
       ],
-      "tip": "Bộ mộc 木 (cây) + 寸 (tấc): nơi cây cối và nhà cửa gần nhau từng tấc đất — THÔN là làng."
+      "tip": "Bộ mộc 木 (cây) + 寸 (tấc): nơi cây cối và nhà cửa gần nhau từng tấc đất — THÔN là làng.",
+      "lookalikes": [
+        {
+          "kanji": "材",
+          "note": "材 (Tài: vật liệu, 材料): bên phải là 才; 村 bên phải là 寸."
+        },
+        {
+          "kanji": "対",
+          "note": "対 (Đối: đối với): bên trái là chữ 文; 村 bên trái là bộ 木."
+        }
+      ]
     },
     {
       "kanji": "県",
@@ -1738,7 +2138,17 @@
           "meaning": "do tỉnh lập (công lập cấp tỉnh)"
         }
       ],
-      "tip": "Trên là 目 (con mắt), dưới là một nét gập rồi đến 小: con mắt trông coi mọi nơi nhỏ trong vùng — HUYỆN; ở Nhật 県 là tỉnh."
+      "tip": "Trên là 目 (con mắt), dưới là một nét gập rồi đến 小: con mắt trông coi mọi nơi nhỏ trong vùng — HUYỆN; ở Nhật 県 là tỉnh.",
+      "lookalikes": [
+        {
+          "kanji": "具",
+          "note": "具 (Cụ: dụng cụ, 道具): dưới chữ 目 là nét ngang dài và hai chân 八; 県 dưới cùng là chữ 小."
+        },
+        {
+          "kanji": "真",
+          "note": "真 (Chân: thật): trên đầu có 十, dưới 目 là ngang và 八; 県 không có 十, dưới cùng là 小."
+        }
+      ]
     },
     {
       "kanji": "都",
@@ -1764,7 +2174,13 @@
           "meaning": "sự thuận tiện"
         }
       ],
-      "tip": "者 (người) + bộ ấp 阝 bên phải (thành ấp): thành lớn nơi nhiều người tụ về — ĐÔ (đô thị)."
+      "tip": "者 (người) + bộ ấp 阝 bên phải (thành ấp): thành lớn nơi nhiều người tụ về — ĐÔ (đô thị).",
+      "lookalikes": [
+        {
+          "kanji": "部",
+          "note": "部 (Bộ: bộ phận): bên trái là 立 trên 口; 都 bên trái là 者."
+        }
+      ]
     },
     {
       "kanji": "京",
@@ -1785,7 +2201,13 @@
           "meaning": "Kyoto"
         }
       ],
-      "tip": "亠 + 口 + 小: tòa nhà cao vút trên nền móng — KINH là kinh đô. 東京 là \"kinh đô phía đông\"."
+      "tip": "亠 + 口 + 小: tòa nhà cao vút trên nền móng — KINH là kinh đô. 東京 là \"kinh đô phía đông\".",
+      "lookalikes": [
+        {
+          "kanji": "高",
+          "note": "高 (Cao: cao): dưới 亠 và 口 là khung 冂 có 口 bên trong; 京 dưới là chữ 小."
+        }
+      ]
     },
     {
       "kanji": "住",
@@ -1806,7 +2228,17 @@
           "meaning": "địa chỉ"
         }
       ],
-      "tip": "亻 (người) + 主 (chủ): người làm chủ một chỗ là sống ở đó — TRÚ (cư trú)."
+      "tip": "亻 (người) + 主 (chủ): người làm chủ một chỗ là sống ở đó — TRÚ (cư trú).",
+      "lookalikes": [
+        {
+          "kanji": "注",
+          "note": "注 (Chú: rót; chú ý): bên trái là bộ 氵; 住 bên trái là bộ 亻."
+        },
+        {
+          "kanji": "往",
+          "note": "往 (Vãng: đi, 往復): bên trái là bộ 彳 (hai nét phẩy); 住 bên trái là bộ 亻 (một nét phẩy)."
+        }
+      ]
     },
     {
       "kanji": "地",
@@ -1832,7 +2264,17 @@
           "meaning": "đất đai"
         }
       ],
-      "tip": "Bộ thổ 土 + 也: mặt đất trải dài — ĐỊA (địa lý, địa đồ)."
+      "tip": "Bộ thổ 土 + 也: mặt đất trải dài — ĐỊA (địa lý, địa đồ).",
+      "lookalikes": [
+        {
+          "kanji": "池",
+          "note": "池 (Trì: ao): bên trái là bộ 氵; 地 bên trái là bộ 土."
+        },
+        {
+          "kanji": "他",
+          "note": "他 (Tha: khác, 他の): bên trái là bộ 亻; 地 bên trái là bộ 土."
+        }
+      ]
     },
     {
       "kanji": "世",
@@ -1869,7 +2311,17 @@
           "meaning": "thế giới"
         }
       ],
-      "tip": "田 (ruộng) + 介 (ở giữa): bờ ngăn nằm giữa các thửa ruộng — GIỚI là ranh giới (thế giới)."
+      "tip": "田 (ruộng) + 介 (ở giữa): bờ ngăn nằm giữa các thửa ruộng — GIỚI là ranh giới (thế giới).",
+      "lookalikes": [
+        {
+          "kanji": "男",
+          "note": "男 (Nam: con trai): dưới chữ 田 là 力; 界 dưới 田 là 介."
+        },
+        {
+          "kanji": "思",
+          "note": "思 (Tư: nghĩ): dưới chữ 田 là 心; 界 dưới 田 là 介."
+        }
+      ]
     },
     {
       "kanji": "民",
@@ -1890,7 +2342,13 @@
           "meaning": "người dân thành phố"
         }
       ],
-      "tip": "Cổ tự 民 vẽ con mắt bị mũi nhọn đâm, chỉ người bị cai trị; nay là người dân thường — DÂN (quốc dân)."
+      "tip": "Cổ tự 民 vẽ con mắt bị mũi nhọn đâm, chỉ người bị cai trị; nay là người dân thường — DÂN (quốc dân).",
+      "lookalikes": [
+        {
+          "kanji": "氏",
+          "note": "氏 (Thị: họ): phần trên không có khung kín; 民 trên có một khung nhỏ khép kín."
+        }
+      ]
     },
     {
       "kanji": "風",
@@ -1933,6 +2391,20 @@
         }
       ],
       "tip": "Bộ vũ 雨 (mưa) + ヨ (bàn tay cầm chổi): thứ từ trời rơi xuống phải lấy chổi quét — TUYẾT.",
+      "lookalikes": [
+        {
+          "kanji": "雲",
+          "note": "雲 (Vân: mây): dưới 雨 là chữ 云; 雪 dưới 雨 là chữ ヨ (彐)."
+        },
+        {
+          "kanji": "電",
+          "note": "電 (Điện: điện): dưới 雨 là 田 có sổ giữa kéo dài cong móc; 雪 dưới là ヨ."
+        },
+        {
+          "kanji": "雷",
+          "note": "雷 (Lôi: sấm): dưới 雨 là chữ 田; 雪 dưới là chữ ヨ."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -1955,6 +2427,20 @@
         }
       ],
       "tip": "Bộ vũ 雨 + 云 (hơi cuộn lên): hơi nước cuộn tròn trên trời thành mây — VÂN.",
+      "lookalikes": [
+        {
+          "kanji": "雪",
+          "note": "雪 (Tuyết: tuyết): dưới 雨 là chữ ヨ (彐); 雲 dưới 雨 là chữ 云."
+        },
+        {
+          "kanji": "曇",
+          "note": "曇 (Đàm: trời nhiều mây, 曇り): có thêm chữ 日 trên đầu; 雲 không có."
+        },
+        {
+          "kanji": "電",
+          "note": "電 (Điện: điện): dưới 雨 là 田 có sổ cong móc; 雲 dưới là chữ 云."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -1986,7 +2472,13 @@
           "meaning": "ánh nắng"
         }
       ],
-      "tip": "Trên là ngọn lửa tỏa tia, dưới là 儿 (đôi chân người): người giơ cao ngọn lửa soi đường — QUANG là ánh sáng."
+      "tip": "Trên là ngọn lửa tỏa tia, dưới là 儿 (đôi chân người): người giơ cao ngọn lửa soi đường — QUANG là ánh sáng.",
+      "lookalikes": [
+        {
+          "kanji": "先",
+          "note": "先 (Tiên: trước): trên có nét phẩy xiên và hai nét ngang; 光 trên là sổ ngắn kẹp giữa hai chấm và một ngang."
+        }
+      ]
     },
     {
       "kanji": "海",
@@ -2007,7 +2499,17 @@
           "meaning": "nước ngoài"
         }
       ],
-      "tip": "Bộ thủy 氵 + 毎 (mỗi): nơi mọi dòng nước đều đổ về — HẢI là biển."
+      "tip": "Bộ thủy 氵 + 毎 (mỗi): nơi mọi dòng nước đều đổ về — HẢI là biển.",
+      "lookalikes": [
+        {
+          "kanji": "梅",
+          "note": "梅 (Mai: cây mơ, 梅雨): bên trái là bộ 木; 海 bên trái là bộ 氵."
+        },
+        {
+          "kanji": "毎",
+          "note": "毎 (Mỗi: mỗi, hằng): không có bộ 氵 bên trái; 海 = 氵 + 毎."
+        }
+      ]
     },
     {
       "kanji": "池",
@@ -2028,7 +2530,17 @@
           "meaning": "pin"
         }
       ],
-      "tip": "Bộ thủy 氵 + 也: chỗ nước đọng lại trên mặt đất — TRÌ là ao. 電池 là \"ao chứa điện\", tức cục pin."
+      "tip": "Bộ thủy 氵 + 也: chỗ nước đọng lại trên mặt đất — TRÌ là ao. 電池 là \"ao chứa điện\", tức cục pin.",
+      "lookalikes": [
+        {
+          "kanji": "地",
+          "note": "地 (Địa: đất): bên trái là bộ 土; 池 bên trái là bộ 氵."
+        },
+        {
+          "kanji": "他",
+          "note": "他 (Tha: khác): bên trái là bộ 亻; 池 bên trái là bộ 氵."
+        }
+      ]
     },
     {
       "kanji": "森",
@@ -2044,7 +2556,13 @@
           "meaning": "rừng"
         }
       ],
-      "tip": "Ba chữ 木 chồng lên nhau, nhiều cây hơn cả 林: SÂM là rừng rậm."
+      "tip": "Ba chữ 木 chồng lên nhau, nhiều cây hơn cả 林: SÂM là rừng rậm.",
+      "lookalikes": [
+        {
+          "kanji": "林",
+          "note": "林 (Lâm: rừng thưa): chỉ có hai chữ 木; 森 có ba chữ 木."
+        }
+      ]
     },
     {
       "kanji": "林",
@@ -2060,7 +2578,13 @@
           "meaning": "rừng thưa"
         }
       ],
-      "tip": "Hai cây 木 đứng cạnh nhau: LÂM là rừng (lâm nghiệp)."
+      "tip": "Hai cây 木 đứng cạnh nhau: LÂM là rừng (lâm nghiệp).",
+      "lookalikes": [
+        {
+          "kanji": "森",
+          "note": "森 (Sâm: rừng rậm): có ba chữ 木 (một trên, hai dưới); 林 chỉ có hai."
+        }
+      ]
     },
     {
       "kanji": "石",
@@ -2077,6 +2601,12 @@
         }
       ],
       "tip": "厂 (vách núi) + 口 (hòn đá): hòn đá lăn xuống dưới chân vách núi — THẠCH là đá.",
+      "lookalikes": [
+        {
+          "kanji": "右",
+          "note": "右 (Hữu: bên phải): nét phẩy vắt chéo lên trên nét ngang; 石 nét ngang ở trên cùng, phẩy bắt đầu từ nét ngang."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -2098,7 +2628,13 @@
           "meaning": "rau"
         }
       ],
-      "tip": "里 (làng) + 予: vùng đất rộng bên ngoài làng — DÃ là đồng nội (dã ngoại). 野菜 là rau ngoài đồng."
+      "tip": "里 (làng) + 予: vùng đất rộng bên ngoài làng — DÃ là đồng nội (dã ngoại). 野菜 là rau ngoài đồng.",
+      "lookalikes": [
+        {
+          "kanji": "理",
+          "note": "理 (Lý: lý lẽ): bên trái là 王, 里 nằm bên phải; 野 có 里 bên trái, 予 bên phải."
+        }
+      ]
     },
     {
       "kanji": "犬",
@@ -2119,7 +2655,17 @@
           "meaning": "chó con"
         }
       ],
-      "tip": "Chữ 大 thêm một chấm ở vai như cái tai vểnh: KHUYỂN là con chó. Đừng nhầm với 太 (chấm ở dưới)."
+      "tip": "Chữ 大 thêm một chấm ở vai như cái tai vểnh: KHUYỂN là con chó. Đừng nhầm với 太 (chấm ở dưới).",
+      "lookalikes": [
+        {
+          "kanji": "太",
+          "note": "太 (Thái: béo, to): chấm nằm dưới, giữa hai chân; 犬 chấm ở trên bên phải."
+        },
+        {
+          "kanji": "大",
+          "note": "大 (Đại: lớn): không có chấm; 犬 có chấm ở trên bên phải."
+        }
+      ]
     },
     {
       "kanji": "鳥",
@@ -2140,7 +2686,21 @@
           "meaning": "chim nhỏ"
         }
       ],
-      "tip": "Hình con chim: nét phẩy trên đầu là chỏm lông, nét ngang ngắn trong khung là con mắt, bốn chấm 灬 là chân và đuôi — ĐIỂU. Bỏ nét mắt thì thành 烏 (con quạ)."
+      "tip": "Hình con chim: nét phẩy trên đầu là chỏm lông, nét ngang ngắn trong khung là con mắt, bốn chấm 灬 là chân và đuôi — ĐIỂU. Bỏ nét mắt thì thành 烏 (con quạ).",
+      "lookalikes": [
+        {
+          "kanji": "島",
+          "note": "島 (Đảo: hòn đảo): phần dưới là chữ 山 thay cho bốn chấm 灬; 鳥 dưới có 灬."
+        },
+        {
+          "kanji": "魚",
+          "note": "魚 (Ngư: cá): trên có ⺈ (như chữ ク) và chữ 田 ở giữa; 鳥 không có chữ 田."
+        },
+        {
+          "kanji": "烏",
+          "note": "烏 (Ô: con quạ): thiếu một nét ngang nhỏ (con mắt) ở phần trên; 鳥 có nét đó."
+        }
+      ]
     },
     {
       "kanji": "運",
@@ -2166,7 +2726,13 @@
           "meaning": "vận động, thể thao"
         }
       ],
-      "tip": "Bộ sước 辶 (đi) + 軍 (quân, có chữ 車 bên trong): đoàn xe quân đi chở hàng — VẬN (vận chuyển)."
+      "tip": "Bộ sước 辶 (đi) + 軍 (quân, có chữ 車 bên trong): đoàn xe quân đi chở hàng — VẬN (vận chuyển).",
+      "lookalikes": [
+        {
+          "kanji": "連",
+          "note": "連 (Liên: nối liền; dẫn theo, 連れる): bên trong 辶 là 車, không có mái 冖; 運 bên trong là 軍 (có mái 冖)."
+        }
+      ]
     },
     {
       "kanji": "転",
@@ -2192,7 +2758,17 @@
           "meaning": "ngã"
         }
       ],
-      "tip": "Bộ xa 車 (xe) + 云 (cuộn): bánh xe cuộn tròn lăn đi — CHUYỂN."
+      "tip": "Bộ xa 車 (xe) + 云 (cuộn): bánh xe cuộn tròn lăn đi — CHUYỂN.",
+      "lookalikes": [
+        {
+          "kanji": "伝",
+          "note": "伝 (Truyền: truyền, 手伝う): bên trái là bộ 亻; 転 bên trái là bộ 車."
+        },
+        {
+          "kanji": "軽",
+          "note": "軽 (Khinh: nhẹ): bên phải là 又 trên 土; 転 bên phải là 云."
+        }
+      ]
     },
     {
       "kanji": "乗",
@@ -2229,7 +2805,13 @@
           "meaning": "chạy"
         }
       ],
-      "tip": "Trên là 土, dưới là chữ 止 (bàn chân) biến dạng, nét cuối kéo dài: bàn chân sải dài trên mặt đất — TẨU là chạy."
+      "tip": "Trên là 土, dưới là chữ 止 (bàn chân) biến dạng, nét cuối kéo dài: bàn chân sải dài trên mặt đất — TẨU là chạy.",
+      "lookalikes": [
+        {
+          "kanji": "足",
+          "note": "足 (Túc: chân): phần trên là chữ 口; 走 phần trên là chữ 土."
+        }
+      ]
     },
     {
       "kanji": "歩",
@@ -2276,7 +2858,17 @@
           "meaning": "hủy bỏ, đình chỉ"
         }
       ],
-      "tip": "止 là hình dấu bàn chân đứng yên: CHỈ là dừng lại (đình chỉ)."
+      "tip": "止 là hình dấu bàn chân đứng yên: CHỈ là dừng lại (đình chỉ).",
+      "lookalikes": [
+        {
+          "kanji": "正",
+          "note": "正 (Chính: đúng): có thêm nét ngang dài trên đầu; 止 không có."
+        },
+        {
+          "kanji": "上",
+          "note": "上 (Thượng: trên): không có nét sổ ngắn bên trái; 止 có."
+        }
+      ]
     },
     {
       "kanji": "急",
@@ -2303,6 +2895,16 @@
         }
       ],
       "tip": "ク trên, ヨ (bàn tay) giữa, 心 dưới: tay níu người phía trước, lòng nóng như lửa — CẤP là gấp.",
+      "lookalikes": [
+        {
+          "kanji": "息",
+          "note": "息 (Tức: hơi thở, 息子): trên chữ 心 là chữ 自; 急 trên là ⺈ và ヨ."
+        },
+        {
+          "kanji": "思",
+          "note": "思 (Tư: nghĩ): trên chữ 心 là chữ 田; 急 trên là ⺈ và ヨ."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -2329,7 +2931,17 @@
           "meaning": "đi lại thường xuyên"
         }
       ],
-      "tip": "Bộ sước 辶 (đi) + 甬 (ống rỗng): đường đi suốt như lòng ống — THÔNG (thông suốt)."
+      "tip": "Bộ sước 辶 (đi) + 甬 (ống rỗng): đường đi suốt như lòng ống — THÔNG (thông suốt).",
+      "lookalikes": [
+        {
+          "kanji": "週",
+          "note": "週 (Chu: tuần): bên trong 辶 là 周; 通 bên trong là 甬."
+        },
+        {
+          "kanji": "痛",
+          "note": "痛 (Thống: đau): bộ 疒 bao phía trên bên trái; 通 có bộ 辶 bao bên dưới."
+        }
+      ]
     },
     {
       "kanji": "進",
@@ -2361,7 +2973,13 @@
           "meaning": "gửi, tiễn"
         }
       ],
-      "tip": "Bộ sước 辶 + phần trên gồm 丷 và 天: hai tay nâng quà đưa người đi — TỐNG là tiễn, gửi (tống tiễn)."
+      "tip": "Bộ sước 辶 + phần trên gồm 丷 và 天: hai tay nâng quà đưa người đi — TỐNG là tiễn, gửi (tống tiễn).",
+      "lookalikes": [
+        {
+          "kanji": "迷",
+          "note": "迷 (Mê: lạc đường, 迷う): bên trong 辶 là 米; 送 bên trong là 关 (hai chấm và 天)."
+        }
+      ]
     },
     {
       "kanji": "帰",
@@ -2382,7 +3000,13 @@
           "meaning": "về nước"
         }
       ],
-      "tip": "Bên phải là cái chổi 帚 (ヨ, 冖, 巾): về đến nhà là cầm chổi quét dọn — QUY là trở về (hồi quy)."
+      "tip": "Bên phải là cái chổi 帚 (ヨ, 冖, 巾): về đến nhà là cầm chổi quét dọn — QUY là trở về (hồi quy).",
+      "lookalikes": [
+        {
+          "kanji": "掃",
+          "note": "掃 (Tảo: quét, 掃除): bên trái là bộ 扌 (tay); 帰 bên trái chỉ là hai nét ngắn (một sổ, một phẩy)."
+        }
+      ]
     },
     {
       "kanji": "旅",
@@ -2408,7 +3032,13 @@
           "meaning": "chuyến đi"
         }
       ],
-      "tip": "Bên trái là 方, trên là 𠂉 (lá cờ), dưới là những người nối đuôi: đoàn người theo cờ đi xa — LỮ (lữ hành)."
+      "tip": "Bên trái là 方, trên là 𠂉 (lá cờ), dưới là những người nối đuôi: đoàn người theo cờ đi xa — LỮ (lữ hành).",
+      "lookalikes": [
+        {
+          "kanji": "族",
+          "note": "族 (Tộc: dòng họ): phần dưới bên phải là chữ 矢 (mũi tên); 旅 phần dưới phải giống đuôi chữ 衣."
+        }
+      ]
     },
     {
       "kanji": "動",
@@ -2434,7 +3064,13 @@
           "meaning": "động vật"
         }
       ],
-      "tip": "重 (nặng) + 力 (sức): dùng sức đẩy vật nặng cho nó chuyển đi — ĐỘNG."
+      "tip": "重 (nặng) + 力 (sức): dùng sức đẩy vật nặng cho nó chuyển đi — ĐỘNG.",
+      "lookalikes": [
+        {
+          "kanji": "働",
+          "note": "働 (Động: lao động): có thêm bộ 亻 bên trái; 動 không có."
+        }
+      ]
     },
     {
       "kanji": "起",
@@ -2455,7 +3091,13 @@
           "meaning": "dậy sớm"
         }
       ],
-      "tip": "Bộ tẩu 走 (chạy) + 己 (bản thân): tự mình đứng dậy chạy đi — KHỞI (khởi đầu)."
+      "tip": "Bộ tẩu 走 (chạy) + 己 (bản thân): tự mình đứng dậy chạy đi — KHỞI (khởi đầu).",
+      "lookalikes": [
+        {
+          "kanji": "超",
+          "note": "超 (Siêu: vượt quá): bên phải là 召 (刀 trên 口); 起 bên phải là 己."
+        }
+      ]
     },
     {
       "kanji": "洗",
@@ -2476,7 +3118,13 @@
           "meaning": "rửa tay, nhà vệ sinh"
         }
       ],
-      "tip": "Bộ thủy 氵 + 先 (trước): việc trước tiên là lấy nước rửa — TẨY là rửa."
+      "tip": "Bộ thủy 氵 + 先 (trước): việc trước tiên là lấy nước rửa — TẨY là rửa.",
+      "lookalikes": [
+        {
+          "kanji": "先",
+          "note": "先 (Tiên: trước): không có bộ 氵 bên trái; 洗 = 氵 + 先."
+        }
+      ]
     },
     {
       "kanji": "持",
@@ -2502,7 +3150,21 @@
           "meaning": "người giàu"
         }
       ],
-      "tip": "Bộ thủ 扌 (tay) + 寺 (chùa): tay giữ chặt như nhà sư giữ chùa — TRÌ (duy trì) là cầm, giữ."
+      "tip": "Bộ thủ 扌 (tay) + 寺 (chùa): tay giữ chặt như nhà sư giữ chùa — TRÌ (duy trì) là cầm, giữ.",
+      "lookalikes": [
+        {
+          "kanji": "待",
+          "note": "待 (Đãi: chờ đợi): bên trái là bộ 彳 (hai nét phẩy); 持 bên trái là bộ 扌 (tay)."
+        },
+        {
+          "kanji": "特",
+          "note": "特 (Đặc: đặc biệt): bên trái là bộ 牛; 持 bên trái là bộ 扌."
+        },
+        {
+          "kanji": "時",
+          "note": "時 (Thời: giờ): bên trái là bộ 日; 持 bên trái là bộ 扌."
+        }
+      ]
     },
     {
       "kanji": "待",
@@ -2518,7 +3180,21 @@
           "meaning": "chờ"
         }
       ],
-      "tip": "Bộ xích 彳 (bước đi) + 寺 (chùa): đi đến cổng chùa rồi đứng chờ — ĐÃI (chờ đợi, tiếp đãi)."
+      "tip": "Bộ xích 彳 (bước đi) + 寺 (chùa): đi đến cổng chùa rồi đứng chờ — ĐÃI (chờ đợi, tiếp đãi).",
+      "lookalikes": [
+        {
+          "kanji": "持",
+          "note": "持 (Trì: cầm): bên trái là bộ 扌 (tay); 待 bên trái là bộ 彳 (hai nét phẩy)."
+        },
+        {
+          "kanji": "侍",
+          "note": "侍 (Thị: hầu cận; samurai): bên trái là bộ 亻 (một nét phẩy); 待 bên trái là bộ 彳 (hai nét phẩy)."
+        },
+        {
+          "kanji": "特",
+          "note": "特 (Đặc: đặc biệt): bên trái là bộ 牛; 待 bên trái là bộ 彳."
+        }
+      ]
     },
     {
       "kanji": "使",
@@ -2539,7 +3215,13 @@
           "meaning": "đại sứ quán"
         }
       ],
-      "tip": "亻 (người) + 吏 (viên chức): người được sai đi làm việc — SỬ (sứ giả, sử dụng)."
+      "tip": "亻 (người) + 吏 (viên chức): người được sai đi làm việc — SỬ (sứ giả, sử dụng).",
+      "lookalikes": [
+        {
+          "kanji": "便",
+          "note": "便 (Tiện: tiện lợi): bên phải là 更 (có chữ 日 bên trong); 使 bên phải là 吏 (có chữ 口)."
+        }
+      ]
     },
     {
       "kanji": "作",
@@ -2560,7 +3242,13 @@
           "meaning": "bài văn"
         }
       ],
-      "tip": "亻 (người) + 乍 (vừa mới): người vừa bắt tay vào làm — TÁC (tác phẩm)."
+      "tip": "亻 (người) + 乍 (vừa mới): người vừa bắt tay vào làm — TÁC (tác phẩm).",
+      "lookalikes": [
+        {
+          "kanji": "昨",
+          "note": "昨 (Tạc: hôm qua, 昨日): bên trái là bộ 日; 作 bên trái là bộ 亻."
+        }
+      ]
     },
     {
       "kanji": "始",
@@ -2581,7 +3269,13 @@
           "meaning": "(cái gì) bắt đầu"
         }
       ],
-      "tip": "Bộ nữ 女 + 台: người mẹ là khởi đầu của mọi sự sống — THỦY là bắt đầu (nguyên thủy)."
+      "tip": "Bộ nữ 女 + 台: người mẹ là khởi đầu của mọi sự sống — THỦY là bắt đầu (nguyên thủy).",
+      "lookalikes": [
+        {
+          "kanji": "治",
+          "note": "治 (Trị: chữa, 治る): bên trái là bộ 氵; 始 bên trái là bộ 女."
+        }
+      ]
     },
     {
       "kanji": "終",
@@ -2602,7 +3296,17 @@
           "meaning": "phần cuối"
         }
       ],
-      "tip": "Bộ mịch 糸 (sợi chỉ) + 冬 (mùa đông, cuối năm): đầu cuối của cuộn chỉ — CHUNG là kết thúc (chung kết)."
+      "tip": "Bộ mịch 糸 (sợi chỉ) + 冬 (mùa đông, cuối năm): đầu cuối của cuộn chỉ — CHUNG là kết thúc (chung kết).",
+      "lookalikes": [
+        {
+          "kanji": "給",
+          "note": "給 (Cấp: cấp phát, 給料 – tiền lương): bên phải là 合; 終 bên phải là 冬."
+        },
+        {
+          "kanji": "冬",
+          "note": "冬 (Đông: mùa đông): không có bộ 糸 bên trái; 終 = 糸 + 冬."
+        }
+      ]
     },
     {
       "kanji": "開",
@@ -2623,7 +3327,21 @@
           "meaning": "(cửa) mở; cũng đọc ひらく (mở ra)"
         }
       ],
-      "tip": "Bộ môn 門 (cổng) + 开 (hai tay nâng thanh then): đẩy then mở cổng — KHAI là mở (khai trương)."
+      "tip": "Bộ môn 門 (cổng) + 开 (hai tay nâng thanh then): đẩy then mở cổng — KHAI là mở (khai trương).",
+      "lookalikes": [
+        {
+          "kanji": "閉",
+          "note": "閉 (Bế: đóng, 閉める): trong cổng 門 là chữ 才; 開 trong cổng là 开 (hai ngang, hai sổ)."
+        },
+        {
+          "kanji": "間",
+          "note": "間 (Gian: khoảng): trong cổng 門 là chữ 日; 開 trong cổng là 开."
+        },
+        {
+          "kanji": "関",
+          "note": "関 (Quan: liên quan): trong cổng 門 là 关 (hai chấm và 天); 開 trong cổng là 开."
+        }
+      ]
     },
     {
       "kanji": "集",
@@ -2644,7 +3362,13 @@
           "meaning": "thu thập"
         }
       ],
-      "tip": "隹 (con chim) đậu trên 木 (cây): chim tụ về một cây — TẬP là tập hợp."
+      "tip": "隹 (con chim) đậu trên 木 (cây): chim tụ về một cây — TẬP là tập hợp.",
+      "lookalikes": [
+        {
+          "kanji": "進",
+          "note": "進 (Tiến: tiến lên): chữ 隹 nằm trên bộ 辶, không có 木 bên dưới; 集 = 隹 + 木."
+        }
+      ]
     },
     {
       "kanji": "借",
@@ -2677,6 +3401,20 @@
         }
       ],
       "tip": "代 (thay) đặt trên 貝 (tiền): đưa tiền để người khác dùng thay mình — THẢI là cho mượn.",
+      "lookalikes": [
+        {
+          "kanji": "貨",
+          "note": "貨 (Hóa: hàng hóa): trên chữ 貝 là 化 (bên phải là 匕); 貸 trên 貝 là 代 (bên phải là 弋)."
+        },
+        {
+          "kanji": "資",
+          "note": "資 (Tư: tư bản, 資料): trên chữ 貝 là 次 (hai chấm và 欠); 貸 trên 貝 là 代."
+        },
+        {
+          "kanji": "質",
+          "note": "質 (Chất: chất; hỏi): trên chữ 貝 là hai chữ 斤; 貸 trên 貝 là 代."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -2709,6 +3447,12 @@
         }
       ],
       "tip": "七 + 刀 (con dao): cầm dao cắt — THIẾT là cắt. 大切 là quan trọng, 親切 là tử tế.",
+      "lookalikes": [
+        {
+          "kanji": "初",
+          "note": "初 (Sơ: lần đầu, 初めて): bên trái là bộ 衤 (áo); 切 bên trái là chữ 七."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -2751,7 +3495,13 @@
           "meaning": "xa"
         }
       ],
-      "tip": "Bộ sước 辶 (đi) + 袁 (tà áo dài): mặc áo dài lượt thượt đi đường xa — VIỄN là xa."
+      "tip": "Bộ sước 辶 (đi) + 袁 (tà áo dài): mặc áo dài lượt thượt đi đường xa — VIỄN là xa.",
+      "lookalikes": [
+        {
+          "kanji": "園",
+          "note": "園 (Viên: vườn, 公園): chữ 袁 nằm trong khung 囗 kín; 遠 có 袁 trên bộ 辶."
+        }
+      ]
     },
     {
       "kanji": "近",
@@ -2772,7 +3522,17 @@
           "meaning": "hàng xóm, khu lân cận"
         }
       ],
-      "tip": "Bộ sước 辶 (đi) + 斤 (cái rìu): chỉ đi một quãng ngắn để chặt củi — CẬN là gần."
+      "tip": "Bộ sước 辶 (đi) + 斤 (cái rìu): chỉ đi một quãng ngắn để chặt củi — CẬN là gần.",
+      "lookalikes": [
+        {
+          "kanji": "返",
+          "note": "返 (Phản: trả lại, 返す): bên trong 辶 là 反; 近 bên trong là 斤 (cái rìu)."
+        },
+        {
+          "kanji": "迎",
+          "note": "迎 (Nghênh: đón, 迎える): bên trong 辶 là 卬; 近 bên trong là 斤."
+        }
+      ]
     },
     {
       "kanji": "広",
@@ -2788,7 +3548,13 @@
           "meaning": "rộng"
         }
       ],
-      "tip": "Bộ nghiễm 广 (mái nhà) + ム: mái nhà che một khoảng rộng — QUẢNG (quảng trường)."
+      "tip": "Bộ nghiễm 广 (mái nhà) + ム: mái nhà che một khoảng rộng — QUẢNG (quảng trường).",
+      "lookalikes": [
+        {
+          "kanji": "店",
+          "note": "店 (Điếm: cửa hàng): dưới mái 广 là 占; 広 dưới mái là ム."
+        }
+      ]
     },
     {
       "kanji": "短",
@@ -2804,7 +3570,13 @@
           "meaning": "ngắn"
         }
       ],
-      "tip": "矢 (mũi tên) + 豆 (hạt đậu): đo bằng mũi tên thì hạt đậu thật ngắn — ĐOẢN là ngắn."
+      "tip": "矢 (mũi tên) + 豆 (hạt đậu): đo bằng mũi tên thì hạt đậu thật ngắn — ĐOẢN là ngắn.",
+      "lookalikes": [
+        {
+          "kanji": "知",
+          "note": "知 (Tri: biết): bên phải là 口; 短 bên phải là 豆."
+        }
+      ]
     },
     {
       "kanji": "低",
@@ -2820,7 +3592,17 @@
           "meaning": "thấp"
         }
       ],
-      "tip": "亻 (người) + 氐 (đáy, có nét chấm dưới chân): người ở sát đáy — ĐÊ là thấp."
+      "tip": "亻 (người) + 氐 (đáy, có nét chấm dưới chân): người ở sát đáy — ĐÊ là thấp.",
+      "lookalikes": [
+        {
+          "kanji": "底",
+          "note": "底 (Để: đáy): có mái 广 bao phía trên; 低 có bộ 亻 bên trái."
+        },
+        {
+          "kanji": "紙",
+          "note": "紙 (Chỉ: giấy): bên trái là bộ 糸, bên phải là 氏 (không có chấm dưới); 低 bên trái là 亻, phải là 氐."
+        }
+      ]
     },
     {
       "kanji": "太",
@@ -2841,7 +3623,17 @@
           "meaning": "béo lên"
         }
       ],
-      "tip": "大 thêm một chấm ở dưới: to hơn cả to — THÁI (thái dương). Đừng nhầm với 犬 (chấm ở vai)."
+      "tip": "大 thêm một chấm ở dưới: to hơn cả to — THÁI (thái dương). Đừng nhầm với 犬 (chấm ở vai).",
+      "lookalikes": [
+        {
+          "kanji": "犬",
+          "note": "犬 (Khuyển: con chó): chấm ở trên bên phải; 太 chấm ở dưới, giữa hai chân."
+        },
+        {
+          "kanji": "大",
+          "note": "大 (Đại: lớn): không có chấm; 太 có chấm giữa hai chân."
+        }
+      ]
     },
     {
       "kanji": "重",
@@ -2862,7 +3654,13 @@
           "meaning": "cân nặng"
         }
       ],
-      "tip": "Trông như 千 đặt trên 里: nghìn dặm hàng hóa chất lên một chỗ — TRỌNG là nặng (trọng lượng)."
+      "tip": "Trông như 千 đặt trên 里: nghìn dặm hàng hóa chất lên một chỗ — TRỌNG là nặng (trọng lượng).",
+      "lookalikes": [
+        {
+          "kanji": "動",
+          "note": "動 (Động: chuyển động): có thêm chữ 力 bên phải; 重 không có."
+        }
+      ]
     },
     {
       "kanji": "軽",
@@ -2878,7 +3676,17 @@
           "meaning": "nhẹ"
         }
       ],
-      "tip": "Bộ xa 車 (xe) + phần phải là 又 trên 土: chiếc xe nhẹ, một tay đẩy được — KHINH là nhẹ."
+      "tip": "Bộ xa 車 (xe) + phần phải là 又 trên 土: chiếc xe nhẹ, một tay đẩy được — KHINH là nhẹ.",
+      "lookalikes": [
+        {
+          "kanji": "経",
+          "note": "経 (Kinh: trải qua): bên trái là bộ 糸; 軽 bên trái là bộ 車."
+        },
+        {
+          "kanji": "転",
+          "note": "転 (Chuyển: lăn, quay): bên phải là 云; 軽 bên phải là 又 trên 土."
+        }
+      ]
     },
     {
       "kanji": "強",
@@ -2947,7 +3755,13 @@
           "meaning": "tối"
         }
       ],
-      "tip": "日 (mặt trời) + 音 (âm thanh): không thấy mặt trời, chỉ còn nghe tiếng — ÁM là tối (u ám)."
+      "tip": "日 (mặt trời) + 音 (âm thanh): không thấy mặt trời, chỉ còn nghe tiếng — ÁM là tối (u ám).",
+      "lookalikes": [
+        {
+          "kanji": "音",
+          "note": "音 (Âm: âm thanh): không có bộ 日 bên trái; 暗 = 日 + 音."
+        }
+      ]
     },
     {
       "kanji": "明",
@@ -3005,7 +3819,17 @@
           "meaning": "nóng (thời tiết)"
         }
       ],
-      "tip": "日 (mặt trời) đè lên 者 (người): nắng như đổ lên đầu người — THỬ là nóng bức."
+      "tip": "日 (mặt trời) đè lên 者 (người): nắng như đổ lên đầu người — THỬ là nóng bức.",
+      "lookalikes": [
+        {
+          "kanji": "署",
+          "note": "署 (Thự: sở, 警察署): trên là bộ 罒; 暑 trên là chữ 日."
+        },
+        {
+          "kanji": "者",
+          "note": "者 (Giả: người): không có chữ 日 trên đầu; 暑 = 日 + 者."
+        }
+      ]
     },
     {
       "kanji": "好",
@@ -3047,7 +3871,13 @@
           "meaning": "Tết, năm mới (dương lịch)"
         }
       ],
-      "tip": "Nét ngang 一 trên 止 (bàn chân): bàn chân dừng đúng vạch — CHÍNH là đúng đắn. 正月 là Tết năm mới theo dương lịch."
+      "tip": "Nét ngang 一 trên 止 (bàn chân): bàn chân dừng đúng vạch — CHÍNH là đúng đắn. 正月 là Tết năm mới theo dương lịch.",
+      "lookalikes": [
+        {
+          "kanji": "止",
+          "note": "止 (Chỉ: dừng): không có nét ngang dài trên đầu; 正 = 一 + 止."
+        }
+      ]
     },
     {
       "kanji": "不",
@@ -3069,6 +3899,12 @@
         }
       ],
       "tip": "Một nét ngang chặn trên đầu mầm cây đang đâm lên: không mọc lên được — BẤT là không (bất tiện).",
+      "lookalikes": [
+        {
+          "kanji": "下",
+          "note": "下 (Hạ: dưới): không có nét phẩy xiên; 不 có nét phẩy sang trái."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3096,6 +3932,12 @@
         }
       ],
       "tip": "亻 (người) + 更 (đổi): người biết sửa đổi cho thuận tay — TIỆN. べんり (tiện lợi) cũng viết với chữ này.",
+      "lookalikes": [
+        {
+          "kanji": "使",
+          "note": "使 (Sử: dùng): bên phải là 吏 (có chữ 口 bên trong); 便 bên phải là 更 (có chữ 日)."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3127,7 +3969,13 @@
           "meaning": "nhà thờ"
         }
       ],
-      "tip": "Bên trái giống 孝 (đứa trẻ 子 dưới người già), bên phải là 攵 (tay cầm thước): người lớn cầm thước dạy trẻ — GIÁO."
+      "tip": "Bên trái giống 孝 (đứa trẻ 子 dưới người già), bên phải là 攵 (tay cầm thước): người lớn cầm thước dạy trẻ — GIÁO.",
+      "lookalikes": [
+        {
+          "kanji": "数",
+          "note": "数 (Số: con số): bên trái là 米 trên 女; 教 bên trái là 孝 (土, nét phẩy, 子)."
+        }
+      ]
     },
     {
       "kanji": "習",
@@ -3148,7 +3996,17 @@
           "meaning": "học tập"
         }
       ],
-      "tip": "羽 (đôi cánh) trên 白: chim non vỗ cánh tập bay ngày này qua ngày khác — TẬP (luyện tập)."
+      "tip": "羽 (đôi cánh) trên 白: chim non vỗ cánh tập bay ngày này qua ngày khác — TẬP (luyện tập).",
+      "lookalikes": [
+        {
+          "kanji": "翌",
+          "note": "翌 (Dực: hôm sau, 翌日): dưới 羽 là chữ 立; 習 dưới 羽 là chữ 白."
+        },
+        {
+          "kanji": "羽",
+          "note": "羽 (Vũ: lông vũ): không có chữ 白 ở dưới; 習 = 羽 + 白."
+        }
+      ]
     },
     {
       "kanji": "勉",
@@ -3164,7 +4022,13 @@
           "meaning": "học"
         }
       ],
-      "tip": "免 + 力 (sức): dốc hết sức cố gắng — MIỄN (cần miễn). 勉強 là gắng sức học."
+      "tip": "免 + 力 (sức): dốc hết sức cố gắng — MIỄN (cần miễn). 勉強 là gắng sức học.",
+      "lookalikes": [
+        {
+          "kanji": "晩",
+          "note": "晩 (Vãn: buổi tối, 今晩): bộ 日 bên trái, 免 bên phải; 勉 thì 免 bên trái, 力 bên phải."
+        }
+      ]
     },
     {
       "kanji": "研",
@@ -3201,7 +4065,13 @@
           "meaning": "phòng nghiên cứu"
         }
       ],
-      "tip": "Bộ huyệt 穴 (hang) + 九 (chín): chui sâu vào hang đến tận cùng — CỨU (nghiên cứu)."
+      "tip": "Bộ huyệt 穴 (hang) + 九 (chín): chui sâu vào hang đến tận cùng — CỨU (nghiên cứu).",
+      "lookalikes": [
+        {
+          "kanji": "空",
+          "note": "空 (Không: bầu trời): dưới bộ 穴 là chữ 工; 究 dưới là chữ 九."
+        }
+      ]
     },
     {
       "kanji": "試",
@@ -3228,6 +4098,16 @@
         }
       ],
       "tip": "Bộ ngôn 言 (lời) + 式 (khuôn mẫu): dùng câu hỏi để thử xem có đúng khuôn không — THÍ là thi, thử.",
+      "lookalikes": [
+        {
+          "kanji": "式",
+          "note": "式 (Thức: nghi thức, kiểu): không có bộ 言 bên trái; 試 = 言 + 式."
+        },
+        {
+          "kanji": "誡",
+          "note": "誡 (Giới: răn dạy): bên phải là 戒 (trong có 廾 hai sổ); 試 bên phải là 式 (trong có chữ 工)."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3255,6 +4135,20 @@
         }
       ],
       "tip": "Bộ mã 馬 (ngựa) + phần phải: cưỡi thử ngựa trước khi mua — NGHIỆM (thí nghiệm, kinh nghiệm).",
+      "lookalikes": [
+        {
+          "kanji": "険",
+          "note": "険 (Hiểm: nguy hiểm, 危険): bên trái là bộ 阝; 験 bên trái là bộ 馬 (ngựa)."
+        },
+        {
+          "kanji": "検",
+          "note": "検 (Kiểm: kiểm tra): bên trái là bộ 木; 験 bên trái là bộ 馬."
+        },
+        {
+          "kanji": "駅",
+          "note": "駅 (Dịch: nhà ga): cùng bộ 馬 nhưng bên phải là 尺; 験 bên phải là 㑒 (có mái 人)."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -3276,7 +4170,17 @@
           "meaning": "câu hỏi"
         }
       ],
-      "tip": "Hai chữ 斤 (rìu) trên 貝 (tiền): đem đồ quý cầm lấy tiền, phải xem kỹ chất lượng — CHẤT (chất vấn = hỏi)."
+      "tip": "Hai chữ 斤 (rìu) trên 貝 (tiền): đem đồ quý cầm lấy tiền, phải xem kỹ chất lượng — CHẤT (chất vấn = hỏi).",
+      "lookalikes": [
+        {
+          "kanji": "貸",
+          "note": "貸 (Thải: cho mượn): trên chữ 貝 là 代; 質 trên là hai chữ 斤."
+        },
+        {
+          "kanji": "資",
+          "note": "資 (Tư: tư bản): trên chữ 貝 là 次 (hai chấm và 欠); 質 trên là hai chữ 斤."
+        }
+      ]
     },
     {
       "kanji": "問",
@@ -3297,7 +4201,21 @@
           "meaning": "câu hỏi"
         }
       ],
-      "tip": "門 (cổng) + 口 (miệng): đứng ở cổng mở miệng hỏi — VẤN."
+      "tip": "門 (cổng) + 口 (miệng): đứng ở cổng mở miệng hỏi — VẤN.",
+      "lookalikes": [
+        {
+          "kanji": "間",
+          "note": "間 (Gian: khoảng): trong cổng 門 là chữ 日; 問 trong cổng là chữ 口."
+        },
+        {
+          "kanji": "聞",
+          "note": "聞 (Văn: nghe): trong cổng 門 là chữ 耳; 問 trong cổng là chữ 口."
+        },
+        {
+          "kanji": "門",
+          "note": "門 (Môn: cổng): bên trong trống, không có 口; 問 = 門 + 口."
+        }
+      ]
     },
     {
       "kanji": "題",
@@ -3318,7 +4236,17 @@
           "meaning": "đề tài câu chuyện"
         }
       ],
-      "tip": "是 + 頁 (cái đầu): phần đầu của bài là đề mục — ĐỀ."
+      "tip": "是 + 頁 (cái đầu): phần đầu của bài là đề mục — ĐỀ.",
+      "lookalikes": [
+        {
+          "kanji": "頭",
+          "note": "頭 (Đầu: cái đầu): bên trái là 豆; 題 bên trái là 是."
+        },
+        {
+          "kanji": "顔",
+          "note": "顔 (Nhan: khuôn mặt): bên trái là 彦; 題 bên trái là 是."
+        }
+      ]
     },
     {
       "kanji": "答",
@@ -3339,7 +4267,13 @@
           "meaning": "câu trả lời"
         }
       ],
-      "tip": "Bộ trúc ⺮ (thẻ tre) + 合 (khớp): thẻ tre khớp với câu hỏi — ĐÁP là trả lời."
+      "tip": "Bộ trúc ⺮ (thẻ tre) + 合 (khớp): thẻ tre khớp với câu hỏi — ĐÁP là trả lời.",
+      "lookalikes": [
+        {
+          "kanji": "合",
+          "note": "合 (Hợp: hợp lại, vừa khớp): không có bộ ⺮ (tre) trên đầu; 答 = ⺮ + 合."
+        }
+      ]
     },
     {
       "kanji": "文",
@@ -3365,7 +4299,21 @@
           "meaning": "văn học"
         }
       ],
-      "tip": "文 vốn là hình người có hoa văn xăm trên ngực: VĂN là hoa văn, rồi thành chữ, văn chương."
+      "tip": "文 vốn là hình người có hoa văn xăm trên ngực: VĂN là hoa văn, rồi thành chữ, văn chương.",
+      "lookalikes": [
+        {
+          "kanji": "交",
+          "note": "交 (Giao: qua lại): giữa có thêm hai nét như 八 dưới nét ngang; 文 không có."
+        },
+        {
+          "kanji": "父",
+          "note": "父 (Phụ: bố): trên là hai nét tách rời như 八; 文 trên là chấm và nét ngang."
+        },
+        {
+          "kanji": "六",
+          "note": "六 (Lục: sáu): hai nét dưới tách rời, không bắt chéo; 文 hai nét dưới bắt chéo nhau."
+        }
+      ]
     },
     {
       "kanji": "字",
@@ -3391,7 +4339,21 @@
           "meaning": "chữ viết"
         }
       ],
-      "tip": "Bộ miên 宀 (mái nhà) + 子 (đứa trẻ): đứa trẻ ngồi trong nhà học chữ — TỰ."
+      "tip": "Bộ miên 宀 (mái nhà) + 子 (đứa trẻ): đứa trẻ ngồi trong nhà học chữ — TỰ.",
+      "lookalikes": [
+        {
+          "kanji": "学",
+          "note": "学 (Học: học): trên đầu là ba nét nhỏ và mái 冖 (không có chấm); 字 trên là mái 宀 có chấm."
+        },
+        {
+          "kanji": "宇",
+          "note": "宇 (Vũ: vũ trụ): dưới mái 宀 là 于 (hai nét ngang và sổ móc); 字 dưới mái là 子."
+        },
+        {
+          "kanji": "安",
+          "note": "安 (An: rẻ; yên): dưới mái 宀 là chữ 女; 字 dưới mái là chữ 子."
+        }
+      ]
     },
     {
       "kanji": "漢",
@@ -3407,7 +4369,13 @@
           "meaning": "chữ Hán"
         }
       ],
-      "tip": "Bộ thủy 氵 + phần phải: vốn là tên sông Hán, rồi thành tên nhà Hán, chữ Hán — HÁN."
+      "tip": "Bộ thủy 氵 + phần phải: vốn là tên sông Hán, rồi thành tên nhà Hán, chữ Hán — HÁN.",
+      "lookalikes": [
+        {
+          "kanji": "難",
+          "note": "難 (Nan: khó, 難しい): phần bên phải của 漢 chuyển sang bên trái, bên phải thêm 隹; 漢 có bộ 氵 bên trái."
+        }
+      ]
     },
     {
       "kanji": "英",
@@ -3428,7 +4396,13 @@
           "meaning": "hội thoại tiếng Anh"
         }
       ],
-      "tip": "Bộ thảo 艹 + 央 (chính giữa): bông hoa nở ở chính giữa đẹp nhất — ANH (anh hoa); dùng để phiên tên nước Anh."
+      "tip": "Bộ thảo 艹 + 央 (chính giữa): bông hoa nở ở chính giữa đẹp nhất — ANH (anh hoa); dùng để phiên tên nước Anh.",
+      "lookalikes": [
+        {
+          "kanji": "映",
+          "note": "映 (Ánh: chiếu): bên trái là bộ 日, không có 艹; 英 có bộ 艹 trên chữ 央."
+        }
+      ]
     },
     {
       "kanji": "記",
@@ -3450,6 +4424,16 @@
         }
       ],
       "tip": "Bộ ngôn 言 (lời) + 己 (bản thân): tự ghi lại lời của mình — KÝ (nhật ký).",
+      "lookalikes": [
+        {
+          "kanji": "紀",
+          "note": "紀 (Kỷ: thế kỷ, 世紀): bên trái là bộ 糸; 記 bên trái là bộ 言."
+        },
+        {
+          "kanji": "起",
+          "note": "起 (Khởi: dậy): bộ 走 bao bên trái và phía dưới; 記 bên trái là bộ 言."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -3477,6 +4461,16 @@
         }
       ],
       "tip": "Bộ ngôn 言 + 兑 (người há miệng, trên có hai chấm): dùng lời giảng giải cho người khác hiểu — THUYẾT.",
+      "lookalikes": [
+        {
+          "kanji": "税",
+          "note": "税 (Thuế: thuế): bên trái là bộ 禾; 説 bên trái là bộ 言."
+        },
+        {
+          "kanji": "読",
+          "note": "読 (Độc: đọc): bên phải là 売; 説 bên phải là 兑 (hai chấm, 口, 儿)."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -3534,7 +4528,17 @@
           "meaning": "phát âm"
         }
       ],
-      "tip": "立 (đứng) trên 日: sáng sớm đứng dậy nghe tiếng chim hót — ÂM là âm thanh."
+      "tip": "立 (đứng) trên 日: sáng sớm đứng dậy nghe tiếng chim hót — ÂM là âm thanh.",
+      "lookalikes": [
+        {
+          "kanji": "意",
+          "note": "意 (Ý: ý nghĩ): dưới chữ 音 có thêm chữ 心; 音 không có."
+        },
+        {
+          "kanji": "言",
+          "note": "言 (Ngôn: lời): trên là chấm và ba nét ngang, dưới là 口; 音 trên là 立, dưới là 日."
+        }
+      ]
     },
     {
       "kanji": "楽",
@@ -3561,6 +4565,12 @@
         }
       ],
       "tip": "白 ở giữa, hai bên có nét chấm, dưới là 木: cái trống gỗ treo trên giá — NHẠC; có nhạc thì vui — LẠC.",
+      "lookalikes": [
+        {
+          "kanji": "薬",
+          "note": "薬 (Dược: thuốc): có thêm bộ 艹 (cỏ) trên đầu; 楽 không có."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3587,7 +4597,13 @@
           "meaning": "rạp chiếu phim"
         }
       ],
-      "tip": "日 (mặt trời) + 央 (chính giữa): ánh nắng chiếu thẳng vào giữa — ÁNH (phản ánh). 映画 là phim chiếu."
+      "tip": "日 (mặt trời) + 央 (chính giữa): ánh nắng chiếu thẳng vào giữa — ÁNH (phản ánh). 映画 là phim chiếu.",
+      "lookalikes": [
+        {
+          "kanji": "英",
+          "note": "英 (Anh: tinh hoa; nước Anh): có bộ 艹 trên chữ 央, không có bộ 日; 映 có 日 bên trái."
+        }
+      ]
     },
     {
       "kanji": "画",
@@ -3614,6 +4630,12 @@
         }
       ],
       "tip": "Nét ngang 一 trên, 田 (ruộng) nằm trong khung 凵: vẽ ranh giới ruộng — HỌA là vẽ.",
+      "lookalikes": [
+        {
+          "kanji": "書",
+          "note": "書 (Thư: viết): trên là 聿 (sổ xuyên qua nhiều ngang), dưới là 日; 画 là nét ngang trên cùng và chữ 田 trong khung 凵."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3672,7 +4694,17 @@
           "meaning": "trắng tinh"
         }
       ],
-      "tip": "十 trên 目 (mắt), dưới là 一 và 八: mở to mắt nhìn cho rõ sự thật — CHÂN (chân thật)."
+      "tip": "十 trên 目 (mắt), dưới là 一 và 八: mở to mắt nhìn cho rõ sự thật — CHÂN (chân thật).",
+      "lookalikes": [
+        {
+          "kanji": "直",
+          "note": "直 (Trực: thẳng; sửa, 直す): nét gập chữ L ôm bên trái và đáy chữ 目, không có 八; 真 dưới 目 là nét ngang và 八."
+        },
+        {
+          "kanji": "具",
+          "note": "具 (Cụ: dụng cụ): không có chữ 十 trên đầu; 真 có 十 trên chữ 目."
+        }
+      ]
     },
     {
       "kanji": "意",
@@ -3698,7 +4730,13 @@
           "meaning": "chuẩn bị"
         }
       ],
-      "tip": "音 (âm thanh) đặt trên 心 (lòng): tiếng nói từ trong lòng — Ý là ý nghĩ."
+      "tip": "音 (âm thanh) đặt trên 心 (lòng): tiếng nói từ trong lòng — Ý là ý nghĩ.",
+      "lookalikes": [
+        {
+          "kanji": "音",
+          "note": "音 (Âm: âm thanh): không có chữ 心 ở dưới; 意 = 音 + 心."
+        }
+      ]
     },
     {
       "kanji": "思",
@@ -3719,7 +4757,17 @@
           "meaning": "nhớ ra"
         }
       ],
-      "tip": "田 (giống cái đầu nhìn từ trên) đặt trên 心 (lòng): đầu óc và trái tim cùng làm việc — TƯ là suy nghĩ."
+      "tip": "田 (giống cái đầu nhìn từ trên) đặt trên 心 (lòng): đầu óc và trái tim cùng làm việc — TƯ là suy nghĩ.",
+      "lookalikes": [
+        {
+          "kanji": "男",
+          "note": "男 (Nam: con trai): dưới chữ 田 là 力; 思 dưới 田 là 心."
+        },
+        {
+          "kanji": "恩",
+          "note": "恩 (Ân: ơn): trên chữ 心 là 因 (khung có 大); 思 trên là 田."
+        }
+      ]
     },
     {
       "kanji": "考",
@@ -3740,7 +4788,21 @@
           "meaning": "ý nghĩ"
         }
       ],
-      "tip": "耂 (người già) + 丂 (cây gậy cong): ông lão chống gậy ngẫm nghĩ — KHẢO (tham khảo)."
+      "tip": "耂 (người già) + 丂 (cây gậy cong): ông lão chống gậy ngẫm nghĩ — KHẢO (tham khảo).",
+      "lookalikes": [
+        {
+          "kanji": "老",
+          "note": "老 (Lão: già): dưới phần 耂 là chữ 匕; 考 dưới là nét gập như số 5 (丂)."
+        },
+        {
+          "kanji": "者",
+          "note": "者 (Giả: người): dưới phần 耂 là chữ 日; 考 dưới là 丂."
+        },
+        {
+          "kanji": "孝",
+          "note": "孝 (Hiếu: hiếu thảo): dưới phần 耂 là chữ 子; 考 dưới là 丂."
+        }
+      ]
     },
     {
       "kanji": "知",
@@ -3761,7 +4823,17 @@
           "meaning": "thông báo"
         }
       ],
-      "tip": "矢 (mũi tên) + 口 (miệng): lời nói trúng như mũi tên, người hiểu biết — TRI là biết."
+      "tip": "矢 (mũi tên) + 口 (miệng): lời nói trúng như mũi tên, người hiểu biết — TRI là biết.",
+      "lookalikes": [
+        {
+          "kanji": "和",
+          "note": "和 (Hòa: hòa, 和食): bên trái là 禾 (có nét phẩy trên đầu); 知 bên trái là 矢 (mũi tên)."
+        },
+        {
+          "kanji": "短",
+          "note": "短 (Đoản: ngắn): bên phải là 豆; 知 bên phải là 口."
+        }
+      ]
     },
     {
       "kanji": "注",
@@ -3777,7 +4849,17 @@
           "meaning": "chú ý"
         }
       ],
-      "tip": "Bộ thủy 氵 + 主 (chính): rót nước dồn vào một điểm chính — CHÚ (chú ý)."
+      "tip": "Bộ thủy 氵 + 主 (chính): rót nước dồn vào một điểm chính — CHÚ (chú ý).",
+      "lookalikes": [
+        {
+          "kanji": "住",
+          "note": "住 (Trú: ở): bên trái là bộ 亻; 注 bên trái là bộ 氵."
+        },
+        {
+          "kanji": "洋",
+          "note": "洋 (Dương: đại dương): bên phải là 羊; 注 bên phải là 主."
+        }
+      ]
     },
     {
       "kanji": "計",
@@ -3804,6 +4886,16 @@
         }
       ],
       "tip": "Bộ ngôn 言 (lời) + 十 (mười): vừa nói vừa đếm đến mười — KẾ là tính toán (kế hoạch).",
+      "lookalikes": [
+        {
+          "kanji": "訂",
+          "note": "訂 (Đính: đính chính): bên phải là 丁 (sổ có móc); 計 bên phải là 十 (sổ thẳng, không móc)."
+        },
+        {
+          "kanji": "針",
+          "note": "針 (Châm: cái kim): bên trái là bộ 金; 計 bên trái là bộ 言."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3836,6 +4928,16 @@
         }
       ],
       "tip": "Cái nắp 亼 đậy khít lên cái miệng hũ 口: HỢP là khớp vào nhau.",
+      "lookalikes": [
+        {
+          "kanji": "会",
+          "note": "会 (Hội: gặp): dưới mái 人 là 二 và ム; 合 dưới là một ngang và chữ 口."
+        },
+        {
+          "kanji": "今",
+          "note": "今 (Kim: bây giờ): dưới mái 人 là nét gập hở; 合 dưới là chữ 口 khép kín."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3858,6 +4960,12 @@
         }
       ],
       "tip": "厂 (vách) + 又 (bàn tay): bàn tay đẩy ngược vào vách — PHẢN là ngược lại.",
+      "lookalikes": [
+        {
+          "kanji": "友",
+          "note": "友 (Hữu: bạn): nét phẩy vắt chéo qua nét ngang; 反 nét phẩy dài bắt đầu từ đầu nét trên, không vắt qua."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3880,6 +4988,12 @@
         }
       ],
       "tip": "文 + 寸 (bàn tay): hai bên đưa tay ra đối nhau — ĐỐI (đối diện).",
+      "lookalikes": [
+        {
+          "kanji": "村",
+          "note": "村 (Thôn: làng): bên trái là bộ 木; 対 bên trái là chữ 文."
+        }
+      ],
       "paper": [
         {
           "year": 2018,
@@ -3906,7 +5020,13 @@
           "meaning": "đồng thời"
         }
       ],
-      "tip": "Khung 冂 bao lấy 一 và 口: mọi miệng cùng nói một lời trong một khung — ĐỒNG là giống nhau."
+      "tip": "Khung 冂 bao lấy 一 và 口: mọi miệng cùng nói một lời trong một khung — ĐỒNG là giống nhau.",
+      "lookalikes": [
+        {
+          "kanji": "向",
+          "note": "向 (Hướng: hướng về, 向こう): có nét phẩy nhỏ trên đầu, trong khung chỉ có 口; 同 trong khung có nét ngang trên 口."
+        }
+      ]
     },
     {
       "kanji": "別",
@@ -3948,7 +5068,21 @@
           "meaning": "đặc biệt là"
         }
       ],
-      "tip": "Bộ ngưu 牛 + 寺 (chùa): con bò được chọn riêng dâng lên chùa — ĐẶC là đặc biệt."
+      "tip": "Bộ ngưu 牛 + 寺 (chùa): con bò được chọn riêng dâng lên chùa — ĐẶC là đặc biệt.",
+      "lookalikes": [
+        {
+          "kanji": "持",
+          "note": "持 (Trì: cầm): bên trái là bộ 扌 (tay); 特 bên trái là bộ 牛."
+        },
+        {
+          "kanji": "待",
+          "note": "待 (Đãi: chờ đợi): bên trái là bộ 彳; 特 bên trái là bộ 牛."
+        },
+        {
+          "kanji": "時",
+          "note": "時 (Thời: giờ): bên trái là bộ 日; 特 bên trái là bộ 牛."
+        }
+      ]
     },
     {
       "kanji": "以",
@@ -4007,6 +5141,12 @@
         }
       ],
       "tip": "Nét chấm, nét ngang và cái cán chĩa sang hai bên như chiếc cày: mũi cày chỉ hướng đi — PHƯƠNG là hướng, cách.",
+      "lookalikes": [
+        {
+          "kanji": "万",
+          "note": "万 (Vạn: mười nghìn): không có chấm trên đầu; 方 có chấm."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -4033,7 +5173,21 @@
           "meaning": "cách làm"
         }
       ],
-      "tip": "亻 (người) + 士 (kẻ sĩ): người đi làm việc phục vụ — SĨ. 仕事 là công việc."
+      "tip": "亻 (người) + 士 (kẻ sĩ): người đi làm việc phục vụ — SĨ. 仕事 là công việc.",
+      "lookalikes": [
+        {
+          "kanji": "社",
+          "note": "社 (Xã: công ty): bên trái là bộ 礻, bên phải là 土 (ngang dưới dài); 仕 bên trái là bộ 亻, bên phải là 士 (ngang trên dài)."
+        },
+        {
+          "kanji": "住",
+          "note": "住 (Trú: ở): bên phải là 主 (có chấm trên đầu); 仕 bên phải là 士."
+        },
+        {
+          "kanji": "任",
+          "note": "任 (Nhiệm: giao phó): bên phải là 壬 (có nét phẩy trên đầu); 仕 bên phải là 士."
+        }
+      ]
     },
     {
       "kanji": "事",
@@ -4059,7 +5213,13 @@
           "meaning": "hỏa hoạn"
         }
       ],
-      "tip": "Bàn tay cầm cán bút có nét dọc xuyên suốt từ trên xuống: người làm việc — SỰ là việc (sự việc)."
+      "tip": "Bàn tay cầm cán bút có nét dọc xuyên suốt từ trên xuống: người làm việc — SỰ là việc (sự việc).",
+      "lookalikes": [
+        {
+          "kanji": "書",
+          "note": "書 (Thư: viết): sổ dọc dừng lại, phía dưới là chữ 日; 事 sổ xuyên suốt xuống dưới và có móc."
+        }
+      ]
     },
     {
       "kanji": "働",
@@ -4075,7 +5235,13 @@
           "meaning": "làm việc"
         }
       ],
-      "tip": "亻 (người) + 動 (chuyển động): người động tay chân làm việc. Đây là chữ do người Nhật tạo, đọc theo âm ĐỘNG."
+      "tip": "亻 (người) + 動 (chuyển động): người động tay chân làm việc. Đây là chữ do người Nhật tạo, đọc theo âm ĐỘNG.",
+      "lookalikes": [
+        {
+          "kanji": "動",
+          "note": "動 (Động: chuyển động): không có bộ 亻 bên trái; 働 = 亻 + 動."
+        }
+      ]
     },
     {
       "kanji": "員",
@@ -4097,6 +5263,16 @@
         }
       ],
       "tip": "口 (miệng) đặt trên 貝 (tiền): mỗi miệng ăn được trả tiền là một thành viên — VIÊN (nhân viên).",
+      "lookalikes": [
+        {
+          "kanji": "買",
+          "note": "買 (Mãi: mua): trên chữ 貝 là bộ 罒; 員 trên 貝 là chữ 口."
+        },
+        {
+          "kanji": "貝",
+          "note": "貝 (Bối: vỏ sò): không có chữ 口 trên đầu; 員 = 口 + 貝."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -4123,7 +5299,17 @@
           "meaning": "công trình"
         }
       ],
-      "tip": "工 là hình cây thước thợ: CÔNG là thợ, công việc (công nghiệp)."
+      "tip": "工 là hình cây thước thợ: CÔNG là thợ, công việc (công nghiệp).",
+      "lookalikes": [
+        {
+          "kanji": "土",
+          "note": "土 (Thổ: đất): nét sổ xuyên lên trên nét ngang trên; 工 sổ chỉ nối hai nét ngang."
+        },
+        {
+          "kanji": "王",
+          "note": "王 (Vương: vua): có ba nét ngang; 工 chỉ có hai."
+        }
+      ]
     },
     {
       "kanji": "業",
@@ -4192,6 +5378,12 @@
         }
       ],
       "tip": "Bộ mịch 糸 (sợi) + 圣 (又 trên 土): sợi dọc căng trên khung cửi — KINH (kinh tuyến), nghĩa trải qua (kinh nghiệm).",
+      "lookalikes": [
+        {
+          "kanji": "軽",
+          "note": "軽 (Khinh: nhẹ): bên trái là bộ 車; 経 bên trái là bộ 糸."
+        }
+      ],
       "paper": [
         {
           "year": 2012,
@@ -4218,7 +5410,13 @@
           "meaning": "phát âm"
         }
       ],
-      "tip": "Trên là 癶 (hai bàn chân dang ra), dưới giống 开: đôi chân bước ra khỏi cổng — PHÁT (xuất phát)."
+      "tip": "Trên là 癶 (hai bàn chân dang ra), dưới giống 开: đôi chân bước ra khỏi cổng — PHÁT (xuất phát).",
+      "lookalikes": [
+        {
+          "kanji": "登",
+          "note": "登 (Đăng: leo, 登る): dưới bộ 癶 là chữ 豆; 発 dưới 癶 là hai nét ngang và hai chân (ノ và 乚)."
+        }
+      ]
     },
     {
       "kanji": "建",
@@ -4239,7 +5437,13 @@
           "meaning": "tòa nhà"
         }
       ],
-      "tip": "Bộ dẫn 廴 (bước dài) + 聿 (tay cầm bút): cầm bút vẽ rồi dựng nhà lên — KIẾN (kiến trúc)."
+      "tip": "Bộ dẫn 廴 (bước dài) + 聿 (tay cầm bút): cầm bút vẽ rồi dựng nhà lên — KIẾN (kiến trúc).",
+      "lookalikes": [
+        {
+          "kanji": "健",
+          "note": "健 (Kiện: khỏe, 健康): có thêm bộ 亻 bên trái; 建 không có."
+        }
+      ]
     },
     {
       "kanji": "用",
@@ -4260,7 +5464,17 @@
           "meaning": "chuẩn bị"
         }
       ],
-      "tip": "用 trông như cái thùng gỗ có đai: đồ để dùng — DỤNG (sử dụng)."
+      "tip": "用 trông như cái thùng gỗ có đai: đồ để dùng — DỤNG (sử dụng).",
+      "lookalikes": [
+        {
+          "kanji": "円",
+          "note": "円 (Viên: yên): chỉ có một nét ngang, sổ giữa ngắn dừng ở nét ngang; 用 có hai ngang và sổ giữa kéo xuống tận chân."
+        },
+        {
+          "kanji": "月",
+          "note": "月 (Nguyệt: tháng): không có nét sổ ở giữa; 用 có sổ giữa kéo xuống tận chân."
+        }
+      ]
     },
     {
       "kanji": "有",
@@ -4281,7 +5495,13 @@
           "meaning": "mất phí, có thu phí"
         }
       ],
-      "tip": "ナ (bàn tay) cầm 月 (miếng thịt): tay cầm thịt là có — HỮU (sở hữu). 有名 là có tên tuổi."
+      "tip": "ナ (bàn tay) cầm 月 (miếng thịt): tay cầm thịt là có — HỮU (sở hữu). 有名 là có tên tuổi.",
+      "lookalikes": [
+        {
+          "kanji": "右",
+          "note": "右 (Hữu: bên phải): bên dưới là chữ 口; 有 bên dưới là chữ 月."
+        }
+      ]
     }
   ]
 }

@@ -46,7 +46,9 @@ export default async function JlptKanjiPage({ params }: JlptKanjiPageProps) {
             {data.items.length} chữ chia thành {data.groups.length} nhóm. Người Việt có lợi thế âm
             Hán Việt: nhớ âm Hán Việt là đoán được nghĩa, và nhiều chữ có âm On gần với âm Hán Việt
             (<span lang="ja">学</span> HỌC → <span lang="ja">がく</span>, <span lang="ja">国</span>{" "}
-            QUỐC → <span lang="ja">こく</span>). Học từng nhóm, đọc mẹo nhớ, rồi bấm Luyện nhóm này.
+            QUỐC → <span lang="ja">こく</span>):{" "}
+            <Link href="/jlpt-kanji/han-viet">xem quy luật đoán âm On từ âm Hán Việt</Link>. Học
+            từng nhóm, đọc mẹo nhớ, rồi bấm Luyện nhóm này.
           </p>
         </div>
         <Link href={`/jlpt-kanji/${level}/practice`} className={buttonVariants()}>
