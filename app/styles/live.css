@@ -1,0 +1,386 @@
+/* Live class quiz: the round over the shared slides (.live-host) and a learner's phone
+   (.live-player). Option colours tell A–D apart besides their letters. */
+
+.live-host {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow: auto;
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+}
+.live-host-card {
+  display: grid;
+  gap: 20px;
+  width: min(100%, 1120px);
+  padding: 24px 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.live-host-header,
+.live-player-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.live-host-header h2,
+.live-player-head h1 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--muted);
+}
+.live-host-header .button {
+  margin-left: auto;
+}
+.live-progress {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.live-setup {
+  display: grid;
+  gap: 16px;
+  font-size: 18px;
+}
+.live-setup p {
+  margin: 0;
+}
+.live-setup fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.live-setup legend {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.live-choice-row,
+.live-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.live-actions {
+  justify-content: flex-end;
+}
+.live-actions > span {
+  margin-right: auto;
+  font-size: 20px;
+}
+.live-lobby {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.live-lobby .slide-qr-code {
+  width: min(48dvh, 380px, 100%);
+}
+.live-lobby-text {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+.live-lobby-text p {
+  margin: 0;
+}
+.live-big {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.live-url {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.live-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.live-names li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  font-weight: 600;
+}
+.live-question {
+  display: grid;
+  gap: 16px;
+}
+.live-instruction {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+.live-prompt {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.6;
+}
+.live-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.live-option {
+  --option-colour: var(--live-option-0);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 16px;
+  border: 2px solid var(--option-colour);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 26px;
+  text-align: left;
+}
+.live-option[data-option="1"] {
+  --option-colour: var(--live-option-1);
+}
+.live-option[data-option="2"] {
+  --option-colour: var(--live-option-2);
+}
+.live-option[data-option="3"] {
+  --option-colour: var(--live-option-3);
+}
+.live-option[data-option="4"] {
+  --option-colour: var(--live-option-4);
+}
+.live-option[data-option="5"] {
+  --option-colour: var(--live-option-5);
+}
+.live-option-letter {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--option-colour);
+  color: var(--live-option-ink);
+  font-size: 20px;
+  font-weight: 700;
+}
+.live-option-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.live-option-tag {
+  flex: none;
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--correct);
+}
+.live-option[data-correct="false"] .live-option-tag {
+  color: var(--wrong);
+}
+.live-option-tag + .live-option-count {
+  margin-left: 12px;
+}
+/* Once the answer shows, the other options step back by border and letter only: the text keeps
+   its full contrast. */
+.live-reveal .live-option[data-correct="false"],
+.live-player .live-option[data-correct="false"]:not([data-chosen="true"]) {
+  border-color: var(--border);
+}
+.live-reveal .live-option[data-correct="false"] .live-option-letter,
+.live-player .live-option[data-correct="false"]:not([data-chosen="true"]) .live-option-letter {
+  opacity: 0.45;
+}
+.live-reveal .live-option[data-correct="true"] {
+  border-width: 4px;
+  border-color: var(--correct);
+}
+.live-option-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  min-width: 96px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.live-option-bar {
+  display: block;
+  height: 12px;
+  min-width: 2px;
+  max-width: 64px;
+  border-radius: 6px;
+  background: var(--option-colour);
+}
+.live-reveal-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.live-explain {
+  margin: 0;
+  font-size: 18px;
+}
+.live-standings {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.live-standings li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--background);
+  font-size: 20px;
+}
+.live-standings li[data-rank="1"] {
+  background: var(--primary-soft);
+  font-weight: 700;
+}
+.live-rank {
+  flex: none;
+  width: 32px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.live-standing-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.live-standing-points {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.live-finished {
+  display: grid;
+  gap: 16px;
+}
+.live-countdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.live-countdown[data-urgent="true"] {
+  color: var(--wrong);
+}
+.live-countdown-bar {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--border);
+  overflow: hidden;
+}
+.live-countdown-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.25s linear;
+}
+.live-countdown[data-urgent="true"] .live-countdown-bar > span {
+  background: var(--wrong);
+}
+.live-error {
+  margin: 0;
+  color: var(--wrong);
+}
+
+/* A learner's phone. */
+.live-player {
+  display: grid;
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px 0 32px;
+}
+.live-player .live-prompt {
+  font-size: 22px;
+}
+.live-player .live-big {
+  font-size: 24px;
+}
+.live-player-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.live-player .live-option {
+  min-height: 60px;
+  font-size: 20px;
+}
+button.live-option {
+  cursor: pointer;
+}
+button.live-option:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+button.live-option[aria-pressed="true"] {
+  opacity: 1;
+  background: color-mix(in srgb, var(--option-colour) 14%, var(--surface));
+  border-width: 4px;
+}
+.live-player .live-option[data-correct="true"] {
+  border-color: var(--correct);
+  border-width: 4px;
+}
+.live-player .live-option[data-chosen="true"][data-correct="false"] {
+  border-color: var(--wrong);
+  border-style: dashed;
+}
+.live-player-note {
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--muted);
+}
+.live-result {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--wrong) 12%, var(--surface));
+  font-size: 22px;
+  font-weight: 700;
+}
+.live-result[data-correct="true"] {
+  background: color-mix(in srgb, var(--correct) 14%, var(--surface));
+}
+
+@media (max-width: 760px) {
+  .live-lobby {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .live-lobby .slide-qr-code {
+    margin: 0 auto;
+  }
+  .live-options,
+  .live-reveal-foot {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .live-prompt {
+    font-size: 24px;
+  }
+  .live-option {
+    font-size: 20px;
+  }
+}

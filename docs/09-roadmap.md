@@ -128,7 +128,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 
 | Việc | Giá trị | Công sức |
 |---|---|---|
-| Thi đấu trực tiếp trong lớp | Rất cao, đổi hẳn không khí buổi học | Thấp, Supabase Realtime |
+| Thi đấu trực tiếp trong lớp — **đã làm 18/11/2026** bằng polling thay cho Supabase Realtime ([BD](basic-design/teaching-service.md#thi-đấu-cả-lớp--18112026)) | Rất cao, đổi hẳn không khí buổi học | Thấp |
 | Bổ sung sâu nội dung "người Việt hay nhầm" | Có trường từ giai đoạn 2; tiếp tục biên soạn theo lỗi thực tế | Nội dung |
 | Ghép đôi — **đã làm 11/11/2026**: soạn trên trình soạn tiếng Nhật và câu kiểm tra riêng, làm bài bằng ô chọn (bàn phím, điện thoại), giao lớp và bài hằng ngày ([kiểm chứng](testing/cleanup-2026-11-11.md#câu-ghép-đôi)); trình soạn tiếng Trung **đã làm 12/11/2026** ([DD](detail-design/teaching-service.md#câu-ghép-đôi-trên-trình-soạn-tiếng-trung--12112026)) | Schema/chấm đã định nghĩa từ giai đoạn 3 | Trung bình |
 | Mã QR trên slide — **đã làm 18/11/2026**: bài giao còn hạn, bài học và lời mời vào lớp ([slide](05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026)) | Cao | Rất thấp |
@@ -146,7 +146,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 
 ## Ba thứ nên ưu tiên trong giai đoạn 6
 
-1. **Thi đấu trực tiếp trong lớp** — công sức thấp, thay đổi hẳn không khí buổi học, và cho bạn biết ngay ai chưa hiểu.
+1. **Thi đấu trực tiếp trong lớp** — **đã làm 18/11/2026**; công sức thấp, thay đổi hẳn không khí buổi học, và cho bạn biết ngay ai chưa hiểu.
 2. **Làm sâu mục "người Việt hay nhầm"** — dùng dữ liệu lỗi của lớp để bổ sung nội dung đã có từ giai đoạn 2, không trì hoãn phần giải thích cơ bản tới giai đoạn 6.
 3. **QR cho bài giao** — **đã làm 18/11/2026**: nối slide với assignment đã xuất bản, có kiểm tra quyền lớp. Sổ lỗi đã thuộc giai đoạn 3, không chờ tới đây.
 
@@ -159,7 +159,7 @@ Sau giai đoạn 2, dạy thật một buổi rồi ngồi lại. Nhiều khả 
 - Dependency thực tế lấy package.json/lockfile: nền/classroom/editor/email/listening đã có; OCR/queue/font Trung/TTS web chưa tích hợp. Không xem mọi thư viện được nhắc trong tài liệu là đã cài.
 - Đã có 5 bài mẫu tự biên soạn, chưa giảng viên duyệt; chưa có audio sinh thật hoặc đo hiệu năng 4G/máy chiếu. Mục tiêu thời gian trong 01 là yêu cầu, chưa phải kết quả đo.
 - Chưa xác minh lại giá, free tier, điều khoản hosting/TTS và giấy phép dữ liệu từ nguồn chính thức. Chốt trước khi mở dịch vụ hoặc nhập nguồn bên ngoài.
-- PWA offline, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6. Thi thử đã có thiết kế và chạy từ 09/11/2026.
+- PWA offline, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6. Thi thử đã có thiết kế và chạy từ 09/11/2026; thi đấu cả lớp có thiết kế và chạy local từ 18/11/2026 (đồng bộ bằng polling, chưa dùng Realtime).
 
 Không đánh dấu hoàn thành chỉ vì tài liệu mô tả đã có; mỗi mốc cần bằng chứng từ ứng dụng chạy thật.
 

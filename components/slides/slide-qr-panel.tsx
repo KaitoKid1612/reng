@@ -14,7 +14,7 @@ export interface SlideQrLink extends SlideQrTarget {
 // One path of unit squares: a crisp code at any size, black on white whatever the theme, since
 // phone cameras read dark modules on a light ground best. Low error correction keeps the modules
 // large: a code on a shared screen is blurred by the video call, never scratched.
-function QrCode({ text, label }: { text: string; label: string }) {
+export function QrCode({ text, label }: { text: string; label: string }) {
   const { size, path } = useMemo(() => {
     const { data, size: modules } = encode(text, { ecc: "L", border: 2 });
     const parts: string[] = [];

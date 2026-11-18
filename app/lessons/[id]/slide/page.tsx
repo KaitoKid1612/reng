@@ -6,7 +6,9 @@ import { isDatabaseLessonSource } from "@/lib/lesson-repository";
 import { getCurrentAccount } from "@/lib/server/account";
 import { getLessonProgress } from "@/lib/server/learner";
 import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access";
+import { getLiveQuizSetup } from "@/lib/server/live-quiz";
 import { listSlideQrTargets } from "@/lib/server/slide-qr";
+import { ServiceError } from "@/lib/server/supabase";
 import { absoluteUrl } from "@/lib/site";
 
 import type { Metadata } from "next";
@@ -58,10 +60,14 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
   const isLearner = account?.role === "student";
   const progress = isLearner ? await getLessonProgress(account.id, id) : null;
   // Codes for the class to scan from the shared screen; only the class owner gets any.
-  const qrTargets =
-    classId && account?.role === "teacher"
-      ? await listSlideQrTargets(account.id, classId, id, new Date())
-      : [];
+  const isClassTeacher = Boolean(classId && account?.role === "teacher");
+  const [qrTargets, liveSetup] =
+    classId && account && isClassTeacher
+      ? await Promise.all([
+          listSlideQrTargets(account.id, classId, id, new Date()),
+          loadLiveSetup(account.id, classId, id),
+        ])
+      : [[], null];
   return (
     <SlideDeck
       lesson={lesson}
@@ -69,6 +75,7 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
       classId={classId}
       canPresent={!isLearner}
       qrLinks={qrTargets.map((target) => ({ ...target, url: absoluteUrl(target.path) }))}
+      liveSetup={liveSetup}
       readProgress={
         isLearner
           ? {
@@ -80,4 +87,17 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
       }
     />
   );
+}
+
+// Another teacher's class gives no round; the slides still open as before.
+async function loadLiveSetup(teacherId: string, classId: string, lessonId: string) {
+  try {
+    const setup = await getLiveQuizSetup(teacherId, classId, lessonId);
+    return setup ? { classId, lessonId, ...setup } : null;
+  } catch (error) {
+    if (error instanceof ServiceError && error.code === "not_found") {
+      return null;
+    }
+    throw error;
+  }
 }

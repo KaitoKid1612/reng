@@ -151,6 +151,56 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   await page.context().close();
 });
 
+test("a live round runs from the shared slides to a learner's phone", async ({ browser }) => {
+  const learner = {
+    email: `live-${RUN_ID}@example.test`,
+    password: `live-${RUN_ID}`,
+    name: `Học viên thi ${RUN_ID}`,
+  };
+  await createConfirmedStudent(learner.email, learner.password, learner.name);
+  const phone = await (
+    await browser.newContext({ viewport: { width: 390, height: 844 } })
+  ).newPage();
+  await signIn(phone, learner.email, learner.password);
+  await phone.goto("/join-class");
+  await phone.getByLabel("Mã lớp", { exact: true }).fill(state.code);
+  await phone.getByRole("button", { name: "Vào lớp", exact: true }).click();
+  await phone.waitForURL(`**/classes/${state.classId}`);
+
+  const page = await teacherPage(browser);
+  await page.goto(`/lessons/${state.lesson11}/slide?class=${state.classId}`);
+  await page.getByRole("button", { name: "Thi đấu", exact: true }).click();
+  const host = page.getByRole("region", { name: "Thi đấu cả lớp" });
+  await host.getByRole("button", { name: "5 câu", exact: true }).click();
+  await host.getByRole("button", { name: "30 giây", exact: true }).click();
+  await host.getByRole("button", { name: "Mở phòng thi đấu", exact: true }).click();
+  await expect(host.getByText("Quét mã để vào phòng")).toBeVisible();
+  const joinUrl = (await host.getByText(/\/live\/[0-9a-f-]{36}$/).textContent()) ?? "";
+  const quizPath = joinUrl.slice(joinUrl.indexOf("/live/"));
+
+  await phone.goto(quizPath);
+  await expect(phone.getByText(`Đã vào phòng, ${learner.name}.`)).toBeVisible();
+  await expect(host.getByText("1 học viên đã vào:")).toBeVisible();
+  await host.getByRole("button", { name: "Bắt đầu", exact: true }).click();
+  await expect(host.getByText("Câu 1/5")).toBeVisible();
+  // While the question is open the phone is never sent its key.
+  const open = await phone.evaluate(async (path) => (await fetch(`/api${path}`)).json(), quizPath);
+  expect(open.question.answer).toBeNull();
+  await phone.locator("button.live-option").first().click();
+  await expect(phone.getByText("Đã gửi. Chờ giáo viên hiện đáp án…")).toBeVisible();
+
+  // The only player has answered, so the answer shows by itself on both screens.
+  await expect(host.getByText("✓ Đáp án", { exact: true })).toBeVisible();
+  await expect(phone.getByText(/^(Đúng rồi! \+\d+ điểm|Chưa đúng\.)$/)).toBeVisible();
+  await expect(host.getByRole("list", { name: "Bảng xếp hạng" })).toContainText(learner.name);
+  await host.getByRole("button", { name: "Kết thúc sớm", exact: true }).click();
+  await expect(host.getByText("Kết quả", { exact: true })).toBeVisible();
+  await expect(phone.getByText("Kết thúc!")).toBeVisible();
+  await expect(phone.getByText(/^Bạn hạng 1\/1 với \d+ điểm/)).toBeVisible();
+  await page.context().close();
+  await phone.context().close();
+});
+
 test("a teacher studies in a self-study class, never as a learner of their own class", async ({
   browser,
 }) => {

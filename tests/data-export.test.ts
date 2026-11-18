@@ -2,7 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 import { parseAssignableQuestion } from "../lib/assignment";
-import { canExportResults, exportAttempt, HIDDEN_RESULTS_NOTE } from "../lib/data-export";
+import {
+  canExportResults,
+  exportAttempt,
+  HIDDEN_RESULTS_NOTE,
+  isLiveAnswerShown,
+} from "../lib/data-export";
 
 import type { ExportAttemptInput } from "../lib/data-export";
 
@@ -85,4 +90,11 @@ test("After the feedback time an attempt exports each answer with the right one 
     ),
     false,
   );
+});
+
+test("a live round's answer is exported only once the class has seen it", () => {
+  assert.equal(isLiveAnswerShown("question", 2, 2), false);
+  assert.equal(isLiveAnswerShown("question", 2, 1), true);
+  assert.equal(isLiveAnswerShown("reveal", 2, 2), true);
+  assert.equal(isLiveAnswerShown("finished", 0, 4), true);
 });

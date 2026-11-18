@@ -9,6 +9,7 @@ export const PRIVATE_PATHS = [
   "/mistakes",
   "/progress",
   "/join-class",
+  "/live/",
   "/vocabulary/",
   "/listening/",
   "/kanji/",

@@ -3,7 +3,7 @@ import "server-only";
 import { z } from "zod";
 
 import { parseSnapshotQuestion } from "@/lib/assignment";
-import { canExportResults, exportAttempt } from "@/lib/data-export";
+import { canExportResults, exportAttempt, isLiveAnswerShown } from "@/lib/data-export";
 import {
   createServiceClient,
   selectEveryPage,
@@ -151,6 +151,15 @@ async function loadAnswers(submissionIds: readonly string[]) {
  * rows tied to this person are read; other people appear only by the name already shown to them
  * (their class's teacher, the owner of a lesson shared with them).
  */
+const liveRoundSchema = z.object({
+  id: z.uuid(),
+  class_id: z.uuid(),
+  phase: z.string(),
+  current_index: z.number().int(),
+  questions: z.array(z.object({ prompt: z.string(), options: z.array(z.string()) }).loose()),
+  created_at: z.string(),
+});
+
 export async function buildDataExport(account: Account, now: Date) {
   const userId = account.id;
   const [
@@ -173,6 +182,7 @@ export async function buildDataExport(account: Account, now: Date) {
     ownedLessons,
     ownedClasses,
     actions,
+    liveAnswers,
   ] = await Promise.all([
     readSignIn(userId),
     selectOptional(
@@ -276,6 +286,13 @@ export async function buildDataExport(account: Account, now: Date) {
       "id",
     ]),
     ownRows("audit_events", "action, created_at", "actor_id", userId, ["created_at", "id"]),
+    ownRows(
+      "live_quiz_answers",
+      "quiz_id, question_index, choice, is_correct, points, answered_at",
+      "user_id",
+      userId,
+      ["answered_at", "question_index"],
+    ),
   ]);
 
   const assignments = await rowsIn(
@@ -359,7 +376,24 @@ export async function buildDataExport(account: Account, now: Date) {
     ],
     named,
   );
-  const className = new Map(classes.map((row) => [row.id, row.name]));
+  const liveRounds = await rowsIn(
+    "live_quizzes",
+    "id, class_id, phase, current_index, questions, created_at",
+    "id",
+    [...new Set(liveAnswers.map((row) => String(row.quiz_id)))],
+    liveRoundSchema,
+  );
+  const liveRoundById = new Map(liveRounds.map((row) => [row.id, row]));
+  const liveClasses = await rowsIn(
+    "classes",
+    "id, name",
+    "id",
+    [...new Set(liveRounds.map((row) => row.class_id))],
+    z.object({ id: z.uuid(), name: z.string() }),
+  );
+  const className = new Map(
+    [...liveClasses, ...classes].map((row) => [row.id, row.name] as [string, string]),
+  );
   const teacherOf = new Map(classes.map((row) => [row.id, row.teacher_id]));
   const personName = new Map(people.map((row) => [row.id, row.name]));
   const versionTitle = new Map(versions.map((row) => [row.id, row.title]));
@@ -460,5 +494,25 @@ export async function buildDataExport(account: Account, now: Date) {
       })),
     },
     account_actions: actions,
+    live_quiz_answers: liveAnswers.flatMap((row) => {
+      const round = liveRoundById.get(String(row.quiz_id));
+      const index = Number(row.question_index);
+      // Right or wrong is only told once the teacher has shown the answer to the class.
+      if (!round || !isLiveAnswerShown(round.phase, round.current_index, index)) {
+        return [];
+      }
+      const question = round.questions[index];
+      return [
+        {
+          class: className.get(round.class_id) ?? null,
+          round_started_at: round.created_at,
+          question: question?.prompt ?? null,
+          your_answer: question?.options[Number(row.choice)] ?? null,
+          is_correct: row.is_correct,
+          points: row.points,
+          answered_at: row.answered_at,
+        },
+      ];
+    }),
   };
 }

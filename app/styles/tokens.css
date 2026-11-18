@@ -18,6 +18,14 @@
   --correct: #2e7d53;
   --wrong: #c0392b;
   --attention: #8b571f;
+  /* Live quiz options A–F: colour as well as letter tells them apart on the shared screen. */
+  --live-option-0: #2b4c7e;
+  --live-option-1: #a2551c;
+  --live-option-2: #2e7d53;
+  --live-option-3: #7a3e8f;
+  --live-option-4: #7d6318;
+  --live-option-5: #2f6670;
+  --live-option-ink: #fff;
   --radius: 0.375rem;
   --font-sans: "Be Vietnam Pro", sans-serif;
   --font-jp: "Noto Sans JP", sans-serif;
@@ -45,6 +53,13 @@
   --correct: #83d7a4;
   --wrong: #ff9a91;
   --attention: #e8c47a;
+  --live-option-0: #a8c9f0;
+  --live-option-1: #f2b27c;
+  --live-option-2: #83d7a4;
+  --live-option-3: #d6a8e6;
+  --live-option-4: #e8c47a;
+  --live-option-5: #8fd3de;
+  --live-option-ink: #151a22;
   color-scheme: dark;
 }
 :root[data-theme="light"] {

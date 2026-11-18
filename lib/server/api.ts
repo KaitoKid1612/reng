@@ -20,6 +20,10 @@ const STATUS_BY_CODE: Record<string, number> = {
   too_large: 413,
   conflict: 409,
   not_due: 409,
+  closed: 409,
+  invalid_state: 409,
+  no_questions: 422,
+  lesson_not_in_class: 404,
 };
 
 export function jsonResponse(body: unknown, status = 200) {

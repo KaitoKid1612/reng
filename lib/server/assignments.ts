@@ -315,6 +315,15 @@ async function loadPinnedVersionId(classId: string, lessonId: string) {
   return row;
 }
 
+// Every question of the version pinned for the class, keys included: for server-side use only.
+export async function loadPinnedLessonQuestions(classId: string, lessonId: string) {
+  const pinned = await loadPinnedVersionId(classId, lessonId);
+  return {
+    versionId: pinned.lesson_version_id,
+    questions: await loadVersionQuestions(pinned.lesson_version_id),
+  };
+}
+
 // Practice questions that can be assigned from the version currently pinned for the class.
 export async function listAssignablePracticeQuestions(classId: string, lessonId: string) {
   const pinned = await loadPinnedVersionId(classId, lessonId);

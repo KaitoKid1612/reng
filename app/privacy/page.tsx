@@ -37,7 +37,10 @@ export const metadata: Metadata = {
 
 const SUMMARY: LegalSummaryPoint[] = [
   { Icon: EyeOff, text: "Không bán dữ liệu, không quảng cáo, không dùng công cụ theo dõi." },
-  { Icon: Users, text: "Chỉ giáo viên của lớp bạn học mới xem được kết quả của bạn trong lớp đó." },
+  {
+    Icon: Users,
+    text: "Chỉ giáo viên của lớp bạn học mới xem được bài làm và kết quả của bạn trong lớp đó; riêng khi thi đấu cả lớp, tên và điểm lượt thi hiện trên màn hình chung.",
+  },
   { Icon: Trash2, text: "Học viên tự xóa tài khoản ở trang Tài khoản bất kỳ lúc nào." },
   {
     Icon: Server,
@@ -80,7 +83,7 @@ const SECTIONS: LegalSection[] = [
           <li>
             <strong>Việc học:</strong> lớp đã tham gia, ngày vào và rời lớp, bài đã đánh dấu đọc
             xong, bài làm và câu trả lời (kể cả đề thi thử JLPT), điểm, lịch ôn thẻ từ vựng, sổ lỗi,
-            các lần nhập mã lớp (để chặn việc dò mã).
+            các lần nhập mã lớp (để chặn việc dò mã), câu trả lời và điểm khi thi đấu cả lớp.
           </li>
           <li>
             <strong>Việc dạy:</strong> bài học, slide và câu hỏi giáo viên soạn; lớp, lịch học, link
@@ -148,7 +151,11 @@ const SECTIONS: LegalSection[] = [
             danh của bạn trong lớp đó. Giáo viên khác không xem được.
           </li>
           <li>
-            <strong>Học viên khác cùng lớp:</strong> không xem được email hay kết quả của bạn.
+            <strong>Học viên khác cùng lớp:</strong> không xem được email hay kết quả bài làm của
+            bạn. Khi giáo viên mở <em>thi đấu cả lớp</em> trong buổi học, tên hiển thị của những
+            người đã vào phòng, số bạn chọn mỗi phương án, và tên cùng điểm của những bạn dẫn đầu
+            hiện trên màn hình giáo viên chia sẻ cho cả lớp; điện thoại của mỗi người chỉ cho biết
+            câu trả lời, điểm và hạng của chính mình.
           </li>
           <li>
             <strong>Quản trị viên nền tảng:</strong> số liệu tổng hợp và thông tin tài khoản giáo

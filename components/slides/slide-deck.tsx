@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
+import { LiveQuizHost } from "@/components/live/live-quiz-host";
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
 import { SlideQrPanel } from "@/components/slides/slide-qr-panel";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import { sessionLogPath, slidePresenterPath } from "@/lib/class-sessions";
 import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { RevealApi } from "reveal.js";
+import type { LiveQuizSetup } from "@/components/live/live-quiz-host";
 import type { SlideQrLink } from "@/components/slides/slide-qr-panel";
 import type { PublicAnyLesson } from "@/lib/teaching-content";
 
@@ -52,6 +54,8 @@ interface SlideDeckProps {
   canPresent?: boolean;
   /** Codes the class owner can show on the shared slides (assignments, the lesson, the invite). */
   qrLinks?: readonly SlideQrLink[];
+  /** A live class quiz on this lesson, for the owner of a running class. */
+  liveSetup?: LiveQuizSetup | null;
   /** A learner's reading progress: the last slide offers to mark the lesson as read. */
   readProgress?: {
     completedAt: string | null;
@@ -66,6 +70,7 @@ export function SlideDeck({
   classId,
   canPresent = false,
   qrLinks = [],
+  liveSetup = null,
   readProgress,
 }: SlideDeckProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -74,6 +79,8 @@ export function SlideDeck({
   const [notice, setNotice] = useState("");
   const [isReady, setIsReady] = useState(false);
   const [isQrOpen, setIsQrOpen] = useState(false);
+  // An open round comes back up when the slides are reloaded mid-game.
+  const [isLiveOpen, setIsLiveOpen] = useState(Boolean(liveSetup?.openQuizId));
   const hasQr = qrLinks.length > 0;
   const base = `/lessons/${lesson.lessonId}`;
   // The presenter keeps the class so its link back to the slides keeps "Ghi buổi dạy".
@@ -254,6 +261,14 @@ export function SlideDeck({
   }, [classQuery, hasQr, lesson, printMode, readProgress, slideIds]);
 
   const closeQr = useCallback(() => setIsQrOpen(false), []);
+  const closeLive = useCallback(() => setIsLiveOpen(false), []);
+
+  // Arrow keys and the space bar belong to the round while it covers the slides.
+  useEffect(() => {
+    if (isReady) {
+      deckRef.current?.configure({ keyboard: !isLiveOpen });
+    }
+  }, [isLiveOpen, isReady]);
 
   function handlePresenter() {
     deckRef.current?.triggerKey(83);
@@ -316,6 +331,18 @@ export function SlideDeck({
               Presenter
             </Button>
           )}
+          {liveSetup && (
+            <Button
+              variant="ghost"
+              aria-pressed={isLiveOpen}
+              onClick={() => {
+                setIsQrOpen(false);
+                setIsLiveOpen((isOpen) => !isOpen);
+              }}
+            >
+              Thi đấu
+            </Button>
+          )}
           {hasQr && (
             <Button
               variant="ghost"
@@ -358,6 +385,7 @@ export function SlideDeck({
           </div>
         </div>
         {isQrOpen && hasQr && <SlideQrPanel links={qrLinks} onClose={closeQr} />}
+        {isLiveOpen && liveSetup && <LiveQuizHost setup={liveSetup} onClose={closeLive} />}
       </div>
       {notice && (
         <p role="status" className="slide-notice">

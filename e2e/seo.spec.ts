@@ -38,7 +38,7 @@ test("the privacy policy and terms are linked from every page and name who to co
     await page.reload();
     await expect(page.getByRole("heading", { level: 1, name: heading })).toBeVisible();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `${ORIGIN}${path}`);
-    await expect(page.getByText("Có hiệu lực từ 12/11/2026.")).toBeVisible();
+    await expect(page.getByText("Có hiệu lực từ 18/11/2026.")).toBeVisible();
     await expect(page.getByText(/do Beto vận hành/)).toBeVisible();
     await expect(page.getByRole("link", { name: "leviet1612@gmail.com" }).first()).toHaveAttribute(
       "href",

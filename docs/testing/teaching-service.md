@@ -129,6 +129,16 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Thi đấu cả lớp — 18/11/2026
+
+Thiết kế ở [BD](../basic-design/teaching-service.md#thi-đấu-cả-lớp--18112026). Môi trường: Supabase local (Podman) đã áp `20261118040000_live_quizzes.sql`, `next dev` ở 127.0.0.1:3017, Chromium headless qua Playwright; giáo viên teacher@reng.local trình chiếu ở 1280px, hai học viên thử (tạo bằng admin API local) trên điện thoại 390px.
+
+- **Luồng đủ:** mở phòng 5 câu × 10 giây trên bài có 26 câu dùng được → hai học viên quét link vào phòng, tên hiện trên màn hình chung → tải lại trang slide thì phòng tự mở lại đúng chỗ → Bắt đầu → điện thoại không nhận đáp án khi câu đang mở (`question.answer` null) → hai người trả lời, đáp án tự hiện ngay; số người chọn mỗi phương án [1, 1, 0, 0], An đúng +870 điểm, Bình "Chưa đúng." → câu 2 chỉ An trả lời, đáp án tự hiện sau 9–10 giây, Bình thấy "Bạn chưa trả lời câu này." → Kết thúc sớm: bảng xếp hạng và "Bạn hạng 1/2 với 870 điểm (1/5 câu đúng)". Người ngoài lớp mở link thấy "Không vào được phòng này…".
+- **Bàn phím:** khi khung thi đấu mở, phím mũi tên không đổi slide phía sau.
+- **Giao diện:** 1280/1440/1920px và 390px không cuộn ngang. axe trên khung giáo viên và trang điện thoại ở mọi bước (chọn, phòng chờ, câu hỏi, đáp án, kết quả): 0 lỗi, kể cả trang điện thoại ở giao diện tối. Lần đầu axe báo thiếu tương phản ở phương án bị làm mờ khi hiện đáp án; đã đổi sang lùi bằng viền và chữ cái, thêm nhãn "✓ Đáp án" / "Bạn chọn" để không chỉ dựa vào màu. Không có lỗi console.
+- **Test:** `tests/live-quiz.test.ts` (lọc câu, rút câu theo khúc, xếp hạng có đồng hạng, đếm lựa chọn), `tests/live-quiz-migration.test.ts` trên PGlite (không cấp quyền cho anon/authenticated, chủ lớp khác bị từ chối, lượt mới kết thúc lượt cũ, người ngoài và chủ lớp không vào phòng, không trả lời ở phòng chờ, revision cũ bị từ chối, điểm câu trả lời nhanh 900–1000, lần bấm thứ hai trả lại đáp án đầu, quá giờ cộng 1 giây thì đóng, next sau câu cuối kết thúc, lớp tự học không mở được), `tests/data-export.test.ts` (đáp án thi đấu chỉ vào file khi đã hiện). `npm run check` 426/426. E2E `e2e-supabase/teach-and-learn.spec.ts` thêm kịch bản giáo viên mở phòng, học viên vào bằng link, trả lời, đáp án tự hiện, kết thúc: spec 5/5 đạt.
+- **Production:** chưa áp migration; code chờ ở `refs/held/live-quiz` cho tới khi người dùng chạy `npx supabase db push --linked`.
+
 ## Mã QR trên slide — 18/11/2026
 
 Thiết kế ở [slide engine](../05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026). Môi trường: Supabase local (Podman), `next dev` ở 127.0.0.1:3017, Chromium headless qua Playwright, tài khoản thử teacher@reng.local.

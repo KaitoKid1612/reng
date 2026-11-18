@@ -409,6 +409,21 @@ Người dùng chọn **ẩn danh hóa** thay vì xóa hẳn: thống kê lớp 
 - **Không tự xóa được:** tài khoản giáo viên, quản trị viên và giáo viên đã tạm dừng còn bài học hay lớp; trang Tài khoản của giáo viên giải thích cần liên hệ quản trị viên.
 - Chi tiết: migration `20261110111047_learner_account_deletion.sql` (`anonymize_learner`, cột `profiles.deleted_at`, `class_roster` không trả email của người đã xóa), `lib/server/account-deletion.ts` và action `deleteOwnAccount` (`app/actions/auth.ts`). Nếu bước xóa đăng nhập lỗi sau khi database đã ẩn danh, lần sau người đó đăng nhập `getCurrentAccount` hoàn tất bước này và coi như đã đăng xuất. Kiểm chứng: `tests/learner-account-deletion-migration.test.ts`, `e2e-supabase/account-deletion.spec.ts`.
 
+## Thi đấu cả lớp — 18/11/2026
+
+Mục ưu tiên số 1 của giai đoạn 6: trong buổi học online, giáo viên mở một lượt trắc nghiệm có giờ trên slide đang chia sẻ, học viên của lớp trả lời bằng điện thoại, đúng và nhanh được nhiều điểm hơn. Giáo viên thấy ngay câu nào cả lớp chưa hiểu.
+
+- **Mở lượt:** chỉ khi trình chiếu từ trang lớp (lớp đang hoạt động, không phải lớp tự học) và bài có trong lớp. Nút **Thi đấu** trên thanh trình chiếu mở khung trên slide: chọn 5, 10 hoặc 15 câu và 10, 20 hoặc 30 giây mỗi câu, rồi **Mở phòng thi đấu**. Câu lấy từ phiên bản bài lớp đang ghim: chỉ câu chọn một đáp án không có đoạn văn, hình hay audio, tối đa 6 phương án; mỗi lượt rút ngẫu nhiên một câu ở mỗi khúc của bài, hiện theo thứ tự trong bài. Mỗi lớp chỉ một lượt mở; mở lượt mới thì lượt cũ kết thúc.
+- **Vào phòng:** khung hiện mã QR và link `/live/[id]`; học viên đã đăng nhập và đang ở lớp thì vào phòng (chưa đăng nhập thì đăng nhập rồi quay lại). Tên người đã vào hiện trên màn hình chung. Vào muộn khi lượt đang chạy vẫn được. Người ngoài lớp và chủ lớp không vào được.
+- **Mỗi câu:** màn hình chung hiện đề, phương án A–D (màu và chữ cái), đồng hồ và số người đã trả lời; điện thoại hiện đề, các nút phương án và đồng hồ. Mỗi người trả lời một lần, không đổi được. Đáp án tự hiện khi hết giờ hoặc khi cả phòng đã trả lời; giáo viên cũng có thể bấm **Hiện đáp án**.
+- **Điểm:** đúng được 500 điểm cộng tối đa 500 theo tốc độ (trả lời ngay được gần 1000, sát giờ được gần 500); sai hoặc không trả lời được 0. Database tính giờ bằng đồng hồ của nó, cho thêm 1 giây đường truyền; điện thoại không gửi thời gian.
+- **Khi hiện đáp án:** màn hình chung đánh dấu đáp án, số người chọn mỗi phương án, giải thích và 5 bạn dẫn đầu; điện thoại báo đúng hay sai, điểm câu này, tổng điểm và hạng. **Câu tiếp**, **Kết thúc sớm**; sau câu cuối là **Xem kết quả** với 10 bạn dẫn đầu, điện thoại hiện hạng của mình và ba bạn đầu.
+- **Bảo mật:** đáp án không rời server trước khi hiện. Học viên chỉ thấy câu trả lời, điểm và hạng của mình; tên và điểm của người dẫn đầu chỉ hiện trên màn hình giáo viên chia sẻ. [Chính sách quyền riêng tư](../../app/privacy/page.tsx) ghi điều này từ 18/11/2026.
+- **Ngoài phạm vi:** câu điền, sắp xếp, nghe; lượt không qua trang lớp; lưu lịch sử thi đấu vào báo cáo lớp. Đáp án được lưu như dữ liệu học tập khác, có trong **Tải dữ liệu của tôi** khi đã hiện; xóa tài khoản thì đáp án ở lại, tên thành "Học viên đã xóa".
+- **Đồng bộ:** Supabase Realtime đang tắt và trình duyệt không đọc thẳng database, nên màn hình chung hỏi server mỗi 1 giây, điện thoại mỗi 1,5 giây. Với lớp vài chục người là đủ nhanh và kiểm chứng được trên Supabase local.
+
+Chi tiết: [DD](../detail-design/teaching-service.md#thi-đấu-cả-lớp--18112026), [kiểm chứng](../testing/teaching-service.md#thi-đấu-cả-lớp--18112026).
+
 ## Ma trận quyền sản phẩm và vòng đời
 
 | Người dùng | Học liệu | Lớp và kết quả |

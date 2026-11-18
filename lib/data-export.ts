@@ -92,3 +92,14 @@ export function exportAttempt(input: ExportAttemptInput, now: Date) {
 export function exportFileName(day: string) {
   return `reng-du-lieu-${day}.json`;
 }
+
+// A live round's answer is in the file once the class has seen it: a finished round, an earlier
+// question, or the current one while its answer is on the screen. Before that the file would tell
+// a player whether they were right ahead of everyone else.
+export function isLiveAnswerShown(phase: string, currentIndex: number, questionIndex: number) {
+  return (
+    phase === "finished" ||
+    questionIndex < currentIndex ||
+    (questionIndex === currentIndex && phase === "reveal")
+  );
+}
