@@ -114,11 +114,11 @@ export function SiteHeader() {
   return (
     <header className="site-header" onKeyDown={handleKeyDown}>
       <div className="header-inner">
-        <Link href="/" className="brand" aria-label="Reng, trang chủ">
+        {/* The name starts with the visible text (WCAG 2.5.3), so voice control finds it. */}
+        <Link href="/" className="brand" aria-label="Reng Dạy và học online, về trang chủ">
           <BrandMark />
           <span>
-            Reng
-            <span className="brand-caption">Dạy và học online</span>
+            Reng <span className="brand-caption">Dạy và học online</span>
           </span>
         </Link>
         {shortcut && (

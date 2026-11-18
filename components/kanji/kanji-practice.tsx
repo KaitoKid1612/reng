@@ -84,6 +84,15 @@ function optionLang(kind: KanjiQuestionKind, lang: CharacterLang, readingLang: s
   return kind === "readingChoice" ? readingLang : "vi";
 }
 
+// After checking, the right option and a wrong pick are marked on the list itself, as in class
+// questions, so look-alike options can be compared side by side.
+function choiceResult(question: KanjiQuestion, answer: string, index: number) {
+  if (index === question.answerIndex) {
+    return "correct";
+  }
+  return answer === String(index) ? "wrong" : undefined;
+}
+
 function describeWord(question: KanjiQuestion) {
   const { word } = question;
   return `${word.written} đọc là ${word.reading}: ${word.meaning}.`;
@@ -311,19 +320,40 @@ export function KanjiPractice({
           <fieldset>
             <legend className="small muted">Chọn một đáp án</legend>
             <div className="choice-list">
-              {question.options.map((option, index) => (
-                <label className="choice-option" key={`${question.id}:${option}`}>
-                  <input
-                    type="radio"
-                    name="kanji-choice"
-                    value={index}
-                    checked={answer === String(index)}
-                    disabled={Boolean(feedback)}
-                    onChange={() => setAnswer(String(index))}
-                  />
-                  <span lang={optionLang(question.kind, lang, settings.readingLang)}>{option}</span>
-                </label>
-              ))}
+              {question.options.map((option, index) => {
+                const result = feedback ? choiceResult(question, answer, index) : undefined;
+                return (
+                  <label
+                    className="choice-option"
+                    key={`${question.id}:${option}`}
+                    data-result={result}
+                  >
+                    <input
+                      type="radio"
+                      name="kanji-choice"
+                      value={index}
+                      checked={answer === String(index)}
+                      disabled={Boolean(feedback)}
+                      onChange={() => setAnswer(String(index))}
+                    />
+                    <span lang={optionLang(question.kind, lang, settings.readingLang)}>
+                      {option}
+                    </span>
+                    {result === "correct" && (
+                      <>
+                        <Check className="choice-mark" size={22} aria-hidden="true" />
+                        <span className="visually-hidden">, đáp án đúng</span>
+                      </>
+                    )}
+                    {result === "wrong" && (
+                      <>
+                        <X className="choice-mark" size={22} aria-hidden="true" />
+                        <span className="visually-hidden">, bạn chọn, chưa đúng</span>
+                      </>
+                    )}
+                  </label>
+                );
+              })}
             </div>
           </fieldset>
         )}

@@ -112,3 +112,26 @@ Trình duyệt (1280, 1440, 1920, 390 px):
   - 一本 → いっほん / いぽん / いほん.
 
 Giới hạn: một bẫy có thể trùng một từ có thật (てんき là 天気). Đề thật cũng dùng kiểu phương án này, nên chấp nhận.
+
+## Kiểm tra giao diện kỹ — 18/11/2026
+
+Playwright chạy thao tác thật, desktop trước rồi điện thoại. Có 6 cấu hình: 1280, 1440, 1920, 1280 nền tối, 390 (cảm ứng), 360 nền tối.
+
+Các bước:
+- Vào từ Tự học, bấm nhóm Cơ thể (tiêu đề nhóm không bị thanh đầu trang che), chuyển sang N4.
+- Mở trang quy luật, bấm một ví dụ để về đúng thẻ chữ.
+- Luyện trọn phiên 40 câu nhóm Số đếm bằng hai dạng đề, xem kết quả, luyện lại câu sai.
+- Ở 1280: luyện trọn dạng gõ cách đọc (N4 Học tập) và dạng hiểu nghĩa (toàn bộ N4); bắt đầu phiên bằng bàn phím.
+
+Mỗi màn hình được kiểm: tràn ngang, nội dung tràn khỏi khung, vùng bấm dưới 24px, axe trên toàn trang, lỗi console.
+
+Sửa sau khi kiểm tra:
+- Logo đầu trang: nhãn cho trình đọc màn hình ("Reng, trang chủ") không chứa chữ đang hiện. Lỗi này có ở mọi trang (axe `label-content-name-mismatch`, WCAG 2.5.3). Nay nhãn là "Reng Dạy và học online, về trang chủ", chữ hiển thị có dấu cách giữa hai dòng.
+- Câu chọn trong trang luyện kanji (cả kanji theo bài): sau khi bấm Kiểm tra, đáp án đúng được tô xanh có ✓, lựa chọn sai tô đỏ có ✗, kèm chữ ẩn cho trình đọc màn hình, giống câu hỏi trong lớp. Nhờ vậy so được các phương án gần giống nhau ngay trên danh sách.
+
+Kết quả sau khi sửa:
+- 0 vấn đề ở cả 6 cấu hình.
+- E2E `jlpt-kanji`, `kanji`, `navigation`, `seo`, `kana` đạt 22/22.
+- `npm run check` đạt 440/440.
+
+Vệt "Đến nội dung chính" thấy trong ảnh chụp cả trang là do cách chụp. Khi kiểm ở trạng thái thật, link nằm ở `top: -100px` và chỉ hiện khi focus bằng bàn phím.

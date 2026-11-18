@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 18/11/2026
 
+- Trang luyện kanji: sau khi bấm Kiểm tra, đáp án đúng được tô xanh (✓) và lựa chọn sai tô đỏ (✗) ngay trên danh sách. Logo đầu trang có nhãn khớp chữ hiển thị cho trình đọc màn hình và điều khiển bằng giọng nói (WCAG 2.5.3). Xem [kiểm tra giao diện](testing/jlpt-kanji-2026-11-18.md#kiểm-tra-giao-diện-kỹ--18112026).
 - **Học kanji dễ hơn:**
   - Trang **Đoán âm On từ âm Hán Việt** có bảng quy luật âm cuối (-c → く/き 29/29, -ng/-nh → trường âm 39/39, -n/-m → ん 68/68…) và phụ âm đầu (đ → hàng た 30/30…), kèm tỉ lệ đúng và mọi ngoại lệ trên 292 chữ.
   - Thẻ chữ có mục **Dễ nhầm với** (236 chữ, 387 cặp, có đủ các cặp đề mẫu từng dùng).
