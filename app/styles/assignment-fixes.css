@@ -5,6 +5,10 @@
 .fix-intro {
   max-width: 760px;
 }
+/* The filter pills start the working area; keep them off the note above. */
+.fix-intro + .filter-pills {
+  margin-top: 16px;
+}
 .filter-pills button {
   display: inline-flex;
   align-items: center;

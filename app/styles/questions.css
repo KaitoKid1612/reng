@@ -289,6 +289,14 @@
   margin-bottom: 8px;
   line-height: 1.6;
 }
+/* Furigana sits above its line, so text with readings needs taller lines or the readings touch
+   the line above (店の 人 under （ケーキ屋で）). Two classes outrank .result-row p. */
+.question-card legend:has(ruby),
+.question-prompt:has(ruby),
+.question-passage:has(ruby),
+.result-row p:has(ruby) {
+  line-height: 2.1;
+}
 .result-row-meta {
   display: flex;
   flex-wrap: wrap;

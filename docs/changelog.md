@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 18/11/2026
 
+- Kiểm tra giao diện toàn site (452 lượt xem trang ở 4 khổ màn hình, E2E 39/39 và 47/47). Đã sửa furigana đè lên dòng trên ở Sổ lỗi, Kết quả bài tập và Chi tiết học viên, và khoảng cách hàng nút lọc ở trang sửa câu bài giao. Xem [báo cáo](testing/site-ui-audit-2026-11-18.md).
 - Trang luyện kanji: sau khi bấm Kiểm tra, đáp án đúng được tô xanh (✓) và lựa chọn sai tô đỏ (✗) ngay trên danh sách. Logo đầu trang có nhãn khớp chữ hiển thị cho trình đọc màn hình và điều khiển bằng giọng nói (WCAG 2.5.3). Xem [kiểm tra giao diện](testing/jlpt-kanji-2026-11-18.md#kiểm-tra-giao-diện-kỹ--18112026).
 - **Học kanji dễ hơn:**
   - Trang **Đoán âm On từ âm Hán Việt** có bảng quy luật âm cuối (-c → く/き 29/29, -ng/-nh → trường âm 39/39, -n/-m → ん 68/68…) và phụ âm đầu (đ → hàng た 30/30…), kèm tỉ lệ đúng và mọi ngoại lệ trên 292 chữ.
