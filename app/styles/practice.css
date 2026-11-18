@@ -343,3 +343,25 @@ progress::-webkit-progress-value {
 .mistake-tiles strong {
   font-size: 19px;
 }
+
+/* Kanji practice prompts in Japanese: one character per writing square (.writing-square), the
+   squares sharing their borders like a manuscript page, in the textbook-style Klee One. */
+.prompt-cells {
+  --prompt-cell: clamp(56px, 16vw, 104px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 1px;
+}
+.prompt-cell {
+  display: grid;
+  place-items: center;
+  width: var(--prompt-cell);
+  height: var(--prompt-cell);
+  margin-left: -1px;
+  margin-top: -1px;
+  border: 1px solid var(--grid);
+  font-family: var(--font-kana);
+  font-size: calc(var(--prompt-cell) * 0.7);
+  line-height: 1;
+}

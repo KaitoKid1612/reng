@@ -69,7 +69,6 @@ export default function HomePage() {
       <div className="home-guest">
         <section className="home-hero">
           <div className="hero-copy">
-            <p className="hero-intro">Dạy và học online trên Reng</p>
             <h1>
               Vào lớp,
               <br />

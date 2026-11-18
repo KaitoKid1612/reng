@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 18/11/2026
 
+- **Giao diện "ô tập viết":** chữ Nhật đem ra để học (thẻ kanji, đề luyện kanji, biểu tượng công cụ Tự học, cùng bảng kana và ba bước trang chủ vốn đã có) nằm trong ô vuông có chữ thập đứt như vở tập viết, viết bằng font nét sách giáo khoa Klee One. Bỏ dòng chữ nhỏ thừa trên tiêu đề trang chủ và trang giáo viên, và hiệu ứng nảy khi rê chuột ở card Tự học. Màu và font giao diện giữ nguyên. Xem [thiết kế](12-ui-design.md#ô-tập-viết--nét-nhận-diện-18112026) và [kiểm tra](testing/site-ui-audit-2026-11-18.md#áp-dụng-ô-tập-viết--18112026).
 - Kiểm tra giao diện toàn site (452 lượt xem trang ở 4 khổ màn hình, E2E 39/39 và 47/47). Đã sửa furigana đè lên dòng trên ở Sổ lỗi, Kết quả bài tập và Chi tiết học viên, và khoảng cách hàng nút lọc ở trang sửa câu bài giao. Xem [báo cáo](testing/site-ui-audit-2026-11-18.md).
 - Trang luyện kanji: sau khi bấm Kiểm tra, đáp án đúng được tô xanh (✓) và lựa chọn sai tô đỏ (✗) ngay trên danh sách. Logo đầu trang có nhãn khớp chữ hiển thị cho trình đọc màn hình và điều khiển bằng giọng nói (WCAG 2.5.3). Xem [kiểm tra giao diện](testing/jlpt-kanji-2026-11-18.md#kiểm-tra-giao-diện-kỹ--18112026).
 - **Học kanji dễ hơn:**

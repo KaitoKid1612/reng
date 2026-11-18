@@ -750,19 +750,19 @@
 .tool-cards .link-card {
   height: 100%;
 }
+/* A tool's character in a writing square (.writing-square), like the kanji cards; Japanese ones
+   in the textbook-style Klee One, Chinese ones keep their simplified/traditional fonts. */
 .tool-glyph {
   display: grid;
   place-items: center;
   width: 64px;
   height: 64px;
   margin-bottom: 8px;
-  border-radius: 14px;
-  background: var(--primary-soft);
+  border: 1px solid var(--grid);
   color: var(--primary);
-  font-size: 34px;
+  font-size: 38px;
   line-height: 1;
-  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.link-card:hover .tool-glyph {
-  transform: scale(1.08) rotate(-4deg);
+.tool-glyph[lang="ja"] {
+  font-family: var(--font-kana);
 }

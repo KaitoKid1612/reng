@@ -84,6 +84,32 @@ function optionLang(kind: KanjiQuestionKind, lang: CharacterLang, readingLang: s
   return kind === "readingChoice" ? readingLang : "vi";
 }
 
+// Japanese is written one character per writing square, like a page of a practice book; the
+// squares are drawn for the eye and the word is read out whole. Pinyin and hanzi keep one line.
+function PromptText({ text, lang }: { text: string; lang: string }) {
+  if (lang !== "ja") {
+    return (
+      <span className="flashcard-front" lang={lang} data-testid="kanji-prompt">
+        {text}
+      </span>
+    );
+  }
+  return (
+    <span className="flashcard-front" lang="ja">
+      <span className="visually-hidden" data-testid="kanji-prompt">
+        {text}
+      </span>
+      <span className="prompt-cells" aria-hidden="true">
+        {[...text].map((character, index) => (
+          <span className="prompt-cell writing-square" key={index}>
+            {character}
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
 // After checking, the right option and a wrong pick are marked on the list itself, as in class
 // questions, so look-alike options can be compared side by side.
 function choiceResult(question: KanjiQuestion, answer: string, index: number) {
@@ -282,19 +308,11 @@ export function KanjiPractice({
       <div className="flashcard">
         {question.kind === "written" ? (
           <>
-            <span
-              className="flashcard-front"
-              lang={settings.readingLang}
-              data-testid="kanji-prompt"
-            >
-              {question.word.reading}
-            </span>
+            <PromptText text={question.word.reading} lang={settings.readingLang} />
             <p>{question.word.meaning}</p>
           </>
         ) : (
-          <span className="flashcard-front" lang={lang} data-testid="kanji-prompt">
-            {question.word.written}
-          </span>
+          <PromptText text={question.word.written} lang={lang} />
         )}
       </div>
       {/* .answer-form stretches every input, so choice questions use the card form instead. */}

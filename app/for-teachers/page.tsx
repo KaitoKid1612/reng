@@ -130,7 +130,6 @@ export default async function ForTeachersPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <section className="landing-hero">
-        <p className="hero-intro">Dành cho giáo viên</p>
         <h1>{TITLE}</h1>
         <p className="hero-description">
           Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua

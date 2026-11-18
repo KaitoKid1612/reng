@@ -25,3 +25,29 @@ Chấp nhận, không sửa:
 - `npm run test:e2e`: 39/39.
 - `npm run test:e2e:supabase`: 47/47 (5,5 phút), gồm đăng ký, vào lớp, giao bài, làm bài, chấm, thi thử JLPT, thi đấu cả lớp, ôn tập, sổ lỗi, nhập từ vựng. Bài nhập từ vựng trước đây hay lỗi chập chờn, lần này đạt.
 - Khu kanji đã được kiểm kỹ riêng bằng thao tác ở 6 cấu hình ([báo cáo](jlpt-kanji-2026-11-18.md#kiểm-tra-giao-diện-kỹ--18112026)).
+
+## Áp dụng "ô tập viết" — 18/11/2026
+
+Phương án ở [thiết kế UI](../12-ui-design.md#ô-tập-viết--nét-nhận-diện-18112026).
+
+Thay đổi:
+- Thẻ kanji, đề luyện kanji (cả trang luyện kanji theo bài) và biểu tượng card Tự học dùng ô tập viết, chữ Nhật trong ô dùng Klee One.
+- `.writing-square` chuyển từ `home.css` sang `components.css`.
+- Bỏ dòng eyebrow ở trang chủ và trang giáo viên.
+- Bỏ hiệu ứng nảy/xoay ở card Tự học.
+
+Ghi chú "dễ nhầm":
+- Một agent vẽ cả 387 cặp bằng Klee One và Noto Sans JP; khoảng 75 chữ đáng ngờ được phóng to.
+- Đã sửa 5 ghi chú:
+  - 今/令: phần dưới của 令 trong Klee One là マ.
+  - 音/言: nét đầu của 言 là chấm hoặc ngang tùy font.
+  - 低/紙 cả hai chiều: phần thêm của 氐 là nét ngang, không phải chấm.
+  - 帰/掃: nét phẩy của 帰 dài.
+- Ba lỗi 低/紙 và 帰 sai cả với Noto Sans JP.
+
+Kiểm tra:
+- `audit:layout` trên trang chủ, trang giáo viên, Tự học, kana, luyện kana, kanji N5/N4, quy luật Hán Việt và luyện kanji, ở 1280, 1440, 1920 và 390 px: 36 lượt xem, 0 lỗi.
+- axe ở nền sáng và nền tối trên trang chủ, trang giáo viên, kana, kanji N5 và trang luyện đang làm câu hỏi: 0 lỗi.
+- Trang Tự học có `label-content-name-mismatch` ở 6 card. Lỗi này có từ trước: card đặt tên bằng tiêu đề, phần mô tả là `aria-describedby`, theo chú thích trong code. Tên vẫn chứa nhãn hiển thị nên đạt WCAG 2.5.3. Giữ nguyên.
+- Đề luyện: `kanji-prompt` vẫn là cả từ (勉強, 研究), mỗi chữ một ô, không tràn ở 390 px.
+- `npm run check`: 440/440. `npm run test:e2e`: 39/39.

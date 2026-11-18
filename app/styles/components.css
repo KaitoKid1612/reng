@@ -351,3 +351,33 @@
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* The writing square: a square with a dashed cross, as in a kanji practice book or a Vietnamese
+   squared notebook. Every Japanese character shown to be studied sits in one (kana practice,
+   kanji cards, practice prompts, self-study tools, the steps on the home page); the size and font
+   come from the place that uses it. */
+.writing-square {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--surface);
+}
+.writing-square::before,
+.writing-square::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
+.writing-square::before {
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  border-top: 1px dashed var(--grid);
+}
+.writing-square::after {
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  border-left: 1px dashed var(--grid);
+}

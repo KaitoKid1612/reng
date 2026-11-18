@@ -1568,7 +1568,7 @@
       "lookalikes": [
         {
           "kanji": "低",
-          "note": "低 (Đê: thấp): bên trái là bộ 亻, bên phải là 氐 (có chấm ở dưới); 紙 bên trái là 糸, bên phải là 氏."
+          "note": "低 (Đê: thấp): bên trái là bộ 亻, bên phải là 氐 (氏 thêm nét ngang ở dưới); 紙 bên trái là 糸, bên phải là 氏."
         }
       ]
     },
@@ -3004,7 +3004,7 @@
       "lookalikes": [
         {
           "kanji": "掃",
-          "note": "掃 (Tảo: quét, 掃除): bên trái là bộ 扌 (tay); 帰 bên trái chỉ là hai nét ngắn (một sổ, một phẩy)."
+          "note": "掃 (Tảo: quét, 掃除): bên trái là bộ 扌 (tay); 帰 bên trái chỉ có hai nét: sổ ngắn và nét phẩy dài cong xuống."
         }
       ]
     },
@@ -3600,7 +3600,7 @@
         },
         {
           "kanji": "紙",
-          "note": "紙 (Chỉ: giấy): bên trái là bộ 糸, bên phải là 氏 (không có chấm dưới); 低 bên trái là 亻, phải là 氐."
+          "note": "紙 (Chỉ: giấy): bên trái là bộ 糸, bên phải là 氏 (không có nét ngang dưới); 低 bên trái là 亻, phải là 氐."
         }
       ]
     },
@@ -4536,7 +4536,7 @@
         },
         {
           "kanji": "言",
-          "note": "言 (Ngôn: lời): trên là chấm và ba nét ngang, dưới là 口; 音 trên là 立, dưới là 日."
+          "note": "言 (Ngôn: lời): trên là nét ngắn (chấm hoặc ngang tùy kiểu chữ) và ba nét ngang, dưới là 口; 音 trên là 立, dưới là 日."
         }
       ]
     },

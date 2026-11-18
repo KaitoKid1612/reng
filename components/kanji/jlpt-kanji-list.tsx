@@ -18,7 +18,7 @@ function KanjiCard({ item }: { item: JlptKanji }) {
   return (
     <li className="kanji-card" id={`kanji-${item.kanji}`}>
       <div className="kanji-card-head">
-        <span className="kanji-glyph" lang="ja">
+        <span className="kanji-glyph writing-square" lang="ja">
           {item.kanji}
         </span>
         <div className="kanji-card-title">

@@ -27,7 +27,7 @@ Chữ Hán/pinyin/nghĩa là các trường riêng, không đoán pinyin đã đ
 | UI/nghĩa/hướng dẫn Việt | Be Vietnam Pro, đủ dấu Việt, line-height văn bản tối thiểu 1.6, không letter-spacing âm |
 | Chữ Trung | Font CJK đúng locale giản/phồn, self-host sau khi xác minh font/giấy phép và test nét chữ; chưa chốt font cụ thể |
 | Pinyin | Font Latin có đủ dấu thanh, không cắt dấu ở line-height nhỏ; hiển thị riêng dưới/cạnh chữ Hán |
-| Nhật hiện có | Noto Sans JP cho văn bản, Klee One ở mẫu kana; không tự dùng font Nhật làm chuẩn chữ Trung |
+| Nhật hiện có | Noto Sans JP cho câu và văn bản tiếng Nhật; Klee One (nét kiểu sách giáo khoa) cho chữ đem ra học: mẫu kana, thẻ kanji, đề luyện kanji, biểu tượng công cụ tự học tiếng Nhật; không tự dùng font Nhật làm chuẩn chữ Trung |
 
 Gắn lang đúng cho từng vùng, hỗ trợ IME và composition. Font lớp nào chỉ tải khi cần; không tải toàn bộ font mọi ngôn ngữ ở mọi route. Chữ luyện viết cần giáo viên duyệt mẫu riêng; MVP không có chấm nét viết.
 
@@ -55,6 +55,16 @@ Tên **Reng** là tiếng chuông vào lớp. Logo là chiếc chuông tay trư�
 | `app/opengraph-image.png`, `app/twitter-image.png` | Ảnh chia sẻ 1200×630 có logo, tên và câu giới thiệu |
 
 Quy tắc dùng: kích thước nhỏ nhất 16px; chừa khoảng trống quanh logo ít nhất 1/4 chiều rộng; không thêm gradient, đổ bóng, phát sáng hay biến dạng; không đổi màu ngoài ba token trên. Logo không dùng chữ Nhật "ます" của tên cũ.
+
+## Ô tập viết — nét nhận diện (18/11/2026)
+
+Phương án duyệt ngày 18/11/2026, lập theo skill `frontend-design`: Reng giữ bảng màu và font của logo, chỉ thêm **một** điểm nhấn gắn với việc học chữ Nhật. Điểm nhấn đó là ô tập viết: ô vuông viền `--grid` có chữ thập đứt (`.writing-square` trong `app/styles/components.css`), như vở 漢字練習帳 của Nhật hay vở ô li của học sinh Việt.
+
+- Mọi chữ Nhật đem ra để học nằm trong một ô: bảng và bài luyện kana, thẻ kanji N5/N4 (88 px), đề luyện kanji (mỗi chữ một ô, các ô chung viền như trang 原稿用紙, 56–104 px theo màn hình), biểu tượng công cụ ở trang Tự học (64 px), ba bước ở trang chủ. Chữ trong ô dùng Klee One để người học thấy nét chuẩn khi chép tay. Chữ Trung trong ô giữ font giản/phồn thể.
+- Đề luyện chia ô chỉ để nhìn (`aria-hidden`); trình đọc màn hình đọc cả từ trong một vùng ẩn (`data-testid="kanji-prompt"`).
+- Không thêm điểm nhấn thứ hai. Đã cân nhắc và không làm: con dấu はなまる khi trả lời đúng (vòng đỏ lẫn với màu sai), đổi nền kem (gắn với logo, và theme không đổi chỉ để khác mẫu công cụ sinh UI), thay mọi card bằng danh sách kẻ dòng.
+- Đã bỏ các chi tiết khuôn mẫu: dòng chữ nhỏ trên tiêu đề trang chủ và trang giáo viên (lặp ý tiêu đề); ô biểu tượng xanh bo góc và hiệu ứng nảy/xoay khi rê chuột ở card Tự học.
+- Ghi chú "dễ nhầm" của thẻ kanji tả nét theo cả Klee One và Noto Sans JP, vì chữ to dùng Klee One mà câu ví dụ dùng Noto.
 
 ## Màu và khoảng cách
 

@@ -35,31 +35,6 @@
   font-size: 17px;
   font-weight: 600;
 }
-.writing-square {
-  position: relative;
-  isolation: isolate;
-  background-color: var(--surface);
-}
-.writing-square::before,
-.writing-square::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.6;
-}
-.writing-square::before {
-  left: 10%;
-  right: 10%;
-  top: 50%;
-  border-top: 1px dashed var(--grid);
-}
-.writing-square::after {
-  top: 10%;
-  bottom: 10%;
-  left: 50%;
-  border-left: 1px dashed var(--grid);
-}
 .hero-paper > p:last-child {
   margin: 16px 0 0;
 }

@@ -60,7 +60,11 @@ export default function SelfStudyPage() {
                     aria-labelledby={`${id}-title`}
                     aria-describedby={`${id}-description`}
                   >
-                    <span className="tool-glyph" lang={tool.glyph.lang} aria-hidden="true">
+                    <span
+                      className="tool-glyph writing-square"
+                      lang={tool.glyph.lang}
+                      aria-hidden="true"
+                    >
                       {tool.glyph.text}
                     </span>
                     <span id={`${id}-title`} className="link-card-title">
