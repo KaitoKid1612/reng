@@ -131,7 +131,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 | Thi đấu trực tiếp trong lớp | Rất cao, đổi hẳn không khí buổi học | Thấp, Supabase Realtime |
 | Bổ sung sâu nội dung "người Việt hay nhầm" | Có trường từ giai đoạn 2; tiếp tục biên soạn theo lỗi thực tế | Nội dung |
 | Ghép đôi — **đã làm 11/11/2026**: soạn trên trình soạn tiếng Nhật và câu kiểm tra riêng, làm bài bằng ô chọn (bàn phím, điện thoại), giao lớp và bài hằng ngày ([kiểm chứng](testing/cleanup-2026-11-11.md#câu-ghép-đôi)); trình soạn tiếng Trung **đã làm 12/11/2026** ([DD](detail-design/teaching-service.md#câu-ghép-đôi-trên-trình-soạn-tiếng-trung--12112026)) | Schema/chấm đã định nghĩa từ giai đoạn 3 | Trung bình |
-| Mã QR trên slide | Cao | Rất thấp |
+| Mã QR trên slide — **đã làm 18/11/2026**: bài giao còn hạn, bài học và lời mời vào lớp ([slide](05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026)) | Cao | Rất thấp |
 | Đếm ngược ngày thi JLPT — **đã làm 09/11/2026** cùng đề thi thử | Trung bình | Rất thấp |
 | Đề thi thử có đếm giờ — **đã làm 09/11/2026** cho N5/N4 (ý tưởng #1 bên dưới) | Cao | Trung bình |
 | Web Push | Trung bình | Thấp |
@@ -148,7 +148,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 
 1. **Thi đấu trực tiếp trong lớp** — công sức thấp, thay đổi hẳn không khí buổi học, và cho bạn biết ngay ai chưa hiểu.
 2. **Làm sâu mục "người Việt hay nhầm"** — dùng dữ liệu lỗi của lớp để bổ sung nội dung đã có từ giai đoạn 2, không trì hoãn phần giải thích cơ bản tới giai đoạn 6.
-3. **QR cho bài giao** — nối slide với assignment đã xuất bản, có kiểm tra quyền lớp. Sổ lỗi đã thuộc giai đoạn 3, không chờ tới đây.
+3. **QR cho bài giao** — **đã làm 18/11/2026**: nối slide với assignment đã xuất bản, có kiểm tra quyền lớp. Sổ lỗi đã thuộc giai đoạn 3, không chờ tới đây.
 
 ## Mốc kiểm tra lại kế hoạch
 

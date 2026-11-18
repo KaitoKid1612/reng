@@ -128,6 +128,20 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   await expect(logPage.getByLabel("Dạy đến slide số")).toHaveValue("13");
   await expect(page.getByTestId("slide-counter")).toHaveText("13 / 38");
   await logPage.close();
+  // The class scans a code from the shared slide: the invitation and the lesson itself.
+  await page.getByRole("button", { name: "Mã QR", exact: true }).click();
+  const qr = page.getByRole("region", { name: "Quét mã bằng điện thoại" });
+  await qr.getByRole("button", { name: "Vào lớp", exact: true }).click();
+  await expect(
+    qr.getByText(`Mã lớp ${state.code.slice(0, 4)}-${state.code.slice(4)}`),
+  ).toBeVisible();
+  await expect(qr.getByText(`/join-class?code=${state.code}`)).toBeVisible();
+  await qr.getByRole("button", { name: "Mở bài này trên điện thoại", exact: true }).click();
+  await expect(qr.getByText(`/lessons/${state.lesson11}`)).toBeVisible();
+  // Escape closes the code and leaves the slide where it was.
+  await page.keyboard.press("Escape");
+  await expect(qr).toHaveCount(0);
+  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 38");
   await page.goto(`/teach/classes/${state.classId}`);
   // The deleted row, with its button, leaves the list; the empty log is the confirmation.
   await page.getByRole("button", { name: "Xóa", exact: true }).click();

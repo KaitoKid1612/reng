@@ -594,3 +594,11 @@ Thiết kế cơ bản: [BD](../basic-design/teaching-service.md#bài-hằng-ng�
   - `tests/daily-practice.test.ts` có thêm trường hợp dạng nhỏ (16 bài × 30 câu, 60 câu mỗi ngày, 8 ngày không lặp và dùng hết kho).
   - `tests/n4-comprehensive.test.ts` nay kiểm tra mỗi dạng nhận phần nguyên hoặc thêm 1.
 
+## Mã QR trên slide của lớp — 18/11/2026
+
+- `app/lessons/[id]/slide/page.tsx`: khi có `?class=` hợp lệ và người xem là giáo viên, gọi `listSlideQrTargets(teacherId, classId, lessonId, now)` rồi đổi đường dẫn thành link tuyệt đối bằng `absoluteUrl`; truyền `qrLinks` cho `SlideDeck`.
+- `lib/server/slide-qr.ts`: `getTeacherClass` chặn lớp không sở hữu (trả mảng rỗng). Đọc `class_lessons.available_at` của bài, các bài giao `published` của bài trong lớp (mới nhất trước, tối đa 12 rồi cắt còn 6 sau khi bỏ bài có trong `daily_practice_runs`).
+- `lib/slide-qr.ts` (`buildSlideQrTargets`, thuần): bỏ bài `past_due` theo `getDeadlineState`, ghi hạn bằng `formatStudyDateTime`, mã lớp bằng `formatJoinCode`; lời mời chỉ khi lớp `active`, `join_enabled` và không `self_study`.
+- `components/slides/slide-qr-panel.tsx`: khung nằm trong `.slide-stage` (phần được đưa lên toàn màn hình), mã vẽ từ `encode()` của `uqr`; Esc bắt ở pha capture trên `window` trước reveal.js. Phím Q đăng ký bằng `addKeyBinding` chỉ khi có mã.
+
+Xem [slide engine](../05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026) và [kiểm chứng](../testing/teaching-service.md#mã-qr-trên-slide--18112026).

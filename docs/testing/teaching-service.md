@@ -129,6 +129,16 @@ Bộ thử MVP cần hai giáo viên tiếng Trung, học sinh Việt Nam thuộ
 
 Ca CT-03 cần đo thủ công và thiết bị thật; CT-06 là nghiệm thu vận hành, không phải kết quả từ unit test. Chỉ cập nhật NOT RUN khi có người thực hiện, môi trường, thời điểm và bằng chứng.
 
+## Mã QR trên slide — 18/11/2026
+
+Thiết kế ở [slide engine](../05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026). Môi trường: Supabase local (Podman), `next dev` ở 127.0.0.1:3017, Chromium headless qua Playwright, tài khoản thử teacher@reng.local.
+
+- **Đích của mã:** lớp có 8 bài giao đã xuất bản cho bài đang chiếu (6 bài hằng ngày, 1 bài kiểm tra quá hạn không cho nộp muộn, 1 bài luyện không hạn). Khung chỉ hiện bài luyện không hạn, rồi "Mở bài này trên điện thoại" và "Vào lớp" (mã lớp dạng `J3SQ-V7RA`, link `/join-class?code=…`), khớp truy vấn đọc thẳng database.
+- **Quyền:** mở slide không có `?class=` hoặc với class id của lớp không sở hữu thì không có nút Mã QR.
+- **Bàn phím:** Esc đóng khung mà không mở chế độ xem tổng của reveal.js; Q mở rồi đóng lại.
+- **Giao diện:** 1280/1440/1920px mã rộng 408/420/420px cạnh tên và hạn nộp, không cuộn ngang; 390px mã 320px phía trên chữ, khung tự cuộn. axe trên khung mở: 0 lỗi. Không có lỗi console.
+- **Test:** `tests/slide-qr.test.ts` (thứ tự đích, hạn nộp và mã lớp, bỏ bài quá hạn, giữ bài cho nộp muộn, link bài giao production vừa phiên bản 4 ở mức sửa lỗi L); `npm run check` đạt. Thêm bước QR vào `e2e-supabase/teach-and-learn.spec.ts` (mã Vào lớp, mã bài học, Esc giữ nguyên slide); E2E chạy cuối đợt.
+
 ## Đếm ngược kỳ thi JLPT trên mọi trang — 17/11/2026
 
 | Kiểm tra | Kết quả |

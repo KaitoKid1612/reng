@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { LessonSlide, listSlideIds } from "@/components/slides/lesson-slide";
+import { SlideQrPanel } from "@/components/slides/slide-qr-panel";
 import { Button } from "@/components/ui/button";
 import { sessionLogPath, slidePresenterPath } from "@/lib/class-sessions";
 import { parseSlideHash, slideChannelName, slideMessageSchema } from "@/lib/slide-navigation";
 
 import type { RevealApi } from "reveal.js";
+import type { SlideQrLink } from "@/components/slides/slide-qr-panel";
 import type { PublicAnyLesson } from "@/lib/teaching-content";
 
 const SLIDE_HEIGHT = 720;
@@ -48,6 +50,8 @@ interface SlideDeckProps {
   classId?: string;
   /** Teachers get the Presenter button; learners reading slides have no notes to open. */
   canPresent?: boolean;
+  /** Codes the class owner can show on the shared slides (assignments, the lesson, the invite). */
+  qrLinks?: readonly SlideQrLink[];
   /** A learner's reading progress: the last slide offers to mark the lesson as read. */
   readProgress?: {
     completedAt: string | null;
@@ -61,6 +65,7 @@ export function SlideDeck({
   printMode,
   classId,
   canPresent = false,
+  qrLinks = [],
   readProgress,
 }: SlideDeckProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -68,6 +73,8 @@ export function SlideDeck({
   const [position, setPosition] = useState(0);
   const [notice, setNotice] = useState("");
   const [isReady, setIsReady] = useState(false);
+  const [isQrOpen, setIsQrOpen] = useState(false);
+  const hasQr = qrLinks.length > 0;
   const base = `/lessons/${lesson.lessonId}`;
   // The presenter keeps the class so its link back to the slides keeps "Ghi buổi dạy".
   const classQuery = classId ? `&class=${classId}` : "";
@@ -185,6 +192,11 @@ export function SlideDeck({
             setNotice("Cửa sổ bị chặn. Dùng liên kết Mở presenter bên dưới.");
           }
         });
+        if (hasQr) {
+          deck.addKeyBinding({ keyCode: 81, key: "Q", description: "Show QR code" }, () =>
+            setIsQrOpen((isOpen) => !isOpen),
+          );
+        }
         deck.on("slidechanged", publishPosition);
         deck.on("fragmentshown", publishPosition);
         deck.on("fragmenthidden", publishPosition);
@@ -239,7 +251,9 @@ export function SlideDeck({
       }
       deckRef.current = null;
     };
-  }, [classQuery, lesson, printMode, readProgress, slideIds]);
+  }, [classQuery, hasQr, lesson, printMode, readProgress, slideIds]);
+
+  const closeQr = useCallback(() => setIsQrOpen(false), []);
 
   function handlePresenter() {
     deckRef.current?.triggerKey(83);
@@ -302,6 +316,15 @@ export function SlideDeck({
               Presenter
             </Button>
           )}
+          {hasQr && (
+            <Button
+              variant="ghost"
+              aria-pressed={isQrOpen}
+              onClick={() => setIsQrOpen((isOpen) => !isOpen)}
+            >
+              Mã QR
+            </Button>
+          )}
           <Link href={`${base}/slide?version=${lesson.id}&print-pdf`}>PDF</Link>
           {/* A new tab: this tab is the one shared in Meet, and the class page shows learners'
               names and scores. */}
@@ -334,6 +357,7 @@ export function SlideDeck({
             ))}
           </div>
         </div>
+        {isQrOpen && hasQr && <SlideQrPanel links={qrLinks} onClose={closeQr} />}
       </div>
       {notice && (
         <p role="status" className="slide-notice">

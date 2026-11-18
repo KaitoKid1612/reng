@@ -35,8 +35,75 @@ body:has(.slide-shell) .site-footer {
   align-items: center;
 }
 .slide-stage {
+  position: relative;
   flex: 1;
   min-height: 0;
+}
+/* The QR code covers the shared slide so the class can scan it from the screen in Meet. */
+.slide-qr {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow: auto;
+  background: color-mix(in srgb, var(--background) 92%, transparent);
+}
+.slide-qr-card {
+  display: grid;
+  gap: 20px;
+  width: min(100%, 960px);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.slide-qr-main {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.slide-qr-code {
+  flex: none;
+  width: min(52dvh, 420px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+}
+.slide-qr-text {
+  min-width: 0;
+}
+.slide-qr-text h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: var(--muted);
+}
+.slide-qr-label {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.slide-qr-detail {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+.slide-qr-url {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.slide-qr-actions,
+.slide-qr-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.slide-qr-actions {
+  justify-content: space-between;
 }
 .slide-stage .reveal {
   height: 100%;
@@ -234,6 +301,21 @@ body:has(.slide-shell) .site-footer {
   .slide-toolbar > .button-row:last-child {
     width: 100%;
     justify-content: space-between;
+  }
+  .slide-qr-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .slide-qr-code {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+  .slide-qr-label {
+    font-size: 24px;
+  }
+  .slide-qr-detail {
+    font-size: 18px;
   }
 }
 @media print {

@@ -6,6 +6,8 @@ import { isDatabaseLessonSource } from "@/lib/lesson-repository";
 import { getCurrentAccount } from "@/lib/server/account";
 import { getLessonProgress } from "@/lib/server/learner";
 import { loadAccessibleLesson, lessonNotFound } from "@/lib/server/lesson-access";
+import { listSlideQrTargets } from "@/lib/server/slide-qr";
+import { absoluteUrl } from "@/lib/site";
 
 import type { Metadata } from "next";
 
@@ -55,12 +57,18 @@ export default async function SlidePage({ params, searchParams }: SlidePageProps
   const account = isDatabaseLessonSource() ? await getCurrentAccount() : null;
   const isLearner = account?.role === "student";
   const progress = isLearner ? await getLessonProgress(account.id, id) : null;
+  // Codes for the class to scan from the shared screen; only the class owner gets any.
+  const qrTargets =
+    classId && account?.role === "teacher"
+      ? await listSlideQrTargets(account.id, classId, id, new Date())
+      : [];
   return (
     <SlideDeck
       lesson={lesson}
       printMode={query["print-pdf"] !== undefined}
       classId={classId}
       canPresent={!isLearner}
+      qrLinks={qrTargets.map((target) => ({ ...target, url: absoluteUrl(target.path) }))}
       readProgress={
         isLearner
           ? {

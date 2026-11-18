@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 18/11/2026
 
+- **Mã QR trên slide:** khi trình chiếu từ trang lớp, nút **Mã QR** (phím Q) hiện mã to trên slide đang chia sẻ để học viên quét bằng điện thoại: bài tập còn hạn của bài đang dạy, bài học, và lời mời vào lớp kèm mã lớp. Chỉ chủ lớp thấy nút; quét mã vẫn cần đăng nhập và quyền trong lớp. Xem [thiết kế](05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026) và [kiểm chứng](testing/teaching-service.md#mã-qr-trên-slide--18112026).
 - Ngân hàng ôn của lớp Nguyên nay phủ **Minna bài 1–25** (toàn bộ phạm vi N5) để ôn cho kỳ JLPT N5 ngày 06/12/2026: "Ôn Minna 1–25 – Nguyên", vẫn 500 câu. Bài 17–25 có 18 câu luyện mỗi bài cùng câu ghép từ, câu sắp xếp và 4 đoạn đọc mới; bài 1–16 giữ 13–14 câu mỗi bài, rải đều theo các mẫu câu. Đã nạp lên production ngày 18/11/2026. Xem [hướng dẫn nội dung](content-authoring.md#ngân-hàng-minna-125-cho-lớp-đang-học-theo-bài) và [kiểm chứng](testing/jlpt-daily-format-2026-11-13.md#mở-rộng-ngân-hàng-minna-ra-bài-125--18112026).
 
 ### 17/11/2026

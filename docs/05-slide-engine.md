@@ -96,11 +96,13 @@ Lưu vị trí vào hash: `/lessons/lesson-05/slide#7`.
 
 Lợi ích: học viên bookmark được, giảng viên gửi link thẳng tới đúng slide cần xem lại, và F5 giữa giờ không mất chỗ.
 
-## Mã QR trên slide bài tập
+## Mã QR trên slide — đã làm 18/11/2026
 
-Giai đoạn 6 thêm QR. `quiz.ref` là question_id luyện trong bài, không phải assignment_id. Khi dạy trong ngữ cảnh lớp, giảng viên chọn bài giao đã xuất bản; QR mới trỏ tới `/assignments/[assignmentId]`. Không có bài giao thì không hiện QR. Học viên vẫn phải đăng nhập và có quyền trong lớp; quét QR không bỏ qua phân quyền.
+Khi giáo viên mở slide từ trang lớp (`/lessons/[id]/slide?class=…`), thanh trình chiếu có nút **Mã QR** (phím Q). Bấm vào thì khung mã hiện đè lên slide trong vùng trình chiếu, nên học viên thấy nó qua thẻ đang chia sẻ trong Meet, kể cả khi đang toàn màn hình. Bấm Đóng mã QR, Esc hoặc Q để tắt; Esc được bắt trước reveal.js nên không mở chế độ xem tổng.
 
-Dùng thư viện `qrcode`, sinh lúc render slide.
+- **Mã có thể hiện** (`lib/slide-qr.ts`), theo thứ tự: mỗi bài giao đã xuất bản của bài này trong lớp mà còn nộp được (chưa tới hạn hoặc cho nộp muộn; tối đa 6, mới nhất trước, không tính bài hằng ngày) → `/assignments/[id]`; bài học nếu bài có trong lớp và đã tới giờ mở → `/lessons/[id]` (học viên đọc đúng phiên bản lớp ghim); lời mời nếu lớp đang hoạt động, bật mã mời và không phải lớp tự học → `/join-class?code=…`, kèm mã lớp để gõ tay.
+- **Quyền:** chỉ chủ lớp nhận được mã (`lib/server/slide-qr.ts` dùng `getTeacherClass`); class id của lớp khác hoặc không hợp lệ cho danh sách rỗng và không hiện nút. Quét mã không bỏ qua phân quyền: học viên vẫn phải đăng nhập, là thành viên lớp hoặc vào lớp bằng mã.
+- **Sinh mã:** thư viện `uqr` (MIT, không phụ thuộc) mã hóa link tuyệt đối từ `SITE_URL` ngay trên trình duyệt, vẽ bằng một `path` SVG đen trên nền trắng. Mức sửa lỗi L: mã trên màn hình chỉ bị mờ qua cuộc gọi, không bị trầy, và link bài giao production vừa phiên bản 4 (33 ô) nên ô vuông to.
 
 ## Xuất PDF
 
