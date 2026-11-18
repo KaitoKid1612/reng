@@ -34,6 +34,8 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S20 | Tự học miễn phí theo môn | `/self-study` | 03/11/2026 |
 | S21 | Bảng pinyin tiếng Trung | `/pinyin` | 03/11/2026 |
 | S22 | Luyện gõ pinyin | `/pinyin/practice` | 03/11/2026 |
+| S23 | Kanji N5/N4 theo nhóm: âm Hán Việt, âm On/Kun, từ ví dụ, mẹo nhớ, thẻ "Đã ra đề" | `/jlpt-kanji/[level]` (`n5`, `n4`) | 18/11/2026 |
+| S24 | Luyện kanji N5/N4 theo nhóm (đọc chữ, nhận mặt chữ, hiểu nghĩa) | `/jlpt-kanji/[level]/practice?group=` | 18/11/2026 |
 
 ### Dành cho giáo viên
 

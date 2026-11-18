@@ -15,7 +15,7 @@ Học viên luyện chữ Hán của chính các từ đã học trong bài, gi�
 | Bước | Nội dung | Trạng thái |
 |---|---|---|
 | K1 | Luyện kanji theo bài cho học viên; giáo viên sinh câu kanji vào ngân hàng câu | **Đã triển khai 30/10/2026** |
-| K2 | Thẻ chữ Hán: âm Hán Việt, nghĩa, âm on/kun, từ ví dụ lấy từ các bài đã học; trang kanji theo bài Minna hoặc cấp N5/N4; ôn bằng thẻ SRS loại `kanji` | Chờ chốt nguồn dữ liệu |
+| K2 | Thẻ chữ Hán: âm Hán Việt, nghĩa, âm on/kun, từ ví dụ lấy từ các bài đã học; trang kanji theo bài Minna hoặc cấp N5/N4; ôn bằng thẻ SRS loại `kanji` | **Trang cấp N5/N4 đã triển khai 18/11/2026** ([mục dưới](#kanji-n5n4-theo-cấp--18112026)), dữ liệu Reng tự biên soạn; còn trang theo bài Minna và thẻ SRS `kanji` |
 | K3 | Thứ tự nét và tập viết tự đối chiếu | Chờ quyết định giấy phép |
 
 ## Màn hình K1
@@ -65,5 +65,27 @@ Cùng màn hình và ba dạng câu phục vụ bài tiếng Trung. Từ vựng 
 - Lưu kết quả phiên tự luyện, thẻ SRS loại `kanji` (bảng `srs_cards` đã cho phép loại này; RPC ôn tập cần cho tạo thẻ kanji lần đầu và đưa vào hàng ôn) và hiển thị trong lịch sử học tập.
 - Dữ liệu chữ (K2): khuyến nghị giáo viên tự biên soạn âm Hán Việt và nghĩa tiếng Việt (KANJIDIC2 chủ yếu có nghĩa tiếng Anh); nếu dùng KANJIDIC2 cho âm on/kun thì phải duyệt giấy phép CC BY-SA, ghi công trên /sources theo [quy định dữ liệu mở](../10-risks-costs-and-licenses.md).
 - Thứ tự nét (K3): KanjiVG theo CC BY-SA 3.0, cần duyệt giấy phép; tập viết không chấm nét tự động.
+
+## Kanji N5/N4 theo cấp — 18/11/2026
+
+Phục vụ kỳ JLPT 06/12/2026: học viên N5 (Nguyên) và N4 (Việt) học kanji theo cấp, không phụ thuộc bài đã mở. Trang công khai, không cần tài khoản, nằm trong Tự học › Tiếng Nhật.
+
+| URL | Hành vi |
+|---|---|
+| `/jlpt-kanji/n5`, `/jlpt-kanji/n4` | Chuyển cấp N5/N4 → link tới từng nhóm → mỗi nhóm một lưới thẻ chữ: chữ to, âm Hán Việt, nghĩa, âm On, âm Kun, 1–4 từ ví dụ (cách đọc, nghĩa), mẹo nhớ, thẻ **Đã ra đề** kèm từ và năm đề mẫu đã hỏi. Mỗi nhóm có link **Luyện nhóm này** |
+| `/jlpt-kanji/[level]/practice?group=` | Chọn nhóm (hoặc Tất cả) → dùng lại màn hình luyện K1 trên từ ví dụ của nhóm: đọc chữ (giống もんだい1), nhận mặt chữ (giống もんだい2), hiểu nghĩa. Mỗi từ một lần (学校 có ở cả 学 và 校). Không lưu điểm |
+
+Dữ liệu và luật:
+
+- `content/kanji/n5.json` (105 chữ, 11 nhóm) và `content/kanji/n4.json`, kiểm tra bằng Zod ở `lib/jlpt-kanji.ts` khi build. JLPT không công bố danh sách kanji từ năm 2010, nên danh sách là các chữ thường dạy cho mỗi cấp, và phải chứa mọi chữ mà phần chữ Hán của đề mẫu chính thức cấp đó đã hỏi.
+- Từ ví dụ chỉ được dùng kanji cùng cấp hoặc cấp dưới (từ N4 dùng được chữ N5), phải chứa chính chữ đó; N4 không lặp chữ N5. Cách đọc từ bằng kana. Âm On viết katakana, âm Kun viết hiragana, okurigana trong ngoặc (`たか(い)`).
+- Âm Hán Việt, nghĩa, từ ví dụ và mẹo nhớ do Reng tự viết. Không chép mẹo từ sách hoặc trang khác; không dùng KANJIDIC2. Mẹo chỉ gọi tên những bộ phận có thật trong chữ.
+- `paper` (thẻ Đã ra đề) không sửa tay. `npm run kanji:paper` tính lại từ もんだい1 (từ được đánh dấu để đọc) và もんだい2 (đáp án đúng) phần 文字・語彙 của `content/jlpt/official`. Test so sánh với đề, sai một chữ là lỗi. Trang không tải đề mẫu.
+
+| Tình huống | Kết quả |
+|---|---|
+| Cấp khác n5/n4 | 404 (`dynamicParams = false`) |
+| `group` không có | Luyện tất cả các nhóm của cấp |
+| Nhóm chỉ có một từ | Câu chọn chuyển thành câu đọc như K1 |
 
 Kiểm chứng: `tests/kanji-practice.test.ts`, `e2e/kanji.spec.ts`; kết quả ở [rà soát 30/10](../testing/code-review-2026-10-30.md).

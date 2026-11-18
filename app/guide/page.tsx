@@ -208,6 +208,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Vào Lớp của tôi → chọn lớp → Đọc bài: từ vựng có nút Nghe, mẫu câu có furigana, hội thoại và bảng luyện tập (bấm Xem câu mẫu để kiểm tra mình).",
       "Cuối trang bài học có Flashcard từ vựng, Luyện nghe và Luyện kanji (lớp tiếng Trung: Luyện chữ Hán) khi bài có từ và câu nghe; trang lớp có các nút này cạnh từng bài. Ở Flashcard, chấm Quên, Khó, Được hoặc Dễ để Reng hẹn ngày ôn ở mục Ôn tập.",
       "Mở lại slide của bài là vào đúng slide bạn xem lần trước.",
+      "Ôn kanji thi JLPT: Tự học → Tiếng Nhật → Kanji N5–N4. Chữ chia theo nhóm, mỗi chữ có âm Hán Việt, âm On/Kun, từ ví dụ, mẹo nhớ; chữ có thẻ Đã ra đề là chữ đề mẫu chính thức từng hỏi. Bấm Luyện nhóm này để luyện đọc chữ và chọn mặt chữ giống phần chữ Hán của đề.",
     ],
   },
   {

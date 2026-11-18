@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { audioManifest } from "@/lib/data";
 
 import type { Metadata } from "next";
@@ -16,6 +18,13 @@ export default function SourcesPage() {
       <p>
         Hiragana và Katakana được biên soạn trong dự án, gồm âm cơ bản, âm đục, âm nửa đục và âm
         ghép. Mỗi hệ có 104 mục. Trang hiện chưa nhập dữ liệu từ JMdict, KANJIDIC2 hoặc KanjiVG.
+      </p>
+      <h2>Kanji N5 và N4</h2>
+      <p>
+        Danh sách chữ, âm Hán Việt, nghĩa tiếng Việt, âm On/Kun, từ ví dụ và mẹo nhớ ở trang{" "}
+        <Link href="/jlpt-kanji/n5">Kanji N5–N4</Link> do Reng biên soạn. JLPT không công bố danh
+        sách kanji từ năm 2010, nên đây là các chữ thường dạy cho mỗi cấp. Thẻ &quot;Đã ra đề&quot;
+        lấy từ phần chữ Hán của hai đề mẫu chính thức nêu ở mục Đề chính thức JLPT bên dưới.
       </p>
       <h2>Chữ hiển thị</h2>
       <p>

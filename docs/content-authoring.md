@@ -127,6 +127,15 @@ Ngày 16/11/2026 có thêm mục **Mẹo học và thi JLPT N4** (khóa `n4-tips
   1. Mỗi bài do một agent soạn có tra nguồn.
   2. Một agent khác soát và sửa 13–38 chỗ mỗi bài. Lỗi chính: quy tắc sai (v → ば・ま bỏ sót あ行 như 運 うん), quy định thi đã cũ (cho muộn 10 phút), câu có hai đáp án, câu gần đề mẫu chính thức hoặc ngân hàng của lớp.
 
+## Kanji N5/N4 (trang Tự học)
+
+Dữ liệu trang `/jlpt-kanji/n5` và `/jlpt-kanji/n4` nằm trong `content/kanji/n5.json` và `content/kanji/n4.json`. Sửa file rồi deploy; không cần database. Luật đầy đủ ở [BD luyện kanji](basic-design/kanji-practice.md#kanji-n5n4-theo-cấp--18112026).
+
+- Viết mẹo nhớ của riêng Reng, tối đa 220 ký tự. Gọi đúng tên bộ có thật trong chữ (bộ nhân đứng 亻, bộ thủy 氵, bộ ngôn 言…) và nối với âm Hán Việt, nghĩa. Không chép mẹo từ sách hoặc trang khác.
+- Từ ví dụ chỉ dùng kanji cùng cấp hoặc cấp dưới; phần còn lại viết kana. Thêm chữ mới phải đặt đúng nhóm, theo thứ tự nhóm.
+- Không sửa tay `paper`. Sau khi đổi danh sách chữ hoặc đề mẫu, chạy `npm run kanji:paper` rồi `npm run format`.
+- `npm test` báo lỗi khi từ dùng chữ cấp cao hơn, chữ trùng, chữ có trong đề mẫu bị thiếu khỏi danh sách, hoặc `paper` lệch với đề.
+
 ## Kiểm tra và xuất bản local
 
 ```bash

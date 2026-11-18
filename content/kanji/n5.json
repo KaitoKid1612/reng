@@ -1,0 +1,2774 @@
+{
+  "level": "n5",
+  "groups": [
+    {
+      "id": "numbers",
+      "title": "Số đếm và tiền"
+    },
+    {
+      "id": "days",
+      "title": "Ngày, tháng và thứ"
+    },
+    {
+      "id": "time",
+      "title": "Giờ giấc và thời điểm"
+    },
+    {
+      "id": "position",
+      "title": "Vị trí và phương hướng"
+    },
+    {
+      "id": "people",
+      "title": "Con người và gia đình"
+    },
+    {
+      "id": "places",
+      "title": "Trường học, công ty và đi lại"
+    },
+    {
+      "id": "nature",
+      "title": "Thiên nhiên và thời tiết"
+    },
+    {
+      "id": "body",
+      "title": "Cơ thể"
+    },
+    {
+      "id": "moving",
+      "title": "Đi, đến, ra, vào"
+    },
+    {
+      "id": "qualities",
+      "title": "Tính chất (tính từ)"
+    },
+    {
+      "id": "actions",
+      "title": "Nghe, nói, đọc, viết, ăn uống"
+    }
+  ],
+  "items": [
+    {
+      "kanji": "一",
+      "group": "numbers",
+      "hanViet": "Nhất",
+      "meaning": "một",
+      "on": ["イチ"],
+      "kun": ["ひと(つ)"],
+      "words": [
+        {
+          "written": "一つ",
+          "reading": "ひとつ",
+          "meaning": "một cái"
+        },
+        {
+          "written": "一人",
+          "reading": "ひとり",
+          "meaning": "một người"
+        },
+        {
+          "written": "一月",
+          "reading": "いちがつ",
+          "meaning": "tháng Một"
+        }
+      ],
+      "tip": "Một nét ngang là số một: NHẤT (như thống nhất). Chú ý 一人 đọc ひとり."
+    },
+    {
+      "kanji": "二",
+      "group": "numbers",
+      "hanViet": "Nhị",
+      "meaning": "hai",
+      "on": ["ニ"],
+      "kun": ["ふた(つ)"],
+      "words": [
+        {
+          "written": "二つ",
+          "reading": "ふたつ",
+          "meaning": "hai cái"
+        },
+        {
+          "written": "二人",
+          "reading": "ふたり",
+          "meaning": "hai người"
+        },
+        {
+          "written": "二月",
+          "reading": "にがつ",
+          "meaning": "tháng Hai"
+        }
+      ],
+      "tip": "Hai nét ngang là số hai: NHỊ. Nét dưới dài hơn nét trên. 二人 đọc ふたり."
+    },
+    {
+      "kanji": "三",
+      "group": "numbers",
+      "hanViet": "Tam",
+      "meaning": "ba",
+      "on": ["サン"],
+      "kun": ["み", "みっ(つ)"],
+      "words": [
+        {
+          "written": "三つ",
+          "reading": "みっつ",
+          "meaning": "ba cái"
+        },
+        {
+          "written": "三月",
+          "reading": "さんがつ",
+          "meaning": "tháng Ba"
+        },
+        {
+          "written": "三人",
+          "reading": "さんにん",
+          "meaning": "ba người"
+        }
+      ],
+      "tip": "Ba nét ngang là số ba: TAM (như tam giác).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "三つ"
+        }
+      ]
+    },
+    {
+      "kanji": "四",
+      "group": "numbers",
+      "hanViet": "Tứ",
+      "meaning": "bốn",
+      "on": ["シ"],
+      "kun": ["よ", "よっ(つ)", "よん"],
+      "words": [
+        {
+          "written": "四つ",
+          "reading": "よっつ",
+          "meaning": "bốn cái"
+        },
+        {
+          "written": "四月",
+          "reading": "しがつ",
+          "meaning": "tháng Tư"
+        },
+        {
+          "written": "四人",
+          "reading": "よにん",
+          "meaning": "bốn người"
+        }
+      ],
+      "tip": "Căn phòng bốn góc có hai chân bên trong: TỨ là bốn (như tứ giác). Tháng Tư là しがつ, bốn người là よにん, bốn giờ là よじ."
+    },
+    {
+      "kanji": "五",
+      "group": "numbers",
+      "hanViet": "Ngũ",
+      "meaning": "năm",
+      "on": ["ゴ"],
+      "kun": ["いつ(つ)"],
+      "words": [
+        {
+          "written": "五つ",
+          "reading": "いつつ",
+          "meaning": "năm cái"
+        },
+        {
+          "written": "五月",
+          "reading": "ごがつ",
+          "meaning": "tháng Năm"
+        },
+        {
+          "written": "五人",
+          "reading": "ごにん",
+          "meaning": "năm người"
+        }
+      ],
+      "tip": "Nét giữa gấp khúc kẹp giữa hai nét ngang, như số 5 nằm trong khung: NGŨ là năm (như ngũ quả)."
+    },
+    {
+      "kanji": "六",
+      "group": "numbers",
+      "hanViet": "Lục",
+      "meaning": "sáu",
+      "on": ["ロク"],
+      "kun": ["む", "むっ(つ)"],
+      "words": [
+        {
+          "written": "六つ",
+          "reading": "むっつ",
+          "meaning": "sáu cái"
+        },
+        {
+          "written": "六月",
+          "reading": "ろくがつ",
+          "meaning": "tháng Sáu"
+        },
+        {
+          "written": "六百",
+          "reading": "ろっぴゃく",
+          "meaning": "sáu trăm"
+        }
+      ],
+      "tip": "Cái mũ (亠) trên hai chân dang ra: LỤC là sáu. Chú ý 六百 đọc ろっぴゃく.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "六本"
+        }
+      ]
+    },
+    {
+      "kanji": "七",
+      "group": "numbers",
+      "hanViet": "Thất",
+      "meaning": "bảy",
+      "on": ["シチ"],
+      "kun": ["なな", "なな(つ)"],
+      "words": [
+        {
+          "written": "七つ",
+          "reading": "ななつ",
+          "meaning": "bảy cái"
+        },
+        {
+          "written": "七月",
+          "reading": "しちがつ",
+          "meaning": "tháng Bảy"
+        },
+        {
+          "written": "七時",
+          "reading": "しちじ",
+          "meaning": "bảy giờ"
+        }
+      ],
+      "tip": "Như số 7 lộn ngược có nét ngang cắt qua: THẤT là bảy. Giờ và tháng đọc しち, đếm số hay đọc なな."
+    },
+    {
+      "kanji": "八",
+      "group": "numbers",
+      "hanViet": "Bát",
+      "meaning": "tám",
+      "on": ["ハチ"],
+      "kun": ["や", "やっ(つ)"],
+      "words": [
+        {
+          "written": "八つ",
+          "reading": "やっつ",
+          "meaning": "tám cái"
+        },
+        {
+          "written": "八月",
+          "reading": "はちがつ",
+          "meaning": "tháng Tám"
+        },
+        {
+          "written": "八百",
+          "reading": "はっぴゃく",
+          "meaning": "tám trăm"
+        }
+      ],
+      "tip": "Hai nét tách ra như cánh cửa mở: BÁT là tám. Chú ý 八百 đọc はっぴゃく."
+    },
+    {
+      "kanji": "九",
+      "group": "numbers",
+      "hanViet": "Cửu",
+      "meaning": "chín",
+      "on": ["キュウ", "ク"],
+      "kun": ["ここの(つ)"],
+      "words": [
+        {
+          "written": "九つ",
+          "reading": "ここのつ",
+          "meaning": "chín cái"
+        },
+        {
+          "written": "九月",
+          "reading": "くがつ",
+          "meaning": "tháng Chín"
+        },
+        {
+          "written": "九時",
+          "reading": "くじ",
+          "meaning": "chín giờ"
+        }
+      ],
+      "tip": "Cánh tay co lại có cái móc: CỬU là chín. Tháng Chín và chín giờ đọc く (くがつ, くじ), không phải きゅう."
+    },
+    {
+      "kanji": "十",
+      "group": "numbers",
+      "hanViet": "Thập",
+      "meaning": "mười",
+      "on": ["ジュウ", "ジッ"],
+      "kun": ["とお"],
+      "words": [
+        {
+          "written": "十",
+          "reading": "とお",
+          "meaning": "mười cái"
+        },
+        {
+          "written": "十月",
+          "reading": "じゅうがつ",
+          "meaning": "tháng Mười"
+        },
+        {
+          "written": "十日",
+          "reading": "とおか",
+          "meaning": "ngày mùng mười"
+        }
+      ],
+      "tip": "Dấu cộng là số mười: THẬP (như chữ thập). 十日 (ngày mùng mười) đọc とおか."
+    },
+    {
+      "kanji": "百",
+      "group": "numbers",
+      "hanViet": "Bách",
+      "meaning": "một trăm",
+      "on": ["ヒャク"],
+      "kun": [],
+      "words": [
+        {
+          "written": "百",
+          "reading": "ひゃく",
+          "meaning": "một trăm"
+        },
+        {
+          "written": "三百",
+          "reading": "さんびゃく",
+          "meaning": "ba trăm"
+        },
+        {
+          "written": "六百",
+          "reading": "ろっぴゃく",
+          "meaning": "sáu trăm"
+        }
+      ],
+      "tip": "Số một (一) đặt trên chữ bạch (白): BÁCH là trăm (như bách hóa). Chú ý 三百 さんびゃく, 六百 ろっぴゃく, 八百 はっぴゃく.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "百人"
+        }
+      ]
+    },
+    {
+      "kanji": "千",
+      "group": "numbers",
+      "hanViet": "Thiên",
+      "meaning": "một nghìn",
+      "on": ["セン"],
+      "kun": [],
+      "words": [
+        {
+          "written": "千",
+          "reading": "せん",
+          "meaning": "một nghìn"
+        },
+        {
+          "written": "三千",
+          "reading": "さんぜん",
+          "meaning": "ba nghìn"
+        },
+        {
+          "written": "千円",
+          "reading": "せんえん",
+          "meaning": "một nghìn yên"
+        }
+      ],
+      "tip": "Chữ thập (十) có thêm nét phẩy trên đầu: THIÊN là nghìn (như thiên niên kỷ). 三千 đọc さんぜん."
+    },
+    {
+      "kanji": "万",
+      "group": "numbers",
+      "hanViet": "Vạn",
+      "meaning": "mười nghìn",
+      "on": ["マン", "バン"],
+      "kun": [],
+      "words": [
+        {
+          "written": "一万",
+          "reading": "いちまん",
+          "meaning": "mười nghìn"
+        },
+        {
+          "written": "一万円",
+          "reading": "いちまんえん",
+          "meaning": "mười nghìn yên"
+        },
+        {
+          "written": "百万",
+          "reading": "ひゃくまん",
+          "meaning": "một triệu"
+        }
+      ],
+      "tip": "VẠN là mười nghìn. Người Nhật đếm tiền theo 万: 一万円 là mười nghìn yên, 百万 là một triệu."
+    },
+    {
+      "kanji": "円",
+      "group": "numbers",
+      "hanViet": "Viên",
+      "meaning": "yên (tiền Nhật); tròn",
+      "on": ["エン"],
+      "kun": ["まる(い)"],
+      "words": [
+        {
+          "written": "円",
+          "reading": "えん",
+          "meaning": "yên (tiền Nhật)"
+        },
+        {
+          "written": "百円",
+          "reading": "ひゃくえん",
+          "meaning": "một trăm yên"
+        },
+        {
+          "written": "千円",
+          "reading": "せんえん",
+          "meaning": "một nghìn yên"
+        }
+      ],
+      "tip": "Khung cửa có quầy thu tiền ở giữa: VIÊN là đồng yên. Nghĩa tròn (まるい) thì thường viết 丸い.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "1000円"
+        }
+      ]
+    },
+    {
+      "kanji": "日",
+      "group": "days",
+      "hanViet": "Nhật",
+      "meaning": "mặt trời; ngày",
+      "on": ["ニチ", "ジツ"],
+      "kun": ["ひ", "-び", "-か"],
+      "words": [
+        {
+          "written": "日本",
+          "reading": "にほん",
+          "meaning": "Nhật Bản"
+        },
+        {
+          "written": "毎日",
+          "reading": "まいにち",
+          "meaning": "mỗi ngày"
+        },
+        {
+          "written": "三日",
+          "reading": "みっか",
+          "meaning": "ngày mùng ba, ba ngày"
+        }
+      ],
+      "tip": "Mặt trời vẽ vuông có nét ngang ở giữa: NHẬT là mặt trời, ngày. Ngày trong tháng có cách đọc riêng: 二日 ふつか, 三日 みっか.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "火よう日"
+        }
+      ]
+    },
+    {
+      "kanji": "月",
+      "group": "days",
+      "hanViet": "Nguyệt",
+      "meaning": "mặt trăng; tháng",
+      "on": ["ゲツ", "ガツ"],
+      "kun": ["つき"],
+      "words": [
+        {
+          "written": "月",
+          "reading": "つき",
+          "meaning": "mặt trăng"
+        },
+        {
+          "written": "月曜日",
+          "reading": "げつようび",
+          "meaning": "thứ Hai"
+        },
+        {
+          "written": "一月",
+          "reading": "いちがつ",
+          "meaning": "tháng Một"
+        }
+      ],
+      "tip": "Vầng trăng khuyết có hai vệt: NGUYỆT là mặt trăng, tháng. Tháng đọc がつ (一月), thứ Hai đọc げつ (月曜日).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "来月"
+        }
+      ]
+    },
+    {
+      "kanji": "火",
+      "group": "days",
+      "hanViet": "Hỏa",
+      "meaning": "lửa",
+      "on": ["カ"],
+      "kun": ["ひ"],
+      "words": [
+        {
+          "written": "火",
+          "reading": "ひ",
+          "meaning": "lửa"
+        },
+        {
+          "written": "火曜日",
+          "reading": "かようび",
+          "meaning": "thứ Ba"
+        },
+        {
+          "written": "火山",
+          "reading": "かざん",
+          "meaning": "núi lửa"
+        }
+      ],
+      "tip": "Ngọn lửa bốc lên, tia lửa bắn hai bên: HỎA là lửa. Thứ Ba là ngày Hỏa (火曜日).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "火よう日"
+        }
+      ]
+    },
+    {
+      "kanji": "水",
+      "group": "days",
+      "hanViet": "Thủy",
+      "meaning": "nước",
+      "on": ["スイ"],
+      "kun": ["みず"],
+      "words": [
+        {
+          "written": "水",
+          "reading": "みず",
+          "meaning": "nước"
+        },
+        {
+          "written": "水曜日",
+          "reading": "すいようび",
+          "meaning": "thứ Tư"
+        }
+      ],
+      "tip": "Dòng nước ở giữa, bọt nước bắn ra hai bên: THỦY là nước. Thứ Tư là ngày Thủy (水曜日)."
+    },
+    {
+      "kanji": "木",
+      "group": "days",
+      "hanViet": "Mộc",
+      "meaning": "cây; gỗ",
+      "on": ["モク", "ボク"],
+      "kun": ["き"],
+      "words": [
+        {
+          "written": "木",
+          "reading": "き",
+          "meaning": "cây"
+        },
+        {
+          "written": "木曜日",
+          "reading": "もくようび",
+          "meaning": "thứ Năm"
+        }
+      ],
+      "tip": "Cái cây có thân, cành ngang và rễ tỏa xuống: MỘC là cây. Thứ Năm là ngày Mộc (木曜日)."
+    },
+    {
+      "kanji": "金",
+      "group": "days",
+      "hanViet": "Kim",
+      "meaning": "vàng; tiền",
+      "on": ["キン"],
+      "kun": ["かね"],
+      "words": [
+        {
+          "written": "お金",
+          "reading": "おかね",
+          "meaning": "tiền"
+        },
+        {
+          "written": "金曜日",
+          "reading": "きんようび",
+          "meaning": "thứ Sáu"
+        }
+      ],
+      "tip": "Mái che (人) trên mặt đất có hai hạt vàng lấp lánh: KIM là vàng, tiền. Thứ Sáu là ngày Kim (金曜日)."
+    },
+    {
+      "kanji": "土",
+      "group": "days",
+      "hanViet": "Thổ",
+      "meaning": "đất",
+      "on": ["ド", "ト"],
+      "kun": ["つち"],
+      "words": [
+        {
+          "written": "土",
+          "reading": "つち",
+          "meaning": "đất"
+        },
+        {
+          "written": "土曜日",
+          "reading": "どようび",
+          "meaning": "thứ Bảy"
+        }
+      ],
+      "tip": "Mầm cây (十) nhô lên từ mặt đất (一): THỔ là đất. Thứ Bảy là ngày Thổ (土曜日)."
+    },
+    {
+      "kanji": "曜",
+      "group": "days",
+      "hanViet": "Diệu",
+      "meaning": "ngày trong tuần",
+      "on": ["ヨウ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "曜日",
+          "reading": "ようび",
+          "meaning": "thứ (trong tuần)"
+        },
+        {
+          "written": "日曜日",
+          "reading": "にちようび",
+          "meaning": "Chủ nhật"
+        },
+        {
+          "written": "何曜日",
+          "reading": "なんようび",
+          "meaning": "thứ mấy"
+        }
+      ],
+      "tip": "Nhiều nét nhưng chỉ cần nhớ trong 〜曜日: mặt trời (日) bên trái, đôi cánh (羽) trên con chim (隹) bên phải. DIỆU là ngày trong tuần."
+    },
+    {
+      "kanji": "週",
+      "group": "days",
+      "hanViet": "Chu",
+      "meaning": "tuần",
+      "on": ["シュウ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "今週",
+          "reading": "こんしゅう",
+          "meaning": "tuần này"
+        },
+        {
+          "written": "先週",
+          "reading": "せんしゅう",
+          "meaning": "tuần trước"
+        },
+        {
+          "written": "毎週",
+          "reading": "まいしゅう",
+          "meaning": "mỗi tuần"
+        }
+      ],
+      "tip": "Bộ sước (辶, con đường) chở chữ chu (周, vòng quanh): một vòng bảy ngày là một tuần. Nhớ trường âm: せんしゅう, không phải せんしゅ.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "先週"
+        }
+      ]
+    },
+    {
+      "kanji": "年",
+      "group": "days",
+      "hanViet": "Niên",
+      "meaning": "năm",
+      "on": ["ネン"],
+      "kun": ["とし"],
+      "words": [
+        {
+          "written": "今年",
+          "reading": "ことし",
+          "meaning": "năm nay"
+        },
+        {
+          "written": "来年",
+          "reading": "らいねん",
+          "meaning": "năm sau"
+        },
+        {
+          "written": "毎年",
+          "reading": "まいとし",
+          "meaning": "mỗi năm"
+        }
+      ],
+      "tip": "NIÊN là năm (như niên khóa). 今年 đọc đặc biệt là ことし; 毎年 đọc まいとし hoặc まいねん."
+    },
+    {
+      "kanji": "時",
+      "group": "time",
+      "hanViet": "Thời",
+      "meaning": "giờ; lúc",
+      "on": ["ジ"],
+      "kun": ["とき"],
+      "words": [
+        {
+          "written": "時",
+          "reading": "とき",
+          "meaning": "lúc, khi"
+        },
+        {
+          "written": "時間",
+          "reading": "じかん",
+          "meaning": "thời gian"
+        },
+        {
+          "written": "何時",
+          "reading": "なんじ",
+          "meaning": "mấy giờ"
+        }
+      ],
+      "tip": "Mặt trời (日) cạnh ngôi chùa (寺): xưa chùa đánh chuông báo giờ. THỜI là giờ, thời gian."
+    },
+    {
+      "kanji": "分",
+      "group": "time",
+      "hanViet": "Phân",
+      "meaning": "phút; chia; hiểu",
+      "on": ["ブン", "フン"],
+      "kun": ["わ(かる)", "わ(ける)"],
+      "words": [
+        {
+          "written": "五分",
+          "reading": "ごふん",
+          "meaning": "năm phút"
+        },
+        {
+          "written": "六分",
+          "reading": "ろっぷん",
+          "meaning": "sáu phút"
+        },
+        {
+          "written": "分かる",
+          "reading": "わかる",
+          "meaning": "hiểu"
+        }
+      ],
+      "tip": "Con dao (刀) bổ một vật tách đôi (八): PHÂN là chia, phút. Hiểu là phân biệt được: わかる. Phút đổi âm: 一分 いっぷん, 六分 ろっぷん, 十分 じゅっぷん (十分 đọc じゅうぶん là đủ).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "半分"
+        }
+      ]
+    },
+    {
+      "kanji": "半",
+      "group": "time",
+      "hanViet": "Bán",
+      "meaning": "một nửa",
+      "on": ["ハン"],
+      "kun": [],
+      "words": [
+        {
+          "written": "半分",
+          "reading": "はんぶん",
+          "meaning": "một nửa"
+        },
+        {
+          "written": "三時半",
+          "reading": "さんじはん",
+          "meaning": "ba giờ rưỡi"
+        }
+      ],
+      "tip": "Một nét dọc cắt đôi, hai chấm chia đều hai bên: BÁN là một nửa. 三時半 là ba giờ rưỡi.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "半分"
+        }
+      ]
+    },
+    {
+      "kanji": "午",
+      "group": "time",
+      "hanViet": "Ngọ",
+      "meaning": "buổi trưa",
+      "on": ["ゴ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "午前",
+          "reading": "ごぜん",
+          "meaning": "buổi sáng (trước trưa)"
+        },
+        {
+          "written": "午後",
+          "reading": "ごご",
+          "meaning": "buổi chiều (sau trưa)"
+        }
+      ],
+      "tip": "Giống chữ 牛 (bò) nhưng không có nét nhô lên đầu: NGỌ là giờ Ngọ, buổi trưa. 午前 là trước trưa, 午後 là sau trưa."
+    },
+    {
+      "kanji": "前",
+      "group": "time",
+      "hanViet": "Tiền",
+      "meaning": "trước",
+      "on": ["ゼン"],
+      "kun": ["まえ"],
+      "words": [
+        {
+          "written": "前",
+          "reading": "まえ",
+          "meaning": "phía trước, trước đây"
+        },
+        {
+          "written": "午前",
+          "reading": "ごぜん",
+          "meaning": "buổi sáng"
+        },
+        {
+          "written": "名前",
+          "reading": "なまえ",
+          "meaning": "tên"
+        }
+      ],
+      "tip": "TIỀN là phía trước, trước đây (như tiền sử). 名前 (なまえ) là tên; 午前 là trước giờ Ngọ, tức buổi sáng."
+    },
+    {
+      "kanji": "後",
+      "group": "time",
+      "hanViet": "Hậu",
+      "meaning": "sau; phía sau",
+      "on": ["ゴ", "コウ"],
+      "kun": ["あと", "うし(ろ)"],
+      "words": [
+        {
+          "written": "後ろ",
+          "reading": "うしろ",
+          "meaning": "đằng sau"
+        },
+        {
+          "written": "午後",
+          "reading": "ごご",
+          "meaning": "buổi chiều"
+        },
+        {
+          "written": "後で",
+          "reading": "あとで",
+          "meaning": "lát nữa, sau đó"
+        }
+      ],
+      "tip": "Bộ xích (彳, bước chân) và người đi chậm theo sau: HẬU là phía sau, sau đó. うしろ là đằng sau, あとで là lát nữa.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "後"
+        }
+      ]
+    },
+    {
+      "kanji": "今",
+      "group": "time",
+      "hanViet": "Kim",
+      "meaning": "bây giờ",
+      "on": ["コン"],
+      "kun": ["いま"],
+      "words": [
+        {
+          "written": "今",
+          "reading": "いま",
+          "meaning": "bây giờ"
+        },
+        {
+          "written": "今日",
+          "reading": "きょう",
+          "meaning": "hôm nay"
+        },
+        {
+          "written": "今週",
+          "reading": "こんしゅう",
+          "meaning": "tuần này"
+        }
+      ],
+      "tip": "Mái che (人) trên một nét ngang và nét móc: KIM là bây giờ (như cổ kim). 今日 đọc đặc biệt là きょう."
+    },
+    {
+      "kanji": "毎",
+      "group": "time",
+      "hanViet": "Mỗi",
+      "meaning": "mỗi, hằng",
+      "on": ["マイ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "毎日",
+          "reading": "まいにち",
+          "meaning": "mỗi ngày"
+        },
+        {
+          "written": "毎週",
+          "reading": "まいしゅう",
+          "meaning": "mỗi tuần"
+        },
+        {
+          "written": "毎年",
+          "reading": "まいとし",
+          "meaning": "mỗi năm"
+        }
+      ],
+      "tip": "Phần dưới gần giống chữ mẫu (母, mẹ) nhưng hai chấm nối thành một nét: mẹ ngày nào cũng lo cho con. MỖI là mỗi, hằng."
+    },
+    {
+      "kanji": "先",
+      "group": "time",
+      "hanViet": "Tiên",
+      "meaning": "trước; đi trước",
+      "on": ["セン"],
+      "kun": ["さき"],
+      "words": [
+        {
+          "written": "先生",
+          "reading": "せんせい",
+          "meaning": "thầy cô giáo"
+        },
+        {
+          "written": "先週",
+          "reading": "せんしゅう",
+          "meaning": "tuần trước"
+        },
+        {
+          "written": "先に",
+          "reading": "さきに",
+          "meaning": "trước (làm gì)"
+        }
+      ],
+      "tip": "Đôi chân (儿) bước lên phía trước: TIÊN là trước, đi đầu. 先生 là người đi trước dạy mình; 先週 là tuần trước.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "先週"
+        }
+      ]
+    },
+    {
+      "kanji": "間",
+      "group": "time",
+      "hanViet": "Gian",
+      "meaning": "khoảng giữa",
+      "on": ["カン", "ケン"],
+      "kun": ["あいだ", "ま"],
+      "words": [
+        {
+          "written": "時間",
+          "reading": "じかん",
+          "meaning": "thời gian"
+        },
+        {
+          "written": "間",
+          "reading": "あいだ",
+          "meaning": "ở giữa, trong khoảng"
+        },
+        {
+          "written": "人間",
+          "reading": "にんげん",
+          "meaning": "con người"
+        }
+      ],
+      "tip": "Mặt trời (日) chiếu qua khe giữa hai cánh cổng (門): GIAN là khoảng giữa (như không gian, thời gian).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "間"
+        }
+      ]
+    },
+    {
+      "kanji": "何",
+      "group": "time",
+      "hanViet": "Hà",
+      "meaning": "gì; nào",
+      "on": [],
+      "kun": ["なに", "なん"],
+      "words": [
+        {
+          "written": "何",
+          "reading": "なに",
+          "meaning": "cái gì"
+        },
+        {
+          "written": "何時",
+          "reading": "なんじ",
+          "meaning": "mấy giờ"
+        },
+        {
+          "written": "何人",
+          "reading": "なんにん",
+          "meaning": "mấy người"
+        }
+      ],
+      "tip": "Người (亻) đứng cạnh chữ khả (可) mà hỏi: cái gì thế? HÀ là gì, nào. Trước だ, で, の và từ đếm thường đọc なん."
+    },
+    {
+      "kanji": "上",
+      "group": "position",
+      "hanViet": "Thượng",
+      "meaning": "trên",
+      "on": ["ジョウ"],
+      "kun": ["うえ", "あ(がる)", "あ(げる)", "のぼ(る)"],
+      "words": [
+        {
+          "written": "上",
+          "reading": "うえ",
+          "meaning": "bên trên"
+        },
+        {
+          "written": "上手",
+          "reading": "じょうず",
+          "meaning": "giỏi"
+        },
+        {
+          "written": "上がる",
+          "reading": "あがる",
+          "meaning": "đi lên"
+        }
+      ],
+      "tip": "Vạch ngắn đứng trên mặt đất (一): THƯỢNG là trên. 上手 (じょうず) là giỏi."
+    },
+    {
+      "kanji": "下",
+      "group": "position",
+      "hanViet": "Hạ",
+      "meaning": "dưới",
+      "on": ["カ", "ゲ"],
+      "kun": ["した", "さ(がる)", "くだ(さる)"],
+      "words": [
+        {
+          "written": "下",
+          "reading": "した",
+          "meaning": "bên dưới"
+        },
+        {
+          "written": "下手",
+          "reading": "へた",
+          "meaning": "kém, dở"
+        },
+        {
+          "written": "下さい",
+          "reading": "ください",
+          "meaning": "xin hãy cho"
+        }
+      ],
+      "tip": "Vạch ngắn treo dưới mặt đất (一): HẠ là dưới. 下手 (へた) là kém, ngược với 上手."
+    },
+    {
+      "kanji": "左",
+      "group": "position",
+      "hanViet": "Tả",
+      "meaning": "bên trái",
+      "on": ["サ"],
+      "kun": ["ひだり"],
+      "words": [
+        {
+          "written": "左",
+          "reading": "ひだり",
+          "meaning": "bên trái"
+        },
+        {
+          "written": "左手",
+          "reading": "ひだりて",
+          "meaning": "tay trái"
+        }
+      ],
+      "tip": "Bàn tay (ナ) cầm cây thước thợ (工): người ta cầm thước bằng tay trái. TẢ là bên trái."
+    },
+    {
+      "kanji": "右",
+      "group": "position",
+      "hanViet": "Hữu",
+      "meaning": "bên phải",
+      "on": ["ウ", "ユウ"],
+      "kun": ["みぎ"],
+      "words": [
+        {
+          "written": "右",
+          "reading": "みぎ",
+          "meaning": "bên phải"
+        },
+        {
+          "written": "右手",
+          "reading": "みぎて",
+          "meaning": "tay phải"
+        }
+      ],
+      "tip": "Bàn tay (ナ) đưa cơm lên miệng (口) là tay phải: HỮU là bên phải. Phân biệt với 左 (tay cầm 工)."
+    },
+    {
+      "kanji": "中",
+      "group": "position",
+      "hanViet": "Trung",
+      "meaning": "giữa; bên trong",
+      "on": ["チュウ", "ジュウ"],
+      "kun": ["なか"],
+      "words": [
+        {
+          "written": "中",
+          "reading": "なか",
+          "meaning": "bên trong"
+        },
+        {
+          "written": "中国",
+          "reading": "ちゅうごく",
+          "meaning": "Trung Quốc"
+        },
+        {
+          "written": "一日中",
+          "reading": "いちにちじゅう",
+          "meaning": "suốt cả ngày"
+        }
+      ],
+      "tip": "Một nét dọc xuyên qua giữa ô vuông: TRUNG là ở giữa, bên trong (như trung tâm).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "中"
+        }
+      ]
+    },
+    {
+      "kanji": "外",
+      "group": "position",
+      "hanViet": "Ngoại",
+      "meaning": "bên ngoài",
+      "on": ["ガイ", "ゲ"],
+      "kun": ["そと", "ほか"],
+      "words": [
+        {
+          "written": "外",
+          "reading": "そと",
+          "meaning": "bên ngoài"
+        },
+        {
+          "written": "外国",
+          "reading": "がいこく",
+          "meaning": "nước ngoài"
+        },
+        {
+          "written": "外国人",
+          "reading": "がいこくじん",
+          "meaning": "người nước ngoài"
+        }
+      ],
+      "tip": "Buổi tối (夕) ra ngoài xem bói (卜): NGOẠI là bên ngoài (như ngoại quốc). Chú ý がいこく, không phải がいごく.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "外"
+        }
+      ]
+    },
+    {
+      "kanji": "東",
+      "group": "position",
+      "hanViet": "Đông",
+      "meaning": "phía đông",
+      "on": ["トウ"],
+      "kun": ["ひがし"],
+      "words": [
+        {
+          "written": "東",
+          "reading": "ひがし",
+          "meaning": "phía đông"
+        },
+        {
+          "written": "東口",
+          "reading": "ひがしぐち",
+          "meaning": "cửa phía đông (nhà ga)"
+        }
+      ],
+      "tip": "Mặt trời (日) mọc sau rặng cây (木): hướng mặt trời mọc là ĐÔNG. 東京 (とうきょう) là kinh đô phía đông."
+    },
+    {
+      "kanji": "西",
+      "group": "position",
+      "hanViet": "Tây",
+      "meaning": "phía tây",
+      "on": ["セイ", "サイ"],
+      "kun": ["にし"],
+      "words": [
+        {
+          "written": "西",
+          "reading": "にし",
+          "meaning": "phía tây"
+        },
+        {
+          "written": "西口",
+          "reading": "にしぐち",
+          "meaning": "cửa phía tây (nhà ga)"
+        },
+        {
+          "written": "東西",
+          "reading": "とうざい",
+          "meaning": "đông và tây"
+        }
+      ],
+      "tip": "TÂY là phía tây, nơi mặt trời lặn. Nhìn như cái tổ chim: chiều tối, khi mặt trời về tây, chim về tổ."
+    },
+    {
+      "kanji": "南",
+      "group": "position",
+      "hanViet": "Nam",
+      "meaning": "phía nam",
+      "on": ["ナン"],
+      "kun": ["みなみ"],
+      "words": [
+        {
+          "written": "南",
+          "reading": "みなみ",
+          "meaning": "phía nam"
+        },
+        {
+          "written": "南口",
+          "reading": "みなみぐち",
+          "meaning": "cửa phía nam (nhà ga)"
+        }
+      ],
+      "tip": "NAM là phía nam. Chữ thập (十) trên đầu như kim la bàn, bên dưới là căn nhà hướng nam đón nắng."
+    },
+    {
+      "kanji": "北",
+      "group": "position",
+      "hanViet": "Bắc",
+      "meaning": "phía bắc",
+      "on": ["ホク"],
+      "kun": ["きた"],
+      "words": [
+        {
+          "written": "北",
+          "reading": "きた",
+          "meaning": "phía bắc"
+        },
+        {
+          "written": "北口",
+          "reading": "きたぐち",
+          "meaning": "cửa phía bắc (nhà ga)"
+        },
+        {
+          "written": "東北",
+          "reading": "とうほく",
+          "meaning": "vùng Đông Bắc"
+        }
+      ],
+      "tip": "Hai người quay lưng vào nhau; nhà xưa quay lưng về hướng bắc để đón nắng nam: BẮC là phía bắc."
+    },
+    {
+      "kanji": "人",
+      "group": "people",
+      "hanViet": "Nhân",
+      "meaning": "người",
+      "on": ["ジン", "ニン"],
+      "kun": ["ひと"],
+      "words": [
+        {
+          "written": "人",
+          "reading": "ひと",
+          "meaning": "người"
+        },
+        {
+          "written": "日本人",
+          "reading": "にほんじん",
+          "meaning": "người Nhật"
+        },
+        {
+          "written": "三人",
+          "reading": "さんにん",
+          "meaning": "ba người"
+        }
+      ],
+      "tip": "Người đang bước, hai chân dang ra: NHÂN là người. Quốc tịch đọc じん (日本人), đếm người đọc にん (三人), trừ 一人 ひとり, 二人 ふたり, 四人 よにん.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "百人"
+        }
+      ]
+    },
+    {
+      "kanji": "子",
+      "group": "people",
+      "hanViet": "Tử",
+      "meaning": "con, trẻ em",
+      "on": ["シ"],
+      "kun": ["こ"],
+      "words": [
+        {
+          "written": "子ども",
+          "reading": "こども",
+          "meaning": "trẻ em"
+        },
+        {
+          "written": "女の子",
+          "reading": "おんなのこ",
+          "meaning": "bé gái"
+        },
+        {
+          "written": "男の子",
+          "reading": "おとこのこ",
+          "meaning": "bé trai"
+        }
+      ],
+      "tip": "Em bé quấn tã dang hai tay: TỬ là con (như tử tôn). 子ども là trẻ em."
+    },
+    {
+      "kanji": "女",
+      "group": "people",
+      "hanViet": "Nữ",
+      "meaning": "phụ nữ, con gái",
+      "on": ["ジョ", "ニョ"],
+      "kun": ["おんな"],
+      "words": [
+        {
+          "written": "女",
+          "reading": "おんな",
+          "meaning": "phụ nữ"
+        },
+        {
+          "written": "女の人",
+          "reading": "おんなのひと",
+          "meaning": "người phụ nữ"
+        },
+        {
+          "written": "女の子",
+          "reading": "おんなのこ",
+          "meaning": "bé gái"
+        }
+      ],
+      "tip": "Người phụ nữ ngồi khoanh tay: NỮ là con gái, phụ nữ."
+    },
+    {
+      "kanji": "男",
+      "group": "people",
+      "hanViet": "Nam",
+      "meaning": "đàn ông, con trai",
+      "on": ["ダン", "ナン"],
+      "kun": ["おとこ"],
+      "words": [
+        {
+          "written": "男",
+          "reading": "おとこ",
+          "meaning": "đàn ông"
+        },
+        {
+          "written": "男の人",
+          "reading": "おとこのひと",
+          "meaning": "người đàn ông"
+        },
+        {
+          "written": "男の子",
+          "reading": "おとこのこ",
+          "meaning": "bé trai"
+        }
+      ],
+      "tip": "Ruộng (田) ở trên, sức (力) ở dưới: người dùng sức làm ruộng là đàn ông. NAM là con trai."
+    },
+    {
+      "kanji": "父",
+      "group": "people",
+      "hanViet": "Phụ",
+      "meaning": "bố, cha",
+      "on": ["フ"],
+      "kun": ["ちち"],
+      "words": [
+        {
+          "written": "父",
+          "reading": "ちち",
+          "meaning": "bố (của mình)"
+        },
+        {
+          "written": "お父さん",
+          "reading": "おとうさん",
+          "meaning": "bố (người khác, hoặc khi gọi)"
+        }
+      ],
+      "tip": "Hai tay cầm công cụ bắt chéo, người cha lao động: PHỤ là cha (như phụ huynh). Bố mình là ちち, bố người khác là おとうさん."
+    },
+    {
+      "kanji": "母",
+      "group": "people",
+      "hanViet": "Mẫu",
+      "meaning": "mẹ",
+      "on": ["ボ"],
+      "kun": ["はは"],
+      "words": [
+        {
+          "written": "母",
+          "reading": "はは",
+          "meaning": "mẹ (của mình)"
+        },
+        {
+          "written": "お母さん",
+          "reading": "おかあさん",
+          "meaning": "mẹ (người khác, hoặc khi gọi)"
+        }
+      ],
+      "tip": "Hình người mẹ có hai chấm (bầu sữa): MẪU là mẹ (như phụ mẫu). Mẹ mình là はは, mẹ người khác là おかあさん."
+    },
+    {
+      "kanji": "友",
+      "group": "people",
+      "hanViet": "Hữu",
+      "meaning": "bạn",
+      "on": ["ユウ"],
+      "kun": ["とも"],
+      "words": [
+        {
+          "written": "友だち",
+          "reading": "ともだち",
+          "meaning": "bạn bè"
+        },
+        {
+          "written": "友人",
+          "reading": "ゆうじん",
+          "meaning": "bạn (trang trọng)"
+        }
+      ],
+      "tip": "Hai bàn tay (ナ và 又) nắm lấy nhau: HỮU là bạn (như bằng hữu)."
+    },
+    {
+      "kanji": "名",
+      "group": "people",
+      "hanViet": "Danh",
+      "meaning": "tên",
+      "on": ["メイ", "ミョウ"],
+      "kun": ["な"],
+      "words": [
+        {
+          "written": "名前",
+          "reading": "なまえ",
+          "meaning": "tên"
+        },
+        {
+          "written": "何名",
+          "reading": "なんめい",
+          "meaning": "mấy người (lịch sự)"
+        }
+      ],
+      "tip": "Buổi tối (夕) không thấy mặt nên phải dùng miệng (口) gọi tên: DANH là tên (như danh thiếp)."
+    },
+    {
+      "kanji": "学",
+      "group": "places",
+      "hanViet": "Học",
+      "meaning": "học",
+      "on": ["ガク"],
+      "kun": ["まな(ぶ)"],
+      "words": [
+        {
+          "written": "学生",
+          "reading": "がくせい",
+          "meaning": "học sinh, sinh viên"
+        },
+        {
+          "written": "大学",
+          "reading": "だいがく",
+          "meaning": "đại học"
+        },
+        {
+          "written": "学校",
+          "reading": "がっこう",
+          "meaning": "trường học"
+        }
+      ],
+      "tip": "Mái nhà (冖) có ánh sáng tỏa xuống, bên dưới là đứa trẻ (子) đang HỌC. 学校 đọc がっこう (có っ).",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "学校"
+        },
+        {
+          "year": 2018,
+          "word": "学校"
+        }
+      ]
+    },
+    {
+      "kanji": "校",
+      "group": "places",
+      "hanViet": "Hiệu",
+      "meaning": "trường",
+      "on": ["コウ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "学校",
+          "reading": "がっこう",
+          "meaning": "trường học"
+        },
+        {
+          "written": "高校",
+          "reading": "こうこう",
+          "meaning": "trường cấp ba"
+        },
+        {
+          "written": "校長",
+          "reading": "こうちょう",
+          "meaning": "hiệu trưởng"
+        }
+      ],
+      "tip": "Cây (木) và chữ giao (交, gặp gỡ): nơi có cây và bạn bè gặp nhau là trường. HIỆU như trong hiệu trưởng (校長).",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "学校"
+        },
+        {
+          "year": 2018,
+          "word": "学校"
+        }
+      ]
+    },
+    {
+      "kanji": "生",
+      "group": "places",
+      "hanViet": "Sinh",
+      "meaning": "sống; sinh ra",
+      "on": ["セイ", "ショウ"],
+      "kun": ["い(きる)", "う(まれる)", "なま"],
+      "words": [
+        {
+          "written": "先生",
+          "reading": "せんせい",
+          "meaning": "thầy cô giáo"
+        },
+        {
+          "written": "学生",
+          "reading": "がくせい",
+          "meaning": "học sinh, sinh viên"
+        },
+        {
+          "written": "生まれる",
+          "reading": "うまれる",
+          "meaning": "được sinh ra"
+        }
+      ],
+      "tip": "Mầm cây mọc lên khỏi mặt đất: SINH là sống, sinh ra (như học sinh)."
+    },
+    {
+      "kanji": "語",
+      "group": "places",
+      "hanViet": "Ngữ",
+      "meaning": "tiếng, ngôn ngữ",
+      "on": ["ゴ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "日本語",
+          "reading": "にほんご",
+          "meaning": "tiếng Nhật"
+        },
+        {
+          "written": "中国語",
+          "reading": "ちゅうごくご",
+          "meaning": "tiếng Trung"
+        },
+        {
+          "written": "何語",
+          "reading": "なにご",
+          "meaning": "tiếng gì"
+        }
+      ],
+      "tip": "Bộ ngôn (言, lời nói) với chữ ngô (吾, ta): lời ta nói là NGỮ (ngôn ngữ). Tên nước + 語 là tiếng nước đó."
+    },
+    {
+      "kanji": "国",
+      "group": "places",
+      "hanViet": "Quốc",
+      "meaning": "đất nước",
+      "on": ["コク"],
+      "kun": ["くに"],
+      "words": [
+        {
+          "written": "国",
+          "reading": "くに",
+          "meaning": "đất nước"
+        },
+        {
+          "written": "外国",
+          "reading": "がいこく",
+          "meaning": "nước ngoài"
+        },
+        {
+          "written": "中国",
+          "reading": "ちゅうごく",
+          "meaning": "Trung Quốc"
+        }
+      ],
+      "tip": "Viên ngọc (玉) nằm trong vòng biên giới (囗): QUỐC là đất nước. Chú ý 中国 đọc ちゅうごく (ご đục)."
+    },
+    {
+      "kanji": "本",
+      "group": "places",
+      "hanViet": "Bản",
+      "meaning": "gốc; sách",
+      "on": ["ホン"],
+      "kun": ["もと"],
+      "words": [
+        {
+          "written": "本",
+          "reading": "ほん",
+          "meaning": "sách"
+        },
+        {
+          "written": "日本",
+          "reading": "にほん",
+          "meaning": "Nhật Bản"
+        },
+        {
+          "written": "一本",
+          "reading": "いっぽん",
+          "meaning": "một (vật dài)"
+        }
+      ],
+      "tip": "Cây (木) có vạch đánh dấu ở gốc: BẢN là gốc. ほん còn là sách, và để đếm vật dài: 一本 いっぽん, 二本 にほん, 三本 さんぼん.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "六本"
+        }
+      ]
+    },
+    {
+      "kanji": "社",
+      "group": "places",
+      "hanViet": "Xã",
+      "meaning": "công ty; đền",
+      "on": ["シャ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "会社",
+          "reading": "かいしゃ",
+          "meaning": "công ty"
+        },
+        {
+          "written": "社長",
+          "reading": "しゃちょう",
+          "meaning": "giám đốc"
+        }
+      ],
+      "tip": "Bộ thị (礻, dạng của 示, thần) cạnh chữ thổ (土): nơi cả làng thờ thần đất. XÃ là đoàn thể, công ty (会社).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "会社"
+        }
+      ]
+    },
+    {
+      "kanji": "会",
+      "group": "places",
+      "hanViet": "Hội",
+      "meaning": "gặp; hội",
+      "on": ["カイ"],
+      "kun": ["あ(う)"],
+      "words": [
+        {
+          "written": "会う",
+          "reading": "あう",
+          "meaning": "gặp"
+        },
+        {
+          "written": "会社",
+          "reading": "かいしゃ",
+          "meaning": "công ty"
+        },
+        {
+          "written": "会話",
+          "reading": "かいわ",
+          "meaning": "hội thoại"
+        }
+      ],
+      "tip": "Mái che (人) trên chỗ mọi người tụ lại: HỘI là gặp gỡ (như hội họp). 会う là gặp.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "会いました"
+        },
+        {
+          "year": 2018,
+          "word": "会社"
+        }
+      ]
+    },
+    {
+      "kanji": "駅",
+      "group": "places",
+      "hanViet": "Dịch",
+      "meaning": "nhà ga",
+      "on": ["エキ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "駅",
+          "reading": "えき",
+          "meaning": "nhà ga"
+        },
+        {
+          "written": "駅前",
+          "reading": "えきまえ",
+          "meaning": "trước nhà ga"
+        }
+      ],
+      "tip": "Bộ mã (馬, ngựa) bên trái: xưa trạm DỊCH là nơi đổi ngựa trên đường dài; nay 駅 là nhà ga."
+    },
+    {
+      "kanji": "道",
+      "group": "places",
+      "hanViet": "Đạo",
+      "meaning": "con đường",
+      "on": ["ドウ"],
+      "kun": ["みち"],
+      "words": [
+        {
+          "written": "道",
+          "reading": "みち",
+          "meaning": "con đường"
+        },
+        {
+          "written": "水道",
+          "reading": "すいどう",
+          "meaning": "nước máy"
+        }
+      ],
+      "tip": "Bộ sước (辶, đi) chở cái đầu (首): đầu dẫn lối mà đi. ĐẠO là con đường."
+    },
+    {
+      "kanji": "電",
+      "group": "places",
+      "hanViet": "Điện",
+      "meaning": "điện",
+      "on": ["デン"],
+      "kun": [],
+      "words": [
+        {
+          "written": "電車",
+          "reading": "でんしゃ",
+          "meaning": "tàu điện"
+        },
+        {
+          "written": "電気",
+          "reading": "でんき",
+          "meaning": "điện, đèn"
+        },
+        {
+          "written": "電話",
+          "reading": "でんわ",
+          "meaning": "điện thoại"
+        }
+      ],
+      "tip": "Mưa (雨) trên đầu, bên dưới là tia chớp giật: ĐIỆN là điện, sấm chớp."
+    },
+    {
+      "kanji": "車",
+      "group": "places",
+      "hanViet": "Xa",
+      "meaning": "xe",
+      "on": ["シャ"],
+      "kun": ["くるま"],
+      "words": [
+        {
+          "written": "車",
+          "reading": "くるま",
+          "meaning": "ô tô"
+        },
+        {
+          "written": "電車",
+          "reading": "でんしゃ",
+          "meaning": "tàu điện"
+        }
+      ],
+      "tip": "Chiếc xe nhìn từ trên xuống: thùng xe ở giữa, trục bánh xuyên qua. XA là xe; くるま là ô tô."
+    },
+    {
+      "kanji": "山",
+      "group": "nature",
+      "hanViet": "Sơn",
+      "meaning": "núi",
+      "on": ["サン"],
+      "kun": ["やま"],
+      "words": [
+        {
+          "written": "山",
+          "reading": "やま",
+          "meaning": "núi"
+        },
+        {
+          "written": "火山",
+          "reading": "かざん",
+          "meaning": "núi lửa"
+        }
+      ],
+      "tip": "Ba ngọn núi, ngọn giữa cao nhất: SƠN là núi (như giang sơn). Tên núi thêm さん: 富士山 ふじさん.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "山"
+        }
+      ]
+    },
+    {
+      "kanji": "川",
+      "group": "nature",
+      "hanViet": "Xuyên",
+      "meaning": "sông",
+      "on": ["セン"],
+      "kun": ["かわ"],
+      "words": [
+        {
+          "written": "川",
+          "reading": "かわ",
+          "meaning": "sông"
+        },
+        {
+          "written": "小川",
+          "reading": "おがわ",
+          "meaning": "con suối nhỏ"
+        }
+      ],
+      "tip": "Ba dòng nước chảy song song: XUYÊN là sông. Đứng sau chữ khác thường đọc がわ (小川).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "川"
+        }
+      ]
+    },
+    {
+      "kanji": "田",
+      "group": "nature",
+      "hanViet": "Điền",
+      "meaning": "ruộng",
+      "on": ["デン"],
+      "kun": ["た"],
+      "words": [
+        {
+          "written": "田んぼ",
+          "reading": "たんぼ",
+          "meaning": "ruộng lúa"
+        },
+        {
+          "written": "田中",
+          "reading": "たなか",
+          "meaning": "Tanaka (họ người)"
+        }
+      ],
+      "tip": "Ô ruộng chia bốn thửa có bờ ngăn: ĐIỀN là ruộng (như điền viên). Hay gặp trong họ người Nhật: 田中, 山田."
+    },
+    {
+      "kanji": "天",
+      "group": "nature",
+      "hanViet": "Thiên",
+      "meaning": "trời",
+      "on": ["テン"],
+      "kun": [],
+      "words": [
+        {
+          "written": "天気",
+          "reading": "てんき",
+          "meaning": "thời tiết"
+        },
+        {
+          "written": "天ぷら",
+          "reading": "てんぷら",
+          "meaning": "món tempura"
+        }
+      ],
+      "tip": "Người dang tay (大) có một nét ngang trên đầu là bầu trời: THIÊN là trời. 天気 là thời tiết."
+    },
+    {
+      "kanji": "気",
+      "group": "nature",
+      "hanViet": "Khí",
+      "meaning": "hơi; tinh thần",
+      "on": ["キ", "ケ"],
+      "kun": [],
+      "words": [
+        {
+          "written": "天気",
+          "reading": "てんき",
+          "meaning": "thời tiết"
+        },
+        {
+          "written": "元気",
+          "reading": "げんき",
+          "meaning": "khỏe mạnh"
+        },
+        {
+          "written": "電気",
+          "reading": "でんき",
+          "meaning": "điện, đèn"
+        }
+      ],
+      "tip": "Hơi nước bốc lên thành mấy lớp (气): KHÍ là hơi, khí, tinh thần. 元気 là khỏe, 天気 là thời tiết.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "元気"
+        }
+      ]
+    },
+    {
+      "kanji": "雨",
+      "group": "nature",
+      "hanViet": "Vũ",
+      "meaning": "mưa",
+      "on": ["ウ"],
+      "kun": ["あめ"],
+      "words": [
+        {
+          "written": "雨",
+          "reading": "あめ",
+          "meaning": "mưa"
+        },
+        {
+          "written": "大雨",
+          "reading": "おおあめ",
+          "meaning": "mưa to"
+        }
+      ],
+      "tip": "Mây và bầu trời (冂) có bốn hạt mưa rơi: VŨ là mưa. Gặp lại làm bộ mưa trên đầu chữ 電.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "雨"
+        }
+      ]
+    },
+    {
+      "kanji": "花",
+      "group": "nature",
+      "hanViet": "Hoa",
+      "meaning": "hoa",
+      "on": ["カ"],
+      "kun": ["はな"],
+      "words": [
+        {
+          "written": "花",
+          "reading": "はな",
+          "meaning": "hoa"
+        },
+        {
+          "written": "花見",
+          "reading": "はなみ",
+          "meaning": "ngắm hoa (anh đào)"
+        },
+        {
+          "written": "花火",
+          "reading": "はなび",
+          "meaning": "pháo hoa"
+        }
+      ],
+      "tip": "Bộ thảo (艹, cỏ) trên chữ hóa (化, biến đổi): cây cỏ biến thành bông. HOA là hoa. 花見 là đi ngắm hoa anh đào."
+    },
+    {
+      "kanji": "空",
+      "group": "nature",
+      "hanViet": "Không",
+      "meaning": "bầu trời; trống",
+      "on": ["クウ"],
+      "kun": ["そら", "あ(く)"],
+      "words": [
+        {
+          "written": "空",
+          "reading": "そら",
+          "meaning": "bầu trời"
+        },
+        {
+          "written": "空く",
+          "reading": "あく",
+          "meaning": "trống, vắng"
+        },
+        {
+          "written": "空気",
+          "reading": "くうき",
+          "meaning": "không khí"
+        }
+      ],
+      "tip": "Bộ huyệt (穴, hang) trên chữ công (工): khoảng trống rỗng. KHÔNG là bầu trời, trống không (như không khí).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "空"
+        }
+      ]
+    },
+    {
+      "kanji": "魚",
+      "group": "nature",
+      "hanViet": "Ngư",
+      "meaning": "cá",
+      "on": ["ギョ"],
+      "kun": ["さかな"],
+      "words": [
+        {
+          "written": "魚",
+          "reading": "さかな",
+          "meaning": "cá"
+        },
+        {
+          "written": "金魚",
+          "reading": "きんぎょ",
+          "meaning": "cá vàng"
+        }
+      ],
+      "tip": "Đầu cá ở trên, thân có vảy (田) và bốn chấm là đuôi: NGƯ là cá (như ngư dân).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "魚"
+        }
+      ]
+    },
+    {
+      "kanji": "口",
+      "group": "body",
+      "hanViet": "Khẩu",
+      "meaning": "miệng; cửa",
+      "on": ["コウ"],
+      "kun": ["くち", "-ぐち"],
+      "words": [
+        {
+          "written": "口",
+          "reading": "くち",
+          "meaning": "miệng"
+        },
+        {
+          "written": "入り口",
+          "reading": "いりぐち",
+          "meaning": "lối vào"
+        },
+        {
+          "written": "出口",
+          "reading": "でぐち",
+          "meaning": "lối ra"
+        }
+      ],
+      "tip": "Cái miệng mở vuông: KHẨU là miệng, cửa. Đứng sau chữ khác thành ぐち: 入り口 lối vào, 出口 lối ra."
+    },
+    {
+      "kanji": "目",
+      "group": "body",
+      "hanViet": "Mục",
+      "meaning": "mắt",
+      "on": ["モク"],
+      "kun": ["め"],
+      "words": [
+        {
+          "written": "目",
+          "reading": "め",
+          "meaning": "mắt"
+        },
+        {
+          "written": "一つ目",
+          "reading": "ひとつめ",
+          "meaning": "cái thứ nhất"
+        }
+      ],
+      "tip": "Con mắt dựng đứng, lòng đen ở giữa: MỤC là mắt (như mục kích). 〜目 sau số đếm là \"thứ…\": 一つ目."
+    },
+    {
+      "kanji": "耳",
+      "group": "body",
+      "hanViet": "Nhĩ",
+      "meaning": "tai",
+      "on": ["ジ"],
+      "kun": ["みみ"],
+      "words": [
+        {
+          "written": "耳",
+          "reading": "みみ",
+          "meaning": "tai"
+        }
+      ],
+      "tip": "Cái tai có vành và lỗ tai: NHĨ là tai. Gặp lại bên trong chữ 聞 (nghe)."
+    },
+    {
+      "kanji": "手",
+      "group": "body",
+      "hanViet": "Thủ",
+      "meaning": "tay",
+      "on": ["シュ"],
+      "kun": ["て"],
+      "words": [
+        {
+          "written": "手",
+          "reading": "て",
+          "meaning": "tay"
+        },
+        {
+          "written": "上手",
+          "reading": "じょうず",
+          "meaning": "giỏi"
+        },
+        {
+          "written": "下手",
+          "reading": "へた",
+          "meaning": "kém, dở"
+        }
+      ],
+      "tip": "Bàn tay xòe ngón, nét dọc là cổ tay: THỦ là tay. 上手 là giỏi, 下手 là kém."
+    },
+    {
+      "kanji": "足",
+      "group": "body",
+      "hanViet": "Túc",
+      "meaning": "chân; đủ",
+      "on": ["ソク"],
+      "kun": ["あし", "た(りる)"],
+      "words": [
+        {
+          "written": "足",
+          "reading": "あし",
+          "meaning": "chân"
+        },
+        {
+          "written": "足りる",
+          "reading": "たりる",
+          "meaning": "đủ"
+        }
+      ],
+      "tip": "Đầu gối (口) trên bàn chân đang bước: TÚC là chân. たりる (đủ) cũng viết bằng chữ này."
+    },
+    {
+      "kanji": "行",
+      "group": "moving",
+      "hanViet": "Hành",
+      "meaning": "đi",
+      "on": ["コウ", "ギョウ"],
+      "kun": ["い(く)", "おこな(う)"],
+      "words": [
+        {
+          "written": "行く",
+          "reading": "いく",
+          "meaning": "đi"
+        },
+        {
+          "written": "行う",
+          "reading": "おこなう",
+          "meaning": "tiến hành, tổ chức"
+        }
+      ],
+      "tip": "Ngã tư đường nhìn từ trên xuống: HÀNH là đi (như hành trình). 銀行 (ngân hàng), 旅行 (du lịch) đọc こう."
+    },
+    {
+      "kanji": "来",
+      "group": "moving",
+      "hanViet": "Lai",
+      "meaning": "đến",
+      "on": ["ライ"],
+      "kun": ["く(る)", "き(ます)", "こ(ない)"],
+      "words": [
+        {
+          "written": "来る",
+          "reading": "くる",
+          "meaning": "đến"
+        },
+        {
+          "written": "来週",
+          "reading": "らいしゅう",
+          "meaning": "tuần sau"
+        },
+        {
+          "written": "来年",
+          "reading": "らいねん",
+          "meaning": "năm sau"
+        }
+      ],
+      "tip": "Cây lúa (木) có thêm hai bông: LAI là đến (như tương lai). くる, きます, こない đều viết 来.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "来ませんか"
+        },
+        {
+          "year": 2018,
+          "word": "来月"
+        }
+      ]
+    },
+    {
+      "kanji": "出",
+      "group": "moving",
+      "hanViet": "Xuất",
+      "meaning": "ra",
+      "on": ["シュツ"],
+      "kun": ["で(る)", "だ(す)"],
+      "words": [
+        {
+          "written": "出る",
+          "reading": "でる",
+          "meaning": "đi ra"
+        },
+        {
+          "written": "出す",
+          "reading": "だす",
+          "meaning": "lấy ra, gửi"
+        },
+        {
+          "written": "出口",
+          "reading": "でぐち",
+          "meaning": "lối ra"
+        }
+      ],
+      "tip": "Trông như hai chữ 山 chồng lên nhau: vượt qua núi mà đi RA. XUẤT là ra (như xuất khẩu)."
+    },
+    {
+      "kanji": "入",
+      "group": "moving",
+      "hanViet": "Nhập",
+      "meaning": "vào",
+      "on": ["ニュウ"],
+      "kun": ["はい(る)", "い(れる)"],
+      "words": [
+        {
+          "written": "入る",
+          "reading": "はいる",
+          "meaning": "đi vào"
+        },
+        {
+          "written": "入れる",
+          "reading": "いれる",
+          "meaning": "cho vào"
+        },
+        {
+          "written": "入り口",
+          "reading": "いりぐち",
+          "meaning": "lối vào"
+        }
+      ],
+      "tip": "Nét dài chui vào trong như mũi tên: NHẬP là vào (như nhập khẩu). Đừng nhầm với 人: ở 入 nét bên phải cao hơn."
+    },
+    {
+      "kanji": "休",
+      "group": "moving",
+      "hanViet": "Hưu",
+      "meaning": "nghỉ",
+      "on": ["キュウ"],
+      "kun": ["やす(む)"],
+      "words": [
+        {
+          "written": "休む",
+          "reading": "やすむ",
+          "meaning": "nghỉ"
+        },
+        {
+          "written": "休み",
+          "reading": "やすみ",
+          "meaning": "ngày nghỉ, kỳ nghỉ"
+        }
+      ],
+      "tip": "Người (亻) tựa vào cây (木) để nghỉ: HƯU là nghỉ ngơi (như về hưu)."
+    },
+    {
+      "kanji": "立",
+      "group": "moving",
+      "hanViet": "Lập",
+      "meaning": "đứng",
+      "on": ["リツ"],
+      "kun": ["た(つ)"],
+      "words": [
+        {
+          "written": "立つ",
+          "reading": "たつ",
+          "meaning": "đứng"
+        },
+        {
+          "written": "国立",
+          "reading": "こくりつ",
+          "meaning": "quốc lập (do nhà nước lập)"
+        }
+      ],
+      "tip": "Người đứng thẳng trên mặt đất (nét ngang dưới chân): LẬP là đứng (như thành lập)."
+    },
+    {
+      "kanji": "大",
+      "group": "qualities",
+      "hanViet": "Đại",
+      "meaning": "lớn",
+      "on": ["ダイ", "タイ"],
+      "kun": ["おお(きい)"],
+      "words": [
+        {
+          "written": "大きい",
+          "reading": "おおきい",
+          "meaning": "to, lớn"
+        },
+        {
+          "written": "大学",
+          "reading": "だいがく",
+          "meaning": "đại học"
+        },
+        {
+          "written": "大人",
+          "reading": "おとな",
+          "meaning": "người lớn"
+        }
+      ],
+      "tip": "Người dang rộng tay chân để tả cái gì to: ĐẠI là lớn (như đại học). 大人 đọc đặc biệt là おとな."
+    },
+    {
+      "kanji": "小",
+      "group": "qualities",
+      "hanViet": "Tiểu",
+      "meaning": "nhỏ",
+      "on": ["ショウ"],
+      "kun": ["ちい(さい)", "こ", "お"],
+      "words": [
+        {
+          "written": "小さい",
+          "reading": "ちいさい",
+          "meaning": "nhỏ"
+        },
+        {
+          "written": "小学校",
+          "reading": "しょうがっこう",
+          "meaning": "trường tiểu học"
+        }
+      ],
+      "tip": "Ba nét nhỏ như hạt cát tách ra: TIỂU là nhỏ (như tiểu học).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "小さい"
+        }
+      ]
+    },
+    {
+      "kanji": "高",
+      "group": "qualities",
+      "hanViet": "Cao",
+      "meaning": "cao; đắt",
+      "on": ["コウ"],
+      "kun": ["たか(い)"],
+      "words": [
+        {
+          "written": "高い",
+          "reading": "たかい",
+          "meaning": "cao, đắt"
+        },
+        {
+          "written": "高校",
+          "reading": "こうこう",
+          "meaning": "trường cấp ba"
+        }
+      ],
+      "tip": "Ngôi lầu nhiều tầng có mái nhọn: CAO là cao. たかい vừa là cao vừa là đắt.",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "高い"
+        }
+      ]
+    },
+    {
+      "kanji": "安",
+      "group": "qualities",
+      "hanViet": "An",
+      "meaning": "yên; rẻ",
+      "on": ["アン"],
+      "kun": ["やす(い)"],
+      "words": [
+        {
+          "written": "安い",
+          "reading": "やすい",
+          "meaning": "rẻ"
+        }
+      ],
+      "tip": "Người phụ nữ (女) ở dưới mái nhà (宀) thì yên ổn: AN là bình an. Trong tiếng Nhật やすい còn là rẻ.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "安い"
+        }
+      ]
+    },
+    {
+      "kanji": "新",
+      "group": "qualities",
+      "hanViet": "Tân",
+      "meaning": "mới",
+      "on": ["シン"],
+      "kun": ["あたら(しい)"],
+      "words": [
+        {
+          "written": "新しい",
+          "reading": "あたらしい",
+          "meaning": "mới"
+        },
+        {
+          "written": "新聞",
+          "reading": "しんぶん",
+          "meaning": "báo"
+        }
+      ],
+      "tip": "Đứng (立) bên cây (木), cầm rìu (斤) đẽo gỗ mới: TÂN là mới (như tân thời). 新聞 là tờ báo.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "新聞"
+        }
+      ]
+    },
+    {
+      "kanji": "古",
+      "group": "qualities",
+      "hanViet": "Cổ",
+      "meaning": "cũ",
+      "on": ["コ"],
+      "kun": ["ふる(い)"],
+      "words": [
+        {
+          "written": "古い",
+          "reading": "ふるい",
+          "meaning": "cũ"
+        }
+      ],
+      "tip": "Mười (十) cái miệng (口) truyền lại chuyện xưa: CỔ là cũ (như cổ điển)."
+    },
+    {
+      "kanji": "長",
+      "group": "qualities",
+      "hanViet": "Trường / Trưởng",
+      "meaning": "dài; người đứng đầu",
+      "on": ["チョウ"],
+      "kun": ["なが(い)"],
+      "words": [
+        {
+          "written": "長い",
+          "reading": "ながい",
+          "meaning": "dài"
+        },
+        {
+          "written": "社長",
+          "reading": "しゃちょう",
+          "meaning": "giám đốc"
+        },
+        {
+          "written": "校長",
+          "reading": "こうちょう",
+          "meaning": "hiệu trưởng"
+        }
+      ],
+      "tip": "Người có mái tóc dài buông xuống: TRƯỜNG là dài; đọc TRƯỞNG là người đứng đầu (社長, 校長)."
+    },
+    {
+      "kanji": "多",
+      "group": "qualities",
+      "hanViet": "Đa",
+      "meaning": "nhiều",
+      "on": ["タ"],
+      "kun": ["おお(い)"],
+      "words": [
+        {
+          "written": "多い",
+          "reading": "おおい",
+          "meaning": "nhiều"
+        },
+        {
+          "written": "多分",
+          "reading": "たぶん",
+          "meaning": "có lẽ"
+        }
+      ],
+      "tip": "Hai chữ tịch (夕, buổi tối) chồng lên nhau: tối này qua tối khác, rất nhiều. ĐA là nhiều (như đa số).",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "多い"
+        }
+      ]
+    },
+    {
+      "kanji": "少",
+      "group": "qualities",
+      "hanViet": "Thiểu",
+      "meaning": "ít",
+      "on": ["ショウ"],
+      "kun": ["すく(ない)", "すこ(し)"],
+      "words": [
+        {
+          "written": "少ない",
+          "reading": "すくない",
+          "meaning": "ít"
+        },
+        {
+          "written": "少し",
+          "reading": "すこし",
+          "meaning": "một chút"
+        }
+      ],
+      "tip": "Chữ tiểu (小) thêm một nét phẩy kéo bớt đi: THIỂU là ít (như thiểu số)."
+    },
+    {
+      "kanji": "白",
+      "group": "qualities",
+      "hanViet": "Bạch",
+      "meaning": "trắng",
+      "on": ["ハク"],
+      "kun": ["しろ", "しろ(い)"],
+      "words": [
+        {
+          "written": "白い",
+          "reading": "しろい",
+          "meaning": "trắng"
+        },
+        {
+          "written": "白",
+          "reading": "しろ",
+          "meaning": "màu trắng"
+        }
+      ],
+      "tip": "Mặt trời (日) có một tia sáng trên đầu: ánh sáng trắng. BẠCH là màu trắng (như bạch kim)."
+    },
+    {
+      "kanji": "元",
+      "group": "qualities",
+      "hanViet": "Nguyên",
+      "meaning": "gốc, ban đầu",
+      "on": ["ゲン", "ガン"],
+      "kun": ["もと"],
+      "words": [
+        {
+          "written": "元気",
+          "reading": "げんき",
+          "meaning": "khỏe mạnh"
+        },
+        {
+          "written": "お元気ですか",
+          "reading": "おげんきですか",
+          "meaning": "bạn có khỏe không"
+        }
+      ],
+      "tip": "Hai nét ngang (二) trên đôi chân người (儿): cái gốc. NGUYÊN là nguồn gốc. Hay gặp nhất trong 元気 (khỏe).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "元気"
+        }
+      ]
+    },
+    {
+      "kanji": "見",
+      "group": "actions",
+      "hanViet": "Kiến",
+      "meaning": "nhìn, xem",
+      "on": ["ケン"],
+      "kun": ["み(る)", "み(せる)"],
+      "words": [
+        {
+          "written": "見る",
+          "reading": "みる",
+          "meaning": "nhìn, xem"
+        },
+        {
+          "written": "見せる",
+          "reading": "みせる",
+          "meaning": "cho xem"
+        },
+        {
+          "written": "花見",
+          "reading": "はなみ",
+          "meaning": "ngắm hoa"
+        }
+      ],
+      "tip": "Con mắt (目) trên đôi chân (儿): người đi để nhìn. KIẾN là thấy, xem (như ý kiến).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "見て"
+        }
+      ]
+    },
+    {
+      "kanji": "聞",
+      "group": "actions",
+      "hanViet": "Văn",
+      "meaning": "nghe; hỏi",
+      "on": ["ブン", "モン"],
+      "kun": ["き(く)"],
+      "words": [
+        {
+          "written": "聞く",
+          "reading": "きく",
+          "meaning": "nghe, hỏi"
+        },
+        {
+          "written": "新聞",
+          "reading": "しんぶん",
+          "meaning": "báo"
+        }
+      ],
+      "tip": "Cái tai (耳) áp vào cánh cổng (門) để nghe: VĂN là nghe. 聞く là nghe và cả hỏi.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "新聞"
+        }
+      ]
+    },
+    {
+      "kanji": "言",
+      "group": "actions",
+      "hanViet": "Ngôn",
+      "meaning": "nói; lời",
+      "on": ["ゲン", "ゴン"],
+      "kun": ["い(う)", "こと"],
+      "words": [
+        {
+          "written": "言う",
+          "reading": "いう",
+          "meaning": "nói"
+        },
+        {
+          "written": "一言",
+          "reading": "ひとこと",
+          "meaning": "một lời"
+        }
+      ],
+      "tip": "Miệng (口) với mấy vạch lời nói thoát ra: NGÔN là nói (như ngôn ngữ). Làm bộ ngôn bên trái chữ 語, 話, 読.",
+      "paper": [
+        {
+          "year": 2012,
+          "word": "言って"
+        },
+        {
+          "year": 2018,
+          "word": "言わないで"
+        }
+      ]
+    },
+    {
+      "kanji": "話",
+      "group": "actions",
+      "hanViet": "Thoại",
+      "meaning": "nói chuyện",
+      "on": ["ワ"],
+      "kun": ["はな(す)", "はなし"],
+      "words": [
+        {
+          "written": "話す",
+          "reading": "はなす",
+          "meaning": "nói chuyện"
+        },
+        {
+          "written": "話",
+          "reading": "はなし",
+          "meaning": "câu chuyện"
+        },
+        {
+          "written": "電話",
+          "reading": "でんわ",
+          "meaning": "điện thoại"
+        }
+      ],
+      "tip": "Bộ ngôn (言) và chữ thiệt (舌, cái lưỡi): dùng lưỡi để nói. THOẠI là nói chuyện (như điện thoại)."
+    },
+    {
+      "kanji": "読",
+      "group": "actions",
+      "hanViet": "Độc",
+      "meaning": "đọc",
+      "on": ["ドク"],
+      "kun": ["よ(む)"],
+      "words": [
+        {
+          "written": "読む",
+          "reading": "よむ",
+          "meaning": "đọc"
+        },
+        {
+          "written": "読書",
+          "reading": "どくしょ",
+          "meaning": "đọc sách"
+        }
+      ],
+      "tip": "Bộ ngôn (言) cạnh chữ mại (売, bán): người bán rong đọc to lời rao. ĐỘC là đọc (như độc giả)."
+    },
+    {
+      "kanji": "書",
+      "group": "actions",
+      "hanViet": "Thư",
+      "meaning": "viết",
+      "on": ["ショ"],
+      "kun": ["か(く)"],
+      "words": [
+        {
+          "written": "書く",
+          "reading": "かく",
+          "meaning": "viết"
+        },
+        {
+          "written": "読書",
+          "reading": "どくしょ",
+          "meaning": "đọc sách"
+        },
+        {
+          "written": "書道",
+          "reading": "しょどう",
+          "meaning": "thư pháp"
+        }
+      ],
+      "tip": "Bàn tay cầm bút (聿) viết lên trang giấy (日): THƯ là viết (như thư pháp).",
+      "paper": [
+        {
+          "year": 2018,
+          "word": "書いて"
+        }
+      ]
+    },
+    {
+      "kanji": "食",
+      "group": "actions",
+      "hanViet": "Thực",
+      "meaning": "ăn",
+      "on": ["ショク"],
+      "kun": ["た(べる)"],
+      "words": [
+        {
+          "written": "食べる",
+          "reading": "たべる",
+          "meaning": "ăn"
+        }
+      ],
+      "tip": "Mái che (人) trên bát cơm đầy (良): THỰC là ăn (như thực phẩm)."
+    },
+    {
+      "kanji": "飲",
+      "group": "actions",
+      "hanViet": "Ẩm",
+      "meaning": "uống",
+      "on": ["イン"],
+      "kun": ["の(む)"],
+      "words": [
+        {
+          "written": "飲む",
+          "reading": "のむ",
+          "meaning": "uống"
+        }
+      ],
+      "tip": "Bộ thực (飠, ăn uống) và chữ khiếm (欠, người há miệng): há miệng để uống. ẨM là uống (như ẩm thực)."
+    },
+    {
+      "kanji": "買",
+      "group": "actions",
+      "hanViet": "Mãi",
+      "meaning": "mua",
+      "on": ["バイ"],
+      "kun": ["か(う)"],
+      "words": [
+        {
+          "written": "買う",
+          "reading": "かう",
+          "meaning": "mua"
+        }
+      ],
+      "tip": "Cái lưới (罒) trên con sò (貝, tiền xưa): bỏ tiền ra mua hàng. MÃI là mua."
+    }
+  ]
+}

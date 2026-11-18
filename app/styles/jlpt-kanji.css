@@ -1,0 +1,185 @@
+/* JLPT kanji lists (app/jlpt-kanji): level switch, group links, then one card per kanji with its
+   Sino-Vietnamese reading, readings, words and memory tip. */
+.kanji-level-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+.kanji-level-switch a {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-weight: 600;
+  text-decoration: none;
+}
+.kanji-level-switch a[aria-current="page"] {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+.kanji-note {
+  max-width: 80ch;
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.kanji-group-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.kanji-group-nav a {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+}
+.kanji-group-nav a:hover,
+.kanji-group-nav a[aria-current="page"] {
+  border-color: var(--primary);
+}
+.kanji-group-nav a[aria-current="page"] {
+  background: var(--primary-soft);
+  font-weight: 600;
+}
+.kanji-count {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.kanji-group {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 80px;
+}
+.kanji-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-bottom: 16px;
+}
+.kanji-group-head h2 {
+  margin: 0;
+}
+.kanji-group-practice {
+  margin-left: auto;
+  font-weight: 600;
+}
+.kanji-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kanji-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  scroll-margin-top: 80px;
+}
+.kanji-card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kanji-glyph {
+  flex: none;
+  font-family: var(--font-jp);
+  font-size: 56px;
+  line-height: 1;
+}
+.kanji-card-title {
+  min-width: 0;
+}
+.kanji-card-title p {
+  margin: 0;
+}
+.kanji-han-viet {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.kanji-meaning {
+  color: var(--muted);
+}
+.kanji-paper-badge {
+  flex: none;
+  align-self: flex-start;
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.kanji-note .kanji-paper-badge {
+  display: inline-block;
+}
+.kanji-readings {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  font-size: 15px;
+}
+.kanji-readings div {
+  display: flex;
+  gap: 8px;
+}
+.kanji-readings dt {
+  flex: none;
+  width: 64px;
+  color: var(--muted);
+}
+.kanji-readings dd {
+  margin: 0;
+  font-family: var(--font-jp);
+}
+.kanji-words {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+}
+.kanji-word {
+  font-family: var(--font-jp);
+  font-size: 18px;
+}
+.kanji-word-reading {
+  font-family: var(--font-jp);
+  color: var(--muted);
+}
+.kanji-tip,
+.kanji-paper {
+  margin: 0;
+  font-size: 15px;
+}
+.kanji-tip {
+  padding: 8px 10px;
+  border-left: 3px solid var(--primary);
+  background: var(--background);
+  border-radius: 0 8px 8px 0;
+}
+.kanji-paper {
+  color: var(--muted);
+}
+/* A short Japanese word inside a tip stays on one line (いっぷん, not いっぷ / ん). */
+.kanji-tip span[lang="ja"] {
+  white-space: nowrap;
+}

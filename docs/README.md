@@ -54,7 +54,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | Dịch vụ hỗ trợ giảng dạy (29/10/2026) | [BD](basic-design/teaching-service.md) | [DD](detail-design/teaching-service.md) | [nghiệm thu và kết quả local](testing/teaching-service.md) |
 | Vừa dạy vừa học: lớp tự học, chặn chủ lớp tự vào lớp dạy (CR-20), nguồn bài luyện hằng ngày, nhật ký buổi dạy, cập nhật bài từ mẫu (02/11/2026) | [BD Luồng 7](basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026) | [DD](detail-design/teaching-service.md#vừa-dạy-vừa-học--đã-triển-khai-02112026) | [kiểm chứng](testing/teach-and-learn.md) |
 | Lịch sử bài tập hằng ngày: điểm từng ngày như trang Sheet cũ, cho học viên và giáo viên (04/11/2026) | [BD](basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026) | [DD](detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026) | [kiểm chứng](testing/flow-fixes-2026-11-03.md#lịch-sử-bài-tập-hằng-ngày-04112026) |
-| Luyện kanji theo bài | [BD](basic-design/kanji-practice.md) | — | — |
+| Luyện kanji theo bài; Kanji N5/N4 theo cấp có âm Hán Việt và mẹo nhớ (18/11/2026) | [BD](basic-design/kanji-practice.md), [Kanji N5/N4](basic-design/kanji-practice.md#kanji-n5n4-theo-cấp--18112026) | — | [kiểm chứng](testing/jlpt-kanji-2026-11-18.md) |
 | Tự nộp lượt bỏ dở khi hết hạn (05/11/2026) | [BD](basic-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026) | [DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026) | [rà soát](testing/system-review-2026-11-05.md) |
 | Furigana trong bài tập (05/11/2026) | [BD](basic-design/phase-3.md#furigana-trong-bài-tập--05112026) | [DD](detail-design/phase-3.md#furigana-trong-bài-tập--05112026) | [rà soát](testing/system-review-2026-11-05.md) |
 | Sửa lỗi hiển thị bài đã giao (05/11/2026) | [BD](basic-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026) | [DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026) | [rà soát](testing/system-review-2026-11-05.md) |
@@ -80,6 +80,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 13/11/2026
 
+- Kanji N5/N4 theo cấp: [dữ liệu, soát độc lập và kiểm chứng trang](testing/jlpt-kanji-2026-11-18.md).
 - Bài hằng ngày theo cấu trúc đề JLPT: [phân tích độ lặp, nguồn số câu từng もんだい, kiểm chứng bộ chọn câu và ngân hàng N4 theo dạng đề](testing/jlpt-daily-format-2026-11-13.md).
 
 ### 11/11/2026
