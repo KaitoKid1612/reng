@@ -348,25 +348,31 @@ Nội dung tự biên soạn bằng AI theo phạm vi Minna 1–50, không chép
 
 Nạp lên production: bài trên server có mã `n4-viet-review-bank`, khác `id` trong file, nên phải truyền `--lesson`: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --lesson n4-viet-review-bank --out n4.sql`. Đọc lại file, thêm `--commit` rồi chạy. Thiếu `--lesson` thì transaction dừng ở "Lesson … does not exist" và không thay đổi gì. Production còn bài `n4-comprehensive-review-bank-ac4b473b` cùng tên (304 câu, phiên bản cũ), không phải nguồn bài hằng ngày. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
 
-## Ngân hàng Minna 1–16 cho lớp đang học theo bài — 13/11/2026
+## Ngân hàng Minna 1–25 cho lớp đang học theo bài
 
-`review-banks/n5-minna-1-16.json` (bài `n5-minna-review-bank`) là nguồn bài hằng ngày mới của lớp Tiếng Nhật Minna – Lớp 1 (Nguyên). Trước đó lớp lấy 60 câu mỗi ngày từ "Ngân hàng ôn Minna N5 – Nguyên", nhưng ngân hàng này chỉ có 84 câu thường (118 câu nghe đang tắt), nên ngày nào Nguyên cũng gặp lại phần lớn câu của hôm trước. Ngân hàng cũ giữ nguyên trong lớp cho câu nghe và đề thi thử.
+`review-banks/n5-minna-1-25.json` (bài `n5-minna-review-bank`) là nguồn bài hằng ngày của lớp Tiếng Nhật Minna – Lớp 1 (Nguyên). Trước đó lớp lấy 60 câu mỗi ngày từ "Ngân hàng ôn Minna N5 – Nguyên", nhưng ngân hàng này chỉ có 84 câu thường (118 câu nghe đang tắt), nên ngày nào Nguyên cũng gặp lại phần lớn câu của hôm trước. Ngân hàng cũ giữ nguyên trong lớp cho câu nghe và đề thi thử.
+
+Bản đầu (13/11/2026, file `n5-minna-1-16.json`) phủ bài 1–16. Ngày 18/11/2026 người dùng xác nhận Nguyên thi JLPT N5 ngày 06/12/2026, nên ngân hàng mở rộng ra toàn bộ Sơ cấp I (bài 1–25, phạm vi N5) và vẫn giữ trần 500 câu: bài cũ giữ ít câu hơn, bài 17–25 nhiều câu hơn vì Nguyên chưa ôn các bài này hằng ngày.
 
 | Phần | Số câu | Nguồn |
 |---|---|---|
-| Câu luyện của bài | 420 | Bài mẫu Minna 1–16 đã duyệt: 24 câu mỗi bài 1–10, 30 câu mỗi bài 11–16, chọn đều theo thứ tự trong bài nên đủ các điểm ngữ pháp và tỉ lệ câu chọn/câu điền |
-| Ghép từ với nghĩa | 32 | Tự tạo từ danh sách từ của mỗi bài, 2 câu mỗi bài, 5 cặp mỗi câu, các nghĩa không trùng nhau |
-| Sắp xếp câu | 32 | Mới, 2 câu mỗi bài; chỉ một thứ tự mảnh đúng |
-| Đọc đoạn ngắn | 16 | Mới, 8 đoạn 80–115 chữ ở các bài 4–16, mỗi đoạn 2 câu |
+| Câu luyện của bài | 376 | Bài mẫu Minna 1–25 đã duyệt: 13 câu mỗi bài 1–10, 14 câu mỗi bài 11–16, 18 câu mỗi bài 17–25. Câu được rải đều theo thứ tự trong bài nên đủ các điểm ngữ pháp, giữ tỉ lệ câu chọn/câu điền/câu kanji, và vị trí đáp án đúng chia đều theo từng bài |
+| Ghép từ với nghĩa | 50 | Từ danh sách từ của mỗi bài, 2 câu mỗi bài, 5 cặp mỗi câu, các nghĩa không trùng nhau |
+| Sắp xếp câu | 50 | 2 câu mỗi bài; chỉ một thứ tự mảnh đúng |
+| Đọc đoạn ngắn | 24 | 12 đoạn, mỗi đoạn 2 câu: 8 đoạn ở bài 4–16 và 4 đoạn mới ở bài 17, 19, 24, 25 |
 
-- **Tag:** mỗi câu có tag bài `minna-N`, câu đọc thêm `reading`. Bài hằng ngày chia câu theo từng bài và từng dạng, nên bài 11–16 chiếm phần lớn hơn.
-- **Tạo lên production lần đầu:**
+- **Tag:** mỗi câu có tag bài `minna-N`, câu đọc thêm `reading`. Bài hằng ngày chia câu theo từng bài và từng dạng, nên bài 17–25 chiếm phần lớn hơn.
+- **Tạo lên production lần đầu** (đã làm 16/11/2026 cho lớp Tiếng Nhật Minna – Lớp 1):
   ```
-  npm run bank:sql -- --file content/review-banks/n5-minna-1-16.json --language ja-JP --class <mã lớp> --daily-source --out n5.sql
+  npm run bank:sql -- --file content/review-banks/n5-minna-1-25.json --language ja-JP --class <mã lớp> --daily-source --out n5.sql
   ```
-  Lệnh này tạo bài cho giáo viên của lớp, thêm bài vào lớp và đặt làm nguồn bài hằng ngày. Số câu (60), số câu nghe (0) và cách chia của lớp giữ nguyên.
-  Đã nạp lên production ngày 16/11/2026 cho lớp Tiếng Nhật Minna – Lớp 1. Thêm `--commit` vào lệnh trên rồi chạy file bằng `npx supabase db query --linked --file n5.sql`.
-- **Thêm bài mới (17, 18…):** thêm câu của bài đó và bớt câu của các bài cũ để không vượt 500 câu, rồi chạy `bank:sql` không cần `--class`.
+  Lệnh này tạo bài cho giáo viên của lớp, thêm bài vào lớp và đặt làm nguồn bài hằng ngày. Số câu (60), số câu nghe (0) và cách chia của lớp giữ nguyên. Thêm `--commit` vào lệnh rồi chạy file bằng `npx supabase db query --linked --file n5.sql`.
+- **Nạp phiên bản mới** (bài đã có trên production): bỏ `--class` và `--daily-source`:
+  ```
+  npm run bank:sql -- --file content/review-banks/n5-minna-1-25.json --language ja-JP --out n5.sql
+  ```
+  Đọc lại file (kết thúc bằng ROLLBACK), thêm `--commit` rồi chạy như trên. Lớp dùng phiên bản mới nhất làm nguồn bài hằng ngày nên tự nhận bản mới.
+- **Thêm bài 26 trở đi:** thêm câu của bài đó và bớt câu của các bài cũ để không vượt 500 câu.
 
 
 

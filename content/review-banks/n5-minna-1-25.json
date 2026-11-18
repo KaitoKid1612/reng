@@ -1,8 +1,8 @@
 {
   "id": "n5-minna-review-bank",
-  "title": "Ôn Minna 1–16 – Nguyên",
-  "titleJa": "みんなの日本語 第1〜16課 復習",
-  "summary": "500 câu ôn Minna bài 1–16 cho lớp đang học theo bài: câu luyện của 16 bài mẫu (bài 11–16 nhiều câu hơn), ghép từ với nghĩa, sắp xếp câu và đọc đoạn ngắn. Không có câu nghe.",
+  "title": "Ôn Minna 1–25 – Nguyên",
+  "titleJa": "みんなの日本語 第1〜25課 復習",
+  "summary": "500 câu ôn Minna bài 1–25 (toàn bộ phạm vi N5) cho lớp đang học theo bài: câu luyện của 25 bài mẫu (bài 17–25 nhiều câu hơn), ghép từ với nghĩa, sắp xếp câu và đọc đoạn ngắn. Không có câu nghe.",
   "order": 1,
   "courseId": "n5",
   "isSample": false,
@@ -14,28 +14,17 @@
       {
         "id": "n5-minna-review-title",
         "type": "title",
-        "jp": "みんなの日本語 第1〜16課 復習",
-        "vi": "Ôn Minna bài 1–16"
+        "jp": "みんなの日本語 第1〜25課 復習",
+        "vi": "Ôn Minna bài 1–25"
       },
       {
         "id": "n5-minna-review-scope",
         "type": "note",
         "title": "Phạm vi và cách học",
-        "body": "500 câu: 312 câu chọn, 124 câu điền, 32 câu ghép đôi, 32 câu sắp xếp. Mỗi bài 1–10 có 24 câu luyện, mỗi bài 11–16 có 30 câu luyện, cùng 2 câu ghép từ, 2 câu sắp xếp mỗi bài và 8 đoạn đọc ngắn. Bài hằng ngày chia câu theo từng bài và từng dạng, ưu tiên câu chưa gặp gần đây. Thêm bài mới: thêm câu của bài đó vào ngân hàng (tối đa 500 câu)."
+        "body": "500 câu: 308 câu chọn, 92 câu điền, 50 câu ghép đôi, 50 câu sắp xếp. Mỗi bài 1–10 có 13 câu luyện, mỗi bài 11–16 có 14 câu, mỗi bài 17–25 có 18 câu, cùng 2 câu ghép từ, 2 câu sắp xếp mỗi bài và 12 đoạn đọc ngắn. Bài hằng ngày chia câu theo từng bài và từng dạng, ưu tiên câu chưa gặp gần đây. Thêm bài mới: thêm câu của bài đó vào ngân hàng (tối đa 500 câu)."
       }
     ],
     "questions": [
-      {
-        "id": "q0101",
-        "prompt": "わたし（　　）ナムです。",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "Chủ đề câu đi với は (đọc là wa): わたしは ナムです.",
-        "type": "choice",
-        "options": ["を", "は", "が", "も"],
-        "multiple": false,
-        "answer": [1]
-      },
       {
         "id": "q0103",
         "prompt": "わたしは せんせい（　　）。(không phải giáo viên)",
@@ -46,17 +35,6 @@
         "options": ["です", "じゃ ありません", "ですか", "も"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q0105",
-        "prompt": "ナムさんは がくせい（　　）。(hỏi)",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "Thêm か vào cuối câu để hỏi: がくせいですか.",
-        "type": "choice",
-        "options": ["ですか", "です", "じゃ", "の"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q0107",
@@ -91,22 +69,6 @@
         "answer": [1]
       },
       {
-        "id": "q0111",
-        "prompt": "“Nhân viên ngân hàng Aoba” là:",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "Danh từ chính (ぎんこういん) đứng sau の.",
-        "type": "choice",
-        "options": [
-          "ぎんこういんの あおば",
-          "あおばぎんこうの ぎんこういん",
-          "あおばは ぎんこういん",
-          "あおばも ぎんこういん"
-        ],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0113",
         "prompt": "Điền một chữ (chủ đề câu): たなかさん（　　）にほんじんです。",
         "points": 1,
@@ -118,17 +80,6 @@
         "answer": ["は"]
       },
       {
-        "id": "q0115",
-        "prompt": "「どなた」 là cách nói lịch sự của:",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "どなた = だれ nhưng lịch sự hơn.",
-        "type": "choice",
-        "options": ["なん", "いくつ", "どこ", "だれ"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0117",
         "prompt": "Hỏi tuổi một cách lịch sự:",
         "points": 1,
@@ -138,17 +89,6 @@
         "options": ["なんさいですか。", "おなまえは。", "だれですか。", "おいくつですか。"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0119",
-        "prompt": "Khi gặp ai đó lần đầu, bạn nói:",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "はじめまして dùng khi gặp lần đầu.",
-        "type": "choice",
-        "options": ["はじめまして", "しつれいですが", "ちがいます", "そうですか"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q0121",
@@ -178,28 +118,6 @@
         "answer": [3]
       },
       {
-        "id": "q0126",
-        "prompt": "「いしゃ」 nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "いしゃ: bác sĩ; びょういん: bệnh viện.",
-        "type": "choice",
-        "options": ["bệnh viện", "nhà nghiên cứu", "bác sĩ", "sinh viên"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q0128",
-        "prompt": "“Người Nhật” là:",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "Tên nước + じん: にほんじん.",
-        "type": "choice",
-        "options": ["にほんご", "にほん", "にほんじん", "にほんの"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0130",
         "prompt": "Điền phần còn thiếu: “người Việt Nam” = ベトナム（　　）",
         "points": 1,
@@ -209,17 +127,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["じん"]
-      },
-      {
-        "id": "q0132",
-        "prompt": "Viết cách đọc bằng hiragana: 学生",
-        "points": 1,
-        "tags": ["minna-1", "kanji", "kanji:v0111"],
-        "explain": "学生 đọc là がくせい: học sinh, sinh viên.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["がくせい"]
       },
       {
         "id": "q0134",
@@ -242,17 +149,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["だいがく"]
-      },
-      {
-        "id": "q0138",
-        "prompt": "Viết cách đọc bằng hiragana: 日本",
-        "points": 1,
-        "tags": ["minna-1", "kanji", "kanji:v0122"],
-        "explain": "日本 đọc là にほん: Nhật Bản.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["にほん"]
       },
       {
         "id": "q0140",
@@ -282,17 +178,6 @@
         "answer": [0]
       },
       {
-        "id": "q0144",
-        "prompt": "Hoàn thành câu chào: どうぞ よろしく（　　）。",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "どうぞ よろしく おねがいします.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["おねがいします"]
-      },
-      {
         "id": "q0146",
         "prompt": "「みなさん」 nghĩa là gì?",
         "points": 1,
@@ -302,17 +187,6 @@
         "options": ["mọi người, các bạn", "người kia", "vị kia", "tôi"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0148",
-        "prompt": "「ちゅうごく」 là:",
-        "points": 1,
-        "tags": ["minna-1"],
-        "explain": "ちゅうごく: Trung Quốc; かんこく: Hàn Quốc.",
-        "type": "choice",
-        "options": ["Hàn Quốc", "Nhật Bản", "Thái Lan", "Trung Quốc"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "n5-match-01-1",
@@ -405,17 +279,6 @@
         "explain": "Câu đúng: {佐藤|さとう}さんも さくら{病院|びょういん}の {医者|いしゃ}ですか。 も đứng sau chủ đề, nghĩa là \"cũng\"; câu hỏi thêm か vào cuối."
       },
       {
-        "id": "q0201",
-        "prompt": "（　　）は ほんです。(vật trong tay người nói)",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "Vật gần người nói: これ.",
-        "type": "choice",
-        "options": ["それ", "あれ", "これ", "この"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0203",
         "prompt": "（　　）かさは わたしのです。",
         "points": 1,
@@ -438,22 +301,6 @@
         "answer": [0]
       },
       {
-        "id": "q0207",
-        "prompt": "「じしょですか」 — trả lời “Vâng, đúng vậy”:",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "Đồng ý: はい、そうです.",
-        "type": "choice",
-        "options": [
-          "はい、そうです。",
-          "はい、そうじゃ ありません。",
-          "いいえ、そうです。",
-          "はい、じしょじゃ ありません。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0209",
         "prompt": "「それは コーヒーですか、おちゃですか」 — trả lời đúng:",
         "points": 1,
@@ -466,17 +313,6 @@
           "いいえ、コーヒーです。",
           "はい、そうです。"
         ],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q0211",
-        "prompt": "これは（　　）ほんですか。…にほんごの ほんです。",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "Hỏi nội dung: なんの ほん.",
-        "type": "choice",
-        "options": ["なん", "なんの", "だれ", "だれの"],
         "multiple": false,
         "answer": [1]
       },
@@ -503,17 +339,6 @@
         "answer": [3]
       },
       {
-        "id": "q0217",
-        "prompt": "「かさ」 là:",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "かさ: ô, dù.",
-        "type": "choice",
-        "options": ["ô, dù", "cặp", "chìa khóa", "đồng hồ"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0219",
         "prompt": "“Đồng hồ” là:",
         "points": 1,
@@ -523,17 +348,6 @@
         "options": ["てちょう", "テレビ", "つくえ", "とけい"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0221",
-        "prompt": "“Bút bi” là:",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "ボールペン: bút bi.",
-        "type": "choice",
-        "options": ["えんぴつ", "シャープペンシル", "ボールペン", "ノート"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0223",
@@ -547,17 +361,6 @@
         "answer": [2]
       },
       {
-        "id": "q0226",
-        "prompt": "「にほんごの ほん」 là:",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "の chỉ nội dung: sách (bằng/về) tiếng Nhật.",
-        "type": "choice",
-        "options": ["sách ở Nhật", "tiếng Nhật", "người Nhật", "sách tiếng Nhật"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0228",
         "prompt": "Viết cách đọc bằng hiragana: 本",
         "points": 1,
@@ -569,17 +372,6 @@
         "answer": ["ほん"]
       },
       {
-        "id": "q0230",
-        "prompt": "Viết cách đọc bằng hiragana: 雑誌",
-        "points": 1,
-        "tags": ["minna-2", "kanji", "kanji:v0211"],
-        "explain": "雑誌 đọc là ざっし: tạp chí.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ざっし"]
-      },
-      {
         "id": "q0232",
         "prompt": "Viết cách đọc bằng hiragana: 名刺",
         "points": 1,
@@ -589,17 +381,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["めいし"]
-      },
-      {
-        "id": "q0234",
-        "prompt": "Viết cách đọc bằng hiragana: 時計",
-        "points": 1,
-        "tags": ["minna-2", "kanji", "kanji:v0221"],
-        "explain": "時計 đọc là とけい: đồng hồ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["とけい"]
       },
       {
         "id": "q0236",
@@ -624,22 +405,6 @@
         "answer": [2]
       },
       {
-        "id": "q0240",
-        "prompt": "Câu nào sai?",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "この phải đi với danh từ; muốn nói “cái này” dùng これ.",
-        "type": "choice",
-        "options": [
-          "これは わたしの かばんです。",
-          "その かぎは だれのですか。",
-          "あれは なんですか。",
-          "この は なんですか。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0242",
         "prompt": "「えっ、ほんとうですか」 thể hiện:",
         "points": 1,
@@ -649,28 +414,6 @@
         "options": ["ngạc nhiên", "lời mời", "lời cảm ơn", "lời xin lỗi"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0244",
-        "prompt": "「これは ナムさんの とけいです」 = 「この とけいは（　　）です」",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "Bỏ danh từ sau の: ナムさんのです.",
-        "type": "choice",
-        "options": ["ナムさんの", "ナムさん", "ナムさんは", "ナムさんも"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0246",
-        "prompt": "「テレビ」 là:",
-        "points": 1,
-        "tags": ["minna-2"],
-        "explain": "テレビ: ti vi.",
-        "type": "choice",
-        "options": ["radio", "máy ảnh", "ti vi", "máy tính"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0248",
@@ -786,33 +529,6 @@
         "answer": [1]
       },
       {
-        "id": "q0303",
-        "prompt": "Chọn câu đúng: Nhà ăn ở đằng kia.",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Nói vị trí: N は あそこです. あれ chỉ đồ vật.",
-        "type": "choice",
-        "options": [
-          "あそこは しょくどうですか。",
-          "しょくどうは あれです。",
-          "あそこの しょくどうです。",
-          "しょくどうは あそこです。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0305",
-        "prompt": "Cách nói lịch sự của ここ là:",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "ここ → こちら, そこ → そちら, あそこ → あちら, どこ → どちら.",
-        "type": "choice",
-        "options": ["そちら", "こちら", "あちら", "どちら"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0307",
         "prompt": "Hỏi lịch sự người đối diện là người nước nào:",
         "points": 1,
@@ -827,17 +543,6 @@
         ],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0309",
-        "prompt": "その カメラは どこのですか。…（　　）。",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Trả lời xuất xứ bằng tên nước + の: にほんのです.",
-        "type": "choice",
-        "options": ["にほんです", "にほんのです", "カメラです", "はい、そうです"],
-        "multiple": false,
-        "answer": [1]
       },
       {
         "id": "q0311",
@@ -860,17 +565,6 @@
         "options": ["ろくひゃく", "ろっぴゃく", "ろくびゃく", "むっぴゃく"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q0315",
-        "prompt": "3000 đọc là:",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "3000: さんぜん (せん đổi thành ぜん).",
-        "type": "choice",
-        "options": ["さんせん", "さっせん", "みせん", "さんぜん"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q0317",
@@ -900,33 +594,6 @@
         "answer": [2]
       },
       {
-        "id": "q0321",
-        "prompt": "くつの うりばは （　　）ですか。…ちか 1かいです。",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Hỏi tầng: なんがい (何階).",
-        "type": "choice",
-        "options": ["なんがい", "なんさい", "だれ", "いくら"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0323",
-        "prompt": "Chọn câu đúng: Văn phòng ở tầng 2.",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Nói vị trí: N は 〜かいです.",
-        "type": "choice",
-        "options": [
-          "じむしょは 2かいですか。",
-          "2かいは じむしょの です。",
-          "じむしょは 2かいです。",
-          "じむしょの 2かいです。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0326",
         "prompt": "Hỏi giá cái máy ảnh đó:",
         "points": 1,
@@ -941,17 +608,6 @@
         ],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0328",
-        "prompt": "うち nghĩa là:",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "うち: nhà (của mình).",
-        "type": "choice",
-        "options": ["trường học", "công ty", "nhà (của mình)", "cửa hàng"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0330",
@@ -981,22 +637,6 @@
         "answer": [2]
       },
       {
-        "id": "q0334",
-        "prompt": "Chọn câu đúng: Cái đồng hồ này của nước nào?",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Hỏi xuất xứ: どこのですか. どこですか hỏi đồng hồ đang ở đâu.",
-        "type": "choice",
-        "options": [
-          "この とけいは どこのですか。",
-          "この とけいは どこですか。",
-          "この とけいは なんのですか。",
-          "この とけいは だれですか。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0336",
         "prompt": "60000ドン đọc là:",
         "points": 1,
@@ -1006,17 +646,6 @@
         "options": ["ろっまん ドン", "ろくせん ドン", "ろくまん ドン", "むまん ドン"],
         "multiple": false,
         "answer": [2]
-      },
-      {
-        "id": "q0338",
-        "prompt": "Điền: すみません、この とけいは （　　）ですか。(hỏi giá)",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Hỏi giá: いくら.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いくら"]
       },
       {
         "id": "q0340",
@@ -1030,17 +659,6 @@
         "answer": ["こちら"]
       },
       {
-        "id": "q0342",
-        "prompt": "Điền: これは （　　）の ワインですか。…フランスの ワインです。",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Hỏi xuất xứ: どこの N.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["どこ"]
-      },
-      {
         "id": "q0344",
         "prompt": "Điền cách đọc: 300 = （　　）",
         "points": 1,
@@ -1050,17 +668,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["さんびゃく"]
-      },
-      {
-        "id": "q0346",
-        "prompt": "Điền: くつの うりばは （　　）ですか。…3がいです。(tầng mấy)",
-        "points": 1,
-        "tags": ["minna-3"],
-        "explain": "Hỏi tầng: なんがい (cũng nghe nói なんかい).",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["なんがい", "なんかい"]
       },
       {
         "id": "q0348",
@@ -1187,28 +794,6 @@
         "answer": [1]
       },
       {
-        "id": "q0403",
-        "prompt": "9時 đọc là:",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "9時: くじ.",
-        "type": "choice",
-        "options": ["きゅうじ", "きゅじ", "くうじ", "くじ"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0405",
-        "prompt": "6時半 nghĩa là:",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "半: rưỡi (30 phút).",
-        "type": "choice",
-        "options": ["6 giờ 15 phút", "6 giờ 30 phút", "6 giờ kém 30", "6 giờ đúng"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0407",
         "prompt": "3分 đọc là:",
         "points": 1,
@@ -1218,17 +803,6 @@
         "options": ["さんふん", "さっぷん", "みふん", "さんぷん"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0409",
-        "prompt": "あした はたらきますか。…いいえ、（　　）。",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Phủ định: はたらきません.",
-        "type": "choice",
-        "options": ["はたらきます", "はたらきません", "はたらきました", "そうじゃ ありません"],
-        "multiple": false,
-        "answer": [1]
       },
       {
         "id": "q0411",
@@ -1253,17 +827,6 @@
         "answer": [1]
       },
       {
-        "id": "q0415",
-        "prompt": "げつようび（　　） きんようびまで はたらきます。",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Từ thứ Hai: げつようびから.",
-        "type": "choice",
-        "options": ["まで", "に", "の", "から"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0417",
         "prompt": "どようび là:",
         "points": 1,
@@ -1286,17 +849,6 @@
         "answer": [3]
       },
       {
-        "id": "q0421",
-        "prompt": "べんきょうします nghĩa là:",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "べんきょうします: học.",
-        "type": "choice",
-        "options": ["học", "làm việc", "nghỉ ngơi", "bắt đầu"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0423",
         "prompt": "ごご 3じ là:",
         "points": 1,
@@ -1306,38 +858,6 @@
         "options": ["3 giờ chiều", "3 giờ 30", "3 giờ đêm", "3 giờ sáng"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0426",
-        "prompt": "Chọn câu đúng: Sáng nay tôi đã không dậy lúc 6 giờ.",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Phủ định quá khứ: おきませんでした.",
-        "type": "choice",
-        "options": [
-          "けさ 6じに おきませんでした。",
-          "けさ 6じに おきません。",
-          "けさ 6じに おきました。",
-          "けさ 6じから おきませんでした。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0428",
-        "prompt": "Hỏi: Bưu điện mở cửa từ mấy giờ đến mấy giờ?",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Giờ mở cửa: なんじから なんじまでですか.",
-        "type": "choice",
-        "options": [
-          "ゆうびんきょくは なんじですか。",
-          "ゆうびんきょくは どこから どこまでですか。",
-          "ゆうびんきょくは なんじから なんじまでですか。",
-          "ゆうびんきょくは なんじに ですか。"
-        ],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0430",
@@ -1354,22 +874,6 @@
         ],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0432",
-        "prompt": "Hỏi: Hôm qua đã kết thúc lúc mấy giờ?",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Quá khứ: おわりましたか.",
-        "type": "choice",
-        "options": [
-          "きのう なんじに おわりますか。",
-          "きのう なんじに おわりませんか。",
-          "きのう なんじに おわりましたか。",
-          "あした なんじに おわりましたか。"
-        ],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0434",
@@ -1405,28 +909,6 @@
         "answer": ["よじ"]
       },
       {
-        "id": "q0440",
-        "prompt": "Điền: 6時半 = ろくじ（　　）",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "半: はん.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["はん"]
-      },
-      {
-        "id": "q0442",
-        "prompt": "Điền: まいばん 11じに （　　）。(đi ngủ)",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Đi ngủ: ねます.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ねます"]
-      },
-      {
         "id": "q0444",
         "prompt": "Điền: きのう はたらき（　　）。(đã không làm việc)",
         "points": 1,
@@ -1436,17 +918,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ませんでした"]
-      },
-      {
-        "id": "q0446",
-        "prompt": "Điền: ひるやすみは 12じから 1じ（　　）です。",
-        "points": 1,
-        "tags": ["minna-4"],
-        "explain": "Đến: まで.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["まで"]
       },
       {
         "id": "q0448",
@@ -1606,33 +1077,6 @@
         "answer": [1]
       },
       {
-        "id": "q0503",
-        "prompt": "Chọn câu đúng: Hôm qua tôi về nhà lúc 6 giờ.",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "Quá khứ: かえりました; nơi về + へ.",
-        "type": "choice",
-        "options": [
-          "きのう 6じに うちへ かえります。",
-          "きのう 6じに うちで かえりました。",
-          "きのう 6じに うちと かえりました。",
-          "きのう 6じに うちへ かえりました。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0505",
-        "prompt": "でんしゃ（　　） かいしゃへ いきます。",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "Phương tiện + で.",
-        "type": "choice",
-        "options": ["と", "で", "へ", "に"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0507",
         "prompt": "Đi bộ đến ga:",
         "points": 1,
@@ -1647,22 +1091,6 @@
         ],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0509",
-        "prompt": "Đi một mình:",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "Một mình: ひとりで.",
-        "type": "choice",
-        "options": [
-          "ひとりと いきます。",
-          "ひとりで いきます。",
-          "ひとりへ いきます。",
-          "ひとりに いきます。"
-        ],
-        "multiple": false,
-        "answer": [1]
       },
       {
         "id": "q0511",
@@ -1692,17 +1120,6 @@
         "answer": [1]
       },
       {
-        "id": "q0515",
-        "prompt": "4月 đọc là:",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "4月: しがつ.",
-        "type": "choice",
-        "options": ["よんがつ", "よつき", "よがつ", "しがつ"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0517",
         "prompt": "らいしゅう nghĩa là:",
         "points": 1,
@@ -1712,17 +1129,6 @@
         "options": ["tuần sau", "tuần trước", "tuần này", "cuối tuần"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0519",
-        "prompt": "せんげつ nghĩa là:",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "せんげつ (先月): tháng trước.",
-        "type": "choice",
-        "options": ["tháng này", "tháng sau", "tháng trước", "tuần trước"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0521",
@@ -1752,33 +1158,6 @@
         "answer": [2]
       },
       {
-        "id": "q0526",
-        "prompt": "Hỏi: Hôm nay ngày mấy?",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "Hỏi ngày: なんにち.",
-        "type": "choice",
-        "options": [
-          "きょうは なんにちですか。",
-          "きょうは なんようびですか。",
-          "きょうは なんじですか。",
-          "きょうは なんがつですか。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0528",
-        "prompt": "つぎの バス nghĩa là:",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "つぎの: … tiếp theo.",
-        "type": "choice",
-        "options": ["xe buýt trước", "xe buýt này", "xe buýt tiếp theo", "xe buýt cuối"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0530",
         "prompt": "Bằng xe máy: バイク（　　）",
         "points": 1,
@@ -1799,17 +1178,6 @@
         "options": ["Hà Nội", "Đà Nẵng", "Thành phố Hồ Chí Minh", "Huế"],
         "multiple": false,
         "answer": [2]
-      },
-      {
-        "id": "q0534",
-        "prompt": "らいねん nghĩa là:",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "らいねん (来年): năm sau.",
-        "type": "choice",
-        "options": ["năm sau", "năm ngoái", "năm nay", "tháng sau"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q0536",
@@ -1839,17 +1207,6 @@
         "answer": ["で"]
       },
       {
-        "id": "q0540",
-        "prompt": "Điền: （　　）で うちへ かえります。(một mình)",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "Một mình: ひとりで.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ひとり"]
-      },
-      {
         "id": "q0542",
         "prompt": "Điền: （　　） にほんへ いきますか。…らいげつ いきます。(hỏi khi nào)",
         "points": 1,
@@ -1859,28 +1216,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["いつ"]
-      },
-      {
-        "id": "q0544",
-        "prompt": "Điền cách đọc: 3日 (ngày mồng 3) = （　　）",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "3日: みっか.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["みっか"]
-      },
-      {
-        "id": "q0546",
-        "prompt": "Điền cách đọc: 7月 = （　　）",
-        "points": 1,
-        "tags": ["minna-5"],
-        "explain": "7月: しちがつ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["しちがつ"]
       },
       {
         "id": "q0548",
@@ -2001,22 +1336,6 @@
         "answer": [1]
       },
       {
-        "id": "q0603",
-        "prompt": "なにを のみますか。…（　　）。",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Trả lời bằng N を V.",
-        "type": "choice",
-        "options": [
-          "おちゃで のみます",
-          "おちゃへ のみます",
-          "はい、のみます",
-          "おちゃを のみます"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0605",
         "prompt": "デパート（　　） くつを かいました。",
         "points": 1,
@@ -2024,33 +1343,6 @@
         "explain": "Nơi làm hành động + で.",
         "type": "choice",
         "options": ["へ", "で", "を", "と"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q0607",
-        "prompt": "Chọn câu đúng: Tôi đi đến thư viện.",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Nơi đến + へ.",
-        "type": "choice",
-        "options": [
-          "としょかんで いきます。",
-          "としょかんを いきます。",
-          "としょかんと いきます。",
-          "としょかんへ いきます。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0609",
-        "prompt": "いっしょに テニスを しませんか。…（　　）。(đồng ý)",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Đồng ý: ええ、いいですね.",
-        "type": "choice",
-        "options": ["いいえ、しません", "ええ、いいですね", "はい、しませんでした", "ちょっと…"],
         "multiple": false,
         "answer": [1]
       },
@@ -2093,17 +1385,6 @@
         "answer": [3]
       },
       {
-        "id": "q0617",
-        "prompt": "ともだちに あいます nghĩa là:",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "あいます: gặp; người gặp + に.",
-        "type": "choice",
-        "options": ["nghe bạn", "gặp bạn", "đi với bạn", "về với bạn"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0619",
         "prompt": "くだもの là:",
         "points": 1,
@@ -2113,17 +1394,6 @@
         "options": ["rau", "thịt", "cá", "trái cây"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q0621",
-        "prompt": "いつも nghĩa là:",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "いつも: luôn luôn.",
-        "type": "choice",
-        "options": ["thỉnh thoảng", "không bao giờ", "luôn luôn", "một chút"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0623",
@@ -2137,22 +1407,6 @@
         "answer": [0]
       },
       {
-        "id": "q0626",
-        "prompt": "Chọn câu đúng: Sau đó tôi đã đọc sách.",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "それから + câu tiếp theo; ほんを よみました.",
-        "type": "choice",
-        "options": [
-          "それから ほんを よみました。",
-          "それから ほんで よみました。",
-          "それから ほんを よみません。",
-          "それから ほんへ よみました。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0628",
         "prompt": "いっしょに nghĩa là:",
         "points": 1,
@@ -2160,33 +1414,6 @@
         "explain": "いっしょに: cùng nhau.",
         "type": "choice",
         "options": ["một mình", "luôn luôn", "cùng nhau", "một chút"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q0630",
-        "prompt": "Chọn câu đúng: Thỉnh thoảng tôi xem phim.",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Xem phim: えいがを みます.",
-        "type": "choice",
-        "options": [
-          "ときどき えいがを みます。",
-          "ときどき えいがで みます。",
-          "ときどき えいがを ききます。",
-          "ときどき えいがに みます。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0632",
-        "prompt": "Mời ăn phở: いっしょに フォーを （　　）。",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Lời mời: たべませんか.",
-        "type": "choice",
-        "options": ["たべません", "たべましたか", "たべませんか", "たべますか"],
         "multiple": false,
         "answer": [2]
       },
@@ -2213,17 +1440,6 @@
         "answer": [2]
       },
       {
-        "id": "q0638",
-        "prompt": "Điền trợ từ: デパート（　　） くつを かいます。(mua ở cửa hàng bách hóa)",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Nơi làm hành động + で.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["で"]
-      },
-      {
         "id": "q0640",
         "prompt": "Điền: いっしょに おちゃを のみ（　　）。(rủ: … không?)",
         "points": 1,
@@ -2235,17 +1451,6 @@
         "answer": ["ませんか"]
       },
       {
-        "id": "q0642",
-        "prompt": "Điền: まいばん ほんを （　　）。(đọc)",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Đọc: よみます.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["よみます"]
-      },
-      {
         "id": "q0644",
         "prompt": "Điền: えきで ともだちに （　　）。(gặp)",
         "points": 1,
@@ -2255,17 +1460,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["あいます"]
-      },
-      {
-        "id": "q0646",
-        "prompt": "Điền: ええ、（　　）ですね。(đồng ý: hay đấy)",
-        "points": 1,
-        "tags": ["minna-6"],
-        "explain": "Hay đấy: いいですね.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いい"]
       },
       {
         "id": "q0648",
@@ -2413,17 +1607,6 @@
         "explain": "Văn bản: {公園|こうえん}で {写真|しゃしん}を {撮|と}りましょう → ở công viên họ chụp ảnh. Bữa trưa ăn ở cửa hàng ở ga Sakura (N (nơi chốn) で V)."
       },
       {
-        "id": "q0701",
-        "prompt": "はし（　　） ごはんを たべます。",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Công cụ + で.",
-        "type": "choice",
-        "options": ["を", "で", "に", "へ"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0703",
         "prompt": "「Thank you」は にほんご（　　） なんですか。",
         "points": 1,
@@ -2446,22 +1629,6 @@
         "answer": [1]
       },
       {
-        "id": "q0707",
-        "prompt": "Chọn câu đúng: Tôi cho An mượn sách.",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Cho mượn: かします.",
-        "type": "choice",
-        "options": [
-          "アンさんに ほんを かります。",
-          "アンさんを ほんに かします。",
-          "アンさんで ほんを かします。",
-          "アンさんに ほんを かします。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q0709",
         "prompt": "Chọn câu đúng: Tôi học tiếng Nhật với anh Tanaka.",
         "points": 1,
@@ -2476,17 +1643,6 @@
         ],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q0711",
-        "prompt": "もう ひるごはんを たべましたか。…いいえ、（　　）。",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Chưa: まだです.",
-        "type": "choice",
-        "options": ["たべませんでした", "たべません", "もうです", "まだです"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q0713",
@@ -2511,17 +1667,6 @@
         "answer": [3]
       },
       {
-        "id": "q0717",
-        "prompt": "ならいます nghĩa là:",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "ならいます: học (từ ai đó).",
-        "type": "choice",
-        "options": ["học (từ ai đó)", "dạy", "đọc", "viết"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0719",
         "prompt": "はさみ là:",
         "points": 1,
@@ -2529,33 +1674,6 @@
         "explain": "はさみ: cái kéo.",
         "type": "choice",
         "options": ["đôi đũa", "cái thìa", "cái kéo", "con dao"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q0721",
-        "prompt": "Chọn câu đúng: Tôi cắt giấy bằng kéo.",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Công cụ + で, đối tượng + を.",
-        "type": "choice",
-        "options": [
-          "はさみで かみを きります。",
-          "はさみを かみで きります。",
-          "はさみに かみを きります。",
-          "かみで はさみを きります。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0723",
-        "prompt": "Trước khi ăn, người Nhật nói:",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Trước khi ăn: いただきます.",
-        "type": "choice",
-        "options": ["ごちそうさまでした", "いらっしゃい", "いただきます", "しつれいします"],
         "multiple": false,
         "answer": [2]
       },
@@ -2569,17 +1687,6 @@
         "options": ["いらっしゃい", "しつれいします", "ごちそうさまでした", "まだです"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q0728",
-        "prompt": "すてきですね dùng khi:",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "すてきですね: đẹp quá, tuyệt quá nhỉ.",
-        "type": "choice",
-        "options": ["xin lỗi", "từ chối", "khen một thứ đẹp, hay", "hỏi giá"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q0730",
@@ -2609,22 +1716,6 @@
         "answer": [2]
       },
       {
-        "id": "q0734",
-        "prompt": "Kể với người ngoài: Mẹ tôi đã cho tôi cái này.",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Mẹ mình (kể với người ngoài): はは; nhận: もらいました.",
-        "type": "choice",
-        "options": [
-          "ははに これを もらいました。",
-          "おかあさんに これを あげました。",
-          "ははに これを あげました。",
-          "おかあさんを これに もらいました。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0736",
         "prompt": "にもつ là:",
         "points": 1,
@@ -2634,17 +1725,6 @@
         "options": ["vé", "thư", "hành lý, đồ đạc", "hoa"],
         "multiple": false,
         "answer": [2]
-      },
-      {
-        "id": "q0738",
-        "prompt": "Điền: ともだち（　　） プレゼントを あげます。(cho bạn)",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Người nhận + に.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["に"]
       },
       {
         "id": "q0740",
@@ -2669,17 +1749,6 @@
         "answer": ["もらいました"]
       },
       {
-        "id": "q0744",
-        "prompt": "Điền: としょかんで ほんを （　　）。(mượn)",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Mượn: かります.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["かります"]
-      },
-      {
         "id": "q0746",
         "prompt": "Điền: かぞくに でんわを （　　）。(gọi điện)",
         "points": 1,
@@ -2689,17 +1758,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["かけます"]
-      },
-      {
-        "id": "q0748",
-        "prompt": "Điền câu nói trước khi ăn: （　　）。",
-        "points": 1,
-        "tags": ["minna-7"],
-        "explain": "Trước khi ăn: いただきます.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いただきます"]
       },
       {
         "id": "n5-match-07-1",
@@ -2792,17 +1850,6 @@
         "explain": "Câu đúng: わたしは 母に 日本の お{土産|みやげ}を あげました。 N1 (người) に N2 を あげます: tặng N2 cho N1."
       },
       {
-        "id": "q0801",
-        "prompt": "ハノイは （　　）です。(nhộn nhịp)",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Trước です, tính từ đuôi な bỏ な.",
-        "type": "choice",
-        "options": ["にぎやかな", "にぎやか", "にぎやかい", "にぎやかく"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0803",
         "prompt": "Phủ định của しずかです:",
         "points": 1,
@@ -2830,28 +1877,6 @@
         "answer": [1]
       },
       {
-        "id": "q0807",
-        "prompt": "（　　） かさを かいました。(màu đỏ)",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Tính từ đuôi い đứng thẳng trước danh từ.",
-        "type": "choice",
-        "options": ["あかな", "あかいな", "あかの", "あかい"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0809",
-        "prompt": "にほんの せいかつは （　　）ですか。…たのしいです。",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Hỏi cảm nhận: どう.",
-        "type": "choice",
-        "options": ["どんな", "どう", "どこ", "なん"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0811",
         "prompt": "この フォーは （　　） おいしいです。",
         "points": 1,
@@ -2872,17 +1897,6 @@
         "options": ["そして", "が", "と", "の"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q0815",
-        "prompt": "Từ trái nghĩa với おおきい:",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "おおきい ↔ ちいさい.",
-        "type": "choice",
-        "options": ["あたらしい", "たかい", "わるい", "ちいさい"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q0817",
@@ -2907,17 +1921,6 @@
         "answer": [3]
       },
       {
-        "id": "q0821",
-        "prompt": "ひま nghĩa là:",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "ひま: rảnh rỗi.",
-        "type": "choice",
-        "options": ["bận rộn", "khỏe mạnh", "rảnh rỗi", "tiện lợi"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0823",
         "prompt": "べんり nghĩa là:",
         "points": 1,
@@ -2929,22 +1932,6 @@
         "answer": [0]
       },
       {
-        "id": "q0826",
-        "prompt": "Chọn câu đúng: Ký túc xá không yên tĩnh.",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Tính từ đuôi な: じゃ ありません.",
-        "type": "choice",
-        "options": [
-          "りょうは しずかじゃ ありません。",
-          "りょうは しずかくないです。",
-          "りょうは しずかないです。",
-          "りょうは しずかな ありません。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0828",
         "prompt": "たなかさんは どんな ひとですか。…（　　）。",
         "points": 1,
@@ -2952,38 +1939,6 @@
         "explain": "Trả lời どんな N bằng tính từ + N.",
         "type": "choice",
         "options": ["しんせつです ひと", "どうですか", "しんせつな ひとです", "ひとです"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q0830",
-        "prompt": "Từ chối lịch sự khi được mời thêm:",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Từ chối lịch sự: いいえ、けっこうです.",
-        "type": "choice",
-        "options": [
-          "いいえ、けっこうです。",
-          "いいえ、ちがいます。",
-          "いいえ、まだです。",
-          "いいえ、そうじゃ ありません。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0832",
-        "prompt": "Chủ nhà tiễn khách:",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Tiễn khách: また いらっしゃって ください.",
-        "type": "choice",
-        "options": [
-          "そろそろ しつれいします。",
-          "いいえ、けっこうです。",
-          "また いらっしゃって ください。",
-          "おげんきですか。"
-        ],
         "multiple": false,
         "answer": [2]
       },
@@ -3020,17 +1975,6 @@
         "answer": [2]
       },
       {
-        "id": "q0838",
-        "prompt": "Điền phủ định: いい → （　　）です",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "いい → よくないです.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["よくない"]
-      },
-      {
         "id": "q0840",
         "prompt": "Điền: にほんの せいかつは （　　）ですか。(thế nào)",
         "points": 1,
@@ -3040,17 +1984,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["どう"]
-      },
-      {
-        "id": "q0842",
-        "prompt": "Điền: この フォーは （　　） おいしいです。(rất)",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Rất: とても.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["とても"]
       },
       {
         "id": "q0844",
@@ -3073,17 +2006,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ちいさい"]
-      },
-      {
-        "id": "q0848",
-        "prompt": "Điền: いいえ、（　　）です。(từ chối lịch sự: đủ rồi ạ)",
-        "points": 1,
-        "tags": ["minna-8"],
-        "explain": "Từ chối lịch sự: いいえ、けっこうです.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["けっこう"]
       },
       {
         "id": "n5-match-08-1",
@@ -3231,28 +2153,6 @@
         "answer": [1]
       },
       {
-        "id": "q0903",
-        "prompt": "わたしは おんがく（　　） すきです。",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "すきです đi với が.",
-        "type": "choice",
-        "options": ["を", "に", "で", "が"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q0905",
-        "prompt": "Phủ định của すきです:",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "すき là tính từ đuôi な: すきじゃ ありません.",
-        "type": "choice",
-        "options": ["すきくないです", "すきじゃ ありません", "すくないです", "すきません"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q0907",
         "prompt": "えいごが （　　） わかりません。(hoàn toàn không)",
         "points": 1,
@@ -3273,17 +2173,6 @@
         "options": ["ぜんぜん", "たくさん", "あまり", "どんな"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q0911",
-        "prompt": "（　　） にほんごを べんきょうしますか。…にほんの かいしゃで はたらきますから。",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "Hỏi lý do: どうして.",
-        "type": "choice",
-        "options": ["どんな", "どう", "いつ", "どうして"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q0913",
@@ -3313,28 +2202,6 @@
         "answer": [3]
       },
       {
-        "id": "q0917",
-        "prompt": "りょこう nghĩa là:",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "りょこう (旅行): du lịch.",
-        "type": "choice",
-        "options": ["du lịch", "âm nhạc", "mua sắm", "thể thao"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0919",
-        "prompt": "やくそく nghĩa là:",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "やくそく (約束): cuộc hẹn.",
-        "type": "choice",
-        "options": ["việc làm thêm", "thời gian", "cuộc hẹn, lời hứa", "việc bận"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q0921",
         "prompt": "こまかい おかね là:",
         "points": 1,
@@ -3357,22 +2224,6 @@
         "answer": [2]
       },
       {
-        "id": "q0926",
-        "prompt": "Chọn câu đúng: Tôi không thích chó lắm.",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "あまり + phủ định; すき đi với が.",
-        "type": "choice",
-        "options": [
-          "いぬが あまり すきじゃ ありません。",
-          "いぬが あまり すきです。",
-          "いぬを あまり すきじゃ ありません。",
-          "いぬが ぜんぜん すきです。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q0928",
         "prompt": "Hỏi lý do: Tại sao hôm qua bạn không đến?",
         "points": 1,
@@ -3384,33 +2235,6 @@
           "どんな きのう きませんでしたか。",
           "どうして きのう きませんでしたか。",
           "どう きのう きませんでしたか。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q0930",
-        "prompt": "かたかな là:",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "かたかな: chữ katakana.",
-        "type": "choice",
-        "options": ["chữ katakana", "chữ hiragana", "chữ Hán", "chữ Latinh"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q0932",
-        "prompt": "Chọn câu đúng: Linh vẽ tranh giỏi.",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "N が じょうずです.",
-        "type": "choice",
-        "options": [
-          "リンさんは えを じょうずです。",
-          "リンさんは えが へたです。",
-          "リンさんは えが じょうずです。",
-          "リンさんの えは じょうずじゃ ありません。"
         ],
         "multiple": false,
         "answer": [2]
@@ -3454,28 +2278,6 @@
         "answer": ["が"]
       },
       {
-        "id": "q0940",
-        "prompt": "Điền: えいごが （　　） わかりません。(hoàn toàn không)",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "ぜんぜん + phủ định.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ぜんぜん"]
-      },
-      {
-        "id": "q0942",
-        "prompt": "Điền: （　　） いきませんか。…ようじが ありますから。(tại sao)",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "Tại sao: どうして.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["どうして"]
-      },
-      {
         "id": "q0944",
         "prompt": "Điền phủ định: すきです → すき（　　）",
         "points": 1,
@@ -3485,17 +2287,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["じゃありません", "ではありません"]
-      },
-      {
-        "id": "q0946",
-        "prompt": "Điền: わたしは まだ （　　）です。(kém)",
-        "points": 1,
-        "tags": ["minna-9"],
-        "explain": "Kém: へた.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["へた"]
       },
       {
         "id": "q0948",
@@ -3620,28 +2411,6 @@
         "answer": [1]
       },
       {
-        "id": "q1003",
-        "prompt": "Chọn động từ đúng: おとこの こが （　　）。",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Người: います.",
-        "type": "choice",
-        "options": ["あります", "です", "ありません", "います"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1005",
-        "prompt": "へやに （　　）が いますか。…たなかさんが います。",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Hỏi người: だれ.",
-        "type": "choice",
-        "options": ["なに", "だれ", "どこ", "いつ"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1007",
         "prompt": "でんちは どこに （　　）。…はこの なかに あります。",
         "points": 1,
@@ -3651,22 +2420,6 @@
         "options": ["いますか", "ですか", "しますか", "ありますか"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q1009",
-        "prompt": "Chọn câu đúng: Pin ở trong hộp.",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "N の なか; đồ vật: あります.",
-        "type": "choice",
-        "options": [
-          "でんちは なかの はこに あります。",
-          "でんちは はこの なかに あります。",
-          "でんちは はこの なかに います。",
-          "はこは でんちの なかに あります。"
-        ],
-        "multiple": false,
-        "answer": [1]
       },
       {
         "id": "q1011",
@@ -3689,17 +2442,6 @@
         "options": ["bên trái", "bên phải", "phía trên", "phía dưới"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q1015",
-        "prompt": "ちかく nghĩa là:",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "ちかく: gần.",
-        "type": "choice",
-        "options": ["xa", "ở giữa", "bên ngoài", "gần"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q1017",
@@ -3729,17 +2471,6 @@
         "answer": [3]
       },
       {
-        "id": "q1021",
-        "prompt": "れいぞうこ là:",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "れいぞうこ (冷蔵庫): tủ lạnh.",
-        "type": "choice",
-        "options": ["tủ lạnh", "cái hộp", "cái kệ", "cái giường"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q1023",
         "prompt": "おんなの こ là:",
         "points": 1,
@@ -3751,38 +2482,6 @@
         "answer": [0]
       },
       {
-        "id": "q1026",
-        "prompt": "Trong siêu thị, hỏi nhân viên có nước mắm không:",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Đồ vật: ありますか.",
-        "type": "choice",
-        "options": [
-          "ヌクマムは ありますか。",
-          "ヌクマムは いますか。",
-          "ヌクマムを ありますか。",
-          "ヌクマムで ありますか。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1028",
-        "prompt": "Chọn câu đúng: Con mèo ở dưới gầm bàn.",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Động vật: います; テーブルの した.",
-        "type": "choice",
-        "options": [
-          "ねこは テーブルの したに あります。",
-          "ねこは したの テーブルに います。",
-          "ねこは テーブルの したに います。",
-          "テーブルは ねこの したに います。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1030",
         "prompt": "きっさてん là:",
         "points": 1,
@@ -3792,17 +2491,6 @@
         "options": ["quán cà phê", "siêu thị", "bưu điện", "ngân hàng"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q1032",
-        "prompt": "なか ↔ （　　）",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "なか (trong) ↔ そと (ngoài).",
-        "type": "choice",
-        "options": ["うえ", "うしろ", "そと", "となり"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q1034",
@@ -3827,17 +2515,6 @@
         "answer": [2]
       },
       {
-        "id": "q1038",
-        "prompt": "Điền: テーブルの うえに ほんが （　　）。",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Đồ vật: あります.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["あります"]
-      },
-      {
         "id": "q1040",
         "prompt": "Điền: でんちは はこの （　　）に あります。(bên trong)",
         "points": 1,
@@ -3858,28 +2535,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["した"]
-      },
-      {
-        "id": "q1044",
-        "prompt": "Điền: ゆうびんきょくは ぎんこうの （　　）に あります。(bên cạnh)",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Bên cạnh: となり.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["となり"]
-      },
-      {
-        "id": "q1046",
-        "prompt": "Điền: へやに （　　）が いますか。(ai)",
-        "points": 1,
-        "tags": ["minna-10"],
-        "explain": "Hỏi người: だれ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["だれ"]
       },
       {
         "id": "q1048",
@@ -4033,28 +2688,6 @@
         "answer": [2]
       },
       {
-        "id": "q1102",
-        "prompt": "きょうしつに がくせいが 20（　　）います。",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Đếm người dùng 〜にん (trừ ひとり, ふたり): にじゅうにん.",
-        "type": "choice",
-        "options": ["にん", "つ", "だい", "かい"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1104",
-        "prompt": "くるまが 2（　　）あります。",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Xe cộ, máy móc đếm bằng 〜だい: にだい.",
-        "type": "choice",
-        "options": ["まい", "だい", "にん", "かい"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1106",
         "prompt": "「どのくらい にほんごを べんきょうしましたか。」—「（　　）」",
         "points": 1,
@@ -4071,17 +2704,6 @@
         "answer": [0]
       },
       {
-        "id": "q1107",
-        "prompt": "ハノイから ダナンまで ひこうきで 1じかん（　　）かかります。",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Nói khoảng lượng hoặc khoảng thời gian dùng ぐらい; ごろ đi với thời điểm (3じごろ).",
-        "type": "choice",
-        "options": ["ごろ", "だけ", "ぐらい", "まで"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1109",
         "prompt": "Viết cách đọc bằng hiragana: 2人",
         "points": 1,
@@ -4093,28 +2715,6 @@
         "answer": ["ふたり"]
       },
       {
-        "id": "q1111",
-        "prompt": "Viết cách đọc bằng hiragana: 6回",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "6回 đọc là ろっかい, có âm ngắt っ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ろっかい"]
-      },
-      {
-        "id": "q1112",
-        "prompt": "Viết bằng hiragana: tám cái (đếm đồ vật)",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Đếm đồ vật bằng 〜つ: やっつ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["やっつ"]
-      },
-      {
         "id": "q1114",
         "prompt": "Điền một từ: いっしゅうかんに なん（　　） クラスが ありますか。—3かいです。",
         "points": 1,
@@ -4124,17 +2724,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["かい"]
-      },
-      {
-        "id": "q1116",
-        "prompt": "Viết cách đọc bằng hiragana: 1回",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "1回 đọc là いっかい (có âm ngắt っ).",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いっかい"]
       },
       {
         "id": "q1117",
@@ -4159,17 +2748,6 @@
         "answer": ["よんまい"]
       },
       {
-        "id": "q1121",
-        "prompt": "Viết cách đọc bằng hiragana: 9つ",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Đếm đồ vật: ここのつ (chín cái).",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ここのつ"]
-      },
-      {
         "id": "q1122",
         "prompt": "Viết cách đọc bằng hiragana: 1人",
         "points": 1,
@@ -4179,28 +2757,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ひとり"]
-      },
-      {
-        "id": "q1124",
-        "prompt": "Viết cách đọc bằng hiragana: 2台",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "2台 đọc là にだい.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["にだい"]
-      },
-      {
-        "id": "q1126",
-        "prompt": "Viết cách đọc bằng hiragana: 1週間",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "1週間 đọc là いっしゅうかん (một tuần).",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いっしゅうかん"]
       },
       {
         "id": "q1127",
@@ -4214,17 +2770,6 @@
         "answer": ["にじかん"]
       },
       {
-        "id": "q1129",
-        "prompt": "Viết cách đọc bằng hiragana: 切手",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "切手 (きって): tem.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["きって"]
-      },
-      {
         "id": "q1131",
         "prompt": "Viết cách đọc bằng hiragana: 両親",
         "points": 1,
@@ -4236,17 +2781,6 @@
         "answer": ["りょうしん"]
       },
       {
-        "id": "q1132",
-        "prompt": "Viết cách đọc bằng hiragana: 兄弟",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "兄弟 (きょうだい): anh chị em của mình.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["きょうだい"]
-      },
-      {
         "id": "q1134",
         "prompt": "Viết cách đọc bằng hiragana: 船便",
         "points": 1,
@@ -4256,28 +2790,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ふなびん"]
-      },
-      {
-        "id": "q1136",
-        "prompt": "「きょうだい」 nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "きょうだい (兄弟) là anh chị em của mình.",
-        "type": "choice",
-        "options": ["bố mẹ", "anh chị em (của mình)", "bạn bè", "họ hàng"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1137",
-        "prompt": "「ふなびん」 nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "ふなびん (船便) là gửi đường biển; đường hàng không là こうくうびん.",
-        "type": "choice",
-        "options": ["gửi đường biển", "gửi đường hàng không", "bưu thiếp", "phong bì"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q1139",
@@ -4302,17 +2814,6 @@
         "answer": [0]
       },
       {
-        "id": "q1142",
-        "prompt": "“Anh trai của người khác” nói là:",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Gia đình người khác: おにいさん; anh trai mình: あに.",
-        "type": "choice",
-        "options": ["あに", "おとうとさん", "おねえさん", "おにいさん"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1144",
         "prompt": "うちから がっこうまで（　　）かかりますか。—30ぷんです。",
         "points": 1,
@@ -4322,28 +2823,6 @@
         "options": ["いつ", "どのくらい", "いくつ", "なんにん"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q1146",
-        "prompt": "いちにち（　　）3かい コーヒーを のみます。",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Tần suất: [khoảng thời gian] に [số lần]: いちにちに 3かい.",
-        "type": "choice",
-        "options": ["で", "を", "に", "と"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q1147",
-        "prompt": "きょうだいは（　　）いますか。—ふたり います。",
-        "points": 1,
-        "tags": ["minna-11"],
-        "explain": "Hỏi số người dùng なんにん.",
-        "type": "choice",
-        "options": ["いくつ", "なんかい", "どのくらい", "なんにん"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q1149",
@@ -4485,17 +2964,6 @@
         "answer": [1]
       },
       {
-        "id": "q1202",
-        "prompt": "しけんは かんたん（　　）。(đã không dễ)",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "かんたん là tính từ đuôi な: quá khứ phủ định là じゃ ありませんでした.",
-        "type": "choice",
-        "options": ["じゃ ありませんでした", "くなかったです", "でした", "じゃ ありません"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q1204",
         "prompt": "Điền dạng quá khứ phủ định: きのうは やすみ（　　）。",
         "points": 1,
@@ -4507,28 +2975,6 @@
         "answer": ["じゃありませんでした", "ではありませんでした"]
       },
       {
-        "id": "q1206",
-        "prompt": "Chia quá khứ: あつい → （　　）です",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "あつい → bỏ い + かったです: あつかったです.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["あつかった", "あつかったです"]
-      },
-      {
-        "id": "q1207",
-        "prompt": "Chia quá khứ: たのしい → （　　）です",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "たのしい → たのしかったです.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["たのしかった", "たのしかったです"]
-      },
-      {
         "id": "q1209",
         "prompt": "Chia quá khứ: いい → （　　）です",
         "points": 1,
@@ -4538,28 +2984,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["よかった", "よかったです"]
-      },
-      {
-        "id": "q1211",
-        "prompt": "しあいは あまり（　　）。",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "あまり đi với phủ định; いい → よくなかったです.",
-        "type": "choice",
-        "options": ["よかったです", "いくなかったです", "いいでした", "よくなかったです"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1212",
-        "prompt": "Chia quá khứ phủ định: いい → （　　）です",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "いい → よくなかったです.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["よくなかった", "よくなかったです"]
       },
       {
         "id": "q1214",
@@ -4594,17 +3018,6 @@
         "answer": [3]
       },
       {
-        "id": "q1217",
-        "prompt": "コーヒーと こうちゃと（　　）が すきですか。",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "Chọn giữa hai thứ thì hỏi bằng どちら.",
-        "type": "choice",
-        "options": ["なに", "どれ", "どちら", "どこ"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1219",
         "prompt": "なつと ふゆと どちらが すきですか。(thích cả hai)",
         "points": 1,
@@ -4621,28 +3034,6 @@
         "answer": [1]
       },
       {
-        "id": "q1221",
-        "prompt": "「ずっと はやいです」 nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "Trong câu so sánh, ずっと nghĩa là “hơn hẳn”.",
-        "type": "choice",
-        "options": ["luôn luôn nhanh", "nhanh hơn hẳn", "nhanh nhất", "hơi nhanh"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1222",
-        "prompt": "ぎゅうにくと ぶたにくと どちらが たかいですか。…（　　）の ほうが たかいです。",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "Trả lời bằng chính thứ được chọn: ぎゅうにくの ほうが たかいです.",
-        "type": "choice",
-        "options": ["どちら", "より", "ぎゅうにく", "いちばん"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1224",
         "prompt": "1ねん（　　）いつが いちばん さむいですか。",
         "points": 1,
@@ -4650,17 +3041,6 @@
         "explain": "Phạm vi so sánh đi với で: 1ねんで.",
         "type": "choice",
         "options": ["で", "に", "が", "は"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1226",
-        "prompt": "かぞくで（　　）が いちばん りょうりが じょうずですか。",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "Hỏi người: だれ.",
-        "type": "choice",
-        "options": ["だれ", "どこ", "なに", "いつ"],
         "multiple": false,
         "answer": [0]
       },
@@ -4687,17 +3067,6 @@
         "answer": ["ちかい"]
       },
       {
-        "id": "q1231",
-        "prompt": "Viết cách đọc bằng hiragana: 多い",
-        "points": 1,
-        "tags": ["minna-12", "kanji", "kanji:v1205"],
-        "explain": "多い đọc là おおい (âm dài viết お): nhiều.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["おおい"]
-      },
-      {
         "id": "q1232",
         "prompt": "Viết cách đọc bằng hiragana: 少ない",
         "points": 1,
@@ -4707,28 +3076,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["すくない"]
-      },
-      {
-        "id": "q1234",
-        "prompt": "Viết cách đọc bằng hiragana: 涼しい",
-        "points": 1,
-        "tags": ["minna-12", "kanji", "kanji:v1209"],
-        "explain": "涼しい đọc là すずしい: mát mẻ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["すずしい"]
-      },
-      {
-        "id": "q1236",
-        "prompt": "Viết cách đọc bằng hiragana: 季節",
-        "points": 1,
-        "tags": ["minna-12", "kanji", "kanji:v1224"],
-        "explain": "季節 đọc là きせつ: mùa (trong năm).",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["きせつ"]
       },
       {
         "id": "q1237",
@@ -4742,17 +3089,6 @@
         "answer": ["くうこう"]
       },
       {
-        "id": "q1239",
-        "prompt": "「からい」 nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "からい: cay. あまい: ngọt.",
-        "type": "choice",
-        "options": ["ngọt", "cay", "nặng", "mát"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1241",
         "prompt": "Trái nghĩa với 「ちかい」 là:",
         "points": 1,
@@ -4762,17 +3098,6 @@
         "options": ["とおい", "おそい", "すくない", "かるい"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q1242",
-        "prompt": "Trái nghĩa với 「おおい」 là:",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "おおい (nhiều) ⇔ すくない (ít).",
-        "type": "choice",
-        "options": ["おもい", "とおい", "すくない", "からい"],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q1244",
@@ -4786,17 +3111,6 @@
         "answer": [2]
       },
       {
-        "id": "q1246",
-        "prompt": "Viết cách đọc bằng hiragana: 初めて",
-        "points": 1,
-        "tags": ["minna-12", "kanji", "kanji:v1247"],
-        "explain": "初めて đọc là はじめて: lần đầu tiên.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["はじめて"]
-      },
-      {
         "id": "q1247",
         "prompt": "Viết cách đọc bằng hiragana: 雪",
         "points": 1,
@@ -4806,22 +3120,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ゆき"]
-      },
-      {
-        "id": "q1249",
-        "prompt": "Câu nào đúng? (Tempura không cay.)",
-        "points": 1,
-        "tags": ["minna-12"],
-        "explain": "Ôn bài 8: phủ định tính từ đuôi い là bỏ い + くないです.",
-        "type": "choice",
-        "options": [
-          "てんぷらは からないです。",
-          "てんぷらは からいじゃ ありません。",
-          "てんぷらは からくじゃ ありません。",
-          "てんぷらは からくないです。"
-        ],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "n5-match-12-1",
@@ -4924,17 +3222,6 @@
         "explain": "Câu đúng: ハノイは 1年で いつが いちばん {暑|あつ}いですか。 N で 何／いつ が いちばん Adj ですか: trong phạm vi N, cái gì/khi nào … nhất."
       },
       {
-        "id": "q1301",
-        "type": "choice",
-        "prompt": "Muốn có máy ảnh: あたらしい カメラ（　）ほしいです。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Đồ vật muốn có dùng Nが ほしいです.",
-        "options": ["が", "を", "で", "へ"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q1302",
         "type": "choice",
         "prompt": "Tôi không muốn có ô tô: くるまが（　）。",
@@ -4944,17 +3231,6 @@
         "options": ["ほしいでした", "ほしくないです", "ほしいません", "ほしいじゃ ありません"],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q1304",
-        "type": "choice",
-        "prompt": "Chọn câu diễn đạt “muốn ăn”.",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Bỏ ます ở たべます rồi thêm たいです.",
-        "options": ["たべますたいです", "たべるほしいです", "たべたいでした", "たべたいです"],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q1306",
@@ -4968,17 +3244,6 @@
         "answer": [1]
       },
       {
-        "id": "q1307",
-        "type": "choice",
-        "prompt": "きます → muốn đến:（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "きます bỏ ます, thêm たいです.",
-        "options": ["くるたいです", "きますたいです", "きたいです", "こたいです"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1309",
         "type": "choice",
         "prompt": "Muốn bơi ở biển: うみ（　）およぎたいです。",
@@ -4988,22 +3253,6 @@
         "options": ["で", "へ", "を", "が"],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q1311",
-        "type": "choice",
-        "prompt": "Không muốn nghỉ:（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Phủ định hiện tại của たい: たくないです. やすみたくありませんでした là quá khứ.",
-        "options": [
-          "やすみたいじゃ ありません",
-          "やすみたいません",
-          "やすみたくないです",
-          "やすみたくありませんでした"
-        ],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q1312",
@@ -5017,17 +3266,6 @@
         "answer": [3]
       },
       {
-        "id": "q1314",
-        "type": "choice",
-        "prompt": "Muốn có trong quá khứ: こどもの とき、じてんしゃが（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "ほしい → ほしかったです.",
-        "options": ["ほしいでした", "ほしかったです", "ほしくないです", "ほしいませんでした"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1316",
         "type": "choice",
         "prompt": "Đi bể bơi để bơi: プールへ（　）に いきます。",
@@ -5037,17 +3275,6 @@
         "options": ["およぐ", "およぎます", "およいで", "およぎ"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q1317",
-        "type": "choice",
-        "prompt": "Đi mua sách: ほんを かい（　）いきます。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "に đứng sau thân ます để chỉ mục đích.",
-        "options": ["に", "で", "を", "が"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q1319",
@@ -5061,17 +3288,6 @@
         "answer": [2]
       },
       {
-        "id": "q1321",
-        "type": "choice",
-        "prompt": "Về nhà để ăn trưa: うちへ ひるごはんを（　）かえります。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "たべます → たべに; mục đích dùng được với かえります.",
-        "options": ["たべに", "たべますに", "たべるに", "たべを"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q1322",
         "type": "choice",
         "prompt": "Tôi khát, muốn uống thứ gì đó:（　）のみたいです。",
@@ -5079,38 +3295,6 @@
         "tags": ["minna-13"],
         "explain": "なにか diễn đạt thứ gì đó chưa xác định.",
         "options": ["どこか", "なにか", "いつか", "だれか"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1324",
-        "type": "choice",
-        "prompt": "Hỏi mong muốn cụ thể: “Bạn muốn ăn gì?”",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "なにを hỏi món muốn ăn; なにが たべたいですか cũng đúng.",
-        "options": [
-          "どこを たべたいですか。",
-          "いつが たべたいですか。",
-          "だれへ たべたいですか。",
-          "なにを たべたいですか。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1326",
-        "type": "choice",
-        "prompt": "Mời khách uống trà: chọn câu thích hợp.",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "おちゃは いかがですか là lời mời lịch sự; たい diễn đạt mong muốn của người nói.",
-        "options": [
-          "おちゃが ほしいです。",
-          "おちゃは いかがですか。",
-          "おちゃを のみたいです。",
-          "おちゃを のみました。"
-        ],
         "multiple": false,
         "answer": [1]
       },
@@ -5142,17 +3326,6 @@
         "answer": [0]
       },
       {
-        "id": "q1331",
-        "type": "fill",
-        "prompt": "Điền dạng muốn làm: あそびます →（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Bỏ ます, thêm たいです.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["あそびたいです"]
-      },
-      {
         "id": "q1332",
         "type": "fill",
         "prompt": "Điền dạng muốn làm: およぎます →（　）。",
@@ -5164,39 +3337,6 @@
         "answer": ["およぎたいです"]
       },
       {
-        "id": "q1334",
-        "type": "fill",
-        "prompt": "Điền dạng muốn làm: しょくじします →（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "します → したいです.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["しょくじしたいです"]
-      },
-      {
-        "id": "q1336",
-        "type": "fill",
-        "prompt": "Chia phủ định với たくないです: いきたいです →（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Đổi たい thành たくないです.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いきたくないです"]
-      },
-      {
-        "id": "q1337",
-        "type": "fill",
-        "prompt": "Chia quá khứ: のみたいです →（　）。",
-        "points": 1,
-        "tags": ["minna-13"],
-        "explain": "Đổi たい thành たかったです.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["のみたかったです"]
-      },
-      {
         "id": "q1339",
         "type": "fill",
         "prompt": "Điền phần trước に: えきへ ともだちを（　）に いきます。（むかえます）",
@@ -5206,17 +3346,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["むかえ"]
-      },
-      {
-        "id": "q1341",
-        "type": "fill",
-        "prompt": "Viết cách đọc hiragana của 遊びます.",
-        "points": 1,
-        "tags": ["minna-13", "kanji", "kanji:v1301"],
-        "explain": "遊びます đọc là あそびます: chơi.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["あそびます"]
       },
       {
         "id": "q1342",
@@ -5241,17 +3370,6 @@
         "answer": ["はいります"]
       },
       {
-        "id": "q1346",
-        "type": "fill",
-        "prompt": "Viết cách đọc hiragana của 広い.",
-        "points": 1,
-        "tags": ["minna-13", "kanji", "kanji:v1313"],
-        "explain": "広い đọc là ひろい: rộng.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ひろい"]
-      },
-      {
         "id": "q1347",
         "type": "fill",
         "prompt": "Viết cách đọc hiragana của 狭い.",
@@ -5261,17 +3379,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["せまい"]
-      },
-      {
-        "id": "q1349",
-        "type": "fill",
-        "prompt": "Viết cách đọc hiragana của 週末.",
-        "points": 1,
-        "tags": ["minna-13", "kanji", "kanji:v1321"],
-        "explain": "週末 đọc là しゅうまつ: cuối tuần.",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["しゅうまつ"]
       },
       {
         "id": "n5-match-13-1",
@@ -5408,17 +3515,6 @@
         "explain": "Văn bản: {去年|きょねん}の {夏休|なつやす}みは {忙|いそが}しかったですから、どこも 行きませんでした → năm ngoái bận nên không đi đâu. Đi Đà Nẵng là kế hoạch năm nay."
       },
       {
-        "id": "q1401",
-        "prompt": "Thể て của まちます là:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "ち → って: まって.",
-        "type": "choice",
-        "options": ["まちて", "まって", "まんで", "まいて"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1402",
         "prompt": "Thể て của よびます là:",
         "points": 1,
@@ -5441,28 +3537,6 @@
         "answer": [2]
       },
       {
-        "id": "q1406",
-        "prompt": "Thể て của いきます là:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Ngoại lệ: いきます → いって.",
-        "type": "choice",
-        "options": ["いって", "いきて", "いいて", "いんで"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1407",
-        "prompt": "Thể て của たべます (nhóm II) là:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Nhóm II: bỏ ます thêm て.",
-        "type": "choice",
-        "options": ["たべって", "たんで", "たべいて", "たべて"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1409",
         "prompt": "Thể て của おきます là:",
         "points": 1,
@@ -5474,17 +3548,6 @@
         "answer": [1]
       },
       {
-        "id": "q1411",
-        "prompt": "Thể て của べんきょうします là:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Nhóm III: します → して.",
-        "type": "choice",
-        "options": ["べんきょうしって", "べんきょうすて", "べんきょうしいて", "べんきょうして"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1412",
         "prompt": "Thể て của のみます là:",
         "points": 1,
@@ -5492,33 +3555,6 @@
         "explain": "み → んで: のんで.",
         "type": "choice",
         "options": ["のみて", "のって", "のんで", "のいて"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q1414",
-        "prompt": "Động từ nào thuộc nhóm II?",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "たべます (đuôi え + ます) là nhóm II.",
-        "type": "choice",
-        "options": ["たべます", "のみます", "かきます", "いそぎます"],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1416",
-        "prompt": "Nhờ lịch sự: Xin lỗi, làm ơn mở cửa sổ.",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "あけます (nhóm II) → あけて ください.",
-        "type": "choice",
-        "options": [
-          "すみませんが、まどを あけます ください。",
-          "すみませんが、まどを あけって ください。",
-          "すみませんが、まどを あけて ください。",
-          "すみませんが、まどで あけて ください。"
-        ],
         "multiple": false,
         "answer": [2]
       },
@@ -5537,22 +3573,6 @@
         ],
         "multiple": false,
         "answer": [1]
-      },
-      {
-        "id": "q1419",
-        "prompt": "Bên ngoài trời đang mưa:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "あめが ふって います.",
-        "type": "choice",
-        "options": [
-          "そとは あめが ふります。",
-          "そとは あめを ふって います。",
-          "そとは あめが ふりて います。",
-          "そとは あめが ふって います。"
-        ],
-        "multiple": false,
-        "answer": [3]
       },
       {
         "id": "q1421",
@@ -5587,22 +3607,6 @@
         "answer": [0]
       },
       {
-        "id": "q1424",
-        "prompt": "Nói với tài xế: Dừng ở đây.",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Dừng ở đây: ここで とめて ください.",
-        "type": "choice",
-        "options": [
-          "ここに とめて ください。",
-          "ここで とまって います。",
-          "ここで とめて ください。",
-          "ここを とめて ください。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1426",
         "prompt": "Phủ định của べんきょうして います (đang học):",
         "points": 1,
@@ -5617,28 +3621,6 @@
         ],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q1427",
-        "prompt": "つけます ↔ （　　）",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Bật (つけます) ↔ tắt (けします).",
-        "type": "choice",
-        "options": ["しめます", "あけます", "とめます", "けします"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1429",
-        "prompt": "はいります ↔ （　　）",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Vào (はいります) ↔ ra (でます).",
-        "type": "choice",
-        "options": ["たちます", "でます", "まちます", "すわります"],
-        "multiple": false,
-        "answer": [1]
       },
       {
         "id": "q1431",
@@ -5668,17 +3650,6 @@
         "answer": [2]
       },
       {
-        "id": "q1434",
-        "prompt": "Bạn ngạc nhiên vì không thấy chìa khóa, bạn buột miệng:",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Ngạc nhiên: あれ？",
-        "type": "choice",
-        "options": ["さあ。", "あれ？", "どうぞ。", "すぐ。"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1436",
         "prompt": "Chọn câu đúng: Xin cho xem hộ chiếu.",
         "points": 1,
@@ -5693,39 +3664,6 @@
         ],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q1437",
-        "prompt": "Điền thể て: まちます → （　　）",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "ち → って.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["まって"]
-      },
-      {
-        "id": "q1439",
-        "prompt": "Điền thể て: かきます → （　　）",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "き → いて.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["かいて"]
-      },
-      {
-        "id": "q1441",
-        "prompt": "Điền thể て: けします → （　　）",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "し → して.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["けして"]
       },
       {
         "id": "q1442",
@@ -5750,17 +3688,6 @@
         "answer": ["して"]
       },
       {
-        "id": "q1446",
-        "prompt": "Điền: いま テレビを み（　　）。(đang xem)",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Đang làm: V て います.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ています"]
-      },
-      {
         "id": "q1447",
         "prompt": "Điền: にもつを もち（　　）。(tôi xách giúp nhé?)",
         "points": 1,
@@ -5770,17 +3697,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["ましょうか"]
-      },
-      {
-        "id": "q1449",
-        "prompt": "Điền: もう すこし （　　） はなして ください。(chậm)",
-        "points": 1,
-        "tags": ["minna-14"],
-        "explain": "Chậm: ゆっくり.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["ゆっくり"]
       },
       {
         "id": "n5-match-14-1",
@@ -5905,38 +3821,6 @@
         "answer": [1]
       },
       {
-        "id": "q1502",
-        "prompt": "ここに すわっても いいですか。…（　　）。(cho phép)",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Cho phép: ええ、どうぞ／ええ、いいですよ.",
-        "type": "choice",
-        "options": [
-          "ええ、どうぞ",
-          "いいえ、すわります",
-          "はい、すわって います",
-          "ええ、いけません"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1504",
-        "prompt": "ここに くるまを とめても いいですか。…（　　）。(cấm hẳn)",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Cấm: いいえ、いけません.",
-        "type": "choice",
-        "options": [
-          "ええ、いいですよ",
-          "はい、とめます",
-          "いいえ、いけません",
-          "いいえ、とめて います"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1506",
         "prompt": "Thể て + も của つかいます:",
         "points": 1,
@@ -5959,54 +3843,6 @@
         "answer": [3]
       },
       {
-        "id": "q1509",
-        "prompt": "Chọn câu đúng: Anh Tanaka đã kết hôn.",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Trạng thái: けっこんして います.",
-        "type": "choice",
-        "options": [
-          "たなかさんは けっこんします。",
-          "たなかさんは けっこんして います。",
-          "たなかさんは けっこんして いません。",
-          "たなかさんは けっこんしました います。"
-        ],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1511",
-        "prompt": "どこに すんで いますか。…（　　）。",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Nơi cư trú + に + すんで います.",
-        "type": "choice",
-        "options": [
-          "ダナンで すみます",
-          "ダナンへ すんで います",
-          "ダナンに すみません",
-          "ダナンに すんで います"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1512",
-        "prompt": "Chọn câu đúng: Chị tôi làm việc ở bệnh viện.",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Nơi làm việc + で; はたらきます → はたらいて.",
-        "type": "choice",
-        "options": [
-          "あねは びょういんに はたらいて います。",
-          "あねは びょういんで はたらきて います。",
-          "あねは びょういんで はたらいて います。",
-          "あねは びょういんを はたらいて います。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1514",
         "prompt": "Hỏi: Bạn có từ điển điện tử không?",
         "points": 1,
@@ -6021,22 +3857,6 @@
         ],
         "multiple": false,
         "answer": [0]
-      },
-      {
-        "id": "q1516",
-        "prompt": "Hỏi lịch sự: Gia đình anh ở đâu ạ?",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Hỏi lịch sự về gia đình người khác: ごかぞく, どちら, いらっしゃいます.",
-        "type": "choice",
-        "options": [
-          "かぞくは どこに いますか。",
-          "ごかぞくは どこで すみますか。",
-          "ごかぞくは どちらに いらっしゃいますか。",
-          "ごかぞくは どちらに いますか。"
-        ],
-        "multiple": false,
-        "answer": [2]
       },
       {
         "id": "q1517",
@@ -6059,28 +3879,6 @@
         "options": ["bác sĩ", "y tá", "dược sĩ", "nha sĩ"],
         "multiple": false,
         "answer": [3]
-      },
-      {
-        "id": "q1521",
-        "prompt": "つくります nghĩa là:",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "つくります: làm, chế tạo.",
-        "type": "choice",
-        "options": ["bán", "làm, chế tạo, nấu", "đặt, để", "biết"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1522",
-        "prompt": "うります nghĩa là:",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "うります: bán; かいます: mua.",
-        "type": "choice",
-        "options": ["bán", "mua", "làm", "đặt"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q1524",
@@ -6110,22 +3908,6 @@
         "answer": [0]
       },
       {
-        "id": "q1527",
-        "prompt": "Chọn câu đúng: Không được chụp ảnh trong bảo tàng.",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Cấm: とっては いけません.",
-        "type": "choice",
-        "options": [
-          "びじゅつかんの なかで しゃしんを とっても いけません。",
-          "びじゅつかんの なかに しゃしんを とっては いけません。",
-          "びじゅつかんの なかで しゃしんを とりては いけません。",
-          "びじゅつかんの なかで しゃしんを とっては いけません。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1529",
         "prompt": "いらっしゃいます là:",
         "points": 1,
@@ -6142,22 +3924,6 @@
         "answer": [1]
       },
       {
-        "id": "q1531",
-        "prompt": "Chọn câu đúng: Tôi vào phòng họp được không?",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Nơi đi vào + に; はいります → はいって.",
-        "type": "choice",
-        "options": [
-          "かいぎしつで はいっても いいですか。",
-          "かいぎしつを はいっても いいですか。",
-          "かいぎしつに はいりても いいですか。",
-          "かいぎしつに はいっても いいですか。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1532",
         "prompt": "けっこんして いますか。…いいえ、（　　）。",
         "points": 1,
@@ -6167,17 +3933,6 @@
         "options": ["けっこんしません", "けっこんして ください", "どくしんです", "しりません"],
         "multiple": false,
         "answer": [2]
-      },
-      {
-        "id": "q1534",
-        "prompt": "ちゅうしゃじょう là:",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "ちゅうしゃじょう (駐車場): bãi đỗ xe.",
-        "type": "choice",
-        "options": ["bãi đỗ xe", "nhà ga", "bệnh viện", "bưu điện"],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q1536",
@@ -6196,28 +3951,6 @@
         "answer": [2]
       },
       {
-        "id": "q1537",
-        "prompt": "Điền: しゃしんを とっても （　　）ですか。(được không)",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Xin phép: ても いいですか.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["いい"]
-      },
-      {
-        "id": "q1539",
-        "prompt": "Điền thể て: つかいます → つか（　　）も いいですか",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "い → って: つかっても.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["って"]
-      },
-      {
         "id": "q1541",
         "prompt": "Điền: たなかさんは けっこん（　　）います。(đã kết hôn)",
         "points": 1,
@@ -6227,28 +3960,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["して"]
-      },
-      {
-        "id": "q1542",
-        "prompt": "Điền trợ từ: ハノイ（　　） すんで います。",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Nơi cư trú + に.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["に"]
-      },
-      {
-        "id": "q1544",
-        "prompt": "Điền thể て: おきます (置きます) → （　　）",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "き → いて.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["おいて"]
       },
       {
         "id": "q1546",
@@ -6271,17 +3982,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["いい"]
-      },
-      {
-        "id": "q1549",
-        "prompt": "Điền: ここに すわっても いいですか。…ええ、（　　）。(xin mời)",
-        "points": 1,
-        "tags": ["minna-15"],
-        "explain": "Cho phép: ええ、どうぞ.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["どうぞ"]
       },
       {
         "id": "n5-match-15-1",
@@ -6435,33 +4135,6 @@
         "answer": [0]
       },
       {
-        "id": "q1602",
-        "prompt": "Chọn câu đúng: Sau khi rửa tay xong, tôi ăn tối.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "あらいます → あらってから.",
-        "type": "choice",
-        "options": [
-          "てを あらいますから、ばんごはんを たべます。",
-          "てを あらってから、ばんごはんを たべます。",
-          "てを あらいてから、ばんごはんを たべます。",
-          "てを あらって、ばんごはんを たべてから。"
-        ],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1604",
-        "prompt": "Chọn dạng nối đúng của あかるい.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "Tính từ đuôi い: bỏ い và thêm くて.",
-        "type": "choice",
-        "options": ["あかるいで", "あかるくて", "あかるいて", "あかるで"],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
         "id": "q1606",
         "prompt": "Chọn câu đúng: Cô ấy là sinh viên và sống ở Hà Nội.",
         "points": 1,
@@ -6494,22 +4167,6 @@
         "answer": [2]
       },
       {
-        "id": "q1609",
-        "prompt": "Chọn câu đúng: Ga này có lối ra rộng.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "N1 は N2 が A です.",
-        "type": "choice",
-        "options": [
-          "この えきは でぐちを ひろいです。",
-          "この えきが でぐちは ひろいです。",
-          "この えきは でぐちが ひろいです。",
-          "この えきを でぐちが ひろいです。"
-        ],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
         "id": "q1611",
         "prompt": "Chọn câu đúng: Căn phòng sáng và rộng.",
         "points": 1,
@@ -6522,33 +4179,6 @@
           "へやは あかるいて、ひろいです。",
           "へやは あかるくて、ひろくてです。"
         ],
-        "multiple": false,
-        "answer": [1]
-      },
-      {
-        "id": "q1612",
-        "prompt": "Chọn câu đúng: Khu phố yên tĩnh và tiện lợi.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "しずか là tính từ đuôi な, nối bằng で.",
-        "type": "choice",
-        "options": [
-          "まちは しずかで、べんりです。",
-          "まちは しずかくて、べんりです。",
-          "まちは しずかなで、べんりです。",
-          "まちは しずかですで、べんりです。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
-        "id": "q1614",
-        "prompt": "Chọn thể て của おります (xuống xe).",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "おります là động từ nhóm II: おりて.",
-        "type": "choice",
-        "options": ["おって", "おりて", "おんで", "おいて"],
         "multiple": false,
         "answer": [1]
       },
@@ -6569,22 +4199,6 @@
         "answer": [1]
       },
       {
-        "id": "q1617",
-        "prompt": "Chọn câu đúng: Sau khi làm xong, tôi gọi điện.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "おわります → おわってから.",
-        "type": "choice",
-        "options": [
-          "しごとが おわってから、でんわを かけます。",
-          "しごとが おわりますから、でんわを かけます。",
-          "しごとが おわりてから、でんわを かけます。",
-          "しごとが おわってから、でんわを かけて。"
-        ],
-        "multiple": false,
-        "answer": [0]
-      },
-      {
         "id": "q1619",
         "prompt": "Dạng nối của べんり là gì?",
         "points": 1,
@@ -6594,22 +4208,6 @@
         "options": ["べんりくて", "べんりなで", "べんりで", "べんりいて"],
         "multiple": false,
         "answer": [2]
-      },
-      {
-        "id": "q1621",
-        "prompt": "Câu nào nói 'Tôi đi bộ qua cầu rồi rẽ phải'?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "わたります → わたって; rẽ về hướng phải dùng へ.",
-        "type": "choice",
-        "options": [
-          "はしを わたって、みぎへ まがります。",
-          "はしに わたって、みぎを まがります。",
-          "はしを わたりて、みぎへ まがります。",
-          "はしを わたって、みぎが まがります。"
-        ],
-        "multiple": false,
-        "answer": [0]
       },
       {
         "id": "q1622",
@@ -6628,22 +4226,6 @@
         "answer": [0]
       },
       {
-        "id": "q1624",
-        "prompt": "Chọn câu đúng: Tôi mua vé, lên tàu, rồi xuống ở ga kế tiếp.",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "Các động từ giữa chuỗi dùng thể て.",
-        "type": "choice",
-        "options": [
-          "きっぷを かって、でんしゃに のりますて、つぎの えきで おります。",
-          "きっぷを かって、でんしゃを のって、つぎの えきで おります。",
-          "きっぷを かいで、でんしゃに のって、つぎの えきで おります。",
-          "きっぷを かって、でんしゃに のって、つぎの えきで おります。"
-        ],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1626",
         "prompt": "のりかえます nghĩa là gì?",
         "points": 1,
@@ -6655,17 +4237,6 @@
         "answer": [1]
       },
       {
-        "id": "q1627",
-        "prompt": "かいさつ nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "かいさつ: cổng soát vé.",
-        "type": "choice",
-        "options": ["nhà ga", "cây cầu", "lối ra", "cổng soát vé"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
         "id": "q1629",
         "prompt": "こうさてん nghĩa là gì?",
         "points": 1,
@@ -6673,28 +4244,6 @@
         "explain": "こうさてん: ngã tư.",
         "type": "choice",
         "options": ["con đường", "công viên", "nhà ga", "ngã tư"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1631",
-        "prompt": "ひきます nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "ひきます: kéo.",
-        "type": "choice",
-        "options": ["xoay", "ấn", "kéo", "rẽ"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q1632",
-        "prompt": "おします nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "おします: ấn, đẩy.",
-        "type": "choice",
-        "options": ["kéo", "lấy ra", "chạm vào", "ấn, đẩy"],
         "multiple": false,
         "answer": [3]
       },
@@ -6721,39 +4270,6 @@
         "answer": [3]
       },
       {
-        "id": "q1637",
-        "prompt": "だします nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "だします: lấy ra; nộp.",
-        "type": "choice",
-        "options": ["cho vào", "xoay", "lấy ra; nộp", "ấn"],
-        "multiple": false,
-        "answer": [2]
-      },
-      {
-        "id": "q1639",
-        "prompt": "こえ nghĩa là gì?",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "こえ: giọng nói.",
-        "type": "choice",
-        "options": ["tóc", "khuôn mặt", "chiều cao", "giọng nói"],
-        "multiple": false,
-        "answer": [3]
-      },
-      {
-        "id": "q1641",
-        "prompt": "Điền: てを あらって（　　）、ばんごはんを たべます。",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "Vてから: sau khi làm xong.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["から"]
-      },
-      {
         "id": "q1642",
         "prompt": "Điền trợ từ: リンさんは かみ（　　）ながいです。",
         "points": 1,
@@ -6765,17 +4281,6 @@
         "answer": ["が"]
       },
       {
-        "id": "q1644",
-        "prompt": "Điền dạng nối: しずか → しずか（　　）",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "Tính từ đuôi な nối bằng で.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["で"]
-      },
-      {
         "id": "q1646",
         "prompt": "Điền thể て: のります → （　　）",
         "points": 1,
@@ -6785,17 +4290,6 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["のって"]
-      },
-      {
-        "id": "q1647",
-        "prompt": "Điền thể て: おります → （　　）",
-        "points": 1,
-        "tags": ["minna-16"],
-        "explain": "おります là nhóm II: おりて.",
-        "type": "fill",
-        "inputMode": "hiragana",
-        "kanjiStrict": false,
-        "answer": ["おりて"]
       },
       {
         "id": "q1649",
@@ -6941,6 +4435,3073 @@
         "points": 1,
         "tags": ["minna-16", "reading"],
         "explain": "Văn bản: {交差点|こうさてん}の {近|ちか}くに 白くて 大きい ビルが あります → toà nhà trắng và to. い-adj nối với tính từ khác: い → くて."
+      },
+      {
+        "id": "q1701",
+        "prompt": "Chọn thể ない của かいます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm I đuôi い đổi thành わ: かいます → かわない.",
+        "type": "choice",
+        "options": ["かあない", "かわない", "かいない", "かかない"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1705",
+        "prompt": "Đưa うわぎ lên làm chủ đề: うわぎを ここに おかないで ください。",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Tân ngữ làm chủ đề: thay を bằng は.",
+        "type": "choice",
+        "options": [
+          "うわぎをは ここに おかないで ください。",
+          "うわぎは ここに おかないで ください。",
+          "うわぎが ここに おかないで ください。",
+          "うわぎに ここに おかないで ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1707",
+        "prompt": "Chọn câu đúng: Ngày mai bạn không cần đến cũng được.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "きます (đến) → こない → こなくても いいです.",
+        "type": "choice",
+        "options": [
+          "あしたは きなくても いいです。",
+          "あしたは しなくても いいです。",
+          "あしたは こないで ください。",
+          "あしたは こなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1710",
+        "prompt": "Chọn thể ない của きます (đến).",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Nhóm III: きます → こない.",
+        "type": "choice",
+        "options": ["こない", "きない", "くない", "きらない"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1714",
+        "prompt": "Chọn thể ない của かえします.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "し → さ: かえさない.",
+        "type": "choice",
+        "options": ["かえさない", "かえしない", "かえすない", "かえらない"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1716",
+        "prompt": "Chọn thể ない của もって きます.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "きます → こない, nên もって こない.",
+        "type": "choice",
+        "options": ["もって きない", "もって くない", "もって こない", "もって きらない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1718",
+        "prompt": "Chọn câu đúng: Xin đừng quên thuốc.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "わすれます là nhóm II: わすれない → わすれないで ください.",
+        "type": "choice",
+        "options": [
+          "くすりを わすれないで ください。",
+          "くすりを わすらないで ください。",
+          "くすりに わすれないで ください。",
+          "くすりを わすれなくて ください。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1721",
+        "prompt": "Câu hỏi: きょう レポートを ださなければ なりませんか。Trả lời: 'Không, không cần nộp.'",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Trả lời không bắt buộc bằng 〜なくても いいです: だします → ださない → ださなくても いいです.",
+        "type": "choice",
+        "options": [
+          "いいえ、ださなければ なりません。",
+          "いいえ、ださなくても いいです。",
+          "いいえ、ださないで ください。",
+          "いいえ、だしなくても いいです。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1723",
+        "prompt": "Chọn câu đúng: Thẻ bảo hiểm thì xin đừng quên.",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Tân ngữ làm chủ đề: ほけんしょうを → ほけんしょうは.",
+        "type": "choice",
+        "options": [
+          "ほけんしょうをは わすれないで ください。",
+          "ほけんしょうが わすれないで ください。",
+          "ほけんしょうに わすれないで ください。",
+          "ほけんしょうは わすれないで ください。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1728",
+        "prompt": "Bác sĩ hỏi 'Anh/chị bị làm sao?' thì nói thế nào?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "どう しましたか: câu bác sĩ hỏi người bệnh.",
+        "type": "choice",
+        "options": ["おだいじに。", "どういたしまして。", "どう しましたか。", "いただきます。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1731",
+        "prompt": "はらいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "はらいます: trả (tiền).",
+        "type": "choice",
+        "options": ["trả lại đồ đã mượn", "cởi", "ra ngoài", "trả (tiền)"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1732",
+        "prompt": "でかけます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "でかけます: ra ngoài.",
+        "type": "choice",
+        "options": ["mang đến", "về nhà", "ra ngoài", "đi công tác"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1735",
+        "prompt": "たいせつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "たいせつ (な): quan trọng, quý giá.",
+        "type": "choice",
+        "options": ["nguy hiểm", "không sao", "tiện lợi", "quan trọng, quý giá"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1738",
+        "prompt": "うわぎ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "うわぎ: áo khoác; したぎ: đồ lót.",
+        "type": "choice",
+        "options": ["áo khoác", "đồ lót", "giày", "túi xách"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1740",
+        "prompt": "のど nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "のど: cổ họng.",
+        "type": "choice",
+        "options": ["đầu", "bụng", "cổ họng", "răng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1744",
+        "prompt": "Điền thể ない: なくします → （　　）",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "し → さ: なくさない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なくさない"]
+      },
+      {
+        "id": "q1746",
+        "prompt": "Điền: にちようびも はたらかなければ （　　）。(phải làm việc)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "V なければ なりません.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なりません", "いけません"]
+      },
+      {
+        "id": "q1750",
+        "prompt": "Điền: （　　）ですから、しんぱいしないで ください。(không sao)",
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "だいじょうぶ: không sao, ổn.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["だいじょうぶ"]
+      },
+      {
+        "id": "n5-match-17-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "覚えます（おぼえます）",
+          "忘れます（わすれます）",
+          "払います（はらいます）",
+          "返します（かえします）",
+          "脱ぎます（ぬぎます）"
+        ],
+        "right": ["cởi (giày, áo)", "trả lại (đồ đã mượn)", "nhớ, ghi nhớ", "trả (tiền)", "quên"],
+        "answer": [
+          [0, 2],
+          [1, 4],
+          [2, 3],
+          [3, 1],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "覚えます（おぼえます）: nhớ, ghi nhớ · 忘れます（わすれます）: quên · 払います（はらいます）: trả (tiền) · 返します（かえします）: trả lại (đồ đã mượn) · 脱ぎます（ぬぎます）: cởi (giày, áo)"
+      },
+      {
+        "id": "n5-match-17-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "心配します（しんぱいします）",
+          "出張します（しゅっちょうします）",
+          "薬（くすり）",
+          "熱（ねつ）",
+          "危ない（あぶない）"
+        ],
+        "right": ["nguy hiểm", "thuốc", "sốt", "đi công tác", "lo lắng"],
+        "answer": [
+          [0, 4],
+          [1, 3],
+          [2, 1],
+          [3, 2],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "心配します（しんぱいします）: lo lắng · 出張します（しゅっちょうします）: đi công tác · 薬（くすり）: thuốc · 熱（ねつ）: sốt · 危ない（あぶない）: nguy hiểm"
+      },
+      {
+        "id": "n5-order-33",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Ngày mai phải nộp báo cáo trước 10 giờ.”\n{明日|あした}の 10時までに ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-8dxanr",
+            "text": "{出|だ}さなければ"
+          },
+          {
+            "id": "p-wg7nyj",
+            "text": "なりません"
+          },
+          {
+            "id": "p-51knao",
+            "text": "レポートを"
+          }
+        ],
+        "answer": ["p-51knao", "p-8dxanr", "p-wg7nyj"],
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Câu đúng: {明日|あした}の 10時までに レポートを {出|だ}さなければ なりません。 V なければ なりません: phải V; N までに: trước hạn N."
+      },
+      {
+        "id": "n5-order-34",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Hôm nay không mang ô theo cũng được.”\n{今日|きょう}は ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-g51nd3",
+            "text": "かさを"
+          },
+          {
+            "id": "p-jzrvhm",
+            "text": "いいです"
+          },
+          {
+            "id": "p-l9qjzy",
+            "text": "{持|も}って"
+          },
+          {
+            "id": "p-wdesvy",
+            "text": "{行|い}かなくても"
+          }
+        ],
+        "answer": ["p-g51nd3", "p-l9qjzy", "p-wdesvy", "p-jzrvhm"],
+        "points": 1,
+        "tags": ["minna-17"],
+        "explain": "Câu đúng: {今日|きょう}は かさを {持|も}って {行|い}かなくても いいです。 V なくても いいです: không V cũng được, không cần V."
+      },
+      {
+        "id": "n5-reading-17",
+        "type": "choice",
+        "passage": "{熱|ねつ}が ありましたから、きょう {病院|びょういん}へ {行|い}きました。かぜでした。{薬|くすり}を もらいました。この {薬|くすり}は {朝|あさ}と {晩|ばん}、ご{飯|はん}を {食|た}べてから {飲|の}みます。{昼|ひる}は {飲|の}まなくても いいです。{今晩|こんばん}は おふろに {入|はい}っては いけません。{明日|あした}は {会社|かいしゃ}を {休|やす}みます。{金曜日|きんようび}までに また {病院|びょういん}へ {行|い}かなければ なりません。",
+        "prompt": "{薬|くすり}は いつ {飲|の}みますか。",
+        "options": [
+          "{朝|あさ}と {昼|ひる}と {晩|ばん}",
+          "{昼|ひる}だけ",
+          "{晩|ばん}だけ",
+          "{朝|あさ}と {晩|ばん}"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-17", "reading"],
+        "explain": "Văn bản: {朝|あさ}と {晩|ばん}、ご{飯|はん}を {食|た}べてから {飲|の}みます、{昼|ひる}は {飲|の}まなくても いいです → uống buổi sáng và buổi tối, buổi trưa không cần uống."
+      },
+      {
+        "id": "n5-reading-18",
+        "type": "choice",
+        "passage": "{熱|ねつ}が ありましたから、きょう {病院|びょういん}へ {行|い}きました。かぜでした。{薬|くすり}を もらいました。この {薬|くすり}は {朝|あさ}と {晩|ばん}、ご{飯|はん}を {食|た}べてから {飲|の}みます。{昼|ひる}は {飲|の}まなくても いいです。{今晩|こんばん}は おふろに {入|はい}っては いけません。{明日|あした}は {会社|かいしゃ}を {休|やす}みます。{金曜日|きんようび}までに また {病院|びょういん}へ {行|い}かなければ なりません。",
+        "prompt": "この {人|ひと}は {金曜日|きんようび}までに {何|なに}を しなければ なりませんか。",
+        "options": [
+          "{会社|かいしゃ}を {休|やす}みます",
+          "また {病院|びょういん}へ {行|い}きます",
+          "{薬|くすり}を もらいます",
+          "おふろに {入|はい}ります"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-17", "reading"],
+        "explain": "Văn bản: {金曜日|きんようび}までに また {病院|びょういん}へ {行|い}かなければ なりません → trước thứ sáu phải đi khám lại. Nghỉ làm là việc của ngày mai, không phải hạn thứ sáu."
+      },
+      {
+        "id": "q1803",
+        "prompt": "この ぎんこう（　）ドンを えんに かえる ことが できます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nơi diễn ra hành động dùng で.",
+        "type": "choice",
+        "options": ["に", "を", "で", "へ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1804",
+        "prompt": "Chọn câu đúng: Sở thích của tôi là chơi quần vợt.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Sau しゅみは … です cần danh từ: thể từ điển + こと.",
+        "type": "choice",
+        "options": [
+          "わたしの しゅみは テニスを します。",
+          "わたしの しゅみは テニスを して ことです。",
+          "わたしの しゅみは テニスを するです。",
+          "わたしの しゅみは テニスを する ことです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1807",
+        "prompt": "Câu nào có nghĩa 'Trước bữa tối, tôi làm bài tập'?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Danh từ + の + まえに: ばんごはんの まえに.",
+        "type": "choice",
+        "options": [
+          "ばんごはんが まえに、しゅくだいを します。",
+          "ばんごはんに まえに、しゅくだいを します。",
+          "ばんごはんの まえに、しゅくだいを します。",
+          "ばんごはんで まえに、しゅくだいを します。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1809",
+        "prompt": "Chọn thể từ điển của およぎます.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "ぎ → ぐ: およぎます → およぐ.",
+        "type": "choice",
+        "options": ["およぐ", "およく", "およぎる", "およがう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1814",
+        "prompt": "Chọn thể từ điển của きます (đến).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm III: きます → くる.",
+        "type": "choice",
+        "options": ["くる", "きる", "こる", "きう"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1815",
+        "prompt": "Chọn thể từ điển của あびます (シャワーを あびます).",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "あびます thuộc nhóm II dù có đuôi び: あびる.",
+        "type": "choice",
+        "options": ["あぶ", "あびる", "あびう", "あばる"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1819",
+        "prompt": "Động từ nào thuộc nhóm II?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "おしえます thuộc nhóm II (bỏ ます thêm る). Ba động từ còn lại thuộc nhóm I.",
+        "type": "choice",
+        "options": ["あらいます", "おしえます", "ひきます", "かえります"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1822",
+        "prompt": "Hỏi lễ tân: Ở đây có đặt chỗ được không?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Danh từ chỉ hoạt động + が できます: よやくが できますか.",
+        "type": "choice",
+        "options": [
+          "ここで よやくに できますか。",
+          "ここで よやくして できますか。",
+          "ここで よやくが できますか。",
+          "ここで よやくの できますか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1823",
+        "prompt": "この こうえんで いぬと（　）ことが できます。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Trước こと dùng thể từ điển: さんぽします → さんぽする.",
+        "type": "choice",
+        "options": ["さんぽします", "さんぽする", "さんぽして", "さんぽし"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1827",
+        "prompt": "Chọn câu đúng: Anh Tanaka đến Việt Nam cách đây 2 tháng.",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Thời lượng + まえに, không có の.",
+        "type": "choice",
+        "options": [
+          "たなかさんは 2かげつの まえに ベトナムへ きました。",
+          "たなかさんは 2かげつを まえに ベトナムへ きました。",
+          "たなかさんは 2かげつ まえで ベトナムへ きました。",
+          "たなかさんは 2かげつ まえに ベトナムへ きました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1829",
+        "prompt": "A: にちようび、うちへ あそびに きませんか。B: ありがとう ございます。（　）いきたいです。",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "ぜひ + たいです: rất muốn, nhất định.",
+        "type": "choice",
+        "options": ["なかなか", "あまり", "ぜんぜん", "ぜひ"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1833",
+        "prompt": "あらいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "あらいます: rửa, giặt.",
+        "type": "choice",
+        "options": ["hát", "rửa, giặt", "lái xe", "vứt, bỏ đi"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1835",
+        "prompt": "げんきん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "げんきん: tiền mặt.",
+        "type": "choice",
+        "options": ["tiền mặt", "tiền lẻ", "thẻ", "vé"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1839",
+        "prompt": "しゃちょう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "しゃちょう: giám đốc công ty.",
+        "type": "choice",
+        "options": ["giám đốc công ty", "trưởng phòng", "nhân viên", "bác sĩ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1842",
+        "prompt": "Điền thể từ điển: はなします → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "し → す: はなす.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["はなす"]
+      },
+      {
+        "id": "q1844",
+        "prompt": "Điền thể từ điển: あつめます → （　　）",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Nhóm II: bỏ ます, thêm る.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あつめる"]
+      },
+      {
+        "id": "q1846",
+        "prompt": "Điền: わたしの かいしゃの（　　）は たなかさんです。(trưởng phòng)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "かちょう: trưởng phòng (課).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かちょう"]
+      },
+      {
+        "id": "q1848",
+        "prompt": "Điền: わたしは まいにち えいごで（　　）を かきます。(nhật ký)",
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "にっき: nhật ký.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["にっき"]
+      },
+      {
+        "id": "n5-match-18-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "洗います（あらいます）",
+          "弾きます（ひきます）",
+          "歌います（うたいます）",
+          "集めます（あつめます）",
+          "捨てます（すてます）"
+        ],
+        "right": ["sưu tầm", "hát", "rửa", "vứt đi", "chơi (đàn)"],
+        "answer": [
+          [0, 2],
+          [1, 4],
+          [2, 1],
+          [3, 0],
+          [4, 3]
+        ],
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "洗います（あらいます）: rửa · 弾きます（ひきます）: chơi (đàn) · 歌います（うたいます）: hát · 集めます（あつめます）: sưu tầm · 捨てます（すてます）: vứt đi"
+      },
+      {
+        "id": "n5-match-18-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "運転します（うんてんします）",
+          "予約します（よやくします）",
+          "現金（げんきん）",
+          "趣味（しゅみ）",
+          "動物（どうぶつ）"
+        ],
+        "right": ["tiền mặt", "lái (xe)", "đặt trước", "động vật", "sở thích"],
+        "answer": [
+          [0, 1],
+          [1, 2],
+          [2, 0],
+          [3, 4],
+          [4, 3]
+        ],
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "運転します（うんてんします）: lái (xe) · 予約します（よやくします）: đặt trước · 現金（げんきん）: tiền mặt · 趣味（しゅみ）: sở thích · 動物（どうぶつ）: động vật"
+      },
+      {
+        "id": "n5-order-35",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Anh Minh có thể chơi đàn piano.”\nミンさんは ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-zymg2k",
+            "text": "ことが"
+          },
+          {
+            "id": "p-b9c4dk",
+            "text": "できます"
+          },
+          {
+            "id": "p-rzf6md",
+            "text": "ピアノを"
+          },
+          {
+            "id": "p-wcg4q8",
+            "text": "{弾|ひ}く"
+          }
+        ],
+        "answer": ["p-rzf6md", "p-wcg4q8", "p-zymg2k", "p-b9c4dk"],
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Câu đúng: ミンさんは ピアノを {弾|ひ}く ことが できます。 V る ことが できます: có thể V."
+      },
+      {
+        "id": "n5-order-36",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Sở thích của tôi là sưu tầm tem.”\nわたしの ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-mwjoij",
+            "text": "{集|あつ}める"
+          },
+          {
+            "id": "p-7jvztr",
+            "text": "{趣味|しゅみ}は"
+          },
+          {
+            "id": "p-0r704a",
+            "text": "ことです"
+          },
+          {
+            "id": "p-lw0bv3",
+            "text": "{切手|きって}を"
+          }
+        ],
+        "answer": ["p-7jvztr", "p-lw0bv3", "p-mwjoij", "p-0r704a"],
+        "points": 1,
+        "tags": ["minna-18"],
+        "explain": "Câu đúng: わたしの {趣味|しゅみ}は {切手|きって}を {集|あつ}める ことです。 しゅみは V る ことです: sở thích là V."
+      },
+      {
+        "id": "q1901",
+        "prompt": "Chọn thể た của のぼります.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "Thể て のぼって → thể た のぼった.",
+        "type": "choice",
+        "options": ["のぼた", "のぼった", "のぼりた", "のぼんだ"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1905",
+        "prompt": "Chọn câu đúng: Con sông đã trở nên sạch đẹp.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "きれい là tính từ đuôi な: きれいに なります.",
+        "type": "choice",
+        "options": [
+          "かわが きれいく なりました。",
+          "かわが きれいに なりました。",
+          "かわが きれいな なりました。",
+          "かわが きれくて なりました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1908",
+        "prompt": "Chọn thể た của やすみます.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "やすんで → やすんだ.",
+        "type": "choice",
+        "options": ["やすんだ", "やすみた", "やすった", "やすんた"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1911",
+        "prompt": "Chọn thể た của およぎます.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "およいで → およいだ.",
+        "type": "choice",
+        "options": ["およいた", "およった", "およいだ", "およんだ"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1912",
+        "prompt": "Chọn thể た của はなします.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "はなして → はなした.",
+        "type": "choice",
+        "options": ["はなした", "はなしった", "はないた", "はなさた"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1917",
+        "prompt": "Chọn thể た của あいます (gặp).",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "あって → あった.",
+        "type": "choice",
+        "options": ["あいた", "あんだ", "あった", "あわた"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1919",
+        "prompt": "Chọn câu đúng: Tôi đã từng đi tàu điện ngầm ở Tokyo.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "のります → のって → のった ことが あります.",
+        "type": "choice",
+        "options": [
+          "とうきょうで ちかてつに のった ことが あります。",
+          "とうきょうで ちかてつに のりた ことが あります。",
+          "とうきょうで ちかてつに のいた ことが あります。",
+          "とうきょうで ちかてつに のって ことが あります。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1920",
+        "prompt": "Câu nào dùng 〜た ことが あります đúng (nói về kinh nghiệm)?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "Kinh nghiệm không gắn với việc vừa làm (けさ, きのう) hay việc chưa xảy ra (こんばん).",
+        "type": "choice",
+        "options": [
+          "けさ コーヒーを のんだ ことが あります。",
+          "きのう コーヒーを のんだ ことが あります。",
+          "こんばん おさけを のんだ ことが あります。",
+          "にほんの おさけを のんだ ことが あります。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1924",
+        "prompt": "Chọn câu đúng: Kỳ thi đã trở nên khó.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "むずかしい → むずかしく なります.",
+        "type": "choice",
+        "options": [
+          "しけんが むずかしいく なりました。",
+          "しけんが むずかしく なりました。",
+          "しけんが むずかしいに なりました。",
+          "しけんが むずかしくて なりました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1927",
+        "prompt": "Chọn câu đúng: Công việc đã rảnh hơn.",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "ひま là tính từ đuôi な: ひまに なります.",
+        "type": "choice",
+        "options": [
+          "しごとが ひまく なりました。",
+          "しごとが ひまな なりました。",
+          "しごとが ひまいく なりました。",
+          "しごとが ひまに なりました。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1931",
+        "prompt": "とまります (ホテルに とまります) nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "とまります: trọ, nghỉ lại.",
+        "type": "choice",
+        "options": ["trọ, nghỉ lại (khách sạn)", "đỗ (xe)", "lên (xe, tàu)", "chờ đợi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q1932",
+        "prompt": "せんたくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "せんたくします: giặt (quần áo); そうじします: dọn dẹp.",
+        "type": "choice",
+        "options": ["dọn dẹp", "luyện tập", "giặt (quần áo)", "nấu ăn"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q1934",
+        "prompt": "よわい nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "よわい: yếu; つよい: mạnh.",
+        "type": "choice",
+        "options": ["mạnh", "yếu", "cao", "ngắn"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q1939",
+        "prompt": "だんだん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "だんだん: dần dần.",
+        "type": "choice",
+        "options": ["sắp sửa", "một lần", "ngay lập tức", "dần dần"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1940",
+        "prompt": "じつは nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "じつは: thật ra là.",
+        "type": "choice",
+        "options": ["tuy nhiên", "nhưng mà", "may quá", "thật ra là"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q1944",
+        "prompt": "Điền thể た: たべます → （　　）",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "Nhóm II: bỏ ます, thêm た.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たべた"]
+      },
+      {
+        "id": "q1946",
+        "prompt": "Điền dạng たり của あるきます: にちようびは こうえんを （　　）、かいものを したり します。",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "あるいて → あるいた → あるいたり.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あるいたり"]
+      },
+      {
+        "id": "q1948",
+        "prompt": "Điền dạng đúng của しずか: こどもが ねましたから、うちが （　　） なりました。",
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "しずか là tính từ đuôi な: しずかに なります.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しずかに"]
+      },
+      {
+        "id": "n5-match-19-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "登ります（のぼります）",
+          "泊まります（とまります）",
+          "掃除します（そうじします）",
+          "洗濯します（せんたくします）",
+          "練習します（れんしゅうします）"
+        ],
+        "right": ["luyện tập", "leo (núi)", "nghỉ lại (khách sạn)", "dọn dẹp", "giặt quần áo"],
+        "answer": [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [3, 4],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "登ります（のぼります）: leo (núi) · 泊まります（とまります）: nghỉ lại (khách sạn) · 掃除します（そうじします）: dọn dẹp · 洗濯します（せんたくします）: giặt quần áo · 練習します（れんしゅうします）: luyện tập"
+      },
+      {
+        "id": "n5-match-19-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "眠い（ねむい）",
+          "強い（つよい）",
+          "弱い（よわい）",
+          "一度（いちど）",
+          "だんだん"
+        ],
+        "right": ["mạnh", "dần dần", "một lần", "yếu", "buồn ngủ"],
+        "answer": [
+          [0, 4],
+          [1, 0],
+          [2, 3],
+          [3, 2],
+          [4, 1]
+        ],
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "眠い（ねむい）: buồn ngủ · 強い（つよい）: mạnh · 弱い（よわい）: yếu · 一度（いちど）: một lần · だんだん: dần dần"
+      },
+      {
+        "id": "n5-order-37",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi đã từng leo núi Phú Sĩ.”\nわたしは ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-y9uuhu",
+            "text": "あります"
+          },
+          {
+            "id": "p-008p54",
+            "text": "{登|のぼ}った"
+          },
+          {
+            "id": "p-o7ohz6",
+            "text": "{富士山|ふじさん}に"
+          },
+          {
+            "id": "p-s6oksl",
+            "text": "ことが"
+          }
+        ],
+        "answer": ["p-o7ohz6", "p-008p54", "p-s6oksl", "p-y9uuhu"],
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "Câu đúng: わたしは {富士山|ふじさん}に {登|のぼ}った ことが あります。 V た ことが あります: đã từng V."
+      },
+      {
+        "id": "n5-order-38",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Từ khi đến Nhật, tiếng Nhật của anh Minh đã giỏi lên.”\n{日本|にほん}へ {来|き}てから、 ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-yekpe3",
+            "text": "{日本語|にほんご}が"
+          },
+          {
+            "id": "p-5ypeab",
+            "text": "{上手|じょうず}に"
+          },
+          {
+            "id": "p-8kdf8x",
+            "text": "なりました"
+          },
+          {
+            "id": "p-gzlh8v",
+            "text": "ミンさんの"
+          }
+        ],
+        "answer": ["p-gzlh8v", "p-yekpe3", "p-5ypeab", "p-8kdf8x"],
+        "points": 1,
+        "tags": ["minna-19"],
+        "explain": "Câu đúng: {日本|にほん}へ {来|き}てから、ミンさんの {日本語|にほんご}が {上手|じょうず}に なりました。 A な → に なります: trở nên …."
+      },
+      {
+        "id": "n5-reading-19",
+        "type": "choice",
+        "passage": "わたしは {去年|きょねん}の {夏|なつ} {日本|にほん}へ {来|き}ました。{日本|にほん}で いろいろな ことを しました。{富士山|ふじさん}に {登|のぼ}った ことが あります。{京都|きょうと}の ホテルに {泊|と}まった ことも あります。でも、{相撲|すもう}は まだ {一度|いちど}も {見|み}た ことが ありません。{休|やす}みの {日|ひ}は {友達|ともだち}と テニスを したり、{買|か}い{物|もの}に {行|い}ったり します。{日本語|にほんご}は {前|まえ}は {難|むずか}しかったですが、だんだん おもしろく なりました。",
+        "prompt": "この {人|ひと}は {何|なに}を {見|み}た ことが ありませんか。",
+        "options": ["{富士山|ふじさん}", "{京都|きょうと}の ホテル", "{相撲|すもう}", "テニス"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-19", "reading"],
+        "explain": "Văn bản: {相撲|すもう}は まだ {一度|いちど}も {見|み}た ことが ありません → chưa xem sumo lần nào. Người này đã leo núi Phú Sĩ và đã ở khách sạn ở Kyoto."
+      },
+      {
+        "id": "n5-reading-20",
+        "type": "choice",
+        "passage": "わたしは {去年|きょねん}の {夏|なつ} {日本|にほん}へ {来|き}ました。{日本|にほん}で いろいろな ことを しました。{富士山|ふじさん}に {登|のぼ}った ことが あります。{京都|きょうと}の ホテルに {泊|と}まった ことも あります。でも、{相撲|すもう}は まだ {一度|いちど}も {見|み}た ことが ありません。{休|やす}みの {日|ひ}は {友達|ともだち}と テニスを したり、{買|か}い{物|もの}に {行|い}ったり します。{日本語|にほんご}は {前|まえ}は {難|むずか}しかったですが、だんだん おもしろく なりました。",
+        "prompt": "{日本語|にほんご}は {今|いま} どうですか。",
+        "options": [
+          "おもしろく なりました",
+          "{前|まえ}から おもしろいです",
+          "だんだん {難|むずか}しく なりました",
+          "まだ {難|むずか}しいです"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-19", "reading"],
+        "explain": "Văn bản: {前|まえ}は {難|むずか}しかったですが、だんだん おもしろく なりました → trước đây khó, dần dần trở nên thú vị. A い → く なります: trở nên …."
+      },
+      {
+        "id": "q2003",
+        "prompt": "Chọn câu thể thường đúng: Bộ phim hôm qua hay.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Tính từ đuôi い: おもしろい → おもしろかった, không thêm だ.",
+        "type": "choice",
+        "options": [
+          "きのうの えいがは おもしろいだった。",
+          "きのうの えいがは おもしろかった。",
+          "きのうの えいがは おもしろかっただ。",
+          "きのうの えいがは おもしろくだった。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2005",
+        "prompt": "Hỏi bạn thân bằng thể thường: Cuối tuần cậu rảnh không?",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Câu hỏi với tính từ đuôi な bỏ だ và lên giọng: ひま？",
+        "type": "choice",
+        "options": [
+          "しゅうまつ、ひまだ？",
+          "しゅうまつ、ひまですか。",
+          "しゅうまつ、ひまい？",
+          "しゅうまつ、ひま？"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2008",
+        "prompt": "Chọn thể từ điển của なおします.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Nhóm I: し → す, nên なおします → なおす.",
+        "type": "choice",
+        "options": ["なおしる", "なおする", "なおす", "なおしない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2010",
+        "prompt": "Chọn quá khứ phủ định (thể thường) của でんわします.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "しない → bỏ い, thêm かった: でんわしなかった.",
+        "type": "choice",
+        "options": [
+          "でんわしなかった",
+          "でんわしないかった",
+          "でんわさなかった",
+          "でんわしませんだった"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2012",
+        "prompt": "Chọn thể た của いきます.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "いきます là ngoại lệ: いって → いった.",
+        "type": "choice",
+        "options": ["いいた", "いきた", "いいだ", "いった"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2016",
+        "prompt": "Câu thể thường của: きのう ともだちに あいませんでした。",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "あいます: い → わ, あわない → あわなかった. あわなかったです vẫn là cách nói lịch sự.",
+        "type": "choice",
+        "options": [
+          "きのう ともだちに あわなかった。",
+          "きのう ともだちに あいなかった。",
+          "きのう ともだちに あわないだった。",
+          "きのう ともだちに あわなかったです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2019",
+        "prompt": "Thể thường của あめでした là gì?",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Danh từ: でした → だった.",
+        "type": "choice",
+        "options": ["あめかった", "あめだ", "あめでしただ", "あめだった"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2020",
+        "prompt": "Câu thể thường của: あしたは やすみじゃ ありません。",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Danh từ: じゃ ありません → じゃ ない.",
+        "type": "choice",
+        "options": [
+          "あしたは やすみじゃ ない。",
+          "あしたは やすみくない。",
+          "あしたは やすみじゃ なかった。",
+          "あしたは やすみだ ない。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2025",
+        "prompt": "Bạn hỏi: あした、テニス する？ Trả lời “Ừ, tớ có chơi.” bằng thể thường.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "はい → うん; します → する.",
+        "type": "choice",
+        "options": ["ううん、する。", "うん、します。", "うん、する。", "うん、するだ。"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2027",
+        "prompt": "Hỏi bạn bằng thể thường: Cậu có mang ô không?",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "〜て いる nói gọn thành 〜てる, lược を, câu hỏi lên giọng.",
+        "type": "choice",
+        "options": [
+          "かさ、もってるだ？",
+          "かさ、もってる？",
+          "かさを もって いますか。",
+          "かさ、もってた。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2031",
+        "prompt": "Chọn câu đúng: Phòng này rộng nhưng đắt.",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Tính từ đuôi い đứng trước けど không cần だ.",
+        "type": "choice",
+        "options": [
+          "この へやは ひろいだけど、たかい。",
+          "この へやは ひろいけど、たかい。",
+          "この へやは ひろくけど、たかい。",
+          "この へやは ひろいけど、たかいだ。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2032",
+        "prompt": "Đổi sang thể thường: きのうは あめでしたが、でかけました。",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "でした → だった; が → けど; でかけました → でかけた.",
+        "type": "choice",
+        "options": [
+          "きのうは あめだったけど、でかけた。",
+          "きのうは あめだけど、でかけた。",
+          "きのうは あめかったけど、でかけた。",
+          "きのうは あめだったけど、でかけました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2035",
+        "prompt": "ぶっか nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "ぶっか: vật giá, giá cả sinh hoạt.",
+        "type": "choice",
+        "options": ["hành lý", "món quà", "vật giá", "tiền thừa"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2039",
+        "prompt": "ぼく thường do ai dùng để tự xưng?",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "ぼく: nam giới tự xưng khi nói thân mật.",
+        "type": "choice",
+        "options": [
+          "nữ giới, khi nói lịch sự",
+          "nam giới, khi nói thân mật",
+          "giáo viên, khi gọi học sinh",
+          "trẻ em, khi gọi mẹ"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2042",
+        "prompt": "Điền thể ない: なおします → （　　）",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Nhóm I: し → さ, thêm ない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["なおさない"]
+      },
+      {
+        "id": "q2043",
+        "prompt": "Điền thể た: まちます → （　　）",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "ち → った, giống thể て まって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まった"]
+      },
+      {
+        "id": "q2047",
+        "prompt": "Điền thể thường: しずかじゃ ありませんでした → （　　）",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Tính từ đuôi な: じゃ ありませんでした → じゃ なかった.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["しずかじゃなかった", "しずかではなかった"]
+      },
+      {
+        "id": "q2048",
+        "prompt": "Điền thể thường: こんばん かんじを おぼえなければ （　　）。(phải nhớ)",
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "なければ なりません → なければ ならない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ならない", "いけない"]
+      },
+      {
+        "id": "n5-match-20-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "要ります（いります）",
+          "調べます（しらべます）",
+          "修理します（しゅうりします）",
+          "言葉（ことば）",
+          "物価（ぶっか）"
+        ],
+        "right": ["tra cứu", "sửa chữa (máy móc)", "vật giá", "cần", "từ, lời nói"],
+        "answer": [
+          [0, 3],
+          [1, 0],
+          [2, 1],
+          [3, 4],
+          [4, 2]
+        ],
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "要ります（いります）: cần · 調べます（しらべます）: tra cứu · 修理します（しゅうりします）: sửa chữa (máy móc) · 言葉（ことば）: từ, lời nói · 物価（ぶっか）: vật giá"
+      },
+      {
+        "id": "n5-match-20-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "着物（きもの）",
+          "ビザ",
+          "初め（はじめ）",
+          "終わり（おわり）",
+          "この間（このあいだ）"
+        ],
+        "right": ["hôm nọ", "kimono", "lúc cuối", "thị thực (visa)", "lúc đầu"],
+        "answer": [
+          [0, 1],
+          [1, 3],
+          [2, 4],
+          [3, 2],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "着物（きもの）: kimono · ビザ: thị thực (visa) · 初め（はじめ）: lúc đầu · 終わり（おわり）: lúc cuối · この間（このあいだ）: hôm nọ"
+      },
+      {
+        "id": "n5-order-39",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Bây giờ tớ không cần cuốn từ điển này.”\n{今|いま}、 ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-j0e2ha",
+            "text": "{辞書|じしょ}は"
+          },
+          {
+            "id": "p-fl3408",
+            "text": "この"
+          },
+          {
+            "id": "p-ntkcp6",
+            "text": "{要|い}らない"
+          }
+        ],
+        "answer": ["p-fl3408", "p-j0e2ha", "p-ntkcp6"],
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Câu đúng: {今|いま}、この {辞書|じしょ}は {要|い}らない。 {要|い}らない: thể ない (thể thường) của {要|い}ります."
+      },
+      {
+        "id": "n5-order-40",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Hôm qua tớ đi Kyoto, nhưng đông người lắm.”\nきのう {京都|きょうと}へ ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-s9pat6",
+            "text": "けど、"
+          },
+          {
+            "id": "p-m4ip4k",
+            "text": "{多|おお}かった"
+          },
+          {
+            "id": "p-lpyrbh",
+            "text": "{人|ひと}が"
+          },
+          {
+            "id": "p-s8u4e0",
+            "text": "{行|い}った"
+          }
+        ],
+        "answer": ["p-s8u4e0", "p-s9pat6", "p-lpyrbh", "p-m4ip4k"],
+        "points": 1,
+        "tags": ["minna-20"],
+        "explain": "Câu đúng: きのう {京都|きょうと}へ {行|い}った けど、{人|ひと}が {多|おお}かった。 {行|い}った: thể た của {行|い}きます; 〜けど: … nhưng … (thân mật của 〜が)."
+      },
+      {
+        "id": "q2101",
+        "prompt": "Chọn câu đúng: Tôi nghĩ ngày mai anh Nam sẽ không đến.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Trước と おもいます dùng thể thông thường: きます → こない.",
+        "type": "choice",
+        "options": [
+          "ナムさんは あした きませんと おもいます。",
+          "ナムさんは あした こないと おもいます。",
+          "ナムさんは あした きないと おもいます。",
+          "ナムさんは あした こなかったと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2105",
+        "prompt": "らいしゅう こうえん（　）コンサートが あります。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Sự kiện diễn ra ở đâu dùng で: こうえんで コンサートが あります.",
+        "type": "choice",
+        "options": ["に", "で", "を", "が"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2108",
+        "prompt": "Chọn câu đúng: Tôi nghĩ anh Tanaka đã ra ngoài rồi.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Quá khứ thể thông thường: でかけました → でかけた, rồi + と おもいます.",
+        "type": "choice",
+        "options": [
+          "たなかさんは もう でかけますと おもいます。",
+          "たなかさんは もう でかけましたと おもいます。",
+          "たなかさんは もう でかけたを おもいます。",
+          "たなかさんは もう でかけたと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2109",
+        "prompt": "Chọn câu đúng: Tôi nghĩ người kia là bác sĩ.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Danh từ + だ + と おもいます.",
+        "type": "choice",
+        "options": [
+          "あの ひとは いしゃだと おもいます。",
+          "あの ひとは いしゃのと おもいます。",
+          "あの ひとは いしゃですと おもいます。",
+          "あの ひとは いしゃなと おもいます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2114",
+        "prompt": "Bạn bè nói: この みせの りょうりは おいしいと おもいます。Bạn đồng ý, bạn nói gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Đồng ý: わたしも そう おもいます; わたしは そう おもいません là không đồng ý.",
+        "type": "choice",
+        "options": [
+          "わたしも そうと おもいます。",
+          "わたしも どう おもいます。",
+          "わたしも そう おもいます。",
+          "わたしは そう おもいません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2117",
+        "prompt": "Chọn câu hỏi đúng: 'Tạm biệt' tiếng Nhật nói thế nào?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Hỏi cách nói: 「…」は 〜ごで なんと いいますか.",
+        "type": "choice",
+        "options": [
+          "「tạm biệt」は にほんごで なんと いいますか。",
+          "「tạm biệt」は にほんごで なにを いいますか。",
+          "「tạm biệt」は にほんごで なんに いいますか。",
+          "「tạm biệt」は にほんごを なんと いいますか。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2118",
+        "prompt": "Chọn câu đúng: Về đến nhà, tôi đã nói 'ただいま'.",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Lời được trích đặt trong 「」 và đi với と: 「ただいま」と いいました.",
+        "type": "choice",
+        "options": [
+          "うちへ かえって、「ただいま」に いいました。",
+          "うちへ かえって、「ただいま」で いいました。",
+          "うちへ かえって、「ただいま」と いいました。",
+          "うちへ かえって、「ただいま」が いいました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2121",
+        "prompt": "Hỏi xác nhận: Hôm nay thứ Bảy nên công ty nghỉ đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Danh từ bỏ だ trước でしょう: やすみでしょう？",
+        "type": "choice",
+        "options": [
+          "きょうは どようびですから、かいしゃは やすみでしょう？",
+          "きょうは どようびですから、かいしゃは やすみだでしょう？",
+          "きょうは どようびですから、かいしゃは やすみなでしょう？",
+          "きょうは どようびですから、かいしゃは やすみですでしょう？"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2124",
+        "prompt": "Hỏi xác nhận: Thứ Sáu ở công ty có cuộc họp đúng không?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Sự kiện diễn ra ở đâu dùng で; ある là thể thông thường, đứng ngay trước でしょう？",
+        "type": "choice",
+        "options": [
+          "きんようびに かいしゃに かいぎが あるでしょう？",
+          "きんようびに かいしゃで かいぎを あるでしょう？",
+          "きんようびに かいしゃで かいぎが あるだでしょう？",
+          "きんようびに かいしゃで かいぎが あるでしょう？"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2128",
+        "prompt": "やくに たちます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "やくに たちます: có ích.",
+        "type": "choice",
+        "options": ["thắng", "cẩn thận", "thôi, bỏ", "có ích"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2131",
+        "prompt": "ふべん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ふべん (な): bất tiện; trái nghĩa với べんり.",
+        "type": "choice",
+        "options": ["tiện lợi", "bất tiện", "lãng phí", "nguy hiểm"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2132",
+        "prompt": "むだ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "むだ (な): lãng phí, vô ích.",
+        "type": "choice",
+        "options": ["thật", "tuyệt vời", "bất tiện", "lãng phí"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2134",
+        "prompt": "こうつう nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "こうつう: giao thông.",
+        "type": "choice",
+        "options": ["vật giá", "ô tô", "giao thông", "trái đất"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2137",
+        "prompt": "そんなに trong câu この みせは そんなに とおくないです nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "そんなに + phủ định: không … đến thế, không … lắm.",
+        "type": "choice",
+        "options": ["(không) … lắm", "rất", "chắc chắn", "gần đây"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2141",
+        "prompt": "Đổi うごきません sang thể thông thường: この パソコンは もう （　　）と おもいます。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "うごきます → thể ない: うごかない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["うごかない"]
+      },
+      {
+        "id": "q2144",
+        "prompt": "Đổi まけました sang thể thông thường: リンさんは しあいに （　　）と いいました。",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "まけます là nhóm II: thể た まけた.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まけた"]
+      },
+      {
+        "id": "q2146",
+        "prompt": "Điền từ: （　　） ナムさんも パーティーに くると おもいます。(chắc chắn)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "きっと: chắc chắn; たぶん: có lẽ.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きっと"]
+      },
+      {
+        "id": "q2149",
+        "prompt": "Điền từ: さいきん （　　）が たかく なりましたね。(vật giá)",
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "ぶっか: vật giá, giá cả.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ぶっか"]
+      },
+      {
+        "id": "n5-match-21-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "思います（おもいます）",
+          "言います（いいます）",
+          "勝ちます（かちます）",
+          "負けます（まけます）",
+          "役に 立ちます（やくに たちます）"
+        ],
+        "right": ["có ích", "nghĩ", "thua", "nói", "thắng"],
+        "answer": [
+          [0, 1],
+          [1, 3],
+          [2, 4],
+          [3, 2],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "思います（おもいます）: nghĩ · 言います（いいます）: nói · 勝ちます（かちます）: thắng · 負けます（まけます）: thua · 役に 立ちます（やくに たちます）: có ích"
+      },
+      {
+        "id": "n5-match-21-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "留学します（りゅうがくします）",
+          "不便（ふべん）",
+          "交通（こうつう）",
+          "最近（さいきん）",
+          "意見（いけん）"
+        ],
+        "right": ["giao thông", "ý kiến", "bất tiện", "du học", "gần đây"],
+        "answer": [
+          [0, 3],
+          [1, 2],
+          [2, 0],
+          [3, 4],
+          [4, 1]
+        ],
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "留学します（りゅうがくします）: du học · 不便（ふべん）: bất tiện · 交通（こうつう）: giao thông · 最近（さいきん）: gần đây · 意見（いけん）: ý kiến"
+      },
+      {
+        "id": "n5-order-41",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi nghĩ ngày mai trời sẽ mưa.”\n{明日|あした}は ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-seea0d",
+            "text": "{思|おも}います"
+          },
+          {
+            "id": "p-w5r27z",
+            "text": "{降|ふ}る"
+          },
+          {
+            "id": "p-zsbjfy",
+            "text": "{雨|あめ}が"
+          },
+          {
+            "id": "p-atuw3h",
+            "text": "と"
+          }
+        ],
+        "answer": ["p-zsbjfy", "p-w5r27z", "p-atuw3h", "p-seea0d"],
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Câu đúng: {明日|あした}は {雨|あめ}が {降|ふ}る と {思|おも}います。 Thể thường + と {思|おも}います: tôi nghĩ là …."
+      },
+      {
+        "id": "n5-order-42",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Thầy Yamada nói là thứ sáu có bài kiểm tra.”\n{山田|やまだ}{先生|せんせい}は {金曜日|きんようび}に ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-b3ashm",
+            "text": "テストが"
+          },
+          {
+            "id": "p-q7kgup",
+            "text": "{言|い}いました"
+          },
+          {
+            "id": "p-id8axx",
+            "text": "ある"
+          },
+          {
+            "id": "p-xlfif0",
+            "text": "と"
+          }
+        ],
+        "answer": ["p-b3ashm", "p-id8axx", "p-xlfif0", "p-q7kgup"],
+        "points": 1,
+        "tags": ["minna-21"],
+        "explain": "Câu đúng: {山田|やまだ}{先生|せんせい}は {金曜日|きんようび}に テストが ある と {言|い}いました。 Thể thường + と {言|い}いました: thuật lại lời ai đó nói."
+      },
+      {
+        "id": "q2203",
+        "prompt": "Chọn cụm đúng: người thích thể thao",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "すき là tính từ な: スポーツが すきな ひと.",
+        "type": "choice",
+        "options": [
+          "スポーツが すきな ひと",
+          "スポーツが すきの ひと",
+          "スポーツが すきだ ひと",
+          "スポーツが すきい ひと"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2206",
+        "prompt": "Đã 12 giờ, bạn muốn rủ đồng nghiệp cùng đi ăn trưa. Câu nào phù hợp?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Rủ cùng làm: Vましょうか.",
+        "type": "choice",
+        "options": [
+          "ひるごはんを たべに いって ください。",
+          "ひるごはんを たべに いっても いいですか。",
+          "ひるごはんを たべに いかなければ なりません。",
+          "ひるごはんを たべに いきましょうか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2207",
+        "prompt": "Chọn động từ: ぼうしを（　）。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Mũ thì dùng かぶります.",
+        "type": "choice",
+        "options": ["きます", "はきます", "かぶります", "かけます"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2209",
+        "prompt": "Chọn động từ: セーターを（　）。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Áo mặc phần thân trên dùng きます.",
+        "type": "choice",
+        "options": ["はきます", "きます", "かぶります", "かけます"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2214",
+        "prompt": "Chọn câu đúng: Đây là con rô-bốt anh trai tôi làm.",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Chủ ngữ trong mệnh đề dùng が: あにが つくった ロボット.",
+        "type": "choice",
+        "options": [
+          "これは あには つくった ロボットです。",
+          "これは あにを つくった ロボットです。",
+          "これは あにが つくった ロボットです。",
+          "これが あには つくった ロボットです。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2217",
+        "prompt": "Chọn cụm đúng: người bạn là người Việt Nam",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Danh từ bổ nghĩa cho danh từ dùng の.",
+        "type": "choice",
+        "options": [
+          "ベトナムじんな ともだち",
+          "ベトナムじんの ともだち",
+          "ベトナムじんだ ともだち",
+          "ベトナムじんい ともだち"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2218",
+        "prompt": "Chọn trợ từ: ははに もらった とけい（　） まいにち つかって います。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Cụm [ははに もらった とけい] làm tân ngữ của つかいます: を.",
+        "type": "choice",
+        "options": ["を", "が", "に", "で"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2221",
+        "prompt": "Chọn câu đúng: Quyển từ điển tôi mua ở Nhật rất tiện.",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Cụm [にほんで かった じしょ] làm chủ đề: じしょは.",
+        "type": "choice",
+        "options": [
+          "にほんで かった じしょは べんりです。",
+          "にほんで かった じしょを べんりです。",
+          "じしょは にほんで かった べんりです。",
+          "にほんで かったの じしょは べんりです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2224",
+        "prompt": "Chọn câu đúng: Chiều nay tôi có việc phải gặp thầy giáo.",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Thể từ điển + ようじ: あう ようじ.",
+        "type": "choice",
+        "options": [
+          "きょうの ごご せんせいに あいます ようじが あります。",
+          "きょうの ごご せんせいに あうの ようじが あります。",
+          "きょうの ごご せんせいに あう ようじが あります。",
+          "きょうの ごご せんせいに あった ようじが あります。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2227",
+        "prompt": "Mọi người đã đến đủ. Người chủ trì muốn rủ cả nhóm bắt đầu cuộc họp. Câu nào đúng?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Rủ cùng làm: はじめましょうか.",
+        "type": "choice",
+        "options": [
+          "じゃ、かいぎを はじめませんでしたか。",
+          "じゃ、かいぎを はじめて いますか。",
+          "じゃ、かいぎを はじめなくても いいです。",
+          "じゃ、かいぎを はじめましょうか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2230",
+        "prompt": "うまれます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "うまれます: được sinh ra.",
+        "type": "choice",
+        "options": ["lớn lên", "được sinh ra", "kết hôn", "chuyển nhà"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2232",
+        "prompt": "ふとん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "ふとん: chăn đệm kiểu Nhật.",
+        "type": "choice",
+        "options": ["gối", "rèm cửa", "chăn đệm kiểu Nhật", "khăn tắm"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2235",
+        "prompt": "Chị đồng nghiệp vừa sinh em bé. Bạn nói gì?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "おめでとう ございます: chúc mừng.",
+        "type": "choice",
+        "options": [
+          "おだいじに。",
+          "おめでとう ございます。",
+          "いただきます。",
+          "しつれいしました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2238",
+        "prompt": "セーター nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "セーター: áo len.",
+        "type": "choice",
+        "options": ["áo khoác dài", "com-lê", "mũ", "áo len"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2242",
+        "prompt": "Điền thể ない: にくを（たべます →　　）ひとは いますか。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "たべます (nhóm II) → たべない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たべない"]
+      },
+      {
+        "id": "q2244",
+        "prompt": "Điền động từ thể て: あおい ネクタイを（　　）いる ひとが かちょうです。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "ネクタイを します → して いる (cũng nói しめて いる).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["して", "しめて"]
+      },
+      {
+        "id": "q2245",
+        "prompt": "Điền: にぎやか（　） まちに すみたいです。",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "にぎやか là tính từ な: にぎやかな まち.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["な"]
+      },
+      {
+        "id": "q2250",
+        "prompt": "Điền từ: （　　　）の クラスには ベトナムじんが 5にん います。(chúng tôi)",
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "わたしたち: chúng tôi.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わたしたち"]
+      },
+      {
+        "id": "n5-match-22-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "着ます（きます）",
+          "はきます",
+          "かぶります",
+          "生まれます（うまれます）",
+          "帽子（ぼうし）"
+        ],
+        "right": ["mang (giày), mặc (quần)", "mặc (áo)", "cái mũ", "đội (mũ)", "được sinh ra"],
+        "answer": [
+          [0, 1],
+          [1, 0],
+          [2, 3],
+          [3, 4],
+          [4, 2]
+        ],
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "着ます（きます）: mặc (áo) · はきます: mang (giày), mặc (quần) · かぶります: đội (mũ) · 生まれます（うまれます）: được sinh ra · 帽子（ぼうし）: cái mũ"
+      },
+      {
+        "id": "n5-match-22-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "眼鏡（めがね）",
+          "家賃（やちん）",
+          "都合（つごう）",
+          "布団（ふとん）",
+          "セーター"
+        ],
+        "right": [
+          "tiền thuê nhà",
+          "áo len",
+          "chăn đệm kiểu Nhật",
+          "sự thuận tiện (thời gian, hoàn cảnh)",
+          "kính đeo mắt"
+        ],
+        "answer": [
+          [0, 4],
+          [1, 0],
+          [2, 3],
+          [3, 2],
+          [4, 1]
+        ],
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "眼鏡（めがね）: kính đeo mắt · 家賃（やちん）: tiền thuê nhà · 都合（つごう）: sự thuận tiện (thời gian, hoàn cảnh) · 布団（ふとん）: chăn đệm kiểu Nhật · セーター: áo len"
+      },
+      {
+        "id": "n5-order-43",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Người đang đeo kính là thầy Tanaka.”\n＿＿＿＿ {田中|たなか}{先生|せんせい}です。",
+        "tokens": [
+          {
+            "id": "p-li1tzb",
+            "text": "かけて いる"
+          },
+          {
+            "id": "p-1l43un",
+            "text": "{人|ひと}は"
+          },
+          {
+            "id": "p-oj74br",
+            "text": "めがねを"
+          }
+        ],
+        "answer": ["p-oj74br", "p-li1tzb", "p-1l43un"],
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Câu đúng: めがねを かけて いる {人|ひと}は {田中|たなか}{先生|せんせい}です。 Mệnh đề めがねを かけて いる đứng trước và bổ nghĩa cho {人|ひと}."
+      },
+      {
+        "id": "n5-order-44",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Đây là bức ảnh tôi đã chụp ở Kyoto.”\nこれは ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-q76r6l",
+            "text": "{京都|きょうと}で"
+          },
+          {
+            "id": "p-oh60fo",
+            "text": "です"
+          },
+          {
+            "id": "p-c57w7f",
+            "text": "{撮|と}った"
+          },
+          {
+            "id": "p-gta5s0",
+            "text": "{写真|しゃしん}"
+          }
+        ],
+        "answer": ["p-q76r6l", "p-c57w7f", "p-gta5s0", "p-oh60fo"],
+        "points": 1,
+        "tags": ["minna-22"],
+        "explain": "Câu đúng: これは {京都|きょうと}で {撮|と}った {写真|しゃしん} です。 Mệnh đề {京都|きょうと}で {撮|と}った (thể thường) đứng trước danh từ {写真|しゃしん}."
+      },
+      {
+        "id": "q2302",
+        "prompt": "ごはんを（　）とき、「いただきます」と いいます。(trước khi ăn)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Nói いただきます trước khi ăn, việc ăn chưa xảy ra: V る とき.",
+        "type": "choice",
+        "options": ["たべる", "たべた", "たべて", "たべます"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2305",
+        "prompt": "この みちを まっすぐ（　）、ひだりに ゆうびんきょくが あります。(đi thẳng thì bên trái có bưu điện)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Chỉ đường: V る と、N が あります.",
+        "type": "choice",
+        "options": ["いくの", "いったと", "いくと", "いきたいと"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2308",
+        "prompt": "Chọn câu đúng: Hồi còn là sinh viên, tôi sống ở Huế.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Danh từ + の + とき: がくせいの とき.",
+        "type": "choice",
+        "options": [
+          "がくせい とき、フエに すんで いました。",
+          "がくせいの とき、フエに すんで いました。",
+          "がくせいな とき、フエに すんで いました。",
+          "がくせいだ とき、フエに すんで いました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2310",
+        "prompt": "Chọn câu đúng: Những lúc khỏe, tôi đi bộ đến công ty.",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "げんき là tính từ đuôi な: げんきな とき.",
+        "type": "choice",
+        "options": [
+          "げんき とき、かいしゃまで あるいて いきます。",
+          "げんきだ とき、かいしゃまで あるいて いきます。",
+          "げんきな とき、かいしゃまで あるいて いきます。",
+          "げんきい とき、かいしゃまで あるいて いきます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2314",
+        "prompt": "ダナンへ（　）とき、ハノイえきで ちずを かいました。(mua ở ga Hà Nội)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Mua ở Hà Nội, lúc chưa đến Đà Nẵng: V る とき.",
+        "type": "choice",
+        "options": ["いく", "いった", "いって", "いき"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2315",
+        "prompt": "ダナンへ（　）とき、うみで およぎました。(đã đến Đà Nẵng rồi mới bơi)",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Đến Đà Nẵng rồi mới bơi: V た とき.",
+        "type": "choice",
+        "options": ["いく", "いって", "いった", "いかない"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2319",
+        "prompt": "Chọn cách nói đúng: cây cầu thứ hai",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Thứ tự dùng 〜め: ふたつめの はし.",
+        "type": "choice",
+        "options": ["ふたつの はし", "ふたりめの はし", "にかいの はし", "ふたつめの はし"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2322",
+        "prompt": "Chọn câu trả lời phù hợp: どんな とき、この くすりを のみますか。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "どんな とき hỏi trường hợp, nên trả lời bằng 〜とき.",
+        "type": "choice",
+        "options": [
+          "びょういんで のみます。",
+          "みずで のみます。",
+          "みっつ のみます。",
+          "ねつが ある とき、のみます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2325",
+        "prompt": "Câu ここに おかねを いれると、おちゃが でます có nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "V る と: bỏ tiền vào thì (chắc chắn) trà ra.",
+        "type": "choice",
+        "options": [
+          "Bỏ trà vào đây thì tiền sẽ ra.",
+          "Bỏ tiền vào đây thì trà sẽ ra.",
+          "Xin đừng bỏ tiền vào đây.",
+          "Khi uống trà, hãy trả tiền ở đây."
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2326",
+        "prompt": "まがります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "まがります: rẽ.",
+        "type": "choice",
+        "options": ["rẽ", "băng qua", "đi bộ", "dừng lại"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2329",
+        "prompt": "まわします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "まわします: vặn, xoay.",
+        "type": "choice",
+        "options": ["bấm", "kéo", "thay đổi", "vặn, xoay"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2333",
+        "prompt": "さびしい nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "さびしい: cô đơn, buồn.",
+        "type": "choice",
+        "options": ["cô đơn, buồn", "buồn ngủ", "đau", "vui vẻ"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2336",
+        "prompt": "たてもの nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "たてもの: tòa nhà.",
+        "type": "choice",
+        "options": ["bãi đỗ xe", "con đường", "tòa nhà", "cửa hàng"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2338",
+        "prompt": "サイズ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "サイズ: cỡ, kích cỡ.",
+        "type": "choice",
+        "options": ["màu sắc", "kích cỡ", "giá", "kiểu dáng"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2342",
+        "prompt": "Điền thể ない: わたります → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "り → ら + ない: わたらない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わたらない"]
+      },
+      {
+        "id": "q2344",
+        "prompt": "Điền thể ない: さわります → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "り → ら + ない: さわらない.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さわらない"]
+      },
+      {
+        "id": "q2347",
+        "prompt": "Điền từ (nước nóng): ここに さわると、（　　）が でます。あついですから、きを つけて ください。",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "おゆ: nước nóng.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おゆ", "ゆ"]
+      },
+      {
+        "id": "q2350",
+        "prompt": "Điền thể た: ききます (hỏi) → （　　）",
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "き → いた: きいた.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["きいた"]
+      },
+      {
+        "id": "n5-match-23-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "回します（まわします）",
+          "触ります（さわります）",
+          "渡ります（わたります）",
+          "曲がります（まがります）",
+          "変えます（かえます）"
+        ],
+        "right": ["băng qua", "vặn, xoay", "thay đổi", "sờ, chạm", "rẽ"],
+        "answer": [
+          [0, 1],
+          [1, 3],
+          [2, 0],
+          [3, 4],
+          [4, 2]
+        ],
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "回します（まわします）: vặn, xoay · 触ります（さわります）: sờ, chạm · 渡ります（わたります）: băng qua · 曲がります（まがります）: rẽ · 変えます（かえます）: thay đổi"
+      },
+      {
+        "id": "n5-match-23-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "寂しい（さびしい）",
+          "お湯（おゆ）",
+          "音（おと）",
+          "信号（しんごう）",
+          "角（かど）"
+        ],
+        "right": ["đèn giao thông", "góc phố", "cô đơn, buồn", "âm thanh", "nước nóng"],
+        "answer": [
+          [0, 2],
+          [1, 4],
+          [2, 3],
+          [3, 0],
+          [4, 1]
+        ],
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "寂しい（さびしい）: cô đơn, buồn · お湯（おゆ）: nước nóng · 音（おと）: âm thanh · 信号（しんごう）: đèn giao thông · 角（かど）: góc phố"
+      },
+      {
+        "id": "n5-order-45",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Khi không hiểu từ, tôi tra từ điển.”\n＿＿＿＿ {辞書|じしょ}で {調|しら}べます。",
+        "tokens": [
+          {
+            "id": "p-bp7s71",
+            "text": "とき、"
+          },
+          {
+            "id": "p-44utfj",
+            "text": "{言葉|ことば}が"
+          },
+          {
+            "id": "p-vqml5v",
+            "text": "わからない"
+          }
+        ],
+        "answer": ["p-44utfj", "p-vqml5v", "p-bp7s71"],
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Câu đúng: {言葉|ことば}が わからない とき、{辞書|じしょ}で {調|しら}べます。 V ない + とき: khi không …."
+      },
+      {
+        "id": "n5-order-46",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Bấm nút này thì tiền thừa sẽ ra.”\nこの ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-08z0tc",
+            "text": "{出|で}ます"
+          },
+          {
+            "id": "p-bvo1f7",
+            "text": "おつりが"
+          },
+          {
+            "id": "p-5otm14",
+            "text": "ボタンを"
+          },
+          {
+            "id": "p-td05y3",
+            "text": "{押|お}すと、"
+          }
+        ],
+        "answer": ["p-5otm14", "p-td05y3", "p-bvo1f7", "p-08z0tc"],
+        "points": 1,
+        "tags": ["minna-23"],
+        "explain": "Câu đúng: この ボタンを {押|お}すと、おつりが {出|で}ます。 V る と、〜: hễ V thì … (kết quả tất yếu)."
+      },
+      {
+        "id": "q2401",
+        "prompt": "Chọn câu đúng: Anh Nam đã cho tôi cây bút bi.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác cho tôi: くれました. あげました dùng khi tôi cho người khác.",
+        "type": "choice",
+        "options": [
+          "ナムさんは わたしに ボールペンを あげました。",
+          "ナムさんは わたしに ボールペンを くれました。",
+          "ナムさんは わたしに ボールペンを もらいました。",
+          "わたしは ナムさんに ボールペンを くれました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2404",
+        "prompt": "Chọn câu đúng: Chị Lin đã dẫn tôi đi tham quan Huế.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người khác làm cho tôi: 〜が 〜て くれました.",
+        "type": "choice",
+        "options": [
+          "リンさんが フエを あんないして あげました。",
+          "リンさんに フエを あんないして くれました。",
+          "リンさんが フエを あんないして くれました。",
+          "リンさんが フエを あんないして もらいました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2407",
+        "prompt": "Câu nào cùng nghĩa với: わたしは アンさんに しゃしんを とって もらいました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "〜に 〜て もらいました = 〜が 〜て くれました (cùng một việc, đổi chủ ngữ).",
+        "type": "choice",
+        "options": [
+          "アンさんは わたしに しゃしんを とって あげました。",
+          "アンさんが しゃしんを とって くれました。",
+          "わたしは アンさんの しゃしんを とって あげました。",
+          "アンさんは しゃしんを とって もらいました。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2411",
+        "prompt": "Chọn thể て của かします.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "し → して: かして.",
+        "type": "choice",
+        "options": ["かして", "かいて", "かって", "かさて"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2413",
+        "prompt": "Chọn thể て của おくります.",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "り → って: おくって.",
+        "type": "choice",
+        "options": ["おくって", "おくりて", "おくいて", "おくんで"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2415",
+        "prompt": "Được hỏi ai sẽ dẫn khách đi tham quan, bạn trả lời: “Tôi sẽ dẫn.”",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người làm việc là thông tin được hỏi (trả lời cho だれが) nên đi với が: わたしが あんないします.",
+        "type": "choice",
+        "options": [
+          "わたしを あんないします。",
+          "わたしに あんないします。",
+          "わたしで あんないします。",
+          "わたしが あんないします。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2418",
+        "prompt": "Bạn muốn mở cửa sổ giúp thầy giáo. Câu nào lịch sự và đúng?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Đề nghị giúp người trên dùng V ましょうか; 〜て あげましょう nghe như ban ơn.",
+        "type": "choice",
+        "options": [
+          "せんせい、まどを あけて あげましょう。",
+          "せんせい、まどを あけて ください。",
+          "せんせい、まどを あけませんか。",
+          "せんせい、まどを あけましょうか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2421",
+        "prompt": "わたしは おばあちゃん（　） くうこうまで おくりました。",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おくります (tiễn): người được tiễn là tân ngữ, đi với を.",
+        "type": "choice",
+        "options": ["に", "が", "を", "で"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2425",
+        "prompt": "Câu nào cho biết “tôi” là người nhận?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "アンさんは わたしに 〜を くれました: Ann cho, tôi nhận.",
+        "type": "choice",
+        "options": [
+          "アンさんは わたしに てがみを くれました。",
+          "わたしは アンさんに てがみを かきました。",
+          "わたしは アンさんに てがみを あげました。",
+          "わたしは アンさんに てがみを おくりました。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2428",
+        "prompt": "A: おいしい おちゃですね。B: (Mẹ tôi pha cho đấy.)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Người làm việc giúp là chủ ngữ với が + 〜て くれました.",
+        "type": "choice",
+        "options": [
+          "ええ、ははに いれて くれました。",
+          "ええ、ははが いれて もらいました。",
+          "ええ、ははが いれて くれました。",
+          "ええ、ははを いれて くれました。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2430",
+        "prompt": "アンさんは ナムさんに おべんとうを つくって もらいました。Ai đã làm cơm hộp?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "〜に 〜て もらいました: người đi với に là người làm (Nam).",
+        "type": "choice",
+        "options": ["Ann", "Ann và Nam", "Nam", "Tôi"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2432",
+        "prompt": "なおします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "なおします: sửa, chữa.",
+        "type": "choice",
+        "options": ["giải thích", "sửa, chữa", "chuẩn bị", "dọn dẹp"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2434",
+        "prompt": "えきまで おくりましょうか。おくります ở đây nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おくります với người (を) nghĩa là tiễn, đưa đi; với thư, hàng nghĩa là gửi.",
+        "type": "choice",
+        "options": ["tiễn, đưa (ai) đi", "gửi (thư, hàng)", "đón", "gọi"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2438",
+        "prompt": "おばあちゃん nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "おばあちゃん: bà (gọi thân mật); おじいちゃん: ông.",
+        "type": "choice",
+        "options": ["ông", "mẹ", "chị gái", "bà"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2440",
+        "prompt": "ひっこし nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ひっこし: việc chuyển nhà.",
+        "type": "choice",
+        "options": ["việc chuyển nhà", "du lịch", "homestay", "sự chuẩn bị"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2444",
+        "prompt": "Điền thể て: もちます → （　　）",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "ち → って: もって.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もって"]
+      },
+      {
+        "id": "q2447",
+        "prompt": "Điền: わたしは らいしゅう せんせいに レポートを みて （　　）。(được thầy xem cho)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Được người khác làm cho: 〜て もらいます (với thầy cô, cách khiêm nhường là いただきます).",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["もらいます", "いただきます"]
+      },
+      {
+        "id": "q2448",
+        "prompt": "Điền từ: この ことばの （　　）を おしえて ください。(ý nghĩa)",
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "いみ: ý nghĩa.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["いみ"]
+      },
+      {
+        "id": "n5-match-24-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "くれます",
+          "連れて 行きます（つれて いきます）",
+          "送ります（おくります）",
+          "紹介します（しょうかいします）",
+          "案内します（あんないします）"
+        ],
+        "right": [
+          "dẫn (ai) đi",
+          "đưa, tiễn (ai)",
+          "hướng dẫn, dẫn đường",
+          "cho (tôi)",
+          "giới thiệu"
+        ],
+        "answer": [
+          [0, 3],
+          [1, 0],
+          [2, 1],
+          [3, 4],
+          [4, 2]
+        ],
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "くれます: cho (tôi) · 連れて 行きます（つれて いきます）: dẫn (ai) đi · 送ります（おくります）: đưa, tiễn (ai) · 紹介します（しょうかいします）: giới thiệu · 案内します（あんないします）: hướng dẫn, dẫn đường"
+      },
+      {
+        "id": "n5-match-24-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "説明します（せつめいします）",
+          "手伝います（てつだいます）",
+          "準備（じゅんび）",
+          "引っ越し（ひっこし）",
+          "荷物（にもつ）"
+        ],
+        "right": ["hành lý, đồ đạc", "giải thích", "việc chuyển nhà", "giúp (việc)", "sự chuẩn bị"],
+        "answer": [
+          [0, 1],
+          [1, 3],
+          [2, 4],
+          [3, 2],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "説明します（せつめいします）: giải thích · 手伝います（てつだいます）: giúp (việc) · 準備（じゅんび）: sự chuẩn bị · 引っ越し（ひっこし）: việc chuyển nhà · 荷物（にもつ）: hành lý, đồ đạc"
+      },
+      {
+        "id": "n5-order-47",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Tôi được anh Minh sửa xe đạp cho.”\nわたしは ミンさんに ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-4adwv6",
+            "text": "{直|なお}して"
+          },
+          {
+            "id": "p-lrxw2w",
+            "text": "もらいました"
+          },
+          {
+            "id": "p-lcxjmg",
+            "text": "{自転車|じてんしゃ}を"
+          }
+        ],
+        "answer": ["p-lcxjmg", "p-4adwv6", "p-lrxw2w"],
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Câu đúng: わたしは ミンさんに {自転車|じてんしゃ}を {直|なお}して もらいました。 わたしは N に V て もらいます: tôi được N làm V cho."
+      },
+      {
+        "id": "n5-order-48",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Mẹ đã làm cơm hộp cho tôi.”\n{母|はは}が ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-g2d3q4",
+            "text": "くれました"
+          },
+          {
+            "id": "p-xkiykg",
+            "text": "お{弁当|べんとう}を"
+          },
+          {
+            "id": "p-94hjh0",
+            "text": "{作|つく}って"
+          }
+        ],
+        "answer": ["p-xkiykg", "p-94hjh0", "p-g2d3q4"],
+        "points": 1,
+        "tags": ["minna-24"],
+        "explain": "Câu đúng: {母|はは}が お{弁当|べんとう}を {作|つく}って くれました。 N が V て くれます: N làm V cho tôi."
+      },
+      {
+        "id": "n5-reading-21",
+        "type": "choice",
+        "passage": "{先週|せんしゅう}の {土曜日|どようび}、わたしは {引|ひ}っ{越|こ}しを しました。{荷物|にもつ}が {多|おお}かったですから、{友達|ともだち}の ミンさんが {手伝|てつだ}って くれました。ミンさんは {大|おお}きい {車|くるま}も {貸|か}して くれました。{新|あたら}しい アパートの {近|ちか}くに {住|す}んで いる {田中|たなか}さんは {町|まち}を {案内|あんない}して くれました。{夜|よる}、わたしは ミンさんに ベトナム{料理|りょうり}を {作|つく}って あげました。{田中|たなか}さんには ベトナムの お{菓子|かし}を あげました。",
+        "prompt": "だれが {車|くるま}を {貸|か}して くれましたか。",
+        "options": ["{田中|たなか}さん", "ミンさん", "わたし", "アパートの {人|ひと}"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-24", "reading"],
+        "explain": "Văn bản: ミンさんは {大|おお}きい {車|くるま}も {貸|か}して くれました → anh Minh cho mượn xe. {田中|たなか}さん dẫn đi xem khu phố."
+      },
+      {
+        "id": "n5-reading-22",
+        "type": "choice",
+        "passage": "{先週|せんしゅう}の {土曜日|どようび}、わたしは {引|ひ}っ{越|こ}しを しました。{荷物|にもつ}が {多|おお}かったですから、{友達|ともだち}の ミンさんが {手伝|てつだ}って くれました。ミンさんは {大|おお}きい {車|くるま}も {貸|か}して くれました。{新|あたら}しい アパートの {近|ちか}くに {住|す}んで いる {田中|たなか}さんは {町|まち}を {案内|あんない}して くれました。{夜|よる}、わたしは ミンさんに ベトナム{料理|りょうり}を {作|つく}って あげました。{田中|たなか}さんには ベトナムの お{菓子|かし}を あげました。",
+        "prompt": "わたしは {田中|たなか}さんに {何|なに}を あげましたか。",
+        "options": [
+          "ベトナム{料理|りょうり}",
+          "{車|くるま}",
+          "{町|まち}の {地図|ちず}",
+          "ベトナムの お{菓子|かし}"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-24", "reading"],
+        "explain": "Văn bản: {田中|たなか}さんには ベトナムの お{菓子|かし}を あげました → tặng bánh kẹo Việt Nam. Món ăn Việt Nam là nấu cho anh Minh."
+      },
+      {
+        "id": "q2502",
+        "prompt": "Chọn câu đúng: Ăn tối xong thì mình đi dạo nhé.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Việc chắc chắn xảy ra: おわった + ら → おわったら. 〜ても là “dù”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "ばんごはんが おわりたら、さんぽしましょう。",
+          "ばんごはんが おわるたら、さんぽしましょう。",
+          "ばんごはんが おわっても、さんぽしましょう。",
+          "ばんごはんが おわったら、さんぽしましょう。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2504",
+        "prompt": "Câu nào dùng もし đúng?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "もし chỉ báo trước giả định; vế điều kiện vẫn phải chia 〜たら: あった + ら → あったら. Giữ nguyên あります là sai.",
+        "type": "choice",
+        "options": [
+          "もし じかんが あるたら、てつだって ください。",
+          "もし じかんが ありたら、てつだって ください。",
+          "もし じかんが あったら、てつだって ください。",
+          "もし じかんが あります、てつだって ください。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2508",
+        "prompt": "Chọn thể たら của みます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm II: みた → みたら.",
+        "type": "choice",
+        "options": ["みったら", "みるたら", "みたら", "みいたら"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2510",
+        "prompt": "Chọn thể たら của きます (đến).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm III: きた → きたら.",
+        "type": "choice",
+        "options": ["くたら", "きたら", "こたら", "きったら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2512",
+        "prompt": "Chọn thể たら của いい.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いい chia như よい: よかった → よかったら.",
+        "type": "choice",
+        "options": ["よかったら", "いいかったら", "いかったら", "いいだったら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2517",
+        "prompt": "Chọn thể ても của あめ (danh từ).",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Danh từ: thêm でも.",
+        "type": "choice",
+        "options": ["あめくても", "あめだても", "あめなでも", "あめでも"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2519",
+        "prompt": "Chọn thể たら của あそびます.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "び → んだ: あそんだ → あそんだら.",
+        "type": "choice",
+        "options": ["あそびたら", "あそんだら", "あそったら", "あそいだら"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2522",
+        "prompt": "Câu nào có nghĩa “Dù là ngày nghỉ, anh Tanaka vẫn đến công ty”?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Danh từ + でも: dù là ngày nghỉ.",
+        "type": "choice",
+        "options": [
+          "たなかさんは やすみの ひだったら、かいしゃへ いきます。",
+          "たなかさんは やすみの ひでも、かいしゃへ いきます。",
+          "たなかさんは やすみの ひは、かいしゃへ いきません。",
+          "たなかさんは やすみの ひに なったら、かいしゃへ いきます。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2523",
+        "prompt": "Chọn câu đúng: Nếu khó thì tôi sẽ giúp.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: むずかしかった → むずかしかったら. 〜くても là “dù”, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "むずかしいたら、てつだいます。",
+          "むずかしだったら、てつだいます。",
+          "むずかしかったら、てつだいます。",
+          "むずかしくても、てつだいます。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2528",
+        "prompt": "Câu nào nói về việc CHẮC CHẮN sẽ xảy ra (たら = khi … xong thì)?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Ăn trưa là việc chắc chắn sẽ làm; ba câu còn lại là giả định.",
+        "type": "choice",
+        "options": [
+          "もし おかねが あったら、くるまを かいます。",
+          "さむかったら、まどを しめて ください。",
+          "あめだったら、うちに います。",
+          "ひるごはんを たべたら、くすりを のみます。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2530",
+        "prompt": "Chọn câu đúng: Nếu mệt thì nghỉ một chút đi.",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Nhóm II: つかれた → つかれたら.",
+        "type": "choice",
+        "options": [
+          "つかれても、すこし やすんで ください。",
+          "つかれたら、すこし やすんで ください。",
+          "つかれるたら、すこし やすんで ください。",
+          "つかれったら、すこし やすんで ください。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2532",
+        "prompt": "つきます (えきに つきます) nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "えきに つきます: đến ga.",
+        "type": "choice",
+        "options": ["đến nơi", "xuất phát", "đổi tàu", "xuống xe"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2535",
+        "prompt": "りゅうがくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "りゅうがくします: du học.",
+        "type": "choice",
+        "options": ["tốt nghiệp", "chuyển nhà", "du học", "đi du lịch"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2537",
+        "prompt": "がんばります nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "がんばります: cố gắng.",
+        "type": "choice",
+        "options": ["nghỉ ngơi", "lo lắng", "chờ đợi", "cố gắng"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2540",
+        "prompt": "Khi chia tay, muốn cảm ơn người đã giúp mình suốt thời gian qua, ta nói gì?",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いろいろ おせわに なりました: cảm ơn vì đã giúp đỡ nhiều.",
+        "type": "choice",
+        "options": [
+          "いろいろ おせわに なりました。",
+          "おじゃまします。",
+          "はじめまして。",
+          "いってきます。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2544",
+        "prompt": "Điền thể ても: わかい → （　　）",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Tính từ い: bỏ い thêm くても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["わかくても"]
+      },
+      {
+        "id": "q2547",
+        "prompt": "Điền: いくら （　　）、しゅくだいを します。(dù buồn ngủ đến mấy; ねむい)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いくら + tính từ い bỏ い thêm くても: ねむくても.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ねむくても"]
+      },
+      {
+        "id": "q2548",
+        "prompt": "Điền: こんばん いっぱい （　　）。(cùng uống một ly nhé)",
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "いっぱい のみましょう: cùng uống một ly nhé.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["のみましょう", "のみませんか"]
+      },
+      {
+        "id": "n5-match-25-1",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": [
+          "考えます（かんがえます）",
+          "着きます（つきます）",
+          "年を 取ります（としを とります）",
+          "頑張ります（がんばります）",
+          "田舎（いなか）"
+        ],
+        "right": ["có tuổi, già đi", "quê, nông thôn", "đến nơi", "suy nghĩ", "cố gắng"],
+        "answer": [
+          [0, 3],
+          [1, 2],
+          [2, 0],
+          [3, 4],
+          [4, 1]
+        ],
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "考えます（かんがえます）: suy nghĩ · 着きます（つきます）: đến nơi · 年を 取ります（としを とります）: có tuổi, già đi · 頑張ります（がんばります）: cố gắng · 田舎（いなか）: quê, nông thôn"
+      },
+      {
+        "id": "n5-match-25-2",
+        "type": "match",
+        "prompt": "Nối mỗi từ với nghĩa đúng của nó.",
+        "left": ["大使館（たいしかん）", "グループ", "チャンス", "億（おく）", "転勤（てんきん）"],
+        "right": ["chuyển công tác", "trăm triệu", "đại sứ quán", "nhóm", "cơ hội"],
+        "answer": [
+          [0, 2],
+          [1, 3],
+          [2, 4],
+          [3, 1],
+          [4, 0]
+        ],
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "大使館（たいしかん）: đại sứ quán · グループ: nhóm · チャンス: cơ hội · 億（おく）: trăm triệu · 転勤（てんきん）: chuyển công tác"
+      },
+      {
+        "id": "n5-order-49",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Nếu ngày mai trời mưa thì tôi sẽ không leo núi.”\n{明日|あした} ＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-bat9rs",
+            "text": "{山|やま}に {登|のぼ}りません"
+          },
+          {
+            "id": "p-bodiw7",
+            "text": "{雨|あめ}が"
+          },
+          {
+            "id": "p-if3kk8",
+            "text": "{降|ふ}ったら、"
+          }
+        ],
+        "answer": ["p-bodiw7", "p-if3kk8", "p-bat9rs"],
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Câu đúng: {明日|あした} {雨|あめ}が {降|ふ}ったら、{山|やま}に {登|のぼ}りません。 〜たら、〜: nếu … thì …; chủ ngữ trong vế たら dùng が."
+      },
+      {
+        "id": "n5-order-50",
+        "type": "order",
+        "prompt": "Sắp xếp các mảnh thành câu đúng. Nghĩa: “Dù luyện tập bao nhiêu cũng không giỏi lên.”\n＿＿＿＿。",
+        "tokens": [
+          {
+            "id": "p-il9yv8",
+            "text": "{練習|れんしゅう}しても、"
+          },
+          {
+            "id": "p-q9srn1",
+            "text": "いくら"
+          },
+          {
+            "id": "p-5wnyyu",
+            "text": "{上手|じょうず}に なりません"
+          }
+        ],
+        "answer": ["p-q9srn1", "p-il9yv8", "p-5wnyyu"],
+        "points": 1,
+        "tags": ["minna-25"],
+        "explain": "Câu đúng: いくら {練習|れんしゅう}しても、{上手|じょうず}に なりません。 いくら V ても: dù V bao nhiêu (đến mấy) thì vẫn …."
+      },
+      {
+        "id": "n5-reading-23",
+        "type": "choice",
+        "passage": "ハナさんへ　{来週|らいしゅう}の {日曜日|にちようび}、みんなで {海|うみ}へ {行|い}きませんか。{朝|あさ} 8{時|じ}に {駅|えき}で {会|あ}いましょう。{天気|てんき}が よかったら、{海|うみ}で {泳|およ}ぎます。{雨|あめ}が {降|ふ}ったら、{海|うみ}へは {行|い}きません。{駅|えき}の {近|ちか}くの {映画館|えいがかん}で {映画|えいが}を {見|み}ます。{少|すこ}し {寒|さむ}くても、{海|うみ}へ {行|い}きます。{駅|えき}に {着|つ}いたら、わたしに {電話|でんわ}して ください。　リン",
+        "prompt": "{雨|あめ}が {降|ふ}ったら、{何|なに}を しますか。",
+        "options": [
+          "{海|うみ}で {泳|およ}ぎます",
+          "うちで {休|やす}みます",
+          "{映画|えいが}を {見|み}ます",
+          "うちへ {帰|かえ}ります"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-25", "reading"],
+        "explain": "Văn bản: {雨|あめ}が {降|ふ}ったら、{海|うみ}へは {行|い}きません。…{映画|えいが}を {見|み}ます → nếu mưa thì không ra biển mà đi xem phim."
+      },
+      {
+        "id": "n5-reading-24",
+        "type": "choice",
+        "passage": "ハナさんへ　{来週|らいしゅう}の {日曜日|にちようび}、みんなで {海|うみ}へ {行|い}きませんか。{朝|あさ} 8{時|じ}に {駅|えき}で {会|あ}いましょう。{天気|てんき}が よかったら、{海|うみ}で {泳|およ}ぎます。{雨|あめ}が {降|ふ}ったら、{海|うみ}へは {行|い}きません。{駅|えき}の {近|ちか}くの {映画館|えいがかん}で {映画|えいが}を {見|み}ます。{少|すこ}し {寒|さむ}くても、{海|うみ}へ {行|い}きます。{駅|えき}に {着|つ}いたら、わたしに {電話|でんわ}して ください。　リン",
+        "prompt": "{駅|えき}に {着|つ}いたら、ハナさんは {何|なに}を しますか。",
+        "options": [
+          "リンさんに {電話|でんわ}します",
+          "{映画館|えいがかん}へ {行|い}きます",
+          "{海|うみ}へ {行|い}きます",
+          "リンさんを {待|ま}ちます"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["minna-25", "reading"],
+        "explain": "Văn bản: {駅|えき}に {着|つ}いたら、わたしに {電話|でんわ}して ください → đến ga thì gọi điện cho Lin (người viết thư)."
       }
     ]
   }

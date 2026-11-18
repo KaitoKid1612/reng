@@ -11,7 +11,7 @@ import { findBankLanguageProblems } from "../lib/review-bank";
 
 import type { DailyQuestionUse } from "../lib/daily-practice";
 
-const BANK_FILE = "content/review-banks/n5-minna-1-16.json";
+const BANK_FILE = "content/review-banks/n5-minna-1-25.json";
 
 async function loadBank() {
   return lessonDraftSchema.parse(JSON.parse(await readFile(BANK_FILE, "utf8")));
@@ -22,7 +22,7 @@ function lessonOf(tags: readonly string[]) {
   return tag ? Number(tag.slice("minna-".length)) : 0;
 }
 
-test("the Minna 1–16 bank covers every lesson, newer lessons more, in four kinds of question", async () => {
+test("the Minna 1–25 bank covers every lesson, lessons 17–25 more, in four kinds of question", async () => {
   const bank = await loadBank();
   const questions = bank.content.questions;
   assert.equal(questions.length, 500);
@@ -33,14 +33,21 @@ test("the Minna 1–16 bank covers every lesson, newer lessons more, in four kin
   const types = new Set<string>();
   for (const question of questions) {
     const lesson = lessonOf(question.tags);
-    assert.ok(lesson >= 1 && lesson <= 16, `${question.id} names its lesson`);
+    assert.ok(lesson >= 1 && lesson <= 25, `${question.id} names its lesson`);
     perLesson.set(lesson, (perLesson.get(lesson) ?? 0) + 1);
     types.add(question.type);
   }
   assert.deepEqual([...types].sort(), ["choice", "fill", "match", "order"]);
-  // Lessons 1–10 have 24 lesson questions, 11–16 have 30; each adds 2 matching and 2 ordering.
-  for (let lesson = 1; lesson <= 16; lesson += 1) {
-    assert.ok((perLesson.get(lesson) ?? 0) >= (lesson <= 10 ? 28 : 34), `lesson ${lesson}`);
+  // Lessons 1–10 keep 13 lesson questions, 11–16 keep 14 and 17–25 have 18; each adds 2
+  // matching and 2 ordering questions, and some lessons a short reading.
+  const leastPerLesson = (lesson: number) => {
+    if (lesson <= 10) {
+      return 17;
+    }
+    return lesson <= 16 ? 18 : 22;
+  };
+  for (let lesson = 1; lesson <= 25; lesson += 1) {
+    assert.ok((perLesson.get(lesson) ?? 0) >= leastPerLesson(lesson), `lesson ${lesson}`);
   }
 });
 
@@ -64,7 +71,7 @@ test("the keys of each lesson's choice questions spread over the four positions"
   }
 });
 
-test("every key of the Minna 1–16 bank is graded correct", async () => {
+test("every key of the Minna 1–25 bank is graded correct", async () => {
   const bank = await loadBank();
   for (const raw of bank.content.questions) {
     const question = parseAssignableQuestion(raw);
