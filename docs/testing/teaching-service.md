@@ -137,7 +137,7 @@ Thiết kế ở [BD](../basic-design/teaching-service.md#thi-đấu-cả-lớp-
 - **Bàn phím:** khi khung thi đấu mở, phím mũi tên không đổi slide phía sau.
 - **Giao diện:** 1280/1440/1920px và 390px không cuộn ngang. axe trên khung giáo viên và trang điện thoại ở mọi bước (chọn, phòng chờ, câu hỏi, đáp án, kết quả): 0 lỗi, kể cả trang điện thoại ở giao diện tối. Lần đầu axe báo thiếu tương phản ở phương án bị làm mờ khi hiện đáp án; đã đổi sang lùi bằng viền và chữ cái, thêm nhãn "✓ Đáp án" / "Bạn chọn" để không chỉ dựa vào màu. Không có lỗi console.
 - **Test:** `tests/live-quiz.test.ts` (lọc câu, rút câu theo khúc, xếp hạng có đồng hạng, đếm lựa chọn), `tests/live-quiz-migration.test.ts` trên PGlite (không cấp quyền cho anon/authenticated, chủ lớp khác bị từ chối, lượt mới kết thúc lượt cũ, người ngoài và chủ lớp không vào phòng, không trả lời ở phòng chờ, revision cũ bị từ chối, điểm câu trả lời nhanh 900–1000, lần bấm thứ hai trả lại đáp án đầu, quá giờ cộng 1 giây thì đóng, next sau câu cuối kết thúc, lớp tự học không mở được), `tests/data-export.test.ts` (đáp án thi đấu chỉ vào file khi đã hiện). `npm run check` 426/426. E2E `e2e-supabase/teach-and-learn.spec.ts` thêm kịch bản giáo viên mở phòng, học viên vào bằng link, trả lời, đáp án tự hiện, kết thúc: spec 5/5 đạt.
-- **Production:** chưa áp migration; code chờ ở `refs/held/live-quiz` cho tới khi người dùng chạy `npx supabase db push --linked`.
+- **Production:** người dùng áp migration bằng `npx supabase db push --linked` ngày 18/11/2026 (kết quả lệnh: "Applying migration 20261118040000_live_quizzes.sql... Finished supabase db push.").
 
 ## Mã QR trên slide — 18/11/2026
 
