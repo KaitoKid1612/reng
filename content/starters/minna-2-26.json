@@ -1,0 +1,1512 @@
+{
+  "id": "minna-2-26",
+  "title": "Bài 26 – Hỏi và giải thích bằng 〜んです, nhờ lịch sự",
+  "titleJa": "第26課　どう したんですか",
+  "summary": "Theo trình tự bài 26 Minna no Nihongo Sơ cấp II (bài đầu quyển II): thể んです (だ → な), 〜んですか hỏi về điều mình thấy, 〜んです giải thích lý do, 〜んですが、Vて いただけませんか để nhờ lịch sự, 〜んですが、từ để hỏi + Vたら いいですか để xin lời khuyên, và đưa đối tượng lên làm chủ đề bằng は. Ví dụ, ba hội thoại (đồng nghiệp hỏi thăm, hỏi thầy nên đọc sách gì, làm mất ví ở nhà ga) và bài tập đều là nội dung gốc.",
+  "order": 26,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2601",
+        "jp": "みます",
+        "kanji": "診ます",
+        "romaji": "mimasu",
+        "vi": "khám (bệnh): いしゃが みます",
+        "audio": null,
+        "note": "nhóm II · みるんです",
+        "image": "/icons/vocab/stethoscope.svg"
+      },
+      {
+        "id": "v2602",
+        "jp": "さがします",
+        "kanji": "探します",
+        "romaji": "sagashimasu",
+        "vi": "tìm, tìm kiếm",
+        "audio": null,
+        "note": "nhóm I · さがすんです"
+      },
+      {
+        "id": "v2603",
+        "jp": "おくれます",
+        "kanji": "遅れます",
+        "romaji": "okuremasu",
+        "vi": "muộn, trễ: じかんに おくれます",
+        "audio": null,
+        "note": "nhóm II · おくれたんです",
+        "image": "/icons/vocab/alarm-clock.svg"
+      },
+      {
+        "id": "v2604",
+        "jp": "まにあいます",
+        "kanji": "間に合います",
+        "romaji": "maniaimasu",
+        "vi": "kịp (giờ): じかんに まにあいます",
+        "audio": null,
+        "note": "nhóm I · まにあわないんです"
+      },
+      {
+        "id": "v2605",
+        "jp": "やります",
+        "romaji": "yarimasu",
+        "vi": "làm (cách nói thân mật của します)",
+        "audio": null,
+        "note": "nhóm I · やるんです"
+      },
+      {
+        "id": "v2606",
+        "jp": "ひろいます",
+        "kanji": "拾います",
+        "romaji": "hiroimasu",
+        "vi": "nhặt, lượm",
+        "audio": null,
+        "note": "nhóm I · ひろったんです"
+      },
+      {
+        "id": "v2607",
+        "jp": "れんらくします",
+        "kanji": "連絡します",
+        "romaji": "renraku shimasu",
+        "vi": "liên lạc",
+        "audio": null,
+        "note": "nhóm III · れんらくするんです",
+        "image": "/icons/vocab/mobile-phone.svg"
+      },
+      {
+        "id": "v2608",
+        "jp": "きぶんが いい",
+        "kanji": "気分が いい",
+        "romaji": "kibun ga ii",
+        "vi": "thấy khỏe, dễ chịu trong người",
+        "audio": null,
+        "note": "きぶんが いいんです"
+      },
+      {
+        "id": "v2609",
+        "jp": "きぶんが わるい",
+        "kanji": "気分が 悪い",
+        "romaji": "kibun ga warui",
+        "vi": "thấy mệt, khó chịu trong người",
+        "audio": null,
+        "note": "きぶんが わるいんです",
+        "image": "/icons/vocab/downcast-face-with-sweat.svg"
+      },
+      {
+        "id": "v2610",
+        "jp": "うんどうかい",
+        "kanji": "運動会",
+        "romaji": "undoukai",
+        "vi": "hội thao (ở trường, công ty)",
+        "audio": null,
+        "image": "/icons/vocab/sports-medal.svg"
+      },
+      {
+        "id": "v2611",
+        "jp": "ぼんおどり",
+        "kanji": "盆踊り",
+        "romaji": "bon odori",
+        "vi": "múa Bon (lễ hội mùa hè)",
+        "audio": null,
+        "image": "/icons/vocab/red-paper-lantern.svg"
+      },
+      {
+        "id": "v2612",
+        "jp": "フリーマーケット",
+        "romaji": "furii maaketto",
+        "vi": "chợ đồ cũ",
+        "audio": null
+      },
+      {
+        "id": "v2613",
+        "jp": "ばしょ",
+        "kanji": "場所",
+        "romaji": "basho",
+        "vi": "địa điểm, chỗ",
+        "audio": null
+      },
+      {
+        "id": "v2614",
+        "jp": "ボランティア",
+        "romaji": "borantia",
+        "vi": "tình nguyện, tình nguyện viên",
+        "audio": null
+      },
+      {
+        "id": "v2615",
+        "jp": "さいふ",
+        "kanji": "財布",
+        "romaji": "saifu",
+        "vi": "cái ví",
+        "audio": null
+      },
+      {
+        "id": "v2616",
+        "jp": "ごみ",
+        "romaji": "gomi",
+        "vi": "rác",
+        "audio": null
+      },
+      {
+        "id": "v2617",
+        "jp": "こっかいぎじどう",
+        "kanji": "国会議事堂",
+        "romaji": "kokkai gijidou",
+        "vi": "tòa nhà Quốc hội",
+        "audio": null,
+        "image": "/icons/vocab/classical-building.svg"
+      },
+      {
+        "id": "v2618",
+        "jp": "へいじつ",
+        "kanji": "平日",
+        "romaji": "heijitsu",
+        "vi": "ngày thường (thứ Hai – thứ Sáu)",
+        "audio": null,
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v2619",
+        "jp": "〜べん",
+        "kanji": "〜弁",
+        "romaji": "~ben",
+        "vi": "giọng, phương ngữ 〜: おおさかべん",
+        "audio": null,
+        "image": "/icons/vocab/speaking-head.svg"
+      },
+      {
+        "id": "v2620",
+        "jp": "こんど",
+        "kanji": "今度",
+        "romaji": "kondo",
+        "vi": "lần tới",
+        "audio": null
+      },
+      {
+        "id": "v2621",
+        "jp": "ずいぶん",
+        "romaji": "zuibun",
+        "vi": "khá là, … quá (ngạc nhiên)",
+        "audio": null
+      },
+      {
+        "id": "v2622",
+        "jp": "ちょくせつ",
+        "kanji": "直接",
+        "romaji": "chokusetsu",
+        "vi": "trực tiếp",
+        "audio": null
+      },
+      {
+        "id": "v2623",
+        "jp": "いつでも",
+        "romaji": "itsudemo",
+        "vi": "bất cứ lúc nào",
+        "audio": null
+      },
+      {
+        "id": "v2624",
+        "jp": "どこでも",
+        "romaji": "dokodemo",
+        "vi": "bất cứ đâu",
+        "audio": null
+      },
+      {
+        "id": "v2625",
+        "jp": "だれでも",
+        "romaji": "daredemo",
+        "vi": "bất cứ ai",
+        "audio": null
+      },
+      {
+        "id": "v2626",
+        "jp": "なんでも",
+        "romaji": "nandemo",
+        "vi": "bất cứ cái gì",
+        "audio": null
+      },
+      {
+        "id": "v2627",
+        "jp": "こんな 〜",
+        "romaji": "konna ~",
+        "vi": "〜 như thế này",
+        "audio": null
+      },
+      {
+        "id": "v2628",
+        "jp": "そんな 〜",
+        "romaji": "sonna ~",
+        "vi": "〜 như thế đó",
+        "audio": null
+      },
+      {
+        "id": "v2629",
+        "jp": "あんな 〜",
+        "romaji": "anna ~",
+        "vi": "〜 như thế kia",
+        "audio": null
+      },
+      {
+        "id": "v2630",
+        "jp": "かたづきます",
+        "kanji": "片づきます",
+        "romaji": "katazukimasu",
+        "vi": "(đồ đạc) được dọn gọn: にもつが かたづきます",
+        "audio": null,
+        "note": "nhóm I · かたづかないんです"
+      },
+      {
+        "id": "v2631",
+        "jp": "だします",
+        "kanji": "出します",
+        "romaji": "dashimasu",
+        "vi": "đổ (rác): ごみを だします",
+        "audio": null,
+        "note": "nhóm I · だすんです"
+      },
+      {
+        "id": "v2632",
+        "jp": "もえる ごみ",
+        "kanji": "燃える ごみ",
+        "romaji": "moeru gomi",
+        "vi": "rác cháy được",
+        "audio": null
+      },
+      {
+        "id": "v2633",
+        "jp": "おきば",
+        "kanji": "置き場",
+        "romaji": "okiba",
+        "vi": "chỗ để, nơi tập kết",
+        "audio": null
+      },
+      {
+        "id": "v2634",
+        "jp": "よこ",
+        "kanji": "横",
+        "romaji": "yoko",
+        "vi": "bên cạnh",
+        "audio": null
+      },
+      {
+        "id": "v2635",
+        "jp": "びん",
+        "kanji": "瓶",
+        "romaji": "bin",
+        "vi": "chai, lọ (thủy tinh)",
+        "audio": null
+      },
+      {
+        "id": "v2636",
+        "jp": "かん",
+        "kanji": "缶",
+        "romaji": "kan",
+        "vi": "lon, hộp (kim loại)",
+        "audio": null
+      },
+      {
+        "id": "v2637",
+        "jp": "おゆ",
+        "kanji": "お湯",
+        "romaji": "oyu",
+        "vi": "nước nóng",
+        "audio": null
+      },
+      {
+        "id": "v2638",
+        "jp": "ガス",
+        "romaji": "gasu",
+        "vi": "ga, khí đốt",
+        "audio": null
+      },
+      {
+        "id": "v2639",
+        "jp": "〜がいしゃ",
+        "kanji": "〜会社",
+        "romaji": "~gaisha",
+        "vi": "công ty 〜: ガスがいしゃ",
+        "audio": null
+      },
+      {
+        "id": "v2640",
+        "jp": "こまったなあ",
+        "kanji": "困ったなあ",
+        "romaji": "komatta naa",
+        "vi": "Gay quá! / Khổ thật! (nói một mình khi gặp rắc rối)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2601",
+        "pattern": "Thể thường + んです",
+        "vi": "Cách tạo thể んです (nói rõ tình huống, lý do)",
+        "explain": "Động từ và tính từ い: thể thường + んです (いくんです, いったんです, いかないんです, たかいんです). Tính từ な và danh từ: だ đổi thành な (ひまなんです, あめなんです); quá khứ giữ だった (ひまだったんです). Khi nói dùng んです, khi viết trang trọng dùng のです.",
+        "viMistake": "Giữ だ trước んです: あめだんです, ひまだんです là sai; phải là あめなんです, ひまなんです. Ngược lại, tính từ い không thêm な: không nói たかいなんです.",
+        "examples": [
+          {
+            "jp": "{今日|きょう}は {私|わたし}の {誕生日|たんじょうび}なんです。",
+            "vi": "Hôm nay là sinh nhật tôi đấy.",
+            "audio": null
+          },
+          {
+            "jp": "この かばん、{姉|あね}に もらったんです。",
+            "vi": "Cái túi này là chị gái cho tôi đấy.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}から {歩|ある}いて {来|き}たんです。",
+            "vi": "Tôi đi bộ từ ga đến đây đấy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2602",
+        "pattern": "〜んですか",
+        "vi": "Hỏi về điều mình thấy hoặc nghe được",
+        "explain": "Thấy, nghe điều gì rồi hỏi để xác nhận, hỏi thêm hoặc muốn người kia giải thích. Thấy người kia có vẻ khác thường thì hỏi どう したんですか (có chuyện gì vậy?). Câu hỏi bình thường, không dựa vào điều gì mình thấy, vẫn dùng 〜ますか.",
+        "viMistake": "Không có gì làm căn cứ mà hỏi dồn người mới quen bằng 〜んですか (なんさいなんですか, けっこんして いるんですか) nghe tò mò, soi mói. Câu hỏi thông thường dùng 〜ますか／〜ですか.",
+        "examples": [
+          {
+            "jp": "どう したんですか。{元気|げんき}が ありませんね。",
+            "vi": "Có chuyện gì vậy? Trông bạn không khỏe.",
+            "audio": null
+          },
+          {
+            "jp": "{上手|じょうず}ですね。どこで {習|なら}ったんですか。",
+            "vi": "Giỏi quá. Bạn học ở đâu vậy?",
+            "audio": null
+          },
+          {
+            "jp": "{荷物|にもつ}が {多|おお}いですね。{旅行|りょこう}するんですか。",
+            "vi": "Nhiều hành lý thế. Bạn đi du lịch à?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2603",
+        "pattern": "〜んです（giải thích）",
+        "vi": "Giải thích lý do, hoàn cảnh",
+        "explain": "Trả lời どうして 〜んですか hoặc どう したんですか bằng 〜んです để nói lý do, hoàn cảnh. Cũng dùng khi tự mình giải thích, ví dụ lúc đến muộn hay lúc xin về sớm.",
+        "viMistake": "Dùng んです cho mọi câu kể: きのう テレビを みたんです khi không ai hỏi gì nghe như đang phân trần. Kể sự việc bình thường thì dùng 〜ました.",
+        "examples": [
+          {
+            "jp": "{頭|あたま}が {痛|いた}いんです。",
+            "vi": "(Vì) tôi bị đau đầu.",
+            "audio": null
+          },
+          {
+            "jp": "{財布|さいふ}を {忘|わす}れたんです。",
+            "vi": "(Vì) tôi quên ví.",
+            "audio": null
+          },
+          {
+            "jp": "{昨日|きのう}は {用事|ようじ}が あったんです。",
+            "vi": "(Vì) hôm qua tôi có việc bận.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2604",
+        "pattern": "〜んですが、Vて いただけませんか",
+        "vi": "…, anh/chị … giúp tôi được không ạ?",
+        "explain": "Vế 〜んですが nói hoàn cảnh để mở lời; vế sau nhờ rất lịch sự, hơn 〜て ください và 〜て くださいませんか. Dùng với người trên và người lạ. Nhiều khi chỉ nói vế đầu rồi bỏ lửng: 〜んですが……, người nghe tự hiểu là đang nhờ.",
+        "viMistake": "Nói いただきませんか (là lời mời “mình cùng nhận nhé”) thay cho いただけませんか. Nhờ thầy cô mà nói 〜て ください nghe như ra lệnh nhẹ.",
+        "examples": [
+          {
+            "jp": "{初|はじ}めてなんですが、{使|つか}い{方|かた}を {見|み}せて いただけませんか。",
+            "vi": "Đây là lần đầu tôi dùng, anh chỉ cho tôi cách dùng được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{道|みち}が わからないんですが、{教|おし}えて いただけませんか。",
+            "vi": "Tôi không biết đường, chị chỉ giúp tôi được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{傘|かさ}を {忘|わす}れたんですが、{貸|か}して いただけませんか。",
+            "vi": "Tôi quên ô, chị cho tôi mượn được không ạ?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2605",
+        "pattern": "Từ để hỏi + Vたら いいですか",
+        "vi": "(〜んですが、) tôi nên … (gì / ở đâu / thế nào) ạ?",
+        "explain": "Xin lời khuyên hoặc hỏi cách làm: từ để hỏi (なに, どこ, だれ, いつ, どう…) + Vたら いいですか. Thường có vế 〜んですが đứng trước để nói hoàn cảnh. Người trả lời có thể nói 〜たら いいですよ.",
+        "viMistake": "Dịch “nên làm gì” thành なにを しますか hoặc bỏ いい: なにを したら ですか. Phải giữ đủ 〜たら いいですか.",
+        "examples": [
+          {
+            "jp": "この {荷物|にもつ}、どこに {置|お}いたら いいですか。",
+            "vi": "Hành lý này tôi nên để ở đâu ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}に {間|ま}に{合|あ}わないんですが、だれに {連絡|れんらく}したら いいですか。",
+            "vi": "Tôi không kịp họp, tôi nên báo cho ai ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{日本語|にほんご}が {上手|じょうず}に なりたいんですが、どう したら いいですか。",
+            "vi": "Tôi muốn giỏi tiếng Nhật, tôi nên làm thế nào ạ?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2606",
+        "pattern": "N は すきです／わかります",
+        "vi": "Đưa đối tượng lên làm chủ đề bằng は (すき, じょうず, あります…)",
+        "explain": "Với すき, きらい, じょうず, へた, あります, わかります, đối tượng đi với が (bài 9). Khi muốn nêu đối tượng làm chủ đề, nhất là để đối chiếu hai thứ, thì thay が bằng は.",
+        "viMistake": "Giữ cả hai trợ từ (スポーツが は) hoặc dùng を (スポーツを すきです). が chỉ đổi thành は, không thêm.",
+        "examples": [
+          {
+            "jp": "{果物|くだもの}は {何|なん}でも {好|す}きです。",
+            "vi": "Hoa quả thì loại nào tôi cũng thích.",
+            "audio": null
+          },
+          {
+            "jp": "{料理|りょうり}は {下手|へた}ですが、{掃除|そうじ}は {好|す}きです。",
+            "vi": "Nấu ăn thì tôi kém, nhưng dọn dẹp thì tôi thích.",
+            "audio": null
+          },
+          {
+            "jp": "ひらがなは わかりますが、{漢字|かんじ}は まだ わかりません。",
+            "vi": "Hiragana thì tôi hiểu, nhưng kanji thì chưa.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2601",
+        "type": "title",
+        "jp": "{第|だい}26{課|か}",
+        "vi": "Hỏi lý do, giải thích và nhờ lịch sự"
+      },
+      {
+        "id": "s2602",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "1. Tạo thể んです từ thể thường (だ → な với tính từ な và danh từ).\n2. Hỏi về điều mình thấy bằng 〜んですか, giải thích lý do bằng 〜んです.\n3. Nhờ lịch sự: 〜んですが、Vて いただけませんか.\n4. Xin lời khuyên: 〜んですが、なに／どこ… Vたら いいですか.\n5. Đưa đối tượng lên làm chủ đề bằng は."
+      },
+      {
+        "id": "s2603",
+        "type": "vocab",
+        "refs": ["v2601", "v2602", "v2603", "v2604", "v2605", "v2606", "v2607", "v2608"],
+        "teacherNotes": "Đọc thể んです ghi ở mỗi thẻ động từ. みます (診ます) khác みます (見ます): bác sĩ khám bệnh."
+      },
+      {
+        "id": "s2604",
+        "type": "vocab",
+        "refs": ["v2609", "v2610", "v2611", "v2612", "v2613", "v2614", "v2615", "v2616"],
+        "teacherNotes": "Hỏi học viên ở Việt Nam có hội thao, chợ đồ cũ không; giới thiệu múa Bon trong lễ Obon."
+      },
+      {
+        "id": "s2605",
+        "type": "vocab",
+        "refs": ["v2617", "v2618", "v2619", "v2620", "v2621", "v2622", "v2623", "v2624"],
+        "teacherNotes": "おおさかべん: giọng Osaka. Ví dụ quen thuộc: giọng Huế, giọng Nghệ."
+      },
+      {
+        "id": "s2606",
+        "type": "vocab",
+        "refs": ["v2625", "v2626", "v2627", "v2628", "v2629", "v2630", "v2631", "v2632"],
+        "teacherNotes": "こんな・そんな・あんな đi trước danh từ, theo cùng quy tắc với これ・それ・あれ."
+      },
+      {
+        "id": "s2607",
+        "type": "vocab",
+        "refs": ["v2633", "v2634", "v2635", "v2636", "v2637", "v2638", "v2639", "v2640"],
+        "teacherNotes": "Nói về cách phân loại rác ở Nhật: rác cháy được, chai lọ, lon có ngày đổ riêng."
+      },
+      {
+        "id": "s2608",
+        "type": "grammar",
+        "ref": "g2601",
+        "teacherNotes": "Ôn thể thường (bài 20) trước; んです = thể thường + んです, chỉ đổi だ → な."
+      },
+      {
+        "id": "s2609",
+        "type": "example",
+        "ref": "g2601",
+        "reveal": true
+      },
+      {
+        "id": "s2610",
+        "type": "table",
+        "title": "Cách tạo thể んです",
+        "columns": ["Loại", "Thể thường", "Thể んです"],
+        "rows": [
+          ["V hiện tại", "{行|い}く", "{行|い}くんです"],
+          ["V quá khứ", "{行|い}った", "{行|い}ったんです"],
+          ["V phủ định", "{行|い}かない", "{行|い}かないんです"],
+          ["Tính từ い", "{高|たか}い", "{高|たか}いんです"],
+          ["Tính từ な", "{暇|ひま}だ", "{暇|ひま}なんです"],
+          ["Danh từ", "{雨|あめ}だ", "{雨|あめ}なんです"],
+          ["な・N quá khứ", "{暇|ひま}だった", "{暇|ひま}だったんです"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột cuối, cho học viên tự thêm んです. Nhấn mạnh だ → な ở hai dòng tính từ な và danh từ."
+      },
+      {
+        "id": "s2611",
+        "type": "quiz",
+        "ref": "q2601"
+      },
+      {
+        "id": "s2612",
+        "type": "grammar",
+        "ref": "g2602",
+        "teacherNotes": "Làm động tác (ôm đầu, xách va li) rồi để học viên hỏi bằng 〜んですか."
+      },
+      {
+        "id": "s2613",
+        "type": "example",
+        "ref": "g2602",
+        "reveal": true
+      },
+      {
+        "id": "s2614",
+        "type": "table",
+        "title": "Luyện tập 1: hỏi về điều mình thấy",
+        "columns": ["Điều bạn thấy", "Câu hỏi"],
+        "rows": [
+          ["{顔|かお}が {赤|あか}い", "{熱|ねつ}が あるんですか。"],
+          ["{荷物|にもつ}が {多|おお}い", "{旅行|りょこう}するんですか。"],
+          ["{日本語|にほんご}が {上手|じょうず}", "どこで {勉強|べんきょう}したんですか。"],
+          ["{元気|げんき}が ない", "どう したんですか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2615",
+        "type": "quiz",
+        "ref": "q2602"
+      },
+      {
+        "id": "s2616",
+        "type": "grammar",
+        "ref": "g2603",
+        "teacherNotes": "Cặp hỏi đáp: どうして 〜んですか → 〜んです. Cho học viên tự nghĩ lý do khác."
+      },
+      {
+        "id": "s2617",
+        "type": "example",
+        "ref": "g2603",
+        "reveal": true
+      },
+      {
+        "id": "s2618",
+        "type": "table",
+        "title": "Luyện tập 2: giải thích lý do",
+        "columns": ["Câu hỏi", "Gợi ý", "Trả lời"],
+        "rows": [
+          [
+            "どうして {休|やす}んだんですか",
+            "{子|こ}どもが {病気|びょうき}でした",
+            "{子|こ}どもが {病気|びょうき}だったんです。"
+          ],
+          [
+            "どうして {食|た}べないんですか",
+            "おなかが いっぱいです",
+            "おなかが いっぱいなんです。"
+          ],
+          [
+            "どうして {帰|かえ}るんですか",
+            "{気分|きぶん}が {悪|わる}いです",
+            "{気分|きぶん}が {悪|わる}いんです。"
+          ],
+          [
+            "どうして {買|か}わないんですか",
+            "ちょっと {高|たか}いです",
+            "ちょっと {高|たか}いんです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2619",
+        "type": "note",
+        "title": "Khi nào không dùng んです",
+        "body": "Kể sự việc bình thường: きのう えいがを みました (không cần んです).\nHỏi người mới quen chuyện riêng: なんさいなんですか nghe như tra hỏi.\nんです hợp khi có điều cần giải thích: mình thấy, nghe được, hoặc người kia hỏi lý do."
+      },
+      {
+        "id": "s2620",
+        "type": "quiz",
+        "ref": "q2603"
+      },
+      {
+        "id": "s2621",
+        "type": "grammar",
+        "ref": "g2604",
+        "teacherNotes": "So sánh ba mức: 〜て ください < 〜て くださいませんか < 〜て いただけませんか."
+      },
+      {
+        "id": "s2622",
+        "type": "example",
+        "ref": "g2604",
+        "reveal": true
+      },
+      {
+        "id": "s2623",
+        "type": "table",
+        "title": "Luyện tập 3: nhờ lịch sự",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          ["わかりません・{教|おし}えます", "わからないんですが、{教|おし}えて いただけませんか。"],
+          [
+            "{字|じ}が {小|ちい}さいです・{読|よ}みます",
+            "{字|じ}が {小|ちい}さいんですが、{読|よ}んで いただけませんか。"
+          ],
+          [
+            "{荷物|にもつ}が {重|おも}いです・{持|も}ちます",
+            "{荷物|にもつ}が {重|おも}いんですが、{持|も}って いただけませんか。"
+          ],
+          [
+            "{駅|えき}が {遠|とお}いです・{送|おく}ります",
+            "{駅|えき}が {遠|とお}いんですが、{送|おく}って いただけませんか。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2624",
+        "type": "quiz",
+        "ref": "q2604"
+      },
+      {
+        "id": "s2625",
+        "type": "grammar",
+        "ref": "g2605",
+        "teacherNotes": "Nhắc lại thể たら (bài 25). Cho học viên đóng vai người mới đến Nhật hỏi cách làm."
+      },
+      {
+        "id": "s2626",
+        "type": "example",
+        "ref": "g2605",
+        "reveal": true
+      },
+      {
+        "id": "s2627",
+        "type": "table",
+        "title": "Luyện tập 4: tôi nên … ạ?",
+        "columns": ["Gợi ý", "Câu hỏi"],
+        "rows": [
+          ["どこで {降|お}ります", "どこで {降|お}りたら いいですか。"],
+          ["{何|なに}を {着|き}ます", "{何|なに}を {着|き}たら いいですか。"],
+          ["だれに {聞|き}きます", "だれに {聞|き}いたら いいですか。"],
+          ["いつ {来|き}ます", "いつ {来|き}たら いいですか。"],
+          ["どう します", "どう したら いいですか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2628",
+        "type": "quiz",
+        "ref": "q2605"
+      },
+      {
+        "id": "s2629",
+        "type": "table",
+        "title": "Từ để hỏi + でも",
+        "columns": ["Từ", "Nghĩa", "Ví dụ"],
+        "rows": [
+          ["いつでも", "bất cứ lúc nào", "いつでも {来|き}て ください。"],
+          ["どこでも", "bất cứ đâu", "{場所|ばしょ}は どこでも いいです。"],
+          ["だれでも", "bất cứ ai", "だれでも {入|はい}っても いいです。"],
+          ["{何|なん}でも", "bất cứ cái gì", "{何|なん}でも {食|た}べます。"]
+        ],
+        "teacherNotes": "Phân biệt いつでも (bất cứ lúc nào) với いつも (lúc nào cũng)."
+      },
+      {
+        "id": "s2630",
+        "type": "grammar",
+        "ref": "g2606",
+        "teacherNotes": "Nhắc bài 17: を cũng đổi thành は khi đưa tân ngữ lên làm chủ đề. Ở đây là が → は."
+      },
+      {
+        "id": "s2631",
+        "type": "example",
+        "ref": "g2606",
+        "reveal": true
+      },
+      {
+        "id": "s2632",
+        "type": "table",
+        "title": "Luyện tập 5: đối chiếu bằng は",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{料理|りょうり}が {好|す}き・{掃除|そうじ}が {嫌|きら}い",
+            "{料理|りょうり}は {好|す}きですが、{掃除|そうじ}は {嫌|きら}いです。"
+          ],
+          [
+            "{歌|うた}が {下手|へた}・ダンスが {上手|じょうず}",
+            "{歌|うた}は {下手|へた}ですが、ダンスは {上手|じょうず}です。"
+          ],
+          ["{車|くるま}が ある・バイクが ない", "{車|くるま}は ありますが、バイクは ありません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2633",
+        "type": "quiz",
+        "ref": "q2606"
+      },
+      {
+        "id": "s2634",
+        "type": "dialogue",
+        "title": "Hội thoại 1: có chuyện gì vậy?",
+        "lines": [
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ナムさん、{元気|げんき}が ありませんね。どう したんですか。",
+            "vi": "Anh Nam, trông anh mệt thế. Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{昨日|きのう}の {夜|よる}、あまり {寝|ね}なかったんです。",
+            "vi": "Tối qua tôi không ngủ mấy."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "{仕事|しごと}が {忙|いそが}しいんですか。",
+            "vi": "Công việc bận à?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "いいえ、サッカーの {試合|しあい}を {見|み}て いたんです。",
+            "vi": "Không, tôi xem trận bóng đá ấy mà."
+          },
+          {
+            "speaker": "{田中|たなか}",
+            "jp": "ああ、ベトナムの {試合|しあい}ですね。どうでしたか。",
+            "vi": "À, trận của Việt Nam nhỉ. Thế nào rồi?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{勝|か}ちました。でも、{今|いま}は とても {眠|ねむ}いんです。",
+            "vi": "Thắng rồi. Nhưng giờ tôi buồn ngủ lắm."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2635",
+        "type": "dialogue",
+        "title": "Hội thoại 2: nên đọc sách gì?",
+        "lines": [
+          {
+            "speaker": "アン",
+            "jp": "{先生|せんせい}、{今|いま} ちょっと いいですか。",
+            "vi": "Thầy ơi, bây giờ thầy có chút thời gian không ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "ええ。どう したんですか。",
+            "vi": "Được. Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "アン",
+            "jp": "{本|ほん}を {読|よ}みたいんですが、{何|なに}を {読|よ}んだら いいですか。",
+            "vi": "Em muốn đọc sách, em nên đọc gì ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "この {本|ほん}は どうですか。{短|みじか}い {話|はなし}が {多|おお}いですよ。",
+            "vi": "Quyển này thì sao? Có nhiều truyện ngắn đấy."
+          },
+          {
+            "speaker": "アン",
+            "jp": "ちょっと {難|むずか}しいですね。{辞書|じしょ}を {貸|か}して いただけませんか。",
+            "vi": "Hơi khó thầy ạ. Thầy cho em mượn từ điển được không ạ?"
+          },
+          {
+            "speaker": "{先生|せんせい}",
+            "jp": "いいですよ。わからない ときは いつでも {聞|き}いて ください。",
+            "vi": "Được chứ. Chỗ nào không hiểu thì em cứ hỏi thầy bất cứ lúc nào."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2636",
+        "type": "dialogue",
+        "title": "Hội thoại 3: đánh rơi ví ở nhà ga",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "すみません、さいふを なくしたんですが。",
+            "vi": "Xin lỗi, tôi làm mất ví…"
+          },
+          {
+            "speaker": "{駅員|えきいん}",
+            "jp": "どこで なくしたんですか。",
+            "vi": "Anh mất ở đâu ạ?"
+          },
+          {
+            "speaker": "ナム",
+            "jp": "{電車|でんしゃ}の {中|なか}だと {思|おも}います。",
+            "vi": "Tôi nghĩ là ở trên tàu."
+          },
+          {
+            "speaker": "{駅員|えきいん}",
+            "jp": "じゃ、ここに {名前|なまえ}と {電話番号|でんわばんごう}を {書|か}いて ください。",
+            "vi": "Vậy anh viết tên và số điện thoại vào đây."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい。いつ {来|き}たら いいですか。",
+            "vi": "Vâng. Khi nào tôi nên quay lại ạ?"
+          },
+          {
+            "speaker": "{駅員|えきいん}",
+            "jp": "だれかが {拾|ひろ}ったら、こちらから {連絡|れんらく}しますよ。",
+            "vi": "Nếu có ai nhặt được, chúng tôi sẽ liên lạc với anh."
+          }
+        ],
+        "reveal": true
+      },
+      {
+        "id": "s2637",
+        "type": "quiz",
+        "ref": "q2607"
+      },
+      {
+        "id": "s2638",
+        "type": "note",
+        "title": "Tóm tắt",
+        "body": "Thể んです: thể thường + んです; tính từ な và danh từ đổi だ → な (ひまなんです, あめなんです).\n〜んですか: hỏi về điều mình thấy, nghe được; どう したんですか.\n〜んです: giải thích lý do, hoàn cảnh; không dùng cho mọi câu kể.\n〜んですが、Vて いただけませんか: nhờ lịch sự.\n〜んですが、なに／どこ… Vたら いいですか: xin lời khuyên.\nN は すきです／わかります: が đổi thành は để nêu chủ đề, đối chiếu."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2601",
+        "prompt": "Chọn thể んです của べんりです (tính từ な).",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Tính từ な: だ đổi thành な → べんりなんです.",
+        "type": "choice",
+        "options": ["べんりなんです", "べんりだんです", "べんりんです", "べんりいんです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2602",
+        "prompt": "Bạn được mời ăn một cái bánh rất ngon. Bạn hỏi “Ai làm bánh vậy?”: おいしい ケーキですね。だれが（　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Hỏi về việc đã xảy ra mà mình thấy: thể thường quá khứ つくった + んですか. Không ghép ました với んです; động từ không thêm な.",
+        "type": "choice",
+        "options": [
+          "つくるんですか。",
+          "つくりましたんですか。",
+          "つくったなんですか。",
+          "つくったんですか。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2603",
+        "prompt": "A: どうして きのう がっこうを やすんだんですか。 B: （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Trả lời lý do bằng 〜んです; động từ không thêm な; B trả lời chứ không hỏi lại.",
+        "type": "choice",
+        "options": [
+          "ねつが あるんですか。",
+          "ねつが あったなんです。",
+          "ねつが あったんです。",
+          "ねつが あったんですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2604",
+        "prompt": "Bạn nghe chưa rõ, muốn nhờ thầy giáo nói lại: よく わからなかったんですが、もう いちど（　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Nhờ lịch sự: Vて いただけませんか. いいます → いって. いただきませんか là lời mời, không phải lời nhờ.",
+        "type": "choice",
+        "options": [
+          "いって いただきませんか。",
+          "いって いただけませんか。",
+          "いいて いただけませんか。",
+          "いって いただけるませんか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2605",
+        "prompt": "Bạn muốn hỏi “Tôi nên gọi điện cho ai ạ?”: だれに（　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Xin lời khuyên: từ để hỏi + Vたら いいですか. 〜たいですか là hỏi mong muốn của người khác, sai nghĩa.",
+        "type": "choice",
+        "options": [
+          "でんわしたら ですか。",
+          "でんわしたら いいですか。",
+          "でんわしたいですか。",
+          "でんわするたら いいですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2606",
+        "prompt": "Đưa “thể thao” lên làm chủ đề: “Thể thao thì môn gì tôi cũng thích.” スポーツ（　　）なんでも すきです。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "が đổi thành は, không giữ cả hai; すき không đi với を.",
+        "type": "choice",
+        "options": ["は", "が は", "を", "に"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2607",
+        "prompt": "Ở cửa hàng, cái áo bạn vừa mua hơi rộng, bạn muốn đổi. Câu mở đầu nào tự nhiên? すみません、この シャツ、ちょっと（　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Nói hoàn cảnh để mở lời: 〜んですが. Tính từ い không thêm な. 〜んですか／〜ですか là hỏi người kia.",
+        "type": "choice",
+        "options": [
+          "おおきいんですか。",
+          "おおきいなんですが。",
+          "おおきかったですか。",
+          "おおきいんですが。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2608",
+        "prompt": "Chọn thể んです (hiện tại) của かきます.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Thể từ điển かく + んです. Động từ không thêm な.",
+        "type": "choice",
+        "options": ["かきますんです", "かきんです", "かくんです", "かくなんです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2609",
+        "prompt": "Chọn thể んです (quá khứ) của みます.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Thể た みた + んです.",
+        "type": "choice",
+        "options": ["みましたんです", "みるたんです", "みたんです", "みたなんです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2610",
+        "prompt": "Chọn thể んです (phủ định) của のみます.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Nhóm I: み → ま + ない → のまない + んです.",
+        "type": "choice",
+        "options": ["のみないんです", "のまないんです", "のまなんです", "のまないなんです"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2611",
+        "prompt": "Chọn thể んです của やすい.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Tính từ い giữ nguyên + んです, không thêm な.",
+        "type": "choice",
+        "options": ["やすいんです", "やすいなんです", "やすなんです", "やすかんです"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2612",
+        "prompt": "Chọn thể んです của やすみ (danh từ).",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Danh từ: だ đổi thành な → やすみなんです.",
+        "type": "choice",
+        "options": ["やすみだんです", "やすみんです", "やすみのんです", "やすみなんです"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2613",
+        "prompt": "Chọn thể んです (quá khứ) của しずか (tính từ な).",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Quá khứ giữ だった: しずかだった + んです.",
+        "type": "choice",
+        "options": [
+          "しずかなかったんです",
+          "しずかったんです",
+          "しずかだったなんです",
+          "しずかだったんです"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2614",
+        "prompt": "Chọn thể んです (quá khứ) của いい.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "いい → よかった (quá khứ) + んです.",
+        "type": "choice",
+        "options": ["いかったんです", "いいだったんです", "よかったんです", "よいだったんです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2615",
+        "prompt": "Nhờ lịch sự với あけます: まどを（　　）いただけませんか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Nhóm II: bỏ ます thêm て → あけて.",
+        "type": "choice",
+        "options": ["あけって", "あけて", "あけで", "あける"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2616",
+        "prompt": "Nhờ lịch sự với はなします: もう すこし ゆっくり（　　）いただけませんか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Nhóm I: し → して → はなして.",
+        "type": "choice",
+        "options": ["はなして", "はなしって", "はなって", "はなしで"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2617",
+        "prompt": "Hỏi đường: “Đến ga thì đi thế nào ạ?” えきまで どう（　　）いいですか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "いきます là ngoại lệ: いった → いったら.",
+        "type": "choice",
+        "options": ["いったら", "いくたら", "いきたら", "いいたら"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2618",
+        "prompt": "“Tôi nên đợi ở đâu ạ?” どこで（　　）いいですか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "ち → った: まった → まったら.",
+        "type": "choice",
+        "options": ["まちたら", "まつたら", "まんだら", "まったら"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2619",
+        "prompt": "Chọn thể んです (quá khứ) của あそびます.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "び → んだ: あそんだ + んです.",
+        "type": "choice",
+        "options": ["あそびたんです", "あそいだんです", "あそんだんです", "あそったんです"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2620",
+        "prompt": "Đồng nghiệp đến muộn, mặt rất mệt. Bạn hỏi “Có chuyện gì vậy?”.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Hỏi về điều mình thấy: どう したんですか. どう したら いいですか là xin lời khuyên.",
+        "type": "choice",
+        "options": [
+          "どう しますか。",
+          "どう したんですか。",
+          "なにを しましたか。",
+          "どう したら いいですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2621",
+        "prompt": "Câu nào dùng んです KHÔNG tự nhiên?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Tự giới thiệu lần đầu không có gì cần giải thích, nói ナムです. Ba câu còn lại đều dựa vào tình huống.",
+        "type": "choice",
+        "options": [
+          "あたまが いたいんです。きょうは はやく かえっても いいですか。",
+          "（はじめて あった ひとに）はじめまして。ナムなんです。",
+          "どう したんですか。かおが あかいですよ。",
+          "かさを もって いますね。あめが ふるんですか。"
+        ],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2622",
+        "prompt": "A: どうして たべないんですか。 B: （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Giải thích lý do bằng 〜んです; việc đã xong dùng たべた. B trả lời chứ không hỏi lại; không ghép ました với んです.",
+        "type": "choice",
+        "options": [
+          "もう たべたんです。",
+          "もう たべたんですか。",
+          "もう たべましたんです。",
+          "もう たべたなんです。"
+        ],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2623",
+        "prompt": "Bạn đến muộn vì tàu điện trễ. Giải thích với cô giáo.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Việc đã xảy ra: おくれた + んです; không hỏi lại, không thêm な.",
+        "type": "choice",
+        "options": [
+          "でんしゃが おくれるんです。",
+          "でんしゃが おくれたんですか。",
+          "でんしゃが おくれたなんです。",
+          "でんしゃが おくれたんです。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2624",
+        "prompt": "Bạn muốn nhờ một người lạ chụp ảnh giúp.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "とります → とって; nhờ lịch sự: いただけませんか. いただきませんか là lời mời, không phải lời nhờ.",
+        "type": "choice",
+        "options": [
+          "すみません、しゃしんを とって いただきませんか。",
+          "すみません、しゃしんを とりて いただけませんか。",
+          "すみません、しゃしんを とって いただけませんか。",
+          "すみません、しゃしんを とって いただけるませんか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2625",
+        "prompt": "Bạn muốn hỏi “Quà thì tôi nên mua gì ạ?”.",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "かいます → かった → かったら; giữ đủ いいですか.",
+        "type": "choice",
+        "options": [
+          "おみやげは なにを かうたら いいですか。",
+          "おみやげは なにを かいたら いいですか。",
+          "おみやげは なにを かったら いいですか。",
+          "おみやげは なにを かったら ですか。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2626",
+        "prompt": "いつでも nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Từ để hỏi + でも: いつでも = bất cứ lúc nào. “Luôn luôn” là いつも.",
+        "type": "choice",
+        "options": ["lúc nào cũng, luôn luôn", "bất cứ lúc nào", "khi nào", "thỉnh thoảng"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2627",
+        "prompt": "こまった ことが あったら、（　　）でんわして ください。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Gọi bất cứ lúc nào: いつでも.",
+        "type": "choice",
+        "options": ["いつでも", "なんでも", "だれでも", "どこでも"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2628",
+        "prompt": "この みせは やさいも にくも パンも（　　）あります。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Có mọi thứ: なんでも あります.",
+        "type": "choice",
+        "options": ["いつでも", "だれでも", "どこでも", "なんでも"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2629",
+        "prompt": "Chọn câu đúng: “Bánh mì thì tôi ăn, nhưng cơm thì không.”",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Đối chiếu hai thứ: を đổi thành は (không giữ cả hai).",
+        "type": "choice",
+        "options": [
+          "パンが は たべますが、ごはんが は たべません。",
+          "パンを は たべますが、ごはんを は たべません。",
+          "パンに たべますが、ごはんに たべません。",
+          "パンは たべますが、ごはんは たべません。"
+        ],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2630",
+        "prompt": "Chọn câu đúng: “Tiếng Anh thì tôi hiểu, nhưng tiếng Pháp thì không.”",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "わかります đi với が; đối chiếu thì が đổi thành は.",
+        "type": "choice",
+        "options": [
+          "えいごを わかりますが、フランスごを わかりません。",
+          "えいごに わかりますが、フランスごに わかりません。",
+          "えいごは わかりますが、フランスごは わかりません。",
+          "えいごで わかりますが、フランスごで わかりません。"
+        ],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2631",
+        "prompt": "さがします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "さがします ({探|さが}します): tìm.",
+        "type": "choice",
+        "options": ["nhặt, lượm", "tìm, tìm kiếm", "chờ, đợi", "liên lạc"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2632",
+        "prompt": "まにあいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "じかんに まにあいます: kịp giờ.",
+        "type": "choice",
+        "options": ["kịp (giờ)", "muộn, trễ", "gặp nhau", "vừa vặn"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2633",
+        "prompt": "おくれます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "じかんに おくれます: trễ giờ.",
+        "type": "choice",
+        "options": ["muộn, trễ", "kịp (giờ)", "gửi đi", "quên"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2634",
+        "prompt": "ひろいます nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "ひろいます ({拾|ひろ}います): nhặt.",
+        "type": "choice",
+        "options": ["vứt đi", "đánh rơi", "tìm kiếm", "nhặt, lượm"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2635",
+        "prompt": "れんらくします nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "れんらくします ({連絡|れんらく}します): liên lạc.",
+        "type": "choice",
+        "options": ["luyện tập", "chuẩn bị", "liên lạc", "giải thích"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2636",
+        "prompt": "へいじつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "へいじつ ({平日|へいじつ}): ngày thường, không phải ngày nghỉ.",
+        "type": "choice",
+        "options": ["ngày nghỉ", "ngày thường (thứ Hai – thứ Sáu)", "cuối tuần", "mỗi ngày"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2637",
+        "prompt": "ちょくせつ nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "ちょくせつ ({直接|ちょくせつ}): trực tiếp, không qua người khác.",
+        "type": "choice",
+        "options": ["ngay lập tức", "trực tiếp", "một mình", "cùng nhau"],
+        "multiple": false,
+        "answer": [1]
+      },
+      {
+        "id": "q2638",
+        "prompt": "こんど nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "こんど ({今度|こんど}): lần tới. こんどの にちようび: chủ nhật tới.",
+        "type": "choice",
+        "options": ["lần tới", "lần trước", "lần đầu", "mỗi lần"],
+        "multiple": false,
+        "answer": [0]
+      },
+      {
+        "id": "q2639",
+        "prompt": "きぶんが わるい nghĩa là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "きぶんが わるい: trong người khó chịu.",
+        "type": "choice",
+        "options": ["tính tình xấu", "thời tiết xấu", "buồn ngủ", "thấy mệt, khó chịu trong người"],
+        "multiple": false,
+        "answer": [3]
+      },
+      {
+        "id": "q2640",
+        "prompt": "フリーマーケット là gì?",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "フリーマーケット: chợ bán đồ cũ.",
+        "type": "choice",
+        "options": ["siêu thị", "chợ đêm", "chợ đồ cũ", "cửa hàng miễn thuế"],
+        "multiple": false,
+        "answer": [2]
+      },
+      {
+        "id": "q2641",
+        "prompt": "Điền thể んです: およぎます → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Thể từ điển およぐ + んです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["およぐんです"]
+      },
+      {
+        "id": "q2642",
+        "prompt": "Điền thể んです (quá khứ): ねます → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Thể た ねた + んです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ねたんです"]
+      },
+      {
+        "id": "q2643",
+        "prompt": "Điền thể んです (phủ định): あります → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "あります là ngoại lệ: thể ない là ない → ないんです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ないんです"]
+      },
+      {
+        "id": "q2644",
+        "prompt": "Điền thể んです: さむい → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Tính từ い + んです.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さむいんです"]
+      },
+      {
+        "id": "q2645",
+        "prompt": "Điền thể んです: げんき (tính từ な) → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Tính từ な: だ đổi thành な.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["げんきなんです"]
+      },
+      {
+        "id": "q2646",
+        "prompt": "Điền thể んです: びょうき (danh từ) → （　　）",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "Danh từ: だ đổi thành な.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["びょうきなんです"]
+      },
+      {
+        "id": "q2647",
+        "prompt": "Điền thể て: けします → でんきを（　　）いただけませんか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "し → して: けして.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["けして"]
+      },
+      {
+        "id": "q2648",
+        "prompt": "Điền thể たら: すわります → どこに（　　）いいですか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "り → った: すわった → すわったら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["すわったら"]
+      },
+      {
+        "id": "q2649",
+        "prompt": "Điền thể たら: さがします → どこを（　　）いいですか。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "し → した: さがした → さがしたら.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["さがしたら"]
+      },
+      {
+        "id": "q2650",
+        "prompt": "Điền từ để hỏi (bất cứ đâu): この みずは にほんでは（　　）でも うって います。",
+        "points": 1,
+        "tags": ["minna-26"],
+        "explain": "どこでも: bất cứ đâu.",
+        "type": "fill",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["どこ"]
+      }
+    ]
+  }
+}

@@ -245,6 +245,30 @@ Thêm 9 bài mẫu khóa `n4-grammar` (bản đồ + 8 bài chủ đề, 111 m�
   - Ngân hàng N4 đã nạp lại bằng `bank:sql --lesson n4-viet-review-bank --commit`, thành phiên bản 9: 479 câu, 105 câu có thẻ mẫu. Lớp "Ôn JLPT N4 – Việt" vẫn lấy bài hằng ngày từ phiên bản mới nhất, 67 câu mỗi ngày.
   - Chưa làm: tạo 9 bài từ mẫu và thêm vào lớp đó. Link Ôn lại mẫu chỉ hiện khi các bài đã có trong lớp.
 
+## Bài mẫu Minna 26 — 19/11/2026
+
+Thêm `content/starters/minna-2-26.json` (khóa `minna-2`, Sơ cấp II), đăng ký sau bài 25. Trang Tạo bài mới ghi "Bài 1–26".
+- **PASS local:**
+  - `tests/japanese-lessons.test.ts` 48/48: xuất bản được ngay, đủ loại slide, vị trí đáp án 10/10/10/10, câu điền chỉ hiragana.
+  - `npm run check`.
+- **PASS Supabase local:** script Playwright tạm (không commit) xuất bản bài bằng `publish_lesson` cho giáo viên thử, rồi đi qua 38 slide ở khung 1280×720 với mọi fragment hiện:
+  - không slide nào tràn hay phải thu nhỏ;
+  - không ô bảng, câu hội thoại, dòng mẫu câu hay thẻ từ nào xuống dòng (bỏ qua furigana);
+  - câu ví dụ không để mẩu ≤ 4 ký tự ở dòng cuối;
+  - chữ Nhật hiển thị bằng Noto Sans JP;
+  - trang đọc bài không cuộn ngang ở 360 và 1280 px;
+  - không lỗi console.
+- Trang Tạo bài mới có thẻ bài 26 ("Sơ cấp II · 40 từ vựng · 6 mẫu câu · 38 slide · 50 câu luyện"). Bấm **Tạo bài 26 từ mẫu** mở bản nháp trong trình soạn.
+- **Lỗi đã sửa nhờ đo và xem ảnh:**
+  - Bảng luyện nhờ lịch sự xuống dòng.
+  - Hai mẫu câu dài ngắt dòng; rút gọn, phần giải thích chuyển sang dòng nghĩa.
+  - Một câu ví dụ để mẩu 3 ký tự ở dòng cuối.
+  - Bốn slide quiz có phương án dài bị bẻ 2–4 dòng: phần chung đưa lên đề, phương án còn một dòng.
+- **Chưa làm:**
+  - Production: giáo viên tạo bài bằng nút sau khi bản này deploy.
+  - Đối chiếu 40 từ với sách bản 2: không có danh sách bản 2 công khai đáng tin.
+  - E2E đầy đủ chưa chạy lại.
+
 ## Bài mẫu Minna 18–25 — 16/11/2026
 
 Thêm `content/starters/minna-1-18.json` … `minna-1-25.json` và đăng ký theo thứ tự bài. Số từ, mẫu câu và slide ở [hướng dẫn nội dung](../content-authoring.md). Mỗi bài có 50 câu luyện: 40 câu chọn chia đều 10/10/10/10 vị trí đáp án và 10 câu điền hiragana.

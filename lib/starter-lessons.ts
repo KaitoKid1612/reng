@@ -23,6 +23,7 @@ import minnaLesson22 from "@/content/starters/minna-1-22.json";
 import minnaLesson23 from "@/content/starters/minna-1-23.json";
 import minnaLesson24 from "@/content/starters/minna-1-24.json";
 import minnaLesson25 from "@/content/starters/minna-1-25.json";
+import minnaLesson26 from "@/content/starters/minna-2-26.json";
 import n4GrammarMap from "@/content/starters/n4-grammar-map.json";
 import n4Grammar1 from "@/content/starters/n4-grammar-1.json";
 import n4Grammar2 from "@/content/starters/n4-grammar-2.json";
@@ -204,6 +205,12 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     draft: lessonDraftSchema.parse(minnaLesson25),
   },
   {
+    id: "minna-2-26",
+    course: "Minna no Nihongo Sơ cấp II",
+    buttonLabel: "Tạo bài 26 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson26),
+  },
+  {
     id: "n4-grammar-map",
     course: "Tổng ôn ngữ pháp N4",
     buttonLabel: "Tạo bản đồ ngữ pháp N4",
@@ -301,9 +308,9 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
   },
 ];
 
-// The new-lesson page lists each course in its own section.
-export const MINNA_STARTERS = STARTER_LESSONS.filter(
-  (starter) => starter.draft.courseId === "minna-1",
+// The new-lesson page lists each course in its own section; Minna Sơ cấp I and II run as one list.
+export const MINNA_STARTERS = STARTER_LESSONS.filter((starter) =>
+  ["minna-1", "minna-2"].includes(starter.draft.courseId),
 );
 export const N4_REVIEW_STARTERS = STARTER_LESSONS.filter(
   (starter) => starter.draft.courseId === "n4-grammar",
