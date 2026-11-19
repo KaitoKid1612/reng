@@ -6,6 +6,8 @@
 }
 .exam-class h2 {
   margin: 0 0 12px;
+  /* "Mở đề này" lands here; keep a little air above the heading. */
+  scroll-margin-top: 24px;
 }
 .exam-class h3 {
   margin: 24px 0 8px;
@@ -13,6 +15,7 @@
 }
 .exam-class-note {
   color: var(--muted);
+  white-space: nowrap;
   font-size: 16px;
   font-weight: 400;
 }
@@ -37,12 +40,46 @@
   margin: 0;
   font-weight: 600;
 }
+/* Kind, minutes and start deadline are short: they never break, the title and outcome wrap. */
+.exam-meta,
+.exam-table thead th {
+  white-space: nowrap;
+}
+.exam-due-label {
+  display: none;
+}
+.exam-date {
+  white-space: nowrap;
+}
 /* A long outcome ("Chưa ước tính được …") wraps; the link or button beside it stays whole. */
 .exam-result {
   min-width: 180px;
 }
-.exam-result .exam-status {
-  margin-right: 12px;
+/* Score first, the outcome and its reasons smaller below, "Xem kết quả" to the right. */
+.exam-outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+.exam-outcome p {
+  flex: 1 1 200px;
+  margin: 0;
+}
+.exam-score {
+  display: block;
+  font-weight: 700;
+}
+.exam-outcome .exam-status {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+/* The exam just opened from the library. */
+.exam-row-new > * {
+  background: var(--primary-soft);
 }
 .exam-action,
 .exam-result .button {
@@ -66,6 +103,22 @@
 .exam-library-row p {
   margin: 0;
 }
+/* On a desktop every class's table shares the same columns, so a long page scans straight down. */
+@media (min-width: 1100px) {
+  .exam-table {
+    table-layout: fixed;
+  }
+  .exam-table thead th:nth-child(2),
+  .exam-table thead th:nth-child(4) {
+    width: 170px;
+  }
+  .exam-table thead th:nth-child(3) {
+    width: 110px;
+  }
+  .exam-table thead th:nth-child(5) {
+    width: 36%;
+  }
+}
 /* On a phone each exam becomes a block: title, then its details and the action. */
 @media (max-width: 720px) {
   .exam-table thead {
@@ -85,7 +138,27 @@
     padding: 2px 0;
     border: 0;
   }
+  /* Kind · minutes · deadline on one line under the title. */
+  .exam-table .exam-meta {
+    display: inline;
+    color: var(--muted);
+    font-size: 14px;
+    white-space: normal;
+  }
+  .exam-table .exam-meta + .exam-meta::before {
+    content: " · ";
+  }
+  .exam-due-label {
+    display: inline;
+  }
   .exam-result {
     padding-top: 8px;
+  }
+  .exam-row-new {
+    padding-inline: 8px;
+    background: var(--primary-soft);
+  }
+  .exam-row-new > * {
+    background: none;
   }
 }

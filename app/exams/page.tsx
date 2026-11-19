@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { openLibraryExamAction } from "@/app/actions/exams";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { OpenExamForm } from "@/components/exams/open-exam-form";
+import { buttonVariants } from "@/components/ui/button";
 import { examTitleFor } from "@/lib/exam-library";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
 import { requireAccount } from "@/lib/server/account";
@@ -43,20 +43,21 @@ function ExamStatusCell({ exam, classId }: { exam: ExamRow; classId: string }) {
     );
   }
   if (status.kind === "submitted") {
-    const estimate = status.result?.estimate ?? null;
+    if (!status.result) {
+      return <span className="exam-status">Đã nộp, chờ công bố điểm</span>;
+    }
+    const estimate = status.result.estimate;
+    // The score leads; the outcome and its reasons follow in smaller text, the link stays whole.
     return (
-      <>
-        <span className="exam-status">
-          {status.result
-            ? `${estimate ? `${estimate.total}/180, ` : ""}${describeJlptOutcome(estimate)}`
-            : "Đã nộp, chờ công bố điểm"}
-        </span>
-        {status.result && (
-          <Link href={`/assignments/${exam.assignmentId}/results`} className="exam-action">
-            Xem kết quả
-          </Link>
-        )}
-      </>
+      <div className="exam-outcome">
+        <p>
+          {estimate && <strong className="exam-score">{estimate.total}/180</strong>}
+          <span className="exam-status">{describeJlptOutcome(estimate)}</span>
+        </p>
+        <Link href={`/assignments/${exam.assignmentId}/results`} className="exam-action">
+          Xem kết quả
+        </Link>
+      </div>
     );
   }
   if (status.kind === "closed") {
@@ -79,7 +80,7 @@ function LibraryRow({ entry, classId }: { entry: LibraryEntry; classId: string }
   if (source.kind === "official") {
     detail = opened ? "Đã mở cho lớp." : "Đủ mọi câu theo sách, chưa mở.";
   } else if (source.remainingExams > 0) {
-    detail = `Đã mở ${opened} đề. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
+    detail = `${opened ? `Đã mở ${opened} đề` : "Chưa mở đề nào"}. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
   } else {
     detail = `Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
   }
@@ -93,15 +94,7 @@ function LibraryRow({ entry, classId }: { entry: LibraryEntry; classId: string }
           {detail}
         </p>
       </div>
-      {!(isOfficial && opened) && (
-        <form action={openLibraryExamAction}>
-          <input type="hidden" name="classId" value={classId} />
-          <input type="hidden" name="lessonId" value={source.lessonId} />
-          <Button type="submit" variant="outline">
-            Mở đề này
-          </Button>
-        </form>
-      )}
+      {!(isOfficial && opened) && <OpenExamForm classId={classId} lessonId={source.lessonId} />}
     </li>
   );
 }
@@ -110,6 +103,16 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
   const account = await requireAccount("/exams");
   const { opened, error } = await searchParams;
   const classes = await loadExamCenter(account.id, account.role === "teacher", new Date());
+  // The "opened" notice sits in the class that received the exam, where the page scrolls to;
+  // at the top of a long page it would be out of sight.
+  const openedClassId = opened
+    ? classes.find((item) => item.exams.some((exam) => exam.assignmentId === opened))?.classId
+    : undefined;
+  const openedNotice = (
+    <p className="notice-panel" role="status">
+      Đã mở đề mới. Bấm Làm đề khi sẵn sàng: đồng hồ chỉ chạy từ lúc bấm Bắt đầu thi.
+    </p>
+  );
   return (
     <>
       <div className="page-heading">
@@ -121,11 +124,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
           </p>
         </div>
       </div>
-      {opened && (
-        <p className="notice-panel" role="status">
-          Đã mở đề mới. Bấm Làm đề khi sẵn sàng: đồng hồ chỉ chạy từ lúc bấm Bắt đầu thi.
-        </p>
-      )}
+      {opened && !openedClassId && openedNotice}
       {error && (
         <p className="notice-panel" role="alert">
           {ERRORS[error] ?? ERRORS.failed}
@@ -145,9 +144,20 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
         >
           <h2 id={`exams-${item.classId}`}>
             {item.className}
-            {item.isSelfStudy && <span className="exam-class-note"> (lớp tự học)</span>}
-            {!item.isLearner && <span className="exam-class-note"> (lớp bạn dạy)</span>}
+            {item.isSelfStudy && (
+              <>
+                {" "}
+                <span className="exam-class-note">(lớp tự học)</span>
+              </>
+            )}
+            {!item.isLearner && (
+              <>
+                {" "}
+                <span className="exam-class-note">(lớp bạn dạy)</span>
+              </>
+            )}
           </h2>
+          {item.classId === openedClassId && openedNotice}
           {item.exams.length > 0 ? (
             <table className="exam-table">
               <caption className="visually-hidden">Đề đã mở của lớp {item.className}</caption>
@@ -162,15 +172,29 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
               </thead>
               <tbody>
                 {item.exams.map((exam) => (
-                  <tr key={exam.assignmentId} id={`exam-${exam.assignmentId}`}>
+                  <tr
+                    key={exam.assignmentId}
+                    id={`exam-${exam.assignmentId}`}
+                    className={exam.assignmentId === opened ? "exam-row-new" : undefined}
+                  >
                     <th scope="row" className="exam-title">
                       {exam.title}
                     </th>
-                    <td>
+                    <td className="exam-meta">
                       {SOURCE_LABELS[exam.source]} {exam.level}
                     </td>
-                    <td>{exam.minutes} phút</td>
-                    <td>{exam.dueAt ? formatStudyDateTime(exam.dueAt) : "Không hạn"}</td>
+                    <td className="exam-meta">{exam.minutes} phút</td>
+                    <td className="exam-meta">
+                      {exam.dueAt ? (
+                        <>
+                          {/* The phone layout drops the header row, so the date names itself. */}
+                          <span className="exam-due-label">Hạn bắt đầu </span>
+                          <span className="exam-date">{formatStudyDateTime(exam.dueAt)}</span>
+                        </>
+                      ) : (
+                        "Không hạn"
+                      )}
+                    </td>
                     <td className="exam-result">
                       <ExamStatusCell exam={exam} classId={item.classId} />
                     </td>

@@ -16,8 +16,15 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
 - Lớp mình làm chủ (lớp tự học hoặc lớp dạy) có thêm **Thư viện đề của lớp**, gồm các bài lớp ghim mà ghép được trọn đề:
   - **Đề chính thức** (sách 2012, 2018 trên jlpt.jp): một đề, nút **Mở đề này**; đã mở thì ghi "Đã mở cho lớp".
   - **Ngân hàng viết theo dạng đề** (mọi câu có nhãn dạng như `kanji-reading`, câu nghe có `jlpt:n5`/`jlpt:n4` và `section:n`): tên đề kế tiếp "Đề Reng N5 số k", số đề còn ghép được mà không trùng câu với các đề trước của lớp, nút **Mở đề này**. Hết câu mới vẫn mở được; đề mới lặp câu ra ít nhất.
-- Mở đề: đúng cấp của nguồn, số phút theo cấp (N5 90, N4 115), công bố điểm ngay sau khi nộp. Hạn bắt đầu 23:59 sau 30 ngày (lớp tự học) hoặc 7 ngày (lớp dạy). Dùng lại `publishJlptExam`. Xong thì quay về trang với thông báo, hoặc thông báo lỗi.
+- Mở đề: đúng cấp của nguồn, số phút theo cấp (N5 90, N4 115), công bố điểm ngay sau khi nộp. Hạn bắt đầu 23:59 sau 30 ngày (lớp tự học) hoặc 7 ngày (lớp dạy). Dùng lại `publishJlptExam`. Xong thì trang cuộn tới đúng lớp đó: thông báo "Đã mở đề mới" ngay dưới tên lớp và dòng đề mới tô nền. Lỗi thì thông báo ở đầu trang.
+- Bấm **Mở đề này** một lần chỉ mở một đề: trong lúc chờ nút ghi "Đang mở…" và bị khoá, bấm đúp không mở thêm đề.
 - Lớp tự học: chủ lớp là học viên duy nhất, nên mở đề xong làm luôn được. Lớp dạy: chủ lớp mở, học viên thấy đề ở trang Luyện đề của mình.
+
+## Bố cục (kiểm tra UI 19/11/2026)
+
+- Máy tính (từ 1100 px): bảng của mọi lớp chung độ rộng cột, nên trang dài vẫn dò thẳng một cột. Loại, số phút, hạn bắt đầu không xuống dòng.
+- Cột kết quả: điểm /180 in đậm, kết luận và lý do chữ nhỏ bên dưới, **Xem kết quả** bên phải.
+- Điện thoại: mỗi đề một khối, gồm tên đề, một dòng "Loại · số phút · Hạn bắt đầu …", rồi kết quả.
 
 ## Đề Reng đúng cấu trúc đề thật
 

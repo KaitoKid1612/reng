@@ -65,16 +65,19 @@ test("a self-study learner opens Reng's N5 exams from the library and starts one
   const library = section.locator(".exam-library-row");
   await expect(library).toContainText("Đề Reng N5 số 1");
   await expect(library).toContainText("còn đủ 3 đề không trùng câu");
-  await library.getByRole("button", { name: "Mở đề này" }).click();
+  // A double click opens one exam, not two: the library below still counts 2 left.
+  await library.getByRole("button", { name: "Mở đề này" }).dblclick();
   await page.waitForURL(/\/exams\?(opened|error)=/, { timeout: 60_000 });
   expect(new URL(page.url()).searchParams.get("error")).toBeNull();
-  await expect(page.getByText("Đã mở đề mới.")).toBeVisible();
+  // The notice sits in the class the page lands on, not at the top of a long page.
+  await expect(section.getByText("Đã mở đề mới.")).toBeInViewport();
 
   const row = section.getByRole("row", { name: /Đề Reng N5 số 1/ });
   await expect(row).toContainText("Đề Reng N5");
   await expect(row).toContainText("90 phút");
   await expect(library).toContainText("Đề Reng N5 số 2");
   await expect(library).toContainText("còn đủ 2 đề không trùng câu");
+  await expect(section.locator("tbody tr")).toHaveCount(1);
 
   await row.getByRole("link", { name: "Làm đề" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đề Reng N5 số 1");

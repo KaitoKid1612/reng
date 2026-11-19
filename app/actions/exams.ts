@@ -30,5 +30,6 @@ export async function openLibraryExamAction(formData: FormData) {
       error instanceof ServiceError && KNOWN_ERRORS.has(error.code) ? error.code : "failed";
     redirect(`/exams?error=${code}`);
   }
-  redirect(`/exams?opened=${assignmentId}#exam-${assignmentId}`);
+  // Land on the class heading: its notice and the new, highlighted row sit right below it.
+  redirect(`/exams?opened=${assignmentId}#exams-${classId}`);
 }

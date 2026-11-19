@@ -55,3 +55,26 @@ Trang Luyện đề của giáo viên local (35 lớp, 51 đề, 5 nguồn đề
 - axe 0 lỗi, không lỗi console.
 - Lúc đầu cột kết quả không xuống dòng làm bảng tràn ở 1280 px. Nay chữ trạng thái xuống dòng, nút và link giữ một dòng; cả 4 khổ không tràn.
 - Trên điện thoại mỗi đề thành một khối.
+
+## Kiểm tra UI/UX lần hai (chiều 19/11/2026)
+
+Giáo viên local (39 lớp, 56 đề) và học viên demo, ở 1024, 1280, 1440, 1920 và 390 px, sáng và tối, bấm thật trên dev server. Kết quả trước khi sửa:
+- **Bấm đúp "Mở đề này" mở 2 đề** (bảng từ 1 lên 3 dòng), tốn câu chưa ra của ngân hàng.
+- Sau khi mở đề, trang cuộn tới dòng đề mới nhưng thông báo "Đã mở đề mới" nằm ở đầu trang, cách khoảng 1.500 px nên không thấy. Dòng mới không được đánh dấu, tên lớp bị cuộn khuất.
+- Ở bảng có kết quả dài, các cột "Đề thi thử N4", "115 phút", "23:59 17/11/2026" và tiêu đề "Thời gian" bị bẻ hai dòng. Mỗi lớp lại có độ rộng cột khác nhau.
+- Trên điện thoại, ngày giờ đứng một dòng riêng không có nhãn. "(lớp tự học)" bị bẻ giữa chữ.
+- Thư viện ghi "Đã mở 0 đề".
+
+Đã sửa:
+- Form mở đề chặn lần gửi thứ hai và nút ghi "Đang mở…". Bấm đúp nay mở 1 đề (thử 2 lần). Mở liên tiếp hai đề không tải lại trang vẫn được.
+- Thông báo nằm dưới tên lớp vừa mở đề, trang cuộn tới tên lớp, dòng đề mới tô nền `--primary-soft`.
+- Bảng cố định cột từ 1100 px: 277/170/110/170/409 px ở mọi lớp. Không ô nào tràn ở 1024–1920.
+- Kết quả: điểm in đậm, lý do nhỏ bên dưới.
+- Trên điện thoại có dòng "Loại · số phút · Hạn bắt đầu …", ngày giờ không bị bẻ.
+- Thư viện ghi "Chưa mở đề nào".
+
+Sau khi sửa:
+- axe 0 lỗi, không lỗi console, không tràn ngang ở cả 5 khổ.
+- Tab đi qua menu tới **Làm đề** và **Mở đề này**, có viền focus.
+- `npm run check`: 456/456.
+- `e2e-supabase/exam-center.spec.ts` nay bấm đúp nút mở đề, kiểm tra bảng chỉ có 1 đề và thông báo nằm trong khung nhìn. Spec này và `jlpt-mock-exam.spec.ts` đều qua.
