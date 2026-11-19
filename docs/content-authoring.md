@@ -147,6 +147,16 @@ Dữ liệu trang `/jlpt-vocab/n4` nằm trong `content/vocab/n4.json`. Sửa fi
 - `hanViet` chỉ ghi cho từ gốc Hán, chữ thường (kinh nghiệm). Không chắc thì bỏ trống.
 - Thêm hoặc bớt từ đề mẫu phải sửa cả `N4_PAPER_WORDS` trong `lib/jlpt-vocab.ts`.
 
+## Đề Reng N5 theo cấu trúc đề — 19/11/2026
+
+`content/review-banks/n5-jlpt-mock.json` (mã bài `n5-jlpt-mock-bank`, 201 câu) là ngân hàng viết theo dạng đề N5, đủ ghép 3 đề 67 câu không trùng câu ở trang Luyện đề.
+- Câu chữ có nhãn `n5` và nhãn dạng.
+- Câu nghe lấy từ `listening/n5-viet-listening-mock-40.json` và `n5-viet-listening-mock-41-72.json`. Bộ 41–72 có audio từ 19/11/2026, đăng ký trong `lib/bundled-listening.ts`.
+
+Nạp lên production và đưa vào lớp: `npm run bank:sql -- --file content/review-banks/n5-jlpt-mock.json --language ja-JP --class <mã lớp> --out n5-mock.sql`. Đọc lại, thêm `--commit` rồi chạy SQL. Bài được tạo cho giáo viên của lớp và thêm vào lớp; sau đó mở đề ở trang Luyện đề.
+
+Kiểm tra: `npm run audit:jlpt-bank -- content/review-banks/n5-jlpt-mock.json`, `tests/n5-jlpt-mock-bank.test.ts`.
+
 ## Kiểm tra và xuất bản local
 
 ```bash

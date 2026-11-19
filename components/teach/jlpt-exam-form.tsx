@@ -13,6 +13,7 @@ import {
   JLPT_SECTIONS,
   MAX_EXAM_MINUTES,
   MIN_EXAM_MINUTES,
+  jlptTestSectionCounts,
   planJlptExam,
 } from "@/lib/jlpt";
 
@@ -25,6 +26,8 @@ export interface JlptExamLessonOption {
   sections: Record<JlptSection, number>;
   // An official test (JLPT workbook) is given whole, at the level it was written for.
   officialLevel: JlptLevel | null;
+  // Levels at which the bank fills the real test part by part (85 questions for N4).
+  fullTestLevels: JlptLevel[];
 }
 
 interface JlptExamFormProps {
@@ -65,7 +68,13 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
   const isOfficial = Boolean(lesson?.officialLevel);
   let planned: Record<JlptSection, number> | null = null;
   if (lesson) {
-    planned = isOfficial ? lesson.sections : planJlptExam(level, lesson.sections);
+    if (isOfficial) {
+      planned = lesson.sections;
+    } else if (lesson.fullTestLevels.includes(level)) {
+      planned = jlptTestSectionCounts(level);
+    } else {
+      planned = planJlptExam(level, lesson.sections);
+    }
   }
   const plannedTotal = planned
     ? JLPT_SECTIONS.reduce((total, section) => total + planned[section], 0)

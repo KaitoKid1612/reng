@@ -55,6 +55,8 @@ function listAccountLinks(account: AccountSummary): NavigationLink[] {
     label: account.role === "teacher" ? "Lớp đang học" : "Lớp của tôi",
     isSection: true,
   });
+  // Every mock exam of the learner's classes, and the exam library of classes they own.
+  links.push({ href: "/exams", label: "Luyện đề", isSection: true });
   return links;
 }
 

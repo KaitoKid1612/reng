@@ -23,7 +23,12 @@ import {
   planJlptExam,
   planStudyPacing,
 } from "@/lib/jlpt";
-import { jlptFullDailySize, jlptSectionQuestionCount } from "@/lib/jlpt-parts";
+import {
+  jlptFullDailySize,
+  jlptPartOf,
+  jlptSectionQuestionCount,
+  jlptTestParts,
+} from "@/lib/jlpt-parts";
 
 import type { JlptExamCandidate, JlptSectionScore } from "@/lib/jlpt";
 
@@ -116,7 +121,8 @@ for (const [file, level] of [
     const exam = composeJlptExam(bank, [], level, `class:${level}:parts`);
     const sectionOf = new Map(bank.map((question) => [question.id, jlptSectionOf(question)]));
     const listening = exam.questionIds.filter((id) => sectionOf.get(id) === "listening");
-    assert.equal(listening.length, 20);
+    // The N4 bank is written in the test's parts, so its exam takes the real test's 28 clips.
+    assert.equal(listening.length, level === "N4" ? 28 : 20);
     const formatTag = `jlpt:${level.toLowerCase()}`;
     assert.ok(
       listening.every((id) => tagsOf.get(id)?.includes(formatTag)),
@@ -186,7 +192,7 @@ test("an exam takes any listening question when the test's format cannot fill th
 test("an N4 exam keeps a reading passage's questions together", async () => {
   const bank = await loadBank("n4-daily-with-listening.json");
   const exam = composeJlptExam(bank, [], "N4", "class:n4");
-  assert.equal(exam.questionIds.length, 70);
+  assert.equal(exam.questionIds.length, 85);
   const passageOf = new Map(bank.map((question) => [question.id, question.passage]));
   const positions = new Map<string, number[]>();
   exam.questionIds.forEach((id, index) => {
@@ -424,4 +430,29 @@ test("the time an attempt took reads in minutes and hours, within one sitting", 
   // Left open overnight, or a clock that went backwards: no figure at all.
   assert.equal(describeAttemptTime(start, "2026-11-18T08:00:00.000Z"), null);
   assert.equal(describeAttemptTime(start, "2026-11-17T11:00:00.000Z"), null);
+});
+
+test("a bank written in the test's parts gives the real test's size and part order", async () => {
+  const bank = await loadBank("n4-daily-with-listening.json");
+  const first = composeJlptExam(bank, [], "N4", "class:parts");
+  assert.deepEqual(first.counts, { vocabulary: 28, grammarReading: 29, listening: 28 });
+  const partOf = new Map(bank.map((question) => [question.id, jlptPartOf(question)?.tag]));
+  const order = jlptTestParts("N4").map(({ part }) => part.tag);
+  const sequence = first.questionIds.map((id) => order.indexOf(partOf.get(id) ?? ""));
+  assert.deepEqual(
+    sequence,
+    sequence.toSorted((a, b) => a - b),
+    "parts in test order",
+  );
+  for (const { part, count } of jlptTestParts("N4")) {
+    assert.equal(sequence.filter((index) => order[index] === part.tag).length, count, part.tag);
+  }
+  // A second exam of the class takes questions the first one did not.
+  const uses = first.questionIds.map((questionId) => ({ questionId, practiceDate: "2026-11-19" }));
+  const second = composeJlptExam(bank, uses, "N4", "class:parts:2");
+  const shared = second.questionIds.filter((id) => first.questionIds.includes(id));
+  assert.equal(shared.length, 0);
+  // A bank short of one part falls back to the section shares.
+  const short = bank.filter((question) => !question.tags.includes("info-search"));
+  assert.equal(composeJlptExam(short, [], "N4", "class:short").questionIds.length, 70);
 });

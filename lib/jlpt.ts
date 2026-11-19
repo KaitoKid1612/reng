@@ -1,6 +1,6 @@
 import { AUTO_SUBMIT_LEAD_MS } from "@/lib/assignment";
 import { selectBalancedDailyQuestions } from "@/lib/daily-practice";
-import { jlptPartOf, jlptSectionQuestionCount } from "@/lib/jlpt-parts";
+import { jlptPartOf, jlptSectionQuestionCount, jlptTestParts } from "@/lib/jlpt-parts";
 import { formatStudyDay, toStudyDay } from "@/lib/study-days";
 
 import type { DailyQuestionUse } from "@/lib/daily-practice";
@@ -194,6 +194,75 @@ function listeningPartOf(tags: readonly string[]) {
  * the bank has a full section of them, and plays them in the test's part order. An official test
  * is taken whole, in its booklet's order: no quotas and no rotation.
  */
+/** The candidates of each part of the level's test; listening counts only clips of that level. */
+function groupByTestParts(candidates: readonly JlptExamCandidate[], level: JlptLevel) {
+  const formatTag = `jlpt:${level.toLowerCase()}`;
+  const parts = jlptTestParts(level);
+  const byPart = new Map<string, JlptExamCandidate[]>(parts.map(({ part }) => [part.tag, []]));
+  const seen = new Set<string>();
+  for (const candidate of candidates) {
+    const part = jlptPartOf(candidate);
+    const isLevelListening =
+      part?.section !== "listening" ||
+      candidate.tags.some((tag) => tag.trim().toLowerCase() === formatTag);
+    if (part && isLevelListening && !seen.has(candidate.id)) {
+      seen.add(candidate.id);
+      byPart.get(part.tag)?.push(candidate);
+    }
+  }
+  return { parts, byPart };
+}
+
+/**
+ * Whether a bank is written in the test's parts with enough questions for every part, so its
+ * exam takes the real test's size and order (N4 85 questions, N5 67).
+ */
+export function fillsJlptTest(candidates: readonly JlptExamCandidate[], level: JlptLevel) {
+  const { parts, byPart } = groupByTestParts(candidates, level);
+  return parts.every(({ part, count }) => (byPart.get(part.tag)?.length ?? 0) >= count);
+}
+
+/** The real test's questions per section (N4 28, 29, 28), for a bank that fills the test. */
+export function jlptTestSectionCounts(level: JlptLevel): Record<JlptSection, number> {
+  const counts = emptySectionCounts();
+  for (const { part, count } of jlptTestParts(level)) {
+    counts[part.section] += count;
+  }
+  return counts;
+}
+
+/** An exam of the real test's size and part order, or null when a part is short of questions. */
+function composeByParts(
+  candidates: readonly JlptExamCandidate[],
+  recentUses: readonly DailyQuestionUse[],
+  level: JlptLevel,
+  seed: string,
+  passageOf: ReadonlyMap<string, string>,
+) {
+  if (!fillsJlptTest(candidates, level)) {
+    return null;
+  }
+  const { parts, byPart } = groupByTestParts(candidates, level);
+  const questionIds: string[] = [];
+  const counts = emptySectionCounts();
+  for (const { part, count } of parts) {
+    const picked = selectBalancedDailyQuestions(
+      (byPart.get(part.tag) ?? []).map((question) => ({
+        id: question.id,
+        type: question.type,
+        tags: question.tags,
+        group: question.passage ?? undefined,
+      })),
+      recentUses,
+      count,
+      `${seed}:${part.tag}`,
+    );
+    questionIds.push(...keepPassagesTogether(picked, passageOf));
+    counts[part.section] += picked.length;
+  }
+  return { questionIds, counts };
+}
+
 export function composeJlptExam(
   candidates: readonly JlptExamCandidate[],
   recentUses: readonly DailyQuestionUse[],
@@ -211,6 +280,16 @@ export function composeJlptExam(
       }
     }
     return { questionIds, counts };
+  }
+  const passages = new Map<string, string>();
+  for (const candidate of candidates) {
+    if (candidate.passage) {
+      passages.set(candidate.id, candidate.passage);
+    }
+  }
+  const byParts = composeByParts(candidates, recentUses, level, seed, passages);
+  if (byParts) {
+    return byParts;
   }
   const bySection: Record<JlptSection, JlptExamCandidate[]> = {
     vocabulary: [],
@@ -237,12 +316,6 @@ export function composeJlptExam(
     grammarReading: bySection.grammarReading.length,
     listening: bySection.listening.length,
   });
-  const passageOf = new Map<string, string>();
-  for (const candidate of candidates) {
-    if (candidate.passage) {
-      passageOf.set(candidate.id, candidate.passage);
-    }
-  }
   const questionIds: string[] = [];
   const counts = emptySectionCounts();
   for (const section of JLPT_SECTIONS) {
@@ -264,7 +337,7 @@ export function composeJlptExam(
       // A stable sort keeps the selector's order within a part.
       picked.sort((a, b) => (partOf.get(a) ?? 5) - (partOf.get(b) ?? 5));
     }
-    questionIds.push(...keepPassagesTogether(picked, passageOf));
+    questionIds.push(...keepPassagesTogether(picked, passages));
     counts[section] = picked.length;
   }
   return { questionIds, counts };

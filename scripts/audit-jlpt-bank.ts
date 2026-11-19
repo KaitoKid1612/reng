@@ -7,7 +7,7 @@
 //   npm run audit:jlpt-bank -- content/review-banks/n4-daily-with-listening.json
 import { readFileSync, existsSync } from "node:fs";
 
-import { jlptPartOf, planJlptDailyParts } from "@/lib/jlpt-parts";
+import { jlptFullDailySize, jlptPartOf, planJlptDailyParts } from "@/lib/jlpt-parts";
 import { hasBrokenFurigana } from "@/lib/japanese-text";
 import n5 from "@/content/kanji/n5.json";
 import n4 from "@/content/kanji/n4.json";
@@ -32,8 +32,31 @@ interface BankQuestion {
   transcript?: string;
 }
 const questions: BankQuestion[] = (raw.content ?? raw).questions;
+// In range: Reng's N5/N4 kanji and every kanji the official N5/N4 papers print without furigana
+// (便利, 泳ぐ), leaving out the look-alike wrong options of their 表記 part.
 const KNOWN = new Set([...n5.items, ...n4.items].map((i) => i.kanji));
+for (const paper of ["n5-2012", "n5-2018", "n4-2012", "n4-2018"]) {
+  const official = JSON.parse(readFileSync(`content/jlpt/official/${paper}.json`, "utf8"));
+  for (const question of official.content.questions as BankQuestion[]) {
+    const tags = question.tags ?? [];
+    if (question.type === "listen" || (tags.includes("文字・語彙") && tags.includes("mondai:2"))) {
+      continue;
+    }
+    for (const text of [
+      question.prompt ?? "",
+      ...(question.options ?? []),
+      question.passage ?? "",
+    ]) {
+      for (const kanji of text.replace(/\{([^|{}]+)\|[^{}]+\}/gu, "").match(/\p{Script=Han}/gu) ??
+        []) {
+        KNOWN.add(kanji);
+      }
+    }
+  }
+}
 const HAN = /\p{Script=Han}/gu;
+// Any Vietnamese letter with a mark; Japanese and English have none of them.
+const VIETNAMESE = /[àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]/iu;
 const issues: Record<string, string[]> = {};
 const add = (kind: string, msg: string) => (issues[kind] ??= []).push(msg);
 const stripFurigana = (s: string) => s.replace(/\{([^|{}]+)\|[^{}]+\}/gu, "");
@@ -94,7 +117,7 @@ for (const q of questions) {
     continue;
   }
   partCounts.set(part.tag, (partCounts.get(part.tag) ?? 0) + 1);
-  if (!q.explain || !/[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỷỹý]/iu.test(q.explain)) {
+  if (!q.explain || !VIETNAMESE.test(q.explain)) {
     add("explain-missing-or-not-vi", where);
   }
   const texts = [q.prompt ?? "", ...(q.options ?? []), q.passage ?? "", q.explain ?? ""];
@@ -141,7 +164,15 @@ for (const q of questions) {
         `${where} (${part.tag}) "${(q.instruction ?? "").slice(0, 8)}" want ${want}`,
       );
     }
-    for (const t of [q.prompt ?? "", ...opts, q.passage ?? ""]) {
+    // The options of 表記 are the word being asked about and look-alike kanji (電車 / 雷車), as in
+    // the real test, so they are not counted.
+    const shown = part.tag === "orthography" ? [] : opts;
+    // The underlined word of 漢字読み is the kanji being asked about.
+    const prompt =
+      part.tag === "kanji-reading"
+        ? (q.prompt ?? "").replace(/\[\[.+?\]\]/gu, "")
+        : (q.prompt ?? "");
+    for (const t of [prompt, ...shown, q.passage ?? ""]) {
       for (const k of stripFurigana(t).match(HAN) ?? []) {
         if (!KNOWN.has(k)) {
           offKanji.set(k, (offKanji.get(k) ?? 0) + 1);
@@ -164,7 +195,11 @@ for (const q of questions) {
       if (marked.length !== 1 || !isKana(marked[0] ?? "")) {
         add("orthography-shape", `${where}: ${q.prompt}`);
       }
-      if (!opts.some((o) => /\p{Script=Han}/u.test(o))) {
+      // A katakana word asks for its katakana spelling (テレビ / テルビ).
+      if (
+        !opts.some((o) => /\p{Script=Han}/u.test(o)) &&
+        !opts.every((o) => /^[ァ-ヶー]+$/u.test(o))
+      ) {
         add("orthography-options-no-kanji", `${where}: ${opts.join("/")}`);
       }
       break;
@@ -226,8 +261,16 @@ for (const q of questions) {
 }
 
 console.log(`== ${file}: ${questions.length} questions`);
-const plan = planJlptDailyParts("N4", 67, 10);
-console.log("part | in bank | per 67-set | sets before a repeat");
+// The level from the questions' tags (n5 or n4); N4 unless most questions say n5.
+const n5Tagged = questions.filter((question) =>
+  (question.tags ?? []).some((tag) => /^(jlpt:)?n5$/u.test(tag)),
+).length;
+const level = n5Tagged > questions.length / 2 ? "N5" : "N4";
+const setSize = jlptFullDailySize(level);
+const plan = planJlptDailyParts(level, setSize, 10);
+console.log(
+  `level ${level}; part | in bank | per ${setSize}-question daily set | sets before a repeat`,
+);
 for (const { part, count } of plan) {
   const have = partCounts.get(part.tag) ?? 0;
   console.log(

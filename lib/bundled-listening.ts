@@ -8,6 +8,7 @@ import n4MockListening from "@/content/listening/n4-viet-listening-mock-20.json"
 import n4MockMoreListening from "@/content/listening/n4-viet-listening-mock-21-60.json";
 import n5DailyListening from "@/content/listening/n5-daily-1-13.json";
 import n5MockListening from "@/content/listening/n5-viet-listening-mock-40.json";
+import n5MockMoreListening from "@/content/listening/n5-viet-listening-mock-41-72.json";
 import { listeningAudioRegistry, parseListeningSet } from "@/lib/listening-set";
 
 // Listening sets whose MP3s ship with the web (public/audio/lessons). A lesson or review bank
@@ -19,6 +20,7 @@ const BUNDLED_LISTENING_SETS = [
   n4MockMoreListening,
   n5DailyListening,
   n5MockListening,
+  n5MockMoreListening,
   officialN5Listening,
   officialN4Listening,
   officialN5Listening2012,

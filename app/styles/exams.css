@@ -1,0 +1,91 @@
+/* "Luyện đề" (app/exams): per class, a ruled table of opened mock exams and, for the class owner,
+   the exam library. Tables and rules rather than cards: it is a list to scan and act on. */
+.exam-class {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+.exam-class h2 {
+  margin: 0 0 12px;
+}
+.exam-class h3 {
+  margin: 24px 0 8px;
+  font-size: 18px;
+}
+.exam-class-note {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 400;
+}
+.exam-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.exam-table th,
+.exam-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.exam-table thead th {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.exam-title {
+  margin: 0;
+  font-weight: 600;
+}
+/* A long outcome ("Chưa ước tính được …") wraps; the link or button beside it stays whole. */
+.exam-result {
+  min-width: 180px;
+}
+.exam-result .exam-status {
+  margin-right: 12px;
+}
+.exam-action,
+.exam-result .button {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.exam-library {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exam-library-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exam-library-row p {
+  margin: 0;
+}
+/* On a phone each exam becomes a block: title, then its details and the action. */
+@media (max-width: 720px) {
+  .exam-table thead {
+    display: none;
+  }
+  .exam-table tr,
+  .exam-table th,
+  .exam-table td {
+    display: block;
+  }
+  .exam-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exam-table th,
+  .exam-table td {
+    padding: 2px 0;
+    border: 0;
+  }
+  .exam-result {
+    padding-top: 8px;
+  }
+}

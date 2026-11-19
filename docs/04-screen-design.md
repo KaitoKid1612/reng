@@ -38,6 +38,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S24 | Luyện kanji N5/N4 theo nhóm (chọn cách đọc có bẫy âm biến, nhận mặt chữ có chữ dễ nhầm, đọc chữ, hiểu nghĩa) | `/jlpt-kanji/[level]/practice?group=` | 18/11/2026 |
 | S25 | Đoán âm On từ âm Hán Việt: quy luật, tỉ lệ đúng, ngoại lệ | `/jlpt-kanji/han-viet` | 18/11/2026 |
 | S26 | Từ vựng N4 theo chủ đề: nghĩa, âm Hán Việt, câu ví dụ kiểu đề, từ gần nghĩa | `/jlpt-vocab/n4` | 19/11/2026 |
+| S28 | Luyện đề JLPT: đề đã mở của từng lớp kèm kết quả, thư viện đề của lớp mình làm chủ | `/exams` | 19/11/2026 |
 | S27 | Luyện từ vựng N4 (điền từ vào câu, từ gần nghĩa, nghĩa) | `/jlpt-vocab/n4/practice?group=` | 19/11/2026 |
 
 ### Dành cho giáo viên

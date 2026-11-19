@@ -41,7 +41,7 @@ export type PublishJlptExamInput = z.infer<typeof publishJlptExamSchema>;
 const RECENT_EXAMS = 30;
 
 /** The questions of the class's earlier mock exams, so a new exam prefers unseen questions. */
-async function listRecentExamUses(classId: string): Promise<DailyQuestionUse[]> {
+export async function listRecentExamUses(classId: string): Promise<DailyQuestionUse[]> {
   const tests = await selectRows(
     createServiceClient()
       .from("assignments")

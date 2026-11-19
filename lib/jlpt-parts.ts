@@ -36,6 +36,13 @@ const PART_COUNTS: Record<JlptLevel, readonly number[]> = {
   N5: [7, 5, 6, 3, 0, 9, 4, 4, 2, 2, 1, 7, 6, 5, 6],
 };
 
+/** Every part of a real test with its question count, in test order (N4 85, N5 67 questions). */
+export function jlptTestParts(level: JlptLevel): JlptDailyPart[] {
+  return JLPT_PARTS.map((part, index) => ({ part, count: PART_COUNTS[level][index] })).filter(
+    (item) => item.count > 0,
+  );
+}
+
 /** Questions of one section in a real test (N4 vocabulary 28, grammar and reading 29). */
 export function jlptSectionQuestionCount(level: JlptLevel, section: JlptSection) {
   return JLPT_PARTS.reduce(
