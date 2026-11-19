@@ -1,9 +1,10 @@
 "use client";
 
 import { Check, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { playFeedbackSound } from "@/components/feedback-sound";
+import { usePracticeKeys } from "@/components/practice-keys";
 import { SoundToggle } from "@/components/sound-toggle";
 import { Button } from "@/components/ui/button";
 import { PracticeScore } from "@/components/ui/score-ring";
@@ -67,6 +68,27 @@ export function VocabPractice({ items, pool }: VocabPracticeProps) {
   const [isChecked, setIsChecked] = useState(false);
   const [inputError, setInputError] = useState("");
   const [isDone, setIsDone] = useState(false);
+  const sessionRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const submitRef = useRef<HTMLButtonElement>(null);
+  const isAnswering = questions.length > 0 && !isDone && !isChecked;
+  // On a computer: 1–4 pick an option and Enter checks; after checking, focus waits on "next".
+  usePracticeKeys({
+    optionCount: isAnswering ? (questions[index]?.options.length ?? 0) : 0,
+    onPick: setChosen,
+    formRef,
+  });
+  useEffect(() => {
+    if (isChecked) {
+      submitRef.current?.focus();
+    }
+  }, [isChecked]);
+  // A new session brings the question to the top of the window (see the kanji practice).
+  useEffect(() => {
+    if (questions.length && index === 0 && !isChecked && !isDone) {
+      sessionRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [questions, index, isChecked, isDone]);
 
   function start(next: VocabQuestion[]) {
     setQuestions(next);
@@ -223,7 +245,7 @@ export function VocabPractice({ items, pool }: VocabPracticeProps) {
     submitLabel = index + 1 === questions.length ? "Xem kết quả" : "Câu tiếp theo";
   }
   return (
-    <div className="practice-session">
+    <div className="practice-session practice-split" ref={sessionRef}>
       <div className="practice-top">
         <p>Từ vựng</p>
         <span className="practice-top-end">
@@ -249,7 +271,7 @@ export function VocabPractice({ items, pool }: VocabPracticeProps) {
           </span>
         )}
       </div>
-      <form onSubmit={handleSubmit} className="form-card">
+      <form ref={formRef} onSubmit={handleSubmit} className="form-card">
         <fieldset>
           <legend className="small muted">Chọn một đáp án</legend>
           <div className="choice-list">
@@ -308,7 +330,12 @@ export function VocabPractice({ items, pool }: VocabPracticeProps) {
             </span>
           </div>
         )}
-        <Button type="submit">{submitLabel}</Button>
+        <Button type="submit" ref={submitRef}>
+          {submitLabel}
+        </Button>
+        <p className="practice-keys-hint small muted">
+          Bàn phím: phím 1–4 để chọn, Enter để kiểm tra và sang câu tiếp.
+        </p>
       </form>
     </div>
   );

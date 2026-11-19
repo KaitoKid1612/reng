@@ -66,6 +66,12 @@ Phương án duyệt ngày 18/11/2026, lập theo skill `frontend-design`: Reng 
 - Đã bỏ các chi tiết khuôn mẫu: dòng chữ nhỏ trên tiêu đề trang chủ và trang giáo viên (lặp ý tiêu đề); ô biểu tượng xanh bo góc và hiệu ứng nảy/xoay khi rê chuột ở card Tự học.
 - Ghi chú "dễ nhầm" của thẻ kanji tả nét theo cả Klee One và Noto Sans JP, vì chữ to dùng Klee One mà câu ví dụ dùng Noto.
 
+## Học trên máy tính (19/11/2026)
+
+- Trang luyện chọn đáp án (kanji, từ vựng) từ 1024 px xếp đề trái, phương án phải (`.practice-split`), để cả câu và nút Kiểm tra vừa màn 1366×768.
+- Bàn phím: 1–4 chọn phương án (đánh số như đề khi dùng chuột), Enter kiểm tra và sang câu tiếp; flashcard dùng phím cách, ← →, 1–4 để chấm. Phím không tác dụng khi đang gõ trong ô hoặc đứng trên nút. Không tự focus phương án đầu tiên (người dùng chuột sẽ tưởng đã chọn).
+- Dòng gợi ý phím (`.practice-keys-hint`) ẩn trên màn hình cảm ứng.
+
 ## Màu và khoảng cách
 
 Giữ màu nền `#FAF8F3`, chữ `#1C1B1A`, nền bề mặt `#FFFFFF`, hành động chàm `#2B4C7E`, nền phụ `#DCE6F2`, viền/chữ phụ theo token trong `app/styles/tokens.css`. Semantic: đúng `#2E7D53`, sai `#C0392B`, cần chú ý `#B87333`. Tương phản từng cặp màu cần đo, không mặc định một hex luôn đạt.

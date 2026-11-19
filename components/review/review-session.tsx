@@ -14,6 +14,7 @@ import { VocabCardFace } from "@/components/review/vocab-card-face";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Celebration } from "@/components/ui/score-ring";
 import { answerLang } from "@/lib/assignment";
+import { REVIEW_RATINGS } from "@/lib/review-ratings";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
 import { describeStreak, STREAK_MILESTONES } from "@/lib/study-streak";
 
@@ -92,6 +93,40 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
       sectionRef.current?.focus({ preventScroll: true });
     }
   }, [index]);
+
+  // On a computer a vocabulary card answers to Space (flip) and 1–4 (Quên, Khó, Được, Dễ), as in
+  // the lesson flashcards; keys on a field or a button keep their usual meaning.
+  const keys = useRef({ isVocab: false, isFlipped, canRate: false, handleRate });
+  useEffect(() => {
+    keys.current = { isVocab: card?.kind === "vocab", isFlipped, canRate: !isSending, handleRate };
+  });
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      const target = event.target;
+      const current = keys.current;
+      if (
+        !current.isVocab ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        (target instanceof HTMLElement && target.closest("input, textarea, select, button, a"))
+      ) {
+        return;
+      }
+      if (event.key === " " && !current.isFlipped) {
+        event.preventDefault();
+        setIsFlipped(true);
+        return;
+      }
+      const rating = REVIEW_RATINGS.find((value) => String(value) === event.key);
+      if (rating && current.isFlipped && current.canRate) {
+        event.preventDefault();
+        void current.handleRate(rating);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   function handleAnswerChange(value: RawAnswer) {
     answerRef.current = value;
@@ -254,6 +289,9 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
               Lật thẻ
             </Button>
           )}
+          <p className="practice-keys-hint small muted">
+            Bàn phím: phím cách để lật thẻ, sau khi lật bấm 1–4 để chấm Quên, Khó, Được, Dễ.
+          </p>
         </>
       ) : (
         // A key per card starts each one fresh: listen count, audio and pieces never carry over.

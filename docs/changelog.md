@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 19/11/2026
 
+- **Học trên máy tính:** trang luyện kanji và từ vựng xếp đề bên trái, phương án bên phải, nên cả câu vừa màn laptop 1366×768 không phải cuộn. Phím 1–4 chọn phương án (đánh số như đề), Enter để kiểm tra và sang câu tiếp. Flashcard: phím cách lật thẻ, ← → chuyển thẻ, 1–4 chấm Quên/Khó/Được/Dễ; Ôn tập có phím cách và 1–4 cho thẻ từ vựng. Xem [kiểm tra](testing/site-ui-audit-2026-11-18.md#học-trên-máy-tính--19112026).
 - **Từ vựng N4 theo chủ đề** trong Tự học › Tiếng Nhật (không cần tài khoản): 388 từ, 20 chủ đề. Mỗi từ có nghĩa, loại từ, âm Hán Việt (từ gốc Hán), câu ví dụ viết như phần điền từ của đề, từ gần nghĩa, mẹo. Thẻ **Đã ra đề** đánh dấu 38 từ đề mẫu N4 2012 và 2018 đã hỏi. **Luyện chủ đề này** có dạng điền từ vào câu (phương án sai cùng loại từ và cùng cách chia, như もんだい3), chọn từ gần nghĩa (như もんだい4) và chọn nghĩa. Xem [thiết kế](basic-design/jlpt-vocab.md) và [kiểm chứng](testing/jlpt-vocab-2026-11-19.md).
 
 ### 18/11/2026

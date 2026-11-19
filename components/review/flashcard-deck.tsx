@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { RatingButtons } from "@/components/review/rating-buttons";
 import { REVIEW_FAILURES, sendReview } from "@/components/review/review-request";
 import { VocabCardFace } from "@/components/review/vocab-card-face";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { signInPath } from "@/lib/auth-paths";
+import { REVIEW_RATINGS } from "@/lib/review-ratings";
 
 import type { ReviewRating } from "@/lib/review-ratings";
 import type { VocabDeckCard } from "@/lib/server/reviews";
@@ -70,6 +71,42 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
       setMessage(REVIEW_FAILURES[response.status]);
     }
   }
+
+  // On a computer: Space flips, ← → move, 1–4 rate (Quên, Khó, Được, Dễ) once flipped. Keys typed
+  // into a field or pressed on a button keep their usual meaning.
+  const keys = useRef({ handleMove, handleRate, isFlipped, canRate: canSchedule && !isSending });
+  useEffect(() => {
+    keys.current = { handleMove, handleRate, isFlipped, canRate: canSchedule && !isSending };
+  });
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      const target = event.target;
+      if (
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        (target instanceof HTMLElement && target.closest("input, textarea, select, button, a"))
+      ) {
+        return;
+      }
+      const current = keys.current;
+      if (event.key === " " && !current.isFlipped) {
+        event.preventDefault();
+        setIsFlipped(true);
+      } else if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        current.handleMove(event.key === "ArrowRight" ? 1 : -1);
+      } else if (current.isFlipped && current.canRate) {
+        const rating = REVIEW_RATINGS.find((value) => String(value) === event.key);
+        if (rating) {
+          event.preventDefault();
+          void current.handleRate(rating);
+        }
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   if (!card) {
     return <p>Bài này chưa có từ vựng.</p>;
@@ -141,6 +178,10 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
           Thẻ sau
         </Button>
       </div>
+      <p className="practice-keys-hint small muted">
+        Bàn phím: phím cách để lật thẻ, ← → để chuyển thẻ
+        {canSchedule ? ", sau khi lật bấm 1–4 để chấm Quên, Khó, Được, Dễ" : ""}.
+      </p>
     </section>
   );
 }

@@ -365,3 +365,55 @@ progress::-webkit-progress-value {
   font-size: calc(var(--prompt-cell) * 0.7);
   line-height: 1;
 }
+
+/* Kanji and vocabulary practice on a computer: the prompt on the left, the options and the
+   check button on the right, so a whole question fits a laptop screen (1366×768) without
+   scrolling. Phones keep one column. */
+.practice-split > .flashcard {
+  min-height: 180px;
+}
+@media (min-width: 1024px) {
+  .practice-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: start;
+    max-width: 1080px;
+    scroll-margin-top: 16px;
+  }
+  .practice-split > .practice-top,
+  .practice-split > progress,
+  .practice-split > .practice-title {
+    grid-column: 1 / -1;
+  }
+  .practice-split > .flashcard {
+    position: sticky;
+    top: 16px;
+    min-height: 320px;
+  }
+}
+/* The shortcut line only helps with a keyboard and a pointer; touch screens hide it. */
+.practice-keys-hint {
+  margin: 4px 0 0;
+}
+@media (hover: none), (pointer: coarse) {
+  .practice-keys-hint {
+    display: none;
+  }
+}
+/* On a computer the options carry 1–4, the keys that pick them and the exam's own numbering. */
+@media (hover: hover) and (pointer: fine) {
+  .practice-split .choice-list {
+    counter-reset: practice-option;
+  }
+  .practice-split .choice-option::before {
+    counter-increment: practice-option;
+    content: counter(practice-option);
+    flex: none;
+    width: 1.5em;
+    color: var(--muted);
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+}

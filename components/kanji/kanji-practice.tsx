@@ -1,10 +1,11 @@
 "use client";
 
 import { Check, X } from "lucide-react";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 
 import { AnswerInput } from "@/components/classroom/answer-input";
 import { playFeedbackSound } from "@/components/feedback-sound";
+import { usePracticeKeys } from "@/components/practice-keys";
 import { SoundToggle } from "@/components/sound-toggle";
 import { Button } from "@/components/ui/button";
 import { PracticeScore } from "@/components/ui/score-ring";
@@ -140,6 +141,29 @@ export function KanjiPractice({
   const [state, dispatch] = useReducer(kanjiPracticeReducer, initialKanjiPractice);
   const [answer, setAnswer] = useState("");
   const [inputError, setInputError] = useState("");
+  const sessionRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const submitRef = useRef<HTMLButtonElement>(null);
+  const current = state.questions[state.index];
+  // On a computer: 1–4 pick an option and Enter checks; after checking, focus waits on "next".
+  usePracticeKeys({
+    optionCount:
+      state.phase === "answering" && current?.kind !== "reading" ? current.options.length : 0,
+    onPick: (index) => setAnswer(String(index)),
+    formRef,
+  });
+  useEffect(() => {
+    if (state.phase === "feedback") {
+      submitRef.current?.focus();
+    }
+  }, [state.phase]);
+  // A new session brings the question to the top of the window, so its options and the check
+  // button fit a laptop screen without scrolling.
+  useEffect(() => {
+    if (state.phase === "answering" && state.index === 0) {
+      sessionRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [state.phase, state.index, state.questions]);
 
   function startSession(questions: KanjiQuestion[]) {
     setAnswer("");
@@ -289,7 +313,7 @@ export function KanjiPractice({
     submitLabel = state.index + 1 === state.questions.length ? "Xem kết quả" : "Câu tiếp theo";
   }
   return (
-    <div className="practice-session">
+    <div className="practice-session practice-split" ref={sessionRef}>
       <div className="practice-top">
         <p>{settings.title}</p>
         <span className="practice-top-end">
@@ -317,6 +341,7 @@ export function KanjiPractice({
       </div>
       {/* .answer-form stretches every input, so choice questions use the card form instead. */}
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className={question.kind === "reading" ? "answer-form" : "form-card"}
       >
@@ -395,7 +420,13 @@ export function KanjiPractice({
             </span>
           </div>
         )}
-        <Button type="submit">{submitLabel}</Button>
+        <Button type="submit" ref={submitRef}>
+          {submitLabel}
+        </Button>
+        <p className="practice-keys-hint small muted">
+          Bàn phím: {question.kind === "reading" ? "gõ cách đọc" : "phím 1–4 để chọn"}, Enter để
+          kiểm tra và sang câu tiếp.
+        </p>
       </form>
     </div>
   );
