@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { openLibraryExamAction } from "@/app/actions/exams";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { examTitleFor } from "@/lib/exam-library";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
 import { requireAccount } from "@/lib/server/account";
 import { loadExamCenter } from "@/lib/server/exam-center";
@@ -82,9 +83,7 @@ function LibraryRow({ entry, classId }: { entry: LibraryEntry; classId: string }
   } else {
     detail = `Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
   }
-  const title = isOfficial
-    ? `Đề chính thức JLPT ${source.level}${source.year ? ` (${source.year})` : ""}`
-    : `Đề Reng ${source.level} số ${opened + 1}`;
+  const title = examTitleFor(source, opened);
   return (
     <li className="exam-library-row">
       <div>

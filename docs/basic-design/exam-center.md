@@ -30,12 +30,11 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
 
 | Cấp | Đề chính thức | Đề Reng (không trùng câu) |
 |---|---|---|
-| N4 | 2012 (97 câu), 2018 (98 câu) | 2 đề, giới hạn bởi 60 câu nghe |
+| N4 | 2012 (97 câu), 2018 (98 câu) | 2 đề từ ngân hàng hằng ngày; thêm 2 đề chuẩn và 2 đề nâng cao ở ngân hàng riêng (19/11/2026, [kiểm chứng](../testing/n4-reng-exams-2026-11-19.md)) |
 | N5 | 2012 (89 câu), 2018 (91 câu) | 3 đề (ngân hàng mới `n5-jlpt-mock.json`) |
 
 ## Không làm
 
 - Học viên tự mở đề ở lớp mình không làm chủ: cần thêm migration. Người dùng chọn để giáo viên mở.
-- Thêm câu nghe N4 để có hơn 2 đề Reng N4: để sau.
 
 Chi tiết dữ liệu ngân hàng N5 ở [soạn nội dung](../content-authoring.md#đề-reng-n5-theo-cấu-trúc-đề--19112026); kiểm chứng ở [báo cáo](../testing/exam-center-2026-11-19.md).

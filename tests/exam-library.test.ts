@@ -50,7 +50,16 @@ test("a bank in the test's parts makes as many exams as its scarcest part, less 
       .map((question) => question.id),
   );
   assert.equal(countBankExams(bank, "N4", used).remaining, 1);
+  assert.equal(source.variant, null);
   assert.equal(examTitleFor(source, 1), "Đề Reng N4 số 2");
+  // A bank of exam sets names its kind in the title.
+  const advanced = bank.map((question) => ({
+    ...question,
+    tags: [...question.tags, "reng-exam:advanced"],
+  }));
+  const named = describeExamSource("adv", "Đề nâng cao", advanced);
+  assert.ok(named?.kind === "bank");
+  assert.equal(examTitleFor(named, 0), "Đề Reng N4 nâng cao số 1");
 });
 
 test("a bank written by lesson, not by the test's parts, makes no exam", async () => {

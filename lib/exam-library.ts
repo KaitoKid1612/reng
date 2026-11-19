@@ -19,6 +19,8 @@ export type ExamSource =
       lessonId: string;
       lessonTitle: string;
       level: JlptLevel;
+      // A bank of exam sets says which kind it holds (tag reng-exam:standard / reng-exam:advanced).
+      variant: ExamVariant | null;
       // Whole exams the bank fills, and those left without repeating a question already asked in
       // an earlier exam of the class.
       totalExams: number;
@@ -26,6 +28,21 @@ export type ExamSource =
     };
 
 const OFFICIAL_YEAR = /^official:jlpt-(\d{4})$/u;
+
+export const EXAM_VARIANTS = ["standard", "advanced"] as const;
+export type ExamVariant = (typeof EXAM_VARIANTS)[number];
+const VARIANT_LABELS: Record<ExamVariant, string> = { standard: "chuẩn", advanced: "nâng cao" };
+
+/** The kind of exam set most of a bank's questions are tagged with, if any. */
+function variantOf(questions: readonly JlptExamCandidate[]): ExamVariant | null {
+  for (const variant of EXAM_VARIANTS) {
+    const tagged = questions.filter((question) => question.tags.includes(`reng-exam:${variant}`));
+    if (tagged.length > questions.length / 2) {
+      return variant;
+    }
+  }
+  return null;
+}
 
 function hasLevel(tags: readonly string[], level: JlptLevel) {
   const lower = level.toLowerCase();
@@ -100,6 +117,7 @@ export function describeExamSource(
         lessonId,
         lessonTitle,
         level,
+        variant: variantOf(questions),
         totalExams: total,
         remainingExams: remaining,
       };
@@ -113,5 +131,6 @@ export function examTitleFor(source: ExamSource, earlierFromSource: number) {
   if (source.kind === "official") {
     return `Đề chính thức JLPT ${source.level}${source.year ? ` (${source.year})` : ""}`;
   }
-  return `Đề Reng ${source.level} số ${earlierFromSource + 1}`;
+  const variant = source.variant ? ` ${VARIANT_LABELS[source.variant]}` : "";
+  return `Đề Reng ${source.level}${variant} số ${earlierFromSource + 1}`;
 }

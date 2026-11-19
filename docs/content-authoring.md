@@ -157,6 +157,18 @@ Nạp lên production và đưa vào lớp: `npm run bank:sql -- --file content/
 
 Kiểm tra: `npm run audit:jlpt-bank -- content/review-banks/n5-jlpt-mock.json`, `tests/n5-jlpt-mock-bank.test.ts`.
 
+## Đề Reng N4 chuẩn và nâng cao — 19/11/2026
+
+Hai ngân hàng riêng cho đề thi thử, tách khỏi ngân hàng bài hằng ngày để học viên không gặp trước câu của đề:
+- `content/review-banks/n4-jlpt-mock-standard.json`: 2 đề chuẩn.
+- `content/review-banks/n4-jlpt-mock-advanced.json`: 2 đề nâng cao.
+
+Mỗi ngân hàng 170 câu. Câu nghe lấy từ `listening/n4-reng-exam-<loại>.json`, audio đi kèm bản web và đăng ký trong `lib/bundled-listening.ts`. Nhãn `reng-exam:<loại>` cho thư viện đặt tên đề.
+
+Nạp vào lớp: `npm run bank:sql -- --file content/review-banks/n4-jlpt-mock-standard.json --language ja-JP --class <mã lớp> --out n4-std.sql`, làm tương tự với `advanced`. Đọc lại, thêm `--commit` rồi chạy.
+
+Kiểm tra: `npm run audit:jlpt-bank -- <file>`, `tests/n4-jlpt-mock-banks.test.ts`. Kiểm chứng ở [báo cáo](testing/n4-reng-exams-2026-11-19.md).
+
 ## Kiểm tra và xuất bản local
 
 ```bash
