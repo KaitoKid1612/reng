@@ -138,6 +138,15 @@ Dữ liệu trang `/jlpt-kanji/n5` và `/jlpt-kanji/n4` nằm trong `content/kan
 - Không sửa tay `paper`. Sau khi đổi danh sách chữ hoặc đề mẫu, chạy `npm run kanji:paper` rồi `npm run format`.
 - `npm test` báo lỗi khi từ dùng chữ cấp cao hơn, chữ trùng, chữ có trong đề mẫu bị thiếu khỏi danh sách, hoặc `paper` lệch với đề.
 
+## Từ vựng N4 (trang Tự học)
+
+Dữ liệu trang `/jlpt-vocab/n4` nằm trong `content/vocab/n4.json`. Sửa file rồi deploy, không cần database. Luật ở [BD từ vựng](basic-design/jlpt-vocab.md).
+
+- Viết câu ví dụ như もんだい3: chủ yếu kana, dấu cách giữa các cụm, chỉ dùng kanji N5/N4, từ cần học đặt trong `[[...]]` ở đúng dạng chia.
+- `choices` là 3 từ có thật, cùng loại từ và cùng dạng chia, trông hợp lý nhưng sai trong câu đó. Đọc lại câu với từng phương án: chỉ được một phương án đúng.
+- `hanViet` chỉ ghi cho từ gốc Hán, chữ thường (kinh nghiệm). Không chắc thì bỏ trống.
+- Thêm hoặc bớt từ đề mẫu phải sửa cả `N4_PAPER_WORDS` trong `lib/jlpt-vocab.ts`.
+
 ## Kiểm tra và xuất bản local
 
 ```bash

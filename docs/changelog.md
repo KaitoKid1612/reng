@@ -2,6 +2,10 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 19/11/2026
+
+- **Từ vựng N4 theo chủ đề** trong Tự học › Tiếng Nhật (không cần tài khoản): 388 từ, 20 chủ đề. Mỗi từ có nghĩa, loại từ, âm Hán Việt (từ gốc Hán), câu ví dụ viết như phần điền từ của đề, từ gần nghĩa, mẹo. Thẻ **Đã ra đề** đánh dấu 38 từ đề mẫu N4 2012 và 2018 đã hỏi. **Luyện chủ đề này** có dạng điền từ vào câu (phương án sai cùng loại từ và cùng cách chia, như もんだい3), chọn từ gần nghĩa (như もんだい4) và chọn nghĩa. Xem [thiết kế](basic-design/jlpt-vocab.md) và [kiểm chứng](testing/jlpt-vocab-2026-11-19.md).
+
 ### 18/11/2026
 
 - **Giao diện "ô tập viết":** chữ Nhật đem ra để học (thẻ kanji, đề luyện kanji, biểu tượng công cụ Tự học, cùng bảng kana và ba bước trang chủ vốn đã có) nằm trong ô vuông có chữ thập đứt như vở tập viết, viết bằng font nét sách giáo khoa Klee One. Bỏ dòng chữ nhỏ thừa trên tiêu đề trang chủ và trang giáo viên, và hiệu ứng nảy khi rê chuột ở card Tự học. Màu và font giao diện giữ nguyên. Xem [thiết kế](12-ui-design.md#ô-tập-viết--nét-nhận-diện-18112026) và [kiểm tra](testing/site-ui-audit-2026-11-18.md#áp-dụng-ô-tập-viết--18112026).

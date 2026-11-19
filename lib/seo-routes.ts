@@ -35,6 +35,8 @@ export const PUBLIC_PAGES = [
   { path: "/jlpt-kanji/n5", priority: 0.7, changeFrequency: "monthly" },
   { path: "/jlpt-kanji/n4", priority: 0.7, changeFrequency: "monthly" },
   { path: "/jlpt-kanji/han-viet", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/jlpt-vocab/n4", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/jlpt-vocab/n4/practice", priority: 0.5, changeFrequency: "monthly" },
   { path: "/jlpt-kanji/n5/practice", priority: 0.5, changeFrequency: "monthly" },
   { path: "/jlpt-kanji/n4/practice", priority: 0.5, changeFrequency: "monthly" },
   { path: "/pinyin", priority: 0.6, changeFrequency: "yearly" },

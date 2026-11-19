@@ -22,7 +22,7 @@ export const SELF_STUDY_SUBJECTS: readonly SelfStudySubject[] = [
     id: "japanese",
     name: "Tiếng Nhật",
     summary:
-      "Cho người mới bắt đầu: làm quen chữ viết, học kanji N5–N4 và tra mẫu câu trong các bài công khai.",
+      "Cho người mới bắt đầu: làm quen chữ viết, học kanji N5–N4, từ vựng N4 và tra mẫu câu trong các bài công khai.",
     tools: [
       {
         href: "/kana",
@@ -42,6 +42,12 @@ export const SELF_STUDY_SUBJECTS: readonly SelfStudySubject[] = [
         label: "Kanji N5–N4",
         description: "Kanji thi JLPT kèm âm Hán Việt, mẹo nhớ, chữ đã ra đề mẫu; luyện theo nhóm.",
         glyph: { text: "漢", lang: "ja" },
+      },
+      {
+        href: "/jlpt-vocab/n4",
+        label: "Từ vựng N4",
+        description: "Từ vựng N4 theo chủ đề, câu ví dụ kiểu đề; luyện điền từ và từ gần nghĩa.",
+        glyph: { text: "語", lang: "ja" },
       },
       {
         href: "/grammar",
@@ -90,4 +96,5 @@ export const SELF_STUDY_PATHS: readonly string[] = [
   "/jlpt-kanji/n5/practice",
   "/jlpt-kanji/n4/practice",
   "/jlpt-kanji/han-viet",
+  "/jlpt-vocab/n4/practice",
 ];

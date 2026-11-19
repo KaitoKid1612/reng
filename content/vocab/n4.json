@@ -1,0 +1,5383 @@
+{
+  "level": "n4",
+  "groups": [
+    {
+      "id": "daily-life",
+      "title": "Sinh hoạt hằng ngày"
+    },
+    {
+      "id": "home",
+      "title": "Nhà cửa và đồ đạc"
+    },
+    {
+      "id": "food",
+      "title": "Ăn uống và nấu nướng"
+    },
+    {
+      "id": "shopping",
+      "title": "Mua sắm và tiền bạc"
+    },
+    {
+      "id": "transport",
+      "title": "Đi lại và du lịch"
+    },
+    {
+      "id": "school",
+      "title": "Học tập và thi cử"
+    },
+    {
+      "id": "work",
+      "title": "Công việc"
+    },
+    {
+      "id": "health",
+      "title": "Sức khỏe và cơ thể"
+    },
+    {
+      "id": "weather",
+      "title": "Thời tiết và thiên nhiên"
+    },
+    {
+      "id": "town",
+      "title": "Thành phố và nơi chốn"
+    },
+    {
+      "id": "feelings",
+      "title": "Cảm xúc"
+    },
+    {
+      "id": "relations",
+      "title": "Quan hệ và giao tiếp"
+    },
+    {
+      "id": "character",
+      "title": "Tính cách và đánh giá"
+    },
+    {
+      "id": "hobbies",
+      "title": "Sở thích và thể thao"
+    },
+    {
+      "id": "society",
+      "title": "Quy tắc và xã hội"
+    },
+    {
+      "id": "verbs",
+      "title": "Động từ hay gặp"
+    },
+    {
+      "id": "change",
+      "title": "Thay đổi và trạng thái"
+    },
+    {
+      "id": "time",
+      "title": "Thời gian và tần suất"
+    },
+    {
+      "id": "senses",
+      "title": "Âm thanh và cảm giác"
+    },
+    {
+      "id": "katakana",
+      "title": "Từ ngoại lai"
+    }
+  ],
+  "items": [
+    {
+      "word": "寝坊",
+      "reading": "ねぼう",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "meaning": "ngủ dậy muộn, ngủ quên",
+      "example": {
+        "ja": "きのうの よる おそくまで ゲームを したので、けさ [[ねぼうしました]]。",
+        "vi": "Tối qua tôi chơi game đến khuya nên sáng nay ngủ dậy muộn.",
+        "choices": ["よやくしました", "けんぶつしました", "ほんやくしました"]
+      },
+      "similar": "おきるのが おそく なる",
+      "tip": "寝坊 = ngủ quá giờ, còn 遅刻 = đến muộn. Hai từ hay đi thành chuỗi: ねぼうして、ちこくした.",
+      "paper": [2012]
+    },
+    {
+      "word": "遅刻",
+      "reading": "ちこく",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "trì khắc",
+      "meaning": "đến muộn, trễ giờ (học, làm)",
+      "example": {
+        "ja": "でんしゃが とまって、かいしゃに [[ちこくしました]]。",
+        "vi": "Tàu dừng chạy nên tôi đến công ty muộn.",
+        "choices": ["しゅっぱつしました", "しゅっちょうしました", "にゅういんしました"]
+      },
+      "similar": "じかんに おくれる",
+      "tip": "遅 trì (chậm), 刻 khắc (giờ khắc). Dùng trợ từ に: がっこうに ちこくする.",
+      "paper": [2012]
+    },
+    {
+      "word": "用意",
+      "reading": "ようい",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "dụng ý",
+      "meaning": "chuẩn bị (sẵn đồ dùng)",
+      "example": {
+        "ja": "あしたは はやく でかけるので、こんばんの うちに にもつを [[よういして]] おきます。",
+        "vi": "Ngày mai tôi đi sớm nên tối nay sẽ chuẩn bị sẵn hành lý.",
+        "choices": ["せつめいして", "れんらくして", "あんないして"]
+      },
+      "similar": "じゅんびする",
+      "tip": "用意 ≈ 準備. 用意 hay dùng cho đồ vật cụ thể (おべんとうを よういする), 準備 rộng hơn (しけんの じゅんび). Nghĩa khác hẳn dụng ý tiếng Việt.",
+      "paper": [2012]
+    },
+    {
+      "word": "準備",
+      "reading": "じゅんび",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "chuẩn bị",
+      "meaning": "chuẩn bị",
+      "example": {
+        "ja": "らいしゅうの しけんの [[じゅんび]]で いそがしいです。",
+        "vi": "Tôi đang bận chuẩn bị cho kỳ thi tuần sau.",
+        "choices": ["けしょう", "けんぶつ", "たいいん"]
+      },
+      "similar": "よういする",
+      "tip": "準 chuẩn, 備 bị → chuẩn bị, nghĩa giống hệt tiếng Việt. 〜の じゅんびを する."
+    },
+    {
+      "word": "乾く",
+      "reading": "かわく",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "khô",
+      "example": {
+        "ja": "きょうは かぜが つよいので、せんたくものが すぐ [[かわきました]]。",
+        "vi": "Hôm nay gió mạnh nên đồ giặt khô rất nhanh.",
+        "choices": ["わきました", "とけました", "こみました"]
+      },
+      "tip": "かわく là tự động từ: ふくが かわく. Tha động từ là かわかす. のどが かわく = khát nước.",
+      "paper": [2012]
+    },
+    {
+      "word": "洗濯",
+      "reading": "せんたく",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "tẩy trạc",
+      "meaning": "giặt giũ",
+      "example": {
+        "ja": "てんきが いいので、たまって いた ふくを [[せんたくしました]]。",
+        "vi": "Trời đẹp nên tôi giặt chỗ quần áo dồn lại.",
+        "choices": ["よやくしました", "せつめいしました", "ゆしゅつしました"]
+      },
+      "tip": "洗 tẩy (rửa), 濯 trạc (giặt). せんたくき = máy giặt, せんたくもの = đồ giặt."
+    },
+    {
+      "word": "間に合う",
+      "reading": "まにあう",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "kịp (giờ)",
+      "example": {
+        "ja": "タクシーで いったので、ひこうきに [[まにあいました]]。",
+        "vi": "Tôi đi taxi nên đã kịp chuyến bay.",
+        "choices": ["なれました", "にあいました", "まよいました"]
+      },
+      "similar": "おくれないで つく",
+      "tip": "(giờ, tàu)に まにあう. Trái nghĩa: おくれる. Đừng nhầm với にあう (hợp với)."
+    },
+    {
+      "word": "遅れる",
+      "reading": "おくれる",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "muộn, trễ",
+      "example": {
+        "ja": "じこが あって、バスが さんじゅっぷん [[おくれました]]。",
+        "vi": "Vì có tai nạn nên xe buýt bị trễ 30 phút.",
+        "choices": ["すきました", "なれました", "まにあいました"]
+      },
+      "tip": "おくれる dùng cho xe, người, đồng hồ: じかんに おくれる. ちこく chỉ việc đến muộn giờ học, giờ làm."
+    },
+    {
+      "word": "習慣",
+      "reading": "しゅうかん",
+      "group": "daily-life",
+      "pos": "noun",
+      "hanViet": "tập quán",
+      "meaning": "thói quen, phong tục",
+      "example": {
+        "ja": "まいあさ さんぽするのが わたしの [[しゅうかん]]です。",
+        "vi": "Đi dạo mỗi sáng là thói quen của tôi.",
+        "choices": ["ようじ", "じこ", "きせつ"]
+      },
+      "tip": "習 tập, 慣 quán → tập quán. Dùng cho thói quen cá nhân lẫn phong tục: にほんの しゅうかん."
+    },
+    {
+      "word": "生活",
+      "reading": "せいかつ",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "sinh hoạt",
+      "meaning": "cuộc sống, sinh hoạt",
+      "example": {
+        "ja": "にほんでの [[せいかつ]]にも だいぶ なれました。",
+        "vi": "Tôi đã quen khá nhiều với cuộc sống ở Nhật.",
+        "choices": ["ゆにゅう", "しゅっぱつ", "ちゅうしゃ"]
+      },
+      "tip": "生 sinh, 活 hoạt. Tiếng Nhật nghĩa là cuộc sống: ひとりで せいかつする = sống một mình."
+    },
+    {
+      "word": "予定",
+      "reading": "よてい",
+      "group": "daily-life",
+      "pos": "noun",
+      "hanViet": "dự định",
+      "meaning": "dự định, lịch trình",
+      "example": {
+        "ja": "こんしゅうの にちようびは [[よてい]]が ないので、いえで ゆっくりします。",
+        "vi": "Chủ nhật tuần này không có lịch gì nên tôi sẽ thư thả ở nhà.",
+        "choices": ["しゅうかん", "けしき", "てん"]
+      },
+      "tip": "予 dự, 定 định. Vる よていです = dự định làm: らいねん にほんへ いく よていです."
+    },
+    {
+      "word": "用事",
+      "reading": "ようじ",
+      "group": "daily-life",
+      "pos": "noun",
+      "hanViet": "dụng sự",
+      "meaning": "việc bận, việc riêng",
+      "example": {
+        "ja": "すみません、きょうは [[ようじ]]が あるので、さきに かえります。",
+        "vi": "Xin lỗi, hôm nay tôi có việc bận nên xin về trước.",
+        "choices": ["しゅうかん", "けしき", "かべ"]
+      },
+      "similar": "する ことが ある",
+      "tip": "Lý do lịch sự để từ chối hoặc về sớm: ちょっと ようじが あって…"
+    },
+    {
+      "word": "目覚まし時計",
+      "reading": "めざましどけい",
+      "group": "daily-life",
+      "pos": "noun",
+      "meaning": "đồng hồ báo thức",
+      "example": {
+        "ja": "[[めざましどけい]]が ならなかったので、ねぼうして しまいました。",
+        "vi": "Đồng hồ báo thức không reo nên tôi lỡ ngủ quên.",
+        "choices": ["れいぼう", "ひきだし", "かがみ"]
+      },
+      "tip": "めざめる = thức giấc. Đi với なる (reo) và かける (đặt giờ): めざましを ろくじに かける."
+    },
+    {
+      "word": "着替える",
+      "reading": "きがえる",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "thay quần áo",
+      "example": {
+        "ja": "あせを かいたので、シャワーを あびて ふくを [[きがえました]]。",
+        "vi": "Đổ mồ hôi nên tôi tắm rồi thay quần áo.",
+        "choices": ["わりました", "かざりました", "やきました"]
+      },
+      "tip": "着 (mặc) + 替える (thay) → thay đồ. Cũng đọc きかえる. ふくを きがえる hoặc chỉ nói きがえる."
+    },
+    {
+      "word": "眠る",
+      "reading": "ねむる",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "ngủ (chìm vào giấc ngủ)",
+      "example": {
+        "ja": "つかれて いたので、でんしゃの なかで ぐっすり [[ねむりました]]。",
+        "vi": "Vì mệt nên tôi ngủ say trên tàu.",
+        "choices": ["あびました", "うえました", "すきました"]
+      },
+      "tip": "ねむる nhấn vào trạng thái ngủ (ぐっすり ねむる), còn ねる có cả nghĩa nằm, đi ngủ. ねむい = buồn ngủ."
+    },
+    {
+      "word": "浴びる",
+      "reading": "あびる",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "tắm (vòi sen), dội",
+      "example": {
+        "ja": "うんどうした あとで、シャワーを [[あびました]]。",
+        "vi": "Sau khi tập thể dục, tôi đã tắm vòi sen.",
+        "choices": ["ひやしました", "かざりました", "はこびました"]
+      },
+      "tip": "Cụm cố định: シャワーを あびる (tắm vòi sen), ひを あびる (tắm nắng)."
+    },
+    {
+      "word": "捨てる",
+      "reading": "すてる",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "vứt, bỏ đi",
+      "example": {
+        "ja": "もう つかわない ふるい ざっしを [[すてました]]。",
+        "vi": "Tôi đã vứt những tạp chí cũ không dùng nữa.",
+        "choices": ["ほめました", "うえました", "わかしました"]
+      },
+      "tip": "ごみを すてる = đổ rác. Trái nghĩa: ひろう (nhặt)."
+    },
+    {
+      "word": "出かける",
+      "reading": "でかける",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "ra ngoài, đi ra khỏi nhà",
+      "example": {
+        "ja": "あには いま [[でかけて]] いて、いえに いません。",
+        "vi": "Anh trai tôi đang ra ngoài, không có ở nhà.",
+        "choices": ["ねむって", "かざって", "すてて"]
+      },
+      "similar": "そとへ いく",
+      "tip": "でかけて いる = đang đi vắng (gần nghĩa るすです). でかける まえに = trước khi ra khỏi nhà."
+    },
+    {
+      "word": "急ぐ",
+      "reading": "いそぐ",
+      "group": "daily-life",
+      "pos": "verb",
+      "meaning": "vội, gấp",
+      "example": {
+        "ja": "じゅぎょうに おくれそうだったので、えきから [[いそいで]] あるきました。",
+        "vi": "Sắp trễ giờ học nên tôi vội vã đi bộ từ ga.",
+        "choices": ["うえて", "ねむって", "かざって"]
+      },
+      "tip": "いそいで + động từ = làm vội. Thể て: いそいで (không phải いそいて). いそがしい = bận."
+    },
+    {
+      "word": "化粧",
+      "reading": "けしょう",
+      "group": "daily-life",
+      "pos": "suru-noun",
+      "hanViet": "hóa trang",
+      "meaning": "trang điểm",
+      "example": {
+        "ja": "あねは でかける まえに いつも かがみの まえで [[けしょう]]を します。",
+        "vi": "Chị tôi luôn trang điểm trước gương trước khi ra ngoài.",
+        "choices": ["せんたく", "よやく", "ちゅうしゃ"]
+      },
+      "tip": "化 hóa, 粧 trang → hóa trang, nhưng tiếng Nhật nghĩa là trang điểm. けしょうひん = mỹ phẩm."
+    },
+    {
+      "word": "留守",
+      "reading": "るす",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "lưu thủ",
+      "meaning": "vắng nhà, đi vắng",
+      "example": {
+        "ja": "きのう ともだちが きましたが、わたしは [[るす]]でした。",
+        "vi": "Hôm qua bạn tôi đến nhưng tôi đi vắng.",
+        "choices": ["ようじ", "げんかん", "ひっこし"]
+      },
+      "similar": "いえに いない",
+      "tip": "るす = không có ở nhà. るすばん = trông nhà; るすばんでんわ = máy trả lời tự động.",
+      "paper": [2012, 2018]
+    },
+    {
+      "word": "飾る",
+      "reading": "かざる",
+      "group": "home",
+      "pos": "verb",
+      "meaning": "trang trí, bày, treo",
+      "example": {
+        "ja": "へやに きれいな はなを [[かざりました]]。",
+        "vi": "Tôi đã bày hoa đẹp trong phòng.",
+        "choices": ["ひやしました", "わりました", "はらいました"]
+      },
+      "similar": "きれいに みえるように おく",
+      "tip": "かざる = bày, treo cho đẹp: えを かざる, はなを かざる. かざり = đồ trang trí.",
+      "paper": [2018]
+    },
+    {
+      "word": "片付ける",
+      "reading": "かたづける",
+      "group": "home",
+      "pos": "verb",
+      "meaning": "dọn dẹp, cất gọn",
+      "example": {
+        "ja": "おきゃくさんが くるので、へやを [[かたづけました]]。",
+        "vi": "Vì có khách đến nên tôi đã dọn dẹp phòng.",
+        "choices": ["よごしました", "わりました", "あびました"]
+      },
+      "similar": "きれいに する",
+      "tip": "かたづける = sắp xếp gọn, cất đi; そうじ = lau chùi quét dọn. Hai việc thường đi cùng nhau."
+    },
+    {
+      "word": "引っ越し",
+      "reading": "ひっこし",
+      "group": "home",
+      "pos": "suru-noun",
+      "meaning": "chuyển nhà",
+      "example": {
+        "ja": "らいげつ えきの ちかくの アパートに [[ひっこし]]を します。",
+        "vi": "Tháng sau tôi sẽ chuyển đến căn hộ gần ga.",
+        "choices": ["けんぶつ", "せんたく", "ゆにゅう"]
+      },
+      "similar": "すむ ところを かえる",
+      "tip": "Động từ: ひっこす. Nơi mới dùng に: あたらしい いえに ひっこす."
+    },
+    {
+      "word": "家具",
+      "reading": "かぐ",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "gia cụ",
+      "meaning": "đồ nội thất",
+      "example": {
+        "ja": "あたらしい へやに [[かぐ]]を はこびました。",
+        "vi": "Tôi đã chuyển đồ nội thất vào phòng mới.",
+        "choices": ["かべ", "じゅうしょ", "おくじょう"]
+      },
+      "tip": "家 gia, 具 cụ: bàn, ghế, giường, tủ… Đồ điện gọi là でんきせいひん, không phải かぐ."
+    },
+    {
+      "word": "台所",
+      "reading": "だいどころ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "nhà bếp",
+      "example": {
+        "ja": "ちちは いま [[だいどころ]]で ばんごはんを つくって います。",
+        "vi": "Bố tôi đang nấu bữa tối trong bếp.",
+        "choices": ["おしいれ", "げんかん", "ひきだし"]
+      },
+      "similar": "キッチン",
+      "tip": "だいどころ ≈ キッチン. 所 ở đây đọc どころ (biến âm của ところ, nơi); trong じゅうしょ, きんじょ thì đọc しょ/じょ."
+    },
+    {
+      "word": "押し入れ",
+      "reading": "おしいれ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "tủ âm tường kiểu Nhật",
+      "example": {
+        "ja": "ねる まえに [[おしいれ]]から ふとんを だします。",
+        "vi": "Trước khi ngủ tôi lấy chăn đệm ra từ tủ âm tường.",
+        "choices": ["げんかん", "れいぼう", "たたみ"]
+      },
+      "tip": "おしいれ là tủ trong phòng kiểu Nhật để cất ふとん. Khác ひきだし (ngăn kéo) và たな (kệ)."
+    },
+    {
+      "word": "棚",
+      "reading": "たな",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "kệ, giá",
+      "example": {
+        "ja": "ほんを [[たな]]の うえに ならべました。",
+        "vi": "Tôi xếp sách lên trên kệ.",
+        "choices": ["かぎ", "ほね", "あじ"]
+      },
+      "tip": "ほんだな = giá sách. たなに のせる/おく = đặt lên kệ."
+    },
+    {
+      "word": "引き出し",
+      "reading": "ひきだし",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "ngăn kéo",
+      "example": {
+        "ja": "つくえの [[ひきだし]]に はさみが はいって います。",
+        "vi": "Trong ngăn kéo bàn có cái kéo.",
+        "choices": ["おくじょう", "げんかん", "かべ"]
+      },
+      "tip": "ひく (kéo) + だす (ra) → ngăn kéo. おかねを ひきだす = rút tiền."
+    },
+    {
+      "word": "鏡",
+      "reading": "かがみ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "gương",
+      "example": {
+        "ja": "でかける まえに [[かがみ]]で かおを みます。",
+        "vi": "Trước khi ra ngoài tôi soi mặt trong gương.",
+        "choices": ["かべ", "たな", "かぎ"]
+      },
+      "tip": "かがみを みる = soi gương. Chữ 鏡 Hán Việt là kính."
+    },
+    {
+      "word": "布団",
+      "reading": "ふとん",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "chăn đệm kiểu Nhật",
+      "example": {
+        "ja": "てんきが いいので、[[ふとん]]を そとに ほしました。",
+        "vi": "Trời đẹp nên tôi phơi chăn đệm ra ngoài.",
+        "choices": ["げんかん", "かべ", "かぎ"]
+      },
+      "tip": "ふとんを しく = trải đệm; ふとんを たたむ = gấp đệm; ふとんを ほす = phơi đệm.",
+      "hanViet": "bố đoàn"
+    },
+    {
+      "word": "畳",
+      "reading": "たたみ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "chiếu tatami",
+      "example": {
+        "ja": "この へやは [[たたみ]]なので、くつを ぬいで ください。",
+        "vi": "Phòng này trải chiếu tatami nên hãy cởi giày ra.",
+        "choices": ["かぐ", "かがみ", "かぎ"]
+      },
+      "tip": "Diện tích phòng đếm bằng chiếu: ろくじょう = phòng 6 chiếu. Cùng chữ với たたむ (gấp)."
+    },
+    {
+      "word": "屋上",
+      "reading": "おくじょう",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "ốc thượng",
+      "meaning": "sân thượng",
+      "example": {
+        "ja": "この デパートの [[おくじょう]]から まちが よく みえます。",
+        "vi": "Từ sân thượng của trung tâm thương mại này có thể nhìn rõ thành phố.",
+        "choices": ["ひきだし", "おしいれ", "げんかん"]
+      },
+      "tip": "屋 ốc (nhà), 上 thượng (trên) → sân trên nóc nhà. Phân biệt với やね (mái nhà)."
+    },
+    {
+      "word": "壁",
+      "reading": "かべ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "bức tường",
+      "example": {
+        "ja": "[[かべ]]に かぞくの しゃしんを かざりました。",
+        "vi": "Tôi treo ảnh gia đình lên tường.",
+        "choices": ["かぎ", "ほね", "さら"]
+      },
+      "tip": "かべに はる (dán lên tường), かべに かける (treo lên tường)."
+    },
+    {
+      "word": "冷房",
+      "reading": "れいぼう",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "lãnh phòng",
+      "meaning": "máy lạnh, điều hòa (làm mát)",
+      "example": {
+        "ja": "あついので、[[れいぼう]]を つけました。",
+        "vi": "Trời nóng nên tôi bật máy lạnh.",
+        "choices": ["だんぼう", "ふとん", "かがみ"]
+      },
+      "similar": "エアコン",
+      "tip": "冷 lãnh (lạnh), 房 phòng → làm mát phòng. Đối nghĩa: だんぼう (sưởi). れいぼうを つける/けす."
+    },
+    {
+      "word": "暖房",
+      "reading": "だんぼう",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "noãn phòng",
+      "meaning": "máy sưởi, sưởi ấm",
+      "example": {
+        "ja": "さむく なって きたので、[[だんぼう]]を いれました。",
+        "vi": "Trời bắt đầu lạnh nên tôi bật máy sưởi.",
+        "choices": ["れいぼう", "かがみ", "たな"]
+      },
+      "tip": "暖 noãn (ấm). だんぼうを いれる/つける = bật sưởi. Cặp đối nghĩa: れいぼう ↔ だんぼう."
+    },
+    {
+      "word": "下宿",
+      "reading": "げしゅく",
+      "group": "home",
+      "pos": "suru-noun",
+      "hanViet": "hạ túc",
+      "meaning": "ở trọ (thuê phòng)",
+      "example": {
+        "ja": "だいがくの ちかくに [[げしゅく]]して います。",
+        "vi": "Tôi đang ở trọ gần trường đại học.",
+        "choices": ["せんたく", "けしょう", "ゆにゅう"]
+      },
+      "tip": "げしゅく = thuê phòng ở nhà người khác, thường là sinh viên. げしゅくや = nhà trọ."
+    },
+    {
+      "word": "住所",
+      "reading": "じゅうしょ",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "trú sở",
+      "meaning": "địa chỉ",
+      "example": {
+        "ja": "この かみに おなまえと ご[[じゅうしょ]]を かいて ください。",
+        "vi": "Vui lòng ghi họ tên và địa chỉ vào tờ giấy này.",
+        "choices": ["けしき", "きせつ", "ぐあい"]
+      },
+      "tip": "住 trú (ở), 所 sở (nơi) → nơi ở. Lịch sự: ごじゅうしょ."
+    },
+    {
+      "word": "鍵",
+      "reading": "かぎ",
+      "group": "home",
+      "pos": "noun",
+      "meaning": "chìa khóa, ổ khóa",
+      "example": {
+        "ja": "でかける とき、げんかんの [[かぎ]]を かけるのを わすれました。",
+        "vi": "Khi ra ngoài tôi quên khóa cửa ra vào.",
+        "choices": ["かべ", "たな", "さら"]
+      },
+      "tip": "かぎを かける = khóa; かぎを あける = mở khóa. Đừng nhầm かぎ với かき (quả hồng)."
+    },
+    {
+      "word": "玄関",
+      "reading": "げんかん",
+      "group": "home",
+      "pos": "noun",
+      "hanViet": "huyền quan",
+      "meaning": "lối vào nhà, tiền sảnh",
+      "example": {
+        "ja": "[[げんかん]]で くつを ぬいで、へやに はいって ください。",
+        "vi": "Hãy cởi giày ở lối vào rồi vào phòng.",
+        "choices": ["おくじょう", "おしいれ", "ひきだし"]
+      },
+      "tip": "げんかん là chỗ cửa vào nhà Nhật, nơi cởi và để giày."
+    },
+    {
+      "word": "苦い",
+      "reading": "にがい",
+      "group": "food",
+      "pos": "i-adjective",
+      "meaning": "đắng",
+      "example": {
+        "ja": "この くすりは とても [[にがくて]]、のみにくいです。",
+        "vi": "Thuốc này rất đắng, khó uống.",
+        "choices": ["ひろくて", "ねむくて", "ちかくて"]
+      },
+      "tip": "Các vị: あまい ngọt, からい cay, しおからい mặn, すっぱい chua, にがい đắng. にがて (kém, ngại) khác nghĩa.",
+      "paper": [2012]
+    },
+    {
+      "word": "割る",
+      "reading": "わる",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "đập (trứng), làm vỡ, chia",
+      "example": {
+        "ja": "たまごを ふたつ [[わって]]、さとうと まぜます。",
+        "vi": "Đập hai quả trứng rồi trộn với đường.",
+        "choices": ["ふいて", "かざって", "はらって"]
+      },
+      "tip": "わる là tha động từ (さらを わる = làm vỡ đĩa), われる là tự động từ (さらが われる). わりびき = giảm giá.",
+      "paper": [2012]
+    },
+    {
+      "word": "沸かす",
+      "reading": "わかす",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "đun sôi",
+      "example": {
+        "ja": "おちゃを いれるので、おゆを [[わかして]] ください。",
+        "vi": "Tôi sẽ pha trà, bạn đun nước sôi giúp nhé.",
+        "choices": ["やいて", "わって", "かんで"]
+      },
+      "tip": "わかす (tha động từ): おゆを わかす. わく (tự động từ): おゆが わく. おふろを わかす = đun nước tắm."
+    },
+    {
+      "word": "焼く",
+      "reading": "やく",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "nướng, rán",
+      "example": {
+        "ja": "にわで にくや さかなを [[やいて]] たべました。",
+        "vi": "Chúng tôi nướng thịt và cá ngoài vườn rồi ăn.",
+        "choices": ["わかして", "わって", "すてて"]
+      },
+      "tip": "やく = nướng, rán (thịt, cá, bánh). Tự động từ: やける. パンを やく = nướng bánh mì."
+    },
+    {
+      "word": "煮る",
+      "reading": "にる",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "ninh, nấu (trong nước)",
+      "example": {
+        "ja": "やさいを ちいさく きって、なべで ゆっくり [[にます]]。",
+        "vi": "Cắt nhỏ rau rồi ninh từ từ trong nồi.",
+        "choices": ["わります", "かみます", "すてます"]
+      },
+      "tip": "にる = nấu trong nước, ninh. Cùng âm với にる (似る, giống nhau) nhưng khác chữ."
+    },
+    {
+      "word": "味",
+      "reading": "あじ",
+      "group": "food",
+      "pos": "noun",
+      "meaning": "vị",
+      "example": {
+        "ja": "この スープは すこし [[あじ]]が うすいですね。",
+        "vi": "Món súp này hơi nhạt nhỉ.",
+        "choices": ["ねだん", "ほね", "かべ"]
+      },
+      "tip": "あじが うすい = nhạt, あじが こい = đậm. あじみ = nếm thử."
+    },
+    {
+      "word": "材料",
+      "reading": "ざいりょう",
+      "group": "food",
+      "pos": "noun",
+      "hanViet": "tài liệu",
+      "meaning": "nguyên liệu, vật liệu",
+      "example": {
+        "ja": "カレーの [[ざいりょう]]を スーパーで かって きました。",
+        "vi": "Tôi đã mua nguyên liệu làm cà ri ở siêu thị về.",
+        "choices": ["ねだん", "しょくじ", "りょうきん"]
+      },
+      "tip": "Bẫy Hán Việt: 材料 đọc tài liệu nhưng nghĩa là nguyên liệu. Tài liệu giấy tờ là しりょう."
+    },
+    {
+      "word": "食料品",
+      "reading": "しょくりょうひん",
+      "group": "food",
+      "pos": "noun",
+      "hanViet": "thực liệu phẩm",
+      "meaning": "thực phẩm, đồ ăn",
+      "example": {
+        "ja": "[[しょくりょうひん]]の うりばは ちか いっかいです。",
+        "vi": "Quầy thực phẩm ở tầng hầm 1.",
+        "choices": ["しんごう", "こうじ", "じこ"]
+      },
+      "tip": "食 thực, 料 liệu, 品 phẩm. Ở Nhật quầy thực phẩm của trung tâm thương mại thường ở tầng hầm."
+    },
+    {
+      "word": "冷やす",
+      "reading": "ひやす",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "làm lạnh, ướp lạnh",
+      "example": {
+        "ja": "ジュースを れいぞうこで [[ひやして]] おきました。",
+        "vi": "Tôi đã để nước ép trong tủ lạnh cho lạnh.",
+        "choices": ["わかして", "やいて", "にて"]
+      },
+      "tip": "ひやす (tha động từ) / ひえる (tự động từ). Ngược nghĩa: あたためる."
+    },
+    {
+      "word": "温める",
+      "reading": "あたためる",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "hâm nóng, làm ấm",
+      "example": {
+        "ja": "つめたく なった おべんとうを でんしレンジで [[あたためました]]。",
+        "vi": "Tôi hâm nóng hộp cơm đã nguội bằng lò vi sóng.",
+        "choices": ["ひやしました", "わりました", "かみました"]
+      },
+      "tip": "あたためる dùng cho đồ ăn, cơ thể. Tự động từ: あたたまる. Ngược nghĩa: ひやす."
+    },
+    {
+      "word": "食事",
+      "reading": "しょくじ",
+      "group": "food",
+      "pos": "suru-noun",
+      "hanViet": "thực sự",
+      "meaning": "bữa ăn, dùng bữa",
+      "example": {
+        "ja": "こんど いっしょに [[しょくじ]]に いきませんか。",
+        "vi": "Lần tới cùng đi ăn với tôi nhé?",
+        "choices": ["けしょう", "ゆにゅう", "ほんやく"]
+      },
+      "similar": "ごはんを たべる",
+      "tip": "食 thực, 事 sự. Trang trọng hơn ごはん: しょくじを する, しょくじに さそう."
+    },
+    {
+      "word": "召し上がる",
+      "reading": "めしあがる",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "ăn, uống (tôn kính ngữ)",
+      "example": {
+        "ja": "どうぞ、えんりょしないで [[めしあがって]] ください。",
+        "vi": "Xin mời, anh chị đừng ngại, cứ dùng ạ.",
+        "choices": ["まいって", "うかがって", "いたして"]
+      },
+      "similar": "たべる",
+      "tip": "めしあがる là tôn kính ngữ của たべる/のむ (người khác ăn). Mình ăn thì dùng khiêm nhường ngữ いただく."
+    },
+    {
+      "word": "弁当",
+      "reading": "べんとう",
+      "group": "food",
+      "pos": "noun",
+      "hanViet": "biện đương",
+      "meaning": "cơm hộp",
+      "example": {
+        "ja": "まいあさ じぶんで [[べんとう]]を つくって、かいしゃに もって いきます。",
+        "vi": "Mỗi sáng tôi tự làm cơm hộp mang đến công ty.",
+        "choices": ["さら", "めいし", "きっぷ"]
+      },
+      "tip": "Thường nói おべんとう. えきべん = cơm hộp bán ở nhà ga."
+    },
+    {
+      "word": "米",
+      "reading": "こめ",
+      "group": "food",
+      "pos": "noun",
+      "meaning": "gạo",
+      "example": {
+        "ja": "にほんの [[こめ]]で ごはんを たくと、とても おいしいです。",
+        "vi": "Nấu cơm bằng gạo Nhật thì rất ngon.",
+        "choices": ["さら", "ちゃわん", "あじ"]
+      },
+      "tip": "こめ (gạo sống) → ごはん (cơm chín). ごはんを たく = nấu cơm."
+    },
+    {
+      "word": "ご馳走",
+      "reading": "ごちそう",
+      "group": "food",
+      "pos": "suru-noun",
+      "hanViet": "trì tẩu",
+      "meaning": "món ngon, bữa thịnh soạn; chiêu đãi",
+      "example": {
+        "ja": "ともだちの いえで おいしい [[ごちそう]]を いただきました。",
+        "vi": "Tôi được thết đãi những món ngon ở nhà bạn.",
+        "choices": ["きっぷ", "めいし", "さいふ"]
+      },
+      "tip": "ごちそうさまでした = cảm ơn sau bữa ăn. ごちそうする = mời ăn: きょうは わたしが ごちそうします."
+    },
+    {
+      "word": "残す",
+      "reading": "のこす",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "để thừa, để lại",
+      "example": {
+        "ja": "おなかが いっぱいで、ごはんを すこし [[のこして]] しまいました。",
+        "vi": "Tôi no quá nên lỡ để thừa một ít cơm.",
+        "choices": ["わかして", "ひやして", "わって"]
+      },
+      "tip": "のこす (tha động từ): ごはんを のこす. のこる (tự động từ): ごはんが のこる."
+    },
+    {
+      "word": "空く",
+      "reading": "すく",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "đói (bụng); vắng",
+      "example": {
+        "ja": "あさから なにも たべて いないので、おなかが [[すきました]]。",
+        "vi": "Từ sáng chưa ăn gì nên tôi đói bụng.",
+        "choices": ["こみました", "わきました", "かわきました"]
+      },
+      "tip": "おなかが すく = đói; のどが かわく = khát. でんしゃが すいて いる = tàu vắng (ngược với こむ)."
+    },
+    {
+      "word": "噛む",
+      "reading": "かむ",
+      "group": "food",
+      "pos": "verb",
+      "meaning": "nhai, cắn",
+      "example": {
+        "ja": "ごはんは よく [[かんで]] たべましょう。",
+        "vi": "Hãy nhai kỹ cơm khi ăn.",
+        "choices": ["わって", "すてて", "かざって"]
+      },
+      "tip": "Thể て: かんで. いぬに かまれた = bị chó cắn."
+    },
+    {
+      "word": "皿",
+      "reading": "さら",
+      "group": "food",
+      "pos": "noun",
+      "meaning": "đĩa",
+      "example": {
+        "ja": "りょうりを きれいな [[さら]]に のせました。",
+        "vi": "Tôi bày món ăn lên chiếc đĩa đẹp.",
+        "choices": ["かべ", "かぎ", "こめ"]
+      },
+      "tip": "さらを わる = làm vỡ đĩa. はいざら = gạt tàn. Lịch sự: おさら."
+    },
+    {
+      "word": "茶わん",
+      "reading": "ちゃわん",
+      "group": "food",
+      "pos": "noun",
+      "meaning": "bát (cơm), chén (trà)",
+      "example": {
+        "ja": "[[ちゃわん]]に ごはんを いれて ください。",
+        "vi": "Hãy xới cơm vào bát giúp tôi.",
+        "choices": ["かがみ", "ひきだし", "さいふ"]
+      },
+      "tip": "ちゃわん dùng cho bát cơm lẫn chén trà. ゆのみ = cốc uống trà."
+    },
+    {
+      "word": "輸入",
+      "reading": "ゆにゅう",
+      "group": "shopping",
+      "pos": "suru-noun",
+      "hanViet": "thâu nhập",
+      "meaning": "nhập khẩu",
+      "example": {
+        "ja": "この くだものは がいこくから [[ゆにゅう]]して います。",
+        "vi": "Loại trái cây này được nhập khẩu từ nước ngoài.",
+        "choices": ["ゆしゅつ", "りょうがえ", "けんぶつ"]
+      },
+      "similar": "がいこくから かう",
+      "tip": "輸 thâu (chuyên chở), 入 nhập → nhập khẩu. Ngược nghĩa: ゆしゅつ (xuất khẩu).",
+      "paper": [2018]
+    },
+    {
+      "word": "輸出",
+      "reading": "ゆしゅつ",
+      "group": "shopping",
+      "pos": "suru-noun",
+      "hanViet": "thâu xuất",
+      "meaning": "xuất khẩu",
+      "example": {
+        "ja": "この くには くるまを たくさん がいこくへ [[ゆしゅつ]]して います。",
+        "vi": "Nước này xuất khẩu nhiều ô tô ra nước ngoài.",
+        "choices": ["ゆにゅう", "りょうがえ", "よやく"]
+      },
+      "similar": "がいこくへ うる",
+      "tip": "Nhớ hướng: ゆしゅつ đi với がいこくへ, ゆにゅう đi với がいこくから."
+    },
+    {
+      "word": "値段",
+      "reading": "ねだん",
+      "group": "shopping",
+      "pos": "noun",
+      "meaning": "giá (của món hàng)",
+      "example": {
+        "ja": "この かばんは [[ねだん]]が たかいですが、とても じょうぶです。",
+        "vi": "Cái túi này giá đắt nhưng rất bền.",
+        "choices": ["おつり", "きゃく", "てんいん"]
+      },
+      "tip": "ねだん = giá của món hàng. りょうきん = phí dịch vụ (điện, nước, tàu xe)."
+    },
+    {
+      "word": "品物",
+      "reading": "しなもの",
+      "group": "shopping",
+      "pos": "noun",
+      "meaning": "hàng hóa, đồ vật",
+      "example": {
+        "ja": "この みせは [[しなもの]]が おおくて、えらぶのが たいへんです。",
+        "vi": "Cửa hàng này nhiều hàng nên chọn rất vất vả.",
+        "choices": ["おつり", "てんいん", "じこ"]
+      },
+      "tip": "しな + もの, đọc kiểu Nhật. しなぎれ = hết hàng."
+    },
+    {
+      "word": "売り場",
+      "reading": "うりば",
+      "group": "shopping",
+      "pos": "noun",
+      "meaning": "quầy bán, khu bán hàng",
+      "example": {
+        "ja": "くつの [[うりば]]は さんがいに あります。",
+        "vi": "Quầy bán giày ở tầng 3.",
+        "choices": ["げんかん", "こうさてん", "こうじ"]
+      },
+      "tip": "うる (bán) + ば (chỗ). きっぷうりば = quầy bán vé."
+    },
+    {
+      "word": "割引",
+      "reading": "わりびき",
+      "group": "shopping",
+      "pos": "suru-noun",
+      "meaning": "giảm giá",
+      "example": {
+        "ja": "がくせいは [[わりびき]]が あるので、やすく はいれます。",
+        "vi": "Học sinh được giảm giá nên có thể vào cửa với giá rẻ.",
+        "choices": ["りょうがえ", "おつり", "ちゅうもん"]
+      },
+      "similar": "やすく する こと",
+      "tip": "わる (chia) + ひく (trừ). にわりびき = giảm 20%. がくせいわりびき = giảm giá cho học sinh."
+    },
+    {
+      "word": "お釣り",
+      "reading": "おつり",
+      "group": "shopping",
+      "pos": "noun",
+      "meaning": "tiền thừa (thối lại)",
+      "example": {
+        "ja": "せんえん だして、さんびゃくえんの [[おつり]]を もらいました。",
+        "vi": "Tôi đưa 1000 yên và nhận lại 300 yên tiền thừa.",
+        "choices": ["ねだん", "りょうきん", "さいふ"]
+      },
+      "tip": "おつりを もらう/わたす. Tiền lẻ là こまかい おかね."
+    },
+    {
+      "word": "払う",
+      "reading": "はらう",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "trả (tiền)",
+      "example": {
+        "ja": "レストランの おかねは カードで [[はらいました]]。",
+        "vi": "Tôi đã trả tiền nhà hàng bằng thẻ.",
+        "choices": ["えらびました", "とどけました", "つつみました"]
+      },
+      "similar": "おかねを だす",
+      "tip": "げんきんで はらう = trả tiền mặt. しはらい = việc thanh toán."
+    },
+    {
+      "word": "両替",
+      "reading": "りょうがえ",
+      "group": "shopping",
+      "pos": "suru-noun",
+      "meaning": "đổi tiền",
+      "example": {
+        "ja": "くうこうで ドルを えんに [[りょうがえ]]しました。",
+        "vi": "Tôi đã đổi đô la sang yên ở sân bay.",
+        "choices": ["ゆにゅう", "ちゅうもん", "わりびき"]
+      },
+      "tip": "替 thế (thay). AをBに りょうがえする = đổi A sang B. Cũng dùng khi đổi tiền chẵn ra tiền lẻ."
+    },
+    {
+      "word": "包む",
+      "reading": "つつむ",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "gói, bọc",
+      "example": {
+        "ja": "プレゼントなので、きれいな かみで [[つつんで]] ください。",
+        "vi": "Đây là quà nên hãy gói bằng giấy đẹp giúp tôi.",
+        "choices": ["はらって", "えらんで", "とどけて"]
+      },
+      "tip": "つつみ = gói, bọc; こづつみ = bưu kiện nhỏ."
+    },
+    {
+      "word": "選ぶ",
+      "reading": "えらぶ",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "chọn",
+      "example": {
+        "ja": "たくさんの いろの なかから、あおい シャツを [[えらびました]]。",
+        "vi": "Trong rất nhiều màu, tôi đã chọn chiếc áo sơ mi màu xanh.",
+        "choices": ["つつみました", "はらいました", "とどけました"]
+      },
+      "similar": "きめる",
+      "tip": "AのなかからBを えらぶ = chọn B trong số A."
+    },
+    {
+      "word": "財布",
+      "reading": "さいふ",
+      "group": "shopping",
+      "pos": "noun",
+      "hanViet": "tài bố",
+      "meaning": "ví (tiền)",
+      "example": {
+        "ja": "かいものに いきましたが、[[さいふ]]を わすれて なにも かえませんでした。",
+        "vi": "Tôi đi mua sắm nhưng quên ví nên không mua được gì.",
+        "choices": ["めいし", "かぎ", "かがみ"]
+      },
+      "tip": "財 tài (tiền của), 布 bố (vải) → túi vải đựng tiền. さいふを おとす = đánh rơi ví."
+    },
+    {
+      "word": "足りる",
+      "reading": "たりる",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "đủ",
+      "example": {
+        "ja": "おかねが [[たりなかった]]ので、ほしい ほんが かえませんでした。",
+        "vi": "Vì không đủ tiền nên tôi không mua được quyển sách muốn mua.",
+        "choices": ["うれなかった", "えらばなかった", "つつまなかった"]
+      },
+      "tip": "たりる = đủ; たりない = thiếu. Phủ định quá khứ: たりなかった."
+    },
+    {
+      "word": "贈り物",
+      "reading": "おくりもの",
+      "group": "shopping",
+      "pos": "noun",
+      "meaning": "quà tặng",
+      "example": {
+        "ja": "ははの たんじょうびに [[おくりもの]]を かいました。",
+        "vi": "Tôi đã mua quà tặng cho sinh nhật mẹ.",
+        "choices": ["おつり", "わりびき", "うりば"]
+      },
+      "similar": "プレゼント",
+      "tip": "おくる (tặng) + もの → quà. ≈ プレゼント. おみやげ là quà mang về từ chuyến đi."
+    },
+    {
+      "word": "届ける",
+      "reading": "とどける",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "giao đến, mang đến; trình báo",
+      "example": {
+        "ja": "かった れいぞうこを あした いえまで [[とどけて]] くれます。",
+        "vi": "Chiếc tủ lạnh tôi mua sẽ được giao đến tận nhà vào ngày mai.",
+        "choices": ["つつんで", "えらんで", "はらって"]
+      },
+      "tip": "とどける (tha động từ) / とどく (tự động từ: にもつが とどく). けいさつに とどける = trình báo cảnh sát."
+    },
+    {
+      "word": "注文",
+      "reading": "ちゅうもん",
+      "group": "shopping",
+      "pos": "suru-noun",
+      "hanViet": "chú văn",
+      "meaning": "đặt hàng, gọi món",
+      "example": {
+        "ja": "インターネットで ほんを [[ちゅうもん]]しました。",
+        "vi": "Tôi đã đặt mua sách qua Internet.",
+        "choices": ["ゆしゅつ", "りょうがえ", "けんがく"]
+      },
+      "tip": "Dùng cả khi gọi món ở nhà hàng: りょうりを ちゅうもんする. ごちゅうもんは? = Quý khách gọi gì ạ?"
+    },
+    {
+      "word": "料金",
+      "reading": "りょうきん",
+      "group": "shopping",
+      "pos": "noun",
+      "hanViet": "liệu kim",
+      "meaning": "phí, cước, tiền vé",
+      "example": {
+        "ja": "でんしゃの [[りょうきん]]が らいげつから あがります。",
+        "vi": "Giá vé tàu sẽ tăng từ tháng sau.",
+        "choices": ["おつり", "きゃく", "さいふ"]
+      },
+      "tip": "りょうきん = phí dịch vụ: でんきりょうきん, タクシーりょうきん. Giá món hàng thì dùng ねだん."
+    },
+    {
+      "word": "売れる",
+      "reading": "うれる",
+      "group": "shopping",
+      "pos": "verb",
+      "meaning": "bán được, bán chạy",
+      "example": {
+        "ja": "この ゲームは にんきが あって、よく [[うれて]] います。",
+        "vi": "Trò chơi này được ưa chuộng nên bán rất chạy.",
+        "choices": ["はらって", "つつんで", "とどけて"]
+      },
+      "tip": "うる (bán) → うれる (được bán ra). うりきれ = bán hết."
+    },
+    {
+      "word": "店員",
+      "reading": "てんいん",
+      "group": "shopping",
+      "pos": "noun",
+      "hanViet": "điếm viên",
+      "meaning": "nhân viên cửa hàng",
+      "example": {
+        "ja": "わからない ことは [[てんいん]]に きいて ください。",
+        "vi": "Điều gì không biết thì hãy hỏi nhân viên cửa hàng.",
+        "choices": ["さいふ", "しなもの", "おつり"]
+      },
+      "tip": "店 điếm (cửa hàng), 員 viên (người). Cùng kiểu: かいしゃいん, ぎんこういん."
+    },
+    {
+      "word": "客",
+      "reading": "きゃく",
+      "group": "shopping",
+      "pos": "noun",
+      "hanViet": "khách",
+      "meaning": "khách, khách hàng",
+      "example": {
+        "ja": "この みせは いつも [[きゃく]]が おおくて、こんで います。",
+        "vi": "Cửa hàng này lúc nào cũng đông khách.",
+        "choices": ["ねだん", "おつり", "さいふ"]
+      },
+      "tip": "おきゃくさん, おきゃくさま lịch sự hơn. じょうきゃく = hành khách."
+    },
+    {
+      "word": "運ぶ",
+      "reading": "はこぶ",
+      "group": "transport",
+      "pos": "verb",
+      "meaning": "mang, chở, vận chuyển",
+      "example": {
+        "ja": "おもい にもつを ふたりで にかいまで [[はこびました]]。",
+        "vi": "Hai người chúng tôi đã khiêng hành lý nặng lên tầng 2.",
+        "choices": ["えらびました", "はらいました", "かざりました"]
+      },
+      "similar": "もって いく",
+      "tip": "運 vận như trong 運転. はこぶ = mang đồ từ chỗ này đến chỗ khác.",
+      "paper": [2012]
+    },
+    {
+      "word": "出発",
+      "reading": "しゅっぱつ",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "xuất phát",
+      "meaning": "khởi hành, xuất phát",
+      "example": {
+        "ja": "バスは あさ はちじに ホテルを [[しゅっぱつ]]します。",
+        "vi": "Xe buýt rời khách sạn lúc 8 giờ sáng.",
+        "choices": ["あんない", "けんぶつ", "よやく"]
+      },
+      "similar": "でる",
+      "tip": "〜を しゅっぱつする = rời khỏi 〜 (dùng を). Ngược nghĩa: とうちゃく (đến nơi).",
+      "paper": [2012]
+    },
+    {
+      "word": "着く",
+      "reading": "つく",
+      "group": "transport",
+      "pos": "verb",
+      "meaning": "đến nơi",
+      "example": {
+        "ja": "とうきょうえきに ごご さんじに [[つきました]]。",
+        "vi": "Tôi đã đến ga Tokyo lúc 3 giờ chiều.",
+        "choices": ["こみました", "すきました", "かわきました"]
+      },
+      "similar": "とうちゃくする",
+      "tip": "〜に つく = đến 〜. Cùng chữ 着 với きる (mặc) và とうちゃく."
+    },
+    {
+      "word": "乗り換える",
+      "reading": "のりかえる",
+      "group": "transport",
+      "pos": "verb",
+      "meaning": "đổi tàu, chuyển xe",
+      "example": {
+        "ja": "つぎの えきで ちかてつに [[のりかえて]] ください。",
+        "vi": "Hãy đổi sang tàu điện ngầm ở ga tiếp theo.",
+        "choices": ["かわいて", "つつんで", "おくれて"]
+      },
+      "tip": "Aで Bに のりかえる = ở A đổi sang B. のりかえ = việc chuyển tàu."
+    },
+    {
+      "word": "空港",
+      "reading": "くうこう",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "không cảng",
+      "meaning": "sân bay",
+      "example": {
+        "ja": "[[くうこう]]まで ともだちを むかえに いきました。",
+        "vi": "Tôi đã ra sân bay đón bạn.",
+        "choices": ["しんごう", "じゅうしょ", "めいし"]
+      },
+      "similar": "ひこうじょう",
+      "tip": "空 không, 港 cảng → cảng trên không. 港 đứng một mình đọc みなと (bến cảng)."
+    },
+    {
+      "word": "特急",
+      "reading": "とっきゅう",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "đặc cấp",
+      "meaning": "tàu tốc hành đặc biệt",
+      "example": {
+        "ja": "[[とっきゅう]]に のれば、おおさかまで いちじかんで いけます。",
+        "vi": "Nếu đi tàu tốc hành đặc biệt thì đến Osaka chỉ mất một tiếng.",
+        "choices": ["しんごう", "こうさてん", "じこ"]
+      },
+      "tip": "Nhanh dần: ふつう < きゅうこう < とっきゅう. とっきゅうけん = vé phụ phí tốc hành."
+    },
+    {
+      "word": "急行",
+      "reading": "きゅうこう",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "cấp hành",
+      "meaning": "tàu nhanh",
+      "example": {
+        "ja": "この えきは [[きゅうこう]]が とまらないので、ふつうに のって ください。",
+        "vi": "Tàu nhanh không dừng ở ga này nên hãy đi tàu thường.",
+        "choices": ["こうばん", "くうこう", "じこ"]
+      },
+      "tip": "急 cấp (gấp), 行 hành (đi). ふつう = tàu dừng ở mọi ga."
+    },
+    {
+      "word": "予約",
+      "reading": "よやく",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "dự ước",
+      "meaning": "đặt trước",
+      "example": {
+        "ja": "にんきの レストランなので、いっしゅうかん まえに [[よやく]]しました。",
+        "vi": "Vì là nhà hàng nổi tiếng nên tôi đã đặt chỗ trước một tuần.",
+        "choices": ["けんぶつ", "しゅっぱつ", "りょうがえ"]
+      },
+      "tip": "予 dự (trước), 約 ước (hẹn) → hẹn trước. ホテルを よやくする. よやくを とりけす = hủy đặt."
+    },
+    {
+      "word": "旅館",
+      "reading": "りょかん",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "lữ quán",
+      "meaning": "nhà trọ kiểu Nhật",
+      "example": {
+        "ja": "きょうとでは ふるい [[りょかん]]に とまりました。",
+        "vi": "Ở Kyoto tôi đã trọ tại một lữ quán cổ.",
+        "choices": ["こうばん", "けしき", "くうこう"]
+      },
+      "tip": "Lữ quán: nhà trọ kiểu Nhật có phòng chiếu tatami, thường có suối nóng. Khác ホテル."
+    },
+    {
+      "word": "交通",
+      "reading": "こうつう",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "giao thông",
+      "meaning": "giao thông",
+      "example": {
+        "ja": "この まちは [[こうつう]]が べんりで、すみやすいです。",
+        "vi": "Thành phố này giao thông thuận tiện nên dễ sống.",
+        "choices": ["きせつ", "じこ", "しんごう"]
+      },
+      "tip": "こうつうじこ = tai nạn giao thông; こうつうひ = chi phí đi lại."
+    },
+    {
+      "word": "事故",
+      "reading": "じこ",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "sự cố",
+      "meaning": "tai nạn, sự cố",
+      "example": {
+        "ja": "こうさてんで くるまの [[じこ]]が あって、みちが こんで います。",
+        "vi": "Có tai nạn ô tô ở ngã tư nên đường đang tắc.",
+        "choices": ["せき", "しま", "しんごう"]
+      },
+      "tip": "Tiếng Nhật じこ thường là tai nạn: じこに あう = gặp tai nạn. こうつうじこ = tai nạn giao thông."
+    },
+    {
+      "word": "込む",
+      "reading": "こむ",
+      "group": "transport",
+      "pos": "verb",
+      "meaning": "đông, chật",
+      "example": {
+        "ja": "あさの でんしゃは いつも [[こんで]] いて、すわれません。",
+        "vi": "Tàu buổi sáng lúc nào cũng đông, không ngồi được.",
+        "choices": ["すいて", "ねむって", "かわいて"]
+      },
+      "tip": "こんで いる = đang đông. Đối nghĩa: すいて いる (vắng)."
+    },
+    {
+      "word": "運転",
+      "reading": "うんてん",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "vận chuyển",
+      "meaning": "lái (xe), vận hành",
+      "example": {
+        "ja": "ちちは まいにち くるまを [[うんてん]]して かいしゃへ いきます。",
+        "vi": "Bố tôi hằng ngày tự lái ô tô đi làm.",
+        "choices": ["ゆしゅつ", "よやく", "けんぶつ"]
+      },
+      "tip": "Bẫy Hán Việt: 運転 đọc vận chuyển nhưng nghĩa là lái xe. うんてんしゅ = tài xế."
+    },
+    {
+      "word": "免許",
+      "reading": "めんきょ",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "miễn hứa",
+      "meaning": "giấy phép, bằng lái",
+      "example": {
+        "ja": "らいねん くるまの [[めんきょ]]を とりたいです。",
+        "vi": "Năm sau tôi muốn lấy bằng lái ô tô.",
+        "choices": ["きっぷ", "じこ", "しんごう"]
+      },
+      "tip": "許 hứa (cho phép). めんきょを とる = lấy bằng. うんてんめんきょ = bằng lái xe."
+    },
+    {
+      "word": "見物",
+      "reading": "けんぶつ",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "kiến vật",
+      "meaning": "đi xem, ngắm cảnh",
+      "example": {
+        "ja": "やすみの ひに きょうとの おてらを [[けんぶつ]]しました。",
+        "vi": "Ngày nghỉ tôi đi ngắm các ngôi chùa ở Kyoto.",
+        "choices": ["うんてん", "りょうがえ", "ゆしゅつ"]
+      },
+      "similar": "みに いく",
+      "tip": "見物 = đi xem cho vui (cảnh đẹp, lễ hội). 見学 = đi xem để học hỏi (nhà máy, trường học)."
+    },
+    {
+      "word": "案内",
+      "reading": "あんない",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "án nội",
+      "meaning": "hướng dẫn, dẫn đường",
+      "example": {
+        "ja": "ともだちが まちを [[あんない]]して くれました。",
+        "vi": "Bạn tôi đã dẫn tôi đi tham quan thành phố.",
+        "choices": ["うんてん", "よやく", "ゆにゅう"]
+      },
+      "tip": "あんないじょ = quầy thông tin. ごあんない = thông báo, hướng dẫn (ở ga, cửa hàng)."
+    },
+    {
+      "word": "切符",
+      "reading": "きっぷ",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "thiết phù",
+      "meaning": "vé (tàu, xe)",
+      "example": {
+        "ja": "えきで しんかんせんの [[きっぷ]]を かいました。",
+        "vi": "Tôi mua vé tàu Shinkansen ở ga.",
+        "choices": ["めんきょ", "じこ", "しんごう"]
+      },
+      "similar": "チケット",
+      "tip": "きっぷ dùng cho vé tàu xe. Vé xem phim, hòa nhạc thường gọi là チケット."
+    },
+    {
+      "word": "往復",
+      "reading": "おうふく",
+      "group": "transport",
+      "pos": "suru-noun",
+      "hanViet": "vãng phục",
+      "meaning": "khứ hồi, đi và về",
+      "example": {
+        "ja": "えきから くうこうまで [[おうふく]]で せんえん かかります。",
+        "vi": "Từ ga đến sân bay khứ hồi mất 1000 yên.",
+        "choices": ["じこ", "しんごう", "こうさてん"]
+      },
+      "tip": "往 vãng (đi), 復 phục (về). Một chiều là かたみち."
+    },
+    {
+      "word": "席",
+      "reading": "せき",
+      "group": "transport",
+      "pos": "noun",
+      "hanViet": "tịch",
+      "meaning": "chỗ ngồi, ghế",
+      "example": {
+        "ja": "でんしゃが すいて いたので、[[せき]]に すわりました。",
+        "vi": "Tàu vắng nên tôi đã ngồi vào chỗ.",
+        "choices": ["しんごう", "きっぷ", "じこ"]
+      },
+      "tip": "していせき = ghế chỉ định, じゆうせき = ghế tự do. Cùng âm với せき (ho)."
+    },
+    {
+      "word": "乗り物",
+      "reading": "のりもの",
+      "group": "transport",
+      "pos": "noun",
+      "meaning": "phương tiện đi lại",
+      "example": {
+        "ja": "でんしゃや バスなど、[[のりもの]]の なかでは しずかに しましょう。",
+        "vi": "Hãy giữ yên lặng trong các phương tiện như tàu điện, xe buýt.",
+        "choices": ["しなもの", "おくりもの", "たてもの"]
+      },
+      "tip": "のる (đi xe) + もの → phương tiện. Đừng nhầm với たてもの (tòa nhà), しなもの (hàng hóa)."
+    },
+    {
+      "word": "説明",
+      "reading": "せつめい",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "thuyết minh",
+      "meaning": "giải thích",
+      "example": {
+        "ja": "せんせいが あたらしい ぶんぽうを わかりやすく [[せつめい]]して くれました。",
+        "vi": "Thầy giáo đã giải thích ngữ pháp mới rất dễ hiểu.",
+        "choices": ["よやく", "けんぶつ", "りょうがえ"]
+      },
+      "similar": "よく わかるように はなす",
+      "tip": "説 thuyết, 明 minh. Nghĩa là giải thích. せつめいしょ = sách hướng dẫn sử dụng.",
+      "paper": [2018]
+    },
+    {
+      "word": "見学",
+      "reading": "けんがく",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "kiến học",
+      "meaning": "tham quan học hỏi",
+      "example": {
+        "ja": "しゃかいの じゅぎょうで くるまの こうじょうを [[けんがく]]しました。",
+        "vi": "Trong giờ xã hội, chúng tôi đã đi tham quan nhà máy ô tô.",
+        "choices": ["ゆにゅう", "りょうがえ", "ちゅうもん"]
+      },
+      "similar": "みて べんきょうする",
+      "tip": "見 kiến, 学 học → đi xem để học. Khác けんぶつ (đi ngắm cho vui).",
+      "paper": [2018]
+    },
+    {
+      "word": "授業",
+      "reading": "じゅぎょう",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "thụ nghiệp",
+      "meaning": "giờ học, buổi học",
+      "example": {
+        "ja": "[[じゅぎょう]]の あとで、せんせいに しつもんしました。",
+        "vi": "Sau giờ học, tôi đã hỏi thầy giáo.",
+        "choices": ["はつおん", "きせつ", "せんもん"]
+      },
+      "tip": "授 thụ (trao), 業 nghiệp. じゅぎょうに でる = dự giờ học; じゅぎょうを うける = học."
+    },
+    {
+      "word": "講義",
+      "reading": "こうぎ",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "giảng nghĩa",
+      "meaning": "bài giảng (đại học)",
+      "example": {
+        "ja": "だいがくの [[こうぎ]]は いっかい きゅうじゅっぷんです。",
+        "vi": "Mỗi buổi giảng ở đại học dài 90 phút.",
+        "choices": ["せんもん", "ぶんぽう", "はつおん"]
+      },
+      "tip": "こうぎ thường dùng ở đại học; じゅぎょう dùng cho mọi cấp học."
+    },
+    {
+      "word": "復習",
+      "reading": "ふくしゅう",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "phục tập",
+      "meaning": "ôn tập, ôn lại bài",
+      "example": {
+        "ja": "ならった ことを わすれないように、いえで [[ふくしゅう]]します。",
+        "vi": "Để không quên những gì đã học, tôi ôn lại ở nhà.",
+        "choices": ["よしゅう", "にゅうがく", "けんがく"]
+      },
+      "tip": "復 phục (lại), 習 tập → học lại. Ngược lại よしゅう = học trước bài mới."
+    },
+    {
+      "word": "予習",
+      "reading": "よしゅう",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "dự tập",
+      "meaning": "học trước bài, soạn bài",
+      "example": {
+        "ja": "あしたの じゅぎょうの まえに、つぎの かを [[よしゅう]]して おきます。",
+        "vi": "Trước giờ học ngày mai, tôi sẽ học trước bài tiếp theo.",
+        "choices": ["ふくしゅう", "けんがく", "にゅうがく"]
+      },
+      "tip": "予 dự (trước). Cặp đôi: よしゅう (trước giờ học) ↔ ふくしゅう (sau giờ học)."
+    },
+    {
+      "word": "合格",
+      "reading": "ごうかく",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "hợp cách",
+      "meaning": "đỗ, thi đậu",
+      "example": {
+        "ja": "いっしょうけんめい べんきょうして、しけんに [[ごうかく]]しました。",
+        "vi": "Tôi đã học hết sức và thi đỗ.",
+        "choices": ["にゅうがく", "そつぎょう", "りゅうがく"]
+      },
+      "similar": "しけんに うかる",
+      "tip": "合 hợp, 格 cách → đạt chuẩn. しけんに ごうかくする. Trái nghĩa: しけんに おちる."
+    },
+    {
+      "word": "落ちる",
+      "reading": "おちる",
+      "group": "school",
+      "pos": "verb",
+      "meaning": "rơi; trượt (thi)",
+      "example": {
+        "ja": "べんきょうしなかったので、しけんに [[おちて]] しまいました。",
+        "vi": "Vì không học nên tôi đã thi trượt.",
+        "choices": ["まちがえて", "しらべて", "うつして"]
+      },
+      "tip": "おちる là tự động từ; tha động từ là おとす (đánh rơi). しけんに おちる ↔ しけんに ごうかくする."
+    },
+    {
+      "word": "卒業",
+      "reading": "そつぎょう",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "tốt nghiệp",
+      "meaning": "tốt nghiệp",
+      "example": {
+        "ja": "だいがくを [[そつぎょう]]したら、にほんの かいしゃで はたらきたいです。",
+        "vi": "Tốt nghiệp đại học xong, tôi muốn làm việc ở công ty Nhật.",
+        "choices": ["ふくしゅう", "ほんやく", "よしゅう"]
+      },
+      "tip": "〜を そつぎょうする (dùng を). そつぎょうしき = lễ tốt nghiệp."
+    },
+    {
+      "word": "入学",
+      "reading": "にゅうがく",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "nhập học",
+      "meaning": "nhập học, vào trường",
+      "example": {
+        "ja": "おとうとは ことしの しがつに しょうがっこうに [[にゅうがく]]しました。",
+        "vi": "Em trai tôi đã vào tiểu học vào tháng 4 năm nay.",
+        "choices": ["そつぎょう", "けんがく", "ふくしゅう"]
+      },
+      "tip": "〜に にゅうがくする (dùng に). Ở Nhật năm học bắt đầu vào tháng 4."
+    },
+    {
+      "word": "留学",
+      "reading": "りゅうがく",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "lưu học",
+      "meaning": "du học",
+      "example": {
+        "ja": "らいねん にほんへ [[りゅうがく]]する よていです。",
+        "vi": "Tôi dự định sang Nhật du học vào năm sau.",
+        "choices": ["にゅうがく", "けんがく", "ほんやく"]
+      },
+      "tip": "留 lưu (ở lại), 学 học → du học. りゅうがくせい = du học sinh."
+    },
+    {
+      "word": "専門",
+      "reading": "せんもん",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "chuyên môn",
+      "meaning": "chuyên môn, chuyên ngành",
+      "example": {
+        "ja": "わたしの [[せんもん]]は けいざいです。",
+        "vi": "Chuyên ngành của tôi là kinh tế.",
+        "choices": ["しゅうかん", "はつおん", "ぶんぽう"]
+      },
+      "tip": "せんもんがっこう = trường dạy nghề (sau cấp 3)."
+    },
+    {
+      "word": "研究",
+      "reading": "けんきゅう",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "nghiên cứu",
+      "meaning": "nghiên cứu",
+      "example": {
+        "ja": "あには だいがくいんで ロボットの [[けんきゅう]]を して います。",
+        "vi": "Anh trai tôi đang nghiên cứu về robot ở cao học.",
+        "choices": ["はつおん", "そつぎょう", "よしゅう"]
+      },
+      "tip": "研 nghiên, 究 cứu. けんきゅうしゃ = nhà nghiên cứu."
+    },
+    {
+      "word": "点",
+      "reading": "てん",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "điểm",
+      "meaning": "điểm (số); dấu chấm",
+      "example": {
+        "ja": "すうがくの テストで いい [[てん]]を とりました。",
+        "vi": "Tôi được điểm cao trong bài kiểm tra toán.",
+        "choices": ["あじ", "かべ", "しま"]
+      },
+      "tip": "てんを とる = được điểm. ひゃくてん = 100 điểm."
+    },
+    {
+      "word": "翻訳",
+      "reading": "ほんやく",
+      "group": "school",
+      "pos": "suru-noun",
+      "hanViet": "phiên dịch",
+      "meaning": "dịch (văn viết)",
+      "example": {
+        "ja": "この にほんごの てがみを ベトナムごに [[ほんやく]]して くれませんか。",
+        "vi": "Bạn dịch giúp tôi bức thư tiếng Nhật này sang tiếng Việt được không?",
+        "choices": ["りょうがえ", "ゆしゅつ", "けんがく"]
+      },
+      "tip": "ほんやく = dịch viết; つうやく = thông dịch (nói). AをBに ほんやくする."
+    },
+    {
+      "word": "発音",
+      "reading": "はつおん",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "phát âm",
+      "meaning": "phát âm",
+      "example": {
+        "ja": "せんせいの [[はつおん]]を よく きいて、まねして ください。",
+        "vi": "Hãy nghe kỹ phát âm của thầy rồi bắt chước theo.",
+        "choices": ["せんもん", "しゅうかん", "てん"]
+      },
+      "tip": "発 phát, 音 âm → phát âm, nghĩa giống hệt tiếng Việt."
+    },
+    {
+      "word": "文法",
+      "reading": "ぶんぽう",
+      "group": "school",
+      "pos": "noun",
+      "hanViet": "văn pháp",
+      "meaning": "ngữ pháp",
+      "example": {
+        "ja": "この [[ぶんぽう]]は つかいかたが むずかしいです。",
+        "vi": "Ngữ pháp này cách dùng khó.",
+        "choices": ["せんもん", "てん", "しゅうかん"]
+      },
+      "tip": "文 văn, 法 pháp → ngữ pháp. 法 đọc ぽう sau ん."
+    },
+    {
+      "word": "間違える",
+      "reading": "まちがえる",
+      "group": "school",
+      "pos": "verb",
+      "meaning": "nhầm, làm sai",
+      "example": {
+        "ja": "かんじの よみかたを [[まちがえて]]、はずかしかったです。",
+        "vi": "Tôi đọc nhầm cách đọc chữ kanji nên rất xấu hổ.",
+        "choices": ["しらべて", "はこんで", "かざって"]
+      },
+      "tip": "まちがえる (tha động từ): こたえを まちがえる. まちがい = lỗi sai."
+    },
+    {
+      "word": "写す",
+      "reading": "うつす",
+      "group": "school",
+      "pos": "verb",
+      "meaning": "chép lại, sao lại",
+      "example": {
+        "ja": "こくばんの じを ノートに [[うつしました]]。",
+        "vi": "Tôi đã chép chữ trên bảng vào vở.",
+        "choices": ["しらべました", "まちがえました", "かざりました"]
+      },
+      "tip": "うつす = chép lại, sao lại. Cùng chữ 写 trong しゃしん; しゃしんを うつす = chụp ảnh."
+    },
+    {
+      "word": "調べる",
+      "reading": "しらべる",
+      "group": "school",
+      "pos": "verb",
+      "meaning": "tra cứu, điều tra",
+      "example": {
+        "ja": "わからない ことばを じしょで [[しらべました]]。",
+        "vi": "Tôi tra từ không hiểu bằng từ điển.",
+        "choices": ["うつしました", "まちがえました", "かざりました"]
+      },
+      "tip": "しらべる = tra (từ điển, Internet) hoặc điều tra. Không dùng với nghĩa học bài (べんきょうする)."
+    },
+    {
+      "word": "アルバイト",
+      "reading": "アルバイト",
+      "group": "work",
+      "pos": "katakana",
+      "meaning": "việc làm thêm",
+      "example": {
+        "ja": "がくせいの とき、レストランで [[アルバイト]]を して いました。",
+        "vi": "Hồi còn là sinh viên, tôi làm thêm ở nhà hàng.",
+        "choices": ["ニュース", "スーツ", "テキスト"]
+      },
+      "similar": "はたらく",
+      "tip": "Từ tiếng Đức Arbeit, nói tắt バイト. Khác ざんぎょう (làm thêm giờ ở công ty chính).",
+      "paper": [2018]
+    },
+    {
+      "word": "会議",
+      "reading": "かいぎ",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "hội nghị",
+      "meaning": "cuộc họp",
+      "example": {
+        "ja": "ごご さんじから [[かいぎ]]が あるので、しりょうを よういします。",
+        "vi": "Từ 3 giờ chiều có cuộc họp nên tôi chuẩn bị tài liệu.",
+        "choices": ["めいし", "きかい", "しょるい"]
+      },
+      "tip": "Tiếng Nhật かいぎ dùng cho cả cuộc họp nhỏ ở công ty. かいぎしつ = phòng họp."
+    },
+    {
+      "word": "出張",
+      "reading": "しゅっちょう",
+      "group": "work",
+      "pos": "suru-noun",
+      "hanViet": "xuất trương",
+      "meaning": "đi công tác",
+      "example": {
+        "ja": "らいしゅう しごとで おおさかへ [[しゅっちょう]]します。",
+        "vi": "Tuần sau tôi đi công tác Osaka.",
+        "choices": ["ざんぎょう", "けんきゅう", "にゅうがく"]
+      },
+      "tip": "Đọc しゅっちょう (có っ). しゅっちょうさき = nơi đến công tác."
+    },
+    {
+      "word": "残業",
+      "reading": "ざんぎょう",
+      "group": "work",
+      "pos": "suru-noun",
+      "hanViet": "tàn nghiệp",
+      "meaning": "làm thêm giờ",
+      "example": {
+        "ja": "しごとが おわらなくて、きょうも よる くじまで [[ざんぎょう]]しました。",
+        "vi": "Công việc không xong nên hôm nay tôi cũng làm thêm đến 9 giờ tối.",
+        "choices": ["しゅっちょう", "けいけん", "けいかく"]
+      },
+      "tip": "残 tàn (còn lại) + 業 nghiệp → làm phần việc còn lại sau giờ. Khác アルバイト (việc làm thêm)."
+    },
+    {
+      "word": "給料",
+      "reading": "きゅうりょう",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "cấp liệu",
+      "meaning": "lương",
+      "example": {
+        "ja": "まいつき にじゅうごにちに [[きゅうりょう]]が でます。",
+        "vi": "Lương được trả vào ngày 25 hằng tháng.",
+        "choices": ["きかい", "ぎじゅつ", "めいし"]
+      },
+      "tip": "きゅうりょうが あがる = tăng lương. きゅうりょうび = ngày nhận lương."
+    },
+    {
+      "word": "社長",
+      "reading": "しゃちょう",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "xã trưởng",
+      "meaning": "giám đốc (công ty)",
+      "example": {
+        "ja": "この かいしゃの [[しゃちょう]]は まだ さんじゅっさいです。",
+        "vi": "Giám đốc của công ty này mới 30 tuổi.",
+        "choices": ["きかい", "ぎじゅつ", "けいかく"]
+      },
+      "tip": "社 xã (công ty), 長 trưởng. Thứ bậc: しゃちょう > ぶちょう > かちょう."
+    },
+    {
+      "word": "部長",
+      "reading": "ぶちょう",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "bộ trưởng",
+      "meaning": "trưởng phòng, trưởng bộ phận",
+      "example": {
+        "ja": "[[ぶちょう]]に しゅっちょうの ことを そうだんしました。",
+        "vi": "Tôi đã trao đổi với trưởng phòng về chuyến công tác.",
+        "choices": ["しょるい", "きかい", "めいし"]
+      },
+      "tip": "Bẫy Hán Việt: 部長 đọc bộ trưởng nhưng chỉ là trưởng bộ phận trong công ty, không phải bộ trưởng nhà nước."
+    },
+    {
+      "word": "受付",
+      "reading": "うけつけ",
+      "group": "work",
+      "pos": "noun",
+      "meaning": "quầy lễ tân, nơi tiếp nhận",
+      "example": {
+        "ja": "かいしゃに ついたら、いっかいの [[うけつけ]]で なまえを いって ください。",
+        "vi": "Khi đến công ty, hãy nói tên mình ở quầy lễ tân tầng 1.",
+        "choices": ["おくじょう", "こうさてん", "しんごう"]
+      },
+      "tip": "うける (nhận) + つける. うけつける = tiếp nhận (hồ sơ). Cũng chỉ người làm lễ tân."
+    },
+    {
+      "word": "技術",
+      "reading": "ぎじゅつ",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "kỹ thuật",
+      "meaning": "kỹ thuật, công nghệ",
+      "example": {
+        "ja": "この こうじょうは あたらしい [[ぎじゅつ]]で くるまを つくって います。",
+        "vi": "Nhà máy này sản xuất ô tô bằng công nghệ mới.",
+        "choices": ["きゅうりょう", "めいし", "しょるい"]
+      },
+      "tip": "技 kỹ, 術 thuật. ぎじゅつしゃ = kỹ sư, người làm kỹ thuật."
+    },
+    {
+      "word": "工場",
+      "reading": "こうじょう",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "công trường",
+      "meaning": "nhà máy",
+      "example": {
+        "ja": "ちちは じどうしゃの [[こうじょう]]で はたらいて います。",
+        "vi": "Bố tôi làm việc ở nhà máy ô tô.",
+        "choices": ["こうじ", "ぎじゅつ", "めいし"]
+      },
+      "tip": "Bẫy Hán Việt: 工場 đọc công trường nhưng nghĩa là nhà máy. Công trường xây dựng là こうじげんば."
+    },
+    {
+      "word": "事務所",
+      "reading": "じむしょ",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "sự vụ sở",
+      "meaning": "văn phòng",
+      "example": {
+        "ja": "わからない ことが あったら、にかいの [[じむしょ]]で きいて ください。",
+        "vi": "Nếu có gì không hiểu, hãy hỏi ở văn phòng tầng 2.",
+        "choices": ["しょるい", "めいし", "きかい"]
+      },
+      "tip": "じむ = công việc giấy tờ, văn phòng; じむいん = nhân viên văn phòng."
+    },
+    {
+      "word": "書類",
+      "reading": "しょるい",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "thư loại",
+      "meaning": "giấy tờ, hồ sơ",
+      "example": {
+        "ja": "あしたの かいぎで つかう [[しょるい]]を コピーしました。",
+        "vi": "Tôi đã photo giấy tờ dùng cho cuộc họp ngày mai.",
+        "choices": ["きかい", "ぎじゅつ", "きゅうりょう"]
+      },
+      "tip": "書 thư (viết), 類 loại. しょるいを だす = nộp hồ sơ."
+    },
+    {
+      "word": "連絡",
+      "reading": "れんらく",
+      "group": "work",
+      "pos": "suru-noun",
+      "hanViet": "liên lạc",
+      "meaning": "liên lạc, báo tin",
+      "example": {
+        "ja": "かいぎの じかんが かわったら、メールで [[れんらく]]して ください。",
+        "vi": "Nếu giờ họp thay đổi, xin hãy liên lạc qua email.",
+        "choices": ["ちゅうもん", "しゅっちょう", "ざんぎょう"]
+      },
+      "tip": "連 liên, 絡 lạc → liên lạc. れんらくさき = thông tin liên lạc."
+    },
+    {
+      "word": "都合",
+      "reading": "つごう",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "đô hợp",
+      "meaning": "sự thuận tiện (về thời gian, hoàn cảnh)",
+      "example": {
+        "ja": "あしたは [[つごう]]が わるいので、あさってに して いただけませんか。",
+        "vi": "Ngày mai tôi không tiện, có thể chuyển sang ngày kia được không ạ?",
+        "choices": ["けいけん", "きゅうりょう", "けしき"]
+      },
+      "tip": "つごうが いい/わるい = tiện/không tiện (lịch hẹn). Khác ぐあいが わるい (không khỏe, máy trục trặc)."
+    },
+    {
+      "word": "勤める",
+      "reading": "つとめる",
+      "group": "work",
+      "pos": "verb",
+      "meaning": "làm việc (cho công ty, cơ quan)",
+      "example": {
+        "ja": "あには ぎんこうに [[つとめて]] います。",
+        "vi": "Anh trai tôi làm việc ở ngân hàng.",
+        "choices": ["わって", "つつんで", "えらんで"]
+      },
+      "similar": "はたらく",
+      "tip": "〜に つとめる (dùng に), còn 〜で はたらく (dùng で). Thường dùng dạng つとめて いる."
+    },
+    {
+      "word": "辞める",
+      "reading": "やめる",
+      "group": "work",
+      "pos": "verb",
+      "meaning": "nghỉ (việc), thôi (học)",
+      "example": {
+        "ja": "あには らいげつ いまの かいしゃを [[やめて]]、くにへ かえります。",
+        "vi": "Tháng sau anh tôi sẽ nghỉ việc ở công ty hiện tại và về nước.",
+        "choices": ["つとめて", "かざって", "はこんで"]
+      },
+      "tip": "かいしゃを やめる = nghỉ việc. Cùng âm やめる (止める) = bỏ thói quen: たばこを やめる."
+    },
+    {
+      "word": "経験",
+      "reading": "けいけん",
+      "group": "work",
+      "pos": "suru-noun",
+      "hanViet": "kinh nghiệm",
+      "meaning": "kinh nghiệm, trải nghiệm",
+      "example": {
+        "ja": "わたしは コンビニで はたらいた [[けいけん]]が あります。",
+        "vi": "Tôi có kinh nghiệm làm việc ở cửa hàng tiện lợi.",
+        "choices": ["けいかく", "めいし", "つごう"]
+      },
+      "tip": "Vた ことが ある ≈ Vた けいけんが ある."
+    },
+    {
+      "word": "機械",
+      "reading": "きかい",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "cơ giới",
+      "meaning": "máy móc",
+      "example": {
+        "ja": "この [[きかい]]は つかいかたが かんたんです。",
+        "vi": "Cái máy này cách dùng đơn giản.",
+        "choices": ["つごう", "きゅうりょう", "けいけん"]
+      },
+      "tip": "Đừng nhầm với きかい (機会, cơ hội) cùng âm. 機械 = máy móc."
+    },
+    {
+      "word": "名刺",
+      "reading": "めいし",
+      "group": "work",
+      "pos": "noun",
+      "hanViet": "danh thích",
+      "meaning": "danh thiếp",
+      "example": {
+        "ja": "はじめて あった ひとに [[めいし]]を わたしました。",
+        "vi": "Tôi đưa danh thiếp cho người mới gặp lần đầu.",
+        "choices": ["きかい", "ぎじゅつ", "きゅうりょう"]
+      },
+      "tip": "Ở Nhật, đưa và nhận danh thiếp bằng hai tay là phép lịch sự."
+    },
+    {
+      "word": "計画",
+      "reading": "けいかく",
+      "group": "work",
+      "pos": "suru-noun",
+      "hanViet": "kế hoạch",
+      "meaning": "kế hoạch",
+      "example": {
+        "ja": "なつやすみの りょこうの [[けいかく]]を たてました。",
+        "vi": "Tôi đã lập kế hoạch cho chuyến du lịch hè.",
+        "choices": ["けいけん", "きかい", "つごう"]
+      },
+      "similar": "よてい",
+      "tip": "けいかくを たてる = lập kế hoạch (dùng động từ たてる)."
+    },
+    {
+      "word": "熱",
+      "reading": "ねつ",
+      "group": "health",
+      "pos": "noun",
+      "hanViet": "nhiệt",
+      "meaning": "sốt; nhiệt",
+      "example": {
+        "ja": "かぜを ひいて、[[ねつ]]が さんじゅうはちども あります。",
+        "vi": "Tôi bị cảm, sốt đến 38 độ.",
+        "choices": ["ほね", "ぐあい", "せき"]
+      },
+      "tip": "ねつが ある/でる = bị sốt. ねつを はかる = đo nhiệt độ."
+    },
+    {
+      "word": "怪我",
+      "reading": "けが",
+      "group": "health",
+      "pos": "suru-noun",
+      "meaning": "vết thương, bị thương",
+      "example": {
+        "ja": "サッカーを して いて、あしに [[けが]]を しました。",
+        "vi": "Tôi bị thương ở chân khi đang chơi bóng đá.",
+        "choices": ["ちゅうしゃ", "せき", "ねつ"]
+      },
+      "tip": "けがを する = bị thương. Khác びょうき (bệnh). けがにん = người bị thương."
+    },
+    {
+      "word": "骨",
+      "reading": "ほね",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "xương",
+      "example": {
+        "ja": "かいだんから おちて、うでの [[ほね]]が おれて しまいました。",
+        "vi": "Tôi ngã cầu thang và bị gãy xương tay.",
+        "choices": ["ねつ", "ち", "のど"]
+      },
+      "tip": "ほねが おれる = gãy xương. Chữ 骨 Hán Việt là cốt."
+    },
+    {
+      "word": "注射",
+      "reading": "ちゅうしゃ",
+      "group": "health",
+      "pos": "suru-noun",
+      "hanViet": "chú xạ",
+      "meaning": "tiêm",
+      "example": {
+        "ja": "びょういんで うでに [[ちゅうしゃ]]を して もらいました。",
+        "vi": "Tôi được tiêm vào tay ở bệnh viện.",
+        "choices": ["にゅういん", "たいいん", "うんどう"]
+      },
+      "tip": "Cùng âm với ちゅうしゃ (駐車, đỗ xe): ちゅうしゃじょう = bãi đỗ xe."
+    },
+    {
+      "word": "入院",
+      "reading": "にゅういん",
+      "group": "health",
+      "pos": "suru-noun",
+      "hanViet": "nhập viện",
+      "meaning": "nhập viện",
+      "example": {
+        "ja": "そふは びょうきで いっしゅうかん [[にゅういん]]しました。",
+        "vi": "Ông tôi bị bệnh phải nhập viện một tuần.",
+        "choices": ["たいいん", "けんがく", "りゅうがく"]
+      },
+      "tip": "Ngược nghĩa: たいいん (ra viện). びょういんに にゅういんする."
+    },
+    {
+      "word": "退院",
+      "reading": "たいいん",
+      "group": "health",
+      "pos": "suru-noun",
+      "hanViet": "thoái viện",
+      "meaning": "ra viện",
+      "example": {
+        "ja": "けがが なおったので、あした [[たいいん]]できます。",
+        "vi": "Vết thương đã lành nên ngày mai tôi có thể ra viện.",
+        "choices": ["にゅういん", "ちゅうしゃ", "ゆにゅう"]
+      },
+      "tip": "退 thoái (lui ra), 院 viện. Cặp: にゅういん ↔ たいいん."
+    },
+    {
+      "word": "具合",
+      "reading": "ぐあい",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "tình trạng (sức khỏe, máy móc)",
+      "example": {
+        "ja": "けさから からだの [[ぐあい]]が わるいので、かいしゃを やすみます。",
+        "vi": "Từ sáng nay tôi thấy trong người không khỏe nên nghỉ làm.",
+        "choices": ["つごう", "けしき", "じこ"]
+      },
+      "similar": "ちょうし",
+      "tip": "ぐあいが わるい = không khỏe; cũng dùng cho máy: パソコンの ぐあいが わるい."
+    },
+    {
+      "word": "治る",
+      "reading": "なおる",
+      "group": "health",
+      "pos": "verb",
+      "meaning": "khỏi (bệnh), lành",
+      "example": {
+        "ja": "くすりを のんだら、かぜが すぐ [[なおりました]]。",
+        "vi": "Uống thuốc xong thì cảm khỏi ngay.",
+        "choices": ["たおれました", "おちました", "すきました"]
+      },
+      "tip": "なおる (tự động từ: bệnh khỏi), なおす (tha động từ: chữa). 直る cũng đọc なおる = sửa xong."
+    },
+    {
+      "word": "喉",
+      "reading": "のど",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "cổ họng",
+      "example": {
+        "ja": "あついので、[[のど]]が かわきました。",
+        "vi": "Trời nóng nên tôi khát nước.",
+        "choices": ["おなか", "ほね", "ゆび"]
+      },
+      "tip": "のどが かわく = khát nước (nhưng おなかが すく = đói). のどが いたい = đau họng."
+    },
+    {
+      "word": "腕",
+      "reading": "うで",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "cánh tay",
+      "example": {
+        "ja": "おもい にもつを もったので、[[うで]]が いたいです。",
+        "vi": "Tôi mang hành lý nặng nên bị đau tay.",
+        "choices": ["のど", "ち", "ねつ"]
+      },
+      "tip": "うで = cánh tay. うでどけい = đồng hồ đeo tay."
+    },
+    {
+      "word": "指",
+      "reading": "ゆび",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "ngón tay, ngón chân",
+      "example": {
+        "ja": "りょうりを して いて、ナイフで [[ゆび]]を きって しまいました。",
+        "vi": "Đang nấu ăn thì tôi lỡ cắt vào ngón tay bằng dao.",
+        "choices": ["せき", "ねつ", "かぜ"]
+      },
+      "tip": "おやゆび = ngón cái. ゆびわ = nhẫn."
+    },
+    {
+      "word": "背中",
+      "reading": "せなか",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "lưng",
+      "example": {
+        "ja": "ずっと すわって いたので、[[せなか]]が いたく なりました。",
+        "vi": "Ngồi suốt nên tôi bị đau lưng.",
+        "choices": ["のど", "ねつ", "ち"]
+      },
+      "tip": "Chữ 背 còn đọc せ = chiều cao: せが たかい."
+    },
+    {
+      "word": "血",
+      "reading": "ち",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "máu",
+      "example": {
+        "ja": "ころんで ひざから [[ち]]が でました。",
+        "vi": "Tôi bị ngã, đầu gối chảy máu.",
+        "choices": ["ねつ", "せき", "のど"]
+      },
+      "tip": "ちが でる = chảy máu. Chữ 血 Hán Việt là huyết."
+    },
+    {
+      "word": "倒れる",
+      "reading": "たおれる",
+      "group": "health",
+      "pos": "verb",
+      "meaning": "ngã, ngã quỵ, đổ",
+      "example": {
+        "ja": "あつい なか ずっと はたらいて いた ひとが、きゅうに [[たおれました]]。",
+        "vi": "Người làm việc suốt dưới trời nóng bỗng nhiên ngã quỵ.",
+        "choices": ["なおりました", "すきました", "わきました"]
+      },
+      "tip": "たおれる = ngã, đổ (người, cây). びょうきで たおれる = ngã bệnh. Tha động từ: たおす."
+    },
+    {
+      "word": "健康",
+      "reading": "けんこう",
+      "group": "health",
+      "pos": "noun",
+      "hanViet": "kiện khang",
+      "meaning": "sức khỏe; khỏe mạnh",
+      "example": {
+        "ja": "[[けんこう]]の ために、まいにち やさいを たくさん たべて います。",
+        "vi": "Vì sức khỏe, mỗi ngày tôi ăn nhiều rau.",
+        "choices": ["ぐあい", "むり", "かおいろ"]
+      },
+      "tip": "Cũng dùng như tính từ な: けんこうな ひと = người khỏe mạnh."
+    },
+    {
+      "word": "運動",
+      "reading": "うんどう",
+      "group": "health",
+      "pos": "suru-noun",
+      "hanViet": "vận động",
+      "meaning": "vận động, tập thể dục",
+      "example": {
+        "ja": "さいきん [[うんどう]]して いないので、すこし ふとりました。",
+        "vi": "Gần đây tôi không vận động nên hơi tăng cân.",
+        "choices": ["ちゅうしゃ", "にゅういん", "りょうがえ"]
+      },
+      "tip": "うんどうかい = hội thao ở trường. うんどうぐつ = giày thể thao."
+    },
+    {
+      "word": "看護師",
+      "reading": "かんごし",
+      "group": "health",
+      "pos": "noun",
+      "hanViet": "khán hộ sư",
+      "meaning": "y tá",
+      "example": {
+        "ja": "あねは びょういんで [[かんごし]]を して います。",
+        "vi": "Chị tôi làm y tá ở bệnh viện.",
+        "choices": ["けいさつ", "しゃちょう", "きゃく"]
+      },
+      "tip": "看 khán (trông nom), 護 hộ, 師 sư. かんごする = chăm sóc người bệnh."
+    },
+    {
+      "word": "顔色",
+      "reading": "かおいろ",
+      "group": "health",
+      "pos": "noun",
+      "meaning": "sắc mặt",
+      "example": {
+        "ja": "[[かおいろ]]が わるいですよ。だいじょうぶですか。",
+        "vi": "Sắc mặt anh trông không tốt đấy. Anh có sao không?",
+        "choices": ["けしき", "てん", "あじ"]
+      },
+      "tip": "かお (mặt) + いろ (màu). かおいろが わるい = sắc mặt xấu, trông mệt."
+    },
+    {
+      "word": "無理",
+      "reading": "むり",
+      "group": "health",
+      "pos": "na-adjective",
+      "hanViet": "vô lý",
+      "meaning": "quá sức, không thể",
+      "example": {
+        "ja": "この しごとを あしたまでに おわらせるのは [[むり]]です。",
+        "vi": "Hoàn thành công việc này trước ngày mai là không thể.",
+        "choices": ["げんき", "しんせつ", "にぎやか"]
+      },
+      "tip": "Bẫy Hán Việt: không phải vô lý mà là quá sức, không thể. むりを しないで = đừng cố quá sức."
+    },
+    {
+      "word": "台風",
+      "reading": "たいふう",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "đài phong",
+      "meaning": "bão",
+      "example": {
+        "ja": "[[たいふう]]が くるので、あしたは がっこうが やすみに なりました。",
+        "vi": "Vì bão sắp đến nên ngày mai trường được nghỉ.",
+        "choices": ["きせつ", "くうき", "けしき"]
+      },
+      "tip": "たいふうが くる/ちかづく. Mùa bão ở Nhật khoảng tháng 8–9."
+    },
+    {
+      "word": "地震",
+      "reading": "じしん",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "địa chấn",
+      "meaning": "động đất",
+      "example": {
+        "ja": "[[じしん]]の ときは、つくえの したに はいって ください。",
+        "vi": "Khi có động đất, hãy chui xuống gầm bàn.",
+        "choices": ["たいふう", "くうき", "ほし"]
+      },
+      "tip": "じしんが ある/おきる. Đừng nhầm với じしん (自信, tự tin) cùng âm."
+    },
+    {
+      "word": "天気予報",
+      "reading": "てんきよほう",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "thiên khí dự báo",
+      "meaning": "dự báo thời tiết",
+      "example": {
+        "ja": "[[てんきよほう]]に よると、あしたは あめが ふるそうです。",
+        "vi": "Theo dự báo thời tiết thì ngày mai trời mưa.",
+        "choices": ["けしき", "くうき", "きせつ"]
+      },
+      "tip": "よほう = dự báo. Mẫu N4: 〜に よると 〜そうです = theo … thì nghe nói …"
+    },
+    {
+      "word": "晴れる",
+      "reading": "はれる",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "trời nắng, quang đãng",
+      "example": {
+        "ja": "あさは あめでしたが、ごごから [[はれました]]。",
+        "vi": "Buổi sáng trời mưa nhưng từ chiều thì nắng lên.",
+        "choices": ["わきました", "うえました", "こみました"]
+      },
+      "tip": "はれ = trời nắng; はれる = trời quang lại. Đối nghĩa: くもる."
+    },
+    {
+      "word": "曇る",
+      "reading": "くもる",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "nhiều mây, âm u",
+      "example": {
+        "ja": "そらが [[くもって]] きたので、かさを もって いきましょう。",
+        "vi": "Trời đang kéo mây nên hãy mang theo ô.",
+        "choices": ["はれて", "ふいて", "わいて"]
+      },
+      "tip": "くもり = trời nhiều mây; くも = mây. くもって くる = đang kéo mây."
+    },
+    {
+      "word": "雷",
+      "reading": "かみなり",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "sấm sét",
+      "example": {
+        "ja": "そとで おおきな [[かみなり]]の おとが しました。",
+        "vi": "Bên ngoài có tiếng sấm rất to.",
+        "choices": ["くうき", "ほし", "くさ"]
+      },
+      "tip": "かみなりが なる = sấm rền; かみなりが おちる = sét đánh."
+    },
+    {
+      "word": "吹く",
+      "reading": "ふく",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "thổi",
+      "example": {
+        "ja": "きょうは つめたい かぜが [[ふいて]] います。",
+        "vi": "Hôm nay có gió lạnh thổi.",
+        "choices": ["ふって", "はれて", "わいて"]
+      },
+      "tip": "かぜが ふく = gió thổi, còn あめが ふる = mưa rơi. Đừng nhầm ふいて với ふって."
+    },
+    {
+      "word": "止む",
+      "reading": "やむ",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "tạnh, ngừng",
+      "example": {
+        "ja": "あめが [[やんだら]]、さんぽに いきましょう。",
+        "vi": "Nếu mưa tạnh thì chúng ta đi dạo nhé.",
+        "choices": ["ふったら", "ふいたら", "わいたら"]
+      },
+      "tip": "あめが やむ = mưa tạnh, かぜが やむ = gió ngừng. Thể たら: やんだら."
+    },
+    {
+      "word": "空気",
+      "reading": "くうき",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "không khí",
+      "meaning": "không khí",
+      "example": {
+        "ja": "やまの うえは [[くうき]]が きれいで、きもちが いいです。",
+        "vi": "Trên núi không khí trong lành, thật dễ chịu.",
+        "choices": ["かみなり", "じしん", "たいふう"]
+      },
+      "tip": "くうきが きれい = không khí trong lành. くうきを よむ = biết nhìn bầu không khí (nghĩa bóng)."
+    },
+    {
+      "word": "景色",
+      "reading": "けしき",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "cảnh sắc",
+      "meaning": "phong cảnh",
+      "example": {
+        "ja": "まどから みえる うみの [[けしき]]が とても きれいです。",
+        "vi": "Phong cảnh biển nhìn từ cửa sổ rất đẹp.",
+        "choices": ["くうき", "きせつ", "かみなり"]
+      },
+      "tip": "けしきが いい = cảnh đẹp. 景 thường đọc けい nhưng trong từ này đọc け."
+    },
+    {
+      "word": "自然",
+      "reading": "しぜん",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "tự nhiên",
+      "meaning": "thiên nhiên; tự nhiên",
+      "example": {
+        "ja": "わたしの いなかは [[しぜん]]が おおくて、しずかな ところです。",
+        "vi": "Quê tôi có nhiều thiên nhiên, là một nơi yên tĩnh.",
+        "choices": ["くうき", "てんきよほう", "じこ"]
+      },
+      "tip": "Cũng là tính từ な: しぜんな にほんご = tiếng Nhật tự nhiên."
+    },
+    {
+      "word": "季節",
+      "reading": "きせつ",
+      "group": "weather",
+      "pos": "noun",
+      "hanViet": "quý tiết",
+      "meaning": "mùa",
+      "example": {
+        "ja": "にほんで いちばん すきな [[きせつ]]は あきです。",
+        "vi": "Mùa tôi thích nhất ở Nhật là mùa thu.",
+        "choices": ["くうき", "しぜん", "たいふう"]
+      },
+      "tip": "Nhật có bốn mùa: はる、なつ、あき、ふゆ."
+    },
+    {
+      "word": "湖",
+      "reading": "みずうみ",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "hồ",
+      "example": {
+        "ja": "[[みずうみ]]で ボートに のりました。",
+        "vi": "Tôi đã đi thuyền trên hồ.",
+        "choices": ["くさ", "ほし", "かべ"]
+      },
+      "tip": "みず (nước) + うみ (biển) → hồ. いけ = ao, nhỏ hơn みずうみ."
+    },
+    {
+      "word": "島",
+      "reading": "しま",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "đảo",
+      "example": {
+        "ja": "ふねに のって ちいさな [[しま]]へ いきました。",
+        "vi": "Tôi đi thuyền đến một hòn đảo nhỏ.",
+        "choices": ["くさ", "ほし", "えだ"]
+      },
+      "tip": "Chữ 島 Hán Việt là đảo. Nhật Bản gồm nhiều đảo lớn nhỏ."
+    },
+    {
+      "word": "星",
+      "reading": "ほし",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "ngôi sao",
+      "example": {
+        "ja": "いなかの よるは [[ほし]]が たくさん みえます。",
+        "vi": "Ban đêm ở quê có thể nhìn thấy rất nhiều sao.",
+        "choices": ["くうき", "じしん", "たいふう"]
+      },
+      "tip": "ほし (sao) khác ほしい (muốn). ながれぼし = sao băng."
+    },
+    {
+      "word": "草",
+      "reading": "くさ",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "cỏ",
+      "example": {
+        "ja": "こうえんの [[くさ]]の うえに すわって、おべんとうを たべました。",
+        "vi": "Chúng tôi ngồi trên bãi cỏ trong công viên và ăn cơm hộp.",
+        "choices": ["ほし", "くうき", "かみなり"]
+      },
+      "tip": "Chữ 草 Hán Việt là thảo. くさばな = cỏ hoa."
+    },
+    {
+      "word": "植える",
+      "reading": "うえる",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "trồng (cây)",
+      "example": {
+        "ja": "はるに にわで トマトを [[うえました]]。",
+        "vi": "Mùa xuân tôi đã trồng cà chua ngoài vườn.",
+        "choices": ["わりました", "あびました", "はらいました"]
+      },
+      "tip": "うえる = trồng cây, hoa. Đừng nhầm với うえ (trên). うえきばち = chậu cây."
+    },
+    {
+      "word": "枝",
+      "reading": "えだ",
+      "group": "weather",
+      "pos": "noun",
+      "meaning": "cành cây",
+      "example": {
+        "ja": "つよい かぜで きの [[えだ]]が おれました。",
+        "vi": "Gió mạnh làm gãy cành cây.",
+        "choices": ["くさ", "ほし", "しま"]
+      },
+      "tip": "き (cây) → えだ (cành) → は (lá). えだが おれる = cành gãy."
+    },
+    {
+      "word": "蒸し暑い",
+      "reading": "むしあつい",
+      "group": "weather",
+      "pos": "i-adjective",
+      "meaning": "oi bức, nóng ẩm",
+      "example": {
+        "ja": "にほんの なつは [[むしあつくて]]、よく ねむれません。",
+        "vi": "Mùa hè ở Nhật oi bức nên tôi không ngủ ngon được.",
+        "choices": ["すずしくて", "やわらかくて", "にがくて"]
+      },
+      "tip": "むす (hấp) + あつい (nóng) → nóng như hấp. Thể て: むしあつくて."
+    },
+    {
+      "word": "冷える",
+      "reading": "ひえる",
+      "group": "weather",
+      "pos": "verb",
+      "meaning": "trở nên lạnh",
+      "example": {
+        "ja": "よるに なって、へやが きゅうに [[ひえて]] きました。",
+        "vi": "Về đêm, căn phòng bỗng trở nên lạnh.",
+        "choices": ["わいて", "うえて", "かんで"]
+      },
+      "tip": "ひえる (tự động từ) / ひやす (tha động từ). ひえる dùng cho đồ vật, cơ thể, phòng; さむい là cảm giác lạnh."
+    },
+    {
+      "word": "工事",
+      "reading": "こうじ",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "công sự",
+      "meaning": "công trình, thi công",
+      "example": {
+        "ja": "えきの まえは いま [[こうじ]]を して いて、とおれません。",
+        "vi": "Trước ga hiện đang thi công nên không đi qua được.",
+        "choices": ["じこ", "かじ", "しんごう"]
+      },
+      "similar": "みちや たてものを つくる こと",
+      "tip": "こうじちゅう = đang thi công. Khác こうじょう (nhà máy).",
+      "paper": [2018]
+    },
+    {
+      "word": "危険",
+      "reading": "きけん",
+      "group": "town",
+      "pos": "na-adjective",
+      "hanViet": "nguy hiểm",
+      "meaning": "nguy hiểm",
+      "example": {
+        "ja": "この かわは ふかくて [[きけん]]ですから、およがないで ください。",
+        "vi": "Con sông này sâu và nguy hiểm, xin đừng bơi.",
+        "choices": ["あんぜん", "べんり", "ゆうめい"]
+      },
+      "similar": "あぶない",
+      "tip": "危 nguy, 険 hiểm → nguy hiểm. ≈ あぶない. Đối nghĩa: あんぜん.",
+      "paper": [2012]
+    },
+    {
+      "word": "信号",
+      "reading": "しんごう",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "tín hiệu",
+      "meaning": "đèn giao thông",
+      "example": {
+        "ja": "[[しんごう]]が あかの ときは、みちを わたっては いけません。",
+        "vi": "Khi đèn đỏ thì không được sang đường.",
+        "choices": ["こうばん", "かど", "はし"]
+      },
+      "tip": "Đèn xanh trong tiếng Nhật gọi là あお: しんごうが あおに なる."
+    },
+    {
+      "word": "駐車場",
+      "reading": "ちゅうしゃじょう",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "trú xa trường",
+      "meaning": "bãi đỗ xe",
+      "example": {
+        "ja": "くるまで きた ひとは、うらの [[ちゅうしゃじょう]]に とめて ください。",
+        "vi": "Ai đến bằng ô tô xin đỗ ở bãi xe phía sau.",
+        "choices": ["こうさてん", "こうばん", "しんごう"]
+      },
+      "tip": "ちゅうしゃ (đỗ xe) cùng âm với ちゅうしゃ (tiêm). ちゅうしゃきんし = cấm đỗ xe."
+    },
+    {
+      "word": "交差点",
+      "reading": "こうさてん",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "giao sai điểm",
+      "meaning": "ngã tư, giao lộ",
+      "example": {
+        "ja": "つぎの [[こうさてん]]を みぎに まがって ください。",
+        "vi": "Hãy rẽ phải ở ngã tư tiếp theo.",
+        "choices": ["けしき", "くうき", "じゅうしょ"]
+      },
+      "tip": "Chỉ đường: 〜を みぎに/ひだりに まがる (dùng を)."
+    },
+    {
+      "word": "近所",
+      "reading": "きんじょ",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "cận sở",
+      "meaning": "gần nhà, hàng xóm",
+      "example": {
+        "ja": "[[きんじょ]]に おいしい パンやが あります。",
+        "vi": "Gần nhà tôi có một tiệm bánh mì ngon.",
+        "choices": ["じゅうしょ", "けしき", "こうじ"]
+      },
+      "tip": "近 cận (gần), 所 sở (nơi). きんじょの ひと = hàng xóm."
+    },
+    {
+      "word": "田舎",
+      "reading": "いなか",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "quê, nông thôn",
+      "example": {
+        "ja": "そふは [[いなか]]で のんびり くらして います。",
+        "vi": "Ông tôi đang sống thong thả ở quê.",
+        "choices": ["こうさてん", "ちゅうしゃじょう", "こうばん"]
+      },
+      "tip": "いなか là cách đọc đặc biệt. Vừa là nông thôn vừa là quê hương: いなかへ かえる."
+    },
+    {
+      "word": "美術館",
+      "reading": "びじゅつかん",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "mỹ thuật quán",
+      "meaning": "bảo tàng mỹ thuật",
+      "example": {
+        "ja": "[[びじゅつかん]]で ゆうめいな えを みました。",
+        "vi": "Tôi đã xem những bức tranh nổi tiếng ở bảo tàng mỹ thuật.",
+        "choices": ["こうばん", "こうさてん", "ちゅうしゃじょう"]
+      },
+      "tip": "はくぶつかん = viện bảo tàng (lịch sử, hiện vật)."
+    },
+    {
+      "word": "神社",
+      "reading": "じんじゃ",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "thần xã",
+      "meaning": "đền thờ Thần đạo",
+      "example": {
+        "ja": "おしょうがつに かぞくで [[じんじゃ]]へ おまいりに いきました。",
+        "vi": "Dịp năm mới cả nhà tôi đi lễ ở đền.",
+        "choices": ["こうばん", "ちゅうしゃじょう", "こうさてん"]
+      },
+      "tip": "じんじゃ (Thần đạo, có cổng とりい) khác てら (chùa Phật giáo)."
+    },
+    {
+      "word": "寺",
+      "reading": "てら",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "chùa",
+      "example": {
+        "ja": "この ふるい [[てら]]には おぼうさんが さんにん すんで います。",
+        "vi": "Trong ngôi chùa cổ này có ba vị sư sống.",
+        "choices": ["こうばん", "はし", "さか"]
+      },
+      "tip": "Thường nói おてら. Trong tên chùa đọc じ: きんかくじ = chùa Kim Các."
+    },
+    {
+      "word": "教会",
+      "reading": "きょうかい",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "giáo hội",
+      "meaning": "nhà thờ",
+      "example": {
+        "ja": "にちようびの あさは [[きょうかい]]で おいのりを します。",
+        "vi": "Sáng Chủ nhật tôi cầu nguyện ở nhà thờ.",
+        "choices": ["こうばん", "はし", "さか"]
+      },
+      "tip": "Bẫy Hán Việt: đọc giáo hội nhưng chỉ tòa nhà thờ. Đừng nhầm với きょうしつ (lớp học)."
+    },
+    {
+      "word": "火事",
+      "reading": "かじ",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "hỏa sự",
+      "meaning": "hỏa hoạn, đám cháy",
+      "example": {
+        "ja": "よなかに ちかくの いえで [[かじ]]が あって、いえが ぜんぶ もえました。",
+        "vi": "Nửa đêm nhà gần đó bị cháy, cháy rụi cả căn nhà.",
+        "choices": ["さか", "しんごう", "かど"]
+      },
+      "tip": "火 hỏa, 事 sự → hỏa hoạn. かじだ！= Cháy rồi! Số gọi cứu hỏa: 119."
+    },
+    {
+      "word": "警察",
+      "reading": "けいさつ",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "cảnh sát",
+      "meaning": "cảnh sát",
+      "example": {
+        "ja": "さいふを おとしたので、[[けいさつ]]に とどけました。",
+        "vi": "Tôi đánh rơi ví nên đã trình báo cảnh sát.",
+        "choices": ["こうさてん", "しんごう", "じんじゃ"]
+      },
+      "tip": "けいさつかん = cảnh sát viên. Số gọi cảnh sát: 110."
+    },
+    {
+      "word": "交番",
+      "reading": "こうばん",
+      "group": "town",
+      "pos": "noun",
+      "hanViet": "giao phiên",
+      "meaning": "đồn cảnh sát nhỏ, bốt cảnh sát",
+      "example": {
+        "ja": "みちが わからなかったので、[[こうばん]]で ききました。",
+        "vi": "Vì không biết đường nên tôi đã hỏi ở bốt cảnh sát.",
+        "choices": ["しんごう", "こうじ", "かじ"]
+      },
+      "tip": "Nơi cảnh sát trực luân phiên (番 phiên). Rất tiện để hỏi đường."
+    },
+    {
+      "word": "橋",
+      "reading": "はし",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "cây cầu",
+      "example": {
+        "ja": "かわに あたらしい [[はし]]が できました。",
+        "vi": "Một cây cầu mới đã được xây trên sông.",
+        "choices": ["さか", "かど", "しんごう"]
+      },
+      "tip": "Cùng âm はし: 橋 (cầu), 箸 (đũa), 端 (mép, đầu mút)."
+    },
+    {
+      "word": "坂",
+      "reading": "さか",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "con dốc",
+      "example": {
+        "ja": "がっこうの まえの [[さか]]は きゅうで、じてんしゃで のぼるのが たいへんです。",
+        "vi": "Con dốc trước trường rất gắt, đạp xe lên rất vất vả.",
+        "choices": ["かど", "しんごう", "こうばん"]
+      },
+      "tip": "さかを のぼる = lên dốc, さかを おりる = xuống dốc. きゅうな さか = dốc đứng."
+    },
+    {
+      "word": "角",
+      "reading": "かど",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "góc (phố, đồ vật)",
+      "example": {
+        "ja": "あの [[かど]]に ある みせが わたしの すきな パンやです。",
+        "vi": "Cửa hàng ở góc đường kia là tiệm bánh mì tôi thích.",
+        "choices": ["しんごう", "こうじ", "かじ"]
+      },
+      "tip": "かど = góc nhô ra (góc phố); すみ = góc bên trong (góc phòng). かどを まがる = rẽ ở góc."
+    },
+    {
+      "word": "港",
+      "reading": "みなと",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "bến cảng",
+      "example": {
+        "ja": "ふねが [[みなと]]に つきました。",
+        "vi": "Con tàu đã cập cảng.",
+        "choices": ["くうこう", "しんごう", "さか"]
+      },
+      "tip": "Chữ 港 Hán Việt là cảng, như trong くうこう (sân bay). Tàu thủy đến みなと, máy bay đến くうこう."
+    },
+    {
+      "word": "建物",
+      "reading": "たてもの",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "tòa nhà, công trình",
+      "example": {
+        "ja": "えきの まえに たかい [[たてもの]]が たくさん あります。",
+        "vi": "Trước ga có nhiều tòa nhà cao.",
+        "choices": ["のりもの", "しなもの", "おくりもの"]
+      },
+      "tip": "たてる (xây) + もの. Cùng kiểu ghép với もの: のりもの, しなもの, おくりもの."
+    },
+    {
+      "word": "床屋",
+      "reading": "とこや",
+      "group": "town",
+      "pos": "noun",
+      "meaning": "tiệm cắt tóc (nam)",
+      "example": {
+        "ja": "かみが ながく なったので、[[とこや]]へ いきました。",
+        "vi": "Tóc dài rồi nên tôi đi tiệm cắt tóc.",
+        "choices": ["こうばん", "きょうかい", "じんじゃ"]
+      },
+      "similar": "かみを きる みせ",
+      "tip": "Tiệm làm tóc (thường cho nữ) là びよういん; đừng nhầm với びょういん (bệnh viện)."
+    },
+    {
+      "word": "心配",
+      "reading": "しんぱい",
+      "group": "feelings",
+      "pos": "suru-noun",
+      "hanViet": "tâm phối",
+      "meaning": "lo lắng",
+      "example": {
+        "ja": "あしたの しけんが [[しんぱい]]で、ゆうべは よく ねられませんでした。",
+        "vi": "Lo về bài thi ngày mai nên tối qua tôi không ngủ được.",
+        "choices": ["じょうぶ", "ていねい", "まじめ"]
+      },
+      "similar": "きに なる",
+      "tip": "「〜が しんぱいだ」 hoặc 「〜を しんぱいする」. Trái nghĩa: あんしん (an tâm). ごしんぱいを おかけしました = xin lỗi đã làm anh/chị lo.",
+      "paper": [2018]
+    },
+    {
+      "word": "安心",
+      "reading": "あんしん",
+      "group": "feelings",
+      "pos": "suru-noun",
+      "hanViet": "an tâm",
+      "meaning": "yên tâm",
+      "example": {
+        "ja": "母から 「いま ついたよ」と でんわが あって、[[あんしん]]しました。",
+        "vi": "Mẹ gọi điện báo \"mẹ tới nơi rồi\" nên tôi yên tâm.",
+        "choices": ["ちゅうい", "しっぱい", "はんたい"]
+      },
+      "similar": "ほっとする",
+      "tip": "Trái nghĩa với しんぱい. あんしんして ください = cứ yên tâm."
+    },
+    {
+      "word": "びっくり",
+      "reading": "びっくり",
+      "group": "feelings",
+      "pos": "adverb",
+      "meaning": "giật mình, ngạc nhiên",
+      "example": {
+        "ja": "きゅうに 大きな 音が して、[[びっくりしました]]。",
+        "vi": "Đột nhiên có tiếng động lớn khiến tôi giật mình.",
+        "choices": ["がっかりしました", "ゆっくりしました", "はっきりしました"]
+      },
+      "similar": "おどろく",
+      "tip": "びっくりする = おどろく. Đừng nhầm với がっかりする (thất vọng) – cùng đuôi 〜っかり/〜っくり.",
+      "paper": [2018]
+    },
+    {
+      "word": "驚く",
+      "reading": "おどろく",
+      "group": "feelings",
+      "pos": "verb",
+      "meaning": "ngạc nhiên, kinh ngạc",
+      "example": {
+        "ja": "かのじょが らいげつ けっこんすると 聞いて、とても [[おどろきました]]。",
+        "vi": "Nghe tin cô ấy cưới vào tháng sau, tôi rất ngạc nhiên.",
+        "choices": ["ひろいました", "ならびました", "すべりました"]
+      },
+      "similar": "びっくりする",
+      "tip": "Văn nói hay dùng びっくりする; おどろく trang trọng hơn. 〜に おどろく = ngạc nhiên vì ~."
+    },
+    {
+      "word": "喜ぶ",
+      "reading": "よろこぶ",
+      "group": "feelings",
+      "pos": "verb",
+      "meaning": "vui mừng",
+      "example": {
+        "ja": "たんじょうびに プレゼントを あげたら、いもうとは とても [[よろこびました]]。",
+        "vi": "Tặng quà sinh nhật, em gái tôi rất vui.",
+        "choices": ["かよいました", "はこびました", "ひかりました"]
+      },
+      "tip": "うれしい là cảm xúc của chính mình; nói người khác vui thì dùng よろこぶ hoặc うれしそう."
+    },
+    {
+      "word": "怒る",
+      "reading": "おこる",
+      "group": "feelings",
+      "pos": "verb",
+      "meaning": "giận; mắng",
+      "example": {
+        "ja": "しゅくだいを わすれて、先生に [[おこられました]]。",
+        "vi": "Quên bài tập nên tôi bị thầy mắng.",
+        "choices": ["ほめられました", "しょうたいされました", "さそわれました"]
+      },
+      "similar": "しかる",
+      "tip": "Bị động おこられる = bị mắng (≈ しかられる). Trái nghĩa: ほめられる (được khen)."
+    },
+    {
+      "word": "悲しい",
+      "reading": "かなしい",
+      "group": "feelings",
+      "pos": "i-adjective",
+      "meaning": "buồn",
+      "example": {
+        "ja": "ながい あいだ かって いた 犬が 死んで、とても [[かなしかった]]です。",
+        "vi": "Con chó tôi nuôi lâu năm chết, tôi đã rất buồn.",
+        "choices": ["うれしかった", "すずしかった", "めずらしかった"]
+      },
+      "tip": "かなしい: buồn vì mất mát; さびしい: buồn vì cô đơn, vắng người."
+    },
+    {
+      "word": "寂しい",
+      "reading": "さびしい",
+      "group": "feelings",
+      "pos": "i-adjective",
+      "meaning": "buồn, cô đơn",
+      "example": {
+        "ja": "かぞくと はなれて 一人で すんで いるので、ときどき [[さびしい]]です。",
+        "vi": "Sống một mình xa gia đình nên thỉnh thoảng tôi thấy cô đơn.",
+        "choices": ["にがい", "あさい", "ほそい"]
+      },
+      "tip": "Cũng dùng cho nơi vắng vẻ: さびしい みち (con đường vắng)."
+    },
+    {
+      "word": "恥ずかしい",
+      "reading": "はずかしい",
+      "group": "feelings",
+      "pos": "i-adjective",
+      "meaning": "xấu hổ, ngượng",
+      "example": {
+        "ja": "みんなの まえで ころんで、とても [[はずかしかった]]です。",
+        "vi": "Tôi bị ngã trước mặt mọi người, xấu hổ quá.",
+        "choices": ["すずしかった", "ねむかった", "やすかった"]
+      }
+    },
+    {
+      "word": "残念",
+      "reading": "ざんねん",
+      "group": "feelings",
+      "pos": "na-adjective",
+      "hanViet": "tàn niệm",
+      "meaning": "đáng tiếc",
+      "example": {
+        "ja": "あめで サッカーの しあいが 中止に なって、[[ざんねん]]でした。",
+        "vi": "Trận bóng đá bị hủy vì mưa, thật đáng tiếc.",
+        "choices": ["ていねい", "じょうず", "まじめ"]
+      },
+      "tip": "ざんねんですが、〜 = rất tiếc nhưng ~ (cách từ chối lịch sự)."
+    },
+    {
+      "word": "興味",
+      "reading": "きょうみ",
+      "group": "feelings",
+      "pos": "noun",
+      "hanViet": "hứng vị",
+      "meaning": "hứng thú, quan tâm",
+      "example": {
+        "ja": "私は 日本の むかしの たてものに [[きょうみ]]が あります。",
+        "vi": "Tôi quan tâm đến các công trình kiến trúc cổ của Nhật.",
+        "choices": ["しゅうかん", "きぶん", "ねだん"]
+      },
+      "similar": "かんしんが ある",
+      "tip": "Mẫu cố định: 〜に きょうみが ある/ない. Khác しゅみ (sở thích – việc làm lúc rảnh).",
+      "paper": [2012]
+    },
+    {
+      "word": "夢",
+      "reading": "ゆめ",
+      "group": "feelings",
+      "pos": "noun",
+      "meaning": "giấc mơ; ước mơ",
+      "example": {
+        "ja": "わたしの [[ゆめ]]は いつか 自分の 店を もつ ことです。",
+        "vi": "Ước mơ của tôi là một ngày nào đó có cửa hàng của riêng mình.",
+        "choices": ["けしき", "におい", "しゅうかん"]
+      },
+      "tip": "ゆめを 見る = nằm mơ. しょうらいの ゆめ = ước mơ tương lai.",
+      "paper": [2018]
+    },
+    {
+      "word": "気持ち",
+      "reading": "きもち",
+      "group": "feelings",
+      "pos": "noun",
+      "meaning": "cảm giác, tâm trạng",
+      "example": {
+        "ja": "あつい 日に つめたい シャワーを あびると、[[きもち]]が いいです。",
+        "vi": "Ngày nóng mà tắm nước lạnh thì thật dễ chịu.",
+        "choices": ["ねだん", "あじ", "いろ"]
+      },
+      "tip": "きもちが いい = dễ chịu; きもちが わるい = khó chịu, ghê. 「きもちです」 khi tặng quà = chút lòng thành."
+    },
+    {
+      "word": "気分",
+      "reading": "きぶん",
+      "group": "feelings",
+      "pos": "noun",
+      "hanViet": "khí phân",
+      "meaning": "tâm trạng; cảm giác trong người",
+      "example": {
+        "ja": "ねつが あって、あさから [[きぶん]]が わるいです。",
+        "vi": "Tôi bị sốt, từ sáng đã thấy khó chịu trong người.",
+        "choices": ["けしき", "ねだん", "でんき"]
+      },
+      "tip": "きぶんが わるい = thấy mệt, buồn nôn. きぶんてんかん = đổi gió cho thoải mái."
+    },
+    {
+      "word": "怖い",
+      "reading": "こわい",
+      "group": "feelings",
+      "pos": "i-adjective",
+      "meaning": "sợ, đáng sợ",
+      "example": {
+        "ja": "きのう 見た えいがは とても [[こわくて]]、夜 ねられませんでした。",
+        "vi": "Bộ phim xem hôm qua đáng sợ quá, tối tôi không ngủ được.",
+        "choices": ["あまくて", "うすくて", "ひろくて"]
+      }
+    },
+    {
+      "word": "困る",
+      "reading": "こまる",
+      "group": "feelings",
+      "pos": "verb",
+      "meaning": "gặp khó khăn, bối rối",
+      "example": {
+        "ja": "さいふを なくして、[[こまって]] います。",
+        "vi": "Tôi làm mất ví nên đang rất khổ sở.",
+        "choices": ["こんで", "すいて", "ならんで"]
+      },
+      "tip": "Thường ở dạng こまって いる. こまった ときは いつでも 言って ください = khi gặp khó cứ nói nhé."
+    },
+    {
+      "word": "感動",
+      "reading": "かんどう",
+      "group": "feelings",
+      "pos": "suru-noun",
+      "hanViet": "cảm động",
+      "meaning": "xúc động, cảm động",
+      "example": {
+        "ja": "その えいがは すばらしくて、とても [[かんどう]]しました。",
+        "vi": "Bộ phim đó tuyệt vời, tôi rất xúc động.",
+        "choices": ["ちゅうもん", "よやく", "しゅっせき"]
+      }
+    },
+    {
+      "word": "楽しみ",
+      "reading": "たのしみ",
+      "group": "feelings",
+      "pos": "noun",
+      "meaning": "niềm vui; sự mong chờ",
+      "example": {
+        "ja": "らいしゅうの りょこうを [[たのしみ]]に して います。",
+        "vi": "Tôi đang mong chờ chuyến du lịch tuần sau.",
+        "choices": ["じゃま", "るす", "むり"]
+      },
+      "tip": "〜を たのしみに して います = đang mong chờ ~. Hay dùng cuối thư, email."
+    },
+    {
+      "word": "我慢",
+      "reading": "がまん",
+      "group": "feelings",
+      "pos": "suru-noun",
+      "hanViet": "ngã mạn",
+      "meaning": "chịu đựng, nhịn",
+      "example": {
+        "ja": "はが いたかったですが、あさまで [[がまん]]しました。",
+        "vi": "Răng đau nhưng tôi đã cố chịu đến sáng.",
+        "choices": ["しゅっぱつ", "せんたく", "さんぽ"]
+      },
+      "tip": "Hán Việt ngã mạn nhưng nghĩa là 'nhịn, chịu đựng'. がまんできない = không chịu nổi."
+    },
+    {
+      "word": "がっかり",
+      "reading": "がっかり",
+      "group": "feelings",
+      "pos": "adverb",
+      "meaning": "thất vọng",
+      "example": {
+        "ja": "いっしょうけんめい べんきょうしたのに テストの てんが わるくて、[[がっかりしました]]。",
+        "vi": "Đã học chăm chỉ vậy mà điểm kiểm tra kém, tôi thất vọng quá.",
+        "choices": ["しっかりしました", "ゆっくりしました", "はっきりしました"]
+      },
+      "tip": "Dễ nhầm với びっくり (giật mình). がっかり = buồn vì kết quả không như mong đợi."
+    },
+    {
+      "word": "相談",
+      "reading": "そうだん",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "tương đàm",
+      "meaning": "bàn bạc, xin ý kiến",
+      "example": {
+        "ja": "しごとを かえるか どうか、あにに [[そうだん]]しました。",
+        "vi": "Tôi đã hỏi ý kiến anh trai về chuyện có nên đổi việc hay không.",
+        "choices": ["しょうかい", "しょうたい", "あんない"]
+      },
+      "similar": "いけんを 聞く",
+      "tip": "〜に そうだんする = hỏi ý kiến ai. そうだんに のる = cho lời khuyên.",
+      "paper": [2012]
+    },
+    {
+      "word": "誘う",
+      "reading": "さそう",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "rủ, mời",
+      "example": {
+        "ja": "ともだちを えいがに [[さそいました]]が、いそがしいと 言われました。",
+        "vi": "Tôi rủ bạn đi xem phim nhưng bạn bảo bận.",
+        "choices": ["ほめました", "しらべました", "はらいました"]
+      },
+      "similar": "いっしょに 行こうと 言う",
+      "tip": "AをBに さそう = rủ A đi B. Bị động: さそわれる (được rủ). Mời trang trọng: しょうたいする.",
+      "paper": [2018]
+    },
+    {
+      "word": "褒める",
+      "reading": "ほめる",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "khen",
+      "example": {
+        "ja": "テストで 百てんを とって、母に [[ほめられました]]。",
+        "vi": "Được 100 điểm bài kiểm tra, tôi được mẹ khen.",
+        "choices": ["しかられました", "ふまれました", "わらわれました"]
+      },
+      "similar": "よく できたねと 言う",
+      "tip": "Trái nghĩa: しかる (mắng). Hay gặp ở dạng bị động ほめられる.",
+      "paper": [2012]
+    },
+    {
+      "word": "叱る",
+      "reading": "しかる",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "mắng, la rầy",
+      "example": {
+        "ja": "子どもが あぶない ところで あそんで いたので、[[しかりました]]。",
+        "vi": "Con chơi ở chỗ nguy hiểm nên tôi đã mắng.",
+        "choices": ["ほめました", "かざりました", "ひろいました"]
+      },
+      "similar": "おこる",
+      "tip": "しかる: người trên mắng để dạy bảo. おこる: nổi giận nói chung."
+    },
+    {
+      "word": "紹介",
+      "reading": "しょうかい",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "thiệu giới",
+      "meaning": "giới thiệu",
+      "example": {
+        "ja": "らいげつ、かのじょを りょうしんに [[しょうかい]]する つもりです。",
+        "vi": "Tháng sau tôi định giới thiệu bạn gái với bố mẹ.",
+        "choices": ["けんぶつ", "よやく", "うんてん"]
+      },
+      "tip": "AをBに しょうかいする = giới thiệu A với B. じこしょうかい = tự giới thiệu."
+    },
+    {
+      "word": "招待",
+      "reading": "しょうたい",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "chiêu đãi",
+      "meaning": "mời (đến tiệc, đám cưới)",
+      "example": {
+        "ja": "ともだちの けっこんしきに [[しょうたい]]されました。",
+        "vi": "Tôi được mời dự đám cưới của bạn.",
+        "choices": ["しっぱい", "ちゅうい", "じゅんび"]
+      },
+      "tip": "Hán Việt chiêu đãi nhưng nghĩa là 'mời'. しょうたいじょう = thiệp mời."
+    },
+    {
+      "word": "約束",
+      "reading": "やくそく",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "ước thúc",
+      "meaning": "lời hứa, cuộc hẹn",
+      "example": {
+        "ja": "あしたは ともだちと えきで 会う [[やくそく]]が あります。",
+        "vi": "Mai tôi có hẹn gặp bạn ở ga.",
+        "choices": ["しゅみ", "いけん", "ねだん"]
+      },
+      "tip": "やくそくを まもる = giữ lời hứa; やくそくを やぶる = thất hứa."
+    },
+    {
+      "word": "遠慮",
+      "reading": "えんりょ",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "viễn lự",
+      "meaning": "ngại, khách sáo; xin đừng (làm)",
+      "example": {
+        "ja": "この へやで たばこを すうのは [[えんりょ]]して ください。",
+        "vi": "Xin vui lòng không hút thuốc trong phòng này.",
+        "choices": ["しゅっせき", "しんぱい", "ちゅうもん"]
+      },
+      "tip": "ごえんりょ ください = xin đừng (biển báo lịch sự). えんりょしないで = đừng khách sáo."
+    },
+    {
+      "word": "挨拶",
+      "reading": "あいさつ",
+      "group": "relations",
+      "pos": "suru-noun",
+      "meaning": "chào hỏi",
+      "example": {
+        "ja": "あさ 会社に ついたら、みんなに 「おはようございます」と [[あいさつ]]します。",
+        "vi": "Sáng đến công ty, tôi chào mọi người \"chào buổi sáng\".",
+        "choices": ["しつもん", "ちゅうもん", "やくそく"]
+      },
+      "tip": "Cũng chỉ bài phát biểu ngắn mở đầu/cảm ơn: けっこんしきで あいさつする.",
+      "hanViet": "ai tạt"
+    },
+    {
+      "word": "手伝う",
+      "reading": "てつだう",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "giúp đỡ (một việc)",
+      "example": {
+        "ja": "ひっこしの とき、ともだちが [[てつだって]] くれました。",
+        "vi": "Khi chuyển nhà, bạn bè đã giúp tôi.",
+        "choices": ["ことわって", "おこって", "わすれて"]
+      },
+      "tip": "Giúp ai làm việc gì: 〜を てつだう. Danh từ: おてつだい."
+    },
+    {
+      "word": "断る",
+      "reading": "ことわる",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "từ chối",
+      "example": {
+        "ja": "パーティーに さそわれましたが、ようじが あったので [[ことわりました]]。",
+        "vi": "Tôi được rủ đi tiệc nhưng có việc bận nên đã từ chối.",
+        "choices": ["あつまりました", "わかれました", "まにあいました"]
+      }
+    },
+    {
+      "word": "謝る",
+      "reading": "あやまる",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "xin lỗi",
+      "example": {
+        "ja": "ともだちに かりた 本を よごして しまったので、すぐ [[あやまりました]]。",
+        "vi": "Làm bẩn sách mượn của bạn nên tôi xin lỗi ngay.",
+        "choices": ["わらいました", "よろこびました", "たのしみました"]
+      },
+      "tip": "あやまる là hành động xin lỗi; câu nói là 「すみません」「ごめんなさい」."
+    },
+    {
+      "word": "失礼",
+      "reading": "しつれい",
+      "group": "relations",
+      "pos": "na-adjective",
+      "hanViet": "thất lễ",
+      "meaning": "thất lễ, bất lịch sự",
+      "example": {
+        "ja": "目上の 人に そんな 言いかたを するのは [[しつれい]]です。",
+        "vi": "Ăn nói kiểu đó với người trên là thất lễ.",
+        "choices": ["じょうぶ", "べんり", "ゆうめい"]
+      },
+      "tip": "しつれいします = xin phép (vào/ra phòng). しつれいですが、〜 = xin lỗi cho tôi hỏi ~."
+    },
+    {
+      "word": "世話",
+      "reading": "せわ",
+      "group": "relations",
+      "pos": "noun",
+      "meaning": "sự chăm sóc, giúp đỡ",
+      "example": {
+        "ja": "りょこうの あいだ、となりの 人が 犬の [[せわ]]を して くれました。",
+        "vi": "Trong lúc tôi đi du lịch, hàng xóm đã chăm con chó giúp.",
+        "choices": ["しゅみ", "きょうみ", "けんか"]
+      },
+      "tip": "〜の せわを する = chăm sóc. おせわに なりました = cảm ơn vì đã giúp đỡ.",
+      "hanViet": "thế thoại"
+    },
+    {
+      "word": "喧嘩",
+      "reading": "けんか",
+      "group": "relations",
+      "pos": "suru-noun",
+      "meaning": "cãi nhau, đánh nhau",
+      "example": {
+        "ja": "おとうとと おもちゃの ことで [[けんか]]して、母に しかられました。",
+        "vi": "Tôi cãi nhau với em trai vì đồ chơi và bị mẹ mắng.",
+        "choices": ["けんぶつ", "けいかく", "しょうたい"]
+      },
+      "hanViet": "huyên hoa"
+    },
+    {
+      "word": "返事",
+      "reading": "へんじ",
+      "group": "relations",
+      "pos": "suru-noun",
+      "hanViet": "phản sự",
+      "meaning": "trả lời, hồi âm",
+      "example": {
+        "ja": "きのう メールを おくりましたが、まだ [[へんじ]]が ありません。",
+        "vi": "Hôm qua tôi đã gửi email nhưng vẫn chưa có hồi âm.",
+        "choices": ["ようい", "るす", "ちゅうし"]
+      },
+      "similar": "こたえ",
+      "tip": "へんじを する = trả lời (thư, lời gọi). Khi bị gọi tên, đáp 「はい」 cũng là へんじ."
+    },
+    {
+      "word": "関係",
+      "reading": "かんけい",
+      "group": "relations",
+      "pos": "noun",
+      "hanViet": "quan hệ",
+      "meaning": "quan hệ, liên quan",
+      "example": {
+        "ja": "その もんだいは わたしとは [[かんけい]]が ありません。",
+        "vi": "Vấn đề đó không liên quan gì đến tôi.",
+        "choices": ["ようじ", "しゅみ", "きぶん"]
+      },
+      "tip": "〜と かんけいが ある/ない. にんげんかんけい = quan hệ giữa người với người."
+    },
+    {
+      "word": "訪ねる",
+      "reading": "たずねる",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "đến thăm",
+      "example": {
+        "ja": "なつやすみに いなかの そふを [[たずねました]]。",
+        "vi": "Kỳ nghỉ hè tôi đã về quê thăm ông.",
+        "choices": ["しらべました", "わたりました", "かよいました"]
+      },
+      "tip": "Cùng âm たずねる (尋ねる) = hỏi. Phân biệt bằng ngữ cảnh: người/nơi chốn → thăm."
+    },
+    {
+      "word": "伺う",
+      "reading": "うかがう",
+      "group": "relations",
+      "pos": "verb",
+      "meaning": "đến thăm; hỏi (khiêm nhường)",
+      "example": {
+        "ja": "あした 三時に そちらへ [[うかがいます]]。",
+        "vi": "Ngày mai 3 giờ tôi xin phép đến chỗ anh/chị.",
+        "choices": ["はいけんします", "もうします", "いたします"]
+      },
+      "similar": "行きます",
+      "tip": "Khiêm nhường ngữ của 行く/聞く/たずねる (khiêm nhường của 来る là まいる). Chủ ngữ là mình, không dùng cho người khác."
+    },
+    {
+      "word": "熱心",
+      "reading": "ねっしん",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "nhiệt tâm",
+      "meaning": "nhiệt tình, chăm chỉ",
+      "example": {
+        "ja": "リンさんは まいにち [[ねっしんに]] 日本語を べんきょうして います。",
+        "vi": "Linh ngày nào cũng chăm chỉ học tiếng Nhật.",
+        "choices": ["ふくざつに", "ざんねんに", "じゃまに"]
+      },
+      "similar": "いっしょうけんめい",
+      "tip": "Hán Việt nhiệt tâm. ねっしんに + động từ = làm hết lòng. Gần nghĩa: いっしょうけんめい.",
+      "paper": [2012]
+    },
+    {
+      "word": "丁寧",
+      "reading": "ていねい",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "đinh ninh",
+      "meaning": "lịch sự; cẩn thận, tỉ mỉ",
+      "example": {
+        "ja": "この 店の 人は いつも [[ていねいに]] せつめいして くれます。",
+        "vi": "Nhân viên cửa hàng này luôn giải thích rất tận tình.",
+        "choices": ["ざんねんに", "ふべんに", "ひまに"]
+      },
+      "similar": "きちんと",
+      "tip": "2 nghĩa: lịch sự (ていねいな ことば) và cẩn thận (ていねいに かく = viết cẩn thận).",
+      "paper": [2012]
+    },
+    {
+      "word": "親切",
+      "reading": "しんせつ",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "thân thiết",
+      "meaning": "tử tế, tốt bụng",
+      "example": {
+        "ja": "みちに まよった とき、[[しんせつな]] 人が 駅まで つれて 行って くれました。",
+        "vi": "Khi tôi lạc đường, một người tốt bụng đã dẫn tôi đến ga.",
+        "choices": ["ふべんな", "ざんねんな", "べんりな"]
+      },
+      "similar": "やさしい",
+      "tip": "Hán Việt thân thiết nhưng nghĩa là 'tử tế', không phải 'thân' (thân thì dùng なかが いい).",
+      "paper": [2012]
+    },
+    {
+      "word": "真面目",
+      "reading": "まじめ",
+      "group": "character",
+      "pos": "na-adjective",
+      "meaning": "nghiêm túc, chăm chỉ",
+      "example": {
+        "ja": "かれは [[まじめな]] 人で、やくそくの 時間に おくれた ことが ありません。",
+        "vi": "Anh ấy là người nghiêm túc, chưa bao giờ trễ hẹn.",
+        "choices": ["らんぼうな", "ざんねんな", "ふべんな"]
+      }
+    },
+    {
+      "word": "優しい",
+      "reading": "やさしい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "hiền, tốt bụng",
+      "example": {
+        "ja": "となりの おばあさんは いつも [[やさしくて]]、子どもたちに 人気が あります。",
+        "vi": "Bà cụ hàng xóm lúc nào cũng hiền nên được trẻ con quý.",
+        "choices": ["まずくて", "からくて", "ねむくて"]
+      },
+      "tip": "優しい = hiền; 易しい (cùng âm) = dễ. Trái nghĩa của 優しい: きびしい / こわい."
+    },
+    {
+      "word": "厳しい",
+      "reading": "きびしい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "nghiêm khắc",
+      "example": {
+        "ja": "あの 先生は 時間に [[きびしい]]ので、ちこくすると おこられます。",
+        "vi": "Thầy ấy nghiêm khắc về giờ giấc nên đến muộn là bị mắng.",
+        "choices": ["あさい", "うすい", "ほそい"]
+      },
+      "tip": "〜に きびしい = nghiêm khắc về ~. Cũng dùng cho thời tiết: きびしい さむさ."
+    },
+    {
+      "word": "うまい",
+      "reading": "うまい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "giỏi; ngon",
+      "example": {
+        "ja": "マリアさんは ギターが とても [[うまい]]です。",
+        "vi": "Maria chơi guitar rất giỏi.",
+        "choices": ["からい", "まるい", "ねむい"]
+      },
+      "similar": "じょうず",
+      "tip": "2 nghĩa: giỏi (= じょうず) và ngon (= おいしい). Thường viết bằng kana, giọng thân mật.",
+      "paper": [2012]
+    },
+    {
+      "word": "美しい",
+      "reading": "うつくしい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "đẹp",
+      "example": {
+        "ja": "山の 上から 見た 海は とても [[うつくしかった]]です。",
+        "vi": "Biển nhìn từ trên núi thật đẹp.",
+        "choices": ["くわしかった", "やわらかかった", "ねむかった"]
+      },
+      "similar": "きれい",
+      "tip": "Trang trọng hơn きれい. Câu hỏi đồng nghĩa: うつくしい ≈ きれい.",
+      "paper": [2018]
+    },
+    {
+      "word": "立派",
+      "reading": "りっぱ",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "lập phái",
+      "meaning": "tuyệt vời, đồ sộ, đáng nể",
+      "example": {
+        "ja": "駅の まえに [[りっぱな]] ビルが できました。",
+        "vi": "Trước ga mới mọc lên một tòa nhà bề thế.",
+        "choices": ["ねっしんな", "まじめな", "しんせつな"]
+      },
+      "tip": "Dùng cho vật (りっぱな いえ) và người (りっぱな 人 = người đáng kính)."
+    },
+    {
+      "word": "素晴らしい",
+      "reading": "すばらしい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "tuyệt vời",
+      "example": {
+        "ja": "ゆうべの コンサートは [[すばらしかった]]です。もう いちど 行きたいです。",
+        "vi": "Buổi hòa nhạc tối qua tuyệt vời. Tôi muốn đi lần nữa.",
+        "choices": ["つまらなかった", "うるさかった", "ひどかった"]
+      }
+    },
+    {
+      "word": "酷い",
+      "reading": "ひどい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "tồi tệ, quá đáng",
+      "example": {
+        "ja": "かさを もって いなかったので、[[ひどい]] あめに ふられました。",
+        "vi": "Không mang ô nên tôi bị dính trận mưa dữ dội.",
+        "choices": ["ふかい", "うまい", "ねむい"]
+      },
+      "tip": "ひどい あめ/かぜ = mưa/gió dữ dội. Nói người: ひどい! = quá đáng!"
+    },
+    {
+      "word": "乱暴",
+      "reading": "らんぼう",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "loạn bạo",
+      "meaning": "thô bạo, mạnh tay",
+      "example": {
+        "ja": "ドアを [[らんぼうに]] しめないで ください。",
+        "vi": "Đừng đóng cửa mạnh tay như thế.",
+        "choices": ["しんせつに", "ざんねんに", "ゆうめいに"]
+      }
+    },
+    {
+      "word": "正直",
+      "reading": "しょうじき",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "chính trực",
+      "meaning": "thật thà",
+      "example": {
+        "ja": "うそを つかないで、[[しょうじきに]] 話して ください。",
+        "vi": "Đừng nói dối, hãy nói thật đi.",
+        "choices": ["ざんねんに", "ふべんに", "きけんに"]
+      }
+    },
+    {
+      "word": "大切",
+      "reading": "たいせつ",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "đại thiết",
+      "meaning": "quan trọng, quý giá",
+      "example": {
+        "ja": "これは そぼに もらった [[たいせつな]] ゆびわです。",
+        "vi": "Đây là chiếc nhẫn quý bà tặng tôi.",
+        "choices": ["ねっしんな", "にぎやかな", "しんせつな"]
+      },
+      "similar": "だいじ",
+      "tip": "たいせつ ≈ だいじ. 〜を たいせつに する = trân trọng, giữ gìn."
+    },
+    {
+      "word": "適当",
+      "reading": "てきとう",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "thích đáng",
+      "meaning": "phù hợp; qua loa",
+      "example": {
+        "ja": "あいて いる ところに [[てきとうな]] ことばを 入れて ください。",
+        "vi": "Hãy điền từ thích hợp vào chỗ trống.",
+        "choices": ["ねっしんな", "にぎやかな", "じょうぶな"]
+      },
+      "tip": "Đề thi: てきとうな ものを えらんで. Trong hội thoại てきとうに やる lại là 'làm qua loa'."
+    },
+    {
+      "word": "我が儘",
+      "reading": "わがまま",
+      "group": "character",
+      "pos": "na-adjective",
+      "meaning": "ích kỷ, bướng bỉnh",
+      "example": {
+        "ja": "おとうとは [[わがままで]]、ほしい ものが かえないと すぐ なきます。",
+        "vi": "Em trai tôi bướng lắm, không mua được thứ mình muốn là khóc ngay.",
+        "choices": ["ていねいで", "しずかで", "じょうぶで"]
+      }
+    },
+    {
+      "word": "変",
+      "reading": "へん",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "biến",
+      "meaning": "lạ, kỳ cục",
+      "example": {
+        "ja": "この ぎゅうにゅうは [[へんな]] においが します。",
+        "vi": "Hộp sữa này có mùi lạ.",
+        "choices": ["ねっしんな", "ていねいな", "まじめな"]
+      },
+      "similar": "おかしい"
+    },
+    {
+      "word": "不思議",
+      "reading": "ふしぎ",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "bất tư nghị",
+      "meaning": "kỳ lạ, khó hiểu",
+      "example": {
+        "ja": "だれも いないのに へやの でんきが ついて いて、[[ふしぎ]]です。",
+        "vi": "Không có ai mà đèn trong phòng lại bật, thật kỳ lạ.",
+        "choices": ["ていねい", "じょうず", "ねっしん"]
+      },
+      "tip": "Hán Việt bất tư nghị = không thể nghĩ bàn → điều khó lý giải."
+    },
+    {
+      "word": "偉い",
+      "reading": "えらい",
+      "group": "character",
+      "pos": "i-adjective",
+      "meaning": "giỏi, đáng khen; có địa vị cao",
+      "example": {
+        "ja": "まだ 五さいなのに 一人で ふくが きられて、[[えらい]]ですね。",
+        "vi": "Mới 5 tuổi mà đã tự mặc quần áo được, giỏi quá.",
+        "choices": ["ずるい", "うるさい", "くさい"]
+      },
+      "tip": "Khen trẻ con: えらいね! Nói người có chức vụ cao: えらい 人."
+    },
+    {
+      "word": "複雑",
+      "reading": "ふくざつ",
+      "group": "character",
+      "pos": "na-adjective",
+      "hanViet": "phức tạp",
+      "meaning": "phức tạp",
+      "example": {
+        "ja": "この きかいの つかいかたは [[ふくざつ]]で、よく わかりません。",
+        "vi": "Cách dùng cái máy này phức tạp, tôi không hiểu lắm.",
+        "choices": ["かんたん", "べんり", "あんぜん"]
+      },
+      "tip": "Trái nghĩa: かんたん (đơn giản)."
+    },
+    {
+      "word": "水泳",
+      "reading": "すいえい",
+      "group": "hobbies",
+      "pos": "noun",
+      "hanViet": "thủy vịnh",
+      "meaning": "bơi lội",
+      "example": {
+        "ja": "私の しゅみは [[すいえい]]で、週に 二回 プールに 行きます。",
+        "vi": "Sở thích của tôi là bơi, mỗi tuần đi bể bơi hai lần.",
+        "choices": ["りょうり", "どくしょ", "つり"]
+      },
+      "similar": "およぐ こと",
+      "tip": "Hán Việt thủy (nước) + vịnh (bơi). すいえい ≈ およぐ こと.",
+      "paper": [2018]
+    },
+    {
+      "word": "趣味",
+      "reading": "しゅみ",
+      "group": "hobbies",
+      "pos": "noun",
+      "hanViet": "thú vị",
+      "meaning": "sở thích",
+      "example": {
+        "ja": "父の [[しゅみ]]は ふるい カメラを あつめる ことです。",
+        "vi": "Sở thích của bố tôi là sưu tầm máy ảnh cũ.",
+        "choices": ["ようじ", "ねだん", "るす"]
+      },
+      "tip": "Hán Việt thú vị nhưng nghĩa là 'sở thích'. Hỏi lịch sự: ごしゅみは なんですか."
+    },
+    {
+      "word": "釣り",
+      "reading": "つり",
+      "group": "hobbies",
+      "pos": "noun",
+      "meaning": "câu cá",
+      "example": {
+        "ja": "日よう日に 父と 川へ [[つり]]に 行きました。",
+        "vi": "Chủ nhật tôi đi câu cá ở sông với bố.",
+        "choices": ["かいもの", "スキー", "ゴルフ"]
+      },
+      "tip": "Động từ: つる. おつり (cùng gốc) = tiền thối lại."
+    },
+    {
+      "word": "登山",
+      "reading": "とざん",
+      "group": "hobbies",
+      "pos": "noun",
+      "hanViet": "đăng sơn",
+      "meaning": "leo núi",
+      "example": {
+        "ja": "なつに ともだちと ふじさんへ [[とざん]]に 行く よていです。",
+        "vi": "Mùa hè tôi định đi leo núi Phú Sĩ với bạn.",
+        "choices": ["すいえい", "つり", "スキー"]
+      },
+      "similar": "山に のぼる こと"
+    },
+    {
+      "word": "試合",
+      "reading": "しあい",
+      "group": "hobbies",
+      "pos": "noun",
+      "meaning": "trận đấu",
+      "example": {
+        "ja": "らいしゅうの サッカーの [[しあい]]に かてる ように、まいにち れんしゅうして います。",
+        "vi": "Để thắng trận bóng tuần sau, ngày nào chúng tôi cũng tập.",
+        "choices": ["しゅみ", "きょうみ", "けんぶつ"]
+      }
+    },
+    {
+      "word": "練習",
+      "reading": "れんしゅう",
+      "group": "hobbies",
+      "pos": "suru-noun",
+      "hanViet": "luyện tập",
+      "meaning": "luyện tập",
+      "example": {
+        "ja": "ピアノが じょうずに なる ように、まいにち [[れんしゅう]]して います。",
+        "vi": "Để chơi piano giỏi, ngày nào tôi cũng luyện tập.",
+        "choices": ["けんぶつ", "しょうかい", "よやく"]
+      }
+    },
+    {
+      "word": "勝つ",
+      "reading": "かつ",
+      "group": "hobbies",
+      "pos": "verb",
+      "meaning": "thắng",
+      "example": {
+        "ja": "きのうの しあいは 三たい一で 日本が [[かちました]]。",
+        "vi": "Trận hôm qua Nhật Bản đã thắng 3-1.",
+        "choices": ["にげました", "おちました", "ひろいました"]
+      },
+      "tip": "〜に かつ = thắng ai. Trái nghĩa: まける (thua)."
+    },
+    {
+      "word": "負ける",
+      "reading": "まける",
+      "group": "hobbies",
+      "pos": "verb",
+      "meaning": "thua",
+      "example": {
+        "ja": "いっしょうけんめい がんばりましたが、ゼロたい二で [[まけて]] しまいました。",
+        "vi": "Đã cố hết sức nhưng chúng tôi vẫn thua 0-2.",
+        "choices": ["なげて", "うごいて", "すべって"]
+      },
+      "tip": "〜に まける = thua ai. まけて ください (khi mua hàng) = bớt giá cho tôi."
+    },
+    {
+      "word": "応援",
+      "reading": "おうえん",
+      "group": "hobbies",
+      "pos": "suru-noun",
+      "hanViet": "ứng viện",
+      "meaning": "cổ vũ, ủng hộ",
+      "example": {
+        "ja": "みんなで スタジアムへ 行って、すきな チームを [[おうえん]]しました。",
+        "vi": "Cả nhóm đến sân vận động cổ vũ đội mình thích.",
+        "choices": ["しゅっせき", "よやく", "うんてん"]
+      },
+      "tip": "Cũng dùng khi động viên ai: しけん、おうえんして いるよ = mình ủng hộ cậu thi tốt."
+    },
+    {
+      "word": "踊る",
+      "reading": "おどる",
+      "group": "hobbies",
+      "pos": "verb",
+      "meaning": "nhảy, múa",
+      "example": {
+        "ja": "パーティーで おんがくに あわせて [[おどりました]]。",
+        "vi": "Ở bữa tiệc tôi đã nhảy theo nhạc.",
+        "choices": ["ひろいました", "わたりました", "ぬすみました"]
+      },
+      "tip": "Danh từ: おどり (điệu múa). ぼんおどり = điệu múa lễ Obon."
+    },
+    {
+      "word": "集める",
+      "reading": "あつめる",
+      "group": "hobbies",
+      "pos": "verb",
+      "meaning": "sưu tầm, thu gom",
+      "example": {
+        "ja": "子どもの ころから きってを [[あつめて]] います。",
+        "vi": "Tôi sưu tầm tem từ hồi nhỏ.",
+        "choices": ["わかして", "おとして", "わって"]
+      },
+      "tip": "あつめる (tha động: gom lại) / あつまる (tự động: tụ tập)."
+    },
+    {
+      "word": "柔道",
+      "reading": "じゅうどう",
+      "group": "hobbies",
+      "pos": "noun",
+      "hanViet": "nhu đạo",
+      "meaning": "judo, nhu đạo",
+      "example": {
+        "ja": "あには 中学生の ときから [[じゅうどう]]を ならって います。",
+        "vi": "Anh tôi học judo từ hồi cấp hai.",
+        "choices": ["しょくじ", "さんぽ", "かいもの"]
+      }
+    },
+    {
+      "word": "小説",
+      "reading": "しょうせつ",
+      "group": "hobbies",
+      "pos": "noun",
+      "hanViet": "tiểu thuyết",
+      "meaning": "tiểu thuyết",
+      "example": {
+        "ja": "ねる まえに すこし [[しょうせつ]]を 読みます。",
+        "vi": "Trước khi ngủ tôi đọc tiểu thuyết một chút.",
+        "choices": ["えいが", "おんがく", "たてもの"]
+      },
+      "tip": "しょうせつか = tiểu thuyết gia, nhà văn."
+    },
+    {
+      "word": "番組",
+      "reading": "ばんぐみ",
+      "group": "hobbies",
+      "pos": "noun",
+      "meaning": "chương trình (TV, radio)",
+      "example": {
+        "ja": "まいばん、テレビで ニュースの [[ばんぐみ]]を 見て います。",
+        "vi": "Tối nào tôi cũng xem chương trình thời sự trên TV.",
+        "choices": ["じこく", "やくそく", "ばしょ"]
+      }
+    },
+    {
+      "word": "楽しむ",
+      "reading": "たのしむ",
+      "group": "hobbies",
+      "pos": "verb",
+      "meaning": "tận hưởng, vui với",
+      "example": {
+        "ja": "やすみの 日は にわで 花を そだてるのを [[たのしんで]] います。",
+        "vi": "Ngày nghỉ tôi vui với việc trồng hoa ngoài vườn.",
+        "choices": ["おこって", "こまって", "わかれて"]
+      },
+      "tip": "たのしい (tính từ: vui) → たのしむ (động từ: tận hưởng) → たのしみ (danh từ: niềm vui, mong chờ)."
+    },
+    {
+      "word": "祭り",
+      "reading": "まつり",
+      "group": "hobbies",
+      "pos": "noun",
+      "meaning": "lễ hội",
+      "example": {
+        "ja": "なつに なると、この 町では 大きな [[まつり]]が あります。",
+        "vi": "Cứ đến mùa hè, thị trấn này lại có lễ hội lớn.",
+        "choices": ["しゅみ", "ゆめ", "きぶん"]
+      },
+      "tip": "Thường nói おまつり. なつまつり = lễ hội mùa hè."
+    },
+    {
+      "word": "参加",
+      "reading": "さんか",
+      "group": "hobbies",
+      "pos": "suru-noun",
+      "hanViet": "tham gia",
+      "meaning": "tham gia",
+      "example": {
+        "ja": "らいげつの マラソンたいかいに [[さんか]]する つもりです。",
+        "vi": "Tôi định tham gia giải marathon tháng sau.",
+        "choices": ["せんたく", "さんぽ", "そうじ"]
+      },
+      "similar": "出る",
+      "tip": "〜に さんかする ≈ 〜に 出る (dự, tham gia)."
+    },
+    {
+      "word": "生け花",
+      "reading": "いけばな",
+      "group": "hobbies",
+      "pos": "noun",
+      "meaning": "nghệ thuật cắm hoa",
+      "example": {
+        "ja": "日本の ぶんかに きょうみが あって、[[いけばな]]を ならいはじめました。",
+        "vi": "Vì quan tâm đến văn hóa Nhật, tôi đã bắt đầu học cắm hoa.",
+        "choices": ["しょくじ", "でんしゃ", "ばんぐみ"]
+      }
+    },
+    {
+      "word": "ルール",
+      "reading": "ルール",
+      "group": "society",
+      "pos": "katakana",
+      "meaning": "luật, quy tắc",
+      "example": {
+        "ja": "この ゲームの [[ルール]]を おしえて ください。",
+        "vi": "Hãy chỉ cho tôi luật chơi của trò này.",
+        "choices": ["ベル", "ガラス", "カーテン"]
+      },
+      "similar": "きまり",
+      "tip": "Từ tiếng Anh rule. Đồng nghĩa: きまり, きそく.",
+      "paper": [2012]
+    },
+    {
+      "word": "規則",
+      "reading": "きそく",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "quy tắc",
+      "meaning": "quy tắc, nội quy",
+      "example": {
+        "ja": "この りょうの [[きそく]]で、夜 十時 いこうは 外に 出られません。",
+        "vi": "Theo nội quy ký túc xá này, sau 10 giờ tối không được ra ngoài.",
+        "choices": ["しゅみ", "けしき", "ばんぐみ"]
+      },
+      "similar": "ルール"
+    },
+    {
+      "word": "法律",
+      "reading": "ほうりつ",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "pháp luật",
+      "meaning": "pháp luật",
+      "example": {
+        "ja": "日本では [[ほうりつ]]で、二十さいに なるまで おさけを 飲んでは いけません。",
+        "vi": "Ở Nhật, theo luật chưa đủ 20 tuổi thì không được uống rượu.",
+        "choices": ["しゅみ", "きもち", "けしき"]
+      }
+    },
+    {
+      "word": "禁煙",
+      "reading": "きんえん",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "cấm yên",
+      "meaning": "cấm hút thuốc; bỏ thuốc",
+      "example": {
+        "ja": "この レストランは [[きんえん]]なので、たばこは 外で すって ください。",
+        "vi": "Nhà hàng này cấm hút thuốc nên xin hút ở bên ngoài.",
+        "choices": ["むりょう", "ゆうめい", "とくい"]
+      },
+      "tip": "Hán Việt cấm yên (yên = khói). きつえん = hút thuốc; きつえんじょ = khu hút thuốc."
+    },
+    {
+      "word": "注意",
+      "reading": "ちゅうい",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "chú ý",
+      "meaning": "chú ý, cẩn thận; nhắc nhở",
+      "example": {
+        "ja": "みちを わたる ときは、車に [[ちゅうい]]して ください。",
+        "vi": "Khi qua đường hãy chú ý xe cộ.",
+        "choices": ["えんりょ", "はんたい", "しょうかい"]
+      },
+      "similar": "きを つける",
+      "tip": "〜に ちゅういする ≈ 〜に きを つける. Cũng nghĩa 'nhắc nhở': 先生に ちゅういされた."
+    },
+    {
+      "word": "必要",
+      "reading": "ひつよう",
+      "group": "society",
+      "pos": "na-adjective",
+      "hanViet": "tất yếu",
+      "meaning": "cần thiết",
+      "example": {
+        "ja": "がいこくへ 行くには パスポートが [[ひつよう]]です。",
+        "vi": "Muốn ra nước ngoài thì cần hộ chiếu.",
+        "choices": ["ざんねん", "ていねい", "しんせつ"]
+      },
+      "similar": "いる",
+      "tip": "〜が ひつようだ ≈ 〜が いる (要る: cần). 〜する ひつようが ない = không cần làm."
+    },
+    {
+      "word": "禁止",
+      "reading": "きんし",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "cấm chỉ",
+      "meaning": "cấm",
+      "example": {
+        "ja": "この こうえんでは ボールあそびは [[きんし]]です。",
+        "vi": "Ở công viên này cấm chơi bóng.",
+        "choices": ["けんぶつ", "るす", "へんじ"]
+      },
+      "tip": "Biển báo: ちゅうしゃきんし (cấm đỗ xe), たちいりきんし (cấm vào)."
+    },
+    {
+      "word": "許可",
+      "reading": "きょか",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "hứa khả",
+      "meaning": "sự cho phép",
+      "example": {
+        "ja": "この へやを つかう ときは、先生の [[きょか]]が ひつようです。",
+        "vi": "Muốn dùng phòng này cần có sự cho phép của thầy.",
+        "choices": ["しゅみ", "ゆめ", "けしき"]
+      }
+    },
+    {
+      "word": "守る",
+      "reading": "まもる",
+      "group": "society",
+      "pos": "verb",
+      "meaning": "giữ, tuân thủ; bảo vệ",
+      "example": {
+        "ja": "みんなが こうつうの きまりを [[まもらない]]と、あぶないです。",
+        "vi": "Nếu mọi người không tuân thủ luật giao thông thì nguy hiểm.",
+        "choices": ["かざらない", "わかさない", "ひろわない"]
+      },
+      "tip": "やくそく/ルール/時間を まもる = giữ lời hứa/luật/giờ. Trái nghĩa: やぶる."
+    },
+    {
+      "word": "社会",
+      "reading": "しゃかい",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "xã hội",
+      "meaning": "xã hội",
+      "example": {
+        "ja": "大学を 出たら、[[しゃかい]]の ルールを まなぶ ことが たいせつです。",
+        "vi": "Ra trường rồi thì việc học các quy tắc của xã hội rất quan trọng.",
+        "choices": ["ねつ", "けしき", "におい"]
+      },
+      "tip": "しゃかいじん = người đã đi làm (không còn là sinh viên)."
+    },
+    {
+      "word": "文化",
+      "reading": "ぶんか",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "văn hóa",
+      "meaning": "văn hóa",
+      "example": {
+        "ja": "りゅうがくして、その 国の [[ぶんか]]を もっと 知りたいです。",
+        "vi": "Tôi muốn đi du học để hiểu thêm văn hóa nước đó.",
+        "choices": ["きぶん", "ねつ", "におい"]
+      }
+    },
+    {
+      "word": "意見",
+      "reading": "いけん",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "ý kiến",
+      "meaning": "ý kiến",
+      "example": {
+        "ja": "この けいかくに ついて、みなさんの [[いけん]]を 聞かせて ください。",
+        "vi": "Xin cho tôi nghe ý kiến của mọi người về kế hoạch này.",
+        "choices": ["しゅみ", "けしき", "ようじ"]
+      }
+    },
+    {
+      "word": "賛成",
+      "reading": "さんせい",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "tán thành",
+      "meaning": "tán thành, đồng ý",
+      "example": {
+        "ja": "わたしは 田中さんの いけんに [[さんせい]]です。",
+        "vi": "Tôi tán thành ý kiến của anh Tanaka.",
+        "choices": ["しっぱい", "ちゅうもん", "よやく"]
+      },
+      "tip": "〜に さんせいする. Trái nghĩa: はんたい (phản đối)."
+    },
+    {
+      "word": "反対",
+      "reading": "はんたい",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "phản đối",
+      "meaning": "phản đối; ngược lại",
+      "example": {
+        "ja": "父は わたしが 一人で がいこくへ 行く ことに [[はんたい]]して います。",
+        "vi": "Bố phản đối việc tôi đi nước ngoài một mình.",
+        "choices": ["しゅっせき", "ちゅうもん", "せんたく"]
+      },
+      "tip": "Còn nghĩa 'ngược': はんたいがわ = phía bên kia; はんたいの いみ = nghĩa trái ngược."
+    },
+    {
+      "word": "決める",
+      "reading": "きめる",
+      "group": "society",
+      "pos": "verb",
+      "meaning": "quyết định",
+      "example": {
+        "ja": "りょこうの ひにちを まだ [[きめて]] いません。",
+        "vi": "Tôi vẫn chưa quyết định ngày đi du lịch.",
+        "choices": ["ほめて", "わかして", "かざって"]
+      },
+      "tip": "きめる (tha động) / きまる (tự động: được quyết định). 〜ことに きめる = quyết định sẽ ~."
+    },
+    {
+      "word": "中止",
+      "reading": "ちゅうし",
+      "group": "society",
+      "pos": "suru-noun",
+      "hanViet": "trung chỉ",
+      "meaning": "hủy, đình chỉ",
+      "example": {
+        "ja": "たいふうで あしたの しあいは [[ちゅうし]]に なりました。",
+        "vi": "Vì bão nên trận đấu ngày mai đã bị hủy.",
+        "choices": ["しゅっせき", "さんせい", "ようい"]
+      },
+      "similar": "やめる こと",
+      "tip": "ちゅうしに なる = bị hủy. Khác えんき (hoãn sang ngày khác)."
+    },
+    {
+      "word": "戦争",
+      "reading": "せんそう",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "chiến tranh",
+      "meaning": "chiến tranh",
+      "example": {
+        "ja": "そふは [[せんそう]]の ころの 話を よく して くれます。",
+        "vi": "Ông tôi hay kể chuyện thời chiến tranh.",
+        "choices": ["けしき", "しゅみ", "きぶん"]
+      }
+    },
+    {
+      "word": "政治",
+      "reading": "せいじ",
+      "group": "society",
+      "pos": "noun",
+      "hanViet": "chính trị",
+      "meaning": "chính trị",
+      "example": {
+        "ja": "わたしは [[せいじ]]や けいざいの ニュースに きょうみが あります。",
+        "vi": "Tôi quan tâm đến tin tức chính trị và kinh tế.",
+        "choices": ["けしき", "におい", "ねつ"]
+      }
+    },
+    {
+      "word": "止める",
+      "reading": "とめる",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "dừng; đỗ (xe)",
+      "example": {
+        "ja": "ここに 車を [[とめないで]] ください。",
+        "vi": "Xin đừng đỗ xe ở đây.",
+        "choices": ["わらわないで", "おどらないで", "ほめないで"]
+      },
+      "similar": "ちゅうしゃする",
+      "tip": "とめる (tha động: dừng/đỗ xe) / とまる (tự động: xe dừng). Đỗ xe: 車を とめる ≈ ちゅうしゃする.",
+      "paper": [2012]
+    },
+    {
+      "word": "比べる",
+      "reading": "くらべる",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "so sánh",
+      "example": {
+        "ja": "二つの 店の ねだんを [[くらべて]]、やすい ほうで かいました。",
+        "vi": "Tôi so giá hai cửa hàng rồi mua ở chỗ rẻ hơn.",
+        "choices": ["かざって", "まもって", "さそって"]
+      },
+      "similar": "どちらが いいか 見る",
+      "tip": "AとBを くらべる. 〜に くらべて = so với ~.",
+      "paper": [2018]
+    },
+    {
+      "word": "見つかる",
+      "reading": "みつかる",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "được tìm thấy",
+      "example": {
+        "ja": "なくした かぎが つくえの 下から [[みつかりました]]。",
+        "vi": "Chiếc chìa khóa bị mất đã được tìm thấy dưới gầm bàn.",
+        "choices": ["わかれました", "あつまりました", "まにあいました"]
+      },
+      "similar": "あった",
+      "tip": "みつかる (tự động: 〜が みつかる) / みつける (tha động: 〜を みつける).",
+      "paper": [2018]
+    },
+    {
+      "word": "見つける",
+      "reading": "みつける",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "tìm ra, phát hiện",
+      "example": {
+        "ja": "駅の ちかくで やすくて きれいな アパートを [[みつけました]]。",
+        "vi": "Tôi đã tìm được một căn hộ rẻ và đẹp gần ga.",
+        "choices": ["まもりました", "わりました", "すてました"]
+      }
+    },
+    {
+      "word": "拾う",
+      "reading": "ひろう",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "nhặt",
+      "example": {
+        "ja": "こうえんで 子どもたちと ごみを [[ひろいました]]。",
+        "vi": "Tôi đã nhặt rác ở công viên cùng bọn trẻ.",
+        "choices": ["ほめました", "かよいました", "さそいました"]
+      },
+      "tip": "Trái nghĩa: すてる (vứt), おとす (đánh rơi). タクシーを ひろう = bắt taxi."
+    },
+    {
+      "word": "落とす",
+      "reading": "おとす",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "đánh rơi",
+      "example": {
+        "ja": "でんしゃの 中で さいふを [[おとして]] しまいました。",
+        "vi": "Tôi lỡ đánh rơi ví trên tàu.",
+        "choices": ["ほめて", "さそって", "まもって"]
+      },
+      "tip": "おとす (tha động) / おちる (tự động: rơi)."
+    },
+    {
+      "word": "続ける",
+      "reading": "つづける",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "tiếp tục",
+      "example": {
+        "ja": "日本語の べんきょうを 三年 [[つづけて]] います。",
+        "vi": "Tôi đã học tiếng Nhật liên tục được ba năm.",
+        "choices": ["かざって", "ひろって", "わって"]
+      },
+      "tip": "つづける (tha động) / つづく (tự động). Vます + つづける = tiếp tục làm."
+    },
+    {
+      "word": "頼む",
+      "reading": "たのむ",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "nhờ, gọi (món)",
+      "example": {
+        "ja": "いそがしかったので、あにに 子どもの せわを [[たのみました]]。",
+        "vi": "Bận quá nên tôi nhờ anh trai trông con giúp.",
+        "choices": ["ほめました", "わりました", "かざりました"]
+      },
+      "similar": "おねがいする"
+    },
+    {
+      "word": "伝える",
+      "reading": "つたえる",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "truyền đạt, nhắn lại",
+      "example": {
+        "ja": "田中さんに、あしたの かいぎは 十時からだと [[つたえて]] ください。",
+        "vi": "Hãy nhắn với anh Tanaka là cuộc họp mai bắt đầu lúc 10 giờ.",
+        "choices": ["まもって", "ひろって", "はこんで"]
+      },
+      "tip": "Nhắn lại: 〜と つたえて いただけませんか (lịch sự)."
+    },
+    {
+      "word": "探す",
+      "reading": "さがす",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "tìm kiếm",
+      "example": {
+        "ja": "いま、駅から ちかい アパートを [[さがして]] います。",
+        "vi": "Hiện tôi đang tìm căn hộ gần ga.",
+        "choices": ["まもって", "ほめて", "わって"]
+      },
+      "tip": "さがす = đang tìm (quá trình); みつける = tìm ra (kết quả)."
+    },
+    {
+      "word": "起こす",
+      "reading": "おこす",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "đánh thức; gây ra",
+      "example": {
+        "ja": "あした 六時に [[おこして]] ください。",
+        "vi": "Mai 6 giờ đánh thức tôi dậy nhé.",
+        "choices": ["わって", "かざって", "おとして"]
+      },
+      "tip": "おこす (tha động) / おきる (tự động: thức dậy). じこを おこす = gây tai nạn."
+    },
+    {
+      "word": "渡す",
+      "reading": "わたす",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "đưa, trao",
+      "example": {
+        "ja": "この てがみを 山田さんに [[わたして]] ください。",
+        "vi": "Hãy đưa lá thư này cho anh Yamada.",
+        "choices": ["ひろって", "おとして", "まもって"]
+      },
+      "tip": "わたす (đưa) khác わたる (băng qua: はしを わたる)."
+    },
+    {
+      "word": "盗む",
+      "reading": "ぬすむ",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "ăn trộm",
+      "example": {
+        "ja": "でんしゃの 中で さいふを [[ぬすまれました]]。",
+        "vi": "Tôi bị trộm ví trên tàu.",
+        "choices": ["ふまれました", "しかられました", "さそわれました"]
+      },
+      "tip": "Hay gặp ở bị động (Minna bài 37): 〜を ぬすまれる = bị lấy trộm ~."
+    },
+    {
+      "word": "戻る",
+      "reading": "もどる",
+      "group": "verbs",
+      "pos": "verb",
+      "meaning": "quay lại",
+      "example": {
+        "ja": "わすれものを したので、いえに [[もどりました]]。",
+        "vi": "Quên đồ nên tôi quay lại nhà.",
+        "choices": ["ひろいました", "まもりました", "ならべました"]
+      },
+      "similar": "かえる"
+    },
+    {
+      "word": "変わる",
+      "reading": "かわる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "thay đổi",
+      "example": {
+        "ja": "十年ぶりに 町へ 帰ったら、駅の まわりが すっかり [[かわって]] いました。",
+        "vi": "Mười năm mới về lại thị trấn, quanh ga đã thay đổi hoàn toàn.",
+        "choices": ["わかれて", "おどって", "すべって"]
+      },
+      "tip": "かわる (tự động) / かえる (tha động: thay đổi cái gì)."
+    },
+    {
+      "word": "増える",
+      "reading": "ふえる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "tăng lên",
+      "example": {
+        "ja": "さいきん、日本へ 来る りょこうしゃが [[ふえて]] います。",
+        "vi": "Gần đây số khách du lịch đến Nhật đang tăng.",
+        "choices": ["わかれて", "やせて", "ひかって"]
+      },
+      "similar": "多く なる",
+      "tip": "Trái nghĩa: へる (giảm). ふえる ≈ 多く なる."
+    },
+    {
+      "word": "減る",
+      "reading": "へる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "giảm đi",
+      "example": {
+        "ja": "まいにち はしって いたら、たいじゅうが 三キロ [[へりました]]。",
+        "vi": "Chạy bộ mỗi ngày nên cân nặng của tôi giảm 3 cân.",
+        "choices": ["ならびました", "ひかりました", "わかれました"]
+      },
+      "similar": "少なく なる",
+      "tip": "おなかが へる = đói bụng."
+    },
+    {
+      "word": "壊れる",
+      "reading": "こわれる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "bị hỏng",
+      "example": {
+        "ja": "パソコンが [[こわれて]]、うごかなく なりました。",
+        "vi": "Máy tính bị hỏng, không chạy nữa.",
+        "choices": ["ならんで", "わかれて", "ふとって"]
+      },
+      "tip": "こわれる (tự động: 〜が こわれる) / こわす (tha động: 〜を こわす)."
+    },
+    {
+      "word": "壊す",
+      "reading": "こわす",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "làm hỏng, phá",
+      "example": {
+        "ja": "おとうとが わたしの おもちゃを [[こわして]] しまいました。",
+        "vi": "Em trai lỡ làm hỏng đồ chơi của tôi.",
+        "choices": ["ほめて", "さそって", "かよって"]
+      },
+      "tip": "おなかを こわす = đau bụng, rối loạn tiêu hóa."
+    },
+    {
+      "word": "割れる",
+      "reading": "われる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "vỡ",
+      "example": {
+        "ja": "コップが おちて、[[われて]] しまいました。",
+        "vi": "Cái cốc rơi xuống và vỡ mất.",
+        "choices": ["ひかって", "わかれて", "ふとって"]
+      },
+      "tip": "われる (tự động: vỡ) / わる (tha động: làm vỡ). Dùng cho đồ thủy tinh, sứ."
+    },
+    {
+      "word": "慣れる",
+      "reading": "なれる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "quen",
+      "example": {
+        "ja": "日本の せいかつに もう [[なれました]]か。",
+        "vi": "Bạn đã quen với cuộc sống ở Nhật chưa?",
+        "choices": ["わかれました", "まにあいました", "ならびました"]
+      },
+      "tip": "〜に なれる = quen với ~. Đừng nhầm với なる (trở thành)."
+    },
+    {
+      "word": "汚れる",
+      "reading": "よごれる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "bị bẩn",
+      "example": {
+        "ja": "あめの 中を あるいて、くつが [[よごれて]] しまいました。",
+        "vi": "Đi dưới mưa nên giày bị bẩn hết.",
+        "choices": ["ひかって", "ならんで", "ふとって"]
+      },
+      "tip": "よごれる (tự động) / よごす (tha động). Tính từ: きたない."
+    },
+    {
+      "word": "太る",
+      "reading": "ふとる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "béo lên",
+      "example": {
+        "ja": "あまい ものを 食べすぎて、[[ふとって]] しまいました。",
+        "vi": "Ăn đồ ngọt nhiều quá nên tôi bị béo lên.",
+        "choices": ["やせて", "ひかって", "わかれて"]
+      },
+      "tip": "Trạng thái béo: ふとって いる (không nói ふとい 人). Trái nghĩa: やせる."
+    },
+    {
+      "word": "痩せる",
+      "reading": "やせる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "gầy đi",
+      "example": {
+        "ja": "びょうきで 五キロも [[やせました]]。",
+        "vi": "Vì ốm mà tôi sụt tận 5 cân.",
+        "choices": ["ならびました", "ひかりました", "まにあいました"]
+      },
+      "tip": "Người gầy: やせて いる 人."
+    },
+    {
+      "word": "失敗",
+      "reading": "しっぱい",
+      "group": "change",
+      "pos": "suru-noun",
+      "hanViet": "thất bại",
+      "meaning": "thất bại, làm hỏng",
+      "example": {
+        "ja": "はじめて ケーキを 作りましたが、[[しっぱい]]して しまいました。",
+        "vi": "Lần đầu làm bánh kem nhưng tôi đã làm hỏng.",
+        "choices": ["しゅっせき", "ちゅうい", "さんせい"]
+      },
+      "tip": "Trái nghĩa: せいこう (thành công)."
+    },
+    {
+      "word": "上がる",
+      "reading": "あがる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "tăng lên, đi lên",
+      "example": {
+        "ja": "らいげつから バスの りょうきんが 二十円 [[あがります]]。",
+        "vi": "Từ tháng sau giá vé xe buýt tăng 20 yên.",
+        "choices": ["のぼります", "ひかります", "ならびます"]
+      },
+      "tip": "Giá, nhiệt độ: あがる. Leo núi, cầu thang: のぼる. Trái nghĩa: さがる."
+    },
+    {
+      "word": "下がる",
+      "reading": "さがる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "giảm xuống, hạ",
+      "example": {
+        "ja": "くすりを 飲んだら、ねつが [[さがりました]]。",
+        "vi": "Uống thuốc xong thì hạ sốt.",
+        "choices": ["おりました", "わかれました", "ひかりました"]
+      },
+      "tip": "Giá, nhiệt độ: さがる. Xuống xe, cầu thang: おりる."
+    },
+    {
+      "word": "消える",
+      "reading": "きえる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "tắt, biến mất",
+      "example": {
+        "ja": "つよい かぜで ろうそくの 火が [[きえました]]。",
+        "vi": "Gió mạnh làm tắt ngọn nến.",
+        "choices": ["こみました", "わかれました", "ならびました"]
+      },
+      "tip": "きえる (tự động) / けす (tha động: tắt đèn, xóa)."
+    },
+    {
+      "word": "生まれる",
+      "reading": "うまれる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "được sinh ra",
+      "example": {
+        "ja": "きょねん、あねに 女の 子が [[うまれました]]。",
+        "vi": "Năm ngoái chị gái tôi sinh một bé gái.",
+        "choices": ["まにあいました", "ならびました", "ひかりました"]
+      }
+    },
+    {
+      "word": "育てる",
+      "reading": "そだてる",
+      "group": "change",
+      "pos": "verb",
+      "meaning": "nuôi, trồng",
+      "example": {
+        "ja": "ベランダで トマトを [[そだてて]] います。",
+        "vi": "Tôi đang trồng cà chua ngoài ban công.",
+        "choices": ["わかして", "ほめて", "わって"]
+      },
+      "tip": "そだてる (tha động: nuôi dạy) / そだつ (tự động: lớn lên)."
+    },
+    {
+      "word": "急に",
+      "reading": "きゅうに",
+      "group": "change",
+      "pos": "adverb",
+      "hanViet": "cấp",
+      "meaning": "đột nhiên",
+      "example": {
+        "ja": "さっきまで はれて いたのに、[[きゅうに]] あめが ふりだしました。",
+        "vi": "Vừa nãy còn nắng mà đột nhiên trời đổ mưa.",
+        "choices": ["ちっとも", "なかなか", "けっして"]
+      },
+      "similar": "とつぜん",
+      "tip": "Hán Việt cấp (gấp). きゅうに ≈ とつぜん."
+    },
+    {
+      "word": "段々",
+      "reading": "だんだん",
+      "group": "change",
+      "pos": "adverb",
+      "meaning": "dần dần",
+      "example": {
+        "ja": "四月に なって、[[だんだん]] あたたかく なって きました。",
+        "vi": "Sang tháng 4, trời ấm dần lên.",
+        "choices": ["ちっとも", "けっして", "ぜひ"]
+      },
+      "similar": "少しずつ",
+      "tip": "Thường đi với 〜く/〜に なる và 〜て くる.",
+      "hanViet": "đoạn đoạn"
+    },
+    {
+      "word": "随分",
+      "reading": "ずいぶん",
+      "group": "change",
+      "pos": "adverb",
+      "meaning": "khá là, rất nhiều",
+      "example": {
+        "ja": "この 町は 十年で [[ずいぶん]] かわりました。",
+        "vi": "Thị trấn này đã thay đổi rất nhiều trong 10 năm.",
+        "choices": ["ぜひ", "けっして", "なるべく"]
+      },
+      "similar": "かなり",
+      "hanViet": "tùy phân"
+    },
+    {
+      "word": "すっかり",
+      "reading": "すっかり",
+      "group": "change",
+      "pos": "adverb",
+      "meaning": "hoàn toàn",
+      "example": {
+        "ja": "ともだちとの やくそくを [[すっかり]] わすれて いました。",
+        "vi": "Tôi quên béng mất cuộc hẹn với bạn.",
+        "choices": ["ぜひ", "なるべく", "けっして"]
+      },
+      "similar": "ぜんぶ",
+      "tip": "すっかり わすれる / すっかり よく なる / すっかり かわる."
+    },
+    {
+      "word": "最近",
+      "reading": "さいきん",
+      "group": "time",
+      "pos": "noun",
+      "hanViet": "tối cận",
+      "meaning": "gần đây, dạo này",
+      "example": {
+        "ja": "[[さいきん]]、しごとが いそがしくて、あまり ねて いません。",
+        "vi": "Dạo này công việc bận nên tôi không ngủ mấy.",
+        "choices": ["らいねん", "あさって", "これから"]
+      },
+      "similar": "このごろ",
+      "tip": "Hán Việt tối cận (gần nhất). さいきん ≈ このごろ. Không dùng cho tương lai.",
+      "paper": [2018]
+    },
+    {
+      "word": "是非",
+      "reading": "ぜひ",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "nhất định (mời, mong muốn)",
+      "example": {
+        "ja": "こんど、[[ぜひ]] わたしの 国へ あそびに 来て ください。",
+        "vi": "Lần tới nhất định hãy sang nước tôi chơi nhé.",
+        "choices": ["けっして", "ちっとも", "なかなか"]
+      },
+      "tip": "ぜひ + 〜て ください / 〜たい / 〜ましょう. Không đi với phủ định (khác けっして).",
+      "paper": [2018],
+      "hanViet": "thị phi"
+    },
+    {
+      "word": "久しぶり",
+      "reading": "ひさしぶり",
+      "group": "time",
+      "pos": "na-adjective",
+      "meaning": "lâu rồi mới (gặp, làm)",
+      "example": {
+        "ja": "きのう、[[ひさしぶりに]] こうこうの ともだちに 会いました。",
+        "vi": "Hôm qua lâu lắm rồi tôi mới gặp lại bạn cấp ba.",
+        "choices": ["ざんねんに", "ふべんに", "じょうぶに"]
+      },
+      "tip": "Chào khi gặp lại: おひさしぶりです. 十年ぶり = sau 10 năm."
+    },
+    {
+      "word": "将来",
+      "reading": "しょうらい",
+      "group": "time",
+      "pos": "noun",
+      "hanViet": "tương lai",
+      "meaning": "tương lai",
+      "example": {
+        "ja": "[[しょうらい]]は いしゃに なって、びょういんで はたらきたいです。",
+        "vi": "Sau này tôi muốn trở thành bác sĩ và làm ở bệnh viện.",
+        "choices": ["むかし", "さっき", "きのう"]
+      },
+      "tip": "しょうらいの ゆめ = ước mơ tương lai."
+    },
+    {
+      "word": "昔",
+      "reading": "むかし",
+      "group": "time",
+      "pos": "noun",
+      "meaning": "ngày xưa",
+      "example": {
+        "ja": "この あたりは [[むかし]] 海でした。",
+        "vi": "Vùng này ngày xưa là biển.",
+        "choices": ["しょうらい", "あさって", "これから"]
+      },
+      "tip": "むかしばなし = truyện cổ tích (むかし むかし… = ngày xửa ngày xưa)."
+    },
+    {
+      "word": "今度",
+      "reading": "こんど",
+      "group": "time",
+      "pos": "noun",
+      "hanViet": "kim độ",
+      "meaning": "lần tới; lần này",
+      "example": {
+        "ja": "[[こんど]]の 日よう日、いっしょに えいがを 見に 行きませんか。",
+        "vi": "Chủ nhật tới đi xem phim cùng nhau không?",
+        "choices": ["きのう", "おととい", "むかし"]
+      },
+      "tip": "Thường là 'lần tới' (こんど また = lần sau nhé). Đôi khi là 'lần này'."
+    },
+    {
+      "word": "この間",
+      "reading": "このあいだ",
+      "group": "time",
+      "pos": "noun",
+      "meaning": "hôm trước, dạo trước",
+      "example": {
+        "ja": "[[このあいだ]] かりた 本を かえします。ありがとう ございました。",
+        "vi": "Tôi trả cuốn sách mượn hôm trước. Cảm ơn anh.",
+        "choices": ["らいしゅう", "あさって", "しょうらい"]
+      },
+      "similar": "せんじつ"
+    },
+    {
+      "word": "この頃",
+      "reading": "このごろ",
+      "group": "time",
+      "pos": "noun",
+      "meaning": "dạo này",
+      "example": {
+        "ja": "[[このごろ]] あさ はやく おきられなく なりました。",
+        "vi": "Dạo này tôi không dậy sớm được nữa.",
+        "choices": ["らいげつ", "あさって", "しょうらい"]
+      },
+      "similar": "さいきん"
+    },
+    {
+      "word": "たまに",
+      "reading": "たまに",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "thỉnh thoảng (hiếm khi)",
+      "example": {
+        "ja": "いつもは バスですが、[[たまに]] あるいて 会社へ 行きます。",
+        "vi": "Thường tôi đi xe buýt, thỉnh thoảng mới đi bộ đến công ty.",
+        "choices": ["けっして", "ちっとも", "ぜんぜん"]
+      },
+      "similar": "ときどき",
+      "tip": "Tần suất: いつも > よく > ときどき > たまに > あまり〜ない > ぜんぜん〜ない."
+    },
+    {
+      "word": "しばらく",
+      "reading": "しばらく",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "một lúc; một thời gian",
+      "example": {
+        "ja": "[[しばらく]] ここで 待って いて ください。",
+        "vi": "Xin hãy đợi ở đây một lát.",
+        "choices": ["けっして", "ちっとも", "ほとんど"]
+      },
+      "similar": "すこしの あいだ",
+      "tip": "しばらくです = lâu rồi không gặp (≈ おひさしぶりです)."
+    },
+    {
+      "word": "やっと",
+      "reading": "やっと",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "cuối cùng thì (sau khi chờ lâu)",
+      "example": {
+        "ja": "三十分 待って、[[やっと]] バスが 来ました。",
+        "vi": "Chờ 30 phút, cuối cùng xe buýt cũng tới.",
+        "choices": ["けっして", "ちっとも", "なるべく"]
+      },
+      "tip": "やっと: kết quả mong muốn sau nhiều vất vả. とうとう: rốt cuộc (cả kết quả xấu)."
+    },
+    {
+      "word": "とうとう",
+      "reading": "とうとう",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "rốt cuộc, cuối cùng",
+      "example": {
+        "ja": "一時間 待ちましたが、かれは [[とうとう]] 来ませんでした。",
+        "vi": "Tôi đợi một tiếng nhưng rốt cuộc anh ấy đã không đến.",
+        "choices": ["ぜひ", "なるべく", "もうすぐ"]
+      },
+      "tip": "とうとう đi được với phủ định (とうとう 来なかった); やっと thì không."
+    },
+    {
+      "word": "もうすぐ",
+      "reading": "もうすぐ",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "sắp, sắp sửa",
+      "example": {
+        "ja": "[[もうすぐ]] なつやすみですね。どこか 行きますか。",
+        "vi": "Sắp nghỉ hè rồi nhỉ. Bạn có đi đâu không?",
+        "choices": ["さっき", "むかし", "このあいだ"]
+      },
+      "similar": "まもなく"
+    },
+    {
+      "word": "相変わらず",
+      "reading": "あいかわらず",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "vẫn như mọi khi",
+      "example": {
+        "ja": "五年ぶりに 会いましたが、かれは [[あいかわらず]] 元気でした。",
+        "vi": "5 năm mới gặp lại mà anh ấy vẫn khỏe như xưa.",
+        "choices": ["けっして", "ちっとも", "ぜひ"]
+      },
+      "similar": "まえと 同じように"
+    },
+    {
+      "word": "必ず",
+      "reading": "かならず",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "nhất định, chắc chắn",
+      "example": {
+        "ja": "しゅくだいは [[かならず]] あしたまでに 出して ください。",
+        "vi": "Bài tập nhất định phải nộp trước ngày mai.",
+        "choices": ["けっして", "ちっとも", "たまに"]
+      },
+      "similar": "きっと",
+      "tip": "かならず: chắc chắn, luôn luôn (quy tắc). ぜひ: mong muốn, lời mời."
+    },
+    {
+      "word": "決して",
+      "reading": "けっして",
+      "group": "time",
+      "pos": "adverb",
+      "hanViet": "quyết",
+      "meaning": "tuyệt đối không",
+      "example": {
+        "ja": "この ことは [[けっして]] だれにも 言わないで ください。",
+        "vi": "Chuyện này tuyệt đối đừng nói với ai.",
+        "choices": ["ぜひ", "やっと", "もうすぐ"]
+      },
+      "tip": "Luôn đi với phủ định: けっして 〜ない."
+    },
+    {
+      "word": "なるべく",
+      "reading": "なるべく",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "càng... càng tốt, cố gắng",
+      "example": {
+        "ja": "かいぎには [[なるべく]] はやく 来て ください。",
+        "vi": "Hãy cố đến cuộc họp càng sớm càng tốt.",
+        "choices": ["けっして", "ちっとも", "さっき"]
+      },
+      "similar": "できるだけ"
+    },
+    {
+      "word": "ちっとも",
+      "reading": "ちっとも",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "chẳng... chút nào",
+      "example": {
+        "ja": "この えいがは [[ちっとも]] おもしろくなかったです。",
+        "vi": "Bộ phim này chẳng hay chút nào.",
+        "choices": ["かならず", "ぜひ", "なるべく"]
+      },
+      "similar": "ぜんぜん",
+      "tip": "Luôn đi với phủ định, ≈ ぜんぜん 〜ない."
+    },
+    {
+      "word": "途中",
+      "reading": "とちゅう",
+      "group": "time",
+      "pos": "noun",
+      "hanViet": "đồ trung",
+      "meaning": "giữa chừng, dọc đường",
+      "example": {
+        "ja": "会社へ 行く [[とちゅう]]で、ゆうびんきょくに よりました。",
+        "vi": "Trên đường đến công ty, tôi ghé bưu điện.",
+        "choices": ["さいご", "よてい", "るす"]
+      },
+      "tip": "Hán Việt đồ trung (đồ = đường). えいがを とちゅうで やめる = bỏ xem giữa chừng."
+    },
+    {
+      "word": "ほとんど",
+      "reading": "ほとんど",
+      "group": "time",
+      "pos": "adverb",
+      "meaning": "hầu hết, gần như",
+      "example": {
+        "ja": "かれは [[ほとんど]] まいにち ジムへ 行って います。",
+        "vi": "Anh ấy đến phòng gym gần như mỗi ngày.",
+        "choices": ["けっして", "ちっとも", "ぜひ"]
+      },
+      "tip": "ほとんど 〜ない = hầu như không. ほとんどの 人 = hầu hết mọi người."
+    },
+    {
+      "word": "音",
+      "reading": "おと",
+      "group": "senses",
+      "pos": "noun",
+      "meaning": "âm thanh, tiếng (của vật)",
+      "example": {
+        "ja": "となりの へやから ピアノの [[おと]]が 聞こえます。",
+        "vi": "Tôi nghe thấy tiếng đàn piano từ phòng bên cạnh.",
+        "choices": ["こえ", "におい", "いろ"]
+      },
+      "tip": "おと: tiếng của vật (xe, đàn, mưa). こえ (声): tiếng người, chim, thú.",
+      "paper": [2018]
+    },
+    {
+      "word": "匂い",
+      "reading": "におい",
+      "group": "senses",
+      "pos": "noun",
+      "meaning": "mùi",
+      "example": {
+        "ja": "だいどころから カレーの いい [[におい]]が します。",
+        "vi": "Có mùi cà ri thơm từ trong bếp.",
+        "choices": ["こえ", "ひかり", "けしき"]
+      },
+      "tip": "〜の においが する = có mùi ~. Cùng mẫu: 音が する, あじが する."
+    },
+    {
+      "word": "硬い",
+      "reading": "かたい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "cứng",
+      "example": {
+        "ja": "この パンは [[かたくて]]、なかなか かめません。",
+        "vi": "Bánh mì này cứng quá, mãi không cắn được.",
+        "choices": ["やわらかくて", "あまくて", "あたたかくて"]
+      },
+      "similar": "やわらかくない",
+      "tip": "Trái nghĩa: やわらかい. Viết 固い/硬い/堅い tùy nghĩa; かたい あたま = đầu óc cứng nhắc.",
+      "paper": [2018]
+    },
+    {
+      "word": "柔らかい",
+      "reading": "やわらかい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "mềm",
+      "example": {
+        "ja": "この ふとんは [[やわらかくて]] きもちが いいです。",
+        "vi": "Chiếc nệm này mềm, nằm rất dễ chịu.",
+        "choices": ["からくて", "にがくて", "うるさくて"]
+      }
+    },
+    {
+      "word": "うるさい",
+      "reading": "うるさい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "ồn ào",
+      "example": {
+        "ja": "外の 車の 音が [[うるさくて]]、ねむれません。",
+        "vi": "Tiếng xe bên ngoài ồn quá, tôi không ngủ được.",
+        "choices": ["すずしくて", "うすくて", "あさくて"]
+      },
+      "similar": "しずかじゃ ない",
+      "tip": "Trái nghĩa: しずか. うるさい mang nghĩa khó chịu; にぎやか thì vui, nhộn nhịp."
+    },
+    {
+      "word": "聞こえる",
+      "reading": "きこえる",
+      "group": "senses",
+      "pos": "verb",
+      "meaning": "nghe thấy",
+      "example": {
+        "ja": "まどを あけると、なみの 音が [[きこえます]]。",
+        "vi": "Mở cửa sổ ra là nghe thấy tiếng sóng.",
+        "choices": ["みえます", "ひかります", "さわります"]
+      },
+      "tip": "〜が きこえる = tự lọt vào tai. きく = chủ động lắng nghe."
+    },
+    {
+      "word": "見える",
+      "reading": "みえる",
+      "group": "senses",
+      "pos": "verb",
+      "meaning": "nhìn thấy",
+      "example": {
+        "ja": "はれた 日には ここから ふじさんが [[みえます]]。",
+        "vi": "Ngày trời quang, từ đây có thể nhìn thấy núi Phú Sĩ.",
+        "choices": ["きこえます", "さわります", "ひかります"]
+      },
+      "tip": "〜が みえる = tự lọt vào mắt. 見られる = có thể xem (có điều kiện, ví dụ phim)."
+    },
+    {
+      "word": "触る",
+      "reading": "さわる",
+      "group": "senses",
+      "pos": "verb",
+      "meaning": "chạm, sờ",
+      "example": {
+        "ja": "あぶないですから、この きかいに [[さわらないで]] ください。",
+        "vi": "Nguy hiểm, xin đừng chạm vào máy này.",
+        "choices": ["わらわないで", "おどらないで", "かよわないで"]
+      },
+      "tip": "〜に さわる (trợ từ に, không phải を)."
+    },
+    {
+      "word": "光る",
+      "reading": "ひかる",
+      "group": "senses",
+      "pos": "verb",
+      "meaning": "chiếu sáng, lấp lánh",
+      "example": {
+        "ja": "夜空に ほしが きれいに [[ひかって]] います。",
+        "vi": "Sao lấp lánh đẹp trên bầu trời đêm.",
+        "choices": ["ふとって", "すべって", "わかれて"]
+      }
+    },
+    {
+      "word": "眠い",
+      "reading": "ねむい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "buồn ngủ",
+      "example": {
+        "ja": "ゆうべ おそくまで おきて いたので、とても [[ねむい]]です。",
+        "vi": "Tối qua thức khuya nên giờ tôi buồn ngủ lắm.",
+        "choices": ["からい", "まるい", "にがい"]
+      },
+      "tip": "ねむい (tính từ: buồn ngủ) / ねむる (động từ: ngủ)."
+    },
+    {
+      "word": "細かい",
+      "reading": "こまかい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "nhỏ, lẻ; chi tiết",
+      "example": {
+        "ja": "一万円さつを [[こまかく]] して もらえませんか。",
+        "vi": "Anh đổi tờ 10.000 yên ra tiền lẻ giúp tôi được không?",
+        "choices": ["ほそく", "うすく", "まるく"]
+      },
+      "tip": "こまかい おかね = tiền lẻ. Khác ほそい (mảnh, thon: ほそい みち)."
+    },
+    {
+      "word": "浅い",
+      "reading": "あさい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "nông, cạn",
+      "example": {
+        "ja": "この 川は [[あさい]]ので、子どもでも あんぜんに あそべます。",
+        "vi": "Con sông này nông nên trẻ con cũng chơi an toàn được.",
+        "choices": ["ふかい", "はやい", "つめたい"]
+      },
+      "tip": "Trái nghĩa: ふかい (sâu)."
+    },
+    {
+      "word": "深い",
+      "reading": "ふかい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "sâu",
+      "example": {
+        "ja": "この みずうみは とても [[ふかい]]ので、およがないで ください。",
+        "vi": "Hồ này rất sâu, xin đừng bơi.",
+        "choices": ["ねむい", "うすい", "ほそい"]
+      }
+    },
+    {
+      "word": "薄い",
+      "reading": "うすい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "mỏng; nhạt",
+      "example": {
+        "ja": "この コーヒーは [[うすくて]]、あまり あじが しません。",
+        "vi": "Cà phê này loãng quá, chẳng có vị gì mấy.",
+        "choices": ["こまかくて", "ふかくて", "かたくて"]
+      },
+      "tip": "2 nghĩa: mỏng (うすい 本) và nhạt (うすい あじ / うすい いろ). Trái nghĩa: あつい / こい."
+    },
+    {
+      "word": "濃い",
+      "reading": "こい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "đậm, đặc",
+      "example": {
+        "ja": "わたしは [[こい]] コーヒーが すきです。",
+        "vi": "Tôi thích cà phê đậm.",
+        "choices": ["ふかい", "ほそい", "あさい"]
+      },
+      "tip": "Trái nghĩa: うすい. こい いろ = màu đậm."
+    },
+    {
+      "word": "丸い",
+      "reading": "まるい",
+      "group": "senses",
+      "pos": "i-adjective",
+      "meaning": "tròn",
+      "example": {
+        "ja": "こんやは [[まるい]] 月が 見えます。",
+        "vi": "Đêm nay có thể ngắm trăng tròn.",
+        "choices": ["ふかい", "うるさい", "にがい"]
+      }
+    },
+    {
+      "word": "気が付く",
+      "reading": "きがつく",
+      "group": "senses",
+      "pos": "expression",
+      "meaning": "nhận ra",
+      "example": {
+        "ja": "駅で わすれものに [[きが ついて]]、いそいで いえに 帰りました。",
+        "vi": "Đến ga mới nhận ra quên đồ, tôi vội về nhà.",
+        "choices": ["きを つけて", "きに いって", "きが して"]
+      },
+      "similar": "わかる",
+      "tip": "きが つく = nhận ra; きを つける = cẩn thận; きに なる = bận tâm; きに いる = ưng ý."
+    },
+    {
+      "word": "感じる",
+      "reading": "かんじる",
+      "group": "senses",
+      "pos": "verb",
+      "meaning": "cảm thấy",
+      "example": {
+        "ja": "かぜが つめたく なって、あきを [[かんじます]]。",
+        "vi": "Gió lạnh dần, tôi cảm nhận được mùa thu.",
+        "choices": ["しらべます", "まもります", "ひろいます"]
+      }
+    },
+    {
+      "word": "ぐっすり",
+      "reading": "ぐっすり",
+      "group": "senses",
+      "pos": "adverb",
+      "meaning": "(ngủ) say, ngon giấc",
+      "example": {
+        "ja": "つかれて いたので、ゆうべは [[ぐっすり]] ねました。",
+        "vi": "Mệt nên tối qua tôi ngủ say.",
+        "choices": ["はっきり", "がっかり", "びっくり"]
+      },
+      "similar": "よく",
+      "tip": "Luôn đi với ねる/ねむる. ぐっすり ねた ≈ よく ねた."
+    },
+    {
+      "word": "はっきり",
+      "reading": "はっきり",
+      "group": "senses",
+      "pos": "adverb",
+      "meaning": "rõ ràng",
+      "example": {
+        "ja": "めがねを かけると、字が [[はっきり]] 見えます。",
+        "vi": "Đeo kính vào thì nhìn chữ rõ.",
+        "choices": ["ぐっすり", "がっかり", "ゆっくり"]
+      },
+      "similar": "よく",
+      "tip": "Cũng dùng cho cách nói: はっきり 言う = nói thẳng, rõ ràng."
+    },
+    {
+      "word": "センチ",
+      "reading": "センチ",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "xăng-ti-mét (cm)",
+      "example": {
+        "ja": "わたしの せの たかさは 百六十[[センチ]]です。",
+        "vi": "Chiều cao của tôi là 160 cm.",
+        "choices": ["グラム", "リットル", "パーセント"]
+      },
+      "similar": "センチメートル",
+      "tip": "Viết tắt của センチメートル. Cân nặng dùng キロ/グラム, không dùng センチ.",
+      "paper": [2018]
+    },
+    {
+      "word": "コンサート",
+      "reading": "コンサート",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "buổi hòa nhạc",
+      "example": {
+        "ja": "らいしゅう、すきな バンドの [[コンサート]]に 行きます。",
+        "vi": "Tuần sau tôi đi xem buổi hòa nhạc của ban nhạc mình thích.",
+        "choices": ["カーテン", "ガソリン", "テキスト"]
+      }
+    },
+    {
+      "word": "ガラス",
+      "reading": "ガラス",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "kính, thủy tinh",
+      "example": {
+        "ja": "ボールが あたって、まどの [[ガラス]]が われて しまいました。",
+        "vi": "Quả bóng đập vào làm vỡ kính cửa sổ.",
+        "choices": ["カーテン", "ガソリン", "サンダル"]
+      },
+      "tip": "Gốc tiếng Hà Lan glas. Ly thủy tinh thì gọi là グラス hoặc コップ."
+    },
+    {
+      "word": "アルコール",
+      "reading": "アルコール",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "cồn, đồ uống có cồn",
+      "example": {
+        "ja": "この 飲みものには [[アルコール]]が 入って いません。",
+        "vi": "Đồ uống này không có cồn.",
+        "choices": ["ガラス", "ベル", "テキスト"]
+      }
+    },
+    {
+      "word": "ベル",
+      "reading": "ベル",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "chuông",
+      "example": {
+        "ja": "じゅぎょうの おわりの [[ベル]]が なりました。",
+        "vi": "Chuông hết giờ học đã reo.",
+        "choices": ["ガラス", "カーテン", "メニュー"]
+      },
+      "tip": "ベルが なる = chuông reo. Chuông cửa: よびりん / チャイム."
+    },
+    {
+      "word": "タイプ",
+      "reading": "タイプ",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "kiểu, mẫu (người, đồ)",
+      "example": {
+        "ja": "やさしくて おもしろい 人が わたしの すきな [[タイプ]]です。",
+        "vi": "Người hiền và vui tính là mẫu người tôi thích.",
+        "choices": ["ガラス", "ベル", "サイズ"]
+      }
+    },
+    {
+      "word": "ボランティア",
+      "reading": "ボランティア",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "tình nguyện, tình nguyện viên",
+      "example": {
+        "ja": "やすみの 日に こうえんを そうじする [[ボランティア]]を して います。",
+        "vi": "Ngày nghỉ tôi làm tình nguyện dọn dẹp công viên.",
+        "choices": ["アルコール", "ガラス", "カーテン"]
+      }
+    },
+    {
+      "word": "スピーチ",
+      "reading": "スピーチ",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "bài phát biểu",
+      "example": {
+        "ja": "ともだちの けっこんしきで [[スピーチ]]を たのまれました。",
+        "vi": "Tôi được nhờ phát biểu ở đám cưới của bạn.",
+        "choices": ["ガラス", "ベル", "アルコール"]
+      },
+      "tip": "スピーチを する = phát biểu. スピーチたいかい = cuộc thi hùng biện."
+    },
+    {
+      "word": "アイデア",
+      "reading": "アイデア",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "ý tưởng",
+      "example": {
+        "ja": "パーティーで なにを するか、いい [[アイデア]]が ありませんか。",
+        "vi": "Có ý tưởng nào hay cho việc làm gì ở bữa tiệc không?",
+        "choices": ["ガラス", "ベル", "センチ"]
+      },
+      "similar": "かんがえ",
+      "tip": "Cũng viết アイディア."
+    },
+    {
+      "word": "キャンセル",
+      "reading": "キャンセル",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "hủy (đặt chỗ)",
+      "example": {
+        "ja": "びょうきに なったので、ホテルの よやくを [[キャンセル]]しました。",
+        "vi": "Vì bị ốm nên tôi đã hủy đặt phòng khách sạn.",
+        "choices": ["スタート", "ノック", "ジョギング"]
+      },
+      "similar": "とりけす",
+      "tip": "Hủy đặt chỗ, đơn hàng: キャンセルする. Sự kiện bị hủy: ちゅうしに なる."
+    },
+    {
+      "word": "チェック",
+      "reading": "チェック",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "kiểm tra",
+      "example": {
+        "ja": "メールを おくる まえに、まちがいが ないか [[チェック]]して ください。",
+        "vi": "Trước khi gửi email, hãy kiểm tra xem có lỗi không.",
+        "choices": ["キャンセル", "ノック", "ジョギング"]
+      },
+      "similar": "しらべる"
+    },
+    {
+      "word": "ミス",
+      "reading": "ミス",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "lỗi, sai sót",
+      "example": {
+        "ja": "しごとで 大きな [[ミス]]を して、ぶちょうに おこられました。",
+        "vi": "Tôi mắc lỗi lớn trong công việc và bị trưởng phòng mắng.",
+        "choices": ["ガラス", "ベル", "センチ"]
+      },
+      "similar": "まちがい",
+      "tip": "ミスを する ≈ まちがえる / しっぱいする."
+    },
+    {
+      "word": "スタート",
+      "reading": "スタート",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "bắt đầu, xuất phát",
+      "example": {
+        "ja": "マラソンは あさ 九時に [[スタート]]します。",
+        "vi": "Cuộc chạy marathon xuất phát lúc 9 giờ sáng.",
+        "choices": ["チェック", "ノック", "コピー"]
+      },
+      "similar": "はじまる"
+    },
+    {
+      "word": "マラソン",
+      "reading": "マラソン",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "chạy marathon",
+      "example": {
+        "ja": "毎年 町の [[マラソン]]に 出て、四十二キロ はしります。",
+        "vi": "Năm nào tôi cũng tham gia giải marathon của thành phố, chạy 42 km.",
+        "choices": ["コンサート", "スピーチ", "ドラマ"]
+      }
+    },
+    {
+      "word": "ドラマ",
+      "reading": "ドラマ",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "phim truyền hình",
+      "example": {
+        "ja": "まいしゅう 月よう日の 夜に 見て いる [[ドラマ]]が とても おもしろいです。",
+        "vi": "Bộ phim truyền hình tôi xem tối thứ Hai hằng tuần rất hay.",
+        "choices": ["ガラス", "アルコール", "センチ"]
+      }
+    },
+    {
+      "word": "パーセント",
+      "reading": "パーセント",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "phần trăm (%)",
+      "example": {
+        "ja": "きょうは ぜんぶの しなものが 三十[[パーセント]] やすく なります。",
+        "vi": "Hôm nay mọi mặt hàng đều giảm 30%.",
+        "choices": ["センチ", "グラム", "メートル"]
+      },
+      "tip": "Giảm giá 30%: 三十パーセント オフ / 三わりびき."
+    },
+    {
+      "word": "グラム",
+      "reading": "グラム",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "gam (g)",
+      "example": {
+        "ja": "この ケーキは さとうを 百[[グラム]] つかいます。",
+        "vi": "Chiếc bánh này dùng 100 gam đường.",
+        "choices": ["センチ", "メートル", "リットル"]
+      },
+      "tip": "1000グラム = 1キロ (キログラム)."
+    },
+    {
+      "word": "アドバイス",
+      "reading": "アドバイス",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "lời khuyên",
+      "example": {
+        "ja": "先生に [[アドバイス]]を もらって、レポートを なおしました。",
+        "vi": "Được thầy cho lời khuyên, tôi đã sửa lại bài báo cáo.",
+        "choices": ["ガラス", "ベル", "カーテン"]
+      }
+    },
+    {
+      "word": "チャンス",
+      "reading": "チャンス",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "cơ hội",
+      "example": {
+        "ja": "これは 日本で はたらく いい [[チャンス]]です。",
+        "vi": "Đây là cơ hội tốt để làm việc ở Nhật.",
+        "choices": ["ガラス", "ベル", "カーテン"]
+      },
+      "similar": "きかい",
+      "tip": "Đồng nghĩa: きかい (機会 – cơ hội)."
+    },
+    {
+      "word": "イベント",
+      "reading": "イベント",
+      "group": "katakana",
+      "pos": "katakana",
+      "meaning": "sự kiện",
+      "example": {
+        "ja": "しゅうまつに 駅の まえで たのしい [[イベント]]が あります。",
+        "vi": "Cuối tuần trước ga có sự kiện vui.",
+        "choices": ["ガラス", "センチ", "アルコール"]
+      }
+    }
+  ]
+}

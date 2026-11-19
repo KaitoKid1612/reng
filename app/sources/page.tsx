@@ -26,6 +26,13 @@ export default function SourcesPage() {
         sách kanji từ năm 2010, nên đây là các chữ thường dạy cho mỗi cấp. Thẻ &quot;Đã ra đề&quot;
         lấy từ phần chữ Hán của hai đề mẫu chính thức nêu ở mục Đề chính thức JLPT bên dưới.
       </p>
+      <h2>Từ vựng N4</h2>
+      <p>
+        Danh sách từ, nghĩa, âm Hán Việt, câu ví dụ, phương án luyện và mẹo ở trang{" "}
+        <Link href="/jlpt-vocab/n4">Từ vựng N4</Link> do Reng biên soạn; câu ví dụ không chép từ
+        sách hay đề. Thẻ &quot;Đã ra đề&quot; ghi những từ mà phần Từ vựng của hai đề mẫu chính thức
+        N4 đã hỏi.
+      </p>
       <h2>Chữ hiển thị</h2>
       <p>
         Be Vietnam Pro cho tiếng Việt, Noto Sans JP cho nội dung tiếng Nhật và Klee One cho mẫu
