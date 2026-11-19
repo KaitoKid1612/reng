@@ -368,6 +368,8 @@ Nội dung tự biên soạn bằng AI theo phạm vi Minna 1–50, không chép
 
 Nạp lên production: bài trên server có mã `n4-viet-review-bank`, khác `id` trong file, nên phải truyền `--lesson`: `npm run bank:sql -- --file content/review-banks/n4-daily-with-listening.json --language ja-JP --lesson n4-viet-review-bank --out n4.sql`. Đọc lại file, thêm `--commit` rồi chạy. Thiếu `--lesson` thì transaction dừng ở "Lesson … does not exist" và không thay đổi gì. Production còn bài `n4-comprehensive-review-bank-ac4b473b` cùng tên (304 câu, phiên bản cũ), không phải nguồn bài hằng ngày. Sau đó, ở trang lớp, chọn **Theo cấu trúc đề JLPT N4**, **67 câu (đủ đề N4 + 10 câu nghe)** và **10 câu nghe**.
 
+Kiểm tra ngân hàng theo cấu trúc đề (19/11/2026): `npm run audit:jlpt-bank -- content/review-banks/n4-daily-with-listening.json`. Lệnh đếm câu theo dạng, số bài 67 câu trước khi lặp, độ dài đoạn văn, định dạng từng dạng câu, kanji vượt N4 thiếu furigana và định dạng câu nghe. Kanji vượt phạm vi ghi furigana như đề chính thức, trừ câu 漢字読み (viết kana) và phương án 表記. Xem [báo cáo](testing/n4-bank-audit-2026-11-19.md).
+
 ## Ngân hàng Minna 1–25 cho lớp đang học theo bài
 
 `review-banks/n5-minna-1-25.json` (bài `n5-minna-review-bank`) là nguồn bài hằng ngày của lớp Tiếng Nhật Minna – Lớp 1 (Nguyên). Trước đó lớp lấy 60 câu mỗi ngày từ "Ngân hàng ôn Minna N5 – Nguyên", nhưng ngân hàng này chỉ có 84 câu thường (118 câu nghe đang tắt), nên ngày nào Nguyên cũng gặp lại phần lớn câu của hôm trước. Ngân hàng cũ giữ nguyên trong lớp cho câu nghe và đề thi thử.

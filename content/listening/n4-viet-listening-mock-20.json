@@ -34,8 +34,8 @@
     "questions": [
       {
         "id": "n4-mock-01",
-        "prompt": "課題理解｜Người đàn ông sẽ làm gì trước? (Nghe rồi chọn một đáp án.)",
-        "explain": "Người đàn ông nói 先に部長にメールを送ってからコピーします: gửi email cho trưởng phòng trước, rồi mới photocopy.",
+        "prompt": "課題理解｜男の人は はじめに 何を しますか。",
+        "explain": "Người đàn ông nói 先に部長にメールを送ってからコピーします: gửi email cho trưởng phòng trước rồi mới photocopy. Mang tài liệu vào phòng họp là việc sau khi photocopy xong.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "49b95bd5401f9ad484590ce998149cd0",
@@ -44,17 +44,17 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "Gửi email cho trưởng phòng",
-          "Mang tài liệu vào phòng họp",
-          "Photocopy tài liệu",
-          "Chuẩn bị máy chiếu"
+          "部長に メールを 送る",
+          "資料を 会議室に 持って いく",
+          "資料を コピーする",
+          "プロジェクターを じゅんびする"
         ],
         "answer": [0]
       },
       {
         "id": "n4-mock-02",
-        "prompt": "課題理解｜Người đàn ông cần làm gì khi đến ga? (Nghe rồi chọn một đáp án.)",
-        "explain": "東口を出て右に曲がる。",
+        "prompt": "課題理解｜男の人は 駅に 着いたら どう しますか。",
+        "explain": "Người phụ nữ nói 東口を出て、右に曲がってください và バスには乗らなくていいです: ra cửa Đông rồi rẽ phải, không cần đi xe buýt.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "4b652fe30ba425f0dd9388b0f18980cc",
@@ -62,13 +62,18 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đi xe buýt", "Ra cửa Đông rồi rẽ phải", "Ra cửa Tây rồi rẽ trái", "Đi taxi"],
+        "options": [
+          "バスに 乗る",
+          "東口を 出て 右に 曲がる",
+          "西口を 出て 左に 曲がる",
+          "タクシーに 乗る"
+        ],
         "answer": [1]
       },
       {
         "id": "n4-mock-03",
-        "prompt": "課題理解｜Sau cuộc nói chuyện, người phụ nữ sẽ làm gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "飲み物はすでに買ってあるので紙のお皿を買う。",
+        "prompt": "課題理解｜女の人は 何を しますか。",
+        "explain": "Đồ uống người đàn ông đã mua rồi (飲み物はもう買いました); anh nhờ 紙のお皿をお願いできますか nên cô ấy mua đĩa giấy.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "ae63bc249579dfb4c67ef5d625aaa04c",
@@ -76,13 +81,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Mua nước uống", "Đặt bánh", "Mua đĩa giấy", "Trang trí phòng"],
+        "options": ["飲み物を 買う", "ケーキを 注文する", "紙の お皿を 買う", "へやを かざる"],
         "answer": [2]
       },
       {
         "id": "n4-mock-04",
-        "prompt": "課題理解｜Người đàn ông cần chuẩn bị gì cho chuyến đi? (Nghe rồi chọn một đáp án.)",
-        "explain": "午後は雨の予報なので傘を持つ。",
+        "prompt": "課題理解｜男の人は あした 何を 持って いきますか。",
+        "explain": "Người phụ nữ dặn 傘を持ってきてね vì chiều trời mưa (午後から雨になるそうよ). Cơm hộp thì cô ấy làm (お弁当は私が作るから).",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "d4e37ebaee63f8ff06936c4822d16fd7",
@@ -90,13 +95,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Cơm hộp", "Máy ảnh", "Áo khoác mới", "Ô"],
+        "options": ["おべんとう", "カメラ", "新しい コート", "かさ"],
         "answer": [3]
       },
       {
         "id": "n4-mock-05",
-        "prompt": "課題理解｜Người phụ nữ phải làm gì trước khi ra về? (Nghe rồi chọn một đáp án.)",
-        "explain": "窓だけ閉める。電気は男性が消し、パソコンはそのまま。",
+        "prompt": "課題理解｜女の人は 帰る 前に 何を しますか。",
+        "explain": "Người phụ nữ chỉ cần đóng cửa sổ (窓を閉めてください). Đèn thì người đàn ông tắt (電気は私が消します), máy tính để nguyên (つけたままでいいです).",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:1"],
         "audio": "9e6edf503a265a401ff07b31eb4d2c5b",
@@ -104,13 +109,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đóng cửa sổ", "Tắt điện", "Tắt máy tính", "Khóa cửa chính"],
+        "options": ["まどを しめる", "電気を けす", "パソコンを けす", "入り口の かぎを かける"],
         "answer": [0]
       },
       {
         "id": "n4-mock-06",
-        "prompt": "ポイント理解｜Cuộc hẹn cuối cùng là mấy giờ? (Nghe rồi chọn một đáp án.)",
-        "explain": "最初は三時、最終的には四時半。",
+        "prompt": "ポイント理解｜二人は 何時に 会いますか。",
+        "explain": "Lúc đầu hẹn 3 giờ nhưng người đàn ông còn làm việc (三時はまだ仕事なんです); cuối cùng chốt 四時半: 4 giờ rưỡi.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2"],
         "audio": "6cbf94de28cf99ea91e5dae19dd8410d",
@@ -118,13 +123,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["15:00", "16:30", "16:00", "17:30"],
+        "options": ["３時", "４時半", "４時", "５時半"],
         "answer": [1]
       },
       {
         "id": "n4-mock-07",
-        "prompt": "ポイント理解｜Vì sao người đàn ông không mua chiếc áo? (Nghe rồi chọn một đáp án.)",
-        "explain": "色とサイズはよいが値段が高い。",
+        "prompt": "ポイント理解｜男の人は どうして シャツを 買いませんか。",
+        "explain": "Màu đẹp (色はいい), cỡ cũng vừa (サイズも合いそう), nhưng ちょっと高いなあ: hơi đắt nên hôm nay thôi.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2"],
         "audio": "9f24bce684cab9555e28dec911652829",
@@ -132,13 +137,18 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Không thích màu", "Không vừa cỡ", "Giá hơi cao", "Đã có áo tương tự"],
+        "options": [
+          "色が よくないから",
+          "サイズが 合わないから",
+          "少し 高いから",
+          "同じような シャツを 持って いるから"
+        ],
         "answer": [2]
       },
       {
         "id": "n4-mock-08",
-        "prompt": "ポイント理解｜Người phụ nữ đã để chìa khóa ở đâu? (Nghe rồi chọn một đáp án.)",
-        "explain": "冷蔵庫の横に置いた。",
+        "prompt": "ポイント理解｜女の人は かぎを どこに 置きましたか。",
+        "explain": "Cô ấy tưởng để trên bàn, rồi nhớ ra 冷蔵庫の横に置いたんだった: để cạnh tủ lạnh. Bẫy: れいぞうこの 中 (trong tủ lạnh).",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2"],
         "audio": "b547baebac6541ad4a0b0360d7da7d0f",
@@ -146,13 +156,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Trên bàn học", "Trong túi xách", "Trong tủ lạnh", "Bên cạnh tủ lạnh"],
+        "options": ["机の 上", "かばんの 中", "れいぞうこの 中", "れいぞうこの 横"],
         "answer": [3]
       },
       {
         "id": "n4-mock-09",
-        "prompt": "ポイント理解｜Hôm nay thư viện đóng cửa lúc mấy giờ? (Nghe rồi chọn một đáp án.)",
-        "explain": "今日は工事のため五時に閉まる。",
+        "prompt": "ポイント理解｜図書館は きょう 何時に 閉まりますか。",
+        "explain": "Thường mở đến 6 giờ, nhưng hôm nay có công trình (工事があるので) nên 五時に閉まります: đóng lúc 5 giờ. Ngày mai như thường lệ.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2"],
         "audio": "8b41a9b928dc6b47c416918f7c86dfd9",
@@ -160,13 +170,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["17:00", "18:00", "16:00", "19:00"],
+        "options": ["５時", "６時", "４時", "７時"],
         "answer": [0]
       },
       {
         "id": "n4-mock-10",
-        "prompt": "ポイント理解｜Người đàn ông sẽ đi làm bằng phương tiện gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "自転車とバスを避けて電車にする。",
+        "prompt": "ポイント理解｜男の人は きょう 何で 行きますか。",
+        "explain": "Trời sắp mưa nên không đi xe đạp, xe buýt thì mất thời gian (時間がかかる), nên 電車で行くよ: đi tàu điện.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2"],
         "audio": "5158e988315b8480fee22e548ced7182",
@@ -174,13 +184,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Xe đạp", "Tàu điện", "Xe buýt", "Ô tô"],
+        "options": ["自転車", "電車", "バス", "車"],
         "answer": [1]
       },
       {
         "id": "n4-mock-11",
-        "prompt": "発話表現｜Trong cửa hàng, muốn nhờ nhân viên cho thử áo, nên nói gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "試着してもいいですか＝着てみてもいいですか。",
+        "prompt": "発話表現｜店で シャツを 着て みたいです。店の 人に 何と 言いますか。",
+        "explain": "Muốn mặc thử thì hỏi 試着してもいいですか (= 着てみてもいいですか). これをください là mua luôn, これを返します là trả lại hàng.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3"],
         "audio": "29bd996d861762b17cabfb6d361a06da",
@@ -188,18 +198,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "これをください。",
-          "これを返します。",
-          "試着してもいいですか。",
-          "もう帰ります。"
-        ],
+        "options": ["これを ください。", "これを 返します。", "試着しても いいですか。"],
         "answer": [2]
       },
       {
         "id": "n4-mock-12",
-        "prompt": "発話表現｜Bạn đến muộn cuộc hẹn và muốn xin lỗi, nên nói gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "待たせた相手には遅刻を謝る。",
+        "prompt": "発話表現｜友達との やくそくに おくれました。何と 言いますか。",
+        "explain": "Đến muộn thì xin lỗi: 遅くなってごめん. おめでとう là chúc mừng, どういたしまして là đáp lại lời cảm ơn.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3"],
         "audio": "3e781b888497e0cd77962e8ab284ac25",
@@ -207,18 +212,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "おめでとう。",
-          "どういたしまして。",
-          "お先に失礼します。",
-          "遅くなってごめん。"
-        ],
-        "answer": [3]
+        "options": ["おめでとう。", "どういたしまして。", "遅くなって ごめん。"],
+        "answer": [2]
       },
       {
         "id": "n4-mock-13",
-        "prompt": "発話表現｜Muốn nhờ đồng nghiệp giúp mang hộp nặng, nên nói gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "手伝ってもらえませんか là lời nhờ giúp lịch sự.",
+        "prompt": "発話表現｜重い はこを 運びたいです。会社の 人に 何と 言いますか。",
+        "explain": "Nhờ giúp một cách lịch sự: ちょっと手伝ってもらえませんか. もう一度言ってください là nhờ nói lại, 先に帰ってもいいですか là xin về trước.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3"],
         "audio": "c0cbf604aca388ad866d84fb82b44c09",
@@ -227,17 +227,16 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "ちょっと手伝ってもらえませんか。",
-          "ここに座ってください。",
-          "もう一度言ってください。",
-          "先に帰ってもいいですか。"
+          "ちょっと 手伝って もらえませんか。",
+          "もう 一度 言って ください。",
+          "先に 帰っても いいですか。"
         ],
         "answer": [0]
       },
       {
         "id": "n4-mock-14",
-        "prompt": "発話表現｜Được mời ăn thêm nhưng đã no, nên nói gì? (Nghe rồi chọn một đáp án.)",
-        "explain": "Từ chối lịch sự và nói đã no.",
+        "prompt": "発話表現｜もっと 食べるように 言われましたが、もう 食べられません。何と 言いますか。",
+        "explain": "Từ chối lịch sự: cảm ơn trước rồi nói đã no (もうおなかがいっぱいです). ぜひお願いします là nhận thêm; おいしくないです là bất lịch sự.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3"],
         "audio": "f55cc523bf366109180de38cccde5163",
@@ -246,17 +245,16 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "ぜひお願いします。",
-          "ありがとうございます。でも、もうおなかがいっぱいです。",
-          "おいしくないです。",
-          "まだ何も食べていません。"
+          "ぜひ お願いします。",
+          "ありがとうございます。でも、もう おなかが いっぱいです。",
+          "おいしくないです。"
         ],
         "answer": [1]
       },
       {
         "id": "n4-mock-15",
-        "prompt": "発話表現｜Muốn hỏi đường đến bưu điện, nên mở lời thế nào? (Nghe rồi chọn một đáp án.)",
-        "explain": "すみませんで呼びかけ、場所を尋ねる。",
+        "prompt": "発話表現｜道が わかりません。ゆうびんきょくへ 行きたいです。近くの 人に 何と 言いますか。",
+        "explain": "Gọi người lạ bằng すみません rồi hỏi đường: 郵便局はどこですか. Hai câu kia không phải câu hỏi đường.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3"],
         "audio": "49b8ed0606c316fff8440bcb53f876dc",
@@ -265,17 +263,16 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "今日はいい天気ですね。",
-          "郵便局は休みです。",
-          "すみません、郵便局はどこですか。",
-          "ここで写真を撮りましょう。"
+          "今日は いい 天気ですね。",
+          "ゆうびんきょくは 休みです。",
+          "すみません、ゆうびんきょくは どこですか。"
         ],
         "answer": [2]
       },
       {
         "id": "n4-mock-16",
-        "prompt": "即時応答｜Chọn câu đáp tự nhiên nhất. (Nghe rồi chọn một đáp án.)",
-        "explain": "今日中に必要かを聞いている。",
+        "prompt": "即時応答｜話しかけられた 言葉に 合う 返事を えらんで ください。",
+        "explain": "Câu hỏi: この書類、今日中に出さなければなりませんか (có phải nộp trong hôm nay không) → いいえ、明日の朝でも大丈夫です. 昨日出しました sai thời điểm; 書類ではありません lạc đề.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4"],
         "audio": "9977e7b02a55e957ea5b16f408ec2e8f",
@@ -284,17 +281,16 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "はい、昨日出しました。",
-          "いいえ、書類ではありません。",
-          "そうですね、明日も休みです。",
-          "いいえ、明日の朝でも大丈夫です。"
+          "はい、昨日 出しました。",
+          "いいえ、書類では ありません。",
+          "いいえ、明日の 朝でも 大丈夫です。"
         ],
-        "answer": [3]
+        "answer": [2]
       },
       {
         "id": "n4-mock-17",
-        "prompt": "即時応答｜Chọn câu đáp tự nhiên nhất. (Nghe rồi chọn một đáp án.)",
-        "explain": "経験を尋ねる～たことがありますか。",
+        "prompt": "即時応答｜話しかけられた 言葉に 合う 返事を えらんで ください。",
+        "explain": "日本へ行ったことがありますか hỏi kinh nghiệm (〜たことがある) → はい、一度あります. はい、今行きます là trả lời lời gọi.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4"],
         "audio": "e62f72b41856ee5ccb7c35b0cb0dda3f",
@@ -302,18 +298,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "はい、一度あります。",
-          "はい、今行きます。",
-          "いいえ、行きたいですか。",
-          "いいえ、行ってください。"
-        ],
+        "options": ["はい、一度 あります。", "はい、今 行きます。", "いいえ、行きたいですか。"],
         "answer": [0]
       },
       {
         "id": "n4-mock-18",
-        "prompt": "即時応答｜Chọn câu đáp tự nhiên nhất. (Nghe rồi chọn một đáp án.)",
-        "explain": "～ましょうかへの依頼の返答。",
+        "prompt": "即時応答｜話しかけられた 言葉に 合う 返事を えらんで ください。",
+        "explain": "閉めましょうか là đề nghị giúp (〜ましょうか) → đồng ý: ええ、お願いします.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4"],
         "audio": "3ba419d1acd1fa6eb2a0ee64b18e5a13",
@@ -321,18 +312,13 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": [
-          "昨日開けました。",
-          "ええ、お願いします。",
-          "窓は大きいですね。",
-          "ここは二階です。"
-        ],
+        "options": ["昨日 開けました。", "ええ、お願いします。", "窓は 大きいですね。"],
         "answer": [1]
       },
       {
         "id": "n4-mock-19",
-        "prompt": "即時応答｜Chọn câu đáp tự nhiên nhất. (Nghe rồi chọn một đáp án.)",
-        "explain": "理由を聞くどうしてに理由で答える。",
+        "prompt": "即時応答｜話しかけられた 言葉に 合う 返事を えらんで ください。",
+        "explain": "どうして hỏi lý do vắng họp hôm qua → trả lời lý do: 熱があって、休んでいたんです (bị sốt nên nghỉ).",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4"],
         "audio": "1eb58ba3ffaf540bcf51e0996fefd616",
@@ -341,17 +327,16 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "来週は会議です。",
-          "はい、会議室です。",
-          "熱があって、休んでいたんです。",
-          "昨日は三時です。"
+          "来週は {会議|かいぎ}です。",
+          "はい、{会議室|かいぎしつ}です。",
+          "{熱|ねつ}が あって、休んで いたんです。"
         ],
         "answer": [2]
       },
       {
         "id": "n4-mock-20",
-        "prompt": "即時応答｜Chọn câu đáp tự nhiên nhất. (Nghe rồi chọn một đáp án.)",
-        "explain": "置く場所を聞いている。",
+        "prompt": "即時応答｜話しかけられた 言葉に 合う 返事を えらんで ください。",
+        "explain": "どこに置いておけばいいですか hỏi chỗ để hành lý → trả lời chỗ: 入口の横に置いておいてください.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4"],
         "audio": "1c76172b88abc44d5304ef725b4ba058",
@@ -360,12 +345,11 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "もう買いました。",
-          "昨日届きました。",
-          "三つあります。",
-          "入口の横に置いておいてください。"
+          "もう 買いました。",
+          "昨日 {届|とど}きました。",
+          "入口の 横に 置いて おいて ください。"
         ],
-        "answer": [3]
+        "answer": [2]
       }
     ]
   }

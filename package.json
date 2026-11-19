@@ -20,6 +20,7 @@
     "test:e2e:supabase": "playwright test -c playwright.supabase.config.ts",
     "audit:layout": "node --import tsx scripts/audit-layout.ts",
     "audit:jlpt-audio": "node --import tsx scripts/audit-jlpt-audio.ts",
+    "audit:jlpt-bank": "node --import tsx scripts/audit-jlpt-bank.ts",
     "validate:data": "node --import tsx scripts/validate-data.ts",
     "audio:plan": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts",
     "audio:generate": "node --env-file-if-exists=.env.local --import tsx scripts/generate-audio.ts --generate",
