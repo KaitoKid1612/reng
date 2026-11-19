@@ -66,7 +66,8 @@ export default function SourcesPage() {
       {/* Unreal Speech's free plan asks for a link to unrealspeech.com wherever its audio is used. */}
       <p>
         Audio của các câu nghe Reng tự biên soạn (bộ đề nghe Minna no Nihongo 1–15, câu nghe N5 và
-        N4 trong ngân hàng ôn) và phần nghe của đề chính thức JLPT bên dưới được tạo bằng{" "}
+        N4 trong ngân hàng ôn và trong các đề thi thử Reng) và phần nghe của đề chính thức JLPT bên
+        dưới được tạo bằng{" "}
         <a href="https://unrealspeech.com" rel="noopener">
           Unreal Speech
         </a>{" "}
