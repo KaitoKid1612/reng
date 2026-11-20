@@ -1,0 +1,945 @@
+{
+  "id": "minna-2-27",
+  "title": "Bài 27 – Thể khả năng và điều kiện",
+  "titleJa": "第27課・可能形",
+  "summary": "Hỏi điều kiện, nói khả năng, điều nhìn thấy hoặc nghe thấy và dùng しか để nêu giới hạn.",
+  "order": 27,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2701",
+        "jp": "かいます",
+        "kanji": "飼います",
+        "romaji": "kaimasu",
+        "vi": "nuôi thú",
+        "note": "I · ねこを かいます",
+        "audio": null
+      },
+      {
+        "id": "v2702",
+        "jp": "たてます",
+        "kanji": "建てます",
+        "romaji": "tatemasu",
+        "vi": "xây",
+        "note": "II · いえを たてます",
+        "audio": null
+      },
+      {
+        "id": "v2703",
+        "jp": "はしります",
+        "kanji": "走ります",
+        "romaji": "hashirimasu",
+        "vi": "chạy",
+        "note": "I · みちを はしります",
+        "audio": null,
+        "image": "/icons/vocab/person-running.svg"
+      },
+      {
+        "id": "v2704",
+        "jp": "みえます",
+        "kanji": "見えます",
+        "romaji": "miemasu",
+        "vi": "nhìn thấy",
+        "note": "II · やまが みえます",
+        "audio": null
+      },
+      {
+        "id": "v2705",
+        "jp": "きこえます",
+        "kanji": "聞こえます",
+        "romaji": "kikoemasu",
+        "vi": "nghe thấy",
+        "note": "II · おとが きこえます",
+        "audio": null
+      },
+      {
+        "id": "v2706",
+        "jp": "できます",
+        "romaji": "dekimasu",
+        "vi": "xong, hình thành",
+        "note": "II · ビルが できます",
+        "audio": null
+      },
+      {
+        "id": "v2707",
+        "jp": "ひらきます",
+        "kanji": "開きます",
+        "romaji": "hirakimasu",
+        "vi": "mở, tổ chức",
+        "note": "I · きょうしつを ひらきます",
+        "audio": null
+      },
+      {
+        "id": "v2708",
+        "jp": "ペット",
+        "romaji": "petto",
+        "vi": "thú nuôi",
+        "note": "Danh từ",
+        "audio": null,
+        "image": "/icons/vocab/cat.svg"
+      },
+      {
+        "id": "v2709",
+        "jp": "とり",
+        "kanji": "鳥",
+        "romaji": "tori",
+        "vi": "chim",
+        "note": "Danh từ · とりの こえ",
+        "audio": null
+      },
+      {
+        "id": "v2710",
+        "jp": "こえ",
+        "kanji": "声",
+        "romaji": "koe",
+        "vi": "giọng, tiếng kêu",
+        "note": "Danh từ · こえが きこえます",
+        "audio": null
+      },
+      {
+        "id": "v2711",
+        "jp": "なみ",
+        "kanji": "波",
+        "romaji": "nami",
+        "vi": "sóng",
+        "note": "Danh từ · なみの おと",
+        "audio": null,
+        "image": "/icons/vocab/water-wave.svg"
+      },
+      {
+        "id": "v2712",
+        "jp": "はなび",
+        "kanji": "花火",
+        "romaji": "hanabi",
+        "vi": "pháo hoa",
+        "note": "Danh từ · はなびが みえます",
+        "audio": null
+      },
+      {
+        "id": "v2713",
+        "jp": "ひるま",
+        "kanji": "昼間",
+        "romaji": "hiruma",
+        "vi": "ban ngày",
+        "note": "Danh từ chỉ thời gian",
+        "audio": null
+      },
+      {
+        "id": "v2714",
+        "jp": "どうぐ",
+        "kanji": "道具",
+        "romaji": "dougu",
+        "vi": "dụng cụ",
+        "note": "Danh từ · どうぐを つかいます",
+        "audio": null
+      },
+      {
+        "id": "v2715",
+        "jp": "つうしんはんばい",
+        "kanji": "通信販売",
+        "romaji": "tsuushin hanbai",
+        "vi": "bán hàng từ xa qua đặt hàng",
+        "note": "Danh từ · つうしんはんばいで かいます",
+        "audio": null
+      },
+      {
+        "id": "v2716",
+        "jp": "クリーニング",
+        "romaji": "kuriiningu",
+        "vi": "giặt là, dịch vụ giặt là",
+        "note": "Danh từ · クリーニングに だします",
+        "audio": null
+      },
+      {
+        "id": "v2717",
+        "jp": "マンション",
+        "romaji": "manshon",
+        "vi": "căn hộ chung cư, tòa chung cư",
+        "note": "Danh từ",
+        "audio": null
+      },
+      {
+        "id": "v2718",
+        "jp": "〜きょうしつ",
+        "kanji": "〜教室",
+        "romaji": "kyoushitsu",
+        "vi": "lớp học về…",
+        "note": "Danh từ · りょうりきょうしつ",
+        "audio": null
+      },
+      {
+        "id": "v2719",
+        "jp": "パーティールーム",
+        "romaji": "paatii ruumu",
+        "vi": "phòng tổ chức tiệc",
+        "note": "Danh từ",
+        "audio": null
+      },
+      {
+        "id": "v2720",
+        "jp": "〜ご",
+        "kanji": "〜後",
+        "romaji": "go",
+        "vi": "sau…",
+        "note": "Hậu tố · みっかご",
+        "audio": null
+      },
+      {
+        "id": "v2721",
+        "jp": "〜しか",
+        "romaji": "shika",
+        "vi": "chỉ… thôi",
+        "note": "Trợ từ · đi với vị ngữ phủ định",
+        "audio": null
+      },
+      {
+        "id": "v2722",
+        "jp": "ほかの",
+        "kanji": "他の",
+        "romaji": "hoka no",
+        "vi": "khác, cái khác",
+        "note": "Cụm bổ nghĩa · ほかの へや",
+        "audio": null
+      },
+      {
+        "id": "v2723",
+        "jp": "はっきり",
+        "romaji": "hakkiri",
+        "vi": "rõ ràng",
+        "note": "Phó từ · はっきり きこえます",
+        "audio": null
+      },
+      {
+        "id": "v2724",
+        "jp": "にちようだいく",
+        "kanji": "日曜大工",
+        "romaji": "nichiyou daiku",
+        "vi": "việc tự đóng sửa đồ ở nhà",
+        "note": "Danh từ",
+        "audio": null
+      },
+      {
+        "id": "v2725",
+        "jp": "ほんだな",
+        "kanji": "本棚",
+        "romaji": "hondana",
+        "vi": "giá sách",
+        "note": "Danh từ · ほんだなを つくります",
+        "audio": null
+      },
+      {
+        "id": "v2726",
+        "jp": "いつか",
+        "romaji": "itsuka",
+        "vi": "một ngày nào đó",
+        "note": "Phó từ",
+        "audio": null
+      },
+      {
+        "id": "v2727",
+        "jp": "いえ",
+        "kanji": "家",
+        "romaji": "ie",
+        "vi": "nhà",
+        "note": "Danh từ",
+        "audio": null,
+        "image": "/icons/vocab/house.svg"
+      },
+      {
+        "id": "v2728",
+        "jp": "すばらしい",
+        "kanji": "素晴らしい",
+        "romaji": "subarashii",
+        "vi": "tuyệt vời",
+        "note": "Tính từ đuôi い",
+        "audio": null
+      },
+      {
+        "id": "v2729",
+        "jp": "かぐ",
+        "kanji": "家具",
+        "romaji": "kagu",
+        "vi": "đồ nội thất",
+        "note": "Danh từ",
+        "audio": null
+      },
+      {
+        "id": "v2730",
+        "jp": "〜かた",
+        "kanji": "〜方",
+        "romaji": "kata",
+        "vi": "vị, người…",
+        "note": "Cách gọi lịch sự · にほんの かた",
+        "audio": null
+      },
+      {
+        "id": "v2731",
+        "jp": "キッチン",
+        "romaji": "kicchin",
+        "vi": "bếp",
+        "note": "Danh từ",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2701",
+        "pattern": "Thể khả năng · 可能形",
+        "vi": "Có thể làm gì",
+        "explain": "Nhóm I: chuyển âm cuối sang hàng え rồi thêm る. Nhóm II: bỏ る, thêm られる. する → できる, くる → こられる. Chia dạng khả năng như động từ nhóm II.",
+        "viMistake": "はしる thuộc nhóm I: はしれる. Trong bài này dùng dạng chuẩn たべられる.",
+        "examples": [
+          {
+            "jp": "この {靴|くつ}なら {長|なが}く {走|はし}れます。",
+            "vi": "Với đôi giày này tôi có thể chạy lâu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2702",
+        "pattern": "N が + động từ khả năng",
+        "vi": "Nói năng lực hoặc điều kiện cho phép",
+        "explain": "Trong mẫu bài này, đối tượng thường dùng が: N を V → N が V thể khả năng. Có thể diễn đạt ý tương tự bằng V thể từ điển + ことができます ở bài 18.",
+        "viMistake": "Trợ từ chỉ nơi chốn hoặc đường đi vẫn theo chức năng của nó, chẳng hạn この {道|みち}を {走|はし}れます.",
+        "examples": [
+          {
+            "jp": "この {店|みせ}で {道具|どうぐ}が {借|か}りられます。",
+            "vi": "Ở cửa hàng này có thể mượn dụng cụ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2703",
+        "pattern": "N が 見えます／聞こえます",
+        "vi": "Nhìn thấy hoặc nghe thấy",
+        "explain": "Dùng khi hình ảnh hoặc âm thanh lọt vào tầm nhìn, tầm nghe. 見られます và 聞けます diễn tả khả năng hoặc điều kiện chủ động xem, nghe.",
+        "viMistake": "Điều kiện xem một bộ phim dùng 見られます. Từ cửa sổ nhìn thấy một vật dùng 見えます.",
+        "examples": [
+          {
+            "jp": "{窓|まど}から {海|うみ}が {見|み}えます。{波|なみ}の {音|おと}も {聞|き}こえます。",
+            "vi": "Từ cửa sổ nhìn thấy biển và còn nghe thấy tiếng sóng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2704",
+        "pattern": "N が できます",
+        "vi": "Được làm xong hoặc mới hình thành",
+        "explain": "Khi N là công trình hay đồ vật, できます có thể nói vật đó đã hoặc sẽ hoàn thành. Dấu hiệu thường gặp là mốc thời gian như みっかご hoặc らいげつ.",
+        "viMistake": "Nói căn nhà đã xây xong dùng いえが できました. Nói ai có thể xây nhà dùng いえが たてられます.",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ}、{駅|えき}の {前|まえ}に {店|みせ}が できます。",
+            "vi": "Tháng sau trước ga sẽ có một cửa hàng mới.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2705",
+        "pattern": "N しか + phủ định",
+        "vi": "Chỉ có, chỉ làm được… thôi",
+        "explain": "しか khoanh phần duy nhất có sẵn hoặc có thể làm. Dùng với vị ngữ phủ định. だけ có thể đi với vị ngữ khẳng định.",
+        "viMistake": "Chỉ nói được một chút: すこししか はなせません hoặc すこしだけ はなせます.",
+        "examples": [
+          {
+            "jp": "{今|いま}は {小|ちい}さい {棚|たな}しか {作|つく}れません。",
+            "vi": "Hiện giờ tôi chỉ làm được kệ nhỏ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2706",
+        "pattern": "N1 は … が、N2 は …",
+        "vi": "Đối chiếu hai đối tượng",
+        "explain": "Dùng は ở cả hai vế để làm nổi rõ hai lựa chọn. が giữa hai vế nối ý tương phản. Có thể đối chiếu năng lực hoặc điều kiện ở hai nơi.",
+        "viMistake": "Đối tượng được đưa lên đối chiếu bằng は, chẳng hạn ピアノは ひけます. Tránh ghép がは.",
+        "examples": [
+          {
+            "jp": "この {部屋|へや}では {鳥|とり}は {飼|か}えますが、{犬|いぬ}は {飼|か}えません。",
+            "vi": "Ở phòng này nuôi được chim, nhưng không nuôi được chó.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2701",
+        "type": "title",
+        "jp": "第27課 · {可能形|かのうけい}",
+        "vi": "Bài 27 · Có thể làm gì?"
+      },
+      {
+        "id": "s2702",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Hỏi nơi nào có thể làm một việc. Nói mình nhìn thấy, nghe thấy gì. Hỏi bao giờ đồ đã đặt làm xong."
+      },
+      {
+        "id": "s2703",
+        "type": "vocab",
+        "refs": ["v2701", "v2702", "v2703", "v2704", "v2705", "v2706", "v2707", "v2708"]
+      },
+      {
+        "id": "s2704",
+        "type": "vocab",
+        "refs": ["v2709", "v2710", "v2711", "v2712", "v2713", "v2714", "v2715", "v2716"]
+      },
+      {
+        "id": "s2705",
+        "type": "vocab",
+        "refs": ["v2717", "v2718", "v2719", "v2720", "v2721", "v2722", "v2723", "v2724"]
+      },
+      {
+        "id": "s2706",
+        "type": "vocab",
+        "refs": ["v2725", "v2726", "v2727", "v2728", "v2729", "v2730", "v2731"]
+      },
+      {
+        "id": "s2707",
+        "type": "grammar",
+        "ref": "g2701"
+      },
+      {
+        "id": "s2708",
+        "type": "example",
+        "ref": "g2701",
+        "reveal": true
+      },
+      {
+        "id": "s2709",
+        "type": "table",
+        "title": "Chia thể khả năng",
+        "columns": ["Nhóm", "Thể từ điển", "Thể khả năng"],
+        "rows": [
+          ["I", "よむ", "よめる"],
+          ["I", "はしる", "はしれる"],
+          ["II", "たてる", "たてられる"],
+          ["III", "する／くる", "できる／こられる"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2710",
+        "type": "quiz",
+        "ref": "q2701"
+      },
+      {
+        "id": "s2711",
+        "type": "grammar",
+        "ref": "g2702"
+      },
+      {
+        "id": "s2712",
+        "type": "example",
+        "ref": "g2702",
+        "reveal": true
+      },
+      {
+        "id": "s2713",
+        "type": "quiz",
+        "ref": "q2706"
+      },
+      {
+        "id": "s2714",
+        "type": "grammar",
+        "ref": "g2703"
+      },
+      {
+        "id": "s2715",
+        "type": "example",
+        "ref": "g2703",
+        "reveal": true
+      },
+      {
+        "id": "s2716",
+        "type": "quiz",
+        "ref": "q2707"
+      },
+      {
+        "id": "s2717",
+        "type": "grammar",
+        "ref": "g2704"
+      },
+      {
+        "id": "s2718",
+        "type": "example",
+        "ref": "g2704",
+        "reveal": true
+      },
+      {
+        "id": "s2719",
+        "type": "quiz",
+        "ref": "q2710"
+      },
+      {
+        "id": "s2720",
+        "type": "grammar",
+        "ref": "g2705"
+      },
+      {
+        "id": "s2721",
+        "type": "example",
+        "ref": "g2705",
+        "reveal": true
+      },
+      {
+        "id": "s2722",
+        "type": "quiz",
+        "ref": "q2711"
+      },
+      {
+        "id": "s2723",
+        "type": "grammar",
+        "ref": "g2706"
+      },
+      {
+        "id": "s2724",
+        "type": "example",
+        "ref": "g2706",
+        "reveal": true
+      },
+      {
+        "id": "s2725",
+        "type": "quiz",
+        "ref": "q2713"
+      },
+      {
+        "id": "s2726",
+        "type": "table",
+        "title": "Kanji trong từ của bài",
+        "columns": ["Chữ", "Đọc trong từ", "Cụm từ"],
+        "rows": [
+          ["飼", "{飼|か}います", "{鳥|とり}を {飼|か}います"],
+          ["建", "{建|た}てます", "{家|いえ}を {建|た}てます"],
+          ["声", "{声|こえ}", "{鳥|とり}の {声|こえ}"],
+          ["棚", "{本棚|ほんだな}", "{小|ちい}さい {本棚|ほんだな}"],
+          ["具", "{家具|かぐ}／{道具|どうぐ}", "{道具|どうぐ}で {家具|かぐ}を {作|つく}ります"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s2727",
+        "type": "table",
+        "title": "Từ tham khảo · Thuê nhà",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{家賃|やちん}", "tiền thuê nhà"],
+          ["{敷金|しききん}", "tiền đặt cọc"],
+          ["{間取|まど}り", "bố trí các phòng"],
+          ["{駅|えき}から {徒歩|とほ}５{分|ふん}", "đi bộ 5 phút từ ga"],
+          ["ペット{可|か}", "cho phép nuôi thú"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Dùng thông tin để hỏi về điều kiện thuê. Mức phí và điều kiện cụ thể tùy hợp đồng."
+      },
+      {
+        "id": "s2728",
+        "type": "dialogue",
+        "title": "Hội thoại · Hỏi ở xưởng làm đồ gỗ",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Khách",
+            "jp": "{小|ちい}さい {本棚|ほんだな}を {作|つく}りたいんですが、ここで {道具|どうぐ}が {借|か}りられますか。",
+            "vi": "Tôi muốn làm giá sách nhỏ. Ở đây có thể mượn dụng cụ không ạ?"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "はい。でも、{昼間|ひるま}しか {借|か}りられません。",
+            "vi": "Được ạ. Nhưng chỉ mượn được vào ban ngày."
+          },
+          {
+            "speaker": "Khách",
+            "jp": "お{店|みせ}に {頼|たの}んだら、いつ {本棚|ほんだな}が できますか。",
+            "vi": "Nếu đặt cửa hàng làm thì khi nào xong giá sách ạ?"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{三日後|みっかご}に できます。",
+            "vi": "Ba ngày nữa sẽ xong ạ."
+          }
+        ]
+      },
+      {
+        "id": "s2729",
+        "type": "quiz",
+        "ref": "q2720",
+        "teacherNotes": "Đáp án: ban ngày. Hỏi thêm khi nào quay lại lấy đồ: hai ngày sau."
+      },
+      {
+        "id": "s2730",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: しか／{昼間|ひるま}／{借|か}りられません",
+            "{昼間|ひるま}しか {借|か}りられません。"
+          ],
+          [
+            "Dịch: Từ cửa sổ có thể nhìn thấy pháo hoa.",
+            "{窓|まど}から {花火|はなび}が {見|み}えます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2731",
+        "type": "table",
+        "title": "Nhập vai · Tìm căn hộ",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["Người thuê", "Hỏi có nuôi được mèo không", "ここで ねこが {飼|か}えますか。"],
+          [
+            "Người cho thuê",
+            "Nêu điều kiện: mèo được, chó thì không",
+            "ねこは {飼|か}えますが、{犬|いぬ}は {飼|か}えません。"
+          ],
+          [
+            "Người thuê",
+            "Hỏi nhìn thấy gì từ cửa sổ",
+            "{窓|まど}から {何|なに}が {見|み}えますか。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đạt khi hỏi điều kiện bằng thể khả năng, nêu giới hạn rõ và dùng 見えます cho thứ lọt vào tầm nhìn."
+      },
+      {
+        "id": "s2732",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Thể khả năng nói việc làm được.\n見えます・聞こえます nói điều nhìn thấy, nghe thấy.\nN が できます có thể nói đồ đã làm xong.\nしか đi với phủ định. は giúp đối chiếu hai đối tượng.",
+        "teacherNotes": "Ôn ことができます của bài 18 và んですが của bài 26. Khi luyện nghe, đọc hội thoại trước khi chiếu và hỏi thời điểm có thể mượn dụng cụ. Bài 28 dùng khả năng khi kể những việc một người làm được với し."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2701",
+        "type": "choice",
+        "prompt": "Chọn thể khả năng của かきます.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Nhóm I: く → ける.",
+        "options": ["かけます", "かきれます", "かかれます", "かきます"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2702",
+        "type": "choice",
+        "prompt": "Chọn thể khả năng chuẩn của たべます.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Nhóm II: たべる → たべられる.",
+        "options": ["たべれます", "たべられます", "たべさせます", "たべます"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2703",
+        "type": "choice",
+        "prompt": "Chọn thể khả năng của きます (来ます).",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "来る có dạng khả năng こられる.",
+        "options": ["きれます", "きられます", "こられます", "こさせます"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2704",
+        "type": "choice",
+        "prompt": "Chọn thể khả năng của します.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "する → できる.",
+        "options": ["しられます", "されます", "します", "できます"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2705",
+        "type": "choice",
+        "prompt": "Chọn thể khả năng của はしります.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "走る thuộc nhóm I.",
+        "options": ["はしれます", "はしられます", "はしります", "はしりれます"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2706",
+        "type": "choice",
+        "prompt": "Ở đây có thể mượn dụng cụ: ここで どうぐ（　）かりられます。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Dùng が cho đối tượng của động từ khả năng trong mẫu này.",
+        "options": ["に", "が", "で", "へ"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2707",
+        "type": "choice",
+        "prompt": "Từ đây nhìn thấy núi: ここから やまが（　）。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "見えます diễn tả vật lọt vào tầm nhìn.",
+        "options": ["きこえます", "のめます", "みえます", "みせます"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2708",
+        "type": "choice",
+        "prompt": "Nghe thấy tiếng chim: とりの こえが（　）。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "聞こえます diễn tả âm thanh nghe thấy.",
+        "options": ["みえます", "はしれます", "つかえます", "きこえます"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2709",
+        "type": "choice",
+        "prompt": "Hỏi rạp còn suất để xem phim: きょう この えいがが（　）か。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "見られます hỏi điều kiện có thể xem.",
+        "options": ["みられます", "きこえます", "みせます", "みえません"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2710",
+        "type": "choice",
+        "prompt": "Chọn câu thông báo kệ sách đã làm xong.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Đồ vật + ができました báo đã hoàn thành.",
+        "options": [
+          "ほんだなが つくれます。",
+          "ほんだなが できました。",
+          "ほんだなが きこえました。",
+          "ほんだなが できません。"
+        ],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2711",
+        "type": "choice",
+        "prompt": "Chỉ nói được một chút: すこししか（　）。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Vị ngữ sau しか ở dạng phủ định.",
+        "options": ["はなせます", "はなします", "はなせません", "はなせました"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2712",
+        "type": "choice",
+        "prompt": "Câu nào diễn tả chỉ có một phòng?",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "ひとつしかありません là chỉ có một.",
+        "options": [
+          "へやが ひとつしか あります。",
+          "へやが ふたつ あります。",
+          "へやが ありません。",
+          "へやが ひとつしか ありません。"
+        ],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2713",
+        "type": "choice",
+        "prompt": "Dùng trợ từ đối chiếu: ピアノは ひけますが、ギター（　）ひけません。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "Dùng は ở cả hai vế để đối chiếu.",
+        "options": ["は", "へ", "で", "と"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2714",
+        "type": "choice",
+        "prompt": "Một tuần nữa xong: いっしゅうかん（　）に できます。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "〜後 đứng sau khoảng thời gian.",
+        "options": ["まえ", "ご", "しか", "から"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2715",
+        "type": "choice",
+        "prompt": "Phân biệt 飼います và 買います. Câu nào nói đang nuôi thú?",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "飼う là nuôi, 買う là mua.",
+        "options": [
+          "ねこを かいました（買）。",
+          "いえを たてています。",
+          "ねこを かっています（飼）。",
+          "とりが みえます。"
+        ],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2716",
+        "type": "choice",
+        "prompt": "Từ nào chỉ đồ nội thất?",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "家具 là đồ nội thất.",
+        "options": ["なみ", "こえ", "はなび", "かぐ"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2717",
+        "type": "choice",
+        "prompt": "Chọn từ chỉ dịch vụ giặt là.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "クリーニング dùng cho dịch vụ làm sạch quần áo.",
+        "options": ["クリーニング", "パーティールーム", "マンション", "キッチン"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2718",
+        "type": "choice",
+        "prompt": "Nói nghe rõ: こえが（　）きこえます。",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "はっきり bổ nghĩa cho cách nghe thấy.",
+        "options": ["いつか", "はっきり", "ほかの", "〜しか"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2719",
+        "type": "choice",
+        "prompt": "Chọn cách nói tôi không thể đến ngày mai.",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "来る → こられる → こられません.",
+        "options": [
+          "あしたは きます。",
+          "あしたは こられます。",
+          "あしたは こられません。",
+          "あしたは みえます。"
+        ],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2720",
+        "type": "choice",
+        "prompt": "Theo thông báo, có thể mượn dụng cụ khi nào?",
+        "points": 1,
+        "tags": ["minna-27"],
+        "explain": "昼間しか借りられません giới hạn việc mượn vào ban ngày.",
+        "options": ["Mọi lúc", "Chỉ buổi tối", "Sau hai ngày", "Ban ngày"],
+        "answer": [3],
+        "multiple": false,
+        "passage": "{工作室|こうさくしつ}の お{知|し}らせ\n{道具|どうぐ}は {昼間|ひるま}しか {借|か}りられません。\n{作|つく}った {家具|かぐ}は {二日後|ふつかご}に {取|と}りに {来|き}て ください。"
+      },
+      {
+        "id": "q2721",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: よみます",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よめます"],
+        "explain": "Cách chia: む → める.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2722",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: かいます",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["かえます"],
+        "explain": "Cách chia: う → える.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2723",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: まちます",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まてます"],
+        "explain": "Cách chia: つ → てる.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2724",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: あそびます",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あそべます"],
+        "explain": "Cách chia: ぶ → べる.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2725",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: たてます",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["たてられます"],
+        "explain": "Cách chia: nhóm II + られる.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2726",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: おきます (起きます)",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おきられます"],
+        "explain": "Cách chia: nhóm II + られる.",
+        "points": 1,
+        "tags": ["minna-27"]
+      },
+      {
+        "id": "q2727",
+        "type": "fill",
+        "prompt": "Viết thể khả năng lịch sự bằng hiragana: きます (来ます)",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["こられます"],
+        "explain": "Cách chia: dạng khả năng bất quy tắc.",
+        "points": 1,
+        "tags": ["minna-27"]
+      }
+    ]
+  }
+}
