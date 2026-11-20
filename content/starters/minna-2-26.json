@@ -391,6 +391,60 @@
         "romaji": "uchuuhikoushi",
         "vi": "phi hành gia",
         "audio": null
+      },
+      {
+        "id": "v2648",
+        "jp": "みます",
+        "kanji": "見ます",
+        "romaji": "mimasu",
+        "vi": "xem qua, kiểm tra · {書類|しょるい}を {見|み}ます",
+        "note": "Động từ nhóm II",
+        "audio": null
+      },
+      {
+        "id": "v2649",
+        "jp": "さがします",
+        "kanji": "捜します",
+        "romaji": "sagashimasu",
+        "vi": "tìm người hoặc vật bị thất lạc · いなくなった {猫|ねこ}を {捜|さが}します",
+        "note": "Động từ nhóm I · đối chiếu 探します",
+        "audio": null
+      },
+      {
+        "id": "v2650",
+        "jp": "つごうが いい",
+        "kanji": "都合が いい",
+        "romaji": "tsugou ga ii",
+        "vi": "thuận tiện, hợp lịch · {土曜日|どようび}は {都合|つごう}が いいです",
+        "note": "Cụm tính từ",
+        "audio": null
+      },
+      {
+        "id": "v2651",
+        "jp": "つごうが わるい",
+        "kanji": "都合が 悪い",
+        "romaji": "tsugou ga warui",
+        "vi": "vướng lịch, không tiện · {明日|あした}は {都合|つごう}が {悪|わる}いです",
+        "note": "Cụm tính từ",
+        "audio": null
+      },
+      {
+        "id": "v2652",
+        "jp": "しんぶんしゃ",
+        "kanji": "新聞社",
+        "romaji": "shinbunsha",
+        "vi": "tòa soạn báo · {新聞社|しんぶんしゃ}で {働|はたら}きます",
+        "note": "Danh từ",
+        "audio": null
+      },
+      {
+        "id": "v2653",
+        "jp": "げつ・すい・きん",
+        "kanji": "月・水・金",
+        "romaji": "getsu, sui, kin",
+        "vi": "thứ Hai, thứ Tư, thứ Sáu · thường gặp ở bảng lịch",
+        "note": "Viết tắt của 月曜日・水曜日・金曜日",
+        "audio": null
       }
     ],
     "grammar": [
@@ -952,10 +1006,88 @@
         "ref": "q2607"
       },
       {
+        "id": "s2641",
+        "type": "table",
+        "title": "Từ tham khảo · Phân loại rác",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{燃|も}えるごみ", "Rác đốt được"],
+          ["{燃|も}えないごみ", "Rác không đốt được"],
+          ["{資源|しげん}ごみ", "Rác thu gom để tái chế"],
+          ["{粗大|そだい}ごみ", "Rác cồng kềnh"],
+          ["{収集日|しゅうしゅうび}", "Ngày thu gom"],
+          ["ごみ{置|お}き{場|ば}", "Điểm để rác"]
+        ],
+        "teacherNotes": "Dùng bảng để đọc thông báo và hỏi về nơi ở mới. Học viên cần xem hướng dẫn tại địa phương mình để biết cách phân loại và ngày thu gom."
+      },
+      {
+        "id": "s2642",
+        "type": "table",
+        "title": "Kanji trong từ của bài 26",
+        "columns": ["Chữ", "Đọc trong từ", "Nghĩa và cụm dùng"],
+        "rows": [
+          ["診", "{診|み}ます", "Khám bệnh · {患者|かんじゃ}を {診|み}ます"],
+          ["探", "{探|さが}します", "Tìm · {鍵|かぎ}を {探|さが}します"],
+          ["遅", "{遅|おく}れます", "Đến muộn · {授業|じゅぎょう}に {遅|おく}れます"],
+          ["連・絡", "{連絡|れんらく}します", "Liên lạc · {先生|せんせい}に {連絡|れんらく}します"],
+          ["都・合", "{都合|つごう}", "Điều kiện về thời gian · {都合|つごう}が いいです"]
+        ],
+        "teacherNotes": "Cho học viên đọc chữ trong cả từ. Mở rộng theo khả năng lớp: 診察（しんさつ） là việc khám bệnh, 遅刻（ちこく） là việc đến muộn."
+      },
+      {
+        "id": "s2643",
+        "type": "quiz",
+        "ref": "q2651",
+        "teacherNotes": "Thông báo do Reng viết cho một tòa nhà giả định. Hỏi thêm: ngày nào mang rác đốt được ra? Thứ Hai và thứ Năm."
+      },
+      {
+        "id": "s2644",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch câu",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          ["Sắp xếp: {出|だ}したら／どこに／いいですか", "どこに {出|だ}したら いいですか。"],
+          [
+            "Dịch: Tôi quên chìa khóa. Anh mở cửa giúp tôi được không ạ?",
+            "{鍵|かぎ}を {忘|わす}れたんですが、ドアを {開|あ}けて いただけませんか。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Câu 1 đặt từ để hỏi trước động từ rồi dùng いいですか để xin hướng dẫn. Câu 2 dùng んですが để nêu hoàn cảnh và 開けて để mở đầu lời nhờ. Chấp nhận cách diễn đạt khác giữ đúng ý và mẫu."
+      },
+      {
+        "id": "s2645",
+        "type": "table",
+        "title": "Thực hành · Hỏi ở nơi ở mới",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "Người thuê",
+            "Nói mình mới chuyển tới rồi hỏi nên mang rác cồng kềnh đi đâu.",
+            "きのう {引|ひ}っ{越|こ}して きたんですが、{粗大|そだい}ごみは どこに {出|だ}したら いいですか。"
+          ],
+          ["Người quản lý", "Cho biết cần gọi điện trước.", "まず、{電話|でんわ}して ください。"],
+          [
+            "Người thuê",
+            "Nhờ người quản lý ghi số điện thoại.",
+            "{電話番号|でんわばんごう}を {書|か}いて いただけませんか。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho cặp học viên đổi vai. Đạt nếu nêu rõ hoàn cảnh, đặt câu hỏi bằng Vたらいいですか, dùng Vていただけませんか để nhờ và phản hồi phù hợp."
+      },
+      {
+        "id": "s2646",
+        "type": "vocab",
+        "refs": ["v2648", "v2649", "v2650", "v2651", "v2652", "v2653"],
+        "teacherNotes": "Đối chiếu các cách viết cùng âm và các cụm từ theo danh mục Langoal bản 2."
+      },
+      {
         "id": "s2638",
         "type": "note",
         "title": "Tóm tắt",
-        "body": "Thể んです: thể thường + んです; tính từ な và danh từ đổi だ → な (ひまなんです, あめなんです).\n〜んですか: hỏi về điều mình thấy, nghe được; どう したんですか.\n〜んです: giải thích lý do, hoàn cảnh; không dùng cho mọi câu kể.\n〜んですが、Vて いただけませんか: nhờ lịch sự.\n〜んですが、なに／どこ… Vたら いいですか: xin lời khuyên.\nN は すきです／わかります: が đổi thành は để nêu chủ đề, đối chiếu."
+        "body": "Thể んです: thể thường + んです; tính từ な và danh từ đổi だ → な (ひまなんです, あめなんです).\n〜んですか: hỏi về điều mình thấy, nghe được; どう したんですか.\n〜んです: giải thích lý do, hoàn cảnh; không dùng cho mọi câu kể.\n〜んですが、Vて いただけませんか: nhờ lịch sự.\n〜んですが、なに／どこ… Vたら いいですか: xin lời khuyên.\nN は すきです／わかります: が đổi thành は để nêu chủ đề, đối chiếu.",
+        "teacherNotes": "Ôn thể て và cách nói nhận sự giúp đỡ ở bài 24, rồi ôn thể た và 〜たら ở bài 25. Sang bài 27, học cách nói mình có thể làm gì. Gợi ý bài nghe trên lớp: giáo viên đọc hội thoại 3 khi chưa chiếu lời, hỏi người nói làm mất gì và nhờ việc gì, rồi chiếu lại để đối chiếu."
       }
     ],
     "questions": [
@@ -1578,6 +1710,23 @@
         "inputMode": "hiragana",
         "kanjiStrict": false,
         "answer": ["どこ"]
+      },
+      {
+        "id": "q2651",
+        "type": "choice",
+        "passage": "{青葉|あおば}ハイツのお{知|し}らせ\n{燃|も}えるごみ：{月曜日|げつようび}・{木曜日|もくようび}\n{資源|しげん}ごみ：{水曜日|すいようび}\n{朝|あさ}８{時|じ}までに、{建物|たてもの}の {前|まえ}に {出|だ}して ください。",
+        "prompt": "Theo thông báo, khi nào có thể mang rác tái chế ra trước tòa nhà?",
+        "options": [
+          "Trước hoặc đúng 8 giờ sáng thứ Hai",
+          "Sau 8 giờ sáng thứ Tư",
+          "Trước hoặc đúng 8 giờ sáng thứ Tư",
+          "Trước hoặc đúng 8 giờ sáng thứ Năm"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "資源ごみ đi với 水曜日. 朝８時までに đặt hạn chót là 8 giờ sáng.",
+        "points": 1,
+        "tags": ["minna-26", "reading"]
       }
     ]
   }
