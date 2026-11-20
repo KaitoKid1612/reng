@@ -88,3 +88,10 @@ Người dùng xác nhận Nguyên thi JLPT N5 ngày 06/12/2026 và chọn thêm
 - **Kết quả:** 500 câu: 308 chọn, 92 điền, 50 ghép đôi, 50 sắp xếp; vị trí đáp án mỗi bài chia đều, như 3/3/2/2 hoặc 4/4/4/4. File 284 kB, dưới giới hạn lưu nháp 1 MB.
 - **Test:** `tests/n5-minna-bank.test.ts` kiểm tra đủ 25 bài, bài 17–25 nhiều câu hơn, 4 dạng câu, mọi đáp án chấm đúng, vị trí đáp án 18–32% mỗi bài, 8 ngày 60 câu không lặp và dùng hết kho. `npm run check` 418/418. `npm run bank:sql` (dry run) tạo được SQL cho 500 câu. E2E chưa chạy (chỉ đổi nội dung ngân hàng, không đổi mã).
 - **Production:** người dùng báo đã nạp ngày 18/11/2026, nhưng đọc lại ngày 20/11/2026 thì production vẫn là bản 2 "Ôn Minna 1–16" (đề hằng ngày 20/11 chỉ có câu bài 1–16): file `n5.sql` đã chạy là bản thử, kết thúc bằng `rollback`. Người dùng chạy lại bản có `--commit`; đọc lại cùng ngày: bản 3 "Ôn Minna 1–25 – Nguyên", 500 câu (206 câu bài 17–25), lớp Nguyên vẫn lấy ngân hàng này 60 câu/ngày. Đề hằng ngày có bài 17–25 từ ngày 21/11. Cách nạp: chạy `npm run bank:sql -- --file content/review-banks/n5-minna-1-25.json --language ja-JP --out n5.sql`, đọc lại, thêm `--commit` rồi chạy `npx supabase db query --linked --file n5.sql`. Lớp Nguyên dùng phiên bản mới nhất làm nguồn bài hằng ngày nên tự nhận bản mới.
+
+## Ngân hàng Nguyên chỉ lấy bài đã học — 20/11/2026
+
+Lớp Nguyên học xong bài 17 (nhật ký dạy ghi bù ngày 20/11). Bản 3 có cả bài 18–25 chưa học, nên đề hằng ngày sẽ có khoảng 1/3 câu ngữ pháp chưa học. Người dùng chọn chỉ giữ bài đã học.
+
+- **Production:** xuất bản bản 4 "Ôn Minna 1–17 – Nguyên": 318 câu của bài 1–17 (bài 17 có 24 câu) lấy nguyên từ `content/review-banks/n5-minna-1-25.json`, gồm 187 câu chọn, 63 câu điền, 34 câu ghép đôi và 34 câu sắp xếp. Chỉ đổi tiêu đề và slide giới thiệu. Đọc lại thì thấy lớp vẫn lấy ngân hàng này 60 câu/ngày, có 0 câu bài 18–25. Đề 20/11 đã giao từ trước (bài 1–16); từ đề 21/11 trở đi sẽ có bài 17.
+- **Học thêm bài mới:** lọc file 1–25 theo thẻ `minna-N` (giữ N ≤ bài đã học), rồi chạy `npm run bank:sql -- --file <file đã lọc> --language ja-JP --out <sql> --commit`, chạy SQL đó và đọc lại phiên bản. File trong repo vẫn giữ đủ bài 1–25.
