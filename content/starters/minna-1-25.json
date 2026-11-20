@@ -349,6 +349,36 @@
         "audio": null,
         "note": "ôn",
         "image": "/icons/vocab/station.svg"
+      },
+      {
+        "id": "v2539",
+        "jp": "たります",
+        "kanji": "足ります",
+        "romaji": "tarimasu",
+        "vi": "đủ",
+        "audio": null
+      },
+      {
+        "id": "v2540",
+        "jp": "いみ",
+        "kanji": "意味",
+        "romaji": "imi",
+        "vi": "nghĩa, ý nghĩa",
+        "audio": null
+      },
+      {
+        "id": "v2541",
+        "jp": "もしもし",
+        "romaji": "moshimoshi",
+        "vi": "A lô",
+        "audio": null
+      },
+      {
+        "id": "v2542",
+        "jp": "ベトナム",
+        "romaji": "betonamu",
+        "vi": "Việt Nam",
+        "audio": null
       }
     ],
     "grammar": [
@@ -539,6 +569,12 @@
         "type": "vocab",
         "refs": ["v2533", "v2534", "v2535", "v2536", "v2537", "v2538"],
         "teacherNotes": "Các từ ôn dùng trong hội thoại và bài luyện."
+      },
+      {
+        "id": "s25add01",
+        "type": "vocab",
+        "refs": ["v2539", "v2540", "v2541", "v2542"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
       },
       {
         "id": "s2508",
@@ -890,6 +926,28 @@
         "id": "s2536",
         "type": "quiz",
         "ref": "q2507"
+      },
+      {
+        "id": "s25ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Cuộc đời",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{生|う}まれます", "sinh ra"],
+          ["{入学|にゅうがく}します", "nhập học"],
+          ["{卒業|そつぎょう}します", "tốt nghiệp"],
+          ["{就職|しゅうしょく}します", "đi làm (sau khi tốt nghiệp)"],
+          ["{結婚|けっこん}します", "kết hôn"],
+          ["{子|こ}どもが {生|う}まれます", "có con"],
+          ["{定年|ていねん}に なります", "đến tuổi nghỉ hưu"],
+          ["{亡|な}くなります", "qua đời"]
+        ]
+      },
+      {
+        "id": "s25info01",
+        "type": "note",
+        "title": "Thông tin: Cuộc đời",
+        "body": "Trẻ em Nhật có lễ {七五三|しちごさん} khi 3, 5 và 7 tuổi; tuổi trưởng thành được mừng vào {成人|せいじん}の {日|ひ}."
       },
       {
         "id": "s2537",

@@ -534,6 +534,17 @@
         "teacherNotes": "Ôn động từ đã học; cho học viên tự nói thể từ điển trước khi lật thẻ."
       },
       {
+        "id": "s18name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["ふるさと", "tên một bài hát Nhật"],
+          ["ビートルズ", "ban nhạc The Beatles"],
+          ["{秋葉原|あきはばら}", "khu phố điện tử ở Tokyo"]
+        ]
+      },
+      {
         "id": "s1808",
         "type": "grammar",
         "ref": "g1801",
@@ -881,6 +892,28 @@
         "id": "s1836",
         "type": "quiz",
         "ref": "q1807"
+      },
+      {
+        "id": "s18ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Động tác",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{走|はし}ります", "chạy"],
+          ["{跳|と}びます", "nhảy"],
+          ["{投|な}げます", "ném"],
+          ["{蹴|け}ります", "đá"],
+          ["{引|ひ}っ{張|ぱ}ります", "kéo"],
+          ["{押|お}します", "đẩy, ấn"],
+          ["{持|も}ち{上|あ}げます", "nhấc lên"],
+          ["{振|ふ}ります", "vẫy, lắc"]
+        ]
+      },
+      {
+        "id": "s18info01",
+        "type": "note",
+        "title": "Thông tin: Động tác",
+        "body": "Dùng với ことが できます: {速|はや}く {走|はし}る ことが できます。"
       },
       {
         "id": "s1837",

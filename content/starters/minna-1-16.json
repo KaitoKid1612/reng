@@ -334,6 +334,274 @@
         "romaji": "benri",
         "vi": "tiện lợi",
         "audio": null
+      },
+      {
+        "id": "v1641",
+        "jp": "おろします［おかねを～］",
+        "kanji": "下ろします［お金を～］",
+        "romaji": "oroshimasuokaneo~",
+        "vi": "rút (tiền)",
+        "audio": null
+      },
+      {
+        "id": "v1642",
+        "jp": "はいります［だいがくに～］",
+        "kanji": "入ります［大学に～］",
+        "romaji": "hairimasudaigakuni~",
+        "vi": "vào (đại học)",
+        "audio": null
+      },
+      {
+        "id": "v1643",
+        "jp": "でます［だいがくを～］",
+        "kanji": "出ます［大学を～］",
+        "romaji": "demasudaigakuo~",
+        "vi": "tốt nghiệp, ra (trường)",
+        "audio": null
+      },
+      {
+        "id": "v1644",
+        "jp": "のみます",
+        "kanji": "飲みます",
+        "romaji": "nomimasu",
+        "vi": "uống (rượu)",
+        "audio": null
+      },
+      {
+        "id": "v1645",
+        "jp": "けんがくします",
+        "kanji": "見学します",
+        "romaji": "kengakushimasu",
+        "vi": "tham quan học tập",
+        "audio": null
+      },
+      {
+        "id": "v1646",
+        "jp": "でんわします",
+        "kanji": "電話します",
+        "romaji": "denwashimasu",
+        "vi": "gọi điện thoại",
+        "audio": null
+      },
+      {
+        "id": "v1647",
+        "jp": "くらい",
+        "kanji": "暗い",
+        "romaji": "kurai",
+        "vi": "tối",
+        "audio": null
+      },
+      {
+        "id": "v1648",
+        "jp": "からだ",
+        "kanji": "体",
+        "romaji": "karada",
+        "vi": "cơ thể, sức khoẻ",
+        "audio": null
+      },
+      {
+        "id": "v1649",
+        "jp": "あたま",
+        "kanji": "頭",
+        "romaji": "atama",
+        "vi": "đầu",
+        "audio": null
+      },
+      {
+        "id": "v1650",
+        "jp": "め",
+        "kanji": "目",
+        "romaji": "me",
+        "vi": "mắt",
+        "audio": null
+      },
+      {
+        "id": "v1651",
+        "jp": "みみ",
+        "kanji": "耳",
+        "romaji": "mimi",
+        "vi": "tai",
+        "audio": null
+      },
+      {
+        "id": "v1652",
+        "jp": "はな",
+        "kanji": "鼻",
+        "romaji": "hana",
+        "vi": "mũi",
+        "audio": null
+      },
+      {
+        "id": "v1653",
+        "jp": "くち",
+        "kanji": "口",
+        "romaji": "kuchi",
+        "vi": "miệng",
+        "audio": null
+      },
+      {
+        "id": "v1654",
+        "jp": "は",
+        "kanji": "歯",
+        "romaji": "ha",
+        "vi": "răng",
+        "audio": null
+      },
+      {
+        "id": "v1655",
+        "jp": "おなか",
+        "romaji": "onaka",
+        "vi": "bụng",
+        "audio": null
+      },
+      {
+        "id": "v1656",
+        "jp": "あし",
+        "kanji": "足",
+        "romaji": "ashi",
+        "vi": "chân",
+        "audio": null
+      },
+      {
+        "id": "v1657",
+        "jp": "サービス",
+        "romaji": "saabisu",
+        "vi": "dịch vụ",
+        "audio": null
+      },
+      {
+        "id": "v1658",
+        "jp": "ジョギング",
+        "romaji": "jogingu",
+        "vi": "chạy bộ",
+        "audio": null
+      },
+      {
+        "id": "v1659",
+        "jp": "シャワー",
+        "romaji": "shawaa",
+        "vi": "vòi sen, tắm vòi sen",
+        "audio": null
+      },
+      {
+        "id": "v1660",
+        "jp": "みどり",
+        "kanji": "緑",
+        "romaji": "midori",
+        "vi": "màu xanh lá, cây xanh",
+        "audio": null
+      },
+      {
+        "id": "v1661",
+        "jp": "［お］てら",
+        "kanji": "［お］寺",
+        "romaji": "otera",
+        "vi": "chùa",
+        "audio": null
+      },
+      {
+        "id": "v1662",
+        "jp": "じんじゃ",
+        "kanji": "神社",
+        "romaji": "jinja",
+        "vi": "đền Thần đạo",
+        "audio": null
+      },
+      {
+        "id": "v1663",
+        "jp": "どうやって",
+        "romaji": "douyatte",
+        "vi": "bằng cách nào",
+        "audio": null
+      },
+      {
+        "id": "v1664",
+        "jp": "どの ～",
+        "romaji": "dono ~",
+        "vi": "~ nào (trong từ 3 thứ trở lên)",
+        "audio": null
+      },
+      {
+        "id": "v1665",
+        "jp": "どれ",
+        "romaji": "dore",
+        "vi": "cái nào (trong từ 3 thứ trở lên)",
+        "audio": null
+      },
+      {
+        "id": "v1666",
+        "jp": "すごいですね。",
+        "romaji": "sugoidesune.",
+        "vi": "Giỏi quá! / Tuyệt thật!",
+        "audio": null
+      },
+      {
+        "id": "v1667",
+        "jp": "まだまだです。",
+        "romaji": "madamadadesu.",
+        "vi": "(Không,) tôi còn kém lắm. (khiêm tốn)",
+        "audio": null
+      },
+      {
+        "id": "v1668",
+        "jp": "おひきだしですか。",
+        "kanji": "お引き出しですか。",
+        "romaji": "ohikidashidesuka.",
+        "vi": "Quý khách rút tiền phải không ạ?",
+        "audio": null
+      },
+      {
+        "id": "v1669",
+        "jp": "まず",
+        "romaji": "mazu",
+        "vi": "trước hết",
+        "audio": null
+      },
+      {
+        "id": "v1670",
+        "jp": "つぎに",
+        "kanji": "次に",
+        "romaji": "tsugini",
+        "vi": "tiếp theo",
+        "audio": null
+      },
+      {
+        "id": "v1671",
+        "jp": "キャッシュカード",
+        "romaji": "kyasshukaado",
+        "vi": "thẻ rút tiền",
+        "audio": null
+      },
+      {
+        "id": "v1672",
+        "jp": "あんしょうばんごう",
+        "kanji": "暗証番号",
+        "romaji": "anshoubangou",
+        "vi": "mã PIN",
+        "audio": null
+      },
+      {
+        "id": "v1673",
+        "jp": "きんがく",
+        "kanji": "金額",
+        "romaji": "kingaku",
+        "vi": "số tiền",
+        "audio": null
+      },
+      {
+        "id": "v1674",
+        "jp": "かくにん",
+        "kanji": "確認",
+        "romaji": "kakunin",
+        "vi": "xác nhận",
+        "audio": null
+      },
+      {
+        "id": "v1675",
+        "jp": "ボタン",
+        "romaji": "botan",
+        "vi": "nút bấm",
+        "audio": null
       }
     ],
     "grammar": [
@@ -456,6 +724,73 @@
             "audio": null
           }
         ]
+      },
+      {
+        "id": "g1606",
+        "pattern": "N を V（でます・おります）",
+        "vi": "Rời khỏi / xuống khỏi N",
+        "explain": "Với động từ rời khỏi một nơi như でます (ra khỏi), おります (xuống xe), trợ từ を chỉ nơi rời đi.",
+        "viMistake": "Không dùng に với おります: でんしゃを おります, không nói でんしゃに おります.",
+        "examples": [
+          {
+            "jp": "７{時|じ}に うちを {出|で}ます。",
+            "vi": "Tôi ra khỏi nhà lúc 7 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "つぎの {駅|えき}で {電車|でんしゃ}を {降|お}ります。",
+            "vi": "Tôi xuống tàu ở ga tiếp theo.",
+            "audio": null
+          },
+          {
+            "jp": "２０２０{年|ねん}に {大学|だいがく}を {出|で}ました。",
+            "vi": "Tôi tốt nghiệp đại học năm 2020.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1607",
+        "pattern": "どうやって",
+        "vi": "Bằng cách nào / Làm thế nào",
+        "explain": "Hỏi cách làm hoặc cách đi; câu trả lời thường nối các bước bằng thể て.",
+        "viMistake": "どうやって hỏi các bước làm; chỉ hỏi phương tiện thì dùng なんで (bằng gì).",
+        "examples": [
+          {
+            "jp": "{大学|だいがく}まで どうやって {行|い}きますか。",
+            "vi": "Đến trường đại học đi thế nào?",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}から ３{番|ばん}の バスに {乗|の}って、{大学前|だいがくまえ}で {降|お}ります。",
+            "vi": "Từ ga đi xe buýt số 3, xuống ở bến Daigakumae.",
+            "audio": null
+          },
+          {
+            "jp": "この カードは どうやって {使|つか}いますか。",
+            "vi": "Thẻ này dùng thế nào?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g1608",
+        "pattern": "どれ／どの N",
+        "vi": "Cái nào / ~ nào (chọn trong từ 3 thứ trở lên)",
+        "explain": "どれ đứng một mình thay cho danh từ; どの luôn đi kèm danh từ. Chọn giữa 2 thứ thì dùng どちら.",
+        "viMistake": "どの phải có danh từ đi sau: どの かさですか, không nói どのですか.",
+        "examples": [
+          {
+            "jp": "リンさんの かさは どれですか。…あの {赤|あか}い かさです。",
+            "vi": "Ô của Linh là cái nào? — Là cái ô màu đỏ kia.",
+            "audio": null
+          },
+          {
+            "jp": "ナムさんは どの {人|ひと}ですか。…あの {背|せ}が {高|たか}い {人|ひと}です。",
+            "vi": "Nam là người nào? — Là người cao kia.",
+            "audio": null
+          }
+        ]
       }
     ],
     "slides": [
@@ -469,7 +804,7 @@
         "id": "s1602",
         "type": "note",
         "title": "Mục tiêu buổi học",
-        "body": "1. Kể 2–3 hành động theo thứ tự bằng thể て.\n2. Nói 'sau khi làm xong' với Vてから.\n3. Miêu tả đặc điểm bằng N1はN2がAです.\n4. Nối tính từ い bằng くて, tính từ な và danh từ bằng で."
+        "body": "1. Kể 2–3 hành động theo thứ tự bằng thể て.\n2. Nói 'sau khi làm xong' với Vてから.\n3. Miêu tả đặc điểm bằng N1はN2がAです.\n4. Nối tính từ い bằng くて, tính từ な và danh từ bằng で.\n5. Hỏi cách làm với どうやって; chọn trong nhiều thứ với どれ／どの; rời khỏi một nơi với N を でます／おります."
       },
       {
         "id": "s1603",
@@ -500,6 +835,51 @@
         "type": "vocab",
         "refs": ["v1633", "v1634", "v1635", "v1636", "v1637", "v1638", "v1639", "v1640"],
         "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s16add01",
+        "type": "vocab",
+        "refs": ["v1641", "v1642", "v1643", "v1644", "v1645", "v1646", "v1647", "v1648"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s16add02",
+        "type": "vocab",
+        "refs": ["v1649", "v1650", "v1651", "v1652", "v1653", "v1654", "v1655", "v1656"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s16add03",
+        "type": "vocab",
+        "refs": ["v1657", "v1658", "v1659", "v1660", "v1661", "v1662", "v1663", "v1664"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s16add04",
+        "type": "vocab",
+        "refs": ["v1665", "v1666", "v1667", "v1668", "v1669", "v1670", "v1671", "v1672"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s16add05",
+        "type": "vocab",
+        "refs": ["v1673", "v1674", "v1675"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s16name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["JR", "công ty đường sắt Nhật Bản"],
+          ["{雪祭|ゆきまつ}り", "lễ hội tuyết (Sapporo)"],
+          ["バンドン", "thành phố ở In-đô-nê-xi-a"],
+          ["フランケン", "vùng ở Đức"],
+          ["ベラクルス", "thành phố ở Mê-hi-cô"],
+          ["{梅田|うめだ}", "khu phố ở Osaka"],
+          ["{大学前|だいがくまえ}", "tên bến xe buýt trong sách"]
+        ]
       },
       {
         "id": "s1608",
@@ -681,6 +1061,39 @@
         "reveal": true
       },
       {
+        "id": "s16gr01",
+        "type": "grammar",
+        "ref": "g1606"
+      },
+      {
+        "id": "s16ex01",
+        "type": "example",
+        "ref": "g1606",
+        "reveal": true
+      },
+      {
+        "id": "s16gr02",
+        "type": "grammar",
+        "ref": "g1607"
+      },
+      {
+        "id": "s16ex02",
+        "type": "example",
+        "ref": "g1607",
+        "reveal": true
+      },
+      {
+        "id": "s16gr03",
+        "type": "grammar",
+        "ref": "g1608"
+      },
+      {
+        "id": "s16ex03",
+        "type": "example",
+        "ref": "g1608",
+        "reveal": true
+      },
+      {
         "id": "s1627",
         "type": "table",
         "title": "Luyện tập 5: tính từ な và danh từ",
@@ -781,6 +1194,44 @@
         "reveal": true
       },
       {
+        "id": "s16dlg01",
+        "type": "dialogue",
+        "title": "Hội thoại 4: rút tiền ở máy ATM",
+        "lines": [
+          {
+            "speaker": "ナム",
+            "jp": "すみません、この ATMは どうやって {使|つか}いますか。",
+            "vi": "Xin lỗi, máy ATM này dùng thế nào ạ?"
+          },
+          {
+            "speaker": "{銀行員|ぎんこういん}",
+            "jp": "まず、カードを {入|い}れて ください。",
+            "vi": "Trước hết, anh cho thẻ vào."
+          },
+          {
+            "speaker": "{銀行員|ぎんこういん}",
+            "jp": "{次|つぎ}に、{暗証番号|あんしょうばんごう}を {押|お}して ください。",
+            "vi": "Tiếp theo, anh bấm mã PIN."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "はい、{押|お}しました。",
+            "vi": "Vâng, tôi bấm rồi."
+          },
+          {
+            "speaker": "{銀行員|ぎんこういん}",
+            "jp": "それから、{金額|きんがく}を {押|お}して、「{確認|かくにん}」の ボタンを {押|お}して ください。",
+            "vi": "Sau đó bấm số tiền rồi bấm nút 'Xác nhận'."
+          },
+          {
+            "speaker": "ナム",
+            "jp": "わかりました。ありがとう ございました。",
+            "vi": "Tôi hiểu rồi. Cảm ơn chị."
+          }
+        ],
+        "reveal": true
+      },
+      {
         "id": "s1632",
         "type": "table",
         "title": "Luyện tập 6: ghép thành câu",
@@ -805,6 +1256,26 @@
         "id": "s1633",
         "type": "quiz",
         "ref": "q1606"
+      },
+      {
+        "id": "s16ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Cách dùng máy ATM",
+        "columns": ["Bước", "Nghĩa"],
+        "rows": [
+          ["１. カードを {入|い}れます", "cho thẻ vào"],
+          ["２. 「お{引|ひ}き{出|だ}し」を {押|お}します", "chọn rút tiền"],
+          ["３. {暗証番号|あんしょうばんごう}を {押|お}します", "bấm mã PIN"],
+          ["４. {金額|きんがく}を {押|お}します", "bấm số tiền"],
+          ["５. 「{確認|かくにん}」を {押|お}します", "bấm xác nhận"],
+          ["６. お{金|かね}と カードを {取|と}ります", "lấy tiền và thẻ"]
+        ]
+      },
+      {
+        "id": "s16info01",
+        "type": "note",
+        "title": "Thông tin: Cách dùng máy ATM",
+        "body": "ATM ở cửa hàng tiện lợi dùng được gần như cả ngày; rút tiền ngoài giờ hoặc khác ngân hàng có thể mất phí."
       },
       {
         "id": "s1634",

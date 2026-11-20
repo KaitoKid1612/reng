@@ -401,6 +401,81 @@
         "romaji": "~mashou",
         "vi": "cùng … nhé (đề nghị)",
         "audio": null
+      },
+      {
+        "id": "v0649",
+        "jp": "やさい",
+        "kanji": "野菜",
+        "romaji": "yasai",
+        "vi": "rau",
+        "audio": null
+      },
+      {
+        "id": "v0650",
+        "jp": "みず",
+        "kanji": "水",
+        "romaji": "mizu",
+        "vi": "nước",
+        "audio": null
+      },
+      {
+        "id": "v0651",
+        "jp": "こうちゃ",
+        "kanji": "紅茶",
+        "romaji": "koucha",
+        "vi": "hồng trà, trà đen",
+        "audio": null
+      },
+      {
+        "id": "v0652",
+        "jp": "たばこ",
+        "romaji": "tabako",
+        "vi": "thuốc lá",
+        "audio": null
+      },
+      {
+        "id": "v0653",
+        "jp": "ビデオ",
+        "romaji": "bideo",
+        "vi": "video, đầu video",
+        "audio": null
+      },
+      {
+        "id": "v0654",
+        "jp": "にわ",
+        "kanji": "庭",
+        "romaji": "niwa",
+        "vi": "vườn",
+        "audio": null
+      },
+      {
+        "id": "v0655",
+        "jp": "ミルク",
+        "romaji": "miruku",
+        "vi": "sữa",
+        "audio": null
+      },
+      {
+        "id": "v0656",
+        "jp": "なんですか。",
+        "kanji": "何ですか。",
+        "romaji": "nandesuka.",
+        "vi": "Có chuyện gì vậy? (đáp lại khi được gọi)",
+        "audio": null
+      },
+      {
+        "id": "v0657",
+        "jp": "じゃ、また あした。",
+        "romaji": "ja, mata ashita.",
+        "vi": "Hẹn mai gặp lại.",
+        "audio": null
+      },
+      {
+        "id": "v0658",
+        "jp": "メキシコ",
+        "romaji": "mekishiko",
+        "vi": "Mê-hi-cô",
+        "audio": null
       }
     ],
     "grammar": [
@@ -576,6 +651,29 @@
         "refs": ["v0641", "v0642", "v0643", "v0644", "v0645", "v0646", "v0647", "v0648"]
       },
       {
+        "id": "s06add01",
+        "type": "vocab",
+        "refs": ["v0649", "v0650", "v0651", "v0652", "v0653", "v0654", "v0655", "v0656"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s06add02",
+        "type": "vocab",
+        "refs": ["v0657", "v0658"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s06name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{大阪|おおさか}デパート", "tên bách hoá trong sách"],
+          ["つるや", "tên nhà hàng trong sách"],
+          ["フランス{屋|や}・{毎日屋|まいにちや}", "tên siêu thị trong sách"]
+        ]
+      },
+      {
         "id": "s0609",
         "teacherNotes": "Đọc theo hàng: đối tượng + を + động từ.",
         "type": "table",
@@ -717,6 +815,12 @@
         "type": "example",
         "ref": "g0605",
         "reveal": true
+      },
+      {
+        "id": "s06mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• なん và なに: Đọc なん trước âm hàng た・だ・な và trước lượng từ: {何|なん}ですか、{何|なん}の {本|ほん}、{何人|なんにん}. Còn lại đọc なに: {何|なに}を しますか。\n• ～か (xác nhận): Nhắc lại thông tin vừa nghe, xuống giọng, nghĩa là 'À, ~ à': ああ、お{花見|はなみ}ですか。"
       },
       {
         "id": "s0627",
@@ -894,6 +998,28 @@
         "id": "s0635",
         "type": "quiz",
         "ref": "q0624"
+      },
+      {
+        "id": "s06ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Đồ ăn",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{牛肉|ぎゅうにく}", "thịt bò"],
+          ["{豚肉|ぶたにく}", "thịt lợn"],
+          ["{鶏肉|とりにく}", "thịt gà"],
+          ["たまねぎ", "hành tây"],
+          ["にんじん", "cà rốt"],
+          ["じゃがいも", "khoai tây"],
+          ["キャベツ", "bắp cải"],
+          ["トマト", "cà chua"]
+        ]
+      },
+      {
+        "id": "s06info01",
+        "type": "note",
+        "title": "Thông tin: Đồ ăn",
+        "body": "Bữa sáng kiểu Nhật thường có cơm, canh miso và cá nướng; kiểu Tây có bánh mì, trứng và cà phê."
       },
       {
         "id": "s0636",

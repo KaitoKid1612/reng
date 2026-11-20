@@ -411,6 +411,65 @@
         "romaji": "hoian",
         "vi": "Hội An",
         "audio": null
+      },
+      {
+        "id": "v0851",
+        "jp": "すてき［な］",
+        "kanji": "素敵［な］",
+        "romaji": "sutekina",
+        "vi": "đẹp, tuyệt",
+        "audio": null
+      },
+      {
+        "id": "v0852",
+        "jp": "ひくい",
+        "kanji": "低い",
+        "romaji": "hikui",
+        "vi": "thấp",
+        "audio": null
+      },
+      {
+        "id": "v0853",
+        "jp": "よい",
+        "romaji": "yoi",
+        "vi": "tốt (= いい)",
+        "audio": null
+      },
+      {
+        "id": "v0854",
+        "jp": "レストラン",
+        "romaji": "resutoran",
+        "vi": "nhà hàng",
+        "audio": null
+      },
+      {
+        "id": "v0855",
+        "jp": "［お］しごと",
+        "kanji": "［お］仕事",
+        "romaji": "oshigoto",
+        "vi": "công việc",
+        "audio": null
+      },
+      {
+        "id": "v0856",
+        "jp": "そうですね。",
+        "romaji": "soudesune.",
+        "vi": "Để xem nào… (khi đang nghĩ câu trả lời)",
+        "audio": null
+      },
+      {
+        "id": "v0857",
+        "jp": "もう ～です［ね］。",
+        "romaji": "mou ~desu [ne].",
+        "vi": "Đã ~ rồi nhỉ.",
+        "audio": null
+      },
+      {
+        "id": "v0858",
+        "jp": "いいえ。",
+        "romaji": "iie.",
+        "vi": "Không có gì. (đáp lại lời cảm ơn)",
+        "audio": null
       }
     ],
     "grammar": [
@@ -592,6 +651,25 @@
         "refs": ["v0849", "v0850"]
       },
       {
+        "id": "s08add01",
+        "type": "vocab",
+        "refs": ["v0851", "v0852", "v0853", "v0854", "v0855", "v0856", "v0857", "v0858"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s08name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["シャンハイ", "Thượng Hải (Trung Quốc)"],
+          ["{金閣寺|きんかくじ}", "chùa Vàng ở Kyoto"],
+          ["{奈良公園|ならこうえん}", "công viên Nara"],
+          ["{富士山|ふじさん}", "núi Phú Sĩ"],
+          ["「{七人|しちにん}の {侍|さむらい}」", "phim 'Bảy võ sĩ' của Kurosawa"]
+        ]
+      },
+      {
         "id": "s0810",
         "teacherNotes": "Đọc theo hàng: khẳng định → phủ định → trước danh từ. Chú ý いい → よくない.",
         "type": "table",
@@ -720,6 +798,12 @@
         "type": "example",
         "ref": "g0805",
         "reveal": true
+      },
+      {
+        "id": "s08mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• そうですね: Dùng khi đang nghĩ câu trả lời, nghĩa là 'Để xem nào': {日本|にほん}の {生活|せいかつ}は どうですか。…そうですね。{楽|たの}しいです。"
       },
       {
         "id": "s0827",
@@ -869,6 +953,28 @@
         "id": "s0834",
         "type": "quiz",
         "ref": "q0833"
+      },
+      {
+        "id": "s08ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Màu sắc và vị",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{白|しろ} / {白|しろ}い", "trắng"],
+          ["{黒|くろ} / {黒|くろ}い", "đen"],
+          ["{赤|あか} / {赤|あか}い", "đỏ"],
+          ["{青|あお} / {青|あお}い", "xanh dương"],
+          ["{黄色|きいろ} / {黄色|きいろ}い", "vàng"],
+          ["{緑|みどり}", "xanh lá"],
+          ["{甘|あま}い · {辛|から}い", "ngọt · cay"],
+          ["すっぱい · {苦|にが}い · しょっぱい", "chua · đắng · mặn"]
+        ]
+      },
+      {
+        "id": "s08info01",
+        "type": "note",
+        "title": "Thông tin: Màu sắc và vị",
+        "body": "Chỉ một số màu có tính từ い: {白|しろ}い、{黒|くろ}い、{赤|あか}い、{青|あお}い、{黄色|きいろ}い、{茶色|ちゃいろ}い. {緑|みどり} thì nói {緑|みどり}の (ví dụ {緑|みどり}の シャツ)."
       },
       {
         "id": "s0835",

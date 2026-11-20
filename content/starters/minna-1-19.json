@@ -499,6 +499,16 @@
         "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
       },
       {
+        "id": "s19name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{東京|とうきょう}スカイツリー", "tháp truyền hình Tokyo Skytree"],
+          ["{葛飾北斎|かつしかほくさい}", "hoạ sĩ tranh khắc gỗ thời Edo"]
+        ]
+      },
+      {
         "id": "s1908",
         "type": "grammar",
         "ref": "g1901",
@@ -824,6 +834,28 @@
         "id": "s1934",
         "type": "quiz",
         "ref": "q1906"
+      },
+      {
+        "id": "s19ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Văn hoá truyền thống và giải trí",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{茶道|さどう}", "trà đạo"],
+          ["{生|い}け{花|ばな}", "cắm hoa"],
+          ["{書道|しょどう}", "thư pháp"],
+          ["{相撲|すもう}", "sumo"],
+          ["{歌舞伎|かぶき}", "kịch Kabuki"],
+          ["{能|のう}", "kịch Noh"],
+          ["{柔道|じゅうどう}", "nhu đạo"],
+          ["{剣道|けんどう}", "kiếm đạo"]
+        ]
+      },
+      {
+        "id": "s19info01",
+        "type": "note",
+        "title": "Thông tin: Văn hoá truyền thống và giải trí",
+        "body": "Nhiều trường học ở Nhật có câu lạc bộ trà đạo, thư pháp, kiếm đạo; người nước ngoài cũng có thể học thử ở các trung tâm văn hoá."
       },
       {
         "id": "s1935",

@@ -340,6 +340,21 @@
         "romaji": "~nakereba narimasen",
         "vi": "phải …",
         "audio": null
+      },
+      {
+        "id": "v1741",
+        "jp": "２、３にち",
+        "kanji": "２、３日",
+        "romaji": "ni, san nichi",
+        "vi": "2, 3 ngày",
+        "audio": null
+      },
+      {
+        "id": "v1742",
+        "jp": "２、３～",
+        "romaji": "ni, san ~",
+        "vi": "2, 3 (cái, người…)",
+        "audio": null
       }
     ],
     "grammar": [
@@ -530,6 +545,12 @@
         "type": "vocab",
         "refs": ["v1733", "v1734", "v1735", "v1736", "v1737", "v1738", "v1739", "v1740"],
         "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s17add01",
+        "type": "vocab",
+        "refs": ["v1741", "v1742"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
       },
       {
         "id": "s1708",
@@ -879,6 +900,28 @@
         "id": "s1736",
         "type": "quiz",
         "ref": "q1707"
+      },
+      {
+        "id": "s17ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Cơ thể và bệnh tật",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{風邪|かぜ}", "cảm"],
+          ["{熱|ねつ}", "sốt"],
+          ["せき", "ho"],
+          ["{鼻水|はなみず}", "sổ mũi"],
+          ["けが", "vết thương"],
+          ["{頭痛|ずつう}", "đau đầu"],
+          ["{内科|ないか}", "khoa nội"],
+          ["{歯医者|はいしゃ}", "nha sĩ"]
+        ]
+      },
+      {
+        "id": "s17info01",
+        "type": "note",
+        "title": "Thông tin: Cơ thể và bệnh tật",
+        "body": "Đi khám bệnh nhớ mang {健康保険証|けんこうほけんしょう} (thẻ bảo hiểm y tế); có thẻ thì chỉ trả khoảng 30% chi phí."
       },
       {
         "id": "s1737",

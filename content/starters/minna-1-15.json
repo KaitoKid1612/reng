@@ -342,6 +342,21 @@
         "romaji": "sou desu ne",
         "vi": "để xem nào; đúng vậy nhỉ",
         "audio": null
+      },
+      {
+        "id": "v1541",
+        "jp": "すみません",
+        "romaji": "sumimasen",
+        "vi": "xin lỗi",
+        "audio": null
+      },
+      {
+        "id": "v1542",
+        "jp": "みなさん",
+        "kanji": "皆さん",
+        "romaji": "minasan",
+        "vi": "mọi người, các bạn",
+        "audio": null
       }
     ],
     "grammar": [
@@ -510,6 +525,22 @@
         "refs": ["v1533", "v1534", "v1535", "v1536", "v1537", "v1538", "v1539", "v1540"]
       },
       {
+        "id": "s15add01",
+        "type": "vocab",
+        "refs": ["v1541", "v1542"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s15name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{日本橋|にっぽんばし}", "khu mua sắm ở Osaka"],
+          ["みんなの インタビュー", "tên chương trình TV trong sách"]
+        ]
+      },
+      {
         "id": "s1508",
         "teacherNotes": "Học viên xin phép giáo viên những việc trong lớp: まどを あけても いいですか.",
         "type": "grammar",
@@ -647,6 +678,12 @@
         "type": "example",
         "ref": "g1505",
         "reveal": true
+      },
+      {
+        "id": "s15mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• N に V: に chỉ nơi hành động hướng tới: {喫茶店|きっさてん}に {入|はい}ります、いすに {座|すわ}ります、{電車|でんしゃ}に {乗|の}ります.\n• N1 に N2 を V: Đặt, viết N2 vào N1: {机|つくえ}の {上|うえ}に {本|ほん}を {置|お}きます。ノートに {名前|なまえ}を {書|か}きます。"
       },
       {
         "id": "s1526",
@@ -796,6 +833,28 @@
         "id": "s1532",
         "type": "quiz",
         "ref": "q1526"
+      },
+      {
+        "id": "s15ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Nghề nghiệp",
+        "columns": ["Nghề", "Nghĩa"],
+        "rows": [
+          ["{会社員|かいしゃいん}", "nhân viên công ty"],
+          ["{公務員|こうむいん}", "công chức"],
+          ["{警察官|けいさつかん}", "cảnh sát"],
+          ["{看護師|かんごし}", "y tá"],
+          ["{弁護士|べんごし}", "luật sư"],
+          ["{美容師|びようし}", "thợ làm tóc"],
+          ["{運転手|うんてんしゅ}", "tài xế"],
+          ["{大工|だいく}", "thợ mộc"]
+        ]
+      },
+      {
+        "id": "s15info01",
+        "type": "note",
+        "title": "Thông tin: Nghề nghiệp",
+        "body": "Hỏi nghề: お{仕事|しごと}は {何|なん}ですか。Nói nơi làm: ～で {働|はたら}いて います。"
       },
       {
         "id": "s1533",

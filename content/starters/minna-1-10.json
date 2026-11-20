@@ -383,6 +383,53 @@
         "romaji": "doumo sumimasen",
         "vi": "cảm ơn, xin lỗi đã làm phiền",
         "audio": null
+      },
+      {
+        "id": "v1049",
+        "jp": "いぬ",
+        "kanji": "犬",
+        "romaji": "inu",
+        "vi": "chó",
+        "audio": null
+      },
+      {
+        "id": "v1050",
+        "jp": "ねこ",
+        "kanji": "猫",
+        "romaji": "neko",
+        "vi": "mèo",
+        "audio": null
+      },
+      {
+        "id": "v1051",
+        "jp": "こうえん",
+        "kanji": "公園",
+        "romaji": "kouen",
+        "vi": "công viên",
+        "audio": null
+      },
+      {
+        "id": "v1052",
+        "jp": "けん",
+        "kanji": "県",
+        "romaji": "ken",
+        "vi": "tỉnh",
+        "audio": null
+      },
+      {
+        "id": "v1053",
+        "jp": "エーティーエム",
+        "kanji": "ATM",
+        "romaji": "ee tii emu",
+        "vi": "máy rút tiền ATM",
+        "audio": null
+      },
+      {
+        "id": "v1054",
+        "jp": "ナンプラー",
+        "romaji": "nanpuraa",
+        "vi": "nước mắm Thái",
+        "audio": null
       }
     ],
     "grammar": [
@@ -555,6 +602,22 @@
         "teacherNotes": "Đóng vai hỏi nhân viên siêu thị: あのう、ヌクマムは ありますか.",
         "type": "vocab",
         "refs": ["v1041", "v1042", "v1043", "v1044", "v1045", "v1046", "v1047", "v1048"]
+      },
+      {
+        "id": "s10add01",
+        "type": "vocab",
+        "refs": ["v1049", "v1050", "v1051", "v1052", "v1053", "v1054"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s10name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{東京|とうきょう}ディズニーランド", "khu vui chơi Disneyland Tokyo"],
+          ["アジアストア", "tên siêu thị trong sách"]
+        ]
       },
       {
         "id": "s1009",
@@ -854,6 +917,28 @@
         "id": "s1035",
         "type": "quiz",
         "ref": "q1028"
+      },
+      {
+        "id": "s10ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Trong nhà",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{玄関|げんかん}", "lối vào (chỗ cởi giày)"],
+          ["{台所|だいどころ}", "bếp"],
+          ["{居間|いま}", "phòng khách"],
+          ["{寝室|しんしつ}", "phòng ngủ"],
+          ["{風呂|ふろ}", "phòng tắm"],
+          ["トイレ", "nhà vệ sinh"],
+          ["ベランダ", "ban công"],
+          ["{押|お}し{入|い}れ", "tủ âm tường (cất chăn nệm)"]
+        ]
+      },
+      {
+        "id": "s10info01",
+        "type": "note",
+        "title": "Thông tin: Trong nhà",
+        "body": "Vào nhà người Nhật phải cởi giày ở {玄関|げんかん} và xếp giày quay mũi ra cửa."
       },
       {
         "id": "s1036",

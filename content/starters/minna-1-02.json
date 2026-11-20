@@ -360,6 +360,36 @@
         "romaji": "hontou desu ka",
         "vi": "thật không?",
         "audio": null
+      },
+      {
+        "id": "v0245",
+        "jp": "そうですか。",
+        "romaji": "soudesuka.",
+        "vi": "Vậy à. / Thế à. (khi nghe thông tin mới)",
+        "audio": null
+      },
+      {
+        "id": "v0246",
+        "jp": "ちがいます。",
+        "kanji": "違います。",
+        "romaji": "chigaimasu.",
+        "vi": "Không phải. / Sai rồi.",
+        "audio": null
+      },
+      {
+        "id": "v0247",
+        "jp": "あ",
+        "romaji": "a",
+        "vi": "A! (khi chợt nhận ra điều gì)",
+        "audio": null
+      },
+      {
+        "id": "v0248",
+        "jp": "これから おせわに なります。",
+        "kanji": "これから お世話に なります。",
+        "romaji": "korekara osewa ni narimasu.",
+        "vi": "Từ nay mong được anh/chị giúp đỡ.",
+        "audio": null
       }
     ],
     "grammar": [
@@ -535,6 +565,12 @@
         "refs": ["v0239", "v0240", "v0241", "v0242", "v0243", "v0244"]
       },
       {
+        "id": "s02add01",
+        "type": "vocab",
+        "refs": ["v0245", "v0246", "v0247", "v0248"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
         "id": "s0209",
         "teacherNotes": "Giáo viên cầm sách (これ), chỉ sách học viên đang cầm (それ), chỉ tấm bảng ở xa (あれ).",
         "type": "table",
@@ -666,6 +702,12 @@
         "type": "example",
         "ref": "g0205",
         "reveal": true
+      },
+      {
+        "id": "s02mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• お～ (lịch sự): Thêm お trước một số danh từ để nói lịch sự về người nghe: お{名前|なまえ}、お{土産|みやげ}.\n• そうですか: 'Vậy à': đáp lại khi vừa nghe thông tin mới, xuống giọng ở cuối."
       },
       {
         "id": "s0227",
@@ -807,6 +849,28 @@
         "id": "s0234",
         "type": "quiz",
         "ref": "q0250"
+      },
+      {
+        "id": "s02ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Họ của người Nhật",
+        "columns": ["Họ", "Đọc"],
+        "rows": [
+          ["{佐藤|さとう}", "Sato"],
+          ["{鈴木|すずき}", "Suzuki"],
+          ["{高橋|たかはし}", "Takahashi"],
+          ["{田中|たなか}", "Tanaka"],
+          ["{渡辺|わたなべ}", "Watanabe"],
+          ["{伊藤|いとう}", "Ito"],
+          ["{山本|やまもと}", "Yamamoto"],
+          ["{中村|なかむら}", "Nakamura"]
+        ]
+      },
+      {
+        "id": "s02info01",
+        "type": "note",
+        "title": "Thông tin: Họ của người Nhật",
+        "body": "Đây là những họ phổ biến nhất ở Nhật. Người Nhật gọi nhau bằng họ + さん; không bao giờ tự gọi mình là '～さん'."
       },
       {
         "id": "s0235",

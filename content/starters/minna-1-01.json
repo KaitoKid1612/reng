@@ -372,6 +372,41 @@
         "vi": "(Tôi) đến từ …",
         "audio": null,
         "image": "/icons/vocab/airplane-arrival.svg"
+      },
+      {
+        "id": "v0146",
+        "jp": "イギリス",
+        "romaji": "igirisu",
+        "vi": "nước Anh",
+        "audio": null
+      },
+      {
+        "id": "v0147",
+        "jp": "インド",
+        "romaji": "indo",
+        "vi": "Ấn Độ",
+        "audio": null
+      },
+      {
+        "id": "v0148",
+        "jp": "インドネシア",
+        "romaji": "indoneshia",
+        "vi": "In-đô-nê-xi-a",
+        "audio": null
+      },
+      {
+        "id": "v0149",
+        "jp": "ドイツ",
+        "romaji": "doitsu",
+        "vi": "Đức",
+        "audio": null
+      },
+      {
+        "id": "v0150",
+        "jp": "ブラジル",
+        "romaji": "burajiru",
+        "vi": "Bra-xin",
+        "audio": null
       }
     ],
     "grammar": [
@@ -545,6 +580,22 @@
         "teacherNotes": "Luyện cả câu chào và cúi chào nhẹ khi nói どうぞ よろしく おねがいします.",
         "type": "vocab",
         "refs": ["v0140", "v0141", "v0142", "v0143", "v0144", "v0145"]
+      },
+      {
+        "id": "s01add01",
+        "type": "vocab",
+        "refs": ["v0146", "v0147", "v0148", "v0149", "v0150"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s01name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["IMC・パワー{電気|でんき}・ブラジルエアー", "tên công ty trong sách"],
+          ["AKC", "tên viện nghiên cứu trong sách"]
+        ]
       },
       {
         "id": "s0109",
@@ -835,6 +886,28 @@
         "id": "s0134",
         "type": "quiz",
         "ref": "q0150"
+      },
+      {
+        "id": "s01ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Nước, người và ngôn ngữ",
+        "columns": ["Tên nước", "Người · Tiếng"],
+        "rows": [
+          ["{日本|にほん}", "{日本人|にほんじん} · {日本語|にほんご}"],
+          ["ベトナム", "ベトナム{人|じん} · ベトナム{語|ご}"],
+          ["{中国|ちゅうごく}", "{中国人|ちゅうごくじん} · {中国語|ちゅうごくご}"],
+          ["{韓国|かんこく}", "{韓国人|かんこくじん} · {韓国語|かんこくご}"],
+          ["アメリカ", "アメリカ{人|じん} · {英語|えいご}"],
+          ["フランス", "フランス{人|じん} · フランス{語|ご}"],
+          ["ドイツ", "ドイツ{人|じん} · ドイツ{語|ご}"],
+          ["タイ", "タイ{人|じん} · タイ{語|ご}"]
+        ]
+      },
+      {
+        "id": "s01info01",
+        "type": "note",
+        "title": "Thông tin: Nước, người và ngôn ngữ",
+        "body": "Tên nước + {人|じん} là người nước đó, tên nước + {語|ご} là tiếng nước đó. Người Mỹ, người Anh nói {英語|えいご}, không nói 'アメリカ語'."
       },
       {
         "id": "s0135",

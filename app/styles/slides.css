@@ -177,9 +177,10 @@ body:has(.slide-shell) .site-footer {
 .slide-options > li {
   text-wrap: pretty;
 }
-/* Quiz sentences are written with a space between phrases, so they break there rather than
-   inside a word (痛／いです); a phrase too long for the line may still break anywhere. */
-.slide-quiz > .slide-japanese,
+/* Japanese on slides is written with a space between phrases, so it breaks there rather than
+   inside a word (痛／いです, ござ／いました); a phrase too long for the line may still break
+   anywhere, so nothing overflows. */
+.slide-japanese,
 .slide-options > li {
   word-break: keep-all;
   overflow-wrap: anywhere;

@@ -248,3 +248,29 @@ Mỗi bài: từ thiếu (từ thường) · tên riêng trong sách (người, 
 - **Mẫu trong code:** sách 47 từ, Reng 40 từ, thiếu 9.
   - Từ thiếu: 宇宙、～様、宇宙船、怖い、宇宙ステーション、違います
   - Tên riêng: エドアストア、宇宙飛行士、星出彰彦
+
+## Đã bổ sung — 20/11/2026
+
+Người dùng yêu cầu bổ sung mọi chỗ thiếu, kiểm chứng bằng nhiều nguồn công khai và ưu tiên nguồn từ sách.
+
+### Nguồn và cách xác minh chéo
+
+1. **MinnaNoDS** (dựng từ cuốn *Translation & Grammar Notes* bản 2, mỗi từ ghi bản 1/2).
+2. **langoal.com/en/vocabulary/minna/1–26**: mỗi trang ghi "Matches lesson N of 『みんなの日本語 初級Ⅰ 第2版 本冊』" (bài 26: 初級Ⅱ 第2版). Đọc tự động từ thuộc tính `data-kanji`/`data-furigana` của bảng, không chép nghĩa.
+3. Gộp hai nguồn theo cách đọc: từ có ở cả hai nguồn là chắc chắn; từ chỉ một nguồn được soát tay. Từ chỉ langoal có mà MinnaNoDS ghi là **chỉ bản 1** thì bỏ (テレホンカード、カセットテープ、ワープロ、ファックス、フィルム、床屋、プレイガイド、外国人登録証…). Cách ghi khác nhau (ホッチキス/ホチキス, 暇［な］/暇な) coi là một.
+4. Ngữ pháp: tiêu đề mục ngữ pháp và chủ đề "Useful Words & Information" của từng bài lấy từ mục lục cuốn *Translation & Grammar Notes* bản 2.
+
+### Đã thêm (mẫu trong code, bài 1–26; bản trong lớp Nguyên, bài 1–17)
+
+- **Từ còn thiếu** vào danh sách từ của bài, có slide từ vựng riêng (8 từ/slide, ghi chú giáo viên "Từ có trong sách bản 2"). Mẫu: 1–35 từ/bài (bài 16: 35 từ; bài 5: 19 ngày trong tháng và tàu xe). Bản lớp Nguyên: bài 8 thêm 24, bài 16 thêm 35, bài 14 thêm 12.
+- **Bảng "Tên riêng trong bài"**: người, nơi, công ty hư cấu sách dùng trong ví dụ và bài tập (không đưa vào flashcard).
+- **Bảng "Từ tham khảo: <chủ đề của sách>" và ghi chú "Thông tin"** cho bài 1–25, đúng chủ đề sách (bài 1 nước–người–ngôn ngữ … bài 25 cuộc đời); từ chọn và câu viết riêng cho Reng. Bài 26 (Sơ cấp II) chưa có vì chưa đọc được mục lục cuốn II.
+- **Slide "Mẫu nhỏ cần nhớ"** cho các mục ngữ pháp nhỏ còn thiếu (bài 2–8, 12–15, 23).
+- **Bài 16**: thêm 3 mẫu N を V（でます・おります）, どうやって, どれ／どの N (giải thích, lỗi hay gặp, ví dụ), hội thoại rút tiền ở ATM, mục tiêu bài.
+- Slide: chữ Nhật trên mọi slide chỉ xuống dòng ở dấu cách giữa các cụm (trước đây chỉ câu hỏi), nên không còn "ござ｜いました", "かし｜ます".
+
+### Sau khi bổ sung
+
+- Từ vựng: mẫu bài 1–26 và bản lớp Nguyên bài 1–17 không còn thiếu từ nào ngoài các từ bản 1 đã bỏ và các cách ghi khác (ひま/暇な, CD/シーディー).
+- Ngữ pháp: mọi mục trong mục lục sách đều có ở mẫu câu hoặc slide "Mẫu nhỏ cần nhớ" (công cụ dò còn báo ✗ ở 14, 15, 23 vì chữ có furigana `{雨|あめ}が`; đã xem tay).
+- Câu hỏi luyện tập không đổi (50 câu/bài); câu cho từ mới đến từ ngân hàng ôn hằng ngày.

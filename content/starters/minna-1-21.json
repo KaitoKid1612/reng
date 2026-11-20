@@ -330,6 +330,13 @@
         "romaji": "mou kaeranai to",
         "vi": "Tôi phải về rồi…",
         "audio": null
+      },
+      {
+        "id": "v2141",
+        "jp": "カンガルー",
+        "romaji": "kangaruu",
+        "vi": "chuột túi",
+        "audio": null
       }
     ],
     "grammar": [
@@ -520,6 +527,38 @@
         "type": "vocab",
         "refs": ["v2133", "v2134", "v2135", "v2136", "v2137", "v2138", "v2139", "v2140"],
         "teacherNotes": "Cho học viên đặt một câu ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s21add01",
+        "type": "vocab",
+        "refs": ["v2141"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s21name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["アインシュタイン", "nhà vật lý Einstein"],
+          ["ガガーリン", "nhà du hành vũ trụ Gagarin"],
+          ["ガリレオ", "nhà khoa học Galileo"],
+          ["キング{牧師|ぼくし}", "mục sư Martin Luther King"],
+          ["フランクリン", "Benjamin Franklin"],
+          ["かぐや{姫|ひめ}", "công chúa trong truyện cổ Nhật"],
+          ["{天神祭|てんじんまつり}", "lễ hội Tenjin ở Osaka"],
+          ["{吉野山|よしのやま}", "núi Yoshino (Nara)"]
+        ]
+      },
+      {
+        "id": "s21name02",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["キャプテン・クック", "thuyền trưởng James Cook"],
+          ["ヨーネン", "tên công ty trong sách"]
+        ]
       },
       {
         "id": "s2108",
@@ -827,6 +866,28 @@
         "id": "s2135",
         "type": "quiz",
         "ref": "q2107"
+      },
+      {
+        "id": "s21ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Chức vụ trong xã hội",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{社長|しゃちょう}", "giám đốc"],
+          ["{部長|ぶちょう}", "trưởng phòng"],
+          ["{課長|かちょう}", "trưởng ban"],
+          ["{係長|かかりちょう}", "trưởng nhóm"],
+          ["{社員|しゃいん}", "nhân viên"],
+          ["{大統領|だいとうりょう}", "tổng thống"],
+          ["{首相|しゅしょう}", "thủ tướng"],
+          ["{知事|ちじ}", "thống đốc tỉnh"]
+        ]
+      },
+      {
+        "id": "s21info01",
+        "type": "note",
+        "title": "Thông tin: Chức vụ trong xã hội",
+        "body": "Ở Nhật danh thiếp ({名刺|めいし}) ghi rõ chức vụ; trao và nhận danh thiếp bằng hai tay."
       },
       {
         "id": "s2136",

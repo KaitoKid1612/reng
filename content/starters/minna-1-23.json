@@ -464,6 +464,19 @@
         "teacherNotes": "Hai thẻ đầu là mẫu câu của bài; sáu thẻ sau là từ ôn (bài 13, 14, 16, 21) dùng trong ví dụ và hội thoại."
       },
       {
+        "id": "s23name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{聖徳太子|しょうとくたいし}", "Thái tử Shotoku"],
+          ["{法隆寺|ほうりゅうじ}", "chùa Horyuji ở Nara"],
+          ["{元気茶|げんきちゃ}", "tên loại trà trong sách"],
+          ["{本田駅|ほんだえき}", "tên ga trong sách"],
+          ["{図書館前|としょかんまえ}", "tên bến xe buýt trong sách"]
+        ]
+      },
+      {
         "id": "s2307",
         "type": "grammar",
         "ref": "g2301",
@@ -644,6 +657,12 @@
         "reveal": true
       },
       {
+        "id": "s23mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• N が tính từ/V (trạng thái): Tả trạng thái nghe, thấy được thì chủ ngữ dùng が: この つまみを {回|まわ}すと、{音|おと}が {大|おお}きく なります。"
+      },
+      {
         "id": "s2329",
         "type": "table",
         "title": "Luyện tập 6: N を + đi qua",
@@ -798,6 +817,28 @@
         "id": "s2335",
         "type": "quiz",
         "ref": "q2307"
+      },
+      {
+        "id": "s23ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Đường sá và giao thông",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{信号|しんごう}", "đèn tín hiệu"],
+          ["{交差点|こうさてん}", "ngã tư"],
+          ["{横断歩道|おうだんほどう}", "vạch qua đường"],
+          ["{歩道橋|ほどうきょう}", "cầu vượt cho người đi bộ"],
+          ["{角|かど}", "góc phố"],
+          ["{突|つ}き{当|あ}たり", "cuối đường"],
+          ["{一方通行|いっぽうつうこう}", "đường một chiều"],
+          ["{駐車禁止|ちゅうしゃきんし}", "cấm đỗ xe"]
+        ]
+      },
+      {
+        "id": "s23info01",
+        "type": "note",
+        "title": "Thông tin: Đường sá và giao thông",
+        "body": "Ở Nhật xe đi bên trái; người đi bộ chỉ qua đường ở {横断歩道|おうだんほどう} khi đèn xanh."
       },
       {
         "id": "s2336",

@@ -335,6 +335,62 @@
         "romaji": "komatta naa",
         "vi": "Gay quá! / Khổ thật! (nói một mình khi gặp rắc rối)",
         "audio": null
+      },
+      {
+        "id": "v2641",
+        "jp": "うちゅう",
+        "kanji": "宇宙",
+        "romaji": "uchuu",
+        "vi": "vũ trụ",
+        "audio": null
+      },
+      {
+        "id": "v2642",
+        "jp": "～さま",
+        "kanji": "～様",
+        "romaji": "~sama",
+        "vi": "ngài, quý (kính ngữ của ～さん)",
+        "audio": null
+      },
+      {
+        "id": "v2643",
+        "jp": "うちゅうせん",
+        "kanji": "宇宙船",
+        "romaji": "uchuusen",
+        "vi": "tàu vũ trụ",
+        "audio": null
+      },
+      {
+        "id": "v2644",
+        "jp": "こわい",
+        "kanji": "怖い",
+        "romaji": "kowai",
+        "vi": "sợ, đáng sợ",
+        "audio": null
+      },
+      {
+        "id": "v2645",
+        "jp": "ちがいます",
+        "kanji": "違います",
+        "romaji": "chigaimasu",
+        "vi": "khác",
+        "audio": null
+      },
+      {
+        "id": "v2646",
+        "jp": "うちゅうステーション",
+        "kanji": "宇宙ステーション",
+        "romaji": "uchuusuteeshon",
+        "vi": "trạm vũ trụ",
+        "audio": null
+      },
+      {
+        "id": "v2647",
+        "jp": "うちゅうひこうし",
+        "kanji": "宇宙飛行士",
+        "romaji": "uchuuhikoushi",
+        "vi": "phi hành gia",
+        "audio": null
       }
     ],
     "grammar": [
@@ -525,6 +581,22 @@
         "type": "vocab",
         "refs": ["v2633", "v2634", "v2635", "v2636", "v2637", "v2638", "v2639", "v2640"],
         "teacherNotes": "Nói về cách phân loại rác ở Nhật: rác cháy được, chai lọ, lon có ngày đổ riêng."
+      },
+      {
+        "id": "s26add01",
+        "type": "vocab",
+        "refs": ["v2641", "v2642", "v2643", "v2644", "v2645", "v2646", "v2647"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s26name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["エドアストア", "tên cửa hàng trong sách"],
+          ["{星出彰彦|ほしであきひこ}", "phi hành gia Nhật Bản"]
+        ]
       },
       {
         "id": "s2608",

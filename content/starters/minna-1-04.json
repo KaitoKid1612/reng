@@ -402,6 +402,65 @@
         "romaji": "~to ~",
         "vi": "… và … (nối hai danh từ)",
         "audio": null
+      },
+      {
+        "id": "v0449",
+        "jp": "デパート",
+        "romaji": "depaato",
+        "vi": "cửa hàng bách hoá",
+        "audio": null
+      },
+      {
+        "id": "v0450",
+        "jp": "ぎんこう",
+        "kanji": "銀行",
+        "romaji": "ginkou",
+        "vi": "ngân hàng",
+        "audio": null
+      },
+      {
+        "id": "v0451",
+        "jp": "おととい",
+        "romaji": "ototoi",
+        "vi": "hôm kia",
+        "audio": null
+      },
+      {
+        "id": "v0452",
+        "jp": "あさって",
+        "romaji": "asatte",
+        "vi": "ngày kia",
+        "audio": null
+      },
+      {
+        "id": "v0453",
+        "jp": "そちら",
+        "romaji": "sochira",
+        "vi": "chỗ anh/chị, bên đó (nói qua điện thoại)",
+        "audio": null
+      },
+      {
+        "id": "v0454",
+        "jp": "よる",
+        "kanji": "夜",
+        "romaji": "yoru",
+        "vi": "đêm, buổi tối",
+        "audio": null
+      },
+      {
+        "id": "v0455",
+        "jp": "いちれいよん",
+        "kanji": "104",
+        "romaji": "ichi rei yon",
+        "vi": "104 – tổng đài hỏi số điện thoại",
+        "audio": null
+      },
+      {
+        "id": "v0456",
+        "jp": "どうも ありがとう ございました。",
+        "romaji": "doumo arigatou gozaimashita.",
+        "vi": "Xin cảm ơn rất nhiều. (khi việc đã xong)",
+        "audio": null
       }
     ],
     "grammar": [
@@ -575,6 +634,26 @@
         "teacherNotes": "Số điện thoại đọc từng chữ số; số 0 đọc ゼロ hoặc れい.",
         "type": "vocab",
         "refs": ["v0441", "v0442", "v0443", "v0444", "v0445", "v0446", "v0447", "v0448"]
+      },
+      {
+        "id": "s04add01",
+        "type": "vocab",
+        "refs": ["v0449", "v0450", "v0451", "v0452", "v0453", "v0454", "v0455", "v0456"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s04name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["ニューヨーク", "New York (Mỹ)"],
+          ["ペキン", "Bắc Kinh (Trung Quốc)"],
+          ["ロサンゼルス", "Los Angeles (Mỹ)"],
+          ["ロンドン", "Luân Đôn (Anh)"],
+          ["あすか", "tên nhà hàng Nhật trong sách"],
+          ["アップル{銀行|ぎんこう}", "tên ngân hàng trong sách"]
+        ]
       },
       {
         "id": "s0409",
@@ -764,6 +843,12 @@
         "reveal": true
       },
       {
+        "id": "s04mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• N1 と N2: Nối hai danh từ, nghĩa là 'và': {休|やす}みは {土曜日|どようび}と {日曜日|にちようび}です。\n• ～ね: Cuối câu, mong người nghe đồng tình hoặc xác nhận: {大変|たいへん}ですね。"
+      },
+      {
         "id": "s0430",
         "teacherNotes": "Học viên đọc giờ mở cửa thành câu, rồi bấm mũi tên để kiểm tra.",
         "type": "table",
@@ -926,6 +1011,28 @@
         "id": "s0436",
         "type": "quiz",
         "ref": "q0436"
+      },
+      {
+        "id": "s04ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Điện thoại và thư từ",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{電話番号|でんわばんごう}", "số điện thoại"],
+          ["{携帯電話|けいたいでんわ}", "điện thoại di động"],
+          ["メール", "thư điện tử"],
+          ["{手紙|てがみ}", "thư"],
+          ["はがき", "bưu thiếp"],
+          ["{切手|きって}", "tem"],
+          ["{封筒|ふうとう}", "phong bì"],
+          ["{住所|じゅうしょ}", "địa chỉ"]
+        ]
+      },
+      {
+        "id": "s04info01",
+        "type": "note",
+        "title": "Thông tin: Điện thoại và thư từ",
+        "body": "Số khẩn cấp ở Nhật: 110 gọi cảnh sát, 119 gọi cứu hoả và xe cấp cứu. Số 0 trong số điện thoại đọc là ゼロ hoặc れい."
       },
       {
         "id": "s0437",

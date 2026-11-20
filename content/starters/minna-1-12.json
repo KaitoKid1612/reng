@@ -450,6 +450,37 @@
         "romaji": "demo",
         "vi": "nhưng (đứng đầu câu)",
         "audio": null
+      },
+      {
+        "id": "v1252",
+        "jp": "レモン",
+        "romaji": "remon",
+        "vi": "chanh",
+        "audio": null
+      },
+      {
+        "id": "v1253",
+        "jp": "いけばな",
+        "kanji": "生け花",
+        "romaji": "ikebana",
+        "vi": "nghệ thuật cắm hoa",
+        "audio": null
+      },
+      {
+        "id": "v1254",
+        "jp": "もみじ",
+        "kanji": "紅葉",
+        "romaji": "momiji",
+        "vi": "cây phong; lá đỏ mùa thu",
+        "audio": null
+      },
+      {
+        "id": "v1255",
+        "jp": "わあ、すごい ひとですね。",
+        "kanji": "わあ、すごい 人ですね。",
+        "romaji": "waa, sugoi hito desu ne.",
+        "vi": "Ồ, đông người quá!",
+        "audio": null
       }
     ],
     "grammar": [
@@ -632,6 +663,24 @@
         "refs": ["v1248", "v1249", "v1250", "v1251"]
       },
       {
+        "id": "s12add01",
+        "type": "vocab",
+        "refs": ["v1252", "v1253", "v1254", "v1255"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s12name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["{祇園祭|ぎおんまつり}", "lễ hội Gion ở Kyoto"],
+          ["ホンコン", "Hồng Kông"],
+          ["シンガポール", "Xin-ga-po"],
+          ["ABCストア・ジャパン", "tên siêu thị trong sách"]
+        ]
+      },
+      {
         "id": "s1210",
         "teacherNotes": "Che hai cột quá khứ rồi cho học viên chia. Nhấn mạnh hàng いい → よかったです.",
         "type": "table",
@@ -789,6 +838,12 @@
         "type": "example",
         "ref": "g1205",
         "reveal": true
+      },
+      {
+        "id": "s12mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• Tính từ + の: の thay cho danh từ đã nói tới: もう すこし {安|やす}いのは ありませんか。({安|やす}い かばん → {安|やす}いの)"
       },
       {
         "id": "s1241",
@@ -1029,6 +1084,28 @@
         "id": "s1237",
         "type": "quiz",
         "ref": "q1250"
+      },
+      {
+        "id": "s12ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Lễ hội và danh thắng",
+        "columns": ["Tên", "Ở đâu, khi nào"],
+        "rows": [
+          ["{雪祭|ゆきまつ}り", "Sapporo, tháng 2"],
+          ["{祇園祭|ぎおんまつり}", "Kyoto, tháng 7"],
+          ["{天神祭|てんじんまつり}", "Osaka, tháng 7"],
+          ["ねぶた{祭|まつ}り", "Aomori, tháng 8"],
+          ["{富士山|ふじさん}", "núi cao nhất Nhật Bản"],
+          ["{金閣寺|きんかくじ}", "chùa Vàng, Kyoto"],
+          ["{東大寺|とうだいじ}", "chùa có tượng Phật lớn, Nara"],
+          ["{姫路城|ひめじじょう}", "lâu đài Himeji"]
+        ]
+      },
+      {
+        "id": "s12info01",
+        "type": "note",
+        "title": "Thông tin: Lễ hội và danh thắng",
+        "body": "Mùa xuân người Nhật đi ngắm hoa anh đào (お{花見|はなみ}), mùa thu đi ngắm lá đỏ (もみじ)."
       },
       {
         "id": "s1238",

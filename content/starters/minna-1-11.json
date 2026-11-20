@@ -454,6 +454,59 @@
         "romaji": "kashikomarimashita",
         "vi": "Vâng, tôi hiểu rồi ạ. (nhân viên nói với khách)",
         "audio": null
+      },
+      {
+        "id": "v1155",
+        "jp": "カレー［ライス］",
+        "romaji": "kareeraisu",
+        "vi": "cơm cà ri",
+        "audio": null
+      },
+      {
+        "id": "v1156",
+        "jp": "おにいさん",
+        "kanji": "お兄さん",
+        "romaji": "oniisan",
+        "vi": "anh trai (của người khác)",
+        "audio": null
+      },
+      {
+        "id": "v1157",
+        "jp": "おねえさん",
+        "kanji": "お姉さん",
+        "romaji": "oneesan",
+        "vi": "chị gái (của người khác)",
+        "audio": null
+      },
+      {
+        "id": "v1158",
+        "jp": "いってらっしゃい。",
+        "kanji": "行ってらっしゃい。",
+        "romaji": "itterasshai.",
+        "vi": "Đi nhé! (người ở nhà nói)",
+        "audio": null
+      },
+      {
+        "id": "v1159",
+        "jp": "おねがいします。",
+        "kanji": "お願いします。",
+        "romaji": "onegaishimasu.",
+        "vi": "Nhờ anh/chị. / Làm ơn.",
+        "audio": null
+      },
+      {
+        "id": "v1160",
+        "jp": "エアメール",
+        "romaji": "eameeru",
+        "vi": "thư máy bay (= こうくうびん)",
+        "audio": null
+      },
+      {
+        "id": "v1161",
+        "jp": "オーストラリア",
+        "romaji": "oosutoraria",
+        "vi": "Úc",
+        "audio": null
       }
     ],
     "grammar": [
@@ -625,6 +678,12 @@
         "teacherNotes": "Cho học viên đóng vai: người ra khỏi nhà nói いってきます, người ở lại nói いってらっしゃい.",
         "type": "vocab",
         "refs": ["v1149", "v1150", "v1151", "v1152", "v1153", "v1154"]
+      },
+      {
+        "id": "s11add01",
+        "type": "vocab",
+        "refs": ["v1155", "v1156", "v1157", "v1158", "v1159", "v1160", "v1161"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
       },
       {
         "id": "s1112",
@@ -942,6 +1001,28 @@
         "id": "s1136",
         "type": "quiz",
         "ref": "q1109"
+      },
+      {
+        "id": "s11ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Thực đơn",
+        "columns": ["Món", "Nghĩa"],
+        "rows": [
+          ["{定食|ていしょく}", "suất cơm (cơm, canh, món chính)"],
+          ["ラーメン", "mì ramen"],
+          ["うどん", "mì udon"],
+          ["そば", "mì soba"],
+          ["{牛丼|ぎゅうどん}", "cơm bò"],
+          ["カレーライス", "cơm cà ri"],
+          ["サラダ", "salad"],
+          ["ジュース", "nước hoa quả"]
+        ]
+      },
+      {
+        "id": "s11info01",
+        "type": "note",
+        "title": "Thông tin: Thực đơn",
+        "body": "Nhiều quán có mẫu món ăn bằng nhựa ở cửa. Gọi món: これを ください。/ ラーメンを ひとつ おねがいします。"
       },
       {
         "id": "s1137",

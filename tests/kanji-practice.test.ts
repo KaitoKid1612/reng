@@ -44,7 +44,7 @@ test("only vocabulary written with kanji becomes practice material", () => {
     words.map((word) => word.id),
     ["v1", "v4"],
   );
-  assert.equal(extractKanjiWords(starter.content.vocab).length, 37);
+  assert.equal(extractKanjiWords(starter.content.vocab).length, 41);
 });
 
 test("readings ignore spaces, the 〜 mark, katakana and a final full stop only", () => {
@@ -140,7 +140,7 @@ test("the practice reducer grades answers and lists the mistakes", () => {
 test("generated question-bank items are valid drafts and are not generated twice", () => {
   const content = draftContentSchema.parse(starter.content);
   const created = buildKanjiQuestions(content, seeded(3));
-  assert.equal(created.length, 74, "a reading and a pick-the-kanji question per word");
+  assert.equal(created.length, 82, "a reading and a pick-the-kanji question per word");
   const next = draftContentSchema.parse({
     ...content,
     questions: [...content.questions, ...created],

@@ -313,6 +313,13 @@
         "vi": "sinh nhật (ôn bài 5)",
         "audio": null,
         "image": "/icons/vocab/birthday-cake.svg"
+      },
+      {
+        "id": "v2241",
+        "jp": "ええと",
+        "romaji": "eeto",
+        "vi": "ờ, để xem nào",
+        "audio": null
       }
     ],
     "grammar": [
@@ -503,6 +510,19 @@
         "type": "vocab",
         "refs": ["v2233", "v2234", "v2235", "v2237", "v2238", "v2239", "v2240"],
         "teacherNotes": "Cho học viên đặt một cụm danh từ ngắn bằng từ mới trước khi chuyển slide."
+      },
+      {
+        "id": "s22add01",
+        "type": "vocab",
+        "refs": ["v2241"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s22name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [["みんなの アンケート", "tên bảng hỏi trong sách"]]
       },
       {
         "id": "s2208",
@@ -854,6 +874,28 @@
         "id": "s2236",
         "type": "quiz",
         "ref": "q2207"
+      },
+      {
+        "id": "s22ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Quần áo",
+        "columns": ["Động từ", "Dùng với"],
+        "rows": [
+          ["{着|き}ます", "シャツ、セーター、コート"],
+          ["{履|は}きます", "{靴|くつ}、ズボン、スカート"],
+          ["かぶります", "{帽子|ぼうし}"],
+          ["かけます", "{眼鏡|めがね}"],
+          ["します", "ネクタイ、{時計|とけい}"],
+          ["つけます", "アクセサリー"],
+          ["はめます", "{手袋|てぶくろ}、{指輪|ゆびわ}"],
+          ["{脱|ぬ}ぎます", "cởi (quần áo, giày)"]
+        ]
+      },
+      {
+        "id": "s22info01",
+        "type": "note",
+        "title": "Thông tin: Quần áo",
+        "body": "Tiếng Nhật dùng động từ khác nhau theo bộ phận cơ thể: mặc phía trên người là {着|き}ます, đi/mặc phía dưới là {履|は}きます."
       },
       {
         "id": "s2237",

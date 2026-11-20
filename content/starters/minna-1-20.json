@@ -884,6 +884,28 @@
         "ref": "q2007"
       },
       {
+        "id": "s20ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Cách gọi người khác",
+        "columns": ["Cách gọi", "Dùng khi"],
+        "rows": [
+          ["～さん", "gọi chung, lịch sự"],
+          ["～くん", "bạn nam, cấp dưới nam"],
+          ["～ちゃん", "trẻ em, người rất thân"],
+          ["～さま", "khách hàng, thư từ (rất lịch sự)"],
+          ["{先生|せんせい}", "giáo viên, bác sĩ"],
+          ["{課長|かちょう}・{部長|ぶちょう}", "gọi cấp trên bằng chức vụ"],
+          ["{先輩|せんぱい}", "đàn anh, đàn chị"],
+          ["おじいさん・おばあさん", "người cao tuổi"]
+        ]
+      },
+      {
+        "id": "s20info01",
+        "type": "note",
+        "title": "Thông tin: Cách gọi người khác",
+        "body": "Trong công ty Nhật thường gọi cấp trên bằng chức vụ (ví dụ {田中課長|たなかかちょう}), không gọi tên kèm さん."
+      },
+      {
         "id": "s2037",
         "type": "note",
         "title": "Tóm tắt",

@@ -417,6 +417,13 @@
         "romaji": "doumo",
         "vi": "cảm ơn (nói gọn)",
         "audio": null
+      },
+      {
+        "id": "v0353",
+        "jp": "フランス",
+        "romaji": "furansu",
+        "vi": "Pháp",
+        "audio": null
       }
     ],
     "grammar": [
@@ -598,6 +605,24 @@
         "refs": ["v0347", "v0348", "v0349", "v0350", "v0351", "v0352"]
       },
       {
+        "id": "s03add01",
+        "type": "vocab",
+        "refs": ["v0353"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s03name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["ジャカルタ", "thủ đô In-đô-nê-xi-a"],
+          ["バンコク", "thủ đô Thái Lan"],
+          ["ベルリン", "thủ đô Đức"],
+          ["{新大阪|しんおおさか}", "tên một ga ở Osaka"]
+        ]
+      },
+      {
         "id": "s0310",
         "teacherNotes": "Giáo viên đứng ở bàn mình (ここ), chỉ chỗ học viên ngồi (そこ), chỉ cửa ra vào ở xa (あそこ).",
         "type": "table",
@@ -766,6 +791,12 @@
         "reveal": true
       },
       {
+        "id": "s03mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• Hệ こ・そ・あ・ど: こ gần người nói, そ gần người nghe, あ xa cả hai, ど để hỏi: これ・それ・あれ・どれ／この・その・あの・どの／ここ・そこ・あそこ・どこ／こちら・そちら・あちら・どちら.\n• お～: お{国|くに}は どちらですか。(Anh/chị là người nước nào?) — お làm câu hỏi lịch sự hơn."
+      },
+      {
         "id": "s0330",
         "teacherNotes": "Học viên đọc giá thành tiếng trước, rồi bấm mũi tên để xem cách đọc.",
         "type": "table",
@@ -924,6 +955,28 @@
         "id": "s0337",
         "type": "quiz",
         "ref": "q0346"
+      },
+      {
+        "id": "s03ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Cửa hàng bách hoá",
+        "columns": ["Tầng", "Thường bán"],
+        "rows": [
+          ["{地下|ちか}", "đồ ăn, thực phẩm"],
+          ["１{階|かい}", "mỹ phẩm, túi xách"],
+          ["２{階|かい}", "thời trang nữ"],
+          ["３{階|がい}", "thời trang nam"],
+          ["４{階|かい}", "đồ trẻ em, đồ chơi"],
+          ["５{階|かい}", "đồ gia dụng"],
+          ["６{階|かい}", "nhà hàng"],
+          ["{屋上|おくじょう}", "sân thượng"]
+        ]
+      },
+      {
+        "id": "s03info01",
+        "type": "note",
+        "title": "Thông tin: Cửa hàng bách hoá",
+        "body": "Tầng hầm bách hoá bán đồ ăn, người Nhật gọi là デパ{地下|ちか}. Chú ý cách đọc: ３{階|がい}, {何階|なんがい}."
       },
       {
         "id": "s0338",

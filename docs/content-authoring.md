@@ -10,6 +10,8 @@ ID bài/item dùng tiếng Anh hoặc mã ổn định, không tái dùng ID cũ
 
 ## Bài tiếng Nhật theo trình tự Minna no Nihongo (pilot)
 
+**Đối chiếu với sách bản 2 (20/11/2026):** mọi mẫu Minna 1–26 đã được so với danh sách từ của sách bản 2 (hai nguồn công khai đối chiếu chéo) và mục lục ngữ pháp, rồi bổ sung từ còn thiếu (slide từ vựng có ghi chú giáo viên "Từ có trong sách bản 2"), bảng **Tên riêng trong bài**, bảng **Từ tham khảo: <chủ đề của sách>** kèm ghi chú **Thông tin** (bài 1–25), slide **Mẫu nhỏ cần nhớ** cho mục ngữ pháp nhỏ, và 3 mẫu ngữ pháp cùng hội thoại ATM cho bài 16. Bài mẫu mới (27 trở đi) cần có đủ các phần này. Chi tiết: [đối chiếu từng bài](testing/minna-coverage-2026-11-20.md).
+
 **Trạng thái 29/10/2026:** pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự bài của Minna no Nihongo Sơ cấp. Tại `/teach/lessons/new`, nút **Tạo bài 11 từ mẫu** tạo một bản nháp riêng của giáo viên từ `content/starters/minna-1-11.json`: 54 từ vựng, 5 mẫu câu, 38 slide (từ vựng, bảng đếm, mẫu câu, ví dụ, luyện thay thế, câu hỏi, hội thoại, tóm tắt) và 50 câu luyện choice/fill hiragana (đọc lượng từ và kanji, nghĩa từ, ngữ pháp) đủ cho bài luyện hằng ngày đổi câu khoảng một tuần. Bấm lại trên cùng trang không tạo bản thứ hai.
 
 Từ 30/10/2026 có thêm bài mẫu **bài 1** (`minna-1-01`: giới thiệu bản thân, は／です, じゃ ありません, か, も, の; 45 từ, 36 slide, 50 câu) và **bài 2** (`minna-1-02`: これ・それ・あれ, この・その・あの, そうです, câu hỏi lựa chọn, なんの／だれの; 44 từ, 36 slide, 50 câu), soạn theo cùng nguyên tắc: nhân vật cố định của Reng (ナム, アン, リン, ハナ, 田中, 先生), tên trường/ngân hàng/bệnh viện tự đặt (みどり大学, あおば銀行, ひかり病院), không dùng nhân vật, hội thoại hay tên riêng của sách. Bài 3–10 sẽ soạn tiếp theo từng lô sau khi giáo viên duyệt.

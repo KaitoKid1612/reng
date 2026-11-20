@@ -387,6 +387,81 @@
         "romaji": "mata kondo onegai shimasu",
         "vi": "hẹn lần sau nhé (khi từ chối lời mời)",
         "audio": null
+      },
+      {
+        "id": "v0949",
+        "jp": "クラシック",
+        "romaji": "kurashikku",
+        "vi": "nhạc cổ điển",
+        "audio": null
+      },
+      {
+        "id": "v0950",
+        "jp": "ジャズ",
+        "romaji": "jazu",
+        "vi": "nhạc jazz",
+        "audio": null
+      },
+      {
+        "id": "v0951",
+        "jp": "かぶき",
+        "kanji": "歌舞伎",
+        "romaji": "kabuki",
+        "vi": "kịch Kabuki",
+        "audio": null
+      },
+      {
+        "id": "v0952",
+        "jp": "つま／かない",
+        "kanji": "妻／家内",
+        "romaji": "tsuma/kanai",
+        "vi": "vợ (của mình)",
+        "audio": null
+      },
+      {
+        "id": "v0953",
+        "jp": "はやく",
+        "kanji": "早く／速く",
+        "romaji": "hayaku",
+        "vi": "sớm; nhanh",
+        "audio": null
+      },
+      {
+        "id": "v0954",
+        "jp": "かして ください。",
+        "kanji": "貸して ください。",
+        "romaji": "kashite kudasai.",
+        "vi": "Cho tôi mượn với.",
+        "audio": null
+      },
+      {
+        "id": "v0955",
+        "jp": "いいですよ。",
+        "romaji": "iidesuyo.",
+        "vi": "Được thôi.",
+        "audio": null
+      },
+      {
+        "id": "v0956",
+        "jp": "ああ",
+        "romaji": "aa",
+        "vi": "À (đã hiểu, đồng tình)",
+        "audio": null
+      },
+      {
+        "id": "v0957",
+        "jp": "いっしょに いかがですか。",
+        "kanji": "一緒に いかがですか。",
+        "romaji": "isshoni ikagadesuka.",
+        "vi": "Đi cùng tôi/chúng tôi nhé?",
+        "audio": null
+      },
+      {
+        "id": "v0958",
+        "jp": "［～は］ちょっと……。",
+        "romaji": "[~wa] chotto...",
+        "vi": "(~ thì) hơi… (từ chối khéo)",
+        "audio": null
       }
     ],
     "grammar": [
@@ -559,6 +634,18 @@
         "teacherNotes": "Luyện từ chối khéo: ちょっと…, ざんねんですね, また こんど おねがいします.",
         "type": "vocab",
         "refs": ["v0941", "v0942", "v0943", "v0944", "v0945", "v0946", "v0947", "v0948"]
+      },
+      {
+        "id": "s09add01",
+        "type": "vocab",
+        "refs": ["v0949", "v0950", "v0951", "v0952", "v0953", "v0954", "v0955", "v0956"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s09add02",
+        "type": "vocab",
+        "refs": ["v0957", "v0958"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
       },
       {
         "id": "s0909",
@@ -844,6 +931,28 @@
         "id": "s0933",
         "type": "quiz",
         "ref": "q0935"
+      },
+      {
+        "id": "s09ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Âm nhạc, thể thao, phim",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["ポップス", "nhạc pop"],
+          ["ロック", "nhạc rock"],
+          ["{水泳|すいえい}", "bơi lội"],
+          ["{野球|やきゅう}", "bóng chày"],
+          ["サッカー", "bóng đá"],
+          ["バスケットボール", "bóng rổ"],
+          ["アニメ", "phim hoạt hình"],
+          ["コメディー", "phim hài"]
+        ]
+      },
+      {
+        "id": "s09info01",
+        "type": "note",
+        "title": "Thông tin: Âm nhạc, thể thao, phim",
+        "body": "Bóng chày là môn thể thao được xem nhiều nhất ở Nhật; mỗi mùa hè có giải bóng chày học sinh trung học ở sân {甲子園|こうしえん}."
       },
       {
         "id": "s0934",

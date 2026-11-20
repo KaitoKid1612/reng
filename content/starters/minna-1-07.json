@@ -381,6 +381,42 @@
         "romaji": "~ni",
         "vi": "cho (người nhận); từ (người cho)",
         "audio": null
+      },
+      {
+        "id": "v0749",
+        "jp": "パンチ",
+        "romaji": "panchi",
+        "vi": "cái dập lỗ",
+        "audio": null
+      },
+      {
+        "id": "v0750",
+        "jp": "ホッチキス",
+        "romaji": "hocchikisu",
+        "vi": "cái dập ghim",
+        "audio": null
+      },
+      {
+        "id": "v0751",
+        "jp": "セロテープ",
+        "romaji": "seroteepu",
+        "vi": "băng dính trong",
+        "audio": null
+      },
+      {
+        "id": "v0752",
+        "jp": "けしゴム",
+        "kanji": "消しゴム",
+        "romaji": "keshigomu",
+        "vi": "cục tẩy",
+        "audio": null
+      },
+      {
+        "id": "v0753",
+        "jp": "スペイン",
+        "romaji": "supein",
+        "vi": "Tây Ban Nha",
+        "audio": null
       }
     ],
     "grammar": [
@@ -555,6 +591,12 @@
         "refs": ["v0741", "v0742", "v0743", "v0744", "v0745", "v0746", "v0747", "v0748"]
       },
       {
+        "id": "s07add01",
+        "type": "vocab",
+        "refs": ["v0749", "v0750", "v0751", "v0752", "v0753"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
         "id": "s0709",
         "teacherNotes": "Cầm đũa, kéo, bút và làm động tác; học viên nói 〜で 〜ます.",
         "type": "grammar",
@@ -714,6 +756,12 @@
         "reveal": true
       },
       {
+        "id": "s07mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• Lược trợ từ: Trong hội thoại thân mật hay bỏ trợ từ khi nghĩa đã rõ: コーヒー［を］もう いっぱい いかがですか。"
+      },
+      {
         "id": "s0728",
         "teacherNotes": "Học viên hỏi nhau theo cặp và trả lời thật.",
         "type": "table",
@@ -851,6 +899,28 @@
         "id": "s0734",
         "type": "quiz",
         "ref": "q0734"
+      },
+      {
+        "id": "s07ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Gia đình",
+        "columns": ["Gia đình mình / người khác", "Nghĩa"],
+        "rows": [
+          ["{祖父|そふ} / おじいさん", "ông"],
+          ["{祖母|そぼ} / おばあさん", "bà"],
+          ["{父|ちち} / お{父|とう}さん", "bố"],
+          ["{母|はは} / お{母|かあ}さん", "mẹ"],
+          ["{兄|あに} / お{兄|にい}さん", "anh trai"],
+          ["{姉|あね} / お{姉|ねえ}さん", "chị gái"],
+          ["{弟|おとうと} / {弟|おとうと}さん", "em trai"],
+          ["{妹|いもうと} / {妹|いもうと}さん", "em gái"]
+        ]
+      },
+      {
+        "id": "s07info01",
+        "type": "note",
+        "title": "Thông tin: Gia đình",
+        "body": "Nói về gia đình mình dùng từ cột trái ({父|ちち}、{母|はは}); nói về gia đình người khác, hoặc gọi người nhà mình, dùng từ cột phải (お{父|とう}さん)."
       },
       {
         "id": "s0735",

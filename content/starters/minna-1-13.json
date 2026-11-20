@@ -374,6 +374,59 @@
         "vi": "gặp (người に)",
         "audio": null,
         "kanji": "会います"
+      },
+      {
+        "id": "v1347",
+        "jp": "たいへん［な］",
+        "kanji": "大変［な］",
+        "romaji": "taihenna",
+        "vi": "vất vả, khó khăn",
+        "audio": null
+      },
+      {
+        "id": "v1348",
+        "jp": "［お］しょうがつ",
+        "kanji": "［お］正月",
+        "romaji": "oshougatsu",
+        "vi": "Tết, năm mới",
+        "audio": null
+      },
+      {
+        "id": "v1349",
+        "jp": "～ごろ",
+        "romaji": "~goro",
+        "vi": "khoảng (thời điểm)",
+        "audio": null
+      },
+      {
+        "id": "v1350",
+        "jp": "のどが かわきます",
+        "kanji": "喉が 渇きます",
+        "romaji": "nodoga kawakimasu",
+        "vi": "khát nước",
+        "audio": null
+      },
+      {
+        "id": "v1351",
+        "jp": "おなかが すきます",
+        "romaji": "onakaga sukimasu",
+        "vi": "đói bụng",
+        "audio": null
+      },
+      {
+        "id": "v1352",
+        "jp": "［しょうしょう］おまち ください。",
+        "kanji": "［少々］お待ち ください。",
+        "romaji": "shoushouomachi kudasai.",
+        "vi": "Xin chờ một chút.",
+        "audio": null
+      },
+      {
+        "id": "v1353",
+        "jp": "～で ございます。",
+        "romaji": "~de gozaimasu.",
+        "vi": "(cách nói lịch sự của です)",
+        "audio": null
       }
     ],
     "grammar": [
@@ -561,6 +614,22 @@
         "teacherNotes": "Đọc kana, đoán nghĩa rồi kiểm tra. Với động từ, nhắc trợ từ đi cùng và cho học viên đặt một câu ngắn."
       },
       {
+        "id": "s13add01",
+        "type": "vocab",
+        "refs": ["v1347", "v1348", "v1349", "v1350", "v1351", "v1352", "v1353"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s13name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [
+          ["アキックス", "tên công ty trong sách"],
+          ["おはようテレビ", "tên chương trình TV trong sách"]
+        ]
+      },
+      {
         "id": "s1311",
         "type": "grammar",
         "ref": "g1301"
@@ -720,6 +789,12 @@
         "reveal": true
       },
       {
+        "id": "s13mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• ご～: Thêm ご trước một số danh từ gốc Hán để nói lịch sự: ご{注文|ちゅうもん}、ご{家族|かぞく}、ご{主人|しゅじん}."
+      },
+      {
         "id": "s1333",
         "type": "quiz",
         "ref": "q1322"
@@ -854,6 +929,28 @@
         ],
         "reveal": false,
         "teacherNotes": "Cho học viên nghe mẫu, đọc theo rồi đổi vai. Thay thông tin bằng mong muốn thật; mỗi lượt chỉ hiện khi học viên đã thử nói."
+      },
+      {
+        "id": "s13ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Trong thành phố",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{市役所|しやくしょ}", "toà thị chính"],
+          ["{交番|こうばん}", "đồn cảnh sát nhỏ"],
+          ["{消防署|しょうぼうしょ}", "trạm cứu hoả"],
+          ["{病院|びょういん}", "bệnh viện"],
+          ["{郵便局|ゆうびんきょく}", "bưu điện"],
+          ["{銀行|ぎんこう}", "ngân hàng"],
+          ["{図書館|としょかん}", "thư viện"],
+          ["{駐車場|ちゅうしゃじょう}", "bãi đỗ xe"]
+        ]
+      },
+      {
+        "id": "s13info01",
+        "type": "note",
+        "title": "Thông tin: Trong thành phố",
+        "body": "Người nước ngoài sống ở Nhật làm thủ tục đăng ký cư trú ở {市役所|しやくしょ} hoặc {区役所|くやくしょ} trong vòng 14 ngày sau khi chuyển đến."
       },
       {
         "id": "s1339",

@@ -403,6 +403,30 @@
         "romaji": "miikee biichi",
         "vi": "bãi biển Mỹ Khê (Đà Nẵng)",
         "audio": null
+      },
+      {
+        "id": "v1449",
+        "jp": "みせます",
+        "kanji": "見せます",
+        "romaji": "misemasu",
+        "vi": "cho xem",
+        "audio": null
+      },
+      {
+        "id": "v1450",
+        "jp": "なまえ",
+        "kanji": "名前",
+        "romaji": "namae",
+        "vi": "tên",
+        "audio": null
+      },
+      {
+        "id": "v1451",
+        "jp": "これで おねがいします。",
+        "kanji": "これで お願いします。",
+        "romaji": "korede onegaishimasu.",
+        "vi": "Cho tôi trả bằng cái này.",
+        "audio": null
       }
     ],
     "grammar": [
@@ -577,6 +601,19 @@
         "refs": ["v1441", "v1442", "v1443", "v1444", "v1445", "v1446", "v1447", "v1448"]
       },
       {
+        "id": "s14add01",
+        "type": "vocab",
+        "refs": ["v1449", "v1450", "v1451"],
+        "teacherNotes": "Từ có trong sách bản 2, bổ sung để khớp sách."
+      },
+      {
+        "id": "s14name01",
+        "type": "table",
+        "title": "Tên riêng trong bài (sách dùng trong ví dụ, bài tập)",
+        "columns": ["Tên", "Là gì"],
+        "rows": [["みどり{町|ちょう}", "tên khu phố trong sách"]]
+      },
+      {
         "id": "s1409",
         "teacherNotes": "Đọc từng hàng: đuôi ます → thể て. Học thuộc câu vần: い・ち・り って, み・び・に んで.",
         "type": "table",
@@ -745,6 +782,12 @@
         "reveal": true
       },
       {
+        "id": "s14mini01",
+        "type": "note",
+        "title": "Mẫu nhỏ cần nhớ",
+        "body": "• N が V (hiện tượng): Tả hiện tượng đang thấy thì chủ ngữ dùng が: {雨|あめ}が {降|ふ}って います。\n• すみませんが: Mở đầu khi nhờ hay hỏi: すみませんが、ペンを {貸|か}して ください。"
+      },
+      {
         "id": "s1429",
         "teacherNotes": "Đổi việc nhờ: bật điều hòa, đóng cửa, photo tài liệu.",
         "type": "dialogue",
@@ -875,6 +918,28 @@
         "id": "s1433",
         "type": "quiz",
         "ref": "q1425"
+      },
+      {
+        "id": "s14ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Nhà ga",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{切符売|きっぷう}り{場|ば}", "quầy bán vé"],
+          ["{改札口|かいさつぐち}", "cửa soát vé"],
+          ["ホーム", "sân ga"],
+          ["{乗|の}り{場|ば}", "chỗ lên xe, lên tàu"],
+          ["{定期券|ていきけん}", "vé tháng"],
+          ["{乗|の}り{換|か}え", "đổi tàu"],
+          ["{始発|しはつ}", "chuyến đầu tiên"],
+          ["{終電|しゅうでん}", "chuyến tàu cuối"]
+        ]
+      },
+      {
+        "id": "s14info01",
+        "type": "note",
+        "title": "Thông tin: Nhà ga",
+        "body": "Ở Nhật nhiều người dùng thẻ IC (Suica, ICOCA…): chạm thẻ ở {改札口|かいさつぐち} thay cho mua vé."
       },
       {
         "id": "s1434",

@@ -864,6 +864,28 @@
         "ref": "q2407"
       },
       {
+        "id": "s24ref01",
+        "type": "table",
+        "title": "Từ tham khảo: Tặng quà",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["お{中元|ちゅうげん}", "quà giữa năm (tháng 7)"],
+          ["お{歳暮|せいぼ}", "quà cuối năm (tháng 12)"],
+          ["お{年玉|としだま}", "tiền mừng tuổi"],
+          ["お{祝|いわ}い", "quà chúc mừng"],
+          ["お{土産|みやげ}", "quà mang về"],
+          ["お{礼|れい}", "quà cảm ơn"],
+          ["お{返|かえ}し", "quà đáp lễ"],
+          ["{包|つつ}み{紙|がみ}", "giấy gói quà"]
+        ]
+      },
+      {
+        "id": "s24info01",
+        "type": "note",
+        "title": "Thông tin: Tặng quà",
+        "body": "Khi tặng quà người Nhật hay nói khiêm tốn: つまらない ものですが…; nhận quà thì cảm ơn và thường đáp lễ sau."
+      },
+      {
         "id": "s2436",
         "type": "note",
         "title": "Tóm tắt",
