@@ -139,7 +139,7 @@ test("teachers share one version, copy it without private notes and lose access 
 
     await recipient.page.goto("/teach/library");
     await recipient.page.getByRole("button", { name: "Sao chép thành bài của tôi" }).click();
-    await recipient.page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+    await recipient.page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
     const copyId = recipient.page.url().split("/").at(-2) ?? "";
     await expect(recipient.page.getByLabel("Tên bài", { exact: true })).toHaveValue(LESSON_TITLE);
     const { data: copy } = await adminClient()
@@ -175,7 +175,7 @@ test("teachers share one version, copy it without private notes and lose access 
       .filter({ hasText: LESSON_TITLE })
       .getByRole("button", { name: "Tạo bản sao", exact: true })
       .click();
-    await owner.page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+    await owner.page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
     await expect(owner.page.getByLabel("Tên bài", { exact: true })).toHaveValue(
       `${LESSON_TITLE} (bản sao)`,
     );

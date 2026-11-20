@@ -42,7 +42,7 @@ test("a teacher makes an N4 review deck from its starter and gives the class pra
   await expect(page.getByRole("heading", { name: "Tổng ôn ngữ pháp JLPT N4" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Tạo bản đồ ngữ pháp N4" })).toBeVisible();
   await page.getByRole("button", { name: "Tạo tổng ôn N4 · 4", exact: true }).click();
-  await page.waitForURL(/\/teach\/lessons\/lesson-[0-9a-f]{32}\/edit$/);
+  await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   state.lessonId = page.url().split("/").at(-2) ?? "";
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();

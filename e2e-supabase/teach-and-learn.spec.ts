@@ -26,7 +26,7 @@ async function teacherPage(browser: Browser) {
 async function createFromStarter(page: Page, label: string) {
   await page.goto("/teach/lessons/new");
   await page.getByRole("button", { name: label, exact: true }).click();
-  await page.waitForURL(/\/teach\/lessons\/lesson-[0-9a-f]{32}\/edit$/);
+  await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   const lessonId = page.url().split("/").at(-2) ?? "";
   await page.getByRole("button", { name: "Xuất bản", exact: true }).click();
   await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();

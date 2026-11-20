@@ -67,7 +67,7 @@ test("a teacher builds a Vietnamese–Chinese lesson from a template, reviews an
   await page.getByLabel("Tên bài", { exact: true }).fill(LESSON_TITLE);
   await page.getByLabel("Mục tiêu nhỏ đầu tiên", { exact: true }).fill("Chào và cảm ơn");
   await page.getByRole("button", { name: "Tạo bài và bắt đầu soạn", exact: true }).click();
-  await page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+  await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   state.lessonId = page.url().split("/").at(-2) ?? "";
   await expect(page.getByLabel("Tên bài", { exact: true })).toHaveValue(LESSON_TITLE);
   await expect(page.getByLabel("Mục tiêu 1", { exact: true })).toHaveValue("Chào và cảm ơn");
@@ -229,7 +229,7 @@ test("a Chinese teacher writes a matching question, shows it on a slide and a le
   await page.getByLabel("Tên bài", { exact: true }).fill(`Ghép đôi tiếng Trung ${RUN_ID}`);
   await page.getByLabel("Mục tiêu nhỏ đầu tiên", { exact: true }).fill("Nhớ nghĩa từ mới");
   await page.getByRole("button", { name: "Tạo bài và bắt đầu soạn", exact: true }).click();
-  await page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+  await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   const lessonId = page.url().split("/").at(-2) ?? "";
   await page.getByRole("button", { name: "Bước tiếp", exact: true }).click();
   await page.getByText("Dán bảng từ Excel hoặc Google Sheets").click();

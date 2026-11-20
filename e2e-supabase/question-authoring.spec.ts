@@ -240,7 +240,7 @@ test("a Chinese teacher confirms a sentence-order question again after editing a
     await page.getByLabel("Tên bài", { exact: true }).fill(`Sắp xếp câu ${RUN_ID}`);
     await page.getByLabel("Mục tiêu nhỏ đầu tiên", { exact: true }).fill("Giới thiệu bản thân");
     await page.getByRole("button", { name: "Tạo bài và bắt đầu soạn", exact: true }).click();
-    await page.waitForURL(/\/teach\/lessons\/lesson-[a-f0-9]{32}\/edit$/);
+    await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
 
     await page.getByRole("button", { name: "4. Câu luyện", exact: true }).click();
     await page.getByRole("button", { name: "Thêm câu sắp xếp", exact: true }).click();
