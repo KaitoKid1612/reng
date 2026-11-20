@@ -83,6 +83,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 13/11/2026
 
+- Đối chiếu bài Minna 1–26 với sách bản 2 (từ vựng, ngữ pháp, từ tham khảo) 20/11/2026: [kết quả từng bài](testing/minna-coverage-2026-11-20.md).
 - Lộ trình khóa học và bảng xếp hạng tuần 20/11/2026: [thiết kế](basic-design/learner-motivation.md), [kiểm chứng](testing/learner-motivation-2026-11-20.md).
 - Mã bài dễ đọc và thứ tự danh sách bài 20/11/2026: [rà soát mã trên giao diện, migration, test](testing/lesson-ids-order-2026-11-20.md).
 - 4 đề Reng N4 chuẩn và nâng cao 19/11/2026: [dữ liệu, chống trùng, soát độc lập](testing/n4-reng-exams-2026-11-19.md).
