@@ -7,6 +7,7 @@ import { z } from "zod";
 import { subjectForLanguage } from "@/lib/class-settings";
 import { DAILY_FORMATS } from "@/lib/jlpt-parts";
 import { createJoinCode } from "@/lib/join-code";
+import { compareLessons } from "@/lib/lesson-order";
 import {
   callRpc,
   createServiceClient,
@@ -267,7 +268,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     service
       .from("lessons")
       .select(
-        "id, title, order_no, published_version_id, copy_attribution, creation_fingerprint, schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
+        "id, title, course_id, order_no, published_version_id, copy_attribution, creation_fingerprint, schema_version:draft_content->>schemaVersion, language_tag:draft_content->context->>languageTag",
       )
       .eq("owner_id", teacherId)
       .is("archived_at", null)
@@ -275,6 +276,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
     z.object({
       id: z.string(),
       title: z.string(),
+      course_id: z.string(),
       order_no: z.number().int(),
       published_version_id: z.uuid().nullable(),
       copy_attribution: z.string().nullable(),
@@ -298,6 +300,12 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
       )
       .order("version_no", { ascending: false }),
     versionSummarySchema,
+  );
+  lessons.sort((first, second) =>
+    compareLessons(
+      { courseId: first.course_id, orderNo: first.order_no, title: first.title },
+      { courseId: second.course_id, orderNo: second.order_no, title: second.title },
+    ),
   );
   return lessons.map((lesson) => ({
     id: lesson.id,
