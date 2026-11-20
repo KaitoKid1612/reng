@@ -255,6 +255,7 @@ const versionSummarySchema = z.object({
 export interface OwnedLesson {
   id: string;
   title: string;
+  courseId: string;
   publishedVersionId: string | null;
   copyAttribution: string | null;
   creationFingerprint: string | null;
@@ -310,6 +311,7 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
   return lessons.map((lesson) => ({
     id: lesson.id,
     title: lesson.title,
+    courseId: lesson.course_id,
     publishedVersionId: lesson.published_version_id,
     copyAttribution: lesson.copy_attribution,
     creationFingerprint: lesson.creation_fingerprint,

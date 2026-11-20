@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { readableLessonId } from "../lib/lesson-id";
-import { compareLessons } from "../lib/lesson-order";
+import { compareLessons, courseGroupLabel } from "../lib/lesson-order";
 
 test("a new lesson ID names its course and order and fits the lesson ID rule", () => {
   assert.equal(readableLessonId("minna-1", 18, "a8e144"), "minna-1-18-a8e144");
@@ -45,4 +45,15 @@ test("lessons sort by course in teaching order, then order in the course, then t
       "Bài 1 tiếng Trung",
     ],
   );
+});
+
+test("each course group on the teacher's list has a readable heading", () => {
+  assert.equal(courseGroupLabel("minna-1"), "Minna no Nihongo Sơ cấp I");
+  assert.equal(courseGroupLabel("minna-2"), "Minna no Nihongo Sơ cấp II");
+  assert.equal(courseGroupLabel("n5"), "JLPT N5");
+  assert.equal(courseGroupLabel("n4"), "JLPT N4");
+  assert.equal(courseGroupLabel("n4-grammar"), "Tổng ôn ngữ pháp N4");
+  assert.equal(courseGroupLabel("n4-tips"), "Mẹo làm đề N4");
+  assert.equal(courseGroupLabel("chinese"), "Bài soạn theo mẫu");
+  assert.equal(courseGroupLabel("something-else"), "Bài khác");
 });

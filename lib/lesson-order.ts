@@ -36,3 +36,22 @@ export function compareLessons(first: OrderedLesson, second: OrderedLesson) {
     collator.compare(first.title, second.title)
   );
 }
+
+/** The heading of a course's group on the teacher's lesson list. */
+export function courseGroupLabel(courseId: string) {
+  const minna = /^minna-(\d+)$/.exec(courseId);
+  if (minna) {
+    const books: Record<string, string> = { "1": "Sơ cấp I", "2": "Sơ cấp II" };
+    return `Minna no Nihongo ${books[minna[1]] ?? minna[1]}`;
+  }
+  const named: Record<string, string> = {
+    "n4-grammar": "Tổng ôn ngữ pháp N4",
+    "n4-tips": "Mẹo làm đề N4",
+    chinese: "Bài soạn theo mẫu",
+  };
+  if (named[courseId]) {
+    return named[courseId];
+  }
+  const jlpt = /^n(\d)$/.exec(courseId);
+  return jlpt ? `JLPT N${jlpt[1]}` : "Bài khác";
+}

@@ -10,6 +10,7 @@ import { ArchiveLessonButton } from "@/components/teach/archive-lesson-button";
 import { LessonCopyForm } from "@/components/teach/lesson-copy-form";
 import { buttonVariants } from "@/components/ui/button";
 import { filterManagedLessons, parseLessonFilters } from "@/lib/lesson-management";
+import { courseGroupLabel } from "@/lib/lesson-order";
 import { TEACHING_LANGUAGE_LABELS, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatJoinCode } from "@/lib/join-code";
 import { requireTeacher } from "@/lib/server/account";
@@ -29,6 +30,20 @@ const OPEN_FILTER_LESSONS = 6;
 
 interface TeachPageProps {
   searchParams: Promise<{ q?: string; language?: string; status?: string }>;
+}
+
+// The list comes sorted by course, so consecutive lessons of one course form its group.
+function groupByCourse<Lesson extends { courseId: string }>(lessons: readonly Lesson[]) {
+  const groups: { courseId: string; lessons: Lesson[] }[] = [];
+  for (const lesson of lessons) {
+    const last = groups.at(-1);
+    if (last?.courseId === lesson.courseId) {
+      last.lessons.push(lesson);
+    } else {
+      groups.push({ courseId: lesson.courseId, lessons: [lesson] });
+    }
+  }
+  return groups;
 }
 
 export default async function TeachPage({ searchParams }: TeachPageProps) {
@@ -202,41 +217,57 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
           </p>
         )}
         {visibleLessons.length ? (
-          <ul className="item-list">
-            {visibleLessons.map((lesson) => (
-              <li key={lesson.id}>
-                <div>
-                  <h3>{lesson.title}</h3>
-                  <p className="item-meta">
-                    Bản soạn: {teachingLanguageLabel(lesson.languageTag)} ·{" "}
-                    {lesson.publishedVersionId && lesson.versions[0]
-                      ? "Đã xuất bản"
-                      : "Chỉ có bản nháp"}
-                  </p>
-                  {lesson.copyAttribution && <p className="item-meta">{lesson.copyAttribution}</p>}
-                </div>
-                <div className="button-row">
-                  <Link href={`/teach/lessons/${lesson.id}/edit`}>Soạn bài</Link>
-                  {lesson.publishedVersionId && (
-                    <Link
-                      href={`/lessons/${lesson.id}/slide?version=${lesson.publishedVersionId}#1`}
-                    >
-                      Trình chiếu
-                    </Link>
-                  )}
-                  {!lesson.copyAttribution && (
-                    <Link href={`/teach/lessons/${lesson.id}/sharing`}>Chia sẻ</Link>
-                  )}
-                  <LessonCopyForm
-                    source={{ kind: "own", lessonId: lesson.id }}
-                    requestId={randomUUID()}
-                    label="Tạo bản sao"
-                  />
-                  <ArchiveLessonButton lessonId={lesson.id} title={lesson.title} />
-                </div>
-              </li>
-            ))}
-          </ul>
+          groupByCourse(visibleLessons).map((group) => (
+            <div key={group.courseId} className="lesson-group">
+              <h3 className="lesson-group-title">
+                {courseGroupLabel(group.courseId)}{" "}
+                <span className="muted">({group.lessons.length} bài)</span>
+              </h3>
+              <ul className="item-list">
+                {group.lessons.map((lesson) => (
+                  <li key={lesson.id}>
+                    <div>
+                      <h4>{lesson.title}</h4>
+                      <p className="item-meta">
+                        Bản soạn: {teachingLanguageLabel(lesson.languageTag)} ·{" "}
+                        {lesson.publishedVersionId && lesson.versions[0]
+                          ? "Đã xuất bản"
+                          : "Chỉ có bản nháp"}
+                      </p>
+                      {lesson.copyAttribution && (
+                        <p className="item-meta">{lesson.copyAttribution}</p>
+                      )}
+                    </div>
+                    <div className="button-row">
+                      <Link
+                        href={`/teach/lessons/${lesson.id}/edit`}
+                        className={buttonVariants({ variant: "outline" })}
+                      >
+                        Soạn bài
+                      </Link>
+                      {lesson.publishedVersionId && (
+                        <Link
+                          href={`/lessons/${lesson.id}/slide?version=${lesson.publishedVersionId}#1`}
+                        >
+                          Trình chiếu
+                        </Link>
+                      )}
+                      {!lesson.copyAttribution && (
+                        <Link href={`/teach/lessons/${lesson.id}/sharing`}>Chia sẻ</Link>
+                      )}
+                      <LessonCopyForm
+                        source={{ kind: "own", lessonId: lesson.id }}
+                        requestId={randomUUID()}
+                        label="Tạo bản sao"
+                        variant="link"
+                      />
+                      <ArchiveLessonButton lessonId={lesson.id} title={lesson.title} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
         ) : (
           <p className="muted">
             {lessons.length

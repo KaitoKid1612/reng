@@ -347,3 +347,46 @@
 :root:has(.class-section-nav) :is(.section-block > h2[id], #join-code) {
   scroll-margin-top: 80px;
 }
+
+/* Groups of the teacher's own lessons, one per course, on Giảng dạy. */
+.lesson-group + .lesson-group {
+  margin-top: 1.5rem;
+}
+
+.lesson-group-title {
+  margin: 1.5rem 0 0.25rem;
+  font-size: 22px;
+}
+
+/* Lesson titles under a group heading read like the class list's titles. */
+.lesson-group .item-list h4 {
+  margin-top: 0;
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.lesson-group-title .muted {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+/* A button in a row of plain links (Tạo bản sao, Lưu trữ) looks like those links. */
+.list-action {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.list-action:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.list-action:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}

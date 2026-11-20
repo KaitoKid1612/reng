@@ -272,7 +272,8 @@
 .item-list > li > div {
   min-width: 0;
 }
-.item-list h3 {
+.item-list h3,
+.item-list h4 {
   margin-bottom: 4px;
   overflow-wrap: anywhere;
 }

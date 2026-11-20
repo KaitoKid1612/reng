@@ -40,9 +40,9 @@ export function ArchiveLessonButton({
   if (!isConfirming) {
     return (
       <>
-        <Button variant="ghost" onClick={() => setIsConfirming(true)}>
+        <button type="button" className="list-action" onClick={() => setIsConfirming(true)}>
           Lưu trữ
-        </Button>
+        </button>
         <ActionFeedback state={state} />
       </>
     );
