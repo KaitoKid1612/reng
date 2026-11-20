@@ -5,7 +5,14 @@ import { expect, test } from "@playwright/test";
 
 import { audioHash, canonicalAudio } from "../lib/audio-config";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn, TEACHER } from "./support";
+import {
+  adminClient,
+  createBlankLesson,
+  createConfirmedStudent,
+  RUN_ID,
+  signIn,
+  TEACHER,
+} from "./support";
 
 import type { Browser, Locator, Page, Route } from "@playwright/test";
 
@@ -17,9 +24,9 @@ declare global {
 
 test.describe.configure({ mode: "serial" });
 
-const LESSON_ID = `listen-${RUN_ID}`;
+// The server names the lesson when it is created.
+let LESSON_ID = "";
 const LESSON_TITLE = `Nghe câu ngắn ${RUN_ID}`;
-const EDITOR_PATH = `/teach/lessons/${LESSON_ID}/edit`;
 const ASSIGNMENT_TITLE = `Luyện nghe ${RUN_ID}`;
 const VOICE = "ja-JP-NanamiNeural";
 const LISTEN = { prompt: "Người nói đi đâu?", transcript: "がっこうへいきます。" };
@@ -96,11 +103,7 @@ test("teacher authors listening questions, generates audio for the saved draft a
 }) => {
   await signIn(page, TEACHER.email, TEACHER.password, "/teach");
   await page.getByRole("link", { name: "Tạo bài mới", exact: true }).click();
-  await page.getByLabel("Mã bài", { exact: true }).fill(LESSON_ID);
-  await page.getByLabel("Thứ tự trong khóa", { exact: true }).fill("91");
-  await page.getByLabel("Tiêu đề tiếng Việt", { exact: true }).fill(LESSON_TITLE);
-  await page.getByRole("button", { name: "Tạo và mở editor", exact: true }).click();
-  await page.waitForURL(`**${EDITOR_PATH}`);
+  LESSON_ID = await createBlankLesson(page, 91, LESSON_TITLE);
   await page.getByLabel("Tiêu đề tiếng Nhật", { exact: true }).fill("ききとり");
   await page.getByLabel("Tóm tắt", { exact: true }).fill("Nghe câu ngắn rồi trả lời.");
 

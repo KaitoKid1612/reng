@@ -146,11 +146,7 @@ export default async function NewLessonPage() {
             thoại, bảng/luyện thay thế, câu hỏi). Muốn làm bài tiếp theo nhanh hơn, dùng Tạo bản sao
             của một bài đã có ở trang Giảng dạy.
           </p>
-          <CreateLessonForm
-            // Lesson IDs are shared by every teacher, so the suggestion carries a random suffix.
-            suggestedId={`lesson-${String(nextOrder).padStart(2, "0")}-${randomUUID().slice(0, 6)}`}
-            suggestedOrder={nextOrder}
-          />
+          <CreateLessonForm suggestedOrder={nextOrder} />
         </section>
         <section className="section-block" aria-labelledby="template-lesson-title">
           <h2 id="template-lesson-title">Soạn bài tiếng Trung theo mẫu</h2>

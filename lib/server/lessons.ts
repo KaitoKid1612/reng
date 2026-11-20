@@ -12,6 +12,7 @@ import {
   parseLessonDraftState,
   toPublishableContent,
 } from "@/lib/lesson-draft";
+import { readableLessonId } from "@/lib/lesson-id";
 import {
   callRpc,
   createServiceClient,
@@ -179,28 +180,30 @@ export async function replaceDraftWithStarter(
   return writeDraft(teacherId, lessonId, expectedRevision, draft);
 }
 
-export async function createLesson(
-  teacherId: string,
-  input: { id: string; title: string; order: number },
-) {
+// A blank lesson of the default course. The teacher never types or sees the ID: it is built from
+// the course and order, and a clash with another teacher's lesson just draws a new suffix.
+const BLANK_LESSON_COURSE = "n5";
+
+export async function createLesson(teacherId: string, input: { title: string; order: number }) {
   const service = createServiceClient();
-  const existing = await selectOptional(
-    service.from("lessons").select("id").eq("id", input.id).maybeSingle(),
-    z.object({ id: z.string() }),
-  );
-  if (existing) {
-    throw new ServiceError("duplicate");
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    const id = readableLessonId(BLANK_LESSON_COURSE, input.order);
+    const { error } = await service.from("lessons").insert({
+      id,
+      owner_id: teacherId,
+      title: input.title,
+      order_no: input.order,
+      course_id: BLANK_LESSON_COURSE,
+      draft_content: EMPTY_DRAFT_CONTENT,
+    });
+    if (!error) {
+      return id;
+    }
+    if (error.code !== "23505") {
+      throw new ServiceError("database_error");
+    }
   }
-  const { error } = await service.from("lessons").insert({
-    id: input.id,
-    owner_id: teacherId,
-    title: input.title,
-    order_no: input.order,
-    draft_content: EMPTY_DRAFT_CONTENT,
-  });
-  if (error) {
-    throw new ServiceError(error.code === "23505" ? "duplicate" : "database_error");
-  }
+  throw new ServiceError("database_error");
 }
 
 // The shared insert is idempotent per request and enforces the lesson quota; a starter lesson

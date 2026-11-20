@@ -78,7 +78,7 @@ Cần migration mới để publish giữ private/class mặc định, quyền c
 
 Đã có wizard 5 bước cho bài v2; editor chi tiết cũ giữ cho bài tiếng Nhật. Mô tả lúc đối chiếu giữ lại bên dưới.
 
-[CreateLessonForm](../components/editor/create-lesson-form.tsx) yêu cầu mã bài/thứ tự, [LessonEditor](../components/editor/lesson-editor.tsx) dùng các khối từ/ngữ pháp/câu/slide; [CSV](../lib/vocab-csv.ts) bắt kana và romaji. Không có 4 mẫu, generator giữ provenance/diff, objective nhỏ hoặc review đáp án theo revision.
+[CreateLessonForm](../components/editor/create-lesson-form.tsx) yêu cầu thứ tự và tiêu đề (mã bài do server đặt), [LessonEditor](../components/editor/lesson-editor.tsx) dùng các khối từ/ngữ pháp/câu/slide; [CSV](../lib/vocab-csv.ts) bắt kana và romaji. Không có 4 mẫu, generator giữ provenance/diff, objective nhỏ hoặc review đáp án theo revision.
 
 Giữ reducer, ref validation, save CAS, preview và slide reorder. Xây wizard dẫn dắt trên domain v2, tách quản lý phiên lưu/xuất bản khỏi từng bước; editor chi tiết tiếp tục là lựa chọn bổ sung. Lý do refactor là thay hợp đồng và luồng sử dụng, không phải vì số dòng component hoặc sở thích code style.
 

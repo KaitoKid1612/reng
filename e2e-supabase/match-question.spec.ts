@@ -2,13 +2,21 @@ import { expect, test } from "@playwright/test";
 
 import { toVietnamInput } from "../lib/vietnam-time";
 
-import { adminClient, createConfirmedStudent, RUN_ID, signIn, TEACHER } from "./support";
+import {
+  adminClient,
+  createBlankLesson,
+  createConfirmedStudent,
+  RUN_ID,
+  signIn,
+  TEACHER,
+} from "./support";
 
 import type { Locator, Page } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
 
-const LESSON_ID = `match-${RUN_ID}`;
+// The server names the lesson when it is created.
+let LESSON_ID = "";
 const PROMPT = "Ghép mỗi từ với nghĩa tiếng Việt.";
 const PAIRS = [
   ["いぬ", "chó"],
@@ -56,11 +64,7 @@ test("a teacher writes matching questions and a learner pairs them on a phone", 
 }) => {
   await signIn(page, TEACHER.email, TEACHER.password, "/teach");
   await page.getByRole("link", { name: "Tạo bài mới", exact: true }).click();
-  await page.getByLabel("Mã bài", { exact: true }).fill(LESSON_ID);
-  await page.getByLabel("Thứ tự trong khóa", { exact: true }).fill("93");
-  await page.getByLabel("Tiêu đề tiếng Việt", { exact: true }).fill(`Ghép đôi ${RUN_ID}`);
-  await page.getByRole("button", { name: "Tạo và mở editor", exact: true }).click();
-  await page.waitForURL(`**/teach/lessons/${LESSON_ID}/edit`);
+  LESSON_ID = await createBlankLesson(page, 93, `Ghép đôi ${RUN_ID}`);
   await page.getByLabel("Tiêu đề tiếng Nhật", { exact: true }).fill("どうぶつ");
   await page.getByLabel("Tóm tắt", { exact: true }).fill("Ghép tên con vật với nghĩa.");
   await page.getByLabel("Loại slide mới").selectOption({ label: "Tiêu đề" });

@@ -5,6 +5,7 @@ import { toVietnamInput } from "../lib/vietnam-time";
 import {
   adminClient,
   becomeTeacher,
+  createBlankLesson,
   createConfirmedStudent,
   RUN_ID,
   signIn,
@@ -15,7 +16,8 @@ import type { Browser, Page } from "@playwright/test";
 
 test.describe.configure({ mode: "serial" });
 
-const LESSON_ID = `order-${RUN_ID}`;
+// The server names the lesson when it is created.
+let LESSON_ID = "";
 const ORDER_PROMPT = "Sắp xếp các mảnh thành câu đúng.";
 const PASSAGE = "たなかさんは まいあさ パンを たべます。それから コーヒーを のみます。";
 const FIRST_READING = "たなかさんは あさ なにを たべますか。";
@@ -58,11 +60,7 @@ test("a Japanese teacher writes sentence-order and reading questions and a learn
 }) => {
   await signIn(page, TEACHER.email, TEACHER.password, "/teach");
   await page.getByRole("link", { name: "Tạo bài mới", exact: true }).click();
-  await page.getByLabel("Mã bài", { exact: true }).fill(LESSON_ID);
-  await page.getByLabel("Thứ tự trong khóa", { exact: true }).fill("92");
-  await page.getByLabel("Tiêu đề tiếng Việt", { exact: true }).fill(`Đọc hiểu ${RUN_ID}`);
-  await page.getByRole("button", { name: "Tạo và mở editor", exact: true }).click();
-  await page.waitForURL(`**/teach/lessons/${LESSON_ID}/edit`);
+  LESSON_ID = await createBlankLesson(page, 92, `Đọc hiểu ${RUN_ID}`);
   await page.getByLabel("Tiêu đề tiếng Nhật", { exact: true }).fill("どっかい");
   await page.getByLabel("Tóm tắt", { exact: true }).fill("Đọc đoạn văn ngắn và sắp xếp câu.");
   await page.getByLabel("Loại slide mới").selectOption({ label: "Tiêu đề" });

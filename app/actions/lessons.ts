@@ -26,7 +26,7 @@ import type { PublishResult } from "@/lib/server/lessons";
 export interface CreateLessonState {
   error?: string;
   // What the teacher typed, returned with an error because React resets the form after an action.
-  values?: { id: string; title: string; order: string };
+  values?: { title: string; order: string };
 }
 
 function typedLessonFields(formData: FormData) {
@@ -34,7 +34,7 @@ function typedLessonFields(formData: FormData) {
     const value = formData.get(name);
     return typeof value === "string" ? value : "";
   };
-  return { id: read("id"), title: read("title"), order: read("order") };
+  return { title: read("title"), order: read("order") };
 }
 
 const FAILURE = "Chưa lưu được. Kiểm tra kết nối rồi thử lại.";
@@ -46,7 +46,6 @@ async function requireTeacherId() {
 }
 
 const createSchema = z.object({
-  id: lessonIdSchema,
   title: z.string().trim().min(1).max(160),
   order: z.coerce.number().int().min(1).max(999),
 });
@@ -60,29 +59,22 @@ export async function createLessonAction(
     return { error: NOT_FOUND };
   }
   const parsed = createSchema.safeParse({
-    id: formData.get("id"),
     title: formData.get("title"),
     order: formData.get("order"),
   });
   if (!parsed.success) {
     return {
-      error:
-        "Mã bài gồm 3–64 ký tự chữ thường, số hoặc gạch nối (ví dụ lesson-06); tiêu đề và thứ tự là bắt buộc.",
+      error: "Nhập tiêu đề và thứ tự trong khóa (1–999).",
       values: typedLessonFields(formData),
     };
   }
+  let lessonId: string;
   try {
-    await createLesson(teacherId, parsed.data);
-  } catch (error) {
-    if (error instanceof ServiceError && error.code === "duplicate") {
-      return {
-        error: "Mã bài này đã được dùng. Chọn mã khác.",
-        values: typedLessonFields(formData),
-      };
-    }
+    lessonId = await createLesson(teacherId, parsed.data);
+  } catch {
     return { error: FAILURE, values: typedLessonFields(formData) };
   }
-  redirect(`/teach/lessons/${parsed.data.id}/edit`);
+  redirect(`/teach/lessons/${lessonId}/edit`);
 }
 
 const starterSchema = z.object({ starterId: z.string().max(64), requestId: z.uuid() });

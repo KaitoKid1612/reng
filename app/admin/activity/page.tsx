@@ -39,7 +39,7 @@ export default async function AdminActivityPage() {
                   <td>{formatStudyDateTime(event.createdAt)}</td>
                   <td>{event.actorName || "—"}</td>
                   <td>{describeAuditAction(event.action)}</td>
-                  <td className="small">{event.resourceId}</td>
+                  <td className="small">{event.resourceName || "—"}</td>
                 </tr>
               ))}
             </tbody>

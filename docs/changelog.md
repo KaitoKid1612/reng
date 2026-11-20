@@ -2,6 +2,11 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 20/11/2026
+
+- **Không còn mã bài trên giao diện:** form **Soạn bài tiếng Nhật từ đầu** bỏ ô Mã bài; nhật ký hoạt động của admin ghi tên bài, bài tập, lớp hoặc người thay cho mã. Bài mới (tạo từ mẫu, bản sao, bài theo mẫu hay tạo từ đầu) có mã dễ đọc trong đường dẫn, ví dụ `minna-1-18-a8e144` thay cho `lesson-` + 32 ký tự. Bài cũ giữ mã cũ để link đã gửi vẫn mở được. Cần áp migration `20261120050000_readable_lesson_ids.sql` trước khi mã mới có hiệu lực cho bài tạo từ mẫu và bản sao. Xem [kiểm chứng](testing/lesson-ids-order-2026-11-20.md).
+- **Danh sách bài của giáo viên xếp theo khóa:** Minna Sơ cấp I, Sơ cấp II, rồi tài liệu N5, N4 (ngân hàng ôn và đề trước, ngữ pháp, mẹo sau), rồi các khóa khác; trong mỗi khóa theo thứ tự bài rồi tiêu đề. Trước đây chỉ xếp theo số thứ tự nên "Bài 1", "Mẹo N4 · 1" và ngân hàng ôn số 1 xen nhau. Ô chọn bài ở trang Giao bài và Nhập CSV cũng theo thứ tự này.
+
 ### 19/11/2026
 
 - **Bài mẫu Minna 26** (bài đầu Sơ cấp II, N4): nút **Tạo bài 26 từ mẫu** ở trang Tạo bài mới. Bài có 40 từ, 6 mẫu câu (〜んです, 〜て いただけませんか, 〜たら いいですか, đối tượng làm chủ đề bằng は), 38 slide, 3 hội thoại tự viết và 50 câu luyện. Mọi slide đã đo ở khung 1280×720. Xem [kiểm chứng](testing/teaching-service.md#bài-mẫu-minna-26--19112026).

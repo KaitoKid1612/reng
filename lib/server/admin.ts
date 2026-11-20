@@ -227,8 +227,44 @@ export interface ActivityEntry {
   id: string;
   actorName: string;
   action: string;
-  resourceId: string;
+  // What the event touched, by name: a lesson, assignment, class or person. An ID never shows;
+  // a resource that no longer exists reads as an empty string.
+  resourceName: string;
   createdAt: string;
+}
+
+const UUID = z.uuid();
+
+// Audit events point at lessons (text IDs) and at assignments, lesson versions, classes and
+// accounts (UUIDs); each kind is looked up once for the whole page.
+async function nameAuditResources(resourceIds: string[]) {
+  const service = createServiceClient();
+  const uuids = resourceIds.filter((id) => UUID.safeParse(id).success);
+  const texts = resourceIds.filter((id) => !UUID.safeParse(id).success);
+  const named = z.object({ id: z.string(), name: z.string() });
+  const [lessons, assignments, versions, classes, people] = await Promise.all([
+    texts.length
+      ? selectRows(service.from("lessons").select("id, name:title").in("id", texts), named)
+      : [],
+    uuids.length
+      ? selectRows(service.from("assignments").select("id, name:title").in("id", uuids), named)
+      : [],
+    uuids.length
+      ? selectRows(service.from("lesson_versions").select("id, name:title").in("id", uuids), named)
+      : [],
+    uuids.length
+      ? selectRows(service.from("classes").select("id, name").in("id", uuids), named)
+      : [],
+    uuids.length
+      ? selectRows(service.from("profiles").select("id, name:full_name").in("id", uuids), named)
+      : [],
+  ]);
+  return new Map(
+    [...lessons, ...assignments, ...versions, ...classes, ...people].map((row) => [
+      row.id,
+      row.name,
+    ]),
+  );
 }
 
 export async function listRecentActivity(limit = 100): Promise<ActivityEntry[]> {
@@ -256,11 +292,12 @@ export async function listRecentActivity(limit = 100): Promise<ActivityEntry[]> 
         z.object({ id: z.uuid(), full_name: z.string() }),
       )
     : [];
+  const names = await nameAuditResources([...new Set(events.map((event) => event.resource_id))]);
   return events.map((event) => ({
     id: event.id,
     actorName: profiles.find((profile) => profile.id === event.actor_id)?.full_name ?? "",
     action: event.action,
-    resourceId: event.resource_id,
+    resourceName: names.get(event.resource_id) ?? "",
     createdAt: event.created_at,
   }));
 }

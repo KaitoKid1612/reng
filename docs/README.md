@@ -82,6 +82,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 13/11/2026
 
+- Mã bài dễ đọc và thứ tự danh sách bài 20/11/2026: [rà soát mã trên giao diện, migration, test](testing/lesson-ids-order-2026-11-20.md).
 - 4 đề Reng N4 chuẩn và nâng cao 19/11/2026: [dữ liệu, chống trùng, soát độc lập](testing/n4-reng-exams-2026-11-19.md).
 - Ngân hàng đề N4 19/11/2026: [cấu trúc, định dạng, câu nghe, furigana, hai đề chính thức](testing/n4-bank-audit-2026-11-19.md).
 - Giao diện toàn site 18/11/2026: [bố cục mọi trang với khách, học viên, giáo viên và toàn bộ E2E](testing/site-ui-audit-2026-11-18.md).
