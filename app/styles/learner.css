@@ -739,6 +739,12 @@
   background: var(--primary-soft);
 }
 
+/* Links inside running text keep an underline, not only a colour. */
+.weekly-board-teaser a,
+.weekly-board a {
+  text-decoration-line: underline;
+}
+
 .weekly-board-teaser {
   margin: 0 0 1rem;
   padding: 0.6rem 0.9rem;
