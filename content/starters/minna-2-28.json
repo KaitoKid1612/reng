@@ -1,0 +1,1139 @@
+{
+  "id": "minna-2-28",
+  "title": "Bài 28 – Thói quen và lý do",
+  "titleJa": "第28課・ながらとし",
+  "summary": "Nói hai việc cùng lúc, kể thói quen và giải thích bằng nhiều lý do.",
+  "order": 28,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2801",
+        "jp": "けしき",
+        "romaji": "keshiki",
+        "vi": "phong cảnh",
+        "audio": null,
+        "note": "〜が きれいです",
+        "kanji": "景色"
+      },
+      {
+        "id": "v2802",
+        "jp": "だいどころ",
+        "romaji": "daidokoro",
+        "vi": "nhà bếp",
+        "audio": null,
+        "note": "〜で りょうりします",
+        "kanji": "台所"
+      },
+      {
+        "id": "v2803",
+        "jp": "うれます",
+        "romaji": "uremasu",
+        "vi": "bán được, có người mua",
+        "audio": null,
+        "note": "II · パンが よく うれます",
+        "kanji": "売れます",
+        "image": "/icons/vocab/bread.svg"
+      },
+      {
+        "id": "v2804",
+        "jp": "おどります",
+        "romaji": "odorimasu",
+        "vi": "nhảy, múa",
+        "audio": null,
+        "note": "I · おんがくに あわせて",
+        "kanji": "踊ります"
+      },
+      {
+        "id": "v2805",
+        "jp": "かみます",
+        "romaji": "kamimasu",
+        "vi": "nhai hoặc cắn",
+        "audio": null,
+        "note": "I · ガムを かみます／いぬが かみます",
+        "kanji": "噛みます"
+      },
+      {
+        "id": "v2806",
+        "jp": "えらびます",
+        "romaji": "erabimasu",
+        "vi": "chọn",
+        "audio": null,
+        "note": "I · いろを えらびます",
+        "kanji": "選びます"
+      },
+      {
+        "id": "v2807",
+        "jp": "かよいます",
+        "romaji": "kayoimasu",
+        "vi": "đi lại thường xuyên đến một nơi",
+        "audio": null,
+        "note": "I · がっこうに かよいます",
+        "kanji": "通います"
+      },
+      {
+        "id": "v2808",
+        "jp": "メモします",
+        "romaji": "memo shimasu",
+        "vi": "ghi chú",
+        "audio": null,
+        "note": "III · じかんを メモします"
+      },
+      {
+        "id": "v2809",
+        "jp": "まじめな",
+        "romaji": "majime na",
+        "vi": "nghiêm túc, chăm chỉ",
+        "audio": null,
+        "note": "Tính từ な"
+      },
+      {
+        "id": "v2810",
+        "jp": "ねっしんな",
+        "romaji": "nesshin na",
+        "vi": "nhiệt tình, hết lòng",
+        "audio": null,
+        "note": "Tính từ な",
+        "kanji": "熱心な"
+      },
+      {
+        "id": "v2811",
+        "jp": "えらい",
+        "romaji": "erai",
+        "vi": "đáng nể, giỏi",
+        "audio": null,
+        "note": "Tính từ い",
+        "kanji": "偉い"
+      },
+      {
+        "id": "v2812",
+        "jp": "ちょうどいい",
+        "romaji": "choudo ii",
+        "vi": "vừa đúng, vừa vặn",
+        "audio": null,
+        "note": "Tính từ い · サイズが ちょうどいい"
+      },
+      {
+        "id": "v2813",
+        "jp": "けいけん",
+        "romaji": "keiken",
+        "vi": "kinh nghiệm",
+        "audio": null,
+        "note": "〜が あります",
+        "kanji": "経験"
+      },
+      {
+        "id": "v2814",
+        "jp": "ちから",
+        "romaji": "chikara",
+        "vi": "sức mạnh, năng lực",
+        "audio": null,
+        "note": "〜を つけます",
+        "kanji": "力"
+      },
+      {
+        "id": "v2815",
+        "jp": "にんき",
+        "romaji": "ninki",
+        "vi": "sự ưa chuộng",
+        "audio": null,
+        "note": "〜が あります",
+        "kanji": "人気"
+      },
+      {
+        "id": "v2816",
+        "jp": "かたち",
+        "romaji": "katachi",
+        "vi": "hình dáng",
+        "audio": null,
+        "note": "まるい かたち",
+        "kanji": "形"
+      },
+      {
+        "id": "v2817",
+        "jp": "いろ",
+        "romaji": "iro",
+        "vi": "màu sắc",
+        "audio": null,
+        "note": "あかい いろ",
+        "kanji": "色"
+      },
+      {
+        "id": "v2818",
+        "jp": "あじ",
+        "romaji": "aji",
+        "vi": "vị",
+        "audio": null,
+        "note": "あまい あじ",
+        "kanji": "味"
+      },
+      {
+        "id": "v2819",
+        "jp": "ガム",
+        "romaji": "gamu",
+        "vi": "kẹo cao su",
+        "audio": null,
+        "note": "〜を かみます"
+      },
+      {
+        "id": "v2820",
+        "jp": "しなもの",
+        "romaji": "shinamono",
+        "vi": "hàng hóa",
+        "audio": null,
+        "note": "〜を えらびます",
+        "kanji": "品物"
+      },
+      {
+        "id": "v2821",
+        "jp": "ねだん",
+        "romaji": "nedan",
+        "vi": "giá tiền",
+        "audio": null,
+        "note": "〜が やすいです",
+        "kanji": "値段"
+      },
+      {
+        "id": "v2822",
+        "jp": "きゅうりょう",
+        "romaji": "kyuuryou",
+        "vi": "tiền lương",
+        "audio": null,
+        "note": "〜を もらいます",
+        "kanji": "給料"
+      },
+      {
+        "id": "v2823",
+        "jp": "ボーナス",
+        "romaji": "boonasu",
+        "vi": "tiền thưởng",
+        "audio": null,
+        "note": "〜が でます"
+      },
+      {
+        "id": "v2824",
+        "jp": "ばんぐみ",
+        "romaji": "bangumi",
+        "vi": "chương trình phát sóng",
+        "audio": null,
+        "note": "テレビの ばんぐみ",
+        "kanji": "番組",
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v2825",
+        "jp": "ドラマ",
+        "romaji": "dorama",
+        "vi": "phim truyền hình, phim bộ",
+        "audio": null,
+        "note": "〜を みます"
+      },
+      {
+        "id": "v2826",
+        "jp": "しょうせつ",
+        "romaji": "shousetsu",
+        "vi": "tiểu thuyết",
+        "audio": null,
+        "note": "〜を よみます",
+        "kanji": "小説",
+        "image": "/icons/vocab/books.svg"
+      },
+      {
+        "id": "v2827",
+        "jp": "しょうせつか",
+        "romaji": "shousetsuka",
+        "vi": "tiểu thuyết gia",
+        "audio": null,
+        "note": "〜に なりたいです",
+        "kanji": "小説家"
+      },
+      {
+        "id": "v2828",
+        "jp": "かしゅ",
+        "romaji": "kashu",
+        "vi": "ca sĩ",
+        "audio": null,
+        "note": "すきな かしゅ",
+        "kanji": "歌手",
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v2829",
+        "jp": "むすこ",
+        "romaji": "musuko",
+        "vi": "con trai mình",
+        "audio": null,
+        "note": "うちの むすこ",
+        "kanji": "息子"
+      },
+      {
+        "id": "v2830",
+        "jp": "むすこさん",
+        "romaji": "musuko san",
+        "vi": "con trai của người khác",
+        "audio": null,
+        "note": "たなかさんの むすこさん",
+        "kanji": "息子さん"
+      },
+      {
+        "id": "v2831",
+        "jp": "むすめ",
+        "romaji": "musume",
+        "vi": "con gái mình",
+        "audio": null,
+        "note": "うちの むすめ",
+        "kanji": "娘"
+      },
+      {
+        "id": "v2832",
+        "jp": "むすめさん",
+        "romaji": "musume san",
+        "vi": "con gái của người khác",
+        "audio": null,
+        "note": "すずきさんの むすめさん",
+        "kanji": "娘さん"
+      },
+      {
+        "id": "v2833",
+        "jp": "じぶん",
+        "romaji": "jibun",
+        "vi": "bản thân mình",
+        "audio": null,
+        "note": "じぶんで えらびます",
+        "kanji": "自分"
+      },
+      {
+        "id": "v2834",
+        "jp": "しょうらい",
+        "romaji": "shourai",
+        "vi": "tương lai",
+        "audio": null,
+        "note": "しょうらい、せんせいに なりたい",
+        "kanji": "将来"
+      },
+      {
+        "id": "v2835",
+        "jp": "しばらく",
+        "romaji": "shibaraku",
+        "vi": "một lúc, một thời gian",
+        "audio": null,
+        "note": "〜まちます"
+      },
+      {
+        "id": "v2836",
+        "jp": "たいてい",
+        "romaji": "taitei",
+        "vi": "thường, phần lớn các lần",
+        "audio": null,
+        "note": "たいてい うちに います",
+        "kanji": "大抵"
+      },
+      {
+        "id": "v2837",
+        "jp": "それに",
+        "romaji": "sore ni",
+        "vi": "hơn nữa, thêm vào đó",
+        "audio": null,
+        "note": "Bổ sung thông tin"
+      },
+      {
+        "id": "v2838",
+        "jp": "それで",
+        "romaji": "sore de",
+        "vi": "vì thế, do đó",
+        "audio": null,
+        "note": "Nối nguyên nhân với kết quả"
+      },
+      {
+        "id": "v2839",
+        "jp": "ちょっと おねがいが あるんですが。",
+        "romaji": "chotto onegai ga aru n desu ga",
+        "vi": "Tôi có việc muốn nhờ một chút ạ.",
+        "audio": null,
+        "note": "Lời mở đầu trước khi nhờ",
+        "kanji": "ちょっとお願いがあるんですが。"
+      },
+      {
+        "id": "v2840",
+        "jp": "かいわ",
+        "romaji": "kaiwa",
+        "vi": "hội thoại",
+        "audio": null,
+        "note": "にほんごの かいわ",
+        "kanji": "会話"
+      },
+      {
+        "id": "v2841",
+        "jp": "おしゃべりします",
+        "romaji": "oshaberi shimasu",
+        "vi": "trò chuyện",
+        "audio": null,
+        "note": "III · ともだちと"
+      },
+      {
+        "id": "v2842",
+        "jp": "〜き",
+        "romaji": "ki",
+        "vi": "máy…",
+        "audio": null,
+        "note": "Hậu tố · せんたくき",
+        "kanji": "〜機"
+      },
+      {
+        "id": "v2843",
+        "jp": "ゲーム",
+        "romaji": "geemu",
+        "vi": "trò chơi",
+        "audio": null,
+        "note": "〜を します"
+      },
+      {
+        "id": "v2844",
+        "jp": "びよういん",
+        "romaji": "biyouin",
+        "vi": "tiệm làm tóc",
+        "audio": null,
+        "note": "〜へ いきます",
+        "kanji": "美容院"
+      },
+      {
+        "id": "v2845",
+        "jp": "じつは",
+        "romaji": "jitsu wa",
+        "vi": "thật ra là…",
+        "audio": null,
+        "note": "Mở đầu khi nói rõ tình hình",
+        "kanji": "実は"
+      },
+      {
+        "id": "v2846",
+        "jp": "うーん。",
+        "romaji": "uun",
+        "vi": "ừm, để xem…",
+        "audio": null,
+        "note": "Tiếng ngập ngừng khi cân nhắc"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2801",
+        "pattern": "V1 ながら V2",
+        "vi": "Vừa làm việc này vừa làm việc kia",
+        "explain": "Lấy thân V1 trước ます + ながら. Cùng người làm cả hai việc. V2 là việc chính và quyết định thì của câu.",
+        "viMistake": "ききます → ききながら. Tránh dùng きくながら.",
+        "examples": [
+          {
+            "jp": "{景色|けしき}を {見|み}ながら バスで {会社|かいしゃ}に {通|かよ}っています。",
+            "vi": "Tôi thường đi xe buýt đến công ty và ngắm cảnh trên đường.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}の {話|はなし}を {聞|き}きながら メモしました。",
+            "vi": "Tôi vừa nghe giáo viên nói vừa ghi chú.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2802",
+        "pattern": "Vて います／いました",
+        "vi": "Kể thói quen hiện tại hoặc trước đây",
+        "explain": "Dùng Vて います cho việc lặp thường xuyên. Dùng Vて いました khi kể thói quen trong quá khứ. Dựa vào mốc như まいあさ hoặc まえは để nhận diện.",
+        "viMistake": "いま có thể chỉ hành động đang diễn ra. まいしゅう thường gợi cách hiểu theo thói quen.",
+        "examples": [
+          {
+            "jp": "{毎週|まいしゅう}、{娘|むすめ}と {図書館|としょかん}に {通|かよ}っています。",
+            "vi": "Tuần nào tôi cũng đến thư viện cùng con gái.",
+            "audio": null
+          },
+          {
+            "jp": "{前|まえ}は {毎朝|まいあさ} {駅|えき}まで {歩|ある}いて いました。",
+            "vi": "Trước đây sáng nào tôi cũng đi bộ đến ga.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2803",
+        "pattern": "〜し、〜し",
+        "vi": "Liệt kê đặc điểm hoặc lý do",
+        "explain": "Thể thường + し. Danh từ và tính từ な ở hiện tại khẳng định dùng だし. Có thể dùng も khi nêu đặc điểm song song.",
+        "viMistake": "Dùng まじめだし、がくせいだし. Tính từ い dùng やすいし.",
+        "examples": [
+          {
+            "jp": "この パンは {形|かたち}も おもしろいし、{味|あじ}も いいです。",
+            "vi": "Bánh mì này có hình thú vị và vị cũng ngon.",
+            "audio": null
+          },
+          {
+            "jp": "{姉|あね}は {小説家|しょうせつか}だし、{会話|かいわ}も {上手|じょうず}です。",
+            "vi": "Chị tôi vừa là nhà văn vừa nói chuyện rất khéo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2804",
+        "pattern": "〜し、〜し、結論",
+        "vi": "Đưa ra nhiều lý do cho một kết luận",
+        "explain": "Có thể đặt kết luận sau các lý do. Khi trả lời どうして, có thể kết thúc bằng lý do cuối + からです. Một vế し có thể ngụ ý còn lý do khác.",
+        "viMistake": "Ở sau danh từ và tính từ な, dùng だからです khi kết thúc bằng lý do.",
+        "examples": [
+          {
+            "jp": "この {店|みせ}は {品物|しなもの}が {多|おお}いし、{値段|ねだん}も {安|やす}いし、よく {来|き}ます。",
+            "vi": "Cửa hàng này nhiều hàng, giá lại rẻ nên tôi thường đến.",
+            "audio": null
+          },
+          {
+            "jp": "{駅|えき}から {近|ちか}いし、{静|しず}かだからです。",
+            "vi": "Vì gần ga và cũng yên tĩnh.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2805",
+        "pattern": "それに／それで",
+        "vi": "Thêm ý hoặc nối sang kết quả",
+        "explain": "それに thêm một đặc điểm hoặc lý do. それで dẫn sang sự việc xảy ra do tình huống đã nêu.",
+        "viMistake": "Thêm vế «giá cũng rẻ» dùng それに. Nói «vì thế tôi đã mua» dùng それで.",
+        "examples": [
+          {
+            "jp": "この {部屋|へや}は {明|あか}るいです。それに、{台所|だいどころ}も {広|ひろ}いです。",
+            "vi": "Phòng này sáng. Hơn nữa, bếp cũng rộng.",
+            "audio": null
+          },
+          {
+            "jp": "バスが {来|き}ませんでした。それで、{駅|えき}まで {歩|ある}きました。",
+            "vi": "Xe buýt không đến. Vì thế tôi đã đi bộ đến ga.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2806",
+        "pattern": "〜ときに／〜ときは",
+        "vi": "Chỉ thời điểm hoặc nêu hoàn cảnh",
+        "explain": "とき tạo một cụm thời gian. に đánh dấu lúc xảy ra sự việc. は đưa hoàn cảnh lên làm chủ đề, thường gặp khi nói thói quen hoặc đối chiếu.",
+        "viMistake": "Khi muốn nhấn thói quen lúc rảnh, có thể dùng ひまな ときは. Trước とき, tính từ な giữ な.",
+        "examples": [
+          {
+            "jp": "この {写真|しゃしん}は {旅行|りょこう}した ときに {撮|と}りました。",
+            "vi": "Tôi chụp ảnh này khi đi du lịch.",
+            "audio": null
+          },
+          {
+            "jp": "{休|やす}みの ときは たいてい {小説|しょうせつ}を {読|よ}んで います。",
+            "vi": "Ngày nghỉ tôi thường đọc tiểu thuyết.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2801",
+        "type": "title",
+        "jp": "第28課 · ながら・し",
+        "vi": "Bài 28 · Thói quen và lý do"
+      },
+      {
+        "id": "s2802",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Kể hai việc làm cùng lúc. Nói thói quen hiện tại và trước đây. Đưa ra nhiều lý do khi chọn một phương án hoặc từ chối lời nhờ."
+      },
+      {
+        "id": "s2803",
+        "type": "vocab",
+        "refs": ["v2801", "v2802", "v2803", "v2804", "v2805", "v2806", "v2807", "v2808"]
+      },
+      {
+        "id": "s2804",
+        "type": "vocab",
+        "refs": ["v2809", "v2810", "v2811", "v2812", "v2813", "v2814", "v2815", "v2816"]
+      },
+      {
+        "id": "s2805",
+        "type": "vocab",
+        "refs": ["v2817", "v2818", "v2819", "v2820", "v2821", "v2822", "v2823", "v2824"]
+      },
+      {
+        "id": "s2806",
+        "type": "vocab",
+        "refs": ["v2825", "v2826", "v2827", "v2828", "v2829", "v2830", "v2831", "v2832"]
+      },
+      {
+        "id": "s2807",
+        "type": "vocab",
+        "refs": ["v2833", "v2834", "v2835", "v2836", "v2837", "v2838", "v2839", "v2840"]
+      },
+      {
+        "id": "s2808",
+        "type": "vocab",
+        "refs": ["v2841", "v2842", "v2843", "v2844", "v2845", "v2846"]
+      },
+      {
+        "id": "s2809",
+        "type": "grammar",
+        "ref": "g2801"
+      },
+      {
+        "id": "s2810",
+        "type": "example",
+        "ref": "g2801",
+        "reveal": true
+      },
+      {
+        "id": "s2811",
+        "type": "table",
+        "title": "Luyện đổi dạng",
+        "columns": ["Thể lịch sự", "Dạng vừa làm vừa…"],
+        "rows": [
+          ["ききます", "ききながら"],
+          ["えらびます", "えらびながら"],
+          ["メモします", "メモしながら"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2812",
+        "type": "quiz",
+        "ref": "q2801"
+      },
+      {
+        "id": "s2813",
+        "type": "grammar",
+        "ref": "g2802"
+      },
+      {
+        "id": "s2814",
+        "type": "example",
+        "ref": "g2802",
+        "reveal": true
+      },
+      {
+        "id": "s2815",
+        "type": "quiz",
+        "ref": "q2805"
+      },
+      {
+        "id": "s2816",
+        "type": "grammar",
+        "ref": "g2803"
+      },
+      {
+        "id": "s2817",
+        "type": "example",
+        "ref": "g2803",
+        "reveal": true
+      },
+      {
+        "id": "s2818",
+        "type": "table",
+        "title": "Luyện nối bằng し",
+        "columns": ["Loại từ", "Câu lịch sự", "Dạng nối"],
+        "rows": [
+          ["Động từ", "かよいます", "かようし"],
+          ["Tính từ い", "やすいです", "やすいし"],
+          ["Tính từ な", "ねっしんです", "ねっしんだし"],
+          ["Danh từ", "かしゅです", "かしゅだし"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2819",
+        "type": "quiz",
+        "ref": "q2806"
+      },
+      {
+        "id": "s2820",
+        "type": "grammar",
+        "ref": "g2804"
+      },
+      {
+        "id": "s2821",
+        "type": "example",
+        "ref": "g2804",
+        "reveal": true
+      },
+      {
+        "id": "s2822",
+        "type": "quiz",
+        "ref": "q2819"
+      },
+      {
+        "id": "s2823",
+        "type": "grammar",
+        "ref": "g2805"
+      },
+      {
+        "id": "s2824",
+        "type": "example",
+        "ref": "g2805",
+        "reveal": true
+      },
+      {
+        "id": "s2825",
+        "type": "quiz",
+        "ref": "q2811"
+      },
+      {
+        "id": "s2826",
+        "type": "grammar",
+        "ref": "g2806"
+      },
+      {
+        "id": "s2827",
+        "type": "example",
+        "ref": "g2806",
+        "reveal": true
+      },
+      {
+        "id": "s2828",
+        "type": "quiz",
+        "ref": "q2812"
+      },
+      {
+        "id": "s2829",
+        "type": "table",
+        "title": "Kanji trong từ của bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa và cách dùng"],
+        "rows": [
+          ["売", "{売|う}れます", "bán được · この パンが {売|う}れます"],
+          ["通", "{通|かよ}います", "đi lại đều đặn · {学校|がっこう}に {通|かよ}います"],
+          ["選", "{選|えら}びます", "chọn · {色|いろ}を {選|えら}びます"],
+          ["味", "{味|あじ}", "vị · {味|あじ}が いいです"],
+          ["料", "{給料|きゅうりょう}", "lương · {給料|きゅうりょう}を もらいます"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s2830",
+        "type": "table",
+        "title": "Từ tham khảo · Đọc tin thuê nhà",
+        "columns": ["Mục", "Nghĩa"],
+        "rows": [
+          ["{最寄|もよ}り{駅|えき}", "Ga gần nhất"],
+          ["{家賃|やちん}", "Tiền thuê nhà"],
+          ["{敷金|しききん}", "Tiền đặt cọc"],
+          ["{礼金|れいきん}", "Khoản trả cho chủ nhà, thường không hoàn lại"],
+          ["{間取|まど}り", "Bố trí các phòng"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Điều kiện phụ thuộc tin đăng và hợp đồng. Cho học viên chọn hai tiêu chí muốn hỏi."
+      },
+      {
+        "id": "s2831",
+        "type": "dialogue",
+        "title": "Hội thoại · Nhờ trực ở câu lạc bộ",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Mai",
+            "jp": "ちょっと お{願|ねが}いが あるんですが。{土曜日|どようび}に クラブの {受付|うけつけ}を {手伝|てつだ}って いただけませんか。",
+            "vi": "Tôi có việc muốn nhờ. Thứ Bảy bạn giúp trực bàn tiếp đón của câu lạc bộ được không?"
+          },
+          {
+            "speaker": "Linh",
+            "jp": "{実|じつ}は、{土曜日|どようび}は {学校|がっこう}に {通|かよ}って います。それに、{午後|ごご}は {仕事|しごと}も あるし、ちょっと…。",
+            "vi": "Thật ra thứ Bảy tôi đi học. Hơn nữa buổi chiều còn có việc, nên hơi khó…"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "そうですか。じゃ、ほかの {人|ひと}に {聞|き}いて みます。",
+            "vi": "Vậy à. Thế tôi sẽ thử hỏi người khác."
+          }
+        ],
+        "teacherNotes": "Luyện nghe trên lớp: đọc hai lượt trước khi chiếu. Hỏi Mai nhờ việc gì và Linh nêu hai lý do nào."
+      },
+      {
+        "id": "s2832",
+        "type": "quiz",
+        "ref": "q2820"
+      },
+      {
+        "id": "s2833",
+        "type": "table",
+        "title": "Sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: メモします／ながら／{聞|き}き／{話|はなし}を",
+            "{話|はなし}を {聞|き}きながら メモします。"
+          ],
+          [
+            "Dịch: Phòng này sáng, giá thuê lại vừa sức, nên tôi chọn phòng này.",
+            "この {部屋|へや}は {明|あか}るいし、{家賃|やちん}も ちょうどいいし、この {部屋|へや}に しました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2834",
+        "type": "table",
+        "title": "Nhập vai · Chọn phòng",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "Người thuê",
+            "Nêu hai ưu điểm",
+            "{駅|えき}から {近|ちか}いし、{台所|だいどころ}も {広|ひろ}いです。"
+          ],
+          ["Bạn", "Thêm một ưu điểm", "それに、{景色|けしき}も いいですよ。"],
+          [
+            "Người thuê",
+            "Chốt chọn phòng sau khi nghe các ưu điểm",
+            "じゃ、この {部屋|へや}に します。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đạt khi nêu hai lý do bằng し và thêm ưu điểm bằng それに. Sau khi nhập vai, kể lại quyết định bằng それで、この部屋にしました。"
+      },
+      {
+        "id": "s2835",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "ながら: cùng chủ thể, việc chính ở cuối.\nて います: thói quen đang duy trì.\nし: thêm đặc điểm và lý do.\nそれに thêm ý. それで dẫn sang kết quả.",
+        "teacherNotes": "Ôn lời mở đầu んですが ở bài 26 và thể khả năng bài 27. Bài 29 dùng て います để nói trạng thái kết quả và てしまいます để nói việc làm xong hoặc lỡ làm."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2801",
+        "type": "choice",
+        "prompt": "Chọn dạng trước ながら của ききます。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Bỏ ます rồi thêm ながら.",
+        "options": ["ききながら", "きくながら", "きいてながら", "ききますながら"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2802",
+        "type": "choice",
+        "prompt": "Trong メモしながら はなしを ききます, việc chính là gì?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Việc chính là động từ phía sau ながら.",
+        "options": ["Ghi chú", "Nghe câu chuyện", "Cả hai là việc chính", "Kể chuyện"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2803",
+        "type": "choice",
+        "prompt": "Chọn câu dùng ながら đúng với cùng một chủ thể.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "あるきます bỏ ます thành あるき.",
+        "options": [
+          "わたしは あるくながら おんがくを ききます。",
+          "わたしは あるいてながら おんがくを ききます。",
+          "わたしは あるきながら おんがくを ききます。",
+          "わたしは あるきますながら おんがくを ききます。"
+        ],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2804",
+        "type": "choice",
+        "prompt": "Từ nào gợi một thói quen lặp lại?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "まいしゅう nghĩa là mỗi tuần.",
+        "options": ["さっき", "たったいま", "あしただけ", "まいしゅう"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2805",
+        "type": "choice",
+        "prompt": "Chọn cách kể thói quen trước kia.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "まえは + まいあさ cho biết thói quen quá khứ.",
+        "options": [
+          "まえは まいあさ はしって いました。",
+          "まえは まいあさ はしって いません。",
+          "あした はしります。",
+          "いま はしって います。"
+        ],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2806",
+        "type": "choice",
+        "prompt": "Chọn dạng nối với し của ねっしんです。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Tính từ な dùng thể thường だ trước し.",
+        "options": ["ねっしんなし", "ねっしんだし", "ねっしんのし", "ねっしんくし"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2807",
+        "type": "choice",
+        "prompt": "Chọn dạng của やすいです trước し。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Tính từ い giữ dạng やすい trước し.",
+        "options": ["やすいだし", "やすくし", "やすいし", "やすなし"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2808",
+        "type": "choice",
+        "prompt": "Chọn dạng của がくせいです trước し。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Danh từ dùng だし ở hiện tại khẳng định.",
+        "options": ["がくせいなし", "がくせいのし", "がくせいくし", "がくせいだし"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2809",
+        "type": "choice",
+        "prompt": "Nêu hai ưu điểm: いろ（　）いいし、あじ（　）いいです。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "も ở hai vế nhấn mạnh cả hai ưu điểm.",
+        "options": ["も／も", "の／の", "を／を", "と／と"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2810",
+        "type": "choice",
+        "prompt": "Điền từ bổ sung ưu điểm: へやは あかるいです。（　）、ひろいです。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "それに bổ sung một đặc điểm cùng chiều.",
+        "options": ["それで", "それに", "それから", "でも"],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2811",
+        "type": "choice",
+        "prompt": "Chọn từ nối chỉ kết quả: バスが きませんでした。（　）、あるきました。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Đi bộ là kết quả của việc xe không đến.",
+        "options": ["それに", "たいてい", "それで", "いつか"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2812",
+        "type": "choice",
+        "prompt": "Chọn cụm «lúc rảnh» làm chủ đề.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Tính từ な dùng な trước とき.",
+        "options": ["ひまだ ときは", "ひまの ときは", "ひまく ときは", "ひまな ときは"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2813",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 会話。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "会話 đọc かいわ, nghĩa là hội thoại.",
+        "options": ["Hội thoại", "Tiểu thuyết", "Tiền lương", "Phong cảnh"],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2814",
+        "type": "choice",
+        "prompt": "Cụm nào nói việc đi học đều đặn?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Nơi thường xuyên đến dùng に với 通います.",
+        "options": [
+          "がっこうを えらびます",
+          "がっこうに かよいます",
+          "がっこうで おどります",
+          "がっこうを メモします"
+        ],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2815",
+        "type": "choice",
+        "prompt": "Từ nào là giá tiền?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "値段 đọc ねだん.",
+        "options": ["けいけん", "ばんぐみ", "ねだん", "ちから"],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2816",
+        "type": "choice",
+        "prompt": "Chọn từ lịch sự để hỏi về con gái của người đối thoại.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "娘さん dùng khi nói về con gái của người khác.",
+        "options": ["むすめ", "むすこさん", "じぶん", "むすめさん"],
+        "answer": [3],
+        "multiple": false
+      },
+      {
+        "id": "q2817",
+        "type": "choice",
+        "prompt": "Câu nào nói loại bánh bán chạy?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "売れます ở đây nói hàng bán được.",
+        "options": [
+          "この パンは よく うれます。",
+          "この パンは よく かみます。",
+          "この パンは よく おどります。",
+          "この パンは よく かよいます。"
+        ],
+        "answer": [0],
+        "multiple": false
+      },
+      {
+        "id": "q2818",
+        "type": "choice",
+        "prompt": "Cụm nào dùng để mở lời trước khi nhờ?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Cụm お願いがあるんですが chuẩn bị cho lời nhờ.",
+        "options": [
+          "しばらく まっています。",
+          "ちょっと おねがいが あるんですが。",
+          "たいてい みています。",
+          "それで かいました。"
+        ],
+        "answer": [1],
+        "multiple": false
+      },
+      {
+        "id": "q2819",
+        "type": "choice",
+        "prompt": "Vì sao bạn chọn phòng này? Chọn câu nêu lý do.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "し liệt kê, からです kết thúc lời giải thích.",
+        "options": [
+          "やすいながら、ちかく あります。",
+          "やすいときに、あるいて います。",
+          "やすいし、えきから ちかいからです。",
+          "やすいだし、ちかいです。"
+        ],
+        "answer": [2],
+        "multiple": false
+      },
+      {
+        "id": "q2820",
+        "type": "choice",
+        "prompt": "Theo đoạn đọc, vì sao người nói chọn phòng này?",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "駅から近い và 家賃もちょうどいい là hai lý do được nêu.",
+        "options": [
+          "Vì có hai phòng ngủ",
+          "Vì có thể nuôi thú",
+          "Vì bếp rất rộng",
+          "Gần ga và giá thuê vừa sức"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "passage": "この {部屋|へや}は {駅|えき}から {近|ちか}いし、{家賃|やちん}も ちょうどいいです。それで、この {部屋|へや}に しました。"
+      },
+      {
+        "id": "q2821",
+        "type": "fill",
+        "prompt": "Đổi よみます sang dạng + ながら.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Bỏ ます rồi thêm ながら.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["よみながら"]
+      },
+      {
+        "id": "q2822",
+        "type": "fill",
+        "prompt": "Đổi おどります sang dạng + ながら.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Thân ます là おどり.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おどりながら"]
+      },
+      {
+        "id": "q2823",
+        "type": "fill",
+        "prompt": "Dùng て います: まいあさ えきまで（あるきます）。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "あるく → あるいて.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["あるいています"]
+      },
+      {
+        "id": "q2824",
+        "type": "fill",
+        "prompt": "Dùng て いました: まえは まいにち ピアノを（ひきます）。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Thói quen quá khứ dùng て いました.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["ひいていました"]
+      },
+      {
+        "id": "q2825",
+        "type": "fill",
+        "prompt": "Đổi まじめです sang dạng thể thường + し.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Tính từ な dùng だし.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["まじめだし"]
+      },
+      {
+        "id": "q2826",
+        "type": "fill",
+        "prompt": "Đổi おいしいです sang dạng thể thường + し.",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "Tính từ い giữ nguyên おいしい.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["おいしいし"]
+      },
+      {
+        "id": "q2827",
+        "type": "fill",
+        "prompt": "Điền trợ từ chỉ nơi thường xuyên lui tới: がっこう（　）かよっています。",
+        "points": 1,
+        "tags": ["minna-28"],
+        "explain": "通います dùng に cho nơi đi lại thường xuyên.",
+        "inputMode": "hiragana",
+        "kanjiStrict": false,
+        "answer": ["に"]
+      }
+    ]
+  }
+}

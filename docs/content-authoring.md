@@ -79,6 +79,8 @@ Cập nhật 20/11/2026: mẫu bài 26 hiện có 53 mục từ, 6 mục ngữ p
 
 Ngày 20/11/2026 thêm **Tạo bài 27 từ mẫu** (Sơ cấp II) với 31 mục từ, 6 mục ngữ pháp, 32 slide và 27 câu chấm tự động. Bài luyện thể khả năng, 見えます／聞こえます, できます, しか và は đối chiếu. Có đọc thông báo, hoạt động thuê nhà và bảng Kanji. [Bảng đối chiếu bài 27](testing/minna-lesson-27-coverage.md).
 
+Ngày 20/11/2026 thêm **Tạo bài 28 từ mẫu** (Sơ cấp II) với 46 mục từ, 6 mục ngữ pháp, 35 slide và 27 câu tự chấm. Bài luyện ながら, thói quen, liệt kê lý do, kể kết quả và đọc tin thuê nhà. [Bảng đối chiếu bài 28](testing/minna-lesson-28-coverage.md).
+
 Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.
 
 Nội dung do Reng tự biên soạn theo chủ điểm bài 11 (đếm 〜つ・〜人・〜台・〜枚・〜回, khoảng thời gian, tần suất, だけ); câu ví dụ, hội thoại và bài luyện là bản viết mới, không chép nguyên văn sách, tranh hay đĩa nghe. Giáo viên duyệt và sửa trước khi xuất bản; học viên dùng sách có bản quyền của mình để đối chiếu. Bài tiếp theo: dùng **Tạo bản sao** từ bài 11 rồi sửa, hoặc soạn mới trong editor. Thêm bài mẫu mới = thêm JSON vào `content/starters/` và đăng ký trong `lib/starter-lessons.ts`; test yêu cầu bài mẫu xuất bản được ngay và đáp án trắc nghiệm không nằm cùng một vị trí (lựa chọn hiển thị đúng thứ tự soạn).
