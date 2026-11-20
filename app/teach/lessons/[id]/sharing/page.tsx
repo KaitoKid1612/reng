@@ -63,8 +63,7 @@ export default async function LessonSharingPage({ params }: LessonSharingPagePro
                     <div>
                       <h3>{share.recipientName || share.recipientEmail}</h3>
                       <p className="item-meta">
-                        {share.recipientEmail} · phiên bản {share.versionNo} ·{" "}
-                        {PERMISSION_LABELS[share.permission]} · từ{" "}
+                        {share.recipientEmail} · {PERMISSION_LABELS[share.permission]} · từ{" "}
                         {formatStudyDateTime(share.grantedAt)}
                       </p>
                     </div>
@@ -85,8 +84,8 @@ export default async function LessonSharingPage({ params }: LessonSharingPagePro
                     <div>
                       <h3>{share.recipientName || share.recipientEmail}</h3>
                       <p className="item-meta">
-                        Phiên bản {share.versionNo} · {PERMISSION_LABELS[share.permission]} · thu
-                        hồi {share.revokedAt ? formatStudyDateTime(share.revokedAt) : ""}
+                        {PERMISSION_LABELS[share.permission]} · thu hồi{" "}
+                        {share.revokedAt ? formatStudyDateTime(share.revokedAt) : ""}
                       </p>
                     </div>
                   </li>

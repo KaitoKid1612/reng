@@ -40,7 +40,7 @@ async function teacherPage(browser: Browser) {
 async function openSlide(page: Page, position: number) {
   await page.goto("about:blank");
   await page.goto(`/lessons/${state.lessonId}/slide#${position}`);
-  await expect(page.getByTestId("slide-counter")).toHaveText(`${position} / 38`);
+  await expect(page.getByTestId("slide-counter")).toHaveText(`${position} / 41`);
   return page.locator(".reveal section.present");
 }
 
@@ -77,7 +77,7 @@ test("a teacher starts Minna lesson 11 from the starter, publishes and presents 
   await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   state.lessonId = page.url().split("/").at(-2) ?? "";
   await expect(page.getByLabel("Tiêu đề tiếng Việt", { exact: true })).toHaveValue(LESSON_TITLE);
-  await expect(page.locator(".slide-list-item")).toHaveCount(38);
+  await expect(page.locator(".slide-list-item")).toHaveCount(41);
   // Long slide summaries end in an ellipsis instead of widening the editor on phones.
   await page.setViewportSize({ width: 360, height: 780 });
   const editorFits = await page.evaluate(
@@ -94,16 +94,16 @@ test("a teacher starts Minna lesson 11 from the starter, publishes and presents 
   // The editor refreshes after publishing; leaving mid-refresh aborts its request.
   await expect(page.getByText("Đã xuất bản 1 lần; mỗi lần là một phiên bản.")).toBeVisible();
 
-  const table = await openSlide(page, 12);
+  const table = await openSlide(page, 13);
   await expect(table.locator(".slide-table tbody tr")).toHaveCount(11);
   await expect(table.locator("th ruby").first()).toContainText("人");
-  const drill = await openSlide(page, 17);
+  const drill = await openSlide(page, 18);
   const answer = drill.locator("tbody tr").first().locator("td").last();
   await expect(answer).toHaveClass(/fragment/);
   await expect(answer).not.toHaveClass(/visible/);
   await page.getByRole("button", { name: "Tiếp", exact: true }).click();
   await expect(answer).toHaveClass(/visible/);
-  const dialogue = await openSlide(page, 31);
+  const dialogue = await openSlide(page, 32);
   await expect(dialogue.locator(".slide-dialogue-ja > li")).toHaveCount(6);
   await expect(dialogue.locator("rt").first()).toHaveText("せんせい");
   await page.screenshot({ path: "test-results/minna-dialogue-slide.png", caret: "initial" });
@@ -277,7 +277,7 @@ test("the editor folds the class panel until a new version needs a step", async 
   const page = await teacherPage(browser);
   await page.goto(`/teach/lessons/${state.lessonId}/edit`);
   const usage = page.locator(".lesson-usage-details");
-  await expect(usage.locator("summary")).toHaveText("1 lớp dùng phiên bản 1 mới nhất");
+  await expect(usage.locator("summary")).toHaveText("1 lớp dùng bản mới nhất");
   await expect(usage).not.toHaveAttribute("open");
   await expect(usage.getByRole("link", { name: CLASS_NAME })).toBeHidden();
 
@@ -286,10 +286,10 @@ test("the editor folds the class panel until a new version needs a step", async 
   await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
   await expect(usage.locator("summary")).toHaveText("1 lớp dùng bản cũ");
   await expect(usage).toHaveAttribute("open", "");
-  await usage.getByRole("button", { name: "Cập nhật lên phiên bản 2", exact: true }).click();
-  await expect(page.getByText(`${CLASS_NAME}: đã cập nhật lên phiên bản 2.`)).toBeVisible();
-  await expect(usage.locator("summary")).toHaveText("1 lớp dùng phiên bản 2 mới nhất");
+  await usage.getByRole("button", { name: "Cập nhật lên bản mới nhất", exact: true }).click();
+  await expect(page.getByText(`${CLASS_NAME}: đã cập nhật lên bản mới nhất.`)).toBeVisible();
+  await expect(usage.locator("summary")).toHaveText("1 lớp dùng bản mới nhất");
   await expect(usage, "a step taken inside never folds the panel").toHaveAttribute("open", "");
-  await expect(usage.getByText("Đang dùng phiên bản 2, mới nhất.")).toBeVisible();
+  await expect(usage.getByText("Đang dùng bản mới nhất.")).toBeVisible();
   await page.context().close();
 });

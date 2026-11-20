@@ -28,7 +28,7 @@ function describeSession(session: ClassSession) {
   if (!session.lesson) {
     return "Không dùng bài trong lớp";
   }
-  const lesson = `${session.lesson.title} (phiên bản ${session.lesson.versionNo})`;
+  const lesson = session.lesson.title;
   return session.slideReached ? `${lesson}, đến slide ${session.slideReached}` : lesson;
 }
 

@@ -17,23 +17,21 @@ interface UsageItemProps {
   lessonId: string;
   item: ClassUsage;
   state: ClassLessonState;
-  publishedVersionNo: number;
 }
 
 // Classes that need a step come first; a teacher with many classes sees the first few.
 const STATE_ORDER: Record<ClassLessonState, number> = { older: 0, missing: 1, latest: 2 };
 const VISIBLE_CLASSES = 5;
 
-function UsageItem({ lessonId, item, state, publishedVersionNo }: UsageItemProps) {
+function UsageItem({ lessonId, item, state }: UsageItemProps) {
   return (
     <li>
       <div>
         <Link href={`/teach/classes/${item.classId}`}>{item.className}</Link>
         <p className="item-meta">
           {state === "missing" && "Chưa có bài này."}
-          {state === "older" &&
-            `Đang dùng phiên bản ${item.usedVersionNo}, có bản mới ${publishedVersionNo}.`}
-          {state === "latest" && `Đang dùng phiên bản ${publishedVersionNo}, mới nhất.`}
+          {state === "older" && "Đang dùng bản cũ, đã có bản mới hơn."}
+          {state === "latest" && "Đang dùng bản mới nhất."}
         </p>
       </div>
       {state !== "latest" && (
@@ -42,7 +40,7 @@ function UsageItem({ lessonId, item, state, publishedVersionNo }: UsageItemProps
           className={item.className}
           lessonId={lessonId}
           isPrimary={state === "older"}
-          label={state === "older" ? `Cập nhật lên phiên bản ${publishedVersionNo}` : "Đưa vào lớp"}
+          label={state === "older" ? "Cập nhật lên bản mới nhất" : "Đưa vào lớp"}
         />
       )}
     </li>
@@ -58,12 +56,7 @@ export function LessonClassUsage({ lessonId, usage }: LessonClassUsageProps) {
         .map((item) => ({ item, state: classLessonState(item.usedVersionNo, published.versionNo) }))
         .sort((first, second) => STATE_ORDER[first.state] - STATE_ORDER[second.state])
     : [];
-  const overview =
-    published &&
-    summarizeLessonUsage(
-      ranked.map(({ state }) => state),
-      published.versionNo,
-    );
+  const overview = published && summarizeLessonUsage(ranked.map(({ state }) => state));
   return (
     <section className="lesson-usage" aria-labelledby="lesson-usage-title">
       <h2 id="lesson-usage-title">Dùng bài trong lớp</h2>
@@ -83,13 +76,7 @@ export function LessonClassUsage({ lessonId, usage }: LessonClassUsageProps) {
           <UsageDisclosure summary={overview.summary} needsStep={overview.needsStep}>
             <ul className="lesson-usage-list">
               {ranked.slice(0, VISIBLE_CLASSES).map(({ item, state }) => (
-                <UsageItem
-                  key={item.classId}
-                  lessonId={lessonId}
-                  item={item}
-                  state={state}
-                  publishedVersionNo={published.versionNo}
-                />
+                <UsageItem key={item.classId} lessonId={lessonId} item={item} state={state} />
               ))}
             </ul>
             {ranked.length > VISIBLE_CLASSES && (
@@ -97,13 +84,7 @@ export function LessonClassUsage({ lessonId, usage }: LessonClassUsageProps) {
                 <summary>Xem thêm {ranked.length - VISIBLE_CLASSES} lớp</summary>
                 <ul className="lesson-usage-list">
                   {ranked.slice(VISIBLE_CLASSES).map(({ item, state }) => (
-                    <UsageItem
-                      key={item.classId}
-                      lessonId={lessonId}
-                      item={item}
-                      state={state}
-                      publishedVersionNo={published.versionNo}
-                    />
+                    <UsageItem key={item.classId} lessonId={lessonId} item={item} state={state} />
                   ))}
                 </ul>
               </details>

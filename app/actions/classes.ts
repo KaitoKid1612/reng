@@ -310,8 +310,8 @@ export async function pinLatestVersionAction(
   refresh();
   return {
     notice: result.wasInClass
-      ? `đã cập nhật lên phiên bản ${result.versionNo}.`
-      : `đã có bài (phiên bản ${result.versionNo}), mở ngay cho học viên.`,
+      ? "đã cập nhật lên bản mới nhất."
+      : "đã có bài, mở ngay cho học viên.",
   };
 }
 

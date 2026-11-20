@@ -103,7 +103,7 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   await page.getByLabel("Ghi chú", { exact: true }).fill("Học viên còn nhầm 〜つ và 〜人.");
   await page.getByRole("button", { name: "Ghi buổi dạy", exact: true }).click();
   await expect(page.getByText("Đã ghi buổi dạy vào nhật ký.")).toBeVisible();
-  await expect(page.getByText(`${LESSON_11} (phiên bản 1), đến slide 12`)).toBeVisible();
+  await expect(page.getByText(`${LESSON_11}, đến slide 12`, { exact: true })).toBeVisible();
   await expect(page.getByText("Học viên còn nhầm 〜つ và 〜人.")).toBeVisible();
   await expect(page.getByText(/^Buổi gần nhất/)).toContainText(`${LESSON_11}, đến slide 12`);
   // The form starts empty again for the next session.
@@ -117,7 +117,7 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   // The panel resumes the logged slide; the slides then fill the next log entry in.
   await expect(page.getByRole("link", { name: "Trình chiếu tiếp từ slide 12" })).toBeVisible();
   await page.getByRole("link", { name: "Mở slide 12" }).first().click();
-  await expect(page.getByTestId("slide-counter")).toHaveText("12 / 38");
+  await expect(page.getByTestId("slide-counter")).toHaveText("12 / 41");
   await page.getByRole("button", { name: "Tiếp", exact: true }).click();
   // The log opens in a new tab, so the tab shared in Meet keeps showing the slides.
   const [logPage] = await Promise.all([
@@ -126,7 +126,7 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   ]);
   await expect(logPage.getByLabel("Bài đã dạy")).toHaveValue(state.lesson11);
   await expect(logPage.getByLabel("Dạy đến slide số")).toHaveValue("13");
-  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 38");
+  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 41");
   await logPage.close();
   // The class scans a code from the shared slide: the invitation and the lesson itself.
   await page.getByRole("button", { name: "Mã QR", exact: true }).click();
@@ -141,7 +141,7 @@ test("the teaching log keeps the last slide and reopens it", async ({ browser })
   // Escape closes the code and leaves the slide where it was.
   await page.keyboard.press("Escape");
   await expect(qr).toHaveCount(0);
-  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 38");
+  await expect(page.getByTestId("slide-counter")).toHaveText("13 / 41");
   await page.goto(`/teach/classes/${state.classId}`);
   // The deleted row, with its button, leaves the list; the empty log is the confirmation.
   await page.getByRole("button", { name: "Xóa", exact: true }).click();
@@ -285,7 +285,7 @@ test("a lesson made from a starter is refreshed with the latest starter content"
   await expect(row("Từ vựng")).toContainText("Khác mẫu");
   await expect(row("Mẫu câu")).toContainText("Giống mẫu");
   await expect(row("Hình minh họa")).toContainText("Khác mẫu");
-  await expect(row("Slide").locator('[data-label="Mẫu mới nhất"]')).toHaveText("41");
+  await expect(row("Slide").locator('[data-label="Mẫu mới nhất"]')).toHaveText("46");
   await expect(row("Câu luyện").locator('[data-label="Mẫu mới nhất"]')).toHaveText("50");
 
   await page.getByLabel(/Tôi hiểu bản nháp hiện tại/).check();

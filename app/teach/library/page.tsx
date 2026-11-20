@@ -32,9 +32,8 @@ export default async function TeachingLibraryPage() {
               <div>
                 <h3>{item.title}</h3>
                 <p className="item-meta">
-                  {item.courseId === "chinese" ? "Tiếng Trung" : "Tiếng Nhật"} · phiên bản{" "}
-                  {item.versionNo} · của {item.ownerName || "một giáo viên"} · nhận{" "}
-                  {formatStudyDateTime(item.grantedAt)}
+                  {item.courseId === "chinese" ? "Tiếng Trung" : "Tiếng Nhật"} · của{" "}
+                  {item.ownerName || "một giáo viên"} · nhận {formatStudyDateTime(item.grantedAt)}
                 </p>
               </div>
               <div className="button-row">

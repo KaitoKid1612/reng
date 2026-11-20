@@ -95,13 +95,12 @@ export default async function AssignPage({ params }: AssignPageProps) {
               <li key={lesson.lessonId}>
                 <div>
                   <span>
-                    {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
+                    {lesson.orderNo}. {lesson.title}
                   </span>
                   <span className="item-meta">
                     {" "}
                     Mở từ {formatStudyDateTime(lesson.availableAt)}
-                    {newerVersion(lesson) !== null &&
-                      ` · đã có phiên bản ${newerVersion(lesson)}, lớp chưa dùng`}
+                    {newerVersion(lesson) !== null && " · đã có bản mới hơn, lớp chưa dùng"}
                   </span>
                 </div>
                 {newerVersion(lesson) !== null && (
@@ -109,7 +108,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
                     classId={classRow.id}
                     className={classRow.name}
                     lessonId={lesson.lessonId}
-                    label={`Cập nhật lớp lên phiên bản ${newerVersion(lesson)}`}
+                    label="Cập nhật lớp lên bản mới nhất"
                     isPrimary
                   />
                 )}

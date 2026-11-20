@@ -74,16 +74,16 @@ test("the steps hide once the teacher is teaching, even without a timetable", ()
 });
 
 test("the class panel folds only while every class with the lesson uses the newest version", () => {
-  assert.deepEqual(summarizeLessonUsage(["latest", "latest", "missing"], 5), {
-    summary: "2 lớp dùng phiên bản 5 mới nhất · 1 lớp chưa có bài",
+  assert.deepEqual(summarizeLessonUsage(["latest", "latest", "missing"]), {
+    summary: "2 lớp dùng bản mới nhất · 1 lớp chưa có bài",
     needsStep: false,
   });
-  assert.deepEqual(summarizeLessonUsage(["older", "latest"], 5), {
-    summary: "1 lớp dùng bản cũ · 1 lớp dùng phiên bản 5 mới nhất",
+  assert.deepEqual(summarizeLessonUsage(["older", "latest"]), {
+    summary: "1 lớp dùng bản cũ · 1 lớp dùng bản mới nhất",
     needsStep: true,
   });
   assert.deepEqual(
-    summarizeLessonUsage(["missing", "missing"], 1),
+    summarizeLessonUsage(["missing", "missing"]),
     { summary: "2 lớp chưa có bài", needsStep: true },
     "a lesson in no class yet keeps its next step in view",
   );

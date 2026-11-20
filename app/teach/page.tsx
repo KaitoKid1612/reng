@@ -210,7 +210,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
                   <p className="item-meta">
                     Bản soạn: {teachingLanguageLabel(lesson.languageTag)} ·{" "}
                     {lesson.publishedVersionId && lesson.versions[0]
-                      ? `Đã xuất bản, phiên bản mới nhất ${lesson.versions[0].version_no}`
+                      ? "Đã xuất bản"
                       : "Chỉ có bản nháp"}
                   </p>
                   {lesson.copyAttribution && <p className="item-meta">{lesson.copyAttribution}</p>}

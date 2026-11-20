@@ -100,7 +100,7 @@ export function ClassLessonForm({
           </select>
         </div>
         <div className="field">
-          <label htmlFor="class-lesson-version">Phiên bản dùng cho lớp</label>
+          <label htmlFor="class-lesson-version">Bản dùng cho lớp</label>
           <select
             key={fieldsKey}
             id="class-lesson-version"
@@ -117,7 +117,7 @@ export function ClassLessonForm({
               );
               return (
                 <option key={version.id} value={version.id}>
-                  {`Phiên bản ${version.version_no}${marks.length ? ` (${marks.join(", ")})` : ""} — ${language}, xuất bản ${formatStudyDateTime(version.published_at)}`}
+                  {`Bản xuất bản ${formatStudyDateTime(version.published_at)}${marks.length ? ` (${marks.join(", ")})` : ""} — ${language}`}
                 </option>
               );
             })}
@@ -157,9 +157,9 @@ export function ClassLessonForm({
       </div>
       {current ? (
         <p className="notice-panel" role="status">
-          Bài này đã có trong lớp: phiên bản {current.versionNo}, thứ tự {current.orderNo}, mở từ{" "}
+          Bài này đã có trong lớp: thứ tự {current.orderNo}, mở từ{" "}
           {formatStudyDateTime(current.availableAt)}. Các ô trên đang giữ đúng giá trị đó; chỉ đổi ô
-          bạn muốn cập nhật. Bài đã giao giữ phiên bản lúc giao.
+          bạn muốn cập nhật. Bài đã giao giữ nội dung lúc giao.
         </p>
       ) : (
         <p className="small muted">

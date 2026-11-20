@@ -26,7 +26,7 @@ export function ClassLessonList({ classId, lessons }: ClassLessonListProps) {
         <li key={lesson.lessonId}>
           <div>
             <span>
-              {lesson.orderNo}. {lesson.title} (phiên bản {lesson.versionNo})
+              {lesson.orderNo}. {lesson.title}
             </span>
             <p className="item-meta">Mở từ {formatStudyDateTime(lesson.availableAt)}</p>
           </div>

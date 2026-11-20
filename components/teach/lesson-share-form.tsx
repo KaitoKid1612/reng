@@ -6,10 +6,11 @@ import { shareLessonAction } from "@/app/actions/lesson-sharing";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 import { versionChoices } from "@/lib/lesson-versions";
+import { formatStudyDateTime } from "@/lib/study-days";
 
 interface LessonShareFormProps {
   lessonId: string;
-  versions: { id: string; versionNo: number }[];
+  versions: { id: string; versionNo: number; publishedAt: string }[];
 }
 
 export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
@@ -24,7 +25,7 @@ export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
       <input type="hidden" name="lessonId" value={lessonId} />
       <div className="form-grid">
         <div className="field">
-          <label htmlFor="share-version">Phiên bản chia sẻ</label>
+          <label htmlFor="share-version">Bản chia sẻ</label>
           <select
             id="share-version"
             name="versionId"
@@ -32,7 +33,7 @@ export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
           >
             {choices.offered.map((version) => (
               <option key={version.id} value={version.id}>
-                {`Phiên bản ${version.versionNo}${version.id === choices.newestId ? " (mới nhất)" : ""}`}
+                {`Bản xuất bản ${formatStudyDateTime(version.publishedAt)}${version.id === choices.newestId ? " (mới nhất)" : ""}`}
               </option>
             ))}
           </select>

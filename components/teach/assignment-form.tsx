@@ -197,7 +197,7 @@ export function AssignmentForm({
             >
               {lessons.map((item) => (
                 <option key={item.lessonId} value={item.lessonId}>
-                  {item.title} (phiên bản {item.versionNo})
+                  {item.title}
                 </option>
               ))}
             </select>
@@ -298,7 +298,7 @@ export function AssignmentForm({
       </div>
       {mode === "practice" && lesson && (
         <fieldset className="form-card">
-          <legend>Câu luyện từ phiên bản {lesson.versionNo}</legend>
+          <legend>Câu luyện của bài</legend>
           {lesson.questions.length === 0 ? (
             <p className="muted">
               Bài này chưa có câu luyện giao được (trắc nghiệm, điền từ, nghe).
@@ -334,9 +334,8 @@ export function AssignmentForm({
           )}
           {lesson.newerVersionNo && (
             <p className="notice-panel small">
-              Lớp đang dùng phiên bản {lesson.versionNo}. Phiên bản {lesson.newerVersionNo} có câu
-              mới (ví dụ câu nghe vừa thêm) chỉ hiện ở đây sau khi bấm Cập nhật lớp lên phiên bản{" "}
-              {lesson.newerVersionNo} ở mục Nội dung lớp phía trên.
+              Lớp đang dùng bản cũ của bài. Bản mới nhất có câu mới (ví dụ câu nghe vừa thêm) chỉ
+              hiện ở đây sau khi cập nhật lớp lên bản mới nhất ở mục Nội dung lớp phía trên.
             </p>
           )}
           {lesson.questions.map((question) => (

@@ -14,10 +14,7 @@ export function classLessonState(
 // The editor's class panel folds into this line while no class needs a step: every class that has
 // the lesson uses its newest version. A class on an older version, or a lesson in no class yet,
 // keeps the panel open.
-export function summarizeLessonUsage(
-  states: readonly ClassLessonState[],
-  publishedVersionNo: number,
-) {
+export function summarizeLessonUsage(states: readonly ClassLessonState[]) {
   const count = (state: ClassLessonState) => states.filter((item) => item === state).length;
   const older = count("older");
   const latest = count("latest");
@@ -27,7 +24,7 @@ export function summarizeLessonUsage(
     parts.push(`${older} lớp dùng bản cũ`);
   }
   if (latest) {
-    parts.push(`${latest} lớp dùng phiên bản ${publishedVersionNo} mới nhất`);
+    parts.push(`${latest} lớp dùng bản mới nhất`);
   }
   if (missing) {
     parts.push(`${missing} lớp chưa có bài`);
