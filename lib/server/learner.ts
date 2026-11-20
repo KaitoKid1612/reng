@@ -116,6 +116,8 @@ export async function getStudentClassView(userId: string, classId: string, now: 
     })),
     upcomingLessonCount: lessons.filter((lesson) => Date.parse(lesson.availableAt) > now.getTime())
       .length,
+    // Every lesson of the class, opened or not, for the course map.
+    allLessons: lessons,
     assignments: assignments.map((assignment) =>
       describeLearnerAssignment(
         assignment,
@@ -154,7 +156,7 @@ async function listLearnerAssignments(userId: string, now: Date) {
 
 // Lessons the learner marked as read, in any version: a teacher updating a lesson does not make
 // it new again.
-async function listReadLessonIds(userId: string, lessonIds: readonly string[]) {
+export async function listReadLessonIds(userId: string, lessonIds: readonly string[]) {
   const rows = await selectRowsIn(
     lessonIds,
     (chunk) =>

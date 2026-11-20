@@ -74,7 +74,7 @@ test("a teacher starts Minna lesson 11 from the starter, publishes and presents 
   await page.getByRole("link", { name: "Tạo bài mới", exact: true }).click();
   await expect(page.getByText("Minna no Nihongo Sơ cấp I · 54 từ vựng")).toBeVisible();
   await page.getByRole("button", { name: "Tạo bài 11 từ mẫu", exact: true }).click();
-  await page.waitForURL(/\/teach\/lessons\/lesson-[0-9a-f]{32}\/edit$/);
+  await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+-[0-9]+-[0-9a-f]{6}\/edit$/);
   state.lessonId = page.url().split("/").at(-2) ?? "";
   await expect(page.getByLabel("Tiêu đề tiếng Việt", { exact: true })).toHaveValue(LESSON_TITLE);
   await expect(page.locator(".slide-list-item")).toHaveCount(38);
@@ -177,7 +177,11 @@ test("a learner signs up, confirms the email, joins and completes the lesson 11 
   await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
   await page.waitForURL(`**/classes/${state.classId}`);
   await expect(page.getByRole("link", { name: "Vào Google Meet" })).toBeVisible();
-  await expect(page.getByText(`1. ${LESSON_TITLE}`)).toBeVisible();
+  // Lesson 11 is the class's only teaching lesson, shown on the course map as the one to learn next.
+  await expect(page.getByRole("heading", { name: "Lộ trình khóa học" })).toBeVisible();
+  await expect(
+    page.locator(".course-stage").getByRole("heading", { name: LESSON_TITLE }),
+  ).toBeVisible();
   await expect(page.getByRole("link", { name: DAILY_TITLE, exact: true })).toBeVisible();
 
   await page.getByRole("link", { name: "Đọc bài", exact: true }).click();

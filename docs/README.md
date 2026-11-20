@@ -55,6 +55,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | Vừa dạy vừa học: lớp tự học, chặn chủ lớp tự vào lớp dạy (CR-20), nguồn bài luyện hằng ngày, nhật ký buổi dạy, cập nhật bài từ mẫu (02/11/2026) | [BD Luồng 7](basic-design/teaching-service.md#luồng-7--vừa-dạy-vừa-học-lớp-tự-học-nhật-ký-buổi-dạy-và-cập-nhật-bài-mẫu-02112026) | [DD](detail-design/teaching-service.md#vừa-dạy-vừa-học--đã-triển-khai-02112026) | [kiểm chứng](testing/teach-and-learn.md) |
 | Lịch sử bài tập hằng ngày: điểm từng ngày như trang Sheet cũ, cho học viên và giáo viên (04/11/2026) | [BD](basic-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026) | [DD](detail-design/teaching-service.md#lịch-sử-bài-tập-hằng-ngày--04112026) | [kiểm chứng](testing/flow-fixes-2026-11-03.md#lịch-sử-bài-tập-hằng-ngày-04112026) |
 | Luyện đề JLPT: đề chính thức, đề Reng đúng cấu trúc đề thật, thư viện đề của lớp (19/11/2026) | [BD](basic-design/exam-center.md) | [DD](detail-design/phase-3.md#thi-thử-jlpt--09112026) | [kiểm chứng](testing/exam-center-2026-11-19.md) |
+| Lộ trình khóa học trên trang lớp, bảng xếp hạng tuần giữa các lớp của một giáo viên (20/11/2026) | [BD](basic-design/learner-motivation.md) | [BD](basic-design/learner-motivation.md) | [kiểm chứng](testing/learner-motivation-2026-11-20.md) |
 | Từ vựng N4 theo chủ đề, luyện theo dạng đề (19/11/2026) | [BD](basic-design/jlpt-vocab.md) | — | [kiểm chứng](testing/jlpt-vocab-2026-11-19.md) |
 | Luyện kanji theo bài; Kanji N5/N4 theo cấp có âm Hán Việt và mẹo nhớ (18/11/2026) | [BD](basic-design/kanji-practice.md), [Kanji N5/N4](basic-design/kanji-practice.md#kanji-n5n4-theo-cấp--18112026) | — | [kiểm chứng](testing/jlpt-kanji-2026-11-18.md) |
 | Tự nộp lượt bỏ dở khi hết hạn (05/11/2026) | [BD](basic-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026) | [DD](detail-design/phase-3.md#tự-nộp-lượt-còn-mở-khi-hết-hạn--05112026) | [rà soát](testing/system-review-2026-11-05.md) |
@@ -82,6 +83,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 13/11/2026
 
+- Lộ trình khóa học và bảng xếp hạng tuần 20/11/2026: [thiết kế](basic-design/learner-motivation.md), [kiểm chứng](testing/learner-motivation-2026-11-20.md).
 - Mã bài dễ đọc và thứ tự danh sách bài 20/11/2026: [rà soát mã trên giao diện, migration, test](testing/lesson-ids-order-2026-11-20.md).
 - 4 đề Reng N4 chuẩn và nâng cao 19/11/2026: [dữ liệu, chống trùng, soát độc lập](testing/n4-reng-exams-2026-11-19.md).
 - Ngân hàng đề N4 19/11/2026: [cấu trúc, định dạng, câu nghe, furigana, hai đề chính thức](testing/n4-bank-audit-2026-11-19.md).

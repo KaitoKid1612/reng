@@ -5,6 +5,7 @@ import { ClassWorkMeter } from "@/components/classroom/class-work-meter";
 import { JoinClassForm } from "@/components/classroom/join-class-form";
 import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
+import { WeeklyBoardTeaser } from "@/components/progress/weekly-board";
 import {
   AssignmentStatusBadge,
   describeAssignmentKind,
@@ -13,6 +14,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { requireStudent } from "@/lib/server/account";
+import { loadWeeklyBoardsSafely } from "@/lib/server/weekly-board";
 import { getLearnerAgenda } from "@/lib/server/learner";
 import { foldMissedDailySets } from "@/lib/learner-today";
 import { planLearnerToday } from "@/lib/server/learner-today";
@@ -27,7 +29,10 @@ const LISTED_WORK = 5;
 export default async function ClassesPage() {
   const account = await requireStudent("/classes");
   const now = new Date();
-  const agenda = await getLearnerAgenda(account.id, now);
+  const [agenda, boards] = await Promise.all([
+    getLearnerAgenda(account.id, now),
+    loadWeeklyBoardsSafely(account.id, now),
+  ]);
   const { schedules, plan: today } = await planLearnerToday(agenda, now);
   // With work from several classes, each item says which class it belongs to.
   const classNames = new Map(agenda.classes.map((item) => [item.id, item.name]));
@@ -103,6 +108,9 @@ export default async function ClassesPage() {
           </Link>
         )}
       </div>
+      {boards.map((board) => (
+        <WeeklyBoardTeaser key={board.teacherId} board={board} />
+      ))}
       {hasClass ? (
         <TodayPlan plan={today} now={now} showClass={hasSeveralClasses} />
       ) : (

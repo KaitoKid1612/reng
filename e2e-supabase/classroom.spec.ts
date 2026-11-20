@@ -116,7 +116,11 @@ test("a new learner joins through sign-up, email confirmation and the class code
   await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
   await page.waitForURL(`**/classes/${state.classA}`);
   await expect(page.getByRole("heading", { name: `Lớp A ${RUN_ID}` })).toBeVisible();
-  await expect(page.getByText("1. Làm quen và chào hỏi")).toBeVisible();
+  // The lesson is the first stage of the course map: not yet taught, so it is the one to learn next.
+  const firstStage = page.locator(".course-stage").first();
+  await expect(firstStage.getByRole("heading", { name: "Làm quen và chào hỏi" })).toBeVisible();
+  await expect(firstStage).toHaveAttribute("data-status", "next");
+  await expect(page.getByText("Đã học 0/1 bài")).toBeVisible();
   await page.screenshot({
     path: "test-results/classroom-class-desktop.png",
     fullPage: true,

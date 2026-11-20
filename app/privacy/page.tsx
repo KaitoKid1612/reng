@@ -39,7 +39,7 @@ const SUMMARY: LegalSummaryPoint[] = [
   { Icon: EyeOff, text: "Không bán dữ liệu, không quảng cáo, không dùng công cụ theo dõi." },
   {
     Icon: Users,
-    text: "Chỉ giáo viên của lớp bạn học mới xem được bài làm và kết quả của bạn trong lớp đó; riêng khi thi đấu cả lớp, tên và điểm lượt thi hiện trên màn hình chung.",
+    text: "Chỉ giáo viên của lớp bạn học mới xem được bài làm và kết quả của bạn trong lớp đó; riêng khi thi đấu cả lớp, tên và điểm lượt thi hiện trên màn hình chung, và khi giáo viên bật bảng tuần, tên cùng số câu đúng trong tuần hiện cho học viên các lớp của giáo viên đó (bạn tự ẩn được).",
   },
   { Icon: Trash2, text: "Học viên tự xóa tài khoản ở trang Tài khoản bất kỳ lúc nào." },
   {
@@ -156,6 +156,12 @@ const SECTIONS: LegalSection[] = [
             người đã vào phòng, số bạn chọn mỗi phương án, và tên cùng điểm của những bạn dẫn đầu
             hiện trên màn hình giáo viên chia sẻ cho cả lớp; điện thoại của mỗi người chỉ cho biết
             câu trả lời, điểm và hạng của chính mình.
+          </li>
+          <li>
+            <strong>Bảng xếp hạng tuần:</strong> khi giáo viên đưa lớp vào bảng tuần, học viên các
+            lớp của giáo viên đó đã vào bảng thấy họ tên hiển thị, số câu đúng và số ngày học trong
+            tuần của nhau, không thấy bài làm hay email. Bạn tự ẩn mình được ở Cài đặt → Tài khoản;
+            khi đó chỉ bạn thấy điểm của mình.
           </li>
           <li>
             <strong>Quản trị viên nền tảng:</strong> số liệu tổng hợp và thông tin tài khoản giáo

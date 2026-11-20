@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 20/11/2026
 
+- **Lộ trình khóa học** trên trang lớp của học viên: các bài dạy thành chặng nối nhau (✓ đã học, nút sáng là bài học tiếp, 🔒 sắp mở), thanh "Đã học X/Y bài" và 0–3 sao độ thuộc bài từ câu trả lời 30 ngày qua. Ngân hàng ôn, đề, bộ nghe chuyển sang mục **Tài liệu ôn tập**. Bài coi là đã học khi học viên đánh dấu đọc xong hoặc nhật ký buổi dạy cho thấy lớp đã đi qua. Xem [thiết kế](basic-design/learner-motivation.md).
+- **Bảng xếp hạng tuần:** giáo viên bật cho từng lớp ở Cài đặt lớp; học viên các lớp đã bật của cùng giáo viên xếp hạng chung theo số câu đúng trong tuần (mỗi bài tính lần làm cao nhất). Bảng đầy đủ ở Tiến độ, một dòng tóm tắt ở Lớp của tôi; ai cũng tự ẩn mình được ở Cài đặt → Tài khoản. Cần migration `20261120090000_weekly_board.sql`. Trang Quyền riêng tư đã ghi thêm.
 - **Không còn mã bài trên giao diện:** form **Soạn bài tiếng Nhật từ đầu** bỏ ô Mã bài; nhật ký hoạt động của admin ghi tên bài, bài tập, lớp hoặc người thay cho mã. Bài mới (tạo từ mẫu, bản sao, bài theo mẫu hay tạo từ đầu) có mã dễ đọc trong đường dẫn, ví dụ `minna-1-18-a8e144` thay cho `lesson-` + 32 ký tự. Bài cũ giữ mã cũ để link đã gửi vẫn mở được. Cần áp migration `20261120050000_readable_lesson_ids.sql` trước khi mã mới có hiệu lực cho bài tạo từ mẫu và bản sao. Xem [kiểm chứng](testing/lesson-ids-order-2026-11-20.md).
 - **Danh sách bài của giáo viên xếp theo khóa:** Minna Sơ cấp I, Sơ cấp II, rồi tài liệu N5, N4 (ngân hàng ôn và đề trước, ngữ pháp, mẹo sau), rồi các khóa khác; trong mỗi khóa theo thứ tự bài rồi tiêu đề. Trước đây chỉ xếp theo số thứ tự nên "Bài 1", "Mẹo N4 · 1" và ngân hàng ôn số 1 xen nhau. Ô chọn bài ở trang Giao bài và Nhập CSV cũng theo thứ tự này.
 

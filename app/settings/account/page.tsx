@@ -7,9 +7,11 @@ import {
   DeleteAccountForm,
   PasswordChangeForm,
 } from "@/components/settings/account-forms";
+import { BoardVisibilityForm } from "@/components/settings/board-visibility-form";
 import { SettingsNav } from "@/components/settings/settings-nav";
 import { buttonVariants } from "@/components/ui/button";
 import { requireAccount } from "@/lib/server/account";
+import { isHiddenFromBoard } from "@/lib/server/weekly-board";
 
 import type { Metadata } from "next";
 
@@ -17,6 +19,8 @@ export const metadata: Metadata = { title: "Tài khoản" };
 
 export default async function AccountSettingsPage() {
   const account = await requireAccount("/settings/account");
+  // Before the board's migration the setting cannot be read; the form then shows it unticked.
+  const isHidden = await isHiddenFromBoard(account.id).catch(() => false);
   return (
     <div className="settings-page">
       <div className="page-heading">
@@ -32,6 +36,7 @@ export default async function AccountSettingsPage() {
       <div className="settings-grid">
         <AccountNameForm fullName={account.fullName} />
         <PasswordChangeForm />
+        <BoardVisibilityForm isHidden={isHidden} />
       </div>
       <section className="section-block" aria-labelledby="study-links-title">
         <h2 id="study-links-title">Việc học của bạn</h2>

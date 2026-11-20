@@ -23,10 +23,19 @@ function inBatches(values: readonly string[]) {
 
 // A learner's answers in one class over the last month to questions tagged with a grammar point.
 // Only attempts whose results the learner may already see count, as on the progress page.
-export async function listClassGrammarAnswers(
+export function listClassGrammarAnswers(userId: string, classId: string, now: Date) {
+  return listClassTaggedAnswers(userId, classId, now, (tags) =>
+    tags.some((tag) => tag.startsWith("grammar:")),
+  );
+}
+
+// The same month of answers, keeping the questions whose tags pass `keep` (grammar points, the
+// lesson tags of the course map, or both in one read).
+export async function listClassTaggedAnswers(
   userId: string,
   classId: string,
   now: Date,
+  keep: (tags: readonly string[]) => boolean,
 ): Promise<GrammarAnswer[]> {
   const service = createServiceClient();
   const since = new Date(now.getTime() - WEAK_GRAMMAR_DAYS * 86_400_000).toISOString();
@@ -116,7 +125,7 @@ export async function listClassGrammarAnswers(
   const tagsOf = new Map(
     items
       .flat()
-      .filter((item) => item.tags?.some((tag) => tag.startsWith("grammar:")))
+      .filter((item) => keep(item.tags ?? []))
       .map((item) => [`${item.assignment_id}:${item.question_id}`, item.tags ?? []]),
   );
   const submissionOf = new Map(visible.map((row) => [row.id, row]));

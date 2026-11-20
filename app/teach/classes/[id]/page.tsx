@@ -18,6 +18,7 @@ import { HardQuestionList } from "@/components/teach/hard-question-list";
 import { JoinCodeControls } from "@/components/teach/join-code-controls";
 import { StartChecklist } from "@/components/teach/start-checklist";
 import { TeachingPanel } from "@/components/teach/teaching-panel";
+import { WeeklyBoardForm } from "@/components/teach/weekly-board-form";
 import { buttonVariants } from "@/components/ui/button";
 import { classQuestionLang } from "@/lib/assignment";
 import { buildAssignmentMessage } from "@/lib/assignment-message";
@@ -31,6 +32,7 @@ import { listClassSessions } from "@/lib/server/class-sessions";
 import { findDailyPracticeSource } from "@/lib/server/daily-practice";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { getClassReport, HARD_QUESTION_ASSIGNMENTS } from "@/lib/server/reports";
+import { isClassOnWeeklyBoard } from "@/lib/server/weekly-board";
 import { absoluteUrl } from "@/lib/site";
 
 import type { ClassReportAssignment } from "@/lib/server/reports";
@@ -113,12 +115,14 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
     message: messageFor(assignment),
   }));
   // The source lookup reads question lists, so it only runs while daily practice is on.
-  const [sessions, dailySource, schedule] = await Promise.all([
+  const [sessions, dailySource, schedule, isOnBoard] = await Promise.all([
     classRow.self_study ? [] : listClassSessions(classRow.id),
     classRow.daily_practice_size
       ? findDailyPracticeSource(classRow.id, classRow.daily_practice_lesson_id, now)
       : null,
     getClassSchedule(classRow.id),
+    // Before the board's migration the flag cannot be read; the form then shows it off.
+    isClassOnWeeklyBoard(classRow.id).catch(() => false),
   ]);
   const nextSessionText = describeUpcomingSession(schedule.slots, now);
   const dailyLevel = dailyFormatLevel(classRow.daily_practice_format);
@@ -407,6 +411,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
       <section className="section-block" aria-labelledby="class-settings">
         <h2 id="class-settings">Cài đặt lớp</h2>
         <ClassSettingsForm classRow={classRow} />
+        <WeeklyBoardForm classId={classRow.id} isOnBoard={isOnBoard} />
       </section>
     </>
   );

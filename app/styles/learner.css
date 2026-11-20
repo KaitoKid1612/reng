@@ -569,3 +569,180 @@
   text-align: center;
   animation: feedback-pop 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* Course map on the learner's class page: a vertical path of numbered stages. */
+.course-map-summary {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.course-map-summary p {
+  margin: 0;
+}
+
+.course-map-bar {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.course-map-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--correct);
+}
+
+.course-stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.course-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+/* The path: a line from each node down to the next one. */
+.course-stage:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  bottom: 0;
+  left: 1.25rem;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--border);
+}
+
+.course-stage[data-status="done"]:not(:last-child)::before {
+  background: var(--correct);
+}
+
+.course-stage-node {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.course-stage[data-status="done"] .course-stage-node {
+  border-color: var(--correct);
+  background: var(--correct);
+  color: var(--surface);
+}
+
+.course-stage[data-status="next"] .course-stage-node {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.course-stage[data-status="open"] .course-stage-node {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.course-stage-body h3 {
+  margin: 0.4rem 0 0.15rem;
+  font-size: 1rem;
+}
+
+.course-stage[data-status="locked"] .course-stage-body h3 {
+  color: var(--muted);
+}
+
+.course-stage-body .item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.course-stage[data-status="next"] .course-stage-status {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.course-stage-stars {
+  color: var(--brand-bell);
+  letter-spacing: 0.05em;
+}
+
+.course-stage-stars.muted {
+  color: var(--muted);
+  letter-spacing: normal;
+}
+
+.course-stage-stars-empty {
+  color: var(--grid);
+}
+
+.course-stage-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+}
+
+/* Weekly board on Tiến độ, and its one-line teaser on Lớp của tôi. */
+.weekly-board-callout {
+  font-weight: 600;
+}
+
+.weekly-board-table {
+  width: 100%;
+  /* Short rows stay readable on a wide screen: points sit near the names. */
+  max-width: 40rem;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+}
+
+.weekly-board-table th,
+.weekly-board-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.weekly-board-table td:first-child {
+  width: 3.5rem;
+  font-size: 1.15rem;
+}
+
+.weekly-board-table td:nth-child(3),
+.weekly-board-table td:nth-child(4),
+.weekly-board-table thead th:nth-child(3),
+.weekly-board-table thead th:nth-child(4) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.weekly-board-table tbody th {
+  font-weight: 500;
+}
+
+.weekly-board-table tr[data-viewer] {
+  background: var(--primary-soft);
+}
+
+.weekly-board-teaser {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}

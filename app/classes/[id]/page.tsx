@@ -7,6 +7,7 @@ import {
   describeDue,
   describeOpenDue,
 } from "@/components/classroom/assignment-labels";
+import { CourseMap } from "@/components/classroom/course-map";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { JapaneseText } from "@/components/lessons/japanese-text";
 import { buttonVariants } from "@/components/ui/button";
@@ -19,11 +20,12 @@ import { foldMissedDailySets } from "@/lib/learner-today";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { findClassGrammarLinks, hasClassGrammar } from "@/lib/server/class-grammar";
 import { getClassSchedule } from "@/lib/server/class-schedule";
+import { loadCourseMap } from "@/lib/server/course-map";
 import { hasDailyRuns } from "@/lib/server/daily-history";
-import { listClassGrammarAnswers } from "@/lib/server/grammar-weak-points";
 import { getStudentClassView } from "@/lib/server/learner";
 import { loadOrNotFound } from "@/lib/server/pages";
 
+import type { GrammarAnswer } from "@/lib/grammar-weak-points";
 import type { LearnerAssignment } from "@/lib/server/learner";
 import type { Metadata } from "next";
 
@@ -105,11 +107,16 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const view = await loadOrNotFound(loadClassView(account.id, id));
   const hasGrammar = await hasClassGrammar(account.id, id, now);
   // Membership was checked above, so the timetable is read only for a member.
-  const [schedule, hasDaily, weakGrammar] = await Promise.all([
+  const [schedule, hasDaily, courseMap] = await Promise.all([
     getClassSchedule(view.classRow.id),
     hasDailyRuns(view.classRow.id),
-    hasGrammar ? loadWeakGrammar(account.id, view.classRow.id, now) : [],
+    loadClassCourseMap(account.id, view.classRow.id, view.allLessons, now),
   ]);
+  const weakGrammar = hasGrammar
+    ? await loadWeakGrammar(account.id, view.classRow.id, courseMap.answers, now)
+    : [];
+  // Teaching lessons sit on the course map; review banks, exams and listening sets are listed apart.
+  const reviewLessons = view.lessons.filter((lesson) => !lesson.isCourseLesson);
   const nextSession = describeUpcomingSession(schedule.slots, now);
   const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
   // Same order as Lớp của tôi: on-time work by deadline, then late work, missed daily sets folded.
@@ -241,54 +248,74 @@ export default async function ClassPage({ params }: ClassPageProps) {
           </ul>
         </section>
       )}
-      <section className="section-block" aria-labelledby="class-lessons">
-        <h2 id="class-lessons">Bài học đã mở</h2>
-        {hasGrammar && (
-          <p className="small">
-            <Link href={`/grammar?class=${view.classRow.id}`}>Tra ngữ pháp các bài của lớp</Link>
-          </p>
-        )}
-        {view.lessons.length ? (
-          <ul className="item-list">
-            {view.lessons.map((lesson) => (
-              <li key={lesson.lessonId}>
-                <div>
-                  <h3>
-                    {lesson.orderNo}. {lesson.title}
-                  </h3>
-                </div>
-                <div className="button-row">
-                  <Link
-                    href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}&class=${view.classRow.id}`}
-                  >
-                    Đọc bài
-                  </Link>
-                  {lesson.hasListening && (
-                    <Link href={`/listening/${lesson.lessonId}?version=${lesson.versionId}`}>
-                      Luyện nghe
+      {courseMap.stages.length > 0 && (
+        <section className="section-block" aria-labelledby="class-course-map">
+          <h2 id="class-course-map">Lộ trình khóa học</h2>
+          {hasGrammar && (
+            <p className="small">
+              <Link href={`/grammar?class=${view.classRow.id}`}>Tra ngữ pháp các bài của lớp</Link>
+            </p>
+          )}
+          <CourseMap
+            classId={view.classRow.id}
+            isJapanese={view.classRow.language_tag === "ja-JP"}
+            stages={courseMap.stages}
+            // Open lessons know their listening sets, so they come last and win.
+            lessons={[...view.allLessons, ...view.lessons]}
+          />
+        </section>
+      )}
+      {/* With a course map, the review list only shows when the class has banks or exams. */}
+      {(reviewLessons.length > 0 || !courseMap.stages.length) && (
+        <section className="section-block" aria-labelledby="class-lessons">
+          <h2 id="class-lessons">
+            {courseMap.stages.length ? "Tài liệu ôn tập" : "Bài học đã mở"}
+          </h2>
+          {!courseMap.stages.length && hasGrammar && (
+            <p className="small">
+              <Link href={`/grammar?class=${view.classRow.id}`}>Tra ngữ pháp các bài của lớp</Link>
+            </p>
+          )}
+          {reviewLessons.length ? (
+            <ul className="item-list">
+              {reviewLessons.map((lesson) => (
+                <li key={lesson.lessonId}>
+                  <div>
+                    <h3>{lesson.title}</h3>
+                  </div>
+                  <div className="button-row">
+                    <Link
+                      href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}&class=${view.classRow.id}`}
+                    >
+                      Đọc bài
                     </Link>
-                  )}
-                  {lesson.hasVocab && (
-                    <>
-                      <Link href={`/vocabulary/${lesson.lessonId}?version=${lesson.versionId}`}>
-                        Flashcard
+                    {lesson.hasListening && (
+                      <Link href={`/listening/${lesson.lessonId}?version=${lesson.versionId}`}>
+                        Luyện nghe
                       </Link>
-                      <Link href={`/kanji/${lesson.lessonId}?version=${lesson.versionId}`}>
-                        {view.classRow.language_tag === "ja-JP" ? "Luyện kanji" : "Luyện chữ Hán"}
-                      </Link>
-                    </>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="muted">Giáo viên chưa mở bài học nào cho lớp.</p>
-        )}
-        {view.upcomingLessonCount > 0 && (
-          <p className="small muted">{view.upcomingLessonCount} bài sẽ mở theo lịch của lớp.</p>
-        )}
-      </section>
+                    )}
+                    {lesson.hasVocab && (
+                      <>
+                        <Link href={`/vocabulary/${lesson.lessonId}?version=${lesson.versionId}`}>
+                          Flashcard
+                        </Link>
+                        <Link href={`/kanji/${lesson.lessonId}?version=${lesson.versionId}`}>
+                          {view.classRow.language_tag === "ja-JP" ? "Luyện kanji" : "Luyện chữ Hán"}
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="muted">Giáo viên chưa mở bài học nào cho lớp.</p>
+          )}
+          {!courseMap.stages.length && view.upcomingLessonCount > 0 && (
+            <p className="small muted">{view.upcomingLessonCount} bài sẽ mở theo lịch của lớp.</p>
+          )}
+        </section>
+      )}
       {otherWork.length > 0 && (
         <section className="section-block" aria-labelledby="done-assignments">
           <h2 id="done-assignments">Bài đã làm và bài khác</h2>
@@ -318,15 +345,35 @@ export default async function ClassPage({ params }: ClassPageProps) {
   );
 }
 
-// The class's grammar points this learner got wrong lately, each with its place in a class lesson.
-// A failed read only leaves the section out.
-async function loadWeakGrammar(userId: string, classId: string, now: Date) {
+// The course map of the class; a failed read leaves the map out and the review list in.
+async function loadClassCourseMap(
+  userId: string,
+  classId: string,
+  lessons: Parameters<typeof loadCourseMap>[2],
+  now: Date,
+) {
   try {
-    const [links, answers] = await Promise.all([
-      findClassGrammarLinks(userId, classId, now),
-      listClassGrammarAnswers(userId, classId, now),
-    ]);
-    return summarizeGrammarWeakPoints(answers, new Set(Object.keys(links))).map((point) => ({
+    return await loadCourseMap(userId, classId, lessons, now);
+  } catch (error) {
+    console.error("Course map failed", classId, error instanceof Error ? error.name : "unknown");
+    return { stages: [], answers: [] as GrammarAnswer[] };
+  }
+}
+
+// The class's grammar points this learner got wrong lately, each with its place in a class lesson.
+// The answers come from the course map's read. A failed read only leaves the section out.
+async function loadWeakGrammar(
+  userId: string,
+  classId: string,
+  answers: readonly GrammarAnswer[],
+  now: Date,
+) {
+  try {
+    const links = await findClassGrammarLinks(userId, classId, now);
+    const grammarAnswers = answers.filter((answer) =>
+      answer.tags.some((tag) => tag.startsWith("grammar:")),
+    );
+    return summarizeGrammarWeakPoints(grammarAnswers, new Set(Object.keys(links))).map((point) => ({
       ...point,
       link: links[point.id],
     }));

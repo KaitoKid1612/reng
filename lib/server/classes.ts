@@ -334,9 +334,23 @@ export interface ClassLesson {
   availableAt: string;
   // A question bank has no words, so flashcards and character practice would open empty.
   hasVocab: boolean;
+  // A teaching lesson (words or grammar), a stage of the course map; banks and exams are not.
+  isCourseLesson: boolean;
+  courseId: string;
+  // The lesson's number in its course (Minna 17), which its question tags use.
+  lessonOrder: number;
 }
 
-const classVersionSchema = versionSummarySchema.extend({ first_word: z.unknown() });
+const classVersionSchema = versionSummarySchema.extend({
+  first_word: z.unknown(),
+  first_grammar: z.unknown(),
+  course_id: z.string(),
+  lesson_order: z.number().int(),
+});
+
+function isPresent(value: unknown) {
+  return value !== null && value !== undefined;
+}
 
 export async function listClassLessons(classId: string): Promise<ClassLesson[]> {
   const service = createServiceClient();
@@ -355,7 +369,7 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
     service
       .from("lesson_versions")
       .select(
-        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag, first_word:content->vocab->0",
+        "id, lesson_id, version_no, title, published_at, course_id, lesson_order:order_no, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag, first_word:content->vocab->0, first_grammar:content->grammar->0",
       )
       .in(
         "id",
@@ -375,7 +389,10 @@ export async function listClassLessons(classId: string): Promise<ClassLesson[]> 
       title: version.title,
       orderNo: row.order_no,
       availableAt: row.available_at,
-      hasVocab: version.first_word !== null && version.first_word !== undefined,
+      hasVocab: isPresent(version.first_word),
+      isCourseLesson: isPresent(version.first_word) || isPresent(version.first_grammar),
+      courseId: version.course_id,
+      lessonOrder: version.lesson_order,
     };
   });
 }

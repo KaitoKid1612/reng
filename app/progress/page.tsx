@@ -9,7 +9,9 @@ import { WeeklyScoreChart } from "@/components/progress/weekly-score-chart";
 import { buttonVariants } from "@/components/ui/button";
 import { scoreBand } from "@/lib/daily-history";
 import { formatPercent } from "@/lib/grading/grade";
+import { WeeklyBoardCard } from "@/components/progress/weekly-board";
 import { requireStudent } from "@/lib/server/account";
+import { loadWeeklyBoardsSafely } from "@/lib/server/weekly-board";
 import { listLearnerJlptHistory } from "@/lib/server/jlpt-history";
 import { getProgressSummary, getQuestionKindStats } from "@/lib/server/learner";
 import { weakestKind } from "@/lib/question-kinds";
@@ -61,10 +63,11 @@ export default async function ProgressPage() {
   const account = await requireStudent("/progress");
   const now = new Date();
   const calendarSince = new Date(now.getTime() - CALENDAR_WEEKS * 7 * DAY_MS);
-  const [summary, kindStats, jlptHistory] = await Promise.all([
+  const [summary, kindStats, jlptHistory, boards] = await Promise.all([
     getProgressSummary(account.id, now, calendarSince),
     getQuestionKindStats(account.id, now),
     listLearnerJlptHistory(account.id, now),
+    loadWeeklyBoardsSafely(account.id, now),
   ]);
   const weakest = weakestKind(kindStats);
   const weeks = weeklyScores(
@@ -110,6 +113,9 @@ export default async function ProgressPage() {
           <span>thẻ đang cần ôn</span>
         </div>
       </div>
+      {boards.map((board) => (
+        <WeeklyBoardCard key={board.teacherId} board={board} />
+      ))}
       <section className="section-block" aria-labelledby="streak-progress">
         <h2 id="streak-progress">Chuỗi ngày học</h2>
         <div className="streak-section">
