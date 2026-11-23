@@ -1,0 +1,1034 @@
+{
+  "id": "minna-2-44",
+  "title": "Bài 44 – Quá mức, dễ khó và lựa chọn",
+  "titleJa": "第44課・〜すぎます、〜やすい、〜にします",
+  "summary": "Nói quá mức bằng すぎます, dễ khó bằng やすい／にくい, làm thay đổi bằng 〜く／〜にします và chọn bằng Nにします.",
+  "order": 44,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4401",
+        "jp": "なきます",
+        "romaji": "nakimasu",
+        "vi": "khóc",
+        "audio": null,
+        "kanji": "泣きます"
+      },
+      {
+        "id": "v4402",
+        "jp": "わらいます",
+        "romaji": "waraimasu",
+        "vi": "cười",
+        "audio": null,
+        "kanji": "笑います"
+      },
+      {
+        "id": "v4403",
+        "jp": "ねむります",
+        "romaji": "nemurimasu",
+        "vi": "ngủ",
+        "audio": null,
+        "kanji": "眠ります",
+        "image": "/icons/vocab/sleeping-face.svg"
+      },
+      {
+        "id": "v4404",
+        "jp": "かわきます",
+        "romaji": "kawakimasu",
+        "vi": "khô",
+        "audio": null,
+        "kanji": "乾きます",
+        "note": "せんたくものが かわきます"
+      },
+      {
+        "id": "v4405",
+        "jp": "ぬれます",
+        "romaji": "nuremasu",
+        "vi": "ướt",
+        "audio": null,
+        "kanji": "濡れます"
+      },
+      {
+        "id": "v4406",
+        "jp": "すべります",
+        "romaji": "suberimasu",
+        "vi": "trượt, trơn",
+        "audio": null,
+        "kanji": "滑ります"
+      },
+      {
+        "id": "v4407",
+        "jp": "おきます",
+        "romaji": "okimasu",
+        "vi": "[tai nạn] xảy ra",
+        "audio": null,
+        "kanji": "起きます",
+        "note": "じこが おきます"
+      },
+      {
+        "id": "v4408",
+        "jp": "ちょうせつします",
+        "romaji": "chousetsu shimasu",
+        "vi": "điều chỉnh",
+        "audio": null,
+        "kanji": "調節します"
+      },
+      {
+        "id": "v4409",
+        "jp": "あんぜんな",
+        "romaji": "anzenna",
+        "vi": "an toàn",
+        "audio": null,
+        "kanji": "安全な"
+      },
+      {
+        "id": "v4410",
+        "jp": "きけんな",
+        "romaji": "kikenna",
+        "vi": "nguy hiểm",
+        "audio": null,
+        "kanji": "危険な"
+      },
+      {
+        "id": "v4411",
+        "jp": "ていねいな",
+        "romaji": "teineina",
+        "vi": "lịch sự, cẩn thận",
+        "audio": null,
+        "kanji": "丁寧な"
+      },
+      {
+        "id": "v4412",
+        "jp": "こまかい",
+        "romaji": "komakai",
+        "vi": "nhỏ, chi tiết",
+        "audio": null,
+        "kanji": "細かい"
+      },
+      {
+        "id": "v4413",
+        "jp": "ほそい",
+        "romaji": "hosoi",
+        "vi": "mảnh, thon",
+        "audio": null,
+        "kanji": "細い"
+      },
+      {
+        "id": "v4414",
+        "jp": "ふとい",
+        "romaji": "futoi",
+        "vi": "to, mập (đường kính)",
+        "audio": null,
+        "kanji": "太い"
+      },
+      {
+        "id": "v4415",
+        "jp": "あつい",
+        "romaji": "atsui",
+        "vi": "dày",
+        "audio": null,
+        "kanji": "厚い"
+      },
+      {
+        "id": "v4416",
+        "jp": "うすい",
+        "romaji": "usui",
+        "vi": "mỏng; nhạt (vị, màu)",
+        "audio": null,
+        "kanji": "薄い"
+      },
+      {
+        "id": "v4417",
+        "jp": "こい",
+        "romaji": "koi",
+        "vi": "đặc, đậm",
+        "audio": null,
+        "kanji": "濃い"
+      },
+      {
+        "id": "v4418",
+        "jp": "くうき",
+        "romaji": "kuuki",
+        "vi": "không khí",
+        "audio": null,
+        "kanji": "空気"
+      },
+      {
+        "id": "v4419",
+        "jp": "なみだ",
+        "romaji": "namida",
+        "vi": "nước mắt",
+        "audio": null,
+        "kanji": "涙"
+      },
+      {
+        "id": "v4420",
+        "jp": "わしょく",
+        "romaji": "washoku",
+        "vi": "món ăn Nhật",
+        "audio": null,
+        "kanji": "和食",
+        "image": "/icons/vocab/sushi.svg"
+      },
+      {
+        "id": "v4421",
+        "jp": "ようしょく",
+        "romaji": "youshoku",
+        "vi": "món ăn Âu",
+        "audio": null,
+        "kanji": "洋食"
+      },
+      {
+        "id": "v4422",
+        "jp": "おかず",
+        "romaji": "okazu",
+        "vi": "thức ăn ăn kèm cơm",
+        "audio": null
+      },
+      {
+        "id": "v4423",
+        "jp": "りょう",
+        "romaji": "ryou",
+        "vi": "lượng",
+        "audio": null,
+        "kanji": "量"
+      },
+      {
+        "id": "v4424",
+        "jp": "〜ばい",
+        "romaji": "bai",
+        "vi": "gấp … lần",
+        "audio": null,
+        "kanji": "〜倍",
+        "note": "２ばい: gấp đôi"
+      },
+      {
+        "id": "v4425",
+        "jp": "シングル",
+        "romaji": "shinguru",
+        "vi": "phòng đơn",
+        "audio": null
+      },
+      {
+        "id": "v4426",
+        "jp": "ツイン",
+        "romaji": "tsuin",
+        "vi": "phòng hai giường",
+        "audio": null
+      },
+      {
+        "id": "v4427",
+        "jp": "たんす",
+        "romaji": "tansu",
+        "vi": "tủ có ngăn kéo",
+        "audio": null,
+        "kanji": "箪笥"
+      },
+      {
+        "id": "v4428",
+        "jp": "せんたくもの",
+        "romaji": "sentakumono",
+        "vi": "đồ giặt",
+        "audio": null,
+        "kanji": "洗濯物"
+      },
+      {
+        "id": "v4429",
+        "jp": "りゆう",
+        "romaji": "riyuu",
+        "vi": "lý do",
+        "audio": null,
+        "kanji": "理由"
+      },
+      {
+        "id": "v4430",
+        "jp": "カット",
+        "romaji": "katto",
+        "vi": "cắt tóc",
+        "audio": null
+      },
+      {
+        "id": "v4431",
+        "jp": "シャンプー",
+        "romaji": "shanpuu",
+        "vi": "gội đầu, dầu gội",
+        "audio": null
+      },
+      {
+        "id": "v4432",
+        "jp": "ショート",
+        "romaji": "shooto",
+        "vi": "kiểu tóc ngắn",
+        "audio": null
+      },
+      {
+        "id": "v4433",
+        "jp": "DVD",
+        "romaji": "dii bui dii",
+        "vi": "đĩa DVD",
+        "audio": null,
+        "image": "/icons/vocab/optical-disk.svg"
+      },
+      {
+        "id": "v4434",
+        "jp": "どう なさいますか。",
+        "romaji": "dou nasaimasu ka",
+        "vi": "Quý khách muốn làm gì ạ?",
+        "audio": null
+      },
+      {
+        "id": "v4435",
+        "jp": "どういう ふうに なさいますか。",
+        "romaji": "dou iu fuu ni nasaimasu ka",
+        "vi": "Quý khách muốn làm kiểu thế nào ạ?",
+        "audio": null
+      },
+      {
+        "id": "v4436",
+        "jp": "〜みたいに して ください。",
+        "romaji": "mitai ni shite kudasai",
+        "vi": "Làm giống như … giúp tôi.",
+        "audio": null
+      },
+      {
+        "id": "v4437",
+        "jp": "これで よろしいでしょうか。",
+        "romaji": "kore de yoroshii deshou ka",
+        "vi": "Thế này được chưa ạ?",
+        "audio": null
+      },
+      {
+        "id": "v4438",
+        "jp": "どうも おつかれさまでした。",
+        "romaji": "doumo otsukaresama deshita",
+        "vi": "Xong rồi ạ, quý khách vất vả rồi (thợ nói khi làm xong).",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4401",
+        "pattern": "Vます／いA／なA + すぎます",
+        "vi": "Quá mức, quá …",
+        "explain": "Động từ bỏ ます, いA bỏ い, なA giữ nguyên gốc rồi thêm すぎます. Chia như động từ nhóm 2: すぎて, すぎた. Thường mang ý không tốt.",
+        "viMistake": "いい → よすぎます. Muốn khen thì dùng とても, không dùng すぎます.",
+        "examples": [
+          {
+            "jp": "{昨日|きのう} {食|た}べすぎて、おなかが {痛|いた}いです。",
+            "vi": "Hôm qua ăn quá nhiều nên tôi đau bụng.",
+            "audio": null
+          },
+          {
+            "jp": "{説明|せつめい}が {複雑|ふくざつ}すぎて、わかりません。",
+            "vi": "Lời giải thích phức tạp quá nên tôi không hiểu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4402",
+        "pattern": "Vます + やすい／にくい",
+        "vi": "Dễ / khó làm, dễ / khó xảy ra",
+        "explain": "Với hành động có chủ ý: dễ làm, khó làm (かきやすい). Với động từ không chủ ý (sự việc tự xảy ra): dễ xảy ra, khó xảy ra (われやすい, かわきにくい). Chia như tính từ い.",
+        "viMistake": "〜やすい này khác 安い (rẻ). Phủ định: かきやすく ないです.",
+        "examples": [
+          {
+            "jp": "この ペンは {軽|かる}くて、{書|か}きやすいです。",
+            "vi": "Cây bút này nhẹ nên dễ viết.",
+            "audio": null
+          },
+          {
+            "jp": "{厚|あつ}い タオルは {乾|かわ}きにくいです。",
+            "vi": "Khăn dày khó khô.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4403",
+        "pattern": "いAく／なAに／Nに + します",
+        "vi": "Làm cho trở nên …",
+        "explain": "Ai đó chủ động thay đổi trạng thái của vật. So sánh: なります (bài 19) là tự thay đổi, します là có người làm cho thay đổi.",
+        "viMistake": "Vật bị thay đổi đi với を: へやを きれいに します. へやが きれいに なりました là tự nó sạch.",
+        "examples": [
+          {
+            "jp": "テレビの {音|おと}を {小|ちい}さく して ください。",
+            "vi": "Hãy vặn nhỏ tiếng tivi.",
+            "audio": null
+          },
+          {
+            "jp": "{部屋|へや}を きれいに しました。",
+            "vi": "Tôi đã dọn phòng sạch sẽ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4404",
+        "pattern": "N + に します",
+        "vi": "Chọn, quyết định lấy N",
+        "explain": "Dùng khi gọi món, chọn đồ, chọn ngày giờ.",
+        "viMistake": "Hỏi chọn: 〜と 〜と どちらに しますか. Trả lời: 〜に します.",
+        "examples": [
+          {
+            "jp": "わたしは {和食|わしょく}に します。",
+            "vi": "Tôi chọn món Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{部屋|へや}は ツインに します。",
+            "vi": "Phòng thì tôi lấy phòng hai giường.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4401",
+        "type": "title",
+        "jp": "第44課 · すぎます・やすい・にします",
+        "vi": "Bài 44 · Quá mức, dễ khó và lựa chọn"
+      },
+      {
+        "id": "s4402",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói một việc vượt quá mức thích hợp. Nhận xét đồ dùng dễ hay khó dùng. Nói mình muốn làm cho vật thay đổi thế nào và chọn món, chọn phòng."
+      },
+      {
+        "id": "s4403",
+        "type": "vocab",
+        "refs": ["v4401", "v4402", "v4403", "v4404", "v4405", "v4406", "v4407", "v4408"]
+      },
+      {
+        "id": "s4404",
+        "type": "vocab",
+        "refs": ["v4409", "v4410", "v4411", "v4412", "v4413", "v4414", "v4415", "v4416"]
+      },
+      {
+        "id": "s4405",
+        "type": "vocab",
+        "refs": ["v4417", "v4418", "v4419", "v4420", "v4421", "v4422", "v4423", "v4424"]
+      },
+      {
+        "id": "s4406",
+        "type": "vocab",
+        "refs": ["v4425", "v4426", "v4427", "v4428", "v4429", "v4430", "v4431", "v4432"]
+      },
+      {
+        "id": "s4407",
+        "type": "vocab",
+        "refs": ["v4433", "v4434", "v4435", "v4436", "v4437", "v4438"]
+      },
+      {
+        "id": "s4408",
+        "type": "grammar",
+        "ref": "g4401"
+      },
+      {
+        "id": "s4409",
+        "type": "example",
+        "ref": "g4401",
+        "reveal": true
+      },
+      {
+        "id": "s4410",
+        "type": "quiz",
+        "ref": "q4401"
+      },
+      {
+        "id": "s4411",
+        "type": "table",
+        "title": "Chia thể すぎます",
+        "columns": ["Gốc", "Quá mức"],
+        "rows": [
+          ["{飲|の}みます", "{飲|の}みすぎます"],
+          ["{高|たか}い", "{高|たか}すぎます"],
+          ["いい", "よすぎます"],
+          ["{静|しず}かな", "{静|しず}かすぎます"],
+          ["{細|こま}かい", "{細|こま}かすぎます"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho học viên kể một lần làm quá: 食べすぎました, 寝すぎました, 買いすぎました."
+      },
+      {
+        "id": "s4412",
+        "type": "quiz",
+        "ref": "q4403"
+      },
+      {
+        "id": "s4413",
+        "type": "grammar",
+        "ref": "g4402"
+      },
+      {
+        "id": "s4414",
+        "type": "example",
+        "ref": "g4402",
+        "reveal": true
+      },
+      {
+        "id": "s4415",
+        "type": "quiz",
+        "ref": "q4404"
+      },
+      {
+        "id": "s4416",
+        "type": "grammar",
+        "ref": "g4403"
+      },
+      {
+        "id": "s4417",
+        "type": "example",
+        "ref": "g4403",
+        "reveal": true
+      },
+      {
+        "id": "s4418",
+        "type": "quiz",
+        "ref": "q4407"
+      },
+      {
+        "id": "s4419",
+        "type": "table",
+        "title": "なります hay します",
+        "columns": ["Tự thay đổi", "Có người làm thay đổi"],
+        "rows": [
+          ["{部屋|へや}が きれいに なりました", "{部屋|へや}を きれいに しました"],
+          ["{音|おと}が {小|ちい}さく なりました", "{音|おと}を {小|ちい}さく しました"],
+          ["{髪|かみ}が {短|みじか}く なりました", "{髪|かみ}を {短|みじか}く しました"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Nhấn trợ từ: なります đi với が, します đi với を."
+      },
+      {
+        "id": "s4420",
+        "type": "quiz",
+        "ref": "q4409"
+      },
+      {
+        "id": "s4421",
+        "type": "grammar",
+        "ref": "g4404"
+      },
+      {
+        "id": "s4422",
+        "type": "example",
+        "ref": "g4404",
+        "reveal": true
+      },
+      {
+        "id": "s4423",
+        "type": "quiz",
+        "ref": "q4410"
+      },
+      {
+        "id": "s4424",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["細", "{細|ほそ}い・{細|こま}かい", "mảnh, nhỏ"],
+          ["危", "{危険|きけん}", "nguy"],
+          ["険", "{危険|きけん}", "hiểm"],
+          ["笑", "{笑|わら}います", "cười"],
+          ["泣", "{泣|な}きます", "khóc"],
+          ["乾", "{乾|かわ}きます", "khô"],
+          ["濃", "{濃|こ}い", "đậm"],
+          ["薄", "{薄|うす}い", "mỏng, nhạt"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4425",
+        "type": "table",
+        "title": "Từ tham khảo · Tiệm cắt tóc",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{前髪|まえがみ}", "tóc mái"],
+          ["パーマ", "uốn tóc"],
+          ["カラー", "nhuộm tóc"],
+          ["ブロー", "sấy tạo kiểu"],
+          ["{揃|そろ}えます", "tỉa cho đều"],
+          ["ひげを {剃|そ}ります", "cạo râu"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên nói kiểu tóc mong muốn: 前髪を 短く して ください."
+      },
+      {
+        "id": "s4426",
+        "type": "dialogue",
+        "title": "Hội thoại · Ở tiệm cắt tóc",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Thợ cắt tóc",
+            "jp": "いらっしゃいませ。どう なさいますか。",
+            "vi": "Kính chào quý khách. Quý khách muốn làm gì ạ?"
+          },
+          {
+            "speaker": "Nam",
+            "jp": "カットを お{願|ねが}いします。",
+            "vi": "Cắt tóc giúp tôi."
+          },
+          {
+            "speaker": "Thợ cắt tóc",
+            "jp": "どういう ふうに なさいますか。",
+            "vi": "Quý khách muốn cắt kiểu thế nào ạ?"
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{横|よこ}を {短|みじか}く して、{前|まえ}は あまり {切|き}らないで ください。",
+            "vi": "Cắt ngắn hai bên, phía trước đừng cắt nhiều."
+          },
+          {
+            "speaker": "Thợ cắt tóc",
+            "jp": "{長|なが}さは これで よろしいでしょうか。",
+            "vi": "Độ dài thế này được chưa ạ?"
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{前|まえ}が ちょっと {長|なが}すぎます。もう {少|すこ}し {短|みじか}く して ください。",
+            "vi": "Phía trước hơi dài quá. Cắt ngắn thêm chút nữa giúp tôi."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Nam muốn cắt thế nào? Lúc cuối Nam nhờ sửa gì?"
+      },
+      {
+        "id": "s4427",
+        "type": "quiz",
+        "ref": "q4418"
+      },
+      {
+        "id": "s4428",
+        "type": "dialogue",
+        "title": "Nghe · Sau tiệc tất niên",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{顔色|かおいろ}が {悪|わる}いですね。どうしたんですか。",
+            "vi": "Sắc mặt anh kém quá. Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "ゆうべの {忘年会|ぼうねんかい}で {飲|の}みすぎたんです。",
+            "vi": "Tối qua tôi uống quá nhiều ở tiệc tất niên."
+          },
+          {
+            "speaker": "An",
+            "jp": "{大丈夫|だいじょうぶ}ですか。",
+            "vi": "Anh có sao không?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "{頭|あたま}が {痛|いた}いです。{今日|きょう}は {早|はや}く {寝|ね}ます。",
+            "vi": "Tôi đau đầu. Hôm nay tôi sẽ ngủ sớm."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi Minh bị sao và vì sao."
+      },
+      {
+        "id": "s4429",
+        "type": "quiz",
+        "ref": "q4419"
+      },
+      {
+        "id": "s4430",
+        "type": "quiz",
+        "ref": "q4420"
+      },
+      {
+        "id": "s4431",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          ["すぎます／この {靴|くつ}は／{大|おお}き", "この {靴|くつ}は {大|おお}きすぎます。"],
+          [
+            "です／{使|つか}い／やすい／この {鞄|かばん}は",
+            "この {鞄|かばん}は {使|つか}いやすいです。"
+          ],
+          ["します／{部屋|へや}を／{暖|あたた}かく", "{部屋|へや}を {暖|あたた}かく します。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4432",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Món này cay quá.", "この {料理|りょうり}は {辛|から}すぎます。"],
+          ["Chữ nhỏ quá, khó đọc.", "{字|じ}が {細|こま}かすぎて、{読|よ}みにくいです。"],
+          [
+            "Hãy nói to hơn một chút.",
+            "もう {少|すこ}し {声|こえ}を {大|おお}きく して ください。"
+          ],
+          ["Tôi chọn món Âu.", "わたしは {洋食|ようしょく}に します。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4433",
+        "type": "table",
+        "title": "Nhập vai · Học dùng máy tính",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Nói chữ nhỏ quá, khó đọc", "{字|じ}が {小|ちい}さすぎて、{読|よ}みにくいんです。"],
+          ["B", "Chỉ cách làm chữ to hơn", "ここを クリックして、{大|おお}きく して ください。"],
+          ["A", "Cảm ơn, nhận xét", "あ、{見|み}やすく なりました。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi tình huống: 音が 大きすぎる → 小さく する, 画面が 暗すぎる → 明るく する."
+      },
+      {
+        "id": "s4434",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vます／いA／なA + すぎます: quá mức.\nVます + やすい／にくい: dễ, khó.\nいAく／なAに + します: làm cho trở nên.\nN に します: chọn N.",
+        "teacherNotes": "Dễ nhầm: よすぎます, やすい với 安い, なります với します. Liên hệ 〜く なります ở bài 19. Sang bài 45, học 場合は và のに."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4401",
+        "type": "choice",
+        "prompt": "Ăn quá nhiều: ゆうべ（　）、おなかが いたいです。",
+        "options": ["たべるすぎて", "たべすぎて", "たべすぎって", "たべたすぎて"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Bỏ ます rồi thêm すぎます: たべすぎて.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4402",
+        "type": "choice",
+        "prompt": "この くつは わたしには（　）すぎます。",
+        "options": ["おおきい", "おおきく", "おおき", "おおきな"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "いA bỏ い + すぎます: おおきすぎます.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4403",
+        "type": "choice",
+        "prompt": "Tính từ いい (tốt) + すぎます thành gì?",
+        "options": ["いすぎます", "よくすぎます", "いいすぎます", "よすぎます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "いい dùng gốc よ: よすぎます.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4404",
+        "type": "choice",
+        "prompt": "この ペンは（　）やすいです。",
+        "options": ["かき", "かく", "かいて", "かか"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Vます bỏ ます + やすい: かきやすい.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4405",
+        "type": "choice",
+        "prompt": "この コップは われやすいです nghĩa là gì?",
+        "options": [
+          "Cái cốc này rẻ",
+          "Cái cốc này dễ vỡ",
+          "Cái cốc này khó vỡ",
+          "Cái cốc này vừa vỡ"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Động từ không chủ ý + やすい: dễ xảy ra.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4406",
+        "type": "choice",
+        "prompt": "Đường tối, khó đi: この みちは くらくて、（　）です。",
+        "options": ["あるくにくい", "あるいてにくい", "あるきやすい", "あるきにくい"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Vます bỏ ます + にくい: あるきにくい.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4407",
+        "type": "choice",
+        "prompt": "Dọn phòng sạch sẽ: へやを（　）しました。",
+        "options": ["きれいく", "きれいに", "きれいな", "きれいで"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "なA + に + します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4408",
+        "type": "choice",
+        "prompt": "うるさいです。テレビの おとを（　）して ください。",
+        "options": ["ちいさく", "ちいさい", "ちいさに", "ちいさな"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "いA bỏ い thêm く + します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4409",
+        "type": "choice",
+        "prompt": "Câu nào nghĩa là 'Tôi đã làm cho căn phòng rộng ra'?",
+        "options": [
+          "へやが ひろく なりました。",
+          "へやが ひろく しました。",
+          "へやを ひろく しました。",
+          "へやを ひろく なりました。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Có người làm thay đổi: N を 〜く します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4410",
+        "type": "choice",
+        "prompt": "Gọi món: わたしは わしょく（　）します。",
+        "options": ["を", "が", "で", "に"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Chọn: N に します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4411",
+        "type": "choice",
+        "prompt": "シングルと ツインと どちらに しますか。Trả lời thế nào?",
+        "options": [
+          "ツインを なります。",
+          "ツインに します。",
+          "ツインが します。",
+          "ツインで なります。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Chọn: N に します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4412",
+        "type": "choice",
+        "prompt": "Từ trái nghĩa với ほそい là gì?",
+        "options": ["うすい", "こまかい", "ふとい", "こい"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "細い mảnh, 太い to.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4413",
+        "type": "choice",
+        "prompt": "Cà phê đậm: この コーヒーは（　）です。",
+        "options": ["こい", "ふとい", "ほそい", "こまかい"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "濃い là đặc, đậm.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4414",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 危険な.",
+        "options": ["an toàn", "lịch sự", "chi tiết", "nguy hiểm"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "危険な đọc きけんな.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4415",
+        "type": "choice",
+        "prompt": "Mặt đường đóng băng, dễ trượt: みちが（　）やすいです。",
+        "options": ["すべり", "わらい", "なき", "ねむり"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "滑ります là trượt.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4416",
+        "type": "choice",
+        "prompt": "Nắng to, đồ giặt khô nhanh: せんたくものが すぐ（　）。",
+        "options": ["ぬれました", "すべりました", "かわきました", "なきました"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "乾きます là khô.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4417",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là lý do?",
+        "options": ["りょう", "りゆう", "くうき", "なみだ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "理由 là lý do.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4418",
+        "type": "choice",
+        "prompt": "Nam muốn cắt tóc thế nào?",
+        "options": ["Cắt ngắn hết", "Chỉ gội đầu", "Uốn tóc", "Hai bên ngắn, phía trước cắt ít"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "横を短くして、前はあまり切らないでください.",
+        "points": 1,
+        "tags": ["minna-44"],
+        "passage": "ナム：{横|よこ}を {短|みじか}く して、{前|まえ}は あまり {切|き}らないで ください。"
+      },
+      {
+        "id": "q4419",
+        "type": "choice",
+        "prompt": "Vì sao Minh thấy không khỏe?",
+        "options": [
+          "Uống quá nhiều ở tiệc tất niên",
+          "Ăn quá ít",
+          "Ngủ quá nhiều",
+          "Làm việc quá sức"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "忘年会で飲みすぎたんです.",
+        "points": 1,
+        "tags": ["minna-44"],
+        "passage": "ミン：ゆうべの {忘年会|ぼうねんかい}で {飲|の}みすぎたんです。"
+      },
+      {
+        "id": "q4420",
+        "type": "choice",
+        "prompt": "Chiếc tủ mới có điểm tốt gì?",
+        "options": ["Rẻ", "Ngăn kéo nhẹ, dễ mở", "Nhỏ gọn", "Màu đẹp"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "引き出しが軽くて、開けやすいです.",
+        "points": 1,
+        "tags": ["minna-44"],
+        "passage": "{新|あたら}しい たんすを {買|か}いました。{引|ひ}き{出|だ}しが {軽|かる}くて、{開|あ}けやすいです。でも、{少|すこ}し {大|おお}きすぎて、{部屋|へや}が {狭|せま}く なりました。{来週|らいしゅう}、{古|ふる}い {机|つくえ}を {捨|す}てて、{部屋|へや}を {広|ひろ}く します。"
+      },
+      {
+        "id": "q4421",
+        "type": "choice",
+        "prompt": "Tuần sau người viết sẽ làm gì?",
+        "options": ["Mua thêm tủ", "Chuyển nhà", "Vứt bàn cũ cho phòng rộng ra", "Sửa ngăn kéo"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "古い机を捨てて、部屋を広くします.",
+        "points": 1,
+        "tags": ["minna-44"],
+        "passage": "{新|あたら}しい たんすを {買|か}いました。{引|ひ}き{出|だ}しが {軽|かる}くて、{開|あ}けやすいです。でも、{少|すこ}し {大|おお}きすぎて、{部屋|へや}が {狭|せま}く なりました。{来週|らいしゅう}、{古|ふる}い {机|つくえ}を {捨|す}てて、{部屋|へや}を {広|ひろ}く します。"
+      },
+      {
+        "id": "q4422",
+        "type": "fill",
+        "prompt": "Điền (khó đọc): この ほんは じが こまかくて、よみ（　）です。",
+        "answer": ["にくい"],
+        "inputMode": "hiragana",
+        "explain": "Vます bỏ ます + にくい: よみにくい.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4423",
+        "type": "fill",
+        "prompt": "Điền (quá nhiều): ゆうべ おさけを のみ（　）ました。",
+        "answer": ["すぎ"],
+        "inputMode": "hiragana",
+        "explain": "のみすぎました: uống quá nhiều.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4424",
+        "type": "fill",
+        "prompt": "Điền: へやを あかる（　）して ください。",
+        "answer": ["く"],
+        "inputMode": "hiragana",
+        "explain": "いA bỏ い thêm く + します: あかるく します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4425",
+        "type": "fill",
+        "prompt": "Điền: のみものは コーヒー（　）します。",
+        "answer": ["に"],
+        "inputMode": "hiragana",
+        "explain": "Chọn: N に します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4426",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Hãy làm vị súp nhạt đi.",
+        "tokens": [
+          {
+            "id": "q4426-1",
+            "text": "スープの あじを"
+          },
+          {
+            "id": "q4426-2",
+            "text": "うすく"
+          },
+          {
+            "id": "q4426-3",
+            "text": "して ください。"
+          }
+        ],
+        "answer": ["q4426-1", "q4426-2", "q4426-3"],
+        "explain": "N を いAく します.",
+        "points": 1,
+        "tags": ["minna-44"]
+      },
+      {
+        "id": "q4427",
+        "type": "match",
+        "prompt": "Nối từ với nghĩa.",
+        "left": ["わしょく", "ようしょく", "シングル", "ツイン"],
+        "right": ["phòng hai giường", "món Âu", "món Nhật", "phòng đơn"],
+        "answer": [
+          [0, 2],
+          [1, 1],
+          [2, 3],
+          [3, 0]
+        ],
+        "explain": "和食 món Nhật, 洋食 món Âu, シングル phòng đơn, ツイン phòng hai giường.",
+        "points": 1,
+        "tags": ["minna-44"]
+      }
+    ]
+  }
+}

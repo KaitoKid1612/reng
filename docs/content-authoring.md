@@ -111,6 +111,8 @@ Ngày 23/11/2026 thêm **Tạo bài 42 từ mẫu** với 43 mục từ, 5 mục
 
 Ngày 23/11/2026 thêm **Tạo bài 43 từ mẫu** với 27 mục từ, 4 mục ngữ pháp, 33 slide và 27 câu tự chấm. Bài luyện そうです theo vẻ bề ngoài, 〜てきます và 〜てくれませんか. [Bảng đối chiếu bài 43](testing/minna-lesson-43-coverage.md).
 
+Ngày 23/11/2026 thêm **Tạo bài 44 từ mẫu** với 38 mục từ, 4 mục ngữ pháp, 34 slide và 27 câu tự chấm. Bài luyện すぎます, 〜やすい／〜にくい, 〜く／〜にします và Nにします. [Bảng đối chiếu bài 44](testing/minna-lesson-44-coverage.md).
+
 Slide quiz chỉ nhận câu chọn và câu điền. Câu sắp xếp và câu nối nằm trong bộ câu luyện để giao bài; trên slide, dùng bảng có cột đáp án mẫu. Cột phải của câu nối được editor xáo theo thứ tự cố định (`toMatchQuestion` trong `lib/match-pairs.ts`), nên JSON mẫu phải lưu đúng thứ tự đó.
 
 Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.
