@@ -1,0 +1,304 @@
+/* Printed JLPT exams (app/exams/print): on screen a white A4-wide preview under a toolbar; on paper
+   A4 portrait, black on white, each section from a new page and no question split across pages.
+   The page box is named, so the landscape @page of the slide print view does not apply here. */
+
+.page-container:has(.exam-print) {
+  max-width: 230mm;
+}
+.exam-print {
+  color: var(--foreground);
+  background: var(--surface);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.exam-print-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.exam-print-toolbar > p {
+  flex-basis: 100%;
+  margin: 0;
+}
+.exam-print-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exam-print-tabs a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.exam-print-cover,
+.exam-print-section {
+  padding: 24px 20px;
+}
+.exam-print-cover {
+  border-bottom: 2px solid var(--foreground);
+}
+.exam-print-cover h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+.exam-print-cover p {
+  margin: 4px 0;
+}
+.exam-print-level,
+.exam-print-booklet-name {
+  font-weight: 700;
+}
+.exam-print-booklet-name {
+  font-size: 20px;
+}
+.exam-print-credit {
+  font-size: 13px;
+}
+.exam-print-name {
+  margin-top: 16px !important;
+}
+.exam-print-blank {
+  display: inline-block;
+  width: 60mm;
+  margin-right: 16px;
+  border-bottom: 1px solid var(--foreground);
+}
+.exam-print-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--foreground);
+}
+.exam-print-section-head h2 {
+  margin: 0;
+  font-size: 22px;
+}
+.exam-print-section-head p {
+  margin: 0;
+  font-size: 13px;
+}
+.exam-print-mondai {
+  margin-top: 16px;
+}
+.exam-print-mondai h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+.exam-print-instruction {
+  margin: 0 0 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--foreground);
+}
+.exam-print-note {
+  margin: 4px 0 8px;
+  font-size: 13px;
+}
+.exam-print-questions,
+.exam-print-key {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exam-print-question {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+.exam-print-question-main {
+  flex: 1;
+  min-width: 0;
+}
+.exam-print-prompt {
+  margin: 0;
+}
+.exam-print-number {
+  display: inline-block;
+  min-width: 2.2em;
+  margin-right: 8px;
+  padding: 0 4px;
+  border: 1px solid var(--foreground);
+  text-align: center;
+  font-weight: 700;
+}
+.exam-print-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 16px;
+  margin: 2px 0 0;
+  padding-left: 2.8em;
+  list-style: none;
+}
+.exam-print-options-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.exam-print-options-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+/* At phone width four short options still fit two to a line. */
+@media screen and (max-width: 600px) {
+  .exam-print-options-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .exam-print-options-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.exam-print-option-number {
+  margin-right: 6px;
+  font-weight: 700;
+}
+.exam-print-passage-block {
+  margin: 8px 0;
+}
+.exam-print-passage {
+  margin-bottom: 6px;
+  padding: 10px 14px;
+  border: 1px solid var(--foreground);
+  white-space: pre-line;
+}
+.exam-print-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 110mm;
+  margin: 6px 0;
+}
+.exam-print-qr {
+  flex: none;
+  width: 18mm;
+  height: 18mm;
+}
+.exam-print-link {
+  margin: 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.exam-print-transcript {
+  margin: 4px 0;
+}
+.exam-print-transcript .transcript-turn {
+  display: block;
+}
+.exam-print-key-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--foreground);
+  font-size: 14px;
+}
+.exam-print-key-row {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exam-print-key-answer {
+  margin-right: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.exam-print-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(55mm, 1fr));
+  gap: 12px 20px;
+  align-items: start;
+}
+.exam-print-sheet-table {
+  border-collapse: collapse;
+}
+.exam-print-sheet-table caption {
+  text-align: left;
+  font-weight: 700;
+}
+.exam-print-sheet-table th,
+.exam-print-sheet-table td {
+  padding: 2px 4px;
+  border: 1px solid var(--foreground);
+  text-align: center;
+}
+.exam-print-sheet-table th {
+  min-width: 3.4em;
+}
+.exam-print-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 7mm;
+  height: 5mm;
+  border: 1px solid var(--foreground);
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+}
+
+@page exam-a4 {
+  size: A4 portrait;
+  margin: 12mm 14mm 14mm;
+}
+@media print {
+  body:has(.exam-print) {
+    background: var(--surface);
+  }
+  body:has(.exam-print) .site-header,
+  body:has(.exam-print) .site-footer,
+  body:has(.exam-print) .skip-link,
+  .exam-print-toolbar {
+    display: none !important;
+  }
+  .page-container:has(.exam-print) {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  .exam-print {
+    page: exam-a4;
+    font-size: 11pt;
+    background: var(--surface);
+  }
+  .exam-print-cover,
+  .exam-print-section {
+    padding: 0;
+  }
+  .exam-print-cover {
+    padding-bottom: 6mm;
+  }
+  .exam-print-section {
+    break-before: page;
+  }
+  /* The first section starts under the cover, not on a page of its own. */
+  .exam-print-cover + .exam-print-section {
+    break-before: auto;
+  }
+  .exam-print-question,
+  .exam-print-passage,
+  .exam-print-key-row,
+  .exam-print-sheet-table,
+  .exam-print-mondai-head,
+  .exam-print-section-head {
+    break-inside: avoid;
+  }
+  .exam-print-mondai-head,
+  .exam-print-section-head {
+    break-after: avoid;
+  }
+  /* A passage keeps its first question on the same page. */
+  .exam-print-passage {
+    break-after: avoid;
+  }
+}

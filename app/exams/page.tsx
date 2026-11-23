@@ -1,10 +1,14 @@
 import Link from "next/link";
 
+import { ExamPrintList } from "@/components/exams/exam-print-list";
 import { OpenExamForm } from "@/components/exams/open-exam-form";
 import { buttonVariants } from "@/components/ui/button";
 import { examTitleFor } from "@/lib/exam-library";
+import { canPrintJlptExams } from "@/lib/exam-print";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
+import { JLPT_ONLINE_SAMPLES } from "@/lib/jlpt-official";
 import { requireAccount } from "@/lib/server/account";
+import { listTeacherClasses } from "@/lib/server/classes";
 import { loadExamCenter } from "@/lib/server/exam-center";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -83,7 +87,7 @@ function describeLibraryEntry({ source, opened }: LibraryEntry) {
     return `Từ sách đề chính thức trên jlpt.jp. ${opened ? "Đã mở cho lớp." : "Đủ mọi câu theo sách, chưa mở."}`;
   }
   if (source.kind === "fixed") {
-    return `Đề cố định ${source.questionCount} câu từ “${source.lessonTitle}”. ${opened ? "Đã mở cho lớp." : "Chưa mở."}`;
+    return `Đề cố định ${source.questionCount} câu từ “${source.lessonTitle}”, in được. ${opened ? "Đã mở cho lớp." : "Chưa mở."}`;
   }
   const origin = `Ghép từ “${source.lessonTitle}”.`;
   if (source.remainingExams > 0) {
@@ -102,6 +106,7 @@ function LibraryRow({ entry, classId }: LibraryRowProps) {
         <p className="small muted">{describeLibraryEntry(entry)}</p>
       </div>
       <div className="exam-library-actions">
+        {source.kind === "fixed" && <Link href={`/exams/print/${source.setId}`}>Bản in</Link>}
         {!(isOpenOnce && opened) && (
           <OpenExamForm
             classId={classId}
@@ -118,10 +123,37 @@ function libraryKey({ source }: LibraryEntry) {
   return source.kind === "fixed" ? `${source.lessonId}:${source.setId}` : source.lessonId;
 }
 
+function OnlineSamples() {
+  return (
+    <section className="exam-class" aria-labelledby="exam-online-samples">
+      <h2 id="exam-online-samples">Đề mẫu chính thức trên mạng</h2>
+      <p className="muted">
+        Link tới trang gốc, mở ở tab mới. Đề thi “tháng/năm” đăng trên các trang khác không phải đề
+        chính thức công bố, nên Reng không dùng và không đặt link.
+      </p>
+      <ul className="exam-sample-links">
+        {JLPT_ONLINE_SAMPLES.map((sample) => (
+          <li key={sample.url}>
+            <a href={sample.url} target="_blank" rel="noopener noreferrer" lang="ja">
+              {sample.title}
+            </a>
+            <span className="small muted"> — {sample.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default async function ExamsPage({ searchParams }: ExamsPageProps) {
   const account = await requireAccount("/exams");
   const { opened, error } = await searchParams;
-  const classes = await loadExamCenter(account.id, account.role === "teacher", new Date());
+  const isTeacher = account.role === "teacher";
+  const [classes, ownedClasses] = await Promise.all([
+    loadExamCenter(account.id, isTeacher, new Date()),
+    isTeacher ? listTeacherClasses(account.id) : Promise.resolve([]),
+  ]);
+  const canPrint = canPrintJlptExams(account.role, ownedClasses);
   // The "opened" notice sits in the class that received the exam, where the page scrolls to;
   // at the top of a long page it would be out of sight.
   const openedClassId = opened
@@ -236,6 +268,8 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
           )}
         </section>
       ))}
+      {canPrint && <ExamPrintList />}
+      <OnlineSamples />
     </>
   );
 }

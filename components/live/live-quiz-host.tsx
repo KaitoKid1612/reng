@@ -8,8 +8,8 @@ import {
   OptionLabel,
   useSecondsLeft,
 } from "@/components/live/live-shared";
-import { QrCode } from "@/components/slides/slide-qr-panel";
 import { Button } from "@/components/ui/button";
+import { QrCode } from "@/components/ui/qr-code";
 import { LIVE_HOST_POLL_MS, LIVE_QUESTION_COUNTS, LIVE_SECONDS } from "@/lib/live-quiz";
 
 import type { LiveAction } from "@/lib/live-quiz";

@@ -1,44 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { encode } from "uqr";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { QrCode } from "@/components/ui/qr-code";
 
 import type { SlideQrTarget } from "@/lib/slide-qr";
 
 export interface SlideQrLink extends SlideQrTarget {
   url: string;
-}
-
-// One path of unit squares: a crisp code at any size, black on white whatever the theme, since
-// phone cameras read dark modules on a light ground best. Low error correction keeps the modules
-// large: a code on a shared screen is blurred by the video call, never scratched.
-export function QrCode({ text, label }: { text: string; label: string }) {
-  const { size, path } = useMemo(() => {
-    const { data, size: modules } = encode(text, { ecc: "L", border: 2 });
-    const parts: string[] = [];
-    data.forEach((row, y) =>
-      row.forEach((isDark, x) => {
-        if (isDark) {
-          parts.push(`M${x} ${y}h1v1h-1z`);
-        }
-      }),
-    );
-    return { size: modules, path: parts.join("") };
-  }, [text]);
-  return (
-    <svg
-      className="slide-qr-code"
-      viewBox={`0 0 ${size} ${size}`}
-      role="img"
-      aria-label={label}
-      shapeRendering="crispEdges"
-    >
-      <rect width={size} height={size} fill="#fff" />
-      <path d={path} fill="#000" />
-    </svg>
-  );
 }
 
 interface SlideQrPanelProps {

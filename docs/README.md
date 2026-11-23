@@ -71,7 +71,7 @@ Tên file và thư mục dùng tiếng Anh; ngôn ngữ nội dung tài liệu v
 | Làm tiếp đề xuất giao diện: Hôm nay dạy gì ở trang chủ, tiến độ lớp, làm bài từng câu trên PC, ôn tập, lịch học và chuỗi ngày, âm thanh (11/11/2026) | [BD](basic-design/teaching-service.md#làm-tiếp-các-đề-xuất-giao-diện--11112026-chiều) | [DD](detail-design/teaching-service.md#làm-tiếp-các-đề-xuất-giao-diện--11112026-chiều) | [rà soát](testing/ui-polish-2026-11-11.md#đề-xuất-tiếp-theo-đã-làm-cùng-ngày) |
 | Giao diện dễ dùng và sinh động hơn: trang chủ thành viên, mục lục trang lớp, tiến độ làm bài, hiệu ứng luyện tập (11/11/2026) | [BD](basic-design/teaching-service.md#giao-diện-dễ-dùng-và-sinh-động-hơn--11112026) | [DD](detail-design/teaching-service.md#giao-diện-dễ-dùng-và-sinh-động-hơn--11112026) | [rà soát](testing/ui-polish-2026-11-11.md) |
 | Giao diện sáng và tối (10/11/2026) | — | [DD](detail-design/teaching-service.md#giao-diện-sáng-và-tối--10112026) | [rà soát](testing/code-review-2026-11-10.md#gộp-giao-diện-sáng-và-tối) |
-| Prompt bộ đề JLPT N5, N4 có bản in (23/11/2026) | [prompt](prompts/jlpt-exam-sets.md) | — | — |
+| Bộ đề JLPT N5, N4 có bản in: đề chính thức 2018, 2012 và đề thi thử Reng cố định (23/11/2026) | [prompt](prompts/jlpt-exam-sets.md), [BD](basic-design/exam-center.md#bộ-đề-có-bản-in--23112026) | [DD](detail-design/phase-3.md#bộ-đề-cố-định-và-bản-in-jlpt--23112026) | [kiểm chứng](testing/jlpt-exam-sets-2026-11-23.md) |
 | Nguồn đề JLPT và câu tự biên soạn (09–10/11/2026) | [biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn) | — | `tests/jlpt-original-drafts.test.ts` |
 | Lịch sử bài tập từ Sheets (đã gỡ khỏi giao diện ngày 04/11/2026, dữ liệu còn giữ) | [BD](basic-design/learning-history.md) | [DD](detail-design/learning-history.md) | [kiểm chứng cũ](testing/learning-history.md) |
 | Quản lý bài học/bài tập Nhật–Trung | [quy trình biên soạn/nâng cấp bài](content-authoring.md#quản-lý-và-nâng-cấp-bài-cho-lớp-nhậttrung) | — | [phạm vi, kết quả và checklist](testing/teaching-management.md) |
@@ -97,7 +97,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 - Giao diện dễ dùng và sinh động hơn: [8 chỗ chưa hợp lý đã sửa, kiểm chứng trình duyệt và axe hai giao diện, đề xuất tiếp theo](testing/ui-polish-2026-11-11.md).
 - Dọn mã và gọn giao diện: [mã thừa đã xóa, phiên bản cũ gập lại, Cập nhật từ mẫu chỉ khi khác mẫu, lịch sử thi thử JLPT, E2E cả đợt](testing/cleanup-2026-11-11.md).
-- Nguồn đề JLPT thật: [rà soát khoảng 40 nguồn, chỉ hai tập đề chính thức trên jlpt.jp dùng được](testing/jlpt-official-sources-2026-11-11.md).
+- Nguồn đề JLPT thật: [rà soát khoảng 40 nguồn, chỉ hai tập đề chính thức trên jlpt.jp dùng được](testing/jlpt-official-sources-2026-11-11.md); [rà lại 35 nguồn ngày 23/11/2026](testing/jlpt-exam-sets-2026-11-23.md#nguồn-trên-mạng).
 
 ### 10/11/2026
 

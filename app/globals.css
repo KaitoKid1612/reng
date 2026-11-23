@@ -10,6 +10,7 @@
 @import "./styles/jlpt-kanji.css";
 @import "./styles/jlpt-vocab.css";
 @import "./styles/exams.css";
+@import "./styles/exam-print.css";
 @import "./styles/practice.css";
 @import "./styles/responsive.css";
 @import "./styles/lessons.css";

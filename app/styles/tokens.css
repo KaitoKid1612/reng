@@ -4,7 +4,8 @@
 /* Slides keep the light palette in the dark theme: the class sees them over Meet and on paper
    the way the teacher made them. */
 :root,
-:root[data-theme="dark"] :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print) {
+:root[data-theme="dark"]
+  :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print, .exam-print) {
   --background: #faf8f3;
   --surface: #fff;
   --foreground: #1c1b1a;
@@ -67,10 +68,11 @@
 }
 /* Text colour is inherited as computed on <body>, so the slide surfaces set it again from their
    own light tokens. */
-:root[data-theme="dark"] :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print) {
+:root[data-theme="dark"]
+  :is(.slide-stage, .presenter-preview, .slide-preview, .lesson-print, .exam-print) {
   color: var(--foreground);
 }
-:root[data-theme="dark"] .lesson-print {
+:root[data-theme="dark"] :is(.lesson-print, .exam-print) {
   background: var(--background);
 }
 @theme inline {

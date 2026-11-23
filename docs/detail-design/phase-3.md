@@ -263,3 +263,17 @@ Trước đây điểm từng đề chỉ có ở trang kết quả của đề 
 - **Giáo viên:** trang chi tiết học viên dùng lại các dòng của `getStudentDetail` (bài thi thử đã có lượt nộp và câu), không đọc thêm database. Tên đề dẫn tới bài đó trong mục Bài đã giao và câu trả lời bên dưới. Giáo viên thấy điểm ngay sau khi nộp, như danh sách câu trả lời.
 - Lượt đã hết giờ nhưng chưa được nộp (học viên đóng trang) chỉ vào bảng sau khi Reng nộp nó: khi học viên mở lại đề hoặc lúc cron 6:00.
 - Không migration, không đổi dữ liệu. Kiểm chứng: `tests/jlpt-history.test.ts` (thứ tự, so với lần trước cùng cấp, đề không ước tính được, đỗ tổng nhưng trượt điểm sàn), `e2e-supabase/jlpt-mock-exam.spec.ts` (bảng ở trang Tiến độ khớp điểm của trang kết quả).
+
+## Bộ đề cố định và bản in JLPT — 23/11/2026
+
+Thiết kế ở [BD Luyện đề](../basic-design/exam-center.md#bộ-đề-có-bản-in--23112026).
+
+- **Dữ liệu:** `content/jlpt/reng-exam-sets.json` (schema `rengExamSetsSchema`) ghi mã đề, tên, cấp, file ngân hàng và danh sách mã câu theo thứ tự đề. `lib/jlpt-exam-sets.ts` nạp bốn đề chính thức và các đề cố định thành `JLPT_EXAM_SETS` (N5 rồi N4; trong mỗi cấp 2018, 2012, rồi đề Reng). Thiếu câu trong ngân hàng thì module báo lỗi ngay khi nạp.
+- **Mở đề cố định:** `describeFixedExamSources` (`lib/exam-library.ts`) trả nguồn `kind: "fixed"` khi bài ghim chứa đủ mọi câu của đề. `openExamFromLibrary(…, examSetId)` gọi `publishJlptExam(teacherId, input, fixedQuestionIds)`; `fixedJlptExam` (`lib/jlpt.ts`) giữ nguyên thứ tự câu và trả rỗng nếu bài trên server thiếu một câu (lỗi `no_exam_questions`). Đề cố định đã mở (cùng bài, cùng tên) thì báo `already_open`. Không đổi database: RPC `publish_jlpt_mock_exam` vẫn nhận danh sách mã câu.
+- **Bản in:** `lib/exam-print.ts` dựng bốn tập từ một đề:
+  - `numberExamQuestions`: phần thi theo `jlptSectionOf`, もんだい theo tag `mondai:N`, `section:N` hoặc dạng câu của ngân hàng; số câu liên tục trong phần chữ và đọc, đánh lại theo もんだい ở phần nghe (`1ばん`).
+  - `buildQuestionBooklet`, `buildAnswerSheet` chỉ lấy đề, phương án, hình, đoạn đọc và mã audio: không có trường đáp án, giải thích hay lời thoại. `buildAnswerKey` và `buildListeningScript` cho giáo viên.
+  - `canPrintJlptExams(role, ownedClasses)`: vai trò giáo viên và có lớp `ja-JP` còn hoạt động.
+- **Trang** `app/exams/print/[examId]/page.tsx` (`?booklet=questions|answer-sheet|answers|script`), component `components/exams/exam-print-booklets.tsx`, nút `print-button.tsx`. Mã QR vẽ bằng `components/ui/qr-code.tsx` (dùng chung với slide và phòng thi đấu, không cần client); URL audio tuyệt đối từ `SITE_URL`.
+- **CSS** `app/styles/exam-print.css`, nạp sau `exams.css`. Khi in dùng trang có tên `@page exam-a4` (A4 dọc), nên `@page` ngang của bản in slide không áp vào. Mỗi `.exam-print-section` sang trang mới; câu, đoạn đọc, bảng phiếu trả lời `break-inside: avoid`. Bản in giữ bảng màu sáng trong giao diện tối như slide.
+- **Test:** `tests/jlpt-exam-sets.test.ts` (cấu trúc, không trùng câu, giữ trọn đoạn văn, tránh câu ngân hàng ôn hằng ngày, một đáp án, phân bố vị trí đáp án, audio có file, đánh số, tập học viên không có đáp án, quyền in, mở đề cố định). `e2e-supabase/exam-center.spec.ts` mở đề cố định, kiểm tra thư viện, bản in và học viên bị chặn.

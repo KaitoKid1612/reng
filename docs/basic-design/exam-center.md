@@ -40,6 +40,29 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
 | N4 | 2012 (97 câu), 2018 (98 câu) | 2 đề từ ngân hàng hằng ngày; thêm 2 đề chuẩn và 2 đề nâng cao ở ngân hàng riêng (19/11/2026, [kiểm chứng](../testing/n4-reng-exams-2026-11-19.md)) |
 | N5 | 2012 (89 câu), 2018 (91 câu) | 3 đề (ngân hàng mới `n5-jlpt-mock.json`) |
 
+## Bộ đề có bản in — 23/11/2026
+
+Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm được trên Reng và in ra giấy được, ưu tiên đề đã từng thi có nguồn hợp pháp ([prompt](../prompts/jlpt-exam-sets.md)).
+
+| Cấp | Đề 1 | Đề 2 | Đề 3 |
+|---|---|---|---|
+| N5 | Đề chính thức tập 2018 (91 câu) | Đề chính thức tập 2012 (89 câu) | Đề thi thử Reng N5 số 1 (67 câu, từ `n5-jlpt-mock.json`) |
+| N4 | Đề chính thức tập 2018 (98 câu) | Đề chính thức tập 2012 (97 câu) | Đề thi thử Reng N4 số 1 (85 câu, từ `n4-jlpt-mock-standard.json`) |
+
+- Rà lại nguồn trên mạng ngày 23/11/2026: jlpt.jp vẫn chỉ có hai tập đề chính thức; 問題例 2009 chỉ là câu mẫu (N5 29, N4 34 câu, dạng đề trước 2010), không đủ một đề. Vì vậy Đề 3 là đề thi thử Reng.
+- **Đề thi thử Reng cố định:** ghi sẵn danh sách câu trong `content/jlpt/reng-exam-sets.json`, đúng cấu trúc `jlptTestParts`, giữ mã câu của ngân hàng. Tên đề "Đề thi thử Reng N5 số 1", không ghi tháng năm thi, không gọi là đề thi cũ.
+  - Lớp ghim ngân hàng chứa đủ câu của đề thì Thư viện đề có thêm dòng đề cố định, nút **Mở đề này** (mở một lần) và link **Bản in**.
+  - Câu của đề cố định tính là đã ra: số đề còn ghép được của ngân hàng giảm, và đề Reng ghép sau không lặp câu. Số thứ tự "Đề Reng N5 số k" của ngân hàng không tính đề cố định.
+  - Phần nghe N5 lấy từ 32 câu nghe mới (41–72), vì 40 câu nghe đầu cũng nằm trong ngân hàng ôn hằng ngày của lớp Minna.
+- **Bản in** (`/exams/print/<mã đề>`): chỉ giáo viên đang làm chủ một lớp tiếng Nhật còn hoạt động mở được, vì bản in có đáp án. Học viên thấy thông báo, không thấy đề. Bản in không đổi lịch mở hay đóng đề của lớp.
+  - Bốn tập: **Đề** và **Phiếu trả lời** cho học viên; **Đáp án và giải thích**, **Lời thoại nghe** cho giáo viên.
+  - A4 dọc, đen trắng. Mỗi phần thi (言語知識（文字・語彙）, 言語知識（文法）・読解, 聴解) bắt đầu trang mới, ghi số phút như đề thật. Không cắt một câu hay một đoạn đọc qua hai trang.
+  - Đầu tập ghi cấp, tên đề, thời gian và dòng nguồn: 出典 jlpt.jp cho đề chính thức, "Đề thi thử do Reng biên soạn, không phải đề thi thật." cho đề Reng.
+  - Câu nghe có mã QR tới file MP3 của câu; tập Lời thoại nghe có thêm link và, với đề chính thức, link bản ghi âm gốc trên jlpt.jp.
+  - Nút **In / Lưu PDF** mở hộp thoại in của trình duyệt.
+- Trang Luyện đề có mục **Bản in đề JLPT** (giáo viên và chủ lớp) và **Đề mẫu chính thức trên mạng** (mọi người): link thường tới jlpt.jp, mở tab mới, không nhúng file.
+- Hướng dẫn in ở [/guide](../../app/guide/page.tsx), mục "In đề JLPT ra giấy".
+
 ## Không làm
 
 - Học viên tự mở đề ở lớp mình không làm chủ: cần thêm migration. Người dùng chọn để giáo viên mở.
