@@ -31,9 +31,34 @@ Mỗi cấp trong CAP_DO có đủ SO_DE_MOI_CAP đề hoàn chỉnh, làm đư�
 - Được dùng các nguồn trên và tài liệu học (sách luyện thi, bài phân tích đề) chỉ để thống kê dạng câu, chủ điểm và mẹo hay ra. Ghi URL đã mở và điều rút ra được vào bảng nguồn. Không chép câu, đoạn văn hay lời thoại.
 - Nếu tìm thấy một nguồn đề thật khác mà giấy phép cho phép dùng, dừng lại, báo URL và điều khoản cho người dùng quyết định trước khi đưa vào.
 
+## 3a. Kiểm tra link trên mạng để tìm đề mẫu
+
+Làm bước này trước mục 4, vì có thể còn đề mẫu hợp pháp chưa dùng.
+
+- Đọc content/jlpt/source-registry.json, content/jlpt/external-source-catalog.json và content/jlpt/source-audit-2026-11-09.json. Kiểm tra lại từng link đã ghi: còn mở được không, nội dung và điều khoản có đổi không.
+- Tìm bằng cả tiếng Việt và tiếng Nhật, ví dụ: "日本語能力試験 公式問題集", "JLPT 問題例 N5", "JLPT sample questions N4", "đề thi mẫu JLPT N5 chính thức", "đề thi thử N4 miễn phí có đáp án". Ghi lại từ khóa đã dùng.
+- Danh sách tối thiểu phải mở và kiểm tra:
+  - jlpt.jp: trang 公式問題集 (https://www.jlpt.jp/samples/sampleindex.html) và bản tiếng Anh. Kiểm tra có tập mới hơn 第二集 2018 không.
+  - jlpt.jp: 問題例 2009 (https://www.jlpt.jp/samples/sample09.html), đang ghi "not-imported". Xem có câu N5, N4 dùng được không và số câu bao nhiêu.
+  - jlpt.jp: trang mẫu câu hỏi cho người học, nếu có.
+  - JEES, đơn vị tổ chức thi ở Nhật (https://info.jees-jlpt.jp/), và các đơn vị tổ chức thi ở Việt Nam (Quỹ Giao lưu Quốc tế Nhật Bản tại Việt Nam, các trường đại học nhận hồ sơ): có đề mẫu hay hướng dẫn công khai không.
+  - Nhà xuất bản sách luyện thi (スリーエーネットワーク, アスク出版, アルク, 凡人社, Jリサーチ出版): có đề mẫu hoặc 模試 tải miễn phí không, điều khoản sử dụng ra sao.
+  - Các trang tiếng Việt và tiếng Nhật đã có trong external-source-catalog.json cùng các trang mới tìm được.
+- Với mỗi link, mở trang thật rồi ghi: URL, chủ sở hữu, loại tài liệu (đề chính thức, đề mẫu nhà xuất bản, đề tự soạn, bản dựng lại đề thật), cấp, số câu, có đáp án và audio không, điều khoản hoặc giấy phép, robots.txt, ngày kiểm tra. Chỉ ghi điều đọc được trên trang, không đoán.
+- Kết luận mỗi nguồn theo một trong ba mức:
+  - **Dùng được**: đề chính thức hoặc có giấy phép rõ cho phép dạy miễn phí, ghi nguồn cạnh đề.
+  - **Chỉ tham khảo**: chỉ dùng để thống kê dạng câu, chủ điểm, không chép câu.
+  - **Không dùng**: bản dựng lại đề thật, đề rò rỉ, nguồn không rõ, hoặc điều khoản cấm.
+- Nguồn có nhãn "đề thi tháng X năm Y" nhưng không có xuất xứ chính thức thì xếp "Không dùng", dù nội dung trông giống đề thật.
+- Không vượt qua trang xác minh trình duyệt, đăng nhập, paywall hay chặn bot. Không tải hàng loạt. Tôn trọng robots.txt. Trang chặn thì ghi lại là chặn rồi chuyển nguồn khác.
+- Nguồn đề mẫu nhà xuất bản hay trang khác có vẻ dùng được: dừng lại, gửi người dùng URL, đoạn điều khoản liên quan và đề xuất (xin phép, chỉ đặt link, hay bỏ qua). Chỉ đưa vào Reng sau khi người dùng đồng ý.
+- Lưu kết quả: cập nhật source-registry.json (nguồn chính thức) và external-source-catalog.json (nguồn khác), thêm content/jlpt/source-audit-<ngày>.json cho lượt kiểm tra này. Tóm tắt trong báo cáo kiểm thử.
+- Trên trang Luyện đề, thêm mục "Đề mẫu chính thức trên mạng": link thường tới các trang jlpt.jp và nguồn xếp "Dùng được". Không nhúng file của họ.
+- Nếu tìm được thêm đề hợp pháp, dùng chúng trước rồi mới soạn đề thi thử ở mục 4, và giảm số đề thi thử tương ứng.
+
 ## 4. Thành phần mỗi cấp
 
-- Đề 1, Đề 2: hai đề chính thức (2018 và 2012). Hoàn thiện câu còn thiếu nếu đọc được từ PDF gốc. Kiểm tra đáp án với 正解 của sách.
+- Đề 1, Đề 2: hai đề chính thức (2018 và 2012), cộng thêm đề hợp pháp tìm được ở mục 3a nếu có. Hoàn thiện câu còn thiếu nếu đọc được từ PDF gốc. Kiểm tra đáp án với 正解 của sách.
 - Từ Đề 3 trở đi (SO_DE_MOI_CAP trừ số đề chính thức): đề thi thử Reng **cố định**, đặt tên "Đề thi thử Reng N5 số k" / "N4 số k". Không bao giờ ghi tháng năm thi hay gọi là "đề thi cũ".
   - Đúng cấu trúc và số câu theo `jlptTestParts` (N5 67 câu, N4 85 câu theo thiết kế hiện tại; nếu muốn bám số câu của đề thật thì nêu chênh lệch và hỏi người dùng).
   - Ưu tiên ghép từ ngân hàng đề Reng đã có. Chỉ soạn câu mới cho dạng còn thiếu. Không trùng câu giữa các đề và hạn chế trùng với ngân hàng ôn hằng ngày của lớp.
