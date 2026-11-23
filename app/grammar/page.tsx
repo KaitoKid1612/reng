@@ -2,12 +2,15 @@ import Link from "next/link";
 
 import { GrammarSearch } from "@/components/lessons/grammar-search";
 import { SubjectStudyNav } from "@/components/self-study/subject-study-nav";
+import { signInPath } from "@/lib/auth-paths";
+import { toGrammarEntries } from "@/lib/grammar-search";
 import { listPublicLessons } from "@/lib/lesson-repository";
-import { requireStudent } from "@/lib/server/account";
-import { loadClassGrammar } from "@/lib/server/class-grammar";
+import { getCurrentAccount, requireStudent } from "@/lib/server/account";
+import { loadAccountGrammar, loadClassGrammar } from "@/lib/server/class-grammar";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { isPublicTeachingLesson } from "@/lib/teaching-content";
 
+import type { GrammarSource } from "@/lib/grammar-search";
 import type { PublicLesson } from "@/lib/lesson-schema";
 import type { Metadata } from "next";
 
@@ -18,6 +21,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/grammar" },
 };
 export const dynamic = "force-dynamic";
+
+const SIGNED_IN_INTRO = {
+  student: "Tìm mẫu câu trong các bài của lớp bạn bằng tiếng Nhật hoặc nghĩa tiếng Việt.",
+  teacher:
+    "Tìm mẫu câu trong các bài bạn đã xuất bản và bài của lớp bạn học, bằng tiếng Nhật hoặc nghĩa tiếng Việt.",
+} as const;
 
 interface GrammarPageProps {
   searchParams: Promise<{ class?: string | string[] }>;
@@ -31,8 +40,7 @@ async function ClassGrammar({ classId }: { classId: string }) {
   );
   return (
     <GrammarSearch
-      lessons={lessons}
-      classId={classId}
+      entries={toGrammarEntries(lessons.map((lesson) => ({ lesson, classId })))}
       heading={`Ngữ pháp của lớp ${classRow.name}`}
       intro={
         lessons.length
@@ -49,22 +57,39 @@ export default async function GrammarPage({ searchParams }: GrammarPageProps) {
   if (typeof classId === "string") {
     return <ClassGrammar classId={classId} />;
   }
+  const account = await getCurrentAccount();
+  // Signed in, the lookup covers the reader's classes (and a teacher's own lessons) before the
+  // public ones; most lessons belong to classes, so public lessons alone often find nothing.
+  const [own, publicLessons] = await Promise.all([
+    account ? loadAccountGrammar(account, new Date()) : Promise.resolve<GrammarSource[]>([]),
+    listPublicLessons(),
+  ]);
   // Grammar search indexes the Japanese v1 grammar fields.
-  const lessons = (await listPublicLessons()).filter(
-    (lesson): lesson is PublicLesson => !isPublicTeachingLesson(lesson),
-  );
+  const entries = toGrammarEntries([
+    ...own,
+    ...publicLessons
+      .filter((lesson): lesson is PublicLesson => !isPublicTeachingLesson(lesson))
+      .map((lesson) => ({ lesson })),
+  ]);
   const navigation = <SubjectStudyNav subjectId="japanese" currentHref="/grammar" />;
-  if (!lessons.length) {
+  if (!entries.length) {
     return (
       <>
         {navigation}
         <div className="page-heading">
           <div>
             <h1>Tra cứu ngữ pháp tiếng Nhật</h1>
-            <p>
-              Chưa có bài học công khai để tra cứu. Mẫu câu của lớp nằm trong từng bài ở{" "}
-              <Link href="/classes">Lớp của tôi</Link>.
-            </p>
+            {account ? (
+              <p>
+                Các bài trong lớp của bạn chưa có mẫu câu để tra. Xem{" "}
+                <Link href="/classes">Lớp của tôi</Link>.
+              </p>
+            ) : (
+              <p>
+                <Link href={signInPath("/grammar")}>Đăng nhập</Link> để tra mẫu câu trong các bài
+                của lớp bạn.
+              </p>
+            )}
           </div>
         </div>
       </>
@@ -73,7 +98,10 @@ export default async function GrammarPage({ searchParams }: GrammarPageProps) {
   return (
     <>
       {navigation}
-      <GrammarSearch lessons={lessons} />
+      <GrammarSearch
+        entries={entries}
+        intro={account ? SIGNED_IN_INTRO[account.role] : undefined}
+      />
     </>
   );
 }

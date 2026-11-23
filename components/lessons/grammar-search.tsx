@@ -5,12 +5,10 @@ import Link from "next/link";
 
 import { JapaneseText } from "@/components/lessons/japanese-text";
 
-import type { PublicLesson } from "@/lib/lesson-schema";
+import type { GrammarEntry } from "@/lib/grammar-search";
 
 interface GrammarSearchProps {
-  lessons: PublicLesson[];
-  // A class's own lessons: links keep the class so the reader opens the version it pins.
-  classId?: string;
+  entries: GrammarEntry[];
   heading?: string;
   intro?: string;
   backHref?: string;
@@ -26,20 +24,18 @@ function normalizeSearch(value: string) {
 }
 
 export function GrammarSearch({
-  lessons,
-  classId,
+  entries,
   heading = "Tra cứu ngữ pháp tiếng Nhật",
   intro = "Tìm mẫu câu bằng tiếng Nhật hoặc nghĩa tiếng Việt.",
   backHref,
 }: GrammarSearchProps) {
   const [query, setQuery] = useState("");
-  const results = lessons
-    .flatMap((lesson) => lesson.content.grammar.map((grammar) => ({ grammar, lesson })))
-    .filter(({ grammar, lesson }) =>
-      normalizeSearch(
-        `${grammar.pattern} ${grammar.vi} ${grammar.explain} ${lesson.title}`,
-      ).includes(normalizeSearch(query.trim())),
-    );
+  const needle = normalizeSearch(query.trim());
+  const results = entries.filter((entry) =>
+    normalizeSearch(`${entry.pattern} ${entry.vi} ${entry.explain} ${entry.lessonTitle}`).includes(
+      needle,
+    ),
+  );
   return (
     <>
       <div className="page-heading">
@@ -70,23 +66,19 @@ export function GrammarSearch({
         Tìm thấy {results.length} mẫu câu.
       </p>
       <div className="grammar-results">
-        {results.map(({ grammar, lesson }) => (
-          <article className="grammar-block" key={`${lesson.id}:${grammar.id}`}>
+        {results.map((entry) => (
+          <article className="grammar-block" key={entry.key}>
             {/* Patterns and notes carry {漢字|かんじ} furigana marks, drawn as in the reader. */}
             <h2 lang="ja" className="japanese-text">
-              <JapaneseText text={grammar.pattern} />
+              <JapaneseText text={entry.pattern} />
             </h2>
             <p>
-              <JapaneseText text={grammar.vi} />
+              <JapaneseText text={entry.vi} />
             </p>
             <p>
-              <JapaneseText text={grammar.explain} />
+              <JapaneseText text={entry.explain} />
             </p>
-            <Link
-              href={`/lessons/${lesson.lessonId}?version=${lesson.id}${classId ? `&class=${classId}` : ""}#${grammar.id}`}
-            >
-              {lesson.title}
-            </Link>
+            <Link href={entry.href}>{entry.lessonTitle}</Link>
           </article>
         ))}
       </div>

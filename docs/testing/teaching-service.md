@@ -410,3 +410,11 @@ Thêm `content/starters/minna-1-13.json` và đăng ký trong `STARTER_LESSONS`:
 - PASS local: `npm run check` (Prettier, ESLint, TypeScript, 151 test). Test chung của bài mẫu bao gồm schema, chuyển nháp sang nội dung xuất bản, đáp án trắc nghiệm phân bố nhiều vị trí, đáp án điền hiragana và ẩn ghi chú/đáp án khỏi dữ liệu học viên.
 - PASS local: `npm run test:e2e` (35 ca hồi quy, gồm reader/slide/presenter/PDF và hướng dẫn ở 360px). Bộ này dùng catalog công khai local; chưa xác minh thao tác tạo/xuất bản/giao bài 13 với tài khoản trên cloud.
 - Chưa triển khai hoặc thay dữ liệu bài/lớp trên cloud. Giáo viên duyệt chuyên môn và xuất bản bản nháp trước khi giao lớp.
+
+## Tra ngữ pháp cho người đã đăng nhập (23/11/2026)
+
+Trên production, thẻ **Tra ngữ pháp** ở Tự học mở `/grammar`, nhưng trang chỉ hiện "Chưa có bài học công khai" vì mọi bài đều thuộc lớp. Nay trang tra trong bài các lớp mình học và (giáo viên) bài mình đã xuất bản.
+
+- PASS local: `npm run check` (Prettier, ESLint, TypeScript, 481 test, thêm `tests/grammar-search.test.ts`).
+- PASS browser local (Supabase local, 390px), đi từ Tự học → Tra ngữ pháp: khách thấy 10 mẫu của bài công khai mẫu; học viên trong lớp có bài 27–28 thấy 28 mẫu, tìm "しか" ra 2 mẫu, bấm mở `/lessons/<bài 27>?version=…&class=…#g2705` và mục hiện ra; giáo viên thấy mẫu của các bài mình đã xuất bản. Không có lỗi JS, không tràn ngang.
+- E2E chưa chạy (đợt này tạm hoãn E2E).
