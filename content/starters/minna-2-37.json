@@ -1,0 +1,954 @@
+{
+  "id": "minna-2-37",
+  "title": "Bài 37 – Thể bị động",
+  "titleJa": "第37課・受身形",
+  "summary": "Kể điều được hoặc bị tác động và giới thiệu sự kiện, công trình.",
+  "order": 37,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3701",
+        "jp": "だれか",
+        "romaji": "dareka",
+        "vi": "ai đó",
+        "audio": null,
+        "kanji": "誰か"
+      },
+      {
+        "id": "v3702",
+        "jp": "ほめます",
+        "romaji": "homemasu",
+        "vi": "khen",
+        "audio": null,
+        "kanji": "褒めます"
+      },
+      {
+        "id": "v3703",
+        "jp": "しかります",
+        "romaji": "shikarimasu",
+        "vi": "mắng",
+        "audio": null,
+        "kanji": "叱ります"
+      },
+      {
+        "id": "v3704",
+        "jp": "さそいます",
+        "romaji": "sasoimasu",
+        "vi": "rủ",
+        "audio": null,
+        "kanji": "誘います"
+      },
+      {
+        "id": "v3705",
+        "jp": "おこします",
+        "romaji": "okoshimasu",
+        "vi": "đánh thức",
+        "audio": null,
+        "kanji": "起こします"
+      },
+      {
+        "id": "v3706",
+        "jp": "しょうたいします",
+        "romaji": "shoutai shimasu",
+        "vi": "mời",
+        "audio": null,
+        "kanji": "招待します"
+      },
+      {
+        "id": "v3707",
+        "jp": "たのみます",
+        "romaji": "tanomimasu",
+        "vi": "nhờ",
+        "audio": null,
+        "kanji": "頼みます"
+      },
+      {
+        "id": "v3708",
+        "jp": "ちゅういします",
+        "romaji": "chuui shimasu",
+        "vi": "nhắc nhở, cảnh báo",
+        "audio": null,
+        "kanji": "注意します"
+      },
+      {
+        "id": "v3709",
+        "jp": "とります",
+        "romaji": "torimasu",
+        "vi": "lấy, lấy mất",
+        "audio": null,
+        "kanji": "取ります",
+        "note": "さいふを とります"
+      },
+      {
+        "id": "v3710",
+        "jp": "ふみます",
+        "romaji": "fumimasu",
+        "vi": "giẫm",
+        "audio": null,
+        "kanji": "踏みます",
+        "note": "あしを ふみます"
+      },
+      {
+        "id": "v3711",
+        "jp": "こわします",
+        "romaji": "kowashimasu",
+        "vi": "làm hỏng",
+        "audio": null,
+        "kanji": "壊します"
+      },
+      {
+        "id": "v3712",
+        "jp": "よごします",
+        "romaji": "yogoshimasu",
+        "vi": "làm bẩn",
+        "audio": null,
+        "kanji": "汚します"
+      },
+      {
+        "id": "v3713",
+        "jp": "おこないます",
+        "romaji": "okonaimasu",
+        "vi": "tiến hành, tổ chức",
+        "audio": null,
+        "kanji": "行います"
+      },
+      {
+        "id": "v3714",
+        "jp": "ゆしゅつします",
+        "romaji": "yushutsu shimasu",
+        "vi": "xuất khẩu",
+        "audio": null,
+        "kanji": "輸出します"
+      },
+      {
+        "id": "v3715",
+        "jp": "ゆにゅうします",
+        "romaji": "yunyuu shimasu",
+        "vi": "nhập khẩu",
+        "audio": null,
+        "kanji": "輸入します"
+      },
+      {
+        "id": "v3716",
+        "jp": "ほんやくします",
+        "romaji": "honyaku shimasu",
+        "vi": "dịch",
+        "audio": null,
+        "kanji": "翻訳します",
+        "image": "/icons/vocab/books.svg"
+      },
+      {
+        "id": "v3717",
+        "jp": "はつめいします",
+        "romaji": "hatsumei shimasu",
+        "vi": "phát minh",
+        "audio": null,
+        "kanji": "発明します"
+      },
+      {
+        "id": "v3718",
+        "jp": "はっけんします",
+        "romaji": "hakken shimasu",
+        "vi": "phát hiện",
+        "audio": null,
+        "kanji": "発見します"
+      },
+      {
+        "id": "v3719",
+        "jp": "せっけいします",
+        "romaji": "sekkei shimasu",
+        "vi": "thiết kế",
+        "audio": null,
+        "kanji": "設計します"
+      },
+      {
+        "id": "v3720",
+        "jp": "こめ",
+        "romaji": "kome",
+        "vi": "gạo",
+        "audio": null,
+        "kanji": "米"
+      },
+      {
+        "id": "v3721",
+        "jp": "むぎ",
+        "romaji": "mugi",
+        "vi": "lúa mì, lúa mạch",
+        "audio": null,
+        "kanji": "麦"
+      },
+      {
+        "id": "v3722",
+        "jp": "せきゆ",
+        "romaji": "sekiyu",
+        "vi": "dầu mỏ",
+        "audio": null,
+        "kanji": "石油"
+      },
+      {
+        "id": "v3723",
+        "jp": "げんりょう",
+        "romaji": "genryou",
+        "vi": "nguyên liệu",
+        "audio": null,
+        "kanji": "原料"
+      },
+      {
+        "id": "v3724",
+        "jp": "デート",
+        "romaji": "deeto",
+        "vi": "buổi hẹn hò",
+        "audio": null
+      },
+      {
+        "id": "v3725",
+        "jp": "どろぼう",
+        "romaji": "dorobou",
+        "vi": "kẻ trộm",
+        "audio": null,
+        "kanji": "泥棒"
+      },
+      {
+        "id": "v3726",
+        "jp": "けいかん",
+        "romaji": "keikan",
+        "vi": "cảnh sát",
+        "audio": null,
+        "kanji": "警官"
+      },
+      {
+        "id": "v3727",
+        "jp": "けんちくか",
+        "romaji": "kenchikuka",
+        "vi": "kiến trúc sư",
+        "audio": null,
+        "kanji": "建築家"
+      },
+      {
+        "id": "v3728",
+        "jp": "かがくしゃ",
+        "romaji": "kagakusha",
+        "vi": "nhà khoa học",
+        "audio": null,
+        "kanji": "科学者"
+      },
+      {
+        "id": "v3729",
+        "jp": "せかいじゅう",
+        "romaji": "sekaijuu",
+        "vi": "khắp thế giới",
+        "audio": null,
+        "kanji": "世界中"
+      },
+      {
+        "id": "v3730",
+        "jp": "〜じゅう",
+        "romaji": "juu",
+        "vi": "khắp…, suốt…",
+        "audio": null,
+        "kanji": "〜中"
+      },
+      {
+        "id": "v3731",
+        "jp": "〜によって",
+        "romaji": "ni yotte",
+        "vi": "do… thực hiện",
+        "audio": null,
+        "note": "Chỉ tác giả hoặc người thực hiện trong câu bị động khách quan."
+      },
+      {
+        "id": "v3732",
+        "jp": "よかったですね。",
+        "romaji": "yokatta desu ne",
+        "vi": "May quá nhỉ.",
+        "audio": null
+      },
+      {
+        "id": "v3733",
+        "jp": "うめたてます",
+        "romaji": "umetatemasu",
+        "vi": "san lấp, lấn biển",
+        "audio": null,
+        "kanji": "埋め立てます"
+      },
+      {
+        "id": "v3734",
+        "jp": "ぎじゅつ",
+        "romaji": "gijutsu",
+        "vi": "kỹ thuật, công nghệ",
+        "audio": null,
+        "kanji": "技術"
+      },
+      {
+        "id": "v3735",
+        "jp": "とち",
+        "romaji": "tochi",
+        "vi": "đất, khu đất",
+        "audio": null,
+        "kanji": "土地"
+      },
+      {
+        "id": "v3736",
+        "jp": "そうおん",
+        "romaji": "souon",
+        "vi": "tiếng ồn",
+        "audio": null,
+        "kanji": "騒音"
+      },
+      {
+        "id": "v3737",
+        "jp": "アクセス",
+        "romaji": "akusesu",
+        "vi": "đường đi, khả năng tiếp cận",
+        "audio": null
+      },
+      {
+        "id": "v3738",
+        "jp": "やけます",
+        "romaji": "yakemasu",
+        "vi": "bị cháy",
+        "audio": null,
+        "kanji": "焼けます",
+        "note": "うちが やけます"
+      },
+      {
+        "id": "v3739",
+        "jp": "キロ",
+        "romaji": "kiro",
+        "vi": "kilôgam hoặc kilômét tùy ngữ cảnh",
+        "audio": null
+      },
+      {
+        "id": "v3740",
+        "jp": "きんいろ",
+        "romaji": "kiniro",
+        "vi": "màu vàng kim",
+        "audio": null,
+        "kanji": "金色"
+      },
+      {
+        "id": "v3741",
+        "jp": "そのご",
+        "romaji": "sono go",
+        "vi": "sau đó",
+        "audio": null,
+        "kanji": "その後"
+      },
+      {
+        "id": "v3742",
+        "jp": "インスタントラーメン",
+        "romaji": "insutanto raamen",
+        "vi": "mì ramen ăn liền",
+        "audio": null
+      },
+      {
+        "id": "v3743",
+        "jp": "うつくしい",
+        "romaji": "utsukushii",
+        "vi": "đẹp",
+        "audio": null,
+        "kanji": "美しい"
+      },
+      {
+        "id": "v3744",
+        "jp": "せいき",
+        "romaji": "seiki",
+        "vi": "thế kỷ",
+        "audio": null,
+        "kanji": "世紀"
+      },
+      {
+        "id": "v3745",
+        "jp": "せかいいさん",
+        "romaji": "sekai isan",
+        "vi": "di sản thế giới",
+        "audio": null,
+        "kanji": "世界遺産"
+      },
+      {
+        "id": "v3746",
+        "jp": "ほんもの",
+        "romaji": "honmono",
+        "vi": "đồ thật, hàng thật",
+        "audio": null,
+        "kanji": "本物"
+      },
+      {
+        "id": "v3747",
+        "jp": "きん",
+        "romaji": "kin",
+        "vi": "vàng (kim loại)",
+        "audio": null,
+        "kanji": "金"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3701",
+        "pattern": "Thể bị động · 受身形",
+        "vi": "Đổi động từ sang thể bị động",
+        "explain": "Nhóm I đổi âm cuối sang hàng あ + れる, riêng う → われる. Nhóm II bỏ る, thêm られる. する → される, くる → こられる.",
+        "viMistake": "Nhóm I: ふむ → ふまれる. Nhóm II có dạng られる trùng thể khả năng, nên xem trợ từ và ngữ cảnh.",
+        "examples": [
+          {
+            "jp": "{名前|なまえ}を {呼|よ}ばれました。",
+            "vi": "Tôi được gọi tên.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3702",
+        "pattern": "N1 は N2 に V bị động",
+        "vi": "Nói từ góc nhìn của người nhận tác động",
+        "explain": "N1 nhận tác động. N2 thực hiện, đi với に. Tùy ngữ cảnh tiếng Việt có thể dịch là được hoặc bị.",
+        "viMistake": "Câu chủ động せんせいが わたしを ほめました đổi thành わたしは せんせいに ほめられました.",
+        "examples": [
+          {
+            "jp": "{試合|しあい}の あとで、コーチに {褒|ほ}められました。",
+            "vi": "Sau trận đấu, tôi được huấn luyện viên khen.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3703",
+        "pattern": "N1 は N2 に N3 を V bị động",
+        "vi": "Nêu người chịu ảnh hưởng qua đồ vật hoặc bộ phận",
+        "explain": "Giữ N3 với を. Chủ đề N1 là người chịu ảnh hưởng, N2 là người tác động.",
+        "viMistake": "Đặt người chịu ảnh hưởng làm chủ đề khi kể chuyện xảy ra với đồ của mình.",
+        "examples": [
+          {
+            "jp": "わたしは {弟|おとうと}に {自転車|じてんしゃ}を {壊|こわ}されました。",
+            "vi": "Tôi bị em trai làm hỏng xe đạp.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3704",
+        "pattern": "Sự vật が／は + V bị động",
+        "vi": "Giới thiệu sự kiện, công trình hoặc sản phẩm",
+        "explain": "Dùng が để nêu sự kiện, は để lấy sự vật đang nói tới làm chủ đề. Có thể lược người thực hiện. 〜られています mô tả trạng thái hoặc hoạt động đang duy trì.",
+        "viMistake": "Không cần thêm tác nhân nếu trọng tâm là nơi, thời gian hay kết quả.",
+        "examples": [
+          {
+            "jp": "{来月|らいげつ}、{港|みなと}で {展覧会|てんらんかい}が {開|ひら}かれます。",
+            "vi": "Tháng sau một triển lãm sẽ được tổ chức ở cảng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3705",
+        "pattern": "N によって + V bị động",
+        "vi": "Nêu người tạo ra tác phẩm hoặc công trình",
+        "explain": "Dùng によって khi cần nêu tác giả, người thiết kế hoặc người phát minh trong câu giới thiệu khách quan.",
+        "viMistake": "に vẫn thường gặp khi kể về người trực tiếp tác động tới mình.",
+        "examples": [
+          {
+            "jp": "この {建物|たてもの}は {地元|じもと}の {建築家|けんちくか}によって {設計|せっけい}されました。",
+            "vi": "Tòa nhà này do một kiến trúc sư địa phương thiết kế.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3706",
+        "pattern": "N から／N で 作られます",
+        "vi": "Nói nguyên liệu hoặc vật liệu",
+        "explain": "から thường nêu nguyên liệu đã qua biến đổi. で thường nêu vật liệu còn nhận ra được trong thành phẩm.",
+        "viMistake": "Gỗ trong bàn vẫn nhận ra được, nên dùng きで つくられます.",
+        "examples": [
+          {
+            "jp": "この パンは {小麦|こむぎ}から {作|つく}られています。",
+            "vi": "Bánh mì này được làm từ lúa mì.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3701",
+        "type": "title",
+        "jp": "第37課 · {受身形|うけみけい}",
+        "vi": "Bài 37 · Thể bị động"
+      },
+      {
+        "id": "s3702",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Kể việc mình được hoặc bị tác động. Giới thiệu sự kiện và công trình bằng câu bị động."
+      },
+      {
+        "id": "s3703",
+        "type": "vocab",
+        "refs": ["v3701", "v3702", "v3703", "v3704", "v3705", "v3706", "v3707", "v3708"]
+      },
+      {
+        "id": "s3704",
+        "type": "vocab",
+        "refs": ["v3709", "v3710", "v3711", "v3712", "v3713", "v3714", "v3715", "v3716"]
+      },
+      {
+        "id": "s3705",
+        "type": "vocab",
+        "refs": ["v3717", "v3718", "v3719", "v3720", "v3721", "v3722", "v3723", "v3724"]
+      },
+      {
+        "id": "s3706",
+        "type": "vocab",
+        "refs": ["v3725", "v3726", "v3727", "v3728", "v3729", "v3730", "v3731", "v3732"]
+      },
+      {
+        "id": "s3707",
+        "type": "vocab",
+        "refs": ["v3733", "v3734", "v3735", "v3736", "v3737", "v3738", "v3739", "v3740"]
+      },
+      {
+        "id": "s3708",
+        "type": "vocab",
+        "refs": ["v3741", "v3742", "v3743", "v3744", "v3745", "v3746", "v3747"]
+      },
+      {
+        "id": "s3709",
+        "type": "grammar",
+        "ref": "g3701"
+      },
+      {
+        "id": "s3710",
+        "type": "example",
+        "ref": "g3701",
+        "reveal": true
+      },
+      {
+        "id": "s3711",
+        "type": "quiz",
+        "ref": "q3701"
+      },
+      {
+        "id": "s3712",
+        "type": "table",
+        "title": "Chia thể bị động",
+        "columns": ["Nhóm", "Thể từ điển", "Bị động"],
+        "rows": [
+          ["I", "ふむ／いう", "ふまれる／いわれる"],
+          ["II", "ほめる", "ほめられる"],
+          ["III", "する／くる", "される／こられる"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3713",
+        "type": "grammar",
+        "ref": "g3702"
+      },
+      {
+        "id": "s3714",
+        "type": "example",
+        "ref": "g3702",
+        "reveal": true
+      },
+      {
+        "id": "s3715",
+        "type": "quiz",
+        "ref": "q3705"
+      },
+      {
+        "id": "s3716",
+        "type": "grammar",
+        "ref": "g3703"
+      },
+      {
+        "id": "s3717",
+        "type": "example",
+        "ref": "g3703",
+        "reveal": true
+      },
+      {
+        "id": "s3718",
+        "type": "quiz",
+        "ref": "q3706"
+      },
+      {
+        "id": "s3719",
+        "type": "grammar",
+        "ref": "g3704"
+      },
+      {
+        "id": "s3720",
+        "type": "example",
+        "ref": "g3704",
+        "reveal": true
+      },
+      {
+        "id": "s3721",
+        "type": "quiz",
+        "ref": "q3707"
+      },
+      {
+        "id": "s3722",
+        "type": "grammar",
+        "ref": "g3705"
+      },
+      {
+        "id": "s3723",
+        "type": "example",
+        "ref": "g3705",
+        "reveal": true
+      },
+      {
+        "id": "s3724",
+        "type": "quiz",
+        "ref": "q3708"
+      },
+      {
+        "id": "s3725",
+        "type": "grammar",
+        "ref": "g3706"
+      },
+      {
+        "id": "s3726",
+        "type": "example",
+        "ref": "g3706",
+        "reveal": true
+      },
+      {
+        "id": "s3727",
+        "type": "quiz",
+        "ref": "q3709"
+      },
+      {
+        "id": "s3728",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["踏", "{踏|ふ}みます", "giẫm"],
+          ["壊", "{壊|こわ}します", "làm hỏng"],
+          ["輸", "{輸出|ゆしゅつ}／{輸入|ゆにゅう}", "xuất／nhập khẩu"],
+          ["訳", "{翻訳|ほんやく}", "dịch"],
+          ["設", "{設計|せっけい}", "thiết kế"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3729",
+        "type": "table",
+        "title": "Từ tham khảo · Tai nạn và vụ việc",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{事故|じこ}", "tai nạn"],
+          ["{事件|じけん}", "vụ việc"],
+          ["{火事|かじ}", "hỏa hoạn"],
+          ["{盗難|とうなん}", "vụ mất trộm"],
+          ["{通報|つうほう}します", "báo cho cơ quan chức năng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3730",
+        "type": "dialogue",
+        "title": "Hội thoại · Hỏi về phòng trưng bày",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "この {建物|たてもの}は いつ {建|た}てられましたか。",
+            "vi": "Tòa nhà này được xây khi nào ạ?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "およそ １００{年|ねん}{前|まえ}です。{地元|じもと}の {建築家|けんちくか}によって {設計|せっけい}されました。",
+            "vi": "Khoảng 100 năm trước. Một kiến trúc sư địa phương đã thiết kế."
+          },
+          {
+            "speaker": "An",
+            "jp": "{今|いま}も ここで {展覧会|てんらんかい}が {開|ひら}かれていますか。",
+            "vi": "Hiện giờ ở đây vẫn tổ chức triển lãm à?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "はい、{毎年|まいとし} {秋|あき}に {開|ひら}かれます。",
+            "vi": "Vâng, mỗi năm đều tổ chức vào mùa thu."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi tòa nhà được xây khi nào và triển lãm diễn ra vào mùa nào."
+      },
+      {
+        "id": "s3731",
+        "type": "quiz",
+        "ref": "q3716"
+      },
+      {
+        "id": "s3732",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: {褒|ほ}められました／{先生|せんせい}に／わたしは",
+            "わたしは {先生|せんせい}に {褒|ほ}められました。"
+          ],
+          ["Dịch: Tôi bị ai đó giẫm vào chân.", "だれかに {足|あし}を {踏|ふ}まれました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3733",
+        "type": "table",
+        "title": "Nhập vai · Giới thiệu một công trình",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["Khách", "Hỏi năm xây dựng", "いつ {建|た}てられましたか。"],
+          [
+            "Hướng dẫn viên",
+            "Nêu thời gian và tác giả",
+            "３０{年|ねん}{前|まえ}に {建|た}てられました。{地元|じもと}の {建築家|けんちくか}によって {設計|せっけい}されました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3734",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "に nêu người thực hiện trong câu kể tác động.\nを giữ bộ phận hoặc đồ vật trong câu nói người chịu ảnh hưởng.\nが／は dùng trong câu giới thiệu khách quan.\nによって nêu tác giả.",
+        "teacherNotes": "Đối chiếu dạng られる với thể khả năng bài 27. Sang bài 38, dùng の để biến hành động thành cụm danh từ."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3701",
+        "type": "choice",
+        "prompt": "Chọn dạng bị động của ふむ.",
+        "options": ["ふまれる", "ふめる", "ふまない", "ふもう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Nhóm I đổi む thành ま rồi thêm れる.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3702",
+        "type": "choice",
+        "prompt": "Chọn dạng bị động của いう.",
+        "options": ["いえる", "いわれる", "いあれる", "いおう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Động từ kết thúc bằng う dùng われる.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3703",
+        "type": "choice",
+        "prompt": "Chọn dạng bị động của ほめる.",
+        "options": ["ほめさせる", "ほめろ", "ほめられる", "ほめよう"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nhóm II bỏ る rồi thêm られる.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3704",
+        "type": "choice",
+        "prompt": "Chọn dạng bị động của する.",
+        "options": ["できる", "しよう", "させる", "される"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "する có dạng bất quy tắc される.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3705",
+        "type": "choice",
+        "prompt": "Được giáo viên khen: せんせい（　）ほめられました。",
+        "options": ["に", "を", "へ", "で"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Người thực hiện đi với に.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3706",
+        "type": "choice",
+        "prompt": "Tôi bị giẫm vào chân: あし（　）ふまれました。",
+        "options": ["に", "を", "で", "へ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Giữ を cho bộ phận chịu tác động.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3707",
+        "type": "choice",
+        "prompt": "Chọn câu nói sách được dịch.",
+        "options": [
+          "ほんを ほんやくしました。",
+          "ほんが ほんやくできます。",
+          "ほんが ほんやくされました。",
+          "ほんを ほんやくする つもりです。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Sách là chủ thể của câu bị động.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3708",
+        "type": "choice",
+        "prompt": "Chọn cụm nêu người thiết kế trong bài giới thiệu công trình.",
+        "options": ["けんちくかまで", "けんちくかだけ", "けんちくかから", "けんちくかに よって"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "によって nêu tác giả hoặc người thiết kế.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3709",
+        "type": "choice",
+        "prompt": "Bàn được làm bằng gỗ: き（　）つくられています。",
+        "options": ["で", "へ", "を", "と"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng で nêu vật liệu còn nhận ra.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3710",
+        "type": "choice",
+        "prompt": "Giấy làm từ gỗ đã qua chế biến: き（　）つくられます。",
+        "options": ["へ", "から", "を", "と"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "から nêu nguồn nguyên liệu đã biến đổi.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3711",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là xuất khẩu?",
+        "options": ["ゆにゅうします", "せっけいします", "ゆしゅつします", "はっけんします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "輸出 là xuất khẩu.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3712",
+        "type": "choice",
+        "prompt": "Từ nào chỉ kiến trúc sư?",
+        "options": ["かがくしゃ", "けいかん", "どろぼう", "けんちくか"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "建築家 là kiến trúc sư.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3713",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 世界中.",
+        "options": ["khắp thế giới", "sau đó", "màu vàng kim", "thế kỷ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "〜中 đọc じゅう ở đây là khắp.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3714",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là phát minh?",
+        "options": ["はっけんします", "はつめいします", "ほんやくします", "うめたてます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "発明 nói việc nghĩ ra thứ mới.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3715",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là tiếng ồn?",
+        "options": ["ぎじゅつ", "げんりょう", "そうおん", "とち"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "騒音 đọc そうおん.",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3716",
+        "type": "choice",
+        "prompt": "Theo bảng giới thiệu, công trình được ai thiết kế?",
+        "options": [
+          "Nhân viên nhà ga",
+          "Nhà khoa học nước ngoài",
+          "Một người thợ mộc",
+          "Kiến trúc sư địa phương"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "地元の建築家によって cho biết người thiết kế.",
+        "points": 1,
+        "tags": ["minna-37"],
+        "passage": "この {建物|たてもの}は １００{年|ねん}{前|まえ}に {建|た}てられました。{地元|じもと}の {建築家|けんちくか}によって {設計|せっけい}されました。"
+      },
+      {
+        "id": "q3717",
+        "type": "fill",
+        "prompt": "Viết thể bị động của こわす bằng hiragana.",
+        "answer": ["こわされる"],
+        "inputMode": "hiragana",
+        "explain": "こわす → こわされる",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3718",
+        "type": "fill",
+        "prompt": "Viết thể bị động của さそう bằng hiragana.",
+        "answer": ["さそわれる"],
+        "inputMode": "hiragana",
+        "explain": "さそう → さそわれる",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3719",
+        "type": "fill",
+        "prompt": "Viết thể bị động của たのむ bằng hiragana.",
+        "answer": ["たのまれる"],
+        "inputMode": "hiragana",
+        "explain": "たのむ → たのまれる",
+        "points": 1,
+        "tags": ["minna-37"]
+      },
+      {
+        "id": "q3720",
+        "type": "fill",
+        "prompt": "Viết thể bị động của たてる bằng hiragana.",
+        "answer": ["たてられる"],
+        "inputMode": "hiragana",
+        "explain": "たてる → たてられる",
+        "points": 1,
+        "tags": ["minna-37"]
+      }
+    ]
+  }
+}
