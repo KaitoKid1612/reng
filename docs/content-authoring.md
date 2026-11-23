@@ -105,6 +105,8 @@ Ngày 23/11/2026 thêm **Tạo bài 39 từ mẫu** với 45 mục từ, 5 mục
 
 Ngày 23/11/2026 thêm **Tạo bài 40 từ mẫu** với 45 mục từ, 5 mục ngữ pháp, 37 slide và 27 câu tự chấm. Bài luyện câu hỏi lồng với か／かどうか, Vてみます và danh từ chỉ mức độ 〜さ. [Bảng đối chiếu bài 40](testing/minna-lesson-40-coverage.md).
 
+Ngày 23/11/2026 thêm **Tạo bài 41 từ mẫu** với 48 mục từ, 6 mục ngữ pháp, 41 slide và 27 câu tự chấm. Bài luyện cho nhận theo vai vế với いただきます, くださいます, やります và nhờ lịch sự bằng 〜てくださいませんか. [Bảng đối chiếu bài 41](testing/minna-lesson-41-coverage.md).
+
 Slide quiz chỉ nhận câu chọn và câu điền. Câu sắp xếp và câu nối nằm trong bộ câu luyện để giao bài; trên slide, dùng bảng có cột đáp án mẫu. Cột phải của câu nối được editor xáo theo thứ tự cố định (`toMatchQuestion` trong `lib/match-pairs.ts`), nên JSON mẫu phải lưu đúng thứ tự đó.
 
 Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.

@@ -1,0 +1,1221 @@
+{
+  "id": "minna-2-41",
+  "title": "Bài 41 – Cho và nhận với người trên",
+  "titleJa": "第41課・いただきます、くださいます、やります",
+  "summary": "Cho và nhận theo vai vế, cảm ơn khi được người trên giúp và nhờ lịch sự bằng 〜てくださいませんか.",
+  "order": 41,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4101",
+        "jp": "いただきます",
+        "romaji": "itadakimasu",
+        "vi": "nhận (khiêm nhường của もらいます)",
+        "audio": null,
+        "kanji": "頂きます",
+        "note": "せんせいに ほんを いただきます"
+      },
+      {
+        "id": "v4102",
+        "jp": "くださいます",
+        "romaji": "kudasaimasu",
+        "vi": "cho tôi (tôn kính của くれます)",
+        "audio": null,
+        "note": "せんせいが わたしに ほんを くださいます"
+      },
+      {
+        "id": "v4103",
+        "jp": "やります",
+        "romaji": "yarimasu",
+        "vi": "cho (người dưới, động vật, cây)",
+        "audio": null,
+        "note": "いぬに えさを やります"
+      },
+      {
+        "id": "v4104",
+        "jp": "あげます",
+        "romaji": "agemasu",
+        "vi": "nâng lên, tăng",
+        "audio": null,
+        "kanji": "上げます",
+        "note": "おんどを あげます"
+      },
+      {
+        "id": "v4105",
+        "jp": "さげます",
+        "romaji": "sagemasu",
+        "vi": "hạ xuống, giảm",
+        "audio": null,
+        "kanji": "下げます",
+        "note": "おんどを さげます"
+      },
+      {
+        "id": "v4106",
+        "jp": "しんせつに します",
+        "romaji": "shinsetsu ni shimasu",
+        "vi": "đối xử tử tế",
+        "audio": null,
+        "kanji": "親切にします"
+      },
+      {
+        "id": "v4107",
+        "jp": "よびます",
+        "romaji": "yobimasu",
+        "vi": "mời (đến nhà), gọi",
+        "audio": null,
+        "kanji": "呼びます",
+        "note": "ともだちを うちに よびます"
+      },
+      {
+        "id": "v4108",
+        "jp": "あずかります",
+        "romaji": "azukarimasu",
+        "vi": "giữ hộ",
+        "audio": null,
+        "kanji": "預かります"
+      },
+      {
+        "id": "v4109",
+        "jp": "たすかります",
+        "romaji": "tasukarimasu",
+        "vi": "được giúp, đỡ quá",
+        "audio": null,
+        "kanji": "助かります"
+      },
+      {
+        "id": "v4110",
+        "jp": "めずらしい",
+        "romaji": "mezurashii",
+        "vi": "hiếm, lạ",
+        "audio": null,
+        "kanji": "珍しい"
+      },
+      {
+        "id": "v4111",
+        "jp": "かわいい",
+        "romaji": "kawaii",
+        "vi": "dễ thương",
+        "audio": null
+      },
+      {
+        "id": "v4112",
+        "jp": "〜ずつ",
+        "romaji": "zutsu",
+        "vi": "mỗi … (chia đều)",
+        "audio": null,
+        "note": "ひとり ふたつずつ"
+      },
+      {
+        "id": "v4113",
+        "jp": "おいわい",
+        "romaji": "oiwai",
+        "vi": "quà mừng, sự chúc mừng",
+        "audio": null,
+        "kanji": "お祝い"
+      },
+      {
+        "id": "v4114",
+        "jp": "おとしだま",
+        "romaji": "otoshidama",
+        "vi": "tiền mừng tuổi",
+        "audio": null,
+        "kanji": "お年玉"
+      },
+      {
+        "id": "v4115",
+        "jp": "おみまい",
+        "romaji": "omimai",
+        "vi": "thăm người ốm, quà thăm ốm",
+        "audio": null,
+        "kanji": "お見舞い"
+      },
+      {
+        "id": "v4116",
+        "jp": "きょうみ",
+        "romaji": "kyoumi",
+        "vi": "sự hứng thú",
+        "audio": null,
+        "kanji": "興味",
+        "note": "〜に きょうみが あります"
+      },
+      {
+        "id": "v4117",
+        "jp": "じょうほう",
+        "romaji": "jouhou",
+        "vi": "thông tin",
+        "audio": null,
+        "kanji": "情報"
+      },
+      {
+        "id": "v4118",
+        "jp": "ぶんぽう",
+        "romaji": "bunpou",
+        "vi": "ngữ pháp",
+        "audio": null,
+        "kanji": "文法"
+      },
+      {
+        "id": "v4119",
+        "jp": "はつおん",
+        "romaji": "hatsuon",
+        "vi": "phát âm",
+        "audio": null,
+        "kanji": "発音"
+      },
+      {
+        "id": "v4120",
+        "jp": "さる",
+        "romaji": "saru",
+        "vi": "con khỉ",
+        "audio": null,
+        "kanji": "猿"
+      },
+      {
+        "id": "v4121",
+        "jp": "えさ",
+        "romaji": "esa",
+        "vi": "thức ăn cho động vật",
+        "audio": null,
+        "kanji": "餌"
+      },
+      {
+        "id": "v4122",
+        "jp": "おもちゃ",
+        "romaji": "omocha",
+        "vi": "đồ chơi",
+        "audio": null
+      },
+      {
+        "id": "v4123",
+        "jp": "えほん",
+        "romaji": "ehon",
+        "vi": "sách tranh cho trẻ em",
+        "audio": null,
+        "kanji": "絵本",
+        "image": "/icons/vocab/open-book.svg"
+      },
+      {
+        "id": "v4124",
+        "jp": "えはがき",
+        "romaji": "ehagaki",
+        "vi": "bưu thiếp có tranh",
+        "audio": null,
+        "kanji": "絵はがき"
+      },
+      {
+        "id": "v4125",
+        "jp": "ドライバー",
+        "romaji": "doraibaa",
+        "vi": "cái tua vít",
+        "audio": null
+      },
+      {
+        "id": "v4126",
+        "jp": "ハンカチ",
+        "romaji": "hankachi",
+        "vi": "khăn tay",
+        "audio": null
+      },
+      {
+        "id": "v4127",
+        "jp": "くつした",
+        "romaji": "kutsushita",
+        "vi": "tất, vớ",
+        "audio": null,
+        "kanji": "靴下"
+      },
+      {
+        "id": "v4128",
+        "jp": "てぶくろ",
+        "romaji": "tebukuro",
+        "vi": "găng tay",
+        "audio": null,
+        "kanji": "手袋"
+      },
+      {
+        "id": "v4129",
+        "jp": "バッグ",
+        "romaji": "baggu",
+        "vi": "túi xách",
+        "audio": null,
+        "image": "/icons/vocab/handbag.svg"
+      },
+      {
+        "id": "v4130",
+        "jp": "そふ",
+        "romaji": "sofu",
+        "vi": "ông (của tôi)",
+        "audio": null,
+        "kanji": "祖父"
+      },
+      {
+        "id": "v4131",
+        "jp": "そぼ",
+        "romaji": "sobo",
+        "vi": "bà (của tôi)",
+        "audio": null,
+        "kanji": "祖母"
+      },
+      {
+        "id": "v4132",
+        "jp": "まご",
+        "romaji": "mago",
+        "vi": "cháu (của tôi)",
+        "audio": null,
+        "kanji": "孫"
+      },
+      {
+        "id": "v4133",
+        "jp": "おまごさん",
+        "romaji": "omagosan",
+        "vi": "cháu (của người khác)",
+        "audio": null,
+        "kanji": "お孫さん"
+      },
+      {
+        "id": "v4134",
+        "jp": "おじ",
+        "romaji": "oji",
+        "vi": "chú, bác, cậu (của tôi)",
+        "audio": null,
+        "kanji": "叔父・伯父"
+      },
+      {
+        "id": "v4135",
+        "jp": "おじさん",
+        "romaji": "ojisan",
+        "vi": "chú, bác (của người khác); người đàn ông trung niên",
+        "audio": null,
+        "kanji": "叔父さん・伯父さん"
+      },
+      {
+        "id": "v4136",
+        "jp": "おば",
+        "romaji": "oba",
+        "vi": "cô, dì, bác gái (của tôi)",
+        "audio": null,
+        "kanji": "叔母・伯母"
+      },
+      {
+        "id": "v4137",
+        "jp": "おばさん",
+        "romaji": "obasan",
+        "vi": "cô, dì (của người khác)",
+        "audio": null,
+        "kanji": "叔母さん・伯母さん"
+      },
+      {
+        "id": "v4138",
+        "jp": "かんりにん",
+        "romaji": "kanrinin",
+        "vi": "người quản lý (tòa nhà)",
+        "audio": null,
+        "kanji": "管理人"
+      },
+      {
+        "id": "v4139",
+        "jp": "ふたり",
+        "romaji": "futari",
+        "vi": "hai người, đôi vợ chồng",
+        "audio": null,
+        "kanji": "二人"
+      },
+      {
+        "id": "v4140",
+        "jp": "おたく",
+        "romaji": "otaku",
+        "vi": "nhà (của người khác)",
+        "audio": null,
+        "kanji": "お宅"
+      },
+      {
+        "id": "v4141",
+        "jp": "だんぼう",
+        "romaji": "danbou",
+        "vi": "máy sưởi",
+        "audio": null,
+        "kanji": "暖房"
+      },
+      {
+        "id": "v4142",
+        "jp": "れいぼう",
+        "romaji": "reibou",
+        "vi": "máy lạnh",
+        "audio": null,
+        "kanji": "冷房"
+      },
+      {
+        "id": "v4143",
+        "jp": "おんど",
+        "romaji": "ondo",
+        "vi": "nhiệt độ",
+        "audio": null,
+        "kanji": "温度"
+      },
+      {
+        "id": "v4144",
+        "jp": "ようちえん",
+        "romaji": "youchien",
+        "vi": "trường mẫu giáo",
+        "audio": null,
+        "kanji": "幼稚園"
+      },
+      {
+        "id": "v4145",
+        "jp": "ひとこと",
+        "romaji": "hitokoto",
+        "vi": "một lời",
+        "audio": null,
+        "kanji": "一言",
+        "note": "ひとこと おねがいします"
+      },
+      {
+        "id": "v4146",
+        "jp": "せんじつ",
+        "romaji": "senjitsu",
+        "vi": "hôm trước",
+        "audio": null,
+        "kanji": "先日"
+      },
+      {
+        "id": "v4147",
+        "jp": "このあいだ",
+        "romaji": "kono aida",
+        "vi": "hôm nọ",
+        "audio": null,
+        "kanji": "この間"
+      },
+      {
+        "id": "v4148",
+        "jp": "はあ",
+        "romaji": "haa",
+        "vi": "vâng, dạ (đáp lời, còn lưỡng lự)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4101",
+        "pattern": "わたしは 目上に N を いただきます",
+        "vi": "Tôi nhận vật từ người trên",
+        "explain": "いただきます là cách nói khiêm nhường của もらいます. Chủ ngữ là tôi, người nhận. Người cho là người trên, đi với に hoặc から.",
+        "viMistake": "Với bạn bè, người nhà dùng もらいます. Không nói せんせいが わたしに いただきました.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}に {辞書|じしょ}を いただきました。",
+            "vi": "Tôi đã nhận từ cô giáo một cuốn từ điển.",
+            "audio": null
+          },
+          {
+            "jp": "{部長|ぶちょう}から {珍|めずら}しい お{菓子|かし}を いただきました。",
+            "vi": "Tôi đã nhận bánh kẹo lạ từ trưởng phòng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4102",
+        "pattern": "目上が わたしに N を くださいます",
+        "vi": "Người trên cho tôi một vật",
+        "explain": "くださいます là cách nói tôn kính của くれます. Chủ ngữ là người trên, người cho. Người nhận là tôi hoặc người phía tôi.",
+        "viMistake": "Thể ます là くださいます. Kể về ông bà, cha mẹ mình với người ngoài thì dùng くれました, không dùng くださいました.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}が {娘|むすめ}に {絵本|えほん}を くださいました。",
+            "vi": "Cô giáo đã cho con gái tôi một cuốn sách tranh.",
+            "audio": null
+          },
+          {
+            "jp": "{隣|となり}の おばあさんが わたしに {手袋|てぶくろ}を くださいました。",
+            "vi": "Bà hàng xóm đã cho tôi đôi găng tay.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4103",
+        "pattern": "わたしは 目下に N を やります",
+        "vi": "Cho người dưới, động vật hoặc cây",
+        "explain": "やります dùng khi cho con cháu, em nhỏ, động vật hoặc tưới cây. Hiện nay nhiều người dùng あげます cho cả con cái và thú cưng.",
+        "viMistake": "Không dùng やります với người trên hay người ngang hàng: nghe thô và thiếu lễ độ.",
+        "examples": [
+          {
+            "jp": "{毎朝|まいあさ} {犬|いぬ}に えさを やります。",
+            "vi": "Sáng nào tôi cũng cho chó ăn.",
+            "audio": null
+          },
+          {
+            "jp": "お{正月|しょうがつ}に {孫|まご}に お{年玉|としだま}を やりました。",
+            "vi": "Tết, tôi đã mừng tuổi cho cháu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4104",
+        "pattern": "Vて いただきます／くださいます",
+        "vi": "Được người trên làm giúp việc gì",
+        "explain": "Vて いただきます: chủ ngữ là tôi, người làm giúp đi với に. Vて くださいます: chủ ngữ là người trên, người làm giúp. Cả hai đều thể hiện lòng biết ơn.",
+        "viMistake": "Cùng một việc: わたしは 先生に 教えて いただきました = 先生が 教えて くださいました. Với người trên, không nói 〜て あげます.",
+        "examples": [
+          {
+            "jp": "{管理人|かんりにん}さんに {暖房|だんぼう}を {直|なお}して いただきました。",
+            "vi": "Tôi được bác quản lý sửa máy sưởi cho.",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}が {発音|はつおん}を {教|おし}えて くださいました。",
+            "vi": "Cô giáo đã dạy tôi phát âm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4105",
+        "pattern": "Vて やります",
+        "vi": "Làm giúp người dưới hoặc động vật",
+        "explain": "Dùng khi làm việc gì cho con cháu, em nhỏ hoặc động vật. Chủ ngữ là người làm giúp.",
+        "viMistake": "Kể việc mình làm cho người trên bằng 〜て やります／あげます nghe như kể công. Hãy dùng cách nói khác.",
+        "examples": [
+          {
+            "jp": "{寝|ね}る {前|まえ}に {息子|むすこ}に {絵本|えほん}を {読|よ}んで やります。",
+            "vi": "Trước khi ngủ, tôi đọc sách tranh cho con trai.",
+            "audio": null
+          },
+          {
+            "jp": "{弟|おとうと}の おもちゃを {直|なお}して やりました。",
+            "vi": "Tôi đã sửa đồ chơi cho em trai.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4106",
+        "pattern": "Vて くださいませんか",
+        "vi": "Nhờ người trên hoặc người lạ một cách lịch sự",
+        "explain": "Lịch sự hơn Vて ください. Dùng khi nhờ người trên, người lạ hoặc nhân viên.",
+        "viMistake": "Đồng ý thì đáp いいですよ hoặc はい、わかりました. Với bạn bè, bài 43 sẽ học Vて くれませんか.",
+        "examples": [
+          {
+            "jp": "{温度|おんど}を {少|すこ}し {下|さ}げて くださいませんか。",
+            "vi": "Anh có thể hạ nhiệt độ xuống một chút được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "この {荷物|にもつ}を {預|あず}かって くださいませんか。",
+            "vi": "Anh giữ hộ tôi hành lý này được không ạ?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4101",
+        "type": "title",
+        "jp": "第41課 · いただきます・くださいます",
+        "vi": "Bài 41 · Cho và nhận với người trên"
+      },
+      {
+        "id": "s4102",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói cho và nhận đúng vai vế: nhận từ người trên, người trên cho mình, mình cho người dưới. Cảm ơn việc được giúp và nhờ người trên một cách lịch sự."
+      },
+      {
+        "id": "s4103",
+        "type": "vocab",
+        "refs": ["v4101", "v4102", "v4103", "v4104", "v4105", "v4106", "v4107", "v4108"]
+      },
+      {
+        "id": "s4104",
+        "type": "vocab",
+        "refs": ["v4109", "v4110", "v4111", "v4112", "v4113", "v4114", "v4115", "v4116"]
+      },
+      {
+        "id": "s4105",
+        "type": "vocab",
+        "refs": ["v4117", "v4118", "v4119", "v4120", "v4121", "v4122", "v4123", "v4124"]
+      },
+      {
+        "id": "s4106",
+        "type": "vocab",
+        "refs": ["v4125", "v4126", "v4127", "v4128", "v4129", "v4130", "v4131", "v4132"]
+      },
+      {
+        "id": "s4107",
+        "type": "vocab",
+        "refs": ["v4133", "v4134", "v4135", "v4136", "v4137", "v4138", "v4139", "v4140"]
+      },
+      {
+        "id": "s4108",
+        "type": "vocab",
+        "refs": ["v4141", "v4142", "v4143", "v4144", "v4145", "v4146", "v4147", "v4148"]
+      },
+      {
+        "id": "s4109",
+        "type": "grammar",
+        "ref": "g4101"
+      },
+      {
+        "id": "s4110",
+        "type": "example",
+        "ref": "g4101",
+        "reveal": true
+      },
+      {
+        "id": "s4111",
+        "type": "quiz",
+        "ref": "q4101"
+      },
+      {
+        "id": "s4112",
+        "type": "grammar",
+        "ref": "g4102"
+      },
+      {
+        "id": "s4113",
+        "type": "example",
+        "ref": "g4102",
+        "reveal": true
+      },
+      {
+        "id": "s4114",
+        "type": "quiz",
+        "ref": "q4103"
+      },
+      {
+        "id": "s4115",
+        "type": "grammar",
+        "ref": "g4103"
+      },
+      {
+        "id": "s4116",
+        "type": "example",
+        "ref": "g4103",
+        "reveal": true
+      },
+      {
+        "id": "s4117",
+        "type": "quiz",
+        "ref": "q4105"
+      },
+      {
+        "id": "s4118",
+        "type": "table",
+        "title": "Ai cho ai",
+        "columns": ["Hướng", "Ngang hàng", "Có vai vế"],
+        "rows": [
+          ["Tôi cho người khác", "あげます", "やります (cho người dưới)"],
+          ["Người khác cho tôi", "くれます", "くださいます (người trên)"],
+          ["Tôi nhận", "もらいます", "いただきます (từ người trên)"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Với mỗi câu, hỏi ba điều: ai cho, ai nhận, ai là chủ ngữ. Người nhà mình (ông bà, cha mẹ) kể với người ngoài thì dùng くれます, không dùng くださいます. Cho người trên dùng さしあげます (bài 50); tránh あげます／やります trực tiếp với người trên."
+      },
+      {
+        "id": "s4119",
+        "type": "quiz",
+        "ref": "q4102"
+      },
+      {
+        "id": "s4120",
+        "type": "grammar",
+        "ref": "g4104"
+      },
+      {
+        "id": "s4121",
+        "type": "example",
+        "ref": "g4104",
+        "reveal": true
+      },
+      {
+        "id": "s4122",
+        "type": "quiz",
+        "ref": "q4106"
+      },
+      {
+        "id": "s4123",
+        "type": "table",
+        "title": "Đổi いただきました ↔ くださいました",
+        "columns": ["Tôi là chủ ngữ", "Người trên là chủ ngữ"],
+        "rows": [
+          [
+            "{先生|せんせい}に {教|おし}えて いただきました",
+            "{先生|せんせい}が {教|おし}えて くださいました"
+          ],
+          [
+            "{部長|ぶちょう}に お{宅|たく}へ {呼|よ}んで いただきました",
+            "{部長|ぶちょう}が お{宅|たく}へ {呼|よ}んで くださいました"
+          ],
+          [
+            "{管理人|かんりにん}さんに {直|なお}して いただきました",
+            "{管理人|かんりにん}さんが {直|なお}して くださいました"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhấn hai thay đổi: trợ từ に → が và いただきました → くださいました. Nghĩa không đổi."
+      },
+      {
+        "id": "s4124",
+        "type": "quiz",
+        "ref": "q4108"
+      },
+      {
+        "id": "s4125",
+        "type": "grammar",
+        "ref": "g4105"
+      },
+      {
+        "id": "s4126",
+        "type": "example",
+        "ref": "g4105",
+        "reveal": true
+      },
+      {
+        "id": "s4127",
+        "type": "quiz",
+        "ref": "q4109"
+      },
+      {
+        "id": "s4128",
+        "type": "grammar",
+        "ref": "g4106"
+      },
+      {
+        "id": "s4129",
+        "type": "example",
+        "ref": "g4106",
+        "reveal": true
+      },
+      {
+        "id": "s4130",
+        "type": "quiz",
+        "ref": "q4110"
+      },
+      {
+        "id": "s4131",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["祖", "{祖父|そふ}・{祖母|そぼ}", "tổ tiên"],
+          ["孫", "{孫|まご}", "cháu"],
+          ["興", "{興味|きょうみ}", "hứng"],
+          ["情", "{情報|じょうほう}", "tình"],
+          ["報", "{情報|じょうほう}", "báo tin"],
+          ["温", "{温度|おんど}", "ấm"],
+          ["暖", "{暖房|だんぼう}", "ấm áp"],
+          ["冷", "{冷房|れいぼう}", "lạnh"],
+          ["預", "{預|あず}かります", "gửi, giữ hộ"],
+          ["珍", "{珍|めずら}しい", "hiếm"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4132",
+        "type": "table",
+        "title": "Từ tham khảo · Thông tin tiện ích",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{市役所|しやくしょ}", "ủy ban thành phố"],
+          ["{交番|こうばん}", "đồn cảnh sát nhỏ"],
+          ["{受付|うけつけ}", "quầy tiếp nhận"],
+          ["{相談窓口|そうだんまどぐち}", "quầy tư vấn"],
+          ["{粗大|そだい}ごみ", "rác cồng kềnh"],
+          ["{無料|むりょう}", "miễn phí"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên tập nhờ ở quầy: すみません、この 書類の 書き方を 教えて くださいませんか."
+      },
+      {
+        "id": "s4133",
+        "type": "dialogue",
+        "title": "Hội thoại · Lời cảm ơn ở tiệc chia tay",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Người dẫn",
+            "jp": "では、ナムさん、ひとこと お{願|ねが}いします。",
+            "vi": "Mời anh Nam nói đôi lời."
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{先生|せんせい}、{一年間|いちねんかん} ありがとう ございました。",
+            "vi": "Thưa cô, em cảm ơn cô suốt một năm qua."
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{日本|にほん}へ {来|き}た とき、{先生|せんせい}が アパートを {探|さが}して くださいました。",
+            "vi": "Khi em mới sang Nhật, cô đã tìm căn hộ giúp em."
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{入院|にゅういん}した ときは、お{見舞|みま}いに {来|き}て いただきました。",
+            "vi": "Khi em nằm viện, em được cô đến thăm."
+          },
+          {
+            "speaker": "Cô giáo",
+            "jp": "ナムさん、{国|くに}へ {帰|かえ}っても {頑張|がんば}って くださいね。",
+            "vi": "Nam ơi, về nước rồi em cũng cố gắng nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: cô giáo đã làm gì cho Nam? Chỉ ra くださいました (cô là chủ ngữ) và いただきました (Nam là chủ ngữ)."
+      },
+      {
+        "id": "s4134",
+        "type": "quiz",
+        "ref": "q4118"
+      },
+      {
+        "id": "s4135",
+        "type": "dialogue",
+        "title": "Nghe · Nhờ người quản lý",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Mai",
+            "jp": "すみません、{旅行|りょこう}の {間|あいだ}、この {荷物|にもつ}を {預|あず}かって くださいませんか。",
+            "vi": "Xin lỗi, trong lúc cháu đi du lịch, bác giữ hộ hành lý này được không ạ?"
+          },
+          {
+            "speaker": "Quản lý",
+            "jp": "いいですよ。いつ {帰|かえ}りますか。",
+            "vi": "Được thôi. Khi nào cháu về?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{日曜日|にちようび}です。それから、{猫|ねこ}に えさを やって くださいませんか。",
+            "vi": "Chủ nhật ạ. Với lại, bác cho mèo ăn giúp cháu được không ạ?"
+          },
+          {
+            "speaker": "Quản lý",
+            "jp": "わかりました。",
+            "vi": "Được rồi."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "ありがとう ございます。{助|たす}かります。",
+            "vi": "Cảm ơn bác. Bác giúp cháu nhiều quá ạ."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi Mai nhờ những việc gì và khi nào Mai về."
+      },
+      {
+        "id": "s4136",
+        "type": "quiz",
+        "ref": "q4119"
+      },
+      {
+        "id": "s4137",
+        "type": "quiz",
+        "ref": "q4120"
+      },
+      {
+        "id": "s4138",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "いただきました／{先生|せんせい}に／{本|ほん}を",
+            "{先生|せんせい}に {本|ほん}を いただきました。"
+          ],
+          [
+            "くださいました／{来|き}て／{部長|ぶちょう}が",
+            "{部長|ぶちょう}が {来|き}て くださいました。"
+          ],
+          ["やりました／{花|はな}に／{水|みず}を", "{花|はな}に {水|みず}を やりました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4139",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Tôi nhận quà mừng từ giám đốc.",
+            "{社長|しゃちょう}に お{祝|いわ}いを いただきました。"
+          ],
+          [
+            "Thầy đã cho tôi mượn sách.",
+            "{先生|せんせい}が {本|ほん}を {貸|か}して くださいました。"
+          ],
+          ["Tôi đã cho khỉ ăn.", "{猿|さる}に えさを やりました。"],
+          ["Mở máy lạnh giúp tôi được không ạ?", "{冷房|れいぼう}を つけて くださいませんか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4140",
+        "type": "table",
+        "title": "Nhập vai · Kể chuyện được giúp đỡ",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "A",
+            "Hỏi về lúc mới sang Nhật",
+            "{日本|にほん}へ {来|き}た とき、{大変|たいへん}でしたか。"
+          ],
+          ["B", "Kể người đã giúp", "ええ。{大家|おおや}さんが {助|たす}けて くださいました。"],
+          ["A", "Hỏi cụ thể", "どんな ことを して くださいましたか。"],
+          [
+            "B",
+            "Kể việc được làm giúp",
+            "ごみの {出|だ}し{方|かた}を {教|おし}えて いただきました。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi người giúp: 先生, 隣の人, 会社の先輩. Nhắc học viên chọn くださいました hay いただきました theo chủ ngữ."
+      },
+      {
+        "id": "s4141",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "いただきます: tôi nhận từ người trên.\nくださいます: người trên cho tôi.\nやります: cho người dưới, động vật, cây.\nVて いただきます／くださいます: được người trên làm giúp.\nVて くださいませんか: nhờ lịch sự.",
+        "teacherNotes": "Dễ nhầm: đổi chủ ngữ mà quên đổi trợ từ, dùng くださいます cho người nhà mình. Liên hệ あげます・もらいます・くれます ở bài 7 và bài 24. Sang bài 42, học cách nói mục đích với ために."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4101",
+        "type": "choice",
+        "prompt": "Nhận từ điển của thầy: せんせいに じしょを（　）。",
+        "options": ["くださいました", "いただきました", "やりました", "くれました"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Tôi là người nhận, người cho là thầy đi với に: いただきました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4102",
+        "type": "choice",
+        "prompt": "Câu nào nói đúng 'Thầy cho tôi sách'?",
+        "options": [
+          "わたしは せんせいに ほんを くださいました。",
+          "せんせいが わたしに ほんを いただきました。",
+          "わたしは せんせいに ほんを やりました。",
+          "せんせいが わたしに ほんを くださいました。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Người cho là chủ ngữ: せんせいが … くださいました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4103",
+        "type": "choice",
+        "prompt": "となりの おばあさんが（　）てぶくろを くださいました。",
+        "options": ["わたしを", "わたしが", "わたしに", "わたしで"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Người nhận đi với に: わたしに.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4104",
+        "type": "choice",
+        "prompt": "Kể với bạn: bà của tôi cho tôi khăn tay. そぼが わたしに ハンカチを（　）。",
+        "options": ["くれました", "いただきました", "やりました", "もらいました"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Bà là người nhà mình, kể với người ngoài thì dùng くれました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4105",
+        "type": "choice",
+        "prompt": "まいにち にわの はなに みずを（　）。",
+        "options": ["くださいます", "いただきます", "やります", "くれます"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Tưới cây dùng やります.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4106",
+        "type": "choice",
+        "prompt": "Được quản lý sửa máy sưởi: かんりにんさんに だんぼうを なおして（　）。",
+        "options": ["くださいました", "やりました", "あげました", "いただきました"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Người làm giúp đi với に, chủ ngữ là tôi: Vて いただきました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4107",
+        "type": "choice",
+        "prompt": "Cô giáo dạy tôi phát âm: せんせいが はつおんを おしえて（　）。",
+        "options": ["くださいました", "いただきました", "やりました", "もらいました"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Người làm giúp là chủ ngữ với が: Vて くださいました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4108",
+        "type": "choice",
+        "prompt": "Câu nào cùng nghĩa với せんせいに さくぶんを なおして いただきました？",
+        "options": [
+          "わたしは せんせいに さくぶんを なおして あげました。",
+          "せんせいが さくぶんを なおして くださいました。",
+          "せんせいが さくぶんを なおして もらいました。",
+          "わたしは せんせいに さくぶんを なおして くださいました。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Đổi chủ ngữ sang người làm giúp: せんせいが … くださいました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4109",
+        "type": "choice",
+        "prompt": "わたしは ねる まえに むすこに えほんを よんで（　）。",
+        "options": ["くださいます", "いただきます", "くれます", "やります"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Làm giúp con mình: Vて やります.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4110",
+        "type": "choice",
+        "prompt": "Nhờ người lạ chụp ảnh: すみません、シャッターを（　）。",
+        "options": [
+          "おして やりませんか",
+          "おして くださいませんか",
+          "おして いただきました",
+          "おして くれました"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nhờ lịch sự: Vて くださいませんか.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4111",
+        "type": "choice",
+        "prompt": "Câu nào lịch sự nhất khi nhờ thầy giải thích lại?",
+        "options": [
+          "もう いちど せつめいして。",
+          "もう いちど せつめいして くれる？",
+          "もう いちど せつめいして くださいませんか。",
+          "もう いちど せつめいして ください。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Vて くださいませんか lịch sự hơn Vて ください.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4112",
+        "type": "choice",
+        "prompt": "Tiền người lớn cho trẻ em dịp năm mới gọi là gì?",
+        "options": ["おみまい", "おいわい", "ひとこと", "おとしだま"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "お年玉 là tiền mừng tuổi.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4113",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 珍しい.",
+        "options": ["hiếm, lạ", "dễ thương", "tử tế", "đắt"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "珍しい đọc めずらしい.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4114",
+        "type": "choice",
+        "prompt": "Nói với người ngoài về ông của mình, dùng từ nào?",
+        "options": ["おじいさん", "そふ", "おじ", "まご"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "祖父 là ông của mình khi nói với người ngoài.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4115",
+        "type": "choice",
+        "prompt": "Cháu của người khác gọi là gì?",
+        "options": ["まご", "おじさん", "おまごさん", "こども"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "お孫さん dùng cho cháu của người khác.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4116",
+        "type": "choice",
+        "prompt": "Nóng quá, giảm nhiệt độ: おんどを（　）。",
+        "options": ["あげます", "よびます", "やります", "さげます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "温度を下げます là giảm nhiệt độ.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4117",
+        "type": "choice",
+        "prompt": "Mỗi người lấy hai cái: ひとり ふたつ（　）とって ください。",
+        "options": ["ずつ", "が", "へ", "や"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "〜ずつ chia đều cho mỗi người.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4118",
+        "type": "choice",
+        "prompt": "Khi Nam nằm viện, cô giáo đã làm gì?",
+        "options": ["Tìm căn hộ", "Đến thăm Nam", "Dạy phát âm", "Gọi điện"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "お見舞いに来ていただきました: Nam được cô đến thăm.",
+        "points": 1,
+        "tags": ["minna-41"],
+        "passage": "ナム：{入院|にゅういん}した ときは、お{見舞|みま}いに {来|き}て いただきました。"
+      },
+      {
+        "id": "q4119",
+        "type": "choice",
+        "prompt": "Mai nhờ người quản lý làm gì?",
+        "options": ["Sửa máy sưởi", "Gọi taxi", "Giữ hành lý và cho mèo ăn", "Mua thức ăn cho mèo"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "荷物を預かって、猫にえさをやってくださいませんか.",
+        "points": 1,
+        "tags": ["minna-41"],
+        "passage": "マイ：この {荷物|にもつ}を {預|あず}かって くださいませんか。それから、{猫|ねこ}に えさを やって くださいませんか。"
+      },
+      {
+        "id": "q4120",
+        "type": "choice",
+        "prompt": "Ai đưa người viết ra ga?",
+        "options": ["Bà", "Bạn của người viết", "Người viết tự đi", "Bác hàng xóm"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "隣のおじさんが駅まで送ってくださいました.",
+        "points": 1,
+        "tags": ["minna-41"],
+        "passage": "{先日|せんじつ}、{祖母|そぼ}の {家|いえ}へ {行|い}きました。{祖母|そぼ}は わたしに {手袋|てぶくろ}を くれました。わたしは {祖母|そぼ}と いっしょに {写真|しゃしん}を {撮|と}りました。{帰|かえ}る とき、{隣|となり}の おじさんが {駅|えき}まで {車|くるま}で {送|おく}って くださいました。"
+      },
+      {
+        "id": "q4121",
+        "type": "choice",
+        "prompt": "Ai đã tặng người viết găng tay?",
+        "options": ["Bà", "Bác hàng xóm", "Mẹ", "Bạn"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "祖母はわたしに手袋をくれました. Bà là người nhà nên dùng くれました.",
+        "points": 1,
+        "tags": ["minna-41"],
+        "passage": "{先日|せんじつ}、{祖母|そぼ}の {家|いえ}へ {行|い}きました。{祖母|そぼ}は わたしに {手袋|てぶくろ}を くれました。わたしは {祖母|そぼ}と いっしょに {写真|しゃしん}を {撮|と}りました。{帰|かえ}る とき、{隣|となり}の おじさんが {駅|えき}まで {車|くるま}で {送|おく}って くださいました。"
+      },
+      {
+        "id": "q4122",
+        "type": "fill",
+        "prompt": "Điền (lịch sự): せんせいに ほんを かして（　）ました。",
+        "answer": ["いただき"],
+        "inputMode": "hiragana",
+        "explain": "Được người trên làm cho, nói lịch sự: Vて いただきました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4123",
+        "type": "fill",
+        "prompt": "Điền trợ từ: ぶちょう（　）おみやげを いただきました。",
+        "answer": ["に", "から"],
+        "inputMode": "hiragana",
+        "explain": "Người cho đi với に hoặc から.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4124",
+        "type": "fill",
+        "prompt": "Điền: いぬに えさを（　）ます。",
+        "answer": ["やり", "あげ"],
+        "inputMode": "hiragana",
+        "explain": "Cho động vật: やります, cũng nói あげます.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4125",
+        "type": "fill",
+        "prompt": "Điền (nhờ người lạ): すみません、ペンを かして（　）ませんか。",
+        "answer": ["ください", "いただけ", "もらえ"],
+        "inputMode": "hiragana",
+        "explain": "Nhờ lịch sự: かして くださいませんか／いただけませんか／もらえませんか.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4126",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Tôi được cô giáo sửa bài văn cho.",
+        "tokens": [
+          {
+            "id": "q4126-1",
+            "text": "せんせいに さくぶんを"
+          },
+          {
+            "id": "q4126-2",
+            "text": "なおして"
+          },
+          {
+            "id": "q4126-3",
+            "text": "いただきました。"
+          }
+        ],
+        "answer": ["q4126-1", "q4126-2", "q4126-3"],
+        "explain": "Người làm giúp + に, rồi Vて いただきました.",
+        "points": 1,
+        "tags": ["minna-41"]
+      },
+      {
+        "id": "q4127",
+        "type": "match",
+        "prompt": "Nối từ chỉ người trong gia đình mình với nghĩa.",
+        "left": ["そふ", "そぼ", "おじ", "まご"],
+        "right": ["ông", "chú, bác", "bà", "cháu"],
+        "answer": [
+          [0, 0],
+          [1, 2],
+          [2, 1],
+          [3, 3]
+        ],
+        "explain": "祖父 ông, 祖母 bà, おじ chú bác, 孫 cháu.",
+        "points": 1,
+        "tags": ["minna-41"]
+      }
+    ]
+  }
+}
