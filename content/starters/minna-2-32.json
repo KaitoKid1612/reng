@@ -1,0 +1,956 @@
+{
+  "id": "minna-2-32",
+  "title": "Bài 32 – Lời khuyên và dự đoán",
+  "titleJa": "第32課・助言と予想",
+  "summary": "Đưa lời khuyên, diễn đạt khả năng và đọc dự báo thời tiết.",
+  "order": 32,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3201",
+        "jp": "こみます",
+        "romaji": "komimasu",
+        "vi": "đông, ùn",
+        "note": "I · みちが",
+        "audio": null,
+        "kanji": "込みます"
+      },
+      {
+        "id": "v3202",
+        "jp": "すきます",
+        "romaji": "sukimasu",
+        "vi": "vắng, thông thoáng",
+        "note": "I · みちが",
+        "audio": null,
+        "kanji": "空きます"
+      },
+      {
+        "id": "v3203",
+        "jp": "うんどうします",
+        "romaji": "undou shimasu",
+        "vi": "vận động, tập thể dục",
+        "note": "III",
+        "audio": null,
+        "kanji": "運動します"
+      },
+      {
+        "id": "v3204",
+        "jp": "せいこうします",
+        "romaji": "seikou shimasu",
+        "vi": "thành công",
+        "note": "III",
+        "audio": null,
+        "kanji": "成功します"
+      },
+      {
+        "id": "v3205",
+        "jp": "しっぱいします",
+        "romaji": "shippai shimasu",
+        "vi": "thất bại, mắc lỗi",
+        "note": "III",
+        "audio": null,
+        "kanji": "失敗します"
+      },
+      {
+        "id": "v3206",
+        "jp": "ごうかくします",
+        "romaji": "goukaku shimasu",
+        "vi": "đỗ, đạt",
+        "note": "III · しけんに",
+        "audio": null,
+        "kanji": "合格します"
+      },
+      {
+        "id": "v3207",
+        "jp": "やみます",
+        "romaji": "yamimasu",
+        "vi": "tạnh, ngừng",
+        "note": "I · あめが",
+        "audio": null
+      },
+      {
+        "id": "v3208",
+        "jp": "はれます",
+        "romaji": "haremasu",
+        "vi": "trời quang",
+        "note": "II",
+        "audio": null,
+        "kanji": "晴れます"
+      },
+      {
+        "id": "v3209",
+        "jp": "くもります",
+        "romaji": "kumorimasu",
+        "vi": "trời nhiều mây",
+        "note": "I",
+        "audio": null,
+        "kanji": "曇ります"
+      },
+      {
+        "id": "v3210",
+        "jp": "つづきます",
+        "romaji": "tsuzukimasu",
+        "vi": "tiếp diễn",
+        "note": "I · ねつが",
+        "audio": null,
+        "kanji": "続きます"
+      },
+      {
+        "id": "v3211",
+        "jp": "ひきます",
+        "romaji": "hikimasu",
+        "vi": "bị cảm",
+        "note": "I · かぜを",
+        "audio": null
+      },
+      {
+        "id": "v3212",
+        "jp": "ひやします",
+        "romaji": "hiyashimasu",
+        "vi": "làm mát",
+        "note": "I",
+        "audio": null,
+        "kanji": "冷やします"
+      },
+      {
+        "id": "v3213",
+        "jp": "じゅうぶんな",
+        "romaji": "juubun na",
+        "vi": "đủ",
+        "note": "Tính từ な",
+        "audio": null,
+        "kanji": "十分な"
+      },
+      {
+        "id": "v3214",
+        "jp": "おかしい",
+        "romaji": "okashii",
+        "vi": "lạ, buồn cười",
+        "note": "Tính từ い",
+        "audio": null
+      },
+      {
+        "id": "v3215",
+        "jp": "うるさい",
+        "romaji": "urusai",
+        "vi": "ồn ào",
+        "note": "Tính từ い",
+        "audio": null
+      },
+      {
+        "id": "v3216",
+        "jp": "やけど",
+        "romaji": "yakedo",
+        "vi": "vết bỏng, bị bỏng",
+        "note": "やけどを します",
+        "audio": null
+      },
+      {
+        "id": "v3217",
+        "jp": "けが",
+        "romaji": "kega",
+        "vi": "chấn thương",
+        "note": "けがを します",
+        "audio": null,
+        "kanji": "怪我"
+      },
+      {
+        "id": "v3218",
+        "jp": "せき",
+        "romaji": "seki",
+        "vi": "ho, tiếng ho",
+        "note": "せきが でます",
+        "audio": null,
+        "kanji": "咳"
+      },
+      {
+        "id": "v3219",
+        "jp": "インフルエンザ",
+        "romaji": "infuruenza",
+        "vi": "bệnh cúm",
+        "note": "インフルエンザに かかります",
+        "audio": null
+      },
+      {
+        "id": "v3220",
+        "jp": "そら",
+        "romaji": "sora",
+        "vi": "bầu trời",
+        "note": "そらを みます",
+        "audio": null,
+        "kanji": "空"
+      },
+      {
+        "id": "v3221",
+        "jp": "たいよう",
+        "romaji": "taiyou",
+        "vi": "mặt trời",
+        "note": "たいようが でます",
+        "audio": null,
+        "kanji": "太陽"
+      },
+      {
+        "id": "v3222",
+        "jp": "ほし",
+        "romaji": "hoshi",
+        "vi": "ngôi sao",
+        "note": "ほしが みえます",
+        "audio": null,
+        "kanji": "星"
+      },
+      {
+        "id": "v3223",
+        "jp": "かぜ",
+        "romaji": "kaze",
+        "vi": "gió",
+        "note": "かぜが ふきます",
+        "audio": null,
+        "kanji": "風"
+      },
+      {
+        "id": "v3224",
+        "jp": "きた",
+        "romaji": "kita",
+        "vi": "phía bắc",
+        "note": "きたの まち",
+        "audio": null,
+        "kanji": "北"
+      },
+      {
+        "id": "v3225",
+        "jp": "みなみ",
+        "romaji": "minami",
+        "vi": "phía nam",
+        "note": "みなみの まち",
+        "audio": null,
+        "kanji": "南"
+      },
+      {
+        "id": "v3226",
+        "jp": "にし",
+        "romaji": "nishi",
+        "vi": "phía tây",
+        "note": "にしの そら",
+        "audio": null,
+        "kanji": "西"
+      },
+      {
+        "id": "v3227",
+        "jp": "ひがし",
+        "romaji": "higashi",
+        "vi": "phía đông",
+        "note": "ひがしの そら",
+        "audio": null,
+        "kanji": "東"
+      },
+      {
+        "id": "v3228",
+        "jp": "すいどう",
+        "romaji": "suidou",
+        "vi": "hệ thống nước máy",
+        "note": "すいどうの みず",
+        "audio": null,
+        "kanji": "水道"
+      },
+      {
+        "id": "v3229",
+        "jp": "エンジン",
+        "romaji": "enjin",
+        "vi": "động cơ",
+        "note": "エンジンが とまります",
+        "audio": null
+      },
+      {
+        "id": "v3230",
+        "jp": "こんや",
+        "romaji": "konya",
+        "vi": "tối nay",
+        "note": "こんやは さむいです",
+        "audio": null,
+        "kanji": "今夜",
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v3231",
+        "jp": "ゆうがた",
+        "romaji": "yuugata",
+        "vi": "chiều muộn",
+        "note": "ゆうがたに かえります",
+        "audio": null,
+        "kanji": "夕方"
+      },
+      {
+        "id": "v3232",
+        "jp": "まえ",
+        "romaji": "mae",
+        "vi": "trước đây, trước",
+        "note": "まえは ここに すんでいました",
+        "audio": null,
+        "kanji": "前"
+      },
+      {
+        "id": "v3233",
+        "jp": "おそく",
+        "romaji": "osoku",
+        "vi": "muộn",
+        "note": "おそく かえります",
+        "audio": null,
+        "kanji": "遅く"
+      },
+      {
+        "id": "v3234",
+        "jp": "こんなに",
+        "romaji": "konna ni",
+        "vi": "đến mức này",
+        "note": "こんなに さむい",
+        "audio": null
+      },
+      {
+        "id": "v3235",
+        "jp": "そんなに",
+        "romaji": "sonna ni",
+        "vi": "đến mức đó",
+        "note": "そんなに さむく ありません",
+        "audio": null
+      },
+      {
+        "id": "v3236",
+        "jp": "あんなに",
+        "romaji": "anna ni",
+        "vi": "đến mức kia",
+        "note": "あんなに おおきい",
+        "audio": null
+      },
+      {
+        "id": "v3237",
+        "jp": "もしかしたら",
+        "romaji": "moshikashitara",
+        "vi": "có khi, biết đâu",
+        "note": "Thường đi với かもしれません",
+        "audio": null
+      },
+      {
+        "id": "v3238",
+        "jp": "それは いけませんね。",
+        "romaji": "sore wa ikemasen ne",
+        "vi": "Thế thì không ổn rồi nhỉ.",
+        "note": "Phản ứng khi nghe chuyện đáng lo",
+        "audio": null
+      },
+      {
+        "id": "v3239",
+        "jp": "い",
+        "romaji": "i",
+        "vi": "dạ dày",
+        "note": "いが いたいです",
+        "audio": null,
+        "kanji": "胃"
+      },
+      {
+        "id": "v3240",
+        "jp": "はたらきすぎ",
+        "romaji": "hatarakisugi",
+        "vi": "làm việc quá nhiều",
+        "note": "はたらきすぎかもしれません",
+        "audio": null,
+        "kanji": "働きすぎ"
+      },
+      {
+        "id": "v3241",
+        "jp": "ストレス",
+        "romaji": "sutoresu",
+        "vi": "căng thẳng",
+        "note": "ストレスが あります",
+        "audio": null
+      },
+      {
+        "id": "v3242",
+        "jp": "むりを します",
+        "romaji": "muri o shimasu",
+        "vi": "gắng sức quá mức",
+        "note": "むりを しない",
+        "audio": null,
+        "kanji": "無理をします"
+      },
+      {
+        "id": "v3243",
+        "jp": "ゆっくり します",
+        "romaji": "yukkuri shimasu",
+        "vi": "thong thả, nghỉ ngơi",
+        "note": "うちで ゆっくり します",
+        "audio": null
+      },
+      {
+        "id": "v3244",
+        "jp": "でます",
+        "romaji": "demasu",
+        "vi": "tham dự, tham gia",
+        "note": "II · しあいに／パーティーに",
+        "audio": null,
+        "kanji": "出ます"
+      },
+      {
+        "id": "v3245",
+        "jp": "チーム",
+        "romaji": "chiimu",
+        "vi": "đội, nhóm",
+        "note": "チームで れんしゅうします",
+        "audio": null
+      },
+      {
+        "id": "v3246",
+        "jp": "せんせい",
+        "romaji": "sensei",
+        "vi": "bác sĩ, thầy cô",
+        "note": "Cách gọi người đang tư vấn trong hội thoại",
+        "audio": null,
+        "kanji": "先生"
+      },
+      {
+        "id": "v3247",
+        "jp": "こくさい〜",
+        "romaji": "kokusai",
+        "vi": "quốc tế…",
+        "note": "こくさい たいかい",
+        "audio": null,
+        "kanji": "国際〜"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3201",
+        "pattern": "Vた／Vない + ほうがいいです",
+        "vi": "Nên làm hoặc nên tránh",
+        "explain": "Lời khuyên cụ thể: V thể た khi khuyên làm, V thể ない khi khuyên tránh. よ ở cuối câu có thể nhấn lời khuyên.",
+        "viMistake": "Vた trong mẫu này không chỉ thời quá khứ. Muốn khuyên đừng đi thì dùng いかない.",
+        "examples": [
+          {
+            "jp": "{道|みち}が {込|こ}みますから、{早|はや}く {出|で}た ほうが いいです。",
+            "vi": "Đường sẽ đông, nên đi sớm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3202",
+        "pattern": "普通形 + でしょう",
+        "vi": "Đưa ra dự đoán",
+        "explain": "Dùng thể thường trước でしょう. Danh từ và tính từ な ở hiện tại khẳng định bỏ だ. Hay gặp trong bản tin dự báo.",
+        "viMistake": "Dùng しずかでしょう. Với quá khứ vẫn giữ だった: しずかだったでしょう.",
+        "examples": [
+          {
+            "jp": "{夕方|ゆうがた}には {雨|あめ}が やむでしょう。",
+            "vi": "Có lẽ đến chiều muộn mưa sẽ tạnh.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3203",
+        "pattern": "普通形 + かもしれません",
+        "vi": "Nêu khả năng còn chưa chắc",
+        "explain": "Dùng thể thường. Bỏ だ với danh từ và tính từ な ở hiện tại khẳng định. Có thể mở đầu bằng もしかしたら.",
+        "viMistake": "Dùng あめかもしれません. Giữ dạng phủ định trong こないかもしれません.",
+        "examples": [
+          {
+            "jp": "もしかしたら、{試合|しあい}に {間|ま}に {合|あ}わないかもしれません。",
+            "vi": "Có thể tôi sẽ không kịp đến trận đấu.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3201",
+        "type": "title",
+        "jp": "第32課 · {助言|じょげん}と{予想|よそう}",
+        "vi": "Bài 32 · Lời khuyên và dự đoán"
+      },
+      {
+        "id": "s3202",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Đưa lời khuyên, phân biệt dự đoán với khả năng chưa chắc và đọc một bản tin thời tiết ngắn."
+      },
+      {
+        "id": "s3203",
+        "type": "vocab",
+        "refs": ["v3201", "v3202", "v3203", "v3204", "v3205", "v3206", "v3207", "v3208"]
+      },
+      {
+        "id": "s3204",
+        "type": "vocab",
+        "refs": ["v3209", "v3210", "v3211", "v3212", "v3213", "v3214", "v3215", "v3216"]
+      },
+      {
+        "id": "s3205",
+        "type": "vocab",
+        "refs": ["v3217", "v3218", "v3219", "v3220", "v3221", "v3222", "v3223", "v3224"]
+      },
+      {
+        "id": "s3206",
+        "type": "vocab",
+        "refs": ["v3225", "v3226", "v3227", "v3228", "v3229", "v3230", "v3231", "v3232"]
+      },
+      {
+        "id": "s3207",
+        "type": "vocab",
+        "refs": ["v3233", "v3234", "v3235", "v3236", "v3237", "v3238", "v3239", "v3240"]
+      },
+      {
+        "id": "s3208",
+        "type": "vocab",
+        "refs": ["v3241", "v3242", "v3243", "v3244", "v3245", "v3246", "v3247"]
+      },
+      {
+        "id": "s3209",
+        "type": "grammar",
+        "ref": "g3201"
+      },
+      {
+        "id": "s3210",
+        "type": "example",
+        "ref": "g3201",
+        "reveal": true
+      },
+      {
+        "id": "s3211",
+        "type": "quiz",
+        "ref": "q3201"
+      },
+      {
+        "id": "s3212",
+        "type": "grammar",
+        "ref": "g3202"
+      },
+      {
+        "id": "s3213",
+        "type": "example",
+        "ref": "g3202",
+        "reveal": true
+      },
+      {
+        "id": "s3214",
+        "type": "quiz",
+        "ref": "q3203"
+      },
+      {
+        "id": "s3215",
+        "type": "grammar",
+        "ref": "g3203"
+      },
+      {
+        "id": "s3216",
+        "type": "example",
+        "ref": "g3203",
+        "reveal": true
+      },
+      {
+        "id": "s3217",
+        "type": "quiz",
+        "ref": "q3205"
+      },
+      {
+        "id": "s3218",
+        "type": "table",
+        "title": "Chọn cách nói theo ý định",
+        "columns": ["Tình huống", "Cách nói"],
+        "rows": [
+          ["Khuyên đem ô", "かさを {持|も}った ほうが いいです。"],
+          ["Dự báo có căn cứ", "{雨|あめ}が {降|ふ}るでしょう。"],
+          ["Nêu một khả năng", "{雨|あめ}が {降|ふ}るかもしれません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3219",
+        "type": "table",
+        "title": "Luyện chia thể trước ほうがいい",
+        "columns": ["Từ điển", "Khuyên làm", "Khuyên tránh"],
+        "rows": [
+          ["{行|い}く", "{行|い}った", "{行|い}かない"],
+          ["{休|やす}む", "{休|やす}んだ", "{休|やす}まない"],
+          ["{運動|うんどう}する", "{運動|うんどう}した", "{運動|うんどう}しない"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3220",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ ví dụ", "Nghĩa"],
+        "rows": [
+          ["晴", "{晴|は}れます", "trời quang"],
+          ["曇", "{曇|くも}ります", "trời nhiều mây"],
+          ["風", "{風|かぜ}", "gió"],
+          ["熱", "{熱|ねつ}が {続|つづ}きます", "sốt kéo dài"],
+          ["格", "{合格|ごうかく}します", "thi đỗ"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3221",
+        "type": "table",
+        "title": "Từ tham khảo · Dự báo thời tiết",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{天気予報|てんきよほう}", "dự báo thời tiết"],
+          ["{晴|は}れ", "trời quang"],
+          ["{曇|くも}り", "nhiều mây"],
+          ["{雨|あめ}", "mưa"],
+          ["{雪|ゆき}", "tuyết"],
+          ["{降水確率|こうすいかくりつ}", "xác suất có mưa hoặc tuyết"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên phân biệt tên trạng thái như 晴れ với động từ 晴れます. Bản tin trong bài là ví dụ giả định."
+      },
+      {
+        "id": "s3222",
+        "type": "dialogue",
+        "title": "Hội thoại · Chuẩn bị đi xem trận đấu",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{夕方|ゆうがた}、{試合|しあい}を {見|み}に {行|い}く つもりです。",
+            "vi": "Chiều muộn tôi định đi xem trận đấu."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{夕方|ゆうがた}は {道|みち}が {込|こ}むでしょう。{早|はや}く {出|で}た ほうが いいですよ。",
+            "vi": "Chiều muộn đường có lẽ sẽ đông. Bạn nên đi sớm."
+          },
+          {
+            "speaker": "An",
+            "jp": "そうですね。もしかしたら {雨|あめ}も {降|ふ}るかもしれませんね。",
+            "vi": "Đúng nhỉ. Có khi còn mưa nữa."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "じゃ、かさも {持|も}って {行|い}きましょう。",
+            "vi": "Vậy mình mang ô theo nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi Mai khuyên gì và An lo chuyện gì."
+      },
+      {
+        "id": "s3223",
+        "type": "quiz",
+        "ref": "q3216"
+      },
+      {
+        "id": "s3224",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: でしょう／{雨|あめ}が／{夕方|ゆうがた}に／やむ",
+            "{夕方|ゆうがた}に {雨|あめ}が やむでしょう。"
+          ],
+          [
+            "Dịch: Bạn không nên về quá muộn.",
+            "あまり {遅|おそ}く {帰|かえ}らない ほうが いいです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3225",
+        "type": "table",
+        "title": "Nhập vai · Bàn kế hoạch cuối tuần",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["Bạn A", "Nêu dự định đi về phía bắc", "{北|きた}の {方|ほう}へ {行|い}く つもりです。"],
+          ["Bạn B", "Nêu khả năng có tuyết", "{雪|ゆき}が {降|ふ}るかもしれません。"],
+          [
+            "Bạn B",
+            "Khuyên mang áo ấm",
+            "{暖|あたた}かい コートを {持|も}って {行|い}った ほうが いいです。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đạt nếu phân biệt được câu nêu khả năng và câu khuyên."
+      },
+      {
+        "id": "s3226",
+        "type": "table",
+        "title": "Luyện phản hồi · Bạn đang mệt",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "Bạn A",
+            "Nói dạo này làm việc quá nhiều",
+            "{最近|さいきん}、{働|はたら}きすぎかもしれません。"
+          ],
+          [
+            "Bạn B",
+            "Phản hồi rồi khuyên không gắng sức",
+            "それは いけませんね。{無理|むり}を しない ほうが いいですよ。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3227",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vた／Vない + ほうがいいです: khuyên làm hoặc tránh.\nでしょう: đưa ra dự đoán.\nかもしれません: nêu khả năng chưa chắc.",
+        "teacherNotes": "Ôn つもりです ở bài 31 để nêu kế hoạch. Bài 33 sẽ học cách đọc và truyền đạt chỉ dẫn."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3201",
+        "type": "choice",
+        "prompt": "Nên mang ô: かさを（　）ほうが いいです。",
+        "options": ["もった", "もちます", "もち", "もって"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng thể た khi khuyên làm.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3202",
+        "type": "choice",
+        "prompt": "Không nên đến muộn: おそく（　）ほうが いいです。",
+        "options": ["きました", "こない", "きて", "きます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Dùng thể ない khi khuyên tránh.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3203",
+        "type": "choice",
+        "prompt": "Chọn câu dự đoán trời sẽ quang.",
+        "options": [
+          "はれた ほうが いいです。",
+          "はれて あります。",
+          "はれるでしょう。",
+          "はれましょう。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Thể thường + でしょう.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3204",
+        "type": "choice",
+        "prompt": "Chọn dạng đúng với tính từ な hiện tại khẳng định.",
+        "options": [
+          "しずかだでしょう。",
+          "しずかなでしょう。",
+          "しずかますでしょう。",
+          "しずかでしょう。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Bỏ だ trước でしょう.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3205",
+        "type": "choice",
+        "prompt": "Chọn câu nói có thể trời sẽ mưa.",
+        "options": [
+          "あめかもしれません。",
+          "あめだかもしれません。",
+          "あめなかもしれません。",
+          "あめですかもしれません。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Danh từ đứng trực tiếp trước かもしれません.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3206",
+        "type": "choice",
+        "prompt": "Từ nào thường đi với dự đoán còn chưa chắc?",
+        "options": ["ぜったいに", "もしかしたら", "さっき", "いつも"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "もしかしたら báo hiệu một khả năng.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3207",
+        "type": "choice",
+        "prompt": "Không chừng xe buýt không đến: バスが（　）かもしれません。",
+        "options": ["きません", "きます", "こない", "こなくて"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Động từ trước かもしれません dùng thể thường.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3208",
+        "type": "choice",
+        "prompt": "Chọn câu dự đoán đường sẽ đông.",
+        "options": [
+          "みちが すくでしょう。",
+          "そらが はれるでしょう。",
+          "かぜが やむでしょう。",
+          "みちが こむでしょう。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "込む là đông, ùn.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3209",
+        "type": "choice",
+        "prompt": "Cụm nào nghĩa là thi đỗ?",
+        "options": [
+          "しけんに ごうかくします",
+          "しけんで しっぱいします",
+          "しあいに でます",
+          "パーティーに でます"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "合格します dùng với に.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3210",
+        "type": "choice",
+        "prompt": "Phía tây là từ nào?",
+        "options": ["きた", "にし", "みなみ", "ひがし"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "西 đọc にし.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3211",
+        "type": "choice",
+        "prompt": "Cụm nào nói sốt vẫn kéo dài?",
+        "options": ["あめが やみます", "みちが すきます", "ねつが つづきます", "そらが くもります"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "続く nghĩa là tiếp diễn.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3212",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là dạ dày?",
+        "options": ["そら", "ほし", "かぜ", "い"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "胃 đọc い.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3213",
+        "type": "choice",
+        "prompt": "Cụm nào nghĩa là tham gia trận đấu?",
+        "options": [
+          "しあいに でます",
+          "しけんに ごうかくします",
+          "あめが やみます",
+          "かぜを ひきます"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "試合に出ます chỉ việc tham gia.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3214",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là chiều muộn?",
+        "options": ["こんや", "ゆうがた", "まえ", "おそく"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "夕方 chỉ khoảng cuối buổi chiều.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3215",
+        "type": "choice",
+        "prompt": "Người nói mới nêu một khả năng. Chọn đuôi câu.",
+        "options": ["つもりです", "ておきます", "かもしれません", "ほうがいいです"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "かもしれません diễn tả điều có thể xảy ra.",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3216",
+        "type": "choice",
+        "prompt": "Theo bản tin, nơi nào có thể mưa vào chiều muộn?",
+        "options": ["Phía bắc", "Phía đông", "Phía tây", "Phía nam"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Bản tin nêu khả năng mưa ở phía nam.",
+        "points": 1,
+        "tags": ["minna-32"],
+        "passage": "あすの {天気|てんき}：{朝|あさ}は {北|きた}で {晴|は}れるでしょう。{南|みなみ}では {夕方|ゆうがた}に {雨|あめ}が {降|ふ}るかもしれません。"
+      },
+      {
+        "id": "q3217",
+        "type": "fill",
+        "prompt": "Viết thể た bằng hiragana của もつ để dùng trước ほうが いいです。",
+        "inputMode": "hiragana",
+        "answer": ["もった"],
+        "explain": "もつ → もった",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3218",
+        "type": "fill",
+        "prompt": "Viết thể た bằng hiragana của いそぐ để dùng trước ほうが いいです。",
+        "inputMode": "hiragana",
+        "answer": ["いそいだ"],
+        "explain": "いそぐ → いそいだ",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3219",
+        "type": "fill",
+        "prompt": "Viết thể ない bằng hiragana của いく để dùng trước ほうが いいです。",
+        "inputMode": "hiragana",
+        "answer": ["いかない"],
+        "explain": "いく → いかない",
+        "points": 1,
+        "tags": ["minna-32"]
+      },
+      {
+        "id": "q3220",
+        "type": "fill",
+        "prompt": "Viết thể ない bằng hiragana của する để dùng trước ほうが いいです。",
+        "inputMode": "hiragana",
+        "answer": ["しない"],
+        "explain": "する → しない",
+        "points": 1,
+        "tags": ["minna-32"]
+      }
+    ]
+  }
+}
