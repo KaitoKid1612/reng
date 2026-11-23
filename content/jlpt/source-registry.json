@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "purpose": "JLPT N4/N5 source discovery and rights review. Official workbooks on jlpt.jp may be copied as free teaching material with credit (site policy 1(4)); their listening audio is linked, never copied.",
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-23",
   "sources": [
     {
       "id": "jlpt-official-workbook-2018",
       "title": "JLPT Official Practice Workbook Vol. 2",
       "year": 2018,
       "levels": ["N4", "N5"],
-      "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
+      "url": "https://www.jlpt.jp/e/samples/sampleindex.html",
       "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
       "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material, credit 出典 日本語能力試験公式ウェブサイト; listening audio contains third-party works (link only)",
       "importPolicy": "imported-2026-11-11: N5/N4 question text and images (content/jlpt/official), listening re-recorded from the official script; original MP3 linked",
@@ -19,7 +19,7 @@
       "title": "JLPT Official Practice Workbook",
       "year": 2012,
       "levels": ["N4", "N5"],
-      "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
+      "url": "https://www.jlpt.jp/e/samples/sampleindex.html",
       "materials": ["question PDFs", "answer keys", "listening scripts", "listening audio"],
       "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material, credit 出典 日本語能力試験公式ウェブサイト; listening audio contains third-party works (link only)",
       "importPolicy": "imported-2026-11-11: N5/N4 question text (read from the scanned pages) and images (content/jlpt/official), listening re-recorded from the official script; original MP3 linked",
@@ -30,23 +30,47 @@
       "title": "JLPT Sample Questions",
       "year": 2009,
       "levels": ["N4", "N5"],
-      "url": "https://samplequestions.jlpt.jp/e/samples/sample09.html",
-      "materials": ["question PDFs", "answers", "audio samples"],
+      "url": "https://www.jlpt.jp/e/samples/sample09.html",
+      "materials": ["question PDFs", "answers", "audio for some items"],
       "rights": "jlpt.jp site policy 1(4): free Japanese-teaching material with credit; sample questions, not real tests",
+      "importPolicy": "not-imported: sample items in the pre-2010 format (N5 29: 8 文字・語彙, 13 文法・読解, 8 聴解; N4 34: 10, 16, 8), not a whole test, so no exam set; linked from the exam page (checked 2026-11-23)",
+      "official": true
+    },
+    {
+      "id": "jlpt-official-samples-for-learners",
+      "title": "問題例に挑戦しよう / Let's Try Sample Questions",
+      "year": 2009,
+      "levels": ["N4", "N5"],
+      "url": "https://www.jlpt.jp/samples/forlearners.html",
+      "materials": ["interactive sample items (same as 2009)"],
+      "rights": "jlpt.jp site policy 1(4)",
+      "importPolicy": "linked only",
+      "official": true
+    },
+    {
+      "id": "jlpt-official-samples-for-teachers",
+      "title": "問題例スライド（教師向け）",
+      "year": 2010,
+      "levels": ["N4", "N5"],
+      "url": "https://www.jlpt.jp/samples/forteachers.html",
+      "materials": ["slide ZIPs of the 2009 sample items"],
+      "rights": "jlpt.jp site policy 1(4)",
       "importPolicy": "not-imported",
       "official": true
     }
   ],
   "discovery": {
     "targetYears": [2022, 2023, 2024, 2025, 2026],
-    "status": "not-yet-verified",
+    "status": "checked-2026-11-23: no third official volume (jlpt.jp lists only 2012 and 第二集 2018); no session-labelled official past test exists",
     "rule": "Do not label third-party compilations as authentic past JLPT exams without provenance"
   },
   "rightsNotes": [
     "JLPT organizers do not release each full past test; the official workbooks hold real questions without naming their session",
     "jlpt.jp site policy 1(4) pre-grants copying for free Japanese teaching material when the source is credited next to it; 1(5) asks for permission otherwise",
     "Listening audio of N1–N5 and some N1/N2 reading passages contain third-party works: no copying without separate permission; links are welcome, embedding is not",
-    "Month/year-labelled papers on other sites are unofficial reconstructions; their terms forbid scraping and the JLPT notice of 2024-01-19 warns against using leaked questions (docs/testing/jlpt-official-sources-2026-11-11.md)"
+    "Month/year-labelled papers on other sites are unofficial reconstructions; their terms forbid scraping and the JLPT notice of 2024-01-19 warns against using leaked questions (docs/testing/jlpt-official-sources-2026-11-11.md)",
+    "JF Hà Nội notice of 2026-06-25 (https://hn.jpf.go.jp/posts/thongbaoquantrongjlpt-vn) names collecting or trading old exam papers as a violation (content/jlpt/source-audit-2026-11-23.json)",
+    "2012 workbook 問題2 audio: jlpt.jp now links samples/sample2017/mp3/N?Q2.mp3 (2017-05-10); Reng links the 2012 file, which still works. Not compared by listening yet"
   ],
   "audit": {
     "checkedAt": "2026-11-09",

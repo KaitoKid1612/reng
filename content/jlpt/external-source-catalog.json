@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-23",
   "purpose": "N4/N5 JLPT exam authoring research. Metadata only; no third-party questions/audio copied.",
   "sources": [
     {
@@ -9,8 +9,10 @@
       "language": "ja,en",
       "levels": ["N4", "N5"],
       "material": ["PDF", "MP3", "answers", "listening scripts"],
-      "rights": "free teaching use with credit (jlpt.jp site policy 1(4)); audio third-party, link only",
-      "use": "2012 and 2018 N5/N4 imported as official mock tests (content/jlpt/official)"
+      "rights": "Site policy 1(4): free Japanese-teaching material with credit; listening audio contains third-party works.",
+      "use": "2012 and 2018 N5/N4 imported as official mock tests (content/jlpt/official)",
+      "verdict": "usable",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "Kanji.vn",
@@ -18,8 +20,10 @@
       "language": "vi",
       "levels": ["N4", "N5"],
       "material": ["mock tests", "listening audio", "Vietnamese explanations"],
-      "rights": "not verified",
-      "use": "format reference"
+      "rights": "Only '© 2026 Kanji.vn'; no terms/licence link on page.",
+      "use": "format reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "NihongoFree N4",
@@ -27,8 +31,10 @@
       "language": "vi",
       "levels": ["N4"],
       "material": ["34 listening questions claimed", "browser speech", "scripts"],
-      "rights": "not verified",
-      "use": "listening format reference"
+      "rights": "© 2026 NihongoFree.com; Terms and DMCA pages linked (not read); disclaims affiliation with JF/JEES.",
+      "use": "listening format reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "NihongoFree N5",
@@ -36,8 +42,10 @@
       "language": "vi",
       "levels": ["N5"],
       "material": ["34 listening questions claimed", "synthetic audio", "scripts"],
-      "rights": "not verified",
-      "use": "listening format reference"
+      "rights": "© 2026; Terms/DMCA linked (not read); disclaims JF/JEES affiliation. Page updated 2026-11-06.",
+      "use": "listening format reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "Mainichi JLPT",
@@ -45,8 +53,10 @@
       "language": "vi",
       "levels": ["N5"],
       "material": ["33-question mock", "listening"],
-      "rights": "not verified",
-      "use": "mock reference"
+      "rights": "'Đề thi thử gốc của Mainichi JLPT' / 'Original study material by Mainichi JLPT'; not affiliated with JF/JEES; © 2026 safa.",
+      "use": "mock reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "JPNotes",
@@ -54,12 +64,15 @@
       "language": "en,ja",
       "levels": ["N4", "N5"],
       "material": [
-        "80 original listening recordings per level claimed",
+        "146 (N5) / 150 (N4) original AI-voiced listening recordings",
         "transcripts",
         "explanations"
       ],
-      "rights": "not verified; MP3 download not offered",
-      "use": "listening format reference"
+      "rights": "Footer: 'Content licensed CC BY-NC 4.0 — credit jpnotes.dev, non-commercial use only'",
+      "use": "listening format reference",
+      "verdict": "usable",
+      "checkedAt": "2026-11-23",
+      "pendingUserDecision": true
     },
     {
       "name": "Conjugaizen",
@@ -67,8 +80,10 @@
       "language": "en",
       "levels": ["N4", "N5"],
       "material": ["2 mock exams per level claimed", "timers", "answer reviews"],
-      "rights": "not verified",
-      "use": "mock reference"
+      "rights": "'All questions are original, modeled on the official exam format and difficulty'; 'unofficial practice tool'; Terms page linked (not read).",
+      "use": "mock reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "FreeTag",
@@ -76,8 +91,10 @@
       "language": "en,ja",
       "levels": ["N4", "N5"],
       "material": ["question bank", "synthetic audio"],
-      "rights": "not verified",
-      "use": "question-type reference"
+      "rights": "'These are original FreeTag study questions, not official JLPT questions or timed mock exams.' No licence statement.",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "GyanMirai",
@@ -85,8 +102,10 @@
       "language": "en,ja",
       "levels": ["N5"],
       "material": ["26 listening papers claimed", "audio", "transcripts"],
-      "rights": "not verified",
-      "use": "listening reference"
+      "rights": "'All rights reserved'; Terms of Service linked (not read).",
+      "use": "listening reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
     },
     {
       "name": "VNJPCLUB",
@@ -95,7 +114,119 @@
       "levels": ["N5"],
       "material": ["original listening practice", "audio", "Vietnamese explanations"],
       "rights": "not verified",
-      "use": "listening reference"
+      "use": "listening reference",
+      "verdict": "do-not-use",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "CFL-USSH JLPT page (HCMC host)",
+      "url": "https://hcmussh.edu.vn/ttnn/nhatngujlpt",
+      "levels": [],
+      "material": ["other"],
+      "rights": "not stated",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "Prepedu 'Tổng hợp đề thi JLPT N5 chính thức 2017-2023' (also /vi/blog/de-thi-jlpt-n4)",
+      "url": "https://prepedu.com/vi/blog/de-thi-jlpt-n5",
+      "levels": ["N4", "N5"],
+      "material": ["reconstruction-of-real-test"],
+      "rights": "No licence for the papers; site-wide terms and DMCA badge only; no credit to jlpt.jp.",
+      "use": "not used",
+      "verdict": "do-not-use",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "Nihongo Master JLPT N5 practice test (also /jlpt-n4-practice-test)",
+      "url": "https://www.nihongomaster.com/jlpt-n5-practice-test",
+      "levels": ["N4", "N5"],
+      "material": ["other"],
+      "rights": "'© 2026 Nihongo Master. All rights reserved.'; Terms of Use linked (not read).",
+      "use": "not used",
+      "verdict": "do-not-use",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "JLPT Sensei N4 practice test download",
+      "url": "https://jlptsensei.com/downloads/jlpt-n4-practice-test",
+      "levels": ["N4"],
+      "material": ["other"],
+      "rights": "not stated",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "Bonjinsha JLPT books",
+      "url": "https://bonjinsha.com/wp/bonjinsha_jlpt",
+      "levels": ["N1", "N2", "N3", "N4", "N5"],
+      "material": ["publisher-sample"],
+      "rights": "Store pages only; site policy linked (not read).",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "3A Network 日本語能力試験N3模擬テスト〈1〉改訂版",
+      "url": "https://www.3anet.co.jp/np/en/books/3821/",
+      "levels": ["N3"],
+      "material": ["publisher-sample"],
+      "rights": "No reuse licence; free files are study aids for book users.",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "The Best Practice Tests for the JLPT N5 (Japan Times, 2020-06-05)",
+      "url": "https://bookclub.japantimes.co.jp/en/book/b505867.html",
+      "levels": ["N5"],
+      "material": ["publisher-sample"],
+      "rights": "No conditions stated for the free audio; no reuse licence.",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "ASK 合格模試 N5/N4 (2020, EN/ZH/VI translations)",
+      "url": "https://ask-books.com/catalogue/J_catalogue2024.pdf",
+      "levels": ["N4", "N5"],
+      "material": ["publisher-sample"],
+      "rights": "Per search snippet of the 2024 catalogue: sample pages and DL materials via official LINE by sending ISBN digits. Catalogue PDF and book page not opened (book page 301 to http://ask-books.com/book-details/…).",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "Jリサーチ出版 完全模試 N5/N4",
+      "url": "https://www.jresearch.co.jp/",
+      "levels": ["N4", "N5"],
+      "material": ["publisher-sample"],
+      "rights": "not found",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "アルク",
+      "url": "https://www.alc.co.jp/",
+      "levels": [],
+      "material": ["publisher-sample"],
+      "rights": "not found",
+      "use": "question-type reference",
+      "verdict": "reference-only",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "name": "Scribd uploads (JLPT N5 Practice Test; 'JLPT N4 Sample Test (日本語能力試験公式問題集 N4)')",
+      "url": "https://www.scribd.com/document/613844721/JLPT-N5-Practice-Test",
+      "levels": ["N4", "N5"],
+      "material": ["other"],
+      "rights": "not stated",
+      "use": "not used",
+      "verdict": "do-not-use",
+      "checkedAt": "2026-11-23"
     }
   ],
   "authoringRequirements": {
