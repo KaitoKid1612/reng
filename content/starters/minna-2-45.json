@@ -1,0 +1,918 @@
+{
+  "id": "minna-2-45",
+  "title": "Bài 45 – Trường hợp và vậy mà",
+  "titleJa": "第45課・〜場合は、〜のに",
+  "summary": "Nêu tình huống giả định và cách xử lý bằng 場合は, nói kết quả trái mong đợi bằng のに.",
+  "order": 45,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4501",
+        "jp": "しんじます",
+        "romaji": "shinjimasu",
+        "vi": "tin, tin tưởng",
+        "audio": null,
+        "kanji": "信じます"
+      },
+      {
+        "id": "v4502",
+        "jp": "キャンセルします",
+        "romaji": "kyanseru shimasu",
+        "vi": "hủy",
+        "audio": null
+      },
+      {
+        "id": "v4503",
+        "jp": "しらせます",
+        "romaji": "shirasemasu",
+        "vi": "thông báo, báo cho biết",
+        "audio": null,
+        "kanji": "知らせます"
+      },
+      {
+        "id": "v4504",
+        "jp": "あやまります",
+        "romaji": "ayamarimasu",
+        "vi": "xin lỗi, tạ lỗi",
+        "audio": null,
+        "kanji": "謝ります"
+      },
+      {
+        "id": "v4505",
+        "jp": "ゆうしょうします",
+        "romaji": "yuushou shimasu",
+        "vi": "vô địch",
+        "audio": null,
+        "kanji": "優勝します",
+        "image": "/icons/vocab/1st-place-medal.svg"
+      },
+      {
+        "id": "v4506",
+        "jp": "ほしょうしょ",
+        "romaji": "hoshousho",
+        "vi": "giấy bảo hành",
+        "audio": null,
+        "kanji": "保証書"
+      },
+      {
+        "id": "v4507",
+        "jp": "りょうしゅうしょ",
+        "romaji": "ryoushuusho",
+        "vi": "hóa đơn, biên lai",
+        "audio": null,
+        "kanji": "領収書"
+      },
+      {
+        "id": "v4508",
+        "jp": "おくりもの",
+        "romaji": "okurimono",
+        "vi": "quà tặng",
+        "audio": null,
+        "kanji": "贈り物",
+        "image": "/icons/vocab/wrapped-gift.svg"
+      },
+      {
+        "id": "v4509",
+        "jp": "まちがいでんわ",
+        "romaji": "machigai denwa",
+        "vi": "cuộc gọi nhầm số",
+        "audio": null,
+        "kanji": "間違い電話"
+      },
+      {
+        "id": "v4510",
+        "jp": "キャンプ",
+        "romaji": "kyanpu",
+        "vi": "cắm trại",
+        "audio": null
+      },
+      {
+        "id": "v4511",
+        "jp": "かかり",
+        "romaji": "kakari",
+        "vi": "người phụ trách",
+        "audio": null,
+        "kanji": "係"
+      },
+      {
+        "id": "v4512",
+        "jp": "かかりいん",
+        "romaji": "kakariin",
+        "vi": "nhân viên phụ trách",
+        "audio": null,
+        "kanji": "係員"
+      },
+      {
+        "id": "v4513",
+        "jp": "ちゅうし",
+        "romaji": "chuushi",
+        "vi": "sự hủy bỏ, đình chỉ",
+        "audio": null,
+        "kanji": "中止"
+      },
+      {
+        "id": "v4514",
+        "jp": "てん",
+        "romaji": "ten",
+        "vi": "điểm",
+        "audio": null,
+        "kanji": "点"
+      },
+      {
+        "id": "v4515",
+        "jp": "さつ",
+        "romaji": "satsu",
+        "vi": "tiền giấy",
+        "audio": null,
+        "kanji": "札",
+        "note": "せんえんさつ"
+      },
+      {
+        "id": "v4516",
+        "jp": "コース",
+        "romaji": "koosu",
+        "vi": "lộ trình, đường đua",
+        "audio": null
+      },
+      {
+        "id": "v4517",
+        "jp": "スタート",
+        "romaji": "sutaato",
+        "vi": "xuất phát, vạch xuất phát",
+        "audio": null
+      },
+      {
+        "id": "v4518",
+        "jp": "〜い",
+        "romaji": "i",
+        "vi": "hạng …",
+        "audio": null,
+        "kanji": "〜位",
+        "note": "１い: hạng nhất"
+      },
+      {
+        "id": "v4519",
+        "jp": "うめ",
+        "romaji": "ume",
+        "vi": "hoa mơ, cây mơ",
+        "audio": null,
+        "kanji": "梅"
+      },
+      {
+        "id": "v4520",
+        "jp": "ちゃんと",
+        "romaji": "chanto",
+        "vi": "đàng hoàng, đầy đủ",
+        "audio": null
+      },
+      {
+        "id": "v4521",
+        "jp": "きゅうに",
+        "romaji": "kyuu ni",
+        "vi": "đột nhiên",
+        "audio": null,
+        "kanji": "急に"
+      },
+      {
+        "id": "v4522",
+        "jp": "たのしみに して います。",
+        "romaji": "tanoshimi ni shite imasu",
+        "vi": "Tôi đang mong chờ.",
+        "audio": null,
+        "kanji": "楽しみにしています。"
+      },
+      {
+        "id": "v4523",
+        "jp": "いじょうです。",
+        "romaji": "ijou desu",
+        "vi": "Xin hết. (kết thúc phần trình bày)",
+        "audio": null,
+        "kanji": "以上です。"
+      },
+      {
+        "id": "v4524",
+        "jp": "ひゃくじゅうきゅうばん",
+        "romaji": "hyakujuukyuu ban",
+        "vi": "số 119 (cứu hỏa, cấp cứu)",
+        "audio": null,
+        "kanji": "119番"
+      },
+      {
+        "id": "v4525",
+        "jp": "ひゃくとおばん",
+        "romaji": "hyakutoo ban",
+        "vi": "số 110 (cảnh sát)",
+        "audio": null,
+        "kanji": "110番"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4501",
+        "pattern": "Vる／Vない／Vた + 場合は、〜",
+        "vi": "Trong trường hợp …",
+        "explain": "Nêu một tình huống giả định, thường là sự cố, rồi chỉ cách xử lý. Trang trọng hơn 〜たら, hay gặp trong thông báo, hướng dẫn.",
+        "viMistake": "Không dùng cho việc chắc chắn sẽ xảy ra: không nói あさに なった ばあいは.",
+        "examples": [
+          {
+            "jp": "{火事|かじ}が {起|お}きた {場合|ばあい}は、{119番|ひゃくじゅうきゅうばん}に {電話|でんわ}して ください。",
+            "vi": "Trường hợp xảy ra hỏa hoạn, hãy gọi số 119.",
+            "audio": null
+          },
+          {
+            "jp": "{授業|じゅぎょう}を {休|やす}む {場合|ばあい}は、{先生|せんせい}に {知|し}らせて ください。",
+            "vi": "Trường hợp nghỉ học, hãy báo cho giáo viên.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4502",
+        "pattern": "いA／なAな／Nの + 場合は、〜",
+        "vi": "Trường hợp tính chất, danh từ",
+        "explain": "Tính từ い giữ nguyên, tính từ な thêm な, danh từ thêm の trước 場合は.",
+        "viMistake": "Danh từ cần の: あめの ばあいは. Tính từ な cần な: ひつような ばあいは.",
+        "examples": [
+          {
+            "jp": "{雨|あめ}の {場合|ばあい}は、キャンプは {中止|ちゅうし}です。",
+            "vi": "Trường hợp trời mưa, buổi cắm trại sẽ hủy.",
+            "audio": null
+          },
+          {
+            "jp": "{領収書|りょうしゅうしょ}が {必要|ひつよう}な {場合|ばあい}は、{係|かかり}に {言|い}って ください。",
+            "vi": "Trường hợp cần hóa đơn, hãy nói với người phụ trách.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4503",
+        "pattern": "普通形 + のに、〜",
+        "vi": "Vậy mà, thế mà (trái với mong đợi)",
+        "explain": "Vế sau trái với điều vế trước khiến ta mong đợi, kèm cảm giác bất ngờ, tiếc hoặc bực. なA và danh từ thêm な: ひまなのに, にちようびなのに.",
+        "viMistake": "Vế sau là sự việc đã hoặc đang xảy ra, không phải ý muốn, lời nhờ hay lời rủ. Không nói ひまなのに、てつだって ください.",
+        "examples": [
+          {
+            "jp": "{約束|やくそく}したのに、{友達|ともだち}が {来|き}ませんでした。",
+            "vi": "Đã hẹn rồi vậy mà bạn không đến.",
+            "audio": null
+          },
+          {
+            "jp": "{日曜日|にちようび}なのに、{会社|かいしゃ}へ {行|い}かなければ なりません。",
+            "vi": "Chủ nhật vậy mà vẫn phải đi làm.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4501",
+        "type": "title",
+        "jp": "第45課 · 場合は・のに",
+        "vi": "Bài 45 · Trường hợp và vậy mà"
+      },
+      {
+        "id": "s4502",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Hỏi và chỉ dẫn cách xử lý khi có sự cố bằng 場合は. Nói kết quả trái với mong đợi, kèm cảm giác tiếc hoặc bực, bằng のに."
+      },
+      {
+        "id": "s4503",
+        "type": "vocab",
+        "refs": ["v4501", "v4502", "v4503", "v4504", "v4505", "v4506", "v4507", "v4508"]
+      },
+      {
+        "id": "s4504",
+        "type": "vocab",
+        "refs": ["v4509", "v4510", "v4511", "v4512", "v4513", "v4514", "v4515", "v4516"]
+      },
+      {
+        "id": "s4505",
+        "type": "vocab",
+        "refs": ["v4517", "v4518", "v4519", "v4520", "v4521", "v4522", "v4523", "v4524"]
+      },
+      {
+        "id": "s4506",
+        "type": "vocab",
+        "refs": ["v4525"]
+      },
+      {
+        "id": "s4507",
+        "type": "grammar",
+        "ref": "g4501"
+      },
+      {
+        "id": "s4508",
+        "type": "example",
+        "ref": "g4501",
+        "reveal": true
+      },
+      {
+        "id": "s4509",
+        "type": "quiz",
+        "ref": "q4501"
+      },
+      {
+        "id": "s4510",
+        "type": "grammar",
+        "ref": "g4502"
+      },
+      {
+        "id": "s4511",
+        "type": "example",
+        "ref": "g4502",
+        "reveal": true
+      },
+      {
+        "id": "s4512",
+        "type": "quiz",
+        "ref": "q4504"
+      },
+      {
+        "id": "s4513",
+        "type": "table",
+        "title": "Nối với 場合は",
+        "columns": ["Gốc", "Trường hợp"],
+        "rows": [
+          ["{遅|おく}れる", "{遅|おく}れる {場合|ばあい}は"],
+          ["{来|こ}られない", "{来|こ}られない {場合|ばあい}は"],
+          ["{壊|こわ}れた", "{壊|こわ}れた {場合|ばあい}は"],
+          ["{寒|さむ}い", "{寒|さむ}い {場合|ばあい}は"],
+          ["{必要|ひつよう}だ", "{必要|ひつよう}な {場合|ばあい}は"],
+          ["{雨|あめ}", "{雨|あめ}の {場合|ばあい}は"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho học viên nói tiếp cách xử lý: 遅れる場合は、電話して ください."
+      },
+      {
+        "id": "s4514",
+        "type": "quiz",
+        "ref": "q4503"
+      },
+      {
+        "id": "s4515",
+        "type": "grammar",
+        "ref": "g4503"
+      },
+      {
+        "id": "s4516",
+        "type": "example",
+        "ref": "g4503",
+        "reveal": true
+      },
+      {
+        "id": "s4517",
+        "type": "quiz",
+        "ref": "q4506"
+      },
+      {
+        "id": "s4518",
+        "type": "table",
+        "title": "Hai loại のに",
+        "columns": ["Mẫu", "Nghĩa", "Bài"],
+        "rows": [
+          ["{切|き}るのに {使|つか}います", "để (công dụng)", "Bài 42"],
+          ["{練習|れんしゅう}したのに、{負|ま}けました", "vậy mà", "Bài 45"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cách nhận ra: のに bài 42 đi với 使います, 便利です, かかります. のに bài 45 nối hai vế trái ngược, có dấu phẩy."
+      },
+      {
+        "id": "s4519",
+        "type": "quiz",
+        "ref": "q4509"
+      },
+      {
+        "id": "s4520",
+        "type": "quiz",
+        "ref": "q4508"
+      },
+      {
+        "id": "s4521",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["信", "{信|しん}じます", "tin"],
+          ["謝", "{謝|あやま}ります", "tạ lỗi"],
+          ["証", "{保証書|ほしょうしょ}", "chứng"],
+          ["領", "{領収書|りょうしゅうしょ}", "lĩnh"],
+          ["贈", "{贈|おく}り{物|もの}", "tặng"],
+          ["急", "{急|きゅう}に", "gấp"],
+          ["止", "{中止|ちゅうし}", "dừng"],
+          ["係", "{係|かかり}・{係員|かかりいん}", "phụ trách"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4522",
+        "type": "table",
+        "title": "Từ tham khảo · Bệnh viện",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{内科|ないか}", "khoa nội"],
+          ["{外科|げか}", "khoa ngoại"],
+          ["{歯科|しか}", "nha khoa"],
+          ["{眼科|がんか}", "khoa mắt"],
+          ["{耳鼻科|じびか}", "khoa tai mũi họng"],
+          ["{小児科|しょうにか}", "khoa nhi"],
+          ["{保険証|ほけんしょう}", "thẻ bảo hiểm"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên nói: 熱が ある 場合は 内科へ 行きます."
+      },
+      {
+        "id": "s4523",
+        "type": "dialogue",
+        "title": "Hội thoại · Giải đua xe đạp",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Lan",
+            "jp": "すみません、{自転車|じてんしゃ}が {壊|こわ}れた {場合|ばあい}は、どう したら いいですか。",
+            "vi": "Xin lỗi, trường hợp xe đạp bị hỏng thì phải làm thế nào ạ?"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{近|ちか}くの {係員|かかりいん}に {知|し}らせて ください。",
+            "vi": "Chị hãy báo cho nhân viên phụ trách gần đó."
+          },
+          {
+            "speaker": "Lan",
+            "jp": "{雨|あめ}の {場合|ばあい}は どう なりますか。",
+            "vi": "Trường hợp trời mưa thì sao ạ?"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{大会|たいかい}は {中止|ちゅうし}です。{朝|あさ} {6時|ろくじ}に メールで {知|し}らせます。",
+            "vi": "Giải đấu sẽ hủy. 6 giờ sáng chúng tôi sẽ báo qua email."
+          },
+          {
+            "speaker": "An",
+            "jp": "{大会|たいかい}は どうでしたか。",
+            "vi": "Giải đấu thế nào rồi?"
+          },
+          {
+            "speaker": "Lan",
+            "jp": "{毎朝|まいあさ} {練習|れんしゅう}したのに、{途中|とちゅう}で {転|ころ}んで しまいました。",
+            "vi": "Sáng nào cũng tập vậy mà giữa đường lại bị ngã."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Bốn lượt đầu trước giải, hai lượt cuối sau giải. Hỏi: xe hỏng thì làm gì, mưa thì sao? Kết quả của Lan thế nào? Lời cuối của Lan thể hiện tiếc nuối bằng のに."
+      },
+      {
+        "id": "s4524",
+        "type": "quiz",
+        "ref": "q4518"
+      },
+      {
+        "id": "s4525",
+        "type": "dialogue",
+        "title": "Nghe · Đồng hồ mới hỏng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "どうしたんですか。",
+            "vi": "Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "この {時計|とけい}、{先週|せんしゅう} {買|か}ったのに、もう {動|うご}かないんです。",
+            "vi": "Cái đồng hồ này mới mua tuần trước vậy mà đã không chạy nữa."
+          },
+          {
+            "speaker": "An",
+            "jp": "{保証書|ほしょうしょ}は ありますか。",
+            "vi": "Anh có giấy bảo hành không?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "ええ、{領収書|りょうしゅうしょ}も あります。",
+            "vi": "Có, cả hóa đơn nữa."
+          },
+          {
+            "speaker": "An",
+            "jp": "じゃ、お{店|みせ}に {持|も}って {行|い}った ほうが いいですよ。",
+            "vi": "Vậy anh nên mang ra cửa hàng."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi đồng hồ bị sao và An khuyên gì."
+      },
+      {
+        "id": "s4526",
+        "type": "quiz",
+        "ref": "q4519"
+      },
+      {
+        "id": "s4527",
+        "type": "quiz",
+        "ref": "q4520"
+      },
+      {
+        "id": "s4528",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "{場合|ばあい}は、／{遅|おく}れる／{電話|でんわ}します",
+            "{遅|おく}れる {場合|ばあい}は、{電話|でんわ}します。"
+          ],
+          [
+            "のに、／{約束|やくそく}した／{来|き}ません",
+            "{約束|やくそく}したのに、{来|き}ません。"
+          ],
+          [
+            "なのに、／{毎日|まいにち} {雨|あめ}です／{夏休|なつやす}み",
+            "{夏休|なつやす}みなのに、{毎日|まいにち} {雨|あめ}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4529",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Bị trộm ví thì gọi số 110.",
+            "{財布|さいふ}を {盗|ぬす}まれた {場合|ばあい}は、{110番|ひゃくとおばん}に {電話|でんわ}します。"
+          ],
+          ["Cần thì cứ nói nhé.", "{必要|ひつよう}な {場合|ばあい}は、{言|い}って ください。"],
+          ["Đã học vậy mà quên.", "{勉強|べんきょう}したのに、{忘|わす}れました。"],
+          ["Rảnh vậy mà không đến.", "{暇|ひま}なのに、{来|き}ませんでした。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4530",
+        "type": "table",
+        "title": "Nhập vai · Hỏi khi đi cắm trại",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hỏi khi lạc đường", "{迷|まよ}った {場合|ばあい}は どうしますか。"],
+          ["B", "Chỉ cách xử lý", "この {番号|ばんごう}に {電話|でんわ}して ください。"],
+          ["A", "Hỏi khi trời mưa", "{雨|あめ}の {場合|ばあい}は どう なりますか。"],
+          ["B", "Trả lời", "キャンプは {中止|ちゅうし}です。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi tình huống: けがを した 場合, 気分が 悪く なった 場合."
+      },
+      {
+        "id": "s4531",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vる／Vない／Vた／いA／なAな／Nの + 場合は: trường hợp.\n普通形 + のに: vậy mà. なA, N + な のに.\nVế sau của のに là sự thật, không là lời nhờ hay lời rủ.",
+        "teacherNotes": "Dễ nhầm: のに bài 42 (công dụng) với のに bài 45, dùng 場合は cho việc chắc chắn xảy ra. Liên hệ 〜たら ở bài 25. Sang bài 46, học ところ, ばかり và はず."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4501",
+        "type": "choice",
+        "prompt": "Trường hợp đến muộn, hãy liên lạc: じゅぎょうに（　）ばあいは、れんらくして ください。",
+        "options": ["おくれて", "おくれる", "おくれます", "おくれよう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Thể từ điển + 場合は.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4502",
+        "type": "choice",
+        "prompt": "かじが（　）ばあいは、119ばんに でんわして ください。",
+        "options": ["おきて", "おきます", "おきた", "おきれば"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Thể た + 場合は: trường hợp đã xảy ra hỏa hoạn.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4503",
+        "type": "choice",
+        "prompt": "Câu nào dùng 場合は tự nhiên?",
+        "options": [
+          "まいあさ 7じに なった ばあいは、おきます。",
+          "きのうの ばあいは、たのしかったです。",
+          "わたしの ばあいは、きのう うまれました。",
+          "ねつが ある ばあいは、やすんで ください。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "場合は nêu tình huống giả định rồi chỉ cách xử lý.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4504",
+        "type": "choice",
+        "prompt": "あめ（　）ばあいは、キャンプは ちゅうしです。",
+        "options": ["の", "な", "が", "に"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Danh từ + の + 場合は.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4505",
+        "type": "choice",
+        "prompt": "りょうしゅうしょが ひつよう（　）ばあいは、いって ください。",
+        "options": ["の", "な", "だ", "で"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "なA + な + 場合は.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4506",
+        "type": "choice",
+        "prompt": "Trái mong đợi: やくそくした（　）、ともだちが きませんでした。",
+        "options": ["ので", "のが", "のに", "のを"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Kết quả trái mong đợi: 〜のに.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4507",
+        "type": "choice",
+        "prompt": "にちようび（　）、かいしゃへ いかなければ なりません。",
+        "options": ["のに", "だのに", "でのに", "なのに"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Danh từ + な + のに.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4508",
+        "type": "choice",
+        "prompt": "Câu nào dùng のに đúng?",
+        "options": [
+          "くすりを のんだのに、ねつが さがりません。",
+          "ひまなのに、てつだって ください。",
+          "あめなのに、でかけましょう。",
+          "いそがしいのに、てつだって くれませんか。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Vế sau của のに là sự việc thực tế, không phải lời nhờ hay lời rủ.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4509",
+        "type": "choice",
+        "prompt": "この はさみは かみを きるのに つかいます。のに ở câu này nghĩa là gì?",
+        "options": ["vậy mà", "để (công dụng)", "vì", "nếu"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Vる + のに + 使います là công dụng (bài 42), khác のに 'vậy mà'.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4510",
+        "type": "choice",
+        "prompt": "Câu nào thể hiện sự tiếc nuối, bất mãn?",
+        "options": [
+          "いっしょうけんめい れんしゅうしたので、かちました。",
+          "いっしょうけんめい れんしゅうしたら、かちます。",
+          "いっしょうけんめい れんしゅうしたのに、まけました。",
+          "いっしょうけんめい れんしゅうして、かちました。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "〜のに: cố gắng vậy mà vẫn thua.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4511",
+        "type": "choice",
+        "prompt": "Gọi xe cứu hỏa, cấp cứu ở Nhật là số nào?",
+        "options": ["110ばん", "117ばん", "104ばん", "119ばん"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "119番 là cứu hỏa, cấp cứu. 110番 là cảnh sát.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4512",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 領収書.",
+        "options": ["hóa đơn, biên lai", "giấy bảo hành", "quà tặng", "tiền giấy"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "領収書 đọc りょうしゅうしょ.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4513",
+        "type": "choice",
+        "prompt": "Hủy đặt phòng: よやくを（　）します。",
+        "options": ["スタート", "キャンセル", "コース", "キャンプ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "キャンセルします là hủy.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4514",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là tin, tin tưởng?",
+        "options": ["あやまります", "しらせます", "しんじます", "ゆうしょうします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "信じます là tin.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4515",
+        "type": "choice",
+        "prompt": "Đột nhiên bị sốt: （　）ねつが でました。",
+        "options": ["ちゃんと", "いじょう", "ちょうど", "きゅうに"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "急に là đột nhiên.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4516",
+        "type": "choice",
+        "prompt": "Đạt hạng nhất trong giải đấu gọi là gì?",
+        "options": ["ゆうしょうします", "ちゅうし", "スタート", "キャンセル"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "優勝します là vô địch.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4517",
+        "type": "choice",
+        "prompt": "Gọi nhầm số điện thoại gọi là gì?",
+        "options": ["おくりもの", "まちがいでんわ", "ほしょうしょ", "かかり"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "間違い電話 là cuộc gọi nhầm số.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4518",
+        "type": "choice",
+        "prompt": "Trường hợp trời mưa thì giải đấu thế nào?",
+        "options": [
+          "Dời sang hôm sau",
+          "Vẫn tổ chức",
+          "Bị hủy, báo qua email lúc 6 giờ sáng",
+          "Gọi điện báo cho từng người"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "雨の場合は、大会は中止です。朝6時にメールで知らせます.",
+        "points": 1,
+        "tags": ["minna-45"],
+        "passage": "{係員|かかりいん}：{雨|あめ}の {場合|ばあい}は、{大会|たいかい}は {中止|ちゅうし}です。{朝|あさ} {6時|ろくじ}に メールで {知|し}らせます。"
+      },
+      {
+        "id": "q4519",
+        "type": "choice",
+        "prompt": "Chuyện gì xảy ra với đồng hồ của Minh?",
+        "options": ["Bị mất", "Bị vỡ mặt", "Chạy nhanh", "Mới mua tuần trước mà đã không chạy"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "この時計、先週買ったのに、もう動かないんです.",
+        "points": 1,
+        "tags": ["minna-45"],
+        "passage": "ミン：この {時計|とけい}、{先週|せんしゅう} {買|か}ったのに、もう {動|うご}かないんです。"
+      },
+      {
+        "id": "q4520",
+        "type": "choice",
+        "prompt": "Vì sao Linh không thi được?",
+        "options": [
+          "Đột nhiên bị sốt hôm trước ngày thi",
+          "Không học bài",
+          "Quên ngày thi",
+          "Bị muộn tàu"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "試験の前の日に急に熱が出て、試験を受けられませんでした.",
+        "points": 1,
+        "tags": ["minna-45"],
+        "passage": "{友達|ともだち}の リンさんは {毎日|まいにち} ちゃんと {勉強|べんきょう}して いたのに、{試験|しけん}の {前|まえ}の {日|ひ}に {急|きゅう}に {熱|ねつ}が {出|で}て、{試験|しけん}を {受|う}けられませんでした。リンさんは「{来年|らいねん} また {受|う}けます」と {言|い}って いました。"
+      },
+      {
+        "id": "q4521",
+        "type": "choice",
+        "prompt": "Linh nói sẽ làm gì?",
+        "options": ["Bỏ thi", "Sang năm thi lại", "Học trường khác", "Xin thi bù tuần sau"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "来年また受けますと言っていました.",
+        "points": 1,
+        "tags": ["minna-45"],
+        "passage": "{友達|ともだち}の リンさんは {毎日|まいにち} ちゃんと {勉強|べんきょう}して いたのに、{試験|しけん}の {前|まえ}の {日|ひ}に {急|きゅう}に {熱|ねつ}が {出|で}て、{試験|しけん}を {受|う}けられませんでした。リンさんは「{来年|らいねん} また {受|う}けます」と {言|い}って いました。"
+      },
+      {
+        "id": "q4522",
+        "type": "fill",
+        "prompt": "Điền: ねつが ある ばあい（　）、やすんで ください。",
+        "answer": ["は", "には"],
+        "inputMode": "hiragana",
+        "explain": "Mẫu 場合は.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4523",
+        "type": "fill",
+        "prompt": "Điền: へやは しずか（　）のに、ねむれません。",
+        "answer": ["な"],
+        "inputMode": "hiragana",
+        "explain": "なA + な + のに.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4524",
+        "type": "fill",
+        "prompt": "Điền: あめ（　）ばあいは、ちゅうしです。",
+        "answer": ["の"],
+        "inputMode": "hiragana",
+        "explain": "Danh từ + の + 場合は.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4525",
+        "type": "fill",
+        "prompt": "Điền (vậy mà): くすりを のんだ（　）、なおりません。",
+        "answer": ["のに", "けど", "けれど", "けれども", "が"],
+        "inputMode": "hiragana",
+        "explain": "〜のに nhấn sự bất mãn; けど, が cũng nối được hai vế trái ngược.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4526",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Trường hợp đến muộn, hãy liên lạc bằng điện thoại.",
+        "tokens": [
+          {
+            "id": "q4526-1",
+            "text": "ちこくする ばあいは"
+          },
+          {
+            "id": "q4526-2",
+            "text": "でんわで"
+          },
+          {
+            "id": "q4526-3",
+            "text": "れんらくして ください。"
+          }
+        ],
+        "answer": ["q4526-1", "q4526-2", "q4526-3"],
+        "explain": "Tình huống với 場合は đứng trước, cách xử lý ở sau.",
+        "points": 1,
+        "tags": ["minna-45"]
+      },
+      {
+        "id": "q4527",
+        "type": "match",
+        "prompt": "Nối từ với nghĩa.",
+        "left": ["ほしょうしょ", "りょうしゅうしょ", "おくりもの", "まちがいでんわ"],
+        "right": ["quà tặng", "gọi nhầm số", "giấy bảo hành", "biên lai"],
+        "answer": [
+          [0, 2],
+          [1, 3],
+          [2, 0],
+          [3, 1]
+        ],
+        "explain": "保証書 giấy bảo hành, 領収書 biên lai, 贈り物 quà tặng, 間違い電話 gọi nhầm số.",
+        "points": 1,
+        "tags": ["minna-45"]
+      }
+    ]
+  }
+}
