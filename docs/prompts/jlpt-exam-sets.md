@@ -22,7 +22,17 @@ Mỗi cấp trong CAP_DO có đủ SO_DE_MOI_CAP đề hoàn chỉnh, làm đư�
 - Kiểm kê những gì đã có và không làm lại:
   - Đề chính thức trong content/jlpt/official/: n5-2012, n5-2018, n4-2012, n4-2018, kèm bài nghe ghi âm lại trong content/listening/jlpt-official-*.
   - Ngân hàng đề Reng: content/review-banks/n5-jlpt-mock.json (3 đề N5), n4-jlpt-mock-standard.json, n4-jlpt-mock-advanced.json, n4-reng-exam-*.json.
-  - So số câu từng đề chính thức với đề thật (N5 2012 hiện 89 câu, N4 2012 hiện 97 câu). Ghi rõ câu nào thiếu và vì sao.
+  - Số câu đề chính thức đã đối chiếu với 正答表 trên jlpt.jp ngày 23/11/2026: tập 2012 vốn ngắn hơn tập 2018, không thiếu câu. N5 2012 có 89 câu (文字・語彙 問題1 chỉ 10 câu), N4 2012 có 97 câu (文字・語彙 問題3 chỉ 9 câu). Chỉ kiểm lại khi file đổi.
+  - Ngân hàng đề Reng có vừa đủ số đề ghi trong tên: n5-jlpt-mock 201 câu = 3 đề, n4 chuẩn và n4 nâng cao mỗi file 170 câu = 2 đề. Đề cố định ghép từ ngân hàng thì giữ nguyên mã câu, để thư viện đề tính câu đó là đã ra và đề ghép sau không lặp lại.
+- Kiểm kê database production để không nạp trùng hay ra lại câu đã ra. Người dùng cho phép **chỉ đọc** cho việc này. Với mỗi lớp tiếng Nhật, liệt kê:
+  - bài đề đã gắn vào lớp: mã bài, phiên bản, số câu, ngày mở cho học viên;
+  - đề thi thử đã mở: tên, cấp, bài nguồn, số câu, số bài đã nộp;
+  - các câu đã ra trong những đề đó (`assignment_items`).
+  - Không nạp lại đề đã có trong lớp. Đề mới không dùng câu đã ra ở đề trước của lớp, trừ khi hết câu và đã báo người dùng.
+  - Lệnh đọc bị chặn thì ghi câu SQL ra file, đưa người dùng chạy `npx supabase db query --linked --file <file>` và dán kết quả.
+  - Kết quả kiểm kê ngày 23/11/2026 (chạy lại để cập nhật trước khi làm):
+    - **Tiếng Nhật Minna – Lớp 1** (Nguyên, N5): đã gắn đề chính thức N5 2012 và 2018 (đóng với học viên tới 07/12/2026) và ngân hàng `n5-jlpt-mock-bank` (201 câu, gắn 20/11, chưa mở đề nào từ đây). Đã mở 1 đề "Thi thử JLPT N5 — 10/11" (65 câu từ `n5-sheet-review-bank`), chưa ai nộp, đã hết hạn.
+    - **Ôn JLPT N4 – Việt** (lớp tự học): đã gắn đề chính thức N4 2012 và 2018 (đóng tới 07/12/2026) và ngân hàng hằng ngày `n4-viet-review-bank` v10. Chưa gắn hai ngân hàng N4 chuẩn và nâng cao. Đã mở 1 đề "Thi thử JLPT N4 — 10/11" (70 câu từ ngân hàng hằng ngày), chưa nộp, đã hết hạn.
 
 ## 3. Nguồn "đề đã từng thi"
 
@@ -58,7 +68,7 @@ Làm bước này trước mục 4, vì có thể còn đề mẫu hợp pháp c
 
 ## 4. Thành phần mỗi cấp
 
-- Đề 1, Đề 2: hai đề chính thức (2018 và 2012), cộng thêm đề hợp pháp tìm được ở mục 3a nếu có. Hoàn thiện câu còn thiếu nếu đọc được từ PDF gốc. Kiểm tra đáp án với 正解 của sách.
+- Đề 1, Đề 2: hai đề chính thức (2018 và 2012), cộng thêm đề hợp pháp tìm được ở mục 3a nếu có. Bốn đề chính thức đã đủ câu và đã gắn vào lớp trên production (mục 2): chỉ làm bản in, không nạp lại. Kiểm tra đáp án với 正解 của sách.
 - Từ Đề 3 trở đi (SO_DE_MOI_CAP trừ số đề chính thức): đề thi thử Reng **cố định**, đặt tên "Đề thi thử Reng N5 số k" / "N4 số k". Không bao giờ ghi tháng năm thi hay gọi là "đề thi cũ".
   - Đúng cấu trúc và số câu theo `jlptTestParts` (N5 67 câu, N4 85 câu theo thiết kế hiện tại; nếu muốn bám số câu của đề thật thì nêu chênh lệch và hỏi người dùng).
   - Ưu tiên ghép từ ngân hàng đề Reng đã có. Chỉ soạn câu mới cho dạng còn thiếu. Không trùng câu giữa các đề và hạn chế trùng với ngân hàng ôn hằng ngày của lớp.
@@ -86,7 +96,7 @@ Làm bước này trước mục 4, vì có thể còn đề mẫu hợp pháp c
 - Rà câu hỏi đề thi thử bằng một agent riêng không viết đề, theo từng cấp. Sửa mọi lỗi được báo và ghi vào báo cáo.
 - Thêm hoặc cập nhật test: cấu trúc đề, không trùng câu, mỗi câu một đáp án, phân bố vị trí đáp án, bản in không lộ đáp án ở tập học viên, quyền mở bản in.
 - Chạy `npm run check`, `npm run test:e2e`, `npm run test:e2e:supabase` trên Supabase local (không dùng Supabase cloud để thử). Ca lỗi thì chẩn đoán, chạy lại khi phù hợp, báo cả lượt đầu và lượt chạy lại. Build nếu đổi tích hợp framework.
-- Không đọc hay ghi dữ liệu production khi chưa được người dùng cho phép.
+- Production chỉ được đọc để kiểm kê như mục 2, không ghi. Đề mới cần đưa vào lớp thì sinh file SQL bằng script của repo (kết thúc bằng ROLLBACK), đưa người dùng đọc lại và chạy, rồi đọc lại database để xác nhận.
 
 ## 7. Chia đợt và usage
 
