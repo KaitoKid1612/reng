@@ -189,6 +189,7 @@ test("the Minna starters are registered in lesson order", () => {
       ["minna-2-39", "minna-2", 39],
       ["minna-2-40", "minna-2", 40],
       ["minna-2-41", "minna-2", 41],
+      ["minna-2-42", "minna-2", 42],
       ["n4-grammar-map", "n4-grammar", 1],
       ["n4-grammar-1", "n4-grammar", 2],
       ["n4-grammar-2", "n4-grammar", 3],

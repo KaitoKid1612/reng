@@ -1,0 +1,1139 @@
+{
+  "id": "minna-2-42",
+  "title": "Bài 42 – Mục đích và công dụng",
+  "titleJa": "第42課・〜ために、〜のに",
+  "summary": "Nói mục đích bằng ために, công dụng và chi phí bằng のに, nhấn số lượng bằng も và は.",
+  "order": 42,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4201",
+        "jp": "つつみます",
+        "romaji": "tsutsumimasu",
+        "vi": "gói, bọc",
+        "audio": null,
+        "kanji": "包みます"
+      },
+      {
+        "id": "v4202",
+        "jp": "わかします",
+        "romaji": "wakashimasu",
+        "vi": "đun sôi",
+        "audio": null,
+        "kanji": "沸かします",
+        "note": "おゆを わかします"
+      },
+      {
+        "id": "v4203",
+        "jp": "まぜます",
+        "romaji": "mazemasu",
+        "vi": "trộn",
+        "audio": null,
+        "kanji": "混ぜます"
+      },
+      {
+        "id": "v4204",
+        "jp": "けいさんします",
+        "romaji": "keisan shimasu",
+        "vi": "tính toán",
+        "audio": null,
+        "kanji": "計算します"
+      },
+      {
+        "id": "v4205",
+        "jp": "ならびます",
+        "romaji": "narabimasu",
+        "vi": "xếp hàng",
+        "audio": null,
+        "kanji": "並びます"
+      },
+      {
+        "id": "v4206",
+        "jp": "でます",
+        "romaji": "demasu",
+        "vi": "[tiền thưởng] được phát",
+        "audio": null,
+        "kanji": "出ます",
+        "note": "ボーナスが でます"
+      },
+      {
+        "id": "v4207",
+        "jp": "じょうぶな",
+        "romaji": "joubuna",
+        "vi": "bền, chắc",
+        "audio": null,
+        "kanji": "丈夫な"
+      },
+      {
+        "id": "v4208",
+        "jp": "いっしょうけんめい",
+        "romaji": "isshoukenmei",
+        "vi": "hết sức, chăm chỉ",
+        "audio": null,
+        "kanji": "一生懸命"
+      },
+      {
+        "id": "v4209",
+        "jp": "なぜ",
+        "romaji": "naze",
+        "vi": "tại sao",
+        "audio": null
+      },
+      {
+        "id": "v4210",
+        "jp": "ある〜",
+        "romaji": "aru",
+        "vi": "một … nào đó",
+        "audio": null,
+        "note": "ある ひ: một ngày nọ"
+      },
+      {
+        "id": "v4211",
+        "jp": "たのしみ",
+        "romaji": "tanoshimi",
+        "vi": "niềm vui, điều mong chờ",
+        "audio": null,
+        "kanji": "楽しみ"
+      },
+      {
+        "id": "v4212",
+        "jp": "もくてき",
+        "romaji": "mokuteki",
+        "vi": "mục đích",
+        "audio": null,
+        "kanji": "目的"
+      },
+      {
+        "id": "v4213",
+        "jp": "べんごし",
+        "romaji": "bengoshi",
+        "vi": "luật sư",
+        "audio": null,
+        "kanji": "弁護士"
+      },
+      {
+        "id": "v4214",
+        "jp": "おんがくか",
+        "romaji": "ongakuka",
+        "vi": "nhạc sĩ",
+        "audio": null,
+        "kanji": "音楽家",
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v4215",
+        "jp": "こどもたち",
+        "romaji": "kodomotachi",
+        "vi": "trẻ em, các con",
+        "audio": null,
+        "kanji": "子どもたち"
+      },
+      {
+        "id": "v4216",
+        "jp": "きょういく",
+        "romaji": "kyouiku",
+        "vi": "giáo dục",
+        "audio": null,
+        "kanji": "教育"
+      },
+      {
+        "id": "v4217",
+        "jp": "ぶんか",
+        "romaji": "bunka",
+        "vi": "văn hóa",
+        "audio": null,
+        "kanji": "文化"
+      },
+      {
+        "id": "v4218",
+        "jp": "しゃかい",
+        "romaji": "shakai",
+        "vi": "xã hội",
+        "audio": null,
+        "kanji": "社会"
+      },
+      {
+        "id": "v4219",
+        "jp": "せいじ",
+        "romaji": "seiji",
+        "vi": "chính trị",
+        "audio": null,
+        "kanji": "政治"
+      },
+      {
+        "id": "v4220",
+        "jp": "ほうりつ",
+        "romaji": "houritsu",
+        "vi": "pháp luật",
+        "audio": null,
+        "kanji": "法律"
+      },
+      {
+        "id": "v4221",
+        "jp": "せんそう",
+        "romaji": "sensou",
+        "vi": "chiến tranh",
+        "audio": null,
+        "kanji": "戦争"
+      },
+      {
+        "id": "v4222",
+        "jp": "へいわ",
+        "romaji": "heiwa",
+        "vi": "hòa bình",
+        "audio": null,
+        "kanji": "平和"
+      },
+      {
+        "id": "v4223",
+        "jp": "しぜん",
+        "romaji": "shizen",
+        "vi": "thiên nhiên, tự nhiên",
+        "audio": null,
+        "kanji": "自然"
+      },
+      {
+        "id": "v4224",
+        "jp": "ろんぶん",
+        "romaji": "ronbun",
+        "vi": "luận văn, bài nghiên cứu",
+        "audio": null,
+        "kanji": "論文"
+      },
+      {
+        "id": "v4225",
+        "jp": "かんけい",
+        "romaji": "kankei",
+        "vi": "quan hệ, liên quan",
+        "audio": null,
+        "kanji": "関係"
+      },
+      {
+        "id": "v4226",
+        "jp": "ざいりょう",
+        "romaji": "zairyou",
+        "vi": "nguyên liệu, vật liệu",
+        "audio": null,
+        "kanji": "材料"
+      },
+      {
+        "id": "v4227",
+        "jp": "いし",
+        "romaji": "ishi",
+        "vi": "đá",
+        "audio": null,
+        "kanji": "石"
+      },
+      {
+        "id": "v4228",
+        "jp": "ピラミッド",
+        "romaji": "piramiddo",
+        "vi": "kim tự tháp",
+        "audio": null
+      },
+      {
+        "id": "v4229",
+        "jp": "ふた",
+        "romaji": "futa",
+        "vi": "nắp",
+        "audio": null
+      },
+      {
+        "id": "v4230",
+        "jp": "ミキサー",
+        "romaji": "mikisaa",
+        "vi": "máy xay sinh tố",
+        "audio": null
+      },
+      {
+        "id": "v4231",
+        "jp": "やかん",
+        "romaji": "yakan",
+        "vi": "ấm đun nước",
+        "audio": null
+      },
+      {
+        "id": "v4232",
+        "jp": "せんぬき",
+        "romaji": "sennuki",
+        "vi": "cái mở nắp chai",
+        "audio": null,
+        "kanji": "栓抜き"
+      },
+      {
+        "id": "v4233",
+        "jp": "かんきり",
+        "romaji": "kankiri",
+        "vi": "cái mở đồ hộp",
+        "audio": null,
+        "kanji": "缶切り"
+      },
+      {
+        "id": "v4234",
+        "jp": "かんづめ",
+        "romaji": "kanzume",
+        "vi": "đồ hộp",
+        "audio": null,
+        "kanji": "缶詰"
+      },
+      {
+        "id": "v4235",
+        "jp": "ふろしき",
+        "romaji": "furoshiki",
+        "vi": "khăn vải gói đồ",
+        "audio": null,
+        "kanji": "風呂敷"
+      },
+      {
+        "id": "v4236",
+        "jp": "そろばん",
+        "romaji": "soroban",
+        "vi": "bàn tính",
+        "audio": null
+      },
+      {
+        "id": "v4237",
+        "jp": "たいおんけい",
+        "romaji": "taionkei",
+        "vi": "nhiệt kế đo thân nhiệt",
+        "audio": null,
+        "kanji": "体温計"
+      },
+      {
+        "id": "v4238",
+        "jp": "のしぶくろ",
+        "romaji": "noshibukuro",
+        "vi": "phong bì đựng tiền mừng",
+        "audio": null,
+        "kanji": "のし袋"
+      },
+      {
+        "id": "v4239",
+        "jp": "ローン",
+        "romaji": "roon",
+        "vi": "khoản vay trả góp",
+        "audio": null
+      },
+      {
+        "id": "v4240",
+        "jp": "セット",
+        "romaji": "setto",
+        "vi": "bộ",
+        "audio": null
+      },
+      {
+        "id": "v4241",
+        "jp": "あと",
+        "romaji": "ato",
+        "vi": "phần còn lại",
+        "audio": null,
+        "note": "あと 5,000えん"
+      },
+      {
+        "id": "v4242",
+        "jp": "はんぶん",
+        "romaji": "hanbun",
+        "vi": "một nửa",
+        "audio": null,
+        "kanji": "半分"
+      },
+      {
+        "id": "v4243",
+        "jp": "アパート",
+        "romaji": "apaato",
+        "vi": "căn hộ, nhà trọ",
+        "audio": null,
+        "image": "/icons/vocab/house.svg"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4201",
+        "pattern": "Vる + ために、〜",
+        "vi": "Làm việc gì để đạt một mục đích",
+        "explain": "Vế trước là mục đích, vế sau là việc làm để đạt nó. Động từ trước ために là hành động có chủ ý, cùng chủ ngữ với vế sau.",
+        "viMistake": "Động từ khả năng hoặc trạng thái như はなせる, みえる đi với ように (bài 36): にほんごが はなせる ように、まいにち れんしゅうします.",
+        "examples": [
+          {
+            "jp": "{自分|じぶん}の {店|みせ}を {持|も}つ ために、お{金|かね}を {貯|た}めて います。",
+            "vi": "Tôi đang để dành tiền để có cửa hàng riêng.",
+            "audio": null
+          },
+          {
+            "jp": "{論文|ろんぶん}を {書|か}く ために、{図書館|としょかん}へ {行|い}きます。",
+            "vi": "Tôi đến thư viện để viết luận văn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4202",
+        "pattern": "N + の + ために、〜",
+        "vi": "Vì mục đích hoặc vì lợi ích của ai",
+        "explain": "Nの ために có hai nghĩa: mục đích (けんこうの ために) hoặc vì lợi ích của người, của điều gì (かぞくの ために).",
+        "viMistake": "Danh từ cần の trước ために: けんこうの ために, không nói けんこう ために.",
+        "examples": [
+          {
+            "jp": "{健康|けんこう}の ために、{毎朝|まいあさ} {走|はし}って います。",
+            "vi": "Vì sức khỏe, sáng nào tôi cũng chạy bộ.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもたちの ために、{絵本|えほん}を {書|か}きました。",
+            "vi": "Tôi đã viết sách tranh cho các em nhỏ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4203",
+        "pattern": "N は Vるの／Nに 使います",
+        "vi": "Nói công dụng của đồ vật",
+        "explain": "Vる + のに hoặc N + に đứng trước 使います, 便利です, 役に立ちます, 必要です để nói đồ vật dùng vào việc gì.",
+        "viMistake": "Động từ cần の trước に: わかすのに. Danh từ dùng thẳng に: りょうりに つかいます.",
+        "examples": [
+          {
+            "jp": "やかんは お{湯|ゆ}を {沸|わ}かすのに {使|つか}います。",
+            "vi": "Ấm đun dùng để đun nước sôi.",
+            "audio": null
+          },
+          {
+            "jp": "ふろしきは {物|もの}を {包|つつ}むのに {便利|べんり}です。",
+            "vi": "Khăn furoshiki tiện để gói đồ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4204",
+        "pattern": "Vるの／Nに + 時間・お金が かかります",
+        "vi": "Nói tốn bao nhiêu thời gian, tiền bạc",
+        "explain": "Vế trước là việc cần làm, vế sau là thời gian hoặc tiền cần cho việc đó.",
+        "viMistake": "Hỏi: 〜のに どのくらい かかりますか／いくら かかりますか.",
+        "examples": [
+          {
+            "jp": "この {論文|ろんぶん}を {書|か}くのに {半年|はんとし} かかりました。",
+            "vi": "Viết bài luận văn này mất nửa năm.",
+            "audio": null
+          },
+          {
+            "jp": "{引|ひ}っ{越|こ}しに {10万円|じゅうまんえん} かかりました。",
+            "vi": "Chuyển nhà tốn 100.000 yên.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4205",
+        "pattern": "Số lượng + も／は",
+        "vi": "Nhấn là nhiều, hoặc nói mức tối thiểu",
+        "explain": "Số lượng + も: người nói thấy là nhiều. Số lượng + は: ít nhất là chừng đó.",
+        "viMistake": "も ở đây không có nghĩa là cũng. Đặt ngay sau số lượng: 30ぷんも.",
+        "examples": [
+          {
+            "jp": "{駅|えき}まで {歩|ある}いて {30分|さんじゅっぷん}も かかります。",
+            "vi": "Đi bộ ra ga mất những 30 phút.",
+            "audio": null
+          },
+          {
+            "jp": "{修理|しゅうり}には {1週間|いっしゅうかん}は かかります。",
+            "vi": "Sửa chữa mất ít nhất một tuần.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4201",
+        "type": "title",
+        "jp": "第42課 · ために・のに",
+        "vi": "Bài 42 · Mục đích và công dụng"
+      },
+      {
+        "id": "s4202",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói mình làm gì để đạt mục đích. Giải thích đồ vật dùng vào việc gì. Nói một việc tốn bao nhiêu thời gian, tiền bạc."
+      },
+      {
+        "id": "s4203",
+        "type": "vocab",
+        "refs": ["v4201", "v4202", "v4203", "v4204", "v4205", "v4206", "v4207", "v4208"]
+      },
+      {
+        "id": "s4204",
+        "type": "vocab",
+        "refs": ["v4209", "v4210", "v4211", "v4212", "v4213", "v4214", "v4215", "v4216"]
+      },
+      {
+        "id": "s4205",
+        "type": "vocab",
+        "refs": ["v4217", "v4218", "v4219", "v4220", "v4221", "v4222", "v4223", "v4224"]
+      },
+      {
+        "id": "s4206",
+        "type": "vocab",
+        "refs": ["v4225", "v4226", "v4227", "v4228", "v4229", "v4230", "v4231", "v4232"]
+      },
+      {
+        "id": "s4207",
+        "type": "vocab",
+        "refs": ["v4233", "v4234", "v4235", "v4236", "v4237", "v4238", "v4239", "v4240"]
+      },
+      {
+        "id": "s4208",
+        "type": "vocab",
+        "refs": ["v4241", "v4242", "v4243"]
+      },
+      {
+        "id": "s4209",
+        "type": "grammar",
+        "ref": "g4201"
+      },
+      {
+        "id": "s4210",
+        "type": "example",
+        "ref": "g4201",
+        "reveal": true
+      },
+      {
+        "id": "s4211",
+        "type": "quiz",
+        "ref": "q4201"
+      },
+      {
+        "id": "s4212",
+        "type": "grammar",
+        "ref": "g4202"
+      },
+      {
+        "id": "s4213",
+        "type": "example",
+        "ref": "g4202",
+        "reveal": true
+      },
+      {
+        "id": "s4214",
+        "type": "quiz",
+        "ref": "q4203"
+      },
+      {
+        "id": "s4215",
+        "type": "table",
+        "title": "ために hay ように",
+        "columns": ["Trước mẫu", "Dùng"],
+        "rows": [
+          ["Hành động có chủ ý: かう, かく, いく", "Vる ために"],
+          ["Khả năng, trạng thái: はなせる, みえる", "Vる ように (bài 36)"],
+          ["Danh từ: けんこう, かぞく", "Nの ために"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên tự đặt câu về mục tiêu học tập: N4に ごうかくする ために、まいにち べんきょうします."
+      },
+      {
+        "id": "s4216",
+        "type": "quiz",
+        "ref": "q4202"
+      },
+      {
+        "id": "s4217",
+        "type": "grammar",
+        "ref": "g4203"
+      },
+      {
+        "id": "s4218",
+        "type": "example",
+        "ref": "g4203",
+        "reveal": true
+      },
+      {
+        "id": "s4219",
+        "type": "quiz",
+        "ref": "q4205"
+      },
+      {
+        "id": "s4220",
+        "type": "table",
+        "title": "Đồ vật này dùng để làm gì?",
+        "columns": ["Gợi ý", "Câu mẫu"],
+        "rows": [
+          [
+            "{体温計|たいおんけい}・{熱|ねつ}を {測|はか}る",
+            "{熱|ねつ}を {測|はか}るのに {使|つか}います"
+          ],
+          [
+            "{缶切|かんき}り・{缶詰|かんづめ}を {開|あ}ける",
+            "{缶詰|かんづめ}を {開|あ}けるのに {使|つか}います"
+          ],
+          ["そろばん・{計算|けいさん}", "{計算|けいさん}に {使|つか}います"],
+          ["ミキサー・ジュースを {作|つく}る", "ジュースを {作|つく}るのに {使|つか}います"],
+          ["ふろしき・{物|もの}を {包|つつ}む", "{物|もの}を {包|つつ}むのに {便利|べんり}です"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Lưu ý dòng そろばん: danh từ 計算 đi thẳng với に."
+      },
+      {
+        "id": "s4221",
+        "type": "quiz",
+        "ref": "q4207"
+      },
+      {
+        "id": "s4222",
+        "type": "grammar",
+        "ref": "g4204"
+      },
+      {
+        "id": "s4223",
+        "type": "example",
+        "ref": "g4204",
+        "reveal": true
+      },
+      {
+        "id": "s4224",
+        "type": "quiz",
+        "ref": "q4208"
+      },
+      {
+        "id": "s4225",
+        "type": "grammar",
+        "ref": "g4205"
+      },
+      {
+        "id": "s4226",
+        "type": "example",
+        "ref": "g4205",
+        "reveal": true
+      },
+      {
+        "id": "s4227",
+        "type": "quiz",
+        "ref": "q4210"
+      },
+      {
+        "id": "s4228",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["包", "{包|つつ}みます", "gói"],
+          ["沸", "{沸|わ}かします", "sôi"],
+          ["混", "{混|ま}ぜます", "trộn"],
+          ["計", "{計算|けいさん}・{体温計|たいおんけい}", "đo, tính"],
+          ["並", "{並|なら}びます", "xếp hàng"],
+          ["的", "{目的|もくてき}", "đích"],
+          ["育", "{教育|きょういく}", "dạy dỗ"],
+          ["和", "{平和|へいわ}", "hòa"],
+          ["係", "{関係|かんけい}", "liên quan"],
+          ["料", "{材料|ざいりょう}", "nguyên liệu"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4229",
+        "type": "table",
+        "title": "Từ tham khảo · Văn phòng phẩm và dụng cụ",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["ホッチキス", "cái dập ghim"],
+          ["セロテープ", "băng dính"],
+          ["のり", "hồ dán"],
+          ["はさみ", "cái kéo"],
+          ["クリップ", "kẹp giấy"],
+          ["{定規|じょうぎ}", "thước kẻ"],
+          ["ペンチ", "cái kìm"],
+          ["のこぎり", "cái cưa"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên hỏi nhau: ホッチキスは 何に 使いますか → 紙を とめるのに 使います."
+      },
+      {
+        "id": "s4230",
+        "type": "dialogue",
+        "title": "Hội thoại · Tiền thưởng dùng vào việc gì",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{来月|らいげつ} ボーナスが {出|で}ますね。{何|なに}に {使|つか}いますか。",
+            "vi": "Tháng sau có thưởng nhỉ. Chị dùng vào việc gì?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{旅行|りょこう}に {行|い}く ために、{半分|はんぶん}は {貯金|ちょきん}します。",
+            "vi": "Tôi để dành một nửa để đi du lịch."
+          },
+          {
+            "speaker": "An",
+            "jp": "いいですね。どこへ {行|い}きますか。",
+            "vi": "Hay quá. Chị đi đâu?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "エジプトです。ピラミッドを {見|み}るのが {楽|たの}しみなんです。",
+            "vi": "Ai Cập. Tôi rất mong được xem kim tự tháp."
+          },
+          {
+            "speaker": "An",
+            "jp": "エジプトまで {行|い}くのに {何時間|なんじかん} かかりますか。",
+            "vi": "Đi Ai Cập mất mấy tiếng?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{乗|の}り{換|か}えが あるので、{20時間|にじゅうじかん}も かかるんです。",
+            "vi": "Phải đổi máy bay nên mất những 20 tiếng."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Mai để dành bao nhiêu, để làm gì? Đi Ai Cập mất bao lâu?"
+      },
+      {
+        "id": "s4231",
+        "type": "quiz",
+        "ref": "q4218"
+      },
+      {
+        "id": "s4232",
+        "type": "dialogue",
+        "title": "Nghe · Tìm đồ không biết tên",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Khách",
+            "jp": "すみません、{缶詰|かんづめ}を {開|あ}けるのに {使|つか}う {物|もの}は ありますか。",
+            "vi": "Xin lỗi, ở đây có đồ dùng để mở đồ hộp không?"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{缶切|かんき}りですね。こちらです。",
+            "vi": "Cái mở đồ hộp phải không ạ. Ở đây ạ."
+          },
+          {
+            "speaker": "Khách",
+            "jp": "それから、お{湯|ゆ}を {沸|わ}かすのに {使|つか}う {物|もの}も ほしいんですが。",
+            "vi": "Với lại, tôi cũng cần đồ để đun nước sôi."
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "やかんですね。あちらに あります。",
+            "vi": "Ấm đun nước ạ. Ở đằng kia."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi khách cần những đồ gì. Lưu ý cách tả đồ bằng 〜のに 使う 物."
+      },
+      {
+        "id": "s4233",
+        "type": "quiz",
+        "ref": "q4219"
+      },
+      {
+        "id": "s4234",
+        "type": "quiz",
+        "ref": "q4220"
+      },
+      {
+        "id": "s4235",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "ために、／{家族|かぞく}の／{働|はたら}きます",
+            "{家族|かぞく}の ために、{働|はたら}きます。"
+          ],
+          [
+            "のに／{使|つか}います／お{湯|ゆ}を {沸|わ}かす",
+            "お{湯|ゆ}を {沸|わ}かすのに {使|つか}います。"
+          ],
+          ["かかりました／{3時間|さんじかん}も", "{3時間|さんじかん}も かかりました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4236",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Tôi học để làm luận văn.",
+            "{論文|ろんぶん}を {書|か}く ために、{勉強|べんきょう}します。"
+          ],
+          [
+            "Vì hòa bình, hãy học lịch sử.",
+            "{平和|へいわ}の ために、{歴史|れきし}を {学|まな}びましょう。"
+          ],
+          ["Cái này dùng để mở chai.", "これは {瓶|びん}を {開|あ}けるのに {使|つか}います。"],
+          [
+            "Làm bánh này mất 3 tiếng.",
+            "この ケーキを {作|つく}るのに {3時間|さんじかん} かかります。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4237",
+        "type": "table",
+        "title": "Nhập vai · Chi phí sống ở thành phố",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hỏi về cuộc sống ở Tokyo", "{東京|とうきょう}の {生活|せいかつ}は どうですか。"],
+          ["B", "Nói tốn nhiều tiền", "{家賃|やちん}に {8万円|はちまんえん}も かかるんです。"],
+          [
+            "A",
+            "Hỏi thời gian đi lại",
+            "{会社|かいしゃ}まで {行|い}くのに どのくらい かかりますか。"
+          ],
+          ["B", "Trả lời, nhấn là lâu", "{1時間半|いちじかんはん}も かかります。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi thành phố và số tiền theo nơi học viên sống, ví dụ ハノイ, ホーチミン."
+      },
+      {
+        "id": "s4238",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vる／Nの ために: để, vì.\nVるのに／Nに 使います・便利です: công dụng.\nVるのに／Nに かかります: tốn thời gian, tiền.\nSố lượng + も: nhiều. Số lượng + は: ít nhất.",
+        "teacherNotes": "Dễ nhầm: dùng ために với động từ khả năng, quên の trong わかすのに. Liên hệ ように ở bài 36. Sang bài 43, học cách nói trông có vẻ với そうです."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4201",
+        "type": "choice",
+        "prompt": "くるまを（　）ために、ちょきんして います。",
+        "options": ["かって", "かう", "かった", "かいます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Trước ために dùng thể từ điển: かう ために.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4202",
+        "type": "choice",
+        "prompt": "Câu nào dùng ために đúng?",
+        "options": [
+          "にほんごが はなせる ために、まいにち れんしゅうします。",
+          "こくばんが みえる ために、まえに すわります。",
+          "ろんぶんを かく ために、としょかんへ いきます。",
+          "あめが ふる ために、かさを もって いきます。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "かく là hành động có chủ ý. はなせる, みえる đi với ように (bài 36). Lý do vì có thể mưa thì nói あめが ふりそうなので, không dùng ために.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4203",
+        "type": "choice",
+        "prompt": "けんこう（　）ために、やさいを たくさん たべます。",
+        "options": ["が", "に", "を", "の"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Danh từ + の + ために.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4204",
+        "type": "choice",
+        "prompt": "Nghĩa của かぞくの ために はたらきます là gì?",
+        "options": [
+          "Làm việc cùng gia đình",
+          "Làm việc ở nhà",
+          "Làm việc vì gia đình",
+          "Làm việc thay gia đình"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nの ために: vì lợi ích của ai.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4205",
+        "type": "choice",
+        "prompt": "やかんは おゆを わかす（　）つかいます。",
+        "options": ["のに", "のが", "ので", "のを"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Công dụng: Vる + のに + 使います.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4206",
+        "type": "choice",
+        "prompt": "はさみは かみを きるのに（　）。",
+        "options": ["じょうずです", "べんりです", "すきです", "たのしみです"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "〜のに 便利です: tiện để làm gì.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4207",
+        "type": "choice",
+        "prompt": "Danh từ: この へやは かいぎ（　）つかいます。",
+        "options": ["のに", "が", "に", "を"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Danh từ đi thẳng với に: かいぎに つかいます.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4208",
+        "type": "choice",
+        "prompt": "この ろんぶんを かく（　）、はんとし かかりました。",
+        "options": ["のを", "ので", "のと", "のに"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Thời gian cần cho việc gì: Vる + のに + かかります.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4209",
+        "type": "choice",
+        "prompt": "Hỏi cần bao nhiêu tiền: りゅうがくするのに いくら（　）か。",
+        "options": ["べんりです", "かかります", "でます", "ならびます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Tốn tiền, tốn thời gian: かかります.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4210",
+        "type": "choice",
+        "prompt": "Nhấn là nhiều: えきまで あるいて 1じかん（　）かかります。",
+        "options": ["も", "は", "が", "を"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Số lượng + も: người nói thấy là nhiều.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4211",
+        "type": "choice",
+        "prompt": "Nói mức tối thiểu: しゅうりに 1しゅうかん（　）かかります。",
+        "options": ["も", "で", "は", "に"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Số lượng + は: ít nhất là chừng đó.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4212",
+        "type": "choice",
+        "prompt": "Dụng cụ nào dùng để mở đồ hộp?",
+        "options": ["せんぬき", "やかん", "ミキサー", "かんきり"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "缶切り là cái mở đồ hộp.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4213",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 平和.",
+        "options": ["chiến tranh", "hòa bình", "xã hội", "văn hóa"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "平和 đọc へいわ.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4214",
+        "type": "choice",
+        "prompt": "Người làm nghề tư vấn, bào chữa theo pháp luật là ai?",
+        "options": ["おんがくか", "かんりにん", "べんごし", "ドライバー"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "弁護士 là luật sư.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4215",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 一生懸命.",
+        "options": ["hết sức mình", "một nửa", "bền chắc", "tự nhiên"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "一生懸命 đọc いっしょうけんめい.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4216",
+        "type": "choice",
+        "prompt": "Đứng chờ thành hàng: みせの まえに（　）。",
+        "options": ["まぜます", "つつみます", "わかします", "ならびます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "並びます là xếp hàng.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4217",
+        "type": "choice",
+        "prompt": "Chọn từ nghĩa là một nửa.",
+        "options": ["あと", "はんぶん", "セット", "ローン"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "半分 là một nửa.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4218",
+        "type": "choice",
+        "prompt": "Mai dùng tiền thưởng thế nào?",
+        "options": ["Mua máy xay", "Trả nợ vay", "Để dành một nửa để đi du lịch", "Mua căn hộ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "旅行に行くために、半分は貯金します.",
+        "points": 1,
+        "tags": ["minna-42"],
+        "passage": "マイ：{旅行|りょこう}に {行|い}く ために、{半分|はんぶん}は {貯金|ちょきん}します。"
+      },
+      {
+        "id": "q4219",
+        "type": "choice",
+        "prompt": "Khách cần mua những đồ gì?",
+        "options": [
+          "Cái mở đồ hộp và ấm đun nước",
+          "Cái mở nắp chai và nhiệt kế",
+          "Máy xay và bàn tính",
+          "Khăn gói đồ và nồi"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "缶詰を開けるのに使う物 là 缶切り, お湯を沸かすのに使う物 là やかん.",
+        "points": 1,
+        "tags": ["minna-42"],
+        "passage": "{客|きゃく}：{缶詰|かんづめ}を {開|あ}けるのに {使|つか}う {物|もの}と、お{湯|ゆ}を {沸|わ}かすのに {使|つか}う {物|もの}が ほしいんです。"
+      },
+      {
+        "id": "q4220",
+        "type": "choice",
+        "prompt": "Người viết đi đến trường mất bao lâu?",
+        "options": ["30 phút", "8 phút", "20 phút", "1 tiếng"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "大学まで行くのに1時間もかかります.",
+        "points": 1,
+        "tags": ["minna-42"],
+        "passage": "{東京|とうきょう}で {生活|せいかつ}するのに、お{金|かね}が たくさん {必要|ひつよう}です。わたしの アパートは {駅|えき}から {遠|とお}いですが、{家賃|やちん}が {8万円|はちまんえん}も かかります。{大学|だいがく}まで {行|い}くのに {1時間|いちじかん}も かかるので、{電車|でんしゃ}で {本|ほん}を {読|よ}んで います。{将来|しょうらい} {弁護士|べんごし}に なる ために、{法律|ほうりつ}を {勉強|べんきょう}して います。"
+      },
+      {
+        "id": "q4221",
+        "type": "choice",
+        "prompt": "Vì sao người viết học luật?",
+        "options": [
+          "Vì thích đọc sách",
+          "Để trở thành luật sư",
+          "Vì nhà gần trường",
+          "Vì tiền thuê nhà đắt"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "弁護士になるために、法律を勉強しています.",
+        "points": 1,
+        "tags": ["minna-42"],
+        "passage": "{東京|とうきょう}で {生活|せいかつ}するのに、お{金|かね}が たくさん {必要|ひつよう}です。わたしの アパートは {駅|えき}から {遠|とお}いですが、{家賃|やちん}が {8万円|はちまんえん}も かかります。{大学|だいがく}まで {行|い}くのに {1時間|いちじかん}も かかるので、{電車|でんしゃ}で {本|ほん}を {読|よ}んで います。{将来|しょうらい} {弁護士|べんごし}に なる ために、{法律|ほうりつ}を {勉強|べんきょう}して います。"
+      },
+      {
+        "id": "q4222",
+        "type": "fill",
+        "prompt": "Điền: たいおんけいは ねつを はかる（　）つかいます。",
+        "answer": ["のに", "ために"],
+        "inputMode": "hiragana",
+        "explain": "Công dụng: Vる + のに + 使います. ために cũng nói được.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4223",
+        "type": "fill",
+        "prompt": "Điền: こどもたち（　）ために、こうえんを つくりました。",
+        "answer": ["の"],
+        "inputMode": "hiragana",
+        "explain": "Nの ために: vì lợi ích của ai.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4224",
+        "type": "fill",
+        "prompt": "Điền thể đúng của かいます: パソコンを（　）ために、アルバイトを して います。",
+        "answer": ["かう"],
+        "inputMode": "hiragana",
+        "explain": "Thể từ điển + ために.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4225",
+        "type": "fill",
+        "prompt": "Điền: この ケーキを つくる（　）、3じかん かかりました。",
+        "answer": ["のに", "ために"],
+        "inputMode": "hiragana",
+        "explain": "Thời gian cho việc gì: Vる + のに + かかります.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4226",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Khăn furoshiki tiện để gói đồ.",
+        "tokens": [
+          {
+            "id": "q4226-1",
+            "text": "ふろしきは"
+          },
+          {
+            "id": "q4226-2",
+            "text": "ものを つつむのに"
+          },
+          {
+            "id": "q4226-3",
+            "text": "べんりです。"
+          }
+        ],
+        "answer": ["q4226-1", "q4226-2", "q4226-3"],
+        "explain": "N は Vるのに 便利です.",
+        "points": 1,
+        "tags": ["minna-42"]
+      },
+      {
+        "id": "q4227",
+        "type": "match",
+        "prompt": "Nối dụng cụ với công dụng.",
+        "left": ["せんぬき", "かんきり", "たいおんけい", "そろばん"],
+        "right": ["mở đồ hộp", "đo thân nhiệt", "mở nắp chai", "tính toán"],
+        "answer": [
+          [0, 2],
+          [1, 0],
+          [2, 1],
+          [3, 3]
+        ],
+        "explain": "栓抜き mở nắp chai, 缶切り mở đồ hộp, 体温計 đo thân nhiệt, そろばん tính toán.",
+        "points": 1,
+        "tags": ["minna-42"]
+      }
+    ]
+  }
+}
