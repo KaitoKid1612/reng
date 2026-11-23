@@ -1,0 +1,833 @@
+{
+  "id": "minna-2-34",
+  "title": "Bài 34 – Làm theo hướng dẫn",
+  "titleJa": "第34課・手順とやり方",
+  "summary": "Làm theo mẫu, sắp xếp thứ tự thao tác và mô tả cách làm.",
+  "order": 34,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3401",
+        "jp": "おきゃくさん",
+        "romaji": "okyakusan",
+        "vi": "khách",
+        "audio": null,
+        "kanji": "お客さん"
+      },
+      {
+        "id": "v3402",
+        "jp": "みがきます",
+        "romaji": "migakimasu",
+        "vi": "đánh răng hoặc đánh bóng giày",
+        "audio": null,
+        "kanji": "磨きます",
+        "note": "はを みがきます／くつを みがきます"
+      },
+      {
+        "id": "v3403",
+        "jp": "くみたてます",
+        "romaji": "kumitatemasu",
+        "vi": "lắp ráp",
+        "audio": null,
+        "kanji": "組み立てます"
+      },
+      {
+        "id": "v3404",
+        "jp": "おります",
+        "romaji": "orimasu",
+        "vi": "gấp, bẻ",
+        "audio": null,
+        "kanji": "折ります"
+      },
+      {
+        "id": "v3405",
+        "jp": "きが つきます",
+        "romaji": "ki ga tsukimasu",
+        "vi": "nhận ra",
+        "audio": null,
+        "kanji": "気がつきます",
+        "note": "わすれものに きが つきます"
+      },
+      {
+        "id": "v3406",
+        "jp": "つけます",
+        "romaji": "tsukemasu",
+        "vi": "chấm, cho dính vào",
+        "audio": null,
+        "note": "すしに しょうゆを つけます"
+      },
+      {
+        "id": "v3407",
+        "jp": "みつかります",
+        "romaji": "mitsukarimasu",
+        "vi": "được tìm thấy",
+        "audio": null,
+        "kanji": "見つかります",
+        "note": "かぎが みつかります"
+      },
+      {
+        "id": "v3408",
+        "jp": "しつもんします",
+        "romaji": "shitsumon shimasu",
+        "vi": "đặt câu hỏi",
+        "audio": null,
+        "kanji": "質問します"
+      },
+      {
+        "id": "v3409",
+        "jp": "スポーツクラブ",
+        "romaji": "supootsu kurabu",
+        "vi": "câu lạc bộ thể thao",
+        "audio": null
+      },
+      {
+        "id": "v3410",
+        "jp": "シートベルト",
+        "romaji": "shiito beruto",
+        "vi": "dây an toàn",
+        "audio": null
+      },
+      {
+        "id": "v3411",
+        "jp": "せつめいしょ",
+        "romaji": "setsumeisho",
+        "vi": "tài liệu hướng dẫn",
+        "audio": null,
+        "kanji": "説明書",
+        "image": "/icons/vocab/open-book.svg"
+      },
+      {
+        "id": "v3412",
+        "jp": "ず",
+        "romaji": "zu",
+        "vi": "hình vẽ, sơ đồ",
+        "audio": null,
+        "kanji": "図"
+      },
+      {
+        "id": "v3413",
+        "jp": "せん",
+        "romaji": "sen",
+        "vi": "đường kẻ",
+        "audio": null,
+        "kanji": "線"
+      },
+      {
+        "id": "v3414",
+        "jp": "やじるし",
+        "romaji": "yajirushi",
+        "vi": "mũi tên",
+        "audio": null,
+        "kanji": "矢印"
+      },
+      {
+        "id": "v3415",
+        "jp": "くろ",
+        "romaji": "kuro",
+        "vi": "màu đen",
+        "audio": null,
+        "kanji": "黒"
+      },
+      {
+        "id": "v3416",
+        "jp": "しろ",
+        "romaji": "shiro",
+        "vi": "màu trắng",
+        "audio": null,
+        "kanji": "白",
+        "note": "Màu trắng, viết 白."
+      },
+      {
+        "id": "v3417",
+        "jp": "あか",
+        "romaji": "aka",
+        "vi": "màu đỏ",
+        "audio": null,
+        "kanji": "赤"
+      },
+      {
+        "id": "v3418",
+        "jp": "あお",
+        "romaji": "ao",
+        "vi": "màu xanh lam",
+        "audio": null,
+        "kanji": "青"
+      },
+      {
+        "id": "v3419",
+        "jp": "こん",
+        "romaji": "kon",
+        "vi": "màu xanh lam đậm",
+        "audio": null,
+        "kanji": "紺"
+      },
+      {
+        "id": "v3420",
+        "jp": "きいろ",
+        "romaji": "kiiro",
+        "vi": "màu vàng",
+        "audio": null,
+        "kanji": "黄色"
+      },
+      {
+        "id": "v3421",
+        "jp": "ちゃいろ",
+        "romaji": "chairo",
+        "vi": "màu nâu",
+        "audio": null,
+        "kanji": "茶色"
+      },
+      {
+        "id": "v3422",
+        "jp": "しょうゆ",
+        "romaji": "shouyu",
+        "vi": "nước tương",
+        "audio": null,
+        "kanji": "醤油"
+      },
+      {
+        "id": "v3423",
+        "jp": "ソース",
+        "romaji": "soosu",
+        "vi": "nước xốt",
+        "audio": null
+      },
+      {
+        "id": "v3424",
+        "jp": "〜か〜",
+        "romaji": "ka",
+        "vi": "… hoặc …",
+        "audio": null
+      },
+      {
+        "id": "v3425",
+        "jp": "ゆうべ",
+        "romaji": "yuube",
+        "vi": "tối qua",
+        "audio": null,
+        "kanji": "夕べ"
+      },
+      {
+        "id": "v3426",
+        "jp": "さっき",
+        "romaji": "sakki",
+        "vi": "vừa nãy",
+        "audio": null
+      },
+      {
+        "id": "v3427",
+        "jp": "さどう",
+        "romaji": "sadou",
+        "vi": "trà đạo",
+        "audio": null,
+        "kanji": "茶道"
+      },
+      {
+        "id": "v3428",
+        "jp": "おちゃを たてます",
+        "romaji": "ocha o tatemasu",
+        "vi": "pha trà theo cách đánh trà bột",
+        "audio": null,
+        "kanji": "お茶を点てます"
+      },
+      {
+        "id": "v3429",
+        "jp": "さきに",
+        "romaji": "saki ni",
+        "vi": "trước, làm trước",
+        "audio": null,
+        "kanji": "先に"
+      },
+      {
+        "id": "v3430",
+        "jp": "のせます",
+        "romaji": "nosemasu",
+        "vi": "đặt lên",
+        "audio": null,
+        "kanji": "載せます"
+      },
+      {
+        "id": "v3431",
+        "jp": "これで いいですか。",
+        "romaji": "kore de ii desu ka",
+        "vi": "Thế này được chưa ạ?",
+        "audio": null
+      },
+      {
+        "id": "v3432",
+        "jp": "にがい",
+        "romaji": "nigai",
+        "vi": "đắng",
+        "audio": null,
+        "kanji": "苦い"
+      },
+      {
+        "id": "v3433",
+        "jp": "さします",
+        "romaji": "sashimasu",
+        "vi": "che, giương ô",
+        "audio": null
+      },
+      {
+        "id": "v3434",
+        "jp": "しろ",
+        "romaji": "shiro",
+        "vi": "lâu đài",
+        "audio": null,
+        "kanji": "城",
+        "note": "Lâu đài, viết 城."
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3401",
+        "pattern": "Vる／Vた + とおりに",
+        "vi": "Làm đúng như lời nói hoặc mẫu",
+        "explain": "Thể từ điển khi làm theo điều được nói hoặc làm làm mẫu. Thể た khi dựa vào điều đã nghe, thấy hoặc đã làm.",
+        "viMistake": "Chọn みた とおりに cho điều đã nhìn thấy. Không thêm の sau động từ.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}が {見|み}せた とおりに {紙|かみ}を {折|お}って ください。",
+            "vi": "Hãy gấp giấy đúng như giáo viên đã làm mẫu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3402",
+        "pattern": "Nの とおりに／Nどおりに",
+        "vi": "Làm theo sơ đồ, hướng dẫn hoặc kế hoạch",
+        "explain": "Dùng Nのとおりに. Một số danh từ ghép trực tiếp với どおりに, chẳng hạn せつめいしょどおりに.",
+        "viMistake": "Dùng ずの とおりに hoặc ずどおりに.",
+        "examples": [
+          {
+            "jp": "{図|ず}の とおりに {箱|はこ}を {組|く}み{立|た}てました。",
+            "vi": "Tôi đã lắp hộp theo đúng sơ đồ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3403",
+        "pattern": "Vた／Nの + あとで",
+        "vi": "Làm việc sau một mốc",
+        "explain": "Dùng V thể た hoặc N + の. Thể た ở vế đầu chỉ việc đó hoàn tất trước việc sau, kể cả khi cả hai chưa xảy ra.",
+        "viMistake": "Dùng おわった あとで. Cũng có thể nói おわってから khi muốn lấy lúc xong làm mốc.",
+        "examples": [
+          {
+            "jp": "{作業|さぎょう}が {終|お}わった あとで、{写真|しゃしん}を {撮|と}ります。",
+            "vi": "Sau khi làm xong, tôi sẽ chụp ảnh.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3404",
+        "pattern": "V1て／V1ないで + V2",
+        "vi": "Nói trạng thái đi kèm hành động chính",
+        "explain": "V1 nói người thực hiện có làm hoặc không làm một việc đi kèm khi thực hiện V2.",
+        "viMistake": "Muốn nói không chấm nước tương thì dùng つけないで. つけなくて thường nối theo quan hệ khác, như nguyên nhân.",
+        "examples": [
+          {
+            "jp": "{醤油|しょうゆ}を つけないで {食|た}べます。",
+            "vi": "Tôi ăn mà không chấm nước tương.",
+            "audio": null
+          },
+          {
+            "jp": "シートベルトを して {車|くるま}に {乗|の}って います。",
+            "vi": "Tôi đang ngồi trong xe và có thắt dây an toàn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3405",
+        "pattern": "V1ないで、V2",
+        "vi": "Chọn làm V2 thay cho V1",
+        "explain": "Dùng V1 thể ない + で, rồi nêu việc làm thay thế ở V2.",
+        "viMistake": "Cùng là ないで. Dựa vào ngữ cảnh để biết thiếu hành động đi kèm hay chọn việc khác.",
+        "examples": [
+          {
+            "jp": "バスに {乗|の}らないで、{駅|えき}まで {歩|ある}きました。",
+            "vi": "Tôi đi bộ đến ga thay vì đi xe buýt.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3401",
+        "type": "title",
+        "jp": "第34課 · とおりに・あとで",
+        "vi": "Bài 34 · Làm theo hướng dẫn"
+      },
+      {
+        "id": "s3402",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Làm theo hướng dẫn, nói rõ thứ tự các bước và nêu cách thực hiện có hoặc không kèm một thao tác."
+      },
+      {
+        "id": "s3403",
+        "type": "vocab",
+        "refs": ["v3401", "v3402", "v3403", "v3404", "v3405", "v3406", "v3407", "v3408"]
+      },
+      {
+        "id": "s3404",
+        "type": "vocab",
+        "refs": ["v3409", "v3410", "v3411", "v3412", "v3413", "v3414", "v3415", "v3416"]
+      },
+      {
+        "id": "s3405",
+        "type": "vocab",
+        "refs": ["v3417", "v3418", "v3419", "v3420", "v3421", "v3422", "v3423", "v3424"]
+      },
+      {
+        "id": "s3406",
+        "type": "vocab",
+        "refs": ["v3425", "v3426", "v3427", "v3428", "v3429", "v3430", "v3431", "v3432"]
+      },
+      {
+        "id": "s3407",
+        "type": "vocab",
+        "refs": ["v3433", "v3434"]
+      },
+      {
+        "id": "s3408",
+        "type": "grammar",
+        "ref": "g3401"
+      },
+      {
+        "id": "s3409",
+        "type": "example",
+        "ref": "g3401",
+        "reveal": true
+      },
+      {
+        "id": "s3410",
+        "type": "quiz",
+        "ref": "q3401"
+      },
+      {
+        "id": "s3411",
+        "type": "grammar",
+        "ref": "g3402"
+      },
+      {
+        "id": "s3412",
+        "type": "example",
+        "ref": "g3402",
+        "reveal": true
+      },
+      {
+        "id": "s3413",
+        "type": "quiz",
+        "ref": "q3402"
+      },
+      {
+        "id": "s3414",
+        "type": "grammar",
+        "ref": "g3403"
+      },
+      {
+        "id": "s3415",
+        "type": "example",
+        "ref": "g3403",
+        "reveal": true
+      },
+      {
+        "id": "s3416",
+        "type": "quiz",
+        "ref": "q3404"
+      },
+      {
+        "id": "s3417",
+        "type": "grammar",
+        "ref": "g3404"
+      },
+      {
+        "id": "s3418",
+        "type": "example",
+        "ref": "g3404",
+        "reveal": true
+      },
+      {
+        "id": "s3419",
+        "type": "quiz",
+        "ref": "q3406"
+      },
+      {
+        "id": "s3420",
+        "type": "grammar",
+        "ref": "g3405"
+      },
+      {
+        "id": "s3421",
+        "type": "example",
+        "ref": "g3405",
+        "reveal": true
+      },
+      {
+        "id": "s3422",
+        "type": "quiz",
+        "ref": "q3407"
+      },
+      {
+        "id": "s3423",
+        "type": "table",
+        "title": "Chọn mẫu theo mục đích",
+        "columns": ["Mục đích", "Cụm mẫu"],
+        "rows": [
+          ["Làm theo sơ đồ", "{図|ず}の とおりに"],
+          ["Làm sau khi gấp", "{折|お}った あとで"],
+          ["Làm mà không chấm", "つけないで"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3424",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["折", "{折|お}ります", "gấp"],
+          ["図", "{図|ず}", "sơ đồ"],
+          ["線", "{線|せん}", "đường kẻ"],
+          ["印", "{矢印|やじるし}", "mũi tên"],
+          ["苦", "{苦|にが}い", "đắng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3425",
+        "type": "table",
+        "title": "Từ tham khảo · Nấu ăn",
+        "columns": ["Nhóm", "Từ", "Nghĩa"],
+        "rows": [
+          ["Thao tác", "{切|き}ります", "cắt"],
+          ["Thao tác", "{混|ま}ぜます", "trộn"],
+          ["Cách nấu", "{焼|や}きます", "nướng, áp chảo"],
+          ["Gia vị", "{塩|しお}", "muối"],
+          ["Dụng cụ", "{包丁|ほうちょう}", "dao bếp"],
+          ["Dụng cụ", "まな{板|いた}", "thớt"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3426",
+        "type": "dialogue",
+        "title": "Hội thoại · Làm món trộn",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "この {野菜|やさい}は どう {切|き}りますか。",
+            "vi": "Rau này cắt thế nào?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{図|ず}の とおりに {切|き}って ください。{切|き}った あとで {皿|さら}に {載|の}せます。",
+            "vi": "Hãy cắt theo sơ đồ. Cắt xong thì đặt lên đĩa."
+          },
+          {
+            "speaker": "An",
+            "jp": "ソースは {先|さき}に {入|い}れますか。",
+            "vi": "Cho xốt vào trước à?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "いいえ、{入|い}れないで {出|だ}しましょう。",
+            "vi": "Không, mình dọn ra mà không cho xốt nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi rau cần cắt theo gì và sau khi cắt thì đặt ở đâu."
+      },
+      {
+        "id": "s3427",
+        "type": "quiz",
+        "ref": "q3416"
+      },
+      {
+        "id": "s3428",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: {混|ま}ぜます／あとで／{切|き}った／{野菜|やさい}を",
+            "{野菜|やさい}を {切|き}った あとで {混|ま}ぜます。"
+          ],
+          ["Dịch: Tôi làm theo tài liệu hướng dẫn.", "{説明書|せつめいしょ}の とおりに やります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3429",
+        "type": "table",
+        "title": "Nhập vai · Gấp hộp giấy",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hướng dẫn gấp theo đường kẻ", "{線|せん}の とおりに {折|お}って ください。"],
+          ["B", "Hỏi đã đúng chưa", "これで いいですか。"],
+          ["A", "Nói việc làm sau khi gấp", "{折|お}った あとで テープを {貼|は}ります。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3430",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "とおりに: làm theo mẫu.\nあとで: làm sau một mốc.\nて／ないで: nêu việc đi kèm hoặc việc được chọn thay thế.",
+        "teacherNotes": "Ôn cách hỏi và hiểu chỉ dẫn ở bài 33. Sang bài 35, học điều kiện với 〜ば."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3401",
+        "type": "choice",
+        "prompt": "Theo đúng như đã thấy:（　）とおりに やって ください。",
+        "options": ["みた", "みて", "みます", "みたの"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng Vた khi dựa vào việc đã thấy.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3402",
+        "type": "choice",
+        "prompt": "Theo sơ đồ: ず（　）とおりに。",
+        "options": ["を", "の", "が", "へ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Dùng danh từ + の + とおりに.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3403",
+        "type": "choice",
+        "prompt": "Chọn cách viết trực tiếp, không có の.",
+        "options": [
+          "せつめいしょをどおりに",
+          "せつめいしょにとおり",
+          "せつめいしょどおりに",
+          "せつめいしょがとおり"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "説明書 có thể ghép với どおり.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3404",
+        "type": "choice",
+        "prompt": "Sau khi lắp:（　）あとで。",
+        "options": ["くみたてる", "くみたてて", "くみたてたの", "くみたてた"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Dùng Vた trước あとで.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3405",
+        "type": "choice",
+        "prompt": "Sau buổi học: じゅぎょう（　）あとで。",
+        "options": ["の", "を", "に", "が"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng Nのあとで.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3406",
+        "type": "choice",
+        "prompt": "Ăn mà không chấm: しょうゆを（　）たべます。",
+        "options": ["つけない", "つけないで", "つけます", "つけた"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "ないで diễn tả thiếu hành động đi kèm.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3407",
+        "type": "choice",
+        "prompt": "Chọn cách nói đi bộ thay vì đi xe buýt.",
+        "options": [
+          "バスに のって、かえります。",
+          "バスに のった あとで、あるきます。",
+          "バスに のらないで、あるきます。",
+          "バスに のる つもりです。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "ないで ở đây thể hiện lựa chọn thay thế.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3408",
+        "type": "choice",
+        "prompt": "Cụm nào nghĩa là thắt dây an toàn?",
+        "options": [
+          "シートベルトを おります",
+          "シートベルトに きが つきます",
+          "シートベルトを みがきます",
+          "シートベルトを します"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Dùng シートベルトをする.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3409",
+        "type": "choice",
+        "prompt": "Từ nào chỉ mũi tên?",
+        "options": ["やじるし", "せん", "しろ", "こん"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "矢印 là mũi tên.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3410",
+        "type": "choice",
+        "prompt": "Từ nào chỉ màu nâu?",
+        "options": ["きいろ", "ちゃいろ", "こん", "くろ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "茶色 là màu nâu.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3411",
+        "type": "choice",
+        "prompt": "Chọn từ biểu thị vị đắng.",
+        "options": ["あおい", "くろい", "にがい", "おそい"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "苦い nghĩa là đắng.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3412",
+        "type": "choice",
+        "prompt": "Cụm nào nói chìa khóa đã được tìm thấy?",
+        "options": [
+          "かぎを おりました。",
+          "かぎを みがきました。",
+          "かぎが はじまりました。",
+          "かぎが みつかりました。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Nが見つかる nói vật được tìm thấy.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3413",
+        "type": "choice",
+        "prompt": "Chọn câu hỏi «thế này được chưa».",
+        "options": [
+          "これで いいですか。",
+          "どういう いみですか。",
+          "どちらへ いくんですか。",
+          "なんと よみますか。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "これでいいですか dùng để xác nhận.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3414",
+        "type": "choice",
+        "prompt": "Chọn cách nói «màu đỏ hoặc xanh lam».",
+        "options": ["あかの あお", "あかか あお", "あかに あお", "あかまで あお"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "か nối hai lựa chọn.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3415",
+        "type": "choice",
+        "prompt": "Từ nào nói «làm trước».",
+        "options": ["ゆうべ", "さっき", "さきに", "あとで"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "先に chỉ việc được làm trước.",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3416",
+        "type": "choice",
+        "prompt": "Theo hướng dẫn, sau khi gấp giấy cần làm gì?",
+        "options": ["Vẽ mũi tên", "Đánh bóng giày", "Hỏi khách", "Đặt giấy vào hộp"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "折ったあとで、箱に入れてください yêu cầu bỏ vào hộp sau khi gấp.",
+        "points": 1,
+        "tags": ["minna-34"],
+        "passage": "{紙|かみ}を {図|ず}の とおりに {折|お}って ください。{折|お}った あとで、{白|しろ}い {箱|はこ}に {入|い}れて ください。"
+      },
+      {
+        "id": "q3417",
+        "type": "fill",
+        "prompt": "Đổi おる sang dạng た và viết bằng hiragana.",
+        "answer": ["おった"],
+        "inputMode": "hiragana",
+        "explain": "おる → おった",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3418",
+        "type": "fill",
+        "prompt": "Đổi くみたてる sang dạng た và viết bằng hiragana.",
+        "answer": ["くみたてた"],
+        "inputMode": "hiragana",
+        "explain": "くみたてる → くみたてた",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3419",
+        "type": "fill",
+        "prompt": "Đổi つける sang dạng ないで và viết bằng hiragana.",
+        "answer": ["つけないで"],
+        "inputMode": "hiragana",
+        "explain": "つける → つけないで",
+        "points": 1,
+        "tags": ["minna-34"]
+      },
+      {
+        "id": "q3420",
+        "type": "fill",
+        "prompt": "Đổi のる sang dạng ないで và viết bằng hiragana.",
+        "answer": ["のらないで"],
+        "inputMode": "hiragana",
+        "explain": "のる → のらないで",
+        "points": 1,
+        "tags": ["minna-34"]
+      }
+    ]
+  }
+}
