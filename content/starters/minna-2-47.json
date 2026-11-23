@@ -1,0 +1,966 @@
+{
+  "id": "minna-2-47",
+  "title": "Bài 47 – Nghe nói và hình như",
+  "titleJa": "第47課・〜そうです、〜ようです",
+  "summary": "Truyền lại tin nghe được bằng そうです, tự suy đoán bằng ようです và nói cảm nhận bằng 〜がします.",
+  "order": 47,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4701",
+        "jp": "もえます",
+        "romaji": "moemasu",
+        "vi": "[rác, củi] cháy",
+        "audio": null,
+        "kanji": "燃えます",
+        "note": "もえる ごみ: rác cháy được"
+      },
+      {
+        "id": "v4702",
+        "jp": "ふきます",
+        "romaji": "fukimasu",
+        "vi": "[gió] thổi",
+        "audio": null,
+        "kanji": "吹きます",
+        "note": "かぜが ふきます"
+      },
+      {
+        "id": "v4703",
+        "jp": "なくなります",
+        "romaji": "nakunarimasu",
+        "vi": "qua đời",
+        "audio": null,
+        "kanji": "亡くなります"
+      },
+      {
+        "id": "v4704",
+        "jp": "あつまります",
+        "romaji": "atsumarimasu",
+        "vi": "[người] tụ tập",
+        "audio": null,
+        "kanji": "集まります",
+        "note": "ひとが あつまります"
+      },
+      {
+        "id": "v4705",
+        "jp": "わかれます",
+        "romaji": "wakaremasu",
+        "vi": "[người] chia tay",
+        "audio": null,
+        "kanji": "別れます"
+      },
+      {
+        "id": "v4706",
+        "jp": "ながいきします",
+        "romaji": "nagaiki shimasu",
+        "vi": "sống lâu",
+        "audio": null,
+        "kanji": "長生きします"
+      },
+      {
+        "id": "v4707",
+        "jp": "しりあいます",
+        "romaji": "shiriaimasu",
+        "vi": "quen biết nhau",
+        "audio": null,
+        "kanji": "知り合います"
+      },
+      {
+        "id": "v4708",
+        "jp": "こんやくします",
+        "romaji": "kon'yaku shimasu",
+        "vi": "đính hôn",
+        "audio": null,
+        "kanji": "婚約します"
+      },
+      {
+        "id": "v4709",
+        "jp": "おとが します",
+        "romaji": "oto ga shimasu",
+        "vi": "nghe thấy tiếng động",
+        "audio": null,
+        "kanji": "音がします"
+      },
+      {
+        "id": "v4710",
+        "jp": "こえが します",
+        "romaji": "koe ga shimasu",
+        "vi": "nghe thấy tiếng (người, con vật)",
+        "audio": null,
+        "kanji": "声がします"
+      },
+      {
+        "id": "v4711",
+        "jp": "あじが します",
+        "romaji": "aji ga shimasu",
+        "vi": "có vị",
+        "audio": null,
+        "kanji": "味がします"
+      },
+      {
+        "id": "v4712",
+        "jp": "においが します",
+        "romaji": "nioi ga shimasu",
+        "vi": "có mùi",
+        "audio": null,
+        "kanji": "匂いがします"
+      },
+      {
+        "id": "v4713",
+        "jp": "ひどい",
+        "romaji": "hidoi",
+        "vi": "tồi tệ, kinh khủng",
+        "audio": null
+      },
+      {
+        "id": "v4714",
+        "jp": "こわい",
+        "romaji": "kowai",
+        "vi": "đáng sợ",
+        "audio": null,
+        "kanji": "怖い"
+      },
+      {
+        "id": "v4715",
+        "jp": "きびしい",
+        "romaji": "kibishii",
+        "vi": "nghiêm khắc",
+        "audio": null,
+        "kanji": "厳しい"
+      },
+      {
+        "id": "v4716",
+        "jp": "データ",
+        "romaji": "deeta",
+        "vi": "dữ liệu",
+        "audio": null
+      },
+      {
+        "id": "v4717",
+        "jp": "じっけん",
+        "romaji": "jikken",
+        "vi": "thí nghiệm",
+        "audio": null,
+        "kanji": "実験"
+      },
+      {
+        "id": "v4718",
+        "jp": "じんこう",
+        "romaji": "jinkou",
+        "vi": "dân số",
+        "audio": null,
+        "kanji": "人口"
+      },
+      {
+        "id": "v4719",
+        "jp": "におい",
+        "romaji": "nioi",
+        "vi": "mùi",
+        "audio": null,
+        "kanji": "匂い"
+      },
+      {
+        "id": "v4720",
+        "jp": "かがく",
+        "romaji": "kagaku",
+        "vi": "khoa học",
+        "audio": null,
+        "kanji": "科学"
+      },
+      {
+        "id": "v4721",
+        "jp": "いがく",
+        "romaji": "igaku",
+        "vi": "y học",
+        "audio": null,
+        "kanji": "医学"
+      },
+      {
+        "id": "v4722",
+        "jp": "ぶんがく",
+        "romaji": "bungaku",
+        "vi": "văn học",
+        "audio": null,
+        "kanji": "文学"
+      },
+      {
+        "id": "v4723",
+        "jp": "パトカー",
+        "romaji": "patokaa",
+        "vi": "xe cảnh sát",
+        "audio": null
+      },
+      {
+        "id": "v4724",
+        "jp": "きゅうきゅうしゃ",
+        "romaji": "kyuukyuusha",
+        "vi": "xe cấp cứu",
+        "audio": null,
+        "kanji": "救急車"
+      },
+      {
+        "id": "v4725",
+        "jp": "さんせい",
+        "romaji": "sansei",
+        "vi": "tán thành",
+        "audio": null,
+        "kanji": "賛成"
+      },
+      {
+        "id": "v4726",
+        "jp": "はんたい",
+        "romaji": "hantai",
+        "vi": "phản đối",
+        "audio": null,
+        "kanji": "反対"
+      },
+      {
+        "id": "v4727",
+        "jp": "だんせい",
+        "romaji": "dansei",
+        "vi": "nam giới",
+        "audio": null,
+        "kanji": "男性",
+        "image": "/icons/vocab/man.svg"
+      },
+      {
+        "id": "v4728",
+        "jp": "じょせい",
+        "romaji": "josei",
+        "vi": "nữ giới",
+        "audio": null,
+        "kanji": "女性",
+        "image": "/icons/vocab/woman.svg"
+      },
+      {
+        "id": "v4729",
+        "jp": "こいびと",
+        "romaji": "koibito",
+        "vi": "người yêu",
+        "audio": null,
+        "kanji": "恋人"
+      },
+      {
+        "id": "v4730",
+        "jp": "あいて",
+        "romaji": "aite",
+        "vi": "đối phương, người kia",
+        "audio": null,
+        "kanji": "相手"
+      },
+      {
+        "id": "v4731",
+        "jp": "だいとうりょう",
+        "romaji": "daitouryou",
+        "vi": "tổng thống",
+        "audio": null,
+        "kanji": "大統領"
+      },
+      {
+        "id": "v4732",
+        "jp": "〜に よると",
+        "romaji": "ni yoru to",
+        "vi": "theo …",
+        "audio": null,
+        "note": "てんきよほうに よると"
+      },
+      {
+        "id": "v4733",
+        "jp": "どうも",
+        "romaji": "doumo",
+        "vi": "hình như, có vẻ",
+        "audio": null,
+        "note": "どうも かぜを ひいた ようです"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4701",
+        "pattern": "普通形 + そうです",
+        "vi": "Nghe nói … (truyền lại thông tin)",
+        "explain": "Kể lại điều mình nghe, đọc được, không thêm ý mình. Nguồn tin đi với 〜に よると hoặc 〜の 話では. Động từ, いA để thể thường; なA và danh từ thêm だ.",
+        "viMistake": "Khác bài 43: ふりそうです là mình thấy và đoán, ふる そうです là nghe nói. Không dùng thể ます trước そうです.",
+        "examples": [
+          {
+            "jp": "{天気予報|てんきよほう}に よると、{週末|しゅうまつ}は {風|かぜ}が {強|つよ}い そうです。",
+            "vi": "Theo dự báo thời tiết, cuối tuần sẽ có gió mạnh.",
+            "audio": null
+          },
+          {
+            "jp": "リンさんの {話|はなし}では、あの {店|みせ}は {静|しず}かだ そうです。",
+            "vi": "Theo lời Linh, nghe nói quán đó yên tĩnh.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4702",
+        "pattern": "普通形 + ようです",
+        "vi": "Hình như, có vẻ như (tự suy đoán)",
+        "explain": "Người nói tự đoán dựa trên tình hình, dấu hiệu mình thấy, nghe, cảm nhận. Hay đi với どうも. なA thêm な, danh từ thêm の.",
+        "viMistake": "Danh từ cần の: じこの ようです. なA cần な: ひまな ようです.",
+        "examples": [
+          {
+            "jp": "{人|ひと}が {大勢|おおぜい} {集|あつ}まって いますね。{事故|じこ}の ようです。",
+            "vi": "Nhiều người tụ tập quá. Hình như có tai nạn.",
+            "audio": null
+          },
+          {
+            "jp": "どうも かぜを ひいた ようです。",
+            "vi": "Hình như tôi bị cảm rồi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4703",
+        "pattern": "音・声・におい・味 + が します",
+        "vi": "Nghe thấy, ngửi thấy, cảm thấy vị",
+        "explain": "Nói điều cảm nhận được qua tai, mũi, lưỡi. Trợ từ thường là が, động từ là します.",
+        "viMistake": "Tiếng người, tiếng con vật là 声; tiếng đồ vật, máy móc là 音.",
+        "examples": [
+          {
+            "jp": "{隣|となり}の {部屋|へや}から {変|へん}な {音|おと}が します。",
+            "vi": "Có tiếng động lạ từ phòng bên cạnh.",
+            "audio": null
+          },
+          {
+            "jp": "{台所|だいどころ}から {甘|あま}い においが します。",
+            "vi": "Có mùi thơm ngọt từ trong bếp.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4701",
+        "type": "title",
+        "jp": "第47課 · そうです・ようです",
+        "vi": "Bài 47 · Nghe nói và hình như"
+      },
+      {
+        "id": "s4702",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Kể lại tin mình nghe được bằng そうです. Nói điều mình tự đoán từ tình hình bằng ようです. Nói nghe thấy, ngửi thấy, cảm thấy vị bằng 〜が します."
+      },
+      {
+        "id": "s4703",
+        "type": "vocab",
+        "refs": ["v4701", "v4702", "v4703", "v4704", "v4705", "v4706", "v4707", "v4708"]
+      },
+      {
+        "id": "s4704",
+        "type": "vocab",
+        "refs": ["v4709", "v4710", "v4711", "v4712", "v4713", "v4714", "v4715", "v4716"]
+      },
+      {
+        "id": "s4705",
+        "type": "vocab",
+        "refs": ["v4717", "v4718", "v4719", "v4720", "v4721", "v4722", "v4723", "v4724"]
+      },
+      {
+        "id": "s4706",
+        "type": "vocab",
+        "refs": ["v4725", "v4726", "v4727", "v4728", "v4729", "v4730", "v4731", "v4732"]
+      },
+      {
+        "id": "s4707",
+        "type": "vocab",
+        "refs": ["v4733"]
+      },
+      {
+        "id": "s4708",
+        "type": "grammar",
+        "ref": "g4701"
+      },
+      {
+        "id": "s4709",
+        "type": "example",
+        "ref": "g4701",
+        "reveal": true
+      },
+      {
+        "id": "s4710",
+        "type": "quiz",
+        "ref": "q4701"
+      },
+      {
+        "id": "s4711",
+        "type": "table",
+        "title": "Chia そうです nghe nói",
+        "columns": ["Gốc", "Nghe nói"],
+        "rows": [
+          ["{降|ふ}ります", "{降|ふ}る そうです"],
+          ["{来|き}ませんでした", "{来|こ}なかった そうです"],
+          ["{寒|さむ}い", "{寒|さむ}い そうです"],
+          ["{静|しず}かです", "{静|しず}かだ そうです"],
+          ["{休|やす}みです", "{休|やす}みだ そうです"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhấn だ với なA và danh từ, và không dùng thể ます trước そうです."
+      },
+      {
+        "id": "s4712",
+        "type": "quiz",
+        "ref": "q4702"
+      },
+      {
+        "id": "s4713",
+        "type": "grammar",
+        "ref": "g4702"
+      },
+      {
+        "id": "s4714",
+        "type": "example",
+        "ref": "g4702",
+        "reveal": true
+      },
+      {
+        "id": "s4715",
+        "type": "quiz",
+        "ref": "q4706"
+      },
+      {
+        "id": "s4716",
+        "type": "table",
+        "title": "Ba cách nói về trời mưa",
+        "columns": ["Căn cứ", "Câu", "Bài"],
+        "rows": [
+          ["Nhìn mây đen, đoán sắp mưa", "{雨|あめ}が {降|ふ}りそうです", "43"],
+          ["Nghe dự báo nói", "{雨|あめ}が {降|ふ}る そうです", "47"],
+          ["Thấy đường ướt, tự đoán", "{雨|あめ}が {降|ふ}った ようです", "47"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hỏi học viên căn cứ của từng câu: thấy trước mắt, nghe người khác nói hay tự suy ra từ dấu hiệu."
+      },
+      {
+        "id": "s4717",
+        "type": "quiz",
+        "ref": "q4704"
+      },
+      {
+        "id": "s4718",
+        "type": "quiz",
+        "ref": "q4709"
+      },
+      {
+        "id": "s4719",
+        "type": "grammar",
+        "ref": "g4703"
+      },
+      {
+        "id": "s4720",
+        "type": "example",
+        "ref": "g4703",
+        "reveal": true
+      },
+      {
+        "id": "s4721",
+        "type": "quiz",
+        "ref": "q4710"
+      },
+      {
+        "id": "s4722",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["燃", "{燃|も}えます", "cháy"],
+          ["吹", "{吹|ふ}きます", "thổi"],
+          ["亡", "{亡|な}くなります", "mất"],
+          ["集", "{集|あつ}まります", "tụ tập"],
+          ["別", "{別|わか}れます", "chia tay"],
+          ["験", "{実験|じっけん}", "thí nghiệm"],
+          ["賛", "{賛成|さんせい}", "tán thành"],
+          ["反", "{反対|はんたい}", "phản đối"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4723",
+        "type": "table",
+        "title": "Từ tham khảo · Từ tượng thanh, tượng hình",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["ザーザー", "mưa rào rào"],
+          ["ゴロゴロ", "sấm ì ầm"],
+          ["ワンワン", "chó sủa gâu gâu"],
+          ["ドキドキ", "tim đập thình thịch"],
+          ["ペラペラ", "nói trôi chảy"],
+          ["ニコニコ", "cười tươi"],
+          ["ぐっすり", "ngủ say"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Từ tượng thanh ghép với 〜が します: ザーザーと 音が します, ワンワンと 犬の 声が します. ペラペラ, ニコニコ, ぐっすり là từ tượng hình, không ghép được."
+      },
+      {
+        "id": "s4724",
+        "type": "dialogue",
+        "title": "Hội thoại · Tin đồn ở văn phòng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{聞|き}きましたか。{田中|たなか}さん、{来月|らいげつ} {大阪|おおさか}へ {転勤|てんきん}する そうですよ。",
+            "vi": "Chị nghe chưa? Nghe nói tháng sau anh Tanaka chuyển công tác đến Osaka đấy."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "え、{本当|ほんとう}ですか。だれに {聞|き}いたんですか。",
+            "vi": "Ơ, thật à? Anh nghe ai nói vậy?"
+          },
+          {
+            "speaker": "An",
+            "jp": "{部長|ぶちょう}の {話|はなし}では、{本人|ほんにん}が {希望|きぼう}した そうです。",
+            "vi": "Theo lời trưởng phòng, nghe nói chính anh ấy xin đi."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "そう いえば、{最近|さいきん} {田中|たなか}さんは {忙|いそが}しい ようでしたね。",
+            "vi": "Nói mới nhớ, dạo này anh Tanaka có vẻ bận nhỉ."
+          },
+          {
+            "speaker": "An",
+            "jp": "ええ。{毎晩|まいばん} {遅|おそ}くまで {会社|かいしゃ}に いた ようです。",
+            "vi": "Ừ. Hình như tối nào anh ấy cũng ở công ty đến khuya."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{寂|さび}しく なりますね。",
+            "vi": "Anh ấy đi thì buồn lắm nhỉ."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: tin gì, An nghe từ ai? Chỉ ra そうです (nghe nói) và ようです (Mai, An tự đoán)."
+      },
+      {
+        "id": "s4725",
+        "type": "quiz",
+        "ref": "q4718"
+      },
+      {
+        "id": "s4726",
+        "type": "dialogue",
+        "title": "Nghe · Tiếng động lạ",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Lan",
+            "jp": "{隣|となり}の {部屋|へや}から {大|おお}きい {音|おと}が しますね。",
+            "vi": "Có tiếng động lớn từ phòng bên nhỉ."
+          },
+          {
+            "speaker": "Minh",
+            "jp": "ちょっと {見|み}て きます。",
+            "vi": "Để tôi đi xem một chút."
+          },
+          {
+            "speaker": "Minh",
+            "jp": "だれも いない ようです。{窓|まど}が {開|あ}いて いて、{風|かぜ}で {花瓶|かびん}が {落|お}ちた ようです。",
+            "vi": "Hình như không có ai. Cửa sổ mở, có vẻ gió làm bình hoa rơi."
+          },
+          {
+            "speaker": "Lan",
+            "jp": "そうですか。よかった。",
+            "vi": "Vậy à. May quá."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi tiếng động từ đâu và Minh đoán gì."
+      },
+      {
+        "id": "s4727",
+        "type": "quiz",
+        "ref": "q4719"
+      },
+      {
+        "id": "s4728",
+        "type": "quiz",
+        "ref": "q4720"
+      },
+      {
+        "id": "s4729",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "そうです／{結婚|けっこん}する／{来月|らいげつ}",
+            "{来月|らいげつ} {結婚|けっこん}する そうです。"
+          ],
+          ["ようです／いない／だれも", "だれも いない ようです。"],
+          ["します／においが／いい", "いい においが します。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4730",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Nghe nói ngày mai nghỉ học.", "{明日|あした}は {休|やす}みだ そうです。"],
+          ["Hình như cô ấy đang bận.", "{彼女|かのじょ}は {忙|いそが}しい ようです。"],
+          ["Có mùi lạ.", "{変|へん}な においが します。"],
+          ["Nghe tin tức nói có động đất.", "{地震|じしん}が あった そうです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4731",
+        "type": "table",
+        "title": "Nhập vai · Kể tin của người quen",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Kể tin vừa nghe", "リンさん、{婚約|こんやく}した そうですよ。"],
+          ["B", "Hỏi nguồn tin", "だれに {聞|き}いたんですか。"],
+          ["A", "Nêu nguồn", "{本人|ほんにん}から {聞|き}きました。"],
+          ["B", "Đoán (bài 43) và vui cho bạn", "{楽|たの}しそうでしたね。よかった。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi tin: 引っ越す, 転勤する, 赤ちゃんが 生まれた. Dòng cuối dùng そう bài 43 để so sánh."
+      },
+      {
+        "id": "s4732",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "普通形 + そうです: nghe nói. なA, N + だ そうです.\n普通形 + ようです: tự đoán. なAな, Nの ようです.\n音・声・におい・味 が します.",
+        "teacherNotes": "Dễ nhầm: ふりそう (bài 43) với ふるそう, quên だ trong しずかだそう, quên の trong じこのよう. Sang bài 48, học thể sai khiến."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4701",
+        "type": "choice",
+        "prompt": "Nghe dự báo: よほうに よると、あしたは あめが（　）そうです。",
+        "options": ["ふり", "ふる", "ふって", "ふります"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nghe nói: thể thường + そうです. ふりそう là mình nhìn thấy và đoán.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4702",
+        "type": "choice",
+        "prompt": "Nghe nói công viên đó yên tĩnh: あの こうえんは（　）そうです。",
+        "options": ["しずかな", "しずか", "しずかだ", "しずかで"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "なA + だ + そうです (nghe nói). しずかそう là trông có vẻ.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4703",
+        "type": "choice",
+        "prompt": "Nghe nói anh ấy là luật sư: かれは べんごし（　）そうです。",
+        "options": ["な", "の", "で", "だ"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Danh từ + だ + そうです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4704",
+        "type": "choice",
+        "prompt": "Câu nào là 'nghe nói' (truyền lại thông tin)?",
+        "options": [
+          "あめが ふる そうです。",
+          "あめが ふりそうです。",
+          "あめが ふる ようです。",
+          "あめが ふった ようです。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Thể thường + そうです là nghe nói.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4705",
+        "type": "choice",
+        "prompt": "Nêu nguồn tin: しんぶん（　）よると、じんこうが へって いる そうです。",
+        "options": ["で", "に", "を", "が"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nguồn tin: 〜に よると.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4706",
+        "type": "choice",
+        "prompt": "Thấy có xe cảnh sát và nhiều người: じこ（　）ようです。",
+        "options": ["な", "だ", "の", "に"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Danh từ + の + ようです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4707",
+        "type": "choice",
+        "prompt": "Tự đoán vì mình ho và sốt: どうも かぜを ひいた（　）です。",
+        "options": ["そう", "はず", "ところ", "よう"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Tự suy đoán từ dấu hiệu: ようです. そうです là nghe người khác nói.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4708",
+        "type": "choice",
+        "prompt": "Cửa hàng vắng khách: あの みせは ひま（　）ようです。",
+        "options": ["な", "の", "だ", "で"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "なA + な + ようです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4709",
+        "type": "choice",
+        "prompt": "Câu nào là tự đoán qua dấu hiệu, không phải nghe nói?",
+        "options": [
+          "よほうに よると、ゆきが ふる そうです。",
+          "でんきが きえて いますね。だれも いない ようです。",
+          "ニュースに よると、じこが あった そうです。",
+          "せんせいの はなしでは、テストは むずかしい そうです。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Thấy đèn tắt rồi tự đoán: ようです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4710",
+        "type": "choice",
+        "prompt": "Nghe thấy tiếng ai đó nói: となりの へやで ひとの（　）が します。",
+        "options": ["おと", "におい", "こえ", "あじ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Tiếng người là 声.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4711",
+        "type": "choice",
+        "prompt": "Ngửi thấy mùi cà phê: コーヒーの（　）が します。",
+        "options": ["あじ", "こえ", "おと", "におい"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Mùi là におい.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4712",
+        "type": "choice",
+        "prompt": "Xe cấp cứu là gì?",
+        "options": ["きゅうきゅうしゃ", "パトカー", "トラック", "タクシー"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "救急車 là xe cấp cứu. パトカー là xe cảnh sát.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4713",
+        "type": "choice",
+        "prompt": "Từ trái nghĩa với さんせい là gì?",
+        "options": ["じっけん", "はんたい", "じんこう", "かがく"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "賛成 tán thành, 反対 phản đối.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4714",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 亡くなります.",
+        "options": ["sống lâu", "chia tay", "qua đời", "tụ tập"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "亡くなります là qua đời.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4715",
+        "type": "choice",
+        "prompt": "Gió thổi mạnh: かぜが つよく（　）。",
+        "options": ["もえて います", "あつまって います", "わかれて います", "ふいて います"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "風が吹きます là gió thổi.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4716",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là nghiêm khắc?",
+        "options": ["きびしい", "こわい", "ひどい", "うれしい"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "厳しい là nghiêm khắc.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4717",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là người yêu?",
+        "options": ["あいて", "こいびと", "じょせい", "だいとうりょう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "恋人 là người yêu.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4718",
+        "type": "choice",
+        "prompt": "An nghe tin gì về anh Tanaka?",
+        "options": ["Sắp kết hôn", "Bị ốm", "Sắp chuyển công tác đến Osaka", "Nghỉ việc"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "大阪へ転勤するそうです: nghe nói sắp chuyển công tác.",
+        "points": 1,
+        "tags": ["minna-47"],
+        "passage": "アン：{田中|たなか}さん、{来月|らいげつ} {大阪|おおさか}へ {転勤|てんきん}する そうですよ。"
+      },
+      {
+        "id": "q4719",
+        "type": "choice",
+        "prompt": "Minh đoán tiếng động là do đâu?",
+        "options": ["Có trộm", "Có người cãi nhau", "Mèo làm đổ đồ", "Gió làm bình hoa rơi"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "風で花瓶が落ちたようです.",
+        "points": 1,
+        "tags": ["minna-47"],
+        "passage": "ミン：だれも いない ようです。{窓|まど}が {開|あ}いて いて、{風|かぜ}で {花瓶|かびん}が {落|お}ちた ようです。"
+      },
+      {
+        "id": "q4720",
+        "type": "choice",
+        "prompt": "Theo bài báo, ai sống lâu hơn?",
+        "options": ["Nữ giới", "Nam giới", "Trẻ em", "Như nhau"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "女性は男性より長生きするそうです.",
+        "points": 1,
+        "tags": ["minna-47"],
+        "passage": "{新聞|しんぶん}に よると、{日本|にほん}は {長生|ながい}きする {人|ひと}が {多|おお}い そうです。{特|とく}に {女性|じょせい}は {男性|だんせい}より {長生|ながい}きする そうです。でも、{生|う}まれる {子|こ}どもが {少|すく}ないので、{人口|じんこう}は {減|へ}って いる そうです。"
+      },
+      {
+        "id": "q4721",
+        "type": "choice",
+        "prompt": "Vì sao dân số giảm?",
+        "options": [
+          "Nhiều người ra nước ngoài",
+          "Ít trẻ em được sinh ra",
+          "Nhiều người qua đời",
+          "Nhiều người chuyển về quê"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "生まれる子どもが少ないので、人口は減っているそうです.",
+        "points": 1,
+        "tags": ["minna-47"],
+        "passage": "{新聞|しんぶん}に よると、{日本|にほん}は {長生|ながい}きする {人|ひと}が {多|おお}い そうです。{特|とく}に {女性|じょせい}は {男性|だんせい}より {長生|ながい}きする そうです。でも、{生|う}まれる {子|こ}どもが {少|すく}ないので、{人口|じんこう}は {減|へ}って いる そうです。"
+      },
+      {
+        "id": "q4722",
+        "type": "fill",
+        "prompt": "Điền (nghe nói): よほうに よると、あしたは はれる（　）です。",
+        "answer": ["そう", "らしい"],
+        "inputMode": "hiragana",
+        "explain": "Truyền lại thông tin: thể thường + そうです. Người Nhật cũng nói らしいです, ようです sau 〜に よると, nhưng bài này luyện そうです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4723",
+        "type": "fill",
+        "prompt": "Điền: となりの へやから ひと（　）こえが します。",
+        "answer": ["の"],
+        "inputMode": "hiragana",
+        "explain": "N の 声が します.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4724",
+        "type": "fill",
+        "prompt": "Điền (nghe nói, danh từ): あしたは やすみ（　）そうです。",
+        "answer": ["だ"],
+        "inputMode": "hiragana",
+        "explain": "Danh từ + だ + そうです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4725",
+        "type": "fill",
+        "prompt": "Điền (tự đoán): でんきが きえて いますね。どうも だれも いない（　）です。",
+        "answer": ["よう", "みたい"],
+        "inputMode": "hiragana",
+        "explain": "Tự suy đoán: ようです. Văn nói thân mật: みたいです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4726",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Theo báo, nghe nói dân số đang giảm.",
+        "tokens": [
+          {
+            "id": "q4726-1",
+            "text": "しんぶんに よると"
+          },
+          {
+            "id": "q4726-2",
+            "text": "じんこうが へって いる"
+          },
+          {
+            "id": "q4726-3",
+            "text": "そうです。"
+          }
+        ],
+        "answer": ["q4726-1", "q4726-2", "q4726-3"],
+        "explain": "Nguồn tin + に よると, rồi thông tin + そうです.",
+        "points": 1,
+        "tags": ["minna-47"]
+      },
+      {
+        "id": "q4727",
+        "type": "match",
+        "prompt": "Nối từ với cách cảm nhận.",
+        "left": ["こえ", "おと", "におい", "あじ"],
+        "right": ["vị", "mùi", "tiếng động", "tiếng người"],
+        "answer": [
+          [0, 3],
+          [1, 2],
+          [2, 1],
+          [3, 0]
+        ],
+        "explain": "声 tiếng người, 音 tiếng động, におい mùi, 味 vị.",
+        "points": 1,
+        "tags": ["minna-47"]
+      }
+    ]
+  }
+}
