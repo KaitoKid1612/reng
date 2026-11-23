@@ -115,6 +115,8 @@ Ngày 23/11/2026 thêm **Tạo bài 44 từ mẫu** với 38 mục từ, 4 mục
 
 Ngày 23/11/2026 thêm **Tạo bài 45 từ mẫu** với 25 mục từ, 3 mục ngữ pháp, 31 slide và 27 câu tự chấm. Bài luyện 場合は và のに trái mong đợi, phân biệt với のに công dụng của bài 42. [Bảng đối chiếu bài 45](testing/minna-lesson-45-coverage.md).
 
+Ngày 23/11/2026 thêm **Tạo bài 46 từ mẫu** với 27 mục từ, 4 mục ngữ pháp, 34 slide và 27 câu tự chấm. Bài luyện ba mốc của ところです, たばかりです và はずです. [Bảng đối chiếu bài 46](testing/minna-lesson-46-coverage.md).
+
 Slide quiz chỉ nhận câu chọn và câu điền. Câu sắp xếp và câu nối nằm trong bộ câu luyện để giao bài; trên slide, dùng bảng có cột đáp án mẫu. Cột phải của câu nối được editor xáo theo thứ tự cố định (`toMatchQuestion` trong `lib/match-pairs.ts`), nên JSON mẫu phải lưu đúng thứ tự đó.
 
 Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.

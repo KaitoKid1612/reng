@@ -1,0 +1,943 @@
+{
+  "id": "minna-2-46",
+  "title": "Bài 46 – Mốc thời gian và suy luận",
+  "titleJa": "第46課・〜ところです、〜ばかりです、〜はずです",
+  "summary": "Nói sắp, đang, vừa làm bằng ところです, mới làm bằng たばかり và tin chắc theo suy luận bằng はずです.",
+  "order": 46,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4601",
+        "jp": "わたします",
+        "romaji": "watashimasu",
+        "vi": "trao, đưa",
+        "audio": null,
+        "kanji": "渡します"
+      },
+      {
+        "id": "v4602",
+        "jp": "かえって きます",
+        "romaji": "kaette kimasu",
+        "vi": "trở về",
+        "audio": null,
+        "kanji": "帰って来ます"
+      },
+      {
+        "id": "v4603",
+        "jp": "でます",
+        "romaji": "demasu",
+        "vi": "[xe buýt] xuất phát",
+        "audio": null,
+        "kanji": "出ます",
+        "note": "バスが でます"
+      },
+      {
+        "id": "v4604",
+        "jp": "とどきます",
+        "romaji": "todokimasu",
+        "vi": "được gửi tới",
+        "audio": null,
+        "kanji": "届きます"
+      },
+      {
+        "id": "v4605",
+        "jp": "にゅうがくします",
+        "romaji": "nyuugaku shimasu",
+        "vi": "nhập học",
+        "audio": null,
+        "kanji": "入学します",
+        "note": "だいがくに にゅうがくします"
+      },
+      {
+        "id": "v4606",
+        "jp": "そつぎょうします",
+        "romaji": "sotsugyou shimasu",
+        "vi": "tốt nghiệp",
+        "audio": null,
+        "kanji": "卒業します",
+        "note": "だいがくを そつぎょうします"
+      },
+      {
+        "id": "v4607",
+        "jp": "やきます",
+        "romaji": "yakimasu",
+        "vi": "nướng",
+        "audio": null,
+        "kanji": "焼きます"
+      },
+      {
+        "id": "v4608",
+        "jp": "やけます",
+        "romaji": "yakemasu",
+        "vi": "[bánh mì, thịt] chín (nướng)",
+        "audio": null,
+        "kanji": "焼けます",
+        "note": "パンが やけます"
+      },
+      {
+        "id": "v4609",
+        "jp": "むかいます",
+        "romaji": "mukaimasu",
+        "vi": "hướng tới, đi về phía",
+        "audio": null,
+        "kanji": "向かいます"
+      },
+      {
+        "id": "v4610",
+        "jp": "るす",
+        "romaji": "rusu",
+        "vi": "vắng nhà",
+        "audio": null,
+        "kanji": "留守"
+      },
+      {
+        "id": "v4611",
+        "jp": "たくはいびん",
+        "romaji": "takuhaibin",
+        "vi": "dịch vụ giao hàng tận nhà",
+        "audio": null,
+        "kanji": "宅配便"
+      },
+      {
+        "id": "v4612",
+        "jp": "げんいん",
+        "romaji": "gen'in",
+        "vi": "nguyên nhân",
+        "audio": null,
+        "kanji": "原因"
+      },
+      {
+        "id": "v4613",
+        "jp": "ちゅうしゃ",
+        "romaji": "chuusha",
+        "vi": "tiêm",
+        "audio": null,
+        "kanji": "注射"
+      },
+      {
+        "id": "v4614",
+        "jp": "しょくよく",
+        "romaji": "shokuyoku",
+        "vi": "sự thèm ăn",
+        "audio": null,
+        "kanji": "食欲"
+      },
+      {
+        "id": "v4615",
+        "jp": "パンフレット",
+        "romaji": "panfuretto",
+        "vi": "tờ giới thiệu, tờ rơi",
+        "audio": null
+      },
+      {
+        "id": "v4616",
+        "jp": "ステレオ",
+        "romaji": "sutereo",
+        "vi": "dàn âm thanh",
+        "audio": null
+      },
+      {
+        "id": "v4617",
+        "jp": "ガスレンジ",
+        "romaji": "gasurenji",
+        "vi": "bếp ga",
+        "audio": null
+      },
+      {
+        "id": "v4618",
+        "jp": "ぐあい",
+        "romaji": "guai",
+        "vi": "tình trạng",
+        "audio": null,
+        "kanji": "具合"
+      },
+      {
+        "id": "v4619",
+        "jp": "はんとし",
+        "romaji": "hantoshi",
+        "vi": "nửa năm",
+        "audio": null,
+        "kanji": "半年"
+      },
+      {
+        "id": "v4620",
+        "jp": "こちら",
+        "romaji": "kochira",
+        "vi": "phía tôi, chỗ tôi",
+        "audio": null
+      },
+      {
+        "id": "v4621",
+        "jp": "〜の ところ",
+        "romaji": "no tokoro",
+        "vi": "chỗ của …, gần …",
+        "audio": null,
+        "note": "たなかさんの ところ"
+      },
+      {
+        "id": "v4622",
+        "jp": "ちょうど",
+        "romaji": "choudo",
+        "vi": "vừa đúng lúc",
+        "audio": null
+      },
+      {
+        "id": "v4623",
+        "jp": "たったいま",
+        "romaji": "tatta ima",
+        "vi": "vừa mới",
+        "audio": null,
+        "kanji": "たった今"
+      },
+      {
+        "id": "v4624",
+        "jp": "いま いいでしょうか。",
+        "romaji": "ima ii deshou ka",
+        "vi": "Bây giờ có tiện không ạ?",
+        "audio": null,
+        "kanji": "今いいでしょうか。",
+        "image": "/icons/vocab/telephone.svg"
+      },
+      {
+        "id": "v4625",
+        "jp": "どちらさまでしょうか。",
+        "romaji": "dochira sama deshou ka",
+        "vi": "Xin hỏi ai đấy ạ?",
+        "audio": null
+      },
+      {
+        "id": "v4626",
+        "jp": "もうしわけ ありません。",
+        "romaji": "moushiwake arimasen",
+        "vi": "Tôi thành thật xin lỗi.",
+        "audio": null,
+        "kanji": "申し訳ありません。"
+      },
+      {
+        "id": "v4627",
+        "jp": "おまたせしました。",
+        "romaji": "omatase shimashita",
+        "vi": "Xin lỗi đã để quý khách chờ.",
+        "audio": null,
+        "kanji": "お待たせしました。"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4601",
+        "pattern": "Vる／Vている + ところです",
+        "vi": "Sắp làm / đang làm đúng lúc này",
+        "explain": "Vる ところです: sắp bắt đầu, hay đi với これから, ちょうど 今から. Vて いる ところです: đang làm dở đúng lúc này, hay đi với 今.",
+        "viMistake": "ところ nói về đúng thời điểm đang nói. Hay dùng khi trả lời điện thoại hoặc khi được hỏi việc đã xong chưa.",
+        "examples": [
+          {
+            "jp": "これから {昼|ひる}ご{飯|はん}を {食|た}べる ところです。",
+            "vi": "Tôi sắp ăn trưa đây.",
+            "audio": null
+          },
+          {
+            "jp": "{今|いま}、{報告書|ほうこくしょ}を {書|か}いて いる ところです。",
+            "vi": "Bây giờ tôi đang viết báo cáo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4602",
+        "pattern": "Vた + ところです",
+        "vi": "Vừa mới làm xong",
+        "explain": "Việc vừa kết thúc ngay trước lúc nói. Hay đi với たった今, さっき.",
+        "viMistake": "Chỉ dùng cho khoảng thời gian rất ngắn. Không nói せんげつ きた ところです.",
+        "examples": [
+          {
+            "jp": "たった{今|いま} {駅|えき}に {着|つ}いた ところです。",
+            "vi": "Tôi vừa mới đến ga.",
+            "audio": null
+          },
+          {
+            "jp": "パンが ちょうど {焼|や}けた ところです。",
+            "vi": "Bánh mì vừa nướng xong.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4603",
+        "pattern": "Vた + ばかりです",
+        "vi": "Mới … (theo cảm nhận người nói)",
+        "explain": "Người nói thấy chưa bao lâu kể từ khi làm việc đó. Khoảng thời gian có thể vài phút hay vài tháng.",
+        "viMistake": "Nối với のに: かった ばかりなのに、もう こわれました (mới mua mà đã hỏng).",
+        "examples": [
+          {
+            "jp": "{先月|せんげつ} {日本|にほん}に {来|き}た ばかりです。",
+            "vi": "Tôi mới sang Nhật tháng trước.",
+            "audio": null
+          },
+          {
+            "jp": "この パソコンは {買|か}った ばかりなのに、もう {壊|こわ}れました。",
+            "vi": "Cái máy tính này mới mua vậy mà đã hỏng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4604",
+        "pattern": "普通形 + はずです",
+        "vi": "Chắc chắn là … (theo suy luận)",
+        "explain": "Người nói tin chắc dựa trên lý do rõ ràng. なA thêm な, danh từ thêm の. Phủ định mạnh: はずが ありません (không thể nào).",
+        "viMistake": "Không dùng cho dự định của mình: dự định thì nói つもりです.",
+        "examples": [
+          {
+            "jp": "{会議|かいぎ}は {3時|さんじ}に {終|お}わる はずです。",
+            "vi": "Cuộc họp chắc chắn sẽ kết thúc lúc 3 giờ.",
+            "audio": null
+          },
+          {
+            "jp": "{田中|たなか}さんは {今日|きょう} {留守|るす}の はずです。{旅行|りょこう}に {行|い}って いますから。",
+            "vi": "Hôm nay anh Tanaka chắc là vắng nhà. Vì anh ấy đang đi du lịch.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4601",
+        "type": "title",
+        "jp": "第46課 · ところ・ばかり・はず",
+        "vi": "Bài 46 · Mốc thời gian và suy luận"
+      },
+      {
+        "id": "s4602",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói mình sắp làm, đang làm hay vừa làm xong một việc. Nói việc mới xảy ra chưa lâu. Nói điều mình tin chắc dựa trên lý do."
+      },
+      {
+        "id": "s4603",
+        "type": "vocab",
+        "refs": ["v4601", "v4602", "v4603", "v4604", "v4605", "v4606", "v4607", "v4608"]
+      },
+      {
+        "id": "s4604",
+        "type": "vocab",
+        "refs": ["v4609", "v4610", "v4611", "v4612", "v4613", "v4614", "v4615", "v4616"]
+      },
+      {
+        "id": "s4605",
+        "type": "vocab",
+        "refs": ["v4617", "v4618", "v4619", "v4620", "v4621", "v4622", "v4623", "v4624"]
+      },
+      {
+        "id": "s4606",
+        "type": "vocab",
+        "refs": ["v4625", "v4626", "v4627"]
+      },
+      {
+        "id": "s4607",
+        "type": "grammar",
+        "ref": "g4601"
+      },
+      {
+        "id": "s4608",
+        "type": "example",
+        "ref": "g4601",
+        "reveal": true
+      },
+      {
+        "id": "s4609",
+        "type": "quiz",
+        "ref": "q4601"
+      },
+      {
+        "id": "s4610",
+        "type": "grammar",
+        "ref": "g4602"
+      },
+      {
+        "id": "s4611",
+        "type": "example",
+        "ref": "g4602",
+        "reveal": true
+      },
+      {
+        "id": "s4612",
+        "type": "quiz",
+        "ref": "q4604"
+      },
+      {
+        "id": "s4613",
+        "type": "table",
+        "title": "Ba mốc của ところです",
+        "columns": ["Thời điểm", "Mẫu", "Ví dụ"],
+        "rows": [
+          ["Sắp", "Vる ところ", "これから {出|で}かける ところです"],
+          ["Đang", "Vて いる ところ", "{今|いま} {準備|じゅんび}して いる ところです"],
+          ["Vừa xong", "Vた ところ", "たった{今|いま} {帰|かえ}った ところです"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Hỏi cùng một việc ở ba thời điểm: 晩ご飯は? → 食べる／食べている／食べた ところです."
+      },
+      {
+        "id": "s4614",
+        "type": "quiz",
+        "ref": "q4603"
+      },
+      {
+        "id": "s4615",
+        "type": "grammar",
+        "ref": "g4603"
+      },
+      {
+        "id": "s4616",
+        "type": "example",
+        "ref": "g4603",
+        "reveal": true
+      },
+      {
+        "id": "s4617",
+        "type": "quiz",
+        "ref": "q4606"
+      },
+      {
+        "id": "s4618",
+        "type": "table",
+        "title": "たところ hay たばかり",
+        "columns": ["Câu", "Dùng được"],
+        "rows": [
+          ["たった{今|いま} {着|つ}きました", "たところ・たばかり"],
+          ["{先月|せんげつ} {来|き}ました", "たばかり"],
+          ["{先週|せんしゅう} {買|か}ったのに…", "たばかりなのに"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "たところ: ngay sau khi xong, khách quan. たばかり: người nói thấy chưa lâu, có thể vài tháng."
+      },
+      {
+        "id": "s4619",
+        "type": "quiz",
+        "ref": "q4605"
+      },
+      {
+        "id": "s4620",
+        "type": "grammar",
+        "ref": "g4604"
+      },
+      {
+        "id": "s4621",
+        "type": "example",
+        "ref": "g4604",
+        "reveal": true
+      },
+      {
+        "id": "s4622",
+        "type": "quiz",
+        "ref": "q4608"
+      },
+      {
+        "id": "s4623",
+        "type": "quiz",
+        "ref": "q4610"
+      },
+      {
+        "id": "s4624",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["卒", "{卒業|そつぎょう}", "tốt (kết thúc)"],
+          ["業", "{卒業|そつぎょう}", "nghiệp"],
+          ["焼", "{焼|や}きます", "nướng"],
+          ["渡", "{渡|わた}します", "trao"],
+          ["原", "{原因|げんいん}", "gốc"],
+          ["因", "{原因|げんいん}", "nhân"],
+          ["届", "{届|とど}きます", "gửi tới"],
+          ["留", "{留守|るす}", "lưu lại"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4625",
+        "type": "table",
+        "title": "Từ tham khảo · Gốc từ katakana",
+        "columns": ["Từ", "Gốc", "Nghĩa"],
+        "rows": [
+          ["パン", "tiếng Bồ Đào Nha", "bánh mì"],
+          ["アルバイト", "tiếng Đức", "việc làm thêm"],
+          ["コップ", "tiếng Hà Lan", "cái cốc"],
+          ["ランドセル", "tiếng Hà Lan", "cặp sách học sinh"],
+          ["アンケート", "tiếng Pháp", "phiếu khảo sát"],
+          ["イクラ", "tiếng Nga", "trứng cá hồi"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Phần lớn từ katakana gốc tiếng Anh. Cho học viên đoán gốc của vài từ quen: テレビ, パソコン."
+      },
+      {
+        "id": "s4626",
+        "type": "dialogue",
+        "title": "Hội thoại · Gọi trung tâm sửa chữa",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Nhân viên",
+            "jp": "はい、{電気|でんき}サービスセンターです。",
+            "vi": "Vâng, trung tâm dịch vụ điện xin nghe."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "あのう、{冷蔵庫|れいぞうこ}の {具合|ぐあい}が おかしいんですが…。",
+            "vi": "À, tủ lạnh nhà tôi có vấn đề…"
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "どちらさまでしょうか。",
+            "vi": "Xin hỏi ai đấy ạ?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "マイです。{先月|せんげつ} {買|か}った ばかりなのに、もう {冷|ひ}えないんです。",
+            "vi": "Tôi là Mai. Mới mua tháng trước vậy mà đã không lạnh nữa."
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{申|もう}し{訳|わけ}ありません。ちょうど {修理|しゅうり}の {係|かかり}が {戻|もど}って きた ところです。すぐ そちらへ {向|む}かいます。",
+            "vi": "Thành thật xin lỗi. Nhân viên sửa chữa vừa về tới. Sẽ qua chỗ chị ngay ạ."
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "{30分|さんじゅっぷん}ぐらいで そちらに {着|つ}く はずです。",
+            "vi": "Khoảng 30 phút nữa chắc chắn sẽ đến chỗ chị."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: tủ lạnh của Mai bị sao? Nhân viên sửa chữa vừa làm gì và bao lâu thì đến?"
+      },
+      {
+        "id": "s4627",
+        "type": "quiz",
+        "ref": "q4618"
+      },
+      {
+        "id": "s4628",
+        "type": "dialogue",
+        "title": "Nghe · Không nghe máy được",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Lan",
+            "jp": "もしもし、{今|いま} いいでしょうか。",
+            "vi": "Alô, bây giờ có tiện không ạ?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "すみません、{今|いま} {会議|かいぎ}を して いる ところなんです。あとで かけ{直|なお}します。",
+            "vi": "Xin lỗi, tôi đang họp. Lát nữa tôi gọi lại."
+          },
+          {
+            "speaker": "Lan",
+            "jp": "わかりました。",
+            "vi": "Vâng ạ."
+          },
+          {
+            "speaker": "Minh",
+            "jp": "もしもし、ミンです。さっきは すみません。たった{今|いま} {会議|かいぎ}が {終|お}わった ところです。",
+            "vi": "Alô, Minh đây. Lúc nãy xin lỗi chị. Cuộc họp vừa mới kết thúc."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Lượt cuối là cuộc gọi lại sau đó. Hỏi vì sao Minh không nói chuyện được và khi nào gọi lại."
+      },
+      {
+        "id": "s4629",
+        "type": "quiz",
+        "ref": "q4619"
+      },
+      {
+        "id": "s4630",
+        "type": "quiz",
+        "ref": "q4620"
+      },
+      {
+        "id": "s4631",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          ["ところです／{出|で}かける／これから", "これから {出|で}かける ところです。"],
+          ["ばかりです／{起|お}きた／さっき", "さっき {起|お}きた ばかりです。"],
+          ["はずです／{届|とど}く／{明日|あした}", "{明日|あした} {届|とど}く はずです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4632",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Tôi đang nấu cơm.", "{今|いま}、ご{飯|はん}を {作|つく}って いる ところです。"],
+          ["Xe buýt vừa mới chạy.", "バスは たった{今|いま} {出|で}た ところです。"],
+          ["Tôi mới tốt nghiệp.", "{大学|だいがく}を {卒業|そつぎょう}した ばかりです。"],
+          ["Anh ấy chắc chắn sẽ đến.", "{彼|かれ}は {来|く}る はずです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4633",
+        "type": "table",
+        "title": "Nhập vai · Chờ người đến muộn",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Lo bạn chưa đến", "リンさん、{遅|おそ}いですね。"],
+          ["B", "Nói chắc sẽ đến, nêu lý do", "{約束|やくそく}したから、{来|く}る はずです。"],
+          ["A", "Gọi điện hỏi", "もしもし、{今|いま} どこですか。"],
+          [
+            "C",
+            "Trả lời đang trên đường",
+            "すみません、{今|いま} {駅|えき}を {出|で}た ところです。"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi câu trả lời của C: 今 家を 出る ところです, 今 向かって いる ところです."
+      },
+      {
+        "id": "s4634",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vる ところ: sắp. Vて いる ところ: đang. Vた ところ: vừa xong.\nVた ばかり: mới, theo cảm nhận, có thể lâu hơn.\n普通形 + はずです: tin chắc theo suy luận. なAな, Nの はず.",
+        "teacherNotes": "Dễ nhầm: たところ với khoảng thời gian dài, はず cho dự định của mình (dùng つもり). Liên hệ のに ở bài 45. Sang bài 47, học そうです nghe nói và ようです."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4601",
+        "type": "choice",
+        "prompt": "Sắp ăn trưa: これから ひるごはんを（　）ところです。",
+        "options": ["たべて いる", "たべた", "たべる", "たべ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Sắp làm: Vる ところです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4602",
+        "type": "choice",
+        "prompt": "Đang viết báo cáo: いま レポートを（　）ところです。",
+        "options": ["かいて いる", "かく", "かいた", "かいて"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Đang làm: Vて いる ところです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4603",
+        "type": "choice",
+        "prompt": "Bạn gọi đúng lúc mình sắp ra khỏi nhà. Nói gì?",
+        "options": [
+          "いま でかけた ところです。",
+          "いま でかける ところです。",
+          "いま でかけた ばかりです。",
+          "いま でかける はずです。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Sắp làm: Vる ところです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4604",
+        "type": "choice",
+        "prompt": "Vừa đến ga xong: たったいま えきに（　）ところです。",
+        "options": ["つく", "ついて いる", "つき", "ついた"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Vừa xong: Vた ところです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4605",
+        "type": "choice",
+        "prompt": "Câu nào đúng?",
+        "options": [
+          "せんげつ にほんに きた ところです。",
+          "せんげつ にほんに くる ばかりです。",
+          "せんげつ にほんに きた ばかりです。",
+          "せんげつ にほんに きて いる ところです。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Một tháng vẫn thấy chưa lâu: Vた ばかりです. たところ chỉ ngay sau đó.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4606",
+        "type": "choice",
+        "prompt": "Mới sang Nhật, thấy chưa lâu: せんげつ にほんに（　）ばかりです。",
+        "options": ["きた", "くる", "きて いる", "きます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Vた + ばかりです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4607",
+        "type": "choice",
+        "prompt": "Mới mua mà đã hỏng: かった（　）なのに、もう こわれました。",
+        "options": ["ところ", "ばかり", "はず", "つもり"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Mới mua mà đã hỏng: かった ばかりなのに.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4608",
+        "type": "choice",
+        "prompt": "Tin chắc theo suy luận: かいぎは 3じに おわる（　）です。",
+        "options": ["つもり", "ばかり", "はず", "ところ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Tin chắc dựa trên lý do: 〜はずです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4609",
+        "type": "choice",
+        "prompt": "たなかさんは きょう（　）はずです。りょこうに いって いますから。",
+        "options": ["るす", "るすな", "るすだ", "るすの"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Danh từ + の + はずです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4610",
+        "type": "choice",
+        "prompt": "Nói dự định của chính mình: らいねん けっこんする（　）です。",
+        "options": ["つもり", "はず", "ところ", "ばかり"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dự định của mình: つもりです. はず dùng cho suy luận.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4611",
+        "type": "choice",
+        "prompt": "Không thể nào: あの まじめな ひとが うそを つく（　）。",
+        "options": ["ところです", "はずが ありません", "ばかりです", "つもりです"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Phủ định mạnh theo suy luận: はずが ありません.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4612",
+        "type": "choice",
+        "prompt": "Học xong đại học: だいがくを（　）。",
+        "options": ["にゅうがくします", "やきます", "そつぎょうします", "わたします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "卒業します là tốt nghiệp.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4613",
+        "type": "choice",
+        "prompt": "Vắng nhà gọi là gì?",
+        "options": ["ぐあい", "げんいん", "しょくよく", "るす"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "留守 là vắng nhà.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4614",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 原因.",
+        "options": ["nguyên nhân", "sự thèm ăn", "dịch vụ giao hàng", "tờ giới thiệu"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "原因 đọc げんいん.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4615",
+        "type": "choice",
+        "prompt": "Ốm nên không muốn ăn: （　）が ありません。",
+        "options": ["ちゅうしゃ", "しょくよく", "ステレオ", "パンフレット"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "食欲 là sự thèm ăn.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4616",
+        "type": "choice",
+        "prompt": "Câu xin lỗi trang trọng nhất là câu nào?",
+        "options": ["ごめん。", "すみません。", "もうしわけ ありません。", "どうも。"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "申し訳ありません trang trọng hơn すみません.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4617",
+        "type": "choice",
+        "prompt": "Đưa tận tay: この しょるいを ぶちょうに（　）ください。",
+        "options": ["やいて", "でて", "とどいて", "わたして"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "渡します là trao, đưa.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4618",
+        "type": "choice",
+        "prompt": "Tủ lạnh của Mai bị sao?",
+        "options": [
+          "Kêu to",
+          "Mới mua tháng trước mà đã không lạnh",
+          "Bị rò nước",
+          "Không mở được cửa"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "先月買ったばかりなのに、もう冷えないんです.",
+        "points": 1,
+        "tags": ["minna-46"],
+        "passage": "マイ：{先月|せんげつ} {買|か}った ばかりなのに、もう {冷|ひ}えないんです。"
+      },
+      {
+        "id": "q4619",
+        "type": "choice",
+        "prompt": "Lúc đầu Minh không nói chuyện được vì sao?",
+        "options": ["Đang họp", "Đang lái xe", "Vừa ra ngoài", "Sắp đi ngủ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "今会議をしているところなんです.",
+        "points": 1,
+        "tags": ["minna-46"],
+        "passage": "ミン：すみません、{今|いま} {会議|かいぎ}を して いる ところなんです。あとで かけ{直|なお}します。"
+      },
+      {
+        "id": "q4620",
+        "type": "choice",
+        "prompt": "Người viết vào đại học khi nào?",
+        "options": ["Năm ngoái", "Tuần trước", "Hôm qua", "Tháng trước"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "先月大学に入学したばかりです.",
+        "points": 1,
+        "tags": ["minna-46"],
+        "passage": "わたしは {先月|せんげつ} {大学|だいがく}に {入学|にゅうがく}した ばかりです。まだ {友達|ともだち}が {少|すく}ないですが、{毎日|まいにち} {楽|たの}しいです。{今|いま}、{国|くに}の {母|はは}に {手紙|てがみ}を {書|か}いて いる ところです。{先週|せんしゅう} {送|おく}った {荷物|にもつ}は もう {届|とど}いて いる はずです。"
+      },
+      {
+        "id": "q4621",
+        "type": "choice",
+        "prompt": "Người viết nghĩ gì về hành lý gửi tuần trước?",
+        "options": ["Bị mất", "Chưa gửi", "Chắc chắn đã đến nơi", "Bị trả lại"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "もう届いているはずです: chắc chắn đã đến.",
+        "points": 1,
+        "tags": ["minna-46"],
+        "passage": "わたしは {先月|せんげつ} {大学|だいがく}に {入学|にゅうがく}した ばかりです。まだ {友達|ともだち}が {少|すく}ないですが、{毎日|まいにち} {楽|たの}しいです。{今|いま}、{国|くに}の {母|はは}に {手紙|てがみ}を {書|か}いて いる ところです。{先週|せんしゅう} {送|おく}った {荷物|にもつ}は もう {届|とど}いて いる はずです。"
+      },
+      {
+        "id": "q4622",
+        "type": "fill",
+        "prompt": "Điền: いま ごはんを たべて いる（　）です。",
+        "answer": ["ところ"],
+        "inputMode": "hiragana",
+        "explain": "Đang làm: Vて いる ところです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4623",
+        "type": "fill",
+        "prompt": "Điền (mới mua hôm qua): この くつは きのう かった（　）です。",
+        "answer": ["ばかり"],
+        "inputMode": "hiragana",
+        "explain": "Từ hôm qua đến nay: Vた ばかりです, không dùng たところ.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4624",
+        "type": "fill",
+        "prompt": "Điền (tin chắc theo suy luận): パンフレットは きょう とどく（　）です。",
+        "answer": ["はず"],
+        "inputMode": "hiragana",
+        "explain": "Tin chắc dựa trên lý do: 〜はずです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4625",
+        "type": "fill",
+        "prompt": "Điền: かいぎは たったいま おわった（　）です。",
+        "answer": ["ところ", "ばかり"],
+        "inputMode": "hiragana",
+        "explain": "Vừa xong: Vた ところです. Vた ばかりです cũng đúng.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4626",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Tôi mới sang Nhật.",
+        "tokens": [
+          {
+            "id": "q4626-1",
+            "text": "にほんに"
+          },
+          {
+            "id": "q4626-2",
+            "text": "きた"
+          },
+          {
+            "id": "q4626-3",
+            "text": "ばかりです。"
+          }
+        ],
+        "answer": ["q4626-1", "q4626-2", "q4626-3"],
+        "explain": "Vた + ばかりです.",
+        "points": 1,
+        "tags": ["minna-46"]
+      },
+      {
+        "id": "q4627",
+        "type": "match",
+        "prompt": "Nối từ với nghĩa.",
+        "left": ["にゅうがくします", "そつぎょうします", "るす", "げんいん"],
+        "right": ["vắng nhà", "nguyên nhân", "tốt nghiệp", "nhập học"],
+        "answer": [
+          [0, 3],
+          [1, 2],
+          [2, 0],
+          [3, 1]
+        ],
+        "explain": "入学 nhập học, 卒業 tốt nghiệp, 留守 vắng nhà, 原因 nguyên nhân.",
+        "points": 1,
+        "tags": ["minna-46"]
+      }
+    ]
+  }
+}
