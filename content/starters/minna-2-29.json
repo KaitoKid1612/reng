@@ -1,0 +1,891 @@
+{
+  "id": "minna-2-29",
+  "title": "Bài 29 – Trạng thái và sự cố",
+  "titleJa": "第29課・状態とできごと",
+  "summary": "Tả trạng thái đồ vật và kể việc đã hoàn tất hoặc lỡ xảy ra.",
+  "order": 29,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v2901",
+        "jp": "あきます",
+        "romaji": "akimasu",
+        "vi": "mở ra",
+        "note": "ドアが",
+        "audio": null,
+        "kanji": "開きます"
+      },
+      {
+        "id": "v2902",
+        "jp": "しまります",
+        "romaji": "shimarimasu",
+        "vi": "đóng lại",
+        "note": "まどが",
+        "audio": null,
+        "kanji": "閉まります"
+      },
+      {
+        "id": "v2903",
+        "jp": "つきます",
+        "romaji": "tsukimasu",
+        "vi": "bật sáng",
+        "note": "でんきが",
+        "audio": null
+      },
+      {
+        "id": "v2904",
+        "jp": "きえます",
+        "romaji": "kiemasu",
+        "vi": "tắt, biến mất",
+        "note": "でんきが",
+        "audio": null,
+        "kanji": "消えます"
+      },
+      {
+        "id": "v2905",
+        "jp": "こわれます",
+        "romaji": "kowaremasu",
+        "vi": "hỏng",
+        "note": "いすが",
+        "audio": null,
+        "kanji": "壊れます"
+      },
+      {
+        "id": "v2906",
+        "jp": "われます",
+        "romaji": "waremasu",
+        "vi": "vỡ",
+        "note": "グラスが",
+        "audio": null,
+        "kanji": "割れます"
+      },
+      {
+        "id": "v2907",
+        "jp": "おれます",
+        "romaji": "oremasu",
+        "vi": "gãy",
+        "note": "えだが",
+        "audio": null,
+        "kanji": "折れます"
+      },
+      {
+        "id": "v2908",
+        "jp": "やぶれます",
+        "romaji": "yaburemasu",
+        "vi": "rách",
+        "note": "かみが",
+        "audio": null,
+        "kanji": "破れます"
+      },
+      {
+        "id": "v2909",
+        "jp": "よごれます",
+        "romaji": "yogoremasu",
+        "vi": "bị bẩn",
+        "note": "ふくが",
+        "audio": null,
+        "kanji": "汚れます"
+      },
+      {
+        "id": "v2910",
+        "jp": "つきます",
+        "romaji": "tsukimasu",
+        "vi": "được gắn, có kèm",
+        "note": "ポケットが",
+        "audio": null,
+        "kanji": "付きます"
+      },
+      {
+        "id": "v2911",
+        "jp": "はずれます",
+        "romaji": "hazuremasu",
+        "vi": "tuột, bung ra",
+        "note": "ボタンが",
+        "audio": null,
+        "kanji": "外れます"
+      },
+      {
+        "id": "v2912",
+        "jp": "とまります",
+        "romaji": "tomarimasu",
+        "vi": "dừng",
+        "note": "くるまが",
+        "audio": null,
+        "kanji": "止まります"
+      },
+      {
+        "id": "v2913",
+        "jp": "まちがえます",
+        "romaji": "machigaemasu",
+        "vi": "nhầm",
+        "note": "ばんごうを",
+        "audio": null,
+        "kanji": "間違えます"
+      },
+      {
+        "id": "v2914",
+        "jp": "おとします",
+        "romaji": "otoshimasu",
+        "vi": "làm rơi, đánh mất",
+        "note": "かぎを",
+        "audio": null,
+        "kanji": "落とします"
+      },
+      {
+        "id": "v2915",
+        "jp": "かかります",
+        "romaji": "kakarimasu",
+        "vi": "được khóa",
+        "note": "かぎが",
+        "audio": null,
+        "kanji": "掛かります"
+      },
+      {
+        "id": "v2916",
+        "jp": "おさら",
+        "romaji": "osara",
+        "vi": "đĩa",
+        "note": "おさらが われます",
+        "audio": null,
+        "kanji": "お皿"
+      },
+      {
+        "id": "v2917",
+        "jp": "おちゃわん",
+        "romaji": "ochawan",
+        "vi": "bát cơm",
+        "note": "ごはんを いれます",
+        "audio": null,
+        "kanji": "お茶碗"
+      },
+      {
+        "id": "v2918",
+        "jp": "コップ",
+        "romaji": "koppu",
+        "vi": "cốc uống nước",
+        "note": "みずを いれます",
+        "audio": null
+      },
+      {
+        "id": "v2919",
+        "jp": "ガラス",
+        "romaji": "garasu",
+        "vi": "thủy tinh",
+        "note": "ガラスの ドア",
+        "audio": null
+      },
+      {
+        "id": "v2920",
+        "jp": "ふくろ",
+        "romaji": "fukuro",
+        "vi": "túi",
+        "note": "かみに つつむ／ふくろに いれる",
+        "audio": null,
+        "kanji": "袋"
+      },
+      {
+        "id": "v2921",
+        "jp": "えだ",
+        "romaji": "eda",
+        "vi": "cành cây",
+        "note": "えだが おれます",
+        "audio": null,
+        "kanji": "枝"
+      },
+      {
+        "id": "v2922",
+        "jp": "えきいん",
+        "romaji": "ekiin",
+        "vi": "nhân viên nhà ga",
+        "note": "えきいんに ききます",
+        "audio": null,
+        "kanji": "駅員"
+      },
+      {
+        "id": "v2923",
+        "jp": "このへん",
+        "romaji": "kono hen",
+        "vi": "quanh đây",
+        "note": "このへんに あります",
+        "audio": null,
+        "kanji": "この辺"
+      },
+      {
+        "id": "v2924",
+        "jp": "〜へん",
+        "romaji": "hen",
+        "vi": "khu vực quanh…",
+        "note": "えきの へん",
+        "audio": null,
+        "kanji": "〜辺"
+      },
+      {
+        "id": "v2925",
+        "jp": "このくらい",
+        "romaji": "kono kurai",
+        "vi": "cỡ chừng này",
+        "note": "Dùng khi chỉ kích thước",
+        "audio": null
+      },
+      {
+        "id": "v2926",
+        "jp": "おさきに どうぞ。",
+        "romaji": "osaki ni douzo",
+        "vi": "Mời anh/chị đi trước.",
+        "note": "Lời nhường lượt",
+        "audio": null,
+        "kanji": "お先にどうぞ。"
+      },
+      {
+        "id": "v2927",
+        "jp": "ああ、よかった。",
+        "romaji": "aa yokatta",
+        "vi": "Ôi, may quá.",
+        "note": "Nói khi thấy nhẹ nhõm",
+        "audio": null
+      },
+      {
+        "id": "v2928",
+        "jp": "いまの でんしゃ",
+        "romaji": "ima no densha",
+        "vi": "chuyến tàu vừa rồi",
+        "note": "いまの でんしゃに のりました",
+        "audio": null,
+        "kanji": "今の電車",
+        "image": "/icons/vocab/train.svg"
+      },
+      {
+        "id": "v2929",
+        "jp": "わすれもの",
+        "romaji": "wasuremono",
+        "vi": "đồ bỏ quên",
+        "note": "わすれものを とりに いきます",
+        "audio": null,
+        "kanji": "忘れ物"
+      },
+      {
+        "id": "v2930",
+        "jp": "〜がわ",
+        "romaji": "gawa",
+        "vi": "phía, bên…",
+        "note": "まどがわ",
+        "audio": null,
+        "kanji": "〜側"
+      },
+      {
+        "id": "v2931",
+        "jp": "ポケット",
+        "romaji": "poketto",
+        "vi": "túi áo, túi quần",
+        "note": "ポケットに いれます",
+        "audio": null
+      },
+      {
+        "id": "v2932",
+        "jp": "おぼえて いません。",
+        "romaji": "oboete imasen",
+        "vi": "Tôi không nhớ.",
+        "note": "Nói khi không nhớ chi tiết",
+        "audio": null,
+        "kanji": "覚えていません。"
+      },
+      {
+        "id": "v2933",
+        "jp": "あみだな",
+        "romaji": "amidana",
+        "vi": "giá để hành lý",
+        "note": "あみだなに にもつを おきます",
+        "audio": null,
+        "kanji": "網棚"
+      },
+      {
+        "id": "v2934",
+        "jp": "たしか",
+        "romaji": "tashika",
+        "vi": "nếu tôi nhớ đúng",
+        "note": "Dùng khi nhớ mang máng",
+        "audio": null,
+        "kanji": "確か"
+      },
+      {
+        "id": "v2935",
+        "jp": "かたづけます",
+        "romaji": "katazukemasu",
+        "vi": "dọn dẹp",
+        "note": "へやを",
+        "audio": null,
+        "kanji": "片づけます"
+      },
+      {
+        "id": "v2936",
+        "jp": "こうばん",
+        "romaji": "kouban",
+        "vi": "đồn cảnh sát khu vực",
+        "note": "こうばんで ききます",
+        "audio": null,
+        "kanji": "交番"
+      },
+      {
+        "id": "v2937",
+        "jp": "しょるい",
+        "romaji": "shorui",
+        "vi": "giấy tờ, hồ sơ",
+        "note": "しょるいを だします",
+        "audio": null,
+        "kanji": "書類"
+      },
+      {
+        "id": "v2938",
+        "jp": "へんじ",
+        "romaji": "henji",
+        "vi": "lời đáp, hồi âm",
+        "note": "へんじを かきます",
+        "audio": null,
+        "kanji": "返事"
+      },
+      {
+        "id": "v2939",
+        "jp": "とりかえます",
+        "romaji": "torikaemasu",
+        "vi": "thay, đổi",
+        "note": "ふくろを",
+        "audio": null,
+        "kanji": "取り替えます"
+      },
+      {
+        "id": "v2940",
+        "jp": "ふきます",
+        "romaji": "fukimasu",
+        "vi": "lau",
+        "note": "つくえを",
+        "audio": null,
+        "kanji": "拭きます"
+      },
+      {
+        "id": "v2941",
+        "jp": "スピーチ",
+        "romaji": "supiichi",
+        "vi": "bài phát biểu",
+        "note": "スピーチを します",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g2901",
+        "pattern": "N が 自動詞て います",
+        "vi": "Tả trạng thái sau một thay đổi",
+        "explain": "N が + tự động từ thể て + います. Tả đồ vật hiện ra sao sau khi nó thay đổi.",
+        "viMistake": "ドアが あいて います tả trạng thái. ドアを あけます nói việc ai đó mở cửa.",
+        "examples": [
+          {
+            "jp": "{玄関|げんかん}の ドアが {閉|し}まって います。",
+            "vi": "Cửa ra vào đang đóng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2902",
+        "pattern": "N は 自動詞て います",
+        "vi": "Tả trạng thái của vật đang nói tới",
+        "explain": "Dùng は khi vật đã được nêu hoặc khi muốn đối chiếu. Chọn tự động từ phù hợp với vật.",
+        "viMistake": "Giấy rách dùng やぶれて. Cốc vỡ dùng われて.",
+        "examples": [
+          {
+            "jp": "{青|あお}い コップは {割|わ}れて います。{白|しろ}い コップは {大丈夫|だいじょうぶ}です。",
+            "vi": "Cốc xanh bị vỡ. Cốc trắng vẫn dùng được.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2903",
+        "pattern": "Vて しまいます／しまいました",
+        "vi": "Làm cho xong hoặc đã làm xong hết",
+        "explain": "V thể て + しまいます khi định làm cho xong. Dùng しまいました khi đã hoàn tất. Từ như ぜんぶ hoặc までに giúp nhận diện nghĩa.",
+        "viMistake": "Cùng một dạng có thể chỉ sự cố. Xem mốc thời gian và ý của câu.",
+        "examples": [
+          {
+            "jp": "{昼休|ひるやす}みまでに {書類|しょるい}を {片|かた}づけて しまいます。",
+            "vi": "Tôi sẽ dọn xong giấy tờ trước giờ nghỉ trưa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g2904",
+        "pattern": "Vて しまいました",
+        "vi": "Lỡ làm hoặc gặp việc đáng tiếc",
+        "explain": "V thể て + しまいました diễn tả việc đã xảy ra, thường ngoài ý muốn trong ngữ cảnh sự cố. Kết hợp với bài 26 để giải thích bằng しまったんです.",
+        "viMistake": "おとします → おとして. Dùng để nói mình làm rơi đồ.",
+        "examples": [
+          {
+            "jp": "{帰|かえ}りに {自転車|じてんしゃ}の {鍵|かぎ}を {落|お}として しまいました。",
+            "vi": "Trên đường về tôi lỡ làm rơi chìa khóa xe đạp.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s2901",
+        "type": "title",
+        "jp": "第29課 · ています・てしまいます",
+        "vi": "Bài 29 · Trạng thái và sự cố"
+      },
+      {
+        "id": "s2902",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Tả đồ vật đang ở trạng thái nào. Nói một việc đã xong hoặc đã lỡ xảy ra. Báo đồ bỏ quên cho nhân viên nhà ga."
+      },
+      {
+        "id": "s2903",
+        "type": "vocab",
+        "refs": ["v2901", "v2902", "v2903", "v2904", "v2905", "v2906", "v2907", "v2908"]
+      },
+      {
+        "id": "s2904",
+        "type": "vocab",
+        "refs": ["v2909", "v2910", "v2911", "v2912", "v2913", "v2914", "v2915", "v2916"]
+      },
+      {
+        "id": "s2905",
+        "type": "vocab",
+        "refs": ["v2917", "v2918", "v2919", "v2920", "v2921", "v2922", "v2923", "v2924"]
+      },
+      {
+        "id": "s2906",
+        "type": "vocab",
+        "refs": ["v2925", "v2926", "v2927", "v2928", "v2929", "v2930", "v2931", "v2932"]
+      },
+      {
+        "id": "s2907",
+        "type": "vocab",
+        "refs": ["v2933", "v2934", "v2935", "v2936", "v2937", "v2938", "v2939", "v2940"]
+      },
+      {
+        "id": "s2908",
+        "type": "vocab",
+        "refs": ["v2941"]
+      },
+      {
+        "id": "s2909",
+        "type": "grammar",
+        "ref": "g2901"
+      },
+      {
+        "id": "s2910",
+        "type": "example",
+        "ref": "g2901",
+        "reveal": true
+      },
+      {
+        "id": "s2911",
+        "type": "quiz",
+        "ref": "q2901"
+      },
+      {
+        "id": "s2912",
+        "type": "grammar",
+        "ref": "g2902"
+      },
+      {
+        "id": "s2913",
+        "type": "example",
+        "ref": "g2902",
+        "reveal": true
+      },
+      {
+        "id": "s2914",
+        "type": "quiz",
+        "ref": "q2907"
+      },
+      {
+        "id": "s2915",
+        "type": "grammar",
+        "ref": "g2903"
+      },
+      {
+        "id": "s2916",
+        "type": "example",
+        "ref": "g2903",
+        "reveal": true
+      },
+      {
+        "id": "s2917",
+        "type": "quiz",
+        "ref": "q2910"
+      },
+      {
+        "id": "s2918",
+        "type": "grammar",
+        "ref": "g2904"
+      },
+      {
+        "id": "s2919",
+        "type": "example",
+        "ref": "g2904",
+        "reveal": true
+      },
+      {
+        "id": "s2920",
+        "type": "quiz",
+        "ref": "q2912"
+      },
+      {
+        "id": "s2921",
+        "type": "table",
+        "title": "Tự động từ và tha động từ",
+        "columns": ["Vật thay đổi", "Ai đó tác động"],
+        "rows": [
+          ["ドアが {開|あ}きます", "ドアを {開|あ}けます"],
+          ["{窓|まど}が {閉|し}まります", "{窓|まど}を {閉|し}めます"],
+          ["{電気|でんき}が {消|き}えます", "{電気|でんき}を {消|け}します"],
+          ["コップが {割|わ}れます", "コップを {割|わ}ります"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s2922",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ ví dụ", "Nghĩa"],
+        "rows": [
+          ["閉", "{閉|し}まります", "đóng lại"],
+          ["割", "{割|わ}れます", "vỡ"],
+          ["汚", "{汚|よご}れます", "bị bẩn"],
+          ["忘", "{忘|わす}れ{物|もの}", "đồ bỏ quên"],
+          ["駅", "{駅員|えきいん}", "nhân viên nhà ga"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s2923",
+        "type": "table",
+        "title": "Từ tham khảo · Trạng thái và vẻ ngoài",
+        "columns": ["Tình trạng", "Ví dụ"],
+        "rows": [
+          ["Méo", "{箱|はこ}が へこんで います。"],
+          ["Cong", "{枝|えだ}が {曲|ま}がって います。"],
+          ["Ướt", "{袋|ふくろ}が ぬれて います。"],
+          ["Nhăn", "シャツが しわに なって います。"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Các ví dụ do Reng viết. Cho học viên chỉ ra vật nào cần đổi."
+      },
+      {
+        "id": "s2924",
+        "type": "dialogue",
+        "title": "Hội thoại · Báo quên túi ở ga",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Khách",
+            "jp": "すみません。{電車|でんしゃ}に {黒|くろ}い かばんを {忘|わす}れて しまったんです。",
+            "vi": "Xin lỗi. Tôi lỡ để quên túi đen trên tàu."
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "どこに {置|お}きましたか。",
+            "vi": "Anh/chị đã để ở đâu ạ?"
+          },
+          {
+            "speaker": "Khách",
+            "jp": "{確|たし}か ドアの {近|ちか}くの {網棚|あみだな}です。",
+            "vi": "Nếu tôi nhớ đúng thì ở giá hành lý gần cửa."
+          },
+          {
+            "speaker": "Nhân viên",
+            "jp": "わかりました。{確認|かくにん}します。",
+            "vi": "Tôi hiểu rồi. Tôi sẽ kiểm tra."
+          }
+        ],
+        "teacherNotes": "Đọc hai lượt trước khi chiếu. Hỏi màu túi và vị trí để túi."
+      },
+      {
+        "id": "s2925",
+        "type": "quiz",
+        "ref": "q2915"
+      },
+      {
+        "id": "s2926",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          ["Sắp xếp: います／{割|わ}れて／コップが", "コップが {割|わ}れて います。"],
+          [
+            "Dịch: Tôi lỡ làm rơi chìa khóa ở ga.",
+            "{駅|えき}で {鍵|かぎ}を {落|お}として しまいました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s2927",
+        "type": "table",
+        "title": "Nhập vai · Đổi đồ bị hỏng",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["Khách", "Tả chiếc túi bị rách", "この {袋|ふくろ}は {破|やぶ}れて います。"],
+          ["Khách", "Nhờ đổi túi", "{取|と}り{替|か}えて いただけませんか。"],
+          ["Nhân viên", "Xác nhận sẽ đổi", "はい、すぐ {取|と}り{替|か}えます。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đạt nếu tả đúng vật và trạng thái, rồi nhờ đổi lịch sự. Có thể thay túi rách bằng cốc vỡ."
+      },
+      {
+        "id": "s2928",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Tự động từ + ています tả trạng thái kết quả. Dùng が để nêu vật và は để đặt vật làm chủ đề. てしまう có thể nhấn việc hoàn tất hoặc sự cố tùy ngữ cảnh.",
+        "teacherNotes": "So sánh với ています chỉ thói quen ở bài 28. Bài 30 dùng てあります để nói trạng thái do ai đó chuẩn bị có chủ ý."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q2901",
+        "type": "choice",
+        "prompt": "Cửa đang mở: ドアが（　）。",
+        "options": ["あいて います", "あけて います", "あけます", "しまって います"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "開く là tự động từ.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2902",
+        "type": "choice",
+        "prompt": "Đèn đang tắt: でんきが（　）。",
+        "options": ["けします", "きえて います", "ついて います", "つけます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "消える nói đèn tắt.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2903",
+        "type": "choice",
+        "prompt": "Kính bị vỡ: ガラスが（　）。",
+        "options": ["やぶれて います", "おれて います", "われて います", "とまって います"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "割れる dùng với kính vỡ.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2904",
+        "type": "choice",
+        "prompt": "Giấy bị rách: かみが（　）。",
+        "options": ["われて います", "とまって います", "きえて います", "やぶれて います"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "破れる dùng với giấy.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2905",
+        "type": "choice",
+        "prompt": "Cành bị gãy: えだが（　）。",
+        "options": ["おれて います", "われて います", "よごれて います", "はずれて います"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "折れる diễn tả gãy.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2906",
+        "type": "choice",
+        "prompt": "Chọn câu nói xe đang dừng.",
+        "options": [
+          "くるまを とめます。",
+          "くるまが とまって います。",
+          "くるまが はしっています。",
+          "くるまが きえて います。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "止まる tả trạng thái của xe.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2907",
+        "type": "choice",
+        "prompt": "Hỏi riêng về cái túi này: この ふくろ（　）やぶれて いますか。",
+        "options": ["を", "へ", "は", "で"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "は đưa túi lên làm chủ đề.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2908",
+        "type": "choice",
+        "prompt": "Nút áo bung ra: ボタンが（　）。",
+        "options": ["われて います", "ついて います", "きえて います", "はずれて います"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "外れる có nghĩa tuột ra.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2909",
+        "type": "choice",
+        "prompt": "Chọn câu nói cửa đã khóa.",
+        "options": [
+          "かぎが かかって います。",
+          "ドアが あいて います。",
+          "かぎを おとしました。",
+          "かぎを さがします。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "鍵が掛かる nghĩa là đã gài khóa.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2910",
+        "type": "choice",
+        "prompt": "Trong ぜんぶ よんで しまいました, しまいました nhấn mạnh điều gì?",
+        "options": ["Lỡ đánh rơi sách", "Đọc xong hết", "Đang đọc dở", "Chưa đọc"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "ぜんぶ gợi nghĩa hoàn thành.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2911",
+        "type": "choice",
+        "prompt": "Chọn cách nói sẽ dọn cho xong trước trưa.",
+        "options": [
+          "きのう かたづけて しまいました。",
+          "ひるに かたづけて いました。",
+          "ひるまでに かたづけて しまいます。",
+          "ひるまで やすみます。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "までに là hạn chót.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2912",
+        "type": "choice",
+        "prompt": "Chọn cách kể lỡ để quên túi ở ga.",
+        "options": [
+          "えきで ふくろを かって しまいます。",
+          "えきに ふくろを おきます。",
+          "えきで ふくろを ひろいました。",
+          "えきに ふくろを わすれて しまいました。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "わすれて しまいました diễn tả sự cố.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2913",
+        "type": "choice",
+        "prompt": "Dạng て của おとします là gì?",
+        "options": ["おとして", "おとって", "おとしって", "おといて"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "落とす đổi す thành して.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2914",
+        "type": "choice",
+        "prompt": "Từ nào chỉ đồ bỏ quên?",
+        "options": ["しょるい", "わすれもの", "へんじ", "えだ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "忘れ物 là đồ bỏ quên.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2915",
+        "type": "choice",
+        "prompt": "Theo ghi chú, chiếc túi được tìm thấy ở đâu?",
+        "options": ["Trong túi áo", "Ở đồn cảnh sát", "Trên giá hành lý của tàu", "Ở quầy nhà ga"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "網棚 là giá để hành lý.",
+        "points": 1,
+        "tags": ["minna-29"],
+        "passage": "{駅|えき}の メモ：{黒|くろ}い かばんが {見|み}つかりました。{電車|でんしゃ}の {網棚|あみだな}に ありました。"
+      },
+      {
+        "id": "q2916",
+        "type": "choice",
+        "prompt": "Muốn nói «nếu tôi nhớ đúng» dùng gì?",
+        "options": ["このくらい", "おさきに", "ああ", "たしか"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "確か cho biết người nói nhớ mang máng.",
+        "points": 1,
+        "tags": ["minna-29"]
+      },
+      {
+        "id": "q2917",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana: しまります",
+        "answer": ["しまって"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-29"],
+        "explain": "しまります → しまって"
+      },
+      {
+        "id": "q2918",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana: こわれます",
+        "answer": ["こわれて"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-29"],
+        "explain": "こわれます → こわれて"
+      },
+      {
+        "id": "q2919",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana: きえます",
+        "answer": ["きえて"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-29"],
+        "explain": "きえます → きえて"
+      },
+      {
+        "id": "q2920",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana: よごれます",
+        "answer": ["よごれて"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-29"],
+        "explain": "よごれます → よごれて"
+      }
+    ]
+  }
+}
