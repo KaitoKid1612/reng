@@ -1,0 +1,1177 @@
+{
+  "id": "minna-2-40",
+  "title": "Bài 40 – Câu hỏi lồng và làm thử",
+  "titleJa": "第40課・〜か、〜かどうか、〜てみます",
+  "summary": "Lồng câu hỏi vào câu với か và かどうか, nói làm thử một việc, đổi tính từ thành danh từ chỉ mức độ.",
+  "order": 40,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4001",
+        "jp": "そうだんします",
+        "romaji": "soudan shimasu",
+        "vi": "bàn bạc, xin ý kiến",
+        "audio": null,
+        "kanji": "相談します",
+        "note": "せんせいに そうだんします"
+      },
+      {
+        "id": "v4002",
+        "jp": "かぞえます",
+        "romaji": "kazoemasu",
+        "vi": "đếm",
+        "audio": null,
+        "kanji": "数えます"
+      },
+      {
+        "id": "v4003",
+        "jp": "はかります",
+        "romaji": "hakarimasu",
+        "vi": "đo, cân",
+        "audio": null,
+        "kanji": "測ります・量ります",
+        "note": "ながさを はかります"
+      },
+      {
+        "id": "v4004",
+        "jp": "たしかめます",
+        "romaji": "tashikamemasu",
+        "vi": "xác nhận, kiểm tra lại",
+        "audio": null,
+        "kanji": "確かめます"
+      },
+      {
+        "id": "v4005",
+        "jp": "あいます",
+        "romaji": "aimasu",
+        "vi": "vừa [cỡ]",
+        "audio": null,
+        "kanji": "合います",
+        "note": "サイズが あいます"
+      },
+      {
+        "id": "v4006",
+        "jp": "しゅっぱつします",
+        "romaji": "shuppatsu shimasu",
+        "vi": "xuất phát",
+        "audio": null,
+        "kanji": "出発します",
+        "image": "/icons/vocab/airplane-departure.svg"
+      },
+      {
+        "id": "v4007",
+        "jp": "とうちゃくします",
+        "romaji": "touchaku shimasu",
+        "vi": "đến nơi",
+        "audio": null,
+        "kanji": "到着します",
+        "image": "/icons/vocab/airplane-arrival.svg"
+      },
+      {
+        "id": "v4008",
+        "jp": "よいます",
+        "romaji": "yoimasu",
+        "vi": "say (rượu)",
+        "audio": null,
+        "kanji": "酔います"
+      },
+      {
+        "id": "v4009",
+        "jp": "ひつような",
+        "romaji": "hitsuyouna",
+        "vi": "cần thiết",
+        "audio": null,
+        "kanji": "必要な"
+      },
+      {
+        "id": "v4010",
+        "jp": "ぼうねんかい",
+        "romaji": "bounenkai",
+        "vi": "tiệc tất niên",
+        "audio": null,
+        "kanji": "忘年会"
+      },
+      {
+        "id": "v4011",
+        "jp": "しんねんかい",
+        "romaji": "shinnenkai",
+        "vi": "tiệc mừng năm mới",
+        "audio": null,
+        "kanji": "新年会"
+      },
+      {
+        "id": "v4012",
+        "jp": "にじかい",
+        "romaji": "nijikai",
+        "vi": "tăng hai (bữa tiệc sau)",
+        "audio": null,
+        "kanji": "二次会"
+      },
+      {
+        "id": "v4013",
+        "jp": "たいかい",
+        "romaji": "taikai",
+        "vi": "đại hội, giải thi đấu",
+        "audio": null,
+        "kanji": "大会"
+      },
+      {
+        "id": "v4014",
+        "jp": "マラソン",
+        "romaji": "marason",
+        "vi": "chạy marathon",
+        "audio": null,
+        "image": "/icons/vocab/person-running.svg"
+      },
+      {
+        "id": "v4015",
+        "jp": "コンテスト",
+        "romaji": "kontesuto",
+        "vi": "cuộc thi",
+        "audio": null
+      },
+      {
+        "id": "v4016",
+        "jp": "おもて",
+        "romaji": "omote",
+        "vi": "mặt trước",
+        "audio": null,
+        "kanji": "表"
+      },
+      {
+        "id": "v4017",
+        "jp": "うら",
+        "romaji": "ura",
+        "vi": "mặt sau",
+        "audio": null,
+        "kanji": "裏"
+      },
+      {
+        "id": "v4018",
+        "jp": "もうしこみ",
+        "romaji": "moushikomi",
+        "vi": "sự đăng ký, đơn đăng ký",
+        "audio": null,
+        "kanji": "申し込み"
+      },
+      {
+        "id": "v4019",
+        "jp": "まちがい",
+        "romaji": "machigai",
+        "vi": "chỗ sai, lỗi",
+        "audio": null,
+        "kanji": "間違い"
+      },
+      {
+        "id": "v4020",
+        "jp": "きず",
+        "romaji": "kizu",
+        "vi": "vết xước, vết thương",
+        "audio": null,
+        "kanji": "傷"
+      },
+      {
+        "id": "v4021",
+        "jp": "ズボン",
+        "romaji": "zubon",
+        "vi": "quần dài",
+        "audio": null
+      },
+      {
+        "id": "v4022",
+        "jp": "ながさ",
+        "romaji": "nagasa",
+        "vi": "chiều dài",
+        "audio": null,
+        "kanji": "長さ"
+      },
+      {
+        "id": "v4023",
+        "jp": "おもさ",
+        "romaji": "omosa",
+        "vi": "cân nặng, trọng lượng",
+        "audio": null,
+        "kanji": "重さ"
+      },
+      {
+        "id": "v4024",
+        "jp": "たかさ",
+        "romaji": "takasa",
+        "vi": "chiều cao",
+        "audio": null,
+        "kanji": "高さ"
+      },
+      {
+        "id": "v4025",
+        "jp": "おおきさ",
+        "romaji": "ookisa",
+        "vi": "kích thước, độ lớn",
+        "audio": null,
+        "kanji": "大きさ"
+      },
+      {
+        "id": "v4026",
+        "jp": "〜びん",
+        "romaji": "bin",
+        "vi": "chuyến bay số…",
+        "audio": null,
+        "kanji": "〜便",
+        "note": "ベトナムこうくう 310びん"
+      },
+      {
+        "id": "v4027",
+        "jp": "〜こ",
+        "romaji": "ko",
+        "vi": "đếm vật nhỏ",
+        "audio": null,
+        "kanji": "〜個",
+        "note": "Ôn từ bài 11."
+      },
+      {
+        "id": "v4028",
+        "jp": "〜ほん",
+        "romaji": "hon",
+        "vi": "đếm vật dài",
+        "audio": null,
+        "kanji": "〜本",
+        "note": "Đọc 〜ぽん, 〜ぼん theo số."
+      },
+      {
+        "id": "v4029",
+        "jp": "〜はい",
+        "romaji": "hai",
+        "vi": "đếm cốc, chén",
+        "audio": null,
+        "kanji": "〜杯",
+        "note": "Đọc 〜ぱい, 〜ばい theo số."
+      },
+      {
+        "id": "v4030",
+        "jp": "〜グラム",
+        "romaji": "guramu",
+        "vi": "gam",
+        "audio": null
+      },
+      {
+        "id": "v4031",
+        "jp": "〜センチ",
+        "romaji": "senchi",
+        "vi": "xăng-ti-mét",
+        "audio": null
+      },
+      {
+        "id": "v4032",
+        "jp": "〜ミリ",
+        "romaji": "miri",
+        "vi": "mi-li-mét",
+        "audio": null
+      },
+      {
+        "id": "v4033",
+        "jp": "〜いじょう",
+        "romaji": "ijou",
+        "vi": "từ … trở lên",
+        "audio": null,
+        "kanji": "〜以上"
+      },
+      {
+        "id": "v4034",
+        "jp": "〜いか",
+        "romaji": "ika",
+        "vi": "từ … trở xuống",
+        "audio": null,
+        "kanji": "〜以下"
+      },
+      {
+        "id": "v4035",
+        "jp": "どうでしょうか。",
+        "romaji": "dou deshou ka",
+        "vi": "Thế nào ạ? (lịch sự)",
+        "audio": null,
+        "note": "Cách hỏi lịch sự của どうですか."
+      },
+      {
+        "id": "v4036",
+        "jp": "テスト",
+        "romaji": "tesuto",
+        "vi": "bài kiểm tra",
+        "audio": null
+      },
+      {
+        "id": "v4037",
+        "jp": "せいせき",
+        "romaji": "seiseki",
+        "vi": "thành tích, kết quả học tập",
+        "audio": null,
+        "kanji": "成績"
+      },
+      {
+        "id": "v4038",
+        "jp": "ところで",
+        "romaji": "tokoro de",
+        "vi": "nhân tiện, à này",
+        "audio": null
+      },
+      {
+        "id": "v4039",
+        "jp": "いらっしゃいます",
+        "romaji": "irasshaimasu",
+        "vi": "đến (tôn kính)",
+        "audio": null,
+        "note": "Cách nói tôn kính của いきます／きます／います."
+      },
+      {
+        "id": "v4040",
+        "jp": "ようす",
+        "romaji": "yousu",
+        "vi": "tình hình, dáng vẻ",
+        "audio": null,
+        "kanji": "様子"
+      },
+      {
+        "id": "v4041",
+        "jp": "うまく いきます",
+        "romaji": "umaku ikimasu",
+        "vi": "suôn sẻ, trôi chảy",
+        "audio": null
+      },
+      {
+        "id": "v4042",
+        "jp": "てんきよほう",
+        "romaji": "tenki yohou",
+        "vi": "dự báo thời tiết",
+        "audio": null,
+        "kanji": "天気予報",
+        "image": "/icons/vocab/sun-behind-rain-cloud.svg"
+      },
+      {
+        "id": "v4043",
+        "jp": "おとしより",
+        "romaji": "otoshiyori",
+        "vi": "người cao tuổi",
+        "audio": null,
+        "kanji": "お年寄り",
+        "image": "/icons/vocab/old-woman.svg"
+      },
+      {
+        "id": "v4044",
+        "jp": "でます",
+        "romaji": "demasu",
+        "vi": "[câu hỏi] ra trong đề",
+        "audio": null,
+        "kanji": "出ます",
+        "note": "もんだいが でます"
+      },
+      {
+        "id": "v4045",
+        "jp": "はっぴょうかい",
+        "romaji": "happyoukai",
+        "vi": "buổi báo cáo, buổi biểu diễn",
+        "audio": null,
+        "kanji": "発表会"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4001",
+        "pattern": "疑問詞 … 普通形 + か、〜",
+        "vi": "Lồng câu hỏi có từ để hỏi vào câu",
+        "explain": "Câu hỏi có なに, だれ, どこ, いつ, いくら… đổi sang thể thường rồi thêm か. Vế sau thường là わかりません, しって いますか, おしえて ください, しらべます.",
+        "viMistake": "Không dùng thể ます trong câu lồng. Danh từ và なA bỏ だ: どこか, ひつようか.",
+        "examples": [
+          {
+            "jp": "{会場|かいじょう}が どこか、{教|おし}えて ください。",
+            "vi": "Xin cho tôi biết hội trường ở đâu.",
+            "audio": null
+          },
+          {
+            "jp": "{何時|なんじ}に {出発|しゅっぱつ}するか、もう {一度|いちど} {確|たし}かめます。",
+            "vi": "Tôi sẽ kiểm tra lại mấy giờ xuất phát.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4002",
+        "pattern": "普通形 + かどうか、〜",
+        "vi": "Lồng câu hỏi có/không vào câu",
+        "explain": "Câu hỏi không có từ để hỏi thì thêm かどうか: có… hay không. Danh từ và なA bỏ だ.",
+        "viMistake": "Câu đã có từ để hỏi thì chỉ dùng か: だれが くるか, không nói だれが くるかどうか.",
+        "examples": [
+          {
+            "jp": "{申|もう}し{込|こ}みに {間違|まちが}いが ないか どうか、{見|み}て ください。",
+            "vi": "Hãy xem đơn đăng ký có chỗ sai hay không.",
+            "audio": null
+          },
+          {
+            "jp": "あした マラソン{大会|たいかい}が あるか どうか、まだ わかりません。",
+            "vi": "Tôi vẫn chưa biết ngày mai có giải marathon hay không.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4003",
+        "pattern": "Vて + みます",
+        "vi": "Thử làm để biết kết quả",
+        "explain": "Làm thử một việc để xem thế nào. Hay dùng với 〜て みたいです, 〜て みて ください.",
+        "viMistake": "みます ở đây viết hiragana, không có nghĩa là nhìn. ズボンは はいて みます, không nói きて みます.",
+        "examples": [
+          {
+            "jp": "この ズボンを はいて みても いいですか。",
+            "vi": "Tôi mặc thử chiếc quần này được không?",
+            "audio": null
+          },
+          {
+            "jp": "{日本|にほん}の お{祭|まつ}りに {行|い}って みたいです。",
+            "vi": "Tôi muốn thử đi lễ hội của Nhật.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4004",
+        "pattern": "いA（〜い）→ 〜さ",
+        "vi": "Đổi tính từ thành danh từ chỉ mức độ",
+        "explain": "Bỏ い thêm さ: ながい → ながさ, おもい → おもさ, たかい → たかさ, おおきい → おおきさ.",
+        "viMistake": "いい đổi thành よさ. Đi với はかります, しらべます, しって います.",
+        "examples": [
+          {
+            "jp": "この {箱|はこ}の {重|おも}さを {量|はか}って ください。",
+            "vi": "Hãy cân trọng lượng cái hộp này.",
+            "audio": null
+          },
+          {
+            "jp": "{富士山|ふじさん}の {高|たか}さを {知|し}って いますか。",
+            "vi": "Bạn có biết núi Phú Sĩ cao bao nhiêu không?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4005",
+        "pattern": "〜でしょうか",
+        "vi": "Hỏi lịch sự, mềm hơn ですか",
+        "explain": "Mở rộng từ cụm どうでしょうか trong bài. Thay ですか bằng でしょうか khi hỏi người trên hoặc hỏi điều người nghe có thể không chắc.",
+        "viMistake": "Động từ đứng trước でしょうか ở thể thường: いつ とうちゃくするでしょうか.",
+        "examples": [
+          {
+            "jp": "{発表会|はっぴょうかい}は {何時|なんじ}から でしょうか。",
+            "vi": "Buổi báo cáo bắt đầu từ mấy giờ ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}、わたしの {作文|さくぶん}は どうでしょうか。",
+            "vi": "Thưa thầy, bài văn của em thế nào ạ?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4001",
+        "type": "title",
+        "jp": "第40課 · か・かどうか・てみます",
+        "vi": "Bài 40 · Câu hỏi lồng và làm thử"
+      },
+      {
+        "id": "s4002",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói điều mình chưa biết hoặc đang lo bằng câu hỏi lồng với か và かどうか. Nói định làm thử một việc. Hỏi kích thước, cân nặng và xin ý kiến lịch sự."
+      },
+      {
+        "id": "s4003",
+        "type": "vocab",
+        "refs": ["v4001", "v4002", "v4003", "v4004", "v4005", "v4006", "v4007", "v4008"]
+      },
+      {
+        "id": "s4004",
+        "type": "vocab",
+        "refs": ["v4009", "v4010", "v4011", "v4012", "v4013", "v4014", "v4015", "v4016"]
+      },
+      {
+        "id": "s4005",
+        "type": "vocab",
+        "refs": ["v4017", "v4018", "v4019", "v4020", "v4021", "v4022", "v4023", "v4024"]
+      },
+      {
+        "id": "s4006",
+        "type": "vocab",
+        "refs": ["v4025", "v4026", "v4027", "v4028", "v4029", "v4030", "v4031", "v4032"]
+      },
+      {
+        "id": "s4007",
+        "type": "vocab",
+        "refs": ["v4033", "v4034", "v4035", "v4036", "v4037", "v4038", "v4039", "v4040"]
+      },
+      {
+        "id": "s4008",
+        "type": "vocab",
+        "refs": ["v4041", "v4042", "v4043", "v4044", "v4045"]
+      },
+      {
+        "id": "s4009",
+        "type": "grammar",
+        "ref": "g4001"
+      },
+      {
+        "id": "s4010",
+        "type": "example",
+        "ref": "g4001",
+        "reveal": true
+      },
+      {
+        "id": "s4011",
+        "type": "quiz",
+        "ref": "q4001"
+      },
+      {
+        "id": "s4012",
+        "type": "grammar",
+        "ref": "g4002"
+      },
+      {
+        "id": "s4013",
+        "type": "example",
+        "ref": "g4002",
+        "reveal": true
+      },
+      {
+        "id": "s4014",
+        "type": "quiz",
+        "ref": "q4003"
+      },
+      {
+        "id": "s4015",
+        "type": "table",
+        "title": "Đổi câu hỏi thành câu lồng",
+        "columns": ["Câu hỏi gốc", "Câu lồng"],
+        "rows": [
+          [
+            "{何時|なんじ}に {出発|しゅっぱつ}しますか",
+            "{何時|なんじ}に {出発|しゅっぱつ}するか、{確|たし}かめます"
+          ],
+          ["サイズが {合|あ}いますか", "サイズが {合|あ}うか どうか、わかりません"],
+          ["どれが {必要|ひつよう}ですか", "どれが {必要|ひつよう}か、{教|おし}えて ください"],
+          [
+            "{会場|かいじょう}は {静|しず}かですか",
+            "{会場|かいじょう}が {静|しず}かか どうか、{知|し}りません"
+          ],
+          [
+            "{誕生日|たんじょうび}は いつですか",
+            "{誕生日|たんじょうび}が いつか、{覚|おぼ}えて いますか"
+          ]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Hỏi học viên câu gốc có từ để hỏi không, rồi mới chọn か hay かどうか."
+      },
+      {
+        "id": "s4016",
+        "type": "quiz",
+        "ref": "q4004"
+      },
+      {
+        "id": "s4017",
+        "type": "grammar",
+        "ref": "g4003"
+      },
+      {
+        "id": "s4018",
+        "type": "example",
+        "ref": "g4003",
+        "reveal": true
+      },
+      {
+        "id": "s4019",
+        "type": "quiz",
+        "ref": "q4007"
+      },
+      {
+        "id": "s4020",
+        "type": "grammar",
+        "ref": "g4004"
+      },
+      {
+        "id": "s4021",
+        "type": "example",
+        "ref": "g4004",
+        "reveal": true
+      },
+      {
+        "id": "s4022",
+        "type": "quiz",
+        "ref": "q4009"
+      },
+      {
+        "id": "s4023",
+        "type": "table",
+        "title": "Đo và cân",
+        "columns": ["Tính từ", "Danh từ", "Đơn vị hay dùng"],
+        "rows": [
+          ["{長|なが}い", "{長|なが}さ", "センチ・ミリ"],
+          ["{重|おも}い", "{重|おも}さ", "グラム・キロ"],
+          ["{高|たか}い", "{高|たか}さ", "メートル・センチ"],
+          ["{大|おお}きい", "{大|おお}きさ", "センチ"],
+          ["いい", "よさ", "—"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên hỏi nhau: このペンの長さは何センチですか. Gợi ý 〜以上, 〜以下 khi nói giới hạn."
+      },
+      {
+        "id": "s4024",
+        "type": "grammar",
+        "ref": "g4005"
+      },
+      {
+        "id": "s4025",
+        "type": "example",
+        "ref": "g4005",
+        "reveal": true
+      },
+      {
+        "id": "s4026",
+        "type": "quiz",
+        "ref": "q4011"
+      },
+      {
+        "id": "s4027",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["相", "{相談|そうだん}", "lẫn nhau"],
+          ["談", "{相談|そうだん}", "bàn luận"],
+          ["数", "{数|かぞ}えます", "đếm, số"],
+          ["測", "{測|はか}ります", "đo"],
+          ["確", "{確|たし}かめます", "chắc chắn"],
+          ["発", "{出発|しゅっぱつ}・{発表|はっぴょう}", "phát"],
+          ["到", "{到着|とうちゃく}", "đến"],
+          ["表", "{表|おもて}・{発表|はっぴょう}", "mặt ngoài, biểu"],
+          ["裏", "{裏|うら}", "mặt sau"],
+          ["重", "{重|おも}さ", "nặng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4028",
+        "type": "table",
+        "title": "Từ tham khảo · Đơn vị, đường, hình, hoa văn",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["メートル・キロメートル", "mét, ki-lô-mét"],
+          ["リットル", "lít"],
+          ["{直線|ちょくせん}・{曲線|きょくせん}", "đường thẳng, đường cong"],
+          ["{点線|てんせん}", "đường chấm chấm"],
+          ["{丸|まる}・{三角|さんかく}・{四角|しかく}", "hình tròn, tam giác, tứ giác"],
+          ["しま{模様|もよう}", "hoa văn kẻ sọc"],
+          ["{水玉|みずたま}{模様|もよう}", "hoa văn chấm bi"],
+          ["{花柄|はながら}", "hoa văn hình hoa"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên mô tả áo hoặc khăn của mình: しま模様の シャツです."
+      },
+      {
+        "id": "s4029",
+        "type": "dialogue",
+        "title": "Hội thoại · Xin ý kiến trước bài kiểm tra",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Nam",
+            "jp": "{先生|せんせい}、ちょっと {相談|そうだん}したい ことが あるんですが…。",
+            "vi": "Thưa cô, em có chuyện muốn xin ý kiến ạ."
+          },
+          {
+            "speaker": "Cô giáo",
+            "jp": "はい、どうしましたか。",
+            "vi": "Ừ, có chuyện gì vậy?"
+          },
+          {
+            "speaker": "Nam",
+            "jp": "{来月|らいげつ}の テストに {合格|ごうかく}できるか どうか、{心配|しんぱい}なんです。",
+            "vi": "Em lo không biết có đỗ bài kiểm tra tháng sau hay không."
+          },
+          {
+            "speaker": "Cô giáo",
+            "jp": "どんな {問題|もんだい}が {出|で}るか、{知|し}って いますか。",
+            "vi": "Em có biết đề sẽ ra những câu nào không?"
+          },
+          {
+            "speaker": "Nam",
+            "jp": "いいえ。{去年|きょねん}の {問題|もんだい}を やって みた ほうが いいでしょうか。",
+            "vi": "Dạ không. Em có nên thử làm đề năm ngoái không ạ?"
+          },
+          {
+            "speaker": "Cô giáo",
+            "jp": "ええ、{一度|いちど} やって みて ください。{結果|けっか}を {見|み}て、また {話|はな}しましょう。",
+            "vi": "Ừ, em làm thử một lần đi. Xem kết quả rồi mình nói chuyện tiếp."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Nam lo gì? Cô giáo khuyên làm gì?"
+      },
+      {
+        "id": "s4030",
+        "type": "quiz",
+        "ref": "q4018"
+      },
+      {
+        "id": "s4031",
+        "type": "dialogue",
+        "title": "Nghe · Đăng ký giải chạy",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{来月|らいげつ}の マラソン{大会|たいかい}に {申|もう}し{込|こ}みましたか。",
+            "vi": "Bạn đã đăng ký giải marathon tháng sau chưa?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "まだです。{何|なん}キロ {走|はし}るか、わからなくて…。",
+            "vi": "Chưa. Mình chưa biết phải chạy bao nhiêu cây số."
+          },
+          {
+            "speaker": "An",
+            "jp": "１０キロですよ。{申|もう}し{込|こ}みは {金曜日|きんようび}までです。",
+            "vi": "10 cây số đấy. Hạn đăng ký đến thứ Sáu."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "じゃ、{走|はし}れるか どうか、{今週|こんしゅう} {練習|れんしゅう}して みます。",
+            "vi": "Vậy tuần này mình sẽ tập thử xem có chạy được không."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi: chạy bao nhiêu cây số, hạn đăng ký là khi nào?"
+      },
+      {
+        "id": "s4032",
+        "type": "quiz",
+        "ref": "q4019"
+      },
+      {
+        "id": "s4033",
+        "type": "quiz",
+        "ref": "q4020"
+      },
+      {
+        "id": "s4034",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          ["か、／だれが／{来|く}る／わかりません", "だれが {来|く}るか、わかりません。"],
+          [
+            "かどうか、／ある／{間違|まちが}いが／{見|み}ます",
+            "{間違|まちが}いが あるか どうか、{見|み}ます。"
+          ],
+          ["みたいです／{着物|きもの}を／{着|き}て", "{着物|きもの}を {着|き}て みたいです。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4035",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Tôi không biết giá bao nhiêu.", "{値段|ねだん}が いくらか、わかりません。"],
+          [
+            "Chưa biết Tanaka có đến không.",
+            "{田中|たなか}さんが {来|く}るか どうか、わかりません。"
+          ],
+          [
+            "Tôi muốn thử ăn món ăn Nhật này.",
+            "この {日本料理|にほんりょうり}を {食|た}べて みたいです。"
+          ],
+          ["Hãy đo chiều dài của cái bàn.", "{机|つくえ}の {長|なが}さを {測|はか}って ください。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4036",
+        "type": "table",
+        "title": "Nhập vai · Giới thiệu nơi tham quan",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hỏi bạn đã đến nơi đó chưa", "{京都|きょうと}へ {行|い}った ことが ありますか。"],
+          ["B", "Chưa đi, muốn đi thử", "いいえ。{一度|いちど} {行|い}って みたいです。"],
+          [
+            "A",
+            "Hỏi điều chưa biết",
+            "{何月|なんがつ}が いちばん きれいか、{知|し}って いますか。"
+          ],
+          ["B", "Trả lời chưa biết, sẽ tìm hiểu", "わかりません。{調|しら}べて みます。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi địa danh theo nơi học viên muốn đến: 北海道, 沖縄, 富士山."
+      },
+      {
+        "id": "s4037",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Có từ để hỏi: 疑問詞 … 普通形 + か.\nKhông có từ để hỏi: 普通形 + かどうか.\nDanh từ, なA bỏ だ trước か.\nVて みます: làm thử. いA → さ: mức độ.\nでしょうか: hỏi lịch sự.",
+        "teacherNotes": "Dễ nhầm: giữ thể ます trong câu lồng, thêm だ trước か, dùng かどうか khi đã có từ để hỏi. Liên hệ ので ở bài 39. Sang bài 41, học cách cho nhận với người trên, người dưới."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4001",
+        "type": "choice",
+        "prompt": "Hỏi giờ xuất phát: なんじに（　）か、おしえて ください。",
+        "options": ["しゅっぱつします", "しゅっぱつする", "しゅっぱつして", "しゅっぱつしよう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Câu lồng dùng thể thường: しゅっぱつするか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4002",
+        "type": "choice",
+        "prompt": "かいじょうが どこ（　）、しって いますか。",
+        "options": ["でか", "ですか", "か", "かどうか"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Danh từ bỏ だ rồi thêm か. Có từ để hỏi どこ nên không dùng かどうか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4003",
+        "type": "choice",
+        "prompt": "パーティーに（　）か どうか、まだ きめて いません。",
+        "options": ["いく", "いきます", "いって", "いきましょう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Trước かどうか dùng thể thường: いくか どうか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4004",
+        "type": "choice",
+        "prompt": "Câu nào đúng?",
+        "options": [
+          "だれが くるか どうか、わかりません。",
+          "だれが きますか、わかりません。",
+          "だれが くるだか、わかりません。",
+          "だれが くるか、わかりません。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Có từ để hỏi だれ thì dùng か với thể thường, không dùng かどうか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4005",
+        "type": "choice",
+        "prompt": "Chọn câu dùng か đúng.",
+        "options": [
+          "なにが ひつようか、そうだんしましょう。",
+          "なにが ひつようですか どうか、そうだんしましょう。",
+          "なにが ひつようか どうか、そうだんしましょう。",
+          "なにが ひつようですか、そうだんしましょう。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "なA bỏ だ trước か: ひつようか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4006",
+        "type": "choice",
+        "prompt": "この くつの サイズが（　）、はいて みます。",
+        "options": ["あうので", "あうか どうか", "あって", "あうのに"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Chưa biết có vừa hay không nên dùng あうか どうか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4007",
+        "type": "choice",
+        "prompt": "Muốn mặc thử quần: この ズボンを（　）みても いいですか。",
+        "options": ["きて", "はいて", "はく", "はいた"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Quần dùng はきます. Thử làm: Vて みます.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4008",
+        "type": "choice",
+        "prompt": "Câu nào nghĩa là 'Tôi thử đếm lại'?",
+        "options": [
+          "もう いちど かぞえて おきます。",
+          "もう いちど かぞえて います。",
+          "もう いちど かぞえて みます。",
+          "もう いちど かぞえて しまいます。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Vて みます: làm thử để biết kết quả.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4009",
+        "type": "choice",
+        "prompt": "Cân hành lý: にもつの（　）を はかります。",
+        "options": ["おもい", "おもく", "おもくて", "おもさ"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Cần danh từ: おもい → おもさ.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4010",
+        "type": "choice",
+        "prompt": "いい đổi thành danh từ chỉ mức độ là gì?",
+        "options": ["いさ", "よさ", "いいさ", "よいさ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "いい dùng gốc よい: よさ.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4011",
+        "type": "choice",
+        "prompt": "Hỏi cô giáo lịch sự hơn 'この さくぶんは どうですか'.",
+        "options": [
+          "この さくぶんは どうでしょうか。",
+          "この さくぶんは どうかな。",
+          "この さくぶんは どうだ。",
+          "この さくぶんは どうしようか。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "でしょうか mềm và lịch sự hơn ですか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4012",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là đo, cân?",
+        "options": ["かぞえます", "たしかめます", "はかります", "そうだんします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "測ります là đo, cân.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4013",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 到着します.",
+        "options": ["xuất phát", "xác nhận", "say", "đến nơi"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "到着します đọc とうちゃくします.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4014",
+        "type": "choice",
+        "prompt": "Tiệc cuối năm ở công ty gọi là gì?",
+        "options": ["しんねんかい", "ぼうねんかい", "にじかい", "はっぴょうかい"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "忘年会 là tiệc tất niên.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4015",
+        "type": "choice",
+        "prompt": "Mặt sau tờ giấy gọi là gì?",
+        "options": ["おもて", "きず", "うら", "まちがい"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "裏 là mặt sau, 表 là mặt trước.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4016",
+        "type": "choice",
+        "prompt": "えんぴつを 3（　）かいました。",
+        "options": ["こ", "まい", "はい", "ほん"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Bút chì là vật dài, đếm bằng 本: さんぼん.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4017",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 以上: 18さい いじょう.",
+        "options": ["từ 18 tuổi trở lên", "dưới 18 tuổi", "khoảng 18 tuổi", "đúng 18 tuổi"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "以上 bao gồm cả số đó trở lên.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4018",
+        "type": "choice",
+        "prompt": "Nam lo lắng điều gì?",
+        "options": [
+          "Quên lịch thi",
+          "Chưa đăng ký thi",
+          "Không biết có đỗ bài kiểm tra không",
+          "Điểm năm ngoái thấp"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "合格できるかどうか、心配: lo không biết có đỗ không.",
+        "points": 1,
+        "tags": ["minna-40"],
+        "passage": "ナム：{来月|らいげつ}の テストに {合格|ごうかく}できるか どうか、{心配|しんぱい}なんです。"
+      },
+      {
+        "id": "q4019",
+        "type": "choice",
+        "prompt": "Tuần này Mai sẽ làm gì?",
+        "options": [
+          "Đăng ký ngay",
+          "Hỏi chạy bao nhiêu cây số",
+          "Mua giày chạy",
+          "Tập thử xem có chạy được không"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "走れるかどうか、練習してみます: tập thử xem có chạy được không.",
+        "points": 1,
+        "tags": ["minna-40"],
+        "passage": "マイ：じゃ、{走|はし}れるか どうか、{今週|こんしゅう} {練習|れんしゅう}して みます。"
+      },
+      {
+        "id": "q4020",
+        "type": "choice",
+        "prompt": "Ngày mai người viết sẽ hỏi thầy điều gì?",
+        "options": [
+          "Thời gian phát biểu bao nhiêu phút",
+          "Chủ đề bài phát biểu",
+          "Ngày tổ chức",
+          "Có được tập trước không"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "発表の時間が何分か、先生に確かめます.",
+        "points": 1,
+        "tags": ["minna-40"],
+        "passage": "{来週|らいしゅう}の {発表会|はっぴょうかい}で、わたしは ベトナムの お{祭|まつ}りに ついて {話|はな}します。{発表|はっぴょう}の {時間|じかん}が {何分|なんぷん}か、まだ {聞|き}いて いないので、あした {先生|せんせい}に {確|たし}かめます。うまく いくか どうか {心配|しんぱい}なので、きのう {友達|ともだち}の {前|まえ}で {練習|れんしゅう}して みました。"
+      },
+      {
+        "id": "q4021",
+        "type": "choice",
+        "prompt": "Hôm qua người viết đã làm gì?",
+        "options": ["Đi lễ hội", "Tập nói thử trước bạn bè", "Hỏi thầy giáo", "Viết bài phát biểu"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "友達の前で練習してみました: tập thử trước bạn bè.",
+        "points": 1,
+        "tags": ["minna-40"],
+        "passage": "{来週|らいしゅう}の {発表会|はっぴょうかい}で、わたしは ベトナムの お{祭|まつ}りに ついて {話|はな}します。{発表|はっぴょう}の {時間|じかん}が {何分|なんぷん}か、まだ {聞|き}いて いないので、あした {先生|せんせい}に {確|たし}かめます。うまく いくか どうか {心配|しんぱい}なので、きのう {友達|ともだち}の {前|まえ}で {練習|れんしゅう}して みました。"
+      },
+      {
+        "id": "q4022",
+        "type": "fill",
+        "prompt": "Điền: なにが ひつよう（　）、おしえて ください。",
+        "answer": ["か", "なのか"],
+        "inputMode": "hiragana",
+        "explain": "Có từ để hỏi なに nên dùng か.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4023",
+        "type": "fill",
+        "prompt": "Điền: あした あめが ふるか（　）、わかりません。",
+        "answer": ["どうか", "ふらないか"],
+        "inputMode": "hiragana",
+        "explain": "Câu hỏi có/không: ふるか どうか, cũng nói ふるか ふらないか.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4024",
+        "type": "fill",
+        "prompt": "Điền danh từ từ ながい: ズボンの（　）を はかります。",
+        "answer": ["ながさ"],
+        "inputMode": "hiragana",
+        "explain": "ながい → ながさ.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4025",
+        "type": "fill",
+        "prompt": "Điền: この くつを はいて（　）ても いいですか。",
+        "answer": ["み"],
+        "inputMode": "hiragana",
+        "explain": "Vて みても いいですか: thử được không.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4026",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Tôi sẽ mặc thử xem chiếc quần này có vừa không.",
+        "tokens": [
+          {
+            "id": "q4026-1",
+            "text": "この ズボンの"
+          },
+          {
+            "id": "q4026-2",
+            "text": "サイズが あうか"
+          },
+          {
+            "id": "q4026-3",
+            "text": "どうか、"
+          },
+          {
+            "id": "q4026-4",
+            "text": "はいて みます。"
+          }
+        ],
+        "answer": ["q4026-1", "q4026-2", "q4026-3", "q4026-4"],
+        "explain": "Câu hỏi lồng 〜かどうか đứng trước, hành động thử ở cuối câu.",
+        "points": 1,
+        "tags": ["minna-40"]
+      },
+      {
+        "id": "q4027",
+        "type": "match",
+        "prompt": "Nối danh từ chỉ mức độ với nghĩa.",
+        "left": ["ながさ", "おもさ", "たかさ", "おおきさ"],
+        "right": ["cân nặng", "chiều cao", "chiều dài", "kích thước"],
+        "answer": [
+          [0, 2],
+          [1, 0],
+          [2, 1],
+          [3, 3]
+        ],
+        "explain": "長さ chiều dài, 重さ cân nặng, 高さ chiều cao, 大きさ kích thước.",
+        "points": 1,
+        "tags": ["minna-40"]
+      }
+    ]
+  }
+}

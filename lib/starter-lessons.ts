@@ -37,6 +37,7 @@ import minnaLesson36 from "@/content/starters/minna-2-36.json";
 import minnaLesson37 from "@/content/starters/minna-2-37.json";
 import minnaLesson38 from "@/content/starters/minna-2-38.json";
 import minnaLesson39 from "@/content/starters/minna-2-39.json";
+import minnaLesson40 from "@/content/starters/minna-2-40.json";
 import n4GrammarMap from "@/content/starters/n4-grammar-map.json";
 import n4Grammar1 from "@/content/starters/n4-grammar-1.json";
 import n4Grammar2 from "@/content/starters/n4-grammar-2.json";
@@ -300,6 +301,12 @@ export const STARTER_LESSONS: readonly StarterLesson[] = [
     course: "Minna no Nihongo Sơ cấp II",
     buttonLabel: "Tạo bài 39 từ mẫu",
     draft: lessonDraftSchema.parse(minnaLesson39),
+  },
+  {
+    id: "minna-2-40",
+    course: "Minna no Nihongo Sơ cấp II",
+    buttonLabel: "Tạo bài 40 từ mẫu",
+    draft: lessonDraftSchema.parse(minnaLesson40),
   },
   {
     id: "n4-grammar-map",
