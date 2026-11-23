@@ -1,0 +1,864 @@
+{
+  "id": "minna-2-38",
+  "title": "Bài 38 – Danh từ hóa với の",
+  "titleJa": "第38課・のは、のが、のを",
+  "summary": "Danh từ hóa hành động để nhận xét, kể sở thích, báo việc quên và hỏi về sự việc.",
+  "order": 38,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3801",
+        "jp": "さんかします",
+        "romaji": "sanka shimasu",
+        "vi": "tham gia",
+        "audio": null,
+        "kanji": "参加します",
+        "note": "けんがくに さんかします"
+      },
+      {
+        "id": "v3802",
+        "jp": "しゅうかん",
+        "romaji": "shuukan",
+        "vi": "thói quen, tập quán",
+        "audio": null,
+        "kanji": "習慣"
+      },
+      {
+        "id": "v3803",
+        "jp": "むら",
+        "romaji": "mura",
+        "vi": "làng",
+        "audio": null,
+        "kanji": "村"
+      },
+      {
+        "id": "v3804",
+        "jp": "ほうほう",
+        "romaji": "houhou",
+        "vi": "phương pháp",
+        "audio": null,
+        "kanji": "方法"
+      },
+      {
+        "id": "v3805",
+        "jp": "こうじょう",
+        "romaji": "koujou",
+        "vi": "nhà máy",
+        "audio": null,
+        "kanji": "工場"
+      },
+      {
+        "id": "v3806",
+        "jp": "けんこう",
+        "romaji": "kenkou",
+        "vi": "sức khỏe",
+        "audio": null,
+        "kanji": "健康"
+      },
+      {
+        "id": "v3807",
+        "jp": "そだてます",
+        "romaji": "sodatemasu",
+        "vi": "nuôi dưỡng, trồng",
+        "audio": null,
+        "kanji": "育てます"
+      },
+      {
+        "id": "v3808",
+        "jp": "はこびます",
+        "romaji": "hakobimasu",
+        "vi": "vận chuyển, mang",
+        "audio": null,
+        "kanji": "運びます"
+      },
+      {
+        "id": "v3809",
+        "jp": "にゅういんします",
+        "romaji": "nyuuin shimasu",
+        "vi": "nhập viện",
+        "audio": null,
+        "kanji": "入院します"
+      },
+      {
+        "id": "v3810",
+        "jp": "たいいんします",
+        "romaji": "taiin shimasu",
+        "vi": "xuất viện",
+        "audio": null,
+        "kanji": "退院します"
+      },
+      {
+        "id": "v3811",
+        "jp": "いれます",
+        "romaji": "iremasu",
+        "vi": "bật nguồn",
+        "audio": null,
+        "kanji": "入れます",
+        "note": "でんげんを いれます"
+      },
+      {
+        "id": "v3812",
+        "jp": "きります",
+        "romaji": "kirimasu",
+        "vi": "tắt nguồn",
+        "audio": null,
+        "kanji": "切ります",
+        "note": "でんげんを きります"
+      },
+      {
+        "id": "v3813",
+        "jp": "かけます",
+        "romaji": "kakemasu",
+        "vi": "khóa",
+        "audio": null,
+        "kanji": "掛けます",
+        "note": "かぎを かけます"
+      },
+      {
+        "id": "v3814",
+        "jp": "きもちが いい",
+        "romaji": "kimochi ga ii",
+        "vi": "dễ chịu",
+        "audio": null,
+        "kanji": "気持ちがいい"
+      },
+      {
+        "id": "v3815",
+        "jp": "きもちが わるい",
+        "romaji": "kimochi ga warui",
+        "vi": "khó chịu, buồn nôn",
+        "audio": null,
+        "kanji": "気持ちが悪い"
+      },
+      {
+        "id": "v3816",
+        "jp": "おおきな",
+        "romaji": "ookina",
+        "vi": "lớn",
+        "audio": null,
+        "kanji": "大きな",
+        "note": "Dùng trước danh từ: おおきな むら."
+      },
+      {
+        "id": "v3817",
+        "jp": "ちいさな",
+        "romaji": "chiisana",
+        "vi": "nhỏ",
+        "audio": null,
+        "kanji": "小さな",
+        "note": "Dùng trước danh từ: ちいさな むら."
+      },
+      {
+        "id": "v3818",
+        "jp": "あかちゃん",
+        "romaji": "akachan",
+        "vi": "em bé",
+        "audio": null,
+        "kanji": "赤ちゃん"
+      },
+      {
+        "id": "v3819",
+        "jp": "しょうがっこう",
+        "romaji": "shougakkou",
+        "vi": "trường tiểu học",
+        "audio": null,
+        "kanji": "小学校"
+      },
+      {
+        "id": "v3820",
+        "jp": "ちゅうがっこう",
+        "romaji": "chuugakkou",
+        "vi": "trường trung học cơ sở",
+        "audio": null,
+        "kanji": "中学校"
+      },
+      {
+        "id": "v3821",
+        "jp": "えきまえ",
+        "romaji": "ekimae",
+        "vi": "khu vực trước ga",
+        "audio": null,
+        "kanji": "駅前"
+      },
+      {
+        "id": "v3822",
+        "jp": "かいがん",
+        "romaji": "kaigan",
+        "vi": "bờ biển",
+        "audio": null,
+        "kanji": "海岸"
+      },
+      {
+        "id": "v3823",
+        "jp": "でんげん",
+        "romaji": "dengen",
+        "vi": "nguồn điện",
+        "audio": null,
+        "kanji": "電源"
+      },
+      {
+        "id": "v3824",
+        "jp": "〜せい",
+        "romaji": "sei",
+        "vi": "sản xuất tại…",
+        "audio": null,
+        "kanji": "〜製"
+      },
+      {
+        "id": "v3825",
+        "jp": "あ、いけない。",
+        "romaji": "a ikenai",
+        "vi": "Ôi, chết rồi!",
+        "audio": null
+      },
+      {
+        "id": "v3826",
+        "jp": "おさきに しつれいします。",
+        "romaji": "osaki ni shitsurei shimasu",
+        "vi": "Tôi xin phép về trước.",
+        "audio": null,
+        "kanji": "お先に失礼します。"
+      },
+      {
+        "id": "v3827",
+        "jp": "かいらん",
+        "romaji": "kairan",
+        "vi": "tài liệu chuyển lần lượt cho mọi người xem",
+        "audio": null,
+        "kanji": "回覧"
+      },
+      {
+        "id": "v3828",
+        "jp": "けんきゅうしつ",
+        "romaji": "kenkyuushitsu",
+        "vi": "phòng nghiên cứu",
+        "audio": null,
+        "kanji": "研究室"
+      },
+      {
+        "id": "v3829",
+        "jp": "きちんと",
+        "romaji": "kichinto",
+        "vi": "ngay ngắn, cẩn thận",
+        "audio": null
+      },
+      {
+        "id": "v3830",
+        "jp": "せいりします",
+        "romaji": "seiri shimasu",
+        "vi": "sắp xếp cho gọn",
+        "audio": null,
+        "kanji": "整理します"
+      },
+      {
+        "id": "v3831",
+        "jp": "〜という ほん",
+        "romaji": "to iu hon",
+        "vi": "cuốn sách có tên…",
+        "audio": null,
+        "kanji": "〜という本"
+      },
+      {
+        "id": "v3832",
+        "jp": "〜さつ",
+        "romaji": "satsu",
+        "vi": "lượng từ cho sách, vở",
+        "audio": null,
+        "kanji": "〜冊",
+        "image": "/icons/vocab/books.svg"
+      },
+      {
+        "id": "v3833",
+        "jp": "はんこ",
+        "romaji": "hanko",
+        "vi": "con dấu",
+        "audio": null,
+        "kanji": "判子"
+      },
+      {
+        "id": "v3834",
+        "jp": "おします",
+        "romaji": "oshimasu",
+        "vi": "ấn, đóng dấu",
+        "audio": null,
+        "kanji": "押します",
+        "note": "はんこを おします"
+      },
+      {
+        "id": "v3835",
+        "jp": "ゆびわ",
+        "romaji": "yubiwa",
+        "vi": "nhẫn",
+        "audio": null,
+        "kanji": "指輪"
+      },
+      {
+        "id": "v3836",
+        "jp": "おととし",
+        "romaji": "ototoshi",
+        "vi": "năm kia",
+        "audio": null,
+        "kanji": "一昨年"
+      },
+      {
+        "id": "v3837",
+        "jp": "うそを つきます",
+        "romaji": "uso o tsukimasu",
+        "vi": "nói dối",
+        "audio": null,
+        "kanji": "嘘をつきます"
+      },
+      {
+        "id": "v3838",
+        "jp": "かな",
+        "romaji": "kana",
+        "vi": "chữ kana, gồm hiragana và katakana",
+        "audio": null,
+        "kanji": "仮名"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3801",
+        "pattern": "Vる + のは + tính từ",
+        "vi": "Nhận xét về một hành động",
+        "explain": "Thêm の vào cụm động từ để biến cả cụm thành chủ đề, rồi dùng は trước phần nhận xét.",
+        "viMistake": "Dùng は để nhận xét hành động. Dùng が trong mẫu sở thích ở slide sau.",
+        "examples": [
+          {
+            "jp": "{海岸|かいがん}を {歩|ある}く のは {気持|きも}ちが いいです。",
+            "vi": "Đi dạo dọc bờ biển rất dễ chịu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3802",
+        "pattern": "Vる + のが + tính từ",
+        "vi": "Nói thích, giỏi hoặc đánh giá tốc độ",
+        "explain": "Dùng のが trước すき, きらい, じょうず, へた, hoặc はやい, おそい khi đánh giá việc làm.",
+        "viMistake": "Dùng りょうりを する のが すきです. を đi với する trong cụm, còn が đi sau の.",
+        "examples": [
+          {
+            "jp": "{弟|おとうと}は {花|はな}を {育|そだ}てる のが {好|す}きです。",
+            "vi": "Em trai tôi thích trồng hoa.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3803",
+        "pattern": "Vる + のを忘れました",
+        "vi": "Nói quên làm một việc",
+        "explain": "Đặt việc lẽ ra phải làm trước のを忘れました. Động từ ở dạng từ điển.",
+        "viMistake": "かぎを かける のを わすれました là quên khóa, còn かぎを わすれました là quên chìa khóa.",
+        "examples": [
+          {
+            "jp": "{研究室|けんきゅうしつ}の {電源|でんげん}を {切|き}る のを {忘|わす}れました。",
+            "vi": "Tôi quên tắt nguồn điện ở phòng nghiên cứu.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3804",
+        "pattern": "普通形 + のを知っていますか",
+        "vi": "Hỏi người nghe có biết một sự việc không",
+        "explain": "Đặt sự việc trước のを知っていますか. Khi trả lời chưa biết tin vừa nghe, có thể nói 知りませんでした.",
+        "viMistake": "Dùng ひらいた のを nếu sự việc mở cửa đã xảy ra, dùng ひらく のを nếu đó là kế hoạch.",
+        "examples": [
+          {
+            "jp": "{駅前|えきまえ}に {新|あたら}しい {店|みせ}が できた のを {知|し}って いますか。",
+            "vi": "Bạn có biết trước ga mới có một cửa hàng không?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3805",
+        "pattern": "〜のは Nです",
+        "vi": "Nhấn mạnh người, nơi hoặc thời điểm",
+        "explain": "Đưa sự việc lên trước のは. Đặt thông tin muốn làm nổi bật sau は.",
+        "viMistake": "Nơi xảy ra sự việc có thể đứng cuối: うまれた のは この むらです.",
+        "examples": [
+          {
+            "jp": "わたしが この {村|むら}に {来|き}た のは {一昨年|おととし}です。",
+            "vi": "Tôi đến làng này vào năm kia.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3801",
+        "type": "title",
+        "jp": "第38課 · のは・のが・のを",
+        "vi": "Bài 38 · Nói về hành động và sự việc"
+      },
+      {
+        "id": "s3802",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Dùng の để nói về một việc, kể sở thích, báo việc mình quên và hỏi người khác có biết tin không."
+      },
+      {
+        "id": "s3803",
+        "type": "vocab",
+        "refs": ["v3801", "v3802", "v3803", "v3804", "v3805", "v3806", "v3807", "v3808"]
+      },
+      {
+        "id": "s3804",
+        "type": "vocab",
+        "refs": ["v3809", "v3810", "v3811", "v3812", "v3813", "v3814", "v3815", "v3816"]
+      },
+      {
+        "id": "s3805",
+        "type": "vocab",
+        "refs": ["v3817", "v3818", "v3819", "v3820", "v3821", "v3822", "v3823", "v3824"]
+      },
+      {
+        "id": "s3806",
+        "type": "vocab",
+        "refs": ["v3825", "v3826", "v3827", "v3828", "v3829", "v3830", "v3831", "v3832"]
+      },
+      {
+        "id": "s3807",
+        "type": "vocab",
+        "refs": ["v3833", "v3834", "v3835", "v3836", "v3837", "v3838"]
+      },
+      {
+        "id": "s3808",
+        "type": "grammar",
+        "ref": "g3801"
+      },
+      {
+        "id": "s3809",
+        "type": "example",
+        "ref": "g3801",
+        "reveal": true
+      },
+      {
+        "id": "s3810",
+        "type": "quiz",
+        "ref": "q3801"
+      },
+      {
+        "id": "s3811",
+        "type": "grammar",
+        "ref": "g3802"
+      },
+      {
+        "id": "s3812",
+        "type": "example",
+        "ref": "g3802",
+        "reveal": true
+      },
+      {
+        "id": "s3813",
+        "type": "quiz",
+        "ref": "q3802"
+      },
+      {
+        "id": "s3814",
+        "type": "grammar",
+        "ref": "g3803"
+      },
+      {
+        "id": "s3815",
+        "type": "example",
+        "ref": "g3803",
+        "reveal": true
+      },
+      {
+        "id": "s3816",
+        "type": "quiz",
+        "ref": "q3804"
+      },
+      {
+        "id": "s3817",
+        "type": "grammar",
+        "ref": "g3804"
+      },
+      {
+        "id": "s3818",
+        "type": "example",
+        "ref": "g3804",
+        "reveal": true
+      },
+      {
+        "id": "s3819",
+        "type": "quiz",
+        "ref": "q3806"
+      },
+      {
+        "id": "s3820",
+        "type": "grammar",
+        "ref": "g3805"
+      },
+      {
+        "id": "s3821",
+        "type": "example",
+        "ref": "g3805",
+        "reveal": true
+      },
+      {
+        "id": "s3822",
+        "type": "quiz",
+        "ref": "q3807"
+      },
+      {
+        "id": "s3823",
+        "type": "table",
+        "title": "Chọn trợ từ sau の",
+        "columns": ["Mục đích nói", "Mẫu"],
+        "rows": [
+          ["Nhận xét", "{歩|ある}く のは {楽|たの}しいです"],
+          ["Nói sở thích", "{歩|ある}く のが {好|す}きです"],
+          ["Nói quên làm", "{電話|でんわ}する のを {忘|わす}れました"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Liên hệ Vることができます ở bài 18. Với việc quên làm, ưu tiên Vるのを忘れました. Khi nói sở thích, mẫu đang luyện là Vるのが好きです."
+      },
+      {
+        "id": "s3824",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["育", "{育|そだ}てます", "nuôi dưỡng"],
+          ["運", "{運|はこ}びます", "vận chuyển"],
+          ["源", "{電源|でんげん}", "nguồn điện"],
+          ["岸", "{海岸|かいがん}", "bờ biển"],
+          ["冊", "{冊|さつ}", "lượng từ cho sách"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3825",
+        "type": "table",
+        "title": "Từ tham khảo · Vị trí",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{手前|てまえ}", "phía gần, phía trước"],
+          ["{奥|おく}", "phía sâu bên trong"],
+          ["{隣|となり}", "bên cạnh"],
+          ["{向|む}かい", "đối diện"],
+          ["{間|あいだ}", "ở giữa hai vật"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3826",
+        "type": "dialogue",
+        "title": "Hội thoại · Trước khi rời phòng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Mai",
+            "jp": "お{先|さき}に {失礼|しつれい}します。",
+            "vi": "Tôi xin phép về trước."
+          },
+          {
+            "speaker": "An",
+            "jp": "あの、{窓|まど}を {閉|し}めましたか。",
+            "vi": "À, bạn đóng cửa sổ chưa?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "あ、いけない。{閉|し}める のを {忘|わす}れました。",
+            "vi": "Ôi, tôi quên đóng rồi."
+          },
+          {
+            "speaker": "An",
+            "jp": "わたしが {閉|し}めます。{電源|でんげん}を {切|き}った のは {田中|たなか}さんですか。",
+            "vi": "Tôi sẽ đóng. Người tắt nguồn là anh Tanaka à?"
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi Mai quên làm gì và An hỏi ai đã tắt nguồn."
+      },
+      {
+        "id": "s3827",
+        "type": "quiz",
+        "ref": "q3816"
+      },
+      {
+        "id": "s3828",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: です／この {村|むら}／のは／{生|う}まれた",
+            "{生|う}まれた のは この {村|むら}です。"
+          ],
+          ["Dịch: Tôi quên bật nguồn.", "{電源|でんげん}を {入|い}れる のを {忘|わす}れました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3829",
+        "type": "table",
+        "title": "Nhập vai · Hỏi về sở thích",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "A",
+            "Hỏi có thích trồng cây không",
+            "{植物|しょくぶつ}を {育|そだ}てる のが {好|す}きですか。"
+          ],
+          [
+            "B",
+            "Nói mình thích và nhận xét",
+            "はい。{花|はな}を {育|そだ}てる のは {楽|たの}しいです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3830",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "のは: nhận xét hoặc nhấn thông tin.\nのが: sở thích và đánh giá.\nのを: việc quên làm hoặc sự việc được biết.",
+        "teacherNotes": "Ôn cách chọn は／が／を theo vai trò của cả cụm. Sang bài 39, học cách nêu nguyên nhân và lý do."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3801",
+        "type": "choice",
+        "prompt": "Nhận xét việc đọc: ほんを よむ（　）たのしいです。",
+        "options": ["のは", "のを", "のに", "のと"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "のは đưa hành động lên làm chủ đề.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3802",
+        "type": "choice",
+        "prompt": "Nói thích trồng hoa: はなを そだてる（　）すきです。",
+        "options": ["のを", "のが", "のに", "のと"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Dùng のが trước 好き khi nói sở thích.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3803",
+        "type": "choice",
+        "prompt": "Nói giỏi sắp xếp: せいりする（　）じょうずです。",
+        "options": ["のを", "ので", "のが", "のと"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "のが đứng trước 上手です.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3804",
+        "type": "choice",
+        "prompt": "Nói quên khóa cửa: かぎを かける（　）わすれました。",
+        "options": ["のが", "のに", "のと", "のを"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Việc quên làm đứng trước のを忘れました.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3805",
+        "type": "choice",
+        "prompt": "Nói quên tắt nguồn: でんげんを（　）のを わすれました。",
+        "options": ["きる", "きって", "きります", "きらないで"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng thể từ điển cho việc lẽ ra cần làm.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3806",
+        "type": "choice",
+        "prompt": "Biết tin nhà máy đã đóng cửa: こうじょうが（　）のを しって いますか。",
+        "options": ["しまって", "しまった", "しまります", "しまり"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Dùng thể た khi việc đã xảy ra.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3807",
+        "type": "choice",
+        "prompt": "Chọn câu nhấn mạnh nơi sinh.",
+        "options": [
+          "この むらに いく つもりです。",
+          "この むらに すんで います。",
+          "うまれた のは この むらです。",
+          "この むらなら しって います。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Thông tin được nhấn đặt sau のは.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3808",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là nhà máy?",
+        "options": ["けんきゅうしつ", "むら", "かいがん", "こうじょう"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "工場 là nhà máy.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3809",
+        "type": "choice",
+        "prompt": "Cách nói bật nguồn là gì?",
+        "options": [
+          "でんげんを いれます",
+          "でんげんを きります",
+          "かぎを かけます",
+          "はんこを おします"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "電源を入れる là bật nguồn.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3810",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là xuất viện?",
+        "options": ["にゅういんします", "たいいんします", "せいりします", "さんかします"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "退院 là xuất viện.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3811",
+        "type": "choice",
+        "prompt": "Chọn lượng từ đếm sách.",
+        "options": ["にん", "だい", "さつ", "まい"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "冊 dùng để đếm sách, vở.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3812",
+        "type": "choice",
+        "prompt": "Cụm nào dùng khi rời chỗ làm trước đồng nghiệp?",
+        "options": [
+          "おはよう ございます。",
+          "いらっしゃいませ。",
+          "はじめまして。",
+          "おさきに しつれいします。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "お先に失礼します là lời chào khi về trước.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3813",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 一昨年.",
+        "options": ["năm kia", "năm ngoái", "tháng trước", "năm tới"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "一昨年 đọc おととし.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3814",
+        "type": "choice",
+        "prompt": "Từ nào chỉ con dấu?",
+        "options": ["ゆびわ", "はんこ", "かな", "でんげん"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "判子 là con dấu.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3815",
+        "type": "choice",
+        "prompt": "Từ nào chỉ vị trí trước ga?",
+        "options": ["かいがん", "こうじょう", "えきまえ", "むら"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "駅前 là khu vực trước ga.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3816",
+        "type": "choice",
+        "prompt": "Theo ghi chú, người viết đã quên việc gì?",
+        "options": ["Tắt nguồn", "Đóng dấu", "Xếp lại sách", "Khóa cửa"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "鍵をかけるのを忘れました là quên khóa cửa.",
+        "points": 1,
+        "tags": ["minna-38"],
+        "passage": "{研究室|けんきゅうしつ}の {電源|でんげん}は {切|き}りました。でも、{鍵|かぎ}を {掛|か}ける のを {忘|わす}れました。"
+      },
+      {
+        "id": "q3817",
+        "type": "fill",
+        "prompt": "Điền trợ từ: ほんを よむ の（　）すきです。",
+        "answer": ["が"],
+        "inputMode": "hiragana",
+        "explain": "Sở thích: のが好き.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3818",
+        "type": "fill",
+        "prompt": "Điền trợ từ: でんげんを きる の（　）わすれました。",
+        "answer": ["を"],
+        "inputMode": "hiragana",
+        "explain": "Việc quên làm: のを忘れました.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3819",
+        "type": "fill",
+        "prompt": "Điền trợ từ: うまれた の（　）この むらです。",
+        "answer": ["は"],
+        "inputMode": "hiragana",
+        "explain": "Thông tin nhấn mạnh đứng sau のは.",
+        "points": 1,
+        "tags": ["minna-38"]
+      },
+      {
+        "id": "q3820",
+        "type": "fill",
+        "prompt": "Điền trợ từ: かいぎが はじまった の（　）しって いますか。",
+        "answer": ["を"],
+        "inputMode": "hiragana",
+        "explain": "Sự việc được biết đứng trước のを知っていますか.",
+        "points": 1,
+        "tags": ["minna-38"]
+      }
+    ]
+  }
+}
