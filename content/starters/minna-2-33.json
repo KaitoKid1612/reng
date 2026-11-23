@@ -1,0 +1,955 @@
+{
+  "id": "minna-2-33",
+  "title": "Bài 33 – Biển báo và lời nhắn",
+  "titleJa": "第33課・標識と伝言",
+  "summary": "Hiểu chỉ dẫn, hỏi cách đọc và ý nghĩa, thuật lại hoặc nhờ chuyển lời.",
+  "order": 33,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3301",
+        "jp": "いくら〜ても",
+        "romaji": "ikura temo",
+        "vi": "dù có … đến đâu",
+        "audio": null
+      },
+      {
+        "id": "v3302",
+        "jp": "〜ほど",
+        "romaji": "hodo",
+        "vi": "khoảng… (số lượng hoặc thời gian)",
+        "audio": null
+      },
+      {
+        "id": "v3303",
+        "jp": "はじまります",
+        "romaji": "hajimarimasu",
+        "vi": "bắt đầu",
+        "audio": null,
+        "kanji": "始まります"
+      },
+      {
+        "id": "v3304",
+        "jp": "しゅっせきします",
+        "romaji": "shusseki shimasu",
+        "vi": "tham dự, có mặt",
+        "audio": null,
+        "kanji": "出席します",
+        "note": "かいぎに しゅっせきします"
+      },
+      {
+        "id": "v3305",
+        "jp": "もどります",
+        "romaji": "modorimasu",
+        "vi": "quay lại",
+        "audio": null,
+        "kanji": "戻ります"
+      },
+      {
+        "id": "v3306",
+        "jp": "にげます",
+        "romaji": "nigemasu",
+        "vi": "chạy trốn",
+        "audio": null,
+        "kanji": "逃げます"
+      },
+      {
+        "id": "v3307",
+        "jp": "さわぎます",
+        "romaji": "sawagimasu",
+        "vi": "làm ồn",
+        "audio": null,
+        "kanji": "騒ぎます"
+      },
+      {
+        "id": "v3308",
+        "jp": "あきらめます",
+        "romaji": "akiramemasu",
+        "vi": "bỏ cuộc",
+        "audio": null,
+        "kanji": "諦めます"
+      },
+      {
+        "id": "v3309",
+        "jp": "なげます",
+        "romaji": "nagemasu",
+        "vi": "ném",
+        "audio": null,
+        "kanji": "投げます"
+      },
+      {
+        "id": "v3310",
+        "jp": "まもります",
+        "romaji": "mamorimasu",
+        "vi": "tuân thủ, bảo vệ",
+        "audio": null,
+        "kanji": "守ります"
+      },
+      {
+        "id": "v3311",
+        "jp": "つたえます",
+        "romaji": "tsutaemasu",
+        "vi": "truyền đạt",
+        "audio": null,
+        "kanji": "伝えます"
+      },
+      {
+        "id": "v3312",
+        "jp": "ちゅういします",
+        "romaji": "chuui shimasu",
+        "vi": "chú ý, cẩn thận",
+        "audio": null,
+        "kanji": "注意します",
+        "note": "くるまに ちゅういします"
+      },
+      {
+        "id": "v3313",
+        "jp": "はずします",
+        "romaji": "hazushimasu",
+        "vi": "rời chỗ, tháo ra",
+        "audio": null,
+        "kanji": "外します",
+        "note": "せきを はずします"
+      },
+      {
+        "id": "v3314",
+        "jp": "だめな",
+        "romaji": "dame na",
+        "vi": "không được, không ổn",
+        "audio": null
+      },
+      {
+        "id": "v3315",
+        "jp": "せき",
+        "romaji": "seki",
+        "vi": "chỗ ngồi",
+        "audio": null,
+        "kanji": "席"
+      },
+      {
+        "id": "v3316",
+        "jp": "ファイト",
+        "romaji": "faito",
+        "vi": "Cố lên!",
+        "audio": null
+      },
+      {
+        "id": "v3317",
+        "jp": "マーク",
+        "romaji": "maaku",
+        "vi": "ký hiệu",
+        "audio": null
+      },
+      {
+        "id": "v3318",
+        "jp": "ボール",
+        "romaji": "booru",
+        "vi": "quả bóng",
+        "audio": null
+      },
+      {
+        "id": "v3319",
+        "jp": "せんたくき",
+        "romaji": "sentakuki",
+        "vi": "máy giặt",
+        "audio": null,
+        "kanji": "洗濯機"
+      },
+      {
+        "id": "v3320",
+        "jp": "きそく",
+        "romaji": "kisoku",
+        "vi": "nội quy, quy tắc",
+        "audio": null,
+        "kanji": "規則"
+      },
+      {
+        "id": "v3321",
+        "jp": "しようきんし",
+        "romaji": "shiyou kinshi",
+        "vi": "cấm sử dụng",
+        "audio": null,
+        "kanji": "使用禁止"
+      },
+      {
+        "id": "v3322",
+        "jp": "たちいりきんし",
+        "romaji": "tachiiri kinshi",
+        "vi": "cấm vào",
+        "audio": null,
+        "kanji": "立入禁止"
+      },
+      {
+        "id": "v3323",
+        "jp": "いりぐち",
+        "romaji": "iriguchi",
+        "vi": "lối vào",
+        "audio": null,
+        "kanji": "入り口",
+        "image": "/icons/vocab/house.svg"
+      },
+      {
+        "id": "v3324",
+        "jp": "でぐち",
+        "romaji": "deguchi",
+        "vi": "lối ra",
+        "audio": null,
+        "kanji": "出口"
+      },
+      {
+        "id": "v3325",
+        "jp": "ひじょうぐち",
+        "romaji": "hijouguchi",
+        "vi": "lối thoát hiểm",
+        "audio": null,
+        "kanji": "非常口"
+      },
+      {
+        "id": "v3326",
+        "jp": "むりょう",
+        "romaji": "muryou",
+        "vi": "miễn phí",
+        "audio": null,
+        "kanji": "無料"
+      },
+      {
+        "id": "v3327",
+        "jp": "ほんじつきゅうぎょう",
+        "romaji": "honjitsu kyuugyou",
+        "vi": "hôm nay nghỉ",
+        "audio": null,
+        "kanji": "本日休業"
+      },
+      {
+        "id": "v3328",
+        "jp": "えいぎょうちゅう",
+        "romaji": "eigyou chuu",
+        "vi": "đang mở cửa",
+        "audio": null,
+        "kanji": "営業中"
+      },
+      {
+        "id": "v3329",
+        "jp": "しようちゅう",
+        "romaji": "shiyou chuu",
+        "vi": "đang sử dụng",
+        "audio": null,
+        "kanji": "使用中"
+      },
+      {
+        "id": "v3330",
+        "jp": "〜ちゅう",
+        "romaji": "chuu",
+        "vi": "đang trong lúc…",
+        "audio": null,
+        "kanji": "〜中",
+        "note": "かいぎちゅう"
+      },
+      {
+        "id": "v3331",
+        "jp": "どういう〜",
+        "romaji": "dou iu",
+        "vi": "loại… gì, … như thế nào",
+        "audio": null
+      },
+      {
+        "id": "v3332",
+        "jp": "あと〜",
+        "romaji": "ato",
+        "vi": "còn… nữa",
+        "audio": null
+      },
+      {
+        "id": "v3333",
+        "jp": "ちゅうしゃいはん",
+        "romaji": "chuusha ihan",
+        "vi": "vi phạm quy định đỗ xe",
+        "audio": null,
+        "kanji": "駐車違反"
+      },
+      {
+        "id": "v3334",
+        "jp": "そりゃあ",
+        "romaji": "soryaa",
+        "vi": "thế thì… (cách nói thân mật)",
+        "audio": null
+      },
+      {
+        "id": "v3335",
+        "jp": "〜いない",
+        "romaji": "inai",
+        "vi": "trong vòng, không quá…",
+        "audio": null,
+        "kanji": "〜以内"
+      },
+      {
+        "id": "v3336",
+        "jp": "けいさつ",
+        "romaji": "keisatsu",
+        "vi": "cảnh sát",
+        "audio": null,
+        "kanji": "警察"
+      },
+      {
+        "id": "v3337",
+        "jp": "ばっきん",
+        "romaji": "bakkin",
+        "vi": "tiền phạt",
+        "audio": null,
+        "kanji": "罰金"
+      },
+      {
+        "id": "v3338",
+        "jp": "しめきり",
+        "romaji": "shimekiri",
+        "vi": "hạn chót",
+        "audio": null,
+        "kanji": "締め切り"
+      },
+      {
+        "id": "v3339",
+        "jp": "もう〜ない",
+        "romaji": "mou nai",
+        "vi": "không còn… nữa",
+        "audio": null
+      },
+      {
+        "id": "v3340",
+        "jp": "のみほうだい",
+        "romaji": "nomihoudai",
+        "vi": "uống không giới hạn theo gói",
+        "audio": null,
+        "kanji": "飲み放題"
+      },
+      {
+        "id": "v3341",
+        "jp": "リサイクル",
+        "romaji": "risaikuru",
+        "vi": "tái chế",
+        "audio": null
+      },
+      {
+        "id": "v3342",
+        "jp": "わりびき",
+        "romaji": "waribiki",
+        "vi": "giảm giá",
+        "audio": null,
+        "kanji": "割引"
+      },
+      {
+        "id": "v3343",
+        "jp": "じょこう",
+        "romaji": "jokou",
+        "vi": "đi chậm",
+        "audio": null,
+        "kanji": "徐行"
+      },
+      {
+        "id": "v3344",
+        "jp": "ぼしゅうちゅう",
+        "romaji": "boshuu chuu",
+        "vi": "đang tuyển, đang nhận đăng ký",
+        "audio": null,
+        "kanji": "募集中"
+      },
+      {
+        "id": "v3345",
+        "jp": "あります",
+        "romaji": "arimasu",
+        "vi": "có cuộc gọi đến",
+        "audio": null,
+        "note": "でんわが ありました"
+      },
+      {
+        "id": "v3346",
+        "jp": "おなじ",
+        "romaji": "onaji",
+        "vi": "giống nhau, cùng",
+        "audio": null,
+        "kanji": "同じ",
+        "note": "おなじ いみ. Trước danh từ dùng おなじ trực tiếp."
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3301",
+        "pattern": "Thể mệnh lệnh",
+        "vi": "Nhận ra mệnh lệnh và lời cổ vũ",
+        "explain": "Nhóm I đổi âm cuối sang hàng え. Nhóm II bỏ る, thêm ろ. する → しろ, くる → こい. Sắc thái mạnh, cần chọn theo ngữ cảnh.",
+        "viMistake": "まもる → まもれ. Lời nhờ thông thường dùng 〜てください.",
+        "examples": [
+          {
+            "jp": "{最後|さいご}まで {走|はし}れ！",
+            "vi": "Chạy đến cùng!",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3302",
+        "pattern": "V từ điển + な",
+        "vi": "Nhận ra lệnh cấm",
+        "explain": "Thêm な vào dạng từ điển của mọi nhóm. Dùng khi nhận diện khẩu lệnh hoặc nội quy.",
+        "viMistake": "いくな nghĩa là đừng đi. Khi nhờ lịch sự, dùng いかないでください.",
+        "examples": [
+          {
+            "jp": "ここで ボールを {投|な}げるな。",
+            "vi": "Không được ném bóng ở đây.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3303",
+        "pattern": "何と読みますか／〜と読みます",
+        "vi": "Hỏi và nói cách đọc",
+        "explain": "Đặt cách đọc trước と. Có thể hỏi bằng なんと よみますか hoặc なんと よむんですか.",
+        "viMistake": "なんと hỏi cách đọc. どういう いみ hỏi ý nghĩa.",
+        "examples": [
+          {
+            "jp": "「{徐行|じょこう}」は なんと {読|よ}みますか。",
+            "vi": "Chữ “徐行” đọc thế nào?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3304",
+        "pattern": "〜という意味です",
+        "vi": "Giải thích ý nghĩa",
+        "explain": "Đặt nội dung giải thích trước という意味です. Hỏi bằng どういう意味ですか.",
+        "viMistake": "Khi giải thích biển báo, có thể diễn đạt nội dung bằng 〜てはいけません hoặc 〜てください.",
+        "examples": [
+          {
+            "jp": "「{使用禁止|しようきんし}」は {使|つか}っては いけないという {意味|いみ}です。",
+            "vi": "“使用禁止” có nghĩa là không được sử dụng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3305",
+        "pattern": "〜と言っていました",
+        "vi": "Thuật lại điều người khác nói",
+        "explain": "Đặt nội dung được thuật lại ở thể thường trước と. Dùng だ với danh từ và tính từ な ở hiện tại khẳng định trong lời thuật gián tiếp.",
+        "viMistake": "A đã nói B thì dùng Aさんが Bと いって いました.",
+        "examples": [
+          {
+            "jp": "{田村|たむら}さんは {午後|ごご}に {戻|もど}ると {言|い}って いました。",
+            "vi": "Anh Tamura nói chiều sẽ quay lại.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3306",
+        "pattern": "〜と伝えていただけませんか",
+        "vi": "Nhờ chuyển lời lịch sự",
+        "explain": "Nêu người nhận bằng に, rồi nội dung tin nhắn + と + 伝えていただけませんか.",
+        "viMistake": "Người nhận lời nhắn và người mình đang nhờ có thể khác nhau.",
+        "examples": [
+          {
+            "jp": "{森|もり}さんに {会議|かいぎ}は ２{時|じ}からだと {伝|つた}えて いただけませんか。",
+            "vi": "Anh/chị nhắn giúp anh Mori là cuộc họp bắt đầu lúc 2 giờ được không ạ?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3301",
+        "type": "title",
+        "jp": "第33課 · {標識|ひょうしき}と{伝言|でんごん}",
+        "vi": "Bài 33 · Biển báo và lời nhắn"
+      },
+      {
+        "id": "s3302",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nhận diện mệnh lệnh và lệnh cấm. Hỏi cách đọc hoặc ý nghĩa của biển báo. Thuật lại và nhờ chuyển lời."
+      },
+      {
+        "id": "s3303",
+        "type": "vocab",
+        "refs": ["v3301", "v3302", "v3303", "v3304", "v3305", "v3306", "v3307", "v3308"]
+      },
+      {
+        "id": "s3304",
+        "type": "vocab",
+        "refs": ["v3309", "v3310", "v3311", "v3312", "v3313", "v3314", "v3315", "v3316"]
+      },
+      {
+        "id": "s3305",
+        "type": "vocab",
+        "refs": ["v3317", "v3318", "v3319", "v3320", "v3321", "v3322", "v3323", "v3324"]
+      },
+      {
+        "id": "s3306",
+        "type": "vocab",
+        "refs": ["v3325", "v3326", "v3327", "v3328", "v3329", "v3330", "v3331", "v3332"]
+      },
+      {
+        "id": "s3307",
+        "type": "vocab",
+        "refs": ["v3333", "v3334", "v3335", "v3336", "v3337", "v3338", "v3339", "v3340"]
+      },
+      {
+        "id": "s3308",
+        "type": "vocab",
+        "refs": ["v3341", "v3342", "v3343", "v3344", "v3345", "v3346"]
+      },
+      {
+        "id": "s3309",
+        "type": "grammar",
+        "ref": "g3301"
+      },
+      {
+        "id": "s3310",
+        "type": "example",
+        "ref": "g3301",
+        "reveal": true
+      },
+      {
+        "id": "s3311",
+        "type": "quiz",
+        "ref": "q3301"
+      },
+      {
+        "id": "s3312",
+        "type": "grammar",
+        "ref": "g3302"
+      },
+      {
+        "id": "s3313",
+        "type": "example",
+        "ref": "g3302",
+        "reveal": true
+      },
+      {
+        "id": "s3314",
+        "type": "quiz",
+        "ref": "q3304"
+      },
+      {
+        "id": "s3315",
+        "type": "table",
+        "title": "Hai dạng chỉ dẫn mạnh",
+        "columns": ["Thể từ điển", "Mệnh lệnh", "Cấm"],
+        "rows": [
+          ["まもる", "まもれ", "まもるな"],
+          ["なげる", "なげろ", "なげるな"],
+          ["する", "しろ", "するな"],
+          ["くる", "こい", "くるな"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3316",
+        "type": "grammar",
+        "ref": "g3303"
+      },
+      {
+        "id": "s3317",
+        "type": "example",
+        "ref": "g3303",
+        "reveal": true
+      },
+      {
+        "id": "s3318",
+        "type": "quiz",
+        "ref": "q3305"
+      },
+      {
+        "id": "s3319",
+        "type": "grammar",
+        "ref": "g3304"
+      },
+      {
+        "id": "s3320",
+        "type": "example",
+        "ref": "g3304",
+        "reveal": true
+      },
+      {
+        "id": "s3321",
+        "type": "quiz",
+        "ref": "q3306"
+      },
+      {
+        "id": "s3322",
+        "type": "grammar",
+        "ref": "g3305"
+      },
+      {
+        "id": "s3323",
+        "type": "example",
+        "ref": "g3305",
+        "reveal": true
+      },
+      {
+        "id": "s3324",
+        "type": "quiz",
+        "ref": "q3307"
+      },
+      {
+        "id": "s3325",
+        "type": "grammar",
+        "ref": "g3306"
+      },
+      {
+        "id": "s3326",
+        "type": "example",
+        "ref": "g3306",
+        "reveal": true
+      },
+      {
+        "id": "s3327",
+        "type": "quiz",
+        "ref": "q3308"
+      },
+      {
+        "id": "s3328",
+        "type": "table",
+        "title": "Từ tham khảo · Biển và ký hiệu",
+        "columns": ["Biển", "Dùng để báo"],
+        "rows": [
+          ["{準備中|じゅんびちゅう}", "Cửa hàng đang chuẩn bị"],
+          ["{工事中|こうじちゅう}", "Đang thi công"],
+          ["{禁煙席|きんえんせき}", "Chỗ ngồi không hút thuốc"],
+          ["{非常口|ひじょうぐち}", "Lối thoát hiểm"],
+          ["{使用中|しようちゅう}", "Đang sử dụng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3329",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ ví dụ", "Nghĩa"],
+        "rows": [
+          ["禁", "{禁止|きんし}", "cấm"],
+          ["営", "{営業中|えいぎょうちゅう}", "đang mở cửa"],
+          ["伝", "{伝|つた}えます", "truyền đạt"],
+          ["席", "{出席|しゅっせき}します", "tham dự"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3330",
+        "type": "dialogue",
+        "title": "Hội thoại · Nhờ chuyển lời ở văn phòng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "すみません、{森|もり}さんは いらっしゃいますか。",
+            "vi": "Xin lỗi, anh Mori có ở đó không ạ?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{今|いま}、{席|せき}を {外|はず}して います。",
+            "vi": "Hiện anh ấy đang rời bàn làm việc."
+          },
+          {
+            "speaker": "An",
+            "jp": "では、{発表|はっぴょう}は ３{時|じ}からだと {伝|つた}えて いただけませんか。",
+            "vi": "Vậy nhắn giúp anh ấy là phần trình bày bắt đầu lúc 3 giờ được không ạ?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "はい、{戻|もど}ったら {伝|つた}えます。",
+            "vi": "Vâng, khi anh ấy quay lại tôi sẽ nhắn."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu, hỏi ai nhận lời nhắn và phần trình bày lúc mấy giờ."
+      },
+      {
+        "id": "s3331",
+        "type": "quiz",
+        "ref": "q3316"
+      },
+      {
+        "id": "s3332",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: と／{言|い}って いました／{戻|もど}る／{午後|ごご}に",
+            "{午後|ごご}に {戻|もど}ると {言|い}って いました。"
+          ],
+          [
+            "Dịch: Anh/chị nhắn giúp là buổi họp bắt đầu lúc 2 giờ được không?",
+            "{会議|かいぎ}は ２{時|じ}からだと {伝|つた}えて いただけませんか。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3333",
+        "type": "table",
+        "title": "Nhập vai · Hỏi một biển lạ",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hỏi cách đọc biển 徐行", "なんと {読|よ}みますか。"],
+          [
+            "B",
+            "Đọc rồi giải thích",
+            "じょこうと {読|よ}みます。ゆっくり {進|すす}むという {意味|いみ}です。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3334",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Mệnh lệnh và V từ điển + な có sắc thái mạnh.\nと読みます hỏi đáp cách đọc, という意味です giải thích nghĩa.\nと言っていました thuật lại. と伝えていただけませんか nhờ chuyển lời.",
+        "teacherNotes": "Ôn lời nhờ ở bài 26. Sang bài 34, học cách làm theo chỉ dẫn bằng とおりに."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3301",
+        "type": "choice",
+        "prompt": "Thể mệnh lệnh của まもる là gì?",
+        "options": ["まもれ", "まもろう", "まもるな", "まもります"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Nhóm I: る → れ.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3302",
+        "type": "choice",
+        "prompt": "Thể mệnh lệnh của にげる là gì?",
+        "options": ["にげれ", "にげろ", "にげよう", "にげな"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nhóm II: bỏ る và thêm ろ.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3303",
+        "type": "choice",
+        "prompt": "Dạng mệnh lệnh của くる là gì?",
+        "options": ["こよう", "くれ", "こい", "くるな"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "来る có dạng mệnh lệnh bất quy tắc.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3304",
+        "type": "choice",
+        "prompt": "Chọn dạng cấm của さわぐ.",
+        "options": ["さわげ", "さわごう", "さわぎなさい", "さわぐな"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Dạng từ điển + な tạo lệnh cấm.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3305",
+        "type": "choice",
+        "prompt": "Trợ từ trước よみます trong câu giải thích cách đọc là gì?",
+        "options": ["と", "に", "で", "へ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng cách đọc + と読みます.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3306",
+        "type": "choice",
+        "prompt": "Câu hỏi nào hỏi về ý nghĩa?",
+        "options": [
+          "なんと よみますか。",
+          "どういう いみですか。",
+          "いつ はじまりますか。",
+          "どこに ありますか。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "どういう意味ですか hỏi nghĩa.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3307",
+        "type": "choice",
+        "prompt": "Chọn phần kết để thuật lại lời người khác.",
+        "options": ["という いみです", "と よみます", "と いって いました", "て おきます"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "と言っていました dùng để thuật lời.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3308",
+        "type": "choice",
+        "prompt": "Chọn phần kết để nhờ chuyển lời lịch sự.",
+        "options": [
+          "と よみました",
+          "を まもれ",
+          "と いって いました",
+          "と つたえて いただけませんか"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "伝えていただけませんか là lời nhờ.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3309",
+        "type": "choice",
+        "prompt": "Biển nào ghi đang mở cửa?",
+        "options": ["営業中", "本日休業", "立入禁止", "使用禁止"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "営業中 nghĩa là đang kinh doanh.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3310",
+        "type": "choice",
+        "prompt": "Biển nào chỉ lối thoát hiểm?",
+        "options": ["入り口", "非常口", "無料", "使用中"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "非常口 dùng cho lối thoát hiểm.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3311",
+        "type": "choice",
+        "prompt": "Chọn cách nói «trong vòng mười phút».",
+        "options": ["じゅっぷん まえ", "じゅっぷん から", "じゅっぷん いない", "じゅっぷん だけ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "以内 nêu giới hạn tối đa.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3312",
+        "type": "choice",
+        "prompt": "Chọn cụm «dự họp».",
+        "options": [
+          "かいぎを はずします",
+          "かいぎが はじまります",
+          "かいぎを あきらめます",
+          "かいぎに しゅっせきします"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Địa điểm hoặc sự kiện tham dự đi với に trong mẫu này.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3313",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là hạn chót?",
+        "options": ["しめきり", "ばっきん", "わりびき", "じょこう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "締め切り là hạn chót.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3314",
+        "type": "choice",
+        "prompt": "Cụm nào mang nghĩa «không còn dùng nữa»?",
+        "options": ["まだ つかって いる", "もう つかわない", "いま つかう", "あとで つかう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "もう + phủ định là không còn.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3315",
+        "type": "choice",
+        "prompt": "Chọn dạng lịch sự thay cho lệnh cấm なげるな.",
+        "options": ["なげて ください。", "なげましょう。", "なげないで ください。", "なげろ。"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "ないでください dùng để nhờ đừng làm.",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3316",
+        "type": "choice",
+        "prompt": "Theo thông báo, máy giặt nào dùng được?",
+        "options": [
+          "Máy ở tầng hai",
+          "Cả hai máy",
+          "Cả hai máy đều không dùng được",
+          "Máy ở tầng một"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Máy tầng hai có biển cấm sử dụng, còn tầng một dùng được.",
+        "points": 1,
+        "tags": ["minna-33"],
+        "passage": "２{階|かい}の {洗濯機|せんたくき}は {使用禁止|しようきんし}です。１{階|かい}の {洗濯機|せんたくき}を {使|つか}って ください。"
+      },
+      {
+        "id": "q3317",
+        "type": "fill",
+        "prompt": "Viết dạng mệnh lệnh của かく bằng hiragana.",
+        "answer": ["かけ"],
+        "inputMode": "hiragana",
+        "explain": "かく → かけ",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3318",
+        "type": "fill",
+        "prompt": "Viết dạng mệnh lệnh của みる bằng hiragana.",
+        "answer": ["みろ"],
+        "inputMode": "hiragana",
+        "explain": "みる → みろ",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3319",
+        "type": "fill",
+        "prompt": "Viết dạng mệnh lệnh của する bằng hiragana.",
+        "answer": ["しろ"],
+        "inputMode": "hiragana",
+        "explain": "する → しろ",
+        "points": 1,
+        "tags": ["minna-33"]
+      },
+      {
+        "id": "q3320",
+        "type": "fill",
+        "prompt": "Viết dạng cấm của はいる bằng hiragana.",
+        "answer": ["はいるな"],
+        "inputMode": "hiragana",
+        "explain": "はいる → はいるな",
+        "points": 1,
+        "tags": ["minna-33"]
+      }
+    ]
+  }
+}
