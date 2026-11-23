@@ -1,0 +1,1003 @@
+{
+  "id": "minna-2-30",
+  "title": "Bài 30 – Chuẩn bị và sắp xếp",
+  "titleJa": "第30課・準備と片づけ",
+  "summary": "Nói những thứ đã được chuẩn bị và việc cần làm trước hoặc sau một hoạt động.",
+  "order": 30,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3001",
+        "jp": "はります",
+        "romaji": "harimasu",
+        "vi": "dán",
+        "audio": null,
+        "kanji": "貼ります",
+        "note": "I · ポスターを はります"
+      },
+      {
+        "id": "v3002",
+        "jp": "かけます",
+        "romaji": "kakemasu",
+        "vi": "treo",
+        "audio": null,
+        "kanji": "掛けます",
+        "note": "II · かべに かけます"
+      },
+      {
+        "id": "v3003",
+        "jp": "かざります",
+        "romaji": "kazarimasu",
+        "vi": "trưng bày, trang trí",
+        "audio": null,
+        "kanji": "飾ります",
+        "note": "I · へやを かざります"
+      },
+      {
+        "id": "v3004",
+        "jp": "ならべます",
+        "romaji": "narabemasu",
+        "vi": "xếp thành hàng",
+        "audio": null,
+        "kanji": "並べます",
+        "note": "II · いすを ならべます"
+      },
+      {
+        "id": "v3005",
+        "jp": "うえます",
+        "romaji": "uemasu",
+        "vi": "trồng cây",
+        "audio": null,
+        "kanji": "植えます",
+        "note": "II · にわに はなを うえます"
+      },
+      {
+        "id": "v3006",
+        "jp": "もどします",
+        "romaji": "modoshimasu",
+        "vi": "đặt lại, trả về",
+        "audio": null,
+        "kanji": "戻します",
+        "note": "I · もとの ところに もどします"
+      },
+      {
+        "id": "v3007",
+        "jp": "まとめます",
+        "romaji": "matomemasu",
+        "vi": "gom lại, tóm tắt",
+        "audio": null,
+        "note": "II · いけんを まとめます"
+      },
+      {
+        "id": "v3008",
+        "jp": "しまいます",
+        "romaji": "shimaimasu",
+        "vi": "cất đi",
+        "audio": null,
+        "note": "I · どうぐを しまいます. Đây là động từ cất đồ."
+      },
+      {
+        "id": "v3009",
+        "jp": "きめます",
+        "romaji": "kimemasu",
+        "vi": "quyết định",
+        "audio": null,
+        "kanji": "決めます",
+        "note": "II · じかんを きめます"
+      },
+      {
+        "id": "v3010",
+        "jp": "よしゅうします",
+        "romaji": "yoshuu shimasu",
+        "vi": "học trước bài",
+        "audio": null,
+        "kanji": "予習します"
+      },
+      {
+        "id": "v3011",
+        "jp": "ふくしゅうします",
+        "romaji": "fukushuu shimasu",
+        "vi": "ôn bài",
+        "audio": null,
+        "kanji": "復習します"
+      },
+      {
+        "id": "v3012",
+        "jp": "そのままにします",
+        "romaji": "sono mama ni shimasu",
+        "vi": "để nguyên như vậy",
+        "audio": null
+      },
+      {
+        "id": "v3013",
+        "jp": "じゅぎょう",
+        "romaji": "jugyou",
+        "vi": "buổi học",
+        "audio": null,
+        "kanji": "授業"
+      },
+      {
+        "id": "v3014",
+        "jp": "こうぎ",
+        "romaji": "kougi",
+        "vi": "bài giảng",
+        "audio": null,
+        "kanji": "講義"
+      },
+      {
+        "id": "v3015",
+        "jp": "ミーティング",
+        "romaji": "miitingu",
+        "vi": "cuộc họp",
+        "audio": null
+      },
+      {
+        "id": "v3016",
+        "jp": "よてい",
+        "romaji": "yotei",
+        "vi": "kế hoạch, lịch dự kiến",
+        "audio": null,
+        "kanji": "予定"
+      },
+      {
+        "id": "v3017",
+        "jp": "おしらせ",
+        "romaji": "oshirase",
+        "vi": "thông báo",
+        "audio": null,
+        "kanji": "お知らせ"
+      },
+      {
+        "id": "v3018",
+        "jp": "あんないしょ",
+        "romaji": "annaisho",
+        "vi": "sách hoặc tài liệu hướng dẫn",
+        "audio": null,
+        "kanji": "案内書"
+      },
+      {
+        "id": "v3019",
+        "jp": "カレンダー",
+        "romaji": "karendaa",
+        "vi": "lịch",
+        "audio": null,
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v3020",
+        "jp": "ポスター",
+        "romaji": "posutaa",
+        "vi": "áp phích",
+        "audio": null
+      },
+      {
+        "id": "v3021",
+        "jp": "ごみばこ",
+        "romaji": "gomibako",
+        "vi": "thùng rác",
+        "audio": null,
+        "kanji": "ごみ箱"
+      },
+      {
+        "id": "v3022",
+        "jp": "にんぎょう",
+        "romaji": "ningyou",
+        "vi": "búp bê",
+        "audio": null,
+        "kanji": "人形"
+      },
+      {
+        "id": "v3023",
+        "jp": "かびん",
+        "romaji": "kabin",
+        "vi": "lọ hoa",
+        "audio": null,
+        "kanji": "花瓶"
+      },
+      {
+        "id": "v3024",
+        "jp": "かがみ",
+        "romaji": "kagami",
+        "vi": "gương",
+        "audio": null,
+        "kanji": "鏡"
+      },
+      {
+        "id": "v3025",
+        "jp": "ひきだし",
+        "romaji": "hikidashi",
+        "vi": "ngăn kéo",
+        "audio": null,
+        "kanji": "引き出し"
+      },
+      {
+        "id": "v3026",
+        "jp": "げんかん",
+        "romaji": "genkan",
+        "vi": "khu vực lối vào nhà",
+        "audio": null,
+        "kanji": "玄関"
+      },
+      {
+        "id": "v3027",
+        "jp": "ろうか",
+        "romaji": "rouka",
+        "vi": "hành lang",
+        "audio": null,
+        "kanji": "廊下"
+      },
+      {
+        "id": "v3028",
+        "jp": "かべ",
+        "romaji": "kabe",
+        "vi": "tường",
+        "audio": null,
+        "kanji": "壁"
+      },
+      {
+        "id": "v3029",
+        "jp": "いけ",
+        "romaji": "ike",
+        "vi": "ao",
+        "audio": null,
+        "kanji": "池"
+      },
+      {
+        "id": "v3030",
+        "jp": "もとの ところ",
+        "romaji": "moto no tokoro",
+        "vi": "chỗ cũ",
+        "audio": null,
+        "kanji": "元の所"
+      },
+      {
+        "id": "v3031",
+        "jp": "まわり",
+        "romaji": "mawari",
+        "vi": "xung quanh",
+        "audio": null,
+        "kanji": "周り"
+      },
+      {
+        "id": "v3032",
+        "jp": "まんなか",
+        "romaji": "mannaka",
+        "vi": "chính giữa",
+        "audio": null,
+        "kanji": "真ん中"
+      },
+      {
+        "id": "v3033",
+        "jp": "すみ",
+        "romaji": "sumi",
+        "vi": "góc",
+        "audio": null,
+        "kanji": "隅"
+      },
+      {
+        "id": "v3034",
+        "jp": "まだ",
+        "romaji": "mada",
+        "vi": "vẫn, còn hoặc chưa",
+        "audio": null
+      },
+      {
+        "id": "v3035",
+        "jp": "よていひょう",
+        "romaji": "yoteihyou",
+        "vi": "bảng lịch trình",
+        "audio": null,
+        "kanji": "予定表"
+      },
+      {
+        "id": "v3036",
+        "jp": "ごくろうさま。",
+        "romaji": "gokurousama",
+        "vi": "Cảm ơn đã vất vả.",
+        "audio": null,
+        "kanji": "ご苦労さま。",
+        "note": "Thường dùng với người dưới hoặc người được giao việc. Với đồng nghiệp, ưu tiên お疲れさまです."
+      },
+      {
+        "id": "v3037",
+        "jp": "きぼう",
+        "romaji": "kibou",
+        "vi": "mong muốn",
+        "audio": null,
+        "kanji": "希望"
+      },
+      {
+        "id": "v3038",
+        "jp": "なにか ごきぼうが ありますか。",
+        "romaji": "nanika gokibou ga arimasu ka",
+        "vi": "Anh/chị có mong muốn gì không ạ?",
+        "audio": null,
+        "kanji": "何かご希望がありますか。"
+      },
+      {
+        "id": "v3039",
+        "jp": "ミュージカル",
+        "romaji": "myuujikaru",
+        "vi": "nhạc kịch",
+        "audio": null
+      },
+      {
+        "id": "v3040",
+        "jp": "それは いいですね。",
+        "romaji": "sore wa ii desu ne",
+        "vi": "Ý hay đấy.",
+        "audio": null
+      },
+      {
+        "id": "v3041",
+        "jp": "〜とか、〜とか",
+        "romaji": "toka, toka",
+        "vi": "chẳng hạn như… và…",
+        "audio": null
+      },
+      {
+        "id": "v3042",
+        "jp": "ガイドブック",
+        "romaji": "gaidobukku",
+        "vi": "sách hướng dẫn, cẩm nang",
+        "audio": null
+      },
+      {
+        "id": "v3043",
+        "jp": "ひじょうじ",
+        "romaji": "hijouji",
+        "vi": "lúc khẩn cấp",
+        "audio": null,
+        "kanji": "非常時"
+      },
+      {
+        "id": "v3044",
+        "jp": "リュック",
+        "romaji": "ryukku",
+        "vi": "ba lô",
+        "audio": null,
+        "image": "/icons/vocab/backpack.svg"
+      },
+      {
+        "id": "v3045",
+        "jp": "かいちゅうでんとう",
+        "romaji": "kaichuu dentou",
+        "vi": "đèn pin",
+        "audio": null,
+        "kanji": "懐中電灯"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3001",
+        "pattern": "場所に Nが Vてあります",
+        "vi": "Tả thứ được đặt sẵn ở đâu",
+        "explain": "Nơi chốn + に + N が + tha động từ thể て + あります. Tả kết quả còn thấy sau một hành động có chủ ý.",
+        "viMistake": "まどが あいて います chỉ cửa đang mở. まどが あけて あります gợi ý có người mở và để vậy.",
+        "examples": [
+          {
+            "jp": "{入口|いりぐち}に お{知|し}らせが {貼|は}って あります。",
+            "vi": "Ở lối vào có dán sẵn thông báo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3002",
+        "pattern": "Nは 場所に Vてあります",
+        "vi": "Nói vật đã được để ở đâu",
+        "explain": "Đưa vật lên làm chủ đề bằng は, rồi nêu nơi cất, đặt hoặc treo. V ở thể て và là tha động từ.",
+        "viMistake": "Nói vị trí thì dùng に, chẳng hạn ひきだしに.",
+        "examples": [
+          {
+            "jp": "{予備|よび}の {鍵|かぎ}は {引|ひ}き{出|だ}しに しまって あります。",
+            "vi": "Chìa khóa dự phòng đã được cất trong ngăn kéo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3003",
+        "pattern": "Vておきます · Chuẩn bị",
+        "vi": "Làm trước để dùng sau",
+        "explain": "Dùng thể て + おきます. Nêu việc mình định làm trước một sự kiện. Khi nhờ, dùng Vておいてください.",
+        "viMistake": "Chọn ならべて おきます khi nói việc sẽ làm. Chọn ならべて あります khi tả kết quả đã có.",
+        "examples": [
+          {
+            "jp": "{講義|こうぎ}の {前|まえ}に {椅子|いす}を {並|なら}べて おきます。",
+            "vi": "Tôi sẽ xếp ghế sẵn trước buổi giảng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3004",
+        "pattern": "Vておきます · Thu dọn",
+        "vi": "Xử lý sau khi dùng để tiện lần sau",
+        "explain": "Dùng 〜たら hoặc 〜たあとで để nêu mốc rồi dùng Vておきます cho việc thu dọn, cất hoặc trả lại.",
+        "viMistake": "Khác với chuẩn bị trước, ở đây việc dọn diễn ra sau hoạt động chính.",
+        "examples": [
+          {
+            "jp": "{道具|どうぐ}を {使|つか}ったら、{元|もと}の {所|ところ}に {戻|もど}して おいて ください。",
+            "vi": "Dùng dụng cụ xong thì để lại chỗ cũ giúp tôi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3005",
+        "pattern": "Vておきます · Giữ nguyên",
+        "vi": "Để trạng thái tiếp tục",
+        "explain": "Dùng Vておきます cho trạng thái muốn duy trì. Có thể dùng そのままにします để nói cứ để nguyên.",
+        "viMistake": "Muốn để cửa mở thì dùng あけて おきます. Muốn để cửa đóng thì dùng しめて おきます.",
+        "examples": [
+          {
+            "jp": "{風|かぜ}が {通|とお}るように、ドアを {開|あ}けて おきます。",
+            "vi": "Tôi sẽ để cửa mở cho thoáng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3006",
+        "pattern": "まだ Vています",
+        "vi": "Nói việc hoặc trạng thái vẫn tiếp diễn",
+        "explain": "まだ đi với Vています để nói vẫn còn. まだ Vていません nói việc đến lúc này vẫn chưa xảy ra.",
+        "viMistake": "まだ ならべて います nghĩa là vẫn đang xếp, còn まだ ならべて いません nghĩa là chưa xếp.",
+        "examples": [
+          {
+            "jp": "{隣|となり}の {部屋|へや}では まだ ミーティングを して います。",
+            "vi": "Phòng bên vẫn đang họp.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3007",
+        "pattern": "Nとか、Nとか",
+        "vi": "Nêu vài ví dụ trong một nhóm",
+        "explain": "Dùng とか để kể vài thứ làm ví dụ. Danh sách có thể còn những mục khác.",
+        "viMistake": "Trong yêu cầu chính thức, có thể gặp や hoặc など. とか thường dùng trong hội thoại.",
+        "examples": [
+          {
+            "jp": "リュックには {水|みず}とか {懐中電灯|かいちゅうでんとう}とかを {入|い}れます。",
+            "vi": "Tôi bỏ vào ba lô những thứ như nước và đèn pin.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3001",
+        "type": "title",
+        "jp": "第30課 · てあります・ておきます",
+        "vi": "Bài 30 · Chuẩn bị và sắp xếp"
+      },
+      {
+        "id": "s3002",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói đồ đã được đặt sẵn ở đâu. Lập kế hoạch chuẩn bị, dọn sau khi dùng và nhờ giữ nguyên một trạng thái."
+      },
+      {
+        "id": "s3003",
+        "type": "vocab",
+        "refs": ["v3001", "v3002", "v3003", "v3004", "v3005", "v3006", "v3007", "v3008"]
+      },
+      {
+        "id": "s3004",
+        "type": "vocab",
+        "refs": ["v3009", "v3010", "v3011", "v3012", "v3013", "v3014", "v3015", "v3016"]
+      },
+      {
+        "id": "s3005",
+        "type": "vocab",
+        "refs": ["v3017", "v3018", "v3019", "v3020", "v3021", "v3022", "v3023", "v3024"]
+      },
+      {
+        "id": "s3006",
+        "type": "vocab",
+        "refs": ["v3025", "v3026", "v3027", "v3028", "v3029", "v3030", "v3031", "v3032"]
+      },
+      {
+        "id": "s3007",
+        "type": "vocab",
+        "refs": ["v3033", "v3034", "v3035", "v3036", "v3037", "v3038", "v3039", "v3040"]
+      },
+      {
+        "id": "s3008",
+        "type": "vocab",
+        "refs": ["v3041", "v3042", "v3043", "v3044", "v3045"]
+      },
+      {
+        "id": "s3009",
+        "type": "grammar",
+        "ref": "g3001"
+      },
+      {
+        "id": "s3010",
+        "type": "example",
+        "ref": "g3001",
+        "reveal": true
+      },
+      {
+        "id": "s3011",
+        "type": "quiz",
+        "ref": "q3001"
+      },
+      {
+        "id": "s3012",
+        "type": "grammar",
+        "ref": "g3002"
+      },
+      {
+        "id": "s3013",
+        "type": "example",
+        "ref": "g3002",
+        "reveal": true
+      },
+      {
+        "id": "s3014",
+        "type": "quiz",
+        "ref": "q3002"
+      },
+      {
+        "id": "s3015",
+        "type": "grammar",
+        "ref": "g3003"
+      },
+      {
+        "id": "s3016",
+        "type": "example",
+        "ref": "g3003",
+        "reveal": true
+      },
+      {
+        "id": "s3017",
+        "type": "quiz",
+        "ref": "q3004"
+      },
+      {
+        "id": "s3018",
+        "type": "grammar",
+        "ref": "g3004"
+      },
+      {
+        "id": "s3019",
+        "type": "example",
+        "ref": "g3004",
+        "reveal": true
+      },
+      {
+        "id": "s3020",
+        "type": "quiz",
+        "ref": "q3005"
+      },
+      {
+        "id": "s3021",
+        "type": "grammar",
+        "ref": "g3005"
+      },
+      {
+        "id": "s3022",
+        "type": "example",
+        "ref": "g3005",
+        "reveal": true
+      },
+      {
+        "id": "s3023",
+        "type": "quiz",
+        "ref": "q3006"
+      },
+      {
+        "id": "s3024",
+        "type": "grammar",
+        "ref": "g3006"
+      },
+      {
+        "id": "s3025",
+        "type": "example",
+        "ref": "g3006",
+        "reveal": true
+      },
+      {
+        "id": "s3026",
+        "type": "quiz",
+        "ref": "q3007"
+      },
+      {
+        "id": "s3027",
+        "type": "grammar",
+        "ref": "g3007"
+      },
+      {
+        "id": "s3028",
+        "type": "example",
+        "ref": "g3007",
+        "reveal": true
+      },
+      {
+        "id": "s3029",
+        "type": "quiz",
+        "ref": "q3008"
+      },
+      {
+        "id": "s3030",
+        "type": "table",
+        "title": "Ba cách tả cửa mở",
+        "columns": ["Câu", "Điểm nhấn"],
+        "rows": [
+          ["ドアが {開|あ}いて います", "Cửa đang mở"],
+          ["ドアが {開|あ}けて あります", "Có người đã mở và để vậy"],
+          ["ドアを {開|あ}けて おきます", "Tôi sẽ mở và để như vậy"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3031",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ trong bài", "Nghĩa"],
+        "rows": [
+          ["貼", "{貼|は}ります", "dán"],
+          ["並", "{並|なら}べます", "xếp thành hàng"],
+          ["戻", "{戻|もど}します", "trả về chỗ cũ"],
+          ["予", "{予定|よてい}／{予習|よしゅう}", "dự định／học trước"],
+          ["関", "{玄関|げんかん}", "khu vực lối vào nhà"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3032",
+        "type": "table",
+        "title": "Từ tham khảo · Đồ dùng khi khẩn cấp",
+        "columns": ["Từ", "Nghĩa"],
+        "rows": [
+          ["{非常袋|ひじょうぶくろ}", "túi đồ khẩn cấp"],
+          ["{懐中電灯|かいちゅうでんとう}", "đèn pin"],
+          ["{乾電池|かんでんち}", "pin khô"],
+          ["{飲|の}み{水|みず}", "nước uống"],
+          ["{携帯|けいたい}ラジオ", "radio cầm tay"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Từ dùng để luyện đọc và nói về chuẩn bị. Học viên luyện chọn hai vật và nêu chỗ cất."
+      },
+      {
+        "id": "s3033",
+        "type": "dialogue",
+        "title": "Hội thoại · Chuẩn bị buổi sinh hoạt",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{明日|あした}の {会|かい}の {資料|しりょう}は どこですか。",
+            "vi": "Tài liệu buổi sinh hoạt ngày mai ở đâu vậy?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{台|だい}の {上|うえ}に {置|お}いて あります。",
+            "vi": "Đã để sẵn trên bục rồi."
+          },
+          {
+            "speaker": "An",
+            "jp": "じゃ、{私|わたし}は {椅子|いす}を {並|なら}べて おきます。",
+            "vi": "Vậy tôi sẽ xếp sẵn ghế."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "ありがとうございます。ドアは そのままに して おいて ください。",
+            "vi": "Cảm ơn bạn. Cứ để nguyên cửa giúp tôi nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi tài liệu ở đâu và An sẽ chuẩn bị việc gì."
+      },
+      {
+        "id": "s3034",
+        "type": "quiz",
+        "ref": "q3016"
+      },
+      {
+        "id": "s3035",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: あります／かべに／{貼|は}って／ポスターが",
+            "かべに ポスターが {貼|は}って あります。"
+          ],
+          [
+            "Dịch: Tôi sẽ chuẩn bị sẵn nước trước buổi họp.",
+            "ミーティングの {前|まえ}に {水|みず}を {用意|ようい}して おきます。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3036",
+        "type": "table",
+        "title": "Nhập vai · Sắp phòng trước buổi họp",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "Người phụ trách",
+            "Báo lịch đã treo sẵn",
+            "{予定表|よていひょう}は {廊下|ろうか}に {貼|は}って あります。"
+          ],
+          ["Người hỗ trợ", "Nói sẽ xếp ghế trước", "{椅子|いす}を {並|なら}べて おきます。"],
+          [
+            "Người phụ trách",
+            "Nhờ trả ghế về chỗ cũ sau khi dùng",
+            "{使|つか}ったら、{元|もと}の {所|ところ}に {戻|もど}して おいて ください。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3037",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "てあります: tả kết quả được tạo có chủ ý.\nておきます: chuẩn bị trước, thu dọn sau hoặc giữ nguyên.\nまだ: nói việc vẫn đang diễn ra hoặc chưa làm.",
+        "teacherNotes": "Ôn ています tả trạng thái ở bài 29. Sang bài 31, học cách nói dự định với thể ý chí."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3001",
+        "type": "choice",
+        "prompt": "Thông báo đã được dán sẵn: かべに おしらせが はって（　）。",
+        "options": ["あります", "おきます", "しまいます", "ください"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Tha động từ + てあります tả kết quả do người tạo ra.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3002",
+        "type": "choice",
+        "prompt": "Chọn trợ từ chỉ chỗ cất: かぎは ひきだし（　）しまって あります。",
+        "options": ["を", "に", "へ", "が"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "に chỉ nơi đồ đang được cất.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3003",
+        "type": "choice",
+        "prompt": "Chọn câu báo cửa mở sẵn có chủ ý.",
+        "options": [
+          "ドアが あいて います。",
+          "ドアを あけます。",
+          "ドアが あけて あります。",
+          "ドアが しまりました。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "開ける + てあります nói kết quả có chủ ý.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3004",
+        "type": "choice",
+        "prompt": "Chọn câu nói sẽ xếp sẵn ghế trước buổi giảng.",
+        "options": [
+          "いすが ならべて あります。",
+          "いすを ならべて いました。",
+          "いすが こわれて います。",
+          "こうぎの まえに いすを ならべて おきます。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "ておきます nói việc định làm để chuẩn bị.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3005",
+        "type": "choice",
+        "prompt": "Dùng xong trả lại chỗ cũ: つかったら、もとの ところに（　）。",
+        "options": [
+          "もどして おいて ください",
+          "もどして あります",
+          "もどして いました",
+          "もどって あります"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "戻す ở thể て là 戻して.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3006",
+        "type": "choice",
+        "prompt": "Chọn câu nhờ cứ để cửa đóng.",
+        "options": [
+          "ドアを あけて おいて ください。",
+          "ドアは しめて おいて ください。",
+          "ドアは あいて います。",
+          "ドアを あけて ください。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "閉めておく giữ cửa ở trạng thái đóng.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3007",
+        "type": "choice",
+        "prompt": "Buổi họp vẫn đang diễn ra:（　）ミーティングを して います。",
+        "options": ["もう", "さっき", "まだ", "あした"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "まだ chỉ trạng thái vẫn tiếp diễn.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3008",
+        "type": "choice",
+        "prompt": "Chọn cụm đưa ra ví dụ về đồ trong ba lô.",
+        "options": ["みずから ラジオまで", "みずだけ", "みずの ラジオ", "みずとか ラジオとか"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "とか nêu một số ví dụ.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3009",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 引き出し。",
+        "options": ["ngăn kéo", "lối vào", "hành lang", "tủ giày"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "引き出し đọc là ひきだし.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3010",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là học trước bài?",
+        "options": ["ふくしゅうします", "よしゅうします", "かざります", "うえます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "予習 là học trước.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3011",
+        "type": "choice",
+        "prompt": "Từ nào chỉ chính giữa?",
+        "options": ["すみ", "かべ", "まんなか", "ろうか"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "真ん中 nghĩa là chính giữa.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3012",
+        "type": "choice",
+        "prompt": "Chọn cách xin giữ đồ y nguyên.",
+        "options": [
+          "すぐに すてて ください。",
+          "ならべなおして ください。",
+          "ひきだしに しまって ください。",
+          "そのままに して おいて ください。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "そのまま chỉ trạng thái hiện tại.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3013",
+        "type": "choice",
+        "prompt": "Chọn cách nói chưa quyết định giờ họp.",
+        "options": [
+          "まだ じかんを きめて いません。",
+          "もう じかんを きめました。",
+          "じかんが きめて あります。",
+          "じかんを きめて おきました。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "まだ đi với phủ định để nói chưa làm.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3014",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của ご希望。",
+        "options": ["bài giảng", "mong muốn", "lịch treo tường", "đèn pin"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "希望 nghĩa là mong muốn, ご tạo sắc thái lịch sự.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3015",
+        "type": "choice",
+        "prompt": "Câu どうぐを しまいます nghĩa là gì?",
+        "options": [
+          "Để dụng cụ bên ngoài.",
+          "Dán nhãn cho dụng cụ.",
+          "Cất dụng cụ.",
+          "Xếp dụng cụ thành hàng."
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "しまう đứng độc lập có nghĩa là cất đồ.",
+        "points": 1,
+        "tags": ["minna-30"]
+      },
+      {
+        "id": "q3016",
+        "type": "choice",
+        "prompt": "Trong ghi chú, tài liệu đã được đặt sẵn ở đâu?",
+        "options": ["Trong ngăn kéo", "Trên tường", "Ở ngoài hành lang", "Trên bàn ở giữa phòng"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "真ん中の机の上 nghĩa là trên bàn ở giữa phòng.",
+        "points": 1,
+        "tags": ["minna-30"],
+        "passage": "{会場|かいじょう}の メモ：{部屋|へや}の {真|ま}ん{中|なか}の {机|つくえ}の {上|うえ}に {資料|しりょう}が {置|お}いて あります。"
+      },
+      {
+        "id": "q3017",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana của はります。",
+        "answer": ["はって"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-30"],
+        "explain": "はります → はって"
+      },
+      {
+        "id": "q3018",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana của ならべます。",
+        "answer": ["ならべて"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-30"],
+        "explain": "ならべます → ならべて"
+      },
+      {
+        "id": "q3019",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana của もどします。",
+        "answer": ["もどして"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-30"],
+        "explain": "もどします → もどして"
+      },
+      {
+        "id": "q3020",
+        "type": "fill",
+        "prompt": "Viết thể て bằng hiragana của しまいます。",
+        "answer": ["しまって"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-30"],
+        "explain": "しまいます → しまって"
+      }
+    ]
+  }
+}
