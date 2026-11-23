@@ -1,0 +1,1001 @@
+{
+  "id": "minna-2-50",
+  "title": "Bài 50 – Khiêm nhường ngữ",
+  "titleJa": "第50課・謙譲語",
+  "summary": "Hạ mình bằng お〜します, động từ khiêm nhường đặc biệt và nói lịch sự bằng ございます.",
+  "order": 50,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v5001",
+        "jp": "まいります",
+        "romaji": "mairimasu",
+        "vi": "đi, đến (khiêm nhường)",
+        "audio": null,
+        "kanji": "参ります"
+      },
+      {
+        "id": "v5002",
+        "jp": "おります",
+        "romaji": "orimasu",
+        "vi": "ở, có mặt (khiêm nhường)",
+        "audio": null
+      },
+      {
+        "id": "v5003",
+        "jp": "いただきます",
+        "romaji": "itadakimasu",
+        "vi": "ăn, uống, nhận (khiêm nhường)",
+        "audio": null,
+        "kanji": "頂きます"
+      },
+      {
+        "id": "v5004",
+        "jp": "もうします",
+        "romaji": "moushimasu",
+        "vi": "nói, tên là (khiêm nhường)",
+        "audio": null,
+        "kanji": "申します"
+      },
+      {
+        "id": "v5005",
+        "jp": "いたします",
+        "romaji": "itashimasu",
+        "vi": "làm (khiêm nhường)",
+        "audio": null,
+        "kanji": "致します"
+      },
+      {
+        "id": "v5006",
+        "jp": "はいけんします",
+        "romaji": "haiken shimasu",
+        "vi": "xem (khiêm nhường)",
+        "audio": null,
+        "kanji": "拝見します"
+      },
+      {
+        "id": "v5007",
+        "jp": "ぞんじます",
+        "romaji": "zonjimasu",
+        "vi": "biết (khiêm nhường)",
+        "audio": null,
+        "kanji": "存じます",
+        "note": "ぞんじて おります"
+      },
+      {
+        "id": "v5008",
+        "jp": "おめに かかります",
+        "romaji": "ome ni kakarimasu",
+        "vi": "gặp (khiêm nhường)",
+        "audio": null,
+        "kanji": "お目にかかります"
+      },
+      {
+        "id": "v5009",
+        "jp": "ございます",
+        "romaji": "gozaimasu",
+        "vi": "có (lịch sự của あります)",
+        "audio": null
+      },
+      {
+        "id": "v5010",
+        "jp": "わたくし",
+        "romaji": "watakushi",
+        "vi": "tôi (trang trọng)",
+        "audio": null,
+        "kanji": "私"
+      },
+      {
+        "id": "v5011",
+        "jp": "いれます",
+        "romaji": "iremasu",
+        "vi": "pha [cà phê]",
+        "audio": null,
+        "kanji": "淹れます",
+        "note": "コーヒーを いれます"
+      },
+      {
+        "id": "v5012",
+        "jp": "よういします",
+        "romaji": "youi shimasu",
+        "vi": "chuẩn bị",
+        "audio": null,
+        "kanji": "用意します"
+      },
+      {
+        "id": "v5013",
+        "jp": "きんちょうします",
+        "romaji": "kinchou shimasu",
+        "vi": "hồi hộp, căng thẳng",
+        "audio": null,
+        "kanji": "緊張します"
+      },
+      {
+        "id": "v5014",
+        "jp": "かんしゃします",
+        "romaji": "kansha shimasu",
+        "vi": "biết ơn",
+        "audio": null,
+        "kanji": "感謝します"
+      },
+      {
+        "id": "v5015",
+        "jp": "とります",
+        "romaji": "torimasu",
+        "vi": "quay [video]",
+        "audio": null,
+        "kanji": "撮ります",
+        "note": "ビデオに とります"
+      },
+      {
+        "id": "v5016",
+        "jp": "かないます",
+        "romaji": "kanaimasu",
+        "vi": "[ước mơ] thành hiện thực",
+        "audio": null,
+        "kanji": "叶います",
+        "note": "ゆめが かないます"
+      },
+      {
+        "id": "v5017",
+        "jp": "スケジュール",
+        "romaji": "sukejuuru",
+        "vi": "lịch trình",
+        "audio": null,
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v5018",
+        "jp": "ガイド",
+        "romaji": "gaido",
+        "vi": "hướng dẫn viên",
+        "audio": null
+      },
+      {
+        "id": "v5019",
+        "jp": "こうがい",
+        "romaji": "kougai",
+        "vi": "ngoại ô",
+        "audio": null,
+        "kanji": "郊外"
+      },
+      {
+        "id": "v5020",
+        "jp": "アルバム",
+        "romaji": "arubamu",
+        "vi": "album ảnh",
+        "audio": null
+      },
+      {
+        "id": "v5021",
+        "jp": "しょうきん",
+        "romaji": "shoukin",
+        "vi": "tiền thưởng",
+        "audio": null,
+        "kanji": "賞金"
+      },
+      {
+        "id": "v5022",
+        "jp": "きりん",
+        "romaji": "kirin",
+        "vi": "hươu cao cổ",
+        "audio": null
+      },
+      {
+        "id": "v5023",
+        "jp": "ころ",
+        "romaji": "koro",
+        "vi": "thời, khi",
+        "audio": null,
+        "note": "こどもの ころ"
+      },
+      {
+        "id": "v5024",
+        "jp": "おうえん",
+        "romaji": "ouen",
+        "vi": "cổ vũ, ủng hộ",
+        "audio": null,
+        "kanji": "応援"
+      },
+      {
+        "id": "v5025",
+        "jp": "きょうりょく",
+        "romaji": "kyouryoku",
+        "vi": "hợp tác, giúp sức",
+        "audio": null,
+        "kanji": "協力"
+      },
+      {
+        "id": "v5026",
+        "jp": "メールアドレス",
+        "romaji": "meeru adoresu",
+        "vi": "địa chỉ email",
+        "audio": null,
+        "image": "/icons/vocab/envelope.svg"
+      },
+      {
+        "id": "v5027",
+        "jp": "さらいしゅう",
+        "romaji": "saraishuu",
+        "vi": "tuần sau nữa",
+        "audio": null,
+        "kanji": "再来週"
+      },
+      {
+        "id": "v5028",
+        "jp": "さらいげつ",
+        "romaji": "saraigetsu",
+        "vi": "tháng sau nữa",
+        "audio": null,
+        "kanji": "再来月"
+      },
+      {
+        "id": "v5029",
+        "jp": "さらいねん",
+        "romaji": "sarainen",
+        "vi": "năm sau nữa",
+        "audio": null,
+        "kanji": "再来年"
+      },
+      {
+        "id": "v5030",
+        "jp": "はじめに",
+        "romaji": "hajime ni",
+        "vi": "trước hết",
+        "audio": null,
+        "kanji": "初めに"
+      },
+      {
+        "id": "v5031",
+        "jp": "さいしょに",
+        "romaji": "saisho ni",
+        "vi": "đầu tiên",
+        "audio": null,
+        "kanji": "最初に"
+      },
+      {
+        "id": "v5032",
+        "jp": "さいごに",
+        "romaji": "saigo ni",
+        "vi": "cuối cùng",
+        "audio": null,
+        "kanji": "最後に"
+      },
+      {
+        "id": "v5033",
+        "jp": "ただいま",
+        "romaji": "tadaima",
+        "vi": "bây giờ (trang trọng)",
+        "audio": null,
+        "kanji": "只今"
+      },
+      {
+        "id": "v5034",
+        "jp": "こころから",
+        "romaji": "kokoro kara",
+        "vi": "từ đáy lòng",
+        "audio": null,
+        "kanji": "心から"
+      },
+      {
+        "id": "v5035",
+        "jp": "ひとこと よろしいでしょうか。",
+        "romaji": "hitokoto yoroshii deshou ka",
+        "vi": "Cho tôi nói đôi lời được không ạ?",
+        "audio": null,
+        "kanji": "一言よろしいでしょうか。"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g5001",
+        "pattern": "お Vます します／ご N します",
+        "vi": "Làm việc gì cho người trên, cho khách",
+        "explain": "Hạ mình để tỏ lòng kính trọng với người nhận việc. Động từ thuần Nhật dùng お, danh từ gốc Hán dùng ご. Nói lịch sự hơn: お〜いたします.",
+        "viMistake": "Chỉ dùng khi việc đó làm cho hoặc liên quan đến người kia. Việc riêng như chạy bộ, ngủ thì không dùng.",
+        "examples": [
+          {
+            "jp": "お{荷物|にもつ}を お{持|も}ちします。",
+            "vi": "[Nhân viên → khách, nói về việc mình làm] Để tôi mang hành lý giúp quý khách.",
+            "audio": null
+          },
+          {
+            "jp": "{会場|かいじょう}まで ご{案内|あんない}します。",
+            "vi": "[Hướng dẫn viên → khách, nói về việc mình làm] Tôi xin dẫn quý khách đến hội trường.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g5002",
+        "pattern": "参ります・おります・申します・いたします",
+        "vi": "Khiêm nhường khi kể về mình với người nghe",
+        "explain": "いきます・きます → まいります, います → おります, いいます → もうします, します → いたします. Hạ hành động của mình hoặc người nhà mình để lịch sự với người nghe.",
+        "viMistake": "Nói với khách bên ngoài về người trong công ty mình, kể cả giám đốc, cũng dùng khiêm nhường: しゃちょうの たなかは いま でかけて おります.",
+        "examples": [
+          {
+            "jp": "はじめまして。ベトナムから {参|まい}りました リンと {申|もう}します。",
+            "vi": "[Linh → người mới gặp, nói về mình] Xin chào. Tôi là Linh, đến từ Việt Nam.",
+            "audio": null
+          },
+          {
+            "jp": "{社長|しゃちょう}の {田中|たなか}は ただいま {出|で}かけて おります。",
+            "vi": "[Nhân viên → khách bên ngoài, nói về giám đốc công ty mình] Giám đốc Tanaka hiện không có mặt.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g5003",
+        "pattern": "伺います・拝見します・いただきます・お目にかかります",
+        "vi": "Khiêm nhường khi làm việc hướng về người trên",
+        "explain": "Khi việc mình làm hướng tới người trên: đến chỗ, hỏi (伺います), xem đồ của họ (拝見します), nhận, ăn (いただきます), gặp (お目に かかります).",
+        "viMistake": "Không dùng khiêm nhường cho hành động của người trên: không nói せんせいは まいりますか, nói せんせいは いらっしゃいますか.",
+        "examples": [
+          {
+            "jp": "{来週|らいしゅう} {研究室|けんきゅうしつ}へ {伺|うかが}っても よろしいでしょうか。",
+            "vi": "[Học viên → thầy, nói về việc mình đến] Tuần sau em đến phòng nghiên cứu được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{先生|せんせい}の お{写真|しゃしん}を {拝見|はいけん}しました。",
+            "vi": "[Học viên → thầy, nói về việc mình xem] Em đã xem ảnh của thầy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g5004",
+        "pattern": "ございます／でございます",
+        "vi": "Lịch sự trang trọng của あります／です",
+        "explain": "あります → ございます, です → でございます. Hay gặp khi nhân viên nói với khách.",
+        "viMistake": "ございます (= あります) chỉ dùng cho vật; với người dùng おります／いらっしゃいます. でございます dùng được cho mình (受付の リンで ございます) nhưng không dùng cho khách: お客様で いらっしゃいますか.",
+        "examples": [
+          {
+            "jp": "お{手洗|てあら}いは あちらで ございます。",
+            "vi": "[Nhân viên → khách, nói về nơi chốn] Nhà vệ sinh ở đằng kia ạ.",
+            "audio": null
+          },
+          {
+            "jp": "{電話|でんわ}は {2階|にかい}に ございます。",
+            "vi": "[Nhân viên → khách, nói về đồ vật] Điện thoại ở tầng 2 ạ.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s5001",
+        "type": "title",
+        "jp": "第50課 · 謙譲語",
+        "vi": "Bài 50 · Khiêm nhường ngữ"
+      },
+      {
+        "id": "s5002",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Hạ hành động của mình để tỏ lòng kính trọng. Đề nghị giúp người trên, người lạ. Trả lời lịch sự ở nơi trang trọng như phỏng vấn, lễ trao giải."
+      },
+      {
+        "id": "s5003",
+        "type": "note",
+        "title": "Nâng người khác hay hạ mình",
+        "body": "Tôn kính ngữ (bài 49): nâng hành động của người trên.\nKhiêm nhường ngữ (bài 50): hạ hành động của mình hoặc người trong nhóm mình.\nNói với người ngoài về người công ty mình, kể cả giám đốc: dùng khiêm nhường.",
+        "teacherNotes": "Với mỗi câu, hỏi: ai nói với ai, đang nói về ai, người đó thuộc nhóm nào so với người nghe."
+      },
+      {
+        "id": "s5004",
+        "type": "vocab",
+        "refs": ["v5001", "v5002", "v5003", "v5004", "v5005", "v5006", "v5007", "v5008"]
+      },
+      {
+        "id": "s5005",
+        "type": "vocab",
+        "refs": ["v5009", "v5010", "v5011", "v5012", "v5013", "v5014", "v5015", "v5016"]
+      },
+      {
+        "id": "s5006",
+        "type": "vocab",
+        "refs": ["v5017", "v5018", "v5019", "v5020", "v5021", "v5022", "v5023", "v5024"]
+      },
+      {
+        "id": "s5007",
+        "type": "vocab",
+        "refs": ["v5025", "v5026", "v5027", "v5028", "v5029", "v5030", "v5031", "v5032"]
+      },
+      {
+        "id": "s5008",
+        "type": "vocab",
+        "refs": ["v5033", "v5034", "v5035"]
+      },
+      {
+        "id": "s5009",
+        "type": "grammar",
+        "ref": "g5001"
+      },
+      {
+        "id": "s5010",
+        "type": "example",
+        "ref": "g5001",
+        "reveal": true
+      },
+      {
+        "id": "s5011",
+        "type": "quiz",
+        "ref": "q5001"
+      },
+      {
+        "id": "s5012",
+        "type": "quiz",
+        "ref": "q5003"
+      },
+      {
+        "id": "s5013",
+        "type": "grammar",
+        "ref": "g5002"
+      },
+      {
+        "id": "s5014",
+        "type": "example",
+        "ref": "g5002",
+        "reveal": true
+      },
+      {
+        "id": "s5015",
+        "type": "quiz",
+        "ref": "q5006"
+      },
+      {
+        "id": "s5016",
+        "type": "quiz",
+        "ref": "q5007"
+      },
+      {
+        "id": "s5017",
+        "type": "grammar",
+        "ref": "g5003"
+      },
+      {
+        "id": "s5018",
+        "type": "example",
+        "ref": "g5003",
+        "reveal": true
+      },
+      {
+        "id": "s5019",
+        "type": "quiz",
+        "ref": "q5009"
+      },
+      {
+        "id": "s5020",
+        "type": "table",
+        "title": "Tôn kính và khiêm nhường",
+        "columns": ["Thường", "Tôn kính (bài 49)", "Khiêm nhường"],
+        "rows": [
+          ["{行|い}きます・{来|き}ます", "いらっしゃいます", "{参|まい}ります・{伺|うかが}います"],
+          ["います", "いらっしゃいます", "おります"],
+          ["{食|た}べます・{飲|の}みます", "{召|め}し{上|あ}がります", "いただきます"],
+          ["{言|い}います", "おっしゃいます", "{申|もう}します"],
+          ["します", "なさいます", "いたします"],
+          ["{見|み}ます", "ご{覧|らん}に なります", "{拝見|はいけん}します"],
+          ["{知|し}って います", "ご{存|ぞん}じです", "{存|ぞん}じて おります"],
+          ["{会|あ}います", "お{会|あ}いに なります", "お{目|め}に かかります"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Che cột cuối, cho học viên đoán. 伺います dùng khi đến chỗ của người trên, 参ります khi chỉ nói mình đi, đến."
+      },
+      {
+        "id": "s5021",
+        "type": "quiz",
+        "ref": "q5010"
+      },
+      {
+        "id": "s5022",
+        "type": "grammar",
+        "ref": "g5004"
+      },
+      {
+        "id": "s5023",
+        "type": "example",
+        "ref": "g5004",
+        "reveal": true
+      },
+      {
+        "id": "s5024",
+        "type": "quiz",
+        "ref": "q5011"
+      },
+      {
+        "id": "s5025",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["参", "{参|まい}ります", "tham, đến"],
+          ["申", "{申|もう}します", "thưa"],
+          ["拝", "{拝見|はいけん}", "bái"],
+          ["致", "{致|いた}します", "làm, trí"],
+          ["郊", "{郊外|こうがい}", "vùng ven"],
+          ["緊", "{緊張|きんちょう}", "căng"],
+          ["感", "{感謝|かんしゃ}", "cảm"],
+          ["応", "{応援|おうえん}", "ứng"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s5026",
+        "type": "table",
+        "title": "Từ tham khảo · Ghi địa chỉ trên phong bì",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{郵便番号|ゆうびんばんごう}", "mã bưu chính"],
+          ["{住所|じゅうしょ}", "địa chỉ"],
+          ["{宛名|あてな}", "tên người nhận"],
+          ["〜{様|さま}", "kính gửi ông, bà"],
+          ["〜{御中|おんちゅう}", "kính gửi (cơ quan, công ty)"],
+          ["{差出人|さしだしにん}", "người gửi"],
+          ["{切手|きって}", "tem"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên viết phong bì gửi thầy: 〜先生 hoặc 〜様, gửi công ty: 〜御中."
+      },
+      {
+        "id": "s5027",
+        "type": "dialogue",
+        "title": "Hội thoại · Buổi phỏng vấn xin việc",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Người phỏng vấn",
+            "jp": "どうぞ、お{掛|か}け ください。",
+            "vi": "Mời chị ngồi."
+          },
+          {
+            "speaker": "Linh",
+            "jp": "{失礼|しつれい}いたします。リンと {申|もう}します。よろしく お{願|ねが}いいたします。",
+            "vi": "Xin phép ạ. Tôi tên là Linh. Rất mong được giúp đỡ."
+          },
+          {
+            "speaker": "Người phỏng vấn",
+            "jp": "{日本|にほん}には いつ いらっしゃいましたか。",
+            "vi": "Chị sang Nhật từ khi nào?"
+          },
+          {
+            "speaker": "Linh",
+            "jp": "{3年前|さんねんまえ}に {参|まい}りました。{今|いま}は {大阪|おおさか}に {住|す}んで おります。",
+            "vi": "Tôi sang từ 3 năm trước. Hiện tôi sống ở Osaka."
+          },
+          {
+            "speaker": "Người phỏng vấn",
+            "jp": "そうですか。では、{来週|らいしゅう} こちらから ご{連絡|れんらく}します。",
+            "vi": "Vậy à. Tuần sau chúng tôi sẽ liên lạc với chị."
+          },
+          {
+            "speaker": "Linh",
+            "jp": "{本日|ほんじつ}は ありがとう ございました。",
+            "vi": "Hôm nay cảm ơn anh rất nhiều."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Người phỏng vấn hỏi về Linh: いらっしゃいましたか (tôn kính). Linh nói về mình: 参りました, 住んで おります, 申します (khiêm nhường)."
+      },
+      {
+        "id": "s5028",
+        "type": "quiz",
+        "ref": "q5018"
+      },
+      {
+        "id": "s5029",
+        "type": "dialogue",
+        "title": "Nghe · Đề nghị giúp cấp trên",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Minh",
+            "jp": "{部長|ぶちょう}、お{荷物|にもつ}、お{持|も}ちしましょうか。",
+            "vi": "Trưởng phòng, để em mang hành lý giúp anh nhé?"
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "ありがとう。じゃ、この {箱|はこ}を お{願|ねが}いします。",
+            "vi": "Cảm ơn. Vậy nhờ em cái hộp này."
+          },
+          {
+            "speaker": "Minh",
+            "jp": "{車|くるま}まで お{運|はこ}びします。",
+            "vi": "Em mang ra xe giúp anh."
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "{助|たす}かります。",
+            "vi": "Đỡ cho tôi quá."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi Minh đề nghị làm gì. Nhấn お持ちします, お運びします."
+      },
+      {
+        "id": "s5030",
+        "type": "quiz",
+        "ref": "q5019"
+      },
+      {
+        "id": "s5031",
+        "type": "quiz",
+        "ref": "q5020"
+      },
+      {
+        "id": "s5032",
+        "type": "table",
+        "title": "Luyện đổi sang khiêm nhường ngữ",
+        "columns": ["Câu thường", "Khiêm nhường ngữ"],
+        "rows": [
+          ["わたしは リンと {言|い}います", "わたくしは リンと {申|もう}します"],
+          ["あした {行|い}きます", "あした {参|まい}ります"],
+          ["{写真|しゃしん}を {見|み}ました", "お{写真|しゃしん}を {拝見|はいけん}しました"],
+          ["{荷物|にもつ}を {持|も}ちます", "お{荷物|にもつ}を お{持|も}ちします"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s5033",
+        "type": "table",
+        "title": "Nhập vai · Đề nghị giúp đỡ",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Đề nghị chụp ảnh giúp khách", "お{写真|しゃしん}を お{撮|と}りしましょうか。"],
+          ["B", "Cảm ơn, nhờ", "ありがとう ございます。お{願|ねが}いします。"],
+          ["A", "Đề nghị gửi ảnh qua email", "あとで メールで お{送|おく}りします。"],
+          ["B", "Đưa địa chỉ email", "これが わたしの メールアドレスです。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi việc giúp: 道を ご案内します, 傘を お貸しします, 資料を ご用意します."
+      },
+      {
+        "id": "s5034",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "お Vます します／ご N します: làm cho người trên, khách.\n参ります, おります, 申します, いたします: kể về mình.\n伺います, 拝見します, いただきます, お目に かかります: hướng về người trên.\nございます: lịch sự của あります.",
+        "teacherNotes": "Dễ nhầm: dùng khiêm nhường cho người trên (先生は 参りますか), dùng tôn kính cho người công ty mình khi nói với khách. Ôn lại cả hệ thống kính ngữ bài 49–50 và cách cho nhận ở bài 41."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q5001",
+        "type": "choice",
+        "prompt": "Nhân viên mang hành lý giúp khách: おにもつを（　）します。",
+        "options": ["もって", "おもち", "もち", "おもって"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "お + Vます bỏ ます + します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5002",
+        "type": "choice",
+        "prompt": "Hướng dẫn viên giải thích lịch trình cho khách: スケジュールを（　）します。",
+        "options": ["おせつめい", "せつめいして", "ごせつめい", "ごせつめいに"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Danh từ gốc Hán dùng ご: ご説明します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5003",
+        "type": "choice",
+        "prompt": "Câu nào dùng お〜します đúng?",
+        "options": [
+          "わたしは まいあさ おはしりします。",
+          "わたしは まいばん おねむりします。",
+          "ひとりで ごはんを おたべします。",
+          "せんせい、かさを おかしします。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "お〜します dùng cho việc làm cho người kia: cho thầy mượn ô.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5004",
+        "type": "choice",
+        "prompt": "Khiêm nhường của いきます／きます là gì?",
+        "options": ["まいります", "いらっしゃいます", "めしあがります", "おっしゃいます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "行きます・来ます → 参ります (khiêm nhường). いらっしゃいます là tôn kính.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5005",
+        "type": "choice",
+        "prompt": "Khiêm nhường của いいます là gì?",
+        "options": ["おっしゃいます", "もうします", "いたします", "はいけんします"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "言います → 申します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5006",
+        "type": "choice",
+        "prompt": "Tự giới thiệu trang trọng với khách: わたくしは リンと（　）。",
+        "options": ["おっしゃいます", "いたします", "もうします", "ございます"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nói tên mình một cách khiêm nhường: 〜と申します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5007",
+        "type": "choice",
+        "prompt": "Nhân viên nói với khách bên ngoài về giám đốc công ty mình: しゃちょうの たなかは いま（　）。",
+        "options": [
+          "おでかけに なって います",
+          "でかけて いらっしゃいます",
+          "おでかけです",
+          "でかけて おります"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Với người ngoài, người trong công ty mình được nói bằng khiêm nhường: でかけて おります.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5008",
+        "type": "choice",
+        "prompt": "Xem ảnh của thầy: せんせいの おしゃしんを（　）しました。",
+        "options": ["はいけん", "ごらん", "おみ", "めしあがり"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Xem đồ của người trên: 拝見します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5009",
+        "type": "choice",
+        "prompt": "Học viên đến phòng thầy: らいしゅう せんせいの けんきゅうしつへ（　）。",
+        "options": ["いらっしゃいます", "うかがいます", "めしあがります", "なさいます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Mình đến chỗ người trên: 伺います.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5010",
+        "type": "choice",
+        "prompt": "Thầy hỏi: あした 学校に 来ますか。Học viên trả lời khiêm nhường:",
+        "options": [
+          "はい、いらっしゃいます。",
+          "はい、おいでに なります。",
+          "はい、まいります。",
+          "はい、くださいます。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nói về việc mình đến: 参ります. Nếu đến chỗ riêng của thầy (nhà, phòng) thì 伺います cũng rất tự nhiên.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5011",
+        "type": "choice",
+        "prompt": "Nhân viên chỉ đường cho khách: トイレは あちらに（　）。",
+        "options": ["いらっしゃいます", "まいります", "おります", "ございます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Vật, nơi chốn: あります → ございます.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5012",
+        "type": "choice",
+        "prompt": "Tuần sau nữa là từ nào?",
+        "options": ["さらいしゅう", "さらいげつ", "さらいねん", "らいしゅう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "再来週 là tuần sau nữa.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5013",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 緊張します.",
+        "options": ["biết ơn", "hồi hộp, căng thẳng", "chuẩn bị", "cổ vũ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "緊張します là hồi hộp.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5014",
+        "type": "choice",
+        "prompt": "Cổ vũ, ủng hộ là từ nào?",
+        "options": ["きょうりょく", "しょうきん", "おうえん", "ガイド"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "応援 là cổ vũ.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5015",
+        "type": "choice",
+        "prompt": "Ước mơ thành hiện thực: ゆめが（　）。",
+        "options": ["よういします", "いれます", "とります", "かないます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "夢が叶います.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5016",
+        "type": "choice",
+        "prompt": "Pha cà phê: コーヒーを（　）。",
+        "options": ["いれます", "おろします", "とります", "まいります"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "コーヒーを淹れます.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5017",
+        "type": "choice",
+        "prompt": "Ngoại ô là từ nào?",
+        "options": ["アルバム", "こうがい", "スケジュール", "ころ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "郊外 là ngoại ô.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5018",
+        "type": "choice",
+        "prompt": "Linh sang Nhật khi nào và đang sống ở đâu?",
+        "options": [
+          "1 năm trước, ở Tokyo",
+          "5 năm trước, ở Kyoto",
+          "3 năm trước, ở Osaka",
+          "Năm ngoái, ở Osaka"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "3年前に参りました。今は大阪に住んでおります.",
+        "points": 1,
+        "tags": ["minna-50"],
+        "passage": "リン：{3年前|さんねんまえ}に {参|まい}りました。{今|いま}は {大阪|おおさか}に {住|す}んで おります。"
+      },
+      {
+        "id": "q5019",
+        "type": "choice",
+        "prompt": "Minh đề nghị làm gì cho trưởng phòng?",
+        "options": ["Lái xe", "Gọi taxi", "Mua đồ", "Mang hành lý ra xe"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "お荷物、お持ちしましょうか。車までお運びします.",
+        "points": 1,
+        "tags": ["minna-50"],
+        "passage": "ミン：お{荷物|にもつ}、お{持|も}ちしましょうか。{車|くるま}まで お{運|はこ}びします。"
+      },
+      {
+        "id": "q5020",
+        "type": "choice",
+        "prompt": "Ở nhà ông Yamada, người viết đã xem gì?",
+        "options": ["Album ảnh gia đình", "Bức tranh", "Video", "Vườn nhà"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "ご家族のアルバムも拝見しました.",
+        "points": 1,
+        "tags": ["minna-50"],
+        "passage": "{山田|やまだ}{様|さま}　{先週|せんしゅう}は お{宅|たく}に {伺|うかが}って、{奥様|おくさま}の お{料理|りょうり}を いただきました。とても おいしかったです。{本当|ほんとう}に ありがとう ございました。ご{家族|かぞく}の アルバムも {拝見|はいけん}しました。さらいげつ、{国|くに}の {母|はは}が {日本|にほん}へ {参|まい}ります。{母|はは}も ぜひ {一度|いちど} お{目|め}に かかりたいと {申|もう}して おります。"
+      },
+      {
+        "id": "q5021",
+        "type": "choice",
+        "prompt": "Ai sẽ sang Nhật vào tháng sau nữa?",
+        "options": ["Bố của người viết", "Mẹ của người viết", "Ông Yamada", "Vợ ông Yamada"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "再来月、国の母が日本へ参ります.",
+        "points": 1,
+        "tags": ["minna-50"],
+        "passage": "{山田|やまだ}{様|さま}　{先週|せんしゅう}は お{宅|たく}に {伺|うかが}って、{奥様|おくさま}の お{料理|りょうり}を いただきました。とても おいしかったです。{本当|ほんとう}に ありがとう ございました。ご{家族|かぞく}の アルバムも {拝見|はいけん}しました。さらいげつ、{国|くに}の {母|はは}が {日本|にほん}へ {参|まい}ります。{母|はは}も ぜひ {一度|いちど} お{目|め}に かかりたいと {申|もう}して おります。"
+      },
+      {
+        "id": "q5022",
+        "type": "fill",
+        "prompt": "Điền khiêm nhường của します: よろしく おねがい（　）ます。",
+        "answer": ["いたし"],
+        "inputMode": "hiragana",
+        "explain": "します → いたします.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5023",
+        "type": "fill",
+        "prompt": "Điền (nhân viên dẫn khách): かいじょうまで ごあんない（　）。",
+        "answer": ["します", "いたします"],
+        "inputMode": "hiragana",
+        "explain": "ご + danh từ + します／いたします.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5024",
+        "type": "fill",
+        "prompt": "Điền khiêm nhường của います (nói với khách về bố mình): ちちは いま うちに（　）ます。",
+        "answer": ["おり"],
+        "inputMode": "hiragana",
+        "explain": "います → おります.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5025",
+        "type": "fill",
+        "prompt": "Điền lịch sự của あります: でんわは 2かいに（　）。",
+        "answer": ["ございます"],
+        "inputMode": "hiragana",
+        "explain": "あります → ございます.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5026",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Để tôi mang hành lý giúp quý khách.",
+        "tokens": [
+          {
+            "id": "q5026-1",
+            "text": "おにもつを"
+          },
+          {
+            "id": "q5026-2",
+            "text": "おもち"
+          },
+          {
+            "id": "q5026-3",
+            "text": "します。"
+          }
+        ],
+        "answer": ["q5026-1", "q5026-2", "q5026-3"],
+        "explain": "お + Vます bỏ ます + します.",
+        "points": 1,
+        "tags": ["minna-50"]
+      },
+      {
+        "id": "q5027",
+        "type": "match",
+        "prompt": "Nối khiêm nhường ngữ với nghĩa.",
+        "left": ["まいります", "もうします", "いたします", "はいけんします"],
+        "right": ["nói, tên là", "xem", "làm", "đi, đến"],
+        "answer": [
+          [0, 3],
+          [1, 0],
+          [2, 2],
+          [3, 1]
+        ],
+        "explain": "参ります đi đến, 申します nói, 致します làm, 拝見します xem.",
+        "points": 1,
+        "tags": ["minna-50"]
+      }
+    ]
+  }
+}
