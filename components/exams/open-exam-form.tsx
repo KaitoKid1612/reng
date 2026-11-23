@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 interface OpenExamFormProps {
   classId: string;
   lessonId: string;
+  // A fixed Reng exam (reng-n5-1…); without it the lesson's official test or next bank exam.
+  examSetId?: string;
 }
 
 function OpenExamButton({ onIdle }: { onIdle: () => void }) {
@@ -29,7 +31,7 @@ function OpenExamButton({ onIdle }: { onIdle: () => void }) {
  * "Mở đề này" in the exam library. Each submit opens one more exam, so a double click must not
  * send twice: the second submit arrives before the disabled button renders, hence the ref.
  */
-export function OpenExamForm({ classId, lessonId }: OpenExamFormProps) {
+export function OpenExamForm({ classId, lessonId, examSetId }: OpenExamFormProps) {
   const submitting = useRef(false);
   const release = useCallback(() => {
     submitting.current = false;
@@ -47,6 +49,7 @@ export function OpenExamForm({ classId, lessonId }: OpenExamFormProps) {
     >
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="lessonId" value={lessonId} />
+      {examSetId && <input type="hidden" name="examSetId" value={examSetId} />}
       <OpenExamButton onIdle={release} />
     </form>
   );

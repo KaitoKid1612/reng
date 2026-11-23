@@ -25,6 +25,16 @@ export type ExamSource =
       // an earlier exam of the class.
       totalExams: number;
       remainingExams: number;
+    }
+  | {
+      // A fixed Reng mock exam (lib/jlpt-exam-sets.ts) whose questions the pinned bank holds.
+      kind: "fixed";
+      lessonId: string;
+      lessonTitle: string;
+      level: JlptLevel;
+      setId: string;
+      title: string;
+      questionCount: number;
     };
 
 const OFFICIAL_YEAR = /^official:jlpt-(\d{4})$/u;
@@ -128,9 +138,39 @@ export function describeExamSource(
 
 /** The title an exam opened from the library gets, numbering Reng's exams per level. */
 export function examTitleFor(source: ExamSource, earlierFromSource: number) {
+  if (source.kind === "fixed") {
+    return source.title;
+  }
   if (source.kind === "official") {
     return `Đề chính thức JLPT ${source.level}${source.year ? ` (${source.year})` : ""}`;
   }
   const variant = source.variant ? ` ${VARIANT_LABELS[source.variant]}` : "";
   return `Đề Reng ${source.level}${variant} số ${earlierFromSource + 1}`;
+}
+
+interface FixedExamSet {
+  id: string;
+  level: JlptLevel;
+  title: string;
+  questions: readonly { id: string }[];
+}
+
+/** The fixed Reng exams a pinned lesson holds every question of, so the class can open them. */
+export function describeFixedExamSources(
+  lessonId: string,
+  lessonTitle: string,
+  questionIds: ReadonlySet<string>,
+  sets: readonly FixedExamSet[],
+): ExamSource[] {
+  return sets
+    .filter((set) => set.questions.every((question) => questionIds.has(question.id)))
+    .map((set) => ({
+      kind: "fixed",
+      lessonId,
+      lessonTitle,
+      level: set.level,
+      setId: set.id,
+      title: set.title,
+      questionCount: set.questions.length,
+    }));
 }

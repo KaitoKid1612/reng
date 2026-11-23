@@ -546,6 +546,21 @@ Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng tr
 
 **Bộ 2012** (cùng ngày, người dùng chọn làm gọn để tiết kiệm token): PDF đề là ảnh scan, còn 正答表 và script nghe có lớp chữ. Ba agent đọc ảnh mỗi trang một lần; đáp án được đối chiếu tự động với 正答表; lời nghe khớp script. Số điện thoại trong lời nghe có cách đọc từng chữ số (`{512-7734|ごーいちにーのななななさんよん}`) để giọng máy đọc như đề thật. Mã câu `n5-2012-…`, tag `official:jlpt-2012`.
 
+## Đề thi thử Reng cố định và bản in (23/11/2026)
+
+Mỗi cấp có 3 đề in được ([BD](basic-design/exam-center.md#bộ-đề-có-bản-in--23112026)): hai đề chính thức ở trên và một đề thi thử Reng cố định, khai báo trong `content/jlpt/reng-exam-sets.json`.
+
+- **Chọn câu:** với mỗi dạng của `jlptTestParts`, lấy câu theo thứ tự ngân hàng, bỏ câu có trong ngân hàng ôn hằng ngày của lớp (N5: `n5-daily-with-listening.json`, `n5-minna-1-25.json`; N4: `n4-daily-with-listening.json`), lấy trọn nhóm câu của một đoạn văn. Danh sách mã câu được ghi cứng: sửa ngân hàng sau này không đổi đề.
+  - N5 số 1 (`reng-n5-1`): 67 câu từ `n5-jlpt-mock.json`; phần nghe từ `n5-mock-41`–`70`.
+  - N4 số 1 (`reng-n4-1`): 85 câu từ `n4-jlpt-mock-standard.json`.
+  - Đáp án rải đều: N5 14/14/12/16 ở câu bốn phương án; N4 19/18/17/18.
+- **Thêm đề mới:** thêm một mục vào file (mã `reng-n5-2`…, tên "Đề thi thử Reng N5 số 2"), chọn câu chưa dùng ở đề trước. `tests/jlpt-exam-sets.test.ts` kiểm tra cấu trúc, trùng câu, đoạn văn, câu ngân hàng hằng ngày và phân bố đáp án.
+- **Rà ngày 23/11/2026** bằng agent không viết đề, mỗi cấp một agent. Đã sửa trong ngân hàng (và bộ nghe nguồn):
+  - N5: bốn câu lộ đáp án câu khác (hướng dẫn もんだい６ in 右, câu 02 in 大きい, câu ★ 03 trùng thứ tự với bài đọc, câu ★ 04 kết thúc bằng mẫu だれですか); đoạn văn câu 35–38 và 41–42 gợi ý câu ngữ pháp; bỏ furigana 8時半 ở phương án nghe 53; lời thoại nghe 45, 46 (sinh lại MP3).
+  - N4: phương án nhiễu đúng nghĩa đen ở mid-reading-02; vị trí đáp án nghe phần 3–4 xoay vòng 2,3,1 nên đổi thứ tự lời đáp ở l-19, l-22, l-27; bỏ từ trên N4 (家賃, 営業所, 画面, 充電); câu thông báo lộ mẫu 〜そうな; dòng "パスポートなどの カード" (sinh lại MP3 l-12, l-19, l-22, l-27).
+  - Audio mới tạo bằng Unreal Speech, cùng giọng với bộ cũ (Yuki, Sakura, Haruto, Rina). File cũ được giữ vì bản ngân hàng N5 đang chạy trên production vẫn dùng.
+- **Đưa lên production:** ngân hàng N5 (`n5-jlpt-mock-bank`) đã gắn vào lớp Minna từ 20/11; nạp bản đã sửa bằng `npm run bank:sql -- --file content/review-banks/n5-jlpt-mock.json --language ja-JP --out n5.sql` (thêm `--commit` để ghi thật). Ngân hàng N4 chuẩn chưa có trên production: thêm `--class <mã lớp>` để tạo bài cho giáo viên của lớp và gắn vào lớp. Sau đó chủ lớp mở đề ở Thư viện đề.
+
 ## Quản lý và nâng cấp bài cho lớp Nhật–Trung
 
 Ở `/teach`, lọc theo tên, ngôn ngữ bản soạn và trạng thái xuất bản. Dùng nhãn ngôn ngữ ở lớp và từng phiên bản khi Giao bài để tránh chọn nhầm bài Nhật/Trung hoặc giản/phồn. Bộ lọc không tự dịch bài, không gộp hai cách viết, không thay đổi nội dung lớp đang học.

@@ -19,7 +19,7 @@ interface ExamsPageProps {
 }
 
 const ERRORS: Record<string, string> = {
-  already_open: "Đề chính thức này đã mở cho lớp rồi; làm ở danh sách đề bên dưới.",
+  already_open: "Đề này đã mở cho lớp rồi; làm ở danh sách đề bên dưới.",
   no_exam_questions: "Bài này không còn ghép được đề. Tải lại trang để xem thư viện mới nhất.",
   not_found: "Chỉ chủ lớp mở được đề.",
   not_japanese: "Thi thử JLPT chỉ dành cho lớp tiếng Nhật.",
@@ -73,30 +73,49 @@ function ExamStatusCell({ exam, classId }: { exam: ExamRow; classId: string }) {
   );
 }
 
-function LibraryRow({ entry, classId }: { entry: LibraryEntry; classId: string }) {
-  const { source, opened } = entry;
-  const isOfficial = source.kind === "official";
-  let detail: string;
+interface LibraryRowProps {
+  entry: LibraryEntry;
+  classId: string;
+}
+
+function describeLibraryEntry({ source, opened }: LibraryEntry) {
   if (source.kind === "official") {
-    detail = opened ? "Đã mở cho lớp." : "Đủ mọi câu theo sách, chưa mở.";
-  } else if (source.remainingExams > 0) {
-    detail = `${opened ? `Đã mở ${opened} đề` : "Chưa mở đề nào"}. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
-  } else {
-    detail = `Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
+    return `Từ sách đề chính thức trên jlpt.jp. ${opened ? "Đã mở cho lớp." : "Đủ mọi câu theo sách, chưa mở."}`;
   }
-  const title = examTitleFor(source, opened);
+  if (source.kind === "fixed") {
+    return `Đề cố định ${source.questionCount} câu từ “${source.lessonTitle}”. ${opened ? "Đã mở cho lớp." : "Chưa mở."}`;
+  }
+  const origin = `Ghép từ “${source.lessonTitle}”.`;
+  if (source.remainingExams > 0) {
+    return `${origin} ${opened ? `Đã mở ${opened} đề` : "Chưa mở đề nào"}. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
+  }
+  return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
+}
+
+function LibraryRow({ entry, classId }: LibraryRowProps) {
+  const { source, opened } = entry;
+  const isOpenOnce = source.kind !== "bank";
   return (
     <li className="exam-library-row">
       <div>
-        <p className="exam-title">{title}</p>
-        <p className="small muted">
-          {isOfficial ? "Từ sách đề chính thức trên jlpt.jp." : `Ghép từ “${source.lessonTitle}”.`}{" "}
-          {detail}
-        </p>
+        <p className="exam-title">{examTitleFor(source, opened)}</p>
+        <p className="small muted">{describeLibraryEntry(entry)}</p>
       </div>
-      {!(isOfficial && opened) && <OpenExamForm classId={classId} lessonId={source.lessonId} />}
+      <div className="exam-library-actions">
+        {!(isOpenOnce && opened) && (
+          <OpenExamForm
+            classId={classId}
+            lessonId={source.lessonId}
+            examSetId={source.kind === "fixed" ? source.setId : undefined}
+          />
+        )}
+      </div>
     </li>
   );
+}
+
+function libraryKey({ source }: LibraryEntry) {
+  return source.kind === "fixed" ? `${source.lessonId}:${source.setId}` : source.lessonId;
 }
 
 export default async function ExamsPage({ searchParams }: ExamsPageProps) {
@@ -210,7 +229,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
               <h3>Thư viện đề của lớp</h3>
               <ul className="exam-library">
                 {item.library.map((entry) => (
-                  <LibraryRow key={entry.source.lessonId} entry={entry} classId={item.classId} />
+                  <LibraryRow key={libraryKey(entry)} entry={entry} classId={item.classId} />
                 ))}
               </ul>
             </>

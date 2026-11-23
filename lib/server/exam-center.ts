@@ -1,8 +1,9 @@
 import "server-only";
 
 import { endOfVietnamDay, toVietnamDate } from "@/lib/daily-practice";
-import { describeExamSource, examTitleFor } from "@/lib/exam-library";
+import { describeExamSource, describeFixedExamSources, examTitleFor } from "@/lib/exam-library";
 import { JLPT_PRESETS } from "@/lib/jlpt";
+import { findJlptExamSet, fixedRengExamSets } from "@/lib/jlpt-exam-sets";
 import {
   listAssignablePracticeQuestions,
   listClassAssignments,
@@ -79,7 +80,7 @@ async function loadLibrary(classId: string, exams: readonly Assignment[]) {
   const sources = await Promise.all(
     candidates.map(async (lesson) => {
       const questions = await listAssignablePracticeQuestions(classId, lesson.lessonId);
-      return describeExamSource(
+      const bank = describeExamSource(
         lesson.lessonId,
         lesson.title,
         questions.map((question) => ({
@@ -90,13 +91,29 @@ async function loadLibrary(classId: string, exams: readonly Assignment[]) {
         })),
         used,
       );
+      if (bank?.kind !== "bank") {
+        return bank ? [bank] : [];
+      }
+      // A bank that holds a fixed exam offers it first: one exam the teacher can also print.
+      const fixed = describeFixedExamSources(
+        lesson.lessonId,
+        lesson.title,
+        new Set(questions.map((question) => question.id)),
+        fixedRengExamSets(),
+      );
+      return [...fixed, bank];
     }),
   );
-  return sources.flatMap((source): LibraryEntry[] =>
-    source
-      ? [{ source, opened: exams.filter((exam) => exam.lessonId === source.lessonId).length }]
-      : [],
-  );
+  // A fixed exam counts by its title; the bank's own numbering (Đề Reng N5 số k) skips it.
+  const fixedTitles = new Set(fixedRengExamSets().map((set) => set.title));
+  return sources.flat().map((source): LibraryEntry => ({
+    source,
+    opened: exams.filter(
+      (exam) =>
+        exam.lessonId === source.lessonId &&
+        (source.kind === "fixed" ? exam.title === source.title : !fixedTitles.has(exam.title)),
+    ).length,
+  }));
 }
 
 function statusOf(
@@ -231,26 +248,39 @@ export async function openExamFromLibrary(
   classId: string,
   lessonId: string,
   now: Date,
+  // Set for a fixed Reng exam (reng-n5-1…); otherwise the lesson's official test or next exam.
+  examSetId: string | null = null,
 ) {
   const classRow = await getTeacherClass(teacherId, classId);
   const exams = (await listClassAssignments([classId])).filter((item) => item.exam !== null);
   const library = await loadLibrary(classId, exams);
-  const entry = library.find((item) => item.source.lessonId === lessonId);
+  const entry = library.find(
+    (item) =>
+      item.source.lessonId === lessonId &&
+      (examSetId
+        ? item.source.kind === "fixed" && item.source.setId === examSetId
+        : item.source.kind !== "fixed"),
+  );
   if (!entry) {
     throw new ServiceError("no_exam_questions");
   }
-  if (entry.source.kind === "official" && entry.opened > 0) {
+  if (entry.source.kind !== "bank" && entry.opened > 0) {
     throw new ServiceError("already_open");
   }
+  const fixedSet = entry.source.kind === "fixed" ? findJlptExamSet(entry.source.setId) : null;
   const days = classRow.self_study ? OPEN_DAYS.selfStudy : OPEN_DAYS.teaching;
   const dueDay = toVietnamDate(new Date(now.getTime() + days * 24 * 60 * 60 * 1000));
-  return publishJlptExam(teacherId, {
-    classId,
-    lessonId,
-    level: entry.source.level,
-    title: examTitleFor(entry.source, entry.opened),
-    dueAt: endOfVietnamDay(dueDay),
-    timeLimitMinutes: JLPT_PRESETS[entry.source.level].minutes,
-    feedbackPolicy: "after_submit",
-  });
+  return publishJlptExam(
+    teacherId,
+    {
+      classId,
+      lessonId,
+      level: entry.source.level,
+      title: examTitleFor(entry.source, entry.opened),
+      dueAt: endOfVietnamDay(dueDay),
+      timeLimitMinutes: JLPT_PRESETS[entry.source.level].minutes,
+      feedbackPolicy: "after_submit",
+    },
+    fixedSet?.questions.map((question) => question.id),
+  );
 }

@@ -6,6 +6,7 @@ import { FEEDBACK_POLICIES } from "@/lib/assignment";
 import { toVietnamDate } from "@/lib/daily-practice";
 import {
   composeJlptExam,
+  fixedJlptExam,
   isOfficialTest,
   JLPT_LEVELS,
   MAX_EXAM_MINUTES,
@@ -78,7 +79,12 @@ export async function listRecentExamUses(classId: string): Promise<DailyQuestion
  * Gives a JLPT mock exam to the teacher's Japanese class: questions of the lesson the class pins
  * (a review bank), the level's share of each section, one attempt with a time limit.
  */
-export async function publishJlptExam(teacherId: string, input: PublishJlptExamInput) {
+export async function publishJlptExam(
+  teacherId: string,
+  input: PublishJlptExamInput,
+  // A fixed exam (Đề thi thử Reng N5 số 1…) names its questions instead of composing them.
+  fixedQuestionIds?: readonly string[],
+) {
   const classRow = await getTeacherClass(teacherId, input.classId);
   if (classRow.language_tag !== "ja-JP") {
     throw new ServiceError("not_japanese");
@@ -91,17 +97,20 @@ export async function publishJlptExam(teacherId: string, input: PublishJlptExamI
   if (isOfficialTest(questions) && officialTestLevel(questions) !== input.level) {
     throw new ServiceError("official_level");
   }
-  const composition = composeJlptExam(
-    questions.map((question) => ({
-      id: question.id,
-      type: question.type,
-      tags: question.tags,
-      passage: question.passage ?? null,
-    })),
-    recentUses,
-    input.level,
-    `${input.classId}:${new Date().toISOString()}`,
-  );
+  const candidates = questions.map((question) => ({
+    id: question.id,
+    type: question.type,
+    tags: question.tags,
+    passage: question.passage ?? null,
+  }));
+  const composition = fixedQuestionIds
+    ? fixedJlptExam(candidates, fixedQuestionIds)
+    : composeJlptExam(
+        candidates,
+        recentUses,
+        input.level,
+        `${input.classId}:${new Date().toISOString()}`,
+      );
   if (!composition.questionIds.length) {
     throw new ServiceError("no_exam_questions");
   }

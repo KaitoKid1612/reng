@@ -14,17 +14,27 @@ const KNOWN_ERRORS = new Set([
   "invalid_items",
 ]);
 
-/** "Mở đề" in the exam library: the class owner opens an official test or the next Reng exam. */
+/**
+ * "Mở đề" in the exam library: the class owner opens an official test, a fixed Reng exam or the
+ * next exam composed from a bank.
+ */
 export async function openLibraryExamAction(formData: FormData) {
   const account = await getCurrentAccount();
   const classId = String(formData.get("classId") ?? "");
   const lessonId = String(formData.get("lessonId") ?? "");
+  const examSetId = String(formData.get("examSetId") ?? "") || null;
   if (account?.role !== "teacher") {
     redirect("/exams?error=not_found");
   }
   let assignmentId: string;
   try {
-    ({ assignmentId } = await openExamFromLibrary(account.id, classId, lessonId, new Date()));
+    ({ assignmentId } = await openExamFromLibrary(
+      account.id,
+      classId,
+      lessonId,
+      new Date(),
+      examSetId,
+    ));
   } catch (error) {
     const code =
       error instanceof ServiceError && KNOWN_ERRORS.has(error.code) ? error.code : "failed";

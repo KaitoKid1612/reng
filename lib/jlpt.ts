@@ -263,6 +263,27 @@ function composeByParts(
   return { questionIds, counts };
 }
 
+/**
+ * A fixed exam: the named questions in their order, each of which the lesson must still hold, so
+ * a bank edited on the server never opens a shorter or different exam than the one printed.
+ */
+export function fixedJlptExam(
+  candidates: readonly JlptExamCandidate[],
+  questionIds: readonly string[],
+) {
+  const byId = new Map(candidates.map((candidate) => [candidate.id, candidate]));
+  const counts = emptySectionCounts();
+  for (const id of questionIds) {
+    const candidate = byId.get(id);
+    const section = candidate ? jlptSectionOf(candidate) : null;
+    if (!section) {
+      return { questionIds: [], counts: emptySectionCounts() };
+    }
+    counts[section] += 1;
+  }
+  return { questionIds: [...questionIds], counts };
+}
+
 export function composeJlptExam(
   candidates: readonly JlptExamCandidate[],
   recentUses: readonly DailyQuestionUse[],
@@ -497,7 +518,7 @@ export function isHandedInAtTimeLimit(
 }
 
 // The real test's minutes for each section since 2020: N5 90 and N4 115 in all.
-const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>> = {
+export const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>> = {
   N5: { vocabulary: 20, grammarReading: 40, listening: 30 },
   N4: { vocabulary: 25, grammarReading: 55, listening: 35 },
 };
