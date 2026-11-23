@@ -222,18 +222,18 @@
       {
         "id": "n4-rx-std-l-12",
         "prompt": "ポイント理解｜女の人は新しいスマホの何がよくないと言っていますか。",
-        "explain": "でも、{電池|でんち}がすぐなくなっちゃうの: điểm chưa tốt là pin nhanh hết. Ảnh chụp đẹp, màn hình to dễ nhìn, giá rẻ hơn cô ấy nghĩ.",
+        "explain": "でも、{電池|でんち}がすぐなくなっちゃうの: điểm chưa tốt là pin nhanh hết. Camera tốt (カメラがとてもいい), máy nhẹ dễ cầm (軽くて持ちやすい), giá rẻ hơn cô ấy nghĩ.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:2", "reng-exam:standard"],
-        "audio": "ea057469675c60d2f06b24e4cfcfa5fa",
-        "transcript": "ナレーター：男の人と女の人が新しいスマホについて話しています。女の人は新しいスマホの何がよくないと言っていますか。男：新しいスマホ、買ったんだね。どう？女：写真がとてもきれいに{撮|と}れるし、{画面|がめん}も大きくて見やすいよ。男：いいね。{値段|ねだん}は？女：思っていたより安かった。でも、{電池|でんち}がすぐなくなっちゃうの。朝{充電|じゅうでん}しても、夕方にはもう少ししか{残|のこ}っていないんだ。男：それは{困|こま}るね。ナレーター：女の人は新しいスマホの何がよくないと言っていますか。",
+        "audio": "1281e72083fd4eb440a1819329d56e32",
+        "transcript": "ナレーター：男の人と女の人が新しいスマホについて話しています。女の人は新しいスマホの何がよくないと言っていますか。男：新しいスマホ、買ったんだね。どう？女：カメラがとてもいいし、軽くて持ちやすいよ。男：いいね。{値段|ねだん}は？女：思っていたより安かった。でも、{電池|でんち}がすぐなくなっちゃうの。朝から使うと、夕方にはもうほとんど{残|のこ}っていないんだ。男：それは{困|こま}るね。ナレーター：女の人は新しいスマホの何がよくないと言っていますか。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
         "options": [
           "{電池|でんち}がすぐなくなる",
-          "写真がきれいに{撮|と}れない",
-          "{画面|がめん}が見にくい",
+          "カメラがよくない",
+          "重くて持ちにくい",
           "{値段|ねだん}が高い"
         ],
         "answer": [0]
@@ -333,13 +333,13 @@
         "explain": "Xin một miếng: 一つもらってもいい？. 食べてみたら？ là khuyên người khác ăn thử; 食べさせてあげようか là mình cho người khác ăn.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:3", "reng-exam:standard"],
-        "audio": "c92cd30985019dcd85aec446c2247850",
-        "transcript": "ナレーター：{友達|ともだち}が作ったケーキがおいしそうです。食べたいです。何と言いますか。男：１、一つ食べてみたら？２、一つもらってもいい？３、一つ食べさせてあげようか。",
+        "audio": "6afab806f2ab405365d9307f2d1bc6b9",
+        "transcript": "ナレーター：{友達|ともだち}が作ったケーキがおいしそうです。食べたいです。何と言いますか。男：１、一つもらってもいい？２、一つ食べてみたら？３、一つ食べさせてあげようか。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
         "options": ["1", "2", "3"],
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "n4-rx-std-l-20",
@@ -372,16 +372,16 @@
       {
         "id": "n4-rx-std-l-22",
         "prompt": "即時応答｜話しかけられた言葉に合う返事を、1〜3から選んでください。",
-        "explain": "どのぐらいかかりますか hỏi mất bao lâu → 歩いて{十分|じゅっぷん}ぐらいです. 三百円 là giá tiền; あの{角|かど}を右 là chỉ đường.",
+        "explain": "どのぐらいかかりますか hỏi mất bao lâu → 歩いて{十分|じゅっぷん}ぐらいです. 九時ごろ là một thời điểm, không phải thời gian đi; あの{角|かど}を右 là chỉ đường.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4", "reng-exam:standard"],
-        "audio": "7937df249aa8359db028833e6efc11d9",
-        "transcript": "女：駅までどのぐらいかかりますか。男：１、三百円ぐらいです。２、あの{角|かど}を右です。３、歩いて{十分|じゅっぷん}ぐらいです。",
+        "audio": "cd86c1172e3a3ead89f29b5f81756a24",
+        "transcript": "女：駅までどのぐらいかかりますか。男：１、歩いて{十分|じゅっぷん}ぐらいです。２、あの{角|かど}を右です。３、九時ごろです。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
         "options": ["1", "2", "3"],
-        "answer": [2]
+        "answer": [0]
       },
       {
         "id": "n4-rx-std-l-23",
@@ -445,13 +445,13 @@
         "explain": "Hỏi có tự làm không → ええ、母に教えてもらって (vâng, được mẹ dạy). 食べませんでした trả lời việc khác; 作ってください là nhờ người khác làm.",
         "points": 1,
         "tags": ["listening", "jlpt:n4", "section:4", "reng-exam:standard"],
-        "audio": "fc8921e4c73cf3b4a9a2d360a713b43c",
-        "transcript": "男：このケーキ、自分で作ったんですか。女：１、いいえ、食べませんでした。２、ええ、母に教えてもらって。３、ええ、作ってください。",
+        "audio": "b9fe4829edfe05a0427a911990e727c7",
+        "transcript": "男：このケーキ、自分で作ったんですか。女：１、いいえ、食べませんでした。２、ええ、作ってください。３、ええ、母に教えてもらって。",
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
         "options": ["1", "2", "3"],
-        "answer": [1]
+        "answer": [2]
       },
       {
         "id": "n4-rx-std-l-28",
