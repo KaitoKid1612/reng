@@ -1,0 +1,856 @@
+{
+  "id": "minna-2-31",
+  "title": "Bài 31 – Ý định và kế hoạch",
+  "titleJa": "第31課・意向形と予定",
+  "summary": "Rủ nhau, nói ý định, trình bày lịch dự kiến và việc chưa làm.",
+  "order": 31,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3101",
+        "jp": "もうしこみます",
+        "romaji": "moushikomimasu",
+        "vi": "đăng ký, nộp đơn",
+        "note": "I · こうざに",
+        "audio": null,
+        "kanji": "申し込みます"
+      },
+      {
+        "id": "v3102",
+        "jp": "とります",
+        "romaji": "torimasu",
+        "vi": "xin nghỉ, lấy",
+        "note": "I · やすみを",
+        "audio": null,
+        "kanji": "取ります"
+      },
+      {
+        "id": "v3103",
+        "jp": "おこさん",
+        "romaji": "okosan",
+        "vi": "con của người khác",
+        "note": "Cách gọi lịch sự",
+        "audio": null,
+        "kanji": "お子さん"
+      },
+      {
+        "id": "v3104",
+        "jp": "つづけます",
+        "romaji": "tsuzukemasu",
+        "vi": "tiếp tục",
+        "note": "II · べんきょうを",
+        "audio": null,
+        "kanji": "続けます"
+      },
+      {
+        "id": "v3105",
+        "jp": "みつけます",
+        "romaji": "mitsukemasu",
+        "vi": "tìm thấy",
+        "note": "II · しごとを",
+        "audio": null,
+        "kanji": "見つけます"
+      },
+      {
+        "id": "v3106",
+        "jp": "うけます",
+        "romaji": "ukemasu",
+        "vi": "dự thi, tham gia",
+        "note": "II · しけんを",
+        "audio": null,
+        "kanji": "受けます"
+      },
+      {
+        "id": "v3107",
+        "jp": "きゅうけいします",
+        "romaji": "kyuukei shimasu",
+        "vi": "nghỉ giải lao",
+        "note": "III",
+        "audio": null,
+        "kanji": "休憩します"
+      },
+      {
+        "id": "v3108",
+        "jp": "れんきゅう",
+        "romaji": "renkyuu",
+        "vi": "kỳ nghỉ nhiều ngày liền",
+        "note": "れんきゅうに りょこうします",
+        "audio": null,
+        "kanji": "連休",
+        "image": "/icons/vocab/calendar.svg"
+      },
+      {
+        "id": "v3109",
+        "jp": "さくぶん",
+        "romaji": "sakubun",
+        "vi": "bài tập làm văn",
+        "note": "さくぶんを かきます",
+        "audio": null,
+        "kanji": "作文"
+      },
+      {
+        "id": "v3110",
+        "jp": "てんらんかい",
+        "romaji": "tenrankai",
+        "vi": "triển lãm",
+        "note": "てんらんかいに いきます",
+        "audio": null,
+        "kanji": "展覧会"
+      },
+      {
+        "id": "v3111",
+        "jp": "けっこんしき",
+        "romaji": "kekkonshiki",
+        "vi": "lễ cưới",
+        "note": "けっこんしきに でます",
+        "audio": null,
+        "kanji": "結婚式"
+      },
+      {
+        "id": "v3112",
+        "jp": "おそうしき",
+        "romaji": "osoushiki",
+        "vi": "tang lễ",
+        "note": "おそうしきに でます",
+        "audio": null,
+        "kanji": "お葬式"
+      },
+      {
+        "id": "v3113",
+        "jp": "しき",
+        "romaji": "shiki",
+        "vi": "buổi lễ",
+        "note": "しきが はじまります",
+        "audio": null,
+        "kanji": "式"
+      },
+      {
+        "id": "v3114",
+        "jp": "ほんしゃ",
+        "romaji": "honsha",
+        "vi": "trụ sở chính",
+        "note": "ほんしゃで はたらきます",
+        "audio": null,
+        "kanji": "本社"
+      },
+      {
+        "id": "v3115",
+        "jp": "してん",
+        "romaji": "shiten",
+        "vi": "chi nhánh",
+        "note": "してんに いきます",
+        "audio": null,
+        "kanji": "支店"
+      },
+      {
+        "id": "v3116",
+        "jp": "きょうかい",
+        "romaji": "kyoukai",
+        "vi": "nhà thờ",
+        "note": "きょうかいの ちかく",
+        "audio": null,
+        "kanji": "教会"
+      },
+      {
+        "id": "v3117",
+        "jp": "だいがくいん",
+        "romaji": "daigakuin",
+        "vi": "bậc cao học, trường sau đại học",
+        "note": "だいがくいんに いきます",
+        "audio": null,
+        "kanji": "大学院"
+      },
+      {
+        "id": "v3118",
+        "jp": "どうぶつえん",
+        "romaji": "doubutsuen",
+        "vi": "sở thú",
+        "note": "どうぶつえんに いきます",
+        "audio": null,
+        "kanji": "動物園"
+      },
+      {
+        "id": "v3119",
+        "jp": "おんせん",
+        "romaji": "onsen",
+        "vi": "suối nước nóng",
+        "note": "おんせんに はいります",
+        "audio": null,
+        "kanji": "温泉"
+      },
+      {
+        "id": "v3120",
+        "jp": "〜の ほう",
+        "romaji": "no hou",
+        "vi": "về phía…",
+        "note": "うみの ほう",
+        "audio": null,
+        "kanji": "〜の方"
+      },
+      {
+        "id": "v3121",
+        "jp": "ずっと",
+        "romaji": "zutto",
+        "vi": "suốt, mãi",
+        "note": "ずっと つづけます",
+        "audio": null
+      },
+      {
+        "id": "v3122",
+        "jp": "のこります",
+        "romaji": "nokorimasu",
+        "vi": "ở lại, còn lại",
+        "note": "ここに のこります",
+        "audio": null,
+        "kanji": "残ります"
+      },
+      {
+        "id": "v3123",
+        "jp": "つきに",
+        "romaji": "tsuki ni",
+        "vi": "mỗi tháng",
+        "note": "つきに にかい",
+        "audio": null,
+        "kanji": "月に"
+      },
+      {
+        "id": "v3124",
+        "jp": "ふつうの",
+        "romaji": "futsuu no",
+        "vi": "thông thường",
+        "note": "ふつうの きっぷ",
+        "audio": null,
+        "kanji": "普通の"
+      },
+      {
+        "id": "v3125",
+        "jp": "〜ごう",
+        "romaji": "gou",
+        "vi": "số hiệu…",
+        "note": "Tàu, cơn bão",
+        "audio": null,
+        "kanji": "〜号",
+        "image": "/icons/vocab/train.svg"
+      },
+      {
+        "id": "v3126",
+        "jp": "はっぴょう",
+        "romaji": "happyou",
+        "vi": "phần trình bày, công bố",
+        "note": "はっぴょうの じゅんび",
+        "audio": null,
+        "kanji": "発表"
+      },
+      {
+        "id": "v3127",
+        "jp": "かえり",
+        "romaji": "kaeri",
+        "vi": "lúc về, đường về",
+        "note": "かえりに よります",
+        "audio": null,
+        "kanji": "帰り"
+      },
+      {
+        "id": "v3128",
+        "jp": "にゅうがくしけん",
+        "romaji": "nyuugaku shiken",
+        "vi": "kỳ thi đầu vào",
+        "note": "にゅうがくしけんを うけます",
+        "audio": null,
+        "kanji": "入学試験"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3101",
+        "pattern": "Thể ý chí · 意向形",
+        "vi": "Rủ nhau làm hoặc tự nhủ sẽ làm",
+        "explain": "Nhóm I đổi âm cuối sang hàng お và thêm う. Nhóm II bỏ る, thêm よう. する → しよう, くる → こよう.",
+        "viMistake": "とる → とろう. よう đứng sau thân của động từ nhóm II, chẳng hạn うけよう.",
+        "examples": [
+          {
+            "jp": "{帰|かえ}りに {本屋|ほんや}へ {寄|よ}ろう。",
+            "vi": "Trên đường về ghé hiệu sách nhé.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3102",
+        "pattern": "V ý chí + と思います",
+        "vi": "Nêu ý định, thường khi vừa quyết định",
+        "explain": "Đặt thể ý chí trước と. Dùng と思います khi nêu điều mình quyết định, thường ngay trong tình huống nói.",
+        "viMistake": "Muốn nói định viết thì dùng かこうと おもいます. かくと おもいます là nhận định rằng sẽ viết.",
+        "examples": [
+          {
+            "jp": "この {講座|こうざ}は {面白|おもしろ}そうですね。{申|もう}し{込|こ}もうと {思|おも}います。",
+            "vi": "Khóa này có vẻ hay. Tôi nghĩ mình sẽ đăng ký.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3103",
+        "pattern": "V ý chí + と思っています",
+        "vi": "Nói dự định đã có từ trước",
+        "explain": "Dùng khi một người đã nghĩ tới một việc và hiện vẫn giữ dự định. Khi nói thay người khác, dựa vào thông tin họ đã cho biết.",
+        "viMistake": "Không dùng thể ます trước と trong mẫu này.",
+        "examples": [
+          {
+            "jp": "{来年|らいねん}、{大学院|だいがくいん}で {経済学|けいざいがく}を {学|まな}ぼうと {思|おも}って います。",
+            "vi": "Tôi định học kinh tế ở bậc cao học năm sau.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3104",
+        "pattern": "Vる／Vない + つもりです",
+        "vi": "Nói ý định làm hoặc không làm",
+        "explain": "Dùng thể từ điển cho ý định làm, thể ない cho ý định không làm. つもり cho biết điều chủ thể dự định.",
+        "viMistake": "Nói định không dự thi: うけない つもりです.",
+        "examples": [
+          {
+            "jp": "{今月|こんげつ}は {休|やす}みを {取|と}らない つもりです。",
+            "vi": "Tôi định tháng này không xin nghỉ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3105",
+        "pattern": "Vる／Nの + 予定です",
+        "vi": "Nói lịch hoặc kế hoạch dự kiến",
+        "explain": "Đặt thể từ điển hoặc danh từ + の trước 予定です. Dùng khi nói về lịch trình hay việc đã được sắp xếp.",
+        "viMistake": "Danh từ cần の trong mẫu Nの予定です, chẳng hạn はっぴょうの よていです.",
+        "examples": [
+          {
+            "jp": "{発表|はっぴょう}は {午後|ごご}２{時|じ}に {始|はじ}まる {予定|よてい}です。",
+            "vi": "Phần trình bày dự kiến bắt đầu lúc 2 giờ chiều.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3106",
+        "pattern": "まだ + Vていません",
+        "vi": "Nói việc đến nay vẫn chưa làm",
+        "explain": "Thể て + いません và まだ cho biết việc chưa xảy ra hoặc chưa hoàn tất. Dùng để trả lời もう Vましたか.",
+        "viMistake": "まだ もうしこんで いません cho biết chưa đăng ký. Ý định sau đó cần thêm câu riêng nếu muốn nói rõ.",
+        "examples": [
+          {
+            "jp": "{入学試験|にゅうがくしけん}には まだ {申|もう}し{込|こ}んで いません。",
+            "vi": "Tôi vẫn chưa đăng ký kỳ thi đầu vào.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3101",
+        "type": "title",
+        "jp": "第31課 · {意向形|いこうけい}と{予定|よてい}",
+        "vi": "Bài 31 · Ý định và kế hoạch"
+      },
+      {
+        "id": "s3102",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Rủ bạn làm một việc. Trình bày ý định cá nhân, đọc lịch và nói việc còn chưa làm."
+      },
+      {
+        "id": "s3103",
+        "type": "vocab",
+        "refs": ["v3101", "v3102", "v3103", "v3104", "v3105", "v3106", "v3107", "v3108"]
+      },
+      {
+        "id": "s3104",
+        "type": "vocab",
+        "refs": ["v3109", "v3110", "v3111", "v3112", "v3113", "v3114", "v3115", "v3116"]
+      },
+      {
+        "id": "s3105",
+        "type": "vocab",
+        "refs": ["v3117", "v3118", "v3119", "v3120", "v3121", "v3122", "v3123", "v3124"]
+      },
+      {
+        "id": "s3106",
+        "type": "vocab",
+        "refs": ["v3125", "v3126", "v3127", "v3128"]
+      },
+      {
+        "id": "s3107",
+        "type": "grammar",
+        "ref": "g3101"
+      },
+      {
+        "id": "s3108",
+        "type": "example",
+        "ref": "g3101",
+        "reveal": true
+      },
+      {
+        "id": "s3109",
+        "type": "quiz",
+        "ref": "q3101"
+      },
+      {
+        "id": "s3110",
+        "type": "table",
+        "title": "Chia thể ý chí",
+        "columns": ["Nhóm", "Thể từ điển", "Thể ý chí"],
+        "rows": [
+          ["I", "よむ", "よもう"],
+          ["I", "とる", "とろう"],
+          ["II", "うける", "うけよう"],
+          ["III", "する／くる", "しよう／こよう"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3111",
+        "type": "grammar",
+        "ref": "g3102"
+      },
+      {
+        "id": "s3112",
+        "type": "example",
+        "ref": "g3102",
+        "reveal": true
+      },
+      {
+        "id": "s3113",
+        "type": "quiz",
+        "ref": "q3105"
+      },
+      {
+        "id": "s3114",
+        "type": "grammar",
+        "ref": "g3103"
+      },
+      {
+        "id": "s3115",
+        "type": "example",
+        "ref": "g3103",
+        "reveal": true
+      },
+      {
+        "id": "s3116",
+        "type": "quiz",
+        "ref": "q3106"
+      },
+      {
+        "id": "s3117",
+        "type": "grammar",
+        "ref": "g3104"
+      },
+      {
+        "id": "s3118",
+        "type": "example",
+        "ref": "g3104",
+        "reveal": true
+      },
+      {
+        "id": "s3119",
+        "type": "quiz",
+        "ref": "q3107"
+      },
+      {
+        "id": "s3120",
+        "type": "grammar",
+        "ref": "g3105"
+      },
+      {
+        "id": "s3121",
+        "type": "example",
+        "ref": "g3105",
+        "reveal": true
+      },
+      {
+        "id": "s3122",
+        "type": "quiz",
+        "ref": "q3108"
+      },
+      {
+        "id": "s3123",
+        "type": "grammar",
+        "ref": "g3106"
+      },
+      {
+        "id": "s3124",
+        "type": "example",
+        "ref": "g3106",
+        "reveal": true
+      },
+      {
+        "id": "s3125",
+        "type": "quiz",
+        "ref": "q3109"
+      },
+      {
+        "id": "s3126",
+        "type": "table",
+        "title": "Chọn cách nói theo tình huống",
+        "columns": ["Tình huống", "Mẫu"],
+        "rows": [
+          ["Vừa nảy ra ý định", "V ý chí + と思います"],
+          ["Ý định đã có từ trước", "V ý chí + と思っています"],
+          ["Ý định làm hoặc không làm", "Vる／Vない + つもりです"],
+          ["Lịch đã sắp xếp", "Vる／Nの + 予定です"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3127",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ ví dụ", "Nghĩa"],
+        "rows": [
+          ["申", "{申|もう}し{込|こ}みます", "đăng ký"],
+          ["続", "{続|つづ}けます", "tiếp tục"],
+          ["受", "{受|う}けます", "dự thi"],
+          ["試", "{試験|しけん}", "kỳ thi"],
+          ["支", "{支店|してん}", "chi nhánh"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3128",
+        "type": "table",
+        "title": "Từ tham khảo · Chuyên ngành",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{経済学|けいざいがく}", "kinh tế học"],
+          ["{法律学|ほうりつがく}", "luật học"],
+          ["{医学|いがく}", "y học"],
+          ["{教育学|きょういくがく}", "giáo dục học"],
+          ["{情報工学|じょうほうこうがく}", "kỹ thuật thông tin"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên chọn ngành rồi nói sẽ học gì và khi nào dự định dự thi."
+      },
+      {
+        "id": "s3129",
+        "type": "dialogue",
+        "title": "Hội thoại · Kế hoạch học buổi tối",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Mai",
+            "jp": "{来月|らいげつ}から {夜|よる}の {講座|こうざ}に {通|かよ}おうと {思|おも}って います。",
+            "vi": "Tôi định từ tháng sau sẽ học khóa buổi tối."
+          },
+          {
+            "speaker": "An",
+            "jp": "もう {申|もう}し{込|こ}みましたか。",
+            "vi": "Bạn đăng ký chưa?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "いいえ、まだです。{金曜日|きんようび}に {申|もう}し{込|こ}む つもりです。",
+            "vi": "Chưa. Tôi định đăng ký vào thứ Sáu."
+          },
+          {
+            "speaker": "An",
+            "jp": "じゃ、{帰|かえ}りに {案内書|あんないしょ}を もらいに {行|い}こう。",
+            "vi": "Vậy trên đường về cùng đi lấy tờ hướng dẫn nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi Mai dự định học từ tháng nào và định đăng ký ngày nào."
+      },
+      {
+        "id": "s3130",
+        "type": "quiz",
+        "ref": "q3116"
+      },
+      {
+        "id": "s3131",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          [
+            "Sắp xếp: と／{受|う}けよう／{思|おも}って います／{試験|しけん}を",
+            "{試験|しけん}を {受|う}けようと {思|おも}って います。"
+          ],
+          [
+            "Dịch: Tôi định không xin nghỉ tuần sau.",
+            "{来週|らいしゅう}は {休|やす}みを {取|と}らない つもりです。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3132",
+        "type": "table",
+        "title": "Nhập vai · Hỏi về lịch thi",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "Học viên",
+            "Nói dự định dự thi",
+            "{入学試験|にゅうがくしけん}を {受|う}けようと {思|おも}って います。"
+          ],
+          ["Nhân viên", "Cho biết lịch", "{試験|しけん}は {来月|らいげつ}の {予定|よてい}です。"],
+          ["Học viên", "Báo chưa đăng ký", "まだ {申|もう}し{込|こ}んで いません。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3133",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Thể ý chí dùng để rủ và nói ý định.\nつもりです nêu ý định cá nhân.\n予定です nêu lịch dự kiến.\nまだ〜ていません cho biết việc vẫn chưa làm.",
+        "teacherNotes": "Liên hệ bước chuẩn bị ておきます ở bài 30. Sang bài 32 sẽ tập đưa lời khuyên cho người có kế hoạch."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3101",
+        "type": "choice",
+        "prompt": "Chọn thể ý chí của とります。",
+        "options": ["とろう", "とりよう", "とらよう", "とれよう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "取る là nhóm I, る → ろう.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3102",
+        "type": "choice",
+        "prompt": "Chọn thể ý chí của うけます。",
+        "options": ["うけろう", "うけよう", "うけおう", "うけようう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "受ける là nhóm II.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3103",
+        "type": "choice",
+        "prompt": "Chọn thể ý chí của きます (来ます).",
+        "options": ["きよう", "くろう", "こよう", "こおう"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "来る → こよう.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3104",
+        "type": "choice",
+        "prompt": "Chọn lời rủ bạn nghỉ một chút.",
+        "options": [
+          "ちょっと やすみました。",
+          "ちょっと やすんで あります。",
+          "ちょっと やすめません。",
+          "ちょっと やすもう。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Dạng ý chí đứng cuối câu có thể dùng để rủ.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3105",
+        "type": "choice",
+        "prompt": "Vừa xem tờ giới thiệu và quyết định đăng ký. Chọn cách nói phù hợp.",
+        "options": [
+          "もうしこもうと おもいます。",
+          "もうしこんで あります。",
+          "もうしこんで しまいました。",
+          "もうしこめません。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Thể ý chí + と思います nêu ý định vừa hình thành.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3106",
+        "type": "choice",
+        "prompt": "Nói dự định đã có từ lâu: ずっと つづけようと（　）。",
+        "options": ["おいて あります", "おもって います", "して しまいます", "きこえます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "と思っています cho biết dự định vẫn được giữ.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3107",
+        "type": "choice",
+        "prompt": "Tôi định không dự thi: しけんを（　）つもりです。",
+        "options": ["うけよう", "うけて", "うけない", "うけます"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Dùng thể ない để nói dự định không làm.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3108",
+        "type": "choice",
+        "prompt": "Chọn cách nói lịch có buổi trình bày.",
+        "options": [
+          "はっぴょうを よていです。",
+          "はっぴょうで よていです。",
+          "はっぴょうに よていです。",
+          "はっぴょうの よていです。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Danh từ + の予定です.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3109",
+        "type": "choice",
+        "prompt": "Chọn câu trả lời khi vẫn chưa đăng ký.",
+        "options": [
+          "いいえ、まだ もうしこんで いません。",
+          "はい、もう もうしこみました。",
+          "はい、もうしこむ つもりです。",
+          "いいえ、もう うけました。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "まだ + ていません diễn tả việc vẫn chưa làm.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3110",
+        "type": "choice",
+        "prompt": "Từ nào chỉ chi nhánh?",
+        "options": ["ほんしゃ", "してん", "れんきゅう", "だいがくいん"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "支店 là chi nhánh.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3111",
+        "type": "choice",
+        "prompt": "Từ nào chỉ kỳ nghỉ nhiều ngày liền?",
+        "options": ["きゅうけい", "さくぶん", "れんきゅう", "かえり"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "連休 gồm các ngày nghỉ liên tiếp.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3112",
+        "type": "choice",
+        "prompt": "Cụm nào có nghĩa «dự thi»?",
+        "options": [
+          "しけんを みつけます",
+          "しけんを とります",
+          "しけんに のこります",
+          "しけんを うけます"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Dùng 試験を受ける.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3113",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là trụ sở chính?",
+        "options": ["ほんしゃ", "してん", "おんせん", "きょうかい"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "本社 là trụ sở chính.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3114",
+        "type": "choice",
+        "prompt": "Thêm «mỗi tháng» vào にかい いきます bằng cụm nào?",
+        "options": ["かえりに", "つきに", "ずっと", "ふつうの"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "月に２回 là hai lần mỗi tháng.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3115",
+        "type": "choice",
+        "prompt": "Cách gọi con của người khác một cách lịch sự là gì?",
+        "options": ["おそうしき", "さくぶん", "おこさん", "おんせん"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "お子さん là cách gọi lịch sự.",
+        "points": 1,
+        "tags": ["minna-31"]
+      },
+      {
+        "id": "q3116",
+        "type": "choice",
+        "prompt": "Theo đoạn đọc, người viết vẫn chưa làm gì?",
+        "options": ["Đi tới chi nhánh", "Thi đầu vào", "Gặp bạn ở ga", "Đăng ký khóa học"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "まだ申し込んでいません nghĩa là vẫn chưa đăng ký.",
+        "points": 1,
+        "tags": ["minna-31"],
+        "passage": "{来月|らいげつ}、{支店|してん}の {近|ちか}くで {夜|よる}の {講座|こうざ}が {始|はじ}まる {予定|よてい}です。{私|わたし}は {通|かよ}う つもりですが、まだ {申|もう}し{込|こ}んで いません。"
+      },
+      {
+        "id": "q3117",
+        "type": "fill",
+        "prompt": "Viết thể ý chí bằng hiragana của かきます。",
+        "answer": ["かこう"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-31"],
+        "explain": "かきます → かこう"
+      },
+      {
+        "id": "q3118",
+        "type": "fill",
+        "prompt": "Viết thể ý chí bằng hiragana của つづけます。",
+        "answer": ["つづけよう"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-31"],
+        "explain": "つづけます → つづけよう"
+      },
+      {
+        "id": "q3119",
+        "type": "fill",
+        "prompt": "Viết thể ý chí bằng hiragana của します。",
+        "answer": ["しよう"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-31"],
+        "explain": "します → しよう"
+      },
+      {
+        "id": "q3120",
+        "type": "fill",
+        "prompt": "Viết thể ý chí bằng hiragana của もうしこみます。",
+        "answer": ["もうしこもう"],
+        "inputMode": "hiragana",
+        "points": 1,
+        "tags": ["minna-31"],
+        "explain": "もうしこみます → もうしこもう"
+      }
+    ]
+  }
+}

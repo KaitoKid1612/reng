@@ -85,6 +85,8 @@ Ngày 23/11/2026 thêm **Tạo bài 29 từ mẫu** với 41 mục từ, 4 mục
 
 Ngày 23/11/2026 thêm **Tạo bài 30 từ mẫu** với 45 mục từ, 7 mục ngữ pháp, 37 slide và 20 câu tự chấm. Bài luyện nói về đồ đã đặt sẵn, việc chuẩn bị và thu dọn. [Bảng đối chiếu bài 30](testing/minna-lesson-30-coverage.md).
 
+Ngày 23/11/2026 thêm **Tạo bài 31 từ mẫu** với 28 mục từ, 6 mục ngữ pháp, 33 slide và 20 câu tự chấm. Bài luyện thể ý chí, dự định và lịch trình. [Bảng đối chiếu bài 31](testing/minna-lesson-31-coverage.md).
+
 Mẫu câu hiện chữ lớn trên slide nên giữ ngắn, khoảng 30 đơn vị độ rộng (chữ Nhật tính 2). Phần giải thích như "(năng lực)" hay "(chỉ đường)" đặt ở dòng nghĩa tiếng Việt, nếu không slide sẽ ngắt dòng giữa từ.
 
 Nội dung do Reng tự biên soạn theo chủ điểm bài 11 (đếm 〜つ・〜人・〜台・〜枚・〜回, khoảng thời gian, tần suất, だけ); câu ví dụ, hội thoại và bài luyện là bản viết mới, không chép nguyên văn sách, tranh hay đĩa nghe. Giáo viên duyệt và sửa trước khi xuất bản; học viên dùng sách có bản quyền của mình để đối chiếu. Bài tiếp theo: dùng **Tạo bản sao** từ bài 11 rồi sửa, hoặc soạn mới trong editor. Thêm bài mẫu mới = thêm JSON vào `content/starters/` và đăng ký trong `lib/starter-lessons.ts`; test yêu cầu bài mẫu xuất bản được ngay và đáp án trắc nghiệm không nằm cùng một vị trí (lựa chọn hiển thị đúng thứ tự soạn).
