@@ -1,0 +1,849 @@
+{
+  "id": "minna-2-35",
+  "title": "Bài 35 – Nói điều kiện",
+  "titleJa": "第35課・条件の言い方",
+  "summary": "Nói điều kiện, hỏi cách làm và gợi ý dựa trên chủ đề đã nêu.",
+  "order": 35,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3501",
+        "jp": "むかし",
+        "romaji": "mukashi",
+        "vi": "ngày xưa",
+        "audio": null,
+        "kanji": "昔"
+      },
+      {
+        "id": "v3502",
+        "jp": "なおります",
+        "romaji": "naorimasu",
+        "vi": "khỏi bệnh",
+        "audio": null,
+        "kanji": "治ります",
+        "note": "びょうきが なおります"
+      },
+      {
+        "id": "v3503",
+        "jp": "なおります",
+        "romaji": "naorimasu",
+        "vi": "được sửa, hết hỏng",
+        "audio": null,
+        "kanji": "直ります",
+        "note": "こしょうが なおります"
+      },
+      {
+        "id": "v3504",
+        "jp": "キー",
+        "romaji": "kii",
+        "vi": "chìa khóa, phím",
+        "audio": null
+      },
+      {
+        "id": "v3505",
+        "jp": "さきます",
+        "romaji": "sakimasu",
+        "vi": "nở hoa",
+        "audio": null,
+        "kanji": "咲きます"
+      },
+      {
+        "id": "v3506",
+        "jp": "かわります",
+        "romaji": "kawarimasu",
+        "vi": "thay đổi",
+        "audio": null,
+        "kanji": "変わります"
+      },
+      {
+        "id": "v3507",
+        "jp": "こまります",
+        "romaji": "komarimasu",
+        "vi": "gặp khó khăn",
+        "audio": null,
+        "kanji": "困ります"
+      },
+      {
+        "id": "v3508",
+        "jp": "つけます",
+        "romaji": "tsukemasu",
+        "vi": "đánh dấu",
+        "audio": null,
+        "kanji": "付けます",
+        "note": "まるを つけます"
+      },
+      {
+        "id": "v3509",
+        "jp": "かかります",
+        "romaji": "kakarimasu",
+        "vi": "có cuộc gọi đến",
+        "audio": null,
+        "note": "でんわが かかります"
+      },
+      {
+        "id": "v3510",
+        "jp": "ただしい",
+        "romaji": "tadashii",
+        "vi": "đúng",
+        "audio": null,
+        "kanji": "正しい"
+      },
+      {
+        "id": "v3511",
+        "jp": "むこう",
+        "romaji": "mukou",
+        "vi": "phía bên kia",
+        "audio": null,
+        "kanji": "向こう"
+      },
+      {
+        "id": "v3512",
+        "jp": "しま",
+        "romaji": "shima",
+        "vi": "đảo",
+        "audio": null,
+        "kanji": "島"
+      },
+      {
+        "id": "v3513",
+        "jp": "みなと",
+        "romaji": "minato",
+        "vi": "cảng",
+        "audio": null,
+        "kanji": "港"
+      },
+      {
+        "id": "v3514",
+        "jp": "きんじょ",
+        "romaji": "kinjo",
+        "vi": "khu lân cận",
+        "audio": null,
+        "kanji": "近所"
+      },
+      {
+        "id": "v3515",
+        "jp": "おくじょう",
+        "romaji": "okujou",
+        "vi": "sân thượng",
+        "audio": null,
+        "kanji": "屋上"
+      },
+      {
+        "id": "v3516",
+        "jp": "かいがい",
+        "romaji": "kaigai",
+        "vi": "nước ngoài",
+        "audio": null,
+        "kanji": "海外"
+      },
+      {
+        "id": "v3517",
+        "jp": "やまのぼり",
+        "romaji": "yamanobori",
+        "vi": "leo núi",
+        "audio": null,
+        "kanji": "山登り"
+      },
+      {
+        "id": "v3518",
+        "jp": "きかい",
+        "romaji": "kikai",
+        "vi": "cơ hội",
+        "audio": null,
+        "kanji": "機会",
+        "note": "Phân biệt 機会 (cơ hội) với 機械 (máy móc)."
+      },
+      {
+        "id": "v3519",
+        "jp": "きょか",
+        "romaji": "kyoka",
+        "vi": "sự cho phép",
+        "audio": null,
+        "kanji": "許可"
+      },
+      {
+        "id": "v3520",
+        "jp": "まる",
+        "romaji": "maru",
+        "vi": "hình tròn",
+        "audio": null,
+        "kanji": "丸"
+      },
+      {
+        "id": "v3521",
+        "jp": "せつび",
+        "romaji": "setsubi",
+        "vi": "trang thiết bị",
+        "audio": null,
+        "kanji": "設備"
+      },
+      {
+        "id": "v3522",
+        "jp": "カーテン",
+        "romaji": "kaaten",
+        "vi": "rèm",
+        "audio": null
+      },
+      {
+        "id": "v3523",
+        "jp": "ひも",
+        "romaji": "himo",
+        "vi": "dây",
+        "audio": null
+      },
+      {
+        "id": "v3524",
+        "jp": "は",
+        "romaji": "ha",
+        "vi": "lá",
+        "audio": null,
+        "kanji": "葉"
+      },
+      {
+        "id": "v3525",
+        "jp": "もっと",
+        "romaji": "motto",
+        "vi": "hơn nữa",
+        "audio": null
+      },
+      {
+        "id": "v3526",
+        "jp": "これで おわりましょう。",
+        "romaji": "kore de owarimashou",
+        "vi": "Ta kết thúc ở đây nhé.",
+        "audio": null,
+        "kanji": "これで終わりましょう。"
+      },
+      {
+        "id": "v3527",
+        "jp": "それなら",
+        "romaji": "sore nara",
+        "vi": "nếu vậy thì",
+        "audio": null
+      },
+      {
+        "id": "v3528",
+        "jp": "やこうバス",
+        "romaji": "yakou basu",
+        "vi": "xe buýt đêm",
+        "audio": null,
+        "kanji": "夜行バス",
+        "image": "/icons/vocab/bus.svg"
+      },
+      {
+        "id": "v3529",
+        "jp": "りょこうしゃ",
+        "romaji": "ryokousha",
+        "vi": "công ty du lịch",
+        "audio": null,
+        "kanji": "旅行社"
+      },
+      {
+        "id": "v3530",
+        "jp": "くわしい",
+        "romaji": "kuwashii",
+        "vi": "chi tiết, am hiểu",
+        "audio": null,
+        "kanji": "詳しい",
+        "note": "れきしに くわしい"
+      },
+      {
+        "id": "v3531",
+        "jp": "スキーじょう",
+        "romaji": "sukii jou",
+        "vi": "khu trượt tuyết",
+        "audio": null,
+        "kanji": "スキー場"
+      },
+      {
+        "id": "v3532",
+        "jp": "さあ",
+        "romaji": "saa",
+        "vi": "ừm, để xem",
+        "audio": null
+      },
+      {
+        "id": "v3533",
+        "jp": "れきし",
+        "romaji": "rekishi",
+        "vi": "lịch sử",
+        "audio": null,
+        "kanji": "歴史"
+      },
+      {
+        "id": "v3534",
+        "jp": "レバー",
+        "romaji": "rebaa",
+        "vi": "cần gạt",
+        "audio": null
+      },
+      {
+        "id": "v3535",
+        "jp": "にゅうりょく",
+        "romaji": "nyuuryoku",
+        "vi": "việc nhập dữ liệu",
+        "audio": null,
+        "kanji": "入力"
+      },
+      {
+        "id": "v3536",
+        "jp": "ふりがな",
+        "romaji": "furigana",
+        "vi": "chữ ghi cách đọc",
+        "audio": null
+      },
+      {
+        "id": "v3537",
+        "jp": "すいはんき",
+        "romaji": "suihanki",
+        "vi": "nồi cơm điện",
+        "audio": null,
+        "kanji": "炊飯器"
+      },
+      {
+        "id": "v3538",
+        "jp": "クリックします",
+        "romaji": "kurikku shimasu",
+        "vi": "nhấp chuột",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3501",
+        "pattern": "Vば／Vなければ",
+        "vi": "Nêu điều kiện với động từ",
+        "explain": "Nhóm I đổi âm cuối sang hàng え + ば. Nhóm II bỏ る, thêm れば. する → すれば, くる → くれば. Phủ định: bỏ い của thể ない rồi thêm ければ.",
+        "viMistake": "よむ → よめば, よまない → よまなければ. Khi cả hai vế cùng chủ thể và vế điều kiện là hành động chủ ý, thường chọn たら để nối sang lời mời hoặc yêu cầu.",
+        "examples": [
+          {
+            "jp": "この レバーを {引|ひ}けば、ドアが {開|あ}きます。",
+            "vi": "Nếu kéo cần gạt này thì cửa sẽ mở.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3502",
+        "pattern": "Aければ／Aなら",
+        "vi": "Nêu điều kiện với tính từ",
+        "explain": "Tính từ い bỏ い, thêm ければ. いい → よければ. Tính từ な có thể dùng なら. Dạng phủ định dùng 〜くなければ hoặc 〜じゃなければ.",
+        "viMistake": "やすい → やすければ. しずか → しずかなら.",
+        "examples": [
+          {
+            "jp": "{天気|てんき}が よければ、{屋上|おくじょう}から {島|しま}が {見|み}えます。",
+            "vi": "Nếu thời tiết tốt, từ sân thượng sẽ nhìn thấy đảo.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3503",
+        "pattern": "Nなら／それなら",
+        "vi": "Đưa gợi ý dựa vào chủ đề vừa nêu",
+        "explain": "N + なら đưa một chủ đề ra để gợi ý. それなら tiếp nhận cả tình huống người đối thoại vừa nói.",
+        "viMistake": "Danh từ đứng trực tiếp trước なら: やまのぼりなら.",
+        "examples": [
+          {
+            "jp": "{山登|やまのぼ}りなら、{近所|きんじょ}の {山|やま}が いいですよ。",
+            "vi": "Nếu muốn leo núi thì ngọn núi gần đây hay đấy.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3504",
+        "pattern": "疑問詞 + Vば いいですか",
+        "vi": "Hỏi nên làm gì, ở đâu hoặc thế nào",
+        "explain": "Chọn từ để hỏi theo thông tin cần biết rồi chia động từ sang thể điều kiện. Liên hệ 〜たらいいですか ở bài 26.",
+        "viMistake": "Hỏi nơi mua vé dùng どこで, không dùng どこに.",
+        "examples": [
+          {
+            "jp": "この {欄|らん}には {何|なに}を {入力|にゅうりょく}すれば いいですか。",
+            "vi": "Tôi nên nhập gì vào ô này?",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3505",
+        "pattern": "〜ば 〜ほど",
+        "vi": "Nói mức độ tăng theo nhau",
+        "explain": "Vば + V từ điển + ほど, hoặc Aければ + Aい + ほど. Lặp cùng từ. Mục này dùng để luyện mở rộng.",
+        "viMistake": "ほど sau số lượng cũng có thể nghĩa là khoảng, chẳng hạn 10分ほど.",
+        "examples": [
+          {
+            "jp": "{歩|ある}けば {歩|ある}くほど、{港|みなと}が {近|ちか}く なります。",
+            "vi": "Càng đi bộ thì càng đến gần cảng.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3501",
+        "type": "title",
+        "jp": "第35課 · {条件|じょうけん}",
+        "vi": "Bài 35 · Nói điều kiện"
+      },
+      {
+        "id": "s3502",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói điều kiện, hỏi nên làm gì và đưa gợi ý dựa trên điều bạn nói vừa nêu."
+      },
+      {
+        "id": "s3503",
+        "type": "vocab",
+        "refs": ["v3501", "v3502", "v3503", "v3504", "v3505", "v3506", "v3507", "v3508"]
+      },
+      {
+        "id": "s3504",
+        "type": "vocab",
+        "refs": ["v3509", "v3510", "v3511", "v3512", "v3513", "v3514", "v3515", "v3516"]
+      },
+      {
+        "id": "s3505",
+        "type": "vocab",
+        "refs": ["v3517", "v3518", "v3519", "v3520", "v3521", "v3522", "v3523", "v3524"]
+      },
+      {
+        "id": "s3506",
+        "type": "vocab",
+        "refs": ["v3525", "v3526", "v3527", "v3528", "v3529", "v3530", "v3531", "v3532"]
+      },
+      {
+        "id": "s3507",
+        "type": "vocab",
+        "refs": ["v3533", "v3534", "v3535", "v3536", "v3537", "v3538"]
+      },
+      {
+        "id": "s3508",
+        "type": "grammar",
+        "ref": "g3501"
+      },
+      {
+        "id": "s3509",
+        "type": "example",
+        "ref": "g3501",
+        "reveal": true
+      },
+      {
+        "id": "s3510",
+        "type": "quiz",
+        "ref": "q3501"
+      },
+      {
+        "id": "s3511",
+        "type": "table",
+        "title": "Chia thể điều kiện",
+        "columns": ["Loại", "Dạng gốc", "Điều kiện"],
+        "rows": [
+          ["I", "かく", "かけば"],
+          ["II", "みる", "みれば"],
+          ["III", "する／くる", "すれば／くれば"],
+          ["Phủ định", "いかない", "いかなければ"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3512",
+        "type": "grammar",
+        "ref": "g3502"
+      },
+      {
+        "id": "s3513",
+        "type": "example",
+        "ref": "g3502",
+        "reveal": true
+      },
+      {
+        "id": "s3514",
+        "type": "quiz",
+        "ref": "q3505"
+      },
+      {
+        "id": "s3515",
+        "type": "grammar",
+        "ref": "g3503"
+      },
+      {
+        "id": "s3516",
+        "type": "example",
+        "ref": "g3503",
+        "reveal": true
+      },
+      {
+        "id": "s3517",
+        "type": "quiz",
+        "ref": "q3507"
+      },
+      {
+        "id": "s3518",
+        "type": "grammar",
+        "ref": "g3504"
+      },
+      {
+        "id": "s3519",
+        "type": "example",
+        "ref": "g3504",
+        "reveal": true
+      },
+      {
+        "id": "s3520",
+        "type": "quiz",
+        "ref": "q3508"
+      },
+      {
+        "id": "s3521",
+        "type": "grammar",
+        "ref": "g3505"
+      },
+      {
+        "id": "s3522",
+        "type": "example",
+        "ref": "g3505",
+        "reveal": true
+      },
+      {
+        "id": "s3523",
+        "type": "quiz",
+        "ref": "q3509"
+      },
+      {
+        "id": "s3524",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Từ ví dụ", "Nghĩa"],
+        "rows": [
+          ["治", "{治|なお}ります", "khỏi bệnh"],
+          ["直", "{直|なお}ります", "được sửa"],
+          ["咲", "{咲|さ}きます", "nở hoa"],
+          ["港", "{港|みなと}", "cảng"],
+          ["許", "{許可|きょか}", "cho phép"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3525",
+        "type": "table",
+        "title": "Từ tham khảo · Tục ngữ",
+        "columns": ["Câu", "Ý nghĩa"],
+        "rows": [
+          ["{住|す}めば{都|みやこ}", "Ở quen thì nơi nào cũng thấy dễ sống."],
+          ["{急|いそ}がば{回|まわ}れ", "Khi vội, nên chọn cách chắc chắn, dù phải đi vòng."]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3526",
+        "type": "dialogue",
+        "title": "Hội thoại · Hỏi đường đi cảng",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{港|みなと}へ {行|い}きたいんですが、どの バスに {乗|の}れば いいですか。",
+            "vi": "Tôi muốn ra cảng. Nên đi xe buýt nào ạ?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{港|みなと}なら、３{番|ばん}の バスが {便利|べんり}です。",
+            "vi": "Nếu ra cảng thì xe số 3 tiện lắm."
+          },
+          {
+            "speaker": "An",
+            "jp": "{屋上|おくじょう}から {島|しま}が {見|み}えますか。",
+            "vi": "Từ sân thượng có nhìn thấy đảo không?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{天気|てんき}が よければ、{見|み}えますよ。",
+            "vi": "Nếu thời tiết tốt thì nhìn thấy đấy."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi đi xe số mấy và điều kiện để nhìn thấy đảo."
+      },
+      {
+        "id": "s3527",
+        "type": "quiz",
+        "ref": "q3516"
+      },
+      {
+        "id": "s3528",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          ["Sắp xếp: いいですか／{乗|の}れば／どこで", "どこで {乗|の}れば いいですか。"],
+          [
+            "Dịch: Nếu trời không mưa thì tôi sẽ leo núi.",
+            "{雨|あめ}が {降|ふ}らなければ、{山|やま}に {登|のぼ}ります。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3529",
+        "type": "table",
+        "title": "Nhập vai · Hỏi chỗ mua vé",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["Khách", "Nói muốn đi xe buýt đêm", "{夜行|やこう}バスに {乗|の}りたいんですが。"],
+          [
+            "Bạn",
+            "Gợi ý theo tình huống vừa nghe",
+            "それなら、{旅行社|りょこうしゃ}で {聞|き}いて みたら どうですか。"
+          ],
+          ["Khách", "Hỏi nên mua vé ở đâu", "どこで {切符|きっぷ}を {買|か}えば いいですか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3530",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "ば／なければ: nêu điều kiện.\nなら: tiếp nhận chủ đề và gợi ý.\nTừ để hỏi + ばいいですか: xin hướng dẫn.",
+        "teacherNotes": "So sánh câu hỏi ばいいですか với たらいいですか ở bài 26. Sang bài 36 sẽ học cách nói mục tiêu với ように."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3501",
+        "type": "choice",
+        "prompt": "Chọn thể điều kiện của よむ.",
+        "options": ["よめば", "よもう", "よんで", "よみます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Nhóm I: む → めば.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3502",
+        "type": "choice",
+        "prompt": "Chọn thể điều kiện của たべる.",
+        "options": ["たべろ", "たべれば", "たべよう", "たべって"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nhóm II: bỏ る và thêm れば.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3503",
+        "type": "choice",
+        "prompt": "Chọn thể điều kiện của くる.",
+        "options": ["こい", "こよう", "くれば", "きれば"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "来る → くれば.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3504",
+        "type": "choice",
+        "prompt": "Chọn điều kiện phủ định của いく.",
+        "options": ["いかなかった", "いかないで", "いこう", "いかなければ"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Bỏ い của いかない rồi thêm ければ.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3505",
+        "type": "choice",
+        "prompt": "Nếu thời tiết tốt: てんきが（　）。",
+        "options": ["よければ", "いいければ", "いいば", "よいば"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "いい đổi thành よければ.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3506",
+        "type": "choice",
+        "prompt": "Nếu yên tĩnh:（　）。",
+        "options": ["しずかいば", "しずかなら", "しずかければ", "しずかなば"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Tính từ な có thể đi với なら.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3507",
+        "type": "choice",
+        "prompt": "Chọn cách nói «nếu là leo núi».",
+        "options": ["やまのぼりば", "やまのぼりければ", "やまのぼりなら", "やまのぼりのば"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Dùng N + なら.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3508",
+        "type": "choice",
+        "prompt": "Chọn câu hỏi «nên mua vé ở đâu».",
+        "options": [
+          "いつ きっぷを かいましたか。",
+          "なにを かえば いいですか。",
+          "どこで きっぷを かいましたか。",
+          "どこで きっぷを かえば いいですか。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "どこで + 買えばいいですか hỏi nơi nên mua.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3509",
+        "type": "choice",
+        "prompt": "Hoàn thành «càng đọc càng hiểu»: よめば（　）、よく わかります。",
+        "options": ["よむほど", "よめほど", "よもうほど", "よんだほど"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Dùng V từ điển trước ほど trong mẫu này.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3510",
+        "type": "choice",
+        "prompt": "Cụm nào nói bệnh đã khỏi?",
+        "options": [
+          "こしょうが なおりました。",
+          "びょうきが なおりました。",
+          "いろが かわりました。",
+          "はなが さきました。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "治る dùng cho bệnh hoặc vết thương.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3511",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là cảng?",
+        "options": ["しま", "おくじょう", "みなと", "きんじょ"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "港 đọc みなと.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3512",
+        "type": "choice",
+        "prompt": "Cụm nào chỉ xe buýt đêm?",
+        "options": ["スキーじょう", "りょこうしゃ", "やまのぼり", "やこうバス"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "夜行バス chạy ban đêm.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3513",
+        "type": "choice",
+        "prompt": "Từ nào nói sự cho phép?",
+        "options": ["きょか", "きかい", "せつび", "れきし"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "許可 nghĩa là sự cho phép.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3514",
+        "type": "choice",
+        "prompt": "Từ nào chỉ lá cây?",
+        "options": ["ひも", "は", "キー", "まる"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "葉 đọc は.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3515",
+        "type": "choice",
+        "prompt": "Dùng cụm nào để đáp «nếu vậy thì»?",
+        "options": ["それで", "それに", "それなら", "さっき"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "それなら đưa lời gợi ý theo tình huống đã nêu.",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3516",
+        "type": "choice",
+        "prompt": "Theo thông báo, điều kiện để có thể lên sân thượng là gì?",
+        "options": [
+          "Có vé xe buýt đêm",
+          "Đến sau 10 giờ tối",
+          "Có nhu cầu leo núi",
+          "Thời tiết tốt"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "天気がよければ nêu điều kiện thời tiết tốt.",
+        "points": 1,
+        "tags": ["minna-35"],
+        "passage": "{天気|てんき}が よければ、{午前|ごぜん}１０{時|じ}から {屋上|おくじょう}に {入|はい}れます。{屋上|おくじょう}から {港|みなと}と {島|しま}が {見|み}えます。"
+      },
+      {
+        "id": "q3517",
+        "type": "fill",
+        "prompt": "Viết thể điều kiện của かく bằng hiragana.",
+        "answer": ["かけば"],
+        "inputMode": "hiragana",
+        "explain": "かく → かけば",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3518",
+        "type": "fill",
+        "prompt": "Viết thể điều kiện của みる bằng hiragana.",
+        "answer": ["みれば"],
+        "inputMode": "hiragana",
+        "explain": "みる → みれば",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3519",
+        "type": "fill",
+        "prompt": "Viết thể điều kiện của する bằng hiragana.",
+        "answer": ["すれば"],
+        "inputMode": "hiragana",
+        "explain": "する → すれば",
+        "points": 1,
+        "tags": ["minna-35"]
+      },
+      {
+        "id": "q3520",
+        "type": "fill",
+        "prompt": "Viết thể điều kiện của いかない bằng hiragana.",
+        "answer": ["いかなければ"],
+        "inputMode": "hiragana",
+        "explain": "いかない → いかなければ",
+        "points": 1,
+        "tags": ["minna-35"]
+      }
+    ]
+  }
+}
