@@ -1,0 +1,907 @@
+{
+  "id": "minna-2-48",
+  "title": "Bài 48 – Thể sai khiến",
+  "titleJa": "第48課・使役（〜させます）",
+  "summary": "Chia thể sai khiến, kể người trên bắt hoặc cho người dưới làm và xin phép lịch sự bằng 〜させていただけませんか.",
+  "order": 48,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4801",
+        "jp": "おろします",
+        "romaji": "oroshimasu",
+        "vi": "hạ xuống, cho xuống",
+        "audio": null,
+        "kanji": "下ろします"
+      },
+      {
+        "id": "v4802",
+        "jp": "とどけます",
+        "romaji": "todokemasu",
+        "vi": "giao đến, đưa tới",
+        "audio": null,
+        "kanji": "届けます"
+      },
+      {
+        "id": "v4803",
+        "jp": "せわを します",
+        "romaji": "sewa o shimasu",
+        "vi": "chăm sóc",
+        "audio": null,
+        "kanji": "世話をします",
+        "note": "いぬの せわを します"
+      },
+      {
+        "id": "v4804",
+        "jp": "ろくおんします",
+        "romaji": "rokuon shimasu",
+        "vi": "ghi âm",
+        "audio": null,
+        "kanji": "録音します"
+      },
+      {
+        "id": "v4805",
+        "jp": "たのしみます",
+        "romaji": "tanoshimimasu",
+        "vi": "tận hưởng, vui chơi",
+        "audio": null,
+        "kanji": "楽しみます"
+      },
+      {
+        "id": "v4806",
+        "jp": "いやな",
+        "romaji": "iyana",
+        "vi": "khó chịu, không thích",
+        "audio": null,
+        "kanji": "嫌な"
+      },
+      {
+        "id": "v4807",
+        "jp": "じゆうに",
+        "romaji": "jiyuu ni",
+        "vi": "tự do, thoải mái",
+        "audio": null,
+        "kanji": "自由に"
+      },
+      {
+        "id": "v4808",
+        "jp": "じゅく",
+        "romaji": "juku",
+        "vi": "lớp học thêm",
+        "audio": null,
+        "kanji": "塾",
+        "image": "/icons/vocab/school.svg"
+      },
+      {
+        "id": "v4809",
+        "jp": "せいと",
+        "romaji": "seito",
+        "vi": "học sinh",
+        "audio": null,
+        "kanji": "生徒",
+        "image": "/icons/vocab/student.svg"
+      },
+      {
+        "id": "v4810",
+        "jp": "もの",
+        "romaji": "mono",
+        "vi": "người (khiêm nhường)",
+        "audio": null,
+        "kanji": "者"
+      },
+      {
+        "id": "v4811",
+        "jp": "ファイル",
+        "romaji": "fairu",
+        "vi": "tập hồ sơ, tệp",
+        "audio": null
+      },
+      {
+        "id": "v4812",
+        "jp": "えいぎょう",
+        "romaji": "eigyou",
+        "vi": "kinh doanh, bán hàng",
+        "audio": null,
+        "kanji": "営業"
+      },
+      {
+        "id": "v4813",
+        "jp": "にゅうかん",
+        "romaji": "nyuukan",
+        "vi": "cục xuất nhập cảnh",
+        "audio": null,
+        "kanji": "入管"
+      },
+      {
+        "id": "v4814",
+        "jp": "さいにゅうこくビザ",
+        "romaji": "sainyuukoku biza",
+        "vi": "thị thực tái nhập cảnh",
+        "audio": null,
+        "kanji": "再入国ビザ"
+      },
+      {
+        "id": "v4815",
+        "jp": "〜かん",
+        "romaji": "kan",
+        "vi": "trong khoảng …",
+        "audio": null,
+        "kanji": "〜間",
+        "note": "２しゅうかん: hai tuần"
+      },
+      {
+        "id": "v4816",
+        "jp": "それまでに",
+        "romaji": "sore made ni",
+        "vi": "trước lúc đó",
+        "audio": null
+      },
+      {
+        "id": "v4817",
+        "jp": "いい ことですね。",
+        "romaji": "ii koto desu ne",
+        "vi": "Hay quá nhỉ.",
+        "audio": null
+      },
+      {
+        "id": "v4818",
+        "jp": "おいそがしいですか。",
+        "romaji": "oisogashii desu ka",
+        "vi": "Anh/chị có bận không ạ?",
+        "audio": null,
+        "kanji": "お忙しいですか。"
+      },
+      {
+        "id": "v4819",
+        "jp": "かまいません。",
+        "romaji": "kamaimasen",
+        "vi": "Không sao, được thôi.",
+        "audio": null,
+        "kanji": "構いません。"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4801",
+        "pattern": "Thể sai khiến: 〜せます／〜させます",
+        "vi": "Cách chia thể sai khiến",
+        "explain": "Nhóm 1: đổi âm cuối sang hàng あ + せます (いきます → いかせます, かいます → かわせます). Nhóm 2: bỏ ます + させます. します → させます, きます → こさせます.",
+        "viMistake": "Thể sai khiến chia như động từ nhóm 2: いかせて, いかせた. Đừng nhầm với bị động: かかれます.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}は {生徒|せいと}に {漢字|かんじ}を {覚|おぼ}えさせました。",
+            "vi": "Cô giáo bắt học sinh nhớ chữ Hán.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4802",
+        "pattern": "N1は N2を V（tự động từ）させます",
+        "vi": "Bắt hoặc cho ai đi, đến, về, chơi",
+        "explain": "Người trên (cha mẹ, thầy, cấp trên) bắt hoặc cho người dưới làm việc không có tân ngữ: いく, かえる, あそぶ. Người làm đi với を. Dùng に cũng được, nghiêng về cho phép, tôn trọng ý muốn của người làm.",
+        "viMistake": "Không dùng thể sai khiến với người trên. Muốn kể được người trên làm giúp thì dùng 〜て いただきました.",
+        "examples": [
+          {
+            "jp": "{母|はは}は {弟|おとうと}を {塾|じゅく}へ {行|い}かせました。",
+            "vi": "Mẹ bắt em trai đi học thêm.",
+            "audio": null
+          },
+          {
+            "jp": "{部長|ぶちょう}は {田中|たなか}さんを {早|はや}く {帰|かえ}らせました。",
+            "vi": "Trưởng phòng cho anh Tanaka về sớm.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4803",
+        "pattern": "N1は N2に N3を V（tha động từ）させます",
+        "vi": "Bắt hoặc cho ai làm việc gì đó",
+        "explain": "Động từ đã có tân ngữ với を, nên người làm đổi sang に để câu không có hai を.",
+        "viMistake": "Không nói せいとを さくぶんを かかせます. Người làm đi với に: せいとに さくぶんを.",
+        "examples": [
+          {
+            "jp": "{先生|せんせい}は {生徒|せいと}に {作文|さくぶん}を {書|か}かせました。",
+            "vi": "Thầy bắt học sinh viết bài văn.",
+            "audio": null
+          },
+          {
+            "jp": "わたしは {息子|むすこ}に {部屋|へや}を {掃除|そうじ}させます。",
+            "vi": "Tôi bắt con trai dọn phòng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4804",
+        "pattern": "Bắt buộc hay cho phép",
+        "vi": "Một hình thức, hai nghĩa",
+        "explain": "Người làm không muốn mà vẫn phải làm: nghĩa bắt. Người làm muốn và được đồng ý: nghĩa cho phép. Ngữ cảnh quyết định nghĩa.",
+        "viMistake": "Đừng nghĩ させます luôn là bắt: あそびたいと いったので、あそばせました là cho phép.",
+        "examples": [
+          {
+            "jp": "{子|こ}どもが {遊|あそ}びたいと {言|い}ったので、{公園|こうえん}で {自由|じゆう}に {遊|あそ}ばせました。",
+            "vi": "Con muốn chơi nên tôi cho con chơi thoải mái ở công viên.",
+            "audio": null
+          },
+          {
+            "jp": "{子|こ}どもは {嫌|いや}だと {言|い}いましたが、{薬|くすり}を {飲|の}ませました。",
+            "vi": "Con nói không thích nhưng tôi vẫn bắt uống thuốc.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4805",
+        "pattern": "Vさせて いただけませんか",
+        "vi": "Xin phép người trên một cách lịch sự",
+        "explain": "Xin người trên cho mình làm việc gì. Thường nêu lý do bằng ので trước.",
+        "viMistake": "Vさせて ください thẳng hơn. Với người trên, dùng Vさせて いただけませんか.",
+        "examples": [
+          {
+            "jp": "{熱|ねつ}が あるので、{今日|きょう}は {早|はや}く {帰|かえ}らせて いただけませんか。",
+            "vi": "Em bị sốt nên hôm nay cho em về sớm được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "この {資料|しりょう}を コピーさせて いただけませんか。",
+            "vi": "Cho tôi sao tài liệu này được không ạ?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4801",
+        "type": "title",
+        "jp": "第48課 · 使役（〜させます）",
+        "vi": "Bài 48 · Thể sai khiến"
+      },
+      {
+        "id": "s4802",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Kể người trên bắt hoặc cho người dưới làm việc gì. Xin phép người trên một cách lịch sự bằng 〜させて いただけませんか."
+      },
+      {
+        "id": "s4803",
+        "type": "vocab",
+        "refs": ["v4801", "v4802", "v4803", "v4804", "v4805", "v4806", "v4807", "v4808"]
+      },
+      {
+        "id": "s4804",
+        "type": "vocab",
+        "refs": ["v4809", "v4810", "v4811", "v4812", "v4813", "v4814", "v4815", "v4816"]
+      },
+      {
+        "id": "s4805",
+        "type": "vocab",
+        "refs": ["v4817", "v4818", "v4819"]
+      },
+      {
+        "id": "s4806",
+        "type": "grammar",
+        "ref": "g4801"
+      },
+      {
+        "id": "s4807",
+        "type": "table",
+        "title": "Chia thể sai khiến",
+        "columns": ["Nhóm", "Gốc", "Sai khiến"],
+        "rows": [
+          ["1", "{行|い}きます", "{行|い}かせます"],
+          ["1", "{読|よ}みます", "{読|よ}ませます"],
+          ["1", "{買|か}います", "{買|か}わせます"],
+          ["2", "{食|た}べます", "{食|た}べさせます"],
+          ["3", "します", "させます"],
+          ["3", "{来|き}ます", "{来|こ}させます"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Lưu ý う → わ: 買います → 買わせます, 手伝います → 手伝わせます."
+      },
+      {
+        "id": "s4808",
+        "type": "quiz",
+        "ref": "q4801"
+      },
+      {
+        "id": "s4809",
+        "type": "grammar",
+        "ref": "g4802"
+      },
+      {
+        "id": "s4810",
+        "type": "example",
+        "ref": "g4802",
+        "reveal": true
+      },
+      {
+        "id": "s4811",
+        "type": "quiz",
+        "ref": "q4804"
+      },
+      {
+        "id": "s4812",
+        "type": "grammar",
+        "ref": "g4803"
+      },
+      {
+        "id": "s4813",
+        "type": "example",
+        "ref": "g4803",
+        "reveal": true
+      },
+      {
+        "id": "s4814",
+        "type": "quiz",
+        "ref": "q4806"
+      },
+      {
+        "id": "s4815",
+        "type": "table",
+        "title": "Người làm đi với を hay に",
+        "columns": ["Động từ", "Câu sai khiến"],
+        "rows": [
+          ["{行|い}く (không tân ngữ)", "{弟|おとうと}を {行|い}かせます"],
+          ["{帰|かえ}る (không tân ngữ)", "{部下|ぶか}を {帰|かえ}らせます"],
+          ["{読|よ}む (có tân ngữ)", "{生徒|せいと}に {新聞|しんぶん}を {読|よ}ませます"],
+          ["{運|はこ}ぶ (có tân ngữ)", "{息子|むすこ}に {荷物|にもつ}を {運|はこ}ばせます"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Mỗi câu hỏi: ai là người trên, ai là người làm. Không bao giờ đảo vai (học sinh không sai khiến thầy)."
+      },
+      {
+        "id": "s4816",
+        "type": "quiz",
+        "ref": "q4807"
+      },
+      {
+        "id": "s4817",
+        "type": "grammar",
+        "ref": "g4804"
+      },
+      {
+        "id": "s4818",
+        "type": "example",
+        "ref": "g4804",
+        "reveal": true
+      },
+      {
+        "id": "s4819",
+        "type": "quiz",
+        "ref": "q4808"
+      },
+      {
+        "id": "s4820",
+        "type": "quiz",
+        "ref": "q4809"
+      },
+      {
+        "id": "s4821",
+        "type": "grammar",
+        "ref": "g4805"
+      },
+      {
+        "id": "s4822",
+        "type": "example",
+        "ref": "g4805",
+        "reveal": true
+      },
+      {
+        "id": "s4823",
+        "type": "quiz",
+        "ref": "q4810"
+      },
+      {
+        "id": "s4824",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["世", "{世話|せわ}", "đời, thế"],
+          ["徒", "{生徒|せいと}", "đồ đệ"],
+          ["塾", "{塾|じゅく}", "lớp tư"],
+          ["由", "{自由|じゆう}", "lý do, tự"],
+          ["営", "{営業|えいぎょう}", "kinh doanh"],
+          ["録", "{録音|ろくおん}", "ghi"],
+          ["嫌", "{嫌|いや}な", "ghét"],
+          ["届", "{届|とど}けます", "gửi tới"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4825",
+        "type": "table",
+        "title": "Từ tham khảo · Dạy dỗ và các môn học thêm",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{習字|しゅうじ}", "thư pháp"],
+          ["{生|い}け{花|ばな}", "cắm hoa"],
+          ["{茶道|さどう}", "trà đạo"],
+          ["{水泳|すいえい}", "bơi"],
+          ["{空手|からて}", "karate"],
+          ["{柔道|じゅうどう}", "judo"],
+          ["そろばん", "bàn tính"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên kể: 子どもの とき、両親は わたしに 水泳を 習わせました."
+      },
+      {
+        "id": "s4826",
+        "type": "dialogue",
+        "title": "Hội thoại · Xin nghỉ buổi chiều",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Minh",
+            "jp": "{部長|ぶちょう}、{今|いま} お{忙|いそが}しいですか。",
+            "vi": "Trưởng phòng, bây giờ anh có bận không ạ?"
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "いいえ。どうしましたか。",
+            "vi": "Không. Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "Minh",
+            "jp": "{来週|らいしゅう}の {月曜日|げつようび}、{入管|にゅうかん}へ {行|い}かなければ なりません。",
+            "vi": "Thứ Hai tuần sau em phải lên cục xuất nhập cảnh."
+          },
+          {
+            "speaker": "Minh",
+            "jp": "{午後|ごご}から {休|やす}ませて いただけませんか。",
+            "vi": "Anh cho em nghỉ từ buổi chiều được không ạ?"
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "ビザの ことですか。かまいませんよ。",
+            "vi": "Chuyện thị thực à? Được thôi."
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "それまでに {報告書|ほうこくしょ}を {出|だ}して くださいね。",
+            "vi": "Trước lúc đó em nộp báo cáo nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Minh phải đi đâu, xin gì? Trưởng phòng dặn gì? Nhấn Minh nói với cấp trên nên dùng 休ませて いただけませんか."
+      },
+      {
+        "id": "s4827",
+        "type": "quiz",
+        "ref": "q4818"
+      },
+      {
+        "id": "s4828",
+        "type": "dialogue",
+        "title": "Nghe · Cho con làm việc nhà",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "お{子|こ}さんに {家|うち}の {仕事|しごと}を させて いますか。",
+            "vi": "Chị có cho các con làm việc nhà không?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "ええ、{息子|むすこ}に {毎朝|まいあさ} {犬|いぬ}の {世話|せわ}を させて います。",
+            "vi": "Có, sáng nào tôi cũng cho con trai chăm chó."
+          },
+          {
+            "speaker": "An",
+            "jp": "えらいですね。{娘|むすめ}さんは？",
+            "vi": "Giỏi quá. Còn con gái chị?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "{娘|むすめ}には {料理|りょうり}を {手伝|てつだ}わせて います。",
+            "vi": "Con gái thì tôi cho phụ nấu ăn."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi Mai cho từng đứa con làm gì."
+      },
+      {
+        "id": "s4829",
+        "type": "quiz",
+        "ref": "q4819"
+      },
+      {
+        "id": "s4830",
+        "type": "quiz",
+        "ref": "q4820"
+      },
+      {
+        "id": "s4831",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "{行|い}かせます／{弟|おとうと}を／{塾|じゅく}へ",
+            "{弟|おとうと}を {塾|じゅく}へ {行|い}かせます。"
+          ],
+          [
+            "{書|か}かせます／{作文|さくぶん}を／{生徒|せいと}に",
+            "{生徒|せいと}に {作文|さくぶん}を {書|か}かせます。"
+          ],
+          ["いただけませんか／{使|つか}わせて／これを", "これを {使|つか}わせて いただけませんか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4832",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Tôi bắt con ăn rau.", "{子|こ}どもに {野菜|やさい}を {食|た}べさせます。"],
+          ["Bố cho em gái đi du học.", "{父|ちち}は {妹|いもうと}を {留学|りゅうがく}させました。"],
+          ["Cô giáo cho học sinh nghỉ.", "{先生|せんせい}は {生徒|せいと}を {休|やす}ませました。"],
+          ["Cho tôi ghi âm được không ạ?", "{録音|ろくおん}させて いただけませんか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4833",
+        "type": "table",
+        "title": "Nhập vai · Xin phép thầy",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Hỏi thầy có bận không", "{先生|せんせい}、{今|いま} お{忙|いそが}しいですか。"],
+          ["A", "Nêu lý do, xin phép", "{発表|はっぴょう}を {録音|ろくおん}したいので…"],
+          ["A", "Xin phép lịch sự", "{録音|ろくおん}させて いただけませんか。"],
+          ["B", "Đồng ý", "ええ、かまいませんよ。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi việc xin phép: 早く 帰る, この 本を 借りる, 写真を 撮る."
+      },
+      {
+        "id": "s4834",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Nhóm 1: 〜あせます. Nhóm 2: 〜させます. する → させる, 来る → 来させる.\nTự động từ: N を Vさせます. Tha động từ: N に N を Vさせます.\nNghĩa bắt hay cho phép tùy ngữ cảnh.\nVさせて いただけませんか: xin phép người trên.",
+        "teacherNotes": "Dễ nhầm: sai khiến với bị động (かかせる／かかれる), hai を trong một câu, dùng sai khiến với người trên. Liên hệ 〜て いただきます ở bài 41. Sang bài 49, học tôn kính ngữ."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4801",
+        "type": "choice",
+        "prompt": "Thể sai khiến của かきます là gì?",
+        "options": ["かかれます", "かかせます", "かきさせます", "かけます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Nhóm 1: き → か + せます. かかれます là bị động.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4802",
+        "type": "choice",
+        "prompt": "Thể sai khiến của たべます là gì?",
+        "options": ["たべれます", "たべらせます", "たべさせます", "たべかせます"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nhóm 2: bỏ ます + させます.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4803",
+        "type": "choice",
+        "prompt": "Thể sai khiến của きます (来ます) là gì?",
+        "options": ["きさせます", "くらせます", "こられます", "こさせます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "来ます → 来させます (こさせます).",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4804",
+        "type": "choice",
+        "prompt": "Mẹ bắt em trai đi học thêm: ははは おとうと（　）じゅくへ いかせました。",
+        "options": ["を", "が", "で", "と"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Tự động từ: người làm đi với を.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4805",
+        "type": "choice",
+        "prompt": "ぶちょうは わたしを はやく かえらせました。 nghĩa là gì?",
+        "options": [
+          "Trưởng phòng về sớm",
+          "Trưởng phòng cho tôi về sớm",
+          "Tôi bắt trưởng phòng về sớm",
+          "Tôi về sớm cùng trưởng phòng"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "N1は N2を Vさせます: N1 cho hoặc bắt N2 làm.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4806",
+        "type": "choice",
+        "prompt": "Thầy bắt học sinh viết văn: せんせいは せいと（　）さくぶんを かかせました。",
+        "options": ["を", "が", "に", "で"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Đã có さくぶんを nên người làm đi với に.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4807",
+        "type": "choice",
+        "prompt": "Bắt con dọn phòng: わたしは むすこに へやを（　）。",
+        "options": ["そうじします", "そうじされます", "そうじして もらいます", "そうじさせます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Bắt người dưới làm: Vさせます. そうじして もらいます là nhờ con làm giúp, không phải bắt.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4808",
+        "type": "choice",
+        "prompt": "Con muốn chơi nên cho chơi: こどもが あそびたいと いったので、こうえんで（　）。",
+        "options": ["あそばせました", "あそばれました", "あそべました", "あそんで いました"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Cho phép người dưới làm: thể sai khiến.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4809",
+        "type": "choice",
+        "prompt": "Được trưởng phòng dạy, nói thế nào cho đúng?",
+        "options": [
+          "ぶちょうに おしえさせました。",
+          "ぶちょうに おしえて いただきました。",
+          "ぶちょうを おしえさせました。",
+          "ぶちょうに おしえさせて いただきました。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Không dùng thể sai khiến với người trên. Được người trên làm giúp: Vて いただきました.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4810",
+        "type": "choice",
+        "prompt": "Xin phép về sớm: ねつが あるので、はやく（　）いただけませんか。",
+        "options": ["かえって", "かえられて", "かえらせて", "かえして"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Xin người trên cho mình làm: Vさせて いただけませんか.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4811",
+        "type": "choice",
+        "prompt": "Câu nào xin phép lịch sự nhất?",
+        "options": [
+          "コピーさせて。",
+          "コピーして いい？",
+          "コピーさせて ください。",
+          "コピーさせて いただけませんか。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Vさせて いただけませんか lịch sự hơn Vさせて ください.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4812",
+        "type": "choice",
+        "prompt": "Chăm sóc chó: いぬの（　）を します。",
+        "options": ["せわ", "えいぎょう", "じゅく", "ファイル"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "世話をします là chăm sóc.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4813",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 生徒.",
+        "options": ["giáo viên", "học sinh", "người", "phụ huynh"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "生徒 là học sinh.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4814",
+        "type": "choice",
+        "prompt": "Mang hàng đến tận nơi: にもつを（　）。",
+        "options": ["おろします", "たのしみます", "とどけます", "ろくおんします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "届けます là giao đến.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4815",
+        "type": "choice",
+        "prompt": "Lớp học thêm buổi tối gọi là gì?",
+        "options": ["にゅうかん", "えいぎょう", "ろくおん", "じゅく"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "塾 là lớp học thêm.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4816",
+        "type": "choice",
+        "prompt": "Trả lời 'được thôi, không sao' lịch sự:",
+        "options": ["かまいません。", "いい ことですね。", "おいそがしいですか。", "それまでに。"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "構いません: không sao.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4817",
+        "type": "choice",
+        "prompt": "Cho chơi thoải mái: こどもを（　）あそばせます。",
+        "options": ["いやな", "じゆうに", "〜かん", "それまでに"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "自由に: tự do, thoải mái.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4818",
+        "type": "choice",
+        "prompt": "Minh xin trưởng phòng điều gì?",
+        "options": [
+          "Đổi lịch họp",
+          "Cho nghỉ cả ngày",
+          "Cho nghỉ từ buổi chiều",
+          "Cho đi công tác"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "午後から休ませていただけませんか.",
+        "points": 1,
+        "tags": ["minna-48"],
+        "passage": "ミン：{午後|ごご}から {休|やす}ませて いただけませんか。"
+      },
+      {
+        "id": "q4819",
+        "type": "choice",
+        "prompt": "Mai cho con trai làm gì mỗi sáng?",
+        "options": ["Nấu ăn", "Dọn phòng", "Đi học thêm", "Chăm chó"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "息子に毎朝犬の世話をさせています.",
+        "points": 1,
+        "tags": ["minna-48"],
+        "passage": "マイ：{息子|むすこ}に {毎朝|まいあさ} {犬|いぬ}の {世話|せわ}を させて います。"
+      },
+      {
+        "id": "q4820",
+        "type": "choice",
+        "prompt": "Con gái người viết đi học lớp gì?",
+        "options": ["Lớp vẽ", "Lớp piano", "Lớp bơi", "Lớp tiếng Anh"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "絵の教室に通わせています.",
+        "points": 1,
+        "tags": ["minna-48"],
+        "passage": "わたしは {娘|むすめ}に {好|す}きな ことを させたいと {思|おも}って います。{娘|むすめ}は {絵|え}が {好|す}きなので、{週|しゅう}に {一回|いっかい} {絵|え}の {教室|きょうしつ}に {通|かよ}わせて います。でも、{娘|むすめ}が {嫌|いや}だと {言|い}う ときは、{休|やす}ませます。"
+      },
+      {
+        "id": "q4821",
+        "type": "choice",
+        "prompt": "Khi con nói không muốn đi thì sao?",
+        "options": ["Vẫn bắt đi", "Cho con nghỉ", "Đổi lớp khác", "Mẹ đi cùng"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "嫌だと言うときは、休ませます.",
+        "points": 1,
+        "tags": ["minna-48"],
+        "passage": "わたしは {娘|むすめ}に {好|す}きな ことを させたいと {思|おも}って います。{娘|むすめ}は {絵|え}が {好|す}きなので、{週|しゅう}に {一回|いっかい} {絵|え}の {教室|きょうしつ}に {通|かよ}わせて います。でも、{娘|むすめ}が {嫌|いや}だと {言|い}う ときは、{休|やす}ませます。"
+      },
+      {
+        "id": "q4822",
+        "type": "fill",
+        "prompt": "Điền thể sai khiến của よみます: せいとに しんぶんを（　）ます。",
+        "answer": ["よませ"],
+        "inputMode": "hiragana",
+        "explain": "よみます → よませます.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4823",
+        "type": "fill",
+        "prompt": "Điền trợ từ: ははは わたし（　）ピアノを ならわせました。",
+        "answer": ["に"],
+        "inputMode": "hiragana",
+        "explain": "Có tân ngữ ピアノを nên người làm đi với に.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4824",
+        "type": "fill",
+        "prompt": "Điền trợ từ: ちちは あに（　）がいこくへ りゅうがくさせました。",
+        "answer": ["を", "に"],
+        "inputMode": "hiragana",
+        "explain": "Tự động từ: người làm đi với を; に cũng dùng được, nghiêng về ý cho phép.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4825",
+        "type": "fill",
+        "prompt": "Điền (xin phép người trên): すみません、ここに すわらせて（　）ませんか。",
+        "answer": ["いただけ", "ください", "もらえ"],
+        "inputMode": "hiragana",
+        "explain": "Xin phép lịch sự: すわらせて いただけませんか／くださいませんか／もらえませんか.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4826",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Hôm nay cho em nghỉ được không ạ?",
+        "tokens": [
+          {
+            "id": "q4826-1",
+            "text": "きょうは"
+          },
+          {
+            "id": "q4826-2",
+            "text": "やすませて"
+          },
+          {
+            "id": "q4826-3",
+            "text": "いただけませんか。"
+          }
+        ],
+        "answer": ["q4826-1", "q4826-2", "q4826-3"],
+        "explain": "Vさせて いただけませんか đứng cuối câu.",
+        "points": 1,
+        "tags": ["minna-48"]
+      },
+      {
+        "id": "q4827",
+        "type": "match",
+        "prompt": "Nối động từ với thể sai khiến.",
+        "left": ["いきます", "よみます", "たべます", "します"],
+        "right": ["いかせます", "させます", "よませます", "たべさせます"],
+        "answer": [
+          [0, 0],
+          [1, 2],
+          [2, 3],
+          [3, 1]
+        ],
+        "explain": "いく → いかせる, よむ → よませる, たべる → たべさせる, する → させる.",
+        "points": 1,
+        "tags": ["minna-48"]
+      }
+    ]
+  }
+}
