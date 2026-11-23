@@ -1,0 +1,805 @@
+{
+  "id": "minna-2-36",
+  "title": "Bài 36 – Mục tiêu và thói quen",
+  "titleJa": "第36課・目標と習慣",
+  "summary": "Nói mục tiêu, khả năng đã thay đổi và việc cố duy trì.",
+  "order": 36,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3601",
+        "jp": "じゅうどう",
+        "romaji": "juudou",
+        "vi": "judo",
+        "audio": null,
+        "kanji": "柔道"
+      },
+      {
+        "id": "v3602",
+        "jp": "ほとんど",
+        "romaji": "hotondo",
+        "vi": "hầu hết, hầu như",
+        "audio": null,
+        "note": "ほとんど できません: hầu như không làm được."
+      },
+      {
+        "id": "v3603",
+        "jp": "ちがいます",
+        "romaji": "chigaimasu",
+        "vi": "khác, không giống",
+        "audio": null,
+        "kanji": "違います"
+      },
+      {
+        "id": "v3604",
+        "jp": "きょく",
+        "romaji": "kyoku",
+        "vi": "bản nhạc, ca khúc",
+        "audio": null,
+        "kanji": "曲",
+        "image": "/icons/vocab/musical-notes.svg"
+      },
+      {
+        "id": "v3605",
+        "jp": "うちます",
+        "romaji": "uchimasu",
+        "vi": "gõ, đánh",
+        "audio": null,
+        "kanji": "打ちます",
+        "note": "キーボードで うちます"
+      },
+      {
+        "id": "v3606",
+        "jp": "ちょきんします",
+        "romaji": "chokin shimasu",
+        "vi": "tiết kiệm tiền",
+        "audio": null,
+        "kanji": "貯金します"
+      },
+      {
+        "id": "v3607",
+        "jp": "すぎます",
+        "romaji": "sugimasu",
+        "vi": "qua, vượt quá",
+        "audio": null,
+        "kanji": "過ぎます",
+        "note": "くじを すぎます"
+      },
+      {
+        "id": "v3608",
+        "jp": "なれます",
+        "romaji": "naremasu",
+        "vi": "quen với",
+        "audio": null,
+        "kanji": "慣れます",
+        "note": "しゅうかんに なれます"
+      },
+      {
+        "id": "v3609",
+        "jp": "でんし〜",
+        "romaji": "denshi",
+        "vi": "điện tử…",
+        "audio": null,
+        "kanji": "電子〜"
+      },
+      {
+        "id": "v3610",
+        "jp": "けいたい〜",
+        "romaji": "keitai",
+        "vi": "di động, cầm tay",
+        "audio": null,
+        "kanji": "携帯〜"
+      },
+      {
+        "id": "v3611",
+        "jp": "けんどう",
+        "romaji": "kendou",
+        "vi": "kiếm đạo",
+        "audio": null,
+        "kanji": "剣道"
+      },
+      {
+        "id": "v3612",
+        "jp": "まいしゅう",
+        "romaji": "maishuu",
+        "vi": "mỗi tuần",
+        "audio": null,
+        "kanji": "毎週"
+      },
+      {
+        "id": "v3613",
+        "jp": "まいつき",
+        "romaji": "maitsuki",
+        "vi": "mỗi tháng",
+        "audio": null,
+        "kanji": "毎月"
+      },
+      {
+        "id": "v3614",
+        "jp": "まいとし",
+        "romaji": "maitoshi",
+        "vi": "mỗi năm",
+        "audio": null,
+        "kanji": "毎年"
+      },
+      {
+        "id": "v3615",
+        "jp": "やっと",
+        "romaji": "yatto",
+        "vi": "cuối cùng cũng",
+        "audio": null,
+        "note": "やっと できました"
+      },
+      {
+        "id": "v3616",
+        "jp": "かなり",
+        "romaji": "kanari",
+        "vi": "khá, đáng kể",
+        "audio": null
+      },
+      {
+        "id": "v3617",
+        "jp": "かならず",
+        "romaji": "kanarazu",
+        "vi": "nhất định, không bỏ sót",
+        "audio": null,
+        "kanji": "必ず"
+      },
+      {
+        "id": "v3618",
+        "jp": "ぜったいに",
+        "romaji": "zettai ni",
+        "vi": "tuyệt đối",
+        "audio": null,
+        "kanji": "絶対に",
+        "note": "ぜったいに わすれません"
+      },
+      {
+        "id": "v3619",
+        "jp": "じょうずに",
+        "romaji": "jouzu ni",
+        "vi": "một cách thành thạo",
+        "audio": null,
+        "kanji": "上手に"
+      },
+      {
+        "id": "v3620",
+        "jp": "できるだけ",
+        "romaji": "dekiru dake",
+        "vi": "cố hết mức có thể",
+        "audio": null
+      },
+      {
+        "id": "v3621",
+        "jp": "このごろ",
+        "romaji": "konogoro",
+        "vi": "dạo này",
+        "audio": null,
+        "kanji": "この頃"
+      },
+      {
+        "id": "v3622",
+        "jp": "その ほうが",
+        "romaji": "sono hou ga",
+        "vi": "cách đó thì… hơn",
+        "audio": null
+      },
+      {
+        "id": "v3623",
+        "jp": "おきゃくさま",
+        "romaji": "okyakusama",
+        "vi": "quý khách",
+        "audio": null,
+        "kanji": "お客様"
+      },
+      {
+        "id": "v3624",
+        "jp": "とくべつな",
+        "romaji": "tokubetsu na",
+        "vi": "đặc biệt",
+        "audio": null,
+        "kanji": "特別な"
+      },
+      {
+        "id": "v3625",
+        "jp": "して いらっしゃいます",
+        "romaji": "shite irasshaimasu",
+        "vi": "đang làm, cách nói tôn kính",
+        "audio": null,
+        "note": "Dùng về người cần thể hiện sự kính trọng."
+      },
+      {
+        "id": "v3626",
+        "jp": "すいえい",
+        "romaji": "suiei",
+        "vi": "bơi lội",
+        "audio": null,
+        "kanji": "水泳"
+      },
+      {
+        "id": "v3627",
+        "jp": "タンゴ",
+        "romaji": "tango",
+        "vi": "điệu tango",
+        "audio": null
+      },
+      {
+        "id": "v3628",
+        "jp": "チャレンジします",
+        "romaji": "charenji shimasu",
+        "vi": "thử sức",
+        "audio": null
+      },
+      {
+        "id": "v3629",
+        "jp": "きもち",
+        "romaji": "kimochi",
+        "vi": "cảm giác, tâm trạng",
+        "audio": null,
+        "kanji": "気持ち"
+      },
+      {
+        "id": "v3630",
+        "jp": "うちゅう",
+        "romaji": "uchuu",
+        "vi": "vũ trụ",
+        "audio": null,
+        "kanji": "宇宙"
+      },
+      {
+        "id": "v3631",
+        "jp": "あいます",
+        "romaji": "aimasu",
+        "vi": "gặp chuyện không may",
+        "audio": null,
+        "kanji": "遭います",
+        "note": "じこに あいます"
+      },
+      {
+        "id": "v3632",
+        "jp": "くさります",
+        "romaji": "kusarimasu",
+        "vi": "thiu, thối, mục",
+        "audio": null,
+        "kanji": "腐ります"
+      },
+      {
+        "id": "v3633",
+        "jp": "ラッシュ",
+        "romaji": "rasshu",
+        "vi": "giờ cao điểm, lúc đông đúc",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3601",
+        "pattern": "Vる／Vない + ように、V2",
+        "vi": "Làm V2 để đạt hoặc tránh một kết quả",
+        "explain": "Đặt mục tiêu trước ように, rồi nói việc làm để đạt mục tiêu. Vế đầu hay dùng thể khả năng, động từ chỉ trạng thái hoặc thể ない.",
+        "viMistake": "はなせる ように là để nói được. わすれない ように là để không quên.",
+        "examples": [
+          {
+            "jp": "{日本語|にほんご}で メールが {打|う}てる ように、{毎週|まいしゅう} {練習|れんしゅう}して います。",
+            "vi": "Tôi luyện mỗi tuần để có thể gõ email bằng tiếng Nhật.",
+            "audio": null
+          },
+          {
+            "jp": "{忘|わす}れない ように、{予定|よてい}を メモします。",
+            "vi": "Tôi ghi lại lịch để không quên.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3602",
+        "pattern": "Vる + ようになります",
+        "vi": "Trở nên làm được hoặc bắt đầu làm thường xuyên",
+        "explain": "Dùng thể khả năng để nói thay đổi năng lực, hoặc thể từ điển để nói hành vi mới. Dùng 〜なくなります để diễn tả không còn làm hoặc không còn làm được.",
+        "viMistake": "およげるようになりました là đã bơi được. およがなくなりました nghĩa là không còn bơi nữa.",
+        "examples": [
+          {
+            "jp": "やっと {長|なが}い {文|ぶん}が {読|よ}める ように なりました。",
+            "vi": "Cuối cùng tôi đã đọc được câu dài.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3603",
+        "pattern": "Vる／Vない + ようにしています",
+        "vi": "Chủ động cố duy trì thói quen",
+        "explain": "Dùng thể từ điển hoặc ない. ようにします nói sẽ cố thực hiện; ようにしています nhấn việc vẫn đang duy trì.",
+        "viMistake": "ようになりました nêu thay đổi đã xảy ra. ようにしています nêu việc đang cố thực hiện.",
+        "examples": [
+          {
+            "jp": "できるだけ ９{時|じ}を {過|す}ぎてから メールを {送|おく}らない ように して います。",
+            "vi": "Tôi cố hạn chế gửi email sau 9 giờ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3604",
+        "pattern": "Vる／Vない + ようにしてください",
+        "vi": "Nhắc người khác cố thực hiện",
+        "explain": "Dùng để nhắc chú ý duy trì một việc hoặc tránh làm. Sắc thái tùy ngữ cảnh và quan hệ.",
+        "viMistake": "Đừng quên dùng わすれない ように してください.",
+        "examples": [
+          {
+            "jp": "{毎月|まいつき}、{記録|きろく}を {確認|かくにん}する ように して ください。",
+            "vi": "Hãy nhớ kiểm tra ghi chép mỗi tháng.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3601",
+        "type": "title",
+        "jp": "第36課 · ように",
+        "vi": "Bài 36 · Mục tiêu và thói quen"
+      },
+      {
+        "id": "s3602",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói mục tiêu, kể việc đã làm được và trình bày một thói quen đang cố duy trì."
+      },
+      {
+        "id": "s3603",
+        "type": "vocab",
+        "refs": ["v3601", "v3602", "v3603", "v3604", "v3605", "v3606", "v3607", "v3608"]
+      },
+      {
+        "id": "s3604",
+        "type": "vocab",
+        "refs": ["v3609", "v3610", "v3611", "v3612", "v3613", "v3614", "v3615", "v3616"]
+      },
+      {
+        "id": "s3605",
+        "type": "vocab",
+        "refs": ["v3617", "v3618", "v3619", "v3620", "v3621", "v3622", "v3623", "v3624"]
+      },
+      {
+        "id": "s3606",
+        "type": "vocab",
+        "refs": ["v3625", "v3626", "v3627", "v3628", "v3629", "v3630", "v3631", "v3632"]
+      },
+      {
+        "id": "s3607",
+        "type": "vocab",
+        "refs": ["v3633"]
+      },
+      {
+        "id": "s3608",
+        "type": "grammar",
+        "ref": "g3601"
+      },
+      {
+        "id": "s3609",
+        "type": "example",
+        "ref": "g3601",
+        "reveal": true
+      },
+      {
+        "id": "s3610",
+        "type": "quiz",
+        "ref": "q3601"
+      },
+      {
+        "id": "s3611",
+        "type": "grammar",
+        "ref": "g3602"
+      },
+      {
+        "id": "s3612",
+        "type": "example",
+        "ref": "g3602",
+        "reveal": true
+      },
+      {
+        "id": "s3613",
+        "type": "quiz",
+        "ref": "q3603"
+      },
+      {
+        "id": "s3614",
+        "type": "grammar",
+        "ref": "g3603"
+      },
+      {
+        "id": "s3615",
+        "type": "example",
+        "ref": "g3603",
+        "reveal": true
+      },
+      {
+        "id": "s3616",
+        "type": "quiz",
+        "ref": "q3606"
+      },
+      {
+        "id": "s3617",
+        "type": "grammar",
+        "ref": "g3604"
+      },
+      {
+        "id": "s3618",
+        "type": "example",
+        "ref": "g3604",
+        "reveal": true
+      },
+      {
+        "id": "s3619",
+        "type": "quiz",
+        "ref": "q3607"
+      },
+      {
+        "id": "s3620",
+        "type": "table",
+        "title": "Ba cách dùng ように",
+        "columns": ["Mục đích nói", "Cụm cần dùng"],
+        "rows": [
+          ["Mục tiêu", "{話|はな}せる ように {練習|れんしゅう}します"],
+          ["Thay đổi đã có", "{話|はな}せる ように なりました"],
+          ["Thói quen chủ động", "{毎日|まいにち} {話|はな}す ように して います"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "So sánh ngắn với ために (bài 42). Khi nói mục đích là một hành động chủ động của cùng người, có thể dùng 留学するために貯金します. Khi nói mục tiêu là khả năng đạt được, dùng 話せるように練習します."
+      },
+      {
+        "id": "s3621",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["曲", "{曲|きょく}", "bản nhạc"],
+          ["打", "{打|う}ちます", "gõ"],
+          ["慣", "{慣|な}れます", "quen với"],
+          ["貯", "{貯金|ちょきん}", "tiền tiết kiệm"],
+          ["泳", "{水泳|すいえい}", "bơi lội"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3622",
+        "type": "table",
+        "title": "Từ tham khảo · Thói quen và sức khỏe",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{睡眠|すいみん}", "giấc ngủ"],
+          ["{休養|きゅうよう}", "nghỉ ngơi"],
+          ["{栄養|えいよう}", "dinh dưỡng"],
+          ["{運動|うんどう}", "vận động"],
+          ["{生活習慣|せいかつしゅうかん}", "thói quen sinh hoạt"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3623",
+        "type": "dialogue",
+        "title": "Hội thoại · Luyện đàn",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "{最近|さいきん}、どんな {曲|きょく}を {練習|れんしゅう}して いますか。",
+            "vi": "Dạo này bạn luyện bản nhạc nào?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "タンゴです。{毎週|まいしゅう} {少|すこ}しずつ {弾|ひ}く ように して います。",
+            "vi": "Tango. Tuần nào tôi cũng cố chơi một ít."
+          },
+          {
+            "speaker": "An",
+            "jp": "もう {最後|さいご}まで {弾|ひ}けますか。",
+            "vi": "Bạn chơi được đến hết chưa?"
+          },
+          {
+            "speaker": "Mai",
+            "jp": "はい、やっと {弾|ひ}ける ように なりました。",
+            "vi": "Rồi, cuối cùng tôi đã chơi được."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi Mai duy trì thói quen nào và hiện đã làm được gì."
+      },
+      {
+        "id": "s3624",
+        "type": "quiz",
+        "ref": "q3616"
+      },
+      {
+        "id": "s3625",
+        "type": "table",
+        "title": "Luyện sắp xếp và dịch",
+        "columns": ["Nhiệm vụ", "Đáp án mẫu"],
+        "rows": [
+          ["Sắp xếp: メモします／ように／{忘|わす}れない", "{忘|わす}れない ように メモします。"],
+          [
+            "Dịch: Tôi đã có thể gõ bằng tiếng Nhật.",
+            "{日本語|にほんご}で {打|う}てる ように なりました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3626",
+        "type": "table",
+        "title": "Nhập vai · Hỏi về một kỹ năng",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "A",
+            "Hỏi điều bạn đang cố làm",
+            "{毎週|まいしゅう} {何|なに}を する ように して いますか。"
+          ],
+          ["B", "Nêu việc đang duy trì", "{毎週|まいしゅう} {泳|およ}ぐ ように して います。"],
+          ["B", "Nêu sự thay đổi", "{長|なが}く {泳|およ}げる ように なりました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3627",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "ように: nêu kết quả muốn đạt hoặc tránh.\nようになる: nêu thay đổi.\nようにする: nêu việc cố duy trì.\nようにしてください: nhắc thực hiện.",
+        "teacherNotes": "Ôn thể khả năng bài 27. Sang bài 37, học cách nói từ góc nhìn của người nhận tác động."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3601",
+        "type": "choice",
+        "prompt": "Để nghe được rõ: はっきり（　）ように。",
+        "options": ["きこえる", "ききます", "きこえて", "きこえます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "聞こえる chỉ kết quả muốn đạt được.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3602",
+        "type": "choice",
+        "prompt": "Để không quên:（　）ように メモします。",
+        "options": ["わすれます", "わすれない", "わすれて", "わすれた"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Dùng thể ない trước ように.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3603",
+        "type": "choice",
+        "prompt": "Chọn câu nói đã bơi được.",
+        "options": [
+          "およげる ように して います。",
+          "およがない ように します。",
+          "およげる ように なりました。",
+          "およげる ように してください。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Thể khả năng + ようになりました nói thay đổi năng lực.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3604",
+        "type": "choice",
+        "prompt": "Chọn câu nói đã bắt đầu đi bộ thường xuyên.",
+        "options": [
+          "まいあさ あるこうと おもいます。",
+          "まいあさ あるく つもりです。",
+          "まいあさ あるかない ように します。",
+          "まいあさ あるく ように なりました。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Thể từ điển + ようになりました nói hành vi mới.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3605",
+        "type": "choice",
+        "prompt": "Chọn câu nói không còn đi bơi nữa.",
+        "options": [
+          "プールに いかなく なりました。",
+          "プールに いける ように なりました。",
+          "プールに いこうと おもいます。",
+          "プールに いく よていです。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "なくなりました nói việc không còn làm.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3606",
+        "type": "choice",
+        "prompt": "Chọn cách nói đang cố tiết kiệm mỗi tháng.",
+        "options": [
+          "まいつき ちょきんする ように してください。",
+          "まいつき ちょきんする ように して います。",
+          "ちょきんが できました。",
+          "まいつき ちょきんする ひつようが ありません。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "ようにしています nhấn nỗ lực đang duy trì.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3607",
+        "type": "choice",
+        "prompt": "Nhắc nhớ kiểm tra: かならず かくにんする（　）。",
+        "options": ["ために なりました", "そうに なります", "ように してください", "つもりでした"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "ようにしてください là lời nhắc.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3608",
+        "type": "choice",
+        "prompt": "Dịch nghĩa できるだけ.",
+        "options": ["mỗi tháng", "cuối cùng cũng", "dạo này", "cố hết mức có thể"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "できるだけ nói mức tối đa có thể thực hiện.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3609",
+        "type": "choice",
+        "prompt": "Cụm nào chỉ bơi lội?",
+        "options": ["すいえい", "じゅうどう", "けんどう", "タンゴ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "水泳 nghĩa là bơi lội.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3610",
+        "type": "choice",
+        "prompt": "Chọn từ chỉ hằng tuần.",
+        "options": ["まいつき", "まいしゅう", "まいとし", "このごろ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "毎週 là mỗi tuần.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3611",
+        "type": "choice",
+        "prompt": "Cụm nào chỉ đã quen với thói quen?",
+        "options": [
+          "しゅうかんが すぎました。",
+          "しゅうかんを うちました。",
+          "しゅうかんに なれました。",
+          "しゅうかんが くさりました。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nに慣れる nghĩa là quen với N.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3612",
+        "type": "choice",
+        "prompt": "Từ nào báo đến cuối cùng việc đã làm được?",
+        "options": ["かなり", "まいとし", "その ほうが", "やっと"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "やっと nhấn kết quả sau chờ đợi hoặc cố gắng.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3613",
+        "type": "choice",
+        "prompt": "Cụm nào là cách nói tôn kính của しています?",
+        "options": ["して いらっしゃいます", "して おきます", "して しまいます", "して みます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "していらっしゃいます tôn kính người thực hiện.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3614",
+        "type": "choice",
+        "prompt": "Chọn cách nói gặp tai nạn.",
+        "options": ["じこを うちます", "じこに あいます", "じこを すぎます", "じこと ちがいます"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "事故に遭う diễn tả gặp tai nạn.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3615",
+        "type": "choice",
+        "prompt": "Cụm ほとんど よめません nghĩa là gì?",
+        "options": [
+          "Đọc được hầu hết.",
+          "Cuối cùng đã đọc được.",
+          "Hầu như không đọc được.",
+          "Cố đọc hết mức."
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "ほとんど đi với phủ định chỉ mức rất ít.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3616",
+        "type": "choice",
+        "prompt": "Theo đoạn đọc, gần đây người viết đã làm được việc gì?",
+        "options": ["Bơi mỗi sáng", "Dạy tiếng Nhật", "Gõ bàn phím nhanh", "Đọc thông báo ngắn"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "読めるようになりました diễn tả năng lực đã thay đổi.",
+        "points": 1,
+        "tags": ["minna-36"],
+        "passage": "{毎週|まいしゅう}、{日本語|にほんご}の {短|みじか}い {文|ぶん}を {読|よ}む ように して います。この{頃|ごろ}、{短|みじか}い お{知|し}らせが {読|よ}める ように なりました。"
+      },
+      {
+        "id": "q3617",
+        "type": "fill",
+        "prompt": "Đổi はなす sang thể khả năng để đứng trước ように. Viết bằng hiragana.",
+        "answer": ["はなせる"],
+        "inputMode": "hiragana",
+        "explain": "Thể khả năng nhóm I.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3618",
+        "type": "fill",
+        "prompt": "Đổi よむ sang thể khả năng để đứng trước ようになりました. Viết bằng hiragana.",
+        "answer": ["よめる"],
+        "inputMode": "hiragana",
+        "explain": "よむ → よめる.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3619",
+        "type": "fill",
+        "prompt": "Đổi わすれる sang thể ない để nói «để không quên». Viết bằng hiragana.",
+        "answer": ["わすれない"],
+        "inputMode": "hiragana",
+        "explain": "わすれる → わすれない.",
+        "points": 1,
+        "tags": ["minna-36"]
+      },
+      {
+        "id": "q3620",
+        "type": "fill",
+        "prompt": "Đổi いく sang dạng なく để nói không còn đi nữa. Viết bằng hiragana.",
+        "answer": ["いかなく"],
+        "inputMode": "hiragana",
+        "explain": "いく → いかない → いかなく.",
+        "points": 1,
+        "tags": ["minna-36"]
+      }
+    ]
+  }
+}
