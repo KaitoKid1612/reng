@@ -1,0 +1,1168 @@
+{
+  "id": "minna-2-39",
+  "title": "Bài 39 – Nguyên nhân và lý do",
+  "titleJa": "第39課・〜て、〜で、〜ので",
+  "summary": "Nói nguyên nhân của cảm xúc, sự kiện gây ra kết quả và lý do lịch sự khi xin phép hoặc xin lỗi.",
+  "order": 39,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v3901",
+        "jp": "ハイキング",
+        "romaji": "haikingu",
+        "vi": "đi bộ dã ngoại đường dài",
+        "audio": null,
+        "note": "やまへ ハイキングに いきます",
+        "image": "/icons/vocab/mountain.svg"
+      },
+      {
+        "id": "v3902",
+        "jp": "そうさ",
+        "romaji": "sousa",
+        "vi": "thao tác, vận hành (máy)",
+        "audio": null,
+        "kanji": "操作",
+        "note": "きかいの そうさ"
+      },
+      {
+        "id": "v3903",
+        "jp": "ふとります",
+        "romaji": "futorimasu",
+        "vi": "béo lên, tăng cân",
+        "audio": null,
+        "kanji": "太ります",
+        "note": "ふとって います: (trạng thái) béo"
+      },
+      {
+        "id": "v3904",
+        "jp": "やせます",
+        "romaji": "yasemasu",
+        "vi": "gầy đi, giảm cân",
+        "audio": null,
+        "kanji": "痩せます",
+        "note": "やせて います: (trạng thái) gầy"
+      },
+      {
+        "id": "v3905",
+        "jp": "かたい",
+        "romaji": "katai",
+        "vi": "cứng",
+        "audio": null,
+        "kanji": "硬い"
+      },
+      {
+        "id": "v3906",
+        "jp": "やわらかい",
+        "romaji": "yawarakai",
+        "vi": "mềm",
+        "audio": null,
+        "kanji": "軟らかい"
+      },
+      {
+        "id": "v3907",
+        "jp": "こたえます",
+        "romaji": "kotaemasu",
+        "vi": "trả lời [câu hỏi]",
+        "audio": null,
+        "kanji": "答えます",
+        "note": "しつもんに こたえます"
+      },
+      {
+        "id": "v3908",
+        "jp": "たおれます",
+        "romaji": "taoremasu",
+        "vi": "[tòa nhà] đổ, sập",
+        "audio": null,
+        "kanji": "倒れます",
+        "note": "ビルが たおれます"
+      },
+      {
+        "id": "v3909",
+        "jp": "とおります",
+        "romaji": "toorimasu",
+        "vi": "đi qua [đường]",
+        "audio": null,
+        "kanji": "通ります",
+        "note": "みちを とおります"
+      },
+      {
+        "id": "v3910",
+        "jp": "しにます",
+        "romaji": "shinimasu",
+        "vi": "chết",
+        "audio": null,
+        "kanji": "死にます"
+      },
+      {
+        "id": "v3911",
+        "jp": "びっくりします",
+        "romaji": "bikkuri shimasu",
+        "vi": "giật mình, ngạc nhiên",
+        "audio": null
+      },
+      {
+        "id": "v3912",
+        "jp": "がっかりします",
+        "romaji": "gakkari shimasu",
+        "vi": "thất vọng",
+        "audio": null
+      },
+      {
+        "id": "v3913",
+        "jp": "あんしんします",
+        "romaji": "anshin shimasu",
+        "vi": "yên tâm",
+        "audio": null,
+        "kanji": "安心します"
+      },
+      {
+        "id": "v3914",
+        "jp": "ちこくします",
+        "romaji": "chikoku shimasu",
+        "vi": "đến muộn",
+        "audio": null,
+        "kanji": "遅刻します"
+      },
+      {
+        "id": "v3915",
+        "jp": "そうたいします",
+        "romaji": "soutai shimasu",
+        "vi": "về sớm hơn giờ quy định",
+        "audio": null,
+        "kanji": "早退します"
+      },
+      {
+        "id": "v3916",
+        "jp": "けんかします",
+        "romaji": "kenka shimasu",
+        "vi": "cãi nhau, đánh nhau",
+        "audio": null,
+        "kanji": "喧嘩します"
+      },
+      {
+        "id": "v3917",
+        "jp": "りこんします",
+        "romaji": "rikon shimasu",
+        "vi": "ly hôn",
+        "audio": null,
+        "kanji": "離婚します"
+      },
+      {
+        "id": "v3918",
+        "jp": "ふくざつな",
+        "romaji": "fukuzatsuna",
+        "vi": "phức tạp",
+        "audio": null,
+        "kanji": "複雑な"
+      },
+      {
+        "id": "v3919",
+        "jp": "じゃまな",
+        "romaji": "jamana",
+        "vi": "vướng víu, cản trở",
+        "audio": null,
+        "kanji": "邪魔な"
+      },
+      {
+        "id": "v3920",
+        "jp": "きたない",
+        "romaji": "kitanai",
+        "vi": "bẩn",
+        "audio": null,
+        "kanji": "汚い"
+      },
+      {
+        "id": "v3921",
+        "jp": "うれしい",
+        "romaji": "ureshii",
+        "vi": "vui mừng",
+        "audio": null,
+        "kanji": "嬉しい"
+      },
+      {
+        "id": "v3922",
+        "jp": "かなしい",
+        "romaji": "kanashii",
+        "vi": "buồn",
+        "audio": null,
+        "kanji": "悲しい"
+      },
+      {
+        "id": "v3923",
+        "jp": "はずかしい",
+        "romaji": "hazukashii",
+        "vi": "xấu hổ, ngại",
+        "audio": null,
+        "kanji": "恥ずかしい"
+      },
+      {
+        "id": "v3924",
+        "jp": "じしん",
+        "romaji": "jishin",
+        "vi": "động đất",
+        "audio": null,
+        "kanji": "地震"
+      },
+      {
+        "id": "v3925",
+        "jp": "たいふう",
+        "romaji": "taifuu",
+        "vi": "bão",
+        "audio": null,
+        "kanji": "台風"
+      },
+      {
+        "id": "v3926",
+        "jp": "かじ",
+        "romaji": "kaji",
+        "vi": "hỏa hoạn",
+        "audio": null,
+        "kanji": "火事"
+      },
+      {
+        "id": "v3927",
+        "jp": "じこ",
+        "romaji": "jiko",
+        "vi": "tai nạn, sự cố",
+        "audio": null,
+        "kanji": "事故"
+      },
+      {
+        "id": "v3928",
+        "jp": "おみあい",
+        "romaji": "omiai",
+        "vi": "buổi gặp mặt xem mắt",
+        "audio": null,
+        "kanji": "お見合い"
+      },
+      {
+        "id": "v3929",
+        "jp": "でんわだい",
+        "romaji": "denwadai",
+        "vi": "tiền điện thoại",
+        "audio": null,
+        "kanji": "電話代"
+      },
+      {
+        "id": "v3930",
+        "jp": "〜だい",
+        "romaji": "dai",
+        "vi": "tiền…, phí…",
+        "audio": null,
+        "kanji": "〜代",
+        "note": "でんわだい, タクシーだい"
+      },
+      {
+        "id": "v3931",
+        "jp": "フロント",
+        "romaji": "furonto",
+        "vi": "quầy lễ tân",
+        "audio": null,
+        "image": "/icons/vocab/hotel.svg"
+      },
+      {
+        "id": "v3932",
+        "jp": "〜ごうしつ",
+        "romaji": "goushitsu",
+        "vi": "phòng số…",
+        "audio": null,
+        "kanji": "〜号室"
+      },
+      {
+        "id": "v3933",
+        "jp": "あせ",
+        "romaji": "ase",
+        "vi": "mồ hôi",
+        "audio": null,
+        "kanji": "汗",
+        "image": "/icons/vocab/downcast-face-with-sweat.svg"
+      },
+      {
+        "id": "v3934",
+        "jp": "タオル",
+        "romaji": "taoru",
+        "vi": "khăn tắm, khăn mặt",
+        "audio": null
+      },
+      {
+        "id": "v3935",
+        "jp": "せっけん",
+        "romaji": "sekken",
+        "vi": "xà phòng",
+        "audio": null,
+        "kanji": "石鹸"
+      },
+      {
+        "id": "v3936",
+        "jp": "おおぜい",
+        "romaji": "oozei",
+        "vi": "đông người",
+        "audio": null,
+        "kanji": "大勢",
+        "note": "おおぜいの ひと"
+      },
+      {
+        "id": "v3937",
+        "jp": "おつかれさまでした。",
+        "romaji": "otsukaresama deshita",
+        "vi": "Anh/chị đã vất vả rồi.",
+        "audio": null,
+        "kanji": "お疲れさまでした。",
+        "note": "Nói với người cùng làm khi xong việc."
+      },
+      {
+        "id": "v3938",
+        "jp": "うかがいます",
+        "romaji": "ukagaimasu",
+        "vi": "đến, đi (khiêm nhường)",
+        "audio": null,
+        "kanji": "伺います",
+        "note": "Cách nói khiêm nhường của いきます."
+      },
+      {
+        "id": "v3939",
+        "jp": "とちゅうで",
+        "romaji": "tochuu de",
+        "vi": "giữa đường, giữa chừng",
+        "audio": null,
+        "kanji": "途中で"
+      },
+      {
+        "id": "v3940",
+        "jp": "トラック",
+        "romaji": "torakku",
+        "vi": "xe tải",
+        "audio": null
+      },
+      {
+        "id": "v3941",
+        "jp": "ぶつかります",
+        "romaji": "butsukarimasu",
+        "vi": "đâm, va vào",
+        "audio": null
+      },
+      {
+        "id": "v3942",
+        "jp": "かいじょう",
+        "romaji": "kaijou",
+        "vi": "hội trường, nơi tổ chức",
+        "audio": null,
+        "kanji": "会場"
+      },
+      {
+        "id": "v3943",
+        "jp": "かみなり",
+        "romaji": "kaminari",
+        "vi": "sấm sét",
+        "audio": null,
+        "kanji": "雷"
+      },
+      {
+        "id": "v3944",
+        "jp": "つなみ",
+        "romaji": "tsunami",
+        "vi": "sóng thần",
+        "audio": null,
+        "kanji": "津波"
+      },
+      {
+        "id": "v3945",
+        "jp": "しゅしょう",
+        "romaji": "shushou",
+        "vi": "thủ tướng",
+        "audio": null,
+        "kanji": "首相"
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g3901",
+        "pattern": "Vて／Vなくて、cảm xúc",
+        "vi": "Nói nguyên nhân dẫn tới một cảm xúc",
+        "explain": "Vế trước là việc xảy ra, vế sau là cảm xúc như びっくりしました, あんしんしました, がっかりしました, うれしいです. Phủ định dùng Vなくて. Xin lỗi kèm lý do cũng dùng được: おくれて、すみません.",
+        "viMistake": "Vế sau không phải ý muốn, lời mời, lời nhờ, xin phép hay mệnh lệnh. Không nói あめが ふって、うちに いましょう.",
+        "examples": [
+          {
+            "jp": "{母|はは}から {電話|でんわ}が {来|き}て、{安心|あんしん}しました。",
+            "vi": "Mẹ gọi điện đến nên tôi yên tâm.",
+            "audio": null
+          },
+          {
+            "jp": "{友達|ともだち}が パーティーに {来|こ}なくて、がっかりしました。",
+            "vi": "Bạn không đến dự tiệc nên tôi thất vọng.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3902",
+        "pattern": "いAくて／なAで、kết quả",
+        "vi": "Tính từ làm nguyên nhân cho kết quả",
+        "explain": "いA bỏ い thêm くて, なA thêm で. Vế sau thường là cảm xúc hoặc việc không làm được như わかりません, あるけません.",
+        "viMistake": "いい đổi thành よくて. なA không dùng くて: nói ふくざつで, không nói ふくざつくて.",
+        "examples": [
+          {
+            "jp": "この {説明|せつめい}は {複雑|ふくざつ}で、よく わかりません。",
+            "vi": "Lời giải thích này phức tạp nên tôi không hiểu rõ.",
+            "audio": null
+          },
+          {
+            "jp": "{靴|くつ}が {硬|かた}くて、{長|なが}く {歩|ある}けません。",
+            "vi": "Giày cứng nên tôi không đi bộ lâu được.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3903",
+        "pattern": "N（sự kiện）で、kết quả",
+        "vi": "Sự kiện hoặc thiên tai làm nguyên nhân",
+        "explain": "N là sự kiện như じしん, たいふう, かじ, じこ, びょうき. Vế sau kể kết quả hoặc trạng thái đã xảy ra.",
+        "viMistake": "Đây là で chỉ nguyên nhân. Phân biệt với で chỉ nơi chốn (フロントで) và công cụ (タオルで).",
+        "examples": [
+          {
+            "jp": "{事故|じこ}で {道|みち}が {込|こ}んで います。",
+            "vi": "Đường đang tắc vì tai nạn.",
+            "audio": null
+          },
+          {
+            "jp": "{台風|たいふう}で ハイキングが {中止|ちゅうし}に なりました。",
+            "vi": "Chuyến đi bộ dã ngoại bị hủy vì bão.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3904",
+        "pattern": "普通形 + ので、〜",
+        "vi": "Nêu lý do một cách nhẹ nhàng, lịch sự",
+        "explain": "ので trình bày lý do khách quan và mềm hơn から. Hợp khi xin phép, xin lỗi hoặc giải thích với người trên. Vế sau có thể là lời xin phép hay lời nhờ.",
+        "viMistake": "Danh từ và なA thêm な: あめなので, ひまなので. Không nói あめだので.",
+        "examples": [
+          {
+            "jp": "{熱|ねつ}が あるので、{早退|そうたい}しても いいですか。",
+            "vi": "Tôi bị sốt nên cho tôi về sớm có được không ạ?",
+            "audio": null
+          },
+          {
+            "jp": "{道|みち}が {込|こ}んで いたので、{遅刻|ちこく}しました。",
+            "vi": "Vì đường tắc nên tôi đã đến muộn.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g3905",
+        "pattern": "Vる／Nの + 途中で",
+        "vi": "Việc xảy ra giữa đường hoặc giữa chừng",
+        "explain": "Dùng khi một việc xảy ra trong lúc đang đi đâu đó hoặc đang làm dở việc khác. Động từ để thể từ điển.",
+        "viMistake": "Danh từ cần の: かいぎの とちゅうで. Không nói かいぎ とちゅうで.",
+        "examples": [
+          {
+            "jp": "{駅|えき}へ {行|い}く {途中|とちゅう}で、{先生|せんせい}に {会|あ}いました。",
+            "vi": "Trên đường ra ga, tôi gặp thầy giáo.",
+            "audio": null
+          },
+          {
+            "jp": "{会議|かいぎ}の {途中|とちゅう}で、{気分|きぶん}が {悪|わる}く なりました。",
+            "vi": "Giữa cuộc họp, tôi thấy khó chịu trong người.",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s3901",
+        "type": "title",
+        "jp": "第39課 · て・で・ので",
+        "vi": "Bài 39 · Nói nguyên nhân và lý do"
+      },
+      {
+        "id": "s3902",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Kể một việc khiến mình vui, buồn, yên tâm hay thất vọng. Nói lý do bằng て, で và ので. Xin lỗi và giải thích lịch sự khi đến muộn hoặc muốn về sớm."
+      },
+      {
+        "id": "s3903",
+        "type": "vocab",
+        "refs": ["v3901", "v3902", "v3903", "v3904", "v3905", "v3906", "v3907", "v3908"]
+      },
+      {
+        "id": "s3904",
+        "type": "vocab",
+        "refs": ["v3909", "v3910", "v3911", "v3912", "v3913", "v3914", "v3915", "v3916"]
+      },
+      {
+        "id": "s3905",
+        "type": "vocab",
+        "refs": ["v3917", "v3918", "v3919", "v3920", "v3921", "v3922", "v3923", "v3924"]
+      },
+      {
+        "id": "s3906",
+        "type": "vocab",
+        "refs": ["v3925", "v3926", "v3927", "v3928", "v3929", "v3930", "v3931", "v3932"]
+      },
+      {
+        "id": "s3907",
+        "type": "vocab",
+        "refs": ["v3933", "v3934", "v3935", "v3936", "v3937", "v3938", "v3939", "v3940"]
+      },
+      {
+        "id": "s3908",
+        "type": "vocab",
+        "refs": ["v3941", "v3942", "v3943", "v3944", "v3945"]
+      },
+      {
+        "id": "s3909",
+        "type": "grammar",
+        "ref": "g3901"
+      },
+      {
+        "id": "s3910",
+        "type": "example",
+        "ref": "g3901",
+        "reveal": true
+      },
+      {
+        "id": "s3911",
+        "type": "quiz",
+        "ref": "q3901"
+      },
+      {
+        "id": "s3912",
+        "type": "grammar",
+        "ref": "g3902"
+      },
+      {
+        "id": "s3913",
+        "type": "example",
+        "ref": "g3902",
+        "reveal": true
+      },
+      {
+        "id": "s3914",
+        "type": "quiz",
+        "ref": "q3903"
+      },
+      {
+        "id": "s3915",
+        "type": "table",
+        "title": "Luyện chia thể nối chỉ nguyên nhân",
+        "columns": ["Gốc", "Thể nối"],
+        "rows": [
+          ["{手紙|てがみ}を もらう", "{手紙|てがみ}を もらって"],
+          ["{試合|しあい}に {負|ま}ける", "{試合|しあい}に {負|ま}けて"],
+          ["{鍵|かぎ}が ない", "{鍵|かぎ}が なくて"],
+          ["{部屋|へや}が {汚|きたな}い", "{部屋|へや}が {汚|きたな}くて"],
+          ["{天気|てんき}が いい", "{天気|てんき}が よくて"],
+          ["{道|みち}が {複雑|ふくざつ}だ", "{道|みち}が {複雑|ふくざつ}で"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Cho học viên nói tiếp một cảm xúc sau mỗi dòng, ví dụ 手紙をもらって、うれしかったです."
+      },
+      {
+        "id": "s3916",
+        "type": "quiz",
+        "ref": "q3902"
+      },
+      {
+        "id": "s3917",
+        "type": "grammar",
+        "ref": "g3903"
+      },
+      {
+        "id": "s3918",
+        "type": "example",
+        "ref": "g3903",
+        "reveal": true
+      },
+      {
+        "id": "s3919",
+        "type": "quiz",
+        "ref": "q3905"
+      },
+      {
+        "id": "s3920",
+        "type": "grammar",
+        "ref": "g3904"
+      },
+      {
+        "id": "s3921",
+        "type": "example",
+        "ref": "g3904",
+        "reveal": true
+      },
+      {
+        "id": "s3922",
+        "type": "quiz",
+        "ref": "q3907"
+      },
+      {
+        "id": "s3923",
+        "type": "table",
+        "title": "Chọn て, で hay ので",
+        "columns": ["Vế sau", "Dùng"],
+        "rows": [
+          ["Cảm xúc, việc không làm được", "Vて／Vなくて／いAくて／なAで"],
+          ["Kết quả của sự kiện, thiên tai", "N で"],
+          ["Xin phép, nhờ, mời, giải thích lịch sự", "普通形 + ので"],
+          ["Lý do chủ quan, nói mạnh", "〜から (bài 9)"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho cùng một nguyên nhân あたまが いたい rồi đổi vế sau: いたくて、ねられません ／ いたいので、やすんでも いいですか."
+      },
+      {
+        "id": "s3924",
+        "type": "quiz",
+        "ref": "q3909"
+      },
+      {
+        "id": "s3925",
+        "type": "grammar",
+        "ref": "g3905"
+      },
+      {
+        "id": "s3926",
+        "type": "example",
+        "ref": "g3905",
+        "reveal": true
+      },
+      {
+        "id": "s3927",
+        "type": "quiz",
+        "ref": "q3910"
+      },
+      {
+        "id": "s3928",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["安", "{安心|あんしん}", "yên"],
+          ["遅", "{遅刻|ちこく}・{遅|おく}れる", "muộn"],
+          ["震", "{地震|じしん}", "rung"],
+          ["風", "{台風|たいふう}", "gió"],
+          ["故", "{事故|じこ}", "sự cố"],
+          ["太", "{太|ふと}ります", "béo"],
+          ["悲", "{悲|かな}しい", "buồn"],
+          ["号", "{号室|ごうしつ}", "số hiệu"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s3929",
+        "type": "table",
+        "title": "Từ tham khảo · Cảm xúc",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{喜|よろこ}びます", "vui mừng"],
+          ["{驚|おどろ}きます", "ngạc nhiên"],
+          ["{怒|おこ}ります", "tức giận"],
+          ["{寂|さび}しい", "cô đơn, buồn vì xa"],
+          ["{怖|こわ}い", "sợ"],
+          ["{悔|くや}しい", "tiếc nuối, cay cú"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên ghép với 〜て: しあいに まけて、くやしかったです."
+      },
+      {
+        "id": "s3930",
+        "type": "dialogue",
+        "title": "Hội thoại · Đến muộn buổi họp",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Lan",
+            "jp": "{部長|ぶちょう}、{遅|おく}く なって すみません。",
+            "vi": "Trưởng phòng, xin lỗi vì em đến muộn."
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "どうしたんですか。",
+            "vi": "Có chuyện gì vậy?"
+          },
+          {
+            "speaker": "Lan",
+            "jp": "{来|く}る {途中|とちゅう}で {事故|じこ}が あって、バスが {動|うご}かなかったんです。",
+            "vi": "Trên đường đến có tai nạn nên xe buýt không chạy được ạ."
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "それは {大変|たいへん}でしたね。けがは ありませんか。",
+            "vi": "Vất vả quá nhỉ. Em có bị thương không?"
+          },
+          {
+            "speaker": "Lan",
+            "jp": "はい、{大丈夫|だいじょうぶ}です。{連絡|れんらく}できなくて、すみませんでした。",
+            "vi": "Dạ, em không sao. Em xin lỗi vì không liên lạc được."
+          },
+          {
+            "speaker": "Trưởng phòng",
+            "jp": "いいですよ。じゃ、{会議|かいぎ}を {始|はじ}めましょう。",
+            "vi": "Không sao. Vậy chúng ta bắt đầu họp nhé."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Lan đến muộn vì sao? Lan xin lỗi thêm về việc gì?"
+      },
+      {
+        "id": "s3931",
+        "type": "quiz",
+        "ref": "q3918"
+      },
+      {
+        "id": "s3932",
+        "type": "dialogue",
+        "title": "Nghe · Ở quầy lễ tân",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Khách",
+            "jp": "すみません、305{号室|ごうしつ}の チャンですが、エアコンが {壊|こわ}れて いるんです。",
+            "vi": "Xin lỗi, tôi là Trang ở phòng 305, điều hòa bị hỏng rồi."
+          },
+          {
+            "speaker": "Lễ tân",
+            "jp": "すみません。すぐ {伺|うかが}います。",
+            "vi": "Xin lỗi quý khách. Tôi đến ngay ạ."
+          },
+          {
+            "speaker": "Khách",
+            "jp": "{暑|あつ}くて、{眠|ねむ}れないんです。それから、タオルも ありません。",
+            "vi": "Nóng quá nên tôi không ngủ được. Với lại, cũng không có khăn."
+          },
+          {
+            "speaker": "Lễ tân",
+            "jp": "わかりました。タオルも すぐ {持|も}って {行|い}きます。",
+            "vi": "Tôi hiểu rồi. Tôi sẽ mang khăn lên ngay."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi khách ở phòng nào và gặp vấn đề gì."
+      },
+      {
+        "id": "s3933",
+        "type": "quiz",
+        "ref": "q3919"
+      },
+      {
+        "id": "s3934",
+        "type": "quiz",
+        "ref": "q3920"
+      },
+      {
+        "id": "s3935",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          [
+            "{用事|ようじ}が／ので、／ある／{失礼|しつれい}します",
+            "{用事|ようじ}が あるので、{失礼|しつれい}します。"
+          ],
+          [
+            "{途中|とちゅう}で／{行|い}く／{駅|えき}へ／{転|ころ}びました",
+            "{駅|えき}へ {行|い}く {途中|とちゅう}で、{転|ころ}びました。"
+          ],
+          ["{汗|あせ}を／{暑|あつ}くて／かきました", "{暑|あつ}くて、{汗|あせ}を かきました。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3936",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Nhận được thư, tôi rất vui.", "{手紙|てがみ}を もらって、うれしかったです。"],
+          [
+            "Vì động đất, tòa nhà cũ đã đổ.",
+            "{地震|じしん}で {古|ふる}い ビルが {倒|たお}れました。"
+          ],
+          ["Hôm nay bận nên không đi được.", "きょうは {忙|いそが}しいので、{行|い}けません。"],
+          [
+            "Trên đường về, tôi đã mua sữa.",
+            "{帰|かえ}る {途中|とちゅう}で、{牛乳|ぎゅうにゅう}を {買|か}いました。"
+          ]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s3937",
+        "type": "table",
+        "title": "Nhập vai · Từ chối lời mời",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          [
+            "A",
+            "Mời đi dã ngoại cuối tuần",
+            "{日曜日|にちようび}、ハイキングに {行|い}きませんか。"
+          ],
+          [
+            "B",
+            "Từ chối, nêu lý do bằng ので",
+            "すみません。{用事|ようじ}が あるので、ちょっと…。"
+          ],
+          ["A", "Hỏi lần sau", "じゃ、また {今度|こんど} {行|い}きましょう。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi vai và lý do: アルバイトが ある, かぜを ひいた, レポートが ある."
+      },
+      {
+        "id": "s3938",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "〜て・〜くて・〜で: nguyên nhân dẫn tới cảm xúc hoặc trạng thái.\nN で: sự kiện, thiên tai làm nguyên nhân.\n〜ので: lý do lịch sự, đi được với xin phép và lời nhờ.\nVる／Nの途中で: giữa đường, giữa chừng.",
+        "teacherNotes": "Dễ nhầm: dùng 〜て trước lời nhờ hoặc xin phép, quên な trong あめなので. Liên hệ から ở bài 9. Sang bài 40, học cách lồng câu hỏi vào câu với か và かどうか."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q3901",
+        "type": "choice",
+        "prompt": "Nghe kết quả thi rồi yên tâm: しけんの けっかを きいて、（　）。",
+        "options": [
+          "あんしんしました",
+          "あんしんしましょう",
+          "あんしんして ください",
+          "あんしんする つもりです"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Sau 〜て chỉ nguyên nhân là cảm xúc đã xảy ra. Không dùng lời rủ, lời nhờ hay dự định.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3902",
+        "type": "choice",
+        "prompt": "Câu nào tự nhiên?",
+        "options": [
+          "あめが ふって、かさを かして ください。",
+          "にもつが おもくて、ひとりで はこべません。",
+          "じかんが なくて、タクシーで いきましょう。",
+          "あつくて、まどを あけて ください。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Vế sau 〜て／〜くて là trạng thái không làm được. Lời nhờ, lời rủ, xin phép cần ので.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3903",
+        "type": "choice",
+        "prompt": "この へやは（　）、はずかしいです。",
+        "options": ["きたないで", "きたなくで", "きたなくて", "きたなかって"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "いA bỏ い thêm くて: きたない → きたなくて.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3904",
+        "type": "choice",
+        "prompt": "せつめいが（　）、よく わかりませんでした。",
+        "options": ["ふくざつくて", "ふくざつな", "ふくざつに", "ふくざつで"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "なA thêm で: ふくざつで.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3905",
+        "type": "choice",
+        "prompt": "Câu nào dùng で chỉ nguyên nhân?",
+        "options": [
+          "フロントで かぎを もらいました。",
+          "じしんで ビルが たおれました。",
+          "せっけんで てを あらいました。",
+          "バスで かいじょうへ いきました。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "explain": "じしんで là vì động đất. Các câu khác dùng で chỉ nơi chốn, công cụ, phương tiện.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3906",
+        "type": "choice",
+        "prompt": "Tàu dừng vì bão: たいふう（　）でんしゃが とまりました。",
+        "options": ["を", "に", "が", "で"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Sự kiện tự nhiên làm nguyên nhân dùng で.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3907",
+        "type": "choice",
+        "prompt": "Xin về sớm: ねつが ある（　）、そうたいしても いいですか。",
+        "options": ["ので", "のに", "のが", "のは"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Xin phép lịch sự thì nêu lý do bằng ので.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3908",
+        "type": "choice",
+        "prompt": "あしたは やすみ（　）、ハイキングに いきます。",
+        "options": ["だので", "ので", "なので", "でので"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Danh từ đi với ので cần な: やすみなので.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3909",
+        "type": "choice",
+        "prompt": "Câu nào xin phép về trước đúng cách?",
+        "options": [
+          "ようじだので、さきに かえっても いいですか。",
+          "ようじが あるのに、さきに かえっても いいですか。",
+          "ようじが あるのは、さきに かえっても いいですか。",
+          "ようじが あるので、さきに かえっても いいですか。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Lời xin phép đi với ので. Danh từ + なので, không nói だので.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3910",
+        "type": "choice",
+        "prompt": "かいぎ（　）とちゅうで、でんわが ありました。",
+        "options": ["が", "の", "に", "を"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Danh từ đứng trước とちゅうで cần の.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3911",
+        "type": "choice",
+        "prompt": "うちへ（　）とちゅうで、パンを かいました。",
+        "options": ["かえる", "かえって", "かえった", "かえり"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Động từ trước とちゅうで ở thể từ điển.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3912",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là đến muộn?",
+        "options": ["そうたいします", "りこんします", "ちこくします", "けんかします"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "遅刻します là đến muộn. 早退します là về sớm.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3913",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 安心します.",
+        "options": ["yên tâm", "thất vọng", "giật mình", "xấu hổ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "安心します đọc あんしんします.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3914",
+        "type": "choice",
+        "prompt": "Nói sai trước lớp và bị cười: とても（　）です。",
+        "options": ["やわらかい", "はずかしい", "じゃま", "ふくざつ"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "恥ずかしい là xấu hổ.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3915",
+        "type": "choice",
+        "prompt": "Từ trái nghĩa với ふとります là gì?",
+        "options": ["しにます", "とおります", "たおれます", "やせます"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "痩せます là gầy đi.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3916",
+        "type": "choice",
+        "prompt": "Nói gì với đồng nghiệp khi cùng làm xong việc?",
+        "options": ["いただきます。", "おじゃまします。", "おつかれさまでした。", "いってきます。"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "お疲れさまでした cảm ơn người đã cùng làm việc.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3917",
+        "type": "choice",
+        "prompt": "Chọn cách nói phòng số 305 ở khách sạn.",
+        "options": ["305ごうしつ", "305まい", "305だい", "305さつ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "〜号室 chỉ số phòng.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3918",
+        "type": "choice",
+        "prompt": "Vì sao Lan đến muộn?",
+        "options": [
+          "Lan ngủ quên",
+          "Lan bị ốm",
+          "Lan quên tài liệu",
+          "Trên đường có tai nạn, xe buýt không chạy"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "途中で事故があって、バスが動かなかった: có tai nạn nên xe buýt không chạy.",
+        "points": 1,
+        "tags": ["minna-39"],
+        "passage": "ラン：{来|く}る {途中|とちゅう}で {事故|じこ}が あって、バスが {動|うご}かなかったんです。"
+      },
+      {
+        "id": "q3919",
+        "type": "choice",
+        "prompt": "Khách phòng 305 không ngủ được vì sao?",
+        "options": ["Phòng ồn", "Điều hòa hỏng nên nóng", "Không có khăn", "Giường cứng"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "エアコンが壊れて、暑くて眠れない: điều hòa hỏng, nóng nên không ngủ được.",
+        "points": 1,
+        "tags": ["minna-39"],
+        "passage": "{客|きゃく}：エアコンが {壊|こわ}れて いるんです。{暑|あつ}くて、{眠|ねむ}れないんです。"
+      },
+      {
+        "id": "q3920",
+        "type": "choice",
+        "prompt": "Vì sao người viết yên tâm?",
+        "options": ["Tàu chạy lại", "Được nghỉ làm", "Gia đình gửi thư điện tử", "Bão đã qua"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "家族からメールが来て、安心しました.",
+        "points": 1,
+        "tags": ["minna-39"],
+        "passage": "きのうは {台風|たいふう}で {電車|でんしゃ}が {止|と}まりました。{会社|かいしゃ}へ {行|い}けなくて、{困|こま}りました。{夜|よる}、{国|くに}の {家族|かぞく}から メールが {来|き}て、{安心|あんしん}しました。"
+      },
+      {
+        "id": "q3921",
+        "type": "choice",
+        "prompt": "Vì sao người viết không đến công ty được?",
+        "options": ["Tàu dừng vì bão", "Bị ốm", "Có động đất", "Ngủ quên"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "台風で電車が止まりました nên không đến công ty được.",
+        "points": 1,
+        "tags": ["minna-39"],
+        "passage": "きのうは {台風|たいふう}で {電車|でんしゃ}が {止|と}まりました。{会社|かいしゃ}へ {行|い}けなくて、{困|こま}りました。{夜|よる}、{国|くに}の {家族|かぞく}から メールが {来|き}て、{安心|あんしん}しました。"
+      },
+      {
+        "id": "q3922",
+        "type": "fill",
+        "prompt": "Điền thể nối của かたい: この パンは（　）、たべられません。",
+        "answer": ["かたくて"],
+        "inputMode": "hiragana",
+        "explain": "いA bỏ い thêm くて: かたくて.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3923",
+        "type": "fill",
+        "prompt": "Điền trợ từ: じしん（　）ビルが たおれました。",
+        "answer": ["で"],
+        "inputMode": "hiragana",
+        "explain": "で chỉ nguyên nhân là sự kiện.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3924",
+        "type": "fill",
+        "prompt": "Điền: あめ（　）ので、ハイキングは やめます。",
+        "answer": ["な", "だった"],
+        "inputMode": "hiragana",
+        "explain": "Danh từ + な + ので. Nói về quá khứ thì dùng だったので.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3925",
+        "type": "fill",
+        "prompt": "Giữa cuộc họp thì thấy khó chịu: かいぎの（　）で、きぶんが わるく なりました。",
+        "answer": ["とちゅう"],
+        "inputMode": "hiragana",
+        "explain": "Nの途中で: giữa chừng việc gì.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3926",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Vì có hẹn nên tôi xin phép về trước.",
+        "tokens": [
+          {
+            "id": "q3926-1",
+            "text": "やくそくが"
+          },
+          {
+            "id": "q3926-2",
+            "text": "あるので、"
+          },
+          {
+            "id": "q3926-3",
+            "text": "おさきに"
+          },
+          {
+            "id": "q3926-4",
+            "text": "しつれいします。"
+          }
+        ],
+        "answer": ["q3926-1", "q3926-2", "q3926-3", "q3926-4"],
+        "explain": "Lý do với ので đứng trước, lời xin phép đứng sau.",
+        "points": 1,
+        "tags": ["minna-39"]
+      },
+      {
+        "id": "q3927",
+        "type": "match",
+        "prompt": "Nối từ chỉ sự kiện với nghĩa.",
+        "left": ["じしん", "たいふう", "かじ", "かみなり"],
+        "right": ["hỏa hoạn", "sấm sét", "bão", "động đất"],
+        "answer": [
+          [0, 3],
+          [1, 2],
+          [2, 0],
+          [3, 1]
+        ],
+        "explain": "地震 động đất, 台風 bão, 火事 hỏa hoạn, 雷 sấm sét.",
+        "points": 1,
+        "tags": ["minna-39"]
+      }
+    ]
+  }
+}
