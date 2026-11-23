@@ -1,0 +1,946 @@
+{
+  "id": "minna-2-43",
+  "title": "Bài 43 – Trông có vẻ và đi rồi về",
+  "titleJa": "第43課・〜そうです、〜てきます",
+  "summary": "Đoán từ vẻ bề ngoài bằng そうです, nói đi làm việc gì rồi quay lại và nhờ bạn bè bằng 〜てくれませんか.",
+  "order": 43,
+  "courseId": "minna-2",
+  "isSample": true,
+  "content": {
+    "schemaVersion": 1,
+    "vocab": [
+      {
+        "id": "v4301",
+        "jp": "ふえます",
+        "romaji": "fuemasu",
+        "vi": "[xuất khẩu] tăng",
+        "audio": null,
+        "kanji": "増えます",
+        "note": "ゆしゅつが ふえます"
+      },
+      {
+        "id": "v4302",
+        "jp": "へります",
+        "romaji": "herimasu",
+        "vi": "[xuất khẩu] giảm",
+        "audio": null,
+        "kanji": "減ります",
+        "note": "ゆしゅつが へります"
+      },
+      {
+        "id": "v4303",
+        "jp": "あがります",
+        "romaji": "agarimasu",
+        "vi": "[giá] tăng",
+        "audio": null,
+        "kanji": "上がります",
+        "note": "ねだんが あがります"
+      },
+      {
+        "id": "v4304",
+        "jp": "さがります",
+        "romaji": "sagarimasu",
+        "vi": "[giá] giảm",
+        "audio": null,
+        "kanji": "下がります",
+        "note": "ねだんが さがります"
+      },
+      {
+        "id": "v4305",
+        "jp": "きれます",
+        "romaji": "kiremasu",
+        "vi": "[dây] đứt",
+        "audio": null,
+        "kanji": "切れます",
+        "note": "ひもが きれます"
+      },
+      {
+        "id": "v4306",
+        "jp": "とれます",
+        "romaji": "toremasu",
+        "vi": "[cúc áo] tuột",
+        "audio": null,
+        "kanji": "取れます",
+        "note": "ボタンが とれます"
+      },
+      {
+        "id": "v4307",
+        "jp": "おちます",
+        "romaji": "ochimasu",
+        "vi": "[hành lý] rơi",
+        "audio": null,
+        "kanji": "落ちます",
+        "note": "にもつが おちます"
+      },
+      {
+        "id": "v4308",
+        "jp": "なくなります",
+        "romaji": "nakunarimasu",
+        "vi": "[xăng] hết",
+        "audio": null,
+        "note": "ガソリンが なくなります"
+      },
+      {
+        "id": "v4309",
+        "jp": "へんな",
+        "romaji": "henna",
+        "vi": "kỳ lạ",
+        "audio": null,
+        "kanji": "変な"
+      },
+      {
+        "id": "v4310",
+        "jp": "しあわせな",
+        "romaji": "shiawasena",
+        "vi": "hạnh phúc",
+        "audio": null,
+        "kanji": "幸せな"
+      },
+      {
+        "id": "v4311",
+        "jp": "らくな",
+        "romaji": "rakuna",
+        "vi": "nhàn, thoải mái",
+        "audio": null,
+        "kanji": "楽な"
+      },
+      {
+        "id": "v4312",
+        "jp": "てきとうな",
+        "romaji": "tekitouna",
+        "vi": "thích hợp",
+        "audio": null,
+        "kanji": "適当な"
+      },
+      {
+        "id": "v4313",
+        "jp": "やさしい",
+        "romaji": "yasashii",
+        "vi": "hiền, tốt bụng",
+        "audio": null,
+        "kanji": "優しい"
+      },
+      {
+        "id": "v4314",
+        "jp": "うまい",
+        "romaji": "umai",
+        "vi": "ngon",
+        "audio": null,
+        "note": "Thường nam giới dùng."
+      },
+      {
+        "id": "v4315",
+        "jp": "まずい",
+        "romaji": "mazui",
+        "vi": "dở, không ngon",
+        "audio": null
+      },
+      {
+        "id": "v4316",
+        "jp": "つまらない",
+        "romaji": "tsumaranai",
+        "vi": "chán, nhạt nhẽo",
+        "audio": null
+      },
+      {
+        "id": "v4317",
+        "jp": "ガソリン",
+        "romaji": "gasorin",
+        "vi": "xăng",
+        "audio": null,
+        "image": "/icons/vocab/automobile.svg"
+      },
+      {
+        "id": "v4318",
+        "jp": "ひ",
+        "romaji": "hi",
+        "vi": "lửa",
+        "audio": null,
+        "kanji": "火"
+      },
+      {
+        "id": "v4319",
+        "jp": "センス",
+        "romaji": "sensu",
+        "vi": "gu, khiếu thẩm mỹ",
+        "audio": null,
+        "note": "センスが いい"
+      },
+      {
+        "id": "v4320",
+        "jp": "かいいん",
+        "romaji": "kaiin",
+        "vi": "hội viên",
+        "audio": null,
+        "kanji": "会員"
+      },
+      {
+        "id": "v4321",
+        "jp": "ねんれい",
+        "romaji": "nenrei",
+        "vi": "tuổi tác",
+        "audio": null,
+        "kanji": "年齢"
+      },
+      {
+        "id": "v4322",
+        "jp": "しゅうにゅう",
+        "romaji": "shuunyuu",
+        "vi": "thu nhập",
+        "audio": null,
+        "kanji": "収入"
+      },
+      {
+        "id": "v4323",
+        "jp": "いまにも",
+        "romaji": "imanimo",
+        "vi": "chực, sắp sửa",
+        "audio": null,
+        "kanji": "今にも"
+      },
+      {
+        "id": "v4324",
+        "jp": "ぴったり",
+        "romaji": "pittari",
+        "vi": "vừa khít, rất hợp",
+        "audio": null
+      },
+      {
+        "id": "v4325",
+        "jp": "そのうえ",
+        "romaji": "sonoue",
+        "vi": "hơn nữa",
+        "audio": null,
+        "kanji": "その上"
+      },
+      {
+        "id": "v4326",
+        "jp": "〜と いいます",
+        "romaji": "to iimasu",
+        "vi": "tên là …",
+        "audio": null,
+        "kanji": "〜と言います"
+      },
+      {
+        "id": "v4327",
+        "jp": "わあ",
+        "romaji": "waa",
+        "vi": "Ồ! (ngạc nhiên)",
+        "audio": null
+      }
+    ],
+    "grammar": [
+      {
+        "id": "g4301",
+        "pattern": "Vます + そうです",
+        "vi": "Trông như sắp xảy ra",
+        "explain": "Nhìn tình hình trước mắt rồi đoán việc sắp xảy ra hoặc sắp thay đổi. Hay đi với いまにも, もうすぐ.",
+        "viMistake": "Bỏ ます rồi thêm そうです: ふります → ふりそうです. ふるそうです là nghe nói, học ở bài 47.",
+        "examples": [
+          {
+            "jp": "{今|いま}にも {雨|あめ}が {降|ふ}りそうです。",
+            "vi": "Trời như sắp mưa đến nơi.",
+            "audio": null
+          },
+          {
+            "jp": "この ひもは もうすぐ {切|き}れそうです。",
+            "vi": "Sợi dây này trông sắp đứt rồi.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4302",
+        "pattern": "いA（〜い）／なA + そうです",
+        "vi": "Trông có vẻ như thế nào",
+        "explain": "Nhận xét theo vẻ bề ngoài, chưa thử hay chưa biết chắc. いA bỏ い, なA bỏ な rồi thêm そうです. Trước danh từ dùng 〜そうな.",
+        "viMistake": "いい → よさそう, ない → なさそう. Không dùng với điều nhìn là biết ngay như màu sắc: không nói あかそうです.",
+        "examples": [
+          {
+            "jp": "{新|あたら}しい {仕事|しごと}は {楽|らく}そうですね。",
+            "vi": "Công việc mới có vẻ nhàn nhỉ.",
+            "audio": null
+          },
+          {
+            "jp": "{丈夫|じょうぶ}そうな {鞄|かばん}ですね。",
+            "vi": "Cái cặp trông chắc chắn nhỉ.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4303",
+        "pattern": "Vて + きます",
+        "vi": "Đi làm việc gì rồi quay lại",
+        "explain": "Rời chỗ hiện tại một lúc để làm việc gì, rồi quay về. Nơi làm việc đó đi với で.",
+        "viMistake": "いって きます khi ra khỏi nhà cũng là mẫu này: đi rồi sẽ về.",
+        "examples": [
+          {
+            "jp": "ちょっと {郵便局|ゆうびんきょく}へ {行|い}って きます。",
+            "vi": "Tôi ra bưu điện một chút rồi về.",
+            "audio": null
+          },
+          {
+            "jp": "コンビニで パンを {買|か}って きます。",
+            "vi": "Tôi ra cửa hàng tiện lợi mua bánh mì rồi về.",
+            "audio": null
+          }
+        ]
+      },
+      {
+        "id": "g4304",
+        "pattern": "Vて + くれませんか",
+        "vi": "Nhờ bạn bè, người ngang hàng",
+        "explain": "Nhờ một cách nhẹ nhàng nhưng thân mật hơn Vて くださいませんか. Dùng với bạn bè, đồng nghiệp ngang hàng.",
+        "viMistake": "Với người trên, người lạ dùng Vて くださいませんか (bài 41).",
+        "examples": [
+          {
+            "jp": "ちょっと {手伝|てつだ}って くれませんか。",
+            "vi": "Giúp mình một chút được không?",
+            "audio": null
+          },
+          {
+            "jp": "ここで {待|ま}って いて くれませんか。",
+            "vi": "Bạn đợi mình ở đây được không?",
+            "audio": null
+          }
+        ]
+      }
+    ],
+    "slides": [
+      {
+        "id": "s4301",
+        "type": "title",
+        "jp": "第43課 · 〜そうです・〜てきます",
+        "vi": "Bài 43 · Trông có vẻ và đi rồi về"
+      },
+      {
+        "id": "s4302",
+        "type": "note",
+        "title": "Mục tiêu buổi học",
+        "body": "Nói điều mình đoán từ vẻ bề ngoài: sắp xảy ra, trông có vẻ ngon, có vẻ mệt. Nói đi đâu đó một lát rồi quay lại. Nhờ bạn bè một cách thân mật."
+      },
+      {
+        "id": "s4303",
+        "type": "vocab",
+        "refs": ["v4301", "v4302", "v4303", "v4304", "v4305", "v4306", "v4307", "v4308"]
+      },
+      {
+        "id": "s4304",
+        "type": "vocab",
+        "refs": ["v4309", "v4310", "v4311", "v4312", "v4313", "v4314", "v4315", "v4316"]
+      },
+      {
+        "id": "s4305",
+        "type": "vocab",
+        "refs": ["v4317", "v4318", "v4319", "v4320", "v4321", "v4322", "v4323", "v4324"]
+      },
+      {
+        "id": "s4306",
+        "type": "vocab",
+        "refs": ["v4325", "v4326", "v4327"]
+      },
+      {
+        "id": "s4307",
+        "type": "grammar",
+        "ref": "g4301"
+      },
+      {
+        "id": "s4308",
+        "type": "example",
+        "ref": "g4301",
+        "reveal": true
+      },
+      {
+        "id": "s4309",
+        "type": "quiz",
+        "ref": "q4301"
+      },
+      {
+        "id": "s4310",
+        "type": "grammar",
+        "ref": "g4302"
+      },
+      {
+        "id": "s4311",
+        "type": "example",
+        "ref": "g4302",
+        "reveal": true
+      },
+      {
+        "id": "s4312",
+        "type": "quiz",
+        "ref": "q4303"
+      },
+      {
+        "id": "s4313",
+        "type": "table",
+        "title": "Chia thể そうです",
+        "columns": ["Gốc", "Trông có vẻ"],
+        "rows": [
+          ["{降|ふ}ります", "{降|ふ}りそうです"],
+          ["{落|お}ちます", "{落|お}ちそうです"],
+          ["おいしい", "おいしそうです"],
+          ["いい", "よさそうです"],
+          ["ない", "なさそうです"],
+          ["{丈夫|じょうぶ}な", "{丈夫|じょうぶ}そうです"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Nhấn hai dạng đặc biệt よさそう và なさそう. Trước danh từ: おいしそうな ケーキ."
+      },
+      {
+        "id": "s4314",
+        "type": "quiz",
+        "ref": "q4305"
+      },
+      {
+        "id": "s4315",
+        "type": "table",
+        "title": "そうです bài 43 và bài 47",
+        "columns": ["Căn cứ", "Ví dụ", "Bài"],
+        "rows": [
+          ["Mắt thấy, tự đoán", "{降|ふ}りそうです・おいしそうです", "Bài 43"],
+          ["Nghe người khác nói lại", "{降|ふ}るそうです・おいしいそうです", "Bài 47"],
+          ["なA: thấy／nghe", "{静|しず}かそうです／{静|しず}かだそうです", "43／47"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Chỉ giới thiệu để tránh nhầm, bài 47 mới học kỹ. Cách nhận ra: bài 43 bỏ ます hoặc bỏ い, bài 47 giữ nguyên thể thường."
+      },
+      {
+        "id": "s4316",
+        "type": "quiz",
+        "ref": "q4307"
+      },
+      {
+        "id": "s4317",
+        "type": "grammar",
+        "ref": "g4303"
+      },
+      {
+        "id": "s4318",
+        "type": "example",
+        "ref": "g4303",
+        "reveal": true
+      },
+      {
+        "id": "s4319",
+        "type": "quiz",
+        "ref": "q4308"
+      },
+      {
+        "id": "s4320",
+        "type": "grammar",
+        "ref": "g4304"
+      },
+      {
+        "id": "s4321",
+        "type": "example",
+        "ref": "g4304",
+        "reveal": true
+      },
+      {
+        "id": "s4322",
+        "type": "quiz",
+        "ref": "q4310"
+      },
+      {
+        "id": "s4323",
+        "type": "table",
+        "title": "Kanji trong bài",
+        "columns": ["Chữ", "Cách đọc trong từ", "Nghĩa"],
+        "rows": [
+          ["増", "{増|ふ}えます", "tăng"],
+          ["減", "{減|へ}ります", "giảm"],
+          ["値", "{値段|ねだん}", "giá"],
+          ["優", "{優|やさ}しい", "hiền"],
+          ["楽", "{楽|らく}な", "nhàn, vui"],
+          ["幸", "{幸|しあわ}せ", "hạnh phúc"],
+          ["収", "{収入|しゅうにゅう}", "thu"],
+          ["変", "{変|へん}な", "lạ"]
+        ],
+        "revealLastColumn": false
+      },
+      {
+        "id": "s4324",
+        "type": "table",
+        "title": "Từ tham khảo · Tính cách",
+        "columns": ["Tiếng Nhật", "Nghĩa"],
+        "rows": [
+          ["{明|あか}るい", "vui vẻ, cởi mở"],
+          ["おとなしい", "trầm, hiền"],
+          ["{真面目|まじめ}な", "nghiêm túc, chăm chỉ"],
+          ["わがままな", "ích kỷ, đòi hỏi"],
+          ["{素直|すなお}な", "ngoan, thẳng thắn"],
+          ["{短気|たんき}な", "nóng tính"]
+        ],
+        "revealLastColumn": false,
+        "teacherNotes": "Cho học viên tả người trong ảnh bằng そうです: この 人は 真面目そうです."
+      },
+      {
+        "id": "s4325",
+        "type": "dialogue",
+        "title": "Hội thoại · Chọn quà cho mẹ",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "An",
+            "jp": "わあ、この バッグ、{丈夫|じょうぶ}そうですね。",
+            "vi": "Ồ, cái túi này trông chắc chắn nhỉ."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "でも、ちょっと {重|おも}そうです。こっちは どうですか。",
+            "vi": "Nhưng có vẻ hơi nặng. Cái này thì sao?"
+          },
+          {
+            "speaker": "An",
+            "jp": "{軽|かる}くて よさそうですね。{値段|ねだん}も ちょうど いいです。",
+            "vi": "Nhẹ, trông được đấy. Giá cũng vừa phải."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "じゃ、これを {買|か}います。{母|はは}が {喜|よろこ}びそうです。",
+            "vi": "Vậy mình mua cái này. Chắc mẹ sẽ vui lắm."
+          },
+          {
+            "speaker": "Mai",
+            "jp": "あ、ちょっと お{金|かね}を {下|お}ろして きます。ここで {待|ま}って いて くれませんか。",
+            "vi": "À, mình đi rút tiền một chút. Bạn đợi ở đây được không?"
+          },
+          {
+            "speaker": "An",
+            "jp": "ええ、いいですよ。",
+            "vi": "Ừ, được thôi."
+          }
+        ],
+        "teacherNotes": "Đọc trước khi chiếu. Hỏi: Mai chọn túi nào, vì sao? Mai đi đâu và nhờ An làm gì?"
+      },
+      {
+        "id": "s4326",
+        "type": "quiz",
+        "ref": "q4318"
+      },
+      {
+        "id": "s4327",
+        "type": "dialogue",
+        "title": "Nghe · Nhắc đồng nghiệp",
+        "reveal": true,
+        "lines": [
+          {
+            "speaker": "Lan",
+            "jp": "あ、{田中|たなか}さん、シャツの ボタンが {取|と}れそうですよ。",
+            "vi": "À anh Tanaka, cúc áo sơ mi sắp tuột rồi kìa."
+          },
+          {
+            "speaker": "Tanaka",
+            "jp": "え、{本当|ほんとう}ですね。",
+            "vi": "Ơ, đúng thật."
+          },
+          {
+            "speaker": "Lan",
+            "jp": "それから、{鞄|かばん}から {書類|しょるい}が {落|お}ちそうです。",
+            "vi": "Với lại, giấy tờ sắp rơi ra khỏi cặp kìa."
+          },
+          {
+            "speaker": "Tanaka",
+            "jp": "ありがとう ございます。ちょっと トイレで {直|なお}して きます。",
+            "vi": "Cảm ơn chị. Tôi vào nhà vệ sinh sửa lại một chút."
+          }
+        ],
+        "teacherNotes": "Giáo viên đọc trước, chưa chiếu chữ. Hỏi Lan nhắc Tanaka những gì và Tanaka sẽ làm gì."
+      },
+      {
+        "id": "s4328",
+        "type": "quiz",
+        "ref": "q4319"
+      },
+      {
+        "id": "s4329",
+        "type": "quiz",
+        "ref": "q4320"
+      },
+      {
+        "id": "s4330",
+        "type": "table",
+        "title": "Luyện sắp xếp",
+        "columns": ["Các mảnh", "Đáp án mẫu"],
+        "rows": [
+          ["そうです／{今|いま}にも／{降|ふ}り", "{今|いま}にも {降|ふ}りそうです。"],
+          ["きます／{切手|きって}を／{買|か}って", "{切手|きって}を {買|か}って きます。"],
+          ["くれませんか／{待|ま}って／ここで", "ここで {待|ま}って くれませんか。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4331",
+        "type": "table",
+        "title": "Luyện dịch Việt–Nhật",
+        "columns": ["Tiếng Việt", "Đáp án mẫu"],
+        "rows": [
+          ["Món này trông ngon quá.", "この {料理|りょうり}は おいしそうです。"],
+          ["Xe sắp hết xăng rồi.", "ガソリンが なくなりそうです。"],
+          ["Anh ấy trông không bận.", "{彼|かれ}は {忙|いそが}しくなさそうです。"],
+          ["Tôi đi mua nước rồi về.", "{水|みず}を {買|か}って きます。"]
+        ],
+        "revealLastColumn": true
+      },
+      {
+        "id": "s4332",
+        "type": "table",
+        "title": "Nhập vai · Nhắc nhở và nhờ việc",
+        "columns": ["Vai", "Nhiệm vụ", "Lời thoại mẫu"],
+        "rows": [
+          ["A", "Nhắc cúc áo của bạn sắp tuột", "ボタンが {取|と}れそうですよ。"],
+          ["B", "Cảm ơn, nói đi sửa rồi về", "ありがとう。ちょっと {直|なお}して きます。"],
+          ["B", "Nhờ bạn giữ đồ", "この {傘|かさ}、{持|も}って いて くれませんか。"],
+          ["A", "Đồng ý", "いいですよ。"]
+        ],
+        "revealLastColumn": true,
+        "teacherNotes": "Đổi đồ vật: ボタンが 取れそう, ひもが 切れそう, コーヒーが こぼれそう."
+      },
+      {
+        "id": "s4333",
+        "type": "note",
+        "title": "Tổng kết",
+        "body": "Vます + そうです: trông như sắp xảy ra.\nいA／なA + そうです: trông có vẻ. いい → よさそう, ない → なさそう.\nVて きます: đi làm việc gì rồi quay lại.\nVて くれませんか: nhờ bạn bè.",
+        "teacherNotes": "Dễ nhầm: ふりそう với ふるそう (bài 47), dùng そうです với màu sắc. Liên hệ くださいませんか ở bài 41. Sang bài 44, học すぎます và 〜やすい／〜にくい."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q4301",
+        "type": "choice",
+        "prompt": "Nhìn trời nhiều mây đen: いまにも あめが（　）です。",
+        "options": ["ふるそう", "ふりそう", "ふって そう", "ふった そう"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Đoán từ điều thấy trước mắt: Vます + そうです. ふるそうです là nghe nói (bài 47).",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4302",
+        "type": "choice",
+        "prompt": "Nhìn sợi dây sắp đứt: ひもが（　）そうです。きを つけて ください。",
+        "options": ["きれる", "きれて", "きれ", "きれた"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Bỏ ます: きれます → きれそうです.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4303",
+        "type": "choice",
+        "prompt": "Nhìn chiếc bánh trên bàn, nói: この ケーキは（　）ですね。",
+        "options": ["おいしそう", "おいしいそう", "おいしくそう", "おいしかったそう"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Nhận xét theo vẻ ngoài: いA bỏ い + そうです.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4304",
+        "type": "choice",
+        "prompt": "Nhìn khách sạn, thấy có vẻ tốt: あの ホテルは（　）そうです。",
+        "options": ["いい", "いさ", "よ", "よさ"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "いい → よさそうです.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4305",
+        "type": "choice",
+        "prompt": "Nhìn mặt bạn, thấy bạn có vẻ không khỏe: げんきが（　）そうですね。",
+        "options": ["ない", "なさ", "なく", "なかった"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "ない → なさそうです.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4306",
+        "type": "choice",
+        "prompt": "Chọn cách nói đúng: một chiếc áo trông bền.",
+        "options": [
+          "じょうぶなそうな シャツ",
+          "じょうぶそうの シャツ",
+          "じょうぶそうな シャツ",
+          "じょうぶだそうな シャツ"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "なA bỏ な + そう, trước danh từ dùng そうな.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4307",
+        "type": "choice",
+        "prompt": "あめが ふりそうです nghĩa là gì?",
+        "options": ["Nghe nói sẽ mưa", "Đã mưa rồi", "Muốn trời mưa", "Trông như sắp mưa"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Vます + そうです: đoán từ điều đang thấy.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4308",
+        "type": "choice",
+        "prompt": "Nói trước khi ra ngoài một lát: ちょっと ゆうびんきょくへ（　）。",
+        "options": ["いって きます", "いって います", "いって あります", "いって みます"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "Đi rồi quay về: Vて きます.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4309",
+        "type": "choice",
+        "prompt": "コンビニで パンを（　）きます。",
+        "options": ["かい", "かって", "かう", "かった"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "Thể て + きます.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4310",
+        "type": "choice",
+        "prompt": "Nhờ bạn thân: ちょっと てつだって（　）。",
+        "options": ["くださいました", "いただきます", "くれませんか", "やりませんか"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "Nhờ bạn bè: Vて くれませんか.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4311",
+        "type": "choice",
+        "prompt": "Câu nào lịch sự nhất khi nhờ thầy giải thích lại?",
+        "options": [
+          "もう いちど せつめいして くれない？",
+          "もう いちど せつめいして くれませんか。",
+          "もう いちど せつめいして。",
+          "もう いちど せつめいして くださいませんか。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "explain": "Với người trên: Vて くださいませんか lịch sự hơn くれませんか.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4312",
+        "type": "choice",
+        "prompt": "Giá đang giảm: ねだんが（　）。",
+        "options": ["あがって います", "さがって います", "ふえて います", "きれて います"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "値段が下がります là giá giảm.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4313",
+        "type": "choice",
+        "prompt": "Chọn nghĩa của 幸せな.",
+        "options": ["kỳ lạ", "thích hợp", "hạnh phúc", "nhàn"],
+        "answer": [2],
+        "multiple": false,
+        "explain": "幸せな đọc しあわせな.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4314",
+        "type": "choice",
+        "prompt": "Từ trái nghĩa với うまい (ngon) là gì?",
+        "options": ["まずい", "つまらない", "やさしい", "へんな"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "まずい là dở, không ngon.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4315",
+        "type": "choice",
+        "prompt": "Cúc áo bị tuột ra: ボタンが（　）。",
+        "options": ["きれました", "へりました", "さがりました", "とれました"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "ボタンが取れます là cúc áo tuột.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4316",
+        "type": "choice",
+        "prompt": "Từ nào nghĩa là thu nhập?",
+        "options": ["ねんれい", "しゅうにゅう", "かいいん", "センス"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "収入 là thu nhập.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4317",
+        "type": "choice",
+        "prompt": "Đôi giày vừa khít với tôi: この くつは わたしに（　）です。",
+        "options": ["ぴったり", "いまにも", "そのうえ", "わあ"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "ぴったり: vừa khít.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4318",
+        "type": "choice",
+        "prompt": "Mai mua chiếc túi nào?",
+        "options": [
+          "Túi trông chắc nhưng nặng",
+          "Túi màu sặc sỡ",
+          "Túi nhẹ, giá vừa phải",
+          "Không mua gì"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "explain": "軽くてよさそう, 値段もちょうどいい → これを買います.",
+        "points": 1,
+        "tags": ["minna-43"],
+        "passage": "アン：{軽|かる}くて よさそうですね。{値段|ねだん}も ちょうど いいです。\nマイ：じゃ、これを {買|か}います。"
+      },
+      {
+        "id": "q4319",
+        "type": "choice",
+        "prompt": "Lan báo cho Tanaka điều gì?",
+        "options": ["Cà vạt bị lệch", "Giày bị bẩn", "Quên ví", "Cúc áo sắp tuột, giấy tờ sắp rơi"],
+        "answer": [3],
+        "multiple": false,
+        "explain": "ボタンが取れそう, 書類が落ちそう.",
+        "points": 1,
+        "tags": ["minna-43"],
+        "passage": "ラン：シャツの ボタンが {取|と}れそうですよ。それから、{鞄|かばん}から {書類|しょるい}が {落|お}ちそうです。"
+      },
+      {
+        "id": "q4320",
+        "type": "choice",
+        "prompt": "Công việc mới của em gái thế nào?",
+        "options": ["Thu nhập tốt và có vẻ nhàn", "Thu nhập thấp", "Xa nhà", "Rất chán"],
+        "answer": [0],
+        "multiple": false,
+        "explain": "収入がいい, その上, 近くて楽そう.",
+        "points": 1,
+        "tags": ["minna-43"],
+        "passage": "{妹|いもうと}の {新|あたら}しい {仕事|しごと}は {収入|しゅうにゅう}が いいです。その{上|うえ}、{会社|かいしゃ}が {家|いえ}から {近|ちか}くて、{楽|らく}そうです。でも、きのう {会|あ}った とき、{妹|いもうと}は {疲|つか}れて いて、{元気|げんき}が なさそうでした。{今度|こんど}の {日曜日|にちようび}、おいしい {料理|りょうり}を {作|つく}って {持|も}って {行|い}きます。"
+      },
+      {
+        "id": "q4321",
+        "type": "choice",
+        "prompt": "Hôm qua em gái trông thế nào?",
+        "options": ["Có vẻ rất vui", "Có vẻ mệt, không khỏe", "Có vẻ bận", "Có vẻ hạnh phúc"],
+        "answer": [1],
+        "multiple": false,
+        "explain": "疲れていて、元気がなさそうでした.",
+        "points": 1,
+        "tags": ["minna-43"],
+        "passage": "{妹|いもうと}の {新|あたら}しい {仕事|しごと}は {収入|しゅうにゅう}が いいです。その{上|うえ}、{会社|かいしゃ}が {家|いえ}から {近|ちか}くて、{楽|らく}そうです。でも、きのう {会|あ}った とき、{妹|いもうと}は {疲|つか}れて いて、{元気|げんき}が なさそうでした。{今度|こんど}の {日曜日|にちようび}、おいしい {料理|りょうり}を {作|つく}って {持|も}って {行|い}きます。"
+      },
+      {
+        "id": "q4322",
+        "type": "fill",
+        "prompt": "Điền: にもつが おち（　）です。きを つけて。",
+        "answer": ["そう"],
+        "inputMode": "hiragana",
+        "explain": "Vます + そうです: sắp rơi.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4323",
+        "type": "fill",
+        "prompt": "Nhìn ảnh, thấy khách sạn có vẻ tốt: この ホテルは（　）そうです。",
+        "answer": ["よさ"],
+        "inputMode": "hiragana",
+        "explain": "いい → よさそうです.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4324",
+        "type": "fill",
+        "prompt": "Điền (đi rồi quay lại): ちょっと てを あらって（　）。",
+        "answer": ["きます"],
+        "inputMode": "hiragana",
+        "explain": "Vて きます: đi làm việc gì rồi quay lại.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4325",
+        "type": "fill",
+        "prompt": "Điền (nhờ bạn): この にもつを もって（　）ませんか。",
+        "answer": ["くれ", "ください", "もらえ", "いただけ"],
+        "inputMode": "hiragana",
+        "explain": "Nhờ bạn: もって くれませんか. もらえませんか cũng tự nhiên; くださいませんか, いただけませんか lịch sự hơn.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4326",
+        "type": "order",
+        "prompt": "Sắp xếp thành câu: Tôi đi mua bánh mì một chút rồi về.",
+        "tokens": [
+          {
+            "id": "q4326-1",
+            "text": "ちょっと"
+          },
+          {
+            "id": "q4326-2",
+            "text": "パンを かって"
+          },
+          {
+            "id": "q4326-3",
+            "text": "きます。"
+          }
+        ],
+        "answer": ["q4326-1", "q4326-2", "q4326-3"],
+        "explain": "Vて きます đứng cuối câu.",
+        "points": 1,
+        "tags": ["minna-43"]
+      },
+      {
+        "id": "q4327",
+        "type": "match",
+        "prompt": "Nối cụm từ với nghĩa.",
+        "left": [
+          "ねだんが あがります",
+          "ねだんが さがります",
+          "ゆしゅつが ふえます",
+          "ゆしゅつが へります"
+        ],
+        "right": ["xuất khẩu tăng", "giá tăng", "giá giảm", "xuất khẩu giảm"],
+        "answer": [
+          [0, 1],
+          [1, 2],
+          [2, 0],
+          [3, 3]
+        ],
+        "explain": "上がります／下がります cho giá, 増えます／減ります cho số lượng.",
+        "points": 1,
+        "tags": ["minna-43"]
+      }
+    ]
+  }
+}
