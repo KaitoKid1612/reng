@@ -407,9 +407,58 @@
   outline-offset: 2px;
 }
 @media (max-width: 600px) {
+  /* On a phone the first question has to fit above the bar: at 390×844 its answers sat under
+     the bar, and at 360×640 the whole question was below the screen. The facts become a compact
+     list, and the bar keeps the count and save status on the left of Nộp bài instead of stacking
+     three rows. Timers and the submit confirmation still take a full row. */
+  .assignment-facts {
+    gap: 4px 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .assignment-facts li {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+  .assignment-facts svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+  }
   .attempt-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-auto-flow: row dense;
+    gap: 4px 12px;
+    padding: 10px 12px;
     bottom: env(safe-area-inset-bottom, 0px);
-    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
+  }
+  .attempt-toolbar > * {
+    grid-column: 1 / -1;
+  }
+  .attempt-toolbar > .attempt-progress,
+  .attempt-toolbar > .save-status {
+    grid-column: 1;
+    max-width: none;
+  }
+  .attempt-toolbar > .save-status {
+    font-size: 13px;
+  }
+  .attempt-toolbar > .button-row {
+    grid-column: 2;
+    grid-row: span 2;
+    align-self: center;
+  }
+  /* The closed question list shares its row with the sound switch; open, it takes the row. */
+  .attempt-head .question-map {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .attempt-head .question-map[open] {
+    flex-basis: 100%;
   }
   .question-map-grid {
     grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
