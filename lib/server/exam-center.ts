@@ -47,6 +47,9 @@ export interface LibraryEntry {
   source: ExamSource;
   // Exams the class already opened from this lesson.
   opened: number;
+  // The source lesson is open to the class: its learners can read its questions and check the
+  // answers in the lesson, so an exam from it is not closed-book.
+  isSourceOpen: boolean;
 }
 
 export interface ClassExams {
@@ -69,7 +72,7 @@ function sourceKindOf(source: ExamSource | null): ExamRow["source"] {
 }
 
 /** The pinned lessons of a class that make whole mock exams, with what earlier exams used. */
-async function loadLibrary(classId: string, exams: readonly Assignment[]) {
+async function loadLibrary(classId: string, exams: readonly Assignment[], now: Date) {
   const [lessons, uses] = await Promise.all([
     listClassLessons(classId),
     listRecentExamUses(classId),
@@ -77,6 +80,11 @@ async function loadLibrary(classId: string, exams: readonly Assignment[]) {
   const used = new Set(uses.map((use) => use.questionId));
   // Banks and official tests have no vocabulary; the Minna lessons a class reads are skipped.
   const candidates = lessons.filter((lesson) => !lesson.hasVocab);
+  const openLessons = new Set(
+    candidates
+      .filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime())
+      .map((lesson) => lesson.lessonId),
+  );
   const sources = await Promise.all(
     candidates.map(async (lesson) => {
       const questions = await listAssignablePracticeQuestions(classId, lesson.lessonId);
@@ -108,6 +116,7 @@ async function loadLibrary(classId: string, exams: readonly Assignment[]) {
   const fixedTitles = new Set(fixedRengExamSets().map((set) => set.title));
   return sources.flat().map((source): LibraryEntry => ({
     source,
+    isSourceOpen: openLessons.has(source.lessonId),
     opened: exams.filter(
       (exam) =>
         exam.lessonId === source.lessonId &&
@@ -162,6 +171,7 @@ export async function loadExamCenter(userId: string, isTeacher: boolean, now: Da
             await loadLibrary(
               item.id,
               assignments.filter((exam) => exam.classId === item.id),
+              now,
             ),
           ] as const,
       ),
@@ -253,7 +263,7 @@ export async function openExamFromLibrary(
 ) {
   const classRow = await getTeacherClass(teacherId, classId);
   const exams = (await listClassAssignments([classId])).filter((item) => item.exam !== null);
-  const library = await loadLibrary(classId, exams);
+  const library = await loadLibrary(classId, exams, now);
   const entry = library.find(
     (item) =>
       item.source.lessonId === lessonId &&

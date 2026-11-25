@@ -80,6 +80,7 @@ function ExamStatusCell({ exam, classId }: { exam: ExamRow; classId: string }) {
 interface LibraryRowProps {
   entry: LibraryEntry;
   classId: string;
+  isSelfStudy: boolean;
 }
 
 function describeLibraryEntry({ source, opened }: LibraryEntry) {
@@ -96,7 +97,7 @@ function describeLibraryEntry({ source, opened }: LibraryEntry) {
   return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
 }
 
-function LibraryRow({ entry, classId }: LibraryRowProps) {
+function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
   const { source, opened } = entry;
   const isOpenOnce = source.kind !== "bank";
   return (
@@ -104,6 +105,13 @@ function LibraryRow({ entry, classId }: LibraryRowProps) {
       <div>
         <p className="exam-title">{examTitleFor(source, opened)}</p>
         <p className="small muted">{describeLibraryEntry(entry)}</p>
+        {entry.isSourceOpen && !isSelfStudy && (
+          <p className="small">
+            Bài nguồn đang mở với học viên: trong lúc thi họ vẫn mở được bài để xem câu và đáp án.
+            Muốn đề kín, dùng một ngân hàng riêng cho đề và đặt ô Mở cho học viên từ sau kỳ thi
+            (trang lớp, mục Nội dung lớp).
+          </p>
+        )}
       </div>
       <div className="exam-library-actions">
         {source.kind === "fixed" && <Link href={`/exams/print/${source.setId}`}>Bản in</Link>}
@@ -170,8 +178,10 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
         <div>
           <h1>Luyện đề JLPT</h1>
           <p>
-            Đề chính thức các năm trên jlpt.jp và đề Reng ghép đúng cấu trúc đề thật (N4 85 câu, N5
-            67 câu). Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính trên 180.
+            Đề chính thức các năm trên jlpt.jp và đề Reng ghép theo cấu trúc đề thật: ngân hàng đủ
+            câu cho từng もんだい cho đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác
+            ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính
+            trên 180.
           </p>
         </div>
       </div>
@@ -261,7 +271,12 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
               <h3>Thư viện đề của lớp</h3>
               <ul className="exam-library">
                 {item.library.map((entry) => (
-                  <LibraryRow key={libraryKey(entry)} entry={entry} classId={item.classId} />
+                  <LibraryRow
+                    key={libraryKey(entry)}
+                    entry={entry}
+                    classId={item.classId}
+                    isSelfStudy={item.isSelfStudy}
+                  />
                 ))}
               </ul>
             </>
