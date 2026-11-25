@@ -534,9 +534,10 @@ const JLPT_EXAM_ERRORS: Record<string, string> = {
   invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",
   official_level:
     "Đề chính thức chỉ giao đúng cấp của sách. Chọn lại cấp N5 hoặc N4 cho khớp với đề.",
-  // Production before migration 20261111042428 (jlpt_official_exams): an exam holds at most 70 questions.
+  // The exam's questions are no longer all in the version the class uses: the bank was updated
+  // between loading the page and publishing.
   invalid_items:
-    "Đề có nhiều câu hơn giới hạn của database (70 câu). Cần cập nhật database của Reng trước khi giao đề chính thức.",
+    "Câu của đề không còn khớp với bài nguồn của lớp (bài vừa được cập nhật). Tải lại trang rồi giao đề lại.",
   // Production before migration 20261109032029: the function does not exist yet.
   database_error: "Chưa tạo được đề thi thử. Nếu lỗi lặp lại, cần cập nhật database của Reng.",
 };

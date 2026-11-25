@@ -38,6 +38,10 @@ export async function POST(request: Request, { params }: HostRouteContext) {
   if (auth.response) {
     return auth.response;
   }
+  // A paused teacher (role back to student) keeps their classes but no longer runs them.
+  if (auth.account.role !== "teacher") {
+    return jsonResponse({ code: "not_found" }, 404);
+  }
   try {
     const { id } = await params;
     const body = bodySchema.parse(await readJsonBody(request));
