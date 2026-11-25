@@ -31,6 +31,7 @@ export default async function AdminTeachersPage() {
           </p>
         </div>
       </div>
+      <h2 className="visually-hidden">Danh sách giáo viên</h2>
       {teachers.length ? (
         <ul className="item-list admin-teachers">
           {teachers.map((teacher) => {

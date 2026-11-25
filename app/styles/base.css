@@ -27,6 +27,12 @@ a {
   color: var(--primary);
   text-underline-offset: 4px;
 }
+/* Tailwind's preflight removes link underlines. A link inside running text keeps one, so it is
+   told apart by more than colour (WCAG 1.4.1). Navigation, cards and buttons carry a class or sit
+   outside text blocks, so they keep their own look. */
+:where(p, dd, td, figcaption, blockquote) a:not([class]) {
+  text-decoration-line: underline;
+}
 button,
 input,
 select {

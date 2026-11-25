@@ -61,6 +61,9 @@ export function AssignmentForm({
   const [isReviewing, setIsReviewing] = useState(false);
   const [showProblems, setShowProblems] = useState(false);
   const [error, setError] = useState("");
+  // The field the error is about: it is marked invalid and gets focus, since the message sits by
+  // the buttons at the end of a long form.
+  const [invalidField, setInvalidField] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const nextKeyRef = useRef(1);
   // Lessons can arrive after the first render (added to the class on this page), so the
@@ -116,27 +119,27 @@ export function AssignmentForm({
   }
 
   // The server also rejects deadlines in the past, using its own clock.
-  function findProblem() {
+  function findProblem(): { message: string; field?: string } | null {
     if (!lesson) {
-      return "Thêm bài học vào lớp trước khi giao bài.";
+      return { message: "Thêm bài học vào lớp trước khi giao bài." };
     }
     if (!settings.title) {
-      return "Nhập tiêu đề bài giao.";
+      return { message: "Nhập tiêu đề bài giao.", field: "assignment-title" };
     }
     if (dueInput && !settings.dueAt) {
-      return "Hạn nộp chưa đúng định dạng.";
+      return { message: "Hạn nộp chưa đúng định dạng.", field: "assignment-due" };
     }
     if (settings.feedbackPolicy === "after_due" && !settings.dueAt) {
-      return "Công bố kết quả sau hạn thì cần đặt hạn nộp.";
+      return { message: "Công bố kết quả sau hạn thì cần đặt hạn nộp.", field: "assignment-due" };
     }
     if (!assignmentSettingsSchema.safeParse(settings).success) {
-      return "Kiểm tra lại điểm đạt (0–100) và số lượt làm.";
+      return { message: "Kiểm tra lại điểm đạt (0–100) và số lượt làm.", field: "assignment-pass" };
     }
     if (questionCount === 0 || questionCount > MAX_ASSIGNMENT_QUESTIONS) {
-      return `Chọn từ 1 đến ${MAX_ASSIGNMENT_QUESTIONS} câu hỏi.`;
+      return { message: `Chọn từ 1 đến ${MAX_ASSIGNMENT_QUESTIONS} câu hỏi.` };
     }
     if (mode === "test" && testQuestions.some((draft) => describeQuestionProblem(draft))) {
-      return "Một số câu kiểm tra chưa hợp lệ. Xem ghi chú dưới từng câu.";
+      return { message: "Một số câu kiểm tra chưa hợp lệ. Xem ghi chú dưới từng câu." };
     }
     return null;
   }
@@ -144,12 +147,23 @@ export function AssignmentForm({
   function handleReview() {
     const problem = findProblem();
     setShowProblems(true);
-    setError(problem ?? "");
+    setError(problem?.message ?? "");
+    setInvalidField(problem?.field ?? null);
     setIsReviewing(problem === null);
+    if (problem?.field) {
+      document.getElementById(problem.field)?.focus();
+    }
+  }
+
+  function fieldState(id: string) {
+    return invalidField === id
+      ? { "aria-invalid": true, "aria-describedby": "assignment-error" }
+      : {};
   }
 
   function handlePublish() {
     setError("");
+    setInvalidField(null);
     startTransition(async () => {
       let result;
       try {
@@ -206,6 +220,7 @@ export function AssignmentForm({
             <label htmlFor="assignment-title">Tiêu đề</label>
             <input
               id="assignment-title"
+              {...fieldState("assignment-title")}
               maxLength={160}
               value={title}
               onChange={(event) => setTitle(event.target.value)}
@@ -241,6 +256,7 @@ export function AssignmentForm({
             <label htmlFor="assignment-due">Hạn nộp (giờ Việt Nam)</label>
             <input
               id="assignment-due"
+              {...fieldState("assignment-due")}
               type="datetime-local"
               value={dueInput}
               onChange={(event) => setDueInput(event.target.value)}
@@ -250,6 +266,7 @@ export function AssignmentForm({
             <label htmlFor="assignment-pass">Điểm đạt (%)</label>
             <input
               id="assignment-pass"
+              {...fieldState("assignment-pass")}
               type="number"
               min={0}
               max={100}
@@ -399,7 +416,7 @@ export function AssignmentForm({
         </section>
       )}
       {error && (
-        <p role="alert" className="error-text">
+        <p id="assignment-error" role="alert" className="error-text">
           {error}
         </p>
       )}

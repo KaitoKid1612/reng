@@ -72,7 +72,8 @@ export function AcceptAnswerForm({
         type="submit"
         variant="outline"
         disabled={isPending}
-        aria-label={`Chấp nhận câu trả lời của câu ${questionNumber}`}
+        // The name starts with the visible text, so voice control can say what is on the button.
+        aria-label={isPending ? undefined : `Chấp nhận câu trả lời này, câu ${questionNumber}`}
       >
         {isPending ? "Đang chấm lại…" : "Chấp nhận câu trả lời này"}
       </Button>

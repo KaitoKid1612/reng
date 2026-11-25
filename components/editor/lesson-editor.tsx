@@ -228,14 +228,22 @@ export function LessonEditor({
     }
   }
 
+  // Once the draft changes again, "saved at …" is out of date: the line says so instead of adding
+  // to it, so it keeps its length and the buttons beside it stay where they are. A warning or an
+  // error stays until it is dealt with.
+  const isOutdatedNote = status.tone === "status-neutral" || status.tone === "status-correct";
+  const shownStatus: EditorStatus =
+    isDirty && isOutdatedNote
+      ? { tone: "status-neutral", text: "Có thay đổi chưa lưu." }
+      : { tone: status.tone, text: isDirty ? `Có thay đổi chưa lưu. ${status.text}` : status.text };
+
   return (
     <div className="editor-layout">
       <div className="editor-form">
         <div className="editor-toolbar">
-          <p className={`editor-status ${status.tone}`} role="status">
+          <p className={`editor-status ${shownStatus.tone}`} role="status">
             {isPending ? "Đang xử lý… " : ""}
-            {isDirty ? "Có thay đổi chưa lưu. " : ""}
-            {status.text}
+            {shownStatus.text}
           </p>
           <div className="button-row">
             {/* aria-disabled keeps keyboard focus on the button while a request runs. */}

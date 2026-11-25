@@ -88,6 +88,10 @@ Luồng soạn bài được chốt: giáo viên tự soạn theo mẫu, bắt �
 
 Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "còn lại" của báo cáo cũ có thể đã được làm ở báo cáo sau.
 
+### 25/11/2026
+
+- Giao diện toàn site: [9 lỗi đã sửa (lưới slide, link trong đoạn văn, trình soạn nhảy dòng, focus khi lỗi, bản in đề…), đề xuất còn lại](testing/ui-check-2026-11-25.md).
+
 ### 23/11/2026
 
 - Bộ đề JLPT N5, N4 có bản in: [đề chính thức, đề Reng cố định, bản in A4](testing/jlpt-exam-sets-2026-11-23.md).

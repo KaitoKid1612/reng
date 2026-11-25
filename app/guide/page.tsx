@@ -142,7 +142,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
   },
   {
     id: "teacher-jlpt",
-    title: "Thi thử JLPT",
+    title: "Giao đề thi thử JLPT",
     steps: [
       "Lớp tiếng Nhật cần có ngân hàng ôn N5 hoặc N4 trong Nội dung lớp: câu có nhãn chữ Hán, từ vựng, ngữ pháp hoặc đọc hiểu, và câu nghe có audio. Ngân hàng ôn do quản trị viên nạp vào tài khoản của bạn; chưa có thì liên hệ quản trị viên trước. Bài mẫu 1–15 không đủ làm đề: chỉ câu kanji và câu nghe Minna của bài có nhãn phần.",
       "Mở Giao bài, bấm Tạo đề thi thử JLPT ở đầu trang (hoặc cuộn tới mục Thi thử JLPT).",
@@ -245,7 +245,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
   },
   {
     id: "learner-jlpt",
-    title: "Thi thử JLPT",
+    title: "Làm đề thi thử JLPT",
     steps: [
       "Dưới đầu mọi trang có dòng đếm ngược tới kỳ thi JLPT tiếp theo (Chủ nhật đầu tháng 7 và tháng 12); bấm Ẩn để ẩn tới hết kỳ đó. Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài, trang đề cũng cho biết còn bao nhiêu ngày tới kỳ thi.",
       "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe. Mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm, nên đọc câu hỏi và các lựa chọn trước khi bấm Nghe.",

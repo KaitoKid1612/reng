@@ -9,6 +9,15 @@ body:has(.slide-shell) .site-footer {
   max-width: none;
   padding: 0;
 }
+/* Reveal marks slides far from the current one `hidden`, and its overview (Esc) shows them with
+   an unlayered `display: block !important`. Tailwind's preflight hides [hidden] with !important in
+   @layer base, and a layered !important beats an unlayered one, so the overview showed empty
+   boxes. Inside the same layer the more specific selector wins again. */
+@layer base {
+  .reveal.overview .slides section[hidden] {
+    display: block !important;
+  }
+}
 .slide-shell {
   width: 100%;
   height: 100dvh;

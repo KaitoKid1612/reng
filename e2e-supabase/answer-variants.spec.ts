@@ -117,7 +117,7 @@ test("a teacher accepts an equivalent answer and every matching learner gets the
 
     await owner.page.goto(`/teach/classes/${classId}/students/${anna.id}`);
     await owner.page
-      .getByRole("button", { name: "Chấp nhận câu trả lời của câu 1", exact: true })
+      .getByRole("button", { name: "Chấp nhận câu trả lời này, câu 1", exact: true })
       .click();
     await expect(owner.page.locator(".accept-notice")).toContainText(
       "Đã chấp nhận “ありがとう”: 2 bài làm được cộng điểm.",
@@ -125,7 +125,7 @@ test("a teacher accepts an equivalent answer and every matching learner gets the
     await expect(owner.page.locator(".result-row .status-badge")).toHaveText("Đúng");
     await owner.page.screenshot({ path: "test-results/answer-variants-teacher.png" });
     await expect(
-      owner.page.getByRole("button", { name: "Chấp nhận câu trả lời của câu 1" }),
+      owner.page.getByRole("button", { name: "Chấp nhận câu trả lời này, câu 1" }),
     ).toHaveCount(0);
 
     // Bình wrote it with a final period; the same grading rules count it too.

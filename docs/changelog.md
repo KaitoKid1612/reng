@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 25/11/2026
 
+- **Kiểm tra giao diện, đã sửa** ([chi tiết](testing/ui-check-2026-11-25.md)): bấm Esc trên slide lại thấy lưới đủ nội dung mọi slide; link trong đoạn văn có gạch chân; trình soạn bài không còn nhảy xuống khi gõ phím đầu tiên; form Giao bài báo lỗi thì đưa con trỏ về đúng ô; form Thi thử JLPT báo đúng tên ô Mở đến; mở bản in đáp án khi chưa đăng nhập thì đăng nhập xong quay lại đúng tập; ô tick Lớp tự học cách chữ; tên nút Chấp nhận câu trả lời khớp chữ trên nút; trang Hướng dẫn đổi tên hai mục "Giao đề thi thử JLPT" và "Làm đề thi thử JLPT".
 - **Bản in đề JLPT:** tiêu đề trang in chỉ ghi tên đề (như "Đề thi thử Reng N5 số 1"), không kèm "Đề N" của danh sách nên không còn hai con số cho một đề. Đoạn đọc vừa một trang giữ cả các câu hỏi của nó trên cùng trang.
 - **Làm bài trên điện thoại:** nút chuyển **Từng câu / Cả bài** ẩn hẳn trên màn hình ≤ 600px (điện thoại luôn hiện từng câu); trước đây quy tắc ẩn bị quy tắc sau ghi đè nên nút vẫn hiện mà bấm không có tác dụng.
 - Đề thi thử N4 số 2 cùng 28 câu từ vựng mới và hồ sơ nguồn đề ngày 25/11 được thêm rồi gỡ lại trong ngày (c93b1c1); thư viện đề giữ như ngày 23/11.

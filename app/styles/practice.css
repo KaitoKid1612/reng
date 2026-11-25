@@ -62,6 +62,10 @@ input[type="radio"] {
   font-size: 15px;
   margin-bottom: 8px;
 }
+/* A checkbox or radio label in a field keeps the gap between box and text. */
+.field .choice-label {
+  display: flex;
+}
 /* An option under a select (such as "show older versions") belongs to that select, not a label. */
 .field select + .choice-label {
   display: flex;

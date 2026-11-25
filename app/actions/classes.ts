@@ -527,6 +527,8 @@ const JLPT_EXAM_FIELDS = [
 
 const JLPT_EXAM_ERRORS: Record<string, string> = {
   not_japanese: "Thi thử JLPT chỉ dành cho lớp tiếng Nhật.",
+  // The exam form calls the deadline "Mở đến", not "Hạn nộp".
+  due_in_past: "Thời điểm Mở đến phải ở sau thời điểm hiện tại.",
   no_exam_questions:
     "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, reading hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
   invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",

@@ -82,7 +82,12 @@ function BookletBody({ set, booklet, runningTitle }: BookletBodyProps) {
 
 export default async function ExamPrintPage({ params, searchParams }: ExamPrintPageProps) {
   const { examId } = await params;
-  const account = await requireAccount(`/exams/print/${encodeURIComponent(examId)}`);
+  const booklet = parsePrintBooklet((await searchParams).booklet);
+  // Signing in returns to the same booklet, not to the question booklet.
+  const path = `/exams/print/${encodeURIComponent(examId)}`;
+  const account = await requireAccount(
+    booklet === "questions" ? path : `${path}?booklet=${booklet}`,
+  );
   const set = findJlptExamSet(examId);
   if (!set) {
     notFound();
@@ -90,13 +95,15 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
   const ownedClasses = account.role === "teacher" ? await listTeacherClasses(account.id) : [];
   if (!canPrintJlptExams(account.role, ownedClasses)) {
     return (
-      <p className="notice-panel" role="alert">
-        Chỉ giáo viên và chủ lớp tiếng Nhật mở được bản in đề, vì bản in có đáp án. Học viên làm đề
-        ở trang <Link href="/exams">Luyện đề</Link>.
-      </p>
+      <>
+        <h1>Bản in đề JLPT</h1>
+        <p className="notice-panel" role="alert">
+          Chỉ giáo viên và chủ lớp tiếng Nhật mở được bản in đề, vì bản in có đáp án. Học viên làm
+          đề ở trang <Link href="/exams">Luyện đề</Link>.
+        </p>
+      </>
     );
   }
-  const booklet = parsePrintBooklet((await searchParams).booklet);
   // The paper names the exam by its title alone: "Đề 3" (its place in the list on the exam page)
   // beside "Đề thi thử Reng N5 số 1" would read as two numbers for one exam.
   const runningTitle = set.title;

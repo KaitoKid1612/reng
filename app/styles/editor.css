@@ -27,7 +27,11 @@
   border-radius: 10px;
   box-shadow: 0 4px 16px rgb(28 27 26 / 8%);
 }
+/* The status line takes the room left by the buttons and wraps inside it, so a longer message does
+   not push the buttons onto a row of their own. */
 .editor-status {
+  flex: 1 1 16rem;
+  min-width: 0;
   margin: 0;
   font-size: 14px;
 }
