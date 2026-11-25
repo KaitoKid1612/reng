@@ -106,6 +106,31 @@ Người dùng muốn có đề JLPT thật N5, N4 qua các năm. Một agent t�
 3. Gửi thư xin phép theo mục 1(5) nếu muốn đưa câu cũ vào Reng; chỉ nhập khi có trả lời đồng ý bằng văn bản.
 4. Giáo viên đọc tham khảo ở thư viện.
 
+## Đề thi thử N4 – ôn kỳ thi 07/2026 (Đề 4 N4)
+
+Tên đề do chủ dự án chọn. Đề do Reng viết, không chứa câu nào của đề thi tháng 7/2026 đang lưu hành; ảnh chụp đề đó chỉ được chấm trong chat, không đưa vào repo.
+
+- **28 câu chữ Hán – từ vựng mới** (`kanji-reading-15..21`, `orthography-11..15`, `contextual-17..24`, `paraphrase-09..12`, `usage-09..12`):
+  - vị trí đáp án chia đều 7/7/7/7;
+  - một agent rà lại: 0 lỗi chặn, sửa 9 câu. Đáng kể nhất: 返事 in sẵn trong lời dẫn mọi câu 即時応答 nên câu viết kanji đổi sang 試合; furigana cho 会議, 平日, 点; đổi lựa chọn sai của câu しかる thành câu đúng ngữ pháp nhưng dùng sai từ.
+- **29 câu ngữ pháp – đọc hiểu và 28 câu nghe** là phần còn lại của `n4-jlpt-mock-standard.json`, không trùng Đề 3. Một agent rà lại: 1 lỗi chặn, 10 chỗ sửa, tất cả đã sửa:
+  - `info-search-03`: điều kiện "ăn tối ở nhà" mâu thuẫn với đáp án ⑤ (15:00–22:00); nay chỉ giới hạn tiền tour 12.000 yên.
+  - Lộ đáp án:
+    - đoạn văn もんだい3 lộ ～ように なりました và ぜひ;
+    - `short-reading-05` lộ おくれました;
+    - `short-reading-06` lộ ～て あります;
+    - câu nghe l-30 in chữ 集 trùng câu viết kanji 集める (nay viết あつまる);
+    - câu ngữ pháp 19 có furigana うんてんめんきょ trùng cách đọc 運転.
+  - `composition-08`: ★ dời sang ô 3, vì ở ô 4 chỉ cần nhìn なって いる là chọn được ことに.
+  - Câu nghe l-52, l-56 đổi lựa chọn; l-41 thêm furigana. Ba câu này đã tạo lại audio.
+  - Giải thích của câu ngữ pháp 17 và 22 nói sai về なかなか và ～て ある.
+- **Kiểm chứng:**
+  - `npm run audit:jlpt-bank`: 0 kanji trên N4 thiếu furigana; `bank:sql` chạy đạt với 198 câu.
+  - 4 tập PDF đều A4: Đề 14 trang, Phiếu 3, Đáp án 11, Lời thoại 8. Đủ 85 câu và 28 câu nghe, tập học viên không có đáp án.
+  - Trang in và danh sách 7 đề: axe 0 ở 1280 và 390, không tràn ngang. Sau khi nạp ngân hàng mới vào lớp local, thư viện lớp có dòng đề này.
+  - `npm run check` 503/503; `test:e2e:supabase` 49/49; `test:e2e` 40/41, câu lỗi `kana.spec.ts` (đọc bằng giọng máy) chạy lại riêng 3/3 đạt.
+- **Trên production:** cần nạp ngân hàng N4 chuẩn bản mới (`bank:sql`) vào lớp thì đề mới mở được cho lớp. Bản in không cần bước này.
+
 ## Còn mở
 
 - Nghe so sánh audio 問題2 tập 2012 với file 2017 để quyết có đổi 13 link không.

@@ -54,6 +54,10 @@ Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm đượ
   - Lớp ghim ngân hàng chứa đủ câu của đề thì Thư viện đề có thêm dòng đề cố định, nút **Mở đề này** (mở một lần) và link **Bản in**.
   - Câu của đề cố định tính là đã ra: số đề còn ghép được của ngân hàng giảm, và đề Reng ghép sau không lặp câu. Số thứ tự "Đề Reng N5 số k" của ngân hàng không tính đề cố định.
   - Phần nghe N5 lấy từ 32 câu nghe mới (41–72), vì 40 câu nghe đầu cũng nằm trong ngân hàng ôn hằng ngày của lớp Minna.
+- **Đề 4 N4 — 25/11/2026: "Đề thi thử N4 – ôn kỳ thi 07/2026"** (`reng-n4-2`, 85 câu):
+  - Gồm 28 câu chữ Hán – từ vựng mới viết, cùng 29 câu ngữ pháp – đọc hiểu và 28 câu nghe còn lại của `n4-jlpt-mock-standard.json`, không trùng câu với Đề 3.
+  - Tên đề do chủ dự án chọn, là ngoại lệ duy nhất của quy tắc không ghi tháng năm. Tên vẫn mở đầu bằng "Đề thi thử", bìa bản in vẫn ghi "không phải đề thi thật".
+  - Đề không chứa câu nào của đề thi tháng 7/2026 đang lưu hành.
 - **Bản in** (`/exams/print/<mã đề>`): chỉ giáo viên đang làm chủ một lớp tiếng Nhật còn hoạt động mở được, vì bản in có đáp án. Học viên thấy thông báo, không thấy đề. Bản in không đổi lịch mở hay đóng đề của lớp.
   - Bốn tập: **Đề** và **Phiếu trả lời** cho học viên; **Đáp án và giải thích**, **Lời thoại nghe** cho giáo viên.
   - A4 dọc, đen trắng. Mỗi phần thi (言語知識（文字・語彙）, 言語知識（文法）・読解, 聴解) bắt đầu trang mới, ghi số phút như đề thật. Không cắt một câu hay một đoạn đọc qua hai trang; đoạn đọc vừa một trang thì mọi câu của nó in cùng trang (25/11/2026).

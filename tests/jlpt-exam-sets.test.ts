@@ -41,15 +41,23 @@ test("each level prints the two official tests first, then Reng's fixed mock exa
       "n4-2018 Đề 1",
       "n4-2012 Đề 2",
       "reng-n4-1 Đề 3",
+      "reng-n4-2 Đề 4",
     ],
   );
   assert.deepEqual(
     JLPT_EXAM_SETS.map((set) => set.questions.length),
-    [91, 89, 67, 98, 97, 85],
+    [91, 89, 67, 98, 97, 85, 85],
   );
+  // The owner named the second N4 exam after the test session it prepares for (25/11/2026); every
+  // title still says it is a mock ("thi thử") and never calls itself a past paper.
+  const OWNER_TITLES = new Set(["Đề thi thử N4 – ôn kỳ thi 07/2026"]);
   for (const set of fixedRengExamSets()) {
-    assert.match(set.title, /^Đề thi thử Reng N[45] số \d+$/);
-    assert.doesNotMatch(set.title, /tháng|năm|20\d\d|đề thi cũ/i);
+    assert.match(set.title, /^Đề thi thử /);
+    assert.doesNotMatch(set.title, /đề thi cũ|đề thi thật/i);
+    if (!OWNER_TITLES.has(set.title)) {
+      assert.match(set.title, /^Đề thi thử Reng N[45] số \d+$/);
+      assert.doesNotMatch(set.title, /tháng|năm|20\d\d/i);
+    }
   }
 });
 
