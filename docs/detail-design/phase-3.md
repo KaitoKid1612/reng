@@ -1,7 +1,7 @@
 # Detail Design giai đoạn 3
 
 > Phạm vi nền Nhật: tài liệu giai đoạn này giữ thiết kế/bằng chứng triển khai trước dịch vụ Việt–Trung; không chứng minh tính năng mới đã có. Thiết kế hiện hành xem [BD dịch vụ](../basic-design/teaching-service.md), [DD dịch vụ](../detail-design/teaching-service.md) và [checklist dịch vụ](../testing/teaching-service.md). Kết quả PASS/Chưa chạy lịch sử được giữ nguyên.
-
+>
 > Tài liệu này mô tả nền lớp học đã triển khai với role student/teacher hiện tại. Yêu cầu dịch vụ ngày 29/10/2026 bổ sung đăng ký giáo viên, vừa học vừa dạy và chia sẻ theo [BD dịch vụ](../basic-design/teaching-service.md); chưa triển khai. Kết quả AUTH-01 cũ chỉ chứng minh luồng cấp quyền thủ công, không phải onboarding giáo viên mới.
 
 Theo [BD](../basic-design/phase-3.md), schema chung 03, chấm/nộp 07. Phiên bản dependency theo lockfile: Supabase JS/SSR, ts-fsrs 5.4.2, wanakana 5.3.1, Supabase CLI 2.122.0 (chỉ dùng cho môi trường local).
@@ -9,7 +9,7 @@ Theo [BD](../basic-design/phase-3.md), schema chung 03, chấm/nộp 07. Phiên 
 ## Module
 
 | Module | Trách nhiệm |
-|---|---|
+| --- | --- |
 | lib/grading/normalize.ts | `normalizeAnswer` đúng 07: NFKC, bỏ mọi khoảng trắng, bỏ một dấu `。．.` cuối |
 | lib/grading/raw-answer.ts | Schema câu trả lời thô theo dạng câu, giới hạn kích thước, từ chối trùng/ngoài phạm vi |
 | lib/grading/grade.ts | Registry chấm theo `type`, chấm lượt, điểm nguyên, phần trăm và xét đạt không làm tròn |
@@ -64,7 +64,7 @@ RLS bật trên mọi bảng mới. `anon` không có quyền; `authenticated` c
 Tất cả `set search_path = ''`, chỉ `service_role` được execute; server gọi sau khi xác thực user và truyền `p_user_id`/`p_teacher_id` từ phiên. RPC kiểm tra lại quyền trong transaction. Trạng thái nghiệp vụ trả về dạng mã (không rollback dữ liệu cần giữ như lượt thử mã); lỗi bất biến dùng exception `reng:<code>`.
 
 | RPC | Hợp đồng |
-|---|---|
+| --- | --- |
 | join_class(user, code) | Chỉ student. ≥ 8 lần sai trong 15 phút → rate_limited. Mã không có/đã thu hồi/lớp ngừng → invalid_code và ghi lượt sai. Đã là thành viên → already_member; đã rời → vào lại với joined_at mới. |
 | upsert_class_lesson(teacher, class, lesson, version, order, available_at) | Lớp và bài thuộc giảng viên; version thuộc bài; thứ tự trùng → reng:order_taken |
 | publish_assignment(teacher, class, lesson, title, mode, due, allow_late, pass, attempts, policy, practice_ids, test_questions) | Lấy version đang ghim của lớp; practice sao chép câu theo ID từ content của version đó, test nhận câu riêng; 1–50 câu, ID duy nhất; hạn phải ở tương lai; tạo draft + items rồi chuyển published trong cùng transaction |
@@ -129,7 +129,7 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 ## API
 
 | Endpoint | Hợp đồng |
-|---|---|
+| --- | --- |
 | GET /api/me | `{user: null}` hoặc `{user: {name, role, isAdmin}}`, no-store |
 | POST /api/assignments/[id]/attempts | 200 `{submissionId, status}`; 401; 404; 409 `{code}` not_available/closed/past_due/no_attempts_left |
 | PUT /api/submissions/[id]/draft | Body `{revision, draft}`; 200 `{revision, savedAt}`; 409 `{code: "conflict", revision, draft}` hoặc submitted/closed/past_due |
@@ -159,7 +159,7 @@ Mọi API trả `Cache-Control: private, no-store`, body ≤ 64 KB, kiểm tra J
 ## Lỗi
 
 | Lỗi | Hành vi |
-|---|---|
+| --- | --- |
 | Chưa cấu hình Supabase | Trang tài khoản/lớp báo chưa kích hoạt; API 503; proxy bỏ qua |
 | Phiên hết hạn trong lúc làm bài | API 401; bản cục bộ giữ draft; UI mời đăng nhập lại rồi quay về |
 | RPC/network lỗi | Thông báo thử lại; không báo "Đã lưu"; không mất bản cục bộ |

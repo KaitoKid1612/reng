@@ -1,6 +1,7 @@
 # Basic Design — Luyện đề JLPT
 
 Ngày 19/11/2026. Người dùng muốn một chỗ "vào là luyện đề", xem được mọi đề: đề chính thức các năm, đề Reng tự soạn, đề thi thử. Hai lựa chọn của người dùng:
+
 - **Giáo viên mở đề** (không đổi database), thay vì học viên tự mở đề.
 - **Soạn thêm 3 đề N5**, vì N5 chưa có đề Reng nào.
 
@@ -36,7 +37,7 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
 - Form **Thi thử JLPT** ở trang Giao bài xem trước đúng con số này.
 
 | Cấp | Đề chính thức | Đề Reng (không trùng câu) |
-|---|---|---|
+| --- | --- | --- |
 | N4 | 2012 (97 câu), 2018 (98 câu) | 2 đề từ ngân hàng hằng ngày; thêm 2 đề chuẩn và 2 đề nâng cao ở ngân hàng riêng (19/11/2026, [kiểm chứng](../testing/n4-reng-exams-2026-11-19.md)) |
 | N5 | 2012 (89 câu), 2018 (91 câu) | 3 đề (ngân hàng mới `n5-jlpt-mock.json`) |
 
@@ -45,7 +46,7 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
 Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm được trên Reng và in ra giấy được, ưu tiên đề đã từng thi có nguồn hợp pháp ([prompt](../prompts/jlpt-exam-sets.md)).
 
 | Cấp | Đề 1 | Đề 2 | Đề 3 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | N5 | Đề chính thức tập 2018 (91 câu) | Đề chính thức tập 2012 (89 câu) | Đề thi thử Reng N5 số 1 (67 câu, từ `n5-jlpt-mock.json`) |
 | N4 | Đề chính thức tập 2018 (98 câu) | Đề chính thức tập 2012 (97 câu) | Đề thi thử Reng N4 số 1 (85 câu, từ `n4-jlpt-mock-standard.json`) |
 
