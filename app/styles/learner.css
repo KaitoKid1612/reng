@@ -212,9 +212,6 @@
     gap: 12px;
     margin-bottom: 20px;
   }
-  .attempt-view-toggle {
-    display: none;
-  }
 }
 .attempt-head {
   display: flex;
@@ -238,6 +235,13 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
+}
+/* Phones always show one question, so the switch would do nothing there. This follows the rule
+   above: in the earlier phone block it lost to display: inline-flex. */
+@media (max-width: 600px) {
+  .attempt-view-toggle {
+    display: none;
+  }
 }
 .attempt-view-toggle button {
   min-height: 36px;
