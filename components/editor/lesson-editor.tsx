@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { unstable_rethrow, useRouter } from "next/navigation";
-import { useReducer, useState, useTransition } from "react";
+import { useEffect, useReducer, useRef, useState, useTransition } from "react";
 
 import {
   loadLessonDraftAction,
@@ -20,7 +20,7 @@ import { SlideList } from "@/components/editor/slide-list";
 import { SlidePreview } from "@/components/editor/slide-preview";
 import { useEditorBackup } from "@/components/editor/use-editor-backup";
 import { useLeaveWarning } from "@/components/editor/use-leave-warning";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   countMissingAudio,
   countMissingListeningAudio,
@@ -31,6 +31,7 @@ import { createEditorState, editorReducer } from "@/lib/lesson-editor";
 import {
   editorDraftKey,
   keepEditorDraft,
+  rememberEditorSave,
   removeLocalDraft,
   restoreEditorDraft,
 } from "@/lib/local-draft";
@@ -110,6 +111,16 @@ export function LessonEditor({
   const missingAudio = countMissingAudio(draft.content);
   const missingListeningAudio = countMissingListeningAudio(draft.content);
   useEditorBackup(lessonId, revision, draft, isDirty);
+  // Typing goes on while a save runs; a failed save keeps the newest text, not the one it sent.
+  const latestDraftRef = useRef(draft);
+  useEffect(() => {
+    latestDraftRef.current = draft;
+  }, [draft]);
+  useEffect(() => {
+    if (revision > initialRevision) {
+      rememberEditorSave(lessonId, revision);
+    }
+  }, [initialRevision, lessonId, revision]);
 
   useLeaveWarning(isDirty);
 
@@ -218,7 +229,7 @@ export function LessonEditor({
 
   // The request may still have reached the server, so the backup remembers what was sent.
   function handleRequestFailure(sent: LessonDraftState) {
-    keepEditorDraft(lessonId, revision, draft, sent);
+    keepEditorDraft(lessonId, revision, latestDraftRef.current, sent);
     setStatus({ tone: "status-wrong", text: REQUEST_FAILED });
   }
 
@@ -450,10 +461,8 @@ export function LessonEditor({
             ? `Đã xuất bản ${versionCount} lần; mỗi lần là một phiên bản.`
             : "Chưa xuất bản phiên bản nào."}{" "}
           {publishedVersionId && (
-            <Link
-              href={`/lessons/${lessonId}?version=${publishedVersionId}`}
-              className={buttonVariants({ variant: "ghost" })}
-            >
+            // A link in the sentence, not a button: a ghost button's padding indented it.
+            <Link href={`/lessons/${lessonId}?version=${publishedVersionId}`}>
               Mở bản đang xuất bản
             </Link>
           )}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { LessonEditorLoader, TeachingEditorLoader } from "@/components/editor/editor-loaders";
+import { StaleEditorGuard } from "@/components/editor/stale-editor-guard";
 import { LessonClassUsage } from "@/components/teach/lesson-class-usage";
 import { requireTeacher } from "@/lib/server/account";
 import { getLessonUsage } from "@/lib/server/lesson-usage";
@@ -38,16 +39,18 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
           </div>
         </div>
         <LessonClassUsage lessonId={teaching.lessonId} usage={await usage} />
-        <TeachingEditorLoader
-          lessonId={teaching.lessonId}
-          initialDraft={toTeachingDraft(teaching)}
-          initialRevision={teaching.revision}
-          initialSavedAt={teaching.savedAt}
-          initialReviewedIds={teaching.reviewedIds}
-          initialPublishedVersionId={teaching.publishedVersionId}
-          initialVersionCount={teaching.versionCount}
-          visibility={teaching.visibility}
-        />
+        <StaleEditorGuard lessonId={teaching.lessonId} revision={teaching.revision}>
+          <TeachingEditorLoader
+            lessonId={teaching.lessonId}
+            initialDraft={toTeachingDraft(teaching)}
+            initialRevision={teaching.revision}
+            initialSavedAt={teaching.savedAt}
+            initialReviewedIds={teaching.reviewedIds}
+            initialPublishedVersionId={teaching.publishedVersionId}
+            initialVersionCount={teaching.versionCount}
+            visibility={teaching.visibility}
+          />
+        </StaleEditorGuard>
       </>
     );
   }
@@ -71,15 +74,17 @@ export default async function EditLessonPage({ params }: EditLessonPageProps) {
         </div>
       </div>
       <LessonClassUsage lessonId={editor.lessonId} usage={await usage} />
-      <LessonEditorLoader
-        lessonId={editor.lessonId}
-        visibility={editor.visibility}
-        initialDraft={editor.draft}
-        initialRevision={editor.revision}
-        initialSavedAt={editor.savedAt}
-        publishedVersionId={editor.publishedVersionId}
-        versionCount={editor.versions.length}
-      />
+      <StaleEditorGuard lessonId={editor.lessonId} revision={editor.revision}>
+        <LessonEditorLoader
+          lessonId={editor.lessonId}
+          visibility={editor.visibility}
+          initialDraft={editor.draft}
+          initialRevision={editor.revision}
+          initialSavedAt={editor.savedAt}
+          publishedVersionId={editor.publishedVersionId}
+          versionCount={editor.versions.length}
+        />
+      </StaleEditorGuard>
     </>
   );
 }

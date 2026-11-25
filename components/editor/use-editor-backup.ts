@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { keepEditorDraft } from "@/lib/local-draft";
 
@@ -14,6 +14,11 @@ export function useEditorBackup(
   draft: unknown,
   isDirty: boolean,
 ) {
+  const latestRef = useRef({ lessonId, revision, draft, isDirty });
+  useEffect(() => {
+    latestRef.current = { lessonId, revision, draft, isDirty };
+  }, [draft, isDirty, lessonId, revision]);
+
   useEffect(() => {
     if (!isDirty) {
       return;
@@ -24,4 +29,15 @@ export function useEditorBackup(
     );
     return () => window.clearTimeout(timer);
   }, [draft, isDirty, lessonId, revision]);
+
+  // Leaving the editor within the delay above would drop the last edits; they are kept at once.
+  useEffect(
+    () => () => {
+      const latest = latestRef.current;
+      if (latest.isDirty) {
+        keepEditorDraft(latest.lessonId, latest.revision, latest.draft);
+      }
+    },
+    [],
+  );
 }

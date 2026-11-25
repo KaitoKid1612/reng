@@ -162,3 +162,17 @@ export function clearLocalDrafts() {
     // Storage can be unavailable in private browsing; there is nothing left to clean up.
   }
 }
+
+// The revision each editor in this tab last saved, per lesson. Browser Back shows a page as it was
+// first loaded, however old, so the editor there can start from an older revision than this tab
+// already saved; restoring it would bring old text back and throw the newer backup away.
+const savedEditorRevisions = new Map<string, number>();
+
+export function rememberEditorSave(lessonId: string, revision: number) {
+  savedEditorRevisions.set(lessonId, Math.max(revision, savedEditorRevisions.get(lessonId) ?? 0));
+}
+
+export function isOlderThanEditorSave(lessonId: string, revision: number) {
+  const saved = savedEditorRevisions.get(lessonId);
+  return saved !== undefined && saved > revision;
+}

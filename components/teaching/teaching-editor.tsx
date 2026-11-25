@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import {
   editorDraftKey,
   keepEditorDraft,
+  rememberEditorSave,
   removeLocalDraft,
   restoreEditorDraft,
 } from "@/lib/local-draft";
@@ -104,6 +105,11 @@ export function TeachingEditor({
     snapshot: toSnapshot(initialDraft),
     reviewed: createReviewedQuestions(initialDraft, initialReviewedIds),
   }));
+  useEffect(() => {
+    if (saved.revision > initialRevision) {
+      rememberEditorSave(lessonId, saved.revision);
+    }
+  }, [initialRevision, lessonId, saved.revision]);
   const [status, setStatus] = useState<EditorStatus>(() =>
     restored
       ? {
