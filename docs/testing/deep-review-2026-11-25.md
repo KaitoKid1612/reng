@@ -85,9 +85,51 @@ Kiểm chứng chung:
 
 ## Cần người dùng quyết định hoặc làm
 
-- **Áp 2 migration lên production** (chỉ thay hàm và thêm chỉ mục, không sửa dữ liệu): `npx supabase db push --linked`. Code chạy được cả trước lẫn sau migration.
-- **Thẻ ôn trùng đã có trên production** vẫn giữ nguyên. Gộp chúng là sửa dữ liệu thật, nên chưa viết. Cách đề xuất: mỗi học viên, mỗi câu của một bài nguồn chỉ giữ một thẻ chưa thuộc; thẻ trùng chưa có lượt ôn thì xóa, thẻ đã có lượt ôn thì đánh dấu đã thuộc.
-- **Kiểm tra production còn dòng `platform_settings`.** Nếu thiếu, giáo viên mới được duyệt tự động; nên sửa hàm bằng `coalesce` ở đợt migration sau.
+- **Áp 3 migration lên production:** `npx supabase db push --linked`. Code chạy được cả trước lẫn sau. Hai migration đầu chỉ thay hàm và thêm chỉ mục.
+- **Gộp thẻ ôn trùng đã có:** người dùng đồng ý ngày 25/11/2026. Migration `20261125093714_merge_existing_duplicate_mistakes` sửa dữ liệu thật, gộp theo từng nhóm (học viên, bài nguồn, câu):
+  - Giữ một thẻ: thẻ đang mở được sửa gần nhất.
+  - Thẻ trùng chưa có lượt ôn thì xóa.
+  - Thẻ trùng đã có lượt ôn thì đánh dấu xong để rời hàng ôn. Lịch sử ôn là bất biến (`review_events_immutable`) nên không chuyển và không xóa.
+  - Thẻ của bài kiểm tra chưa công bố kết quả giữ nguyên.
+  - Kiểm chứng: `tests/merge-duplicate-mistakes-migration.test.ts`. Trên Postgres local, 9 thẻ thử nghiệm được gộp, câu xem trước về 0, lịch sử ôn giữ nguyên 19 lượt.
+- **Xem trước trên production, chỉ đọc**, nên chạy trước `db push`. Câu dưới đếm thẻ sẽ xóa, thẻ sẽ đánh dấu xong và số học viên. Lưu câu vào một file rồi chạy `npx supabase db query --linked --file <file>`.
+
+  ```sql
+  -- Read-only preview of 20261125093714_merge_existing_duplicate_mistakes: what the merge changes.
+  with eligible as (
+    select c.user_id, c.source_id, c.item_id, a.lesson_id, c.resolved_at, c.updated_at, c.created_at
+    from public.srs_cards c
+    join public.assignments a on a.id::text = c.source_id
+    where c.item_type = 'mistake'
+      and (a.feedback_policy = 'after_submit' or a.due_at <= now())
+  ),
+  ranked as (
+    select eligible.*,
+      row_number() over (
+        partition by user_id, lesson_id, item_id
+        order by resolved_at is null desc, updated_at desc, created_at desc, source_id
+      ) as position
+    from eligible
+  ),
+  extra as (
+    select r.*,
+      exists (
+        select 1 from public.review_events e
+        where e.user_id = r.user_id and e.item_type = 'mistake' and e.source_id = r.source_id
+          and e.item_id = r.item_id
+      ) as has_reviews
+    from ranked r
+    where r.position > 1
+  )
+  select
+    count(*) filter (where not has_reviews) as cards_deleted,
+    count(*) filter (where has_reviews and resolved_at is null) as cards_marked_done,
+    count(*) filter (where has_reviews and resolved_at is not null) as already_done_kept,
+    count(distinct user_id) as learners
+  from extra;
+  ```
+
+- **`platform_settings`:** người dùng tự kiểm tra bằng `npx supabase db query --linked "select * from public.platform_settings"`. Nếu không có dòng nào, giáo viên mới được duyệt tự động; nên thêm dòng và sửa hàm bằng `coalesce` ở đợt migration sau.
 
 ## Chưa làm (đề xuất)
 
