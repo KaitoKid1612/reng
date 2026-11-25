@@ -1,0 +1,1353 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Second online check of JLPT N5/N4 sample-exam sources (docs/prompts/jlpt-exam-sets.md §3a), re-verifying content/jlpt/source-audit-2026-11-23.json. Metadata only: no question, passage, answer key or audio copied.",
+  "auditDate": "2026-11-25",
+  "method": "curl -sI -L (HEAD, one request per URL, 1 s pause, generic desktop-browser User-Agent) for every URL in source-registry.json, external-source-catalog.json, JLPT_ONLINE_SAMPLES, the 16 distinct source audioUrl values in content/jlpt/official/*.json (no PDF URLs are stored there) and every N4/N5 file linked from the official sample pages. Small HTML pages on jlpt.jp (sampleindex ja/en, sample09 ja/en, forlearners, forteachers, policy ja/en, top ja/en, mogiinfo) were fetched with curl GET to map links and read terms. Third-party pages were read with WebFetch after checking robots.txt with curl. GitHub repository metadata and licence files read with gh api. No PDF or MP3 body downloaded; HEAD only. No browser verification, login or paywall bypassed.",
+  "queries": [
+    "JF日本語eラーニング みなと JLPT N5 模擬 対策コース",
+    "Marugoto JLPT N5 N4 practice questions Japan Foundation free",
+    "JLPT N5 practice questions Creative Commons license CC BY",
+    "github JLPT N5 N4 questions dataset license MIT CC",
+    "hn.jpf.go.jp JLPT đề thi mẫu luyện thi N5",
+    "日本語能力試験 公式問題集 第三集 2026 発行",
+    "Đại học Ngoại ngữ Đà Nẵng ufl.udn.vn kỳ thi năng lực tiếng Nhật JLPT tài liệu mẫu",
+    "hucfl.edu.vn JLPT kỳ thi năng lực Nhật ngữ Huế hướng dẫn đề mẫu",
+    "NHK やさしい日本語 JLPT N5 N4 練習問題 無料 利用規約",
+    "JLPT N5 practice test open educational resource university CC BY-NC-SA",
+    "huggingface JLPT N4 N5 multiple choice dataset license",
+    "đề thi thử JLPT N4 miễn phí bản quyền tự biên soạn có audio 2026",
+    "JFT-Basic サンプル問題 国際交流基金 利用条件 いろどり 教材 利用について",
+    "JLPTSuccess github N5 papers license",
+    "\"JLPT\" N4 模擬試験 無料 オリジナル問題 PDF 日本語学校 公開",
+    "JEES 日本語能力試験 受験案内 問題例 N4 N5 サンプル 2026",
+    "jpnotes.dev JLPT N5 listening CC BY-NC 4.0",
+    "Trung tâm Ngoại ngữ ULIS VNU JLPT 2026 thí sinh tham khảo đề mẫu jlpt.jp",
+    "日本語能力試験 N5 聴解 練習 無料 クリエイティブ・コモンズ 教材",
+    "jlpt.jp mogiinfo practicetest2021 vi pdf JLPT Practice Test Việt Nam",
+    "e-aoi.uzh.ch apps jlpt practice",
+    "JLPT N4 sample test Japan Foundation Bangkok OR Sydney OR Toronto practice questions download",
+    "đề thi JLPT N5 tháng 12/2025 có đáp án pdf",
+    "open-exam-prep.com JLPT N5 practice terms license",
+    "migii JLPT đề thi thử N5 N4 miễn phí đề thật các năm",
+    "いろどり 生活の日本語 利用規約 複製 教育目的 国際交流基金 クレジット",
+    "nihongo-pro JLPT sample test questions N4 N5 free quiz",
+    "\"JLPT\" N5 mock exam GitHub repository CC BY-SA questions audio VOICEVOX",
+    "JLPT N4 文法 練習問題 無料 ダウンロード 日本語教師 自作 二次利用可",
+    "kanji.vn thi thử JLPT điều khoản sử dụng",
+    "đề thi JLPT N4 tháng 7/2026 đáp án nghe",
+    "日本語 オープン教材 OER JLPT N4 N5 練習問題 大学 CC BY",
+    "thejapanesepage JLPT N4 listening practice script audio license",
+    "wp3.tufs.ac.jp nijiiro listening quiz N4 N5 level license",
+    "jlpt.jp \"sample2017\" mp3 公式問題集 問題2 音声 差し替え",
+    "minato-jf.jp コース一覧 JLPT 対策 自習コース N4"
+  ],
+  "officialChecks": {
+    "newerOfficialVolume": {
+      "exists": false,
+      "evidence": [
+        "https://www.jlpt.jp/samples/sampleindex.html (Last-Modified 2026-02-02, unchanged) still says これまでに2集; only 2012 and 第二集 2018.",
+        "https://www.jlpt.jp/reference/books.html (Last-Modified 2026-11-16, unchanged since the last audit) lists 10 Bonjinsha books, 700円+税; no 第三集 or forthcoming title.",
+        "Bonjinsha JLPT page (now https://www.bonjinsha.com/page_jlpt.html) lists only the March 2012 and December 2018 official workbooks.",
+        "jlpt.jp top-page news (ja/en): newest item 2026-09-28 (other Japanese tests PDF); nothing posted between 2026-11-23 and 2026-11-25."
+      ]
+    },
+    "officialWorkbookLinks": {
+      "pages": [
+        "https://www.jlpt.jp/samples/sampleindex.html",
+        "https://www.jlpt.jp/e/samples/sampleindex.html"
+      ],
+      "n4n5LinksOnPage": 44,
+      "status": "All 44 N4/N5 links on both pages return 200 (PDF application/pdf, MP3 audio/mpeg). 2012 files Last-Modified 2012-06-14, 2018 files 2018-12-27; sizes identical to 2026-11-23. Reng's 16 stored audioUrl values all return 200.",
+      "workbook2012Mondai2Audio": {
+        "finding": "Confirmed on 2026-11-25 on both the Japanese and English pages: for the 2012 workbook, 問題1/3/4 link sample2012 files (same as Reng) but 問題2 links a sample2017 file. This applies to all five levels (N1Q2–N5Q2 in sample2017); the sample2017 folder holds only the Q2 files (N5Q1, N5Q3, N4Q1, N4Q3 there return 404).",
+        "mapping": [
+          {
+            "level": "N5",
+            "mondai": 1,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q1.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q1.mp3",
+            "match": true
+          },
+          {
+            "level": "N5",
+            "mondai": 2,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2017/mp3/N5Q2.mp3",
+            "jlptJpFile": "200, Last-Modified 2017-05-10, 8,520,652 bytes",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q2.mp3",
+            "rengFile": "200, Last-Modified 2012-06-14, 2,723,488 bytes",
+            "match": false,
+            "rengUses": 6
+          },
+          {
+            "level": "N5",
+            "mondai": 3,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q3.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q3.mp3",
+            "match": true
+          },
+          {
+            "level": "N5",
+            "mondai": 4,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q4.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q4.mp3",
+            "match": true
+          },
+          {
+            "level": "N4",
+            "mondai": 1,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q1.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q1.mp3",
+            "match": true
+          },
+          {
+            "level": "N4",
+            "mondai": 2,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2017/mp3/N4Q2.mp3",
+            "jlptJpFile": "200, Last-Modified 2017-05-10, 12,867,877 bytes",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q2.mp3",
+            "rengFile": "200, Last-Modified 2012-06-14, 3,909,634 bytes",
+            "match": false,
+            "rengUses": 7
+          },
+          {
+            "level": "N4",
+            "mondai": 3,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q3.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q3.mp3",
+            "match": true
+          },
+          {
+            "level": "N4",
+            "mondai": 4,
+            "jlptJpLinks": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q4.mp3",
+            "rengStores": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q4.mp3",
+            "match": true
+          }
+        ],
+        "sizeLabelOnPage": "The pages still show the old sizes next to 問題2 (N4 3.8MB, N5 2.6MB), which match the 2012 files, not the 2017 files (about 12.9 MB and 8.5 MB). So the link target was changed without updating the label.",
+        "scriptPdf": "The 2012 listening scripts (sample2012/pdf/N4script.pdf, N5script.pdf) are still the 2012-06-14 files; no 2017 script exists on the page.",
+        "notice": "Neither page, nor the jlpt.jp news list, nor a web search gives any notice explaining the 2017 replacement.",
+        "notVerified": "Whether the audio content differs (re-recording, corrected item, added pauses or only a higher bitrate) cannot be told from HEAD data. No audio was downloaded."
+      },
+      "thirdPartyNotice": "Unchanged: N1/N2 grammar/reading items with a named source and all N1–N5 聴解 audio files contain third-party works; no reprinting without permission except under site policy copyright (1)–(3)."
+    },
+    "policy": {
+      "url": "https://www.jlpt.jp/policy.html",
+      "status": "200, Last-Modified 2026-02-02 (en page https://www.jlpt.jp/e/policy.html Last-Modified 2026-04-03); both older than the last audit, so no change since 2026-11-23.",
+      "item4Summary": "Unchanged: for Japanese-language education where no fee is charged for the resulting materials, JF and JEES grant advance permission to reprint or copy, with the source credited as in (2)④. Parts containing third-party works (named on the sampleindex page) need the rights holder's separate consent.",
+      "item4Quote": "日本語教育の目的であり、かつ、転載・複製により制作される教材などの料金を徴収しない場合",
+      "creditJa": "出典　日本語能力試験公式ウェブサイト（https://www.jlpt.jp/）",
+      "creditEn": "Source: Japanese-Language Proficiency Test Worldwide Official Website（https://www.jlpt.jp/）",
+      "note": "The English page words the English credit as 'Source: Official Worldwide Japanese-Language Proficiency Test Website (https://www.jlpt.jp/)'; the Japanese page uses the wording above. Reng uses the Japanese credit, which matches."
+    },
+    "sample09": {
+      "urls": [
+        "https://www.jlpt.jp/samples/sample09.html",
+        "https://www.jlpt.jp/e/samples/sample09.html"
+      ],
+      "status": "Both pages 200, Last-Modified 2026-02-02. All 10 N4/N5 files per page return 200: ja files under /samples/pdf/ and /samples/mp3/ (Last-Modified 2010-07-10), en files under /e/samples/pdf/ and /e/samples/mp3/ (2010-08-26), same byte sizes in both. N5-mondai.pdf 4,443,728; N4-mondai.pdf 3,812,682; N5Sample.mp3 7,584,313; N4Sample.mp3 9,020,003.",
+      "counts": "Not recounted (no PDF opened). 2026-11-23 count from answer keys: N5 29, N4 34."
+    },
+    "otherOfficialSamplePages": [
+      {
+        "url": "https://www.jlpt.jp/samples/forlearners.html",
+        "status": "200, Last-Modified 2026-02-02; N5 player page 2017-10-23, N4 player page 2017-01-19. Unchanged."
+      },
+      {
+        "url": "https://www.jlpt.jp/samples/forteachers.html",
+        "status": "200, Last-Modified 2026-02-02; ppt/N5.zip 1,335,946 and ppt/N4.zip 1,195,442 bytes (2010-07-12). Unchanged."
+      },
+      {
+        "url": "https://www.jlpt.jp/sp/mogiinfo/index_e.html",
+        "status": "200, Last-Modified 2026-11-24 (changed after the last audit): post-test notice for the 2026-11-23 Practice Test (N1–N3 only; results around 2026-12-30). Still says 'Test questions and answers are not published.' Not a source for N5/N4."
+      },
+      {
+        "url": "https://www.jlpt.jp/e/faq/",
+        "status": "200, Last-Modified 2026-07-22. Unchanged."
+      },
+      {
+        "url": "https://www.jlpt.jp/e/topics/202401191708325175.html",
+        "status": "200. Unchanged."
+      }
+    ],
+    "newsSince20261123": "None on jlpt.jp (ja/en top pages), JEES info site (Last-Modified 2026-11-19) or the JF Hà Nội JLPT category (newest post 2026-07-29).",
+    "robotsJlptJp": "Unchanged: 39 lines; blocks YisouSpider, ByteSpider, GPTBot, ChatGPT-User, KakaoBot, perplexitybot, SemrushBot, ExaSearchBot, PetalBot; Binbot crawl-delay; no User-agent * rule and no Claude agents named."
+  },
+  "linkChecks": [
+    {
+      "url": "https://www.jlpt.jp/samples/sampleindex.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:41:18 GMT",
+      "contentLength": 78355
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/sampleindex.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:49:56 GMT",
+      "contentLength": 58005
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample09.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:41:18 GMT",
+      "contentLength": 34500
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/sample09.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:49:56 GMT",
+      "contentLength": 25237
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/forlearners.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:41:17 GMT",
+      "contentLength": 18736
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/forlearners.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:49:55 GMT",
+      "contentLength": 14812
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/forteachers.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:41:17 GMT",
+      "contentLength": 26270
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/forteachers.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:49:55 GMT",
+      "contentLength": 17234
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/n5/index.html",
+      "status": 200,
+      "lastModified": "Mon, 23 Oct 2017 00:06:36 GMT",
+      "contentLength": 3764
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/n4/index.html",
+      "status": 200,
+      "lastModified": "Thu, 19 Jan 2017 04:41:11 GMT",
+      "contentLength": 3831
+    },
+    {
+      "url": "https://www.jlpt.jp/policy.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:42:29 GMT",
+      "contentLength": 50930
+    },
+    {
+      "url": "https://www.jlpt.jp/e/policy.html",
+      "status": 200,
+      "lastModified": "Fri, 03 Apr 2026 08:55:34 GMT",
+      "contentLength": 21142
+    },
+    {
+      "url": "https://www.jlpt.jp/e/faq/",
+      "status": 200,
+      "lastModified": "Wed, 22 Jul 2026 12:59:05 GMT",
+      "contentLength": 78205
+    },
+    {
+      "url": "https://www.jlpt.jp/e/topics/202401191708325175.html",
+      "status": 200
+    },
+    {
+      "url": "https://www.jlpt.jp/reference/books.html",
+      "status": 200,
+      "lastModified": "Mon, 16 Nov 2026 01:45:33 GMT",
+      "contentLength": 29528
+    },
+    {
+      "url": "https://www.jlpt.jp/sp/mogiinfo/index_e.html",
+      "status": 200,
+      "lastModified": "Tue, 24 Nov 2026 01:13:02 GMT",
+      "contentLength": 16846
+    },
+    {
+      "url": "https://www.jlpt.jp/e/reference/materials.html",
+      "status": 200,
+      "lastModified": "Mon, 02 Feb 2026 00:49:07 GMT",
+      "contentLength": 18949
+    },
+    {
+      "url": "https://www.jlpt.jp/e/application/overseas_list.html",
+      "status": 200,
+      "lastModified": "Tue, 15 Sep 2026 10:11:34 GMT",
+      "contentLength": 129997
+    },
+    {
+      "url": "https://www.jlpt.jp/",
+      "status": 200
+    },
+    {
+      "url": "https://www.jlpt.jp/e/",
+      "status": 200
+    },
+    {
+      "url": "https://samplequestions.jlpt.jp/e/samples/sampleindex.html",
+      "status": "DNS failure (host does not resolve)"
+    },
+    {
+      "url": "https://info.jees-jlpt.jp/",
+      "status": 200,
+      "lastModified": "Thu, 19 Nov 2026 23:53:31 GMT",
+      "contentLength": 72497
+    },
+    {
+      "url": "https://hn.jpf.go.jp/category/giao-duc-tieng-nhat/ky-thi-thi-tieng-nhat-jlpt-jft-basic/",
+      "status": 200
+    },
+    {
+      "url": "https://hn.jpf.go.jp/posts/thongbaoquantrongjlpt-vn",
+      "status": 200
+    },
+    {
+      "url": "https://hcmussh.edu.vn/ttnn/nhatngujlpt",
+      "status": 200
+    },
+    {
+      "url": "https://kanji.vn/thi-thu",
+      "status": 200
+    },
+    {
+      "url": "https://nihongofree.com/jlpt-n4/luyen-nghe/",
+      "status": 200
+    },
+    {
+      "url": "https://nihongofree.com/jlpt-n5/luyen-nghe/",
+      "status": 200
+    },
+    {
+      "url": "https://safa-lang.com/jlpt/vi/mock/n5/",
+      "status": 200
+    },
+    {
+      "url": "https://jpnotes.dev/listening/",
+      "status": 200
+    },
+    {
+      "url": "https://conjugaizen.com/jlpt-practice-test/",
+      "status": 200
+    },
+    {
+      "url": "https://freetag.jp/en/jlpt/practice/index.html",
+      "status": 200,
+      "lastModified": "Fri, 20 Nov 2026 05:46:40 GMT",
+      "contentLength": 11753
+    },
+    {
+      "url": "https://www.gyanmirai.com/jlpt/jlpt-n5/listening-practice-test",
+      "status": 200,
+      "lastModified": "Wed, 25 Nov 2026 01:29:21 GMT"
+    },
+    {
+      "url": "https://jlpt.vnjpclub.com/nghe-hieu-n5-4-original02.html",
+      "status": 200,
+      "finalUrl": "https://jlpt.vnjpclub.com/nghe-hieu-n5-dap-loi-bai-02.html"
+    },
+    {
+      "url": "https://prepedu.com/vi/blog/de-thi-jlpt-n5",
+      "status": 200,
+      "contentLength": 488424
+    },
+    {
+      "url": "https://prepedu.com/vi/blog/de-thi-jlpt-n4",
+      "status": 200,
+      "contentLength": 491498
+    },
+    {
+      "url": "https://www.nihongomaster.com/jlpt-n5-practice-test",
+      "status": 200
+    },
+    {
+      "url": "https://www.nihongomaster.com/jlpt-n4-practice-test",
+      "status": 200
+    },
+    {
+      "url": "https://jlptsensei.com/downloads/jlpt-n4-practice-test",
+      "status": 202,
+      "note": "bot-challenge response (194-byte body on 2026-11-23); not bypassed"
+    },
+    {
+      "url": "https://bonjinsha.com/wp/bonjinsha_jlpt",
+      "status": 200,
+      "finalUrl": "https://www.bonjinsha.com/page_jlpt.html"
+    },
+    {
+      "url": "https://www.3anet.co.jp/np/en/books/3821/",
+      "status": 200
+    },
+    {
+      "url": "https://bookclub.japantimes.co.jp/en/book/b505867.html",
+      "status": 200
+    },
+    {
+      "url": "https://ask-books.com/catalogue/J_catalogue2024.pdf",
+      "status": 200,
+      "finalUrl": "https://client-storage.ask-books.com/wp-content/uploads/files/catalogue/J_catalogue2024.pdf",
+      "lastModified": "Fri, 12 Jun 2026 14:03:12 GMT",
+      "contentLength": 50258278
+    },
+    {
+      "url": "https://www.jresearch.co.jp/",
+      "status": 200
+    },
+    {
+      "url": "https://www.alc.co.jp/",
+      "status": 200,
+      "lastModified": "Wed, 18 Nov 2026 00:28:08 GMT",
+      "contentLength": 84399
+    },
+    {
+      "url": "https://www.scribd.com/document/613844721/JLPT-N5-Practice-Test",
+      "status": 200,
+      "contentLength": 3038
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4V.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:36 GMT",
+      "contentLength": 1056760
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4G.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:34 GMT",
+      "contentLength": 1193596
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4R.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:34 GMT",
+      "contentLength": 255031
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4L.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:35 GMT",
+      "contentLength": 2236785
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5V.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:38 GMT",
+      "contentLength": 1032465
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5G.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:37 GMT",
+      "contentLength": 1092077
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5R.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:36 GMT",
+      "contentLength": 557273
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5L.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:38 GMT",
+      "contentLength": 2366936
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q1.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:19 GMT",
+      "contentLength": 12342494
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q2.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:21 GMT",
+      "contentLength": 14257775
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q3.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:18 GMT",
+      "contentLength": 4358195
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N4Q4.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:22 GMT",
+      "contentLength": 5796428
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N5Q1.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:26 GMT",
+      "contentLength": 10141568
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N5Q2.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:27 GMT",
+      "contentLength": 8658716
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N5Q3.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:25 GMT",
+      "contentLength": 4406567
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/mp3/N5Q4.mp3",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:29 GMT",
+      "contentLength": 4419911
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4sheet.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:35 GMT",
+      "contentLength": 883828
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4answer.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:33 GMT",
+      "contentLength": 78736
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N4script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:35 GMT",
+      "contentLength": 343922
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5sheet.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:37 GMT",
+      "contentLength": 882151
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5answer.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:36 GMT",
+      "contentLength": 77800
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2018/pdf/N5script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 27 Dec 2018 06:37:37 GMT",
+      "contentLength": 303172
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4V.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:46 GMT",
+      "contentLength": 1350609
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4G.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:43 GMT",
+      "contentLength": 1219278
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4R.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:44 GMT",
+      "contentLength": 629000
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4L.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:44 GMT",
+      "contentLength": 1712419
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5V.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:50 GMT",
+      "contentLength": 1273526
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5G.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:47 GMT",
+      "contentLength": 1252504
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5R.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:48 GMT",
+      "contentLength": 727015
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5L.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:47 GMT",
+      "contentLength": 1602639
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q1.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:21:57 GMT",
+      "contentLength": 3391714
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2017/mp3/N4Q2.mp3",
+      "status": 200,
+      "lastModified": "Wed, 10 May 2017 00:06:10 GMT",
+      "contentLength": 12867877
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q3.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:21:59 GMT",
+      "contentLength": 1231036
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q4.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:00 GMT",
+      "contentLength": 1527514
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q1.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:01 GMT",
+      "contentLength": 2921244
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2017/mp3/N5Q2.mp3",
+      "status": 200,
+      "lastModified": "Wed, 10 May 2017 00:06:11 GMT",
+      "contentLength": 8520652
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q3.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:03 GMT",
+      "contentLength": 1214084
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q4.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:03 GMT",
+      "contentLength": 1183820
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4sheet.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:45 GMT",
+      "contentLength": 1159140
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4answer.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:42 GMT",
+      "contentLength": 135028
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N4script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:44 GMT",
+      "contentLength": 317324
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5sheet.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:49 GMT",
+      "contentLength": 1120230
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5answer.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:46 GMT",
+      "contentLength": 135025
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/pdf/N5script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:48 GMT",
+      "contentLength": 260859
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N4Q2.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:21:59 GMT",
+      "contentLength": 3909634
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/sample2012/mp3/N5Q2.mp3",
+      "status": 200,
+      "lastModified": "Thu, 14 Jun 2012 10:22:02 GMT",
+      "contentLength": 2723488
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/ppt/N5.zip",
+      "status": 200,
+      "lastModified": "Mon, 12 Jul 2010 08:41:09 GMT",
+      "contentLength": 1335946
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/ppt/N4.zip",
+      "status": 200,
+      "lastModified": "Mon, 12 Jul 2010 08:41:09 GMT",
+      "contentLength": 1195442
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/mp3/N4Sample.mp3",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:23 GMT",
+      "contentLength": 9020003
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/mp3/N5Sample.mp3",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:24 GMT",
+      "contentLength": 7584313
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N4-kaitou.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:34 GMT",
+      "contentLength": 383135
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N4-mondai.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:35 GMT",
+      "contentLength": 3812682
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N4-script.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:35 GMT",
+      "contentLength": 974327
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N4-seikai.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:35 GMT",
+      "contentLength": 37552
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N5-kaitou.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:36 GMT",
+      "contentLength": 371599
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N5-mondai.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:36 GMT",
+      "contentLength": 4443728
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N5-script.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:37 GMT",
+      "contentLength": 757940
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/pdf/N5-seikai.pdf",
+      "status": 200,
+      "lastModified": "Sat, 10 Jul 2010 06:07:37 GMT",
+      "contentLength": 34996
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/mp3/N4Sample.mp3",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:33 GMT",
+      "contentLength": 9020003
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/mp3/N5Sample.mp3",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:35 GMT",
+      "contentLength": 7584313
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N4-kaitou.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:45 GMT",
+      "contentLength": 383135
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N4-mondai.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:46 GMT",
+      "contentLength": 3812682
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N4-script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:47 GMT",
+      "contentLength": 974327
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N4-seikai.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:47 GMT",
+      "contentLength": 37552
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N5-kaitou.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:47 GMT",
+      "contentLength": 371599
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N5-mondai.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:49 GMT",
+      "contentLength": 4443728
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N5-script.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:50 GMT",
+      "contentLength": 757940
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/pdf/N5-seikai.pdf",
+      "status": 200,
+      "lastModified": "Thu, 26 Aug 2010 01:29:50 GMT",
+      "contentLength": 34996
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.jlpt.jp/samples/sampleindex.html",
+      "name": "日本語能力試験 公式問題集 (ja) / Official Practice Workbook (en: /e/samples/sampleindex.html)",
+      "publisher": "Japan Foundation / JEES",
+      "contains": "2012 and 第二集 2018 workbooks, N1–N5; per level V/G/R/L PDFs, answer sheet, answers, script, 4 MP3. Reng imported N5/N4 of both.",
+      "audio": "yes (third-party works; link only)",
+      "terms": "Site policy 1(4): free Japanese-teaching material with the credit next to it; 聴解 audio needs separate permission.",
+      "robots": "allowed",
+      "status": "200; 44 N4/N5 files 200; 2012 問題2 links sample2017 (see officialChecks)",
+      "verdict": "official-usable-with-credit",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.jlpt.jp/e/samples/sample09.html",
+      "name": "New JLPT Sample Questions 2009 (ja: /samples/sample09.html)",
+      "publisher": "Japan Foundation / JEES",
+      "contains": "Sample items, pre-2010 format: N5 29, N4 34 (counted 2026-11-23); one MP3 per level covering some items.",
+      "audio": "yes (some items; treat as link only)",
+      "terms": "Site policy 1(4).",
+      "robots": "allowed",
+      "status": "200; all 20 N4/N5 files 200",
+      "verdict": "official-usable-with-credit",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/forlearners.html",
+      "name": "問題例に挑戦しよう (interactive)",
+      "publisher": "Japan Foundation / JEES",
+      "contains": "One item per 大問, adapted from the 2009 set; N5 14 / N4 15 (inferred 2026-11-23).",
+      "audio": "yes, in player",
+      "terms": "Site policy.",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "link-only",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "notes": "Already linked from /exams. Interactive player; nothing to import beyond sample09.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.jlpt.jp/samples/forteachers.html",
+      "name": "問題例スライド（教師向け）",
+      "publisher": "Japan Foundation / JEES",
+      "contains": "N5.zip/N4.zip slides of the 2009 items + MP3.",
+      "audio": "yes, in ZIP",
+      "terms": "Site policy.",
+      "robots": "allowed",
+      "status": "200; ZIPs 200 (HEAD only)",
+      "verdict": "official-usable-with-credit",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "notes": "Same items as sample09; only for old-vs-new format explanation.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.jlpt.jp/policy.html",
+      "name": "JLPT site policy",
+      "publisher": "Japan Foundation / JEES",
+      "contains": "Copyright terms",
+      "audio": null,
+      "terms": "1(4) unchanged; Last-Modified 2026-02-02.",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "official-usable-with-credit",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "notes": "Rights basis, not a question source.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.bonjinsha.com/page_jlpt.html",
+      "name": "Bonjinsha JLPT books (old URL https://bonjinsha.com/wp/bonjinsha_jlpt now redirects here)",
+      "publisher": "凡人社",
+      "contains": "Sells 公式問題集 2012 and 第二集 2018; no 第三集, no free mock.",
+      "audio": null,
+      "terms": "Store page.",
+      "robots": "not checked",
+      "status": "200 after 2 redirects",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://jpnotes.dev/listening/",
+      "name": "JPNotes listening + mock tests (/n5-mock-test/, /n4-mock-test/)",
+      "publisher": "jpnotes.dev, personal project of GitHub user Ralphbupt (source github.com/Ralphbupt/japanese-grammar)",
+      "contains": "Listening: N5 146, N4 150 items (unchanged). Mock tests: 2 per level; set 1 N5 = 43 language/reading + 24 listening, N4 = 57 + 28. Original questions written with AI help; listening voices are Google Gemini AI speech; example sentences Edge TTS.",
+      "audio": "yes, AI voices (no real exam recordings)",
+      "terms": "/terms/ (last updated 2026-11-24): 'Lessons, questions, audio, pictures and Anki decks are licensed CC BY-NC 4.0.' /about/: no selling and no use in paid courses or materials.",
+      "robots": "allowed (Disallow only /anki/*.txt, *.apkg)",
+      "status": "200",
+      "verdict": "ask-permission",
+      "previousVerdict": "usable",
+      "previouslyListed": true,
+      "pendingUserDecision": true,
+      "notes": "Licence now explicitly covers questions and audio (new terms page dated the day after the last audit). Mock tests are not named but fall under 'questions'. NC clause: fine for Reng's free classes, but would conflict if Reng ever charges for a class or course. N1 lessons are AI-written and only AI-reviewed; quality of N5/N4 items not checked. Its 過去問・公式問題集 page only links to jlpt.jp (fine); separate 過去問の文法 analysis pages: exclude. Verdict 'ask-permission' instead of 'usable' only because Reng's commercial status is the user's call; CC BY-NC itself needs no request if use stays non-commercial with credit.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://safa-lang.com/jlpt/vi/mock/n5/",
+      "name": "Mainichi JLPT mock (N5; N4 at /jlpt/vi/mock/n4/)",
+      "publisher": "safa (Mainichi JLPT app)",
+      "contains": "N5 33 questions, N4 37 questions, 4 parts incl. listening.",
+      "audio": "yes (production not stated)",
+      "terms": "'Original study material by Mainichi JLPT. Not affiliated with the Japan Foundation, JEES, or the official JLPT.' © 2026 safa; no licence or terms link.",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "All rights reserved by default; no reuse licence. N4 page newly recorded.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://kanji.vn/thi-thu",
+      "name": "Kanji.vn thi thử",
+      "publisher": "Kanji.vn",
+      "contains": "N5 5 x 67, N4 5 x 85, N3 5 x 102; listening audio.",
+      "audio": "yes",
+      "terms": "'Đề biên soạn theo cấu trúc đề JLPT từ kỳ thi 12/2020'; only '© 2026 Kanji.vn', no terms or licence link.",
+      "robots": "allowed (Disallow /api/, /mcp/, account pages)",
+      "status": "200; unchanged",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "Authors and question origin not named; no month/year labels. Do not import; link at most.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://prepedu.com/vi/blog/de-thi-jlpt-n5",
+      "name": "Prepedu 'đề thi JLPT N5 chính thức 2017-2023' (and /vi/blog/de-thi-jlpt-n4)",
+      "publisher": "Prepedu",
+      "contains": "Claims 10 official N5 sets 2017–2023 (title says 2017–2024); Google Drive folder (not opened).",
+      "audio": "not checked",
+      "terms": "No licence for the papers; no credit to jlpt.jp; DMCA badge. Page shows 'Cập nhật: 19/11/2026', no disclaimer added.",
+      "robots": "Claude-User allowed (Content-Signal ai-input=yes, ai-train=no)",
+      "status": "200",
+      "verdict": "do-not-use",
+      "previousVerdict": "do-not-use",
+      "previouslyListed": true,
+      "notes": "Real sessions are never published; reconstructed/leaked material. Verdict confirmed.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.nihongomaster.com/jlpt-n5-practice-test",
+      "name": "Nihongo Master N5/N4 practice test",
+      "publisher": "Nihongo Master",
+      "contains": "25 questions per attempt (20 + 5 listening).",
+      "audio": "'Real recorded Japanese, not text-to-speech'",
+      "terms": "'Every question is drawn from the same material the JLPT N5 tests' / '25 real N5 questions'; © 2026 All rights reserved.",
+      "robots": "allowed",
+      "status": "200 (N5 and N4)",
+      "verdict": "do-not-use",
+      "previousVerdict": "do-not-use",
+      "previouslyListed": true,
+      "notes": "Still claims 'real' questions with no provenance. Verdict confirmed.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://jlptsensei.com/downloads/jlpt-n4-practice-test",
+      "name": "JLPT Sensei N4 practice test download",
+      "publisher": "JLPT Sensei",
+      "contains": "Unknown (page not readable). Search snippets describe it as based on the official sample and say the original PDF is from jlpt.jp.",
+      "audio": "unknown",
+      "terms": "not read",
+      "robots": "allowed (only /wp-admin/)",
+      "status": "HEAD 202 bot challenge again; not bypassed",
+      "verdict": "do-not-use",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "Changed to do-not-use: if the download is a re-hosted jlpt.jp sample, Reng should link jlpt.jp directly; if not, its rights are unclear. Terms could not be read.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://jlpt.vnjpclub.com/nghe-hieu-n5-4-original02.html",
+      "name": "VNJPClub N5 listening page",
+      "publisher": "VNJPClub",
+      "contains": "Not read.",
+      "audio": null,
+      "terms": null,
+      "robots": "robots.txt now has a Claude-User group that allows only the home page, grammar pages and hub/list pages (incl. /de-thi-jlpt-n5.html and /en/jlpt-n5-past-papers.html) and disallows all question pages; the listed URL is disallowed.",
+      "status": "redirects (1 hop) to https://jlpt.vnjpclub.com/nghe-hieu-n5-dap-loi-bai-02.html (200)",
+      "verdict": "do-not-use",
+      "previousVerdict": "do-not-use",
+      "previouslyListed": true,
+      "notes": "Hosts month/year past-paper pages; not opened.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://nihongofree.com/jlpt-n5/luyen-nghe/",
+      "name": "NihongoFree N5/N4 listening",
+      "publisher": "NihongoFree.com",
+      "contains": "Unchanged from 2026-11-23 (not re-read in detail).",
+      "audio": "Google Cloud TTS",
+      "terms": "© 2026; disclaims JF/JEES affiliation",
+      "robots": "as 2026-11-23",
+      "status": "200 (N5 and N4)",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://conjugaizen.com/jlpt-practice-test/",
+      "name": "Conjugaizen JLPT practice tests",
+      "publisher": "Conjugaizen",
+      "contains": "Unchanged (N5 2 x 67, N4 2 x 85).",
+      "audio": "not mentioned",
+      "terms": "'All questions are original'; unofficial; no licence.",
+      "robots": "as 2026-11-23",
+      "status": "200",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://freetag.jp/en/jlpt/practice/index.html",
+      "name": "FreeTag JLPT practice",
+      "publisher": "FreeTag",
+      "contains": "Unchanged (N5 840, N4 1,000); Last-Modified 2026-11-20.",
+      "audio": "synthetic",
+      "terms": "Original, not official; no licence.",
+      "robots": "robots.txt 404",
+      "status": "200",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.gyanmirai.com/jlpt/jlpt-n5/listening-practice-test",
+      "name": "GyanMirai N5 listening",
+      "publisher": "GyanMirai",
+      "contains": "Unchanged (26 papers).",
+      "audio": "yes",
+      "terms": "All rights reserved; partly paywalled.",
+      "robots": "ai-train=no; ClaudeBot disallowed",
+      "status": "200",
+      "verdict": "do-not-use",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "Paywall for explanations; no reuse licence.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.3anet.co.jp/np/en/books/3821/",
+      "name": "3A Network N3 模擬テスト (book)",
+      "publisher": "スリーエーネットワーク",
+      "contains": "Paid book; free audio for book users.",
+      "audio": "yes",
+      "terms": "No reuse licence.",
+      "robots": "robots.txt 404",
+      "status": "200",
+      "verdict": "do-not-use",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "Paid publisher material; N3 only.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://bookclub.japantimes.co.jp/en/book/b505867.html",
+      "name": "The Best Practice Tests for the JLPT N5",
+      "publisher": "ジャパンタイムズ出版",
+      "contains": "Paid book, 3 tests.",
+      "audio": "free MP3 for book users",
+      "terms": "No reuse licence.",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "do-not-use",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://ask-books.com/catalogue/J_catalogue2024.pdf",
+      "name": "ASK catalogue 2024 (合格模試 N5/N4)",
+      "publisher": "アスク出版",
+      "contains": "Paid books.",
+      "audio": "DL for book users",
+      "terms": "not read",
+      "robots": "allowed",
+      "status": "200 after 3 redirects → https://client-storage.ask-books.com/wp-content/uploads/files/catalogue/J_catalogue2024.pdf (50,258,278 bytes; not downloaded)",
+      "verdict": "do-not-use",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.scribd.com/document/613844721/JLPT-N5-Practice-Test",
+      "name": "Scribd uploads",
+      "publisher": "anonymous uploaders",
+      "contains": "Not opened.",
+      "audio": null,
+      "terms": "All rights reserved (per search snippet)",
+      "robots": "not checked",
+      "status": "200 (3 KB shell)",
+      "verdict": "do-not-use",
+      "previousVerdict": "do-not-use",
+      "previouslyListed": true,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://github.com/gauravhq/JLPTSuccess",
+      "name": "JLPTSuccess (site: https://gauravhq.github.io/JLPTSuccess/N5/)",
+      "publisher": "JLPTSuccess contributors (GitHub gauravhq; Pages moved from gauravaccentureproducts.github.io, old URLs now 404)",
+      "contains": "N5: 28 papers / 402 questions (moji, goi, bunpou, dokkai), 284-item question bank, 54 reading passages, 50 listening drills; the listening 'chokai' paper has 0 questions. N4: in progress (questions.json 316 bytes, papers folder empty). UI languages EN/VI/ID/NE/ZH.",
+      "audio": "yes: VOICEVOX synthetic listening audio (6 characters) and gTTS for reading",
+      "terms": "LICENSE: code MIT; 'Educational CONTENT … is licensed separately under CC BY-SA 4.0.' N5/CONTENT-LICENSE.md: all questions are 'original content … None of it is copied from JLPT past papers.' N4/CONTENT-LICENSE.md says CC-BY 4.0 (inconsistent with the root LICENSE). VOICEVOX characters each have their own credit terms.",
+      "robots": "gauravhq.github.io/JLPTSuccess/robots.txt: User-agent * Allow /",
+      "status": "repo 200 (pushed 2026-11-17, 5 stars); site 200",
+      "verdict": "ask-permission",
+      "previouslyListed": false,
+      "pendingUserDecision": true,
+      "notes": "Only open-licence N5 mock-paper bank found. Share-alike: any Reng exam built from it would have to be released under CC BY-SA 4.0, plus per-character VOICEVOX credits. Quality not reviewed; created 2026-05, single maintainer, heavy AI-tool use visible in repo (.claude folder). No N5 listening paper. Propose: link only, or ask the maintainer to confirm the licence before any reuse.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://jpnotes.dev/terms/",
+      "name": "JPNotes terms page (new)",
+      "publisher": "jpnotes.dev",
+      "contains": "Licence terms",
+      "audio": null,
+      "terms": "'Lessons, questions, audio, pictures and Anki decks are licensed CC BY-NC 4.0.' Credit to jpnotes.dev, non-commercial only. Last updated 2026-11-24.",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "ask-permission",
+      "previouslyListed": false,
+      "notes": "See the jpnotes.dev entry above.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://wp3.tufs.ac.jp/nijiiro/tokyo-metropolitan-university-listening-quiz-n2-level/",
+      "name": "TMU mic-J Listening Quiz (N4 quiz at http://nihongo.hum.tmu.ac.jp/mic-j/listen3q/index.html)",
+      "publisher": "Tokyo Metropolitan University, listed on TUFS Nijiiro",
+      "contains": "Interactive listening quizzes N1, N2, N4 (page title 'ListeningQuiz-Level3', i.e. old 3級); MP3 and scripts; N4 item count not stated; no N5.",
+      "audio": "yes (MP3)",
+      "terms": "'You can freely use the materials without any fee as long as they are used for non-profit educational purposes. When you use them, TMU ask you to mail us where and how you use the materials.'",
+      "robots": "wp3.tufs.ac.jp/robots.txt returns a WordPress 'Forbidden' page; nihongo.hum.tmu.ac.jp robots.txt 404",
+      "status": "200 (HTTP only; HTTPS certificate fails)",
+      "verdict": "ask-permission",
+      "previouslyListed": false,
+      "notes": "University material with a non-profit education licence, but it is not JLPT-format N4/N5 sample exam content (old 3級-era quiz, QuickTime player). Low value for Reng; usable only after emailing TMU as their terms request.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://open-exam-prep.com/practice/jlpt-n5",
+      "name": "OpenExamPrep JLPT N5 (and /practice/jlpt-n4)",
+      "publisher": "OpenExamPrep",
+      "contains": "124+ N5 practice questions, text only.",
+      "audio": "not stated",
+      "terms": "'our practice questions are independently developed simulations', not 'actual, recalled, or sponsor-provided exam items'; Terms of Service linked, no open licence.",
+      "robots": "allowed (Content-Signal search=yes)",
+      "status": "200 (WebFetch)",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://cotoacademy.com/jlpt-n5-mock-test-online-practice/",
+      "name": "Coto Academy JLPT N5 mock test",
+      "publisher": "Coto Japanese Academy",
+      "contains": "About 66 N5 items (vocabulary 35, grammar ~25, reading 6); no listening.",
+      "audio": "no",
+      "terms": "Origin not stated; '© Copyright 2026 www.cotoacademy.com'.",
+      "robots": "Claude agents explicitly allowed",
+      "status": "200",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "notes": "Commercial school; no reuse licence; origin unstated.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.irodori.jpf.go.jp/privacy.html",
+      "name": "いろどり 生活の日本語 terms",
+      "publisher": "Japan Foundation Japanese-Language Institute, Urawa",
+      "contains": "A1–A2 course (JFT-Basic oriented), not JLPT; no test-format items seen.",
+      "audio": "yes (course audio)",
+      "terms": "Allowed for '学校その他教育機関での利用や私的使用'; derived materials must be free and '情報の引用元を明示して下さい'.",
+      "robots": "robots.txt returns 403 AccessDenied (no readable rules)",
+      "status": "200",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "notes": "Not a JLPT sample source; recorded because the terms are teacher-friendly if Reng ever wants Irodori-style A1/A2 material.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.e-aoi.uzh.ch/apps/jlpt/",
+      "name": "University of Zurich JLPT page",
+      "publisher": "University of Zurich",
+      "contains": "Test information only; links to jlpt.jp forlearners.",
+      "audio": null,
+      "terms": "No reuse statement.",
+      "robots": "robots.txt 404",
+      "status": "200",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "notes": "No own questions.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://minato-jf.jp/",
+      "name": "JF Japanese e-Learning Minato",
+      "publisher": "Japan Foundation",
+      "contains": "LMS for Marugoto-based courses (A1–B1); search found no JLPT N5/N4 mock course.",
+      "audio": null,
+      "terms": "not read (courses need login)",
+      "robots": "robots.txt URL returns an HTML page (no rules)",
+      "status": "not opened",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "notes": "Course list not verified; nothing to import.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://hn.jpf.go.jp/category/giao-duc-tieng-nhat/ky-thi-thi-tieng-nhat-jlpt-jft-basic/",
+      "name": "JF Hà Nội JLPT notices",
+      "publisher": "Japan Foundation Center for Cultural Exchange in Vietnam",
+      "contains": "9 posts, newest 2026-07-29; no sample tests.",
+      "audio": null,
+      "terms": "n/a",
+      "robots": "allowed",
+      "status": "200",
+      "verdict": "link-only",
+      "previousVerdict": "reference-only",
+      "previouslyListed": true,
+      "notes": "ufl.udn.vn (Đà Nẵng), hucfl.edu.vn (Huế), ULIS and HANU: searches found no sample-test pages.",
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://www.nihongo-pro.com/quiz/2e41c49531/jlpt-n5-grammar-sample-jlpt-test-questions",
+      "name": "Nihongo-Pro free quizzes",
+      "publisher": "Nihongo-Pro",
+      "contains": "Short topic quizzes (N5/N4 grammar), some dated 2012–2014.",
+      "audio": "not checked",
+      "terms": "not read",
+      "robots": "allowed except /quiz-media, /kyouzai",
+      "status": "seen in search only",
+      "verdict": "link-only",
+      "previouslyListed": false,
+      "checkedAt": "2026-11-25"
+    },
+    {
+      "url": "https://apps.apple.com/vn/app/migii-jlpt-jlpt-test-n5-n1/id1463267540",
+      "name": "Migii JLPT (app)",
+      "publisher": "eUp Group",
+      "contains": "Mock tests N5–N1; a store listing mentions 過去問.",
+      "audio": "yes",
+      "terms": "Paid premium; terms at eupgroup.net (not read).",
+      "robots": "n/a",
+      "status": "seen in search only",
+      "verdict": "do-not-use",
+      "previouslyListed": false,
+      "notes": "App store; mentions past papers; paywall.",
+      "checkedAt": "2026-11-25"
+    }
+  ],
+  "flagsForUser": [
+    "2012 workbook 問題2 audio (decision needed): jlpt.jp now links https://www.jlpt.jp/samples/sample2017/mp3/N5Q2.mp3 and .../N4Q2.mp3 (2017-05-10, about 3x larger) for 問題2 of all levels; Reng's 13 audioUrl values point to the 2012 files https://www.jlpt.jp/samples/sample2012/mp3/N5Q2.mp3 (6 uses) and N4Q2.mp3 (7 uses), which still return 200. The page's size labels and the 2012 script PDF were not updated, and there is no notice. Someone needs to listen to both files once to decide whether Reng's link (and its re-recorded script) should switch to the 2017 file. No audio was downloaded in this audit.",
+    "jpnotes.dev terms were updated on 2026-11-24 and now explicitly put 'questions, audio' under CC BY-NC 4.0 (credit jpnotes.dev, non-commercial). That settles the 'does it cover audio' doubt from 2026-11-23. Reuse is allowed only while Reng's use stays non-commercial; the user must decide whether Reng counts as non-commercial (paid classes would not). The content is original AI-assisted practice, not real JLPT items.",
+    "New open-licence candidate: JLPTSuccess (https://github.com/gauravhq/JLPTSuccess): 28 original N5 papers / 402 questions plus a 284-item bank, VOICEVOX listening drills, Vietnamese UI. Content is CC BY-SA 4.0 per the root LICENSE (N4 file says CC-BY 4.0: inconsistent). Share-alike would bind any Reng derivative; there is no N5 listening paper and N4 is not built yet. Proposal: link only, or ask the maintainer before reuse.",
+    "TMU mic-J Listening Quiz (N4, old 3級 era) allows free non-profit educational use but asks users to email TMU where and how it is used. Low value; skip unless the user wants it.",
+    "No new legally usable REAL JLPT question source. jlpt.jp still has only 公式問題集 2012 + 第二集 2018 plus the 2009 samples; no news, no 第三集, policy unchanged since the last audit.",
+    "jlptsensei download page still serves a bot challenge (HTTP 202); terms unread. Verdict moved to do-not-use: link jlpt.jp directly instead."
+  ],
+  "changesSince20261123": [
+    {
+      "item": "source-registry.json dead host",
+      "before": "https://samplequestions.jlpt.jp/... (NXDOMAIN)",
+      "after": "Already fixed in the repo: registry and catalog now use https://www.jlpt.jp/e/samples/sampleindex.html and /e/samples/sample09.html (200). Host still does not resolve."
+    },
+    {
+      "item": "2012 問題2 audio",
+      "before": "Reported, mapping not itemised",
+      "after": "Itemised per level and mondai (officialChecks.officialWorkbookLinks.workbook2012Mondai2Audio); confirmed for all five levels; page size labels still show the 2012 sizes; sample2017 folder holds only Q2 files."
+    },
+    {
+      "item": "jpnotes.dev licence",
+      "before": "Footer only: 'Content licensed CC BY-NC 4.0'; audio coverage unclear",
+      "after": "/terms/ dated 2026-11-24: 'Lessons, questions, audio, pictures and Anki decks are licensed CC BY-NC 4.0.' Mock tests counted (N5 43+24, N4 57+28 for set 1)."
+    },
+    {
+      "item": "jpnotes.dev verdict",
+      "before": "usable (pending user decision)",
+      "after": "ask-permission (licence is clear; the open question is whether Reng's use is non-commercial)"
+    },
+    {
+      "item": "jlptsensei verdict",
+      "before": "reference-only",
+      "after": "do-not-use (still bot-challenged; terms unknown)"
+    },
+    {
+      "item": "Bonjinsha URL",
+      "before": "https://bonjinsha.com/wp/bonjinsha_jlpt (200)",
+      "after": "Redirects (2 hops) to https://www.bonjinsha.com/page_jlpt.html (200); content unchanged (no 第三集)."
+    },
+    {
+      "item": "ASK catalogue URL",
+      "before": "https://ask-books.com/catalogue/J_catalogue2024.pdf",
+      "after": "Redirects (3 hops) to https://client-storage.ask-books.com/wp-content/uploads/files/catalogue/J_catalogue2024.pdf (200, 50 MB, not downloaded)."
+    },
+    {
+      "item": "VNJPClub robots.txt",
+      "before": "Recorded as disallowing / for Claude-User",
+      "after": "Claude-User group now allows only home, grammar and hub/list pages (incl. past-paper hubs) and disallows question pages; listed URL still disallowed. Verdict unchanged (do-not-use)."
+    },
+    {
+      "item": "JLPT Practice Test page",
+      "before": "Pre-test info",
+      "after": "Last-Modified 2026-11-24: post-test notice (N1–N3 only); questions still not published."
+    },
+    {
+      "item": "Third-party verdict vocabulary",
+      "before": "usable / reference-only / do-not-use",
+      "after": "official-usable-with-credit / link-only / ask-permission / do-not-use. Paid publisher books, paywalled sites and 'all rights reserved' sites that were 'reference-only' are now 'do-not-use' for reuse (format study by reading them is still possible); free original-practice sites without a licence are 'link-only'."
+    },
+    {
+      "item": "New candidates",
+      "before": "-",
+      "after": "JLPTSuccess (ask-permission), TMU mic-J listening quiz (ask-permission), OpenExamPrep, Coto Academy, Irodori terms, UZH page, Minato, Nihongo-Pro (link-only), Migii (do-not-use)."
+    },
+    {
+      "item": "No change",
+      "before": "-",
+      "after": "All 44 official N4/N5 workbook files, all 20 sample09 N4/N5 files, the 2 teacher ZIPs and all 16 Reng audioUrl values return 200 with the same Last-Modified and sizes; jlpt.jp policy, FAQ, books list, robots.txt unchanged; JF Hà Nội newest post 2026-07-29."
+    }
+  ]
+}

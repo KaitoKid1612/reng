@@ -490,8 +490,9 @@ Bản đầu (13/11/2026, file `n5-minna-1-16.json`) phủ bài 1–16. Ngày 18
 |---|---|
 | `source-registry.json` | Ba bộ đề mẫu chính thức (2009, 2012, 2018): chỉ link, `importPolicy: metadata-only-until-rights-cleared` |
 | `official-audio-manifest.json` | 16 link MP3 nghe hiểu chính thức N4/N5; chưa tải, chưa nghe, chưa có quyền dùng lại |
-| `external-source-catalog.json` | 10 nguồn khác ở Việt Nam và nước ngoài để tham khảo dạng câu, cùng các điều kiện trước khi công bố (`publicationGates`) |
+| `external-source-catalog.json` | Các nguồn khác ở Việt Nam và nước ngoài với nhãn dùng (`verdicts`: `official-usable-with-credit`, `link-only`, `ask-permission`, `do-not-use`), cùng các điều kiện trước khi công bố (`publicationGates`) |
 | `source-audit-2026-11-09.json` | Kết quả rà soát ngày 09/11: việc đã kiểm, chỗ bị chặn, bước tiếp theo |
+| `source-audit-2026-11-23.json`, `source-audit-2026-11-25.json` | Hai lần rà nguồn đề mẫu N5/N4 trên mạng cho bộ đề có bản in: từ khóa, kiểm tra link, nhãn từng nguồn, việc chờ người dùng quyết |
 | `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`; `reviewStatus: reviewed` và `reviewedAt` khi đã duyệt (cả hai file duyệt ngày 10/11/2026) |
 | `generated/` | Nội dung bài sinh từ hai file trên bằng `npm run jlpt:drafts`; không sửa tay |
 
