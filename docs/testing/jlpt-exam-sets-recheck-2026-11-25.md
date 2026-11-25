@@ -81,8 +81,34 @@ Agent chỉ đọc metadata: không tải PDF hay MP3, không chép câu hỏi, 
   - Migii: `do-not-use`.
 - **Đơn vị tổ chức thi ở Việt Nam** không công bố đề mẫu: JF Hà Nội, ĐH Ngoại ngữ Đà Nẵng, Huế, ULIS, HANU.
 
+## Đề thi thật từ trước đến nay
+
+Người dùng muốn có đề JLPT thật N5, N4 qua các năm. Một agent tìm các đường hợp pháp, chỉ đọc metadata, không mở đề hay đáp án. Kết quả ở `content/jlpt/real-past-papers-2026-11-25.json`.
+
+- **Chính sách:** FAQ của jlpt.jp ghi rằng đề mỗi kỳ không được in nguyên bộ thành sách.
+  - Hai tập 公式問題集 (2012, 2018) gồm các câu đã thật sự ra thi sau năm 2010, mỗi tập đủ một đề. Reng đã có cả hai.
+  - FAQ hứa sẽ phát hành tập mới theo định kỳ nhưng chưa có ngày.
+  - Quyền tác giả câu hỏi thi thuộc Quỹ Giao lưu Quốc tế Nhật Bản (JF) và JEES; cấm chép lại khi chưa được phép.
+- **Đề thật dạng cũ (trước 2010; 4級 ≈ N5, 3級 ≈ N4):**
+  - Có sách 『日本語能力試験 3・4級試験問題と正解』 của 凡人社, mỗi kỳ một cuốn, từ 平成2年度 (1990) đến 平成21年度第2回 (12/2009); từ 平成13年度 có CD.
+  - Còn đặt mua mới được 平成19 và 平成20年度 (Kinokuniya, khoảng 1.466 yên); các năm khác phải tìm sách cũ hoặc thư viện. Thư viện VJCC TP.HCM có 平成5–20年度.
+  - Không có bản miễn phí chính thức trên mạng.
+- **Xin phép dùng lại:** mục 1(5) chính sách jlpt.jp. Gửi email trước tới `jlptinfo@jpf.go.jp`, ghi 10 thông tin: mục đích, cách dùng, phương tiện, người làm, giá, số lượng, phạm vi, thời hạn… Mục 1(4) chỉ cho phép sẵn với nội dung đăng trên jlpt.jp, nên sách cũ in giấy phải xin riêng. Bản nháp thư tiếng Nhật nằm trong file JSON (`answers.q3_permissionProcess.draftRequest`).
+- **Báo cáo phân tích đề của JEES (平成2–21年度):** bản số hóa chỉ đọc được trong Thư viện Quốc hội Nhật (NDL), không công khai trên mạng.
+- **"Đề thi tháng 7/12 năm X" lưu hành ở Việt Nam:**
+  - Quy định thi coi việc mang đề ra khỏi phòng, chép đề hay ghi âm phần nghe là vi phạm bị hủy kết quả. Ban tổ chức báo công an khi đề bị lấy cắp hay lộ.
+  - JF Hà Nội cấm thu thập, mua bán đề cũ.
+  - Reng không dùng loại này.
+
+Đường đi tiếp, theo thứ tự:
+1. Giữ hai tập đề chính thức, chờ tập mới.
+2. Mua sách 3・4級 試験問題と正解 để dùng nguyên bản trong lớp (không photo phát, không số hóa).
+3. Gửi thư xin phép theo mục 1(5) nếu muốn đưa câu cũ vào Reng; chỉ nhập khi có trả lời đồng ý bằng văn bản.
+4. Giáo viên đọc tham khảo ở thư viện.
+
 ## Còn mở
 
 - Nghe so sánh audio 問題2 tập 2012 với file 2017 để quyết có đổi 13 link không.
 - Quyết về jpnotes.dev (CC BY-NC) và JLPTSuccess (CC BY-SA, giấy phép mâu thuẫn): chỉ đặt link, xin phép, hay bỏ qua.
+- Quyết có mua sách đề cũ và gửi thư xin phép JF không; cần người ký, email liên hệ, năm muốn dùng, số học viên, và Reng có thu phí không.
 - Hai bước nạp ngân hàng N5 và N4 lên production ở [báo cáo 23/11](jlpt-exam-sets-2026-11-23.md#còn-mở) vẫn chờ người dùng chạy.

@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Legal routes to REAL past JLPT questions at N5/N4 level (incl. old-format 4級/3級). Third pass on 2026-11-25; practice/mock sources from the 2026-11-23 and 2026-11-25 audits are not repeated.",
+  "checkedAt": "2026-11-25",
+  "method": "Official pages read as HTML (jlpt.jp FAQ, policy, contact, statistics; JEES JLPT info site; JF Hà Nội). Official rules PDF (JEES 試験当日の諸注意, 2026-11-16) opened because it is a rules document. Library catalogues: CiNii Books record pages (/ncid/, allowed by robots; /books/search and opensearch are disallowed so not used), NDL Search HTML search and record pages (/api disallowed so not used; dl.ndl.go.jp /search disallowed so not used), VJCC HCMC library catalogue PDF (a holdings list, robots allows all). Bookshop availability from Kinokuniya product pages (robots allows /f/). No question paper, answer key, passage or audio was opened or downloaded. JF library OPAC (lib-opac.jpf.go.jp) not fetched: robots.txt disallows Claude-User. Amazon returned 503 and a Greek embassy booklist and a TAMU catalogue returned 403; not retried.",
+  "answers": {
+    "q1_officialPolicyOnPastQuestions": {
+      "answer": "Yes. jlpt.jp FAQ says the organisers do not publish each test as it was, but the 2012 公式問題集 and 2018 第二集 contain questions actually used after the 2010 revision, about one test's worth per level, and that more such volumes are planned (no date). Copyright in test questions belongs to JF and JEES, and unauthorised reproduction is prohibited.",
+      "evidence": [
+        {
+          "url": "https://www.jlpt.jp/faq/",
+          "lastModified": "2026-07-22",
+          "question": "過去に出題された試験問題は出版されますか。",
+          "quote": "毎回の試験をそのまま問題集として出版することはしませんが、2010年に改定した日本語能力試験についてこれまでに2集の『日本語能力試験公式問題集』が発行されています。この『日本語能力試験公式問題集』（2012年発行）と『日本語能力試験公式問題集 第二集』（2018年発行）には、2010年の改定後実際に出題した試験問題の中から、それぞれ各レベルとも試験1回分に相当する数の問題が掲載されています。",
+          "followUp": "今後も一定期間ごとに、過去に出題した試験問題を使って問題集を発行する予定です。",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jlpt.jp/faq/",
+          "question": "日本語能力試験の試験問題の著作権は、だれが所有しますか。",
+          "quote": "試験問題の著作権は、主催者の国際交流基金と日本国際教育支援協会が所有します。試験問題を無断で転載・複写・複製することは法律で固く禁じられております。",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jlpt.jp/samples/sampleindex.html",
+          "quote": "2010年の改定後実際に出題した試験問題の中から、それぞれ各レベルとも試験1回分に相当する数の問題が掲載されています。",
+          "note": "Same wording as the FAQ; the 2012 page also credits 朝日新聞社 承諾番号：22-1573 for a third-party work.",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jlpt.jp/faq/",
+          "question": "今の試験のレベルと旧試験の級とはどのように合わせたのですか。",
+          "quote": "旧試験の1級、2級、3級、4級に合格できる日本語能力を持った受験者は、それぞれ今の試験のN1、N2、N4、N5に合格できる日本語能力を持っていると解釈できます。",
+          "note": "Official basis for treating old 4級 ≈ N5 and old 3級 ≈ N4 (pass level only; question formats differ).",
+          "checkedAt": "2026-11-25"
+        }
+      ]
+    },
+    "q2_oldFormatOfficialBooks": {
+      "answer": "Official annual books exist: 『日本語能力試験 3・4級試験問題と正解』, 著作編集 日本国際教育協会 (later 日本国際教育支援協会) and 国際交流基金, published by 凡人社, one volume per test year from 平成2年度 (1990 test, published 1991) to 平成21年度第2回 (Dec 2009). Cassette tape for 平成6–12年度, CD from 平成13年度. There are also separate 3級 and 4級 three-year compilations for 平成16–18年度 (2008, 2 CDs each). None is on jlpt.jp or the Bonjinsha JLPT page; none is digitised in NDL (all 29 NDL hits are paper). They are widely held in libraries (CiNii: 159 university-library holdings; JF libraries in Urawa, Tokyo, London and Bangkok hold runs; VJCC HCMC library in Vietnam holds 平成5–20年度). The 1984–1989 tests (昭和59–平成元年) have no volume in this series; whether they were published elsewhere was not established.",
+      "series": {
+        "title": "日本語能力試験 : 3・4級試験問題と正解 (Japanese language proficiency test : level 3 and 4. questions and correct answers)",
+        "responsibility": "日本国際教育協会, 国際交流基金 著作編集 (later volumes: 日本国際教育支援協会, 国際交流基金 編著)",
+        "publisher": "凡人社, 1991-",
+        "ncid": "BN0727265X",
+        "url": "https://ci.nii.ac.jp/ncid/BN0727265X",
+        "volumes": [
+          "平成2年度 (1990)",
+          "平成3年度 (1991)",
+          "平成4年度 (1992)",
+          "平成5年度 (1993)",
+          "平成6年度 (1994) + cassette",
+          "平成7年度 (1995) + cassette",
+          "平成8年度 (1996) + cassette",
+          "平成9年度 (1997) + cassette",
+          "平成10年度 (1998) + cassette",
+          "平成11年度 (1999) + cassette",
+          "平成12年度 (2000) + cassette",
+          "平成13年度 (2001) + CD",
+          "平成14年度 (2002) + CD",
+          "平成15年度 (2003) + CD",
+          "平成16年度 (2004) + CD",
+          "平成17年度 (2005) + CD",
+          "平成18年度 (2006) + CD",
+          "平成19年度 (2007) + CD",
+          "平成20年度 (2008) + CD",
+          "平成21年度 第2回 (Dec 2009) + CD-ROM"
+        ],
+        "universityLibraryHoldings": 159,
+        "note": "Each volume is the December test of that 年度 (the old test was annual; in 2009 第1回 in July was 1・2級 only in a few countries, so 3・4級 has only 第2回). 1・2級 volumes are a separate series.",
+        "checkedAt": "2026-11-25"
+      },
+      "compilations": [
+        {
+          "title": "日本語能力試験4級試験問題と正解 平成16-18年度",
+          "publisher": "凡人社, 2008.5",
+          "isbn": "978-4-89358-678-0",
+          "pages": 137,
+          "price": "2000円",
+          "media": "CD 2枚",
+          "ndl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009416998",
+          "availability": "Kinokuniya: 'ただいまウェブストアではご注文を受け付けておりません。' (https://www.kinokuniya.co.jp/f/dsg-01-9784893586780)"
+        },
+        {
+          "title": "日本語能力試験3級試験問題と正解 平成16-18年度",
+          "publisher": "凡人社, 2008.5",
+          "isbn": "978-4-89358-677-3",
+          "pages": 164,
+          "price": "2000円",
+          "media": "CD 2枚",
+          "ndl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009416989",
+          "availability": "Kinokuniya: not taking orders (https://www.kinokuniya.co.jp/f/dsg-01-9784893586773)"
+        }
+      ],
+      "recentSingleYears": [
+        {
+          "volume": "平成19年度",
+          "isbn": "978-4-89358-668-1",
+          "publisher": "凡人社, 2008.4",
+          "ndl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009416958",
+          "availability": "Kinokuniya lists ¥1,466 (本体¥1,333): '出版社からのお取り寄せとなります。' with the usual caveat that out-of-stock titles may be unobtainable (https://www.kinokuniya.co.jp/f/dsg-01-9784893586681)."
+        },
+        {
+          "volume": "平成20年度",
+          "isbn": "978-4-89358-701-5",
+          "publisher": "凡人社, 2009.4, 120p, CD 1枚, 1333円",
+          "ndl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010122755",
+          "availability": "Kinokuniya lists ¥1,466, publisher back-order (https://www.kinokuniya.co.jp/f/dsg-01-9784893587015)."
+        },
+        {
+          "volume": "平成21年度 第2回",
+          "isbn": "978-4-89358-745-9",
+          "publisher": "凡人社, 2010.5, 100p, CD-ROM 1枚, 1333円",
+          "ndl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010915861",
+          "availability": "Kinokuniya: not taking orders (https://www.kinokuniya.co.jp/f/dsg-01-9784893587459). An amazon.co.jp search snippet showed 'Out of Print--Limited Availability' (page itself returned 503)."
+        }
+      ],
+      "inPrintNew": "Bonjinsha's JLPT page lists only the 2012 and 2018 公式問題集 (see the 2026-11-25 audit). Kinokuniya still accepts back-orders for 平成19年度 and 平成20年度 (not confirmed in stock). openBD has no record for the checked ISBNs. Older volumes: second-hand only (not checked).",
+      "libraries": [
+        "CiNii BN0727265X: 159 university-library holdings in Japan and abroad (e.g. Oxford Bodleian, Sheffield).",
+        "JF libraries listed in CiNii: 日本語国際センター図書館 (Urawa; 平成2年度 onward), JFライブラリー (Tokyo), ロンドン日本文化センター, バンコク日本文化センター.",
+        "Vietnam: VJCC HCMC library catalogue (https://vjcchcmc.org.vn/storage/thu-vien/tra-cuu-thu-vien.pdf, Last-Modified 2024-08-01) lists 3・4級試験問題と正解 平成5–20年度 (1–5 copies each; call no. 81-13/4a-H..), plus 1・2級 volumes and 新しい「日本語能力試験」問題例集. JF Hà Nội library holdings were not checked (JF OPAC blocks Claude-User)."
+      ],
+      "freeOnlineOfficialCopy": "None found. jlpt.jp does not host them, the policy pre-grant covers only works posted on jlpt.jp, and NDL Search shows all 29 試験問題と正解 records (1・2級 and 3・4級) as paper only."
+    },
+    "q3_permissionProcess": {
+      "answer": "There is no separate JEES or JF permission form for JLPT questions. jlpt.jp site policy 1(5) is the process: apply in advance by email to the address on the jlpt.jp contact page, which is the JF Japanese-Language Testing Center (jlptinfo@jpf.go.jp), in Japanese or English. JEES's own site lists only phone desks (日本語能力試験受付センター 03-6686-2974) for test administration. Policy 1(4) pre-grants free, non-fee Japanese-teaching reuse with credit, but only for works posted on jlpt.jp; the old printed 試験問題と正解 books are not on jlpt.jp, so reproducing them in Reng would need a 1(5) request. Whether JF grants free online non-profit use of the old books is not stated anywhere; no precedent was found.",
+      "evidence": [
+        {
+          "url": "https://www.jlpt.jp/policy.html",
+          "lastModified": "2026-02-02",
+          "quote": "（5） 上記（1）～（4）以外の利用を希望する場合は、「問い合わせ」に記載のメールアドレスから事前に申請し、国際交流基金と日本国際教育支援協会の許諾を得てください。",
+          "requiredInformation": [
+            "利用目的",
+            "利用方法、態様",
+            "媒体（冊子、ＣＤ/ＤＶＤ、ウェブサイトなど）とページ数",
+            "著者の名前",
+            "出版社の名前・連絡先",
+            "予定販売価格",
+            "予定発行部数",
+            "刊行物の概要",
+            "当サイトのどの部分を使いたいか",
+            "利用予定期間"
+          ],
+          "scopeNote": "Clause 1 opens with '当サイトに掲載されている…著作物' and (4) pre-grants '転載・複製' when it is for 日本語教育 and no fee is charged for the resulting material; third-party parts always need the rights holder's consent, and the organisers say to ask them when the rights holder's contact is unknown.",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jlpt.jp/contact/index.html",
+          "lastModified": "2026-07-06",
+          "quote": "■国際交流基金日本語試験センター メール： jlptinfo＠jpf.go.jp",
+          "extra": "※日本語か英語で書いてください。 / 内容によってはお答えできないことがあります。",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jees.or.jp/association/contacts/",
+          "note": "JEES contact list gives only phone numbers; no copyright/permission page found on jees.or.jp or info.jees-jlpt.jp (sitemap and FAQ checked).",
+          "checkedAt": "2026-11-25"
+        }
+      ],
+      "draftRequest": {
+        "to": "jlptinfo@jpf.go.jp",
+        "language": "Japanese (English allowed)",
+        "subjectJa": "日本語能力試験 旧試験問題（3・4級 試験問題と正解）の教育目的での利用許諾について",
+        "bodyJa": "国際交流基金 日本語試験センター ご担当者様\n\n日本語能力試験公式ウェブサイトのサイトポリシー1（5）に基づき、以下の利用について許諾をお願いしたく、ご連絡いたしました。\n\n1. 利用目的：ベトナム人学習者向けの日本語教育（N5・N4受験準備）。受講料は無料で、教材の販売・広告収入はありません。\n2. 利用したい著作物：『日本語能力試験 3・4級試験問題と正解』（凡人社）平成〔X〕年度〜平成21年度第2回のうち、4級・3級の「文字・語彙」「読解・文法」の問題と正解。聴解音声、および第三者の著作物を含む読解文は、ご指示がない限り使用しません。\n3. 利用方法・態様：問題文をそのまま入力し、出典（書名・年度・「国際交流基金・日本国際教育支援協会」）を各問題の近くに明記します。改変はしません（ベトナム語の解説を別に付けます）。\n4. 媒体：ログインした受講者だけが見られるウェブサイト（検索エンジン非公開）。紙での印刷配布は教室内の受講者分のみ。\n5. 著者・発行者：〔個人名または団体名〕、連絡先〔メールアドレス〕\n6. 予定販売価格：無料（0円）\n7. 予定発行部数／利用者数：受講者〔N〕名程度\n8. 利用予定期間：許諾日から〔N〕年間（更新はご相談）\n\nあわせて、次の点をご教示ください。\n(a) 第三者の著作物が含まれる問題の範囲と、その連絡先\n(b) 許諾いただけない場合、教室で書籍そのもの（購入した原本とCD）を使用することに問題がないか\n(c) 今後発行予定の公式問題集（第三集）の予定\n\nどうぞよろしくお願いいたします。\n〔署名〕",
+        "summaryEn": "Asks JF/JEES under policy 1(5) for permission to reproduce old 4級/3級 vocabulary, grammar and reading items (no listening audio, no third-party passages) from the Bonjinsha 試験問題と正解 books in a free, login-only teaching site with per-item credit; supplies the 10 data points the policy asks for; asks which items contain third-party works, whether classroom use of the purchased originals is fine, and about a third volume.",
+        "openQuestionsForUser": [
+          "Who signs (individual teacher or an organisation) and which contact address to use.",
+          "Exact year range and expected learner count.",
+          "Whether Reng could ever charge fees (policy 1(4)/(5) answers depend on 'no fee').",
+          "Whether the site would stay login-only."
+        ]
+      }
+    },
+    "q4_otherOfficialReleases": {
+      "answer": "No other openly published real N5/N4 or 3・4級 items found. The analysis reports exist but are not open online; the results summaries contain statistics only; no JF overseas office publishes past papers.",
+      "items": [
+        {
+          "name": "日本語能力試験分析評価に関する報告書",
+          "publisher": "国際交流基金 (with 日本国際教育協会 / 日本国際教育支援協会); 日本語教育学会 編; 平成19–21年度 on CD-ROM, sold by アスク出版",
+          "volumes": "平成2年度 (1992) to 平成21年度 (c2011); NDL Search shows 21 records: 平成2–9年度 paper + digitised, 平成12–18年度 paper, 平成19–21年度 CD-ROM.",
+          "access": "Digitised volumes are 国立国会図書館内限定公開 and 図書館・個人送信対象外 (checked 平成2年度 https://dl.ndl.go.jp/pid/14079051 and 平成5年度 https://dl.ndl.go.jp/pid/14079031, 公開開始日 2025-04-28); NDL remote photocopy (遠隔複写) is possible. Not インターネット公開.",
+          "contentsWithItems": "Not verified. NDL records list no table of contents; whether the reports print full 3・4級 test items was not established, and no copy was opened. A JF research paper notes the IRT/factor analyses covered 1・2級, not 3・4級.",
+          "ndlSearch": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002449916",
+          "cinii": "https://ci.nii.ac.jp/ncid/BB01075436",
+          "verdict": "not a legal online source; research only",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "name": "日本語能力試験 結果の概要 / statistics archive",
+          "url": "https://www.jlpt.jp/statistics/archive.html",
+          "finding": "Pre-2009 years give only applicant and examinee counts; 2009 第2回 page (https://www.jlpt.jp/statistics/archive/200902.html) links 実施要項, counts, 平均点等, 得点分布図 PDFs: statistics, no items. NDL serial record (Z71-J718) ends with 2021 第2回, later Web only.",
+          "verdict": "no questions",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "name": "新しい「日本語能力試験」問題例集 / ガイドブック概要版と問題例集 N4・N5編 (凡人社, 800円+税)",
+          "finding": "Print edition of the 2009 sample items already linked by Reng; samples, not past-test items.",
+          "verdict": "already covered"
+        },
+        {
+          "name": "JF overseas offices",
+          "finding": "No office page offering past papers found. JF Hà Nội posts only notices (see q5). An unlicensed-looking PDF titled 'Bài thi năng lực Nhật ngữ N2 Phiên bản thứ 2' is hosted on a Vietnamese university library site (lic.haui.edu.vn); not opened, N2 only, no evidence of a licensed Vietnamese edition of the 公式問題集.",
+          "verdict": "none"
+        }
+      ]
+    },
+    "q5_circulatingMonthYearPapers": {
+      "answer": "Examinees may not take booklets out, copy questions or record audio; publishing booklet content or audio without organiser permission voids results, including after the test. JLPT therefore has no lawful channel for 'đề tháng 7/12 năm X'; such papers are either recollections or leaks, and JF Hà Nội explicitly bans collecting and trading old papers.",
+      "evidence": [
+        {
+          "url": "https://www.jlpt.jp/faq/",
+          "quote": "試験の問題用紙を持ち帰ることはできません。問題用紙を持ち帰ると失格になります。",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://info.jees-jlpt.jp/myjlpt/precautions.html",
+          "title": "日本語能力試験 受験上の注意 (JEES)",
+          "lastModified": "2026-11-19",
+          "quote": "⑤問題用紙、解答用紙を試験室の外に持ち出したとき。また、問題や解答を何かに書き写して試験室の外に持ち出したり、聴解試験の音声を録音したとき。",
+          "quote2": "問題用紙・解答用紙の内容や聴解試験の音声を、主催者の許可無くインターネットやその他の方法で公開したときも成績は無効になります。",
+          "context": "Listed under （８）不正行為（レッドカード＝失格・退場）.",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://info.jees-jlpt.jp/wp-content/uploads/2026/11/42d0e803ac9ae8813a480dc70cc0f15a.pdf",
+          "title": "2026年第2回日本語能力試験 試験当日の諸注意",
+          "lastModified": "2026-11-16",
+          "quote": "日本語能力試験では、問題冊子の盗み出しや録音、問題内容の漏洩など、悪質な不正行為を行った受験者を見つけた場合、偽計業務妨害などとして警察に通報します。",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://hn.jpf.go.jp/posts/thongbaoquantrongjlpt-vn",
+          "date": "2026-06-25",
+          "status": "200 on 2026-11-25, wording unchanged",
+          "quote": "Quỹ Giao lưu Quốc tế Nhật Bản nghiêm cấm và giám sát chặt chẽ mọi hành vi gian lận như tiết lộ, thu thập, mua bán và phát tán trái phép đề thi cũ, thi hộ, sử dụng thiết bị điện tử để gian lận, chia sẻ nội dung đề thi trên mạng xã hội hoặc các phương tiện truyền thông trực tuyến khác.",
+          "checkedAt": "2026-11-25"
+        },
+        {
+          "url": "https://www.jlpt.jp/e/topics/202401191708325175.html",
+          "note": "Already recorded: 'Japanese-Language Proficiency Test (JLPT) questions and answers are not made public.'"
+        }
+      ]
+    }
+  },
+  "rankedLegalRoutes": [
+    {
+      "rank": 1,
+      "route": "Keep the 2012 + 2018 公式問題集 as the only real post-2010 N5/N4 items Reng may reproduce online (already done), and watch for the promised next volume.",
+      "why": "Only real-item source with a written blanket permission (policy 1(4)). FAQ says more volumes are planned 'from time to time'.",
+      "action": "Add the FAQ line to the next audit's watch list; nothing to import now."
+    },
+    {
+      "rank": 2,
+      "route": "Buy old official 3・4級 試験問題と正解 books (4級 ≈ N5, 3級 ≈ N4 by JF's own statement) and use the purchased originals in class.",
+      "why": "Real, dated, official December tests 1990–2009 with answers and audio. Using a bought book and its CD in class needs no copying. Formats differ from N5/N4 (old 3 sections, some item types gone), so they suit drill and timed practice, not a mock of the current test.",
+      "action": "Order 平成19年度 (ISBN 978-4-89358-668-1) and 平成20年度 (978-4-89358-701-5) via Kinokuniya back-order (¥1,466 each) or directly from Bonjinsha; for 平成16–18 compilations and 平成21年度第2回 look second-hand. Before photocopying for learners or entering items into Reng, get permission (route 3); the jlpt.jp pre-grant does not cover these books."
+    },
+    {
+      "rank": 3,
+      "route": "Ask JF/JEES for permission under policy 1(5) to put selected old 4級/3級 items into Reng (free, login-only, credited, no audio, no third-party passages).",
+      "why": "Only route that could make real dated items usable online. The outcome is unknown; JF may refuse or not answer (the contact page warns some questions cannot be answered).",
+      "action": "Send the draft in answers.q3_permissionProcess.draftRequest after the user fills in sender, scope and learner count. Import nothing until a written yes arrives."
+    },
+    {
+      "rank": 4,
+      "route": "Library access for teacher preparation: VJCC HCMC library (平成5–20年度 3・4級), JF libraries (Urawa, Tokyo, Bangkok, London), Japanese university libraries.",
+      "why": "Free and legal for reading; lets the teacher choose which year to buy or request.",
+      "action": "Optional; check VJCC lending rules and whether JF Hà Nội library holds the series (not checked: JF OPAC blocks this agent)."
+    },
+    {
+      "rank": 5,
+      "route": "Not a route: month/year 'đề thật' papers circulating in Vietnam, and NDL-only analysis reports.",
+      "why": "Test rules forbid taking out, copying, recording or publishing booklet content; JF Hà Nội bans collecting and trading old papers. Analysis reports are NDL in-library only.",
+      "action": "Keep excluded."
+    }
+  ],
+  "couldNotVerify": [
+    "Whether Bonjinsha still has stock of any 試験問題と正解 volume (Kinokuniya only offers publisher back-order for 平成19/20年度; Bonjinsha item pages for these titles were not found).",
+    "Second-hand prices and availability (Amazon returned 503; other marketplaces not checked).",
+    "Whether official books exist for the 1984–1989 tests (CiNii series starts at 平成2年度).",
+    "Whether the 1990s–2000s 分析評価に関する報告書 print full 3・4級 items (not opened; NDL in-library only).",
+    "Whether the old books carry any reuse statement or third-party credits (books not seen).",
+    "JF's actual stance on granting free online use of old items: no published precedent found; only an application would tell.",
+    "Holdings at JF Hà Nội library (JF OPAC disallows Claude-User in robots.txt) and the full CiNii holdings list (page may be truncated).",
+    "Statutory exceptions (Japanese Copyright Act art. 35, Vietnamese IP law teaching exceptions) were not analysed; this is not legal advice."
+  ],
+  "flagsForUser": [
+    "Real dated N5/N4-level questions exist legally only on paper: 『日本語能力試験 3・4級試験問題と正解』 (凡人社), one per year 1990–Dec 2009. 平成19年度 and 平成20年度 can still be back-ordered at about ¥1,466; others are second-hand or library only.",
+    "jlpt.jp policy 1(4) covers only works posted on jlpt.jp, so putting those old items into Reng needs an email request to jlptinfo@jpf.go.jp under policy 1(5); a draft is in answers.q3_permissionProcess.draftRequest.",
+    "Old 4級/3級 pass levels map to N5/N4 per jlpt.jp FAQ, but the question formats differ from today's test.",
+    "Official rules: taking out, copying or recording booklets is a red-card offence, and publishing booklet content or audio online voids results; JF Hà Nội (2026-06-25) bans collecting and trading old papers. Month/year papers stay excluded."
+  ]
+}

@@ -493,6 +493,7 @@ Bản đầu (13/11/2026, file `n5-minna-1-16.json`) phủ bài 1–16. Ngày 18
 | `external-source-catalog.json` | Các nguồn khác ở Việt Nam và nước ngoài với nhãn dùng (`verdicts`: `official-usable-with-credit`, `link-only`, `ask-permission`, `do-not-use`), cùng các điều kiện trước khi công bố (`publicationGates`) |
 | `source-audit-2026-11-09.json` | Kết quả rà soát ngày 09/11: việc đã kiểm, chỗ bị chặn, bước tiếp theo |
 | `source-audit-2026-11-23.json`, `source-audit-2026-11-25.json` | Hai lần rà nguồn đề mẫu N5/N4 trên mạng cho bộ đề có bản in: từ khóa, kiểm tra link, nhãn từng nguồn, việc chờ người dùng quyết |
+| `real-past-papers-2026-11-25.json` | Đường hợp pháp tới đề JLPT thật N5/N4: chính sách công bố đề, sách 3・4級試験問題と正解 (1990–2009), thủ tục xin phép theo mục 1(5) và bản nháp thư |
 | `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`; `reviewStatus: reviewed` và `reviewedAt` khi đã duyệt (cả hai file duyệt ngày 10/11/2026) |
 | `generated/` | Nội dung bài sinh từ hai file trên bằng `npm run jlpt:drafts`; không sửa tay |
 
