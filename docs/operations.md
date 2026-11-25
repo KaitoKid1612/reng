@@ -49,7 +49,7 @@ Mẫu đầy đủ ở `.env.example`. Không đưa secret vào biến `NEXT_PUB
 | `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Nhắc học bằng thông báo trình duyệt | Cặp khóa tạo một lần bằng `node -e 'console.log(require("web-push").generateVAPIDKeys())'`; mỗi môi trường một cặp, khóa riêng chỉ đặt trên server. `VAPID_SUBJECT` là URL `https:` của site (mặc định `SITE_URL`). Thiếu hai khóa thì trang Nhắc học không có mục thông báo và job tối chỉ gửi email. Đổi cặp khóa làm mọi thiết bị đã bật phải bật lại |
 | `RESEND_WEBHOOK_SECRET` | Theo dõi giao/mở thư | Secret `whsec_…` của webhook Resend trỏ tới `/api/webhooks/email` |
 | `NEXT_PUBLIC_AUDIO_BASE_URL` | Audio kana đặt ở R2 | Trống thì dùng `/audio/kana` trong bản web. Đổi giá trị phải build lại |
-| `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` | Audio bài học đặt ở R2 | Trống thì dùng `/audio/lessons` trong bản web (bộ đề nghe Minna 1–15 đi kèm bản web). Đổi giá trị phải build lại |
+| `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL` | Audio bài học đặt ở R2 | Trống thì dùng `/audio/lessons` trong bản web (audio của 13 bộ đề nghe đóng gói trong `lib/bundled-listening.ts` đi kèm bản web). Đổi giá trị phải build lại |
 
 ### Chỉ cho script (máy của người vận hành)
 
@@ -143,3 +143,6 @@ Quay lại bản trước: dùng Instant Rollback ở Vercel › Deployments đ�
 | `npm run jlpt:drafts` | Kiểm tra câu JLPT tự biên soạn trong `content/jlpt/` và viết lại `content/jlpt/generated/` ([biên soạn](content-authoring.md#nguồn-đề-jlpt-và-câu-tự-biên-soạn)) |
 | `npm run audit:jlpt-audio` | Cần mạng: tải lần lượt 16 file MP3 chính thức trong `content/jlpt/official-audio-manifest.json` để ghi mã HTTP, loại file, dung lượng, SHA-256 vào `content/jlpt/audio-audit-results.json` (đổi bằng `--out`); không lưu file audio |
 | `npm run furigana:sql` | Viết một file SQL (mặc định ROLLBACK) thêm furigana cho nhiều câu của bài đã giao một lần, ví dụ cả bài hằng ngày, từ file xuất `assignment_items` và bản đã viết `{漢字|かんじ}`. Gọi `fix_assignment_question` cho từng câu (cần migration `20261105044634`), ghi lịch sử như khi sửa trên web; từ chối nếu khác gì ngoài furigana ([DD](detail-design/phase-3.md#sửa-lỗi-hiển-thị-bài-đã-giao--05112026)) |
+| `npm run official:sql` | Viết một file SQL (mặc định ROLLBACK) tạo đề chính thức JLPT trong `content/jlpt/official/` thành bài của giáo viên, xuất bản và thêm vào lớp; lớp giữ đóng với học viên tới `--opens-at` |
+| `npm run audit:jlpt-bank -- <bank.json>` | Chỉ đọc: kiểm ngân hàng N4 theo cấu trúc đề (số câu từng phần, số bài 67 câu trước khi lặp, đoạn văn, furigana) ([báo cáo](testing/n4-bank-audit-2026-11-19.md)) |
+| `npm run kanji:paper` | Ghi trường `paper` (từ đề chính thức đã hỏi) vào `content/kanji/<cấp>.json` từ `content/jlpt/official`; chạy lại sau khi đổi một trong hai |

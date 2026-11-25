@@ -167,6 +167,8 @@ Bài mẫu `minna-1-17` đăng ký sau bài 16 (16/11/2026), cùng schema v1 và
 
 `minna-1-18` … `minna-1-25` đăng ký tiếp theo thứ tự bài (16/11/2026). Schema v1, luồng tạo bài từ mẫu, RPC và database giữ nguyên.
 
+Sơ cấp II (`courseId: minna-2`): `minna-2-26` … `minna-2-50` đăng ký sau bài 25 (19–23/11/2026), cùng schema v1 và luồng tạo bài từ mẫu; `MINNA_STARTERS` lọc cả `minna-1` và `minna-2`. Bộ ôn ngữ pháp N4 (`n4-grammar-1` … `n4-grammar-8`, `n4-grammar-map`, `courseId: n4-grammar`) và mẹo làm đề N4 (`n4-tips-1` … `n4-tips-7`, `courseId: n4-tips`) dùng cùng cơ chế, lọc bằng `N4_REVIEW_STARTERS` và `N4_TIPS_STARTERS`. Đối chiếu nội dung từng bài ở [biên soạn](../content-authoring.md#bài-tiếng-nhật-theo-trình-tự-minna-no-nihongo-pilot).
+
 Đồng hồ bài luyện theo cấu trúc đề (17/11/2026):
 - **Tính giờ:** `planStudyPacing` (`lib/jlpt.ts`) chia các câu theo phần như `planExamPacing`. Mỗi phần nhận số phút chính thức (N4: 25/55/35) nhân tỉ lệ số câu của bài so với một đề thật (`jlptSectionQuestionCount`, từ `PART_COUNTS`: N4 28/29/28), tối đa bằng giờ thật. Bài không theo thứ tự phần thì không có đồng hồ.
 - **Phía server:** `getStudentAssignment` trả `studyLevel` khi bài là luyện tập (không phải thi thử) ở lớp có `daily_practice_format` là JLPT, kèm `sections` của các câu.

@@ -4,7 +4,7 @@
 
 Từ giai đoạn 4, giảng viên soạn và xuất bản bài trên web tại /teach/lessons/new và /teach/lessons/[id]/edit, nhập từ vựng hàng loạt tại /teach/import-csv (CSV UTF-8 hoặc dán bảng Excel). Script bên dưới vẫn dùng cho bài mẫu trong repo và kiểm tra hàng loạt.
 
-Draft nằm ở content/lessons/*.json. Năm bài hiện tại là mẫu tự biên soạn, không nhập từ giáo trình hoặc từ điển bên ngoài. Giữ isSample=true cho đến khi giảng viên duyệt câu Nhật, nghĩa Việt, cách đọc, đáp án và audio. Không đánh dấu đã duyệt chỉ vì validator chạy qua.
+Bài giảng viên soạn trên web lưu trong database (`lessons.draft_content`, bản xuất bản ở `lesson_versions`). `content/lessons/lesson-01..05.json` chỉ là năm bài mẫu tự biên soạn cho chế độ `LESSON_SOURCE=local` và `npm run seed:local`, không nhập từ giáo trình hoặc từ điển bên ngoài; file nào trong `content/` được web đọc trực tiếp xem ở [kiến trúc](02-architecture.md#nội-dung-trong-repo-và-trong-database). Giữ isSample=true cho đến khi giảng viên duyệt câu Nhật, nghĩa Việt, cách đọc, đáp án và audio. Không đánh dấu đã duyệt chỉ vì validator chạy qua.
 
 ID bài/item dùng tiếng Anh hoặc mã ổn định, không tái dùng ID cũ cho ý nghĩa khác. Slide chỉ refs/ref tới từ vựng/ngữ pháp/câu luyện. TeacherNotes là ghi chú riêng; note.body là nội dung công khai. Không đặt đáp án kiểm tra cần bảo mật vào questions của bài công khai.
 
@@ -480,9 +480,10 @@ Bản đầu (13/11/2026, file `n5-minna-1-16.json`) phủ bài 1–16. Ngày 18
   npm run bank:sql -- --file content/review-banks/n5-minna-1-25.json --language ja-JP --out n5.sql
   ```
   Đọc lại file (kết thúc bằng ROLLBACK), thêm `--commit` rồi chạy như trên. Lớp dùng phiên bản mới nhất làm nguồn bài hằng ngày nên tự nhận bản mới.
+- **Chỉ nạp bài đã học (đang áp dụng):** từ 20/11/2026 production là bản 4 "Ôn Minna 1–17 – Nguyên" (318 câu bài 1–17), vì người dùng chọn không cho câu của bài chưa học vào đề hằng ngày. Không nạp nguyên file 1–25 như lệnh trên, vì làm vậy sẽ đưa lại bài 18–25. Khi lớp học thêm bài: lọc file theo thẻ `minna-N` (giữ N ≤ bài đã học) ra một file tạm, chạy `bank:sql` với file đó, đọc lại phiên bản. File trong repo vẫn giữ đủ bài 1–25. Xem [báo cáo](testing/jlpt-daily-format-2026-11-13.md#ngân-hàng-nguyên-chỉ-lấy-bài-đã-học--20112026).
 - **Thêm bài 26 trở đi:** thêm câu của bài đó và bớt câu của các bài cũ để không vượt 500 câu.
 
-
+## Nguồn đề JLPT và câu tự biên soạn
 
 Đợt 09/11/2026 chuẩn bị nguồn cho đề thi thử N4/N5. Đề thi thật và audio chính thức là tài liệu có bản quyền của bên tổ chức: Reng chỉ lưu link và ghi chú bản quyền, còn câu luyện là câu Reng tự viết theo dạng đề. Ngày 11/11/2026 đã đọc chính sách của jlpt.jp: sách đề chính thức đăng trên trang được dùng làm tài liệu dạy miễn phí khi ghi nguồn, nên bộ 2018 và bộ 2012 đã vào Reng ([mục dưới](#đề-chính-thức-jlpt-公式問題集-2012-và-2018)); file nghe gốc vẫn chỉ đặt link.
 
@@ -490,8 +491,9 @@ Bản đầu (13/11/2026, file `n5-minna-1-16.json`) phủ bài 1–16. Ngày 18
 |---|---|
 | `source-registry.json` | Ba bộ đề mẫu chính thức (2009, 2012, 2018): chỉ link, `importPolicy: metadata-only-until-rights-cleared` |
 | `official-audio-manifest.json` | 16 link MP3 nghe hiểu chính thức N4/N5; chưa tải, chưa nghe, chưa có quyền dùng lại |
-| `external-source-catalog.json` | 10 nguồn khác ở Việt Nam và nước ngoài để tham khảo dạng câu, cùng các điều kiện trước khi công bố (`publicationGates`) |
+| `external-source-catalog.json` | 21 nguồn khác ở Việt Nam và nước ngoài (cập nhật 23/11), mỗi nguồn có `verdict`: `usable`, `reference-only` hoặc `do-not-use`, cùng các điều kiện trước khi công bố (`publicationGates`) |
 | `source-audit-2026-11-09.json` | Kết quả rà soát ngày 09/11: việc đã kiểm, chỗ bị chặn, bước tiếp theo |
+| `source-audit-2026-11-23.json` | Kiểm tra lại nguồn đề N5/N4 trên mạng ngày 23/11: truy vấn, link, trạng thái quyền; chỉ metadata. `lib/jlpt-official.ts` dẫn tới file này |
 | `n5-original-question-draft.json`, `n4-original-question-draft.json` | Mỗi cấp 6 câu chọn một đáp án do Reng viết, `status: draft`; `reviewStatus: reviewed` và `reviewedAt` khi đã duyệt (cả hai file duyệt ngày 10/11/2026) |
 | `generated/` | Nội dung bài sinh từ hai file trên bằng `npm run jlpt:drafts`; không sửa tay |
 

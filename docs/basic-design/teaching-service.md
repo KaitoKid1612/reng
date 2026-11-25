@@ -54,9 +54,9 @@ Thu hồi ngăn xem/sao chép mới từ nguồn; không tự xóa bản sao đ�
 
 Hai mức giá trị: ảnh trong slide giúp chiếu/đọc; bài tương tác cần dữ liệu câu hỏi và đáp án. Chỉ nhúng ảnh không đủ để chấm tự động. AI có thể gợi ý cấu trúc/đáp án nhưng mọi gợi ý phải được xác nhận, không lấy độ tin cậy OCR làm bằng chứng đáp án đúng.
 
-## Màn hình dự kiến
+## Màn hình
 
-| Mã | Màn hình/route dự kiến | Hành vi chính |
+| Mã | Màn hình/route | Hành vi chính |
 |---|---|---|
 | SV01 | `/sign-up/teacher` | Đăng ký và trạng thái xác minh/khả năng dạy |
 | SV02 | `/teach/classes/[id]` (form cài đặt lớp) | Sức chứa, ngôn ngữ, link Meet, mã lớp |

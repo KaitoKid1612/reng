@@ -2,7 +2,7 @@
 
 ## Hiện trạng — 05/11/2026
 
-Reng chạy trên production thử (https://reng-class.vercel.app) từ 29/10/2026 cho lớp pilot. **Pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự Minna no Nihongo**: giáo viên tạo bài từ 15 bài mẫu tự biên soạn (không chép sách), sửa trong trình soạn tiếng Nhật, trình chiếu qua Meet, giao bài, bật luyện tập hằng ngày và theo dõi lớp. Luồng Việt–Trung (trình soạn 5 bước, chấm pinyin và giản/phồn thể) vẫn giữ và chạy được; nền tảng giữ khả năng mở rộng sang môn khác. Chưa có: nhập scan/OCR, TTS trên web, gửi email trên production (chưa có tên miền và SMTP riêng), thanh toán. Chưa nghiệm thu đầy đủ với lớp thật. Tính năng theo giai đoạn và nhật ký thay đổi ở [README gốc](../README.md); mức đáp ứng yêu cầu dịch vụ ở [đối chiếu source](source-alignment.md).
+Reng chạy trên production thử (https://reng-class.vercel.app) từ 29/10/2026 cho lớp pilot. **Pilot ưu tiên dạy tiếng Nhật cho người Việt theo trình tự Minna no Nihongo**: giáo viên tạo bài từ bài mẫu tự biên soạn (không chép sách): Minna 1–50, 9 bộ ôn ngữ pháp N4 và 7 bộ mẹo làm đề N4, sửa trong trình soạn tiếng Nhật, trình chiếu qua Meet, giao bài, bật luyện tập hằng ngày và theo dõi lớp. Luồng Việt–Trung (trình soạn 5 bước, chấm pinyin và giản/phồn thể) vẫn giữ và chạy được; nền tảng giữ khả năng mở rộng sang môn khác. Chưa có: nhập scan/OCR, TTS trên web, gửi email trên production (chưa có tên miền và SMTP riêng), thanh toán. Chưa nghiệm thu đầy đủ với lớp thật. Tính năng theo giai đoạn và nhật ký thay đổi ở [README gốc](../README.md); mức đáp ứng yêu cầu dịch vụ ở [đối chiếu source](source-alignment.md).
 
 ## Định hướng dịch vụ — 29/10/2026
 

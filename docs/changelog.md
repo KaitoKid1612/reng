@@ -2,8 +2,24 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 25/11/2026
+
+- **Bản in đề JLPT:** tiêu đề trang in chỉ ghi tên đề (như "Đề thi thử Reng N5 số 1"), không kèm "Đề N" của danh sách nên không còn hai con số cho một đề. Đoạn đọc vừa một trang giữ cả các câu hỏi của nó trên cùng trang.
+- **Làm bài trên điện thoại:** nút chuyển **Từng câu / Cả bài** ẩn hẳn trên màn hình ≤ 600px (điện thoại luôn hiện từng câu); trước đây quy tắc ẩn bị quy tắc sau ghi đè nên nút vẫn hiện mà bấm không có tác dụng.
+- Đề thi thử N4 số 2 cùng 28 câu từ vựng mới và hồ sơ nguồn đề ngày 25/11 được thêm rồi gỡ lại trong ngày (c93b1c1); thư viện đề giữ như ngày 23/11.
+- **Tài liệu:** thêm mục [nội dung trong repo và trong database](02-architecture.md#nội-dung-trong-repo-và-trong-database) (file JSON nào web đọc trực tiếp, file nào là nguồn nạp vào database); cập nhật danh sách bảng và migration tới 20/11, màn hình mới (bản in đề, thi đấu cả lớp, đã xóa tài khoản), lệnh npm còn thiếu, các mục "chưa làm" đã làm xong.
+
+### 23/11/2026
+
+- **Bài mẫu Minna 29–50:** đủ toàn bộ Sơ cấp II; mỗi bài đối chiếu với sách bản 2 ([bài 29](testing/minna-lesson-29-coverage.md) … [bài 50](testing/minna-lesson-50-coverage.md)).
+- **Tra ngữ pháp** (/grammar): người đã đăng nhập tra được mẫu câu trong bài của các lớp mình học hoặc dạy và bài mình soạn, không chỉ bài công khai ([kiểm chứng](testing/teaching-service.md#tra-ngữ-pháp-cho-người-đã-đăng-nhập-23112026)).
+- **Đề thi thử Reng cố định:** "Đề thi thử Reng N5 số 1" và "N4 số 1" vào thư viện đề của lớp, đúng số phần và số câu đề thật, không lấy câu của ngân hàng bài hằng ngày; mỗi lớp mở mỗi đề một lần ([biên soạn](content-authoring.md#đề-thi-thử-reng-cố-định-và-bản-in-23112026)).
+- **Bản in A4** (/exams/print, chỉ giáo viên và chủ lớp): mỗi đề N5/N4 in 4 tập: đề và phiếu tô đáp án cho học viên, đáp án kèm giải thích và lời thoại bài nghe cho giáo viên; câu nghe có mã QR tới file MP3 ([kiểm chứng](testing/jlpt-exam-sets-2026-11-23.md)).
+- Sửa các câu sai trong ngân hàng đề Reng N5 và N4 chuẩn phát hiện khi soát đề; kiểm tra lại nguồn đề N5/N4 trên mạng và sửa link chết trong `content/jlpt/source-registry.json`; thêm [prompt bộ đề JLPT](prompts/jlpt-exam-sets.md).
+
 ### 20/11/2026
 
+- **Bài mẫu Minna 27 và 28:** nút **Tạo bài 27/28 từ mẫu** ở trang Tạo bài mới, cùng cấu trúc bài 26.
 - **Trang Giảng dạy, danh sách bài:** bài chia nhóm theo khóa có tiêu đề và số bài (Minna no Nihongo Sơ cấp I, Sơ cấp II, JLPT N5, JLPT N4, Tổng ôn ngữ pháp N4, Mẹo làm đề N4…). **Soạn bài** là nút chính; Trình chiếu, Chia sẻ, Tạo bản sao, Lưu trữ cùng một kiểu chữ như link. Đã bấm thử lọc, soạn, trình chiếu, chia sẻ, tạo bản sao (mã dễ đọc), lưu trữ và đưa trở lại ở 1280/1440/1920/390.
 - **Không còn số phiên bản trên giao diện:** danh sách bài của lớp, trang Giao bài, ô chọn bài, nhật ký buổi dạy, thư viện bài được chia sẻ và trang Giảng dạy bỏ chữ "(phiên bản N)". Chỗ cần chọn giữa các bản ghi "Bản xuất bản <ngày giờ> (mới nhất)"; trạng thái lớp ghi "Đang dùng bản mới nhất" hoặc "Đang dùng bản cũ, đã có bản mới hơn", nút "Cập nhật lên bản mới nhất".
 - **Bài Minna 1–26 đủ như sách bản 2:** đối chiếu từng bài với danh sách từ của sách (MinnaNoDS và langoal, bỏ từ chỉ có ở bản 1) và mục lục ngữ pháp; bổ sung từ còn thiếu (bài 16: 35 từ, bài 5: 19 từ, bài 8 trong lớp Nguyên: 24 từ), bảng tên riêng sách dùng, bảng từ tham khảo theo đúng chủ đề sách và ghi chú văn hoá cho bài 1–25, slide mẫu ngữ pháp nhỏ, 3 mẫu ngữ pháp và hội thoại ATM của bài 16. Chữ Nhật trên mọi slide chỉ xuống dòng giữa các cụm. Bản trong lớp Nguyên (bài 1–17) cần nạp lại lên production. Xem [đối chiếu](testing/minna-coverage-2026-11-20.md).

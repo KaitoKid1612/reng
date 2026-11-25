@@ -202,7 +202,7 @@ Phạm vi mới ưu tiên trước các tiện ích giai đoạn 6; thiết kế
 
 EX-03 phải tuân theo practice/test và thời điểm phản hồi; không phải mọi bài đều lộ đáp án ngay. ADMIN-05 trở thành phần cốt lõi của SHARE-02. Không suy ra bộ đề chia sẻ là câu test bí mật.
 
-## Soạn bài dễ áp dụng — chưa triển khai
+## Soạn bài dễ áp dụng — đã có trình soạn Việt–Trung 5 bước (nhập scan SV06 còn dự kiến)
 
 Giáo viên tự soạn và chịu trách nhiệm chuyên môn; nền tảng cung cấp mẫu/công cụ/bài minh họa đã duyệt. Quy trình chi tiết theo [biên soạn](content-authoring.md), [BD dịch vụ](basic-design/teaching-service.md), [DD dịch vụ](detail-design/teaching-service.md).
 

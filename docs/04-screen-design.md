@@ -27,7 +27,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S13 | Sổ lỗi | `/mistakes` | 3 |
 | S14 | Tiến độ của tôi | `/progress` | 3 |
 | S15 | Luyện nghe theo bài | `/listening/[lessonId]` | 5 |
-| S16 | Đề thi thử JLPT: không có route riêng; giáo viên tạo đề ở T05, học viên làm ở S11 và xem kết quả ở S12 | — | 09/11/2026 |
+| S16 | Đề thi thử JLPT: giáo viên tạo đề ở T05 hoặc mở từ thư viện đề ở S28; học viên làm ở S11 và xem kết quả ở S12 | — (xem S28) | 09/11/2026 |
 | S17 | Lớp của tôi | `/classes` | 3 |
 | S18 | Lớp học: bài đã mở và bài tập | `/classes/[id]` | 3 |
 | S19 | Luyện tập hằng ngày (điểm từng ngày) | `/classes/[id]/daily-practice` | 3 |
@@ -40,6 +40,9 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | S26 | Từ vựng N4 theo chủ đề: nghĩa, âm Hán Việt, câu ví dụ kiểu đề, từ gần nghĩa | `/jlpt-vocab/n4` | 19/11/2026 |
 | S28 | Luyện đề JLPT: đề đã mở của từng lớp kèm kết quả, thư viện đề của lớp mình làm chủ | `/exams` | 19/11/2026 |
 | S27 | Luyện từ vựng N4 (điền từ vào câu, từ gần nghĩa, nghĩa) | `/jlpt-vocab/n4/practice?group=` | 19/11/2026 |
+| S29 | Bản in đề JLPT khổ A4: đề chính thức và đề cố định của Reng, đáp án và lời giải ở cuối | `/exams/print/[examId]` | 23/11/2026 |
+| S30 | Thi đấu cả lớp (học viên): vào phiên, trả lời theo giờ, xem bảng điểm | `/live/[id]` | 18/11/2026 |
+| S31 | Đã xóa tài khoản: xác nhận sau khi học viên tự xóa | `/account-deleted` | 10/11/2026 |
 
 ### Dành cho giáo viên
 
@@ -52,7 +55,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | T05 | Giao bài tập; mục Thi thử JLPT tạo đề N5/N4 cho lớp tiếng Nhật | `/teach/classes/[id]/assign` | 3; thi thử 09/11/2026 |
 | T06 | Soạn bài (tạo bài: `/teach/lessons/new`) | `/teach/lessons/[id]/edit` | 4 |
 | T07 | Nhập từ vựng CSV | `/teach/import-csv` | 4 |
-| T08 | Thi đấu trực tiếp (chưa làm) | `/teach/live-quiz/[id]` | 6 |
+| T08 | Thi đấu cả lớp (giáo viên điều khiển ngay trên slide: tạo phiên, mã QR, chuyển câu, bảng điểm) | `/lessons/[id]/slide` + `/api/live/*` | 18/11/2026 |
 | T09 | Cửa sổ Presenter: ghi chú, slide kế tiếp, đồng hồ | `/lessons/[id]/presenter` | 2 |
 | T10 | Bắt đầu giảng dạy (kích hoạt hoặc gửi yêu cầu) | `/teach/start` | Dịch vụ |
 | T11 | Chia sẻ bài: cấp/thu hồi quyền phiên bản, công khai | `/teach/lessons/[id]/sharing` | Dịch vụ |
@@ -76,7 +79,7 @@ Mức basic design: liệt kê màn hình, nội dung chính, và luồng đi l�
 | Hủy nhận email (link một chạm trong thư) | `/unsubscribe/[token]` | 4 |
 | Quản trị: tổng quan, giáo viên, nhật ký hoạt động | `/admin`, `/admin/teachers`, `/admin/activity` | Dịch vụ |
 
-Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung (từ 11/11/2026 phần giới thiệu chỉ cho khách; người đã đăng nhập thấy lời chào, Hôm nay học gì và thẻ Đi nhanh tới); S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình-dự-kiến)).
+Giai đoạn 1–2 chưa có đăng ký công khai; người vận hành chuẩn bị tài khoản giảng viên và nhập bài bằng script. Giai đoạn 3 bổ sung xác thực học viên trước khi vào lớp/lưu kết quả. Trang chủ giai đoạn 1 chỉ giới thiệu và dẫn tới kana; thông tin thẻ đến hạn/bài tập chỉ xuất hiện từ giai đoạn 3. Từ 03/11/2026 trang chủ giới thiệu nền tảng dạy học online chung (từ 11/11/2026 phần giới thiệu chỉ cho khách; người đã đăng nhập thấy lời chào, Hôm nay học gì và thẻ Đi nhanh tới); S02, S03 và S09 thuộc môn Tiếng Nhật trong trang Tự học (`/self-study`, SV12 ở [BD dịch vụ](basic-design/teaching-service.md#màn-hình)).
 
 ## Chi tiết các màn hình chính
 

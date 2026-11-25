@@ -2,7 +2,7 @@
 
 ## Phạm vi
 
-Thiết kế dịch vụ ngày 29/10/2026: giao diện quản lý và hướng dẫn tiếng Việt, nội dung học ưu tiên Trung, giữ module Nhật hiện tại. Màu/token có sẵn được tái sử dụng; font Trung, wizard và trạng thái mới dưới đây chưa triển khai. Không dùng hình ảnh hoặc nhãn tiếng Nhật làm mặc định cho mọi lớp.
+Thiết kế dịch vụ ngày 29/10/2026: giao diện quản lý và hướng dẫn tiếng Việt, nội dung học ưu tiên Trung, giữ module Nhật hiện tại. Màu/token có sẵn được tái sử dụng. Font Trung (`[lang="zh-Hans"]`, `[lang="zh-Hant"]` trong `app/styles/base.css`) và trình soạn 5 bước đã có; nhập scan còn dự kiến. Không dùng hình ảnh hoặc nhãn tiếng Nhật làm mặc định cho mọi lớp.
 
 Từ 03/11/2026, trang chủ, header, chân trang, metadata và ảnh chia sẻ giới thiệu Reng là nơi dạy và học online, không nêu môn nào. Công cụ của một môn nằm ở trang của môn đó (Tự học → Tiếng Nhật), có thanh chuyển giữa các công cụ cùng môn. Hình minh họa chung không dùng chữ của một ngôn ngữ đang học.
 

@@ -27,7 +27,7 @@ Chủ lớp chỉ đọc học sinh/kết quả thuộc lớp mình. Chia sẻ s
 
 Scan mặc định riêng tư, loại thông tin cá nhân không cần thiết trước nhận dạng. Trước bật OCR phải kiểm tra nhà cung cấp xử lý/lưu dữ liệu ở đâu, thời gian giữ, điều kiện dùng cho huấn luyện và cơ chế xóa; thông báo cho giáo viên về việc gửi tệp ra ngoài. Không dùng tệp thật để thử dịch vụ chưa được phép.
 
-Nguồn/OCR trung gian dự kiến giữ 30 ngày hoặc xóa theo yêu cầu; asset đã xuất bản có vòng đời riêng theo snapshot. Xóa nguồn không tự phá bài đã giao. Yêu cầu xuất/xóa tài khoản do vận hành xử lý khi chưa có UI, xác định thời hạn giữ dữ liệu và nghĩa vụ liên quan trước nhận lớp thật.
+Nguồn/OCR trung gian dự kiến giữ 30 ngày hoặc xóa theo yêu cầu; asset đã xuất bản có vòng đời riêng theo snapshot. Xóa nguồn không tự phá bài đã giao. Học viên tự tải dữ liệu và tự xóa tài khoản ở trang Tài khoản (từ 10–12/11/2026); tài khoản giáo viên và quản trị viên vẫn do vận hành xử lý. Thời hạn giữ dữ liệu công bố ở /privacy.
 
 ## Ngân sách và quota
 

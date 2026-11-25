@@ -134,7 +134,7 @@ Không có thứ tự bắt buộc, làm theo nhu cầu thực tế.
 | Mã QR trên slide — **đã làm 18/11/2026**: bài giao còn hạn, bài học và lời mời vào lớp ([slide](05-slide-engine.md#mã-qr-trên-slide--đã-làm-18112026)) | Cao | Rất thấp |
 | Đếm ngược ngày thi JLPT — **đã làm 09/11/2026** cùng đề thi thử | Trung bình | Rất thấp |
 | Đề thi thử có đếm giờ — **đã làm 09/11/2026** cho N5/N4 (ý tưởng #1 bên dưới) | Cao | Trung bình |
-| Web Push | Trung bình | Thấp |
+| Web Push — **đã làm 10/11/2026** ([thông báo](08-notifications.md#web-push)) | Trung bình | Thấp |
 | PWA chạy offline | Cao với học viên đi xe bus | Trung bình |
 | Từ điển bật lên khi bôi đen | Cao | Trung bình, `kuromoji` phải chạy server |
 | Luyện hội thoại với AI | Cao | Trung bình, phải chốt phạm vi từ vựng |
@@ -157,9 +157,9 @@ Sau giai đoạn 2, dạy thật một buổi rồi ngồi lại. Nhiều khả 
 ## Các điều kiện chưa được kiểm chứng
 
 - Dependency thực tế lấy package.json/lockfile: nền/classroom/editor/email/listening đã có; OCR/queue/font Trung/TTS web chưa tích hợp. Không xem mọi thư viện được nhắc trong tài liệu là đã cài.
-- Đã có 5 bài mẫu tự biên soạn, chưa giảng viên duyệt; chưa có audio sinh thật hoặc đo hiệu năng 4G/máy chiếu. Mục tiêu thời gian trong 01 là yêu cầu, chưa phải kết quả đo.
+- Đã có bài mẫu tự biên soạn Minna 1–50 và các bộ ôn N4 (`content/starters`), đang dùng với lớp pilot; năm bài mẫu cũ trong `content/lessons` chỉ còn cho chế độ local; chưa có audio sinh thật hoặc đo hiệu năng 4G/máy chiếu. Mục tiêu thời gian trong 01 là yêu cầu, chưa phải kết quả đo.
 - Chưa xác minh lại giá, free tier, điều khoản hosting/TTS và giấy phép dữ liệu từ nguồn chính thức. Chốt trước khi mở dịch vụ hoặc nhập nguồn bên ngoài.
-- PWA offline, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6. Thi thử đã có thiết kế và chạy từ 09/11/2026; thi đấu cả lớp có thiết kế và chạy local từ 18/11/2026 (đồng bộ bằng polling, chưa dùng Realtime).
+- PWA offline, chấm phát âm và realtime phải có thiết kế riêng theo nhu cầu thực tế trước khi triển khai giai đoạn 6. Thi thử đã có thiết kế và chạy từ 09/11/2026; thi đấu cả lớp có thiết kế và chạy trên production từ 18/11/2026 (đồng bộ bằng polling, chưa dùng Realtime).
 
 Không đánh dấu hoàn thành chỉ vì tài liệu mô tả đã có; mỗi mốc cần bằng chứng từ ứng dụng chạy thật.
 

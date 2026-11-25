@@ -54,9 +54,8 @@ components/ui/             thành phần dùng chung (Button, LinkPending…)
 lib/                       logic thuần: chấm điểm, lập lịch ôn, ngày giờ, nhập CSV, schema nội dung
 lib/server/                chỉ chạy ở server (`server-only`): phiên, quyền, truy vấn, RPC, email
 scripts/                   lệnh CLI, không được UI import
-content/                   kana, bài mẫu, ngân hàng ôn, bộ đề nghe, câu nháp JLPT và bảng audio; mỗi
-                           loại có schema Zod trong lib, test đọc lại file của bài mẫu, ngân hàng ôn,
-                           bộ đề nghe và câu nháp JLPT; content/jlpt còn có danh mục nguồn đề (chỉ link)
+content/                   nội dung hệ thống soạn sẵn (xem mục bên dưới); mỗi loại có schema Zod trong
+                           lib và test đọc lại file
 supabase/migrations/       schema, RLS và hàm RPC
 tests/ e2e/ e2e-supabase/  test logic và migration (PGlite), browser không dịch vụ, browser trên Supabase local
 ```
@@ -77,6 +76,23 @@ Quy ước đặt tên và tách component ở [coding standards](coding-standar
 - Bài có một bản nháp. **Xuất bản** tạo một dòng `lesson_versions` không đổi; lớp **ghim** một phiên bản (`class_lessons`); **bài giao** chụp câu hỏi vào `assignment_items`. Sửa nháp không đổi bài lớp đang dùng hay điểm đã có; lớp chỉ chuyển khi giáo viên bấm Cập nhật lên phiên bản mới.
 - Hai schema nội dung chạy song song: v1 (bài tiếng Nhật, trình soạn Nhật, bài mẫu Minna) và v2 (mẫu Việt–Trung 5 bước, `lib/teaching-content.ts`). `lib/lesson-repository.ts` nhận diện theo `schemaVersion`.
 - Xuất bản không tự công khai bài; công khai là thao tác riêng ở trang Chia sẻ.
+
+## Nội dung trong repo và trong database
+
+Quy tắc: dữ liệu người dùng tạo hoặc sửa (lớp, bài giảng viên soạn, phiên bản đã xuất bản, bài giao, bài làm, tiến độ ôn) chỉ nằm trong database. Nội dung hệ thống soạn sẵn, giống nhau cho mọi người, cần review bằng diff và test thì nằm trong `content/*.json` trên git; file nào cần vào database thì được nạp bằng script, database giữ bản đã nạp. Không xóa file JSON chỉ vì database đã có dữ liệu tương ứng.
+
+| Nhóm | File | Cách dùng |
+|---|---|---|
+| Web đọc trực tiếp (đóng gói vào bản build) | `kana.json`, `audio-manifest.json` (`lib/data.ts`); `kanji/n4.json`, `kanji/n5.json` (`lib/kanji-data.ts`); `vocab/n4.json` (`lib/vocab-data.ts`) | Trang kana, kanji, từ vựng JLPT; không có bảng database tương ứng |
+| | `starters/*.json` (Minna 1–50, ôn ngữ pháp N4, mẹo N4) qua `lib/starter-lessons.ts` | Mẫu để giảng viên bấm "Tạo bài … từ mẫu" ở /teach/lessons/new: bài được **chép** vào database thành bài riêng của giảng viên; trang sửa bài so sánh bản nháp với mẫu mới nhất (`compareWithStarter`) |
+| | `listening/*.json` (13 bộ) qua `lib/bundled-listening.ts`, `lib/minna-listening.ts` | Đăng ký audio của câu nghe lấy từ bộ đóng gói; bộ Minna 1–15 cho ô chọn câu nghe trong trình soạn |
+| | `jlpt/official/*.json`, `jlpt/reng-exam-sets.json`, `review-banks/n5-jlpt-mock.json`, `review-banks/n4-jlpt-mock-standard.json` qua `lib/jlpt-exam-sets.ts` | Thư viện đề /exams và bản in /exams/print |
+| | `lesson-catalog.json`, `lessons/lesson-01..05.json` | Chỉ khi `LESSON_SOURCE=local` (dev không cloud, E2E không Supabase) và `npm run seed:local` |
+| Nguồn nạp vào database | các file `review-banks/*.json` còn lại | `npm run bank:sql` tạo SQL xuất bản phiên bản mới của bài ngân hàng; lớp dùng bản trong database |
+| | `jlpt/official/*.json`, `listening/*.json` | `npm run official:sql`, `npm run listening:sql` |
+| Hồ sơ nguồn và bản nháp | `jlpt/source-registry.json`, `jlpt/external-source-catalog.json`, `jlpt/source-audit-*.json`, `jlpt/*-original-question-draft.json`, `jlpt/generated/`, `lesson-audio-manifest.json`, `jlpt/official-audio-manifest.json` | Bằng chứng nguồn và quyền dùng, đầu vào của script audit/audio; web không đọc |
+
+Hệ quả cần nhớ: bản in /exams/print lấy câu từ file JSON trong repo, còn đề làm trên web lấy phiên bản ngân hàng đã nạp vào database. Sửa câu trong file ngân hàng thì phải nạp lại bằng `bank:sql`, nếu không hai bên sẽ khác nhau.
 
 ## Chấm điểm: chia đôi client và server
 
@@ -131,7 +147,7 @@ Lịch UTC, cách gọi tay và kết quả trả về ở [vận hành](operati
 - Khóa service role, TTS, R2 và email chỉ dùng phía server/script, không đặt trong biến `NEXT_PUBLIC_`. Cron và webhook xác thực nguồn gọi (Bearer secret, chữ ký webhook).
 - Ghi lỗi API, audio và cron kèm mã lỗi; không ghi token, đáp án kiểm tra hoặc nội dung bài nộp vào log.
 - Migration nằm trong mã nguồn, được test trên PostgreSQL nhúng và Supabase local trước production, và phải tương thích với bản web đang chạy ([quy trình](operations.md#migration)).
-- Trước khi nhận lớp thật cần bản sao database và media, người phụ trách và một lần khôi phục thử; gói Free hiện tại không có bản sao tự khôi phục. Chưa có giao diện xóa tài khoản: yêu cầu xuất/xóa dữ liệu do người vận hành xử lý.
+- Không sao lưu dữ liệu production (quyết định 12/11/2026, xem [vận hành](operations.md#migration)); thay vào đó migration phải tương thích ngược và được thử trên Supabase local có dữ liệu. Người học tự xóa tài khoản và tải dữ liệu của mình ở trang Tài khoản (`/api/me/export`).
 - Trước khi thu tiền: chuyển gói hosting phù hợp sử dụng thương mại và bật email riêng ([kế hoạch POC](poc-setup.md)).
 
 ## Những thứ cố tình không dùng
