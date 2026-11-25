@@ -297,8 +297,13 @@
   .exam-print-section-head {
     break-after: avoid;
   }
-  /* A passage keeps its first question on the same page. */
+  /* A passage keeps its first question on the same page, and a passage that fits one page keeps
+     all its questions there, so an information sheet is never a page away from a question. A
+     longer one still breaks: avoid is only a preference. */
   .exam-print-passage {
     break-after: avoid;
+  }
+  .exam-print-passage-block {
+    break-inside: avoid;
   }
 }

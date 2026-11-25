@@ -131,7 +131,7 @@ test("a class owner opens the fixed Reng exam once and prints its booklets; a le
   await expect(bank).toContainText("còn đủ 2 đề không trùng câu");
 
   await fixed.getByRole("link", { name: "Bản in" }).click();
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đề 3: Đề thi thử Reng N5 số 1");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đề thi thử Reng N5 số 1");
   const sheet = page.locator(".exam-print");
   await expect(sheet).toContainText("Đề thi thử do Reng biên soạn, không phải đề thi thật.");
   await expect(sheet.locator(".exam-print-question")).toHaveCount(67);

@@ -21,7 +21,7 @@ import {
   PRINT_BOOKLETS,
   RENG_EXAM_NOTICE,
 } from "@/lib/exam-print";
-import { findJlptExamSet, jlptExamSetNumber } from "@/lib/jlpt-exam-sets";
+import { findJlptExamSet } from "@/lib/jlpt-exam-sets";
 import { JLPT_OFFICIAL_CREDIT } from "@/lib/jlpt-official";
 import { lessonAudioUrl } from "@/lib/lesson-audio-url";
 import { requireAccount } from "@/lib/server/account";
@@ -97,8 +97,9 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
     );
   }
   const booklet = parsePrintBooklet((await searchParams).booklet);
-  const number = jlptExamSetNumber(set);
-  const runningTitle = `JLPT ${set.level} · Đề ${number}`;
+  // The paper names the exam by its title alone: "Đề 3" (its place in the list on the exam page)
+  // beside "Đề thi thử Reng N5 số 1" would read as two numbers for one exam.
+  const runningTitle = set.title;
   const isForLearner = LEARNER_BOOKLETS.has(booklet);
   return (
     <div className="exam-print">
@@ -126,9 +127,7 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
         <p className="exam-print-level" lang="ja">
           日本語能力試験 {set.level}
         </p>
-        <h1>
-          Đề {number}: {set.title}
-        </h1>
+        <h1>{set.title}</h1>
         <p className="exam-print-booklet-name">{PRINT_BOOKLET_LABELS[booklet]}</p>
         <p>Thời gian {describeExamTime(set.level)}</p>
         {set.kind === "official" ? (
