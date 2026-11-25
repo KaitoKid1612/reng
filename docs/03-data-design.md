@@ -224,6 +224,7 @@ Tra cứu nhanh, cập nhật tới 25/11/2026; chi tiết ở dòng chú thích
 | `20261118040000_live_quizzes` | `live_quizzes`, `live_quiz_players`, `live_quiz_answers` (chỉ `service_role`); `create_live_quiz`, `join_live_quiz`, `advance_live_quiz`, `submit_live_answer`: thi đấu cả lớp, giờ và điểm tính bằng đồng hồ database ([DD](detail-design/teaching-service.md#thi-đấu-cả-lớp--18112026)) |
 | `20261120050000_readable_lesson_ids` | `new_lesson_id`: bài mới có mã đọc được như `minna-1-18-a8e144`; bài cũ giữ mã |
 | `20261120090000_weekly_board` | `classes.weekly_board`, `profiles.hide_from_board`: bảng xếp hạng tuần ([BD](basic-design/learner-motivation.md)) |
+| `20261125082709_delete_unlinked_history_on_account_deletion` | `anonymize_learner` xóa thêm lịch sử nhập từ Sheet theo email của tài khoản mà chưa gắn với tài khoản (`learner_id` trống), đúng lời hứa của trang Quyền riêng tư; phần còn lại giữ nguyên |
 
 ## Mở rộng dữ liệu dịch vụ
 
