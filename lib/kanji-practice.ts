@@ -38,6 +38,7 @@ const SOURCE_TAG_PREFIX = "kanji:";
 const MAX_OPTIONS = 4;
 const HAN = /\p{Script=Han}/u;
 const AFFIX_MARKS = /[〜～~]/gu;
+const AFFIX_MARK = /[〜～~]/u;
 
 interface VocabSource {
   id: string;
@@ -99,10 +100,42 @@ function normalizePinyin(value: string) {
     .replace(/[。.]$/u, "");
 }
 
+const OPTIONAL_PART = /［([^］]*)］/u;
+
+// Every reading a vocabulary line allows: ／ separates alternatives (〜ふん／〜ぷん, つま／かない),
+// ［な］ or ［お］ may be left out or typed, and a usage note such as ［おかねを～］ is not part of
+// the reading at all.
+export function readingVariants(reading: string): string[] {
+  const variants = new Set<string>();
+  function expand(text: string) {
+    const match = OPTIONAL_PART.exec(text);
+    if (!match) {
+      variants.add(text);
+      return;
+    }
+    const before = text.slice(0, match.index);
+    const after = text.slice(match.index + match[0].length);
+    expand(before + after);
+    if (!AFFIX_MARK.test(match[1])) {
+      expand(before + match[1] + after);
+    }
+  }
+  for (const alternative of reading.split(/[／/]/u)) {
+    expand(alternative);
+  }
+  return [...variants];
+}
+
 export function isCorrectReading(word: KanjiWord, answer: string) {
-  const normalize = word.lang === "ja" ? normalizeReading : normalizePinyin;
-  const given = normalize(answer);
-  return given !== "" && given === normalize(word.reading);
+  if (word.lang !== "ja") {
+    const given = normalizePinyin(answer);
+    return given !== "" && given === normalizePinyin(word.reading);
+  }
+  const given = normalizeReading(answer);
+  return (
+    given !== "" &&
+    readingVariants(word.reading).some((variant) => normalizeReading(variant) === given)
+  );
 }
 
 function shuffle<T>(items: readonly T[], random: () => number) {
@@ -324,7 +357,7 @@ export function buildKanjiQuestions(
       tags,
       inputMode: "hiragana",
       kanjiStrict: false,
-      answer: [word.reading.replace(AFFIX_MARKS, "")],
+      answer: readingVariants(word.reading).map((variant) => variant.replace(AFFIX_MARKS, "")),
     });
     const choice = buildOptions(word, allWords, "written", random);
     if (choice) {

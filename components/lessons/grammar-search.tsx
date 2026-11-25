@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { JapaneseText } from "@/components/lessons/japanese-text";
+import { toPlainJapanese, toSpeechText } from "@/lib/japanese-text";
 
 import type { GrammarEntry } from "@/lib/grammar-search";
 
@@ -31,11 +32,14 @@ export function GrammarSearch({
 }: GrammarSearchProps) {
   const [query, setQuery] = useState("");
   const needle = normalizeSearch(query.trim());
-  const results = entries.filter((entry) =>
-    normalizeSearch(`${entry.pattern} ${entry.vi} ${entry.explain} ${entry.lessonTitle}`).includes(
-      needle,
-    ),
-  );
+  const results = entries.filter((entry) => {
+    // Patterns carry furigana marks ({見|み}える), so the written form and the reading are both
+    // searched: 見える and みえる find it.
+    const text = `${entry.pattern} ${entry.vi} ${entry.explain}`;
+    return normalizeSearch(
+      `${text} ${toPlainJapanese(text)} ${toSpeechText(text)} ${entry.lessonTitle}`,
+    ).includes(needle);
+  });
   return (
     <>
       <div className="page-heading">

@@ -13,6 +13,7 @@ import {
   isCorrectKanjiAnswer,
   isCorrectReading,
   kanjiPracticeReducer,
+  readingVariants,
 } from "../lib/kanji-practice";
 import { draftContentSchema } from "../lib/lesson-draft";
 
@@ -68,6 +69,30 @@ test("readings ignore spaces, the 〜 mark, katakana and a final full stop only"
   assert.equal(isCorrectReading(phrase, "いいてんきですね。"), true);
   assert.equal(isCorrectReading(phrase, "いいてんき"), false);
   assert.equal(isCorrectReading(phrase, "  "), false);
+});
+
+test("a reading accepts its alternatives and optional parts, and ignores usage notes", () => {
+  const word = (written: string, reading: string) => ({
+    id: "w",
+    written,
+    reading,
+    meaning: "",
+    lang: "ja" as const,
+  });
+  const quiet = word("静か［な］", "しずか［な］");
+  assert.equal(isCorrectReading(quiet, "しずか"), true);
+  assert.equal(isCorrectReading(quiet, "しずかな"), true);
+  assert.equal(isCorrectReading(quiet, "しずかに"), false);
+  assert.equal(isCorrectReading(word("［お］仕事", "［お］しごと"), "おしごと"), true);
+  assert.equal(isCorrectReading(word("〜分", "〜ふん／〜ぷん"), "ぷん"), true);
+  assert.equal(isCorrectReading(word("妻／家内", "つま／かない"), "かない"), true);
+  const withNote = word("下ろします［お金を～］", "おろします［おかねを～］");
+  assert.equal(isCorrectReading(withNote, "おろします"), true);
+  assert.equal(isCorrectReading(withNote, "おかねをおろします"), false);
+  assert.deepEqual(readingVariants("［しょうしょう］おまち ください。"), [
+    "おまち ください。",
+    "しょうしょうおまち ください。",
+  ]);
 });
 
 test("Chinese lessons practise hanzi with their pinyin; tones count, spaces and case do not", () => {

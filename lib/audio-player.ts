@@ -17,7 +17,7 @@ interface DeviceVoice {
 
 // Never fall back to another language: Chinese text read by a Japanese voice teaches wrong sounds.
 const DEVICE_VOICES: Record<SpeechLocale, DeviceVoice> = {
-  "ja-JP": { pattern: /^ja(?:-|$)/i, name: "Nhật" },
+  "ja-JP": { pattern: /^ja(?:[-_]|$)/i, name: "Nhật" },
   "zh-CN": { pattern: /^(?:zh|cmn)[-_](?:CN|Hans)/i, name: "Trung (giản thể)" },
   "zh-TW": { pattern: /^(?:zh|cmn)[-_](?:TW|Hant)/i, name: "Trung (phồn thể)" },
 };
@@ -163,8 +163,11 @@ export function createAudioPlayer({
       utterance.lang = locale;
       utterance.voice = voice;
       utterance.rate = 0.8;
-      utterance.onstart = () =>
+      // The timeout only waits for speech to start; a long sentence may then take its time.
+      utterance.onstart = () => {
+        window.clearTimeout(speechTimeout);
         update("playing", `Đang dùng giọng ${deviceVoice.name} của thiết bị (dự phòng).`);
+      };
       utterance.onend = () => {
         window.clearTimeout(speechTimeout);
         update("done", `Đã phát bằng giọng ${deviceVoice.name} của thiết bị (dự phòng).`);
