@@ -167,6 +167,26 @@ Bài mẫu `minna-1-17` đăng ký sau bài 16 (16/11/2026), cùng schema v1 và
 
 `minna-1-18` … `minna-1-25` đăng ký tiếp theo thứ tự bài (16/11/2026). Schema v1, luồng tạo bài từ mẫu, RPC và database giữ nguyên.
 
+Rà soát sâu 25/11/2026 ([báo cáo](../testing/deep-review-2026-11-25.md)):
+
+- **Trình soạn bài:**
+  - `StaleEditorGuard` (components/editor) bọc hai trình soạn. Nếu phiên bản trang cũ hơn bản tab này đã lưu (`rememberEditorSave`/`isOlderThanEditorSave` trong lib/local-draft.ts), nó tải lại thay vì khôi phục.
+  - Guard tính lại mỗi lần hiển thị, không gắn `key`, nên lần làm mới sau khi xuất bản không dựng lại trình soạn.
+  - `useEditorBackup` ghi bản lưu tạm ngay khi rời trình soạn. Lưu thất bại giữ bản nháp mới nhất (`latestDraftRef`).
+- **Form gửi bằng action:** `submitKeepingFields` (components/ui) gửi qua transition nên React không đặt lại các ô. Dùng cho Nội dung lớp, Lịch học, Chia sẻ bài, Quyền đọc, Tạo bài Việt–Trung, Cài đặt lớp.
+- **Thi đấu cả lớp và Presenter:**
+  - Mã phòng thi đấu giữ ở `SlideDeck`, truyền vào `LiveQuizHost`.
+  - Presenter ẩn đầu và chân trang.
+  - Presenter báo mất kết nối sau 3 lần không có trả lời.
+  - Phím S và link presenter chỉ có khi `canPresent`.
+- **Trang Giao bài:**
+  - `PracticeQuestionPicker` nhóm câu từ 60 câu (`groupQuestionsForPicking` trong lib/question-groups.ts): bài Minna (`minna-N`/`minna:N`), rồi phần đề JLPT, rồi dạng câu.
+  - Thứ tự câu giao luôn theo bài.
+  - Ô chọn bài trùng tên ghi thứ tự trong lớp.
+  - Tiêu đề gợi ý "Luyện tập/Kiểm tra – <bài>" đổi theo bài cho tới khi giáo viên sửa.
+- **Thư viện đề:** ghi chú khi bài nguồn đang mở với học viên (`isSourceOpen`), trừ lớp tự học.
+- **Cài đặt lớp:** link Meet là ô chữ `inputMode="url"`. `normalizeMeetingUrl` thêm https://.
+
 Sơ cấp II (`courseId: minna-2`): `minna-2-26` … `minna-2-50` đăng ký sau bài 25 (19–23/11/2026), cùng schema v1 và luồng tạo bài từ mẫu; `MINNA_STARTERS` lọc cả `minna-1` và `minna-2`. Bộ ôn ngữ pháp N4 (`n4-grammar-1` … `n4-grammar-8`, `n4-grammar-map`, `courseId: n4-grammar`) và mẹo làm đề N4 (`n4-tips-1` … `n4-tips-7`, `courseId: n4-tips`) dùng cùng cơ chế, lọc bằng `N4_REVIEW_STARTERS` và `N4_TIPS_STARTERS`. Đối chiếu nội dung từng bài ở [biên soạn](../content-authoring.md#bài-tiếng-nhật-theo-trình-tự-minna-no-nihongo-pilot).
 
 Đồng hồ bài luyện theo cấu trúc đề (17/11/2026):

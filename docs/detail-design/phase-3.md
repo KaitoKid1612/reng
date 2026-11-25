@@ -103,6 +103,23 @@ Migration 202610280003 thay publish_lesson bằng bản có `p_is_sample boolean
 
 - ts-fsrs 5.4.2 tham số mặc định, `enable_fuzz=false`; `scheduler_version = "ts-fsrs-5.4.2"`. scheduler_state lưu đủ trường Card (ngày ISO) và được Zod kiểm tra theo phiên bản; phiên bản khác bị từ chối, không đoán.
 - Thẻ vocab: source_id = lesson_id, item_id = vocab id. Nội dung đọc từ phiên bản lớp ghim cho học viên (`findClassLessonVersions` trong `lib/server/lesson-access.ts`: lớp đang hoạt động, bài đã mở, lớp mở bài gần nhất trước, cùng thứ tự với `read_lesson_version`). Không ở lớp nào có bài thì đọc bản hiện hành (bài công khai, chủ bài). Mục không còn trong bản đó thì bỏ qua. Học viên tự chấm 1–4.
+- Rà soát sâu 25/11/2026 ([báo cáo](../testing/deep-review-2026-11-25.md)):
+  - **Back của trình duyệt:**
+    - Next giữ trang cũ trong bộ nhớ Back dù đã lâu. `use-draft-sync.ts` nhớ phiên bản mỗi lượt đã lưu trong tab (`savedRevisions`).
+    - Trang có phiên bản cũ hơn vào trạng thái `stale`: chặn lưu, hiện "Đang tải câu trả lời mới nhất…", gọi `router.refresh()`.
+    - Runner có key theo phiên bản nên dựng lại trên bản mới.
+  - **Ô nhập và hạn nộp:**
+    - Enter đọc bản nháp qua `readDraft()`, nên "n" vừa hoàn tất được chấm.
+    - `answer-input.tsx` bỏ qua Enter có `keyCode 229` (Safari kết thúc IME).
+    - `DeadlineCountdown` cộng độ lệch `serverNow` như `ExamTimer`.
+  - **Nghe:** `ListeningPlayer` giữ một phần tử đang phát chung cho cả trang; phát đoạn mới thì dừng đoạn cũ.
+  - **Chấm câu gõ:**
+    - `describeParticleSlip` (lib/grading/grade.ts) nhận ra câu gõ chỉ khác đáp án ở わ/え/お thay cho は/へ/を. Câu vẫn sai, `AnswerFeedback` hiện lời nhắc.
+    - Câu tiếng Việt so sánh sau khi đưa dấu thanh về cuối từng tiếng.
+  - **Hôm nay học gì và Bài tập cần làm:**
+    - `todayLessons` chỉ gợi ý bài có `isCourseLesson`.
+    - `practiceRetriesLeft` (lib/assignment.ts) giữ bài luyện chưa đạt còn lượt, trừ bài hằng ngày, ở cả hai nơi, kèm "Chưa đạt, còn N lượt".
+  - **Kết quả đề thi thử:** `JlptResult` đứng trước khối phần trăm.
 - Hàng ôn (`listDueCards`): đọc từng trang 200 thẻ đến hạn, tối đa 5 trang, thứ tự cố định `due, item_type, source_id, item_id`. Thẻ không mở được (rời lớp, bài bị gỡ, test chưa tới giờ xem đáp án) bị bỏ qua mà không che thẻ phía sau. Phiên lấy tối đa 50 thẻ; trang ôn, Lớp của tôi và trang chủ đọc thêm một thẻ để biết còn thẻ (`hasMoreDueCards`, hiện "50+"). `getLearnerAgenda` đếm thêm số thẻ lỗi trong 50 thẻ đó (`dueMistakeCount`); `describeDueReview` trong `lib/learner-today.ts` dùng số này để đặt tên dòng ôn (từ vựng, câu sai hoặc cả hai).
 - Thẻ lỗi: source_id = assignment_id, item_id = question_id; nội dung từ snapshot, chỉ hiện khi bài cho phép xem đáp án. Từ 25/11/2026 (migration `20261125084314_merge_repeated_mistakes`, trigger `merge_repeated_mistake` trước khi chèn): câu sai lại ở một bài giao khác của cùng bài nguồn (bài hằng ngày cùng ngân hàng, đề thi thử từ ngân hàng đó) mở lại thẻ lỗi đã có của câu đó (chuỗi về 0, đến hạn ngay, bỏ resolved_at) thay vì thêm thẻ thứ hai; làm lại cùng bài vẫn đi đường `on conflict` cũ; câu của bài nguồn khác và câu sai ở bài kiểm tra after_due chưa tới giờ công bố vẫn có thẻ riêng. Thẻ trùng tạo trước ngày này giữ nguyên. Ôn phải trả lời, server chấm bằng lib/grading; đúng → Good, sai → Again. Chỉ ôn khi due ≤ now; đúng tăng chuỗi, sai về 0, đủ 3 thì resolved_at = now, sai lại mở lại. Phản hồi chấm và Sổ lỗi có `transcript` của câu nghe/chép chính tả (04/11/2026). Phiên ôn đặt `key` theo từng thẻ lỗi để số lần nghe, audio và mảnh câu không mang sang thẻ sau; Enter trong ô gõ gửi câu trả lời (đọc từ ref để đã hoàn tất "n" cuối); focus chuyển sang Thẻ tiếp theo khi có kết quả và sang thẻ mới khi chuyển thẻ.
 - POST /api/reviews nhận requestId UUID do client tạo; request đã ghi được nhận diện trước mọi kiểm tra hạn/revision và trước khi chấm, nên retry sau khi mất phản hồi trả lại kết quả đã lưu (`review_events.is_correct`), không chấm lại câu trả lời gửi kèm và không ghi trùng. Client khóa câu trả lời đã gửi; nút đổi thành "Gửi lại câu trả lời" và gửi đúng câu đó. Xung đột revision trả 409 để client bỏ qua thẻ.

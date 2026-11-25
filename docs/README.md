@@ -90,6 +90,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 
 ### 25/11/2026
 
+- Rà soát sâu UI, logic, luồng dùng và cách phát triển: [lỗi đã sửa (dữ liệu, học viên, giáo viên, hiệu năng), việc cần người dùng quyết, đề xuất còn lại, nhận xét quy trình](testing/deep-review-2026-11-25.md).
 - Giao diện toàn site: [9 lỗi đã sửa (lưới slide, link trong đoạn văn, trình soạn nhảy dòng, focus khi lỗi, bản in đề…), đề xuất còn lại](testing/ui-check-2026-11-25.md).
 
 ### 23/11/2026

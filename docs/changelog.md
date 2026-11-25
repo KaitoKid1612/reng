@@ -4,6 +4,33 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 25/11/2026
 
+- **Rà soát sâu, đã sửa** ([chi tiết](testing/deep-review-2026-11-25.md)):
+  - **Dữ liệu và quyền:**
+    - Điểm bài kiểm tra chưa công bố không còn lộ qua bảng xếp hạng tuần và tệp tải dữ liệu.
+    - Bài hằng ngày, lịch sử đề và số thẻ ôn đọc đủ khi quá 1000 dòng.
+    - Đổi mật khẩu phải nhập mật khẩu đang dùng.
+    - Xóa tài khoản xóa cả lịch sử nhập theo email chưa gắn.
+    - Câu sai lại trong cùng bài nguồn mở lại thẻ ôn cũ thay vì thêm thẻ trùng.
+  - **Học viên:**
+    - Bấm Back không còn làm mất câu trả lời.
+    - Enter sau "n" romaji chấm đúng; bàn phím Nhật trên iPhone không chốt câu sớm.
+    - Mỗi lúc chỉ phát một đoạn nghe.
+    - Hạn nộp tính theo giờ máy chủ.
+    - Lời nhắc khi gõ trợ từ は/へ/を theo cách đọc.
+    - "hoà" = "hòa" khi chấm.
+    - Ngân hàng câu không còn bị gợi ý "Đọc bài".
+    - Bài luyện chưa đạt còn lượt ở lại "Bài tập cần làm".
+    - Kết quả đề thi thử mở đầu bằng điểm /180.
+    - Luyện kanji nhận 静か［な］ và các cách đọc khác.
+  - **Giáo viên:**
+    - Trình soạn không quay về bản cũ khi bấm Back.
+    - Sáu form không bị đặt lại sau khi gửi.
+    - Phòng thi đấu không mất khi đóng khung.
+    - Presenter không còn đầu trang và ghi chú nằm trong màn hình.
+    - Trang Giao bài chia ngân hàng lớn theo nhóm, có thanh đếm câu dính và tiêu đề điền sẵn.
+    - Link Meet thiếu https:// được nhận.
+    - Trang quản trị giáo viên gọn hơn.
+  - Mọi trang nhẹ hơn khoảng 45 KB vì không tải zod để đếm ngược kỳ thi.
 - **Kiểm tra giao diện, đã sửa** ([chi tiết](testing/ui-check-2026-11-25.md)): bấm Esc trên slide lại thấy lưới đủ nội dung mọi slide; link trong đoạn văn có gạch chân; trình soạn bài không còn nhảy xuống khi gõ phím đầu tiên; form Giao bài báo lỗi thì đưa con trỏ về đúng ô; form Thi thử JLPT báo đúng tên ô Mở đến; mở bản in đáp án khi chưa đăng nhập thì đăng nhập xong quay lại đúng tập; ô tick Lớp tự học cách chữ; tên nút Chấp nhận câu trả lời khớp chữ trên nút; trang Hướng dẫn đổi tên hai mục "Giao đề thi thử JLPT" và "Làm đề thi thử JLPT".
 - **Bản in đề JLPT:** tiêu đề trang in chỉ ghi tên đề (như "Đề thi thử Reng N5 số 1"), không kèm "Đề N" của danh sách nên không còn hai con số cho một đề. Đoạn đọc vừa một trang giữ cả các câu hỏi của nó trên cùng trang.
 - **Làm bài trên điện thoại:** nút chuyển **Từng câu / Cả bài** ẩn hẳn trên màn hình ≤ 600px (điện thoại luôn hiện từng câu); trước đây quy tắc ẩn bị quy tắc sau ghi đè nên nút vẫn hiện mà bấm không có tác dụng.
