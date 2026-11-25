@@ -928,19 +928,19 @@
         "prompt": "Sắp xếp thành câu: Theo báo, nghe nói dân số đang giảm.",
         "tokens": [
           {
-            "id": "q4726-1",
+            "id": "p-qehfbt",
             "text": "しんぶんに よると"
           },
           {
-            "id": "q4726-2",
+            "id": "p-azmyr5",
             "text": "じんこうが へって いる"
           },
           {
-            "id": "q4726-3",
+            "id": "p-3gs8px",
             "text": "そうです。"
           }
         ],
-        "answer": ["q4726-1", "q4726-2", "q4726-3"],
+        "answer": ["p-qehfbt", "p-azmyr5", "p-3gs8px"],
         "explain": "Nguồn tin + に よると, rồi thông tin + そうです.",
         "points": 1,
         "tags": ["minna-47"]

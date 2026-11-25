@@ -1183,19 +1183,19 @@
         "prompt": "Sắp xếp thành câu: Tôi được cô giáo sửa bài văn cho.",
         "tokens": [
           {
-            "id": "q4126-1",
+            "id": "p-sk2pxv",
             "text": "せんせいに さくぶんを"
           },
           {
-            "id": "q4126-2",
+            "id": "p-mkfuuk",
             "text": "なおして"
           },
           {
-            "id": "q4126-3",
+            "id": "p-xv7au6",
             "text": "いただきました。"
           }
         ],
-        "answer": ["q4126-1", "q4126-2", "q4126-3"],
+        "answer": ["p-sk2pxv", "p-mkfuuk", "p-xv7au6"],
         "explain": "Người làm giúp + に, rồi Vて いただきました.",
         "points": 1,
         "tags": ["minna-41"]

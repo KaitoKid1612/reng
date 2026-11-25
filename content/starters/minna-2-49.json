@@ -901,19 +901,19 @@
         "prompt": "Sắp xếp thành câu: Giám đốc đã về rồi.",
         "tokens": [
           {
-            "id": "q4926-1",
+            "id": "p-52ahxe",
             "text": "しゃちょうは"
           },
           {
-            "id": "q4926-2",
+            "id": "p-eus9be",
             "text": "おかえりに"
           },
           {
-            "id": "q4926-3",
+            "id": "p-tb9pc2",
             "text": "なりました。"
           }
         ],
-        "answer": ["q4926-1", "q4926-2", "q4926-3"],
+        "answer": ["p-52ahxe", "p-eus9be", "p-tb9pc2"],
         "explain": "N は お Vます に なりました.",
         "points": 1,
         "tags": ["minna-49"]

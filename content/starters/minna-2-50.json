@@ -963,19 +963,19 @@
         "prompt": "Sắp xếp thành câu: Để tôi mang hành lý giúp quý khách.",
         "tokens": [
           {
-            "id": "q5026-1",
+            "id": "p-agmm7u",
             "text": "おにもつを"
           },
           {
-            "id": "q5026-2",
+            "id": "p-huvtrg",
             "text": "おもち"
           },
           {
-            "id": "q5026-3",
+            "id": "p-3ju6mh",
             "text": "します。"
           }
         ],
-        "answer": ["q5026-1", "q5026-2", "q5026-3"],
+        "answer": ["p-agmm7u", "p-huvtrg", "p-3ju6mh"],
         "explain": "お + Vます bỏ ます + します.",
         "points": 1,
         "tags": ["minna-50"]

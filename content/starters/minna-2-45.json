@@ -880,19 +880,19 @@
         "prompt": "Sắp xếp thành câu: Trường hợp đến muộn, hãy liên lạc bằng điện thoại.",
         "tokens": [
           {
-            "id": "q4526-1",
+            "id": "p-xpx9v8",
             "text": "ちこくする ばあいは"
           },
           {
-            "id": "q4526-2",
+            "id": "p-uk7wxc",
             "text": "でんわで"
           },
           {
-            "id": "q4526-3",
+            "id": "p-sqsjwh",
             "text": "れんらくして ください。"
           }
         ],
-        "answer": ["q4526-1", "q4526-2", "q4526-3"],
+        "answer": ["p-xpx9v8", "p-uk7wxc", "p-sqsjwh"],
         "explain": "Tình huống với 場合は đứng trước, cách xử lý ở sau.",
         "points": 1,
         "tags": ["minna-45"]

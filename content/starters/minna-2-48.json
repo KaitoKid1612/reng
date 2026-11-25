@@ -869,19 +869,19 @@
         "prompt": "Sắp xếp thành câu: Hôm nay cho em nghỉ được không ạ?",
         "tokens": [
           {
-            "id": "q4826-1",
+            "id": "p-kvg2g8",
             "text": "きょうは"
           },
           {
-            "id": "q4826-2",
+            "id": "p-8kcakv",
             "text": "やすませて"
           },
           {
-            "id": "q4826-3",
+            "id": "p-8famxq",
             "text": "いただけませんか。"
           }
         ],
-        "answer": ["q4826-1", "q4826-2", "q4826-3"],
+        "answer": ["p-kvg2g8", "p-8kcakv", "p-8famxq"],
         "explain": "Vさせて いただけませんか đứng cuối câu.",
         "points": 1,
         "tags": ["minna-48"]

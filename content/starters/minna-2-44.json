@@ -996,19 +996,19 @@
         "prompt": "Sắp xếp thành câu: Hãy làm vị súp nhạt đi.",
         "tokens": [
           {
-            "id": "q4426-1",
+            "id": "p-btwhgk",
             "text": "スープの あじを"
           },
           {
-            "id": "q4426-2",
+            "id": "p-hj9w7r",
             "text": "うすく"
           },
           {
-            "id": "q4426-3",
+            "id": "p-jf49t2",
             "text": "して ください。"
           }
         ],
-        "answer": ["q4426-1", "q4426-2", "q4426-3"],
+        "answer": ["p-btwhgk", "p-hj9w7r", "p-jf49t2"],
         "explain": "N を いAく します.",
         "points": 1,
         "tags": ["minna-44"]

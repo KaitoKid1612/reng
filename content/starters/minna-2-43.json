@@ -903,19 +903,19 @@
         "prompt": "Sắp xếp thành câu: Tôi đi mua bánh mì một chút rồi về.",
         "tokens": [
           {
-            "id": "q4326-1",
+            "id": "p-85fbme",
             "text": "ちょっと"
           },
           {
-            "id": "q4326-2",
+            "id": "p-wms64a",
             "text": "パンを かって"
           },
           {
-            "id": "q4326-3",
+            "id": "p-qrbk5d",
             "text": "きます。"
           }
         ],
-        "answer": ["q4326-1", "q4326-2", "q4326-3"],
+        "answer": ["p-85fbme", "p-wms64a", "p-qrbk5d"],
         "explain": "Vて きます đứng cuối câu.",
         "points": 1,
         "tags": ["minna-43"]

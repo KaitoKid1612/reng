@@ -1101,19 +1101,19 @@
         "prompt": "Sắp xếp thành câu: Khăn furoshiki tiện để gói đồ.",
         "tokens": [
           {
-            "id": "q4226-1",
+            "id": "p-42em85",
             "text": "ふろしきは"
           },
           {
-            "id": "q4226-2",
+            "id": "p-4v8azy",
             "text": "ものを つつむのに"
           },
           {
-            "id": "q4226-3",
+            "id": "p-4zs2e6",
             "text": "べんりです。"
           }
         ],
-        "answer": ["q4226-1", "q4226-2", "q4226-3"],
+        "answer": ["p-42em85", "p-4v8azy", "p-4zs2e6"],
         "explain": "N は Vるのに 便利です.",
         "points": 1,
         "tags": ["minna-42"]

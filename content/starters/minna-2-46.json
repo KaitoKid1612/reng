@@ -905,19 +905,19 @@
         "prompt": "Sắp xếp thành câu: Tôi mới sang Nhật.",
         "tokens": [
           {
-            "id": "q4626-1",
+            "id": "p-vkk365",
             "text": "にほんに"
           },
           {
-            "id": "q4626-2",
+            "id": "p-smfkyq",
             "text": "きた"
           },
           {
-            "id": "q4626-3",
+            "id": "p-abrmqv",
             "text": "ばかりです。"
           }
         ],
-        "answer": ["q4626-1", "q4626-2", "q4626-3"],
+        "answer": ["p-vkk365", "p-smfkyq", "p-abrmqv"],
         "explain": "Vた + ばかりです.",
         "points": 1,
         "tags": ["minna-46"]

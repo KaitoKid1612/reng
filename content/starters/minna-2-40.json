@@ -1135,23 +1135,23 @@
         "prompt": "Sắp xếp thành câu: Tôi sẽ mặc thử xem chiếc quần này có vừa không.",
         "tokens": [
           {
-            "id": "q4026-1",
+            "id": "p-dbzdka",
             "text": "この ズボンの"
           },
           {
-            "id": "q4026-2",
+            "id": "p-ztawsn",
             "text": "サイズが あうか"
           },
           {
-            "id": "q4026-3",
+            "id": "p-zes99p",
             "text": "どうか、"
           },
           {
-            "id": "q4026-4",
+            "id": "p-n7vxrc",
             "text": "はいて みます。"
           }
         ],
-        "answer": ["q4026-1", "q4026-2", "q4026-3", "q4026-4"],
+        "answer": ["p-dbzdka", "p-ztawsn", "p-zes99p", "p-n7vxrc"],
         "explain": "Câu hỏi lồng 〜かどうか đứng trước, hành động thử ở cuối câu.",
         "points": 1,
         "tags": ["minna-40"]

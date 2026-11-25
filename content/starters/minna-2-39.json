@@ -1126,23 +1126,23 @@
         "prompt": "Sắp xếp thành câu: Vì có hẹn nên tôi xin phép về trước.",
         "tokens": [
           {
-            "id": "q3926-1",
+            "id": "p-823459",
             "text": "やくそくが"
           },
           {
-            "id": "q3926-2",
+            "id": "p-saufwa",
             "text": "あるので、"
           },
           {
-            "id": "q3926-3",
+            "id": "p-d48xu9",
             "text": "おさきに"
           },
           {
-            "id": "q3926-4",
+            "id": "p-rgun33",
             "text": "しつれいします。"
           }
         ],
-        "answer": ["q3926-1", "q3926-2", "q3926-3", "q3926-4"],
+        "answer": ["p-823459", "p-saufwa", "p-d48xu9", "p-rgun33"],
         "explain": "Lý do với ので đứng trước, lời xin phép đứng sau.",
         "points": 1,
         "tags": ["minna-39"]
