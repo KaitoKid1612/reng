@@ -23,6 +23,7 @@ import type { FormEvent } from "react";
 export interface JlptExamLessonOption {
   lessonId: string;
   title: string;
+  label: string;
   sections: Record<JlptSection, number>;
   // An official test (JLPT workbook) is given whole, at the level it was written for.
   officialLevel: JlptLevel | null;
@@ -52,14 +53,19 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
   const typed = state.values;
   // The bank with the most questions that fit the exam's sections comes first.
   const bestLesson = [...lessons].sort((a, b) => classifiedCount(b) - classifiedCount(a))[0];
+  // An official test sets its own level, so a page that opens on an N4 workbook starts at N4.
   const [level, setLevel] = useState<JlptLevel>(
-    typed?.level === "N4" || typed?.level === "N5" ? typed.level : "N5",
+    typed?.level === "N4" || typed?.level === "N5"
+      ? typed.level
+      : (bestLesson?.officialLevel ?? "N5"),
   );
   const [chosenLessonId, setLessonId] = useState(typed?.lessonId ?? "");
   const [minutes, setMinutes] = useState(
     typed?.timeLimitMinutes ?? String(JLPT_PRESETS[level].minutes),
   );
-  const [title, setTitle] = useState(typed?.title ?? defaultTitles[level]);
+  const [title, setTitle] = useState(
+    typed?.title ?? (bestLesson?.officialLevel ? bestLesson.title : defaultTitles[level]),
+  );
   const [feedbackPolicy, setFeedbackPolicy] = useState(typed?.feedbackPolicy ?? "after_submit");
   // The class's lessons change on this page (a bank added to the class above): a choice that is
   // not in the list any more, or none yet, falls back to the best bank.
@@ -160,7 +166,7 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
           >
             {lessons.map((item) => (
               <option key={item.lessonId} value={item.lessonId}>
-                {item.title}
+                {item.label}
               </option>
             ))}
           </select>

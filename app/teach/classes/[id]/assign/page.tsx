@@ -47,12 +47,23 @@ export default async function AssignPage({ params }: AssignPageProps) {
     const latest = latestVersionNo.get(lesson.lessonId) ?? null;
     return latest !== null && latest > lesson.versionNo ? latest : null;
   };
+  // Two lessons of a class may share a title (two copies of one starter); the select then names
+  // each by its place in the class.
+  const titleCount = new Map<string, number>();
+  for (const lesson of classLessons) {
+    titleCount.set(lesson.title, (titleCount.get(lesson.title) ?? 0) + 1);
+  }
+  const optionLabel = (lesson: { title: string; orderNo: number }) =>
+    (titleCount.get(lesson.title) ?? 0) > 1
+      ? `${lesson.title} (thứ tự ${lesson.orderNo} trong lớp)`
+      : lesson.title;
   const assignableLessons = await Promise.all(
     classLessons.map(async (lesson) => {
       const questions = await listAssignablePracticeQuestions(classRow.id, lesson.lessonId);
       return {
         lessonId: lesson.lessonId,
         title: lesson.title,
+        label: optionLabel(lesson),
         versionNo: lesson.versionNo,
         newerVersionNo: newerVersion(lesson),
         questions: questions.map((question) => ({
@@ -60,6 +71,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
           type: question.type,
           prompt: question.prompt,
           points: question.points,
+          tags: question.tags,
         })),
         jlptSections: countJlptSections(questions),
         // A bank written in the test's parts gives exams of the real test's size at these levels.
@@ -149,6 +161,7 @@ export default async function AssignPage({ params }: AssignPageProps) {
               .map((lesson) => ({
                 lessonId: lesson.lessonId,
                 title: lesson.title,
+                label: lesson.label,
                 sections: lesson.jlptSections,
                 officialLevel: lesson.officialLevel,
                 fullTestLevels: lesson.fullTestLevels,

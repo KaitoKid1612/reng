@@ -184,8 +184,39 @@
   gap: 8px;
 }
 .question-pick-actions {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   align-items: center;
   margin-bottom: 12px;
+  padding: 8px 0;
+  background: var(--surface);
+}
+/* Picking questions is reading a list, not answering it: rows are smaller than answer options. */
+.choice-option.question-pick-option {
+  font-size: 17px;
+  min-height: 44px;
+  padding: 8px 12px;
+}
+.question-group {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+.question-group > summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.question-group[open] {
+  padding-bottom: 12px;
+}
+.question-group > .button-row {
+  margin: 0 0 8px;
 }
 .choice-option {
   display: flex;
@@ -260,6 +291,11 @@
 }
 .notice-panel > :last-child {
   margin-bottom: 0;
+}
+/* Preflight removes paragraph margins, so paragraphs and lists in a notice would touch. :where()
+   keeps this weaker than any panel's own spacing. */
+:where(.notice-panel) > :where(p, ul, ol) + :where(p, ul, ol) {
+  margin-top: 8px;
 }
 .dialog-panel {
   border: 1px solid var(--border);

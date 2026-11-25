@@ -4,8 +4,8 @@ import { unstable_rethrow } from "next/navigation";
 import { useRef, useState, useTransition } from "react";
 
 import { publishAssignmentAction } from "@/app/actions/classes";
-import { MODE_LABELS, QUESTION_TYPE_LABELS } from "@/components/classroom/assignment-labels";
-import { FuriganaText } from "@/components/lessons/japanese-text";
+import { MODE_LABELS } from "@/components/classroom/assignment-labels";
+import { PracticeQuestionPicker } from "@/components/teach/practice-question-picker";
 import { TestQuestionEditor } from "@/components/teach/test-question-editor";
 import { Button } from "@/components/ui/button";
 import { assignmentSettingsSchema, MAX_ASSIGNMENT_QUESTIONS, MAX_ATTEMPTS } from "@/lib/assignment";
@@ -21,6 +21,11 @@ import type { AssignableQuestion, AssignmentMode, FeedbackPolicy } from "@/lib/a
 import type { TeachingLanguageTag } from "@/lib/teaching-language";
 import type { TestQuestionDraft, TestQuestionType } from "@/lib/test-question-draft";
 
+// A title the teacher can keep or change: the kind of work and the lesson it comes from.
+function suggestTitle(mode: AssignmentMode, lessonTitle: string) {
+  return `${mode === "test" ? "Kiểm tra" : "Luyện tập"} – ${lessonTitle}`.slice(0, 160);
+}
+
 const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
   after_due: ", công bố kết quả sau hạn",
   after_submit: ", công bố kết quả ngay sau khi nộp",
@@ -29,10 +34,18 @@ const FEEDBACK_SUMMARIES: Record<FeedbackPolicy, string> = {
 export interface AssignableLesson {
   lessonId: string;
   title: string;
+  // What the lesson select shows; differs from the title only for two lessons of the same title.
+  label: string;
   versionNo: number;
   // A newer published version the class does not use yet; its new questions are not offered.
   newerVersionNo?: number | null;
-  questions: { id: string; type: AssignableQuestion["type"]; prompt: string; points: number }[];
+  questions: {
+    id: string;
+    type: AssignableQuestion["type"];
+    prompt: string;
+    points: number;
+    tags: string[];
+  }[];
 }
 
 interface AssignmentFormProps {
@@ -49,7 +62,9 @@ export function AssignmentForm({
   lessons,
 }: AssignmentFormProps) {
   const [lessonId, setLessonId] = useState(lessons[0]?.lessonId ?? "");
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(() =>
+    lessons[0] ? suggestTitle("practice", lessons[0].title) : "",
+  );
   const [mode, setMode] = useState<AssignmentMode>("practice");
   const [dueInput, setDueInput] = useState("");
   const [allowLate, setAllowLate] = useState(false);
@@ -73,10 +88,14 @@ export function AssignmentForm({
     .filter((question) => question.type === "listen" || question.type === "dictation")
     .map((question) => question.id);
 
-  // A listening set beside the day's daily practice: its questions, and a title if none is set.
+  // A title still as suggested follows the lesson and the kind of work; a typed one is kept.
+  const isSuggestedTitle =
+    !title.trim() || (lesson !== undefined && title === suggestTitle(mode, lesson.title));
+
+  // A listening set beside the day's daily practice: its questions, and a title if none is typed.
   function handlePickListening() {
     setPracticeIds(listeningIds);
-    if (!title.trim() && lesson) {
+    if (isSuggestedTitle && lesson) {
       setTitle(`Luyện nghe – ${lesson.title}`.slice(0, 160));
     }
     setIsReviewing(false);
@@ -94,12 +113,19 @@ export function AssignmentForm({
   const questionCount = mode === "practice" ? practiceIds.length : testQuestions.length;
 
   function handleModeChange(nextMode: AssignmentMode) {
+    if (isSuggestedTitle && lesson) {
+      setTitle(suggestTitle(nextMode, lesson.title));
+    }
     setMode(nextMode);
     setFeedbackPolicy(nextMode === "test" ? "after_due" : "after_submit");
     setIsReviewing(false);
   }
 
   function handleLessonChange(nextLessonId: string) {
+    const next = lessons.find((item) => item.lessonId === nextLessonId);
+    if (isSuggestedTitle && next) {
+      setTitle(suggestTitle(mode, next.title));
+    }
     setLessonId(nextLessonId);
     setPracticeIds([]);
     setIsReviewing(false);
@@ -211,7 +237,7 @@ export function AssignmentForm({
             >
               {lessons.map((item) => (
                 <option key={item.lessonId} value={item.lessonId}>
-                  {item.title}
+                  {item.label}
                 </option>
               ))}
             </select>
@@ -322,32 +348,14 @@ export function AssignmentForm({
             </p>
           ) : (
             // A starter lesson has about 50 questions; ticking each one is not a task.
-            <div className="button-row question-pick-actions">
-              <Button
-                type="button"
-                variant="outline"
-                disabled={practiceIds.length === lesson.questions.length}
-                onClick={() => setPracticeIds(lesson.questions.map((question) => question.id))}
-              >
-                Chọn tất cả
-              </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                disabled={practiceIds.length === 0}
-                onClick={() => setPracticeIds([])}
-              >
-                Bỏ chọn
-              </Button>
-              {listeningIds.length > 0 && (
-                <Button type="button" variant="outline" onClick={handlePickListening}>
-                  Chỉ chọn câu nghe ({listeningIds.length})
-                </Button>
-              )}
-              <span className="small muted" aria-live="polite">
-                Đã chọn {practiceIds.length}/{lesson.questions.length} câu
-              </span>
-            </div>
+            <PracticeQuestionPicker
+              questions={lesson.questions}
+              selectedIds={practiceIds}
+              onSelectedIdsChange={setPracticeIds}
+              languageTag={languageTag}
+              listeningCount={listeningIds.length}
+              onPickListening={handlePickListening}
+            />
           )}
           {lesson.newerVersionNo && (
             <p className="notice-panel small">
@@ -355,27 +363,6 @@ export function AssignmentForm({
               hiện ở đây sau khi cập nhật lớp lên bản mới nhất ở mục Nội dung lớp phía trên.
             </p>
           )}
-          {lesson.questions.map((question) => (
-            <label key={question.id} className="choice-option">
-              <input
-                type="checkbox"
-                checked={practiceIds.includes(question.id)}
-                onChange={() =>
-                  setPracticeIds((current) =>
-                    current.includes(question.id)
-                      ? current.filter((id) => id !== question.id)
-                      : [...current, question.id],
-                  )
-                }
-              />
-              <span lang={languageTag === "ja-JP" ? "ja" : "vi"}>
-                <FuriganaText text={question.prompt} />
-              </span>
-              <span className="small muted">
-                {QUESTION_TYPE_LABELS[question.type]}, {question.points} điểm
-              </span>
-            </label>
-          ))}
         </fieldset>
       )}
       {mode === "test" && (

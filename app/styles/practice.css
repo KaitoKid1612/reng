@@ -47,6 +47,11 @@ input[type="radio"] {
 .field {
   margin-bottom: 20px;
 }
+/* A field the form reported as wrong is marked by its border as well as the message. */
+.field :where(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--wrong);
+  box-shadow: 0 0 0 1px var(--wrong);
+}
 /* A hint under a field stays visibly apart from the box it explains. */
 .field :where(input, select, textarea) + p,
 .answer-hint {
