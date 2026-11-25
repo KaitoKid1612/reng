@@ -225,6 +225,7 @@ Tra cứu nhanh, cập nhật tới 25/11/2026; chi tiết ở dòng chú thích
 | `20261120050000_readable_lesson_ids` | `new_lesson_id`: bài mới có mã đọc được như `minna-1-18-a8e144`; bài cũ giữ mã |
 | `20261120090000_weekly_board` | `classes.weekly_board`, `profiles.hide_from_board`: bảng xếp hạng tuần ([BD](basic-design/learner-motivation.md)) |
 | `20261125082709_delete_unlinked_history_on_account_deletion` | `anonymize_learner` xóa thêm lịch sử nhập từ Sheet theo email của tài khoản mà chưa gắn với tài khoản (`learner_id` trống), đúng lời hứa của trang Quyền riêng tư; phần còn lại giữ nguyên |
+| `20261125084314_merge_repeated_mistakes` | Trigger `merge_repeated_mistake` trên `srs_cards` và chỉ mục `(user_id, item_type, item_id)`: câu sai lại trong cùng bài nguồn mở lại thẻ lỗi cũ thay vì thêm thẻ trùng ([DD](detail-design/phase-3.md)); không sửa dữ liệu đã có |
 
 ## Mở rộng dữ liệu dịch vụ
 
