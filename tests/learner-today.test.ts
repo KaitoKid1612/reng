@@ -35,6 +35,7 @@ function lesson(overrides: Partial<TodayLesson>): TodayLesson {
     title: "Bài 1",
     orderNo: 1,
     availableAt: iso("2026-11-02T08:00:00"),
+    isCourseLesson: true,
     ...overrides,
   };
 }
@@ -200,6 +201,36 @@ test("a self-study class suggests only its next unread lesson, after a teacher's
       ["teacher-new", false],
       ["self-2", true],
     ],
+  );
+});
+
+test("question banks and exams are never offered as lessons to read", () => {
+  const plan = buildTodayPlan(
+    {
+      ...empty,
+      classes: [{ ...teacherClass, slots: [] }, selfStudy],
+      lessons: [
+        lesson({ lessonId: "bank", isCourseLesson: false }),
+        lesson({
+          classId: "self",
+          lessonId: "n4-bank",
+          orderNo: 1,
+          availableAt: iso("2026-09-01T08:00:00"),
+          isCourseLesson: false,
+        }),
+        lesson({
+          classId: "self",
+          lessonId: "n4-grammar-1",
+          orderNo: 2,
+          availableAt: iso("2026-09-01T08:00:00"),
+        }),
+      ],
+    },
+    now,
+  );
+  assert.deepEqual(
+    plan.items.map((item) => (item.kind === "lesson" ? item.lessonId : item.kind)),
+    ["n4-grammar-1"],
   );
 });
 

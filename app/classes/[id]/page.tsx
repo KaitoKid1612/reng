@@ -287,7 +287,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
                     <Link
                       href={`/lessons/${lesson.lessonId}?version=${lesson.versionId}&class=${view.classRow.id}`}
                     >
-                      Đọc bài
+                      {lesson.isCourseLesson ? "Đọc bài" : "Xem bộ câu"}
                     </Link>
                     {lesson.hasListening && (
                       <Link href={`/listening/${lesson.lessonId}?version=${lesson.versionId}`}>

@@ -113,6 +113,13 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
   const hasPictures = lesson.content.vocab.some((item) => item.image);
   const dialogues = lesson.content.slides.filter((slide) => slide.type === "dialogue");
   const tables = lesson.content.slides.filter((slide) => slide.type === "table");
+  // A question bank or an exam has questions but nothing to read: no empty sections and no
+  // "read" button for it.
+  const hasReading =
+    lesson.content.vocab.length > 0 ||
+    lesson.content.grammar.length > 0 ||
+    dialogues.length > 0 ||
+    tables.length > 0;
   return (
     <article className="lesson-reader">
       <div className="page-heading">
@@ -140,84 +147,94 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
         </p>
       )}
       <AudioStatus />
-      <section aria-labelledby="vocabulary-title">
-        <h2 id="vocabulary-title">Từ vựng</h2>
-        <ul className="vocabulary-list" data-pictures={hasPictures ? "true" : undefined}>
-          {lesson.content.vocab.map((item) => (
-            <li key={item.id}>
-              {hasPictures && (
-                <span className="vocab-picture-cell">
-                  <VocabPicture src={item.image} size={44} />
-                </span>
-              )}
-              <div>
-                <span className="japanese-text" lang="ja">
-                  {item.kanji || item.jp}
-                </span>
-                {item.kanji && item.kanji !== item.jp && (
-                  <span className="reading-text" lang="ja">
-                    {item.jp}
+      {!hasReading && (
+        <p className="notice-panel">
+          Bài này là bộ câu hỏi (ngân hàng ôn hoặc đề thi), không có phần đọc. Câu của bài đến với
+          bạn qua bài luyện hằng ngày, bài tập và đề thi thử của lớp.
+        </p>
+      )}
+      {lesson.content.vocab.length > 0 && (
+        <section aria-labelledby="vocabulary-title">
+          <h2 id="vocabulary-title">Từ vựng</h2>
+          <ul className="vocabulary-list" data-pictures={hasPictures ? "true" : undefined}>
+            {lesson.content.vocab.map((item) => (
+              <li key={item.id}>
+                {hasPictures && (
+                  <span className="vocab-picture-cell">
+                    <VocabPicture src={item.image} size={44} />
                   </span>
                 )}
-                <span className="small muted">{item.romaji}</span>
-              </div>
-              <span>
-                <JapaneseText text={item.vi} />
-                {item.note && (
-                  <span className="vocab-note small muted">
-                    <JapaneseText text={item.note} />
+                <div>
+                  <span className="japanese-text" lang="ja">
+                    {item.kanji || item.jp}
                   </span>
-                )}
-              </span>
-              <PronunciationButton
-                id={`${lesson.lessonId}:${item.id}`}
-                text={toSpeechText(item.jp)}
-                label={item.romaji}
-                audio={item.audio}
-              />
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section aria-labelledby="grammar-title">
-        <h2 id="grammar-title">Mẫu câu</h2>
-        {lesson.content.grammar.map((grammar) => (
-          <article className="grammar-block" id={grammar.id} key={grammar.id}>
-            <h3 lang="ja" className="japanese-text">
-              <JapaneseText text={grammar.pattern} />
-            </h3>
-            <p>
-              <strong>
-                <JapaneseText text={grammar.vi} />
-              </strong>
-            </p>
-            <p>
-              <JapaneseText text={grammar.explain} />
-            </p>
-            {grammar.examples.map((example, index) => (
-              <div key={`${grammar.id}-${index}`} className="example-block">
-                <p lang="ja" className="japanese-text">
-                  <JapaneseText text={example.jp} />
-                </p>
-                <p>
-                  <JapaneseText text={example.vi} />
-                </p>
+                  {item.kanji && item.kanji !== item.jp && (
+                    <span className="reading-text" lang="ja">
+                      {item.jp}
+                    </span>
+                  )}
+                  <span className="small muted">{item.romaji}</span>
+                </div>
+                <span>
+                  <JapaneseText text={item.vi} />
+                  {item.note && (
+                    <span className="vocab-note small muted">
+                      <JapaneseText text={item.note} />
+                    </span>
+                  )}
+                </span>
                 <PronunciationButton
-                  id={`${lesson.lessonId}:${grammar.id}:${index}`}
-                  text={toSpeechText(example.jp)}
-                  label={toPlainJapanese(example.jp)}
-                  audio={example.audio}
+                  id={`${lesson.lessonId}:${item.id}`}
+                  text={toSpeechText(item.jp)}
+                  label={item.romaji}
+                  audio={item.audio}
                 />
-              </div>
+              </li>
             ))}
-            {grammar.viMistake && (
-              <p className="grammar-caution">
-                <strong>Dễ nhầm:</strong> <JapaneseText text={grammar.viMistake} />
+          </ul>
+        </section>
+      )}
+      {lesson.content.grammar.length > 0 && (
+        <section aria-labelledby="grammar-title">
+          <h2 id="grammar-title">Mẫu câu</h2>
+          {lesson.content.grammar.map((grammar) => (
+            <article className="grammar-block" id={grammar.id} key={grammar.id}>
+              <h3 lang="ja" className="japanese-text">
+                <JapaneseText text={grammar.pattern} />
+              </h3>
+              <p>
+                <strong>
+                  <JapaneseText text={grammar.vi} />
+                </strong>
               </p>
-            )}
-          </article>
-        ))}
-      </section>
+              <p>
+                <JapaneseText text={grammar.explain} />
+              </p>
+              {grammar.examples.map((example, index) => (
+                <div key={`${grammar.id}-${index}`} className="example-block">
+                  <p lang="ja" className="japanese-text">
+                    <JapaneseText text={example.jp} />
+                  </p>
+                  <p>
+                    <JapaneseText text={example.vi} />
+                  </p>
+                  <PronunciationButton
+                    id={`${lesson.lessonId}:${grammar.id}:${index}`}
+                    text={toSpeechText(example.jp)}
+                    label={toPlainJapanese(example.jp)}
+                    audio={example.audio}
+                  />
+                </div>
+              ))}
+              {grammar.viMistake && (
+                <p className="grammar-caution">
+                  <strong>Dễ nhầm:</strong> <JapaneseText text={grammar.viMistake} />
+                </p>
+              )}
+            </article>
+          ))}
+        </section>
+      )}
       {dialogues.length > 0 && (
         <section aria-labelledby="dialogue-title">
           <h2 id="dialogue-title">Hội thoại</h2>
@@ -244,7 +261,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           ))}
         </section>
       )}
-      {progress && (
+      {progress && hasReading && (
         <LessonProgressButton
           lessonId={lesson.lessonId}
           versionId={lesson.id}

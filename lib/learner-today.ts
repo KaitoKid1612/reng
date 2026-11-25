@@ -40,6 +40,9 @@ export interface TodayLesson {
   title: string;
   orderNo: number;
   availableAt: string;
+  // A lesson to read (vocabulary or grammar). A question bank or an exam has nothing to read, so it
+  // is never offered as "Đọc bài".
+  isCourseLesson: boolean;
 }
 
 export interface TodayInput {
@@ -193,7 +196,9 @@ function todayLessons(input: TodayInput, now: Date) {
   const weekAgo = now.getTime() - NEW_LESSON_DAYS * 24 * 60 * 60 * 1000;
   const unread = input.lessons.filter(
     (lesson) =>
-      !input.readLessonIds.has(lesson.lessonId) && Date.parse(lesson.availableAt) <= now.getTime(),
+      lesson.isCourseLesson &&
+      !input.readLessonIds.has(lesson.lessonId) &&
+      Date.parse(lesson.availableAt) <= now.getTime(),
   );
   const picks = input.classes.flatMap((item) => {
     const own = unread.filter((lesson) => lesson.classId === item.id);
