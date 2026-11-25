@@ -378,7 +378,7 @@ Rà soát luồng soạn → giao → làm bài → slide: [báo cáo](../testin
 
 Kiểm tra ở [báo cáo](../testing/flow-fixes-2026-11-03.md).
 
-- `updateAccountName` và `changePassword` (`app/actions/auth.ts`) dùng session client. Đổi tên ghi `profiles.full_name` qua RLS sẵn có (`profile_update_own`, chỉ cột `full_name`), dùng lại kiểm tra họ tên của form đăng ký. Đổi mật khẩu gọi `auth.updateUser`, dùng lại `resetSchema`, báo riêng `same_password`, `weak_password`, `reauthentication_needed` và rate limit, rồi `signOut({ scope: "others" })`. Không có migration.
+- `updateAccountName` và `changePassword` (`app/actions/auth.ts`) dùng session client. Đổi tên ghi `profiles.full_name` qua RLS sẵn có (`profile_update_own`, chỉ cột `full_name`), dùng lại kiểm tra họ tên của form đăng ký. Đổi mật khẩu: nếu `app_metadata.providers` có `email` thì kiểm mật khẩu đang dùng bằng một client riêng không lưu phiên (`lib/server/password-check.ts`, đăng nhập thử rồi `signOut({ scope: "local" })` phiên vừa mở; sai báo "Mật khẩu đang dùng chưa đúng", không kiểm được thì báo thử lại), rồi gọi `auth.updateUser`, dùng lại `resetSchema`, báo riêng `same_password`, `weak_password`, `reauthentication_needed` và rate limit, rồi `signOut({ scope: "others" })`. Không có migration.
 - `app/settings/account/page.tsx` (`requireAccount`) và `components/settings/account-forms.tsx` (`AccountNameForm`, `PasswordChangeForm`, `FormFeedback` dùng chung).
 - `/forgot-password` hiện `GoogleSignIn` khi `isGoogleAuthEnabled()`. Lời nhắc sau `requestPasswordReset` chỉ người nhận hỗ trợ khi không có thư.
 - `lib/lesson-draft.ts` bỏ `AUDIO_COMMAND` khỏi giao diện; lệnh tạo audio vẫn ghi ở [06](../06-audio.md) cho người vận hành.

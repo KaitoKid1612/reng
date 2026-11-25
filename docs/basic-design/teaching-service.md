@@ -242,7 +242,7 @@ Giáo viên đặt lịch lặp lại hằng tuần cho lớp, theo giờ Việt
 
 Sửa những chức năng đã có nhưng không chạy đúng trên production; danh sách và phần còn lại ở [báo cáo](../testing/flow-fixes-2026-11-03.md).
 
-- **Trang Tài khoản** (`/settings/account`): mọi tài khoản đổi được họ tên hiển thị và đặt mật khẩu mới khi đang đăng nhập. Đổi mật khẩu đăng xuất các thiết bị khác. Link ở cuối trang Lớp của tôi và trang Giảng dạy.
+- **Trang Tài khoản** (`/settings/account`): mọi tài khoản đổi được họ tên hiển thị và đặt mật khẩu mới khi đang đăng nhập. Tài khoản đã có mật khẩu phải nhập mật khẩu đang dùng trước (từ 25/11/2026), để người dùng máy đang đăng nhập sẵn không khóa được chủ tài khoản; tài khoản chỉ đăng nhập Google đặt mật khẩu đầu tiên không cần bước này. Đổi mật khẩu đăng xuất các thiết bị khác. Link ở cuối trang Lớp của tôi và trang Giảng dạy.
 - **Quên mật khẩu:** khi Google đã bật, trang có nút Đăng nhập bằng Google để người dùng Gmail vào lại ngay. Không thấy thư thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.
 - **Câu luyện nghe:** trình soạn nói rõ Reng chưa tạo audio trên web. Bài có câu nghe thiếu audio chưa xuất bản được; giáo viên xóa câu nghe, hoặc nhờ quản trị viên tạo audio.
 - **Trình soạn:** còn thay đổi chưa lưu mà bấm link chuyển trang thì Reng hỏi lại.
@@ -327,7 +327,7 @@ Chính sách quyền riêng tư vừa công bố hứa quyền được xem dữ
 
 - **Chỗ bấm**: trang Tài khoản, mục **Tải dữ liệu của tôi**, nút "Tải tệp dữ liệu (JSON)". Trình duyệt lưu tệp `reng-du-lieu-<ngày>.json`, trang không đổi. Mọi tài khoản đều có, kể cả giáo viên.
 - **Trong tệp**: tài khoản (email, họ tên, vai trò, ngày tạo, lần đăng nhập gần nhất, cách đăng nhập), yêu cầu giảng dạy, các lớp đã vào (tên lớp, giáo viên, ngày vào và rời), từng lượt làm bài, tiến độ đọc bài, thẻ ôn và lịch sử ôn, điểm danh, lịch sử nhập từ Sheet, cài đặt nhắc học, thiết bị nhận thông báo (tên trình duyệt, ngày bật, lần gửi cuối), nhật ký nhắc và email đã gửi, các lần nhập mã lớp, bài được chia sẻ cho mình, và với giáo viên: danh sách bài, lớp và nhật ký buổi dạy của mình, các thao tác tài khoản đã làm.
-- **Theo đúng quy tắc của trang kết quả**: lượt làm bài đã tới giờ xem kết quả có từng câu (đề, câu trả lời của bạn, đáp án, đúng sai, điểm) và điểm cả lượt; bài kiểm tra chưa tới giờ giáo viên công bố chỉ có thời điểm làm và nộp kèm lời nhắc tải lại sau; lượt đang làm dở chỉ ghi là chưa nộp.
+- **Theo đúng quy tắc của trang kết quả**: lượt làm bài đã tới giờ xem kết quả có từng câu (đề, câu trả lời của bạn, đáp án, đúng sai, điểm) và điểm cả lượt; bài kiểm tra chưa tới giờ giáo viên công bố chỉ có thời điểm làm và nộp kèm lời nhắc tải lại sau, và thẻ ôn câu sai của bài đó cũng chờ tới giờ công bố (từ 25/11/2026); lượt đang làm dở chỉ ghi là chưa nộp.
 - **Không có trong tệp**: ghi chú nội bộ của quản trị viên về giáo viên, địa chỉ và khóa thông báo của thiết bị (bí mật của trình duyệt, không phải thông tin về người dùng), trạng thái nội bộ của lịch ôn, mã lớp, nội dung bài học và câu hỏi giáo viên soạn (trừ đề của câu mình đã làm), dữ liệu của học viên khác. Người khác chỉ hiện bằng tên đã thấy trên trang (giáo viên của lớp, người chia sẻ bài).
 - Chính sách quyền riêng tư (mục 6) và Hướng dẫn (mục Tài khoản) ghi thêm cách tải.
 
