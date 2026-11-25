@@ -85,6 +85,14 @@ Kiểm chứng chung:
 
 ## Cần người dùng quyết định hoặc làm
 
+**Đã xong ngày 25/11/2026:** người dùng đã áp cả 3 migration lên production. Kiểm tra sau khi áp:
+- `migration list --linked` khớp local tới `20261125093714`.
+- Câu xem trước về 0, không còn nhóm thẻ lỗi đang mở nào bị trùng.
+- Trigger `srs_cards_merge_repeated_mistake` đã có trên production.
+- `platform_settings` có 1 dòng, `teacher_approval_required = true`.
+
+Phần dưới giữ lại làm hồ sơ.
+
 - **Áp 3 migration lên production:** `npx supabase db push --linked`. Code chạy được cả trước lẫn sau. Hai migration đầu chỉ thay hàm và thêm chỉ mục.
 - **Gộp thẻ ôn trùng đã có:** người dùng đồng ý ngày 25/11/2026. Migration `20261125093714_merge_existing_duplicate_mistakes` sửa dữ liệu thật, gộp theo từng nhóm (học viên, bài nguồn, câu):
   - Giữ một thẻ: thẻ đang mở được sửa gần nhất.
