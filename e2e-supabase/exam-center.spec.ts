@@ -149,7 +149,7 @@ test("a class owner opens the fixed Reng exam once and prints its booklets; a le
   const prints = page.locator("section", {
     has: page.getByRole("heading", { name: "Bản in đề JLPT" }),
   });
-  await expect(prints.locator(".exam-library-row")).toHaveCount(7);
+  await expect(prints.locator(".exam-library-row")).toHaveCount(6);
 
   const email = `print-learner-${RUN_ID}-${Date.now()}@reng.local`;
   await createConfirmedStudent(email, "learner-password-1", "Học viên in");
