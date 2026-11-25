@@ -19,6 +19,7 @@ import {
   callRpc,
   createServiceClient,
   describeServiceFailure,
+  selectEveryPageIn,
   selectOptional,
   selectRows,
 } from "@/lib/server/supabase";
@@ -177,18 +178,20 @@ async function createDailyPractice(classId: string, now: Date): Promise<DailyPra
       .gte("published_at", new Date(since).toISOString()),
     z.object({ id: z.uuid(), published_at: z.iso.datetime({ offset: true }) }),
   );
-  const items = recent.length
-    ? await selectRows(
-        service
-          .from("assignment_items")
-          .select("assignment_id, question_id")
-          .in(
-            "assignment_id",
-            recent.map((row) => row.id),
-          ),
-        z.object({ assignment_id: z.uuid(), question_id: z.string() }),
-      )
-    : [];
+  // Two weeks of 70-question days is close to the API's 1000-row page, so the items are read in
+  // pages: a cut-off list would make recent questions look unused and repeat them.
+  const items = await selectEveryPageIn(
+    recent.map((row) => row.id),
+    (chunk, from, to) =>
+      service
+        .from("assignment_items")
+        .select("assignment_id, question_id")
+        .in("assignment_id", chunk)
+        .order("assignment_id")
+        .order("position")
+        .range(from, to),
+    z.object({ assignment_id: z.uuid(), question_id: z.string() }),
+  );
   const publishedDays = new Map(
     recent.map((row) => [row.id, toVietnamDate(new Date(row.published_at))]),
   );

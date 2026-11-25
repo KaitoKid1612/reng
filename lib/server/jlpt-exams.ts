@@ -19,8 +19,8 @@ import { getTeacherClass } from "@/lib/server/classes";
 import {
   callRpc,
   createServiceClient,
+  selectEveryPageIn,
   selectRows,
-  selectRowsIn,
   ServiceError,
 } from "@/lib/server/supabase";
 
@@ -59,13 +59,17 @@ export async function listRecentExamUses(classId: string): Promise<DailyQuestion
   if (!recent.length) {
     return [];
   }
-  const items = await selectRowsIn(
+  // Thirty exams of 67–85 questions pass the API's 1000-row page, so the items are read in pages.
+  const items = await selectEveryPageIn(
     recent.map((test) => test.id),
-    (chunk) =>
+    (chunk, from, to) =>
       createServiceClient()
         .from("assignment_items")
         .select("assignment_id, question_id")
-        .in("assignment_id", chunk),
+        .in("assignment_id", chunk)
+        .order("assignment_id")
+        .order("position")
+        .range(from, to),
     z.object({ assignment_id: z.uuid(), question_id: z.string() }),
   );
   const days = new Map(recent.map((test) => [test.id, toVietnamDate(new Date(test.published_at))]));

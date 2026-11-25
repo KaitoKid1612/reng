@@ -289,17 +289,19 @@ export async function listOwnedLessons(teacherId: string): Promise<OwnedLesson[]
   if (!lessons.length) {
     return [];
   }
-  const versions = await selectRows(
-    service
-      .from("lesson_versions")
-      .select(
-        "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag",
-      )
-      .in(
-        "lesson_id",
-        lessons.map((lesson) => lesson.id),
-      )
-      .order("version_no", { ascending: false }),
+  // Read in pages and chunks: every version of every lesson of a teacher grows past one page.
+  const versions = await selectEveryPageIn(
+    lessons.map((lesson) => lesson.id),
+    (chunk, from, to) =>
+      service
+        .from("lesson_versions")
+        .select(
+          "id, lesson_id, version_no, title, published_at, schema_version:content->>schemaVersion, language_tag:content->context->>languageTag",
+        )
+        .in("lesson_id", chunk)
+        .order("version_no", { ascending: false })
+        .order("id")
+        .range(from, to),
     versionSummarySchema,
   );
   lessons.sort((first, second) =>

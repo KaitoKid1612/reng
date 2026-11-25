@@ -282,8 +282,17 @@ export async function getProgressSummary(userId: string, now: Date, calendarSinc
         read_completed_at: timestamp,
       }),
     ),
-    selectRows(
-      service.from("srs_cards").select("item_type, due, resolved_at").eq("user_id", userId),
+    // A learner on 67-question days passes 1000 cards within weeks; the counts read every page.
+    selectEveryPage(
+      (from, to) =>
+        service
+          .from("srs_cards")
+          .select("item_type, due, resolved_at")
+          .eq("user_id", userId)
+          .order("item_type")
+          .order("source_id")
+          .order("item_id")
+          .range(from, to),
       z.object({ item_type: z.string(), due: timestamp, resolved_at: timestamp.nullable() }),
     ),
   ]);
