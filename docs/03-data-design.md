@@ -227,6 +227,7 @@ Tra cứu nhanh, cập nhật tới 25/11/2026; chi tiết ở dòng chú thích
 | `20261125082709_delete_unlinked_history_on_account_deletion` | `anonymize_learner` xóa thêm lịch sử nhập từ Sheet theo email của tài khoản mà chưa gắn với tài khoản (`learner_id` trống), đúng lời hứa của trang Quyền riêng tư; phần còn lại giữ nguyên |
 | `20261125084314_merge_repeated_mistakes` | Trigger `merge_repeated_mistake` trên `srs_cards` và chỉ mục `(user_id, item_type, item_id)`: câu sai lại trong cùng bài nguồn mở lại thẻ lỗi cũ thay vì thêm thẻ trùng ([DD](detail-design/phase-3.md)); không sửa dữ liệu đã có |
 | `20261125093714_merge_existing_duplicate_mistakes` | **Sửa dữ liệu** (người dùng đồng ý 25/11/2026): thẻ lỗi trùng tạo trước trigger. Mỗi học viên, bài nguồn, câu chỉ còn một thẻ mở; thẻ trùng chưa ôn thì xóa, đã ôn thì đánh dấu xong (lịch sử ôn bất biến); bài kiểm tra chưa công bố giữ nguyên. Câu xem trước ở [báo cáo](testing/deep-review-2026-11-25.md) |
+| `20261125125418_spread_n5_bank_answer_positions` | **Sửa nội dung:** phiên bản mới của `n5-sheet-review-bank`, đáp án đúng đổi chỗ tới vị trí tính từ md5 của mã câu (52/100 câu đang ở vị trí đầu). Lớp trỏ sang phiên bản mới; bài đã giao giữ ảnh chụp câu hỏi. Từ chối khi có bản nháp chưa xuất bản. Xem [báo cáo](testing/deep-review-2026-11-25.md) |
 
 ## Mở rộng dữ liệu dịch vụ
 

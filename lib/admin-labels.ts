@@ -30,6 +30,7 @@ const AUDIT_ACTION_LABELS: Record<string, string> = {
   // Written both when a lesson is made from a starter and when a shared lesson is copied.
   "lesson.copied": "Tạo bài từ mẫu hoặc bản sao",
   "lesson.answer_variants_corrected": "Sửa đáp án tương đương của bài",
+  "lesson.answer_positions_spread": "Đổi vị trí đáp án đúng trong ngân hàng",
   "lesson.kanji_normalized": "Chuẩn hóa chữ Hán trong từ vựng",
   "answer.variant_accepted": "Chấp nhận câu trả lời tương đương",
   "answer.reviewed_correct": "Chấm lại câu trả lời thành đúng",

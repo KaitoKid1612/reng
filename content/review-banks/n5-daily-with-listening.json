@@ -9,12 +9,7 @@
   "content": {
     "vocab": [],
     "slides": [
-      {
-        "id": "intro",
-        "type": "title",
-        "jp": "N5 ふくしゅう",
-        "vi": "Ôn tập N5 – Nguyên"
-      }
+      { "id": "intro", "type": "title", "jp": "N5 ふくしゅう", "vi": "Ôn tập N5 – Nguyên" }
     ],
     "grammar": [],
     "questions": [
@@ -22,11 +17,11 @@
         "id": "nguyen-n5-20261105-001",
         "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [3],
         "points": 1,
         "prompt": "第11課・個数 1：「りんごが 三つ あります。」三つの読みをひらがなで書く。",
         "explain": "〜つ は物の数を数える。",
-        "options": ["みっつ", "さんつ", "よんつ", "にこ"],
+        "options": ["にこ", "さんつ", "よんつ", "みっつ"],
         "multiple": false
       },
       {
@@ -220,11 +215,11 @@
         "id": "nguyen-n5-20261105-019",
         "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [2],
         "points": 1,
         "prompt": "第11課・頻度 1：「一週間に 三回 日本語を勉強します。」三回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
-        "options": ["さんかい", "さんがい", "ふたかい", "よっか"],
+        "options": ["ふたかい", "さんがい", "さんかい", "よっか"],
         "multiple": false
       },
       {
@@ -253,11 +248,11 @@
         "id": "nguyen-n5-20261105-022",
         "tags": ["n5", "minna-11", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [1],
         "points": 1,
         "prompt": "第11課・頻度 4：「一週間に 四回 日本語を勉強します。」四回の読みをひらがなで書く。",
         "explain": "期間に〜回 は頻度を表す。",
-        "options": ["よんかい", "さんがい", "ふたかい", "よっか"],
+        "options": ["さんがい", "よんかい", "ふたかい", "よっか"],
         "multiple": false
       },
       {
@@ -352,11 +347,11 @@
         "id": "nguyen-n5-20261105-031",
         "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [1],
         "points": 1,
         "prompt": "第12課・二択 1：「日本と ベトナムと（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
-        "options": ["どちら", "どこ", "だれ", "なん"],
+        "options": ["どこ", "どちら", "だれ", "なん"],
         "multiple": false
       },
       {
@@ -385,11 +380,11 @@
         "id": "nguyen-n5-20261105-034",
         "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [2],
         "points": 1,
         "prompt": "第12課・二択 4：「夏と 冬と（　）が好きですか。」",
         "explain": "二つの選択肢の比較には どちら を使う。",
-        "options": ["どちら", "どこ", "だれ", "なん"],
+        "options": ["だれ", "どこ", "どちら", "なん"],
         "multiple": false
       },
       {
@@ -418,11 +413,11 @@
         "id": "nguyen-n5-20261105-037",
         "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [3],
         "points": 1,
         "prompt": "第12課・最上級 1：「季節で 春が（　）好きです。」",
         "explain": "範囲で〜がいちばん は最上級を表す。",
-        "options": ["いちばん", "どちら", "より", "もっと"],
+        "options": ["もっと", "どちら", "より", "いちばん"],
         "multiple": false
       },
       {
@@ -484,11 +479,11 @@
         "id": "nguyen-n5-20261105-043",
         "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [2],
         "points": 1,
         "prompt": "第10課・位置 1：「机の 上に あります。」上の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
-        "options": ["うえ", "うしろ", "そと", "みぎ"],
+        "options": ["そと", "うしろ", "うえ", "みぎ"],
         "multiple": false
       },
       {
@@ -517,11 +512,11 @@
         "id": "nguyen-n5-20261105-046",
         "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [3],
         "points": 1,
         "prompt": "第10課・位置 4：「銀行の 隣に あります。」隣の読みをひらがなで書く。",
         "explain": "場所の位置を表す名詞は Nの位置 に使う。",
-        "options": ["となり", "うしろ", "そと", "みぎ"],
+        "options": ["みぎ", "うしろ", "そと", "となり"],
         "multiple": false
       },
       {
@@ -550,11 +545,11 @@
         "id": "nguyen-n5-20261105-049",
         "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [3],
         "points": 1,
         "prompt": "第10課・存在 1：「猫が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
-        "options": ["います", "あります", "です", "します"],
+        "options": ["します", "あります", "です", "います"],
         "multiple": false
       },
       {
@@ -583,11 +578,11 @@
         "id": "nguyen-n5-20261105-052",
         "tags": ["n5", "minna-10", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [1],
         "points": 1,
         "prompt": "第10課・存在 4：「車が（　）。」適切な存在動詞をひらがなで書く。",
         "explain": "生き物は います、物は あります。",
-        "options": ["あります", "います", "です", "します"],
+        "options": ["います", "あります", "です", "します"],
         "multiple": false
       },
       {
@@ -616,11 +611,11 @@
         "id": "nguyen-n5-20261105-055",
         "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [2],
         "points": 1,
         "prompt": "第12課・過去 1：「きのうは 暑かったです。」暑かったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
-        "options": ["あつかったです", "あついです", "さむいです", "いいです"],
+        "options": ["さむいです", "あついです", "あつかったです", "いいです"],
         "multiple": false
       },
       {
@@ -649,11 +644,11 @@
         "id": "nguyen-n5-20261105-058",
         "tags": ["n5", "minna-12", "文法"],
         "type": "choice",
-        "answer": [0],
+        "answer": [1],
         "points": 1,
         "prompt": "第12課・過去 4：「きのうは 楽しかったです。」楽しかったですの読みをひらがなで書く。",
         "explain": "い形容詞の過去は 〜かったです（いい→よかった）。",
-        "options": ["たのしかったです", "あついです", "さむいです", "いいです"],
+        "options": ["あついです", "たのしかったです", "さむいです", "いいです"],
         "multiple": false
       },
       {
@@ -715,8 +710,8 @@
         "id": "jlpt-n5-004",
         "type": "choice",
         "prompt": "きのう、友だちと {映画|えいが}を（　）。",
-        "options": ["見ます", "見ました", "見ません", "見る"],
-        "answer": [1],
+        "options": ["見ます", "見ません", "見ました", "見る"],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["n5", "文法"],
@@ -737,8 +732,8 @@
         "id": "jlpt-n5-006",
         "type": "choice",
         "prompt": "{田中|たなか}さんは 毎日 {自転車|じてんしゃ}で 学校へ 行きます。{田中|たなか}さんは {何|なん}で 学校へ 行きますか。",
-        "options": ["電車", "{自転車|じてんしゃ}", "バス", "{歩|ある}いて"],
-        "answer": [1],
+        "options": ["電車", "バス", "{自転車|じてんしゃ}", "{歩|ある}いて"],
+        "answer": [2],
         "multiple": false,
         "points": 1,
         "tags": ["n5", "読解"],
@@ -784,11 +779,11 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "Giáo viên Đại học Sakura",
+          "Bác sĩ Bệnh viện Sakura",
           "Sinh viên Đại học Sakura",
-          "Bác sĩ Bệnh viện Sakura"
+          "Giáo viên Đại học Sakura"
         ],
-        "answer": [0]
+        "answer": [2]
       },
       {
         "id": "nghe-01-4",
@@ -841,8 +836,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Sách tiếng Nhật", "Sách tiếng Anh", "Từ điển tiếng Nhật"],
-        "answer": [0]
+        "options": ["Từ điển tiếng Nhật", "Sách tiếng Anh", "Sách tiếng Nhật"],
+        "answer": [2]
       },
       {
         "id": "nghe-02-2",
@@ -923,8 +918,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Tầng 1", "Tầng hầm", "Tầng 3"],
-        "answer": [1]
+        "options": ["Tầng 1", "Tầng 3", "Tầng hầm"],
+        "answer": [2]
       },
       {
         "id": "nghe-03-2",
@@ -951,8 +946,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Ý", "Thụy Sĩ", "Nhật Bản"],
-        "answer": [0]
+        "options": ["Nhật Bản", "Thụy Sĩ", "Ý"],
+        "answer": [2]
       },
       {
         "id": "nghe-03-4",
@@ -1033,8 +1028,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đã học bài", "Không học bài", "Học đến tối"],
-        "answer": [1]
+        "options": ["Đã học bài", "Học đến tối", "Không học bài"],
+        "answer": [2]
       },
       {
         "id": "nghe-04-4",
@@ -1087,8 +1082,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Một mình", "Với bạn", "Với gia đình"],
-        "answer": [2]
+        "options": ["Một mình", "Với gia đình", "Với bạn"],
+        "answer": [1]
       },
       {
         "id": "nghe-05-2",
@@ -1101,8 +1096,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Xe buýt", "Tàu điện", "Xe đạp"],
-        "answer": [1]
+        "options": ["Xe buýt", "Xe đạp", "Tàu điện"],
+        "answer": [2]
       },
       {
         "id": "nghe-05-3",
@@ -1115,8 +1110,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Ngày 4 tháng 4", "Ngày 8 tháng 4", "Ngày 4 tháng 7"],
-        "answer": [0]
+        "options": ["Ngày 8 tháng 4", "Ngày 4 tháng 4", "Ngày 4 tháng 7"],
+        "answer": [1]
       },
       {
         "id": "nghe-05-4",
@@ -1169,8 +1164,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Trà", "Cà phê", "Sữa"],
-        "answer": [1]
+        "options": ["Cà phê", "Trà", "Sữa"],
+        "answer": [0]
       },
       {
         "id": "nghe-06-2",
@@ -1183,8 +1178,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Chơi quần vợt", "Xem phim", "Chơi bóng đá"],
-        "answer": [0]
+        "options": ["Xem phim", "Chơi quần vợt", "Chơi bóng đá"],
+        "answer": [1]
       },
       {
         "id": "nghe-06-3",
@@ -1197,8 +1192,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Siêu thị", "Cửa hàng bách hóa", "Nhà ga"],
-        "answer": [1]
+        "options": ["Siêu thị", "Nhà ga", "Cửa hàng bách hóa"],
+        "answer": [2]
       },
       {
         "id": "nghe-06-4",
@@ -1251,8 +1246,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đũa", "Thìa", "Dĩa"],
-        "answer": [0]
+        "options": ["Dĩa", "Thìa", "Đũa"],
+        "answer": [2]
       },
       {
         "id": "nghe-07-2",
@@ -1265,8 +1260,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Cà vạt", "Áo sơ mi", "Đồng hồ"],
-        "answer": [1]
+        "options": ["Cà vạt", "Đồng hồ", "Áo sơ mi"],
+        "answer": [2]
       },
       {
         "id": "nghe-07-3",
@@ -1279,8 +1274,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đã làm xong", "Chưa làm, bây giờ sẽ làm", "Không có bài tập"],
-        "answer": [1]
+        "options": ["Đã làm xong", "Không có bài tập", "Chưa làm, bây giờ sẽ làm"],
+        "answer": [2]
       },
       {
         "id": "nghe-07-4",
@@ -1333,8 +1328,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Yên tĩnh và đẹp", "Náo nhiệt và đẹp", "Yên tĩnh nhưng bẩn"],
-        "answer": [0]
+        "options": ["Náo nhiệt và đẹp", "Yên tĩnh và đẹp", "Yên tĩnh nhưng bẩn"],
+        "answer": [1]
       },
       {
         "id": "nghe-08-2",
@@ -1347,8 +1342,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Rất ngon", "Không ngon lắm", "Rất đắt"],
-        "answer": [1]
+        "options": ["Không ngon lắm", "Rất ngon", "Rất đắt"],
+        "answer": [0]
       },
       {
         "id": "nghe-08-3",
@@ -1361,8 +1356,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Vui nhưng bận", "Vui và rảnh", "Buồn và bận"],
-        "answer": [0]
+        "options": ["Buồn và bận", "Vui và rảnh", "Vui nhưng bận"],
+        "answer": [2]
       },
       {
         "id": "nghe-08-4",
@@ -1497,8 +1492,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Trên bàn", "Dưới bàn", "Trong cặp"],
-        "answer": [0]
+        "options": ["Trong cặp", "Dưới bàn", "Trên bàn"],
+        "answer": [2]
       },
       {
         "id": "nghe-10-2",
@@ -1511,8 +1506,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Một bé trai", "Một bé gái", "Một người phụ nữ"],
-        "answer": [0]
+        "options": ["Một bé gái", "Một bé trai", "Một người phụ nữ"],
+        "answer": [1]
       },
       {
         "id": "nghe-10-3",
@@ -1661,8 +1656,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Trời mưa", "Trời đẹp", "Có tuyết"],
-        "answer": [0]
+        "options": ["Trời đẹp", "Trời mưa", "Có tuyết"],
+        "answer": [1]
       },
       {
         "id": "nghe-12-2",
@@ -1676,11 +1671,11 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "Tàu điện nhanh hơn xe buýt",
+          "Tàu điện và xe buýt nhanh như nhau",
           "Xe buýt nhanh hơn tàu điện",
-          "Tàu điện và xe buýt nhanh như nhau"
+          "Tàu điện nhanh hơn xe buýt"
         ],
-        "answer": [0]
+        "answer": [2]
       },
       {
         "id": "nghe-12-3",
@@ -1747,8 +1742,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Máy tính mới", "Điện thoại mới", "Xe đạp mới"],
-        "answer": [0]
+        "options": ["Điện thoại mới", "Máy tính mới", "Xe đạp mới"],
+        "answer": [1]
       },
       {
         "id": "nghe-13-2",
@@ -1761,8 +1756,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Đi biển để bơi", "Đi núi để leo núi", "Đi hồ bơi để chơi"],
-        "answer": [0]
+        "options": ["Đi núi để leo núi", "Đi biển để bơi", "Đi hồ bơi để chơi"],
+        "answer": [1]
       },
       {
         "id": "nghe-13-3",
@@ -1775,8 +1770,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["Ăn gì đó", "Uống gì đó", "Đi đâu đó"],
-        "answer": [0]
+        "options": ["Đi đâu đó", "Uống gì đó", "Ăn gì đó"],
+        "answer": [2]
       },
       {
         "id": "nghe-13-4",
@@ -1829,8 +1824,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["えんぴつと けしゴム", "ペンと けしゴム", "えんぴつと じしょ", "ペンと じしょ"],
-        "answer": [0]
+        "options": ["ペンと けしゴム", "えんぴつと けしゴム", "えんぴつと じしょ", "ペンと じしょ"],
+        "answer": [1]
       },
       {
         "id": "n5-mock-02",
@@ -1865,10 +1860,10 @@
         "options": [
           "{白|しろ}い シャツと くつした",
           "{白|しろ}い シャツだけ",
-          "あおい シャツと くつした",
-          "あおい シャツだけ"
+          "あおい シャツだけ",
+          "あおい シャツと くつした"
         ],
-        "answer": [2]
+        "answer": [3]
       },
       {
         "id": "n5-mock-04",
@@ -1883,11 +1878,11 @@
         "responseType": "choice",
         "options": [
           "ゆうびんきょくへ {行|い}く",
-          "てがみに {名前|なまえ}を {書|か}く",
+          "てがみを おくる",
           "きってを かう",
-          "てがみを おくる"
+          "てがみに {名前|なまえ}を {書|か}く"
         ],
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "n5-mock-05",
@@ -1900,8 +1895,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["たまごと パン", "たまごと ぎゅうにゅう", "ぎゅうにゅうと パン", "たまごだけ"],
-        "answer": [0]
+        "options": ["たまごだけ", "たまごと ぎゅうにゅう", "ぎゅうにゅうと パン", "たまごと パン"],
+        "answer": [3]
       },
       {
         "id": "n5-mock-06",
@@ -1915,12 +1910,12 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "{9時|くじ}に {山|やま}の {下|した}",
+          "{8時半|はちじはん}に {学校|がっこう}の {前|まえ}",
           "{9時|くじ}に {学校|がっこう}の {前|まえ}",
           "{8時半|はちじはん}に えきの {前|まえ}",
-          "{8時半|はちじはん}に {学校|がっこう}の {前|まえ}"
+          "{9時|くじ}に {山|やま}の {下|した}"
         ],
-        "answer": [3]
+        "answer": [0]
       },
       {
         "id": "n5-mock-07",
@@ -1933,8 +1928,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["{車|くるま}", "{電車|でんしゃ}だけ", "{電車|でんしゃ}と バス", "バスだけ"],
-        "answer": [2]
+        "options": ["{電車|でんしゃ}と バス", "{電車|でんしゃ}だけ", "{車|くるま}", "バスだけ"],
+        "answer": [0]
       },
       {
         "id": "n5-mock-08",
@@ -1949,11 +1944,11 @@
         "responseType": "choice",
         "options": [
           "{本|ほん}を かりる",
-          "かみに {名前|なまえ}と じゅうしょを {書|か}く",
+          "カードを つくる",
           "カードを {出|だ}す",
-          "カードを つくる"
+          "かみに {名前|なまえ}と じゅうしょを {書|か}く"
         ],
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "n5-mock-09",
@@ -1985,8 +1980,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["のみもの", "ケーキと くだもの", "くだもの", "ケーキ"],
-        "answer": [3]
+        "options": ["ケーキ", "ケーキと くだもの", "くだもの", "のみもの"],
+        "answer": [0]
       },
       {
         "id": "n5-mock-11",
@@ -2000,12 +1995,12 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "{3番|さんばん}",
           "{5番|ごばん}",
+          "{3番|さんばん}",
           "{13番|じゅうさんばん}",
           "{15番|じゅうごばん}"
         ],
-        "answer": [1]
+        "answer": [0]
       },
       {
         "id": "n5-mock-12",
@@ -2048,11 +2043,11 @@
         "responseType": "choice",
         "options": [
           "{4月4日|しがつよっか}",
-          "{4月8日|しがつようか}",
+          "{7月8日|しちがつようか}",
           "{7月4日|しちがつよっか}",
-          "{7月8日|しちがつようか}"
+          "{4月8日|しがつようか}"
         ],
-        "answer": [3]
+        "answer": [1]
       },
       {
         "id": "n5-mock-15",
@@ -2067,11 +2062,11 @@
         "responseType": "choice",
         "options": [
           "そうじを した",
-          "えいがを {見|み}に {行|い}った",
+          "かいものに {行|い}った",
           "テニスを した",
-          "かいものに {行|い}った"
+          "えいがを {見|み}に {行|い}った"
         ],
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "n5-mock-16",
@@ -2086,11 +2081,11 @@
         "responseType": "choice",
         "options": [
           "{10分|じゅっぷん}ぐらい",
-          "{20分|にじゅっぷん}ぐらい",
           "{30分|さんじゅっぷん}ぐらい",
+          "{20分|にじゅっぷん}ぐらい",
           "{1時間|いちじかん}ぐらい"
         ],
-        "answer": [2]
+        "answer": [1]
       },
       {
         "id": "n5-mock-17",
@@ -2104,12 +2099,12 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "{300円|さんびゃくえん}",
+          "{450円|よんひゃくごじゅうえん}",
           "{350円|さんびゃくごじゅうえん}",
           "{400円|よんひゃくえん}",
-          "{450円|よんひゃくごじゅうえん}"
+          "{300円|さんびゃくえん}"
         ],
-        "answer": [0]
+        "answer": [3]
       },
       {
         "id": "n5-mock-18",
@@ -2123,12 +2118,12 @@
         "type": "listen",
         "responseType": "choice",
         "options": [
-          "{母|はは}が {来|き}たから",
           "かぜを ひいたから",
+          "{母|はは}が {来|き}たから",
           "あたまが いたかったから",
           "しごとが あったから"
         ],
-        "answer": [0]
+        "answer": [1]
       },
       {
         "id": "n5-mock-19",
@@ -2174,8 +2169,8 @@
         "maxListens": null,
         "type": "listen",
         "responseType": "choice",
-        "options": ["やきゅう", "テニス", "サッカー", "すいえい"],
-        "answer": [2]
+        "options": ["サッカー", "テニス", "やきゅう", "すいえい"],
+        "answer": [0]
       },
       {
         "id": "n5-mock-22",
@@ -2190,11 +2185,11 @@
         "responseType": "choice",
         "options": [
           "{雨|あめ}で さむい",
-          "はれて あたたかい",
+          "{雨|あめ}で あたたかい",
           "はれて さむい",
-          "{雨|あめ}で あたたかい"
+          "はれて あたたかい"
         ],
-        "answer": [1]
+        "answer": [3]
       },
       {
         "id": "n5-mock-23",

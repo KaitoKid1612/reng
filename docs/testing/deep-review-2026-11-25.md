@@ -139,6 +139,61 @@ Phần dưới giữ lại làm hồ sơ.
 
 - **`platform_settings`:** người dùng tự kiểm tra bằng `npx supabase db query --linked "select * from public.platform_settings"`. Nếu không có dòng nào, giáo viên mới được duyệt tự động; nên thêm dòng và sửa hàm bằng `coalesce` ở đợt migration sau.
 
+## Làm thử đề thi thử N5 trên điện thoại (25/11/2026, tối)
+
+Giao một đề 65 câu cho lớp thử nghiệm ở máy, rồi làm trọn bằng tài khoản học viên ở khung 390×844:
+
+- Đồng hồ đếm từ 1:29:58, trang không tràn ngang, mỗi lúc hiện một câu.
+- Bấm Nghe ở câu nghe thứ hai thì đoạn thứ nhất dừng (ở giây 2,7). Thẻ câu ghi "Đã nghe 1 lần / tối đa 1".
+- Gõ "a" ra あ. Sau khi trả lời đủ, rời trang rồi bấm Back vẫn hiện "Đã trả lời 65/65".
+- Nộp xong, trang kết quả mở đầu bằng điểm theo phần, "69 / 180 điểm (ước tính)", kết luận chưa đỗ và lý do (nghe hiểu dưới điểm sàn).
+- Câu 1: ô trả lời nằm dưới khung đồng hồ dính ở đáy (khung cao khoảng 190px), phải cuộn mới thấy. Các câu sau không bị. Chưa sửa.
+
+**Lỗi tìm thấy, đã sửa: đáp án đúng hay nằm ở lựa chọn đầu tiên.** Chọn "luôn lựa chọn đầu" được 19/20 câu ngữ pháp. Ngân hàng bài hằng ngày của Nguyên (`n5-sheet-review-bank` v8 trên production) có 52/100 câu trắc nghiệm và câu nghe đặt đáp án ở vị trí đầu. App không đảo lựa chọn khi hiển thị. Các ngân hàng N5 khác (`n5-minna-review-bank`, `n5-jlpt-mock-bank`) phân bố đều.
+
+- Migration `20261125125418_spread_n5_bank_answer_positions` xuất bản phiên bản mới của ngân hàng và trỏ lớp sang đó, theo cách đã làm ngày 02/11.
+  - Mỗi câu một đáp án đổi chỗ đáp án đúng với lựa chọn ở vị trí tính từ md5 của mã câu. Chữ của các lựa chọn giữ nguyên, chỉ hai lựa chọn đổi chỗ.
+  - Giữ nguyên câu có hình và câu có lựa chọn toàn là số.
+  - Bài đã giao giữ ảnh chụp câu hỏi của chúng, nên không bài nộp, câu trả lời hay thẻ ôn nào thay đổi.
+  - Từ chối chạy khi ngân hàng có bản nháp chưa xuất bản. Chạy lại thì không đổi gì.
+- Xem trước trên production (chỉ đọc): 71/202 câu đổi; vị trí đáp án 0:52 1:24 2:14 3:10 thành 0:26 1:24 2:30 3:20. Production dùng schema 1, không có bản nháp, chỉ lớp "Tiếng Nhật Minna – Lớp 1" gắn ngân hàng. Ba câu có chữ A/B hay "phương án" đều không phụ thuộc vị trí lựa chọn.
+- Bản sao trong repo (`content/review-banks/n5-daily-with-listening.json`) đổi theo cùng quy tắc: 54/184 câu.
+- Kiểm chứng:
+  - `tests/spread-answer-positions-migration.test.ts`: migration, từ chối khi có bản nháp, bản trong repo khớp quy tắc và không vị trí nào quá 40%.
+  - Trên Postgres local, nạp bản cũ rồi chạy migration: phiên bản mới trùng khớp với bản trong repo.
+- Câu xem trước, chạy bằng `npx supabase db query --linked --file <file>`:
+
+  ```sql
+  -- Read-only preview of 20261125125418_spread_n5_bank_answer_positions.
+  with eligible as (
+    select q,
+      ((q ->> 'type' = 'choice' and coalesce((q ->> 'multiple')::boolean, false) = false)
+          or (q ->> 'type' = 'listen' and q ->> 'responseType' = 'choice'))
+        and jsonb_typeof(q -> 'options') = 'array' and jsonb_array_length(q -> 'options') >= 2
+        and jsonb_typeof(q -> 'answer') = 'array' and jsonb_array_length(q -> 'answer') = 1
+        and jsonb_typeof(q -> 'answer' -> 0) = 'number'
+        and (q -> 'answer' ->> 0)::integer < jsonb_array_length(q -> 'options')
+        and not (q ? 'image')
+        and exists (select 1 from jsonb_array_elements_text(q -> 'options') o where o !~ '^\s*[0-9０-９]') as movable
+    from public.lessons l join public.lesson_versions v on v.id = l.published_version_id
+    cross join lateral jsonb_array_elements(v.content -> 'questions') q
+    where l.id = 'n5-sheet-review-bank'
+  ),
+  planned as (
+    select (q -> 'answer' ->> 0)::integer as now_at,
+      mod(('x' || substr(md5(q ->> 'id'), 1, 7))::bit(28)::integer, jsonb_array_length(q -> 'options')) as new_at
+    from eligible where movable
+  )
+  select
+    (select count(*) from eligible) as questions,
+    (select count(*) from planned) as choice_questions,
+    (select count(*) from planned where now_at <> new_at) as questions_changed,
+    (select string_agg(now_at || ':' || n, ' ' order by now_at) from (select now_at, count(*) n from planned group by 1) a) as positions_now,
+    (select string_agg(new_at || ':' || n, ' ' order by new_at) from (select new_at, count(*) n from planned group by 1) b) as positions_after;
+  ```
+
+- Còn lệch, chưa sửa vì không phải nguồn bài hằng ngày của Nguyên: câu nghe trắc nghiệm trong `content/listening/minna-1-15.json` (60% ở vị trí đầu) và `content/listening/n4-daily.json` (75% ở vị trí giữa, phần lớn là lựa chọn số).
+
 ## Chưa làm (đề xuất)
 
 - **Luồng mời vào lớp:**

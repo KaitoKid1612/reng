@@ -4,6 +4,7 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 25/11/2026
 
+- **Ngân hàng N5 hằng ngày:** đáp án đúng không còn hay nằm ở lựa chọn đầu tiên (trước đây 52/100 câu), qua migration `20261125125418_spread_n5_bank_answer_positions` ([chi tiết](testing/deep-review-2026-11-25.md)).
 - **Rà soát sâu, đã sửa** ([chi tiết](testing/deep-review-2026-11-25.md)):
   - **Dữ liệu và quyền:**
     - Điểm bài kiểm tra chưa công bố không còn lộ qua bảng xếp hạng tuần và tệp tải dữ liệu.
