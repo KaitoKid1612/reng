@@ -41,6 +41,7 @@ export function PresenterView({ lesson, classId }: PresenterViewProps) {
       return () => window.clearInterval(timer);
     }
     const channel = new BroadcastChannel(slideChannelName(lesson.lessonId, lesson.id));
+    let lastAnswerAt = 0;
     channel.onmessage = (event: MessageEvent<unknown>) => {
       const parsed = slideMessageSchema.safeParse(event.data);
       if (
@@ -48,12 +49,20 @@ export function PresenterView({ lesson, classId }: PresenterViewProps) {
         parsed.data.type === "position" &&
         parsed.data.index < listSlideIds(lesson).length
       ) {
+        lastAnswerAt = Date.now();
         setIndex(parsed.data.index);
         setIsConnected(true);
       }
     };
     channel.postMessage({ type: "request" });
-    const heartbeat = window.setInterval(() => channel.postMessage({ type: "request" }), 1500);
+    // The slides tab answers every request; three missed answers mean it was closed, so the page
+    // stops claiming a slide is shown and Trước/Tiếp are known to do nothing.
+    const heartbeat = window.setInterval(() => {
+      channel.postMessage({ type: "request" });
+      if (lastAnswerAt && Date.now() - lastAnswerAt > 4500) {
+        setIsConnected(false);
+      }
+    }, 1500);
     return () => {
       window.clearInterval(timer);
       window.clearInterval(heartbeat);

@@ -24,6 +24,10 @@ export interface LiveQuizSetup {
 
 interface LiveQuizHostProps {
   setup: LiveQuizSetup;
+  // Owned by the slide deck: the host unmounts when the teacher goes back to the slides, and the
+  // round must still be there when they open it again.
+  quizId: string | null;
+  onQuizIdChange: (quizId: string | null) => void;
   onClose: () => void;
 }
 
@@ -36,8 +40,8 @@ const ERROR_TEXT: Record<string, string> = {
 
 // The round over the shared slide: the class sees the code to join, each question with its
 // clock, then the answer, how the class answered and the leaderboard.
-export function LiveQuizHost({ setup, onClose }: LiveQuizHostProps) {
-  const [quizId, setQuizId] = useState(setup.openQuizId);
+export function LiveQuizHost({ setup, quizId, onQuizIdChange, onClose }: LiveQuizHostProps) {
+  const setQuizId = onQuizIdChange;
   const [state, setState] = useState<LiveHostState | null>(null);
   const [count, setCount] = useState<number>(
     LIVE_QUESTION_COUNTS.find((option) => option >= Math.min(10, setup.eligible)) ?? 5,

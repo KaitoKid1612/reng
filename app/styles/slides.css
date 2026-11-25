@@ -1,8 +1,15 @@
 /* Slide deck, presenter, print view, slide layouts, furigana and the reader's tables. */
 
 body:has(.slide-shell) .site-header,
-body:has(.slide-shell) .site-footer {
+body:has(.slide-shell) .site-footer,
+body:has(.presenter-view) .site-header,
+body:has(.presenter-view) .site-footer {
   display: none;
+}
+/* The presenter popup opens at about 1200×780: without the site's header the teacher's notes sit
+   in view under the two previews instead of below the fold. */
+.page-container:has(.presenter-view) {
+  padding-top: 16px;
 }
 .page-container:has(.slide-shell),
 .page-container:has(.lesson-print) {
@@ -222,14 +229,14 @@ body:has(.slide-shell) .site-footer {
 .presenter-previews {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  margin: 32px 0;
+  gap: 20px;
+  margin: 16px 0;
 }
 .presenter-preview {
-  padding: 24px;
+  padding: 16px 20px;
   border: 1px solid var(--border);
   background: var(--surface);
-  min-height: 300px;
+  min-height: 240px;
 }
 .presenter-preview .slide-japanese {
   font-size: 32px;

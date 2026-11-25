@@ -81,6 +81,8 @@ export function SlideDeck({
   const [isQrOpen, setIsQrOpen] = useState(false);
   // An open round comes back up when the slides are reloaded mid-game.
   const [isLiveOpen, setIsLiveOpen] = useState(Boolean(liveSetup?.openQuizId));
+  // The running round outlives its overlay: closing it to show a slide must not lose the room.
+  const [liveQuizId, setLiveQuizId] = useState(liveSetup?.openQuizId ?? null);
   const hasQr = qrLinks.length > 0;
   const base = `/lessons/${lesson.lessonId}`;
   // The presenter keeps the class so its link back to the slides keeps "Ghi buổi dạy".
@@ -189,16 +191,19 @@ export function SlideDeck({
         }
         deckRef.current = deck;
         deck.on("slidechanged", scheduleSlideFit);
-        deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
-          const popup = window.open(
-            `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}${classQuery}`,
-            "reng-presenter",
-            "width=1200,height=850",
-          );
-          if (!popup) {
-            setNotice("Cửa sổ bị chặn. Dùng liên kết Mở presenter bên dưới.");
-          }
-        });
+        // Only a teacher presents; a learner reading the slides has no presenter window.
+        if (canPresent) {
+          deck.addKeyBinding({ keyCode: 83, key: "S", description: "Open presenter" }, () => {
+            const popup = window.open(
+              `/lessons/${lesson.lessonId}/presenter?version=${lesson.id}${classQuery}`,
+              "reng-presenter",
+              "width=1200,height=850",
+            );
+            if (!popup) {
+              setNotice("Cửa sổ bị chặn. Dùng liên kết Mở presenter bên dưới.");
+            }
+          });
+        }
         if (hasQr) {
           deck.addKeyBinding({ keyCode: 81, key: "Q", description: "Show QR code" }, () =>
             setIsQrOpen((isOpen) => !isOpen),
@@ -258,7 +263,7 @@ export function SlideDeck({
       }
       deckRef.current = null;
     };
-  }, [classQuery, hasQr, lesson, printMode, readProgress, slideIds]);
+  }, [canPresent, classQuery, hasQr, lesson, printMode, readProgress, slideIds]);
 
   const closeQr = useCallback(() => setIsQrOpen(false), []);
   const closeLive = useCallback(() => setIsLiveOpen(false), []);
@@ -385,14 +390,23 @@ export function SlideDeck({
           </div>
         </div>
         {isQrOpen && hasQr && <SlideQrPanel links={qrLinks} onClose={closeQr} />}
-        {isLiveOpen && liveSetup && <LiveQuizHost setup={liveSetup} onClose={closeLive} />}
+        {isLiveOpen && liveSetup && (
+          <LiveQuizHost
+            setup={liveSetup}
+            quizId={liveQuizId}
+            onQuizIdChange={setLiveQuizId}
+            onClose={closeLive}
+          />
+        )}
       </div>
       {notice && (
         <p role="status" className="slide-notice">
           {notice}{" "}
-          <a href={`${base}/presenter?version=${lesson.id}${classQuery}`} target="reng-presenter">
-            Mở presenter
-          </a>
+          {canPresent && (
+            <a href={`${base}/presenter?version=${lesson.id}${classQuery}`} target="reng-presenter">
+              Mở presenter
+            </a>
+          )}
         </p>
       )}
     </div>
