@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { describeJlptCountdown, JLPT_LANGUAGE_MAX, JLPT_LISTENING_MAX } from "@/lib/jlpt";
+import { JLPT_LANGUAGE_MAX, JLPT_LISTENING_MAX } from "@/lib/jlpt";
+import { describeJlptCountdown } from "@/lib/jlpt-sessions";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
 import { formatStudyDateTime } from "@/lib/study-days";
 

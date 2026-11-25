@@ -1,5 +1,4 @@
 import {
-  describeJlptCountdown,
   estimateJlptScore,
   JLPT_LANGUAGE_MAX,
   JLPT_LANGUAGE_MIN,
@@ -8,6 +7,7 @@ import {
   JLPT_SECTION_LABELS,
   scoreJlptSections,
 } from "@/lib/jlpt";
+import { describeJlptCountdown } from "@/lib/jlpt-sessions";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 
 import type { JlptLevel, JlptScoredItem } from "@/lib/jlpt";

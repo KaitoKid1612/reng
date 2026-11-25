@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 
-import { findNextJlptSession } from "@/lib/jlpt";
+import { findNextJlptSession } from "@/lib/jlpt-sessions";
 import { formatStudyDay, toStudyDay } from "@/lib/study-days";
 
 // Holds the session date the person hid the bar for, so it comes back for the next session.

@@ -9,10 +9,8 @@ import {
   countJlptSections,
   currentPacingStep,
   describeAttemptTime,
-  describeJlptCountdown,
   estimateJlptScore,
   examHandInAt,
-  findNextJlptSession,
   formatExamClock,
   isExamTimeUp,
   isHandedInAtTimeLimit,
@@ -29,6 +27,7 @@ import {
   jlptSectionQuestionCount,
   jlptTestParts,
 } from "@/lib/jlpt-parts";
+import { describeJlptCountdown, findNextJlptSession } from "@/lib/jlpt-sessions";
 
 import type { JlptExamCandidate, JlptSectionScore } from "@/lib/jlpt";
 
