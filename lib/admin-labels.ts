@@ -27,7 +27,14 @@ const AUDIT_ACTION_LABELS: Record<string, string> = {
   "lesson.shared.view": "Chia sẻ bài (chỉ xem)",
   "lesson.shared.copy": "Chia sẻ bài (được sao chép)",
   "lesson.share_revoked": "Thu hồi chia sẻ",
-  "lesson.copied": "Sao chép bài",
+  // Written both when a lesson is made from a starter and when a shared lesson is copied.
+  "lesson.copied": "Tạo bài từ mẫu hoặc bản sao",
+  "lesson.answer_variants_corrected": "Sửa đáp án tương đương của bài",
+  "lesson.kanji_normalized": "Chuẩn hóa chữ Hán trong từ vựng",
+  "answer.variant_accepted": "Chấp nhận câu trả lời tương đương",
+  "answer.reviewed_correct": "Chấm lại câu trả lời thành đúng",
+  "assignment.question_fixed": "Sửa câu của bài đã giao",
+  "account.anonymized": "Học viên tự xóa tài khoản",
 };
 
 export function describeAuditAction(action: string) {

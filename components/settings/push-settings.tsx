@@ -123,7 +123,12 @@ export function PushSettings({ publicKey }: { publicKey: string }) {
   function sendTest() {
     startTransition(async () => {
       setResult({});
-      setResult(await sendTestPushAction());
+      // A lost request must not take the whole page to the error screen.
+      try {
+        setResult(await sendTestPushAction());
+      } catch {
+        setResult({ error: "Chưa gửi được thông báo thử. Bạn thử lại nhé." });
+      }
     });
   }
 

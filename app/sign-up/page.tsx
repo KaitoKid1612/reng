@@ -30,7 +30,7 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
         <Link href="/sign-up/teacher">Tôi muốn đăng ký giáo viên</Link>
       </p>
       <p className="muted">
-        Chỉ cần họ tên và email. Bạn có thể đăng ký giảng dạy bằng cùng tài khoản.
+        Chỉ cần họ tên, email và mật khẩu. Bạn có thể đăng ký giảng dạy bằng cùng tài khoản.
       </p>
       {isClassroomConfigured() ? (
         <>

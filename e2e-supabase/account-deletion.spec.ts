@@ -26,7 +26,7 @@ test("a learner deletes their account: signed out for good, the class keeps a na
   const code = ((await page.locator(".join-code").textContent()) ?? "").replace("-", "");
   // A teaching account cannot delete itself; the page says why instead of offering the form.
   await page.goto("/settings/account");
-  await expect(page.getByText("Tài khoản dạy học có lớp và bài học phụ thuộc")).toBeVisible();
+  await expect(page.getByText("Tài khoản dạy học không tự xóa được")).toBeVisible();
   await expect(page.getByRole("button", { name: "Xóa tài khoản vĩnh viễn" })).toHaveCount(0);
 
   await createConfirmedStudent(learner.email, learner.password, learner.name);

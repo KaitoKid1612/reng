@@ -1,6 +1,4 @@
 /* Platform administration. */
-
-/* Platform administration. */
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -39,5 +37,31 @@
   .admin-teacher-actions {
     min-width: 0;
     width: 100%;
+  }
+}
+/* On a computer the teacher's details sit on the left and the status buttons and the rental form
+   share one row on the right, instead of a narrow column of stacked fields. */
+@media (min-width: 900px) {
+  .admin-teachers > li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: 12px 24px;
+  }
+  .admin-teacher-actions {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    min-width: 0;
+  }
+  .admin-plan-form {
+    grid-template-columns: 11rem minmax(0, 1fr) auto;
+    align-items: end;
+  }
+  .admin-plan-form .field {
+    margin: 0;
+  }
+  .admin-plan-form > :is([role="alert"], [role="status"]) {
+    grid-column: 1 / -1;
+    order: 1;
   }
 }

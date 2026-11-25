@@ -375,7 +375,7 @@ export async function changePassword(
 }
 
 const TEACHING_ACCOUNT =
-  "Tài khoản dạy học hoặc quản trị có lớp và bài học phụ thuộc nên không tự xóa được. Hãy liên hệ quản trị viên Reng.";
+  "Tài khoản dạy học hoặc quản trị không tự xóa được, vì lớp, bài học và kết quả của học viên có thể phụ thuộc vào nó. Hãy gửi yêu cầu cho quản trị viên Reng (email ở trang Quyền riêng tư).";
 
 // A learner deletes their own account (lib/server/account-deletion.ts); a teaching or admin
 // account needs an operator because classes and lessons depend on it.

@@ -84,7 +84,7 @@ export default async function NewLessonPage() {
         <Link href="#starter-lesson-title" className="link-card">
           <span className="link-card-title">Dùng bài mẫu Minna</span>
           <span className="small muted">
-            Bài 1–26 có sẵn từ vựng, mẫu câu, hội thoại và câu luyện; sửa theo lớp rồi xuất bản.
+            Bài 1–50 có sẵn từ vựng, mẫu câu, hội thoại và câu luyện; sửa theo lớp rồi xuất bản.
           </span>
         </Link>
         <Link href="#n4-review-title" className="link-card">

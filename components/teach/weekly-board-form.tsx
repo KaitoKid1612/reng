@@ -20,7 +20,7 @@ export function WeeklyBoardForm({ classId, isOnBoard }: WeeklyBoardFormProps) {
       <p className="small muted">
         Học viên của mọi lớp bạn bật mục này xếp hạng chung theo số câu đúng trong tuần (thứ 2 đến
         chủ nhật, mỗi bài tính lần làm cao nhất). Bảng hiện ở trang Tiến độ với họ tên và điểm; ai
-        không muốn có thể tự ẩn mình trong Cài đặt.
+        không muốn có thể tự ẩn mình ở trang Tài khoản.
       </p>
       <input type="hidden" name="classId" value={classId} />
       <label className="choice-label">

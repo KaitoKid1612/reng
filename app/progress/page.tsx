@@ -110,7 +110,8 @@ export default async function ProgressPage() {
         </div>
         <div className="stat-tile">
           <strong>{summary.vocab.due + summary.mistakes.open}</strong>
-          <span>thẻ đang cần ôn</span>
+          {/* Due vocabulary plus every mistake not yet learned, due today or later. */}
+          <span>thẻ chưa thuộc</span>
         </div>
       </div>
       {boards.map((board) => (

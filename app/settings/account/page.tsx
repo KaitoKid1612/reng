@@ -10,6 +10,7 @@ import {
 import { BoardVisibilityForm } from "@/components/settings/board-visibility-form";
 import { SettingsNav } from "@/components/settings/settings-nav";
 import { buttonVariants } from "@/components/ui/button";
+import { ContactEmail } from "@/components/legal/contact-email";
 import { requireAccount } from "@/lib/server/account";
 import { accountHasPassword } from "@/lib/server/password-check";
 import { isHiddenFromBoard } from "@/lib/server/weekly-board";
@@ -75,8 +76,9 @@ export default async function AccountSettingsPage() {
         <section className="section-block" aria-labelledby="delete-account-title">
           <h2 id="delete-account-title">Xóa tài khoản</h2>
           <p className="small muted">
-            Tài khoản dạy học có lớp và bài học phụ thuộc nên không tự xóa được. Muốn ngừng dùng
-            Reng, hãy liên hệ quản trị viên để chuyển hoặc đóng lớp trước.
+            Tài khoản dạy học không tự xóa được, vì lớp, bài học và kết quả của học viên có thể phụ
+            thuộc vào nó. Muốn ngừng dùng Reng, gửi yêu cầu về <ContactEmail /> để quản trị viên
+            chuyển hoặc đóng lớp rồi xóa tài khoản.
           </p>
         </section>
       ) : (
