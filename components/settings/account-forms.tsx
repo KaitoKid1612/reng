@@ -36,7 +36,12 @@ export function AccountNameForm({ fullName }: AccountNameFormProps) {
   );
 }
 
-export function PasswordChangeForm() {
+interface PasswordChangeFormProps {
+  // An account made with Google alone sets its first password without one to confirm.
+  hasPassword: boolean;
+}
+
+export function PasswordChangeForm({ hasPassword }: PasswordChangeFormProps) {
   const [state, action, isPending] = useActionState(changePassword, {});
   return (
     <form action={action} className="form-card" aria-labelledby="account-password-title">
@@ -45,6 +50,19 @@ export function PasswordChangeForm() {
         Đặt mật khẩu mới để đăng nhập bằng email. Các thiết bị khác đang đăng nhập sẽ phải đăng nhập
         lại.
       </p>
+      {hasPassword && (
+        <div className="field">
+          <label htmlFor="current-password">Mật khẩu đang dùng</label>
+          <input
+            id="current-password"
+            name="currentPassword"
+            type="password"
+            autoComplete="current-password"
+            required
+            maxLength={72}
+          />
+        </div>
+      )}
       <div className="field">
         <label htmlFor="new-password">Mật khẩu mới</label>
         <input

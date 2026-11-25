@@ -11,6 +11,7 @@ import { BoardVisibilityForm } from "@/components/settings/board-visibility-form
 import { SettingsNav } from "@/components/settings/settings-nav";
 import { buttonVariants } from "@/components/ui/button";
 import { requireAccount } from "@/lib/server/account";
+import { accountHasPassword } from "@/lib/server/password-check";
 import { isHiddenFromBoard } from "@/lib/server/weekly-board";
 
 import type { Metadata } from "next";
@@ -20,7 +21,11 @@ export const metadata: Metadata = { title: "Tài khoản" };
 export default async function AccountSettingsPage() {
   const account = await requireAccount("/settings/account");
   // Before the board's migration the setting cannot be read; the form then shows it unticked.
-  const isHidden = await isHiddenFromBoard(account.id).catch(() => false);
+  const [isHidden, hasPassword] = await Promise.all([
+    isHiddenFromBoard(account.id).catch(() => false),
+    // Asking for the current password is the safe side when the lookup fails.
+    accountHasPassword(account.id).catch(() => true),
+  ]);
   return (
     <div className="settings-page">
       <div className="page-heading">
@@ -35,7 +40,7 @@ export default async function AccountSettingsPage() {
       <SettingsNav current="account" />
       <div className="settings-grid">
         <AccountNameForm fullName={account.fullName} />
-        <PasswordChangeForm />
+        <PasswordChangeForm hasPassword={hasPassword} />
         <BoardVisibilityForm isHidden={isHidden} />
       </div>
       <section className="section-block" aria-labelledby="study-links-title">

@@ -14,6 +14,7 @@ import {
 } from "@/lib/auth-paths";
 import { getCurrentAccount } from "@/lib/server/account";
 import { deleteLearnerAccount } from "@/lib/server/account-deletion";
+import { hasPasswordSignIn, isCurrentPassword } from "@/lib/server/password-check";
 import { canSetNewPassword } from "@/lib/server/password-reset";
 import { getRequestOrigin } from "@/lib/server/request-origin";
 import {
@@ -317,7 +318,8 @@ export async function updateAccountName(
 }
 
 // A signed-in person sets a new password without the reset email; other devices sign out, as
-// after a reset.
+// after a reset. An account that already has a password confirms it first, so someone at a device
+// left signed in cannot lock the owner out.
 export async function changePassword(
   _state: AuthFormState,
   formData: FormData,
@@ -338,6 +340,19 @@ export async function changePassword(
   });
   if (!parsed.success) {
     return { error: firstIssue(parsed.error) };
+  }
+  if (hasPasswordSignIn(user.app_metadata)) {
+    const current = readField(formData, "currentPassword");
+    if (!current) {
+      return { error: "Nhập mật khẩu đang dùng." };
+    }
+    const isCurrent = await isCurrentPassword(user.email ?? "", current);
+    if (isCurrent === false) {
+      return { error: "Mật khẩu đang dùng chưa đúng." };
+    }
+    if (isCurrent === null) {
+      return { error: "Chưa kiểm tra được mật khẩu đang dùng. Bạn thử lại sau ít phút." };
+    }
   }
   const { error } = await client.auth.updateUser({ password: parsed.data.password });
   if (error?.code === "same_password") {
