@@ -2,6 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
+import { FEEDBACK_POLICIES, hasFeedbackTimeArrived } from "@/lib/assignment";
 import { countsAsLearner, getTeacherClass } from "@/lib/server/classes";
 import {
   createServiceClient,
@@ -147,12 +148,17 @@ export async function loadWeeklyBoards(userId: string, now: Date): Promise<Weekl
       (chunk, from, to) =>
         service
           .from("assignments")
-          .select("id, class_id")
+          .select("id, class_id, feedback_policy, due_at")
           .in("class_id", chunk)
           .neq("status", "draft")
           .order("id")
           .range(from, to),
-      z.object({ id: z.uuid(), class_id: z.uuid() }),
+      z.object({
+        id: z.uuid(),
+        class_id: z.uuid(),
+        feedback_policy: z.enum(FEEDBACK_POLICIES),
+        due_at: timestamp.nullable(),
+      }),
     ),
   ]);
   const submissions = await selectEveryPageIn(
@@ -174,7 +180,15 @@ export async function loadWeeklyBoards(userId: string, now: Date): Promise<Weekl
     }),
   );
   const classOf = new Map(boardClasses.map((row) => [row.id, row]));
-  const assignmentClass = new Map(assignments.map((row) => [row.id, row.class_id]));
+  // A test whose results come after its deadline adds nothing before then: a jump on the board
+  // would tell the learner and everyone else the score the teacher is holding back.
+  const assignmentClass = new Map(
+    assignments
+      .filter((row) =>
+        hasFeedbackTimeArrived({ feedbackPolicy: row.feedback_policy, dueAt: row.due_at }, now),
+      )
+      .map((row) => [row.id, row.class_id]),
+  );
   const peopleIds = [...new Set([...enrollments.map((row) => row.user_id), ...teacherIds, userId])];
   const people = await selectRowsIn(
     peopleIds,

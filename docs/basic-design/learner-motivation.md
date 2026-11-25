@@ -24,7 +24,7 @@ Lộ trình và mục mẫu ngữ pháp hay sai đọc chung một lượt câu 
 
 - **Bật:** giáo viên vào Cài đặt lớp → **Bảng xếp hạng tuần** → tick "Đưa lớp này vào bảng tuần chung" → Lưu. Mặc định tắt.
 - **Ai cùng bảng:** học viên của mọi lớp đang hoạt động mà cùng một giáo viên đã bật. Chủ lớp không tính là học viên, trừ lớp tự học (ví dụ Việt ôn N4 trong lớp tự học của mình đứng cùng bảng với Nguyên).
-- **Điểm:** tổng số điểm (thường là số câu đúng) của bài nộp từ 0:00 thứ 2 đến hết chủ nhật giờ Việt Nam, ở các lớp trong bảng. Mỗi bài chỉ tính lần làm cao nhất, nên làm lại một bài không cộng thêm. Cột thứ hai là số ngày có nộp bài trong tuần. Bằng điểm thì ai học nhiều ngày hơn đứng trước.
+- **Điểm:** tổng số điểm (thường là số câu đúng) của bài nộp từ 0:00 thứ 2 đến hết chủ nhật giờ Việt Nam, ở các lớp trong bảng. Mỗi bài chỉ tính lần làm cao nhất, nên làm lại một bài không cộng thêm. Bài kiểm tra công bố kết quả sau hạn chỉ được cộng từ lúc tới giờ công bố (từ 25/11/2026), để bảng không làm lộ điểm giáo viên đang giữ. Cột thứ hai là số ngày có nộp bài trong tuần. Bằng điểm thì ai học nhiều ngày hơn đứng trước.
 - **Hiện ở đâu:**
   - Trang **Tiến độ**: bảng đầy đủ (hạng, huy chương 🥇🥈🥉 cho ba người có điểm, họ tên, câu đúng, ngày học), một câu cho biết bạn đang hạng mấy và kém người trên bao nhiêu câu, người dẫn đầu tuần trước.
   - Trang **Lớp của tôi**: một dòng "Bảng tuần: bạn đang hạng 2/3 với 105 câu đúng" kèm link Xem bảng.

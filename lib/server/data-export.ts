@@ -2,7 +2,7 @@ import "server-only";
 
 import { z } from "zod";
 
-import { parseSnapshotQuestion } from "@/lib/assignment";
+import { hasFeedbackTimeArrived, parseSnapshotQuestion } from "@/lib/assignment";
 import { canExportResults, exportAttempt, isLiveAnswerShown } from "@/lib/data-export";
 import {
   createServiceClient,
@@ -314,6 +314,19 @@ export async function buildDataExport(account: Account, now: Date) {
       )
     );
   });
+  // A mistake card names a question the learner got wrong. For a test whose results are not yet
+  // released that is the result itself, so it waits for the feedback time like the attempt.
+  const releasedCards = cards.filter((row) => {
+    const assignment = assignmentById.get(String(row.source_id));
+    return (
+      row.item_type !== "mistake" ||
+      assignment === undefined ||
+      hasFeedbackTimeArrived(
+        { feedbackPolicy: assignment.feedback_policy, dueAt: assignment.due_at },
+        now,
+      )
+    );
+  });
   const sessionIds = attendance.map((row) => String(row.session_id));
   const ownedClassIds = ownedClasses.map((row) => String(row.id));
   const [questions, answers, sessions, teachingLog, versions] = await Promise.all([
@@ -459,7 +472,7 @@ export async function buildDataExport(account: Account, now: Date) {
       read_completed_at: row.read_completed_at,
       updated_at: row.updated_at,
     })),
-    review_cards: cards,
+    review_cards: releasedCards,
     review_history: reviews,
     attendance: attendance.map((row) => {
       const session = sessionById.get(String(row.session_id));
