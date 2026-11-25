@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { createClassAction, updateClassAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 
 interface ClassSettingsFormProps {
   classRow?: {
@@ -27,8 +28,9 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
   );
   const typed = state.values;
   return (
-    // React resets the form after each action; remounting with the typed values keeps them.
-    <form key={typed ? JSON.stringify(typed) : "saved"} action={action} className="form-card">
+    // Submitted through a transition, so the fields (the checkboxes too) keep what was typed
+    // when the server refuses it.
+    <form onSubmit={submitKeepingFields(action)} className="form-card">
       {classRow && (
         <>
           <input type="hidden" name="classId" value={classRow.id} />
@@ -57,7 +59,11 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             max={100}
             required
             defaultValue={typed?.passScore ?? classRow?.pass_score ?? 70}
+            aria-describedby="pass-score-hint"
           />
+          <p id="pass-score-hint" className="small muted">
+            Bài giao mới đạt khi điểm từ mức này trở lên; sửa riêng được ở từng bài giao.
+          </p>
         </div>
       </div>
       <div className="form-grid">
@@ -99,7 +105,12 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
         <input
           id="class-meeting"
           name="meetingUrl"
-          type="url"
+          // Text, not url: a link pasted without https:// is completed on the server, where the
+          // browser's own check would refuse it with an English message.
+          type="text"
+          inputMode="url"
+          autoComplete="off"
+          spellCheck={false}
           defaultValue={typed?.meetingUrl ?? classRow?.meeting_url ?? ""}
           placeholder="https://meet.google.com/abc-defg-hij"
         />

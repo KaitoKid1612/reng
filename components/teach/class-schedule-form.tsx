@@ -5,6 +5,7 @@ import { useActionState, useRef, useState } from "react";
 import { classScheduleAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 import {
   describeSlot,
   MAX_SCHEDULE_NOTE,
@@ -47,7 +48,7 @@ export function ClassScheduleForm({ classId, schedule }: ClassScheduleFormProps)
   }
 
   return (
-    <form action={action} className="form-card">
+    <form onSubmit={submitKeepingFields(action)} className="form-card">
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="slots" value={JSON.stringify(rows.map((row) => row.slot))} />
       {rows.length ? (

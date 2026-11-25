@@ -5,6 +5,7 @@ import { useActionState, useState } from "react";
 import { shareLessonAction } from "@/app/actions/lesson-sharing";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 import { versionChoices } from "@/lib/lesson-versions";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -21,7 +22,11 @@ export function LessonShareForm({ lessonId, versions }: LessonShareFormProps) {
   const choices = versionChoices(versions, [typed?.versionId], showOlderVersions);
   return (
     // React resets the form after each action; remounting with the typed values keeps them.
-    <form key={typed ? JSON.stringify(typed) : "new"} action={action} className="form-card">
+    <form
+      key={typed ? JSON.stringify(typed) : "new"}
+      onSubmit={submitKeepingFields(action)}
+      className="form-card"
+    >
       <input type="hidden" name="lessonId" value={lessonId} />
       <div className="form-grid">
         <div className="field">

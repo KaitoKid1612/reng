@@ -4,6 +4,7 @@ import { useActionState } from "react";
 
 import { setLessonVisibilityAction } from "@/app/actions/lessons";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 
 const VISIBILITY_LABELS = {
   class: "Chỉ tôi và lớp được cấp quyền",
@@ -21,7 +22,7 @@ export function LessonVisibilityForm({ lessonId, visibility }: LessonVisibilityF
   return (
     <details className="form-card visibility-details">
       <summary>Quyền đọc: {VISIBILITY_LABELS[visibility]}</summary>
-      <form action={action}>
+      <form onSubmit={submitKeepingFields(action)}>
         <input type="hidden" name="lessonId" value={lessonId} />
         <div className="field">
           <label htmlFor="lesson-visibility">Ai có thể đọc bản đã xuất bản?</label>

@@ -4,6 +4,7 @@ import { useActionState } from "react";
 
 import { createTeachingLessonAction } from "@/app/actions/teaching-lessons";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 import { LANGUAGE_LABELS, LANGUAGE_TAGS, TEACHING_TEMPLATES } from "@/lib/teaching-content";
 
 interface CreateTeachingLessonFormProps {
@@ -17,7 +18,7 @@ export function CreateTeachingLessonForm({
 }: CreateTeachingLessonFormProps) {
   const [state, action, isPending] = useActionState(createTeachingLessonAction, {});
   return (
-    <form action={action} className="form-card">
+    <form onSubmit={submitKeepingFields(action)} className="form-card">
       {/* One request ID per page load: a double submit opens the same draft. */}
       <input type="hidden" name="requestId" value={requestId} />
       <fieldset className="teaching-fieldset">

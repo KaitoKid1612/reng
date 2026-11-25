@@ -7,6 +7,7 @@ import { setClassLessonAction } from "@/app/actions/classes";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { DateTimeField } from "@/components/teach/date-time-field";
 import { Button } from "@/components/ui/button";
+import { submitKeepingFields } from "@/components/ui/submit-keeping-fields";
 import { versionChoices } from "@/lib/lesson-versions";
 import { lessonLanguage, teachingLanguageLabel } from "@/lib/teaching-language";
 import { formatStudyDateTime } from "@/lib/study-days";
@@ -77,7 +78,7 @@ export function ClassLessonForm({
     );
   }
   return (
-    <form action={action} className="form-card">
+    <form onSubmit={submitKeepingFields(action)} className="form-card">
       <input type="hidden" name="classId" value={classId} />
       <p className="small muted">
         Ngôn ngữ lớp: {teachingLanguageLabel(classLanguageTag)}. Kiểm tra ngôn ngữ của phiên bản
