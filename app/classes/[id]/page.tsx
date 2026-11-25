@@ -12,7 +12,7 @@ import { LeaveClassButton } from "@/components/classroom/leave-class-button";
 import { JapaneseText } from "@/components/lessons/japanese-text";
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
-import { compareDueUrgency } from "@/lib/assignment";
+import { compareDueUrgency, practiceRetriesLeft } from "@/lib/assignment";
 import { describeSlot, describeUpcomingSession } from "@/lib/class-schedule";
 import { formatPercent } from "@/lib/grading/grade";
 import { summarizeGrammarWeakPoints, WEAK_GRAMMAR_DAYS } from "@/lib/grammar-weak-points";
@@ -62,9 +62,17 @@ interface LearnerAssignmentItemProps {
   item: LearnerAssignment;
   now: Date;
   isFirst?: boolean;
+  // Attempts left on a practice handed in below the pass mark; it stays as work to do.
+  retriesLeft?: number;
 }
 
-function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignmentItemProps) {
+function LearnerAssignmentItem({
+  item,
+  now,
+  isFirst = false,
+  retriesLeft = 0,
+}: LearnerAssignmentItemProps) {
+  const isToDo = isOpenWork(item) || retriesLeft > 0;
   // Submitted work opens on its results; a new attempt is one more deliberate tap from there.
   const path =
     item.status === "submitted"
@@ -78,7 +86,7 @@ function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignment
         </h3>
         <p className="item-meta">
           {describeAssignmentKind(item.assignment)},{" "}
-          {isOpenWork(item)
+          {isToDo
             ? describeOpenDue(item.assignment.dueAt, now)
             : describeDue(item.assignment.dueAt)}
           {item.latestPercent !== null && `, điểm ${formatPercent(item.latestPercent)}`}
@@ -86,12 +94,13 @@ function LearnerAssignmentItem({ item, now, isFirst = false }: LearnerAssignment
       </div>
       <div className="button-row item-actions">
         <AssignmentStatusBadge status={item.status} />
-        {isOpenWork(item) && (
+        {isToDo && (
           <Link
             href={path}
             className={buttonVariants({ variant: isFirst ? "default" : "outline" })}
           >
-            {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+            {retriesLeft > 0 && `Làm lại (còn ${retriesLeft} lượt)`}
+            {retriesLeft === 0 && (item.status === "in_progress" ? "Làm tiếp" : "Làm bài")}
             <LinkPending />
           </Link>
         )}
@@ -120,9 +129,13 @@ export default async function ClassPage({ params }: ClassPageProps) {
   const nextSession = describeUpcomingSession(schedule.slots, now);
   const hasSessionInfo = Boolean(view.classRow.meeting_url || nextSession || schedule.note);
   // Same order as Lớp của tôi: on-time work by deadline, then late work, missed daily sets folded.
+  // A failed practice with attempts left stays here; a daily set below the pass mark does not.
+  const retriesOf = (item: LearnerAssignment) =>
+    view.dailyAssignmentIds.has(item.assignment.id) ? 0 : practiceRetriesLeft(item, now);
+  const isToDo = (item: LearnerAssignment) => isOpenWork(item) || retriesOf(item) > 0;
   const { listed: openWork, missed: missedDaily } = foldMissedDailySets(
     view.assignments
-      .filter(isOpenWork)
+      .filter(isToDo)
       .toSorted((first, second) =>
         compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
       ),
@@ -130,7 +143,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
     now,
   );
   const missedDailyCount = missedDaily.get(view.classRow.id) ?? 0;
-  const otherWork = view.assignments.filter((item) => !isOpenWork(item));
+  const otherWork = view.assignments.filter((item) => !isToDo(item));
   return (
     <>
       <div className="page-heading">
@@ -185,6 +198,7 @@ export default async function ClassPage({ params }: ClassPageProps) {
                 item={item}
                 now={now}
                 isFirst={index === 0}
+                retriesLeft={retriesOf(item)}
               />
             ))}
             {missedDailyCount > 0 && (

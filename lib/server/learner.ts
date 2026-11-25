@@ -7,6 +7,7 @@ import {
   FEEDBACK_POLICIES,
   getDeadlineState,
   isFeedbackAvailable,
+  practiceRetriesLeft,
 } from "@/lib/assignment";
 import { toPercent } from "@/lib/grading/grade";
 import { countClassWork } from "@/lib/learner-class-progress";
@@ -186,8 +187,8 @@ export async function getLearnerAgenda(userId: string, now: Date) {
       .filter((lesson) => Date.parse(lesson.availableAt) <= now.getTime())
       .map((lesson) => ({ ...lesson, classId: item.id })),
   );
-  const openAssignments = assignments
-    .filter(isOpenWork)
+  const candidates = assignments
+    .filter((item) => isOpenWork(item) || practiceRetriesLeft(item, now) > 0)
     .sort((first, second) =>
       compareDueUrgency(first.assignment.dueAt, second.assignment.dueAt, now),
     );
@@ -196,8 +197,12 @@ export async function getLearnerAgenda(userId: string, now: Date) {
       userId,
       openLessons.map((lesson) => lesson.lessonId),
     ),
-    listDailyAssignmentIds(openAssignments.map((item) => item.assignment.id)),
+    listDailyAssignmentIds(candidates.map((item) => item.assignment.id)),
   ]);
+  // A failed practice stays as work to do; a daily set below the pass mark does not come back.
+  const openAssignments = candidates.filter(
+    (item) => isOpenWork(item) || !dailyAssignmentIds.has(item.assignment.id),
+  );
   return {
     classes,
     classProgress: countClassWork(

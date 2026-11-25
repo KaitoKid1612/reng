@@ -575,6 +575,10 @@
 }
 
 /* Course map on the learner's class page: a vertical path of numbered stages. */
+/* The grammar lookup link above the map keeps its own line. */
+p + .course-map {
+  margin-top: 0.75rem;
+}
 .course-map-summary {
   display: grid;
   gap: 0.5rem;
@@ -676,7 +680,10 @@
 }
 
 .course-stage[data-status="next"] .course-stage-status {
-  color: var(--primary);
+  /* A label, not a link: the links are the lesson's actions below. */
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
   font-weight: 700;
 }
 

@@ -581,6 +581,34 @@ export function getDeadlineState(
   return allowLate ? "late" : "past_due";
 }
 
+export interface RetryCandidate {
+  status: string;
+  latestPassed: boolean | null;
+  attemptsUsed: number;
+  assignment: {
+    mode: AssignmentMode;
+    status: string;
+    maxAttempts: number;
+    dueAt: string | null;
+    allowLate: boolean;
+  };
+}
+
+/**
+ * Attempts left on a practice the learner handed in without passing, while it is still open; 0
+ * otherwise. Such work stays among the work to do, so a failed try does not look finished.
+ */
+export function practiceRetriesLeft(item: RetryCandidate, now: Date) {
+  const { assignment } = item;
+  const canRetry =
+    item.status === "submitted" &&
+    item.latestPassed === false &&
+    assignment.mode === "practice" &&
+    assignment.status !== "closed" &&
+    getDeadlineState(assignment.dueAt, assignment.allowLate, now) !== "past_due";
+  return canRetry ? Math.max(assignment.maxAttempts - item.attemptsUsed, 0) : 0;
+}
+
 export interface AttemptDraft {
   answers: Record<string, RawAnswer>;
   checked: string[];

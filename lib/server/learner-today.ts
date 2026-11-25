@@ -1,5 +1,6 @@
 import "server-only";
 
+import { practiceRetriesLeft } from "@/lib/assignment";
 import { buildTodayPlan } from "@/lib/learner-today";
 import { listClassSchedules } from "@/lib/server/class-schedule";
 
@@ -24,6 +25,7 @@ export async function planLearnerToday(agenda: LearnerAgenda, now: Date) {
         dueAt: item.assignment.dueAt,
         inProgress: item.status === "in_progress",
         isDaily: agenda.dailyAssignmentIds.has(item.assignment.id),
+        retriesLeft: practiceRetriesLeft(item, now),
       })),
       lessons: agenda.openLessons,
       readLessonIds: agenda.readLessonIds,

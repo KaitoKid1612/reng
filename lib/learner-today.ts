@@ -31,6 +31,8 @@ export interface TodayAssignment {
   inProgress: boolean;
   // A set from the class's daily practice, which belongs to its own day.
   isDaily: boolean;
+  // Attempts left on a practice handed in below the pass mark (0 for work not tried yet).
+  retriesLeft?: number;
 }
 
 export interface TodayLesson {
@@ -74,6 +76,7 @@ export type TodayItem =
       dueAt: string | null;
       isOverdue: boolean;
       inProgress: boolean;
+      retriesLeft: number;
     }
   | {
       kind: "lesson";
@@ -186,6 +189,7 @@ function todayAssignments(input: TodayInput, names: Map<string, string>, now: Da
     dueAt: item.dueAt,
     isOverdue: item.dueAt !== null && Date.parse(item.dueAt) <= now.getTime(),
     inProgress: item.inProgress,
+    retriesLeft: item.retriesLeft ?? 0,
   }));
   return { items, hiddenCount: due.length - items.length };
 }
@@ -265,7 +269,8 @@ export function describeTodayAssignment(item: TodayAssignmentItem, now: Date) {
   } else if (item.dueAt) {
     due = `Hạn ${formatStudyDateTime(item.dueAt)}`;
   }
-  return [item.inProgress ? "Đang làm dở" : "", due].filter(Boolean).join(" · ");
+  const retry = item.retriesLeft ? `Chưa đạt, còn ${item.retriesLeft} lượt` : "";
+  return [item.inProgress ? "Đang làm dở" : "", retry, due].filter(Boolean).join(" · ");
 }
 
 // "Mở hôm nay", "Mở hôm qua" or "Mở ngày 02/11", by Vietnam calendar day.

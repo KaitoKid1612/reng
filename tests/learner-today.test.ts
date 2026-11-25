@@ -289,10 +289,15 @@ test("work in the plan says when it is due, in Vietnam time", () => {
     title: "Bài",
     isOverdue: false,
     inProgress: false,
+    retriesLeft: 0,
   };
   assert.equal(
     describeTodayAssignment({ ...base, dueAt: iso("2026-11-03T23:59:59") }, now),
     "Hạn hôm nay, 23:59",
+  );
+  assert.equal(
+    describeTodayAssignment({ ...base, dueAt: iso("2026-11-04T23:59:59"), retriesLeft: 2 }, now),
+    "Chưa đạt, còn 2 lượt · Hạn 23:59 04/11/2026",
   );
   assert.match(
     describeTodayAssignment({ ...base, dueAt: iso("2026-11-02T21:00:00"), isOverdue: true }, now),

@@ -8,17 +8,18 @@ import {
   compareDueUrgency,
   countBlankAnswers,
   describeCorrectAnswer,
+  describeRawAnswer,
   describeTimeLeft,
   getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
   isHandedInAtDeadline,
-  describeRawAnswer,
   isSameAttemptDraft,
   joinOrderTokens,
   parseAssignableQuestion,
   parseAttemptDraft,
   parseSnapshotQuestion,
+  practiceRetriesLeft,
   toAttemptItems,
   toQuestionView,
   toStoredRawAnswer,
@@ -540,4 +541,41 @@ test("the countdown shows in the last hour and submits a minute early when late 
   assert.equal(late?.shouldAutoSubmit, false);
   assert.equal(late?.text, "Còn 0:30 tới hạn; nộp sau đó sẽ ghi là nộp muộn.");
   assert.equal(describeTimeLeft(due, false, at("2026-11-04T17:00:00Z")), null);
+});
+
+test("a practice handed in below the pass mark keeps its attempts left until it closes", () => {
+  const now = new Date("2026-11-25T08:00:00Z");
+  const item = {
+    status: "submitted",
+    latestPassed: false,
+    attemptsUsed: 1,
+    assignment: {
+      mode: "practice" as const,
+      status: "published",
+      maxAttempts: 3,
+      dueAt: "2026-11-26T16:59:00Z",
+      allowLate: false,
+    },
+  };
+  assert.equal(practiceRetriesLeft(item, now), 2);
+  assert.equal(practiceRetriesLeft({ ...item, latestPassed: true }, now), 0);
+  assert.equal(practiceRetriesLeft({ ...item, attemptsUsed: 3 }, now), 0);
+  assert.equal(
+    practiceRetriesLeft({ ...item, assignment: { ...item.assignment, status: "closed" } }, now),
+    0,
+  );
+  assert.equal(
+    practiceRetriesLeft(
+      { ...item, assignment: { ...item.assignment, dueAt: "2026-11-24T16:59:00Z" } },
+      now,
+    ),
+    0,
+  );
+  assert.equal(
+    practiceRetriesLeft(
+      { ...item, assignment: { ...item.assignment, mode: "test" as const } },
+      now,
+    ),
+    0,
+  );
 });

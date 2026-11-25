@@ -19,12 +19,19 @@ const STATUS_LABELS: Record<Stage["status"], string> = {
   locked: "Sắp mở",
 };
 
-// A tick when done, a lock before it opens, otherwise the lesson's number.
-function stageMark(stage: Stage) {
+// The number a learner reads in the lesson's own title ("Bài 17 – …", "Tổng ôn N4 · 1 – …"): a
+// course's order may count a map or an intro first, so "· 1" would show as 2.
+const TITLE_NUMBER = /^(?:Bài\s+|.*·\s*)(\d+)/u;
+
+// A tick when done, a lock before it opens, otherwise the number in the lesson's title.
+function stageMark(stage: Stage, title: string) {
   if (stage.status === "done") {
     return "✓";
   }
-  return stage.status === "locked" ? "🔒" : stage.lessonOrder;
+  if (stage.status === "locked") {
+    return "🔒";
+  }
+  return TITLE_NUMBER.exec(title)?.[1] ?? "•";
 }
 
 function StageStars({ stage }: { stage: Stage }) {
@@ -86,7 +93,7 @@ export function CourseMap({ classId, isJapanese, stages, lessons }: CourseMapPro
           return (
             <li key={stage.lessonId} className="course-stage" data-status={stage.status}>
               <span className="course-stage-node" aria-hidden="true">
-                {stageMark(stage)}
+                {stageMark(stage, lesson.title)}
               </span>
               <div className="course-stage-body">
                 <h3>{lesson.title}</h3>
