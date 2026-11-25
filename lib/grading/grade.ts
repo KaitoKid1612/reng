@@ -53,13 +53,30 @@ function matchesText(
   );
 }
 
-// Vietnamese free text ("text" input): letter case, spacing and punctuation do not change the
-// answer, so "Thứ Hai." matches "thứ hai". Japanese and Chinese keep their stricter profiles.
-function normalizeFreeText(value: string) {
+// The five Vietnamese tone marks as combining characters (huyền, sắc, ngã, hỏi, nặng).
+const TONE_MARK = /[\u0300\u0301\u0303\u0309\u0323]/gu;
+
+// Keyboards place a tone mark in the old or the new style ("hoà" or "hòa", "thuỷ" or "thủy").
+// Each word keeps its one tone mark but at its end, so both styles compare equal; the vowel marks
+// (â, ă, ơ…) and which tone it is still count.
+function placeTonesCanonically(value: string) {
   return value
-    .normalize("NFC")
-    .toLocaleLowerCase("vi")
-    .replace(/[\s\p{P}]+/gu, "");
+    .normalize("NFD")
+    .replace(/\p{L}[\p{L}\p{M}]*/gu, (word) => {
+      const tones = word.match(TONE_MARK) ?? [];
+      return tones.length === 1 ? `${word.replace(TONE_MARK, "")}${tones[0]}` : word;
+    })
+    .normalize("NFC");
+}
+
+// Vietnamese free text ("text" input): letter case, spacing, punctuation and the tone mark's
+// position do not change the answer, so "Thứ Hai." matches "thứ hai" and "hoà" matches "hòa".
+// Japanese and Chinese keep their stricter profiles.
+function normalizeFreeText(value: string) {
+  return placeTonesCanonically(value.normalize("NFC").toLocaleLowerCase("vi")).replace(
+    /[\s\p{P}]+/gu,
+    "",
+  );
 }
 
 // The form a typed answer is compared in, so screens can show accepted spellings that grade the

@@ -166,7 +166,7 @@ test("the Chinese grading profile keeps tones, spacing and scripts exactly", () 
   assert.equal(gradeQuestion(characters, "谢谢").isCorrect, true);
 });
 
-test("Vietnamese free-text answers ignore letter case, spacing and punctuation only", () => {
+test("Vietnamese free-text answers ignore letter case, spacing and punctuation", () => {
   const meaning = questionSchema.parse({
     id: "t1",
     type: "fill",
@@ -197,6 +197,31 @@ test("Vietnamese free-text answers ignore letter case, spacing and punctuation o
   });
   assert.equal(gradeQuestion(heard, "Xin chào!").isCorrect, true);
   assert.equal(gradeQuestion(heard, "xin chao").isCorrect, false);
+});
+
+test("Vietnamese free-text answers accept the old and the new tone placement alike", () => {
+  const question = (answer: string) =>
+    questionSchema.parse({
+      id: "t2",
+      type: "fill",
+      prompt: "Nghĩa của từ này là gì?",
+      answer: [answer],
+      explain: "Nghĩa.",
+      points: 1,
+      inputMode: "text",
+    });
+  assert.equal(gradeQuestion(question("hòa bình"), "hoà bình").isCorrect, true);
+  assert.equal(gradeQuestion(question("hoà bình"), "Hòa Bình").isCorrect, true);
+  assert.equal(gradeQuestion(question("thủy tinh"), "thuỷ tinh").isCorrect, true);
+  assert.equal(gradeQuestion(question("khỏe"), "khoẻ").isCorrect, true);
+  assert.equal(gradeQuestion(question("tùy"), "tuỳ").isCorrect, true);
+  // Decomposed input (some phone keyboards) is the same text.
+  assert.equal(gradeQuestion(question("hòa"), "hòa".normalize("NFD")).isCorrect, true);
+  // Another tone, or a vowel without its mark, is still another word.
+  assert.equal(gradeQuestion(question("hòa"), "hóa").isCorrect, false);
+  assert.equal(gradeQuestion(question("thủy"), "thuy").isCorrect, false);
+  assert.equal(gradeQuestion(question("mở"), "mỡ").isCorrect, false);
+  assert.equal(gradeQuestion(question("mơ"), "mo").isCorrect, false);
 });
 
 test("displayed percentages use the Vietnamese decimal comma and one decimal", () => {
