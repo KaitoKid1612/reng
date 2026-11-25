@@ -9,13 +9,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
 import { grammarRefs } from "@/lib/grammar-links";
-import {
-  describeExamPacing,
-  describeJlptCountdown,
-  examHandInAt,
-  planExamPacing,
-  planStudyPacing,
-} from "@/lib/jlpt";
+import { describeExamPacing, examHandInAt, planExamPacing, planStudyPacing } from "@/lib/jlpt";
+import { describeJlptCountdown } from "@/lib/jlpt-sessions";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
 import { findClassGrammarLinks, hasClassGrammar } from "@/lib/server/class-grammar";
@@ -170,6 +165,7 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           initialSavedAt={openAttempt.savedAt}
           dueAt={assignment.dueAt}
           allowLate={assignment.allowLate}
+          serverNow={now.toISOString()}
           grammarLinks={grammarLinks}
           study={
             studyPacing.length

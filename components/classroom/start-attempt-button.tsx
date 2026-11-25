@@ -18,6 +18,7 @@ const START_ERRORS: Record<string, string> = {
   past_due: "Đã quá hạn và bài không cho nộp muộn.",
   no_attempts_left: "Bạn đã dùng hết số lượt làm.",
   not_found: "Không tìm thấy bài này trong lớp của bạn.",
+  unauthenticated: "Phiên đăng nhập đã hết. Tải lại trang để đăng nhập rồi bắt đầu.",
 };
 
 export function StartAttemptButton({

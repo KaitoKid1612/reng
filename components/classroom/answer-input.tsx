@@ -98,10 +98,16 @@ export function AnswerInput({
     }
   }
 
-  // Enter also confirms an IME conversion, so only a plain Enter moves on. It finishes a trailing
-  // romaji "n" first, the same as leaving the field does.
+  // Enter also confirms an IME conversion, so only a plain Enter moves on. Safari sends the Enter
+  // that ends a conversion after compositionend, with isComposing false but keyCode 229. It
+  // finishes a trailing romaji "n" first, the same as leaving the field does.
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
-    if (!onEnter || event.key !== "Enter" || event.nativeEvent.isComposing) {
+    if (
+      !onEnter ||
+      event.key !== "Enter" ||
+      event.nativeEvent.isComposing ||
+      event.nativeEvent.keyCode === 229
+    ) {
       return;
     }
     event.preventDefault();

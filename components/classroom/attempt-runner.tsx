@@ -27,7 +27,7 @@ import {
 } from "@/lib/assignment";
 import { signInPath } from "@/lib/auth-paths";
 import { findGrammarLinks, grammarRefs } from "@/lib/grammar-links";
-import { gradeQuestion } from "@/lib/grading/grade";
+import { describeParticleSlip, gradeQuestion } from "@/lib/grading/grade";
 import { isBlankAnswer } from "@/lib/grading/raw-answer";
 import { formatStudyDateTime } from "@/lib/study-days";
 
@@ -49,6 +49,9 @@ export interface AttemptRunnerProps {
   initialDraft: AttemptDraft;
   initialRevision: number;
   initialSavedAt: string;
+  // The server's clock when the page was made, so a device clock that runs fast or slow does not
+  // move the deadline countdown or hand an attempt in early.
+  serverNow: string;
   dueAt?: string | null;
   allowLate?: boolean;
   // A timed mock exam: when the page hands the attempt in, and the server's clock at render.
@@ -71,9 +74,16 @@ const STATUS_TEXT: Record<SyncStatus, string> = {
   submitted: "Lượt này đã được nộp.",
   closed: "Giáo viên đã đóng bài này.",
   past_due: "Đã quá hạn nộp.",
+  stale: "Đang tải câu trả lời mới nhất…",
 };
 
-const READ_ONLY_STATUSES: readonly SyncStatus[] = ["conflict", "submitted", "closed", "past_due"];
+const READ_ONLY_STATUSES: readonly SyncStatus[] = [
+  "conflict",
+  "submitted",
+  "closed",
+  "past_due",
+  "stale",
+];
 
 // Short sets fit on one screen; the question map helps from this many questions on.
 const QUESTION_MAP_MIN = 6;
@@ -97,6 +107,7 @@ export function AttemptRunner({
   initialDraft,
   initialRevision,
   initialSavedAt,
+  serverNow,
   dueAt = null,
   allowLate = true,
   exam = null,
@@ -151,7 +162,8 @@ export function AttemptRunner({
   function handleCheck(questionId: string) {
     const item = items.find((candidate) => candidate.view.id === questionId);
     if (item?.answerKey) {
-      playFeedbackSound(isAnswerCorrect(item) ? "correct" : "wrong");
+      const answer = sync.readDraft().answers[item.view.id];
+      playFeedbackSound(gradeQuestion(item.answerKey, answer).isCorrect ? "correct" : "wrong");
     }
     sync.updateDraft((current) => ({ ...current, checked: [...current.checked, questionId] }));
   }
@@ -202,12 +214,13 @@ export function AttemptRunner({
   // question. The last question never opens the submit dialog, so Enter cannot submit by accident.
   function handleEnter(index: number) {
     const item = items[index];
+    const latest = sync.readDraft();
     const canCheck =
       mode === "practice" &&
       item.answerKey !== null &&
       !isReadOnly &&
-      !sync.draft.checked.includes(item.view.id) &&
-      !isBlankAnswer(sync.draft.answers[item.view.id]);
+      !latest.checked.includes(item.view.id) &&
+      !isBlankAnswer(latest.answers[item.view.id]);
     if (canCheck) {
       flushSync(() => handleCheck(item.view.id));
       handleMove(index, "card");
@@ -375,6 +388,7 @@ export function AttemptRunner({
                   lang={answerLang(item.view)}
                   transcriptLang={item.view.lang}
                   grammarLinks={findGrammarLinks(grammarRefs(answerKey.tags), grammarLinks)}
+                  hint={describeParticleSlip(answerKey, raw)}
                 />
               )}
               {mode === "practice" && answerKey && !isChecked && (
@@ -473,6 +487,7 @@ export function AttemptRunner({
             <DeadlineCountdown
               dueAt={dueAt}
               allowLate={allowLate}
+              serverNow={serverNow}
               onAutoSubmit={handleAutoSubmit}
             />
           </>

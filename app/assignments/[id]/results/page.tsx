@@ -145,6 +145,9 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
       )}
       {attempt && view.isFeedbackAvailable && attempt.score !== null && attempt.maxScore && (
         <>
+          {/* A mock exam leads with what the real test reports: the 180-point estimate and the
+              section minimums; the plain percentage follows. */}
+          {exam && <JlptResult level={exam.level} items={view.items} now={now} />}
           <div className="form-card result-summary">
             <ScoreRing
               percent={toPercent(attempt.score, attempt.maxScore)}
@@ -180,7 +183,6 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
               )}
             </div>
           </div>
-          {exam && <JlptResult level={exam.level} items={view.items} now={now} />}
           {/* The next step sits above a long answer list, not after it. */}
           {actions}
           <section className="section-block" aria-labelledby="answer-review">

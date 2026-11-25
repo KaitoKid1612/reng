@@ -4,6 +4,7 @@ import { test } from "node:test";
 import {
   formatDecimal,
   formatPercent,
+  describeParticleSlip,
   gradeAttempt,
   gradeQuestion,
   isPassingScore,
@@ -230,4 +231,36 @@ test("displayed percentages use the Vietnamese decimal comma and one decimal", (
   assert.equal(formatPercent(0), "0%");
   assert.equal(formatPercent(87.25), "87,3%");
   assert.equal(formatDecimal(1.5), "1,5");
+});
+
+test("a particle typed as it sounds is still wrong, with a hint that says how to type it", () => {
+  const particle = questionSchema.parse({
+    id: "p1",
+    type: "fill",
+    prompt: "たなかさん（　　）にほんじんです。",
+    answer: ["は"],
+    explain: "は đánh dấu chủ đề.",
+    points: 1,
+  });
+  assert.equal(gradeQuestion(particle, "わ").isCorrect, false);
+  assert.equal(
+    describeParticleSlip(particle, "わ"),
+    "Trợ từ viết khác cách đọc: は (gõ ha, đọc là wa).",
+  );
+  const sentence = questionSchema.parse({
+    id: "p2",
+    type: "fill",
+    prompt: "Viết lại câu.",
+    answer: ["がっこうへいきます"],
+    explain: "へ chỉ hướng.",
+    points: 1,
+  });
+  assert.equal(
+    describeParticleSlip(sentence, "がっこうえいきます"),
+    "Trợ từ viết khác cách đọc: へ (gõ he, đọc là e).",
+  );
+  // Another wrong kana, a right answer and a Vietnamese answer get no particle hint.
+  assert.equal(describeParticleSlip(particle, "が"), null);
+  assert.equal(describeParticleSlip(particle, "は"), null);
+  assert.equal(describeParticleSlip(sentence, "がっこうえいきました"), null);
 });

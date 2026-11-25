@@ -150,6 +150,49 @@ export function gradeQuestion(question: LessonQuestion, raw: RawAnswer | undefin
   return { isCorrect, pointsEarned: isCorrect ? question.points : 0 };
 }
 
+// The particles written with another kana than they sound: は (wa), へ (e), を (o).
+const PARTICLE_SOUNDS: Readonly<Record<string, string>> = { は: "わ", へ: "え", を: "お" };
+const PARTICLE_TYPING: Readonly<Record<string, string>> = {
+  は: "は (gõ ha, đọc là wa)",
+  へ: "へ (gõ he, đọc là e)",
+  を: "を (gõ wo, đọc là o)",
+};
+
+/**
+ * A Japanese typed answer that differs from an accepted one only by writing a particle as it
+ * sounds (わ for は, え for へ, お for を). It stays wrong, as in the JLPT, but the learner is told
+ * why: typing "wa" gives わ.
+ */
+export function describeParticleSlip(question: LessonQuestion, raw: RawAnswer | undefined) {
+  const isTypedJapanese =
+    (question.type === "fill" || question.type === "dictation") &&
+    question.inputMode !== "text" &&
+    question.gradingProfile !== "zh-exact-v1";
+  if (!isTypedJapanese || typeof raw !== "string") {
+    return null;
+  }
+  const given = [...normalizeAnswer(raw, question.gradingProfile)];
+  for (const accepted of question.answer) {
+    const expected = [...normalizeAnswer(accepted, question.gradingProfile)];
+    if (expected.length !== given.length) {
+      continue;
+    }
+    const slips = new Set<string>();
+    const isSlipOnly = expected.every((character, index) => {
+      if (character === given[index]) {
+        return true;
+      }
+      slips.add(character);
+      return PARTICLE_SOUNDS[character] === given[index];
+    });
+    if (isSlipOnly && slips.size > 0) {
+      const particles = [...slips].map((particle) => PARTICLE_TYPING[particle]).join(", ");
+      return `Trợ từ viết khác cách đọc: ${particles}.`;
+    }
+  }
+  return null;
+}
+
 export function gradeAttempt(
   questions: readonly LessonQuestion[],
   answers: Readonly<Record<string, RawAnswer>>,

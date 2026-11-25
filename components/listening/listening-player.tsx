@@ -20,6 +20,11 @@ type PlayerState = "idle" | "loading" | "playing" | "paused" | "error";
 const LOAD_TIMEOUT_MS = 10_000;
 const REWIND_SECONDS = 5;
 
+// One clip at a time. Every card of an attempt stays mounted (one-question view only hides the
+// others), so a clip still running on the question the learner left would play over the next one;
+// starting a clip pauses whichever other player is playing.
+let playingElement: HTMLAudioElement | null = null;
+
 const STATE_TEXT: Record<PlayerState, string> = {
   idle: "",
   loading: "Đang tải audio…",
@@ -62,6 +67,9 @@ export function ListeningPlayer({
         element.pause();
         element.removeAttribute("src");
         element.load();
+        if (playingElement === element) {
+          playingElement = null;
+        }
       }
     },
     [],
@@ -87,6 +95,10 @@ export function ListeningPlayer({
     const element = new Audio(source);
     element.preload = "auto";
     element.addEventListener("playing", () => {
+      if (playingElement && playingElement !== element) {
+        playingElement.pause();
+      }
+      playingElement = element;
       clearTimer();
       setState("playing");
       if (fromStartRef.current) {
@@ -95,9 +107,15 @@ export function ListeningPlayer({
       }
     });
     element.addEventListener("pause", () => {
+      if (playingElement === element) {
+        playingElement = null;
+      }
       setState((current) => (current === "playing" ? "paused" : current));
     });
     element.addEventListener("ended", () => {
+      if (playingElement === element) {
+        playingElement = null;
+      }
       fromStartRef.current = true;
       setState("idle");
     });

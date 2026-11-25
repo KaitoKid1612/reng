@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { isSameAttemptDraft, parseAttemptDraft } from "@/lib/assignment";
@@ -26,10 +27,22 @@ export type SyncStatus =
   | "signed_out"
   | "submitted"
   | "closed"
-  | "past_due";
+  | "past_due"
+  | "stale";
 
 // These outcomes stop autosave until the learner reloads the attempt.
-const BLOCKING_STATUSES: readonly SyncStatus[] = ["conflict", "submitted", "closed", "past_due"];
+const BLOCKING_STATUSES: readonly SyncStatus[] = [
+  "conflict",
+  "submitted",
+  "closed",
+  "past_due",
+  "stale",
+];
+
+// The revision this tab last saved, per attempt. Browser Back shows a page as it was first loaded
+// (Next keeps it however old), so its revision can be older than this tab's own saves; restoring
+// that copy would show answers as blank and drop the newer backup. The page is fetched again.
+const savedRevisions = new Map<string, number>();
 
 export interface DraftSyncOptions {
   userId: string;
@@ -52,6 +65,15 @@ interface InitialSync {
 // a save from this browser whose reply never arrived. Pure, so it can run in a state
 // initializer (the client-only runner has no server markup to hydrate).
 function restoreDraft(options: DraftSyncOptions): InitialSync {
+  const lastSaved = savedRevisions.get(options.submissionId);
+  if (lastSaved !== undefined && lastSaved > options.initialRevision) {
+    return {
+      draft: options.initialDraft,
+      status: "stale",
+      notice: "Đang tải câu trả lời mới nhất…",
+      shouldDiscardBackup: false,
+    };
+  }
   const backup = readLocalDraft(localDraftKey(options.userId, options.submissionId));
   const serverCopy = { draft: options.initialDraft, status: "saved" as const, notice: "" };
   if (!backup) {
@@ -102,6 +124,7 @@ const SUBMIT_MESSAGES: Record<string, string> = {
 };
 
 export function useDraftSync(options: DraftSyncOptions) {
+  const router = useRouter();
   const [initial] = useState(() => restoreDraft(options));
   const [draft, setDraft] = useState(initial.draft);
   const [status, setStatus] = useState<SyncStatus>(initial.status);
@@ -160,6 +183,7 @@ export function useDraftSync(options: DraftSyncOptions) {
       const savedChange = lostSave ? lostSave.change : change;
       if ((response.ok || lostSave) && typeof data.revision === "number") {
         revisionRef.current = data.revision;
+        savedRevisions.set(options.submissionId, data.revision);
         savedChangeRef.current = savedChange;
         unconfirmedRef.current = [];
         setSavedAt(typeof data.savedAt === "string" ? data.savedAt : new Date().toISOString());
@@ -225,6 +249,10 @@ export function useDraftSync(options: DraftSyncOptions) {
   );
 
   useEffect(() => {
+    // The fresh page remounts the runner (it is keyed by submission and revision).
+    if (initial.status === "stale") {
+      router.refresh();
+    }
     if (initial.shouldDiscardBackup) {
       removeLocalDraft(key);
     }
@@ -244,7 +272,7 @@ export function useDraftSync(options: DraftSyncOptions) {
         window.clearTimeout(timerRef.current);
       }
     };
-  }, [initial.shouldDiscardBackup, key, schedule]);
+  }, [initial.shouldDiscardBackup, initial.status, key, router, schedule]);
 
   // Accepts an updater so asynchronous events (such as a listen starting) never apply
   // changes to a draft captured before newer typing.
@@ -330,5 +358,20 @@ export function useDraftSync(options: DraftSyncOptions) {
     }
   }, [flush, key, options.submissionId, updateStatus]);
 
-  return { draft, status, savedAt, notice, updateDraft, flush, retry, submit, discardLocalCopy };
+  // The draft including changes made in this same event, before React renders them: Enter in an
+  // answer field finishes a trailing romaji "n" and checks the answer in one keystroke.
+  const readDraft = useCallback(() => draftRef.current, []);
+
+  return {
+    draft,
+    status,
+    savedAt,
+    notice,
+    updateDraft,
+    readDraft,
+    flush,
+    retry,
+    submit,
+    discardLocalCopy,
+  };
 }

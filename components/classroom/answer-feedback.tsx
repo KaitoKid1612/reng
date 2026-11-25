@@ -17,6 +17,8 @@ interface AnswerFeedbackProps {
   transcriptLang?: string;
   // Class lessons that explain the grammar point the question tests.
   grammarLinks?: readonly GrammarLink[];
+  // Why a near miss is wrong, such as a particle typed as it sounds.
+  hint?: string | null;
 }
 
 export function AnswerFeedback({
@@ -27,6 +29,7 @@ export function AnswerFeedback({
   lang = "ja",
   transcriptLang = lang,
   grammarLinks = [],
+  hint = null,
 }: AnswerFeedbackProps) {
   return (
     <div
@@ -41,6 +44,11 @@ export function AnswerFeedback({
             <FuriganaText text={correctText} />
           </strong>
         </p>
+        {hint && (
+          <p className="answer-hint">
+            <strong>{hint}</strong>
+          </p>
+        )}
         <p className="muted">
           <FuriganaText text={explain} />
         </p>

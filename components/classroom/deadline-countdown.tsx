@@ -7,12 +7,21 @@ import { describeTimeLeft } from "@/lib/assignment";
 interface DeadlineCountdownProps {
   dueAt: string | null;
   allowLate: boolean;
+  serverNow: string;
   /** Called once when an attempt that cannot be late should submit itself. */
   onAutoSubmit: () => void;
 }
 
-export function DeadlineCountdown({ dueAt, allowLate, onAutoSubmit }: DeadlineCountdownProps) {
-  const [now, setNow] = useState(() => Date.now());
+export function DeadlineCountdown({
+  dueAt,
+  allowLate,
+  serverNow,
+  onAutoSubmit,
+}: DeadlineCountdownProps) {
+  // Counted on the server's clock, like ExamTimer: a device clock ahead by a few minutes would
+  // otherwise hand a no-late attempt in before its deadline.
+  const [offset] = useState(() => Date.parse(serverNow) - Date.now());
+  const [now, setNow] = useState(() => Date.now() + offset);
   const hasSubmittedRef = useRef(false);
   const timeLeft = describeTimeLeft(dueAt, allowLate, now);
 
@@ -20,9 +29,9 @@ export function DeadlineCountdown({ dueAt, allowLate, onAutoSubmit }: DeadlineCo
     if (!dueAt) {
       return;
     }
-    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    const timer = window.setInterval(() => setNow(Date.now() + offset), 1000);
     return () => window.clearInterval(timer);
-  }, [dueAt]);
+  }, [dueAt, offset]);
 
   useEffect(() => {
     if (timeLeft?.shouldAutoSubmit && !hasSubmittedRef.current) {
