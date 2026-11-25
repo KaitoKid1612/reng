@@ -11,7 +11,12 @@
     "vocab": [],
     "grammar": [],
     "slides": [
-      { "id": "title", "type": "title", "jp": "日本語 N4 模擬試験", "vi": "Đề Reng N4 chuẩn" },
+      {
+        "id": "title",
+        "type": "title",
+        "jp": "日本語 N4 模擬試験",
+        "vi": "Đề Reng N4 chuẩn"
+      },
       {
         "id": "scope",
         "type": "note",
@@ -189,6 +194,90 @@
         "explain": "帰国（きこく）: về nước. 帰 đọc き, 国 đọc こく (không đục). Câu: Nghe nói tháng sau chị Linh sẽ về nước. ききょく sai âm 国, きごく thêm dấu đục, きっこく thêm っ thừa."
       },
       {
+        "id": "n4-rx-std-kanji-reading-15",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "兄は 車の [[運転]]が とても 上手です。",
+        "options": ["うんでん", "うんてん", "うんて", "おんてん"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "運転（うんてん）: lái xe. 運 đọc うん, 転 đọc てん (không đục). Câu: Anh trai tôi lái xe rất giỏi. うんでん thêm dấu đục sai; うんて thiếu ん; おんてん sai âm đầu う."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-16",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "夏休みの [[計画]]を 友だちと 立てました。",
+        "options": ["けいかく", "けいがく", "けかく", "けいかぐ"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "計画（けいかく）: kế hoạch. 計 đọc けい (trường âm), 画 đọc かく. Câu: Tôi lập kế hoạch nghỉ hè cùng bạn. けいがく, けいかぐ thêm dấu đục sai chỗ; けかく thiếu trường âm い."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-17",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "家から [[空港]]まで バスで 一時間 かかります。",
+        "options": ["くうこ", "くこう", "くうごう", "くうこう"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "空港（くうこう）: sân bay. 空 đọc くう, 港 đọc こう – cả hai đều là trường âm. Câu: Từ nhà đến sân bay đi xe buýt mất một tiếng. くうこ, くこう mất một trường âm; くうごう thêm dấu đục."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-18",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "にもつが [[重くて]]、一人では 持てません。",
+        "options": ["かるくて", "ふるくて", "おもくて", "かたくて"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "重い（おもい）: nặng → 重くて. Câu: Hành lý nặng nên một mình tôi không mang được. かるくて là 軽くて (nhẹ), ふるくて là 古くて (cũ), かたくて là 硬くて (cứng): là từ khác, không phải cách đọc của 重くて."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-19",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "先生の [[説明]]は とても わかりやすいです。",
+        "options": ["せいめい", "せつめい", "せつめ", "せちめい"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "説明（せつめい）: giải thích. 説 đọc せつ, 明 đọc めい. Câu: Lời giải thích của thầy rất dễ hiểu. せいめい là từ khác (生命: sinh mạng; 姓名: họ tên); せつめ thiếu い; せちめい sai âm つ."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-20",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "妹は 小学生の ときから ピアノを [[習って]] います。",
+        "options": ["ならって", "なれって", "ならいって", "ならて"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "習う（ならう）: học (có người dạy) → 習って (âm ngắt っ). Câu: Em gái tôi học piano từ hồi tiểu học. なれって không phải dạng đúng của từ nào (慣れる chia là なれて); ならいって ghép sai thể て; ならて thiếu っ."
+      },
+      {
+        "id": "n4-rx-std-kanji-reading-21",
+        "type": "choice",
+        "instruction": "もんだい１　＿＿＿の ことばは ひらがなで どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この ケーキは [[特別]]な 日にだけ 作ります。",
+        "options": ["とくへつ", "とっべつ", "とくべつ", "とくべち"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "kanji", "kanji-reading", "reng-exam:standard"],
+        "explain": "特別（とくべつ）: đặc biệt. 特 đọc とく, 別 đọc べつ (có dấu đục). Câu: Bánh này tôi chỉ làm vào ngày đặc biệt. とくへつ thiếu dấu đục; とっべつ biến く thành っ sai; とくべち sai âm cuối."
+      },
+      {
         "id": "n4-rx-std-orthography-01",
         "type": "choice",
         "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
@@ -307,6 +396,66 @@
         "points": 1,
         "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
         "explain": "ひるやすみ = 昼休み: giờ nghỉ trưa. 昼 (trú – ban ngày) + 休 (hưu – nghỉ). Câu: Giờ nghỉ trưa ở công ty là 1 tiếng. 体 (thể) giống 休 nhưng thừa nét; 屋 (ốc) và 尽 (tận) có nét giống 昼 nhưng sai."
+      },
+      {
+        "id": "n4-rx-std-orthography-11",
+        "type": "choice",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "あしたは 学校で バスケットボールの [[しあい]]が あります。",
+        "options": ["式合", "試会", "試合", "誠合"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
+        "explain": "しあい = 試合: trận đấu. Câu: Ngày mai ở trường có trận đấu bóng rổ. 式 (しき, nghi thức) và 誠 (thành) có phần giống 試; 会 (かい, hội) thay 合 là sai; chỉ 試合 đọc しあい."
+      },
+      {
+        "id": "n4-rx-std-orthography-12",
+        "type": "choice",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "古い 切手を [[あつめる]]のが しゅみです。",
+        "options": ["進める", "集める", "準める", "雑める"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
+        "explain": "あつめる = 集める: sưu tầm, gom lại. Câu: Sở thích của tôi là sưu tầm tem cũ. 進める đọc すすめる (tiến hành); 準, 雑 có phần 隹 giống 集 nhưng không có động từ 準める, 雑める."
+      },
+      {
+        "id": "n4-rx-std-orthography-13",
+        "type": "choice",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 川は ふかいので、ここで [[およいで]]は いけません。",
+        "options": ["永いで", "詠いで", "洋いで", "泳いで"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
+        "explain": "およぐ = 泳ぐ → 泳いで: bơi. Câu: Sông này sâu nên không được bơi ở đây. 永 (vĩnh) và 詠 (vịnh) có phần 永 giống 泳; 洋 (dương, biển) có bộ thủy 氵 giống 泳; nhưng không chữ nào đọc およぐ."
+      },
+      {
+        "id": "n4-rx-std-orthography-14",
+        "type": "choice",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "日曜日は [[としょかん]]で 本を 読みます。",
+        "options": ["図書館", "図書官", "区書館", "図所館"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
+        "explain": "としょかん = 図書館: thư viện. Câu: Chủ nhật tôi đọc sách ở thư viện. 官 (quan) thiếu bộ 食 của 館 (tòa nhà); 区 (khu) giống 図 về khung ngoài; 所 (しょ, nơi chốn) thay 書 là sai."
+      },
+      {
+        "id": "n4-rx-std-orthography-15",
+        "type": "choice",
+        "instruction": "もんだい２　＿＿＿の ことばは どう かきますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}では みんなの [[いけん]]を 聞きましょう。",
+        "options": ["意件", "思見", "意現", "意見"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "writing", "orthography", "reng-exam:standard"],
+        "explain": "いけん = 意見: ý kiến. Câu: Trong cuộc họp hãy lắng nghe ý kiến của mọi người. 件 (けん, sự việc) và 現 (げん, hiện) đọc gần giống nhưng sai chữ; 思見 thay 意 bằng 思 (おも-う) là sai."
       },
       {
         "id": "n4-rx-std-contextual-01",
@@ -501,6 +650,102 @@
         "explain": "ざんぎょう (残業): làm thêm giờ. Câu: Công việc chưa xong nên hôm qua tôi làm thêm đến 10 giờ tối. ちこく (đi muộn), けんがく (tham quan học hỏi), しゅっせき (có mặt, tham dự) không hợp với 仕事が終わらなくて và ～まで."
       },
       {
+        "id": "n4-rx-std-contextual-17",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "はじめて 来た 町なので、ホテルの 人に 道を （　　）して もらいました。",
+        "options": ["しょうかい", "あんない", "よやく", "ちゅうい"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "あんない（案内）する: dẫn đường, hướng dẫn. 道を案内してもらう: được chỉ đường. Câu: Vì là thị trấn lần đầu đến nên tôi được nhân viên khách sạn chỉ đường. しょうかい (giới thiệu) dùng cho người hay sách, không dùng với 道; よやく (đặt trước) và ちゅうい (chú ý, nhắc nhở) không hợp nghĩa."
+      },
+      {
+        "id": "n4-rx-std-contextual-18",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "へやの 空気が わるいので、まどを （　　） ください。",
+        "options": ["しめて", "かけて", "あけて", "つけて"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "あける（開ける）: mở. Câu: Không khí trong phòng không tốt, hãy mở cửa sổ ra. しめる (đóng) ngược nghĩa; かける (khóa: かぎをかける) và つける (bật: 電気をつける) không đi với まど theo nghĩa này."
+      },
+      {
+        "id": "n4-rx-std-contextual-19",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "スピーチの 前は いつも （　　）して、声が 小さく なって しまいます。",
+        "options": ["きんちょう", "ひっこし", "けんか", "そつぎょう"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "きんちょう（緊張）する: hồi hộp, căng thẳng. Câu: Trước khi phát biểu tôi lúc nào cũng hồi hộp nên giọng nhỏ đi. ひっこし (chuyển nhà), けんか (cãi nhau), そつぎょう (tốt nghiệp) không giải thích được việc giọng nhỏ đi trước bài phát biểu."
+      },
+      {
+        "id": "n4-rx-std-contextual-20",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}の 時間が 決まったら、メールで （　　）します。",
+        "options": ["けんぶつ", "ちゅうしゃ", "せんたく", "れんらく"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "れんらく（連絡）する: liên lạc, báo tin. Câu: Khi giờ họp được quyết định, tôi sẽ báo bằng email. けんぶつ (tham quan), ちゅうしゃ (tiêm, hoặc đỗ xe), せんたく (giặt giũ) không làm bằng email."
+      },
+      {
+        "id": "n4-rx-std-contextual-21",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "さいふを なくして （　　） いたら、駅の 人が 見つけて くれました。",
+        "options": ["わらって", "よろこんで", "こまって", "あそんで"],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "こまる（困る）: gặp khó khăn, bối rối. Câu: Tôi đang khổ sở vì mất ví thì nhân viên nhà ga tìm giúp. わらう (cười) và よろこぶ (vui mừng) ngược với tình huống mất ví; あそぶ (chơi) không hợp."
+      },
+      {
+        "id": "n4-rx-std-contextual-22",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "日曜日は 店が （　　）ので、{平日|へいじつ}に 買い物に 行きます。",
+        "options": ["こむ", "すく", "ひえる", "やむ"],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "こむ（込む）: đông đúc. Câu: Chủ nhật cửa hàng đông nên tôi đi mua sắm vào ngày thường. すく (vắng) không phải lý do để tránh chủ nhật; ひえる (lạnh đi) và やむ (tạnh: 雨がやむ) không dùng cho cửa hàng."
+      },
+      {
+        "id": "n4-rx-std-contextual-23",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "（　　） 雨が ふって きたので、コンビニで かさを 買いました。",
+        "options": ["ずっと", "きゅうに", "なかなか", "けっして"],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "きゅうに（急に）: đột nhiên. Câu: Trời đột nhiên đổ mưa nên tôi mua ô ở cửa hàng tiện lợi. ずっと (suốt) không đi với ふってきた (bắt đầu mưa); なかなか và けっして thường đi với thể phủ định."
+      },
+      {
+        "id": "n4-rx-std-contextual-24",
+        "type": "choice",
+        "instruction": "もんだい３　（　　）に なにを 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "パソコンの （　　）を 入れても、{画面|がめん}が つきません。",
+        "options": ["サイズ", "レジ", "コピー", "スイッチ"],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "vocabulary", "contextual", "reng-exam:standard"],
+        "explain": "スイッチを入れる: bật công tắc. Câu: Dù bật công tắc máy tính, màn hình vẫn không sáng. サイズ (kích cỡ), レジ (quầy thu ngân), コピー (bản sao) không đi với 入れる theo nghĩa bật máy."
+      },
+      {
         "id": "n4-rx-std-paraphrase-01",
         "type": "choice",
         "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
@@ -637,6 +882,74 @@
         "explain": "たいいん (退院): ra viện = 病院から家に帰る. Câu: Hôm qua bà đã ra viện. 病院に入りました là にゅういん (nhập viện) – nghĩa ngược lại; đi thăm bạn ở bệnh viện hay bắt đầu làm việc ở bệnh viện không phải ra viện."
       },
       {
+        "id": "n4-rx-std-paraphrase-09",
+        "type": "choice",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "父は 今 [[るす]]です。",
+        "options": [
+          "父は 今 ねて います。",
+          "父は 今 いそがしいです。",
+          "父は 今 家に いません。",
+          "父は 今 家で 休んで います。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "paraphrase", "paraphrase", "reng-exam:standard"],
+        "explain": "るす（留守）: vắng nhà = 家にいない. Câu: Bố tôi bây giờ không có nhà. ねている (đang ngủ) và 家で休んでいる (đang nghỉ ở nhà) là vẫn ở nhà; いそがしい (bận) không nói đến việc ở đâu."
+      },
+      {
+        "id": "n4-rx-std-paraphrase-10",
+        "type": "choice",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "この 道は 夜は [[きけん]]です。",
+        "options": [
+          "この 道は 夜は あぶないです。",
+          "この 道は 夜は せまいです。",
+          "この 道は 夜は くらいです。",
+          "この 道は 夜は しずかです。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "paraphrase", "paraphrase", "reng-exam:standard"],
+        "explain": "きけん（危険）: nguy hiểm = あぶない. Câu: Con đường này ban đêm nguy hiểm. せまい (hẹp), くらい (tối), しずか (yên tĩnh) là ý khác; đường tối có thể nguy hiểm nhưng くらい không đồng nghĩa với きけん."
+      },
+      {
+        "id": "n4-rx-std-paraphrase-11",
+        "type": "choice",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "田中さんは 毎朝 [[ジョギングを して]] います。",
+        "options": [
+          "田中さんは 毎朝 歩いて います。",
+          "田中さんは 毎朝 およいで います。",
+          "田中さんは 毎朝 {体操|たいそう}を して います。",
+          "田中さんは 毎朝 走って います。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "paraphrase", "paraphrase", "reng-exam:standard"],
+        "explain": "ジョギングをする: chạy bộ = 走る. Câu: Sáng nào anh Tanaka cũng chạy bộ. 歩く là đi bộ; およぐ là bơi; 体操 (たいそう) là tập thể dục, không phải chạy."
+      },
+      {
+        "id": "n4-rx-std-paraphrase-12",
+        "type": "choice",
+        "instruction": "もんだい４　＿＿＿の ぶんと だいたい おなじ いみの ぶんが あります。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
+        "prompt": "{会議|かいぎ}の 時間に [[まにあいませんでした]]。",
+        "options": [
+          "{会議|かいぎ}に 早く 着きました。",
+          "{会議|かいぎ}に おくれました。",
+          "{会議|かいぎ}に 出ませんでした。",
+          "{会議|かいぎ}が 長く なりました。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "paraphrase", "paraphrase", "reng-exam:standard"],
+        "explain": "まにあう（間に合う）: kịp giờ. まにあいませんでした = không kịp = おくれました (đến muộn). Câu: Tôi đã không kịp giờ họp. 早く着きました là ngược lại; 出ませんでした (không dự họp) và 長くなりました (cuộc họp kéo dài) là chuyện khác."
+      },
+      {
         "id": "n4-rx-std-usage-01",
         "type": "choice",
         "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
@@ -771,6 +1084,74 @@
         "points": 1,
         "tags": ["n4", "usage", "usage", "reng-exam:standard"],
         "explain": "そだてる (育てる): nuôi, trồng cho lớn – tha động từ. Câu đúng: Tôi đang trồng cà chua ở ban công. Trẻ tự lớn lên thì dùng tự động từ そだつ (大きくそだって); mua rau thì 買う; nấu cơm thì 作る."
+      },
+      {
+        "id": "n4-rx-std-usage-09",
+        "type": "choice",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "さいきん",
+        "options": [
+          "[[さいきん]] 天気の いい 日が 多いです。",
+          "[[さいきん]] 3年前に 日本へ 来ました。",
+          "[[さいきん]] 駅に 着きますから、少し 待って ください。",
+          "わたしは [[さいきん]] 来年 けっこんします。"
+        ],
+        "answer": [0],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "usage", "usage", "reng-exam:standard"],
+        "explain": "さいきん（最近）: gần đây (từ một lúc trước đến nay). Câu đúng: Gần đây nhiều ngày đẹp trời. 3年前 là mốc xa trong quá khứ, phải nói 3年前に来ました; sắp đến ga thì nói もうすぐ着きます; さいきん không dùng cho tương lai (来年)."
+      },
+      {
+        "id": "n4-rx-std-usage-10",
+        "type": "choice",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "とどける",
+        "options": [
+          "友だちに 手紙を [[とどけて]] 書きました。",
+          "わすれものを {交番|こうばん}に [[とどけました]]。",
+          "毎朝 7時に 目を [[とどけます]]。",
+          "日本語の しけんを [[とどけました]]。"
+        ],
+        "answer": [1],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "usage", "usage", "reng-exam:standard"],
+        "explain": "とどける（届ける）: mang đến giao, nộp (đồ cho ai hoặc nơi nào). Câu đúng: Tôi mang đồ nhặt được đến nộp ở đồn cảnh sát. Viết thư thì 手紙を書く, gửi thì 出す/送る; 目をさます là thức dậy; しけんを受ける là dự thi."
+      },
+      {
+        "id": "n4-rx-std-usage-11",
+        "type": "choice",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "すっかり",
+        "options": [
+          "[[すっかり]] 少しだけ 食べました。",
+          "あした [[すっかり]] 行きます。",
+          "雪が [[すっかり]] とけました。",
+          "[[すっかり]] 小さい 声で 話して ください。"
+        ],
+        "answer": [2],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "usage", "usage", "reng-exam:standard"],
+        "explain": "すっかり: hoàn toàn, hết sạch – chỉ một thay đổi đã hoàn tất (すっかり〜なった/〜した). Câu đúng: Tuyết đã tan hết. すっかり mâu thuẫn với 少しだけ; không dùng cho việc sẽ làm (あした行きます); câu 4 là lời đề nghị nói nhỏ hơn, phải dùng もっと."
+      },
+      {
+        "id": "n4-rx-std-usage-12",
+        "type": "choice",
+        "instruction": "もんだい５　つぎの ことばの つかいかたで いちばん いい ものを １・２・３・４から 一つ えらんで ください。",
+        "prompt": "しかる",
+        "options": [
+          "テストで 100{点|てん}を とって、先生に [[しかられました]]。",
+          "となりの 犬が 夜 ずっと [[しかって]] います。",
+          "友だちと [[しかって]]、一週間 話して いません。",
+          "いたずらを した 子どもを 先生が [[しかりました]]。"
+        ],
+        "answer": [3],
+        "multiple": false,
+        "points": 1,
+        "tags": ["n4", "usage", "usage", "reng-exam:standard"],
+        "explain": "しかる（叱る）: mắng, la rầy (người trên mắng người dưới vì làm sai). Câu đúng: Thầy giáo mắng đứa trẻ nghịch ngợm. Được 100 điểm thì 先生にほめられる (được khen); chó sủa là ほえる; cãi nhau với bạn là けんかする."
       },
       {
         "id": "n4-rx-std-grammar-form-01",
@@ -1004,7 +1385,7 @@
         "id": "n4-rx-std-grammar-form-19",
         "type": "choice",
         "instruction": "もんだい１　（　　）に 何を 入れますか。１・２・３・４から いちばん いい ものを 一つ えらんで ください。",
-        "prompt": "来年、日本で {運転免許|うんてんめんきょ}を （　　） と 思って います。",
+        "prompt": "来年、日本で 車の {免許|めんきょ}を （　　） と 思って います。",
         "options": ["{取|と}れ", "{取|と}られ", "{取|と}って", "{取|と}ろう"],
         "answer": [3],
         "multiple": false,
