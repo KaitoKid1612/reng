@@ -9,6 +9,7 @@ import {
   isFeedbackAvailable,
   practiceRetriesLeft,
 } from "@/lib/assignment";
+import { isAssignedToMember } from "@/lib/class-report";
 import { toPercent } from "@/lib/grading/grade";
 import { countClassWork } from "@/lib/learner-class-progress";
 import { questionKind, summarizeQuestionKinds } from "@/lib/question-kinds";
@@ -44,6 +45,8 @@ export type AssignmentStatus =
 export interface LearnerAssignment {
   assignment: Assignment;
   status: AssignmentStatus;
+  // The class was archived by its teacher (listed on Tiến độ only, as a finished class).
+  classEnded?: boolean;
   attemptsUsed: number;
   // Only present once feedback may be shown.
   latestPercent: number | null;
@@ -93,7 +96,7 @@ function describeLearnerAssignment(
 }
 
 export async function getStudentClassView(userId: string, classId: string, now: Date) {
-  const { classRow } = await requireMembership(userId, classId);
+  const { classRow, joinedAt } = await requireMembership(userId, classId);
   const [lessons, assignments] = await Promise.all([
     listClassLessons(classId),
     listClassAssignments([classId]),
@@ -119,39 +122,74 @@ export async function getStudentClassView(userId: string, classId: string, now: 
       .length,
     // Every lesson of the class, opened or not, for the course map.
     allLessons: lessons,
-    assignments: assignments.map((assignment) =>
-      describeLearnerAssignment(
-        assignment,
-        attempts.filter((attempt) => attempt.assignmentId === assignment.id),
-        lessons.find((lesson) => lesson.lessonId === assignment.lessonId),
-        now,
+    assignments: assignments
+      .filter((assignment) =>
+        isAssignedToMember(
+          assignment.publishedAt,
+          joinedAt,
+          attempts.some((attempt) => attempt.assignmentId === assignment.id),
+        ),
+      )
+      .map((assignment) =>
+        describeLearnerAssignment(
+          assignment,
+          attempts.filter((attempt) => attempt.assignmentId === assignment.id),
+          lessons.find((lesson) => lesson.lessonId === assignment.lessonId),
+          now,
+        ),
       ),
-    ),
   };
 }
 
-async function listLearnerAssignments(userId: string, now: Date) {
-  const classes = await listStudentClasses(userId);
-  const assignments = await listClassAssignments(classes.map((item) => item.id));
+interface LearnerAssignmentOptions {
+  // Progress keeps the scores of a class the teacher archived; work lists show active classes.
+  includeArchived?: boolean;
+}
+
+async function listLearnerAssignments(
+  userId: string,
+  now: Date,
+  { includeArchived = false }: LearnerAssignmentOptions = {},
+) {
+  const classes = await listStudentClasses(userId, { includeArchived });
+  const allAssignments = await listClassAssignments(classes.map((item) => item.id));
   const [attempts, lessonsByClass] = await Promise.all([
     listUserAttempts(
       userId,
-      assignments.map((assignment) => assignment.id),
+      allAssignments.map((assignment) => assignment.id),
     ),
     Promise.all(classes.map(async (item) => [item.id, await listClassLessons(item.id)] as const)),
   ]);
   const lessons = new Map(lessonsByClass);
+  const classOf = new Map(classes.map((item) => [item.id, item]));
+  const takenUp = new Set(attempts.map((attempt) => attempt.assignmentId));
+  const assignments = allAssignments.filter((assignment) =>
+    isAssignedToMember(
+      assignment.publishedAt,
+      classOf.get(assignment.classId)?.joinedAt ?? assignment.publishedAt,
+      takenUp.has(assignment.id),
+    ),
+  );
   return {
     classes,
     lessons,
-    assignments: assignments.map((assignment) =>
-      describeLearnerAssignment(
+    assignments: assignments.map((assignment) => {
+      const item = describeLearnerAssignment(
         assignment,
         attempts.filter((attempt) => attempt.assignmentId === assignment.id),
         lessons.get(assignment.classId)?.find((lesson) => lesson.lessonId === assignment.lessonId),
         now,
-      ),
-    ),
+      );
+      // An archived class takes no more work: what was not handed in is closed.
+      if (!classOf.get(assignment.classId)?.isArchived) {
+        return item;
+      }
+      return {
+        ...item,
+        classEnded: true,
+        status: item.status === "submitted" ? item.status : ("closed" as const),
+      };
+    }),
   };
 }
 
@@ -272,7 +310,7 @@ export async function getStudyActivity(
 export async function getProgressSummary(userId: string, now: Date, calendarSince: Date) {
   const service = createServiceClient();
   const [{ classes, assignments }, activity, reading, cards] = await Promise.all([
-    listLearnerAssignments(userId, now),
+    listLearnerAssignments(userId, now, { includeArchived: true }),
     getStudyActivity(userId, now, calendarSince),
     selectRows(
       service

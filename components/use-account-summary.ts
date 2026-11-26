@@ -9,6 +9,8 @@ export interface AccountSummary {
   name: string;
   role: "student" | "teacher";
   isAdmin: boolean;
+  // Teaches, studies in or self-studies an active Japanese class (for the JLPT countdown).
+  hasJapaneseClass: boolean;
 }
 
 function parseAccount(data: unknown): AccountSummary | null {
@@ -30,6 +32,7 @@ function parseAccount(data: unknown): AccountSummary | null {
     name: user.name,
     role: user.role,
     isAdmin: "isAdmin" in user && user.isAdmin === true,
+    hasJapaneseClass: "hasJapaneseClass" in user && user.hasJapaneseClass === true,
   };
 }
 

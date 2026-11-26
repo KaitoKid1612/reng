@@ -530,15 +530,68 @@ export async function previewJoinClass(
   return { classId: row.id, name: row.name, teacherName: teacher?.full_name ?? "", relation };
 }
 
+/**
+ * Whether the person teaches, studies in or self-studies an active Japanese class: the JLPT
+ * countdown under the header is for them only, not for guests or Chinese classes.
+ */
+export async function hasJapaneseClass(userId: string) {
+  const service = createServiceClient();
+  const [taught, enrollments] = await Promise.all([
+    selectRows(
+      service
+        .from("classes")
+        .select("id")
+        .eq("teacher_id", userId)
+        .eq("subject", "japanese")
+        .eq("active", true)
+        .limit(1),
+      z.object({ id: z.uuid() }),
+    ),
+    selectRows(
+      service.from("enrollments").select("class_id").eq("user_id", userId).is("left_at", null),
+      z.object({ class_id: z.uuid() }),
+    ),
+  ]);
+  if (taught.length) {
+    return true;
+  }
+  if (!enrollments.length) {
+    return false;
+  }
+  const studied = await selectRows(
+    service
+      .from("classes")
+      .select("id")
+      .in(
+        "id",
+        enrollments.map((row) => row.class_id),
+      )
+      .eq("subject", "japanese")
+      .eq("active", true)
+      .limit(1),
+    z.object({ id: z.uuid() }),
+  );
+  return studied.length > 0;
+}
+
 export interface StudentClassSummary {
   id: string;
   name: string;
   teacherName: string;
   isSelfStudy: boolean;
   joinedAt: string;
+  // Archived by its teacher: listed only where a learner looks back (Tiến độ, mock exam history).
+  isArchived: boolean;
 }
 
-export async function listStudentClasses(userId: string): Promise<StudentClassSummary[]> {
+interface StudentClassOptions {
+  includeArchived?: boolean;
+}
+
+export async function listStudentClasses(
+  userId: string,
+  { includeArchived = false }: StudentClassOptions = {},
+): Promise<StudentClassSummary[]> {
   const service = createServiceClient();
   const enrollments = await selectRows(
     service
@@ -552,15 +605,15 @@ export async function listStudentClasses(userId: string): Promise<StudentClassSu
   if (!enrollments.length) {
     return [];
   }
+  const query = service
+    .from("classes")
+    .select(CLASS_COLUMNS)
+    .in(
+      "id",
+      enrollments.map((item) => item.class_id),
+    );
   const classes = await selectRows(
-    service
-      .from("classes")
-      .select(CLASS_COLUMNS)
-      .in(
-        "id",
-        enrollments.map((item) => item.class_id),
-      )
-      .eq("active", true),
+    includeArchived ? query : query.eq("active", true),
     classRowSchema,
   );
   const teachers = await selectRows(
@@ -583,6 +636,7 @@ export async function listStudentClasses(userId: string): Promise<StudentClassSu
         isSelfStudy: row.self_study,
         meetingUrl: row.meeting_url,
         joinedAt: enrollment.joined_at,
+        isArchived: !row.active,
       },
     ];
   });

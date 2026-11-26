@@ -254,8 +254,9 @@ test("the teacher sees the learner's result in the class report", async ({ brows
   const page = await teacherPage(browser);
   await page.goto(`/teach/classes/${state.classId}`);
   const row = page.getByRole("row", { name: new RegExp(learner.name) });
-  // Today's daily practice was published before the learner joined, so it is not counted.
-  await expect(row).toContainText("1/1");
+  // Today's daily practice went out before the learner joined, but on the day they joined, so it
+  // counts as theirs: one of two handed in.
+  await expect(row).toContainText("1/2");
   await expect(row).toContainText("100%");
   await expect(row).toContainText("Đạt");
   // The learner's page groups answers by assignment and filters them like the results page.

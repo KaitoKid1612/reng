@@ -40,18 +40,23 @@ interface ProgressAssignmentItemProps {
 }
 
 function ProgressAssignmentItem({ item }: ProgressAssignmentItemProps) {
+  const isSubmitted = item.status === "submitted";
   return (
     <li>
       <div>
-        <Link
-          href={`/assignments/${item.assignment.id}${item.status === "submitted" ? "/results" : ""}`}
-        >
-          {item.assignment.title}
-        </Link>
+        {/* A finished class takes no more work, so only handed-in work still opens. */}
+        {item.classEnded && !isSubmitted ? (
+          <span>{item.assignment.title}</span>
+        ) : (
+          <Link href={`/assignments/${item.assignment.id}${isSubmitted ? "/results" : ""}`}>
+            {item.assignment.title}
+          </Link>
+        )}
         <p className="item-meta">
           {item.latestPercent === null
             ? "Chưa có điểm hiển thị"
             : `Lượt mới nhất ${formatPercent(item.latestPercent)}`}
+          {item.classEnded && " · Lớp đã kết thúc"}
         </p>
       </div>
       <AssignmentStatusBadge status={item.status} />

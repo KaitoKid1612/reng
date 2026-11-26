@@ -5,6 +5,7 @@ import { z } from "zod";
 import {
   buildMemberReport,
   buildReportCsv,
+  isAssignedToMember,
   listMissingLearners,
   selectLatestSubmissions,
   summarizeAssignmentResults,
@@ -280,8 +281,17 @@ export async function getStudentDetail(
     studentId,
     assignments.map((assignment) => assignment.id),
   );
+  // The same work as the learner's own lists and the "Đã nộp x/y" line: work since the day they
+  // joined, plus earlier work they took up.
+  const assignedWork = assignments.filter((assignment) =>
+    isAssignedToMember(
+      assignment.publishedAt,
+      member.joined_at,
+      attempts.some((attempt) => attempt.assignmentId === assignment.id),
+    ),
+  );
   const rows = await Promise.all(
-    assignments.map(async (assignment) => {
+    assignedWork.map(async (assignment) => {
       const submitted = attempts
         .filter((attempt) => attempt.assignmentId === assignment.id)
         .filter((attempt) => attempt.status === "submitted")

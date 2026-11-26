@@ -1,5 +1,5 @@
 import { toPercent } from "@/lib/grading/grade";
-import { formatStudyDay, studyDayStart, studyWeekStart } from "@/lib/study-days";
+import { formatStudyDay, studyDayStart, studyWeekStart, toStudyDay } from "@/lib/study-days";
 
 export const LEARNER_LABELS = {
   abandoned: "Lỡ 2 bài gần nhất",
@@ -93,17 +93,24 @@ export function selectLatestSubmissions(submissions: readonly ReportSubmission[]
   return latest;
 }
 
-// After leaving and rejoining, only work published since the current join counts as assigned;
-// earlier work still counts when the learner chose to submit it.
+/**
+ * Work counts for a learner from the Vietnam day of their current join (a first join, or a
+ * rejoin after leaving); earlier work counts only once they took it up. The day, not the
+ * instant, keeps the morning's daily set for a learner who joins at noon. The teacher's report
+ * and the learner's own lists share this rule, so a new learner does not open the class to a
+ * month of old work.
+ */
+export function isAssignedToMember(publishedAt: string, joinedAt: string, hasTakenUp: boolean) {
+  return hasTakenUp || toStudyDay(publishedAt) >= toStudyDay(joinedAt);
+}
+
 function getAssignedWork(
   assignments: readonly ReportAssignment[],
   member: ReportMember,
   hasSubmission: (assignmentId: string) => boolean,
 ) {
-  return assignments.filter(
-    (assignment) =>
-      Date.parse(assignment.publishedAt) >= Date.parse(member.joinedAt) ||
-      hasSubmission(assignment.id),
+  return assignments.filter((assignment) =>
+    isAssignedToMember(assignment.publishedAt, member.joinedAt, hasSubmission(assignment.id)),
   );
 }
 

@@ -16,7 +16,8 @@ import type { JlptExamResult } from "@/lib/jlpt-history";
  * same latest attempt and items as the result page, so both show the same numbers.
  */
 export async function listLearnerJlptHistory(userId: string, now: Date) {
-  const classes = await listStudentClasses(userId);
+  // A finished (archived) class keeps its results in the learner's history.
+  const classes = await listStudentClasses(userId, { includeArchived: true });
   const exams = (await listClassAssignments(classes.map((item) => item.id))).filter(
     (assignment) => assignment.exam !== null,
   );

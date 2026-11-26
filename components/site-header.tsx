@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useAccountSummary } from "@/components/use-account-summary";
 import { BrandMark } from "@/components/brand-mark";
-import { JlptCountdown } from "@/components/jlpt-countdown";
+import { JlptCountdown, rememberJlptCountdown } from "@/components/jlpt-countdown";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SELF_STUDY_PATHS } from "@/lib/self-study";
 
@@ -105,6 +105,13 @@ export function SiteHeader() {
   const [openPath, setOpenPath] = useState<string | null>(null);
   const isMenuOpen = openPath === pathname;
   const shortcut = findShortcut(account);
+
+  // Once the account is known, the JLPT countdown follows it (Japanese classes only).
+  useEffect(() => {
+    if (account !== undefined) {
+      rememberJlptCountdown(Boolean(account?.hasJapaneseClass));
+    }
+  }, [account]);
 
   function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
     if (event.key === "Escape" && isMenuOpen) {

@@ -6,6 +6,7 @@ import {
   buildReportCsv,
   computeLearnerLabel,
   escapeCsvCell,
+  isAssignedToMember,
   selectLatestSubmissions,
   summarizeClass,
   summarizeListening,
@@ -263,4 +264,15 @@ test("CSV keeps Vietnamese text, leaves missing scores blank and neutralizes for
     passingCount: 0,
     attentionCount: 1,
   });
+});
+
+test("work counts from the Vietnam day a learner joins, or once they took it up", () => {
+  // Joined at 12:00 Vietnam time on 26/11; the daily set went out at 06:00 the same day.
+  const joinedAt = "2026-11-26T05:00:00Z";
+  assert.equal(isAssignedToMember("2026-11-25T23:00:00Z", joinedAt, false), true);
+  // A set from the evening before the join day (23:00 on 25/11 in Vietnam) does not count…
+  assert.equal(isAssignedToMember("2026-11-25T16:00:00Z", joinedAt, false), false);
+  // …unless the learner started or handed it in.
+  assert.equal(isAssignedToMember("2026-11-25T16:00:00Z", joinedAt, true), true);
+  assert.equal(isAssignedToMember("2026-12-01T00:00:00Z", joinedAt, false), true);
 });
