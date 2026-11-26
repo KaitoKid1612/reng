@@ -51,9 +51,12 @@ test("grammar lookup keeps each lesson once, linked to its class, in teaching or
     "lessonTitle",
     "mistake",
     "pattern",
+    "topicKey",
     "vi",
   ]);
   assert.equal(entries[0].mistake, "へ đọc là え.");
+  // Without topic keys from the server, a point is filed by its lesson ID.
+  assert.equal(entries[0].topicKey, "minna-1-05:g0501");
   assert.equal(entries[1].mistake, null);
   assert.deepEqual(entries[0].examples, [
     { jp: "あした 行きます。", vi: "Mai tôi đi.", audio: null },

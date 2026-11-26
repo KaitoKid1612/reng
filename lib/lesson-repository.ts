@@ -22,7 +22,7 @@ export function isDatabaseLessonSource() {
   return !isLocalLessonSource();
 }
 
-function isLocalLessonSource() {
+export function isLocalLessonSource() {
   const source = process.env.LESSON_SOURCE || "local";
   if (source !== "local" && source !== "supabase") {
     throw new Error("Unknown lesson source.");

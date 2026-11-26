@@ -20,12 +20,17 @@ export interface GrammarEntry {
   lessonId: string;
   lessonTitle: string;
   href: string;
+  // "<origin>:<grammar id>" for the topic view (lib/grammar-topics.ts).
+  topicKey: string;
 }
 
 export interface GrammarSource {
   lesson: PublicLesson;
   // A class's lesson: the link keeps the class so the reader opens the version it pins.
   classId?: string;
+  // Topic key of each grammar point by grammar ID (lib/server/class-grammar.ts withTopicKeys);
+  // a point without one is filed by "<lesson ID>:<grammar ID>", as the bundled sample lessons are.
+  topicKeys?: Readonly<Record<string, string>>;
 }
 
 // The first source of a lesson wins, so a class's pinned version is not listed twice beside the
@@ -57,7 +62,7 @@ export function toGrammarEntries(sources: readonly GrammarSource[]): GrammarEntr
           },
         ) || first.index - second.index,
     );
-  return ordered.flatMap(({ source: { lesson, classId } }) => {
+  return ordered.flatMap(({ source: { lesson, classId, topicKeys } }) => {
     const query = `version=${lesson.id}${classId ? `&class=${classId}` : ""}`;
     return lesson.content.grammar.map((grammar) => ({
       key: `${lesson.id}:${grammar.id}`,
@@ -69,6 +74,7 @@ export function toGrammarEntries(sources: readonly GrammarSource[]): GrammarEntr
       lessonId: lesson.lessonId,
       lessonTitle: lesson.title,
       href: `/lessons/${lesson.lessonId}?${query}#${grammar.id}`,
+      topicKey: topicKeys?.[grammar.id] ?? `${lesson.lessonId}:${grammar.id}`,
     }));
   });
 }

@@ -19,7 +19,7 @@ test("lists five lessons, reads an original sample and searches grammar without 
   await page.getByLabel("Từ khóa", { exact: true }).fill("di den");
   await expect(page.getByRole("status")).toContainText("1 mẫu câu");
   // A single result opens by itself; its link names the point and the lesson.
-  await page.getByRole("link", { name: /^Xem trong bài Đi lại mỗi ngày:/ }).click();
+  await page.getByRole("link", { name: /^Đi lại mỗi ngày, mẫu/ }).click();
   await expect(page).toHaveURL(/lesson-05.*#g0501$/);
 });
 

@@ -4,9 +4,9 @@ import { GrammarSearch } from "@/components/lessons/grammar-search";
 import { SubjectStudyNav } from "@/components/self-study/subject-study-nav";
 import { signInPath } from "@/lib/auth-paths";
 import { toGrammarEntries } from "@/lib/grammar-search";
-import { listPublicLessons } from "@/lib/lesson-repository";
+import { isLocalLessonSource, listPublicLessons } from "@/lib/lesson-repository";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
-import { loadAccountGrammar, loadClassGrammar } from "@/lib/server/class-grammar";
+import { loadAccountGrammar, loadClassGrammar, withTopicKeys } from "@/lib/server/class-grammar";
 import { loadOrNotFound } from "@/lib/server/pages";
 import { isPublicTeachingLesson } from "@/lib/teaching-content";
 
@@ -38,9 +38,10 @@ async function ClassGrammar({ classId }: { classId: string }) {
   const { classRow, lessons } = await loadOrNotFound(
     loadClassGrammar(account.id, classId, new Date()),
   );
+  const sources = await withTopicKeys(lessons.map((lesson) => ({ lesson, classId })));
   return (
     <GrammarSearch
-      entries={toGrammarEntries(lessons.map((lesson) => ({ lesson, classId })))}
+      entries={toGrammarEntries(sources)}
       heading={`Ngữ pháp của lớp ${classRow.name}`}
       intro={
         lessons.length
@@ -65,12 +66,13 @@ export default async function GrammarPage({ searchParams }: GrammarPageProps) {
     listPublicLessons(),
   ]);
   // Grammar search indexes the Japanese v1 grammar fields.
-  const entries = toGrammarEntries([
-    ...own,
-    ...publicLessons
-      .filter((lesson): lesson is PublicLesson => !isPublicTeachingLesson(lesson))
-      .map((lesson) => ({ lesson })),
-  ]);
+  const publicSources = publicLessons
+    .filter((lesson): lesson is PublicLesson => !isPublicTeachingLesson(lesson))
+    .map((lesson) => ({ lesson }));
+  // Bundled sample lessons (LESSON_SOURCE=local) have no database row and are filed by their ID.
+  const local = isLocalLessonSource();
+  const keyed = await withTopicKeys(local ? own : [...own, ...publicSources]);
+  const entries = toGrammarEntries(local ? [...keyed, ...publicSources] : keyed);
   const navigation = <SubjectStudyNav subjectId="japanese" currentHref="/grammar" />;
   if (!entries.length) {
     return (

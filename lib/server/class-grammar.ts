@@ -3,6 +3,7 @@ import "server-only";
 import { z } from "zod";
 
 import { buildGrammarLinks } from "@/lib/grammar-links";
+import { topicKeysFor } from "@/lib/grammar-topic-keys";
 import {
   listClassLessons,
   listOwnedLessons,
@@ -23,6 +24,41 @@ import type { PublicLesson } from "@/lib/lesson-schema";
 import type { Account } from "@/lib/server/account";
 
 const grammarVersionSchema = z.object({ id: z.string(), first_grammar: z.unknown() });
+const lessonOriginSchema = z.object({
+  id: z.string(),
+  creation_fingerprint: z.string().nullable(),
+});
+const STARTER_PREFIX = "starter:";
+
+// Each source with the topic key of every grammar point, for the topic view (lib/grammar-topics.ts):
+// "<starter>:<grammar ID>". The starter is the one the lesson was made from (its creation
+// fingerprint; starter lessons get random IDs). A lesson without that fingerprint (written into
+// the database directly, or made before) still matches a starter point with the same ID and
+// pattern. Anything else keeps "<lesson ID>:<grammar ID>" and shows under "Mẫu khác". A failed read
+// only loses the fingerprints.
+export async function withTopicKeys(sources: readonly GrammarSource[]) {
+  const ids = [...new Set(sources.map((source) => source.lesson.lessonId))];
+  const origins = new Map<string, string>();
+  if (ids.length) {
+    try {
+      const rows = await selectRows(
+        createServiceClient().from("lessons").select("id, creation_fingerprint").in("id", ids),
+        lessonOriginSchema,
+      );
+      for (const row of rows) {
+        if (row.creation_fingerprint?.startsWith(STARTER_PREFIX)) {
+          origins.set(row.id, row.creation_fingerprint.slice(STARTER_PREFIX.length));
+        }
+      }
+    } catch (error) {
+      console.error("Grammar lesson origins failed", describeServiceFailure(error));
+    }
+  }
+  return sources.map((source): GrammarSource => ({
+    ...source,
+    topicKeys: topicKeysFor(source.lesson.content.grammar, origins.get(source.lesson.lessonId)),
+  }));
+}
 
 // Version ids among these that have at least one grammar point, read without the rest of the content.
 async function versionsWithGrammar(versionIds: readonly string[]) {

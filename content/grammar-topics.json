@@ -1,0 +1,551 @@
+{
+  "topics": [
+    {
+      "id": "cau-co-ban",
+      "title": "Câu cơ bản: là, không phải, hỏi",
+      "summary": "Câu với です, phủ định, câu hỏi và cách hỏi lại cho chắc.",
+      "concepts": [
+        ["minna-1-01:g0101", "lesson-01:g0101"],
+        ["minna-1-01:g0102"],
+        ["minna-1-01:g0103", "lesson-01:g0102"],
+        ["minna-1-01:g0104"],
+        ["minna-1-01:g0105", "lesson-02:g0202"],
+        ["minna-1-02:g0205"],
+        ["minna-1-02:g0203"],
+        ["minna-1-02:g0204"],
+        ["minna-1-08:g0804"],
+        ["minna-1-16:g1607"],
+        ["minna-1-24:g2406"],
+        ["minna-1-21:g2104"],
+        ["minna-2-40:g4005"]
+      ]
+    },
+    {
+      "id": "chi-tro-noi-chon",
+      "title": "Chỉ trỏ, nơi chốn, có và ở",
+      "summary": "これ／ここ／この, hỏi chỗ, あります／います và vị trí trên, dưới, trong, ngoài.",
+      "concepts": [
+        ["minna-1-02:g0201", "lesson-02:g0201"],
+        ["minna-1-02:g0202"],
+        ["minna-1-03:g0301", "lesson-03:g0301"],
+        ["minna-1-03:g0302", "lesson-03:g0302"],
+        ["minna-1-03:g0303"],
+        ["minna-1-03:g0304"],
+        ["minna-1-16:g1608"],
+        ["minna-1-09:g0901"],
+        ["minna-1-10:g1001"],
+        ["minna-1-10:g1002"],
+        ["minna-1-10:g1003"],
+        ["minna-1-10:g1004"],
+        ["minna-1-21:g2105"]
+      ]
+    },
+    {
+      "id": "so-thoi-gian",
+      "title": "Số, giờ, ngày, giá và số lượng",
+      "summary": "Giờ, ngày tháng, từ … đến …, giá tiền, đếm đồ vật, tần suất và thời gian làm việc.",
+      "concepts": [
+        ["minna-1-04:g0401", "lesson-04:g0401"],
+        ["minna-1-04:g0404"],
+        ["minna-1-04:g0405", "lesson-04:g0402"],
+        ["minna-1-05:g0505"],
+        ["minna-1-03:g0305"],
+        ["minna-1-11:g1101"],
+        ["minna-1-11:g1102"],
+        ["minna-1-11:g1103"],
+        ["minna-1-11:g1104"],
+        ["minna-2-42:g4204"]
+      ]
+    },
+    {
+      "id": "tro-tu-hanh-dong",
+      "title": "Trợ từ của hành động: đi đâu, bằng gì, với ai",
+      "summary": "へ, で, と, を, に đi với động từ; đưa một phần câu lên làm chủ đề bằng は.",
+      "concepts": [
+        ["minna-1-05:g0501", "lesson-05:g0501"],
+        ["minna-1-05:g0503", "lesson-05:g0502"],
+        ["minna-1-05:g0504"],
+        ["minna-1-06:g0601"],
+        ["minna-1-06:g0603"],
+        ["minna-1-07:g0701"],
+        ["minna-1-15:g1505"],
+        ["minna-1-16:g1606"],
+        ["minna-1-23:g2306"],
+        ["minna-1-17:g1705"],
+        ["minna-2-26:g2606"],
+        ["minna-2-27:g2706"],
+        ["minna-1-14:g1405"]
+      ]
+    },
+    {
+      "id": "tu-nho",
+      "title": "Từ nhỏ hay dùng: cũng, chỉ, toàn, mỗi, nào là",
+      "summary": "だけ, しか, ばかり, ずつ, も, や, とか, たり, くらい và các từ chỉ mức độ.",
+      "concepts": [
+        ["minna-1-05:g0502"],
+        ["minna-1-06:g0602"],
+        ["minna-1-13:g1305"],
+        ["minna-1-11:g1105"],
+        ["minna-2-27:g2705", "n4-grammar-8:n4g-shika-nai"],
+        ["n4-grammar-8:n4g-bakari"],
+        ["n4-grammar-8:n4g-zutsu"],
+        ["minna-2-42:g4205", "n4-grammar-8:n4g-suuryou-mo"],
+        ["minna-1-10:g1005"],
+        ["minna-2-30:g3007", "n4-grammar-8:n4g-toka"],
+        ["minna-1-19:g1903", "n4-grammar-1:n4g-tari"],
+        ["n4-grammar-8:n4g-kurai"],
+        ["minna-1-09:g0904"],
+        ["minna-1-18:g1806"]
+      ]
+    },
+    {
+      "id": "tinh-tu",
+      "title": "Tính từ: miêu tả, phủ định, quá khứ, nối câu",
+      "summary": "Tính từ đuôi い và đuôi な ở các dạng, nối hai đặc điểm, đổi tính từ thành danh từ.",
+      "concepts": [
+        ["minna-1-08:g0801"],
+        ["minna-1-08:g0802"],
+        ["minna-1-08:g0803"],
+        ["minna-1-08:g0805"],
+        ["minna-1-12:g1201"],
+        ["minna-1-12:g1202"],
+        ["minna-1-16:g1603"],
+        ["minna-1-16:g1604"],
+        ["minna-1-16:g1605"],
+        ["minna-2-40:g4004", "n4-grammar-8:n4g-sa"]
+      ]
+    },
+    {
+      "id": "so-sanh",
+      "title": "So sánh, mức độ, giống như",
+      "summary": "Hơn, nhất, không bằng, quá, dễ hay khó, càng … càng …, giống như.",
+      "concepts": [
+        ["minna-1-12:g1203"],
+        ["minna-1-12:g1204"],
+        ["minna-1-12:g1205"],
+        ["n4-grammar-8:n4g-hodo-nai"],
+        ["minna-2-44:g4401", "n4-grammar-8:n4g-sugiru"],
+        ["minna-2-44:g4402", "n4-grammar-8:n4g-yasui-nikui"],
+        ["minna-2-35:g3505", "n4-grammar-4:n4g-ba-hodo"],
+        ["n4-grammar-5:n4g-you-na-hiyu"]
+      ]
+    },
+    {
+      "id": "the-dong-tu",
+      "title": "Các thể của động từ, lịch sự và thân mật",
+      "summary": "ます, て, ない, từ điển, た, thể thường; tự động từ và tha động từ.",
+      "concepts": [
+        ["minna-1-04:g0402"],
+        ["minna-1-04:g0403"],
+        ["minna-1-14:g1401"],
+        ["minna-1-17:g1701"],
+        ["minna-1-18:g1801"],
+        ["minna-1-19:g1901"],
+        ["minna-1-20:g2001"],
+        ["minna-1-20:g2002"],
+        ["minna-1-20:g2003"],
+        ["minna-1-20:g2004"],
+        ["minna-1-20:g2005"],
+        ["n4-grammar-3:n4g-jidoushi-tadoushi"]
+      ]
+    },
+    {
+      "id": "mong-muon",
+      "title": "Muốn, thích, giỏi",
+      "summary": "ほしい, たい, すき／じょうず, muốn người khác làm gì, người khác muốn gì.",
+      "concepts": [
+        ["minna-1-09:g0902"],
+        ["minna-1-09:g0903"],
+        ["minna-1-13:g1301"],
+        ["minna-1-13:g1302"],
+        ["minna-1-13:g1303"],
+        ["n4-grammar-2:n4g-te-hoshii"],
+        ["n4-grammar-2:n4g-tagaru"]
+      ]
+    },
+    {
+      "id": "moi-khuyen",
+      "title": "Mời, rủ, đề nghị, khuyên",
+      "summary": "Rủ cùng làm, đề nghị giúp, gợi ý, khuyên nên hay không nên, hỏi nên làm gì.",
+      "concepts": [
+        ["minna-1-06:g0604"],
+        ["minna-1-06:g0605"],
+        ["minna-1-22:g2206"],
+        ["minna-1-14:g1404"],
+        ["n4-grammar-8:n4g-demo-teian"],
+        ["minna-1-21:g2106"],
+        ["minna-2-32:g3201"],
+        ["minna-2-26:g2605"],
+        ["minna-2-35:g3504"]
+      ]
+    },
+    {
+      "id": "nho-cho-phep",
+      "title": "Nhờ, xin phép, cho phép, cấm, bắt buộc",
+      "summary": "Nhờ người khác làm, xin phép, được hay không được làm, phải làm, không cần làm.",
+      "concepts": [
+        ["minna-1-14:g1402"],
+        ["minna-1-17:g1702"],
+        ["minna-2-43:g4304"],
+        ["minna-2-41:g4106"],
+        ["n4-grammar-7:n4g-teinei-irai"],
+        ["minna-2-26:g2604", "n4-grammar-1:n4g-ndesuga"],
+        ["minna-1-15:g1501"],
+        ["minna-1-18:g1803"],
+        ["minna-1-15:g1502"],
+        ["minna-2-33:g3302"],
+        ["minna-1-17:g1703", "n4-grammar-4:n4g-nakereba"],
+        ["minna-1-17:g1704", "n4-grammar-4:n4g-nakutemo-ii"],
+        ["n4-grammar-2:n4g-nasai"],
+        ["minna-2-33:g3301"],
+        ["minna-2-36:g3604"],
+        ["minna-2-48:g4805", "n4-grammar-6:n4g-sasete-itadakemasenka"],
+        ["n4-grammar-6:n4g-sasete-kudasai"]
+      ]
+    },
+    {
+      "id": "trinh-tu-thoi-gian",
+      "title": "Trình tự và thời gian",
+      "summary": "Trước, sau, khi, trong lúc, đến khi, hạn chót, sắp, đang, vừa mới.",
+      "concepts": [
+        ["minna-1-16:g1601"],
+        ["minna-1-16:g1602"],
+        ["minna-1-18:g1805"],
+        ["minna-2-34:g3403"],
+        ["minna-1-23:g2301"],
+        ["minna-1-23:g2302", "n4-grammar-4:n4g-toki"],
+        ["minna-1-23:g2303"],
+        ["minna-2-28:g2806"],
+        ["minna-2-28:g2801", "n4-grammar-1:n4g-nagara"],
+        ["n4-grammar-4:n4g-aida"],
+        ["n4-grammar-4:n4g-aida-ni"],
+        ["n4-grammar-4:n4g-made"],
+        ["minna-1-17:g1706", "n4-grammar-4:n4g-made-ni"],
+        ["minna-1-07:g0705"],
+        ["minna-2-46:g4601"],
+        ["minna-2-46:g4602"],
+        ["n4-grammar-3:n4g-tokoro"],
+        ["minna-2-46:g4603", "n4-grammar-3:n4g-ta-bakari"],
+        ["minna-2-39:g3905"],
+        ["minna-2-43:g4303"]
+      ]
+    },
+    {
+      "id": "noi-cau",
+      "title": "Nối câu: lý do, trái ý, cách thức",
+      "summary": "Vì … nên, vậy mà, nhưng, vừa … vừa, làm theo cách nào, thay vì.",
+      "concepts": [
+        ["minna-1-09:g0905"],
+        ["minna-2-39:g3904", "n4-grammar-1:n4g-node"],
+        ["minna-2-26:g2603", "n4-grammar-1:n4g-ndesu"],
+        ["minna-2-26:g2601"],
+        ["minna-2-26:g2602"],
+        ["minna-2-39:g3901"],
+        ["n4-grammar-1:n4g-te-riyuu"],
+        ["n4-grammar-1:n4g-nakute-riyuu"],
+        ["minna-2-39:g3902"],
+        ["minna-2-39:g3903"],
+        ["minna-2-28:g2803", "n4-grammar-1:n4g-shi"],
+        ["minna-2-28:g2804"],
+        ["minna-2-28:g2805"],
+        ["minna-1-20:g2006"],
+        ["minna-2-45:g4503", "n4-grammar-1:n4g-noni"],
+        ["minna-2-34:g3404", "n4-grammar-1:n4g-te-naide-houhou"],
+        ["minna-2-34:g3405", "n4-grammar-1:n4g-naide-kawari"],
+        ["n4-grammar-1:n4g-zuni"],
+        ["minna-2-34:g3401"],
+        ["minna-2-34:g3402"]
+      ]
+    },
+    {
+      "id": "kha-nang",
+      "title": "Khả năng, nghe nhìn, kinh nghiệm",
+      "summary": "Làm được hay không, thể khả năng, nhìn thấy và nghe thấy, đã từng làm.",
+      "concepts": [
+        ["minna-1-18:g1802"],
+        ["minna-2-27:g2701", "n4-grammar-3:n4g-kanoukei"],
+        ["minna-2-27:g2702"],
+        ["minna-2-27:g2703", "n4-grammar-3:n4g-mieru-kikoeru"],
+        ["n4-grammar-3:n4g-mirareru-kikeru"],
+        ["minna-2-47:g4703"],
+        ["minna-1-19:g1902"]
+      ]
+    },
+    {
+      "id": "trang-thai-thay-doi",
+      "title": "Đang làm, trạng thái, thay đổi, hoàn thành",
+      "summary": "ています, なります, ようになる, てある, ておく, てしまう, てみる, bắt đầu và tiếp tục.",
+      "concepts": [
+        ["minna-1-14:g1403"],
+        ["minna-1-15:g1503"],
+        ["minna-1-15:g1504"],
+        ["minna-2-28:g2802"],
+        ["minna-1-19:g1904"],
+        ["minna-1-19:g1905"],
+        ["minna-2-44:g4403"],
+        ["minna-2-36:g3602", "n4-grammar-2:n4g-you-ni-naru"],
+        ["minna-2-29:g2901", "n4-grammar-3:n4g-te-iru-joutai"],
+        ["minna-2-29:g2902"],
+        ["minna-2-30:g3001", "n4-grammar-3:n4g-te-aru"],
+        ["minna-2-30:g3002"],
+        ["minna-2-30:g3003", "n4-grammar-3:n4g-te-oku"],
+        ["minna-2-30:g3004"],
+        ["minna-2-30:g3005"],
+        ["minna-2-29:g2903", "n4-grammar-3:n4g-te-shimau"],
+        ["minna-2-29:g2904"],
+        ["minna-2-40:g4003", "n4-grammar-3:n4g-te-miru"],
+        ["minna-2-31:g3106", "n4-grammar-3:n4g-mada-te-inai"],
+        ["minna-2-30:g3006"],
+        ["minna-2-27:g2704"],
+        ["n4-grammar-8:n4g-hajimeru-owaru"]
+      ]
+    },
+    {
+      "id": "dieu-kien",
+      "title": "Điều kiện, giả định, dù",
+      "summary": "たら, ば, と, なら, ても và trường hợp: khi nào dùng mẫu nào.",
+      "concepts": [
+        ["minna-1-25:g2501"],
+        ["minna-1-25:g2504", "n4-grammar-4:n4g-tara-katei"],
+        ["minna-1-25:g2502", "n4-grammar-4:n4g-tara-ato"],
+        ["minna-1-25:g2506"],
+        ["minna-1-23:g2304", "n4-grammar-4:n4g-to-shizen"],
+        ["minna-1-23:g2305"],
+        ["minna-2-35:g3501", "n4-grammar-4:n4g-ba-form"],
+        ["minna-2-35:g3502"],
+        ["minna-2-35:g3503", "n4-grammar-4:n4g-nara"],
+        ["minna-1-25:g2503", "n4-grammar-4:n4g-temo"],
+        ["minna-1-25:g2505"],
+        ["minna-2-45:g4501"],
+        ["minna-2-45:g4502"]
+      ]
+    },
+    {
+      "id": "y-dinh-muc-dich",
+      "title": "Ý định, kế hoạch, mục đích, quyết định",
+      "summary": "Định làm, dự kiến, để làm gì, cố gắng, quyết định và được quyết định.",
+      "concepts": [
+        ["minna-2-31:g3101", "n4-grammar-2:n4g-ikoukei"],
+        ["minna-2-31:g3102"],
+        ["minna-2-31:g3103", "n4-grammar-2:n4g-you-to-omotte-iru"],
+        ["minna-2-31:g3104", "n4-grammar-2:n4g-tsumori"],
+        ["minna-2-31:g3105", "n4-grammar-2:n4g-yotei"],
+        ["minna-1-13:g1304"],
+        ["minna-2-42:g4201", "n4-grammar-2:n4g-tame-ni"],
+        ["minna-2-42:g4202"],
+        ["minna-2-36:g3601", "n4-grammar-2:n4g-you-ni-mokuteki"],
+        ["minna-2-42:g4203", "n4-grammar-2:n4g-noni-tsukau"],
+        ["minna-2-36:g3603", "n4-grammar-2:n4g-you-ni-suru"],
+        ["n4-grammar-2:n4g-koto-ni-suru"],
+        ["n4-grammar-2:n4g-koto-ni-naru"],
+        ["minna-2-44:g4404"]
+      ]
+    },
+    {
+      "id": "suy-doan",
+      "title": "Có lẽ, hình như, chắc là (suy đoán)",
+      "summary": "Các cách nói điều mình đoán. Khác nhau ở chỗ chắc đến đâu và dựa vào đâu.",
+      "concepts": [
+        ["minna-1-21:g2101"],
+        ["minna-2-32:g3202", "n4-grammar-5:n4g-deshou"],
+        ["minna-2-32:g3203", "n4-grammar-5:n4g-kamoshirenai"],
+        ["minna-2-46:g4604", "n4-grammar-5:n4g-hazu-desu"],
+        ["n4-grammar-5:n4g-hazu-ga-nai"],
+        ["minna-2-43:g4301"],
+        ["minna-2-43:g4302"],
+        ["n4-grammar-5:n4g-sou-yotai"],
+        ["n4-grammar-5:n4g-sou-na"],
+        ["minna-2-47:g4702", "n4-grammar-5:n4g-you-desu"],
+        ["n4-grammar-5:n4g-mitai-desu"],
+        ["n4-grammar-5:n4g-rashii"]
+      ]
+    },
+    {
+      "id": "truyen-dat",
+      "title": "Nghe nói, trích lời, hỏi ý kiến",
+      "summary": "Thuật lại lời người khác, tin nghe được, nhờ nhắn lại, cách đọc và nghĩa của từ.",
+      "concepts": [
+        ["minna-1-21:g2102"],
+        ["minna-1-21:g2103"],
+        ["minna-2-33:g3305", "n4-grammar-5:n4g-to-itte-imashita"],
+        ["minna-2-33:g3306", "n4-grammar-5:n4g-to-tsutaete"],
+        ["minna-2-47:g4701", "n4-grammar-5:n4g-sou-denbun"],
+        ["n4-grammar-5:n4g-ni-yoru-to"],
+        ["n4-grammar-2:n4g-you-ni-iu"],
+        ["minna-1-07:g0702"],
+        ["minna-2-33:g3303"],
+        ["minna-2-33:g3304"],
+        ["n4-grammar-8:n4g-to-iu"]
+      ]
+    },
+    {
+      "id": "cho-nhan",
+      "title": "Cho và nhận",
+      "summary": "あげる, もらう, くれる và cách nói kính trọng; làm việc gì cho ai.",
+      "concepts": [
+        ["minna-1-07:g0703"],
+        ["minna-1-07:g0704"],
+        ["minna-1-24:g2401"],
+        ["minna-1-24:g2402"],
+        ["minna-2-41:g4101"],
+        ["minna-2-41:g4102"],
+        ["minna-2-41:g4103"],
+        ["minna-1-24:g2405", "n4-grammar-7:n4g-te-ageru"],
+        ["minna-1-24:g2403", "n4-grammar-7:n4g-te-morau"],
+        ["minna-1-24:g2404", "n4-grammar-7:n4g-te-kureru"],
+        ["minna-2-41:g4104"],
+        ["n4-grammar-7:n4g-te-itadaku"],
+        ["n4-grammar-7:n4g-te-kudasaru"],
+        ["minna-2-41:g4105", "n4-grammar-7:n4g-te-yaru"]
+      ]
+    },
+    {
+      "id": "danh-tu-hoa",
+      "title": "Bổ nghĩa danh từ, danh từ hóa, câu hỏi lồng",
+      "summary": "Mệnh đề đứng trước danh từ, の và こと, cách làm, câu hỏi nằm trong câu.",
+      "concepts": [
+        ["minna-1-22:g2201"],
+        ["minna-1-22:g2202"],
+        ["minna-1-22:g2203"],
+        ["minna-1-22:g2204"],
+        ["minna-1-22:g2205"],
+        ["minna-1-18:g1804"],
+        ["n4-grammar-8:n4g-no-koto"],
+        ["minna-2-38:g3801"],
+        ["minna-2-38:g3802"],
+        ["minna-2-38:g3803"],
+        ["minna-2-38:g3804"],
+        ["minna-2-38:g3805"],
+        ["n4-grammar-8:n4g-kata"],
+        ["minna-2-40:g4001"],
+        ["minna-2-40:g4002"],
+        ["n4-grammar-8:n4g-ka-kadouka"]
+      ]
+    },
+    {
+      "id": "bi-dong-sai-khien",
+      "title": "Bị động và sai khiến",
+      "summary": "Được, bị ai làm gì; bắt hoặc cho ai làm gì; bị bắt làm.",
+      "concepts": [
+        ["minna-2-37:g3701", "n4-grammar-6:n4g-ukemi-form"],
+        ["minna-2-37:g3702", "n4-grammar-6:n4g-ukemi-direct"],
+        ["minna-2-37:g3703", "n4-grammar-6:n4g-ukemi-meiwaku"],
+        ["minna-2-37:g3704", "n4-grammar-6:n4g-ukemi-mono"],
+        ["minna-2-37:g3705", "n4-grammar-6:n4g-ukemi-niyotte"],
+        ["minna-2-37:g3706", "n4-grammar-6:n4g-ukemi-kara-de"],
+        ["minna-2-48:g4801", "n4-grammar-6:n4g-shieki-form"],
+        ["minna-2-48:g4802", "n4-grammar-6:n4g-shieki-wo"],
+        ["minna-2-48:g4803", "n4-grammar-6:n4g-shieki-ni"],
+        ["minna-2-48:g4804"],
+        ["n4-grammar-6:n4g-shieki-kanjou"],
+        ["n4-grammar-6:n4g-shieki-ukemi-form"],
+        ["n4-grammar-6:n4g-shieki-ukemi"]
+      ]
+    },
+    {
+      "id": "kinh-ngu",
+      "title": "Kính ngữ và khiêm nhường",
+      "summary": "Nói về người trên một cách kính trọng, nói về mình một cách khiêm tốn.",
+      "concepts": [
+        ["minna-2-49:g4901", "n4-grammar-7:n4g-sonkei-rareru"],
+        ["minna-2-49:g4902", "n4-grammar-7:n4g-o-ni-naru"],
+        ["minna-2-49:g4903", "n4-grammar-7:n4g-sonkei-tokubetsu"],
+        ["minna-2-49:g4904", "n4-grammar-7:n4g-o-kudasai"],
+        ["minna-2-50:g5001", "n4-grammar-7:n4g-o-suru"],
+        ["minna-2-50:g5002", "n4-grammar-7:n4g-kenjou-tokubetsu"],
+        ["minna-2-50:g5003"],
+        ["minna-2-50:g5004", "n4-grammar-7:n4g-gozaimasu"]
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "topic": "suy-doan",
+      "title": "So sánh nhanh các cách nói “có lẽ”",
+      "tip": "Mắt thấy thì dùng そう. Tự suy từ dấu hiệu thì dùng よう／みたい. Nghe người khác nói thì dùng らしい, hoặc そうです (nghe nói). Có căn cứ chắc chắn thì dùng はず. Chỉ là một khả năng thì dùng かもしれません.",
+      "columns": ["Mẫu", "Nghĩa", "Chắc đến đâu", "Dựa vào", "Ghép với"],
+      "rows": [
+        {
+          "concepts": ["minna-2-32:g3202"],
+          "cells": [
+            "〜でしょう",
+            "chắc là, có lẽ",
+            "Khá chắc",
+            "Suy nghĩ, kinh nghiệm của người nói",
+            "Thể thường; N và Aな bỏ だ: {雨|あめ}でしょう"
+          ]
+        },
+        {
+          "concepts": ["minna-2-32:g3203"],
+          "cells": [
+            "〜かもしれません",
+            "có thể, không chừng",
+            "Thấp: chỉ là một khả năng",
+            "Điều người nói nghĩ là có thể xảy ra",
+            "Thể thường; N và Aな bỏ だ: {雨|あめ}かもしれません"
+          ]
+        },
+        {
+          "concepts": ["minna-2-46:g4604"],
+          "cells": [
+            "〜はずです",
+            "chắc chắn là, lẽ ra",
+            "Cao",
+            "Lý lẽ hoặc thông tin chắc chắn (lịch, quy định)",
+            "Như trước danh từ: Aな＋な, N＋の: {休|やす}みのはずです"
+          ]
+        },
+        {
+          "concepts": ["minna-2-43:g4301", "minna-2-43:g4302", "n4-grammar-5:n4g-sou-yotai"],
+          "cells": [
+            "Vます／A＋そうです",
+            "trông có vẻ, sắp",
+            "Đoán ngay khi nhìn",
+            "Điều mắt thấy",
+            "Vます bỏ ます, Aい bỏ い, Aな bỏ な; いい → よさそう: {降|ふ}りそう, おいしそう"
+          ]
+        },
+        {
+          "concepts": ["minna-2-47:g4702"],
+          "cells": [
+            "〜ようです",
+            "hình như",
+            "Khá chắc",
+            "Dấu hiệu chính mình thấy, nghe, cảm nhận",
+            "Như trước danh từ: Aな＋な, N＋の: {留守|るす}のようです"
+          ]
+        },
+        {
+          "concepts": ["n4-grammar-5:n4g-mitai-desu"],
+          "cells": [
+            "〜みたいです",
+            "hình như (văn nói)",
+            "Như ようです",
+            "Như ようです",
+            "Thể thường; N và Aな bỏ だ: {留守|るす}みたいです"
+          ]
+        },
+        {
+          "concepts": ["n4-grammar-5:n4g-rashii"],
+          "cells": [
+            "〜らしいです",
+            "nghe đâu, có vẻ",
+            "Vừa phải",
+            "Thông tin nghe hoặc đọc được",
+            "Thể thường; N và Aな bỏ だ: {休|やす}みらしいです"
+          ]
+        },
+        {
+          "concepts": ["minna-2-47:g4701"],
+          "cells": [
+            "Thể thường＋そうです",
+            "nghe nói",
+            "Không đoán, chỉ thuật lại",
+            "Lời người khác, tin tức",
+            "Thể thường; N và Aな giữ だ: {雨|あめ}だそうです"
+          ]
+        }
+      ]
+    }
+  ]
+}

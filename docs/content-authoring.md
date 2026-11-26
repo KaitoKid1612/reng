@@ -164,6 +164,15 @@ Ngày 16/11/2026 có bộ bài mẫu ôn ngữ pháp JLPT N4 theo chủ đề (k
   3. Đo từng slide (xem [kiểm chứng](testing/teaching-service.md#tổng-ôn-ngữ-pháp-n4--16112026)).
 - **Gợi ý dùng:** thêm bản đồ và 8 bài vào lớp ôn N4. Trang **Tra ngữ pháp của lớp** và link **Ôn lại mẫu** trong lời giải chỉ hoạt động với các bài lớp đã mở.
 
+## Chủ đề ngữ pháp (trang Tra ngữ pháp)
+
+Từ 26/11/2026 mỗi mẫu câu của bài mẫu nằm trong đúng một chủ đề của `content/grammar-topics.json` (cách xem **Theo chủ đề** ở `/grammar`). Khi thêm hoặc đổi mã mẫu câu trong bài mẫu:
+
+- Thêm khóa `"<mã bài mẫu>:<mã mẫu câu>"` vào một khái niệm của chủ đề hợp với **chức năng** của mẫu (dùng để làm gì), không theo bài.
+- Mẫu dạy đúng điểm đã có ở bài khác (1–1, như でしょう ở Minna 32 và Tổng ôn N4 · 5) thì thêm khóa vào khái niệm đó, sau khóa của bài Minna. Mẫu chỉ trùng một phần thì là khái niệm riêng.
+- Bảng so sánh của chủ đề (`comparisons`) chỉ ghi điều đúng với mọi mẫu trong dòng; câu ví dụ trong bảng do Reng viết.
+- `npm test` báo mẫu chưa có chủ đề, khóa không còn tồn tại hoặc một mẫu nằm ở hai nơi.
+
 ## Mẹo học và thi JLPT N4
 
 Ngày 16/11/2026 có thêm mục **Mẹo học và thi JLPT N4** (khóa `n4-tips`) ở trang Tạo bài mới, tách khỏi tổng ôn ngữ pháp. Tổng ôn trả lời câu hỏi "mẫu này là gì", còn bộ mẹo trả lời "học và làm đề thế nào":
