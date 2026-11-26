@@ -432,7 +432,7 @@ enabled = true
 
 # Hosted production project (reng-class.vercel.app). `supabase config push` applies these
 # overrides when the linked project is this ref; the local stack keeps the values above.
-# Email confirmation stays off until a custom SMTP sender (Resend) is configured.
+# Email confirmation stays off: learners join right after signing up.
 [remotes.production]
 project_id = "gqawttlaxibdxliaofun"
 
@@ -446,14 +446,22 @@ enable_confirmations = false
 max_frequency = "1m0s"
 otp_length = 8
 
-# Free projects without custom SMTP cannot change email templates; keep the hosted defaults.
-[remotes.production.auth.email.template.confirmation]
-subject = "Confirm your email address"
-content_path = ""
+# Auth email (password reset, email change) goes out through the operator's Gmail, so it reaches
+# every learner and may use the Vietnamese templates above (a Free project without custom SMTP
+# cannot change templates). The 16-character Google app password is SUPABASE_AUTH_SMTP_PASS in
+# ~/.config/reng/supabase-prod.env, never in git; a changed Google password revokes it.
+[remotes.production.auth.email.smtp]
+enabled = true
+host = "smtp.gmail.com"
+port = 465
+user = "leviet1612@gmail.com"
+pass = "env(SUPABASE_AUTH_SMTP_PASS)"
+admin_email = "leviet1612@gmail.com"
+sender_name = "Reng"
 
-[remotes.production.auth.email.template.recovery]
-subject = "Reset your password"
-content_path = ""
+# The local stack allows 2 emails an hour; Gmail sends about 500 a day.
+[remotes.production.auth.rate_limit]
+email_sent = 30
 
 # Production Google sign-in, on since 2026-11-03. The client ID and secret live in
 # ~/.config/reng/supabase-prod.env: load that file before `config diff` / `config push`.

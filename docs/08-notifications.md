@@ -8,7 +8,13 @@ MVP dùng email opt-in và mục việc cần làm trong website. Từ 10/11/202
 
 ## Dịch vụ gửi email
 
-Code hiện có adapter Resend cho gửi thật và Mailpit local; chưa xác minh gói/quota production cho dịch vụ nhiều giáo viên. Tính ngân sách theo số người opt-in, loại email và retry; gói/provider khác cần kiểm chứng trước đổi, không đặt ngưỡng lớp cố định dựa trên free tier cũ.
+Quyết định 26/11/2026: production gửi email qua Gmail của người vận hành (`leviet1612@gmail.com`, máy chủ `smtp.gmail.com:465`, mật khẩu ứng dụng của Google). Lý do: Reng chưa có tên miền riêng (`reng-class.vercel.app` là tên miền của Vercel, không thêm được bản ghi DNS), mà Resend bắt buộc tên miền đã xác minh; số người dùng còn ít.
+
+- Thư xác nhận email và đặt lại mật khẩu do Supabase gửi qua SMTP của Gmail (`[remotes.production.auth.email.smtp]` trong `supabase/config.toml`). Có SMTP riêng thì gói Free dùng được mẫu thư tiếng Việt và gửi tới mọi địa chỉ, không chỉ thành viên dự án.
+- Giới hạn: Gmail cá nhân khoảng 500 thư mỗi 24 giờ (vượt thì Google khóa gửi tới 24 giờ); Supabase đặt 30 thư/giờ (`[remotes.production.auth.rate_limit]`). Đủ cho vài lớp; khi đông hơn thì chuyển sang tên miền riêng và một dịch vụ gửi thư.
+- Mật khẩu ứng dụng mở được cả hộp thư của tài khoản: chỉ để ở `~/.config/reng/supabase-prod.env` và biến môi trường Vercel, không đưa vào git. Đổi mật khẩu Google thì mật khẩu ứng dụng bị hủy và thư ngừng gửi cho tới khi tạo lại.
+
+Code gửi email nhắc học (`lib/server/email-provider.ts`) có adapter Resend cho gửi thật và Mailpit local. Tính ngân sách theo số người opt-in, loại email và retry; gói/provider khác cần kiểm chứng trước đổi, không đặt ngưỡng lớp cố định dựa trên free tier cũ.
 
 Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inline (lib/notifications/templates.ts) thay cho react-email, vì email được dựng trong route handler cron. Local gửi vào Mailpit; production dùng Resend qua HTTP với Idempotency-Key. Chi tiết tại [DD giai đoạn 4](detail-design/phase-4.md).
 
@@ -16,7 +22,7 @@ Bản triển khai giai đoạn 4 dùng template chuỗi có escape và CSS inli
 
 Làm sai thì email vào thẳng spam và bạn không bao giờ biết.
 
-1. Gửi từ tên miền riêng, ví dụ `nhacbai@reng.example`. Không gửi từ địa chỉ Gmail.
+1. Gửi từ tên miền riêng, ví dụ `nhacbai@reng.example`. Không gửi thư mang địa chỉ Gmail qua máy chủ của dịch vụ khác: thư sẽ trượt kiểm tra DMARC của Gmail và vào spam. Gửi bằng chính máy chủ SMTP của Gmail, như production từ 26/11/2026, thì không bị.
 2. Thêm ba bản ghi DNS: SPF, DKIM, DMARC. Resend hướng dẫn từng bước, khoảng 20 phút.
 3. Thêm header one-click unsubscribe.
 

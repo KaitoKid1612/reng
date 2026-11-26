@@ -87,7 +87,18 @@ Migration nằm trong `supabase/migrations`, chạy theo thứ tự tên file. T
 5. Xem trước rồi áp dụng: `npx supabase db push --linked --dry-run`, sau đó `npx supabase db push --linked`. Luôn ghi `--linked`: từ Supabase CLI 3, thiếu cờ này lệnh đẩy vào database local. `db push` áp **mọi** migration chưa có trên production, nên chỉ chạy khi tất cả đã hoàn chỉnh.
 6. Chỉ push mã dùng migration mới **sau khi** migration đã áp dụng. Code trên `main` có thể bị một agent khác đẩy lên bất kỳ lúc nào, nên commit chờ migration cũng không được nằm trên `main`.
 
-Cấu hình Auth production (Site URL, mẫu email, Google) nằm trong khối `[remotes.production]` của `supabase/config.toml`: xem khác biệt bằng `npx supabase config diff --project-ref <ref>`, áp bằng `npx supabase config push`.
+Cấu hình Auth production (Site URL, mẫu email, SMTP Gmail, Google) nằm trong khối `[remotes.production]` của `supabase/config.toml`: xem khác biệt bằng `npx supabase config diff --project-ref <ref>`, áp bằng `npx supabase config push`. Hai lệnh đọc khóa bí mật từ `~/.config/reng/supabase-prod.env`: chạy `set -a; . ~/.config/reng/supabase-prod.env; set +a` trước.
+
+### Gửi email qua Gmail (từ 26/11/2026)
+
+Thư xác nhận email và đặt lại mật khẩu đi qua Gmail của người vận hành ([lý do và giới hạn](08-notifications.md#dịch-vụ-gửi-email)).
+
+1. Tài khoản Google đó bật xác minh 2 bước, rồi tạo mật khẩu ứng dụng ở https://myaccount.google.com/apppasswords (16 ký tự, bỏ dấu cách).
+2. Thêm dòng `SUPABASE_AUTH_SMTP_PASS=<mật khẩu ứng dụng>` vào `~/.config/reng/supabase-prod.env` (quyền 600).
+3. Nạp file như trên, xem `config diff` (phải thấy SMTP bật, mẫu thư tiếng Việt, `email_sent = 30`), rồi `config push`.
+4. Thử: trang Quên mật khẩu với một email học viên thử; thư tới từ "Reng", tiêu đề "Đặt lại mật khẩu Reng".
+
+Đổi mật khẩu Google làm mật khẩu ứng dụng mất hiệu lực: tạo mật khẩu mới, sửa dòng trong file rồi `config push` lại.
 
 ## Đưa thay đổi lên production
 
@@ -122,7 +133,7 @@ Quay lại bản trước: dùng Instant Rollback ở Vercel › Deployments đ�
 | Link trong email xác nhận hoặc đặt lại mật khẩu không mở được ở local | Link chỉ quay về các cổng trong `additional_redirect_urls` của `supabase/config.toml` (3000, 3017, 3218). Đổi cấu hình thì `npx supabase stop` rồi `start` |
 | `db push` báo migration nằm trước migration cuối trên remote | Tên migration dùng mã ngắn. Đổi tên theo mã thời gian 14 chữ số sau migration cuối đã áp dụng (mục Migration, bước 1) |
 | Ba job email trả 503 mỗi ngày trên production | Đúng thiết kế khi chưa đặt `EMAIL_PROVIDER`. Bật email theo [kế hoạch POC](poc-setup.md#vận-hành-khi-chưa-có-email-riêng-rà-soát-30102026) |
-| Học viên quên mật khẩu khi production chưa có email riêng | Người vận hành đặt mật khẩu tạm trong Supabase Dashboard › Authentication › Users và gửi riêng cho học viên |
+| Học viên không nhận được thư đặt lại mật khẩu | Kiểm tra thư mục Spam; xem Supabase Dashboard › Logs (Auth) có lỗi SMTP không (mật khẩu ứng dụng bị hủy khi đổi mật khẩu Google, hoặc Gmail vượt khoảng 500 thư/ngày). Cần gấp thì người vận hành đặt mật khẩu tạm ở Authentication › Users và gửi riêng cho học viên |
 
 ## Lệnh npm
 

@@ -159,9 +159,9 @@ const SECTIONS: LegalSection[] = [
           </li>
           <li>
             <strong>Bảng xếp hạng tuần:</strong> khi giáo viên đưa lớp vào bảng tuần, học viên các
-            lớp của giáo viên đó đã vào bảng thấy họ tên hiển thị, số câu đúng và số ngày học trong
-            tuần của nhau, không thấy bài làm hay email. Bạn tự ẩn mình được ở Cài đặt → Tài khoản;
-            khi đó chỉ bạn thấy điểm của mình.
+            lớp của giáo viên đó đã vào bảng thấy họ tên hiển thị, số câu đúng và số ngày nộp bài
+            trong tuần của nhau, không thấy bài làm hay email. Bạn tự ẩn mình được ở trang Tài
+            khoản, mục Bảng xếp hạng tuần; khi đó chỉ bạn thấy điểm của mình.
           </li>
           <li>
             <strong>Quản trị viên nền tảng:</strong> số liệu tổng hợp và thông tin tài khoản giáo
@@ -170,11 +170,11 @@ const SECTIONS: LegalSection[] = [
           <li>
             <strong>Nhà cung cấp xử lý dữ liệu thay chúng tôi:</strong> Supabase (cơ sở dữ liệu và
             đăng nhập, máy chủ ở Singapore), Vercel (máy chủ web, khu vực Singapore), Google (khi
-            bạn đăng nhập bằng Google), dịch vụ thông báo của trình duyệt bạn dùng (Google, Apple,
-            Mozilla hoặc Microsoft; chỉ chuyển thông báo đã được mã hóa) và Resend (gửi email nhắc
-            học, khi tính năng này được bật). Giọng đọc mẫu trong bài được tạo trước bằng Unreal
-            Speech chỉ từ chữ trong bài học, không kèm dữ liệu của bạn. Dữ liệu được lưu trữ và xử
-            lý ở ngoài Việt Nam.
+            bạn đăng nhập bằng Google, và Gmail để gửi email của Reng: thư đặt lại mật khẩu, xác
+            nhận email và email nhắc học khi bạn bật) và dịch vụ thông báo của trình duyệt bạn dùng
+            (Google, Apple, Mozilla hoặc Microsoft; chỉ chuyển thông báo đã được mã hóa). Giọng đọc
+            mẫu trong bài được tạo trước bằng Unreal Speech chỉ từ chữ trong bài học, không kèm dữ
+            liệu của bạn. Dữ liệu được lưu trữ và xử lý ở ngoài Việt Nam.
           </li>
           <li>
             <strong>Cơ quan nhà nước</strong> khi pháp luật yêu cầu.
