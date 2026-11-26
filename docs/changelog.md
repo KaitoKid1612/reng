@@ -2,6 +2,19 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 26/11/2026
+
+- **Rà soát giao diện, dữ liệu, logic và câu chữ** ([chi tiết](testing/review-2026-11-26.md)):
+  - **Link mời vào lớp:** hiện tên lớp và giáo viên; khách có nút "Tạo tài khoản để vào lớp" thay vì bị đưa tới đăng nhập.
+  - **Hôm nay học gì:** có cả bài hạn trong 7 ngày tới và bài không hạn, nên đề thi thử mở cả tuần hiện từ ngày đầu.
+  - **Bài làm dở quá hạn:** Reng nộp các câu đã lưu ngay khi học viên mở lại bài, không phải chờ 6:00 sáng.
+  - **Ôn tập:** phiên 50 thẻ có nút Ôn tiếp khi còn thẻ.
+  - **Bài luyện chưa đạt:** ghi "Chưa đạt" thay nhãn xanh "Đã nộp".
+  - **Duyệt giáo viên:** thông báo hiện ở đầu trang.
+  - **Gõ "wa" cho は:** lời nhắc hiện cả ở kết quả và sổ lỗi.
+  - **Mở trong Zalo/Messenger:** nhắc mở bằng Chrome/Safari để dùng nút Google.
+  - **Câu chữ:** sửa khoảng 190 chỗ (bỏ từ kỹ thuật và tiếng Anh, sửa câu nói sai chức năng, thống nhất tên gọi). Ví dụ: "Hạn bắt đầu" của đề thi thử thành "Đóng lúc", nhãn "Bỏ bài" thành "Lỡ 2 bài gần nhất".
+
 ### 25/11/2026
 
 - **Trang làm bài trên điện thoại:** mở bài là thấy câu đầu. Thẻ thông tin gọn hơn, thanh Nộp bài từ 3 hàng còn 2 hàng, nút âm thanh chung hàng với Danh sách câu ([chi tiết](testing/ui-check-2026-11-25.md)).
