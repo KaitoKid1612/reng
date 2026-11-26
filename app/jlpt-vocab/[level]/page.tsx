@@ -43,9 +43,8 @@ export default async function JlptVocabPage({ params }: JlptVocabPageProps) {
         <div>
           <h1>Từ vựng {label} theo chủ đề</h1>
           <p>
-            {data.items.length} từ chia thành {data.groups.length} chủ đề. Mỗi từ có một câu ví dụ
-            viết như phần điền từ của đề (<span lang="ja">もんだい3</span>): chủ yếu bằng kana, có
-            dấu cách giữa các cụm. Từ gốc Hán có âm Hán Việt để đoán nghĩa nhanh hơn.
+            {data.items.length} từ, {data.groups.length} chủ đề. Mỗi từ có một câu ví dụ kiểu phần
+            điền từ của đề (<span lang="ja">もんだい3</span>); từ gốc Hán có âm Hán Việt.
           </p>
         </div>
         <Link href={`/jlpt-vocab/${level}/practice`} className={buttonVariants()}>
@@ -53,9 +52,8 @@ export default async function JlptVocabPage({ params }: JlptVocabPageProps) {
         </Link>
       </div>
       <p className="kanji-note">
-        Thẻ <span className="kanji-paper-badge">Đã ra đề</span> đánh dấu {asked} từ mà phần Từ vựng
-        của hai đề mẫu chính thức N4 (2012, 2018) trên jlpt.jp đã hỏi. Câu ví dụ do Reng tự viết,
-        không chép đề.
+        Thẻ <span className="kanji-paper-badge">Đã ra đề</span>: {asked} từ hai đề mẫu chính thức{" "}
+        {label} (2012, 2018) trên jlpt.jp đã hỏi. Câu ví dụ do Reng tự viết.
       </p>
       <JlptVocabList data={data} practiceHref={`/jlpt-vocab/${level}/practice`} />
     </>

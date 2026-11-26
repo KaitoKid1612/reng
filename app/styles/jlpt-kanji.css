@@ -41,10 +41,10 @@
   text-decoration: none;
 }
 .kanji-group-nav a:hover,
-.kanji-group-nav a[aria-current="page"] {
+.kanji-group-nav a[aria-current] {
   border-color: var(--primary);
 }
-.kanji-group-nav a[aria-current="page"] {
+.kanji-group-nav a[aria-current] {
   background: var(--primary-soft);
   font-weight: 600;
 }
@@ -298,4 +298,36 @@
 .kanji-lookalike-glyph {
   font-family: var(--font-kana);
   font-size: 22px;
+}
+
+/* One group at a time on the long self-study lists (components/self-study/group-switcher.tsx). */
+.group-switcher-panel > .kanji-group {
+  border-top: 0;
+  padding-top: 8px;
+}
+.group-switcher-panel + .group-switcher-panel > .kanji-group {
+  border-top: 1px solid var(--border);
+}
+.group-switcher-panel[hidden] + .group-switcher-panel > .kanji-group {
+  border-top: 0;
+}
+.group-switcher-next {
+  margin: 8px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+}
+.kanji-about {
+  margin: -8px 0 20px;
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: 15px;
+}
+.kanji-about summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-weight: 600;
+}
+.kanji-about p {
+  margin: 8px 0 0;
 }

@@ -43,12 +43,10 @@ export default async function JlptKanjiPage({ params }: JlptKanjiPageProps) {
         <div>
           <h1>Kanji {label} cho người Việt</h1>
           <p>
-            {data.items.length} chữ chia thành {data.groups.length} nhóm. Người Việt có lợi thế âm
-            Hán Việt: nhớ âm Hán Việt là đoán được nghĩa, và nhiều chữ có âm On gần với âm Hán Việt
-            (<span lang="ja">学</span> HỌC → <span lang="ja">がく</span>, <span lang="ja">国</span>{" "}
-            QUỐC → <span lang="ja">こく</span>):{" "}
-            <Link href="/jlpt-kanji/han-viet">xem quy luật đoán âm On từ âm Hán Việt</Link>. Học
-            từng nhóm, đọc mẹo nhớ, rồi bấm Luyện nhóm này.
+            {data.items.length} chữ, {data.groups.length} nhóm. Nhớ âm Hán Việt là đoán được nghĩa,
+            nhiều chữ còn đoán được âm On (<span lang="ja">学</span> HỌC →{" "}
+            <span lang="ja">がく</span>):{" "}
+            <Link href="/jlpt-kanji/han-viet">xem quy luật đoán âm On</Link>.
           </p>
         </div>
         <Link href={`/jlpt-kanji/${level}/practice`} className={buttonVariants()}>
@@ -67,14 +65,19 @@ export default async function JlptKanjiPage({ params }: JlptKanjiPageProps) {
         ))}
       </nav>
       <p className="kanji-note">
-        Từ 2010, JLPT không công bố danh sách kanji chính thức; đây là các chữ thường dạy cho{" "}
-        {label}
-        {level === "n4" ? ", học sau 105 chữ N5" : ""}. Đề thi chỉ hỏi kanji trong phần Chữ và từ
-        vựng: <span lang="ja">もんだい1</span> cho từ viết bằng kanji, chọn cách đọc;{" "}
-        <span lang="ja">もんだい2</span> cho cách đọc, chọn kanji. Thẻ{" "}
-        <span className="kanji-paper-badge">Đã ra đề</span> đánh dấu {asked} chữ mà hai đề mẫu chính
-        thức (2012, 2018) trên jlpt.jp đã hỏi.
+        Thẻ <span className="kanji-paper-badge">Đã ra đề</span>: {asked} chữ hai đề mẫu chính thức
+        (2012, 2018) đã hỏi.
       </p>
+      <details className="kanji-about">
+        <summary>Về danh sách này</summary>
+        <p>
+          Từ 2010, JLPT không công bố danh sách kanji chính thức; đây là các chữ thường dạy cho{" "}
+          {label}
+          {level === "n4" ? ", học sau 105 chữ N5" : ""}. Đề thi chỉ hỏi kanji trong phần Chữ và từ
+          vựng: <span lang="ja">もんだい1</span> cho từ viết bằng kanji, chọn cách đọc;{" "}
+          <span lang="ja">もんだい2</span> cho cách đọc, chọn kanji. Đề mẫu lấy từ jlpt.jp.
+        </p>
+      </details>
       <JlptKanjiList data={data} practiceHref={`/jlpt-kanji/${level}/practice`} />
     </>
   );

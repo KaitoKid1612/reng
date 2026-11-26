@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { GroupSwitcher } from "@/components/self-study/group-switcher";
 import { JapaneseText } from "@/components/lessons/japanese-text";
 
 import type { JlptKanji, JlptKanjiLevelData } from "@/lib/jlpt-kanji";
@@ -87,44 +88,42 @@ function KanjiCard({ item }: { item: JlptKanji }) {
 export function JlptKanjiList({ data, practiceHref }: JlptKanjiListProps) {
   return (
     <>
-      <nav className="kanji-group-nav" aria-label="Nhóm chữ">
-        <ul>
-          {data.groups.map((group) => (
-            <li key={group.id}>
-              <a href={`#${group.id}`}>
-                {group.title}{" "}
-                <span className="kanji-count">
-                  ({data.items.filter((item) => item.group === group.id).length})
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      {data.groups.map((group) => {
-        const items = data.items.filter((item) => item.group === group.id);
-        return (
-          <section
-            className="kanji-group"
-            id={group.id}
-            key={group.id}
-            aria-labelledby={`${group.id}-title`}
-          >
-            <div className="kanji-group-head">
-              <h2 id={`${group.id}-title`}>{group.title}</h2>
-              <span className="kanji-count">{items.length} chữ</span>
-              <Link href={`${practiceHref}?group=${group.id}`} className="kanji-group-practice">
-                Luyện nhóm này
-              </Link>
-            </div>
-            <ul className="kanji-cards">
-              {items.map((item) => (
-                <KanjiCard item={item} key={item.kanji} />
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      <GroupSwitcher
+        label="Nhóm chữ"
+        unit="chữ"
+        groupWord="Nhóm"
+        groups={data.groups.map((group) => ({
+          id: group.id,
+          title: group.title,
+          count: data.items.filter((item) => item.group === group.id).length,
+        }))}
+      >
+        {data.groups.map((group) => {
+          const items = data.items.filter((item) => item.group === group.id);
+          return (
+            <section
+              className="kanji-group"
+              id={group.id}
+              data-switcher-group
+              key={group.id}
+              aria-labelledby={`${group.id}-title`}
+            >
+              <div className="kanji-group-head">
+                <h2 id={`${group.id}-title`}>{group.title}</h2>
+                <span className="kanji-count">{items.length} chữ</span>
+                <Link href={`${practiceHref}?group=${group.id}`} className="kanji-group-practice">
+                  Luyện nhóm này
+                </Link>
+              </div>
+              <ul className="kanji-cards">
+                {items.map((item) => (
+                  <KanjiCard item={item} key={item.kanji} />
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </GroupSwitcher>
     </>
   );
 }

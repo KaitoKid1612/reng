@@ -75,6 +75,14 @@ Phương án duyệt ngày 18/11/2026, lập theo skill `frontend-design`: Reng 
 - Năm công cụ tiếng Nhật ở Tự học nằm trên một hàng ở PC, không để thẻ thứ năm đứng riêng.
 - Trang 404: hai lối ra là nút; các đoạn liên tiếp trong `.prose-page` cách nhau 12px.
 
+## Trang dài, nhiều chữ (26/11/2026)
+
+Đo chiều cao trang (PC 1440 / điện thoại 390) trước khi sửa: Từ vựng N4 50.274 / 110.635px, Kanji N5 25.077 / 60.833px, trang đọc Bài 27 10.177 / 13.953px. Học viên phải cuộn rất lâu mới thấy hết, dễ nản.
+
+- **Một nhóm một lần** (`components/self-study/group-switcher.tsx`): trang Từ vựng và Kanji theo cấp chỉ hiện nhóm đang chọn, có nút **Tất cả** và link nhóm tiếp theo; lựa chọn nằm trong địa chỉ (`#<nhóm>`). Sau khi sửa: Từ vựng N4 3.551 / 7.834px, Kanji N5 4.013 / 9.230px. Lời giới thiệu rút còn 1–2 câu; phần giải thích về danh sách JLPT gập trong **Về danh sách này**.
+- **Trang đọc bài**: hàng link nhảy tới Từ vựng (số từ), Mẫu câu (số mẫu), Hội thoại, Bảng và luyện tập. Từ 1024px danh sách từ vựng xếp 2 cột, chữ và cách đọc cùng một dòng; nút Nghe của câu ví dụ nằm cạnh câu. Bài 27 còn khoảng 7.700px trên PC; điện thoại giữ dạng một cột gọn đã có.
+- Trang Hướng dẫn giữ nguyên: đã có mục lục bên cạnh, bước đánh số và thẻ chọn vai.
+
 ## Học trên máy tính (19/11/2026)
 
 - Trang luyện chọn đáp án (kanji, từ vựng) từ 1024 px xếp đề trái, phương án phải (`.practice-split`), để cả câu và nút Kiểm tra vừa màn 1366×768.

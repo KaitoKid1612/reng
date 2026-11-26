@@ -72,7 +72,7 @@ Phục vụ kỳ JLPT 06/12/2026: học viên N5 (Nguyên) và N4 (Việt) học
 
 | URL | Hành vi |
 |---|---|
-| `/jlpt-kanji/n5`, `/jlpt-kanji/n4` | Chuyển cấp N5/N4 → link tới từng nhóm → mỗi nhóm một lưới thẻ chữ: chữ to, âm Hán Việt, nghĩa, âm On, âm Kun, 1–4 từ ví dụ (cách đọc, nghĩa), mẹo nhớ, thẻ **Đã ra đề** kèm từ và năm đề mẫu đã hỏi. Mỗi nhóm có link **Luyện nhóm này** |
+| `/jlpt-kanji/n5`, `/jlpt-kanji/n4` | Chuyển cấp N5/N4 → hàng nút nhóm, mỗi lần hiện **một** nhóm (như trang từ vựng N4, từ 26/11/2026; ghi chú về danh sách JLPT gập trong **Về danh sách này**) → mỗi nhóm một lưới thẻ chữ: chữ to, âm Hán Việt, nghĩa, âm On, âm Kun, 1–4 từ ví dụ (cách đọc, nghĩa), mẹo nhớ, thẻ **Đã ra đề** kèm từ và năm đề mẫu đã hỏi. Mỗi nhóm có link **Luyện nhóm này** |
 | `/jlpt-kanji/[level]/practice?group=` | Chọn nhóm (hoặc Tất cả) → dùng lại màn hình luyện K1 trên từ ví dụ của nhóm: đọc chữ (giống もんだい1), nhận mặt chữ (giống もんだい2), hiểu nghĩa. Mỗi từ một lần (学校 có ở cả 学 và 校). Không lưu điểm |
 
 Dữ liệu và luật:

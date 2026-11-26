@@ -29,7 +29,16 @@ test("learners find the N5 kanji from self-study, read a card and practise one g
   await page.getByRole("link", { name: "Kanji N4", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Kanji N4 cho người Việt");
   await page.getByRole("link", { name: "Kanji N5", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Kanji N5 cho người Việt");
 
+  // One group shows at a time; the chip opens the body group and keeps it in the address.
+  await expect(page.locator(".kanji-group:visible")).toHaveCount(1);
+  await page
+    .getByRole("navigation", { name: "Nhóm chữ" })
+    .getByRole("link", { name: /^Cơ thể \(/ })
+    .click();
+  await expect(page).toHaveURL(/#body$/);
+  await expect(page.locator(".kanji-group:visible")).toHaveCount(1);
   await page.locator("#body").getByRole("link", { name: "Luyện nhóm này" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Luyện kanji N5: Cơ thể");
   // The exam kinds start ticked; this run types the readings instead.
@@ -77,7 +86,7 @@ test("the exam kinds offer near-miss readings, and the Hán Việt rules are cou
   expect(options.every((option) => /^[ぁ-ゖ]+$/u.test(option.trim()))).toBe(true);
 
   await page.goto("/jlpt-kanji/n5");
-  const rulesLink = page.getByRole("link", { name: "xem quy luật đoán âm On từ âm Hán Việt" });
+  const rulesLink = page.getByRole("link", { name: "xem quy luật đoán âm On" });
   await expect(rulesLink).toHaveAttribute("href", "/jlpt-kanji/han-viet");
   await page.goto("/jlpt-kanji/han-viet");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đoán âm On từ âm Hán Việt");

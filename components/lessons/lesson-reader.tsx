@@ -154,6 +154,19 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           tập hằng ngày, bài tập và đề thi thử của lớp.
         </p>
       )}
+      {hasReading && (
+        // A long lesson (30+ words, 5–8 patterns) gets a way to jump to the part the learner wants.
+        <nav className="reader-jump" aria-label="Phần của bài">
+          {lesson.content.vocab.length > 0 && (
+            <a href="#vocabulary-title">Từ vựng ({lesson.content.vocab.length})</a>
+          )}
+          {lesson.content.grammar.length > 0 && (
+            <a href="#grammar-title">Mẫu câu ({lesson.content.grammar.length})</a>
+          )}
+          {dialogues.length > 0 && <a href="#dialogue-title">Hội thoại</a>}
+          {tables.length > 0 && <a href="#table-title">Bảng và luyện tập</a>}
+        </nav>
+      )}
       {lesson.content.vocab.length > 0 && (
         <section aria-labelledby="vocabulary-title">
           <h2 id="vocabulary-title">Từ vựng</h2>

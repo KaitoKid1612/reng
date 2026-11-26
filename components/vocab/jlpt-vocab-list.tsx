@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { GroupSwitcher } from "@/components/self-study/group-switcher";
 import { VOCAB_POS_LABELS } from "@/lib/jlpt-vocab";
 
 import type { JlptVocab, JlptVocabLevelData } from "@/lib/jlpt-vocab";
@@ -64,44 +65,42 @@ function VocabRow({ item }: { item: JlptVocab }) {
 export function JlptVocabList({ data, practiceHref }: JlptVocabListProps) {
   return (
     <>
-      <nav className="kanji-group-nav" aria-label="Chủ đề">
-        <ul>
-          {data.groups.map((group) => (
-            <li key={group.id}>
-              <a href={`#${group.id}`}>
-                {group.title}{" "}
-                <span className="kanji-count">
-                  ({data.items.filter((item) => item.group === group.id).length})
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      {data.groups.map((group) => {
-        const items = data.items.filter((item) => item.group === group.id);
-        return (
-          <section
-            className="kanji-group"
-            id={group.id}
-            key={group.id}
-            aria-labelledby={`${group.id}-title`}
-          >
-            <div className="kanji-group-head">
-              <h2 id={`${group.id}-title`}>{group.title}</h2>
-              <span className="kanji-count">{items.length} từ</span>
-              <Link href={`${practiceHref}?group=${group.id}`} className="kanji-group-practice">
-                Luyện chủ đề này
-              </Link>
-            </div>
-            <ul className="vocab-list">
-              {items.map((item) => (
-                <VocabRow item={item} key={`${item.word}|${item.reading}`} />
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      <GroupSwitcher
+        label="Chủ đề"
+        unit="từ"
+        groupWord="Chủ đề"
+        groups={data.groups.map((group) => ({
+          id: group.id,
+          title: group.title,
+          count: data.items.filter((item) => item.group === group.id).length,
+        }))}
+      >
+        {data.groups.map((group) => {
+          const items = data.items.filter((item) => item.group === group.id);
+          return (
+            <section
+              className="kanji-group"
+              id={group.id}
+              data-switcher-group
+              key={group.id}
+              aria-labelledby={`${group.id}-title`}
+            >
+              <div className="kanji-group-head">
+                <h2 id={`${group.id}-title`}>{group.title}</h2>
+                <span className="kanji-count">{items.length} từ</span>
+                <Link href={`${practiceHref}?group=${group.id}`} className="kanji-group-practice">
+                  Luyện chủ đề này
+                </Link>
+              </div>
+              <ul className="vocab-list">
+                {items.map((item) => (
+                  <VocabRow item={item} key={`${item.word}|${item.reading}`} />
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </GroupSwitcher>
     </>
   );
 }

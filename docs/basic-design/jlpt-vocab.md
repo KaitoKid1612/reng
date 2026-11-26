@@ -14,7 +14,7 @@ Phần Từ vựng của hai đề mẫu N4 (`content/jlpt/official/n4-2012.json
 
 | URL | Hành vi |
 |---|---|
-| `/jlpt-vocab/n4` | Danh sách chủ đề → mỗi chủ đề là danh sách kẻ dòng, 2 cột trên màn hình rộng. Mỗi từ có cách viết, cách đọc, nghĩa, loại từ, âm Hán Việt (từ gốc Hán), câu ví dụ có gạch chân từ và bản dịch, từ gần nghĩa, mẹo, thẻ **Đã ra đề** kèm năm. Mỗi chủ đề có link **Luyện chủ đề này** |
+| `/jlpt-vocab/n4` | Hàng nút chủ đề → mỗi lần hiện **một** chủ đề (mặc định chủ đề đầu, nút **Tất cả** hiện hết, địa chỉ giữ `#<chủ đề>`, link `#vocab-…` mở chủ đề chứa từ đó, cuối chủ đề có link **Chủ đề tiếp theo**; từ 26/11/2026, trước đó cả 388 từ trên một trang cao khoảng 50.000px). Mỗi chủ đề là danh sách kẻ dòng, 2 cột trên màn hình rộng. Mỗi từ có cách viết, cách đọc, nghĩa, loại từ, âm Hán Việt (từ gốc Hán), câu ví dụ có gạch chân từ và bản dịch, từ gần nghĩa, mẹo, thẻ **Đã ra đề** kèm năm. Mỗi chủ đề có link **Luyện chủ đề này** |
 | `/jlpt-vocab/n4/practice?group=` | Chọn chủ đề hoặc Tất cả. Ba dạng câu chọn bốn: **Điền từ vào câu** (câu có （　　）, phương án là đáp án và 3 từ sai tác giả viết sẵn), **Chọn từ gần nghĩa**, **Chọn nghĩa tiếng Việt**. Mặc định chọn hai dạng đầu. Sau khi bấm Kiểm tra, đáp án đúng có ✓, lựa chọn sai có ✗, kèm câu đầy đủ, bản dịch và nghĩa. Có kết quả, danh sách câu sai, luyện lại câu sai. Không lưu điểm |
 
 Bố cục danh sách không dùng lưới card giống thẻ kanji, mà kẻ dòng như trang từ vựng trong sách ([thiết kế UI](../12-ui-design.md#ô-tập-viết--nét-nhận-diện-18112026)).

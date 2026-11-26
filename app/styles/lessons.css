@@ -61,6 +61,89 @@
 .vocab-note {
   display: block;
 }
+/* Jump links under a lesson's title (components/lessons/lesson-reader.tsx). */
+.reader-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+.reader-jump a {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+}
+.reader-jump a:hover {
+  border-color: var(--primary);
+}
+.lesson-reader h2[id] {
+  scroll-margin-top: 24px;
+}
+/* On a desktop the word list fills the reading column in two columns of compact rows (word and
+   reading on one line, meaning below, Nghe on the right) instead of one 144px row per word across
+   960px. Phones keep their own compact rows (slides.css, lesson-visuals.css). */
+@media (min-width: 1024px) {
+  .lesson-reader .vocabulary-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+  .lesson-reader .vocabulary-list > li,
+  .lesson-reader .vocabulary-list[data-pictures="true"] > li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2px 12px;
+    padding: 14px 0;
+  }
+  .lesson-reader .vocabulary-list[data-pictures="true"] > li {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+  .lesson-reader .vocabulary-list > li > .vocab-picture-cell {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .lesson-reader .vocabulary-list > li > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 10px;
+  }
+  .lesson-reader .vocabulary-list > li > :is(div, span:not(.vocab-picture-cell)) {
+    grid-column: 1;
+  }
+  .lesson-reader
+    .vocabulary-list[data-pictures="true"]
+    > li
+    > :is(div, span:not(.vocab-picture-cell)) {
+    grid-column: 2;
+  }
+  .lesson-reader .vocabulary-list > li > .pronunciation-button {
+    grid-column: -2;
+    grid-row: 1 / span 2;
+  }
+  .lesson-reader .vocabulary-list .reading-text {
+    font-size: 18px;
+  }
+}
+/* Example sentences: the Nghe button sits beside the sentence instead of on its own row. */
+.lesson-reader .example-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 16px;
+  padding: 14px 20px;
+  margin-bottom: 12px;
+}
+.lesson-reader .example-block > p {
+  grid-column: 1;
+  margin-bottom: 2px;
+}
+.lesson-reader .example-block > :not(p) {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
 .grammar-block {
   padding: 28px 0;
   border-bottom: 1px solid var(--border);
@@ -334,4 +417,7 @@ ul.grammar-points {
   border: 1px solid var(--border);
   padding: 10px 12px;
   border-radius: 6px;
+}
+.lesson-reader .vocabulary-list + .example-block {
+  margin-top: 20px;
 }
