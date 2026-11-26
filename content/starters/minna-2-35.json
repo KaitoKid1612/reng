@@ -105,7 +105,8 @@
         "romaji": "shima",
         "vi": "đảo",
         "audio": null,
-        "kanji": "島"
+        "kanji": "島",
+        "image": "/icons/vocab/desert-island.svg"
       },
       {
         "id": "v3513",
@@ -137,7 +138,8 @@
         "romaji": "kaigai",
         "vi": "nước ngoài",
         "audio": null,
-        "kanji": "海外"
+        "kanji": "海外",
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
       },
       {
         "id": "v3517",
@@ -170,7 +172,8 @@
         "romaji": "maru",
         "vi": "hình tròn",
         "audio": null,
-        "kanji": "丸"
+        "kanji": "丸",
+        "image": "/icons/vocab/hollow-red-circle.svg"
       },
       {
         "id": "v3521",
@@ -308,7 +311,8 @@
         "jp": "クリックします",
         "romaji": "kurikku shimasu",
         "vi": "nhấp chuột",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/computer-mouse.svg"
       }
     ],
     "grammar": [

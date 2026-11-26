@@ -121,7 +121,8 @@
         "romaji": "yajirushi",
         "vi": "mũi tên",
         "audio": null,
-        "kanji": "矢印"
+        "kanji": "矢印",
+        "image": "/icons/vocab/right-arrow.svg"
       },
       {
         "id": "v3415",
@@ -129,7 +130,8 @@
         "romaji": "kuro",
         "vi": "màu đen",
         "audio": null,
-        "kanji": "黒"
+        "kanji": "黒",
+        "image": "/icons/vocab/black-circle.svg"
       },
       {
         "id": "v3416",
@@ -138,7 +140,8 @@
         "vi": "màu trắng",
         "audio": null,
         "kanji": "白",
-        "note": "Màu trắng, viết 白."
+        "note": "Màu trắng, viết 白.",
+        "image": "/icons/vocab/white-circle.svg"
       },
       {
         "id": "v3417",
@@ -146,7 +149,8 @@
         "romaji": "aka",
         "vi": "màu đỏ",
         "audio": null,
-        "kanji": "赤"
+        "kanji": "赤",
+        "image": "/icons/vocab/red-circle.svg"
       },
       {
         "id": "v3418",
@@ -154,7 +158,8 @@
         "romaji": "ao",
         "vi": "màu xanh lam",
         "audio": null,
-        "kanji": "青"
+        "kanji": "青",
+        "image": "/icons/vocab/blue-circle.svg"
       },
       {
         "id": "v3419",
@@ -170,7 +175,8 @@
         "romaji": "kiiro",
         "vi": "màu vàng",
         "audio": null,
-        "kanji": "黄色"
+        "kanji": "黄色",
+        "image": "/icons/vocab/yellow-circle.svg"
       },
       {
         "id": "v3421",
@@ -178,7 +184,8 @@
         "romaji": "chairo",
         "vi": "màu nâu",
         "audio": null,
-        "kanji": "茶色"
+        "kanji": "茶色",
+        "image": "/icons/vocab/brown-circle.svg"
       },
       {
         "id": "v3422",
@@ -269,7 +276,8 @@
         "jp": "さします",
         "romaji": "sashimasu",
         "vi": "che, giương ô",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/umbrella-with-rain-drops.svg"
       },
       {
         "id": "v3434",
@@ -278,7 +286,8 @@
         "vi": "lâu đài",
         "audio": null,
         "kanji": "城",
-        "note": "Lâu đài, viết 城."
+        "note": "Lâu đài, viết 城.",
+        "image": "/icons/vocab/japanese-castle.svg"
       }
     ],
     "grammar": [

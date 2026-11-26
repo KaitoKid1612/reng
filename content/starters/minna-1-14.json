@@ -146,7 +146,8 @@
         "romaji": "tachimasu",
         "vi": "đứng",
         "audio": null,
-        "note": "nhóm I · たって"
+        "note": "nhóm I · たって",
+        "image": "/icons/vocab/person-standing.svg"
       },
       {
         "id": "v1416",
@@ -199,7 +200,8 @@
         "kanji": "電気",
         "romaji": "denki",
         "vi": "điện, đèn điện",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/light-bulb.svg"
       },
       {
         "id": "v1422",
@@ -239,7 +241,8 @@
         "kanji": "塩",
         "romaji": "shio",
         "vi": "muối",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/salt.svg"
       },
       {
         "id": "v1427",
@@ -402,7 +405,8 @@
         "jp": "ミーケービーチ",
         "romaji": "miikee biichi",
         "vi": "bãi biển Mỹ Khê (Đà Nẵng)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/beach-with-umbrella.svg"
       },
       {
         "id": "v1449",

@@ -101,7 +101,8 @@
         "jp": "びっくりします",
         "romaji": "bikkuri shimasu",
         "vi": "giật mình, ngạc nhiên",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/astonished-face.svg"
       },
       {
         "id": "v3912",
@@ -180,7 +181,8 @@
         "romaji": "ureshii",
         "vi": "vui mừng",
         "audio": null,
-        "kanji": "嬉しい"
+        "kanji": "嬉しい",
+        "image": "/icons/vocab/beaming-face-with-smiling-eyes.svg"
       },
       {
         "id": "v3922",
@@ -188,7 +190,8 @@
         "romaji": "kanashii",
         "vi": "buồn",
         "audio": null,
-        "kanji": "悲しい"
+        "kanji": "悲しい",
+        "image": "/icons/vocab/frowning-face.svg"
       },
       {
         "id": "v3923",
@@ -293,7 +296,8 @@
         "romaji": "sekken",
         "vi": "xà phòng",
         "audio": null,
-        "kanji": "石鹸"
+        "kanji": "石鹸",
+        "image": "/icons/vocab/soap.svg"
       },
       {
         "id": "v3936",
@@ -335,7 +339,8 @@
         "jp": "トラック",
         "romaji": "torakku",
         "vi": "xe tải",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/delivery-truck.svg"
       },
       {
         "id": "v3941",
@@ -358,7 +363,8 @@
         "romaji": "kaminari",
         "vi": "sấm sét",
         "audio": null,
-        "kanji": "雷"
+        "kanji": "雷",
+        "image": "/icons/vocab/cloud-with-lightning.svg"
       },
       {
         "id": "v3944",

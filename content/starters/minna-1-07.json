@@ -88,21 +88,24 @@
         "kanji": "箸",
         "romaji": "hashi",
         "vi": "đôi đũa",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/chopsticks.svg"
       },
       {
         "id": "v0711",
         "jp": "スプーン",
         "romaji": "supuun",
         "vi": "cái thìa",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/spoon.svg"
       },
       {
         "id": "v0712",
         "jp": "ナイフ",
         "romaji": "naifu",
         "vi": "con dao",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/kitchen-knife.svg"
       },
       {
         "id": "v0713",
@@ -116,7 +119,8 @@
         "jp": "はさみ",
         "romaji": "hasami",
         "vi": "cái kéo",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/scissors.svg"
       },
       {
         "id": "v0715",
@@ -148,7 +152,8 @@
         "kanji": "手",
         "romaji": "te",
         "vi": "tay",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/hand-with-fingers-splayed.svg"
       },
       {
         "id": "v0719",
@@ -254,7 +259,8 @@
         "jp": "クリスマス",
         "romaji": "kurisumasu",
         "vi": "Giáng sinh",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/christmas-tree.svg"
       },
       {
         "id": "v0732",

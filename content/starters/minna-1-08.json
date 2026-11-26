@@ -230,7 +230,8 @@
         "kanji": "白い",
         "romaji": "shiroi",
         "vi": "trắng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/white-circle.svg"
       },
       {
         "id": "v0828",
@@ -238,7 +239,8 @@
         "kanji": "黒い",
         "romaji": "kuroi",
         "vi": "đen",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/black-circle.svg"
       },
       {
         "id": "v0829",
@@ -246,7 +248,8 @@
         "kanji": "赤い",
         "romaji": "akai",
         "vi": "đỏ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/red-circle.svg"
       },
       {
         "id": "v0830",
@@ -254,7 +257,8 @@
         "kanji": "青い",
         "romaji": "aoi",
         "vi": "xanh dương",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/blue-circle.svg"
       },
       {
         "id": "v0831",
@@ -289,7 +293,8 @@
         "kanji": "町",
         "romaji": "machi",
         "vi": "thị trấn, thành phố",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cityscape.svg"
       },
       {
         "id": "v0835",
@@ -440,7 +445,8 @@
         "jp": "レストラン",
         "romaji": "resutoran",
         "vi": "nhà hàng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/fork-and-knife-with-plate.svg"
       },
       {
         "id": "v0855",
@@ -448,7 +454,8 @@
         "kanji": "［お］仕事",
         "romaji": "oshigoto",
         "vi": "công việc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/briefcase.svg"
       },
       {
         "id": "v0856",

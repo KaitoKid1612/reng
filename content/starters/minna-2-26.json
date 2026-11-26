@@ -26,7 +26,8 @@
         "romaji": "sagashimasu",
         "vi": "tìm, tìm kiếm",
         "audio": null,
-        "note": "nhóm I · さがすんです"
+        "note": "nhóm I · さがすんです",
+        "image": "/icons/vocab/magnifying-glass-tilted-left.svg"
       },
       {
         "id": "v2603",
@@ -139,7 +140,8 @@
         "kanji": "財布",
         "romaji": "saifu",
         "vi": "cái ví",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/purse.svg"
       },
       {
         "id": "v2616",
@@ -342,7 +344,8 @@
         "kanji": "宇宙",
         "romaji": "uchuu",
         "vi": "vũ trụ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/milky-way.svg"
       },
       {
         "id": "v2642",
@@ -358,7 +361,8 @@
         "kanji": "宇宙船",
         "romaji": "uchuusen",
         "vi": "tàu vũ trụ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/rocket.svg"
       },
       {
         "id": "v2644",
@@ -366,7 +370,8 @@
         "kanji": "怖い",
         "romaji": "kowai",
         "vi": "sợ, đáng sợ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/fearful-face.svg"
       },
       {
         "id": "v2645",
@@ -390,7 +395,8 @@
         "kanji": "宇宙飛行士",
         "romaji": "uchuuhikoushi",
         "vi": "phi hành gia",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/astronaut.svg"
       },
       {
         "id": "v2648",

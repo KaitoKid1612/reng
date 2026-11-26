@@ -87,7 +87,8 @@
         "vi": "trời nhiều mây",
         "note": "I",
         "audio": null,
-        "kanji": "曇ります"
+        "kanji": "曇ります",
+        "image": "/icons/vocab/cloud.svg"
       },
       {
         "id": "v3210",
@@ -104,7 +105,8 @@
         "romaji": "hikimasu",
         "vi": "bị cảm",
         "note": "I · かぜを",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sneezing-face.svg"
       },
       {
         "id": "v3212",
@@ -155,7 +157,8 @@
         "vi": "chấn thương",
         "note": "けがを します",
         "audio": null,
-        "kanji": "怪我"
+        "kanji": "怪我",
+        "image": "/icons/vocab/face-with-head-bandage.svg"
       },
       {
         "id": "v3218",
@@ -190,7 +193,8 @@
         "vi": "mặt trời",
         "note": "たいようが でます",
         "audio": null,
-        "kanji": "太陽"
+        "kanji": "太陽",
+        "image": "/icons/vocab/sun.svg"
       },
       {
         "id": "v3222",
@@ -199,7 +203,8 @@
         "vi": "ngôi sao",
         "note": "ほしが みえます",
         "audio": null,
-        "kanji": "星"
+        "kanji": "星",
+        "image": "/icons/vocab/star.svg"
       },
       {
         "id": "v3223",
@@ -208,7 +213,8 @@
         "vi": "gió",
         "note": "かぜが ふきます",
         "audio": null,
-        "kanji": "風"
+        "kanji": "風",
+        "image": "/icons/vocab/wind-face.svg"
       },
       {
         "id": "v3224",

@@ -127,7 +127,8 @@
         "romaji": "seki",
         "vi": "chỗ ngồi",
         "audio": null,
-        "kanji": "席"
+        "kanji": "席",
+        "image": "/icons/vocab/seat.svg"
       },
       {
         "id": "v3316",
@@ -180,7 +181,8 @@
         "romaji": "tachiiri kinshi",
         "vi": "cấm vào",
         "audio": null,
-        "kanji": "立入禁止"
+        "kanji": "立入禁止",
+        "image": "/icons/vocab/no-entry.svg"
       },
       {
         "id": "v3323",
@@ -291,7 +293,8 @@
         "romaji": "keisatsu",
         "vi": "cảnh sát",
         "audio": null,
-        "kanji": "警察"
+        "kanji": "警察",
+        "image": "/icons/vocab/police-officer.svg"
       },
       {
         "id": "v3337",
@@ -329,7 +332,8 @@
         "jp": "リサイクル",
         "romaji": "risaikuru",
         "vi": "tái chế",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/recycling-symbol.svg"
       },
       {
         "id": "v3342",

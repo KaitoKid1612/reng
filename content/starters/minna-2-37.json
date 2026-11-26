@@ -217,7 +217,8 @@
         "romaji": "keikan",
         "vi": "cảnh sát",
         "audio": null,
-        "kanji": "警官"
+        "kanji": "警官",
+        "image": "/icons/vocab/police-officer.svg"
       },
       {
         "id": "v3727",
@@ -233,7 +234,8 @@
         "romaji": "kagakusha",
         "vi": "nhà khoa học",
         "audio": null,
-        "kanji": "科学者"
+        "kanji": "科学者",
+        "image": "/icons/vocab/scientist.svg"
       },
       {
         "id": "v3729",
@@ -342,7 +344,8 @@
         "jp": "インスタントラーメン",
         "romaji": "insutanto raamen",
         "vi": "mì ramen ăn liền",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/steaming-bowl.svg"
       },
       {
         "id": "v3743",

@@ -159,7 +159,8 @@
         "kanji": "危ない",
         "romaji": "abunai",
         "vi": "nguy hiểm",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/warning.svg"
       },
       {
         "id": "v1718",
@@ -167,7 +168,8 @@
         "kanji": "禁煙",
         "romaji": "kin'en",
         "vi": "cấm hút thuốc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/no-smoking.svg"
       },
       {
         "id": "v1719",
@@ -184,7 +186,8 @@
         "kanji": "熱",
         "romaji": "netsu",
         "vi": "sốt (ねつが あります: bị sốt)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/face-with-thermometer.svg"
       },
       {
         "id": "v1721",
@@ -200,7 +203,8 @@
         "kanji": "薬",
         "romaji": "kusuri",
         "vi": "thuốc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/pill.svg"
       },
       {
         "id": "v1723",
@@ -208,7 +212,8 @@
         "kanji": "お風呂",
         "romaji": "ofuro",
         "vi": "bồn tắm; việc tắm bồn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bathtub.svg"
       },
       {
         "id": "v1724",
@@ -216,7 +221,8 @@
         "kanji": "上着",
         "romaji": "uwagi",
         "vi": "áo khoác",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/coat.svg"
       },
       {
         "id": "v1725",
@@ -224,7 +230,8 @@
         "kanji": "下着",
         "romaji": "shitagi",
         "vi": "đồ lót",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/briefs.svg"
       },
       {
         "id": "v1726",
@@ -317,7 +324,8 @@
         "kanji": "風邪",
         "romaji": "kaze",
         "vi": "cảm",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sneezing-face.svg"
       },
       {
         "id": "v1738",

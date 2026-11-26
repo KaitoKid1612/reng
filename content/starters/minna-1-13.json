@@ -39,7 +39,8 @@
         "romaji": "tsukaremasu",
         "vi": "mệt",
         "audio": null,
-        "kanji": "疲れます"
+        "kanji": "疲れます",
+        "image": "/icons/vocab/tired-face.svg"
       },
       {
         "id": "v1305",
@@ -71,7 +72,8 @@
         "romaji": "kekkon shimasu",
         "vi": "kết hôn",
         "audio": null,
-        "kanji": "結婚します"
+        "kanji": "結婚します",
+        "image": "/icons/vocab/wedding.svg"
       },
       {
         "id": "v1309",
@@ -95,7 +97,8 @@
         "romaji": "sanpo shimasu",
         "vi": "đi dạo (địa điểm を)",
         "audio": null,
-        "kanji": "散歩します"
+        "kanji": "散歩します",
+        "image": "/icons/vocab/person-walking.svg"
       },
       {
         "id": "v1312",
@@ -143,7 +146,8 @@
         "romaji": "bijutsukan",
         "vi": "bảo tàng mỹ thuật",
         "audio": null,
-        "kanji": "美術館"
+        "kanji": "美術館",
+        "image": "/icons/vocab/classical-building.svg"
       },
       {
         "id": "v1318",
@@ -167,7 +171,8 @@
         "romaji": "yuubinkyoku",
         "vi": "bưu điện",
         "audio": null,
-        "kanji": "郵便局"
+        "kanji": "郵便局",
+        "image": "/icons/vocab/post-office.svg"
       },
       {
         "id": "v1321",
@@ -190,7 +195,8 @@
         "jp": "スキー",
         "romaji": "sukii",
         "vi": "trượt tuyết",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/skier.svg"
       },
       {
         "id": "v1324",
@@ -198,7 +204,8 @@
         "romaji": "tsuri",
         "vi": "câu cá",
         "audio": null,
-        "kanji": "釣り"
+        "kanji": "釣り",
+        "image": "/icons/vocab/fishing-pole.svg"
       },
       {
         "id": "v1325",
@@ -206,7 +213,8 @@
         "romaji": "kaimono",
         "vi": "việc mua sắm",
         "audio": null,
-        "kanji": "買い物"
+        "kanji": "買い物",
+        "image": "/icons/vocab/shopping-bags.svg"
       },
       {
         "id": "v1326",

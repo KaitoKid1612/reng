@@ -42,7 +42,8 @@
         "romaji": "utaimasu",
         "vi": "hát",
         "audio": null,
-        "note": "nhóm I · うたう"
+        "note": "nhóm I · うたう",
+        "image": "/icons/vocab/singer.svg"
       },
       {
         "id": "v1805",
@@ -60,7 +61,8 @@
         "romaji": "sutemasu",
         "vi": "vứt, bỏ đi",
         "audio": null,
-        "note": "nhóm II · すてる"
+        "note": "nhóm II · すてる",
+        "image": "/icons/vocab/litter-in-bin-sign.svg"
       },
       {
         "id": "v1807",
@@ -195,7 +197,8 @@
         "kanji": "馬",
         "romaji": "uma",
         "vi": "ngựa",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/horse.svg"
       },
       {
         "id": "v1823",
@@ -278,7 +281,8 @@
         "romaji": "oyogimasu",
         "vi": "bơi (ôn bài 13)",
         "audio": null,
-        "note": "nhóm I · およぐ"
+        "note": "nhóm I · およぐ",
+        "image": "/icons/vocab/person-swimming.svg"
       },
       {
         "id": "v1834",
@@ -287,7 +291,8 @@
         "romaji": "hanashimasu",
         "vi": "nói chuyện (ôn bài 14)",
         "audio": null,
-        "note": "nhóm I · はなす"
+        "note": "nhóm I · はなす",
+        "image": "/icons/vocab/speaking-head.svg"
       },
       {
         "id": "v1835",
@@ -314,7 +319,8 @@
         "romaji": "yomimasu",
         "vi": "đọc (ôn bài 6)",
         "audio": null,
-        "note": "nhóm I · よむ"
+        "note": "nhóm I · よむ",
+        "image": "/icons/vocab/open-book.svg"
       },
       {
         "id": "v1838",
@@ -323,7 +329,8 @@
         "romaji": "kaerimasu",
         "vi": "về (ôn bài 5)",
         "audio": null,
-        "note": "nhóm I · かえる"
+        "note": "nhóm I · かえる",
+        "image": "/icons/vocab/house-with-garden.svg"
       },
       {
         "id": "v1839",
@@ -332,7 +339,8 @@
         "romaji": "nemasu",
         "vi": "ngủ (ôn bài 4)",
         "audio": null,
-        "note": "nhóm II · ねる"
+        "note": "nhóm II · ねる",
+        "image": "/icons/vocab/sleeping-face.svg"
       },
       {
         "id": "v1840",

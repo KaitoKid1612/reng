@@ -95,7 +95,8 @@
         "vi": "pha [cà phê]",
         "audio": null,
         "kanji": "淹れます",
-        "note": "コーヒーを いれます"
+        "note": "コーヒーを いれます",
+        "image": "/icons/vocab/hot-beverage.svg"
       },
       {
         "id": "v5012",
@@ -182,7 +183,8 @@
         "jp": "きりん",
         "romaji": "kirin",
         "vi": "hươu cao cổ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/giraffe.svg"
       },
       {
         "id": "v5023",

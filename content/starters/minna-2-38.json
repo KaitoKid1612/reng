@@ -48,7 +48,8 @@
         "romaji": "koujou",
         "vi": "nhà máy",
         "audio": null,
-        "kanji": "工場"
+        "kanji": "工場",
+        "image": "/icons/vocab/factory.svg"
       },
       {
         "id": "v3806",
@@ -131,7 +132,8 @@
         "romaji": "kimochi ga warui",
         "vi": "khó chịu, buồn nôn",
         "audio": null,
-        "kanji": "気持ちが悪い"
+        "kanji": "気持ちが悪い",
+        "image": "/icons/vocab/nauseated-face.svg"
       },
       {
         "id": "v3816",
@@ -157,7 +159,8 @@
         "romaji": "akachan",
         "vi": "em bé",
         "audio": null,
-        "kanji": "赤ちゃん"
+        "kanji": "赤ちゃん",
+        "image": "/icons/vocab/baby.svg"
       },
       {
         "id": "v3819",
@@ -165,7 +168,8 @@
         "romaji": "shougakkou",
         "vi": "trường tiểu học",
         "audio": null,
-        "kanji": "小学校"
+        "kanji": "小学校",
+        "image": "/icons/vocab/school.svg"
       },
       {
         "id": "v3820",
@@ -189,7 +193,8 @@
         "romaji": "kaigan",
         "vi": "bờ biển",
         "audio": null,
-        "kanji": "海岸"
+        "kanji": "海岸",
+        "image": "/icons/vocab/beach-with-umbrella.svg"
       },
       {
         "id": "v3823",
@@ -293,7 +298,8 @@
         "romaji": "yubiwa",
         "vi": "nhẫn",
         "audio": null,
-        "kanji": "指輪"
+        "kanji": "指輪",
+        "image": "/icons/vocab/ring.svg"
       },
       {
         "id": "v3836",
@@ -309,7 +315,8 @@
         "romaji": "uso o tsukimasu",
         "vi": "nói dối",
         "audio": null,
-        "kanji": "嘘をつきます"
+        "kanji": "嘘をつきます",
+        "image": "/icons/vocab/lying-face.svg"
       },
       {
         "id": "v3838",

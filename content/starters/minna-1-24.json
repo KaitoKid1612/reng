@@ -257,7 +257,8 @@
         "kanji": "ワゴン車",
         "romaji": "wagonsha",
         "vi": "xe van (chở được nhiều người và đồ)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/minibus.svg"
       },
       {
         "id": "v2430",
@@ -311,7 +312,8 @@
         "kanji": "荷物",
         "romaji": "nimotsu",
         "vi": "hành lý, đồ đạc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/luggage.svg"
       },
       {
         "id": "v2437",

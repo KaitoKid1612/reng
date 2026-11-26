@@ -126,7 +126,8 @@
         "romaji": "umai",
         "vi": "ngon",
         "audio": null,
-        "note": "Thường nam giới dùng."
+        "note": "Thường nam giới dùng.",
+        "image": "/icons/vocab/face-savoring-food.svg"
       },
       {
         "id": "v4315",
@@ -156,7 +157,8 @@
         "romaji": "hi",
         "vi": "lửa",
         "audio": null,
-        "kanji": "火"
+        "kanji": "火",
+        "image": "/icons/vocab/fire.svg"
       },
       {
         "id": "v4319",

@@ -58,7 +58,8 @@
         "vi": "tốt nghiệp",
         "audio": null,
         "kanji": "卒業します",
-        "note": "だいがくを そつぎょうします"
+        "note": "だいがくを そつぎょうします",
+        "image": "/icons/vocab/graduation-cap.svg"
       },
       {
         "id": "v4607",
@@ -115,7 +116,8 @@
         "romaji": "chuusha",
         "vi": "tiêm",
         "audio": null,
-        "kanji": "注射"
+        "kanji": "注射",
+        "image": "/icons/vocab/syringe.svg"
       },
       {
         "id": "v4614",

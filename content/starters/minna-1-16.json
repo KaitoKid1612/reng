@@ -144,7 +144,8 @@
         "kanji": "駅",
         "romaji": "eki",
         "vi": "nhà ga",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/station.svg"
       },
       {
         "id": "v1618",
@@ -195,7 +196,8 @@
         "kanji": "橋",
         "romaji": "hashi",
         "vi": "cây cầu",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bridge-at-night.svg"
       },
       {
         "id": "v1624",
@@ -244,7 +246,8 @@
         "kanji": "町",
         "romaji": "machi",
         "vi": "thị trấn, khu phố",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cityscape.svg"
       },
       {
         "id": "v1630",
@@ -381,7 +384,8 @@
         "kanji": "電話します",
         "romaji": "denwashimasu",
         "vi": "gọi điện thoại",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/telephone.svg"
       },
       {
         "id": "v1647",
@@ -413,7 +417,8 @@
         "kanji": "目",
         "romaji": "me",
         "vi": "mắt",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/eye.svg"
       },
       {
         "id": "v1651",
@@ -421,7 +426,8 @@
         "kanji": "耳",
         "romaji": "mimi",
         "vi": "tai",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/ear.svg"
       },
       {
         "id": "v1652",
@@ -429,7 +435,8 @@
         "kanji": "鼻",
         "romaji": "hana",
         "vi": "mũi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/nose.svg"
       },
       {
         "id": "v1653",
@@ -437,7 +444,8 @@
         "kanji": "口",
         "romaji": "kuchi",
         "vi": "miệng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/mouth.svg"
       },
       {
         "id": "v1654",
@@ -445,7 +453,8 @@
         "kanji": "歯",
         "romaji": "ha",
         "vi": "răng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/tooth.svg"
       },
       {
         "id": "v1655",
@@ -460,7 +469,8 @@
         "kanji": "足",
         "romaji": "ashi",
         "vi": "chân",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/foot.svg"
       },
       {
         "id": "v1657",
@@ -474,14 +484,16 @@
         "jp": "ジョギング",
         "romaji": "jogingu",
         "vi": "chạy bộ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-running.svg"
       },
       {
         "id": "v1659",
         "jp": "シャワー",
         "romaji": "shawaa",
         "vi": "vòi sen, tắm vòi sen",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/shower.svg"
       },
       {
         "id": "v1660",
@@ -489,7 +501,8 @@
         "kanji": "緑",
         "romaji": "midori",
         "vi": "màu xanh lá, cây xanh",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/green-circle.svg"
       },
       {
         "id": "v1661",
@@ -505,7 +518,8 @@
         "kanji": "神社",
         "romaji": "jinja",
         "vi": "đền Thần đạo",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/shinto-shrine.svg"
       },
       {
         "id": "v1663",
@@ -570,7 +584,8 @@
         "jp": "キャッシュカード",
         "romaji": "kyasshukaado",
         "vi": "thẻ rút tiền",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/credit-card.svg"
       },
       {
         "id": "v1672",

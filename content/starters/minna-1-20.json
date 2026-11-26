@@ -128,7 +128,8 @@
         "kanji": "着物",
         "romaji": "kimono",
         "vi": "kimono (trang phục truyền thống của Nhật)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/kimono.svg"
       },
       {
         "id": "v2015",

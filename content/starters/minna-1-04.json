@@ -408,7 +408,8 @@
         "jp": "デパート",
         "romaji": "depaato",
         "vi": "cửa hàng bách hoá",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/department-store.svg"
       },
       {
         "id": "v0450",
@@ -416,7 +417,8 @@
         "kanji": "銀行",
         "romaji": "ginkou",
         "vi": "ngân hàng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bank.svg"
       },
       {
         "id": "v0451",

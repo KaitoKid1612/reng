@@ -36,7 +36,8 @@
         "romaji": "souji shimasu",
         "vi": "dọn dẹp, quét dọn",
         "audio": null,
-        "note": "nhóm III · そうじした"
+        "note": "nhóm III · そうじした",
+        "image": "/icons/vocab/broom.svg"
       },
       {
         "id": "v1904",
@@ -124,7 +125,8 @@
         "kanji": "強い",
         "romaji": "tsuyoi",
         "vi": "mạnh, khỏe",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/flexed-biceps.svg"
       },
       {
         "id": "v1914",
@@ -163,7 +165,8 @@
         "jp": "ゴルフ",
         "romaji": "gorufu",
         "vi": "gôn: ゴルフを します",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-golfing.svg"
       },
       {
         "id": "v1919",
@@ -171,7 +174,8 @@
         "kanji": "相撲",
         "romaji": "sumou",
         "vi": "vật sumo",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-wrestling.svg"
       },
       {
         "id": "v1920",

@@ -7,8 +7,8 @@ import { z } from "zod";
 import { VOCAB_ICONS } from "../lib/vocab-icons";
 
 // Writes the curated vocabulary icons as standalone SVG files. The source is the Iconify JSON
-// of Microsoft Fluent Emoji Flat (MIT), e.g. @iconify-json/fluent-emoji-flat/icons.json:
-//   node --import tsx scripts/extract-vocab-icons.ts --source path/to/icons.json
+// of Microsoft Fluent Emoji Flat (MIT), the pinned devDependency @iconify-json/fluent-emoji-flat:
+//   node --import tsx scripts/extract-vocab-icons.ts --source node_modules/@iconify-json/fluent-emoji-flat/icons.json
 const iconSetSchema = z.object({
   width: z.number().optional(),
   height: z.number().optional(),
@@ -16,6 +16,8 @@ const iconSetSchema = z.object({
     z.string(),
     z.object({ body: z.string(), width: z.number().optional(), height: z.number().optional() }),
   ),
+  // Some names are aliases of another icon (Iconify JSON format).
+  aliases: z.record(z.string(), z.object({ parent: z.string() })).optional(),
 });
 
 // Icons are served from the site's origin, so anything that could run code or load another
@@ -39,7 +41,7 @@ async function main() {
   const directory = resolve("public/icons/vocab");
   await mkdir(directory, { recursive: true });
   for (const { name } of VOCAB_ICONS) {
-    const icon = iconSet.icons[name];
+    const icon = iconSet.icons[name] ?? iconSet.icons[iconSet.aliases?.[name]?.parent ?? ""];
     if (!icon) {
       throw new Error(`Icon ${name} is missing from the source set.`);
     }

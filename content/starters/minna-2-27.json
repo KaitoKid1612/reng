@@ -25,7 +25,8 @@
         "romaji": "tatemasu",
         "vi": "xây",
         "note": "II · いえを たてます",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/building-construction.svg"
       },
       {
         "id": "v2703",
@@ -88,7 +89,8 @@
         "romaji": "tori",
         "vi": "chim",
         "note": "Danh từ · とりの こえ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bird.svg"
       },
       {
         "id": "v2710",
@@ -116,7 +118,8 @@
         "romaji": "hanabi",
         "vi": "pháo hoa",
         "note": "Danh từ · はなびが みえます",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/fireworks.svg"
       },
       {
         "id": "v2713",
@@ -134,7 +137,8 @@
         "romaji": "dougu",
         "vi": "dụng cụ",
         "note": "Danh từ · どうぐを つかいます",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/toolbox.svg"
       },
       {
         "id": "v2715",
@@ -264,7 +268,8 @@
         "romaji": "kagu",
         "vi": "đồ nội thất",
         "note": "Danh từ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/couch-and-lamp.svg"
       },
       {
         "id": "v2730",

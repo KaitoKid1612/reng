@@ -52,7 +52,8 @@
         "vi": "trồng cây",
         "audio": null,
         "kanji": "植えます",
-        "note": "II · にわに はなを うえます"
+        "note": "II · にわに はなを うえます",
+        "image": "/icons/vocab/seedling.svg"
       },
       {
         "id": "v3006",
@@ -179,7 +180,8 @@
         "romaji": "gomibako",
         "vi": "thùng rác",
         "audio": null,
-        "kanji": "ごみ箱"
+        "kanji": "ごみ箱",
+        "image": "/icons/vocab/wastebasket.svg"
       },
       {
         "id": "v3022",
@@ -203,7 +205,8 @@
         "romaji": "kagami",
         "vi": "gương",
         "audio": null,
-        "kanji": "鏡"
+        "kanji": "鏡",
+        "image": "/icons/vocab/mirror.svg"
       },
       {
         "id": "v3025",
@@ -367,7 +370,8 @@
         "romaji": "kaichuu dentou",
         "vi": "đèn pin",
         "audio": null,
-        "kanji": "懐中電灯"
+        "kanji": "懐中電灯",
+        "image": "/icons/vocab/flashlight.svg"
       }
     ],
     "grammar": [

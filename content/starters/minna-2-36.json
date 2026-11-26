@@ -15,7 +15,8 @@
         "romaji": "juudou",
         "vi": "judo",
         "audio": null,
-        "kanji": "柔道"
+        "kanji": "柔道",
+        "image": "/icons/vocab/martial-arts-uniform.svg"
       },
       {
         "id": "v3602",
@@ -49,7 +50,8 @@
         "vi": "gõ, đánh",
         "audio": null,
         "kanji": "打ちます",
-        "note": "キーボードで うちます"
+        "note": "キーボードで うちます",
+        "image": "/icons/vocab/keyboard.svg"
       },
       {
         "id": "v3606",
@@ -217,7 +219,8 @@
         "romaji": "suiei",
         "vi": "bơi lội",
         "audio": null,
-        "kanji": "水泳"
+        "kanji": "水泳",
+        "image": "/icons/vocab/person-swimming.svg"
       },
       {
         "id": "v3627",
@@ -247,7 +250,8 @@
         "romaji": "uchuu",
         "vi": "vũ trụ",
         "audio": null,
-        "kanji": "宇宙"
+        "kanji": "宇宙",
+        "image": "/icons/vocab/milky-way.svg"
       },
       {
         "id": "v3631",

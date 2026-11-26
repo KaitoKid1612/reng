@@ -254,7 +254,8 @@
         "kanji": "月",
         "romaji": "tsuki",
         "vi": "mặt trăng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/crescent-moon.svg"
       },
       {
         "id": "v2131",
@@ -336,7 +337,8 @@
         "jp": "カンガルー",
         "romaji": "kangaruu",
         "vi": "chuột túi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/kangaroo.svg"
       }
     ],
     "grammar": [

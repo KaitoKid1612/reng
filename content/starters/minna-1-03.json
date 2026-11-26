@@ -140,7 +140,8 @@
         "jp": "トイレ",
         "romaji": "toire",
         "vi": "nhà vệ sinh",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/toilet.svg"
       },
       {
         "id": "v0318",
@@ -148,7 +149,8 @@
         "kanji": "お手洗い",
         "romaji": "otearai",
         "vi": "nhà vệ sinh (lịch sự)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/restroom.svg"
       },
       {
         "id": "v0319",
@@ -163,7 +165,8 @@
         "jp": "エレベーター",
         "romaji": "erebeetaa",
         "vi": "thang máy",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/elevator.svg"
       },
       {
         "id": "v0321",
@@ -271,7 +274,8 @@
         "kanji": "靴",
         "romaji": "kutsu",
         "vi": "giày",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/mans-shoe.svg"
       },
       {
         "id": "v0334",
@@ -303,7 +307,8 @@
         "jp": "ワイン",
         "romaji": "wain",
         "vi": "rượu vang",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/wine-glass.svg"
       },
       {
         "id": "v0338",

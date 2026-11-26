@@ -44,7 +44,8 @@
         "vi": "nhảy, múa",
         "audio": null,
         "note": "I · おんがくに あわせて",
-        "kanji": "踊ります"
+        "kanji": "踊ります",
+        "image": "/icons/vocab/woman-dancing.svg"
       },
       {
         "id": "v2805",
@@ -158,7 +159,8 @@
         "vi": "màu sắc",
         "audio": null,
         "note": "あかい いろ",
-        "kanji": "色"
+        "kanji": "色",
+        "image": "/icons/vocab/artist-palette.svg"
       },
       {
         "id": "v2818",
@@ -266,7 +268,8 @@
         "vi": "con trai mình",
         "audio": null,
         "note": "うちの むすこ",
-        "kanji": "息子"
+        "kanji": "息子",
+        "image": "/icons/vocab/boy.svg"
       },
       {
         "id": "v2830",
@@ -284,7 +287,8 @@
         "vi": "con gái mình",
         "audio": null,
         "note": "うちの むすめ",
-        "kanji": "娘"
+        "kanji": "娘",
+        "image": "/icons/vocab/girl.svg"
       },
       {
         "id": "v2832",
@@ -370,7 +374,8 @@
         "romaji": "oshaberi shimasu",
         "vi": "trò chuyện",
         "audio": null,
-        "note": "III · ともだちと"
+        "note": "III · ともだちと",
+        "image": "/icons/vocab/speech-balloon.svg"
       },
       {
         "id": "v2842",
@@ -387,7 +392,8 @@
         "romaji": "geemu",
         "vi": "trò chơi",
         "audio": null,
-        "note": "〜を します"
+        "note": "〜を します",
+        "image": "/icons/vocab/video-game.svg"
       },
       {
         "id": "v2844",
@@ -396,7 +402,8 @@
         "vi": "tiệm làm tóc",
         "audio": null,
         "note": "〜へ いきます",
-        "kanji": "美容院"
+        "kanji": "美容院",
+        "image": "/icons/vocab/person-getting-haircut.svg"
       },
       {
         "id": "v2845",

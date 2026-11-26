@@ -15,7 +15,8 @@
         "romaji": "nakimasu",
         "vi": "khóc",
         "audio": null,
-        "kanji": "泣きます"
+        "kanji": "泣きます",
+        "image": "/icons/vocab/crying-face.svg"
       },
       {
         "id": "v4402",
@@ -23,7 +24,8 @@
         "romaji": "waraimasu",
         "vi": "cười",
         "audio": null,
-        "kanji": "笑います"
+        "kanji": "笑います",
+        "image": "/icons/vocab/grinning-squinting-face.svg"
       },
       {
         "id": "v4403",
@@ -248,7 +250,8 @@
         "jp": "カット",
         "romaji": "katto",
         "vi": "cắt tóc",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-getting-haircut.svg"
       },
       {
         "id": "v4431",

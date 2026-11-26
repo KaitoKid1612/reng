@@ -88,14 +88,16 @@
         "kanji": "野球",
         "romaji": "yakyuu",
         "vi": "bóng chày",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/baseball.svg"
       },
       {
         "id": "v0911",
         "jp": "ダンス",
         "romaji": "dansu",
         "vi": "nhảy, khiêu vũ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/woman-dancing.svg"
       },
       {
         "id": "v0912",
@@ -128,7 +130,8 @@
         "jp": "カラオケ",
         "romaji": "karaoke",
         "vi": "karaoke",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/microphone.svg"
       },
       {
         "id": "v0916",
@@ -142,14 +145,16 @@
         "jp": "ギター",
         "romaji": "gitaa",
         "vi": "đàn ghi-ta",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/guitar.svg"
       },
       {
         "id": "v0918",
         "jp": "ゲーム",
         "romaji": "geemu",
         "vi": "trò chơi điện tử",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/video-game.svg"
       },
       {
         "id": "v0919",
@@ -166,7 +171,8 @@
         "kanji": "絵",
         "romaji": "e",
         "vi": "tranh, bức vẽ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/framed-picture.svg"
       },
       {
         "id": "v0921",
@@ -231,7 +237,8 @@
         "kanji": "細かい お金",
         "romaji": "komakai okane",
         "vi": "tiền lẻ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/coin.svg"
       },
       {
         "id": "v0929",

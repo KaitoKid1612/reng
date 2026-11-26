@@ -107,7 +107,8 @@
         "vi": "lễ cưới",
         "note": "けっこんしきに でます",
         "audio": null,
-        "kanji": "結婚式"
+        "kanji": "結婚式",
+        "image": "/icons/vocab/wedding.svg"
       },
       {
         "id": "v3112",
@@ -152,7 +153,8 @@
         "vi": "nhà thờ",
         "note": "きょうかいの ちかく",
         "audio": null,
-        "kanji": "教会"
+        "kanji": "教会",
+        "image": "/icons/vocab/church.svg"
       },
       {
         "id": "v3117",

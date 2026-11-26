@@ -72,7 +72,8 @@
         "jp": "コート",
         "romaji": "kooto",
         "vi": "áo khoác dài, áo măng tô",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/coat.svg"
       },
       {
         "id": "v2209",
@@ -94,7 +95,8 @@
         "kanji": "帽子",
         "romaji": "boushi",
         "vi": "mũ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/billed-cap.svg"
       },
       {
         "id": "v2212",
@@ -119,7 +121,8 @@
         "kanji": "靴",
         "romaji": "kutsu",
         "vi": "giày (ôn bài 3)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/mans-shoe.svg"
       },
       {
         "id": "v2215",
@@ -135,7 +138,8 @@
         "kanji": "着物",
         "romaji": "kimono",
         "vi": "kimono, áo truyền thống Nhật (ôn)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/kimono.svg"
       },
       {
         "id": "v2217",
@@ -159,7 +163,8 @@
         "jp": "ロボット",
         "romaji": "robotto",
         "vi": "rô-bốt",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/robot.svg"
       },
       {
         "id": "v2220",

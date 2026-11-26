@@ -205,7 +205,8 @@
         "jp": "ジュース",
         "romaji": "juusu",
         "vi": "nước ép, nước ngọt",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/beverage-box.svg"
       },
       {
         "id": "v0624",
@@ -221,7 +222,8 @@
         "kanji": "お酒",
         "romaji": "osake",
         "vi": "rượu",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sake.svg"
       },
       {
         "id": "v0626",
@@ -408,7 +410,8 @@
         "kanji": "野菜",
         "romaji": "yasai",
         "vi": "rau",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/leafy-green.svg"
       },
       {
         "id": "v0650",
@@ -416,7 +419,8 @@
         "kanji": "水",
         "romaji": "mizu",
         "vi": "nước",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/droplet.svg"
       },
       {
         "id": "v0651",
@@ -431,14 +435,16 @@
         "jp": "たばこ",
         "romaji": "tabako",
         "vi": "thuốc lá",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cigarette.svg"
       },
       {
         "id": "v0653",
         "jp": "ビデオ",
         "romaji": "bideo",
         "vi": "video, đầu video",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/videocassette.svg"
       },
       {
         "id": "v0654",

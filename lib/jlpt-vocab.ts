@@ -57,6 +57,11 @@ const itemSchema = z
     similar: z.string().min(1).max(40).optional(),
     tip: z.string().min(5).max(200).optional(),
     paper: z.array(z.number().int().min(2010).max(2100)).min(1).max(2).optional(),
+    // A picture from the vocabulary icon set (lib/vocab-icons.ts), only for a word it shows plainly.
+    icon: z
+      .string()
+      .regex(/^[a-z0-9-]+$/)
+      .optional(),
   })
   .strict();
 

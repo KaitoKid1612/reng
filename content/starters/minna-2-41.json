@@ -171,7 +171,8 @@
         "romaji": "saru",
         "vi": "con khỉ",
         "audio": null,
-        "kanji": "猿"
+        "kanji": "猿",
+        "image": "/icons/vocab/monkey.svg"
       },
       {
         "id": "v4121",
@@ -210,7 +211,8 @@
         "jp": "ドライバー",
         "romaji": "doraibaa",
         "vi": "cái tua vít",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/screwdriver.svg"
       },
       {
         "id": "v4126",
@@ -225,7 +227,8 @@
         "romaji": "kutsushita",
         "vi": "tất, vớ",
         "audio": null,
-        "kanji": "靴下"
+        "kanji": "靴下",
+        "image": "/icons/vocab/socks.svg"
       },
       {
         "id": "v4128",
@@ -233,7 +236,8 @@
         "romaji": "tebukuro",
         "vi": "găng tay",
         "audio": null,
-        "kanji": "手袋"
+        "kanji": "手袋",
+        "image": "/icons/vocab/gloves.svg"
       },
       {
         "id": "v4129",
@@ -249,7 +253,8 @@
         "romaji": "sofu",
         "vi": "ông (của tôi)",
         "audio": null,
-        "kanji": "祖父"
+        "kanji": "祖父",
+        "image": "/icons/vocab/old-man.svg"
       },
       {
         "id": "v4131",
@@ -257,7 +262,8 @@
         "romaji": "sobo",
         "vi": "bà (của tôi)",
         "audio": null,
-        "kanji": "祖母"
+        "kanji": "祖母",
+        "image": "/icons/vocab/old-woman.svg"
       },
       {
         "id": "v4132",
@@ -321,7 +327,8 @@
         "romaji": "futari",
         "vi": "hai người, đôi vợ chồng",
         "audio": null,
-        "kanji": "二人"
+        "kanji": "二人",
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       },
       {
         "id": "v4140",
@@ -329,7 +336,8 @@
         "romaji": "otaku",
         "vi": "nhà (của người khác)",
         "audio": null,
-        "kanji": "お宅"
+        "kanji": "お宅",
+        "image": "/icons/vocab/house.svg"
       },
       {
         "id": "v4141",
@@ -353,7 +361,8 @@
         "romaji": "ondo",
         "vi": "nhiệt độ",
         "audio": null,
-        "kanji": "温度"
+        "kanji": "温度",
+        "image": "/icons/vocab/thermometer.svg"
       },
       {
         "id": "v4144",

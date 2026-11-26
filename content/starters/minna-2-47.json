@@ -25,7 +25,8 @@
         "vi": "[gió] thổi",
         "audio": null,
         "kanji": "吹きます",
-        "note": "かぜが ふきます"
+        "note": "かぜが ふきます",
+        "image": "/icons/vocab/wind-face.svg"
       },
       {
         "id": "v4703",
@@ -121,7 +122,8 @@
         "romaji": "kowai",
         "vi": "đáng sợ",
         "audio": null,
-        "kanji": "怖い"
+        "kanji": "怖い",
+        "image": "/icons/vocab/fearful-face.svg"
       },
       {
         "id": "v4715",
@@ -144,7 +146,8 @@
         "romaji": "jikken",
         "vi": "thí nghiệm",
         "audio": null,
-        "kanji": "実験"
+        "kanji": "実験",
+        "image": "/icons/vocab/test-tube.svg"
       },
       {
         "id": "v4718",
@@ -191,7 +194,8 @@
         "jp": "パトカー",
         "romaji": "patokaa",
         "vi": "xe cảnh sát",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/police-car.svg"
       },
       {
         "id": "v4724",
@@ -199,7 +203,8 @@
         "romaji": "kyuukyuusha",
         "vi": "xe cấp cứu",
         "audio": null,
-        "kanji": "救急車"
+        "kanji": "救急車",
+        "image": "/icons/vocab/ambulance.svg"
       },
       {
         "id": "v4725",

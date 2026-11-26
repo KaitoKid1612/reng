@@ -85,3 +85,9 @@
     font-size: 20px;
   }
 }
+/* A word's picture sits before it, centred on the word rather than on the text baseline. */
+.vocab-head .vocab-picture {
+  align-self: center;
+  width: 40px;
+  height: 40px;
+}

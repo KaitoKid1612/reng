@@ -97,7 +97,8 @@
         "jp": "ファイル",
         "romaji": "fairu",
         "vi": "tập hồ sơ, tệp",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/file-folder.svg"
       },
       {
         "id": "v4812",

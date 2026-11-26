@@ -225,7 +225,8 @@
         "romaji": "ishi",
         "vi": "đá",
         "audio": null,
-        "kanji": "石"
+        "kanji": "石",
+        "image": "/icons/vocab/rock.svg"
       },
       {
         "id": "v4228",
@@ -277,7 +278,8 @@
         "romaji": "kanzume",
         "vi": "đồ hộp",
         "audio": null,
-        "kanji": "缶詰"
+        "kanji": "缶詰",
+        "image": "/icons/vocab/canned-food.svg"
       },
       {
         "id": "v4235",
@@ -292,7 +294,8 @@
         "jp": "そろばん",
         "romaji": "soroban",
         "vi": "bàn tính",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/abacus.svg"
       },
       {
         "id": "v4237",
@@ -300,7 +303,8 @@
         "romaji": "taionkei",
         "vi": "nhiệt kế đo thân nhiệt",
         "audio": null,
-        "kanji": "体温計"
+        "kanji": "体温計",
+        "image": "/icons/vocab/thermometer.svg"
       },
       {
         "id": "v4238",

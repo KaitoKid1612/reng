@@ -36,6 +36,19 @@ test("starter lessons only point at pictures that exist", () => {
   }
 });
 
+test("N4 vocabulary pictures come from the curated icon set", () => {
+  const n4 = JSON.parse(readFileSync("content/vocab/n4.json", "utf8")) as {
+    items: { word: string; icon?: string }[];
+  };
+  const curated = new Set(VOCAB_ICONS.map((icon) => icon.name));
+  for (const { word, icon } of n4.items) {
+    if (icon) {
+      assert.ok(curated.has(icon), `${word}: ${icon} is not a curated icon`);
+    }
+  }
+  assert.ok(n4.items.some((item) => item.icon));
+});
+
 test("composed lesson pictures are self-contained SVG files under the icon licence", () => {
   const directory = "public/icons/lessons";
   const pictures = readdirSync(directory).filter((file) => file.endsWith(".svg"));

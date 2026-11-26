@@ -1,7 +1,9 @@
 import Link from "next/link";
 
 import { GroupSwitcher } from "@/components/self-study/group-switcher";
+import { VocabPicture } from "@/components/lessons/vocab-picture";
 import { VOCAB_POS_LABELS } from "@/lib/jlpt-vocab";
+import { vocabIconPath } from "@/lib/vocab-icons";
 
 import type { JlptVocab, JlptVocabLevelData } from "@/lib/jlpt-vocab";
 
@@ -32,6 +34,7 @@ function VocabRow({ item }: { item: JlptVocab }) {
   return (
     <li className="vocab-entry" id={`vocab-${item.reading}`}>
       <div className="vocab-head">
+        {item.icon && <VocabPicture src={vocabIconPath(item.icon)} size={40} />}
         <span className="vocab-word" lang="ja">
           {item.word}
         </span>

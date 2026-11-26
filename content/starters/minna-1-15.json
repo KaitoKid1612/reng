@@ -63,7 +63,8 @@
         "romaji": "kekkon shimasu",
         "vi": "kết hôn",
         "audio": null,
-        "note": "nhóm III · けっこんして"
+        "note": "nhóm III · けっこんして",
+        "image": "/icons/vocab/wedding.svg"
       },
       {
         "id": "v1507",
@@ -197,7 +198,8 @@
         "kanji": "高校",
         "romaji": "koukou",
         "vi": "trường cấp ba",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/school.svg"
       },
       {
         "id": "v1523",
@@ -221,7 +223,8 @@
         "jp": "たばこ",
         "romaji": "tabako",
         "vi": "thuốc lá",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cigarette.svg"
       },
       {
         "id": "v1526",
@@ -356,7 +359,8 @@
         "kanji": "皆さん",
         "romaji": "minasan",
         "vi": "mọi người, các bạn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       }
     ],
     "grammar": [
