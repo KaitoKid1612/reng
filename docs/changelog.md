@@ -4,6 +4,12 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 26/11/2026
 
+- **Quyết định sau rà soát** ([chi tiết](testing/review-2026-11-26.md#quyết-định-của-người-dùng-26112026-và-việc-đã-làm)):
+  - Thư đặt lại mật khẩu và xác nhận email gửi qua Gmail, mẫu thư tiếng Việt.
+  - Bảng xếp hạng tuần không liệt kê người 0 điểm.
+  - Đếm ngược JLPT chỉ cho tài khoản có lớp tiếng Nhật.
+  - Bài giao trước ngày vào lớp không còn là việc cần làm của học viên mới.
+  - Lớp đã lưu trữ vẫn giữ điểm ở trang Tiến độ, ghi "Lớp đã kết thúc".
 - **Rà soát giao diện, dữ liệu, logic và câu chữ** ([chi tiết](testing/review-2026-11-26.md)):
   - **Link mời vào lớp:** hiện tên lớp và giáo viên; khách có nút "Tạo tài khoản để vào lớp" thay vì bị đưa tới đăng nhập.
   - **Hôm nay học gì:** có cả bài hạn trong 7 ngày tới và bài không hạn, nên đề thi thử mở cả tuần hiện từ ngày đầu.
