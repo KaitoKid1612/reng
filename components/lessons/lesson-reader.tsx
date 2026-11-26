@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { AudioStatus } from "@/components/audio-provider";
 import { buttonVariants } from "@/components/ui/button";
+import { GrammarExplain } from "@/components/lessons/grammar-explain";
 import { JapaneseText } from "@/components/lessons/japanese-text";
 import { LessonProgressButton } from "@/components/lessons/lesson-progress-button";
 import { PronunciationButton } from "@/components/lessons/pronunciation-button";
@@ -207,9 +208,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
                   <JapaneseText text={grammar.vi} />
                 </strong>
               </p>
-              <p>
-                <JapaneseText text={grammar.explain} />
-              </p>
+              <GrammarExplain text={grammar.explain} />
               {grammar.examples.map((example, index) => (
                 <div key={`${grammar.id}-${index}`} className="example-block">
                   <p lang="ja" className="japanese-text">

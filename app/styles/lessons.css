@@ -78,15 +78,168 @@
 .grammar-caution {
   color: var(--attention);
 }
-.grammar-search {
-  max-width: 640px;
+/* Grammar lookup (/grammar): points grouped by lesson in teaching order. A closed point is one
+   line, pattern beside meaning, so a lesson's patterns can be scanned; opened, it shows labelled
+   parts (use, common mistake, examples) instead of one paragraph. */
+.grammar-ref-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+  max-width: 900px;
 }
-.grammar-search input {
+.grammar-ref-filters .field {
+  margin-bottom: 8px;
+}
+.grammar-ref-filters :where(input, select) {
   width: 100%;
   border: 1px solid var(--border);
   background: var(--surface);
   padding: 12px;
   border-radius: 6px;
+}
+.grammar-ref-group {
+  margin-top: 32px;
+}
+.grammar-ref-group > h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+.grammar-ref-entry {
+  border-top: 1px solid var(--border);
+}
+.grammar-ref-entry:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.grammar-ref-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 14px 4px;
+  cursor: pointer;
+  list-style: none;
+}
+.grammar-ref-summary::-webkit-details-marker {
+  display: none;
+}
+.grammar-ref-summary:hover {
+  background: color-mix(in srgb, var(--primary-soft) 45%, transparent);
+}
+.grammar-ref-pattern {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--primary);
+}
+.grammar-ref-meaning {
+  margin: 0;
+  font-weight: 600;
+}
+.grammar-ref-chevron {
+  color: var(--muted);
+  transition: transform 150ms ease-out;
+}
+.grammar-ref-entry[open] .grammar-ref-chevron {
+  transform: rotate(180deg);
+}
+.grammar-ref-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px 32px;
+  padding: 4px 4px 24px;
+}
+.grammar-ref-notes {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+.grammar-ref-part h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+/* Explanation sentences, one per line (components/lessons/grammar-explain.tsx), in the lookup and
+   the lesson reader. */
+ul.grammar-points {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  list-style: disc;
+  display: grid;
+  gap: 6px;
+}
+.grammar-ref-part ul.grammar-points {
+  margin-bottom: 0;
+}
+.grammar-ref-part p {
+  margin: 0;
+}
+.grammar-ref-caution {
+  padding: 12px 16px;
+  border-left: 3px solid var(--attention);
+  background: color-mix(in srgb, var(--attention) 8%, var(--surface));
+}
+.grammar-ref-caution h4 {
+  color: var(--attention);
+}
+.grammar-ref-examples ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.grammar-ref-examples li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-left: 2px solid var(--primary-soft);
+}
+.grammar-ref-examples li > p {
+  grid-column: 1;
+  margin: 0;
+}
+.grammar-ref-examples li > .button,
+.grammar-ref-examples li > button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.grammar-ref-examples .japanese-text {
+  font-size: 18px;
+}
+.grammar-ref-translation {
+  color: var(--muted);
+  font-size: 15px;
+}
+.grammar-ref-source {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 15px;
+}
+@media (max-width: 820px) {
+  .grammar-ref-filters,
+  .grammar-ref-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .grammar-ref-summary {
+    grid-template-columns: minmax(0, 1fr) 20px;
+    gap: 2px 12px;
+  }
+  .grammar-ref-pattern {
+    grid-column: 1;
+  }
+  .grammar-ref-meaning {
+    grid-column: 1;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .grammar-ref-chevron {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
 }
 .practice-setup input[type="email"],
 .practice-setup input[type="password"] {

@@ -17,7 +17,7 @@ Nguồn mặc định là snapshot local đã xuất bản bằng script. Khi ch
 | S04 | /lessons | Bài theo thứ tự, tóm tắt, số từ/mẫu câu, dẫn tới đọc và chiếu |
 | S05 | /lessons/[id] | Tiêu đề, từ vựng/audio, ngữ pháp, ví dụ, ghi chú công khai; nút trình chiếu |
 | S06 | /lessons/[id]/slide | Khung 1280×720, fragment, mũi tên/Space, F, Esc, B, vị trí #1-based |
-| S09 | /grammar | Tìm theo Nhật/Việt/pattern, link tới bài và đúng mục; `?class=<id>` (16/11/2026) tìm trong các bài của một lớp, chỉ thành viên; từ 23/11/2026 người đã đăng nhập tìm thêm trong bài các lớp mình học và (giáo viên) bài mình đã xuất bản |
+| S09 | /grammar | Tìm theo Nhật/Việt/pattern, link tới bài và đúng mục; `?class=<id>` (16/11/2026) tìm trong các bài của một lớp, chỉ thành viên; từ 23/11/2026 người đã đăng nhập tìm thêm trong bài các lớp mình học và (giáo viên) bài mình đã xuất bản; từ 26/11/2026 mẫu chia theo bài, lọc theo bài, mỗi mẫu mở ra Cách dùng / Dễ nhầm / Ví dụ |
 | P01 | /lessons/[id]/presenter | Slide hiện tại/kế tiếp, thời gian buổi dạy; đồng bộ cùng origin |
 | T00 | /teach/sign-in | Giảng viên đăng nhập tài khoản được người vận hành cấp; không tự đăng ký role. Từ giai đoạn 3 chuyển 308 sang /sign-in dùng chung |
 
