@@ -78,6 +78,19 @@ export function rankBoard(
     );
 }
 
+/**
+ * The rows a viewer sees: learners with correct answers this week, plus the viewer's own row so
+ * they know where they stand. A learner with nothing yet is left off others' boards instead of
+ * being listed last by name. Learners who hid themselves are seen only by themselves.
+ */
+export function visibleBoardRows(
+  rows: readonly BoardRow[],
+  viewerId: string,
+  isHidden: (userId: string) => boolean,
+) {
+  return rows.filter((row) => row.userId === viewerId || (row.points > 0 && !isHidden(row.userId)));
+}
+
 /** Days left in the week including today, for "còn 3 ngày". */
 export function daysLeftInWeek(week: BoardWeek, now: Date) {
   const today = toStudyDay(now);

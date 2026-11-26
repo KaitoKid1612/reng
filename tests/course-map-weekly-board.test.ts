@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { buildCourseMap, countStars, stageTag } from "../lib/course-map";
-import { boardWeek, daysLeftInWeek, rankBoard } from "../lib/weekly-board";
+import { boardWeek, daysLeftInWeek, rankBoard, visibleBoardRows } from "../lib/weekly-board";
 
 const stage = (orderNo: number, isOpen = true) => ({
   lessonId: `l${orderNo}`,
@@ -99,4 +99,23 @@ test("each assignment counts once at its best attempt, and only this week", () =
     { userId: "b", points: 60, activeDays: 1 },
     { userId: "c", points: 0, activeDays: 0 },
   ]);
+});
+
+test("the board lists learners with points and the viewer, never others at zero or hidden", () => {
+  const rows = [
+    { userId: "lan", points: 12, activeDays: 3 },
+    { userId: "hidden", points: 9, activeDays: 2 },
+    { userId: "minh", points: 0, activeDays: 0 },
+    { userId: "viewer", points: 0, activeDays: 0 },
+  ];
+  const isHidden = (userId: string) => userId === "hidden";
+  assert.deepEqual(
+    visibleBoardRows(rows, "viewer", isHidden).map((row) => row.userId),
+    ["lan", "viewer"],
+  );
+  // A learner who hid themselves still sees their own row.
+  assert.deepEqual(
+    visibleBoardRows(rows, "hidden", isHidden).map((row) => row.userId),
+    ["lan", "hidden"],
+  );
 });

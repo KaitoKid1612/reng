@@ -12,7 +12,7 @@ import {
   selectRows,
   selectRowsIn,
 } from "@/lib/server/supabase";
-import { boardWeek, daysLeftInWeek, rankBoard } from "@/lib/weekly-board";
+import { boardWeek, daysLeftInWeek, rankBoard, visibleBoardRows } from "@/lib/weekly-board";
 
 import type { BoardWeek } from "@/lib/weekly-board";
 
@@ -218,10 +218,12 @@ export async function loadWeeklyBoards(userId: string, now: Date): Promise<Weekl
         score: row.score ?? 0,
         submittedAt: row.submitted_at,
       }));
-    const isShown = (memberId: string) =>
-      memberId === userId || !personOf.get(memberId)?.hide_from_board;
     const nameOf = (memberId: string) => personOf.get(memberId)?.full_name || "Học viên";
-    const ranked = rankBoard(members, boardSubmissions, week).filter((row) => isShown(row.userId));
+    const ranked = visibleBoardRows(
+      rankBoard(members, boardSubmissions, week),
+      userId,
+      (memberId) => Boolean(personOf.get(memberId)?.hide_from_board),
+    );
     const lastLeader = rankBoard(members, boardSubmissions, lastWeek).find(
       (row) => row.points > 0 && !personOf.get(row.userId)?.hide_from_board,
     );

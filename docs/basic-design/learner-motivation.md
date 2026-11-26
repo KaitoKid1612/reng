@@ -26,9 +26,9 @@ Lộ trình và mục mẫu ngữ pháp hay sai đọc chung một lượt câu 
 - **Ai cùng bảng:** học viên của mọi lớp đang hoạt động mà cùng một giáo viên đã bật. Chủ lớp không tính là học viên, trừ lớp tự học (ví dụ Việt ôn N4 trong lớp tự học của mình đứng cùng bảng với Nguyên).
 - **Điểm:** tổng số điểm (thường là số câu đúng) của bài nộp từ 0:00 thứ 2 đến hết chủ nhật giờ Việt Nam, ở các lớp trong bảng. Mỗi bài chỉ tính lần làm cao nhất, nên làm lại một bài không cộng thêm. Bài kiểm tra công bố kết quả sau hạn chỉ được cộng từ lúc tới giờ công bố (từ 25/11/2026), để bảng không làm lộ điểm giáo viên đang giữ. Cột thứ hai là số ngày có nộp bài trong tuần. Bằng điểm thì ai học nhiều ngày hơn đứng trước.
 - **Hiện ở đâu:**
-  - Trang **Tiến độ**: bảng đầy đủ (hạng, huy chương 🥇🥈🥉 cho ba người có điểm, họ tên, câu đúng, ngày học), một câu cho biết bạn đang hạng mấy và kém người trên bao nhiêu câu, người dẫn đầu tuần trước.
+  - Trang **Tiến độ**: bảng (hạng, huy chương 🥇🥈🥉 cho ba người có điểm, họ tên, câu đúng, ngày nộp bài), một câu cho biết bạn đang hạng mấy và cần thêm bao nhiêu câu để bắt kịp người trên, người dẫn đầu tuần trước. Từ 26/11/2026 bảng chỉ liệt kê học viên đã có câu đúng trong tuần (`visibleBoardRows`, `lib/weekly-board.ts`); người xem chưa có điểm vẫn thấy dòng của mình, không có số hạng, để người 0 điểm không bị xếp cuối trước cả lớp.
   - Trang **Lớp của tôi**: một dòng "Bảng tuần: bạn đang hạng 2/3 với 105 câu đúng" kèm link Xem bảng.
-- **Ẩn mình:** Cài đặt → Tài khoản → **Bảng xếp hạng tuần** → "Ẩn tôi khỏi bảng tuần". Người ẩn không hiện với ai khác; bản thân vẫn thấy dòng của mình, ghi "chỉ bạn thấy". Trang Quyền riêng tư ghi rõ phần này.
+- **Ẩn mình:** trang Tài khoản → **Bảng xếp hạng tuần** → "Ẩn tôi khỏi bảng tuần". Người ẩn không hiện với ai khác; bản thân vẫn thấy dòng của mình, ghi "chỉ bạn thấy". Trang Quyền riêng tư ghi rõ phần này.
 - **Dữ liệu:** migration `20261120090000_weekly_board.sql` thêm `classes.weekly_board` và `profiles.hide_from_board` (mặc định `false`, chỉ server ghi). Code đọc hai cột này kiểu "có thì dùng", nên lên trước migration vẫn chạy, chỉ chưa có bảng.
 
 Kiểm chứng: [lộ trình và bảng tuần 20/11/2026](../testing/learner-motivation-2026-11-20.md).

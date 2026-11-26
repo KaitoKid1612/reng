@@ -8,6 +8,19 @@ const MEDALS = ["🥇", "🥈", "🥉"];
 
 type Entries = WeeklyBoard["entries"];
 
+interface BoardRankProps {
+  entry: Entries[number];
+}
+
+// Only the viewer can be on the board without points; they get no rank until they score.
+function BoardRank({ entry }: BoardRankProps) {
+  if (entry.points === 0) {
+    return <span aria-label="Chưa có hạng">—</span>;
+  }
+  const medal = MEDALS[entry.rank - 1];
+  return medal ? <span aria-label={`Hạng ${entry.rank}`}>{medal}</span> : entry.rank;
+}
+
 function describeViewerPlace(entries: Entries, viewer: Entries[number]) {
   if (viewer.points === 0) {
     return "Tuần này bạn chưa có điểm. Làm bài hôm nay để vào bảng.";
@@ -58,11 +71,7 @@ export function WeeklyBoardCard({ board }: { board: WeeklyBoard }) {
           {board.entries.map((entry) => (
             <tr key={`${entry.rank}-${entry.name}`} data-viewer={entry.isViewer || undefined}>
               <td>
-                {entry.points > 0 && MEDALS[entry.rank - 1] ? (
-                  <span aria-label={`Hạng ${entry.rank}`}>{MEDALS[entry.rank - 1]}</span>
-                ) : (
-                  entry.rank
-                )}
+                <BoardRank entry={entry} />
               </td>
               <th scope="row">
                 {entry.name}
@@ -79,7 +88,8 @@ export function WeeklyBoardCard({ board }: { board: WeeklyBoard }) {
         {board.lastWeekLeader
           ? `Tuần trước: ${board.lastWeekLeader.name} dẫn đầu với ${board.lastWeekLeader.points} câu đúng. `
           : ""}
-        Điểm là số câu đúng trong bài nộp tuần này, mỗi bài tính lượt có điểm cao nhất.{" "}
+        Điểm là số câu đúng trong bài nộp tuần này, mỗi bài tính lượt có điểm cao nhất. Bảng chỉ
+        hiện học viên đã có câu đúng trong tuần.{" "}
         <Link href="/settings/account#board-visibility-title">Ẩn tôi khỏi bảng</Link>
       </p>
     </section>
