@@ -60,11 +60,20 @@ Quy tắc dùng: kích thước nhỏ nhất 16px; chừa khoảng trống quanh
 
 Phương án duyệt ngày 18/11/2026, lập theo skill `frontend-design`: Reng giữ bảng màu và font của logo, chỉ thêm **một** điểm nhấn gắn với việc học chữ Nhật. Điểm nhấn đó là ô tập viết: ô vuông viền `--grid` có chữ thập đứt (`.writing-square` trong `app/styles/components.css`), như vở 漢字練習帳 của Nhật hay vở ô li của học sinh Việt.
 
-- Mọi chữ Nhật đem ra để học nằm trong một ô: bảng và bài luyện kana, thẻ kanji N5/N4 (88 px), đề luyện kanji (mỗi chữ một ô, các ô chung viền như trang 原稿用紙, 56–104 px theo màn hình), biểu tượng công cụ ở trang Tự học (64 px), ba bước ở trang chủ. Chữ trong ô dùng Klee One để người học thấy nét chuẩn khi chép tay. Chữ Trung trong ô giữ font giản/phồn thể.
+- Mọi chữ Nhật đem ra để học nằm trong một ô: bảng và bài luyện kana, thẻ kanji N5/N4 (88 px), đề luyện kanji (mỗi chữ một ô, các ô chung viền như trang 原稿用紙, 56–104 px theo màn hình), biểu tượng công cụ ở trang Tự học (64 px), ba bước ở trang chủ, bốn bước bắt đầu ở trang Cho giáo viên. Chữ trong ô dùng Klee One để người học thấy nét chuẩn khi chép tay. Chữ Trung trong ô giữ font giản/phồn thể.
 - Đề luyện chia ô chỉ để nhìn (`aria-hidden`); trình đọc màn hình đọc cả từ trong một vùng ẩn (`data-testid="kanji-prompt"`).
 - Không thêm điểm nhấn thứ hai. Đã cân nhắc và không làm: con dấu はなまる khi trả lời đúng (vòng đỏ lẫn với màu sai), đổi nền kem (gắn với logo, và theme không đổi chỉ để khác mẫu công cụ sinh UI), thay mọi card bằng danh sách kẻ dòng.
 - Đã bỏ các chi tiết khuôn mẫu: dòng chữ nhỏ trên tiêu đề trang chủ và trang giáo viên (lặp ý tiêu đề); ô biểu tượng xanh bo góc và hiệu ứng nảy/xoay khi rê chuột ở card Tự học.
 - Ghi chú "dễ nhầm" của thẻ kanji tả nét theo cả Klee One và Noto Sans JP, vì chữ to dùng Klee One mà câu ví dụ dùng Noto.
+
+## Trang công khai (26/11/2026)
+
+- Trang chủ, Cho giáo viên và Tự học trải cùng bề rộng với header, lề trái thẳng logo; đoạn văn dài vẫn giữ khoảng 68–72 ký tự một dòng.
+- Hero của Cho giáo viên theo bố cục trang chủ: chữ bên trái, thẻ "Bắt đầu trong bốn bước" bên phải với số trong ô tập viết (dưới 900px xếp dưới chữ). Trước đây bốn bước là danh sách mất số thứ tự (preflight bỏ dấu đầu dòng).
+- Lưới tính năng của Cho giáo viên: 3 cột cho 6 mục, câu hỏi thường gặp 2 cột trên PC.
+- "Bạn muốn bắt đầu từ đâu?" ở trang chủ: ba cột chung hàng (subgrid) nên các nút bắt đầu cùng một dòng; link chữ cạnh nút cùng cỡ chữ với nút.
+- Năm công cụ tiếng Nhật ở Tự học nằm trên một hàng ở PC, không để thẻ thứ năm đứng riêng.
+- Trang 404: hai lối ra là nút; các đoạn liên tiếp trong `.prose-page` cách nhau 12px.
 
 ## Học trên máy tính (19/11/2026)
 

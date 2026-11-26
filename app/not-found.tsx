@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { buttonVariants } from "@/components/ui/button";
+
 export default function NotFound() {
   return (
     <div className="prose-page">
@@ -13,8 +15,12 @@ export default function NotFound() {
         <Link href="/settings/account">Tài khoản</Link>.
       </p>
       <div className="button-row">
-        <Link href="/">Về trang chủ</Link>
-        <Link href="/classes">Lớp của tôi</Link>
+        <Link href="/" className={buttonVariants()}>
+          Về trang chủ
+        </Link>
+        <Link href="/classes" className={buttonVariants({ variant: "outline" })}>
+          Lớp của tôi
+        </Link>
       </div>
     </div>
   );

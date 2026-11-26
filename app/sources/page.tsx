@@ -55,12 +55,12 @@ export default function SourcesPage() {
       <h2>Audio bảng chữ cái</h2>
       <p>
         {count
-          ? `Đã cấu hình ${count} audio kana. File giọng đọc cần được kiểm duyệt phát âm trước khi dùng với lớp thật.`
-          : "Chưa có file MP3 được cấu hình. Trang thử dùng giọng Nhật có sẵn trên thiết bị khi bạn bấm nghe; một số thiết bị có thể chưa có giọng Nhật."}
+          ? `Bảng chữ cái có ${count} bản ghi âm; mỗi bản được nghe duyệt phát âm trước khi dùng với lớp thật.`
+          : "Bảng chữ cái chưa có bản ghi âm riêng. Khi bạn bấm nghe, trang dùng giọng Nhật có sẵn trên thiết bị; một số thiết bị chưa có giọng Nhật."}
       </p>
       <p>
-        Chế độ dự phòng phụ thuộc hệ điều hành và trình duyệt. Bạn vẫn có thể học bảng chữ và luyện
-        romaji khi audio chưa khả dụng.
+        Giọng trên thiết bị tùy hệ điều hành và trình duyệt. Khi không nghe được, bạn vẫn học bảng
+        chữ và luyện romaji như thường.
       </p>
       <h2>Giọng đọc bài nghe</h2>
       {/* Unreal Speech's free plan asks for a link to unrealspeech.com wherever its audio is used. */}

@@ -340,6 +340,11 @@
 .prose-page h2 {
   margin-top: 32px;
 }
+/* Preflight removes paragraph margins; consecutive paragraphs on text pages (404, errors,
+   sources) still read as separate paragraphs. */
+.prose-page :where(p) + :where(p) {
+  margin-top: 12px;
+}
 /* Before /api/me answers, a browser that was signed in hides the visitor-only header links. */
 html[data-account="member"] .site-header [data-guest-only] {
   display: none;

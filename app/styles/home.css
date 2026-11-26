@@ -52,6 +52,29 @@
   font-size: 15px;
   color: var(--muted);
 }
+/* On a desktop the three starting points share rows (subgrid), so their actions start on one
+   line whatever the length of each text; a text link beside a button uses the button's type
+   size. */
+.home-start article > p {
+  margin-bottom: 16px;
+}
+@media (min-width: 601px) {
+  .home-start .learning-columns {
+    grid-template-rows: repeat(3, auto);
+    row-gap: 0;
+  }
+  .home-start article {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    justify-items: start;
+    align-items: start;
+  }
+}
+.home-start .button-row > a:not([class]) {
+  font-size: 15px;
+  font-weight: 600;
+}
 /* Signed-in start page (components/classroom/home-welcome.tsx): greeting, today's plan and
    shortcuts. A browser that was signed in hides the visitor sections before the first paint. */
 html[data-account="member"] .home-guest {

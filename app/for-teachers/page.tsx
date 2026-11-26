@@ -62,10 +62,22 @@ const SUBJECTS = [
 ];
 
 const STEPS = [
-  "Tạo tài khoản (nếu Reng gửi thư xác nhận, mở thư và bấm liên kết).",
-  "Gửi yêu cầu giảng dạy; trong giai đoạn thử nghiệm, quản trị viên mở quyền cho từng giáo viên.",
-  "Tạo lớp, dán link Google Meet, soạn bài đầu tiên theo mẫu, xuất bản rồi đưa bài vào lớp.",
-  "Sao chép link mời gửi học viên, trình chiếu khi dạy và giao bài tập sau buổi học.",
+  {
+    title: "Tạo tài khoản",
+    body: "Nếu Reng gửi thư xác nhận, mở thư và bấm link trong thư.",
+  },
+  {
+    title: "Gửi yêu cầu giảng dạy",
+    body: "Trong giai đoạn thử nghiệm, quản trị viên mở quyền cho từng giáo viên.",
+  },
+  {
+    title: "Tạo lớp và bài đầu tiên",
+    body: "Dán link Google Meet, soạn bài theo mẫu, xuất bản rồi đưa bài vào lớp.",
+  },
+  {
+    title: "Mời học viên",
+    body: "Gửi link mời, trình chiếu khi dạy và giao bài tập sau buổi học.",
+  },
 ];
 
 const QUESTIONS = [
@@ -130,25 +142,45 @@ export default async function ForTeachersPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <section className="landing-hero">
-        <h1>{TITLE}</h1>
-        <p className="hero-description">
-          Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua
-          Google Meet. Bắt đầu từ bài mẫu hoặc tự soạn, rồi trình chiếu, giao bài và xem kết quả
-          từng học viên.
-        </p>
-        <div className="button-row">
-          <Link href="/sign-up/teacher" className={buttonVariants()}>
-            Đăng ký giáo viên
-          </Link>
-          {hasSamples ? (
-            <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
-              Xem bài học mẫu
+        <div>
+          <h1>{TITLE}</h1>
+          <p className="hero-description">
+            Reng gom lớp học, slide, bài tập và tiến độ vào một nơi để bạn tập trung vào giờ dạy qua
+            Google Meet. Bắt đầu từ bài mẫu hoặc tự soạn, rồi trình chiếu, giao bài và xem kết quả
+            từng học viên.
+          </p>
+          <div className="button-row">
+            <Link href="/sign-up/teacher" className={buttonVariants()}>
+              Đăng ký giáo viên
             </Link>
-          ) : (
-            <Link href="/guide#teacher-title" className={buttonVariants({ variant: "outline" })}>
-              Xem hướng dẫn cho giáo viên
-            </Link>
-          )}
+            {hasSamples ? (
+              <Link href="/lessons" className={buttonVariants({ variant: "outline" })}>
+                Xem bài học mẫu
+              </Link>
+            ) : (
+              <Link href="/guide#teacher-title" className={buttonVariants({ variant: "outline" })}>
+                Xem hướng dẫn cho giáo viên
+              </Link>
+            )}
+          </div>
+        </div>
+        <div className="hero-paper">
+          <h2 id="steps-title" className="paper-caption">
+            Bắt đầu trong bốn bước
+          </h2>
+          <ol className="class-steps">
+            {STEPS.map((step, index) => (
+              <li key={step.title}>
+                <span className="class-step-number writing-square" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <div>
+                  <p className="class-step-title">{step.title}</p>
+                  <p>{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
       <section className="landing-section" aria-labelledby="features-title">
@@ -176,14 +208,6 @@ export default async function ForTeachersPage() {
             </article>
           ))}
         </div>
-      </section>
-      <section className="landing-section" aria-labelledby="steps-title">
-        <h2 id="steps-title">Bắt đầu trong bốn bước</h2>
-        <ol className="landing-steps">
-          {STEPS.map((step) => (
-            <li key={step}>{step}</li>
-          ))}
-        </ol>
       </section>
       <section className="landing-section" aria-labelledby="faq-title">
         <h2 id="faq-title">Câu hỏi thường gặp</h2>
