@@ -273,8 +273,8 @@ export function AssignmentForm({
           </div>
           <p className="small muted">
             {mode === "practice"
-              ? "Dùng câu luyện công khai của bài, học viên được chấm từng câu ngay."
-              : "Nhập câu hỏi riêng, chỉ một lượt; đáp án không gửi xuống trình duyệt trước khi công bố."}
+              ? "Dùng câu luyện của bài; học viên được chấm từng câu ngay."
+              : "Nhập câu hỏi riêng; học viên làm một lượt và không xem được đáp án trước khi bạn công bố."}
           </p>
         </fieldset>
         <div className="form-grid">
@@ -344,7 +344,8 @@ export function AssignmentForm({
           <legend>Câu luyện của bài</legend>
           {lesson.questions.length === 0 ? (
             <p className="muted">
-              Bài này chưa có câu luyện giao được (trắc nghiệm, điền từ, nghe).
+              Bài này chưa có câu luyện giao được (trắc nghiệm, điền từ, sắp xếp, ghép đôi, nghe,
+              chính tả).
             </p>
           ) : (
             // A starter lesson has about 50 questions; ticking each one is not a task.
@@ -418,8 +419,8 @@ export function AssignmentForm({
             {mode === "test" && FEEDBACK_SUMMARIES[settings.feedbackPolicy]}.
           </p>
           <p>
-            Sau khi giao, đề và điều kiện không sửa được; chỉ đổi tiêu đề hoặc đóng bài rồi giao bài
-            mới.
+            Sau khi giao, câu hỏi, đáp án và điều kiện không đổi được; câu chữ và furigana của đề
+            vẫn sửa được ở trang Sửa lỗi hiển thị. Muốn đổi thêm, đóng bài rồi giao bài mới.
           </p>
           <div className="button-row">
             <Button onClick={handlePublish} disabled={isPending}>

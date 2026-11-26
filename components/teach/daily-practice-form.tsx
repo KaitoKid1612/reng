@@ -74,7 +74,7 @@ export function DailyPracticeForm({
           </select>
           <p className="muted">
             Theo cấu trúc đề: mỗi ngày đủ các もんだい theo thứ tự của đề thật, phần nghe ở cuối.
-            Ngân hàng cần câu gắn nhãn もんだい.
+            Cần ngân hàng ôn soạn sẵn theo từng もんだい (do quản trị viên Reng nạp).
           </p>
         </div>
         <div className="field">
@@ -95,13 +95,13 @@ export function DailyPracticeForm({
             ))}
           </select>
           <p className="muted">
-            Câu nghe nằm trong tổng số câu mỗi ngày; ngân hàng cần có audio đã duyệt.
+            Câu nghe nằm trong tổng số câu mỗi ngày; câu nghe cần có sẵn audio.
           </p>
           {availableListeningCount !== null && (
             <p className="muted" role="status">
               Nguồn bài đang sử dụng có {availableListeningCount} câu nghe.
               {listeningCount !== null && listeningCount > availableListeningCount
-                ? " Chưa đủ số câu nghe đã cấu hình: hệ thống sẽ bù bằng câu thường cho đến khi bổ sung audio."
+                ? " Bài nguồn chưa đủ số câu nghe bạn chọn: Reng bù bằng câu thường cho đến khi có thêm câu nghe."
                 : ""}
             </p>
           )}

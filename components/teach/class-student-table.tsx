@@ -36,10 +36,10 @@ export function ClassStudentTable({ classId, reports, formerMemberCount }: Class
                 Điểm TB
               </th>
               <th scope="col" className="numeric">
-                Nghe lại TB
+                Lần nghe TB
               </th>
               <th scope="col">Học gần nhất</th>
-              <th scope="col">Nhãn</th>
+              <th scope="col">Tình trạng</th>
             </tr>
           </thead>
           <tbody>
@@ -56,7 +56,7 @@ export function ClassStudentTable({ classId, reports, formerMemberCount }: Class
                 <td className="numeric" data-label="Điểm TB">
                   {row.averagePercent === null ? "—" : formatPercent(row.averagePercent)}
                 </td>
-                <td className="numeric" data-label="Nghe lại TB">
+                <td className="numeric" data-label="Lần nghe TB">
                   {row.averageListens === null ? "—" : formatDecimal(row.averageListens)}
                 </td>
                 <td data-label="Học gần nhất">

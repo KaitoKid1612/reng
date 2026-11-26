@@ -26,11 +26,11 @@ interface TestQuestionEditorProps {
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
   text: "Văn bản (tiếng Việt, không đổi sang kana)",
-  chinese: "Chữ Hán (IME tiếng Trung)",
+  chinese: "Chữ Hán (bộ gõ tiếng Trung)",
   pinyin: "Pinyin có dấu thanh",
   hiragana: "Hiragana",
   katakana: "Katakana",
-  japanese: "Tiếng Nhật tự do (kanji, IME)",
+  japanese: "Tiếng Nhật tự do (gõ kanji bằng bộ gõ tiếng Nhật)",
 };
 
 export function TestQuestionEditor({
@@ -62,13 +62,13 @@ export function TestQuestionEditor({
       answerLang = "vi";
     }
   }
-  let answerHint = "Khai báo đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます.";
+  let answerHint = "Ghi đủ dạng kanji và kana nếu đều đúng, ví dụ 行きます và いきます.";
   if (!isJapaneseInput) {
     answerHint =
       "Chữ Hán phân biệt giản thể/phồn thể; pinyin cần đúng dấu thanh và khoảng trắng. Mỗi dạng được chấp nhận phải ghi thành một dòng riêng.";
   }
   if (draft.type === "fill" && draft.inputMode === "text") {
-    answerHint = "Khai báo mỗi cách diễn đạt được chấp nhận trên một dòng; giữ dấu tiếng Việt.";
+    answerHint = "Ghi mỗi cách diễn đạt được chấp nhận trên một dòng; giữ dấu tiếng Việt.";
   }
   const id = `test-question-${draft.key}`;
   const problem = showProblems ? describeQuestionProblem(draft) : null;

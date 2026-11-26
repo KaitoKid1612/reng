@@ -22,7 +22,7 @@ const BODY_MAX = 160;
 
 function describeAssignment(item: ReminderAssignment) {
   if (item.isOverdue) {
-    return `${item.title} (đã quá hạn)`;
+    return `${item.title} (quá hạn, vẫn nộp được)`;
   }
   return item.dueAt ? `${item.title} (hạn ${formatStudyDateTime(item.dueAt)})` : item.title;
 }

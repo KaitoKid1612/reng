@@ -25,7 +25,7 @@ export default async function ReviewPage() {
       <h1>Ôn tập hôm nay</h1>
       <p className="muted">
         {cards.length
-          ? `${cards.length} thẻ cần ôn${hasMore ? " trong phiên này, còn thẻ đến hạn cho phiên sau" : ""}: từ vựng tự đánh giá, câu trong sổ lỗi thì trả lời lại.`
+          ? `${cards.length} thẻ cần ôn${hasMore ? " trong phiên này (còn thẻ khác cho phiên sau)" : ""}. Thẻ từ vựng: lật thẻ rồi tự chấm mức nhớ. Câu trong sổ lỗi: trả lời lại.`
           : "Hết thẻ cần ôn hôm nay."}
       </p>
       {cards.length ? (
@@ -33,6 +33,7 @@ export default async function ReviewPage() {
           cards={cards}
           streak={countStudyStreak(activity, now)}
           hasStudiedToday={activity.some((instant) => toStudyDay(instant) === today)}
+          hasMore={hasMore}
         />
       ) : (
         <p>

@@ -16,8 +16,8 @@ export default function AppError({ retry }: AppErrorProps) {
       <h1>Trang chưa hiển thị được</h1>
       <p>
         Có thể mạng vừa bị gián đoạn hoặc Reng vừa được cập nhật. Bạn thử lại; nếu vẫn lỗi, tải lại
-        trang. Bài đang soạn và bài đang làm có thay đổi chưa lưu được giữ trên máy này để khôi phục
-        khi mở lại.
+        trang. Những thay đổi chưa lưu ở bài đang làm hoặc bài đang soạn vẫn được giữ trên máy này
+        và hiện lại khi bạn mở lại.
       </p>
       <div className="button-row">
         <Button onClick={retry}>Thử lại</Button>

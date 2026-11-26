@@ -6,6 +6,7 @@ import { LegalConsent } from "@/components/auth/legal-consent";
 import { SignUpForm } from "@/components/auth/sign-up-form";
 import { getCurrentAccount } from "@/lib/server/account";
 import { isClassroomConfigured, isGoogleAuthEnabled } from "@/lib/server/supabase";
+import { isRequestFromInAppBrowser } from "@/lib/server/in-app-browser";
 
 import type { Metadata } from "next";
 
@@ -24,13 +25,18 @@ export default async function TeacherSignUpPage() {
     <div className="narrow-page">
       <h1>Đăng ký giáo viên</h1>
       <p>
-        Tạo tài khoản, sau đó xác nhận trách nhiệm nội dung để bắt đầu giảng dạy. Nếu Reng gửi thư
-        xác nhận, mở thư và bấm liên kết trước.
+        Tạo tài khoản, xác nhận trách nhiệm nội dung rồi gửi yêu cầu giảng dạy; trong giai đoạn thử
+        nghiệm, quản trị viên mở quyền cho từng giáo viên. Nếu Reng gửi thư xác nhận, mở thư và bấm
+        liên kết trước.
       </p>
       {isClassroomConfigured() ? (
         <>
           {isGoogleAuthEnabled() && (
-            <GoogleSignIn nextPath="/teach/start" label="Đăng ký bằng Google" />
+            <GoogleSignIn
+              nextPath="/teach/start"
+              label="Đăng ký bằng Google"
+              isInAppBrowser={await isRequestFromInAppBrowser()}
+            />
           )}
           <SignUpForm nextPath="/teach/start" />
           <LegalConsent />

@@ -36,11 +36,11 @@ export function TeachingReader({
         </div>
         {!isPreview && (
           <Link href={slideHref} className={buttonVariants()}>
-            Trình chiếu
+            Xem slide
           </Link>
         )}
       </div>
-      <AudioStatus />
+      <AudioStatus idleMessage="Bấm Nghe cạnh từ hoặc câu để nghe đọc mẫu." />
       <section aria-labelledby="objectives-title">
         <h2 id="objectives-title">Mục tiêu buổi học</h2>
         <ul className="lesson-objectives">

@@ -27,6 +27,8 @@ interface ReviewSessionProps {
   cards: ReviewCard[];
   streak: number;
   hasStudiedToday: boolean;
+  // More cards were due than one session takes; the finish screen offers the next session.
+  hasMore: boolean;
 }
 
 interface MistakeOutcome {
@@ -59,7 +61,7 @@ function parseMistakeOutcome(data: Record<string, unknown>): MistakeOutcome | nu
   };
 }
 
-export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionProps) {
+export function ReviewSession({ cards, streak, hasStudiedToday, hasMore }: ReviewSessionProps) {
   const [index, setIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [answer, setAnswer] = useState<RawAnswer | undefined>(undefined);
@@ -94,7 +96,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
     }
   }, [index]);
 
-  // On a computer a vocabulary card answers to Space (flip) and 1–4 (Quên, Khó, Được, Dễ), as in
+  // On a computer a vocabulary card answers to Space (flip) and 1–4 (Quên, Khó, Nhớ, Dễ), as in
   // the lesson flashcards; keys on a field or a button keep their usual meaning.
   const keys = useRef({ isVocab: false, isFlipped, canRate: false, handleRate });
   useEffect(() => {
@@ -216,10 +218,11 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
       extendsStreak && STREAK_MILESTONES.some((milestone) => milestone === finalStreak);
     return (
       <div className="form-card review-done" role="status">
-        <h2>Xong phiên ôn hôm nay</h2>
+        <h2>{hasMore ? "Xong phiên ôn này" : "Xong phiên ôn hôm nay"}</h2>
         <p>
           Bạn đã ôn {reviewedCount} thẻ
           {correctCount > 0 ? `, trả lời đúng ${correctCount} câu trong sổ lỗi` : ""}.
+          {hasMore && " Vẫn còn thẻ cần ôn hôm nay."}
         </p>
         <div className="stat-tiles review-done-tiles">
           <div className="stat-tile">
@@ -232,7 +235,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
                 {correctCount}
                 <small>/{answeredMistakeCount}</small>
               </strong>
-              <span>câu sổ lỗi trả lời đúng</span>
+              <span>câu trong sổ lỗi làm đúng</span>
             </div>
           )}
         </div>
@@ -247,8 +250,17 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
           headingLevel="h3"
         />
         <div className="button-row">
-          <Link href="/classes" className={buttonVariants()}>
-            Về lớp của tôi
+          {hasMore && (
+            // A full load reads the next due cards; the cards of this session are done.
+            <a href="/review" className={buttonVariants()}>
+              Ôn tiếp
+            </a>
+          )}
+          <Link
+            href="/classes"
+            className={buttonVariants({ variant: hasMore ? "outline" : "default" })}
+          >
+            Về Lớp của tôi
           </Link>
           <Link href="/progress" className={buttonVariants({ variant: "outline" })}>
             Xem tiến độ
@@ -290,7 +302,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
             </Button>
           )}
           <p className="practice-keys-hint small muted">
-            Bàn phím: phím cách để lật thẻ, sau khi lật bấm 1–4 để chấm Quên, Khó, Được, Dễ.
+            Bàn phím: phím cách để lật thẻ, sau khi lật bấm 1–4 để chấm Quên, Khó, Nhớ, Dễ.
           </p>
         </>
       ) : (
@@ -318,7 +330,7 @@ export function ReviewSession({ cards, streak, hasStudiedToday }: ReviewSessionP
               />
               <p className="small muted">
                 {outcome.isResolved
-                  ? "Đã đúng 3 lần liên tiếp: câu này được đánh dấu đã giải quyết."
+                  ? "Đã đúng 3 lần liên tiếp: câu này được tính là đã thuộc."
                   : `Chuỗi đúng: ${outcome.correctStreak}/3.`}
               </p>
               <Button ref={nextButtonRef} onClick={handleNext}>

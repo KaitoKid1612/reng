@@ -150,7 +150,7 @@ export default async function TeachPage({ searchParams }: TeachPageProps) {
         )}
       </section>
       <section className="section-block" aria-labelledby="teacher-lessons">
-        <h2 id="teacher-lessons">Bài học tôi sở hữu</h2>
+        <h2 id="teacher-lessons">Bài học của tôi</h2>
         <p className="small">
           <Link href="/teach/import-csv">Nhập từ vựng tiếng Nhật từ CSV/Excel</Link>
         </p>

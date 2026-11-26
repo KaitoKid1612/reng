@@ -11,7 +11,7 @@ import {
   toQuestionView,
   toStoredRawAnswer,
 } from "@/lib/assignment";
-import { gradeQuestion } from "@/lib/grading/grade";
+import { describeParticleSlip, gradeQuestion } from "@/lib/grading/grade";
 import { parseRawAnswer } from "@/lib/grading/raw-answer";
 import { findClassLessonVersions, loadAccessibleLessonVersion } from "@/lib/server/lesson-access";
 import { toStudyWords } from "@/lib/study-words";
@@ -438,6 +438,8 @@ export interface MistakeEntry {
   // What a listening question says, so the mistake still makes sense without its audio.
   transcript: string | null;
   lastAnswerText: string;
+  // Why that answer was wrong when only a particle's spelling differs (わ typed for は).
+  lastAnswerHint: string | null;
   correctStreak: number;
   resolvedAt: string | null;
   due: string;
@@ -528,6 +530,7 @@ export async function listMistakes(userId: string, now: Date): Promise<MistakeBo
         ),
       )
       .find((answer) => answer !== undefined);
+    const lastRaw = toStoredRawAnswer(lastWrong?.raw);
     entries.push({
       assignmentId: source.assignmentId,
       assignmentTitle: source.title,
@@ -535,7 +538,8 @@ export async function listMistakes(userId: string, now: Date): Promise<MistakeBo
       correctText: describeCorrectAnswer(question),
       explain: question.explain,
       transcript: isListeningQuestion(question) ? question.transcript : null,
-      lastAnswerText: describeRawAnswer(question, toStoredRawAnswer(lastWrong?.raw)),
+      lastAnswerText: describeRawAnswer(question, lastRaw),
+      lastAnswerHint: describeParticleSlip(question, lastRaw ?? undefined),
       correctStreak: card.correct_streak,
       resolvedAt: card.resolved_at,
       due: card.due,

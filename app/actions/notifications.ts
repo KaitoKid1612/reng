@@ -69,7 +69,7 @@ export async function savePushSubscriptionAction(subscription: unknown): Promise
   }
   const parsed = pushSubscriptionSchema.safeParse(subscription);
   if (!parsed.success) {
-    return { error: "Trình duyệt trả về đăng ký không hợp lệ. Bạn thử lại nhé." };
+    return { error: "Trình duyệt chưa bật được thông báo. Bạn thử lại nhé." };
   }
   try {
     const userAgent = (await headers()).get("user-agent") ?? "";

@@ -6,6 +6,6 @@ export type ReviewRating = (typeof REVIEW_RATINGS)[number];
 export const REVIEW_RATING_LABELS: Record<ReviewRating, string> = {
   1: "Quên",
   2: "Khó",
-  3: "Được",
+  3: "Nhớ",
   4: "Dễ",
 };

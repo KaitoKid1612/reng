@@ -29,7 +29,7 @@ function UsageItem({ lessonId, item, state }: UsageItemProps) {
       <div>
         <Link href={`/teach/classes/${item.classId}`}>{item.className}</Link>
         <p className="item-meta">
-          {state === "missing" && "Chưa có bài này."}
+          {state === "missing" && "Lớp chưa có bài này."}
           {state === "older" && "Đang dùng bản cũ, đã có bản mới hơn."}
           {state === "latest" && "Đang dùng bản mới nhất."}
         </p>

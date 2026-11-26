@@ -23,7 +23,9 @@ function describeDeadline(dueAt: string | null, allowLate: boolean) {
     return "Không có hạn nộp.";
   }
   const due = formatStudyDateTime(dueAt);
-  return allowLate ? `Hạn nộp: ${due} (nộp muộn vẫn được).` : `Hạn nộp: ${due}, sau hạn không nộp.`;
+  return allowLate
+    ? `Hạn nộp: ${due} (nộp muộn vẫn được).`
+    : `Hạn nộp: ${due}, quá hạn không nộp được nữa.`;
 }
 
 /**
@@ -32,16 +34,17 @@ function describeDeadline(dueAt: string | null, allowLate: boolean) {
  * Vietnam time and the link. Plain text, because chat apps keep line breaks but not formatting.
  */
 export function buildAssignmentMessage(input: AssignmentMessageInput) {
-  // "Lớp A" or "Lớp đọc hiểu" already say they are a class; "Tiếng Nhật – Lớp 1" does not.
-  const classLabel = /^lớp(\s|$)/iu.test(input.className.trim())
+  // "Lớp A" and "Tiếng Nhật – Lớp 1" already say they are a class; "Minna sơ cấp" does not.
+  const classLabel = /(^|\s)lớp(\s|$)/iu.test(input.className.trim())
     ? input.className.trim()
     : `Lớp ${input.className.trim()}`;
   if (input.exam) {
     return [
       `${classLabel}: có đề thi thử JLPT ${input.exam.level} mới «${input.title}», làm trong ${input.exam.timeLimitMinutes} phút từ lúc bấm Bắt đầu thi.`,
+      // The page hands an attempt in at the closing time, so a late start leaves little time.
       input.dueAt
-        ? `Bắt đầu thi trước ${formatStudyDateTime(input.dueAt)}.`
-        : "Không có hạn bắt đầu.",
+        ? `Đề đóng lúc ${formatStudyDateTime(input.dueAt)}; bài đang làm sẽ tự nộp lúc đó, nên bắt đầu sớm để đủ ${input.exam.timeLimitMinutes} phút.`
+        : "Đề không có giờ đóng.",
       `Làm bài tại: ${input.url}`,
     ].join("\n");
   }

@@ -45,8 +45,8 @@ export function KanaCharacterDetails({ script, selectedItem }: KanaCharacterDeta
       )}
       <AudioStatus />
       <p className="small muted">
-        Chưa có MP3? Trang sẽ thử giọng Nhật có sẵn trên thiết bị. Chất lượng phụ thuộc thiết bị của
-        bạn.
+        Chữ nào chưa có âm thanh ghi sẵn thì trang đọc bằng giọng tiếng Nhật có sẵn trên thiết bị,
+        nên chất lượng tùy máy.
       </p>
     </aside>
   );

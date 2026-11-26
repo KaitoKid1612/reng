@@ -2,10 +2,12 @@ import { cache } from "react";
 import Link from "next/link";
 
 import {
-  AssignmentStatusBadge,
   describeAssignmentKind,
   describeDue,
   describeOpenDue,
+  describeWorkAction,
+  inSentence,
+  WorkStatusBadge,
 } from "@/components/classroom/assignment-labels";
 import { CourseMap } from "@/components/classroom/course-map";
 import { LeaveClassButton } from "@/components/classroom/leave-class-button";
@@ -86,21 +88,22 @@ function LearnerAssignmentItem({
         </h3>
         <p className="item-meta">
           {describeAssignmentKind(item.assignment)},{" "}
-          {isToDo
-            ? describeOpenDue(item.assignment.dueAt, now)
-            : describeDue(item.assignment.dueAt)}
+          {inSentence(
+            isToDo
+              ? describeOpenDue(item.assignment.dueAt, now)
+              : describeDue(item.assignment.dueAt),
+          )}
           {item.latestPercent !== null && `, điểm ${formatPercent(item.latestPercent)}`}
         </p>
       </div>
       <div className="button-row item-actions">
-        <AssignmentStatusBadge status={item.status} />
+        <WorkStatusBadge status={item.status} retriesLeft={retriesLeft} />
         {isToDo && (
           <Link
             href={path}
             className={buttonVariants({ variant: isFirst ? "default" : "outline" })}
           >
-            {retriesLeft > 0 && `Làm lại (còn ${retriesLeft} lượt)`}
-            {retriesLeft === 0 && (item.status === "in_progress" ? "Làm tiếp" : "Làm bài")}
+            {describeWorkAction(item.status, retriesLeft)}
             <LinkPending />
           </Link>
         )}

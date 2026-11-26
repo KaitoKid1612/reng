@@ -102,8 +102,11 @@ test("a new learner joins through sign-up, email confirmation and the class code
   await page.goto("/join-class");
   await page.getByLabel("Mã lớp", { exact: true }).fill(state.codeA.toLowerCase());
   await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
-  await page.waitForURL(/\/sign-in\?next=/);
-  await page.getByRole("link", { name: "Tạo tài khoản học viên", exact: true }).click();
+  // A guest sees which class the code opens before making an account.
+  await page.waitForURL(/\/join-class\?code=/);
+  await expect(page.getByRole("heading", { name: `Lớp A ${RUN_ID}` })).toBeVisible();
+  await page.getByRole("link", { name: "Tạo tài khoản để vào lớp", exact: true }).click();
+  await page.waitForURL(/\/sign-up\?next=/);
   await page.getByLabel("Họ tên", { exact: true }).fill(studentA.name);
   await page.getByLabel("Email", { exact: true }).fill(studentA.email);
   await page.getByLabel("Mật khẩu", { exact: true }).fill(studentA.password);
@@ -112,7 +115,9 @@ test("a new learner joins through sign-up, email confirmation and the class code
 
   await page.goto(await readEmailLink(studentA.email, "Xác nhận email Reng"));
   await page.waitForURL(/\/join-class\?code=/);
-  await expect(page.getByLabel("Mã lớp", { exact: true })).toHaveValue(state.codeA);
+  // Back from the email, the page names the class again and one button joins it.
+  await expect(page.getByRole("heading", { name: `Lớp A ${RUN_ID}` })).toBeVisible();
+  await expect(page.getByLabel("Mã lớp", { exact: true })).toHaveCount(0);
   await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
   await page.waitForURL(`**/classes/${state.classA}`);
   await expect(page.getByRole("heading", { name: `Lớp A ${RUN_ID}` })).toBeVisible();
@@ -183,7 +188,7 @@ test("practice feedback, mistake book, two-tab conflict and offline saving", asy
   await expect(page.getByText("Chuỗi đúng: 1/3.")).toBeVisible();
 
   await page.goto(`/assignments/${state.practiceId}`);
-  await page.getByRole("button", { name: "Làm lại lượt mới", exact: true }).click();
+  await page.getByRole("button", { name: "Làm lại", exact: true }).click();
   await expect(page.getByRole("radio", { name: "です", exact: true })).toBeEnabled();
   const secondTab = await context.newPage();
   await secondTab.goto(`/assignments/${state.practiceId}`);
@@ -237,14 +242,14 @@ test("test answers and results stay private until the feedback time", async ({ p
   expect(resultHtml).not.toContain("Đáp án:");
   await page.goto("/mistakes");
   await expect(
-    page.getByText(`1 câu sai trong “Kiểm tra nhanh ${RUN_ID}” sẽ hiện sau`),
+    page.getByText(`Câu sai trong “Kiểm tra nhanh ${RUN_ID}” sẽ hiện sau`),
   ).toBeVisible();
   await expect(page.getByText(TEST_PROMPT)).toHaveCount(0);
 
   // The learner's own data file follows the same rule: the graded practice comes with its answers,
   // the test only with its receipt until the feedback time, and no internal field is in it.
   await page.goto("/settings/account");
-  const exportLink = page.getByRole("link", { name: "Tải tệp dữ liệu (JSON)" });
+  const exportLink = page.getByRole("link", { name: "Tải dữ liệu của tôi" });
   await expect(exportLink).toHaveAttribute("href", "/api/me/export");
   const exported = await page.request.get("/api/me/export");
   expect(exported.status()).toBe(200);

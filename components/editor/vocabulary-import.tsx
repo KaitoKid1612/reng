@@ -88,7 +88,7 @@ export function VocabularyImport({ lessons, initialLessonId }: VocabularyImportP
       if (outcome.status === "conflict") {
         setMessage({
           tone: "error-text",
-          text: "Bài vừa được sửa ở nơi khác. Tải lại trang rồi nhập lại; dữ liệu dán vẫn ở đây.",
+          text: "Bài vừa được sửa ở nơi khác. Sao chép bảng đã dán ra trước, tải lại trang rồi dán và nhập lại.",
         });
         return;
       }
@@ -207,7 +207,7 @@ export function VocabularyImport({ lessons, initialLessonId }: VocabularyImportP
         <p role="status" className={message.tone}>
           {message.text}{" "}
           {message.tone === "form-notice" && lesson && (
-            <Link href={`/teach/lessons/${lesson.id}/edit`}>Mở editor để thêm vào slide</Link>
+            <Link href={`/teach/lessons/${lesson.id}/edit`}>Mở trình soạn để thêm vào slide</Link>
           )}
         </p>
       )}

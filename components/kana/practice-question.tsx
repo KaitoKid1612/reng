@@ -92,7 +92,7 @@ export function PracticeQuestion({
           aria-describedby={inputError ? "input-error" : "romaji-hint"}
         />
         <p id="romaji-hint" className="small muted">
-          Gõ chữ Latin, ví dụ: shi, tsu, kya.
+          Gõ chữ Latinh, ví dụ: shi, tsu, kya.
         </p>
         {inputError && (
           <p id="input-error" className="error-text" role="alert">
@@ -123,7 +123,7 @@ export function PracticeQuestion({
             <Volume2 size={18} aria-hidden="true" />
             Nghe cách đọc
           </Button>
-          <AudioStatus />
+          <AudioStatus idleMessage="Bấm Nghe cách đọc để nghe chữ này." />
         </div>
       )}
     </div>

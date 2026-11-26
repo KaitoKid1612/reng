@@ -16,13 +16,13 @@ export function DailyPracticeStatus({
   if (!source) {
     return (
       <p className="notice-panel" role="status">
-        Lớp chưa có bài đang mở có câu chọn hoặc điền từ, nên Reng chưa giao được bài luyện. Thêm
-        bài có câu hỏi vào lớp trước.
+        Lớp chưa có bài đang mở có câu luyện tự chấm, nên Reng chưa giao được bài luyện. Thêm bài có
+        câu hỏi vào lớp trước.
       </p>
     );
   }
   const state = dailySourceState(pinnedLessonId, source.lessonId);
-  const described = `«${source.title}» (${source.questionCount} câu chọn/điền/sắp xếp)`;
+  const described = `“${source.title}” (${source.questionCount} câu luyện)`;
   return (
     <>
       {state === "automatic" && (
@@ -38,8 +38,10 @@ export function DailyPracticeStatus({
       )}
       {state === "fallback" && (
         <p className="notice-panel" role="status">
-          Bài đã chọn «{pinnedTitle ?? "không còn trong lớp"}» chưa mở hoặc chưa có câu
-          chọn/điền/sắp xếp, nên Reng tạm lấy từ {described}.
+          {pinnedTitle
+            ? `Bài đã chọn “${pinnedTitle}” chưa mở hoặc chưa có câu luyện`
+            : "Bài đã chọn không còn trong lớp"}
+          , nên Reng tạm lấy từ {described}.
         </p>
       )}
       {repeatsEveryDay(source.questionCount, size) && (

@@ -27,7 +27,7 @@ export function TeacherActivationForm({ requiresApproval }: TeacherActivationFor
           ? "Trong giai đoạn thử nghiệm, quản trị viên duyệt từng tài khoản giáo viên trước khi mở quyền dạy."
           : "Kích hoạt bằng email đã xác minh."}{" "}
         Bạn vẫn có thể tham gia lớp và học bằng tài khoản này. Việc kích hoạt không phải chứng nhận
-        chuyên môn giáo viên. Phiên bản xác nhận: 29/10/2026.
+        chuyên môn giáo viên. Nội dung cam kết cập nhật ngày 29/10/2026.
       </p>
       <ActionFeedback state={state} />
       <Button type="submit" disabled={isPending}>

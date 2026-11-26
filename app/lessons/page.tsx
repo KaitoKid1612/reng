@@ -59,7 +59,7 @@ export default async function LessonsPage() {
                 href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}#1`}
                 className={buttonVariants({ variant: "outline" })}
               >
-                Trình chiếu
+                Xem slide
               </Link>
             </div>
           </article>

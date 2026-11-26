@@ -83,7 +83,7 @@ export function TeachingPanel({
           >
             {resumeSlide > 1
               ? `Trình chiếu tiếp từ slide ${resumeSlide}`
-              : `Trình chiếu «${sessionLesson.title}»`}
+              : `Trình chiếu “${sessionLesson.title}”`}
           </Link>
         ) : (
           <Link href="#class-content" className={buttonVariants({ variant: "outline" })}>

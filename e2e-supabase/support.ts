@@ -122,7 +122,7 @@ export async function becomeTeacher(page: Page, email: string) {
 export async function createBlankLesson(page: Page, order: number, title: string) {
   await page.getByLabel("Thứ tự trong khóa", { exact: true }).fill(String(order));
   await page.getByLabel("Tiêu đề tiếng Việt", { exact: true }).fill(title);
-  await page.getByRole("button", { name: "Tạo và mở editor", exact: true }).click();
+  await page.getByRole("button", { name: "Tạo bài và mở trình soạn", exact: true }).click();
   await page.waitForURL(/\/teach\/lessons\/[a-z0-9-]+\/edit$/);
   const lessonId = /\/teach\/lessons\/([a-z0-9-]+)\/edit$/.exec(new URL(page.url()).pathname)?.[1];
   if (!lessonId) {

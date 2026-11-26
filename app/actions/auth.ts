@@ -111,6 +111,14 @@ async function createAccount(_state: AuthFormState, formData: FormData): Promise
   if (error && error.code === "weak_password") {
     return { error: "Mật khẩu quá dễ đoán. Chọn mật khẩu dài hơn hoặc khó đoán hơn." };
   }
+  // Without email confirmation (production) Supabase says when the email is taken; with it, the
+  // answer looks like a new sign-up so nothing is revealed.
+  if (error && (error.code === "user_already_exists" || error.code === "email_exists")) {
+    return {
+      error:
+        "Email này đã có tài khoản. Bấm Đăng nhập bên dưới; nếu quên mật khẩu, dùng Quên mật khẩu? ở trang Đăng nhập.",
+    };
+  }
   if (error) {
     return { error: "Chưa tạo được tài khoản. Bạn thử lại sau ít phút nhé." };
   }
@@ -235,7 +243,7 @@ export async function requestPasswordReset(
   }
   return {
     notice:
-      "Nếu email này có tài khoản, thư đặt lại mật khẩu sẽ đến trong vài phút. Không thấy thư (kể cả mục Spam) thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm.",
+      "Nếu email này có tài khoản, thư đặt lại mật khẩu sẽ đến trong vài phút. Không thấy thư (kể cả mục Spam) thì nhắn giáo viên để nhờ quản trị viên Reng cấp mật khẩu tạm.",
   };
 }
 

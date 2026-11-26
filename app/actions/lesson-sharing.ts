@@ -29,7 +29,7 @@ const FAILURE = "Chưa thực hiện được. Kiểm tra kết nối rồi th�
 const ERROR_MESSAGES: Record<string, string> = {
   not_found: NOT_FOUND,
   version_not_found: "Phiên bản không thuộc bài này. Tải lại trang rồi chọn lại.",
-  reshare_not_allowed: "Bài sao chép từ giáo viên khác chưa được chia sẻ tiếp.",
+  reshare_not_allowed: "Bài sao chép từ giáo viên khác không chia sẻ tiếp được.",
   quota_exceeded: "Tài khoản đã đạt giới hạn số bài. Lưu trữ bớt bài cũ rồi thử lại.",
   request_conflict: "Yêu cầu này đã được gửi với nội dung khác. Tải lại trang rồi thử lại.",
 };
@@ -98,7 +98,10 @@ export async function shareLessonAction(
     return { error: describeError(error), values };
   }
   refresh();
-  return { notice: "Đã chia sẻ phiên bản cho giáo viên nhận." };
+  return {
+    notice:
+      "Đã chia sẻ. Bài hiện ở mục Bài được chia sẻ với tôi của người nhận; Reng không gửi email báo.",
+  };
 }
 
 const revokeSchema = z.object({ shareId: z.uuid() });

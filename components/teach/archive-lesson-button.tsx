@@ -51,8 +51,8 @@ export function ArchiveLessonButton({
     <form action={action} className="inline-form">
       <input type="hidden" name="lessonId" value={lessonId} />
       <p className="small">
-        Lưu trữ «{title}»? Bài rời danh sách và không tính vào hạn mức; đưa trở lại được ở mục Bài
-        đã lưu trữ.
+        Lưu trữ “{title}”? Bài rời danh sách và không tính vào giới hạn số bài; đưa trở lại được ở
+        mục Bài đã lưu trữ.
       </p>
       <div className="button-row">
         <Button type="submit" name="operation" value="archive" disabled={isPending}>

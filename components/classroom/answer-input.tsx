@@ -26,7 +26,7 @@ interface AnswerInputProps {
 }
 
 const MODE_HINTS: Record<InputMode, string> = {
-  text: "Nhập văn bản theo yêu cầu của đề; giữ dấu tiếng Việt. Không tự chuyển sang kana.",
+  text: "Nhập văn bản theo yêu cầu của đề; giữ dấu tiếng Việt. Ô này không đổi chữ sang kana.",
   chinese: "Dùng bộ gõ tiếng Trung hoặc dán chữ Hán; giữ đúng giản thể/phồn thể theo bài.",
   pinyin:
     "Nhập pinyin có dấu thanh, ví dụ nǐ hǎo. Không có dấu trên bàn phím thì gõ số thanh sau mỗi âm: ni3 hao3 → nǐ hǎo, v thay cho ü (lv4 → lǜ).",

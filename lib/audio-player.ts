@@ -93,7 +93,6 @@ export function createAudioPlayer({
     const spokenText = "kana" in item ? item.kana : item.text;
     const locale = ("kana" in item ? undefined : item.locale) ?? "ja-JP";
     const deviceVoice = DEVICE_VOICES[locale];
-    const practiceHint = locale === "ja-JP" ? "luyện romaji" : "luyện theo pinyin";
     update("loading", `Đang chuẩn bị âm ${label}…`);
     const hash = item.audio || assets[item.id];
 
@@ -102,7 +101,7 @@ export function createAudioPlayer({
       const isLocalPath = base.startsWith("/") && !base.startsWith("//");
 
       if (!isLocalPath && !/^https:\/\//.test(base)) {
-        fail("Nguồn audio chưa được cấu hình đúng. Bạn vẫn có thể luyện chữ.");
+        fail("Chưa phát được âm thanh. Tải lại trang rồi bấm Nghe lại.");
         return;
       }
 
@@ -132,7 +131,7 @@ export function createAudioPlayer({
     }
 
     if (!("speechSynthesis" in window)) {
-      fail(`Chưa có MP3 và thiết bị không hỗ trợ đọc chữ. Bạn vẫn có thể ${practiceHint}.`);
+      fail("Chưa có âm thanh ghi sẵn và thiết bị này không đọc được chữ.");
       return;
     }
 
@@ -166,15 +165,15 @@ export function createAudioPlayer({
       // The timeout only waits for speech to start; a long sentence may then take its time.
       utterance.onstart = () => {
         window.clearTimeout(speechTimeout);
-        update("playing", `Đang dùng giọng ${deviceVoice.name} của thiết bị (dự phòng).`);
+        update("playing", `Đang đọc bằng giọng ${deviceVoice.name} của thiết bị.`);
       };
       utterance.onend = () => {
         window.clearTimeout(speechTimeout);
-        update("done", `Đã phát bằng giọng ${deviceVoice.name} của thiết bị (dự phòng).`);
+        update("done", `Đã phát bằng giọng ${deviceVoice.name} của thiết bị.`);
       };
       utterance.onerror = () => fail("Giọng thiết bị chưa phát được. Bấm Nghe lại để thử.");
       speechTimeout = window.setTimeout(() => {
-        fail(`Giọng thiết bị không phản hồi. Bạn vẫn có thể ${practiceHint}.`);
+        fail("Giọng đọc của thiết bị không phản hồi. Bấm Nghe lại để thử.");
       }, 10000);
 
       try {
@@ -200,7 +199,7 @@ export function createAudioPlayer({
     speech.addEventListener("voiceschanged", playDeviceVoice);
     const voiceTimeout = window.setTimeout(() => {
       fail(
-        `Thiết bị chưa có giọng ${deviceVoice.name} và MP3 chưa được cấu hình. Bạn vẫn có thể ${practiceHint}.`,
+        `Thiết bị chưa có giọng ${deviceVoice.name}. Cài giọng đọc ${deviceVoice.name} trong phần chuyển văn bản thành giọng nói của máy rồi bấm Nghe lại.`,
       );
     }, 1500);
     playDeviceVoice();

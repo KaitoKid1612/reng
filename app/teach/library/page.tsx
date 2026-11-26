@@ -20,7 +20,7 @@ export default async function TeachingLibraryPage() {
         <div>
           <h1>Bài được chia sẻ với tôi</h1>
           <p className="muted">
-            <Link href="/teach">Giảng dạy</Link>. Bạn xem đúng phiên bản giáo viên đã chia sẻ. Muốn
+            <Link href="/teach">Giảng dạy</Link> · Bạn xem đúng phiên bản giáo viên đã chia sẻ. Muốn
             dạy lớp mình, hãy sao chép thành bài của bạn rồi kiểm tra và xuất bản lại.
           </p>
         </div>

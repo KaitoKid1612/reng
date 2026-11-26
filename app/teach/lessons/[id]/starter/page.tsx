@@ -23,8 +23,8 @@ export default async function StarterRefreshPage({ params }: StarterRefreshPageP
         <div>
           <h1>Cập nhật từ bài mẫu: {refresh.title}</h1>
           <p>
-            <Link href="/teach">Giảng dạy</Link>,{" "}
-            <Link href={`/teach/lessons/${refresh.lessonId}/edit`}>soạn bài</Link>
+            <Link href="/teach">Giảng dạy</Link> ·{" "}
+            <Link href={`/teach/lessons/${refresh.lessonId}/edit`}>Soạn bài</Link>
           </p>
         </div>
       </div>
@@ -90,7 +90,7 @@ export default async function StarterRefreshPage({ params }: StarterRefreshPageP
               bài đã giao không đổi.
             </li>
             <li>
-              Sau khi thay: xem lại, xuất bản, rồi bấm Cập nhật lên phiên bản mới ở mục Dùng bài
+              Sau khi thay: xem lại, xuất bản, rồi bấm Cập nhật lên bản mới nhất ở mục Dùng bài
               trong lớp khi muốn học viên thấy.
             </li>
           </ul>

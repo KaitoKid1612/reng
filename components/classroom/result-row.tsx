@@ -48,6 +48,11 @@ export function ResultRow({ item, number, grammarLinks }: ResultRowProps) {
           </strong>
         </p>
       )}
+      {item.hint && (
+        <p className="answer-hint">
+          <strong>{item.hint}</strong>
+        </p>
+      )}
       {item.transcript !== null && (
         <p className="transcript">
           Lời nghe:{" "}

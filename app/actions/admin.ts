@@ -1,8 +1,10 @@
 "use server";
 
 import { refresh } from "next/cache";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { TEACHER_STATUS_OUTCOMES } from "@/lib/admin-labels";
 import { getCurrentAccount } from "@/lib/server/account";
 import {
   isPlatformAdmin,
@@ -28,7 +30,8 @@ async function requireAdminId() {
   return account.id;
 }
 
-const statusSchema = z.object({ userId: z.uuid(), status: z.enum(["active", "suspended"]) });
+// The outcome names the change, so the new status follows from it and cannot disagree with it.
+const statusSchema = z.object({ userId: z.uuid(), outcome: z.enum(TEACHER_STATUS_OUTCOMES) });
 
 export async function setTeacherStatusAction(
   _state: AdminActionState,
@@ -37,20 +40,20 @@ export async function setTeacherStatusAction(
   const adminId = await requireAdminId();
   const parsed = statusSchema.safeParse({
     userId: formData.get("userId"),
-    status: formData.get("status"),
+    outcome: formData.get("outcome"),
   });
   if (!adminId || !parsed.success) {
     return { error: DENIED };
   }
+  const { outcome } = parsed.data;
+  const status = outcome === "approved" || outcome === "reopened" ? "active" : "suspended";
   try {
-    await setTeacherStatus(adminId, parsed.data.userId, parsed.data.status);
+    await setTeacherStatus(adminId, parsed.data.userId, status);
   } catch {
     return { error: FAILURE };
   }
-  refresh();
-  return {
-    notice: parsed.data.status === "active" ? "Đã mở quyền dạy." : "Đã tạm dừng quyền dạy.",
-  };
+  const query = new URLSearchParams({ changed: parsed.data.userId, outcome });
+  redirect(`/admin/teachers?${query.toString()}`);
 }
 
 const planSchema = z.object({

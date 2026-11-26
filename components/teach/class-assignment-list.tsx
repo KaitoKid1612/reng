@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
+import {
+  describeAssignmentKind,
+  describeDue,
+  inSentence,
+} from "@/components/classroom/assignment-labels";
 import { CloseAssignmentButton } from "@/components/teach/close-assignment-button";
 import { CopyMessageButton } from "@/components/teach/copy-message-button";
 import { formatPercent } from "@/lib/grading/grade";
@@ -72,7 +76,7 @@ function AssignmentItem({ classId, assignment, message }: AssignmentItemProps) {
       <div>
         <h3>{assignment.title}</h3>
         <p className="item-meta">
-          {describeAssignmentKind(assignment)}, {describeDue(assignment.dueAt)},{" "}
+          {describeAssignmentKind(assignment)}, {inSentence(describeDue(assignment.dueAt))},{" "}
           {assignment.submittedCount} bài nộp, {assignment.openAttemptCount} đang làm
           {assignment.status === "closed" ? ", đã đóng" : ""}
         </p>

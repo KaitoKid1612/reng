@@ -11,6 +11,9 @@ import type { ScheduleSlot } from "@/lib/class-schedule";
 
 // A lesson a teacher opened stays "new" for a week, then lives on the class page only.
 const NEW_LESSON_DAYS = 7;
+// Work due within this many days joins today's list after the urgent work, so a mock exam open for
+// a week is in view from its first day, not only on its last.
+const UPCOMING_WORK_DAYS = 7;
 // "Hôm nay học gì" stays short; the full lists follow on the page.
 export const MAX_TODAY_ASSIGNMENTS = 3;
 export const MAX_TODAY_LESSONS = 3;
@@ -162,25 +165,42 @@ export function foldMissedDailySets<Entry extends OpenWorkEntry>(
   return { listed, missed };
 }
 
+// Open-ended work sorts after any deadline.
+function dueTime(item: TodayAssignment) {
+  return item.dueAt === null ? Number.MAX_SAFE_INTEGER : Date.parse(item.dueAt);
+}
+
+// Started work, work due by the end of today, late work the teacher still accepts, then work due
+// in the coming week by its deadline, and last open-ended work. A daily set from an earlier day the
+// learner never started stays out (see isStaleDailySet).
 function todayAssignments(input: TodayInput, names: Map<string, string>, now: Date) {
-  const endOfToday = studyDayStart(shiftStudyDay(toStudyDay(now), 1));
+  const today = toStudyDay(now);
+  const endOfToday = studyDayStart(shiftStudyDay(today, 1));
+  const horizon = studyDayStart(shiftStudyDay(today, UPCOMING_WORK_DAYS + 1));
   const rank = (item: TodayAssignment) => {
     if (item.inProgress) {
       return 0;
     }
-    return item.dueAt !== null && Date.parse(item.dueAt) <= now.getTime() ? 2 : 1;
+    if (item.dueAt === null) {
+      return 4;
+    }
+    const due = Date.parse(item.dueAt);
+    if (due <= now.getTime()) {
+      return 2;
+    }
+    return due < endOfToday ? 1 : 3;
   };
   const due = input.openAssignments
     .filter((item) => {
       if (item.inProgress) {
         return true;
       }
-      if (item.dueAt === null || Date.parse(item.dueAt) >= endOfToday) {
+      if (isStaleDailySet(item, now)) {
         return false;
       }
-      return !isStaleDailySet(item, now);
+      return item.dueAt === null || Date.parse(item.dueAt) < horizon;
     })
-    .toSorted((first, second) => rank(first) - rank(second));
+    .toSorted((first, second) => rank(first) - rank(second) || dueTime(first) - dueTime(second));
   const items = due.slice(0, MAX_TODAY_ASSIGNMENTS).map((item): TodayItem => ({
     kind: "assignment",
     assignmentId: item.id,
@@ -273,6 +293,14 @@ export function describeTodayAssignment(item: TodayAssignmentItem, now: Date) {
   return [item.inProgress ? "Đang làm dở" : "", retry, due].filter(Boolean).join(" · ");
 }
 
+// The same words as the class page: a practice below the pass mark is done again, not started.
+function describeTodayAction(item: TodayAssignmentItem) {
+  if (item.inProgress) {
+    return "Làm tiếp";
+  }
+  return item.retriesLeft > 0 ? "Làm lại" : "Làm bài";
+}
+
 // "Mở hôm nay", "Mở hôm qua" or "Mở ngày 02/11", by Vietnam calendar day.
 export function describeLessonOpened(openedAt: string, now: Date) {
   const day = toStudyDay(openedAt);
@@ -355,7 +383,7 @@ export function toTodayRows(items: readonly TodayItem[], now: Date, showClass: b
           title: item.title,
           href: `/assignments/${item.assignmentId}`,
           meta: `${classPrefix(item.className)}${describeTodayAssignment(item, now)}`,
-          action: item.inProgress ? "Làm tiếp" : "Làm bài",
+          action: describeTodayAction(item),
           isAction: true,
         };
       case "lesson":

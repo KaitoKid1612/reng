@@ -45,17 +45,16 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
       <div className="page-heading">
         <div>
           <h1>Sổ lỗi</h1>
-          <p>
-            Câu từng trả lời sai. Đúng 3 lần liên tiếp khi ôn thì câu được đánh dấu đã giải quyết.
-          </p>
+          <p>Câu từng trả lời sai. Đúng 3 lần liên tiếp khi ôn thì câu được tính là đã thuộc.</p>
         </div>
         <Link href="/review" className={buttonVariants()}>
           Ôn ngay
         </Link>
       </div>
       {book.hidden.map((group) => (
+        // No count: before the results are out, the number of wrong answers would give the score.
         <p key={group.assignmentTitle} className="notice-panel">
-          {group.count} câu sai trong “{group.assignmentTitle}” sẽ hiện sau
+          Câu sai trong “{group.assignmentTitle}” sẽ hiện sau
           {group.feedbackAt ? ` ${formatStudyDateTime(group.feedbackAt)}` : " khi có kết quả"}.
         </p>
       ))}
@@ -122,6 +121,11 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
                     <FuriganaText text={entry.correctText} />
                   </strong>
                 </p>
+                {entry.lastAnswerHint && (
+                  <p className="answer-hint">
+                    <strong>{entry.lastAnswerHint}</strong>
+                  </p>
+                )}
                 {entry.transcript && (
                   <p className="transcript">
                     Lời nghe:{" "}
@@ -140,7 +144,7 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
       </section>
       {resolved.length > 0 && (
         <details className="section-block older-assignments">
-          <summary>Đã giải quyết ({resolved.length})</summary>
+          <summary>Đã thuộc ({resolved.length})</summary>
           <ul className="item-list">
             {resolved.map((entry) => (
               <li key={`${entry.assignmentId}:${entry.view.id}`}>
@@ -150,7 +154,7 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
                   </p>
                   <p className="item-meta">{entry.assignmentTitle}</p>
                 </div>
-                <span className="status-badge status-correct">Đã giải quyết</span>
+                <span className="status-badge status-correct">Đã thuộc</span>
               </li>
             ))}
           </ul>

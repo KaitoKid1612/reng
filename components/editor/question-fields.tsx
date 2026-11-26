@@ -29,8 +29,8 @@ export function QuestionFields({ content, dispatch, createId }: QuestionFieldsPr
   return (
     <div>
       <p className="small muted">
-        Câu luyện công khai dùng cho slide và bài luyện. Câu kiểm tra cần giữ kín đáp án nhập ở màn
-        hình giao bài.
+        Câu luyện dùng cho slide và bài luyện tập; ai đọc được bài cũng xem được đáp án. Câu kiểm
+        tra cần giữ kín đáp án nhập ở màn hình giao bài.
       </p>
       <p className="small muted">{QUESTION_FURIGANA_HINT}</p>
       {content.questions.map((question, index) => {

@@ -138,7 +138,7 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           href={`/lessons/${lesson.lessonId}/slide?version=${lesson.id}`}
           className={buttonVariants()}
         >
-          Trình chiếu
+          Xem slide
         </Link>
       </div>
       {lesson.isSample && (
@@ -146,11 +146,11 @@ export function LessonReader({ lesson, progress, classId }: LessonReaderProps) {
           Bài mẫu tự biên soạn, đang chờ giáo viên duyệt nội dung và phát âm.
         </p>
       )}
-      <AudioStatus />
+      <AudioStatus idleMessage="Bấm Nghe cạnh từ hoặc câu để nghe đọc mẫu." />
       {!hasReading && (
         <p className="notice-panel">
-          Bài này là bộ câu hỏi (ngân hàng ôn hoặc đề thi), không có phần đọc. Câu của bài đến với
-          bạn qua bài luyện hằng ngày, bài tập và đề thi thử của lớp.
+          Bài này chỉ gồm câu hỏi ôn tập, không có phần đọc. Bạn sẽ gặp các câu này trong bài luyện
+          tập hằng ngày, bài tập và đề thi thử của lớp.
         </p>
       )}
       {lesson.content.vocab.length > 0 && (

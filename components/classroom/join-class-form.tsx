@@ -7,31 +7,37 @@ import { Button } from "@/components/ui/button";
 
 interface JoinClassFormProps {
   initialCode: string;
+  // The page already shows the class behind the code, so only the button is left to press.
+  isConfirm?: boolean;
 }
 
-export function JoinClassForm({ initialCode }: JoinClassFormProps) {
+export function JoinClassForm({ initialCode, isConfirm = false }: JoinClassFormProps) {
   const [state, action, isPending] = useActionState(joinClassAction, {});
   return (
-    <form action={action} className="form-card">
-      <div className="field">
-        <label htmlFor="code">Mã lớp</label>
-        <input
-          key={state.values?.code ?? ""}
-          id="code"
-          name="code"
-          defaultValue={state.values?.code ?? initialCode}
-          autoComplete="off"
-          autoCapitalize="characters"
-          spellCheck={false}
-          required
-          maxLength={12}
-          placeholder="ABCD-EFGH"
-          aria-describedby="code-hint"
-        />
-        <p id="code-hint" className="small muted">
-          8 ký tự, không phân biệt chữ hoa/thường; có thể bỏ dấu gạch.
-        </p>
-      </div>
+    <form action={action} className={isConfirm ? undefined : "form-card"}>
+      {isConfirm ? (
+        <input type="hidden" name="code" value={initialCode} />
+      ) : (
+        <div className="field">
+          <label htmlFor="code">Mã lớp</label>
+          <input
+            key={state.values?.code ?? ""}
+            id="code"
+            name="code"
+            defaultValue={state.values?.code ?? initialCode}
+            autoComplete="off"
+            autoCapitalize="characters"
+            spellCheck={false}
+            required
+            maxLength={12}
+            placeholder="ABCD-EFGH"
+            aria-describedby="code-hint"
+          />
+          <p id="code-hint" className="small muted">
+            8 ký tự, không phân biệt chữ hoa/thường; có thể bỏ dấu gạch.
+          </p>
+        </div>
+      )}
       {state.error && (
         <p role="alert" className="error-text">
           {state.error}

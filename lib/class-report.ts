@@ -2,9 +2,9 @@ import { toPercent } from "@/lib/grading/grade";
 import { formatStudyDay, studyDayStart, studyWeekStart } from "@/lib/study-days";
 
 export const LEARNER_LABELS = {
-  abandoned: "Bỏ bài",
+  abandoned: "Lỡ 2 bài gần nhất",
   failing: "Chưa đạt",
-  weak_listening: "Yếu phần nghe",
+  weak_listening: "Cần luyện nghe",
   passing: "Đạt",
   no_data: "Chưa có dữ liệu",
 } as const;
@@ -316,7 +316,7 @@ export function buildReportCsv(
     "Được giao",
     "Điểm TB (%)",
     ...assignments.map((assignment) => `${assignment.title} (%)`),
-    "Nhãn",
+    "Tình trạng",
     "Ngày học gần nhất",
   ];
   const rows = reports.map((report) => [

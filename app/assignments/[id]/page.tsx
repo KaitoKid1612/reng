@@ -63,7 +63,10 @@ function describeFeedback(view: StudentAssignmentView) {
   if (view.assignment.feedbackPolicy === "after_submit") {
     return "Xem điểm và giải thích ngay sau khi nộp.";
   }
-  return `Điểm và đáp án công bố sau hạn nộp (${describeDue(view.assignment.dueAt)}).`;
+  const { dueAt } = view.assignment;
+  return dueAt
+    ? `Điểm và đáp án công bố sau hạn nộp, lúc ${formatStudyDateTime(dueAt)}.`
+    : "Điểm và đáp án công bố sau hạn nộp.";
 }
 
 export default async function AssignmentPage({ params }: AssignmentPageProps) {
@@ -95,7 +98,7 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
     openAttempt?.studyLevel && openAttempt.sections
       ? planStudyPacing(openAttempt.studyLevel, openAttempt.sections, openAttempt.startedAt)
       : [];
-  let startLabel = hasSubmitted ? "Làm lại lượt mới" : "Bắt đầu làm bài";
+  let startLabel = hasSubmitted ? "Làm lại" : "Bắt đầu làm bài";
   if (exam) {
     startLabel = "Bắt đầu thi";
   }
@@ -105,8 +108,8 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
         <div>
           <h1>{assignment.title}</h1>
           <p>
-            <Link href={`/classes/${assignment.classId}`}>{view.className}</Link>, bài “
-            {view.lessonTitle}”
+            <Link href={`/classes/${assignment.classId}`}>{view.className}</Link> ·{" "}
+            {view.lessonTitle}
           </p>
         </div>
       </div>
@@ -244,7 +247,9 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
             )}
           </div>
           {hasSubmitted && !blocker && (
-            <p className="small muted">Lượt mới sẽ thay điểm của lượt trước khi bạn nộp.</p>
+            <p className="small muted">
+              Khi bạn nộp lượt mới, điểm lượt mới sẽ thay điểm cũ, kể cả khi thấp hơn.
+            </p>
           )}
         </div>
       )}

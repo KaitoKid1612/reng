@@ -62,13 +62,13 @@ test("a pinned daily source stays when the next lesson opens in the class", asyn
   await page.getByLabel("Mỗi ngày tự giao").selectOption("60");
   await page.getByRole("button", { name: "Lưu", exact: true }).click();
   await expect(
-    page.getByText(`tự động từ bài mới nhất đã mở có câu hỏi: «${LESSON_11}»`),
+    page.getByText(`tự động từ bài mới nhất đã mở có câu hỏi: “${LESSON_11}”`),
   ).toBeVisible();
   await page.getByLabel("Lấy câu từ").selectOption({ label: LESSON_11 });
   await page.getByRole("button", { name: "Lưu", exact: true }).click();
   await expect(page.getByText("Đã bật: mỗi sáng 6:00 Reng tự giao 60 câu")).toBeVisible();
   await expect(
-    page.getByText(`Đang lấy câu từ «${LESSON_11}» (50 câu chọn/điền/sắp xếp), giữ nguyên`),
+    page.getByText(`Đang lấy câu từ “${LESSON_11}” (50 câu luyện), giữ nguyên`),
   ).toBeVisible();
   // Fifty questions for a sixty-question day: every question comes back daily.
   await expect(page.getByText("ít hơn 60 câu mỗi ngày")).toBeVisible();
@@ -86,11 +86,11 @@ test("a pinned daily source stays when the next lesson opens in the class", asyn
 
   await addToClass(page, state.classId, state.lesson12);
   await page.goto(`/teach/classes/${state.classId}`);
-  await expect(page.getByText(`Đang lấy câu từ «${LESSON_11}»`)).toBeVisible();
+  await expect(page.getByText(`Đang lấy câu từ “${LESSON_11}”`)).toBeVisible();
   await expect(page.getByLabel("Lấy câu từ")).toHaveValue(state.lesson11);
   await page.getByLabel("Lấy câu từ").selectOption("");
   await page.getByRole("button", { name: "Lưu", exact: true }).click();
-  await expect(page.getByText(`từ bài mới nhất đã mở có câu hỏi: «${LESSON_12}»`)).toBeVisible();
+  await expect(page.getByText(`từ bài mới nhất đã mở có câu hỏi: “${LESSON_12}”`)).toBeVisible();
   await page.context().close();
 });
 
@@ -205,9 +205,10 @@ test("a teacher studies in a self-study class, never as a learner of their own c
   browser,
 }) => {
   const page = await teacherPage(browser);
+  // The invite page answers at once: no join button for the class's own teacher.
   await page.goto(`/join-class?code=${state.code}`);
-  await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
   await expect(page.getByText("Đây là lớp bạn đang dạy")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Vào lớp", exact: true })).toHaveCount(0);
 
   await page.goto("/teach/classes");
   await page.getByLabel("Tên lớp", { exact: true }).fill(SELF_STUDY_NAME);

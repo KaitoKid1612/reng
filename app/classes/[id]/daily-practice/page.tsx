@@ -116,7 +116,7 @@ function DayResult({ day, view, grammarLinks, path, outcome, now }: DayResultPro
             {view.hasOpenAttempt ? "Làm tiếp" : "Làm bài"}
           </Link>
         ) : (
-          <p className="muted">Bài đã đóng nên không nộp thêm được.</p>
+          <p className="muted">Bài của ngày này đã đóng, không nộp được nữa.</p>
         )}
       </div>
     );
@@ -181,7 +181,7 @@ function DayResult({ day, view, grammarLinks, path, outcome, now }: DayResultPro
         </p>
         {canStart && (
           <Link href={workHref} className={buttonVariants({ variant: "outline" })}>
-            Làm lượt mới
+            Làm lại
           </Link>
         )}
       </div>

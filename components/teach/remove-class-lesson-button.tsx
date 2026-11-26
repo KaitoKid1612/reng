@@ -35,7 +35,7 @@ export function RemoveClassLessonButton({
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="lessonId" value={lessonId} />
       <p className="small">
-        Gỡ «{title}» khỏi lớp? Học viên không còn thấy bài; bài vẫn còn trong danh sách bài của bạn
+        Gỡ “{title}” khỏi lớp? Học viên không còn thấy bài; bài vẫn còn trong danh sách bài của bạn
         và đưa lại vào lớp được.
       </p>
       <div className="button-row">

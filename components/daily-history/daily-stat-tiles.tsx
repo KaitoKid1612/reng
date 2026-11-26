@@ -62,8 +62,8 @@ function LatestTile({ latest }: LatestTileProps) {
   } else if (delta) {
     detail = (
       <span className="stat-tile-detail" data-trend={delta.direction}>
-        {TREND_ARROWS[delta.direction]} {delta.text} điểm % so với trung bình {latest.baselineCount}{" "}
-        ngày trước
+        {TREND_ARROWS[delta.direction]} {delta.text} điểm phần trăm so với trung bình{" "}
+        {latest.baselineCount} ngày trước
       </span>
     );
   }

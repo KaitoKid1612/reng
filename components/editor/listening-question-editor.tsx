@@ -17,11 +17,11 @@ interface ListeningQuestionEditorProps {
 
 const INPUT_MODE_LABELS: Record<InputMode, string> = {
   text: "Văn bản (tiếng Việt, không đổi sang kana)",
-  chinese: "Chữ Hán (IME tiếng Trung)",
+  chinese: "Chữ Hán (bộ gõ tiếng Trung)",
   pinyin: "Pinyin có dấu thanh",
   hiragana: "Hiragana",
   katakana: "Katakana",
-  japanese: "Tiếng Nhật tự do (kanji, IME)",
+  japanese: "Tiếng Nhật tự do (gõ kanji bằng bộ gõ tiếng Nhật)",
 };
 
 const MAX_OPTIONS = 6;
@@ -101,7 +101,7 @@ export function ListeningQuestionEditor({
         />
       </div>
       <div className="field">
-        <label htmlFor={`${id}-transcript`}>Transcript (máy đọc thành audio)</label>
+        <label htmlFor={`${id}-transcript`}>Lời nghe (máy đọc thành audio)</label>
         <textarea
           id={`${id}-transcript`}
           lang="ja"
@@ -112,8 +112,8 @@ export function ListeningQuestionEditor({
         />
         <p id={`${id}-audio`} className="small muted" data-testid="question-audio-status">
           {question.audio
-            ? "Đã có audio: nghe thử bên dưới trước khi xuất bản. Sửa transcript thì cần tạo lại audio."
-            : "Chưa có audio. Reng chưa tạo được audio ngay trên web, nên câu nghe chỉ xuất bản được sau khi quản trị viên tạo audio. Học viên chỉ thấy transcript sau khi trả lời."}
+            ? "Đã có audio: nghe thử bên dưới trước khi xuất bản. Sửa lời nghe thì cần tạo lại audio."
+            : "Chưa có audio. Reng chưa tạo được audio ngay trên web, nên câu nghe chỉ xuất bản được sau khi quản trị viên tạo audio. Học viên chỉ thấy lời nghe sau khi trả lời."}
         </p>
         {/* The teacher reviews the generated voice here; learners get the counted player instead. */}
         {question.audio && (
@@ -194,8 +194,8 @@ export function ListeningQuestionEditor({
           />
           <p id={`${id}-answers-hint`} className="small muted">
             {question.type === "dictation"
-              ? "Thường là chính transcript; khai báo thêm dạng kana nếu chấp nhận."
-              : "Khai báo đủ dạng kanji và kana nếu đều đúng."}
+              ? "Thường là chính lời nghe; ghi thêm dạng kana nếu cũng chấp nhận."
+              : "Ghi đủ dạng kanji và kana nếu đều đúng."}
           </p>
         </div>
       )}

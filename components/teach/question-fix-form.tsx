@@ -319,7 +319,7 @@ export function QuestionFixForm({
       )}
       <div className="button-row">
         <Button type="submit" disabled={isPending}>
-          {isPending ? "Đang lưu…" : "Lưu sửa"}
+          {isPending ? "Đang lưu…" : "Lưu bản sửa"}
         </Button>
         <Button variant="ghost" onClick={onCancel}>
           Hủy

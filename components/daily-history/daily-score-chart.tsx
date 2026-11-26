@@ -45,9 +45,9 @@ export function DailyScoreChart({ days, selectedDate, hrefForDay }: DailyScoreCh
       readout={
         selected
           ? `Đang xem ${formatStudyDay(selected.date)}: ${fullDayLabel(selected)}`
-          : "Di chuột vào cột để xem điểm"
+          : "Chạm hoặc rê chuột vào cột để xem điểm"
       }
-      label="Điểm bài tập hằng ngày, theo %"
+      label="Điểm luyện tập hằng ngày, theo %"
       targetPercent={SCORE_TARGET_PERCENT}
       caption={
         <>

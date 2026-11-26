@@ -16,7 +16,7 @@ Ngoài phần A: câu nghe trong bài test (cần phân phối audio riêng có 
 |---|---|---|
 | S15 | /listening/[lessonId] | Mỗi câu nghe: nút Nghe, Lùi 5 giây, Chậm 0,75x, không có thanh tua; số lần nghe nhỏ dưới player; trả lời rồi bấm Kiểm tra mới thấy đúng/sai, giải thích và transcript. Không cần đăng nhập, không lưu kết quả |
 | S11/S12 | /assignments/[id], /assignments/[id]/results | Câu nghe/chính tả trong bài luyện dùng cùng player; số lần nghe được lưu theo lượt; kết quả hiện transcript và số lần đã nghe |
-| T03/T04 | /teach/classes/[id], /teach/classes/[id]/students/[uid] | Cột "Nghe lại TB", nhãn "Yếu phần nghe" theo 07; chi tiết học viên có số lần nghe từng câu |
+| T03/T04 | /teach/classes/[id], /teach/classes/[id]/students/[uid] | Cột "Lần nghe TB" (trước 26/11/2026: "Nghe lại TB"), nhãn "Cần luyện nghe" (trước: "Yếu phần nghe") theo 07; chi tiết học viên có số lần nghe từng câu |
 | T05 | /teach/classes/[id]/assign | Danh sách câu luyện giao được có câu nghe/chính tả kèm nhãn loại |
 | T06 | /teach/lessons/[id]/edit | Thêm câu nghe chọn đáp án, nghe gõ đáp án, chính tả; giới hạn số lần nghe tùy chọn; trạng thái audio và lệnh cần chạy |
 

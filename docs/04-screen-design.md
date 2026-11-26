@@ -152,14 +152,14 @@ Danh sách bài đã giao có thanh điểm trung bình của lượt nộp mớ
 
 Bảng học viên: tên, số bài nộp, điểm trung bình, số lần nghe lại trung bình, nhãn trạng thái.
 
-Nhãn tính lại khi xem báo cáo và hằng ngày. Ưu tiên Bỏ bài → Chưa đạt → Yếu phần nghe → Đạt; chưa có bài nộp và chưa bỏ bài thì hiện “Chưa có dữ liệu”. Ngưỡng nhãn chung dùng classes.pass_score, điều kiện chi tiết tại `07`:
+Nhãn (cột Tình trạng) tính lại khi xem báo cáo và hằng ngày. Từ 26/11/2026 "Bỏ bài" ghi là "Lỡ 2 bài gần nhất" và "Yếu phần nghe" là "Cần luyện nghe", vì nhãn đi cả vào file CSV. Ưu tiên Lỡ 2 bài gần nhất → Chưa đạt → Cần luyện nghe → Đạt; chưa có bài nộp và chưa bỏ bài thì hiện “Chưa có dữ liệu”. Ngưỡng nhãn chung dùng classes.pass_score, điều kiện chi tiết tại `07`:
 
 
 | Nhãn | Điều kiện |
 |---|---|
 | Chưa đạt | điểm trung bình dưới `classes.pass_score` |
-| Yếu phần nghe | điểm chung đạt nhưng phần nghe dưới 60%, hoặc số lần nghe trung bình trên 3 |
-| Bỏ bài | 2 bài liên tiếp quá hạn chưa nộp |
+| Cần luyện nghe | điểm chung đạt nhưng phần nghe dưới 60%, hoặc số lần nghe trung bình trên 3 |
+| Lỡ 2 bài gần nhất | 2 bài liên tiếp quá hạn chưa nộp |
 | Đạt | còn lại |
 
 Dưới bảng: danh sách câu cả lớp sai nhiều nhất, lọc từ 50% trở lên. Đây là phần giảng viên mở ra trước mỗi buổi dạy.

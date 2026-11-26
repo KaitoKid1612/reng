@@ -7,12 +7,15 @@ import { TodayPlan } from "@/components/classroom/today-plan";
 import { UpcomingSession } from "@/components/classroom/upcoming-session";
 import { WeeklyBoardTeaser } from "@/components/progress/weekly-board";
 import {
-  AssignmentStatusBadge,
   describeAssignmentKind,
   describeOpenDue,
+  describeWorkAction,
+  inSentence,
+  WorkStatusBadge,
 } from "@/components/classroom/assignment-labels";
 import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
+import { practiceRetriesLeft } from "@/lib/assignment";
 import { requireStudent } from "@/lib/server/account";
 import { loadWeeklyBoardsSafely } from "@/lib/server/weekly-board";
 import { getLearnerAgenda } from "@/lib/server/learner";
@@ -46,6 +49,9 @@ export default async function ClassesPage() {
   // "Hôm nay học gì" holds the page's main button whenever it lists something to do.
   const todayHasAction = today.items.some((item) => item.kind !== "session" || item.isLive);
   const hasClass = agenda.classes.length > 0;
+  // Open work includes a practice handed in below the pass mark while attempts are left.
+  const retriesOf = (item: (typeof openWork)[number]) =>
+    agenda.dailyAssignmentIds.has(item.assignment.id) ? 0 : practiceRetriesLeft(item, now);
   // Most urgent first: open work, then each class's missed daily sets as one row.
   const workRows = [
     ...openWork.map((item, index) => (
@@ -56,18 +62,19 @@ export default async function ClassesPage() {
           </h3>
           <p className="item-meta">
             {hasSeveralClasses && `${classNames.get(item.assignment.classId) ?? ""} · `}
-            {describeAssignmentKind(item.assignment)}, {describeOpenDue(item.assignment.dueAt, now)}
+            {describeAssignmentKind(item.assignment)},{" "}
+            {inSentence(describeOpenDue(item.assignment.dueAt, now))}
           </p>
         </div>
         <div className="button-row item-actions">
-          <AssignmentStatusBadge status={item.status} />
+          <WorkStatusBadge status={item.status} retriesLeft={retriesOf(item)} />
           <Link
             href={`/assignments/${item.assignment.id}`}
             className={buttonVariants({
               variant: index === 0 && !todayHasAction ? "default" : "outline",
             })}
           >
-            {item.status === "in_progress" ? "Làm tiếp" : "Làm bài"}
+            {describeWorkAction(item.status, retriesOf(item))}
             <LinkPending />
           </Link>
         </div>
@@ -129,7 +136,8 @@ export default async function ClassesPage() {
           </p>
           <JoinClassForm initialCode="" />
           <p className="small">
-            Chưa có mã lớp? <Link href="/self-study">Tự học miễn phí</Link> với bảng chữ và bài mẫu.
+            Chưa có mã lớp? <Link href="/self-study">Tự học miễn phí</Link> với bảng chữ cái và bài
+            học công khai.
           </p>
         </section>
       )}

@@ -29,8 +29,9 @@ export function RemoveStudentButton({ classId, studentId }: RemoveStudentButtonP
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="studentId" value={studentId} />
       <p className="small">
-        Học viên sẽ không mở được bài học và bài tập của lớp, kể cả bài đang làm dở. Điểm và bài đã
-        nộp vẫn giữ trong báo cáo. Nếu còn mã lớp, học viên vào lại được; muốn chặn thì đổi mã lớp.
+        Học viên sẽ không mở được bài học và bài tập của lớp, kể cả bài đang làm dở. Bài đã nộp
+        không bị xóa, nhưng học viên không còn trong bảng học viên và file CSV của lớp. Nếu còn mã
+        lớp, học viên vào lại được; muốn chặn thì đổi mã lớp.
       </p>
       <div className="button-row">
         <Button type="submit" disabled={isPending}>

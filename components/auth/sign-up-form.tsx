@@ -19,8 +19,8 @@ export function SignUpForm({ nextPath }: SignUpFormProps) {
       <div className="form-card" role="status">
         <h2>Kiểm tra hộp thư của bạn</h2>
         <p>
-          Reng vừa gửi thư xác nhận tới <strong>{state.sentTo}</strong>. Mở thư và bấm liên kết để
-          kích hoạt tài khoản, sau đó bạn sẽ quay lại đúng trang đang làm.
+          Reng vừa gửi thư xác nhận tới <strong>{state.sentTo}</strong>. Mở thư và bấm link để kích
+          hoạt tài khoản, sau đó bạn sẽ quay lại đúng trang đang làm.
         </p>
         <p className="small muted">Không thấy thư? Xem thư mục Spam hoặc gửi lại.</p>
         <ResendConfirmationForm email={state.sentTo} nextPath={nextPath} />

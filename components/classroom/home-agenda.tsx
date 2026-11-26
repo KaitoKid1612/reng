@@ -89,7 +89,7 @@ export function HomeAgenda({ agenda }: HomeAgendaProps) {
       <TodayRows rows={rows} />
       <p className="small today-more">
         <Link href="/classes">
-          {hidden > 0 ? `Xem thêm ${hidden} việc ở Lớp của tôi` : "Mở lớp của tôi"}
+          {hidden > 0 ? `Xem thêm ${hidden} việc ở Lớp của tôi` : "Mở Lớp của tôi"}
         </Link>
       </p>
     </section>

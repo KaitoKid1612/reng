@@ -163,10 +163,11 @@ test("the teacher opens a Japanese class, pins lesson 11 and assigns practice", 
 test("a learner signs up, confirms the email, joins and completes the lesson 11 practice", async ({
   page,
 }) => {
+  // The invite names the class before the guest makes an account.
   await page.goto(`/join-class?code=${state.code}`);
-  await page.getByRole("button", { name: "Vào lớp", exact: true }).click();
-  await page.waitForURL(/\/sign-in\?next=/);
-  await page.getByRole("link", { name: "Tạo tài khoản học viên", exact: true }).click();
+  await expect(page.getByRole("heading", { name: CLASS_NAME, exact: true })).toBeVisible();
+  await page.getByRole("link", { name: "Tạo tài khoản để vào lớp", exact: true }).click();
+  await page.waitForURL(/\/sign-up\?next=/);
   await page.getByLabel("Họ tên", { exact: true }).fill(learner.name);
   await page.getByLabel("Email", { exact: true }).fill(learner.email);
   await page.getByLabel("Mật khẩu", { exact: true }).fill(learner.password);

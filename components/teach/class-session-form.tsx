@@ -57,7 +57,7 @@ export function ClassSessionForm({
             name="lessonId"
             defaultValue={typed?.lessonId ?? defaultLessonId}
           >
-            <option value="">Không dùng bài trong lớp</option>
+            <option value="">(Không chọn bài)</option>
             {lessons.map((lesson) => (
               <option key={lesson.lessonId} value={lesson.lessonId}>
                 {lesson.title}

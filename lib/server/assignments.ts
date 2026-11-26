@@ -9,6 +9,7 @@ import {
   describeRawAnswer,
   EMPTY_DRAFT,
   FEEDBACK_POLICIES,
+  getDeadlineState,
   isAssignableQuestion,
   isFeedbackAvailable,
   isListeningQuestion,
@@ -19,7 +20,7 @@ import {
   toStoredRawAnswer,
   toTestQuestions,
 } from "@/lib/assignment";
-import { gradeAttempt } from "@/lib/grading/grade";
+import { describeParticleSlip, gradeAttempt } from "@/lib/grading/grade";
 import { grammarRefs } from "@/lib/grammar-links";
 import { isExamTimeUp, JLPT_EXAM_MAX_LISTENS, jlptSectionOf, planStudyPacing } from "@/lib/jlpt";
 import { dailyFormatLevel } from "@/lib/jlpt-parts";
@@ -422,6 +423,49 @@ function parseStoredDraft(items: readonly AssignableQuestion[], value: unknown) 
   }
 }
 
+type UserAttempt = Awaited<ReturnType<typeof listUserAttempts>>[number];
+
+/**
+ * An attempt left open past its end (a mock exam's time limit, or a deadline that refuses late
+ * work) is handed in when its page opens, with the answers the server saved by then, instead of
+ * waiting for the morning job: until then the learner would only meet a locked attempt and "Quá
+ * hạn". submit_expired_attempt re-checks every condition and leaves anything else alone.
+ */
+async function handInEndedAttempt(
+  userId: string,
+  assignment: Assignment,
+  attempts: UserAttempt[],
+  items: readonly AssignableQuestion[] | null,
+  now: Date,
+) {
+  const open = attempts.find((attempt) => attempt.status === "in_progress");
+  if (!open) {
+    return attempts;
+  }
+  const isTimeUp = Boolean(
+    assignment.exam && isExamTimeUp(open.startedAt, assignment.exam.timeLimitMinutes, now),
+  );
+  const isPastDue = getDeadlineState(assignment.dueAt, assignment.allowLate, now) === "past_due";
+  if (!isTimeUp && !isPastDue) {
+    return attempts;
+  }
+  try {
+    await handInExpiredAttempt(
+      {
+        submission_id: open.id,
+        assignment_id: assignment.id,
+        draft_revision: open.revision,
+        draft_answers: open.rawDraft,
+      },
+      items ?? (await loadAssignmentItems(assignment.id)),
+      now,
+    );
+  } catch (error) {
+    console.error("Ended attempt was not handed in", open.id, describeServiceFailure(error));
+  }
+  return listUserAttempts(userId, [assignment.id]);
+}
+
 export async function getStudentAssignment(
   userId: string,
   assignmentId: string,
@@ -434,32 +478,8 @@ export async function getStudentAssignment(
     listUserAttempts(userId, [assignment.id]),
     loadAssignmentItems(assignment.id),
   ]);
-  let attempts = loadedAttempts;
-  let open = attempts.find((attempt) => attempt.status === "in_progress");
-  // A mock exam whose time ran out while its page was closed is handed in now, with the answers
-  // the server saved by then, instead of waiting for the morning job.
-  if (
-    open &&
-    assignment.exam &&
-    isExamTimeUp(open.startedAt, assignment.exam.timeLimitMinutes, new Date())
-  ) {
-    try {
-      await handInExpiredAttempt(
-        {
-          submission_id: open.id,
-          assignment_id: assignment.id,
-          draft_revision: open.revision,
-          draft_answers: open.rawDraft,
-        },
-        items,
-        new Date(),
-      );
-    } catch (error) {
-      console.error("Expired exam attempt failed", open.id, describeServiceFailure(error));
-    }
-    attempts = await listUserAttempts(userId, [assignment.id]);
-    open = attempts.find((attempt) => attempt.status === "in_progress");
-  }
+  const attempts = await handInEndedAttempt(userId, assignment, loadedAttempts, items, new Date());
+  const open = attempts.find((attempt) => attempt.status === "in_progress");
   // Practice in a class that takes JLPT-format daily sets gets a study clock (no limit).
   const studyLevel =
     !assignment.exam && assignment.mode === "practice"
@@ -762,6 +782,8 @@ export interface ResultItem {
   isCorrect: boolean;
   pointsEarned: number;
   explain: string;
+  // Why a typed answer that differs only in a particle's spelling (わ for は) is wrong.
+  hint: string | null;
   // Listening questions only; null for other types.
   transcript: string | null;
   listenCount: number | null;
@@ -796,13 +818,15 @@ export async function loadAttemptResultItems(submissionId: string, assignmentId:
   ]);
   return items.map((question): ResultItem => {
     const answer = answers.find((item) => item.question_id === question.id);
+    const raw = toStoredRawAnswer(answer?.raw);
     return {
       view: toQuestionView(question),
-      answerText: describeRawAnswer(question, toStoredRawAnswer(answer?.raw)),
+      answerText: describeRawAnswer(question, raw),
       correctText: describeCorrectAnswer(question),
       isCorrect: answer?.is_correct ?? false,
       pointsEarned: answer?.points_earned ?? 0,
       explain: question.explain,
+      hint: answer?.is_correct ? null : describeParticleSlip(question, raw ?? undefined),
       transcript: isListeningQuestion(question) ? question.transcript : null,
       listenCount: isListeningQuestion(question) ? (answer?.listen_count ?? 0) : null,
       points: question.points,
@@ -834,7 +858,13 @@ export async function getStudentResults(
 ): Promise<StudentResultsView> {
   const assignment = await loadAssignment(assignmentId);
   const { classRow } = await requireMembership(userId, assignment.classId);
-  const attempts = await listUserAttempts(userId, [assignment.id]);
+  const attempts = await handInEndedAttempt(
+    userId,
+    assignment,
+    await listUserAttempts(userId, [assignment.id]),
+    null,
+    now,
+  );
   const submitted = attempts
     .filter((attempt) => attempt.status === "submitted")
     .sort((first, second) => second.attemptNo - first.attemptNo);

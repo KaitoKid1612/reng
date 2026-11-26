@@ -38,7 +38,7 @@ import type { TeachingEditorData } from "@/lib/server/teaching-lessons";
 import type { TeachingDraft } from "@/lib/teaching-content";
 import type { ReviewedQuestions } from "@/lib/teaching-draft";
 
-const STEPS = ["Mục tiêu", "Từ vựng", "Mẫu câu & hội thoại", "Câu luyện", "Slide & xuất bản"];
+const STEPS = ["Mục tiêu", "Từ vựng", "Mẫu câu và hội thoại", "Câu luyện", "Slide và xuất bản"];
 const LAST_STEP = STEPS.length - 1;
 
 interface SavedState {
@@ -244,7 +244,7 @@ export function TeachingEditor({
         setStatus({
           tone: "success",
           message:
-            "Đã xuất bản phiên bản mới. Đưa bản này vào lớp ở mục Dùng bài trong lớp phía trên; bài vẫn riêng tư với người ngoài lớp.",
+            "Đã xuất bản phiên bản mới. Đưa bản này vào lớp ở mục Dùng bài trong lớp phía trên; xuất bản không đổi quyền đọc của bài.",
         });
         // The usage section above the editor is server-rendered; it shows the new version now.
         router.refresh();
@@ -376,7 +376,7 @@ export function TeachingEditor({
                     Trình chiếu
                   </Link>
                   {" · "}
-                  <Link href="/teach/classes">Giao cho lớp</Link>
+                  <Link href="#lesson-usage-title">Đưa vào lớp</Link>
                 </>
               )}
             </p>

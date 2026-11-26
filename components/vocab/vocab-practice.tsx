@@ -181,7 +181,7 @@ export function VocabPractice({ items, pool }: VocabPracticeProps) {
         <Button type="submit" disabled={!kinds.length}>
           Bắt đầu luyện
         </Button>
-        <p className="small muted">Phiên luyện chưa lưu điểm.</p>
+        <p className="small muted">Phiên luyện này không lưu điểm.</p>
       </form>
     );
   }

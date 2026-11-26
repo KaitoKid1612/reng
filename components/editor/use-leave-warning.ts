@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { isInPlaceNavigation } from "@/lib/leave-warning";
 
 const LEAVE_MESSAGE =
-  "Bài có thay đổi chưa lưu. Vẫn rời trang? Thay đổi chưa lưu được giữ trên máy này để khôi phục khi mở lại trình soạn.";
+  "Bài còn thay đổi chưa lưu. Vẫn rời trang? Reng giữ tạm các thay đổi này trên máy này và khôi phục khi bạn mở lại trình soạn.";
 
 // Closing or reloading the tab gets the browser's prompt; links inside Reng change the page
 // without unloading it, so they ask here first.

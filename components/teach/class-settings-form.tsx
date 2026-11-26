@@ -115,7 +115,8 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
           placeholder="https://meet.google.com/abc-defg-hij"
         />
         <p className="small muted">
-          Chỉ học viên trong lớp thấy link. Giữ riêng cửa sổ ghi chú khi chia sẻ tab slide.
+          Chỉ học viên trong lớp thấy link. Khi dạy, chỉ chia sẻ tab slide; cửa sổ Presenter (ghi
+          chú) để riêng.
         </p>
       </div>
       {!classRow && (
@@ -125,16 +126,17 @@ export function ClassSettingsForm({ classRow }: ClassSettingsFormProps) {
             Lớp tự học của tôi: chỉ mình tôi là học viên
           </label>
           <p className="small muted">
-            Dùng khi bạn vừa dạy vừa tự ôn: lớp không có mã mời, bài giao và bài luyện hằng ngày đến
-            chính bạn ở mục Lớp của tôi, báo cáo là kết quả của bạn. Đừng tự vào lớp bạn đang dạy,
-            vì Reng không tính chủ lớp là học viên.
+            Dùng khi bạn vừa dạy vừa tự ôn: lớp không có mã lớp, bài giao và bài luyện tập hằng ngày
+            đến chính bạn ở mục Lớp đang học, báo cáo là kết quả của bạn. Đừng tự vào lớp bạn đang
+            dạy, vì Reng không tính chủ lớp là học viên.
           </p>
         </div>
       )}
       {classRow && (
         <label className="choice-label">
           <input type="checkbox" name="active" defaultChecked={classRow.active} />
-          Lớp đang hoạt động (bỏ chọn để lưu trữ: không vào lớp, không bắt đầu bài mới)
+          Lớp đang hoạt động (bỏ chọn để lưu trữ: học viên không vào lớp mới được và không bắt đầu
+          bài mới)
         </label>
       )}
       <ActionFeedback state={state} />

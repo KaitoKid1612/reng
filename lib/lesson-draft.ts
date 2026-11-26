@@ -572,7 +572,7 @@ function describeEachQuestion(content: DraftContent): PublishProblem[] {
       return problem(passageProblem);
     }
     if (isListeningDraft(question) && blank(question.transcript)) {
-      return problem("nhập transcript tiếng Nhật để tạo audio.");
+      return problem("nhập lời nghe tiếng Nhật để tạo audio.");
     }
     const answerProblem = describeAnswerProblem(question);
     if (answerProblem) {

@@ -216,7 +216,7 @@ Trước đây học viên phải tự ghép buổi học, bài tập, bài mớ
 
 - Thứ tự: buổi học hôm nay theo lịch lớp (đang diễn ra thì nút Vào lớp) → bài tập → bài mới mở → thẻ ôn đến hạn.
 - Dòng ôn tập gọi đúng loại thẻ (04/11/2026): chỉ có từ vựng thì "Thẻ từ vựng đến hạn · N thẻ"; chỉ có câu sai từ bài tập thì "Câu sai cần ôn lại · N câu"; có cả hai thì "Thẻ ôn tập đến hạn · X từ vựng, Y câu sai" (quá 50 thẻ ghi "50+ thẻ, gồm từ vựng và câu sai").
-- Bài tập: bài đang làm dở trước, rồi bài hạn trước hết ngày hôm nay, rồi bài quá hạn giáo viên còn nhận. Hiện tối đa 3 bài; phần còn lại báo "Còn N bài tập khác" và trỏ xuống mục Bài tập cần làm (mục này vẫn đủ mọi bài).
+- Bài tập: bài đang làm dở trước, rồi bài hạn trước hết ngày hôm nay, rồi bài quá hạn giáo viên còn nhận. Từ 26/11/2026 tiếp theo là bài hạn trong 7 ngày tới (hạn gần trước) và cuối cùng bài không đặt hạn, để đề thi thử mở cả tuần hiện ngay từ ngày đầu chứ không chỉ ngày cuối. Hiện tối đa 3 bài; phần còn lại báo "Còn N bài tập khác" và trỏ xuống mục Bài tập cần làm (mục này vẫn đủ mọi bài). Bài luyện chưa đạt còn lượt có nút "Làm lại" như ở trang lớp.
 - Bài luyện hằng ngày của ngày trước không vào danh sách, trừ khi đang làm dở. Nhờ vậy học viên vào lớp muộn không mở đầu ngày bằng cả tuần bài cũ.
 - Bài mới mở: bài giáo viên mở trong 7 ngày mà học viên chưa bấm "Đánh dấu đã đọc xong" (đọc ở phiên bản nào cũng tính), tối đa 3 bài. Lớp tự học chỉ gợi ý bài tiếp theo chưa đọc.
 - Nút chính của trang thuộc việc đầu tiên trong danh sách. Không có việc gì thì mục hiện một câu nhắc ngắn; trang chủ thì ẩn mục.

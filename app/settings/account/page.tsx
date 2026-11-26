@@ -62,14 +62,15 @@ export default async function AccountSettingsPage() {
       <section className="section-block" aria-labelledby="export-title">
         <h2 id="export-title">Tải dữ liệu của tôi</h2>
         <p className="small muted">
-          Một tệp JSON gồm thông tin tài khoản, lớp đã vào, bài đã làm, bài đã đọc, ôn tập, điểm
-          danh và cài đặt nhắc học. Bài kiểm tra chưa tới giờ giáo viên công bố kết quả chỉ có thời
-          điểm nộp. Xem thêm ở <Link href="/privacy">Chính sách quyền riêng tư</Link>.
+          Một tệp dữ liệu (định dạng JSON) gồm thông tin tài khoản, lớp đã vào, bài đã làm, bài đã
+          đọc, ôn tập, điểm danh và cài đặt nhắc học. Bài kiểm tra chưa tới giờ giáo viên công bố
+          kết quả chỉ có thời điểm nộp. Xem thêm ở{" "}
+          <Link href="/privacy">Chính sách quyền riêng tư</Link>.
         </p>
         {/* A plain link: the browser saves the file and the page stays where it is. */}
         <a href="/api/me/export" download className={buttonVariants({ variant: "outline" })}>
           <Download size={16} aria-hidden="true" />
-          Tải tệp dữ liệu (JSON)
+          Tải dữ liệu của tôi
         </a>
       </section>
       {account.role === "teacher" ? (

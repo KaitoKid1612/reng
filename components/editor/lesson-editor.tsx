@@ -383,7 +383,9 @@ export function LessonEditor({
           <summary>Từ vựng ({draft.content.vocab.length})</summary>
           <VocabularyFields content={draft.content} dispatch={dispatch} createId={createId} />
           <p className="small">
-            <Link href={`/teach/import-csv?lesson=${lessonId}`}>Nhập nhiều từ từ CSV/Excel</Link>{" "}
+            <Link href={`/teach/import-csv?lesson=${lessonId}`}>
+              Nhập từ vựng từ file CSV/Excel
+            </Link>{" "}
             (lưu nháp trước khi nhập).
           </p>
         </details>
@@ -463,7 +465,7 @@ export function LessonEditor({
           {publishedVersionId && (
             // A link in the sentence, not a button: a ghost button's padding indented it.
             <Link href={`/lessons/${lessonId}?version=${publishedVersionId}`}>
-              Mở bản đang xuất bản
+              Xem bản đã xuất bản
             </Link>
           )}
         </p>

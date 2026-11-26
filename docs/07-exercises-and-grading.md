@@ -89,7 +89,7 @@ Lượt test đã tạo không đổi đề khi giáo viên xuất bản phiên 
 - passed của từng bài dùng pass_score chụp trong assignment. Nhãn chung dùng classes.pass_score.
 - Phần nghe chỉ tính các câu listen/dictation; chưa có dữ liệu nghe thì không gắn nhãn yếu nghe. Thời điểm cần chú ý dựa trên số lần nghe chỉ là tín hiệu hỗ trợ giảng viên.
 
-Thứ tự ưu tiên nhãn: bỏ bài → chưa đạt → yếu phần nghe → đạt. Không có bài nộp và chưa đủ điều kiện bỏ bài thì hiển thị “Chưa có dữ liệu”. Bỏ bài nghĩa là hai bài gần nhất đã quá hạn đều chưa có lượt nộp; chỉ xét bài đã giao cho người đó và không tính bài không có hạn. Rời lớp rồi vào lại chỉ xét bài có published_at từ lần joined_at hiện tại.
+Thứ tự ưu tiên nhãn: bỏ bài (hiển thị “Lỡ 2 bài gần nhất”) → chưa đạt → yếu phần nghe (hiển thị “Cần luyện nghe”) → đạt. Không có bài nộp và chưa đủ điều kiện bỏ bài thì hiển thị “Chưa có dữ liệu”. Bỏ bài nghĩa là hai bài gần nhất đã quá hạn đều chưa có lượt nộp; chỉ xét bài đã giao cho người đó và không tính bài không có hạn. Rời lớp rồi vào lại chỉ xét bài có published_at từ lần joined_at hiện tại.
 
 Nhãn được tính lại khi mở báo cáo và tác vụ hằng ngày, không chỉ khi có bài nộp. Chưa đạt khi trung bình dưới ngưỡng lớp; yếu nghe khi điểm chung đạt nhưng điểm nghe dưới 60% hoặc lần nghe trung bình trên 3. Nhãn là chỉ báo học tập, không phải kết luận năng lực thi thật.
 

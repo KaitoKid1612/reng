@@ -1,3 +1,7 @@
+// One answer for a malformed, unknown, closed or self-study code, so a guess reveals nothing.
+export const UNKNOWN_JOIN_CODE =
+  "Mã lớp không đúng hoặc đã ngừng nhận học viên. Kiểm tra lại với giáo viên.";
+
 // Excludes look-alike characters (0/O, 1/I/L) so codes can be read aloud or copied from a board.
 const JOIN_CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 const JOIN_CODE_LENGTH = 8;

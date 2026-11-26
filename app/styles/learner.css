@@ -310,6 +310,10 @@
   font-size: 19px;
   margin-bottom: 4px;
 }
+/* Invite page: the class a code opens, before signing up or joining (app/join-class/page.tsx). */
+.join-invite > :last-child {
+  margin-bottom: 0;
+}
 /* Learner home: what to do today, above the full lists. */
 .today-plan {
   margin-bottom: 32px;

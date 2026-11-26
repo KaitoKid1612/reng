@@ -1,7 +1,11 @@
 import { cache } from "react";
 import Link from "next/link";
 
-import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
+import {
+  describeAssignmentKind,
+  describeDue,
+  inSentence,
+} from "@/components/classroom/assignment-labels";
 import { PassageDetails } from "@/components/classroom/passage-details";
 import { JlptHistory } from "@/components/classroom/jlpt-history";
 import { DailyDayChips } from "@/components/daily-history/daily-day-chips";
@@ -177,8 +181,8 @@ export default async function StudentDetailPage({ params, searchParams }: Studen
                 </summary>
                 <div className="student-assignment-body">
                   <p className="item-meta">
-                    {describeAssignmentKind(row.assignment)}, {describeDue(row.assignment.dueAt)},{" "}
-                    {row.attemptCount} lượt
+                    {describeAssignmentKind(row.assignment)},{" "}
+                    {inSentence(describeDue(row.assignment.dueAt))}, {row.attemptCount} lượt
                     {row.latest?.submittedAt
                       ? describeSubmittedAt(
                           row.latest.submittedAt,

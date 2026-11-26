@@ -44,7 +44,7 @@ function StageStars({ stage }: { stage: Stage }) {
   return (
     <span
       className="course-stage-stars"
-      aria-label={`${stage.stars}/3 sao độ thuộc bài, ${stage.answered} câu đã làm trong 30 ngày`}
+      aria-label={`${stage.stars}/3 sao, đã làm ${stage.answered} câu trong 30 ngày`}
       title={`${stage.answered} câu đã làm trong 30 ngày`}
     >
       {"★".repeat(stage.stars)}
@@ -78,8 +78,8 @@ export function CourseMap({ classId, isJapanese, stages, lessons }: CourseMapPro
           <span style={{ width: `${percent}%` }} />
         </div>
         <p className="small muted">
-          Sao cho biết bạn làm đúng câu của bài đến đâu trong 30 ngày qua: ★★★ khi đúng từ 90% và
-          làm ít nhất 10 câu.
+          Số sao cho biết bạn làm đúng bao nhiêu câu của bài trong 30 ngày qua: ★★★ khi đúng từ 90%
+          và làm ít nhất 10 câu.
         </p>
       </div>
       <ol className="course-stages">

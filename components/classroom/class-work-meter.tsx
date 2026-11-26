@@ -15,7 +15,7 @@ export function ClassWorkMeter({ progress }: ClassWorkMeterProps) {
       <p className="small">
         Đã nộp <strong>{submitted}</strong>/{total} bài
       </p>
-      <progress value={submitted} max={total} aria-label="Số bài đã nộp của lớp" />
+      <progress value={submitted} max={total} aria-label="Số bài bạn đã nộp ở lớp này" />
     </div>
   );
 }

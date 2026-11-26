@@ -6,7 +6,7 @@ const QUESTION_KIND_LABELS: Record<QuestionKind, string> = {
   choice: "Trắc nghiệm",
   fill: "Điền từ",
   order: "Sắp xếp câu",
-  match: "Ghép cặp",
+  match: "Ghép đôi",
   listening: "Nghe",
   reading: "Đọc hiểu",
 };

@@ -27,7 +27,7 @@ export default async function LessonSharingPage({ params }: LessonSharingPagePro
   if (overview.isCopy) {
     shareForm = (
       <p className="notice-panel">
-        Bài này được sao chép từ giáo viên khác nên chưa chia sẻ tiếp được.
+        Bài này được sao chép từ giáo viên khác nên không chia sẻ tiếp được.
       </p>
     );
   } else if (!overview.versions.length) {

@@ -33,8 +33,7 @@ export function DailyJlptCoverage({ level, rows }: DailyJlptCoverageProps) {
       {shortParts.length > 0 && (
         <p className="notice-panel" role="status">
           Bài nguồn chưa đủ câu cho {shortParts.map((row) => row.part.label).join("、")}. Reng bù
-          bằng câu của phần khác trong cùng phần thi; gắn nhãn もんだい cho câu hoặc chọn ngân hàng
-          theo cấu trúc đề.
+          bằng câu của phần khác trong cùng phần thi; chọn ngân hàng theo cấu trúc đề.
         </p>
       )}
       <table className="data-table">

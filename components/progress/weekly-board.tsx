@@ -16,7 +16,7 @@ function describeViewerPlace(entries: Entries, viewer: Entries[number]) {
     return "Bạn đang dẫn đầu tuần này. Giữ vững nhé!";
   }
   const gap = (entries[viewer.rank - 2]?.points ?? viewer.points) - viewer.points;
-  return `Bạn đang hạng ${viewer.rank}, kém hạng trên ${gap} câu đúng.`;
+  return `Bạn đang hạng ${viewer.rank}. Thêm ${gap} câu đúng nữa là bắt kịp hạng trên.`;
 }
 
 function describeTeaser(entries: Entries, viewer: Entries[number] | undefined) {
@@ -51,7 +51,7 @@ export function WeeklyBoardCard({ board }: { board: WeeklyBoard }) {
             <th scope="col">Hạng</th>
             <th scope="col">Học viên</th>
             <th scope="col">Câu đúng</th>
-            <th scope="col">Ngày học</th>
+            <th scope="col">Ngày nộp bài</th>
           </tr>
         </thead>
         <tbody>
@@ -79,7 +79,7 @@ export function WeeklyBoardCard({ board }: { board: WeeklyBoard }) {
         {board.lastWeekLeader
           ? `Tuần trước: ${board.lastWeekLeader.name} dẫn đầu với ${board.lastWeekLeader.points} câu đúng. `
           : ""}
-        Điểm là số câu đúng trong bài nộp tuần này, mỗi bài tính lần làm cao nhất.{" "}
+        Điểm là số câu đúng trong bài nộp tuần này, mỗi bài tính lượt có điểm cao nhất.{" "}
         <Link href="/settings/account#board-visibility-title">Ẩn tôi khỏi bảng</Link>
       </p>
     </section>

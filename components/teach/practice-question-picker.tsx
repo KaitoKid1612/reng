@@ -134,7 +134,7 @@ export function PracticeQuestionPicker({
                     disabled={count === 0}
                     onClick={() => handleSelect(group.questionIds, false)}
                   >
-                    Bỏ nhóm này
+                    Bỏ chọn cả nhóm
                   </Button>
                 </div>
                 {group.questionIds.flatMap((id) => {

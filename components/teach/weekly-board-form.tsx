@@ -18,9 +18,9 @@ export function WeeklyBoardForm({ classId, isOnBoard }: WeeklyBoardFormProps) {
     <form action={action} className="form-card" aria-labelledby="weekly-board-title">
       <h3 id="weekly-board-title">Bảng xếp hạng tuần</h3>
       <p className="small muted">
-        Học viên của mọi lớp bạn bật mục này xếp hạng chung theo số câu đúng trong tuần (thứ 2 đến
-        chủ nhật, mỗi bài tính lần làm cao nhất). Bảng hiện ở trang Tiến độ với họ tên và điểm; ai
-        không muốn có thể tự ẩn mình ở trang Tài khoản.
+        Học viên của mọi lớp bạn bật mục này xếp hạng chung theo số câu đúng trong tuần (thứ Hai đến
+        Chủ nhật, mỗi bài tính lượt có điểm cao nhất). Bảng hiện ở trang Tiến độ với họ tên và điểm;
+        ai không muốn có thể tự ẩn mình ở trang Tài khoản.
       </p>
       <input type="hidden" name="classId" value={classId} />
       <label className="choice-label">

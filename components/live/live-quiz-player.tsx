@@ -208,7 +208,7 @@ export function LiveQuizPlayer({ quizId }: { quizId: string }) {
             ))}
           </ol>
         )}
-        <Link href="/classes">Về lớp của tôi</Link>
+        <Link href="/classes">Về Lớp của tôi</Link>
       </div>
     );
   }

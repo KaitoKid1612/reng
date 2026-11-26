@@ -26,7 +26,7 @@ interface FrequentAbsencesProps {
 
 function describeSession(session: ClassSession) {
   if (!session.lesson) {
-    return "Không dùng bài trong lớp";
+    return "Không dùng bài nào";
   }
   const lesson = session.lesson.title;
   return session.slideReached ? `${lesson}, đến slide ${session.slideReached}` : lesson;

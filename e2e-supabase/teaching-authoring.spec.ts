@@ -105,7 +105,7 @@ test("a teacher builds a Vietnamese–Chinese lesson from a template, reviews an
   await page.getByLabel("Giải thích câu 1", { exact: true }).fill("Chú ý viết 谢谢 hai lần 谢.");
   await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(1);
 
-  await goToStep(page, "5. Slide & xuất bản");
+  await goToStep(page, "5. Slide và xuất bản");
   await page.getByRole("button", { name: "Dựng slide từ nội dung", exact: true }).click();
   await expect(page.getByRole("status").filter({ hasText: "Sẽ thêm" })).toBeVisible();
   await page.getByRole("button", { name: "Áp dụng thay đổi slide", exact: true }).click();
@@ -124,7 +124,7 @@ test("a teacher builds a Vietnamese–Chinese lesson from a template, reviews an
   await goToStep(page, "4. Câu luyện");
   await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
   await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(2);
-  await goToStep(page, "5. Slide & xuất bản");
+  await goToStep(page, "5. Slide và xuất bản");
   await page.getByRole("button", { name: "Lưu và xuất bản", exact: true }).click();
   await expect(page.locator(".editor-status")).toContainText("Đã xuất bản phiên bản mới");
   await expect(page.getByRole("link", { name: "Xem bản đã xuất bản" })).toBeVisible();
@@ -174,12 +174,12 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await page.getByRole("button", { name: "Lật thẻ", exact: true }).click();
   await expect(flashcards.getByText("nǐ hǎo", { exact: true })).toBeVisible();
   await expect(flashcards.getByText("xin chào", { exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Được", exact: true }).click();
+  await page.getByRole("button", { name: "Nhớ", exact: true }).click();
   await expect(flashcards.locator(".flashcard-front")).toHaveText("谢谢");
   await page.getByRole("button", { name: "Thẻ trước", exact: true }).click();
   await expect(flashcards.getByText("Đã có lịch ôn")).toBeVisible();
   await page.goBack();
-  await page.getByRole("link", { name: "Trình chiếu", exact: true }).click();
+  await page.getByRole("link", { name: "Xem slide", exact: true }).click();
   await expect(page.locator(".reveal")).toBeVisible();
   await expect(page.getByTestId("slide-counter")).toHaveText("1 / 8");
 
@@ -209,7 +209,7 @@ test("a learner reads the Chinese lesson, sees the slides and is graded with exa
   await expect(wrongRow.locator("strong", { hasText: "謝謝" })).toHaveAttribute("lang", "zh");
 
   await page.goto(assignmentUrl);
-  await page.getByRole("button", { name: "Làm lại lượt mới", exact: true }).click();
+  await page.getByRole("button", { name: "Làm lại", exact: true }).click();
   await hanzi.getByRole("textbox").fill("谢谢");
   await meaning.getByRole("radio", { name: "xin chào", exact: true }).check();
   await expect(page.locator(".save-status")).toContainText("Đã lưu", { timeout: 10_000 });
@@ -250,7 +250,7 @@ test("a Chinese teacher writes a matching question, shows it on a slide and a le
   await page.getByLabel("Giải thích câu 1", { exact: true }).fill("Từ của bài chào hỏi.");
   await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
   await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(1);
-  await goToStep(page, "5. Slide & xuất bản");
+  await goToStep(page, "5. Slide và xuất bản");
   await page.getByRole("button", { name: "Dựng slide từ nội dung", exact: true }).click();
   await page.getByRole("button", { name: "Áp dụng thay đổi slide", exact: true }).click();
   await page.getByRole("button", { name: "Lưu và xuất bản", exact: true }).click();
@@ -263,7 +263,7 @@ test("a Chinese teacher writes a matching question, shows it on a slide and a le
   await expect(page.getByText(`Các cặp đúng: ${MATCH_ANSWER}`)).toBeVisible();
   await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
   await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toHaveCount(1);
-  await goToStep(page, "5. Slide & xuất bản");
+  await goToStep(page, "5. Slide và xuất bản");
   // The quiz slide shows both columns, the right one lettered and shuffled.
   await page
     .locator(".slide-list-item")
@@ -359,9 +359,9 @@ test("the new authoring, reading and sharing pages fit a 360px screen", async ({
   for (const step of [
     "1. Mục tiêu",
     "2. Từ vựng",
-    "3. Mẫu câu & hội thoại",
+    "3. Mẫu câu và hội thoại",
     "4. Câu luyện",
-    "5. Slide & xuất bản",
+    "5. Slide và xuất bản",
   ]) {
     await page.getByRole("button", { name: step, exact: true }).click();
     expect(await fitsScreen(), step).toBe(true);

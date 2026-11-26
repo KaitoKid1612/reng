@@ -25,9 +25,10 @@ interface ExamsPageProps {
 const ERRORS: Record<string, string> = {
   already_open: "Đề này đã mở cho lớp rồi; làm ở danh sách đề bên dưới.",
   no_exam_questions: "Bài này không còn ghép được đề. Tải lại trang để xem thư viện mới nhất.",
-  not_found: "Chỉ chủ lớp mở được đề.",
+  not_found: "Chỉ giáo viên của lớp mở được đề.",
   not_japanese: "Thi thử JLPT chỉ dành cho lớp tiếng Nhật.",
-  invalid_items: "Database của Reng cần cập nhật trước khi mở đề có hơn 70 câu.",
+  invalid_items:
+    "Câu của đề không còn khớp với bài nguồn của lớp (bài vừa được cập nhật). Tải lại trang rồi mở đề lại.",
   failed: "Chưa mở được đề. Thử lại sau ít phút.",
 };
 
@@ -65,7 +66,7 @@ function ExamStatusCell({ exam, classId }: { exam: ExamRow; classId: string }) {
     );
   }
   if (status.kind === "closed") {
-    return <span className="exam-status muted">Hết hạn bắt đầu thi</span>;
+    return <span className="exam-status muted">Đề đã đóng</span>;
   }
   return (
     <Link
@@ -94,7 +95,7 @@ function describeLibraryEntry({ source, opened }: LibraryEntry) {
   if (source.remainingExams > 0) {
     return `${origin} ${opened ? `Đã mở ${opened} đề` : "Chưa mở đề nào"}. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
   }
-  return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ lặp câu cũ ít ra nhất.`;
+  return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ dùng lại những câu cũ ít được ra nhất.`;
 }
 
 function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
@@ -109,7 +110,7 @@ function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
           <p className="small">
             Bài nguồn đang mở với học viên: trong lúc thi họ vẫn mở được bài để xem câu và đáp án.
             Muốn đề kín, dùng một ngân hàng riêng cho đề và đặt ô Mở cho học viên từ sau kỳ thi
-            (trang lớp, mục Nội dung lớp).
+            (trang Giao bài, mục Nội dung lớp).
           </p>
         )}
       </div>
@@ -167,9 +168,12 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
   const openedClassId = opened
     ? classes.find((item) => item.exams.some((exam) => exam.assignmentId === opened))?.classId
     : undefined;
-  const openedNotice = (
+  // The teacher of a class has no Làm đề button there; the learners of that class do.
+  const openedNotice = (forLearner: boolean) => (
     <p className="notice-panel" role="status">
-      Đã mở đề mới. Bấm Làm đề khi sẵn sàng: đồng hồ chỉ chạy từ lúc bấm Bắt đầu thi.
+      {forLearner
+        ? "Đã mở đề mới. Bấm Làm đề khi sẵn sàng: đồng hồ chỉ chạy từ lúc bấm Bắt đầu thi."
+        : "Đã mở đề cho lớp. Đồng hồ của mỗi học viên chỉ chạy từ lúc họ bấm Bắt đầu thi; lượt đang làm tự nộp ở giờ đóng đề."}
     </p>
   );
   return (
@@ -178,14 +182,13 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
         <div>
           <h1>Luyện đề JLPT</h1>
           <p>
-            Đề chính thức các năm trên jlpt.jp và đề Reng ghép theo cấu trúc đề thật: ngân hàng đủ
-            câu cho từng もんだい cho đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác
-            ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính
-            trên 180.
+            {isTeacher
+              ? "Hai tập đề mẫu chính thức trên jlpt.jp (2012 và 2018) và đề Reng ghép theo cấu trúc đề thật: ngân hàng có đủ câu cho từng もんだい thì đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính trên 180."
+              : "Đề mẫu chính thức trên jlpt.jp và đề Reng ghép theo cấu trúc đề thật. Mỗi đề làm một lượt, tính giờ như đề thật và có điểm ước tính trên thang 180."}
           </p>
         </div>
       </div>
-      {opened && !openedClassId && openedNotice}
+      {opened && !openedClassId && openedNotice(!isTeacher)}
       {error && (
         <p className="notice-panel" role="alert">
           {ERRORS[error] ?? ERRORS.failed}
@@ -193,8 +196,9 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
       )}
       {!classes.length && (
         <p className="notice-panel">
-          Chưa có đề nào. Đề hiện ở đây khi giáo viên mở đề cho lớp của bạn. Với lớp tự học hoặc lớp
-          bạn dạy, thêm ngân hàng ôn hoặc đề chính thức JLPT vào lớp thì thư viện đề sẽ hiện ở đây.
+          {isTeacher
+            ? "Chưa có đề nào. Thêm ngân hàng ôn hoặc đề chính thức JLPT vào lớp bạn dạy hoặc lớp tự học thì thư viện đề sẽ hiện ở đây."
+            : "Chưa có đề nào. Đề hiện ở đây khi giáo viên mở đề cho lớp của bạn."}
         </p>
       )}
       {classes.map((item) => (
@@ -218,7 +222,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
               </>
             )}
           </h2>
-          {item.classId === openedClassId && openedNotice}
+          {item.classId === openedClassId && openedNotice(item.isLearner)}
           {item.exams.length > 0 ? (
             <table className="exam-table">
               <caption className="visually-hidden">Đề đã mở của lớp {item.className}</caption>
@@ -227,7 +231,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
                   <th scope="col">Đề</th>
                   <th scope="col">Loại</th>
                   <th scope="col">Thời gian</th>
-                  <th scope="col">Hạn bắt đầu</th>
+                  <th scope="col">Đóng lúc</th>
                   <th scope="col">{item.isLearner ? "Kết quả" : "Bài nộp"}</th>
                 </tr>
               </thead>
@@ -249,7 +253,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
                       {exam.dueAt ? (
                         <>
                           {/* The phone layout drops the header row, so the date names itself. */}
-                          <span className="exam-due-label">Hạn bắt đầu </span>
+                          <span className="exam-due-label">Đóng lúc </span>
                           <span className="exam-date">{formatStudyDateTime(exam.dueAt)}</span>
                         </>
                       ) : (

@@ -19,7 +19,7 @@ export function TodayPlan({ plan, now, showClass }: TodayPlanProps) {
         <TodayRows rows={rows} />
       ) : (
         <p className="muted">
-          Hôm nay chưa có việc nào đến hạn. Đọc lại bài đã học hoặc luyện thêm ở lớp của bạn nhé.
+          Hôm nay chưa có việc nào cần làm. Đọc lại bài đã học hoặc luyện thêm ở lớp của bạn nhé.
         </p>
       )}
       {plan.moreAssignmentCount > 0 && (

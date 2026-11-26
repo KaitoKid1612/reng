@@ -140,7 +140,7 @@ export function SlideList({ content, selectedSlideId, onSelect, onMove }: SlideL
         announcements,
         screenReaderInstructions: {
           draggable:
-            "Nhấn Space để nhấc slide, mũi tên lên/xuống để di chuyển, Space để thả, Esc để hủy.",
+            "Nhấn phím cách để nhấc slide, mũi tên lên/xuống để di chuyển, phím cách để thả, Esc để hủy.",
         },
       }}
     >

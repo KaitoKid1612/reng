@@ -135,12 +135,14 @@ function statusOf(
   if (mine.some((attempt) => attempt.status === "submitted")) {
     return { kind: "submitted", result: results.get(assignment.id) ?? null };
   }
-  if (mine.length) {
-    return { kind: "in-progress" };
+  // A teacher's Đóng bài closes an exam like its closing time does: no Làm đề, no Làm tiếp.
+  const isClosed =
+    assignment.status === "closed" ||
+    (assignment.dueAt !== null && Date.parse(assignment.dueAt) < now.getTime());
+  if (isClosed) {
+    return { kind: "closed" };
   }
-  return assignment.dueAt && Date.parse(assignment.dueAt) < now.getTime()
-    ? { kind: "closed" }
-    : { kind: "not-started" };
+  return mine.length ? { kind: "in-progress" } : { kind: "not-started" };
 }
 
 export async function loadExamCenter(userId: string, isTeacher: boolean, now: Date) {

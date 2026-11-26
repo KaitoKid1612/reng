@@ -75,7 +75,7 @@ function listClassSections({ hasJoinCode, hasLearners, isSelfStudy }: ClassSecti
     ...(hasJoinCode && !hasLearners ? [joinCode] : []),
     { id: "students-title", label: "Học viên" },
     { id: "hard-questions", label: "Câu sai nhiều" },
-    { id: "daily-practice-title", label: "Luyện hằng ngày" },
+    { id: "daily-practice-title", label: "Luyện tập hằng ngày" },
     { id: "assignments-title", label: "Bài đã giao" },
     { id: "class-schedule", label: "Lịch học" },
     ...(isSelfStudy ? [] : [{ id: "class-sessions", label: "Nhật ký buổi dạy" }]),
@@ -176,7 +176,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
       label: "Đặt lịch học hằng tuần",
       href: "#class-schedule",
       isDone: schedule.slots.length > 0,
-      hint: "Học viên thấy buổi tới ở trang lớp và ở Hôm nay học gì.",
+      hint: "Học viên thấy buổi tới ở trang lớp và ở Lớp của tôi.",
     },
     {
       label: "Giao bài tập đầu tiên",
@@ -194,8 +194,8 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         <div>
           <h1>{classRow.name}</h1>
           <p>
-            <Link href="/teach">Giảng dạy</Link>, điểm đạt của lớp {classRow.pass_score}%
-            {classRow.active ? "" : ", lớp đã lưu trữ"}
+            <Link href="/teach">Giảng dạy</Link> · Điểm đạt của lớp {classRow.pass_score}%
+            {classRow.active ? "" : " · Lớp đã lưu trữ"}
           </p>
           {classRow.self_study && (
             <p>
@@ -278,7 +278,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         )}
       </section>
       <section className="section-block" aria-labelledby="daily-practice-title">
-        <h2 id="daily-practice-title">Bài luyện hằng ngày</h2>
+        <h2 id="daily-practice-title">Luyện tập hằng ngày</h2>
         <p className="small muted">
           Mỗi sáng từ 6:00 (giờ Việt Nam) Reng tự giao một bài luyện tập, hạn 23:59 cùng ngày.
         </p>
@@ -331,14 +331,14 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
           <ul>
             <li>
               Câu lấy từ bài bạn chọn, ví dụ ngân hàng ôn của lớp. Để Tự động thì Reng lấy bài mới
-              nhất đã mở có câu chọn, điền hoặc sắp xếp.
+              nhất đã mở có câu luyện tự chấm.
             </li>
             <li>
               Câu đổi mỗi ngày, ưu tiên câu chưa giao trong 14 ngày gần đây (kể cả bài giao tay).
             </li>
             <li>
-              Mỗi dạng câu giữ tỉ lệ như trong bài: theo tag của câu (ví dụ ngữ pháp, từ vựng, chữ
-              Hán) và loại câu (chọn, điền, sắp xếp).
+              Mỗi dạng câu giữ tỉ lệ như trong bài: theo nhãn của câu (ví dụ ngữ pháp, từ vựng, chữ
+              Hán) và loại câu (chọn, điền, sắp xếp, ghép đôi, nghe, chính tả).
             </li>
             <li>
               Chọn “Theo cấu trúc đề JLPT” thì mỗi もんだい lấy đúng số câu của đề thật theo thứ tự
@@ -355,7 +355,7 @@ export default async function ClassReportPage({ params, searchParams }: ClassRep
         {justAssigned && (
           <div className="notice-panel">
             <p role="status">
-              Đã giao «{justAssigned.title}». Học viên thấy bài ở mục Hôm nay học gì và trang lớp.
+              Đã giao “{justAssigned.title}”. Học viên thấy bài ngay ở trang lớp và ở Lớp của tôi.
             </p>
             {justAssignedMessage && <CopyMessageButton message={justAssignedMessage} />}
           </div>

@@ -81,13 +81,18 @@ export function useAudio() {
   return context;
 }
 
-export function AudioStatus() {
+interface AudioStatusProps {
+  /** What to do on this page before anything plays; the kana chart's hint is the default. */
+  idleMessage?: string;
+}
+
+export function AudioStatus({ idleMessage }: AudioStatusProps) {
   const { message, status } = useAudio();
 
   return (
     <p className={`audio-status ${status === "error" ? "audio-error" : ""}`} role="status">
       <Volume2 size={16} aria-hidden="true" />
-      <span>{message}</span>
+      <span>{status === "idle" && idleMessage ? idleMessage : message}</span>
     </p>
   );
 }

@@ -205,7 +205,7 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
           label="Mở đến"
           initialValue={typed?.dueAt || defaultDueAt}
           isRequired
-          hint="Học viên bắt đầu thi trước lúc này; lượt bắt đầu sát hạn sẽ kết thúc ở hạn."
+          hint="Đề đóng lúc này: lượt đang làm tự nộp ở giờ đóng, nên học viên cần bắt đầu sớm để đủ thời gian làm bài."
         />
         <div className="field">
           <label htmlFor="jlpt-feedback">Công bố điểm và đáp án</label>

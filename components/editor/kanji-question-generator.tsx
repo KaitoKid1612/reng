@@ -33,7 +33,7 @@ export function KanjiQuestionGenerator({ content, dispatch }: KanjiQuestionGener
       <h3>Câu luyện kanji</h3>
       <p className="small muted">
         Tạo câu đọc (gõ hiragana) và câu chọn chữ Hán từ các từ có cột kanji. Đáp án lấy từ cột kana
-        bạn đã ghi, không tự suy cách đọc. Câu được gắn thẻ kanji và dùng như câu luyện thường khi
+        bạn đã ghi, không tự suy cách đọc. Câu được gắn nhãn kanji và dùng như câu luyện thường khi
         giao bài, luyện hằng ngày và vào sổ lỗi.
       </p>
       <Button type="button" variant="outline" onClick={handleGenerate} disabled={!pendingCount}>

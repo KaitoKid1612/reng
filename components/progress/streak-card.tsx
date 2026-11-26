@@ -12,10 +12,13 @@ function describeToday({ days, hasStudiedToday }: StreakStatus) {
   if (hasStudiedToday) {
     return "Đã giữ chuỗi hôm nay";
   }
-  return days > 0 ? "Học một việc hôm nay để giữ chuỗi" : "Học một việc hôm nay để bắt đầu chuỗi";
+  return days > 0
+    ? "Nộp một bài hoặc ôn một thẻ hôm nay để giữ chuỗi"
+    : "Nộp một bài hoặc ôn một thẻ hôm nay để bắt đầu chuỗi";
 }
 
-// The daily goal: any study keeps the streak, and the next milestone gives it a target.
+// The daily goal: a submission or a review keeps the streak (reading alone does not), and the next
+// milestone gives it a target.
 export function StreakCard({ streak, headingLevel: Heading = "h2" }: StreakCardProps) {
   const { days, hasStudiedToday, previousMilestone, nextMilestone } = streak;
   return (

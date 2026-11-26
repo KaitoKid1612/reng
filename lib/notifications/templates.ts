@@ -101,7 +101,7 @@ export function renderDailyReminder(input: DailyReminderInput): EmailContent {
   const lines: string[] = [];
   if (input.streak > 0) {
     lines.push(
-      `Chuỗi ngày học của bạn: ${input.streak} ngày. Học một chút tối nay để giữ chuỗi nhé.`,
+      `Chuỗi ngày học của bạn: ${input.streak} ngày. Ôn vài thẻ hoặc nộp một bài tối nay để giữ chuỗi nhé.`,
     );
   }
   if (input.dueCards > 0) {
@@ -130,7 +130,7 @@ export function renderDailyReminder(input: DailyReminderInput): EmailContent {
         : "",
       input.word
         ? paragraph(
-            `Từ của ngày: <span lang="${escapeHtml(input.word.lang)}" style="font-size:20px">${escapeHtml(wordText)}</span>`,
+            `Từ vựng hôm nay: <span lang="${escapeHtml(input.word.lang)}" style="font-size:20px">${escapeHtml(wordText)}</span>`,
           )
         : "",
       button(action.label, action.url),
@@ -143,7 +143,7 @@ export function renderDailyReminder(input: DailyReminderInput): EmailContent {
     ...(assignmentItems.length
       ? ["Bài tập chưa nộp:", ...assignmentItems.map((item) => `- ${item}`)]
       : []),
-    ...(input.word ? [`Từ của ngày: ${wordText}`] : []),
+    ...(input.word ? [`Từ vựng hôm nay: ${wordText}`] : []),
     `${action.label}: ${action.url}`,
   ].join("\n");
   return { subject, html, text: text + textFooter(input) };

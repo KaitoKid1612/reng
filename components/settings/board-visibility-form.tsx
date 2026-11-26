@@ -13,8 +13,8 @@ export function BoardVisibilityForm({ isHidden }: { isHidden: boolean }) {
     <form action={action} className="form-card" aria-labelledby="board-visibility-title">
       <h2 id="board-visibility-title">Bảng xếp hạng tuần</h2>
       <p className="small muted">
-        Khi giáo viên bật bảng tuần, học viên các lớp của giáo viên đó thấy họ tên và số câu đúng
-        trong tuần của nhau.
+        Khi giáo viên bật bảng tuần, học viên các lớp của giáo viên đó thấy họ tên, số câu đúng và
+        số ngày nộp bài trong tuần của nhau.
       </p>
       <label className="choice-label">
         <input type="checkbox" name="hidden" defaultChecked={isHidden} />
@@ -22,7 +22,7 @@ export function BoardVisibilityForm({ isHidden }: { isHidden: boolean }) {
       </label>
       <ActionFeedback state={state} />
       <Button type="submit" variant="outline" disabled={isPending}>
-        {isPending ? "Đang lưu…" : "Lưu bảng tuần"}
+        {isPending ? "Đang lưu…" : "Lưu lựa chọn"}
       </Button>
     </form>
   );

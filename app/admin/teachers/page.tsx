@@ -2,10 +2,15 @@ import Link from "next/link";
 
 import { TeacherPlanForm } from "@/components/admin/teacher-plan-form";
 import { TeacherStatusForm } from "@/components/admin/teacher-status-form";
-import { teacherStatusLabel } from "@/lib/admin-labels";
+import {
+  describeTeacherStatusOutcome,
+  TEACHER_STATUS_OUTCOMES,
+  teacherStatusLabel,
+} from "@/lib/admin-labels";
 import { listTeacherAccounts, requireAdmin } from "@/lib/server/admin";
 import { formatStudyDateTime, formatStudyDay, toStudyDay } from "@/lib/study-days";
 
+import type { TeacherStatusOutcome } from "@/lib/admin-labels";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Giáo viên" };
@@ -16,21 +21,41 @@ const STATUS_TONES = {
   suspended: "status-neutral",
 } as const;
 
-export default async function AdminTeachersPage() {
+interface AdminTeachersPageProps {
+  searchParams: Promise<{ changed?: string | string[]; outcome?: string | string[] }>;
+}
+
+function isOutcome(value: unknown): value is TeacherStatusOutcome {
+  return TEACHER_STATUS_OUTCOMES.some((outcome) => outcome === value);
+}
+
+export default async function AdminTeachersPage({ searchParams }: AdminTeachersPageProps) {
   await requireAdmin("/admin/teachers");
-  const teachers = await listTeacherAccounts();
+  const [teachers, query] = await Promise.all([listTeacherAccounts(), searchParams]);
   const today = toStudyDay(new Date());
+  // After Duyệt, Từ chối, Tạm dừng or Mở lại the row moves to its new group, so the result is
+  // named here, in view, instead of beside the moved row.
+  const changed = teachers.find((teacher) => teacher.userId === query.changed);
+  const notice =
+    changed && isOutcome(query.outcome)
+      ? describeTeacherStatusOutcome(query.outcome, changed.fullName || changed.email)
+      : null;
   return (
     <>
       <div className="page-heading">
         <div>
           <h1>Giáo viên</h1>
           <p>
-            <Link href="/admin">Quản trị</Link>. Duyệt hoặc từ chối yêu cầu, tạm dừng khi hết hạn
+            <Link href="/admin">Quản trị</Link> · Duyệt hoặc từ chối yêu cầu, tạm dừng khi hết hạn
             thuê và ghi chú thanh toán.
           </p>
         </div>
       </div>
+      {notice && (
+        <p className="notice-panel" role="status">
+          {notice}
+        </p>
+      )}
       <h2 className="visually-hidden">Danh sách giáo viên</h2>
       {teachers.length ? (
         <ul className="item-list admin-teachers">

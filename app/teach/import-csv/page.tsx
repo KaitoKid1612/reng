@@ -40,8 +40,8 @@ export default async function ImportCsvPage({ searchParams }: ImportCsvPageProps
         <div>
           <h1>Nhập từ vựng</h1>
           <p>
-            <Link href="/teach">Giảng dạy</Link>. Từ hợp lệ được thêm vào cuối bản nháp; xem lại
-            trong editor rồi xuất bản.
+            <Link href="/teach">Giảng dạy</Link> · Từ hợp lệ được thêm vào cuối bản nháp; xem lại
+            trong trình soạn rồi xuất bản.
           </p>
         </div>
       </div>

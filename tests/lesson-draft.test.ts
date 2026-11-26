@@ -128,7 +128,7 @@ test("listening questions publish only with a transcript, valid answers and gene
     },
   });
   const messages = () => findPublishProblems(draft).map((problem) => problem.message);
-  assert.ok(messages().includes("Câu luyện 2: nhập transcript tiếng Nhật để tạo audio."));
+  assert.ok(messages().includes("Câu luyện 2: nhập lời nghe tiếng Nhật để tạo audio."));
   assert.ok(messages().some((message) => message.startsWith("Câu luyện 3: chưa có audio")));
   assert.equal(countMissingListeningAudio(draft.content), 2);
 

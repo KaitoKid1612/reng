@@ -134,7 +134,7 @@ function MemberHome({ account }: MemberHomeProps) {
       <HomeAgenda agenda={home?.agenda ?? null} />
       <section aria-labelledby="shortcuts-title">
         <h2 id="shortcuts-title" className="member-shortcuts-title">
-          Đi nhanh tới
+          Lối tắt
         </h2>
         <div className="link-cards member-shortcuts">
           {shortcuts.map(({ href, title, description, Icon }, index) => (

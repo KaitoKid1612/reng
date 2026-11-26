@@ -111,7 +111,9 @@ test("teachers share one version, copy it without private notes and lose access 
     await expect(owner.page.getByRole("alert").filter({ hasText: "giáo viên khác" })).toBeVisible();
     await owner.page.getByLabel("Email giáo viên nhận", { exact: true }).fill(recipient.email);
     await owner.page.getByRole("button", { name: "Chia sẻ", exact: true }).click();
-    await expect(owner.page.getByText("Đã chia sẻ phiên bản cho giáo viên nhận.")).toBeVisible();
+    await expect(
+      owner.page.getByText(/^Đã chia sẻ\. Bài hiện ở mục Bài được chia sẻ với tôi/),
+    ).toBeVisible();
     await expect(owner.page.locator("#active-shares + ul")).toContainText("Chỉ xem");
 
     await recipient.page.goto("/teach/library");

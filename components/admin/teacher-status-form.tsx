@@ -6,6 +6,8 @@ import { setTeacherStatusAction } from "@/app/actions/admin";
 import { ActionFeedback } from "@/components/teach/action-feedback";
 import { Button } from "@/components/ui/button";
 
+import type { TeacherStatusOutcome } from "@/lib/admin-labels";
+
 interface TeacherStatusFormProps {
   userId: string;
   status: "pending" | "active" | "suspended";
@@ -15,7 +17,7 @@ interface TeacherStatusFormProps {
 }
 
 interface StatusAction {
-  status: "active" | "suspended";
+  outcome: TeacherStatusOutcome;
   label: string;
   // Stopping someone's teaching is asked again first, like removing a learner from a class;
   // opening it runs at once.
@@ -25,9 +27,9 @@ interface StatusAction {
 function listActions(status: TeacherStatusFormProps["status"], wasActivated: boolean) {
   const actions: Record<TeacherStatusFormProps["status"], StatusAction[]> = {
     pending: [
-      { status: "active", label: "Duyệt" },
+      { outcome: "approved", label: "Duyệt" },
       {
-        status: "suspended",
+        outcome: "rejected",
         label: "Từ chối",
         confirmation: {
           text: "Người này sẽ không dạy được trên Reng nhưng vẫn học như học viên. Bạn có thể bấm Duyệt sau.",
@@ -37,15 +39,19 @@ function listActions(status: TeacherStatusFormProps["status"], wasActivated: boo
     ],
     active: [
       {
-        status: "suspended",
+        outcome: "paused",
         label: "Tạm dừng",
         confirmation: {
-          text: "Giáo viên sẽ không dùng được trang Giảng dạy cho tới khi bạn bấm Mở lại. Lớp, bài học và điểm không bị xóa.",
+          text: "Giáo viên sẽ không dùng được trang Giảng dạy cho tới khi bạn bấm Mở lại, và luyện tập hằng ngày của các lớp ngừng tự giao. Lớp, bài học và điểm không bị xóa.",
           confirmLabel: "Xác nhận tạm dừng",
         },
       },
     ],
-    suspended: [{ status: "active", label: wasActivated ? "Mở lại" : "Duyệt" }],
+    suspended: [
+      wasActivated
+        ? { outcome: "reopened", label: "Mở lại" }
+        : { outcome: "approved", label: "Duyệt" },
+    ],
   };
   return actions[status];
 }
@@ -58,7 +64,8 @@ export function TeacherStatusForm({
 }: TeacherStatusFormProps) {
   const [state, action, isPending] = useActionState(setTeacherStatusAction, {});
   const [confirming, setConfirming] = useState<StatusAction | null>(null);
-  // The status changes once this succeeds, so the question must not come back afterwards.
+  // Success reloads the list with a notice at its top; only a failure is shown in the row. The
+  // question closes either way, so it never comes back for a status that already changed.
   function handleConfirm(formData: FormData) {
     action(formData);
     setConfirming(null);
@@ -67,7 +74,7 @@ export function TeacherStatusForm({
     return (
       <form action={handleConfirm} className="inline-form">
         <input type="hidden" name="userId" value={userId} />
-        <input type="hidden" name="status" value={confirming.status} />
+        <input type="hidden" name="outcome" value={confirming.outcome} />
         <p className="small">{confirming.confirmation.text}</p>
         <div className="button-row">
           <Button
@@ -91,7 +98,7 @@ export function TeacherStatusForm({
         {listActions(status, wasActivated).map((next) =>
           next.confirmation ? (
             <Button
-              key={next.status}
+              key={next.outcome}
               variant="outline"
               disabled={isPending}
               aria-label={`${next.label} ${teacherLabel}`}
@@ -100,9 +107,9 @@ export function TeacherStatusForm({
               {next.label}
             </Button>
           ) : (
-            <form key={next.status} action={action}>
+            <form key={next.outcome} action={action}>
               <input type="hidden" name="userId" value={userId} />
-              <input type="hidden" name="status" value={next.status} />
+              <input type="hidden" name="outcome" value={next.outcome} />
               <Button
                 type="submit"
                 disabled={isPending}

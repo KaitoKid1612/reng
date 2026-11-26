@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="prose-page">
-      <h1>Trang này chưa có</h1>
+      <h1>Không tìm thấy trang này</h1>
       <p>Đường dẫn có thể đã đổi hoặc bị gõ nhầm.</p>
       {/* Private pages answer 404 to accounts without access, so a learner signed in with
           another account (for example a second Google account) lands here from a valid link. */}

@@ -47,6 +47,32 @@ export function AssignmentStatusBadge({ status }: AssignmentStatusBadgeProps) {
   return <span className={`status-badge ${tone}`}>{label}</span>;
 }
 
+interface WorkStatusBadgeProps extends AssignmentStatusBadgeProps {
+  // Attempts left on a practice handed in below the pass mark (0 for everything else).
+  retriesLeft: number;
+}
+
+// A practice handed in below the pass mark with attempts left is still work to do: it says so
+// instead of a green "Đã nộp", which reads as finished.
+export function WorkStatusBadge({ status, retriesLeft }: WorkStatusBadgeProps) {
+  if (retriesLeft > 0) {
+    return <span className="status-badge status-attention">Chưa đạt</span>;
+  }
+  return <AssignmentStatusBadge status={status} />;
+}
+
+export function describeWorkAction(status: AssignmentStatus, retriesLeft: number) {
+  if (retriesLeft > 0) {
+    return `Làm lại (còn ${retriesLeft} lượt)`;
+  }
+  return status === "in_progress" ? "Làm tiếp" : "Làm bài";
+}
+
+// A label that continues a sentence starts in lower case: "Luyện tập, không có hạn nộp".
+export function inSentence(label: string) {
+  return label.charAt(0).toLocaleLowerCase("vi") + label.slice(1);
+}
+
 export function describeDue(dueAt: string | null) {
   return dueAt ? `Hạn ${formatStudyDateTime(dueAt)}` : "Không có hạn nộp";
 }

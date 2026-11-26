@@ -33,7 +33,7 @@ export function CloseAssignmentButton({
       <p className="small">
         {openAttemptCount > 0
           ? `${openAttemptCount} học viên đang làm dở sẽ không nộp được nữa.`
-          : "Học viên sẽ không bắt đầu hoặc nộp thêm."}{" "}
+          : "Học viên sẽ không bắt đầu làm hay nộp thêm được nữa."}{" "}
         Không mở lại được.
       </p>
       <div className="button-row">

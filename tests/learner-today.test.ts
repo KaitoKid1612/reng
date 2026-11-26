@@ -112,6 +112,28 @@ test("started work comes first, then work due today, then accepted late work", (
       ["late", true, "Lớp A"],
     ],
   );
+  // The week's work and open-ended work wait behind the cap, counted for the full list.
+  assert.equal(moreAssignmentCount, 2);
+});
+
+test("work due this week and open-ended work follow by deadline; later work stays on the class page", () => {
+  const { items, moreAssignmentCount } = buildTodayPlan(
+    {
+      ...empty,
+      classes: [{ ...teacherClass, slots: [] }],
+      openAssignments: [
+        work({ id: "open-ended" }),
+        work({ id: "in-two-weeks", dueAt: iso("2026-11-17T23:59:00") }),
+        work({ id: "sunday", dueAt: iso("2026-11-08T23:59:00") }),
+        work({ id: "tomorrow", dueAt: iso("2026-11-04T21:00:00") }),
+      ],
+    },
+    now,
+  );
+  assert.deepEqual(
+    items.map((item) => (item.kind === "assignment" ? item.assignmentId : item.kind)),
+    ["tomorrow", "sunday", "open-ended"],
+  );
   assert.equal(moreAssignmentCount, 0);
 });
 

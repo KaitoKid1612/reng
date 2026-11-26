@@ -249,8 +249,8 @@ export function KanjiPractice({
           Bắt đầu luyện
         </Button>
         <p className="small muted">
-          Phiên luyện chưa lưu điểm. Câu {settings.noun} giáo viên giao trong bài tập vẫn được chấm
-          và vào sổ lỗi như thường.
+          Phiên luyện này không lưu điểm. Câu {settings.noun} giáo viên giao trong bài tập vẫn được
+          chấm và vào sổ lỗi như thường.
         </p>
       </form>
     );

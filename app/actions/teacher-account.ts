@@ -40,7 +40,8 @@ export async function activateTeacherAction(
   }
   if (status === "pending") {
     return {
-      notice: "Đã gửi yêu cầu. Quản trị viên sẽ mở quyền dạy sau khi xác nhận với bạn.",
+      notice:
+        "Đã gửi yêu cầu. Quản trị viên sẽ mở quyền dạy sau khi xác nhận với bạn; Reng không gửi email báo, bạn quay lại trang này để xem.",
     };
   }
   redirect("/teach");

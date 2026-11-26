@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { subjectForLanguage } from "@/lib/class-settings";
 import { DAILY_FORMATS } from "@/lib/jlpt-parts";
-import { createJoinCode } from "@/lib/join-code";
+import { createJoinCode, isJoinCode } from "@/lib/join-code";
 import { compareLessons } from "@/lib/lesson-order";
 import {
   callRpc,
@@ -466,6 +466,68 @@ const joinResultSchema = z
 
 export async function joinClass(userId: string, code: string) {
   return callRpc("join_class", { p_user_id: userId, p_code: code }, joinResultSchema);
+}
+
+export interface JoinPreview {
+  classId: string;
+  name: string;
+  teacherName: string;
+  // How the viewer stands with the class, so the invite page answers before a join is tried.
+  relation: "guest" | "learner" | "member" | "owner";
+}
+
+/**
+ * What an invite link shows before joining: the class and its teacher. Anyone holding a code that
+ * join_class accepts was meant to see them; an unknown, closed or self-study code shows nothing,
+ * as join_class answers all three alike.
+ */
+export async function previewJoinClass(
+  code: string,
+  userId: string | null,
+): Promise<JoinPreview | null> {
+  if (!isJoinCode(code)) {
+    return null;
+  }
+  const service = createServiceClient();
+  const row = await selectOptional(
+    service
+      .from("classes")
+      .select("id, name, teacher_id, self_study")
+      .eq("join_code", code)
+      .eq("join_enabled", true)
+      .eq("active", true)
+      .maybeSingle(),
+    z.object({ id: z.uuid(), name: z.string(), teacher_id: z.uuid(), self_study: z.boolean() }),
+  );
+  if (!row || row.self_study) {
+    return null;
+  }
+  const [teacher, enrollment] = await Promise.all([
+    selectOptional(
+      service.from("profiles").select("full_name").eq("id", row.teacher_id).maybeSingle(),
+      z.object({ full_name: z.string() }),
+    ),
+    userId
+      ? selectOptional(
+          service
+            .from("enrollments")
+            .select("left_at")
+            .eq("class_id", row.id)
+            .eq("user_id", userId)
+            .maybeSingle(),
+          z.object({ left_at: timestamp.nullable() }),
+        )
+      : null,
+  ]);
+  let relation: JoinPreview["relation"] = "guest";
+  if (userId === row.teacher_id) {
+    relation = "owner";
+  } else if (enrollment?.left_at === null) {
+    relation = "member";
+  } else if (userId) {
+    relation = "learner";
+  }
+  return { classId: row.id, name: row.name, teacherName: teacher?.full_name ?? "", relation };
 }
 
 export interface StudentClassSummary {

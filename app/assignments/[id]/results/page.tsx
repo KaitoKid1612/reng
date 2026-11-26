@@ -94,7 +94,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
       )}
       {canRetry && (
         <Link href={`/assignments/${assignment.id}`} className={buttonVariants()}>
-          Làm lại lượt mới
+          Làm lại
         </Link>
       )}
       <Link href="/mistakes" className={buttonVariants({ variant: "outline" })}>
@@ -173,7 +173,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
                 {handedInAtDeadline ? `Reng tự nộp lúc ${handInEnd}` : "nộp lúc"}{" "}
                 {formatStudyDateTime(attempt.submittedAt ?? attempt.savedAt)}
                 {attempt.isLate ? " (nộp muộn)" : ""}
-                {handedInAtDeadline ? " với các câu đã lưu, vì bài chưa được bấm Nộp" : ""}.
+                {handedInAtDeadline ? " với các câu đã lưu, vì bạn chưa bấm Nộp bài" : ""}.
               </p>
               {took && (
                 <p className="small muted">

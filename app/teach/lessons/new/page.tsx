@@ -45,7 +45,7 @@ export default async function NewLessonPage() {
                 {content.vocab.length > 0 && ` · ${content.vocab.length} từ vựng`} ·{" "}
                 {content.grammar.length} mẫu câu · {content.slides.length} slide ·{" "}
                 {content.questions.length} câu luyện
-                {existing && ` · bạn đã tạo «${existing.title}»`}
+                {existing && ` · bạn đã tạo “${existing.title}”`}
               </p>
             </div>
             <div className="button-row">
@@ -74,7 +74,7 @@ export default async function NewLessonPage() {
         <div>
           <h1>Tạo bài mới</h1>
           <p className="muted">
-            <Link href="/teach">Giảng dạy</Link>. Bài mới là bản nháp riêng; học viên chỉ thấy sau
+            <Link href="/teach">Giảng dạy</Link> · Bài mới là bản nháp riêng; học viên chỉ thấy sau
             khi bạn xuất bản và giao cho lớp.
           </p>
         </div>
@@ -100,7 +100,7 @@ export default async function NewLessonPage() {
           </span>
         </Link>
         <Link href="#detailed-lesson-title" className="link-card">
-          <span className="link-card-title">Soạn tiếng Nhật từ đầu</span>
+          <span className="link-card-title">Soạn bài tiếng Nhật từ đầu</span>
           <span className="small muted">
             Tự nhập từ vựng, mẫu câu, câu luyện và slide trong trình soạn.
           </span>

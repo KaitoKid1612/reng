@@ -17,8 +17,8 @@ export default async function AdminActivityPage() {
         <div>
           <h1>Nhật ký hoạt động</h1>
           <p>
-            <Link href="/admin">Quản trị</Link>. 100 thao tác gần nhất về giáo viên, chia sẻ và công
-            khai bài học.
+            <Link href="/admin">Quản trị</Link> · 100 thao tác gần nhất về giáo viên, chia sẻ và
+            công khai bài học.
           </p>
         </div>
       </div>

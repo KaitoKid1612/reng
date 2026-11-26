@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 interface GoogleSignInProps {
   nextPath: string;
   label: string;
+  // The page was opened inside a chat app (Zalo, Messenger), where Google refuses to sign in.
+  isInAppBrowser?: boolean;
 }
 
 interface GoogleSubmitButtonProps {
@@ -48,9 +50,16 @@ function GoogleSubmitButton({ label }: GoogleSubmitButtonProps) {
   );
 }
 
-export function GoogleSignIn({ nextPath, label }: GoogleSignInProps) {
+export function GoogleSignIn({ nextPath, label, isInAppBrowser = false }: GoogleSignInProps) {
   return (
     <div className="oauth-options">
+      {isInAppBrowser && (
+        <p className="notice-panel">
+          Bạn đang mở Reng trong ứng dụng như Zalo hay Messenger, nơi Google thường không cho đăng
+          nhập. Để dùng nút Google, mở link bằng Chrome hoặc Safari (bấm dấu ⋯ rồi chọn mở bằng
+          trình duyệt); hoặc dùng email ngay bên dưới.
+        </p>
+      )}
       <form action={signInWithGoogle}>
         <input type="hidden" name="next" value={nextPath} />
         <GoogleSubmitButton label={label} />

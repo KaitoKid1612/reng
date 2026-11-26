@@ -70,7 +70,7 @@ export function NotificationPreferencesForm({
         </fieldset>
       </div>
       <p className="small muted">
-        Nhắc học chỉ gửi khi có việc cần làm. Mọi email đều có link hủy một chạm.
+        Nhắc học chỉ gửi khi có việc cần làm. Email nào cũng có link để hủy nhận ngay.
       </p>
       {state.error && (
         <p role="alert" className="error-text">

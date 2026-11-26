@@ -47,7 +47,7 @@ export function CreateLessonForm({ suggestedOrder }: CreateLessonFormProps) {
         </p>
       )}
       <Button type="submit" disabled={isPending}>
-        Tạo và mở editor
+        Tạo bài và mở trình soạn
       </Button>
     </form>
   );

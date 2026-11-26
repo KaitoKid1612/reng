@@ -6,6 +6,7 @@ import { SignInForm } from "@/components/auth/sign-in-form";
 import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
 import { getCurrentAccount } from "@/lib/server/account";
 import { isClassroomConfigured, isGoogleAuthEnabled } from "@/lib/server/supabase";
+import { isRequestFromInAppBrowser } from "@/lib/server/in-app-browser";
 
 import type { SignInError } from "@/lib/auth-paths";
 import type { Metadata } from "next";
@@ -17,7 +18,7 @@ interface SignInPageProps {
 }
 
 const SIGN_IN_ERRORS: Record<SignInError, string> = {
-  link: "Liên kết trong email đã hết hạn hoặc đã được dùng. Đăng nhập hoặc gửi lại thư.",
+  link: "Link trong email đã hết hạn hoặc đã được dùng. Đăng nhập lại; quên mật khẩu thì bấm Quên mật khẩu? để nhận link mới.",
   google: "Chưa đăng nhập được bằng Google. Bạn thử lại, hoặc dùng email và mật khẩu.",
   "google-cancelled": "Bạn đã dừng đăng nhập bằng Google. Thử lại hoặc dùng email và mật khẩu.",
 };
@@ -46,7 +47,11 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
       {isClassroomConfigured() ? (
         <>
           {isGoogleAuthEnabled() && (
-            <GoogleSignIn nextPath={nextPath} label="Đăng nhập bằng Google" />
+            <GoogleSignIn
+              nextPath={nextPath}
+              label="Đăng nhập bằng Google"
+              isInAppBrowser={await isRequestFromInAppBrowser()}
+            />
           )}
           <SignInForm nextPath={nextPath} />
           <p>

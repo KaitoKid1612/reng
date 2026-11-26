@@ -29,7 +29,9 @@ export function DeleteSessionButton({ classId, sessionId }: DeleteSessionButtonP
     <form action={action} className="inline-form">
       <input type="hidden" name="classId" value={classId} />
       <input type="hidden" name="sessionId" value={sessionId} />
-      <p className="small">Xóa ghi chú buổi dạy này? Không khôi phục được.</p>
+      <p className="small">
+        Xóa buổi dạy này khỏi nhật ký, kể cả ghi chú và điểm danh? Không khôi phục được.
+      </p>
       <div className="button-row">
         <Button type="submit" name="operation" value="delete" disabled={isPending}>
           Xác nhận xóa

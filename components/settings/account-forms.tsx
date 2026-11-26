@@ -16,7 +16,10 @@ export function AccountNameForm({ fullName }: AccountNameFormProps) {
   return (
     <form action={action} className="form-card" aria-labelledby="account-name-title">
       <h2 id="account-name-title">Họ tên</h2>
-      <p className="small muted">Giáo viên thấy tên này trong lớp; học viên thấy tên giáo viên.</p>
+      <p className="small muted">
+        Tên này hiện với giáo viên của lớp, và với các bạn khác trên bảng xếp hạng tuần và khi thi
+        đấu cả lớp. Nếu bạn dạy, học viên thấy đây là tên giáo viên.
+      </p>
       <div className="field">
         <label htmlFor="account-name">Họ tên hiển thị</label>
         <input

@@ -167,7 +167,7 @@ export function StructureStep({ draft, dispatch }: StructureStepProps) {
       <section className="editor-section" aria-labelledby="dialogue-step-title">
         <h2 id="dialogue-step-title">Hội thoại</h2>
         <p className="small muted">
-          Mỗi lượt lời một câu ngắn. Slide hiển thị tối đa ba lượt một trang.
+          Mỗi lượt thoại một câu ngắn. Slide hiển thị tối đa ba lượt một trang.
         </p>
         <ol className="teaching-items">
           {dialogue.map((line, index) => {

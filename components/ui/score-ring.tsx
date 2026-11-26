@@ -71,7 +71,7 @@ interface PracticeScoreProps {
 
 function praiseFor(percent: number) {
   if (percent >= 100) {
-    return "Tuyệt đối! Không sai câu nào.";
+    return "Tuyệt vời! Không sai câu nào.";
   }
   if (percent >= 80) {
     return "Rất tốt, chỉ còn vài chỗ cần ôn.";

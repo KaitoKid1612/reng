@@ -84,11 +84,13 @@ export default async function ProgressPage() {
       <div className="page-heading">
         <div>
           <h1>Tiến độ của tôi</h1>
-          <p>Ba chỉ số tách riêng: đọc bài, điểm bài tập và thẻ ôn tập.</p>
+          <p>
+            Chuỗi ngày học, bài đã đọc, điểm bài tập, kết quả thi thử JLPT và thẻ ôn tập của bạn.
+          </p>
         </div>
         <div className="button-row">
           <Link href="/settings/notifications" className={buttonVariants({ variant: "ghost" })}>
-            Cài đặt email nhắc học
+            Cài đặt nhắc học
           </Link>
           <SignOutButton />
         </div>
@@ -259,7 +261,7 @@ export default async function ProgressPage() {
         <h2 id="card-progress">Thẻ ôn tập</h2>
         <p>
           {summary.vocab.total} thẻ từ vựng ({summary.vocab.due} đến hạn), {summary.mistakes.open}{" "}
-          câu trong sổ lỗi đang mở, {summary.mistakes.resolved} câu đã giải quyết.
+          câu trong sổ lỗi chưa thuộc, {summary.mistakes.resolved} câu đã thuộc.
         </p>
         <Link href="/review">Ôn tập ngay</Link>
       </section>

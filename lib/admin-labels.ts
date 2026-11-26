@@ -12,6 +12,25 @@ export function teacherStatusLabel(
   return status === "suspended" && !activatedAt ? "Đã từ chối" : TEACHER_STATUS_LABELS[status];
 }
 
+// What an admin's status change did, named at the top of the list: the changed row moves to its
+// new group, often far down the page.
+export const TEACHER_STATUS_OUTCOMES = ["approved", "reopened", "rejected", "paused"] as const;
+
+export type TeacherStatusOutcome = (typeof TEACHER_STATUS_OUTCOMES)[number];
+
+export function describeTeacherStatusOutcome(outcome: TeacherStatusOutcome, name: string) {
+  switch (outcome) {
+    case "approved":
+      return `Đã duyệt ${name}. Reng không gửi thư báo, bạn nhắn để giáo viên biết và bắt đầu tạo lớp.`;
+    case "reopened":
+      return `Đã mở lại quyền dạy cho ${name}.`;
+    case "rejected":
+      return `Đã từ chối yêu cầu của ${name}. Người này vẫn học được như học viên.`;
+    case "paused":
+      return `Đã tạm dừng quyền dạy của ${name}. Lớp, bài học và điểm vẫn được giữ.`;
+  }
+}
+
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   "teacher.requested": "Gửi yêu cầu giảng dạy",
   "teacher.activated": "Tự kích hoạt giảng dạy",

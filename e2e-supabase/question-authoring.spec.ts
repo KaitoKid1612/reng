@@ -261,7 +261,7 @@ test("a Chinese teacher confirms a sentence-order question again after editing a
     await page.getByRole("button", { name: "Lưu và xác nhận đáp án câu 1", exact: true }).click();
     await expect(page.getByText("Đã xác nhận đáp án", { exact: true })).toBeVisible();
 
-    await page.getByRole("button", { name: "5. Slide & xuất bản", exact: true }).click();
+    await page.getByRole("button", { name: "5. Slide và xuất bản", exact: true }).click();
     await page.getByRole("button", { name: "Dựng slide từ nội dung", exact: true }).click();
     await page.getByRole("button", { name: "Áp dụng thay đổi slide", exact: true }).click();
     // Title, goals, the question, then homework.
@@ -280,8 +280,7 @@ test("a Chinese teacher confirms a sentence-order question again after editing a
 
     await page.getByRole("link", { name: "Xem bản đã xuất bản" }).click();
     const slideHref =
-      (await page.getByRole("link", { name: "Trình chiếu", exact: true }).getAttribute("href")) ??
-      "";
+      (await page.getByRole("link", { name: "Xem slide", exact: true }).getAttribute("href")) ?? "";
     await page.goto(`${slideHref.replace(/#.*$/, "")}#3`);
     await expect(page.getByTestId("slide-counter")).toHaveText("3 / 4");
     await page.getByRole("button", { name: "Hiện đáp án", exact: true }).click();

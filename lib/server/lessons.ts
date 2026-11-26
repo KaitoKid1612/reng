@@ -330,7 +330,8 @@ export async function publishLessonDraft(
     if (registered.size + bundled.length !== hashes.length) {
       problems.push({
         section: "info",
-        message: "Một số mã audio chưa được đăng ký. Chạy lại script sinh audio hoặc xóa mã đó.",
+        message:
+          "Một số từ hoặc câu nghe có audio chưa có trên Reng nên chưa xuất bản được. Xóa câu đó, hoặc nhờ quản trị viên Reng tạo lại audio rồi tải lại trang.",
       });
     }
   }

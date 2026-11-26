@@ -72,7 +72,7 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
     }
   }
 
-  // On a computer: Space flips, ← → move, 1–4 rate (Quên, Khó, Được, Dễ) once flipped. Keys typed
+  // On a computer: Space flips, ← → move, 1–4 rate (Quên, Khó, Nhớ, Dễ) once flipped. Keys typed
   // into a field or pressed on a button keep their usual meaning.
   const keys = useRef({ handleMove, handleRate, isFlipped, canRate: canSchedule && !isSending });
   useEffect(() => {
@@ -162,7 +162,7 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
           <Link href={signInPath(`/vocabulary/${lessonId}?version=${versionId}`)}>
             Đăng nhập tài khoản học viên
           </Link>{" "}
-          để lưu lịch ôn theo FSRS.
+          để Reng lưu lịch ôn cho bạn.
         </p>
       )}
       {message && (
@@ -180,7 +180,7 @@ export function FlashcardDeck({ lessonId, versionId, cards, canSchedule }: Flash
       </div>
       <p className="practice-keys-hint small muted">
         Bàn phím: phím cách để lật thẻ, ← → để chuyển thẻ
-        {canSchedule ? ", sau khi lật bấm 1–4 để chấm Quên, Khó, Được, Dễ" : ""}.
+        {canSchedule ? ", sau khi lật bấm 1–4 để chấm Quên, Khó, Nhớ, Dễ" : ""}.
       </p>
     </section>
   );

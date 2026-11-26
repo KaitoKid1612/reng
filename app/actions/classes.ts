@@ -18,7 +18,7 @@ import {
 } from "@/lib/daily-practice";
 import { signInPath } from "@/lib/auth-paths";
 import { DAILY_FORMATS } from "@/lib/jlpt-parts";
-import { isJoinCode, normalizeJoinCode } from "@/lib/join-code";
+import { isJoinCode, normalizeJoinCode, UNKNOWN_JOIN_CODE } from "@/lib/join-code";
 import { getCurrentAccount } from "@/lib/server/account";
 import { acceptAnswerVariant } from "@/lib/server/answer-variants";
 import { closeAssignment, publishAssignment } from "@/lib/server/assignments";
@@ -65,7 +65,7 @@ function typedValues(formData: FormData, names: readonly string[]) {
 const ERROR_MESSAGES: Record<string, string> = {
   not_found: "Không tìm thấy lớp hoặc bài này trong tài khoản của bạn.",
   revision_conflict: "Cài đặt lớp đã đổi ở tab khác. Tải lại trang trước khi sửa tiếp.",
-  capacity_below_members: "Sức chứa không thể thấp hơn số học viên đang học.",
+  capacity_below_members: "Số học viên tối đa không được ít hơn số học viên đang trong lớp.",
   class_not_found: "Không tìm thấy lớp đang hoạt động của bạn.",
   lesson_not_found: "Bài học không thuộc tài khoản của bạn hoặc đã lưu trữ.",
   version_not_found: "Phiên bản không thuộc bài học đã chọn.",
@@ -95,7 +95,7 @@ function describeError(error: unknown) {
     if (error.issues.some((issue) => issue.path[0] === "meetingUrl")) {
       return "Link Google Meet cần có dạng https://meet.google.com/abc-defg-hij.";
     }
-    return "Thông tin chưa hợp lệ. Kiểm tra lại các trường đã nhập.";
+    return "Thông tin chưa hợp lệ. Kiểm tra lại các ô đã nhập.";
   }
   return GENERIC_ERROR;
 }
@@ -106,7 +106,7 @@ async function requireTeacherAction() {
 }
 
 const JOIN_MESSAGES: Record<string, string> = {
-  invalid_code: "Mã lớp không đúng hoặc đã ngừng nhận học viên. Kiểm tra lại với giáo viên.",
+  invalid_code: UNKNOWN_JOIN_CODE,
   rate_limited: "Bạn đã nhập sai nhiều lần. Đợi 15 phút rồi thử lại.",
   not_found: "Không tìm thấy tài khoản đang hoạt động.",
   class_full: "Lớp đã đủ số học viên. Liên hệ giáo viên để được hỗ trợ.",
@@ -121,13 +121,14 @@ export async function joinClassAction(
   const typed = readField(formData, "code");
   const code = normalizeJoinCode(typed);
   const values = { code: typed };
-  const account = await getCurrentAccount();
-  if (!account) {
-    redirect(signInPath(`/join-class?code=${encodeURIComponent(code)}`));
-  }
   // The message for a malformed code matches an unknown code so nothing is revealed.
   if (!isJoinCode(code)) {
     return { error: JOIN_MESSAGES.invalid_code, values };
+  }
+  const account = await getCurrentAccount();
+  // A guest first sees which class the code opens, then signs up or in and comes back to join.
+  if (!account) {
+    redirect(`/join-class?code=${encodeURIComponent(code)}`);
   }
   let classId: string | null;
   try {
@@ -311,7 +312,7 @@ export async function pinLatestVersionAction(
   return {
     notice: result.wasInClass
       ? "đã cập nhật lên bản mới nhất."
-      : "đã có bài, mở ngay cho học viên.",
+      : "đã đưa bài vào lớp, học viên mở được ngay.",
   };
 }
 
@@ -383,7 +384,7 @@ export async function leaveClassAction(
     ) {
       return { error: "Bạn không còn trong lớp này." };
     }
-    return { error: GENERIC_ERROR };
+    return { error: "Chưa rời lớp được. Bạn thử lại nhé." };
   }
   redirect("/classes");
 }
@@ -411,7 +412,7 @@ const dailyFormatSchema = z.enum(DAILY_FORMATS);
 const TODAY_ERRORS = {
   disabled: "Chọn số câu và bấm Lưu trước khi giao bài hôm nay.",
   no_lesson: "Lớp chưa có bài học nào đang mở. Thêm bài vào lớp trước.",
-  no_questions: "Các bài đang mở của lớp chưa có câu trắc nghiệm hoặc điền từ.",
+  no_questions: "Các bài đang mở của lớp chưa có câu luyện tự chấm.",
 } as const;
 
 export async function dailyPracticeAction(
@@ -530,7 +531,7 @@ const JLPT_EXAM_ERRORS: Record<string, string> = {
   // The exam form calls the deadline "Mở đến", not "Hạn nộp".
   due_in_past: "Thời điểm Mở đến phải ở sau thời điểm hiện tại.",
   no_exam_questions:
-    "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, reading hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
+    "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, 読解 hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
   invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",
   official_level:
     "Đề chính thức chỉ giao đúng cấp của sách. Chọn lại cấp N5 hoặc N4 cho khớp với đề.",
@@ -539,7 +540,8 @@ const JLPT_EXAM_ERRORS: Record<string, string> = {
   invalid_items:
     "Câu của đề không còn khớp với bài nguồn của lớp (bài vừa được cập nhật). Tải lại trang rồi giao đề lại.",
   // Production before migration 20261109032029: the function does not exist yet.
-  database_error: "Chưa tạo được đề thi thử. Nếu lỗi lặp lại, cần cập nhật database của Reng.",
+  database_error:
+    "Chưa tạo được đề thi thử. Thử lại sau ít phút; nếu vẫn lỗi, báo quản trị viên Reng.",
 };
 
 export async function publishJlptExamAction(
@@ -565,7 +567,7 @@ export async function publishJlptExamAction(
     return {
       error: values.dueAt
         ? JLPT_EXAM_ERRORS.invalid_input
-        : "Chọn hạn làm bài (giờ Việt Nam) cho đề thi thử.",
+        : "Chọn thời điểm Mở đến (giờ Việt Nam) cho đề thi thử.",
       values,
     };
   }

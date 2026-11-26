@@ -160,7 +160,7 @@ export function SlidesStep({ draft, dispatch, lessonId }: SlidesStepProps) {
                 setPlan(null);
               }}
             />
-            Sinh lại cả {editedCount} slide đã sửa tay và slide đã xóa
+            Dựng lại cả {editedCount} slide đã sửa tay và slide đã xóa
           </label>
         )}
         <Button type="button" variant="outline" onClick={handlePlan}>

@@ -80,9 +80,9 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-lesson",
     title: "Soạn bài tiếng Nhật",
     steps: [
-      "Vào Giảng dạy → Tạo bài mới. Chọn bài mẫu (bài 1 đến 15) và bấm Tạo bài từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
+      "Vào Giảng dạy → Tạo bài mới. Chọn bài mẫu (bài 1 đến 50) và bấm Tạo bài từ mẫu để có sẵn bài theo trình tự Minna no Nihongo Sơ cấp I: từ vựng, mẫu câu, hội thoại, luyện thay thế và 50 câu luyện.",
       "Bài mẫu là bản nháp riêng của bạn. Đọc lại, sửa theo lớp mình rồi bấm Xuất bản; học viên dùng sách của mình để đối chiếu.",
-      "Xuất bản xong, mục Dùng bài trong lớp phía trên trình soạn liệt kê các lớp của bạn: bấm Đưa vào lớp (bài mở ngay, xếp cuối danh sách bài của lớp) hoặc Cập nhật lên phiên bản mới cho lớp đang dùng bản cũ.",
+      "Xuất bản xong, mục Dùng bài trong lớp phía trên trình soạn liệt kê các lớp của bạn: bấm Đưa vào lớp (bài mở ngay, xếp cuối danh sách bài của lớp) hoặc Cập nhật lên bản mới nhất cho lớp đang dùng bản cũ.",
       "Bài tiếp theo: bấm Tạo bản sao ở bài đã có rồi sửa nội dung, hoặc dùng mục Soạn bài tiếng Nhật từ đầu ở trang Tạo bài mới.",
       "Bài mẫu được bổ sung dần (hình, slide, câu luyện) nhưng bài đã tạo không tự cập nhật. Khi bản nháp khác bài mẫu mới nhất, đầu trình soạn có link so sánh và cập nhật từ mẫu: trang so sánh ghi từng phần (từ vựng, mẫu câu, slide, câu luyện, hình) giống hay khác mẫu, rồi cho thay bản nháp bằng mẫu mới nhất; chỉnh sửa riêng trong nháp sẽ mất, phiên bản đã xuất bản và lớp đang dùng giữ nguyên.",
     ],
@@ -101,11 +101,11 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-editor",
     title: "Soạn và sửa slide",
     steps: [
-      "Editor có các mục Thông tin bài, Từ vựng, Ngữ pháp (mẫu câu và câu ví dụ), Câu luyện và Slide; khung bên cạnh xem trước đúng như khi chiếu. Nhiều từ vựng một lúc: lưu nháp rồi bấm Nhập nhiều từ từ CSV/Excel ở mục Từ vựng.",
+      "Trình soạn có các mục Thông tin bài, Từ vựng, Ngữ pháp (mẫu câu và câu ví dụ), Câu luyện và Slide; khung bên cạnh xem trước đúng như khi chiếu. Nhiều từ vựng một lúc: lưu nháp rồi bấm Nhập từ vựng từ file CSV/Excel ở mục Từ vựng.",
       "Thêm slide bằng cách chọn loại: tiêu đề, từ vựng (tối đa 8 từ), mẫu câu, câu ví dụ, hội thoại, bảng / luyện thay thế, câu luyện, ghi chú hoặc ảnh. Kéo hoặc dùng mũi tên để đổi thứ tự.",
       "Furigana viết {漢字|かんじ}, ví dụ {郵便局|ゆうびんきょく}; câu luyện cũng dùng được ở đề, lựa chọn và giải thích, trừ chữ đang hỏi cách đọc. Bảng có thể dán từ Excel hoặc gõ các ô cách nhau bằng dấu |; bật luyện thay thế để ẩn câu mẫu và hiện từng hàng khi dạy.",
       "Câu luyện có trắc nghiệm, điền, sắp xếp câu, ghép đôi, nghe và chính tả. Câu ghép đôi soạn thành hai cột, mỗi dòng một cặp (cột trái, cột phải cùng dòng là cặp đúng), 2–8 cặp; học viên nhận cột phải đã xáo trộn. Bài 1–15 có sẵn câu nghe: ở mục Câu luyện, khung Câu nghe Minna có sẵn, chọn Bài N rồi bấm Thêm 6 câu nghe (đã có audio). Câu nghe tự soạn chỉ xuất bản được khi đã có audio; Reng chưa tạo audio ngay trên trình soạn, nên cần quản trị viên tạo giúp. Khung Câu luyện kanji có nút Tạo câu kanji cho N từ, làm câu đọc và viết chữ Hán từ bảng từ vựng. Câu sắp xếp: ghi các mảnh theo đúng thứ tự câu, mỗi dòng một mảnh, không để hai mảnh giống nhau. Câu đọc hiểu: bấm Thêm đoạn văn đọc hiểu, rồi Thêm câu hỏi cho đoạn văn này để hỏi tiếp về cùng đoạn văn. Câu kiểm tra riêng ở trang Giao bài cũng có hai dạng này.",
-      "Ghi chú giáo viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên (rời trang khi còn thay đổi chưa lưu, Reng sẽ hỏi lại); Xuất bản tạo phiên bản mới; lớp đang dùng bản cũ chỉ chuyển sang khi bạn bấm Cập nhật lên phiên bản mới ở mục Dùng bài trong lớp.",
+      "Ghi chú giáo viên chỉ hiện ở cửa sổ Presenter. Bấm Lưu nháp thường xuyên (rời trang khi còn thay đổi chưa lưu, Reng sẽ hỏi lại); Xuất bản tạo phiên bản mới; lớp đang dùng bản cũ chỉ chuyển sang khi bạn bấm Cập nhật lên bản mới nhất ở mục Dùng bài trong lớp.",
     ],
   },
   {
@@ -114,7 +114,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Vào Giảng dạy → Tạo lớp: nhập tên lớp, chọn Tiếng Nhật, Tiếng Trung giản thể hoặc Tiếng Trung phồn thể theo lớp, số học viên tối đa (để trống nếu không giới hạn) và link Google Meet dạng https://meet.google.com/abc-defg-hij.",
       "Ở trang lớp, bấm Sao chép link mời rồi gửi cho học viên qua Zalo/Messenger; học viên mở link là mã lớp được điền sẵn. Vẫn có thể gửi riêng mã lớp. Đổi mã mới hoặc Ngừng nhận học viên khi cần.",
-      "Xóa học viên khỏi lớp: bấm tên học viên ở trang lớp, rồi Xóa khỏi lớp và Xác nhận xóa. Điểm và bài đã nộp vẫn giữ trong báo cáo. Học viên còn mã lớp thì vào lại được; muốn chặn thì đổi mã lớp.",
+      "Xóa học viên khỏi lớp: bấm tên học viên ở trang lớp, rồi Xóa khỏi lớp và Xác nhận xóa. Bài đã nộp không bị xóa, nhưng học viên không còn trong bảng học viên và file CSV của lớp. Học viên còn mã lớp thì vào lại được; muốn chặn thì đổi mã lớp.",
       "Ở mục Cài đặt lớp: đổi Điểm đạt của lớp (%), link Google Meet, hoặc bỏ chọn Lớp đang hoạt động để lưu trữ lớp (học viên không vào lớp và không bắt đầu bài mới được nữa).",
       "Đặt lịch học: ở mục Lịch học của trang lớp, bấm Thêm buổi trong tuần, chọn thứ, giờ bắt đầu và thời lượng (giờ Việt Nam), thêm ghi chú nếu nghỉ hoặc học bù, rồi bấm Lưu lịch học. Học viên thấy buổi tới ở trang lớp và ở Lớp của tôi.",
     ],
@@ -147,7 +147,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
       "Lớp tiếng Nhật cần có ngân hàng ôn N5 hoặc N4 trong Nội dung lớp: câu có nhãn chữ Hán, từ vựng, ngữ pháp hoặc đọc hiểu, và câu nghe có audio. Ngân hàng ôn do quản trị viên nạp vào tài khoản của bạn; chưa có thì liên hệ quản trị viên trước. Bài mẫu 1–15 không đủ làm đề: chỉ câu kanji và câu nghe Minna của bài có nhãn phần.",
       "Mở Giao bài, bấm Tạo đề thi thử JLPT ở đầu trang (hoặc cuộn tới mục Thi thử JLPT).",
       "Chọn cấp N5 hoặc N4 và bài ở ô Lấy câu từ. Reng ghi trước đề sẽ có bao nhiêu câu mỗi phần (chữ Hán – từ vựng, ngữ pháp – đọc hiểu, nghe hiểu) và báo khi bài có ít câu hơn đề thật; đề sau ưu tiên câu chưa ra ở các đề trước của lớp.",
-      "Thời gian làm bài mặc định như đề thật (N5 90 phút, N4 115 phút) và tính riêng cho từng học viên từ lúc bấm Bắt đầu thi. Ô Mở đến là hạn bắt đầu thi; Công bố điểm chọn ngay sau khi nộp hoặc sau hạn để cả lớp xem cùng lúc. Bấm Giao đề thi thử.",
+      "Thời gian làm bài mặc định như đề thật (N5 90 phút, N4 115 phút) và tính riêng cho từng học viên từ lúc bấm Bắt đầu thi. Ô Mở đến là giờ đóng đề: lượt đang làm tự nộp lúc đó, nên học viên cần bắt đầu sớm để đủ giờ; Công bố điểm chọn ngay sau khi nộp hoặc sau hạn để cả lớp xem cùng lúc. Bấm Giao đề thi thử.",
       "Đề là bài kiểm tra một lượt, không nộp muộn. Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm. Kết quả của học viên có điểm từng phần và điểm ước tính trên thang 180.",
       "Bấm tên học viên trong trang lớp: bảng Thi thử JLPT liệt kê mọi đề người đó đã nộp, mới nhất ở trên, với điểm ngôn ngữ và đọc hiểu, nghe hiểu, tổng (kèm tăng giảm so với lần trước cùng cấp) và ước tính đỗ hoặc phần còn thiếu.",
     ],
@@ -196,7 +196,7 @@ const TEACHER_SECTIONS: GuideSection[] = [
     steps: [
       "Ở trang Giảng dạy, bấm Chia sẻ cạnh một bài để gửi đúng một phiên bản cho giáo viên khác xem hoặc sao chép. Người nhận phải là giáo viên đã được mở quyền; ghi chú riêng và dữ liệu lớp không đi kèm.",
       "Bài người khác chia sẻ cho bạn nằm ở Giảng dạy → Bài được chia sẻ với tôi: mở để xem, hoặc bấm Sao chép thành bài của tôi để có bản nháp riêng.",
-      "Muốn người chưa có tài khoản cũng đọc được bài (ở trang Bài học công khai), trong trình soạn bấm dòng Quyền đọc (dưới phần xem trước, hoặc cuối bước Slide & xuất bản của bài tiếng Trung), chọn Công khai trên website rồi bấm Lưu quyền đọc.",
+      "Muốn người chưa có tài khoản cũng đọc được bài (ở trang Bài học công khai), trong trình soạn bấm dòng Quyền đọc (dưới phần xem trước, hoặc cuối bước Slide và xuất bản của bài tiếng Trung), chọn Công khai trên website rồi bấm Lưu quyền đọc.",
       "Bài không dùng nữa: bấm Lưu trữ ở trang Giảng dạy; bài chuyển xuống Bài đã lưu trữ, bấm Đưa trở lại khi cần. Gỡ khỏi lớp ở mục Nội dung lớp chỉ đóng bài với lớp đó, bài vẫn còn trong danh sách của bạn.",
     ],
   },
@@ -219,7 +219,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Mở Lớp của tôi (hoặc trang chủ khi đã đăng nhập) để xem Hôm nay học gì: buổi học hôm nay, bài đang làm dở, bài đến hạn hôm nay, bài mới mở trong tuần và thẻ đến hạn ôn. Bấm nút ở từng dòng để làm ngay; xong việc nào thì việc đó rời danh sách. Bài mới mở rời danh sách khi bạn bấm Đánh dấu đã đọc xong ở cuối bài hoặc ở slide cuối. Trang chủ còn có chuỗi ngày học: chỉ cần ôn một thẻ hoặc nộp một bài mỗi ngày là giữ được chuỗi; Lớp của tôi cho biết mỗi lớp bạn đã nộp bao nhiêu bài.",
       "Lớp của tôi và trang lớp hiện buổi học tới theo lịch giáo viên đặt; tới giờ thì bấm Vào Google Meet ở trang lớp.",
       "Vào Lớp của tôi → chọn lớp → Đọc bài: từ vựng có nút Nghe, mẫu câu có furigana, hội thoại và bảng luyện tập (bấm Xem câu mẫu để kiểm tra mình).",
-      "Cuối trang bài học có Flashcard từ vựng, Luyện nghe và Luyện kanji (lớp tiếng Trung: Luyện chữ Hán) khi bài có từ và câu nghe; trang lớp có các nút này cạnh từng bài. Ở Flashcard, chấm Quên, Khó, Được hoặc Dễ để Reng hẹn ngày ôn ở mục Ôn tập. Trên máy tính: phím cách để lật thẻ, ← → để chuyển thẻ, 1–4 để chấm; ở trang luyện kanji và từ vựng, phím 1–4 để chọn và Enter để kiểm tra, sang câu tiếp.",
+      "Cuối trang bài học có Flashcard từ vựng, Luyện nghe và Luyện kanji (lớp tiếng Trung: Luyện chữ Hán) khi bài có từ và câu nghe; trang lớp có các nút này cạnh từng bài. Ở Flashcard, chấm Quên, Khó, Nhớ hoặc Dễ để Reng hẹn ngày ôn ở mục Ôn tập. Trên máy tính: phím cách để lật thẻ, ← → để chuyển thẻ, 1–4 để chấm; ở trang luyện kanji và từ vựng, phím 1–4 để chọn và Enter để kiểm tra, sang câu tiếp.",
       "Mở lại slide của bài là vào đúng slide bạn xem lần trước.",
       "Luyện đề JLPT: bấm Luyện đề ở thanh đầu trang để thấy mọi đề của các lớp, gồm đề chính thức các năm và đề Reng đúng cấu trúc đề thật, kèm điểm ước tính /180 của đề đã làm. Ở lớp tự học, mở đề mới ngay trong Thư viện đề của lớp.",
       "Ôn kanji thi JLPT: Tự học → Tiếng Nhật → Kanji N5–N4. Chữ chia theo nhóm, mỗi chữ có âm Hán Việt, âm On/Kun, từ ví dụ, mẹo nhớ; chữ có thẻ Đã ra đề là chữ đề mẫu chính thức từng hỏi. Mục Dễ nhầm với chỉ ra chữ trông giống và cách phân biệt. Bấm Luyện nhóm này để làm hai dạng câu giống phần chữ Hán của đề: chọn cách đọc trong bốn cách gần giống nhau và chọn mặt chữ trong các chữ trông giống nhau. Trang Đoán âm On từ âm Hán Việt có các quy luật âm cuối, phụ âm đầu kèm tỉ lệ đúng. Từ vựng N4 cũng ở Tự học → Tiếng Nhật: từ chia theo chủ đề, mỗi từ có câu ví dụ kiểu đề; Luyện chủ đề này cho làm dạng điền từ vào câu và chọn từ gần nghĩa như phần Từ vựng của đề.",
@@ -236,7 +236,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
       "Bài luyện tập có nút Kiểm tra câu này; gõ xong bấm Enter để kiểm tra, bấm Enter lần nữa để sang câu sau. Trên điện thoại, sau khi kiểm tra có nút Câu sau ngay dưới câu. Bài nhiều câu hiện từng câu, có Câu trước và Câu sau; trên máy tính bấm Cả bài để xem mọi câu một lượt (máy nhớ lựa chọn). Bài dài có Danh sách câu (✓ đúng, ✗ chưa đúng) để nhảy tới câu bất kỳ; thanh Nộp bài ở cuối màn hình luôn cho biết đã trả lời bao nhiêu câu. Khi nộp mà còn câu trống, bấm Đến câu chưa làm. Trả lời đúng hay sai có tiếng báo ngắn; bấm nút loa để tắt.",
       "Quên một mẫu ngữ pháp khi đang làm bài: nếu lớp có bài giải thích ngữ pháp (như bộ Tổng ôn ngữ pháp N4), trang làm bài có link Tra ngữ pháp của lớp, mở tab mới để tìm mẫu theo tiếng Nhật hoặc nghĩa tiếng Việt; bài đang làm vẫn được lưu. Sau khi kiểm tra hoặc nộp, câu nào hỏi một mẫu có trong bài của lớp sẽ có link Ôn lại mẫu dẫn thẳng tới mẫu đó. Bài thi thử JLPT tính giờ không có link tra cứu.",
       "Ôn trúng chỗ yếu: trang lớp có mục Mẫu ngữ pháp hay sai, liệt kê tối đa 8 mẫu bạn trả lời sai trong 30 ngày qua (mẫu còn sai ở lần làm gần nhất đứng đầu), kèm số lần sai và link Ôn lại mẫu. Mục chỉ hiện khi lớp có bài giải thích ngữ pháp và câu hỏi được gắn mẫu, như ngân hàng ôn N4.",
-      "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lại lượt mới; điểm của lượt mới sẽ thay điểm cũ. Mở lại bài đã nộp thì nút chính là Xem kết quả.",
+      "Bấm Nộp bài để xem điểm và giải thích. Bài luyện tập có câu sai sẽ mở sẵn các câu sai; bấm Tất cả hoặc Đúng để xem câu khác. Còn lượt thì bấm Làm lại; điểm của lượt mới sẽ thay điểm cũ, kể cả khi thấp hơn. Mở lại bài đã nộp thì nút chính là Xem kết quả.",
       "Bài có hạn và không cho nộp muộn: trong giờ cuối có đồng hồ đếm ngược và bài tự nộp khi còn 1 phút. Nếu bạn đã đóng trang trước đó, Reng tự nộp các câu đã lưu vào khoảng 6 giờ sáng sau hạn. Lượt làm lại khi đã có lượt nộp trước thì không bị nộp, để giữ điểm cũ.",
       "Lớp ôn thi chia câu theo cấu trúc đề JLPT: bài luyện hằng ngày có đồng hồ đếm lên ở thanh Nộp bài, so với giờ đề thật cho cùng số câu (ví dụ 67 câu N4 khoảng 93 phút) và cho biết đang ở phần nào theo giờ thật. Đồng hồ không tự nộp; bấm Ẩn đồng hồ nếu thấy áp lực, máy nhớ lựa chọn. Nộp xong, trang kết quả ghi thời gian bạn đã làm.",
       "Lớp có luyện tập hằng ngày: bấm Điểm luyện tập hằng ngày ở đầu trang lớp để xem điểm từng ngày, bấm một ngày để xem lại từng câu.",
@@ -247,7 +247,7 @@ const LEARNER_SECTIONS: GuideSection[] = [
     id: "learner-jlpt",
     title: "Làm đề thi thử JLPT",
     steps: [
-      "Dưới đầu mọi trang có dòng đếm ngược tới kỳ thi JLPT tiếp theo (Chủ nhật đầu tháng 7 và tháng 12); bấm Ẩn để ẩn tới hết kỳ đó. Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài, trang đề cũng cho biết còn bao nhiêu ngày tới kỳ thi.",
+      "Ngay dưới thanh đầu trang có dòng đếm ngược tới kỳ thi JLPT tiếp theo (Chủ nhật đầu tháng 7 và tháng 12); bấm Ẩn để ẩn tới hết kỳ đó. Đề thi thử ghi Thi thử JLPT N5 (hoặc N4) và số phút làm bài, trang đề cũng cho biết còn bao nhiêu ngày tới kỳ thi.",
       "Đồng hồ bắt đầu khi bạn bấm Bắt đầu thi và vẫn chạy khi đóng trang hay mất mạng; nếu bắt đầu sát hạn thì lượt kết thúc ở hạn. Đề chỉ có một lượt, nên làm ở nơi yên tĩnh và có tai nghe cho phần nghe. Mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm, nên đọc câu hỏi và các lựa chọn trước khi bấm Nghe.",
       "Dưới đồng hồ có giờ gợi ý cho từng phần như đề thật (N4: chữ Hán – từ vựng 25 phút, ngữ pháp – đọc hiểu 55 phút, nghe hiểu 35 phút; N5: 20, 40, 30 phút). Hết giờ gợi ý của một phần, bấm Đến câu … để sang phần sau; đây chỉ là gợi ý, đồng hồ chung mới quyết định lúc nộp.",
       "Hết giờ, trang tự nộp. Nếu bạn đã đóng trang, Reng nộp các câu đã lưu khi bạn mở lại đề hoặc vào khoảng 6 giờ sáng hôm sau.",
@@ -269,9 +269,9 @@ const LEARNER_SECTIONS: GuideSection[] = [
     title: "Ôn tập và tiến độ",
     steps: [
       "Ôn tập đưa ra từ vựng và câu đã sai khi tới lịch ôn.",
-      "Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được đánh dấu đã giải quyết.",
+      "Sổ lỗi gom câu sai theo từng bài giao, lọc được câu Đến hạn ôn; câu đúng 3 lần liên tiếp khi ôn được tính là đã thuộc.",
       "Tiến độ của tôi cho thấy chuỗi ngày học với các mốc và lịch 12 tuần, bài đã đọc, kết quả bài tập, tỉ lệ đúng theo dạng câu và thẻ ôn tập.",
-      "Ba nút Ôn tập, Sổ lỗi và Tiến độ của tôi nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Đi nhanh tới trên trang chủ.",
+      "Ba nút Ôn tập, Sổ lỗi và Tiến độ của tôi nằm ở mục Ôn lại và tiến độ trong Lớp của tôi và ở mục Lối tắt trên trang chủ.",
     ],
   },
 ];
@@ -280,7 +280,7 @@ const QUESTIONS = [
   {
     question: "Quên mật khẩu thì làm sao?",
     answer:
-      "Bấm Quên mật khẩu? ở trang Đăng nhập. Nếu trang có nút Đăng nhập bằng Google và email của bạn là Gmail, bấm nút đó để vào ngay. Nếu không, nhập email để nhận link đặt lại; không thấy thư thì báo giáo viên hoặc quản trị viên để được cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.",
+      "Bấm Quên mật khẩu? ở trang Đăng nhập. Nếu trang có nút Đăng nhập bằng Google và email của bạn là Gmail, bấm nút đó để vào ngay. Nếu không, nhập email để nhận link đặt lại; không thấy thư thì nhắn giáo viên để nhờ quản trị viên Reng cấp mật khẩu tạm, rồi đổi lại ở trang Tài khoản.",
   },
   {
     question: "Không vào được lớp?",
@@ -530,8 +530,8 @@ export default function GuidePage() {
                 Tài khoản quản trị thấy mục Quản trị trên thanh đầu trang: bật hoặc tắt Duyệt giáo
                 viên mới trước khi cho dạy; duyệt, tạm dừng hoặc từ chối giáo viên; ghi hạn thuê và
                 xem nhật ký thao tác. Hết hạn thuê không tự khóa giáo viên: trang Quản trị đếm số
-                giáo viên quá hạn để bạn xử lý. Quyền quản trị do người vận hành cấp trong database,
-                không đăng ký được trên trang.
+                giáo viên quá hạn để bạn xử lý. Quyền quản trị do người vận hành cấp trực tiếp trong
+                cơ sở dữ liệu, không đăng ký được trên trang.
               </p>
             </div>
           </section>

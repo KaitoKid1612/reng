@@ -111,7 +111,7 @@ test("teacher authors listening questions, generates audio for the saved draft a
   await page.getByRole("button", { name: "Thêm câu nghe", exact: true }).click();
   const listen = page.locator("fieldset.question-card").filter({ hasText: "Câu 1: nghe" });
   await listen.getByLabel("Đề bài", { exact: true }).fill(LISTEN.prompt);
-  await listen.getByLabel(/^Transcript/).fill(LISTEN.transcript);
+  await listen.getByLabel(/^Lời nghe/).fill(LISTEN.transcript);
   await listen.getByLabel("Nội dung lựa chọn 1").fill("がっこう");
   await listen.getByLabel("Nội dung lựa chọn 2").fill("えき");
   await listen.getByLabel("Lựa chọn 1 là đáp án đúng").check();
@@ -120,7 +120,7 @@ test("teacher authors listening questions, generates audio for the saved draft a
   await page.getByRole("button", { name: "Thêm câu chính tả", exact: true }).click();
   const dictation = page.locator("fieldset.question-card").filter({ hasText: "Câu 2: chính tả" });
   await dictation.getByLabel("Đề bài", { exact: true }).fill(DICTATION.prompt);
-  await dictation.getByLabel(/^Transcript/).fill(DICTATION.transcript);
+  await dictation.getByLabel(/^Lời nghe/).fill(DICTATION.transcript);
   await dictation.getByLabel(/^Các đáp án được chấp nhận/).fill(DICTATION.answer);
   await dictation.getByLabel("Ô nhập", { exact: true }).selectOption("hiragana");
   await dictation.getByLabel("Giải thích đáp án", { exact: true }).fill("Câu tự giới thiệu.");
@@ -333,7 +333,7 @@ test("practice assignments keep listen counts and the report flags weak listenin
   await teacher.goto(`/teach/classes/${classId}`);
   const row = teacher.getByRole("row", { name: new RegExp(learner.name) });
   await expect(row).toContainText("3,5");
-  await expect(row).toContainText("Yếu phần nghe");
+  await expect(row).toContainText("Cần luyện nghe");
   await row.getByRole("link", { name: learner.name }).click();
   await expect(teacher.getByText("nghe trung bình 3,5 lần mỗi câu nghe")).toBeVisible();
   await expect(teacher.locator(".result-row-meta").filter({ hasText: "nghe 6 lần" })).toBeVisible();

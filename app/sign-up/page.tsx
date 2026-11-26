@@ -7,6 +7,7 @@ import { SignUpForm } from "@/components/auth/sign-up-form";
 import { defaultHomePath, safeNextPath } from "@/lib/auth-paths";
 import { getCurrentAccount } from "@/lib/server/account";
 import { isClassroomConfigured, isGoogleAuthEnabled } from "@/lib/server/supabase";
+import { isRequestFromInAppBrowser } from "@/lib/server/in-app-browser";
 
 import type { Metadata } from "next";
 
@@ -35,7 +36,11 @@ export default async function SignUpPage({ searchParams }: SignUpPageProps) {
       {isClassroomConfigured() ? (
         <>
           {isGoogleAuthEnabled() && (
-            <GoogleSignIn nextPath={nextPath} label="Đăng ký bằng Google" />
+            <GoogleSignIn
+              nextPath={nextPath}
+              label="Đăng ký bằng Google"
+              isInAppBrowser={await isRequestFromInAppBrowser()}
+            />
           )}
           <SignUpForm nextPath={nextPath} />
           <LegalConsent />

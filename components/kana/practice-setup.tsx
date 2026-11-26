@@ -102,7 +102,9 @@ export function PracticeSetup({
         <Button type="submit" disabled={availableCount === 0}>
           Bắt đầu luyện
         </Button>
-        <p className="small muted">Phiên luyện chưa lưu tiến độ. Tải lại trang sẽ bắt đầu lại.</p>
+        <p className="small muted">
+          Phiên luyện này không lưu tiến độ; tải lại trang sẽ bắt đầu lại.
+        </p>
       </form>
     </>
   );

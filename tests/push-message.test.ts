@@ -35,7 +35,7 @@ test("the evening notification sums up the work in one line and opens the class 
         { title: "Bài 3", dueAt: "2026-11-01T00:00:00Z", isOverdue: true, isDueSoon: true },
       ],
     }).body,
-    "1 bài cần làm: Bài 3 (đã quá hạn)",
+    "1 bài cần làm: Bài 3 (quá hạn, vẫn nộp được)",
   );
   const long = describeReminderPush({
     dueCards: 0,
