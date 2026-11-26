@@ -29,7 +29,8 @@
         "kanji": "好き［な］",
         "romaji": "suki [na]",
         "vi": "thích",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/red-heart.svg"
       },
       {
         "id": "v0904",
@@ -123,7 +124,8 @@
         "kanji": "歌",
         "romaji": "uta",
         "vi": "bài hát",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/singer.svg"
       },
       {
         "id": "v0915",
@@ -400,14 +402,16 @@
         "jp": "クラシック",
         "romaji": "kurashikku",
         "vi": "nhạc cổ điển",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/violin.svg"
       },
       {
         "id": "v0950",
         "jp": "ジャズ",
         "romaji": "jazu",
         "vi": "nhạc jazz",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/saxophone.svg"
       },
       {
         "id": "v0951",
@@ -415,7 +419,8 @@
         "kanji": "歌舞伎",
         "romaji": "kabuki",
         "vi": "kịch Kabuki",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/performing-arts.svg"
       },
       {
         "id": "v0952",

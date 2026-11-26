@@ -133,7 +133,8 @@
         "jp": "ミーティング",
         "romaji": "miitingu",
         "vi": "cuộc họp",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/speech-balloon.svg"
       },
       {
         "id": "v3016",
@@ -157,7 +158,8 @@
         "romaji": "annaisho",
         "vi": "sách hoặc tài liệu hướng dẫn",
         "audio": null,
-        "kanji": "案内書"
+        "kanji": "案内書",
+        "image": "/icons/vocab/open-book.svg"
       },
       {
         "id": "v3019",
@@ -189,7 +191,8 @@
         "romaji": "ningyou",
         "vi": "búp bê",
         "audio": null,
-        "kanji": "人形"
+        "kanji": "人形",
+        "image": "/icons/vocab/nesting-dolls.svg"
       },
       {
         "id": "v3023",
@@ -222,7 +225,8 @@
         "romaji": "genkan",
         "vi": "khu vực lối vào nhà",
         "audio": null,
-        "kanji": "玄関"
+        "kanji": "玄関",
+        "image": "/icons/vocab/door.svg"
       },
       {
         "id": "v3027",
@@ -325,7 +329,8 @@
         "jp": "ミュージカル",
         "romaji": "myuujikaru",
         "vi": "nhạc kịch",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/performing-arts.svg"
       },
       {
         "id": "v3040",
@@ -346,7 +351,8 @@
         "jp": "ガイドブック",
         "romaji": "gaidobukku",
         "vi": "sách hướng dẫn, cẩm nang",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/open-book.svg"
       },
       {
         "id": "v3043",

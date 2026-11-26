@@ -129,7 +129,8 @@
         "vi": "quay [video]",
         "audio": null,
         "kanji": "撮ります",
-        "note": "ビデオに とります"
+        "note": "ビデオに とります",
+        "image": "/icons/vocab/video-camera.svg"
       },
       {
         "id": "v5016",

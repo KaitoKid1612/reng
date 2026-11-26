@@ -374,7 +374,8 @@
         "kanji": "違います。",
         "romaji": "chigaimasu.",
         "vi": "Không phải. / Sai rồi.",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cross-mark.svg"
       },
       {
         "id": "v0247",
@@ -389,7 +390,8 @@
         "kanji": "これから お世話に なります。",
         "romaji": "korekara osewa ni narimasu.",
         "vi": "Từ nay mong được anh/chị giúp đỡ.",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
       }
     ],
     "grammar": [

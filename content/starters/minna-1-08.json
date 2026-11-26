@@ -172,7 +172,8 @@
         "kanji": "易しい",
         "romaji": "yasashii",
         "vi": "dễ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/ok-hand.svg"
       },
       {
         "id": "v0821",
@@ -438,7 +439,8 @@
         "jp": "よい",
         "romaji": "yoi",
         "vi": "tốt (= いい)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/thumbs-up.svg"
       },
       {
         "id": "v0854",

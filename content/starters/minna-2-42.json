@@ -185,7 +185,8 @@
         "romaji": "heiwa",
         "vi": "hòa bình",
         "audio": null,
-        "kanji": "平和"
+        "kanji": "平和",
+        "image": "/icons/vocab/dove.svg"
       },
       {
         "id": "v4223",
@@ -254,7 +255,8 @@
         "jp": "やかん",
         "romaji": "yakan",
         "vi": "ấm đun nước",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/teapot.svg"
       },
       {
         "id": "v4232",
@@ -312,7 +314,8 @@
         "romaji": "noshibukuro",
         "vi": "phong bì đựng tiền mừng",
         "audio": null,
-        "kanji": "のし袋"
+        "kanji": "のし袋",
+        "image": "/icons/vocab/envelope.svg"
       },
       {
         "id": "v4239",

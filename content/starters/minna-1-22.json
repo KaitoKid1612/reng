@@ -16,7 +16,8 @@
         "romaji": "kimasu",
         "vi": "mặc (áo, đồ phần thân trên)",
         "audio": null,
-        "note": "nhóm II · きる・きた"
+        "note": "nhóm II · きる・きた",
+        "image": "/icons/vocab/t-shirt.svg"
       },
       {
         "id": "v2202",
@@ -24,7 +25,8 @@
         "romaji": "hakimasu",
         "vi": "mang, đi (giày); mặc (quần, váy)",
         "audio": null,
-        "note": "nhóm I · はく・はいた"
+        "note": "nhóm I · はく・はいた",
+        "image": "/icons/vocab/jeans.svg"
       },
       {
         "id": "v2203",
@@ -130,7 +132,8 @@
         "kanji": "上着",
         "romaji": "uwagi",
         "vi": "áo khoác (ôn bài 17)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/coat.svg"
       },
       {
         "id": "v2216",
@@ -269,7 +272,8 @@
         "jp": "アパート",
         "romaji": "apaato",
         "vi": "căn hộ, nhà cho thuê nhiều phòng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/house.svg"
       },
       {
         "id": "v2234",
@@ -292,7 +296,8 @@
         "kanji": "時間",
         "romaji": "jikan",
         "vi": "thời gian: Vる じかんが ありません = không có thời gian làm V",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/watch.svg"
       },
       {
         "id": "v2238",
@@ -300,7 +305,8 @@
         "kanji": "約束",
         "romaji": "yakusoku",
         "vi": "lời hẹn, lời hứa (ôn bài 9)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/handshake.svg"
       },
       {
         "id": "v2239",

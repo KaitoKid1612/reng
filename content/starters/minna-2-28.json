@@ -80,7 +80,8 @@
         "romaji": "memo shimasu",
         "vi": "ghi chú",
         "audio": null,
-        "note": "III · じかんを メモします"
+        "note": "III · じかんを メモします",
+        "image": "/icons/vocab/memo.svg"
       },
       {
         "id": "v2809",
@@ -132,7 +133,8 @@
         "vi": "sức mạnh, năng lực",
         "audio": null,
         "note": "〜を つけます",
-        "kanji": "力"
+        "kanji": "力",
+        "image": "/icons/vocab/flexed-biceps.svg"
       },
       {
         "id": "v2815",
@@ -230,7 +232,8 @@
         "romaji": "dorama",
         "vi": "phim truyền hình, phim bộ",
         "audio": null,
-        "note": "〜を みます"
+        "note": "〜を みます",
+        "image": "/icons/vocab/television.svg"
       },
       {
         "id": "v2826",
@@ -259,7 +262,7 @@
         "audio": null,
         "note": "すきな かしゅ",
         "kanji": "歌手",
-        "image": "/icons/vocab/musical-notes.svg"
+        "image": "/icons/vocab/singer.svg"
       },
       {
         "id": "v2829",
@@ -278,7 +281,8 @@
         "vi": "con trai của người khác",
         "audio": null,
         "note": "たなかさんの むすこさん",
-        "kanji": "息子さん"
+        "kanji": "息子さん",
+        "image": "/icons/vocab/boy.svg"
       },
       {
         "id": "v2831",
@@ -297,7 +301,8 @@
         "vi": "con gái của người khác",
         "audio": null,
         "note": "すずきさんの むすめさん",
-        "kanji": "娘さん"
+        "kanji": "娘さん",
+        "image": "/icons/vocab/girl.svg"
       },
       {
         "id": "v2833",

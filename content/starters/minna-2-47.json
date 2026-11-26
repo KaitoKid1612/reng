@@ -16,7 +16,8 @@
         "vi": "[rác, củi] cháy",
         "audio": null,
         "kanji": "燃えます",
-        "note": "もえる ごみ: rác cháy được"
+        "note": "もえる ごみ: rác cháy được",
+        "image": "/icons/vocab/fire.svg"
       },
       {
         "id": "v4702",
@@ -67,7 +68,8 @@
         "romaji": "shiriaimasu",
         "vi": "quen biết nhau",
         "audio": null,
-        "kanji": "知り合います"
+        "kanji": "知り合います",
+        "image": "/icons/vocab/handshake.svg"
       },
       {
         "id": "v4708",

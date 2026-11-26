@@ -81,7 +81,8 @@
         "romaji": "nomimasu",
         "vi": "uống",
         "audio": null,
-        "note": "nhóm I · のんだ"
+        "note": "nhóm I · のんだ",
+        "image": "/icons/vocab/hot-beverage.svg"
       },
       {
         "id": "v1909",
@@ -90,7 +91,8 @@
         "romaji": "aimasu",
         "vi": "gặp: ともだちに あいます",
         "audio": null,
-        "note": "nhóm I · あった"
+        "note": "nhóm I · あった",
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v1910",
@@ -99,7 +101,8 @@
         "romaji": "mimasu",
         "vi": "xem, nhìn",
         "audio": null,
-        "note": "nhóm II · みた"
+        "note": "nhóm II · みた",
+        "image": "/icons/vocab/television.svg"
       },
       {
         "id": "v1911",

@@ -114,7 +114,8 @@
         "romaji": "oiwai",
         "vi": "quà mừng, sự chúc mừng",
         "audio": null,
-        "kanji": "お祝い"
+        "kanji": "お祝い",
+        "image": "/icons/vocab/wrapped-gift.svg"
       },
       {
         "id": "v4114",
@@ -187,7 +188,8 @@
         "jp": "おもちゃ",
         "romaji": "omocha",
         "vi": "đồ chơi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/teddy-bear.svg"
       },
       {
         "id": "v4123",
@@ -370,7 +372,8 @@
         "romaji": "youchien",
         "vi": "trường mẫu giáo",
         "audio": null,
-        "kanji": "幼稚園"
+        "kanji": "幼稚園",
+        "image": "/icons/vocab/school.svg"
       },
       {
         "id": "v4145",

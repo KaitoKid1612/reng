@@ -32,7 +32,8 @@
         "romaji": "mura",
         "vi": "làng",
         "audio": null,
-        "kanji": "村"
+        "kanji": "村",
+        "image": "/icons/vocab/houses.svg"
       },
       {
         "id": "v3804",
@@ -57,7 +58,8 @@
         "romaji": "kenkou",
         "vi": "sức khỏe",
         "audio": null,
-        "kanji": "健康"
+        "kanji": "健康",
+        "image": "/icons/vocab/flexed-biceps.svg"
       },
       {
         "id": "v3807",
@@ -81,7 +83,8 @@
         "romaji": "nyuuin shimasu",
         "vi": "nhập viện",
         "audio": null,
-        "kanji": "入院します"
+        "kanji": "入院します",
+        "image": "/icons/vocab/hospital.svg"
       },
       {
         "id": "v3810",
@@ -116,7 +119,8 @@
         "vi": "khóa",
         "audio": null,
         "kanji": "掛けます",
-        "note": "かぎを かけます"
+        "note": "かぎを かけます",
+        "image": "/icons/vocab/locked.svg"
       },
       {
         "id": "v3814",
@@ -202,7 +206,8 @@
         "romaji": "dengen",
         "vi": "nguồn điện",
         "audio": null,
-        "kanji": "電源"
+        "kanji": "電源",
+        "image": "/icons/vocab/electric-plug.svg"
       },
       {
         "id": "v3824",
@@ -241,7 +246,8 @@
         "romaji": "kenkyuushitsu",
         "vi": "phòng nghiên cứu",
         "audio": null,
-        "kanji": "研究室"
+        "kanji": "研究室",
+        "image": "/icons/vocab/microscope.svg"
       },
       {
         "id": "v3829",

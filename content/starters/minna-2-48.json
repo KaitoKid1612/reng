@@ -40,7 +40,8 @@
         "romaji": "rokuon shimasu",
         "vi": "ghi âm",
         "audio": null,
-        "kanji": "録音します"
+        "kanji": "録音します",
+        "image": "/icons/vocab/studio-microphone.svg"
       },
       {
         "id": "v4805",

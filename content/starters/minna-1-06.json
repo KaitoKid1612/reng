@@ -306,7 +306,8 @@
         "kanji": "公園",
         "romaji": "kouen",
         "vi": "công viên",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/national-park.svg"
       },
       {
         "id": "v0636",
@@ -366,7 +367,8 @@
         "jp": "ええ",
         "romaji": "ee",
         "vi": "ừ, vâng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/check-mark-button.svg"
       },
       {
         "id": "v0644",
@@ -459,7 +461,8 @@
         "jp": "ミルク",
         "romaji": "miruku",
         "vi": "sữa",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/glass-of-milk.svg"
       },
       {
         "id": "v0656",

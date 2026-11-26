@@ -39,7 +39,8 @@
         "kanji": "浴びます",
         "romaji": "abimasu",
         "vi": "tắm (vòi sen)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/shower.svg"
       },
       {
         "id": "v1605",
@@ -255,7 +256,8 @@
         "kanji": "公園",
         "romaji": "kouen",
         "vi": "công viên",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/national-park.svg"
       },
       {
         "id": "v1631",
@@ -263,7 +265,8 @@
         "kanji": "部屋",
         "romaji": "heya",
         "vi": "căn phòng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bed.svg"
       },
       {
         "id": "v1632",
@@ -360,7 +363,8 @@
         "kanji": "出ます［大学を～］",
         "romaji": "demasudaigakuo~",
         "vi": "tốt nghiệp, ra (trường)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/graduation-cap.svg"
       },
       {
         "id": "v1644",
@@ -368,7 +372,8 @@
         "kanji": "飲みます",
         "romaji": "nomimasu",
         "vi": "uống (rượu)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/clinking-beer-mugs.svg"
       },
       {
         "id": "v1645",

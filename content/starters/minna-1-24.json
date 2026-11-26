@@ -25,7 +25,8 @@
         "romaji": "naoshimasu",
         "vi": "sửa, chữa",
         "audio": null,
-        "note": "nhóm I · なおして"
+        "note": "nhóm I · なおして",
+        "image": "/icons/vocab/wrench.svg"
       },
       {
         "id": "v2403",
@@ -131,7 +132,8 @@
         "romaji": "oshiemasu",
         "vi": "dạy; chỉ cho",
         "audio": null,
-        "note": "nhóm II · おしえて"
+        "note": "nhóm II · おしえて",
+        "image": "/icons/vocab/teacher.svg"
       },
       {
         "id": "v2415",
@@ -158,7 +160,8 @@
         "romaji": "tsukurimasu",
         "vi": "làm, nấu",
         "audio": null,
-        "note": "nhóm I · つくって"
+        "note": "nhóm I · つくって",
+        "image": "/icons/vocab/pot-of-food.svg"
       },
       {
         "id": "v2418",
@@ -167,7 +170,8 @@
         "romaji": "torimasu",
         "vi": "chụp (ảnh)",
         "audio": null,
-        "note": "nhóm I · とって"
+        "note": "nhóm I · とって",
+        "image": "/icons/vocab/camera.svg"
       },
       {
         "id": "v2419",
@@ -176,7 +180,8 @@
         "romaji": "mochimasu",
         "vi": "cầm, xách",
         "audio": null,
-        "note": "nhóm I · もって"
+        "note": "nhóm I · もって",
+        "image": "/icons/vocab/handbag.svg"
       },
       {
         "id": "v2420",
@@ -200,7 +205,8 @@
         "jp": "おじいちゃん",
         "romaji": "ojiichan",
         "vi": "ông (cách gọi thân mật)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/old-man.svg"
       },
       {
         "id": "v2423",
@@ -215,7 +221,8 @@
         "jp": "おばあちゃん",
         "romaji": "obaachan",
         "vi": "bà (cách gọi thân mật)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/old-woman.svg"
       },
       {
         "id": "v2425",

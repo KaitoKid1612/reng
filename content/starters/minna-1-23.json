@@ -154,7 +154,8 @@
         "kanji": "信号",
         "romaji": "shingou",
         "vi": "đèn giao thông",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/vertical-traffic-light.svg"
       },
       {
         "id": "v2318",

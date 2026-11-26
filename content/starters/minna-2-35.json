@@ -40,7 +40,8 @@
         "jp": "キー",
         "romaji": "kii",
         "vi": "chìa khóa, phím",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/key.svg"
       },
       {
         "id": "v3505",
@@ -48,7 +49,8 @@
         "romaji": "sakimasu",
         "vi": "nở hoa",
         "audio": null,
-        "kanji": "咲きます"
+        "kanji": "咲きます",
+        "image": "/icons/vocab/blossom.svg"
       },
       {
         "id": "v3506",
@@ -89,7 +91,8 @@
         "romaji": "tadashii",
         "vi": "đúng",
         "audio": null,
-        "kanji": "正しい"
+        "kanji": "正しい",
+        "image": "/icons/vocab/check-mark-button.svg"
       },
       {
         "id": "v3511",
@@ -114,7 +117,8 @@
         "romaji": "minato",
         "vi": "cảng",
         "audio": null,
-        "kanji": "港"
+        "kanji": "港",
+        "image": "/icons/vocab/anchor.svg"
       },
       {
         "id": "v3514",
@@ -195,7 +199,8 @@
         "jp": "ひも",
         "romaji": "himo",
         "vi": "dây",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/knot.svg"
       },
       {
         "id": "v3524",
@@ -259,7 +264,8 @@
         "romaji": "sukii jou",
         "vi": "khu trượt tuyết",
         "audio": null,
-        "kanji": "スキー場"
+        "kanji": "スキー場",
+        "image": "/icons/vocab/skier.svg"
       },
       {
         "id": "v3532",
@@ -289,7 +295,8 @@
         "romaji": "nyuuryoku",
         "vi": "việc nhập dữ liệu",
         "audio": null,
-        "kanji": "入力"
+        "kanji": "入力",
+        "image": "/icons/vocab/keyboard.svg"
       },
       {
         "id": "v3536",

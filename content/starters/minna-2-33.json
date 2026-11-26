@@ -173,7 +173,8 @@
         "romaji": "shiyou kinshi",
         "vi": "cấm sử dụng",
         "audio": null,
-        "kanji": "使用禁止"
+        "kanji": "使用禁止",
+        "image": "/icons/vocab/prohibited.svg"
       },
       {
         "id": "v3322",
@@ -199,7 +200,8 @@
         "romaji": "deguchi",
         "vi": "lối ra",
         "audio": null,
-        "kanji": "出口"
+        "kanji": "出口",
+        "image": "/icons/vocab/door.svg"
       },
       {
         "id": "v3325",
@@ -349,7 +351,8 @@
         "romaji": "jokou",
         "vi": "đi chậm",
         "audio": null,
-        "kanji": "徐行"
+        "kanji": "徐行",
+        "image": "/icons/vocab/turtle.svg"
       },
       {
         "id": "v3344",

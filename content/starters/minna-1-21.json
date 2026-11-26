@@ -25,7 +25,8 @@
         "romaji": "iimasu",
         "vi": "nói",
         "audio": null,
-        "note": "nhóm I · いう"
+        "note": "nhóm I · いう",
+        "image": "/icons/vocab/speaking-head.svg"
       },
       {
         "id": "v2103",
@@ -34,7 +35,8 @@
         "romaji": "kachimasu",
         "vi": "thắng",
         "audio": null,
-        "note": "nhóm I · かつ"
+        "note": "nhóm I · かつ",
+        "image": "/icons/vocab/trophy.svg"
       },
       {
         "id": "v2104",
@@ -132,7 +134,8 @@
         "jp": "うそ",
         "romaji": "uso",
         "vi": "lời nói dối, chuyện không thật",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/lying-face.svg"
       },
       {
         "id": "v2116",
@@ -157,7 +160,8 @@
         "kanji": "物価",
         "romaji": "bukka",
         "vi": "vật giá, giá cả",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/yen-banknote.svg"
       },
       {
         "id": "v2119",
@@ -165,7 +169,8 @@
         "kanji": "放送",
         "romaji": "housou",
         "vi": "thông báo (qua loa), phát sóng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/loudspeaker.svg"
       },
       {
         "id": "v2120",
@@ -237,7 +242,8 @@
         "kanji": "話",
         "romaji": "hanashi",
         "vi": "câu chuyện, bài nói (はなしを します: nói chuyện)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/speech-balloon.svg"
       },
       {
         "id": "v2129",

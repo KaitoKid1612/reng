@@ -389,7 +389,8 @@
         "jp": "どうも すみません",
         "romaji": "doumo sumimasen",
         "vi": "cảm ơn, xin lỗi đã làm phiền",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
       },
       {
         "id": "v1049",
@@ -415,7 +416,8 @@
         "kanji": "公園",
         "romaji": "kouen",
         "vi": "công viên",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/national-park.svg"
       },
       {
         "id": "v1052",

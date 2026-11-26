@@ -62,7 +62,8 @@
         "romaji": "machimasu",
         "vi": "chờ, đợi",
         "audio": null,
-        "note": "nhóm I · まって"
+        "note": "nhóm I · まって",
+        "image": "/icons/vocab/hourglass-not-done.svg"
       },
       {
         "id": "v1407",
@@ -127,7 +128,8 @@
         "romaji": "tomemasu",
         "vi": "dừng (xe)",
         "audio": null,
-        "note": "nhóm II · とめて"
+        "note": "nhóm II · とめて",
+        "image": "/icons/vocab/stop-sign.svg"
       },
       {
         "id": "v1414",
@@ -299,14 +301,16 @@
         "kanji": "信号",
         "romaji": "shingou",
         "vi": "đèn giao thông",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/vertical-traffic-light.svg"
       },
       {
         "id": "v1434",
         "jp": "おつり",
         "romaji": "otsuri",
         "vi": "tiền thối lại",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/coin.svg"
       },
       {
         "id": "v1435",

@@ -228,7 +228,8 @@
         "kanji": "お土産",
         "romaji": "omiyage",
         "vi": "quà (mang về, mang tặng)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/wrapped-gift.svg"
       },
       {
         "id": "v0728",
@@ -300,7 +301,8 @@
         "kanji": "言葉",
         "romaji": "kotoba",
         "vi": "từ, ngôn ngữ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/speaking-head.svg"
       },
       {
         "id": "v0737",
@@ -343,7 +345,8 @@
         "jp": "いらっしゃい",
         "romaji": "irasshai",
         "vi": "chào mừng (chủ nhà đón khách)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v0743",

@@ -34,7 +34,8 @@
         "vi": "con của người khác",
         "note": "Cách gọi lịch sự",
         "audio": null,
-        "kanji": "お子さん"
+        "kanji": "お子さん",
+        "image": "/icons/vocab/baby.svg"
       },
       {
         "id": "v3104",
@@ -181,7 +182,8 @@
         "vi": "suối nước nóng",
         "note": "おんせんに はいります",
         "audio": null,
-        "kanji": "温泉"
+        "kanji": "温泉",
+        "image": "/icons/vocab/hot-springs.svg"
       },
       {
         "id": "v3120",
@@ -262,7 +264,8 @@
         "vi": "kỳ thi đầu vào",
         "note": "にゅうがくしけんを うけます",
         "audio": null,
-        "kanji": "入学試験"
+        "kanji": "入学試験",
+        "image": "/icons/vocab/memo.svg"
       }
     ],
     "grammar": [

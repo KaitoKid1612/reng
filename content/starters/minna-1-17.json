@@ -97,7 +97,8 @@
         "romaji": "shinpai shimasu",
         "vi": "lo lắng",
         "audio": null,
-        "note": "nhóm III · しんぱいしない"
+        "note": "nhóm III · しんぱいしない",
+        "image": "/icons/vocab/worried-face.svg"
       },
       {
         "id": "v1711",
@@ -134,7 +135,8 @@
         "romaji": "hairimasu",
         "vi": "vào (bồn tắm): おふろに はいります",
         "audio": null,
-        "note": "nhóm I · はいらない"
+        "note": "nhóm I · はいらない",
+        "image": "/icons/vocab/bathtub.svg"
       },
       {
         "id": "v1715",

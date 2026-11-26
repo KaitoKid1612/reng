@@ -69,7 +69,8 @@
         "vi": "làm việc [ở công ty]",
         "audio": null,
         "kanji": "勤めます",
-        "note": "かいしゃに つとめます"
+        "note": "かいしゃに つとめます",
+        "image": "/icons/vocab/briefcase.svg"
       },
       {
         "id": "v4909",
@@ -78,7 +79,8 @@
         "vi": "đi ngủ",
         "audio": null,
         "kanji": "休みます",
-        "note": "Nghĩa này dùng buổi tối: おやすみなさい."
+        "note": "Nghĩa này dùng buổi tối: おやすみなさい.",
+        "image": "/icons/vocab/sleeping-face.svg"
       },
       {
         "id": "v4910",
@@ -87,7 +89,8 @@
         "vi": "ngồi [ghế]",
         "audio": null,
         "kanji": "掛けます",
-        "note": "いすに かけます"
+        "note": "いすに かけます",
+        "image": "/icons/vocab/chair.svg"
       },
       {
         "id": "v4911",

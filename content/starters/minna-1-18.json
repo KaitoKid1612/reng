@@ -24,7 +24,8 @@
         "romaji": "araimasu",
         "vi": "rửa, giặt",
         "audio": null,
-        "note": "nhóm I · あらう"
+        "note": "nhóm I · あらう",
+        "image": "/icons/vocab/sponge.svg"
       },
       {
         "id": "v1803",
@@ -33,7 +34,8 @@
         "romaji": "hikimasu",
         "vi": "chơi (đàn piano, ghi-ta…)",
         "audio": null,
-        "note": "nhóm I · ひく"
+        "note": "nhóm I · ひく",
+        "image": "/icons/vocab/musical-keyboard.svg"
       },
       {
         "id": "v1804",
@@ -157,7 +159,8 @@
         "kanji": "お祈り",
         "romaji": "oinori",
         "vi": "việc cầu nguyện (おいのりを します: cầu nguyện)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/folded-hands.svg"
       },
       {
         "id": "v1818",
@@ -189,7 +192,8 @@
         "kanji": "動物",
         "romaji": "doubutsu",
         "vi": "động vật, con vật",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/paw-prints.svg"
       },
       {
         "id": "v1822",
@@ -301,7 +305,8 @@
         "romaji": "machimasu",
         "vi": "đợi (ôn bài 14)",
         "audio": null,
-        "note": "nhóm I · まつ"
+        "note": "nhóm I · まつ",
+        "image": "/icons/vocab/hourglass-not-done.svg"
       },
       {
         "id": "v1836",

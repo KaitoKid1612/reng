@@ -215,7 +215,8 @@
         "romaji": "taifuu",
         "vi": "bão",
         "audio": null,
-        "kanji": "台風"
+        "kanji": "台風",
+        "image": "/icons/vocab/cyclone.svg"
       },
       {
         "id": "v3926",
@@ -223,7 +224,8 @@
         "romaji": "kaji",
         "vi": "hỏa hoạn",
         "audio": null,
-        "kanji": "火事"
+        "kanji": "火事",
+        "image": "/icons/vocab/fire.svg"
       },
       {
         "id": "v3927",
@@ -306,7 +308,8 @@
         "vi": "đông người",
         "audio": null,
         "kanji": "大勢",
-        "note": "おおぜいの ひと"
+        "note": "おおぜいの ひと",
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       },
       {
         "id": "v3937",

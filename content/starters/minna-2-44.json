@@ -92,7 +92,8 @@
         "romaji": "kikenna",
         "vi": "nguy hiểm",
         "audio": null,
-        "kanji": "危険な"
+        "kanji": "危険な",
+        "image": "/icons/vocab/warning.svg"
       },
       {
         "id": "v4411",
@@ -258,7 +259,8 @@
         "jp": "シャンプー",
         "romaji": "shanpuu",
         "vi": "gội đầu, dầu gội",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/lotion-bottle.svg"
       },
       {
         "id": "v4432",

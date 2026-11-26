@@ -81,7 +81,8 @@
         "romaji": "kaimono shimasu",
         "vi": "mua sắm",
         "audio": null,
-        "kanji": "買い物します"
+        "kanji": "買い物します",
+        "image": "/icons/vocab/shopping-bags.svg"
       },
       {
         "id": "v1310",
@@ -89,7 +90,8 @@
         "romaji": "shokuji shimasu",
         "vi": "dùng bữa",
         "audio": null,
-        "kanji": "食事します"
+        "kanji": "食事します",
+        "image": "/icons/vocab/fork-and-knife-with-plate.svg"
       },
       {
         "id": "v1311",
@@ -155,7 +157,8 @@
         "romaji": "kouen",
         "vi": "công viên",
         "audio": null,
-        "kanji": "公園"
+        "kanji": "公園",
+        "image": "/icons/vocab/national-park.svg"
       },
       {
         "id": "v1319",
@@ -222,7 +225,8 @@
         "romaji": "shokuji",
         "vi": "bữa ăn, việc dùng bữa",
         "audio": null,
-        "kanji": "食事"
+        "kanji": "食事",
+        "image": "/icons/vocab/fork-and-knife-with-plate.svg"
       },
       {
         "id": "v1327",
@@ -230,7 +234,8 @@
         "romaji": "sanpo",
         "vi": "việc đi dạo",
         "audio": null,
-        "kanji": "散歩"
+        "kanji": "散歩",
+        "image": "/icons/vocab/person-walking.svg"
       },
       {
         "id": "v1328",
@@ -238,7 +243,8 @@
         "romaji": "kekkon",
         "vi": "việc kết hôn",
         "audio": null,
-        "kanji": "結婚"
+        "kanji": "結婚",
+        "image": "/icons/vocab/wedding.svg"
       },
       {
         "id": "v1329",
@@ -246,7 +252,8 @@
         "romaji": "okane",
         "vi": "tiền",
         "audio": null,
-        "kanji": "お金"
+        "kanji": "お金",
+        "image": "/icons/vocab/yen-banknote.svg"
       },
       {
         "id": "v1330",
@@ -288,7 +295,8 @@
         "romaji": "nomimono",
         "vi": "đồ uống",
         "audio": null,
-        "kanji": "飲み物"
+        "kanji": "飲み物",
+        "image": "/icons/vocab/hot-beverage.svg"
       },
       {
         "id": "v1335",
@@ -373,7 +381,8 @@
         "romaji": "yasumimasu",
         "vi": "nghỉ ngơi",
         "audio": null,
-        "kanji": "休みます"
+        "kanji": "休みます",
+        "image": "/icons/vocab/bed.svg"
       },
       {
         "id": "v1346",
@@ -381,7 +390,8 @@
         "romaji": "aimasu",
         "vi": "gặp (người に)",
         "audio": null,
-        "kanji": "会います"
+        "kanji": "会います",
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v1347",
@@ -389,7 +399,8 @@
         "kanji": "大変［な］",
         "romaji": "taihenna",
         "vi": "vất vả, khó khăn",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/downcast-face-with-sweat.svg"
       },
       {
         "id": "v1348",

@@ -42,7 +42,8 @@
         "kanji": "休みます",
         "romaji": "yasumimasu",
         "vi": "nghỉ, nghỉ ngơi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/bed.svg"
       },
       {
         "id": "v0405",
@@ -164,7 +165,8 @@
         "kanji": "晩",
         "romaji": "ban",
         "vi": "buổi tối",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/sunset.svg"
       },
       {
         "id": "v0420",
@@ -447,7 +449,8 @@
         "kanji": "夜",
         "romaji": "yoru",
         "vi": "đêm, buổi tối",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/night-with-stars.svg"
       },
       {
         "id": "v0455",

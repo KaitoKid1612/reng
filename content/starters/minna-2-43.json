@@ -16,7 +16,8 @@
         "vi": "[xuất khẩu] tăng",
         "audio": null,
         "kanji": "増えます",
-        "note": "ゆしゅつが ふえます"
+        "note": "ゆしゅつが ふえます",
+        "image": "/icons/vocab/chart-increasing.svg"
       },
       {
         "id": "v4302",
@@ -25,7 +26,8 @@
         "vi": "[xuất khẩu] giảm",
         "audio": null,
         "kanji": "減ります",
-        "note": "ゆしゅつが へります"
+        "note": "ゆしゅつが へります",
+        "image": "/icons/vocab/chart-decreasing.svg"
       },
       {
         "id": "v4303",

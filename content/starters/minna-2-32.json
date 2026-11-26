@@ -286,7 +286,8 @@
         "vi": "chiều muộn",
         "note": "ゆうがたに かえります",
         "audio": null,
-        "kanji": "夕方"
+        "kanji": "夕方",
+        "image": "/icons/vocab/sunset.svg"
       },
       {
         "id": "v3232",
@@ -404,7 +405,8 @@
         "romaji": "chiimu",
         "vi": "đội, nhóm",
         "note": "チームで れんしゅうします",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/busts-in-silhouette.svg"
       },
       {
         "id": "v3246",

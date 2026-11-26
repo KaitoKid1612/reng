@@ -33,7 +33,8 @@
         "romaji": "tsukimasu",
         "vi": "bật sáng",
         "note": "でんきが",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/light-bulb.svg"
       },
       {
         "id": "v2904",
@@ -114,7 +115,8 @@
         "vi": "dừng",
         "note": "くるまが",
         "audio": null,
-        "kanji": "止まります"
+        "kanji": "止まります",
+        "image": "/icons/vocab/stop-sign.svg"
       },
       {
         "id": "v2913",
@@ -141,7 +143,8 @@
         "vi": "được khóa",
         "note": "かぎが",
         "audio": null,
-        "kanji": "掛かります"
+        "kanji": "掛かります",
+        "image": "/icons/vocab/locked.svg"
       },
       {
         "id": "v2916",
@@ -159,7 +162,8 @@
         "vi": "bát cơm",
         "note": "ごはんを いれます",
         "audio": null,
-        "kanji": "お茶碗"
+        "kanji": "お茶碗",
+        "image": "/icons/vocab/bowl-with-spoon.svg"
       },
       {
         "id": "v2918",
@@ -317,7 +321,8 @@
         "vi": "dọn dẹp",
         "note": "へやを",
         "audio": null,
-        "kanji": "片づけます"
+        "kanji": "片づけます",
+        "image": "/icons/vocab/broom.svg"
       },
       {
         "id": "v2936",
@@ -335,7 +340,8 @@
         "vi": "giấy tờ, hồ sơ",
         "note": "しょるいを だします",
         "audio": null,
-        "kanji": "書類"
+        "kanji": "書類",
+        "image": "/icons/vocab/file-folder.svg"
       },
       {
         "id": "v2938",

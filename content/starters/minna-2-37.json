@@ -31,7 +31,8 @@
         "romaji": "shikarimasu",
         "vi": "mắng",
         "audio": null,
-        "kanji": "叱ります"
+        "kanji": "叱ります",
+        "image": "/icons/vocab/angry-face.svg"
       },
       {
         "id": "v3704",
@@ -243,7 +244,8 @@
         "romaji": "sekaijuu",
         "vi": "khắp thế giới",
         "audio": null,
-        "kanji": "世界中"
+        "kanji": "世界中",
+        "image": "/icons/vocab/globe-showing-asia-australia.svg"
       },
       {
         "id": "v3730",
@@ -314,7 +316,8 @@
         "vi": "bị cháy",
         "audio": null,
         "kanji": "焼けます",
-        "note": "うちが やけます"
+        "note": "うちが やけます",
+        "image": "/icons/vocab/fire.svg"
       },
       {
         "id": "v3739",

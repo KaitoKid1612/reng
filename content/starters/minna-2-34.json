@@ -24,7 +24,8 @@
         "vi": "đánh răng hoặc đánh bóng giày",
         "audio": null,
         "kanji": "磨きます",
-        "note": "はを みがきます／くつを みがきます"
+        "note": "はを みがきます／くつを みがきます",
+        "image": "/icons/vocab/toothbrush.svg"
       },
       {
         "id": "v3403",
@@ -230,7 +231,8 @@
         "romaji": "sadou",
         "vi": "trà đạo",
         "audio": null,
-        "kanji": "茶道"
+        "kanji": "茶道",
+        "image": "/icons/vocab/teacup-without-handle.svg"
       },
       {
         "id": "v3428",

@@ -38,7 +38,8 @@
         "romaji": "ayamarimasu",
         "vi": "xin lỗi, tạ lỗi",
         "audio": null,
-        "kanji": "謝ります"
+        "kanji": "謝ります",
+        "image": "/icons/vocab/person-bowing.svg"
       },
       {
         "id": "v4505",
@@ -63,7 +64,8 @@
         "romaji": "ryoushuusho",
         "vi": "hóa đơn, biên lai",
         "audio": null,
-        "kanji": "領収書"
+        "kanji": "領収書",
+        "image": "/icons/vocab/receipt.svg"
       },
       {
         "id": "v4508",

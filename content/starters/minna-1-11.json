@@ -469,7 +469,8 @@
         "kanji": "お兄さん",
         "romaji": "oniisan",
         "vi": "anh trai (của người khác)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/man.svg"
       },
       {
         "id": "v1157",
@@ -477,7 +478,8 @@
         "kanji": "お姉さん",
         "romaji": "oneesan",
         "vi": "chị gái (của người khác)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/woman.svg"
       },
       {
         "id": "v1158",
@@ -485,7 +487,8 @@
         "kanji": "行ってらっしゃい。",
         "romaji": "itterasshai.",
         "vi": "Đi nhé! (người ở nhà nói)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/waving-hand.svg"
       },
       {
         "id": "v1159",
@@ -500,7 +503,8 @@
         "jp": "エアメール",
         "romaji": "eameeru",
         "vi": "thư máy bay (= こうくうびん)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/airplane.svg"
       },
       {
         "id": "v1161",

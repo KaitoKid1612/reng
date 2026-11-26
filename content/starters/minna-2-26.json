@@ -265,7 +265,8 @@
         "romaji": "dashimasu",
         "vi": "đổ (rác): ごみを だします",
         "audio": null,
-        "note": "nhóm I · だすんです"
+        "note": "nhóm I · だすんです",
+        "image": "/icons/vocab/litter-in-bin-sign.svg"
       },
       {
         "id": "v2632",
@@ -297,7 +298,8 @@
         "kanji": "瓶",
         "romaji": "bin",
         "vi": "chai, lọ (thủy tinh)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/jar.svg"
       },
       {
         "id": "v2636",
@@ -305,7 +307,8 @@
         "kanji": "缶",
         "romaji": "kan",
         "vi": "lon, hộp (kim loại)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/canned-food.svg"
       },
       {
         "id": "v2637",
@@ -313,7 +316,8 @@
         "kanji": "お湯",
         "romaji": "oyu",
         "vi": "nước nóng",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/hot-beverage.svg"
       },
       {
         "id": "v2638",

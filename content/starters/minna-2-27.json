@@ -99,7 +99,8 @@
         "romaji": "koe",
         "vi": "giọng, tiếng kêu",
         "note": "Danh từ · こえが きこえます",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/speaking-head.svg"
       },
       {
         "id": "v2711",
@@ -223,7 +224,8 @@
         "romaji": "nichiyou daiku",
         "vi": "việc tự đóng sửa đồ ở nhà",
         "note": "Danh từ",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/hammer.svg"
       },
       {
         "id": "v2725",

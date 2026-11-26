@@ -109,7 +109,8 @@
         "romaji": "tomemasu",
         "vi": "đỗ, dừng (xe)",
         "audio": null,
-        "note": "nhóm II · とめて"
+        "note": "nhóm II · とめて",
+        "image": "/icons/vocab/stop-sign.svg"
       },
       {
         "id": "v1512",
@@ -126,7 +127,8 @@
         "kanji": "資料",
         "romaji": "shiryou",
         "vi": "tài liệu",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/page-facing-up.svg"
       },
       {
         "id": "v1514",
@@ -294,7 +296,8 @@
         "jp": "いけません",
         "romaji": "ikemasen",
         "vi": "không được",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/prohibited.svg"
       },
       {
         "id": "v1535",
@@ -351,7 +354,8 @@
         "jp": "すみません",
         "romaji": "sumimasen",
         "vi": "xin lỗi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/person-bowing.svg"
       },
       {
         "id": "v1542",

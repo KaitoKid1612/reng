@@ -351,7 +351,8 @@
         "vi": "Sắp trễ giờ học nên tôi vội vã đi bộ từ ga.",
         "choices": ["うえて", "ねむって", "かざって"]
       },
-      "tip": "いそいで + động từ = làm vội. Thể て: いそいで (không phải いそいて). いそがしい = bận."
+      "tip": "いそいで + động từ = làm vội. Thể て: いそいで (không phải いそいて). いそがしい = bận.",
+      "icon": "person-running"
     },
     {
       "word": "化粧",
@@ -646,7 +647,8 @@
         "vi": "Hãy cởi giày ở lối vào rồi vào phòng.",
         "choices": ["おくじょう", "おしいれ", "ひきだし"]
       },
-      "tip": "げんかん là chỗ cửa vào nhà Nhật, nơi cởi và để giày."
+      "tip": "げんかん là chỗ cửa vào nhà Nhật, nơi cởi và để giày.",
+      "icon": "door"
     },
     {
       "word": "苦い",
@@ -795,7 +797,8 @@
         "choices": ["けしょう", "ゆにゅう", "ほんやく"]
       },
       "similar": "ごはんを たべる",
-      "tip": "食 thực, 事 sự. Trang trọng hơn ごはん: しょくじを する, しょくじに さそう."
+      "tip": "食 thực, 事 sự. Trang trọng hơn ごはん: しょくじを する, しょくじに さそう.",
+      "icon": "fork-and-knife-with-plate"
     },
     {
       "word": "召し上がる",
@@ -1027,7 +1030,8 @@
         "choices": ["えらびました", "とどけました", "つつみました"]
       },
       "similar": "おかねを だす",
-      "tip": "げんきんで はらう = trả tiền mặt. しはらい = việc thanh toán."
+      "tip": "げんきんで はらう = trả tiền mặt. しはらい = việc thanh toán.",
+      "icon": "yen-banknote"
     },
     {
       "word": "両替",
@@ -1237,7 +1241,8 @@
         "choices": ["こみました", "すきました", "かわきました"]
       },
       "similar": "とうちゃくする",
-      "tip": "〜に つく = đến 〜. Cùng chữ 着 với きる (mặc) và とうちゃく."
+      "tip": "〜に つく = đến 〜. Cùng chữ 着 với きる (mặc) và とうちゃく.",
+      "icon": "airplane-arrival"
     },
     {
       "word": "乗り換える",
@@ -1308,7 +1313,8 @@
         "vi": "Vì là nhà hàng nổi tiếng nên tôi đã đặt chỗ trước một tuần.",
         "choices": ["けんぶつ", "しゅっぱつ", "りょうがえ"]
       },
-      "tip": "予 dự (trước), 約 ước (hẹn) → hẹn trước. ホテルを よやくする. よやくを とりけす = hủy đặt."
+      "tip": "予 dự (trước), 約 ước (hẹn) → hẹn trước. ホテルを よやくする. よやくを とりけす = hủy đặt.",
+      "icon": "calendar"
     },
     {
       "word": "旅館",
@@ -1322,7 +1328,8 @@
         "vi": "Ở Kyoto tôi đã trọ tại một lữ quán cổ.",
         "choices": ["こうばん", "けしき", "くうこう"]
       },
-      "tip": "Lữ quán: nhà trọ kiểu Nhật có phòng chiếu tatami, thường có suối nóng. Khác ホテル."
+      "tip": "Lữ quán: nhà trọ kiểu Nhật có phòng chiếu tatami, thường có suối nóng. Khác ホテル.",
+      "icon": "hotel"
     },
     {
       "word": "交通",
@@ -1377,7 +1384,8 @@
         "vi": "Bố tôi hằng ngày tự lái ô tô đi làm.",
         "choices": ["ゆしゅつ", "よやく", "けんぶつ"]
       },
-      "tip": "Bẫy Hán Việt: 運転 đọc vận chuyển nhưng nghĩa là lái xe. うんてんしゅ = tài xế."
+      "tip": "Bẫy Hán Việt: 運転 đọc vận chuyển nhưng nghĩa là lái xe. うんてんしゅ = tài xế.",
+      "icon": "automobile"
     },
     {
       "word": "免許",
@@ -1790,7 +1798,8 @@
         "vi": "Từ 3 giờ chiều có cuộc họp nên tôi chuẩn bị tài liệu.",
         "choices": ["めいし", "きかい", "しょるい"]
       },
-      "tip": "Tiếng Nhật かいぎ dùng cho cả cuộc họp nhỏ ở công ty. かいぎしつ = phòng họp."
+      "tip": "Tiếng Nhật かいぎ dùng cho cả cuộc họp nhỏ ở công ty. かいぎしつ = phòng họp.",
+      "icon": "speech-balloon"
     },
     {
       "word": "出張",
@@ -1804,7 +1813,8 @@
         "vi": "Tuần sau tôi đi công tác Osaka.",
         "choices": ["ざんぎょう", "けんきゅう", "にゅうがく"]
       },
-      "tip": "Đọc しゅっちょう (có っ). しゅっちょうさき = nơi đến công tác."
+      "tip": "Đọc しゅっちょう (có っ). しゅっちょうさき = nơi đến công tác.",
+      "icon": "briefcase"
     },
     {
       "word": "残業",
@@ -1930,7 +1940,8 @@
         "vi": "Tôi đã photo giấy tờ dùng cho cuộc họp ngày mai.",
         "choices": ["きかい", "ぎじゅつ", "きゅうりょう"]
       },
-      "tip": "書 thư (viết), 類 loại. しょるいを だす = nộp hồ sơ."
+      "tip": "書 thư (viết), 類 loại. しょるいを だす = nộp hồ sơ.",
+      "icon": "file-folder"
     },
     {
       "word": "連絡",
@@ -1944,7 +1955,8 @@
         "vi": "Nếu giờ họp thay đổi, xin hãy liên lạc qua email.",
         "choices": ["ちゅうもん", "しゅっちょう", "ざんぎょう"]
       },
-      "tip": "連 liên, 絡 lạc → liên lạc. れんらくさき = thông tin liên lạc."
+      "tip": "連 liên, 絡 lạc → liên lạc. れんらくさき = thông tin liên lạc.",
+      "icon": "mobile-phone"
     },
     {
       "word": "都合",
@@ -2250,7 +2262,8 @@
         "vi": "Vì sức khỏe, mỗi ngày tôi ăn nhiều rau.",
         "choices": ["ぐあい", "むり", "かおいろ"]
       },
-      "tip": "Cũng dùng như tính từ な: けんこうな ひと = người khỏe mạnh."
+      "tip": "Cũng dùng như tính từ な: けんこうな ひと = người khỏe mạnh.",
+      "icon": "flexed-biceps"
     },
     {
       "word": "運動",
@@ -2278,7 +2291,8 @@
         "vi": "Chị tôi làm y tá ở bệnh viện.",
         "choices": ["けいさつ", "しゃちょう", "きゃく"]
       },
-      "tip": "看 khán (trông nom), 護 hộ, 師 sư. かんごする = chăm sóc người bệnh."
+      "tip": "看 khán (trông nom), 護 hộ, 師 sư. かんごする = chăm sóc người bệnh.",
+      "icon": "woman-health-worker"
     },
     {
       "word": "顔色",
@@ -2319,7 +2333,8 @@
         "vi": "Vì bão sắp đến nên ngày mai trường được nghỉ.",
         "choices": ["きせつ", "くうき", "けしき"]
       },
-      "tip": "たいふうが くる/ちかづく. Mùa bão ở Nhật khoảng tháng 8–9."
+      "tip": "たいふうが くる/ちかづく. Mùa bão ở Nhật khoảng tháng 8–9.",
+      "icon": "cyclone"
     },
     {
       "word": "地震",
@@ -2630,7 +2645,8 @@
         "vi": "Khi đèn đỏ thì không được sang đường.",
         "choices": ["こうばん", "かど", "はし"]
       },
-      "tip": "Đèn xanh trong tiếng Nhật gọi là あお: しんごうが あおに なる."
+      "tip": "Đèn xanh trong tiếng Nhật gọi là あお: しんごうが あおに なる.",
+      "icon": "vertical-traffic-light"
     },
     {
       "word": "駐車場",
@@ -2644,7 +2660,8 @@
         "vi": "Ai đến bằng ô tô xin đỗ ở bãi xe phía sau.",
         "choices": ["こうさてん", "こうばん", "しんごう"]
       },
-      "tip": "ちゅうしゃ (đỗ xe) cùng âm với ちゅうしゃ (tiêm). ちゅうしゃきんし = cấm đỗ xe."
+      "tip": "ちゅうしゃ (đỗ xe) cùng âm với ちゅうしゃ (tiêm). ちゅうしゃきんし = cấm đỗ xe.",
+      "icon": "automobile"
     },
     {
       "word": "交差点",
@@ -2685,7 +2702,8 @@
         "vi": "Ông tôi đang sống thong thả ở quê.",
         "choices": ["こうさてん", "ちゅうしゃじょう", "こうばん"]
       },
-      "tip": "いなか là cách đọc đặc biệt. Vừa là nông thôn vừa là quê hương: いなかへ かえる."
+      "tip": "いなか là cách đọc đặc biệt. Vừa là nông thôn vừa là quê hương: いなかへ かえる.",
+      "icon": "house-with-garden"
     },
     {
       "word": "美術館",
@@ -2884,7 +2902,8 @@
       },
       "similar": "きに なる",
       "tip": "「〜が しんぱいだ」 hoặc 「〜を しんぱいする」. Trái nghĩa: あんしん (an tâm). ごしんぱいを おかけしました = xin lỗi đã làm anh/chị lo.",
-      "paper": [2018]
+      "paper": [2018],
+      "icon": "worried-face"
     },
     {
       "word": "安心",
@@ -2899,7 +2918,8 @@
         "choices": ["ちゅうい", "しっぱい", "はんたい"]
       },
       "similar": "ほっとする",
-      "tip": "Trái nghĩa với しんぱい. あんしんして ください = cứ yên tâm."
+      "tip": "Trái nghĩa với しんぱい. あんしんして ください = cứ yên tâm.",
+      "icon": "relieved-face"
     },
     {
       "word": "びっくり",
@@ -2998,7 +3018,8 @@
         "ja": "みんなの まえで ころんで、とても [[はずかしかった]]です。",
         "vi": "Tôi bị ngã trước mặt mọi người, xấu hổ quá.",
         "choices": ["すずしかった", "ねむかった", "やすかった"]
-      }
+      },
+      "icon": "flushed-face"
     },
     {
       "word": "残念",
@@ -3108,7 +3129,8 @@
         "ja": "その えいがは すばらしくて、とても [[かんどう]]しました。",
         "vi": "Bộ phim đó tuyệt vời, tôi rất xúc động.",
         "choices": ["ちゅうもん", "よやく", "しゅっせき"]
-      }
+      },
+      "icon": "face-holding-back-tears"
     },
     {
       "word": "楽しみ",
@@ -3208,7 +3230,8 @@
         "choices": ["ほめました", "かざりました", "ひろいました"]
       },
       "similar": "おこる",
-      "tip": "しかる: người trên mắng để dạy bảo. おこる: nổi giận nói chung."
+      "tip": "しかる: người trên mắng để dạy bảo. おこる: nổi giận nói chung.",
+      "icon": "angry-face"
     },
     {
       "word": "紹介",
@@ -3250,7 +3273,8 @@
         "vi": "Mai tôi có hẹn gặp bạn ở ga.",
         "choices": ["しゅみ", "いけん", "ねだん"]
       },
-      "tip": "やくそくを まもる = giữ lời hứa; やくそくを やぶる = thất hứa."
+      "tip": "やくそくを まもる = giữ lời hứa; やくそくを やぶる = thất hứa.",
+      "icon": "handshake"
     },
     {
       "word": "遠慮",
@@ -3278,7 +3302,8 @@
         "choices": ["しつもん", "ちゅうもん", "やくそく"]
       },
       "tip": "Cũng chỉ bài phát biểu ngắn mở đầu/cảm ơn: けっこんしきで あいさつする.",
-      "hanViet": "ai tạt"
+      "hanViet": "ai tạt",
+      "icon": "person-bowing"
     },
     {
       "word": "手伝う",
@@ -3788,7 +3813,8 @@
         "vi": "Trận hôm qua Nhật Bản đã thắng 3-1.",
         "choices": ["にげました", "おちました", "ひろいました"]
       },
-      "tip": "〜に かつ = thắng ai. Trái nghĩa: まける (thua)."
+      "tip": "〜に かつ = thắng ai. Trái nghĩa: まける (thua).",
+      "icon": "trophy"
     },
     {
       "word": "負ける",
@@ -4931,7 +4957,8 @@
         "choices": ["こえ", "におい", "いろ"]
       },
       "tip": "おと: tiếng của vật (xe, đàn, mưa). こえ (声): tiếng người, chim, thú.",
-      "paper": [2018]
+      "paper": [2018],
+      "icon": "musical-notes"
     },
     {
       "word": "匂い",
@@ -5036,7 +5063,8 @@
         "ja": "夜空に ほしが きれいに [[ひかって]] います。",
         "vi": "Sao lấp lánh đẹp trên bầu trời đêm.",
         "choices": ["ふとって", "すべって", "わかれて"]
-      }
+      },
+      "icon": "sparkles"
     },
     {
       "word": "眠い",
@@ -5126,7 +5154,8 @@
         "ja": "こんやは [[まるい]] 月が 見えます。",
         "vi": "Đêm nay có thể ngắm trăng tròn.",
         "choices": ["ふかい", "うるさい", "にがい"]
-      }
+      },
+      "icon": "hollow-red-circle"
     },
     {
       "word": "気が付く",
@@ -5376,7 +5405,8 @@
         "ja": "まいしゅう 月よう日の 夜に 見て いる [[ドラマ]]が とても おもしろいです。",
         "vi": "Bộ phim truyền hình tôi xem tối thứ Hai hằng tuần rất hay.",
         "choices": ["ガラス", "アルコール", "センチ"]
-      }
+      },
+      "icon": "television"
     },
     {
       "word": "パーセント",

@@ -87,7 +87,8 @@
         "kanji": "教師",
         "romaji": "kyoushi",
         "vi": "giáo viên (nói về nghề của mình)",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/teacher.svg"
       },
       {
         "id": "v0111",
@@ -308,7 +309,8 @@
         "jp": "そうです",
         "romaji": "sou desu",
         "vi": "đúng vậy",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/check-mark-button.svg"
       },
       {
         "id": "v0138",
@@ -323,7 +325,8 @@
         "kanji": "違います",
         "romaji": "chigaimasu",
         "vi": "không phải, sai rồi",
-        "audio": null
+        "audio": null,
+        "image": "/icons/vocab/cross-mark.svg"
       },
       {
         "id": "v0140",
