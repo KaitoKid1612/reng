@@ -41,9 +41,12 @@ test("booklets number questions like the real test and cover every question once
       exam.questions.map((question) => question.id),
       exam.id,
     );
+    // A test without listening (a book's written part) prints its two written sections only.
+    const hasListening = exam.questions.some((question) => question.type === "listen");
     assert.deepEqual(
       booklet.map((section) => section.title),
-      ["言語知識（文字・語彙）", "言語知識（文法）・読解", "聴解"],
+      ["言語知識（文字・語彙）", "言語知識（文法）・読解", ...(hasListening ? ["聴解"] : [])],
+      exam.id,
     );
     const sheetRows = buildAnswerSheet(exam).flatMap((section) =>
       section.mondai.flatMap((mondai) => mondai.items),

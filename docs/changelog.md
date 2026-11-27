@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 27/11/2026
 
+- **Đề tham khảo JLPT N4 tháng 07/2026:** 70 câu phần chữ và đọc (chưa có phần nghe), đáp án khớp bảng đáp án của sách. Đề trọn bộ giờ tính thời gian theo các phần có trong đề (đề này 80 phút) ([soạn nội dung](content-authoring.md#đề-tham-khảo-jlpt-n4-tháng-072026-27112026)).
+
 - **Audio bài học chuyển sang Supabase Storage:** 520 file MP3 (97 MB) nằm ở bucket công khai `lesson-audio`; bản deploy trên Vercel không còn mang theo thư mục này. Thêm audio mới thì chạy `npm run audio:upload` trước khi đẩy code ([soạn nội dung](content-authoring.md#audio-cho-bài-học)).
 
 - **Đề nào cũng có bản in:** hai đề N4 trọn bộ vào danh sách Bản in đề JLPT; Thư viện đề có link Bản in cho đề jlpt.jp và đề trọn bộ; mọi đề đã mở cho lớp (kể cả đề ghép từ ngân hàng) in được đúng các câu đã ra. Bỏ mục "Đề mẫu chính thức trên mạng".

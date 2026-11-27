@@ -5,13 +5,16 @@ import { test } from "node:test";
 import { parseAssignableQuestion } from "../lib/assignment";
 import { BUNDLED_LISTENING_AUDIO } from "../lib/bundled-listening";
 import { describeExamSource, examTitleFor } from "../lib/exam-library";
+import { describeExamTime } from "../lib/exam-print";
 import {
   composeJlptExam,
   countJlptSections,
   isOfficialTest,
+  jlptExamMinutes,
   jlptSectionOf,
   officialTestLevel,
 } from "../lib/jlpt";
+import { findJlptExamSet } from "../lib/jlpt-exam-sets";
 import { findFuriganaProblems } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 import { RECORDED_AUDIO_VOICE, recordedAudioHash } from "../lib/recorded-audio";
@@ -77,6 +80,29 @@ const TESTS = [
       ],
     },
   },
+  {
+    // A book's reference test: the written part only, checked against the book's answer key.
+    id: "n4-2026-07",
+    title: "Đề tham khảo JLPT N4 tháng 07/2026",
+    counts: { vocabulary: 35, grammarReading: 35, listening: 0 },
+    answers: {
+      v: [
+        [4, 2, 1, 3, 2, 4, 3, 3, 2],
+        [1, 2, 4, 4, 3, 1],
+        [3, 1, 4, 2, 4, 1, 2, 3, 4, 1],
+        [3, 4, 2, 2, 1],
+        [1, 3, 2, 4, 3],
+      ],
+      g: [
+        [2, 3, 4, 1, 1, 3, 4, 1, 4, 2, 3, 1, 4, 2, 3],
+        [1, 4, 2, 4, 3],
+        [2, 4, 3, 2, 1],
+        [2, 2, 1, 3],
+        [1, 3, 4, 3],
+        [2, 4],
+      ],
+    },
+  },
 ] as const;
 
 async function exists(path: string) {
@@ -95,12 +121,21 @@ for (const { id, title, counts, answers } of TESTS) {
     const questions = lesson.content.questions;
     questions.forEach((question) => parseAssignableQuestion(question));
     assert.deepEqual(countJlptSections(questions), counts);
+    // The exam's time is the official minutes of the sections the test has.
+    assert.equal(jlptExamMinutes("N4", counts), counts.listening ? 115 : 80);
+    const printed = findJlptExamSet(id);
+    assert.ok(printed, `${id} is printable`);
+    assert.equal(
+      describeExamTime(printed).startsWith(counts.listening ? "115 phút" : "80 phút"),
+      true,
+    );
+    assert.equal(describeExamTime(printed).includes("聴解"), counts.listening > 0);
     assert.ok(isOfficialTest(questions));
     assert.equal(officialTestLevel(questions), "N4");
     assert.equal(new Set(questions.map((question) => question.id)).size, questions.length);
     assert.deepEqual(
       [...new Set(questions.map((question) => jlptSectionOf(question)))],
-      ["vocabulary", "grammarReading", "listening"],
+      ["vocabulary", "grammarReading", ...(counts.listening ? ["listening"] : [])],
     );
     for (const [prefix, key] of Object.entries(answers)) {
       assert.deepEqual(

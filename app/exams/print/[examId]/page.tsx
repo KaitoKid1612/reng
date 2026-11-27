@@ -138,7 +138,7 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
         </p>
         <h1>{set.title}</h1>
         <p className="exam-print-booklet-name">{PRINT_BOOKLET_LABELS[booklet]}</p>
-        <p>Thời gian {describeExamTime(set.level)}</p>
+        <p>Thời gian {describeExamTime(set)}</p>
         {set.kind === "official" && (
           <p className="exam-print-credit" lang="ja">
             {JLPT_OFFICIAL_CREDIT}

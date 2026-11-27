@@ -2,7 +2,7 @@ import "server-only";
 
 import { endOfVietnamDay, toVietnamDate } from "@/lib/daily-practice";
 import { describeExamSource, describeFixedExamSources, examTitleFor } from "@/lib/exam-library";
-import { JLPT_PRESETS } from "@/lib/jlpt";
+import { countJlptSections, JLPT_PRESETS, jlptExamMinutes } from "@/lib/jlpt";
 import { findJlptExamSet, fixedRengExamSets } from "@/lib/jlpt-exam-sets";
 import {
   listAssignablePracticeQuestions,
@@ -283,6 +283,14 @@ export async function openExamFromLibrary(
     throw new ServiceError("already_open");
   }
   const fixedSet = entry.source.kind === "fixed" ? findJlptExamSet(entry.source.setId) : null;
+  // A whole test takes the official time of the sections it has (no listening, no 35 minutes).
+  const timeLimitMinutes =
+    entry.source.kind === "official"
+      ? jlptExamMinutes(
+          entry.source.level,
+          countJlptSections(await listAssignablePracticeQuestions(classId, lessonId)),
+        )
+      : JLPT_PRESETS[entry.source.level].minutes;
   const days = classRow.self_study ? OPEN_DAYS.selfStudy : OPEN_DAYS.teaching;
   const dueDay = toVietnamDate(new Date(now.getTime() + days * 24 * 60 * 60 * 1000));
   return publishJlptExam(
@@ -293,7 +301,7 @@ export async function openExamFromLibrary(
       level: entry.source.level,
       title: examTitleFor(entry.source, entry.opened),
       dueAt: endOfVietnamDay(dueDay),
-      timeLimitMinutes: JLPT_PRESETS[entry.source.level].minutes,
+      timeLimitMinutes,
       feedbackPolicy: "after_submit",
     },
     fixedSet?.questions.map((question) => question.id),

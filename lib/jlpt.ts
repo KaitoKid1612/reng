@@ -474,6 +474,19 @@ export const JLPT_SECTION_MINUTES: Record<JlptLevel, Record<JlptSection, number>
   N4: { vocabulary: 25, grammarReading: 55, listening: 35 },
 };
 
+/**
+ * The official minutes of the sections a test has: a whole test without listening (a book's
+ * written part) takes 80 minutes at N4, not the 115 of the full test. A test with no section at
+ * all keeps the level's full time.
+ */
+export function jlptExamMinutes(level: JlptLevel, sections: Record<JlptSection, number>) {
+  const minutes = JLPT_SECTIONS.filter((section) => sections[section] > 0).reduce(
+    (total, section) => total + JLPT_SECTION_MINUTES[level][section],
+    0,
+  );
+  return minutes || JLPT_PRESETS[level].minutes;
+}
+
 export const JLPT_SECTION_SHORT_LABELS: Record<JlptSection, string> = {
   vocabulary: "Chữ Hán – từ vựng",
   grammarReading: "Ngữ pháp – đọc hiểu",

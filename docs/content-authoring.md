@@ -595,6 +595,15 @@ Làm như đề tháng 07/2025 ở trên, nhưng nguồn là 40 ảnh chụp mà
 - **Phần nghe (28 câu, 8/7/5/8):** file MP3 không có đoạn đọc đáp án; sau "これで聴解試験を終わります" chỉ là 48 giây im lặng, không đưa vào đoạn nào. Mỗi câu cắt từ ngay sau khoảng làm bài của câu trước tới 1 giây sau khi khoảng làm bài của câu đó bắt đầu (khoảng làm bài 12/12/10/8 giây theo もんだい); thời gian đọc 20 giây của もんだい２ được giữ. Lời thoại nhận dạng bằng Whisper rồi sửa tay; もんだい４ ghi người nói là Ａ/Ｂ.
 - **Đưa lên production:** như đề tháng 07, với `--file content/jlpt/tests/n4-2025-12.json`.
 
+## Đề tham khảo JLPT N4 tháng 07/2026 (27/11/2026)
+
+Nguồn: PDF "Bộ đề tham khảo JLPT N4 T7 2026" (Đề 1, phần 言語知識 và 読解, kèm bảng đáp án và giải thích). PDF không có trang hay file nghe, nên đề chỉ có 70 câu: 文字・語彙 35, 文法・読解 35.
+
+- **File:** `content/jlpt/tests/n4-2026-07.json` (bài `jlpt-n4-2026-07`, "Đề tham khảo JLPT N4 tháng 07/2026"), hình bảng khóa học và bản đồ của もんだい６ ở `public/images/jlpt/2026-07/n4/g-34.png`. Tag `official:n4-2026-07`, mọi câu có `jlpt:n4`.
+- **Chép đề:** chép tay từ ảnh từng trang, bỏ qua trang đáp án và giải thích. Đáp án tự giải rồi so với 正解 trong sách: khớp cả 70 câu; script dựng file dừng lại nếu lệch. Lời giải thích tiếng Việt viết lại ngắn gọn.
+- **Sửa so với bản in:** câu 文字・語彙 13 in hai cặp lựa chọn trùng nhau (専問, 専門 mỗi chữ hai lần), nên lựa chọn 2 và 3 dùng chữ 「專」 để bốn lựa chọn khác nhau; đáp án vẫn là 4 「専門」. Câu ngữ pháp 3 in số "A" thay cho "3". Các đoạn của もんだい４ đánh số ⑴–⑷.
+- **Thời gian:** đề trọn bộ lấy tổng số phút chính thức của các phần có trong đề (`jlptExamMinutes`): đề này 80 phút (25 + 55), đề đủ ba phần 115 phút. Bìa bản in chỉ ghi các phần có trong đề. Không có phần nghe nên trang kết quả không ước tính điểm trên 180.
+
 ## Đề thi thử Reng cố định và bản in (23/11/2026)
 
 Mỗi cấp có 3 đề in được ([BD](basic-design/exam-center.md#bộ-đề-có-bản-in--23112026)): hai đề chính thức ở trên và một đề thi thử Reng cố định, khai báo trong `content/jlpt/reng-exam-sets.json`.

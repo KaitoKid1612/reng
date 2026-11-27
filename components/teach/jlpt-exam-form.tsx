@@ -13,6 +13,7 @@ import {
   JLPT_SECTIONS,
   MAX_EXAM_MINUTES,
   MIN_EXAM_MINUTES,
+  jlptExamMinutes,
   jlptTestSectionCounts,
   planJlptExam,
 } from "@/lib/jlpt";
@@ -48,6 +49,16 @@ function classifiedCount(lesson: JlptExamLessonOption) {
   return JLPT_SECTIONS.reduce((total, section) => total + lesson.sections[section], 0);
 }
 
+// A whole test takes the official time of the sections it has; any other source the level's time.
+function defaultMinutes(
+  lesson: { officialLevel: JlptLevel | null; sections: Record<JlptSection, number> } | undefined,
+  level: JlptLevel,
+) {
+  return lesson?.officialLevel
+    ? jlptExamMinutes(level, lesson.sections)
+    : JLPT_PRESETS[level].minutes;
+}
+
 export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: JlptExamFormProps) {
   const [state, action, isPending] = useActionState(publishJlptExamAction, {});
   const typed = state.values;
@@ -61,7 +72,7 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
   );
   const [chosenLessonId, setLessonId] = useState(typed?.lessonId ?? "");
   const [minutes, setMinutes] = useState(
-    typed?.timeLimitMinutes ?? String(JLPT_PRESETS[level].minutes),
+    typed?.timeLimitMinutes ?? String(defaultMinutes(bestLesson, level)),
   );
   const [title, setTitle] = useState(
     typed?.title ?? (bestLesson?.officialLevel ? bestLesson.title : defaultTitles[level]),
@@ -88,8 +99,8 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
 
   function handleLevelChange(next: JlptLevel) {
     // The preset time and the default title follow the level unless the teacher typed their own.
-    if (minutes === String(JLPT_PRESETS[level].minutes)) {
-      setMinutes(String(JLPT_PRESETS[next].minutes));
+    if (minutes === String(defaultMinutes(lesson, level))) {
+      setMinutes(String(defaultMinutes(lesson, next)));
     }
     if (title === defaultTitles[level]) {
       setTitle(defaultTitles[next]);
@@ -107,8 +118,8 @@ export function JlptExamForm({ classId, lessons, defaultDueAt, defaultTitles }: 
       return;
     }
     const nextLevel = next.officialLevel ?? level;
-    if (minutes === String(JLPT_PRESETS[level].minutes)) {
-      setMinutes(String(JLPT_PRESETS[nextLevel].minutes));
+    if (minutes === String(defaultMinutes(lesson, level))) {
+      setMinutes(String(defaultMinutes(next, nextLevel)));
     }
     if (isDefaultTitle) {
       setTitle(next.officialLevel ? next.title : defaultTitles[nextLevel]);

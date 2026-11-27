@@ -2,7 +2,7 @@ import { toPlainJapanese } from "@/lib/japanese-text";
 import { JLPT_SECTION_MINUTES, JLPT_SECTIONS, jlptSectionOf } from "@/lib/jlpt";
 import { jlptPartOf } from "@/lib/jlpt-parts";
 
-import type { JlptLevel, JlptSection } from "@/lib/jlpt";
+import type { JlptSection } from "@/lib/jlpt";
 import type { JlptExamSet } from "@/lib/jlpt-exam-sets";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
@@ -319,11 +319,13 @@ export function buildListeningScript(set: JlptExamSet): PrintSection<ScriptRow>[
   })).filter((section) => section.section === "listening");
 }
 
-/** The time printed on the cover: the level's sections and their minutes. */
-export function describeExamTime(level: JlptLevel) {
-  const minutes = JLPT_SECTION_MINUTES[level];
-  const total = JLPT_SECTIONS.reduce((sum, section) => sum + minutes[section], 0);
-  const parts = JLPT_SECTIONS.map(
+/** The time printed on the cover: the sections the exam has and their minutes. */
+export function describeExamTime(set: JlptExamSet) {
+  const minutes = JLPT_SECTION_MINUTES[set.level];
+  const present = new Set(set.questions.map((question) => jlptSectionOf(question)));
+  const sections = JLPT_SECTIONS.filter((section) => present.has(section));
+  const total = sections.reduce((sum, section) => sum + minutes[section], 0);
+  const parts = sections.map(
     (section) => `${PRINT_SECTION_TITLES[section]} ${minutes[section]} phút`,
   );
   return `${total} phút: ${parts.join(" · ")}`;
