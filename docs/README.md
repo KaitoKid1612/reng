@@ -107,6 +107,7 @@ Mới nhất ở trên. Mỗi báo cáo ghi trạng thái lúc viết; phần "c
 - Mã bài dễ đọc và thứ tự danh sách bài 20/11/2026: [rà soát mã trên giao diện, migration, test](testing/lesson-ids-order-2026-11-20.md).
 - 4 đề Reng N4 chuẩn và nâng cao 19/11/2026: [dữ liệu, chống trùng, soát độc lập](testing/n4-reng-exams-2026-11-19.md).
 - Ngân hàng đề N4 19/11/2026: [cấu trúc, định dạng, câu nghe, furigana, hai đề chính thức](testing/n4-bank-audit-2026-11-19.md).
+- Độ khó, độ lặp và phạm vi N4 27/11/2026: [chấm độ khó so với đề thật, lịch sử bài hằng ngày, câu bổ sung](testing/n4-difficulty-coverage-2026-11-27.md).
 - Giao diện toàn site 18/11/2026: [bố cục mọi trang với khách, học viên, giáo viên và toàn bộ E2E](testing/site-ui-audit-2026-11-18.md).
 - Kanji N5/N4 theo cấp: [dữ liệu, soát độc lập và kiểm chứng trang](testing/jlpt-kanji-2026-11-18.md).
 - Bài hằng ngày theo cấu trúc đề JLPT: [phân tích độ lặp, nguồn số câu từng もんだい, kiểm chứng bộ chọn câu và ngân hàng N4 theo dạng đề](testing/jlpt-daily-format-2026-11-13.md).

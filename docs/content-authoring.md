@@ -242,6 +242,14 @@ Nạp vào lớp: `npm run bank:sql -- --file content/review-banks/n4-jlpt-mock-
 
 Kiểm tra: `npm run audit:jlpt-bank -- <file>`, `tests/n4-jlpt-mock-banks.test.ts`. Kiểm chứng ở [báo cáo](testing/n4-reng-exams-2026-11-19.md).
 
+## Bổ sung phạm vi N4 — 27/11/2026
+
+`content/review-banks/n4-coverage.json` (bài `n4-coverage`) có câu cho phần N4 mà ba ngân hàng trên chưa hỏi: từ vựng trong `content/vocab/n4.json`, kanji trong `content/kanji/n4.json` và mẫu ngữ pháp `n4g-*` của các bài Tổng ôn ngữ pháp. Chỉ có câu chữ (もんだい 1–5 phần từ vựng, もんだい 1–2 phần ngữ pháp), không có đoạn văn hay câu nghe.
+- Đây là bài để giáo viên giao thêm, không phải nguồn bài hằng ngày. Bài hằng ngày chỉ lấy một số câu cố định cho mỗi dạng, nên không kịp đưa hết câu bổ sung trước kỳ thi.
+- Nạp vào lớp: `npm run bank:sql -- --file content/review-banks/n4-coverage.json --language ja-JP --class <mã lớp> --out n4-coverage.sql`. Đọc lại, thêm `--commit` rồi chạy.
+- `tests/n4-coverage-bank.test.ts` kiểm tra rằng bốn ngân hàng N4 không trùng mã câu và cùng nhau hỏi đủ mọi từ, kanji và mẫu ngữ pháp N4. Thêm từ, kanji hay mẫu mới vào danh sách thì phải thêm câu hỏi cho nó.
+- Cách soạn: người soạn và người rà là hai agent khác nhau, mỗi câu được rà theo cùng tiêu chí với đợt soát 27/11. Kết quả ở [báo cáo](testing/n4-difficulty-coverage-2026-11-27.md).
+
 ## Kiểm tra và xuất bản local
 
 ```bash
