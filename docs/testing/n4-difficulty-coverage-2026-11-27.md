@@ -91,4 +91,4 @@ SQL do `npm run bank:sql … --class <lớp N4>` tạo. Mặc định là chạy
 - `n4-jlpt-mock-standard` và `n4-jlpt-mock-advanced`: 4 đề Reng N4 ở trang Luyện đề. Lớp trước đó chỉ có 2 đề chính thức và đề cũ ngày 10/11.
 - `n4-coverage`: bài để giao thêm, ngoài bài hằng ngày.
 
-E2E chưa chạy cho đợt này. Hiện không có spec nào kiểm tra việc xoay vòng câu hằng ngày.
+E2E chạy cuối đợt 27/11 (sau khi đẩy các đề N4 và bản sửa giao diện làm đề), trên Supabase cục bộ: bộ Supabase 49/49, bộ thường 41/41. Hiện không có spec nào kiểm tra việc xoay vòng câu hằng ngày.
