@@ -6,16 +6,20 @@ interface QuestionImageProps {
 }
 
 // A picture or printed table from an exam booklet, such as the four pictures a JLPT listening
-// question chooses between. It scales to the card so the whole panel stays readable on a phone.
+// question chooses between. It scales to the card; a small table on a phone opens full size in a
+// new tab, so the attempt keeps its place.
 export function QuestionImage({ src, position }: QuestionImageProps) {
   return (
-    <Image
-      src={src}
-      alt={`Hình của câu ${position}`}
-      width={900}
-      height={600}
-      unoptimized
-      className="question-image"
-    />
+    <a href={src} target="_blank" rel="noopener noreferrer" className="question-image-link">
+      <Image
+        src={src}
+        alt={`Hình của câu ${position}`}
+        width={900}
+        height={600}
+        unoptimized
+        className="question-image"
+      />
+      <span className="question-image-hint">Chạm vào hình để xem cỡ lớn</span>
+    </a>
   );
 }

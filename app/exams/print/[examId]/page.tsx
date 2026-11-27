@@ -18,7 +18,7 @@ import {
   LEARNER_BOOKLETS,
   parsePrintBooklet,
   PRINT_BOOKLET_LABELS,
-  PRINT_BOOKLETS,
+  printBookletsOf,
   RENG_EXAM_NOTICE,
 } from "@/lib/exam-print";
 import { findJlptExamSet } from "@/lib/jlpt-exam-sets";
@@ -84,11 +84,11 @@ function BookletBody({ set, booklet, runningTitle }: BookletBodyProps) {
 
 export default async function ExamPrintPage({ params, searchParams }: ExamPrintPageProps) {
   const { examId } = await params;
-  const booklet = parsePrintBooklet((await searchParams).booklet);
+  const askedBooklet = parsePrintBooklet((await searchParams).booklet);
   // Signing in returns to the same booklet, not to the question booklet.
   const path = `/exams/print/${encodeURIComponent(examId)}`;
   const account = await requireAccount(
-    booklet === "questions" ? path : `${path}?booklet=${booklet}`,
+    askedBooklet === "questions" ? path : `${path}?booklet=${askedBooklet}`,
   );
   const ownedClasses = account.role === "teacher" ? await listTeacherClasses(account.id) : [];
   const set = await loadPrintableExam(examId, new Set(ownedClasses.map((item) => item.id)));
@@ -109,13 +109,16 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
   // The paper names the exam by its title alone: "Đề 3" (its place in the list on the exam page)
   // beside "Đề thi thử Reng N5 số 1" would read as two numbers for one exam.
   const runningTitle = set.title;
+  // A test without listening has no script booklet; a link to it shows the questions instead.
+  const booklets = printBookletsOf(set);
+  const booklet = booklets.includes(askedBooklet) ? askedBooklet : "questions";
   const isForLearner = LEARNER_BOOKLETS.has(booklet);
   return (
     <div className="exam-print">
       <nav className="exam-print-toolbar" aria-label="Bản in">
         <Link href="/exams#exam-print-sets">← Luyện đề</Link>
         <ul className="exam-print-tabs">
-          {PRINT_BOOKLETS.map((item) => (
+          {booklets.map((item) => (
             <li key={item}>
               <Link
                 href={`/exams/print/${encodeURIComponent(set.id)}?booklet=${item}`}

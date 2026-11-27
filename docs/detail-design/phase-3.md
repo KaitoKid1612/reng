@@ -288,6 +288,7 @@ Người dùng chọn: giọng máy đọc nguyên văn script chính thức kè
 - `describeExamSource` thêm `setId` cho nguồn `official`: `n4-2012` với sách đề, phần sau `official:` với đề trọn bộ. Trang Luyện đề hiện link Bản in khi `findJlptExamSet(setId)` có.
 - **Đề đã mở:** `/exams/print/<assignment id>`. `loadPrintableExam` (`lib/server/exam-print.ts`) tìm bộ đề in sẵn, nếu không thì đọc bài giao (phải là đề thi thử, lớp thuộc người đang xem) và `loadAssignmentItems`. Loại bìa lấy theo câu (`examSetKindOf`): mọi câu có dòng 出典 jlpt.jp là `official`, có tag `official:` là `test`, còn lại `reng`.
 - Bỏ `JLPT_ONLINE_SAMPLES` và mục "Đề mẫu chính thức trên mạng".
+- **Tập in theo đề:** `printBookletsOf(set)` bỏ tập `script` khi đề không có câu nghe; danh sách Bản in và thanh tab chỉ hiện các tập đó, link cũ `?booklet=script` mở tập Đề. Tranh in tối đa 80 mm.
 - **Thời gian đề trọn bộ:** `jlptExamMinutes(level, sections)` cộng số phút chính thức của các phần có câu (`JLPT_SECTION_MINUTES`). `openExamFromLibrary` dùng nó cho nguồn `official`, form Thi thử JLPT dùng làm số phút mặc định khi chọn đề trọn bộ, `describeExamTime(set)` in bìa chỉ với các phần có trong đề.
 - Kiểm chứng: `tests/jlpt-exam-sets.test.ts` (thứ tự và số đề in, loại bìa), `tests/exam-library.test.ts`, `tests/jlpt-recorded-tests.test.ts` (`setId`). Spec `e2e-supabase/exam-center.spec.ts` đã sửa (8 đề trong danh sách in), E2E chưa chạy.
 

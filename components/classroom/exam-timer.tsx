@@ -63,10 +63,15 @@ export function ExamTimer({
       </p>
       {step && left > 0 && (
         <p className="exam-pacing">
-          <span>
+          {/* A phone shows the short form beside the time, so the bar keeps to fewer lines. */}
+          <span className="exam-pacing-long">
             Giờ đề thật: phần {stepIndex + 1}/{pacing.length},{" "}
             {JLPT_SECTION_SHORT_LABELS[step.section]} (câu {step.firstPosition}–{step.lastPosition}
             ), còn {formatExamClock(Math.min(Date.parse(step.endsAt) - now, left))}
+          </span>
+          <span className="exam-pacing-short">
+            Phần {stepIndex + 1}/{pacing.length}, còn{" "}
+            {formatExamClock(Math.min(Date.parse(step.endsAt) - now, left))}
           </span>
           {stepIndex > 0 && onJump && (
             <Button variant="ghost" onClick={() => onJump(step.firstPosition)}>

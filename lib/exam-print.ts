@@ -21,6 +21,12 @@ export const PRINT_BOOKLET_LABELS: Record<PrintBooklet, string> = {
 };
 
 // The booklets a learner may hold; the others are for the teacher.
+/** The booklets an exam prints: a test without listening has no listening script. */
+export function printBookletsOf(set: JlptExamSet): PrintBooklet[] {
+  const hasListening = set.questions.some((question) => question.type === "listen");
+  return PRINT_BOOKLETS.filter((booklet) => booklet !== "script" || hasListening);
+}
+
 export const LEARNER_BOOKLETS: ReadonlySet<PrintBooklet> = new Set(["questions", "answer-sheet"]);
 
 export function parsePrintBooklet(value: string | undefined): PrintBooklet {

@@ -10,6 +10,8 @@ import {
   LEARNER_BOOKLETS,
   numberExamQuestions,
   parsePrintBooklet,
+  printBookletsOf,
+  PRINT_BOOKLETS,
 } from "@/lib/exam-print";
 import { findJlptExamSet, JLPT_EXAM_SETS } from "@/lib/jlpt-exam-sets";
 
@@ -93,4 +95,12 @@ test("only a teacher who owns an active Japanese class may open the printed exam
   assert.equal(canPrintJlptExams("teacher", []), false);
   assert.equal(canPrintJlptExams("teacher", [{ ...japanese, active: false }]), false);
   assert.equal(canPrintJlptExams("teacher", [{ active: true, language_tag: "zh-Hans" }]), false);
+});
+
+test("a test without listening prints no listening script", () => {
+  const written = findJlptExamSet("n4-2026-07");
+  const full = findJlptExamSet("n4-2026-07-exam");
+  assert.ok(written && full);
+  assert.deepEqual(printBookletsOf(written), ["questions", "answer-sheet", "answers"]);
+  assert.deepEqual(printBookletsOf(full), [...PRINT_BOOKLETS]);
 });

@@ -204,44 +204,51 @@ export function QuestionField({
           <FuriganaText text={view.prompt} />
         </legend>
         {player}
-        {image}
-        {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
-        <div className="choice-list">
-          {choices.options.map((option, index) => {
-            const isChosen = selection.includes(index);
-            let result: "correct" | "wrong" | undefined;
-            if (revealedChoices?.includes(index)) {
-              result = "correct";
-            } else if (revealedChoices && isChosen) {
-              result = "wrong";
-            }
-            return (
-              <label key={index} className="choice-option" data-result={result}>
-                <input
-                  type={choices.isMultiple ? "checkbox" : "radio"}
-                  name={fieldId}
-                  checked={isChosen}
-                  disabled={isLocked}
-                  onChange={() => onAnswerChange(toggleIndex(selection, index, choices.isMultiple))}
-                />
-                <span lang={view.lang}>
-                  <FuriganaText text={option} />
-                </span>
-                {result === "correct" && (
-                  <>
-                    <Check className="choice-mark" size={22} aria-hidden="true" />
-                    <span className="visually-hidden">, đáp án đúng</span>
-                  </>
-                )}
-                {result === "wrong" && (
-                  <>
-                    <X className="choice-mark" size={22} aria-hidden="true" />
-                    <span className="visually-hidden">, bạn chọn, chưa đúng</span>
-                  </>
-                )}
-              </label>
-            );
-          })}
+        {/* With a picture, the options sit beside it on a desktop so both fit on one screen. */}
+        <div className={image ? "choice-with-image" : "choice-block"}>
+          {image}
+          <div>
+            {choices.isMultiple && <p className="small muted">Chọn tất cả đáp án đúng.</p>}
+            <div className="choice-list">
+              {choices.options.map((option, index) => {
+                const isChosen = selection.includes(index);
+                let result: "correct" | "wrong" | undefined;
+                if (revealedChoices?.includes(index)) {
+                  result = "correct";
+                } else if (revealedChoices && isChosen) {
+                  result = "wrong";
+                }
+                return (
+                  <label key={index} className="choice-option" data-result={result}>
+                    <input
+                      type={choices.isMultiple ? "checkbox" : "radio"}
+                      name={fieldId}
+                      checked={isChosen}
+                      disabled={isLocked}
+                      onChange={() =>
+                        onAnswerChange(toggleIndex(selection, index, choices.isMultiple))
+                      }
+                    />
+                    <span lang={view.lang}>
+                      <FuriganaText text={option} />
+                    </span>
+                    {result === "correct" && (
+                      <>
+                        <Check className="choice-mark" size={22} aria-hidden="true" />
+                        <span className="visually-hidden">, đáp án đúng</span>
+                      </>
+                    )}
+                    {result === "wrong" && (
+                      <>
+                        <X className="choice-mark" size={22} aria-hidden="true" />
+                        <span className="visually-hidden">, bạn chọn, chưa đúng</span>
+                      </>
+                    )}
+                  </label>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </fieldset>
     </div>

@@ -165,6 +165,12 @@ export function ListeningPlayer({
   }
 
   const canPause = !isSinglePass && state === "playing";
+  let statusClass = "small muted";
+  if (state === "error") {
+    statusClass = "small error-text";
+  } else if (isSinglePass && state === "playing") {
+    statusClass = "visually-hidden";
+  }
   let playLabel = "Nghe";
   if (state === "playing") {
     playLabel = isSinglePass ? "Đang phát" : "Tạm dừng";
@@ -209,7 +215,9 @@ export function ListeningPlayer({
       <p className="listen-count small muted" data-testid="listen-count">
         Đã nghe {listenCount} lần{maxListens !== null ? ` / tối đa ${maxListens}` : ""}
       </p>
-      <p className={state === "error" ? "small error-text" : "small muted"} role="status">
+      {/* While a single-pass clip plays, its button already reads "Đang phát": the status line
+          says it to screen readers only. */}
+      <p className={statusClass} role="status">
         {isLimitReached && state === "idle" ? "Đã hết số lần nghe cho câu này." : STATE_TEXT[state]}
       </p>
     </div>

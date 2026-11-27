@@ -100,14 +100,16 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
                   <FuriganaText text={entry.view.prompt} />
                 </p>
                 <dl className="mistake-answers">
-                  {entry.lastAnswerText && (
-                    <div className="mistake-answer" data-kind="wrong">
-                      <dt>Bạn trả lời</dt>
+                  <div className="mistake-answer" data-kind="wrong">
+                    <dt>Bạn trả lời</dt>
+                    {entry.lastAnswerText ? (
                       <dd lang={answerLang(entry.view)}>
                         <FuriganaText text={entry.lastAnswerText} />
                       </dd>
-                    </div>
-                  )}
+                    ) : (
+                      <dd className="mistake-blank">Bỏ trống</dd>
+                    )}
+                  </div>
                   <div className="mistake-answer" data-kind="right">
                     <dt>Đáp án</dt>
                     <dd lang={answerLang(entry.view)}>

@@ -51,6 +51,46 @@
   border-radius: var(--radius);
   background: #fff;
 }
+/* The picture opens full size in a new tab; the hint shows only where the picture is small. */
+.question-image-link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 16px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.question-image-link .question-image {
+  margin: 0;
+}
+.question-image-hint {
+  display: none;
+  margin-top: 4px;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .question-image-hint {
+    display: block;
+  }
+}
+/* A picture question on a desktop: the picture on the left, the options beside it, and the
+   picture no taller than the screen leaves room for, so a learner never scrolls between them
+   while the clip plays. */
+.choice-with-image {
+  display: grid;
+  gap: 0 20px;
+}
+@media (min-width: 900px) {
+  .choice-with-image {
+    grid-template-columns: minmax(0, 3fr) minmax(220px, 2fr);
+    align-items: start;
+  }
+  .choice-with-image .question-image {
+    width: auto;
+    max-width: 100%;
+    max-height: max(300px, calc(100vh - 440px));
+  }
+}
 .question-credit {
   margin: 16px 0 0;
   color: var(--muted);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { PRINT_BOOKLET_LABELS, PRINT_BOOKLETS } from "@/lib/exam-print";
+import { PRINT_BOOKLET_LABELS, printBookletsOf } from "@/lib/exam-print";
 import { JLPT_LEVELS } from "@/lib/jlpt";
 import { JLPT_EXAM_SETS } from "@/lib/jlpt-exam-sets";
 
@@ -18,7 +18,7 @@ export function ExamPrintList() {
               <li key={set.id} className="exam-library-row">
                 <p className="exam-title">{set.title}</p>
                 <ul className="exam-print-links">
-                  {PRINT_BOOKLETS.map((booklet) => (
+                  {printBookletsOf(set).map((booklet) => (
                     <li key={booklet}>
                       <Link href={`/exams/print/${set.id}?booklet=${booklet}`}>
                         {PRINT_BOOKLET_LABELS[booklet]}

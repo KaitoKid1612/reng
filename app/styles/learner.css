@@ -373,11 +373,27 @@
   min-height: 32px;
   padding: 4px 8px;
 }
+.exam-pacing-short {
+  display: none;
+}
 /* The study clock on a phone keeps one line (time and the hide button) so the submit bar does
-   not cover the question; the section guide shows on wider screens. */
+   not cover the question; the section guide shows on wider screens. The exam clock puts the time
+   and a short "Phần 1/3, còn 24:59" on one line. */
 @media (max-width: 600px) {
   .study-clock .exam-pacing + .exam-pacing {
     display: none;
+  }
+  .exam-clock {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 10px;
+  }
+  .exam-clock .exam-pacing-long {
+    display: none;
+  }
+  .exam-clock .exam-pacing-short {
+    display: inline;
   }
 }
 
@@ -400,9 +416,11 @@
 .mistake-card p {
   margin: 0;
 }
+/* A dialogue keeps its line breaks (A「…」 then B「…」), as on the attempt page. */
 .mistake-prompt {
   font-size: 19px;
   line-height: 1.7;
+  white-space: pre-line;
 }
 .mistake-prompt:has(ruby) {
   line-height: 2.1;
@@ -434,6 +452,10 @@
   border-color: color-mix(in srgb, var(--wrong) 45%, transparent);
   background: color-mix(in srgb, var(--wrong) 8%, var(--surface));
   color: var(--wrong);
+}
+.mistake-answer dd.mistake-blank {
+  font-size: 16px;
+  font-weight: 400;
 }
 .mistake-answer[data-kind="right"] {
   border-color: color-mix(in srgb, var(--correct) 45%, transparent);

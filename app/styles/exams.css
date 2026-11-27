@@ -116,6 +116,12 @@
 .exam-print-links a {
   white-space: nowrap;
 }
+/* An exam opened once (a whole test) says so where its button was. */
+.exam-library-opened {
+  color: var(--muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
 .exam-row-print {
   font-size: 0.875rem;
   font-weight: 400;

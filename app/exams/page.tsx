@@ -104,6 +104,7 @@ function LibraryRow({ entry, classId, isSelfStudy, canPrint }: LibraryRowProps) 
       </div>
       <div className="exam-library-actions">
         {printId && <Link href={`/exams/print/${encodeURIComponent(printId)}`}>Bản in</Link>}
+        {isOpenOnce && opened > 0 && <span className="exam-library-opened">Đã mở cho lớp</span>}
         {!(isOpenOnce && opened) && (
           <OpenExamForm
             classId={classId}

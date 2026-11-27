@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 27/11/2026
 
+- **Rà giao diện làm đề (desktop 1280/1440/1920, điện thoại 390):** câu có tranh xếp tranh bên trái, lựa chọn bên phải trên desktop, tranh không cao quá màn hình; chạm vào tranh để mở cỡ lớn (điện thoại có dòng nhắc); đồng hồ thi trên điện thoại gộp "Phần 1/3, còn …" cùng dòng với thời gian; trình phát một lần không lặp chữ "Đang phát"; Thư viện đề ghi "Đã mở cho lớp"; đề không có phần nghe không còn tập "Lời thoại nghe"; tranh trong bản in nhỏ lại (tối đa 80 mm); sổ lỗi giữ xuống dòng hội thoại và ghi "Bỏ trống" cho câu bỏ trống.
+
 - **Đề JLPT N4 tháng 07/2026:** đề thi thật, bản hiện có 70 câu (từ vựng, ngữ pháp, nghe もんだい１・３・４ với bản ghi âm gốc); còn thiếu đọc hiểu và nghe もんだい２. Hai đề sách đổi tên thành "Đề luyện N4 (sách tham khảo) – Đề 1/Đề 2" ([soạn nội dung](content-authoring.md#đề-jlpt-n4-tháng-072026-27112026)).
 
 - **Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2:** 98 câu đủ ba phần, phần nghe đọc lời thoại của sách bằng giọng máy; đáp án khớp sách 98/98. Đề trước đổi tên thành "– Đề 1". Cả hai là đề tham khảo của sách, không phải đề chính thức ([soạn nội dung](content-authoring.md#đề-luyện-n4-sách-tham-khảo--đề-2-27112026)).
