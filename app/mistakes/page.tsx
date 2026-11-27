@@ -45,7 +45,7 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
       <div className="page-heading">
         <div>
           <h1>Sổ lỗi</h1>
-          <p>Câu từng trả lời sai. Đúng 3 lần liên tiếp khi ôn thì câu được tính là đã thuộc.</p>
+          <p>Đúng 3 lần liên tiếp khi ôn thì câu được tính là đã thuộc.</p>
         </div>
         <Link href="/review" className={buttonVariants()}>
           Ôn ngay
@@ -94,49 +94,53 @@ export default async function MistakesPage({ searchParams }: MistakesPageProps) 
               </span>
             </summary>
             {group.entries.map((entry) => (
-              <article
-                key={`${entry.assignmentId}:${entry.view.id}`}
-                className="result-row"
-                data-correct="false"
-              >
-                <p className="small muted">
-                  Chuỗi đúng {entry.correctStreak}/3
-                  {isDue(entry) ? ", đến hạn ôn" : `, ôn lại lúc ${formatStudyDateTime(entry.due)}`}
-                </p>
+              <article key={`${entry.assignmentId}:${entry.view.id}`} className="mistake-card">
                 <PassageDetails passage={entry.view.passage} lang={entry.view.lang} />
-                <p lang={entry.view.lang} className="question-prompt">
+                <p lang={entry.view.lang} className="mistake-prompt">
                   <FuriganaText text={entry.view.prompt} />
                 </p>
-                {entry.lastAnswerText && (
-                  <p>
-                    Lần sai gần nhất:{" "}
-                    <span lang={answerLang(entry.view)}>
-                      <FuriganaText text={entry.lastAnswerText} />
-                    </span>
+                <dl className="mistake-answers">
+                  {entry.lastAnswerText && (
+                    <div className="mistake-answer" data-kind="wrong">
+                      <dt>Bạn trả lời</dt>
+                      <dd lang={answerLang(entry.view)}>
+                        <FuriganaText text={entry.lastAnswerText} />
+                      </dd>
+                    </div>
+                  )}
+                  <div className="mistake-answer" data-kind="right">
+                    <dt>Đáp án</dt>
+                    <dd lang={answerLang(entry.view)}>
+                      <FuriganaText text={entry.correctText} />
+                    </dd>
+                  </div>
+                </dl>
+                {entry.lastAnswerHint && <p className="answer-hint">{entry.lastAnswerHint}</p>}
+                {(entry.explain || entry.transcript) && (
+                  <details className="result-passage mistake-more">
+                    <summary>{entry.transcript ? "Giải thích và lời nghe" : "Giải thích"}</summary>
+                    {entry.explain && (
+                      <p>
+                        <FuriganaText text={entry.explain} />
+                      </p>
+                    )}
+                    {entry.transcript && (
+                      <p className="transcript">
+                        <strong>Lời nghe: </strong>
+                        <span lang={entry.view.lang}>
+                          <FuriganaText text={entry.transcript} />
+                        </span>
+                      </p>
+                    )}
+                  </details>
+                )}
+                {(entry.correctStreak > 0 || !isDue(entry)) && (
+                  <p className="small muted">
+                    {entry.correctStreak > 0 ? `Đúng ${entry.correctStreak}/3 lần ôn` : ""}
+                    {entry.correctStreak > 0 && !isDue(entry) ? " · " : ""}
+                    {isDue(entry) ? "" : `Ôn lại lúc ${formatStudyDateTime(entry.due)}`}
                   </p>
                 )}
-                <p>
-                  Đáp án:{" "}
-                  <strong lang={answerLang(entry.view)}>
-                    <FuriganaText text={entry.correctText} />
-                  </strong>
-                </p>
-                {entry.lastAnswerHint && (
-                  <p className="answer-hint">
-                    <strong>{entry.lastAnswerHint}</strong>
-                  </p>
-                )}
-                {entry.transcript && (
-                  <p className="transcript">
-                    Lời nghe:{" "}
-                    <span lang={entry.view.lang}>
-                      <FuriganaText text={entry.transcript} />
-                    </span>
-                  </p>
-                )}
-                <p className="muted">
-                  <FuriganaText text={entry.explain} />
-                </p>
               </article>
             ))}
           </details>

@@ -381,12 +381,80 @@
   }
 }
 
-/* Mistake book: one collapsible group per assignment. */
+/* Mistake book: one collapsible group per assignment; each mistake is the question, what the
+   learner answered beside the right answer, and the explanation folded away. */
 .mistake-group {
   margin-bottom: 12px;
 }
-.mistake-group > .result-row:first-of-type {
-  margin-top: 12px;
+.mistake-card {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+.mistake-card:first-of-type {
+  margin-top: 4px;
+}
+.mistake-card:last-child {
+  border-bottom: 0;
+}
+.mistake-card p {
+  margin: 0;
+}
+.mistake-prompt {
+  font-size: 19px;
+  line-height: 1.7;
+}
+.mistake-prompt:has(ruby) {
+  line-height: 2.1;
+}
+.mistake-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+.mistake-answer {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+.mistake-answer dt {
+  font-size: 14px;
+  white-space: nowrap;
+}
+.mistake-answer dd {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+.mistake-answer[data-kind="wrong"] {
+  border-color: color-mix(in srgb, var(--wrong) 45%, transparent);
+  background: color-mix(in srgb, var(--wrong) 8%, var(--surface));
+  color: var(--wrong);
+}
+.mistake-answer[data-kind="wrong"] dd {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.mistake-answer[data-kind="right"] {
+  border-color: color-mix(in srgb, var(--correct) 45%, transparent);
+  background: color-mix(in srgb, var(--correct) 8%, var(--surface));
+  color: var(--correct);
+}
+.mistake-more {
+  margin: 10px 0 0;
+}
+.mistake-more > p + p {
+  margin-top: 8px;
+}
+.mistake-more > p:has(ruby) {
+  line-height: 2.1;
+}
+.mistake-card > p.small {
+  margin-top: 8px;
 }
 
 /* Exam navigation: touch-friendly targets and visible state in both themes. */
