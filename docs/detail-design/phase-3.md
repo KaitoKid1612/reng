@@ -279,8 +279,8 @@ Người dùng chọn: giọng máy đọc nguyên văn script chính thức kè
   - `examTitleFor` đặt tên đề theo tên bài khi `year` null ("Đề JLPT N4 tháng 07/2025").
   - Danh sách đề ở trang Luyện đề xếp loại "Đề thi thử" thay vì "Đề chính thức" (`sourceKindOf`). Dòng mô tả ở Thư viện đề ghi "Đề trọn bộ.".
 - **`official:sql`:** sách đề jlpt.jp vẫn bắt buộc dòng 出典 ở mọi câu. Đề khác dùng chung một nguồn cho mọi câu hoặc không có nguồn; khi không có, `copy_attribution` để null.
-- **Audio thu sẵn** (`lib/recorded-audio.ts`): mỗi câu nghe trỏ tới một đoạn MP3 cắt từ bản ghi, đặt tên theo 32 ký tự đầu SHA-256 của file. `recordedAudioRows` tạo dòng `audio_assets` (`voice: "recording"`, `config.format: "recorded-mp3"`, text là lời thoại). `lib/bundled-listening.ts` thêm các dòng của `RECORDED_TESTS` vào `BUNDLED_LISTENING_AUDIO`, nên script nạp đề và trang xuất bản đăng ký chúng như audio của bộ nghe có sẵn. Không đổi database.
-- **Kiểm chứng:** `tests/jlpt-n4-2025-07.test.ts`.
+- **Audio thu sẵn** (`lib/recorded-audio.ts`): mỗi câu nghe trỏ tới một đoạn MP3 cắt từ bản ghi, đặt tên theo 32 ký tự đầu SHA-256 của file. `recordedAudioRows` tạo dòng `audio_assets` (`voice: "recording"`, `config.format: "recorded-mp3"`, text là lời thoại). `lib/bundled-listening.ts` thêm các dòng của `RECORDED_TESTS` (đề N4 07/2025 và 12/2025) vào `BUNDLED_LISTENING_AUDIO`, nên script nạp đề và trang xuất bản đăng ký chúng như audio của bộ nghe có sẵn. Không đổi database.
+- **Kiểm chứng:** `tests/jlpt-recorded-tests.test.ts` (một test cho mỗi đề trong `content/jlpt/tests/`).
 
 ## Lịch sử thi thử JLPT — 11/11/2026
 

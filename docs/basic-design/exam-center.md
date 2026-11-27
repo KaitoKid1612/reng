@@ -66,6 +66,8 @@ Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm đượ
 
 ## Đề JLPT N4 tháng 07/2025 — 27/11/2026
 
+Cùng ngày có thêm đề tháng 12/2025, làm giống hệt (thiếu 文字・語彙 câu 6–10 do ảnh đề không có).
+
 Người dùng đưa một đề N4 trọn bộ (câu hỏi, đáp án, ảnh trang đề và file nghe MP3) và muốn giao cho lớp của mình.
 
 - Đề vào Reng như đề chính thức: một bài riêng, làm một lượt, đủ mọi câu theo thứ tự đề, có giờ như đề thật. Tên trong Thư viện đề là tên bài ("Đề JLPT N4 tháng 07/2025"), mô tả "Đề trọn bộ", loại "Đề thi thử" trong danh sách đề.

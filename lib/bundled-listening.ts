@@ -8,6 +8,7 @@ import n4MockListening from "@/content/listening/n4-viet-listening-mock-20.json"
 import n4ExamAdvancedListening from "@/content/listening/n4-reng-exam-advanced.json";
 import n4ExamStandardListening from "@/content/listening/n4-reng-exam-standard.json";
 import n4Test202507 from "@/content/jlpt/tests/n4-2025-07.json";
+import n4Test202512 from "@/content/jlpt/tests/n4-2025-12.json";
 import n4MockMoreListening from "@/content/listening/n4-viet-listening-mock-21-60.json";
 import n5DailyListening from "@/content/listening/n5-daily-1-13.json";
 import n5MockListening from "@/content/listening/n5-viet-listening-mock-40.json";
@@ -35,7 +36,9 @@ const BUNDLED_LISTENING_SETS = [
 ].map((set) => parseListeningSet(set));
 
 // Whole tests whose listening plays clips cut from their own recording (lib/recorded-audio.ts).
-export const RECORDED_TESTS = [n4Test202507].map((test) => lessonDraftSchema.parse(test));
+export const RECORDED_TESTS = [n4Test202507, n4Test202512].map((test) =>
+  lessonDraftSchema.parse(test),
+);
 
 export const BUNDLED_LISTENING_AUDIO = listeningAudioRegistry(BUNDLED_LISTENING_SETS);
 for (const test of RECORDED_TESTS) {

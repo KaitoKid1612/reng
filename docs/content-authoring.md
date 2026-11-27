@@ -576,7 +576,19 @@ Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng tr
   - File cắt nằm ở `public/audio/lessons/<mã>.mp3`, mã là 32 ký tự đầu SHA-256 của chính file (`recordedAudioHash`, `lib/recorded-audio.ts`). Cắt lại thì mã đổi, không đè file bài đã xuất bản đang dùng.
   - `lib/bundled-listening.ts` đăng ký các đoạn này với `voice: "recording"`, nên `official:sql` và trang xuất bản nhận audio như bộ nghe có sẵn.
 - **Đưa lên production:** sau khi đẩy code (file MP3 và hình đi cùng web), chạy `npm run official:sql -- --file content/jlpt/tests/n4-2025-07.json --owner <email giáo viên> --class "<tên lớp>" --out n4-2025-07.sql`, kiểm tra bản chạy thử (ROLLBACK), rồi thêm `--commit`. Bài mở cho học viên từ 07/12/2026; chủ lớp mở đề ở **Luyện đề → Thư viện đề** hoặc **Giao bài → Thi thử JLPT**.
-- **Kiểm chứng:** `tests/jlpt-n4-2025-07.test.ts` (số câu từng phần, đáp án, thứ tự, hình, file MP3 khớp mã, audio đăng ký dạng bản ghi, tên đề trong Thư viện đề).
+- **Kiểm chứng:** `tests/jlpt-recorded-tests.test.ts` (cả hai đề: số câu từng phần, đáp án kể cả phần nghe, thứ tự, hình, file MP3 khớp mã, audio đăng ký dạng bản ghi, tên đề trong Thư viện đề).
+
+## Đề JLPT N4 tháng 12/2025 (27/11/2026)
+
+Làm như đề tháng 07/2025 ở trên, nhưng nguồn là 40 ảnh chụp màn hình trang đề (21 trang) và một file MP3 32 phút.
+
+- **File:** `content/jlpt/tests/n4-2025-12.json` (bài `jlpt-n4-2025-12`, "Đề JLPT N4 tháng 12/2025"), hình ở `public/images/jlpt/2025-12/n4/`, mã câu `n4-2025-12-…`, tag `official:n4-2025-12`. Mọi câu có tag `jlpt:n4`.
+- **Chép đề:** bốn agent chép bốn nhóm ảnh song song theo cùng một mẫu JSON; đáp án được soát lại từng câu.
+  - Ảnh không chụp cuối trang 1 và đầu trang 2, nên thiếu 文字・語彙 câu 6–10. Đề có 23 câu từ vựng, số câu hiện cho học viên đánh liên tục.
+  - Lựa chọn 4 của câu 28 (にる) bị khung chú thích của Scribd che sau "ふゆに"; điền lại thành "ふゆに にて います。".
+  - Tờ quảng cáo lớp vẽ (câu 28–29) ghép từ hai ảnh chụp.
+- **Phần nghe (28 câu, 8/7/5/8):** file MP3 không có đoạn đọc đáp án; sau "これで聴解試験を終わります" chỉ là 48 giây im lặng, không đưa vào đoạn nào. Mỗi câu cắt từ ngay sau khoảng làm bài của câu trước tới 1 giây sau khi khoảng làm bài của câu đó bắt đầu (khoảng làm bài 12/12/10/8 giây theo もんだい); thời gian đọc 20 giây của もんだい２ được giữ. Lời thoại nhận dạng bằng Whisper rồi sửa tay; もんだい４ ghi người nói là Ａ/Ｂ.
+- **Đưa lên production:** như đề tháng 07, với `--file content/jlpt/tests/n4-2025-12.json`.
 
 ## Đề thi thử Reng cố định và bản in (23/11/2026)
 
