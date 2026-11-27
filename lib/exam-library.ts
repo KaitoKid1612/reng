@@ -142,7 +142,8 @@ export function examTitleFor(source: ExamSource, earlierFromSource: number) {
     return source.title;
   }
   if (source.kind === "official") {
-    return `Đề chính thức JLPT ${source.level}${source.year ? ` (${source.year})` : ""}`;
+    // A whole test that is not a jlpt.jp workbook (tag official:<test id>) keeps its own title.
+    return source.year ? `Đề chính thức JLPT ${source.level} (${source.year})` : source.lessonTitle;
   }
   const variant = source.variant ? ` ${VARIANT_LABELS[source.variant]}` : "";
   return `Đề Reng ${source.level}${variant} số ${earlierFromSource + 1}`;

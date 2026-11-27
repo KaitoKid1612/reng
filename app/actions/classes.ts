@@ -533,8 +533,7 @@ const JLPT_EXAM_ERRORS: Record<string, string> = {
   no_exam_questions:
     "Bài nguồn chưa có câu nào xếp được vào phần thi JLPT (cần nhãn như 文字・語彙, 文法, 読解 hoặc câu nghe). Chọn ngân hàng ôn N5/N4.",
   invalid_input: "Kiểm tra lại cấp, thời gian làm bài (5–240 phút) và cách công bố điểm.",
-  official_level:
-    "Đề chính thức chỉ giao đúng cấp của sách. Chọn lại cấp N5 hoặc N4 cho khớp với đề.",
+  official_level: "Đề trọn bộ chỉ giao đúng cấp của đề. Chọn lại cấp N5 hoặc N4 cho khớp với đề.",
   // The exam's questions are no longer all in the version the class uses: the bank was updated
   // between loading the page and publishing.
   invalid_items:

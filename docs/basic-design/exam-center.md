@@ -64,6 +64,15 @@ Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm đượ
 - Trang Luyện đề có mục **Bản in đề JLPT** (giáo viên và chủ lớp) và **Đề mẫu chính thức trên mạng** (mọi người): link thường tới jlpt.jp, mở tab mới, không nhúng file.
 - Hướng dẫn in ở [/guide](../../app/guide/page.tsx), mục "In đề JLPT ra giấy".
 
+## Đề JLPT N4 tháng 07/2025 — 27/11/2026
+
+Người dùng đưa một đề N4 trọn bộ (câu hỏi, đáp án, ảnh trang đề và file nghe MP3) và muốn giao cho lớp của mình.
+
+- Đề vào Reng như đề chính thức: một bài riêng, làm một lượt, đủ mọi câu theo thứ tự đề, có giờ như đề thật. Tên trong Thư viện đề là tên bài ("Đề JLPT N4 tháng 07/2025"), mô tả "Đề trọn bộ", loại "Đề thi thử" trong danh sách đề.
+- Phần nghe phát bản ghi âm gốc, mỗi câu một đoạn; học viên thấy lời thoại sau khi trả lời như các câu nghe khác.
+- Chưa có bản in A4 cho đề này (bản in chỉ có ở các đề trong mục Bản in đề JLPT).
+- Dữ liệu và cách nạp ở [soạn nội dung](../content-authoring.md#đề-jlpt-n4-tháng-072025-27112026).
+
 ## Không làm
 
 - Học viên tự mở đề ở lớp mình không làm chủ: cần thêm migration. Người dùng chọn để giáo viên mở.

@@ -2,6 +2,10 @@
 
 Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm thử và rà soát đầy đủ ở [mục lục tài liệu](README.md#báo-cáo-kiểm-thử-và-rà-soát).
 
+### 27/11/2026
+
+- **Đề JLPT N4 tháng 07/2025:** đề trọn bộ cho lớp N4, phần nghe phát bản ghi âm gốc cắt theo từng câu. Thư viện đề gọi đề bằng tên riêng thay vì "Đề chính thức JLPT" ([soạn nội dung](content-authoring.md#đề-jlpt-n4-tháng-072025-27112026)).
+
 ### 26/11/2026
 
 - **Quyết định sau rà soát** ([chi tiết](testing/review-2026-11-26.md#quyết-định-của-người-dùng-26112026-và-việc-đã-làm)):

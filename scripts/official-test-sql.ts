@@ -9,8 +9,9 @@ import { JLPT_OFFICIAL_CREDIT, OFFICIAL_TEST_OPENS_AT } from "../lib/jlpt-offici
 import { findFuriganaProblems } from "../lib/lesson-draft";
 import { lessonDraftSchema } from "../lib/lesson-schema";
 
-// Writes one SQL transaction that gives a teacher a JLPT official workbook test as a lesson of
-// their own (created once, credited to jlpt.jp), publishes it and adds it to one of their classes.
+// Writes one SQL transaction that gives a teacher a whole JLPT test as a lesson of their own
+// (created once): a jlpt.jp official workbook test, credited to jlpt.jp, or another whole test
+// tagged official:<test id> (content/jlpt/tests/). It publishes the lesson and adds it to a class.
 // The class keeps it closed to learners until --opens-at (default: the day after the real
 // test), so they meet the questions only in the mock exam the teacher gives from it. Nothing is
 // sent to a database here; without --commit the file ends in ROLLBACK, so running it is a dry run.
@@ -64,12 +65,16 @@ async function main() {
   if (!isOfficialTest(questions) || !officialTestLevel(questions)) {
     throw new Error("Every question needs an official:… tag and the test a jlpt:n5/jlpt:n4 tag.");
   }
-  const uncredited = questions.filter(
-    (question) => question.source?.credit !== JLPT_OFFICIAL_CREDIT,
+  // A jlpt.jp workbook test credits jlpt.jp on every question; another test credits one source
+  // on all of its questions or on none.
+  const isWorkbook = questions.some((question) =>
+    question.tags.some((tag) => /^official:jlpt-\d{4}$/.test(tag)),
   );
+  const credit = isWorkbook ? JLPT_OFFICIAL_CREDIT : (questions[0].source?.credit ?? null);
+  const uncredited = questions.filter((question) => (question.source?.credit ?? null) !== credit);
   if (uncredited.length) {
     throw new Error(
-      `Credit jlpt.jp on every question: ${uncredited
+      `Credit ${credit ?? "no source"} on every question: ${uncredited
         .slice(0, 5)
         .map((q) => q.id)
         .join(", ")}.`,
@@ -110,7 +115,7 @@ async function main() {
     const row = BUNDLED_LISTENING_AUDIO.get(hash);
     if (!row) {
       throw new Error(
-        `Audio ${hash} is not from a bundled listening set; generate and bundle it first.`,
+        `Audio ${hash} is not from a bundled listening set or recorded test; bundle it first.`,
       );
     }
     return row;
@@ -172,7 +177,7 @@ begin
     new_content,
     '{}'::jsonb,
     null,
-    ${quote(JLPT_OFFICIAL_CREDIT)}
+    ${credit ? quote(credit) : "null"}
   );
   select * into test_row from public.lessons where id = test_id for update;
   if exists (select 1 from public.lesson_versions v

@@ -86,7 +86,8 @@ interface LibraryRowProps {
 
 function describeLibraryEntry({ source, opened }: LibraryEntry) {
   if (source.kind === "official") {
-    return `Từ sách đề chính thức trên jlpt.jp. ${opened ? "Đã mở cho lớp." : "Đủ mọi câu theo sách, chưa mở."}`;
+    const origin = source.year ? "Từ sách đề chính thức trên jlpt.jp." : "Đề trọn bộ.";
+    return `${origin} ${opened ? "Đã mở cho lớp." : "Đủ mọi câu theo thứ tự đề, chưa mở."}`;
   }
   if (source.kind === "fixed") {
     return `Đề cố định ${source.questionCount} câu từ “${source.lessonTitle}”, in được. ${opened ? "Đã mở cho lớp." : "Chưa mở."}`;

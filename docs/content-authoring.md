@@ -565,6 +565,19 @@ Quy ước khi chép (bốn agent chép từ PDF, đối chiếu ảnh từng tr
 
 **Bộ 2012** (cùng ngày, người dùng chọn làm gọn để tiết kiệm token): PDF đề là ảnh scan, còn 正答表 và script nghe có lớp chữ. Ba agent đọc ảnh mỗi trang một lần; đáp án được đối chiếu tự động với 正答表; lời nghe khớp script. Số điện thoại trong lời nghe có cách đọc từng chữ số (`{512-7734|ごーいちにーのななななさんよん}`) để giọng máy đọc như đề thật. Mã câu `n5-2012-…`, tag `official:jlpt-2012`.
 
+## Đề JLPT N4 tháng 07/2025 (27/11/2026)
+
+Đề do người dùng cung cấp: `exam.json` (câu, đáp án, giải thích), ảnh trang đề và một file MP3 dài 33 phút cho cả phần nghe. Reng nhận nguyên đề, đúng thứ tự, làm một lượt như đề chính thức.
+
+- **File:** `content/jlpt/tests/n4-2025-07.json` (bài `jlpt-n4-2025-07`, "Đề JLPT N4 tháng 07/2025"), hình ở `public/images/jlpt/2025-07/n4/`. Mã câu `n4-2025-07-v-NN`, `-g-NN`, `-l-<もんだい>-<số>`; tag `official:n4-2025-07`, câu nghe thêm `jlpt:n4`, `section:N`. Không có `source`, nên trang làm bài không in dòng nguồn.
+- **Phần chữ và đọc (57 câu):** chuyển từ `exam.json` theo quy ước của đề chính thức (gạch chân `[[…]]`, chỗ trống `［ 18 ］`, câu ★ `＿★＿`). Đáp án được soát lại từng câu. Sửa lỗi gõ của bản gốc: 豪族が料理を行って → 家族が料理を作って, お終わりましたか → 終わりましたか, 本 がたおれました → 本が たおれました, hướng dẫn もんだい６ ghi ピザ教室 → お知らせ.
+- **Hình:** tờ thông báo câu 24 và tờ quảng cáo câu 28–29 ghép hai ảnh chụp thành một (bỏ đoạn trùng); tranh phần nghe cắt bỏ thanh công cụ, quảng cáo và tiêu đề trang của ảnh chụp màn hình.
+- **Phần nghe:** bản ghi âm gốc, cắt mỗi câu một đoạn (từ "Nばん" tới hết câu hỏi đọc lại, bỏ khoảng lặng làm bài). Lời thoại chép từ bản ghi bằng Whisper (large-v3-turbo) rồi sửa tay, có nhãn người nói; đáp án chấm từ lời thoại và tranh.
+  - File cắt nằm ở `public/audio/lessons/<mã>.mp3`, mã là 32 ký tự đầu SHA-256 của chính file (`recordedAudioHash`, `lib/recorded-audio.ts`). Cắt lại thì mã đổi, không đè file bài đã xuất bản đang dùng.
+  - `lib/bundled-listening.ts` đăng ký các đoạn này với `voice: "recording"`, nên `official:sql` và trang xuất bản nhận audio như bộ nghe có sẵn.
+- **Đưa lên production:** sau khi đẩy code (file MP3 và hình đi cùng web), chạy `npm run official:sql -- --file content/jlpt/tests/n4-2025-07.json --owner <email giáo viên> --class "<tên lớp>" --out n4-2025-07.sql`, kiểm tra bản chạy thử (ROLLBACK), rồi thêm `--commit`. Bài mở cho học viên từ 07/12/2026; chủ lớp mở đề ở **Luyện đề → Thư viện đề** hoặc **Giao bài → Thi thử JLPT**.
+- **Kiểm chứng:** `tests/jlpt-n4-2025-07.test.ts` (số câu từng phần, đáp án, thứ tự, hình, file MP3 khớp mã, audio đăng ký dạng bản ghi, tên đề trong Thư viện đề).
+
 ## Đề thi thử Reng cố định và bản in (23/11/2026)
 
 Mỗi cấp có 3 đề in được ([BD](basic-design/exam-center.md#bộ-đề-có-bản-in--23112026)): hai đề chính thức ở trên và một đề thi thử Reng cố định, khai báo trong `content/jlpt/reng-exam-sets.json`.

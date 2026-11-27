@@ -68,7 +68,10 @@ function sourceKindOf(source: ExamSource | null): ExamRow["source"] {
   if (!source) {
     return "other";
   }
-  return source.kind === "official" ? "official" : "reng";
+  if (source.kind === "official") {
+    return source.year ? "official" : "other";
+  }
+  return "reng";
 }
 
 /** The pinned lessons of a class that make whole mock exams, with what earlier exams used. */
