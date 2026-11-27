@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
+    "build:vercel": "node scripts/drop-hosted-audio.mjs && next build",
     "start": "next start --hostname 127.0.0.1",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
     "format": "prettier --write app components lib scripts tests e2e e2e-supabase content *.ts *.mjs *.json .prettierrc.json README.md",
@@ -28,6 +29,7 @@
     "daily:import": "node --import tsx scripts/import-daily-sheet.ts",
     "bank:sql": "node --import tsx scripts/review-bank-sql.ts",
     "official:sql": "node --import tsx scripts/official-test-sql.ts",
+    "audio:upload": "node --import tsx scripts/upload-lesson-audio.ts",
     "furigana:sql": "node --import tsx scripts/furigana-snapshot-sql.ts",
     "listening:sql": "node --env-file-if-exists=.env.local --import tsx scripts/listening-draft-sql.ts",
     "listening:merge": "node --import tsx scripts/merge-daily-listening.ts",

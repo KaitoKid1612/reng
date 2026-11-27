@@ -268,6 +268,11 @@ npm run audio:generate -- --lessons --local
 
 Plan chỉ liệt kê công việc. Generate cần khóa Azure; output ở public/audio/lessons, mapping ở content/lesson-audio-manifest.json. Script cập nhật hash trong draft, kiểm tra draft chưa bị sửa trong khi chạy. Sau khi nghe duyệt, xuất bản version mới; không sửa catalog cũ để chèn audio. Kana vẫn dùng manifest và thư mục audio/kana riêng.
 
+**Production phát audio bài học từ Supabase Storage (từ 27/11/2026).** Bucket công khai `lesson-audio` của project production giữ bản sao của `public/audio/lessons`; Vercel đặt `NEXT_PUBLIC_LESSON_AUDIO_BASE_URL=https://gqawttlaxibdxliaofun.supabase.co/storage/v1/object/public/lesson-audio`. Khi biến này là địa chỉ https, bước build trên Vercel (`npm run build:vercel`, `scripts/drop-hosted-audio.mjs`) bỏ `public/audio/lessons` khỏi bản deploy, nên mỗi bản deploy nhẹ đi khoảng 97 MB (Vercel Hobby giới hạn 10 GB cho mọi bản deploy cộng lại). Máy local, test và E2E vẫn dùng file trong `public/audio/lessons`.
+
+- **Thêm MP3 mới** (sinh audio, cắt bản ghi đề): commit file vào `public/audio/lessons` như cũ, rồi **trước khi đẩy code** chạy `SUPABASE_URL=… SUPABASE_SECRET_KEY=… npm run audio:upload` (chạy khô), thêm `-- --commit` để tải lên. Script bỏ qua file bucket đã có, không ghi đè; thiếu bucket thì tạo (công khai, chỉ nhận `audio/mpeg`, tối đa 5 MB). Đẩy code trước khi tải thì học viên gặp lỗi 404 ở câu nghe mới.
+- Khóa secret lấy bằng `npx supabase projects api-keys --project-ref gqawttlaxibdxliaofun --reveal`; không lưu vào repo.
+
 Với R2, dùng --lessons --r2 và R2_LESSON_PUBLIC_BASE_URL; đặt NEXT_PUBLIC_LESSON_AUDIO_BASE_URL cùng base cho web. Thêm --sync-db khi muốn đăng ký metadata trong Supabase. Không đặt secret vào biến NEXT_PUBLIC_ hoặc tên file audio.
 
 Bài soạn trên web nằm trong database, không có file JSON. Sinh audio cho nháp đó (từ vựng, câu ví dụ, transcript câu nghe):
