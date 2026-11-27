@@ -435,10 +435,6 @@
   background: color-mix(in srgb, var(--wrong) 8%, var(--surface));
   color: var(--wrong);
 }
-.mistake-answer[data-kind="wrong"] dd {
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
-}
 .mistake-answer[data-kind="right"] {
   border-color: color-mix(in srgb, var(--correct) 45%, transparent);
   background: color-mix(in srgb, var(--correct) 8%, var(--surface));
