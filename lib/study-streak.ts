@@ -15,8 +15,3 @@ export function describeStreak(days: number, hasStudiedToday: boolean): StreakSt
   const reached = STREAK_MILESTONES.filter((milestone) => milestone <= days);
   return { days, hasStudiedToday, previousMilestone: reached.at(-1) ?? 0, nextMilestone };
 }
-
-// Milestones the streak has reached, for the badges on the progress page.
-export function reachedStreakMilestones(days: number) {
-  return STREAK_MILESTONES.filter((milestone) => milestone <= days);
-}

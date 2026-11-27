@@ -21,16 +21,9 @@ function inBatches(values: readonly string[]) {
   return batches;
 }
 
-// A learner's answers in one class over the last month to questions tagged with a grammar point.
-// Only attempts whose results the learner may already see count, as on the progress page.
-export function listClassGrammarAnswers(userId: string, classId: string, now: Date) {
-  return listClassTaggedAnswers(userId, classId, now, (tags) =>
-    tags.some((tag) => tag.startsWith("grammar:")),
-  );
-}
-
-// The same month of answers, keeping the questions whose tags pass `keep` (grammar points, the
-// lesson tags of the course map, or both in one read).
+// A learner's answers in one class over the last month, keeping the questions whose tags pass
+// `keep` (grammar points, the lesson tags of the course map, or both in one read). Only attempts
+// whose results the learner may already see count, as on the progress page.
 export async function listClassTaggedAnswers(
   userId: string,
   classId: string,

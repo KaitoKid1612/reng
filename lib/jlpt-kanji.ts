@@ -74,8 +74,6 @@ const levelSchema = z
   .strict();
 
 export type JlptKanji = z.infer<typeof itemSchema>;
-export type JlptKanjiWord = z.infer<typeof wordSchema>;
-export type JlptKanjiGroup = z.infer<typeof groupSchema>;
 export type JlptKanjiLevelData = z.infer<typeof levelSchema>;
 export type PaperWord = z.infer<typeof paperWordSchema>;
 

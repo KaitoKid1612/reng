@@ -29,8 +29,6 @@ export interface DailyResult {
 
 export interface DailyDay extends DailyRun, DailyResult {}
 
-export type DailyDayState = "scored" | "submitted" | "in_progress" | "not_done";
-
 export interface DailyLatest {
   date: string;
   percent: number;
@@ -65,7 +63,7 @@ export function formatDayPercent(percent: number) {
   return `${Math.round(percent)}%`;
 }
 
-type UnscoredState = Exclude<DailyDayState, "scored">;
+type UnscoredState = "submitted" | "in_progress" | "not_done";
 
 function unscoredState(day: DailyResult): UnscoredState {
   if (day.submitted) {
@@ -73,10 +71,6 @@ function unscoredState(day: DailyResult): UnscoredState {
   }
   // Attempts are either open or submitted, so attempts without a submission mean one is open.
   return day.attemptCount > 0 ? "in_progress" : "not_done";
-}
-
-export function dailyDayState(day: DailyResult): DailyDayState {
-  return day.percent === null ? unscoredState(day) : "scored";
 }
 
 const SHORT_STATE_LABELS: Record<UnscoredState, string> = {

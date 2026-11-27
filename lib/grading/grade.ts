@@ -212,11 +212,6 @@ export function gradeAttempt(
   };
 }
 
-// Pass decisions use exact integer arithmetic; only displayed percentages are rounded.
-export function isPassingScore(score: number, maxScore: number, passScore: number) {
-  return score * 100 >= passScore * maxScore;
-}
-
 export function toPercent(score: number, maxScore: number) {
   return (score / maxScore) * 100;
 }

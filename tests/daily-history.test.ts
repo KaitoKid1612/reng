@@ -3,7 +3,6 @@ import { test } from "node:test";
 
 import {
   buildDailyDays,
-  dailyDayState,
   dailyOverview,
   describeDelta,
   fullDayLabel,
@@ -43,15 +42,12 @@ test("score bands follow the old sheet: 80% and up, 60–79%, below 60%, no scor
 });
 
 test("a day without a score says why: hidden score, open attempt or not done", () => {
-  assert.equal(dailyDayState(result({ percent: 70, submitted: true, attemptCount: 1 })), "scored");
-  assert.equal(dailyDayState(result({ submitted: true, attemptCount: 1 })), "submitted");
-  assert.equal(dailyDayState(result({ attemptCount: 1 })), "in_progress");
-  assert.equal(dailyDayState(result()), "not_done");
   assert.equal(shortDayLabel(result({ percent: 66.67, submitted: true })), "67%");
   assert.equal(shortDayLabel(result({ attemptCount: 1 })), "làm dở");
   assert.equal(shortDayLabel(result()), "—");
   assert.equal(fullDayLabel(result({ percent: 90, submitted: true })), "90%");
   assert.equal(fullDayLabel(result({ submitted: true })), "đã nộp, chưa công bố điểm");
+  assert.equal(fullDayLabel(result({ attemptCount: 1 })), "đang làm dở");
   assert.equal(fullDayLabel(result()), "chưa làm");
 });
 

@@ -371,7 +371,6 @@ export type LessonVersion = z.infer<typeof lessonVersionSchema>;
 export type LessonContent = z.infer<typeof lessonContentSchema>;
 export type LessonCatalog = z.infer<typeof lessonCatalogSchema>;
 export type LessonQuestion = z.infer<typeof questionSchema>;
-export type LessonSlide = z.infer<typeof slideSchema>;
 
 export function toPublicLesson(version: LessonVersion) {
   return {

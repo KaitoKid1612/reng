@@ -7,7 +7,6 @@ import {
   describeParticleSlip,
   gradeAttempt,
   gradeQuestion,
-  isPassingScore,
   toPercent,
 } from "../lib/grading/grade";
 import { normalizeAnswer } from "../lib/grading/normalize";
@@ -128,9 +127,6 @@ test("attempt scores use integer points and unrounded pass thresholds", () => {
       ["m1", false, null],
     ],
   );
-  assert.equal(isPassingScore(2, 3, 67), false, "66.67% must not round up to 67%");
-  assert.equal(isPassingScore(2, 3, 66), true);
-  assert.equal(isPassingScore(7, 10, 70), true, "equal to the threshold passes");
   assert.equal(Math.round(toPercent(2, 3)), 67);
   assert.throws(() => gradeAttempt([], {}));
 });
