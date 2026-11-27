@@ -86,21 +86,6 @@ interface LibraryRowProps {
   canPrint: boolean;
 }
 
-function describeLibraryEntry({ source, opened }: LibraryEntry) {
-  if (source.kind === "official") {
-    const origin = source.year ? "Từ sách đề chính thức trên jlpt.jp." : "Đề trọn bộ.";
-    return `${origin} ${opened ? "Đã mở cho lớp." : "Đủ mọi câu theo thứ tự đề, chưa mở."}`;
-  }
-  if (source.kind === "fixed") {
-    return `Đề cố định ${source.questionCount} câu từ “${source.lessonTitle}”, in được. ${opened ? "Đã mở cho lớp." : "Chưa mở."}`;
-  }
-  const origin = `Ghép từ “${source.lessonTitle}”.`;
-  if (source.remainingExams > 0) {
-    return `${origin} ${opened ? `Đã mở ${opened} đề` : "Chưa mở đề nào"}. Ngân hàng còn đủ ${source.remainingExams} đề không trùng câu với các đề trước.`;
-  }
-  return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ dùng lại những câu cũ ít được ra nhất.`;
-}
-
 // The printable set of a library row: a fixed Reng exam, a workbook test or a supplied test. A bank
 // makes a different exam each time, so it prints once opened, from the class's exam list.
 function printSetId(source: ExamSource) {
@@ -120,13 +105,8 @@ function LibraryRow({ entry, classId, isSelfStudy, canPrint }: LibraryRowProps) 
     <li className="exam-library-row">
       <div>
         <p className="exam-title">{examTitleFor(source, opened)}</p>
-        <p className="small muted">{describeLibraryEntry(entry)}</p>
         {entry.isSourceOpen && !isSelfStudy && (
-          <p className="small">
-            Bài nguồn đang mở với học viên: trong lúc thi họ vẫn mở được bài để xem câu và đáp án.
-            Muốn đề kín, dùng một ngân hàng riêng cho đề và đặt ô Mở cho học viên từ sau kỳ thi
-            (trang Giao bài, mục Nội dung lớp).
-          </p>
+          <p className="small">Bài nguồn đang mở: học viên xem được câu và đáp án trong lúc thi.</p>
         )}
       </div>
       <div className="exam-library-actions">
@@ -174,11 +154,6 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
       <div className="page-heading">
         <div>
           <h1>Luyện đề JLPT</h1>
-          <p>
-            {isTeacher
-              ? "Hai tập đề mẫu chính thức trên jlpt.jp (2012 và 2018), các đề N4 trọn bộ (07/2025, 12/2025) và đề Reng ghép theo cấu trúc đề thật: ngân hàng có đủ câu cho từng もんだい thì đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính trên 180 và có bản in."
-              : "Đề mẫu chính thức trên jlpt.jp và đề Reng ghép theo cấu trúc đề thật. Mỗi đề làm một lượt, tính giờ như đề thật và có điểm ước tính trên thang 180."}
-          </p>
         </div>
       </div>
       {opened && !openedClassId && openedNotice(!isTeacher)}

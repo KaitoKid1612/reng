@@ -15,8 +15,9 @@ Mọi tài khoản đã đăng nhập; mục **Luyện đề** ở thanh đầu 
     - Đã nộp: điểm ước tính /180, "Ước tính đỗ" hoặc lý do chưa đỗ, và **Xem kết quả**. Chưa tới lúc công bố điểm thì ghi "Đã nộp, chờ công bố điểm".
   - Lớp mình dạy: cùng bảng, thay kết quả bằng link tới bài nộp của lớp.
 - Lớp mình làm chủ (lớp tự học hoặc lớp dạy) có thêm **Thư viện đề của lớp**, gồm các bài lớp ghim mà ghép được trọn đề:
-  - **Đề chính thức** (sách 2012, 2018 trên jlpt.jp): một đề, nút **Mở đề này**; đã mở thì ghi "Đã mở cho lớp".
-  - **Ngân hàng viết theo dạng đề** (mọi câu có nhãn dạng như `kanji-reading`, câu nghe có `jlpt:n5`/`jlpt:n4` và `section:n`): tên đề kế tiếp "Đề Reng N5 số k", số đề còn ghép được mà không trùng câu với các đề trước của lớp, nút **Mở đề này**. Hết câu mới vẫn mở được; đề mới lặp câu ra ít nhất.
+  - **Đề chính thức** (sách 2012, 2018 trên jlpt.jp): một đề, nút **Mở đề này**; đã mở thì nút ẩn.
+  - **Ngân hàng viết theo dạng đề** (mọi câu có nhãn dạng như `kanji-reading`, câu nghe có `jlpt:n5`/`jlpt:n4` và `section:n`): tên đề kế tiếp "Đề Reng N5 số k", nút **Mở đề này**. Đề ghép không trùng câu với các đề trước của lớp; hết câu mới vẫn mở được, đề mới lặp câu ra ít nhất.
+  - **Không chú thích (27/11/2026, người dùng yêu cầu):** mỗi dòng chỉ có tên đề và nút, không ghi nguồn, "Đề trọn bộ", "Đã mở cho lớp" hay số đề còn ghép được. Đầu trang chỉ có tiêu đề "Luyện đề JLPT"; mục Bản in đề JLPT chỉ ghi số câu dưới tên đề. Còn giữ một dòng cảnh báo khi bài nguồn đang mở với học viên (lớp dạy). Bìa bản in vẫn ghi nguồn theo điều kiện dùng của jlpt.jp.
 - Mở đề: đúng cấp của nguồn, số phút theo cấp (N5 90, N4 115), công bố điểm ngay sau khi nộp. Giờ đóng đề 23:59 sau 30 ngày (lớp tự học) hoặc 7 ngày (lớp dạy). Dùng lại `publishJlptExam`. Xong thì trang cuộn tới đúng lớp đó: thông báo ngay dưới tên lớp ("Đã mở đề mới…" ở lớp mình học; ở lớp mình dạy thì báo đã mở cho lớp, vì giáo viên không có nút Làm đề) và dòng đề mới tô nền. Lỗi thì thông báo ở đầu trang.
 - Bấm **Mở đề này** một lần chỉ mở một đề: trong lúc chờ nút ghi "Đang mở…" và bị khoá, bấm đúp không mở thêm đề.
 - Lớp tự học: chủ lớp là học viên duy nhất, nên mở đề xong làm luôn được. Lớp dạy: chủ lớp mở, học viên thấy đề ở trang Luyện đề của mình.
@@ -71,7 +72,7 @@ Cùng ngày có thêm đề tháng 12/2025, làm giống hệt (thiếu 文字�
 
 Người dùng đưa một đề N4 trọn bộ (câu hỏi, đáp án, ảnh trang đề và file nghe MP3) và muốn giao cho lớp của mình.
 
-- Đề vào Reng như đề chính thức: một bài riêng, làm một lượt, đủ mọi câu theo thứ tự đề, có giờ như đề thật. Tên trong Thư viện đề là tên bài ("Đề JLPT N4 tháng 07/2025"), mô tả "Đề trọn bộ", loại "Đề thi thử" trong danh sách đề.
+- Đề vào Reng như đề chính thức: một bài riêng, làm một lượt, đủ mọi câu theo thứ tự đề, có giờ như đề thật. Tên trong Thư viện đề là tên bài ("Đề JLPT N4 tháng 07/2025"), loại "Đề thi thử" trong danh sách đề.
 - Phần nghe phát bản ghi âm gốc, mỗi câu một đoạn; học viên thấy lời thoại sau khi trả lời như các câu nghe khác.
 - Chưa có bản in A4 cho đề này (bản in chỉ có ở các đề trong mục Bản in đề JLPT).
 - Dữ liệu và cách nạp ở [soạn nội dung](../content-authoring.md#đề-jlpt-n4-tháng-072025-27112026).
