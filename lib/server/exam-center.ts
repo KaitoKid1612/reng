@@ -38,7 +38,6 @@ export interface ExamRow {
   level: JlptLevel;
   minutes: number;
   dueAt: string | null;
-  source: "official" | "reng" | "other";
   // Null for a class the user only teaches: they do not take its exams.
   status: ExamStatus | null;
 }
@@ -60,18 +59,6 @@ export interface ClassExams {
   isOwner: boolean;
   exams: ExamRow[];
   library: LibraryEntry[];
-}
-
-const sourceKey = (classId: string, lessonId: string) => `${classId}:${lessonId}`;
-
-function sourceKindOf(source: ExamSource | null): ExamRow["source"] {
-  if (!source) {
-    return "other";
-  }
-  if (source.kind === "official") {
-    return source.year ? "official" : "other";
-  }
-  return "reng";
 }
 
 /** The pinned lessons of a class that make whole mock exams, with what earlier exams used. */
@@ -182,38 +169,6 @@ export async function loadExamCenter(userId: string, isTeacher: boolean, now: Da
       ),
     ),
   );
-  // Whether an exam came from an official test or a Reng bank, from the library of its class or,
-  // for a class the user only learns in, from its source lesson.
-  const kinds = new Map<string, ExamRow["source"]>();
-  for (const [classId, library] of libraries) {
-    for (const entry of library) {
-      kinds.set(sourceKey(classId, entry.source.lessonId), sourceKindOf(entry.source));
-    }
-  }
-  const unknown = [
-    ...new Set(assignments.map((exam) => sourceKey(exam.classId, exam.lessonId))),
-  ].filter((key) => !kinds.has(key));
-  await Promise.all(
-    unknown.map(async (key) => {
-      const [classId, lessonId] = key.split(":");
-      try {
-        const questions = await listAssignablePracticeQuestions(classId, lessonId);
-        const source = describeExamSource(
-          lessonId,
-          "",
-          questions.map((question) => ({
-            id: question.id,
-            type: question.type,
-            tags: question.tags,
-            passage: question.passage ?? null,
-          })),
-        );
-        kinds.set(key, sourceKindOf(source));
-      } catch {
-        kinds.set(key, "other");
-      }
-    }),
-  );
   const learnerIds = new Set(learnerClasses.map((item) => item.id));
   const summaries = [
     ...learnerClasses.map((item) => ({
@@ -242,7 +197,6 @@ export async function loadExamCenter(userId: string, isTeacher: boolean, now: Da
             level: exam.exam?.level ?? "N5",
             minutes: exam.exam?.timeLimitMinutes ?? 0,
             dueAt: exam.dueAt,
-            source: kinds.get(sourceKey(exam.classId, exam.lessonId)) ?? "other",
             status: isLearner ? statusOf(exam, attempts, results, now) : null,
           })),
         library: libraries.get(item.id) ?? [],

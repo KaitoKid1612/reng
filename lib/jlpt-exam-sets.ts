@@ -154,11 +154,6 @@ export function findJlptExamSet(id: string) {
   return JLPT_EXAM_SETS.find((set) => set.id === id) ?? null;
 }
 
-/** "Đề 1", "Đề 2"… within the level, in the order of JLPT_EXAM_SETS. */
-export function jlptExamSetNumber(set: JlptExamSet) {
-  return JLPT_EXAM_SETS.filter((item) => item.level === set.level).indexOf(set) + 1;
-}
-
 /** Reng's fixed mock exams, for the exam library of a class that pins their bank. */
 export function fixedRengExamSets() {
   return JLPT_EXAM_SETS.filter((set) => set.kind === "reng");

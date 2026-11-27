@@ -9,7 +9,6 @@ import {
   findJlptExamSet,
   fixedRengExamSets,
   JLPT_EXAM_SETS,
-  jlptExamSetNumber,
 } from "@/lib/jlpt-exam-sets";
 import { jlptPartOf, jlptTestParts } from "@/lib/jlpt-parts";
 
@@ -34,18 +33,18 @@ function choiceAnswer(question: LessonQuestion) {
 
 test("each level prints the official tests, then the supplied tests, then Reng's mock exam", () => {
   assert.deepEqual(
-    JLPT_EXAM_SETS.map((set) => `${set.id} Đề ${jlptExamSetNumber(set)}`),
+    JLPT_EXAM_SETS.map((set) => set.id),
     [
-      "n5-2018 Đề 1",
-      "n5-2012 Đề 2",
-      "reng-n5-1 Đề 3",
-      "n4-2018 Đề 1",
-      "n4-2012 Đề 2",
-      "n4-2025-07 Đề 3",
-      "n4-2025-12 Đề 4",
-      "n4-2026-07 Đề 5",
-      "n4-2026-07-2 Đề 6",
-      "reng-n4-1 Đề 7",
+      "n5-2018",
+      "n5-2012",
+      "reng-n5-1",
+      "n4-2018",
+      "n4-2012",
+      "n4-2025-07",
+      "n4-2025-12",
+      "n4-2026-07",
+      "n4-2026-07-2",
+      "reng-n4-1",
     ],
   );
   assert.deepEqual(

@@ -33,12 +33,6 @@ const ERRORS: Record<string, string> = {
   failed: "Chưa mở được đề. Thử lại sau ít phút.",
 };
 
-const SOURCE_LABELS: Record<ExamRow["source"], string> = {
-  official: "Đề chính thức",
-  reng: "Đề Reng",
-  other: "Đề thi thử",
-};
-
 function ExamStatusCell({ exam, classId }: { exam: ExamRow; classId: string }) {
   const status = exam.status;
   if (!status) {
@@ -197,7 +191,6 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
               <thead>
                 <tr>
                   <th scope="col">Đề</th>
-                  <th scope="col">Loại</th>
                   <th scope="col">Thời gian</th>
                   <th scope="col">Đóng lúc</th>
                   <th scope="col">{item.isLearner ? "Kết quả" : "Bài nộp"}</th>
@@ -225,9 +218,6 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
                         </>
                       )}
                     </th>
-                    <td className="exam-meta">
-                      {SOURCE_LABELS[exam.source]} {exam.level}
-                    </td>
                     <td className="exam-meta">{exam.minutes} phút</td>
                     <td className="exam-meta">
                       {exam.dueAt ? (

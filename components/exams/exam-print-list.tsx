@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { PRINT_BOOKLET_LABELS, PRINT_BOOKLETS } from "@/lib/exam-print";
 import { JLPT_LEVELS } from "@/lib/jlpt";
-import { JLPT_EXAM_SETS, jlptExamSetNumber } from "@/lib/jlpt-exam-sets";
+import { JLPT_EXAM_SETS } from "@/lib/jlpt-exam-sets";
 
 // "Bản in đề JLPT" on the exam page, for a teacher or class owner: every printable exam per level
 // with a link to each booklet. The booklets with answers are marked for the teacher.
@@ -16,12 +16,7 @@ export function ExamPrintList() {
           <ul className="exam-library">
             {JLPT_EXAM_SETS.filter((set) => set.level === level).map((set) => (
               <li key={set.id} className="exam-library-row">
-                <div>
-                  <p className="exam-title">
-                    Đề {jlptExamSetNumber(set)}: {set.title}
-                  </p>
-                  <p className="small muted">{set.questions.length} câu</p>
-                </div>
+                <p className="exam-title">{set.title}</p>
                 <ul className="exam-print-links">
                   {PRINT_BOOKLETS.map((booklet) => (
                     <li key={booklet}>

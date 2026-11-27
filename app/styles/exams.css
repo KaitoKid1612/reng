@@ -40,7 +40,7 @@
   margin: 0;
   font-weight: 600;
 }
-/* Kind, minutes and start deadline are short: they never break, the title and outcome wrap. */
+/* Minutes and the closing time are short: they never break, the title and outcome wrap. */
 .exam-meta,
 .exam-table thead th {
   white-space: nowrap;
@@ -126,14 +126,13 @@
   .exam-table {
     table-layout: fixed;
   }
-  .exam-table thead th:nth-child(2),
-  .exam-table thead th:nth-child(4) {
-    width: 170px;
-  }
-  .exam-table thead th:nth-child(3) {
+  .exam-table thead th:nth-child(2) {
     width: 110px;
   }
-  .exam-table thead th:nth-child(5) {
+  .exam-table thead th:nth-child(3) {
+    width: 170px;
+  }
+  .exam-table thead th:nth-child(4) {
     width: 36%;
   }
 }
@@ -156,7 +155,7 @@
     padding: 2px 0;
     border: 0;
   }
-  /* Kind · minutes · deadline on one line under the title. */
+  /* Minutes · closing time on one line under the title. */
   .exam-table .exam-meta {
     display: inline;
     color: var(--muted);
