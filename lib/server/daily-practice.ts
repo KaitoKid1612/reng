@@ -166,10 +166,12 @@ async function createDailyPractice(classId: string, now: Date): Promise<DailyPra
     return { status: source.status };
   }
   const { lessonId, questions } = source;
-  // Every recent assignment of this lesson counts as use, so a set the teacher assigned by hand
-  // (such as a day imported from a sheet) is not repeated the next morning.
+  // A recent assignment of this lesson counts as use once a learner has opened it, so a set the
+  // teacher assigned by hand (such as a day imported from a sheet) is not repeated the next
+  // morning. A skipped day uses nothing: its questions stay first in line instead of rotating to
+  // the back unseen (27/11/2026, the N4 class had cycled through its bank while doing 3 sets).
   const since = `${daysBefore(practiceDate, DAILY_PRACTICE_HISTORY_DAYS)}T00:00:00+07:00`;
-  const recent = await selectRows(
+  const published = await selectRows(
     service
       .from("assignments")
       .select("id, published_at")
@@ -178,6 +180,22 @@ async function createDailyPractice(classId: string, now: Date): Promise<DailyPra
       .gte("published_at", new Date(since).toISOString()),
     z.object({ id: z.uuid(), published_at: z.iso.datetime({ offset: true }) }),
   );
+  const opened = new Set(
+    (
+      await selectEveryPageIn(
+        published.map((row) => row.id),
+        (chunk, from, to) =>
+          service
+            .from("submissions")
+            .select("assignment_id")
+            .in("assignment_id", chunk)
+            .order("id")
+            .range(from, to),
+        z.object({ assignment_id: z.uuid() }),
+      )
+    ).map((row) => row.assignment_id),
+  );
+  const recent = published.filter((row) => opened.has(row.id));
   // Two weeks of 70-question days is close to the API's 1000-row page, so the items are read in
   // pages: a cut-off list would make recent questions look unused and repeat them.
   const items = await selectEveryPageIn(
