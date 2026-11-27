@@ -578,13 +578,6 @@ export function planStudyPacing(
   });
 }
 
-/** "Chữ Hán – từ vựng 25 phút, …": the guide's split of an exam with all three sections. */
-export function describeExamPacing(level: JlptLevel, timeLimitMinutes: number) {
-  return planExamPacing(level, timeLimitMinutes, JLPT_SECTIONS, new Date(0).toISOString())
-    .map((step) => `${JLPT_SECTION_SHORT_LABELS[step.section]} ${step.minutes} phút`)
-    .join(", ");
-}
-
 /** The step the clock is in: the first whose share has not run out, else the last one. */
 export function currentPacingStep(steps: readonly ExamPacingStep[], now: number) {
   return steps.find((step) => Date.parse(step.endsAt) > now) ?? steps.at(-1) ?? null;

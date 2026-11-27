@@ -24,12 +24,11 @@ interface ExamsPageProps {
 }
 
 const ERRORS: Record<string, string> = {
-  already_open: "Đề này đã mở cho lớp rồi; làm ở danh sách đề bên dưới.",
-  no_exam_questions: "Bài này không còn ghép được đề. Tải lại trang để xem thư viện mới nhất.",
+  already_open: "Đề này đã mở cho lớp.",
+  no_exam_questions: "Bài này không còn ghép được đề. Tải lại trang.",
   not_found: "Chỉ giáo viên của lớp mở được đề.",
-  not_japanese: "Thi thử JLPT chỉ dành cho lớp tiếng Nhật.",
-  invalid_items:
-    "Câu của đề không còn khớp với bài nguồn của lớp (bài vừa được cập nhật). Tải lại trang rồi mở đề lại.",
+  not_japanese: "Chỉ lớp tiếng Nhật có thi thử JLPT.",
+  invalid_items: "Bài nguồn vừa thay đổi. Tải lại trang rồi mở đề lại.",
   failed: "Chưa mở được đề. Thử lại sau ít phút.",
 };
 
@@ -135,12 +134,9 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
   const openedClassId = opened
     ? classes.find((item) => item.exams.some((exam) => exam.assignmentId === opened))?.classId
     : undefined;
-  // The teacher of a class has no Làm đề button there; the learners of that class do.
   const openedNotice = (forLearner: boolean) => (
     <p className="notice-panel" role="status">
-      {forLearner
-        ? "Đã mở đề mới. Bấm Làm đề khi sẵn sàng: đồng hồ chỉ chạy từ lúc bấm Bắt đầu thi."
-        : "Đã mở đề cho lớp. Đồng hồ của mỗi học viên chỉ chạy từ lúc họ bấm Bắt đầu thi; lượt đang làm tự nộp ở giờ đóng đề."}
+      {forLearner ? "Đã mở đề mới." : "Đã mở đề cho lớp."}
     </p>
   );
   return (
@@ -156,13 +152,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
           {ERRORS[error] ?? ERRORS.failed}
         </p>
       )}
-      {!classes.length && (
-        <p className="notice-panel">
-          {isTeacher
-            ? "Chưa có đề nào. Thêm ngân hàng ôn hoặc đề chính thức JLPT vào lớp bạn dạy hoặc lớp tự học thì thư viện đề sẽ hiện ở đây."
-            : "Chưa có đề nào. Đề hiện ở đây khi giáo viên mở đề cho lớp của bạn."}
-        </p>
-      )}
+      {!classes.length && <p className="notice-panel">Chưa có đề nào.</p>}
       {classes.map((item) => (
         <section
           key={item.classId}

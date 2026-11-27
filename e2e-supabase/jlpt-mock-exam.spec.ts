@@ -88,12 +88,8 @@ test("a teacher gives a timed N5 mock exam and a learner sees section results", 
   await learnerPage.waitForURL(`**/classes/${classId}`);
 
   await learnerPage.goto(`/assignments/${examId}`);
-  // "Còn … ngày tới kỳ thi JLPT, Chủ nhật …" (or "Hôm nay là ngày thi JLPT, Chủ nhật …").
-  await expect(learnerPage.locator(".assignment-facts")).toContainText("thi JLPT, Chủ nhật");
-  await expect(
-    learnerPage.getByText(/Đồng hồ 90 phút bắt đầu ngay khi bạn bấm Bắt đầu thi/),
-  ).toBeVisible();
-  await expect(learnerPage.getByText(/mỗi câu nghe chỉ phát một lần/)).toBeVisible();
+  await expect(learnerPage.getByText(/90 phút, tính từ lúc bấm Bắt đầu thi/)).toBeVisible();
+  await expect(learnerPage.getByText(/Mỗi câu nghe chỉ phát một lần/)).toBeVisible();
   await learnerPage.getByRole("button", { name: "Bắt đầu thi", exact: true }).click();
   await expect(learnerPage.getByRole("timer")).toContainText(/Thời gian còn lại 1:(30|29):\d\d/);
   // The real test's split of 90 minutes for N5: 20, 40 and 30.

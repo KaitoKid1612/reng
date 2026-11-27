@@ -7,7 +7,6 @@ import {
   JLPT_SECTION_LABELS,
   scoreJlptSections,
 } from "@/lib/jlpt";
-import { describeJlptCountdown } from "@/lib/jlpt-sessions";
 import { formatPercent, toPercent } from "@/lib/grading/grade";
 
 import type { JlptLevel, JlptScoredItem } from "@/lib/jlpt";
@@ -15,15 +14,13 @@ import type { JlptLevel, JlptScoredItem } from "@/lib/jlpt";
 interface JlptResultProps {
   level: JlptLevel;
   items: readonly JlptScoredItem[];
-  now: Date;
 }
 
 // Shown once the results may be seen: each section, then the exam's two scored parts on the
 // 180-point scale as an estimate.
-export function JlptResult({ level, items, now }: JlptResultProps) {
+export function JlptResult({ level, items }: JlptResultProps) {
   const scores = scoreJlptSections(items);
   const estimate = estimateJlptScore(level, scores);
-  const countdown = describeJlptCountdown(now);
   return (
     <section className="section-block" aria-labelledby="jlpt-result-title">
       <h2 id="jlpt-result-title">Kết quả theo phần thi JLPT {level}</h2>
@@ -71,20 +68,15 @@ export function JlptResult({ level, items, now }: JlptResultProps) {
             {estimate.listening}/{JLPT_LISTENING_MAX}.
           </p>
           <p className="small muted">
-            Đỗ {level} cần tổng từ {estimate.passMark}/180, phần ngôn ngữ và đọc hiểu từ{" "}
-            {JLPT_LANGUAGE_MIN}/{JLPT_LANGUAGE_MAX}, nghe hiểu từ {JLPT_LISTENING_MIN}/
-            {JLPT_LISTENING_MAX}.
-            {estimate.missesLanguageMinimum ? " Phần ngôn ngữ và đọc hiểu chưa qua điểm sàn." : ""}
-            {estimate.missesListeningMinimum ? " Phần nghe hiểu chưa qua điểm sàn." : ""} Điểm quy
-            đổi từ tỉ lệ đúng nên chỉ là ước tính; điểm JLPT thật tính theo độ khó từng câu.
+            Đỗ {level} cần tổng từ {estimate.passMark}/180, ngôn ngữ và đọc hiểu từ{" "}
+            {JLPT_LANGUAGE_MIN}, nghe hiểu từ {JLPT_LISTENING_MIN}.
+            {estimate.missesLanguageMinimum ? " Ngôn ngữ và đọc hiểu chưa qua điểm sàn." : ""}
+            {estimate.missesListeningMinimum ? " Nghe hiểu chưa qua điểm sàn." : ""}
           </p>
         </div>
       ) : (
-        <p className="notice-panel">
-          Đề này không có đủ phần nghe hiểu và phần ngôn ngữ nên chưa ước tính được điểm thang 180.
-        </p>
+        <p className="notice-panel">Đề thiếu phần nên chưa ước tính được điểm /180.</p>
       )}
-      {countdown && <p className="small muted">{countdown}</p>}
     </section>
   );
 }

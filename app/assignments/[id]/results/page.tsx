@@ -147,7 +147,7 @@ export default async function ResultsPage({ params, searchParams }: ResultsPageP
         <>
           {/* A mock exam leads with what the real test reports: the 180-point estimate and the
               section minimums; the plain percentage follows. */}
-          {exam && <JlptResult level={exam.level} items={view.items} now={now} />}
+          {exam && <JlptResult level={exam.level} items={view.items} />}
           <div className="form-card result-summary">
             <ScoreRing
               percent={toPercent(attempt.score, attempt.maxScore)}

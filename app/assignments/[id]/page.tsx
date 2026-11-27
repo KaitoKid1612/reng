@@ -1,6 +1,6 @@
 import { cache } from "react";
 import Link from "next/link";
-import { BookOpen, CalendarClock, Eye, ListChecks, Repeat, Timer } from "lucide-react";
+import { BookOpen, CalendarClock, Eye, ListChecks, Repeat } from "lucide-react";
 
 import { describeAssignmentKind, describeDue } from "@/components/classroom/assignment-labels";
 import { AttemptRunnerLoader } from "@/components/classroom/attempt-runner-loader";
@@ -9,8 +9,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { LinkPending } from "@/components/ui/link-pending";
 import { getDeadlineState } from "@/lib/assignment";
 import { grammarRefs } from "@/lib/grammar-links";
-import { describeExamPacing, examHandInAt, planExamPacing, planStudyPacing } from "@/lib/jlpt";
-import { describeJlptCountdown } from "@/lib/jlpt-sessions";
+import { examHandInAt, planExamPacing, planStudyPacing } from "@/lib/jlpt";
 import { getCurrentAccount, requireStudent } from "@/lib/server/account";
 import { getStudentAssignment } from "@/lib/server/assignments";
 import { findClassGrammarLinks, hasClassGrammar } from "@/lib/server/class-grammar";
@@ -118,19 +117,13 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           <ListChecks size={18} aria-hidden="true" />
           <span>
             {describeAssignmentKind(assignment)}: {view.questionCount} câu, {view.totalPoints} điểm
-            {exam ? ", tính giờ từ lúc bắt đầu" : `, đạt từ ${assignment.passScore}%`}
+            {exam ? "" : `, đạt từ ${assignment.passScore}%`}
           </span>
         </li>
         <li>
           <CalendarClock size={18} aria-hidden="true" />
           <span>{describeDue(assignment.dueAt)}</span>
         </li>
-        {exam && describeJlptCountdown(now) && (
-          <li>
-            <Timer size={18} aria-hidden="true" />
-            <span>{describeJlptCountdown(now)}</span>
-          </li>
-        )}
         <li>
           <Repeat size={18} aria-hidden="true" />
           <span>
@@ -205,26 +198,12 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
           {exam && !blocker && (
             <div className="notice-panel">
               <p>
-                Đồng hồ {exam.timeLimitMinutes} phút bắt đầu ngay khi bạn bấm Bắt đầu thi và vẫn
-                chạy khi đóng trang hay mất mạng. Hết giờ, Reng tự nộp các câu đã lưu. Bài chỉ có
-                một lượt làm.
-              </p>
-              <p className="small">
-                Dưới đồng hồ có giờ gợi ý cho từng phần như đề thật (
-                {describeExamPacing(exam.level, exam.timeLimitMinutes)}); hết giờ của phần nào thì
-                nên chuyển sang phần sau.
-              </p>
-              <p className="small">
-                Như đề thật, mỗi câu nghe chỉ phát một lần, không dừng, tua hay nghe chậm: đọc câu
-                hỏi và các lựa chọn trước khi bấm Nghe. Nên làm ở nơi yên tĩnh, có tai nghe, máy đã
-                sạc pin.
+                {exam.timeLimitMinutes} phút, tính từ lúc bấm Bắt đầu thi; hết giờ tự nộp. Mỗi câu
+                nghe chỉ phát một lần.
               </p>
               {isShortened && minutesToDue !== null && (
                 <p>
-                  <strong>
-                    Chỉ còn {Math.max(minutesToDue, 0)} phút tới hạn, nên lượt của bạn sẽ ngắn hơn{" "}
-                    {exam.timeLimitMinutes} phút.
-                  </strong>
+                  <strong>Chỉ còn {Math.max(minutesToDue, 0)} phút tới hạn.</strong>
                 </p>
               )}
             </div>
