@@ -83,7 +83,7 @@ const TESTS = [
   {
     // A book's reference test: the written part only, checked against the book's answer key.
     id: "n4-2026-07",
-    title: "Đề tham khảo JLPT N4 tháng 07/2026",
+    title: "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 1",
     counts: { vocabulary: 35, grammarReading: 35, listening: 0 },
     answers: {
       v: [
@@ -103,6 +103,37 @@ const TESTS = [
       ],
     },
   },
+  {
+    // The same book's second test, whose listening script is read by synthetic voices
+    // (content/listening/jlpt-n4-2026-07-2.json); every answer is the book's key.
+    id: "n4-2026-07-2",
+    title: "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2",
+    counts: { vocabulary: 35, grammarReading: 35, listening: 28 },
+    voiced: true,
+    answers: {
+      v: [
+        [4, 3, 3, 2, 4, 4, 2, 3, 3],
+        [1, 2, 3, 4, 1, 3],
+        [2, 1, 4, 2, 4, 1, 4, 3, 4, 1],
+        [3, 4, 1, 2, 3],
+        [4, 3, 2, 4, 3],
+      ],
+      g: [
+        [1, 3, 4, 1, 2, 2, 4, 3, 2, 1, 4, 3, 2, 1, 4],
+        [1, 4, 3, 2, 1],
+        [2, 3, 1, 4, 2],
+        [1, 4, 3, 4],
+        [3, 2, 4, 1],
+        [4, 1],
+      ],
+      l: [
+        [4, 2, 3, 4, 1, 3, 4, 2],
+        [4, 3, 2, 3, 3, 1, 2],
+        [1, 3, 2, 3, 3],
+        [2, 3, 1, 3, 1, 3, 2, 1],
+      ],
+    },
+  },
 ] as const;
 
 async function exists(path: string) {
@@ -113,8 +144,10 @@ async function exists(path: string) {
   }
 }
 
-for (const { id, title, counts, answers } of TESTS) {
-  test(`the N4 test ${id} is whole, in order, with its recorded listening`, async () => {
+for (const entry of TESTS) {
+  const { id, title, counts, answers } = entry;
+  const voiced = "voiced" in entry;
+  test(`the N4 test ${id} is whole, in order, with its listening`, async () => {
     const lesson = lessonDraftSchema.parse(
       JSON.parse(await readFile(`content/jlpt/tests/${id}.json`, "utf8")),
     );
@@ -157,11 +190,17 @@ for (const { id, title, counts, answers } of TESTS) {
       if (question.type !== "listen") {
         continue;
       }
-      // Each clip is named by its own content and registered as a recording, not a voice.
       const path = `public/audio/lessons/${question.audio}.mp3`;
       assert.ok(question.audio && (await exists(path)), `${question.id} audio file`);
-      assert.equal(recordedAudioHash(await readFile(path)), question.audio, question.id);
-      assert.equal(BUNDLED_LISTENING_AUDIO.get(question.audio)?.voice, RECORDED_AUDIO_VOICE);
+      const row = BUNDLED_LISTENING_AUDIO.get(question.audio);
+      if (voiced) {
+        // Read by the synthetic voices of a bundled set, registered with that set's config.
+        assert.ok(row && row.voice !== RECORDED_AUDIO_VOICE, `${question.id} voiced audio`);
+      } else {
+        // A clip of the test's own recording is named by its content and registered as one.
+        assert.equal(recordedAudioHash(await readFile(path)), question.audio, question.id);
+        assert.equal(row?.voice, RECORDED_AUDIO_VOICE);
+      }
       const part = Number(question.tags.find((tag) => tag.startsWith("section:"))?.slice(8));
       assert.equal(question.options?.length, part <= 2 ? 4 : 3, question.id);
     }

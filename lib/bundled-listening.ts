@@ -6,6 +6,7 @@ import minnaListening from "@/content/listening/minna-1-15.json";
 import n4DailyListening from "@/content/listening/n4-daily.json";
 import n4MockListening from "@/content/listening/n4-viet-listening-mock-20.json";
 import n4ExamAdvancedListening from "@/content/listening/n4-reng-exam-advanced.json";
+import n4Reference202607Listening from "@/content/listening/jlpt-n4-2026-07-2.json";
 import n4ExamStandardListening from "@/content/listening/n4-reng-exam-standard.json";
 import n4MockMoreListening from "@/content/listening/n4-viet-listening-mock-21-60.json";
 import n5DailyListening from "@/content/listening/n5-daily-1-13.json";
@@ -32,6 +33,7 @@ const BUNDLED_LISTENING_SETS = [
   officialN4Listening,
   officialN5Listening2012,
   officialN4Listening2012,
+  n4Reference202607Listening,
 ].map((set) => parseListeningSet(set));
 
 // Whole tests whose listening plays clips cut from their own recording (lib/recorded-audio.ts).
@@ -39,7 +41,10 @@ export const RECORDED_TESTS = JLPT_TEST_FILES.map((test) => lessonDraftSchema.pa
 
 export const BUNDLED_LISTENING_AUDIO = listeningAudioRegistry(BUNDLED_LISTENING_SETS);
 for (const test of RECORDED_TESTS) {
+  // A test read by a synthetic voice (a bundled set) keeps that set's rows.
   for (const row of recordedAudioRows(test.id, test.content.questions)) {
-    BUNDLED_LISTENING_AUDIO.set(row.hash, row);
+    if (!BUNDLED_LISTENING_AUDIO.has(row.hash)) {
+      BUNDLED_LISTENING_AUDIO.set(row.hash, row);
+    }
   }
 }

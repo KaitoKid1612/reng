@@ -604,6 +604,16 @@ Nguồn: PDF "Bộ đề tham khảo JLPT N4 T7 2026" (Đề 1, phần 言語知
 - **Sửa so với bản in:** câu 文字・語彙 13 in hai cặp lựa chọn trùng nhau (専問, 専門 mỗi chữ hai lần), nên lựa chọn 2 và 3 dùng chữ 「專」 để bốn lựa chọn khác nhau; đáp án vẫn là 4 「専門」. Câu ngữ pháp 3 in số "A" thay cho "3". Các đoạn của もんだい４ đánh số ⑴–⑷.
 - **Thời gian:** đề trọn bộ lấy tổng số phút chính thức của các phần có trong đề (`jlptExamMinutes`): đề này 80 phút (25 + 55), đề đủ ba phần 115 phút. Bìa bản in chỉ ghi các phần có trong đề. Không có phần nghe nên trang kết quả không ước tính điểm trên 180.
 
+## Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2 (27/11/2026)
+
+Cùng cuốn sách với Đề 1 ở trên: file "BỘ ĐỀ 2" (đề 40 trang: chữ, đọc và tờ đề nghe có tranh, lựa chọn) và "ĐÁP ÁN - BỘ ĐỀ 2" (正解, giải thích, lời thoại nghe CD 34–64). Sách không kèm file nghe.
+
+- **Không phải đề chính thức:** cả Đề 1 và Đề 2 là đề tham khảo của sách. File mp3 "Đề nghe N4 7/2026 chính thức" (2026年 第1回) mà người dùng gửi không khớp lời thoại hay đáp án nghe của Đề 1, Đề 2, và không có tờ đề đi kèm, nên chưa dùng.
+- **File:** `content/jlpt/tests/n4-2026-07-2.json` (bài `jlpt-n4-2026-07-2`, 98 câu: 35 + 35 + 28), tag `official:n4-2026-07-2`; bộ nghe `content/listening/jlpt-n4-2026-07-2.json` (có trong `lib/bundled-listening.ts`); hình `public/images/jlpt/2026-07/n4/de2-*.png`.
+- **Chép đề:** bốn agent chép bốn phần song song (chữ, đọc, lời thoại, tờ đề nghe). Đáp án tự giải khớp 正解 của sách cả 98 câu; script dựng file dừng nếu lệch.
+- **Phần nghe:** lời thoại của sách, mọi chữ Hán có cách đọc, đọc bằng Unreal Speech như đề chính thức 2012/2018 (người dẫn Yuki, nữ Sakura, nam Haruto). Lựa chọn của もんだい３ do người được mũi tên chỉ đọc, của もんだい４ do người đáp đọc. もんだい１ 5ばん in tờ tiền quá mờ nên dùng lựa chọn bằng chữ (一万円札 ３枚…); tranh 8ばん được làm đậm.
+- **Đưa lên production:** `npm run audio:upload` (28 file mới) trước khi đẩy code, rồi `official:sql` như các đề trên.
+
 ## Đề thi thử Reng cố định và bản in (23/11/2026)
 
 Mỗi cấp có 3 đề in được ([BD](basic-design/exam-center.md#bộ-đề-có-bản-in--23112026)): hai đề chính thức ở trên và một đề thi thử Reng cố định, khai báo trong `content/jlpt/reng-exam-sets.json`.
