@@ -6,12 +6,13 @@ import { buttonVariants } from "@/components/ui/button";
 import { examTitleFor } from "@/lib/exam-library";
 import { canPrintJlptExams } from "@/lib/exam-print";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
-import { JLPT_ONLINE_SAMPLES } from "@/lib/jlpt-official";
+import { findJlptExamSet } from "@/lib/jlpt-exam-sets";
 import { requireAccount } from "@/lib/server/account";
 import { listTeacherClasses } from "@/lib/server/classes";
 import { loadExamCenter } from "@/lib/server/exam-center";
 import { formatStudyDateTime } from "@/lib/study-days";
 
+import type { ExamSource } from "@/lib/exam-library";
 import type { ExamRow, LibraryEntry } from "@/lib/server/exam-center";
 import type { Metadata } from "next";
 
@@ -82,6 +83,7 @@ interface LibraryRowProps {
   entry: LibraryEntry;
   classId: string;
   isSelfStudy: boolean;
+  canPrint: boolean;
 }
 
 function describeLibraryEntry({ source, opened }: LibraryEntry) {
@@ -99,9 +101,21 @@ function describeLibraryEntry({ source, opened }: LibraryEntry) {
   return `${origin} Đã mở ${opened} đề và dùng hết câu chưa ra; đề mới sẽ dùng lại những câu cũ ít được ra nhất.`;
 }
 
-function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
+// The printable set of a library row: a fixed Reng exam, a workbook test or a supplied test. A bank
+// makes a different exam each time, so it prints once opened, from the class's exam list.
+function printSetId(source: ExamSource) {
+  if (source.kind === "fixed") {
+    return source.setId;
+  }
+  return source.kind === "official" && source.setId && findJlptExamSet(source.setId)
+    ? source.setId
+    : null;
+}
+
+function LibraryRow({ entry, classId, isSelfStudy, canPrint }: LibraryRowProps) {
   const { source, opened } = entry;
   const isOpenOnce = source.kind !== "bank";
+  const setId = canPrint ? printSetId(source) : null;
   return (
     <li className="exam-library-row">
       <div>
@@ -116,7 +130,7 @@ function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
         )}
       </div>
       <div className="exam-library-actions">
-        {source.kind === "fixed" && <Link href={`/exams/print/${source.setId}`}>Bản in</Link>}
+        {setId && <Link href={`/exams/print/${setId}`}>Bản in</Link>}
         {!(isOpenOnce && opened) && (
           <OpenExamForm
             classId={classId}
@@ -131,28 +145,6 @@ function LibraryRow({ entry, classId, isSelfStudy }: LibraryRowProps) {
 
 function libraryKey({ source }: LibraryEntry) {
   return source.kind === "fixed" ? `${source.lessonId}:${source.setId}` : source.lessonId;
-}
-
-function OnlineSamples() {
-  return (
-    <section className="exam-class" aria-labelledby="exam-online-samples">
-      <h2 id="exam-online-samples">Đề mẫu chính thức trên mạng</h2>
-      <p className="muted">
-        Link tới trang gốc, mở ở tab mới. Đề thi “tháng/năm” đăng trên các trang khác không phải đề
-        chính thức công bố, nên Reng không dùng và không đặt link.
-      </p>
-      <ul className="exam-sample-links">
-        {JLPT_ONLINE_SAMPLES.map((sample) => (
-          <li key={sample.url}>
-            <a href={sample.url} target="_blank" rel="noopener noreferrer" lang="ja">
-              {sample.title}
-            </a>
-            <span className="small muted"> — {sample.detail}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
 }
 
 export default async function ExamsPage({ searchParams }: ExamsPageProps) {
@@ -184,7 +176,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
           <h1>Luyện đề JLPT</h1>
           <p>
             {isTeacher
-              ? "Hai tập đề mẫu chính thức trên jlpt.jp (2012 và 2018) và đề Reng ghép theo cấu trúc đề thật: ngân hàng có đủ câu cho từng もんだい thì đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính trên 180."
+              ? "Hai tập đề mẫu chính thức trên jlpt.jp (2012 và 2018), các đề N4 trọn bộ (07/2025, 12/2025) và đề Reng ghép theo cấu trúc đề thật: ngân hàng có đủ câu cho từng もんだい thì đề đúng số câu đề thật (N4 85 câu, N5 67 câu), ngân hàng khác ghép theo tỉ lệ ba phần. Mỗi đề làm một lượt, có giờ như đề thật, chấm điểm ước tính trên 180 và có bản in."
               : "Đề mẫu chính thức trên jlpt.jp và đề Reng ghép theo cấu trúc đề thật. Mỗi đề làm một lượt, tính giờ như đề thật và có điểm ước tính trên thang 180."}
           </p>
         </div>
@@ -245,6 +237,18 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
                   >
                     <th scope="row" className="exam-title">
                       {exam.title}
+                      {/* The owner prints the very questions this exam gave the class. */}
+                      {canPrint && item.isOwner && (
+                        <>
+                          {" "}
+                          <Link
+                            href={`/exams/print/${exam.assignmentId}`}
+                            className="exam-row-print"
+                          >
+                            Bản in
+                          </Link>
+                        </>
+                      )}
                     </th>
                     <td className="exam-meta">
                       {SOURCE_LABELS[exam.source]} {exam.level}
@@ -281,6 +285,7 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
                     entry={entry}
                     classId={item.classId}
                     isSelfStudy={item.isSelfStudy}
+                    canPrint={canPrint}
                   />
                 ))}
               </ul>
@@ -289,7 +294,6 @@ export default async function ExamsPage({ searchParams }: ExamsPageProps) {
         </section>
       ))}
       {canPrint && <ExamPrintList />}
-      <OnlineSamples />
     </>
   );
 }

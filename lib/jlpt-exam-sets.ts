@@ -7,17 +7,22 @@ import officialN52018 from "@/content/jlpt/official/n5-2018.json";
 import rengExamSets from "@/content/jlpt/reng-exam-sets.json";
 import n4StandardBank from "@/content/review-banks/n4-jlpt-mock-standard.json";
 import n5MockBank from "@/content/review-banks/n5-jlpt-mock.json";
-import { JLPT_LEVELS } from "@/lib/jlpt";
+import { isOfficialTest, JLPT_LEVELS } from "@/lib/jlpt";
+import { JLPT_OFFICIAL_CREDIT } from "@/lib/jlpt-official";
+import { JLPT_TEST_FILES } from "@/lib/jlpt-tests";
 import { questionSchema } from "@/lib/lesson-schema";
 
 import type { JlptLevel } from "@/lib/jlpt";
 import type { LessonQuestion } from "@/lib/lesson-schema";
 
 // The whole JLPT exams Reng can print, per level in the order a class meets them: the two
-// official workbook tests (Đề 1 is 2018, Đề 2 is 2012), then Reng's fixed mock exams. A fixed
-// mock exam names its questions in content/jlpt/reng-exam-sets.json and keeps the bank's question
-// ids, so a class that opens it uses those questions up like any exam from the same bank.
-export type JlptExamSetKind = "official" | "reng";
+// official workbook tests (2018, 2012), the whole tests the owner supplied (content/jlpt/tests/,
+// newest last), then Reng's fixed mock exams. A fixed mock exam names its questions in
+// content/jlpt/reng-exam-sets.json and keeps the bank's question ids, so a class that opens it uses
+// those questions up like any exam from the same bank.
+export type JlptExamSetKind = "official" | "test" | "reng";
+
+const KIND_ORDER: readonly JlptExamSetKind[] = ["official", "test", "reng"];
 
 export interface JlptExamSet {
   id: string;
@@ -79,6 +84,27 @@ function officialSets(): JlptExamSet[] {
   });
 }
 
+// A supplied test prints by the id of its file without the "jlpt-" prefix (n4-2025-07), the same
+// id its questions carry in their official:<id> tag.
+function testSets(): JlptExamSet[] {
+  return JLPT_TEST_FILES.map((file) => {
+    const parsed = bankFileSchema.parse(file);
+    const level = /^jlpt-(n[45])-/.exec(parsed.id)?.[1].toUpperCase();
+    if (level !== "N4" && level !== "N5") {
+      throw new Error(`Whole test ${parsed.id} does not name its level`);
+    }
+    return {
+      id: parsed.id.slice("jlpt-".length),
+      kind: "test",
+      level,
+      title: parsed.title,
+      year: null,
+      bankLessonId: null,
+      questions: parsed.content.questions,
+    };
+  });
+}
+
 function fixedSets(): JlptExamSet[] {
   return rengExamSetsSchema.parse(rengExamSets).exams.map((exam) => {
     const bank = BANKS.get(exam.bank);
@@ -105,12 +131,24 @@ function fixedSets(): JlptExamSet[] {
   });
 }
 
-/** Every printable exam: per level, the official tests (2018, 2012) and then Reng's. */
-export const JLPT_EXAM_SETS: readonly JlptExamSet[] = [...officialSets(), ...fixedSets()].sort(
+/** Every printable exam: per level, the official tests (2018, 2012), supplied tests, Reng's. */
+export const JLPT_EXAM_SETS: readonly JlptExamSet[] = [
+  ...officialSets(),
+  ...testSets(),
+  ...fixedSets(),
+].sort(
   (first, second) =>
     JLPT_LEVELS.indexOf(first.level) - JLPT_LEVELS.indexOf(second.level) ||
-    Number(first.kind === "reng") - Number(second.kind === "reng"),
+    KIND_ORDER.indexOf(first.kind) - KIND_ORDER.indexOf(second.kind),
 );
+
+/** The kind of an exam a class opened, from its questions: what its printed cover says. */
+export function examSetKindOf(questions: readonly LessonQuestion[]): JlptExamSetKind {
+  if (questions.length && questions.every((q) => q.source?.credit === JLPT_OFFICIAL_CREDIT)) {
+    return "official";
+  }
+  return isOfficialTest(questions) ? "test" : "reng";
+}
 
 export function findJlptExamSet(id: string) {
   return JLPT_EXAM_SETS.find((set) => set.id === id) ?? null;

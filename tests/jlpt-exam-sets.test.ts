@@ -5,6 +5,7 @@ import { test } from "node:test";
 import { describeFixedExamSources, examTitleFor } from "@/lib/exam-library";
 import { fixedJlptExam, jlptSectionOf, jlptTestSectionCounts } from "@/lib/jlpt";
 import {
+  examSetKindOf,
   findJlptExamSet,
   fixedRengExamSets,
   JLPT_EXAM_SETS,
@@ -31,7 +32,7 @@ function choiceAnswer(question: LessonQuestion) {
   return answer[0] as number;
 }
 
-test("each level prints the two official tests first, then Reng's fixed mock exam", () => {
+test("each level prints the official tests, then the supplied tests, then Reng's mock exam", () => {
   assert.deepEqual(
     JLPT_EXAM_SETS.map((set) => `${set.id} Đề ${jlptExamSetNumber(set)}`),
     [
@@ -40,16 +41,24 @@ test("each level prints the two official tests first, then Reng's fixed mock exa
       "reng-n5-1 Đề 3",
       "n4-2018 Đề 1",
       "n4-2012 Đề 2",
-      "reng-n4-1 Đề 3",
+      "n4-2025-07 Đề 3",
+      "n4-2025-12 Đề 4",
+      "reng-n4-1 Đề 5",
     ],
   );
   assert.deepEqual(
     JLPT_EXAM_SETS.map((set) => set.questions.length),
-    [91, 89, 67, 98, 97, 85],
+    [91, 89, 67, 98, 97, 85, 80, 85],
   );
   for (const set of fixedRengExamSets()) {
     assert.match(set.title, /^Đề thi thử Reng N[45] số \d+$/);
     assert.doesNotMatch(set.title, /tháng|năm|20\d\d|đề thi cũ/i);
+  }
+});
+
+test("an exam a class opened prints with the cover of its kind", () => {
+  for (const set of JLPT_EXAM_SETS) {
+    assert.equal(examSetKindOf(set.questions), set.kind, set.id);
   }
 });
 

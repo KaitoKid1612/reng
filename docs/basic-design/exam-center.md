@@ -61,7 +61,8 @@ Người dùng muốn mỗi cấp N5, N4 có 3 đề hoàn chỉnh, làm đượ
   - Đầu tập ghi cấp, tên đề, thời gian và dòng nguồn: 出典 jlpt.jp cho đề chính thức, "Đề thi thử do Reng biên soạn, không phải đề thi thật." cho đề Reng.
   - Câu nghe có mã QR tới file MP3 của câu; tập Lời thoại nghe có thêm link và, với đề chính thức, link bản ghi âm gốc trên jlpt.jp.
   - Nút **In / Lưu PDF** mở hộp thoại in của trình duyệt.
-- Trang Luyện đề có mục **Bản in đề JLPT** (giáo viên và chủ lớp) và **Đề mẫu chính thức trên mạng** (mọi người): link thường tới jlpt.jp, mở tab mới, không nhúng file.
+- Trang Luyện đề có mục **Bản in đề JLPT** (giáo viên và chủ lớp). Mục "Đề mẫu chính thức trên mạng" (link tới jlpt.jp) đã bỏ ngày 27/11/2026 theo yêu cầu người dùng.
+- **Đề nào cũng có bản in (27/11/2026):** danh sách Bản in đề JLPT có thêm hai đề N4 trọn bộ (07/2025, 12/2025; thứ tự: đề jlpt.jp, đề trọn bộ, đề Reng). Ở Thư viện đề, dòng đề jlpt.jp và đề trọn bộ có link Bản in như đề Reng cố định; ngân hàng ghép đề thì không, vì mỗi lần ghép ra đề khác. Trong danh sách đề đã mở của lớp, chủ lớp có link Bản in cạnh tên mọi đề, kể cả đề ghép: in đúng các câu lớp đã làm. Bìa đề trọn bộ không có dòng nguồn hay dòng "đề thi thử Reng".
 - Hướng dẫn in ở [/guide](../../app/guide/page.tsx), mục "In đề JLPT ra giấy".
 
 ## Đề JLPT N4 tháng 07/2025 — 27/11/2026

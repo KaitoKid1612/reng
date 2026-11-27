@@ -4,6 +4,8 @@ Những thay đổi chính theo ngày, mới nhất ở trên. Báo cáo kiểm 
 
 ### 27/11/2026
 
+- **Đề nào cũng có bản in:** hai đề N4 trọn bộ vào danh sách Bản in đề JLPT; Thư viện đề có link Bản in cho đề jlpt.jp và đề trọn bộ; mọi đề đã mở cho lớp (kể cả đề ghép từ ngân hàng) in được đúng các câu đã ra. Bỏ mục "Đề mẫu chính thức trên mạng".
+
 - **Đề JLPT N4 tháng 07/2025:** đề trọn bộ cho lớp N4, phần nghe phát bản ghi âm gốc cắt theo từng câu. Thư viện đề gọi đề bằng tên riêng thay vì "Đề chính thức JLPT" ([soạn nội dung](content-authoring.md#đề-jlpt-n4-tháng-072025-27112026)).
 - **Đề JLPT N4 tháng 12/2025:** 80 câu, phần nghe cắt từ bản ghi gốc; thiếu 文字・語彙 câu 6–10 vì ảnh đề không có trang đó ([soạn nội dung](content-authoring.md#đề-jlpt-n4-tháng-122025-27112026)).
 

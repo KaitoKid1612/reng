@@ -157,11 +157,11 @@ const TEACHER_SECTIONS: GuideSection[] = [
     id: "teacher-jlpt-print",
     title: "In đề JLPT ra giấy",
     steps: [
-      "Bấm Luyện đề ở thanh đầu trang, cuộn tới mục Bản in đề JLPT (chỉ giáo viên và chủ lớp tiếng Nhật thấy). Mỗi cấp N5, N4 có Đề 1 và Đề 2 là đề chính thức trên jlpt.jp (tập 2018, 2012), Đề 3 là Đề thi thử Reng số 1.",
+      "Bấm Luyện đề ở thanh đầu trang, cuộn tới mục Bản in đề JLPT (chỉ giáo viên và chủ lớp tiếng Nhật thấy). Mỗi cấp có hai đề chính thức trên jlpt.jp (tập 2018, 2012) rồi tới Đề thi thử Reng số 1; N4 có thêm hai đề trọn bộ tháng 07/2025 và 12/2025.",
       "Mỗi đề in riêng bốn tập: Đề và Phiếu trả lời phát cho học viên; Đáp án và giải thích, Lời thoại nghe chỉ dành cho giáo viên. Bấm tên tập để mở bản xem trước.",
       "Bấm In / Lưu PDF. Trong hộp thoại in chọn khổ giấy A4, hướng dọc, lề Mặc định, tỉ lệ 100%; in đen trắng vẫn đọc rõ. Muốn lưu file thì chọn máy in Lưu dưới dạng PDF.",
       "Mỗi phần thi (文字・語彙, 文法・読解, 聴解) bắt đầu ở trang mới, có số phút như đề thật. Phần nghe in mã QR cạnh từng câu: quét bằng điện thoại để phát audio của câu đó, hoặc phát từ máy giáo viên theo tập Lời thoại nghe.",
-      "Đề thi thử Reng số 1 cũng làm được trên Reng: trong Thư viện đề của lớp đã ghim ngân hàng đề Reng, bấm Mở đề này ở dòng Đề thi thử Reng. Bản in không đổi lịch mở hay đóng đề của lớp.",
+      "Đề nào trong Thư viện đề của lớp cũng có link Bản in, trừ ngân hàng ghép đề (mỗi lần ghép ra một đề khác). Đề đã mở cho lớp, kể cả đề ghép, có link Bản in cạnh tên đề trong danh sách đề của lớp: in đúng các câu lớp đã làm. Bản in không đổi lịch mở hay đóng đề của lớp.",
     ],
     note: "Đề chính thức in kèm dòng 出典 日本語能力試験公式ウェブサイト theo điều kiện dùng của jlpt.jp; đề Reng ghi rõ là đề thi thử do Reng biên soạn, không phải đề thi thật.",
   },

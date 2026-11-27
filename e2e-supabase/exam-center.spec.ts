@@ -149,7 +149,7 @@ test("a class owner opens the fixed Reng exam once and prints its booklets; a le
   const prints = page.locator("section", {
     has: page.getByRole("heading", { name: "Bản in đề JLPT" }),
   });
-  await expect(prints.locator(".exam-library-row")).toHaveCount(6);
+  await expect(prints.locator(".exam-library-row")).toHaveCount(8);
 
   const email = `print-learner-${RUN_ID}-${Date.now()}@reng.local`;
   await createConfirmedStudent(email, "learner-password-1", "Học viên in");
@@ -158,7 +158,6 @@ test("a class owner opens the fixed Reng exam once and prints its booklets; a le
   await expect(learner.locator(".notice-panel")).toContainText("Chỉ giáo viên và chủ lớp");
   await expect(learner.locator(".exam-print")).toHaveCount(0);
   await learner.goto("/exams");
-  await expect(learner.getByRole("heading", { name: "Đề mẫu chính thức trên mạng" })).toBeVisible();
   await expect(learner.getByRole("heading", { name: "Bản in đề JLPT" })).toHaveCount(0);
   await learner.close();
 });

@@ -146,6 +146,7 @@ for (const { id, title, counts, answers } of TESTS) {
     // The exam library names it by its own title, not as a jlpt.jp workbook.
     const source = describeExamSource("lesson", lesson.title, candidates);
     assert.ok(source?.kind === "official" && source.year === null);
+    assert.equal(source.setId, id);
     assert.equal(examTitleFor(source, 0), title);
   });
 }

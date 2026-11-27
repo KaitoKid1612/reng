@@ -30,6 +30,7 @@ test("an official workbook test is one exam of its level and year", async () => 
     lessonTitle: "Đề N4",
     level: "N4",
     year: 2012,
+    setId: "n4-2012",
   });
   assert.ok(source);
   assert.equal(examTitleFor(source, 0), "Đề chính thức JLPT N4 (2012)");

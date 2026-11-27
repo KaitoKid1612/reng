@@ -282,6 +282,14 @@ Người dùng chọn: giọng máy đọc nguyên văn script chính thức kè
 - **Audio thu sẵn** (`lib/recorded-audio.ts`): mỗi câu nghe trỏ tới một đoạn MP3 cắt từ bản ghi, đặt tên theo 32 ký tự đầu SHA-256 của file. `recordedAudioRows` tạo dòng `audio_assets` (`voice: "recording"`, `config.format: "recorded-mp3"`, text là lời thoại). `lib/bundled-listening.ts` thêm các dòng của `RECORDED_TESTS` (đề N4 07/2025 và 12/2025) vào `BUNDLED_LISTENING_AUDIO`, nên script nạp đề và trang xuất bản đăng ký chúng như audio của bộ nghe có sẵn. Không đổi database.
 - **Kiểm chứng:** `tests/jlpt-recorded-tests.test.ts` (một test cho mỗi đề trong `content/jlpt/tests/`).
 
+### Bản in cho mọi đề — 27/11/2026
+
+- `lib/jlpt-tests.ts` giữ danh sách đề trọn bộ (`JLPT_TEST_FILES`), dùng chung cho `lib/bundled-listening.ts` và `lib/jlpt-exam-sets.ts`. `JLPT_EXAM_SETS` có loại `test` (mã bỏ tiền tố `jlpt-`, ví dụ `n4-2025-07`), xếp sau đề jlpt.jp và trước đề Reng.
+- `describeExamSource` thêm `setId` cho nguồn `official`: `n4-2012` với sách đề, phần sau `official:` với đề trọn bộ. Trang Luyện đề hiện link Bản in khi `findJlptExamSet(setId)` có.
+- **Đề đã mở:** `/exams/print/<assignment id>`. `loadPrintableExam` (`lib/server/exam-print.ts`) tìm bộ đề in sẵn, nếu không thì đọc bài giao (phải là đề thi thử, lớp thuộc người đang xem) và `loadAssignmentItems`. Loại bìa lấy theo câu (`examSetKindOf`): mọi câu có dòng 出典 jlpt.jp là `official`, có tag `official:` là `test`, còn lại `reng`.
+- Bỏ `JLPT_ONLINE_SAMPLES` và mục "Đề mẫu chính thức trên mạng".
+- Kiểm chứng: `tests/jlpt-exam-sets.test.ts` (thứ tự và số đề in, loại bìa), `tests/exam-library.test.ts`, `tests/jlpt-recorded-tests.test.ts` (`setId`). Spec `e2e-supabase/exam-center.spec.ts` đã sửa (8 đề trong danh sách in), E2E chưa chạy.
+
 ## Lịch sử thi thử JLPT — 11/11/2026
 
 Trước đây điểm từng đề chỉ có ở trang kết quả của đề đó. Ba tuần trước kỳ thi 06/12/2026, học viên và giáo viên cần thấy điểm ước tính có tiến về mức đỗ không.

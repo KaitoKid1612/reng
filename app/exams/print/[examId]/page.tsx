@@ -26,6 +26,7 @@ import { JLPT_OFFICIAL_CREDIT } from "@/lib/jlpt-official";
 import { lessonAudioUrl } from "@/lib/lesson-audio-url";
 import { requireAccount } from "@/lib/server/account";
 import { listTeacherClasses } from "@/lib/server/classes";
+import { loadPrintableExam } from "@/lib/server/exam-print";
 import { absoluteUrl } from "@/lib/site";
 
 import type { PrintBooklet } from "@/lib/exam-print";
@@ -40,6 +41,7 @@ interface ExamPrintPageProps {
 }
 
 export async function generateMetadata({ params }: ExamPrintPageProps): Promise<Metadata> {
+  // An exam a class opened is named on the page itself; its title needs a database read.
   const set = findJlptExamSet((await params).examId);
   return { title: set ? `Bản in: ${set.title}` : "Bản in đề JLPT" };
 }
@@ -88,11 +90,11 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
   const account = await requireAccount(
     booklet === "questions" ? path : `${path}?booklet=${booklet}`,
   );
-  const set = findJlptExamSet(examId);
+  const ownedClasses = account.role === "teacher" ? await listTeacherClasses(account.id) : [];
+  const set = await loadPrintableExam(examId, new Set(ownedClasses.map((item) => item.id)));
   if (!set) {
     notFound();
   }
-  const ownedClasses = account.role === "teacher" ? await listTeacherClasses(account.id) : [];
   if (!canPrintJlptExams(account.role, ownedClasses)) {
     return (
       <>
@@ -137,14 +139,13 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
         <h1>{set.title}</h1>
         <p className="exam-print-booklet-name">{PRINT_BOOKLET_LABELS[booklet]}</p>
         <p>Thời gian {describeExamTime(set.level)}</p>
-        {set.kind === "official" ? (
+        {set.kind === "official" && (
           <p className="exam-print-credit" lang="ja">
             {JLPT_OFFICIAL_CREDIT}
             {!isForLearner && <span lang="vi"> Lời giải thích tiếng Việt do Reng biên soạn.</span>}
           </p>
-        ) : (
-          <p className="exam-print-credit">{RENG_EXAM_NOTICE}</p>
         )}
+        {set.kind === "reng" && <p className="exam-print-credit">{RENG_EXAM_NOTICE}</p>}
         {isForLearner && (
           <p className="exam-print-name">
             Họ tên: <span className="exam-print-blank" /> Ngày:{" "}

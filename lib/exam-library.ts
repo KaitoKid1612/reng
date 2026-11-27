@@ -13,6 +13,9 @@ export type ExamSource =
       lessonTitle: string;
       level: JlptLevel;
       year: number | null;
+      // Its printable set (lib/jlpt-exam-sets.ts): n4-2012 for a workbook test, the official:<id>
+      // tag for a supplied whole test.
+      setId: string | null;
     }
   | {
       kind: "bank";
@@ -38,6 +41,7 @@ export type ExamSource =
     };
 
 const OFFICIAL_YEAR = /^official:jlpt-(\d{4})$/u;
+const OFFICIAL_TAG = /^official:/u;
 
 export const EXAM_VARIANTS = ["standard", "advanced"] as const;
 export type ExamVariant = (typeof EXAM_VARIANTS)[number];
@@ -110,12 +114,16 @@ export function describeExamSource(
       return null;
     }
     const yearTag = questions[0].tags.map((tag) => OFFICIAL_YEAR.exec(tag)).find(Boolean);
+    const testTag = questions[0].tags.find((tag) => OFFICIAL_TAG.test(tag));
     return {
       kind: "official",
       lessonId,
       lessonTitle,
       level,
       year: yearTag ? Number(yearTag[1]) : null,
+      setId: yearTag
+        ? `${level.toLowerCase()}-${yearTag[1]}`
+        : (testTag?.slice("official:".length) ?? null),
     };
   }
   // N4 first: an N4 bank also holds every N5 part, but its questions carry the N4 tag.
