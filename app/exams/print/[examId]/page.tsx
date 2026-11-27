@@ -118,7 +118,7 @@ export default async function ExamPrintPage({ params, searchParams }: ExamPrintP
           {PRINT_BOOKLETS.map((item) => (
             <li key={item}>
               <Link
-                href={`/exams/print/${set.id}?booklet=${item}`}
+                href={`/exams/print/${encodeURIComponent(set.id)}?booklet=${item}`}
                 aria-current={item === booklet ? "page" : undefined}
               >
                 {PRINT_BOOKLET_LABELS[item]}

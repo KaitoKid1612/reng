@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ExamPrintList } from "@/components/exams/exam-print-list";
 import { OpenExamForm } from "@/components/exams/open-exam-form";
 import { buttonVariants } from "@/components/ui/button";
-import { examTitleFor } from "@/lib/exam-library";
+import { examTitleFor, nextExamPrintId } from "@/lib/exam-library";
 import { canPrintJlptExams } from "@/lib/exam-print";
 import { describeJlptOutcome } from "@/lib/jlpt-history";
 import { findJlptExamSet } from "@/lib/jlpt-exam-sets";
@@ -79,21 +79,21 @@ interface LibraryRowProps {
   canPrint: boolean;
 }
 
-// The printable set of a library row: a fixed Reng exam, a workbook test or a supplied test. A bank
-// makes a different exam each time, so it prints once opened, from the class's exam list.
-function printSetId(source: ExamSource) {
+// What a library row prints: a printable set (a fixed Reng exam, a workbook or supplied test), or
+// else the exam the class would open next from the lesson, as "Mở đề này" composes it.
+function printIdOf(source: ExamSource, classId: string) {
   if (source.kind === "fixed") {
     return source.setId;
   }
   return source.kind === "official" && source.setId && findJlptExamSet(source.setId)
     ? source.setId
-    : null;
+    : nextExamPrintId(classId, source.lessonId);
 }
 
 function LibraryRow({ entry, classId, isSelfStudy, canPrint }: LibraryRowProps) {
   const { source, opened } = entry;
   const isOpenOnce = source.kind !== "bank";
-  const setId = canPrint ? printSetId(source) : null;
+  const printId = canPrint ? printIdOf(source, classId) : null;
   return (
     <li className="exam-library-row">
       <div>
@@ -103,7 +103,7 @@ function LibraryRow({ entry, classId, isSelfStudy, canPrint }: LibraryRowProps) 
         )}
       </div>
       <div className="exam-library-actions">
-        {setId && <Link href={`/exams/print/${setId}`}>Bản in</Link>}
+        {printId && <Link href={`/exams/print/${encodeURIComponent(printId)}`}>Bản in</Link>}
         {!(isOpenOnce && opened) && (
           <OpenExamForm
             classId={classId}

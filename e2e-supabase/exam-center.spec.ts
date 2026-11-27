@@ -74,6 +74,13 @@ test("a self-study learner opens Reng's N5 exams from the library and starts one
   await expect(fixed).toBeVisible();
   const library = section.locator(".exam-library-row", { hasText: /Đề Reng N5 số \d/ });
   await expect(library).toContainText("Đề Reng N5 số 1");
+  // Every row prints, the bank's next exam too: the copy printed before opening is that exam.
+  await library.getByRole("link", { name: "Bản in" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đề Reng N5 số 1");
+  const questions = page.locator(".exam-print .exam-print-question");
+  await expect(questions).toHaveCount(67);
+  const printedBeforeOpening = await questions.allInnerTexts();
+  await page.goto("/exams");
   // A double click opens one exam, not two: the library below still counts 2 left.
   await library.getByRole("button", { name: "Mở đề này" }).dblclick();
   await page.waitForURL(/\/exams\?(opened|error)=/, { timeout: 60_000 });
@@ -86,6 +93,10 @@ test("a self-study learner opens Reng's N5 exams from the library and starts one
   await expect(row).toContainText("90 phút");
   await expect(library).toContainText("Đề Reng N5 số 2");
   await expect(section.locator("tbody tr")).toHaveCount(1);
+  await row.getByRole("link", { name: "Bản in" }).click();
+  await expect(questions).toHaveCount(67);
+  expect(await questions.allInnerTexts()).toEqual(printedBeforeOpening);
+  await page.goto("/exams");
 
   await row.getByRole("link", { name: "Làm đề" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Đề Reng N5 số 1");
@@ -145,7 +156,7 @@ test("a class owner opens the fixed Reng exam once and prints its booklets; a le
   const prints = page.locator("section", {
     has: page.getByRole("heading", { name: "Bản in đề JLPT" }),
   });
-  await expect(prints.locator(".exam-library-row")).toHaveCount(10);
+  await expect(prints.locator(".exam-library-row")).toHaveCount(11);
 
   const email = `print-learner-${RUN_ID}-${Date.now()}@reng.local`;
   await createConfirmedStudent(email, "learner-password-1", "Học viên in");

@@ -1,9 +1,15 @@
 import "server-only";
 
 import { endOfVietnamDay, toVietnamDate } from "@/lib/daily-practice";
-import { describeExamSource, describeFixedExamSources, examTitleFor } from "@/lib/exam-library";
-import { countJlptSections, JLPT_PRESETS, jlptExamMinutes } from "@/lib/jlpt";
-import { findJlptExamSet, fixedRengExamSets } from "@/lib/jlpt-exam-sets";
+import {
+  describeExamSource,
+  describeFixedExamSources,
+  examTitleFor,
+  libraryExamSeed,
+  nextExamPrintId,
+} from "@/lib/exam-library";
+import { composeJlptExam, countJlptSections, JLPT_PRESETS, jlptExamMinutes } from "@/lib/jlpt";
+import { examSetKindOf, findJlptExamSet, fixedRengExamSets } from "@/lib/jlpt-exam-sets";
 import {
   listAssignablePracticeQuestions,
   listClassAssignments,
@@ -21,6 +27,7 @@ import { ServiceError } from "@/lib/server/supabase";
 
 import type { ExamSource } from "@/lib/exam-library";
 import type { JlptLevel } from "@/lib/jlpt";
+import type { JlptExamSet } from "@/lib/jlpt-exam-sets";
 import type { JlptHistoryEntry } from "@/lib/jlpt-history";
 import type { Assignment } from "@/lib/server/assignments";
 
@@ -259,5 +266,54 @@ export async function openExamFromLibrary(
       feedbackPolicy: "after_submit",
     },
     fixedSet?.questions.map((question) => question.id),
+    libraryExamSeed(classId, lessonId, entry.opened),
   );
+}
+
+/**
+ * The exam "Mở đề này" would open next from a pinned lesson (not a fixed Reng exam, which prints
+ * from its set), for the class owner's print link: a bank's next composed exam, or a whole test.
+ */
+export async function loadNextLibraryExam(
+  classId: string,
+  lessonId: string,
+  now: Date,
+): Promise<JlptExamSet | null> {
+  const exams = (await listClassAssignments([classId])).filter((item) => item.exam !== null);
+  const library = await loadLibrary(classId, exams, now);
+  const entry = library.find(
+    (item) => item.source.lessonId === lessonId && item.source.kind !== "fixed",
+  );
+  if (!entry) {
+    return null;
+  }
+  const [questions, recentUses] = await Promise.all([
+    listAssignablePracticeQuestions(classId, lessonId),
+    listRecentExamUses(classId),
+  ]);
+  const composition = composeJlptExam(
+    questions.map((question) => ({
+      id: question.id,
+      type: question.type,
+      tags: question.tags,
+      passage: question.passage ?? null,
+    })),
+    recentUses,
+    entry.source.level,
+    libraryExamSeed(classId, lessonId, entry.opened),
+  );
+  const byId = new Map(questions.map((question) => [question.id, question]));
+  const picked = composition.questionIds.flatMap((id) => byId.get(id) ?? []);
+  if (!picked.length) {
+    return null;
+  }
+  return {
+    id: nextExamPrintId(classId, lessonId),
+    kind: examSetKindOf(picked),
+    level: entry.source.level,
+    title: examTitleFor(entry.source, entry.opened),
+    year: null,
+    bankLessonId: null,
+    questions: picked,
+  };
 }

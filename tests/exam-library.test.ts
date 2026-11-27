@@ -2,7 +2,15 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
-import { countBankExams, describeExamSource, examTitleFor } from "@/lib/exam-library";
+import {
+  countBankExams,
+  describeExamSource,
+  examTitleFor,
+  libraryExamSeed,
+  nextExamPrintId,
+  parseNextExamPrintId,
+} from "@/lib/exam-library";
+import { composeJlptExam } from "@/lib/jlpt";
 
 import type { JlptExamCandidate } from "@/lib/jlpt";
 
@@ -69,4 +77,24 @@ test("a bank written by lesson, not by the test's parts, makes no exam", async (
     null,
   );
   assert.equal(describeExamSource("empty", "Trống", []), null);
+});
+
+test("the next exam of a lesson has a print link that names its class and lesson", () => {
+  const classId = "5b0f8f0e-1c2d-4e3f-8a9b-0c1d2e3f4a5b";
+  const id = nextExamPrintId(classId, "n5-jlpt-mock");
+  assert.deepEqual(parseNextExamPrintId(id), { classId, lessonId: "n5-jlpt-mock" });
+  assert.equal(parseNextExamPrintId("n5-2018"), null);
+  assert.equal(parseNextExamPrintId(`next-${classId}`), null);
+  assert.equal(parseNextExamPrintId("next-short-lesson"), null);
+});
+
+test("a bank exam printed before opening is the exam the class then opens", async () => {
+  const bank = await load("content/review-banks/n5-jlpt-mock.json");
+  const seed = libraryExamSeed("class", "n5-jlpt-mock", 0);
+  const printed = composeJlptExam(bank, [], "N5", seed);
+  assert.equal(printed.questionIds.length, 67);
+  assert.deepEqual(composeJlptExam(bank, [], "N5", seed).questionIds, printed.questionIds);
+  // The next exam of the same bank is another one.
+  const next = composeJlptExam(bank, [], "N5", libraryExamSeed("class", "n5-jlpt-mock", 1));
+  assert.notDeepEqual(next.questionIds, printed.questionIds);
 });

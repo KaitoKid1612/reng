@@ -88,6 +88,8 @@ export async function publishJlptExam(
   input: PublishJlptExamInput,
   // A fixed exam (Đề thi thử Reng N5 số 1…) names its questions instead of composing them.
   fixedQuestionIds?: readonly string[],
+  // A library exam composes from a known seed, so its print before opening matches it.
+  seed = `${input.classId}:${new Date().toISOString()}`,
 ) {
   const classRow = await getTeacherClass(teacherId, input.classId);
   if (classRow.language_tag !== "ja-JP") {
@@ -109,12 +111,7 @@ export async function publishJlptExam(
   }));
   const composition = fixedQuestionIds
     ? fixedJlptExam(candidates, fixedQuestionIds)
-    : composeJlptExam(
-        candidates,
-        recentUses,
-        input.level,
-        `${input.classId}:${new Date().toISOString()}`,
-      );
+    : composeJlptExam(candidates, recentUses, input.level, seed);
   if (!composition.questionIds.length) {
     throw new ServiceError("no_exam_questions");
   }

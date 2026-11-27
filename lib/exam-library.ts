@@ -183,3 +183,31 @@ export function describeFixedExamSources(
       questionCount: set.questions.length,
     }));
 }
+
+// The print link of the exam a class would open next from a pinned lesson (a bank's next composed
+// exam, or a whole test that is not in the printable sets): /exams/print/next-<class>-<lesson>.
+const NEXT_EXAM_PREFIX = "next-";
+const UUID_LENGTH = 36;
+
+export function nextExamPrintId(classId: string, lessonId: string) {
+  return `${NEXT_EXAM_PREFIX}${classId}-${lessonId}`;
+}
+
+export function parseNextExamPrintId(printId: string) {
+  if (!printId.startsWith(NEXT_EXAM_PREFIX)) {
+    return null;
+  }
+  const rest = printId.slice(NEXT_EXAM_PREFIX.length);
+  const classId = rest.slice(0, UUID_LENGTH);
+  const lessonId = rest.slice(UUID_LENGTH + 1);
+  return rest[UUID_LENGTH] === "-" && lessonId ? { classId, lessonId } : null;
+}
+
+/**
+ * The seed a library exam is composed with: the class, the lesson and how many exams it already
+ * gave. The printed copy of the next exam is then the exam "Mở đề này" opens, as long as no other
+ * exam of the class is opened in between.
+ */
+export function libraryExamSeed(classId: string, lessonId: string, opened: number) {
+  return `${classId}:${lessonId}:${opened}`;
+}
