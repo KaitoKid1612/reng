@@ -595,16 +595,25 @@ Làm như đề tháng 07/2025 ở trên, nhưng nguồn là 40 ảnh chụp mà
 - **Phần nghe (28 câu, 8/7/5/8):** file MP3 không có đoạn đọc đáp án; sau "これで聴解試験を終わります" chỉ là 48 giây im lặng, không đưa vào đoạn nào. Mỗi câu cắt từ ngay sau khoảng làm bài của câu trước tới 1 giây sau khi khoảng làm bài của câu đó bắt đầu (khoảng làm bài 12/12/10/8 giây theo もんだい); thời gian đọc 20 giây của もんだい２ được giữ. Lời thoại nhận dạng bằng Whisper rồi sửa tay; もんだい４ ghi người nói là Ａ/Ｂ.
 - **Đưa lên production:** như đề tháng 07, với `--file content/jlpt/tests/n4-2025-12.json`.
 
-## Đề tham khảo JLPT N4 tháng 07/2026 (27/11/2026)
+## Đề JLPT N4 tháng 07/2026 (27/11/2026)
+
+Đề thi thật kỳ tháng 07/2026 (bản chép lại, có logo "2026年7月・日本語能力試験 N4"), người dùng gửi 7 ảnh trang 1–5, 10, 11 và file MP3 "2026年 第1回 聴解" (31 phút, không đọc đáp án). Hai đề sách ở dưới không phải đề này: 7 đáp án người dùng gửi khớp lời giải câu 2–8 phần từ vựng của đề này, không khớp đề sách nào.
+
+- **File:** `content/jlpt/tests/n4-2026-07-exam.json` (bài `jlpt-n4-2026-07-exam`, "Đề JLPT N4 tháng 07/2026"), tag `official:n4-2026-07-exam`; hình `public/images/jlpt/2026-07/n4/exam/`; 21 đoạn MP3 cắt từ bản ghi (`recordedAudioHash`).
+- **Có:** 文字・語彙 28 câu, 文法 câu 1–21, 聴解 もんだい１ (8), ３ (5), ４ (8) = 70 câu. **Còn thiếu:** trang 6–9 (読解) và trang lựa chọn của 聴解 もんだい２; khi có thì thêm vào cùng bài (lời thoại もんだい２ đã nhận dạng).
+- **Đáp án:** không có bảng đáp án; Reng tự giải phần chữ, phần nghe chấm theo lời thoại và tranh. Lời thoại nhận dạng bằng Whisper rồi sửa tay; もんだい４ ghi người nói Ａ/Ｂ. Hai lựa chọn nghe chưa chắc chữ: もんだい３ 3ばん lựa chọn 2, 4ばん lựa chọn 3 (đều là đáp án sai).
+- **Cắt MP3:** khoảng làm bài dò trực tiếp từ độ lớn âm thanh (khung 0,1 giây, gộp đoạn lặng bị tiếng "tách" chia đôi), mỗi câu từ ngay trước "Nばん" tới 1 giây sau khi khoảng làm bài bắt đầu.
+
+## Đề luyện N4 sách tham khảo – Đề 1 (27/11/2026)
 
 Nguồn: PDF "Bộ đề tham khảo JLPT N4 T7 2026" (Đề 1, phần 言語知識 và 読解, kèm bảng đáp án và giải thích). PDF không có trang hay file nghe, nên đề chỉ có 70 câu: 文字・語彙 35, 文法・読解 35.
 
-- **File:** `content/jlpt/tests/n4-2026-07.json` (bài `jlpt-n4-2026-07`, "Đề tham khảo JLPT N4 tháng 07/2026"), hình bảng khóa học và bản đồ của もんだい６ ở `public/images/jlpt/2026-07/n4/g-34.png`. Tag `official:n4-2026-07`, mọi câu có `jlpt:n4`.
+- **File:** `content/jlpt/tests/n4-2026-07.json` (bài `jlpt-n4-2026-07`, "Đề luyện N4 (sách tham khảo) – Đề 1"; trước đó tên "Đề tham khảo JLPT N4 tháng 07/2026"), hình bảng khóa học và bản đồ của もんだい６ ở `public/images/jlpt/2026-07/n4/g-34.png`. Tag `official:n4-2026-07`, mọi câu có `jlpt:n4`.
 - **Chép đề:** chép tay từ ảnh từng trang, bỏ qua trang đáp án và giải thích. Đáp án tự giải rồi so với 正解 trong sách: khớp cả 70 câu; script dựng file dừng lại nếu lệch. Lời giải thích tiếng Việt viết lại ngắn gọn.
 - **Sửa so với bản in:** câu 文字・語彙 13 in hai cặp lựa chọn trùng nhau (専問, 専門 mỗi chữ hai lần), nên lựa chọn 2 và 3 dùng chữ 「專」 để bốn lựa chọn khác nhau; đáp án vẫn là 4 「専門」. Câu ngữ pháp 3 in số "A" thay cho "3". Các đoạn của もんだい４ đánh số ⑴–⑷.
 - **Thời gian:** đề trọn bộ lấy tổng số phút chính thức của các phần có trong đề (`jlptExamMinutes`): đề này 80 phút (25 + 55), đề đủ ba phần 115 phút. Bìa bản in chỉ ghi các phần có trong đề. Không có phần nghe nên trang kết quả không ước tính điểm trên 180.
 
-## Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2 (27/11/2026)
+## Đề luyện N4 sách tham khảo – Đề 2 (27/11/2026)
 
 Cùng cuốn sách với Đề 1 ở trên: file "BỘ ĐỀ 2" (đề 40 trang: chữ, đọc và tờ đề nghe có tranh, lựa chọn) và "ĐÁP ÁN - BỘ ĐỀ 2" (正解, giải thích, lời thoại nghe CD 34–64). Sách không kèm file nghe.
 

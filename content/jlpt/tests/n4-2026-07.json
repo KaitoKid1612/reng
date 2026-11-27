@@ -1,8 +1,8 @@
 {
   "id": "jlpt-n4-2026-07",
-  "title": "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 1",
-  "titleJa": "日本語能力試験 N4 参考問題（2026年7月）第1回",
-  "summary": "Đề tham khảo N4 cho kỳ thi tháng 07/2026: 文字・語彙 35 câu và 文法・読解 35 câu theo thứ tự đề, chưa có phần nghe. Lời giải thích tiếng Việt.",
+  "title": "Đề luyện N4 (sách tham khảo) – Đề 1",
+  "titleJa": "日本語能力試験 N4 参考問題 第1回",
+  "summary": "Đề 1 trong một cuốn bộ đề tham khảo N4 (đề luyện của sách, không phải đề thi thật): 文字・語彙 35 câu và 文法・読解 35 câu theo thứ tự đề, chưa có phần nghe. Lời giải thích tiếng Việt.",
   "order": 136,
   "courseId": "n4",
   "content": {
@@ -13,8 +13,8 @@
       {
         "id": "intro",
         "type": "title",
-        "jp": "日本語能力試験 N4 参考問題（2026年7月）第1回",
-        "vi": "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 1"
+        "jp": "日本語能力試験 N4 参考問題 第1回",
+        "vi": "Đề luyện N4 (sách tham khảo) – Đề 1"
       },
       {
         "id": "guide",

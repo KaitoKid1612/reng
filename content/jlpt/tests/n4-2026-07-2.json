@@ -1,8 +1,8 @@
 {
   "id": "jlpt-n4-2026-07-2",
-  "title": "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2",
-  "titleJa": "日本語能力試験 N4 参考問題（2026年7月）第2回",
-  "summary": "Đề 2 trong bộ đề tham khảo N4 tháng 07/2026, trọn bộ theo thứ tự đề: 文字・語彙, 文法・読解 và 聴解 (lời thoại của sách đọc bằng giọng máy). Lời giải thích tiếng Việt.",
+  "title": "Đề luyện N4 (sách tham khảo) – Đề 2",
+  "titleJa": "日本語能力試験 N4 参考問題 第2回",
+  "summary": "Đề 2 trong một cuốn bộ đề tham khảo N4 (đề luyện của sách, không phải đề thi thật), trọn bộ theo thứ tự đề: 文字・語彙, 文法・読解 và 聴解 (lời thoại của sách đọc bằng giọng máy). Lời giải thích tiếng Việt.",
   "order": 137,
   "courseId": "n4",
   "content": {
@@ -13,8 +13,8 @@
       {
         "id": "intro",
         "type": "title",
-        "jp": "日本語能力試験 N4 参考問題（2026年7月）第2回",
-        "vi": "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2"
+        "jp": "日本語能力試験 N4 参考問題 第2回",
+        "vi": "Đề luyện N4 (sách tham khảo) – Đề 2"
       },
       {
         "id": "guide",

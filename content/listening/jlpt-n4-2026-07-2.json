@@ -1,11 +1,15 @@
 {
-  "title": "Nghe hiểu – Đề tham khảo JLPT N4 tháng 07/2026 (Đề 2)",
-  "titleJa": "日本語能力試験 N4 参考問題（2026年7月）第2回 聴解",
-  "summary": "Phần nghe của Đề 2 trong bộ đề tham khảo N4 tháng 07/2026: lời thoại của sách đọc bằng giọng máy (Unreal Speech).",
+  "title": "Nghe hiểu – Đề luyện N4 (sách tham khảo) – Đề 2",
+  "titleJa": "日本語能力試験 N4 参考問題 第2回 聴解",
+  "summary": "Phần nghe của Đề 2 trong cuốn bộ đề tham khảo N4: lời thoại của sách đọc bằng giọng máy (Unreal Speech).",
   "order": 137,
   "courseId": "n4",
   "id": "jlpt-n4-2026-07-2-listening",
-  "speakerVoices": { "ナレーター": "unreal:Yuki", "女": "unreal:Sakura", "男": "unreal:Haruto" },
+  "speakerVoices": {
+    "ナレーター": "unreal:Yuki",
+    "女": "unreal:Sakura",
+    "男": "unreal:Haruto"
+  },
   "content": {
     "schemaVersion": 1,
     "vocab": [],
@@ -14,8 +18,8 @@
       {
         "id": "intro",
         "type": "title",
-        "jp": "N4 聴解 参考問題（2026年7月）第2回",
-        "vi": "Nghe hiểu – Đề tham khảo N4 07/2026, Đề 2"
+        "jp": "N4 聴解 参考問題 第2回",
+        "vi": "Nghe hiểu – Đề luyện N4 (sách tham khảo), Đề 2"
       }
     ],
     "questions": [

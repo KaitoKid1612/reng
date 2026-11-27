@@ -42,6 +42,7 @@ test("each level prints the official tests, then the supplied tests, then Reng's
       "n4-2012",
       "n4-2025-07",
       "n4-2025-12",
+      "n4-2026-07-exam",
       "n4-2026-07",
       "n4-2026-07-2",
       "reng-n4-1",
@@ -49,7 +50,7 @@ test("each level prints the official tests, then the supplied tests, then Reng's
   );
   assert.deepEqual(
     JLPT_EXAM_SETS.map((set) => set.questions.length),
-    [91, 89, 67, 98, 97, 85, 80, 70, 98, 85],
+    [91, 89, 67, 98, 97, 85, 80, 70, 70, 98, 85],
   );
   for (const set of fixedRengExamSets()) {
     assert.match(set.title, /^Đề thi thử Reng N[45] số \d+$/);

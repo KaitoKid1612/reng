@@ -81,9 +81,35 @@ const TESTS = [
     },
   },
   {
+    // The real N4 test of 07/2026 as far as its pages were supplied: no 読解 and no
+    // listening もんだい２ yet. Answers are Reng's own (no answer key came with it).
+    id: "n4-2026-07-exam",
+    title: "Đề JLPT N4 tháng 07/2026",
+    counts: { vocabulary: 28, grammarReading: 21, listening: 21 },
+    answers: {
+      v: [
+        [2, 4, 4, 3, 1, 2, 1],
+        [3, 2, 1, 1, 4],
+        [1, 3, 4, 2, 4, 3, 4, 2],
+        [4, 1, 1, 2],
+        [3, 3, 2, 1],
+      ],
+      g: [
+        [3, 1, 2, 4, 2, 3, 4, 1, 4, 3, 2, 1, 3],
+        [3, 1, 4, 2],
+        [3, 1, 2, 4],
+      ],
+      l: [
+        [4, 2, 2, 3, 4, 1, 2, 1],
+        [2, 1, 3, 1, 2],
+        [1, 3, 1, 2, 2, 2, 1, 3],
+      ],
+    },
+  },
+  {
     // A book's reference test: the written part only, checked against the book's answer key.
     id: "n4-2026-07",
-    title: "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 1",
+    title: "Đề luyện N4 (sách tham khảo) – Đề 1",
     counts: { vocabulary: 35, grammarReading: 35, listening: 0 },
     answers: {
       v: [
@@ -107,7 +133,7 @@ const TESTS = [
     // The same book's second test, whose listening script is read by synthetic voices
     // (content/listening/jlpt-n4-2026-07-2.json); every answer is the book's key.
     id: "n4-2026-07-2",
-    title: "Đề tham khảo JLPT N4 tháng 07/2026 – Đề 2",
+    title: "Đề luyện N4 (sách tham khảo) – Đề 2",
     counts: { vocabulary: 35, grammarReading: 35, listening: 28 },
     voiced: true,
     answers: {
